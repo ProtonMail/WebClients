@@ -7,18 +7,18 @@ import type { BiometricsFactory, BiometricsPlatformHandler } from './types';
 const factory: BiometricsFactory = (getWindow) => {
     const checkPresence = async (reason = 'Proton Pass wants to unlock') => {
         const handle = getWindow()?.getNativeWindowHandle();
-        if (!handle) return false;
-        return winBiometrics.checkPresence(handle, reason).catch(() => false);
+        if (!handle) throw new Error('Failed to acquire window handle');
+        await winBiometrics.checkPresence(handle, reason);
     };
 
     const biometrics: BiometricsPlatformHandler = {
         canCheckPresence: () => winBiometrics.canCheckPresence().catch(() => false),
         checkPresence: (_, reason) => checkPresence(reason),
-        getDecryptionKey: (_, challenge) => winBiometrics.getDecryptionKey(challenge).catch(() => null),
+        getDecryptionKey: (_, challenge) => winBiometrics.getDecryptionKey(challenge),
         getSecret: async (_, key, version) => {
-            if (!(await checkPresence())) throw new Error('Biometric authentication failed');
+            await checkPresence();
 
-            const secretBytes = await winBiometrics.getSecret(key).catch(() => null);
+            const secretBytes = await winBiometrics.getSecret(key);
             if (!secretBytes) return null;
 
             /** Version 1 (Legacy): Secrets were stored as UTF-16 encoded strings in a Vec<u8>,

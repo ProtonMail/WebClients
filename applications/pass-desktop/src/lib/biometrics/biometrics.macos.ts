@@ -8,23 +8,16 @@ import type { BiometricsFactory, BiometricsPlatformHandler } from './types';
 
 const factory: BiometricsFactory = () => {
     /** reason is prefixed by 'Proton Pass wants to' */
-    const checkPresence = async (reason = 'unlock') => {
-        try {
-            await systemPreferences.promptTouchID(reason);
-            return true;
-        } catch (_) {
-            return false;
-        }
-    };
+    const checkPresence = async (reason = 'unlock') => systemPreferences.promptTouchID(reason);
 
     const biometrics: BiometricsPlatformHandler = {
         canCheckPresence: () => Promise.resolve(true),
         checkPresence: (_, reason) => checkPresence(reason),
         getDecryptionKey: () => Promise.resolve(null),
         getSecret: async (_, key, version) => {
-            if (!(await checkPresence())) throw new Error('Biometric authentication failed');
+            await checkPresence();
 
-            const secretBytes = await macBiometrics.getSecret(key).catch(() => null);
+            const secretBytes = await macBiometrics.getSecret(key);
             if (!secretBytes) return null;
 
             /** Version 1 (Legacy): Secrets were stored as UTF-8 encoded strings.

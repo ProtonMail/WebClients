@@ -16,15 +16,8 @@ pub mod biometric {
     }
 
     #[napi]
-    pub async fn check_presence(handle: Buffer, reason: String) -> napi::Result<bool> {
+    pub async fn check_presence(handle: Buffer, reason: String) -> napi::Result<()> {
         Biometrics::check_presence(handle.into(), reason).map_err(|e| napi::Error::from_reason(e.to_string()))
-    }
-
-    #[napi]
-    pub async fn get_decryption_key(challenge: Option<&str>) -> napi::Result<Vec<String>> {
-        Biometrics::get_decryption_key(challenge)
-            .map(|v| v.into())
-            .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
     #[napi]

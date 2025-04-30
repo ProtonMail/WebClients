@@ -1,7 +1,20 @@
-import { ipcMain } from 'electron';
 import { platform } from 'os';
 
+import type { MaybeNull } from '@proton/pass/types';
+
+import { setupIpcHandler } from '../ipc';
 import type { BiometricsFactory, BiometricsPlatformHandler } from './types';
+
+declare module 'proton-pass-desktop/lib/ipc' {
+    interface IPCChannels {
+        'biometrics:canCheckPresence': IPCChannel<[], boolean>;
+        'biometrics:checkPresence': IPCChannel<[reason?: string], void>;
+        'biometrics:getDecryptionKey': IPCChannel<[challenge: string], MaybeNull<string[]>>;
+        'biometrics:getSecret': IPCChannel<[key: string, version: number], MaybeNull<string>>;
+        'biometrics:setSecret': IPCChannel<[key: string, secret: Uint8Array], void>;
+        'biometrics:deleteSecret': IPCChannel<[key: string], void>;
+    }
+}
 
 const factory: BiometricsFactory = (getWindow) => {
     const platformImplementation: BiometricsPlatformHandler = (() => {
@@ -22,12 +35,12 @@ const factory: BiometricsFactory = (getWindow) => {
         }
     })();
 
-    ipcMain.handle('biometrics:canCheckPresence', platformImplementation.canCheckPresence);
-    ipcMain.handle('biometrics:checkPresence', platformImplementation.checkPresence);
-    ipcMain.handle('biometrics:getDecryptionKey', platformImplementation.getDecryptionKey);
-    ipcMain.handle('biometrics:getSecret', platformImplementation.getSecret);
-    ipcMain.handle('biometrics:setSecret', platformImplementation.setSecret);
-    ipcMain.handle('biometrics:deleteSecret', platformImplementation.deleteSecret);
+    setupIpcHandler('biometrics:canCheckPresence', platformImplementation.canCheckPresence);
+    setupIpcHandler('biometrics:checkPresence', platformImplementation.checkPresence);
+    setupIpcHandler('biometrics:getDecryptionKey', platformImplementation.getDecryptionKey);
+    setupIpcHandler('biometrics:getSecret', platformImplementation.getSecret);
+    setupIpcHandler('biometrics:setSecret', platformImplementation.setSecret);
+    setupIpcHandler('biometrics:deleteSecret', platformImplementation.deleteSecret);
 
     return platformImplementation;
 };
