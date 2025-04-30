@@ -59,7 +59,8 @@
             "@proton/wallet": ["./packages/wallet/*"],
             "proton-mail/*": ["./applications/mail/src/app/*"],
             "proton-pass-extension/*": ["./applications/pass-extension/src/*"],
-            "proton-pass-web/*": ["./applications/pass/src/*"]
+            "proton-pass-web/*": ["./applications/pass/src/*"],
+            "proton-pass-desktop/*": ["./applications/pass-desktop/src/*"]
         }
     },
     "exclude": ["**/node_modules/*", "**/dist/*", "**/.*/", "./packages/wallet/tests", "dangerfile.ts"]

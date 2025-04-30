@@ -1,13 +1,16 @@
+import type { IPCChannelResult, IPCChannels } from 'applications/pass-desktop/src/lib/ipc';
 import { contextBridge, ipcRenderer } from 'electron';
 
 import type { ContextBridgeApi } from '@proton/pass/types';
 import { disableMouseNavigation } from '@proton/shared/lib/desktop/disableMouseNavigation';
 
-// Parses setupIpcHandler responses into values or errors
-const invoke = (method: string, ...args: any[]) =>
-    ipcRenderer.invoke(method, ...args).then((r) => {
-        if (r?.error) throw new Error(r.error.message);
-        return r?.result;
+const invoke = <T extends keyof IPCChannels, P extends IPCChannels[T]['args'], R extends IPCChannels[T]['result']>(
+    method: T,
+    ...args: P
+): Promise<R> =>
+    ipcRenderer.invoke(method, ...args).then((res: IPCChannelResult<R>) => {
+        if (!res.ok) throw new Error(res.error ?? 'Unknown error');
+        return res.result;
     });
 
 const contextBridgeApi: ContextBridgeApi = {
@@ -26,7 +29,6 @@ const contextBridgeApi: ContextBridgeApi = {
     /* secrets */
     canCheckPresence: () => invoke('biometrics:canCheckPresence'),
     checkPresence: (reason) => invoke('biometrics:checkPresence', reason),
-    getDecryptionKey: (challenge) => invoke('biometrics:getDecryptionKey', challenge),
     getSecret: (key, version) => invoke('biometrics:getSecret', key, version),
     setSecret: (key, data) => invoke('biometrics:setSecret', key, data),
     deleteSecret: (key) => invoke('biometrics:deleteSecret', key),
