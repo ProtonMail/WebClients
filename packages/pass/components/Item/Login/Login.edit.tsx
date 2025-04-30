@@ -193,13 +193,15 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
         if (!draft) {
             getSanitizedUserIdentifiers(content)
                 .then(({ username, email }) => {
+                    /** On mount, if username field is not expanded, use the `itemEmail` as
+                     * the virtual `Email or username` field value. This should be sanitized
+                     * on save by checking if the provided value is a valid email.  */
+                    const withUsername = form.values.withUsername || Boolean(username && email);
+                    const itemEmail = withUsername ? email : username || email;
+                    const itemUsername = withUsername ? username : '';
+
                     form.resetForm({
-                        values: {
-                            ...form.values,
-                            itemUsername: username,
-                            itemEmail: email,
-                            withUsername: form.values.withUsername || Boolean(username && email),
-                        },
+                        values: { ...form.values, itemUsername, itemEmail, withUsername },
                     });
                 })
                 .catch(noop);

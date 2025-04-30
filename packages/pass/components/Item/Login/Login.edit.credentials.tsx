@@ -1,4 +1,4 @@
-import { type FC, type ReactElement, useEffect } from 'react';
+import { type FC, type ReactElement } from 'react';
 
 import type { FormikContextType } from 'formik';
 import { c } from 'ttag';
@@ -30,8 +30,7 @@ export const LoginEditCredentials: FC<Props> = ({ form }) => {
     const { aliasOptions, ...aliasModal } = useAliasForLoginModal(form);
     const passwordHistory = usePasswordHistoryActions();
 
-    const { itemEmail, itemUsername, withUsername } = form.values;
-
+    const { itemEmail, withUsername } = form.values;
     const itemEmailFieldIcon = withUsername ? 'envelope' : 'user';
 
     /** When enabling the username field set the `itemEmail` as
@@ -48,21 +47,6 @@ export const LoginEditCredentials: FC<Props> = ({ form }) => {
                     : {}),
             })
         );
-
-    useEffect(() => {
-        /** On mount, if username field is not expanded, use the `itemEmail` as
-         * the virtual `Email or username` field value. This should be sanitized
-         * on save by checking if the provided value is a valid email.  */
-        if (!withUsername) {
-            form.resetForm({
-                values: {
-                    ...form.values,
-                    itemEmail: itemUsername || itemEmail,
-                    itemUsername: '',
-                },
-            });
-        }
-    }, []);
 
     return (
         <>
