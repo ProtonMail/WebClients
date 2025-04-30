@@ -40,45 +40,7 @@ impl super::BiometricsTrait for Biometrics {
         }
     }
 
-    fn get_decryption_key(challenge_b64: Option<&str>) -> Result<[String; 2]> {
-        static KEY_NAME: &HSTRING = h!("ProtonPass");
-
-        let challenge: [u8; 16] = match challenge_b64 {
-            Some(str) => base64_engine
-                .decode(str)?
-                .try_into()
-                .map_err(|_e| anyhow!("Invalid challenge"))?,
-            None => random_challenge(),
-        };
-
-        let open_result =
-            KeyCredentialManager::RequestCreateAsync(KEY_NAME, KeyCredentialCreationOption::FailIfExists)?.get()?;
-
-        let retreive_result = match open_result.Status()? {
-            KeyCredentialStatus::CredentialAlreadyExists => KeyCredentialManager::OpenAsync(KEY_NAME)?.get()?,
-            KeyCredentialStatus::Success => open_result,
-            _ => return Err(anyhow!("Failed to create key credential")),
-        };
-
-        let credential = retreive_result.Credential()?;
-        let challenge_buffer = CryptographicBuffer::CreateFromByteArray(&challenge)?;
-        let signature_result = credential.RequestSignAsync(&challenge_buffer)?.get()?;
-        ensure!(
-            signature_result.Status()? == KeyCredentialStatus::Success,
-            "Failed to sign data"
-        );
-
-        let signature_buffer = signature_result.Result()?;
-        let mut signature_value = Array::<u8>::with_len(signature_buffer.Length()? as usize);
-        CryptographicBuffer::CopyToByteArray(&signature_buffer, &mut signature_value)?;
-
-        let key = Sha256::digest(&*signature_value);
-        let key_b64 = base64_engine.encode(key);
-        let iv_b64 = base64_engine.encode(challenge);
-        Ok([key_b64, iv_b64])
-    }
-
-    fn check_presence(handle: Vec<u8>, reason: String) -> Result<bool> {
+    fn check_presence(handle: Vec<u8>, reason: String) -> Result<()> {
         let h = isize::from_le_bytes(handle.clone().try_into().unwrap());
         let window = HWND(h);
 
@@ -88,8 +50,14 @@ impl super::BiometricsTrait for Biometrics {
         let result = operation.get()?;
 
         match result {
-            UserConsentVerificationResult::Verified => Ok(true),
-            _ => Ok(false),
+            UserConsentVerificationResult::Verified => Ok(),
+            UserConsentVerificationResult::DeviceBusy => Err("Authentication device is busy."),
+            UserConsentVerificationResult::DeviceNotPresent => Err("No authentication device found."),
+            UserConsentVerificationResult::DisabledByPolicy => Err("Authentication device is disabled by policy."),
+            UserConsentVerificationResult::NotConfiguredForUser => Err("No authentication device configured."),
+            UserConsentVerificationResult::Canceled => Err("Authentication cancelled."),
+            UserConsentVerificationResult::RetriesExhausted => Err("There have been too many failed attempts."),
+            _ => Err("Biometric authentication failed."),
         }
     }
 

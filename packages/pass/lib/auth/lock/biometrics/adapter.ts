@@ -189,7 +189,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
 
                 await setRetryCount(retryCount).catch(noop);
                 await auth.lock(adapter.type, { broadcast: true, soft: true, userInitiated: true });
-                throw Error(c('Error').t`Biometric authentication failed`);
+                throw err;
             }
         },
     };
