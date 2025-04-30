@@ -60,6 +60,7 @@ import {
     handleSetupUser,
 } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
+import { sendSignupAccountCreationTelemetry, sendSignupLoadTelemetry } from '../signup/signupTelemetry';
 import { defaultSignupModel } from '../single-signup-v2/constants';
 import { cachedPlans, cachedPlansMap } from '../single-signup-v2/defaultPlans';
 import type { SubscriptionDataCycleMapping } from '../single-signup-v2/helper';
@@ -138,6 +139,7 @@ const SingleSignupContainer = ({
     clientType,
     onLogin,
     productParam,
+    toApp,
     toAppName,
 }: Props) => {
     const getKtActivation = useGetAccountKTActivation();
@@ -518,6 +520,14 @@ const SingleSignupContainer = ({
                 },
             });
 
+            sendSignupLoadTelemetry({
+                plan: selectedPlan.Name,
+                flowId: 'single-page-signup-vpn',
+                productIntent: toApp,
+                currency: preferredCurrency,
+                cycle: subscriptionData.cycle,
+            });
+
             setModelDiff({
                 domains,
                 plans,
@@ -814,6 +824,16 @@ const SingleSignupContainer = ({
                                         flow: isB2bPlan ? 'b2b' : 'b2c',
                                     });
                                 }
+
+                                sendSignupAccountCreationTelemetry({
+                                    plan: getPlanNameFromIDs(cache.subscriptionData.planIDs) || PLANS.FREE,
+                                    flowId: 'single-page-signup-vpn',
+                                    productIntent: toApp,
+                                    currency: cache.subscriptionData.currency,
+                                    cycle: cache.subscriptionData.cycle,
+                                    signupType: cache.accountData.signupType,
+                                    amount: cache.subscriptionData.checkResult.AmountDue,
+                                });
                             } catch (error: any) {
                                 observeApiError(error, (status) =>
                                     metrics.core_vpn_single_signup_step2_setup_3_total.increment({

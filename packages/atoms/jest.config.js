@@ -2,7 +2,7 @@ module.exports = {
     setupFilesAfterEnv: ['./jest.setup.js'],
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     testEnvironment: '@proton/jest-env',
-    transformIgnorePatterns: ['node_modules/(?!(@proton/shared|@proton/components|mutex-browser|pmcrypto|bip39)/)'],
+    transformIgnorePatterns: ['node_modules/(?!(@proton/shared|@proton/components|@proton/telemetry|mutex-browser|pmcrypto|bip39)/)'],
     transform: {
         '^.+\\.(ts|js|mjs)x?$': [
             '@swc/jest',
