@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { usePreventLeave } from '@proton/components';
+import { CryptoProxy } from '@proton/crypto/lib';
 import { queryCreateAlbum, queryUpdateAlbumName } from '@proton/shared/lib/api/drive/photos';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import {
@@ -13,6 +14,8 @@ import {
     generateNodeHashKey,
     generateNodeKeys,
 } from '@proton/shared/lib/keys/driveKeys';
+import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
+import getRandomString from '@proton/utils/getRandomString';
 
 import { useDriveEventManager } from '../../store';
 import { useDebouncedRequest } from '../../store/_api';
@@ -29,7 +32,7 @@ function useAlbumsActions() {
     const debouncedRequest = useDebouncedRequest();
     const events = useDriveEventManager();
     const { getLinkPrivateKey, getLinkHashKey, getLink } = useLink();
-    const { getShareCreatorKeys } = useShare();
+    const { getShareCreatorKeys, getSharePrivateKey } = useShare();
 
     const createAlbum = async (
         abortSignal: AbortSignal,
@@ -136,35 +139,66 @@ function useAlbumsActions() {
         volumeId: string,
         shareId: string,
         linkId: string,
-        name: string
+        newName: string
     ) => {
-        const error = validateLinkName(name);
+        const error = validateLinkName(newName);
         if (error) {
             throw new ValidationError(error);
         }
-        const link = await getLink(abortSignal, shareId, linkId);
 
-        const [parentPrivateKey, parentHashKey, { privateKey: addressKey }] = await Promise.all([
-            getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
-            getLinkHashKey(abortSignal, shareId, link.parentLinkId),
+        const [meta, { privateKey: addressKey, address }] = await Promise.all([
+            getLink(abortSignal, shareId, linkId),
             getShareCreatorKeys(abortSignal, shareId),
         ]);
 
-        const [Hash, encryptedName] = await Promise.all([
-            generateLookupHash(name, parentHashKey).catch((e) =>
+        if (meta.corruptedLink) {
+            throw new Error('Cannot rename corrupted file');
+        }
+
+        const [parentPrivateKey, parentHashKey] = await Promise.all([
+            meta.parentLinkId
+                ? getLinkPrivateKey(abortSignal, shareId, meta.parentLinkId)
+                : getSharePrivateKey(abortSignal, shareId),
+            meta.parentLinkId ? getLinkHashKey(abortSignal, shareId, meta.parentLinkId) : null,
+        ]);
+
+        const sessionKey = await getDecryptedSessionKey({
+            data: meta.encryptedName,
+            privateKeys: parentPrivateKey,
+        }).catch((e) =>
+            Promise.reject(
+                new EnrichedError('Failed to decrypt link name session key during rename', {
+                    tags: {
+                        shareId,
+                        linkId,
+                    },
+                    extra: { e },
+                })
+            )
+        );
+
+        const [Hash, { message: encryptedName }] = await Promise.all([
+            parentHashKey
+                ? generateLookupHash(newName, parentHashKey).catch((e) =>
+                      Promise.reject(
+                          new EnrichedError('Failed to generate link lookup hash during album rename', {
+                              tags: {
+                                  shareId,
+                                  linkId,
+                              },
+                              extra: { e },
+                          })
+                      )
+                  )
+                : getRandomString(64),
+            CryptoProxy.encryptMessage({
+                textData: newName,
+                stripTrailingSpaces: true,
+                sessionKey,
+                signingKeys: addressKey,
+            }).catch((e) =>
                 Promise.reject(
-                    new EnrichedError('Failed to generate album link lookup hash during album rename', {
-                        tags: {
-                            shareId,
-                            linkId,
-                        },
-                        extra: { e },
-                    })
-                )
-            ),
-            encryptName(name, parentPrivateKey, addressKey).catch((e) =>
-                Promise.reject(
-                    new EnrichedError('Failed to encrypt album link name during album rename', {
+                    new EnrichedError('Failed to encrypt link name during rename', {
                         tags: {
                             shareId,
                             linkId,
@@ -175,27 +209,18 @@ function useAlbumsActions() {
             ),
         ]);
 
-        const { Code } = await preventLeave(
+        await preventLeave(
             debouncedRequest<{ Code: number }>(
                 queryUpdateAlbumName(volumeId, linkId, {
                     Link: {
                         Name: encryptedName,
                         Hash,
-                        OriginalHash: link.hash,
-                        NameSignatureEmail: link.nameSignatureEmail,
+                        NameSignatureEmail: address.Email,
+                        OriginalHash: meta.hash,
                     },
                 })
             )
         );
-
-        if (Code !== 1000) {
-            throw new EnrichedError('Failed to rename album', {
-                tags: {
-                    shareId,
-                    linkId,
-                },
-            });
-        }
 
         await events.pollEvents.volumes(volumeId);
     };
