@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { useMemo } from 'react';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
@@ -15,6 +15,7 @@ import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { validateCustomItemForm } from '@proton/pass/lib/validation/custom-item';
+import type { DeobfuscatedItem, ItemCustomType, ItemEditIntent, ItemRevision, ShareId } from '@proton/pass/types';
 import { type CustomItemFormValues } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
@@ -24,46 +25,89 @@ import { CustomFormSections } from './CustomFormSections';
 
 const FORM_ID = 'edit-custom';
 
-export const CustomEdit: FC<ItemEditViewProps<'custom'>> = ({ revision, share, onSubmit, onCancel }) => {
-    const { shareId } = share;
-    const { data: item, itemId, revision: lastRevision } = revision;
+const getInitialValues = <T extends ItemCustomType>(
+    item: DeobfuscatedItem<ItemCustomType>,
+    shareId: ShareId
+): CustomItemFormValues<T> => {
+    const { metadata, content, extraFields } = item;
 
-    const { metadata, content, extraFields, ...uneditable } = useDeobfuscatedItem(item);
-
-    const { sections, ...rest } = content;
-
-    const initialValues: CustomItemFormValues = {
+    const base = {
         name: metadata.name,
         note: metadata.note,
         shareId,
-        sections,
+        sections: content.sections,
         extraFields,
-        type: revision.data.type,
         files: filesFormInitializer(),
-        ...rest,
     };
+
+    const values = ((): CustomItemFormValues<ItemCustomType> => {
+        switch (item.type) {
+            case 'custom':
+                return { ...base, type: 'custom' };
+
+            case 'sshKey':
+                const { privateKey, publicKey } = item.content;
+                return { ...base, type: 'sshKey', privateKey, publicKey };
+
+            case 'wifi':
+                const { password, security, ssid } = item.content;
+                return { ...base, type: 'wifi', password, security, ssid };
+        }
+    })();
+
+    return values as CustomItemFormValues<T>;
+};
+
+const getEditIntent = <T extends ItemCustomType>(
+    values: CustomItemFormValues,
+    item: DeobfuscatedItem<ItemCustomType>,
+    itemId: string,
+    lastRevision: number
+): ItemEditIntent<T> => {
+    const { shareId, name, note, sections, extraFields, files } = values;
+
+    const base = {
+        itemId,
+        lastRevision,
+        shareId,
+        metadata: { ...item.metadata, name, note: obfuscate(note) },
+        extraFields: obfuscateExtraFields(extraFields),
+        files,
+    };
+
+    const update = ((): ItemEditIntent<ItemCustomType> => {
+        switch (values.type) {
+            case 'custom':
+                return { ...base, type: 'custom', content: { sections } };
+
+            case 'sshKey':
+                const { privateKey, publicKey } = values;
+                return { ...base, type: 'sshKey', content: { sections, privateKey: obfuscate(privateKey), publicKey } };
+
+            case 'wifi':
+                const { password, security, ssid } = values;
+                return { ...base, type: 'wifi', content: { sections, password: obfuscate(password), security, ssid } };
+        }
+    })();
+
+    return update as ItemEditIntent<T>;
+};
+
+export const CustomEdit = <T extends ItemCustomType>({ revision, share, onSubmit, onCancel }: ItemEditViewProps<T>) => {
+    const { shareId } = share;
+    const { data, itemId, revision: lastRevision } = revision as ItemRevision<ItemCustomType>;
+    const item = useDeobfuscatedItem(data);
+
+    const initialValues = useMemo(() => getInitialValues(item, shareId), []);
+    const initialErrors = useMemo(() => validateCustomItemForm(initialValues), []);
 
     const form = useFormik<CustomItemFormValues>({
         initialValues,
-        initialErrors: validateCustomItemForm(initialValues),
+        initialErrors,
         validate: validateCustomItemForm,
         validateOnBlur: true,
-        onSubmit: ({ shareId, name, note, sections, extraFields, files, type, ...rest }) => {
-            const updatedItem = {
-                ...uneditable,
-                type: type as any,
-                itemId,
-                lastRevision,
-                shareId,
-                metadata: { ...metadata, name, note: obfuscate(note) },
-                extraFields: obfuscateExtraFields(extraFields),
-                files,
-                content: {
-                    sections,
-                    ...rest,
-                },
-            };
-
+        onSubmit: (values) => {
+            const updatedItem = getEditIntent<T>(values, item, itemId, lastRevision);
             onSubmit(updatedItem);
         },
     });

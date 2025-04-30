@@ -31,15 +31,17 @@ type ExtraFieldContent<T extends ExtraFieldType> = {
     timestamp: Obfuscate<ExtraTimestampField, 'timestamp', never>;
 }[T];
 
+type WithSubExtraFields<T> = TypeMapper<T, [[ExtraField, DeobfuscatedItemExtraField]]>;
+
 export type ItemContent<T extends ItemType> = {
     alias: ProtobufItemAlias;
     note: ProtobufItemNote;
     login: Obfuscate<SanitizedBuffers<ProtobufItemLogin>, 'itemEmail' | 'itemUsername' | 'totpUri', 'password'>;
     creditCard: Obfuscate<ProtobufItemCreditCard, never, 'number' | 'verificationNumber' | 'pin'>;
-    identity: TypeMapper<ProtobufItemIdentity, [[ExtraField, DeobfuscatedItemExtraField]]>;
-    sshKey: TypeMapper<ProtobufItemSSHKey, [[ExtraField, DeobfuscatedItemExtraField]]>;
-    wifi: TypeMapper<ProtobufItemWifi, [[ExtraField, DeobfuscatedItemExtraField]]>;
-    custom: TypeMapper<ProtobufItemCustom, [[ExtraField, DeobfuscatedItemExtraField]]>;
+    identity: WithSubExtraFields<ProtobufItemIdentity>;
+    sshKey: WithSubExtraFields<Obfuscate<ProtobufItemSSHKey, never, 'privateKey'>>;
+    wifi: WithSubExtraFields<Obfuscate<ProtobufItemWifi, never, 'password'>>;
+    custom: WithSubExtraFields<ProtobufItemCustom>;
 }[T];
 
 export type ItemExtraField<T extends ExtraFieldType = ExtraFieldType> = {

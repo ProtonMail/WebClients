@@ -1,4 +1,4 @@
-import { type FC, useState } from 'react';
+import { type FC, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -26,33 +26,82 @@ import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { validateCustomItemForm } from '@proton/pass/lib/validation/custom-item';
 import { selectVaultLimits } from '@proton/pass/store/selectors/limits';
 import { selectPassPlan } from '@proton/pass/store/selectors/user';
-import type { DeobfuscatedItemExtraField } from '@proton/pass/types';
+import type { ItemCreateIntent, ItemCustomType, ShareId } from '@proton/pass/types';
 import { type CustomItemFormValues } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
+import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import clsx from '@proton/utils/clsx';
 
 import { CustomFormSections } from './CustomFormSections';
-import { type Template, groupedTemplates } from './templates';
+import { type CustomTemplate, customTemplateToFormFields, groupedTemplates } from './CustomTemplates';
 
-const templateToFormFields = (template: Template): DeobfuscatedItemExtraField[] =>
-    template.fields.map(
-        (f) =>
-            ({
-                fieldName: f.label,
-                type: f.type,
-                data: f.type === 'timestamp' ? { timestamp: '' } : { content: '' },
-            }) as DeobfuscatedItemExtraField
-    ); // TODO(@djankovic): FIXME
+const getInitialValues = <T extends ItemCustomType>(
+    type: ItemCustomType,
+    shareId: ShareId
+): CustomItemFormValues<T> => {
+    const base = {
+        name: '',
+        note: '',
+        shareId,
+        sections: [],
+        extraFields: [],
+        files: filesFormInitializer(),
+    };
 
-const extraTypeFieldValues = (type?: 'wifi' | 'sshKey' | 'custom') => {
+    const values = ((): CustomItemFormValues<ItemCustomType> => {
+        switch (type) {
+            case 'custom':
+                return { ...base, type };
+            case 'sshKey':
+                return { ...base, type, privateKey: '', publicKey: '' };
+            case 'wifi':
+                return { ...base, type, password: '', security: WifiSecurity.UnspecifiedWifiSecurity, ssid: '' };
+        }
+    })();
+
+    return values as CustomItemFormValues<T>;
+};
+
+const getCreateIntent = <T extends ItemCustomType>(values: CustomItemFormValues): ItemCreateIntent<T> => {
+    const optimisticId = uniqueId();
+    const { shareId, name, note, sections, extraFields, files } = values;
+
+    const base = {
+        optimisticId,
+        shareId,
+        metadata: { name, note: obfuscate(note), itemUuid: optimisticId },
+        extraFields: obfuscateExtraFields(extraFields),
+        extraData: [],
+        files,
+    };
+
+    const create = ((): ItemCreateIntent<ItemCustomType> => {
+        switch (values.type) {
+            case 'custom':
+                return { ...base, type: 'custom', content: { sections } };
+
+            case 'sshKey':
+                const { privateKey, publicKey } = values;
+                return { ...base, type: 'sshKey', content: { sections, privateKey: obfuscate(privateKey), publicKey } };
+
+            case 'wifi':
+                const { password, ssid, security } = values;
+                return { ...base, type: 'wifi', content: { sections, password: obfuscate(password), ssid, security } };
+        }
+    })();
+
+    return create as ItemCreateIntent<T>;
+};
+
+const extraTypeFieldValues = (type: ItemCustomType) => {
     switch (type) {
         case 'wifi':
             return {
                 ssid: '',
                 password: '',
-                security: 0,
+                security: WifiSecurity.UnspecifiedWifiSecurity,
             };
         case 'sshKey':
             return {
@@ -137,52 +186,31 @@ export const ExtraTypeFields: FC<{ type: 'sshKey' | 'wifi' | 'custom' }> = ({ ty
     }
 };
 
-export const CustomNew: FC<ItemNewViewProps<'custom'>> = ({ shareId, onSubmit, onCancel }) => {
+export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, onCancel }: ItemNewViewProps<T>) => {
     const { ParentPortal, openPortal } = usePortal();
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const [showForm, setShowForm] = useState(false);
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
 
-    const initialValues: CustomItemFormValues = {
-        name: '',
-        note: '',
-        shareId,
-        sections: [],
-        extraFields: [],
-        files: filesFormInitializer(),
-        type: 'custom',
-    };
+    const initialValues = useMemo(() => getInitialValues(type, shareId), []);
+    const initialErrors = useMemo(() => validateCustomItemForm(initialValues), []);
 
     const form = useFormik<CustomItemFormValues>({
         initialValues,
-        initialErrors: validateCustomItemForm(initialValues),
+        initialErrors,
         validate: validateCustomItemForm,
         validateOnBlur: true,
-        onSubmit: ({ shareId, name, note, sections, extraFields, files, type, ...rest }) => {
-            const optimisticId = uniqueId();
-
-            onSubmit({
-                // TODO(@djankovic): FIXME
-                type: type as any,
-                optimisticId,
-                shareId,
-                metadata: { name, note: obfuscate(note), itemUuid: optimisticId },
-                extraFields: obfuscateExtraFields(extraFields),
-                extraData: [],
-                files,
-                content: {
-                    ...rest,
-                    sections,
-                },
-            });
+        onSubmit: (values) => {
+            const create = getCreateIntent<T>(values);
+            onSubmit(create);
         },
     });
 
-    const onSelectTemplate = async (template: Template) => {
+    const onSelectTemplate = async (template: CustomTemplate) => {
         const values: CustomItemFormValues = {
             ...form.values,
             type: template.type ?? 'custom',
-            extraFields: templateToFormFields(template),
+            extraFields: customTemplateToFormFields(template),
             ...extraTypeFieldValues(template.type),
         } as any;
 

@@ -1,4 +1,4 @@
-import React, { type FC, useCallback } from 'react';
+import { type FC, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 
@@ -13,6 +13,7 @@ import { useNavigationActions } from '@proton/pass/components/Navigation/Navigat
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { type ItemNewRouteParams, getLocalPath } from '@proton/pass/components/Navigation/routing';
+import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { itemCreate } from '@proton/pass/store/actions';
@@ -24,15 +25,14 @@ import {
 } from '@proton/pass/store/selectors';
 import type { ItemCreateIntent, ItemType } from '@proton/pass/types';
 
-const itemNewMap: { [T in ItemType]: FC<any> } = {
+const itemNewMap: { [T in ItemType]: FC<ItemNewViewProps<T>> } = {
     login: LoginNew,
     note: NoteNew,
     alias: AliasNew,
     creditCard: CreditCardNew,
     identity: IdentityNew,
-    // TODO(@djankovic): FIXME
-    sshKey: CustomNew as any,
-    wifi: CustomNew as any,
+    sshKey: CustomNew,
+    wifi: CustomNew,
     custom: CustomNew,
 };
 
@@ -84,11 +84,12 @@ export const ItemNew: FC = () => {
         selectItem(createIntent.shareId, createIntent.optimisticId, { mode: 'replace' });
     };
 
-    const ItemNewComponent = itemNewMap[type];
+    const ItemNewComponent = itemNewMap[type] as FC<ItemNewViewProps>;
 
     return (
         shareId && (
             <ItemNewComponent
+                type={type}
                 onCancel={handleCancel}
                 onSubmit={handleSubmit}
                 shareId={shareId}

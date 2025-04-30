@@ -24,9 +24,8 @@ const itemEditMap: { [T in ItemType]: FC<ItemEditViewProps<T>> } = {
     alias: AliasEdit,
     creditCard: CreditCardEdit,
     identity: IdentityEdit,
-    // TODO(@djankovic): FIXME
-    sshKey: CustomEdit as any,
-    wifi: CustomEdit as any,
+    sshKey: CustomEdit,
+    wifi: CustomEdit,
     custom: CustomEdit,
 };
 

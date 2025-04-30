@@ -38,9 +38,8 @@ const itemTypeViewMap: { [T in ItemType]: FC<ItemViewProps<T>> } = {
     alias: AliasView,
     creditCard: CreditCardView,
     identity: IdentityView,
-    // TODO(@djankovic): FIXME
-    sshKey: CustomView as any,
-    wifi: CustomView as any,
+    sshKey: CustomView,
+    wifi: CustomView,
     custom: CustomView,
 };
 

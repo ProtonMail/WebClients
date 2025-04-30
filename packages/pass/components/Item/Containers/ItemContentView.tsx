@@ -21,9 +21,8 @@ const itemContentViewMap: { [T in ItemType]: FC<ItemContentProps<T>> } = {
     login: LoginContent,
     note: NoteContent,
     identity: IdentityContent,
-    // TODO(@djankovic): FIXME
-    sshKey: CustomContent as any,
-    wifi: CustomContent as any,
+    sshKey: CustomContent,
+    wifi: CustomContent,
     custom: CustomContent,
 };
 
