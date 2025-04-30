@@ -1,22 +1,35 @@
-import type { PropsWithChildren, ReactElement } from 'react'
+import type { ComponentPropsWithoutRef, PropsWithChildren, ReactElement } from 'react'
 
 import type { IconName } from '@proton/components'
 import { DropdownMenuButton, Icon } from '@proton/components'
+import clsx from '@proton/utils/clsx'
 
-export type ContextMenuButtonProps = {
+export interface ContextMenuButtonProps extends ComponentPropsWithoutRef<'button'> {
   name: string
   icon: IconName | ReactElement<any>
   action: () => void
   close: () => void
 }
 
-export function ContextMenuButton({ name, icon, action, close, children }: PropsWithChildren<ContextMenuButtonProps>) {
+export function ContextMenuButton({
+  name,
+  icon,
+  action,
+  close,
+  children,
+  ...props
+}: PropsWithChildren<ContextMenuButtonProps>) {
   return (
     <DropdownMenuButton
       key={name}
       onContextMenu={(e) => e.stopPropagation()}
-      className="justify-space-between flex flex-nowrap items-center"
+      {...props}
+      className={clsx('justify-space-between flex flex-nowrap items-center', props.className)}
       onClick={(e) => {
+        props.onClick?.(e)
+        if (e.defaultPrevented) {
+          return
+        }
         e.stopPropagation()
         action()
         close()
