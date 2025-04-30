@@ -2,12 +2,14 @@ import * as memberModule from '@proton/account/member';
 import * as organizationModule from '@proton/account/organization';
 import * as assistantUpsellConfigModule from '@proton/components/hooks/assistant/assistantUpsellConfig';
 import { CYCLE, type Currency, PLANS, PLAN_TYPES, type PaymentsApi, type Plan } from '@proton/payments';
+import * as checkoutModule from '@proton/shared/lib/helpers/checkout';
 import * as organizationHelperModule from '@proton/shared/lib/organization/helper';
 
 import * as composerAssistantUpsellModalHelpersModule from '../../modals/ComposerAssistantUpsellModal.helpers';
 import { UpsellModalComposerAssistantSubmitButton } from '../components/UpsellModalSubmitButtons';
 import { getUpsellModalComposerAssistantConfig } from './getUpsellModalComposerAssistantConfig';
 
+jest.mock('@proton/shared/lib/helpers/checkout');
 jest.mock('@proton/payments/core/subscription/selected-plan', () => ({
     SelectedPlan: { createFromSubscription: jest.fn() },
 }));
@@ -59,7 +61,6 @@ async function setupTest(currency: Currency, userType: 'B2C' | 'B2B', isOrgAdmin
               }
             : undefined
     );
-
     jest.spyOn(assistantUpsellConfigModule, 'getAssistantUpsellConfigPlanAndCycle').mockImplementation(
         getAssistantUpsellConfigPlanAndCycleMock
     );
@@ -67,6 +68,10 @@ async function setupTest(currency: Currency, userType: 'B2C' | 'B2B', isOrgAdmin
     // @ts-expect-error - mock of paymentApi call
     paymentsApiMock.checkWithAutomaticVersion.mockResolvedValue({
         AmountDue: NON_MAIN_CURRENCY_MOCK_AMOUNT,
+    });
+    // @ts-expect-error - mock of checkout call
+    jest.spyOn(checkoutModule, 'getCheckout').mockReturnValue({
+        withDiscountPerCycle: NON_MAIN_CURRENCY_MOCK_AMOUNT,
     });
 
     const config = await getUpsellModalComposerAssistantConfig({
