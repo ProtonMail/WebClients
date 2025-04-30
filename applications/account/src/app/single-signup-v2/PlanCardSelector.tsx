@@ -17,6 +17,7 @@ import {
     type PlansMap,
     type Subscription,
     type SubscriptionPlan,
+    getRenewCycle,
 } from '@proton/payments';
 import { type Currency } from '@proton/payments';
 import { getPlanIDs, getPlanOffer } from '@proton/payments';
@@ -71,7 +72,15 @@ const getPerMonth = () => {
     return c('pass_signup_2023: Info').t`per month`;
 };
 
-export const getBilledText = ({ audience, cycle }: { audience?: Audience; cycle: CYCLE }): string | null => {
+export const getBilledText = ({
+    audience,
+    cycle,
+    planIDs,
+}: {
+    audience?: Audience;
+    cycle: CYCLE;
+    planIDs: PlanIDs;
+}): string | null => {
     if (audience === Audience.B2B) {
         switch (cycle) {
             case CYCLE.MONTHLY:
@@ -79,7 +88,10 @@ export const getBilledText = ({ audience, cycle }: { audience?: Audience; cycle:
             case CYCLE.YEARLY:
                 return c('pass_signup_2023: Info').t`/month /user, billed annually`;
             case CYCLE.TWO_YEARS:
-                return c('pass_signup_2023: Info').t`/month /user, billed biennially`;
+                if (getRenewCycle(planIDs, cycle) === cycle) {
+                    return c('pass_signup_2023: Info').t`/month /user, billed biennially`;
+                }
+                return c('pass_signup_2023: Info').t`/month /user`;
             case CYCLE.FIFTEEN:
             case CYCLE.THIRTY:
                 return c('pass_signup_2023: Info').t`/month /user`;
@@ -93,7 +105,11 @@ export const getBilledText = ({ audience, cycle }: { audience?: Audience; cycle:
         case CYCLE.YEARLY:
             return c('pass_signup_2023: Info').t`per month, billed annually`;
         case CYCLE.TWO_YEARS:
-            return c('pass_signup_2023: Info').t`per month, billed every two years`;
+            if (getRenewCycle(planIDs, cycle) === cycle) {
+                return c('pass_signup_2023: Info').t`per month, billed every two years`;
+            }
+
+            return c('pass_signup_2023: Info').t`per month`;
         case CYCLE.FIFTEEN:
             return c('pass_signup_2023: Info').t`per month`;
         case CYCLE.THIRTY:
@@ -329,7 +345,7 @@ export const PlanCardSelector = ({
                 const planFromCard = isFreePlan ? FREE_PLAN : plansMap[planCard.plan];
                 const billedText = isFreePlan
                     ? c('pass_signup_2023: Info').t`Free forever`
-                    : getBilledText({ audience, cycle });
+                    : getBilledText({ audience, cycle, planIDs });
                 const selected = isFreePlan && !selectedPlanName ? true : selectedPlanName === planCard.plan;
 
                 if (!planFromCard) {
@@ -499,7 +515,7 @@ export const UpsellCardSelector = ({
                     });
                     const billedText = subscription?.CouponCode
                         ? getPerMonth()
-                        : getBilledText({ cycle: subscription?.Cycle || cycle, audience });
+                        : getBilledText({ cycle: subscription?.Cycle || cycle, audience, planIDs: currentPlanIDs });
 
                     const shortPlan = currentPlan
                         ? getShortPlan(currentPlan.Name as any, plansMap, { vpnServers: vpnServersCountData, freePlan })
@@ -577,7 +593,9 @@ export const UpsellCardSelector = ({
                         return null;
                     }
 
-                    const billedText = coupon ? getPerMonth() : getBilledText({ cycle, audience });
+                    const billedText = coupon
+                        ? getPerMonth()
+                        : getBilledText({ cycle, audience, planIDs: { [plan.Name]: 1 } });
                     const totals = {
                         discountPercent: checkout.discountPercent,
                         monthlyPrice: checkout.withDiscountPerMonth,

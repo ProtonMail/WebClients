@@ -41,7 +41,7 @@ export const getRenews = (
 ) => {
     if (isCycleTwoYear) {
         return c('duoplan2024: Footer')
-            .jt`Billed every 2 years at ${amountBilled}. Discounts are based on the standard monthly pricing.`;
+            .jt`Billed at ${amountBilled} for the first 2 years. Discounts are based on the standard monthly pricing.`;
     }
 
     return c('duoplan2024: Footer')
