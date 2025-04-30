@@ -133,8 +133,7 @@ export const MailPostSignupOneDollar = () => {
 
     return (
         <SpotlightWithPromo
-            borderRadius={daysSinceOffer >= LAST_REMINDER_DAY ? 'md' : 'xl'}
-            onPromoClick={() => {
+            promoOnClick={() => {
                 if (daysSinceOffer >= LAST_REMINDER_DAY) {
                     handleUpsellClick();
                 } else {
@@ -145,10 +144,11 @@ export const MailPostSignupOneDollar = () => {
             promoIconName={upgradeIcon}
             promoChildren={upgradeText}
             promoColor="full-gradient"
-            innerClassName={daysSinceOffer >= LAST_REMINDER_DAY ? undefined : 'p-0'}
-            show={show || spotlightState}
-            onClose={handleClose}
-            content={
+            spotlightBorderRadius={daysSinceOffer >= LAST_REMINDER_DAY ? 'md' : 'xl'}
+            spotlightInnerClassName={daysSinceOffer >= LAST_REMINDER_DAY ? undefined : 'p-0'}
+            spotlightShow={show || spotlightState}
+            spotlightOnClose={handleClose}
+            spotlightContent={
                 <MailPostSignupDollarContent
                     pricingTitle={pricingTitle}
                     onClose={() => {
