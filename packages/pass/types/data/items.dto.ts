@@ -98,7 +98,6 @@ export type SecureLinkItem = {
 export type SecureLinkOptions = {
     expirationTime: number;
     maxReadCount: MaybeNull<number>;
-    linkKeyEncryptedWithItemKey: boolean;
 };
 
 export type SecureLinkCreationDTO = UniqueItem & SecureLinkOptions;

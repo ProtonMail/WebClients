@@ -6,11 +6,9 @@ import { Button } from '@proton/atoms';
 import { ModalTwoContent, ModalTwoFooter } from '@proton/components';
 import { ExpirationTimeSelect, ExpireTime } from '@proton/pass/components/Form/Field/Custom/ExpirationTimeSelect';
 import { MaxReadsToggleInput } from '@proton/pass/components/Form/Field/Custom/MaxReadsToggleInput';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { secureLinkCreate } from '@proton/pass/store/actions';
 import type { SecureLink, SecureLinkOptions, UniqueItem } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 
 type Props = UniqueItem & { onLinkGenerated: (data: SecureLink) => void };
 type SecureLinkState = Omit<SecureLinkOptions, 'linkKeyEncryptedWithItemKey'>;
@@ -28,10 +26,7 @@ export const SecureLinkGenerate: FC<Props> = ({ shareId, itemId, onLinkGenerated
         onSuccess: onLinkGenerated,
     });
 
-    const linkKeyEncryptedWithItemKey = useFeatureFlag(PassFeature.PassSecureLinkCryptoChangeV1);
-
-    const generateSecureLink = () =>
-        dispatch({ itemId, shareId, expirationTime, maxReadCount, linkKeyEncryptedWithItemKey });
+    const generateSecureLink = () => dispatch({ itemId, shareId, expirationTime, maxReadCount });
 
     return (
         <>

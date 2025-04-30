@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { FeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { SharedMenuItem } from '@proton/pass/components/Menu/Shared/SharedMenuItem';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
@@ -16,7 +15,6 @@ import {
     selectSharedByMeCount,
     selectSharedWithMeCount,
 } from '@proton/pass/store/selectors';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 
@@ -33,28 +31,27 @@ export const SharedMenuContent: FC<Props> = ({ heading, onAction }) => {
     const secureLinksCount = useSelector(selectSecureLinksCount);
     const elements = [
         sharedWithMeCount > 0 && (
-            <FeatureFlag feature={PassFeature.PassItemSharingV1} key="shared-with-me">
-                <SharedMenuItem
-                    label={c('Label').t`Shared with me`}
-                    count={sharedWithMeCount}
-                    selected={scope === 'shared-with-me'}
-                    to="shared-with-me"
-                    icon="user-arrow-left"
-                    onAction={onAction}
-                />
-            </FeatureFlag>
+            <SharedMenuItem
+                key="shared-with-me"
+                label={c('Label').t`Shared with me`}
+                count={sharedWithMeCount}
+                selected={scope === 'shared-with-me'}
+                to="shared-with-me"
+                icon="user-arrow-left"
+                onAction={onAction}
+            />
         ),
+
         sharedByMeCount > 0 && (
-            <FeatureFlag feature={PassFeature.PassItemSharingV1} key="shared-by-me">
-                <SharedMenuItem
-                    label={c('Label').t`Shared by me`}
-                    count={sharedByMeCount}
-                    selected={scope === 'shared-by-me'}
-                    to="shared-by-me"
-                    icon="user-arrow-right"
-                    onAction={onAction}
-                />
-            </FeatureFlag>
+            <SharedMenuItem
+                key="shared-by-me"
+                label={c('Label').t`Shared by me`}
+                count={sharedByMeCount}
+                selected={scope === 'shared-by-me'}
+                to="shared-by-me"
+                icon="user-arrow-right"
+                onAction={onAction}
+            />
         ),
         secureLinksCount > 0 && (
             <SharedMenuItem
