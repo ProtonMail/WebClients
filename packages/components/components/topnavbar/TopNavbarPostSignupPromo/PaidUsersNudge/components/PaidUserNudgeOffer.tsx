@@ -134,9 +134,7 @@ export const PaidUserNudgeOffer = ({ currentPlan, offerTimestampFlag, openSpotli
 
     return (
         <SpotlightWithPromo
-            borderRadius={isLastOfferDay ? 'md' : 'xl'}
-            show={spotlightState}
-            onPromoClick={() => {
+            promoOnClick={() => {
                 if (isLastOfferDay) {
                     handleClick();
                     setSpotlightState(false);
@@ -152,13 +150,15 @@ export const PaidUserNudgeOffer = ({ currentPlan, offerTimestampFlag, openSpotli
                     <NudgeOfferPromoChild prices={prices} />
                 </span>
             }
-            onClose={() => {
+            spotlightBorderRadius={isLastOfferDay ? 'md' : 'xl'}
+            spotlightShow={spotlightState}
+            spotlightOnClose={() => {
                 setSpotlightState(false);
                 sendTelemetryEvent(TelemetryPaidUsersNudge.closeOffer);
             }}
             promoLoading={loading || loadingSubscription || isLoading}
-            innerClassName={isLastOfferDay ? undefined : 'p-0'}
-            content={
+            spotlightInnerClassName={isLastOfferDay ? undefined : 'p-0'}
+            spotlightContent={
                 isLastOfferDay ? (
                     <NudgeOfferSpotlight imgSrc={offerSpotlightImg[currentPlan]} prices={prices} />
                 ) : (
