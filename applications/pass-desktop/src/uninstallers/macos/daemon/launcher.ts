@@ -41,11 +41,9 @@ export const installDaemon = () => {
         const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;
         if (!isMac || isDev) return;
 
-        if (existsSync(plistPath)) {
-            return exec('launchctl list | grep com.protonpass.cleanup', (error, stdout) => {
-                if (error || !stdout.trim()) exec(`launchctl load "${plistPath}"`);
-            });
-        }
+        /** If the .plist file is found - then either the daemon is running
+         * or the user manually unloaded it using `unload -w` */
+        if (existsSync(plistPath)) return;
 
         const uninstallScriptPath = resolve(process.resourcesPath, 'cleanup.sh');
         const scriptPath = resolve(app.getPath('temp'), 'proton-pass-cleanup.sh');
