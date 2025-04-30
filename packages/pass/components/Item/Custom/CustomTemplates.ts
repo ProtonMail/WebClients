@@ -2,26 +2,28 @@ import { c } from 'ttag';
 
 import { type IconName } from '@proton/components/components/icon/Icon';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
+import type { CustomExtraFieldType, DeobfuscatedItemExtraField, ItemCustomType } from '@proton/pass/types';
 
-export type Template = {
+export type CustomTemplate = {
     label: string;
     icon: IconName;
-    type?: 'sshKey' | 'wifi';
-    fields: { label: string; type: 'text' | 'hidden' | 'timestamp' }[];
+    type: ItemCustomType;
+    fields: { label: string; type: CustomExtraFieldType }[];
 };
 
-export type TemplateGroup = {
+export type CustomTemplateGroup = {
     label: string;
     theme: SubTheme;
-    templates: Template[];
+    templates: CustomTemplate[];
 };
 
-export const groupedTemplates: TemplateGroup[] = [
+export const groupedTemplates: CustomTemplateGroup[] = [
     {
         label: c('Label').t`Technology`,
         theme: SubTheme.VIOLET,
         templates: [
             {
+                type: 'custom',
                 label: c('Label').t`API Credential`,
                 icon: 'code',
                 fields: [
@@ -32,6 +34,7 @@ export const groupedTemplates: TemplateGroup[] = [
                 ],
             },
             {
+                type: 'custom',
                 label: c('Label').t`Database`,
                 icon: 'storage',
                 fields: [
@@ -43,6 +46,7 @@ export const groupedTemplates: TemplateGroup[] = [
                 ],
             },
             {
+                type: 'custom',
                 label: c('Label').t`Server`,
                 icon: 'servers',
                 fields: [
@@ -54,6 +58,7 @@ export const groupedTemplates: TemplateGroup[] = [
                 ],
             },
             {
+                type: 'custom',
                 label: c('Label').t`Software license`,
                 icon: 'file-lines',
                 fields: [
@@ -91,6 +96,7 @@ export const groupedTemplates: TemplateGroup[] = [
         theme: SubTheme.ORANGE,
         templates: [
             {
+                type: 'custom',
                 label: c('Label').t`Bank Account`,
                 icon: 'bank',
                 fields: [
@@ -104,6 +110,7 @@ export const groupedTemplates: TemplateGroup[] = [
                 ],
             },
             {
+                type: 'custom',
                 label: c('Label').t`Crypto Wallet`,
                 icon: 'brand-bitcoin',
                 fields: [
@@ -121,6 +128,7 @@ export const groupedTemplates: TemplateGroup[] = [
         theme: SubTheme.TEAL,
         templates: [
             {
+                type: 'custom',
                 label: c('Label').t`Driver License`,
                 icon: 'card-identity',
                 fields: [
@@ -133,6 +141,7 @@ export const groupedTemplates: TemplateGroup[] = [
                 ],
             },
             {
+                type: 'custom',
                 label: c('Label').t`Medical Record`,
                 icon: 'heart',
                 fields: [
@@ -145,6 +154,7 @@ export const groupedTemplates: TemplateGroup[] = [
                 ],
             },
             {
+                type: 'custom',
                 label: c('Label').t`Membership`,
                 icon: 'user-circle',
                 fields: [
@@ -156,6 +166,7 @@ export const groupedTemplates: TemplateGroup[] = [
                 ],
             },
             {
+                type: 'custom',
                 label: c('Label').t`Passport`,
                 icon: 'card-identity',
                 fields: [
@@ -168,6 +179,7 @@ export const groupedTemplates: TemplateGroup[] = [
                 ],
             },
             {
+                type: 'custom',
                 label: c('Label').t`Reward Program`,
                 icon: 'bag-percent',
                 fields: [
@@ -179,6 +191,7 @@ export const groupedTemplates: TemplateGroup[] = [
                 ],
             },
             {
+                type: 'custom',
                 label: c('Label').t`Social Security`,
                 icon: 'users',
                 fields: [
@@ -190,3 +203,20 @@ export const groupedTemplates: TemplateGroup[] = [
         ],
     },
 ];
+
+export const customTemplateToFormFields = (template: CustomTemplate): DeobfuscatedItemExtraField[] =>
+    template.fields.map((field) => {
+        const { label: fieldName } = field;
+
+        const value = ((): DeobfuscatedItemExtraField => {
+            switch (field.type) {
+                case 'hidden':
+                case 'text':
+                    return { fieldName, type: field.type, data: { content: '' } };
+                case 'timestamp':
+                    return { fieldName, type: field.type, data: { timestamp: '' } };
+            }
+        })();
+
+        return value;
+    });

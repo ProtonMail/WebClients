@@ -5,37 +5,37 @@
  * types.
  */
 import type { FileMetadata } from './file-v1';
-import type { ExtraField, CustomSection, PlatformSpecific } from './item-v1';
+import type { CustomSection, ExtraField, PlatformSpecific } from './item-v1';
 import {
     Content,
     Metadata,
     Item as ProtobufItem,
     ItemAlias as ProtobufItemAlias,
     ItemCreditCard as ProtobufItemCreditCard,
+    ItemCustom as ProtobufItemCustom,
     ItemIdentity as ProtobufItemIdentity,
     ItemLogin as ProtobufItemLogin,
     ItemNote as ProtobufItemNote,
     ItemSSHKey as ProtobufItemSSHKey,
     ItemWifi as ProtobufItemWifi,
-    ItemCustom as ProtobufItemCustom,
 } from './item-v1';
 import { Vault } from './vault-v1';
 
 export {
     Content,
+    CustomSection,
     ExtraField,
     FileMetadata,
-    CustomSection,
     Metadata,
     ProtobufItem,
     ProtobufItemAlias,
     ProtobufItemCreditCard,
+    ProtobufItemCustom,
     ProtobufItemIdentity,
     ProtobufItemLogin,
     ProtobufItemNote,
     ProtobufItemSSHKey,
     ProtobufItemWifi,
-    ProtobufItemCustom,
     Vault,
 };
 
@@ -56,10 +56,12 @@ type OneOfKindMap<U extends { oneofKind: string }> = {
 type ItemContentUnion = OneOfKindKeys<Content>;
 export type ItemContentMap = OneOfKindMap<ItemContentUnion>;
 export type ItemType = keyof ItemContentMap;
+export type ItemCustomType = Extract<ItemType, 'wifi' | 'sshKey' | 'custom'>;
 
 type ExtraFieldContentUnion = OneOfKindKeys<ExtraField>;
 export type ExtraFieldContentMap = OneOfKindMap<ExtraFieldContentUnion>;
 export type ExtraFieldType = keyof ExtraFieldContentMap;
+export type CustomExtraFieldType = Extract<ExtraFieldType, 'text' | 'hidden' | 'timestamp'>;
 
 /**
  * Creates a generic "distributive object type" over all possible
