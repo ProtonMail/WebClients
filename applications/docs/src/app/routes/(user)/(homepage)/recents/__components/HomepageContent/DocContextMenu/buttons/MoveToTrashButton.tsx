@@ -8,14 +8,14 @@ import { useState } from 'react'
 
 export type MoveToTrashButtonProps = {
   currentDocument: RecentDocumentsItem
-  close: () => void
 }
 
-export function MoveToTrashButton({ currentDocument, close }: MoveToTrashButtonProps) {
+export function MoveToTrashButton({ currentDocument }: MoveToTrashButtonProps) {
   const documentActions = useDocumentActions()
-  const [isLoading, setLoading] = useState(false)
+  const [isLoading, setLoading] = useState(documentActions.currentlyTrashingId === currentDocument.uniqueId())
   return (
     <ContextMenuButton
+      disabled={isLoading}
       name={!isLoading ? c('Action').t`Move to trash` : c('Action').t`Trashing...`}
       icon={
         !isLoading ? (
@@ -31,7 +31,6 @@ export function MoveToTrashButton({ currentDocument, close }: MoveToTrashButtonP
         setLoading(true)
         await documentActions.trash(currentDocument)
         setLoading(false)
-        close()
       }}
       close={() => {}}
     />
