@@ -1,7 +1,20 @@
 import { platform } from 'os';
 
+import type { MaybeNull } from '@proton/pass/types';
+
 import { setupIpcHandler } from '../ipc';
 import type { BiometricsFactory, BiometricsPlatformHandler } from './types';
+
+declare module 'proton-pass-desktop/lib/ipc' {
+    interface IPCChannels {
+        'biometrics:canCheckPresence': IPCChannel<[], boolean>;
+        'biometrics:checkPresence': IPCChannel<[reason?: string], void>;
+        'biometrics:getDecryptionKey': IPCChannel<[challenge: string], MaybeNull<string[]>>;
+        'biometrics:getSecret': IPCChannel<[key: string, version: number], MaybeNull<string>>;
+        'biometrics:setSecret': IPCChannel<[key: string, secret: Uint8Array], void>;
+        'biometrics:deleteSecret': IPCChannel<[key: string], void>;
+    }
+}
 
 const factory: BiometricsFactory = (getWindow) => {
     const platformImplementation: BiometricsPlatformHandler = (() => {
