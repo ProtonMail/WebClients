@@ -112,8 +112,6 @@ export const BIOMETRICS_KEY = 'offlineKey_biometrics';
 export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassEnableDesktopAutoUpdate]: false,
     [PassFeature.PassWebInternalAlpha]: false,
-    [PassFeature.PassInAppMessages]: false,
-    [PassFeature.PassItemSharingV1]: false,
     [PassFeature.PassWebPrfUnlock]: false,
     [PassFeature.PassFileAttachments]: false,
     [PassFeature.PassRenameAdminToManager]: false,

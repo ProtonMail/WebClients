@@ -19,14 +19,12 @@ import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isItemShared, isMonitored, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
 import { selectAllVaults, selectPassPlan, selectRequestInFlight } from '@proton/pass/store/selectors';
 import { BitField, type ItemType, ShareRole, SpotlightMessage } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
@@ -98,16 +96,13 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const unpinInFlight = useSelector(selectRequestInFlight(itemUnpinRequest(shareId, itemId)));
     const canTogglePinned = !(pinInFlight || unpinInFlight);
 
-    const itemSharingEnabled = useFeatureFlag(PassFeature.PassItemSharingV1);
-    const itemShareLinkSharingEnabled = useFeatureFlag(PassFeature.PassSecureLinkCryptoChangeV1);
-
     const accessCount = targetMembers + (revision.shareCount ?? 0);
 
     const canManage = isShareManageable(share);
     const canShare = canManage && type !== 'alias';
-    const canLinkShare = (isVault || itemShareLinkSharingEnabled) && canShare;
-    const canItemShare = itemSharingEnabled && canShare && !orgItemSharingDisabled;
-    const canManageAccess = itemSharingEnabled && shared && !readOnly;
+    const canLinkShare = canShare;
+    const canItemShare = canShare && !orgItemSharingDisabled;
+    const canManageAccess = shared && !readOnly;
     const canLeave = !isVault && !owner;
     const canMonitor = !EXTENSION_BUILD && !trashed && data.type === 'login' && !readOnly;
 
@@ -237,7 +232,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     menuClassName="flex flex-column"
                                     dropdownHeader={c('Label').t`Share`}
                                     disabled={!online || optimistic || disabledSharing}
-                                    badge={itemSharingEnabled && accessCount > 1 ? accessCount : undefined}
+                                    badge={accessCount > 1 ? accessCount : undefined}
                                     signaled={isOwnerOrManager && signalItemSharing}
                                     dropdownSize={{
                                         height: DropdownSizeUnit.Dynamic,
