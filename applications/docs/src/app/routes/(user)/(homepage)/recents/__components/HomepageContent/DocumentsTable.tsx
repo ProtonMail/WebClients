@@ -26,6 +26,8 @@ import { APPS } from '@proton/shared/lib/constants'
 import type { RecentsSort } from '../../__utils/homepage-view'
 import { useHomepageView, type ItemsSection, type ItemsSectionId } from '../../__utils/homepage-view'
 import { ContentSheet } from './shared'
+import { useApplication } from '~/utils/application-context'
+import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 
 // table
 // -----
@@ -42,10 +44,10 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
     <>
       <ContentSheet isBottom className="shrink-0 grow pb-4">
         <Table.Table>
-          <div className="border-weak hidden h-11 items-center justify-between border-b pe-2 ps-5 text-[1rem] font-semibold small:!flex">
+          <Table.Title>
             {isRecents ? c('Info').t`Recents` : c('Info').t`Trash`}
             {isRecents && <SortSelect />}
-          </div>
+          </Table.Title>
           {itemsSections.map(({ id, items }, sectionIndex) => (
             <Fragment key={id}>
               <Head variant={variant} sectionId={id} isSecondary={sectionIndex > 0} />
@@ -84,7 +86,7 @@ function Head({ isSecondary = false, sectionId, variant }: HeadProps) {
   const secondHeaderShowArrow = variant === 'recents-viewed' || variant === 'recents-modified'
 
   return (
-    <Table.Head>
+    <Table.Head secondarySticky>
       <Table.Header>
         <div className="flex items-center justify-between">
           <span className="flex flex-nowrap items-center gap-[.375rem]">
@@ -130,6 +132,7 @@ const SORT_SELECT_OPTIONS = [
 ] satisfies { value: RecentsSort; label: () => string }[]
 
 function SortSelect() {
+  const application = useApplication()
   const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
   const { state, setRecentsSort } = useHomepageView()
   const sortValue = state.view === 'recents' ? state.sort : undefined
@@ -157,6 +160,9 @@ function SortSelect() {
               onClick={() => {
                 setRecentsSort(value)
                 close()
+                application.metrics.reportHomepageTelemetry(
+                  TelemetryDocsHomepageEvents[value === 'name' ? 'sorting_changed_to_name' : 'sorting_changed_to_time'],
+                )
               }}
               className="flex items-center gap-2"
             >
@@ -370,7 +376,7 @@ function Row({ document, variant }: RowProps) {
       </Table.DataCell>
 
       <Table.DataCell target="medium">
-        <div className="-ms-2 flex flex-nowrap gap-2">
+        <div className="-ms-2 flex w-full flex-nowrap justify-between">
           {locationContent}
           {isRecents || isSearch ? (
             <Tooltip title={c('Action').t`Actions`}>
