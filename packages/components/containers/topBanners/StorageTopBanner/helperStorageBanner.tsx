@@ -32,7 +32,7 @@ const getGenericStorageMessage = (percentage: number, cta: ReactNode) => {
     return c('storage_split: info').jt`Your storage is ${percentage}% full. ${cta}.`;
 };
 
-export const getStorageFull = ({
+export const generateStorageBannerText = ({
     percentage,
     mode,
     app,
