@@ -10,6 +10,8 @@ import { MoveToTrashButton } from './buttons/MoveToTrashButton'
 import { MoveButton } from './buttons/MoveButton'
 import { RenameButton } from './buttons/RenameButton'
 import { IS_MOVE_ENABLED, IS_RENAME_ENABLED } from '../../../__utils/features'
+import { useDocumentActions } from '../../../__utils/document-actions'
+import { useEvent } from '~/utils/misc'
 
 export type DocContextMenuProps = Omit<ContextMenuProps, 'children'> & {
   currentDocument: RecentDocumentsItem | undefined
@@ -32,6 +34,16 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
       open()
     }
   }, [position?.left, position?.top])
+
+  const documentActions = useDocumentActions()
+  const onTrashed = useEvent((id: string) => {
+    if (currentDocument?.uniqueId() === id) {
+      close()
+    }
+  })
+  useEffect(() => {
+    documentActions.onTrashed(onTrashed)
+  }, [documentActions, onTrashed])
 
   if (!currentDocument) {
     return null
@@ -61,7 +73,7 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
         {!currentDocument.isSharedWithMe ? (
           <>
             {separator}
-            <MoveToTrashButton currentDocument={currentDocument} close={close} />
+            <MoveToTrashButton currentDocument={currentDocument} />
           </>
         ) : null}
       </ContextMenu>
