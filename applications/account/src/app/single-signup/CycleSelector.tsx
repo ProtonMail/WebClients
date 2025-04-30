@@ -16,32 +16,11 @@ import { getBillingCycleText, getOffText, getPassText } from './helper';
 
 import './CycleSelector.scss';
 
-export const getBilledAtText = (price: string): string | null => {
-    return c('Info').t`Billed at ${price}`;
-};
-
 export const getBilledAtPerMonthText = (price: string, cycle: CYCLE): string | null => {
     if (cycle === CYCLE.MONTHLY) {
         return c('Info').t`per month`;
     }
     return c('Info').t`per month, billed at ${price}`;
-};
-
-export const getBilledText = (cycle: CYCLE): string | null => {
-    switch (cycle) {
-        case CYCLE.MONTHLY:
-            return c('Info').t`per month`;
-        case CYCLE.YEARLY:
-            return c('Info').t`per month, billed every 12 months`;
-        case CYCLE.TWO_YEARS:
-            return c('Info').t`per month, billed every 24 months`;
-        case CYCLE.FIFTEEN:
-            return c('Info').t`per month`;
-        case CYCLE.THIRTY:
-            return c('Info').t`per month`;
-        default:
-            return null;
-    }
 };
 
 const getSaveLabel = (percentage: string) => c('Info').t`Save ${percentage}`;

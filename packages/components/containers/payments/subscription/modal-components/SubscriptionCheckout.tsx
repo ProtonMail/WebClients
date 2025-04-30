@@ -209,7 +209,7 @@ const SubscriptionCheckout = ({
                 </span>
 
                 {isPaidPlanSelected && !isSpecialRenewPlan(planIDs) && !lifetimePlan && (
-                    <BilledCycleText cycle={cycle} />
+                    <BilledCycleText cycle={cycle} planIDs={planIDs} />
                 )}
             </div>
             {(() => {

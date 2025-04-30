@@ -2,10 +2,16 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { CYCLE, type Cycle } from '@proton/payments';
+import { CYCLE, type Cycle, type PlanIDs, getRenewCycle } from '@proton/payments';
 
-export const BilledCycleText = ({ cycle }: { cycle: Cycle }) => {
-    let text: string = useMemo(() => {
+export const BilledCycleText = ({ cycle, planIDs }: { cycle: Cycle; planIDs: PlanIDs }) => {
+    const renewCycle = getRenewCycle(planIDs, cycle);
+
+    const text = useMemo(() => {
+        if (cycle !== renewCycle) {
+            return null;
+        }
+
         switch (cycle) {
             case CYCLE.TWO_YEARS:
                 return c('Subscription').t`Billed every 2 years`;
@@ -13,18 +19,16 @@ export const BilledCycleText = ({ cycle }: { cycle: Cycle }) => {
                 return c('Subscription').t`Billed yearly`;
             case CYCLE.MONTHLY:
                 return c('Subscription').t`Billed monthly`;
+
+            // It's safer to display null because the irregular cycles are usually renewed at regular cycles.
             case CYCLE.SIX:
-                return c('Subscription').t`Billed every 6 months`;
             case CYCLE.THREE:
-                return c('Subscription').t`Billed for 3 months`;
             case CYCLE.FIFTEEN:
-                return c('Subscription').t`Billed for 15 months`;
             case CYCLE.EIGHTEEN:
-                return c('Subscription').t`Billed for 18 months`;
             case CYCLE.THIRTY:
-                return c('Subscription').t`Billed for 30 months`;
+                return null;
         }
-    }, [cycle]);
+    }, [cycle, renewCycle]);
 
     return (
         <span className="color-weak text-sm" data-testid="billed-cycle-text">

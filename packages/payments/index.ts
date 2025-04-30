@@ -189,6 +189,7 @@ export type {
     SubscriptionPlan,
 } from './core/plan/interface';
 export { extractIBAN, formatPaymentMethod, formatPaymentMethods } from './core/sepa';
+export { getRenewCycle } from './core/renewals';
 export { BillingPlatform, External, Renew } from './core/subscription/constants';
 export {
     getScribeAddonNameByPlan,
