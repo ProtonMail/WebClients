@@ -119,7 +119,7 @@ function EmptyState({ variant }: EmptyStateProps) {
   const { updateRecentDocuments } = useHomepageView()
 
   return (
-    <ContentSheet isBottom className="flex grow items-center justify-center">
+    <ContentSheet isBottom className="flex shrink-0 grow items-center justify-center">
       <div className="flex flex-col items-center gap-6 p-8">
         <img
           className={clsx(variant === 'recents' ? 'w-[38.3125rem] scale-110 xsmall:scale-100' : 'w-[8.125rem]')}
