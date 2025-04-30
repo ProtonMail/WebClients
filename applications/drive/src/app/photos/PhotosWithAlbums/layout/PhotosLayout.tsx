@@ -183,7 +183,8 @@ export const PhotosLayout = () => {
         if (currentPageType === AlbumsPageTypes.ALBUMS) {
             return true;
         }
-        return isUploadDisabled || !album?.permissions.isEditor;
+        // Albums Gallery
+        return isUploadDisabled || Boolean(album && album.permissions.isEditor === false);
     }, [isUploadDisabled, currentPageType, album]);
 
     const photoCount =
@@ -629,7 +630,7 @@ export const PhotosLayout = () => {
 
     return (
         <UploadDragDrop
-            disabled={isUploadDisabled}
+            disabled={uploadDisabled}
             isForPhotos={true}
             shareId={albumShareId || shareId}
             parentLinkId={uploadLinkId}
