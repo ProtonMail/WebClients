@@ -1,24 +1,33 @@
-import { ipcMain } from 'electron';
+import { type IpcMainInvokeEvent, ipcMain } from 'electron';
 
-// Wraps `ipcMain.handle` to avoid handler errors from bubbling up
-// to the handle() call, which will in turn serialize them into a string
-// prepended with "Error occurred in handler for HANDLER_NAME: Error message"
-//
-// Instead, to have a bit more control over these, we'll return a
-// { error: { message: string } } object if an error gets thrown by the handler,
-// or a { result: any } object if it complets successfully.
-export const setupIpcHandler = (method: string, handler: (...args: any[]) => Promise<any> | any) =>
-    ipcMain.handle(method, async (...args) => {
+import type { MaybePromise, Result } from '@proton/pass/types';
+
+export type IPCChannel<P extends any[], R extends any> = { args: P; result: R };
+export type IPCChannelResult<T> = Result<{ result: T }>;
+export interface IPCChannels {}
+
+/** Wraps `ipcMain.handle` to avoid handler errors from bubbling up
+ * to the handle() call, which will in turn serialize them into a string
+ * prepended with "Error occurred in handler for HANDLER_NAME: Error message".
+ * Instead, to have a bit more control over these, we'll return a `Result`
+ * type to properly report any errors thrown by the handler. */
+export const setupIpcHandler = <
+    T extends keyof IPCChannels,
+    P extends IPCChannels[T]['args'],
+    R extends IPCChannels[T]['result'],
+>(
+    channel: T,
+    handler: (event: IpcMainInvokeEvent, ...args: P) => MaybePromise<R>
+) =>
+    ipcMain.handle(channel, async (event, ...args: P): Promise<IPCChannelResult<R>> => {
         try {
-            const result = await handler(...args);
-            return { result };
+            const result = await handler(event, ...args);
+            return { ok: true, result };
         } catch (err: any) {
-            let message = 'Unknown error';
-            if (typeof err === 'string') message = err;
-            if (typeof err?.message === 'string') message = err.message;
+            let error = 'Unknown error';
+            if (typeof err === 'string') error = err;
+            if (typeof err?.message === 'string') error = err.message;
 
-            return {
-                error: { message },
-            };
+            return { ok: false, error };
         }
     });
