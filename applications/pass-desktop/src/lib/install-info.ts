@@ -1,7 +1,15 @@
-import { ipcMain } from 'electron';
+import type { MaybeNull } from '@proton/pass/types';
 
 import { store } from '../store';
 import logger from '../utils/logger';
+import { setupIpcHandler } from './ipc';
+
+declare module 'proton-pass-desktop/lib/ipc' {
+    interface IPCChannels {
+        'installInfo:getInfo': IPCChannel<[], MaybeNull<string>>;
+        'installInfo:setInstallSourceReported': IPCChannel<[], void>;
+    }
+}
 
 export type StoreInstallProperties = {
     source: string | null;
@@ -41,6 +49,6 @@ export function setInstallSourceReported() {
 
 export function setupIpcHandlers() {
     const installSource = getInstallSource();
-    ipcMain.handle('installInfo:getInfo', () => Promise.resolve({ installSource }));
-    ipcMain.handle('installInfo:setInstallSourceReported', () => setInstallSourceReported());
+    setupIpcHandler('installInfo:getInfo', () => installSource);
+    setupIpcHandler('installInfo:setInstallSourceReported', () => setInstallSourceReported());
 }

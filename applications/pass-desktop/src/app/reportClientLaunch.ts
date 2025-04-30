@@ -12,7 +12,7 @@ export default async () => {
          */
         setMetricsEnabled(true);
 
-        const { installSource = null } = (await window.ctxBridge?.getInstallInfo()) ?? {};
+        const installSource = (await window.ctxBridge?.getInstallInfo()) ?? null;
         if (installSource !== null) await reportClientLaunch(installSource, 'pass', api);
         void window.ctxBridge?.setInstallSourceReported();
     } catch (err) {
