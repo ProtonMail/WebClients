@@ -1,6 +1,7 @@
 import { type ReactNode, useContext, useEffect, useState } from 'react';
 
 import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
+import useFlag from '@proton/unleash/useFlag';
 
 import { PhotosContainer } from '../../containers/PhotosContainer';
 import { PhotosWithAlbumsContext, PhotosWithAlbumsProvider } from '../../photos/PhotosStore/PhotosWithAlbumsProvider';
@@ -44,24 +45,63 @@ export const PhotosOrPhotosWithAlbumsContainer = () => {
     throw new Error('Trying to use uninitialized PhotosProvider or PhotosWithAlbumProvider');
 };
 
+enum CustomerPhotoState {
+    HASOLDPHOTOSHARE,
+    HASNEWPHOTOVOLUME,
+    HASNOTHING,
+    UNKNOWN,
+}
+
 export const PhotosOrPhotosWithAlbumsProvider = ({ children }: { children: ReactNode }) => {
     const { photosEnabled, photosWithAlbumsEnabled } = useUserSettings();
-    const [showPhotosWithAlbums, setShowPhotosWithAlbums] = useState<undefined | boolean>();
+    // Feature Flag only for customers that DO NOT need migration
+    const photosWithAlbumsForNewVolume = useFlag('DriveAlbumsNewVolumes');
+    const [customerPhotoState, setCustomerPhotoState] = useState<CustomerPhotoState>(CustomerPhotoState.UNKNOWN);
     const { getDefaultPhotosShare } = useDefaultShare();
 
     useEffect(() => {
         if (photosEnabled && !photosWithAlbumsEnabled) {
             void getDefaultPhotosShare().then((photosShare) => {
-                setShowPhotosWithAlbums(photosShare?.volumeType === VolumeType.Photos);
+                if (photosShare?.volumeType === VolumeType.Photos) {
+                    setCustomerPhotoState(CustomerPhotoState.HASNEWPHOTOVOLUME);
+                } else if (photosShare?.volumeType === VolumeType.Regular) {
+                    setCustomerPhotoState(CustomerPhotoState.HASOLDPHOTOSHARE);
+                } else if (photosShare === undefined) {
+                    // Customer has neither new or old photo share
+                    setCustomerPhotoState(CustomerPhotoState.HASNOTHING);
+                }
             });
         }
     }, [photosEnabled, photosWithAlbumsEnabled]);
 
-    if (photosEnabled && (photosWithAlbumsEnabled || showPhotosWithAlbums === true)) {
+    // Photos global FF is enabled
+    if (
+        photosEnabled &&
+        // AND
+        // Either
+        // (1) customer have the DriveAlbums FF enabled
+        // OR
+        // (2) customer already have a new photo volume
+        // OR
+        // (3) customer has nothing and have the DriveAlbumsNewVolumes enabled
+        (photosWithAlbumsEnabled ||
+            customerPhotoState === CustomerPhotoState.HASNEWPHOTOVOLUME ||
+            (photosWithAlbumsForNewVolume && customerPhotoState === CustomerPhotoState.HASNOTHING))
+    ) {
         return <PhotosWithAlbumsProvider>{children}</PhotosWithAlbumsProvider>;
     }
-    if (photosEnabled && !photosWithAlbumsEnabled && showPhotosWithAlbums === undefined) {
-        return children;
+
+    // Photos global FF is enabled
+    // Customer is not in DriveAlbums
+    if (
+        photosEnabled &&
+        (customerPhotoState === CustomerPhotoState.HASOLDPHOTOSHARE ||
+            !photosWithAlbumsEnabled ||
+            !photosWithAlbumsForNewVolume)
+    ) {
+        return <PhotosProvider>{children}</PhotosProvider>;
     }
-    return <PhotosProvider>{children}</PhotosProvider>;
+
+    // We don't know yet the state of the customer, render childs...
+    return children;
 };
