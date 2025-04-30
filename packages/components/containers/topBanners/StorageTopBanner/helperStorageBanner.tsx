@@ -14,16 +14,16 @@ import {
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getAppStorage } from '@proton/shared/lib/user/storage';
 
-const getStr = (percentage: number, storage: ReactNode, cta: ReactNode) => {
+const getStorageMessageWithProduct = (percentage: number, productString: ReactNode, cta: ReactNode) => {
     if (percentage >= 100) {
         // Translator: Your Drive storage is full. To upload or sync files, free up space or upgrade for more storage.
-        return c('storage_split: info').jt`Your ${storage} is full. ${cta}.`;
+        return c('storage_split: info').jt`Your ${productString} is full. ${cta}.`;
     }
     // Translator: Your Drive storage is 99% full. To upload or sync files, free up space or upgrade for more storage.
-    return c('storage_split: info').jt`Your ${storage} is ${percentage}% full. ${cta}.`;
+    return c('storage_split: info').jt`Your ${productString} is ${percentage}% full. ${cta}.`;
 };
 
-const getStrFull = (percentage: number, storage: ReactNode, cta: ReactNode) => {
+const getGenericStorageMessage = (percentage: number, cta: ReactNode) => {
     if (percentage >= 100) {
         // Translator: Your storage is full. To upload or sync files, free up space or upgrade for more storage.
         return c('storage_split: info').jt`Your storage is full. ${cta}.`;
@@ -47,16 +47,16 @@ export const getStorageFull = ({
     const mailCta = c('storage_split: info').jt`To continue using ${BRAND_NAME} products, free up space or ${upgrade}`;
 
     if (mode === 'drive') {
-        return getStr(percentage, getAppStorage(DRIVE_SHORT_APP_NAME), driveCta);
+        return getStorageMessageWithProduct(percentage, getAppStorage(DRIVE_SHORT_APP_NAME), driveCta);
     }
     if (mode === 'mail') {
-        return getStr(percentage, getAppStorage(MAIL_SHORT_APP_NAME), mailCta);
+        return getStorageMessageWithProduct(percentage, getAppStorage(MAIL_SHORT_APP_NAME), mailCta);
     }
     if (mode === 'both') {
         if (app === APPS.PROTONDRIVE) {
-            return getStrFull(percentage, getAppStorage(DRIVE_SHORT_APP_NAME), driveCta);
+            return getGenericStorageMessage(percentage, driveCta);
         }
-        return getStrFull(percentage, getAppStorage(DRIVE_SHORT_APP_NAME), mailCta);
+        return getGenericStorageMessage(percentage, mailCta);
     }
 };
 
