@@ -25,6 +25,7 @@ import { createPromise, wait } from '../helpers/promise';
 import { setUID } from '../helpers/sentry';
 import { getItem, removeItem, setItem } from '../helpers/sessionStorage';
 import type { Api } from '../interfaces';
+import { telemetry } from '../telemetry';
 
 const setupComplete = Symbol('setup complete');
 
@@ -61,6 +62,7 @@ export const createUnauthenticatedApi = (api: Api) => {
 
         setUID(UID);
         metrics.setAuthHeaders(UID);
+        telemetry.setAuthHeaders(UID || '');
 
         context.UID = UID;
         context.auth.set = false;

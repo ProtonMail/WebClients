@@ -98,6 +98,7 @@ import {
     handleSetupUser,
     usernameAvailabilityError,
 } from './signupActions';
+import { sendSignupAccountCreationTelemetry, sendSignupLoadTelemetry } from './signupTelemetry';
 
 const {
     AccountCreationUsername,
@@ -345,6 +346,15 @@ const SignupContainer = ({
             void measure({
                 event: TelemetryAccountSignupEvents.pageLoad,
                 dimensions: {},
+            });
+
+            const plan = getPlanFromPlanIDs(plansMap, subscriptionData.planIDs);
+            sendSignupLoadTelemetry({
+                plan: plan?.Name || PLANS.FREE,
+                flowId: 'legacy-signup',
+                productIntent: toApp,
+                currency,
+                cycle,
             });
         };
 
@@ -933,12 +943,12 @@ const SignupContainer = ({
                              */
                             metrics.stopBatchingProcess();
 
-                            const getTelemetryParams = () => {
-                                const subscriptionData = cache.subscriptionData;
+                            const subscriptionData = cache.subscriptionData;
 
+                            const getTelemetryParams = () => {
+                                const plan = getPlanNameFromIDs(subscriptionData.planIDs);
                                 const method: PaymentProcessorType | 'n/a' =
                                     subscriptionData.payment?.paymentProcessorType ?? 'n/a';
-                                const plan = getPlanNameFromIDs(subscriptionData.planIDs);
 
                                 return {
                                     method,
@@ -964,7 +974,17 @@ const SignupContainer = ({
                                 },
                             });
 
-                            measure(getSignupTelemetryData(model.plansMap, cache));
+                            void measure(getSignupTelemetryData(model.plansMap, cache));
+
+                            sendSignupAccountCreationTelemetry({
+                                plan: getPlanNameFromIDs(subscriptionData.planIDs) || PLANS.FREE,
+                                flowId: 'legacy-signup',
+                                productIntent: toApp,
+                                currency: subscriptionData.currency,
+                                cycle: subscriptionData.cycle,
+                                signupType: signupType.type,
+                                amount: subscriptionData.checkResult.AmountDue,
+                            });
 
                             {
                                 const maybeSetupOrg = async () => {
