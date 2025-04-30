@@ -1,5 +1,3 @@
-import { type FC } from 'react';
-
 import { c } from 'ttag';
 
 import { ExtraFieldsControl } from '@proton/pass/components/Form/Field/Control/ExtraFieldsControl';
@@ -11,6 +9,9 @@ import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import type { ItemRevision } from '@proton/pass/types';
 import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
+import { usePartialDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
+import { type ItemCustomType } from '@proton/pass/types';
+import { type FC } from 'react';
 
 const WifiContent: FC<{ revision: ItemRevision<'wifi'> }> = ({ revision }) => {
     const { content } = useDeobfuscatedItem(revision.data);
@@ -57,13 +58,10 @@ const SSHKeyContent: FC<{ revision: ItemRevision<'sshKey'> }> = ({ revision }) =
     );
 };
 
-export const CustomContent: FC<ItemContentProps<'custom'|'wifi'|'sshKey'>> = ({ revision }) => {
-    const { shareId, itemId, data: item } = revision;
-    const {
-        extraFields,
-        content,
-        metadata: { note },
-    } = useDeobfuscatedItem(item);
+export const CustomContent = <T extends ItemCustomType>({ revision }: ItemContentProps<T>) => {
+    const { shareId, itemId, data: item } = revision as ItemRevision<ItemCustomType>;
+    const { extraFields, content, metadata } = usePartialDeobfuscatedItem(item);
+    const { note } = metadata;
 
     return (
         <>

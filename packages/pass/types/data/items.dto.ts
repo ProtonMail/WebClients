@@ -25,6 +25,11 @@ export type ItemCreateIntentDTO = {
     alias: AliasCreationDTO;
     login: LoginWithAliasCreationDTO;
     note: never;
+    creditCard: never;
+    identity: never;
+    sshKey: never;
+    wifi: never;
+    custom: never;
 };
 
 export type ItemEditIntentDTO = {
@@ -50,8 +55,9 @@ export type ItemImportIntentDTO = {
     note: never;
 };
 
-export type ItemCreateIntent<T extends ItemType = ItemType> = OptimisticItem &
-    Item<T, ItemCreateIntentDTO> & { files: FileAttachmentsDTO };
+export type ItemCreateIntent<T extends ItemType = ItemType> = Item<T, ItemCreateIntentDTO> & {
+    files: FileAttachmentsDTO;
+} & OptimisticItem;
 
 export type ItemCreateSuccess = OptimisticItem & { item: ItemRevision; alias?: ItemRevision };
 

@@ -1,5 +1,3 @@
-import { type FC } from 'react';
-
 import { c } from 'ttag';
 
 import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
@@ -7,16 +5,17 @@ import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPane
 import { SecureLinkCardList } from '@proton/pass/components/SecureLink/SecureLinkCardList';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { getOccurrenceString } from '@proton/pass/lib/i18n/helpers';
+import type { ItemCustomType, ItemType } from '@proton/pass/types';
 
 import { CustomContent } from './Custom.content';
 
-export const CustomView: FC<ItemViewProps<'custom'>> = (itemViewProps) => {
+export const CustomView = <T extends ItemCustomType>(itemViewProps: ItemViewProps<T>) => {
     const { revision } = itemViewProps;
     const { revision: revisionNumber, shareId, itemId } = revision;
     const modifiedCount = revisionNumber - 1;
 
     return (
-        <ItemViewPanel type="identity" {...itemViewProps}>
+        <ItemViewPanel type={revision.data.type} {...(itemViewProps as ItemViewProps<ItemType>)}>
             <SecureLinkCardList shareId={shareId} itemId={itemId} />
             <CustomContent revision={revision} />
             <MoreInfoDropdown
