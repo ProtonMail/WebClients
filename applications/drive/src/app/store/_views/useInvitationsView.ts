@@ -4,6 +4,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
+import useFlag from '@proton/unleash/useFlag';
 
 import type { SharedWithMeItem } from '../../components/sections/SharedWithMe/SharedWithMe';
 import { sendErrorReport } from '../../utils/errorHandling';
@@ -24,7 +25,7 @@ export const useInvitationsView = () => {
         cachedInvitations.filter((invitation) => invitation.link.type !== LinkType.ALBUM || showPhotosWithAlbums)
     );
     const { getDefaultPhotosShare } = useDefaultShare();
-
+    const photosWithAlbumsForNewVolume = useFlag('DriveAlbumsNewVolumes');
     const { photosWithAlbumsEnabled } = useUserSettings();
 
     const invitationsBrowserItems: SharedWithMeItem[] = useMemo(
@@ -73,7 +74,10 @@ export const useInvitationsView = () => {
             setShowPhotosWithAlbums(true);
         } else {
             void getDefaultPhotosShare(abortController.signal).then((photosShare) =>
-                setShowPhotosWithAlbums(photosShare?.volumeType === VolumeType.Photos)
+                setShowPhotosWithAlbums(
+                    photosShare?.volumeType === VolumeType.Photos ||
+                        (photosWithAlbumsForNewVolume && photosShare === undefined)
+                )
             );
         }
 
