@@ -2,32 +2,50 @@ import { type ReactNode, useRef } from 'react';
 
 import { ButtonLike } from '@proton/atoms';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
-import Spotlight, { type SpotlightProps } from '@proton/components/components/spotlight/Spotlight';
+import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import { type IconName } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
-interface Props extends SpotlightProps {
-    onPromoClick: () => void;
+interface Props {
+    promoOnClick: () => void;
     promoLoading?: boolean;
     promoIconName?: IconName;
     promoChildren: ReactNode;
     promoColor: 'full-gradient' | 'norm';
-    borderRadius?: 'xl' | 'md';
+    spotlightBorderRadius?: 'xl' | 'md';
+    spotlightShow: boolean;
+    spotlightContent: ReactNode;
+    spotlightInnerClassName?: string;
+    spotlightOnClose?: () => void;
 }
 
+/**
+ * Components that will show a promotional button wrapped by a spotlight.
+ * This is useful for offers that appears at the top right corner of the app
+ */
 export const SpotlightWithPromo = ({
-    onPromoClick,
+    promoOnClick,
     promoLoading = false,
     promoIconName,
     promoChildren,
     promoColor,
-    borderRadius = 'md',
-    ...rest
+    spotlightBorderRadius = 'md',
+    spotlightShow,
+    spotlightContent,
+    spotlightInnerClassName,
+    spotlightOnClose,
 }: Props) => {
     const buttonRef = useRef(null);
 
     return (
-        <Spotlight anchorRef={buttonRef} {...rest} show={!promoLoading && rest.show} borderRadius={borderRadius}>
+        <Spotlight
+            anchorRef={buttonRef}
+            content={spotlightContent}
+            show={!promoLoading && spotlightShow}
+            borderRadius={spotlightBorderRadius}
+            innerClassName={spotlightInnerClassName}
+            onClose={spotlightOnClose}
+        >
             <div ref={buttonRef}>
                 <PromotionButton
                     as={ButtonLike}
@@ -35,7 +53,7 @@ export const SpotlightWithPromo = ({
                         'flex items-center gap-2',
                         promoColor === 'norm' && 'color-primary hover:color-primary'
                     )}
-                    onClick={onPromoClick}
+                    onClick={promoOnClick}
                     iconName={promoIconName}
                     loading={promoLoading}
                     disabled={promoLoading}
