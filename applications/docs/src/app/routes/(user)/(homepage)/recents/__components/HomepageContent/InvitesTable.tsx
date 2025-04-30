@@ -55,7 +55,7 @@ export function InvitesTable(props: InvitesTableProps) {
       <Table.Table data-testid="invites-table">
         <Table.Head className="border-weak border-b">
           <Table.Header isTitle data-testid="invite-column-name">
-            <div className="flex items-center justify-between">
+            <div className="flex w-full items-center justify-between">
               <span className="flex flex-nowrap items-center gap-[.375rem]">
                 <span className="shrink-0">{c('Info').t`Pending invitations`}</span>
                 <div className="flex h-5 !min-w-5 shrink-0 items-center justify-center rounded-[.375rem] bg-[#0284C7] px-1">
@@ -68,7 +68,7 @@ export function InvitesTable(props: InvitesTableProps) {
           <Table.Header target="large" data-testid="invite-column-date">{c('Info').t`Shared on`}</Table.Header>
           <Table.Header target="medium" data-testid="invite-column-shared-by">{c('Info').t`Shared by`}</Table.Header>
           <Table.Header target="medium" data-testid="invite-column-actions">
-            <div className="flex flex-nowrap items-center justify-between">
+            <div className="flex w-full flex-nowrap items-center justify-between">
               <span>{c('Info').t`Accept/decline`}</span>
               {collapseButton}
             </div>
