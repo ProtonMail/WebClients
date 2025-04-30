@@ -1,9 +1,11 @@
 @import '~@proton/styles/scss/lib';
 
 .tabs {
-	& > &-nav &-link {
+	&.withTransition > &-nav &-link {
 		transition: 0.15s easing(ease-out-quint);
+	}
 
+	& > &-nav &-link {
 		&[disabled] {
 			opacity: 0.4;
 			cursor: default;
@@ -43,15 +45,18 @@
 		}
 	}
 
+	&--underline.withTransition > &-nav &-indicator {
+		transition: transform 0.15s easing(ease-out-quad);
+	}
+
 	&--underline > &-nav &-indicator {
 		position: absolute;
 		inset-block-end: -1px;
 		inset-inline: 0;
 		block-size: 0;
 		transform-origin: left center;
-		transform: translateX(var(--translate)) scaleX(var(--scale));
+		transform: translateX(var(--tabs_translate)) scaleX(var(--tabs_scale));
 		border-block-end: 2px solid var(--interaction-norm);
-		transition: transform 0.15s easing(ease-out-quad);
 
 		@at-root {
 			[dir='rtl'] & {
@@ -106,18 +111,32 @@
 		}
 	}
 
+	&--modern.withTransition > &-nav &-indicator {
+		transition-property: transform, inline-size;
+		transition-duration: 0.3s;
+		transition-timing-function: easing(ease-out-quad);
+	}
+
 	&--modern > &-nav &-indicator {
 		position: absolute;
+		opacity: 1;
 		inset-block: var(--space-1);
 		inset-inline-start: 0;
 		transform-origin: left center;
-		transform: translateX(var(--translate));
-		inline-size: var(--width);
-		transition: transform 0.3s easing(ease-out-quad);
+		transform: translateX(var(--tabs_translate));
+		inline-size: var(--tabs_width, 0 /* calc(100% - 2 * var(--space-1)) */);
 		border-radius: var(--border-radius-md);
 		background-color: var(--background-elevated);
 		box-shadow: var(--shadow-norm);
 		z-index: 2;
+
+		&.hides {
+			transition: opacity 0.1s linear 0.1s;
+
+			&.hide {
+				opacity: 0;
+			}
+		}
 
 		@at-root {
 			[dir='rtl'] & {
