@@ -403,10 +403,10 @@
       "Move to another vault": [
         "Mou a una altra caixa forta"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Mou a la paperera"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Mou a la paperera"
       ],
       "Multiple select": [
@@ -825,9 +825,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "No s'ha pogut analitzar el fitxer de ${ provider }. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[Error] no s'ha pogut analitzar un element."
-      ],
       "A domain ownership must be verified first.": [
         "Primer s'ha de verificar la propietat d'un domini."
       ],
@@ -857,9 +854,6 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "S'ha produït un error amb l'autenticació. Confirmeu la segona contrasenya per continuar amb l'exportació."
-      ],
-      "Biometric authentication failed": [
-        "L'autenticació biomètrica no ha funcionat."
       ],
       "Cannot send invitation at the moment": [
         "Ara mateix no es pot enviar la invitació",
@@ -1861,10 +1855,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"

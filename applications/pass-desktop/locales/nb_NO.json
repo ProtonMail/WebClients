@@ -403,10 +403,10 @@
       "Move to another vault": [
         "Flytt til annet hvelv"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Flytt til papirkurven"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Flytt til papirkurven"
       ],
       "Multiple select": [
@@ -825,9 +825,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-fil kunne ikke tolkes. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[Feil] et element kunne ikke analyseres"
-      ],
       "A domain ownership must be verified first.": [
         "Et domeneeierskap må bekreftes først."
       ],
@@ -857,9 +854,6 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Autentisering mislyktes. Bekreft ditt andre passord for å fortsette med eksporteringen"
-      ],
-      "Biometric authentication failed": [
-        "Biometrisk autentisering mislyktes"
       ],
       "Cannot send invitation at the moment": [
         "Kan ikke sende invitasjon for øyeblikket",
@@ -1861,10 +1855,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
