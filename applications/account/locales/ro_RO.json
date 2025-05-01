@@ -460,11 +460,11 @@
       "Discard": [
         "Renunțare"
       ],
-      "Discard changes": [
-        "Anulare modificări"
-      ],
       "Discard Changes": [
         "Ignorare modificări"
+      ],
+      "Discard changes": [
+        "Anulare modificări"
       ],
       "Discover ${ planName }": [
         "Descoperiți ${ planName }"
@@ -778,6 +778,9 @@
       "Keep Editing": [
         "Continuare editare"
       ],
+      "Keep editing": [
+        "Continuare editare"
+      ],
       "Keep logo": [
         "Păstrare logo"
       ],
@@ -955,11 +958,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "refresh the page": [
-        "Împrospătați pagina"
-      ],
       "Refresh the page": [
         "Împrospătare pagină"
+      ],
+      "refresh the page": [
+        "Împrospătați pagina"
       ],
       "Reject": [
         "Respingere"
@@ -2826,10 +2829,10 @@
       ]
     },
     "CountriesStep:Info": {
-      "${ selectedCitiesCount } selected": [
-        "Selectate: ${ selectedCitiesCount }",
-        "Selectate: ${ selectedCitiesCount }",
-        "Selectate: ${ selectedCitiesCount }"
+      "${ selectedCountriesCount } selected": [
+        "Selectate: ${ selectedCountriesCount }",
+        "Selectate: ${ selectedCountriesCount }",
+        "Selectate: ${ selectedCountriesCount }"
       ]
     },
     "Country name": {
@@ -7336,6 +7339,11 @@
         "${ calendarsToBeMergedCount } calendare îmbinate",
         "${ calendarsToBeMergedCount } de calendare îmbinate"
       ],
+      "${ countriesCount } country enabled": [
+        "Țări activate: ${ countriesCount }",
+        "Țări activate: ${ countriesCount }",
+        "Țări activate: ${ countriesCount }"
+      ],
       "${ current } of ${ total }": [
         "${ current } din ${ total }"
       ],
@@ -7371,11 +7379,6 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } dorește să vă partajeze date în ${ PASS_APP_NAME }"
-      ],
-      "${ locationsCount } country enabled": [
-        "Țări activate: ${ locationsCount }",
-        "Țări activate: ${ locationsCount }",
-        "Țări activate: ${ locationsCount }"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME }"
@@ -7622,11 +7625,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activați cel puțin o metodă de recuperare a datelor pentru a vă asigura că puteți accesa conținutul din contul ${ BRAND_NAME } dacă vă pierdeți parola."
       ],
-      "active": [
-        "activă"
-      ],
       "Active": [
         "Activ"
+      ],
+      "active": [
+        "activă"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adăugați-vă o adresă de e-mail @pm.me în cont. Acest domeniu simplu, mai scurt, înseamnă \"${ MAIL_APP_NAME } me\" sau \"Private Message me\"."
@@ -7894,9 +7897,6 @@
       "Beta": [
         "Beta"
       ],
-      "Billed at ${ price }": [
-        "Facturat cu ${ price }"
-      ],
       "Billing cycle: ${ text }": [
         "Ciclu facturare: ${ text }"
       ],
@@ -8077,11 +8077,11 @@
       "Data recoverable on this device": [
         "Datele recuperabile pe acest dispozitiv"
       ],
-      "Dedicated servers": [
-        "Servere dedicate"
-      ],
       "dedicated servers": [
         "servere dedicate"
+      ],
+      "Dedicated servers": [
+        "Servere dedicate"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -9101,12 +9101,6 @@
       ],
       "per month, billed at ${ price }": [
         "pe lună, facturat cu ${ price }"
-      ],
-      "per month, billed every 12 months": [
-        "pe lună, facturat la fiecare 12 de luni"
-      ],
-      "per month, billed every 24 months": [
-        "pe lună, facturat la fiecare 24 de luni"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "Clienții PGP probabil vor detecta automat cheile PGP dacă mesajele trimise sunt semnate."
@@ -11194,11 +11188,11 @@
       "Amount due": [
         "Suma datorată"
       ],
-      "And": [
-        "Şi"
-      ],
       "AND": [
         "ȘI"
+      ],
+      "And": [
+        "Şi"
       ],
       "and": [
         "și"
@@ -11626,11 +11620,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Dacă"
-      ],
       "IF": [
         "DACĂ"
+      ],
+      "If": [
+        "Dacă"
       ],
       "Import all messages": [
         "Importare toate mesajele"
@@ -11839,14 +11833,14 @@
       "Optional": [
         "Opțional"
       ],
+      "OR": [
+        "SAU"
+      ],
       "or": [
         "sau"
       ],
       "Or": [
         "Sau"
-      ],
-      "OR": [
-        "SAU"
       ],
       "Organization name": [
         "Nume organizație"
@@ -13153,6 +13147,32 @@
         "Viteză VPN medie"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Începeți cu ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Începând de la ${ pricing }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ],
+      "Upgrade to ${ planName }": [
+        "Trecere la ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuare cu Free"
@@ -13180,32 +13200,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Trecere la ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Începeți cu ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Începând de la ${ pricing }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ],
-      "Upgrade to ${ planName }": [
-        "Trecere la ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -14614,17 +14608,6 @@
         "Desktop"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Tuturor"
-      ],
-      "Group members": [
-        "Membrii grup"
-      ],
-      "No one": [
-        "Nimeni"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "Ziua 10 a lunii"
@@ -14880,6 +14863,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tuturor"
+      ],
+      "Group members": [
+        "Membrii grup"
+      ],
+      "No one": [
+        "Nimeni"
       ]
     },
     "Option delay send seconds": {
@@ -17235,9 +17229,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
-      ],
       "Your subscription will renew at the same rate every year.": [
         "Abonamentul vi se va reînnoi la același tarif în fiecare an."
       ]
@@ -17708,9 +17699,6 @@
       "Get more storage": [
         "Obțineți mai mult spațiu de stocare"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "Pentru a trimite sau a primi mesaje, eliberați spațiu sau ${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ upgrade }"
       ],
@@ -17739,12 +17727,6 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage } este plin."
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "${ storage } este ${ percentage }% plin. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Spațiul din ${ storage } este plin. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Spațiul de stocare este ${ percentage }% ocupat. ${ cta }."
@@ -17789,21 +17771,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Facturat la doi ani"
-      ],
-      "Billed every 6 months": [
-        "Facturat la fiecare 6 luni"
-      ],
-      "Billed for 15 months": [
-        "Facturat pentru 15 luni"
-      ],
-      "Billed for 18 months": [
-        "Facturat pentru 18 de luni"
-      ],
-      "Billed for 3 months": [
-        "Facturat pentru 3 de luni"
-      ],
-      "Billed for 30 months": [
-        "Facturat pentru 30 de luni"
       ],
       "Billed monthly": [
         "Facturat lunar"
@@ -17940,6 +17907,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Pentru ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription reminder": {
@@ -18236,47 +18244,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {
