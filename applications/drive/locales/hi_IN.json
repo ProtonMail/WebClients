@@ -6958,29 +6958,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "खाता हटा दो"
-      ],
-      "Downgrade account": [
-        "खाते को डाउनग्रेड करें"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "${ BRAND_NAME } पाएं मुफ्त में"
-      ],
-      "Get ${ planName }": [
-        "${ planName } लें"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } रखे"
-      ],
-      "Keep account": [
-        "खाता रखें"
-      ],
-      "Switch plan": [
-        "प्लान बदले"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } पे डाउनग्रेड करें"
@@ -7002,6 +6979,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } पे अपग्रेड करें"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "खाता हटा दो"
+      ],
+      "Downgrade account": [
+        "खाते को डाउनग्रेड करें"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "${ BRAND_NAME } पाएं मुफ्त में"
+      ],
+      "Get ${ planName }": [
+        "${ planName } लें"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } रखे"
+      ],
+      "Keep account": [
+        "खाता रखें"
+      ],
+      "Switch plan": [
+        "प्लान बदले"
       ]
     },
     "new_plans: feature": {
@@ -9173,9 +9173,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "यह सदस्यता स्वचालित रूप से हर 2 साल में उसी दर पर तब तक नवीनीकृत हो जाएगी जब तक इसे रद्द नहीं कर दिया जाता है।"
-      ],
       "Your subscription will renew at the same rate every year.": [
         "आपकी सदस्यता हर साल समान दर से नवीनीकृत होगी।"
       ]
@@ -9372,9 +9369,6 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "फाइलें अपलोड और सिंक करते रहने के लिए, स्पेस खाली करें या अधिक स्टोरेज के लिए अपग्रेड करें।"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "ईमेल भेजने या प्राप्त करने के लिए, स्पेस खाली करें या ${ upgrade }"
-      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "ईमेल भेजने या प्राप्त करने के लिए, स्पेस खाली करें या अधिक स्टोरेज के लिए अपग्रेड करें।"
       ],
@@ -9396,12 +9390,6 @@
       ],
       "Your ${ appStorage } is full": [
         "आपका ${ appStorage } भर गया है"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "आपका ${ storage } ${ percentage }% भर गया है। ${ cta }।"
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "आपका ${ storage } भर गया है। ${ cta }।"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "आपका स्टोरेज ${ percentage }% भर गया है। ${ cta }।"
@@ -9428,21 +9416,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "बिल हर 2 साल पे"
-      ],
-      "Billed every 6 months": [
-        "बिल हर 6 महीने पे"
-      ],
-      "Billed for 15 months": [
-        "15 महीने के लिए बिल किया गया"
-      ],
-      "Billed for 18 months": [
-        "18 महीने के लिए बिल किया गया"
-      ],
-      "Billed for 3 months": [
-        "3 महीने के लिए बिल किया गया"
-      ],
-      "Billed for 30 months": [
-        "30 महीने के लिए बिल किया गया"
       ],
       "Billed monthly": [
         "मासिक बिल"
@@ -9509,6 +9482,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "के लिए ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "and 15 more premium features": [
+        "और 15 अन्य प्रीमियम सुविधाएँ"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "डाटा लीक अलर्ट ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
+      ],
+      "No ads or tracking": [
+        "कोई विज्ञापन या ट्रैकिंग नहीं"
+      ],
+      "Short @pm.me email address": [
+        "छोटा @pm.me ईमेल पता"
+      ],
+      "Support our mission": [
+        "हमारे मिशन का समर्थन करें"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
+      ],
+      "Upgrade your productivity": [
+        "अपनी उत्पादकता बढ़ाएँ"
+      ],
+      "We don't sell your data": [
+        "हम आपका डाटा नहीं बेचते"
+      ],
+      "Your privacy is our mission": [
+        "आपकी निजता हमारा मिशन है"
       ]
     },
     "Subscription reminder": {
@@ -9769,47 +9783,6 @@
       ],
       "Your own short @pm.me email alias": [
         "आपका अपना छोटा @pm.me ईमेल नकली-नाम"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 जीबी स्टोरेज"
-      ],
-      "and 15 more premium features": [
-        "और 15 अन्य प्रीमियम सुविधाएँ"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "डाटा लीक अलर्ट ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "डेस्कटॉप ऐप"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
-      ],
-      "No ads or tracking": [
-        "कोई विज्ञापन या ट्रैकिंग नहीं"
-      ],
-      "Short @pm.me email address": [
-        "छोटा @pm.me ईमेल पता"
-      ],
-      "Support our mission": [
-        "हमारे मिशन का समर्थन करें"
-      ],
-      "Upgrade": [
-        "अपग्रेड करें"
-      ],
-      "Upgrade your productivity": [
-        "अपनी उत्पादकता बढ़ाएँ"
-      ],
-      "We don't sell your data": [
-        "हम आपका डाटा नहीं बेचते"
-      ],
-      "Your privacy is our mission": [
-        "आपकी निजता हमारा मिशन है"
       ]
     },
     "Subscription renewal state": {
@@ -10987,9 +10960,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }, आपके सबसे हाल के संदेशों से शुरू करते हुए, जितना हो सके उतना डाटा ट्रांसफर करेगा।"
       ],
-      "2 consecutive dots are not allowed": [
-        "2 लगातार डॉट्स की अनुमति नहीं है"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "क्या आप वाकई ${ count } संपर्क को स्थायी रूप से हटाना चाहते हैं?",
         "क्या आप वाकई ${ count } संपर्कों को स्थायी रूप से हटाना चाहते हैं?"
@@ -11003,12 +10973,6 @@
       "Are you sure you want to permanently delete this contact?": [
         "क्या आप वाकई इस संपर्क को स्थायी रूप से हटाना चाहते हैं?"
       ],
-      "Cannot contain a dot at the beginning": [
-        "शुरुआत में डॉट नहीं हो सकता"
-      ],
-      "Cannot contain a dot at the end": [
-        "अंत में डॉट नहीं हो सकता"
-      ],
       "Contacts could not be merged": [
         "संपर्कों को मर्ज नहीं किया जा सका"
       ],
@@ -11018,21 +10982,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "यदि आपको अपना पासवर्ड याद नहीं है, तो अपनी कुंजी को फिर से सक्रिय करना असंभव है। हम आपको अलर्ट बैनर को खारिज करने में मदद कर सकते हैं लेकिन प्रक्रिया में आप उस कुंजी के साथ एन्क्रिप्ट किए गए सभी डेटा तक स्थायी रूप से पहुंच खो देंगे।"
       ],
-      "Invalid alias prefix": [
-        "नकली नाम का प्रीफिक्स अमान्य"
-      ],
-      "Missing alias prefix": [
-        "नकली नाम का प्रीफिक्स खाली"
-      ],
-      "Missing alias suffix": [
-        "नकली नाम का सफिक्स खाली"
-      ],
-      "Name is required": [
-        "नाम ज़रूरी"
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "सिर्फ अल्फान्यूमेरिक लोअरकेस अक्षर, डॉट्स, हाइफन और अंडरस्कोर की अनुमति है"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "रिपोर्ट एंड-टू-एंड एन्क्रिप्टेड नहीं हैं, कृपया कोई संवेदनशील जानकारी न भेजें।"
       ],
@@ -11041,9 +10990,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "मर्ज किए जाने वाले कुछ संपर्क त्रुटि प्रदर्शित करते हैं। कृपया उनकी व्यक्तिगत रूप से समीक्षा करें"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "नकली नाम का प्रीफिक्स 40 कैरेक्टर से ज़्यादा लंबा नहीं हो सकता"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "संपर्क डेटा दूषित हो गया है और प्रदर्शित नहीं किया जा सकता है।"
@@ -11071,9 +11017,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "हम मेल सर्वर को सत्यापित नहीं कर सके। यदि आप इस पर भरोसा करते हैं, तो आप इस सत्यापन को छोड़ सकते हैं।"
-      ],
-      "You must select at least one mailbox": [
-        "आपको कम-से-कम एक मेलबॉक्स चुनना होगा"
       ],
       "You will lose any customization you made so far.": [
         "आप अब तक किए गए किसी भी अनुकूलन को खो देंगे।"
