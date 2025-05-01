@@ -4796,9 +4796,6 @@
       "No payment is required at this time.": [
         "V tuto chvíli není nutná žádná platba."
       ],
-      "No recent documents": [
-        "Žádné nedávné dokumenty"
-      ],
       "No recent documents match your search.": [
         "Vašemu hledání neodpovídají žádné nedávné dokumenty."
       ],
@@ -8065,6 +8062,9 @@
       ],
       "Searching": [
         "Hledání"
+      ],
+      "Trash": [
+        "Koš"
       ]
     },
     "Participant name": {
@@ -8934,8 +8934,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
+      "The special offer is valid for the first 2 years.": [
+        "Speciální nabídka platí první 2 roky."
       ],
       "Your subscription will renew at the same rate every year.": [
         "Vaše předplatné se bude každý rok obnovovat za stejnou cenu."
@@ -9018,6 +9018,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standardní cena ${ amount } za 30 měsíců"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Speciální nabídka platí první 2 roky"
       ]
     },
     "specialoffer: Title": {
@@ -9126,9 +9129,6 @@
       "For all ${ BRAND_NAME } services": [
         "Pro všechny služby ${ BRAND_NAME }"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "Abyste odeslali nebo přijímali e-maily, uvolněte místo nebo ${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Abyste nahráli nebo synchronizovali soubory, uvolněte místo nebo ${ upgrade }"
       ],
@@ -9149,12 +9149,6 @@
       ],
       "Your ${ appStorage } is full": [
         "Vaše ${ appStorage } je plné"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Vaše ${ storage } je z ${ percentage } % plné. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Vaše ${ storage } je plné. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Vaše úložiště je z ${ percentage } % plné. ${ cta }."
@@ -9181,21 +9175,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Účtováno každé 2 roky"
-      ],
-      "Billed every 6 months": [
-        "Účtováno každých 6 měsíců"
-      ],
-      "Billed for 15 months": [
-        "Účtováno za 15 měsíců"
-      ],
-      "Billed for 18 months": [
-        "Účtováno za 18 měsíců"
-      ],
-      "Billed for 3 months": [
-        "Účtováno za 3 měsíce"
-      ],
-      "Billed for 30 months": [
-        "Účtováno za 30 měsíců"
       ],
       "Billed monthly": [
         "Účtováno měsíčně"
@@ -9280,29 +9259,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } úložiště na uživatele"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } vlastní e-mailová doména",
-        "${ planNumberOfDomains } vlastní e-mailové domény",
-        "${ planNumberOfDomains } vlastních e-mailových domén",
-        "${ planNumberOfDomains } vlastních e-mailových domén"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-mailová adresa",
-        "${ planNumberOfEmails } e-mailové adresy",
-        "${ planNumberOfEmails } e-mailových adres",
-        "${ planNumberOfEmails } e-mailových adres"
-      ],
-      "Folders, labels, and custom filters": [
-        "Složky, štítky a vlastní filtry"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB úložiště"
@@ -9342,6 +9298,29 @@
       ],
       "Your privacy is our mission": [
         "Vaše soukromí je naším posláním"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } úložiště na uživatele"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } vlastní e-mailová doména",
+        "${ planNumberOfDomains } vlastní e-mailové domény",
+        "${ planNumberOfDomains } vlastních e-mailových domén",
+        "${ planNumberOfDomains } vlastních e-mailových domén"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailová adresa",
+        "${ planNumberOfEmails } e-mailové adresy",
+        "${ planNumberOfEmails } e-mailových adres",
+        "${ planNumberOfEmails } e-mailových adres"
+      ],
+      "Folders, labels, and custom filters": [
+        "Složky, štítky a vlastní filtry"
       ]
     },
     "Subscription renewal state": {
@@ -10477,9 +10456,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } přenese co nejvíce dat, počínaje vašimi nejnovějšími zprávami."
       ],
-      "2 consecutive dots are not allowed": [
-        "2 po sobě jdoucí tečky nejsou povoleny"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Jste si jistí, že chcete trvale smazat ${ count } kontakt?",
         "Jste si jistí, že chcete trvale smazat ${ count } kontakty?",
@@ -10495,12 +10471,6 @@
       "Are you sure you want to permanently delete this contact?": [
         "Jste si jisti, že chcete trvale smazat tento kontakt?"
       ],
-      "Cannot contain a dot at the beginning": [
-        "Na začátku nesmí být tečka"
-      ],
-      "Cannot contain a dot at the end": [
-        "Na konci nesmí být tečka"
-      ],
       "Contacts could not be merged": [
         "Kontakty nebylo možné sloučit"
       ],
@@ -10510,21 +10480,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Jestliže si nepamatujete heslo, není možné znovu aktivovat váš klíč. Můžeme zrušit výstražnou zprávu, ale tím trvale ztratíte přístup ke všem datům šifrovaným tímto klíčem."
       ],
-      "Invalid alias prefix": [
-        "Nesprávná předpona aliasu"
-      ],
-      "Missing alias prefix": [
-        "Chybějící předpona aliasu"
-      ],
-      "Missing alias suffix": [
-        "Chybějící přípona aliasu"
-      ],
-      "Name is required": [
-        "Název je povinný"
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Povoleny jsou pouze alfanumerické malé znaky, tečky, pomlčky a podtržítka"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."
       ],
@@ -10533,9 +10488,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Některé kontakty vykazují chybu při spojení. Prosím, zkontrolujte je individuálně"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "Předpona aliasu nesmí být delší než 40 znaků"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kontaktní údaje jsou poškozeny a nelze je zobrazit."
@@ -10563,9 +10515,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Nepodařilo se nám ověřit e-mailový server. Pokud mu důvěřujete, můžete toto ověření přeskočit."
-      ],
-      "You must select at least one mailbox": [
-        "Musíte vybrat nejméně jednu e-mailovou schránku"
       ],
       "You will lose any customization you made so far.": [
         "Přijdete o změny, které jste doposud provedli."
