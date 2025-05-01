@@ -1297,10 +1297,6 @@
       "Trust": [
         "Hav tillid til"
       ],
-      "Trust key": [
-        "Stol på nøgle",
-        "Stol på nøgler"
-      ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
       ],
@@ -8189,11 +8185,11 @@
       "Always move sender's emails": [
         "Flyt altid afsenders e-mails"
       ],
-      "And": [
-        "Og"
-      ],
       "AND": [
         "OG"
+      ],
+      "And": [
+        "Og"
       ],
       "and": [
         "og"
@@ -8414,11 +8410,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Hvis"
-      ],
       "IF": [
         "HVIS"
+      ],
+      "If": [
+        "Hvis"
       ],
       "Import all messages": [
         "Importer alle beskeder"
@@ -8528,14 +8524,14 @@
       "Optional": [
         "Valgfrit"
       ],
+      "OR": [
+        "ELLER"
+      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
-      ],
-      "OR": [
-        "ELLER"
       ],
       "Original link": [
         "Oprindeligt link"
@@ -9332,6 +9328,26 @@
         "Mellem VPN-hastighed"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Få ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Opgradér til ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Slet konto"
@@ -9353,26 +9369,6 @@
       ],
       "Switch plan": [
         "Skift abonnement"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Få ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Opgradér til ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -11549,9 +11545,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Dette abonnement vil automatisk blive fornyet hvert 2. år til samme pris, indtil det opsiges."
-      ],
       "Your subscription will renew at the same rate every year.": [
         "Dit abonnement fornyes til samme pris hvert år."
       ]
@@ -11782,9 +11775,6 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Hvis du vil fortsætte med at uploade og synkronisere filer, skal du frigøre plads eller opgradere til mere lagerplads."
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "For at sende eller modtage e-mails, frigør plads eller ${ upgrade }"
-      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "For at sende eller modtage e-mails, frigør plads eller opgrader til mere lagerplads."
       ],
@@ -11806,12 +11796,6 @@
       ],
       "Your ${ appStorage } is full": [
         "Dit ${ appStorage } er fuldt"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Din ${ storage } er ${ percentage }% fyldt. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Din ${ storage } er fyldt. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Din lagerplads er ${ percentage }% fyldt. ${ cta }."
@@ -11838,21 +11822,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Faktureres hvert 2. år"
-      ],
-      "Billed every 6 months": [
-        "Faktureret hver 6. måned"
-      ],
-      "Billed for 15 months": [
-        "Faktureret for 15 måneder"
-      ],
-      "Billed for 18 months": [
-        "Faktureret for 18 måneder"
-      ],
-      "Billed for 3 months": [
-        "Faktureret for 3 måneder"
-      ],
-      "Billed for 30 months": [
-        "Faktureret for 30 måneder"
       ],
       "Billed monthly": [
         "Faktureres månedligt"
@@ -11923,6 +11892,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Til ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
       ]
     },
     "Subscription reminder": {
@@ -12177,47 +12187,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -13780,9 +13749,6 @@
       "Are you sure you want to permanently delete this contact?": [
         "Er du sikker på, at du vil slette denne kontakt permanent?"
       ],
-      "Cannot contain a dot at the end": [
-        "Kan ikke indeholde et punktum til sidst"
-      ],
       "Contacts could not be merged": [
         "Kontakter kunne ikke flettes"
       ],
@@ -13792,18 +13758,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Hvis du ikke kan huske din adgangskode, er det umuligt at genaktivere din nøgle. Vi kan hjælpe dig med at afvise advarselsbanneret, men i processen vil du permanent miste adgang til alle de data, der er krypteret med den nøgle."
       ],
-      "Invalid alias prefix": [
-        "Ugyldigt alias-præfiks"
-      ],
-      "Missing alias prefix": [
-        "Mangler alias-præfiks"
-      ],
-      "Missing alias suffix": [
-        "Mangler alias-suffiks"
-      ],
-      "Name is required": [
-        "Navn er påkrævet"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
       ],
@@ -13812,9 +13766,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Nogle af de kontakter, som skal flettes, udviser fejl. Gennemgå dem individuelt"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "Alias-præfikset må højest være 40 tegn langt."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Vedhæftningens signatur kunne ikke verificeres.\nDu kan stadig downloade denne vedhæftning, men den kan være blevet manipuleret med.",
@@ -13846,9 +13797,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Vi kunne ikke verificere mailserveren. Hvis du stoler på den, kan du springe denne verifikation over."
-      ],
-      "You must select at least one mailbox": [
-        "Du skal vælge mindst en postkasse"
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning, du har foretaget indtil videre."
