@@ -364,6 +364,9 @@
       "Make editor": [
         "Gör till redigerare"
       ],
+      "Make manager": [
+        "Ge ägarbehörighet"
+      ],
       "Make viewer": [
         "Gör till läsare"
       ],
@@ -397,10 +400,10 @@
       "Move to another vault": [
         "Flytta till annat valv"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Flytta till papperskorg"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Flytta till papperskorg"
       ],
       "Multiple select": [
@@ -790,9 +793,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-fil kunde inte analyseras. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[Fel] ett objekt kunde inte analyseras"
-      ],
       "A domain ownership must be verified first.": [
         "Ett domänägarskap behöver verifieras först."
       ],
@@ -822,9 +822,6 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Autentisering misslyckades. Bekräfta ditt andra lösenord för att fortsätta med exporten"
-      ],
-      "Biometric authentication failed": [
-        "Biometrisk autentisering misslyckades"
       ],
       "Cannot send invitation at the moment": [
         "Kan inte skicka inbjudan just nu",
@@ -1783,6 +1780,9 @@
       "Make it your own": [
         "Gör den till din egen"
       ],
+      "Manager": [
+        "Ägare"
+      ],
       "me": [
         "jag"
       ],
@@ -2193,7 +2193,7 @@
         "Åtgärden går ej att ångra. Alla alias som använder domänen ${ domainTextBold } kommer att tas bort. Notera att efter att de tagits bort så kan inte alias återställas."
       ],
       "This option is currently not available on your browser.": [
-        "Detta alternativ är för närvarande inte tillgängligt på din enhet."
+        "Detta alternativ är för närvarande inte tillgängligt på din webbläsare."
       ],
       "This option is currently not available on your device.": [
         "Detta alternativ är för närvarande inte tillgängligt på din enhet."
@@ -2866,6 +2866,9 @@
       "Make all editors": [
         "Gör alla till redigerare"
       ],
+      "Make all managers": [
+        "Ge alla ägarbehörighet"
+      ],
       "Make all viewers": [
         "Gör alla till visare"
       ],
@@ -3230,7 +3233,7 @@
         "Din domän"
       ],
       "ZIP": [
-        "Postnummer"
+        "ZIP"
       ],
       "ZIP or Postal code": [
         "Postnummer"
@@ -3360,6 +3363,9 @@
       "File attachments": [
         "Filbilagor"
       ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Om detta är aktiverat kommer alla dina filer att laddas ner när du exporterar. Detta kan ta lite tid beroende på din internetanslutning."
+      ],
       "If your data contains file attachments, they will not be imported.": [
         "Om dina data innehåller filbilagor kommer de inte att importeras."
       ],
@@ -3368,6 +3374,9 @@
       ],
       "Not enough available storage space for the selected files.": [
         "Inte tillräckligt tillgängligt lagringsutrymme för de valda filerna."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "När filen har raderats kan den fortfarande återställas från objektets historik."
       ],
       "Open new window to upload files": [
         "Öppna nytt fönster för att ladda upp filer"
