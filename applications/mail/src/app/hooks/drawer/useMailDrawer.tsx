@@ -3,7 +3,6 @@ import {
     ContactDrawerAppButton,
     SecurityCenterDrawerAppButton,
     VPNDrawerAppButton,
-    WalletDrawerAppButton,
     useDrawer,
 } from '@proton/components';
 import useDisplayFeatureTourDrawerButton from '@proton/components/components/featureTour/useDisplayFeatureTourDrawerButton';
@@ -12,8 +11,6 @@ import { Product } from '@proton/shared/lib/ProductEnum';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
 import FeatureTourDrawerButton from 'proton-mail/components/drawer/FeatureTourDrawerButton';
@@ -21,9 +18,6 @@ import FeatureTourDrawerButton from 'proton-mail/components/drawer/FeatureTourDr
 const useMailDrawer = () => {
     const { appInView, showDrawerSidebar } = useDrawer();
     const canShowFeatureTourDrawerButton = useDisplayFeatureTourDrawerButton();
-
-    // TODO: add UserSettings."WalletAccess" condition once available
-    const canShowWalletRightSidebarLink = useFlag('WalletRightSidebarLink');
 
     const [allowedProducts, loadingAllowedProducts] = useAllowedProducts();
 
@@ -35,7 +29,6 @@ const useMailDrawer = () => {
                 disabled={loadingAllowedProducts}
             />
         ),
-        canShowWalletRightSidebarLink && !isElectronApp && <WalletDrawerAppButton />,
         <SecurityCenterDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.SECURITY_CENTER, appInView)} />,
         <VPNDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.VPN, appInView)} />,
         canShowFeatureTourDrawerButton && <FeatureTourDrawerButton />,
