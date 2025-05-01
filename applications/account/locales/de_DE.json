@@ -134,7 +134,7 @@
         "Kategorie hinzufügen"
       ],
       "Add more ${ BRAND_NAME } Scribe seats": [
-        "Weitere ${ BRAND_NAME } Scribe Lizenzen hinzufügen"
+        "Mehr ${ BRAND_NAME } Scribe Lizenzen hinzufügen"
       ],
       "Add notification": [
         "Benachrichtigung hinzufügen"
@@ -460,10 +460,10 @@
       "Discard": [
         "Verwerfen"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Änderungen verwerfen"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Änderungen verwerfen"
       ],
       "Discover ${ planName }": [
@@ -671,7 +671,7 @@
         "Hol dir mehr Kategorien"
       ],
       "Get more licenses": [
-        "Weitere Lizenzen holen"
+        "Mehr Lizenzen holen"
       ],
       "Get more servers": [
         "Hol dir mehr Server"
@@ -778,6 +778,9 @@
       "Keep Editing": [
         "Bearbeitung fortsetzen"
       ],
+      "Keep editing": [
+        "Bearbeitung fortsetzen"
+      ],
       "Keep logo": [
         "Logo behalten"
       ],
@@ -810,6 +813,9 @@
       ],
       "Make admin": [
         "Zum Administrator ändern"
+      ],
+      "Make key primary": [
+        "Schlüssel als Hauptschlüssel festlegen"
       ],
       "Manage advanced account protections": [
         "Erweiterte Konto-Sicherheitsmaßnahmen verwalten"
@@ -955,11 +961,11 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "refresh the page": [
-        "aktualisiere die Seite"
-      ],
       "Refresh the page": [
         "Seite aktualisieren"
+      ],
+      "refresh the page": [
+        "aktualisiere die Seite"
       ],
       "Reject": [
         "Ablehnen"
@@ -2815,9 +2821,9 @@
       ]
     },
     "CountriesStep:Info": {
-      "${ selectedCitiesCount } selected": [
-        "${ selectedCitiesCount } ausgewählt",
-        "${ selectedCitiesCount } ausgewählt"
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount } ausgewählt",
+        "${ selectedCountriesCount } ausgewählt"
       ]
     },
     "Country name": {
@@ -7291,6 +7297,10 @@
         "${ calendarsToBeMergedCount } zusammengeführter Kalender",
         "${ calendarsToBeMergedCount } zusammengeführte Kalender"
       ],
+      "${ countriesCount } country enabled": [
+        "${ countriesCount } Land aktiviert",
+        "${ countriesCount } Länder aktiviert"
+      ],
       "${ current } of ${ total }": [
         "${ current } von ${ total }"
       ],
@@ -7323,10 +7333,6 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } möchte Daten in ${ PASS_APP_NAME } mit dir teilen."
-      ],
-      "${ locationsCount } country enabled": [
-        "${ locationsCount } Land aktiviert",
-        "${ locationsCount } Länder aktiviert"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } und ${ CALENDAR_APP_NAME }"
@@ -7554,11 +7560,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktiviere mindestens eine Datenwiederherstellungsmethode, um sicherzustellen, dass du weiterhin auf den Inhalt deines ${ BRAND_NAME }-Kontos zugreifen kannst, wenn du dein Passwort verlierst."
       ],
-      "active": [
-        "aktiv"
-      ],
       "Active": [
         "Aktiv"
+      ],
+      "active": [
+        "aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Füge deinem Konto eine @pm.me-E-Mail-Adresse hinzu. Diese einfache, kürzere Domain steht für \"${ MAIL_APP_NAME } me\" oder \"Private Message me\"."
@@ -7819,9 +7825,6 @@
       "Beta": [
         "Beta"
       ],
-      "Billed at ${ price }": [
-        "Abgerechnet zum Preis von ${ price }"
-      ],
       "Billing cycle: ${ text }": [
         "Abrechnungszeitraum: ${ text }"
       ],
@@ -7999,11 +8002,11 @@
       "Data recoverable on this device": [
         "Daten, die auf diesem Gerät wiederhergestellt werden können"
       ],
-      "Dedicated servers": [
-        "Dezidierte Server"
-      ],
       "dedicated servers": [
         "dedizierte Server"
+      ],
+      "Dedicated servers": [
+        "Dezidierte Server"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -9013,12 +9016,6 @@
       ],
       "per month, billed at ${ price }": [
         "pro Monat, abgerechnet zu ${ price }"
-      ],
-      "per month, billed every 12 months": [
-        "pro Monat, Abrechnung alle 12 Monate"
-      ],
-      "per month, billed every 24 months": [
-        "pro Monat, Abrechnung alle 24 Monate"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "PGP-Clients erkennen deine PGP-Schlüssel mit größerer Wahrscheinlichkeit automatisch, wenn ausgehende Nachrichten signiert sind."
@@ -10377,6 +10374,9 @@
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
+      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
+        "Deine bestehenden Ende-zu-Ende-verschlüsselten Weiterleitungen an andere Benutzer werden pausiert. Du kannst sie manuell unter den „${ autoReplySettingsTitle }“-Einstellungen wieder aktivieren."
+      ],
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
       ],
@@ -11078,11 +11078,11 @@
       "Amount due": [
         "Fälliger Betrag"
       ],
-      "And": [
-        "Und"
-      ],
       "AND": [
         "UND"
+      ],
+      "And": [
+        "Und"
       ],
       "and": [
         "und"
@@ -11510,11 +11510,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Wenn"
-      ],
       "IF": [
         "WENN"
+      ],
+      "If": [
+        "Wenn"
       ],
       "Import all messages": [
         "Alle Nachrichten importieren"
@@ -11723,14 +11723,14 @@
       "Optional": [
         "Optional"
       ],
+      "OR": [
+        "ODER"
+      ],
       "or": [
         "oder"
       ],
       "Or": [
         "Oder"
-      ],
-      "OR": [
-        "ODER"
       ],
       "Organization name": [
         "Name der Organisation"
@@ -13023,6 +13023,32 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Leg los für ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Ab ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
+      ],
+      "Upgrade to ${ planName }": [
+        "Auf ${ planName } upgraden"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Mit Free fortfahren"
@@ -13050,32 +13076,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Umsteigen auf ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Leg los für ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Ab ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
-      ],
-      "Upgrade to ${ planName }": [
-        "Auf ${ planName } upgraden"
       ]
     },
     "new_plans: feature": {
@@ -14221,6 +14221,9 @@
       "Key with fingerprint ${ fp } has been deleted.": [
         "Schlüssel mit dem Fingerabdruck ${ fp } wurde gelöscht."
       ],
+      "Key with fingerprint ${ fp } is now primary.": [
+        "Schlüssel mit Fingerabdruck ${ fp } ist jetzt der primäre."
+      ],
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
       ],
@@ -14450,17 +14453,6 @@
       ],
       "Desktop": [
         "Desktop"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Jeder"
-      ],
-      "Group members": [
-        "Gruppenmitglieder"
-      ],
-      "No one": [
-        "Keiner"
       ]
     },
     "Option": {
@@ -14697,6 +14689,17 @@
       ],
       "Trash": [
         "In Papierkorb verschieben"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Jeder"
+      ],
+      "Group members": [
+        "Gruppenmitglieder"
+      ],
+      "No one": [
+        "Keiner"
       ]
     },
     "Option delay send seconds": {
@@ -17022,8 +17025,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Dieses Abonnement verlängert sich automatisch im Rhythmus von jeweils 2 Jahren, bis es gekündigt wird."
+      "The special offer is valid for the first 2 years.": [
+        "Das Sonderangebot gilt für die ersten 2 Jahre."
       ],
       "Your subscription will renew at the same rate every year.": [
         "Dein Abonnement wird jedes Jahr zum gleichen Preis verlängert."
@@ -17104,6 +17107,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standardpreis: ${ amount } für 30 Monate"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Das Sonderangebot gilt für die ersten 2 Jahre"
       ]
     },
     "specialoffer: Title": {
@@ -17486,8 +17492,8 @@
       "Get more storage": [
         "Mehr Speicherplatz erhalten"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "Um E-Mails zu senden oder zu empfangen, gib Speicherplatz frei oder ${ upgrade }"
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Um ${ BRAND_NAME }-Produkte weiterhin nutzen zu können, schaffe Speicherplatz oder führe ein ${ upgrade } durch."
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Um Dateien hochzuladen oder zu synchronisieren, gib Speicherplatz frei oder ${ upgrade }"
@@ -17517,11 +17523,11 @@
       "Your ${ appStorage } is full": [
         "Dein ${ appStorage }-Speicherplatz ist voll."
       ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Dein ${ storage } ist zu ${ percentage }% voll. ${ cta }."
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Dein ${ productString } ist zu ${ percentage }% voll. ${ cta }."
       ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Dein ${ storage } ist voll. ${ cta }."
+      "Your ${ productString } is full. ${ cta }.": [
+        "Dein ${ productString } ist voll. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Dein Speicherplatz ist zu ${ percentage }% voll. ${ cta }."
@@ -17566,21 +17572,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Wird alle 2 Jahre abgerechnet"
-      ],
-      "Billed every 6 months": [
-        "Wird alle 6 Monate abgerechnet"
-      ],
-      "Billed for 15 months": [
-        "Bezahlt für 15 Monate"
-      ],
-      "Billed for 18 months": [
-        "Bezahlt für 18 Monate"
-      ],
-      "Billed for 3 months": [
-        "Bezahlt für 3 Monate"
-      ],
-      "Billed for 30 months": [
-        "Bezahlt für 30 Monate"
       ],
       "Billed monthly": [
         "Wird monatlich abgerechnet"
@@ -17702,6 +17693,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Für ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription reminder": {
@@ -17992,47 +18024,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -18792,6 +18783,9 @@
       ],
       "Change password": [
         "Passwort ändern"
+      ],
+      "Change primary key?": [
+        "Primärschlüssel ändern?"
       ],
       "Change role": [
         "Rolle ändern"
