@@ -6611,6 +6611,20 @@
         "Середня швидкість VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Розпочати з ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Видалити обліковий запис"
@@ -6632,20 +6646,6 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Розпочати з ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
       ]
     },
     "new_plans: feature": {
@@ -8724,11 +8724,6 @@
         "Підтримка онлайн-приватності"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Ця передплата автоматично поновлюватиметься кожні 2 роки за тією ж ціною, доки ви її не скасуєте."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Перейти до тарифних планів"
@@ -8909,9 +8904,6 @@
       "For all ${ BRAND_NAME } services": [
         "Для всіх сервісів ${ BRAND_NAME }"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "Щоб надсилати й отримувати листи, звільніть місце або ${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Щоб завантажити або синхронізувати файли, звільніть місце або ${ upgrade }"
       ],
@@ -8932,12 +8924,6 @@
       ],
       "Your ${ appStorage } is full": [
         "Ваше ${ appStorage } заповнене"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Ваше ${ storage } заповнене на ${ percentage }%. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Ваше ${ storage } заповнене. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Ваше сховище заповнене на ${ percentage }%. ${ cta }."
@@ -8977,18 +8963,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Сплачується кожні 2 роки"
-      ],
-      "Billed for 15 months": [
-        "Сплачується за 15 місяців"
-      ],
-      "Billed for 18 months": [
-        "Сплачується за 18 місяців"
-      ],
-      "Billed for 3 months": [
-        "Сплачується за 3 місяці"
-      ],
-      "Billed for 30 months": [
-        "Сплачується за 30 місяців"
       ],
       "Billed monthly": [
         "Сплачується щомісяця"
@@ -9071,6 +9045,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "and 15 more premium features": [
+        "та ще 15 преміальних функцій"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматичне пересилання пошти ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Сповіщення про витоки даних ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Програма для комп'ютера"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
+      ],
+      "No ads or tracking": [
+        "Без реклами і стеження"
+      ],
+      "Short @pm.me email address": [
+        "Коротка адреса електронної пошти @pm.me"
+      ],
+      "Support our mission": [
+        "Підтримайте нашу місію"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade your productivity": [
+        "Вдоскональте свою продуктивність"
+      ],
+      "We don't sell your data": [
+        "Ми не продаємо ваші дані"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватність є нашою місією"
       ]
     },
     "Subscription reminder": {
@@ -9343,47 +9358,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш власний короткий псевдонім електронної пошти @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховища"
-      ],
-      "and 15 more premium features": [
-        "та ще 15 преміальних функцій"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматичне пересилання пошти ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Сповіщення про витоки даних ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Програма для комп'ютера"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
-      ],
-      "No ads or tracking": [
-        "Без реклами і стеження"
-      ],
-      "Short @pm.me email address": [
-        "Коротка адреса електронної пошти @pm.me"
-      ],
-      "Support our mission": [
-        "Підтримайте нашу місію"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade your productivity": [
-        "Вдоскональте свою продуктивність"
-      ],
-      "We don't sell your data": [
-        "Ми не продаємо ваші дані"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватність є нашою місією"
       ]
     },
     "Subscription renewal state": {
@@ -10542,18 +10516,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Неможливо повторно активувати ваш ключ, якщо ви не пам'ятаєте свій пароль. Ми можемо допомогти вам відхилити банер з попередженням, але при цьому ви остаточно втратите доступ до всіх даних, що були зашифровані з використанням цього ключа."
       ],
-      "Invalid alias prefix": [
-        "Недійсний префікс псевдоніма"
-      ],
-      "Missing alias prefix": [
-        "Відсутній префікс псевдоніма"
-      ],
-      "Missing alias suffix": [
-        "Відсутній суфікс псевдоніма"
-      ],
-      "Name is required": [
-        "Назва обовʼязкова"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Звіти не захищаються наскрізним шифруванням. Будь ласка, не надсилайте в них жодних приватних даних."
       ],
@@ -10562,9 +10524,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Деякі об'єднувані контакти мають помилки. Будь ласка, перегляньте їх окремо"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "Префікс псевдоніма не може бути довшим ніж 40 символів"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Дані контакту пошкоджені, тому їх неможливо показати."
@@ -10592,9 +10551,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Ми не змогли перевірити поштовий сервер. Якщо ви йому довіряєте, можете пропустити цю перевірку."
-      ],
-      "You must select at least one mailbox": [
-        "Виберіть принаймні одну поштову скриньку"
       ],
       "You will lose any customization you made so far.": [
         "Ви втратите будь-які попередні налаштування."

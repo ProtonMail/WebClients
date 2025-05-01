@@ -860,6 +860,9 @@
       "Monthly": [
         "Mjesečno"
       ],
+      "New!": [
+        "Novo"
+      ],
       "Two-year": [
         "2 godine"
       ]
@@ -1248,6 +1251,9 @@
       ],
       "Work": [
         "Posao"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2875,6 +2881,9 @@
       ],
       "No verification method available": [
         "Nema dostupne metode za provjeru"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Import calendar": {
@@ -3668,6 +3677,9 @@
       ],
       "Trusted": [
         "Pouzdan"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Keyboard shortcut name": {
@@ -3868,6 +3880,9 @@
       "Hide password": [
         "Sakrij lozinku"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "Import all messages": [
         "Uvoz svih poruka"
       ],
@@ -3933,6 +3948,9 @@
       ],
       "Notifications": [
         "Obavijesti"
+      ],
+      "On": [
+        "Uključeno"
       ],
       "Operating system": [
         "Operativni sustav"
@@ -4031,6 +4049,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "VAT": [
+        "PDV"
       ],
       "Verification code": [
         "Kôd za provjeru"
@@ -4400,6 +4421,14 @@
         "Najviša VPN brzina"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -4409,14 +4438,6 @@
       ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
-      ]
-    },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -4758,6 +4779,19 @@
         "Nepoznato"
       ]
     },
+    "Offer": {
+      "Save": [
+        "Spremi"
+      ]
+    },
+    "Offer feature": {
+      "Free": [
+        "Besplatno"
+      ],
+      "Plus": [
+        "Plus"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Dobrodošli u ${ appName }"
@@ -4881,6 +4915,9 @@
       "Card number": [
         "Broj kartice"
       ],
+      "CVC": [
+        "CVC"
+      ],
       "Got it": [
         "Razumijem"
       ],
@@ -4897,6 +4934,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaša kartica je odbijena. Molimo pokušajte s drugom karticom ili kontaktirajte vašu banku da autorizira ovu naplatu."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "PGP key encryption warning": {
@@ -5338,18 +5380,6 @@
       "Billed every 2 years": [
         "Naplaćuje se svake 2 godine"
       ],
-      "Billed for 15 months": [
-        "Naplaćuje se svakih 15 mjeseci"
-      ],
-      "Billed for 18 months": [
-        "Naplaćuje se svakih 18 mjeseci"
-      ],
-      "Billed for 3 months": [
-        "Naplaćuje se svakih 3 mjeseci"
-      ],
-      "Billed for 30 months": [
-        "Naplaćuje se svakih 30 mjeseci"
-      ],
       "Billed monthly": [
         "Mjesečni račun"
       ]
@@ -5381,6 +5411,17 @@
         "Razumijem"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
+      ]
+    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } prostora za pohranu po korisniku"
@@ -5393,17 +5434,6 @@
       ],
       "Version history": [
         "Povijest verzija"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
       ]
     },
     "Subscription renewal state": {
