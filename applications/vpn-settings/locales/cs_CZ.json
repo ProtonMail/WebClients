@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktivovat"
-      ],
       "activate": [
         "aktivovat"
+      ],
+      "Activate": [
+        "Aktivovat"
       ],
       "Activate organization key": [
         "Aktivovat klíč organizace"
@@ -259,10 +259,10 @@
       "Discard": [
         "Zahodit"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Zahodit změny"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Zahodit změny"
       ],
       "Discover ${ planName }": [
@@ -448,6 +448,9 @@
       "Keep Editing": [
         "Pokračovat v úpravách"
       ],
+      "Keep editing": [
+        "Pokračovat v editaci"
+      ],
       "Keep logo": [
         "Ponechat logo"
       ],
@@ -559,11 +562,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "refresh the page": [
-        "obnovit stránku"
-      ],
       "Refresh the page": [
         "Obnovit stránku"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Remove": [
         "Odstranit"
@@ -1601,11 +1604,11 @@
       ]
     },
     "CountriesStep:Info": {
-      "${ selectedCitiesCount } selected": [
-        "Vybráno: ${ selectedCitiesCount }",
-        "Vybráno: ${ selectedCitiesCount }",
-        "Vybráno: ${ selectedCitiesCount }",
-        "Vybráno: ${ selectedCitiesCount }"
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount } vybrána",
+        "${ selectedCountriesCount } vybrány",
+        "${ selectedCountriesCount } vybráno",
+        "${ selectedCountriesCount } vybráno"
       ]
     },
     "Country name": {
@@ -4077,6 +4080,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Díky šifrovací technologii ${ BRAND_NAME } se k vašemu heslu nikdo nedostane - ani my ne."
       ],
+      "${ countriesCount } country enabled": [
+        "${ countriesCount } země povolena",
+        "${ countriesCount } země povoleny",
+        "${ countriesCount } zemí povoleno",
+        "${ countriesCount } zemí povoleno"
+      ],
       "${ discountPercent }% discount": [
         "${ discountPercent } % sleva"
       ],
@@ -4103,12 +4112,6 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů, kteří nemají SSO používají dvoufázové ověření pro přihlášení do vaší organizace.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů, kteří nemají SSO používá dvoufázové ověření pro přihlášení do vaší organizace.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů, kteří nemají SSO používá dvoufázové ověření pro přihlášení do vaší organizace."
-      ],
-      "${ locationsCount } country enabled": [
-        "${ locationsCount } země povolena",
-        "${ locationsCount } země povoleny",
-        "${ locationsCount } zemí povoleno",
-        "${ locationsCount } zemí povoleno"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }"
@@ -4428,9 +4431,6 @@
       "Beta": [
         "Beta"
       ],
-      "Billed at ${ price }": [
-        "Účtováno ${ price }"
-      ],
       "Billing cycle: ${ text }": [
         "Fakturační cyklus: ${ text }"
       ],
@@ -4545,11 +4545,11 @@
       "Data recoverable on this device": [
         "Data obnovitelná v tomto zařízení"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -5201,12 +5201,6 @@
       ],
       "per month, billed at ${ price }": [
         "měsíčně, účtováno ${ price }"
-      ],
-      "per month, billed every 12 months": [
-        "za měsíc, účtováno každých 12 měsíců"
-      ],
-      "per month, billed every 24 months": [
-        "za měsíc, účtováno každých 24 měsíců"
       ],
       "Please add a password for the user on row": [
         "Přidejte prosím heslo uživatele na řádku",
@@ -7384,29 +7378,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Smazat účet"
-      ],
-      "Downgrade account": [
-        "Snížit úroveň účtu"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Získat ${ BRAND_NAME } zdarma"
-      ],
-      "Get ${ planName }": [
-        "Získejte ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Ponechat ${ plan }"
-      ],
-      "Keep account": [
-        "Ponechat si svůj účet"
-      ],
-      "Switch plan": [
-        "Změnit tarif"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Snížit na ${ downgradedPlanName }"
@@ -7431,6 +7402,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Navýšit na ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Smazat účet"
+      ],
+      "Downgrade account": [
+        "Snížit úroveň účtu"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Získat ${ BRAND_NAME } zdarma"
+      ],
+      "Get ${ planName }": [
+        "Získejte ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Ponechat ${ plan }"
+      ],
+      "Keep account": [
+        "Ponechat si svůj účet"
+      ],
+      "Switch plan": [
+        "Změnit tarif"
       ]
     },
     "new_plans: feature": {
@@ -8678,17 +8672,6 @@
         "Vítejte v ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Všichni"
-      ],
-      "Group members": [
-        "Členové skupiny"
-      ],
-      "No one": [
-        "Nikdo"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Povoleno ${ defaultLabel }"
@@ -8779,6 +8762,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Všichni"
+      ],
+      "Group members": [
+        "Členové skupiny"
+      ],
+      "No one": [
+        "Nikdo"
       ]
     },
     "Organization capacity error": {
@@ -10110,8 +10104,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
+      "The special offer is valid for the first 2 years.": [
+        "Speciální nabídka platí první 2 roky."
       ],
       "Your subscription will renew at the same rate every year.": [
         "Vaše předplatné se bude každý rok obnovovat za stejnou cenu."
@@ -10194,6 +10188,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standardní cena ${ amount } za 30 měsíců"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Speciální nabídka platí první 2 roky"
       ]
     },
     "specialoffer: Title": {
@@ -10524,9 +10521,6 @@
       "For all ${ BRAND_NAME } services": [
         "Pro všechny služby ${ BRAND_NAME }"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "Abyste odeslali nebo přijímali e-maily, uvolněte místo nebo ${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Abyste nahráli nebo synchronizovali soubory, uvolněte místo nebo ${ upgrade }"
       ],
@@ -10547,12 +10541,6 @@
       ],
       "Your ${ appStorage } is full": [
         "Vaše ${ appStorage } je plné"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Vaše ${ storage } je z ${ percentage } % plné. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Vaše ${ storage } je plné. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Vaše úložiště je z ${ percentage } % plné. ${ cta }."
@@ -10579,21 +10567,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Účtováno každé 2 roky"
-      ],
-      "Billed every 6 months": [
-        "Účtováno každých 6 měsíců"
-      ],
-      "Billed for 15 months": [
-        "Účtováno za 15 měsíců"
-      ],
-      "Billed for 18 months": [
-        "Účtováno za 18 měsíců"
-      ],
-      "Billed for 3 months": [
-        "Účtováno za 3 měsíce"
-      ],
-      "Billed for 30 months": [
-        "Účtováno za 30 měsíců"
       ],
       "Billed monthly": [
         "Účtováno měsíčně"
@@ -10745,6 +10718,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription reminder": {
@@ -11047,47 +11061,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {

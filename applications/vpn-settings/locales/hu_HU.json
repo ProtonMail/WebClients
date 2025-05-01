@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
-      "Activate": [
-        "Aktiválás"
-      ],
       "activate": [
         "aktiválás"
+      ],
+      "Activate": [
+        "Aktiválás"
       ],
       "Activate organization key": [
         "Szervezeti kulcs aktiválása"
@@ -553,11 +553,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "refresh the page": [
-        "frissítse az oldalt"
-      ],
       "Refresh the page": [
         "Oldal frissítése"
+      ],
+      "refresh the page": [
+        "frissítse az oldalt"
       ],
       "Remove": [
         "Eltávolítás"
@@ -1569,12 +1569,6 @@
     "Confirmation title": {
       "Delete payment method": [
         "Fizetési mód törlése"
-      ]
-    },
-    "CountriesStep:Info": {
-      "${ selectedCitiesCount } selected": [
-        "${ selectedCitiesCount } kiválasztva",
-        "${ selectedCitiesCount } kiválasztva"
       ]
     },
     "Country name": {
@@ -3978,10 +3972,6 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } nem-SSO-tag kétfaktoros hitelesítést használ a szervezetbe való bejelentkezéshez.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } nem-SSO-tag kétfaktoros hitelesítést használ a szervezetbe való bejelentkezéshez."
       ],
-      "${ locationsCount } country enabled": [
-        "${ locationsCount } ország engedélyezve",
-        "${ locationsCount } ország engedélyezve"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } és ${ CALENDAR_APP_NAME }"
       ],
@@ -4075,7 +4065,7 @@
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } tag)",
-        "(${ memberCount } tagok)"
+        "(${ memberCount } tag)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice } /hónap)"
@@ -4259,9 +4249,6 @@
       "Beta": [
         "Béta"
       ],
-      "Billed at ${ price }": [
-        "${ price } számlázva"
-      ],
       "Billing cycle: ${ text }": [
         "Számlázási ciklus: ${ text }"
       ],
@@ -4372,11 +4359,11 @@
       "Data recoverable on this device": [
         "Ezen az eszközön helyreállíthatók az adatok"
       ],
-      "Dedicated servers": [
-        "Dedikált szerverek"
-      ],
       "dedicated servers": [
         "dedikált szerverek"
+      ],
+      "Dedicated servers": [
+        "Dedikált szerverek"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikált IP-címekkel rendelkező dedikált kiszolgálók adhatók hozzá a privát átjárókhoz a finoman hangolható hozzáférés-szabályozás érdekében."
@@ -5008,12 +4995,6 @@
       ],
       "per month, billed at ${ price }": [
         "havonta, ${ price } számlázva"
-      ],
-      "per month, billed every 12 months": [
-        "havonta, 12 havonta számlázva"
-      ],
-      "per month, billed every 24 months": [
-        "havonta, 24 havonta számlázva"
       ],
       "Please add a password for the user on row": [
         "A felhasználó jelszava hiányzik a következő sorban:",
@@ -7062,29 +7043,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Fiók törlése"
-      ],
-      "Downgrade account": [
-        "Váltás kisebb csomagra"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Legyen ${ BRAND_NAME }os ingyen"
-      ],
-      "Get ${ planName }": [
-        "${ planName } megszerzése"
-      ],
-      "Keep ${ plan }": [
-        "Maradjon ${ plan }"
-      ],
-      "Keep account": [
-        "Maradjon a fiók"
-      ],
-      "Switch plan": [
-        "Csomag váltása"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Váltás kisebb csomagra: ${ downgradedPlanName }"
@@ -7109,6 +7067,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Váltás ${ planName } csomagra"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Fiók törlése"
+      ],
+      "Downgrade account": [
+        "Váltás kisebb csomagra"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Legyen ${ BRAND_NAME }os ingyen"
+      ],
+      "Get ${ planName }": [
+        "${ planName } megszerzése"
+      ],
+      "Keep ${ plan }": [
+        "Maradjon ${ plan }"
+      ],
+      "Keep account": [
+        "Maradjon a fiók"
+      ],
+      "Switch plan": [
+        "Csomag váltása"
       ]
     },
     "new_plans: feature": {
@@ -8302,17 +8283,6 @@
         "Üdvözli a ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Mindenki"
-      ],
-      "Group members": [
-        "Csoporttagok"
-      ],
-      "No one": [
-        "Senki"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Ország konfigurációk"
@@ -8376,6 +8346,17 @@
       ],
       "The whole organization": [
         "A teljes szervezet"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Mindenki"
+      ],
+      "Group members": [
+        "Csoporttagok"
+      ],
+      "No one": [
+        "Senki"
       ]
     },
     "Organization capacity error": {
@@ -9638,9 +9619,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Ez az előfizetés minden 2 évben automatikusan megújul, ugyanazon az áron, amíg felmondásra nem kerül."
-      ],
       "Your subscription will renew at the same rate every year.": [
         "Az ön előfizetése évente ugyanazon az áron újul meg."
       ]
@@ -10031,9 +10009,6 @@
       "For all ${ BRAND_NAME } services": [
         "Minden ${ BRAND_NAME } szolgáltatáshoz"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "E-mailek küldéséhez vagy fogadásához szabadítson fel helyet, vagy ${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Fájlok feltöltéséhez vagy szinkronizálásához szabadítson fel helyet vagy ${ upgrade }"
       ],
@@ -10052,12 +10027,6 @@
       ],
       "Your ${ appStorage } is full": [
         "Az ön ${ appStorage } tele van."
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "A ${ storage } ${ percentage }%-ban megtelt. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "A(z) ${ storage } tárhelye megtelt. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "A tárhelye ${ percentage }%-ban megtelt. ${ cta }."
@@ -10084,21 +10053,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Kétéves számlázás"
-      ],
-      "Billed every 6 months": [
-        "6 havonta számlázva"
-      ],
-      "Billed for 15 months": [
-        "15 havonta számlázva"
-      ],
-      "Billed for 18 months": [
-        "18 havonta számlázva"
-      ],
-      "Billed for 3 months": [
-        "3 havonta számlázva"
-      ],
-      "Billed for 30 months": [
-        "30 havonta számlázva"
       ],
       "Billed monthly": [
         "Havonta számlázva"
@@ -10220,6 +10174,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } áron"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatikus e-mail továbbítás ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Short @pm.me email address": [
+        "Rövid @pm.me e-mail cím"
+      ],
+      "Support our mission": [
+        "Támogassa küldetésünket"
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "Upgrade your productivity": [
+        "Növelje a termelékenységét"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
+      ],
+      "Your privacy is our mission": [
+        "Az Ön adatvédelme a mi küldetésünk"
       ]
     },
     "Subscription reminder": {
@@ -10510,47 +10505,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Az Ön saját rövid @pm.me e-mail álnévcíme"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatikus e-mail továbbítás ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Short @pm.me email address": [
-        "Rövid @pm.me e-mail cím"
-      ],
-      "Support our mission": [
-        "Támogassa küldetésünket"
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "Upgrade your productivity": [
-        "Növelje a termelékenységét"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
-      ],
-      "Your privacy is our mission": [
-        "Az Ön adatvédelme a mi küldetésünk"
       ]
     },
     "Subscription renewal state": {

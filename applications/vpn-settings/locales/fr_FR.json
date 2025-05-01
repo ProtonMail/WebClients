@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activer"
-      ],
       "activate": [
         "activer"
+      ],
+      "Activate": [
+        "Activer"
       ],
       "Activate organization key": [
         "Activer la clé de l'organisation"
@@ -259,11 +259,11 @@
       "Discard": [
         "Abandonner"
       ],
-      "Discard changes": [
-        "Abandonner les modifications"
-      ],
       "Discard Changes": [
         "Abandonner les changements"
+      ],
+      "Discard changes": [
+        "Abandonner les modifications"
       ],
       "Discover ${ planName }": [
         "Découvrez ${ planName }"
@@ -448,6 +448,9 @@
       "Keep Editing": [
         "Poursuivre les modifications"
       ],
+      "Keep editing": [
+        "Continuer les modifications"
+      ],
       "Keep logo": [
         "Conserver le logo"
       ],
@@ -559,11 +562,11 @@
       "Refresh status": [
         "Actualiser le statut"
       ],
-      "refresh the page": [
-        "actualiser la page"
-      ],
       "Refresh the page": [
         "Actualiser la page"
+      ],
+      "refresh the page": [
+        "actualiser la page"
       ],
       "Remove": [
         "Retirer"
@@ -1581,9 +1584,9 @@
       ]
     },
     "CountriesStep:Info": {
-      "${ selectedCitiesCount } selected": [
-        "${ selectedCitiesCount } sélectionnée",
-        "${ selectedCitiesCount } sélectionnées"
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount } sélectionné",
+        "${ selectedCountriesCount } sélectionnés"
       ]
     },
     "Country name": {
@@ -4023,6 +4026,10 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Avec la technologie de chiffrement de ${ BRAND_NAME }, personne ne peut accéder à votre mot de passe, pas même nous."
       ],
+      "${ countriesCount } country enabled": [
+        "${ countriesCount } pays activé",
+        "${ countriesCount } pays activés"
+      ],
       "${ discountPercent }% discount": [
         "${ discountPercent } % de réduction"
       ],
@@ -4043,10 +4050,6 @@
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de vos membres sans authentification unique utilise une authentification à deux facteurs pour se connecter à votre organisation.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de vos membres sans authentification unique utilisent une authentification à deux facteurs pour se connecter à votre organisation."
-      ],
-      "${ locationsCount } country enabled": [
-        "${ locationsCount } pays activé",
-        "${ locationsCount } pays activés"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } et ${ CALENDAR_APP_NAME }"
@@ -4332,9 +4335,6 @@
       "Beta": [
         "Version bêta"
       ],
-      "Billed at ${ price }": [
-        "Facturé ${ price }"
-      ],
       "Billing cycle: ${ text }": [
         "Cycle de facturation : ${ text }"
       ],
@@ -4445,11 +4445,11 @@
       "Data recoverable on this device": [
         "Données récupérables sur cet appareil"
       ],
-      "Dedicated servers": [
-        "Serveurs dédiés"
-      ],
       "dedicated servers": [
         "serveurs dédiés"
+      ],
+      "Dedicated servers": [
+        "Serveurs dédiés"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Vous pouvez ajouter des serveurs dédiés avec des adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
@@ -5090,12 +5090,6 @@
       ],
       "per month, billed at ${ price }": [
         "par mois, facturé ${ price }"
-      ],
-      "per month, billed every 12 months": [
-        "par mois (facturation tous les 12 mois)"
-      ],
-      "per month, billed every 24 months": [
-        "par mois (facturation tous les 24 mois)"
       ],
       "Please add a password for the user on row": [
         "Ajoutez un mot de passe pour l'utilisateur choisi.",
@@ -7222,29 +7216,6 @@
         "Vitesse VPN moyenne"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Supprimer le compte"
-      ],
-      "Downgrade account": [
-        "Passer à un abonnement inférieur"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obtenir gratuitement ${ BRAND_NAME }"
-      ],
-      "Get ${ planName }": [
-        "Obtenir ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Conserver ${ plan }"
-      ],
-      "Keep account": [
-        "Conserver le compte"
-      ],
-      "Switch plan": [
-        "Changer d'abonnement"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Passer à ${ downgradedPlanName }"
@@ -7269,6 +7240,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Passer à ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Supprimer le compte"
+      ],
+      "Downgrade account": [
+        "Passer à un abonnement inférieur"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obtenir gratuitement ${ BRAND_NAME }"
+      ],
+      "Get ${ planName }": [
+        "Obtenir ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Conserver ${ plan }"
+      ],
+      "Keep account": [
+        "Conserver le compte"
+      ],
+      "Switch plan": [
+        "Changer d'abonnement"
       ]
     },
     "new_plans: feature": {
@@ -8462,17 +8456,6 @@
         "Bienvenue dans ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Tout le monde"
-      ],
-      "Group members": [
-        "Membres du groupe"
-      ],
-      "No one": [
-        "Personne"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "${ defaultLabel } autorisé"
@@ -8542,6 +8525,17 @@
       ],
       "The whole organization": [
         "Toute l'organisation"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tout le monde"
+      ],
+      "Group members": [
+        "Membres du groupe"
+      ],
+      "No one": [
+        "Personne"
       ]
     },
     "Organization capacity error": {
@@ -9815,8 +9809,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Cet abonnement se renouvellera automatiquement tous les 2 ans au même tarif jusqu'à son annulation."
+      "The special offer is valid for the first 2 years.": [
+        "L’offre spéciale est valable pendant les 2 premières années."
       ],
       "Your subscription will renew at the same rate every year.": [
         "Votre abonnement sera renouvelé au même tarif chaque année."
@@ -9897,6 +9891,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Le prix habituel est de ${ amount } pour 30 mois"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "L’offre spéciale est valable pendant les 2 premières années."
       ]
     },
     "specialoffer: Title": {
@@ -10211,9 +10208,6 @@
       "For all ${ BRAND_NAME } services": [
         "Pour tous les services ${ BRAND_NAME }"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Pour importer ou synchroniser vos fichiers, veuillez libérer de l'espace ou ${ upgrade }."
       ],
@@ -10232,12 +10226,6 @@
       ],
       "Your ${ appStorage } is full": [
         "Votre ${ appStorage } est plein."
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Votre ${ storage } est rempli à ${ percentage } %. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Votre ${ storage } est plein. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Votre espace de stockage est rempli à ${ percentage } %. ${ cta }."
@@ -10264,21 +10252,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Facturé tous les 2 ans"
-      ],
-      "Billed every 6 months": [
-        "Facturation tous les 6 mois"
-      ],
-      "Billed for 15 months": [
-        "Facturé pour 15 mois"
-      ],
-      "Billed for 18 months": [
-        "Facturé pour 18 mois"
-      ],
-      "Billed for 3 months": [
-        "Facturé pour 3 mois"
-      ],
-      "Billed for 30 months": [
-        "Facturé pour 30 mois"
       ],
       "Billed monthly": [
         "Facturé mensuellement"
@@ -10400,6 +10373,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Pour ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail courtes @pm.me"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données"
+      ],
+      "Your privacy is our mission": [
+        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription reminder": {
@@ -10690,47 +10704,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "and 15 more premium features": [
-        "et 15 fonctionnalités premium en plus"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Transfert automatique des messages ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de fuites de données ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Application de bureau"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
-      ],
-      "No ads or tracking": [
-        "Aucune publicité, aucun suivi"
-      ],
-      "Short @pm.me email address": [
-        "Adresses e-mail courtes @pm.me"
-      ],
-      "Support our mission": [
-        "Soutenez notre mission"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade your productivity": [
-        "Améliorez votre productivité"
-      ],
-      "We don't sell your data": [
-        "Nous ne vendons pas vos données"
-      ],
-      "Your privacy is our mission": [
-        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {

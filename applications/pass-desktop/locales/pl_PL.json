@@ -403,10 +403,10 @@
       "Move to another vault": [
         "Przenieś do innego sejfu"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Przenieś do kosza"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Przenieś do kosza"
       ],
       "Multiple select": [
@@ -831,9 +831,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Plik eksportu danych ${ provider } nie mógł zostać przetworzony. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[Błąd] Element nie mógł zostać przetworzony"
-      ],
       "A domain ownership must be verified first.": [
         "Najpierw zweryfikuj domenę."
       ],
@@ -863,9 +860,6 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Uwierzytelnianie się nie powiodło. Potwierdź drugie hasło, aby wyeksportować dane"
-      ],
-      "Biometric authentication failed": [
-        "Uwierzytelnianie biometryczne nie powiodło się"
       ],
       "Cannot send invitation at the moment": [
         "Nie można wysłać zaproszenia",
@@ -1911,10 +1905,7 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"

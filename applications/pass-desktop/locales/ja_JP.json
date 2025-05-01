@@ -403,10 +403,10 @@
       "Move to another vault": [
         "別の保管庫に移動"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "ごみ箱に移動"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "ごみ箱に移動"
       ],
       "Multiple select": [
@@ -822,9 +822,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } ファイルを解析できませんでした。 ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[エラー] アイテムを解析できませんでした"
-      ],
       "A domain ownership must be verified first.": [
         "ドメインの所有権を最初に確認しなければなりません。"
       ],
@@ -854,9 +851,6 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "認証に失敗しました。エクスポートを続行するには、2つ目のパスワードを確認してください"
-      ],
-      "Biometric authentication failed": [
-        "生体認証に失敗しました"
       ],
       "Cannot send invitation at the moment": [
         "現在招待を送ることができません"
@@ -1837,9 +1831,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"

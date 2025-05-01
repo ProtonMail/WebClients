@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "有効にする"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate organization key": [
         "組織の鍵を有効化する"
@@ -553,10 +553,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
       "Remove": [
@@ -1562,11 +1562,6 @@
     "Confirmation title": {
       "Delete payment method": [
         "支払い方法の削除"
-      ]
-    },
-    "CountriesStep:Info": {
-      "${ selectedCitiesCount } selected": [
-        "${ selectedCitiesCount }個が選択済み"
       ]
     },
     "Country name": {
@@ -4008,9 +4003,6 @@
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
         "SSO以外のメンバーの${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } は、あなたの組織にサインインするために2要素認証を使用します。"
       ],
-      "${ locationsCount } country enabled": [
-        "${ locationsCount } の国は有効です"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME }"
       ],
@@ -4272,9 +4264,6 @@
       "Beta": [
         "ベータ"
       ],
-      "Billed at ${ price }": [
-        "${ price }で請求されます"
-      ],
       "Billing cycle: ${ text }": [
         "支払いサイクル: ${ text }"
       ],
@@ -4383,10 +4372,10 @@
       "Data recoverable on this device": [
         "このデバイスでデータを復元できます"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -5018,12 +5007,6 @@
       ],
       "per month, billed at ${ price }": [
         "月額、${ price } で請求されます"
-      ],
-      "per month, billed every 12 months": [
-        "月額、12ヶ月ごとに請求"
-      ],
-      "per month, billed every 24 months": [
-        "月額、24ヶ月ごとに請求"
       ],
       "Please add a password for the user on row": [
         "行のユーザーのパスワードを追加してください"
@@ -7093,29 +7076,6 @@
         "中程度の VPN 速度"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "アカウントを削除"
-      ],
-      "Downgrade account": [
-        "アカウントをダウングレード"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "無料で ${ BRAND_NAME } を入手"
-      ],
-      "Get ${ planName }": [
-        "${ planName } を入手"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } を使い続ける"
-      ],
-      "Keep account": [
-        "アカウントを削除しない"
-      ],
-      "Switch plan": [
-        "プランを変更"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } へダウングレード"
@@ -7140,6 +7100,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } へアップグレード"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "アカウントを削除"
+      ],
+      "Downgrade account": [
+        "アカウントをダウングレード"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "無料で ${ BRAND_NAME } を入手"
+      ],
+      "Get ${ planName }": [
+        "${ planName } を入手"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } を使い続ける"
+      ],
+      "Keep account": [
+        "アカウントを削除しない"
+      ],
+      "Switch plan": [
+        "プランを変更"
       ]
     },
     "new_plans: feature": {
@@ -8306,17 +8289,6 @@
         "${ appName } へようこそ"
       ]
     },
-    "option": {
-      "Everyone": [
-        "みんな"
-      ],
-      "Group members": [
-        "グループメンバー"
-      ],
-      "No one": [
-        "誰も"
-      ]
-    },
     "Option": {
       "Country configs": [
         "各国の設定ファイル"
@@ -8380,6 +8352,17 @@
       ],
       "The whole organization": [
         "組織全体"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "みんな"
+      ],
+      "Group members": [
+        "グループメンバー"
+      ],
+      "No one": [
+        "誰も"
       ]
     },
     "Organization capacity error": {
@@ -9624,9 +9607,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "このサブスクリプションは、キャンセルされるまで 2 年ごとに同じ料金で自動更新されます。"
-      ],
       "Your subscription will renew at the same rate every year.": [
         "サブスクリプションは毎年同じ料金で更新されます。"
       ]
@@ -10011,9 +9991,6 @@
       "For all ${ BRAND_NAME } services": [
         "すべての ${ BRAND_NAME } サービス向け"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "メールを送受信するには、容量を空けるか${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "ファイルをアップロードまたは同期するには、容量を空けるか ${ upgrade } してください"
       ],
@@ -10031,12 +10008,6 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage }はいっぱいです"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "${ storage }は${ percentage }%使用中です。${ cta }。"
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "${ storage }はいっぱいです。${ cta }。"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "容量は${ percentage }%使用中です。${ cta }。"
@@ -10063,21 +10034,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "2年ごとに請求"
-      ],
-      "Billed every 6 months": [
-        "6 ヵ月ごとに請求"
-      ],
-      "Billed for 15 months": [
-        "15 か月分の請求"
-      ],
-      "Billed for 18 months": [
-        "18 か月分の請求"
-      ],
-      "Billed for 3 months": [
-        "3 か月分の請求"
-      ],
-      "Billed for 30 months": [
-        "30 か月分の請求"
       ],
       "Billed monthly": [
         "毎月請求"
@@ -10184,6 +10140,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } の場合"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription reminder": {
@@ -10468,47 +10465,6 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {

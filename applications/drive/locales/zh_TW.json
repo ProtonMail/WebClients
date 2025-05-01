@@ -6802,29 +6802,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "刪除帳號"
-      ],
-      "Downgrade account": [
-        "降級帳號"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "取得免費的 ${ BRAND_NAME }"
-      ],
-      "Get ${ planName }": [
-        "取得 ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "保留 ${ plan }"
-      ],
-      "Keep account": [
-        "保留帳號"
-      ],
-      "Switch plan": [
-        "切換方案"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "降級後的方案為 ${ downgradedPlanName }"
@@ -6846,6 +6823,29 @@
       ],
       "Upgrade to ${ planName }": [
         "升級至${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "刪除帳號"
+      ],
+      "Downgrade account": [
+        "降級帳號"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "取得免費的 ${ BRAND_NAME }"
+      ],
+      "Get ${ planName }": [
+        "取得 ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "保留 ${ plan }"
+      ],
+      "Keep account": [
+        "保留帳號"
+      ],
+      "Switch plan": [
+        "切換方案"
       ]
     },
     "new_plans: feature": {
@@ -8903,9 +8903,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "此訂購授權將每 2 年自動以相同的費用續訂，直到被取消為止。"
-      ],
       "Your subscription will renew at the same rate every year.": [
         "您的訂閱每年將以同費率更新"
       ]
@@ -9101,9 +9098,6 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "要繼續上傳或同步檔案，需要釋放一些空間或生即已取得更多空間。"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "您的儲存已滿，要傳送或接收電郵，請釋放儲存空間或${ upgrade }"
-      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "您的儲存已滿，要傳送或接收電郵，請釋放儲存空間或升級以取得更多空間。"
       ],
@@ -9121,12 +9115,6 @@
       ],
       "Your ${ appStorage } is full": [
         "您的${ appStorage }已滿"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "您已使用 ${ percentage }% 的 ${ storage }。${ cta }"
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "您的${ storage }已滿${ cta }。"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "你的儲存量已達 ${ percentage }% 滿. ${ cta }."
@@ -9153,21 +9141,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "雙年繳制"
-      ],
-      "Billed every 6 months": [
-        "每 6 個月付款"
-      ],
-      "Billed for 15 months": [
-        "15個月的費用為"
-      ],
-      "Billed for 18 months": [
-        "18個月的費用為"
-      ],
-      "Billed for 3 months": [
-        "3個月的費用為"
-      ],
-      "Billed for 30 months": [
-        "30個月的費用為"
       ],
       "Billed monthly": [
         "月繳"
@@ -9229,6 +9202,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } 版"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "and 15 more premium features": [
+        "還有額外的15個的加值功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
       ]
     },
     "Subscription reminder": {
@@ -9462,47 +9476,6 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "and 15 more premium features": [
-        "還有額外的15個的加值功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動郵件轉寄${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "資料外洩警告 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面應用程式"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
-      ],
-      "No ads or tracking": [
-        "無廣告或追蹤"
-      ],
-      "Short @pm.me email address": [
-        "縮短電子郵件地址@pm.me"
-      ],
-      "Support our mission": [
-        "支援我們的計畫"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade your productivity": [
-        "提升您的生產力"
-      ],
-      "We don't sell your data": [
-        "我們不銷售您的資料"
-      ],
-      "Your privacy is our mission": [
-        "您的隱私是我們責任"
       ]
     },
     "Subscription renewal state": {
@@ -10615,9 +10588,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 會從最近期的郵件開始，以最大量方式傳輸資料。"
       ],
-      "2 consecutive dots are not allowed": [
-        "不允許連續2點"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "您確定要永久刪除 ${ count } 位聯絡人嗎？"
       ],
@@ -10630,32 +10600,11 @@
       "Are you sure you want to permanently delete this contact?": [
         "您確定要永久刪除此聯絡人嗎？"
       ],
-      "Cannot contain a dot at the beginning": [
-        "無法於開頭使用點"
-      ],
-      "Cannot contain a dot at the end": [
-        "無法於最後使用點"
-      ],
       "Contacts could not be merged": [
         "無法合併聯絡人"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "若您忘記密碼，則沒辦法重新啟用您的金鑰。我們可說明您關閉提示橫幅，然而在此過程中，您將永久失去所有經過該金鑰加密的資料。"
-      ],
-      "Invalid alias prefix": [
-        "別名前綴無效"
-      ],
-      "Missing alias prefix": [
-        "缺少別名前綴"
-      ],
-      "Missing alias suffix": [
-        "缺少別名後綴"
-      ],
-      "Name is required": [
-        "名稱為必填"
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "僅允許英文小寫字母、數字、點號、連字號和底線"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "回報未使用端到端加密，請不要傳送任何敏感資訊。"
@@ -10665,9 +10614,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "部分需合併的聯絡人顯示錯誤。請逐一查看"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "別名不能超過40個字元"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "此聯絡人資料已毀損，無法顯示。"
@@ -10695,9 +10641,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "我們無法驗證此郵件伺服器。如果您確定可信任此伺服器，則可略過驗證。"
-      ],
-      "You must select at least one mailbox": [
-        "你必須至少選擇一個收件匣"
       ],
       "You will lose any customization you made so far.": [
         "您到目前為止所自訂的所有設定將會遺失。"

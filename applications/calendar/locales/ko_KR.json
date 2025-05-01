@@ -2690,6 +2690,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "암호화 및 연락처 불러오기 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
       ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "원활하게 ${ BRAND_NAME }(으)로 전환하기 위해 Google, Outlook 등에서 데이터를 불러오기 하세요."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "내 비밀번호나 다른 데이터가 제 3자 서비스에서 유출되면 알림받으세요."
       ],
@@ -5051,6 +5054,9 @@
       "Please authenticate your payment in the verification tab.": [
         "인증 탭에서 결제 수단을 인증해 주세요."
       ],
+      "Please fill in all required fields.": [
+        "필수 입력란을 모두 입력해주세요."
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "이 그룹에 할당된 주소는 삭제되지 않는다는 점에 유의하세요."
       ],
@@ -6096,6 +6102,9 @@
       "Password": [
         "암호"
       ],
+      "Password strength": [
+        "비밀번호 보안 강도"
+      ],
       "Payer": [
         "결제자"
       ],
@@ -6764,6 +6773,26 @@
         "중간 VPN 속도"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }에 시작하기"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName }(으)로 업그레이드"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "계정 삭제"
@@ -6785,26 +6814,6 @@
       ],
       "Switch plan": [
         "플랜 변경"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }에 시작하기"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName }(으)로 업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -8864,9 +8873,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "이 구독은 취소되기 전까지 매 2년마다 같은 요율로 갱신됩니다."
-      ],
       "Your subscription will renew at the same rate every year.": [
         "회원님의 구독이 매년 같은 요율로 갱신됩니다."
       ]
@@ -9051,9 +9057,6 @@
       "For all ${ BRAND_NAME } services": [
         "모든 ${ BRAND_NAME } 서비스에서 사용"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "이메일을 수발신 하려면, 공간을 비우거나 ${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "파일을 업로드 및 동기화하려면, 공간을 비우거나 ${ upgrade }"
       ],
@@ -9071,12 +9074,6 @@
       ],
       "Your ${ appStorage } is full": [
         "사용자의 ${ appStorage }이 가득 찼습니다."
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "사용자의 ${ storage }가 ${ percentage }% 찼습니다. ${ cta }"
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "사용자의 ${ storage } 스토리지가 가득 찼습니다. ${ cta }"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "사용자의 스토리지가 ${ percentage }% 찼습니다. ${ cta }"
@@ -9116,21 +9113,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "2년마다 청구"
-      ],
-      "Billed every 6 months": [
-        "6개월마다 청구"
-      ],
-      "Billed for 15 months": [
-        "15개월 마다 결제됨"
-      ],
-      "Billed for 18 months": [
-        "18개월 마다 청구됨"
-      ],
-      "Billed for 3 months": [
-        "3개월 마다 청구됨"
-      ],
-      "Billed for 30 months": [
-        "30개월 마다 청구됨"
       ],
       "Billed monthly": [
         "매달 청구"
@@ -9195,6 +9177,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }용"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "당사는 사용자의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription reminder": {
@@ -9449,47 +9472,6 @@
       ],
       "Your own short @pm.me email alias": [
         "사용자의 @pm.me 이메일 별칭"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "저장공간 15GB"
-      ],
-      "and 15 more premium features": [
-        "그리고 15개의 프리미엄 기능"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "자동 이메일 포워딩 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "데이터 침해 경고 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
-      ],
-      "No ads or tracking": [
-        "광고나 트래킹이 없습니다"
-      ],
-      "Short @pm.me email address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Support our mission": [
-        "저희의 사명을 지원해주세요"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade your productivity": [
-        "생산성을 업그레이드하세요"
-      ],
-      "We don't sell your data": [
-        "당사는 사용자의 데이터를 판매하지 않습니다"
-      ],
-      "Your privacy is our mission": [
-        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription renewal state": {
@@ -10633,9 +10615,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송할 것입니다."
       ],
-      "2 consecutive dots are not allowed": [
-        "마침표 2개가 연속해서 올 수 없습니다"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "정말로 연락처 ${ count }개를 영구적으로 삭제하시겠습니까?"
       ],
@@ -10648,12 +10627,6 @@
       "Are you sure you want to permanently delete this contact?": [
         "이 연락처를 영구적으로 삭제하시겠습니까?"
       ],
-      "Cannot contain a dot at the beginning": [
-        "시작에 점(.)을 포함할 수 없습니다."
-      ],
-      "Cannot contain a dot at the end": [
-        "끝에 점(.)을 포함할 수 없습니다."
-      ],
       "Contacts could not be merged": [
         "연락처를 병합할 수 없습니다"
       ],
@@ -10663,21 +10636,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "비밀번호가 기억나지 않으시다면, 키를 재활성화 하는것이 불가능 합니다. 당사에서 경고 배너를 무시할 수 있도록 도와드릴 수 있으나, 처리 중 해당 키의 암호화된 모든 데이터를 잃게 됩니다."
       ],
-      "Invalid alias prefix": [
-        "유효하지 않은 별칭 접두사"
-      ],
-      "Missing alias prefix": [
-        "별명 접두사가 빠져있습니다"
-      ],
-      "Missing alias suffix": [
-        "별칭 접미사가 빠져있습니다"
-      ],
-      "Name is required": [
-        "이름은 필수입니다"
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "영숫자 소문자, 점, 하이픈 및 밑줄만 허용됩니다."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "보고서는 종단간 암호화되지 않음으로 민감한 정보를 보내지 마십시오."
       ],
@@ -10686,9 +10644,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "병합될 연락처 중 일부는 오류를 표시합니다. 이 연락처들을 개별적으로 검토해 주세요."
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "별칭 접두사는 40자를 초과할 수 없습니다"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "연락처 데이터가 손상되어 표시가 불가능 합니다."
@@ -10716,9 +10671,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "메일 서버를 인증할 수 없습니다. 해당 서버를 신뢰하신다면, 이 인증을 건너뛸 수도 있습니다."
-      ],
-      "You must select at least one mailbox": [
-        "최소 하나 이상의 메일함을 선택해야 합니다."
       ],
       "You will lose any customization you made so far.": [
         "지금까지 만든 커스터마이징을 모두 잃게 됩니다."

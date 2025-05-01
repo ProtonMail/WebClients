@@ -4393,9 +4393,6 @@
       "No payment is required at this time.": [
         "Наразі платіж не вимагається."
       ],
-      "No recent documents": [
-        "Нещодавні документи відсутні"
-      ],
       "No results found": [
         "Результатів не знайдено"
       ],
@@ -7969,11 +7966,6 @@
         "Підтримка онлайн-приватності"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Ця передплата автоматично поновлюватиметься кожні 2 роки за тією ж ціною, доки ви її не скасуєте."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Перейти до тарифних планів"
@@ -8156,9 +8148,6 @@
       "For all ${ BRAND_NAME } services": [
         "Для всіх сервісів ${ BRAND_NAME }"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "Щоб надсилати й отримувати листи, звільніть місце або ${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Щоб завантажити або синхронізувати файли, звільніть місце або ${ upgrade }"
       ],
@@ -8179,12 +8168,6 @@
       ],
       "Your ${ appStorage } is full": [
         "Ваше ${ appStorage } заповнене"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Ваше ${ storage } заповнене на ${ percentage }%. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Ваше ${ storage } заповнене. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Ваше сховище заповнене на ${ percentage }%. ${ cta }."
@@ -8211,18 +8194,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Сплачується кожні 2 роки"
-      ],
-      "Billed for 15 months": [
-        "Сплачується за 15 місяців"
-      ],
-      "Billed for 18 months": [
-        "Сплачується за 18 місяців"
-      ],
-      "Billed for 3 months": [
-        "Сплачується за 3 місяці"
-      ],
-      "Billed for 30 months": [
-        "Сплачується за 30 місяців"
       ],
       "Billed monthly": [
         "Сплачується щомісяця"
@@ -8307,29 +8278,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } сховища на користувача"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } надає вам усі застосунки, усі функції, ранній доступ до нових релізів і все необхідне, щоби контролювати свої дані та їхню безпеку."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } власний домен електронної пошти",
-        "${ planNumberOfDomains } власні домени електронної пошти",
-        "${ planNumberOfDomains } власних доменів електронної пошти",
-        "${ planNumberOfDomains } власних доменів електронної пошти"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } адреса електронної пошти",
-        "${ planNumberOfEmails } адреси електронної пошти",
-        "${ planNumberOfEmails } адрес електронної пошти",
-        "${ planNumberOfEmails } адрес електронної пошти"
-      ],
-      "Folders, labels, and custom filters": [
-        "Теки, мітки та користувацькі фільтри"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 ГБ сховища"
@@ -8369,6 +8317,29 @@
       ],
       "Your privacy is our mission": [
         "Ваша приватність є нашою місією"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } сховища на користувача"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } надає вам усі застосунки, усі функції, ранній доступ до нових релізів і все необхідне, щоби контролювати свої дані та їхню безпеку."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } власний домен електронної пошти",
+        "${ planNumberOfDomains } власні домени електронної пошти",
+        "${ planNumberOfDomains } власних доменів електронної пошти",
+        "${ planNumberOfDomains } власних доменів електронної пошти"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } адреса електронної пошти",
+        "${ planNumberOfEmails } адреси електронної пошти",
+        "${ planNumberOfEmails } адрес електронної пошти",
+        "${ planNumberOfEmails } адрес електронної пошти"
+      ],
+      "Folders, labels, and custom filters": [
+        "Теки, мітки та користувацькі фільтри"
       ]
     },
     "Subscription renewal state": {
@@ -9382,18 +9353,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Неможливо повторно активувати ваш ключ, якщо ви не пам'ятаєте свій пароль. Ми можемо допомогти вам відхилити банер з попередженням, але при цьому ви остаточно втратите доступ до всіх даних, що були зашифровані з використанням цього ключа."
       ],
-      "Invalid alias prefix": [
-        "Недійсний префікс псевдоніма"
-      ],
-      "Missing alias prefix": [
-        "Відсутній префікс псевдоніма"
-      ],
-      "Missing alias suffix": [
-        "Відсутній суфікс псевдоніма"
-      ],
-      "Name is required": [
-        "Назва обовʼязкова"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Звіти не захищаються наскрізним шифруванням. Будь ласка, не надсилайте в них жодних приватних даних."
       ],
@@ -9402,9 +9361,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Деякі об'єднувані контакти мають помилки. Будь ласка, перегляньте їх окремо"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "Префікс псевдоніма не може бути довшим ніж 40 символів"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Дані контакту пошкоджені, тому їх неможливо показати."
@@ -9432,9 +9388,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Ми не змогли перевірити поштовий сервер. Якщо ви йому довіряєте, можете пропустити цю перевірку."
-      ],
-      "You must select at least one mailbox": [
-        "Виберіть принаймні одну поштову скриньку"
       ],
       "You will lose any customization you made so far.": [
         "Ви втратите будь-які попередні налаштування."

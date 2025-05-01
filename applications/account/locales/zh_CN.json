@@ -460,11 +460,11 @@
       "Discard": [
         "放弃"
       ],
-      "Discard changes": [
-        "放弃修改"
-      ],
       "Discard Changes": [
         "放弃更改"
+      ],
+      "Discard changes": [
+        "放弃修改"
       ],
       "Discover ${ planName }": [
         "探索 ${ planName }"
@@ -955,10 +955,10 @@
       "Refresh status": [
         "刷新状态"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "刷新页面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "刷新页面"
       ],
       "Reject": [
@@ -2801,11 +2801,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "CountriesStep:Info": {
-      "${ selectedCitiesCount } selected": [
-        "${ selectedCitiesCount } 个城市已选择"
       ]
     },
     "Country name": {
@@ -7273,9 +7268,6 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } 想要与您分享 ${ PASS_APP_NAME }中的数据"
       ],
-      "${ locationsCount } country enabled": [
-        "${ locationsCount } 国家/地区已启用"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } 和 ${ CALENDAR_APP_NAME }"
       ],
@@ -7483,11 +7475,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "建议至少设置一种数据恢复方式，确保即使忘记密码也能找回 ${ BRAND_NAME } 账户中的信息。"
       ],
-      "active": [
-        "启用"
-      ],
       "Active": [
         "已启用"
+      ],
+      "active": [
+        "启用"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
@@ -7741,9 +7733,6 @@
       "Beta": [
         "测试版"
       ],
-      "Billed at ${ price }": [
-        "以 ${ price } 支付"
-      ],
       "Billing cycle: ${ text }": [
         "计费周期：${ text }"
       ],
@@ -7918,10 +7907,10 @@
       "Data recoverable on this device": [
         "此设备上的数据可能被恢复"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "专用服务器"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "专用服务器"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -8925,12 +8914,6 @@
       ],
       "per month, billed at ${ price }": [
         "每月支付为 ${ price }"
-      ],
-      "per month, billed every 12 months": [
-        "每月，每 12 个月计费一次"
-      ],
-      "per month, billed every 24 months": [
-        "每月，每 24 个月计费一次"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "若对发出的邮件加以数字签名，PGP 客户端更有可能自动识别您的 PGP 密钥。"
@@ -10962,10 +10945,10 @@
       "Amount due": [
         "应付金额"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
       "and": [
@@ -11394,10 +11377,10 @@
       "IBAN": [
         "国际银行账户号码（IBAN）"
       ],
-      "If": [
+      "IF": [
         "如果"
       ],
-      "IF": [
+      "If": [
         "如果"
       ],
       "Import all messages": [
@@ -11607,13 +11590,13 @@
       "Optional": [
         "非必填"
       ],
+      "OR": [
+        "或"
+      ],
       "or": [
         "或"
       ],
       "Or": [
-        "或"
-      ],
-      "OR": [
         "或"
       ],
       "Organization name": [
@@ -12896,6 +12879,32 @@
         "VPN 速度一般"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "浏览所有 ${ BRAND_NAME } 账户等级"
+      ],
+      "From ${ price }": [
+        "低至 ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "以 ${ priceCoupon } 价格开始"
+      ],
+      "Starting from ${ pricing }": [
+        "低至 ${ pricing }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
+      ],
+      "Upgrade to ${ planName }": [
+        "升级至 ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "注册免费账户"
@@ -12923,32 +12932,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "开通 ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "浏览所有 ${ BRAND_NAME } 账户等级"
-      ],
-      "From ${ price }": [
-        "低至 ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "以 ${ priceCoupon } 价格开始"
-      ],
-      "Starting from ${ pricing }": [
-        "低至 ${ pricing }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ],
-      "Upgrade to ${ planName }": [
-        "升级至 ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -14293,17 +14276,6 @@
         "电脑版"
       ]
     },
-    "option": {
-      "Everyone": [
-        "所有人"
-      ],
-      "Group members": [
-        "群组成员"
-      ],
-      "No one": [
-        "没有人"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "每月 10 日"
@@ -14538,6 +14510,17 @@
       ],
       "Trash": [
         "回收站"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "所有人"
+      ],
+      "Group members": [
+        "群组成员"
+      ],
+      "No one": [
+        "没有人"
       ]
     },
     "Option delay send seconds": {
@@ -16833,9 +16816,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "此订阅将以相同费率每 2 年自动续订一次，直至取消。"
-      ],
       "Your subscription will renew at the same rate every year.": [
         "您的订阅将以每年相同的费率续订。"
       ]
@@ -17288,9 +17268,6 @@
       "Get more storage": [
         "获得更多存储空间"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "如需继续收发邮件，请释放部分存储空间或${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "如需继续上传或同步文件，请释放部分存储空间或${ upgrade }"
       ],
@@ -17317,12 +17294,6 @@
       ],
       "Your ${ appStorage } is full": [
         "您的 ${ appStorage } 已满"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "您的 ${ storage }已使用 ${ percentage }%。${ cta }。"
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "您的 ${ storage } 已满。 ${ cta }。"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "您的存储空间已使用 ${ percentage }%。${ cta }。"
@@ -17367,21 +17338,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "每两年付费"
-      ],
-      "Billed every 6 months": [
-        "按 6 个月计费"
-      ],
-      "Billed for 15 months": [
-        "按 15 个月计费"
-      ],
-      "Billed for 18 months": [
-        "按 18 个月计费"
-      ],
-      "Billed for 3 months": [
-        "按 3 个月计费"
-      ],
-      "Billed for 30 months": [
-        "按 30 个月计费"
       ],
       "Billed monthly": [
         "每月付费"
@@ -17488,6 +17444,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "总计 ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动邮件转发 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "简短的 @pm.me 邮箱地址"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription reminder": {
@@ -17772,47 +17769,6 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己的短 @pm.me 邮箱别名"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动邮件转发 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "简短的 @pm.me 邮箱地址"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription renewal state": {

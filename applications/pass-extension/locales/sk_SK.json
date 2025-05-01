@@ -764,9 +764,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } súbor nebolo možné analyzovať. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[Chyba] položku nebolo možné analyzovať"
-      ],
       "A domain ownership must be verified first.": [
         "Najprv je potrebné overiť vlastníctvo domény."
       ],
@@ -3858,6 +3855,9 @@
       ],
       "Enter coupon code": [
         "Zadajte kód kupónu"
+      ],
+      "Enter your ${ BRAND_NAME } password": [
+        "Zadajte svoje ${ BRAND_NAME } heslo"
       ],
       "Enter your backup password": [
         "Zadajte vaše záložné heslo"

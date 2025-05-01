@@ -7313,29 +7313,6 @@
         "中程度の VPN 速度"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "アカウントを削除"
-      ],
-      "Downgrade account": [
-        "アカウントをダウングレード"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "無料で ${ BRAND_NAME } を入手"
-      ],
-      "Get ${ planName }": [
-        "${ planName } を入手"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } を使い続ける"
-      ],
-      "Keep account": [
-        "アカウントを削除しない"
-      ],
-      "Switch plan": [
-        "プランを変更"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } へダウングレード"
@@ -7357,6 +7334,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } へアップグレード"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "アカウントを削除"
+      ],
+      "Downgrade account": [
+        "アカウントをダウングレード"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "無料で ${ BRAND_NAME } を入手"
+      ],
+      "Get ${ planName }": [
+        "${ planName } を入手"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } を使い続ける"
+      ],
+      "Keep account": [
+        "アカウントを削除しない"
+      ],
+      "Switch plan": [
+        "プランを変更"
       ]
     },
     "new_plans: feature": {
@@ -9541,9 +9541,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "このサブスクリプションは、キャンセルされるまで 2 年ごとに同じ料金で自動更新されます。"
-      ],
       "Your subscription will renew at the same rate every year.": [
         "サブスクリプションは毎年同じ料金で更新されます。"
       ]
@@ -9739,9 +9736,6 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "アップロードや同期を続けるには、容量を空けるかより大きな容量のプランにアップグレードしてください。"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "メールを送受信するには、容量を空けるか${ upgrade }"
-      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "メールを送受信するには、容量を空けるかより大きな容量のプランにアップグレードしてください。"
       ],
@@ -9762,12 +9756,6 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage }はいっぱいです"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "${ storage }は${ percentage }%使用中です。${ cta }。"
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "${ storage }はいっぱいです。${ cta }。"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "容量は${ percentage }%使用中です。${ cta }。"
@@ -9794,21 +9782,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "2年ごとに請求"
-      ],
-      "Billed every 6 months": [
-        "6 ヵ月ごとに請求"
-      ],
-      "Billed for 15 months": [
-        "15 か月分の請求"
-      ],
-      "Billed for 18 months": [
-        "18 か月分の請求"
-      ],
-      "Billed for 3 months": [
-        "3 か月分の請求"
-      ],
-      "Billed for 30 months": [
-        "30 か月分の請求"
       ],
       "Billed monthly": [
         "毎月請求"
@@ -9873,6 +9846,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } の場合"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription reminder": {
@@ -10127,47 +10141,6 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
@@ -11500,9 +11473,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } は、最新のメッセージからできるだけ多くのデータを転送します。"
       ],
-      "2 consecutive dots are not allowed": [
-        "2 つの連続したドットは使用できません"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } 件の連絡先を完全に削除してよろしいですか？"
       ],
@@ -11515,12 +11485,6 @@
       "Are you sure you want to permanently delete this contact?": [
         "この連絡先を完全に削除してよろしいですか？"
       ],
-      "Cannot contain a dot at the beginning": [
-        "最初にドットを含めることはできません"
-      ],
-      "Cannot contain a dot at the end": [
-        "最後にドットを含めることはできません"
-      ],
       "Contacts could not be merged": [
         "連絡先を統合できませんでした"
       ],
@@ -11530,21 +11494,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "パスワードを覚えていない場合は、鍵を再度有効にすることはできません。 わたしたちはアラートバナーを解除するお手伝いはできますが、その鍵で暗号化されたすべてのデータへのアクセスを永久に失うことになります。"
       ],
-      "Invalid alias prefix": [
-        "無効なエイリアスプレフィックスです"
-      ],
-      "Missing alias prefix": [
-        "エイリアスのプレフィックスがありません"
-      ],
-      "Missing alias suffix": [
-        "エイリアスのサフィックスがありません"
-      ],
-      "Name is required": [
-        "名前は必須です"
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "英数字の小文字、ドット、ハイフン、アンダースコアのみが使用できます"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されません。機密情報を送信しないでください。"
       ],
@@ -11553,9 +11502,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "統合時にエラーが発生した連絡先があります。エラー内容をご確認ください。"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "エイリアスのプレフィックスは40文字より長くすることはできません。"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "連絡先データが壊れているため表示できません。"
@@ -11583,9 +11529,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "メールサーバーを検証できませんでした。信頼できる場合は、この検証をスキップできます。"
-      ],
-      "You must select at least one mailbox": [
-        "少なくとも1つのメールボックスを選択する必要があります。"
       ],
       "You will lose any customization you made so far.": [
         "今までに行ったカスタマイズはすべて失われます。"

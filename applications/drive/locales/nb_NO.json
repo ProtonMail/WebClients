@@ -3067,6 +3067,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Eksterne invitasjoner er midlertidig deaktivert. Prøv igjen senere."
       ],
+      "Failed to copy photo to album": [
+        "Kunne ikke kopiere bildet til albumet"
+      ],
       "Failed to load the STL preview": [
         "Kan ikke laste inn STL-forhåndsvisningen"
       ],
@@ -4982,6 +4985,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke finner e-posten i innboksen, sjekk søppelpostmappen din."
       ],
+      "If you have a large photo library, it might take some time.": [
+        "Hvis du har et stort bildebibliotek, kan det ta litt tid."
+      ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Hvis du har en av disse, fortsett til ${ BRAND_NAME }-kontoinnstilling for å starte prosessen med å fjerne blokkeringen."
       ],
@@ -5508,9 +5514,6 @@
       "Setting up ${ feature }…": [
         "Konfigurerer ${ feature }…"
       ],
-      "Setting up Albums & Filters. This might take a few minutes.": [
-        "Konfigurerer album og filtre. Dette kan ta noen minutter."
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Ved å sette opp PGP kan du sende ende-til-ende-krypterte e-poster med en ikke-${ BRAND_NAME }-bruker, som bruker en annen PGP kompatibel tjeneste."
       ],
@@ -5930,6 +5933,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifiseringskode til ${ strong }"
       ],
+      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
+        "Et nytt eventyr begynner for bildene dine! I løpet av denne overgangen er fotogjenoppretting midlertidig utilgjengelig. Alt skal være klart om noen dager. Takk for din forståelse."
+      ],
       "Week": [
         "Uke"
       ],
@@ -6011,6 +6017,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Du kan lukke fanen eller nettleseren i mellomtiden."
+      ],
+      "You can close the tab. We'll work on it in the background.": [
+        "Du kan lukke fanen. Vi jobber med det i bakgrunnen."
       ],
       "You can import one data type at a time.": [
         "Du kan importere én datatype om gangen."
@@ -7490,29 +7499,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Slett konto"
-      ],
-      "Downgrade account": [
-        "Nedgrader kontoen"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Få ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Skaff deg ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Behold ${ plan }"
-      ],
-      "Keep account": [
-        "Behold konto"
-      ],
-      "Switch plan": [
-        "Bytt plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
@@ -7534,6 +7520,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Oppgrader til ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Slett konto"
+      ],
+      "Downgrade account": [
+        "Nedgrader kontoen"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Få ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Skaff deg ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Behold ${ plan }"
+      ],
+      "Keep account": [
+        "Behold konto"
+      ],
+      "Switch plan": [
+        "Bytt plan"
       ]
     },
     "new_plans: feature": {
@@ -8658,6 +8667,9 @@
       ],
       "Subfolder failed to be loaded": [
         "Undermappen kunne ikke lastes inn"
+      ],
+      "The Albums feature is on its way! We're rolling it out gradually — please try again soon": [
+        "Funksjonen Album er på vei! Vi ruller den ut gradvis – prøv igjen snart."
       ],
       "The document failed to be created": [
         "Dokumentet kunne ikke opprettes"
@@ -9789,8 +9801,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Dette abonnementet fornyes automatisk hvert 2. år med samme pris til det kanselleres."
+      "The special offer is valid for the first 2 years.": [
+        "Spesialtilbudet gjelder de 2 første årene."
       ],
       "Your subscription will renew at the same rate every year.": [
         "Abonnementet ditt fornyes med samme pris hvert år."
@@ -9871,6 +9883,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standard pris ${ amount } for 30 måneder"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Spesialtilbudet gjelder de første 2 årene"
       ]
     },
     "specialoffer: Title": {
@@ -9988,8 +10003,8 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Hvis du vil fortsette å laste opp og synkronisere filer, frigjør du plass eller oppgraderer for mer lagringsplass."
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "For å sende eller motta e-post, frigjøre plass eller ${ upgrade }."
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "For å fortsette å bruke ${ BRAND_NAME }-produkter må du frigjøre plass eller ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "For å sende eller motta e-post, frigjør plass eller oppgrader for mer lagringsplass."
@@ -10013,11 +10028,11 @@
       "Your ${ appStorage } is full": [
         "Din ${ appStorage } er full"
       ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Din ${ storage } er ${ percentage }% full. ${ cta }."
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString } er ${ percentage } % full. ${ cta }."
       ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Din ${ storage } er full. ${ cta }."
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString } er full. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Lagringsplassen din er ${ percentage }% full. ${ cta }."
@@ -10044,21 +10059,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Faktureres hvert 2. år"
-      ],
-      "Billed every 6 months": [
-        "Faktureres hver 6. måned"
-      ],
-      "Billed for 15 months": [
-        "Faktureres for 15 måneder"
-      ],
-      "Billed for 18 months": [
-        "Faktureres for 18 måneder"
-      ],
-      "Billed for 3 months": [
-        "Faktureres for 3 måneder"
-      ],
-      "Billed for 30 months": [
-        "Faktureres for 30 måneder"
       ],
       "Billed monthly": [
         "Faktureres månedlig"
@@ -10129,6 +10129,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "For ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription reminder": {
@@ -10389,47 +10430,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -11383,6 +11383,9 @@
       "Set up your organization": [
         "Konfigurer organisasjonen din"
       ],
+      "Setting up Albums & Filters": [
+        "Konfigurerer album og filtre"
+      ],
       "Settings": [
         "Innstillinger"
       ],
@@ -11472,9 +11475,6 @@
       ],
       "Upgrade complete!": [
         "Oppgradering fullført!"
-      ],
-      "Upgrading your Photos experience": [
-        "Tar bildene dine til neste nivå"
       ],
       "Upload and share files": [
         "Last opp og del filer"
@@ -11807,9 +11807,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mye data som mulig, og starter med de nyeste meldingene dine."
       ],
-      "2 consecutive dots are not allowed": [
-        "2 påfølgende prikker er ikke tillatt"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på at du ønsker å slette ${ count } kontakt permanent?",
         "Er du sikker på at du ønsker å slette ${ count } kontakter permanent?"
@@ -11823,12 +11820,6 @@
       "Are you sure you want to permanently delete this contact?": [
         "Er du sikker på at du vil slette denne kontakten permanent?"
       ],
-      "Cannot contain a dot at the beginning": [
-        "Kan ikke inneholde en prikk i begynnelsen"
-      ],
-      "Cannot contain a dot at the end": [
-        "Kan ikke inneholde en prikk ved slutten"
-      ],
       "Contacts could not be merged": [
         "Kontakene kunne ikke slås sammen"
       ],
@@ -11838,21 +11829,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Hvis du ikke husker passordet ditt, er det umulig å aktivere nøkkelen på nytt. Vi kan hjelpe deg med å avvise varselbanneret, men i prosessen vil du permanent miste tilgangen til alle dataene som er kryptert med den nøkkelen."
       ],
-      "Invalid alias prefix": [
-        "Ugyldig aliasprefiks"
-      ],
-      "Missing alias prefix": [
-        "Mangler aliasprefiks"
-      ],
-      "Missing alias suffix": [
-        "Mangler aliasprefiks"
-      ],
-      "Name is required": [
-        "Navn kreves"
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Bare små alfanumeriske tegn, punktum og bindestreker (inkludert understrek) er tillatt."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Feilrapporter er ikke ende-til-ende-kryptert, ikke send noe sensitiv informasjon."
       ],
@@ -11861,9 +11837,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Noen av kontaktene som skal slås sammen, viser feil. Gjennomgå dem individuelt."
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "Aliasprefikset kan ikke være lenger enn 40 tegn."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kontaktdataene er skadet og kan ikke vises."
@@ -11891,9 +11864,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Vi kan ikke bekrefte e-posttjeneren. Hvis du klarérer den, kan du hoppe over denne verifiseringen."
-      ],
-      "You must select at least one mailbox": [
-        "Du må velge minst en postboks"
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning du har gjort så langt."
