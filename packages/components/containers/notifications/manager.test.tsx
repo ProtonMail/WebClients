@@ -23,6 +23,47 @@ describe('notification manager', () => {
         expect(result.current[0]).toStrictEqual([expect.objectContaining({ text: 'hello' })]);
     });
 
+    it('should create a notification with a testID', () => {
+        const { result } = renderHook(() => useState<Notification[]>([]));
+        const [, setState] = result.current;
+
+        const manager = createNotificationManager(setState, noop);
+        expect(result.current[0]).toStrictEqual([]);
+        act(() => {
+            manager.createNotification({
+                text: 'hello',
+                dataTestId: 'notification-test-id',
+            });
+        });
+
+        expect(result.current[0]).toStrictEqual([
+            expect.objectContaining({ text: 'hello', dataTestId: 'notification-test-id' }),
+        ]);
+    });
+
+    it('should create multiple notifications with a testID', () => {
+        const { result } = renderHook(() => useState<Notification[]>([]));
+        const [, setState] = result.current;
+
+        const manager = createNotificationManager(setState, noop);
+        expect(result.current[0]).toStrictEqual([]);
+        act(() => {
+            manager.createNotification({
+                text: 'hello',
+                dataTestId: 'notification-test-id',
+            });
+            manager.createNotification({
+                text: 'second notification',
+                dataTestId: 'second-notification-test-id',
+            });
+        });
+
+        expect(result.current[0]).toStrictEqual([
+            expect.objectContaining({ text: 'second notification', dataTestId: 'second-notification-test-id' }),
+            expect.objectContaining({ text: 'hello', dataTestId: 'notification-test-id' }),
+        ]);
+    });
+
     it('should allow html and only allow href attr', () => {
         const { result } = renderHook(() => useState<Notification[]>([]));
         const [, setState] = result.current;
