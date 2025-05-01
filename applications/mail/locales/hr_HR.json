@@ -926,11 +926,6 @@
       "Trust": [
         "Vjeruj"
       ],
-      "Trust key": [
-        "Ključ povjerenja",
-        "Ključevi povjerenja",
-        "Ključevi povjerenja"
-      ],
       "Trust public key": [
         "Vjeruj javnom ključu"
       ],
@@ -1306,6 +1301,9 @@
       "Monthly": [
         "Mjesečno"
       ],
+      "New!": [
+        "Novo"
+      ],
       "Two-year": [
         "2 godine"
       ]
@@ -1390,6 +1388,9 @@
       ],
       "Continue your subscription": [
         "Nastavi svoju pretplatu"
+      ],
+      "Next": [
+        "Sljedeće"
       ]
     },
     "Calendar invite buttons label": {
@@ -1868,6 +1869,9 @@
       ],
       "Work": [
         "Posao"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3575,6 +3579,9 @@
       ],
       "No verification method available": [
         "Nema dostupne metode za provjeru"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -4625,6 +4632,9 @@
       ],
       "Trusted": [
         "Pouzdan"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -4873,10 +4883,10 @@
       "Also archive": [
         "Također i arhivu"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
       "and": [
@@ -5035,11 +5045,14 @@
       "Hide password": [
         "Sakrij lozinku"
       ],
-      "If": [
-        "Ako"
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "AKO"
+      ],
+      "If": [
+        "Ako"
       ],
       "Import all messages": [
         "Uvoz svih poruka"
@@ -5131,14 +5144,14 @@
       "Optional": [
         "Neobavezno"
       ],
+      "OR": [
+        "ILI"
+      ],
       "or": [
         "ili"
       ],
       "Or": [
         "Ili"
-      ],
-      "OR": [
-        "ILI"
       ],
       "Participants": [
         "Sudionici"
@@ -5244,6 +5257,9 @@
       ],
       "Upload picture": [
         "Učitaj sliku"
+      ],
+      "VAT": [
+        "PDV"
       ],
       "Verification code": [
         "Kôd za provjeru"
@@ -5393,6 +5409,9 @@
       ],
       "Learn more": [
         "Saznajte više"
+      ],
+      "Less": [
+        "Manje"
       ],
       "Manage your folders": [
         "Upravljanje vašim oznakama"
@@ -5702,6 +5721,14 @@
         "Najviša VPN brzina"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -5711,14 +5738,6 @@
       ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
-      ]
-    },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -5908,6 +5927,19 @@
         "Kontaktna grupa je ažurirana"
       ]
     },
+    "Offer": {
+      "Save": [
+        "Spremi"
+      ]
+    },
+    "Offer feature": {
+      "Free": [
+        "Besplatno"
+      ],
+      "Plus": [
+        "Plus"
+      ]
+    },
     "Onboarding modal": {
       "Activate premium features": [
         "Premium značajke"
@@ -6028,6 +6060,9 @@
       "Card number": [
         "Broj kartice"
       ],
+      "CVC": [
+        "CVC"
+      ],
       "Got it": [
         "Razumijem"
       ],
@@ -6044,6 +6079,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaša kartica je odbijena. Molimo pokušajte s drugom karticom ili kontaktirajte vašu banku da autorizira ovu naplatu."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "PGP key encryption warning": {
@@ -6665,18 +6705,6 @@
       "Billed every 2 years": [
         "Naplaćuje se svake 2 godine"
       ],
-      "Billed for 15 months": [
-        "Naplaćuje se svakih 15 mjeseci"
-      ],
-      "Billed for 18 months": [
-        "Naplaćuje se svakih 18 mjeseci"
-      ],
-      "Billed for 3 months": [
-        "Naplaćuje se svakih 3 mjeseci"
-      ],
-      "Billed for 30 months": [
-        "Naplaćuje se svakih 30 mjeseci"
-      ],
       "Billed monthly": [
         "Mjesečni račun"
       ]
@@ -6708,6 +6736,17 @@
         "Razumijem"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
+      ]
+    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } prostora za pohranu po korisniku"
@@ -6720,17 +6759,6 @@
       ],
       "Version history": [
         "Povijest verzija"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
       ]
     },
     "Subscription renewal state": {
