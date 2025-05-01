@@ -4676,9 +4676,6 @@
       "No payment is required at this time.": [
         "Δεν απαιτείται πληρωμή αυτή τη στιγμή."
       ],
-      "No recent documents": [
-        "Δεν υπάρχουν πρόσφατα έγγραφα"
-      ],
       "No recent documents match your search.": [
         "Κανένα πρόσφατο έγγραφο δεν ταιριάζει με την αναζήτησή σας."
       ],
@@ -8655,8 +8652,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Αυτή η συνδρομή θα ανανεώνεται αυτόματα κάθε 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
+      "The special offer is valid for the first 2 years.": [
+        "Η μοναδική προσφορά ισχύει για τα πρώτα 2 χρόνια."
       ],
       "Your subscription will renew at the same rate every year.": [
         "Η συνδρομή σας θα ανανεώνεται με την ίδια τιμή κάθε χρόνο."
@@ -8737,6 +8734,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Τυπική τιμή ${ amount } για 30 μήνες"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Η μοναδική προσφορά ισχύει για τα πρώτα 2 χρόνια"
       ]
     },
     "specialoffer: Title": {
@@ -8845,8 +8845,8 @@
       "For all ${ BRAND_NAME } services": [
         "Για όλες τις υπηρεσίες ${ BRAND_NAME }"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }"
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Για να συνεχίσετε να χρησιμοποιείτε τα προϊόντα ${ BRAND_NAME }, απελευθερώστε χώρο ή ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ upgrade }"
@@ -8867,11 +8867,11 @@
       "Your ${ appStorage } is full": [
         "Ο ${ appStorage } είναι γεμάτος"
       ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Ο ${ storage } είναι ${ percentage }% γεμάτος. ${ cta }."
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Ο ${ productString } είναι ${ percentage }% γεμάτος. ${ cta }."
       ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Ο ${ storage } είναι γεμάτος. ${ cta }."
+      "Your ${ productString } is full. ${ cta }.": [
+        "Ο ${ productString } είναι γεμάτος. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Ο αποθηκευτικός σας χώρος είναι ${ percentage }% γεμάτος. ${ cta }."
@@ -8898,21 +8898,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Χρέωση κάθε 2 χρόνια"
-      ],
-      "Billed every 6 months": [
-        "Χρέωση κάθε 6 μήνες"
-      ],
-      "Billed for 15 months": [
-        "Χρέωση για 15 μήνες"
-      ],
-      "Billed for 18 months": [
-        "Χρέωση για 18 μήνες"
-      ],
-      "Billed for 3 months": [
-        "Χρέωση για 3 μήνες"
-      ],
-      "Billed for 30 months": [
-        "Χρέωση για 30 μήνες"
       ],
       "Billed monthly": [
         "Μηνιαία χρέωση"
@@ -8985,25 +8970,6 @@
         "Για ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } αποθηκευτικός χώρος ανά χρήστη"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλ. ταχυδρομείου",
-        "${ planNumberOfDomains } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } διεύθυνση email",
-        "${ planNumberOfEmails } διευθύνσεις email"
-      ],
-      "Folders, labels, and custom filters": [
-        "Φάκελοι, ετικέτες, και προσαρμοσμένα φίλτρα"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB αποθηκευτικός χώρος"
@@ -9043,6 +9009,25 @@
       ],
       "Your privacy is our mission": [
         "Το απόρρητό σας είναι η αποστολή μας"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } αποθηκευτικός χώρος ανά χρήστη"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλ. ταχυδρομείου",
+        "${ planNumberOfDomains } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } διεύθυνση email",
+        "${ planNumberOfEmails } διευθύνσεις email"
+      ],
+      "Folders, labels, and custom filters": [
+        "Φάκελοι, ετικέτες, και προσαρμοσμένα φίλτρα"
       ]
     },
     "Subscription renewal state": {
@@ -10118,9 +10103,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Η ${ BRAND_NAME } θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
       ],
-      "2 consecutive dots are not allowed": [
-        "2 διαδοχικές κουκκίδες δεν επιτρέπονται"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τις ${ count } επαφές;"
@@ -10134,12 +10116,6 @@
       "Are you sure you want to permanently delete this contact?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτήν την επαφή;"
       ],
-      "Cannot contain a dot at the beginning": [
-        "Δεν μπορεί να περιέχει τελεία στην αρχή"
-      ],
-      "Cannot contain a dot at the end": [
-        "Δεν μπορεί να περιέχει τελεία στο τέλος"
-      ],
       "Contacts could not be merged": [
         "Δεν ήταν δυνατή η συγχώνευση των επαφών"
       ],
@@ -10149,21 +10125,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Αν δεν θυμάστε τον κωδικό πρόσβασής σας, είναι αδύνατο να ενεργοποιήσετε ξανά το κλειδί σας. Μπορούμε να σας βοηθήσουμε να απορρίψετε το διαφημιστικό σήμα, αλλά κατά τη διαδικασία θα χάσετε μόνιμα την πρόσβαση σε όλα τα δεδομένα που κρυπτογραφούνται με αυτό το κλειδί."
       ],
-      "Invalid alias prefix": [
-        "Μην έγκυρο πρόθεμα ψευδωνύμου"
-      ],
-      "Missing alias prefix": [
-        "Λείπει το πρόθεμα ψευδωνύμου"
-      ],
-      "Missing alias suffix": [
-        "Λείπει το επίθημα ψευδωνύμου"
-      ],
-      "Name is required": [
-        "Απαιτείται όνομα"
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Επιτρέπονται μόνο αλφαριθμητικοί πεζοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."
       ],
@@ -10172,9 +10133,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Ορισμένες από τις επαφές που θα συγχωνευθούν, εμφανίζουν σφάλματα. Ελέγξτε τα ξεχωριστά"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "Το πρόθεμα ψευδωνύμου δεν μπορεί να υπερβαίνει τους 40 χαρακτήρες"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Τα δεδομένα της επαφής είναι αλλοιωμένα και δεν μπορούν να προβληθούν."
@@ -10202,9 +10160,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Δεν ήταν δυνατή η επαλήθευση του διακομιστή αλληλογραφίας. Εάν το εμπιστεύεστε, μπορείτε να παραλείψετε αυτήν την επαλήθευση."
-      ],
-      "You must select at least one mailbox": [
-        "Πρέπει να επιλέξετε τουλάχιστον ένα γραμματοκιβώτιο"
       ],
       "You will lose any customization you made so far.": [
         "Θα χάσετε οποιαδήποτε προσαρμογές που κάνατε μέχρι στιγμής."
