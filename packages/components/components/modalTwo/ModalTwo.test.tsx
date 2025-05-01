@@ -1,9 +1,10 @@
 import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, queryByTestId, render, screen } from '@testing-library/react';
 
 import { Button } from '@proton/atoms';
+import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 
 import ModalTwo from './Modal';
 
@@ -28,14 +29,16 @@ const MyModal = ({
     onClose,
     children,
     disableCloseOnEscape,
+    hotkeys,
 }: {
     open: boolean;
     onClose: () => void;
     children: ReactNode;
     disableCloseOnEscape?: boolean;
+    hotkeys?: HotkeyTuple[];
 }) => {
     return (
-        <ModalTwo open={open} onClose={onClose} disableCloseOnEscape={disableCloseOnEscape}>
+        <ModalTwo open={open} onClose={onClose} disableCloseOnEscape={disableCloseOnEscape} hotkeys={hotkeys}>
             {children}
             <Button data-testid="close-button" onClick={onClose} />
         </ModalTwo>
@@ -45,17 +48,24 @@ const MyModal = ({
 const Container = ({
     children,
     open: initialOpen = false,
+    hotkeys = [],
     disableCloseOnEscape,
 }: {
     children: ReactNode;
     open?: boolean;
     disableCloseOnEscape?: boolean;
+    hotkeys?: HotkeyTuple[];
 }) => {
     const [open, setOpen] = useState(initialOpen);
     return (
         <>
             <Button data-testid="open-button" onClick={() => setOpen(true)} />
-            <MyModal open={open} onClose={() => setOpen(false)} disableCloseOnEscape={disableCloseOnEscape}>
+            <MyModal
+                open={open}
+                hotkeys={hotkeys}
+                onClose={() => setOpen(false)}
+                disableCloseOnEscape={disableCloseOnEscape}
+            >
                 {children}
             </MyModal>
         </>
@@ -199,6 +209,31 @@ describe('ModalTwo Hotkeys', () => {
         fireEvent.keyDown(getByTestId('close-button'), { key: 'Escape' });
         maybeTriggerOutAnimation(getOutModal(container));
         expect(queryByTestId('inner')).toHaveTextContent('Rendered');
+    });
+});
+
+describe('ModalTwo Hotkeys', () => {
+    it('should allow extra hotkeys', () => {
+        const spy = jest.fn();
+        const { container, getByTestId } = render(
+            <Container
+                open={true}
+                hotkeys={[
+                    [
+                        'Enter',
+                        () => {
+                            spy();
+                        },
+                    ],
+                ]}
+            >
+                <div data-testid="inner">Hello world!</div>
+            </Container>
+        );
+        expect(getOutModal(container)).toBeNull();
+        expect(queryByTestId(container, 'inner')).toHaveTextContent('Hello world!');
+        fireEvent.keyDown(getByTestId('close-button'), { key: 'Enter' });
+        expect(spy).toHaveBeenCalled();
     });
 });
 
