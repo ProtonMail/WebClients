@@ -403,10 +403,10 @@
       "Move to another vault": [
         "Presunúť do iného trezoru"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Presunúť do koša"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Presunúť do koša"
       ],
       "Multiple select": [
@@ -831,9 +831,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } súbor nebolo možné analyzovať. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[Chyba] položku nebolo možné analyzovať"
-      ],
       "A domain ownership must be verified first.": [
         "Najprv je potrebné overiť vlastníctvo domény."
       ],
@@ -863,9 +860,6 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Overenie zlyhalo. Potvrďte svoje druhé heslo, ak chcete pokračovať v exporte"
-      ],
-      "Biometric authentication failed": [
-        "Biometrické overenie zlyhalo"
       ],
       "Cannot send invitation at the moment": [
         "Momentálne nie je možné odoslať pozvánku",
@@ -1909,12 +1903,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -4080,6 +4068,9 @@
       ],
       "Enter coupon code": [
         "Zadajte kód kupónu"
+      ],
+      "Enter your ${ BRAND_NAME } password": [
+        "Zadajte svoje ${ BRAND_NAME } heslo"
       ],
       "Enter your backup password": [
         "Zadajte vaše záložné heslo"
