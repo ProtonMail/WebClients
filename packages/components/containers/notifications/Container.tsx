@@ -62,9 +62,11 @@ const NotificationsContainer = ({
     const notificationRefs = useInstance(() => {
         return new Map<Key, HTMLDivElement>();
     });
+
     const [rects, setRects] = useState(() => {
         return new Map<Key, DOMRect>();
     });
+
     const resizeObserverRef = useRef<ResizeObserver | null>(null);
     const callbackRefs = useInstance(() => {
         return new Map<Key, (el: HTMLDivElement | null) => void>();
@@ -95,55 +97,60 @@ const NotificationsContainer = ({
 
     const positions = getPositions(notifications, rects);
 
-    const list = notifications.map(({ id, key, type, text, isClosing, showCloseButton, icon, duplicate }) => {
-        if (!callbackRefs.has(key)) {
-            callbackRefs.set(key, (el: HTMLDivElement | null) => {
-                if (el === null) {
-                    const oldEl = notificationRefs.get(key);
-                    if (oldEl) {
-                        resizeObserverRef.current?.unobserve(oldEl);
+    const list = notifications.map(
+        ({ id, key, type, text, isClosing, showCloseButton, icon, duplicate, dataTestId }) => {
+            if (!callbackRefs.has(key)) {
+                callbackRefs.set(key, (el: HTMLDivElement | null) => {
+                    if (el === null) {
+                        const oldEl = notificationRefs.get(key);
+                        if (oldEl) {
+                            resizeObserverRef.current?.unobserve(oldEl);
+                        }
+                        notificationRefs.delete(key);
+                    } else {
+                        resizeObserverRef.current?.observe(el);
+                        notificationRefs.set(key, el);
                     }
-                    notificationRefs.delete(key);
-                } else {
-                    resizeObserverRef.current?.observe(el);
-                    notificationRefs.set(key, el);
-                }
-            });
-        }
-        return (
-            <Fragment key={key}>
-                {duplicate.old && (
+                });
+            }
+
+            return (
+                <Fragment key={key}>
+                    {duplicate.old && (
+                        <Notification
+                            top={positions.get(key)}
+                            isClosing={true}
+                            isDuplicate={true}
+                            icon={duplicate.old.icon}
+                            type={duplicate.old.type}
+                            onClose={noop}
+                            onEnter={noop}
+                            onExit={noop}
+                            showCloseButton={duplicate.old.showCloseButton}
+                            dataTestId={duplicate.old.dataTestId}
+                        >
+                            {text}
+                        </Notification>
+                    )}
                     <Notification
+                        key={duplicate.key}
+                        onEnter={() => removeDuplicate(id)}
                         top={positions.get(key)}
-                        isClosing={true}
-                        isDuplicate={true}
-                        icon={duplicate.old.icon}
-                        type={duplicate.old.type}
-                        onClose={noop}
-                        onEnter={noop}
-                        onExit={noop}
-                        showCloseButton={duplicate.old.showCloseButton}
+                        ref={callbackRefs.get(key)}
+                        isClosing={isClosing}
+                        icon={icon}
+                        type={type}
+                        onClose={() => hideNotification(id)}
+                        onExit={() => removeNotification(id)}
+                        showCloseButton={showCloseButton}
+                        dataTestId={dataTestId}
                     >
                         {text}
                     </Notification>
-                )}
-                <Notification
-                    key={duplicate.key}
-                    onEnter={() => removeDuplicate(id)}
-                    top={positions.get(key)}
-                    ref={callbackRefs.get(key)}
-                    isClosing={isClosing}
-                    icon={icon}
-                    type={type}
-                    onClose={() => hideNotification(id)}
-                    onExit={() => removeNotification(id)}
-                    showCloseButton={showCloseButton}
-                >
-                    {text}
-                </Notification>
-            </Fragment>
-        );
-    });
+                </Fragment>
+            );
+        }
+    );
 
     return (
         <div

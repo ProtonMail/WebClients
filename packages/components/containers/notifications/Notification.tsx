@@ -39,10 +39,24 @@ interface Props {
     showCloseButton?: boolean;
     icon?: IconName;
     top: number | undefined;
+    dataTestId?: string;
 }
 
 const NotificationBase = (
-    { children, type, top, isClosing, isDuplicate, onClick, showCloseButton, onClose, onExit, onEnter, icon }: Props,
+    {
+        children,
+        type,
+        top,
+        isClosing,
+        isDuplicate,
+        onClick,
+        showCloseButton,
+        onClose,
+        onExit,
+        onEnter,
+        icon,
+        dataTestId,
+    }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
     const handleAnimationEnd = ({ animationName }: AnimationEvent<HTMLDivElement>) => {
@@ -72,6 +86,7 @@ const NotificationBase = (
             style={{
                 '--top-custom': top === undefined ? '-999px' : `${top}px`,
             }}
+            data-testid={dataTestId ? `notification:${dataTestId}` : undefined}
         >
             <NotificationContext.Provider value={{ type }}>
                 {icon && <Icon name={icon} className="notification__icon" />}
