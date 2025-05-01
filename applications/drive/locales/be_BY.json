@@ -5141,6 +5141,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
       ],
+      "If you have a large photo library, it might take some time.": [
+        "Гэта можа заняць некаторы час, калі ў вас вялікая бібліятэка фатаграфій."
+      ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Калі ў вас ёсць што-небудзь з гэтага, перайдзіце ў налады ўліковага запісу ${ BRAND_NAME }, каб працягнуць працэс разблакіроўкі."
       ],
@@ -5675,9 +5678,6 @@
       "Setting up ${ feature }…": [
         "Наладжванне ${ feature }..."
       ],
-      "Setting up Albums & Filters. This might take a few minutes.": [
-        "Адбываецца наладжванне альбомаў і фільтраў. Гэта можа заняць некалькі хвілін."
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Наладжванне PGP дазваляе вам адпраўляць лісты зашыфраваныя скразным метадам карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, але выкарыстоўваюць сумяшчальныя службы PGP."
       ],
@@ -6101,6 +6101,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Мы адправім новы праверачны код на ${ strong }"
       ],
+      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
+        "Мы паляпшаем фатаграфіі да новага ўзроўню! Падчас гэтага пераходу аднаўленне фатаграфій будзе часова недаступна. Усё будзе гатова праз некалькіх дзён. Удзячныя за разуменне."
+      ],
       "Week": [
         "Тыдзень"
       ],
@@ -6184,6 +6187,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Тым часам вы можаце закрыць укладку або браўзер."
+      ],
+      "You can close the tab. We'll work on it in the background.": [
+        "Можна бяспечна закрыць укладку. Фатаграфіі будуць апрацоўвацца ў фонавым рэжыме."
       ],
       "You can import one data type at a time.": [
         "Вы можаце імпартаваць адзін тып даных за раз."
@@ -7691,29 +7697,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Выдаліць уліковы запіс"
-      ],
-      "Downgrade account": [
-        "Панізіць уліковы запіс"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Атрымаць ${ BRAND_NAME } бясплатна"
-      ],
-      "Get ${ planName }": [
-        "Атрымаць ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Пакінуць ${ plan }"
-      ],
-      "Keep account": [
-        "Пакінуць уліковы запіс"
-      ],
-      "Switch plan": [
-        "Змяніць тарыфны план"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Панізіць да ${ downgradedPlanName }"
@@ -7735,6 +7718,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Палепшыць да ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Выдаліць уліковы запіс"
+      ],
+      "Downgrade account": [
+        "Панізіць уліковы запіс"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Атрымаць ${ BRAND_NAME } бясплатна"
+      ],
+      "Get ${ planName }": [
+        "Атрымаць ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Пакінуць ${ plan }"
+      ],
+      "Keep account": [
+        "Пакінуць уліковы запіс"
+      ],
+      "Switch plan": [
+        "Змяніць тарыфны план"
       ]
     },
     "new_plans: feature": {
@@ -8944,6 +8950,9 @@
       "Subfolder failed to be loaded": [
         "Не ўдалося загрузіць падпапкі"
       ],
+      "The Albums feature is on its way! We're rolling it out gradually — please try again soon": [
+        "Функцыя \"Альбомы\" ўжо распрацоўваецца! Мы паступова ўкараняем яе. Паспрабуйце яшчэ раз крыху пазней"
+      ],
       "The document failed to be created": [
         "Збой стварэння дакумента"
       ],
@@ -10126,8 +10135,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Падпіска будзе аўтаматычна падаўжацца кожныя 2 гады з той жа цаной, пакуль вы яе не скасуеце."
+      "The special offer is valid for the first 2 years.": [
+        "Спецыяльная прапанова дзейнічае на працягу першых 2 гадоў."
       ],
       "Your subscription will renew at the same rate every year.": [
         "Ваша падпіска будзе падаўжацца з фіксаваным коштам кожны год."
@@ -10210,6 +10219,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Стандартная цана ${ amount } за 30 месяцаў"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Спецыяльная прапанова дзейнічае на працягу першых 2 гадоў"
       ]
     },
     "specialoffer: Title": {
@@ -10327,9 +10339,6 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Калі вы хочаце і далей запампоўваць і сінхранізаваць файлы, вызваліце месца або перайдзіце на тарыфны план больш высокага ўзроўню, каб атрымаць больш сховішча."
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "Вызваліце месца або ${ upgrade }, каб адпраўляць і атрымліваць лісты"
-      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Калі вы хочаце і далей адпраўляць і прымаць лісты, вызваліце месца або перайдзіце на тарыфны план больш высокага ўзроўню, каб атрымаць больш сховішча."
       ],
@@ -10353,12 +10362,6 @@
       ],
       "Your ${ appStorage } is full": [
         "Ваша ${ appStorage } запоўнена"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Ваша ${ storage } запоўнена на ${ percentage }%. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Ваша ${ storage } запоўнена. ${ cta }"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Ваша сховішча запоўнена на ${ percentage }%. ${ cta }."
@@ -10385,21 +10388,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Аплачваецца кожныя 2 гады"
-      ],
-      "Billed every 6 months": [
-        "Аплачваецца кожныя 6 месяцаў"
-      ],
-      "Billed for 15 months": [
-        "Аплачваецца за 15 месяцаў"
-      ],
-      "Billed for 18 months": [
-        "Аплачваецца за 18 месяцаў"
-      ],
-      "Billed for 3 months": [
-        "Аплачваецца за 3 месяцы"
-      ],
-      "Billed for 30 months": [
-        "Аплачваецца за 30 месяцаў"
       ],
       "Billed monthly": [
         "Аплачваецца штомесяц"
@@ -10482,6 +10470,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription reminder": {
@@ -10754,47 +10783,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -11790,6 +11778,9 @@
       "Set up your organization": [
         "Наладзьце сваю арганізацыю"
       ],
+      "Setting up Albums & Filters": [
+        "Адбываецца наладжванне альбомаў і фільтраў"
+      ],
       "Settings": [
         "Налады"
       ],
@@ -11879,9 +11870,6 @@
       ],
       "Upgrade complete!": [
         "Абнаўленне завершана!"
-      ],
-      "Upgrading your Photos experience": [
-        "Паляпшэнне вашага вопыту працы з фатаграфіямі"
       ],
       "Upload and share files": [
         "Запампаваць і абагуліць файлы"
@@ -12246,9 +12234,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перанясе столькі даных, колькі будзе магчыма, пачынаючы з самых новых паведамленняў."
       ],
-      "2 consecutive dots are not allowed": [
-        "2 кропкі запар забаронены"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакт?",
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакты?",
@@ -12264,12 +12249,6 @@
       "Are you sure you want to permanently delete this contact?": [
         "Вы сапраўды хочаце незваротна выдаліць гэты кантакт?"
       ],
-      "Cannot contain a dot at the beginning": [
-        "Не можа змяшчаць кропку ў пачатку"
-      ],
-      "Cannot contain a dot at the end": [
-        "Не можа змяшчаць кропку ў канцы"
-      ],
       "Contacts could not be merged": [
         "Не атрымалася аб'яднаць кантакты"
       ],
@@ -12279,21 +12258,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Калі вы не памятаеце свой пароль, то немагчыма паўторна актываваць ваш ключ. Мы можам дапамагчы вам адхіліць банер папярэджання, але ў працэсе вы незваротна страціце доступ да ўсіх даных, якія зашыфраваны гэтым ключом."
       ],
-      "Invalid alias prefix": [
-        "Памылковы прэфікс псеўданіма"
-      ],
-      "Missing alias prefix": [
-        "Прапушчаны прэфікс псеўданіма"
-      ],
-      "Missing alias suffix": [
-        "Памылковы суфікс псеўданіма"
-      ],
-      "Name is required": [
-        "Патрабуецца назва"
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Дазволены толькі літарна-лічбавыя сімвалы ў ніжнім рэгістры, кропкі, злучкі і сімвалы падкрэслівання."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
       ],
@@ -12302,9 +12266,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Некаторыя аб'яднаныя кантакты маюць памылкі. Праверце іх асобна"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "Прэфікс псеўданіма не можа быць даўжэй за 40 сімвалаў"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Кантактныя даныя пашкоджаны і не могуць быць адлюстраваны."
@@ -12332,9 +12293,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Мы не змаглі праверыць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэту праверку."
-      ],
-      "You must select at least one mailbox": [
-        "Вы павінны выбраць прынамсі адну паштовую скрыню"
       ],
       "You will lose any customization you made so far.": [
         "Вы страціце любыя наладжванні, якія былі зроблены да гэтага."
