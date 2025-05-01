@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import { type FC, useMemo, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import type { List } from 'react-virtualized';
@@ -28,6 +29,16 @@ type Props = {
 const pageSize = 50;
 const rowHeight = 40;
 
+const RowLoading: FC<{ style: CSSProperties }> = ({ style }) => (
+    <div style={style} className="flex items-center anime-fade-in px-2 gap-3">
+        <div className="pass-skeleton pass-skeleton--avatar rounded-lg shrink-0" style={{ '--index': 0 }} />
+        <div
+            className="pass-skeleton pass-skeleton--value flex-1 max-w-custom"
+            style={{ '--index': 1, '--max-w-custom': '20em' }}
+        />
+    </div>
+);
+
 export const InviteRecommendations: FC<Props> = (props) => {
     const { autocomplete, excluded, selected, onToggle } = props;
     const [view, setView] = useState<MaybeNull<string>>(null);
@@ -54,6 +65,11 @@ export const InviteRecommendations: FC<Props> = (props) => {
             ? displayed
             : displayed.filter((email) => email.toLowerCase().startsWith(startsWith));
     }, [emails, organization, view, autocomplete]);
+
+    /** Add an extra row for the loading placeholder */
+    const moreLoading = loading && displayedEmails.length > 0;
+    const rowCount = displayedEmails.length + (moreLoading ? 1 : 0);
+    const noResults = displayedEmails.length === 0 && !loading;
 
     return (
         <>
@@ -89,7 +105,7 @@ export const InviteRecommendations: FC<Props> = (props) => {
                 className="flex-1 min-h-custom overflow-hidden rounded-lg"
                 style={{ '--min-h-custom': `${rowHeight * 2}px` }}
             >
-                {displayedEmails.length === 0 && !loading ? (
+                {noResults ? (
                     <em className="color-weak anime-fade-in"> {c('Warning').t`No results`}</em>
                 ) : (
                     <VirtualList
@@ -101,8 +117,11 @@ export const InviteRecommendations: FC<Props> = (props) => {
                         }}
                         rowHeight={() => rowHeight}
                         rowRenderer={({ style, index, key }) => {
+                            if (moreLoading && index === rowCount - 1) return <RowLoading key={key} style={style} />;
+
                             const email = displayedEmails[index];
                             const disabled = excluded.has(email);
+
                             return (
                                 <div style={style} key={key} className="flex anime-fade-in">
                                     <Checkbox
@@ -120,7 +139,7 @@ export const InviteRecommendations: FC<Props> = (props) => {
                                 </div>
                             );
                         }}
-                        rowCount={displayedEmails.length}
+                        rowCount={rowCount}
                     />
                 )}
             </div>
