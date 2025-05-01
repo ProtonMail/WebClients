@@ -39,13 +39,14 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
   const contextMenuAnchorRef = useRef<HTMLDivElement>(null)
   const contextMenu = useContextMenu()
   const isRecents = variant.startsWith('recents')
+  const isSearch = variant === 'search'
 
   return (
     <>
       <ContentSheet isBottom className="shrink-0 grow pb-4">
         <Table.Table>
           <Table.Title>
-            {isRecents ? c('Info').t`Recents` : c('Info').t`Trash`}
+            {isRecents || isSearch ? c('Info').t`Recents` : c('Info').t`Trash`}
             {isRecents && <SortSelect />}
           </Table.Title>
           {itemsSections.map(({ id, items }, sectionIndex) => (
