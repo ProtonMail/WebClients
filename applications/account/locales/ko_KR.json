@@ -922,11 +922,11 @@
       "Refresh status": [
         "상태 새로고침"
       ],
-      "refresh the page": [
-        "페이지 새로고침"
-      ],
       "Refresh the page": [
         "페이지 새로 고침"
+      ],
+      "refresh the page": [
+        "페이지 새로고침"
       ],
       "Reject": [
         "거절"
@@ -2746,11 +2746,6 @@
         "Yomi"
       ]
     },
-    "CountriesStep:Info": {
-      "${ selectedCitiesCount } selected": [
-        "${ selectedCitiesCount }개 선택됨"
-      ]
-    },
     "Country name": {
       "Abkhazia": [
         "압하지야"
@@ -3802,6 +3797,9 @@
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "조직의 모든 구성원이 모든 국가의 공유 서버에 연결할 수 있습니다."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "원활하게 ${ BRAND_NAME }(으)로 전환하기 위해 Google, Outlook 등에서 데이터를 불러오기 하세요."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "내 비밀번호나 다른 데이터가 제 3자 서비스에서 유출되면 알림받으세요."
@@ -7077,9 +7075,6 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX }이(가) ${ PASS_APP_NAME }에서 사용자와 데이터 공유를 요청했습니다."
       ],
-      "${ locationsCount } country enabled": [
-        "${ locationsCount }개 국가 활성화됨"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } 및 ${ CALENDAR_APP_NAME }"
       ],
@@ -7278,11 +7273,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "비밀번호를 분실한 경우 ${ BRAND_NAME } 계정의 콘텐츠에 계속 액세스할 수 있도록 적어도 하나의 데이터 복구 방법을 활성화하세요."
       ],
-      "active": [
-        "활성화"
-      ],
       "Active": [
         "활성"
+      ],
+      "active": [
+        "활성화"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "계정에 @pm.me 이메일 주소를 추가해 보세요. 더 간단하고 짧은 이 도메인은 \"${ MAIL_APP_NAME } me\" 또는 \"Private Message me\"를 의미합니다."
@@ -7536,9 +7531,6 @@
       "Beta": [
         "베타"
       ],
-      "Billed at ${ price }": [
-        "${ price }에 결제됨"
-      ],
       "Billing cycle: ${ text }": [
         "청구 주기: ${ text }"
       ],
@@ -7713,10 +7705,10 @@
       "Data recoverable on this device": [
         "이 장치에서 데이터 복구 가능"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -8715,12 +8707,6 @@
       "per month, billed at ${ price }": [
         "월간, ${ price }(으)로 청구됨"
       ],
-      "per month, billed every 12 months": [
-        "월 기준, 12개월마다 납부됨"
-      ],
-      "per month, billed every 24 months": [
-        "월 기준, 24개월마다 납부됨"
-      ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "PGP 클라이언트는 발신 메시지가 서명되면 PGP 키를 자동으로 감지할 가능성이 더 큽니다."
       ],
@@ -8750,6 +8736,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "회원님의 계정과 연계된 12자리 복구 구문을 입력해 주세요."
+      ],
+      "Please fill in all required fields.": [
+        "필수 입력란을 모두 입력해주세요."
       ],
       "Please fill out this field.": [
         "이 항목은 필수로 입력해야합니다."
@@ -10730,11 +10719,11 @@
       "Amount due": [
         "지불할 금액"
       ],
-      "And": [
-        "그리고"
-      ],
       "AND": [
         "및"
+      ],
+      "And": [
+        "그리고"
       ],
       "and": [
         "그리고"
@@ -11156,10 +11145,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "만약"
       ],
-      "IF": [
+      "If": [
         "만약"
       ],
       "Import all messages": [
@@ -11363,13 +11352,13 @@
       "Optional": [
         "선택 사항"
       ],
+      "OR": [
+        "또는"
+      ],
       "or": [
         "또는"
       ],
       "Or": [
-        "또는"
-      ],
-      "OR": [
         "또는"
       ],
       "Organization name": [
@@ -11386,6 +11375,9 @@
       ],
       "Password": [
         "암호"
+      ],
+      "Password strength": [
+        "비밀번호 보안 강도"
       ],
       "Payer": [
         "결제자"
@@ -12607,6 +12599,32 @@
         "중간 VPN 속도"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
+      ],
+      "From ${ price }": [
+        "시작 가격: ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }에 시작하기"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName }(으)로 업그레이드"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "무료로 계속하기"
@@ -12634,32 +12652,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } 로 업그레이드"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
-      ],
-      "From ${ price }": [
-        "시작 가격: ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }에 시작하기"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName }(으)로 업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -14001,17 +13993,6 @@
         "데스크탑"
       ]
     },
-    "option": {
-      "Everyone": [
-        "모두"
-      ],
-      "Group members": [
-        "그룹 구성원"
-      ],
-      "No one": [
-        "아무도"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "매월 10일"
@@ -14261,6 +14242,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "모두"
+      ],
+      "Group members": [
+        "그룹 구성원"
+      ],
+      "No one": [
+        "아무도"
       ]
     },
     "Option delay send seconds": {
@@ -16542,9 +16534,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "이 구독은 취소되기 전까지 매 2년마다 같은 요율로 갱신됩니다."
-      ],
       "Your subscription will renew at the same rate every year.": [
         "회원님의 구독이 매년 같은 요율로 갱신됩니다."
       ]
@@ -16997,9 +16986,6 @@
       "Get more storage": [
         "더 많은 스토리지 얻기"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "이메일을 수발신 하려면, 공간을 비우거나 ${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "파일을 업로드 및 동기화하려면, 공간을 비우거나 ${ upgrade }"
       ],
@@ -17026,12 +17012,6 @@
       ],
       "Your ${ appStorage } is full": [
         "사용자의 ${ appStorage }이 가득 찼습니다."
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "사용자의 ${ storage }가 ${ percentage }% 찼습니다. ${ cta }"
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "사용자의 ${ storage } 스토리지가 가득 찼습니다. ${ cta }"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "사용자의 스토리지가 ${ percentage }% 찼습니다. ${ cta }"
@@ -17076,21 +17056,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "2년마다 청구"
-      ],
-      "Billed every 6 months": [
-        "6개월마다 청구"
-      ],
-      "Billed for 15 months": [
-        "15개월 마다 결제됨"
-      ],
-      "Billed for 18 months": [
-        "18개월 마다 청구됨"
-      ],
-      "Billed for 3 months": [
-        "3개월 마다 청구됨"
-      ],
-      "Billed for 30 months": [
-        "30개월 마다 청구됨"
       ],
       "Billed monthly": [
         "매달 청구"
@@ -17197,6 +17162,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }용"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "당사는 사용자의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription reminder": {
@@ -17481,47 +17487,6 @@
       ],
       "Your own short @pm.me email alias": [
         "사용자의 @pm.me 이메일 별칭"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "저장공간 15GB"
-      ],
-      "and 15 more premium features": [
-        "그리고 15개의 프리미엄 기능"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "자동 이메일 포워딩 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "데이터 침해 경고 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
-      ],
-      "No ads or tracking": [
-        "광고나 트래킹이 없습니다"
-      ],
-      "Short @pm.me email address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Support our mission": [
-        "저희의 사명을 지원해주세요"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade your productivity": [
-        "생산성을 업그레이드하세요"
-      ],
-      "We don't sell your data": [
-        "당사는 사용자의 데이터를 판매하지 않습니다"
-      ],
-      "Your privacy is our mission": [
-        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription renewal state": {

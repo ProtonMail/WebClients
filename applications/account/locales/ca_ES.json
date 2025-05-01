@@ -460,10 +460,10 @@
       "Discard": [
         "Descarta"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Descarta els canvis"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Descarta els canvis"
       ],
       "Discover ${ planName }": [
@@ -778,6 +778,9 @@
       "Keep Editing": [
         "Continua editant"
       ],
+      "Keep editing": [
+        "Continua editant"
+      ],
       "Keep logo": [
         "Manté el logo"
       ],
@@ -810,6 +813,9 @@
       ],
       "Make admin": [
         "Estableix com a administrador"
+      ],
+      "Make key primary": [
+        "Marca la clau com a principal"
       ],
       "Manage advanced account protections": [
         "Gestiona les proteccions avançades del compte"
@@ -955,11 +961,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "refresh the page": [
-        "refresca la pàgina"
-      ],
       "Refresh the page": [
         "Refresca la pàgina"
+      ],
+      "refresh the page": [
+        "refresca la pàgina"
       ],
       "Reject": [
         "Rebutja"
@@ -2815,9 +2821,9 @@
       ]
     },
     "CountriesStep:Info": {
-      "${ selectedCitiesCount } selected": [
-        "${ selectedCitiesCount } seleccionada",
-        "${ selectedCitiesCount } seleccionades"
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount } seleccionat",
+        "${ selectedCountriesCount } seleccionats"
       ]
     },
     "Country name": {
@@ -7291,6 +7297,10 @@
         "${ calendarsToBeMergedCount } calendari combinat",
         "${ calendarsToBeMergedCount } calendaris combinats"
       ],
+      "${ countriesCount } country enabled": [
+        "${ countriesCount } país activat",
+        "${ countriesCount } països activats"
+      ],
       "${ current } of ${ total }": [
         "${ current } de ${ total }"
       ],
@@ -7323,10 +7333,6 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } vol compartir dades amb vós a ${ PASS_APP_NAME }"
-      ],
-      "${ locationsCount } country enabled": [
-        "${ locationsCount } país activat",
-        "${ locationsCount } països activats"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
@@ -7554,11 +7560,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activeu almenys un mètode de recuperació de dades per assegurar-vos que podeu continuar accedint al contingut del vostre compte ${ BRAND_NAME } si perdeu la contrasenya."
       ],
-      "active": [
-        "activa"
-      ],
       "Active": [
         "Actiu"
+      ],
+      "active": [
+        "activa"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Afegiu una adreça de correu electrònic @pm.me al vostre compte. Aquest domini curt i senzill significa «${ MAIL_APP_NAME } me» o «Private message me»."
@@ -7819,9 +7825,6 @@
       "Beta": [
         "Beta"
       ],
-      "Billed at ${ price }": [
-        "Facturat a ${ price }"
-      ],
       "Billing cycle: ${ text }": [
         "Cicle de facturació: ${ text }"
       ],
@@ -7999,11 +8002,11 @@
       "Data recoverable on this device": [
         "Dades recuperables en aquest dispositiu"
       ],
-      "Dedicated servers": [
-        "Servidors dedicats"
-      ],
       "dedicated servers": [
         "servidors dedicats"
+      ],
+      "Dedicated servers": [
+        "Servidors dedicats"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Es poden afegir servidors dedicats amb adreces IP dedicades a portes d'enllaç privades per a activar un control d'accés més optimitzat."
@@ -9013,12 +9016,6 @@
       ],
       "per month, billed at ${ price }": [
         "al mes, facturat a ${ price }"
-      ],
-      "per month, billed every 12 months": [
-        "al mes amb facturació cada 12 mesos"
-      ],
-      "per month, billed every 24 months": [
-        "al mes amb facturació cada 24 mesos"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "Els clients de PGP tenen més probabilitats de detectar automàticament les claus PGP si els missatges de sortida són signats."
@@ -10377,6 +10374,9 @@
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
+      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
+        "Els reenviaments xifrats d'extrem a extrem existents cap a altres usuaris es posaran en pausa. Els podeu tornar a activar manualment a la configuració de «${ autoReplySettingsTitle }»."
+      ],
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
       ],
@@ -11078,10 +11078,10 @@
       "Amount due": [
         "Import a deure"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
       "and": [
@@ -11510,11 +11510,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Si"
-      ],
       "IF": [
         "SI"
+      ],
+      "If": [
+        "Si"
       ],
       "Import all messages": [
         "Importar tots els missatges"
@@ -11723,13 +11723,13 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "O"
+      ],
       "or": [
         "o"
       ],
       "Or": [
-        "O"
-      ],
-      "OR": [
         "O"
       ],
       "Organization name": [
@@ -13023,6 +13023,32 @@
         "Velocitat VPN mitjana"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora tots els plans de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comenceu per ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Des de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ],
+      "Upgrade to ${ planName }": [
+        "Milloreu el pla a ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua amb el pla gratuït"
@@ -13050,32 +13076,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Millora a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora tots els plans de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comenceu per ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Des de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ],
-      "Upgrade to ${ planName }": [
-        "Milloreu el pla a ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -14221,6 +14221,9 @@
       "Key with fingerprint ${ fp } has been deleted.": [
         "La clau amb empremta digital ${ fp } s'ha eliminat"
       ],
+      "Key with fingerprint ${ fp } is now primary.": [
+        "La clau amb l'empremta digital ${ fp } ara és la principal."
+      ],
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
       ],
@@ -14450,17 +14453,6 @@
       ],
       "Desktop": [
         "Escriptori"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Tothom"
-      ],
-      "Group members": [
-        "Membres del grup"
-      ],
-      "No one": [
-        "Ningú"
       ]
     },
     "Option": {
@@ -14697,6 +14689,17 @@
       ],
       "Trash": [
         "Paperera"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tothom"
+      ],
+      "Group members": [
+        "Membres del grup"
+      ],
+      "No one": [
+        "Ningú"
       ]
     },
     "Option delay send seconds": {
@@ -17025,8 +17028,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix preu fins que es cancel·li."
+      "The special offer is valid for the first 2 years.": [
+        "L'oferta especial és vàlida durant els primers 2 anys."
       ],
       "Your subscription will renew at the same rate every year.": [
         "La vostra subscripció es renovarà al mateix preu cada any."
@@ -17107,6 +17110,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "El preu estàndard és ${ amount } durant 30 mesos"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "L'oferta especial és vàlida durant els primers 2 anys"
       ]
     },
     "specialoffer: Title": {
@@ -17489,9 +17495,6 @@
       "Get more storage": [
         "Aconseguiu més emmagatzematge"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "Per enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Per a carregar o sincronitzar fitxers, allibereu espai o ${ upgrade }"
       ],
@@ -17519,12 +17522,6 @@
       ],
       "Your ${ appStorage } is full": [
         "El vostre ${ appStorage } és ple."
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "El vostre ${ storage } és ple al ${ percentage }%. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "L'${ storage } és ple. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "El vostre emmagatzematge és ple al ${ percentage }%. ${ cta }."
@@ -17569,21 +17566,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Facturació cada 2 anys"
-      ],
-      "Billed every 6 months": [
-        "Facturació cada 6 mesos"
-      ],
-      "Billed for 15 months": [
-        "Facturació per 15 mesos"
-      ],
-      "Billed for 18 months": [
-        "Facturació per 18 mesos"
-      ],
-      "Billed for 3 months": [
-        "Facturació trimestral"
-      ],
-      "Billed for 30 months": [
-        "Facturació per 30 mesos"
       ],
       "Billed monthly": [
         "Facturació mensual"
@@ -17705,6 +17687,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Per ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenviament automàtic de correu electrònic ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de filtracions de dades ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
+      ],
+      "Support our mission": [
+        "Doneu suport a la nostra missió"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription reminder": {
@@ -17995,47 +18018,6 @@
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "and 15 more premium features": [
-        "i 15 característiques prèmium més"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenviament automàtic de correu electrònic ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de filtracions de dades ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
-      ],
-      "No ads or tracking": [
-        "Sense anuncis ni rastreig"
-      ],
-      "Short @pm.me email address": [
-        "Adreça electrònica curta de @pm.me"
-      ],
-      "Support our mission": [
-        "Doneu suport a la nostra missió"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade your productivity": [
-        "Milloreu la vostra productivitat"
-      ],
-      "We don't sell your data": [
-        "No venem les vostres dades"
-      ],
-      "Your privacy is our mission": [
-        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription renewal state": {
@@ -18795,6 +18777,9 @@
       ],
       "Change password": [
         "Canvia la contrasenya"
+      ],
+      "Change primary key?": [
+        "Voleu canviar la clau primària?"
       ],
       "Change role": [
         "Canvia privilegis"
