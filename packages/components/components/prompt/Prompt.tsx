@@ -1,11 +1,13 @@
 import type { ReactElement, ReactNode } from 'react';
-import { cloneElement, useContext } from 'react';
+import React, { cloneElement, useContext } from 'react';
 
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo, { ModalContext } from '@proton/components/components/modalTwo/Modal';
 import type { ModalContentProps } from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
+import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import './Prompt.scss';
@@ -65,12 +67,29 @@ const Prompt = ({
         );
     })();
 
+    const onSubmitHotkeyPress = async (e: any) => {
+        e.stopPropagation();
+        // Filtering out the destructive actions to prevent mistakes
+        // and removing the weak buttons, as they never are the main action
+        const cta = buttonArray.find(
+            (button) => button.props.color !== 'danger' && button.props.color !== 'weak' && !button.props.disabled
+        );
+
+        cta?.props.onClick?.(e);
+    };
+
+    const hotkeys: HotkeyTuple[] = [
+        [KeyboardKey.Enter, onSubmitHotkeyPress],
+        [KeyboardKey.Space, onSubmitHotkeyPress],
+    ];
+
     return (
         <ModalTwo
             size="small"
             {...rest}
             enableCloseWhenClickOutside={!disableCloseWhenClickOutside}
             className={clsx([className, 'prompt'])}
+            hotkeys={hotkeys}
         >
             <div className="prompt-header" data-testid={dataTestId}>
                 <PromptTitle>{title}</PromptTitle>

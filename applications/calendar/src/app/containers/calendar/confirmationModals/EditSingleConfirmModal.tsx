@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { BasicModal } from '@proton/components';
+import ConfirmActionModal from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 
 import type { InviteActions, RecurringActionData } from '../../../interfaces/Invite';
@@ -104,23 +103,20 @@ const EditSingleConfirmModal = ({ inviteActions, onConfirm, onClose, isOpen }: P
         onClose();
     };
     return (
-        <BasicModal
+        <ConfirmActionModal
+            cancelText={c('Action').t`Cancel`}
+            submitText={submit}
             title={title}
-            footer={
-                <>
-                    <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
-                    <Button color="norm" onClick={handleSubmit}>
-                        {submit}
-                    </Button>
-                </>
-            }
-            size="small"
-            onSubmit={handleSubmit}
-            isOpen={isOpen}
+            onExit={onClose}
             onClose={onClose}
-        >
-            {alertText}
-        </BasicModal>
+            onCancel={onClose}
+            onSubmit={async () => handleSubmit()}
+            size="small"
+            message={alertText}
+            actionType="norm"
+            canUndo={true}
+            open={isOpen}
+        />
     );
 };
 
