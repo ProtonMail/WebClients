@@ -400,11 +400,11 @@
       "Move to another vault": [
         "Перамясціць у іншае сховішча"
       ],
-      "Move to Trash": [
-        "Перамясціць у Сметніцу"
-      ],
       "Move to trash": [
         "Перамясціць у сметніцу"
+      ],
+      "Move to Trash": [
+        "Перамясціць у Сметніцу"
       ],
       "Multiple select": [
         "Выбар некалькіх элементаў"
@@ -799,9 +799,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Не атрымалася прааналізаваць файл ${ provider }. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[Памылка] немагчыма прааналізаваць элемент"
-      ],
       "A domain ownership must be verified first.": [
         "Першапачаткова неабходна праверыць дамен уладальніка."
       ],
@@ -831,9 +828,6 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Збой аўтэнтыфікацыі. Пацвердзіце свой другі пароль, каб працягнуць экспартаванне"
-      ],
-      "Biometric authentication failed": [
-        "Збой аўтэнтыфікацыі біяметрыі"
       ],
       "Cannot send invitation at the moment": [
         "У цяперашні час немагчыма адправіць запрашэнне",
