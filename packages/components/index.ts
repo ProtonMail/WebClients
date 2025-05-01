@@ -76,11 +76,9 @@ export { default as InboxQuickSettingsAppButton } from './components/drawer/draw
 export { default as QuickSettingsAppButton } from './components/drawer/drawerAppButtons/QuickSettingsAppButton';
 export { default as SecurityCenterDrawerAppButton } from './components/drawer/drawerAppButtons/SecurityCenterDrawerAppButton';
 export { default as VPNDrawerAppButton } from './components/drawer/drawerAppButtons/VPNDrawerAppButton';
-export { default as WalletDrawerAppButton } from './components/drawer/drawerAppButtons/WalletDrawerAppButton';
 export { default as CalendarDrawerLogo } from './components/drawer/drawerIcons/CalendarDrawerLogo';
 export { default as ContactsDrawerLogo } from './components/drawer/drawerIcons/ContactsDrawerLogo';
 export { default as SecurityCenterDrawerLogo } from './components/drawer/drawerIcons/SecurityCenterDrawerLogo';
-export { default as WalletDrawerLogo } from './components/drawer/drawerIcons/WalletDrawerLogo';
 export { default as DrawerSidebar } from './components/drawer/DrawerSidebar';
 export { default as DrawerVisibilityButton } from './components/drawer/DrawerVisibilityButton';
 export { default as SidebarDrawerItems } from './components/drawer/SidebarDrawerItems';

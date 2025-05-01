@@ -16,7 +16,6 @@ import { FeatureCode, useFeatures } from '@proton/features';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
 import { useInboxDesktopHeartbeat } from '@proton/shared/lib/desktop/heartbeat';
 import { useFlag } from '@proton/unleash';
-import { useWalletAutoCreate } from '@proton/wallet/hooks/useWalletAutoCreate';
 
 import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
 
@@ -43,9 +42,6 @@ const MainContainer: FunctionComponent = () => {
     ]);
 
     const { feature: featureSw, loading: loadingSw } = getFeature(FeatureCode.MailServiceWorker);
-
-    const shouldAutoSetupWallet = useFlag('WalletAutoSetup');
-    useWalletAutoCreate({ higherLevelPilot: shouldAutoSetupWallet });
 
     useInboxDesktopHeartbeat();
     useInboxDesktopMetrics();
