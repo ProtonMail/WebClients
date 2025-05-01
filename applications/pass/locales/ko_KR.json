@@ -397,10 +397,10 @@
       "Move to another vault": [
         "다른 금고로 이동"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "휴지통으로 이동"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "휴지통으로 이동"
       ],
       "Multiple select": [
@@ -787,9 +787,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } 파일을 분석할 수 없습니다. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[오류] 항목을 파싱할 수 없습니다"
-      ],
       "A domain ownership must be verified first.": [
         "도메인 소유권 인증이 우선 필요합니다."
       ],
@@ -816,9 +813,6 @@
       ],
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "인증 실패. 이 내보내기 작업을 완료하기 위해서는 추가 비밀번호를 입력하세요."
-      ],
-      "Biometric authentication failed": [
-        "생체 인증 실패"
       ],
       "Cannot send invitation at the moment": [
         "현재 초대를 전송할 수 없습니다."

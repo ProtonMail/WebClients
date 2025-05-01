@@ -400,11 +400,11 @@
       "Move to another vault": [
         "Pindahkan ke brankas lainnya"
       ],
-      "Move to Trash": [
-        "Pindahkan ke Sampah"
-      ],
       "Move to trash": [
         "Pindahkan ke sampah"
+      ],
+      "Move to Trash": [
+        "Pindahkan ke Sampah"
       ],
       "Multiple select": [
         "Pilih banyak berkas"
@@ -790,9 +790,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Berkas ${ provider } tidak dapat diurai. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[Kesalahan] terdapat item yang tidak dapat diurai"
-      ],
       "A domain ownership must be verified first.": [
         "Kepemilikan domain harus diverifikasi terlebih dahulu."
       ],
@@ -822,9 +819,6 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Autentikasi gagal. Konfirmasikan kata sandi kedua Anda untuk melanjutkan ekspor"
-      ],
-      "Biometric authentication failed": [
-        "Autentikasi biometrik gagal"
       ],
       "Cannot send invitation at the moment": [
         "Undangan tidak dapat dikirim untuk saat ini"
