@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Siirrä toiseen holviin"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Siirrä roskakoriin"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Siirrä roskakoriin"
       ],
       "Multiple select": [
@@ -769,9 +769,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } -tiedostoa ei voitu jäsentää. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[Virhe] kohdetta ei voitu jäsentää"
-      ],
       "A domain ownership must be verified first.": [
         "Verkkotunnuksen omistajuus on vahvistettava ensin."
       ],
@@ -798,9 +795,6 @@
       ],
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "Tunnistautuminen epäonnistui. Vahvista lisäsalasanasi jatkaaksesi vientiä"
-      ],
-      "Biometric authentication failed": [
-        "Biometrinen tunnistautuminen epäonnistui"
       ],
       "Cannot send invitation at the moment": [
         "Kutsua ei voida lähettää juuri nyt",
@@ -1951,6 +1945,9 @@
       "Please follow the steps below to set up your domain.": [
         "Seuraa alla olevia ohjeita verkkotunnuksesi määrittämiseksi."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Pidä tämä ikkuna auki, kun tietojasi tuodaan. Tämä prosessi voi kestää muutaman minuutin."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Huomioi, että et voi palauttaa poistettua aliasta. Haluatko sen sijaan poistaa sen käytöstä?"
       ],
@@ -1995,6 +1992,9 @@
       ],
       "Removing secure link...": [
         "Suojattua linkkiä poistetaan..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "Historian nollaus poistaa kaikki aiemmat tiedostoversiot pysyvästi, eikä sitä voi perua."
       ],
       "Restoring items from trash": [
         "Kohteita palautetaan roskakorista"
@@ -2097,6 +2097,10 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Lisäsalasana tarvitaan ${ PASS_APP_NAME }in käyttöön ja se vaaditaan ${ BRAND_NAME }-tilisi salasanan lisäksi."
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Seuraavaa ${ totalIgnored } kohdetta ei voitu tuoda:",
+        "Seuraavia ${ totalIgnored } kohdetta ei voitu tuoda:"
       ],
       "The secure link has been removed": [
         "Suojattu linkki poistettiin"
@@ -3238,6 +3242,9 @@
       "\"${ filename }\" could not be imported.": [
         "Tiedostoa \"${ filename }\" ei voitu tuoda."
       ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "\"${ filename }\" on liian suuri lähetettäväksi. Suurin sallittu koko on (${ maxFileSizeInMB })"
+      ],
       "${ filesCount } file": [
         "${ filesCount } tiedosto",
         "${ filesCount } tiedostoa"
@@ -3254,11 +3261,17 @@
       "Delete all files": [
         "Poista kaikki tiedostot"
       ],
+      "Do you want to remove all the files?": [
+        "Haluatko poistaa kaikki tiedostot?"
+      ],
       "Download": [
         "Lataa"
       ],
       "Download file": [
         "Lataa tiedosto"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Firefoxin rajoituksen takia, ${ PASS_APP_NAME } täytyy avata uudelleen uudessa ikkunassa, ennen kuin voit lähettää tiedostoja."
       ],
       "Exporting files": [
         "Tiedostoja viedään"
@@ -3272,11 +3285,23 @@
       "File attachments": [
         "Liitetiedostot"
       ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Jos käytössä, kaikki tiedostosi ladataan viennin yhteydessä. Tämä voi kestää jonkin aikaa Internet-yhteydestäsi riippuen."
+      ],
       "Include file attachments": [
         "Sisällytä liitetiedostot"
       ],
+      "Not enough available storage space for the selected files.": [
+        "Valituille tiedostoille ei ole riittävästi tallennustilaa."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Poistamisen jälkeen tämä tiedosto voidaan silti palauttaa kohteen historiasta."
+      ],
       "Open new window to upload files": [
         "Avaa uusi ikkuna lähettääksesi tiedostoja"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Ole kärsivällinen, kun tiedostojasi ladataan."
       ],
       "Remove all files": [
         "Poista kaikki tiedostot"
@@ -3287,14 +3312,26 @@
       "Restore": [
         "Palauta"
       ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Jotkin tiedostot ovat liian suuria lähetettäväksi. Suurin sallittu koko on (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "Viedyt liitetiedostot eivät ole salattuja."
+      ],
       "The file you are trying to import is empty": [
         "Tiedosto, jota yrität tuoda, on tyhjä"
       ],
       "Total files: ": [
         "Tiedostoja yhteensä: "
       ],
+      "Total imported files: ": [
+        "Tuotuja tiedostoja yhteensä: "
+      ],
       "Upload files from your device.": [
         "Lähetä tiedostoja laitteeltasi."
+      ],
+      "You can attach files to items for a better organization": [
+        "Voit liittää kohteisiin tiedostoja parempaa organisointia varten"
       ]
     },
     "Placeholder": {

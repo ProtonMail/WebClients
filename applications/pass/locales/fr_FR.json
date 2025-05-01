@@ -400,11 +400,11 @@
       "Move to another vault": [
         "Déplacer vers un autre coffre-fort"
       ],
-      "Move to Trash": [
-        "Déplacer dans la corbeille"
-      ],
       "Move to trash": [
         "Déplacer dans le dossier Corbeille"
+      ],
+      "Move to Trash": [
+        "Déplacer dans la corbeille"
       ],
       "Multiple select": [
         "Sélection multiple"
@@ -793,9 +793,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Le fichier ${ provider } n'a pu être analysé. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[Erreur] Un élément n'a pas pu être analysé."
-      ],
       "A domain ownership must be verified first.": [
         "La propriété d'un domaine doit d'abord être vérifiée."
       ],
@@ -825,9 +822,6 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "L'authentification n'a pas abouti. Confirmez votre second mot de passe pour continuer l'exportation."
-      ],
-      "Biometric authentication failed": [
-        "L'authentification biométrique n'a pas abouti."
       ],
       "Cannot send invitation at the moment": [
         "L'envoi de l'invitation n'est pas possible pour le moment.",
