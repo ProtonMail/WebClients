@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "Activate": [
-        "Aktivera"
-      ],
       "activate": [
         "aktivera"
+      ],
+      "Activate": [
+        "Aktivera"
       ],
       "Activate organization key": [
         "Aktivera organisationsnyckel"
@@ -259,10 +259,10 @@
       "Discard": [
         "Avfärda"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Kasta ändringar"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Kasta ändringar"
       ],
       "Discover ${ planName }": [
@@ -282,6 +282,9 @@
       ],
       "Download": [
         "Ladda ner"
+      ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Ladda ner ${ DRIVE_APP_NAME } appen"
       ],
       "Download CSV sample": [
         "Ladda ner CSV-exempel"
@@ -445,6 +448,9 @@
       "Keep Editing": [
         "Fortsätt redigera"
       ],
+      "Keep editing": [
+        "Fortsätt redigera"
+      ],
       "Keep logo": [
         "Behåll logga"
       ],
@@ -556,11 +562,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "refresh the page": [
-        "uppdatera sidan"
-      ],
       "Refresh the page": [
         "Uppdatera sidan"
+      ],
+      "refresh the page": [
+        "uppdatera sidan"
       ],
       "Remove": [
         "Ta bort"
@@ -1578,9 +1584,9 @@
       ]
     },
     "CountriesStep:Info": {
-      "${ selectedCitiesCount } selected": [
-        "${ selectedCitiesCount } vald",
-        "${ selectedCitiesCount } valda"
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount } valt",
+        "${ selectedCountriesCount } valda"
       ]
     },
     "Country name": {
@@ -2591,6 +2597,9 @@
       ],
       "To start, give your organization a name.": [
         "Börja med att ge din organisation ett namn."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Använd den här guiden för att din organisation snabbt ska kunna dra nytta av ${ BRAND_NAME }:s branschledande kryptering och ekosystem för integritet."
       ]
     },
     "Disable address prompt": {
@@ -2820,6 +2829,9 @@
       ],
       "${ BRAND_NAME } will never contact you unexpectedly asking you to sign in with a QR code.": [
         "${ BRAND_NAME } kommer aldrig oväntat kontakta dig och be dig logga in med en QR-kod."
+      ],
+      "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
+        "**Så här fungerar det:** Ange koden som visas på den enhet du vill logga in på, på den här enheten. Du kommer att vara inloggad som **${ email }**. Båda enheterna kommer att vara aktiva."
       ],
       "Allow QR code sign‒in": [
         "Tillåt inloggning med QR-kod"
@@ -4011,6 +4023,10 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
       ],
+      "${ countriesCount } country enabled": [
+        "${ countriesCount } land aktiverat",
+        "${ countriesCount } länder aktiverade"
+      ],
       "${ discountPercent }% discount": [
         "${ discountPercent } % rabatt"
       ],
@@ -4031,10 +4047,6 @@
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } av dina icke SSO-medlemmar använder tvåfaktorsautentisering för att logga in på din organisation.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } av dina icke SSO-medlemmar använder tvåfaktorsautentisering för att logga in på din organisation."
-      ],
-      "${ locationsCount } country enabled": [
-        "${ locationsCount } land aktiverad",
-        "${ locationsCount } länder aktiverade"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } och ${ CALENDAR_APP_NAME }"
@@ -4100,7 +4112,7 @@
       ],
       "${ selectedEntities.length } selected": [
         "${ selectedEntities.length } vald",
-        "${ selectedEntities.length } vald"
+        "${ selectedEntities.length } valda"
       ],
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
@@ -4139,6 +4151,10 @@
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Skaffa en ${ BRAND_NAME }-adress** för att använda alla ${ BRAND_NAME_TWO }-tjänster inklusive ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } Mer",
+        "+ ${ invisibleCount } Mer"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
@@ -4316,9 +4332,6 @@
       "Beta": [
         "Beta"
       ],
-      "Billed at ${ price }": [
-        "Fakturerad med ${ price }"
-      ],
       "Billing cycle: ${ text }": [
         "Faktureringsperiod: ${ text }"
       ],
@@ -4345,6 +4358,9 @@
       ],
       "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
         "Molnlagring, integrerad med ${ DOCS_APP_NAME }"
+      ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "CNET-redaktionens valpris med ett betyg på 8,4 av 10"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Konfigurera SAML-autentisering för din organisation genom en identitetsleverantör (IdP). Detta kommer att aktivera SAML för hela organisationen."
@@ -4426,11 +4442,11 @@
       "Data recoverable on this device": [
         "Data återställningsbart på denna enhet"
       ],
-      "Dedicated servers": [
-        "Dedikerade servrar"
-      ],
       "dedicated servers": [
         "dedikerade servrar"
+      ],
+      "Dedicated servers": [
+        "Dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -5063,17 +5079,14 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
       ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "PC Magazine-redaktionens valpris med ett betyg på 5 av 5 stjärnor"
+      ],
       "per month": [
         "per månad"
       ],
       "per month, billed at ${ price }": [
         "per månad, faktureras med ${ price }"
-      ],
-      "per month, billed every 12 months": [
-        "per månad, faktureras var 12:e månad"
-      ],
-      "per month, billed every 24 months": [
-        "per månad, faktureras var 24:e månad"
       ],
       "Please add a password for the user on row": [
         "Lägg till ett lösenord för användaren på raden",
@@ -5276,6 +5289,10 @@
       "Shared ${ vaultLink } updated": [
         "Delad ${ vaultLink } uppdaterad"
       ],
+      "Shared server country (${ countriesCount })": [
+        "Delat serverland (${ countriesCount })",
+        "Delade serverländer (${ countriesCount })"
+      ],
       "Shared vault deleted": [
         "Delat valv borttaget"
       ],
@@ -5318,6 +5335,10 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Skicka in en insättning med följande adress eller skanna QR-koden. Din insättning kommer att återspeglas på ditt konto efter bekräftelse."
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Prenumeration förnyas automatiskt varje ${ cycle } månad.",
+        "Prenumerationen förnyas automatiskt var ${ cycle }:e månad."
       ],
       "Subscription auto-renews every month.": [
         "Prenumeration förnyas automatiskt varje månad."
@@ -5879,6 +5900,10 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Du kommer inte kunna tilldela om dessa servrar till ett annat land på 10 dagar."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }.",
+        "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Din ${ boldDiscountPercent } på ${ boldPlanTitle } har tillämpats"
       ],
@@ -5935,6 +5960,10 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer att förnyas automatiskt varje ${ cycle } månad.",
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer att förnyas automatiskt var ${ cycle }:e månad."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
@@ -6824,6 +6853,9 @@
       "Don't have access to your 2FA?": [
         "Har du inte åtkomst till din 2FA?"
       ],
+      "Enforcing 2FA for organizations": [
+        "Kräver 2FA för organisationer"
+      ],
       "Forgot email?": [
         "Glömt e-post?"
       ],
@@ -7172,29 +7204,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Ta bort konto"
-      ],
-      "Downgrade account": [
-        "Nedgradera konto"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Skaffa ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Skaffa ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Behåll ${ plan }"
-      ],
-      "Keep account": [
-        "Behåll konto"
-      ],
-      "Switch plan": [
-        "Byt paket"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgradera till ${ downgradedPlanName }"
@@ -7219,6 +7228,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Uppgradera till ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Ta bort konto"
+      ],
+      "Downgrade account": [
+        "Nedgradera konto"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Skaffa ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Skaffa ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Behåll ${ plan }"
+      ],
+      "Keep account": [
+        "Behåll konto"
+      ],
+      "Switch plan": [
+        "Byt paket"
       ]
     },
     "new_plans: feature": {
@@ -8412,17 +8444,6 @@
         "Välkommen till ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Alla"
-      ],
-      "Group members": [
-        "Gruppmedlemmar"
-      ],
-      "No one": [
-        "Ingen"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Tillåtet ${ defaultLabel }"
@@ -8513,6 +8534,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Alla"
+      ],
+      "Group members": [
+        "Gruppmedlemmar"
+      ],
+      "No one": [
+        "Ingen"
       ]
     },
     "Organization capacity error": {
@@ -8840,6 +8872,9 @@
       "Processing payment": [
         "Bearbetar betalning"
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Priserna för förnyelse kan ändras enligt ${ termsAndConditionsLink }."
+      ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Förnyas med ${ renewPriceStr }, avbryt när som helst."
       ],
@@ -8853,8 +8888,20 @@
         "Kupongen är giltig för ${ couponRedemptions } förnyelse.",
         "Kupongen är giltig för ${ couponRedemptions } förnyelser."
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Det rabatterade priset ${ priceWithDiscount } gäller för den första ${ subscriptionLength } månaden.",
+        "Det rabatterade priset på ${ priceWithDiscount } gäller under de första ${ subscriptionLength } månaderna."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Det rabatterade priset på ${ priceWithDiscount } gäller den första månaden. Kupongen är giltig för ${ couponRedemptions } förnyelse. Därefter förnyas det automatiskt till ${ renewPriceStr } i 1 månad. Du kan avbryt när som helst.",
+        "Det rabatterade priset på ${ priceWithDiscount } gäller den första månaden. Kupongen är giltig för ${ couponRedemptions } förnyelse. Därefter förnyas det automatiskt till ${ renewPriceStr } i 1 månad. Du kan avbryt när som helst."
+      ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transaktionen har upptäckts. Krediterna kommer att läggas till ditt konto när transaktionen är fullständigt bekräftad."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Därefter förnyas det automatiskt i ${ renewalLength } månad för ${ renewPriceStr }. Du kan avbryta när som helst.",
+        "Därefter förnyas det automatiskt i ${ renewalLength } månader för ${ renewPriceStr }. Du kan avbryta när som helst."
       ],
       "Timeout exceeded": [
         "Timeout överskriden"
@@ -9072,6 +9119,10 @@
       "${ cycle } month": [
         "${ cycle } månad",
         "${ cycle } månader"
+      ],
+      "${ months } month plan": [
+        "${ months } månads paket",
+        "${ months } månaders paket"
       ],
       "Enjoying ${ planName }?": [
         "Gillar du ${ planName }?"
@@ -9770,9 +9821,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Denna prenumeration kommer förnyas automatiskt vartannat år med samma pris tills den avbryts."
-      ],
       "Your subscription will renew at the same rate every year.": [
         "Din prenumeration kommer att förnyas med samma pris varje år."
       ]
@@ -10055,6 +10103,9 @@
       "Single sign-on removed": [
         "Enkel inloggning borttagen"
       ],
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "Användaren ${ user } är nu ett konto för enkel inloggning. Det tidigare lösenordet blev hens säkerhetskopieringslösenord."
+      ],
       "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
         "De måste logga in igen med din identitetsleverantör för att få åtkomst till ${ BRAND_NAME }-tjänster. För att denna användare ska kunna logga in, se till att de finns hos din identitetsleverantör."
       ],
@@ -10163,9 +10214,6 @@
       "For all ${ BRAND_NAME } services": [
         "För alla ${ BRAND_NAME }-tjänster"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "För att ladda upp eller synkronisera filer, frigör utrymme eller ${ upgrade }"
       ],
@@ -10184,12 +10232,6 @@
       ],
       "Your ${ appStorage } is full": [
         "Ditt ${ appStorage } är fullt"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Ditt ${ storage } är ${ percentage } % fullt. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Ditt ${ storage } är fullt. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Ditt lagringsutrymme är ${ percentage } % fullt. ${ cta }."
@@ -10216,21 +10258,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Faktureras vartannat år"
-      ],
-      "Billed every 6 months": [
-        "Faktureras var 6:e månad"
-      ],
-      "Billed for 15 months": [
-        "Fakturerad med för 15 månader"
-      ],
-      "Billed for 18 months": [
-        "Fakturerad för 18 månader"
-      ],
-      "Billed for 3 months": [
-        "Fakturerad för 3 månader"
-      ],
-      "Billed for 30 months": [
-        "Fakturerad för 30 månader"
       ],
       "Billed monthly": [
         "Faktureras månadsvis"
@@ -10352,6 +10379,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "För ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription reminder": {
@@ -10642,47 +10710,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -11029,6 +11056,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Account password rules": [
+        "Lösenordsregler för ${ BRAND_NAME }-konto"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -11364,6 +11394,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Nedgradera till ${ downgradedPlanName }?"
+      ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Ladda ner ${ DRIVE_APP_NAME } appar"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Ladda ner ${ VPN_APP_NAME }"

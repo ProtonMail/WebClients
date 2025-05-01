@@ -1048,10 +1048,6 @@
       "Trust": [
         "Amen"
       ],
-      "Trust key": [
-        "Tasarut yettwamanen",
-        "Tisura yettwamanen"
-      ],
       "Trust public key": [
         "Tasarut tazayezt yettwamanen"
       ],
@@ -5942,11 +5938,11 @@
       "Always move sender's emails": [
         "Asenkez yal tikkelt imaylen n yimazanen"
       ],
-      "And": [
-        "Akked"
-      ],
       "AND": [
         "AKKED"
+      ],
+      "And": [
+        "Akked"
       ],
       "and": [
         "akked"
@@ -6143,11 +6139,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Ma"
-      ],
       "IF": [
         "MA"
+      ],
+      "If": [
+        "Ma"
       ],
       "Import all messages": [
         "Kter akk iznan"
@@ -6251,14 +6247,14 @@
       "Optional": [
         "Afrayan"
       ],
+      "OR": [
+        "NEƔ"
+      ],
       "or": [
         "neɣ"
       ],
       "Or": [
         "Neɣ"
-      ],
-      "OR": [
-        "NEƔ"
       ],
       "Original link": [
         "Aseɣwen agejdan"
@@ -6929,6 +6925,17 @@
         "Arured alemmas VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -6947,17 +6954,6 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
@@ -8115,6 +8111,14 @@
         "Imultaɣen"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Mazal ${ dayDiff } wass",
@@ -8134,14 +8138,6 @@
       ],
       "Version history": [
         "Azray n lqem"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GAṬ n uḥraz"
-      ],
-      "Upgrade": [
-        "Leqqem"
       ]
     },
     "Subscription renewal state": {
@@ -9359,15 +9355,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Ma yella ur tecfiḍ ara ɣef wawal uffir inek•m, tzemreḍ ad talseḍ asermed n tsarut-inek•m. Nezmer ad k•m-nɛiwen akken ad tzeggeleḍ taḥacit n ulɣu maca deg ukala ad tesṛuḥeḍ akk isefka ittuwglehnen s tsarut-agi."
       ],
-      "Invalid alias prefix": [
-        "Adat n alias d arameɣtu"
-      ],
-      "Missing alias prefix": [
-        "Ixuṣṣ adat n alias"
-      ],
-      "Missing alias suffix": [
-        "Ixuṣṣ adfir n alias"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Tuzna n ibugen ur tettwagelhen ara seg yixef ar yixef, ur d-ttazen ara talɣut tamaẓlayt."
       ],
@@ -9401,9 +9388,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Ur nezmir ara ad nsenqed aqeddac n yimayl. Ma yella tumneḍ-t, tzemreḍ ad tzegleḍ asenqed-a."
-      ],
-      "You must select at least one mailbox": [
-        "Isefk ad tferneḍ ma drus yiwet n tnaka n urmas"
       ],
       "You will lose any customization you made so far.": [
         "Ad tesruḥeḍ kra n waggan i tgiḍ ar tura."

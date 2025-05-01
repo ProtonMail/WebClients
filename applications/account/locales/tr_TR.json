@@ -460,11 +460,11 @@
       "Discard": [
         "Sil"
       ],
-      "Discard changes": [
-        "Değişiklileri yok say"
-      ],
       "Discard Changes": [
         "Değişiklikleri At"
+      ],
+      "Discard changes": [
+        "Değişiklileri yok say"
       ],
       "Discover ${ planName }": [
         "${ planName } tarifesini keşfedin"
@@ -778,6 +778,9 @@
       "Keep Editing": [
         "Düzenlemeye Devam Et"
       ],
+      "Keep editing": [
+        "Düzenlemeyi sürdür"
+      ],
       "Keep logo": [
         "Logoyu tut"
       ],
@@ -955,11 +958,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Reject": [
         "Reddet"
@@ -2815,9 +2818,9 @@
       ]
     },
     "CountriesStep:Info": {
-      "${ selectedCitiesCount } selected": [
-        "${ selectedCitiesCount } seçilmiş",
-        "${ selectedCitiesCount } seçilmiş"
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount } seçildi",
+        "${ selectedCountriesCount } seçildi"
       ]
     },
     "Country name": {
@@ -7291,6 +7294,10 @@
         "${ calendarsToBeMergedCount } birleştirilmiş takvim",
         "${ calendarsToBeMergedCount } birleştirilmiş takvim"
       ],
+      "${ countriesCount } country enabled": [
+        "${ countriesCount } ülke için kullanıma açıldı",
+        "${ countriesCount } ülke için kullanıma açıldı"
+      ],
       "${ current } of ${ total }": [
         "${ current } / ${ total }"
       ],
@@ -7323,10 +7330,6 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } sizinle ${ PASS_APP_NAME } verilerini paylaşmak istiyor"
-      ],
-      "${ locationsCount } country enabled": [
-        "${ locationsCount } ülkeden kullanılabilir",
-        "${ locationsCount } ülkeden kullanılabilir"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME }"
@@ -7554,11 +7557,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Parolanızı kaybederseniz, ${ BRAND_NAME } hesabınızın içeriğine erişmeyi sürdürebileceğinizden emin olmak için en az bir veri kurtarma yöntemini açın."
       ],
-      "active": [
-        "etkin"
-      ],
       "Active": [
         "Etkin"
+      ],
+      "active": [
+        "etkin"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hesabınıza @pm.me e-posta adresini ekler. Bu basit ve kısa etki alanı \"Bana ${ MAIL_APP_NAME } gönder\" (ProtonMail me) veya \"Bana özel ileti gönder\" (Private Message me) şeklinde anlamlandırılabilir"
@@ -7819,9 +7822,6 @@
       "Beta": [
         "Beta"
       ],
-      "Billed at ${ price }": [
-        "${ price } olarak faturalandı"
-      ],
       "Billing cycle: ${ text }": [
         "Faturalama dönemi: ${ text }"
       ],
@@ -7999,11 +7999,11 @@
       "Data recoverable on this device": [
         "Bu aygıttaki veriler kurtarılabilir"
       ],
-      "Dedicated servers": [
-        "Size ayrılmış sunucular"
-      ],
       "dedicated servers": [
         "size ayrılmış sunucular"
+      ],
+      "Dedicated servers": [
+        "Size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -9013,12 +9013,6 @@
       ],
       "per month, billed at ${ price }": [
         "aylık ${ price } olarak faturalanır"
-      ],
-      "per month, billed every 12 months": [
-        "aylık, 12 ayda bir faturalanır"
-      ],
-      "per month, billed every 24 months": [
-        "aylık, 24 ayda bir faturalanır"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "Giden iletiler imzalanırsa, PGP istemcilerinin PGP anahtarlarınızı otomatik olarak algılama olasılığı yükselir."
@@ -11078,11 +11072,11 @@
       "Amount due": [
         "Ödenecek tutar"
       ],
-      "And": [
-        "Ve"
-      ],
       "AND": [
         "VE"
+      ],
+      "And": [
+        "Ve"
       ],
       "and": [
         "ve"
@@ -11510,11 +11504,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Eğer"
-      ],
       "IF": [
         "EĞER"
+      ],
+      "If": [
+        "Eğer"
       ],
       "Import all messages": [
         "Tüm iletileri içe aktar"
@@ -11723,14 +11717,14 @@
       "Optional": [
         "İsteğe bağlı"
       ],
+      "OR": [
+        "VEYA"
+      ],
       "or": [
         "veya"
       ],
       "Or": [
         "Veya"
-      ],
-      "OR": [
-        "VEYA"
       ],
       "Organization name": [
         "Kuruluş adı"
@@ -13023,6 +13017,32 @@
         "Orta VPN hızı"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon } ile başlayın"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükselt"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Free tarifesini kullanmayı sürdür"
@@ -13050,32 +13070,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } tarifesine yükselt"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon } ile başlayın"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } tutarından başlayan fiyatlarla"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
       ]
     },
     "new_plans: feature": {
@@ -14452,17 +14446,6 @@
         "Bilgisayar"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Herkes"
-      ],
-      "Group members": [
-        "Grup üyeleri"
-      ],
-      "No one": [
-        "Hiç kimse"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "Ayın 10. günü"
@@ -14697,6 +14680,17 @@
       ],
       "Trash": [
         "Çöpe at"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Herkes"
+      ],
+      "Group members": [
+        "Grup üyeleri"
+      ],
+      "No one": [
+        "Hiç kimse"
       ]
     },
     "Option delay send seconds": {
@@ -17022,9 +17016,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Bu abonelik, iptal edilene kadar 2 yılda bir aynı tutarla otomatik olarak yenilenir."
-      ],
       "Your subscription will renew at the same rate every year.": [
         "Aboneliğiniz her yıl aynı tutarla yenilenecek."
       ]
@@ -17486,9 +17477,6 @@
       "Get more storage": [
         "Daha fazla depolama alanı edinin"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "E-postalar gönderebilmek ve alabilmek için depolama alanını boşaltın ya da ${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Dosyaları yükleyebilmek ya da eşitleyebilmek için depolama alanını boşaltın ya da ${ upgrade }"
       ],
@@ -17516,12 +17504,6 @@
       ],
       "Your ${ appStorage } is full": [
         "Kullandığını ${ appStorage } dolu"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "${ storage } depolama alanınız %${ percentage } oranında dolu. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "${ storage } depolama alanınız dolmuş. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Depolama alanınız %${ percentage } oranında dolu. ${ cta }."
@@ -17566,21 +17548,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "2 yılda bir faturalanır"
-      ],
-      "Billed every 6 months": [
-        "6 ayda bir faturalanır"
-      ],
-      "Billed for 15 months": [
-        "15 aylık olarak faturalanır"
-      ],
-      "Billed for 18 months": [
-        "18 aylık olarak faturalanır"
-      ],
-      "Billed for 3 months": [
-        "3 aylık olarak faturalanır"
-      ],
-      "Billed for 30 months": [
-        "30 aylık olarak faturalanır"
       ],
       "Billed monthly": [
         "Ayda bir faturalanır"
@@ -17702,6 +17669,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } için"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription reminder": {
@@ -17992,47 +18000,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {

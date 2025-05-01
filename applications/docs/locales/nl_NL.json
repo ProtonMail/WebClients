@@ -4676,9 +4676,6 @@
       "No payment is required at this time.": [
         "Er is op dit moment geen betaling vereist."
       ],
-      "No recent documents": [
-        "Geen recente documenten"
-      ],
       "No recent documents match your search.": [
         "Er komen geen recente documenten overeen met uw zoekopdracht."
       ],
@@ -8655,8 +8652,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Dit abonnement wordt na twee jaar automatisch verlengd tegen dezelfde prijs totdat het wordt geannuleerd."
+      "The special offer is valid for the first 2 years.": [
+        "De speciale aanbieding is geldig voor de eerste 2 jaar."
       ],
       "Your subscription will renew at the same rate every year.": [
         "Uw abonnement zal elk jaar met hetzelfde tarief worden verlengd."
@@ -8737,6 +8734,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standaardprijs ${ amount } voor 30 maanden"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "De speciale aanbieding is geldig voor de eerste 2 jaar"
       ]
     },
     "specialoffer: Title": {
@@ -8845,9 +8845,6 @@
       "For all ${ BRAND_NAME } services": [
         "Voor alle ${ BRAND_NAME }-diensten"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "Maak ruimte vrij of ${ upgrade } om mail te verzenden of te ontvangen"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Maak ruimte vrij of ${ upgrade } om bestanden te uploaden of te synchroniseren"
       ],
@@ -8866,12 +8863,6 @@
       ],
       "Your ${ appStorage } is full": [
         "Uw ${ appStorage } is vol"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Uw ${ storage } is ${ percentage }% vol. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Uw ${ storage } is vol. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Uw opslag is ${ percentage }% vol. ${ cta }."
@@ -8898,21 +8889,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Wordt om de 2 jaar gefactureerd"
-      ],
-      "Billed every 6 months": [
-        "Elke 6 maanden gefactureerd"
-      ],
-      "Billed for 15 months": [
-        "U betaalt voor 15 maanden"
-      ],
-      "Billed for 18 months": [
-        "Gefactureerd voor 18 maanden"
-      ],
-      "Billed for 3 months": [
-        "Gefactureerd voor 3 maanden"
-      ],
-      "Billed for 30 months": [
-        "Gefactureerd voor 30 maanden"
       ],
       "Billed monthly": [
         "Maandelijks gefactureerd"
@@ -8985,25 +8961,6 @@
         "Voor ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } opslagruimte per gebruiker"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } eigen e-maildomein",
-        "${ planNumberOfDomains } eigen e-maildomeinen"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-mailadres",
-        "${ planNumberOfEmails } e-mailadressen"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mappen, labels en aangepaste filters"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB opslagruimte"
@@ -9043,6 +9000,25 @@
       ],
       "Your privacy is our mission": [
         "Uw privacy is onze missie"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } opslagruimte per gebruiker"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigen e-maildomein",
+        "${ planNumberOfDomains } eigen e-maildomeinen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailadres",
+        "${ planNumberOfEmails } e-mailadressen"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mappen, labels en aangepaste filters"
       ]
     },
     "Subscription renewal state": {
@@ -10118,9 +10094,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
       ],
-      "2 consecutive dots are not allowed": [
-        "2 opeenvolgende punten zijn niet toegestaan"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Weet u zeker dat u ${ count } contact permanent wilt verwijderen?",
         "Weet u zeker dat u ${ count } contacten permanent wilt verwijderen?"
@@ -10134,12 +10107,6 @@
       "Are you sure you want to permanently delete this contact?": [
         "Weet u zeker dat u dit contact permanent wilt verwijderen?"
       ],
-      "Cannot contain a dot at the beginning": [
-        "Kan niet starten met een punt"
-      ],
-      "Cannot contain a dot at the end": [
-        "Kan niet eindigen met een punt"
-      ],
       "Contacts could not be merged": [
         "Contactpersonen konden niet samengevoegd worden"
       ],
@@ -10149,21 +10116,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Als u uw wachtwoord niet meer weet, is het onmogelijk om uw sleutel opnieuw te activeren. We kunnen u helpen om de waarschuwingsbanner te verwijderen, maar in het proces zult u permanent toegang verliezen tot alle gegevens die versleuteld zijn met die sleutel."
       ],
-      "Invalid alias prefix": [
-        "Ongeldig aliasvoorvoegsel"
-      ],
-      "Missing alias prefix": [
-        "Ontbrekend aliasvoorvoegsel"
-      ],
-      "Missing alias suffix": [
-        "Ontbrekend alias-achtervoegsel"
-      ],
-      "Name is required": [
-        "Naam is vereist."
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Alleen alfanumerieke kleine letters, punten, koppeltekens en underscores zijn toegestaan"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
       ],
@@ -10172,9 +10124,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Enkele contactpersonen die moeten worden samengevoegd bevatten fouten. Controleer ze individueel"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "Het aliasvoorvoegsel mag niet langer zijn dan 40 tekens"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "De gegevens van de contactpersoon zijn beschadigd en kunnen niet worden weergegeven."
@@ -10202,9 +10151,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "We konden de mailserver niet verifiëren. Als u het vertrouwt dan kan u deze verificatie overslaan."
-      ],
-      "You must select at least one mailbox": [
-        "U moet ten minste één mailbox selecteren"
       ],
       "You will lose any customization you made so far.": [
         "U verliest elke aanpassing die u tot nu toe hebt gemaakt."

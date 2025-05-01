@@ -6940,6 +6940,26 @@
         "VPN 速度一般"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "以 ${ priceCoupon } 价格开始"
+      ],
+      "Starting from ${ pricing }": [
+        "低至 ${ pricing }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
+      ],
+      "Upgrade to ${ planName }": [
+        "升级至 ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "删除账户"
@@ -6961,26 +6981,6 @@
       ],
       "Switch plan": [
         "切换计划"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "以 ${ priceCoupon } 价格开始"
-      ],
-      "Starting from ${ pricing }": [
-        "低至 ${ pricing }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ],
-      "Upgrade to ${ planName }": [
-        "升级至 ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9072,9 +9072,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "此订阅将以相同费率每 2 年自动续订一次，直至取消。"
-      ],
       "Your subscription will renew at the same rate every year.": [
         "您的订阅将以每年相同的费率续订。"
       ]
@@ -9259,9 +9256,6 @@
       "For all ${ BRAND_NAME } services": [
         "用于所有 ${ BRAND_NAME } 服务"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "如需继续收发邮件，请释放部分存储空间或${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "如需继续上传或同步文件，请释放部分存储空间或${ upgrade }"
       ],
@@ -9279,12 +9273,6 @@
       ],
       "Your ${ appStorage } is full": [
         "您的 ${ appStorage } 已满"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "您的 ${ storage }已使用 ${ percentage }%。${ cta }。"
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "您的 ${ storage } 已满。 ${ cta }。"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "您的存储空间已使用 ${ percentage }%。${ cta }。"
@@ -9324,21 +9312,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "每两年付费"
-      ],
-      "Billed every 6 months": [
-        "按 6 个月计费"
-      ],
-      "Billed for 15 months": [
-        "按 15 个月计费"
-      ],
-      "Billed for 18 months": [
-        "按 18 个月计费"
-      ],
-      "Billed for 3 months": [
-        "按 3 个月计费"
-      ],
-      "Billed for 30 months": [
-        "按 30 个月计费"
       ],
       "Billed monthly": [
         "每月付费"
@@ -9403,6 +9376,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "总计 ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动邮件转发 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "简短的 @pm.me 邮箱地址"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription reminder": {
@@ -9657,47 +9671,6 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己的短 @pm.me 邮箱别名"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动邮件转发 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "简短的 @pm.me 邮箱地址"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription renewal state": {
@@ -10911,9 +10884,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 将从最近的邮件开始导入尽可能多的数据。"
       ],
-      "2 consecutive dots are not allowed": [
-        "不允许出现 2 个连续的点"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "您确定要永久删除 ${ count } 联系人吗？"
       ],
@@ -10926,12 +10896,6 @@
       "Are you sure you want to permanently delete this contact?": [
         "您确认要永久删除此邮件吗？"
       ],
-      "Cannot contain a dot at the beginning": [
-        "开头不能包含点"
-      ],
-      "Cannot contain a dot at the end": [
-        "末尾不能包含点"
-      ],
       "Contacts could not be merged": [
         "无法合并联系人"
       ],
@@ -10941,21 +10905,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "如果您忘记了密码，您将无法重新激活密钥。我们可以帮助您关闭警告横幅，但在此过程中，您将永久失去通过该密钥加密的所有数据"
       ],
-      "Invalid alias prefix": [
-        "无效的别名前缀"
-      ],
-      "Missing alias prefix": [
-        "缺少别名前缀"
-      ],
-      "Missing alias suffix": [
-        "缺少别名后缀"
-      ],
-      "Name is required": [
-        "名称为必填项"
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "只允许使用字母数字小写字符、点、连字符和下划线"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"
       ],
@@ -10964,9 +10913,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "部分需合并的联系人无法显示，请单独查看。"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "别名前缀不可超过40个字符"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "联系人数据损坏，无法显示。"
@@ -10994,9 +10940,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "邮件服务器验证失败，如果您信任该服务器，可以跳过此项验证。"
-      ],
-      "You must select at least one mailbox": [
-        "您必须选择至少一个邮箱"
       ],
       "You will lose any customization you made so far.": [
         "当前的导入设置将无法恢复。"

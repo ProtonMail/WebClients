@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Актываваць"
-      ],
       "activate": [
         "актываваць"
+      ],
+      "Activate": [
+        "Актываваць"
       ],
       "Activate organization key": [
         "Актываваць ключ арганізацыі"
@@ -259,10 +259,10 @@
       "Discard": [
         "Адхіліць"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Адхіліць змены"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Адхіліць змены"
       ],
       "Discover ${ planName }": [
@@ -448,6 +448,9 @@
       "Keep Editing": [
         "Працягнуць рэдагаванне"
       ],
+      "Keep editing": [
+        "Працягнуць рэдагаванне"
+      ],
       "Keep logo": [
         "Пакінуць лагатып"
       ],
@@ -559,11 +562,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "refresh the page": [
-        "абнавіць старонку"
-      ],
       "Refresh the page": [
         "Абнавіць старонку"
+      ],
+      "refresh the page": [
+        "абнавіць старонку"
       ],
       "Remove": [
         "Выдаліць"
@@ -1601,11 +1604,11 @@
       ]
     },
     "CountriesStep:Info": {
-      "${ selectedCitiesCount } selected": [
-        "${ selectedCitiesCount } выбраны",
-        "${ selectedCitiesCount } выбрана",
-        "${ selectedCitiesCount } выбрана",
-        "${ selectedCitiesCount } выбрана"
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount } выбраны",
+        "${ selectedCountriesCount } выбрана",
+        "${ selectedCountriesCount } выбрана",
+        "${ selectedCountriesCount } выбрана"
       ]
     },
     "Country name": {
@@ -4077,6 +4080,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Тэхналогія шыфравання ${ BRAND_NAME } азначае, што ніхто не зможа атрымаць доступ да вашага пароля - нават мы."
       ],
+      "${ countriesCount } country enabled": [
+        "${ countriesCount } краіна ўключана",
+        "${ countriesCount } краіны ўключаны",
+        "${ countriesCount } краін уключаны",
+        "${ countriesCount } краін уключаны"
+      ],
       "${ discountPercent }% discount": [
         "скідка ${ discountPercent }%"
       ],
@@ -4103,12 +4112,6 @@
         "${ hasTwoFAMembersLength } удзельнікі з ${ canHaveTwoFAMembersLength }, якія не належаць да SSO выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю.",
         "${ hasTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength }, якія не належаць да SSO выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю.",
         "${ hasTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength }, якія не належаць да SSO выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю."
-      ],
-      "${ locationsCount } country enabled": [
-        "${ locationsCount } краіна ўключана",
-        "${ locationsCount } краіны ўключаны",
-        "${ locationsCount } краін уключаны",
-        "${ locationsCount } краін уключаны"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
@@ -4428,9 +4431,6 @@
       "Beta": [
         "Бэта"
       ],
-      "Billed at ${ price }": [
-        "Аплачваецца ${ price }"
-      ],
       "Billing cycle: ${ text }": [
         "Перыяд аплаты: ${ text }"
       ],
@@ -4545,11 +4545,11 @@
       "Data recoverable on this device": [
         "Даныя, якія можна аднавіць на гэтай прыладзе"
       ],
-      "Dedicated servers": [
-        "Вылучаныя серверы"
-      ],
       "dedicated servers": [
         "вылучаныя серверы"
+      ],
+      "Dedicated servers": [
+        "Вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -5198,12 +5198,6 @@
       ],
       "per month, billed at ${ price }": [
         "у месяц, аплачваецца ${ price }"
-      ],
-      "per month, billed every 12 months": [
-        "ў месяц (кожныя 12 месяцаў)"
-      ],
-      "per month, billed every 24 months": [
-        "ў месяц (кожныя 24 месяцы)"
       ],
       "Please add a password for the user on row": [
         "Дадайце пароль для карыстальніка ў радок",
@@ -7378,29 +7372,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Выдаліць уліковы запіс"
-      ],
-      "Downgrade account": [
-        "Панізіць уліковы запіс"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Атрымаць ${ BRAND_NAME } бясплатна"
-      ],
-      "Get ${ planName }": [
-        "Атрымаць ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Пакінуць ${ plan }"
-      ],
-      "Keep account": [
-        "Пакінуць уліковы запіс"
-      ],
-      "Switch plan": [
-        "Змяніць тарыфны план"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Панізіць да ${ downgradedPlanName }"
@@ -7425,6 +7396,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Палепшыць да ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Выдаліць уліковы запіс"
+      ],
+      "Downgrade account": [
+        "Панізіць уліковы запіс"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Атрымаць ${ BRAND_NAME } бясплатна"
+      ],
+      "Get ${ planName }": [
+        "Атрымаць ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Пакінуць ${ plan }"
+      ],
+      "Keep account": [
+        "Пакінуць уліковы запіс"
+      ],
+      "Switch plan": [
+        "Змяніць тарыфны план"
       ]
     },
     "new_plans: feature": {
@@ -8672,17 +8666,6 @@
         "Вітаем у ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Кожнаму"
-      ],
-      "Group members": [
-        "Удзельнікі групы"
-      ],
-      "No one": [
-        "Нікому"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Дазволена ${ defaultLabel }"
@@ -8752,6 +8735,17 @@
       ],
       "The whole organization": [
         "Уся арганізацыя"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Кожнаму"
+      ],
+      "Group members": [
+        "Удзельнікі групы"
+      ],
+      "No one": [
+        "Нікому"
       ]
     },
     "Organization capacity error": {
@@ -10083,8 +10077,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Падпіска будзе аўтаматычна падаўжацца кожныя 2 гады з той жа цаной, пакуль вы яе не скасуеце."
+      "The special offer is valid for the first 2 years.": [
+        "Спецыяльная прапанова дзейнічае на працягу першых 2 гадоў."
       ],
       "Your subscription will renew at the same rate every year.": [
         "Ваша падпіска будзе падаўжацца з фіксаваным коштам кожны год."
@@ -10167,6 +10161,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Стандартная цана ${ amount } за 30 месяцаў"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Спецыяльная прапанова дзейнічае на працягу першых 2 гадоў"
       ]
     },
     "specialoffer: Title": {
@@ -10497,9 +10494,6 @@
       "For all ${ BRAND_NAME } services": [
         "Для ўсіх сэрвісаў ${ BRAND_NAME }"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "Вызваліце месца або ${ upgrade }, каб адпраўляць і атрымліваць лісты"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Вызваліце месца або ${ upgrade }, каб запампоўваць або сінхранізаваць файлы"
       ],
@@ -10520,12 +10514,6 @@
       ],
       "Your ${ appStorage } is full": [
         "Ваша ${ appStorage } запоўнена"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Ваша ${ storage } запоўнена на ${ percentage }%. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Ваша ${ storage } запоўнена. ${ cta }"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Ваша сховішча запоўнена на ${ percentage }%. ${ cta }."
@@ -10552,21 +10540,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Аплачваецца кожныя 2 гады"
-      ],
-      "Billed every 6 months": [
-        "Аплачваецца кожныя 6 месяцаў"
-      ],
-      "Billed for 15 months": [
-        "Аплачваецца за 15 месяцаў"
-      ],
-      "Billed for 18 months": [
-        "Аплачваецца за 18 месяцаў"
-      ],
-      "Billed for 3 months": [
-        "Аплачваецца за 3 месяцы"
-      ],
-      "Billed for 30 months": [
-        "Аплачваецца за 30 месяцаў"
       ],
       "Billed monthly": [
         "Аплачваецца штомесяц"
@@ -10718,6 +10691,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription reminder": {
@@ -11020,47 +11034,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {

@@ -403,10 +403,10 @@
       "Move to another vault": [
         "Sposta in un'altra cassaforte"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Sposta nel cestino"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Sposta nel cestino"
       ],
       "Multiple select": [
@@ -825,9 +825,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Impossibile analizzare il file di ${ provider }. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[Errore] non è stato possibile analizzare un elemento"
-      ],
       "A domain ownership must be verified first.": [
         "La proprietà di un dominio deve essere prima verificata."
       ],
@@ -857,9 +854,6 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Autenticazione non riuscita. Conferma la tua password secondaria per procedere con l'esportazione"
-      ],
-      "Biometric authentication failed": [
-        "Autenticazione biometrica non riuscita"
       ],
       "Cannot send invitation at the moment": [
         "Impossibile spedire l'invito al momento",
@@ -1861,10 +1855,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"

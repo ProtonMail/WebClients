@@ -4985,6 +4985,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Verifique a pasta de spam."
       ],
+      "If you have a large photo library, it might take some time.": [
+        "Se você tiver uma biblioteca de fotos grande, isso pode demorar um pouco."
+      ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Se você tiver um desses, vá para a configuração da conta da ${ BRAND_NAME } para iniciar o processo de desbloqueio."
       ],
@@ -5511,9 +5514,6 @@
       "Setting up ${ feature }…": [
         "Configurando ${ feature }…"
       ],
-      "Setting up Albums & Filters. This might take a few minutes.": [
-        "Configurando álbuns e filtros. Isso pode levar alguns minutos."
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Configurar o PGP permite o envio de e-mails com criptografia de ponta-a-ponta com um usuário que não usam o ${ BRAND_NAME } que usa um serviço compatível com PGP."
       ],
@@ -5933,6 +5933,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
       ],
+      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
+        "Uma nova aventura começa para suas fotos! Durante essa transição, a restauração de fotos estará temporariamente indisponível. Tudo deverá estar pronto em alguns dias. Agradecemos a sua compreensão."
+      ],
       "Week": [
         "Semana"
       ],
@@ -6014,6 +6017,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Enquanto isso, você pode fechar a aba ou o navegador."
+      ],
+      "You can close the tab. We'll work on it in the background.": [
+        "Você pode fechar a guia. Trabalharemos nisso em segundo plano."
       ],
       "You can import one data type at a time.": [
         "Você pode importar uma categoria de dado por vez."
@@ -7493,29 +7499,6 @@
         "Velocidade média de VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Excluir conta"
-      ],
-      "Downgrade account": [
-        "Fazer downgrade da conta"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obter ${ BRAND_NAME } gratuitamente"
-      ],
-      "Get ${ planName }": [
-        "Obter o ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Manter o ${ plan }"
-      ],
-      "Keep account": [
-        "Manter conta"
-      ],
-      "Switch plan": [
-        "Mudar de plano"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Fazer o downgrade para o ${ downgradedPlanName }"
@@ -7537,6 +7520,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Faça upgrade para ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Excluir conta"
+      ],
+      "Downgrade account": [
+        "Fazer downgrade da conta"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obter ${ BRAND_NAME } gratuitamente"
+      ],
+      "Get ${ planName }": [
+        "Obter o ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Manter o ${ plan }"
+      ],
+      "Keep account": [
+        "Manter conta"
+      ],
+      "Switch plan": [
+        "Mudar de plano"
       ]
     },
     "new_plans: feature": {
@@ -8666,6 +8672,9 @@
       ],
       "Subfolder failed to be loaded": [
         "Não foi possível carregar a subpasta."
+      ],
+      "The Albums feature is on its way! We're rolling it out gradually — please try again soon": [
+        "O recurso Álbuns está chegando! Estamos lançando-o gradualmente. Tente novamente em breve."
       ],
       "The document failed to be created": [
         "O documento não foi criado."
@@ -9803,8 +9812,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Esta assinatura será renovada automaticamente a cada 2 anos com a mesma taxa até que seja cancelada."
+      "The special offer is valid for the first 2 years.": [
+        "A oferta especial é válida pelos primeiros 2 anos."
       ],
       "Your subscription will renew at the same rate every year.": [
         "Sua assinatura será renovada pelo mesmo preço todos os anos."
@@ -9885,6 +9894,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Preço padrão ${ amount } por 30 meses"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "A oferta especial é válida pelos primeiros 2 anos."
       ]
     },
     "specialoffer: Title": {
@@ -10002,9 +10014,6 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Para continuar carregando e sincronizando arquivos, libere espaço ou atualize para obter mais armazenamento."
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "Para enviar ou receber e-mails, libere espaço ou ${ upgrade }"
-      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Para enviar ou receber e-mails, libere espaço ou atualize para obter mais armazenamento."
       ],
@@ -10026,12 +10035,6 @@
       ],
       "Your ${ appStorage } is full": [
         "O ${ appStorage } está cheio."
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Seu ${ storage } está ${ percentage }% cheio. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Seu ${ storage } está cheio. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Seu armazenamento está ${ percentage }% cheio. ${ cta }."
@@ -10058,21 +10061,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Cobrado a cada 2 anos"
-      ],
-      "Billed every 6 months": [
-        "Cobrado a cada 6 meses"
-      ],
-      "Billed for 15 months": [
-        "Cobrança a cada 15 meses"
-      ],
-      "Billed for 18 months": [
-        "Cobrado por 18 meses"
-      ],
-      "Billed for 3 months": [
-        "Cobrado por 3 meses"
-      ],
-      "Billed for 30 months": [
-        "Cobrança a cada 30 meses"
       ],
       "Billed monthly": [
         "Cobrado mensalmente"
@@ -10143,6 +10131,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Por ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Armazenamento de 15 GB"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 recursos premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento de e-mail automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerta de violações de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicativo para computador"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Faça upgrade para um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie nossa missão"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Faça upgrade da sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos seus dados"
+      ],
+      "Your privacy is our mission": [
+        "Sua privacidade é a nossa missão"
       ]
     },
     "Subscription reminder": {
@@ -10403,47 +10432,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Seu próprio alias de e-mail @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Armazenamento de 15 GB"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 recursos premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento de e-mail automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerta de violações de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicativo para computador"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Faça upgrade para um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie nossa missão"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade your productivity": [
-        "Faça upgrade da sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos seus dados"
-      ],
-      "Your privacy is our mission": [
-        "Sua privacidade é a nossa missão"
       ]
     },
     "Subscription renewal state": {
@@ -11397,6 +11385,9 @@
       "Set up your organization": [
         "Configure a sua organização"
       ],
+      "Setting up Albums & Filters": [
+        "Configurando álbuns e filtros"
+      ],
       "Settings": [
         "Configurações"
       ],
@@ -11486,9 +11477,6 @@
       ],
       "Upgrade complete!": [
         "Upgrade concluído!"
-      ],
-      "Upgrading your Photos experience": [
-        "Atualizando sua experiência com Fotos"
       ],
       "Upload and share files": [
         "Enviar e compartilhar arquivo"
@@ -11821,9 +11809,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "A ${ BRAND_NAME } irá transferir o máximo de dados possível, começando com as mensagens mais recentes."
       ],
-      "2 consecutive dots are not allowed": [
-        "Não é permitido o uso de 2 pontos consecutivos."
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Você tem certeza de que deseja excluir permanentemente ${ count } contato?",
         "Você tem certeza de que deseja excluir permanentemente ${ count } contatos?"
@@ -11837,12 +11822,6 @@
       "Are you sure you want to permanently delete this contact?": [
         "Você tem certeza que deseja excluir este contato permanentemente?"
       ],
-      "Cannot contain a dot at the beginning": [
-        "Não pode começar por um ponto"
-      ],
-      "Cannot contain a dot at the end": [
-        "Não pode conter um ponto no final"
-      ],
       "Contacts could not be merged": [
         "Não foi possível mesclar os contatos."
       ],
@@ -11852,21 +11831,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Se você não se lembra de sua senha, é impossível reativar sua chave. Nós podemos ajudá-lo a descartar o banner de alerta, mas no processo você perderá o acesso permanente a todos os dados criptografados com essa chave."
       ],
-      "Invalid alias prefix": [
-        "O prefixo de alias não é valido."
-      ],
-      "Missing alias prefix": [
-        "Faltando prefixo de alias"
-      ],
-      "Missing alias suffix": [
-        "Faltando sufixo de alias"
-      ],
-      "Name is required": [
-        "Nome é obrigatório"
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Somente caracteres alfanuméricos minúsculos, pontos, hifens e sublinhados são permitidos"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
       ],
@@ -11875,9 +11839,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Alguns dos contatos a serem mesclados apresentam erro. Verifique-os individualmente"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "O prefixo do alias não pode ter mais de 40 caracteres"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Os dados do contato estão corrompidos e não podem ser exibidos."
@@ -11905,9 +11866,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Não conseguimos verificar o servidor de e-mail. Se você confia no mesmo, você pode pular essa verificação."
-      ],
-      "You must select at least one mailbox": [
-        "Você deve selecionar pelo menos uma caixa de correio"
       ],
       "You will lose any customization you made so far.": [
         "Você perderá qualquer personalização que tenha feito até agora."
