@@ -5060,6 +5060,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
       ],
+      "If you have a large photo library, it might take some time.": [
+        "Dacă aveți o bibliotecă foto mare, ar putea dura ceva timp."
+      ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Dacă aveți una dintre acestea, accesați setările contului ${ BRAND_NAME } pentru a începe procesul de deblocare."
       ],
@@ -5590,9 +5593,6 @@
       "Setting up ${ feature }…": [
         "Se setează ${ feature }…"
       ],
-      "Setting up Albums & Filters. This might take a few minutes.": [
-        "Se configurează albumele și filtrele. Acest lucru poate dura câteva minute."
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Setând criptarea PGP veți putea cripta mesajele bilateral cu un utilizator fără cont la ${ BRAND_NAME } care folosește un serviciu PGP compatibil."
       ],
@@ -6014,6 +6014,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }."
       ],
+      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
+        "Modernizăm fotografiile la noua experiență! Pe durata tranziției, restaurarea fotografiilor nu este disponibilă temporar. Totul ar trebui să fie gata în câteva zile. Vă mulțumim pentru înțelegere."
+      ],
       "Week": [
         "Săptămâna"
       ],
@@ -6096,6 +6099,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Puteți închide fila sau navigatorul web între timp."
+      ],
+      "You can close the tab. We'll work on it in the background.": [
+        "Poți închide fila. Vom lucra la ea în fundal."
       ],
       "You can import one data type at a time.": [
         "Puteți importa un singur tip de date la un moment dat."
@@ -7535,29 +7541,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Ștergere cont"
-      ],
-      "Downgrade account": [
-        "Retrogradare cont"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Luați ${ BRAND_NAME } gratuit"
-      ],
-      "Get ${ planName }": [
-        "Luați ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Păstrare ${ plan }"
-      ],
-      "Keep account": [
-        "Păstrare cont"
-      ],
-      "Switch plan": [
-        "Schimbare plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Retrogradare la ${ downgradedPlanName }"
@@ -7579,6 +7562,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Trecere la ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Ștergere cont"
+      ],
+      "Downgrade account": [
+        "Retrogradare cont"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Luați ${ BRAND_NAME } gratuit"
+      ],
+      "Get ${ planName }": [
+        "Luați ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Păstrare ${ plan }"
+      ],
+      "Keep account": [
+        "Păstrare cont"
+      ],
+      "Switch plan": [
+        "Schimbare plan"
       ]
     },
     "new_plans: feature": {
@@ -9902,9 +9908,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
-      ],
       "Your subscription will renew at the same rate every year.": [
         "Abonamentul vi se va reînnoi la același tarif în fiecare an."
       ]
@@ -10102,9 +10105,6 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Pentru a continua să încărcați și să sincronizați fișiere, eliberați spațiu sau treceți la un plan cu plată pentru a obține mai mult spațiu."
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "Pentru a trimite sau a primi mesaje, eliberați spațiu sau ${ upgrade }"
-      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Pentru a trimite sau primi mesaje, eliberați spațiu sau treceți la un plan cu plată pentru a obține mai mult spațiu."
       ],
@@ -10127,12 +10127,6 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage } este plin."
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "${ storage } este ${ percentage }% plin. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Spațiul din ${ storage } este plin. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Spațiul de stocare este ${ percentage }% ocupat. ${ cta }."
@@ -10159,21 +10153,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Facturat la doi ani"
-      ],
-      "Billed every 6 months": [
-        "Facturat la fiecare 6 luni"
-      ],
-      "Billed for 15 months": [
-        "Facturat pentru 15 luni"
-      ],
-      "Billed for 18 months": [
-        "Facturat pentru 18 de luni"
-      ],
-      "Billed for 3 months": [
-        "Facturat pentru 3 de luni"
-      ],
-      "Billed for 30 months": [
-        "Facturat pentru 30 de luni"
       ],
       "Billed monthly": [
         "Facturat lunar"
@@ -10250,6 +10229,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Pentru ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription reminder": {
@@ -10516,47 +10536,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {
@@ -11531,6 +11510,9 @@
       "Set up your organization": [
         "Setați organizația"
       ],
+      "Setting up Albums & Filters": [
+        "Setare albume și filtre"
+      ],
       "Settings": [
         "Setări"
       ],
@@ -11620,9 +11602,6 @@
       ],
       "Upgrade complete!": [
         "Modificare finalizată!"
-      ],
-      "Upgrading your Photos experience": [
-        "Se îmbunătățește experiența cu fotografiile"
       ],
       "Upload and share files": [
         "Încărcați și partajați fișiere"
@@ -11971,9 +11950,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
       ],
-      "2 consecutive dots are not allowed": [
-        "Nu se acceptă două puncte simultan."
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Sigur doriți să ștergeți definitiv un contact?",
         "Sigur doriți să ștergeți definitiv ${ count } contacte?",
@@ -11988,12 +11964,6 @@
       "Are you sure you want to permanently delete this contact?": [
         "Sigur doriți să ștergeți definitiv acest contact?"
       ],
-      "Cannot contain a dot at the beginning": [
-        "Nu se acceptă punct la început."
-      ],
-      "Cannot contain a dot at the end": [
-        "Nu se acceptă punct la sfârșit."
-      ],
       "Contacts could not be merged": [
         "Contactele nu au putut fi îmbinate"
       ],
@@ -12003,21 +11973,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Dacă nu vă amintiți parola, este imposibil să vă reactivați cheia. Vă putem ajuta să anulați mesajul de alertă, dar în acest proces veți pierde definitiv accesul la toate datele criptate cu acea cheie."
       ],
-      "Invalid alias prefix": [
-        "Prefix alias nevalid."
-      ],
-      "Missing alias prefix": [
-        "Lipsește prefixul aliasului."
-      ],
-      "Missing alias suffix": [
-        "Lipsește sufixul aliasului."
-      ],
-      "Name is required": [
-        "Numele este obligatoriu."
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Sunt permise doar litere mici, cifre, puncte, cratime și caracter de subliniere."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate bilateral. Nu trimiteți informații confidențiale."
       ],
@@ -12026,9 +11981,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Unele contacte ce trebuie îmbinate prezintă erori. Reexaminați-le individual."
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "Prefixul aliasului nu poate fi mai lung de 40 de caractere."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Datele de contact sunt corupte și nu pot fi afișate."
@@ -12056,9 +12008,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Nu s-a putut verifica serverul de e-mail. Dacă aveți încredere în el, puteți ignora verificarea."
-      ],
-      "You must select at least one mailbox": [
-        "Trebuie să selectați cel puțin o adresă de e-mail."
       ],
       "You will lose any customization you made so far.": [
         "Veți pierde orice modificare făcută până acum."

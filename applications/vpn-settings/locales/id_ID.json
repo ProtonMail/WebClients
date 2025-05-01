@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktifkan"
-      ],
       "activate": [
         "aktifkan"
+      ],
+      "Activate": [
+        "Aktifkan"
       ],
       "Activate organization key": [
         "Aktifkan kunci organisasi"
@@ -259,11 +259,11 @@
       "Discard": [
         "Buang"
       ],
-      "Discard changes": [
-        "Buang perubahan"
-      ],
       "Discard Changes": [
         "Batalkan Perubahan"
+      ],
+      "Discard changes": [
+        "Buang perubahan"
       ],
       "Discover ${ planName }": [
         "Telusuri ${ planName }"
@@ -448,6 +448,9 @@
       "Keep Editing": [
         "Lanjut Menyunting"
       ],
+      "Keep editing": [
+        "Lanjut menyunting"
+      ],
       "Keep logo": [
         "Pertahankan logo"
       ],
@@ -559,11 +562,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Refresh the page": [
         "Muat ulang halaman"
+      ],
+      "refresh the page": [
+        "muat ulang halaman"
       ],
       "Remove": [
         "Hapus"
@@ -1571,8 +1574,8 @@
       ]
     },
     "CountriesStep:Info": {
-      "${ selectedCitiesCount } selected": [
-        "${ selectedCitiesCount } dipilih"
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount } dipilih"
       ]
     },
     "Country name": {
@@ -3996,6 +3999,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Teknologi enkripsi ${ BRAND_NAME } memastikan bahwa tidak ada siapa pun yang dapat mengakses kata sandi Anda — termasuk kami sendiri."
       ],
+      "${ countriesCount } country enabled": [
+        "${ countriesCount } negara diaktifkan"
+      ],
       "${ discountPercent }% discount": [
         "Diskon ${ discountPercent }%"
       ],
@@ -4013,9 +4019,6 @@
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dari anggota non-SSO menggunakan autentikasi dua faktor untuk masuk ke organisasi Anda."
-      ],
-      "${ locationsCount } country enabled": [
-        "${ locationsCount } negara diaktifkan"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
@@ -4284,9 +4287,6 @@
       "Beta": [
         "Beta"
       ],
-      "Billed at ${ price }": [
-        "Tertagih dengan harga ${ price }"
-      ],
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
       ],
@@ -4395,11 +4395,11 @@
       "Data recoverable on this device": [
         "Data pada perangkat ini dapat dipulihkan"
       ],
-      "Dedicated servers": [
-        "Server khusus"
-      ],
       "dedicated servers": [
         "server khusus"
+      ],
+      "Dedicated servers": [
+        "Server khusus"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Server khusus dengan alamat IP khusus dapat ditambahkan ke gateway pribadi untuk memungkinkan kontrol akses yang lebih terperinci."
@@ -5036,12 +5036,6 @@
       ],
       "per month, billed at ${ price }": [
         "per bulan, dengan harga ${ price }"
-      ],
-      "per month, billed every 12 months": [
-        "per bulan, ditagihkan setiap 12 bulan"
-      ],
-      "per month, billed every 24 months": [
-        "per bulan, ditagihkan setiap 24 bulan"
       ],
       "Please add a password for the user on row": [
         "Mohon tambahkan kata sandi pengguna pada baris"
@@ -7141,29 +7135,6 @@
         "Kecepatan VPN sedang"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Hapus akun"
-      ],
-      "Downgrade account": [
-        "Turunkan jenis akun"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Dapatkan ${ BRAND_NAME } secara cuma-cuma"
-      ],
-      "Get ${ planName }": [
-        "Dapatkan ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Pertahankan ${ plan }"
-      ],
-      "Keep account": [
-        "Pertahankan akun"
-      ],
-      "Switch plan": [
-        "Ganti paket"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Turunkan jenis akun saya ke ${ downgradedPlanName }"
@@ -7188,6 +7159,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Tingkatkan ke ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Hapus akun"
+      ],
+      "Downgrade account": [
+        "Turunkan jenis akun"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Dapatkan ${ BRAND_NAME } secara cuma-cuma"
+      ],
+      "Get ${ planName }": [
+        "Dapatkan ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Pertahankan ${ plan }"
+      ],
+      "Keep account": [
+        "Pertahankan akun"
+      ],
+      "Switch plan": [
+        "Ganti paket"
       ]
     },
     "new_plans: feature": {
@@ -8354,17 +8348,6 @@
         "Selamat datang di ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Semua orang"
-      ],
-      "Group members": [
-        "Anggota grup"
-      ],
-      "No one": [
-        "Tidak seorang pun"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Diizinkan ${ defaultLabel }"
@@ -8434,6 +8417,17 @@
       ],
       "The whole organization": [
         "Seluruh organisasi"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Semua orang"
+      ],
+      "Group members": [
+        "Anggota grup"
+      ],
+      "No one": [
+        "Tidak seorang pun"
       ]
     },
     "Organization capacity error": {
@@ -9678,9 +9672,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Langganan ini akan diperbarui secara otomatis setiap 2 tahun dengan tarif yang sama hingga dibatalkan."
-      ],
       "Your subscription will renew at the same rate every year.": [
         "Langganan Anda akan diperbarui dengan harga yang sama setiap tahunnya."
       ]
@@ -10065,9 +10056,6 @@
       "For all ${ BRAND_NAME } services": [
         "Untuk seluruh layanan ${ BRAND_NAME }"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "Untuk dapat mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Untuk dapat mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ upgrade }"
       ],
@@ -10085,12 +10073,6 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage } Anda penuh"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "${ storage } Anda ${ percentage }% penuh. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "${ storage } Anda penuh. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Ruang penyimpanan Anda ${ percentage }% penuh. ${ cta }."
@@ -10117,21 +10099,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Ditagihkan setiap 2 tahun"
-      ],
-      "Billed every 6 months": [
-        "Ditagih setiap 6 bulan"
-      ],
-      "Billed for 15 months": [
-        "Tertagih selama 15 bulan"
-      ],
-      "Billed for 18 months": [
-        "Tertagih selama 18 bulan"
-      ],
-      "Billed for 3 months": [
-        "Tertagih selama 3 bulan"
-      ],
-      "Billed for 30 months": [
-        "Tertagih selama 30 bulan"
       ],
       "Billed monthly": [
         "Ditagih bulanan"
@@ -10238,6 +10205,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Untuk ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription reminder": {
@@ -10522,47 +10530,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {

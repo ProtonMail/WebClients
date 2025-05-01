@@ -403,11 +403,11 @@
       "Move to another vault": [
         "Mover para outro cofre"
       ],
-      "Move to Trash": [
-        "Mover para a Lixeira"
-      ],
       "Move to trash": [
         "Mover para a lixeira"
+      ],
+      "Move to Trash": [
+        "Mover para a Lixeira"
       ],
       "Multiple select": [
         "Seleção múltipla"
@@ -825,9 +825,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "O arquivo ${ provider } não pôde ser analisado ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[Erro] um item não pôde ser analisado"
-      ],
       "A domain ownership must be verified first.": [
         "A propriedade de um domínio deve ser verificada primeiro."
       ],
@@ -857,9 +854,6 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Falha na autenticação. Confirme sua segunda senha para prosseguir com a exportação."
-      ],
-      "Biometric authentication failed": [
-        "A Autenticação biométrica falhou"
       ],
       "Cannot send invitation at the moment": [
         "Não é possível enviar o convite no momento",
@@ -1861,10 +1855,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"

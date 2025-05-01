@@ -403,10 +403,10 @@
       "Move to another vault": [
         "移至另一个保险库"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "移至回收站"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "移至回收站"
       ],
       "Multiple select": [
@@ -822,9 +822,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "无法解析 ${ provider } 文件。${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[错误] 无法解析一个项目"
-      ],
       "A domain ownership must be verified first.": [
         "必须首先验证域名所有权。"
       ],
@@ -854,9 +851,6 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "身份验证失败。请确认您的二次密码以继续导出"
-      ],
-      "Biometric authentication failed": [
-        "生物特征认证失败"
       ],
       "Cannot send invitation at the moment": [
         "目前无法发送邀请"
@@ -1837,9 +1831,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"

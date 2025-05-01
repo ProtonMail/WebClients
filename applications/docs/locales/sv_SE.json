@@ -303,6 +303,9 @@
       "Download": [
         "Ladda ner"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Ladda ner ${ DRIVE_APP_NAME } appen"
+      ],
       "Download anyway": [
         "Ladda ner ändå"
       ],
@@ -503,6 +506,9 @@
       ],
       "New message": [
         "Nytt meddelande"
+      ],
+      "New sheet": [
+        "Nytt ark"
       ],
       "Next": [
         "Nästa"
@@ -2453,6 +2459,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Använd dra och släpp för att ange prioritet vid sammanslagning av kontakter. Avmarkera kontakterna du inte vill sammanfoga."
       ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Använd den här guiden för att din organisation snabbt ska kunna dra nytta av ${ BRAND_NAME }:s branschledande kryptering och ekosystem för integritet."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Med kontaktgrupper kan du skicka e-post till alla i gruppen med ett klick."
       ],
@@ -2572,6 +2581,11 @@
         "Prioriterad support"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "OBS:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "BESKRIVNING:\n${ eventDescription }"
@@ -2586,6 +2600,9 @@
       ],
       "Here's what changed:": [
         "Här är vad som ändrades:"
+      ],
+      "NOTE:": [
+        "OBS:"
       ],
       "This event occurrence was canceled.": [
         "Denna händelseförekomst blev inställd."
@@ -3075,7 +3092,7 @@
         "Prova använda endast bokstäver, siffror och _.-"
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "Det går inte att ladda VPN-instrumentpanelen. Kontrollera din anslutning och försök igen."
+        "Kan inte ladda VPN-adminpanel. Kontrollera din anslutning och försök igen."
       ],
       "Unexpected error, we can't import the contacts": [
         "Oväntat fel, vi kan inte importera kontakterna"
@@ -4659,9 +4676,6 @@
       "No payment is required at this time.": [
         "Ingen betalning krävs just nu."
       ],
-      "No recent documents": [
-        "Inga nyliga dokument"
-      ],
       "No recent documents match your search.": [
         "Inga aktuella dokument motsvarar din sökning."
       ],
@@ -4943,6 +4957,10 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Skicka in en insättning med följande adress eller skanna QR-koden. Din insättning kommer att återspeglas på ditt konto efter bekräftelse."
       ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Prenumeration förnyas automatiskt varje ${ cycle } månad.",
+        "Prenumerationen förnyas automatiskt var ${ cycle }:e månad."
+      ],
       "Subscription auto-renews every month.": [
         "Prenumeration förnyas automatiskt varje månad."
       ],
@@ -4984,6 +5002,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ägaren till denna adress har inaktiverat end-to-end-kryptering. För att kunna skicka krypterad e-post till denna adress måste ägaren återaktivera end-to-end-kryptering."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
+        "Webbadressen du angav verkar ha kopierats felaktigt från Slack. När du kopierar långa länkar från Slack, högerklicka på länken och välj \"Kopiera länk\" istället för att kopiera den trunkerade URL-texten direkt."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifieringsprocessen öppnar en ny webbläsarflik. Inaktivera alla aktiva popup-blockerare."
@@ -5311,6 +5332,10 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }.",
+        "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }."
+      ],
       "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Du är på väg att avböja inbjudan att gå med i ${ invitationName }albumet. Om du fortsätter kommer du inte att kunna komma åt det om inte ägaren bjuder in dig igen. Är du säker på att du vill fortsätta?"
       ],
@@ -5409,6 +5434,10 @@
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Din fysiska plats är synlig och kan användas för att begränsa din åtkomst till internet."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer att förnyas automatiskt varje ${ cycle } månad.",
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer att förnyas automatiskt var ${ cycle }:e månad."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
@@ -6050,6 +6079,9 @@
       ],
       "click here": [
         "klicka här"
+      ],
+      "Enforcing 2FA for organizations": [
+        "Kräver 2FA för organisationer"
       ],
       "How to add users": [
         "Hur man lägger till användare"
@@ -7672,6 +7704,9 @@
       "Public link update access failed ": [
         "Uppdatering av offentlig länkåtkomst misslyckades "
       ],
+      "Recent documents updated": [
+        "Nya dokument har uppdaterats"
+      ],
       "Root folder failed to be loaded": [
         "Misslyckades att ladda rotmapp"
       ],
@@ -7858,6 +7893,9 @@
       ],
       "Searching": [
         "Söker"
+      ],
+      "Trash": [
+        "Papperskorg"
       ]
     },
     "Participant name": {
@@ -8008,6 +8046,9 @@
       "Please select your billing state first.": [
         "Välj din delstat för fakturering först."
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Priserna för förnyelse kan ändras enligt ${ termsAndConditionsLink }."
+      ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Förnyas med ${ renewPriceStr }, avbryt när som helst."
       ],
@@ -8020,6 +8061,18 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupongen är giltig för ${ couponRedemptions } förnyelse.",
         "Kupongen är giltig för ${ couponRedemptions } förnyelser."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Det rabatterade priset ${ priceWithDiscount } gäller för den första ${ subscriptionLength } månaden.",
+        "Det rabatterade priset på ${ priceWithDiscount } gäller under de första ${ subscriptionLength } månaderna."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Det rabatterade priset på ${ priceWithDiscount } gäller den första månaden. Kupongen är giltig för ${ couponRedemptions } förnyelse. Därefter förnyas det automatiskt till ${ renewPriceStr } i 1 månad. Du kan avbryt när som helst.",
+        "Det rabatterade priset på ${ priceWithDiscount } gäller den första månaden. Kupongen är giltig för ${ couponRedemptions } förnyelse. Därefter förnyas det automatiskt till ${ renewPriceStr } i 1 månad. Du kan avbryt när som helst."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Därefter förnyas det automatiskt i ${ renewalLength } månad för ${ renewPriceStr }. Du kan avbryta när som helst.",
+        "Därefter förnyas det automatiskt i ${ renewalLength } månader för ${ renewPriceStr }. Du kan avbryta när som helst."
       ],
       "Timeout exceeded": [
         "Timeout överskriden"
@@ -8667,9 +8720,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Denna prenumeration kommer förnyas automatiskt vartannat år med samma pris tills den avbryts."
-      ],
       "Your subscription will renew at the same rate every year.": [
         "Din prenumeration kommer att förnyas med samma pris varje år."
       ]
@@ -8857,9 +8907,6 @@
       "For all ${ BRAND_NAME } services": [
         "För alla ${ BRAND_NAME }-tjänster"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "För att ladda upp eller synkronisera filer, frigör utrymme eller ${ upgrade }"
       ],
@@ -8878,12 +8925,6 @@
       ],
       "Your ${ appStorage } is full": [
         "Ditt ${ appStorage } är fullt"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Ditt ${ storage } är ${ percentage } % fullt. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Ditt ${ storage } är fullt. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Ditt lagringsutrymme är ${ percentage } % fullt. ${ cta }."
@@ -8910,21 +8951,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Faktureras vartannat år"
-      ],
-      "Billed every 6 months": [
-        "Faktureras var 6:e månad"
-      ],
-      "Billed for 15 months": [
-        "Fakturerad med för 15 månader"
-      ],
-      "Billed for 18 months": [
-        "Fakturerad för 18 månader"
-      ],
-      "Billed for 3 months": [
-        "Fakturerad för 3 månader"
-      ],
-      "Billed for 30 months": [
-        "Fakturerad för 30 månader"
       ],
       "Billed monthly": [
         "Faktureras månadsvis"
@@ -8997,25 +9023,6 @@
         "För ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } lagringsutrymme per användare"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } anpassad e-postdomän",
-        "${ planNumberOfDomains } anpassade e-postdomäner"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-postadress",
-        "${ planNumberOfEmails } e-postadresser"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mappar, etiketter och anpassade filter"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB lagringsutrymme"
@@ -9055,6 +9062,25 @@
       ],
       "Your privacy is our mission": [
         "Din integritet är vårt uppdrag"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } lagringsutrymme per användare"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } anpassad e-postdomän",
+        "${ planNumberOfDomains } anpassade e-postdomäner"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-postadress",
+        "${ planNumberOfEmails } e-postadresser"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mappar, etiketter och anpassade filter"
       ]
     },
     "Subscription renewal state": {
@@ -9497,6 +9523,9 @@
       ],
       "Download ${ date }": [
         "Ladda ner ${ date }"
+      ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Ladda ner ${ DRIVE_APP_NAME } appar"
       ],
       "Download the app": [
         "Ladda ner appen"
@@ -10127,9 +10156,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } kommer att överföra så mycket data som möjligt och börjar med dina senaste meddelanden."
       ],
-      "2 consecutive dots are not allowed": [
-        "2 på varandra följande punkter är inte tillåtet"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Är du säker på att du vill ta bort ${ count } kontakt?",
         "Är du säker på att du vill ta bort ${ count } kontakter?"
@@ -10143,12 +10169,6 @@
       "Are you sure you want to permanently delete this contact?": [
         "Är du säker på att du vill ta bort denna kontakt permanent?"
       ],
-      "Cannot contain a dot at the beginning": [
-        "Kan inte innehålla en punkt i början"
-      ],
-      "Cannot contain a dot at the end": [
-        "Kan inte innehålla en punkt i slutet"
-      ],
       "Contacts could not be merged": [
         "Kontakter kunde inte slås samman"
       ],
@@ -10158,21 +10178,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Om du inte kommer ihåg ditt lösenord är det omöjligt att återaktivera din nyckel. Vi kan hjälpa dig att avvisa varningsbannern men i processen kommer du permanent att förlora åtkomst till all data krypterad med den nyckeln."
       ],
-      "Invalid alias prefix": [
-        "Ogiltigt alias-prefix"
-      ],
-      "Missing alias prefix": [
-        "Alias-prefix saknas"
-      ],
-      "Missing alias suffix": [
-        "Alias-suffix saknas"
-      ],
-      "Name is required": [
-        "Namn är obligatoriskt"
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Endast alfanumeriska gemener, punkter, bindestreck och understreck är tillåtna"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporter är inte end-to-end-krypterade, skicka ingen känslig information."
       ],
@@ -10181,9 +10186,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Några av kontakterna som ska slås samman visar fel. Granska dem individuellt"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "Alias-prefixet får inte vara längre än 40 tecken"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kontaktuppgiften har blivit korrupt och kan inte visas."
@@ -10211,9 +10213,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Vi kunde inte verifiera e-postservern. Om du litar på den kan du hoppa över denna verifiering."
-      ],
-      "You must select at least one mailbox": [
-        "Du måste välja minst en brevlåda"
       ],
       "You will lose any customization you made so far.": [
         "Du kommer förlora alla anpassningar du gjort hittills."

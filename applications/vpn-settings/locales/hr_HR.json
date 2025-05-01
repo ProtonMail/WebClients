@@ -8,11 +8,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate organization key": [
         "Aktivirajte ključ organizacije"
@@ -323,11 +323,11 @@
       "Refresh status": [
         "Osvježi status"
       ],
-      "refresh the page": [
-        "osvježi stranicu"
-      ],
       "Refresh the page": [
         "Osvježi stranicu"
+      ],
+      "refresh the page": [
+        "osvježi stranicu"
       ],
       "Remove": [
         "Ukloni"
@@ -747,6 +747,9 @@
       ],
       "Monthly": [
         "Mjesečno"
+      ],
+      "New!": [
+        "Novo"
       ],
       "Two-year": [
         "2 godine"
@@ -1756,6 +1759,11 @@
         "Poddomene 'www' obično se ne koriste za e-poštu. Jeste li sigurni da želite koristiti ovu domenu?"
       ]
     },
+    "Download": {
+      "TV": [
+        "TV"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Priority support": [
         "Prioritetna podrška"
@@ -2264,6 +2272,9 @@
       ],
       "No verification method available": [
         "Nema dostupne metode za provjeru"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
@@ -2540,6 +2551,12 @@
       ],
       "of": [
         "od"
+      ],
+      "Off": [
+        "Isključeno"
+      ],
+      "On": [
+        "Uključeno"
       ],
       "Open source": [
         "Otvoreni kôd"
@@ -3030,6 +3047,9 @@
       "Hide password": [
         "Sakrij lozinku"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "Interval": [
         "Interval"
       ],
@@ -3158,6 +3178,9 @@
       ],
       "Username": [
         "Korisničko ime"
+      ],
+      "VAT": [
+        "PDV"
       ],
       "Verification code": [
         "Kôd za provjeru"
@@ -3361,6 +3384,9 @@
       ]
     },
     "Monetary unit": {
+      "Euro": [
+        "Euro"
+      ],
       "Swiss franc": [
         "Švicarski franak"
       ]
@@ -3395,6 +3421,14 @@
         "Najviša VPN brzina"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -3404,14 +3438,6 @@
       ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
-      ]
-    },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -3616,6 +3642,19 @@
         "Prevelik broj zahtjeva API-ju"
       ]
     },
+    "Offer": {
+      "Save": [
+        "Spremi"
+      ]
+    },
+    "Offer feature": {
+      "Free": [
+        "Besplatno"
+      ],
+      "Plus": [
+        "Plus"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Dobrodošli u ${ appName }"
@@ -3688,6 +3727,9 @@
       "Card number": [
         "Broj kartice"
       ],
+      "CVC": [
+        "CVC"
+      ],
       "Got it": [
         "Razumijem"
       ],
@@ -3704,6 +3746,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaša kartica je odbijena. Molimo pokušajte s drugom karticom ili kontaktirajte vašu banku da autorizira ovu naplatu."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Placeholder": {
@@ -4118,6 +4165,11 @@
         "Standardna cijena ${ amount } za 30 mjeseci"
       ]
     },
+    "sso": {
+      "Deny": [
+        "Odbij"
+      ]
+    },
     "Storage": {
       "Upgrade storage": [
         "Nadogradi prostor za pohranu"
@@ -4134,18 +4186,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Naplaćuje se svake 2 godine"
-      ],
-      "Billed for 15 months": [
-        "Naplaćuje se svakih 15 mjeseci"
-      ],
-      "Billed for 18 months": [
-        "Naplaćuje se svakih 18 mjeseci"
-      ],
-      "Billed for 3 months": [
-        "Naplaćuje se svakih 3 mjeseci"
-      ],
-      "Billed for 30 months": [
-        "Naplaćuje se svakih 30 mjeseci"
       ],
       "Billed monthly": [
         "Mjesečni račun"
@@ -4212,6 +4252,17 @@
         "Razumijem"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
+      ]
+    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } prostora za pohranu po korisniku"
@@ -4236,17 +4287,6 @@
       ],
       "Version history": [
         "Povijest verzija"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
       ]
     },
     "Subscription renewal state": {
@@ -4650,6 +4690,9 @@
       "Groups": [
         "Grupe"
       ],
+      "Home": [
+        "Početna"
+      ],
       "Human verification": [
         "Ljudska provjera"
       ],
@@ -4942,6 +4985,9 @@
       ],
       "Private": [
         "Privatno"
+      ],
+      "SSO": [
+        "SSO"
       ]
     },
     "Validation": {

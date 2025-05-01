@@ -3067,6 +3067,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Dış davetler geçici olarak yapılamıyor. Lütfen bir süre sonra yeniden deneyin"
       ],
+      "Failed to copy photo to album": [
+        "Fotoğraf albüme kopyalanamadı"
+      ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
       ],
@@ -4982,6 +4985,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
+      "If you have a large photo library, it might take some time.": [
+        "Büyük bir fotoğraf kitaplığınız varsa, bu işlem biraz zaman alabilir."
+      ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Bunlardan birine sahipseniz, engellemeyi kaldırmak için ${ BRAND_NAME } hesap ayarına gidin."
       ],
@@ -5508,9 +5514,6 @@
       "Setting up ${ feature }…": [
         "${ feature } ayarlanıyor…"
       ],
-      "Setting up Albums & Filters. This might take a few minutes.": [
-        "Albümler ve Filtreler'i ayarlama. Bu işlem birkaç dakika sürebilir."
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ${ BRAND_NAME } kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
       ],
@@ -5930,6 +5933,9 @@
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
+      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
+        "Fotoğrafları yeni deneyime yükseltiyoruz! Bu geçiş sırasında fotoğraf restorasyonu geçici olarak kullanılamayacaktır. Her şey birkaç gün içinde hazır olacak. Anlayışınız için teşekkür ederiz."
+      ],
       "Week": [
         "Hafta"
       ],
@@ -6011,6 +6017,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Bu sırada sekmeyi veya tarayıcıyı kapatabilirsiniz."
+      ],
+      "You can close the tab. We'll work on it in the background.": [
+        "Sekmeyi kapatabilirsiniz. Arka planda üzerinde çalışacağız."
       ],
       "You can import one data type at a time.": [
         "Bir seferde bir veri türünü içe aktarabilirsiniz."
@@ -7433,29 +7442,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Hesabı sil"
-      ],
-      "Downgrade account": [
-        "Hesap tarifesini düşür"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Ücretsiz ${ BRAND_NAME } edinin"
-      ],
-      "Get ${ planName }": [
-        "${ planName } alın"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } tarifesinde kal"
-      ],
-      "Keep account": [
-        "Hesabı tut"
-      ],
-      "Switch plan": [
-        "Tarifeyi değiştir"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } tarifesine düşür"
@@ -7477,6 +7463,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } tarifesine yükselt"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Hesabı sil"
+      ],
+      "Downgrade account": [
+        "Hesap tarifesini düşür"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Ücretsiz ${ BRAND_NAME } edinin"
+      ],
+      "Get ${ planName }": [
+        "${ planName } alın"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } tarifesinde kal"
+      ],
+      "Keep account": [
+        "Hesabı tut"
+      ],
+      "Switch plan": [
+        "Tarifeyi değiştir"
       ]
     },
     "new_plans: feature": {
@@ -9732,9 +9741,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Bu abonelik, iptal edilene kadar 2 yılda bir aynı tutarla otomatik olarak yenilenir."
-      ],
       "Your subscription will renew at the same rate every year.": [
         "Aboneliğiniz her yıl aynı tutarla yenilenecek."
       ]
@@ -9931,9 +9937,6 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Dosyaları yüklemeyi ve eşitlemeyi sürdürebilmek için boş yer açın ya da daha fazla depolama alanı edinmek için tarifenizi yükseltin."
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "E-postalar gönderebilmek ve alabilmek için depolama alanını boşaltın ya da ${ upgrade }"
-      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da daha fazla depolama alanı edinmek için tarifenizi yükseltin."
       ],
@@ -9955,12 +9958,6 @@
       ],
       "Your ${ appStorage } is full": [
         "Kullandığını ${ appStorage } dolu"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "${ storage } depolama alanınız %${ percentage } oranında dolu. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "${ storage } depolama alanınız dolmuş. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Depolama alanınız %${ percentage } oranında dolu. ${ cta }."
@@ -9987,21 +9984,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "2 yılda bir faturalanır"
-      ],
-      "Billed every 6 months": [
-        "6 ayda bir faturalanır"
-      ],
-      "Billed for 15 months": [
-        "15 aylık olarak faturalanır"
-      ],
-      "Billed for 18 months": [
-        "18 aylık olarak faturalanır"
-      ],
-      "Billed for 3 months": [
-        "3 aylık olarak faturalanır"
-      ],
-      "Billed for 30 months": [
-        "30 aylık olarak faturalanır"
       ],
       "Billed monthly": [
         "Ayda bir faturalanır"
@@ -10072,6 +10054,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } için"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription reminder": {
@@ -10332,47 +10355,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -11326,6 +11308,9 @@
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
       ],
+      "Setting up Albums & Filters": [
+        "Albümler ve Filtreler ayarla"
+      ],
       "Settings": [
         "Ayarlar"
       ],
@@ -11415,9 +11400,6 @@
       ],
       "Upgrade complete!": [
         "Yükseltme tamamlandı!"
-      ],
-      "Upgrading your Photos experience": [
-        "Photos deneyiminizi yükseltiyoruz"
       ],
       "Upload and share files": [
         "Dosyaları yükleyin ve paylaşın"
@@ -11750,9 +11732,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
       ],
-      "2 consecutive dots are not allowed": [
-        "Arka arka 2 nokta yazılamaz"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?",
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?"
@@ -11766,12 +11745,6 @@
       "Are you sure you want to permanently delete this contact?": [
         "Bu kişiyi kalıcı olarak silmek istediğinize emin misiniz?"
       ],
-      "Cannot contain a dot at the beginning": [
-        "Başlangıçta nokta bulunamaz"
-      ],
-      "Cannot contain a dot at the end": [
-        "Sonda nokta bulunamaz"
-      ],
       "Contacts could not be merged": [
         "Kişiler birleştirilemedi"
       ],
@@ -11781,21 +11754,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Parolanızı hatırlamıyorsanız, anahtarınız yeniden etkinleştirilemez. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
       ],
-      "Invalid alias prefix": [
-        "Takma ad ön eki geçersiz"
-      ],
-      "Missing alias prefix": [
-        "Takma ad ön eki eksik"
-      ],
-      "Missing alias suffix": [
-        "Takma ad son eki eksik"
-      ],
-      "Name is required": [
-        "Adın yazılması zorunludur"
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Yalnızca küçük harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
       ],
@@ -11804,9 +11762,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Birleştirilecek kişilerden bazılarında sorunlar var. Lütfen bunları tek tek inceleyin"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "Takma ad ön ekiniz 40 karakterden uzun olamaz"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kişi verileri bozulmuş olduğundan görüntülenemiyor."
@@ -11834,9 +11789,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "E-posta sunucusunu doğrulayamadık. Sunucuya güveniyorsanız, bu doğrulamayı atlayabilirsiniz."
-      ],
-      "You must select at least one mailbox": [
-        "En az bir e-posta kutusu seçmelisiniz"
       ],
       "You will lose any customization you made so far.": [
         "Şu ana kadar yaptığınız tüm özelleştirmeler silinecek."
