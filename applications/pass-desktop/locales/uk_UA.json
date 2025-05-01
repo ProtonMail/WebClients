@@ -376,10 +376,10 @@
       "Move to another vault": [
         "Перемістити в інше сховище"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Перемістити до смітника"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Перемістити до смітника"
       ],
       "Multiple select": [
@@ -795,9 +795,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Не вдалося проаналізувати файл ${ provider }. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[Error] не вдалося проаналізувати елемент"
-      ],
       "A domain ownership must be verified first.": [
         "Спочатку необхідно підтвердити право власності на домен."
       ],
@@ -815,9 +812,6 @@
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Помилка автентифікації. Підтвердьте ваш пароль ${ BRAND_NAME } для того, щоб продовжити експорт"
-      ],
-      "Biometric authentication failed": [
-        "Біометрична автентифікація не пройшла успішно"
       ],
       "Cannot send invitation at the moment": [
         "Неможливо відправити запрошення на цей момент",

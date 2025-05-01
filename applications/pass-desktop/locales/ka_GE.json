@@ -403,10 +403,10 @@
       "Move to another vault": [
         "სხვა საცავში გადატანა"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "ნაგვის ყუთში გადატანა"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "ნაგვის ყუთში გადატანა"
       ],
       "Multiple select": [
@@ -807,9 +807,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-ის ფაილის დამუშავების შეცდომა. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[შეცდომა] ელემენტის დამუშავება შეუძლებელია"
-      ],
       "A domain ownership must be verified first.": [
         "ჯერ დომენის ფლობა უნდა გადაამოწმოთ."
       ],
@@ -836,9 +833,6 @@
       ],
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "ავთენტიკაცია ჩავარდა. დაადასტურეთ თქვენი დამატებითი პაროლი, რომ გატანა გაგრძელდეს"
-      ],
-      "Biometric authentication failed": [
-        "ბიომეტრიით ავთენტიკაცია ჩავარდა"
       ],
       "Cannot send invitation at the moment": [
         "ამჟამად მოსაწვევს ვერ გავაგზავნი",
@@ -1831,10 +1825,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
