@@ -28,10 +28,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate organization key": [
@@ -487,10 +487,10 @@
       "Refresh status": [
         "重新整理狀態"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
       "Remove": [
@@ -2403,6 +2403,11 @@
         "您的${ PLAN_NAMES[PLANS.PASS] }訂閱為特殊價格${ price }每年。若降級為免費方案，您將永久失去此折扣，就算未來再次升級。"
       ]
     },
+    "Download": {
+      "Chrome": [
+        "Chrome"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "展開版本紀錄"
@@ -3706,9 +3711,6 @@
       "Beta": [
         "測試版"
       ],
-      "Billed at ${ price }": [
-        "以 ${ price } 計費"
-      ],
       "Billing cycle: ${ text }": [
         "繳款單週期：${ text }"
       ],
@@ -3796,10 +3798,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "自訂 ${ BRAND_NAME } 應用程式的視覺與設計。"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -4380,12 +4382,6 @@
       ],
       "per month, billed at ${ price }": [
         "每月 ${ price }"
-      ],
-      "per month, billed every 12 months": [
-        "每月，每12個月收費"
-      ],
-      "per month, billed every 24 months": [
-        "每月，每24個月收費"
       ],
       "Please add a password for the user on row": [
         "請在此行使用者處加入密碼"
@@ -6244,29 +6240,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "刪除帳號"
-      ],
-      "Downgrade account": [
-        "降級帳號"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "取得免費的 ${ BRAND_NAME }"
-      ],
-      "Get ${ planName }": [
-        "取得 ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "保留 ${ plan }"
-      ],
-      "Keep account": [
-        "保留帳號"
-      ],
-      "Switch plan": [
-        "切換方案"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "降級後的方案為 ${ downgradedPlanName }"
@@ -6291,6 +6264,29 @@
       ],
       "Upgrade to ${ planName }": [
         "升級至${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "刪除帳號"
+      ],
+      "Downgrade account": [
+        "降級帳號"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "取得免費的 ${ BRAND_NAME }"
+      ],
+      "Get ${ planName }": [
+        "取得 ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "保留 ${ plan }"
+      ],
+      "Keep account": [
+        "保留帳號"
+      ],
+      "Switch plan": [
+        "切換方案"
       ]
     },
     "new_plans: feature": {
@@ -7332,11 +7328,6 @@
         "歡迎來到 ${ appName }"
       ]
     },
-    "option": {
-      "Group members": [
-        "群組成員"
-      ]
-    },
     "Option": {
       "Country configs": [
         "國家組態設定"
@@ -7397,6 +7388,11 @@
       ],
       "The whole organization": [
         "整個組織"
+      ]
+    },
+    "option": {
+      "Group members": [
+        "群組成員"
       ]
     },
     "Organization capacity error": {
@@ -8373,9 +8369,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "此訂購授權將每 2 年自動以相同的費用續訂，直到被取消為止。"
-      ],
       "Your subscription will renew at the same rate every year.": [
         "您的訂閱每年將以同費率更新"
       ]
@@ -8727,9 +8720,6 @@
       "For all ${ BRAND_NAME } services": [
         "所有 ${ BRAND_NAME } 服務"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "您的儲存已滿，要傳送或接收電郵，請釋放儲存空間或${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "要繼續上傳或同步檔案，請釋放一些空間或${ upgrade }"
       ],
@@ -8744,12 +8734,6 @@
       ],
       "Your ${ appStorage } is full": [
         "您的${ appStorage }已滿"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "您已使用 ${ percentage }% 的 ${ storage }。${ cta }"
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "您的${ storage }已滿${ cta }。"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "你的儲存量已達 ${ percentage }% 滿. ${ cta }."
@@ -8776,21 +8760,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "雙年繳制"
-      ],
-      "Billed every 6 months": [
-        "每 6 個月付款"
-      ],
-      "Billed for 15 months": [
-        "15個月的費用為"
-      ],
-      "Billed for 18 months": [
-        "18個月的費用為"
-      ],
-      "Billed for 3 months": [
-        "3個月的費用為"
-      ],
-      "Billed for 30 months": [
-        "30個月的費用為"
       ],
       "Billed monthly": [
         "月繳"
@@ -8894,6 +8863,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } 版"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "and 15 more premium features": [
+        "還有額外的15個的加值功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
       ]
     },
     "Subscription reminder": {
@@ -9154,47 +9164,6 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "and 15 more premium features": [
-        "還有額外的15個的加值功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動郵件轉寄${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "資料外洩警告 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面應用程式"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
-      ],
-      "No ads or tracking": [
-        "無廣告或追蹤"
-      ],
-      "Short @pm.me email address": [
-        "縮短電子郵件地址@pm.me"
-      ],
-      "Support our mission": [
-        "支援我們的計畫"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade your productivity": [
-        "提升您的生產力"
-      ],
-      "We don't sell your data": [
-        "我們不銷售您的資料"
-      ],
-      "Your privacy is our mission": [
-        "您的隱私是我們責任"
       ]
     },
     "Subscription renewal state": {

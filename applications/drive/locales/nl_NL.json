@@ -4985,6 +4985,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
+      "If you have a large photo library, it might take some time.": [
+        "Als u een grote fotobibliotheek hebt, kan het enige tijd duren."
+      ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Als u een van deze heeft, ga dan verder naar ${ BRAND_NAME }-account instelling om het deblokkeer proces voort te zetten."
       ],
@@ -5511,9 +5514,6 @@
       "Setting up ${ feature }…": [
         "Instellen van ${ feature }…"
       ],
-      "Setting up Albums & Filters. This might take a few minutes.": [
-        "Albums en filters instellen. Dit kan enkele minuten duren."
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-${ BRAND_NAME } gebruiker die een PGP compatibele dienst gebruikt."
       ],
@@ -5933,6 +5933,9 @@
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
+      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
+        "We upgraden de foto's naar de nieuwe ervaring! Gedurende deze overgang is fotoherstel tijdelijk niet beschikbaar. Alles zou binnen een paar dagen klaar moeten zijn. Bedankt voor uw begrip."
+      ],
       "Week": [
         "Week"
       ],
@@ -6014,6 +6017,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "In de tussentijd kunt u de tab of browser sluiten."
+      ],
+      "You can close the tab. We'll work on it in the background.": [
+        "U kunt het tabblad sluiten. We werken er op de achtergrond aan."
       ],
       "You can import one data type at a time.": [
         "U kunt maar één type gegevens tegelijk importeren."
@@ -7436,29 +7442,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Account verwijderen"
-      ],
-      "Downgrade account": [
-        "Account downgraden"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Gebruik ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Kies ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } behouden"
-      ],
-      "Keep account": [
-        "Account behouden"
-      ],
-      "Switch plan": [
-        "Van abonnement wisselen"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade naar ${ downgradedPlanName }"
@@ -7480,6 +7463,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Upgraden naar ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Account verwijderen"
+      ],
+      "Downgrade account": [
+        "Account downgraden"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Gebruik ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Kies ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } behouden"
+      ],
+      "Keep account": [
+        "Account behouden"
+      ],
+      "Switch plan": [
+        "Van abonnement wisselen"
       ]
     },
     "new_plans: feature": {
@@ -8604,6 +8610,9 @@
       ],
       "Subfolder failed to be loaded": [
         "Submap kon niet geladen worden"
+      ],
+      "The Albums feature is on its way! We're rolling it out gradually — please try again soon": [
+        "De functie Albums is onderweg! We rollen deze geleidelijk uit — probeer het binnenkort opnieuw"
       ],
       "The document failed to be created": [
         "Het document kon niet aangemaakt worden"
@@ -9735,8 +9744,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Dit abonnement wordt na twee jaar automatisch verlengd tegen dezelfde prijs totdat het wordt geannuleerd."
+      "The special offer is valid for the first 2 years.": [
+        "De speciale aanbieding is geldig voor de eerste 2 jaar."
       ],
       "Your subscription will renew at the same rate every year.": [
         "Uw abonnement zal elk jaar met hetzelfde tarief worden verlengd."
@@ -9817,6 +9826,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standaardprijs ${ amount } voor 30 maanden"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "De speciale aanbieding is geldig voor de eerste 2 jaar"
       ]
     },
     "specialoffer: Title": {
@@ -9934,9 +9946,6 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Maak ruimte vrij of upgrade voor meer opslag om bestanden te kunnen blijven uploaden of synchroniseren."
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "Maak ruimte vrij of ${ upgrade } om mail te verzenden of te ontvangen"
-      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Maak ruimte vrij of upgrade voor meer opslag om mail te blijven verzenden of te ontvangen."
       ],
@@ -9958,12 +9967,6 @@
       ],
       "Your ${ appStorage } is full": [
         "Uw ${ appStorage } is vol"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Uw ${ storage } is ${ percentage }% vol. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Uw ${ storage } is vol. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Uw opslag is ${ percentage }% vol. ${ cta }."
@@ -9990,21 +9993,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Wordt om de 2 jaar gefactureerd"
-      ],
-      "Billed every 6 months": [
-        "Elke 6 maanden gefactureerd"
-      ],
-      "Billed for 15 months": [
-        "U betaalt voor 15 maanden"
-      ],
-      "Billed for 18 months": [
-        "Gefactureerd voor 18 maanden"
-      ],
-      "Billed for 3 months": [
-        "Gefactureerd voor 3 maanden"
-      ],
-      "Billed for 30 months": [
-        "Gefactureerd voor 30 maanden"
       ],
       "Billed monthly": [
         "Maandelijks gefactureerd"
@@ -10075,6 +10063,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Voor ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
       ]
     },
     "Subscription reminder": {
@@ -10335,47 +10364,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
@@ -11329,6 +11317,9 @@
       "Set up your organization": [
         "Stel uw organisatie in"
       ],
+      "Setting up Albums & Filters": [
+        "Albums & Filters instellen"
+      ],
       "Settings": [
         "Instellingen"
       ],
@@ -11418,9 +11409,6 @@
       ],
       "Upgrade complete!": [
         "Upgrade voltooid!"
-      ],
-      "Upgrading your Photos experience": [
-        "Uw Foto's-ervaring upgraden"
       ],
       "Upload and share files": [
         "Bestanden uploaden en delen"
@@ -11753,9 +11741,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
       ],
-      "2 consecutive dots are not allowed": [
-        "2 opeenvolgende punten zijn niet toegestaan"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Weet u zeker dat u ${ count } contact permanent wilt verwijderen?",
         "Weet u zeker dat u ${ count } contacten permanent wilt verwijderen?"
@@ -11769,12 +11754,6 @@
       "Are you sure you want to permanently delete this contact?": [
         "Weet u zeker dat u dit contact permanent wilt verwijderen?"
       ],
-      "Cannot contain a dot at the beginning": [
-        "Kan niet starten met een punt"
-      ],
-      "Cannot contain a dot at the end": [
-        "Kan niet eindigen met een punt"
-      ],
       "Contacts could not be merged": [
         "Contactpersonen konden niet samengevoegd worden"
       ],
@@ -11784,21 +11763,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Als u uw wachtwoord niet meer weet, is het onmogelijk om uw sleutel opnieuw te activeren. We kunnen u helpen om de waarschuwingsbanner te verwijderen, maar in het proces zult u permanent toegang verliezen tot alle gegevens die versleuteld zijn met die sleutel."
       ],
-      "Invalid alias prefix": [
-        "Ongeldig aliasvoorvoegsel"
-      ],
-      "Missing alias prefix": [
-        "Ontbrekend aliasvoorvoegsel"
-      ],
-      "Missing alias suffix": [
-        "Ontbrekend alias-achtervoegsel"
-      ],
-      "Name is required": [
-        "Naam is vereist."
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Alleen alfanumerieke kleine letters, punten, koppeltekens en underscores zijn toegestaan"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
       ],
@@ -11807,9 +11771,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Enkele contactpersonen die moeten worden samengevoegd bevatten fouten. Controleer ze individueel"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "Het aliasvoorvoegsel mag niet langer zijn dan 40 tekens"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "De gegevens van de contactpersoon zijn beschadigd en kunnen niet worden weergegeven."
@@ -11837,9 +11798,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "We konden de mailserver niet verifiëren. Als u het vertrouwt dan kan u deze verificatie overslaan."
-      ],
-      "You must select at least one mailbox": [
-        "U moet ten minste één mailbox selecteren"
       ],
       "You will lose any customization you made so far.": [
         "U verliest elke aanpassing die u tot nu toe hebt gemaakt."

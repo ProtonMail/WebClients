@@ -460,10 +460,10 @@
       "Discard": [
         "Descartar"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Descartar alterações"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Descartar alterações"
       ],
       "Discover ${ planName }": [
@@ -778,6 +778,9 @@
       "Keep Editing": [
         "Continuar editando"
       ],
+      "Keep editing": [
+        "Continuar editando"
+      ],
       "Keep logo": [
         "Manter logotipo"
       ],
@@ -810,6 +813,9 @@
       ],
       "Make admin": [
         "Tornar administrador"
+      ],
+      "Make key primary": [
+        "Tornar chave principal"
       ],
       "Manage advanced account protections": [
         "Gerenciar proteções avançada de conta"
@@ -955,11 +961,11 @@
       "Refresh status": [
         "Atualizar status"
       ],
-      "refresh the page": [
-        "atualizar a página"
-      ],
       "Refresh the page": [
         "Atualizar a página"
+      ],
+      "refresh the page": [
+        "atualizar a página"
       ],
       "Reject": [
         "Rejeitar"
@@ -2815,9 +2821,9 @@
       ]
     },
     "CountriesStep:Info": {
-      "${ selectedCitiesCount } selected": [
-        "${ selectedCitiesCount } selecionada",
-        "${ selectedCitiesCount } selecionadas"
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount } selecionado",
+        "${ selectedCountriesCount } selecionados"
       ]
     },
     "Country name": {
@@ -7294,6 +7300,10 @@
         "${ calendarsToBeMergedCount } calendário mesclado",
         "${ calendarsToBeMergedCount } calendários mesclados"
       ],
+      "${ countriesCount } country enabled": [
+        "${ countriesCount } país ativado",
+        "${ countriesCount } países ativados"
+      ],
       "${ current } of ${ total }": [
         "${ current } de ${ total }"
       ],
@@ -7326,10 +7336,6 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } quer compartilhar dados com você em ${ PASS_APP_NAME }"
-      ],
-      "${ locationsCount } country enabled": [
-        "${ locationsCount } país ativado",
-        "${ locationsCount } países ativados"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
@@ -7557,11 +7563,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Ative pelo menos um método de recuperação de dados para garantir que você possa continuar acessando o conteúdo de sua conta da ${ BRAND_NAME } caso perca sua senha."
       ],
-      "active": [
-        "ativo"
-      ],
       "Active": [
         "Ativo"
+      ],
+      "active": [
+        "ativo"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adicione um endereço de e-mail @pm.me na sua conta. Este domínio simples e curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privado\""
@@ -7822,9 +7828,6 @@
       "Beta": [
         "Beta"
       ],
-      "Billed at ${ price }": [
-        "Cobrado a ${ price }"
-      ],
       "Billing cycle: ${ text }": [
         "Ciclo de faturamento: ${ text }"
       ],
@@ -8002,11 +8005,11 @@
       "Data recoverable on this device": [
         "Dados recuperáveis neste dispositivo"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereços IP dedicados podem ser adicionados a gateways privados para permitir o controle de acesso com ajuste fino."
@@ -9019,12 +9022,6 @@
       ],
       "per month, billed at ${ price }": [
         "por mês, faturado em ${ price }"
-      ],
-      "per month, billed every 12 months": [
-        "por mês com cobrança a cada 12 meses"
-      ],
-      "per month, billed every 24 months": [
-        "por mês com cobrança a cada 24 meses"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "É mais provável que clientes PGP detectem automaticamente suas chaves PGP se as mensagens de saída forem assinadas."
@@ -10383,6 +10380,9 @@
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será usado para essa verificação única."
       ],
+      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
+        "Seus encaminhamentos criptografados de ponta a ponta existentes para outros usuários serão pausados. Você pode reativá-los manualmente nas configurações de \"${ autoReplySettingsTitle }\"."
+      ],
       "Your files will be encrypted and then saved": [
         "Seus arquivos serão criptografados e depois salvos"
       ],
@@ -11084,10 +11084,10 @@
       "Amount due": [
         "Valor a pagar"
       ],
-      "And": [
+      "AND": [
         "E"
       ],
-      "AND": [
+      "And": [
         "E"
       ],
       "and": [
@@ -11516,11 +11516,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Se"
-      ],
       "IF": [
         "SE"
+      ],
+      "If": [
+        "Se"
       ],
       "Import all messages": [
         "Importar todas as mensagens"
@@ -11729,14 +11729,14 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "OU"
+      ],
       "or": [
         "ou"
       ],
       "Or": [
         "Ou"
-      ],
-      "OR": [
-        "OU"
       ],
       "Organization name": [
         "Nome da organização"
@@ -13035,6 +13035,32 @@
         "Velocidade média de VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorar todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comece por ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "A partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Faça upgrade para ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano Free"
@@ -13062,32 +13088,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Fazer upgrade para o ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorar todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comece por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "A partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Faça upgrade para ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -14236,6 +14236,9 @@
       "Key with fingerprint ${ fp } has been deleted.": [
         "Chave com impressão digital ${ fp } foi deletada."
       ],
+      "Key with fingerprint ${ fp } is now primary.": [
+        "A chave com impressão digital ${ fp } agora é principal."
+      ],
       "Link copied to clipboard": [
         "Link copiado para área de transferência"
       ],
@@ -14465,17 +14468,6 @@
       ],
       "Desktop": [
         "Área de trabalho"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Todos"
-      ],
-      "Group members": [
-        "Membros do grupo"
-      ],
-      "No one": [
-        "Ninguém"
       ]
     },
     "Option": {
@@ -14721,6 +14713,17 @@
       ],
       "UDP": [
         "UDP"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Todos"
+      ],
+      "Group members": [
+        "Membros do grupo"
+      ],
+      "No one": [
+        "Ninguém"
       ]
     },
     "Option delay send seconds": {
@@ -17052,8 +17055,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Esta assinatura será renovada automaticamente a cada 2 anos com a mesma taxa até que seja cancelada."
+      "The special offer is valid for the first 2 years.": [
+        "A oferta especial é válida pelos primeiros 2 anos."
       ],
       "Your subscription will renew at the same rate every year.": [
         "Sua assinatura será renovada pelo mesmo preço todos os anos."
@@ -17134,6 +17137,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Preço padrão ${ amount } por 30 meses"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "A oferta especial é válida pelos primeiros 2 anos."
       ]
     },
     "specialoffer: Title": {
@@ -17516,9 +17522,6 @@
       "Get more storage": [
         "Obter mais armazenamento"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "Para enviar ou receber e-mails, libere espaço ou ${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Para enviar ou sincronizar arquivos, libere espaço ou ${ upgrade }"
       ],
@@ -17546,12 +17549,6 @@
       ],
       "Your ${ appStorage } is full": [
         "O ${ appStorage } está cheio."
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Seu ${ storage } está ${ percentage }% cheio. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Seu ${ storage } está cheio. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Seu armazenamento está ${ percentage }% cheio. ${ cta }."
@@ -17596,21 +17593,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Cobrado a cada 2 anos"
-      ],
-      "Billed every 6 months": [
-        "Cobrado a cada 6 meses"
-      ],
-      "Billed for 15 months": [
-        "Cobrança a cada 15 meses"
-      ],
-      "Billed for 18 months": [
-        "Cobrado por 18 meses"
-      ],
-      "Billed for 3 months": [
-        "Cobrado por 3 meses"
-      ],
-      "Billed for 30 months": [
-        "Cobrança a cada 30 meses"
       ],
       "Billed monthly": [
         "Cobrado mensalmente"
@@ -17732,6 +17714,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Por ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Armazenamento de 15 GB"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 recursos premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento de e-mail automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerta de violações de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicativo para computador"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Faça upgrade para um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie nossa missão"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Faça upgrade da sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos seus dados"
+      ],
+      "Your privacy is our mission": [
+        "Sua privacidade é a nossa missão"
       ]
     },
     "Subscription reminder": {
@@ -18022,47 +18045,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Seu próprio alias de e-mail @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Armazenamento de 15 GB"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 recursos premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento de e-mail automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerta de violações de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicativo para computador"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Faça upgrade para um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie nossa missão"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade your productivity": [
-        "Faça upgrade da sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos seus dados"
-      ],
-      "Your privacy is our mission": [
-        "Sua privacidade é a nossa missão"
       ]
     },
     "Subscription renewal state": {
@@ -18825,6 +18807,9 @@
       ],
       "Change password": [
         "Alterar senha"
+      ],
+      "Change primary key?": [
+        "Alterar a chave principal?"
       ],
       "Change role": [
         "Alterar cargo"

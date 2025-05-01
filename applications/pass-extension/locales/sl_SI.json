@@ -20,6 +20,9 @@
       "Add current URL": [
         "Dodaj trenutni URL"
       ],
+      "Add custom domain": [
+        "Dodaj domeno po meri"
+      ],
       "Add domain": [
         "Dodaj domeno"
       ],
@@ -181,6 +184,9 @@
       ],
       "Delete all": [
         "Izbriši vse"
+      ],
+      "Delete mailbox": [
+        "Izbriši poštni predal"
       ],
       "Delete password": [
         "Izbriši geslo"
@@ -1112,6 +1118,9 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Za prijavo v ${ domain } izberite shranjen identifikacijski ključ"
       ],
+      "Choose your preferred look and feel.": [
+        "Izberite želeni videz in občutek."
+      ],
       "Click the icon to open it anytime.": [
         "Kliknite ikono, da jo odprete kadar koli."
       ],
@@ -1180,6 +1189,9 @@
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Omogočite ${ PASS_APP_NAME } tako, da povežete svoj račun ${ BRAND_NAME }"
+      ],
+      "Enter the address you want to email.": [
+        "Vnesite naslov, na katerega želite poslati e-pošto."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Vnesite potrditveno kodo. Števka ${ digit }."
@@ -1378,6 +1390,9 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Potrdite geslo za ${ BRAND_NAME }, če želite izvoziti podatke ${ PASS_APP_NAME }."
+      ],
+      "Please confirm your backup password": [
+        "Potrdite svoje varnostno geslo"
       ],
       "Please confirm your password": [
         "Potrdite svoje geslo"
@@ -2421,6 +2436,9 @@
       "Delete all files": [
         "Izbriši vse datoteke"
       ],
+      "Do you want to remove all the files?": [
+        "Ali želite odstraniti vse datoteke?"
+      ],
       "Download": [
         "Naloži"
       ],
@@ -2444,6 +2462,9 @@
       ],
       "Restore": [
         "Obnovi"
+      ],
+      "The file you are trying to import is empty": [
+        "Datoteka, ki jo poskušate uvoziti, je prazna"
       ]
     },
     "Placeholder": {
@@ -2488,6 +2509,9 @@
       ],
       "my-domain.com": [
         "moj-domena.si"
+      ],
+      "Name to display when sending an email": [
+        "Ime za prikaz pri pošiljanju e-pošte"
       ],
       "Password": [
         "Geslo"
@@ -2551,6 +2575,14 @@
         "Neznan"
       ]
     },
+    "Success": {
+      "Default mailbox successfully updated": [
+        "Privzeti poštni predal je bil posodobljen"
+      ],
+      "Mailbox change successfully cancelled": [
+        "Sprememba poštnega predala je bila preklicana"
+      ]
+    },
     "Theme": {
       "Automatic": [
         "Samodejno"
@@ -2572,6 +2604,9 @@
       "Activity": [
         "Opravilo"
       ],
+      "Add custom domain": [
+        "Dodaj domeno po meri"
+      ],
       "Add mailbox": [
         "Dodaj poštni predal"
       ],
@@ -2583,6 +2618,9 @@
       ],
       "Autofill": [
         "Samodejno izpolnjevanje"
+      ],
+      "Blocked addresses": [
+        "Blokirani naslovi"
       ],
       "Confirm extra password": [
         "Potrdite dodatno geslo"
@@ -2623,6 +2661,9 @@
       "Delete domain": [
         "Izbris domene"
       ],
+      "Delete mailbox": [
+        "Izbriši poštni predal"
+      ],
       "Discard changes?": [
         "Zavrzi spremembe?"
       ],
@@ -2643,6 +2684,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Uživate v ${ PASS_APP_NAME }?"
+      ],
+      "Enter coupon code": [
+        "Vnesite kodo kupona"
       ],
       "Enter your PIN": [
         "Vnesite PIN"
@@ -2749,6 +2793,9 @@
       "Secure your data": [
         "Zavarujte svoje podatke"
       ],
+      "Select the default domain for aliases": [
+        "Izberite privzeto domeno za vzdevke"
+      ],
       "Set access level": [
         "Nastavite raven dostopa"
       ],
@@ -2852,6 +2899,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "Zahtevano je geslo za ${ BRAND_NAME }"
+      ],
       "2 consecutive dots are not allowed": [
         "2 zaporedni piki nista dovoljeni"
       ],

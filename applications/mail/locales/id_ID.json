@@ -1359,9 +1359,6 @@
       "Trust": [
         "Percayai"
       ],
-      "Trust key": [
-        "Percayai kunci"
-      ],
       "Trust public key": [
         "Percayai kunci publik"
       ],
@@ -6864,6 +6861,9 @@
       "Low Priority": [
         "Prioritas Rendah"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Jadikan ${ MAIL_APP_NAME } aplikasi email bawaan Anda."
+      ],
       "Manage your folders": [
         "Kelola folder Anda"
       ],
@@ -8425,11 +8425,11 @@
       "Always move sender's emails": [
         "Selalu pindahkan email pengirim"
       ],
-      "And": [
-        "Dan"
-      ],
       "AND": [
         "DAN"
+      ],
+      "And": [
+        "Dan"
       ],
       "and": [
         "dan"
@@ -8653,11 +8653,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Jika"
-      ],
       "IF": [
         "JIKA"
+      ],
+      "If": [
+        "Jika"
       ],
       "Import all messages": [
         "Impor seluruh pesan"
@@ -8773,14 +8773,14 @@
       "Optional": [
         "Opsional"
       ],
+      "OR": [
+        "ATAU"
+      ],
       "or": [
         "atau"
       ],
       "Or": [
         "Atau"
-      ],
-      "OR": [
-        "ATAU"
       ],
       "Original link": [
         "Tautan asli"
@@ -9650,29 +9650,6 @@
         "Kecepatan VPN sedang"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Hapus akun"
-      ],
-      "Downgrade account": [
-        "Turunkan jenis akun"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Dapatkan ${ BRAND_NAME } secara cuma-cuma"
-      ],
-      "Get ${ planName }": [
-        "Dapatkan ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Pertahankan ${ plan }"
-      ],
-      "Keep account": [
-        "Pertahankan akun"
-      ],
-      "Switch plan": [
-        "Ganti paket"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Turunkan jenis akun saya ke ${ downgradedPlanName }"
@@ -9694,6 +9671,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Tingkatkan ke ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Hapus akun"
+      ],
+      "Downgrade account": [
+        "Turunkan jenis akun"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Dapatkan ${ BRAND_NAME } secara cuma-cuma"
+      ],
+      "Get ${ planName }": [
+        "Dapatkan ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Pertahankan ${ plan }"
+      ],
+      "Keep account": [
+        "Pertahankan akun"
+      ],
+      "Switch plan": [
+        "Ganti paket"
       ]
     },
     "new_plans: feature": {
@@ -11985,9 +11985,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Langganan ini akan diperbarui secara otomatis setiap 2 tahun dengan tarif yang sama hingga dibatalkan."
-      ],
       "Your subscription will renew at the same rate every year.": [
         "Langganan Anda akan diperbarui dengan harga yang sama setiap tahunnya."
       ]
@@ -12229,9 +12226,6 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Untuk dapat lanjut mengunggah dan menyinkronkan berkas, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "Untuk dapat mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }"
-      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
       ],
@@ -12252,12 +12246,6 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage } Anda penuh"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "${ storage } Anda ${ percentage }% penuh. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "${ storage } Anda penuh. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Ruang penyimpanan Anda ${ percentage }% penuh. ${ cta }."
@@ -12284,21 +12272,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Ditagihkan setiap 2 tahun"
-      ],
-      "Billed every 6 months": [
-        "Ditagih setiap 6 bulan"
-      ],
-      "Billed for 15 months": [
-        "Tertagih selama 15 bulan"
-      ],
-      "Billed for 18 months": [
-        "Tertagih selama 18 bulan"
-      ],
-      "Billed for 3 months": [
-        "Tertagih selama 3 bulan"
-      ],
-      "Billed for 30 months": [
-        "Tertagih selama 30 bulan"
       ],
       "Billed monthly": [
         "Ditagih bulanan"
@@ -12363,6 +12336,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Untuk ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription reminder": {
@@ -12617,47 +12631,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {
@@ -14307,9 +14280,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } akan berupaya untuk mentransfer data sebanyak-banyaknya, yang dimulai dengan pesan Anda yang terbaru."
       ],
-      "2 consecutive dots are not allowed": [
-        "Alias tidak dapat mengandung 2 titik secara berurutan"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Apakah Anda yakin ingin mengapus ${ count } kontak secara permanen?"
       ],
@@ -14322,12 +14292,6 @@
       "Are you sure you want to permanently delete this contact?": [
         "Apakah Anda yakin ingin menghapus kontak ini secara permanen?"
       ],
-      "Cannot contain a dot at the beginning": [
-        "Alias tidak dapat dimulai dengan titik"
-      ],
-      "Cannot contain a dot at the end": [
-        "Alias tidak dapat diakhiri dengan titik"
-      ],
       "Contacts could not be merged": [
         "Kontak tidak dapat digabung"
       ],
@@ -14337,21 +14301,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Apabila Anda tidak ingat kata sandi Anda, kunci Anda tidak akan dapat diaktifkan ulang. Kami dapat membantu Anda untuk mengabaikan peringatan ini, namun dalam prosesnya Anda akan kehilangan akses menuju data yang terenkripsi dengan kunci ini secara permanen."
       ],
-      "Invalid alias prefix": [
-        "Awalan alias tidak valid"
-      ],
-      "Missing alias prefix": [
-        "Awalan alias hilang"
-      ],
-      "Missing alias suffix": [
-        "Akhiran alias hilang"
-      ],
-      "Name is required": [
-        "Nama dibutuhkan"
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Alias hanya dapat mengandung karakter alfanumerik yang ditulis dalam huruf kecil, titik, tanda hubung, dan garis bawah"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."
       ],
@@ -14360,9 +14309,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Sebagian kontak yang akan digabungkan menampilkan kesalahan. Silakan periksa kontak ini satu per satu"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "Awalan alias tidak boleh melebihi 40 karakter"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Tanda tangan lampiran gagal diverifikasi.\nAnda akan tetap dapat mengunduh lampiran ini, namun lampiran ini mungkin saja telah dimodifikasi."
@@ -14393,9 +14339,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Kami tidak dapat memverifikasi server email ini. Apabila Anda memercayainya, Anda dapat melewati proses verifikasi ini."
-      ],
-      "You must select at least one mailbox": [
-        "Anda harus memilih setidaknya satu kotak surat"
       ],
       "You will lose any customization you made so far.": [
         "Anda akan kehilangan segala penyesuaian yang telah Anda buat sejauh ini."

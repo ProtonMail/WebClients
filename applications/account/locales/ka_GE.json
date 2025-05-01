@@ -949,10 +949,10 @@
       "Refresh status": [
         "სტატუსის განახლება"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "გვერდის განახლება"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "გვერდის განახლება"
       ],
       "Reject": [
@@ -2797,12 +2797,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "CountriesStep:Info": {
-      "${ selectedCitiesCount } selected": [
-        "მონიშნულია ${ selectedCitiesCount }",
-        "მონიშნულია ${ selectedCitiesCount }"
       ]
     },
     "Country name": {
@@ -7177,10 +7171,6 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX }-ს უნდა, მონაცემები გაგიზიაროთ ${ PASS_APP_NAME }-ში"
       ],
-      "${ locationsCount } country enabled": [
-        "ჩართულია ${ locationsCount } ქვეყანა",
-        "ჩართულია ${ locationsCount } ქვეყანა"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } და ${ CALENDAR_APP_NAME }"
       ],
@@ -7388,10 +7378,10 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "გაააქტიურეთ ანგარიშის აღდგენის ერთი მეთოდი მაინც, რომ დარწმუნდეთ, რომ თქვენს ${ BRAND_NAME }-ის ანგარიშზე წვდომა პაროლის დაკარგვის შემთხვევაშიც კი გექნებათ."
       ],
-      "active": [
+      "Active": [
         "აქტიური"
       ],
-      "Active": [
+      "active": [
         "აქტიური"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
@@ -7653,9 +7643,6 @@
       "Beta": [
         "ბეტა"
       ],
-      "Billed at ${ price }": [
-        "გადაიხადეთ ${ price }"
-      ],
       "Billing cycle: ${ text }": [
         "გადახდის ციკლი: ${ text }"
       ],
@@ -7833,11 +7820,11 @@
       "Data recoverable on this device": [
         "ამ მოწყობილობაზე აღმოჩენადი მონაცემები"
       ],
-      "Dedicated servers": [
-        "გამოყოფილი სერვერები"
-      ],
       "dedicated servers": [
         "გამოყოფილი სერვერი"
+      ],
+      "Dedicated servers": [
+        "გამოყოფილი სერვერები"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართებით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ."
@@ -8832,12 +8819,6 @@
       ],
       "per month, billed at ${ price }": [
         "${ price } თვეში"
-      ],
-      "per month, billed every 12 months": [
-        "ყოველთვე, გადაიხდით 12 თვეში ერთხელ"
-      ],
-      "per month, billed every 24 months": [
-        "ყოველთვე, გადაიხდით 24 თვეში ერთხელ"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "თუ გამავალი შეტყობინებები თქვენი PGP გასაღებითაა დაშიფრული, დიდი შანსია, კლიენტმა ის იპოვოს."
@@ -10853,10 +10834,10 @@
       "Amount due": [
         "გადასახდელი თანხა"
       ],
-      "And": [
+      "AND": [
         "და"
       ],
-      "AND": [
+      "And": [
         "და"
       ],
       "and": [
@@ -11279,10 +11260,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "თუ"
       ],
-      "IF": [
+      "If": [
         "თუ"
       ],
       "Import all messages": [
@@ -11486,13 +11467,13 @@
       "Optional": [
         "არასავალდებულო"
       ],
+      "OR": [
+        "ან"
+      ],
       "or": [
         "ან"
       ],
       "Or": [
-        "ან"
-      ],
-      "OR": [
         "ან"
       ],
       "Organization name": [
@@ -12777,6 +12758,32 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
+      ],
+      "From ${ price }": [
+        "${ price }-დან"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "დაწყება ${ priceCoupon }-დან"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }-დან"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
+      ],
+      "Upgrade to ${ planName }": [
+        "სატარიფო გეგმის განახლება: ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "უფასოთი გაგრძელება"
@@ -12804,32 +12811,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "სატარიფო გეგმის განახლება: ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
-      ],
-      "From ${ price }": [
-        "${ price }-დან"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "დაწყება ${ priceCoupon }-დან"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }-დან"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ],
-      "Upgrade to ${ planName }": [
-        "სატარიფო გეგმის განახლება: ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -14206,17 +14187,6 @@
         "სამუშაო მაგიდა"
       ]
     },
-    "option": {
-      "Everyone": [
-        "ყველა"
-      ],
-      "Group members": [
-        "ჯგუფის წევრები"
-      ],
-      "No one": [
-        "არავინ"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "თვის მეათე დღე"
@@ -14445,6 +14415,17 @@
       ],
       "Trash": [
         "ნაგვის ყუთი"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "ყველა"
+      ],
+      "Group members": [
+        "ჯგუფის წევრები"
+      ],
+      "No one": [
+        "არავინ"
       ]
     },
     "Option delay send seconds": {
@@ -16757,9 +16738,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "ეს გამოწერა მანამდე გაუქმდება ყოველ 2 წელიწადში ერთხელ იმავე სიხშირით, სანამ გააუქმებთ."
-      ],
       "Your subscription will renew at the same rate every year.": [
         "თქვენი გამოწერა განახლდება იგივე ტარიფით ყოველ წელს."
       ]
@@ -17212,9 +17190,6 @@
       "Get more storage": [
         "მიიღეთ მეტი საცავი"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "ელფოსტის გასაგზავნად ან მისაღებად გაათავისუფლეთ ადგილი ან ${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "ფაილების ასატვრთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ upgrade }"
       ],
@@ -17242,12 +17217,6 @@
       ],
       "Your ${ appStorage } is full": [
         "თქვენი ${ appStorage } სავსეა"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "თქვენი ${ storage } ${ percentage }%-ითაა სავსე. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "თქვენი ${ storage } სავსეა. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "თქვენი საცავი ${ percentage }%-ით სავსეა. ${ cta }."
@@ -17292,21 +17261,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "გადახდა 2 წელიწადში ერთხელ"
-      ],
-      "Billed every 6 months": [
-        "გადახდა 6 თვეში ერთხელ"
-      ],
-      "Billed for 15 months": [
-        "გადაიხადეთ 15 თვისთვის"
-      ],
-      "Billed for 18 months": [
-        "გადაიხადეთ 18 თვისთვის"
-      ],
-      "Billed for 3 months": [
-        "გადაიხადეთ 3 თვისთვის"
-      ],
-      "Billed for 30 months": [
-        "გადაიხადეთ 30 თვისთვის"
       ],
       "Billed monthly": [
         "გადაიხდით თვეში ერთხელ"
@@ -17428,6 +17382,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }-თვის"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription reminder": {
@@ -17715,47 +17710,6 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {

@@ -7036,6 +7036,26 @@
         "Middels VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Starter fra ${ pricing }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
+      ],
+      "Upgrade to ${ planName }": [
+        "Oppgrader til ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -7057,26 +7077,6 @@
       ],
       "Switch plan": [
         "Bytt plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Starter fra ${ pricing }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
-      ],
-      "Upgrade to ${ planName }": [
-        "Oppgrader til ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9244,8 +9244,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Dette abonnementet fornyes automatisk hvert 2. år med samme pris til det kanselleres."
+      "The special offer is valid for the first 2 years.": [
+        "Spesialtilbudet gjelder de 2 første årene."
       ],
       "Your subscription will renew at the same rate every year.": [
         "Abonnementet ditt fornyes med samme pris hvert år."
@@ -9326,6 +9326,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standard pris ${ amount } for 30 måneder"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Spesialtilbudet gjelder de første 2 årene"
       ]
     },
     "specialoffer: Title": {
@@ -9432,8 +9435,8 @@
       "For all ${ BRAND_NAME } services": [
         "For alle ${ BRAND_NAME }-tjenester"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "For å sende eller motta e-post, frigjøre plass eller ${ upgrade }."
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "For å fortsette å bruke ${ BRAND_NAME }-produkter må du frigjøre plass eller ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "For å laste opp eller synkronisere filer, frigjør plass eller ${ upgrade }."
@@ -9454,11 +9457,11 @@
       "Your ${ appStorage } is full": [
         "Din ${ appStorage } er full"
       ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Din ${ storage } er ${ percentage }% full. ${ cta }."
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString } er ${ percentage } % full. ${ cta }."
       ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Din ${ storage } er full. ${ cta }."
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString } er full. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Lagringsplassen din er ${ percentage }% full. ${ cta }."
@@ -9498,21 +9501,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Faktureres hvert 2. år"
-      ],
-      "Billed every 6 months": [
-        "Faktureres hver 6. måned"
-      ],
-      "Billed for 15 months": [
-        "Faktureres for 15 måneder"
-      ],
-      "Billed for 18 months": [
-        "Faktureres for 18 måneder"
-      ],
-      "Billed for 3 months": [
-        "Faktureres for 3 måneder"
-      ],
-      "Billed for 30 months": [
-        "Faktureres for 30 måneder"
       ],
       "Billed monthly": [
         "Faktureres månedlig"
@@ -9583,6 +9571,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "For ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription reminder": {
@@ -9843,47 +9872,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -11126,9 +11114,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mye data som mulig, og starter med de nyeste meldingene dine."
       ],
-      "2 consecutive dots are not allowed": [
-        "2 påfølgende prikker er ikke tillatt"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på at du ønsker å slette ${ count } kontakt permanent?",
         "Er du sikker på at du ønsker å slette ${ count } kontakter permanent?"
@@ -11142,12 +11127,6 @@
       "Are you sure you want to permanently delete this contact?": [
         "Er du sikker på at du vil slette denne kontakten permanent?"
       ],
-      "Cannot contain a dot at the beginning": [
-        "Kan ikke inneholde en prikk i begynnelsen"
-      ],
-      "Cannot contain a dot at the end": [
-        "Kan ikke inneholde en prikk ved slutten"
-      ],
       "Contacts could not be merged": [
         "Kontakene kunne ikke slås sammen"
       ],
@@ -11157,21 +11136,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Hvis du ikke husker passordet ditt, er det umulig å aktivere nøkkelen på nytt. Vi kan hjelpe deg med å avvise varselbanneret, men i prosessen vil du permanent miste tilgangen til alle dataene som er kryptert med den nøkkelen."
       ],
-      "Invalid alias prefix": [
-        "Ugyldig aliasprefiks"
-      ],
-      "Missing alias prefix": [
-        "Mangler aliasprefiks"
-      ],
-      "Missing alias suffix": [
-        "Mangler aliasprefiks"
-      ],
-      "Name is required": [
-        "Navn kreves"
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Bare små alfanumeriske tegn, punktum og bindestreker (inkludert understrek) er tillatt."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Feilrapporter er ikke ende-til-ende-kryptert, ikke send noe sensitiv informasjon."
       ],
@@ -11180,9 +11144,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Noen av kontaktene som skal slås sammen, viser feil. Gjennomgå dem individuelt."
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "Aliasprefikset kan ikke være lenger enn 40 tegn."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kontaktdataene er skadet og kan ikke vises."
@@ -11210,9 +11171,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Vi kan ikke bekrefte e-posttjeneren. Hvis du klarérer den, kan du hoppe over denne verifiseringen."
-      ],
-      "You must select at least one mailbox": [
-        "Du må velge minst en postboks"
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning du har gjort så langt."

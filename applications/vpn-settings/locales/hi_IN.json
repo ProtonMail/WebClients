@@ -28,10 +28,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } दुकान"
       ],
-      "Activate": [
+      "activate": [
         "सक्रिय"
       ],
-      "activate": [
+      "Activate": [
         "सक्रिय"
       ],
       "Activate organization key": [
@@ -505,11 +505,11 @@
       "Refresh status": [
         "रीफ्रेश स्थिति"
       ],
-      "refresh the page": [
-        "पृष्ठ रिफ्रेश करें"
-      ],
       "Refresh the page": [
         "पन्ना रिफ्रेश करें"
+      ],
+      "refresh the page": [
+        "पृष्ठ रिफ्रेश करें"
       ],
       "Remove": [
         "हटाएं"
@@ -4060,9 +4060,6 @@
       "Beta": [
         "बीटा"
       ],
-      "Billed at ${ price }": [
-        "${ price } पर बिल किया गया"
-      ],
       "Billing cycle: ${ text }": [
         "बिल चक्र: ${ text }"
       ],
@@ -4167,11 +4164,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } एप्लिकेशन के स्वरूप और अनुभव को अनुकूलित करें"
       ],
-      "Dedicated servers": [
-        "विशेष सर्वर"
-      ],
       "dedicated servers": [
         "समर्पित सर्वर"
+      ],
+      "Dedicated servers": [
+        "विशेष सर्वर"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "विशेष IP पते वाले विशेष सर्वर को निजी गेटवे में जोड़ा जा सकता है ताकि बेहतर पहुंच नियंत्रण संभव हो सके।"
@@ -4776,12 +4773,6 @@
       ],
       "per month, billed at ${ price }": [
         "प्रति माह, ${ price } पर बिल किया गया"
-      ],
-      "per month, billed every 12 months": [
-        "प्रति माह, हर 12 महीने पर बिल किया गया"
-      ],
-      "per month, billed every 24 months": [
-        "प्रति माह, हर 24 महीने पर बिल किया गया"
       ],
       "Please add a password for the user on row": [
         "कृपया पंक्ति पर उपयोगकर्ता के लिए पासवर्ड जोड़ें",
@@ -6772,29 +6763,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "खाता हटा दो"
-      ],
-      "Downgrade account": [
-        "खाते को डाउनग्रेड करें"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "${ BRAND_NAME } पाएं मुफ्त में"
-      ],
-      "Get ${ planName }": [
-        "${ planName } लें"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } रखे"
-      ],
-      "Keep account": [
-        "खाता रखें"
-      ],
-      "Switch plan": [
-        "प्लान बदले"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } पे डाउनग्रेड करें"
@@ -6819,6 +6787,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } पे अपग्रेड करें"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "खाता हटा दो"
+      ],
+      "Downgrade account": [
+        "खाते को डाउनग्रेड करें"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "${ BRAND_NAME } पाएं मुफ्त में"
+      ],
+      "Get ${ planName }": [
+        "${ planName } लें"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } रखे"
+      ],
+      "Keep account": [
+        "खाता रखें"
+      ],
+      "Switch plan": [
+        "प्लान बदले"
       ]
     },
     "new_plans: feature": {
@@ -7994,17 +7985,6 @@
         "${ appName } में आपका स्वागत है"
       ]
     },
-    "option": {
-      "Everyone": [
-        "सभी"
-      ],
-      "Group members": [
-        "ग्रुप सदस्य"
-      ],
-      "No one": [
-        "कोई भी नहीं"
-      ]
-    },
     "Option": {
       "Country configs": [
         "देश विन्यास"
@@ -8068,6 +8048,17 @@
       ],
       "The whole organization": [
         "संपूर्ण संगठन"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "सभी"
+      ],
+      "Group members": [
+        "ग्रुप सदस्य"
+      ],
+      "No one": [
+        "कोई भी नहीं"
       ]
     },
     "Organization capacity error": {
@@ -9290,9 +9281,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "यह सदस्यता स्वचालित रूप से हर 2 साल में उसी दर पर तब तक नवीनीकृत हो जाएगी जब तक इसे रद्द नहीं कर दिया जाता है।"
-      ],
       "Your subscription will renew at the same rate every year.": [
         "आपकी सदस्यता हर साल समान दर से नवीनीकृत होगी।"
       ]
@@ -9686,9 +9674,6 @@
       "For all ${ BRAND_NAME } services": [
         "सभी ${ BRAND_NAME } सेवाओं के लिए"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "ईमेल भेजने या प्राप्त करने के लिए, स्पेस खाली करें या ${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "फाइलें अपलोड या सिंक करने के लिए, स्पेस खाली करें या ${ upgrade }"
       ],
@@ -9707,12 +9692,6 @@
       ],
       "Your ${ appStorage } is full": [
         "आपका ${ appStorage } भर गया है"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "आपका ${ storage } ${ percentage }% भर गया है। ${ cta }।"
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "आपका ${ storage } भर गया है। ${ cta }।"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "आपका स्टोरेज ${ percentage }% भर गया है। ${ cta }।"
@@ -9739,21 +9718,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "बिल हर 2 साल पे"
-      ],
-      "Billed every 6 months": [
-        "बिल हर 6 महीने पे"
-      ],
-      "Billed for 15 months": [
-        "15 महीने के लिए बिल किया गया"
-      ],
-      "Billed for 18 months": [
-        "18 महीने के लिए बिल किया गया"
-      ],
-      "Billed for 3 months": [
-        "3 महीने के लिए बिल किया गया"
-      ],
-      "Billed for 30 months": [
-        "30 महीने के लिए बिल किया गया"
       ],
       "Billed monthly": [
         "मासिक बिल"
@@ -9871,6 +9835,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "के लिए ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "and 15 more premium features": [
+        "और 15 अन्य प्रीमियम सुविधाएँ"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "डाटा लीक अलर्ट ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
+      ],
+      "No ads or tracking": [
+        "कोई विज्ञापन या ट्रैकिंग नहीं"
+      ],
+      "Short @pm.me email address": [
+        "छोटा @pm.me ईमेल पता"
+      ],
+      "Support our mission": [
+        "हमारे मिशन का समर्थन करें"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
+      ],
+      "Upgrade your productivity": [
+        "अपनी उत्पादकता बढ़ाएँ"
+      ],
+      "We don't sell your data": [
+        "हम आपका डाटा नहीं बेचते"
+      ],
+      "Your privacy is our mission": [
+        "आपकी निजता हमारा मिशन है"
       ]
     },
     "Subscription reminder": {
@@ -10161,47 +10166,6 @@
       ],
       "Your own short @pm.me email alias": [
         "आपका अपना छोटा @pm.me ईमेल नकली-नाम"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 जीबी स्टोरेज"
-      ],
-      "and 15 more premium features": [
-        "और 15 अन्य प्रीमियम सुविधाएँ"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "डाटा लीक अलर्ट ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "डेस्कटॉप ऐप"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
-      ],
-      "No ads or tracking": [
-        "कोई विज्ञापन या ट्रैकिंग नहीं"
-      ],
-      "Short @pm.me email address": [
-        "छोटा @pm.me ईमेल पता"
-      ],
-      "Support our mission": [
-        "हमारे मिशन का समर्थन करें"
-      ],
-      "Upgrade": [
-        "अपग्रेड करें"
-      ],
-      "Upgrade your productivity": [
-        "अपनी उत्पादकता बढ़ाएँ"
-      ],
-      "We don't sell your data": [
-        "हम आपका डाटा नहीं बेचते"
-      ],
-      "Your privacy is our mission": [
-        "आपकी निजता हमारा मिशन है"
       ]
     },
     "Subscription renewal state": {

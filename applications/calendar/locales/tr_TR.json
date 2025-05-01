@@ -7036,6 +7036,26 @@
         "Orta VPN hızı"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon } ile başlayın"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükselt"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -7057,26 +7077,6 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon } ile başlayın"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } tutarından başlayan fiyatlarla"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
       ]
     },
     "new_plans: feature": {
@@ -9244,9 +9244,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Bu abonelik, iptal edilene kadar 2 yılda bir aynı tutarla otomatik olarak yenilenir."
-      ],
       "Your subscription will renew at the same rate every year.": [
         "Aboneliğiniz her yıl aynı tutarla yenilenecek."
       ]
@@ -9432,9 +9429,6 @@
       "For all ${ BRAND_NAME } services": [
         "Tüm ${ BRAND_NAME } hizmetleri için"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "E-postalar gönderebilmek ve alabilmek için depolama alanını boşaltın ya da ${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Dosyaları yükleyebilmek ya da eşitleyebilmek için depolama alanını boşaltın ya da ${ upgrade }"
       ],
@@ -9453,12 +9447,6 @@
       ],
       "Your ${ appStorage } is full": [
         "Kullandığını ${ appStorage } dolu"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "${ storage } depolama alanınız %${ percentage } oranında dolu. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "${ storage } depolama alanınız dolmuş. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Depolama alanınız %${ percentage } oranında dolu. ${ cta }."
@@ -9498,21 +9486,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "2 yılda bir faturalanır"
-      ],
-      "Billed every 6 months": [
-        "6 ayda bir faturalanır"
-      ],
-      "Billed for 15 months": [
-        "15 aylık olarak faturalanır"
-      ],
-      "Billed for 18 months": [
-        "18 aylık olarak faturalanır"
-      ],
-      "Billed for 3 months": [
-        "3 aylık olarak faturalanır"
-      ],
-      "Billed for 30 months": [
-        "30 aylık olarak faturalanır"
       ],
       "Billed monthly": [
         "Ayda bir faturalanır"
@@ -9583,6 +9556,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } için"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription reminder": {
@@ -9843,47 +9857,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -11126,9 +11099,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
       ],
-      "2 consecutive dots are not allowed": [
-        "Arka arka 2 nokta yazılamaz"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?",
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?"
@@ -11142,12 +11112,6 @@
       "Are you sure you want to permanently delete this contact?": [
         "Bu kişiyi kalıcı olarak silmek istediğinize emin misiniz?"
       ],
-      "Cannot contain a dot at the beginning": [
-        "Başlangıçta nokta bulunamaz"
-      ],
-      "Cannot contain a dot at the end": [
-        "Sonda nokta bulunamaz"
-      ],
       "Contacts could not be merged": [
         "Kişiler birleştirilemedi"
       ],
@@ -11157,21 +11121,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Parolanızı hatırlamıyorsanız, anahtarınız yeniden etkinleştirilemez. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
       ],
-      "Invalid alias prefix": [
-        "Takma ad ön eki geçersiz"
-      ],
-      "Missing alias prefix": [
-        "Takma ad ön eki eksik"
-      ],
-      "Missing alias suffix": [
-        "Takma ad son eki eksik"
-      ],
-      "Name is required": [
-        "Adın yazılması zorunludur"
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Yalnızca küçük harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
       ],
@@ -11180,9 +11129,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Birleştirilecek kişilerden bazılarında sorunlar var. Lütfen bunları tek tek inceleyin"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "Takma ad ön ekiniz 40 karakterden uzun olamaz"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kişi verileri bozulmuş olduğundan görüntülenemiyor."
@@ -11210,9 +11156,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "E-posta sunucusunu doğrulayamadık. Sunucuya güveniyorsanız, bu doğrulamayı atlayabilirsiniz."
-      ],
-      "You must select at least one mailbox": [
-        "En az bir e-posta kutusu seçmelisiniz"
       ],
       "You will lose any customization you made so far.": [
         "Şu ana kadar yaptığınız tüm özelleştirmeler silinecek."

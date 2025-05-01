@@ -4679,9 +4679,6 @@
       "No payment is required at this time.": [
         "No se requiere ningún pago en este momento."
       ],
-      "No recent documents": [
-        "No hay documentos recientes."
-      ],
       "No recent documents match your search.": [
         "No hay documentos recientes que coincidan con su búsqueda."
       ],
@@ -8718,8 +8715,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Esta suscripción se renovará automáticamente cada 2 años con la misma tarifa hasta que sea cancelada."
+      "The special offer is valid for the first 2 years.": [
+        "La oferta especial es válida durante los primeros 2 años."
       ],
       "Your subscription will renew at the same rate every year.": [
         "Su suscripción se renovará a la misma tarifa cada año."
@@ -8800,6 +8797,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Precio estándar ${ amount } durante 30 meses"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "La oferta especial es válida durante los primeros 2 años"
       ]
     },
     "specialoffer: Title": {
@@ -8908,8 +8908,8 @@
       "For all ${ BRAND_NAME } services": [
         "Para todos los servicios de ${ BRAND_NAME }"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "Para enviar o recibir correos, libere espacio o ${ upgrade }"
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Para seguir utilizando los productos de ${ BRAND_NAME }, libere espacio o ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Para cargar o sincronizar archivos, libere espacio o ${ upgrade }"
@@ -8930,11 +8930,11 @@
       "Your ${ appStorage } is full": [
         "El ${ appStorage } está lleno."
       ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Su ${ storage } está ${ percentage }% lleno. ${ cta }."
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Su ${ productString } está ${ percentage }% lleno. ${ cta }."
       ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Su ${ storage } está lleno. ${ cta }."
+      "Your ${ productString } is full. ${ cta }.": [
+        "Su ${ productString } está lleno. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "El almacenamiento está ${ percentage }% lleno. ${ cta }."
@@ -8961,21 +8961,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Facturación cada 2 años"
-      ],
-      "Billed every 6 months": [
-        "Se factura cada 6 meses"
-      ],
-      "Billed for 15 months": [
-        "Facturación por 15 meses"
-      ],
-      "Billed for 18 months": [
-        "Facturación para 18 meses"
-      ],
-      "Billed for 3 months": [
-        "Facturación para 3 meses"
-      ],
-      "Billed for 30 months": [
-        "Facturación por 30 meses"
       ],
       "Billed monthly": [
         "Facturación mensual"
@@ -9048,25 +9033,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } de almacenamiento por usuario"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } le ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesita para tener control de sus datos y seguridad."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } dominio de correo personalizado",
-        "${ planNumberOfDomains } dominios de correo personalizados"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } dirección de correo",
-        "${ planNumberOfEmails } direcciones de correo"
-      ],
-      "Folders, labels, and custom filters": [
-        "Carpetas, etiquetas y filtros personalizados"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB de espacio de almacenamiento"
@@ -9106,6 +9072,25 @@
       ],
       "Your privacy is our mission": [
         "Su privacidad es nuestra misión"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de almacenamiento por usuario"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } le ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesita para tener control de sus datos y seguridad."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } dominio de correo personalizado",
+        "${ planNumberOfDomains } dominios de correo personalizados"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } dirección de correo",
+        "${ planNumberOfEmails } direcciones de correo"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetas, etiquetas y filtros personalizados"
       ]
     },
     "Subscription renewal state": {
@@ -10181,9 +10166,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirá tanta información posible, comenzando con los mensajes más recientes."
       ],
-      "2 consecutive dots are not allowed": [
-        "No se permite el uso de 2 puntos consecutivos."
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "¿Está seguro de que quiere eliminar permanentemente ${ count } contacto?",
         "¿Está seguro de que quiere eliminar permanentemente ${ count } contactos?"
@@ -10197,12 +10179,6 @@
       "Are you sure you want to permanently delete this contact?": [
         "¿Está seguro de que quiere eliminar permanentemente este contacto?"
       ],
-      "Cannot contain a dot at the beginning": [
-        "No puede empezar por un punto."
-      ],
-      "Cannot contain a dot at the end": [
-        "No puede terminar con un punto."
-      ],
       "Contacts could not be merged": [
         "No se pudieron combinar los contactos"
       ],
@@ -10212,21 +10188,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Si no recuerda la contraseña, es imposible volver a activar la clave. Podemos ayudarle a descartar la alerta pero en el proceso perderá permanentemente el acceso a todos los datos cifrados con esa clave."
       ],
-      "Invalid alias prefix": [
-        "Prefijo de alias inválido"
-      ],
-      "Missing alias prefix": [
-        "Falta el prefijo de alias"
-      ],
-      "Missing alias suffix": [
-        "Falta el sufijo de alias"
-      ],
-      "Name is required": [
-        "El nombre es obligatorio."
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Solo se permiten caracteres alfanuméricos en minúscula, puntos, guiones y guiones bajos."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo, no envíe ninguna información confidencial."
       ],
@@ -10235,9 +10196,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Algunos de los contactos a combinar tienen errores. Revíselos individualmente."
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "El prefijo del alias no puede tener más de 40 caracteres."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Los datos del contacto están corruptos y no pueden mostrarse."
@@ -10265,9 +10223,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "No pudimos verificar el servidor de correo. Si confía en él, puede omitir esta verificación."
-      ],
-      "You must select at least one mailbox": [
-        "Debe seleccionar al menos un buzón"
       ],
       "You will lose any customization you made so far.": [
         "Perderá cualquier personalización que haya hecho hasta ahora."
