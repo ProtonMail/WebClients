@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { BasicModal } from '@proton/components';
+import { Prompt } from '@proton/components';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
@@ -119,26 +119,17 @@ const SendWithErrorsConfirmationModal = ({
     );
 
     return (
-        <BasicModal
+        <Prompt
             title={title}
-            footer={
-                (close || submit) && (
-                    <>
-                        {close}
-                        {submit}
-                    </>
-                )
-            }
             onSubmit={handleConfirm}
-            size="large"
-            fullscreenOnMobile
             onClose={onClose}
-            isOpen={isOpen}
+            open={isOpen}
+            buttons={[submit as JSX.Element, close as JSX.Element]}
         >
             <div className="mb-4">{warningText}</div>
             <ul>{Object.keys(errorMap).map(renderEmailRow)}</ul>
             {alertText && <div>{alertText}</div>}
-        </BasicModal>
+        </Prompt>
     );
 };
 
