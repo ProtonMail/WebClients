@@ -9,9 +9,15 @@
 			@extend %placeholder-loading;
 		}
 
+		&.rounded-lg {
+			&::before {
+				border-radius: var(--border-radius-lg) !important;
+			}
+		}
+
 		&--box {
 			&::before {
-				inline-size: 100%;
+				inline-size: var(--skeleton-width, 100%);
 				block-size: var(--skeleton-height, inherit);
 			}
 		}
@@ -38,6 +44,13 @@
 			&::before {
 				inline-size: em(16);
 				block-size: em(16);
+			}
+		}
+
+		&--avatar {
+			&::before {
+				inline-size: em(32);
+				block-size: em(32);
 			}
 		}
 
