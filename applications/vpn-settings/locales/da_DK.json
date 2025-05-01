@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "Activate": [
-        "Aktivér"
-      ],
       "activate": [
         "aktivér"
+      ],
+      "Activate": [
+        "Aktivér"
       ],
       "Activate organization key": [
         "Aktivér organisationsnøgle"
@@ -475,11 +475,11 @@
       "Refresh status": [
         "Opdater status"
       ],
-      "refresh the page": [
-        "opdater siden"
-      ],
       "Refresh the page": [
         "Opdater siden"
+      ],
+      "refresh the page": [
+        "opdater siden"
       ],
       "Remove": [
         "Fjern"
@@ -3729,9 +3729,6 @@
       "Beta": [
         "Beta"
       ],
-      "Billed at ${ price }": [
-        "Faktureret med ${ price }"
-      ],
       "Billing cycle: ${ text }": [
         "Faktureringsperiode: ${ text }"
       ],
@@ -3812,11 +3809,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Tilpas ${ BRAND_NAME }-applikationernes udseende."
       ],
-      "Dedicated servers": [
-        "Dedikerede servere"
-      ],
       "dedicated servers": [
         "dedikerede servere"
+      ],
+      "Dedicated servers": [
+        "Dedikerede servere"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresser kan tilføjes til private gateways for at finjustere adgangen."
@@ -4359,12 +4356,6 @@
       ],
       "per month, billed at ${ price }": [
         "per måned, faktureret til ${ price }"
-      ],
-      "per month, billed every 12 months": [
-        "pr. måned, faktureres hver 12. måned"
-      ],
-      "per month, billed every 24 months": [
-        "pr. måned, faktureres hver 24. måned"
       ],
       "Please add a password for the user on row": [
         "Tilføj en adgangskode til brugeren på række",
@@ -6191,29 +6182,6 @@
         "Mellem VPN-hastighed"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Slet konto"
-      ],
-      "Downgrade account": [
-        "Nedgradér konto"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Få ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Få ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Behold ${ plan }"
-      ],
-      "Keep account": [
-        "Behold konto"
-      ],
-      "Switch plan": [
-        "Skift abonnement"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
@@ -6235,6 +6203,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Opgradér til ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Slet konto"
+      ],
+      "Downgrade account": [
+        "Nedgradér konto"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Få ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Få ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Behold ${ plan }"
+      ],
+      "Keep account": [
+        "Behold konto"
+      ],
+      "Switch plan": [
+        "Skift abonnement"
       ]
     },
     "new_plans: feature": {
@@ -7354,17 +7345,6 @@
         "Velkommen til ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Alle"
-      ],
-      "Group members": [
-        "Gruppemedlemmer"
-      ],
-      "No one": [
-        "Ingen"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Landeopsætninger"
@@ -7419,6 +7399,17 @@
       ],
       "The whole organization": [
         "Hele organisationen"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Alle"
+      ],
+      "Group members": [
+        "Gruppemedlemmer"
+      ],
+      "No one": [
+        "Ingen"
       ]
     },
     "Organization capacity error": {
@@ -8561,9 +8552,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Dette abonnement vil automatisk blive fornyet hvert 2. år til samme pris, indtil det opsiges."
-      ],
       "Your subscription will renew at the same rate every year.": [
         "Dit abonnement fornyes til samme pris hvert år."
       ]
@@ -8850,9 +8838,6 @@
       "For all ${ BRAND_NAME } services": [
         "For alle ${ BRAND_NAME } tjenester"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "For at sende eller modtage e-mails, frigør plads eller ${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "For at uploade eller synkronisere filer, frigør plads eller ${ upgrade }"
       ],
@@ -8871,12 +8856,6 @@
       ],
       "Your ${ appStorage } is full": [
         "Dit ${ appStorage } er fuldt"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Din ${ storage } er ${ percentage }% fyldt. ${ cta }."
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Din ${ storage } er fyldt. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Din lagerplads er ${ percentage }% fyldt. ${ cta }."
@@ -8903,21 +8882,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Faktureres hvert 2. år"
-      ],
-      "Billed every 6 months": [
-        "Faktureret hver 6. måned"
-      ],
-      "Billed for 15 months": [
-        "Faktureret for 15 måneder"
-      ],
-      "Billed for 18 months": [
-        "Faktureret for 18 måneder"
-      ],
-      "Billed for 3 months": [
-        "Faktureret for 3 måneder"
-      ],
-      "Billed for 30 months": [
-        "Faktureret for 30 måneder"
       ],
       "Billed monthly": [
         "Faktureres månedligt"
@@ -9039,6 +9003,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Til ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
       ]
     },
     "Subscription reminder": {
@@ -9320,47 +9325,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
