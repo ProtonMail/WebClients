@@ -101,6 +101,7 @@ export const ListFieldItem = <T,>({
                     onBlur={handleBlur}
                     onFocus={() => setEditing(true)}
                     onClick={(e) => e.stopPropagation()}
+                    onMouseDown={(e) => e.stopPropagation()}
                     contentEditable
                     onKeyDown={handleKeyDown}
                     ref={ref}
