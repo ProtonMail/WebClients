@@ -12,6 +12,7 @@ import { getOfflineComponents } from '@proton/pass/lib/cache/crypto';
 import { decryptData, encryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
+import { SilentError } from '@proton/pass/store/selectors/errors';
 import { PassEncryptionTag } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -35,22 +36,21 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
     /** Persist the `unlockRetryCount` without re-encrypting
      * the authentication session blob */
     const setRetryCount = async (retryCount: number) => {
-        authStore.setUnlockRetryCount(retryCount);
-
-        const localID = authStore.getLocalID();
-        const encryptedSession = await getPersistedSession(localID);
-
-        if (encryptedSession) {
-            encryptedSession.unlockRetryCount = retryCount;
-            await onSessionPersist?.(JSON.stringify(encryptedSession));
-        }
-
         if (retryCount >= 3) {
             authStore.setUnlockRetryCount(0);
             authStore.setEncryptedOfflineKD(undefined);
             authStore.setLockMode(LockMode.PASSWORD);
             await auth.lock(LockMode.PASSWORD, { broadcast: true, soft: true, userInitiated: true });
             throw new Error(c('Warning').t`Too many attempts`);
+        }
+
+        authStore.setUnlockRetryCount(retryCount);
+        const localID = authStore.getLocalID();
+        const encryptedSession = await getPersistedSession(localID);
+
+        if (encryptedSession) {
+            encryptedSession.unlockRetryCount = retryCount;
+            await onSessionPersist?.(JSON.stringify(encryptedSession));
         }
     };
 
@@ -141,15 +141,10 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
         unlock: async (biometricsSecret: string) => {
             const retryCount = authStore.getUnlockRetryCount() + 1;
 
-            /**
-             * Errors with fetching the biometrics secret
+            /** Errors with fetching the biometrics secret
              * will be handled during fetching it - here we only need
-             * to make sure we're still increasing the count.
-             */
-            if (!biometricsSecret) {
-                await setRetryCount(retryCount);
-                return;
-            }
+             * to make sure we're still increasing the count  */
+            if (!biometricsSecret) throw new SilentError();
 
             /** API may have been flagged as sessionLocked before
              * booting offline - as such reset the api state to
