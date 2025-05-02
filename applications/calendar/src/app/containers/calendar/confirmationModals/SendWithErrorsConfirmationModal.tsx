@@ -124,7 +124,7 @@ const SendWithErrorsConfirmationModal = ({
             onSubmit={handleConfirm}
             onClose={onClose}
             open={isOpen}
-            buttons={[submit as JSX.Element, close as JSX.Element]}
+            buttons={[submit, close].filter(Boolean) as [JSX.Element] | [JSX.Element, JSX.Element]}
         >
             <div className="mb-4">{warningText}</div>
             <ul>{Object.keys(errorMap).map(renderEmailRow)}</ul>
