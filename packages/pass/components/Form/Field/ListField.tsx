@@ -106,6 +106,7 @@ export const ListField = <
                 evt.preventDefault();
                 inputRef.current?.focus();
             }}
+            onMouseDown={(evt) => evt.preventDefault()}
         >
             {label && (
                 <label
@@ -194,6 +195,7 @@ export const ListField = <
                                     onChange={onChange(idx, entry)}
                                     onMoveLeft={onMoveLeft(idx)}
                                     onMoveRight={onMoveRight(idx)}
+                                    onDelete={() => helpers.remove(idx)}
                                     renderValue={fieldValue}
                                 />
                             ))}
