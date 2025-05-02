@@ -6,7 +6,6 @@
 export namespace biometric {
     export function canCheckPresence(): Promise<boolean>;
     export function checkPresence(handle: Buffer, reason: string): Promise<boolean>;
-    export function getDecryptionKey(challenge?: string | undefined | null): Promise<Array<string>>;
     export function getSecret(key: string): Promise<Uint8Array>;
     export function setSecret(key: string, secret: Uint8Array): Promise<void>;
     export function deleteSecret(key: string): Promise<void>;
