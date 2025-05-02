@@ -1,4 +1,8 @@
-li.pass-field-text-group--item {
+@import '~@proton/styles/scss/lib';
+
+$base: 'pass-field-text-group--item';
+
+li.#{$base} {
 	background-color: var(--interaction-norm-minor-1);
 	transition: background-color 0.2s;
 
@@ -23,7 +27,33 @@ li.pass-field-text-group--item {
 				color: var(--interaction-weak-contrast);
 			}
 		}
+
+		.#{$base}-delete {
+			display: none;
+			padding: em(2);
+			block-size: em(20);
+			inline-size: em(20);
+			inset-inline-end: em(2.5);
+		}
 	}
+
+	&:not(&#{'\\:editing'}) {
+		button:hover {
+			span {
+				inline-size: calc(100% - em(15));
+				text-overflow: ellipsis;
+			}
+
+			.#{$base}-delete {
+				display: block;
+			}
+		}
+	}
+
+	&#{'\\:editing'} {
+		background-color: transparent;
+	}
+
 	&#{'\\:error'} {
 		background-color: transparent;
 		border-color: var(--signal-danger);
