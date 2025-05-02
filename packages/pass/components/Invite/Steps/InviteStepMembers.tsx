@@ -131,7 +131,7 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
                                 </>
                             );
                         }}
-                        onAutocomplete={setAutocomplete}
+                        onAutocomplete={(value) => setAutocomplete(value.trim())}
                     />
                 </FieldsetCluster>
 
