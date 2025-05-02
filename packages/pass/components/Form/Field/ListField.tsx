@@ -195,6 +195,7 @@ export const ListField = <
                                     onChange={onChange(idx, entry)}
                                     onMoveLeft={onMoveLeft(idx)}
                                     onMoveRight={onMoveRight(idx)}
+                                    onDelete={() => helpers.remove(idx)}
                                     renderValue={fieldValue}
                                 />
                             ))}
