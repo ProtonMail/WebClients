@@ -114,7 +114,7 @@ export const init = ({
     authentication: AuthenticationStore;
     locales: TtagLocaleMap;
 }) => {
-    telemetry.init({ config, uid: authentication.UID });
+    // telemetry.init({ config, uid: authentication.UID });
 
     metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
     if (isElectronMail) {
