@@ -91,7 +91,6 @@ const Toolbar = (props: Props) => {
         case 'rowWide':
             return <ToolbarRowWide {...commonProps} />;
         default:
-            // columnWide
             return <ToolbarColumnWide {...commonProps} />;
     }
 };

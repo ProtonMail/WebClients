@@ -36,7 +36,7 @@ const ToolbarNarrow = ({
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
 
     return (
-        <div>
+        <div className="w-full">
             <nav
                 className={clsx(classname, 'justify-space-between py-1 pl-3 pr-2')}
                 data-shortcut-target="mailbox-toolbar"
