@@ -69,7 +69,7 @@ const ToolbarColumnWide = ({
     const pageSize = useMailSelector(pageSizeSelector);
 
     return (
-        <div>
+        <div className="w-full">
             <nav
                 className={clsx(
                     classname,
