@@ -14,7 +14,6 @@ const factory: BiometricsFactory = (getWindow) => {
     const biometrics: BiometricsPlatformHandler = {
         canCheckPresence: () => winBiometrics.canCheckPresence().catch(() => false),
         checkPresence: (_, reason) => checkPresence(reason),
-        getDecryptionKey: (_, challenge) => winBiometrics.getDecryptionKey(challenge),
         getSecret: async (_, key, version) => {
             await checkPresence();
 

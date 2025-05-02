@@ -13,7 +13,6 @@ const factory: BiometricsFactory = () => {
     const biometrics: BiometricsPlatformHandler = {
         canCheckPresence: () => Promise.resolve(true),
         checkPresence: (_, reason) => checkPresence(reason),
-        getDecryptionKey: () => Promise.resolve(null),
         getSecret: async (_, key, version) => {
             await checkPresence();
 
