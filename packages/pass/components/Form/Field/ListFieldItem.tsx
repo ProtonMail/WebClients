@@ -2,7 +2,8 @@
 import type { KeyboardEventHandler } from 'react';
 import { useRef, useState } from 'react';
 
-import { CircleLoader } from '@proton/atoms';
+import { ButtonLike, CircleLoader } from '@proton/atoms';
+import { Icon } from '@proton/components/index';
 import clsx from '@proton/utils/clsx';
 
 import type { ListFieldValue } from './ListField';
@@ -11,6 +12,7 @@ export type ListFieldItemProps<T> = ListFieldValue<T> & {
     error?: boolean;
     loading: boolean;
     onChange: (value: string) => void;
+    onDelete: () => void;
     onMoveLeft: () => void;
     onMoveRight: () => void;
     renderValue: (value: T) => string;
@@ -37,6 +39,7 @@ export const ListFieldItem = <T,>({
     loading,
     value,
     onChange,
+    onDelete,
     onMoveLeft,
     onMoveRight,
     renderValue,
@@ -88,11 +91,12 @@ export const ListFieldItem = <T,>({
             className={clsx(
                 'pass-field-text-group--item flex flex-nowrap flex-row max-w-full overflow-hidden stop-propagation border rounded',
                 error && 'pass-field-text-group--item:error',
-                loading && 'pass-field-text-group--item:loading'
+                loading && 'pass-field-text-group--item:loading',
+                editing && 'pass-field-text-group--item:editing'
             )}
         >
             <button
-                className="pill-remove inline-flex flex-nowrap items-center px-2 py-1 max-w-full gap-2"
+                className="pill-remove inline-flex flex-nowrap items-center px-2 py-1 max-w-full gap-2 relative"
                 type="button"
                 tabIndex={-1}
             >
@@ -101,6 +105,7 @@ export const ListFieldItem = <T,>({
                     onBlur={handleBlur}
                     onFocus={() => setEditing(true)}
                     onClick={(e) => e.stopPropagation()}
+                    onMouseDown={(e) => e.stopPropagation()}
                     contentEditable
                     onKeyDown={handleKeyDown}
                     ref={ref}
@@ -110,7 +115,25 @@ export const ListFieldItem = <T,>({
                 >
                     {renderValue(value)}
                 </span>
+
                 {loading && <CircleLoader size="small" className="shrink-0" />}
+
+                {!loading && (
+                    <ButtonLike
+                        as="a"
+                        className="pass-field-text-group--item-delete flex absolute"
+                        shape="ghost"
+                        pill
+                        icon
+                        onClick={(evt) => {
+                            evt.preventDefault();
+                            evt.stopPropagation();
+                            onDelete();
+                        }}
+                    >
+                        <Icon name="cross" className="shrink-0" />
+                    </ButtonLike>
+                )}
             </button>
         </li>
     );
