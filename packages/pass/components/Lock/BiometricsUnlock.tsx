@@ -39,11 +39,11 @@ export const BiometricsUnlock: FC<Props> = ({ offlineEnabled }) => {
         /** As booting offline will not trigger the AuthService::login
          * sequence we need to re-apply the redirection logic implemented
          * in the service's `onLoginComplete` callback */
-        const secret = await getBiometricsKey?.(authStore!).catch((err: Error) => {
-            createNotification({ type: 'error', text: err.message });
-        });
+        const secret =
+            (await getBiometricsKey?.(authStore!).catch((err: Error) => {
+                createNotification({ type: 'error', text: err.message });
+            })) || '';
 
-        if (!secret) return;
         const localID = authStore?.getLocalID();
         history.replace(getBasename(localID) ?? '/', null);
         biometricsUnlock.dispatch({ mode: LockMode.BIOMETRICS, secret });
