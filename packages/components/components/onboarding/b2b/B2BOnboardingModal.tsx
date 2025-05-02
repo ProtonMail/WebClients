@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import Loader from '@proton/components/components/loader/Loader';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import OnboardingDiscoverFeaturesStep from '@proton/components/components/onboarding/b2b/steps/OnboardingDiscoverFeaturesStep';
@@ -15,7 +16,7 @@ import './B2BOnboardingModal.scss';
 
 enum B2B_ONBOARDING_STEPS {
     LOADING = 'LOADING',
-    ORG_SETUP = 'B2B_ONBOARDING_STEPS',
+    ORG_SETUP = 'ORG_SETUP',
     DISCOVER_FEATURES = 'DISCOVER_FEATURES',
 }
 
@@ -34,6 +35,16 @@ const B2BOnboardingModal = (props: Props) => {
     const orgSetupRef = useRef(false);
     const telemetrySentRef = useRef(false);
     const [forceModalSize, setForceModalSize] = useState(false);
+    const { welcomeFlags, setDone: setWelcomeFlagsDone } = useWelcomeFlags();
+
+    const handleClose = () => {
+        props?.onClose?.();
+
+        // Set welcome flags so that the user does not see standard onboarding on next reload
+        if (!welcomeFlags.isDone) {
+            setWelcomeFlagsDone();
+        }
+    };
 
     // Show a loader while org is loading, then show the initial step that the user should actually see:
     // 1- Org set up if not done yet
@@ -71,6 +82,7 @@ const B2BOnboardingModal = (props: Props) => {
     return (
         <ModalTwo
             {...props}
+            onClose={handleClose}
             size={step === B2B_ONBOARDING_STEPS.DISCOVER_FEATURES || forceModalSize ? 'xlarge' : 'medium'}
             className="b2b-onboarding-modal"
         >
@@ -82,7 +94,7 @@ const B2BOnboardingModal = (props: Props) => {
                 />
             )}
             {step === B2B_ONBOARDING_STEPS.DISCOVER_FEATURES && !loadingOrganization && (
-                <OnboardingDiscoverFeaturesStep onClose={props?.onClose} />
+                <OnboardingDiscoverFeaturesStep onClose={handleClose} />
             )}
         </ModalTwo>
     );
