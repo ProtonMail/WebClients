@@ -13,6 +13,7 @@ import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { type AppState, WorkerMessageType } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
+import { TopLayerManager } from '@proton/pass/utils/dom/popover';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
@@ -40,6 +41,8 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements, onErr
             context.service.formManager.destroy();
             context.service.iframe.destroy();
             context.service.webauthn?.destroy();
+            TopLayerManager.disconnect();
+
             DOMCleanUp(elements);
 
             ExtensionContext.read()?.destroy();
