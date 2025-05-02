@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { Button } from '@proton/atoms/index';
 import Icon from '@proton/components/components/icon/Icon';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -26,7 +25,6 @@ const OnboardingDiscoverFeaturesStep = ({ onClose }: Props) => {
     const [subscription] = useSubscription();
     const { APP_NAME } = useConfig();
     const api = useApi();
-    const { welcomeFlags, setDone: setWelcomeFlagsDone } = useWelcomeFlags();
 
     const [expanded, setExpanded] = useState(false);
 
@@ -62,13 +60,6 @@ const OnboardingDiscoverFeaturesStep = ({ onClose }: Props) => {
                   featuresList: firstSection.featuresList.slice(0, Math.min(4, firstSection.featuresList.length - 1)),
               },
           ];
-
-    // When seeing this modal, set welcome flags in case they are not, so that the user does not see standard onboarding on next reload.
-    useEffect(() => {
-        if (!welcomeFlags.isDone) {
-            setWelcomeFlagsDone();
-        }
-    }, []);
 
     return (
         <>
