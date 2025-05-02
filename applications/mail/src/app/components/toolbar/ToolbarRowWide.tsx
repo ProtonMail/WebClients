@@ -71,7 +71,7 @@ const ToolbarRowWide = ({
     const pageSize = useMailSelector(pageSizeSelector);
 
     return (
-        <div>
+        <div className="w-full">
             <nav
                 className={clsx(classname, 'justify-space-between py-1 pl-4 pr-2')}
                 data-shortcut-target="mailbox-toolbar"

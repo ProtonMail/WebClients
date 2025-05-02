@@ -62,7 +62,7 @@ const ToolbarHeaderMessageWide = ({
     const { localIsTiny } = getToolbarResponsiveSizes(breakpoint);
 
     return (
-        <div>
+        <div className="w-full">
             <nav
                 className={clsx(classname, 'toolbar--in-container')}
                 data-shortcut-target="mailbox-toolbar"
