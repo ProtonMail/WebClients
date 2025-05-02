@@ -472,8 +472,8 @@ export const createAuthService = ({
             history.replace({ ...history.location, pathname: getLocalPath() });
         },
 
-        onUnlocked: async (mode, _, localID) => {
-            if (clientBooted(app.getState().status)) return;
+        onUnlocked: async (mode, token, localID) => {
+            if (clientBooted(app.getState().status) || !token) return;
 
             const validSession = authStore.validSession(authStore.getSession());
 
