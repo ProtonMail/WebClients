@@ -118,6 +118,7 @@ export const useLockSetup = (): LockSetup => {
                 case LockMode.BIOMETRICS: {
                     /** Confirm the biometric key before proceeding */
                     const secret = (await getBiometricsKey?.(authStore!).catch(noop)) ?? '';
+                    if (!secret) return resolve(undefined);
                     return unlock({ mode: currentLockMode, secret })
                         .then(() => resolve({ secret }))
                         .catch(() => resolve(undefined));
