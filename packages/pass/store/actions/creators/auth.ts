@@ -9,6 +9,7 @@ import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
 import { lockCreateRequest } from '@proton/pass/store/actions/requests';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
+import { SilentError } from '@proton/pass/store/selectors/errors';
 import type { ClientEndpoint } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
@@ -114,12 +115,16 @@ export const unlock = requestActionsFactory<UnlockDTO, LockMode, LockMode>('auth
                 }
             })();
 
-            return withNotification({
-                key: NotificationKey.LOCK,
-                type: 'error',
-                text: reason,
-                error,
-            })({ payload, error: reason });
+            const dto = { payload, error: reason };
+
+            return error instanceof SilentError
+                ? dto
+                : withNotification({
+                      key: NotificationKey.LOCK,
+                      type: 'error',
+                      text: reason,
+                      error,
+                  })(dto);
         },
     },
 });

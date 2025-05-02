@@ -42,7 +42,7 @@ export const BiometricsUnlock: FC<Props> = ({ offlineEnabled }) => {
         const secret =
             (await getBiometricsKey?.(authStore!).catch((err: Error) => {
                 createNotification({ type: 'error', text: err.message });
-            })) || '';
+            })) ?? '';
 
         const localID = authStore?.getLocalID();
         history.replace(getBasename(localID) ?? '/', null);
