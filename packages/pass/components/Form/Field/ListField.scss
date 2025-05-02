@@ -16,6 +16,7 @@ li.pass-field-text-group--item {
 
 		span {
 			user-select: text;
+			white-space: nowrap;
 
 			&:focus {
 				outline: none;
