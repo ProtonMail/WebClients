@@ -12,8 +12,8 @@ import { getOfflineComponents } from '@proton/pass/lib/cache/crypto';
 import { decryptData, encryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
-import { SilentError } from '@proton/pass/store/selectors/errors';
 import { PassEncryptionTag } from '@proton/pass/types';
+import { SilentError } from '@proton/pass/utils/errors/errors';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
@@ -141,17 +141,17 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
         unlock: async (biometricsSecret: string) => {
             const retryCount = authStore.getUnlockRetryCount() + 1;
 
-            /** Errors with fetching the biometrics secret
-             * will be handled during fetching it - here we only need
-             * to make sure we're still increasing the count  */
-            if (!biometricsSecret) throw new SilentError();
-
             /** API may have been flagged as sessionLocked before
              * booting offline - as such reset the api state to
              * avoid failing subsequent requests. */
             await api.reset();
 
             try {
+                /** Errors with fetching the biometrics secret
+                 * will be handled during fetching it - here we only need
+                 * to make sure we're still increasing the count  */
+                if (!biometricsSecret) throw new SilentError();
+
                 await loadCoreCryptoWorker();
 
                 const offlineConfig = authStore.getOfflineConfig();
