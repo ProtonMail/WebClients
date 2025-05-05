@@ -1,6 +1,6 @@
 import { IFRAME_APP_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { isIFrameMessage, sanitizeIframeStyles } from 'proton-pass-extension/app/content/injections/iframe/utils';
+import { isIFrameMessage } from 'proton-pass-extension/app/content/injections/iframe/utils';
 import type { PopoverController } from 'proton-pass-extension/app/content/services/iframes/popover';
 import type {
     IFrameApp,
@@ -109,18 +109,6 @@ export const createIFrameApp = <A>({
     });
 
     iframe.style.setProperty(`--frame-animation`, animation);
-
-    listeners.addObserver(
-        iframe,
-        (mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.attributeName === 'style') {
-                    sanitizeIframeStyles(iframe);
-                }
-            });
-        },
-        { attributes: true, childList: false, subtree: false }
-    );
 
     const unlisten = listeners.addListener(window, 'message', (event) => {
         if (event.data.type === IFRAME_APP_READY_EVENT && event.data.endpoint === id) {
