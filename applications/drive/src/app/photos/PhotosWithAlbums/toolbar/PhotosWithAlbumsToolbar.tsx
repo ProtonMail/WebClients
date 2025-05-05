@@ -3,6 +3,8 @@ import type { FC, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button, InlineLinkButton, Vr } from '@proton/atoms';
+import type {
+    IconName} from '@proton/components';
 import {
     Dropdown,
     DropdownButton,
@@ -42,6 +44,8 @@ import { PhotosShareMultipleLinkButton } from './PhotosShareMultipleLinkButton';
 import PhotosTrashButton from './PhotosTrashButton';
 import { PhotosUploadButton } from './PhotosUploadButton';
 
+import './ToolbarLeftActionsGallery.scss';
+
 interface ToolbarLeftActionsGalleryProps {
     isLoading: boolean;
     onGalleryClick: () => void;
@@ -53,6 +57,7 @@ interface TabOption {
     id: 'gallery' | 'albums';
     label: string;
     onClick: () => void;
+    icon: IconName;
 }
 
 interface AlbumGalleryDropdownButtonProps {
@@ -157,11 +162,13 @@ export const ToolbarLeftActionsGallery = ({
             id: 'gallery',
             label: c('Link').t`Photos`,
             onClick: onGalleryClick,
+            icon: 'image',
         },
         {
             id: 'albums',
             label: c('Link').t`Albums`,
             onClick: onAlbumsClick,
+            icon: 'album',
         },
     ];
 
@@ -173,12 +180,14 @@ export const ToolbarLeftActionsGallery = ({
                     disabled={isLoading}
                     aria-pressed={tab.id === selection}
                     className={clsx(
-                        'h3 inline-flex text-bold',
-                        tab.id === selection ? 'color-inherit' : 'text-no-decoration color-weak hover:color-norm'
+                        'h3 inline-flex items-center gap-1 text-bold toolbar-photos-gallery-button text-no-decoration',
+                        tab.id === selection
+                            ? 'color-inherit toolbar-photos-gallery-button--selected'
+                            : 'color-weak hover:color-norm'
                     )}
                     onClick={() => tab.onClick()}
                 >
-                    {tab.label}
+                    <Icon name={tab.icon} /> <span>{tab.label}</span>
                 </InlineLinkButton>
             ))}
         </nav>

@@ -1,0 +1,15 @@
+.toolbar-photos-gallery-button {
+	&#{&} {
+		border-radius: 0;
+		border-block-end: 2px solid transparent;
+		padding-block-end: 0.1em;
+
+		&--selected {
+			&,
+			&:hover,
+			&:focus {
+				border-color: currentcolor;
+			}
+		}
+	}
+}
