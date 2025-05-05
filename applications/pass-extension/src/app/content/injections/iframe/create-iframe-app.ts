@@ -91,7 +91,7 @@ export const createIFrameApp = <A>({
     const ensureTrustedAction = (): boolean => {
         if (POPOVER_SUPPORTED) {
             const popovers = TopLayerManager.elements;
-            const rootIdx = popovers.findIndex(eq<HTMLElement>(popover.root));
+            const rootIdx = popovers.findIndex(eq<HTMLElement>(popover.root.customElement));
             if (rootIdx !== popovers.length - 1) return false;
         }
 
@@ -104,9 +104,8 @@ export const createIFrameApp = <A>({
     const iframe = createElement<HTMLIFrameElement>({
         type: 'iframe',
         classNames,
-        attributes: { src, popover: '' },
-        parent: popover.root,
-        shadow: true,
+        attributes: { src },
+        parent: popover.root.shadowRoot,
     });
 
     iframe.style.setProperty(`--frame-animation`, animation);
@@ -193,7 +192,7 @@ export const createIFrameApp = <A>({
 
     const updatePosition = () => {
         cancelAnimationFrame(state.positionReq);
-        state.positionReq = requestAnimationFrame(() => setIframePosition(position(popover.root)));
+        state.positionReq = requestAnimationFrame(() => setIframePosition(position(popover.root.customElement)));
     };
 
     const close = (options: IFrameCloseOptions = {}) => {
@@ -272,7 +271,7 @@ export const createIFrameApp = <A>({
         listeners.removeAll();
         activeListeners.removeAll();
         state.port?.onMessage.removeListener(onMessageHandler);
-        safeCall(() => popover.root.removeChild(iframe))();
+        safeCall(() => popover.root.shadowRoot.removeChild(iframe))();
         state.port = null;
     };
 
