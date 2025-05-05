@@ -86,7 +86,7 @@ export const AutosuggestEmail: FC<Props> = ({ domain, prefix }) => {
                     (response) => {
                         if (response.ok) {
                             controller.forwardMessage({
-                                type: IFramePortMessageType.DROPDOWN_AUTOFILL_EMAIL,
+                                type: IFramePortMessageType.AUTOFILL_EMAIL,
                                 payload: { email: aliasEmail },
                             });
 
@@ -149,7 +149,7 @@ export const AutosuggestEmail: FC<Props> = ({ domain, prefix }) => {
                     icon="envelope"
                     onClick={() => {
                         controller.forwardMessage({
-                            type: IFramePortMessageType.DROPDOWN_AUTOFILL_EMAIL,
+                            type: IFramePortMessageType.AUTOFILL_EMAIL,
                             payload: { email: userEmail },
                         });
                         controller.close();
