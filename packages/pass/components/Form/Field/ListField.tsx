@@ -106,7 +106,7 @@ export const ListField = <
                 evt.preventDefault();
                 inputRef.current?.focus();
             }}
-            onMouseDown={(evt) => evt.preventDefault()}
+            onMouseDown={(evt) => evt.target !== inputRef.current && evt.preventDefault()}
         >
             {label && (
                 <label
