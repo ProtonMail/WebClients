@@ -10,9 +10,9 @@ import { isMac } from '../../../utils/platform';
 const homeDir = os.homedir();
 const launchAgentDir = path.join(homeDir, 'Library/LaunchAgents');
 const plistPath = path.join(launchAgentDir, 'com.protonpass.cleanup.plist');
+const userData = app.getPath('userData');
 
 const getPlistContent = (scriptPath: string) => {
-    const userData = app.getPath('userData');
     const logs = app.getPath('logs');
 
     return `<?xml version="1.0" encoding="UTF-8"?>
@@ -46,7 +46,7 @@ export const installDaemon = () => {
         if (existsSync(plistPath)) return;
 
         const uninstallScriptPath = resolve(process.resourcesPath, 'cleanup.sh');
-        const scriptPath = resolve(app.getPath('temp'), 'proton-pass-cleanup.sh');
+        const scriptPath = resolve(userData, 'proton-pass-cleanup.sh');
         copyFileSync(uninstallScriptPath, scriptPath);
         writeFileSync(plistPath, getPlistContent(scriptPath));
 
