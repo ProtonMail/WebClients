@@ -1,6 +1,5 @@
 import { type ReactElement, useEffect, useState } from 'react';
 
-import { isBefore } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -33,21 +32,19 @@ import {
     Renew,
     type Subscription,
     type SubscriptionPlan,
+    getCanSubscriptionAccessDuoPlan,
     getIpPricePerMonth,
     getIsB2BAudienceFromPlan,
     isFreeSubscription as getIsFreeSubscription,
+    getMaximumCycleForApp,
     getPlan,
     getPlansMap,
-    isRegionalCurrency,
-    mainCurrencies,
-} from '@proton/payments';
-import {
-    getCanSubscriptionAccessDuoPlan,
-    getMaximumCycleForApp,
     hasMaximumCycle,
     hasPass,
     hasPassFamily,
     hasSomeAddonOrPlan,
+    isRegionalCurrency,
+    mainCurrencies,
 } from '@proton/payments';
 import { OfferPrice } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -760,23 +757,6 @@ const PlanSelection = (props: Props) => {
                                       {
                                           text: c('Billing cycle option').t`Lifetime`,
                                           value: 'lifetime',
-                                          element: (() => {
-                                              // months are 0-indexed, because why not
-                                              const april15th = new Date(2025, 3, 15);
-                                              // sure thing, feel free to remove this logic after the 15th of April
-                                              const showNew = isBefore(new Date(), april15th);
-
-                                              return (
-                                                  <>
-                                                      {c('Billing cycle option').t`Lifetime`}
-                                                      {showNew && (
-                                                          <span className="badge-label-success ml-2 text-semibold">{c(
-                                                              'Billing cycle option'
-                                                          ).t`New!`}</span>
-                                                      )}
-                                                  </>
-                                              );
-                                          })(),
                                       },
                                   ]
                                 : undefined
