@@ -10,7 +10,7 @@ import type { GroupMemberParameters } from '@proton/shared/lib/api/groups';
 import { addGroupMember as addGroupMemberApi } from '@proton/shared/lib/api/groups';
 import { getAllPublicKeys, replaceAddressTokens } from '@proton/shared/lib/api/keys';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
-import { MEMBER_PRIVATE, MEMBER_TYPE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
+import { MEMBER_PRIVATE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { encryptionDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type {
@@ -78,8 +78,11 @@ const isPrivate = (member: EnhancedMember): boolean => {
     return member.Private === MEMBER_PRIVATE.UNREADABLE;
 };
 
-const isManaged = (member: EnhancedMember): boolean => {
-    return member.Type === MEMBER_TYPE.MANAGED;
+const isSameOrg = (
+    forwardeeKeysConfig: ApiKeysConfig,
+    forwardeeArmoredPrimaryPublicKey: string | undefined
+): boolean => {
+    return isGroupMemberTypeInternal(forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey);
 };
 
 const isManagedAndSameOrg = (
@@ -91,8 +94,7 @@ const isManagedAndSameOrg = (
         return false;
     }
 
-    const isSameOrg = isGroupMemberTypeInternal(forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey);
-    return isManaged(member) && isSameOrg;
+    return !isPrivate(member) && isSameOrg(forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey);
 };
 
 const getForwardeePublicKey = async (
@@ -291,7 +293,7 @@ const useAddGroupMember = () => {
             member === undefined ||
             forwardeeAddress === undefined ||
             isPrivate(member) ||
-            !isManagedAndSameOrg(member, forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey)
+            !isSameOrg(forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey)
         ) {
             return {
                 Token: undefined,
