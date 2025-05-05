@@ -44,17 +44,23 @@ export type IFrameState<A> = {
     visible: boolean;
 };
 
+export type IFrameMessageHandlerOptions = { userAction: boolean };
+
 export interface IFrameApp<A = any> {
     element: HTMLIFrameElement;
     state: IFrameState<A>;
     close: (options?: IFrameCloseOptions) => void;
     destroy: () => void;
-    getPosition: () => IFramePosition;
     ensureLoaded: () => Promise<void>;
     ensureReady: () => Promise<void>;
+    getPosition: () => IFramePosition;
     init: (port: Runtime.Port, getPayload: () => IFrameInitPayload) => void;
     open: (action: A, scrollRef?: HTMLElement) => void;
-    registerMessageHandler: <M extends IFrameMessage['type']>(type: M, handler: IFramePortMessageHandler<M>) => void;
+    registerMessageHandler: <M extends IFrameMessage['type']>(
+        type: M,
+        handler: IFramePortMessageHandler<M>,
+        options?: IFrameMessageHandlerOptions
+    ) => void;
     sendPortMessage: (message: IFrameMessage) => void;
     updatePosition: () => void;
 }
