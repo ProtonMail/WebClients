@@ -52,7 +52,6 @@ const BreachAlertsSecurityCenter = () => {
     const handleError = useErrorHandler();
     const [user] = useUser();
     const [userSettings] = useUserSettings();
-    const { isPaid } = user;
     const { breaches: allBreaches, actions } = useBreaches();
     const dispatch = baseUseDispatch();
     const canDisplayBreachNotifications = useFlag('BreachAlertsNotificationsCommon');
@@ -181,7 +180,7 @@ const BreachAlertsSecurityCenter = () => {
                         );
                     }
 
-                    if (!isPaid) {
+                    if (!user.isPaid && !user.hasPaidPass) {
                         return (
                             <FreeUserBreachToggle
                                 onToggleBreaches={() => dwmUpsellModal.openModal(true)}
