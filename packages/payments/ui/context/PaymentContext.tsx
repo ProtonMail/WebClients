@@ -12,6 +12,7 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import {
     type EnrichedCheckResponse,
+    type PaymentsCheckout,
     type RequiredCheckResponse,
     getCheckout,
     getOptimisticCheckResult,
@@ -65,15 +66,13 @@ export interface InitializeProps {
     onChargeable: OnChargeable;
 }
 
-type PricesResultUiData = ReturnType<typeof getCheckout>;
-
 export interface PricesResult {
     checkResult: EnrichedCheckResponse;
-    uiData: PricesResultUiData;
+    uiData: PaymentsCheckout;
 }
 
 type PaymentUiData = {
-    checkout: ReturnType<typeof getCheckout>;
+    checkout: PaymentsCheckout;
 };
 
 interface PaymentsContextTypeInner {
