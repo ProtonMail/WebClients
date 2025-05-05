@@ -89,7 +89,8 @@ export const createNotification = ({ popover, onDestroy }: NotificationOptions):
                 .find(({ getFieldsFor }) => getFieldsFor(FieldType.OTP).length > 0);
 
             if (form) ctx?.service.autofill.autofillOTP(form, code);
-        })
+        }),
+        { userAction: true }
     );
 
     const notification: InjectedNotification = {
