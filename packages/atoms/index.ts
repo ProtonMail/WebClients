@@ -18,7 +18,7 @@ export {
     DashboardGridSection,
     DashboardGridSectionHeader,
 } from './DashboardGrid/DashboardGrid';
-export { default as CircleLoader } from './CircleLoader/CircleLoader';
+export { default as CircleLoader, CircleLoaderSizeEnum } from './CircleLoader/CircleLoader';
 export type { CircleLoaderProps, CircleLoaderSize } from './CircleLoader/CircleLoader';
 export { default as Donut } from './Donut/Donut';
 export type { DonutProps } from './Donut/Donut';
