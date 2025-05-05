@@ -498,14 +498,14 @@ export const PhotosLayout = () => {
     }, [showLinkSharingModal, selectedItems]);
 
     const onAddAlbumPhotos = useCallback(
-        async (albumLinkId: string, linkIds: string[]) => {
-            if (!shareId || !linkId || !volumeId) {
+        async (albumShareId: string, albumLinkId: string, linkIds: string[]) => {
+            if (!volumeId) {
                 return;
             }
             try {
                 const abortSignal = new AbortController().signal;
-                await addAlbumPhotos(abortSignal, shareId, albumLinkId, linkIds);
-                navigateToAlbum(shareId, albumLinkId, { openShare: isAddModalShared });
+                await addAlbumPhotos(abortSignal, albumShareId, albumLinkId, linkIds);
+                navigateToAlbum(albumShareId, albumLinkId, { openShare: isAddModalShared });
             } catch (e) {
                 if (e instanceof Error && e.message) {
                     createNotification({ text: e.message, type: 'error' });
@@ -513,7 +513,7 @@ export const PhotosLayout = () => {
                 sendErrorReport(e);
             }
         },
-        [volumeId, shareId, linkId, isAddModalShared, navigateToAlbum, addAlbumPhotos, createNotification]
+        [volumeId, isAddModalShared, navigateToAlbum, addAlbumPhotos, createNotification]
     );
 
     const onCreateAlbumWithPhotos = useCallback(
