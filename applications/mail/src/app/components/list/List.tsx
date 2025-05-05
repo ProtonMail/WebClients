@@ -12,7 +12,6 @@ import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import type { Filter } from '@proton/shared/lib/mail/search';
-import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import SelectAllBanner from 'proton-mail/components/list/select-all/SelectAllBanner';
@@ -121,7 +120,6 @@ const List = (
 ) => {
     const mailSettings = useMailModel('MailSettings');
     const [labels] = useLabels();
-    const showAttachmentThumbnails = useFlag('AttachmentThumbnails');
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     const { selectAll, locationCount, selectAllAvailable } = useSelectAll({ labelID });
     const checkedIDsMap = useMemo<{ [ID: string]: boolean }>(() => {
@@ -336,7 +334,6 @@ const List = (
                                                         userSettings={userSettings}
                                                         mailSettings={mailSettings}
                                                         labels={labels}
-                                                        showAttachmentThumbnails={showAttachmentThumbnails}
                                                     />
                                                 )}
                                             </Fragment>
