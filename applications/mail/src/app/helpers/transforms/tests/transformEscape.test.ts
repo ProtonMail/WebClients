@@ -407,4 +407,18 @@ describe('transformEscape', () => {
             expect(document.innerHTML).toMatch(/proton-url\(https/);
         });
     });
+
+    describe('Escape form inputs', () => {
+        it('Should escape form inputs', () => {
+            const { document } = setup(`<input type="text" value="test" />`);
+
+            expect(document.querySelector('input')).toBeNull();
+        });
+
+        it('Should escape form textareas', () => {
+            const { document } = setup(`<textarea>hey</textarea>`);
+
+            expect(document.querySelector('textarea')).toBeNull();
+        });
+    });
 });
