@@ -31,7 +31,7 @@ const AlbumSquare = ({
     album: DecryptedAlbum;
     loading: boolean;
     disabled: boolean;
-    onClick: (linkId: string) => void;
+    onClick: (shareId: string, linkId: string) => void;
 }) => {
     const isDecrypted = isDecryptedLink(album);
     const isCoverDecrypted = isDecryptedLink(album.cover);
@@ -42,7 +42,7 @@ const AlbumSquare = ({
         <li key={album.linkId}>
             <Button
                 className="relative flex flex-nowrap items-center justify-start gap-2 album-photo-selection"
-                onClick={() => onClick(album.linkId)}
+                onClick={() => onClick(album.rootShareId, album.linkId)}
                 disabled={disabled}
                 loading={loading}
                 shape="ghost"
@@ -96,7 +96,7 @@ export const AddAlbumPhotosModal = ({
 }: {
     addAlbumPhotosModal: ModalStateReturnObj;
     onCreateAlbumWithPhotos: (name: string, linkIds: string[]) => Promise<void>;
-    onAddAlbumPhotos: (albumLinkId: string, linkIds: string[]) => Promise<void>;
+    onAddAlbumPhotos: (albumShareId: string, albumLinkId: string, linkIds: string[]) => Promise<void>;
     photosLinkIds: string[];
     albums: DecryptedAlbum[];
     share: boolean;
@@ -104,12 +104,7 @@ export const AddAlbumPhotosModal = ({
     const { modalProps, openModal, render } = addAlbumPhotosModal;
     const createAlbumModal = useModalStateObject();
 
-    const sortedAlbums = albums
-        .filter((album) => {
-            // Add this moment we do not support copy to shared albums.
-            return !!album.parentLinkId;
-        })
-        .sort((a, b) => b.createTime - a.createTime);
+    const sortedAlbums = albums.sort((a, b) => b.createTime - a.createTime);
     const [latestAlbum, secondLatestAlbum, ...otherAlbums] = sortedAlbums;
 
     const sharedAlbums = sortedAlbums.filter((album) => album.isShared);
@@ -120,9 +115,9 @@ export const AddAlbumPhotosModal = ({
 
     const photoCount = photosLinkIds.length;
 
-    const handleSelectAlbum = async (linkId: string) => {
+    const handleSelectAlbum = async (shareId: string, linkId: string) => {
         setActiveAlbumId(linkId);
-        await onAddAlbumPhotos(linkId, photosLinkIds);
+        await onAddAlbumPhotos(shareId, linkId, photosLinkIds);
         setActiveAlbumId(undefined);
         openModal(false);
     };
