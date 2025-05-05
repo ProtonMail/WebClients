@@ -67,7 +67,7 @@ export const AutofillOTP: FC<Props> = ({ item }) => {
                     onClick={() => {
                         if (otpToken) {
                             controller.forwardMessage({
-                                type: IFramePortMessageType.NOTIFICATION_AUTOFILL_OTP,
+                                type: IFramePortMessageType.AUTOFILL_OTP,
                                 payload: { code: otpToken },
                             });
                             controller.close();

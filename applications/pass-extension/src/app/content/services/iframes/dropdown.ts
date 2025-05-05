@@ -176,7 +176,7 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
      * worker communication and autofill the parent form of the
      * field the current dropdown is attached to. */
     iframe.registerMessageHandler(
-        IFramePortMessageType.DROPDOWN_AUTOFILL_LOGIN,
+        IFramePortMessageType.AUTOFILL_LOGIN,
         withContext((ctx, { payload }) => {
             const form = fieldRef.current?.getFormHandle();
             if (!form) return;
@@ -190,7 +190,7 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
      * been generated in the injected iframe and passed in clear
      * text through the secure extension port channel */
     iframe.registerMessageHandler(
-        IFramePortMessageType.DROPDOWN_AUTOFILL_GENERATED_PW,
+        IFramePortMessageType.AUTOFILL_GENERATED_PW,
         withContext((ctx, { payload }) => {
             const form = fieldRef.current?.getFormHandle();
             const prompt = ctx?.getSettings().autosave.passwordSuggest;
@@ -210,14 +210,14 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
     /* When suggesting an alias on a register form, the alias will
      * only be created upon user action - this avoids creating
      * aliases everytime the injected iframe dropdown is opened */
-    iframe.registerMessageHandler(IFramePortMessageType.DROPDOWN_AUTOFILL_EMAIL, ({ payload }) => {
+    iframe.registerMessageHandler(IFramePortMessageType.AUTOFILL_EMAIL, ({ payload }) => {
         fieldRef.current?.autofill(payload.email);
         fieldRef.current?.focus({ preventAction: true });
         void fieldRef.current?.getFormHandle()?.tracker?.sync({ submit: false, partial: true });
     });
 
     iframe.registerMessageHandler(
-        IFramePortMessageType.DROPDOWN_AUTOFILL_IDENTITY,
+        IFramePortMessageType.AUTOFILL_IDENTITY,
         withContext((ctx, { payload }) => {
             const field = fieldRef.current;
             if (field) {
