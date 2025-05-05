@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useConfirmActionModal } from '@proton/components';
+import { Icon, useConfirmActionModal } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
-import folderImages from '@proton/styles/assets/img/drive/folder-images.svg';
 
 import { useInvitationsActions } from '../../store';
 import { useInvitationsListing } from '../../store/_invitations';
@@ -30,7 +29,7 @@ export const AlbumsInvitations = ({ refreshSharedWithMeAlbums }: { refreshShared
                                             className="rounded-full custom-bg shrink-0 mr-2 p-1 ratio-square flex"
                                             style={{ '--custom-bg': 'var(--signal-info-minor-1)' }}
                                         >
-                                            <img src={folderImages} width={30} alt="" className="m-auto" />
+                                            <Icon name="album-with-cards" className="m-auto" />
                                         </span>
                                         <span className="mt-0.5">
                                             {

@@ -19,6 +19,7 @@ import MimeIcon from '../icon/MimeIcon';
 
 const iconsMap: { [mimeType: string]: MimeName } = {
     Folder: 'folder',
+    Album: 'album',
 
     'application/octet-stream': 'unknown', // Default mimetype when the real one cannot be detected.
 
