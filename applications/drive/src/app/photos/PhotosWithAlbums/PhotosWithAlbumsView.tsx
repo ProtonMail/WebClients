@@ -122,6 +122,7 @@ export const PhotosWithAlbumsView = () => {
                     onFavorite={!driveAlbumsDisabled ? addOrRemovePhotoToFavorite : undefined}
                     isAddAlbumPhotosView={isAddAlbumPhotosView}
                     rootLinkId={linkId}
+                    hasSelection={selectedItems.length > 0 || currentPageType === AlbumsPageTypes.ALBUMSADDPHOTOS}
                 />
             )}
         </>
