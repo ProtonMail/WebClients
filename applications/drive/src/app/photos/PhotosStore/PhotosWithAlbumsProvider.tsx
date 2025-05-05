@@ -58,7 +58,7 @@ export interface DecryptedAlbum extends DecryptedLink {
     };
 }
 
-export const MAX_ADD_ALBUM_PHOTOS_BATCH = 100;
+export const MAX_ADD_ALBUM_PHOTOS_BATCH = 10;
 export const MAX_REMOVE_ALBUM_PHOTOS_BATCH = 10;
 
 /**
