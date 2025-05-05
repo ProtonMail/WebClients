@@ -4,9 +4,10 @@ import Price, { type Props as PriceProps } from '@proton/components/components/p
 import SkeletonLoader, {
     type Props as SkeletonLoaderProps,
 } from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import { type PaymentsCheckout } from '@proton/shared/lib/helpers/checkout';
 import noop from '@proton/utils/noop';
 
-import { getPlanNameFromIDs } from '../../core/plan/helpers';
+import { getPlanNameFromIDs, isLifetimePlanSelected } from '../../core/plan/helpers';
 import { type PlanToCheck, getPlanToCheck, usePaymentsPreloaded } from '../context/PaymentContext';
 
 export type Props = {
@@ -58,11 +59,14 @@ export const OfferPrice = ({
     );
 
     const value: number = (() => {
+        const isLifetime = isLifetimePlanSelected(planToCheck.planIDs);
+        const priceProp: keyof PaymentsCheckout = isLifetime ? 'withDiscountPerCycle' : 'withDiscountOneMemberPerMonth';
+
         if (price) {
-            return price.uiData.withDiscountOneMemberPerMonth;
+            return price.uiData[priceProp];
         }
 
-        return payments.getFallbackPrice(planToCheck).uiData.withDiscountOneMemberPerMonth;
+        return payments.getFallbackPrice(planToCheck).uiData[priceProp];
     })();
 
     const groupLoading = planToCheck.groupId ? payments.isGroupLoading(planToCheck.groupId) : false;

@@ -417,7 +417,7 @@ export const getDealBilledDescription = (
     amount: ReactElement,
     isLifeTime?: boolean
 ): string | string[] | null => {
-    if (isLifeTime === true) {
+    if (isLifeTime) {
         return c('BF2024: Offers').jt`Billed at ${amount} once`;
     }
     switch (cycle) {
