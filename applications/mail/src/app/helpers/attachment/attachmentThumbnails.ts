@@ -13,18 +13,13 @@ const ATTACHMENT_THUMBNAILS_BLOCK_LIST: string[] = [MIME_TYPES.ICS, MIME_TYPES.A
 export const canShowAttachmentThumbnails = (
     isCompactView: boolean,
     element: Element,
-    attachmentMetadata: AttachmentsMetadata[],
-    canSeeThumbnailsFeature?: boolean
+    attachmentMetadata: AttachmentsMetadata[]
 ) => {
-    if (!!canSeeThumbnailsFeature) {
-        // Do not show attachments for SPAM elements to protect the user
-        const isSpam = hasLabel(element, SPAM);
+    // Do not show attachments for SPAM elements to protect the user
+    const isSpam = hasLabel(element, SPAM);
 
-        const hasAttachmentsMetadata = attachmentMetadata.length > 0;
-        return !isSpam && !isCompactView && hasAttachmentsMetadata;
-    }
-
-    return false;
+    const hasAttachmentsMetadata = attachmentMetadata.length > 0;
+    return !isSpam && !isCompactView && hasAttachmentsMetadata;
 };
 
 export const getOtherAttachmentsTitle = (attachmentsMetadata: AttachmentsMetadata[], maxAttachment: number) => {

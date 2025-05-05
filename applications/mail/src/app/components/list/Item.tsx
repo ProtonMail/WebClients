@@ -48,7 +48,6 @@ interface Props {
     dragged: boolean;
     index: number;
     onFocus: (elementID: string) => void;
-    showAttachmentThumbnails?: boolean;
     userSettings: UserSettings;
     mailSettings: MailSettings;
     labels?: Label[];
@@ -75,7 +74,6 @@ const Item = ({
     mailSettings,
     userSettings,
     labels,
-    showAttachmentThumbnails,
 }: Props) => {
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled, contentIndexingDone } = esStatus;
@@ -202,7 +200,6 @@ const Item = ({
                     isSelected={isSelected}
                     attachmentsMetadata={filteredThumbnails}
                     userSettings={userSettings}
-                    showAttachmentThumbnails={showAttachmentThumbnails}
                 />
             </div>
         </div>
