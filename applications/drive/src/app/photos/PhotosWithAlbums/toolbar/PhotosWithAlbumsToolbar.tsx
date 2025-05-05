@@ -152,7 +152,6 @@ const AlbumGalleryDropdownButton = ({
 };
 
 export const ToolbarLeftActionsGallery = ({
-    isLoading,
     onGalleryClick,
     onAlbumsClick,
     selection,
@@ -177,7 +176,6 @@ export const ToolbarLeftActionsGallery = ({
             {tabs.map((tab) => (
                 <InlineLinkButton
                     key={tab.id}
-                    disabled={isLoading}
                     aria-pressed={tab.id === selection}
                     className={clsx(
                         'h3 inline-flex items-center gap-1 text-bold toolbar-photos-gallery-button text-no-decoration',
