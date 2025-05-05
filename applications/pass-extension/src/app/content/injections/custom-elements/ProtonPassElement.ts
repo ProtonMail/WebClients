@@ -11,17 +11,6 @@ export class ProtonPassElement extends HTMLElement {
 
     private attrsMutationCount: Map<string, number> = new Map();
 
-    constructor(styles: string) {
-        super();
-        const shadowRoot = this.attachShadow({ mode: 'open' });
-
-        /** Utilize CSSStyleSheet API to circumvent CSP restrictions
-         * on inline styles that could exist in target websites  */
-        const sheet = new CSSStyleSheet();
-        sheet.replaceSync(styles);
-        shadowRoot.adoptedStyleSheets.push(sheet);
-    }
-
     connectedCallback() {
         /** Avoid websites tampering with our custom elements attributes.
          * IE: paypal adding `data-focus-on-hidden` when opening a modal */
