@@ -8,16 +8,16 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 interface Props {
-    onSavePhoto: () => Promise<void>;
+    onSavePhotos: () => Promise<void>;
     showIconOnly: boolean;
     dropDownMenuButton?: boolean;
 }
 
-export const PhotosSavePhotoButton: FC<Props> = ({ onSavePhoto, showIconOnly, dropDownMenuButton = false }) => {
+export const PhotosSavePhotoButton: FC<Props> = ({ onSavePhotos, showIconOnly, dropDownMenuButton = false }) => {
     const [loading, withLoading] = useLoading();
 
     const onClick = () => {
-        withLoading(onSavePhoto()).catch(noop);
+        withLoading(onSavePhotos()).catch(noop);
     };
 
     const ButtonComp = dropDownMenuButton ? DropdownMenuButton : ToolbarButton;

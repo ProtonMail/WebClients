@@ -416,7 +416,7 @@ interface PhotosWithAlbumToolbarProps {
     onLeaveAlbum?: () => void;
     onShowDetails?: () => void;
     onAddAlbumPhotos?: () => void;
-    onSavePhoto?: () => Promise<void>;
+    onSavePhotos?: () => Promise<void>;
 }
 
 export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
@@ -441,7 +441,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     onLeaveAlbum,
     onShowDetails,
     onAddAlbumPhotos,
-    onSavePhoto,
+    onSavePhotos,
 }) => {
     const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const { viewportWidth } = useActiveBreakpoint();
@@ -460,13 +460,12 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
             album.permissions.isAdmin &&
             !driveAlbumsDisabled
     );
-    const canSavePhoto = Boolean(
+    const canSavePhotos = Boolean(
         album &&
             hasSelection &&
-            !hasMultipleSelected &&
             rootLinkId &&
-            onSavePhoto &&
-            selectedItems[0].parentLinkId !== rootLinkId
+            onSavePhotos &&
+            selectedItems.every(({ parentLinkId }) => parentLinkId !== rootLinkId)
     );
     const canRemoveAlbum = Boolean(album && album.permissions.isEditor && removeAlbumPhotos && !driveAlbumsDisabled);
     const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
@@ -520,8 +519,8 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                             requestDownload={requestDownload}
                             selectedLinks={selectedItems}
                         />
-                        {canSavePhoto && (
-                            <PhotosSavePhotoButton showIconOnly={showIconOnly} onSavePhoto={onSavePhoto!} />
+                        {canSavePhotos && (
+                            <PhotosSavePhotoButton showIconOnly={showIconOnly} onSavePhotos={onSavePhotos!} />
                         )}
                         {canSelectCover && (
                             <PhotosMakeCoverButton showIconOnly={showIconOnly} onSelectCover={onSelectCover!} />
@@ -561,8 +560,8 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                             <PhotosAddToAlbumButton showIconOnly={showIconOnly} onClick={openAddPhotosToAlbumModal!} />
                         )}
                         <SelectionDropdownButton>
-                            {canSavePhoto && (
-                                <PhotosSavePhotoButton showIconOnly={showIconOnly} onSavePhoto={onSavePhoto!} />
+                            {canSavePhotos && (
+                                <PhotosSavePhotoButton showIconOnly={showIconOnly} onSavePhotos={onSavePhotos!} />
                             )}
                             {canSelectCover && (
                                 <PhotosMakeCoverButton
