@@ -7,4 +7,10 @@
 	&.weak {
 		background: var(--interaction-norm-minor-1);
 	}
+
+	@at-root .pass-light & {
+		.pass-spotlight-content--close {
+			--background-invert: var(--background-weak);
+		}
+	}
 }
