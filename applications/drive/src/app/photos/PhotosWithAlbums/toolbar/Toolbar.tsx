@@ -41,7 +41,7 @@ interface ToolbarProps {
     onShowDetails: () => void;
     onRemoveAlbumPhotos: () => Promise<void>;
     onStartUpload: () => void;
-    onSavePhoto?: () => Promise<void>;
+    onSavePhotos?: () => Promise<void>;
 }
 
 export const Toolbar = ({
@@ -71,7 +71,7 @@ export const Toolbar = ({
     onLeaveAlbum,
     onShowDetails,
     onRemoveAlbumPhotos,
-    onSavePhoto,
+    onSavePhotos,
     onStartUpload,
 }: ToolbarProps) => {
     switch (currentPageType) {
@@ -123,7 +123,7 @@ export const Toolbar = ({
                     openAddPhotosToAlbumModal={openAddPhotosToAlbumModal}
                     openSharePhotosIntoAnAlbumModal={openSharePhotosIntoAnAlbumModal}
                     openSharePhotoModal={openSharePhotoModal}
-                    onSavePhoto={onSavePhoto}
+                    onSavePhotos={onSavePhotos}
                     rootLinkId={rootLinkId}
                 />
             );
