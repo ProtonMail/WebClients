@@ -113,7 +113,7 @@ function Tags<T extends Tag>({ selectedTags, tags, onTagSelect }: TagsProps<T>) 
             style={{
                 '--min-h-custom': 'auto',
             }}
-            innerClassName="flex flex-nowrap items-center gap-1 py-0.5"
+            innerClassName="flex flex-nowrap items-center gap-1 py-0.5 pl-0.5"
         >
             {tags.map((tag) => {
                 const { iconName, label } = getTagLabelWithIcon(tag);

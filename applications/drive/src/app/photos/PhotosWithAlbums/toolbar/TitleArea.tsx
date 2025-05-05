@@ -55,6 +55,7 @@ export const TitleArea = ({
     }, [albums, albumLinkId]);
 
     const selectedCount = selectedItems.length;
+    const albumName = album?.name;
 
     if (currentPageType === AlbumsPageTypes.ALBUMS) {
         return (
@@ -67,7 +68,6 @@ export const TitleArea = ({
         );
     }
     if (currentPageType === AlbumsPageTypes.ALBUMSGALLERY) {
-        const albumName = album?.name;
         return (
             <>
                 {selectedCount > 0 && (
@@ -131,7 +131,8 @@ export const TitleArea = ({
                             navigateToAlbum(albumShareId, albumLinkId);
                         }}
                     >
-                        <Icon name="arrow-left" className="mr-2 shrink-0" /> {c('Action').t`Go back`}
+                        <Icon name="arrow-left" className="mr-2 shrink-0" />{' '}
+                        {c('Action').t`Go back to album “${albumName}“`}
                     </Button>
                 ) : (
                     <ToolbarLeftActionsGallery
