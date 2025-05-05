@@ -24,6 +24,7 @@ type Props = {
     isAddAlbumPhotosView?: boolean;
     onFavorite?: (linkId: string, shareId: string, isFavorite: boolean) => void;
     rootLinkId: string;
+    hasSelection: boolean;
 };
 
 export const PhotosGrid: FC<Props> = ({
@@ -39,8 +40,8 @@ export const PhotosGrid: FC<Props> = ({
     isAddAlbumPhotosView,
     onFavorite,
     rootLinkId,
+    hasSelection,
 }) => {
-    const hasSelection = selectedItems.length > 0;
     const containerRef = useRef<HTMLDivElement>(null);
     const containerRect = useElementRect(containerRef);
 
