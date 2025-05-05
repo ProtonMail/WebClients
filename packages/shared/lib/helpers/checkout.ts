@@ -277,6 +277,8 @@ export const getCheckout = ({
     };
 };
 
+export type PaymentsCheckout = ReturnType<typeof getCheckout>;
+
 export type Included =
     | {
           type: 'text';
