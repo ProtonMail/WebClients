@@ -20,7 +20,7 @@ export const PhotosAddAlbumPhotosButton = ({ onClick, type = 'norm' }: PhotosAdd
                 title={c('Action').t`Add photos`}
                 className="inline-flex flex-nowrap flex-row items-center"
             >
-                <Icon name="plus-circle" className={clsx(!viewportWidth.xsmall && 'mr-2')} />
+                <Icon name="plus" className={clsx(!viewportWidth.xsmall && 'mr-2')} />
                 <span className={clsx(viewportWidth.xsmall && 'sr-only')}>{c('Action').t`Add photos`}</span>
             </ToolbarButton>
         );
@@ -32,7 +32,7 @@ export const PhotosAddAlbumPhotosButton = ({ onClick, type = 'norm' }: PhotosAdd
                 className="text-left flex items-center flex-nowrap"
                 onClick={onClick}
             >
-                <Icon name="plus-circle" className="mr-2" />
+                <Icon name="plus" className="mr-2" />
                 <span>{c('Action').t`Add photos`}</span>
             </DropdownMenuButton>
         );
@@ -47,7 +47,7 @@ export const PhotosAddAlbumPhotosButton = ({ onClick, type = 'norm' }: PhotosAdd
             title={c('Action').t`Add photos`}
             className="inline-flex flex-nowrap flex-row items-center"
         >
-            <Icon name="plus-circle" className="mr-2" />
+            <Icon name="plus" className="mr-2" />
             <span>{c('Action').t`Add photos`}</span>
         </Button>
     );
