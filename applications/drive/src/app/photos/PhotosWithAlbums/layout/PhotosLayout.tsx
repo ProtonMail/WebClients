@@ -250,7 +250,18 @@ export const PhotosLayout = () => {
         }
         const abortSignal = new AbortController().signal;
         removeMe(abortSignal, showConfirmModal, albumSharingShareId, async () => {
-            await refreshSharedWithMeAlbums(abortSignal);
+            // Hack: there might be race condition - after deleting the membership
+            // the album might be still returned by the API but fails to be loaded
+            // when requesting additional resources. In such a case a second run
+            // should fix the problem.
+            // If the album is returned and decrypted successfuly, page refresh or
+            // events later will fix that the album is still being displayed.
+            try {
+                await refreshSharedWithMeAlbums(abortSignal);
+            } catch (e) {
+                console.warn(e);
+                await refreshSharedWithMeAlbums(abortSignal);
+            }
             navigateToAlbums();
         });
     }, [albumSharingShareId, navigateToAlbums, refreshSharedWithMeAlbums, removeMe, showConfirmModal]);
