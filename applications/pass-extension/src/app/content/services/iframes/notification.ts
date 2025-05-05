@@ -82,7 +82,7 @@ export const createNotification = ({ popover, onDestroy }: NotificationOptions):
     );
 
     iframe.registerMessageHandler(
-        IFramePortMessageType.NOTIFICATION_AUTOFILL_OTP,
+        IFramePortMessageType.AUTOFILL_OTP,
         withContext((ctx, { payload: { code } }) => {
             const form = ctx?.service.formManager
                 .getTrackedForms()

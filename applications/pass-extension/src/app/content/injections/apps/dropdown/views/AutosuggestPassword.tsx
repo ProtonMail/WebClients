@@ -57,7 +57,7 @@ export const AutosuggestPassword: FC<Props> = ({ domain, config, copy, policy })
 
     const autofillPassword = (feedback: boolean) => {
         controller.forwardMessage({
-            type: IFramePortMessageType.DROPDOWN_AUTOFILL_GENERATED_PW,
+            type: IFramePortMessageType.AUTOFILL_GENERATED_PW,
             payload: { password: generator.password },
         });
 
