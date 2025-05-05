@@ -46,6 +46,11 @@ const AlbumSquare = ({
                 disabled={disabled}
                 loading={loading}
                 shape="ghost"
+                title={c('Action').ngettext(
+                    msgid`Add to "${album.name}" (${album.photoCount} photo)`,
+                    `Add to "${album.name}" (${album.photoCount} photos)`,
+                    album.photoCount
+                )}
                 aria-label={c('Action').ngettext(
                     msgid`Add to "${album.name}" (${album.photoCount} photo)`,
                     `Add to "${album.name}" (${album.photoCount} photos)`,
@@ -57,7 +62,7 @@ const AlbumSquare = ({
                         data-testid="albums-card-thumbnail"
                         src={thumbUrl}
                         alt={getAltText(album)}
-                        className="object-cover w-custom h-custom rounded overflow-hidden"
+                        className="object-cover w-custom h-custom rounded overflow-hidden shrink-0"
                         style={{
                             '--w-custom': '2.5rem',
                             '--h-custom': '2.5rem',
@@ -65,7 +70,7 @@ const AlbumSquare = ({
                     />
                 ) : (
                     <div
-                        className="object-cover w-custom h-custom rounded overflow-hidden flex justify-center items-center bg-strong p-1"
+                        className="object-cover w-custom h-custom rounded overflow-hidden flex justify-center items-center bg-strong p-1 shrink-0"
                         style={{
                             '--w-custom': '2.5rem',
                             '--h-custom': '2.5rem',
