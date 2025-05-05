@@ -5,6 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button, UserAvatar } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import folderImages from '@proton/styles/assets/img/drive/folder-images.svg';
 import useFlag from '@proton/unleash/useFlag';
 
 import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
@@ -48,26 +49,31 @@ export const AlbumCoverHeader = ({
                     key={album.cachedThumbnailUrl || album.cover?.cachedThumbnailUrl}
                     src={album.cachedThumbnailUrl || album.cover?.cachedThumbnailUrl}
                     alt=""
-                    className="bg-weak rounded w-full md:w-1/3 flex h-custom object-cover"
+                    className="bg-weak rounded w-full md:w-1/3 flex h-custom object-cover lg:max-w-custom"
                     style={{
                         '--h-custom': '14rem',
+                        '--lg-max-w-custom': 'min(32rem, 25vw)',
+                        // min between 512px and 1/4 of viewport width: okay for global and text zooms, also for super large viewports
                     }}
                     data-testid="cover-image"
                 />
             ) : (
                 <span
-                    className="bg-weak rounded w-full md:w-1/3 flex h-custom object-cover"
+                    className="bg-weak rounded w-full md:w-1/3 flex h-custom object-cover lg:max-w-custom"
                     style={{
                         '--h-custom': '14rem',
+                        '--lg-max-w-custom': 'min(32rem, 25vw)',
                     }}
                     data-testid="cover-image"
                 >
-                    <Icon name="album" className="m-auto" size={6} />
+                    <img src={folderImages} alt="" className="m-auto" />
                 </span>
             )}
 
             <div className="flex flex-column flex-nowrap mx-auto shrink-0 flex-1" data-testid="cover-info">
-                <h1 className="text-bold h2">{album.name}</h1>
+                <h1 className="text-bold h2 text-ellipsis" title={album.name}>
+                    {album.name}
+                </h1>
                 <p className="color-weak mb-2 mt-1">
                     {formattedDate}
                     <span className="ml-1">
