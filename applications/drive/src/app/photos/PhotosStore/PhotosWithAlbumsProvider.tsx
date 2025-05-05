@@ -466,7 +466,14 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                         })
                     );
                     setAlbums((prevAlbums) => {
-                        const newAlbums = new Map(prevAlbums);
+                        const newAlbums = new Map(
+                            prevAlbums.entries().filter(([, album]) => {
+                                // Filter out albums that are not in the current volume,
+                                // that is only own albums. All new shared albums will be
+                                // set via newDecryptedAlbums.
+                                return album.volumeId === volumeId;
+                            })
+                        );
                         newDecryptedAlbums.forEach((album) => {
                             if (album !== undefined) {
                                 newAlbums.set(album.linkId, album);
