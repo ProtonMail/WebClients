@@ -581,27 +581,36 @@ export const PhotosLayout = () => {
         navigateToAlbum(albumShareId, albumLinkId);
     }, [albumLinkId, albumShareId, navigateToAlbum]);
 
-    const onSavePhoto = useCallback(async () => {
-        if (!shareId || !volumeId || !linkId || selectedCount !== 1) {
+    const onSavePhotos = useCallback(async () => {
+        if (!shareId || !volumeId || !linkId) {
             return;
         }
+
+        const errors = [];
         const abortSignal = new AbortController().signal;
-        try {
-            await copyLinkToVolume(
-                abortSignal,
-                selectedItems[0].rootShareId,
-                selectedItems[0].linkId,
-                volumeId,
-                shareId,
-                linkId
-            );
-            createNotification({ text: c('Info').t`Photo saved to your Drive` });
-            clearSelection();
-        } catch (e) {
-            createNotification({ text: c('Error').t`Failed to save photo to your Drive`, type: 'error' });
-            sendErrorReport(e);
+        for (const selectedItem of selectedItems) {
+            try {
+                await copyLinkToVolume(
+                    abortSignal,
+                    selectedItem.rootShareId,
+                    selectedItem.linkId,
+                    volumeId,
+                    shareId,
+                    linkId
+                );
+            } catch (e) {
+                errors.push(e);
+                sendErrorReport(e);
+            }
         }
-    }, [shareId, linkId, volumeId, selectedItems, selectedCount, copyLinkToVolume, createNotification]);
+
+        if (errors.length) {
+            createNotification({ text: c('Error').t`Failed to save some photos to your Drive`, type: 'error' });
+        } else {
+            createNotification({ text: c('Info').t`Photo(s) saved to your Drive` });
+            clearSelection();
+        }
+    }, [shareId, linkId, volumeId, selectedItems, copyLinkToVolume, createNotification]);
     /*
         Effects
     */
@@ -745,7 +754,7 @@ export const PhotosLayout = () => {
                         onLeaveAlbum={onLeaveAlbum}
                         onShowDetails={onShowDetails}
                         onRemoveAlbumPhotos={onRemoveAlbumPhotos}
-                        onSavePhoto={onSavePhoto}
+                        onSavePhotos={onSavePhotos}
                         onStartUpload={handleRedirectToAlbum}
                     />
                 }
