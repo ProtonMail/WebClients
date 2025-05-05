@@ -56,12 +56,7 @@ const generateAttachmentsMetadata = (numberOfAttachments: number, extension = 'p
 const setup = async (
     attachmentsMetadata: AttachmentsMetadata[],
     numAttachments: number,
-    {
-        AddressID,
-        fromAddress,
-        fromKeys,
-        showAttachmentThumbnails = true,
-    }: { AddressID: string; fromAddress: string; fromKeys: GeneratedKey; showAttachmentThumbnails?: boolean }
+    { AddressID, fromAddress, fromKeys }: { AddressID: string; fromAddress: string; fromKeys: GeneratedKey }
 ) => {
     const element = {
         ID: 'conversationID',
@@ -85,7 +80,6 @@ const setup = async (
             unread={false}
             onBack={jest.fn()}
             isSelected={false}
-            showAttachmentThumbnails={showAttachmentThumbnails}
             attachmentsMetadata={filterAttachmentToPreview(attachmentsMetadata)}
         />,
         {
