@@ -43,7 +43,6 @@ interface Props {
     unread: boolean;
     onBack?: () => void;
     attachmentsMetadata?: AttachmentsMetadata[];
-    showAttachmentThumbnails?: boolean;
 }
 
 const ItemRowLayout = ({
@@ -59,7 +58,6 @@ const ItemRowLayout = ({
     unread,
     onBack = () => {},
     attachmentsMetadata = [],
-    showAttachmentThumbnails,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
@@ -91,12 +89,7 @@ const ItemRowLayout = ({
 
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(element?.AttachmentInfo);
 
-    const showThumbnails = canShowAttachmentThumbnails(
-        isCompactView,
-        element,
-        attachmentsMetadata,
-        showAttachmentThumbnails
-    );
+    const showThumbnails = canShowAttachmentThumbnails(isCompactView, element, attachmentsMetadata);
 
     return (
         <div className={clsx('flex flex-nowrap flex-column w-full my-auto', showThumbnails && 'mt-1')}>

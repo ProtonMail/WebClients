@@ -142,7 +142,6 @@ enum DocsFeatureFlag {
 }
 
 enum MailFeatureFlag {
-    AttachmentThumbnails = 'AttachmentThumbnails',
     SelectAll = 'SelectAll',
     SelectAllOptimistic = 'SelectAllOptimistic',
     PasswordNudge = 'PasswordNudge',
