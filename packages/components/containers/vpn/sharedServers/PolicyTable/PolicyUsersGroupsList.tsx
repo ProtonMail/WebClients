@@ -23,7 +23,7 @@ const PolicyUserChip = ({ user: u, deleted }: { user: SharedServerUser; deleted:
     <div
         className={clsx(
             { 'enabled-chip': !deleted, 'color-disabled disabled-chip': deleted },
-            `flex items-center gap-1 px-2 rounded-lg policy-member-chip not-clickable-with-parent`
+            `flex items-center gap-1 px-2 rounded-lg policy-member-chip prevent-interaction`
         )}
     >
         <Icon name="user-filled" />
