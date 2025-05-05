@@ -22,6 +22,9 @@ export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
      * Color can be set using a css color (e.g. #ff0000 or rgb(255, 0, 0))
      */
     color?: string;
+    /**
+     * Display a third state `[–]`.
+     */
     indeterminate?: boolean;
     labelOnClick?: (event: React.MouseEvent<HTMLLabelElement, MouseEvent>) => void;
     labelProps?: LabelHTMLAttributes<HTMLLabelElement> & { 'data-testid': string };
