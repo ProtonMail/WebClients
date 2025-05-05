@@ -36,28 +36,23 @@ const attachmentsMetadata = [{ ID: '1' } as AttachmentsMetadata];
 describe('attachmentThumbnails', () => {
     describe('canShowAttachmentThumbnails', () => {
         it('should show attachment thumbnails', () => {
-            expect(canShowAttachmentThumbnails(false, getConversation(), attachmentsMetadata, true)).toBeTruthy();
-            expect(canShowAttachmentThumbnails(false, getMessage(), attachmentsMetadata, true)).toBeTruthy();
-        });
-
-        it('should not show attachment thumbnails when feature flag is off', () => {
-            expect(canShowAttachmentThumbnails(false, getConversation(), attachmentsMetadata, false)).toBeFalsy();
-            expect(canShowAttachmentThumbnails(false, getMessage(), attachmentsMetadata, false)).toBeFalsy();
+            expect(canShowAttachmentThumbnails(false, getConversation(), attachmentsMetadata)).toBeTruthy();
+            expect(canShowAttachmentThumbnails(false, getMessage(), attachmentsMetadata)).toBeTruthy();
         });
 
         it('should not show attachment thumbnails on compact view', () => {
-            expect(canShowAttachmentThumbnails(true, getConversation(), attachmentsMetadata, true)).toBeFalsy();
-            expect(canShowAttachmentThumbnails(true, getMessage(), attachmentsMetadata, true)).toBeFalsy();
+            expect(canShowAttachmentThumbnails(true, getConversation(), attachmentsMetadata)).toBeFalsy();
+            expect(canShowAttachmentThumbnails(true, getMessage(), attachmentsMetadata)).toBeFalsy();
         });
 
         it('should not show attachment thumbnails when no attachment metadata is attached to the element', () => {
-            expect(canShowAttachmentThumbnails(false, {} as Conversation, [], true)).toBeFalsy();
-            expect(canShowAttachmentThumbnails(false, {} as Message, [], true)).toBeFalsy();
+            expect(canShowAttachmentThumbnails(false, {} as Conversation, [])).toBeFalsy();
+            expect(canShowAttachmentThumbnails(false, {} as Message, [])).toBeFalsy();
         });
 
         it('should not show attachment thumbnails when element is in SPAM', () => {
-            expect(canShowAttachmentThumbnails(false, getConversation(true), attachmentsMetadata, true)).toBeFalsy();
-            expect(canShowAttachmentThumbnails(false, getMessage(true), attachmentsMetadata, true)).toBeFalsy();
+            expect(canShowAttachmentThumbnails(false, getConversation(true), attachmentsMetadata)).toBeFalsy();
+            expect(canShowAttachmentThumbnails(false, getMessage(true), attachmentsMetadata)).toBeFalsy();
         });
     });
 

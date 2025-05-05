@@ -46,7 +46,6 @@ interface Props {
     isSelected: boolean;
     attachmentsMetadata?: AttachmentsMetadata[];
     userSettings?: UserSettings;
-    showAttachmentThumbnails?: boolean;
 }
 
 const ItemColumnLayout = ({
@@ -62,7 +61,6 @@ const ItemColumnLayout = ({
     senders,
     attachmentsMetadata = [],
     userSettings,
-    showAttachmentThumbnails,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
@@ -108,12 +106,7 @@ const ItemColumnLayout = ({
     const isCompactView = userSettings?.Density === DENSITY.COMPACT;
     const isSnoozeDropdownOpen = snoozeDropdownState === 'open' && snoozedElement?.ID === element.ID;
 
-    const showThumbnails = canShowAttachmentThumbnails(
-        isCompactView,
-        element,
-        attachmentsMetadata,
-        showAttachmentThumbnails
-    );
+    const showThumbnails = canShowAttachmentThumbnails(isCompactView, element, attachmentsMetadata);
 
     return (
         <div
