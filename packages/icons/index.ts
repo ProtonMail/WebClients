@@ -7,6 +7,7 @@ export * from './types';
 
 export type IconName =
     | 'album'
+    | 'album-with-cards'
     | 'alias'
     | 'alias-slash'
     | 'app-switch'
@@ -401,6 +402,7 @@ export type IconName =
     | 'wrench';
 
 export { IcAlbum } from './icons/IcAlbum';
+export { IcAlbumWithCards } from './icons/IcAlbumWithCards';
 export { IcAlias } from './icons/IcAlias';
 export { IcAliasSlash } from './icons/IcAliasSlash';
 export { IcAppSwitch } from './icons/IcAppSwitch';
