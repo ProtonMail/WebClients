@@ -3,8 +3,7 @@ import type { FC, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button, InlineLinkButton, Vr } from '@proton/atoms';
-import type {
-    IconName} from '@proton/components';
+import type { IconName } from '@proton/components';
 import {
     Dropdown,
     DropdownButton,
@@ -167,7 +166,7 @@ export const ToolbarLeftActionsGallery = ({
             id: 'albums',
             label: c('Link').t`Albums`,
             onClick: onAlbumsClick,
-            icon: 'album',
+            icon: 'album-with-cards',
         },
     ];
 
