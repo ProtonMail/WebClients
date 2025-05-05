@@ -178,14 +178,16 @@ export const PhotosCard: FC<Props> = ({
 
                         {(!isOwnedByCurrentUser || photo.signatureIssues || photo.isShared) && (
                             <div className="absolute bottom-0 flex left-0 ml-2 mb-2 gap-1">
-                                {!isOwnedByCurrentUser && !isFavorite && (
-                                    <div
-                                        data-testid="photo-cloud-icon"
-                                        className="photos-card-bottom-icon rounded-50 color-white flex items-center justify-center"
-                                    >
-                                        <Icon name="cloud" alt={c('Info').t`Photo is not saved to your library`} />
-                                    </div>
-                                )}
+                                {!isOwnedByCurrentUser &&
+                                    !isFavorite &&
+                                    /* saved photos are not linked with original and thus cloud icon is for now not shown until this is resolved */ false && (
+                                        <div
+                                            data-testid="photo-cloud-icon"
+                                            className="photos-card-bottom-icon rounded-50 color-white flex items-center justify-center"
+                                        >
+                                            <Icon name="cloud" alt={c('Info').t`Photo is not saved to your library`} />
+                                        </div>
+                                    )}
                                 {photo.signatureIssues && (
                                     <SignatureIcon
                                         isFile
