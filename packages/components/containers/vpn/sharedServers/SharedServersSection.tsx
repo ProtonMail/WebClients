@@ -305,7 +305,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                         <span className="text-right">
                             <OrangeDot />
                             <span className="ml-2" style={{ fontWeight: 'var(--font-weight-bold)' }}>{c('Info')
-                            .t`You have unpublished changes`}</span>
+                                .t`You have unpublished changes`}</span>
                         </span>
                         <Button color="norm" type="button" className="ml-8" onClick={handlePublishChanges}>
                             {c('Action').t`Publish changes`}
@@ -380,19 +380,29 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                         {customPolicies.map((customPolicy) => {
                             const isDeleted = customPolicy.localStatus === 'deleted';
 
-                            return (
-                                <div
-                                    key={customPolicy.Name + customPolicy.LocationFilterPolicyID}
-                                    onClick={({ target }) => {
-                                        if (
-                                            target instanceof HTMLElement &&
-                                            target.closest('.not-clickable-with-parent')
-                                        ) {
-                                            return;
-                                        }
+                            const id = customPolicy.Name + customPolicy.LocationFilterPolicyID;
 
-                                        handleShowPolicyPreviewModal(customPolicy);
+                            const handleOpenPreviewModal = ({ target }: React.KeyboardEvent | React.MouseEvent) => {
+                                if (
+                                    target instanceof HTMLElement &&
+                                    (target.closest('.prevent-interaction') || target?.id !== id)
+                                ) {
+                                    return;
+                                }
+
+                                handleShowPolicyPreviewModal(customPolicy);
+                            };
+
+                            return (
+                                <button
+                                    id={id}
+                                    key={id}
+                                    onKeyUp={(e) => {
+                                        if (e.key === 'Enter') {
+                                            handleOpenPreviewModal(e);
+                                        }
                                     }}
+                                    onClick={handleOpenPreviewModal}
                                     className={clsx(
                                         {
                                             'border border-weak color-disabled policy-row-disabled': isDeleted,
@@ -401,6 +411,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                                         `flex md:items-center min-h-custom rounded-xl p-6 gap-2`
                                     )}
                                     style={{ '--min-h-custom': '76px' }}
+                                    type="button"
                                 >
                                     <div className="flex flex-column md:flex-row md:items-center flex-1 gap-2">
                                         <div
@@ -418,9 +429,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                                             sortedLocations={sortedLocations}
                                         />
                                     </div>
-                                    <div
-                                        className="flex gap-1 items-center justify-end"
-                                    >
+                                    <div className="flex gap-1 items-center justify-end">
                                         {!isDeleted && (
                                             <PolicyEditButton
                                                 policy={customPolicy}
@@ -429,7 +438,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                                             />
                                         )}
                                     </div>
-                                </div>
+                                </button>
                             );
                         })}
                     </div>
