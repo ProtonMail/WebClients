@@ -183,7 +183,8 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
 
             ctx?.service.autofill.autofillLogin(form, payload);
             fieldRef.current?.focus({ preventAction: true });
-        })
+        }),
+        { userAction: true }
     );
 
     /* For a password auto-suggestion - the password will have
@@ -204,17 +205,22 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
                 ?.sync({ submit: false, partial: true })
                 .then((res) => res && prompt && ctx.service.autosave.promptAutoSave(res))
                 .catch(noop);
-        })
+        }),
+        { userAction: true }
     );
 
     /* When suggesting an alias on a register form, the alias will
      * only be created upon user action - this avoids creating
      * aliases everytime the injected iframe dropdown is opened */
-    iframe.registerMessageHandler(IFramePortMessageType.AUTOFILL_EMAIL, ({ payload }) => {
-        fieldRef.current?.autofill(payload.email);
-        fieldRef.current?.focus({ preventAction: true });
-        void fieldRef.current?.getFormHandle()?.tracker?.sync({ submit: false, partial: true });
-    });
+    iframe.registerMessageHandler(
+        IFramePortMessageType.AUTOFILL_EMAIL,
+        ({ payload }) => {
+            fieldRef.current?.autofill(payload.email);
+            fieldRef.current?.focus({ preventAction: true });
+            void fieldRef.current?.getFormHandle()?.tracker?.sync({ submit: false, partial: true });
+        },
+        { userAction: true }
+    );
 
     iframe.registerMessageHandler(
         IFramePortMessageType.AUTOFILL_IDENTITY,
@@ -224,7 +230,8 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
                 ctx?.service.autofill.autofillIdentity(field, payload);
                 fieldRef.current?.focus({ preventAction: true });
             }
-        })
+        }),
+        { userAction: true }
     );
 
     listeners.addListener(window, 'popstate', () => iframe.close({ discard: false }));
