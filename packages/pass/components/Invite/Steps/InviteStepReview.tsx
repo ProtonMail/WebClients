@@ -2,14 +2,13 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import type { ListFieldValue } from '@proton/pass/components/Form/Field/ListField';
 import { InviteMember } from '@proton/pass/components/Invite/Steps/InviteMember';
 import type { AccessTarget } from '@proton/pass/lib/access/types';
-import type { InviteFormMemberValue } from '@proton/pass/types';
+import type { InviteFormMemberItem } from '@proton/pass/types';
 
 type Props = {
     heading?: ReactNode;
-    members: ListFieldValue<InviteFormMemberValue>[];
+    members: InviteFormMemberItem[];
     target: AccessTarget;
     title: string;
 };
