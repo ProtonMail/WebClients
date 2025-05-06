@@ -333,6 +333,7 @@ export const getRequiresAddressSetup = (toApp: APP_NAMES, user: tsUser) => {
     if (!user || !isPrivate(user)) {
         return false;
     }
+
     return (
         (getRequiresProtonAddress(toApp) && getIsExternalAccount(user)) ||
         (getRequiresAddress(toApp) && (getIsVPNOnlyAccount(user) || getRequiresMailKeySetup(user)))

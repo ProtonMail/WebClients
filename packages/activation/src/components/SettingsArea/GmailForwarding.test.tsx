@@ -1,7 +1,8 @@
 import { screen } from '@testing-library/dom';
 
 import { useUser } from '@proton/account/user/hooks';
-import { useFlag } from '@proton/unleash';
+import { APPS } from '@proton/shared/lib/constants';
+import { useFlag, useGetFlag } from '@proton/unleash';
 
 import { easySwitchRender } from '../../tests/render';
 import GmailForwarding from './GmailForwarding';
@@ -9,17 +10,22 @@ import GmailForwarding from './GmailForwarding';
 jest.mock('@proton/account/user/hooks');
 const mockUseUser = useUser as jest.MockedFunction<any>;
 
-jest.mock('@proton/unleash');
+jest.mock('@proton/unleash/useFlag');
 const mockUseFlag = useFlag as unknown as jest.MockedFunction<any>;
+
+// Needed for upsell config
+jest.mock('@proton/unleash/useGetFlag');
+const mockUseGetFlag = useGetFlag as jest.Mock;
+mockUseGetFlag.mockReturnValue(() => false);
 
 describe('GmailForwarding', () => {
     it('Should be enabled if user is not delinquent', () => {
         mockUseFlag.mockReturnValue(false);
         mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true }, false]);
 
-        easySwitchRender(<GmailForwarding />);
+        easySwitchRender(<GmailForwarding app={APPS.PROTONMAIL} />);
 
-        const gmailForward = screen.getByTestId('ProviderCard:googleCardForward').firstChild;
+        const gmailForward = screen.getByTestId('ProviderButton:googleCardForward').firstChild;
         expect(gmailForward).toBeEnabled();
     });
 
@@ -27,9 +33,9 @@ describe('GmailForwarding', () => {
         mockUseFlag.mockReturnValue(false);
         mockUseUser.mockReturnValue([{ hasNonDelinquentScope: false }, false]);
 
-        easySwitchRender(<GmailForwarding />);
+        easySwitchRender(<GmailForwarding app={APPS.PROTONMAIL} />);
 
-        const gmailForward = screen.getByTestId('ProviderCard:googleCardForward');
+        const gmailForward = screen.getByTestId('ProviderButton:googleCardForward');
         expect(gmailForward).toBeDisabled();
     });
 
@@ -37,9 +43,9 @@ describe('GmailForwarding', () => {
         mockUseFlag.mockReturnValue(false);
         mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true }, true]);
 
-        easySwitchRender(<GmailForwarding />);
+        easySwitchRender(<GmailForwarding app={APPS.PROTONMAIL} />);
 
-        const gmailForward = screen.getByTestId('ProviderCard:googleCardForward');
+        const gmailForward = screen.getByTestId('ProviderButton:googleCardForward');
         expect(gmailForward).toBeDisabled();
     });
 
@@ -47,9 +53,9 @@ describe('GmailForwarding', () => {
         mockUseFlag.mockReturnValue(true);
         mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true }, false]);
 
-        easySwitchRender(<GmailForwarding />);
+        easySwitchRender(<GmailForwarding app={APPS.PROTONMAIL} />);
 
-        const gmailForward = screen.getByTestId('ProviderCard:googleCardForward');
+        const gmailForward = screen.getByTestId('ProviderButton:googleCardForward');
         expect(gmailForward).toBeDisabled();
     });
 });
