@@ -1152,10 +1152,10 @@
       "Select ${ planTitle }": [
         "Vybrat ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Vybrat vše"
       ],
-      "Select All": [
+      "Select all": [
         "Vybrat vše"
       ],
       "Select all messages": [
@@ -1930,9 +1930,6 @@
       ],
       "Monthly": [
         "Měsíčně"
-      ],
-      "New!": [
-        "Nové!"
       ],
       "Two-year": [
         "Dva roky"
@@ -7096,7 +7093,10 @@
         "Inicializuji..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -7223,9 +7223,6 @@
       ],
       "Message download status:": [
         "Průběh stahování zprávy:"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Vypršení platnosti zprávy funguje mezi uživateli služby ${ MAIL_APP_NAME }. Pro zaslání e-mailů s omezenou platností uživatelům, kteří nepoužívají službu ${ BRAND_NAME }, prosím nepokračujte a přidejte k e-mailu ochranu heslem."
       ],
       "Message headers": [
         "Hlavička zprávy"
@@ -12153,12 +12150,6 @@
       "Do you want to send the email anyway?": [
         "Chcete přesto e-mail odeslat?"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Jestliže se stejně rozhodnete zprávu odeslat, následující příjemce obdrží e-mail bez expirace:",
-        "Jestliže se stejně rozhodnete zprávu odeslat, následující příjemci obdrží e-mail bez expirace:",
-        "Jestliže se stejně rozhodnete zprávu odeslat, následující příjemci obdrží e-mail bez expirace:",
-        "Jestliže se stejně rozhodnete zprávu odeslat, následující příjemci obdrží e-mail bez expirace:"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Následující adresa není platná: ${ invalidAddresses }",
         "Následující adresy nejsou platné: ${ invalidAddresses }",
@@ -12850,6 +12841,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Chcete-li pokračovat v nahrávání a synchronizaci souborů, uvolněte místo nebo navyšte na tarif s větším úložištěm."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Chcete-li dále používat produkty ${ BRAND_NAME }, uvolněte místo nebo ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Abyste mohli přijímat a odesílat e-maily, uvolněte úložný prostor a nebo navyšte na tarif s větším úložištěm."
       ],
@@ -12873,6 +12867,12 @@
       ],
       "Your ${ appStorage } is full": [
         "Vaše ${ appStorage } je plné"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Vaše ${ productString } je z ${ percentage } % plné. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Vaše ${ productString } je plné. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Vaše úložiště je z ${ percentage } % plné. ${ cta }."
@@ -12981,47 +12981,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription reminder": {
@@ -13294,6 +13253,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -15079,11 +15079,6 @@
         "Bezpečná výměna bitcoinů přes e-mail namísto složitých 26znakových bitcoinových adres, u kterých můžete snadno udělat chybu"
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "Přístup k aplikaci Wallet"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "Bezpečnější způsob jak vlastnit Bitcoin"
@@ -15092,22 +15087,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Problém s Wallet"
-      ]
-    },
-    "wallet_signup_2024:Title": {
-      "Wallet": [
-        "Wallet"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "Účet ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "Moje importovaná peněženka ${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "Moje peněženka ${ indexStr }"
       ]
     },
     "Warning": {

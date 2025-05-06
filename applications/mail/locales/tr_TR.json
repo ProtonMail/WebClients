@@ -1144,10 +1144,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } tarifesini seçin"
       ],
-      "Select all": [
+      "Select All": [
         "Tümünü seç"
       ],
-      "Select All": [
+      "Select all": [
         "Tümünü seç"
       ],
       "Select all messages": [
@@ -1911,9 +1911,6 @@
       ],
       "Monthly": [
         "Aylık"
-      ],
-      "New!": [
-        "Yeni!"
       ],
       "Two-year": [
         "Iki yıllık"
@@ -3791,7 +3788,7 @@
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
-        "Toplantı bağlantılarını etkinlik davetlerinize anında ekleyin."
+        "Etkinlik davetlerinize anında görüşme bağlantıları ekleyin."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler birleştiriliyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
@@ -5540,7 +5537,7 @@
         "Görüşme sahibi:"
       ],
       "Meeting link:": [
-        "Toplantı bağlantısı"
+        "Görüşme bağlantısı"
       ],
       "More details": [
         "Ayrıntıları görüntüle"
@@ -6879,7 +6876,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -6960,7 +6958,7 @@
         "${ appName } yükleniyor"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
-        "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanla platformumuz Calendly açılacak."
+        "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanlama platformumuz Calendly açılacak."
       ],
       "Loading message": [
         "İleti yükleniyor"
@@ -6975,7 +6973,7 @@
         "Düşük Öncelik"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } 'i varsayılan e-posta uygulamanız yapın."
+        "${ MAIL_APP_NAME } uygulamasını varsayılan e-posta uygulamanız yapın."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -7006,9 +7004,6 @@
       ],
       "Message download status:": [
         "İleti indirme durumu:"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Süreli iletiler diğer ${ MAIL_APP_NAME } kullanıcılarına e-posta gönderirken sorunsuz kullanılabilir. ${ BRAND_NAME } kullanmayan kişilere geçerlilik süresi olan e-postalar göndermek için lütfen işlemi iptal edip e-postanıza parola koruması ekleyin."
       ],
       "Message headers": [
         "İleti üst bilgileri"
@@ -7158,7 +7153,7 @@
         "Parola panoya kopyalandı"
       ],
       "Password must have:": [
-        "Parola şunları içermelidir:"
+        "Parolada şunlar bulunmalıdır:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
@@ -7188,7 +7183,7 @@
         "Lütfen doğrulama sekmesinden ödemenizi doğrulayın."
       ],
       "Please fill in all required fields.": [
-        "Lütfen gerekli tüm alanları doldurun."
+        "Lütfen tüm zorunlu alanları doldurun."
       ],
       "Please fill out this field.": [
         "Lütfen bu alanı doldurun."
@@ -8938,7 +8933,7 @@
         "Parola ipucu"
       ],
       "Password strength": [
-        "Parola gücü"
+        "Parola zorluğu"
       ],
       "Payer": [
         "Ödeyen"
@@ -10620,7 +10615,7 @@
         "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişim şifrelemesi, bu bilgilere ${ BRAND_NAME } tarafından bile erişilememesini sağlar."
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "Görüşme katılımcılarının uygunluk durumunu görün ve toplantı planlarken zaman kazanın"
+        "Katılacakların uygunluk durumunu görün ve görüşme planlarken zaman kazanın"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Gerek duyduğunuz kadar kişi grubu oluşturarak büyük gruplara hızlı ve kolay bir şekilde e-posta gönderin (her grupta 100 kişiye kadar)"
@@ -11788,10 +11783,6 @@
       "Do you want to send the email anyway?": [
         "Yine de e-postayı göndermek ister misiniz?"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Yine de iletiyi göndermeye karar verdiyseniz, şu alıcıya e-posta geçerlilik süresi olmadan gönderilecek:",
-        "Yine de iletiyi göndermeye karar verdiyseniz, şu alıcılara e-posta geçerlilik süresi olmadan gönderilecek:"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Şu adres geçersiz: ${ invalidAddresses }",
         "Şu adresler geçersiz: ${ invalidAddresses }"
@@ -12078,7 +12069,7 @@
     },
     "Slack": {
       "Join Slack huddle": [
-        "Slack toplantısına katıl"
+        "Slack görüşmesine katıl"
       ]
     },
     "SmartBanner": {
@@ -12193,6 +12184,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Bu özel teklif ilk 2 yıl için geçerlidir."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Aboneliğiniz her yıl aynı tutarla yenilenecek."
       ]
@@ -12272,6 +12266,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "30 aylık standart ücret ${ amount }"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Bu özel teklif ilk 2 yıl için geçerlidir"
       ]
     },
     "specialoffer: Title": {
@@ -12435,6 +12432,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Dosyaları yüklemeyi ve eşitlemeyi sürdürebilmek için boş yer açın ya da daha fazla depolama alanı edinmek için tarifenizi yükseltin."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "${ BRAND_NAME } ürünlerini kullanmayı sürdürmek için yer açın ya da ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da daha fazla depolama alanı edinmek için tarifenizi yükseltin."
       ],
@@ -12456,6 +12456,12 @@
       ],
       "Your ${ appStorage } is full": [
         "Kullandığını ${ appStorage } dolu"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString } depolama alanınız %${ percentage } oranında dolu. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString } depolama alanınız doldu. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Depolama alanınız %${ percentage } oranında dolu. ${ cta }."
@@ -12552,47 +12558,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } için"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription reminder": {
@@ -12855,6 +12820,47 @@
         "Kendi kısa @pm.me e-posta takma adınız"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Emin misiniz?"
@@ -12883,7 +12889,7 @@
     },
     "Subscription saving": {
       "Save ${ priceString }": [
-        "${ priceString } tasarruf edin"
+        "${ priceString } indirim alın"
       ]
     },
     "Success": {
@@ -13293,7 +13299,7 @@
     },
     "Teams": {
       "Join Teams meeting": [
-        "Teams toplantısına katıl"
+        "Teams görüşmesine katıl"
       ]
     },
     "Time": {
@@ -14522,11 +14528,6 @@
         "Aktarım sırasında hata yapmaya açık olan 26 karakter uzunluğundaki karmaşık Bitcoin adreslerini kullanmak yerine, E-posta ile Bitcoin özelliğini kullanarak güvenli bir şekilde Bitcoin alışverişi yapabilirsiniz"
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "Wallet uygulamasına erişim"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "Bitcoin birikimlerinizi saklamanın daha güvenli bir yolu"
@@ -14535,22 +14536,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Wallet sorunu"
-      ]
-    },
-    "wallet_signup_2024:Title": {
-      "Wallet": [
-        "Wallet"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "Hesap ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "İçe aktarılmış cüzdanım${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "Cüzdanım${ indexStr }"
       ]
     },
     "Warning": {
@@ -14887,7 +14872,7 @@
     },
     "Zoom": {
       "Join Zoom meeting": [
-        "Zoom toplantısına katıl"
+        "Zoom görüşmesine katıl"
       ]
     },
     "Zoom Meeting": {

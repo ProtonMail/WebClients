@@ -1144,10 +1144,10 @@
       "Select ${ planTitle }": [
         "Selecteer ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Alles selecteren"
       ],
-      "Select All": [
+      "Select all": [
         "Alles selecteren"
       ],
       "Select all messages": [
@@ -1911,9 +1911,6 @@
       ],
       "Monthly": [
         "Maandelijks"
-      ],
-      "New!": [
-        "Nieuw!"
       ],
       "Two-year": [
         "Tweejaarlijks"
@@ -6312,6 +6309,9 @@
       "and": [
         "en"
       ],
+      "and more.": [
+        "en meer."
+      ],
       "Another tip will be displayed next time you open Mail": [
         "De volgende keer dat u Mail opent, zal er een andere tip worden weergeven"
       ],
@@ -6624,6 +6624,10 @@
       "Drop to import": [
         "Neerzetten om te importeren"
       ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "Vanwege de configuratie van uw ontvanger kan dit bericht niet met een verloopdatum worden verzonden naar het volgende contact: ",
+        "Vanwege de configuratie van uw ontvanger kan dit bericht niet met een verloopdatum worden verzonden naar de volgende contactpersonen: "
+      ],
       "Duplicate key updated": [
         "Dubbele sleutel bijgewerkt"
       ],
@@ -6879,7 +6883,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Link invoegen"
@@ -7006,9 +7011,6 @@
       ],
       "Message download status:": [
         "Bericht download status:"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Berichten met een verlooptijd werken feilloos met andere ${ MAIL_APP_NAME }-gebruikers. Om deze berichten te versturen aan niet-${ BRAND_NAME }-gebruikers, annuleer dan en voeg een wachtwoord toe aan uw e-mail."
       ],
       "Message headers": [
         "Berichtkoppen"
@@ -11788,10 +11790,6 @@
       "Do you want to send the email anyway?": [
         "Wilt u de e-mail toch versturen?"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Als u besluit om het bericht toch te verzenden, ontvangt de volgende ontvanger de e-mail zonder vervaltijd:",
-        "Als u besluit om het bericht toch te verzenden, ontvangen de volgende ontvangers de e-mail zonder vervaltijd:"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Het volgende adres is niet geldig: ${ invalidAddresses }",
         "De volgende adressen zijn ongeldig: ${ invalidAddresses }"
@@ -12441,6 +12439,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Maak ruimte vrij of upgrade voor meer opslag om bestanden te kunnen blijven uploaden of synchroniseren."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Om ${ BRAND_NAME } producten te kunnen blijven gebruiken, maakt u ruimte vrij of voert u een ${ upgrade } uit"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Maak ruimte vrij of upgrade voor meer opslag om mail te blijven verzenden of te ontvangen."
       ],
@@ -12462,6 +12463,12 @@
       ],
       "Your ${ appStorage } is full": [
         "Uw ${ appStorage } is vol"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Uw ${ productString } zit ${ percentage }% vol. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Uw ${ productString } zit vol. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Uw opslag is ${ percentage }% vol. ${ cta }."
@@ -12558,47 +12565,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Voor ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
       ]
     },
     "Subscription reminder": {
@@ -12859,6 +12825,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
@@ -14528,11 +14535,6 @@
         "Wissel Bitcoin veilig uit via email in plaats van complexe, 26 tekens lange, Bitcoin adressen die vatbaar zijn voor fouten"
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "Open Wallet-app"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "Een veiligere manier om uw Bitcoin vast te houden"
@@ -14541,22 +14543,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Probleem met Wallet"
-      ]
-    },
-    "wallet_signup_2024:Title": {
-      "Wallet": [
-        "Wallet"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "Account ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "Mijn geïmporteerde portemonnee${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "Mijn portemonnee${ indexStr }"
       ]
     },
     "Warning": {

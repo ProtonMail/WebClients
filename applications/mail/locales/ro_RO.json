@@ -1148,10 +1148,10 @@
       "Select ${ planTitle }": [
         "Selectare ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Selectare toate"
       ],
-      "Select All": [
+      "Select all": [
         "Selectare toate"
       ],
       "Select all messages": [
@@ -1919,9 +1919,6 @@
       ],
       "Monthly": [
         "Lunar"
-      ],
-      "New!": [
-        "Nou!"
       ],
       "Two-year": [
         "Bianual"
@@ -3782,6 +3779,9 @@
       ],
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "Asigurați o securitate de top pentru cont cu programul ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Asigurați-vă că puteți încă să vă accesați contul și datele chiar dacă vă pierdeți parola ${ BRAND_NAME }."
       ],
       "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
         "Pentru o tranziție lină la ${ BRAND_NAME }, importați-vă datele din Google, Outlook și altele."
@@ -6402,6 +6402,9 @@
       "and": [
         "și"
       ],
+      "and more.": [
+        "și altele."
+      ],
       "Another tip will be displayed next time you open Mail": [
         "Data viitoare când deschideți Mail va fi afișat un alt sfat"
       ],
@@ -6720,6 +6723,11 @@
       "Drop to import": [
         "Plasare pentru importare"
       ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "Din cauza configurării destinatarului, acest mesaj nu poate fi trimis cu o dată de expirare către următorul contact: ",
+        "Din cauza configurării destinatarului, acest mesaj nu poate fi trimis cu o dată de expirare către următoarele contacte: ",
+        "Din cauza configurării destinatarului, acest mesaj nu poate fi trimis cu o dată de expirare către următoarele contacte: "
+      ],
       "Duplicate key updated": [
         "Cheie duplicat actualizată"
       ],
@@ -6983,7 +6991,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -7110,9 +7120,6 @@
       ],
       "Message download status:": [
         "Stare descărcare mesaje:"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Expirarea mesajelor funcționează implicit atunci când trimiteți e-mailuri către alți utilizatori ${ MAIL_APP_NAME }. Pentru a trimite e-mailuri care expiră către alți utilizatori decât ai ${ BRAND_NAME }, anulați și adăugați protecția cu parolă la e-mail."
       ],
       "Message headers": [
         "Antete mesaj"
@@ -11966,11 +11973,6 @@
       "Do you want to send the email anyway?": [
         "Doriți să trimiteți mesajul așa?"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Dacă decideți să trimiteți totuși mesajul, următorul destinatar va primi mesajul fără expirare:",
-        "Dacă decideți să trimiteți totuși mesajul, următorii destinatari vor primi mesajul fără expirare:",
-        "Dacă decideți să trimiteți totuși mesajul, următorii destinatari vor primi mesajul fără expirare:"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Următoarea adresă nu este validă: ${ invalidAddresses }",
         "Următoarele adrese nu sunt valide: ${ invalidAddresses }",
@@ -12392,6 +12394,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Oferta speciala este valabilă pentru primii doi ani."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Abonamentul vi se va reînnoi la același tarif în fiecare an."
       ]
@@ -12472,6 +12477,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Preț standard ${ amount } pentru 30 de luni"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Oferta speciala este valabilă pentru primii doi ani."
       ]
     },
     "specialoffer: Title": {
@@ -12635,6 +12643,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Pentru a continua să încărcați și să sincronizați fișiere, eliberați spațiu sau treceți la un plan cu plată pentru a obține mai mult spațiu."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Pentru a continua să utilizați produsele ${ BRAND_NAME }, eliberați spațiu sau ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Pentru a trimite sau primi mesaje, eliberați spațiu sau treceți la un plan cu plată pentru a obține mai mult spațiu."
       ],
@@ -12657,6 +12668,12 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage } este plin."
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Spațiul de stocare din ${ productString } este ${ percentage }% plin. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Spațiul din ${ productString } este plin. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Spațiul de stocare este ${ percentage }% ocupat. ${ cta }."
@@ -12759,47 +12776,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Pentru ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription reminder": {
@@ -13066,6 +13042,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {
@@ -14793,11 +14810,6 @@
         "Schimbați în siguranță Bitcoin prin e-mail, în loc de adrese Bitcoin complexe, de 26 de caractere, care sunt predispuse la eroare"
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "Accesare aplicație portofel"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "Un mod mai sigur de a deține bitcoin"
@@ -14806,22 +14818,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Problemă portofel"
-      ]
-    },
-    "wallet_signup_2024:Title": {
-      "Wallet": [
-        "Wallet"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "Cont ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "Portofelul meu importat${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "Portofelul meu${ indexStr }"
       ]
     },
     "Warning": {

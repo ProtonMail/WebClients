@@ -1144,11 +1144,11 @@
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
       ],
-      "Select all": [
-        "Seleccionar tudo"
-      ],
       "Select All": [
         "Selecionar tudo"
+      ],
+      "Select all": [
+        "Seleccionar tudo"
       ],
       "Select all messages": [
         "Selecionar todas as mensagens"
@@ -1908,9 +1908,6 @@
       ],
       "Monthly": [
         "Mensalmente"
-      ],
-      "New!": [
-        "Novo"
       ],
       "Two-year": [
         "Bianual"
@@ -6309,6 +6306,9 @@
       "and": [
         "e"
       ],
+      "and more.": [
+        "e mais."
+      ],
       "Another tip will be displayed next time you open Mail": [
         "Será apresentada outra dica da próxima vez que abrir o Mail"
       ],
@@ -6621,6 +6621,10 @@
       "Drop to import": [
         "Solte para importar"
       ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "Devido à configuração do destinatário, esta mensagem não pode ser enviada com uma data de expiração para o seguinte contacto: ",
+        "Devido à configuração do destinatário, esta mensagem não pode ser enviada com uma data de expiração para os seguintes contactos: "
+      ],
       "Duplicate key updated": [
         "Chave duplicada actualizada"
       ],
@@ -6876,7 +6880,8 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir uma imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -7003,9 +7008,6 @@
       ],
       "Message download status:": [
         "Estado da transferência de mensagens:"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "A expiração da mensagem funciona imediatamente em e-mails enviados para outros utilizadores ${ MAIL_APP_NAME }. Para enviar e-mails com validade para utilizadores que não utilizam o ${ BRAND_NAME }, cancele e defina uma senha de proteção para o seu e-mails."
       ],
       "Message headers": [
         "Cabeçalhos da mensagem"
@@ -11785,10 +11787,6 @@
       "Do you want to send the email anyway?": [
         "Deseja enviar o e-mail mesmo assim?"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Se decidir enviar a mensagem mesmo assim, o seguinte destinatário receberá o e-mail sem expiração:",
-        "Se decidir enviar a mensagem mesmo assim, os seguintes destinatários receberão o e-mail sem expiração:"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "O seguinte endereço não é válido: ${ invalidAddresses }",
         "Os seguintes endereços não são válidos: ${ invalidAddresses }"
@@ -12438,6 +12436,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Para continuar a enviar e a sincronizar ficheiros, liberte espaço ou atualize para obter mais espaço de armazenamento."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Para continuar a usar os produtos ${ BRAND_NAME }, liberte espaço ou ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Para enviar ou receber e-mails, liberte espaço ou atualize para obter mais espaço de armazenamento."
       ],
@@ -12459,6 +12460,12 @@
       ],
       "Your ${ appStorage } is full": [
         "O seu ${ appStorage } está cheio"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "O seu ${ productString } está ${ percentage }% cheio. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "O seu ${ productString } está cheio. ${ cta }"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "O seu armazenamento está ${ percentage }% cheio. ${ cta }."
@@ -12555,47 +12562,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Por ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento automático de e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de violação de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription reminder": {
@@ -12856,6 +12822,47 @@
       ],
       "Your own short @pm.me email alias": [
         "O seu próprio alias de e-mail curto @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento automático de e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violação de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {
@@ -14525,11 +14532,6 @@
         "Troque Bitcoin com segurança via e-mail em vez de endereços de Bitcoin complexos de 26 caracteres que são propensos a erro"
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "Acessar à aplicação Wallet"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "Uma maneira mais segura de conservar bitcoins"
@@ -14538,17 +14540,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Problema com a carteira"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "Conta ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "A minha carteira importada${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "A minha carteira${ indexStr }"
       ]
     },
     "Warning": {

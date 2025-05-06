@@ -895,11 +895,11 @@
       "Select ${ planTitle }": [
         "Fren ${ planTitle }"
       ],
-      "Select all": [
-        "Fren akk"
-      ],
       "Select All": [
         "Fren kullec"
+      ],
+      "Select all": [
+        "Fren akk"
       ],
       "Select all messages": [
         "Fren akk iznan"
@@ -1470,9 +1470,6 @@
       ],
       "Monthly": [
         "S wayyur"
-      ],
-      "New!": [
-        "Amaynut"
       ],
       "Two-year": [
         "Snat n tikkal i useggas"
@@ -4923,7 +4920,8 @@
         "Yettwaɣellet seg ukaram agejdan"
       ],
       "Insert image": [
-        "Ger tugna"
+        "Ger tugna",
+        "Ger tugniwn"
       ],
       "Insert link": [
         "Ger aseɣwen"
@@ -4999,9 +4997,6 @@
       ],
       "Message download status:": [
         "Addaden n usader n yizen:"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Keffu n yiznan yewjed i useqdec mi ara ttwaznen yimaylen ɣer yiseqdacen-nniḍen n ${ MAIL_APP_NAME }. I tuzna n yimaylen yemmuten ɣer yiseqdacen ur neswi ara ${ BRAND_NAME }, ttxil-k·m sefsex syen rnu ammesten s wawal uffir ɣer yimaul-ik·im."
       ],
       "Message headers": [
         "Inixfan n yizen"
@@ -7732,10 +7727,6 @@
       "Do you want to send the email anyway?": [
         "Tebɣḍ ad tazneḍ imayl ɣas akken?"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Ma yella tenwiḍ ad tazneḍ izen akken yebɣu yili, aɣerwaḍ-a ad yermes imayl war keffu n wazemz-is:",
-        "Ma yella tenwiḍ ad tazneḍ izen akken yebɣu yili, iɣerwaḍen-a ad remsen imayl war keffun wazemz-is:"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Tansa-a mačči d tameɣtut: ${ invalidAddresses }",
         "Tansiwin-a mačči d timeɣta: ${ invalidAddresses }"
@@ -8111,14 +8102,6 @@
         "Imultaɣen"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GAṬ n uḥraz"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Mazal ${ dayDiff } wass",
@@ -8138,6 +8121,14 @@
       ],
       "Version history": [
         "Azray n lqem"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "Upgrade": [
+        "Leqqem"
       ]
     },
     "Subscription renewal state": {
@@ -9306,11 +9297,6 @@
         "Deg ameẓwaru, bedel Bitcoin s tansa n imayl, mačči d tansa n Bitcoin 26-amsayen ameɛriwen i d-yettusnen Tuccḍa"
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "Sɣur asnas n tikkelt"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "Tura amezwaru i ttwaliḍ Bitcoin"
@@ -9319,17 +9305,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Ugur n tikkelt"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "Amiḍan ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "Tikkelt-iw n Kter${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "Tikkelt-iw${ indexStr }"
       ]
     },
     "Warning": {
