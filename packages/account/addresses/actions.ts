@@ -28,6 +28,7 @@ import {
     setupMemberKeys,
 } from '@proton/shared/lib/keys';
 import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
+import { isFree } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
 import type { KtState } from '../kt';
@@ -443,5 +444,56 @@ export const setupExternalUserForProton = ({
 
             await preAuthKTCommit(user.ID, api);
         }
+    };
+};
+
+export const createBYOEAddress = ({
+    emailAddressParts,
+    displayName,
+}: {
+    emailAddressParts: { Local: string; Domain: string };
+    displayName?: string;
+}): ThunkAction<Promise<Address | undefined>, RequiredState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, _, extra) => {
+        const user = await dispatch(userThunk());
+
+        if (isFree(user)) {
+            return;
+        }
+
+        const addresses = await dispatch(addressesThunk());
+        const api = getSilentApi(extra.api);
+
+        const { Address } = await api<{ Address: Address }>(
+            createAddressConfig({
+                Local: emailAddressParts.Local,
+                Domain: emailAddressParts.Domain,
+                DisplayName: displayName,
+            })
+        );
+
+        const userKeys = await dispatch(userKeysThunk());
+        const { keyTransparencyVerify, keyTransparencyCommit } = createKTVerifier({
+            ktActivation: dispatch(getKTActivation()),
+            api,
+            config: extra.config,
+        });
+        await missingKeysSelfProcess({
+            api,
+            userKeys,
+            addresses,
+            addressesToGenerate: [Address],
+            password: extra.authentication.getPassword(),
+            keyGenConfig: KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
+            keyTransparencyVerify,
+        });
+        await keyTransparencyCommit(await dispatch(userThunk()), userKeys);
+
+        const result = await dispatch(addressesThunk({ cache: CacheType.None }));
+
+        // TODO: Remove dependency on call
+        extra.eventManager.call();
+
+        return result.find(({ ID }) => ID === Address.ID) || Address;
     };
 };

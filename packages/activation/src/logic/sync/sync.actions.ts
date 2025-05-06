@@ -18,10 +18,11 @@ import type {
     OAUTH_PROVIDER,
 } from '@proton/activation/src/interface';
 import { AuthenticationMethod, ImportType } from '@proton/activation/src/interface';
+import { formatApiSync } from '@proton/activation/src/logic/sync/sync.helpers';
 import type { CreateNotificationOptions } from '@proton/components';
 
 import type { EasySwitchThunkExtra } from '../store';
-import type { LoadingState } from './sync.interface';
+import type { LoadingState, Sync } from './sync.interface';
 
 type SubmitError = { Code: number; Error: string };
 
@@ -71,12 +72,13 @@ export const createSyncItem = createAsyncThunk<
     CreateSyncProps,
     EasySwitchThunkExtra & {
         rejectValue: SubmitError;
+        fulfillValue: Sync;
     }
 >('sync/create', async (props, thunkApi) => {
     try {
         const { Code, Provider, RedirectUri, Source, notification } = props;
 
-        const { Token }: { Token: ImportToken } = await thunkApi.extra.api(
+        const { Token, DisplayName }: { Token: ImportToken; DisplayName: string } = await thunkApi.extra.api(
             createToken({
                 Provider,
                 Code,
@@ -101,10 +103,19 @@ export const createSyncItem = createAsyncThunk<
         }
 
         const { ImporterID } = await thunkApi.extra.api(createImport(createImportPayload));
-        await thunkApi.extra.api(createSync(ImporterID));
-        await thunkApi.extra.eventManager.call();
+
+        const allSync = Object.values(thunkApi.getState().sync.syncs);
+        let sync = allSync.find((sync) => sync.account === Account);
+
+        // If a sync already exists for an address, we should not create a new sync, otherwise we will get an error
+        if (!sync) {
+            const { Sync } = await thunkApi.extra.api(createSync(ImporterID));
+            await thunkApi.extra.eventManager.call();
+            sync = formatApiSync(Sync);
+        }
+
         thunkApi.extra.notificationManager.createNotification(notification);
-        return;
+        return thunkApi.fulfillWithValue({ sync, displayName: DisplayName });
     } catch (error: any) {
         return thunkApi.rejectWithValue(error.data as SubmitError);
     }
