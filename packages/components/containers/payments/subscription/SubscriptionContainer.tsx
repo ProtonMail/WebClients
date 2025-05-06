@@ -597,6 +597,7 @@ const SubscriptionContainerInner = ({
             allowDowncycling: scheduledDowncycling,
             cycleParam: maybeCycle,
             app,
+            couponConfig,
         });
 
     const runAdditionalChecks = async (
