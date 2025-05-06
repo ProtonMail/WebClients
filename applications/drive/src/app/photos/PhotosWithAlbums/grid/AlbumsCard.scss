@@ -18,7 +18,7 @@
 }
 
 .albums-card {
-	border: 3px solid var(--background-norm);
+	border: 3px solid var(--border-weak);
 
 	&--loading {
 		&::before {
