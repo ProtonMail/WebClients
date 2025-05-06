@@ -109,7 +109,8 @@ export const PhotosCard: FC<Props> = ({
                     'relative photos-card p-0 border-none rounded',
                     isThumbnailLoading && 'photos-card--loading',
                     !hasSelection && 'photos-card--hide-checkbox',
-                    selected && 'photos-card--selected'
+                    selected && 'photos-card--selected',
+                    isFavorite && 'photos-card--favorited'
                 )}
                 data-testid="photos-card"
                 onClick={onClick}
