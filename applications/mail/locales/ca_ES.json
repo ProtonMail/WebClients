@@ -1144,10 +1144,10 @@
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar-ho tot"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar-ho tot"
       ],
       "Select all messages": [
@@ -1908,9 +1908,6 @@
       ],
       "Monthly": [
         "Mensual"
-      ],
-      "New!": [
-        "Nou"
       ],
       "Two-year": [
         "Bianual"
@@ -6309,6 +6306,9 @@
       "and": [
         "i"
       ],
+      "and more.": [
+        "i més."
+      ],
       "Another tip will be displayed next time you open Mail": [
         "Es mostrarà un altre consell la pròxima vegada que obriu el Mail"
       ],
@@ -6621,6 +6621,10 @@
       "Drop to import": [
         "Arrossegueu aquí per a importar"
       ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "A causa de la configuració del destinatari, aquest missatge no es pot enviar amb data de caducitat al següent contacte: ",
+        "A causa de la configuració del destinatari, aquest missatge no es pot enviar amb data de caducitat als contactes següents: "
+      ],
       "Duplicate key updated": [
         "Clau duplicada actualitzada"
       ],
@@ -6876,7 +6880,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -7003,9 +7008,6 @@
       ],
       "Message download status:": [
         "Estat de descarregada dels missatges:"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "La caducitat del missatge funciona automàticament quan s'envien correus electrònics a altres usuaris de ${ MAIL_APP_NAME }. Per enviar correus electrònics que caduquin a usuaris que no siguin de ${ BRAND_NAME }, torneu enrere i afegiu la protecció de contrasenya al correu electrònic."
       ],
       "Message headers": [
         "Capçaleres del missatge"
@@ -11794,10 +11796,6 @@
       "Do you want to send the email anyway?": [
         "Voleu enviar el missatge de totes maneres?"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Si decidiu enviar el missatge de totes maneres, el destinatari següent rebrà el correu electrònic sense venciment:",
-        "Si decidiu enviar el missatge de totes maneres, els destinataris següents rebran el correu electrònic sense venciment:"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "La següent adreça no és vàlida: ${ invalidAddresses }",
         "Les següents adreces no són vàlides: ${ invalidAddresses }"
@@ -12447,6 +12445,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Per a continuar carregant i sincronitzant fitxers, allibereu espai o milloreu per a obtenir més emmagatzematge."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ upgrade }."
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Per a enviar o rebre correus electrònics, allibereu espai o milloreu per a obtenir més emmagatzematge."
       ],
@@ -12468,6 +12469,12 @@
       ],
       "Your ${ appStorage } is full": [
         "El vostre ${ appStorage } és ple."
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "El vostre ${ productString } està ple al ${ percentage }%. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "El vostre ${ productString } és ple. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "El vostre emmagatzematge és ple al ${ percentage }%. ${ cta }."
@@ -12564,47 +12571,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Per ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "and 15 more premium features": [
-        "i 15 característiques prèmium més"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenviament automàtic de correu electrònic ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de filtracions de dades ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
-      ],
-      "No ads or tracking": [
-        "Sense anuncis ni rastreig"
-      ],
-      "Short @pm.me email address": [
-        "Adreça electrònica curta de @pm.me"
-      ],
-      "Support our mission": [
-        "Doneu suport a la nostra missió"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade your productivity": [
-        "Milloreu la vostra productivitat"
-      ],
-      "We don't sell your data": [
-        "No venem les vostres dades"
-      ],
-      "Your privacy is our mission": [
-        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription reminder": {
@@ -12865,6 +12831,47 @@
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenviament automàtic de correu electrònic ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de filtracions de dades ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
+      ],
+      "Support our mission": [
+        "Doneu suport a la nostra missió"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription renewal state": {
@@ -14534,11 +14541,6 @@
         "Intercanvieu bitcoins de manera segura per correu electrònic en comptes d’utilitzar adreces complexes de Bitcoin de 26 caràcters que són propenses a errors."
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "Accedeix a l'aplicació Wallet"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "Una manera més segura de guardar Bitcoin"
@@ -14547,22 +14549,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Problema amb Wallet"
-      ]
-    },
-    "wallet_signup_2024:Title": {
-      "Wallet": [
-        "Wallet"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "Compte ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "La meva cartera importada${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "La meva cartera${ indexStr }"
       ]
     },
     "Warning": {

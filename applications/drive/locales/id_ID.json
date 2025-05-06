@@ -459,6 +459,9 @@
       "Go back": [
         "Kembali"
       ],
+      "Go back to album “${ albumName }“": [
+        "Kembali ke album \"${ albumName }\""
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Tuju ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -1364,9 +1367,6 @@
       ],
       "Monthly": [
         "Bulanan"
-      ],
-      "New!": [
-        "Baru!"
       ],
       "Two-year": [
         "Dua tahun"
@@ -3057,8 +3057,8 @@
       "Failed to load the STL preview": [
         "Pratinjau STL gagal dimuat"
       ],
-      "Failed to save photo to your Drive": [
-        "Gagal menyimpan foto ke Drive Anda"
+      "Failed to save some photos to your Drive": [
+        "Sebagian foto gagal disimpan ke Drive Anda"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Berkas \"${ item.name }\" tidak dapat diunggah karena terdapat kesalahan \"${ error }\""
@@ -4524,7 +4524,7 @@
         "Apakah Anda yakin untuk menghapus \"${ itemName }\" dari sampah secara permanen?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
-        "Apakah Anda yakin untuk menghapus item-item yang terpilih dari sampah secara permanen?"
+        "Apakah Anda yakin ingin menghapus item yang dipilih dari sampah secara permanen?"
       ],
       "Are you sure you want to proceed?": [
         "Apakah Anda yakin ingin melanjutkan?"
@@ -4907,6 +4907,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
       ],
+      "If you have a large photo library, it might take some time.": [
+        "Apabila Anda memiliki pustaka foto yang besar, proses ini dapat memakan waktu sejenak."
+      ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Apabila Anda memiliki salah satunya, tuju menu pengaturan Akun ${ BRAND_NAME } untuk\nmemulai proses pencabutan blokir."
       ],
@@ -5219,11 +5222,11 @@
       "Photo is set as album cover": [
         "Foto dipasang sebagai sampul album"
       ],
-      "Photo saved to your Drive": [
-        "Foto disimpan ke Drive Anda"
-      ],
       "Photo was copied to stream and marked favorite there.": [
         "Foto telah disalin ke aliran dan ditandai sebagai favorit di sana."
+      ],
+      "Photo(s) saved to your Drive": [
+        "Foto disimpan ke Drive Anda"
       ],
       "Photos have been successfully recovered.": [
         "Foto telah berhasil dipulihkan."
@@ -5846,6 +5849,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
       ],
+      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
+        "Kami sedang meningkatkan foto ke pengalaman yang baru! Selama masa transisi ini, pemulihan foto akan tidak tersedia untuk sementara. Segala sesuatunya akan siap dalam beberapa hari ke depan. Terima kasih atas pengertian Anda."
+      ],
       "Week": [
         "Pekan"
       ],
@@ -5926,6 +5932,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Selagi Anda menunggu, Anda dapat menutup tab atau browser ini."
+      ],
+      "You can close the tab. We'll work on it in the background.": [
+        "Anda dapat menutup tab ini. Kami akan mengerjakan proses ini di belakang layar."
       ],
       "You can import one data type at a time.": [
         "Anda dapat mengimpor satu jenis data dalam satu waktu."
@@ -8515,6 +8524,9 @@
       "Subfolder failed to be loaded": [
         "Subfolder gagal dimuat"
       ],
+      "The Albums feature is on its way! We're rolling it out gradually — please try again soon": [
+        "Fitur Album akan segera hadir! Kami meluncurkan fitur ini secara bertahap — silakan coba lagi nanti"
+      ],
       "The document failed to be created": [
         "Dokumen ini gagal dibuat"
       ],
@@ -9619,6 +9631,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Penawaran spesial ini valid untuk 2 tahun pertama."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Langganan Anda akan diperbarui dengan harga yang sama setiap tahunnya."
       ]
@@ -9697,6 +9712,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Dengan harga standar ${ amount } selama 30 bulan"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Penawaran spesial ini valid untuk 2 tahun pertama"
       ]
     },
     "specialoffer: Title": {
@@ -9814,6 +9832,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Untuk dapat lanjut mengunggah dan menyinkronkan berkas, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Untuk terus menggunakan produk ${ BRAND_NAME }, kosongkan ruang yang ada atau ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
       ],
@@ -9834,6 +9855,12 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage } Anda penuh"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString } Anda ${ percentage }% penuh. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString } Anda penuh. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Ruang penyimpanan Anda ${ percentage }% penuh. ${ cta }."
@@ -9924,47 +9951,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Untuk ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription reminder": {
@@ -10219,6 +10205,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {
@@ -11150,6 +11177,9 @@
       ],
       "Set up your organization": [
         "Siapkan organisasi Anda"
+      ],
+      "Setting up Albums & Filters": [
+        "Menyiapkan Album & Filter"
       ],
       "Settings": [
         "Pengaturan"
