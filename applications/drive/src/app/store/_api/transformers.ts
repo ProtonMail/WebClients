@@ -410,7 +410,9 @@ export const shareInvitationDetailsPayloadToShareInvitationDetails = (
         link: {
             linkId: shareInvitationDetails.Link.LinkID,
             name: shareInvitationDetails.Link.Name,
-            mimeType: shareInvitationDetails.Link.MIMEType,
+            mimeType:
+                shareInvitationDetails.Link.MIMEType ||
+                (shareInvitationDetails.Link.Type === LinkType.ALBUM ? 'Album' : ''),
             isFile: shareInvitationDetails.Link.Type === LinkType.FILE,
             type: shareInvitationDetails.Link.Type,
         },
