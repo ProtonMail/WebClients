@@ -233,6 +233,7 @@ export enum EASY_SWITCH_SOURCES {
     CONTACTS_WEB_SETTINGS = 'contacts-web-settings',
     ACCOUNT_WEB_RECONNECT_IMPORT = 'account-web-reconnect-import',
     ACCOUNT_WEB_RECONNECT_SYNC = 'account-web-reconnect-sync',
+    ACCOUNT_WEB_EXTERNAL_GMAIL = 'account-web-external-gmail',
     WEB_ONBOARDING = 'web-onboarding',
     MAIL_WEB_SIDEBAR = 'mail-web-sidebar',
     CONTACT_WEB_IMPORT_BUTTON = 'contacts-web-import-button',

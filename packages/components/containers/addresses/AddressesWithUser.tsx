@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import ConnectGmailButton from '@proton/activation/src/components/SettingsArea/ConnectGmailButton';
 import { Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -24,6 +25,7 @@ import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { TelemetryPostSubscriptionTourEvents } from '@proton/shared/lib/api/telemetry';
 import {
     ADDRESS_TYPE,
+    type APP_NAMES,
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
     MAIL_UPSELL_PATHS,
@@ -48,6 +50,8 @@ interface Props {
     organizationKey?: CachedOrganizationKey;
     hasDescription?: boolean;
     allowAddressDeletion: boolean;
+    hasAccessToBYOE?: boolean;
+    app?: APP_NAMES;
 }
 
 const upsellRef = getUpsellRef({
@@ -57,7 +61,15 @@ const upsellRef = getUpsellRef({
     isSettings: true,
 });
 
-const AddressesUser = ({ user, organizationKey, member, hasDescription = true, allowAddressDeletion }: Props) => {
+const AddressesUser = ({
+    user,
+    organizationKey,
+    member,
+    hasDescription = true,
+    allowAddressDeletion,
+    hasAccessToBYOE,
+    app,
+}: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const [savingIndex, setSavingIndex] = useState<number | undefined>();
@@ -190,10 +202,16 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
             )}
 
             {!user.hasPaidMail && (
-                <MailUpsellButton
-                    onClick={() => handleUpsellModalDisplay(true)}
-                    text={c('Action').t`Get more addresses`}
-                />
+                <div className="mb-4 flex gap-2 self-start items-center">
+                    <MailUpsellButton
+                        onClick={() => handleUpsellModalDisplay(true)}
+                        text={c('Action').t`Get more addresses`}
+                    />
+
+                    {hasAccessToBYOE && (
+                        <ConnectGmailButton app={app} buttonText={c('loc_nightly: BYOE').t`Connect Gmail address`} />
+                    )}
+                </div>
             )}
 
             <OrderableTable
