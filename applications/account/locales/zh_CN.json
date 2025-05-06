@@ -460,11 +460,11 @@
       "Discard": [
         "放弃"
       ],
-      "Discard Changes": [
-        "放弃更改"
-      ],
       "Discard changes": [
         "放弃修改"
+      ],
+      "Discard Changes": [
+        "放弃更改"
       ],
       "Discover ${ planName }": [
         "探索 ${ planName }"
@@ -778,6 +778,9 @@
       "Keep Editing": [
         "继续编辑"
       ],
+      "Keep editing": [
+        "继续编辑"
+      ],
       "Keep logo": [
         "保留徽标"
       ],
@@ -810,6 +813,9 @@
       ],
       "Make admin": [
         "设为管理员"
+      ],
+      "Make key primary": [
+        "设为主密钥"
       ],
       "Manage advanced account protections": [
         "管理高级账户保护"
@@ -955,10 +961,10 @@
       "Refresh status": [
         "刷新状态"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "刷新页面"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "刷新页面"
       ],
       "Reject": [
@@ -1132,10 +1138,10 @@
       "Select country ${ country }": [
         "选择国家/地区 ${ country }"
       ],
-      "Select file": [
+      "select file": [
         "选择文件"
       ],
-      "select file": [
+      "Select file": [
         "选择文件"
       ],
       "Select files": [
@@ -2001,9 +2007,6 @@
       "Monthly": [
         "月费"
       ],
-      "New!": [
-        "新！"
-      ],
       "Two-year": [
         "两年付费"
       ]
@@ -2801,6 +2804,11 @@
       ],
       "Yomi": [
         "Yomi"
+      ]
+    },
+    "CountriesStep:Info": {
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount } 个城市已选择"
       ]
     },
     "Country name": {
@@ -4227,14 +4235,6 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 或 Windows 32位 (ARM64)"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        "Debian / Ubuntu (.deb)"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        "Fedora / Red Hat (.rpm)"
       ]
     },
     "drive_signup_2023: Title": {
@@ -6466,12 +6466,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "App Store 上的${ appName }"
-      ],
-      "${ appName } on Play Store": [
-        "Play Store 上的${ appName }"
-      ],
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME } 移动应用"
       ],
@@ -7238,6 +7232,9 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 个合并日历"
       ],
+      "${ countriesCount } country enabled": [
+        "${ countriesCount } 国家/地区已启用"
+      ],
       "${ current } of ${ total }": [
         "${ current } / ${ total }"
       ],
@@ -7475,11 +7472,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "建议至少设置一种数据恢复方式，确保即使忘记密码也能找回 ${ BRAND_NAME } 账户中的信息。"
       ],
-      "Active": [
-        "已启用"
-      ],
       "active": [
         "启用"
+      ],
+      "Active": [
+        "已启用"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
@@ -7907,10 +7904,10 @@
       "Data recoverable on this device": [
         "此设备上的数据可能被恢复"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "专用服务器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "专用服务器"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -8194,9 +8191,6 @@
       ],
       "Failed to fetch logs.": [
         "获取日志失败。"
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "邮件和日程尽在您的桌面呈现，为您带来快捷而专注的体验。"
       ],
       "Featured in": [
         "推荐"
@@ -9776,10 +9770,10 @@
       "User activated": [
         "用户已激活"
       ],
-      "username": [
+      "Username": [
         "用户名"
       ],
-      "Username": [
+      "username": [
         "用户名"
       ],
       "Users": [
@@ -10252,6 +10246,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
+      ],
+      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
+        "您对其他用户的现有端到端加密转发将暂停。您可以在“${ autoReplySettingsTitle }”设置下手动重新启用它们。"
       ],
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
@@ -10930,10 +10927,10 @@
       "Allow sharing outside the organization": [
         "允许组织外部共享"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "允许的域"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "允许的域"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11013,9 +11010,6 @@
       ],
       "Backup password": [
         "备用密码"
-      ],
-      "Beta": [
-        "测试版"
       ],
       "Billing cycle": [
         "计费周期"
@@ -12283,10 +12277,10 @@
       "perform a password reset from your active session": [
         "从您的活动会话中执行密码重置"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "隐私政策"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "隐私政策"
       ],
       "Reactivate now": [
@@ -12879,32 +12873,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "浏览所有 ${ BRAND_NAME } 账户等级"
-      ],
-      "From ${ price }": [
-        "低至 ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "以 ${ priceCoupon } 价格开始"
-      ],
-      "Starting from ${ pricing }": [
-        "低至 ${ pricing }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ],
-      "Upgrade to ${ planName }": [
-        "升级至 ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "注册免费账户"
@@ -12932,6 +12900,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "开通 ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "浏览所有 ${ BRAND_NAME } 账户等级"
+      ],
+      "From ${ price }": [
+        "低至 ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "以 ${ priceCoupon } 价格开始"
+      ],
+      "Starting from ${ pricing }": [
+        "低至 ${ pricing }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
+      ],
+      "Upgrade to ${ planName }": [
+        "升级至 ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13620,14 +13614,6 @@
         "只需 ${ priceLine } 即可解锁所有 ${ BRAND_NAME } 高级产品和功能。随时取消。"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } $ 试用"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
@@ -13646,6 +13632,14 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户即可解锁更多高级功能"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } $ 试用"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -14049,6 +14043,9 @@
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "带有指纹 ${ fp } 的密钥已删除。"
+      ],
+      "Key with fingerprint ${ fp } is now primary.": [
+        "带有 ${ fp } 指纹的密钥现在是主密钥。"
       ],
       "Link copied to clipboard": [
         "链接已复制到剪贴板"
@@ -16816,6 +16813,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "特别优惠的有效期为最初的两年。"
+      ],
       "Your subscription will renew at the same rate every year.": [
         "您的订阅将以每年相同的费率续订。"
       ]
@@ -16894,6 +16894,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "30个月的标准价格为${ amount }"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "特别优惠的有效期为最初的两年"
       ]
     },
     "specialoffer: Title": {
@@ -17268,6 +17271,9 @@
       "Get more storage": [
         "获得更多存储空间"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "若要继续使用 ${ BRAND_NAME } 产品，请释放空间或 ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "如需继续上传或同步文件，请释放部分存储空间或${ upgrade }"
       ],
@@ -17294,6 +17300,12 @@
       ],
       "Your ${ appStorage } is full": [
         "您的 ${ appStorage } 已满"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "您的 ${ productString } 已使用 ${ percentage }%。${ cta }。"
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "您的 ${ productString } 已满。 ${ cta }。"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "您的存储空间已使用 ${ percentage }%。${ cta }。"
@@ -17444,47 +17456,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "总计 ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动邮件转发 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "简短的 @pm.me 邮箱地址"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription reminder": {
@@ -17769,6 +17740,47 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己的短 @pm.me 邮箱别名"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动邮件转发 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "简短的 @pm.me 邮箱地址"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription renewal state": {
@@ -18501,10 +18513,10 @@
       "Card verification": [
         "银行卡验证"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "通配邮箱"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "通配邮箱"
       ],
       "Change login password": [
@@ -18518,6 +18530,9 @@
       ],
       "Change password": [
         "更改密码"
+      ],
+      "Change primary key?": [
+        "更改主密钥？"
       ],
       "Change role": [
         "更改角色"
@@ -18935,15 +18950,6 @@
       ],
       "Folders and labels": [
         "标签与文件夹"
-      ],
-      "For Linux": [
-        "Linux 客户端"
-      ],
-      "For macOS": [
-        "macOS 客户端"
-      ],
-      "For Windows": [
-        "Windows 客户端"
       ],
       "Forgot password": [
         "忘记密码"
