@@ -14,7 +14,7 @@ import { WithPaidUser } from '@proton/pass/components/Core/WithPaidUser';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { useFileEncryptionVersion } from '@proton/pass/hooks/files/useFileEncryptionVersion';
-import { useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
+import { resolveMimeTypeForFile, useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { isAbortError } from '@proton/pass/lib/api/errors';
 import { validateFileName } from '@proton/pass/lib/file-attachments/helpers';
@@ -28,6 +28,7 @@ import {
 import type { BaseFileDescriptor, FileAttachmentValues, FileID, ShareId } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { eq, not } from '@proton/pass/utils/fp/predicates';
+import { seq } from '@proton/pass/utils/fp/promises';
 import { updateMap } from '@proton/pass/utils/fp/state';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -69,15 +70,20 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
         const uploadFiles = useCallback(
             async (toUpload: File[]) => {
                 const encryptionVersion = fileEncryptionVersion.current;
-                const uploads = toUpload.map((file) => ({ file, uploadID: uniqueId() }));
+
+                const uploads = await seq(toUpload, async (file) => ({
+                    file,
+                    mimeType: await resolveMimeTypeForFile(file),
+                    uploadID: uniqueId(),
+                }));
 
                 setFiles(
                     updateMap((next) => {
-                        uploads.forEach(({ file, uploadID }) => {
+                        uploads.forEach(({ file, uploadID, mimeType }) => {
                             next.set(uploadID, {
                                 name: file.name,
                                 size: file.size,
-                                mimeType: file.type,
+                                mimeType,
                                 uploadID,
                                 encryptionVersion,
                             });
@@ -86,9 +92,9 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                 );
 
                 await Promise.all(
-                    uploads.map(async ({ file, uploadID }) =>
+                    uploads.map(async ({ file, uploadID, mimeType }) =>
                         fileUpload
-                            .start(file, file.name, shareId, uploadID)
+                            .start(file, file.name, mimeType, shareId, uploadID)
                             .then((fileID) => {
                                 setFiles(updateMap((next) => next.set(uploadID, { ...next.get(uploadID)!, fileID })));
                                 return form.setValues((values) => {
