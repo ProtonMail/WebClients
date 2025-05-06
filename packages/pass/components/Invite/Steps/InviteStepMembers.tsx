@@ -1,21 +1,25 @@
 import type { ClipboardEvent, MutableRefObject, ReactNode } from 'react';
-import { forwardRef, useMemo, useState } from 'react';
+import { forwardRef, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import type { ListFieldValue } from '@proton/pass/components/Form/Field/ListField';
 import { ListField } from '@proton/pass/components/Form/Field/ListField';
 import { InviteRecommendations } from '@proton/pass/components/Invite/Steps/InviteRecommendations';
 import type { InviteAddressValidator } from '@proton/pass/hooks/invite/useAddressValidator';
 import type { AccessKeys } from '@proton/pass/lib/access/types';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { InviteEmailsError } from '@proton/pass/lib/validation/invite';
-import type { InviteFormMemberValue, MaybeNull } from '@proton/pass/types';
+import type { InviteFormMemberItem, MaybeNull } from '@proton/pass/types';
 import { type InviteFormValues, ShareRole } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
+
+const createMember = (email: string): InviteFormMemberItem => ({
+    value: { email, role: ShareRole.READ },
+    id: uniqueId(),
+});
 
 type Props = {
     access: AccessKeys;
@@ -23,10 +27,12 @@ type Props = {
     disabled?: boolean;
     excluded: Set<string>;
     heading?: ReactNode;
-    members: ListFieldValue<InviteFormMemberValue>[];
+    members: InviteFormMemberItem[];
     validator: MaybeNull<InviteAddressValidator>;
-    onUpdate: (members: ListFieldValue<InviteFormMemberValue>[]) => void;
+    onUpdate: (members: InviteFormMemberItem[]) => Promise<void>;
 };
+
+const getFieldValue = prop('email');
 
 /** `InviteStepMembers` takes a forwarded ref parameter for the email
  * input element. This ref is essential to trigger validation on any
@@ -35,6 +41,7 @@ type Props = {
 export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
     ({ access, autoFocus, disabled, excluded, heading, members, validator, onUpdate }, fieldRef) => {
         const emailField = (fieldRef as MaybeNull<MutableRefObject<HTMLInputElement>>)?.current;
+        const scrollTimer = useRef<MaybeNull<NodeJS.Timeout>>(null);
 
         const [autocomplete, setAutocomplete] = useState('');
         const selected = useMemo(() => new Set<string>(members.map((member) => member.value.email)), [members]);
@@ -47,16 +54,16 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
             [members]
         );
 
-        const createMember = (email: string): ListFieldValue<InviteFormMemberValue> => ({
-            value: { email, role: ShareRole.READ },
-            id: uniqueId(),
-        });
+        const fieldLoading = useCallback(
+            (entry: InviteFormMemberItem) => (validator?.loading ?? false) && emailsValidating.includes(entry),
+            [validator, emailsValidating]
+        );
 
         const onEmailFieldBlur = async (maybeEmail: string) => {
             const value = maybeEmail.trim();
             if ((await PassUI.is_email_valid(value)) && emailField) {
                 emailField.value = '';
-                onUpdate(members.concat([createMember(value)]));
+                void onUpdate(members.concat([createMember(value)]));
             }
         };
 
@@ -72,11 +79,16 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
                 if (emailField && email.toLowerCase().startsWith(trailing)) emailField.value = '';
             }
 
-            onUpdate(update);
+            void onUpdate(update);
         };
 
-        const handlePaste = (evt: ClipboardEvent<HTMLInputElement>) => {
+        const handlePaste = async (evt: ClipboardEvent<HTMLInputElement>) => {
             evt.preventDefault();
+
+            if (scrollTimer.current) {
+                clearTimeout(scrollTimer.current);
+                scrollTimer.current = null;
+            }
 
             const value = evt.clipboardData?.getData('text/plain') || '';
 
@@ -86,8 +98,20 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
                 .filter((email) => email.length > 0)
                 .map(createMember);
 
-            onUpdate(members.concat(emails));
+            await onUpdate(members.concat(emails));
+
+            scrollTimer.current = setTimeout(() => {
+                emailField?.scrollIntoView({ behavior: 'smooth' });
+                scrollTimer.current = null;
+            }, 25);
         };
+
+        useEffect(
+            () => () => {
+                if (scrollTimer.current) clearTimeout(scrollTimer.current);
+            },
+            []
+        );
 
         return (
             <div className="anime-fade-in h-full flex flex-nowrap flex-column gap-y-3 *:shrink-0">
@@ -99,10 +123,10 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
                         autoFocus={autoFocus}
                         component={ListField<InviteFormValues>}
                         disabled={disabled || validator?.loading}
-                        fieldLoading={(entry) => (validator?.loading ?? false) && emailsValidating.includes(entry)}
+                        fieldLoading={fieldLoading}
                         fieldKey="members"
                         fieldRef={fieldRef}
-                        fieldValue={prop('email')}
+                        fieldValue={getFieldValue}
                         key={`autofocus-email-${autoFocus}`}
                         name="emails"
                         onBlur={onEmailFieldBlur}

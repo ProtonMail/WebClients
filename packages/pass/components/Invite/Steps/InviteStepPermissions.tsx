@@ -2,18 +2,17 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import type { ListFieldValue } from '@proton/pass/components/Form/Field/ListField';
 import { AccessRoleToggle } from '@proton/pass/components/Invite/Access/AccessRoleToggle';
 import { InviteMember } from '@proton/pass/components/Invite/Steps/InviteMember';
 import type { AccessTarget } from '@proton/pass/lib/access/types';
-import type { InviteFormMemberValue, InviteFormStep } from '@proton/pass/types';
+import type { InviteFormMemberItem, InviteFormStep } from '@proton/pass/types';
 
 type Props = {
     heading?: ReactNode;
-    members: ListFieldValue<InviteFormMemberValue>[];
+    members: InviteFormMemberItem[];
     target: AccessTarget;
-    onStep: (step: InviteFormStep) => void;
-    onUpdate: (members: ListFieldValue<InviteFormMemberValue>[]) => void;
+    onStep: (step: InviteFormStep) => Promise<void>;
+    onUpdate: (members: InviteFormMemberItem[]) => Promise<void>;
 };
 
 export const InviteStepPermissions = ({ heading, members, target, onStep, onUpdate }: Props) => (
