@@ -161,10 +161,7 @@ export const PhotosLayout = () => {
     const albumSharingShareId = album?.sharingDetails?.shareId;
 
     const canRemoveSelectedPhotos = useMemo(() => {
-        return (
-            album?.permissions.isAdmin ||
-            selectedItems.every((item) => item.activeRevision?.signatureEmail === userAddressEmail)
-        );
+        return Boolean(album?.permissions.isAdmin || album?.permissions.isEditor);
     }, [album?.permissions.isAdmin, selectedItems, userAddressEmail]);
 
     const selectedCount = selectedItems.length;
