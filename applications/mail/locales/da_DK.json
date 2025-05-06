@@ -1099,10 +1099,10 @@
       "Select ${ planTitle }": [
         "Vælg ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Vælg alle"
       ],
-      "Select All": [
+      "Select all": [
         "Vælg alle"
       ],
       "Select all messages": [
@@ -1812,9 +1812,6 @@
       ],
       "Monthly": [
         "Månedlig"
-      ],
-      "New!": [
-        "Nyheder"
       ],
       "Two-year": [
         "To-År"
@@ -6614,7 +6611,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -6729,9 +6727,6 @@
       ],
       "Message download status:": [
         "Status for download af besked:"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Beskedudløb virker uden videre, når du sender e-mails til andre ${ MAIL_APP_NAME }-brugere. For at sende e-mails med udløb til ikke-${ BRAND_NAME }-brugere bedes du annullere og tilføje adgangskodebeskyttelse til din e-mail."
       ],
       "Message headers": [
         "Beskedoverskrfter"
@@ -11145,10 +11140,6 @@
       "Do you want to send the email anyway?": [
         "Vil du alligevel sende e-mailen?"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Hvis du beslutter dig for at sende beskeden alligevel, vil følgende modtager få e-mailen uden udløb:",
-        "Hvis du beslutter dig for at sende beskeden alligevel, vil følgende modtagere få e-mailen uden udløb:"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Følgende adresse er ikke gyldig: ${ invalidAddresses }",
         "Følgende adresser er ikke gyldig: ${ invalidAddresses }"
@@ -11894,47 +11885,6 @@
         "Til ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } dag tilbage",
@@ -12187,6 +12137,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -13698,11 +13689,6 @@
         "Udveksl Bitcoin sikkert via e-mail i stedet for komplekse, 26-tegns Bitcoin-adresser, der er tilbøjelige til fejl"
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "Tilgå Wallet-appen"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "En sikrere måde at gemme Bitcoin på"
@@ -13711,22 +13697,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Problem med wallet"
-      ]
-    },
-    "wallet_signup_2024:Title": {
-      "Wallet": [
-        "Wallet"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "Konto ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "Min importerede wallet${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "Min wallet${ indexStr }"
       ]
     },
     "Warning": {

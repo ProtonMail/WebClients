@@ -93,6 +93,9 @@
       "Apply": [
         "Uygula"
       ],
+      "Ask me next time": [
+        "Gelecek sefer yeniden sor"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Bir kişi grubunda en fazla ${ maxContacts } kişi bulunabilir",
         "Bir kişi grubunda en fazla ${ maxContacts } kişi bulunabilir"
@@ -648,6 +651,9 @@
       "Save changes": [
         "Değişiklikleri kaydet"
       ],
+      "Save preferences": [
+        "Ayarları kaydet"
+      ],
       "Search": [
         "Arama"
       ],
@@ -752,6 +758,9 @@
       ],
       "Take out of trash": [
         "Çöpten çıkar"
+      ],
+      "Trashing...": [
+        "Çöpe atılıyor..."
       ],
       "Trust": [
         "Güven"
@@ -1123,9 +1132,6 @@
       ],
       "Monthly": [
         "Aylık"
-      ],
-      "New!": [
-        "Yeni!"
       ],
       "Two-year": [
         "Iki yıllık"
@@ -2335,6 +2341,11 @@
         "Süresi geçmiş fatura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME }, ${ DRIVE_APP_NAME } ile diğer kişilerle güvenli, şifrelenmiş bir ortamda birlikte çalışın."
@@ -2409,7 +2420,7 @@
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
-        "Toplantı bağlantılarını etkinlik davetlerinize anında ekleyin."
+        "Etkinlik davetlerinize anında görüşme bağlantıları ekleyin."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler birleştiriliyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
@@ -2470,11 +2481,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4231,6 +4237,9 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Kişi ${ contactGroupName } grubundan çıkarıldı"
       ],
+      "Converting document...": [
+        "Belge dönüştürülüyor..."
+      ],
       "Copy the link to clipboard": [
         "Bağlantıyı panoya kopyala"
       ],
@@ -4274,6 +4283,9 @@
       ],
       "Creating link to folder": [
         "Klasör bağlantısı oluşturuluyor"
+      ],
+      "Creating new document...": [
+        "Yeni belge oluşturuluyor..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
@@ -4392,6 +4404,12 @@
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Belge dönüştürülürken sorun çıktı: ${ errorMessage }"
+      ],
+      "Error loading document${ errorDetail }": [
+        "Belge yüklenirken sorun çıktı${ errorDetail }"
+      ],
       "Error Syncing": [
         "Eşitleme sorunu"
       ],
@@ -4451,6 +4469,12 @@
       ],
       "Geoblocking": [
         "Coğrafi engelleme"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Belgelerinize eklenen yorumlar ve öneriler için e-posta bildirimleri alın."
+      ],
+      "Get Notified About Comments": [
+        "Yorumlar bildirilsin"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasına git"
@@ -4580,7 +4604,7 @@
         "${ appName } yükleniyor"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
-        "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanla platformumuz Calendly açılacak."
+        "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanlama platformumuz Calendly açılacak."
       ],
       "Loading document...": [
         "Belge yükleniyor..."
@@ -4596,6 +4620,9 @@
       ],
       "Low Priority": [
         "Düşük Öncelik"
+      ],
+      "Making a copy...": [
+        "Bir kopya oluşturuluyor..."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
@@ -4633,6 +4660,9 @@
       ],
       "No contacts added yet": [
         "Henüz bir kişi eklenmemiş"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Adreste bir belge belirtilmemiş. ${ DRIVE_APP_NAME } uygulamasına dönün ve bir belge seçin."
       ],
       "No email address": [
         "E-posta adresi yok"
@@ -4710,7 +4740,7 @@
         "Parola panoya kopyalandı"
       ],
       "Password must have:": [
-        "Parola şunları içermelidir:"
+        "Parolada şunlar bulunmalıdır:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
@@ -4740,7 +4770,7 @@
         "Lütfen yaptığınız değişikliklerin kopyasını ana menüden dışa aktarın ve sayfayı yeniden yükleyin."
       ],
       "Please fill in all required fields.": [
-        "Lütfen gerekli tüm alanları doldurun."
+        "Lütfen tüm zorunlu alanları doldurun."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Lütfen bu gruplara atanan adreslerin SİLİNMEYECEĞİNİ unutmayın."
@@ -4969,6 +4999,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Bu adresin sahibi uçtan uca şifrelemeyi kapatmış. Bu adrese şifrelenmiş e-postalar gönderebilmek için adres sahibi uçtan uca şifrelemeyi yeniden açmalıdır."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
+        "Yazdığınız adres Slack üzerinden yanlış kopyalanmış gibi görünüyor. Slack üzerinden uzun bağlantıları kopyalarken, bağlantıya sağ tıklayın, ardından kesilmiş adres metnini doğrudan kopyalamak yerine \"Bağlantıyı kopyala\" seçeneğini kullanın."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
@@ -5674,6 +5707,9 @@
       "Emails (last month)": [
         "E-postalar (son 1 ay)"
       ],
+      "Enable email notifications": [
+        "E-posta bildirimlerini aç"
+      ],
       "Encrypt emails": [
         "E-postaları şifrele"
       ],
@@ -5724,6 +5760,9 @@
       ],
       "Import to:": [
         "Şunun içine aktar:"
+      ],
+      "Include document name in notification": [
+        "Bildirime belge adı eklensin"
       ],
       "Include message and file name in invite email": [
         "Davet e-postasına bir ileti ve dosya adı eklensin"
@@ -5813,7 +5852,7 @@
         "Parola"
       ],
       "Password strength": [
-        "Parola gücü"
+        "Parola zorluğu"
       ],
       "Payer": [
         "Ödeyen"
@@ -7296,7 +7335,7 @@
         "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişim şifrelemesi, bu bilgilere ${ BRAND_NAME } tarafından bile erişilememesini sağlar."
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "Görüşme katılımcılarının uygunluk durumunu görün ve toplantı planlarken zaman kazanın"
+        "Katılacakların uygunluk durumunu görün ve görüşme planlarken zaman kazanın"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Gerek duyduğunuz kadar kişi grubu oluşturarak büyük gruplara hızlı ve kolay bir şekilde e-posta gönderin (her grupta 100 kişiye kadar)"
@@ -7788,7 +7827,7 @@
         "Aranıyor"
       ],
       "Trash": [
-        "Çöp kutusu"
+        "Çöp"
       ]
     },
     "Participant name": {
@@ -8610,6 +8649,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Bu özel teklif ilk 2 yıl için geçerlidir."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Aboneliğiniz her yıl aynı tutarla yenilenecek."
       ]
@@ -8689,6 +8731,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "30 aylık standart ücret ${ amount }"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Bu özel teklif ilk 2 yıl için geçerlidir"
       ]
     },
     "specialoffer: Title": {
@@ -8797,6 +8842,9 @@
       "For all ${ BRAND_NAME } services": [
         "Tüm ${ BRAND_NAME } hizmetleri için"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "${ BRAND_NAME } ürünlerini kullanmayı sürdürmek için yer açın ya da ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Dosyaları yükleyebilmek ya da eşitleyebilmek için depolama alanını boşaltın ya da ${ upgrade }"
       ],
@@ -8815,6 +8863,12 @@
       ],
       "Your ${ appStorage } is full": [
         "Kullandığını ${ appStorage } dolu"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString } depolama alanınız %${ percentage } oranında dolu. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString } depolama alanınız doldu. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Depolama alanınız %${ percentage } oranında dolu. ${ cta }."
@@ -8913,6 +8967,25 @@
         "${ totalPrice } için"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } özel e-posta etki alanı",
+        "${ planNumberOfDomains } özel e-posta etki alanı"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-posta adresi",
+        "${ planNumberOfEmails } e-posta adresi"
+      ],
+      "Folders, labels, and custom filters": [
+        "Klasörler, etiketler ve özel süzgeçler"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB depolama alanı"
@@ -8954,25 +9027,6 @@
         "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } özel e-posta etki alanı",
-        "${ planNumberOfDomains } özel e-posta etki alanı"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-posta adresi",
-        "${ planNumberOfEmails } e-posta adresi"
-      ],
-      "Folders, labels, and custom filters": [
-        "Klasörler, etiketler ve özel süzgeçler"
-      ]
-    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Emin misiniz?"
@@ -9001,7 +9055,7 @@
     },
     "Subscription saving": {
       "Save ${ priceString }": [
-        "${ priceString } tasarruf edin"
+        "${ priceString } indirim alın"
       ]
     },
     "Success": {

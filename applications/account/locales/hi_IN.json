@@ -901,11 +901,11 @@
       "Refresh status": [
         "रीफ्रेश स्थिति"
       ],
-      "Refresh the page": [
-        "पन्ना रिफ्रेश करें"
-      ],
       "refresh the page": [
         "पृष्ठ रिफ्रेश करें"
+      ],
+      "Refresh the page": [
+        "पन्ना रिफ्रेश करें"
       ],
       "Reject": [
         "अस्वीकार करें"
@@ -1072,11 +1072,11 @@
       "Select country ${ country }": [
         "देश चुनें ${ country }"
       ],
-      "Select file": [
-        "फाइल चुनें"
-      ],
       "select file": [
         "फ़ाइल चुनें"
+      ],
+      "Select file": [
+        "फाइल चुनें"
       ],
       "Select files": [
         "फ़ाइल चुनें"
@@ -4042,14 +4042,6 @@
         "Windows 8/8.1/7 या Windows 32-bit (ARM64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        "Debian / Ubuntu के लिए .deb"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        "Fedora / Red Hat के लिए .rpm"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "फाइल तक सुरक्षित पहुँच के लिए एक मुफ्त ${ DRIVE_APP_NAME } खाता बनाएं"
@@ -6155,12 +6147,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "App Store पर ${ appName }"
-      ],
-      "${ appName } on Play Store": [
-        "Play Store पर ${ appName }"
-      ],
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME } ऐप"
       ],
@@ -7159,10 +7145,10 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "कम-से-कम एक रिक्वरी तरीका सेट करे ताकि आप अपना ${ BRAND_NAME } खाता इस्तेमाल करना जारी रख सके जब भी आपका पासवर्ड खो जाए।"
       ],
-      "Active": [
+      "active": [
         "सक्रिय"
       ],
-      "active": [
+      "Active": [
         "सक्रिय"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
@@ -7595,11 +7581,11 @@
       "Data locked": [
         "डेटा लॉक"
       ],
-      "dedicated servers": [
-        "समर्पित सर्वर"
-      ],
       "Dedicated servers": [
         "विशेष सर्वर"
+      ],
+      "dedicated servers": [
+        "समर्पित सर्वर"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "विशेष IP पते वाले विशेष सर्वर को निजी गेटवे में जोड़ा जा सकता है ताकि बेहतर पहुंच नियंत्रण संभव हो सके।"
@@ -7872,9 +7858,6 @@
       ],
       "Failed to fetch logs.": [
         "लॉग लाने में विफल।"
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "तेज़ और केंद्रित। ईमेल और कैलेंडर, सीधे आपके डेस्कटॉप पर।"
       ],
       "Fill in user details": [
         "उपयोगकर्ता जानकारी भरें"
@@ -9380,10 +9363,10 @@
       "User activated": [
         "उपयोगकर्ता सक्रिय किया गया"
       ],
-      "username": [
+      "Username": [
         "यूज़रनेम"
       ],
-      "Username": [
+      "username": [
         "यूज़रनेम"
       ],
       "Users": [
@@ -10506,10 +10489,10 @@
       "Allow sharing outside the organization": [
         "संगठन के बाहर शेयर करने की अनुमति दें"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "अनुमत डोमेन"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "अनुमत डोमेन"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10589,9 +10572,6 @@
       ],
       "Backup password": [
         "बैकअप पासवर्ड"
-      ],
-      "Beta": [
-        "बीटा"
       ],
       "Billing cycle": [
         "बिल चक्र"
@@ -11785,11 +11765,11 @@
       "perform a password reset from your active session": [
         "अपने सक्रिय सत्र से पासवर्ड रीसेट करें"
       ],
-      "Privacy policy": [
-        "गोपनीयता नीति"
-      ],
       "privacy policy": [
         "निजता नीति"
+      ],
+      "Privacy policy": [
+        "गोपनीयता नीति"
       ],
       "Reactivate now": [
         "अब पुनः सक्रिय करें"
@@ -12385,32 +12365,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "सारे ${ BRAND_NAME } प्लान देखे"
-      ],
-      "From ${ price }": [
-        "${ price } से"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "शुरू करें ${ priceCoupon } के लिए"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } से शुरू"
-      ],
-      "Upgrade": [
-        "अपग्रेड"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } पे अपग्रेड करें"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Free जारी रखें"
@@ -12438,6 +12392,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } पे अपग्रेड करें"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "सारे ${ BRAND_NAME } प्लान देखे"
+      ],
+      "From ${ price }": [
+        "${ price } से"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "शुरू करें ${ priceCoupon } के लिए"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } से शुरू"
+      ],
+      "Upgrade": [
+        "अपग्रेड"
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } पे अपग्रेड करें"
       ]
     },
     "new_plans: feature": {
@@ -13139,14 +13119,6 @@
         "सिर्फ ${ priceLine } में सभी ${ BRAND_NAME } प्रीमियम उत्पाद और खासियतें अनलॉक करें। किसी भी समय रद्द करें।"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } ट्रायल"
-      ],
-      "Your account's usage": [
-        "आपका खाते का इस्तेमाल"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "खाता मिटाएं?"
@@ -13165,6 +13137,14 @@
       ],
       "Unlock premium features by upgrading": [
         "अपग्रेड करके प्रीमियम सुविधाओं का लाभ उठाएँ"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } ट्रायल"
+      ],
+      "Your account's usage": [
+        "आपका खाते का इस्तेमाल"
       ]
     },
     "new_plans: tooltip": {
@@ -16934,47 +16914,6 @@
         "के लिए ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 जीबी स्टोरेज"
-      ],
-      "and 15 more premium features": [
-        "और 15 अन्य प्रीमियम सुविधाएँ"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "डाटा लीक अलर्ट ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "डेस्कटॉप ऐप"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
-      ],
-      "No ads or tracking": [
-        "कोई विज्ञापन या ट्रैकिंग नहीं"
-      ],
-      "Short @pm.me email address": [
-        "छोटा @pm.me ईमेल पता"
-      ],
-      "Support our mission": [
-        "हमारे मिशन का समर्थन करें"
-      ],
-      "Upgrade": [
-        "अपग्रेड करें"
-      ],
-      "Upgrade your productivity": [
-        "अपनी उत्पादकता बढ़ाएँ"
-      ],
-      "We don't sell your data": [
-        "हम आपका डाटा नहीं बेचते"
-      ],
-      "Your privacy is our mission": [
-        "आपकी निजता हमारा मिशन है"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, और ${ VPN_SHORT_APP_NAME } प्रीमियम सुविधाओं के साथ"
@@ -17263,6 +17202,47 @@
       ],
       "Your own short @pm.me email alias": [
         "आपका अपना छोटा @pm.me ईमेल नकली-नाम"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "and 15 more premium features": [
+        "और 15 अन्य प्रीमियम सुविधाएँ"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "डाटा लीक अलर्ट ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
+      ],
+      "No ads or tracking": [
+        "कोई विज्ञापन या ट्रैकिंग नहीं"
+      ],
+      "Short @pm.me email address": [
+        "छोटा @pm.me ईमेल पता"
+      ],
+      "Support our mission": [
+        "हमारे मिशन का समर्थन करें"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
+      ],
+      "Upgrade your productivity": [
+        "अपनी उत्पादकता बढ़ाएँ"
+      ],
+      "We don't sell your data": [
+        "हम आपका डाटा नहीं बेचते"
+      ],
+      "Your privacy is our mission": [
+        "आपकी निजता हमारा मिशन है"
       ]
     },
     "Subscription renewal state": {
@@ -17979,10 +17959,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [
@@ -18389,15 +18369,6 @@
       ],
       "Folders and labels": [
         "फ़ोल्डर्स और लेबल"
-      ],
-      "For Linux": [
-        "Linux के लिए"
-      ],
-      "For macOS": [
-        "macOS के लिए"
-      ],
-      "For Windows": [
-        "Windows के लिए"
       ],
       "Forgot recovery method": [
         "रिकवरी विधि भूल गए"

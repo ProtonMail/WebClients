@@ -546,6 +546,9 @@
       "Get the app": [
         "取得應用程式"
       ],
+      "Get the apps": [
+        "取得應用程式"
+      ],
       "Get the browser extension": [
         "取得瀏覽器擴充工具"
       ],
@@ -1089,11 +1092,11 @@
       "Select ${ planTitle }": [
         "選擇方案 ${ planTitle }"
       ],
-      "Select all": [
-        "全選"
-      ],
       "Select All": [
         "選擇全部"
+      ],
+      "Select all": [
+        "全選"
       ],
       "Select all messages": [
         "選取所有郵件"
@@ -1301,6 +1304,9 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "嘗試再次儲存。儲存失敗原因：${ saveError }"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "啟用${ DARK_WEB_MONITORING_NAME }"
       ],
       "Unblock": [
         "解除攔截"
@@ -1804,6 +1810,9 @@
       ],
       "Annually": [
         "每年"
+      ],
+      "Lifetime": [
+        "終身"
       ],
       "Monthly": [
         "每月"
@@ -6518,7 +6527,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖像"
+        "插入圖片"
       ],
       "Insert link": [
         "插入連結"
@@ -6607,6 +6616,9 @@
       "Low Priority": [
         "較低優先順序"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "設定${ MAIL_APP_NAME }為預設電子郵件應用程式."
+      ],
       "Manage your folders": [
         "管理您的資料夾"
       ],
@@ -6636,9 +6648,6 @@
       ],
       "Message download status:": [
         "訊息下載狀態:"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "郵件訊息時效功能會在傳送電郵至其它 ${ MAIL_APP_NAME } 使用者時同步啟用。 傳送時效性電郵至非 ${ BRAND_NAME } 使用者時，請取消該功能，並在您的電郵加入密碼防護。"
       ],
       "Message headers": [
         "郵件標頭"
@@ -6759,6 +6768,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "我們的警示偏向於謹慎。如果您不認識任何外洩的資訊，您可以放心地忽略此報告。"
+      ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "我們的系統已將此訊息認定為網路釣魚企圖。請檢查以確保其為合法。"
       ],
       "password": [
         "密碼"
@@ -7080,6 +7092,9 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "提交單筆存款時，可使用以下位址或者掃描 QR 代碼。該筆存入款項在確認後，就會顯示在您的帳號裡。"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "每${ cycle }個月自動續訂。"
       ],
       "Subscription auto-renews every month.": [
         "每月自動續購授權"
@@ -7444,6 +7459,9 @@
       "Visa Secure logo": [
         "Visa Secure 標誌"
       ],
+      "VPN IP": [
+        "VPN IP"
+      ],
       "Warning": [
         "警告"
       ],
@@ -7744,8 +7762,14 @@
       "Your private writing assistant": [
         "您私人的撰寫幫手"
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "您的方案開始於${ renewalTime }及於${ cycle }月重新開始。"
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "您的方案開始於${ renewalTime }及於每月重新開始。"
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "您的訂購授權將於 ${ renewalTime } 自動更新。"
       ]
     },
     "info": {
@@ -8590,6 +8614,9 @@
       ],
       "Your alias": [
         "你的別名"
+      ],
+      "Your location": [
+        "您的位置"
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
@@ -10597,8 +10624,14 @@
       "Select billing country to pay": [
         "選取繳款國家以付款"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPriceStr } 續約。您可以在任何時候取消。"
+      ],
       "Timeout exceeded": [
         "已經逾時"
+      ],
+      "Your payment is still being processed": [
+        "您的付款仍在處理中"
       ]
     },
     "Payments.Error": {
@@ -11066,9 +11099,6 @@
     "Send email with warnings": {
       "Do you want to send the email anyway?": [
         "無論如何，您仍要傳送此電郵嗎？"
-      ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "若您仍然決定傳送郵件，下列收件人將不受日期限制接收此郵件："
       ],
       "The following address is not valid: ${ invalidAddresses }": [
         "下列電子信箱無效：${ invalidAddresses }"
@@ -11705,6 +11735,9 @@
       "Your ${ appStorage } is full": [
         "您的${ appStorage }已滿"
       ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "您已使用 ${ percentage }% 的 ${ productString }。${ cta }。"
+      ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "你的儲存量已達 ${ percentage }% 滿. ${ cta }."
       ],
@@ -11791,47 +11824,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } 版"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "and 15 more premium features": [
-        "還有額外的15個的加值功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動郵件轉寄${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "資料外洩警告 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面應用程式"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
-      ],
-      "No ads or tracking": [
-        "無廣告或追蹤"
-      ],
-      "Short @pm.me email address": [
-        "縮短電子郵件地址@pm.me"
-      ],
-      "Support our mission": [
-        "支援我們的計畫"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade your productivity": [
-        "提升您的生產力"
-      ],
-      "We don't sell your data": [
-        "我們不銷售您的資料"
-      ],
-      "Your privacy is our mission": [
-        "您的隱私是我們責任"
       ]
     },
     "Subscription reminder": {
@@ -12065,6 +12057,47 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "and 15 more premium features": [
+        "還有額外的15個的加值功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
       ]
     },
     "Subscription renewal state": {
@@ -12592,6 +12625,9 @@
       "Add to ${ groupName }": [
         "加入至 ${ groupName }"
       ],
+      "Add user": [
+        "加入使用者"
+      ],
       "Addresses": [
         "位址"
       ],
@@ -12780,6 +12816,9 @@
       ],
       "Deleting contacts": [
         "正在刪除聯絡人"
+      ],
+      "Desktop": [
+        "電腦版應用程式"
       ],
       "Discover your subscription benefits": [
         "探索您訂閱的各項福利"
@@ -13282,6 +13321,9 @@
       "Trust public key?": [
         "要信任公開金鑰嗎？"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "啟用${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unlock contacts groups": [
         "解鎖通訊群組"
       ],
@@ -13547,11 +13589,6 @@
         "安全地透過電子郵件取代易造成問題的26字元的Bitcoin地址交易Bitcoin"
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "存取錢包應用程式"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "更安全持有Bitcoin的方法"
@@ -13560,22 +13597,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "錢包問題"
-      ]
-    },
-    "wallet_signup_2024:Title": {
-      "Wallet": [
-        "Wallet"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "帳號${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "我匯入的錢包${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "我的錢包${ indexStr }"
       ]
     },
     "Warning": {

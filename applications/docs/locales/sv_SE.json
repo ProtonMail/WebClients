@@ -1133,9 +1133,6 @@
       "Monthly": [
         "Månadsvis"
       ],
-      "New!": [
-        "Nytt!"
-      ],
       "Two-year": [
         "Tvåårig"
       ]
@@ -2344,6 +2341,11 @@
         "Försenad faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } låter dig arbeta tillsammans med andra i en säker, krypterad miljö."
@@ -2479,11 +2481,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7216,11 +7213,6 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -7233,6 +7225,11 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -8907,6 +8904,9 @@
       "For all ${ BRAND_NAME } services": [
         "För alla ${ BRAND_NAME }-tjänster"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "För att fortsätta använda ${ BRAND_NAME }-produkter, frigör utrymme eller ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "För att ladda upp eller synkronisera filer, frigör utrymme eller ${ upgrade }"
       ],
@@ -8925,6 +8925,12 @@
       ],
       "Your ${ appStorage } is full": [
         "Ditt ${ appStorage } är fullt"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Ditt ${ productString } är ${ percentage } % fullt. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Ditt ${ productString } är fullt. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Ditt lagringsutrymme är ${ percentage } % fullt. ${ cta }."
@@ -9023,6 +9029,25 @@
         "För ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } lagringsutrymme per användare"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } anpassad e-postdomän",
+        "${ planNumberOfDomains } anpassade e-postdomäner"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-postadress",
+        "${ planNumberOfEmails } e-postadresser"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mappar, etiketter och anpassade filter"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB lagringsutrymme"
@@ -9062,25 +9087,6 @@
       ],
       "Your privacy is our mission": [
         "Din integritet är vårt uppdrag"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } lagringsutrymme per användare"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } anpassad e-postdomän",
-        "${ planNumberOfDomains } anpassade e-postdomäner"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-postadress",
-        "${ planNumberOfEmails } e-postadresser"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mappar, etiketter och anpassade filter"
       ]
     },
     "Subscription renewal state": {

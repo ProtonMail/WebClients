@@ -469,6 +469,9 @@
       "Go back": [
         "Înapoi"
       ],
+      "Go back to album “${ albumName }“": [
+        "Înapoi la albumul „${ albumName }“"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Accesare ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -1388,9 +1391,6 @@
       ],
       "Monthly": [
         "Lunar"
-      ],
-      "New!": [
-        "Nou!"
       ],
       "Two-year": [
         "Bianual"
@@ -2668,6 +2668,9 @@
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "Asigurați o securitate de top pentru cont cu programul ${ PROTON_SENTINEL_NAME }."
       ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Asigurați-vă că puteți încă să vă accesați contul și datele chiar dacă vă pierdeți parola ${ BRAND_NAME }."
+      ],
       "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
         "Pentru o tranziție lină la ${ BRAND_NAME }, importați-vă datele din Google, Outlook și altele."
       ],
@@ -3086,8 +3089,8 @@
       "Failed to load the STL preview": [
         "Nu s-a putut încărca examinarea STL."
       ],
-      "Failed to save photo to your Drive": [
-        "Nu s-a putut salva fotografia în Drive."
+      "Failed to save some photos to your Drive": [
+        "Nu s-au putut salva unele fotografii în Drive."
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Fișierul „${ item.name }” nu poate fi încărcat din cauza erorii „${ error }”."
@@ -5379,11 +5382,11 @@
       "Photo is set as album cover": [
         "Fotografia este setată ca și copertă de album"
       ],
-      "Photo saved to your Drive": [
-        "Fotografia a fost salvată în Drive."
-      ],
       "Photo was copied to stream and marked favorite there.": [
         "Fotografia a fost copiată în fluxul foto și marcată ca favorită acolo."
+      ],
+      "Photo(s) saved to your Drive": [
+        "Fotografiile s-a salvat în unitatea Drive."
       ],
       "Photos have been successfully recovered.": [
         "Fotografiile au fost recuperate."
@@ -8752,6 +8755,9 @@
       "Subfolder failed to be loaded": [
         "Subfolderul nu s-a putut încărca."
       ],
+      "The Albums feature is on its way! We're rolling it out gradually — please try again soon": [
+        "Funcția albume este pe drum! O lansăm treptat — vă rugăm să reîncercați în curând."
+      ],
       "The document failed to be created": [
         "Crearea documentului a eșuat."
       ],
@@ -9908,6 +9914,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Oferta speciala este valabilă pentru primii doi ani."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Abonamentul vi se va reînnoi la același tarif în fiecare an."
       ]
@@ -9988,6 +9997,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Preț standard ${ amount } pentru 30 de luni"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Oferta speciala este valabilă pentru primii doi ani."
       ]
     },
     "specialoffer: Title": {
@@ -10105,6 +10117,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Pentru a continua să încărcați și să sincronizați fișiere, eliberați spațiu sau treceți la un plan cu plată pentru a obține mai mult spațiu."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Pentru a continua să utilizați produsele ${ BRAND_NAME }, eliberați spațiu sau ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Pentru a trimite sau primi mesaje, eliberați spațiu sau treceți la un plan cu plată pentru a obține mai mult spațiu."
       ],
@@ -10127,6 +10142,12 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage } este plin."
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Spațiul de stocare din ${ productString } este ${ percentage }% plin. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Spațiul din ${ productString } este plin. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Spațiul de stocare este ${ percentage }% ocupat. ${ cta }."
@@ -10229,47 +10250,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Pentru ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription reminder": {
@@ -10536,6 +10516,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {

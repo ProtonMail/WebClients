@@ -1377,9 +1377,6 @@
       "Monthly": [
         "თვეში ერთხელ"
       ],
-      "New!": [
-        "ახალი!"
-      ],
       "Two-year": [
         "ორი წლით"
       ]
@@ -2609,6 +2606,9 @@
       "Also included": [
         "ასევე შეიცავს"
       ],
+      "Automatically forward incoming email to another email address.": [
+        "შემომავალი ელფოსტის ავტომატური გადაგზავნა სხვა ელფოსტის მისამართზე."
+      ],
       "Connect your CRM, website, printers, and more.": [
         "დააკავსირეთ თქვენი CRM, ვებგვერდი, პრინტერი და ა.შ."
       ],
@@ -2624,6 +2624,9 @@
       "Designed for users seeking heightened protection for their accounts.": [
         "შექმნილია მომხმარებლებისთვის, რომლების თავიანთი ანგარიშებისთვის გაძლიერებულ უსაფრთხოებას ეძებენ."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "იოლი წვდომა თქვენს ელფოსტასთან და კალენდართან კომპიუტერიდან და მობილურიდან."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების დაშიფვრა და შემოტანა... ამას რამდენიმე წუთი შეიძლება დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
       ],
@@ -2635,6 +2638,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "როგორც ჩანს კონტაქტების სია, რომლის შემოტანასაც ცდილობთ, ჯგუფებსაც შეიცავს. გადახედეთ, გნებავთ თუ არა ამ ჯგუფების შემოტანა."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "საშუალებას გაძლევთ, მყისიერად დაამატოთ შეხვედრის ბმულები თქვვენი მოვლენის მოსაწვევებს."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების შერწყმა... ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
@@ -3018,6 +3024,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "გარე მოწვევები დროებით გამორთულია. მოგვიანებით სცადეთ"
+      ],
+      "Failed to copy photo to album": [
+        "სურათის ალბომში კოპირება ჩავარდა"
       ],
       "Failed to load the STL preview": [
         "STL მინიატურის ჩატვირთვა ჩავარდა"
@@ -4329,6 +4338,10 @@
         "${ pausedCount } შეჩერებულია",
         "${ pausedCount } შეჩერებულია"
       ],
+      "${ photoCount } item": [
+        "${ photoCount } ელემენტი",
+        "${ photoCount } ელემენტი"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }-ს სულ ცოტა 1 გამოყოფილი სერვერი ესაჭიროება ${ serverPricePerMonth }"
       ],
@@ -4903,6 +4916,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "თუ ვერ იპოვეთ ელფოსტა თქვენს საფოსტო ყუთში, გადაამოწმეთ სპამის საქაღალდეც."
       ],
+      "If you have a large photo library, it might take some time.": [
+        "თქვენი სურათების ბიბლიოთეკა დიდია. ამას რაღაც დრო დასჭირდება."
+      ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "თუ გაქვთ ამათგან ერთ-ერთი, განბლოკვის პროცესის დასაწყებად \nგააგრძელეთ ${ BRAND_NAME }-ის ანგარიშის დაყენება."
       ],
@@ -5181,6 +5197,9 @@
       "Password copied to clipboard": [
         "პაროლი დაკოპირდა გაცვლის ბაფერში"
       ],
+      "Password must have:": [
+        "პაროლს უნდა ჰქონდეს:"
+      ],
       "Paused": [
         "შეჩერებულია"
       ],
@@ -5205,6 +5224,9 @@
       "Photo is set as album cover": [
         "სურათი დაყენებულია ალბომის ყდად"
       ],
+      "Photo was copied to stream and marked favorite there.": [
+        "სურათი დაკოპირდა ნაკადში და იქ მოინიშნა რჩეულად."
+      ],
       "Photos have been successfully recovered.": [
         "ფოტოების აღდგენა წარმატებით დასრულდა."
       ],
@@ -5219,6 +5241,9 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "გთხოვთ, შეიყვანოთ პაროლი შინაარსის გასაშიფრად და სანახავად."
+      ],
+      "Please fill in all required fields.": [
+        "გთხოვთ, შეავსოთ ყველა საჭირო ველი."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "დაიმახსოვრეთ, რომ ამ ჯგუფებზე მინიჭებული მისამართები *არ* წაიშლება."
@@ -5872,6 +5897,9 @@
       "You can close the tab or browser in the meantime.": [
         "ამასობაში შეგიძლიათ, ბრაუზერის ჩანართი დახუროთ."
       ],
+      "You can close the tab. We'll work on it in the background.": [
+        "შეგიძლიათ, დახუროთ ჩანართი. ჩვენ ფონურად ვიმუშავებთ."
+      ],
       "You can import one data type at a time.": [
         "ერთ ცდაზე მონაცემების, მხოლოდ, ერთი ტიპის შემოტანა შეგიძლიათ."
       ],
@@ -6508,6 +6536,9 @@
       ],
       "Password": [
         "პაროლი"
+      ],
+      "Password strength": [
+        "პაროლის სიძლიერე"
       ],
       "Payer": [
         "გადამხდელი"
@@ -8428,6 +8459,9 @@
       "Root folder failed to be loaded": [
         "Root საქაღალდის ჩატვირთვის შეცდომა"
       ],
+      "Selected photo(s) already in \"${ albumName }\"": [
+        "არჩეული სურათები უკვე \"${ albumName }\"-შია"
+      ],
       "Share invitation accepted successfully": [
         "ზიარის მოსაწვევზე დათანხმება წარმატებულია"
       ],
@@ -8487,6 +8521,12 @@
       ],
       "⁠Some photo(s) could not be added to \"${ albumName }\"": [
         "შეუძლებელია ზოგიერთი სურათის ჩამატება\"${ albumName }\"-ში"
+      ],
+      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
+        "ზოგიერთი სურათი ვერ წაიშალა ${ albumLink.name }-დან"
+      ],
+      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
+        "თქვენი სურათები წაიშალა ${ albumLink.name }-დან"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9558,6 +9598,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "სპეციალური შეთავაზება ძალაშია პირველი 2 წელი."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "თქვენი გამოწერა განახლდება იგივე ტარიფით ყოველ წელს."
       ]
@@ -9637,6 +9680,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "სტანდარტული ფასი ${ amount } 30 თვისთვის"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "სპეციალური შეთავაზება ძალაშია პირველი 2 წელი"
       ]
     },
     "specialoffer: Title": {
@@ -9776,6 +9822,12 @@
       "Your ${ appStorage } is full": [
         "თქვენი ${ appStorage } სავსეა"
       ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "თქვენი ${ productString } ${ percentage }%-ითაა სავსე. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "თქვენი ${ productString } სავსეა. ${ cta }."
+      ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "თქვენი საცავი ${ percentage }%-ით სავსეა. ${ cta }."
       ],
@@ -9871,47 +9923,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }-თვის"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription reminder": {
@@ -10171,6 +10182,47 @@
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "დარწმუნებული ბრძანდებით?"
@@ -10195,6 +10247,11 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "ჩვენი სისტემა გადახდის ამ მეთოდით ავტომატურად გადახდას აღარ სცდის, მაგრამ თქვენი გამოწერა გადახდის ციკლის გასვლის შემდეგ მაინც განახლდება. თუ გნებავთ, ჩამოსწიოთ თქვენი პაკეტი, ეს თქვენ თვითონ, გადახდის ციკლის დასრულებამდე უნდა გააკეთოთ. ჩვენ არ შეგვიძლია თქვენი პაკეტის ავტომატურად ჩამოწევა, რადგან თქვენი მონაცემების ზომა უფასო ანგარიშის საცავის ლიმიტებს აჭარბებს ან ფასიან ფუნქციებს იყენებთ. ჩვენ არ წავშლით ავტომატურად თქვენს ფაილებს, ელფოსტებსა თუ სხვა მონაცემებს. თუ ავტომატურად გადახდას გამორთავთ, დაიმახსოვრეთ, რომ საჭიროა გადაიხადოთ ინვოისები. წინააღმდეგ შემთხვევაში, თქვენი ანგარიში შეჩერდება."
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "დაზოგეთ ${ priceString }"
       ]
     },
     "Subtitle": {
@@ -11116,6 +11173,9 @@
       ],
       "Set up your organization": [
         "მოირგეთ თქვენი ორგანიზაცია"
+      ],
+      "Setting up Albums & Filters": [
+        "მიმდინარეობს ალბომებისა და ფილტრების მორგება"
       ],
       "Settings": [
         "მორგება"

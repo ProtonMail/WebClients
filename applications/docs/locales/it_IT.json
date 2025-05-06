@@ -1133,9 +1133,6 @@
       "Monthly": [
         "Mensile"
       ],
-      "New!": [
-        "Novità!"
-      ],
       "Two-year": [
         "Due anni"
       ]
@@ -2344,6 +2341,11 @@
         "Fattura scaduta"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "usa l'assistente di importazione Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } ti consente di lavorare insieme ad altri in un ambiente sicuro e crittografato."
@@ -2479,11 +2481,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "usa l'assistente di importazione Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7207,11 +7204,6 @@
         "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -7224,6 +7216,11 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -8901,6 +8898,9 @@
       "For all ${ BRAND_NAME } services": [
         "Per tutti i servizi ${ BRAND_NAME }"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Per continuare a utilizzare i prodotti ${ BRAND_NAME }, libera spazio o esegui l'${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Per caricare o sincronizzare i file, libera spazio o ${ upgrade }"
       ],
@@ -8919,6 +8919,12 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage } pieno"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Il tuo ${ productString } è pieno al ${ percentage }%. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Il tuo ${ productString } è pieno. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Spazio di archiviazione pieno al ${ percentage }%. ${ cta }."
@@ -9017,6 +9023,25 @@
         "Per ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } di spazio di archiviazione per utente"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } ti offre tutte le app, tutte le funzionalità, l'accesso anticipato alle nuove versioni e tutto ciò di cui hai bisogno per avere il controllo dei tuoi dati e della loro sicurezza."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } dominio email personalizzato",
+        "${ planNumberOfDomains } domini email personalizzati"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } indirizzo email",
+        "${ planNumberOfEmails } indirizzi email"
+      ],
+      "Folders, labels, and custom filters": [
+        "Cartelle, etichette, e filtri personalizzati"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB di spazio di archiviazione"
@@ -9056,25 +9081,6 @@
       ],
       "Your privacy is our mission": [
         "La tua privacy è la nostra missione"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } di spazio di archiviazione per utente"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } ti offre tutte le app, tutte le funzionalità, l'accesso anticipato alle nuove versioni e tutto ciò di cui hai bisogno per avere il controllo dei tuoi dati e della loro sicurezza."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } dominio email personalizzato",
-        "${ planNumberOfDomains } domini email personalizzati"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } indirizzo email",
-        "${ planNumberOfEmails } indirizzi email"
-      ],
-      "Folders, labels, and custom filters": [
-        "Cartelle, etichette, e filtri personalizzati"
       ]
     },
     "Subscription renewal state": {

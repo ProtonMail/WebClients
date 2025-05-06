@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "activate": [
-        "有効にする"
-      ],
       "Activate": [
         "有効化"
+      ],
+      "activate": [
+        "有効にする"
       ],
       "Activate organization key": [
         "組織の鍵を有効化する"
@@ -262,6 +262,9 @@
       "Discard changes": [
         "変更を破棄"
       ],
+      "Discard Changes": [
+        "変更を破棄"
+      ],
       "Discover ${ planName }": [
         "${ planName } を発見"
       ],
@@ -441,6 +444,12 @@
       ],
       "Invite user": [
         "ユーザーを招待"
+      ],
+      "Keep Editing": [
+        "編集を続ける"
+      ],
+      "Keep editing": [
+        "編集を続ける"
       ],
       "Keep logo": [
         "ロゴを維持"
@@ -673,10 +682,10 @@
       "Select country ${ country }": [
         "国 ${ country }を選択"
       ],
-      "Select file": [
+      "select file": [
         "ファイルを選択"
       ],
-      "select file": [
+      "Select file": [
         "ファイルを選択"
       ],
       "Send code": [
@@ -1238,9 +1247,6 @@
       "Monthly": [
         "月額"
       ],
-      "New!": [
-        "New!"
-      ],
       "Two-year": [
         "2年払い"
       ]
@@ -1562,6 +1568,11 @@
     "Confirmation title": {
       "Delete payment method": [
         "支払い方法の削除"
+      ]
+    },
+    "CountriesStep:Info": {
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount }個が選択済み"
       ]
     },
     "Country name": {
@@ -3985,6 +3996,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } の暗号化技術は私たちでさえもパスワードにアクセスできないことを意味しています。"
       ],
+      "${ countriesCount } country enabled": [
+        "${ countriesCount } か国が有効"
+      ],
       "${ discountPercent }% discount": [
         "${ discountPercent }%割引"
       ],
@@ -4090,8 +4104,14 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice } /月)"
       ],
+      "(default)": [
+        "（デフォルト）"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**${ BRAND_NAME } アドレス**を取得すると、${ MAIL_SHORT_APP_NAME } や ${ CALENDAR_SHORT_APP_NAME } を含むすべての ${ BRAND_NAME_TWO } サービスを使用できます。"
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } 個以上"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ボーナスストレージ"
@@ -4372,10 +4392,10 @@
       "Data recoverable on this device": [
         "このデバイスでデータを復元できます"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -4921,6 +4941,9 @@
       "No results found": [
         "該当する項目がありません"
       ],
+      "No single sign-on": [
+        "シングルサインオンなし"
+      ],
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
       ],
@@ -4995,6 +5018,9 @@
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "パスワードは${ MIN_PASSWORD_LENGTH }文字かそれ以上である必要があります。"
+      ],
+      "Password must have:": [
+        "パスワードは以下を含む必要があります:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支払いの詳細は TLS で暗号化され、スイスのプライバシー法によっても保護されています。"
@@ -5314,6 +5340,9 @@
       "The securest way to browse, stream, and be online.": [
         "ブラウジング、ストリーム、オンラインをするための最も安全な方法。"
       ],
+      "The unpublished changes you made will be lost.": [
+        "未公開の変更内容は失われます。"
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "認証プロセスは、新しいブラウザのタブを開きます。アクティブなポップアップブロッカーは無効にしてください。"
       ],
@@ -5352,6 +5381,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "このメッセージはサポートチームに届きません、サービスに関する問題や、当社からのさらなる対応が必要な場合は、${ supportLink } をご利用ください。"
+      ],
+      "This service is not available to users signing in with single sign-on.": [
+        "このサービスは、シングル サインオンでサインインするユーザーはご利用になれません。"
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "このユーザーは組織の経理責任を負っています。このユーザーを降格させた場合、あなたが経理責任を負います。"
@@ -5524,11 +5556,11 @@
       "User activated": [
         "ユーザーがアクティブ化"
       ],
-      "username": [
-        "ユーザー名"
-      ],
       "Username": [
         "ユーザーネーム"
+      ],
+      "username": [
+        "ユーザー名"
       ],
       "Users": [
         "ユーザー"
@@ -5718,6 +5750,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "確認のための正しいメールアドレスを確認するために、一度編集することができます。"
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "組織のメンバーが${ BRAND_NAME } アカウントの パスワード を作成または リセット するときに使用する パスワード のルールを適用できます。"
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "1つのバンドルでプレミアムプライバシーサービスをすべて入手できます。しかもたった **${ priceString }/月**です。"
@@ -6063,10 +6098,10 @@
       "Allow recovery by phone": [
         "電話番号での回復を許可"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "許可されたドメイン"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "許可されたドメイン"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6152,6 +6187,9 @@
       ],
       "Colors": [
         "色"
+      ],
+      "Common passwords": [
+        "一般的なパスワード"
       ],
       "Company": [
         "会社"
@@ -6249,6 +6287,9 @@
       "Email or username": [
         "メールアドレスまたはユーザー名"
       ],
+      "Enabled": [
+        "有効"
+      ],
       "Enter the code displayed on your TV": [
         "TV に表示されているコードを入力"
       ],
@@ -6327,6 +6368,9 @@
       "Main": [
         "メイン"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "最大文字数は${ MAX_CHARS }です"
+      ],
       "Members without 2FA": [
         "2要素認証がないメンバー"
       ],
@@ -6341,6 +6385,9 @@
       ],
       "Minimum number of characters": [
         "最小文字数"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "最小文字数は${ MIN_CHARS }です"
       ],
       "Moderate NAT": [
         "モデレート NAT"
@@ -6419,6 +6466,9 @@
       ],
       "Password": [
         "パスワード"
+      ],
+      "Password strength": [
+        "パスワードの強度"
       ],
       "Payer": [
         "支払人"
@@ -6501,6 +6551,9 @@
       "Second password": [
         "セカンドパスワード"
       ],
+      "Sequences": [
+        "シーケンス"
+      ],
       "Show ${ n } administrator": [
         "${ n }人の管理者を表示"
       ],
@@ -6551,6 +6604,9 @@
       ],
       "Type": [
         "種類"
+      ],
+      "Uppercase and lowercase letters": [
+        "大文字と小文字"
       ],
       "User": [
         "ユーザー"
@@ -6757,6 +6813,9 @@
       ],
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "${ DOCS_SHORT_APP_NAME }でコラボレーションする方法"
+      ],
+      "How to create strong passwords": [
+        "強力なパスワードの作成方法"
       ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME }を有効にする方法"
@@ -8290,6 +8349,9 @@
       ]
     },
     "Option": {
+      "Allowed ${ defaultLabel }": [
+        "許可済み${ defaultLabel }"
+      ],
       "Country configs": [
         "各国の設定ファイル"
       ],
@@ -8322,6 +8384,9 @@
       ],
       "Not allowed": [
         "許可しない"
+      ],
+      "Optional ${ defaultLabel }": [
+        "オプションの${ defaultLabel }"
       ],
       "Organization only": [
         "組織のみ"
@@ -9607,6 +9672,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "特別オファーは最初の2年間有効です。"
+      ],
       "Your subscription will renew at the same rate every year.": [
         "サブスクリプションは毎年同じ料金で更新されます。"
       ]
@@ -9685,6 +9753,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "標準価格では 30 か月毎に ${ amount }"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "特別オファーは最初の2年間有効です"
       ]
     },
     "specialoffer: Title": {
@@ -9991,6 +10062,9 @@
       "For all ${ BRAND_NAME } services": [
         "すべての ${ BRAND_NAME } サービス向け"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "${ BRAND_NAME }製品を引き続きご利用いただくには、容量を空けるか、${ upgrade }ください。"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "ファイルをアップロードまたは同期するには、容量を空けるか ${ upgrade } してください"
       ],
@@ -10008,6 +10082,12 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage }はいっぱいです"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString }は${ percentage }%使用中です。${ cta }。"
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString }はいっぱいです。${ cta }。"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "容量は${ percentage }%使用中です。${ cta }。"
@@ -10140,47 +10220,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } の場合"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription reminder": {
@@ -10467,6 +10506,47 @@
         "独自の短い @pm.me メール エイリアス"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "よろしいですか?"
@@ -10491,6 +10571,11 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "この支払い方法による自動課金はなくなりますが、課金サイクルの終了時に購読は更新されます。サブスクリプションをダウングレードまたは変更したい場合は、請求期間の終了前にご自身で行う必要があります。無料プランのストレージ容量を超過している場合、またはその他の有料機能を使用している場合、ファイル、メール、その他のデータを自動削除できないため、自動ダウングレードはできません。自動支払いを無効にした場合は、アカウントの停止を防ぐために、期日までに次回の請求書を支払うことを忘れないでください。"
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "${ priceString }を節約"
       ]
     },
     "Subscription status": {
@@ -10806,6 +10891,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Account password rules": [
+        "${ BRAND_NAME } アカウントパスワードルール"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME }Scribe"
       ],
@@ -10962,10 +11050,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
       "Change login password": [
@@ -11731,6 +11819,12 @@
       ],
       "Feature in early access": [
         "早期アクセスの機能"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "例：**12345、abcde**など"
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "例：**password、qwerty** など。"
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "認証アサーションに署名するための、ユーザー情報プロバイダの公開鍵。ユーザー情報プロバイダから証明書ハッシュを取得する。"

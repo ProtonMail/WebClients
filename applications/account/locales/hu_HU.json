@@ -949,11 +949,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "Refresh the page": [
-        "Oldal frissítése"
-      ],
       "refresh the page": [
         "frissítse az oldalt"
+      ],
+      "Refresh the page": [
+        "Oldal frissítése"
       ],
       "Reject": [
         "Elutasítás"
@@ -1126,11 +1126,11 @@
       "Select country ${ country }": [
         "Ország kiválasztása: ${ country }"
       ],
-      "Select file": [
-        "Fájl kiválasztása"
-      ],
       "select file": [
         "fájl kiválasztása"
+      ],
+      "Select file": [
+        "Fájl kiválasztása"
       ],
       "Select files": [
         "Fájlok kiválasztása"
@@ -1999,9 +1999,6 @@
       ],
       "Monthly": [
         "Havonta"
-      ],
-      "New!": [
-        "Új"
       ],
       "Two-year": [
         "Kétévente"
@@ -4176,14 +4173,6 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 vagy Windows 32-bit (ARM64)"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Title": {
@@ -6377,12 +6366,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } az App Store-ban"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } a Play Áruházban"
-      ],
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME } alkalmazást"
       ],
@@ -7410,11 +7393,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktiváljon legalább egy helyreállítási módszert, hogy abban az esetben is visszaszerezhesse a hozzáférést a ${ BRAND_NAME } fiókjában tárolt adataihoz, ha elfelejtené a jelszavát."
       ],
-      "Active": [
-        "Aktív"
-      ],
       "active": [
         "aktív"
+      ],
+      "Active": [
+        "Aktív"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hozzon létre @pm.me címet a fiókjához. Ez a rövid név a \"${ MAIL_APP_NAME } nekem\", vagy \"személyes üzenet nekem\" (Private Message me) rövidítésre utal"
@@ -7852,11 +7835,11 @@
       "Data recoverable on this device": [
         "Ezen az eszközön helyreállíthatók az adatok"
       ],
-      "dedicated servers": [
-        "dedikált szerverek"
-      ],
       "Dedicated servers": [
         "Dedikált szerverek"
+      ],
+      "dedicated servers": [
+        "dedikált szerverek"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikált IP-címekkel rendelkező dedikált kiszolgálók adhatók hozzá a privát átjárókhoz a finoman hangolható hozzáférés-szabályozás érdekében."
@@ -8141,9 +8124,6 @@
       ],
       "Failed to fetch logs.": [
         "Napló betöltése sikertelen."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Gyors és koncentrált. E-mail és naptár, közvetlenül az asztalon."
       ],
       "Featured in": [
         "Kiemelve"
@@ -9713,11 +9693,11 @@
       "User activated": [
         "Felhasználó aktiválva"
       ],
-      "username": [
-        "felhasználónév"
-      ],
       "Username": [
         "Felhasználónév"
+      ],
+      "username": [
+        "felhasználónév"
       ],
       "Users": [
         "Felhasználók"
@@ -10880,10 +10860,10 @@
       "Allow sharing outside the organization": [
         "A szervezeten kívüli megosztás engedélyezése"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Engedélyezett domain"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Engedélyezett domain"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10963,9 +10943,6 @@
       ],
       "Backup password": [
         "Biztonsági jelszó"
-      ],
-      "Beta": [
-        "Béta"
       ],
       "Billing cycle": [
         "Számlázási ciklus"
@@ -12174,11 +12151,11 @@
       "perform a password reset from your active session": [
         "visszaállítani a jelszavát az aktív munkafolyamatból."
       ],
-      "Privacy policy": [
-        "Adatvédelmi irányelvek"
-      ],
       "privacy policy": [
         "adatvédelmi irányelvek"
+      ],
+      "Privacy policy": [
+        "Adatvédelmi irányelvek"
       ],
       "Reactivate now": [
         "Újraaktiválás most"
@@ -12780,32 +12757,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kezdje el a használatot ${ priceCoupon } áron"
-      ],
-      "Starting from ${ pricing }": [
-        "Kezdőár: ${ pricing }"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade to ${ planName }": [
-        "Váltás ${ planName } csomagra"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Folytatás az ingyenessel"
@@ -12833,6 +12784,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Váltás ${ upsellPlanHumanSize } csomagra"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kezdje el a használatot ${ priceCoupon } áron"
+      ],
+      "Starting from ${ pricing }": [
+        "Kezdőár: ${ pricing }"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade to ${ planName }": [
+        "Váltás ${ planName } csomagra"
       ]
     },
     "new_plans: feature": {
@@ -13546,14 +13523,6 @@
         "Oldja fel az összes ${ BRAND_NAME } prémium terméket és funkciót mindössze ${ priceLine }-ért. Bármikor lemondható."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } próbaváltozat"
-      ],
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -13572,6 +13541,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Váltson nagyobb csomagra a prémium funkciók eléréshez"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } próbaváltozat"
+      ],
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
@@ -17414,47 +17391,6 @@
         "${ totalPrice } áron"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatikus e-mail továbbítás ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Short @pm.me email address": [
-        "Rövid @pm.me e-mail cím"
-      ],
-      "Support our mission": [
-        "Támogassa küldetésünket"
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "Upgrade your productivity": [
-        "Növelje a termelékenységét"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
-      ],
-      "Your privacy is our mission": [
-        "Az Ön adatvédelme a mi küldetésünk"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } és ${ VPN_SHORT_APP_NAME } prémium funkciókkal"
@@ -17743,6 +17679,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Az Ön saját rövid @pm.me e-mail álnévcíme"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatikus e-mail továbbítás ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Short @pm.me email address": [
+        "Rövid @pm.me e-mail cím"
+      ],
+      "Support our mission": [
+        "Támogassa küldetésünket"
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "Upgrade your productivity": [
+        "Növelje a termelékenységét"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
+      ],
+      "Your privacy is our mission": [
+        "Az Ön adatvédelme a mi küldetésünk"
       ]
     },
     "Subscription renewal state": {
@@ -18474,10 +18451,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
@@ -18902,15 +18879,6 @@
       ],
       "Folders and labels": [
         "Mappák és címkék"
-      ],
-      "For Linux": [
-        "Linuxra"
-      ],
-      "For macOS": [
-        "MacOS-re"
-      ],
-      "For Windows": [
-        "Windowsra"
       ],
       "Forgot password": [
         "Elfelejtett jelszó"

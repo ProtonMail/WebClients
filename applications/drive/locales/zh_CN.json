@@ -1365,9 +1365,6 @@
       "Monthly": [
         "月费"
       ],
-      "New!": [
-        "新！"
-      ],
       "Two-year": [
         "两年付费"
       ]
@@ -3056,9 +3053,6 @@
       ],
       "Failed to load the STL preview": [
         "加载 STL 预览失败"
-      ],
-      "Failed to save photo to your Drive": [
-        "未能将照片保存至 Proton Drive"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "由于“${ error }”错误，文件“${ item.name }”无法上传"
@@ -4907,6 +4901,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
       ],
+      "If you have a large photo library, it might take some time.": [
+        "如果您有一个庞大的照片库，这可能需要一些时间。"
+      ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "如果您有其中之一，请继续进行 ${ BRAND_NAME } 账户设置以开始解锁过程。"
       ],
@@ -5218,9 +5215,6 @@
       ],
       "Photo is set as album cover": [
         "照片被设为相册封面"
-      ],
-      "Photo saved to your Drive": [
-        "照片已保存至 Proton Drive"
       ],
       "Photo was copied to stream and marked favorite there.": [
         "照片被复制到流中并被标记为收藏。"
@@ -5846,6 +5840,9 @@
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
       ],
+      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
+        "我们正在将照片升级到新的体验！在过渡期间，照片修复功能暂时无法使用。一切都会在几天内准备就绪，感谢您的理解。"
+      ],
       "Week": [
         "周"
       ],
@@ -5926,6 +5923,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "同时，您也可以关闭当前标签页或浏览器。"
+      ],
+      "You can close the tab. We'll work on it in the background.": [
+        "您可以关闭此标签页，我们将在后台进行处理。"
       ],
       "You can import one data type at a time.": [
         "您一次可以导入一种数据类型。"
@@ -8458,6 +8458,9 @@
       "Subfolder failed to be loaded": [
         "加载子文件夹失败"
       ],
+      "The Albums feature is on its way! We're rolling it out gradually — please try again soon": [
+        "相册功能即将推出！我们将逐步推出该功能，请稍后重试。"
+      ],
       "The document failed to be created": [
         "文档创建失败"
       ],
@@ -9562,6 +9565,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "特别优惠的有效期为最初的两年。"
+      ],
       "Your subscription will renew at the same rate every year.": [
         "您的订阅将以每年相同的费率续订。"
       ]
@@ -9640,6 +9646,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "30个月的标准价格为${ amount }"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "特别优惠的有效期为最初的两年"
       ]
     },
     "specialoffer: Title": {
@@ -9757,6 +9766,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "要继续上传和同步文件，请释放存储空间或升级以获取更多存储空间。"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "若要继续使用 ${ BRAND_NAME } 产品，请释放空间或 ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "若要发送或接收电子邮件，请释放存储空间或升级以获取更多存储空间。"
       ],
@@ -9777,6 +9789,12 @@
       ],
       "Your ${ appStorage } is full": [
         "您的 ${ appStorage } 已满"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "您的 ${ productString } 已使用 ${ percentage }%。${ cta }。"
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "您的 ${ productString } 已满。 ${ cta }。"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "您的存储空间已使用 ${ percentage }%。${ cta }。"
@@ -9867,47 +9885,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "总计 ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动邮件转发 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "简短的 @pm.me 邮箱地址"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription reminder": {
@@ -10162,6 +10139,47 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己的短 @pm.me 邮箱别名"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动邮件转发 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "简短的 @pm.me 邮箱地址"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription renewal state": {
@@ -11093,6 +11111,9 @@
       ],
       "Set up your organization": [
         "设置您的组织"
+      ],
+      "Setting up Albums & Filters": [
+        "设置相册和过滤器"
       ],
       "Settings": [
         "设置"

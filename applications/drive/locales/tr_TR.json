@@ -1377,9 +1377,6 @@
       "Monthly": [
         "Aylık"
       ],
-      "New!": [
-        "Yeni!"
-      ],
       "Two-year": [
         "Iki yıllık"
       ]
@@ -2673,7 +2670,7 @@
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
-        "Toplantı bağlantılarını etkinlik davetlerinize anında ekleyin."
+        "Etkinlik davetlerinize anında görüşme bağlantıları ekleyin."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler birleştiriliyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
@@ -3072,9 +3069,6 @@
       ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
-      ],
-      "Failed to save photo to your Drive": [
-        "Fotoğraf Drive'ınıza kaydedilemedi"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "\"${ item.name }\" dosyası \"${ error }\" hatası nedeniyle yüklenemedi"
@@ -4390,8 +4384,8 @@
         "${ pausedCount } duraklatıldı"
       ],
       "${ photoCount } item": [
-        "${ photoCount } öğe",
-        "${ photoCount } öğe"
+        "${ photoCount } öge",
+        "${ photoCount } öge"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
@@ -5116,7 +5110,7 @@
         "${ appName } yükleniyor"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
-        "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanla platformumuz Calendly açılacak."
+        "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanlama platformumuz Calendly açılacak."
       ],
       "Loading link": [
         "Bağlantı yükleniyor"
@@ -5276,7 +5270,7 @@
         "Parola panoya kopyalandı"
       ],
       "Password must have:": [
-        "Parola şunları içermelidir:"
+        "Parolada şunlar bulunmalıdır:"
       ],
       "Paused": [
         "Duraklatıldı"
@@ -5302,11 +5296,8 @@
       "Photo is set as album cover": [
         "Fotoğraf albüm kapağı olarak ayarlandı"
       ],
-      "Photo saved to your Drive": [
-        "Fotoğraf Drive'ınıza kaydedildi"
-      ],
       "Photo was copied to stream and marked favorite there.": [
-        "Fotoğraf akışa kopyalandı ve orada favorilere eklendi."
+        "Fotoğraf akışa kopyalandı ve orada beğenilenlere eklendi."
       ],
       "Photos have been successfully recovered.": [
         "Fotoğraflar geri yüklendi."
@@ -5324,7 +5315,7 @@
         "Lütfen şifreyi çözmek ve içeriği görüntülemek için parolayı yazın."
       ],
       "Please fill in all required fields.": [
-        "Lütfen gerekli tüm alanları doldurun."
+        "Lütfen tüm zorunlu alanları doldurun."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Lütfen bu gruplara atanan adreslerin SİLİNMEYECEĞİNİ unutmayın."
@@ -5934,7 +5925,7 @@
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
       "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
-        "Fotoğrafları yeni deneyime yükseltiyoruz! Bu geçiş sırasında fotoğraf restorasyonu geçici olarak kullanılamayacaktır. Her şey birkaç gün içinde hazır olacak. Anlayışınız için teşekkür ederiz."
+        "Fotoğraflar için yeni bir deneyim sunuyoruz! Bu geçiş sırasında fotoğrafları geri yükleme özelliği geçici olarak kullanılamayacak. Birkaç gün içinde her şey bitmiş olacak. Anlayışınız için teşekkür ederiz."
       ],
       "Week": [
         "Hafta"
@@ -6671,7 +6662,7 @@
         "Parola"
       ],
       "Password strength": [
-        "Parola gücü"
+        "Parola zorluğu"
       ],
       "Payer": [
         "Ödeyen"
@@ -8261,7 +8252,7 @@
         "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişim şifrelemesi, bu bilgilere ${ BRAND_NAME } tarafından bile erişilememesini sağlar."
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "Görüşme katılımcılarının uygunluk durumunu görün ve toplantı planlarken zaman kazanın"
+        "Katılacakların uygunluk durumunu görün ve görüşme planlarken zaman kazanın"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Gerek duyduğunuz kadar kişi grubu oluşturarak büyük gruplara hızlı ve kolay bir şekilde e-posta gönderin (her grupta 100 kişiye kadar)"
@@ -8593,7 +8584,7 @@
         "Kök klasör yüklenemedi"
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
-        "Seçilen fotoğraf(lar) zaten “${ albumName }” albümünde bulunmaktadır."
+        "Seçilmiş fotoğraflar “${ albumName }” albümünde zaten var."
       ],
       "Share invitation accepted successfully": [
         "Paylaşma daveti kabul edildi"
@@ -8610,6 +8601,9 @@
       ],
       "Subfolder failed to be loaded": [
         "Alt klasör yüklenemedi"
+      ],
+      "The Albums feature is on its way! We're rolling it out gradually — please try again soon": [
+        "Albümler özelliği yolda! Yavaş yavaş kullanıma sunuyoruz. Lütfen bir süre sonra yeniden deneyin."
       ],
       "The document failed to be created": [
         "Belge oluşturulurken sorun çıktı"
@@ -9741,6 +9735,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Bu özel teklif ilk 2 yıl için geçerlidir."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Aboneliğiniz her yıl aynı tutarla yenilenecek."
       ]
@@ -9820,6 +9817,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "30 aylık standart ücret ${ amount }"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Bu özel teklif ilk 2 yıl için geçerlidir"
       ]
     },
     "specialoffer: Title": {
@@ -9937,6 +9937,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Dosyaları yüklemeyi ve eşitlemeyi sürdürebilmek için boş yer açın ya da daha fazla depolama alanı edinmek için tarifenizi yükseltin."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "${ BRAND_NAME } ürünlerini kullanmayı sürdürmek için yer açın ya da ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da daha fazla depolama alanı edinmek için tarifenizi yükseltin."
       ],
@@ -9958,6 +9961,12 @@
       ],
       "Your ${ appStorage } is full": [
         "Kullandığını ${ appStorage } dolu"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString } depolama alanınız %${ percentage } oranında dolu. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString } depolama alanınız doldu. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Depolama alanınız %${ percentage } oranında dolu. ${ cta }."
@@ -10054,47 +10063,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } için"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription reminder": {
@@ -10357,6 +10325,47 @@
         "Kendi kısa @pm.me e-posta takma adınız"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Emin misiniz?"
@@ -10385,7 +10394,7 @@
     },
     "Subscription saving": {
       "Save ${ priceString }": [
-        "${ priceString } tasarruf edin"
+        "${ priceString } indirim alın"
       ]
     },
     "Subtitle": {
@@ -11309,7 +11318,7 @@
         "Kuruluşunuzu ayarlayın"
       ],
       "Setting up Albums & Filters": [
-        "Albümler ve Filtreler ayarla"
+        "Albümler ve süzgeçler ayarlanıyor"
       ],
       "Settings": [
         "Ayarlar"

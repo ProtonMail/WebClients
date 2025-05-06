@@ -332,6 +332,9 @@
       "Get started": [
         "開始使用"
       ],
+      "Get the apps": [
+        "取得應用程式"
+      ],
       "Get verification code": [
         "取得驗證碼"
       ],
@@ -715,6 +718,9 @@
       ],
       "Try another method": [
         "嘗試其它驗證方式"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "啟用${ DARK_WEB_MONITORING_NAME }"
       ],
       "Unlock data": [
         "解鎖資料"
@@ -1119,6 +1125,9 @@
       ],
       "Annually": [
         "每年"
+      ],
+      "Lifetime": [
+        "終身"
       ],
       "Monthly": [
         "每月"
@@ -5033,6 +5042,9 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "提交單筆存款時，可使用以下位址或者掃描 QR 代碼。該筆存入款項在確認後，就會顯示在您的帳號裡。"
       ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "每${ cycle }個月自動續訂。"
+      ],
       "Subscription auto-renews every month.": [
         "每月自動續購授權"
       ],
@@ -5167,6 +5179,9 @@
       ],
       "Visa Secure logo": [
         "Visa Secure 標誌"
+      ],
+      "VPN IP": [
+        "VPN IP"
       ],
       "Warning": [
         "警告"
@@ -5408,8 +5423,14 @@
       "Your phone number will only be used for this one-time verification.": [
         "您的手機號碼只會用於此一次性驗證。"
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "您的方案開始於${ renewalTime }及於${ cycle }月重新開始。"
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "您的方案開始於${ renewalTime }及於每月重新開始。"
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "您的訂購授權將於 ${ renewalTime } 自動更新。"
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "您的系統時區似乎已更改為 ${ timezone }。您要更新您的時區喜好設定嗎？"
@@ -6020,6 +6041,9 @@
       ],
       "Your calendar URL": [
         "您的行事曆網址"
+      ],
+      "Your location": [
+        "您的位置"
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
@@ -7889,8 +7913,14 @@
       "Select billing country to pay": [
         "選取繳款國家以付款"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPriceStr } 續約。您可以在任何時候取消。"
+      ],
       "Timeout exceeded": [
         "已經逾時"
+      ],
+      "Your payment is still being processed": [
+        "您的付款仍在處理中"
       ]
     },
     "Payments.Error": {
@@ -8734,6 +8764,9 @@
       "Your ${ appStorage } is full": [
         "您的${ appStorage }已滿"
       ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "您已使用 ${ percentage }% 的 ${ productString }。${ cta }。"
+      ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "你的儲存量已達 ${ percentage }% 滿. ${ cta }."
       ],
@@ -8833,47 +8866,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } 版"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "and 15 more premium features": [
-        "還有額外的15個的加值功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動郵件轉寄${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "資料外洩警告 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面應用程式"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
-      ],
-      "No ads or tracking": [
-        "無廣告或追蹤"
-      ],
-      "Short @pm.me email address": [
-        "縮短電子郵件地址@pm.me"
-      ],
-      "Support our mission": [
-        "支援我們的計畫"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade your productivity": [
-        "提升您的生產力"
-      ],
-      "We don't sell your data": [
-        "我們不銷售您的資料"
-      ],
-      "Your privacy is our mission": [
-        "您的隱私是我們責任"
       ]
     },
     "Subscription reminder": {
@@ -9107,6 +9099,47 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "and 15 more premium features": [
+        "還有額外的15個的加值功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
       ]
     },
     "Subscription renewal state": {
@@ -9489,6 +9522,9 @@
       "Add to ${ groupName }": [
         "加入至 ${ groupName }"
       ],
+      "Add user": [
+        "加入使用者"
+      ],
       "Addresses": [
         "位址"
       ],
@@ -9614,6 +9650,9 @@
       ],
       "Deleting contacts": [
         "正在刪除聯絡人"
+      ],
+      "Desktop": [
+        "電腦版應用程式"
       ],
       "Does not repeat": [
         "不重複"
@@ -9908,6 +9947,9 @@
       ],
       "Summary": [
         "總結"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "啟用${ DARK_WEB_MONITORING_NAME }"
       ],
       "Unlock contacts groups": [
         "解鎖通訊群組"

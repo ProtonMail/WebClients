@@ -464,6 +464,9 @@
       "Go back": [
         "Torna indietro"
       ],
+      "Go back to album “${ albumName }“": [
+        "Torna all'album “${ albumName }“"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Vai a ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -1376,9 +1379,6 @@
       ],
       "Monthly": [
         "Mensile"
-      ],
-      "New!": [
-        "Novità!"
       ],
       "Two-year": [
         "Due anni"
@@ -3073,8 +3073,8 @@
       "Failed to load the STL preview": [
         "Impossibile caricare l'anteprima STL"
       ],
-      "Failed to save photo to your Drive": [
-        "Impossibile salvare la foto nel tuo Drive"
+      "Failed to save some photos to your Drive": [
+        "Impossibile salvare alcune foto nel tuo Drive"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Impossibile caricare il file \"${ item.name }\" a causa dell'errore \"${ error }\""
@@ -5302,11 +5302,11 @@
       "Photo is set as album cover": [
         "La foto è impostata come copertina dell'album."
       ],
-      "Photo saved to your Drive": [
-        "Foto salvata nel tuo Drive"
-      ],
       "Photo was copied to stream and marked favorite there.": [
         "La foto è stata copiata nello stream ed è stata contrassegnata come preferita."
+      ],
+      "Photo(s) saved to your Drive": [
+        "Foto salvatae nel tuo Drive"
       ],
       "Photos have been successfully recovered.": [
         "Le foto sono state recuperate con successo."
@@ -8130,11 +8130,6 @@
         "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -8147,6 +8142,11 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -10002,6 +10002,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Per continuare a caricare e sincronizzare i file, libera spazio o effettua l'upgrade per ottenere più spazio di archiviazione."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Per continuare a utilizzare i prodotti ${ BRAND_NAME }, libera spazio o esegui l'${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Per inviare e ricevere le email, libera spazio o effettua l'upgrade per più spazio di archiviazione."
       ],
@@ -10023,6 +10026,12 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage } pieno"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Il tuo ${ productString } è pieno al ${ percentage }%. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Il tuo ${ productString } è pieno. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Spazio di archiviazione pieno al ${ percentage }%. ${ cta }."
@@ -10119,47 +10128,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Per ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB di spazio di archiviazione"
-      ],
-      "and 15 more premium features": [
-        "e altre 15 funzionalità premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Inoltro automatico delle email ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Avvisi sulle violazioni di dati ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Applicazione desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
-      ],
-      "No ads or tracking": [
-        "Nessun annuncio o tracciamento"
-      ],
-      "Short @pm.me email address": [
-        "Indirizzo email breve @pm.me"
-      ],
-      "Support our mission": [
-        "Sostieni la nostra missione"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade your productivity": [
-        "Migliora la tua produttività"
-      ],
-      "We don't sell your data": [
-        "Non vendiamo i tuoi dati"
-      ],
-      "Your privacy is our mission": [
-        "La tua privacy è la nostra missione"
       ]
     },
     "Subscription reminder": {
@@ -10420,6 +10388,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Il tuo alias email breve @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB di spazio di archiviazione"
+      ],
+      "and 15 more premium features": [
+        "e altre 15 funzionalità premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Inoltro automatico delle email ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Avvisi sulle violazioni di dati ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Applicazione desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
+      ],
+      "No ads or tracking": [
+        "Nessun annuncio o tracciamento"
+      ],
+      "Short @pm.me email address": [
+        "Indirizzo email breve @pm.me"
+      ],
+      "Support our mission": [
+        "Sostieni la nostra missione"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Migliora la tua produttività"
+      ],
+      "We don't sell your data": [
+        "Non vendiamo i tuoi dati"
+      ],
+      "Your privacy is our mission": [
+        "La tua privacy è la nostra missione"
       ]
     },
     "Subscription renewal state": {
