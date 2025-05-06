@@ -379,7 +379,6 @@ export {
     isLifetimePlan,
     isManagedExternally,
     isRegularCycle,
-    isSubscriptionUnchanged,
     isTaxInclusive,
     isTrial,
     isTrialExpired,
@@ -389,6 +388,7 @@ export {
     willTrialExpire,
     type AggregatedPricing,
     type PricingForCycles,
+    isCheckForbidden,
 } from './core/subscription/helpers';
 export { type Subscription } from './core/subscription/interface';
 export type { FullPlansMap } from './core/subscription/interface';
