@@ -865,11 +865,11 @@
       "Refresh status": [
         "Opdater status"
       ],
-      "Refresh the page": [
-        "Opdater siden"
-      ],
       "refresh the page": [
         "opdater siden"
+      ],
+      "Refresh the page": [
+        "Opdater siden"
       ],
       "Reject": [
         "Afvis"
@@ -1027,11 +1027,11 @@
       "Select country": [
         "Vælg land"
       ],
-      "Select file": [
-        "Vælg fil"
-      ],
       "select file": [
         "vælg fil"
+      ],
+      "Select file": [
+        "Vælg fil"
       ],
       "Select files": [
         "Vælg filer"
@@ -1849,9 +1849,6 @@
       ],
       "Monthly": [
         "Månedlig"
-      ],
-      "New!": [
-        "Nyheder"
       ],
       "Two-year": [
         "To-År"
@@ -3820,14 +3817,6 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Dit ${ PLAN_NAMES[PLANS.PASS] }-abonnement er til en særpris på ${ price } pr. år. Hvis du nedgraderer til et gratis abonnement, mister du rabatten permanent, selv hvis du opgraderer igen engang i fremtiden."
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb til Debian/Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm for Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Title": {
@@ -5836,12 +5825,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } i App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } i Play Store"
-      ],
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME } app"
       ],
@@ -6781,11 +6764,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivér mindst én datagendannelsesmetode for at sikre dig, at du fortsat kan få adgang til indholdet af din ${ BRAND_NAME }-konto, hvis du mister din adgangskode."
       ],
-      "Active": [
-        "Aktiv"
-      ],
       "active": [
         "aktiv"
+      ],
+      "Active": [
+        "Aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Tilføj en @pm.me e-mailadresse til din konto. Dette simple, kortere domæne står for \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
@@ -7178,11 +7161,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerede servere"
-      ],
       "Dedicated servers": [
         "Dedikerede servere"
+      ],
+      "dedicated servers": [
+        "dedikerede servere"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresser kan tilføjes til private gateways for at finjustere adgangen."
@@ -7413,9 +7396,6 @@
       ],
       "Failed to fetch logs.": [
         "Kunne ikke hente logger."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Hurtigt og fokuseret. E-mail og kalender, lige på skrivebordet."
       ],
       "Fill in user details": [
         "Udfyld brugeroplysninger"
@@ -8811,11 +8791,11 @@
       "User activated": [
         "Bruger aktiveret"
       ],
-      "username": [
-        "brugernavn"
-      ],
       "Username": [
         "Brugernavn"
+      ],
+      "username": [
+        "brugernavn"
       ],
       "Users": [
         "Brugere"
@@ -9874,10 +9854,10 @@
       "Allow recovery using a trusted device": [
         "Tillad gendannelse ved hjælp af en betroet enhed"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tilladt domæne"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tilladt domæne"
       ],
       "Amount": [
@@ -9948,9 +9928,6 @@
       ],
       "Backup password": [
         "Adgangskode til sikkerhedskopi"
-      ],
-      "Beta": [
-        "Beta"
       ],
       "Billing cycle": [
         "Faktureringsperiode"
@@ -11649,29 +11626,6 @@
         "Mellem VPN-hastighed"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Opgradér til ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsæt med Free"
@@ -11699,6 +11653,29 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Opgrader til ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Opgradér til ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12380,14 +12357,6 @@
         "Dit valgte abonnement: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prøveversion"
-      ],
-      "Your account's usage": [
-        "Din kontos forbrug"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -12406,6 +12375,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås op for premium-funktioner ved at opgradere"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prøveversion"
+      ],
+      "Your account's usage": [
+        "Din kontos forbrug"
       ]
     },
     "new_plans: tooltip": {
@@ -15878,47 +15855,6 @@
         "Til ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } dag tilbage",
@@ -16198,6 +16134,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -16861,11 +16838,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-All address": [
-        "Catch-All-adresse"
-      ],
       "Catch-all address": [
         "Catch-all-adresse"
+      ],
+      "Catch-All address": [
+        "Catch-All-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
@@ -17238,15 +17215,6 @@
       ],
       "Folders and labels": [
         "Mapper og etiketter"
-      ],
-      "For Linux": [
-        "Til Linux"
-      ],
-      "For macOS": [
-        "Til macOS"
-      ],
-      "For Windows": [
-        "Til Windows"
       ],
       "Forgot recovery method": [
         "Glemt gendannelsesmetoden"
