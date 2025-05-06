@@ -32,7 +32,7 @@ export interface NewUpsellModalProps {
      * The description is a text put before the CTA, can be used alongside
      * the `customDescription` props
      */
-    description?: string;
+    description?: ReactNode;
     /**
      * Custom description are put below the CTA to ensure the CTA is alaways above the fold
      * can be used alongisde the `description` props

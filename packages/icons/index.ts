@@ -67,6 +67,8 @@ export type IconName =
     | 'brand-discover'
     | 'brand-edge'
     | 'brand-firefox'
+    | 'brand-github'
+    | 'brand-google'
     | 'brand-ios'
     | 'brand-linux'
     | 'brand-mac'
@@ -90,7 +92,6 @@ export type IconName =
     | 'brand-tor'
     | 'brand-twitter'
     | 'brand-reddit'
-    | 'brand-github'
     | 'brand-visa'
     | 'brand-windows'
     | 'brand-wireguard'
@@ -343,6 +344,7 @@ export type IconName =
     | 'shield-exclamation-filled'
     | 'size-arrow-up'
     | 'size-arrow-down'
+    | 'spam'
     | 'speech-bubble'
     | 'sliders'
     | 'squares'
@@ -462,6 +464,8 @@ export { IcBrandChrome } from './icons/IcBrandChrome';
 export { IcBrandDiscover } from './icons/IcBrandDiscover';
 export { IcBrandEdge } from './icons/IcBrandEdge';
 export { IcBrandFirefox } from './icons/IcBrandFirefox';
+export { IcBrandGithub } from './icons/IcBrandGithub';
+export { IcBrandGoogle } from './icons/IcBrandGoogle';
 export { IcBrandIos } from './icons/IcBrandIos';
 export { IcBrandLinux } from './icons/IcBrandLinux';
 export { IcBrandMac } from './icons/IcBrandMac';
@@ -485,7 +489,6 @@ export { IcBrandSimpleLogin } from './icons/IcBrandSimpleLogin';
 export { IcBrandTor } from './icons/IcBrandTor';
 export { IcBrandTwitter } from './icons/IcBrandTwitter';
 export { IcBrandReddit } from './icons/IcBrandReddit';
-export { IcBrandGithub } from './icons/IcBrandGithub';
 export { IcBrandVisa } from './icons/IcBrandVisa';
 export { IcBrandWindows } from './icons/IcBrandWindows';
 export { IcBrandWireguard } from './icons/IcBrandWireguard';
@@ -738,6 +741,7 @@ export { IcShieldHalfFilled } from './icons/IcShieldHalfFilled';
 export { IcShieldExclamationFilled } from './icons/IcShieldExclamationFilled';
 export { IcSizeArrowUp } from './icons/IcSizeArrowUp';
 export { IcSizeArrowDown } from './icons/IcSizeArrowDown';
+export { IcSpam } from './icons/IcSpam';
 export { IcSpeechBubble } from './icons/IcSpeechBubble';
 export { IcSliders } from './icons/IcSliders';
 export { IcSquares } from './icons/IcSquares';

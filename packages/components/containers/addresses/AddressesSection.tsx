@@ -1,6 +1,7 @@
 import { useOrganization } from '@proton/account/organization/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import { useFlag } from '@proton/unleash/index';
 
 import Addresses from './Addresses';
 
@@ -10,13 +11,14 @@ interface Props {
 
 const AddressesSection = ({ isOnlySelf }: Props) => {
     const [organization, loadingOrganization] = useOrganization();
+    const hasAccessToBYOE = useFlag('InboxBringYourOwnEmail');
 
     return (
         <SettingsSectionWide>
             {!organization || loadingOrganization ? (
                 <Loader />
             ) : (
-                <Addresses isOnlySelf={isOnlySelf} organization={organization} />
+                <Addresses isOnlySelf={isOnlySelf} organization={organization} hasAccessToBYOE={hasAccessToBYOE} />
             )}
         </SettingsSectionWide>
     );
