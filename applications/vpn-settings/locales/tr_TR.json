@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "activate": [
-        "kullanıma al"
-      ],
       "Activate": [
         "Kullanıma al"
+      ],
+      "activate": [
+        "kullanıma al"
       ],
       "Activate organization key": [
         "Kuruluş anahtarını kullanıma al"
@@ -259,11 +259,11 @@
       "Discard": [
         "Sil"
       ],
-      "Discard Changes": [
-        "Değişiklikleri At"
-      ],
       "Discard changes": [
         "Değişiklileri yok say"
+      ],
+      "Discard Changes": [
+        "Değişiklikleri sil"
       ],
       "Discover ${ planName }": [
         "${ planName } tarifesini keşfedin"
@@ -446,7 +446,7 @@
         "Kullanıcı davet et"
       ],
       "Keep Editing": [
-        "Düzenlemeye Devam Et"
+        "Düzenlemeyi sürdür"
       ],
       "Keep editing": [
         "Düzenlemeyi sürdür"
@@ -682,11 +682,11 @@
       "Select country ${ country }": [
         "${ country } ülkesini seç"
       ],
-      "Select file": [
-        "Dosya seçin"
-      ],
       "select file": [
         "dosya seçin"
+      ],
+      "Select file": [
+        "Dosya seçin"
       ],
       "Send code": [
         "Kodu gönder"
@@ -1255,9 +1255,6 @@
       "Monthly": [
         "Aylık"
       ],
-      "New!": [
-        "Yeni!"
-      ],
       "Two-year": [
         "Iki yıllık"
       ]
@@ -1585,8 +1582,8 @@
     },
     "CountriesStep:Info": {
       "${ selectedCountriesCount } selected": [
-        "${ selectedCountriesCount } seçildi",
-        "${ selectedCountriesCount } seçildi"
+        "${ selectedCountriesCount } seçilmiş",
+        "${ selectedCountriesCount } seçilmiş"
       ]
     },
     "Country name": {
@@ -2581,7 +2578,7 @@
         "Hayatınızın farklı bölümlerini ayrı tutun ve ek adreslerle gelen kutunuza düzen getirin."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
-        "Toplantı bağlantılarını etkinlik davetlerinize anında ekleyin."
+        "Etkinlik davetlerinize anında görüşme bağlantıları ekleyin."
       ],
       "No one in your organization can connect to shared servers.": [
         "Kuruluşunuzdaki hiç kimse paylaşılan sunuculara bağlanamaz."
@@ -4156,8 +4153,8 @@
         "${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } gibi tüm ${ BRAND_NAME_TWO } hizmetlerini kullanabilmek için **bir ${ BRAND_NAME } adresi edinin**."
       ],
       "+ ${ invisibleCount } More": [
-        "+ ${ invisibleCount } Daha fazla",
-        "+ ${ invisibleCount } Daha fazla"
+        "+ ${ invisibleCount } diğer",
+        "+ ${ invisibleCount } diğer"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ek depolama alanı"
@@ -4445,11 +4442,11 @@
       "Data recoverable on this device": [
         "Bu aygıttaki veriler kurtarılabilir"
       ],
-      "dedicated servers": [
-        "size ayrılmış sunucular"
-      ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "dedicated servers": [
+        "size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -4904,7 +4901,7 @@
         "${ appName } yükleniyor"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
-        "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanla platformumuz Calendly açılacak."
+        "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanlama platformumuz Calendly açılacak."
       ],
       "Loading eduGAIN data...": [
         "eduGAIN verileri yükleniyor..."
@@ -4997,7 +4994,7 @@
         "Herhangi bir sonuç bulunamadı"
       ],
       "No single sign-on": [
-        "Tek oturum açma yok"
+        "Tek oturum açma kullanılmıyor"
       ],
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
@@ -5077,7 +5074,7 @@
         "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır."
       ],
       "Password must have:": [
-        "Parola şunları içermelidir:"
+        "Parolada şunlar bulunmalıdır:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
@@ -5118,7 +5115,7 @@
         "Lütfen hesabınızın 12 sözcüklü kurtarma ifadesini yazın."
       ],
       "Please fill in all required fields.": [
-        "Lütfen gerekli tüm alanları doldurun."
+        "Lütfen tüm zorunlu alanları doldurun."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın.",
@@ -5407,7 +5404,7 @@
         "İnternet üzerinde gezinmenin, yayın akışlarını izlemenin ve çevrim içi olmanın en güvenli yolu."
       ],
       "The unpublished changes you made will be lost.": [
-        "Yayınlanmamış değişiklikleriniz kaybolacaktır."
+        "Yaptığınız yayınlanmamış değişiklikler kaybolacak."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
@@ -5449,7 +5446,7 @@
         "Hizmetimizle ilgili bir sorun yaşıyorsanız ya da tarafımızdan ek bir işlem yapılmasını istiyorsanız, bu ileti destek ekibimize ulaşmayacak ${ supportLink }."
       ],
       "This service is not available to users signing in with single sign-on.": [
-        "Bu hizmet, tek oturum açma ile giriş yapan kullanıcılar tarafından kullanılamaz."
+        "Bu hizmet, tek oturum açma ile oturum açan kullanıcılar tarafından kullanılamaz."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Şu anda kuruluşunuzun ödemelerinden bu kullanıcı sorumludur. Bu kullanıcının yetki düzeyini düşürürseniz kuruluşunuzun ödemelerinden siz sorumlu olacaksınız."
@@ -5622,11 +5619,11 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "username": [
-        "kullanıcı adı"
-      ],
       "Username": [
         "Kullanıcı adı"
+      ],
+      "username": [
+        "kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -5822,7 +5819,7 @@
         "Bunu doğrulamada kullanılacak doğru e-posta adresini yazmak için bir kez düzenleyebilirsiniz."
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
-        "Organizasyonunuzun üyeleri, ${ BRAND_NAME } Hesaplarının şifresini oluştururken veya sıfırlarken kullanacakları şifre kurallarını uygulayabilirsiniz."
+        "Kuruluşunuzun üyeleri, ${ BRAND_NAME } hesaplarının parolasını oluştururken veya sıfırlarken uygulanacak zorunlu parola kuralları belirleyebilirsiniz."
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Tüm ücretli gizlilik hizmetlerimizi tek bir pakette alabilirsiniz. Yalnızca **${ priceString }/ay**."
@@ -6178,10 +6175,10 @@
       "Allow recovery by phone": [
         "Telefon ile hesap kurtarılabilsin"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "İzin verilen etki alanı"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "İzin verilen etki alanı"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6368,7 +6365,7 @@
         "E-posta adresi ya da kullanıcı adı"
       ],
       "Enabled": [
-        "Etkin"
+        "Kullanılıyor"
       ],
       "Enter the code displayed on your TV": [
         "Televizyonunuzda görüntülenen kodu yazın"
@@ -6449,7 +6446,7 @@
         "Ana"
       ],
       "Maximum number of characters is ${ MAX_CHARS }": [
-        "En fazla karakter sayısı ${ MAX_CHARS }'dır."
+        "En fazla ${ MAX_CHARS } karakter uzunluğunda olmalıdır."
       ],
       "Members without 2FA": [
         "İki adımlı doğrulama kullanmayan üyeler"
@@ -6467,7 +6464,7 @@
         "En az karakter sayısı"
       ],
       "Minimum number of characters is ${ MIN_CHARS }": [
-        "En az karakter sayısı ${ MIN_CHARS }'dir."
+        "En az ${ MIN_CHARS } karakter uzunluğunda olmalıdır."
       ],
       "Moderate NAT": [
         "Ilımlı NAT"
@@ -6548,7 +6545,7 @@
         "Parola"
       ],
       "Password strength": [
-        "Parola gücü"
+        "Parola zorluğu"
       ],
       "Payer": [
         "Ödeyen"
@@ -8112,7 +8109,7 @@
         "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişim şifrelemesi, bu bilgilere ${ BRAND_NAME } tarafından bile erişilememesini sağlar."
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "Görüşme katılımcılarının uygunluk durumunu görün ve toplantı planlarken zaman kazanın"
+        "Katılacakların uygunluk durumunu görün ve görüşme planlarken zaman kazanın"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Gerek duyduğunuz kadar kişi grubu oluşturarak büyük gruplara hızlı ve kolay bir şekilde e-posta gönderin (her grupta 100 kişiye kadar)"
@@ -9809,6 +9806,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Bu özel teklif ilk 2 yıl için geçerlidir."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Aboneliğiniz her yıl aynı tutarla yenilenecek."
       ]
@@ -9888,6 +9888,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "30 aylık standart ücret ${ amount }"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Bu özel teklif ilk 2 yıl için geçerlidir"
       ]
     },
     "specialoffer: Title": {
@@ -10202,6 +10205,9 @@
       "For all ${ BRAND_NAME } services": [
         "Tüm ${ BRAND_NAME } hizmetleri için"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "${ BRAND_NAME } ürünlerini kullanmayı sürdürmek için yer açın ya da ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Dosyaları yükleyebilmek ya da eşitleyebilmek için depolama alanını boşaltın ya da ${ upgrade }"
       ],
@@ -10220,6 +10226,12 @@
       ],
       "Your ${ appStorage } is full": [
         "Kullandığını ${ appStorage } dolu"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString } depolama alanınız %${ percentage } oranında dolu. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString } depolama alanınız doldu. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Depolama alanınız %${ percentage } oranında dolu. ${ cta }."
@@ -10367,47 +10379,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } için"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription reminder": {
@@ -10700,6 +10671,47 @@
         "Kendi kısa @pm.me e-posta takma adınız"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Emin misiniz?"
@@ -10728,7 +10740,7 @@
     },
     "Subscription saving": {
       "Save ${ priceString }": [
-        "${ priceString } tasarruf edin"
+        "${ priceString } indirim alın"
       ]
     },
     "Subscription status": {
@@ -11045,7 +11057,7 @@
         "${ appName } Free"
       ],
       "${ BRAND_NAME } Account password rules": [
-        "${ BRAND_NAME } Hesap parolası kuralları"
+        "${ BRAND_NAME } hesap parolası kuralları"
       ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
@@ -11204,10 +11216,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -11979,10 +11991,10 @@
         "Erken erişim özelliği"
       ],
       "For example, **12345, abcde**, etc.": [
-        "Örneğin, **12345, abcde** vb."
+        "**12345, abcde** gibi."
       ],
       "For example, **password, qwerty**, etc.": [
-        "Örneğin, **parola, qwerty** vb."
+        "**parola, qwerty** gibi."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Kimlik doğrulama hizmeti sağlayıcının, kimlik doğrulama isteklerini imzalamak için kullanacağı herkese açık anahtar. Kimlik hizmeti sağlayıcınızdan sertifika karmasını alın."
