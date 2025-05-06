@@ -18,6 +18,7 @@ import { usePhotoLayoutStore } from '../../zustand/photos/layout.store';
 import { useFavoritePhotoToggle } from '../PhotosActions/Albums';
 import { PhotosInsideAlbumsGrid } from './PhotosInsideAlbumsGrid';
 import { AlbumCoverHeader } from './components/AlbumCoverHeader';
+import { AlbumEmptyView } from './components/AlbumEmptyView';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
 import type { PhotosLayoutOutletContext } from './layout/PhotosLayout';
 
@@ -120,13 +121,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const isAlbumPhotosEmpty = albumPhotos.length === 0;
     const albumName = album?.name;
 
-    const onShare = useCallback(() => {
-        if (!albumShareId || !album) {
-            return;
-        }
-        modals.linkSharing?.({ shareId: albumShareId, linkId: album.linkId });
-    }, [albumShareId, album, modals]);
-
     useEffect(() => {
         if (albumName) {
             updateTitle(`Album > ${albumName}`);
@@ -165,12 +159,8 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         <>
             {isAlbumPhotosEmpty ? (
                 <div className="flex flex-column flex-nowrap p-4 w-full h-full">
-                    <AlbumCoverHeader
-                        shareId={albumShareId}
-                        linkId={album.linkId}
+                    <AlbumEmptyView
                         album={album}
-                        photoCount={photoCount}
-                        onShare={onShare}
                         onAddAlbumPhotos={() => {
                             navigateToAlbum(albumShareId, albumLinkId, { addPhotos: true });
                         }}
