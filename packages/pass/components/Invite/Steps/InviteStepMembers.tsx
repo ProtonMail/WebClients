@@ -1,5 +1,6 @@
 import type { ClipboardEvent, MutableRefObject, ReactNode } from 'react';
 import { forwardRef, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -8,12 +9,15 @@ import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/Field
 import { ListField } from '@proton/pass/components/Form/Field/ListField';
 import { InviteRecommendations } from '@proton/pass/components/Invite/Steps/InviteRecommendations';
 import type { InviteAddressValidator } from '@proton/pass/hooks/invite/useAddressValidator';
-import type { AccessKeys } from '@proton/pass/lib/access/types';
+import { type AccessKeys, AccessTarget } from '@proton/pass/lib/access/types';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
+import { getLimitReachedText } from '@proton/pass/lib/invites/invite.utils';
 import { InviteEmailsError } from '@proton/pass/lib/validation/invite';
+import { selectShareOrThrow } from '@proton/pass/store/selectors';
 import type { InviteFormMemberItem, MaybeNull } from '@proton/pass/types';
 import { type InviteFormValues, ShareRole } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 const createMember = (email: string): InviteFormMemberItem => ({
@@ -42,6 +46,8 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
     ({ access, autoFocus, disabled, excluded, heading, members, validator, onUpdate }, fieldRef) => {
         const emailField = (fieldRef as MaybeNull<MutableRefObject<HTMLInputElement>>)?.current;
         const scrollTimer = useRef<MaybeNull<NodeJS.Timeout>>(null);
+        const share = useSelector(selectShareOrThrow(access.shareId));
+        const accessTarget = access.itemId ? AccessTarget.Item : AccessTarget.Vault;
 
         const [autocomplete, setAutocomplete] = useState('');
         const selected = useMemo(() => new Set<string>(members.map((member) => member.value.email)), [members]);
@@ -140,6 +146,7 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
                             const isEmpty = errors.includes(InviteEmailsError.EMPTY);
                             if (isEmpty) return c('Warning').t`At least one email address is required`;
 
+                            const isLimitReached = errors.includes(InviteEmailsError.LIMIT_REACHED);
                             const hasDuplicates = errors.includes(InviteEmailsError.DUPLICATE);
                             const hasInvalid = errors.includes(InviteEmailsError.INVALID_EMAIL);
                             const hasOrganizationLimits = errors.includes(InviteEmailsError.INVALID_ORG);
@@ -147,11 +154,17 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
 
                             return (
                                 <>
-                                    {hasOrganizationLimits &&
-                                        c('Warning').t`Inviting email addresses outside organization is not allowed.`}
-                                    {hasDuplicates && c('Warning').t`Duplicate email addresses.` + ` `}
-                                    {hasInvalid && c('Warning').t`Invalid email addresses.`}
-                                    {hasExcluded && c('Warning').t`Addresses already invited.`}
+                                    {[
+                                        isLimitReached && getLimitReachedText(share, accessTarget),
+                                        hasOrganizationLimits &&
+                                            c('Warning')
+                                                .t`Inviting email addresses outside organization is not allowed.`,
+                                        hasDuplicates && c('Warning').t`Duplicate email addresses.`,
+                                        hasInvalid && c('Warning').t`Invalid email addresses.`,
+                                        hasExcluded && c('Warning').t`Addresses already invited.`,
+                                    ]
+                                        .filter(truthy)
+                                        .join(' ')}
                                 </>
                             );
                         }}
