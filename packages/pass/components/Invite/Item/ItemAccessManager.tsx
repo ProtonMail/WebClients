@@ -19,6 +19,7 @@ import { useShareAccess } from '@proton/pass/hooks/invite/useShareAccess';
 import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
 import { isItemTarget, isVaultTarget } from '@proton/pass/lib/access/access.predicates';
 import { AccessTarget } from '@proton/pass/lib/access/types';
+import { getLimitReachedText } from '@proton/pass/lib/invites/invite.utils';
 import { isItemShared } from '@proton/pass/lib/items/item.predicates';
 import { isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { selectItem, selectOwnWritableVaults, selectPassPlan, selectShareOrThrow } from '@proton/pass/store/selectors';
@@ -142,14 +143,7 @@ export const ItemAccessManager: FC<SelectedItem> = ({ shareId, itemId }) => {
                     <AccessLimitPrompt
                         open={limitModalOpen}
                         onClose={() => setLimitModalOpen(false)}
-                        promptText={
-                            // translator: full message is "Items can’t contain more than 10 users.""
-                            c('Success').ngettext(
-                                msgid`Items can’t contain more than ${share.targetMaxMembers} user.`,
-                                `Items can’t contain more than ${share.targetMaxMembers} users.`,
-                                share.targetMaxMembers
-                            )
-                        }
+                        promptText={getLimitReachedText(share, AccessTarget.Item)}
                     />
                 </PanelFallback>
             </Panel>
