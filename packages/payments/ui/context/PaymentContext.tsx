@@ -15,7 +15,7 @@ import {
     type PaymentsCheckout,
     type RequiredCheckResponse,
     getCheckout,
-    getOptimisticCheckResult,
+    getOptimisticCheckResult as innerGetOptimisticCheckResult,
 } from '@proton/shared/lib/helpers/checkout';
 import type { Api, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -87,10 +87,15 @@ interface PaymentsContextTypeInner {
     selectBillingAddress: (billingAddress: BillingAddress) => Promise<void>;
     checkMultiplePlans: (planToCheck: PlanToCheck[]) => Promise<SubscriptionCheckResponse[]>;
     /**
-     * Returns the cached version of the subscription response
+     * Returns the cached version of the subscription response. Returns null if the cache is missing.
+     * Make sure to call `checkMultiplePlans` first.
      */
     getPrice: (planToCheck: PlanToCheck) => PricesResult | null;
     getFallbackPrice: (planToCheck: PlanToCheck) => PricesResult;
+    /**
+     * Same as `getPrice`, but returns the fallback version of the price if cache is missing.
+     */
+    getPriceOrFallback: (planToCheck: PlanToCheck) => PricesResult;
     plans: Plan[];
     plansMap: PlansMap;
 
@@ -121,6 +126,7 @@ export type PaymentsContextType = Pick<
     | 'checkMultiplePlans'
     | 'getPrice'
     | 'getFallbackPrice'
+    | 'getPriceOrFallback'
     | 'plans'
     | 'plansMap'
     | 'checkResult'
@@ -191,7 +197,7 @@ export const PaymentsContextProvider = ({
     const { plansMap: defaultPlansMap, getPlansMap } = usePreferredPlansMap(false);
 
     const [checkResult, setCheckResult] = useState<EnrichedCheckResponse>(
-        getOptimisticCheckResult({
+        innerGetOptimisticCheckResult({
             cycle: planToCheck.cycle,
             planIDs: planToCheck.planIDs,
             plansMap: defaultPlansMap,
@@ -341,6 +347,17 @@ export const PaymentsContextProvider = ({
         });
     };
 
+    const getLocalizedPlansMap = (planToCheck: PlanToCheck) => {
+        return getPlansMap({
+            paramCurrency: planToCheck.currency,
+        }).plansMap;
+    };
+
+    const getOptimisticCheckResult = (planToCheck: PlanToCheck) => {
+        const plansMap = getLocalizedPlansMap(planToCheck);
+        return innerGetOptimisticCheckResult({ plansMap, ...planToCheck });
+    };
+
     /**
      * This is used only for non-critical checks. For example, loading the prices for multiple plans on page loading.
      * Example: there is a coupon and it needs to be checked with different cycles/plans/currencies, etc.
@@ -373,12 +390,7 @@ export const PaymentsContextProvider = ({
         for (let index = 0; index < plansToCheck.length; index++) {
             if (indexesToExcludeFromCheck.includes(index)) {
                 const planToCheck = plansToCheck[index];
-
-                const localizedPlansMap = getPlansMap({
-                    paramCurrency: planToCheck.currency,
-                }).plansMap;
-
-                normalizedResults.push(getOptimisticCheckResult({ plansMap: localizedPlansMap, ...planToCheck }));
+                normalizedResults.push(getOptimisticCheckResult(planToCheck));
             } else {
                 normalizedResults.push(results[checkedIndex]);
                 checkedIndex++;
@@ -388,44 +400,43 @@ export const PaymentsContextProvider = ({
         return normalizedResults;
     };
 
+    const getFallbackPrice = (planToCheck: PlanToCheck): PricesResult => {
+        const localizedPlansMap = getLocalizedPlansMap(planToCheck);
+        const checkResult = getOptimisticCheckResult(planToCheck);
+
+        return {
+            checkResult,
+            uiData: getCheckout({ planIDs: planToCheck.planIDs, plansMap: localizedPlansMap, checkResult }),
+        };
+    };
+
     const getPrice = (planToCheck: PlanToCheck) => {
-        const subscriptionData = getSubscriptionDataFromPlanToCheck(planToCheck);
-
-        const localizedPlansMap = getPlansMap({
-            paramCurrency: planToCheck.currency,
-        }).plansMap;
-
-        let result: EnrichedCheckResponse | undefined;
-        if (planToCheck.coupon) {
-            result = paymentsApi.getCachedCheck(subscriptionData);
-        } else {
-            result = getOptimisticCheckResult({ plansMap: localizedPlansMap, ...planToCheck });
+        if (!planToCheck.coupon) {
+            return getFallbackPrice(planToCheck);
         }
 
-        /**
-         * Cache miss
-         */
+        const subscriptionData = getSubscriptionDataFromPlanToCheck(planToCheck);
+        const result = paymentsApi.getCachedCheck(subscriptionData);
+
+        // Cache is missing
         if (!result) {
             return null;
         }
 
+        const localizedPlansMap = getLocalizedPlansMap(planToCheck);
         return {
             checkResult: result,
             uiData: getCheckout({ planIDs: planToCheck.planIDs, plansMap: localizedPlansMap, checkResult: result }),
         };
     };
 
-    const getFallbackPrice = (planToCheck: PlanToCheck): PricesResult => {
-        const localizedPlansMap = getPlansMap({
-            paramCurrency: planToCheck.currency,
-        }).plansMap;
+    const getPriceOrFallback = (planToCheck: PlanToCheck) => {
+        const price = getPrice(planToCheck);
+        if (!price) {
+            return getFallbackPrice(planToCheck);
+        }
 
-        const checkResult = getOptimisticCheckResult({ plansMap: localizedPlansMap, ...planToCheck });
-
-        return {
-            checkResult,
-            uiData: getCheckout({ planIDs: planToCheck.planIDs, plansMap: localizedPlansMap, checkResult }),
-        };
+        return price;
     };
 
     const isGroupLoading = multiCheckGroups.isGroupLoading;
@@ -445,6 +456,7 @@ export const PaymentsContextProvider = ({
         plansMap: defaultPlansMap,
         getPrice,
         getFallbackPrice,
+        getPriceOrFallback,
         checkResult,
         // paymentFacade,
         billingAddress,
