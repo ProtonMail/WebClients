@@ -1832,6 +1832,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
+      ],
       "Moving items": [
         "Memindahkan item"
       ],
@@ -3367,7 +3370,7 @@
         "${ count } item"
       ],
       "You can drag and drop the selected item to another vault": [
-        "Anda dapat menarik dan melepas item yang dipilih ke brankas lain"
+        "Anda dapat menyeret dan melepaskan item yang dipilih ke brankas lain"
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Anda memilih ${ semiboldText } dalam brankas ini."
