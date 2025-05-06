@@ -174,7 +174,7 @@ export const AlbumsCard: FC<Props> = ({
             style={style}
             className={clsx(
                 'button-for-icon', // `aria-busy` buttons get extra padding, this avoids that
-                'relative albums-card p-0 rounded shadow-lifted',
+                'relative albums-card p-0 rounded',
                 !isLoaded && 'albums-card--loading'
             )}
             data-testid="albums-card"
