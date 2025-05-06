@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
-      "activate": [
-        "attiva"
-      ],
       "Activate": [
         "Attiva"
+      ],
+      "activate": [
+        "attiva"
       ],
       "Activate organization key": [
         "Attiva la chiave dell'organizzazione"
@@ -259,10 +259,10 @@
       "Discard": [
         "Scarta"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Annulla le modifiche"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Annulla le modifiche"
       ],
       "Discover ${ planName }": [
@@ -682,11 +682,11 @@
       "Select country ${ country }": [
         "Seleziona il paese ${ country }"
       ],
-      "Select file": [
-        "Seleziona il file"
-      ],
       "select file": [
         "seleziona il file"
+      ],
+      "Select file": [
+        "Seleziona il file"
       ],
       "Send code": [
         "Invia codice"
@@ -1255,9 +1255,6 @@
       "Monthly": [
         "Mensile"
       ],
-      "New!": [
-        "Novità!"
-      ],
       "Two-year": [
         "Due anni"
       ]
@@ -1584,6 +1581,10 @@
       ]
     },
     "CountriesStep:Info": {
+      "${ selectedCitiesCount } cities selected": [
+        "${ selectedCitiesCount } città selezionata",
+        "${ selectedCitiesCount } città selezionate"
+      ],
       "${ selectedCountriesCount } selected": [
         "${ selectedCountriesCount } selezionato",
         "${ selectedCountriesCount } selezionati"
@@ -4445,11 +4446,11 @@
       "Data recoverable on this device": [
         "Dati recuperabili su questo dispositivo"
       ],
-      "dedicated servers": [
-        "server dedicati"
-      ],
       "Dedicated servers": [
         "Server dedicati"
+      ],
+      "dedicated servers": [
+        "server dedicati"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato."
@@ -5625,11 +5626,11 @@
       "User activated": [
         "Utente attivato"
       ],
-      "username": [
-        "nome utente"
-      ],
       "Username": [
         "Nome utente"
+      ],
+      "username": [
+        "nome utente"
       ],
       "Users": [
         "Utenti"
@@ -6181,10 +6182,10 @@
       "Allow recovery by phone": [
         "Consenti il recupero via telefono"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dominio autorizzato"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dominio autorizzato"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10238,6 +10239,9 @@
       "For all ${ BRAND_NAME } services": [
         "Per tutti i servizi ${ BRAND_NAME }"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Per continuare a utilizzare i prodotti ${ BRAND_NAME }, libera spazio o esegui l'${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Per caricare o sincronizzare i file, libera spazio o ${ upgrade }"
       ],
@@ -10256,6 +10260,12 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage } pieno"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Il tuo ${ productString } è pieno al ${ percentage }%. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Il tuo ${ productString } è pieno. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Spazio di archiviazione pieno al ${ percentage }%. ${ cta }."
@@ -10403,47 +10413,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Per ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB di spazio di archiviazione"
-      ],
-      "and 15 more premium features": [
-        "e altre 15 funzionalità premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Inoltro automatico delle email ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Avvisi sulle violazioni di dati ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Applicazione desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
-      ],
-      "No ads or tracking": [
-        "Nessun annuncio o tracciamento"
-      ],
-      "Short @pm.me email address": [
-        "Indirizzo email breve @pm.me"
-      ],
-      "Support our mission": [
-        "Sostieni la nostra missione"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade your productivity": [
-        "Migliora la tua produttività"
-      ],
-      "We don't sell your data": [
-        "Non vendiamo i tuoi dati"
-      ],
-      "Your privacy is our mission": [
-        "La tua privacy è la nostra missione"
       ]
     },
     "Subscription reminder": {
@@ -10734,6 +10703,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Il tuo alias email breve @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB di spazio di archiviazione"
+      ],
+      "and 15 more premium features": [
+        "e altre 15 funzionalità premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Inoltro automatico delle email ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Avvisi sulle violazioni di dati ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Applicazione desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
+      ],
+      "No ads or tracking": [
+        "Nessun annuncio o tracciamento"
+      ],
+      "Short @pm.me email address": [
+        "Indirizzo email breve @pm.me"
+      ],
+      "Support our mission": [
+        "Sostieni la nostra missione"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Migliora la tua produttività"
+      ],
+      "We don't sell your data": [
+        "Non vendiamo i tuoi dati"
+      ],
+      "Your privacy is our mission": [
+        "La tua privacy è la nostra missione"
       ]
     },
     "Subscription renewal state": {
@@ -11240,11 +11250,11 @@
       "Card verification": [
         "Verifica della carta"
       ],
-      "Catch-All address": [
-        "Indirizzi catch-all"
-      ],
       "Catch-all address": [
         "Indirizzi Catch-all"
+      ],
+      "Catch-All address": [
+        "Indirizzi catch-all"
       ],
       "Change login password": [
         "Cambia la password di accesso"
