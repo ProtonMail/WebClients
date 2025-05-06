@@ -1832,6 +1832,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
+      ],
       "Moving items": [
         "アイテムの移動"
       ],
@@ -3918,6 +3921,9 @@
       ],
       "Enter coupon code": [
         "クーポンコードを入力"
+      ],
+      "Enter your ${ BRAND_NAME } password": [
+        "${ BRAND_NAME } の パスワード を入力してください"
       ],
       "Enter your backup password": [
         "バックアップパスワードを入力してください"
