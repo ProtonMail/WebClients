@@ -13,9 +13,7 @@ import OrderableTableHeader from '@proton/components/components/orderableTable/O
 import OrderableTableRow from '@proton/components/components/orderableTable/OrderableTableRow';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
-import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
-import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
-import { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
+import UpsellModal from '@proton/components/components/upsell/UpsellModal/UpsellModal';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { usePostSubscriptionTourTelemetry } from '@proton/components/hooks/mail/usePostSubscriptionTourTelemetry';
 import useApi from '@proton/components/hooks/useApi';
@@ -78,8 +76,6 @@ const AddressesUser = ({
     const [list, setAddresses] = useState<Address[]>(() => sortAddresses(addresses || []));
     const sendTelemetryEvent = usePostSubscriptionTourTelemetry();
 
-    const { upsellConfig, displayNewUpsellModalsVariant } = useMailUpsellConfig({ upsellRef });
-
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
     useEffect(() => {
@@ -108,10 +104,7 @@ const AddressesUser = ({
                         }
                     })();
                     if (errorMessage) {
-                        createNotification({
-                            type: 'error',
-                            text: errorMessage,
-                        });
+                        createNotification({ type: 'error', text: errorMessage });
                     }
                     setAddresses(sortAddresses(addresses));
                     return;
@@ -159,34 +152,9 @@ const AddressesUser = ({
         return <Alert className="mb-4">{c('Info').t`No addresses exist`}</Alert>;
     }
 
-    const modal = displayNewUpsellModalsVariant ? (
-        <NewUpsellModal
-            titleModal={c('Title').t`An address for each role`}
-            description={c('Description')
-                .t`Keep different parts of your life separate and your inbox organized with additional addresses.`}
-            modalProps={upsellModalProps}
-            illustration={addressesImg}
-            sourceEvent="BUTTON_MORE_ADDRESSES"
-            {...upsellConfig}
-        />
-    ) : (
-        <UpsellModal
-            title={c('Title').t`Increase your privacy with more addresses`}
-            description={c('Description')
-                .t`Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.`}
-            modalProps={upsellModalProps}
-            sourceEvent="BUTTON_MORE_ADDRESSES"
-            features={['more-storage', 'more-email-addresses', 'unlimited-folders-and-labels', 'custom-email-domains']}
-            {...upsellConfig}
-        />
-    );
-
     const handleCopyEmail = (email: string) => {
         textToClipboard(email);
-        createNotification({
-            type: 'success',
-            text: c('Success').t`Email address copied to clipboard`,
-        });
+        createNotification({ type: 'success', text: c('Success').t`Email address copied to clipboard` });
     };
 
     return (
@@ -273,7 +241,16 @@ const AddressesUser = ({
                 </OrderableTableBody>
             </OrderableTable>
 
-            {renderUpsellModal && modal}
+            {renderUpsellModal && (
+                <UpsellModal
+                    title={c('Title').t`An address for each role`}
+                    description={c('Description')
+                        .t`Keep different parts of your life separate and your inbox organized with additional addresses.`}
+                    modalProps={upsellModalProps}
+                    illustration={addressesImg}
+                    upsellRef={upsellRef}
+                />
+            )}
         </>
     );
 };

@@ -9,7 +9,7 @@ interface Props
 }
 
 const getUpsellSubscriptionModalConfig = (options: Props): OpenCallbackProps => {
-    const baseConfig: OpenCallbackProps = {
+    const config: OpenCallbackProps = {
         coupon: options.coupon,
         cycle: options.cycle || CYCLE.YEARLY,
         disablePlanSelection: options.step === SUBSCRIPTION_STEPS.CHECKOUT,
@@ -24,13 +24,10 @@ const getUpsellSubscriptionModalConfig = (options: Props): OpenCallbackProps => 
     };
 
     if (options.plan) {
-        return {
-            ...baseConfig,
-            planIDs: { [options.plan]: 1 },
-        };
+        config.planIDs = { [options.plan]: 1 };
     }
 
-    return baseConfig;
+    return config;
 };
 
 export default getUpsellSubscriptionModalConfig;

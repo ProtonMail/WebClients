@@ -1,8 +1,6 @@
 import './typings/css.d';
 import './typings/index.d';
 
-export { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
-export { default as useOneDollarPromo } from '@proton/components/components/upsell/useOneDollarPromo';
 export { default as ActionCard } from './components/actionCard/ActionCard';
 export { default as AddressesAutocomplete } from './components/addressesAutocomplete/AddressesAutocomplete';
 export * from './components/addressesAutocomplete/helper';
@@ -333,17 +331,16 @@ export { default as TopNavbarListItemSearchButton } from './components/topnavbar
 export { default as TopNavbarUpsell } from './components/topnavbar/TopNavbarUpsell';
 export { default as TreeViewContainer } from './components/treeview/TreeViewContainer';
 export { default as TreeViewItem } from './components/treeview/TreeViewItem';
-export type { UpsellFeature as UpsellFeatures } from './components/upsell/modal/interface';
-export { default as NewUpsellModal } from './components/upsell/modal/NewUpsellModal';
-export { default as AutoDeleteUpsellModal } from './components/upsell/modal/types/AutoDeleteUpsellModal';
-export { default as ComposerAssistantB2BUpsellModal } from './components/upsell/modal/types/ComposerAssistantB2BUpsellModal';
-export { default as DWMUpsellModal } from './components/upsell/modal/types/DWMUpsellModal';
-export { default as FiltersUpsellModal } from './components/upsell/modal/types/FiltersUpsellModal';
-export { default as LabelsUpsellModal } from './components/upsell/modal/types/LabelsUpsellModal';
-export { default as PmMeUpsellModal } from './components/upsell/modal/types/PmMeUpsellModal';
-export { default as ZoomUpsellModal } from './components/upsell/modal/types/ZoomUpsellModal';
-export { default as UpsellModal } from './components/upsell/modal/UpsellModal';
-export { default as useUpsellConfig } from './components/upsell/useUpsellConfig';
+export type { UpsellFeature as UpsellFeatures } from './components/upsell/interface';
+export { default as UpsellModal } from './components/upsell/UpsellModal/UpsellModal';
+export { default as AutoDeleteUpsellModal } from './components/upsell/modals/AutoDeleteUpsellModal';
+export { default as ComposerAssistantB2BUpsellModal } from './components/upsell/modals/ComposerAssistantB2BUpsellModal';
+export { default as DWMUpsellModal } from './components/upsell/modals/DWMUpsellModal';
+export { default as FiltersUpsellModal } from './components/upsell/modals/FiltersUpsellModal';
+export { default as LabelsUpsellModal } from './components/upsell/modals/LabelsUpsellModal';
+export { default as PmMeUpsellModal } from './components/upsell/modals/PmMeUpsellModal';
+export { default as ZoomUpsellModal } from './components/upsell/modals/ZoomUpsellModal';
+export { default as useUpsellConfig } from './components/upsell/config/useUpsellConfig';
 export { default as AddressesAutocompleteTwo } from './components/v2/addressesAutocomplete/AddressesAutocomplete';
 export { default as InputFieldTwo } from './components/v2/field/InputField';
 export { default as DateInputTwo } from './components/v2/input/DateInputTwo';
