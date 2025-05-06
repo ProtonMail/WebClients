@@ -14,9 +14,12 @@ import { useNavigate } from '@proton/pass/components/Navigation/NavigationAction
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectAllVaults, selectCanCreateItems, selectShare } from '@proton/pass/store/selectors';
 import type { ItemType } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import clsx from '@proton/utils/clsx';
 
 type ItemQuickAction = {
@@ -42,58 +45,61 @@ export const QuickActionsPlaceholder: FC = () => {
     const onCreate = useCallback((type: ItemType) => navigate(getNewItemRoute(type, scope)), [scope]);
 
     const canCreate = useSelector(selectCanCreateItems);
+    const showCustomItem = useFeatureFlag(PassFeature.PassCustomTypeV1);
 
     const quickActions = useMemo<ItemQuickAction[]>(
-        () => [
-            {
-                icon: itemTypeToIconName.login,
-                label: c('Label').t`Create a login`,
-                subTheme: SubTheme.VIOLET,
-                type: 'login',
-                onClick: () => onCreate('login'),
-            },
-            {
-                icon: itemTypeToIconName.alias,
-                label: c('Label').t`Create a hide-my-email alias`,
-                subTheme: SubTheme.TEAL,
-                type: 'alias',
-                onClick: () => onCreate('alias'),
-            },
-            {
-                icon: itemTypeToIconName.creditCard,
-                label: c('Label').t`Create a credit card`,
-                subTheme: SubTheme.LIME,
-                type: 'creditCard',
-                onClick: () => onCreate('creditCard'),
-            },
-            {
-                icon: itemTypeToIconName.note,
-                label: c('Label').t`Create an encrypted note`,
-                subTheme: SubTheme.ORANGE,
-                type: 'note',
-                onClick: () => onCreate('note'),
-            },
-            {
-                icon: itemTypeToIconName.identity,
-                label: c('Label').t`Create an Identity`,
-                type: 'identity',
-                onClick: () => onCreate('identity'),
-            },
-            {
-                icon: itemTypeToIconName.custom,
-                label: c('Label').t`Create a custom item`,
-                subTheme: SubTheme.GRAY,
-                type: 'custom',
-                onClick: () => onCreate('custom'),
-            },
-            {
-                type: 'import',
-                icon: 'arrow-up-line',
-                shape: 'outline',
-                label: c('Label').t`Import passwords`,
-                onClick: () => openSettings?.('import'),
-            },
-        ],
+        () =>
+            [
+                {
+                    icon: itemTypeToIconName.login,
+                    label: c('Label').t`Create a login`,
+                    subTheme: SubTheme.VIOLET,
+                    type: 'login',
+                    onClick: () => onCreate('login'),
+                } as const,
+                {
+                    icon: itemTypeToIconName.alias,
+                    label: c('Label').t`Create a hide-my-email alias`,
+                    subTheme: SubTheme.TEAL,
+                    type: 'alias',
+                    onClick: () => onCreate('alias'),
+                } as const,
+                {
+                    icon: itemTypeToIconName.creditCard,
+                    label: c('Label').t`Create a credit card`,
+                    subTheme: SubTheme.LIME,
+                    type: 'creditCard',
+                    onClick: () => onCreate('creditCard'),
+                } as const,
+                {
+                    icon: itemTypeToIconName.note,
+                    label: c('Label').t`Create an encrypted note`,
+                    subTheme: SubTheme.ORANGE,
+                    type: 'note',
+                    onClick: () => onCreate('note'),
+                } as const,
+                {
+                    icon: itemTypeToIconName.identity,
+                    label: c('Label').t`Create an Identity`,
+                    type: 'identity',
+                    onClick: () => onCreate('identity'),
+                } as const,
+                showCustomItem &&
+                    ({
+                        icon: itemTypeToIconName.custom,
+                        label: c('Label').t`Create a custom item`,
+                        subTheme: SubTheme.GRAY,
+                        type: 'custom',
+                        onClick: () => onCreate('custom'),
+                    } as const),
+                {
+                    type: 'import',
+                    icon: 'arrow-up-line',
+                    shape: 'outline',
+                    label: c('Label').t`Import passwords`,
+                    onClick: () => openSettings?.('import'),
+                } as const,
+            ].filter(truthy),
         [onCreate]
     );
 
