@@ -464,6 +464,9 @@
       "Go back": [
         "Επιστροφή"
       ],
+      "Go back to album “${ albumName }“": [
+        "Επιστροφή στο άλμπουμ “${ albumName }“"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Πηγαίνετε στο ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -1376,9 +1379,6 @@
       ],
       "Monthly": [
         "Μηνιαία"
-      ],
-      "New!": [
-        "Νέο!"
       ],
       "Two-year": [
         "Δύο έτη"
@@ -3073,8 +3073,8 @@
       "Failed to load the STL preview": [
         "Αποτυχία φόρτωσης της προεπισκόπησης STL"
       ],
-      "Failed to save photo to your Drive": [
-        "Αποτυχία αποθήκευσης της φωτογραφίας στο Drive σας"
+      "Failed to save some photos to your Drive": [
+        "Αποτυχία αποθήκευσης ορισμένων φωτογραφιών στο Drive σας"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Αδυναμία ανεβάσματος αρχείου \"${ item.name }\", λόγω σφάλματος \"${ error }\""
@@ -5302,11 +5302,11 @@
       "Photo is set as album cover": [
         "Η φωτογραφία έχει οριστεί ως εξώφυλλο άλμπουμ"
       ],
-      "Photo saved to your Drive": [
-        "Η φωτογραφία αποθηκεύτηκε στο Drive σας"
-      ],
       "Photo was copied to stream and marked favorite there.": [
         "Η φωτογραφία αντιγράφηκε στη ροή και σημειώθηκε ως αγαπημένη εκεί."
+      ],
+      "Photo(s) saved to your Drive": [
+        "Οι φωτογραφίες αποθηκεύτηκαν στο Drive σας"
       ],
       "Photos have been successfully recovered.": [
         "Οι φωτογραφίες έχουν ανακτηθεί με επιτυχία."
@@ -10074,47 +10074,6 @@
         "Για ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερες premium δυνατότητες"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium δυνατότητες"
@@ -10373,6 +10332,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερες premium δυνατότητες"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription renewal state": {

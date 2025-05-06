@@ -464,6 +464,9 @@
       "Go back": [
         "Voltar"
       ],
+      "Go back to album “${ albumName }“": [
+        "Voltar ao álbum «${ albumName }»"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Aceda a ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -1376,9 +1379,6 @@
       ],
       "Monthly": [
         "Mensalmente"
-      ],
-      "New!": [
-        "Novo"
       ],
       "Two-year": [
         "Bianual"
@@ -3073,8 +3073,8 @@
       "Failed to load the STL preview": [
         "Erro ao carregar a pré-visualização STL"
       ],
-      "Failed to save photo to your Drive": [
-        "Erro ao guardar a foto no seu Drive"
+      "Failed to save some photos to your Drive": [
+        "Erro ao guardar algumas fotos no seu Drive"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "O ficheiro \"${ item.name }\" não pode ser enviado devido ao erro \"${ error }\"."
@@ -5302,11 +5302,11 @@
       "Photo is set as album cover": [
         "A foto está configurada como uma capa do álbum."
       ],
-      "Photo saved to your Drive": [
-        "A foto foi guardada no seu Drive."
-      ],
       "Photo was copied to stream and marked favorite there.": [
         "A foto foi copiada para o fluxo e marcada como favorita lá."
+      ],
+      "Photo(s) saved to your Drive": [
+        "Fotos guardadas no seu Drive"
       ],
       "Photos have been successfully recovered.": [
         "As fotos foram recuperadas."
@@ -9946,6 +9946,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Para continuar a enviar e a sincronizar ficheiros, liberte espaço ou atualize para obter mais espaço de armazenamento."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Para continuar a usar os produtos ${ BRAND_NAME }, liberte espaço ou ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Para enviar ou receber e-mails, liberte espaço ou atualize para obter mais espaço de armazenamento."
       ],
@@ -9967,6 +9970,12 @@
       ],
       "Your ${ appStorage } is full": [
         "O seu ${ appStorage } está cheio"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "O seu ${ productString } está ${ percentage }% cheio. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "O seu ${ productString } está cheio. ${ cta }"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "O seu armazenamento está ${ percentage }% cheio. ${ cta }."
@@ -10063,47 +10072,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Por ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento automático de e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de violação de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription reminder": {
@@ -10364,6 +10332,47 @@
       ],
       "Your own short @pm.me email alias": [
         "O seu próprio alias de e-mail curto @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento automático de e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violação de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {

@@ -464,6 +464,9 @@
       "Go back": [
         "Regresar"
       ],
+      "Go back to album “${ albumName }“": [
+        "Regresar al álbum «${ albumName }»"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Ir a ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -1376,9 +1379,6 @@
       ],
       "Monthly": [
         "Cada mes"
-      ],
-      "New!": [
-        "¡Nuevo!"
       ],
       "Two-year": [
         "Dos años"
@@ -3073,8 +3073,8 @@
       "Failed to load the STL preview": [
         "Error al cargar la vista previa de STL"
       ],
-      "Failed to save photo to your Drive": [
-        "No se pudo guardar la foto en su Drive"
+      "Failed to save some photos to your Drive": [
+        "No se pudieron guardar algunas fotos en su Drive"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "El archivo \"${ item.name }\" no puede cargarse debido a un error de \"${ error }\""
@@ -5302,11 +5302,11 @@
       "Photo is set as album cover": [
         "La foto se ha establecido como portada de álbum"
       ],
-      "Photo saved to your Drive": [
-        "Foto guardada en su Drive"
-      ],
       "Photo was copied to stream and marked favorite there.": [
         "La foto se copió al flujo y se marcó como favorita allí."
+      ],
+      "Photo(s) saved to your Drive": [
+        "Foto(s) guardada(s) en su Drive"
       ],
       "Photos have been successfully recovered.": [
         "Se recuperaron las fotos."
@@ -10137,47 +10137,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "App de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoye nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejore su productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos sus datos."
-      ],
-      "Your privacy is our mission": [
-        "Su privacidad es nuestra misión"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } con funciones premium"
@@ -10436,6 +10395,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Su alias de correo electrónico @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "App de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoye nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejore su productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos sus datos."
+      ],
+      "Your privacy is our mission": [
+        "Su privacidad es nuestra misión"
       ]
     },
     "Subscription renewal state": {
