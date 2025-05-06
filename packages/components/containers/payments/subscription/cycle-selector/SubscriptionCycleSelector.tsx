@@ -14,8 +14,9 @@ import {
     type PlanIDs,
     type PlansMap,
     SelectedPlan,
+    getSupportedAddons,
+    isMemberAddon,
 } from '@proton/payments';
-import { getSupportedAddons, isMemberAddon } from '@proton/payments';
 import { type PricingMode, type TotalPricings, getTotals } from '@proton/shared/lib/helpers/planIDs';
 import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';

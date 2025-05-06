@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
+import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import { Info, Price } from '@proton/components/index';
 import { type Plan } from '@proton/payments';
@@ -59,6 +60,12 @@ const AccountStepPaymentSummary = ({
         checkResult: hasCouponCode ? model.subscriptionData.checkResult : options.checkResult,
     });
 
+    const couponConfig = useCouponConfig({
+        checkResult: model.subscriptionData.checkResult,
+        planIDs: model.subscriptionData.planIDs,
+        plansMap: model.plansMap,
+    });
+
     if (!summaryPlan) {
         return null;
     }
@@ -68,11 +75,11 @@ const AccountStepPaymentSummary = ({
     const proration = subscriptionData.checkResult?.Proration ?? 0;
     const credits = subscriptionData.checkResult?.Credit ?? 0;
     const isBFOffer = getHas2024OfferCoupon(subscriptionData.checkResult?.Coupon?.Code);
-    const couponDiscount = isBFOffer ? 0 : currentCheckout.couponDiscount || 0;
+    const couponDiscount = isBFOffer || couponConfig?.hidden ? 0 : currentCheckout.couponDiscount || 0;
     const billingAddress = subscriptionData.billingAddress;
 
     const isPorkbun = subscriptionData.checkResult.Coupon?.Code === COUPON_CODES.PORKBUN;
-    const hideDiscount = isPorkbun;
+    const hideDiscount = isPorkbun || !!couponConfig?.hidden;
 
     const showAmountDue = proration !== 0 || credits !== 0 || couponDiscount !== 0 || hideDiscount;
 
@@ -98,25 +105,26 @@ const AccountStepPaymentSummary = ({
             !hideDiscount && {
                 id: 'amount',
                 left: <span>{getTotalBillingText(options.cycle, currentCheckout.planIDs)}</span>,
-                right: isBFOffer ? (
-                    <>
-                        {loading ? (
-                            loaderNode
-                        ) : (
-                            <>
-                                <Price currency={subscriptionData.currency}>
-                                    {currentCheckout.withDiscountPerCycle}
-                                </Price>
-                                {!showAmountDue && showRenewalNotice && '*'}
-                            </>
-                        )}
-                    </>
-                ) : (
-                    <>
-                        {getPrice(currentCheckout.withoutDiscountPerCycle)}
-                        {!showAmountDue && showRenewalNotice && '*'}
-                    </>
-                ),
+                right:
+                    isBFOffer || couponConfig?.hidden ? (
+                        <>
+                            {loading ? (
+                                loaderNode
+                            ) : (
+                                <>
+                                    <Price currency={subscriptionData.currency}>
+                                        {currentCheckout.withDiscountPerCycle}
+                                    </Price>
+                                    {!showAmountDue && showRenewalNotice && '*'}
+                                </>
+                            )}
+                        </>
+                    ) : (
+                        <>
+                            {getPrice(currentCheckout.withoutDiscountPerCycle)}
+                            {!showAmountDue && showRenewalNotice && '*'}
+                        </>
+                    ),
                 bold: true,
                 loader: !showAmountDue,
             },
