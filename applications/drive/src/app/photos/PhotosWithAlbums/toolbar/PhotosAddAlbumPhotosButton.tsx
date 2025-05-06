@@ -1,15 +1,20 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/index';
+import { Button, type ButtonLikeSize } from '@proton/atoms/index';
 import { DropdownMenuButton, Icon, ToolbarButton, useActiveBreakpoint } from '@proton/components/index';
 import clsx from '@proton/utils/clsx';
 
 export interface PhotosAddAlbumPhotosButtonProps {
     onClick: () => void;
+    buttonSize?: ButtonLikeSize;
     type?: 'toolbar' | 'norm' | 'dropdown';
 }
 
-export const PhotosAddAlbumPhotosButton = ({ onClick, type = 'norm' }: PhotosAddAlbumPhotosButtonProps) => {
+export const PhotosAddAlbumPhotosButton = ({
+    onClick,
+    buttonSize = 'small',
+    type = 'norm',
+}: PhotosAddAlbumPhotosButtonProps) => {
     const { viewportWidth } = useActiveBreakpoint();
 
     if (type === 'toolbar') {
@@ -41,7 +46,7 @@ export const PhotosAddAlbumPhotosButton = ({ onClick, type = 'norm' }: PhotosAdd
         <Button
             color="norm"
             shape="solid"
-            size="small"
+            size={buttonSize}
             onClick={onClick}
             data-testid="toolbar-add-to-album"
             title={c('Action').t`Add photos`}
