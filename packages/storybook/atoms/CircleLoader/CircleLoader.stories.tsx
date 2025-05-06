@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { CircleLoader, CircleLoaderSizeEnum } from '@proton/atoms';
 import type { CircleLoaderProps } from '@proton/atoms';
+import { CircleLoader, CircleLoaderSizeEnum } from '@proton/atoms';
 
 const meta: Meta<typeof CircleLoader> = {
     args: {
@@ -33,10 +33,10 @@ type Story = StoryObj<typeof CircleLoader>;
 export const Default: Story = {};
 
 // Sizes
-const AllSizedSorted = Object.values(CircleLoaderSizeEnum).sort();
+const allSizesSorted = Object.values(CircleLoaderSizeEnum).sort();
 const AllSizesWithProps = (props: CircleLoaderProps = {}) => (
     <>
-        {AllSizedSorted.map((size: CircleLoaderSizeEnum) => (
+        {allSizesSorted.map((size: CircleLoaderSizeEnum) => (
             <CircleLoader key={size} {...props} children={size} size={size} />
         ))}
     </>
@@ -47,10 +47,10 @@ export const AllSizes: Story = {
 };
 
 // Colors
-const ClassNamesSorted = ['', 'color-danger', 'color-primary'];
+const classNamesSorted = ['', 'color-danger', 'color-primary'];
 const ClassNamesWithProps = (props: CircleLoaderProps = {}) => (
     <>
-        {ClassNamesSorted.map((className: string) => (
+        {classNamesSorted.map((className: string) => (
             <CircleLoader key={className} {...props} className={className} size={CircleLoaderSizeEnum.Medium} />
         ))}
     </>
