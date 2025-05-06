@@ -50,7 +50,7 @@ export const useBatchHelper = () => {
                 ignoredCodes = [],
             }: {
                 linkIds: string[];
-                query: (batchLinkIds: string[]) => Promise<object> | object;
+                query: (batchLinkIds: string[]) => Promise<object> | object | undefined;
                 maxParallelRequests?: number;
                 batchRequestSize?: number;
                 request?: <T>(args: object, abortSignal?: AbortSignal) => Promise<T>;
@@ -65,29 +65,33 @@ export const useBatchHelper = () => {
             const batches = chunk(linkIds, batchRequestSize);
 
             const queue = await Promise.all(
-                batches.map(
-                    (batchLinkIds) => async () =>
-                        request<T>(await query(batchLinkIds), abortSignal)
-                            .then((response) => {
-                                responses.push({ batchLinkIds, response });
-                                response.Responses.forEach(({ LinkID, Response }) => {
-                                    if (ignoredCodes.includes(Response.Code)) {
-                                        return;
-                                    }
-                                    if (
-                                        Response.Code === API_CODES.SINGLE_SUCCESS ||
-                                        allowedCodes.includes(Response.Code)
-                                    ) {
-                                        successes.push(LinkID);
-                                    } else {
-                                        failures[LinkID] = Response.Error;
-                                    }
-                                });
-                            })
-                            .catch((error) => {
-                                batchLinkIds.forEach((linkId) => (failures[linkId] = error));
-                            })
-                )
+                batches.map((batchLinkIds) => async () => {
+                    const q = await query(batchLinkIds);
+                    if (!q) {
+                        return;
+                    }
+
+                    await request<T>(q, abortSignal)
+                        .then((response) => {
+                            responses.push({ batchLinkIds, response });
+                            response.Responses.forEach(({ LinkID, Response }) => {
+                                if (ignoredCodes.includes(Response.Code)) {
+                                    return;
+                                }
+                                if (
+                                    Response.Code === API_CODES.SINGLE_SUCCESS ||
+                                    allowedCodes.includes(Response.Code)
+                                ) {
+                                    successes.push(LinkID);
+                                } else {
+                                    failures[LinkID] = Response.Error;
+                                }
+                            });
+                        })
+                        .catch((error) => {
+                            batchLinkIds.forEach((linkId) => (failures[linkId] = error));
+                        });
+                })
             );
             await preventLeave(runInQueue(queue, maxParallelRequests));
 
