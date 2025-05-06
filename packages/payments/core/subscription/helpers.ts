@@ -953,6 +953,29 @@ export function getRenewalTime(subscription: Subscription): number {
     return upcoming && isUpcomingSubscriptionUnpaid ? upcoming.PeriodStart : latestSubscription.PeriodEnd;
 }
 
+function isSubscriptionPrepaid(subscription: Subscription): boolean {
+    // InvoiceID idicates whether the subscription was alread prepaid. If there is no InvoiceID, then the upcoming
+    // subscription is unpaid.
+    return !!subscription?.InvoiceID;
+}
+
+/**
+ * Variable cycle offers are marked by automatically created unpaid scheduled subscriptions with different cycles than
+ * the current susbcription. For example when user subscribes to vpn2024 24m then the backend will create a scheduled
+ * 12m subscription. User will be billed when the upcoming 12m term starts. Another example is when user subscribes to
+ * bundle2022 6m - the backend will also create scheduled 12m subscription. P2-634 is the relevant ticket.
+ */
+function isVariableCycleOffer(subscription: Subscription | FreeSubscription | null | undefined): boolean {
+    if (!subscription || isFreeSubscription(subscription)) {
+        return false;
+    }
+
+    const current = subscription;
+    const upcoming = subscription.UpcomingSubscription;
+
+    return !!upcoming && current.Cycle !== upcoming.Cycle && !isSubscriptionPrepaid(upcoming);
+}
+
 export function isSubscriptionUnchanged(
     subscription: Subscription | FreeSubscription | null | undefined,
     planIds: PlanIDs,
@@ -962,8 +985,63 @@ export function isSubscriptionUnchanged(
 
     const planIdsUnchanged = isDeepEqual(subscriptionPlanIds, planIds);
     // Cycle is optional, so if it is not provided, we assume it is unchanged
-    const cycleUnchanged =
-        !cycle || cycle === subscription?.Cycle || cycle === subscription?.UpcomingSubscription?.Cycle;
+    const cycleUnchanged = !cycle || cycle === subscription?.Cycle;
 
     return planIdsUnchanged && cycleUnchanged;
+}
+
+export function isCheckForbidden(
+    subscription: Subscription | FreeSubscription | null | undefined,
+    planIds: PlanIDs,
+    cycle?: CYCLE
+): boolean {
+    if (!subscription) {
+        return false;
+    }
+
+    const selectedSameAsCurrent =
+        !!subscription && !isFreeSubscription(subscription)
+            ? isSubscriptionUnchanged(subscription, planIds, cycle)
+            : false;
+
+    const upcoming = subscription.UpcomingSubscription;
+    const hasUpcomingSubscription = !!upcoming;
+    const selectedSameAsUpcoming = hasUpcomingSubscription ? isSubscriptionUnchanged(upcoming, planIds, cycle) : false;
+
+    const variableCycleOffer = isVariableCycleOffer(subscription);
+
+    const isScheduledUnpaidModification =
+        hasUpcomingSubscription && !variableCycleOffer && !isSubscriptionPrepaid(upcoming);
+
+    return (
+        /**
+         * Consider the table with possible cases:
+         * |                                | selectedSameAsCurrent | selectedSameAsUpcoming        |
+         * |--------------------------------|-----------------------|-------------------------------|
+         * | hasVariableCycleOffer          | check forbidden       | check forbidden               |
+         * | hasUpcomingPrepaidSubscription | check forbidden       | check forbidden               |
+         * | hasNoUpcomingSubscription      | check forbidden       | n/a                           |
+         * | hasScheduledUnpaidDowncycling  | check allowed         | check forbidden               |
+         *
+         * "check forbidden" means that the /check endpoint will return an error.
+         * "check allowed" means that the /check endpoint will work as expected.
+         *
+         * hasVariableCycleOffer - when user has an automatic scheduled unpaid subscription.
+         * For example, when user subscribes to vpn2024 24m then the backend will create a scheduled 12m subscription.
+         *
+         * hasUpcomingPrepaidSubscription - when user manually created a scheduled subscription and paid for it.
+         * This can happen when user subscribes to a higher cycle.
+         * For example, if user has 1m bundle2022 and subscribes to 12m bundle2022,
+         * then we will charge user immediately for 12m subscription, and it will start only when the 1m ends.
+         *
+         * hasNoUpcomingSubscription - the simplest case. Just subscription.
+         *
+         * hasScheduledUnpaidDowncycling - this is a special case for some addons like Scribe.
+         * If user has a B2B plan with scribe addons and they want to decrease the number of scribes
+         * then it creates a scheduled subscription with lower number of scribes.
+         *
+         * P2-634 is the relevant ticket.
+         */
+        (selectedSameAsCurrent && !isScheduledUnpaidModification) || selectedSameAsUpcoming
+    );
 }

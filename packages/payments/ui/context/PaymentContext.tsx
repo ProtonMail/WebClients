@@ -35,7 +35,7 @@ import type {
 } from '../../core/interface';
 import type { FreePlanDefault, Plan, PlansMap } from '../../core/plan/interface';
 import { FREE_PLAN } from '../../core/subscription/freePlans';
-import { isSubscriptionUnchanged } from '../../core/subscription/helpers';
+import { isCheckForbidden } from '../../core/subscription/helpers';
 import { type FullPlansMap, type Subscription } from '../../core/subscription/interface';
 import { SelectedPlan } from '../../core/subscription/selected-plan';
 import { type MultiCheckGroupsResult, useMultiCheckGroups } from './useMultiCheckGroups';
@@ -348,7 +348,7 @@ export const PaymentsContextProvider = ({
     const checkMultiplePlans = async (plansToCheck: PlanToCheck[]) => {
         const checkSubscriptionData = plansToCheck
             .map((planToCheck) => getSubscriptionDataFromPlanToCheck(planToCheck))
-            .map((datum) => (isSubscriptionUnchanged(subscription, datum.Plans, datum.Cycle) ? null : datum));
+            .map((datum) => (isCheckForbidden(subscription, datum.Plans, datum.Cycle) ? null : datum));
 
         const indexesToExcludeFromCheck: number[] = [];
         const truthySubscriptionData = checkSubscriptionData.filter((data, index) => {
