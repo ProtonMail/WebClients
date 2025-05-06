@@ -1,8 +1,10 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { type Plan, SelectedPlan } from '@proton/payments';
 
-import { getAssistantDowngradeConfig, getAssistantUpsellConfig } from './assistantUpsellConfig';
+import { getAssistantUpsellConfigPlanAndCycle } from './assistantUpsellConfig';
 
 interface Props {
     upsellRef: string;
@@ -10,7 +12,7 @@ interface Props {
     plans: Plan[];
 }
 
-const useAssistantUpsellConfig = ({ upsellRef, downgradeRef, plans }: Props) => {
+const useAssistantUpsellConfig = ({ upsellRef, plans }: Props) => {
     const [user] = useUser();
     const [subscription] = useSubscription();
     const latestSubscription = subscription?.UpcomingSubscription ?? subscription;
@@ -18,17 +20,20 @@ const useAssistantUpsellConfig = ({ upsellRef, downgradeRef, plans }: Props) => 
 
     const selectedPlan = SelectedPlan.createFromSubscription(latestSubscription, plans);
 
-    const assistantUpsellConfig = getAssistantUpsellConfig(upsellRef, user, isOrgAdmin, selectedPlan);
-
-    let assistantDowngradeConfig = undefined;
-    if (downgradeRef) {
-        assistantDowngradeConfig = getAssistantDowngradeConfig(downgradeRef, selectedPlan);
-    }
-
-    return {
-        assistantUpsellConfig,
-        assistantDowngradeConfig,
+    const assistantUpsellConfig: OpenCallbackProps = {
+        ...getAssistantUpsellConfigPlanAndCycle(user, isOrgAdmin, selectedPlan),
+        upsellRef,
+        cycle: selectedPlan.cycle,
+        planIDs: selectedPlan.planIDs,
+        mode: 'upsell-modal',
+        step: SUBSCRIPTION_STEPS.CHECKOUT,
+        disablePlanSelection: true,
+        metrics: {
+            source: 'upsells',
+        },
     };
+
+    return { assistantUpsellConfig };
 };
 
 export default useAssistantUpsellConfig;

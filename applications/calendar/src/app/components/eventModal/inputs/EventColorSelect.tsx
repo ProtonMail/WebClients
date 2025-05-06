@@ -7,16 +7,14 @@ import { useUser } from '@proton/account/user/hooks';
 import {
     Badge,
     ColorPicker,
-    NewUpsellModal,
     Spotlight,
     UpsellModal,
-    useMailUpsellConfig,
     useModalState,
     useSpotlightOnFeature,
     useSpotlightShow,
 } from '@proton/components';
 import { FeatureCode } from '@proton/features';
-import { APPS, APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
@@ -25,7 +23,6 @@ import paintImg from '@proton/styles/assets/img/illustrations/new-upsells-img/pa
 interface Props {
     model: EventModel;
     setModel: (value: EventModel) => void;
-    isDrawerApp?: boolean;
 }
 
 const upsellRef = getUpsellRef({
@@ -34,7 +31,7 @@ const upsellRef = getUpsellRef({
     feature: CALENDAR_UPSELL_PATHS.COLOR_PER_EVENT,
 });
 
-const EventColorSelect = ({ model, setModel, isDrawerApp }: Props) => {
+const EventColorSelect = ({ model, setModel }: Props) => {
     const [user] = useUser();
 
     const {
@@ -54,10 +51,7 @@ const EventColorSelect = ({ model, setModel, isDrawerApp }: Props) => {
     const shouldShowColorSpotlight = useSpotlightShow(showColorSpotlight && user.hasPaidMail);
 
     const handleChangeColor = (color: string) => {
-        setModel({
-            ...model,
-            color,
-        });
+        setModel({ ...model, color });
     };
 
     const handleClickColorPicker = (toggleColorPicker: () => void) => {
@@ -75,35 +69,6 @@ const EventColorSelect = ({ model, setModel, isDrawerApp }: Props) => {
     };
 
     const isIframe = getIsIframe();
-    const { upsellConfig, displayNewUpsellModalsVariant } = useMailUpsellConfig({ upsellRef, preventInApp: isIframe });
-
-    const modal = displayNewUpsellModalsVariant ? (
-        <NewUpsellModal
-            data-testid="color-per-event:upsell-modal"
-            titleModal={c('Title').t`Add some color to your day`}
-            description={c('Description')
-                .t`Color-code events to make it easier to organize your day, track your time, and prioritize tasks.`}
-            modalProps={upsellModalProps}
-            sourceEvent="BUTTON_COLOR_PER_EVENT"
-            application={APPS.PROTONCALENDAR}
-            illustration={paintImg}
-            {...upsellConfig}
-        />
-    ) : (
-        <UpsellModal
-            data-testid="color-per-event:upsell-modal"
-            modalProps={upsellModalProps}
-            features={['more-storage', 'more-email-addresses', 'more-calendars', 'calendar-sharing']}
-            description={c('Description')
-                .t`Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.`}
-            title={c('Title').t`Add some color to your day`}
-            sourceEvent="BUTTON_COLOR_PER_EVENT"
-            application={APPS.PROTONCALENDAR}
-            headerType="calendar"
-            hideInfo={isDrawerApp}
-            {...upsellConfig}
-        />
-    );
 
     // Wrap the children in a div to show spotlight
     return (
@@ -136,7 +101,18 @@ const EventColorSelect = ({ model, setModel, isDrawerApp }: Props) => {
                 </div>
             </Spotlight>
 
-            {renderUpsellModal && modal}
+            {renderUpsellModal && (
+                <UpsellModal
+                    data-testid="color-per-event:upsell-modal"
+                    title={c('Title').t`Add some color to your day`}
+                    description={c('Description')
+                        .t`Color-code events to make it easier to organize your day, track your time, and prioritize tasks.`}
+                    modalProps={upsellModalProps}
+                    illustration={paintImg}
+                    upsellRef={upsellRef}
+                    preventInAppPayment={isIframe}
+                />
+            )}
         </>
     );
 };
