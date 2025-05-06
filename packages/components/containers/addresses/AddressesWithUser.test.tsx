@@ -70,6 +70,8 @@ const mockedUseFlag = useFlag as jest.MockedFunction<any>;
 jest.mock('@proton/account/organizationKey/hooks');
 const mockedUseOrganizationKey = useOrganizationKey as jest.MockedFunction<typeof useOrganizationKey>;
 
+jest.mock('@proton/components/components/link/SettingsLink', () => 'string');
+
 jest.mock('@proton/redux-shared-store');
 
 describe('addresses with user', () => {
