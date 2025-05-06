@@ -7,7 +7,14 @@ import generateUID from '@proton/utils/generateUID';
 
 import './CircleLoader.scss';
 
-export type CircleLoaderSize = 'tiny' | 'small' | 'medium' | 'large';
+export enum CircleLoaderSizeEnum {
+    Large = 'large',
+    Medium = 'medium',
+    Small = 'small',
+    Tiny = 'tiny',
+}
+
+export type CircleLoaderSize = `${CircleLoaderSizeEnum}`;
 
 export interface CircleLoaderProps extends ComponentPropsWithoutRef<'svg'> {
     size?: CircleLoaderSize;
