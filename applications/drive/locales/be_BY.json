@@ -474,6 +474,9 @@
       "Go back": [
         "Вярнуцца"
       ],
+      "Go back to album “${ albumName }“": [
+        "Вярнуцца ў альбом “${ albumName }“"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Перайсці ў ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -1400,9 +1403,6 @@
       ],
       "Monthly": [
         "Штомесяц"
-      ],
-      "New!": [
-        "Новае!"
       ],
       "Two-year": [
         "Кожныя два гады"
@@ -3105,8 +3105,8 @@
       "Failed to load the STL preview": [
         "Не ўдалося загрузіць папярэдні прагляд STL"
       ],
-      "Failed to save photo to your Drive": [
-        "Не ўдалося захаваць фатаграфію на ваш Drive"
+      "Failed to save some photos to your Drive": [
+        "Не ўдалося захаваць некаторыя фатаграфіі ў ваш Drive"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Файл \"${ item.name }\" немагчыма запампаваць па прычыне памылкі \"${ error }\""
@@ -5462,11 +5462,11 @@
       "Photo is set as album cover": [
         "Фатаграфія зададзена ў якасці вокладкі альбома"
       ],
-      "Photo saved to your Drive": [
-        "Фатаграфія захавана ў ваш Drive"
-      ],
       "Photo was copied to stream and marked favorite there.": [
         "Фатаграфія была скапіявана ў плынь і пазначана ў якасці абранай."
+      ],
+      "Photo(s) saved to your Drive": [
+        "Фатаграфіі захаваны ў ваш Drive"
       ],
       "Photos have been successfully recovered.": [
         "Фатаграфіі былі паспяхова адноўлены."
@@ -6102,7 +6102,7 @@
         "Мы адправім новы праверачны код на ${ strong }"
       ],
       "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
-        "Мы паляпшаем фатаграфіі да новага ўзроўню! Падчас гэтага пераходу аднаўленне фатаграфій будзе часова недаступна. Усё будзе гатова праз некалькіх дзён. Удзячныя за разуменне."
+        "Мы паляпшаем фатаграфіі да новага ўзроўню! Падчас гэтага пераходу аднаўленне фатаграфій будзе часова недаступна. Усё будзе гатова праз некалькіх дзён. Удзячныя вам за разуменне."
       ],
       "Week": [
         "Тыдзень"
@@ -10339,6 +10339,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Калі вы хочаце і далей запампоўваць і сінхранізаваць файлы, вызваліце месца або перайдзіце на тарыфны план больш высокага ўзроўню, каб атрымаць больш сховішча."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Вызваліце месца або ${ upgrade }, каб працягнуць карыстацца прадуктамі ${ BRAND_NAME }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Калі вы хочаце і далей адпраўляць і прымаць лісты, вызваліце месца або перайдзіце на тарыфны план больш высокага ўзроўню, каб атрымаць больш сховішча."
       ],
@@ -10362,6 +10365,12 @@
       ],
       "Your ${ appStorage } is full": [
         "Ваша ${ appStorage } запоўнена"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Ваша ${ productString } запоўнена на ${ percentage }%. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Ваша ${ productString } запоўнена. ${ cta }"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Ваша сховішча запоўнена на ${ percentage }%. ${ cta }."
@@ -10470,47 +10479,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription reminder": {
@@ -10783,6 +10751,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
