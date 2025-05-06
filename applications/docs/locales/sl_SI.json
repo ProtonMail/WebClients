@@ -459,6 +459,9 @@
       "Make a copy": [
         "Naredi kopijo"
       ],
+      "Manage advanced account protections": [
+        "Upravljajte z naprednimi zaščitami računa"
+      ],
       "Manage folders": [
         "Upravljanje map"
       ],
@@ -798,6 +801,9 @@
       "Upgrade now": [
         "Nadgradi zdaj"
       ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Nadgradite na ${ BRAND_NAME } Unlimited"
+      ],
       "Upload and share files": [
         "Naloži in deli datoteke"
       ],
@@ -1123,9 +1129,6 @@
       "Monthly": [
         "Mesečno"
       ],
-      "New!": [
-        "Novo!"
-      ],
       "Two-year": [
         "Dve leti"
       ]
@@ -1262,6 +1265,9 @@
       ],
       "Save ${ upsellSavings }": [
         "Prihranite ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Prihranite denar s paketom ${ upsellPlanName }"
       ],
       "Secure personal and shared calendar": [
         "Varen osebni koledar in koledar v skupni rabi"
@@ -2323,6 +2329,11 @@
         "Zapadel račun"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "uporabite pomočnika za uvoz Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vam omogočata varno in šifrirano sodelovanje z drugimi."
@@ -2431,11 +2442,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ustvarili ste že 10 vzdevkov. Zagotovite si neomejeno število vzdevkov in 500 GB shrambe s paketom ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "uporabite pomočnika za uvoz Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2626,7 +2632,7 @@
         "${ errorMessage }. Lahko tudi preverite stanje na ${ statusPageLink }"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "${ user.Name } je vaše uporabniško ime. Če želite ustvariti ${ emailAddress }, pojdite v ikona zobnika > Osebna identiteta in naslovi > Kratka domena (@pm.me)"
+        "${ user.Name } je vaše uporabniško ime. Če želite ustvariti ${ emailAddress }, pojdite v Nastavitve > Osebna identiteta in naslovi > Kratka domena (@pm.me)"
       ],
       "A group with this name already exists": [
         "Skupina z enakim imenom že obstaja"
@@ -2905,7 +2911,7 @@
         "Izberite državo."
       ],
       "Please select a state": [
-        "Izberite stanje"
+        "Izberite državo"
       ],
       "Port is required": [
         "Zahtevana so vrata"
@@ -3389,6 +3395,9 @@
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "V šestmesečnem obdobju lahko sprejmete največ tri povabila. Če želite zahtevati izjemo, se obrnite na ${ supportLink }."
       ],
+      "You cannot accept this invitation with your current plan.": [
+        "S trenutnim paketom ne morete sprejeti tega povabila."
+      ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Povabljeni ste, da se pridružite organizaciji ${ bannerOrganization }. ${ viewInviteButton }"
       ],
@@ -3399,7 +3408,7 @@
         "Imate neplačane račune. Plačajte jih, preden se boste pridružili družinskemu paketu."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Povabljeni ste, da povežete svoj ${ BRAND_NAME } račun s tem družinskim paketom in skupaj uživate vse premium funkcije ${ brandOrAppName }."
+        "Povabljeni ste, da povežete svoj ${ BRAND_NAME } račun s tem družinskim paketom in skupaj uživate v vseh premijskih funkcijah ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Vaš račun ima več naslovov e-pošte, ko jih je na voljo za ta paket. ${ addressSettingsLink }"
@@ -4703,6 +4712,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Do te mape lahko dostopajo samo osebe s povezavo in geslom."
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Odprite priročnik za priporočena dejanja in koristne povezave."
+      ],
       "Opening...": [
         "Odpiranje ..."
       ],
@@ -5221,6 +5233,9 @@
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Uvožene koledarje lahko tudi združite z obstoječimi koledarji v ${ BRAND_NAME }u."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "To lahko kadar koli spremenite v ${ settingsLink }"
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Napredek si lahko ogledate ${ importProgressLink }."
@@ -5832,6 +5847,9 @@
       "Set link password": [
         "Nastavite geslo za povezavo"
       ],
+      "Shared with me": [
+        "Deljeno z mano"
+      ],
       "Sign emails": [
         "Podpiši sporočila"
       ],
@@ -6022,8 +6040,17 @@
       "How to share a calendar": [
         "Kako deli koledar"
       ],
+      "How to share via email": [
+        "Kako dati v skupno rabo prek e-pošte"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Kako uporabljati ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "How to use ${ PASS_APP_NAME } for Business": [
         "Kako uporabljati ${ PASS_APP_NAME } for Business"
+      ],
+      "How to use email forwarding": [
+        "Kako uporabljati posredovanje e-pošte"
       ],
       "How to use Groups": [
         "Kako uporabljati skupine"
@@ -6041,7 +6068,7 @@
         "Zahtevaj povabilo"
       ],
       "settings": [
-        "nastavitvah"
+        "nastavitve"
       ],
       "Types of recovery methods": [
         "Vrste načinov obnovitve"
@@ -7686,11 +7713,17 @@
       "Save 80% on your first month.": [
         "Prihranite 80 % pri vašem prvem mesecu."
       ],
+      "Save big when you pay annually": [
+        "Prihranite čim več z izbiro letnega plačila!"
+      ],
       "Special offer": [
         "Posebna ponudba"
       ],
       "This offer won't be shown again.": [
         "Ta ponudba se ne bo več prikazovala."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Ko preklopite z mesečne na letno naročnino."
       ],
       "You currently pay": [
         "Trenutno plačujete"
@@ -7793,7 +7826,10 @@
     },
     "PassFamilyPlan2024": {
       "All premium features. 6 users. 1 easy subscription.": [
-        "Vse premium funkcije. 6 uporabnikov. 1 preprosta naročnina."
+        "Vse premijske funkcije. 6 uporabnikov. 1 preprosta naročnina."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Pridobite ga za ${ monthlyPrice }"
       ],
       "Introducing ${ passFamilyPlanName }": [
         "Predstavljamo ${ passFamilyPlanName }"
@@ -7878,6 +7914,9 @@
       "Please select your billing country first.": [
         "Najprej izberite državo za izstavitev računa."
       ],
+      "Please select your billing state first.": [
+        "Najprej izberite svojo državo za izstavitev računa."
+      ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovi se za ${ renewPriceStr }. Prekliči kadar koli."
       ],
@@ -7890,7 +7929,7 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupon velja za ${ couponRedemptions } podaljšanje.",
         "Kupon velja za ${ couponRedemptions } podaljšanji.",
-        "Kupon velja za ${ couponRedemptions } podaljšanj.",
+        "Kupon velja za ${ couponRedemptions } podaljšanja.",
         "Kupon velja za ${ couponRedemptions } podaljšanj."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
@@ -8644,6 +8683,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Običajna cena ${ amount } za 30 mesecev"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Posebna ponudba velja za prvi 2 leti."
       ]
     },
     "specialoffer: Title": {
@@ -8862,6 +8904,29 @@
         "Za ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } shrambe na uporabnika"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vam nudi vse aplikacije, vse funkcije, zgodnji dostop do novih izdaj in vse potrebno za nadzor nad svojimi podatki in njihovo varnostjo."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } e-poštna domena po meri",
+        "${ planNumberOfDomains } e-poštni domeni po meri",
+        "${ planNumberOfDomains } e-poštne domene po meri",
+        "${ planNumberOfDomains } e-poštnih domen po meri"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-poštni naslov",
+        "${ planNumberOfEmails } e-poštna naslova",
+        "${ planNumberOfEmails } e-poštni naslovi",
+        "${ planNumberOfEmails } e-poštnih naslovov"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mape, oznake in filtri po meri"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB prostora za shranjevanje"
@@ -8901,29 +8966,6 @@
       ],
       "Your privacy is our mission": [
         "Vaša zasebnost je naše poslanstvo"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } shrambe na uporabnika"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vam nudi vse aplikacije, vse funkcije, zgodnji dostop do novih izdaj in vse potrebno za nadzor nad svojimi podatki in njihovo varnostjo."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } e-poštna domena po meri",
-        "${ planNumberOfDomains } e-poštni domeni po meri",
-        "${ planNumberOfDomains } e-poštne domene po meri",
-        "${ planNumberOfDomains } e-poštnih domen po meri"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-poštni naslov",
-        "${ planNumberOfEmails } e-poštna naslova",
-        "${ planNumberOfEmails } e-poštni naslovi",
-        "${ planNumberOfEmails } e-poštnih naslovov"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mape, oznake in filtri po meri"
       ]
     },
     "Subscription renewal state": {
@@ -9280,7 +9322,7 @@
         "Potrdite izgubo bonusov za ${ BRAND_NAME }"
       ],
       "Connect apps and devices": [
-        "Povežite applikacije in naprave"
+        "Povežite aplikacije in naprave"
       ],
       "Connect to video conferencing": [
         "Poveži se z videokonferenco"
@@ -9438,6 +9480,9 @@
       "Enable 2FA": [
         "Omogoči 2FA"
       ],
+      "Enable advanced account protection": [
+        "Omogoči napredno zaščito računa"
+      ],
       "End-to-end encrypted": [
         "Celovito šifrirano"
       ],
@@ -9458,6 +9503,9 @@
       ],
       "Get advanced protection": [
         "Pridobite napredno zaščito"
+      ],
+      "Get more from your VPN": [
+        "Izkoristite več od svoje VPN"
       ],
       "Get the apps": [
         "Namesti aplikacije"
@@ -9743,6 +9791,9 @@
       ],
       "Warning: suspected fake website": [
         "Pozor: morebitno lažno spletno mesto"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Dobrodošli v ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "Pred čim vas lahko VPN zaščiti?"

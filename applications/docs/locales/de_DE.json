@@ -1133,9 +1133,6 @@
       "Monthly": [
         "Monatlich"
       ],
-      "New!": [
-        "Neu!"
-      ],
       "Two-year": [
         "Zwei Jahre"
       ]
@@ -2344,6 +2341,11 @@
         "Überfällige Rechnung"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "den Easy Switch-Importassistenten"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } ermöglicht es dir, mit anderen in einer sicheren, verschlüsselten Umgebung zusammenzuarbeiten."
@@ -2479,11 +2481,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "den Easy Switch-Importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -9027,6 +9024,25 @@
         "Für ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } Speicherplatz pro Benutzer"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Mit ${ planName } erhältst du alle Anwendungen, alle Funktionen, frühen Zugriff auf neue Versionen und alles, was du brauchst, um die Kontrolle über deine Daten und deren Sicherheit zu behalten."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigene E-Mail-Domain",
+        "${ planNumberOfDomains } eigene E-Mail-Domains"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } E-Mail-Adresse",
+        "${ planNumberOfEmails } E-Mail-Adressen"
+      ],
+      "Folders, labels, and custom filters": [
+        "Ordner, Kategorien und benutzerdefinierte Filter"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB Speicherplatz"
@@ -9066,25 +9082,6 @@
       ],
       "Your privacy is our mission": [
         "Deine Privatsphäre ist unsere Mission"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } Speicherplatz pro Benutzer"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "Mit ${ planName } erhältst du alle Anwendungen, alle Funktionen, frühen Zugriff auf neue Versionen und alles, was du brauchst, um die Kontrolle über deine Daten und deren Sicherheit zu behalten."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } eigene E-Mail-Domain",
-        "${ planNumberOfDomains } eigene E-Mail-Domains"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } E-Mail-Adresse",
-        "${ planNumberOfEmails } E-Mail-Adressen"
-      ],
-      "Folders, labels, and custom filters": [
-        "Ordner, Kategorien und benutzerdefinierte Filter"
       ]
     },
     "Subscription renewal state": {

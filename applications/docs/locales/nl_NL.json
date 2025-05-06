@@ -1133,9 +1133,6 @@
       "Monthly": [
         "Maandelijks"
       ],
-      "New!": [
-        "Nieuw!"
-      ],
       "Two-year": [
         "Tweejaarlijks"
       ]
@@ -2344,6 +2341,11 @@
         "Onbetaalde factuur"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Met ${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } kunt u samenwerken met anderen in een veilige, versleutelde omgeving."
@@ -2479,11 +2481,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gebruik de Easy Switch-importhulp"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -8845,6 +8842,9 @@
       "For all ${ BRAND_NAME } services": [
         "Voor alle ${ BRAND_NAME }-diensten"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Om ${ BRAND_NAME } producten te kunnen blijven gebruiken, maakt u ruimte vrij of voert u een ${ upgrade } uit"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Maak ruimte vrij of ${ upgrade } om bestanden te uploaden of te synchroniseren"
       ],
@@ -8863,6 +8863,12 @@
       ],
       "Your ${ appStorage } is full": [
         "Uw ${ appStorage } is vol"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Uw ${ productString } zit ${ percentage }% vol. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Uw ${ productString } zit vol. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Uw opslag is ${ percentage }% vol. ${ cta }."
@@ -8961,6 +8967,25 @@
         "Voor ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } opslagruimte per gebruiker"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigen e-maildomein",
+        "${ planNumberOfDomains } eigen e-maildomeinen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailadres",
+        "${ planNumberOfEmails } e-mailadressen"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mappen, labels en aangepaste filters"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB opslagruimte"
@@ -9000,25 +9025,6 @@
       ],
       "Your privacy is our mission": [
         "Uw privacy is onze missie"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } opslagruimte per gebruiker"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } eigen e-maildomein",
-        "${ planNumberOfDomains } eigen e-maildomeinen"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-mailadres",
-        "${ planNumberOfEmails } e-mailadressen"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mappen, labels en aangepaste filters"
       ]
     },
     "Subscription renewal state": {

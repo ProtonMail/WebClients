@@ -2167,6 +2167,11 @@
         "Протермінований рахунок"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "скористайтеся помічником з імпортування Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } захищає ваш обліковий запис із виділеним цілодобовим моніторингом підозрілої діяльності, включно з ескалацією до фахівців з безпеки."
@@ -2242,11 +2247,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ви вже створили 10 псевдонімів. Отримайте необмежені псевдоніми та 500 ГБ сховища з ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "скористайтеся помічником з імпортування Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -8278,6 +8278,29 @@
         "За ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } сховища на користувача"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } надає вам усі застосунки, усі функції, ранній доступ до нових релізів і все необхідне, щоби контролювати свої дані та їхню безпеку."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } власний домен електронної пошти",
+        "${ planNumberOfDomains } власні домени електронної пошти",
+        "${ planNumberOfDomains } власних доменів електронної пошти",
+        "${ planNumberOfDomains } власних доменів електронної пошти"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } адреса електронної пошти",
+        "${ planNumberOfEmails } адреси електронної пошти",
+        "${ planNumberOfEmails } адрес електронної пошти",
+        "${ planNumberOfEmails } адрес електронної пошти"
+      ],
+      "Folders, labels, and custom filters": [
+        "Теки, мітки та користувацькі фільтри"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 ГБ сховища"
@@ -8317,29 +8340,6 @@
       ],
       "Your privacy is our mission": [
         "Ваша приватність є нашою місією"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } сховища на користувача"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } надає вам усі застосунки, усі функції, ранній доступ до нових релізів і все необхідне, щоби контролювати свої дані та їхню безпеку."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } власний домен електронної пошти",
-        "${ planNumberOfDomains } власні домени електронної пошти",
-        "${ planNumberOfDomains } власних доменів електронної пошти",
-        "${ planNumberOfDomains } власних доменів електронної пошти"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } адреса електронної пошти",
-        "${ planNumberOfEmails } адреси електронної пошти",
-        "${ planNumberOfEmails } адрес електронної пошти",
-        "${ planNumberOfEmails } адрес електронної пошти"
-      ],
-      "Folders, labels, and custom filters": [
-        "Теки, мітки та користувацькі фільтри"
       ]
     },
     "Subscription renewal state": {
