@@ -22,8 +22,35 @@
 	background-color: var(--background-weak);
 	overflow: hidden;
 
-	&:hover {
+	&:hover,
+	&:focus-within {
 		background-color: var(--background-weak);
+	}
+
+	// gradient when favorite or hovered
+	&--favorited,
+	&:hover {
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(
+				180deg,
+				rgb(0 0 0 / 0.32) 0%,
+				transparent #{rem(40)},
+				transparent calc(100% - #{rem(40)}),
+				rgb(0 0 0 / 0.32) 100%
+			);
+			animation: photos-card-loading alternate 0.1s ease-in;
+		}
+	}
+
+	// no gradient when selected
+	&--selected,
+	&--selected:hover {
+		&::after {
+			content: none;
+		}
 	}
 
 	&--loading {
@@ -106,12 +133,7 @@
 	color: white;
 }
 
-.new-photos .photos-card-share-icon {
-	background-color: rgb(112 109 107 / 0.8);
-	inline-size: 20px;
-	block-size: 20px;
-}
-
+.new-photos .photos-card-share-icon,
 .new-photos .photos-card-bottom-icon {
 	background-color: rgb(112 109 107 / 0.8);
 	inline-size: rem(20);
