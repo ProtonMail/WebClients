@@ -90,26 +90,29 @@ const Header = ({
 
     return (
         <div className={clsx('file-preview-header flex justify-space-between items-center relative', headerSpacing)}>
-            <div className="file-preview-filename flex items-center flex-nowrap" data-testid="preview:file-name">
-                {mimeType && <FileIcon mimeType={mimeType} className="mr-2" />}
-                <FileNameDisplay text={name} className="user-select" data-testid="file-preview:file-name" />
-                {signatureStatus}
+            <div className="flex-1">
+                <div className="file-preview-filename flex items-center flex-nowrap" data-testid="preview:file-name">
+                    {mimeType && <FileIcon mimeType={mimeType} className="mr-2" />}
+                    <FileNameDisplay text={name} className="user-select" data-testid="file-preview:file-name" />
+                    {signatureStatus}
+                </div>
+                {date && (
+                    <TimeIntl
+                        className="hidden flex-1 text-ellipsis md:inline-block ml-6"
+                        data-testid="file-preview:date"
+                        options={{
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric',
+                            hour: 'numeric',
+                            minute: 'numeric',
+                        }}
+                    >
+                        {date}
+                    </TimeIntl>
+                )}
             </div>
-            {date && (
-                <TimeIntl
-                    className="flex-1 text-ellipsis ml-5"
-                    data-testid="file-preview:date"
-                    options={{
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric',
-                        hour: 'numeric',
-                        minute: 'numeric',
-                    }}
-                >
-                    {date}
-                </TimeIntl>
-            )}
+
             {children}
             <div className="flex items-center">
                 {isLargeViewport && onOpenInDocs && (
@@ -130,7 +133,7 @@ const Header = ({
                         title={c('Action').t`Restore`}
                         onClick={onRestore}
                         shape="solid"
-                        className="mx-2 lg:mr-4"
+                        className="md:mx-2 lg:mr-4"
                         color="norm"
                         data-testid="file-preview:actions:restore"
                     >
@@ -143,7 +146,7 @@ const Header = ({
                         shape="ghost"
                         title={c('Action').t`Download`}
                         onClick={onDownload}
-                        className="ml-2"
+                        className="sm:ml-2 hidden sm:inline-flex"
                         data-testid="file-preview:actions:download"
                     >
                         <Icon name="arrow-down-line" size={5} alt={c('Action').t`Download`} />
@@ -159,7 +162,7 @@ const Header = ({
                                 : c('Action').t`Save`
                         }
                         onClick={handleSave}
-                        className="ml-2"
+                        className="md:ml-2"
                         data-testid="file-preview:actions:save"
                         loading={isSaving}
                         disabled={!isDirty}
@@ -177,7 +180,7 @@ const Header = ({
                         shape="ghost"
                         title={c('Action').t`Details`}
                         onClick={onDetails}
-                        className="ml-2 hidden md:inline-flex"
+                        className="md:ml-2 hidden md:inline-flex"
                         data-testid="file-preview:actions:details"
                     >
                         <Icon name="info-circle" size={5} alt={c('Action').t`Details`} />
@@ -189,7 +192,7 @@ const Header = ({
                         shape="ghost"
                         title={c('Action').t`Share`}
                         onClick={onShare}
-                        className="ml-2 md:inline-flex"
+                        className="md:ml-2 md:inline-flex"
                         data-testid="file-preview:actions:share"
                     >
                         <Icon
@@ -206,7 +209,7 @@ const Header = ({
                         shape="ghost"
                         title={c('Action').t`Set as album cover`}
                         onClick={onSelectCover}
-                        className="ml-2 md:inline-flex"
+                        className="md:ml-2 md:inline-flex"
                         data-testid="file-preview:actions:selectcover"
                     >
                         <Icon name="window-image" size={5} alt={c('Action').t`Set as album cover`} />
@@ -218,7 +221,7 @@ const Header = ({
                         shape="ghost"
                         title={c('Action').t`Close`}
                         onClick={onClose}
-                        className="ml-2"
+                        className="md:ml-2"
                         data-testid="preview:button:close"
                     >
                         <Icon name="cross" size={5} alt={c('Action').t`Close`} />
