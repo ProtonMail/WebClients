@@ -22,6 +22,7 @@ import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
 import type {
+    AddonGuard,
     BillingAddress,
     CheckWithAutomaticOptions,
     MultiCheckSubscriptionData,
@@ -47,23 +48,20 @@ import {
     getCheckoutModifiers,
     getFreeCheckResult,
     getHas2024OfferCoupon,
-    getIsB2BAudienceFromPlan,
-    getPaymentsVersion,
-    getPlanNameFromIDs,
-    getPlansMap,
-    isFreeSubscription,
-    isOnSessionMigration,
-} from '@proton/payments';
-import type { AddonGuard } from '@proton/payments';
-import {
     getHasSomeVpnPlan,
+    getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
     getIsVpnPlan,
     getMaximumCycleForApp,
+    getPaymentsVersion,
     getPlanIDs,
+    getPlanNameFromIDs,
+    getPlansMap,
     hasDeprecatedVPN,
+    isCheckForbidden,
+    isFreeSubscription,
+    isOnSessionMigration,
 } from '@proton/payments';
-import { isSubscriptionUnchanged } from '@proton/payments';
 import { PaymentsContextProvider } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
@@ -82,7 +80,7 @@ import {
 } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Organization, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
-import { Audience, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
@@ -623,7 +621,7 @@ const SubscriptionContainerInner = ({
             .filter((cycle) => cycle !== checkResult.Cycle)
 
             // skip cycles of the currently active subscription, because the backend doesn't allows to check them
-            .filter((cycle) => !isSubscriptionUnchanged(subscription, newModel.planIDs, cycle));
+            .filter((cycle) => !isCheckForbidden(subscription, newModel.planIDs, cycle));
 
         const additionalPayloads = additionalCycles.map(
             (Cycle) =>
@@ -676,14 +674,7 @@ const SubscriptionContainerInner = ({
             return;
         }
 
-        const isInhouseForcedUser =
-            chargebeeContext.enableChargebeeRef.current === ChargebeeEnabled.INHOUSE_FORCED ||
-            isOnSessionMigration(user.ChargebeeUser, subscription?.BillingPlatform);
-
-        if (
-            isSubscriptionUnchanged(latestSubscription, copyNewModel.planIDs, copyNewModel.cycle) &&
-            !isInhouseForcedUser
-        ) {
+        if (isCheckForbidden(subscription, copyNewModel.planIDs, copyNewModel.cycle)) {
             setCheckResult({
                 ...getOptimisticCheckResult({
                     plansMap,
