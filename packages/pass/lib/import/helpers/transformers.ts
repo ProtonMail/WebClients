@@ -4,6 +4,7 @@ import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { obfuscateExtraFields, obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import type {
+    CustomSectionValue,
     DeobfuscatedItemExtraField,
     Item,
     ItemContent,
@@ -199,6 +200,7 @@ export const importCustomItem = (options: {
     trashed?: boolean;
     createTime?: number;
     modifyTime?: number;
+    sections?: CustomSectionValue[];
 }): ItemImportIntent<'custom'> => {
     return {
         type: 'custom',
@@ -207,7 +209,7 @@ export const importCustomItem = (options: {
             note: obfuscate(options.note || ''),
             itemUuid: uniqueId(),
         },
-        content: { sections: [] },
+        content: { sections: options.sections ?? [] },
         extraData: [],
         extraFields: obfuscateExtraFields(options.extraFields),
         trashed: options.trashed ?? false,
