@@ -1775,10 +1775,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
-      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
@@ -2188,6 +2184,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი დამატებითი პაროლით"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი მეორე პაროლით"
       ],
       "Unlock with biometrics": [
         "ბიომეტრიით განბლოკვა"
@@ -3748,6 +3747,9 @@
       ],
       "Enter coupon code": [
         "შეიყვანეთ კუპონის კოდი"
+      ],
+      "Enter your ${ BRAND_NAME } password": [
+        "შეიყვანეთ თქვენი ${ BRAND_NAME }-ის პაროლი"
       ],
       "Enter your backup password": [
         "შეიყვანეთ თქვენი მარქაფის პაროლი"
