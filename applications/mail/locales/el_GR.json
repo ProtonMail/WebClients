@@ -1144,11 +1144,11 @@
       "Select ${ planTitle }": [
         "Επιλογή ${ planTitle }"
       ],
-      "Select all": [
-        "Επιλογή όλων"
-      ],
       "Select All": [
         "Επιλογή Όλων"
+      ],
+      "Select all": [
+        "Επιλογή όλων"
       ],
       "Select all messages": [
         "Επιλογή όλων των μηνυμάτων"
@@ -1908,9 +1908,6 @@
       ],
       "Monthly": [
         "Μηνιαία"
-      ],
-      "New!": [
-        "Νέο!"
       ],
       "Two-year": [
         "Δύο έτη"
@@ -6309,6 +6306,9 @@
       "and": [
         "και"
       ],
+      "and more.": [
+        "και άλλα."
+      ],
       "Another tip will be displayed next time you open Mail": [
         "Μια άλλη συμβουλή θα εμφανιστεί την επόμενη φορά που θα ανοίξετε το Mail"
       ],
@@ -6621,6 +6621,10 @@
       "Drop to import": [
         "Απόθεση για εισαγωγή"
       ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "Λόγω της διαμόρφωσης του παραλήπτη σας, αυτό το μήνυμα δεν μπορεί να αποσταλεί με ημερομηνία λήξης στην ακόλουθη επαφή: ",
+        "Λόγω της διαμόρφωσης του παραλήπτη σας, αυτό το μήνυμα δεν μπορεί να αποσταλεί με ημερομηνία λήξης στις ακόλουθες επαφές: "
+      ],
       "Duplicate key updated": [
         "Το διπλότυπο κλειδί ενημερώθηκε"
       ],
@@ -6876,7 +6880,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -7003,9 +7008,6 @@
       ],
       "Message download status:": [
         "Κατάσταση λήψης μηνυμάτων:"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Η λήξη μηνυμάτων λειτουργεί εκτός πλαισίου κατά την αποστολή μηνυμάτων σε άλλους χρήστες του ${ MAIL_APP_NAME }. Για να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου που λήγουν σε μη-χρήστες ${ BRAND_NAME }, παρακαλούμε να ακυρώσετε και να προσθέσετε προστασία με κωδικό πρόσβασης στο email σας."
       ],
       "Message headers": [
         "Κεφαλίδες μηνύματος"
@@ -11785,10 +11787,6 @@
       "Do you want to send the email anyway?": [
         "Θέλετε να στείλετε το email ούτως ή άλλως;"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Αν αποφασίσετε να στείλετε το μήνυμα ούτως ή άλλως, ο ακόλουθος παραλήπτης θα λάβει το μήνυμα χωρίς λήξη:",
-        "Αν αποφασίσετε να στείλετε το μήνυμα ούτως ή άλλως, οι ακόλουθοι παραλήπτες θα λάβουν το μήνυμα χωρίς λήξη:"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Η ακόλουθη διεύθυνση δεν είναι έγκυρη: ${ invalidAddresses }",
         "Οι ακόλουθες διευθύνσεις δεν είναι έγκυρες: ${ invalidAddresses }"
@@ -12566,47 +12564,6 @@
         "Για ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερες premium δυνατότητες"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium δυνατότητες"
@@ -12865,6 +12822,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερες premium δυνατότητες"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription renewal state": {
@@ -14534,11 +14532,6 @@
         "Ανταλλάξτε με ασφάλεια Bitcoin μέσω email αντί για πολύπλοκες διευθύνσεις Bitcoin 26 χαρακτήρων που είναι επιρρεπείς σε σφάλματα"
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "Πρόσβαση στην εφαρμογή Wallet"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "Ένας ασφαλέστερος τρόπος να φυλάξετε τα Bitcoin σας"
@@ -14547,22 +14540,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Πρόβλημα Wallet"
-      ]
-    },
-    "wallet_signup_2024:Title": {
-      "Wallet": [
-        "Wallet"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "Λογαριασμος ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "Το εισαγόμενο πορτοφόλι${ indexStr } μου"
-      ],
-      "My wallet${ indexStr }": [
-        "Το πορτοφόλι${ indexStr } μου"
       ]
     },
     "Warning": {

@@ -1365,9 +1365,6 @@
       "Monthly": [
         "月額"
       ],
-      "New!": [
-        "New!"
-      ],
       "Two-year": [
         "2年払い"
       ]
@@ -3051,11 +3048,11 @@
       "External invitations are temporarily disabled. Please try again later": [
         "外部の招待は一時的に無効です。後ほど再度お試しください。"
       ],
+      "Failed to copy photo to album": [
+        "写真をアルバムにコピーできませんでした"
+      ],
       "Failed to load the STL preview": [
         "STLプレビューの読み込みに失敗しました"
-      ],
-      "Failed to save photo to your Drive": [
-        "ドライブに写真を保存できません"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "エラー「${ error }」のためファイル「${ item.name }」はアップロードできませんでした。"
@@ -4328,6 +4325,9 @@
       "${ pausedCount } paused": [
         "一時停止 ${ pausedCount } 件"
       ],
+      "${ photoCount } item": [
+        "${ photoCount }個のアイテム"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } には少なくとも 1 つの専用サーバー ${ serverPricePerMonth } が必要です"
       ],
@@ -4901,6 +4901,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
       ],
+      "If you have a large photo library, it might take some time.": [
+        "写真ライブラリのサイズが大きい場合、時間がかかることがあります。"
+      ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "いずれかをお持ちの場合は、${ BRAND_NAME } のアカウント設定に進んでブロック解除のプロセスを開始してください。"
       ],
@@ -5186,6 +5189,9 @@
       "Password copied to clipboard": [
         "クリップボードにコピーされたパスワード"
       ],
+      "Password must have:": [
+        "パスワードは以下を含む必要があります:"
+      ],
       "Paused": [
         "一時停止"
       ],
@@ -5209,6 +5215,9 @@
       ],
       "Photo is set as album cover": [
         "写真はアルバムカバーとして設定されています"
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "写真はストリームにコピーされ、そこでお気に入りにマークされました。"
       ],
       "Photos have been successfully recovered.": [
         "写真は正常に復元されました。"
@@ -5831,6 +5840,9 @@
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
       ],
+      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
+        "写真を新しい体験にアップグレードしています！この移行中、写真の復元は一時的に利用できません。 すべてのものは数日後に準備が整います。"
+      ],
       "Week": [
         "週"
       ],
@@ -5911,6 +5923,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "このタブやブラウザを閉じても構いません。"
+      ],
+      "You can close the tab. We'll work on it in the background.": [
+        "タブを閉じることができます。バックグラウンドで処理を行います。"
       ],
       "You can import one data type at a time.": [
         "1 回にインポートできるのは 1 種類のみです。"
@@ -6548,6 +6563,9 @@
       ],
       "Password": [
         "パスワード"
+      ],
+      "Password strength": [
+        "パスワードの強度"
       ],
       "Payer": [
         "支払人"
@@ -8422,6 +8440,9 @@
       "Root folder failed to be loaded": [
         "ルートフォルダーの読み込みに失敗しました"
       ],
+      "Selected photo(s) already in \"${ albumName }\"": [
+        "選択された写真はすでに「${ albumName }」にあります"
+      ],
       "Share invitation accepted successfully": [
         "正常に共有への招待を受け取りました"
       ],
@@ -8436,6 +8457,9 @@
       ],
       "Subfolder failed to be loaded": [
         "サブフォルダーの読み込みに失敗しました"
+      ],
+      "The Albums feature is on its way! We're rolling it out gradually — please try again soon": [
+        "アルバム機能はもうすぐです！段階的に展開していますので、しばらくしてからもう一度お試しください。"
       ],
       "The document failed to be created": [
         "ドキュメントの作成に失敗しました"
@@ -9541,6 +9565,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "特別オファーは最初の2年間有効です。"
+      ],
       "Your subscription will renew at the same rate every year.": [
         "サブスクリプションは毎年同じ料金で更新されます。"
       ]
@@ -9619,6 +9646,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "標準価格では 30 か月毎に ${ amount }"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "特別オファーは最初の2年間有効です"
       ]
     },
     "specialoffer: Title": {
@@ -9736,6 +9766,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "アップロードや同期を続けるには、容量を空けるかより大きな容量のプランにアップグレードしてください。"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "${ BRAND_NAME }製品を引き続きご利用いただくには、容量を空けるか、${ upgrade }ください。"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "メールを送受信するには、容量を空けるかより大きな容量のプランにアップグレードしてください。"
       ],
@@ -9756,6 +9789,12 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage }はいっぱいです"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString }は${ percentage }%使用中です。${ cta }。"
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString }はいっぱいです。${ cta }。"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "容量は${ percentage }%使用中です。${ cta }。"
@@ -9846,47 +9885,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } の場合"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription reminder": {
@@ -10143,6 +10141,47 @@
         "独自の短い @pm.me メール エイリアス"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "よろしいですか?"
@@ -10167,6 +10206,11 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "この支払い方法による自動課金はなくなりますが、課金サイクルの終了時に購読は更新されます。サブスクリプションをダウングレードまたは変更したい場合は、請求期間の終了前にご自身で行う必要があります。無料プランのストレージ容量を超過している場合、またはその他の有料機能を使用している場合、ファイル、メール、その他のデータを自動削除できないため、自動ダウングレードはできません。自動支払いを無効にした場合は、アカウントの停止を防ぐために、期日までに次回の請求書を支払うことを忘れないでください。"
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "${ priceString }を節約"
       ]
     },
     "Subtitle": {
@@ -11067,6 +11111,9 @@
       ],
       "Set up your organization": [
         "組織を設定"
+      ],
+      "Setting up Albums & Filters": [
+        "アルバムとフィルターの設定"
       ],
       "Settings": [
         "設定"

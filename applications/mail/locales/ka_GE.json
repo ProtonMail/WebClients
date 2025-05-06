@@ -1144,10 +1144,10 @@
       "Select ${ planTitle }": [
         "აირჩიეთ ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "ყველაფრის მონიშვნა"
       ],
-      "Select All": [
+      "Select all": [
         "ყველაფრის მონიშვნა"
       ],
       "Select all messages": [
@@ -1908,9 +1908,6 @@
       ],
       "Monthly": [
         "თვეში ერთხელ"
-      ],
-      "New!": [
-        "ახალი!"
       ],
       "Two-year": [
         "ორი წლით"
@@ -3712,6 +3709,9 @@
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "ნაგვის ყუთში და სპამში 30 დღეზე მეტი დროით გადატანილი ელფოსტების ავტომატური გასუფთავება."
       ],
+      "Automatically forward incoming email to another email address.": [
+        "შემომავალი ელფოსტის ავტომატური გადაგზავნა სხვა ელფოსტის მისამართზე."
+      ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "თქვენი შემომავალი შეტყობინებების ავტომატური დალაგება მანამდე, სანამ ის თქვენს საფოსტო ყუთამდე მოაღწევს."
       ],
@@ -3736,6 +3736,9 @@
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "არ გნებავთ, თქვენი ელფოსტიდან ახლავე გააგზავნოთ? დაგეგმეთ ის სწორ დროს."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "იოლი წვდომა თქვენს ელფოსტასთან და კალენდართან კომპიუტერიდან და მობილურიდან."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების დაშიფვრა და შემოტანა... ამას რამდენიმე წუთი შეიძლება დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
       ],
@@ -3750,6 +3753,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "როგორც ჩანს კონტაქტების სია, რომლის შემოტანასაც ცდილობთ, ჯგუფებსაც შეიცავს. გადახედეთ, გნებავთ თუ არა ამ ჯგუფების შემოტანა."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "საშუალებას გაძლევთ, მყისიერად დაამატოთ შეხვედრის ბმულები თქვვენი მოვლენის მოსაწვევებს."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების შერწყმა... ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
@@ -6801,6 +6807,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
+        "გამოსახულების ჩასმა",
         "გამოსახულების ჩასმა"
       ],
       "Insert link": [
@@ -6896,6 +6903,9 @@
       "Low Priority": [
         "დაბალი პრიორიტეტი"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "დააყენეთ ${ MAIL_APP_NAME } თქვენს ნაგულისხმევ ელფოსტის აპლიკაციად."
+      ],
       "Manage your folders": [
         "თქვენი საქაღალდეების მართვა"
       ],
@@ -6925,9 +6935,6 @@
       ],
       "Message download status:": [
         "შეტყობინების გადმოწერის სტატუსი:"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "შეტყობინებების ვადის გასვლა პირდაპირ მუშაობს, როცა სხვა ${ MAIL_APP_NAME }-ის მომხმარებლებს უგზავნით. არა-${ BRAND_NAME }-ის მომხმარებლებთან ვადიანი შეტყობინებების გასაგზავნად, გთხოვთ, დააყენოთ ელფოსტის პაროლით დაცვა."
       ],
       "Message headers": [
         "შეტყობინების თავსართები"
@@ -7073,6 +7080,9 @@
       "Password copied to clipboard": [
         "პაროლი დაკოპირდა გაცვლის ბაფერში"
       ],
+      "Password must have:": [
+        "პაროლს უნდა ჰქონდეს:"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "გადახდები TLS-ით და შვეიცარიული კანონებითაა დაცული."
       ],
@@ -7099,6 +7109,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "გთხოვთ დაადასტუროთ თქვენი გადახდა გადამოწმების ჩანართში."
+      ],
+      "Please fill in all required fields.": [
+        "გთხოვთ, შეავსოთ ყველა საჭირო ველი."
       ],
       "Please fill out this field.": [
         "გთხოვთ შეავსოთ ეს ველი."
@@ -8816,6 +8829,9 @@
       ],
       "Password hint": [
         "პაროლის მინიშნება"
+      ],
+      "Password strength": [
+        "პაროლის სიძლიერე"
       ],
       "Payer": [
         "გადამხდელი"
@@ -11652,10 +11668,6 @@
       "Do you want to send the email anyway?": [
         "გნებავთ ამ ელფოსტის მაინც გაგზავნა?"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "თუ გადაწყვეტთ, ეს შეტყობინება მაინც გააგზავნოთ, შემდეგი მიმღებები ელფოსტას ვადის გარეშე მიიღებენ:",
-        "თუ გადაწყვეტთ, ეს შეტყობინება მაინც გააგზავნოთ, შემდეგი მიმღებები ელფოსტას ვადის გარეშე მიიღებენ:"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "მისამართი არასწორია: ${ invalidAddresses }",
         "არასწორი მისამართები: ${ invalidAddresses }"
@@ -11940,6 +11952,11 @@
         "საჩვენებელი სახელი"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Slack Huddle-სთან მიერთება"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "უფრო სწრაფია აპში"
@@ -12052,6 +12069,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "სპეციალური შეთავაზება ძალაშია პირველი 2 წელი."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "თქვენი გამოწერა განახლდება იგივე ტარიფით ყოველ წელს."
       ]
@@ -12131,6 +12151,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "სტანდარტული ფასი ${ amount } 30 თვისთვის"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "სპეციალური შეთავაზება ძალაშია პირველი 2 წელი"
       ]
     },
     "specialoffer: Title": {
@@ -12316,6 +12339,12 @@
       "Your ${ appStorage } is full": [
         "თქვენი ${ appStorage } სავსეა"
       ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "თქვენი ${ productString } ${ percentage }%-ითაა სავსე. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "თქვენი ${ productString } სავსეა. ${ cta }."
+      ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "თქვენი საცავი ${ percentage }%-ით სავსეა. ${ cta }."
       ],
@@ -12411,47 +12440,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }-თვის"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription reminder": {
@@ -12711,6 +12699,47 @@
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "დარწმუნებული ბრძანდებით?"
@@ -12735,6 +12764,11 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "ჩვენი სისტემა გადახდის ამ მეთოდით ავტომატურად გადახდას აღარ სცდის, მაგრამ თქვენი გამოწერა გადახდის ციკლის გასვლის შემდეგ მაინც განახლდება. თუ გნებავთ, ჩამოსწიოთ თქვენი პაკეტი, ეს თქვენ თვითონ, გადახდის ციკლის დასრულებამდე უნდა გააკეთოთ. ჩვენ არ შეგვიძლია თქვენი პაკეტის ავტომატურად ჩამოწევა, რადგან თქვენი მონაცემების ზომა უფასო ანგარიშის საცავის ლიმიტებს აჭარბებს ან ფასიან ფუნქციებს იყენებთ. ჩვენ არ წავშლით ავტომატურად თქვენს ფაილებს, ელფოსტებსა თუ სხვა მონაცემებს. თუ ავტომატურად გადახდას გამორთავთ, დაიმახსოვრეთ, რომ საჭიროა გადაიხადოთ ინვოისები. წინააღმდეგ შემთხვევაში, თქვენი ანგარიში შეჩერდება."
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "დაზოგეთ ${ priceString }"
       ]
     },
     "Success": {
@@ -13140,6 +13174,11 @@
       ],
       "vCard field": [
         "vCard-ის ველი"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Teams-ის შეხვედრასთან მიერთება"
       ]
     },
     "Time": {
@@ -14368,11 +14407,6 @@
         "უსაფრთხოდ გაცვალეთ Bitcoin ელფოსტით, კომპლექსური, 26-სიმბოლოიანი Bitcoin მისამართების ნაცვლად, რომლებიც შეცდომებისთვის მგრძნობიარე არიან"
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "წვდომა საფულის აპთან"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "უფრო უსაფრთხო გზა Bitcoin-ის შესანახად"
@@ -14381,22 +14415,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "საფულის პრობლემა"
-      ]
-    },
-    "wallet_signup_2024:Title": {
-      "Wallet": [
-        "Wallet"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "ანგარიში ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "ჩემი შემოტანილი საფულე${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "ჩემი საფულე${ indexStr }"
       ]
     },
     "Warning": {
@@ -14729,6 +14747,11 @@
       ],
       "Yearly, ${ untilString }": [
         "ყოველწლიურად, ${ untilString }-მდე"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Zoom-ის შეხვედრასთან მიერთება"
       ]
     },
     "Zoom Meeting": {

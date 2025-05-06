@@ -1065,10 +1065,10 @@
       "Select ${ planTitle }": [
         "Оберіть ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Вибрати все"
       ],
-      "Select All": [
+      "Select all": [
         "Вибрати все"
       ],
       "Select all messages": [
@@ -6702,6 +6702,9 @@
         "Ініціалізація…"
       ],
       "Insert image": [
+        "Вставити зображення",
+        "Вставити зображення",
+        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
@@ -6811,9 +6814,6 @@
       ],
       "Message download status:": [
         "Статус завантаження повідомлення:"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Термін дії повідомлень працює типово при надсиланні пошти не користувачам ${ MAIL_APP_NAME }. Щоб надсилати повідомлення з терміном дії не користувачам ${ BRAND_NAME }, скасуйте це і додайте парольний захист до свого повідомлення."
       ],
       "Message headers": [
         "Заголовки повідомлень"
@@ -11241,12 +11241,6 @@
       "Do you want to send the email anyway?": [
         "Все одно хочете надіслати лист?"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Якщо ви все одно вирішите надіслати повідомлення, вказаний адресат отримає його без терміну дії:",
-        "Якщо ви все одно вирішите надіслати повідомлення, вказані адресати отримають його без терміну дії:",
-        "Якщо ви все одно вирішите надіслати повідомлення, вказані адресати отримають його без терміну дії:",
-        "Якщо ви все одно вирішите надіслати повідомлення, вказані адресати отримають його без терміну дії:"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Вказана адреса недійсна: ${ invalidAddresses }",
         "Вказані адреси недійсні: ${ invalidAddresses }",
@@ -12046,47 +12040,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховища"
-      ],
-      "and 15 more premium features": [
-        "та ще 15 преміальних функцій"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматичне пересилання пошти ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Сповіщення про витоки даних ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Програма для комп'ютера"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
-      ],
-      "No ads or tracking": [
-        "Без реклами і стеження"
-      ],
-      "Short @pm.me email address": [
-        "Коротка адреса електронної пошти @pm.me"
-      ],
-      "Support our mission": [
-        "Підтримайте нашу місію"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade your productivity": [
-        "Вдоскональте свою продуктивність"
-      ],
-      "We don't sell your data": [
-        "Ми не продаємо ваші дані"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватність є нашою місією"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, та ${ VPN_SHORT_APP_NAME } з преміумфункіями"
@@ -12357,6 +12310,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш власний короткий псевдонім електронної пошти @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "and 15 more premium features": [
+        "та ще 15 преміальних функцій"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматичне пересилання пошти ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Сповіщення про витоки даних ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Програма для комп'ютера"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
+      ],
+      "No ads or tracking": [
+        "Без реклами і стеження"
+      ],
+      "Short @pm.me email address": [
+        "Коротка адреса електронної пошти @pm.me"
+      ],
+      "Support our mission": [
+        "Підтримайте нашу місію"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade your productivity": [
+        "Вдоскональте свою продуктивність"
+      ],
+      "We don't sell your data": [
+        "Ми не продаємо ваші дані"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватність є нашою місією"
       ]
     },
     "Subscription renewal state": {
@@ -13961,11 +13955,6 @@
         "Безпечно обмінюйтесь Bitcoin електронною поштою замість складних, 26-символьних адрес Bitcoin, схильних до помилок"
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "Доступ до програми Wallet"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "Безпечніший спосіб зберігання Bitcoin"
@@ -13974,22 +13963,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Проблема з Wallet"
-      ]
-    },
-    "wallet_signup_2024:Title": {
-      "Wallet": [
-        "Wallet"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "Обліковий запис ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "Мій імпортований гаманець${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "Мій гаманець${ indexStr }"
       ]
     },
     "Warning": {

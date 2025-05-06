@@ -460,10 +460,10 @@
       "Discard": [
         "Odrzuć"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Odrzuć zmiany"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Odrzuć zmiany"
       ],
       "Discover ${ planName }": [
@@ -778,6 +778,9 @@
       "Keep Editing": [
         "Kontynuuj edytowanie"
       ],
+      "Keep editing": [
+        "Kontynuuj edytowanie"
+      ],
       "Keep logo": [
         "Zachowaj logo"
       ],
@@ -810,6 +813,9 @@
       ],
       "Make admin": [
         "Administrator"
+      ],
+      "Make key primary": [
+        "Ustaw jako klucz główny"
       ],
       "Manage advanced account protections": [
         "Zarządzaj zaawansowanymi zabezpieczeniami konta"
@@ -955,10 +961,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
       "Reject": [
@@ -1132,11 +1138,11 @@
       "Select country ${ country }": [
         "Wybierz kraj ${ country }"
       ],
-      "Select file": [
-        "Wybierz plik"
-      ],
       "select file": [
         "wybierz plik"
+      ],
+      "Select file": [
+        "Wybierz plik"
       ],
       "Select files": [
         "Wybierz pliki"
@@ -2025,9 +2031,6 @@
       "Monthly": [
         "Miesięcznie"
       ],
-      "New!": [
-        "Nowość!"
-      ],
       "Two-year": [
         "Co dwa lata"
       ]
@@ -2834,6 +2837,14 @@
       ],
       "Yomi": [
         "Yomi"
+      ]
+    },
+    "CountriesStep:Info": {
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount }",
+        "${ selectedCountriesCount }",
+        "${ selectedCountriesCount }",
+        "${ selectedCountriesCount }"
       ]
     },
     "Country name": {
@@ -4274,14 +4285,6 @@
         "Windows 8 / 8.1 / 7 lub Windows 32-bit (ARM64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb dla Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm dla Fedora / Red Hat"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Utwórz darmowe konto ${ DRIVE_APP_NAME }, aby uzyskać bezpieczny dostęp do pliku"
@@ -4659,7 +4662,7 @@
         "Zapisz"
       ],
       "Send confirmation email": [
-        "Poproś o zatwierdzenie"
+        "Poproś o potwierdzenie"
       ],
       "Set up email forwarding": [
         "Ustaw przekierowanie"
@@ -4710,25 +4713,25 @@
         "Automatyczne przekierowanie wiadomości na inny adres e-mail."
       ],
       "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
-        "Szyfrowanie end-to-end zostało wyłączone dla twojego adresu ${ boldForwarderEmail }, ale szyfrowanie po stronie klienta pozostaje włączone. ${ learnMoreLink }"
+        "Szyfrowanie end-to-end dla adresu ${ boldForwarderEmail } zostało wyłączone, ale szyfrowanie po stronie klienta pozostanie włączone. ${ learnMoreLink }"
       ],
       "For compatibility, a new encryption key has been generated for ${ boldForwarderEmail }.": [
-        "Ze względu na kompatybilność wygenerowano nowy klucz szyfrowania dla ${ boldForwarderEmail }."
+        "Ze względu na kompatybilność, dla adresu ${ boldForwarderEmail } został wygenerowany nowy klucz szyfrowania."
       ],
       "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "Ze względu na kompatybilność zostanie wygenerowany nowy klucz szyfrowania dla ${ boldForwarderEmail }."
+        "Ze względu na kompatybilność, dla adresu ${ boldForwarderEmail } zostanie wygenerowany nowy klucz szyfrowania."
       ],
       "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
-        "Ze względu na kompatybilność wyłączono szyfrowanie postkwantowe i wygenerowano nowy klucz szyfrowania dla ${ boldForwarderEmail }."
+        "Ze względu na kompatybilność, szyfrowanie postkwantowe zostało wyłączone. Dla adresu ${ boldForwarderEmail } został wygenerowany nowy klucz szyfrowania."
       ],
       "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
-        "Ze względu na kompatybilność, szyfrowanie postkwantowe zostało wyłączone dla ${ boldForwarderEmail }."
+        "Ze względu na kompatybilność, szyfrowanie postkwantowe dla adresu ${ boldForwarderEmail } zostało wyłączone."
       ],
       "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
-        "Ze względu na kompatybilność, szyfrowanie postkwantowe zostanie wyłączone dla ${ boldForwarderEmail }."
+        "Ze względu na kompatybilność, szyfrowanie postkwantowe dla adresu ${ boldForwarderEmail } zostanie wyłączone."
       ],
       "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "Ze względu na kompatybilność szyfrowanie postkwantowe zostanie wyłączone, a nowy klucz szyfrowania zostanie wygenerowany dla ${ boldForwarderEmail }."
+        "Ze względu na kompatybilność, szyfrowanie postkwantowe zostanie wyłączone. Dla adresu ${ boldForwarderEmail } zostanie wygenerowany nowy klucz szyfrowania."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
         "Odbiorca został zaproszony i musi zaakceptować lub odrzucić przekierowanie"
@@ -4881,7 +4884,7 @@
         "Przekierowanie zostało włączone"
       ],
       "Request confirmation?": [
-        "Poproś o zatwierdzenie?"
+        "Poprosić o potwierdzenie?"
       ],
       "Request sent": [
         "Żądanie zostało wysłane"
@@ -6571,12 +6574,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } w App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } w Google Play"
-      ],
       "${ MAIL_APP_NAME } app": [
         "aplikację ${ MAIL_APP_NAME }"
       ],
@@ -7379,6 +7376,12 @@
         "${ calendarsToBeMergedCount } scalonych kalendarzy",
         "${ calendarsToBeMergedCount } scalonych kalendarzy"
       ],
+      "${ countriesCount } country enabled": [
+        "Włączono ${ countriesCount } kraj",
+        "Włączono ${ countriesCount } kraje",
+        "Włączono ${ countriesCount } krajów",
+        "Włączono ${ countriesCount } krajów"
+      ],
       "${ current } of ${ total }": [
         "${ current } z ${ total }"
       ],
@@ -7584,7 +7587,7 @@
         "(${ serverPrice } / miesiąc)"
       ],
       "(default)": [
-        "(domyślne)"
+        "(domyślnie)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtruj, jeśli WSZYSTKIE warunki są spełnione)"
@@ -7603,6 +7606,12 @@
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "** Uzyskaj adres ${ BRAND_NAME } **, aby używać usług ${ BRAND_NAME_TWO }, tym ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } więcej",
+        "+ ${ invisibleCount } więcej",
+        "+ ${ invisibleCount } więcej",
+        "+ ${ invisibleCount } więcej"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusowej przestrzeni dyskowej"
@@ -7676,11 +7685,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktywuj co najmniej jedną metodę odzyskiwania danych, aby uniknąć utraty dostępu do konta ${ BRAND_NAME }."
       ],
-      "Active": [
-        "Aktywne"
-      ],
       "active": [
         "aktywna"
+      ],
+      "Active": [
+        "Aktywne"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Dodaj adres @pm.me do swojego konta. To prostsza i krótsza domena dla skrótu \"${ MAIL_APP_NAME } me\" lub \"Private Message me.\""
@@ -8138,11 +8147,11 @@
       "Data recoverable on this device": [
         "Dane możliwe do odzyskania na tym urządzeniu"
       ],
-      "dedicated servers": [
-        "dedykowane serwery"
-      ],
       "Dedicated servers": [
         "Dedykowane serwery"
+      ],
+      "dedicated servers": [
+        "dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP mogą zostać dodane do prywatnych bram, aby umożliwić precyzyjną kontrolę nad nimi."
@@ -8431,9 +8440,6 @@
       ],
       "Failed to fetch logs.": [
         "Nie udało się pobrać logów."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Szybkość i skupienie. Poczta i kalendarz na pulpicie."
       ],
       "Featured in": [
         "Wyróżniony w"
@@ -10055,11 +10061,11 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
-      "username": [
-        "nazwa użytkownika"
-      ],
       "Username": [
         "Nazwa użytkownika"
+      ],
+      "username": [
+        "nazwa użytkownika"
       ],
       "Users": [
         "Użytkownicy"
@@ -10355,6 +10361,9 @@
       "You can enable the Photos section from the interface using the toggle below.": [
         "Sekcję zdjęć możesz włączyć za pomocą poniższego przycisku."
       ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "Możesz wymusić zasady dotyczące haseł, których użytkownicy organizacji będą używać podczas tworzenia lub resetowania hasła konta ${ BRAND_NAME }."
+      ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Możesz uzyskać dostęp do wszystkich naszych usług prywatności w wersji premium w jednym pakiecie za jedynie **${ priceString } miesięcznie**."
       ],
@@ -10558,6 +10567,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
+      ],
+      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
+        "Obecne szyfrowane przekierowania zostaną wstrzymane. Możesz je ponownie włączyć w ustawieniach '${ autoReplySettingsTitle }'."
       ],
       "Your files will be encrypted and then saved": [
         "Twoje pliki, przed zapisaniem, zostaną zaszyfrowane"
@@ -11263,10 +11275,10 @@
       "Allow sharing outside the organization": [
         "Zezwalaj na udostępnianie poza organizacją"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dozwolona domena"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dozwolona domena"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11347,9 +11359,6 @@
       "Backup password": [
         "Hasło zapasowe"
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
       ],
@@ -11423,7 +11432,7 @@
         "Kolory"
       ],
       "Common passwords": [
-        "Popularne hasła"
+        "Proste hasła"
       ],
       "Company": [
         "Firma"
@@ -12619,11 +12628,11 @@
       "perform a password reset from your active session": [
         "zresetować hasło z aktywnej sesji"
       ],
-      "Privacy policy": [
-        "Polityka prywatności"
-      ],
       "privacy policy": [
         "politykę prywatności"
+      ],
+      "Privacy policy": [
+        "Polityka prywatności"
       ],
       "Reactivate now": [
         "Reaktywuj"
@@ -13245,32 +13254,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Od ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Ulepsz do planu ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Kontynuuj z planem Free"
@@ -13298,6 +13281,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Od ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Ulepsz do planu ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -14061,14 +14070,6 @@
         "Odblokuj wszystkie usługi i funkcje premium ${ BRAND_NAME } za ${ priceLine }. Anuluj w dowolnym momencie."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -14087,6 +14088,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Odblokuj funkcje premium poprzez ulepszenie"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -14497,6 +14506,9 @@
       "Key with fingerprint ${ fp } has been deleted.": [
         "Klucz z odciskiem ${ fp } został usunięty."
       ],
+      "Key with fingerprint ${ fp } is now primary.": [
+        "Klucz z odciskiem ${ fp } jest kluczem głównym."
+      ],
       "Link copied to clipboard": [
         "Link został skopiowany do schowka"
       ],
@@ -14836,7 +14848,7 @@
         "Dodaj do istniejącej grupy"
       ],
       "Allowed ${ defaultLabel }": [
-        "Dozwolone ${ defaultLabel }"
+        "Dozwolono ${ defaultLabel }"
       ],
       "Allowed (default)": [
         "Dozwolone (domyślnie)"
@@ -14914,7 +14926,7 @@
         "Włączone"
       ],
       "Optional ${ defaultLabel }": [
-        "Opcjonalne ${ defaultLabel }"
+        "Opcjonalnie ${ defaultLabel }"
       ],
       "Organization only": [
         "Tylko w organizacji"
@@ -17368,6 +17380,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Oferta specjalna jest ważna przez pierwsze 2 lata."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Subskrypcja będzie odnawiana co roku w tej samej cenie."
       ]
@@ -17449,6 +17464,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standardowa cena ${ amount } za 30 miesięcy"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Oferta specjalna jest ważna przez pierwsze 2 lata"
       ]
     },
     "specialoffer: Title": {
@@ -17847,6 +17865,9 @@
       "Get more storage": [
         "Uzyskaj więcej przestrzeni dyskowej"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Aby korzystać z usług ${ BRAND_NAME }, zwolnij część miejsca lub${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Zwolnij część miejsca lub ${ upgrade }"
       ],
@@ -17876,6 +17897,12 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage } jest pełna"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString } jest w ${ percentage }% pełna. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString } jest pełna. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Przestrzeń dyskowa jest w ${ percentage }% pełna. ${ cta }."
@@ -18071,47 +18098,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "and 15 more premium features": [
-        "i 15 więcej funkcji premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatyczne przekierowanie ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerty wycieków ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikacja desktopowa"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
-      ],
-      "No ads or tracking": [
-        "Brak reklam i śledzenia"
-      ],
-      "Short @pm.me email address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Wesprzyj naszą misję"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
-      "We don't sell your data": [
-        "Nie sprzedajemy Twoich danych"
-      ],
-      "Your privacy is our mission": [
-        "Prywatność to nasza misja"
       ]
     },
     "Subscription reminder": {
@@ -18414,6 +18400,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Krótki alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {
@@ -19170,10 +19197,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -19187,6 +19214,9 @@
       ],
       "Change password": [
         "Zmień hasło"
+      ],
+      "Change primary key?": [
+        "Zmienić klucz główny?"
       ],
       "Change role": [
         "Zmień rolę"
@@ -19613,15 +19643,6 @@
       ],
       "Folders and labels": [
         "Foldery i etykiety"
-      ],
-      "For Linux": [
-        "Linux"
-      ],
-      "For macOS": [
-        "macOS"
-      ],
-      "For Windows": [
-        "Windows"
       ],
       "Forgot password": [
         "Przypomnij hasło"

@@ -1144,10 +1144,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } választása"
       ],
-      "Select all": [
+      "Select All": [
         "Összes kijelölése"
       ],
-      "Select All": [
+      "Select all": [
         "Összes kijelölése"
       ],
       "Select all messages": [
@@ -1905,9 +1905,6 @@
       ],
       "Monthly": [
         "Havonta"
-      ],
-      "New!": [
-        "Új"
       ],
       "Two-year": [
         "Kétévente"
@@ -6805,6 +6802,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -6929,9 +6927,6 @@
       ],
       "Message download status:": [
         "Üzenet letöltés aktuális állapot:"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "${ MAIL_APP_NAME } felhasználóknak küldött üzeneteknél az időkorlát bármikor megadható. Nem ${ BRAND_NAME } címekre küldött üzenet esetén válassza a mégsem gombot, majd állítson be jelszó védelmet az üzenethez."
       ],
       "Message headers": [
         "Üzenet fejlécek"
@@ -11640,10 +11635,6 @@
       "Do you want to send the email anyway?": [
         "Mindenképp elküldi?"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Ha így is elküldi az üzenetet, a következő címzett időkorlát nélkül fogja megkapni:",
-        "Ha így is elküldi az üzenetet, a következő címzettek időkorlát nélkül fogják megkapni:"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "A következő cím érvénytelen: ${ invalidAddresses }",
         "A következő címek érvénytelenek: ${ invalidAddresses }"
@@ -12398,47 +12389,6 @@
         "${ totalPrice } áron"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatikus e-mail továbbítás ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Short @pm.me email address": [
-        "Rövid @pm.me e-mail cím"
-      ],
-      "Support our mission": [
-        "Támogassa küldetésünket"
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "Upgrade your productivity": [
-        "Növelje a termelékenységét"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
-      ],
-      "Your privacy is our mission": [
-        "Az Ön adatvédelme a mi küldetésünk"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } és ${ VPN_SHORT_APP_NAME } prémium funkciókkal"
@@ -12697,6 +12647,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Az Ön saját rövid @pm.me e-mail álnévcíme"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatikus e-mail továbbítás ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Short @pm.me email address": [
+        "Rövid @pm.me e-mail cím"
+      ],
+      "Support our mission": [
+        "Támogassa küldetésünket"
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "Upgrade your productivity": [
+        "Növelje a termelékenységét"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
+      ],
+      "Your privacy is our mission": [
+        "Az Ön adatvédelme a mi küldetésünk"
       ]
     },
     "Subscription renewal state": {
@@ -14341,11 +14332,6 @@
         "Biztonságosan cserélhet Bitcoint e-mailen keresztül, ahelyett, hogy összetett, 26 karakteres és hibára hajlamos Bitcoin címeket használna"
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "Hozzáférés a Tárca alkalmazáshoz"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "Biztonságosabb módja a Bitcoin tárolásának"
@@ -14354,17 +14340,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Wallet probléma"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "Fiók ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "Importált tárcám${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "Tárcám${ indexStr }"
       ]
     },
     "Warning": {

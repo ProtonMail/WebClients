@@ -1096,10 +1096,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } चुनें"
       ],
-      "Select all": [
+      "Select All": [
         "सब चुनें"
       ],
-      "Select All": [
+      "Select all": [
         "सब चुनें"
       ],
       "Select all messages": [
@@ -6634,7 +6634,8 @@
         "शुरू किया जा रहा है…"
       ],
       "Insert image": [
-        "तस्वीर डालें"
+        "तस्वीर डालें",
+        "तस्वीरें डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -6752,9 +6753,6 @@
       ],
       "Message download status:": [
         "संदेश डाउनलोड स्थिति:"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "संदेश खत्म करना अपनेआप चलने लगता है जब दूसरे ${ MAIL_APP_NAME } यूज़र को ईमेल भेजते है। गैर-${ BRAND_NAME } के लिए संदेश खत्म करने वाले ईमेल भेजने के लिए, कृपया रद्द करें और अपने ईमेल में पासवर्ड सुरक्षा जोड़े।"
       ],
       "Message headers": [
         "संदेश हेडर"
@@ -11288,10 +11286,6 @@
       "Do you want to send the email anyway?": [
         "क्या आप वैसे भी ईमेल भेजना चाहते हैं?"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "यदि आप वैसे भी संदेश भेजने का निर्णय लेते हैं, तो निम्न प्राप्तकर्ता को बिना समय सीमा समाप्त ईमेल प्राप्त होगा:",
-        "यदि आप वैसे भी संदेश भेजने का निर्णय लेते हैं, तो निम्नलिखित प्राप्तकर्ताओं को बिना समय सीमा समाप्त ईमेल प्राप्त होगा:"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "निम्न पता मान्य नहीं है: ${ invalidAddresses }",
         "निम्नलिखित पते मान्य नहीं हैं: ${ invalidAddresses }"
@@ -12045,47 +12039,6 @@
         "के लिए ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 जीबी स्टोरेज"
-      ],
-      "and 15 more premium features": [
-        "और 15 अन्य प्रीमियम सुविधाएँ"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "डाटा लीक अलर्ट ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "डेस्कटॉप ऐप"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
-      ],
-      "No ads or tracking": [
-        "कोई विज्ञापन या ट्रैकिंग नहीं"
-      ],
-      "Short @pm.me email address": [
-        "छोटा @pm.me ईमेल पता"
-      ],
-      "Support our mission": [
-        "हमारे मिशन का समर्थन करें"
-      ],
-      "Upgrade": [
-        "अपग्रेड करें"
-      ],
-      "Upgrade your productivity": [
-        "अपनी उत्पादकता बढ़ाएँ"
-      ],
-      "We don't sell your data": [
-        "हम आपका डाटा नहीं बेचते"
-      ],
-      "Your privacy is our mission": [
-        "आपकी निजता हमारा मिशन है"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, और ${ VPN_SHORT_APP_NAME } प्रीमियम सुविधाओं के साथ"
@@ -12344,6 +12297,47 @@
       ],
       "Your own short @pm.me email alias": [
         "आपका अपना छोटा @pm.me ईमेल नकली-नाम"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "and 15 more premium features": [
+        "और 15 अन्य प्रीमियम सुविधाएँ"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "डाटा लीक अलर्ट ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
+      ],
+      "No ads or tracking": [
+        "कोई विज्ञापन या ट्रैकिंग नहीं"
+      ],
+      "Short @pm.me email address": [
+        "छोटा @pm.me ईमेल पता"
+      ],
+      "Support our mission": [
+        "हमारे मिशन का समर्थन करें"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
+      ],
+      "Upgrade your productivity": [
+        "अपनी उत्पादकता बढ़ाएँ"
+      ],
+      "We don't sell your data": [
+        "हम आपका डाटा नहीं बेचते"
+      ],
+      "Your privacy is our mission": [
+        "आपकी निजता हमारा मिशन है"
       ]
     },
     "Subscription renewal state": {
@@ -13888,11 +13882,6 @@
         "सुरक्षित रूप से Bitcoin को ईमेल के माध्यम से आदान-प्रदान करें बजाय जटिल, 26-अक्षरीय Bitcoin पतों के, जो एरर के प्रति प्रवण हैं"
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "वॉलेट ऐप तक पहुँचें"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "Bitcoin रखने का एक सुरक्षित तरीका"
@@ -13901,17 +13890,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "वॉलेट समस्या"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "खाता ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "मेरा आयात किया हुआ वॉलेट${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "मेरा वॉलेट${ indexStr }"
       ]
     },
     "Warning": {
