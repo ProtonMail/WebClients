@@ -464,6 +464,9 @@
       "Go back": [
         "Gå tillbaka"
       ],
+      "Go back to album “${ albumName }“": [
+        "Gå tillbaka till album “${ albumName }“"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Gå till ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -1376,9 +1379,6 @@
       ],
       "Monthly": [
         "Månadsvis"
-      ],
-      "New!": [
-        "Nytt!"
       ],
       "Two-year": [
         "Tvåårig"
@@ -3073,8 +3073,8 @@
       "Failed to load the STL preview": [
         "Misslyckades att ladda STL-förhandsgranskningen"
       ],
-      "Failed to save photo to your Drive": [
-        "Misslyckades att spara foto till din Drive"
+      "Failed to save some photos to your Drive": [
+        "Misslyckades att spara några foton till din Drive"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Filen “${ item.name }“ kan inte laddas upp på grund felet “${ error }“"
@@ -5301,9 +5301,6 @@
       ],
       "Photo is set as album cover": [
         "Foto är inställt som albumomslag"
-      ],
-      "Photo saved to your Drive": [
-        "Foto sparat till din Drive"
       ],
       "Photo was copied to stream and marked favorite there.": [
         "Fotot kopierades till streamen och markerades som favorit där."
@@ -8139,11 +8136,6 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -8156,6 +8148,11 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -10005,6 +10002,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Om du vill fortsätta ladda upp och synkronisera filer, frigör utrymme eller uppgradera för mer lagringsutrymme."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "För att fortsätta använda ${ BRAND_NAME }-produkter, frigör utrymme eller ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "För att skicka eller ta emot e-post, frigör utrymme eller uppgradera för mer lagringsutrymme."
       ],
@@ -10026,6 +10026,12 @@
       ],
       "Your ${ appStorage } is full": [
         "Ditt ${ appStorage } är fullt"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Ditt ${ productString } är ${ percentage } % fullt. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Ditt ${ productString } är fullt. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Ditt lagringsutrymme är ${ percentage } % fullt. ${ cta }."
@@ -10122,47 +10128,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "För ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription reminder": {
@@ -10423,6 +10388,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {

@@ -1401,9 +1401,6 @@
       "Monthly": [
         "Miesięcznie"
       ],
-      "New!": [
-        "Nowość!"
-      ],
       "Two-year": [
         "Co dwa lata"
       ]
@@ -3104,9 +3101,6 @@
       ],
       "Failed to load the STL preview": [
         "Nie udało się załadować podglądu STL"
-      ],
-      "Failed to save photo to your Drive": [
-        "Nie udało się zapisać zdjęcia na dysku"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Plik \"${ item.name }\" nie może zostać przesłany z powodu błędu: ${ error }"
@@ -5141,6 +5135,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jeśli nie widzisz wiadomości w skrzynce odbiorczej, sprawdź folder spam."
       ],
+      "If you have a large photo library, it might take some time.": [
+        "Jeśli masz dużą bibliotekę zdjęć, proces może zająć trochę czasu."
+      ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Jeśli posiadasz jeden z tych elementów, przejdź do ustawień konta ${ BRAND_NAME }, aby odblokować dysk."
       ],
@@ -5458,9 +5455,6 @@
       ],
       "Photo is set as album cover": [
         "Zdjęcie jest ustawione jako okładka albumu"
-      ],
-      "Photo saved to your Drive": [
-        "Zdjęcie zostało zapisane na dysku"
       ],
       "Photo was copied to stream and marked favorite there.": [
         "Zdjęcie zostało skopiowane do osi czasu i dodane do ulubionych."
@@ -6098,6 +6092,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Wyślemy nowy kod weryfikacyjny do ${ strong }"
       ],
+      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
+        "Aktualizujemy zdjęcia do nowej wersji! Podczas tego procesu przywracanie zdjęć jest tymczasowo niedostępne. Wszystko powinno być gotowe za kilka dni. Dziękujemy za wyrozumiałość."
+      ],
       "Week": [
         "Tydzień"
       ],
@@ -6181,6 +6178,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Możesz zamknąć kartę lub przeglądarkę."
+      ],
+      "You can close the tab. We'll work on it in the background.": [
+        "Możesz zamknąć kartę. Będziemy pracować nad procesem w tle."
       ],
       "You can import one data type at a time.": [
         "Możesz importować jeden typ danych jednocześnie."
@@ -8927,7 +8927,7 @@
         "Załadowanie głównego folderu nie powiodło się"
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
-        "Wybrane zdjęcia znajdują się już w albumie „${ albumName }”"
+        "Wybrane zdjęcia znajdują się już w albumie \"${ albumName }\""
       ],
       "Share invitation accepted successfully": [
         "Zaproszenie zostało zaakceptowane"
@@ -8946,6 +8946,9 @@
       ],
       "Subfolder failed to be loaded": [
         "Załadowanie podfolderu nie powiodło się"
+      ],
+      "The Albums feature is on its way! We're rolling it out gradually — please try again soon": [
+        "Funkcja albumów jest już dostępna! Wdrażamy ją stopniowo — wypróbuj ją wkrótce"
       ],
       "The document failed to be created": [
         "Utworzenie dokumentu nie powiodło się"
@@ -8984,7 +8987,7 @@
         "Stare pliki zostaną usunięte w ciągu 72 godzin"
       ],
       "Your photo(s) have been added to \"${ albumName }\"": [
-        "Twoje zdjęcia zostały dodane do albumu „${ albumName }”"
+        "Zdjęcia zostały dodane do albumu \"${ albumName }\""
       ],
       "Your settings failed to be saved": [
         "Zapisywanie ustawień nie powiodło się"
@@ -8993,13 +8996,13 @@
         "Ustawienia zostały zmienione"
       ],
       "⁠Some photo(s) could not be added to \"${ albumName }\"": [
-        "Nie udało się dodać niektórych zdjęć do albumu „${ albumName }”"
+        "Nie udało się dodać niektórych zdjęć do albumu \"${ albumName }\""
       ],
       "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Nie udało się usunąć niektórych zdjęć z ${ albumLink.name }"
+        "Nie udało się usunąć niektórych zdjęć z albumu ${ albumLink.name }"
       ],
       "⁠Your photo(s) have been removed from ${ albumLink.name }": [
-        "Twoje zdjęcia zostały usunięte z ${ albumLink.name }"
+        "Zdjęcia zostały usunięte z albumu ${ albumLink.name }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10129,6 +10132,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Oferta specjalna jest ważna przez pierwsze 2 lata."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Subskrypcja będzie odnawiana co roku w tej samej cenie."
       ]
@@ -10210,6 +10216,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standardowa cena ${ amount } za 30 miesięcy"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Oferta specjalna jest ważna przez pierwsze 2 lata"
       ]
     },
     "specialoffer: Title": {
@@ -10327,6 +10336,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Aby kontynuować przesyłanie i synchronizację plików, zwolnij część miejsca lub ulepsz konto, aby uzyskać więcej przestrzeni dyskowej."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Aby korzystać z usług ${ BRAND_NAME }, zwolnij część miejsca lub${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Zwolnij część miejsca lub ulepsz konto, aby uzyskać większą przestrzeń dyskową."
       ],
@@ -10350,6 +10362,12 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage } jest pełna"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString } jest w ${ percentage }% pełna. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString } jest pełna. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Przestrzeń dyskowa jest w ${ percentage }% pełna. ${ cta }."
@@ -10458,47 +10476,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "and 15 more premium features": [
-        "i 15 więcej funkcji premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatyczne przekierowanie ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerty wycieków ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikacja desktopowa"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
-      ],
-      "No ads or tracking": [
-        "Brak reklam i śledzenia"
-      ],
-      "Short @pm.me email address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Wesprzyj naszą misję"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
-      "We don't sell your data": [
-        "Nie sprzedajemy Twoich danych"
-      ],
-      "Your privacy is our mission": [
-        "Prywatność to nasza misja"
       ]
     },
     "Subscription reminder": {
@@ -10771,6 +10748,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Krótki alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {
@@ -11765,6 +11783,9 @@
       ],
       "Set up your organization": [
         "Skonfiguruj organizację"
+      ],
+      "Setting up Albums & Filters": [
+        "Konfiguracja albumów i filtrów"
       ],
       "Settings": [
         "Ustawienia"
