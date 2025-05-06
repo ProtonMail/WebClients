@@ -6,7 +6,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import { isSubscriptionUnchanged } from '@proton/payments';
+import { isCheckForbidden } from '@proton/payments';
 import {
     type CheckSubscriptionData,
     type CheckWithAutomaticOptions,
@@ -486,8 +486,8 @@ export const usePaymentsApiWithCheckFallback = () => {
     const checkV5Fallback = (data: CheckSubscriptionData): EnrichedCheckResponse | null => {
         const { Cycle, Currency, Plans } = data;
 
-        const samePlan = isSubscriptionUnchanged(subscription, Plans, Cycle);
-        if (!samePlan) {
+        const checkForbidden = isCheckForbidden(subscription, Plans, Cycle);
+        if (!checkForbidden) {
             return null;
         }
 
