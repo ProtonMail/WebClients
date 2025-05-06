@@ -1140,11 +1140,11 @@
       "Select ${ planTitle }": [
         "Pilih ${ planTitle }"
       ],
-      "Select all": [
-        "Pilih semua"
-      ],
       "Select All": [
         "Pilih Semua"
+      ],
+      "Select all": [
+        "Pilih semua"
       ],
       "Select all messages": [
         "Pilih semua pesan"
@@ -1897,9 +1897,6 @@
       ],
       "Monthly": [
         "Bulanan"
-      ],
-      "New!": [
-        "Baru!"
       ],
       "Two-year": [
         "Dua tahun"
@@ -6213,6 +6210,9 @@
       "and": [
         "dan"
       ],
+      "and more.": [
+        "dan lainnya."
+      ],
       "Another tip will be displayed next time you open Mail": [
         "Pesan tips lainnya akan ditampilkan pada saat Anda kembali membuka Mail"
       ],
@@ -6518,6 +6518,9 @@
       ],
       "Drop to import": [
         "Lepaskan untuk mengimpor"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "Karena konfigurasi penerima Anda, pesan ini tidak dapat dikirim dengan tanggal kedaluwarsa ke kontak berikut: "
       ],
       "Duplicate key updated": [
         "Kunci duplikat diperbarui"
@@ -6893,9 +6896,6 @@
       ],
       "Message download status:": [
         "Status unduhan pesan:"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Mekanisme kedaluwarsa pesan akan langsung aktif pada saat email terkirim ke pengguna ${ MAIL_APP_NAME } lain. Untuk dapat mengirim email yang dapat kedaluwarsa kepada pengguna non-${ BRAND_NAME }, mohon batalkan pengiriman dan tambahkan kata sandi ke email Anda."
       ],
       "Message headers": [
         "Header pesan"
@@ -7975,13 +7975,13 @@
         "Anda memilih **${ count } percakapan** dari folder ini"
       ],
       "You selected **${ count } conversation** with this label": [
-        "Anda memilih **${ count } percakapan** berlabel ini"
+        "Anda memilih **${ count } percakapan** dengan label ini"
       ],
       "You selected **${ count } message** from this folder": [
         "Anda memilih **${ count } pesan** dari folder ini"
       ],
       "You selected **${ count } message** with this label": [
-        "Anda memilih **${ count } pesan** berlabel ini"
+        "Anda memilih **${ count } pesan** dengan label ini"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
         "Anda memilih **${ elementsCount } percakapan** pada ${ location }."
@@ -11601,9 +11601,6 @@
       "Do you want to send the email anyway?": [
         "Apakah Anda tetap ingin mengirim email ini?"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Apabila Anda memutuskan untuk tetap mengirim email ini, para penerima berikut akan menerima email yang bersangkutan tanpa terikat waktu kedaluwarsa:"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Alamat berikut tidak valid: ${ invalidAddresses }"
       ],
@@ -11985,6 +11982,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Penawaran spesial ini valid untuk 2 tahun pertama."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Langganan Anda akan diperbarui dengan harga yang sama setiap tahunnya."
       ]
@@ -12063,6 +12063,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Dengan harga standar ${ amount } selama 30 bulan"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Penawaran spesial ini valid untuk 2 tahun pertama"
       ]
     },
     "specialoffer: Title": {
@@ -12226,6 +12229,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Untuk dapat lanjut mengunggah dan menyinkronkan berkas, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Untuk terus menggunakan produk ${ BRAND_NAME }, kosongkan ruang yang ada atau ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
       ],
@@ -12246,6 +12252,12 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage } Anda penuh"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString } Anda ${ percentage }% penuh. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString } Anda penuh. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Ruang penyimpanan Anda ${ percentage }% penuh. ${ cta }."
@@ -12336,47 +12348,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Untuk ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription reminder": {
@@ -12631,6 +12602,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {
@@ -14242,11 +14254,6 @@
         "Tukar Bitcoin dengan aman melalui email daripada menggunakan alamat Bitcoin 26-karakter yang kompleks dan rentan terhadap kesalahan"
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "Akses aplikasi Wallet"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "Cara yang lebih aman untuk menyimpan Bitcoin"
@@ -14255,22 +14262,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Masalah dompet"
-      ]
-    },
-    "wallet_signup_2024:Title": {
-      "Wallet": [
-        "Wallet"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "Akun ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "Dompet terimpor saya${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "Dompet saya${ indexStr }"
       ]
     },
     "Warning": {

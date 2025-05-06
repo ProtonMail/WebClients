@@ -1144,11 +1144,11 @@
       "Select ${ planTitle }": [
         "Välj ${ planTitle }"
       ],
-      "Select all": [
-        "Markera alla"
-      ],
       "Select All": [
         "Välj alla"
+      ],
+      "Select all": [
+        "Markera alla"
       ],
       "Select all messages": [
         "Markera alla meddelanden"
@@ -1908,9 +1908,6 @@
       ],
       "Monthly": [
         "Månadsvis"
-      ],
-      "New!": [
-        "Nytt!"
       ],
       "Two-year": [
         "Tvåårig"
@@ -6309,6 +6306,9 @@
       "and": [
         "och"
       ],
+      "and more.": [
+        "och mer."
+      ],
       "Another tip will be displayed next time you open Mail": [
         "Ett annat tips kommer att visas nästa gång du öppnar Mail"
       ],
@@ -6876,7 +6876,8 @@
         "Initierar…"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -7003,9 +7004,6 @@
       ],
       "Message download status:": [
         "Nedladdningsstatus för meddelande:"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Meddelandets förfallodatum fungerar bara när e-post skickas till andra ${ MAIL_APP_NAME }-användare. För att skicka e-postmeddelanden med förfallodag till användare utan ${ BRAND_NAME }, vänligen avbryt och lägg istället till lösenordsskydd till din e-post."
       ],
       "Message headers": [
         "Meddelanderubriker"
@@ -10438,11 +10436,6 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -10455,6 +10448,11 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -11796,10 +11794,6 @@
       "Do you want to send the email anyway?": [
         "Vill du skicka e-post ändå?"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Om du bestämmer dig för att skicka meddelandet ändå kommer följande mottagare att få e-postmeddelandet utan att det löper ut:",
-        "Om du bestämmer dig för att skicka meddelandet ändå kommer följande mottagare att få e-postmeddelandet utan att det löper ut:"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Följande adress är inte giltig: ${ invalidAddresses }",
         "Följande adresser är inte giltiga: ${ invalidAddresses }"
@@ -12438,6 +12432,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Om du vill fortsätta ladda upp och synkronisera filer, frigör utrymme eller uppgradera för mer lagringsutrymme."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "För att fortsätta använda ${ BRAND_NAME }-produkter, frigör utrymme eller ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "För att skicka eller ta emot e-post, frigör utrymme eller uppgradera för mer lagringsutrymme."
       ],
@@ -12459,6 +12456,12 @@
       ],
       "Your ${ appStorage } is full": [
         "Ditt ${ appStorage } är fullt"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Ditt ${ productString } är ${ percentage } % fullt. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Ditt ${ productString } är fullt. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Ditt lagringsutrymme är ${ percentage } % fullt. ${ cta }."
@@ -12555,47 +12558,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "För ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription reminder": {
@@ -12856,6 +12818,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -14525,11 +14528,6 @@
         "Växla Bitcoin säkert via e-post istället för komplexa, 26-teckniga Bitcoin-adresser som är benägna att ge upphov till fel"
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "Kom åt Wallet-app"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "Ett säkrare sätt att hålla Bitcoin"
@@ -14538,22 +14536,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Wallet-problem"
-      ]
-    },
-    "wallet_signup_2024:Title": {
-      "Wallet": [
-        "Wallet"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "Konto ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "Min importerade plånbok${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "Min plånbok${ indexStr }"
       ]
     },
     "Warning": {

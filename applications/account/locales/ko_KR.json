@@ -259,6 +259,9 @@
       "Close this banner": [
         "이 배너 닫기"
       ],
+      "Collaborate on documents": [
+        "문서에서 협업하기"
+      ],
       "Color": [
         "색상"
       ],
@@ -279,6 +282,12 @@
       ],
       "Connect": [
         "연결"
+      ],
+      "Connect apps and devices": [
+        "앱 및 장치 연결하기"
+      ],
+      "Connect to video conferencing": [
+        "화상 회의에 연결하기"
       ],
       "Connected": [
         "연결됨"
@@ -454,6 +463,9 @@
       "Discard changes": [
         "변경사항 취소"
       ],
+      "Discard Changes": [
+        "변경 내용 취소"
+      ],
       "Discover ${ planName }": [
         "${ planName } 알아보기"
       ],
@@ -474,6 +486,9 @@
       ],
       "Download": [
         "다운로드"
+      ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "${ DRIVE_APP_NAME } 앱 다운로드"
       ],
       "Download CSV sample": [
         "CSV 샘플 다운로드받기"
@@ -664,6 +679,9 @@
       "Get the app": [
         "앱 다운로드"
       ],
+      "Get the apps": [
+        "앱 다운로드"
+      ],
       "Get the browser extension": [
         "브라우저 확장 기능 받기"
       ],
@@ -712,6 +730,9 @@
       "Import emails": [
         "이메일 가져오기"
       ],
+      "Import emails, calendars, contacts": [
+        "이메일, 캘린더 및 연락처 불러오기"
+      ],
       "Import from Google": [
         "Google에서 가져오기"
       ],
@@ -754,6 +775,12 @@
       "Keep": [
         "보관"
       ],
+      "Keep Editing": [
+        "계속 편집하기"
+      ],
+      "Keep editing": [
+        "계속 수정하기"
+      ],
       "Keep logo": [
         "로고 유지"
       ],
@@ -787,17 +814,29 @@
       "Make admin": [
         "관리자 생성"
       ],
+      "Make key primary": [
+        "기본 키로 지정"
+      ],
+      "Manage advanced account protections": [
+        "향상된 계정 보호 관리"
+      ],
       "Manage communication preferences": [
         "커뮤니케이션 설정 관리"
       ],
       "Manage folders": [
         "폴더 관리"
       ],
+      "Manage groups": [
+        "그룹 관리"
+      ],
       "Manage labels": [
         "라벨 관리"
       ],
       "Manage subscription": [
         "구독 관리"
+      ],
+      "Manage users/addresses": [
+        "사용자 및 주소 관리"
       ],
       "Mark as default": [
         "기본으로 설정"
@@ -922,11 +961,11 @@
       "Refresh status": [
         "상태 새로고침"
       ],
-      "Refresh the page": [
-        "페이지 새로 고침"
-      ],
       "refresh the page": [
         "페이지 새로고침"
+      ],
+      "Refresh the page": [
+        "페이지 새로 고침"
       ],
       "Reject": [
         "거절"
@@ -1099,10 +1138,10 @@
       "Select country ${ country }": [
         "선택된 국가 ${ country }"
       ],
-      "Select file": [
+      "select file": [
         "파일 선택"
       ],
-      "select file": [
+      "Select file": [
         "파일 선택"
       ],
       "Select files": [
@@ -1150,11 +1189,20 @@
       "Set new password": [
         "새 비밀번호 설정"
       ],
+      "Set recovery methods": [
+        "복구 방법 마련하기"
+      ],
       "Set recovery phrase": [
         "복구 코드 설정"
       ],
       "Set up 2FA": [
         "2단계 인증 설정하기"
+      ],
+      "Set up a custom domain": [
+        "커스텀 도메인 설정"
+      ],
+      "Set up email forwarding": [
+        "이메일 포워딩 설정하기"
       ],
       "Settings": [
         "설정"
@@ -1164,6 +1212,9 @@
       ],
       "Share via link": [
         "링크로 공유"
+      ],
+      "Share your calendar with your team": [
+        "팀과 일정 공유하기"
       ],
       "Sharing options": [
         "공유 옵션"
@@ -1270,6 +1321,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "다시 저장해보세요. 이 이유로 저장을 실패했습니다: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } 켜기"
+      ],
       "Underline": [
         "밑줄"
       ],
@@ -1321,6 +1375,9 @@
       "Upload": [
         "업로드"
       ],
+      "Upload and share files": [
+        "파일 업로드 및 공유하기"
+      ],
       "Upload logo": [
         "로고 업로드"
       ],
@@ -1329,6 +1386,12 @@
       ],
       "Use ${ label } theme": [
         "${ label } 테마 사용"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "${ PASS_APP_NAME } for Business 사용하기"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "데이터 개인정보 보호를 위해 ${ VPN_SHORT_APP_NAME } 사용하기"
       ],
       "Use a different card": [
         "다른 카드 사용"
@@ -1943,9 +2006,6 @@
       ],
       "Monthly": [
         "매월"
-      ],
-      "New!": [
-        "신규!"
       ],
       "Two-year": [
         "2년"
@@ -2744,6 +2804,11 @@
       ],
       "Yomi": [
         "Yomi"
+      ]
+    },
+    "CountriesStep:Info": {
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount }개 선택됨"
       ]
     },
     "Country name": {
@@ -3756,6 +3821,18 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DRIVE_APP_NAME }의 ${ DOCS_SHORT_APP_NAME }를 사용하면 안전하고 암호화된 환경에서 다른 사람들과 함께 작업할 수 있습니다."
+      ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME }이 기본 메일 애플리케이션으로 설정되어 있지 않습니다."
+      ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "${ MAIL_APP_NAME }이 기본 메일 애플리케이션으로 설정되어 있지 않습니다."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "${ DRIVE_APP_NAME }에 폴더와 파일을 추가한 뒤 팀원을 초대하여 확인하거나 편집합니다."
+      ],
       "Also included": [
         "이것 외에도"
       ],
@@ -3765,14 +3842,23 @@
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "30일 혹은 그 전에 휴지통 및 스팸으로 이동한 이메일을 자동으로 삭제합니다."
       ],
+      "Automatically forward incoming email to another email address.": [
+        "수신 이메일을 다른 이메일 주소로 자동 전달합니다."
+      ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "받은 편지함에 도착하기 전에 수신 메시지를 자동으로 정렬합니다."
       ],
       "Available with ${ MAIL_APP_NAME } Plus": [
         "${ MAIL_APP_NAME } Plus에서 사용 가능"
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "먼저 구성하여 조직을 활성화한 뒤 이메일 주소를 사용자화하세요."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "축하합니다! ${ plusPlanName }의 최대 ${ rewardsLimit }월이 무료로 적립되었습니다."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "CRM, 웹 사이트, 프린터 등에 연렬하세요."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "한 번의 클릭으로 Zoom 미팅을 생성하고 참가 정보를 이벤트에 추가하세요."
@@ -3780,8 +3866,17 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "받은 편지함을 깔끔하게 유지하기 위해 원하는 만큼 라벨이나 폴더를 만드세요."
       ],
+      "Create groups you can email with a single address.": [
+        "단일 주소로 이메일을 보낼 수 있는 그룹을 생성하세요."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "각 국가에서 공유된 서버에 연결할 수 있는 구성원을 결정할 수 있도록 정책을 추가하세요."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "데스크톱 및 휴대기기에서 회원님의 이메일과 캘린더에 간편하게 접근해 보세요."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "데스크톱에서 클라우드에 파일을 쉽게 동기화하고 휴대 기기에서 접근할 수 있습니다."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "이 기능에 접근하려면 ${ PROTON_SENTINEL_NAME }을 활성화해 주세요."
@@ -3792,8 +3887,20 @@
       "Enable detailed events to access these features": [
         "이 기능들을 사용하기 위해 상세 이벤트를 활성화합니다."
       ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "보한 강화를 위해 조직에서 2단계 인증 사용을 권장하도록 설정해 보세요."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "암호화 및 연락처 불러오기 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "팀이 원격으로 있거나 공용 WiFi를 사용하는 경우에도 조직 데이터에 대한 안전한 접근이 보장됩니다."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "${ PROTON_SENTINEL_NAME } 프로그램으로 계정에 최고 수준의 보안 상태를 유지하세요."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "${ BRAND_NAME } 비밀번호를 분실한 경우에도 계정과 데이터에 접근 가능한지 여부를 확인하세요."
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "조직의 모든 구성원이 모든 국가의 공유 서버에 연결할 수 있습니다."
@@ -3807,6 +3914,9 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "친구를 ${ BRAND_NAME }에 초대해서 ${ credits } 크레딧을 획득하세요."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "팀이 민감한 비즈니스 및 고객 정보에 대한 암호를 안전하게 저장할 수 있도록 지원하세요"
+      ],
       "If disabled, only admins will have access.": [
         "비활성화시 관리자만 접근 가능합니다."
       ],
@@ -3818,6 +3928,9 @@
       ],
       "Learn more about common problems": [
         "일반적인 문제에 대해 자세히 알아보기"
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "이벤트 초대장에 화상 회의 링크를 즉시 추가할 수 있습니다."
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "나만의 것으로 이메일 바닥 글을 만들어 보세요 — 기본값이 아닌 내 독특한 브랜드의 것으로 보여주세요."
@@ -3831,8 +3944,14 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "여러 이메일 주소로 삶의 다양한 측면을 분리하고 업그레이드할 때 더 많은 프리미엄 기능을 잠금 해제하세요."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "모든 사용자의 계정을 설정하며 ${ BRAND_NAME }에 가입하도록 초대합니다."
+      ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
         "수신 이메일을 다른 이메일 주소로 전달하기 위해 자동 전달을 설정하세요."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "공유 캘린더로 동기화 및 일정 예약을 간소화하세요."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 연락처 ${ MAX_IMPORT_CONTACTS_STRING }개를 초과하지 않도록 않도록 해주세요. 파일이 더 크다면, 더 작은 파일로 나눠주세요. ${ learnMoreLink }."
@@ -3842,6 +3961,9 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "${ MAIL_APP_NAME } 바닥글을 지우기 위해 업그레이드 하고, 다른 프리미엄 기능들도 함께 잠금 해제하세요."
+      ],
+      "To start, give your organization a name.": [
+        "시작하려면 먼저 조직의 이름을 지정하세요."
       ],
       "Track the status and activity of your referrals.": [
         "사용자의 리퍼럴 상태와 활동을 추적하세요."
@@ -3857,6 +3979,9 @@
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "업그레이드하여 현재 이메일 주소보다 더 짧고, 기억하기 쉬운 주소인 ${ activatePmUser }를 받아보세요"
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "이 가이드를 통해 조직이 ${ BRAND_NAME }의 업계 최고의 암호화 및 개인정보 보호 생태계로부터 즉시 혜택을 받을 수 있습니다."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "계속 친구들을 초대할 수 있으나, 더 이상 크레딧을 얻을 수 없습니다"
@@ -4112,14 +4237,6 @@
         "Windows 8/8.1/7 및 Windows 32비트 (ARM64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        "Debian / Ubuntu용 .deb"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        "Fedora / Red Hat용 .rpm"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "파일에 안전하게 접근하기 위해 무료 ${ DRIVE_APP_NAME } 계정을 생성하세요"
@@ -4194,6 +4311,15 @@
       ]
     },
     "edm": {
+      "${ BRAND_NAME } will never ask you to scan a QR code that’s not from ${ domain } or an official ${ BRAND_NAME } app.": [
+        "${ BRAND_NAME }은 ${ domain } 또는 공식 ${ BRAND_NAME } 앱이 아닌 QR 코드를 스캔하도록 요청하지 않습니다."
+      ],
+      "${ BRAND_NAME } will never contact you unexpectedly asking you to sign in with a QR code.": [
+        "${ BRAND_NAME }은 예기치 않게 QR 코드로 로그인하도록 요청하지 않습니다."
+      ],
+      "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
+        "**작동 방식:** 로그인하려는 기기에 표시된 코드를 입력하세요. **${ email }**(으)로 로그인됩니다. 두 기기 모두 활성 상태로 유지됩니다."
+      ],
       "Allow QR code sign‒in": [
         "QR 코드 로그인 허용"
       ],
@@ -4211,6 +4337,9 @@
       ],
       "Generate QR code": [
         "QR 코드 생성"
+      ],
+      "Get another device that’s signed in to your ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } 계정에 로그인된 다른 기기를 가져오세요."
       ],
       "How to sign in using another device": [
         "다른 디바이스를 사용하여 로그인하는 방법"
@@ -4233,6 +4362,9 @@
       "Security tips": [
         "보안 팁"
       ],
+      "Select **Sign in on another device → Scan QR code**": [
+        "**다른 기기에서 로그인을 선택한 뒤 QR코드를 스캔하세요.**"
+      ],
       "Sign in on another device": [
         "다른 기기에서 로그인"
       ],
@@ -4244,6 +4376,12 @@
       ],
       "Try generating a new QR code.": [
         "새로운 QR 코드를 생성해 보세요."
+      ],
+      "Using that device, open any ${ BRAND_NAME } app and select **Settings**": [
+        "해당 기기에서 ${ BRAND_NAME } 앱 중 아무거나 실행한 뒤 **설정**을 선택하세요."
+      ],
+      "Works if you have another device that’s signed in to ${ BRAND_NAME }": [
+        "${ BRAND_NAME }에 로그인한 다른 기기가 있는 경우 작동합니다."
       ],
       "You have successfully signed in to another device": [
         "다른 기기에서 로그인하는데 성공했습니다."
@@ -4260,6 +4398,11 @@
         "이 탭을 닫아도 안전합니다."
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "참고:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "설명:\n${ eventDescription }"
@@ -4274,6 +4417,9 @@
       ],
       "Here's what changed:": [
         "바뀐 점은 다음과 같습니다:"
+      ],
+      "NOTE:": [
+        "참고:"
       ],
       "This event occurrence was canceled.": [
         "이 이벤트의 개최는 취소되었습니다."
@@ -4440,6 +4586,9 @@
       "Edit conditions": [
         "조건 편집"
       ],
+      "Got it": [
+        "확인"
+      ],
       "Next": [
         "다음"
       ],
@@ -4515,11 +4664,35 @@
       "Automatically forward emails to another email address.": [
         "다른 이메일 주소로 이메일을 자동으로 가져오세요."
       ],
+      "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "${ boldForwarderEmail } 주소에 대해 종단 간 암호화가 비활성화되어 있으나 제로 액세스 활성화는 계속 활성화되어 있습니다. ${ learnMoreLink }"
+      ],
+      "For compatibility, a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "호환성을 위해 ${ boldForwarderEmail }에 대해 새로운 암호화 키가 생성되었습니다."
+      ],
+      "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "호환성을 위해 ${ boldForwarderEmail }에 대해 새 암호화 키가 생성됩니다."
+      ],
+      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "호환성을 위해 포스트 양자 암호화가 비활성화되었으며 ${ boldForwarderEmail }에 대한 새 암호화 키가 생성되었습니다."
+      ],
+      "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
+        "호환성을 위해 포스트 양자 암호화는 ${ boldForwarderEmail }에 대해 비활성화됩니다."
+      ],
+      "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
+        "호환성을 위해 포스트 양자 암호화는 ${ boldForwarderEmail }에 대해 비활성화됩니다."
+      ],
+      "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "호환성을 위해 양자 내성 암호화가 비활성화되며 ${ boldForwarderEmail }에 대한 새 암호화 키가 생성됩니다."
+      ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
         "전달자가 초대되었고 초대를 수락/거부하거나 업데이트해야 합니다."
       ],
       "Forwarding is active": [
         "포워딩이 활성 상태입니다."
+      ],
+      "Forwarding to ${ boldForwardeeEmail } will become active once the recipient accepts the request.": [
+        "${ boldForwardeeEmail }(으)로 전달시 수신자가 요청을 수락한 후에 활성화됩니다."
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
         "종단 간 암호화 없는 주소 포워딩은 ${ boldForwarderEmail } 주소에 대한 종단 간 암호화 비활성화를 의미 합니다. 다만, 제로 엑세스 암호화는 여전히 활성화 상태로 유지됩니다. ${ learnMoreLink }"
@@ -4596,6 +4769,14 @@
         "이 조건에서의 텍스트 및 키워드를 입력하세요:"
       ]
     },
+    "email_forwarding_2023: Progress status": {
+      "Sending confirmation email": [
+        "확인 이메일 보내는 중"
+      ],
+      "Setting up forwarding": [
+        "가져오기 설정"
+      ]
+    },
     "email_forwarding_2023: Prompt": {
       "End-to-end encryption will be re-enabled for the sender address.": [
         "보낸 사람 주소에 대한 종단간 암호화가 재활성화 됩니다."
@@ -4625,6 +4806,9 @@
       "Changes saved": [
         "변경 사항 저장됨"
       ],
+      "Email sent to ${ existingForwardingConfig.ForwardeeEmail }": [
+        "이메일을 ${ existingForwardingConfig.ForwardeeEmail }(으)로 전송했습니다."
+      ],
       "Forwarding accepted": [
         "가져오기 수락됨"
       ],
@@ -4650,6 +4834,15 @@
       ],
       "Forwarding activated": [
         "가져오기를 활성화 했습니다."
+      ],
+      "Request confirmation?": [
+        "요청을 확인하시겠어요?"
+      ],
+      "Request sent": [
+        "요청 전송 완료"
+      ],
+      "Requesting confirmation": [
+        "확인 요청 중"
       ],
       "Set up forwarding": [
         "가져오기 설정"
@@ -6273,12 +6466,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "App Store에서 ${ appName } 받기"
-      ],
-      "${ appName } on Play Store": [
-        "Play Store에서 ${ appName } 받기"
-      ],
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME } 앱"
       ],
@@ -7045,6 +7232,9 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount }개 캘린더로 병합됨"
       ],
+      "${ countriesCount } country enabled": [
+        "${ countriesCount }개 국가 활성화됨"
+      ],
       "${ current } of ${ total }": [
         "${ total } 중 ${ current }"
       ],
@@ -7189,6 +7379,9 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/월간)"
       ],
+      "(default)": [
+        "(기본값)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(다음 조건이 모두 충족되면 필터링하기)"
       ],
@@ -7200,6 +7393,9 @@
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }**이(가) 사용자의 조직 **${ organizationName }**(에)서 지원되지 않습니다."
+      ],
+      "**${ appName }** is not supported.": [
+        "**${ appName }**이(가) 지원되지 않습니다."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "${ MAIL_SHORT_APP_NAME } 과 ${ CALENDAR_SHORT_APP_NAME } 를 포함하는 모든 ${ BRAND_NAME_TWO } 서비스를 사용하려면** ${ BRAND_NAME } 주소를 받으세요.**"
@@ -7273,11 +7469,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "비밀번호를 분실한 경우 ${ BRAND_NAME } 계정의 콘텐츠에 계속 액세스할 수 있도록 적어도 하나의 데이터 복구 방법을 활성화하세요."
       ],
-      "Active": [
-        "활성"
-      ],
       "active": [
         "활성화"
+      ],
+      "Active": [
+        "활성"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "계정에 @pm.me 이메일 주소를 추가해 보세요. 더 간단하고 짧은 이 도메인은 \"${ MAIL_APP_NAME } me\" 또는 \"Private Message me\"를 의미합니다."
@@ -7705,10 +7901,10 @@
       "Data recoverable on this device": [
         "이 장치에서 데이터 복구 가능"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -7992,9 +8188,6 @@
       ],
       "Failed to fetch logs.": [
         "로그를 가져오지 못했습니다."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "신속하고 충실하도록. 당신의 데스크톱으로 찾아온 이메일과 캘린더."
       ],
       "Featured in": [
         "소개된 주요 매스미디어"
@@ -8569,6 +8762,9 @@
       "No results found": [
         "결과를 찾을 수 없음"
       ],
+      "No single sign-on": [
+        "싱글 사인 온 없음"
+      ],
       "Not a valid URL": [
         "유효하지 않은 URL"
       ],
@@ -8610,6 +8806,9 @@
       ],
       "Open source": [
         "오픈 소스"
+      ],
+      "Open the guide for recommended actions and helpful links.": [
+        "권장 조치 및 유용한 링크들이 포함된 가이드를 열어보세요."
       ],
       "or ${ selectFileButton }": [
         "또는 ${ selectFileButton }"
@@ -8694,6 +8893,9 @@
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "비밀번호는 ${ MIN_PASSWORD_LENGTH }자 이상이어야 합니다."
+      ],
+      "Password must have:": [
+        "비밀번호는 다음 조건을 충족해야 합니다:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "결제는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
@@ -8995,6 +9197,9 @@
       "Set recovery phrase": [
         "복구 키 설정"
       ],
+      "Set up your organization": [
+        "조직 설정"
+      ],
       "Setting successfully saved": [
         "설정이 저장되었습니다"
       ],
@@ -9214,6 +9419,9 @@
       "The securest way to browse, stream, and be online.": [
         "검색, 스트리밍 및 온라인 상태를 유지하는 가장 안전한 방법이에요."
       ],
+      "The unpublished changes you made will be lost.": [
+        "적용되지 않은 변경 사항은 손실됩니다."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "인증 절차가 새 탭에서 열릴 것입니다. 활성화된 팝업 차단기를 비활성화 해주세요."
       ],
@@ -9262,6 +9470,9 @@
       "This is a 12-word phrase that you were prompted to set.": [
         "설정하라는 메시지가 표시된 12단어 키 입니다."
       ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "사용자가 볼 수 있는 조직의 이름 또는 닉네임입니다. 언제든지 변경할 수 있습니다."
+      ],
       "This is a recovery file or encryption key you may have previously saved.": [
         "잠정적으로 저장한 암호화 키거나 복구 파일일 수 있습니다."
       ],
@@ -9285,6 +9496,9 @@
       ],
       "This promotion link has expired.": [
         "이 프로모션 링크는 만료되었습니다."
+      ],
+      "This service is not available to users signing in with single sign-on.": [
+        "이 서비스는 싱글 사인 온 사용자에게 제공되지 않습니다"
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "이 윈도우를 닫으면 이 토큰은 사용할 수 없으며, 그 누구와도 공유해선 안됩니다."
@@ -9556,10 +9770,10 @@
       "User activated": [
         "사용자 활성화됨"
       ],
-      "username": [
+      "Username": [
         "사용자 이름"
       ],
-      "Username": [
+      "username": [
         "사용자 이름"
       ],
       "Users": [
@@ -9721,6 +9935,9 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "비활성화시, 사용자가 알아차리기 전 이미지가 다운로드 되는 것을 방지해 줍니다."
       ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "활성화시 ${ MAIL_APP_NAME }이 회원님의 기본 메일 애플리케이션인지 확인 및 설정이 되어 있지 않다면 알려드려요."
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "사용자의 제공자로 부터 ${ appName }을 위한 SAML 활성화 시,  콜백 URL (callback, ACS라고 함) 및 issuer ID를 사용하라는 안내창이 표시될 수 있습니다. 아래의 데이터를 제공자 입력란에 복사 후 붙여넣기를 하면 됩니다."
       ],
@@ -9840,6 +10057,9 @@
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "아래 토글을 통해 인터페이스상의 사진 섹션을 활성화할 수 있습니다."
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "조직의 구성원이 ${ BRAND_NAME } 계정에 대한 암호를 생성하거나 재설정할 때 사용할 암호 규칙을 적용할 수 있습니다."
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "불과 매달 **${ priceString }**의 가격에 하나의 번들로 모든 프리미엄 개인 정보 보호 서비스를 얻을 수 있어요."
@@ -10026,6 +10246,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "회원님의 이메일 주소는 이번 인증에만 사용됩니다."
+      ],
+      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
+        "다른 사용자의 기존 종단 간 암호화 전달이 일시 중지됩니다. '${ autoReplySettingsTitle }' 설정에서 수동으로 다시 활성화할 수 있습니다."
       ],
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
@@ -10704,10 +10927,10 @@
       "Allow sharing outside the organization": [
         "조직 외부로 공유 허용"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "허용된 도메인"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "허용된 도메인"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10788,9 +11011,6 @@
       "Backup password": [
         "백업 비밀번호"
       ],
-      "Beta": [
-        "베타"
-      ],
       "Billing cycle": [
         "결제 주기"
       ],
@@ -10862,6 +11082,9 @@
       ],
       "Colors": [
         "색상"
+      ],
+      "Common passwords": [
+        "보편적인 비밀번호"
       ],
       "Company": [
         "회사"
@@ -11048,6 +11271,9 @@
       ],
       "Emails (last month)": [
         "이마일 (지난 달)"
+      ],
+      "Enabled": [
+        "활성화됨"
       ],
       "End date": [
         "종료일"
@@ -11247,6 +11473,9 @@
       "Maximum number of characters": [
         "최대 문자 수"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "최대 문자 수는 ${ MAX_CHARS }자입니다."
+      ],
       "Maximum number of words": [
         "최대 단어 수"
       ],
@@ -11270,6 +11499,9 @@
       ],
       "Minimum number of characters": [
         "최소 문자 수"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "최소 문자 수는 ${ MIN_CHARS }자입니다."
       ],
       "Minimum number of words": [
         "최소 단어 수"
@@ -11640,6 +11872,9 @@
       "Uppercase": [
         "대문자"
       ],
+      "Uppercase and lowercase letters": [
+        "대소문자"
+      ],
       "URL": [
         "URL"
       ],
@@ -11934,6 +12169,9 @@
       "Encryption and keys": [
         "암호화 및 키"
       ],
+      "Enforcing 2FA for organizations": [
+        "조직 전체에 2단계 인증 강제화"
+      ],
       "Forgot email?": [
         "이메일을 잊으셨나요?"
       ],
@@ -11964,11 +12202,32 @@
       "How does monitoring work?": [
         "모니터링이 어떻게 작동하나요?"
       ],
+      "How to add users": [
+        "사용자 추가 방법"
+      ],
       "How to add Zoom links": [
         "Zoom 링크를 추가하는 방법"
       ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "${ DOCS_SHORT_APP_NAME }에서 공동 작업하는 방법"
+      ],
+      "How to create strong passwords": [
+        "강력한 비밀번호 생성 방법"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "${ PROTON_SENTINEL_NAME } 활성화 방법"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "${ BRAND_NAME }으로 전환 방법"
+      ],
       "How to pay with Bitcoin?": [
         "Bitcoin으로 어떻게 결제하나요?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } 설정 방법"
+      ],
+      "How to set up a custom domain": [
+        "커스텀 도메인 설정 방법"
       ],
       "How to set up SMTP": [
         "SMTP을 설정하는 방법"
@@ -11981,6 +12240,15 @@
       ],
       "How to unlock data": [
         "데이터 잠금해제 방법"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } 사용법 안내"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "${ PASS_APP_NAME } for Business 사용 방법"
+      ],
+      "How to use email forwarding": [
+        "이메일 포워딩 설정 방법"
       ],
       "How to use Groups": [
         "그룹 사용 방법"
@@ -12009,11 +12277,11 @@
       "perform a password reset from your active session": [
         "활성 상태의 세션에서 비밀번호를 재설정하시기 바랍니다."
       ],
-      "Privacy policy": [
-        "개인 정보 정책"
-      ],
       "privacy policy": [
         "개인정보 취급방침"
+      ],
+      "Privacy policy": [
+        "개인 정보 정책"
       ],
       "Reactivate now": [
         "지금 재활성화"
@@ -12038,6 +12306,9 @@
       ],
       "Trouble signing in?": [
         "로그인에 문제를 겪고 계신가요?"
+      ],
+      "Types of recovery methods": [
+        "복구 방법 유형"
       ],
       "Upgrade your plan": [
         "요금제 업그레이드"
@@ -12599,32 +12870,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
-      ],
-      "From ${ price }": [
-        "시작 가격: ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }에 시작하기"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName }(으)로 업그레이드"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "무료로 계속하기"
@@ -12652,6 +12897,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } 로 업그레이드"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
+      ],
+      "From ${ price }": [
+        "시작 가격: ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }에 시작하기"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName }(으)로 업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -13337,14 +13608,6 @@
         "모든 ${ BRAND_NAME } 프리미엄 제품 및 기능을 단돈 ${ priceLine }에 누리세요. 언제든지 취소하세요."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } 체험"
-      ],
-      "Your account's usage": [
-        "계정 사용량"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -13363,6 +13626,14 @@
       ],
       "Unlock premium features by upgrading": [
         "업그레이드로 프리미엄 기능 해제"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } 체험"
+      ],
+      "Your account's usage": [
+        "계정 사용량"
       ]
     },
     "new_plans: tooltip": {
@@ -13766,6 +14037,9 @@
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "지문이 있는 열쇠 ${ fp } 가 성공적으로 삭제됨."
+      ],
+      "Key with fingerprint ${ fp } is now primary.": [
+        "지문 포함 키 ${ fp }이(가) 기본값으로 설정되었습니다."
       ],
       "Link copied to clipboard": [
         "링크가 클립보드에 복사됨"
@@ -15164,6 +15438,9 @@
       "Name": [
         "이름"
       ],
+      "Organization name": [
+        "조직 이름"
+      ],
       "Other": [
         "기타"
       ],
@@ -15229,6 +15506,9 @@
       ],
       "VAT number": [
         "부가가치세 번호"
+      ],
+      "Your organization name": [
+        "조직 이름"
       ],
       "yourdomain.com": [
         "yourdomain.com"
@@ -15430,7 +15710,7 @@
     },
     "Remove organization logo": {
       "Users will no longer see your custom logo or organization name.": [
-        "다른 사용자가 당신의 맞춤형 로고 또는 조직이름을 볼 수 없게 됩니다."
+        "다른 사용자가 맞춤형 로고 또는 조직이름을 볼 수 없게 됩니다."
       ]
     },
     "Restore administrator panel": {
@@ -15856,6 +16136,11 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "IdP 프로비저닝 에이전트가 SCIM 데이터를 전달하는 SCIM 커넥터의 URL"
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "조직 설정 및 계정 보안"
       ]
     },
     "Security Center - Info": {
@@ -16534,6 +16819,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "본 특가 할인은 최초 2년간 유효합니다."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "회원님의 구독이 매년 같은 요율로 갱신됩니다."
       ]
@@ -16612,6 +16900,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "30달에 기본 가격 ${ amount }씩 청구됨"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "본 특가 할인은 최초 2년간 유효합니다"
       ]
     },
     "specialoffer: Title": {
@@ -16986,6 +17277,9 @@
       "Get more storage": [
         "더 많은 스토리지 얻기"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "${ BRAND_NAME } 제품을 계속 사용하려면 공간을 비우거나 ${ upgrade }하세요."
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "파일을 업로드 및 동기화하려면, 공간을 비우거나 ${ upgrade }"
       ],
@@ -17012,6 +17306,12 @@
       ],
       "Your ${ appStorage } is full": [
         "사용자의 ${ appStorage }이 가득 찼습니다."
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString }이(가) ${ percentage }% 찼습니다. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString }이(가) 가득 찼습니다. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "사용자의 스토리지가 ${ percentage }% 찼습니다. ${ cta }"
@@ -17162,47 +17462,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }용"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "저장공간 15GB"
-      ],
-      "and 15 more premium features": [
-        "그리고 15개의 프리미엄 기능"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "자동 이메일 포워딩 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "데이터 침해 경고 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
-      ],
-      "No ads or tracking": [
-        "광고나 트래킹이 없습니다"
-      ],
-      "Short @pm.me email address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Support our mission": [
-        "저희의 사명을 지원해주세요"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade your productivity": [
-        "생산성을 업그레이드하세요"
-      ],
-      "We don't sell your data": [
-        "당사는 사용자의 데이터를 판매하지 않습니다"
-      ],
-      "Your privacy is our mission": [
-        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription reminder": {
@@ -17489,6 +17748,47 @@
         "사용자의 @pm.me 이메일 별칭"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "당사는 사용자의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "확실한가요?"
@@ -17513,6 +17813,11 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "당사 시스템이 더 이상 이 결제 수단을 사용하여 자동 갱신할 수 없으나, 구독은 여전히 마지막 결제일에 갱신됩니다. 만약 플랜을 다운그레이드 또는 변경하시려면, 결제일이 다가오기 직전에 수행해야 합니다. 만약 무료 플랜의 제공 저장 공간을 초과하여 사용하시거나 다른 유료 계정을 사용시 시스템이 파일, 이메일 및 기타 데이터를 자동으로 삭제할 수 없기 때문에 플랜이 자동으로 다운그레이드되지 않습니다. 자동 결제를 비활성화 하실 때, 계정 정지를 방지하기 위해 마감일 전에 다음 구독 청구서를 지불하는 것을 잊지 말아주세요."
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "${ priceString } 절약"
       ]
     },
     "Subscription status": {
@@ -17977,6 +18282,9 @@
       "${ appName } keyboard shortcuts": [
         "${ appName } 키보드 단축키"
       ],
+      "${ BRAND_NAME } Account password rules": [
+        "${ BRAND_NAME } 계정 비밀번호 규칙"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -18211,11 +18519,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-All address": [
-        "Catch-All 주소"
-      ],
       "Catch-all address": [
         "Catch-all 주소"
+      ],
+      "Catch-All address": [
+        "Catch-All 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -18228,6 +18536,9 @@
       ],
       "Change password": [
         "비밀번호 변경"
+      ],
+      "Change primary key?": [
+        "기본 키를 변경하시겠습니까?"
       ],
       "Change role": [
         "역할 변경"
@@ -18280,11 +18591,20 @@
       "Connect ${ name }": [
         "${ name } 연락"
       ],
+      "Connect apps and devices": [
+        "앱 및 장치 연결하기"
+      ],
       "Connect organization": [
         "조직에 연결"
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "${ vpnPlus }로 한 번에 ${ VPN_CONNECTIONS }대의 기기를 동시 연결하세요. ${ upgradeButton }"
+      ],
+      "Connect to video conferencing": [
+        "화상 회의에 연결하기"
+      ],
+      "Connect your custom domain": [
+        "커스텀 도메인 연결하기"
       ],
       "Connection status": [
         "연결 상태"
@@ -18481,6 +18801,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "${ downgradedPlanName }(으)로 다운그래이드?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "${ DRIVE_APP_NAME } 앱 다운로드"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } 다운로드"
       ],
@@ -18562,11 +18885,17 @@
       "Email privacy": [
         "이메일 프라이버시"
       ],
+      "Enable advanced account protection": [
+        "향상된 계정 보호 활성화하기"
+      ],
       "Enable for all users": [
         "모든 사용자에게 활성화"
       ],
       "Encryption and keys": [
         "암호화 및 키"
+      ],
+      "Enhance security with 2FA": [
+        "2단계 인증으로 보안 강화시키기"
       ],
       "Enter 2FA code": [
         "2단계 인증 코드 입력"
@@ -18628,14 +18957,8 @@
       "Folders and labels": [
         "폴더와 라벨"
       ],
-      "For Linux": [
-        "Linux용"
-      ],
-      "For macOS": [
-        "macOS용"
-      ],
-      "For Windows": [
-        "Windows용"
+      "Forgot password": [
+        "비밀번호를 잊어버리셨나요?"
       ],
       "Forgot recovery method": [
         "복구 방법 분실"
@@ -18741,6 +19064,9 @@
       ],
       "Import contacts": [
         "연락처 가져오기"
+      ],
+      "Import emails, calendars, contacts": [
+        "이메일, 캘린더 및 연락처 불러오기"
       ],
       "Import events": [
         "이벤트 불러오기"
@@ -18880,6 +19206,9 @@
       "OpenVPN configuration files": [
         "OpenVPN 설정 파일"
       ],
+      "Org setup": [
+        "조직 설정"
+      ],
       "Organization filters": [
         "조직 필터"
       ],
@@ -18888,6 +19217,9 @@
       ],
       "Organization name": [
         "조직명"
+      ],
+      "Organization setup": [
+        "조직 설정"
       ],
       "Origin": [
         "출발지"
@@ -19057,6 +19389,9 @@
       "Save time with email filters": [
         "이메일 필터로 시간을 절약하세요"
       ],
+      "Schedule meetings in one click": [
+        "클릭 한 번으로 회의 예약하기"
+      ],
       "Schedule send:": [
         "예약 전송:"
       ],
@@ -19111,11 +19446,17 @@
       "Set organization name": [
         "조직 이름 설정"
       ],
+      "Set recovery methods": [
+        "복구 방법 마련하기"
+      ],
       "Set up ${ protonDuoPlanName }": [
         "${ protonDuoPlanName } 설정하기"
       ],
       "Set up a recovery method": [
         "복구 방법을 설정하세요"
+      ],
+      "Set up email forwarding": [
+        "이메일 포워딩 설정하기"
       ],
       "Set up forwarding": [
         "포워딩 설정"
@@ -19125,6 +19466,9 @@
       ],
       "Set up your family account": [
         "가족 계정 설정하기"
+      ],
+      "Set up your organization": [
+        "내 조직 설정하기"
       ],
       "Set your password": [
         "비밀번호를 설정하세요"
@@ -19161,6 +19505,12 @@
       ],
       "Signed in to member account": [
         "회원 계정으로 로그인됨"
+      ],
+      "Simplify email distribution": [
+        "이메일 배포 간소화하기"
+      ],
+      "Simplify password management": [
+        "비밀번호 관리 간소화하기"
       ],
       "Single sign-on": [
         "싱글 사인온 (SSO)"
@@ -19246,6 +19596,9 @@
       "Track your referrals": [
         "추천인 추적"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } 켜기"
+      ],
       "TV sign in": [
         "TV 로그인"
       ],
@@ -19273,6 +19626,9 @@
       "Upgrade your privacy": [
         "개인정보 보호를 업그레이드하세요"
       ],
+      "Upload and share files": [
+        "파일 업로드 및 공유하기"
+      ],
       "Upload CSV file to create multiple accounts": [
         "다중 사용자를 생성하려면 CSV 파일을 업로드해주세요."
       ],
@@ -19281,6 +19637,9 @@
       ],
       "Usage Report": [
         "사용 현황 보고서"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "데이터 개인정보 보호를 위해 ${ VPN_SHORT_APP_NAME } 사용하기"
       ],
       "User": [
         "사용자"
@@ -19335,6 +19694,9 @@
       ],
       "Weak passwords": [
         "약한 비밀번호"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business에 오신 것을 환영합니다"
       ],
       "What is an alias?": [
         "별칭이란?"
@@ -19572,6 +19934,12 @@
       ],
       "Feature in early access": [
         "얼리 엑세스 기능"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "예: **12345, abcde** 등"
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "예: **password, qwerty** 등"
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
         "${ MAIL_APP_NAME }과 그 너머를 최대한 활용하는 데 도움이 되는 생산성 및 보안 팁을 얻어보세요."

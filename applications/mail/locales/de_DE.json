@@ -1144,10 +1144,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } auswählen"
       ],
-      "Select all": [
+      "Select All": [
         "Alle auswählen"
       ],
-      "Select All": [
+      "Select all": [
         "Alle auswählen"
       ],
       "Select all messages": [
@@ -1908,9 +1908,6 @@
       ],
       "Monthly": [
         "Monatlich"
-      ],
-      "New!": [
-        "Neu!"
       ],
       "Two-year": [
         "Zwei Jahre"
@@ -6876,7 +6873,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -7003,9 +7001,6 @@
       ],
       "Message download status:": [
         "Status des Nachrichten-Downloads:"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Das Verfallen von Nachrichten funktioniert unmittelbar und sofort, wenn Nachrichten an andere ${ MAIL_APP_NAME }-Benutzer gesendet werden. Um verfallende E-Mails an Nicht-${ BRAND_NAME }-Benutzer zu senden, gehe auf Abbrechen und füge deiner E-Mail einen Passwortschutz hinzu."
       ],
       "Message headers": [
         "Nachrichtenheader"
@@ -11785,10 +11780,6 @@
       "Do you want to send the email anyway?": [
         "Möchtest du die E-Mail trotzdem versenden?"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Wenn du dich entscheidest, die Nachricht trotzdem zu versenden, wird der folgende Empfänger die Nachricht ohne Ablaufdatum erhalten:",
-        "Wenn du dich entscheidest, die Nachricht trotzdem zu versenden, werden die folgenden Empfänger die Nachricht ohne Ablaufdatum erhalten:"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Die folgende E-Mail-Adresse ist ungültig: ${ invalidAddresses }",
         "Die folgenden E-Mail-Adressen sind ungültig: ${ invalidAddresses }"
@@ -12566,47 +12557,6 @@
         "Für ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -12865,6 +12815,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -14534,11 +14525,6 @@
         "Tausche Bitcoin sicher per E-Mail aus statt komplexe, 26-stellige Bitcoin-Adressen zu verwenden, die anfällig für Fehler sind"
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "Auf Wallet-App zugreifen"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "Eine sicherere Möglichkeit, deinen Bitcoin zu halten"
@@ -14547,22 +14533,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Problem mit Wallet"
-      ]
-    },
-    "wallet_signup_2024:Title": {
-      "Wallet": [
-        "Wallet"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "Konto ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "Mein importiertes Wallet${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "Mein Wallet${ indexStr }"
       ]
     },
     "Warning": {

@@ -460,10 +460,10 @@
       "Discard": [
         "Zahodit"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Zahodit změny"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Zahodit změny"
       ],
       "Discover ${ planName }": [
@@ -779,7 +779,7 @@
         "Pokračovat v úpravách"
       ],
       "Keep editing": [
-        "Pokračovat v editaci"
+        "Pokračovat v úpravách"
       ],
       "Keep logo": [
         "Ponechat logo"
@@ -961,11 +961,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "Refresh the page": [
-        "Obnovit stránku"
-      ],
       "refresh the page": [
         "obnovit stránku"
+      ],
+      "Refresh the page": [
+        "Obnovit stránku"
       ],
       "Reject": [
         "Odmítnout"
@@ -1138,11 +1138,11 @@
       "Select country ${ country }": [
         "Vybrat zemi ${ country }"
       ],
-      "Select file": [
-        "Vybrat soubor"
-      ],
       "select file": [
         "vybrat soubor"
+      ],
+      "Select file": [
+        "Vybrat soubor"
       ],
       "Select files": [
         "Vybrat soubory"
@@ -2031,9 +2031,6 @@
       "Monthly": [
         "Měsíčně"
       ],
-      "New!": [
-        "Nové!"
-      ],
       "Two-year": [
         "Dva roky"
       ]
@@ -2843,6 +2840,12 @@
       ]
     },
     "CountriesStep:Info": {
+      "${ selectedCitiesCount } cities selected": [
+        "${ selectedCitiesCount } vybrané město",
+        "${ selectedCitiesCount } vybraná města",
+        "${ selectedCitiesCount } vybraných měst",
+        "${ selectedCitiesCount } vybraných měst"
+      ],
       "${ selectedCountriesCount } selected": [
         "${ selectedCountriesCount } vybrána",
         "${ selectedCountriesCount } vybrány",
@@ -4288,14 +4291,6 @@
         "Windows 8/8.1/7 nebo Windows 32-bit (ARM64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb pro Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm pro Fedora / Red Hat"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Vytvořte bezplatný účet ${ DRIVE_APP_NAME } pro bezpečný přístup k souboru"
@@ -4724,7 +4719,7 @@
         "Automatické přeposílání e-mailů na jinou e-mailovou adresu."
       ],
       "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
-        "Koncové šifrování bylo pro vaši adresu ${ boldForwarderEmail } deaktivováno, ale šifrování s nulovým přístupem zůstává aktivní. ${ learnMoreLink }"
+        "Koncové šifrování bylo pro vaši adresu ${ boldForwarderEmail } deaktivováno, ale šifrování s nulovým přístupem zůstává povoleno. ${ learnMoreLink }"
       ],
       "For compatibility, a new encryption key has been generated for ${ boldForwarderEmail }.": [
         "Z důvodu kompatibility byl pro ${ boldForwarderEmail } vygenerován nový šifrovací klíč."
@@ -4736,10 +4731,10 @@
         "Kvůli kompatibilitě bylo deaktivováno postkvantové šifrování a pro ${ boldForwarderEmail } byl vygenerován nový šifrovací klíč."
       ],
       "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
-        "Z důvodu kompatibility bylo pro ${ boldForwarderEmail } vypnuto postkvantové šifrování."
+        "Kvůli kompatibilitě bylo pro ${ boldForwarderEmail } deaktivováno postkvantové šifrování."
       ],
       "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
-        "Z důvodu kompatibility bude pro ${ boldForwarderEmail } vypnuto postkvantové šifrování."
+        "Kvůli kompatibilitě bude pro ${ boldForwarderEmail } deaktivováno postkvantové šifrování."
       ],
       "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
         "Kvůli kompatibilitě bude deaktivováno postkvantové šifrování a pro ${ boldForwarderEmail } bude vygenerován nový šifrovací klíč."
@@ -4833,7 +4828,7 @@
         "Odesílání potvrzovacího e-mailu"
       ],
       "Setting up forwarding": [
-        "Nastavování přeposílání"
+        "Nastavení přeposílání"
       ]
     },
     "email_forwarding_2023: Prompt": {
@@ -6585,12 +6580,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } v App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } v Obchodu Play"
-      ],
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME } aplikace"
       ],
@@ -7702,11 +7691,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivujte alespoň jednu metodu obnovy dat, abyste měli jistotu, že v případě ztráty hesla budete mít i nadále přístup k obsahu svého účtu ${ BRAND_NAME }."
       ],
-      "Active": [
-        "Aktivní"
-      ],
       "active": [
         "aktivní"
+      ],
+      "Active": [
+        "Aktivní"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Přidejte e-mailovou adresu @pm.me do svého účtu. Tato jednoduchá a kratší doména znamená \"${ MAIL_APP_NAME } me\" nebo \"Private Message me.\""
@@ -8164,11 +8153,11 @@
       "Data recoverable on this device": [
         "Data obnovitelná v tomto zařízení"
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -8457,9 +8446,6 @@
       ],
       "Failed to fetch logs.": [
         "Získání logů selhalo."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Rychlost a praktičnost. E-mail a kalendář přímo na vaší ploše."
       ],
       "Featured in": [
         "Napsali o nás"
@@ -10084,11 +10070,11 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "username": [
-        "uživatelské jméno"
-      ],
       "Username": [
         "Uživatelské jméno"
+      ],
+      "username": [
+        "uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -10385,7 +10371,7 @@
         "Sekci Fotografie můžete povolit v rozhraní pomocí přepínače níže."
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
-        "Můžete závést pravidla pro hesla, která budou členové vaší organizace používat při vytváření nebo obnovování hesla ke svému účzu ${ BRAND_NAME }."
+        "Můžete zavést pravidla pro hesla, která budou členové vaší organizace muset splnit při vytváření nebo resetování hesla ke svému účtu ${ BRAND_NAME }."
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Všechny naše prémiové služby ochrany soukromí můžete získat v jednom balíčku—a to za pouhých **${ priceString }/měsíc**."
@@ -10592,7 +10578,7 @@
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
       ],
       "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "Vaše stávající koncově šifrovaná přeposílání ostatním uživatelům budou pozastavena. Můžete je znovu ručně zapnout v nastavení '${ autoReplySettingsTitle }'."
+        "Vaše stávající koncově šifrovaná přeposílání budou ostatním uživatelům pozastavena. Můžete je znovu ručně zapnout v nastavení '${ autoReplySettingsTitle }'."
       ],
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
@@ -11298,10 +11284,10 @@
       "Allow sharing outside the organization": [
         "Povolit sdílení mimo organizaci"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11381,9 +11367,6 @@
       ],
       "Backup password": [
         "Záložní heslo"
-      ],
-      "Beta": [
-        "Beta"
       ],
       "Billing cycle": [
         "Fakturační období"
@@ -12657,11 +12640,11 @@
       "perform a password reset from your active session": [
         "resetujte heslo z vaší aktuální relace"
       ],
-      "Privacy policy": [
-        "Zásady ochrany osobních údajů"
-      ],
       "privacy policy": [
         "zásadami ochrany osobních údajů"
+      ],
+      "Privacy policy": [
+        "Zásady ochrany osobních údajů"
       ],
       "Reactivate now": [
         "Opětovně nyní aktivovat"
@@ -13283,32 +13266,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začněte za ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšit na ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovat s bezplatným tarifem"
@@ -13336,6 +13293,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Přejít na ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Začněte za ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Cena od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšit na ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -14099,14 +14082,6 @@
         "Odemkněte všechny prémiové produkty a funkce ${ BRAND_NAME } jen za ${ priceLine }. Zrušit můžete kdykoli."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -14125,6 +14100,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Odemknout prémiové funkce navýšením účtu"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -17915,6 +17898,9 @@
       "Get more storage": [
         "Získat více úložného prostoru"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Chcete-li dále používat produkty ${ BRAND_NAME }, uvolněte místo nebo ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Abyste nahráli nebo synchronizovali soubory, uvolněte místo nebo ${ upgrade }"
       ],
@@ -17944,6 +17930,12 @@
       ],
       "Your ${ appStorage } is full": [
         "Vaše ${ appStorage } je plné"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Vaše ${ productString } je z ${ percentage } % plné. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Vaše ${ productString } je plné. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Vaše úložiště je z ${ percentage } % plné. ${ cta }."
@@ -18139,47 +18131,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription reminder": {
@@ -18482,6 +18433,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -19238,10 +19230,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -19685,15 +19677,6 @@
       "Folders and labels": [
         "Složky a štítky"
       ],
-      "For Linux": [
-        "Pro Linux"
-      ],
-      "For macOS": [
-        "Pro macOS"
-      ],
-      "For Windows": [
-        "Pro Windows"
-      ],
       "Forgot password": [
         "Zapomenuté heslo"
       ],
@@ -20130,7 +20113,7 @@
         "Šetřete čas s e-mailovými filtry"
       ],
       "Schedule meetings in one click": [
-        "Plánování schůzek jedním kliknutím"
+        "Naplánujte schůzky jedním kliknutím"
       ],
       "Schedule send:": [
         "Naplánovat odeslání:"

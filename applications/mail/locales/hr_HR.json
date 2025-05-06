@@ -809,10 +809,10 @@
       "Select ${ planTitle }": [
         "Odaberite ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Odaberi sve"
       ],
-      "Select All": [
+      "Select all": [
         "Odaberi sve"
       ],
       "Select all messages": [
@@ -1300,9 +1300,6 @@
       ],
       "Monthly": [
         "Mjesečno"
-      ],
-      "New!": [
-        "Novo"
       ],
       "Two-year": [
         "2 godine"
@@ -4141,9 +4138,6 @@
       "Inherited from parent folder": [
         "Nasljedno iz roditeljske mape"
       ],
-      "Insert image": [
-        "Umetni sliku"
-      ],
       "Insert link": [
         "Umetni poveznicu"
       ],
@@ -4203,9 +4197,6 @@
       ],
       "Merged": [
         "Spojeno"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Istek poruka radi po zadanom prilikom slanja e-pošte drugim korisnicima ${ MAIL_APP_NAME }a. Za slanje e-poruka koje istječu, korisnicima koji nisu korisnici ${ BRAND_NAME }a, molimo otkažite i dodajte zaštitu lozinkom za svoju e-poštu."
       ],
       "Message headers": [
         "Zaglavlja poruke"
@@ -6385,11 +6376,6 @@
       "Do you want to send the email anyway?": [
         "Želite li svejedno poslati e-poruku?"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Ako odlučite svejedno poslati poruku, sljedeći će primatelj dobiti e-poštu bez isteka:",
-        "Ako odlučite svejedno poslati poruku, sljedeći će primatelji dobiti e-poštu bez isteka:",
-        "Ako odlučite svejedno poslati poruku, sljedeći će primatelji dobiti e-poštu bez isteka:"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Sljedeća adresa nije važeća: ${ invalidAddresses }",
         "Sljedeće adrese nisu važeće: ${ invalidAddresses }",
@@ -6736,17 +6722,6 @@
         "Razumijem"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
-      ]
-    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } prostora za pohranu po korisniku"
@@ -6759,6 +6734,17 @@
       ],
       "Version history": [
         "Povijest verzija"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
       ]
     },
     "Subscription renewal state": {
@@ -7659,11 +7645,6 @@
         "Sigurno zamijenite Bitcoin putem e-pošte umjesto složenih, 26-znamenkastih Bitcoin adresa koje su sklone pogreškama"
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "Pristupi apl. novčanika"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "Sigurniji način za čuvanje Bitcoin-a"
@@ -7672,17 +7653,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Problem s novčanikom"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "Korisnički račun ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "Moj uvezeni novčanik${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "Moj novčanik${ indexStr }"
       ]
     },
     "Warning": {
