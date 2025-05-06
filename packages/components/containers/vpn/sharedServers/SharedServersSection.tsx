@@ -68,7 +68,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
     const [originalPolicies, setOriginalPolicies] = useState<VpnLocationFilterPolicyLocal[]>([]);
     const [localPolicies, setLocalPolicies] = useState<VpnLocationFilterPolicyLocal[]>([]);
     const [policyType, setPolicyType] = useState<PolicyType>(PolicyType.None);
-    const [originalPolicyType, setOriginalPolicyType] = useState<PolicyType>(PolicyType.None);
+    const [previousPolicyType, setOriginalPolicyType] = useState<PolicyType>(PolicyType.None);
 
     const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
     const [didPublishChanges, setDidPublishChanges] = useState(false);
@@ -227,28 +227,20 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
 
     useEffect(() => {
         if (!loading && originalPolicies.length > 0) {
-            const anyLocalChange = localPolicies.some((p) =>
+            const anyLocalPolicyChange = localPolicies.some((p) =>
                 ['created', 'edited', 'deleted'].includes(p.localStatus ?? 'unchanged')
             );
-            const typeChanged = policyType !== originalPolicyType;
+            /** On | Off | Custom */
+            const typeChanged = policyType !== previousPolicyType;
 
             let showBar = false;
 
-            if (anyLocalChange) {
+            if (anyLocalPolicyChange || typeChanged) {
                 showBar = true;
-            } else if (typeChanged) {
-                const switchingToCustomNoChanges =
-                    policyType === PolicyType.Custom &&
-                    (originalPolicyType === PolicyType.None || originalPolicyType === PolicyType.All);
-
-                if (!switchingToCustomNoChanges) {
-                    showBar = true;
-                }
             }
-
             setHasUnsavedChanges(showBar);
         }
-    }, [loading, originalPolicies, localPolicies, policyType, originalPolicyType]);
+    }, [loading, originalPolicies, localPolicies, policyType, previousPolicyType]);
 
     useEffect(() => {
         const handleBeforeUnload = (e: BeforeUnloadEvent) => {
