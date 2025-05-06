@@ -622,20 +622,54 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             abortSignal: AbortSignal,
             volumeId: string,
             albumLinkId: string,
-            linksInfoForAlbum: Map<string, any>
+            linksInfoForAlbum: Map<
+                string,
+                {
+                    payload: PhotoDataForAddToAlbumPayload;
+                    albumPhoto: AlbumPhoto | undefined;
+                }
+            >
         ) => {
+            let addedLinkIds: string[] = [];
+
             const result = await batchAPIHelper(abortSignal, {
                 linkIds: [...linksInfoForAlbum.keys()],
                 batchRequestSize: MAX_ADD_ALBUM_PHOTOS_BATCH,
                 ignoredCodes: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
                 query: async (batchLinkIds) => {
-                    const links = await Promise.all(
-                        batchLinkIds.map(async (linkId) => linksInfoForAlbum.get(linkId)?.payload)
-                    );
+                    let linksPayloads = [];
+                    for (const linkId of batchLinkIds) {
+                        if (addedLinkIds.includes(linkId)) {
+                            continue;
+                        }
+                        const linkInfo = linksInfoForAlbum.get(linkId);
+                        if (linkInfo) {
+                            linksPayloads.push(linkInfo.payload);
+                            addedLinkIds.push(linkId);
 
-                    return queryAddAlbumPhotos(volumeId, albumLinkId, {
-                        AlbumData: links.filter(isTruthy),
-                    });
+                            // All the related photos must be together with the main
+                            // photo in one batch request.
+                            // Backend has high limit of batch size, so we can simply
+                            // include all related photos in the payload.
+                            // It would be good to improve this in the future to avoid
+                            // creating huge payloads by sending just one photo with
+                            // all related photos in one request if its more than the
+                            // batch size.
+                            linkInfo.albumPhoto?.relatedPhotos.forEach((relatedPhoto) => {
+                                const relatedLinkInfo = linksInfoForAlbum.get(relatedPhoto.linkId);
+                                if (relatedLinkInfo) {
+                                    linksPayloads.push(relatedLinkInfo.payload);
+                                    addedLinkIds.push(relatedPhoto.linkId);
+                                }
+                            });
+                        }
+                    }
+
+                    if (linksPayloads.length) {
+                        return queryAddAlbumPhotos(volumeId, albumLinkId, {
+                            AlbumData: linksPayloads,
+                        });
+                    }
                 },
             });
 
