@@ -15,6 +15,7 @@ import { isRegularCycle, isTrial } from '@proton/payments';
 import { type ProductParam } from '@proton/shared/lib/apps/product';
 import { getPlanFromIDs } from '@proton/shared/lib/helpers/planIDs';
 
+import { type CouponConfigRendered } from '../coupon-config/useCouponConfig';
 import { isSamePlanCheckout } from './isSamePlanCheckout';
 import { notHigherThanAvailableOnBackend } from './payment';
 
@@ -180,6 +181,7 @@ export const getAllowedCycles = ({
     rules,
     cycleParam,
     app,
+    couponConfig,
 }: {
     subscription: Subscription | FreeSubscription | undefined;
     minimumCycle?: CYCLE;
@@ -193,6 +195,7 @@ export const getAllowedCycles = ({
     rules?: PlanCapRule[];
     cycleParam?: CYCLE;
     app?: ProductParam;
+    couponConfig?: CouponConfigRendered;
 }): CYCLE[] => {
     const plan = getPlanFromIDs(planIDs, plansMap);
     if (!plan) {
@@ -229,13 +232,18 @@ export const getAllowedCycles = ({
         const isHigherThanUpcoming: boolean =
             cycle >= (subscription?.UpcomingSubscription?.Cycle ?? 0) || !!disableUpcomingCycleCheck;
 
+        const allowedByCouponConfig =
+            !couponConfig || !couponConfig.availableCycles || couponConfig.availableCycles.includes(cycle);
+
         const isEligibleForSelection: boolean =
             (isHigherThanCurrentSubscription && isHigherThanUpcoming) ||
             isTrialSubscription ||
             !isSamePlan ||
             !!allowDowncycling;
 
-        return cycle >= minimumCycle && cycle <= adjustedMaximumCycle && isEligibleForSelection;
+        return (
+            cycle >= minimumCycle && cycle <= adjustedMaximumCycle && isEligibleForSelection && allowedByCouponConfig
+        );
     });
 
     return result;
