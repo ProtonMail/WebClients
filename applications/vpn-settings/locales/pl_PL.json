@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktywować"
-      ],
       "Activate": [
         "Aktywuj"
+      ],
+      "activate": [
+        "aktywować"
       ],
       "Activate organization key": [
         "Aktywuj klucz organizacji"
@@ -259,10 +259,10 @@
       "Discard": [
         "Odrzuć"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Odrzuć zmiany"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Odrzuć zmiany"
       ],
       "Discover ${ planName }": [
@@ -446,6 +446,9 @@
         "Zaproś użytkownika"
       ],
       "Keep Editing": [
+        "Kontynuuj edytowanie"
+      ],
+      "Keep editing": [
         "Kontynuuj edytowanie"
       ],
       "Keep logo": [
@@ -679,11 +682,11 @@
       "Select country ${ country }": [
         "Wybierz kraj ${ country }"
       ],
-      "Select file": [
-        "Wybierz plik"
-      ],
       "select file": [
         "wybierz plik"
+      ],
+      "Select file": [
+        "Wybierz plik"
       ],
       "Send code": [
         "Wyślij kod"
@@ -1268,9 +1271,6 @@
       "Monthly": [
         "Miesięcznie"
       ],
-      "New!": [
-        "Nowość!"
-      ],
       "Two-year": [
         "Co dwa lata"
       ]
@@ -1598,6 +1598,14 @@
     "Confirmation title": {
       "Delete payment method": [
         "Usuń metodę płatności"
+      ]
+    },
+    "CountriesStep:Info": {
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount }",
+        "${ selectedCountriesCount }",
+        "${ selectedCountriesCount }",
+        "${ selectedCountriesCount }"
       ]
     },
     "Country name": {
@@ -4069,6 +4077,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Technologia szyfrowania ${ BRAND_NAME } oznacza, że nikt nie ma dostępu do Twojego hasła — nawet my."
       ],
+      "${ countriesCount } country enabled": [
+        "Włączono ${ countriesCount } kraj",
+        "Włączono ${ countriesCount } kraje",
+        "Włączono ${ countriesCount } krajów",
+        "Włączono ${ countriesCount } krajów"
+      ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% zniżki"
       ],
@@ -4217,10 +4231,16 @@
         "(${ serverPrice } / miesiąc)"
       ],
       "(default)": [
-        "(domyślne)"
+        "(domyślnie)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "** Uzyskaj adres ${ BRAND_NAME } **, aby używać usług ${ BRAND_NAME_TWO }, tym ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } więcej",
+        "+ ${ invisibleCount } więcej",
+        "+ ${ invisibleCount } więcej",
+        "+ ${ invisibleCount } więcej"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusowej przestrzeni dyskowej"
@@ -4522,11 +4542,11 @@
       "Data recoverable on this device": [
         "Dane możliwe do odzyskania na tym urządzeniu"
       ],
-      "dedicated servers": [
-        "dedykowane serwery"
-      ],
       "Dedicated servers": [
         "Dedykowane serwery"
+      ],
+      "dedicated servers": [
+        "dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP mogą zostać dodane do prywatnych bram, aby umożliwić precyzyjną kontrolę nad nimi."
@@ -5725,11 +5745,11 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
-      "username": [
-        "nazwa użytkownika"
-      ],
       "Username": [
         "Nazwa użytkownika"
+      ],
+      "username": [
+        "nazwa użytkownika"
       ],
       "Users": [
         "Użytkownicy"
@@ -5931,6 +5951,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Edytuj adres, aby zweryfikować prawidłowy adres pomocniczy."
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "Możesz wymusić zasady dotyczące haseł, których użytkownicy organizacji będą używać podczas tworzenia lub resetowania hasła konta ${ BRAND_NAME }."
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Możesz uzyskać dostęp do wszystkich naszych usług prywatności w wersji premium w jednym pakiecie za jedynie **${ priceString } miesięcznie**."
@@ -6306,10 +6329,10 @@
       "Allow recovery by phone": [
         "Zezwalaj na odzyskiwanie przez telefon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dozwolona domena"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dozwolona domena"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6397,7 +6420,7 @@
         "Kolory"
       ],
       "Common passwords": [
-        "Popularne hasła"
+        "Proste hasła"
       ],
       "Company": [
         "Firma"
@@ -8642,7 +8665,7 @@
     },
     "Option": {
       "Allowed ${ defaultLabel }": [
-        "Dozwolone ${ defaultLabel }"
+        "Dozwolono ${ defaultLabel }"
       ],
       "Country configs": [
         "Konfiguracje kraju"
@@ -8678,7 +8701,7 @@
         "Niedozwolone"
       ],
       "Optional ${ defaultLabel }": [
-        "Opcjonalne ${ defaultLabel }"
+        "Opcjonalnie ${ defaultLabel }"
       ],
       "Organization only": [
         "Tylko w organizacji"
@@ -10051,6 +10074,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Oferta specjalna jest ważna przez pierwsze 2 lata."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Subskrypcja będzie odnawiana co roku w tej samej cenie."
       ]
@@ -10132,6 +10158,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standardowa cena ${ amount } za 30 miesięcy"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Oferta specjalna jest ważna przez pierwsze 2 lata"
       ]
     },
     "specialoffer: Title": {
@@ -10462,6 +10491,9 @@
       "For all ${ BRAND_NAME } services": [
         "Do wykorzystania we wszystkich usługach ${ BRAND_NAME }"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Aby korzystać z usług ${ BRAND_NAME }, zwolnij część miejsca lub${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Zwolnij część miejsca lub ${ upgrade }"
       ],
@@ -10482,6 +10514,12 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage } jest pełna"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString } jest w ${ percentage }% pełna. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString } jest pełna. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Przestrzeń dyskowa jest w ${ percentage }% pełna. ${ cta }."
@@ -10659,47 +10697,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "and 15 more premium features": [
-        "i 15 więcej funkcji premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatyczne przekierowanie ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerty wycieków ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikacja desktopowa"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
-      ],
-      "No ads or tracking": [
-        "Brak reklam i śledzenia"
-      ],
-      "Short @pm.me email address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Wesprzyj naszą misję"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
-      "We don't sell your data": [
-        "Nie sprzedajemy Twoich danych"
-      ],
-      "Your privacy is our mission": [
-        "Prywatność to nasza misja"
       ]
     },
     "Subscription reminder": {
@@ -11002,6 +10999,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Krótki alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {
@@ -11510,10 +11548,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
       "Change login password": [

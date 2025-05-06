@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
-      "activate": [
-        "включить"
-      ],
       "Activate": [
         "Активировать"
+      ],
+      "activate": [
+        "включить"
       ],
       "Activate organization key": [
         "Активировать ключ организации"
@@ -610,11 +610,11 @@
       "Select country ${ country }": [
         "Выбрать страну ${ country }"
       ],
-      "Select file": [
-        "Выбрать файл"
-      ],
       "select file": [
         "выбрать файл"
+      ],
+      "Select file": [
+        "Выбрать файл"
       ],
       "Send code": [
         "Отправить код"
@@ -4049,11 +4049,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Настройте внешний вид ${ BRAND_NAME } приложений."
       ],
-      "dedicated servers": [
-        "выделенные серверы"
-      ],
       "Dedicated servers": [
         "Выделенные серверы"
+      ],
+      "dedicated servers": [
+        "выделенные серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с выделенными IP-адресами могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -5162,11 +5162,11 @@
       "User activated": [
         "Пользователь активирован"
       ],
-      "username": [
-        "имя пользователя"
-      ],
       "Username": [
         "Имя пользователя"
+      ],
+      "username": [
+        "имя пользователя"
       ],
       "Users": [
         "Пользователи"
@@ -5707,11 +5707,11 @@
       "Allow recovery by phone": [
         "Разрешить восстановление по номеру телефона"
       ],
-      "Allowed Domain": [
-        "Разрешённый Домен"
-      ],
       "Allowed domain": [
         "Разрешённый домен"
+      ],
+      "Allowed Domain": [
+        "Разрешённый Домен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Разрешает всем участникам вашей организации добавлять ссылки на видеоконференции в приглашения календаря."
@@ -6195,6 +6195,9 @@
       ],
       "Type": [
         "Тип"
+      ],
+      "Uppercase and lowercase letters": [
+        "Заглавные и строчные буквы"
       ],
       "User": [
         "Пользователь"
@@ -9879,47 +9882,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
@@ -10220,6 +10182,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -10705,10 +10708,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [

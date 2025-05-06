@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "activate": [
-        "aktivér"
-      ],
       "Activate": [
         "Aktivér"
+      ],
+      "activate": [
+        "aktivér"
       ],
       "Activate organization key": [
         "Aktivér organisationsnøgle"
@@ -583,11 +583,11 @@
       "Select country": [
         "Vælg land"
       ],
-      "Select file": [
-        "Vælg fil"
-      ],
       "select file": [
         "vælg fil"
+      ],
+      "Select file": [
+        "Vælg fil"
       ],
       "Send code": [
         "Send kode"
@@ -1104,9 +1104,6 @@
       ],
       "Monthly": [
         "Månedlig"
-      ],
-      "New!": [
-        "Nyheder"
       ],
       "Two-year": [
         "To-År"
@@ -3809,11 +3806,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Tilpas ${ BRAND_NAME }-applikationernes udseende."
       ],
-      "dedicated servers": [
-        "dedikerede servere"
-      ],
       "Dedicated servers": [
         "Dedikerede servere"
+      ],
+      "dedicated servers": [
+        "dedikerede servere"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresser kan tilføjes til private gateways for at finjustere adgangen."
@@ -4815,11 +4812,11 @@
       "User activated": [
         "Bruger aktiveret"
       ],
-      "username": [
-        "brugernavn"
-      ],
       "Username": [
         "Brugernavn"
+      ],
+      "username": [
+        "brugernavn"
       ],
       "Users": [
         "Brugere"
@@ -5305,10 +5302,10 @@
       "Allow recovery by phone": [
         "Tillad gendannelse via telefon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tilladt domæne"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tilladt domæne"
       ],
       "Amount": [
@@ -9005,47 +9002,6 @@
         "Til ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } dag tilbage",
@@ -9325,6 +9281,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -9773,11 +9770,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-All address": [
-        "Catch-All-adresse"
-      ],
       "Catch-all address": [
         "Catch-all-adresse"
+      ],
+      "Catch-All address": [
+        "Catch-All-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"

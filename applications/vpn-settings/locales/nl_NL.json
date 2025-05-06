@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
-      "activate": [
-        "activeer"
-      ],
       "Activate": [
         "Activeren"
+      ],
+      "activate": [
+        "activeer"
       ],
       "Activate organization key": [
         "Organisatiesleutel activeren"
@@ -259,11 +259,11 @@
       "Discard": [
         "Verwijderen"
       ],
-      "Discard Changes": [
-        "Wijzigingen annuleren"
-      ],
       "Discard changes": [
         "Wijzigingen weggooien"
+      ],
+      "Discard Changes": [
+        "Wijzigingen annuleren"
       ],
       "Discover ${ planName }": [
         "Ontdek ${ planName }"
@@ -682,11 +682,11 @@
       "Select country ${ country }": [
         "Selecteer land ${ country }"
       ],
-      "Select file": [
-        "Selecteer bestand"
-      ],
       "select file": [
         "selecteer bestand"
+      ],
+      "Select file": [
+        "Selecteer bestand"
       ],
       "Send code": [
         "Code versturen"
@@ -1255,9 +1255,6 @@
       "Monthly": [
         "Maandelijks"
       ],
-      "New!": [
-        "Nieuw!"
-      ],
       "Two-year": [
         "Tweejaarlijks"
       ]
@@ -1584,6 +1581,10 @@
       ]
     },
     "CountriesStep:Info": {
+      "${ selectedCitiesCount } cities selected": [
+        "${ selectedCitiesCount } steden geselecteerd",
+        "${ selectedCitiesCount } steden geselecteerd"
+      ],
       "${ selectedCountriesCount } selected": [
         "${ selectedCountriesCount } geselecteerd",
         "${ selectedCountriesCount } geselecteerd"
@@ -4445,11 +4446,11 @@
       "Data recoverable on this device": [
         "Gegevens herstelbaar op dit apparaat"
       ],
-      "dedicated servers": [
-        "toegewijde servers"
-      ],
       "Dedicated servers": [
         "Dedicated servers"
+      ],
+      "dedicated servers": [
+        "toegewijde servers"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
@@ -5622,11 +5623,11 @@
       "User activated": [
         "Gebruiker geactiveerd"
       ],
-      "username": [
-        "gebruikersnaam"
-      ],
       "Username": [
         "Gebruikersnaam"
+      ],
+      "username": [
+        "gebruikersnaam"
       ],
       "Users": [
         "Gebruikers"
@@ -6178,11 +6179,11 @@
       "Allow recovery by phone": [
         "Herstellen via telefoon toestaan"
       ],
-      "Allowed Domain": [
-        "Toegestaan domein"
-      ],
       "Allowed domain": [
         "Domein toegestaan"
+      ],
+      "Allowed Domain": [
+        "Toegestaan domein"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Laat iedereen in uw organisatie toe om naadloos koppelingen aan hun agenda-uitnodigingen toe te voegen."
@@ -10208,6 +10209,9 @@
       "For all ${ BRAND_NAME } services": [
         "Voor alle ${ BRAND_NAME }-diensten"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Om ${ BRAND_NAME } producten te kunnen blijven gebruiken, maakt u ruimte vrij of voert u een ${ upgrade } uit"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Maak ruimte vrij of ${ upgrade } om bestanden te uploaden of te synchroniseren"
       ],
@@ -10226,6 +10230,12 @@
       ],
       "Your ${ appStorage } is full": [
         "Uw ${ appStorage } is vol"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Uw ${ productString } zit ${ percentage }% vol. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Uw ${ productString } zit vol. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Uw opslag is ${ percentage }% vol. ${ cta }."
@@ -10373,47 +10383,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Voor ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
       ]
     },
     "Subscription reminder": {
@@ -10704,6 +10673,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
@@ -11210,11 +11220,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-All address": [
-        "Catch-All adres"
-      ],
       "Catch-all address": [
         "Catch-all adres"
+      ],
+      "Catch-All address": [
+        "Catch-All adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"
