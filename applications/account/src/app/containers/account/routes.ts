@@ -484,16 +484,9 @@ export const getAccountAppRoutes = ({
                 to: '/easy-switch',
                 icon: 'arrow-down-to-square',
                 available: showEasySwitchSection,
-                description: c('Settings description')
-                    .t`Complete the transition to privacy with our secure importing and forwarding tools.`,
                 subsections: [
                     {
-                        text: c('Title').t`Set up forwarding`,
-                        id: 'start-forward',
-                    },
-                    {
-                        text: c('Title').t`Import messages`,
-                        id: 'start-import',
+                        id: 'easy-switch',
                     },
                     {
                         text: c('Title').t`History`,
@@ -506,11 +499,7 @@ export const getAccountAppRoutes = ({
                 to: '/group-membership',
                 icon: 'pass-group',
                 available: isUserGroupsMembershipFeatureEnabled && (memberships?.length ?? 0) > 0,
-                subsections: [
-                    {
-                        id: 'group-membership',
-                    },
-                ],
+                subsections: [{ id: 'group-membership' }],
             },
         },
     };
