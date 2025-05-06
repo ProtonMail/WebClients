@@ -359,6 +359,9 @@
       "Make editor": [
         "편집기 생성"
       ],
+      "Make manager": [
+        "중간 관리자로 설정"
+      ],
       "Make viewer": [
         "뷰어 생성"
       ],
@@ -389,10 +392,10 @@
       "Move to another vault": [
         "다른 금고로 이동"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "휴지통으로 이동"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "휴지통으로 이동"
       ],
       "Multiple select": [
@@ -776,6 +779,9 @@
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "인증 실패. 이 내보내기 작업을 완료하기 위해서는 추가 비밀번호를 입력하세요."
       ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "인증 실패. 이 내보내기 작업을 완료하기 위해서는 추가 비밀번호를 입력하세요."
+      ],
       "Authentication failure: ${ message }": [
         "인증 실패: ${ message }"
       ],
@@ -991,6 +997,9 @@
       ],
       "File does not match expected format": [
         "파일이 형식과 일치되지 않습니다."
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "\"${ vaultData.name }\" 금고로 불러오기 실패: ${ errorMessage }"
       ],
       "Importing items failed": [
         "항목 불러오기 실패"
@@ -1313,6 +1322,9 @@
         "${ PASS_APP_NAME }에 접근하려면 항상 백업 비밀번호가 필요하게 됩니다."
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "${ PASS_APP_NAME }에 대한 접근이 항상 추가 비밀번호를 요구하게 됩니다."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
         "${ PASS_APP_NAME }에 대한 접근이 항상 추가 비밀번호를 요구하게 됩니다."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
@@ -1726,6 +1738,9 @@
       "Make it your own": [
         "나만의 것으로 만들기"
       ],
+      "Manager": [
+        "중간 관리자"
+      ],
       "me": [
         "나"
       ],
@@ -1884,6 +1899,24 @@
       ],
       "Please confirm your PIN code to edit this setting.": [
         "이 설정을 수정하기 위해 PIN 코드를 입력해 주세요."
+      ],
+      "Please confirm your second password": [
+        "백업 비밀번호를 확인해주세요"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "생체인증으로 잠금 해제하려면 백업 암호를 확인하세요."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "비밀번호로 자동 잠금을 사용하려면 백업 비밀번호로 인증해주세요."
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "${ PASS_APP_NAME } 데이터를 내보내기 위해서는 백업 비밀번호를 입력하세요."
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "현재 잠금의 등록을 취소하려면 백업 비밀번호로 인증해주세요."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "자동 잠금 시간을 업데이트하기 위해 백업 비밀번호를 확인해 주세요."
       ],
       "Please consider leaving a review.": [
         "리뷰 쓰는 것을 고려해 보세요."
@@ -2151,6 +2184,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "추가 비밀번호로 ${ PASS_SHORT_APP_NAME } 잠금 해제"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "백업 비밀번호로 ${ PASS_SHORT_APP_NAME } 잠금 해제"
       ],
       "Unlock it with your PIN to access the settings": [
         "설정에 접근하기 위해 PIN으로 잠금 해제 하세요."
@@ -2756,6 +2792,9 @@
       ],
       "Make all editors": [
         "전체 구성원을 편집자로 선택"
+      ],
+      "Make all managers": [
+        "전체 구성원을 중간 관리자로 선택"
       ],
       "Make all viewers": [
         "전체 구성원을 뷰어로 선택"
@@ -3667,6 +3706,9 @@
       "Enter coupon code": [
         "쿠폰 코드 입력"
       ],
+      "Enter your ${ BRAND_NAME } password": [
+        "${ BRAND_NAME } 비밀번호 입력"
+      ],
       "Enter your backup password": [
         "백업 비밀번호를 입력하세요"
       ],
@@ -3675,6 +3717,9 @@
       ],
       "Enter your PIN": [
         "PIN을 입력해 주세요."
+      ],
+      "Enter your second password": [
+        "백업 비밀번호를 입력하세요"
       ],
       "Fill & copy password": [
         "비밀번호 복사 및 채우기"
