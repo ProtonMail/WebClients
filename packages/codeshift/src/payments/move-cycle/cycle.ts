@@ -11,11 +11,9 @@ const files = [
     'components/components/topnavbar/TopNavbarPostSignupPromo/PostSignupOneDollar/MailPostSignupOneDollar/MailPostSignupOneDollar.tsx',
     'components/components/upsell/getUpsellSubscriptionModalConfig.ts',
     'components/components/upsell/modal/AccountLockedUpsellModal.tsx',
-    'components/components/upsell/modal/NewUpsellModal.tsx',
+    'components/components/upsell/modal/UpsellModal.tsx',
     'components/components/upsell/modal/types/ComposerAssistantUpsellModal.helpers.ts',
     'components/components/upsell/modal/types/PmMeUpsellModal.tsx',
-    'components/components/upsell/useMailUpsellConfig.ts',
-    'components/components/upsell/useOneDollarPromo.tsx',
     'components/components/upsell/useUpsellConfig.ts',
     'components/containers/desktop/openExternalLink.ts',
     'components/containers/offers/components/passFamilyPlan/Layout.tsx',
@@ -141,12 +139,7 @@ export async function transform() {
     const transformPath = path.resolve(__dirname, 'cycle-transform.js');
     const paths = allFiles.map(({ path: filePath, prefix }) => path.resolve(__dirname, prefix, filePath));
 
-    const options = {
-        dry: false,
-        print: false,
-        verbose: 0,
-        parser: 'tsx',
-    };
+    const options = { dry: false, print: false, verbose: 0, parser: 'tsx' };
 
     await jscodeshift(transformPath, paths, options);
 }

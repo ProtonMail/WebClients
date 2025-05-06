@@ -9,7 +9,7 @@ import useDebounceInput from '@proton/components/components/input/useDebounceInp
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
-import LabelsUpsellModal from '@proton/components/components/upsell/modal/types/LabelsUpsellModal';
+import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';

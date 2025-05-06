@@ -45,7 +45,6 @@ export enum TelemetryMeasurementGroups {
     collapsibleLeftSidebar = 'any.web.collapsible_left_sidebar',
     smartBanner = 'any.web.smart_banner',
     clientInstalls = 'common.any.client_installs',
-    upsellModals = 'any.web.upsell_modals',
     clientSearch = 'any.web.client_search',
     b2bOnboarding = 'any.web.b2b_onboarding',
     /** Docs */
@@ -247,10 +246,6 @@ export enum TelemetryCollapsibleLeftSidebarEvents {
     toggleLeftSidebar = 'toggle_left_sidebar',
 }
 
-export enum TelemetryUpsellModalsEvents {
-    clickUpsellModals = 'click_upsell_modals',
-}
-
 export enum TelemetryProtonTipsEvents {
     tipDispayed = 'tip_displayed',
     CTAButtonClicked = 'cta_clicked',
@@ -359,7 +354,6 @@ export type TelemetryEvents =
     | TelemetryDriveWebFeature
     | TelemetryAccountSecurityCheckupEvents
     | TelemetryCollapsibleLeftSidebarEvents
-    | TelemetryUpsellModalsEvents
     | TelemetryProtonTipsEvents
     | TelemetryHeartbeatEvents
     | TelemetrySmartBannerEvents
