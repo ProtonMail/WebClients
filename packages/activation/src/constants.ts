@@ -8,6 +8,8 @@ import { ImportProvider, MailImportGmailCategories, OAUTH_PROVIDER, TIME_PERIOD 
 export const G_OAUTH_SCOPE_DEFAULT = ['email', 'openid'];
 
 export const G_OAUTH_SCOPE_MAIL_READONLY = ['https://www.googleapis.com/auth/gmail.readonly'];
+export const G_OAUTH_SCOPE_MAIL_FULL_SCOPE = ['https://mail.google.com/'];
+export const G_OAUTH_SCOPE_PROFILE = ['https://www.googleapis.com/auth/userinfo.profile'];
 
 export const G_OAUTH_SCOPE_CONTACTS = ['https://www.googleapis.com/auth/contacts.readonly'];
 export const G_OAUTH_SCOPE_CALENDAR = ['https://www.googleapis.com/auth/calendar.readonly'];
@@ -59,3 +61,6 @@ export const SYNC_SUCCESS_NOTIFICATION: CreateNotificationOptions = {
     type: 'success',
     text: c('account').t`Forwarding will start soon. New emails will appear in your inbox.`,
 };
+
+export const MAX_SYNC_FREE_USER = 1;
+export const MAX_SYNC_PAID_USER = 3;

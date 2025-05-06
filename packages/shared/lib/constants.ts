@@ -681,6 +681,7 @@ export enum SHARED_UPSELL_PATHS {
     TRIAL_WILL_END = 'trial-will-end',
     TOP_NAVIGATION_BAR = 'top-navigation-bar',
     PUBLIC_SHARING_PERMISSIONS_MENU = 'public-sharing-permissions-menu',
+    EASY_SWITCH_FORWARDING = 'easy-switch-forwarding',
 }
 
 export enum DASHBOARD_UPSELL_PATHS {
