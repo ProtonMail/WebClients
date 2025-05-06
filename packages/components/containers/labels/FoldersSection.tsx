@@ -6,7 +6,7 @@ import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
-import LabelsUpsellModal from '@proton/components/components/upsell/modal/types/LabelsUpsellModal';
+import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';

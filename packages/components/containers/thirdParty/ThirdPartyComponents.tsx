@@ -6,7 +6,7 @@ import { useZoomOAuth } from '@proton/calendar';
 import Badge from '@proton/components/components/badge/Badge';
 import Icon from '@proton/components/components/icon/Icon';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
-import ZoomUpsellModal from '@proton/components/components/upsell/modal/types/ZoomUpsellModal';
+import ZoomUpsellModal from '@proton/components/components/upsell/modals/ZoomUpsellModal';
 import ZoomLogo from '@proton/styles/assets/img/brand/zoom.svg';
 
 import { SupportedProviders } from './interface';

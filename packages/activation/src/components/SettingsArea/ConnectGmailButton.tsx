@@ -7,10 +7,8 @@ import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '@proton/activation/src/c
 import useSetupGmailBYOEAddress from '@proton/activation/src/hooks/useSetupGmailBYOEAddress';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
-import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
-import { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
 import useConfig from '@proton/components/hooks/useConfig';
-import { useModalState } from '@proton/components/index';
+import { UpsellModal, useModalState } from '@proton/components/index';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { type APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
@@ -50,7 +48,6 @@ const ConnectGmailButton = ({
             component: UPSELL_COMPONENT.MODAL,
             fromApp: app,
         }) || '';
-    const { upsellConfig } = useMailUpsellConfig({ upsellRef });
 
     const disabled = loadingUser || !user.hasNonDelinquentScope || isInMaintenance;
 
@@ -107,8 +104,9 @@ const ConnectGmailButton = ({
 
             {renderReachedLimitForwardingModal && <ReachedLimitForwardingModal {...reachedLimitForwardingModalProps} />}
             {renderUpsellForwardingModal && (
-                <NewUpsellModal
-                    titleModal={c('loc_nightly: BYOE').t`Connect more Gmail addresses with ${planName}`}
+                <UpsellModal
+                    upsellRef={upsellRef}
+                    title={c('loc_nightly: BYOE').t`Connect more Gmail addresses with ${planName}`}
                     description={
                         <>
                             {/*translator: full sentence is "You've connected your 1 Gmail address."*/}
@@ -131,8 +129,6 @@ const ConnectGmailButton = ({
                     }
                     modalProps={upsellForwardingModalProps}
                     illustration={forwardImg}
-                    sourceEvent="BUTTON_MORE_LABELS_FOLDERS"
-                    {...upsellConfig}
                 />
             )}
         </>

@@ -318,6 +318,7 @@ export enum SentryMailInitiatives {
     MAIL_ONBOARDING = 'mail-onboarding',
     LIST_ACTIONS_TELEMETRY = 'list-actions-telemetry',
     REMOVE_EMAIL_TRACKERS = 'remove-email-trackers',
+    UPSELL_MODALS = 'upsell-modals',
 }
 
 export enum SentryCommonInitiatives {

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
+import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
 import useConfig from '@proton/components/hooks/useConfig';
 import { PLANS, PLAN_NAMES } from '@proton/payments/index';
 import {
@@ -39,7 +39,7 @@ jest.mock('@proton/components/hooks/useNotifications', () => ({
     }),
 }));
 
-jest.mock('@proton/components/components/upsell/useUpsellConfig', () => ({
+jest.mock('@proton/components/components/upsell/config/useUpsellConfig', () => ({
     __esModule: true,
     default: jest.fn(() => ({
         onUpgrade: jest.fn(),

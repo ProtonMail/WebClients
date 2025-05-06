@@ -4,7 +4,7 @@ import { useUser } from '@proton/account/user/hooks';
 import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import UpsellIcon from '@proton/components/components/upsell/UpsellIcon';
-import AutoDeleteUpsellModal from '@proton/components/components/upsell/modal/types/AutoDeleteUpsellModal';
+import AutoDeleteUpsellModal from '@proton/components/components/upsell/modals/AutoDeleteUpsellModal';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';

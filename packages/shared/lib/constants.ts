@@ -1083,3 +1083,5 @@ export const RECOVERY_FILE_FILE_NAME = `proton_recovery${KEY_FILE_EXTENSION}`;
 export const TWO_FA_RECOVERY_CODES_FILE_NAME = `proton_2FA_recovery_codes.txt`;
 
 export const MAX_FOLDER_NESTING_LEVEL = 2;
+
+export const APPS_WITH_IN_APP_PAYMENTS = new Set<APP_NAMES>([APPS.PROTONMAIL, APPS.PROTONACCOUNT, APPS.PROTONCALENDAR]);
