@@ -18,6 +18,7 @@ import { usePasswordHistoryActions } from '@proton/pass/components/Password/Pass
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import { UpsellRef } from '@proton/pass/constants';
 import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useMatchUser } from '@proton/pass/hooks/useMatchUser';
 import { useNewItemShortcut } from '@proton/pass/hooks/useNewItemShortcut';
 import {
@@ -27,8 +28,10 @@ import {
     selectPassPlan,
 } from '@proton/pass/store/selectors';
 import type { ItemType, MaybeNull } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import noop from '@proton/utils/noop';
 
 type QuickAction = { label: string; type: ItemType; locked?: boolean };
@@ -46,6 +49,7 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
     const generatePassword = usePasswordGeneratorAction();
     const copyToClipboard = useCopyToClipboard();
     const paidUser = useMatchUser({ paid: true });
+    const showCustomItem = useFeatureFlag(PassFeature.PassCustomTypeV1);
 
     const onCreate = useCallback((type: ItemType) => navigate(getNewItemRoute(type, scope)), [scope]);
 
@@ -75,14 +79,15 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
     };
 
     const quickActions = useMemo<QuickAction[]>(
-        () => [
-            { label: c('Label').t`Login`, type: 'login' },
-            { label: c('Label').t`Alias`, type: 'alias' },
-            { label: c('Label').t`Card`, type: 'creditCard', locked: isFreePlan },
-            { label: c('Label').t`Note`, type: 'note' },
-            { label: c('Label').t`Identity`, type: 'identity' },
-            { label: c('Label').t`More`, type: 'custom', locked: isFreePlan },
-        ],
+        () =>
+            [
+                { label: c('Label').t`Login`, type: 'login' } as const,
+                { label: c('Label').t`Alias`, type: 'alias' } as const,
+                { label: c('Label').t`Card`, type: 'creditCard', locked: isFreePlan } as const,
+                { label: c('Label').t`Note`, type: 'note' } as const,
+                { label: c('Label').t`Identity`, type: 'identity' } as const,
+                showCustomItem && ({ label: c('Label').t`More`, type: 'custom', locked: isFreePlan } as const),
+            ].filter(truthy),
         []
     );
 
