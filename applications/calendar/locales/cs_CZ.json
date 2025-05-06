@@ -1237,9 +1237,6 @@
       "Monthly": [
         "Měsíčně"
       ],
-      "New!": [
-        "Nové!"
-      ],
       "Two-year": [
         "Dva roky"
       ]
@@ -9781,6 +9778,9 @@
       "For all ${ BRAND_NAME } services": [
         "Pro všechny služby ${ BRAND_NAME }"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Chcete-li dále používat produkty ${ BRAND_NAME }, uvolněte místo nebo ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Abyste nahráli nebo synchronizovali soubory, uvolněte místo nebo ${ upgrade }"
       ],
@@ -9801,6 +9801,12 @@
       ],
       "Your ${ appStorage } is full": [
         "Vaše ${ appStorage } je plné"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Vaše ${ productString } je z ${ percentage } % plné. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Vaše ${ productString } je plné. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Vaše úložiště je z ${ percentage } % plné. ${ cta }."
@@ -9922,47 +9928,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription reminder": {
@@ -10235,6 +10200,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -11075,7 +11081,7 @@
         "Uložit změny"
       ],
       "Schedule meetings in one click": [
-        "Plánování schůzek jedním kliknutím"
+        "Naplánujte schůzky jedním kliknutím"
       ],
       "Security center": [
         "Bezpečnostní centrum"
