@@ -4,8 +4,8 @@ import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 
 import { type CouponConfig } from './interface';
 
-export const monthlyNudgeConfig: CouponConfig = {
-    coupons: [COUPON_CODES.ANNUALOFFER25],
+export const anniversary11Config: CouponConfig = {
+    coupons: [COUPON_CODES.PROTONBDAYSALE25, COUPON_CODES.PROTONBDAYSALEB25, COUPON_CODES.COMMUNITYSPECIALDEAL25],
     hidden: true,
     cyclePriceCompare: ({ cycle, suffix }, config) => {
         if (cycle !== CYCLE.YEARLY) {
@@ -20,5 +20,5 @@ export const monthlyNudgeConfig: CouponConfig = {
             </Price>
         );
     },
-    cycleTitle: undefined,
+    availableCycles: [CYCLE.YEARLY],
 };
