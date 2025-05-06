@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activare"
-      ],
       "Activate": [
         "Activare"
+      ],
+      "activate": [
+        "activare"
       ],
       "Activate organization key": [
         "Activare chei organizație"
@@ -259,11 +259,11 @@
       "Discard": [
         "Renunțare"
       ],
-      "Discard Changes": [
-        "Ignorare modificări"
-      ],
       "Discard changes": [
         "Anulare modificări"
+      ],
+      "Discard Changes": [
+        "Ignorare modificări"
       ],
       "Discover ${ planName }": [
         "Descoperiți ${ planName }"
@@ -682,11 +682,11 @@
       "Select country ${ country }": [
         "Selectare țara ${ country }"
       ],
-      "Select file": [
-        "Selectare fișier"
-      ],
       "select file": [
         "selectați fișierul"
+      ],
+      "Select file": [
+        "Selectare fișier"
       ],
       "Send code": [
         "Trimitere cod"
@@ -1263,9 +1263,6 @@
       "Monthly": [
         "Lunar"
       ],
-      "New!": [
-        "Nou!"
-      ],
       "Two-year": [
         "Bianual"
       ]
@@ -1594,6 +1591,11 @@
       ]
     },
     "CountriesStep:Info": {
+      "${ selectedCitiesCount } cities selected": [
+        "Orașe selectate: ${ selectedCitiesCount }",
+        "Orașe selectate: ${ selectedCitiesCount }",
+        "Orașe selectate: ${ selectedCitiesCount }"
+      ],
       "${ selectedCountriesCount } selected": [
         "Selectate: ${ selectedCountriesCount }",
         "Selectate: ${ selectedCountriesCount }",
@@ -2569,6 +2571,9 @@
       ],
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "Asigurați o securitate de top pentru cont cu programul ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Asigurați-vă că puteți încă să vă accesați contul și datele chiar dacă vă pierdeți parola ${ BRAND_NAME }."
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Oricine din organizație se poate conecta la serverele partajate din toate țările."
@@ -4492,11 +4497,11 @@
       "Data recoverable on this device": [
         "Datele recuperabile pe acest dispozitiv"
       ],
-      "dedicated servers": [
-        "servere dedicate"
-      ],
       "Dedicated servers": [
         "Servere dedicate"
+      ],
+      "dedicated servers": [
+        "servere dedicate"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -5685,11 +5690,11 @@
       "User activated": [
         "Utilizator activat"
       ],
-      "username": [
-        "utilizator"
-      ],
       "Username": [
         "Nume de utilizator"
+      ],
+      "username": [
+        "utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -6255,10 +6260,10 @@
       "Allow recovery by phone": [
         "Permitere recuperare prin telefon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domeniu permis"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domeniu permis"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -9967,6 +9972,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Oferta speciala este valabilă pentru primii doi ani."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Abonamentul vi se va reînnoi la același tarif în fiecare an."
       ]
@@ -10047,6 +10055,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Preț standard ${ amount } pentru 30 de luni"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Oferta speciala este valabilă pentru primii doi ani."
       ]
     },
     "specialoffer: Title": {
@@ -10369,6 +10380,9 @@
       "For all ${ BRAND_NAME } services": [
         "Pentru toate serviciile ${ BRAND_NAME }"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Pentru a continua să utilizați produsele ${ BRAND_NAME }, eliberați spațiu sau ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ upgrade }"
       ],
@@ -10388,6 +10402,12 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage } este plin."
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Spațiul de stocare din ${ productString } este ${ percentage }% plin. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Spațiul din ${ productString } este plin. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Spațiul de stocare este ${ percentage }% ocupat. ${ cta }."
@@ -10550,47 +10570,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Pentru ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription reminder": {
@@ -10887,6 +10866,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {
@@ -11394,10 +11414,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
       "Change login password": [
