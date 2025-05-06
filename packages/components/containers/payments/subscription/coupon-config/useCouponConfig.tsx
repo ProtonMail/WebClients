@@ -1,5 +1,6 @@
 import { type ReactNode } from 'react';
 
+import { anniversary11Config } from './anniverary11';
 import {
     type CouponConfig,
     type CouponConfigProps,
@@ -11,7 +12,7 @@ import {
 } from './interface';
 import { monthlyNudgeConfig } from './monthlyNudge';
 
-const couponConfig: CouponConfig[] = [monthlyNudgeConfig];
+const couponConfig: CouponConfig[] = [monthlyNudgeConfig, anniversary11Config];
 
 export type CouponConfigRendered = Omit<CouponConfig, 'amountDueMessage' | 'cyclePriceCompare' | 'cycleTitle'> & {
     renderAmountDueMessage?: () => ReactNode;
@@ -34,7 +35,7 @@ export const useCouponConfig = (config: CouponConfigProps): CouponConfigRendered
         return;
     }
 
-    const matchingConfig = couponConfig.find((config) => config.coupon === checkResultCoupon);
+    const matchingConfig = couponConfig.find((config) => config.coupons.includes(checkResultCoupon));
     if (!matchingConfig) {
         return;
     }
