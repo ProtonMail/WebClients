@@ -1104,11 +1104,11 @@
       "Select ${ planTitle }": [
         "Выбрать ${ planTitle }"
       ],
-      "Select all": [
-        "Выделить все"
-      ],
       "Select All": [
         "Выбрать все"
+      ],
+      "Select all": [
+        "Выделить все"
       ],
       "Select all messages": [
         "Выбрать все сообщения"
@@ -6847,9 +6847,6 @@
       "Initializing…": [
         "Инициализация…"
       ],
-      "Insert image": [
-        "Вставить изображение"
-      ],
       "Insert link": [
         "Вставить ссылку"
       ],
@@ -6966,9 +6963,6 @@
       ],
       "Message download status:": [
         "Статус загрузки сообщения:"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Истечение срока действия сообщения работает по умолчанию при отправке писем другим пользователям ${ MAIL_APP_NAME }. Чтобы отправлять письма с истекающим сроком действия пользователям, вне ${ BRAND_NAME }, пожалуйста, отмените и добавьте защиту паролем к своей электронной почте."
       ],
       "Message headers": [
         "Заголовки сообщений"
@@ -11636,12 +11630,6 @@
       "Do you want to send the email anyway?": [
         "Вы все равно хотите отправить письмо?"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Если вы все равно отправите сообщение, то для этого получателя письмо будет отправлено без истечения срока:",
-        "Если вы все равно отправите сообщение, то для этих получателей письмо будет отправлено без истечения срока:",
-        "Если вы все равно отправите сообщение, то для этих получателей письмо будет отправлено без истечения срока:",
-        "Если вы все равно отправите сообщение, то для этих получателей письмо будет отправлено без истечения срока:"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Этот адрес недействителен: ${ invalidAddresses }",
         "Следующие адреса недействительны: ${ invalidAddresses }",
@@ -12464,47 +12452,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
@@ -12775,6 +12722,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -14424,11 +14412,6 @@
         "Безопасно обменивайте Bitcoin по эл. почте вместо сложных, 26-значных Bitcoin-адресов, склонных к ошибкам"
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "Получить доступ к приложению Wallet"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "Безопасный способ хранить Bitcoin"
@@ -14437,22 +14420,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Проблема с Wallet"
-      ]
-    },
-    "wallet_signup_2024:Title": {
-      "Wallet": [
-        "Wallet"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "Счёт ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "Мой импортированный кошелёк${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "Мой кошелёк${ indexStr }"
       ]
     },
     "Warning": {

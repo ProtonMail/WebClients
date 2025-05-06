@@ -1152,10 +1152,10 @@
       "Select ${ planTitle }": [
         "Wybierz ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Zaznacz wszystkie"
       ],
-      "Select All": [
+      "Select all": [
         "Zaznacz wszystkie"
       ],
       "Select all messages": [
@@ -1933,9 +1933,6 @@
       ],
       "Monthly": [
         "Miesięcznie"
-      ],
-      "New!": [
-        "Nowość!"
       ],
       "Two-year": [
         "Co dwa lata"
@@ -7099,7 +7096,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"
@@ -7226,9 +7226,6 @@
       ],
       "Message download status:": [
         "Status pobierania wiadomości:"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Wygasająca wiadomość działa podczas wysyłania wiadomości do innych użytkowników ${ MAIL_APP_NAME }. Aby wysłać wygasającą wiadomość do użytkowników spoza ${ BRAND_NAME }, anuluj wysyłanie i dodaj hasło wiadomości."
       ],
       "Message headers": [
         "Nagłówki wiadomości"
@@ -12156,12 +12153,6 @@
       "Do you want to send the email anyway?": [
         "Czy chcesz wysłać tę wiadomość mimo to?"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Jeśli zdecydujesz się wysłać wiadomość mimo to, następujący odbiorca otrzyma wiadomość bez daty wygaśnięcia:",
-        "Jeśli zdecydujesz się wysłać wiadomość mimo to, następujący odbiorcy otrzymają wiadomość bez daty wygaśnięcia:",
-        "Jeśli zdecydujesz się wysłać wiadomość mimo to, następujący odbiorcy otrzymają wiadomość bez daty wygaśnięcia:",
-        "Jeśli zdecydujesz się wysłać wiadomość mimo to, następujący odbiorcy otrzymają wiadomość bez daty wygaśnięcia:"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Adres ${ invalidAddresses } nie jest prawidłowy",
         "Adresy nie są prawidłowe: ${ invalidAddresses }",
@@ -12603,6 +12594,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Oferta specjalna jest ważna przez pierwsze 2 lata."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Subskrypcja będzie odnawiana co roku w tej samej cenie."
       ]
@@ -12684,6 +12678,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standardowa cena ${ amount } za 30 miesięcy"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Oferta specjalna jest ważna przez pierwsze 2 lata"
       ]
     },
     "specialoffer: Title": {
@@ -12847,6 +12844,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Aby kontynuować przesyłanie i synchronizację plików, zwolnij część miejsca lub ulepsz konto, aby uzyskać więcej przestrzeni dyskowej."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Aby korzystać z usług ${ BRAND_NAME }, zwolnij część miejsca lub${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Zwolnij część miejsca lub ulepsz konto, aby uzyskać większą przestrzeń dyskową."
       ],
@@ -12870,6 +12870,12 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage } jest pełna"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString } jest w ${ percentage }% pełna. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString } jest pełna. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Przestrzeń dyskowa jest w ${ percentage }% pełna. ${ cta }."
@@ -12978,47 +12984,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "and 15 more premium features": [
-        "i 15 więcej funkcji premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatyczne przekierowanie ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerty wycieków ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikacja desktopowa"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
-      ],
-      "No ads or tracking": [
-        "Brak reklam i śledzenia"
-      ],
-      "Short @pm.me email address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Wesprzyj naszą misję"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
-      "We don't sell your data": [
-        "Nie sprzedajemy Twoich danych"
-      ],
-      "Your privacy is our mission": [
-        "Prywatność to nasza misja"
       ]
     },
     "Subscription reminder": {
@@ -13291,6 +13256,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Krótki alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {
@@ -15070,11 +15076,6 @@
         "Zamiast skomplikowanych 26-znakowych adresów Bitcoin, wysyłaj transakcje za pomocą funkcji \"Bitcoin na adres e-mail\"."
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "Przejdź do aplikacji Wallet"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "Bezpieczniejszy sposób na przechowywanie Bitcoinów"
@@ -15083,22 +15084,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Problem z portfelem"
-      ]
-    },
-    "wallet_signup_2024:Title": {
-      "Wallet": [
-        "Wallet"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "Konto ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "Mój zaimportowany portfel ${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "Mój portfel ${ indexStr }"
       ]
     },
     "Warning": {

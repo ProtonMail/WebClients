@@ -1144,10 +1144,10 @@
       "Select ${ planTitle }": [
         "Sélectionner ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Tout sélectionner"
       ],
-      "Select All": [
+      "Select all": [
         "Tout sélectionner"
       ],
       "Select all messages": [
@@ -1908,9 +1908,6 @@
       ],
       "Monthly": [
         "Mensuel"
-      ],
-      "New!": [
-        "Nouveau"
       ],
       "Two-year": [
         "Tous les deux ans"
@@ -6309,6 +6306,9 @@
       "and": [
         "et"
       ],
+      "and more.": [
+        "et bien plus encore."
+      ],
       "Another tip will be displayed next time you open Mail": [
         "Une autre astuce sera affichée la prochaine fois que vous ouvrirez Mail."
       ],
@@ -6621,6 +6621,10 @@
       "Drop to import": [
         "Déposez ici pour importer"
       ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "En raison de la configuration de votre destinataire, ce message ne peut pas être envoyé avec une date d’expiration au contact suivant : ",
+        "En raison de la configuration de votre destinataire, ce message ne peut pas être envoyé avec une date d’expiration aux contacts suivants\t: "
+      ],
       "Duplicate key updated": [
         "La clé dupliquée a été mise à jour."
       ],
@@ -6876,7 +6880,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -7003,9 +7008,6 @@
       ],
       "Message download status:": [
         "État du téléchargement des messages :"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Les messages avec une date d'expiration fonctionnent pour l'envoi de messages à des personnes qui utilisent ${ MAIL_APP_NAME }. Pour des destinataires qui n'utilisent pas ${ BRAND_NAME }, nous vous invitons à annuler l’envoi et à ajouter une protection par mot de passe à votre message."
       ],
       "Message headers": [
         "En-têtes du message"
@@ -11794,10 +11796,6 @@
       "Do you want to send the email anyway?": [
         "Voulez-vous quand même envoyer le message ?"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Si vous décidez d'envoyer le message quand même, le destinataire suivant le recevra sans délai d’expiration :",
-        "Si vous décidez d'envoyer le message quand même, les destinataires suivants le recevront sans délai d’expiration :"
-      ],
       "The following address is not valid: ${ invalidAddresses }": [
         "L'adresse suivante n'est pas valide : ${ invalidAddresses }",
         "Les adresses suivantes ne sont pas valides : ${ invalidAddresses }"
@@ -12447,6 +12445,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Pour continuer à importer ou synchroniser vos fichiers, veuillez libérer de l'espace ou changer d'abonnement pour en obtenir davantage."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Pour continuer à utiliser les produits ${ BRAND_NAME }, libérez de l’espace ou ${ upgrade }."
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Pour envoyer ou recevoir des messages, veuillez libérer de l'espace de stockage ou changer d'abonnement pour augmenter votre espace de stockage."
       ],
@@ -12468,6 +12469,12 @@
       ],
       "Your ${ appStorage } is full": [
         "Votre ${ appStorage } est plein."
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Votre ${ productString } est plein à ${ percentage } %. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Votre ${ productString } est plein. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Votre espace de stockage est rempli à ${ percentage } %. ${ cta }."
@@ -12564,47 +12571,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Pour ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "and 15 more premium features": [
-        "et 15 fonctionnalités premium en plus"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Transfert automatique des messages ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de fuites de données ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Application de bureau"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
-      ],
-      "No ads or tracking": [
-        "Aucune publicité, aucun suivi"
-      ],
-      "Short @pm.me email address": [
-        "Adresses e-mail courtes @pm.me"
-      ],
-      "Support our mission": [
-        "Soutenez notre mission"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade your productivity": [
-        "Améliorez votre productivité"
-      ],
-      "We don't sell your data": [
-        "Nous ne vendons pas vos données"
-      ],
-      "Your privacy is our mission": [
-        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription reminder": {
@@ -12865,6 +12831,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail courtes @pm.me"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données"
+      ],
+      "Your privacy is our mission": [
+        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {
@@ -14534,11 +14541,6 @@
         "Échangez des bitcoins en toute sécurité par e-mail, sans avoir à utiliser des adresses Bitcoin complexes de 26 caractères sujettes aux erreurs."
       ]
     },
-    "wallet_signup_2024:Action": {
-      "Access Wallet app": [
-        "Accéder à l'application Wallet"
-      ]
-    },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "Une manière plus sûre de détenir des bitcoins"
@@ -14547,22 +14549,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Problème avec Wallet"
-      ]
-    },
-    "wallet_signup_2024:Title": {
-      "Wallet": [
-        "Wallet"
-      ]
-    },
-    "wallet_signup_2024:Wallet setup": {
-      "Account ${ indexStr }": [
-        "Compte ${ indexStr }"
-      ],
-      "My imported wallet${ indexStr }": [
-        "Mon portefeuille importé${ indexStr }"
-      ],
-      "My wallet${ indexStr }": [
-        "Mon portefeuille${ indexStr }"
       ]
     },
     "Warning": {
