@@ -121,7 +121,7 @@ const AccountStepPaymentSummary = ({
                         </>
                     ) : (
                         <>
-                            {getPrice(currentCheckout.withoutDiscountPerCycle)}
+                            {getPrice(currentCheckout.regularAmountPerCycle)}
                             {!showAmountDue && showRenewalNotice && '*'}
                         </>
                     ),
