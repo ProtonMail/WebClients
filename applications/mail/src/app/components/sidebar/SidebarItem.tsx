@@ -63,6 +63,7 @@ interface Props {
     moveToFolder: (params: MoveParams) => void;
     applyLabels: (params: ApplyLabelsParams) => void;
     className?: string;
+    onClickCallback?: () => void;
 }
 
 const SidebarItem = ({
@@ -88,6 +89,7 @@ const SidebarItem = ({
     moveToFolder,
     applyLabels,
     className,
+    onClickCallback,
 }: Props) => {
     const { call } = useEventManager();
     const history = useHistory();
@@ -119,6 +121,9 @@ const SidebarItem = ({
             event.preventDefault();
             void withRefreshing(Promise.all([call(), wait(1000)]));
         }
+
+        // Allow to handle click outside of the SidebarItem
+        onClickCallback?.();
     };
 
     const handleRefresh = () => {

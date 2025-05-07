@@ -3,6 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { useConversationCounts, useGetConversationCounts } from '@proton/mail/counts/conversationCounts';
 import { useGetMessageCounts, useMessageCounts } from '@proton/mail/counts/messageCounts';
+import { getCustomViewFromRoute, isValidCustomViewLabel } from '@proton/mail/labels/helpers';
 import { useFolders, useLabels } from '@proton/mail/labels/hooks';
 import { CacheType } from '@proton/redux-utilities';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -59,6 +60,15 @@ import { useElementsEvents } from '../events/useElementsEvents';
 import { useExpirationCheck } from '../useExpirationCheck';
 
 const getParametersFromPath = (pathname: string) => {
+    const customRoute = getCustomViewFromRoute(pathname);
+    if (customRoute) {
+        return {
+            rawLabelID: customRoute.label,
+            elementID: undefined,
+            messageID: undefined,
+        };
+    }
+
     const pathSegments = pathname.split('/').filter(Boolean);
 
     return {
@@ -71,6 +81,10 @@ const getParametersFromPath = (pathname: string) => {
 const getLabelIDFromRawID = (labelIDs: string[], rawID?: string) => {
     if (!rawID) {
         rawID = LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX];
+    }
+
+    if (isValidCustomViewLabel(rawID)) {
+        return rawID;
     }
 
     return HUMAN_TO_LABEL_IDS[rawID] || (labelIDs.includes(rawID) ? rawID : undefined);
@@ -265,6 +279,15 @@ export const useElements: UseElements = ({
 
     // Main effect watching all inputs and responsible to trigger actions on the state
     useEffect(() => {
+        // We don't want to use the conversation fetch in the custom views
+        // The store is initilized with 'inbox' as default value creating
+        // problem when opening directly the custom views
+        const customRoute = getCustomViewFromRoute(location.pathname);
+        const initialRender = !!(labelID === MAILBOX_LABEL_IDS.INBOX && customRoute?.label);
+        if (isValidCustomViewLabel(labelID) || initialRender) {
+            return;
+        }
+
         // If we have actions pending OR select all actions pending, we don't want to load elements because it would cancel our optimistic updates
         const hasPendingActions = pendingActions > 0 || tasksRunning.labelIDs.includes(labelID);
 
