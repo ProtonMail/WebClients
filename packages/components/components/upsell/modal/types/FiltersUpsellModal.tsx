@@ -15,7 +15,7 @@ interface Props {
      * Needed in a "Dropdown" scenario because we want to close the dropdown after closing the upsell modal
      */
     onCloseCustomAction?: () => void;
-    overrideFeature: MAIL_UPSELL_PATHS;
+    overrideFeature?: MAIL_UPSELL_PATHS;
     isSettings?: boolean;
 }
 
