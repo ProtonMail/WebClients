@@ -467,7 +467,8 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     );
                     setAlbums((prevAlbums) => {
                         const newAlbums = new Map(
-                            prevAlbums.entries().filter(([, album]) => {
+                            // We need Array.from as filter on map iterator is very new and not supported in all browsers yet
+                            Array.from(prevAlbums.entries()).filter(([, album]) => {
                                 // Filter out albums that are not in the current volume,
                                 // that is only own albums. All new shared albums will be
                                 // set via newDecryptedAlbums.
