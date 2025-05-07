@@ -128,7 +128,7 @@ import { findUpwards } from '../../components/calendar/mouseHelpers/domHelpers';
 import { sortEvents, sortWithTemporaryEvent } from '../../components/calendar/sortLayout';
 import CreateEventModal from '../../components/eventModal/CreateEventModal';
 import CreateEventPopover from '../../components/eventModal/CreateEventPopover';
-import { getHasDoneChanges, getHasEditedDateTime } from '../../components/eventModal/eventForm/getHasEdited';
+import { getHasDoneChanges } from '../../components/eventModal/eventForm/getHasEdited';
 import { modelToDateProperty } from '../../components/eventModal/eventForm/modelToProperties';
 import {
     getExistingEvent,
@@ -471,17 +471,14 @@ const InteractiveCalendarView = ({
     );
 
     const { temporaryEvent, targetEventData, targetMoreData, searchData } = interactiveData || {};
-    const { tmpData, tmpDataOriginal, data } = temporaryEvent || {};
-    const tmpEvent = data?.eventData;
+    const tmpEvent = temporaryEvent?.data?.eventData;
 
-    const isCreatingEvent = !!tmpData && !tmpEvent;
-    const isEditingEvent = !!tmpData && !!tmpEvent;
-    const isInvitation = !!tmpDataOriginal?.organizer;
+    const isCreatingEvent = !!temporaryEvent?.tmpData && !tmpEvent;
+    const isEditingEvent = !!temporaryEvent?.tmpData && !!tmpEvent;
+    const isInvitation = !!temporaryEvent?.tmpDataOriginal?.organizer;
     const isDuplicatingEvent = !!modalsMap.createEventModal.props?.isDuplicating;
     const isInTemporaryBlocking =
-        tmpData && tmpDataOriginal && getHasDoneChanges(tmpData, tmpDataOriginal, isEditingEvent);
-    const hasChangedStartDate =
-        tmpData && tmpDataOriginal && getHasEditedDateTime(tmpData.start, tmpDataOriginal.start);
+        temporaryEvent && getHasDoneChanges(temporaryEvent.tmpData, temporaryEvent.tmpDataOriginal, isEditingEvent);
     // If opening the event from mail in the drawer (when preventPopover is true), do not disable scroll
     const isScrollDisabled = !!interactiveData && !temporaryEvent && !targetEventData?.preventPopover;
     const prodId = getProdId(config);
@@ -847,7 +844,7 @@ const InteractiveCalendarView = ({
             if (
                 !createEventCalendar ||
                 !createEventCalendarBootstrap ||
-                (targetEventData && !tmpData) || // Prevent creating a new event when an event is already selected
+                (targetEventData && !temporaryEvent?.tmpData) || // Prevent creating a new event when an event is already selected
                 isSavingEvent.current
             ) {
                 return;
@@ -860,10 +857,7 @@ const InteractiveCalendarView = ({
                 return;
             }
 
-            let newTemporaryModel =
-                temporaryEvent && (isInTemporaryBlocking || hasChangedStartDate)
-                    ? temporaryEvent.tmpData
-                    : getCreateModel(isFromAllDay);
+            let newTemporaryModel = !!temporaryEvent?.tmpData ? temporaryEvent.tmpData : getCreateModel(isFromAllDay);
 
             const isAllowed = !!newTemporaryModel;
 
@@ -874,6 +868,7 @@ const InteractiveCalendarView = ({
             if (!newTemporaryModel) {
                 return;
             }
+
             const { start: initialStart, end: initialEnd } = newTemporaryModel;
             let newTemporaryEvent =
                 temporaryEvent || getCreateTemporaryEvent(createEventCalendar, newTemporaryModel, tzid);
@@ -2318,7 +2313,7 @@ const InteractiveCalendarView = ({
                 isOpen={!!targetEvent}
                 once
                 when={targetEvent ? targetEvent.start : undefined}
-                isCreateEventPopover={!!(targetEvent?.isTemporary && tmpData)}
+                isCreateEventPopover={!!(targetEvent?.isTemporary && temporaryEvent?.tmpData)}
             >
                 {({ style, ref }: PopoverRenderData) => {
                     if (
@@ -2329,7 +2324,7 @@ const InteractiveCalendarView = ({
                     ) {
                         return null;
                     }
-                    if (targetEvent.isTemporary && tmpData) {
+                    if (targetEvent.isTemporary && temporaryEvent?.tmpData) {
                         return (
                             <CreateEventPopover
                                 isDraggingDisabled={viewportWidth['<=small'] || isDrawerApp}
@@ -2337,7 +2332,7 @@ const InteractiveCalendarView = ({
                                 isInvitation={isInvitation}
                                 style={style}
                                 popoverRef={ref}
-                                model={tmpData}
+                                model={temporaryEvent?.tmpData}
                                 addresses={addresses}
                                 displayWeekNumbers={!isDrawerApp && displayWeekNumbers}
                                 weekStartsOn={weekStartsOn}
@@ -2546,12 +2541,12 @@ const InteractiveCalendarView = ({
                     return true;
                 }}
             />
-            {!!tmpData && (
+            {!!temporaryEvent?.tmpData && (
                 <CreateEventModal
                     displayWeekNumbers={!isDrawerApp && displayWeekNumbers}
                     weekStartsOn={weekStartsOn}
                     tzid={tzid}
-                    model={tmpData}
+                    model={temporaryEvent?.tmpData}
                     setModel={handleSetTemporaryEventModel}
                     isInvitation={isInvitation}
                     isOpen={createEventModal.isOpen}
