@@ -14,16 +14,20 @@ interface AlbumMembersProps {
 }
 
 export const AlbumMembers = ({ shareId, linkId, onShare }: AlbumMembersProps) => {
-    const { members } = useShareMemberView(shareId, linkId);
+    const { members, invitations, externalInvitations } = useShareMemberView(shareId, linkId);
     const [contactEmails] = useContactEmails();
-    const membersWithName = useMemo(
-        () =>
-            members.map((member) => {
-                const { contactName, contactEmail } = getContactNameAndEmail(member.email, contactEmails);
-                return { member, contactName, contactEmail };
-            }),
-        [members, contactEmails]
-    );
+    const membersWithName = useMemo(() => {
+        const emails = [
+            ...members.map((member) => member.email),
+            ...invitations.map((invitation) => invitation.inviteeEmail),
+            ...externalInvitations.map((invitation) => invitation.inviteeEmail),
+        ];
+
+        return emails.map((email) => {
+            const { contactName, contactEmail } = getContactNameAndEmail(email, contactEmails);
+            return { email, contactName, contactEmail };
+        });
+    }, [members, invitations, externalInvitations, contactEmails]);
     const membersHeader = membersWithName.slice(0, 2);
     const membersModal = membersWithName.slice(2, -1);
     const hasPlusMembersAvatar = Boolean(membersModal && membersModal.length);
@@ -32,11 +36,8 @@ export const AlbumMembers = ({ shareId, linkId, onShare }: AlbumMembersProps) =>
         <>
             {membersHeader &&
                 membersHeader.map((member, i) => (
-                    <Tooltip
-                        title={member.contactName || member.contactEmail || member.member.email}
-                        key={member.member.memberId + i}
-                    >
-                        <UserAvatar name={member.contactName || member.contactEmail || member.member.email} />
+                    <Tooltip title={member.contactName || member.contactEmail || member.email} key={i}>
+                        <UserAvatar name={member.contactName || member.contactEmail || member.email} />
                     </Tooltip>
                 ))}
             {hasPlusMembersAvatar && (
