@@ -6,6 +6,13 @@ li.#{$base} {
 	background-color: var(--interaction-norm-minor-1);
 	transition: background-color 0.2s;
 
+	/** Skips rendering off-screen items in large lists
+	 * Maintains size hints to prevent layout shifts */
+	content-visibility: auto;
+	contain-intrinsic-block-size: em(30);
+	contain-intrinsic-inline-size: 100%;
+	contain: content;
+
 	input {
 		min-inline-size: unset;
 		inline-size: auto;

@@ -4,16 +4,16 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Icon, Tooltip } from '@proton/components';
-import type { ListFieldValue } from '@proton/pass/components/Form/Field/ListField';
 import { getShareRoleDefinition } from '@proton/pass/components/Invite/Member/ShareRoleOptions';
 import { useInviteLabels } from '@proton/pass/components/Invite/useInviteLabels';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
 import type { AccessTarget } from '@proton/pass/lib/access/types';
-import { type InviteFormMemberValue, ShareRole } from '@proton/pass/types';
+import type { InviteFormMemberItem } from '@proton/pass/types';
+import { ShareRole } from '@proton/pass/types';
 
-export type InviteMemberProps = ListFieldValue<InviteFormMemberValue> & {
+export type InviteMemberProps = InviteFormMemberItem & {
     target: AccessTarget;
     onRemove?: () => void;
     onRoleChange?: (role: ShareRole) => void;
