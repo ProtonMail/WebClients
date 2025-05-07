@@ -55,12 +55,19 @@ const getNotifications = ({ isAllDay, partDayNotifications, fullDayNotifications
 };
 
 export const getHasDoneChanges = (model: EventModel, otherModel: EventModel, isEditMode: boolean) => {
+    const hasEditedKeys = getHasEdited(keys, model, otherModel);
+    const hasEditedNotifications = getHasEditedNotifications(getNotifications(model), getNotifications(otherModel));
+    const hasEditedStartTimezone = getHasEditedTimezone(model.start, otherModel.start);
+    const hasEditedEndTimezone = getHasEditedTimezone(model.end, otherModel.end);
+    const hasEditedStartDateTime = isEditMode && getHasEditedDateTime(model.start, otherModel.start);
+    const hasEditedEndDateTime = isEditMode && getHasEditedDateTime(model.end, otherModel.end);
+
     return (
-        getHasEdited(keys, model, otherModel) ||
-        getHasEditedNotifications(getNotifications(model), getNotifications(otherModel)) ||
-        getHasEditedTimezone(model.start, otherModel.start) ||
-        getHasEditedTimezone(model.end, otherModel.end) ||
-        (isEditMode &&
-            (getHasEditedDateTime(model.start, otherModel.start) || getHasEditedDateTime(model.end, otherModel.end)))
+        hasEditedKeys ||
+        hasEditedNotifications ||
+        hasEditedStartTimezone ||
+        hasEditedEndTimezone ||
+        hasEditedStartDateTime ||
+        hasEditedEndDateTime
     );
 };
