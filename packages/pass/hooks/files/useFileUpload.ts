@@ -21,6 +21,17 @@ import { useFileEncryptionVersion } from './useFileEncryptionVersion';
 
 export type OnFileUploadProgress = (uploaded: number, total: number) => void;
 
+export const resolveMimeTypeForFile = async (file: Blob) => {
+    try {
+        const mimeTypeBuffer = await file.slice(0, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE).arrayBuffer();
+        return await PassUI.mime_type_from_content(new Uint8Array(mimeTypeBuffer));
+    } catch {
+        /** If the Rust-based MIME detection fails,
+         * use the browser's MIME type detection. */
+        return file.type;
+    }
+};
+
 /** In web/desktop, the uploading happens on the same JS context, we can
  * pass blob references around. In the extension, store each chunk to the
  * file storage and pass filename references to the worker.  */
@@ -98,6 +109,7 @@ export const useFileUpload = () => {
             async (
                 file: Blob,
                 name: string,
+                mimeType: string,
                 shareId: ShareId,
                 uploadID: string,
                 onProgress?: OnFileUploadProgress
@@ -114,20 +126,6 @@ export const useFileUpload = () => {
                     const totalChunks = Math.ceil(file.size / FILE_CHUNK_SIZE);
 
                     onProgress?.(0, totalChunks);
-
-                    const mimeType = await (async (): Promise<string> => {
-                        try {
-                            const mimeTypeBuffer = await file
-                                .slice(0, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE)
-                                .arrayBuffer();
-
-                            return await PassUI.mime_type_from_content(new Uint8Array(mimeTypeBuffer));
-                        } catch {
-                            /** If the Rust-based MIME detection fails,
-                             * use the browser's MIME type detection. */
-                            return file.type;
-                        }
-                    })();
 
                     const initDTO = {
                         name: sanitizeFileName(name),
@@ -192,6 +190,7 @@ export const useFileUpload = () => {
         (
             file: Blob,
             name: string,
+            mimeType: string,
             shareId: ShareId,
             uploadID: string,
             onProgress?: OnFileUploadProgress
@@ -205,7 +204,7 @@ export const useFileUpload = () => {
             ctrls.current.set(uploadID, new AbortController());
             syncLoadingState();
 
-            return queue(file, name, shareId, uploadID, onProgress);
+            return queue(file, name, mimeType, shareId, uploadID, onProgress);
         },
         []
     );
