@@ -565,7 +565,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             };
 
             const addPhotoToInfoMap = async (link: DecryptedLink, mainPhotoLinkId?: string) => {
-                const { Hash, Name, NodePassphrase, NodePassphraseSignature } = await getPhotoCloneForAlbum(
+                const { Hash, Name, NodePassphrase } = await getPhotoCloneForAlbum(
                     abortSignal,
                     albumShareId,
                     link.rootShareId,
@@ -578,14 +578,15 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 }
 
                 linksInfoForAlbum.set(link.linkId, {
+                    // TODO: payload doesnt include NodePassphraseSignature and SignatureEmail
+                    // for anoanymous photos. Public sharing is not supported yet, so that is
+                    // fine, but must be implemented once enabled.
                     payload: {
                         LinkID: link.linkId,
                         Hash,
                         Name,
                         NodePassphrase,
-                        NodePassphraseSignature,
                         NameSignatureEmail: link.nameSignatureEmail,
-                        SignatureEmail: link.signatureEmail,
                         ContentHash: link.activeRevision?.photo?.contentHash,
                     },
                     albumPhoto: !mainPhotoLinkId ? getAlbumPhotoFromLink(link) : undefined,
