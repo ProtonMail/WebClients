@@ -5,7 +5,7 @@ export { Button } from './Button/Button';
 export type { ButtonProps } from './Button/Button';
 export { default as ButtonLike, ButtonLikeShapeEnum, ButtonLikeSizeEnum } from './Button/ButtonLike';
 export type { ButtonLikeOwnProps, ButtonLikeProps, ButtonLikeShape, ButtonLikeSize } from './Button/ButtonLike';
-export { default as Card, type CardProps } from './Card/Card';
+export { default as Card, type CardProps, type CardOwnProps } from './Card/Card';
 export {
     default as DashboardCard,
     type DashboardCardProps,
