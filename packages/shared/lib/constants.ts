@@ -608,6 +608,7 @@ export enum MAIL_UPSELL_PATHS {
     UNLIMITED_FOLDERS = 'unlimited-folders',
     UNLIMITED_LABELS = 'unlimited-labels',
     UNLIMITED_FILTERS = 'unlimited-filters',
+    UNLIMITED_FILTERS_MAIL_SUBSCRIPTION = 'unlimited-filters-mail-subscription',
     UNLIMITED_ADDRESSES = 'unlimited-addresses',
     FORWARD_EMAILS = 'forward-emails',
     SMTP_SUBMISSION = 'smtp-submission',

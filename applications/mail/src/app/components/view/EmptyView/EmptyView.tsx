@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
-import { EmptyViewContainer, useModalState, useTheme } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { useModalState, useTheme } from '@proton/components';
 import { getPlaceholderSrc } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noSpamSvgDark from '@proton/styles/assets/img/placeholders/auto-delete-cool-dark.svg';
 import noSpamSvgCool from '@proton/styles/assets/img/placeholders/auto-delete-cool-light.svg';
 import noSpamSvgWarm from '@proton/styles/assets/img/placeholders/auto-delete-warm-light.svg';
@@ -27,12 +26,14 @@ import noTrashSvgDark from '@proton/styles/assets/img/placeholders/trash-empty-c
 import noTrashSvgCool from '@proton/styles/assets/img/placeholders/trash-empty-cool-light.svg';
 import noTrashSvgWarm from '@proton/styles/assets/img/placeholders/trash-empty-warm-light.svg';
 
-import { MESSAGE_ACTIONS } from '../../constants';
-import { useOnCompose } from '../../containers/ComposeProvider';
-import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { ComposeTypes } from '../../hooks/composer/useCompose';
-import EnableEncryptedSearchModal from '../header/search/AdvancedSearchFields/EnableEncryptedSearchModal';
-import ProtonPassPlaceholder from './ProtonPassPlaceholder';
+import { MESSAGE_ACTIONS } from '../../../constants';
+import { useOnCompose } from '../../../containers/ComposeProvider';
+import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
+import { ComposeTypes } from '../../../hooks/composer/useCompose';
+import EnableEncryptedSearchModal from '../../header/search/AdvancedSearchFields/EnableEncryptedSearchModal';
+import ProtonPassPlaceholder from '../ProtonPassPlaceholder';
+import { EmptyViewWrapper } from './EmptyViewWrapper';
+import { getEmptyViewDescription, getEmptyViewTitle } from './emptyViewHelpers';
 
 interface Props {
     labelID: string;
@@ -56,28 +57,19 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
     const isFolder = !isInbox && !isScheduled && !isSnoozed && !isSearch && !isSpam && !isTrash;
 
     // We want to hide the "enable ES" part from the point when the user enables it. We do not want to see the downloading part from here
-    const encryptedSearchEnabled =
+    const isEncryptedSearchEnabled =
         isEnablingContentSearch || isContentIndexingPaused || contentIndexingDone || isEnablingEncryptedSearch;
 
     const onCompose = useOnCompose();
 
-    const scheduleCTAButton = (
-        <Button
-            title={c('Action').t`Create new message`}
-            onClick={() => onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW })}
-        >
-            {c('Action').t`Create new message`}
-        </Button>
-    );
+    const imageProps = () => {
+        const folderPicture = getPlaceholderSrc({
+            theme: theme.information.theme,
+            warmLight: noResultFolderSvgWarm,
+            coolLight: noResultFolderSvgCool,
+            coolDark: noResultFolderSvgDark,
+        });
 
-    const folderPicture = getPlaceholderSrc({
-        theme: theme.information.theme,
-        warmLight: noResultFolderSvgWarm,
-        coolLight: noResultFolderSvgCool,
-        coolDark: noResultFolderSvgDark,
-    });
-
-    const imageProps = (() => {
         if (isSpam) {
             return {
                 src: getPlaceholderSrc({
@@ -146,55 +138,28 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
                 alt: c('Search - no results').t`No messages found`,
             };
         }
-    })();
+    };
 
     return isSpam ? (
-        <div className="m-auto text-center p-7 max-w-full">
+        <div className="m-auto text-center p-7 max-w-full" data-testid="empty-view-placeholder--pass-placeholder">
             <ProtonPassPlaceholder />
         </div>
     ) : (
-        <EmptyViewContainer imageProps={imageProps} height={128}>
-            <h3 className="text-bold" data-testid="empty-view-placeholder--empty-title">
-                {isSearch
-                    ? c('Search - no results').t`No results found`
-                    : isFolder
-                      ? c('Search - no results').t`No messages found`
-                      : isScheduled
-                        ? c('Search - no results').t`No messages scheduled`
-                        : c('Search - no results').t`No messages found`}
-            </h3>
-            <p>
-                {isSearch ? (
-                    // TODO: Add a link on clear it when search will work
-                    <>
-                        {encryptedSearchEnabled ? (
-                            <>{c('Info').t`You can either update your search query or clear it`}</>
-                        ) : (
-                            <>
-                                {c('Info')
-                                    .t`For more search results, try searching for this keyword in the content of your email messages.`}
-                                <br />
-                                <Href href={getKnowledgeBaseUrl('/search-message-content')}>
-                                    {c('Info').t`Learn more`}
-                                </Href>
-                            </>
-                        )}
-                    </>
-                ) : isFolder ? (
-                    c('Info').t`You do not have any messages here`
-                ) : isScheduled ? (
-                    scheduleCTAButton
-                ) : (
-                    c('Info').t`Seems like you are all caught up for now`
-                )}
-            </p>
-            {isSearch && !encryptedSearchEnabled && (
+        <EmptyViewWrapper
+            imgProps={imageProps()}
+            height={128}
+            title={getEmptyViewTitle(isSearch, isFolder, isScheduled)}
+            description={getEmptyViewDescription(isSearch, isEncryptedSearchEnabled, isFolder, isScheduled, () =>
+                onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW })
+            )}
+        >
+            {isSearch && !isEncryptedSearchEnabled && (
                 <Button onClick={() => setEnableESModalOpen(true)} data-testid="encrypted-search:activate">
                     {c('Action').t`Enable`}
                 </Button>
             )}
             {renderEnableESModal && <EnableEncryptedSearchModal openSearchAfterEnabling {...enableESModalProps} />}
-        </EmptyViewContainer>
+        </EmptyViewWrapper>
     );
 };
 

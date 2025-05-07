@@ -16,6 +16,7 @@ export const enum SOURCE_EVENT {
     BUTTON_SIDEBAR = 'BUTTON_SIDEBAR',
     BUTTON_FOLDERS = 'BUTTON_FOLDERS',
     BUTTON_LABELS = 'BUTTON_LABELS',
+    BUTTON_VIEWS = 'BUTTON_VIEWS',
 }
 
 export const sendRequestCollapsibleSidebarReport = ({

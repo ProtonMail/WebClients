@@ -4,7 +4,13 @@ import type { IconName } from '@proton/icons';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
-import { LABELS_AUTO_READ, LABELS_UNMODIFIABLE_BY_USER, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
+import {
+    CUSTOM_VIEWS,
+    CUSTOM_VIEWS_LABELS,
+    LABELS_AUTO_READ,
+    LABELS_UNMODIFIABLE_BY_USER,
+    LABEL_IDS_TO_HUMAN,
+} from '@proton/shared/lib/mail/constants';
 
 const {
     INBOX,
@@ -143,6 +149,27 @@ export const isStringHumanLabelID = (labelID: string) => {
     return humanLabels.includes(labelID);
 };
 
+export const isValidCustomViewLabel = (label: string): boolean => {
+    return Object.keys(CUSTOM_VIEWS).includes(label);
+};
+
+export const getCustomViewFromRoute = (route: string) => {
+    return Object.values(CUSTOM_VIEWS).find(({ route: customRoute }) => customRoute === route);
+};
+
+export const getCustomViewFromLabel = (label: string) => {
+    return Object.values(CUSTOM_VIEWS).find(({ label: customLabel }) => customLabel === label);
+};
+
+export const getViewTitleFromLabel = (label: string) => {
+    switch (label) {
+        case CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS:
+            return c('Title').t`Mail Subscriptions`;
+        default:
+            return label;
+    }
+};
+
 export const getLabelName = (labelID: string, labels: Label[] = [], folders: Folder[] = []): string => {
     if (labelID in LABEL_IDS_TO_HUMAN) {
         const folders = getStandardFolders();
@@ -157,6 +184,10 @@ export const getLabelName = (labelID: string, labels: Label[] = [], folders: Fol
     const foldersMap = toMap(folders, 'ID');
     if (labelID in foldersMap) {
         return foldersMap[labelID]?.Name || labelID;
+    }
+
+    if (isValidCustomViewLabel(labelID)) {
+        return getViewTitleFromLabel(labelID);
     }
 
     return labelID;

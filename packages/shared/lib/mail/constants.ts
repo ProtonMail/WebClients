@@ -31,8 +31,8 @@ export const MESSAGE_FLAGS = {
 export enum MAIL_VERIFICATION_STATUS {
     NOT_VERIFIED = -1,
     NOT_SIGNED, // same as @proton/crypto's VERIFICATION_STATUS.NOT_SIGNED
-    SIGNED_AND_VALID,  // same as @proton/crypto's VERIFICATION_STATUS.SIGNED_AND_VALID
-    SIGNED_AND_INVALID,  // same as @proton/crypto's VERIFICATION_STATUS.SIGNED_AND_INVALID
+    SIGNED_AND_VALID, // same as @proton/crypto's VERIFICATION_STATUS.SIGNED_AND_VALID
+    SIGNED_AND_INVALID, // same as @proton/crypto's VERIFICATION_STATUS.SIGNED_AND_INVALID
     SIGNED_NO_PUB_KEY = 3,
 }
 
@@ -59,6 +59,18 @@ export enum MARK_AS_STATUS {
 }
 
 export const AUTO_REPLY_CHARACTER_COUNT_LIMIT = 4000;
+
+export enum CUSTOM_VIEWS_LABELS {
+    NEWSLETTER_SUBSCRIPTIONS = 'views/newsletter-subscriptions',
+}
+
+export const CUSTOM_VIEWS = {
+    [CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS]: {
+        id: 'newsletter-subscriptions',
+        label: CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS,
+        route: '/views/newsletter-subscriptions',
+    },
+};
 
 export const LABEL_IDS_TO_HUMAN = {
     [MAILBOX_LABEL_IDS.INBOX]: 'inbox',

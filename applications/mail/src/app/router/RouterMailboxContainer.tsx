@@ -6,8 +6,10 @@ import {
     InboxQuickSettingsAppButton,
     PrivateMainArea,
 } from '@proton/components';
+import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 
 import MailHeader from 'proton-mail/components/header/MailHeader';
+import { NewsletterSubscriptionView } from 'proton-mail/components/view/NewsletterSubscription/NewsletterSubscriptionView';
 import { ROUTE_LABEL } from 'proton-mail/constants';
 import { MailboxContainerContextProvider } from 'proton-mail/containers/mailbox/MailboxContainerProvider';
 import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
@@ -91,6 +93,10 @@ export const RouterMailboxContainer = () => {
                 mainBordered={canShowDrawer && !!showDrawerSidebar}
             >
                 <Switch>
+                    <Route
+                        path={CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].route}
+                        component={NewsletterSubscriptionView}
+                    />
                     <Route
                         path={ROUTE_LABEL}
                         render={() => (

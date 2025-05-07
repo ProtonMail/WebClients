@@ -27,7 +27,7 @@ interface Props extends ModalProps {
 }
 
 const SpyTrackerModal = ({ message, ...rest }: Props) => {
-    const { numberOfImageTrackers, imageTrackerText, imageTrackers } = useMessageTrackers(message);
+    const { numberOfImageTrackers: trackersCount, imageTrackerText, imageTrackers } = useMessageTrackers(message);
 
     const getHeaderContent = (tracker: Tracker) => {
         return (
@@ -38,9 +38,9 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
                     className="shrink-0"
                     data-testid="privacy:icon-number-of-trackers"
                     aria-label={c('Info').ngettext(
-                        msgid`${numberOfImageTrackers} email tracker blocked`,
-                        `${numberOfImageTrackers} email trackers blocked`,
-                        numberOfImageTrackers
+                        msgid`${trackersCount} email tracker blocked`,
+                        `${trackersCount} email trackers blocked`,
+                        trackersCount
                     )}
                 />
             </div>

@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
-import type { IconName, LabelModel } from '@proton/components';
+import type { LabelModel } from '@proton/components';
 import {
     Checkbox,
     EditLabelModal,
@@ -23,14 +23,17 @@ import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import { buildTreeview, hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
+import { hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 import { normalize } from '@proton/shared/lib/helpers/string';
-import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 import isTruthy from '@proton/utils/isTruthy';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+
+import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';
+import { useMailFolderTreeView } from 'proton-mail/hooks/useMailTreeView/useMailFolderTreeView';
 
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
@@ -43,24 +46,7 @@ import './MoveDropdown.scss';
 
 export const moveDropdownContentProps = { className: 'flex flex-column flex-nowrap items-stretch' };
 
-type FolderItem = Folder & { icon: IconName; level: number };
-
 const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
-
-const folderReducer = (acc: FolderItem[], folder: FolderWithSubFolders, level = 0): FolderItem[] => {
-    acc.push({
-        ...folder,
-        Name: folder.Name,
-        icon: folder.subfolders?.length ? 'folders' : 'folder',
-        level,
-    });
-
-    if (Array.isArray(folder.subfolders)) {
-        folder.subfolders.forEach((folder: FolderWithSubFolders) => folderReducer(acc, folder, level + 1));
-    }
-
-    return acc;
-};
 
 interface Props {
     selectedIDs: string[];
@@ -90,7 +76,6 @@ const MoveDropdown = ({
     const [selectedFolder, setSelectedFolder] = useState<Folder | undefined>();
     const [always, setAlways] = useState(false);
     const [containFocus, setContainFocus] = useState(true);
-    const normSearch = normalize(search, true);
     const getElementsFromIDs = useGetElementsFromIDs();
     const getMessagesOrElements = useGetMessagesOrElementsFromIDs();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
@@ -105,7 +90,7 @@ const MoveDropdown = ({
 
     useEffect(() => onLock(!containFocus), [containFocus]);
 
-    const treeview = buildTreeview(folders);
+    const { list: treeview } = useMailFolderTreeView();
 
     /*
      * When moving an element to SPAM, we want to open an "Unsubscribe modal" when items in the selections can be unsubscribed.
@@ -132,7 +117,6 @@ const MoveDropdown = ({
     }, [getSendersToFilter, elements, selectAll]);
 
     const list = treeview
-        .reduce<FolderItem[]>((acc, folder) => folderReducer(acc, folder), [])
         .concat([
             canMoveToInbox && {
                 ID: INBOX,
@@ -148,12 +132,12 @@ const MoveDropdown = ({
             { ID: TRASH, Name: c('Mailbox').t`Trash`, icon: 'trash' },
         ] as FolderItem[])
         .filter(isTruthy)
-        .filter(({ Name = '' }: { Name: string }) => {
+        .filter((folder) => {
             if (!search) {
                 return true;
             }
-            const normName = normalize(Name, true);
-            return normName.includes(normSearch);
+
+            return normalize(folder.Name, true).includes(normalize(search, true));
         });
 
     const actualMoveFolder = async (selectedFolderID: string, selectedFolderName: string) => {

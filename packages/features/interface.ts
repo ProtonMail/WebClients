@@ -76,6 +76,10 @@ export enum FeatureCode {
     DrivePaidUserNudgeTimestamp = 'DrivePaidUserNudgeTimestamp',
     BundlePaidUserNudgeTimestamp = 'BundlePaidUserNudgeTimestamp',
 
+    // Flags for the newsletter subscription view
+    NewsletterSubscriptionViewOnboarding = 'NewsletterSubscriptionViewOnboarding',
+    NewsletterSubscriptionSpotlight = 'NewsletterSubscriptionSpotlight',
+
     OfferPassFamilyPlan2024Yearly = 'OfferPassFamilyPlan2024Yearly',
     OfferGoUnlimited2022 = 'OfferGoUnlimited2022',
     OfferMailTrial2023 = 'OfferMailTrial2023',

@@ -2,7 +2,7 @@ import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import UserOnboardingMessageListPlaceholder from '../onboarding/checklist/messageListPlaceholder/UserOnboardingMessageListPlaceholder';
-import EmptyView from './EmptyView';
+import EmptyView from './EmptyView/EmptyView';
 
 interface Props {
     labelID: string;

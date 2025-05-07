@@ -1,4 +1,3 @@
-import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useWelcomeFlags } from '@proton/account';
@@ -6,6 +5,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useSpotlightOnFeature, useSpotlightShow } from '@proton/components';
 import { FeatureCode } from '@proton/features/interface';
+import { isUserAccountOlderThanOrEqualToDays } from '@proton/shared/lib/user/helpers';
 import spotlightVideoConfImg from '@proton/styles/assets/img/illustrations/spotlight-video-conference.svg';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -20,7 +20,7 @@ const useVideoConferenceSpotlight = ({ isEventCreation }: Props) => {
     const {
         welcomeFlags: { isDone: hasUserFinishedWelcomeFlow },
     } = useWelcomeFlags();
-    const userAccountHasMoreThanTwoDays = new Date() > addDays(fromUnixTime(user.CreateTime), 2);
+    const userAccountHasMoreThanTwoDays = isUserAccountOlderThanOrEqualToDays(user, 2);
     const hasAccessToZoomIntegration =
         isZoomIntegrationEnabled && user.hasPaidMail && organization?.Settings.VideoConferencingEnabled;
 

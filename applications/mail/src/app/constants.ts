@@ -10,7 +10,6 @@ export const ROUTE_MAIN = '/';
 export const ROUTE_LABEL = '/:labelID?';
 export const ROUTE_ELEMENT = '/:labelID?/:elementID?';
 export const ROUTE_MESSAGE = '/:labelID?/:elementID?/:messageID?';
-export const ROUTE_MANAGE_SUBSCRIPTIONS_VIEW = '/views/manage-subscriptions';
 
 export const MAIN_ROUTE_PATH = '/:labelID?/:elementID?/:messageID?';
 export const EXPIRATION_CHECK_FREQUENCY = 10000; // each 10 seconds

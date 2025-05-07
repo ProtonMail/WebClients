@@ -40,14 +40,14 @@ export const getUTMTrackersFromMessage = (message: MessageState) => {
     return { trackers: message.messageUTMTrackers || [], numberOfTrackers: message.messageUTMTrackers?.length || 0 };
 };
 
-export const getImageTrackerText = (numberOfImageTrackers: number) => {
-    if (numberOfImageTrackers === 0) {
+export const getImageTrackerText = (trackersCount: number) => {
+    if (trackersCount === 0) {
         return c('Info').t`No trackers found`;
     }
     return c('Info').ngettext(
-        msgid`${numberOfImageTrackers} tracker blocked`,
-        `${numberOfImageTrackers} trackers blocked`,
-        numberOfImageTrackers
+        msgid`${trackersCount} tracker blocked`,
+        `${trackersCount} trackers blocked`,
+        trackersCount
     );
 };
 

@@ -1,4 +1,5 @@
 import {
+    getCustomViewFromRoute,
     getFolderName,
     getHumanLabelID,
     getLabelName,
@@ -8,10 +9,11 @@ import {
     isCustomLabel,
     isCustomLabelOrFolder,
     isStringHumanLabelID,
+    isValidCustomViewLabel,
 } from '@proton/mail/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
-import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
+import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
 const customFolders = [
     { ID: 'customfolder1', Name: 'Custom folder 1' } as Folder,
@@ -112,6 +114,22 @@ describe('label', () => {
         it('should return expected folder name', () => {
             expect(getFolderName(MAILBOX_LABEL_IDS.INBOX, customFolders)).toEqual('Inbox');
             expect(getFolderName('customfolder1', customFolders)).toEqual('Custom folder 1');
+        });
+    });
+
+    describe('isValidCustomViewLabel', () => {
+        it('Should validate custom views from labels', () => {
+            expect(isValidCustomViewLabel(CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS)).toBeTruthy();
+            expect(isValidCustomViewLabel('not-existing')).toBeFalsy();
+        });
+    });
+
+    describe('getCustomViewFromRoute', () => {
+        it('Should validate custom views from labels', () => {
+            expect(
+                getCustomViewFromRoute(CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].route)
+            ).toBeTruthy();
+            expect(getCustomViewFromRoute('not-existing')).toBeFalsy();
         });
     });
 });

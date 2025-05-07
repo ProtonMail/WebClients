@@ -1,0 +1,17 @@
+@import '~@proton/styles/scss/lib';
+
+.modal-move-folder {
+	[data-level='1'] {
+		padding-inline-start: 1em;
+	}
+
+	[data-level='2'] {
+		padding-inline-start: 2em;
+	}
+
+	&-list {
+		@include media('>small') {
+			max-block-size: 15.5em;
+		}
+	}
+}
