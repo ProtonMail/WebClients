@@ -205,7 +205,9 @@ const DetailsModalContent = ({
             </DetailsRow>
             {isSharedWithMeLink && (
                 <DetailsRow label={c('Title').t`Location`}>
-                    <FileNameDisplay text={`/${c('Info').t`Shared with me`}`} />
+                    <FileNameDisplay
+                        text={mimeType === 'Album' ? `/${c('Info').t`Photos`}` : `/${c('Info').t`Shared with me`}`}
+                    />
                 </DetailsRow>
             )}
             {ownerEmail && !anonymousView && (
