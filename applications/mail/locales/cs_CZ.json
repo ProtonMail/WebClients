@@ -1553,6 +1553,15 @@
       ],
       "Generate password": [
         "Generovat heslo"
+      ],
+      "Move to folder": [
+        "Přesunout do složky"
+      ],
+      "Trust key": [
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ]
     },
     "action": {
@@ -6028,6 +6037,18 @@
       ],
       "Other": [
         "Ostatní"
+      ],
+      "Import from Google": [
+        "Importovat z Google"
+      ],
+      "Import from other": [
+        "Importovat z jiných"
+      ],
+      "Import from Outlook": [
+        "Importovat z Outlooku"
+      ],
+      "Import from Yahoo": [
+        "Importovat z Yahoo!"
       ]
     },
     "Import warning": {
@@ -7093,10 +7114,7 @@
         "Inicializuji..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -8510,6 +8528,21 @@
       ],
       "Uppercase and lowercase letters": [
         "Velká a malá písmena"
+      ],
+      "and more.": [
+        "a další."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Přeneste své zprávy, kontakty a kalendáře do ${ BRAND_NAME }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "Vzhledem k nastavení příjemce, nelze tuto zprávu odeslat s datem vypršení platnosti na následující kontakt: ",
+        "Vzhledem k nastavení příjemce, nelze tuto zprávu odeslat s datem vypršení platnosti na následující kontakty: ",
+        "Vzhledem k nastavení příjemce, nelze tuto zprávu odeslat s datem vypršení platnosti na následující kontakty: ",
+        "Vzhledem k nastavení příjemce, nelze tuto zprávu odeslat s datem vypršení platnosti na následující kontakty: "
+      ],
+      "One time import": [
+        "Jednorázový import"
       ]
     },
     "info": {
@@ -9711,6 +9744,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Pro zobrazení upravené pozvánky musíte znovu aktivovat své klíče"
+      ],
+      "here": [
+        "zde"
       ]
     },
     "Link to calendar event": {
@@ -10780,6 +10816,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Odemkněte všechny prémiové produkty a funkce ${ BRAND_NAME } jen za ${ priceLine }. Zrušit můžete kdykoli."
+      ],
+      "Starting from ${ priceLine }": [
+        "Cena od ${ priceLine }"
       ]
     },
     "new_plans: title": {

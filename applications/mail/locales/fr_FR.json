@@ -1436,7 +1436,7 @@
         "Utiliser ${ PASS_APP_NAME }"
       ],
       "Use ${ PASS_APP_NAME } for Business": [
-        "Utiliser ${ PASS_APP_NAME } pour Business"
+        "Utiliser ${ PASS_APP_NAME } for Business"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilisez ${ VPN_SHORT_APP_NAME } pour la confidentialité des données"
@@ -1543,6 +1543,19 @@
       ],
       "Generate password": [
         "Générer un mot de passe"
+      ],
+      "A to Z": [
+        "De A à Z"
+      ],
+      "Active": [
+        "Active"
+      ],
+      "Move to folder": [
+        "Déplacer dans un dossier"
+      ],
+      "Trust key": [
+        "Approuver la clé",
+        "Approuver les clés"
       ]
     },
     "action": {
@@ -5930,6 +5943,18 @@
       ],
       "Other": [
         "Autre"
+      ],
+      "Import from Google": [
+        "Importer depuis Google"
+      ],
+      "Import from other": [
+        "Importer depuis un autre fournisseur"
+      ],
+      "Import from Outlook": [
+        "Importer depuis Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importer depuis Yahoo"
       ]
     },
     "Import warning": {
@@ -6873,8 +6898,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8240,6 +8264,22 @@
       ],
       "Uppercase and lowercase letters": [
         "Lettres majuscules et minuscules"
+      ],
+      "and more.": [
+        "et bien plus encore."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Importez vos messages, vos contacts et vos calendriers dans ${ BRAND_NAME } !"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "En raison de la configuration de votre destinataire, ce message ne peut pas être envoyé avec une date d’expiration au contact suivant : ",
+        "En raison de la configuration de votre destinataire, ce message ne peut pas être envoyé avec une date d’expiration aux contacts suivants : "
+      ],
+      "One time import": [
+        "Importation unique"
+      ],
+      "Optional": [
+        "Facultatif"
       ]
     },
     "info": {
@@ -9432,6 +9472,12 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Vous devez réactiver vos clés pour voir l'invitation mise à jour."
+      ],
+      "here": [
+        "ici"
+      ],
+      "Views": [
+        "Vues"
       ]
     },
     "Link to calendar event": {
@@ -10437,6 +10483,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Accédez à tous les produits et toutes les fonctions premium de ${ BRAND_NAME } pour seulement ${ priceLine } avec possibilité de résiliation à tout moment."
+      ],
+      "Starting from ${ priceLine }": [
+        "À partir de ${ priceLine }"
       ]
     },
     "new_plans: title": {

@@ -1548,6 +1548,14 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilizați ${ VPN_SHORT_APP_NAME } pentru confidențialitatea datelor"
+      ],
+      "Move to folder": [
+        "Mutare în folder"
+      ],
+      "Trust key": [
+        "Cheie de încredere",
+        "Chei de încredere",
+        "Chei de încredere"
       ]
     },
     "action": {
@@ -5974,6 +5982,18 @@
       ],
       "Other": [
         "Altele"
+      ],
+      "Import from Google": [
+        "Importare din Google"
+      ],
+      "Import from other": [
+        "Importare din altă sursă"
+      ],
+      "Import from Outlook": [
+        "Importare din Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importare din Yahoo"
       ]
     },
     "Import warning": {
@@ -6978,9 +6998,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8370,6 +8388,20 @@
       ],
       "Uppercase and lowercase letters": [
         "Litere mari și mici"
+      ],
+      "and more.": [
+        "și altele."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Importați-vă mesajele, contactele și calendarele în ${ BRAND_NAME }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "Din cauza configurării destinatarului, acest mesaj nu poate fi trimis cu o dată de expirare către următorul contact: ",
+        "Din cauza configurării destinatarului, acest mesaj nu poate fi trimis cu o dată de expirare către următoarele contacte: ",
+        "Din cauza configurării destinatarului, acest mesaj nu poate fi trimis cu o dată de expirare către următoarele contacte: "
+      ],
+      "One time import": [
+        "Importare unică"
       ]
     },
     "info": {
@@ -9565,6 +9597,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Trebuie să activați cheile pentru a vedea invitația actualizată"
+      ],
+      "here": [
+        "aici"
       ]
     },
     "Link to calendar event": {
@@ -10602,6 +10637,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Deblocați toate produsele și funcțiile premium din ${ BRAND_NAME } cu doar ${ priceLine }. Anulați oricând."
+      ],
+      "Starting from ${ priceLine }": [
+        "Începând de la ${ priceLine }"
       ]
     },
     "new_plans: title": {
@@ -12387,6 +12425,9 @@
       ],
       "Your subscription will renew at the same rate every year.": [
         "Abonamentul vi se va reînnoi la același tarif în fiecare an."
+      ],
+      "The special offer is valid for the first 2 years.": [
+        "Oferta speciala este valabilă pentru primii doi ani."
       ]
     },
     "specialoffer: Link": {
@@ -12465,6 +12506,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Preț standard ${ amount } pentru 30 de luni"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Oferta speciala este valabilă pentru primii doi ani."
       ]
     },
     "specialoffer: Title": {
@@ -12680,6 +12724,15 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Veți pierde accesul la autentificări și note nelimitate, aliasuri hide-my-email nelimitate, 20 de seifuri, precum și la asistența prioritară."
+      ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Pentru a continua să utilizați produsele ${ BRAND_NAME }, eliberați spațiu sau ${ upgrade }"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Spațiul de stocare din ${ productString } este ${ percentage }% plin. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Spațiul din ${ productString } este plin. ${ cta }."
       ]
     },
     "Subscription": {

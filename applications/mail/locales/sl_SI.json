@@ -1526,6 +1526,27 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Uporabljajte ${ VPN_SHORT_APP_NAME } za zasebnost podatkov"
+      ],
+      "Adds it above your existing message": [
+        "Doda ga nad vaše obstoječe sporočilo"
+      ],
+      "Expand navigation bar to see labels": [
+        "Razširite navigacijsko vrstico za ogled oznak"
+      ],
+      "Manage advanced account protections": [
+        "Upravljajte z naprednimi zaščitami računa"
+      ],
+      "Move to folder": [
+        "Premakni v mapo"
+      ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "Zaščita pred sledilniki je preprečila nalaganje nekaterih slik. Naložite jih, če zaupate pošiljatelju."
+      ],
+      "Trust key": [
+        "Zaupaj ključu",
+        "Zaupaj ključema",
+        "Zaupaj ključem",
+        "Zaupaj ključem"
       ]
     },
     "action": {
@@ -1683,6 +1704,9 @@
       ],
       "Securely run on device": [
         "Varno izvajanje v napravi"
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "Varno izvajaj v strežnikih ${ BRAND_NAME }"
       ]
     },
     "Assistant toggle": {
@@ -2311,6 +2335,9 @@
       ],
       "Ultra fast and private VPN": [
         "Ultra hiter in zaseben VPN"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Prihranite denar s paketom ${ upsellPlanName }"
       ]
     },
     "Checkout row": {
@@ -4616,16 +4643,19 @@
         "Vašemu iskanju ustreza preveč rezultatov. Omejite iskanje in poskusite znova."
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "${ user.Name } je vaše uporabniško ime. Če želite ustvariti ${ emailAddress }, pojdite v ikona zobnika > Osebna identiteta in naslovi > Kratka domena (@pm.me)"
+        "${ user.Name } je vaše uporabniško ime. Če želite ustvariti ${ emailAddress }, pojdite v Nastavitve > Osebna identiteta in naslovi > Kratka domena (@pm.me)"
       ],
       "Please select a state": [
-        "Izberite stanje"
+        "Izberite državo"
       ],
       "Text is too long to refine": [
         "Besedilo je predolgo za izboljšanje"
       ],
       "The amount due has changed. Please try again.": [
         "Znesek, ki ga je treba plačati, se je spremenil. Poskusite znova."
+      ],
+      "Failed to load the STL preview": [
+        "Nalaganje predogleda STL ni uspelo"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4981,7 +5011,10 @@
         "Računi Lifetime ne morejo postati člani družinskega paketa."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Povabljeni ste, da povežete svoj ${ BRAND_NAME } račun s tem družinskim paketom in skupaj uživate vse premium funkcije ${ brandOrAppName }."
+        "Povabljeni ste, da povežete svoj ${ BRAND_NAME } račun s tem družinskim paketom in skupaj uživate v vseh premijskih funkcijah ${ brandOrAppName }."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "S trenutnim paketom ne morete sprejeti tega povabila."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5009,6 +5042,9 @@
       ],
       "Configure your family account and invite users": [
         "Nastavite družinski račun in povabite uporabnike."
+      ],
+      "Invite members and get everything up and running.": [
+        "Povabite člane in poskrbite za nemoteno delovanje."
       ]
     },
     "familyOffer_2023:Title": {
@@ -5852,6 +5888,15 @@
       ],
       "Other": [
         "Drugo"
+      ],
+      "Import from Google": [
+        "Uvoz iz Googlovega računa"
+      ],
+      "Import from Outlook": [
+        "Uvoz iz Outlooka"
+      ],
+      "Import from Yahoo": [
+        "Uvoz iz Yahoo"
       ]
     },
     "Import warning": {
@@ -8199,6 +8244,33 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Prenesite svoja sporočila, stike in koledarje v storitev ${ BRAND_NAME }"
+      ],
+      "Clears browser data (including downloaded messages, …)": [
+        "Počisti podatke brskalnika (vključno z naloženimi sporočili, …)"
+      ],
+      "Insert image": [
+        "Vstavi sliko"
+      ],
+      "One time import": [
+        "Enkraten uvoz"
+      ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Odprite priročnik za priporočena dejanja in koristne povezave."
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Uporabite krajšo in lažjo različico svojega e-poštnega naslova."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "To je zdaj vaš naslov ${ defaultEmailAddress } za pošiljanje novih sporočil."
+      ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "To sporočilo je iz vzdevka ${ PASS_APP_NAME }."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "To lahko kadar koli spremenite v ${ settingsLink }"
       ]
     },
     "info": {
@@ -9068,6 +9140,9 @@
       ],
       "Weak password": [
         "Šibko geslo"
+      ],
+      "Did not follow instructions": [
+        "Ni sledil navodilom"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9364,10 +9439,22 @@
         "Kako uporabljati skupine"
       ],
       "settings": [
-        "nastavitvah"
+        "nastavitve"
       ],
       "Types of recovery methods": [
         "Vrste načinov obnovitve"
+      ],
+      "here": [
+        "tukaj"
+      ],
+      "How to share via email": [
+        "Kako dati v skupno rabo prek e-pošte"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Kako uporabljati ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use email forwarding": [
+        "Kako uporabljati posredovanje e-pošte"
       ]
     },
     "Link to calendar event": {
@@ -10813,6 +10900,12 @@
       ],
       "You currently pay": [
         "Trenutno plačujete"
+      ],
+      "Save big when you pay annually": [
+        "Prihranite čim več z izbiro letnega plačila!"
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Ko preklopite z mesečne na letno naročnino."
       ]
     },
     "Offer feature": {
@@ -10933,6 +11026,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Vaša domena in naročnina sta pripravljeni za uporabo."
+      ],
+      "Industry-leading spam protection": [
+        "Vodilna zaščita pred neželeno pošto v panogi"
+      ],
+      "Make the most of your paid plan.": [
+        "Izkoristite svoj plačljiv paket kar najbolje."
       ]
     },
     "Onboarding Proton": {
@@ -11075,10 +11174,13 @@
         "Predstavljamo ${ passFamilyPlanName }"
       ],
       "All premium features. 6 users. 1 easy subscription.": [
-        "Vse premium funkcije. 6 uporabnikov. 1 preprosta naročnina."
+        "Vse premijske funkcije. 6 uporabnikov. 1 preprosta naročnina."
       ],
       "Limited-time deal.": [
         "Časovno omejena ponudba."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Pridobite ga za ${ monthlyPrice }"
       ]
     },
     "passwordless": {
@@ -11172,7 +11274,7 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupon velja za ${ couponRedemptions } podaljšanje.",
         "Kupon velja za ${ couponRedemptions } podaljšanji.",
-        "Kupon velja za ${ couponRedemptions } podaljšanj.",
+        "Kupon velja za ${ couponRedemptions } podaljšanja.",
         "Kupon velja za ${ couponRedemptions } podaljšanj."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
@@ -11180,6 +11282,9 @@
       ],
       "Your payment is still being processed": [
         "Vaše plačilo je še vedno v obdelavi"
+      ],
+      "Please select your billing state first.": [
+        "Najprej izberite svojo državo za izstavitev računa."
       ]
     },
     "Payments.Error": {
@@ -12187,6 +12292,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Običajna cena ${ amount } za 30 mesecev"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Posebna ponudba velja za prvi 2 leti."
       ]
     },
     "specialoffer: Title": {
@@ -12240,7 +12348,7 @@
         "Zdaj lahko načrtujete pošiljanje sporočil za kasneje."
       ],
       "Discover your subscription benefits": [
-        "Odkrijte ugodnosti svoje naročnine"
+        "Odkrijte ugodnosti vaše naročnine"
       ],
       "Your pm.me email is active": [
         "Vaš e-poštni naslov pm.me je aktiven"
@@ -12677,6 +12785,21 @@
       ],
       "Users won’t be able to send emails": [
         "Uporabniki ne bodo mogli pošiljati e-pošte"
+      ],
+      "Any custom email domains will be disabled": [
+        "Vse e-poštne domene po meri bodo onemogočene."
+      ],
+      "Make your business stand out": [
+        "Naj vaše podjetje izstopa"
+      ],
+      "See your colleagues’ availability": [
+        "Oglejte si razpoložljivost svojih sodelavcev"
+      ],
+      "Stay secure and connected anywhere": [
+        "Ostanite varni in povezani kjer koli"
+      ],
+      "Users won’t be able to upload files on their devices": [
+        "Uporabniki ne bodo mogli naložiti datotek v svoje naprave"
       ]
     },
     "subscription reminder": {
@@ -14170,7 +14293,7 @@
         "Sodelujte pri dokumentih"
       ],
       "Connect apps and devices": [
-        "Povežite applikacije in naprave"
+        "Povežite aplikacije in naprave"
       ],
       "Connect to video conferencing": [
         "Poveži se z videokonferenco"
@@ -14216,6 +14339,15 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Uporabljajte ${ VPN_SHORT_APP_NAME } za zasebnost podatkov"
+      ],
+      "Enable advanced account protection": [
+        "Omogoči napredno zaščito računa"
+      ],
+      "Get more from your VPN": [
+        "Izkoristite več od svoje VPN"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Dobrodošli v ${ BRAND_NAME } for Business"
       ]
     },
     "Today icon tooltip in mini calendar": {

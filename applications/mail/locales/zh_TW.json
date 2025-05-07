@@ -1457,6 +1457,18 @@
       ],
       "Generate password": [
         "生成密碼"
+      ],
+      "Get the apps": [
+        "取得應用程式"
+      ],
+      "Move to folder": [
+        "移至資料夾"
+      ],
+      "Trust key": [
+        "信任金鑰"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "啟用${ DARK_WEB_MONITORING_NAME }"
       ]
     },
     "action": {
@@ -1810,6 +1822,9 @@
       ],
       "Two-year": [
         "兩年"
+      ],
+      "Lifetime": [
+        "終身"
       ]
     },
     "Browser": {
@@ -6515,7 +6530,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖片"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -7749,6 +7764,21 @@
       ],
       "Uppercase and lowercase letters": [
         "大寫及小寫字母"
+      ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "我們的系統已將此訊息認定為網路釣魚企圖。請檢查以確保其為合法。"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "每${ cycle }個月自動續訂。"
+      ],
+      "VPN IP": [
+        "VPN IP"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "您的方案開始於${ renewalTime }及於${ cycle }月重新開始。"
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "您的訂購授權將於 ${ renewalTime } 自動更新。"
       ]
     },
     "info": {
@@ -8596,6 +8626,9 @@
       ],
       "Weak password": [
         "脆弱密碼"
+      ],
+      "Your location": [
+        "您的位置"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8860,6 +8893,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "您需要先重新啟用您的金鑰，才可查看已更新的邀請"
+      ],
+      "here": [
+        "這裡"
       ]
     },
     "Link to calendar event": {
@@ -10602,6 +10638,12 @@
       ],
       "Timeout exceeded": [
         "已經逾時"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPriceStr } 續約。您可以在任何時候取消。"
+      ],
+      "Your payment is still being processed": [
+        "您的付款仍在處理中"
       ]
     },
     "Payments.Error": {
@@ -11740,6 +11782,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "您將不能使用我們的無限密碼記錄、無限的 hide-my-email 別名、高達20個密碼保險箱與我們的全力支援。"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "您已使用 ${ percentage }% 的 ${ productString }。${ cta }。"
       ]
     },
     "Subscription": {
@@ -13377,6 +13422,15 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Add user": [
+        "加入使用者"
+      ],
+      "Desktop": [
+        "電腦版應用程式"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "啟用${ DARK_WEB_MONITORING_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1543,6 +1543,13 @@
       ],
       "Generate password": [
         "Genera la contrasenya"
+      ],
+      "Move to folder": [
+        "Mou a la carpeta"
+      ],
+      "Trust key": [
+        "Clau de confiança",
+        "Claus de confiança"
       ]
     },
     "action": {
@@ -5930,6 +5937,18 @@
       ],
       "Other": [
         "Altres"
+      ],
+      "Import from Google": [
+        "Importa des del Google"
+      ],
+      "Import from other": [
+        "Importa des d'un altre"
+      ],
+      "Import from Outlook": [
+        "Importa des de l'Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importa des del Yahoo"
       ]
     },
     "Import warning": {
@@ -6873,8 +6892,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8240,6 +8258,19 @@
       ],
       "Uppercase and lowercase letters": [
         "Lletres majúscules i minúscules"
+      ],
+      "and more.": [
+        "i més."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Porteu els vostres missatges, contactes i calendaris al ${ BRAND_NAME }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "A causa de la configuració del destinatari, aquest missatge no es pot enviar amb data de caducitat al següent contacte: ",
+        "A causa de la configuració del destinatari, aquest missatge no es pot enviar amb data de caducitat als contactes següents: "
+      ],
+      "One time import": [
+        "Importació única"
       ]
     },
     "info": {
@@ -9432,6 +9463,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Heu de reactivar les vostres claus per veure la invitació actualitzada"
+      ],
+      "here": [
+        "aquí"
       ]
     },
     "Link to calendar event": {
@@ -10437,6 +10471,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Desbloquegeu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceLine }. Cancel·leu-ho en qualsevol moment."
+      ],
+      "Starting from ${ priceLine }": [
+        "Des de ${ priceLine }"
       ]
     },
     "new_plans: title": {

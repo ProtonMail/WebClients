@@ -1538,6 +1538,12 @@
       ],
       "Generate password": [
         "パスワードを生成"
+      ],
+      "Move to folder": [
+        "フォルダーに移動"
+      ],
+      "Trust key": [
+        "鍵を信頼する"
       ]
     },
     "action": {
@@ -6763,7 +6769,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -6856,7 +6862,7 @@
         "優先度：低"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } をデフォルトのメールアプリケーションとして設定する。"
+        "${ MAIL_APP_NAME } をデフォルトのメールアプリとして設定する。"
       ],
       "Manage your folders": [
         "フォルダーを管理"
@@ -8102,6 +8108,15 @@
       ],
       "Uppercase and lowercase letters": [
         "大文字と小文字"
+      ],
+      "and more.": [
+        "など。"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "宛先の構成により、次の連絡先に有効期限付きでこのメッセージを送信できません: "
+      ],
+      "Password must have:": [
+        "パスワードは以下を含む必要があります:"
       ]
     },
     "info": {
@@ -8967,6 +8982,9 @@
       ],
       "Weak password": [
         "弱いパスワード"
+      ],
+      "Password strength": [
+        "パスワードの強度"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9282,6 +9300,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "更新された招待を表示するには、鍵を再度有効にする必要があります"
+      ],
+      "here": [
+        "こちら"
       ]
     },
     "Link to calendar event": {
@@ -11979,6 +12000,9 @@
       ],
       "Your subscription will renew at the same rate every year.": [
         "サブスクリプションは毎年同じ料金で更新されます。"
+      ],
+      "The special offer is valid for the first 2 years.": [
+        "特別オファーは最初の2年間有効です。"
       ]
     },
     "specialoffer: Link": {
@@ -12055,6 +12079,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "標準価格では 30 か月毎に ${ amount }"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "特別オファーは最初の2年間有効です"
       ]
     },
     "specialoffer: Title": {
@@ -12268,6 +12295,15 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "無制限のログインとメモ、無制限のhide-my-email エイリアス、20 個の保管庫、および優先サポートにアクセスできなくなります。"
+      ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "${ BRAND_NAME }製品を引き続きご利用いただくには、容量を空けるか、${ upgrade }ください。"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString }は${ percentage }%使用中です。${ cta }。"
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString }はいっぱいです。${ cta }。"
       ]
     },
     "Subscription": {
@@ -14610,6 +14646,26 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "Slack": {
+      "Join Slack huddle": [
+        "Slackに参加する"
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "${ priceString }を節約"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Teamsに参加する"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Zoomミーティングに参加"
       ]
     }
   }

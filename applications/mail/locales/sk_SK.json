@@ -1553,6 +1553,15 @@
       ],
       "Generate password": [
         "Vygenerovať heslo"
+      ],
+      "Move to folder": [
+        "Presunúť do priečinka"
+      ],
+      "Trust key": [
+        "Dôveryhodný kľúč",
+        "Dôveryhodný kľúč",
+        "Dôverovať kľúčom",
+        "Dôverovať novým kľúčom"
       ]
     },
     "action": {
@@ -6028,6 +6037,18 @@
       ],
       "Other": [
         "Ďalší"
+      ],
+      "Import from Google": [
+        "Importovať z Google"
+      ],
+      "Import from other": [
+        "Importovať z inej služby"
+      ],
+      "Import from Outlook": [
+        "Importovať z Outlooku"
+      ],
+      "Import from Yahoo": [
+        "Importovať z Yahoo"
       ]
     },
     "Import warning": {
@@ -7093,10 +7114,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8510,6 +8528,21 @@
       ],
       "Uppercase and lowercase letters": [
         "Veľké a malé písmená"
+      ],
+      "and more.": [
+        "a ďalšie."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Preneste svoje správy, kontakty a kalendáre do ${ BRAND_NAME }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "Z dôvodu konfigurácie príjemcu nie je možné túto správu odoslať s dátumom expirácie nasledujúcemu kontaktu: ",
+        "Z dôvodu konfigurácie príjemcu nie je možné túto správu odoslať s dátumom expirácie nasledujúcim kontaktom: ",
+        "Z dôvodu konfigurácie príjemcu nie je možné túto správu odoslať s dátumom expirácie nasledujúcim kontaktom: ",
+        "Z dôvodu konfigurácie príjemcu nie je možné túto správu odoslať s dátumom expirácie nasledujúcim kontaktom: "
+      ],
+      "One time import": [
+        "Jednorazový import"
       ]
     },
     "info": {
@@ -9711,6 +9744,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Pre zobrazenie upravenej pozvánky musíte znovu aktivovať svoje kľúče"
+      ],
+      "here": [
+        "tu"
       ]
     },
     "Link to calendar event": {
@@ -10780,6 +10816,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Odomknite všetky prémiové produkty a funkcie ${ BRAND_NAME } len za ${ priceLine }. Zrušiť môžete kedykoľvek."
+      ],
+      "Starting from ${ priceLine }": [
+        "Cena od ${ priceLine }"
       ]
     },
     "new_plans: title": {
@@ -12603,6 +12642,9 @@
       ],
       "Your subscription will renew at the same rate every year.": [
         "Vaše predplatné sa bude obnovovať každý rok za rovnakú cenu."
+      ],
+      "The special offer is valid for the first 2 years.": [
+        "Špeciálna ponuka platí počas prvých 2 rokov."
       ]
     },
     "specialoffer: Link": {
@@ -12682,6 +12724,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Štandardná cena ${ amount } na 30 mesiacov"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Špeciálna ponuka platí počas prvých 2 rokov"
       ]
     },
     "specialoffer: Title": {
@@ -12898,6 +12943,15 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Stratíte prístup k neobmedzenému počtu prihlásení a poznámok, neobmedzenému počtu hide-my-email aliasov, 20 trezorom, ako aj prioritnej podpore."
+      ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Ak chcete naďalej používať produkty ${ BRAND_NAME }, uvoľnite miesto alebo ${ upgrade }"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Vaše úložisko ${ productString } je zaplnené na ${ percentage }%. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Vaše úložisko ${ productString } je plné. ${ cta }."
       ]
     },
     "Subscription": {

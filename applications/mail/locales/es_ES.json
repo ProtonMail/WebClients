@@ -1543,6 +1543,40 @@
       ],
       "Generate password": [
         "Generar contraseña"
+      ],
+      "A to Z": [
+        "A-Z"
+      ],
+      "Active": [
+        "Activo"
+      ],
+      "Change sorting": [
+        "Cambiar orden"
+      ],
+      "Expand navigation bar to see custom views": [
+        "Expandir la barra de navegación para ver las vistas personalizadas"
+      ],
+      "Least read": [
+        "Menos leído"
+      ],
+      "Most read": [
+        "Más leído"
+      ],
+      "Move to folder": [
+        "Mover a la carpeta"
+      ],
+      "Recently received": [
+        "Recibidos recientemente"
+      ],
+      "Resubscribe": [
+        "Volver a suscribirme"
+      ],
+      "Trust key": [
+        "Confiar clave",
+        "Confiar claves"
+      ],
+      "Unsubscribed": [
+        "Suscripción cancelada"
       ]
     },
     "action": {
@@ -5930,6 +5964,18 @@
       ],
       "Other": [
         "Otro"
+      ],
+      "Import from Google": [
+        "Importar desde Google"
+      ],
+      "Import from other": [
+        "Importar desde otro proveedor"
+      ],
+      "Import from Outlook": [
+        "Importar desde Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importar desde Yahoo"
       ]
     },
     "Import warning": {
@@ -6873,8 +6919,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8240,6 +8285,74 @@
       ],
       "Uppercase and lowercase letters": [
         "Letras mayúsculas y minúsculas"
+      ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "${ subscription.ReceivedMessageCount } correo el mes pasado",
+        "${ subscription.ReceivedMessageCount } correos el mes pasado"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } no leído",
+        "${ subscription.UnreadMessageCount } no leídos"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } rastreador de correo bloqueado",
+        "${ trackersCount } rastreadores de correo bloqueados"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } rastreador bloqueado",
+        "${ trackersCount } rastreadores bloqueados"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Todos los mensajes de esta lista de correo serán marcados como leídos."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Todos los mensajes de esta lista de correo se moverán al Archivo."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Todos los mensajes de esta lista de direcciones se moverán a la Papelera."
+      ],
+      "and more.": [
+        "y mucho más."
+      ],
+      "Apply to future messages ": [
+        "Aplicar a los mensajes futuros "
+      ],
+      "Archive existing messages": [
+        "Archivar los mensajes existentes"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Trae tus mensajes, contactos y calendarios a ${ BRAND_NAME }."
+      ],
+      "Bulk delete": [
+        "Eliminar en bloque"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "Debido a la configuración del destinatario, este mensaje no se puede enviar con una fecha de expiración al siguiente contacto: ",
+        "Debido a la configuración del destinatario, este mensaje no se puede enviar con una fecha de expiración a los siguientes contactos: "
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Administra y cancela fácilmente la suscripción a boletines y listas de correo."
+      ],
+      "Mark all as read": [
+        "Marcar todos como leídos"
+      ],
+      "One time import": [
+        "Importación única"
+      ],
+      "Optional": [
+        "Opcional"
+      ],
+      "Quickly spot": [
+        "Detectar inmediatamente"
+      ],
+      "Trash existing messages": [
+        "Borrar los mensajes existentes"
+      ],
+      "Unsubscribe": [
+        "Cancelar la suscripción"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Estás a solo unos clics de tener una bandeja de entrada ordenada"
       ]
     },
     "info": {
@@ -9117,6 +9230,18 @@
       ],
       "Weak password": [
         "Contraseña poco segura"
+      ],
+      "Active filter:": [
+        "Filtro activo:"
+      ],
+      "Apply to future messages": [
+        "Aplicar a los mensajes futuros"
+      ],
+      "Mail subscriptions": [
+        "Suscripciones de correo"
+      ],
+      "Move messages to": [
+        "Mover mensajes a"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9432,6 +9557,12 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Necesitas reactivar tus claves para ver la invitación actualizada."
+      ],
+      "here": [
+        "aquí"
+      ],
+      "Views": [
+        "Vistas"
       ]
     },
     "Link to calendar event": {
@@ -10437,6 +10568,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Desbloquea todos los productos y funciones premium de ${ BRAND_NAME } por solo ${ priceLine }. Cancela en cualquier momento."
+      ],
+      "Starting from ${ priceLine }": [
+        "A partir de ${ priceLine }"
       ]
     },
     "new_plans: title": {
@@ -14339,6 +14473,30 @@
       ],
       "Your shorter address is now ready": [
         "Tu dirección en formato más corto ya está lista."
+      ],
+      "Archive all messages?": [
+        "¿Archivar todos los mensajes?"
+      ],
+      "Mail Subscriptions": [
+        "Suscripciones de correo"
+      ],
+      "Mail subscriptions": [
+        "Suscripciones de correo"
+      ],
+      "Mark all messages as read": [
+        "Marcar todos los mensajes como leídos"
+      ],
+      "No mail subscriptions": [
+        "No hay suscripciones de correo"
+      ],
+      "Trash all messages?": [
+        "¿Enviar todos los mensajes de la Papelera?"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "¿Cancelar la suscripción de ${ subscription.Name }?"
+      ],
+      "Your subscriptions in one place": [
+        "Tus suscripciones en un solo lugar"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14975,6 +15133,11 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Aquí puedes ver y administrar las suscripciones a boletines y listas de correo."
       ]
     }
   }

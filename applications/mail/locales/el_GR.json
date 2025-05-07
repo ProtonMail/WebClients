@@ -1543,6 +1543,13 @@
       ],
       "Generate password": [
         "Παραγωγή τυχαίου κωδικού πρόσβασης"
+      ],
+      "Move to folder": [
+        "Μετακίνηση σε φάκελο"
+      ],
+      "Trust key": [
+        "Εμπιστοσύνη στο κλειδί",
+        "Εμπιστοσύνη στα κλειδιά"
       ]
     },
     "action": {
@@ -5930,6 +5937,18 @@
       ],
       "Other": [
         "Άλλο"
+      ],
+      "Import from Google": [
+        "Εισαγωγή από Google"
+      ],
+      "Import from other": [
+        "Εισαγωγή από άλλο"
+      ],
+      "Import from Outlook": [
+        "Εισαγωγή από Outlook"
+      ],
+      "Import from Yahoo": [
+        "Εισαγωγή από το Yahoo"
       ]
     },
     "Import warning": {
@@ -6873,8 +6892,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8240,6 +8258,19 @@
       ],
       "Uppercase and lowercase letters": [
         "Κεφαλαία και πεζά γράμματα"
+      ],
+      "and more.": [
+        "και άλλα."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Μεταφέρετε τα μηνύματα, τις επαφές και τα ημερολόγιά σας στο ${ BRAND_NAME }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "Λόγω της διαμόρφωσης του παραλήπτη σας, αυτό το μήνυμα δεν μπορεί να αποσταλεί με ημερομηνία λήξης στην ακόλουθη επαφή: ",
+        "Λόγω της διαμόρφωσης του παραλήπτη σας, αυτό το μήνυμα δεν μπορεί να αποσταλεί με ημερομηνία λήξης στις ακόλουθες επαφές: "
+      ],
+      "One time import": [
+        "Εφάπαξ εισαγωγή"
       ]
     },
     "info": {
@@ -9429,6 +9460,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Πρέπει να επανενεργοποιήσετε τα κλειδιά σας για να δείτε την ενημερωμένη πρόσκληση"
+      ],
+      "here": [
+        "εδώ"
       ]
     },
     "Link to calendar event": {
@@ -10434,6 +10468,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Ξεκλειδώστε όλα τα ${ BRAND_NAME } premium προϊόντα και δυνατότητες με μόλις ${ priceLine }. Ακυρώστε ανά πάσα στιγμή."
+      ],
+      "Starting from ${ priceLine }": [
+        "Ξεκινώντας από ${ priceLine }"
       ]
     },
     "new_plans: title": {

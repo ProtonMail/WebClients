@@ -1543,6 +1543,34 @@
       ],
       "Generate password": [
         "Generera lösenord"
+      ],
+      "A to Z": [
+        "A till Ö"
+      ],
+      "Active": [
+        "Aktiv"
+      ],
+      "Change sorting": [
+        "Ändra sortering"
+      ],
+      "Least read": [
+        "Minst läst"
+      ],
+      "Most read": [
+        "Mest läst"
+      ],
+      "Move to folder": [
+        "Flytta till mapp"
+      ],
+      "Resubscribe": [
+        "Prenumerera igen"
+      ],
+      "Trust key": [
+        "Lita på nyckel",
+        "Lita på nycklar"
+      ],
+      "Unsubscribed": [
+        "Prenumeration avslutad"
       ]
     },
     "action": {
@@ -5925,6 +5953,18 @@
       ],
       "Other": [
         "Annat"
+      ],
+      "Import from Google": [
+        "Importera från Google"
+      ],
+      "Import from other": [
+        "Importera från andra"
+      ],
+      "Import from Outlook": [
+        "Importera från Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importera från Yahoo"
       ]
     },
     "Import warning": {
@@ -6868,8 +6908,7 @@
         "Initierar…"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8235,6 +8274,69 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer att förnyas automatiskt varje ${ cycle } månad.",
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer att förnyas automatiskt var ${ cycle }:e månad."
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, arkivera eller flytta gamla e-postmeddelanden till en mapp."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } vilka prenumerationer som inte längre är relevanta."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } från dem med ett klick."
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } oläst",
+        "${ subscription.UnreadMessageCount } olästa"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } e-postspårare blockerad",
+        "${ trackersCount } e-postspårare blockerade"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } spårare blockerad",
+        "${ trackersCount } spårare blockerade"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Alla meddelanden från denna e-postlista kommer att markeras som lästa."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Alla meddelanden från denna e-postlista kommer att flyttas till arkiv."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Alla meddelanden från denna e-postlista kommer att flyttas till papperskorg."
+      ],
+      "and more.": [
+        "och mer."
+      ],
+      "Apply to future messages ": [
+        "Tillämpa till framtida meddelanden "
+      ],
+      "Archive existing messages": [
+        "Arkivera befintliga meddelanden"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Ta med dina meddelanden, kontakter och kalendrar till ${ BRAND_NAME }."
+      ],
+      "Bulk delete": [
+        "Massborttagning"
+      ],
+      "Mark all as read": [
+        "Markera alla som lästa"
+      ],
+      "One time import": [
+        "Engångsimport"
+      ],
+      "Optional": [
+        "Valfritt"
+      ],
+      "Quickly spot": [
+        "Identifiera snabbt"
+      ],
+      "Trash existing messages": [
+        "Kasta befintliga meddelanden"
+      ],
+      "Unsubscribe": [
+        "Avsluta prenumeration"
       ]
     },
     "info": {
@@ -9112,6 +9214,24 @@
       ],
       "Weak password": [
         "Svagt lösenord"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Markera alla meddelanden som lästa"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Flytta alla meddelanden till ${ boldFolderName }"
+      ],
+      "Active filter:": [
+        "Aktivt filter:"
+      ],
+      "Apply to future messages": [
+        "Tillämpa till framtida meddelanden"
+      ],
+      "Move messages to": [
+        "Flytta meddelande till"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Filtret är inaktiverat. Du kan aktivera det ${ settingsLink }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9427,6 +9547,12 @@
       ],
       "Enforcing 2FA for organizations": [
         "Kräver 2FA för organisationer"
+      ],
+      "here": [
+        "här"
+      ],
+      "Views": [
+        "Visningar"
       ]
     },
     "Link to calendar event": {
@@ -10432,6 +10558,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
+      ],
+      "Starting from ${ priceLine }": [
+        "Startar från ${ priceLine }"
       ]
     },
     "new_plans: title": {
@@ -14320,6 +14449,27 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Ladda ner ${ DRIVE_APP_NAME } appar"
+      ],
+      "Archive all messages?": [
+        "Arkivera alla meddelanden?"
+      ],
+      "Mail subscriptions": [
+        "E-postprenumerationer"
+      ],
+      "Mark all messages as read": [
+        "Markera alla meddelanden som lästa"
+      ],
+      "No mail subscriptions": [
+        "Inga e-postprenumerationer"
+      ],
+      "Trash all messages?": [
+        "Kasta alla meddelanden?"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Avsluta prenumeration från ${ subscription.Name }?"
+      ],
+      "Your subscriptions in one place": [
+        "Dina prenumerationer på ett ställe"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14966,6 +15116,11 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Gå med i Zoom-möte"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Visa och hantera prenumerationer för nyhetsbrev och e-postlistor här."
       ]
     }
   }

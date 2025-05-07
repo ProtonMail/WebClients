@@ -1355,7 +1355,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Confiar na chave",
+        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1546,6 +1547,24 @@
       ],
       "Generate password": [
         "Gerar senha"
+      ],
+      "A to Z": [
+        "A a Z"
+      ],
+      "Active": [
+        "Ativo"
+      ],
+      "Expand navigation bar to see custom views": [
+        "Expandir barra de navegação para ver as visualizações personalizadas"
+      ],
+      "Move to folder": [
+        "Mover para pasta"
+      ],
+      "Resubscribe": [
+        "Reinscrever-se"
+      ],
+      "Unsubscribed": [
+        "Assinatura cancelada"
       ]
     },
     "action": {
@@ -5933,6 +5952,18 @@
       ],
       "Other": [
         "Outro"
+      ],
+      "Import from Google": [
+        "Importar do Google"
+      ],
+      "Import from other": [
+        "Importar de outro"
+      ],
+      "Import from Outlook": [
+        "Importar do Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importar do Yahoo"
       ]
     },
     "Import warning": {
@@ -6876,8 +6907,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -8243,6 +8273,42 @@
       ],
       "Uppercase and lowercase letters": [
         "Letras maiúsculas e minúsculas:"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "O rastreador de e-mail ${ trackersCount } foi bloqueado",
+        "Os rastreadores de e-mail ${ trackersCount } foram bloqueados"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } rastreador bloqueado",
+        "${ trackersCount } rastreadores bloqueados"
+      ],
+      "and more.": [
+        "e mais."
+      ],
+      "Apply to future messages ": [
+        "Aplicar para mensagens faturas "
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Traga suas mensagens, seus contatos e seus calendários para a ${ BRAND_NAME }"
+      ],
+      "Bulk delete": [
+        "Exclusão em massa"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "Devido à configuração do seu destinatário, esta mensagem não pode ser enviada com uma data de expiração para o seguinte contato: ",
+        "Devido à configuração do destinatário, esta mensagem não pode ser enviada com uma data de expiração para os seguintes contatos: "
+      ],
+      "Mark all as read": [
+        "Marcar tudo como lido."
+      ],
+      "One time import": [
+        "Importação única"
+      ],
+      "Optional": [
+        "Opcional"
+      ],
+      "Unsubscribe": [
+        "Cancelar inscrição"
       ]
     },
     "info": {
@@ -9120,6 +9186,15 @@
       ],
       "Weak password": [
         "Senha fraca"
+      ],
+      "Active filter:": [
+        "Filtro ativo:"
+      ],
+      "Apply to future messages": [
+        "Aplicar para mensagens faturas"
+      ],
+      "Move messages to": [
+        "Mover mensagens para"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9266,7 +9341,7 @@
         "Ative seu endereço para responder este convite."
       ],
       "Enforcing 2FA for organizations": [
-        "Requer A2F para a organização"
+        "Impondo a autenticação em dois fatores (2FA) para organizações"
       ],
       "Folders": [
         "Pastas"
@@ -9278,13 +9353,13 @@
         "Como adicionar os links do Zoom"
       ],
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
-        "Como colaborar em ${ DOCS_SHORT_APP_NAME }"
+        "Como colaborar no ${ DOCS_SHORT_APP_NAME }"
       ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Como ativar o ${ PROTON_SENTINEL_NAME }"
       ],
       "How to migrate to ${ BRAND_NAME }": [
-        "Como migrar para a ${ BRAND_NAME }"
+        "Como migrar para o ${ BRAND_NAME }"
       ],
       "How to pay with Bitcoin?": [
         "Como pagar com Bitcoin?"
@@ -9435,6 +9510,12 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Você precisa reativar suas chaves para ver o convite atualizado"
+      ],
+      "here": [
+        "aqui"
+      ],
+      "Views": [
+        "Visualizações"
       ]
     },
     "Link to calendar event": {
@@ -10440,6 +10521,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Desbloqueie todos os produtos e recursos premium da ${ BRAND_NAME } por apenas ${ priceLine }. Cancele a qualquer momento."
+      ],
+      "Starting from ${ priceLine }": [
+        "A partir de ${ priceLine }"
       ]
     },
     "new_plans: title": {
@@ -14353,6 +14437,15 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "Archive all messages?": [
+        "Arquivar todas as mensagens?"
+      ],
+      "Mark all messages as read": [
+        "Marcar todas as mensagens como lidas"
+      ],
+      "Trash all messages?": [
+        "Excluir todas as mensagens?"
       ]
     },
     "Today icon tooltip in mini calendar": {

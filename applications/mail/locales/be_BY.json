@@ -1553,6 +1553,15 @@
       ],
       "Generate password": [
         "Згенерыраваць пароль"
+      ],
+      "Move to folder": [
+        "Перамясціць у папку"
+      ],
+      "Trust key": [
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ]
     },
     "action": {
@@ -6028,6 +6037,18 @@
       ],
       "Other": [
         "Іншы"
+      ],
+      "Import from Google": [
+        "Імпартаваць з Google"
+      ],
+      "Import from other": [
+        "Імпартаваць з іншых паштовых сэрвісаў"
+      ],
+      "Import from Outlook": [
+        "Імпартаваць з Outlook"
+      ],
+      "Import from Yahoo": [
+        "Імпартаваць з Yahoo"
       ]
     },
     "Import warning": {
@@ -7093,10 +7114,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8510,6 +8528,60 @@
       ],
       "Uppercase and lowercase letters": [
         "Маленькія і вялікія літары"
+      ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "${ subscription.ReceivedMessageCount } электронны ліст за мінулы месяц",
+        "${ subscription.ReceivedMessageCount } электронных ліста за мінулы месяц",
+        "${ subscription.ReceivedMessageCount } электронных лістоў за мінулы месяц",
+        "${ subscription.ReceivedMessageCount } электронных лістоў за мінулы месяц"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } непрачытанае",
+        "${ subscription.UnreadMessageCount } непрачытаных",
+        "${ subscription.UnreadMessageCount } непрачытаных",
+        "${ subscription.UnreadMessageCount } непрачытаных"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "Заблакіравана ${ trackersCount } праграма сачэння электроннай пошты",
+        "Заблакіравана ${ trackersCount } праграмы сачэння электроннай пошты",
+        "Заблакіравана ${ trackersCount } праграм сачэння электроннай пошты",
+        "Заблакіравана ${ trackersCount } праграм сачэння электроннай пошты"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "Заблакіравана ${ trackersCount } праграма сачэння",
+        "Заблакіравана ${ trackersCount } праграмы сачэння",
+        "Заблакіравана ${ trackersCount } праграм сачэння",
+        "Заблакіравана ${ trackersCount } праграм сачэння"
+      ],
+      "and more.": [
+        "і іншым."
+      ],
+      "Archive existing messages": [
+        "Архіваваць існуючыя паведамленні"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Перанясіце свае паведамленні, кантакты і календары ў ${ BRAND_NAME }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "Па прычыне канфігурацыі атрымальніка гэта паведамленне з тэрмінам дзеяння не можа быць адпраўлена наступнаму кантакту: ",
+        "Па прычыне канфігурацыі атрымальніка гэта паведамленне з тэрмінам дзеяння не можа быць адпраўлена наступным кантактам: ",
+        "Па прычыне канфігурацыі атрымальніка гэта паведамленне з тэрмінам дзеяння не можа быць адпраўлена наступным кантактам: ",
+        "Па прычыне канфігурацыі атрымальніка гэта паведамленне з тэрмінам дзеяння не можа быць адпраўлена наступным кантактам: "
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Лёгка кіруйце рассылкамі і спісамі рассылкі, а таксама скасоўвайце падпіску на іх."
+      ],
+      "Mark all as read": [
+        "Адзначыць усё прачытанымі"
+      ],
+      "One time import": [
+        "Аднаразовае імпартаванне"
+      ],
+      "Optional": [
+        "Неабавязкова"
+      ],
+      "Trash existing messages": [
+        "Выдаліць існуючыя паведамленні са Сметніцы/са Смецця"
       ]
     },
     "info": {
@@ -9711,6 +9783,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Вам неабходна паўторна актываваць ключы, каб паглядзець абноўленае запрашэнне"
+      ],
+      "here": [
+        "тут"
       ]
     },
     "Link to calendar event": {
@@ -10780,6 +10855,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Разблакіраваць усе прэміяльныя прадукты ${ BRAND_NAME } і функцыі ўсяго за ${ priceLine }. Скасаваць можна ў любы момант."
+      ],
+      "Starting from ${ priceLine }": [
+        "Пачатковы кошт ${ priceLine }"
       ]
     },
     "new_plans: title": {
@@ -12911,7 +12989,7 @@
         "Вы згубіце доступ да наступных функцый: неабмежаваную колькасць запісаў уваходу і нататак; неабмежаваную колькасць псеўданімаў hide-my-email; 20 сховішчаў; прыярытэтную падтрымку."
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
-        "Каб працягваць карыстацца прадуктамі ${ BRAND_NAME }, вызваліце месца або ${ upgrade }"
+        "Вызваліце месца або ${ upgrade }, каб працягнуць карыстацца прадуктамі ${ BRAND_NAME }"
       ],
       "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
         "Ваша ${ productString } запоўнена на ${ percentage }%. ${ cta }."

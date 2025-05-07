@@ -1355,7 +1355,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Vertrouwde sleutels"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1546,6 +1547,36 @@
       ],
       "Generate password": [
         "Wachtwoord genereren"
+      ],
+      "A to Z": [
+        "A tot Z"
+      ],
+      "Active": [
+        "Actief"
+      ],
+      "Change sorting": [
+        "Sortering wijzigen"
+      ],
+      "Expand navigation bar to see custom views": [
+        "Navigatiebalk uitklappen om aangepaste weergave te zien"
+      ],
+      "Least read": [
+        "Minst gelezen"
+      ],
+      "Most read": [
+        "Meest gelezen"
+      ],
+      "Move to folder": [
+        "Naar map verplaatsen"
+      ],
+      "Recently received": [
+        "Onlangs ontvangen"
+      ],
+      "Resubscribe": [
+        "Opnieuw aanmelden"
+      ],
+      "Unsubscribed": [
+        "Afgemeld"
       ]
     },
     "action": {
@@ -5933,6 +5964,18 @@
       ],
       "Other": [
         "Overig"
+      ],
+      "Import from Google": [
+        "Importeer uit Google"
+      ],
+      "Import from other": [
+        "Importeer uit andere"
+      ],
+      "Import from Outlook": [
+        "Importeer uit Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importeer uit Outlook"
       ]
     },
     "Import warning": {
@@ -6876,8 +6919,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Link invoegen"
@@ -8243,6 +8285,71 @@
       ],
       "Uppercase and lowercase letters": [
         "Hoofdletters en kleine letters"
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, oude e-mails archiveren of naar een map verplaatsen."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } welke abonnementen niet meer relevant zijn."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } met één klik."
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } e-mail tracker geblokkeerd",
+        "${ trackersCount } e-mail trackers geblokkeerd"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Alle berichten van deze mailinglijst worden gemarkeerd als gelezen."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Alle berichten van deze mailinglijst worden verplaatst naar het archief."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Alle berichten van deze adressenlijst worden verplaatst naar de Prullenbak."
+      ],
+      "and more.": [
+        "en meer."
+      ],
+      "Apply to future messages ": [
+        "Pas toe op toekomstige berichten "
+      ],
+      "Archive existing messages": [
+        "Bestaande berichten archiveren"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Breng uw berichten, contacten en agenda's naar ${ BRAND_NAME }."
+      ],
+      "Bulk delete": [
+        "Verwijderen in bulk"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "Vanwege de configuratie van uw ontvanger kan dit bericht niet met een verloopdatum worden verzonden naar het volgende contact: ",
+        "Vanwege de configuratie van uw ontvanger kan dit bericht niet met een verloopdatum worden verzonden naar de volgende contactpersonen: "
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Beheer en meld u eenvoudig af voor nieuwsbrieven en adressenlijsten."
+      ],
+      "Mark all as read": [
+        "Alles markeren als gelezen"
+      ],
+      "One time import": [
+        "Eenmalige import"
+      ],
+      "Optional": [
+        "Optioneel"
+      ],
+      "Quickly spot": [
+        "Snel herkennen"
+      ],
+      "Trash existing messages": [
+        "Verwijder bestaande berichten"
+      ],
+      "Unsubscribe": [
+        "Afmelden"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
       ]
     },
     "info": {
@@ -9117,6 +9224,27 @@
       ],
       "Weak password": [
         "Zwak wachtwoord"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Markeer alle berichten als gelezen"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Verplaats alle berichten naar ${ boldFolderName }"
+      ],
+      "Active filter:": [
+        "Actief filter:"
+      ],
+      "Apply to future messages": [
+        "Pas toe op toekomstige berichten"
+      ],
+      "Mail subscriptions": [
+        "E-mail abonnementen"
+      ],
+      "Move messages to": [
+        "Verplaats berichten naar"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Het filter is uitgeschakeld. U kunt het inschakelen ${ settingsLink }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9432,6 +9560,12 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "U moet uw sleutels opnieuw activeren om de bijgewerkte uitnodiging te zien"
+      ],
+      "here": [
+        "hier"
+      ],
+      "Views": [
+        "Weergaven"
       ]
     },
     "Link to calendar event": {
@@ -10437,6 +10571,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Ontgrendel alle ${ BRAND_NAME } premium producten en functies voor ${ priceLine }. U kunt op ieder moment annuleren."
+      ],
+      "Starting from ${ priceLine }": [
+        "Vanaf ${ priceLine }"
       ]
     },
     "new_plans: title": {
@@ -14318,6 +14455,30 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "Archive all messages?": [
+        "Alle berichten archiveren?"
+      ],
+      "Mail Subscriptions": [
+        "E-mail abonnementen"
+      ],
+      "Mail subscriptions": [
+        "E-mail abonnementen"
+      ],
+      "Mark all messages as read": [
+        "Markeer alle berichten als gelezen"
+      ],
+      "No mail subscriptions": [
+        "Geen e-mail abonnementen"
+      ],
+      "Trash all messages?": [
+        "Verwijder alle berichten?"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Afmelden van ${ subscription.Name }?"
+      ],
+      "Your subscriptions in one place": [
+        "Uw abonnementen op één plek"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14969,6 +15130,11 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Deelnemen aan Zoom vergadering"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Bekijk en beheer hier uw abonnementen op nieuwsbrieven en adressenlijsten."
       ]
     }
   }

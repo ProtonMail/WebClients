@@ -1543,6 +1543,13 @@
       ],
       "Generate password": [
         "Genera password"
+      ],
+      "Move to folder": [
+        "Sposta nella cartella"
+      ],
+      "Trust key": [
+        "Considera attendibile la chiave",
+        "Considera attendibili le chiavi"
       ]
     },
     "action": {
@@ -5930,6 +5937,18 @@
       ],
       "Other": [
         "Altro"
+      ],
+      "Import from Google": [
+        "Importa da Google"
+      ],
+      "Import from other": [
+        "Importa da altro"
+      ],
+      "Import from Outlook": [
+        "Importa da Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importa da Yahoo"
       ]
     },
     "Import warning": {
@@ -6873,8 +6892,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -8240,6 +8258,19 @@
       ],
       "Uppercase and lowercase letters": [
         "Lettere maiuscole e minuscole"
+      ],
+      "and more.": [
+        "e altro ancora."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Importa i tuoi messaggi, contatti e calendari in ${ BRAND_NAME }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "A causa della configurazione del destinatario, questo messaggio non può essere inviato con una data di scadenza al seguente contatto: ",
+        "A causa della configurazione del destinatario, questo messaggio non può essere inviato con una data di scadenza ai seguenti contatti: "
+      ],
+      "One time import": [
+        "Importazione una tantum"
       ]
     },
     "info": {
@@ -9432,6 +9463,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Devi riattivare le tue chiavi per visualizzare l'invito aggiornato"
+      ],
+      "here": [
+        "qui"
       ]
     },
     "Link to calendar event": {
@@ -10437,6 +10471,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
+      ],
+      "Starting from ${ priceLine }": [
+        "A partire da ${ priceLine }"
       ]
     },
     "new_plans: title": {

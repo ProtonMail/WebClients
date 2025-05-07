@@ -1363,7 +1363,10 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufaj kluczowi"
+        "Zaufaj kluczowi",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -1556,6 +1559,9 @@
       ],
       "Generate password": [
         "Generuj hasło"
+      ],
+      "Move to folder": [
+        "Przenieś do folderu"
       ]
     },
     "action": {
@@ -6031,6 +6037,18 @@
       ],
       "Other": [
         "Inny"
+      ],
+      "Import from Google": [
+        "Importuj z konta Google"
+      ],
+      "Import from other": [
+        "Importuj z innego konta"
+      ],
+      "Import from Outlook": [
+        "Importuj z konta Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importuj z konta Yahoo"
       ]
     },
     "Import warning": {
@@ -7096,10 +7114,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -8513,6 +8528,21 @@
       ],
       "Uppercase and lowercase letters": [
         "Wielkie i małe litery"
+      ],
+      "and more.": [
+        "i więcej."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Przenieś wiadomości, kontakty i kalendarze do ${ BRAND_NAME }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "Ze względu na konfigurację odbiorcy wiadomość nie może zostać wysłana z datą wygaśnięcia do następującego kontaktu: ",
+        "Ze względu na konfigurację odbiorcy wiadomość nie może zostać wysłana z datą wygaśnięcia do następujących kontaktów: ",
+        "Ze względu na konfigurację odbiorcy wiadomość nie może zostać wysłana z datą wygaśnięcia do następujących kontaktów: ",
+        "Ze względu na konfigurację odbiorcy wiadomość nie może zostać wysłana z datą wygaśnięcia do następujących kontaktów: "
+      ],
+      "One time import": [
+        "Jednorazowy import"
       ]
     },
     "info": {
@@ -9714,6 +9744,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Musisz reaktywować klucze, aby zobaczyć zaktualizowane zaproszenie"
+      ],
+      "here": [
+        "tutaj"
       ]
     },
     "Link to calendar event": {
@@ -10783,6 +10816,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Odblokuj wszystkie usługi i funkcje premium ${ BRAND_NAME } za ${ priceLine }. Anuluj w dowolnym momencie."
+      ],
+      "Starting from ${ priceLine }": [
+        "Od ${ priceLine }"
       ]
     },
     "new_plans: title": {
@@ -12606,6 +12642,9 @@
       ],
       "Your subscription will renew at the same rate every year.": [
         "Subskrypcja będzie odnawiana co roku w tej samej cenie."
+      ],
+      "The special offer is valid for the first 2 years.": [
+        "Oferta specjalna jest ważna przez pierwsze 2 lata."
       ]
     },
     "specialoffer: Link": {
@@ -12685,6 +12724,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standardowa cena ${ amount } za 30 miesięcy"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Oferta specjalna jest ważna przez pierwsze 2 lata"
       ]
     },
     "specialoffer: Title": {
@@ -12901,6 +12943,15 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Po obniżeniu planu stracisz dostęp do nieograniczonych danych logowania, notatek, aliasów hide-my-email, 20 sejfów i priorytetowego wsparcia."
+      ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Aby korzystać z usług ${ BRAND_NAME }, zwolnij część miejsca lub${ upgrade }"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString } jest w ${ percentage }% pełna. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString } jest pełna. ${ cta }."
       ]
     },
     "Subscription": {

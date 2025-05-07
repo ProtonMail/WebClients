@@ -1543,6 +1543,40 @@
       ],
       "Generate password": [
         "Passwort generieren"
+      ],
+      "A to Z": [
+        "A bis Z"
+      ],
+      "Active": [
+        "Aktiv"
+      ],
+      "Change sorting": [
+        "Sortierung ändern"
+      ],
+      "Expand navigation bar to see custom views": [
+        "Erweitere die Navigationsleiste, um benutzerdefinierte Ansichten zu sehen"
+      ],
+      "Least read": [
+        "Am wenigsten gelesen"
+      ],
+      "Most read": [
+        "Meistgelesen"
+      ],
+      "Move to folder": [
+        "In Ordner verschieben"
+      ],
+      "Recently received": [
+        "Kürzlich erhalten"
+      ],
+      "Resubscribe": [
+        "Wieder abonnieren"
+      ],
+      "Trust key": [
+        "Schlüssel vertrauen",
+        "Schlüssel vertrauen"
+      ],
+      "Unsubscribed": [
+        "Abbestellt"
       ]
     },
     "action": {
@@ -5930,6 +5964,18 @@
       ],
       "Other": [
         "Andere"
+      ],
+      "Import from Google": [
+        "Von Google importieren"
+      ],
+      "Import from other": [
+        "Von anderen importieren"
+      ],
+      "Import from Outlook": [
+        "Von Outlook importieren"
+      ],
+      "Import from Yahoo": [
+        "Von Yahoo importieren"
       ]
     },
     "Import warning": {
@@ -6873,8 +6919,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -8240,6 +8285,83 @@
       ],
       "Uppercase and lowercase letters": [
         "Groß- und Kleinbuchstaben."
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, alte E-Mails archivieren oder in einen Ordner verschieben."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot }, welche Abonnemente nicht mehr relevant sind."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe }, um dich mit einem Klick abzumelden."
+      ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "${ subscription.ReceivedMessageCount } E-Mail letzten Monat",
+        "${ subscription.ReceivedMessageCount } E-Mails letzten Monat"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } ungelesen",
+        "${ subscription.UnreadMessageCount } ungelesen"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } E-Mail-Tracker blockiert",
+        "${ trackersCount } E-Mail-Tracker blockiert"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } Tracker blockiert",
+        "${ trackersCount } Tracker blockiert"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Alle Nachrichten von dieser Verteilerliste werden als gelesen markiert."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Alle Nachrichten von dieser Verteilerliste werden ins Archiv verschoben."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Alle Nachrichten von dieser Verteilerliste werden in den Papierkorb verschoben."
+      ],
+      "and more.": [
+        "und mehr."
+      ],
+      "Apply to future messages ": [
+        "Auf zukünftige Nachrichten anwenden "
+      ],
+      "Archive existing messages": [
+        "Bestehende Nachrichten archivieren"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Bringe deine Nachrichten, Kontakte und Kalender zu ${ BRAND_NAME }."
+      ],
+      "Bulk delete": [
+        "Massenlöschung"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "Aufgrund der Konfiguration deines Empfängers kann diese Nachricht nicht mit einem Ablaufdatum an den folgenden Kontakt gesendet werden: ",
+        "Aufgrund der Konfiguration deines Empfängers kann diese Nachricht nicht mit einem Ablaufdatum an die folgenden Kontakte gesendet werden: "
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Verwalte Newsletter und Verteilerlisten und kündige Abonnements ganz einfach."
+      ],
+      "Mark all as read": [
+        "Alle als gelesen markieren"
+      ],
+      "One time import": [
+        "Einmaliger Import"
+      ],
+      "Optional": [
+        "Optional"
+      ],
+      "Quickly spot": [
+        "Schnell erkennen"
+      ],
+      "Trash existing messages": [
+        "Bestehende Nachrichten in den Papierkorb verschieben"
+      ],
+      "Unsubscribe": [
+        "Abbestellen"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
       ]
     },
     "info": {
@@ -9114,6 +9236,27 @@
       ],
       "Weak password": [
         "Schwaches Passwort"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Alle Nachrichten als gelesen markieren"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Alle Nachrichten nach ${ boldFolderName } verschieben"
+      ],
+      "Active filter:": [
+        "Aktive Filter:"
+      ],
+      "Apply to future messages": [
+        "Auf zukünftige Nachrichten anwenden"
+      ],
+      "Mail subscriptions": [
+        "Mail-Abonnemente"
+      ],
+      "Move messages to": [
+        "Nachrichten verschieben nach"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Der Filter ist deaktiviert. Du kannst ihn ${ settingsLink } aktivieren."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9429,6 +9572,12 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du musst deine Schlüssel erneut aktivieren, um die aktualisierte Einladung anzeigen zu können."
+      ],
+      "here": [
+        "hier"
+      ],
+      "Views": [
+        "Ansichten"
       ]
     },
     "Link to calendar event": {
@@ -10434,6 +10583,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Schalte alle Premium-Produkte und -Funktionen von ${ BRAND_NAME } für nur ${ priceLine } frei. Jederzeit kündbar."
+      ],
+      "Starting from ${ priceLine }": [
+        "Ab ${ priceLine }"
       ]
     },
     "new_plans: title": {
@@ -14330,6 +14482,30 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Archive all messages?": [
+        "Alle Nachrichten archivieren?"
+      ],
+      "Mail Subscriptions": [
+        "Mail-Abonnemente"
+      ],
+      "Mail subscriptions": [
+        "Mail-Abonnemente"
+      ],
+      "Mark all messages as read": [
+        "Alle Nachrichten als gelesen markieren"
+      ],
+      "No mail subscriptions": [
+        "Keine Mail-Abonnemente"
+      ],
+      "Trash all messages?": [
+        "Alle Nachrichten löschen!"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "${ subscription.Name } abbestellen?"
+      ],
+      "Your subscriptions in one place": [
+        "Deine Abonnemente an einem Ort"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14966,6 +15142,11 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Hier kannst du Newsletter- und Verteilerlisten-Abonnemente ansehen und verwalten."
       ]
     }
   }

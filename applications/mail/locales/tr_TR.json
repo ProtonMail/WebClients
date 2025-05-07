@@ -1355,7 +1355,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1546,6 +1547,9 @@
       ],
       "Generate password": [
         "Parola üret"
+      ],
+      "Move to folder": [
+        "Klasöre taşı"
       ]
     },
     "action": {
@@ -5933,6 +5937,18 @@
       ],
       "Other": [
         "Diğer"
+      ],
+      "Import from Google": [
+        "Google'dan içe aktar"
+      ],
+      "Import from other": [
+        "Diğerlerinden içe aktar"
+      ],
+      "Import from Outlook": [
+        "Outlook'tan içe aktar"
+      ],
+      "Import from Yahoo": [
+        "Yahoo'dan içe aktar"
       ]
     },
     "Import warning": {
@@ -6876,8 +6892,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -8243,6 +8258,15 @@
       ],
       "Uppercase and lowercase letters": [
         "Büyük ve küçük harfler"
+      ],
+      "and more.": [
+        "ve daha fazlası."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Mesajlarınızı, kişilerinizi ve takvimlerinizi ${ BRAND_NAME }'e taşıyın."
+      ],
+      "One time import": [
+        "Tek seferlik içe aktarma"
       ]
     },
     "info": {
@@ -9432,6 +9456,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Güncellenen daveti görmek için anahtarlarınızı yeniden etkinleştirmelisiniz"
+      ],
+      "here": [
+        "buradan"
       ]
     },
     "Link to calendar event": {
@@ -10437,6 +10464,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Yalnızca ${ priceLine } ile tüm ${ BRAND_NAME } ücretli ürünlerine ve özelliklerine erişin. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Starting from ${ priceLine }": [
+        "${ priceLine }'dan başlayan fiyatlarla"
       ]
     },
     "new_plans: title": {
