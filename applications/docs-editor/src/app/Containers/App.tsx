@@ -42,7 +42,7 @@ import { IS_CHROME } from '../Shared/environment'
 import { useStateRef } from '../Hooks/useStateRef'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 // eslint-disable-next-line monorepo-cop/no-relative-import-outside-package
-import { SpreadsheetProvider } from '../../../../../vendor/rowsncolumns'
+import { SpreadsheetProvider } from '../../../../../vendor/rowsncolumns/spreadsheet'
 import { Spreadsheet } from './Spreadsheet'
 
 type AppProps = {
