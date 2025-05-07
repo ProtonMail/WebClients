@@ -115,6 +115,10 @@
 		promotion-interaction-hover: rgb(109 74 255 / 0.08),
 		promotion-background-start: rgb(109 74 255 / 0.15),
 		promotion-background-end: rgb(70 26 255 / 0.04),
+		promotion-secondary-color: #d783ff,
+		bg-promotion-bw-button: var(--background-invert),
+  		text-promotion-bw-button: var(--text-invert),
+
 	) {
 		// --link-norm: var(--optional-link-norm, var(--interaction-norm));
 		--#{$variable}: var(--optional-#{$variable}, #{$default});
