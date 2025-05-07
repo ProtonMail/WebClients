@@ -1,6 +1,7 @@
 import { type FC } from 'react';
 
 import onepassword from '@proton/pass/assets/import/1password-icon-48.png';
+import applePasswords from '@proton/pass/assets/import/apple-passwords-icon-48.png';
 import bitwarden from '@proton/pass/assets/import/bitwarden-icon-48.png';
 import brave from '@proton/pass/assets/import/brave-icon-48.png';
 import chrome from '@proton/pass/assets/import/chrome-icon-48.png';
@@ -22,6 +23,7 @@ import { ImportProvider, PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types
 type ImportIconMap = Record<ImportProvider, string>;
 
 const IMPORT_ICON_MAP: ImportIconMap = {
+    [ImportProvider.APPLEPASSWORDS]: applePasswords,
     [ImportProvider.BITWARDEN]: bitwarden,
     [ImportProvider.BRAVE]: brave,
     [ImportProvider.CHROME]: chrome,
