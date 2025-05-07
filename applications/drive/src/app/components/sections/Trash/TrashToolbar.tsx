@@ -21,6 +21,22 @@ const TrashToolbar = ({ items }: Props) => {
         [items, selectionControls!.selectedItemIds]
     );
 
+    // Opening a file preview opens the file in the context of folder.
+    // For photos in the photo stream, it is fine as it is regular folder.
+    // But photos in albums only (uploaded by other users) are not in the
+    // context of folder and it requires dedicated album endpoints to load
+    // "folder". We do not support this in regular preview, so the easiest
+    // is to disable opening preview for such a link.
+    // In the future, ideally we want trash of photos to separate to own
+    // screen or app, then it will not be a problem. In mid-term, we want
+    // to open preview without folder context - that is to not redirect to
+    // FolderContainer, but open preview on the same page. That will also
+    // fix the problem with returning back to trash and stay on the same
+    // place in the view.
+    const disabledPreview =
+        selectedItems.length > 0 &&
+        selectedItems[0].photoProperties?.albums.some((album) => album.albumLinkId === selectedItems[0].parentLinkId);
+
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
             return null;
@@ -28,7 +44,7 @@ const TrashToolbar = ({ items }: Props) => {
 
         return (
             <>
-                <PreviewButton selectedBrowserItems={selectedItems} />
+                {!disabledPreview && <PreviewButton selectedBrowserItems={selectedItems} />}
                 <DownloadButton selectedBrowserItems={selectedItems} disabledFolders />
                 <Vr className="section-toolbar--hide-alone" />
                 <DetailsButton selectedBrowserItems={selectedItems} />
