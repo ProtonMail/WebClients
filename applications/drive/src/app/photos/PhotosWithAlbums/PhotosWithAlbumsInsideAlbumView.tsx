@@ -118,7 +118,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         [favoritePhotoToggle]
     );
 
-    const isAlbumPhotosEmpty = albumPhotos.length === 0;
+    const isAlbumPhotosEmpty = album?.photoCount === 0;
     const albumName = album?.name;
 
     useEffect(() => {
