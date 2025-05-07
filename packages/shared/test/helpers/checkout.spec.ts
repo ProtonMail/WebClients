@@ -123,6 +123,7 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            regularAmountPerCycle: 999,
             couponDiscount: undefined,
             planTitle: 'VPN',
             planIDs: { [PLANS.VPN]: 1 },
@@ -181,6 +182,7 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            regularAmountPerCycle: 1199,
             couponDiscount: undefined,
             planTitle: 'VPN',
             planName: PLANS.VPN,
@@ -241,6 +243,7 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            regularAmountPerCycle: 799,
             couponDiscount: undefined,
             planTitle: 'VPN',
             planName: PLANS.VPN,
@@ -249,7 +252,7 @@ describe('should get checkout result', () => {
             addons: [],
             withDiscountPerCycle: 799,
             withDiscountPerMonth: 799,
-            withoutDiscountPerCycle: 799,
+            withoutDiscountPerCycle: 999,
             withoutDiscountPerMonth: 999,
             discountPerCycle: 200,
             discountPercent: 20,
@@ -286,6 +289,7 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            regularAmountPerCycle: 47976,
             couponDiscount: -4776,
             planIDs: { [PLANS.VISIONARY]: 1 },
             planTitle: 'VIS',
@@ -294,7 +298,7 @@ describe('should get checkout result', () => {
             addons: [],
             withDiscountPerCycle: 43200,
             withDiscountPerMonth: 1800,
-            withoutDiscountPerCycle: 47976,
+            withoutDiscountPerCycle: 71976,
             withoutDiscountPerMonth: 2999,
             discountPerCycle: 28776,
             discountPercent: 40,
@@ -332,6 +336,7 @@ describe('should get checkout result', () => {
 
         // Create a copy of the expected result with the approximate value
         const expected = {
+            regularAmountPerCycle: 29970,
             couponDiscount: -17994,
             planTitle: 'VPN',
             planName: PLANS.VPN,
@@ -392,6 +397,7 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            regularAmountPerCycle: 81288,
             couponDiscount: 0,
             planTitle: 'BUS',
             planName: PLANS.BUNDLE_PRO,
@@ -415,7 +421,7 @@ describe('should get checkout result', () => {
             ],
             withDiscountPerCycle: 81288,
             withDiscountPerMonth: 3387,
-            withoutDiscountPerCycle: 81288,
+            withoutDiscountPerCycle: 104328,
             withoutDiscountPerMonth: 4347,
             discountPerCycle: 23040,
             discountPercent: 22,
@@ -456,6 +462,7 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            regularAmountPerCycle: twoYearPrice3Members,
             couponDiscount: 0,
             planTitle: 'VPN Essentials',
             planName: PLANS.VPN_PRO,
@@ -467,7 +474,7 @@ describe('should get checkout result', () => {
             addons: [],
             withDiscountPerCycle: twoYearPrice3Members,
             withDiscountPerMonth: twoYearPrice3Members / 24,
-            withoutDiscountPerCycle: twoYearPrice3Members,
+            withoutDiscountPerCycle: cost24MonthlyCycles3Members,
             withoutDiscountPerMonth: 3596,
             discountPerCycle: cost24MonthlyCycles3Members - twoYearPrice3Members,
             discountPercent: 33,
@@ -509,6 +516,7 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            regularAmountPerCycle: twoYearPrice3Members,
             couponDiscount: 0,
             planIDs: {
                 [PLANS.VPN_BUSINESS]: 1,
@@ -527,7 +535,7 @@ describe('should get checkout result', () => {
             ],
             withDiscountPerCycle: twoYearPrice3Members,
             withDiscountPerMonth: twoYearPrice3Members / 24,
-            withoutDiscountPerCycle: twoYearPrice3Members,
+            withoutDiscountPerCycle: cost24MonthlyCycles3Members,
             withoutDiscountPerMonth: 9795,
             discountPerCycle: cost24MonthlyCycles3Members - twoYearPrice3Members,
             discountPercent: 27,
@@ -564,6 +572,7 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            regularAmountPerCycle: 47976,
             couponDiscount: -47976,
             planTitle: 'VIS',
             planIDs: {
@@ -574,7 +583,7 @@ describe('should get checkout result', () => {
             addons: [],
             withDiscountPerCycle: 0,
             withDiscountPerMonth: 0,
-            withoutDiscountPerCycle: 47976,
+            withoutDiscountPerCycle: 71976,
             withoutDiscountPerMonth: 2999,
             discountPerCycle: 71976,
             discountPercent: 100,
