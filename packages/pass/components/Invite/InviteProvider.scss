@@ -1,5 +1,7 @@
 .pass-invite {
-	&--members {
+	&--members,
+	&--permissions,
+	&--review {
 		.pass-panel--content > .scroll-inner > .scroll-child {
 			block-size: 100%;
 
