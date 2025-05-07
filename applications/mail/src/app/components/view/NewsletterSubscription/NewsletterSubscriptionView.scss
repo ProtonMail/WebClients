@@ -1,0 +1,23 @@
+@import '~@proton/styles/scss/lib';
+
+.subscription-container {
+	background-color: var(--optional-background-lowered);
+
+	.subscription-card {
+		background-color: var(--background-elevated);
+		transition: box-shadow 0.25s easing(ease);
+		transition: border-color 0.15s easing(ease-in-quint);
+
+		.subscription-card-image {
+			inline-size: 2.25rem;
+		}
+
+		.subscription-card-dropdown {
+			margin-inline-start: auto;
+		}
+
+		&:hover {
+			box-shadow: var(--shadow-raised);
+		}
+	}
+}
