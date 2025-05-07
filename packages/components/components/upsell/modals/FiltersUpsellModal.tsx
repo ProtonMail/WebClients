@@ -13,14 +13,15 @@ interface Props {
      * Needed in a "Dropdown" scenario because we want to close the dropdown after closing the upsell modal
      */
     onCloseCustomAction?: () => void;
+    overrideFeature?: MAIL_UPSELL_PATHS;
     isSettings?: boolean;
 }
 
-const FiltersUpsellModal = ({ modalProps, onCloseCustomAction, isSettings = false }: Props) => {
+const FiltersUpsellModal = ({ modalProps, overrideFeature, onCloseCustomAction, isSettings = false }: Props) => {
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
         component: UPSELL_COMPONENT.MODAL,
-        feature: MAIL_UPSELL_PATHS.UNLIMITED_FILTERS,
+        feature: overrideFeature || MAIL_UPSELL_PATHS.UNLIMITED_FILTERS,
         isSettings,
     });
 
