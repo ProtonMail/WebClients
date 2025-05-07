@@ -8,7 +8,7 @@ import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation
 import { changeCreateLoadingState, createSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import type { Sync } from '@proton/activation/src/logic/sync/sync.interface';
 import { selectCreateSyncState } from '@proton/activation/src/logic/sync/sync.selectors';
-import { Banner, Button } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import { type ModalProps, ModalTwoFooter } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
@@ -95,11 +95,6 @@ const GmailSyncModal = ({
                             .t`It's simple to connect your Gmail address to ${BRAND_NAME} — and significantly more private.`}
                     />
                     <ModalTwoContent>
-                        <Banner variant="warning" className="mb-4" icon={<Icon name="exclamation-triangle-filled" />}>
-                            {c('loc_nightly: BYOE')
-                                .t`Important: Link only work related accounts (i.e. non-personal accounts) to your employee account!`}
-                        </Banner>
-
                         <div className="flex flex-row flex-nowrap gap-2 items-start mb-2">
                             <div className="bg-weak rounded-full flex p-2">
                                 <Icon name="brand-google" className="shrink-0" />
@@ -117,9 +112,9 @@ const GmailSyncModal = ({
                             </div>
                             <div className="flex-1">
                                 <p className="text-bold mt-0 mb-1">{c('loc_nightly: BYOE')
-                                    .t`Import messages and more`}</p>
+                                    .t`Import your latest messages`}</p>
                                 <p className="my-1 color-weak">{c('loc_nightly: BYOE')
-                                    .t`Your messages, contacts, and events will be imported so your data is synced in ${BRAND_NAME}.`}</p>
+                                    .t`We’ll import your latest messages, so you can quickly get productive.`}</p>
                             </div>
                         </div>
                         <div className="flex flex-row flex-nowrap gap-2 items-start mb-2">
