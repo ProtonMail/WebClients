@@ -44,10 +44,11 @@ export const InAppNotificationBanner = WithInAppNotification(
                     >
                         <Icon name="cross" size={3} alt={c('Action').t`Close`} />
                     </Button>
-                    <div className={clsx('flex flex-column', dense ? 'gap-1' : 'gap-2')}>
+                    <div className={clsx('flex flex-column items-start', dense ? 'gap-1' : 'gap-2')}>
                         {content.imageUrl && (
                             <img
-                                className="w-full max-w-full pointer-events-none user-select-none"
+                                className="max-w-full max-h-custom pointer-events-none user-select-none object-contain"
+                                style={{ '--max-h-custom': '4rem' }}
                                 src={content.imageUrl}
                                 alt=""
                             />
