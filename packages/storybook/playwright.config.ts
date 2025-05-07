@@ -30,7 +30,7 @@ export default defineConfig({
         },
     ],
     reporter: 'list',
-    retries: 1,
+    retries: 2,
     testDir: './tests',
     testMatch: '*.test.ts',
     timeout: TIMEOUT,
