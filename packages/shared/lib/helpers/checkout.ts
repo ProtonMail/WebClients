@@ -258,6 +258,7 @@ export const getCheckout = ({
     const withDiscountOneMemberPerMonth = withDiscountMembersPerMonth / usersAndAddons.users;
 
     return {
+        regularAmountPerCycle: amount,
         couponDiscount: checkResult.CouponDiscount,
         planIDs,
         planName: usersAndAddons.planName,
@@ -265,7 +266,7 @@ export const getCheckout = ({
         addons: usersAndAddons.addons,
         usersTitle: getUserTitle(usersAndAddons.viewUsers || 1), // VPN and free plan has no users
         withoutDiscountPerMonth,
-        withoutDiscountPerCycle: amount,
+        withoutDiscountPerCycle,
         withDiscountPerCycle,
         withDiscountPerMonth: withDiscountPerCycle / cycle,
         membersPerMonth,
