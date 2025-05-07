@@ -19,6 +19,7 @@ import { elementsReducer } from './elements/elementsSlice';
 import { incomingDefaultsReducer } from './incomingDefaults/incomingDefaultsSlice';
 import { layoutReducer } from './layout/layoutSlice';
 import { messagesReducer } from './messages/messagesSlice';
+import { newsletterSubscriptionsReducer } from './newsletterSubscriptions/newsletterSubscriptionsSlice';
 import { snoozeReducer } from './snooze/snoozeSlice';
 
 export const rootReducer = combineReducers({
@@ -42,6 +43,7 @@ export const rootReducer = combineReducers({
     ...securityCenterReducer,
     ...breachesCountReducer,
     ...protonDomainsReducer,
+    ...newsletterSubscriptionsReducer,
 });
 
 export type MailState = ReturnType<typeof rootReducer>;

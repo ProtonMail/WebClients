@@ -3,9 +3,6 @@ import { FILTER_STATUS, FREE_USER_ACTIVE_FILTERS_LIMIT } from '@proton/shared/li
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 export const hasReachedFiltersLimit = (user: UserModel, userFilters: Filter[]) => {
-    const { hasPaidMail } = user;
-
-    const enabledFilters = userFilters.filter((filter) => filter.Status === FILTER_STATUS.ENABLED);
-
-    return !hasPaidMail && enabledFilters.length >= FREE_USER_ACTIVE_FILTERS_LIMIT;
+    const enabledFiltersLength = userFilters.filter((filter) => filter.Status === FILTER_STATUS.ENABLED).length;
+    return !user.hasPaidMail && enabledFiltersLength >= FREE_USER_ACTIVE_FILTERS_LIMIT;
 };

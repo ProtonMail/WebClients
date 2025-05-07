@@ -1,10 +1,8 @@
-import { differenceInDays, fromUnixTime } from 'date-fns';
-
 import type { UserModel } from '../interfaces';
+import { getUserCreationDate, getUserDaysSinceCreation } from '../user/helpers';
 
-const today = new Date();
 export const getAccountAgeForDimension = (user: UserModel) => {
-    const daysSinceCreation = differenceInDays(today, fromUnixTime(user.CreateTime));
+    const daysSinceCreation = getUserDaysSinceCreation(getUserCreationDate(user));
 
     if (daysSinceCreation <= 1) {
         return 'one day';
