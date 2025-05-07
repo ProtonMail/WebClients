@@ -57,10 +57,7 @@
 			&,
 			&:hover,
 			&:focus {
-				/*
-				 * Create a variable of the color: #d783ff
-				*/
-				background: linear-gradient(86.95deg, var(--primary-major-1) 0%, #d783ff 100%);
+				background: linear-gradient(86.95deg, var(--primary-major-1) 0%, var(--promotion-secondary-color) 100%);
 
 				--text-norm: white;
 
