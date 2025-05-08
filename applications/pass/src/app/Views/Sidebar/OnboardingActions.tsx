@@ -6,23 +6,15 @@ import { OnboardingState } from '@proton/pass/components/Onboarding/OnboardingSt
 import { OnboardingType } from '@proton/pass/components/Onboarding/Provider/OnboardingContext';
 
 export const OnboardingActions = memo(() => {
-    const onboarding = useOnboarding();
+    const { enabled, type } = useOnboarding();
+
+    if (!enabled) return null;
 
     return (
         <>
-            {onboarding.type === OnboardingType.B2B && onboarding.enabled && (
-                <>
-                    <OnboardingButton />
-                    <hr className="my-2 mx-4" aria-hidden="true" />
-                </>
-            )}
-
-            {onboarding.type === OnboardingType.WELCOME && onboarding.enabled && (
-                <>
-                    <OnboardingState />
-                    <hr className="my-2 mx-4" aria-hidden="true" />
-                </>
-            )}
+            {type === OnboardingType.B2B && <OnboardingButton />}
+            {[OnboardingType.WELCOME, OnboardingType.WEB_ONBOARDING].includes(type) && <OnboardingState />}
+            <hr className="my-2 mx-4" aria-hidden="true" />
         </>
     );
 });
