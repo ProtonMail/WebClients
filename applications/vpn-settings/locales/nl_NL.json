@@ -4,6 +4,14 @@
     "language": "nl_NL"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Doorsturen start binnenkort. Nieuwe e-mails verschijnen in uw inbox."
+      ],
+      "Mail forward stopped": [
+        "E-mail doorsturen gestopt"
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name } en ${ remainingCount } andere potentiële lekken gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken en actie te ondernemen. ${ link }"
@@ -406,6 +414,9 @@
       "Get the deal": [
         "Pak deze deal"
       ],
+      "Get the writing assistant": [
+        "Verkrijg de schrijfassistent"
+      ],
       "Get verification code": [
         "Krijg verificatie code"
       ],
@@ -445,11 +456,11 @@
       "Invite user": [
         "Gebruiker uitnodigen"
       ],
-      "Keep Editing": [
-        "Doorgaan met bewerken"
-      ],
       "Keep editing": [
         "Blijf bewerken"
+      ],
+      "Keep Editing": [
+        "Doorgaan met bewerken"
       ],
       "Keep logo": [
         "Logo behouden"
@@ -562,11 +573,11 @@
       "Refresh status": [
         "Status vernieuwen"
       ],
-      "Refresh the page": [
-        "Pagina vernieuwen"
-      ],
       "refresh the page": [
         "pagina vernieuwen"
+      ],
+      "Refresh the page": [
+        "Pagina vernieuwen"
       ],
       "Remove": [
         "Verwijderen"
@@ -682,11 +693,11 @@
       "Select country ${ country }": [
         "Selecteer land ${ country }"
       ],
-      "select file": [
-        "selecteer bestand"
-      ],
       "Select file": [
         "Selecteer bestand"
+      ],
+      "select file": [
+        "selecteer bestand"
       ],
       "Send code": [
         "Code versturen"
@@ -720,6 +731,9 @@
       ],
       "Set up a custom domain": [
         "Een eigen domein instellen"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Stel automatisch doorsturen in vanaf Gmail"
       ],
       "Set up email forwarding": [
         "E-mail doorsturen instellen"
@@ -768,6 +782,9 @@
       ],
       "Signing in": [
         "Aanmelden"
+      ],
+      "Skip": [
+        "Overslaan"
       ],
       "Spam": [
         "Spam"
@@ -1012,6 +1029,26 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Dit zal alle routers en clients die dit certificaat gebruiken loskoppelen."
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Inbox van ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "5 trackers verwijderd"
+      ],
+      "Auto forwarded": [
+        "Automatisch doorgestuurd"
+      ],
+      "Email received": [
+        "E-mail ontvangen"
+      ],
+      "Encrypted": [
+        "Versleuteld"
+      ],
+      "New email": [
+        "Nieuwe e-mail"
       ]
     },
     "Assistant toggle": {
@@ -2587,9 +2624,6 @@
       "No one in your organization can connect to shared servers.": [
         "Niemand in uw organisatie kan verbinding maken met gedeelde servers."
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Scheid verschillende aspecten van uw leven met meerdere e-mailadressen en ontgrendel meer premiumfuncties wanneer u upgradet."
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Stel accounts in voor alle gebruikers en nodig hen uit om lid te worden van ${ BRAND_NAME }."
       ],
@@ -2911,6 +2945,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } kan geen verbinding maken met uw externe account"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
       ],
@@ -2925,6 +2962,12 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Bedrag onder minimum (${ minimumAmount })."
+      ],
+      "Authentication canceled.": [
+        "Authenticatie geannuleerd."
+      ],
+      "Authentication error.": [
+        "Verificatiefout."
       ],
       "Checkout expired, please try again": [
         "Checkout is verlopen, probeer het opnieuw"
@@ -3033,6 +3076,15 @@
       ],
       "Name does not match": [
         "Naam komt niet overeen"
+      ],
+      "No calendars found to import": [
+        "Geen agenda's gevonden om te importeren"
+      ],
+      "No contacts found to import": [
+        "Geen contacten gevonden om te importeren"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Geen e-mails gevonden om te importeren - het account heeft geen inbox"
       ],
       "No image selected": [
         "Geen afbeelding geselecteerd"
@@ -3181,6 +3233,9 @@
       "Unable to upload file": [
         "Kan het bestand niet uploaden"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "Onverwachte fout, we kunnen de contacten niet importeren"
+      ],
       "Unknown error": [
         "Onbekende fout"
       ],
@@ -3204,6 +3259,9 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Verkeerde verificatiecode. Controleer of u de verificatiecode correct gekopieerd hebt en probeer het opnieuw. Het kan maximaal 24 uur duren voordat wijzigingen doorgevoerd zijn."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "U heeft de limiet van het aantal contacten bereikt voor dit account"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "U heeft alle adressen in uw abonnement gebruikt. Upgrade uw abonnement om een nieuw adres toe te voegen."
@@ -3813,6 +3871,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy standaard"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Stuur automatisch"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail-berichten door naar je postvak"
+      ],
+      "Sign in with Google": [
+        "Inloggen met Google"
       ]
     },
     "Go to sign in": {
@@ -5623,11 +5692,11 @@
       "User activated": [
         "Gebruiker geactiveerd"
       ],
-      "Username": [
-        "Gebruikersnaam"
-      ],
       "username": [
         "gebruikersnaam"
+      ],
+      "Username": [
+        "Gebruikersnaam"
       ],
       "Users": [
         "Gebruikers"
@@ -5920,6 +5989,10 @@
         "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
         "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd."
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of them.": [
+        "U heeft doorsturen ingeschakeld op ${ MAX_SYNC_PAID_USER } Gmailadres. Schakel deze eerst uit om een ander adres toe te voegen.",
+        "U heeft doorsturen ingeschakeld op ${ MAX_SYNC_PAID_USER } Gmailadressen. Schakel een van deze eerst uit om een ander adres toe te voegen."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Uw ${ boldDiscountPercent } naar ${ boldPlanTitle } is toegepast"
       ],
@@ -6179,11 +6252,11 @@
       "Allow recovery by phone": [
         "Herstellen via telefoon toestaan"
       ],
-      "Allowed domain": [
-        "Domein toegestaan"
-      ],
       "Allowed Domain": [
         "Toegestaan domein"
+      ],
+      "Allowed domain": [
+        "Domein toegestaan"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Laat iedereen in uw organisatie toe om naadloos koppelingen aan hun agenda-uitnodigingen toe te voegen."
@@ -6422,6 +6495,9 @@
       "IBAN": [
         "IBAN"
       ],
+      "Import all messages": [
+        "Alle berichten importeren"
+      ],
       "Integrated 2FA authenticator": [
         "Geïntegreerde tweestapsverificatie"
       ],
@@ -6436,6 +6512,15 @@
       ],
       "Key": [
         "Sleutel"
+      ],
+      "Last 12 months only": [
+        "Alleen afgelopen 12 maanden"
+      ],
+      "Last 3 months only": [
+        "Alleen de laatste 3 maanden"
+      ],
+      "Last month only": [
+        "Alleen vorige maand"
       ],
       "Last name": [
         "Achternaam"
@@ -7217,32 +7302,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Bekijk alle ${ BRAND_NAME }-abonnementen"
-      ],
-      "From ${ price }": [
-        "Vanaf ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Aan de slag voor ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Vanaf ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Upgraden naar ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -7264,6 +7323,20 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Bekijk alle ${ BRAND_NAME }-abonnementen"
+      ],
+      "From ${ price }": [
+        "Vanaf ${ price }"
+      ],
+      "Upgrade": [
+        "Upgraden"
       ]
     },
     "new_plans: feature": {
@@ -7362,26 +7435,11 @@
       "${ size } storage per user": [
         "${ size } opslagruimte per gebruiker"
       ],
-      "1 TB secure storage": [
-        "1 TB veilige opslag"
-      ],
       "1 user": [
         "1 gebruiker"
       ],
-      "10 email addresses/aliases": [
-        "10 e-mailadressen/aliassen"
-      ],
-      "10 more premium features": [
-        "10 meer premium functies"
-      ],
       "10-year file version history": [
         "10-jarige bestandsversiegeschiedenis"
-      ],
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "200 GB of storage": [
-        "200 GB opslagruimte"
       ],
       "24/7 account management support": [
         "24/7 ondersteuning voor accountbeheer"
@@ -7401,17 +7459,11 @@
       "Administration Panel": [
         "Beheerderspaneel"
       ],
-      "Advanced account protection": [
-        "Geavanceerde accountbeveiliging"
-      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Geavanceerde alias functies (mogelijk gemaakt door SimpleLogin)"
       ],
       "Advanced network security": [
         "Geavanceerde netwerkbeveiliging"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "Alle ${ BRAND_NAME } producten en functies"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle basisdiensten van ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -7424,9 +7476,6 @@
       ],
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
-      ],
-      "Auto-delete spam and trashed messages": [
-        "Automatisch spam en verwijderde berichten verwijderen"
       ],
       "Auto-reply": [
         "Automatisch beantwoorden"
@@ -7472,9 +7521,6 @@
       ],
       "Custom fields": [
         "Aangepaste velden"
-      ],
-      "Custom snooze time": [
-        "Aangepaste snoozetijd"
       ],
       "Custom workspace branding": [
         "Aangepaste workspace branding"
@@ -7532,9 +7578,6 @@
       ],
       "GDPR data processing agreement": [
         "AVG-gegevensverwerkingsovereenkomst"
-      ],
-      "Generate emails with a prompt": [
-        "Genereer e-mails met een prompt"
       ],
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
@@ -7597,15 +7640,6 @@
       "Priority support & live chat": [
         "Prioritaire ondersteuning en live chat"
       ],
-      "Private photo backup": [
-        "Privé foto back-up"
-      ],
-      "Proofread and refine your emails": [
-        "Controleer en verfijn uw e-mails"
-      ],
-      "Quickly craft replies": [
-        "Snel antwoorden opstellen"
-      ],
       "Recover previous file versions": [
         "Herstel vorige bestandsversies"
       ],
@@ -7618,23 +7652,11 @@
       "Router support": [
         "Routerondersteuning"
       ],
-      "Save time emailing": [
-        "Bespaar tijd op e-mailen"
-      ],
       "Schedule and snooze emails for any time": [
         "E-mails plannen en snoozen wanneer u wilt"
       ],
-      "Schedule messages at any time": [
-        "Plan berichten in op ieder moment"
-      ],
-      "Search message content": [
-        "Doorzoek berichtinhoud"
-      ],
       "Secure Core servers": [
         "Secure Core-servers"
-      ],
-      "Secure file storage and sharing": [
-        "Veilige bestandsopslag en delen"
       ],
       "Secure link sharing": [
         "Veilig delen van links"
@@ -7672,9 +7694,6 @@
       ],
       "Strict no-logs policy": [
         "Strikt geen-logboekbeleid"
-      ],
-      "Support for up to 2 users": [
-        "Ondersteuning voor maximaal 2 gebruikers"
       ],
       "Sync and backup all your files across devices": [
         "Synchroniseer en back-up al uw bestanden op alle apparaten"
@@ -7770,20 +7789,6 @@
       "${ users } user": [
         "${ users } gebruiker",
         "${ users } gebruikers"
-      ]
-    },
-    "new_plans: feature info": {
-      "1 custom email domain": [
-        "1 eigen e-maildomein"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Berichten snoozen en ontvangen wanneer u wil"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -7916,6 +7921,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Vanaf ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "De prijs van ${ priceCoupon } is alleen voor de eerste maand, hierna wordt uw abonnement automatisch verlengt voor ${ priceLine }. U kunt op ieder moment annuleren."
       ],
@@ -8457,6 +8465,17 @@
         "Welkom bij ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Iedereen"
+      ],
+      "Group members": [
+        "Groepsleden"
+      ],
+      "No one": [
+        "Niemand"
+      ]
+    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Toegestaan ${ defaultLabel }"
@@ -8526,17 +8545,6 @@
       ],
       "The whole organization": [
         "De hele organisatie"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Iedereen"
-      ],
-      "Group members": [
-        "Groepsleden"
-      ],
-      "No one": [
-        "Niemand"
       ]
     },
     "Organization capacity error": {
@@ -10776,6 +10784,9 @@
       "Billing details updated": [
         "Factuurgegevens bijgewerkt"
       ],
+      "Canceling import": [
+        "Importeren annuleren"
+      ],
       "Catch-all address updated": [
         "Catch-all adres bijgewerkt"
       ],
@@ -10811,6 +10822,9 @@
       ],
       "Gift code applied": [
         "Geschenkcode toegepast"
+      ],
+      "Import record deleted": [
+        "Import record verwijderd"
       ],
       "Invitation rejected": [
         "Uitnodiging afgewezen"
@@ -10871,6 +10885,9 @@
       ],
       "SPF value copied to clipboard": [
         "SPF-waarde gekopieerd naar klembord"
+      ],
+      "Undo in progress": [
+        "Bezig met ongedaan maken"
       ],
       "User updated": [
         "Gebruiker bijgewerkt"
@@ -11220,11 +11237,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-all address": [
-        "Catch-all adres"
-      ],
       "Catch-All address": [
         "Catch-All adres"
+      ],
+      "Catch-all address": [
+        "Catch-all adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"
@@ -11556,14 +11573,14 @@
       "Import emails, calendars, contacts": [
         "Importeer e-mails, agenda's, contacten"
       ],
-      "Increase your privacy with more addresses": [
-        "Verbeter uw privacy met meer adressen"
-      ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
       "Invoices": [
         "Facturen"
+      ],
+      "Limit reached": [
+        "Limiet bereikt"
       ],
       "Main password": [
         "Hoofdwachtwoord"
@@ -12258,8 +12275,8 @@
       "Recommended": [
         "Aanbevolen"
       ],
-      "Save ${ totals.discountPercentage }%": [
-        "Bespaar ${ totals.discountPercentage }%"
+      "Save ${ price.uiData.discountPercent }%": [
+        "Bespaar ${ price.uiData.discountPercent }%"
       ]
     },
     "User role": {
