@@ -140,7 +140,7 @@ export const NewsletterSubscriptionListHeader = () => {
     };
 
     return (
-        <div className="flex flex-nowrap justify-space-between mb-5">
+        <div className="flex flex-nowrap justify-space-between py-3 px-6 mb-4 sticky top-0 shadow-norm subscriptions-list-header">
             <div className="flex gap-4 items-center">
                 <h2 className="text-bold text-xl hidden sm:block">{c('Title').t`Mail subscriptions`}</h2>
                 <div>
