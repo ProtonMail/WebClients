@@ -15,6 +15,7 @@ import { LockProbeProvider } from '@proton/pass/components/Core/LockProbeProvide
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsProvider';
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
+import { ThemeOnboardingModal } from '@proton/pass/components/Layout/Theme/ThemeOnboardingModal';
 import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
 import type { OnReauthFn } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
@@ -32,8 +33,14 @@ import { FirstChild } from '@proton/pass/components/Utils/FirstChild';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { clientOffline } from '@proton/pass/lib/client';
+import { isBusinessPlan } from '@proton/pass/lib/organization/helpers';
 import { offlineResume } from '@proton/pass/store/actions';
-import { selectIsSSO, selectLockSetupRequired, selectRequestInFlight } from '@proton/pass/store/selectors';
+import {
+    selectIsSSO,
+    selectLockSetupRequired,
+    selectPassPlan,
+    selectRequestInFlight,
+} from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 import { APPS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
@@ -52,6 +59,8 @@ const Main: FC = () => {
     const offline = clientOffline(status);
     const offlineResuming = useSelector(selectRequestInFlight(offlineResume.requestID()));
     const isSSO = useSelector(selectIsSSO);
+    const plan = useSelector(selectPassPlan);
+    const isB2BUser = isBusinessPlan(plan);
 
     /** FIXME: update `useToggle` so callbacks are stable */
     const { state: expanded, set } = useToggle();
@@ -96,6 +105,7 @@ const Main: FC = () => {
                         <Header sidebarExpanded={expanded} sidebarToggle={toggle} />
                         <div className="flex items-center justify-center flex-nowrap w-full h-full">
                             <PrivateRouter />
+                            {!DESKTOP_BUILD && isB2BUser && <ThemeOnboardingModal />}
                             {isSSO && (
                                 <WithSpotlight type={SpotlightMessage.SSO_CHANGE_LOCK}>
                                     {(props) => <OnboardingSSO {...props} />}
