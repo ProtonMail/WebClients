@@ -36,11 +36,17 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
+      "A to Z": [
+        "Ад А да Я"
+      ],
       "Activate": [
         "Актываваць"
       ],
       "Activate recovery": [
         "Актываваць аднаўленне"
+      ],
+      "Active": [
+        "Актыўныя"
       ],
       "Add": [
         "Дадаць"
@@ -191,6 +197,9 @@
       ],
       "Change page": [
         "Змяніць старонку"
+      ],
+      "Change sorting": [
+        "Змяніць сартаванне"
       ],
       "Chat with us": [
         "Чат з намі"
@@ -495,6 +504,9 @@
       "Expand composer": [
         "Разгарнуць рэдактар"
       ],
+      "Expand navigation bar to see custom views": [
+        "Разгарнуць панэль навігацыі, каб убачыць карыстальніцкія выгляды"
+      ],
       "Expand navigation bar to see folders": [
         "Разгарнуць панэль навігацыі, каб убачыць папкі"
       ],
@@ -552,9 +564,6 @@
       "Generate text": [
         "Згенерыраваць тэкст"
       ],
-      "Get ${ BRAND_NAME } Duo": [
-        "Атрымаць ${ BRAND_NAME } Duo"
-      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Атрымаць ${ planName } за ${ priceCoupon }"
       ],
@@ -563,12 +572,6 @@
       ],
       "Get in touch": [
         "Звязацца з намі"
-      ],
-      "Get it": [
-        "Атрымаць"
-      ],
-      "Get it from only ${ addonPriceWithCurrency } /month": [
-        "Атрымайце яго ўсяго за ${ addonPriceWithCurrency }/месяц"
       ],
       "Get started": [
         "Пачаць працу"
@@ -744,6 +747,9 @@
       "Learn more": [
         "Даведацца больш"
       ],
+      "Least read": [
+        "Найменш чытанае"
+      ],
       "Let's talk": [
         "Звяжыцеся з намі"
       ],
@@ -861,6 +867,9 @@
       "More search options": [
         "Больш параметраў пошуку"
       ],
+      "Most read": [
+        "Найбольш чытанае"
+      ],
       "Move": [
         "Перамясціць"
       ],
@@ -878,6 +887,9 @@
       ],
       "Move to archive": [
         "Перамясціць у архіў"
+      ],
+      "Move to folder": [
+        "Перамясціць у папку"
       ],
       "Move to inbox": [
         "Перамясціць ва ўваходныя"
@@ -1014,6 +1026,9 @@
       "Read receipt sent": [
         "Апавяшчэнне аб прачытанні адпраўлена"
       ],
+      "Recently received": [
+        "Нядаўна атрыманыя"
+      ],
       "Reconnect": [
         "Перападключыцца"
       ],
@@ -1101,6 +1116,9 @@
       "Restore": [
         "Аднавіць"
       ],
+      "Resubscribe": [
+        "Аднавіць падпіску"
+      ],
       "Resume": [
         "Узнавіць"
       ],
@@ -1152,10 +1170,10 @@
       "Select ${ planTitle }": [
         "Выбраць ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Выбраць усе"
       ],
-      "Select all": [
+      "Select All": [
         "Выбраць усе"
       ],
       "Select all messages": [
@@ -1311,9 +1329,6 @@
       "Start setup": [
         "Пачаць наладжванне"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Пачатковы кошт ${ priceUnlimited }"
-      ],
       "Stay": [
         "Застацца"
       ],
@@ -1371,6 +1386,12 @@
       "Trust": [
         "Давяраць"
       ],
+      "Trust key": [
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
+      ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
       ],
@@ -1413,6 +1434,9 @@
       "Unsubscribe": [
         "Скасаваць падпіску"
       ],
+      "Unsubscribed": [
+        "Падпіска скасавана"
+      ],
       "Unsubscribing": [
         "Скасаванне падпіскі"
       ],
@@ -1436,9 +1460,6 @@
       ],
       "Upgrade Now": [
         "Палепшыць"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Палепшыць да ${ BRAND_NAME } Unlimited"
       ],
       "Upload and share files": [
         "Запампаваць і абагуліць файлы"
@@ -3743,9 +3764,6 @@
       "Also included": [
         "Таксама ўключана"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Аўтаматычнае выдаленне спама і паведамленняў, якія былі перамешчаны ў сметніцу, а таксама разблакіроўка яшчэ большай колькасці прэміяльных функцый пасля паляпшэння тарыфнага плана."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Аўтаматычна ачышчайце лісты, якія перамешчаны ў Сметніцу і Спам больш за 30 дзён таму."
       ],
@@ -3772,9 +3790,6 @@
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Выдаленне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
-      ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Распрацаваны для карыстальнікаў, якія шукаюць дадатковую абарону для сваіх уліковых запісаў."
       ],
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "Не хочаце адпраўляць ліст цяпер? Заплануйце яго адпраўку на падыходзячы час."
@@ -3809,9 +3824,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Атрымайце неабмежаваную колькасць псеўданімаў і сховішча аб'ёмам у 500 ГБ з тарыфным планам ${ PLAN_NAMES[PLANS.BUNDLE] }."
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Дапамажыце сваёй камандзе бяспечна захоўваць паролі да важных дзелавых і кліенцкіх звестак."
       ],
@@ -3839,9 +3851,6 @@
       "No labels": [
         "Няма метак"
       ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Ашчаджайце час, адпраўляючы электронныя лісты ўсім адначасова з групамі кантактаў. Разблакіруйце гэту і іншыя прэміяльныя функцыі пасля паляпшэння."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Размяжуйце асобныя аспекты свайго жыцця з дапамогай некалькіх адрасоў электроннай пошты і разблакіруйце больш прэміяльных функцый пасля паляпшэння."
       ],
@@ -3856,9 +3865,6 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Спрасціце сінхранізацыю і планаванне з дапамогай абагуленых календароў."
-      ],
-      "Starting from ${ price }": [
-        "Пачатковы кошт ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Дадайце памочніка ў апісанні ў сваю падпіску, каб працягнуць карыстацца ім."
@@ -3881,26 +3887,8 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Уключыце абарону ад праграм сачэння электроннай пошты, каб прадухіліць рэкламу і іншыя спосабы вызначэння вашага месцазнаходжання і актыўнасці ў інтэрнэце."
       ],
-      "Unlock custom message scheduling and more premium features when you upgrade.": [
-        "Разблакіруйце магчымасць ствараць карыстальніцкі расклад адпраўкі паведамленняў і іншыя прэміяльныя функцыі пасля паляпшэння свайго тарыфнага плана."
-      ],
-      "Unlock custom snooze times and more premium features when you upgrade.": [
-        "Разблакіруйце карыстальніцкі час адкладання і іншыя прэміяльныя функцыі пасля паляпшэння свайго тарыфнага плана."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Палепшыце бягучы тарыфны план і атрымайце кароткі адрас электроннай пошты разам з іншымі прэміяльнымі функцыямі."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Разблакіруйце неабмежаваную колькасць фільтраў, якія дапамогуць сартаваць вашу паштовую скрыню і іншыя прэміяльныя функцыі пасля паляпшэння."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Разблакіруйце неабмежаваную колькасць папак, метак і іншыя прэміяльныя функцыі пасля паляпшэння."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Абнавіце падпіску, каб атрымаць больш кароткі і запамінальны адрас электроннай пошты ${ activatePmUser } у дадатак да вашага бягучага."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Палепшыце свой уліковы запіс, каб актываваць ${ PROTON_SENTINEL_NAME }, наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту з падтрымкай ад экспертаў 24/7."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "Выкарыстоўвайце ${ MAIL_APP_NAME } для ўваходу ў разнастайныя сеткавыя сэрвісы. У адрозненне ад іншых пастаўшчыкоў электроннай пошты, мы ніколі не будзем адсочваць вашы даныя і перадаваць іх трэцім асобам."
@@ -6023,8 +6011,17 @@
       "Import from ${ provider }": [
         "Імпартаваць з ${ provider }"
       ],
-      "Other": [
-        "Іншы"
+      "Import from Google": [
+        "Імпартаваць з Google"
+      ],
+      "Import from other": [
+        "Імпартаваць з іншых паштовых сэрвісаў"
+      ],
+      "Import from Outlook": [
+        "Імпартаваць з Outlook"
+      ],
+      "Import from Yahoo": [
+        "Імпартаваць з Yahoo"
       ]
     },
     "Import warning": {
@@ -6056,6 +6053,15 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, архівацыя або перамяшчэнне старых лістоў у папку."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } падпісак, якія больш не з'яўляюцца для вас актуальнымі."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } ад іх адным націскам мышы."
       ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "${ BRAND_NAME } Scribe дапаможа вам хутка і лёгка ствараць лепшыя электронныя лісты."
@@ -6213,18 +6219,6 @@
         "${ n } непрачытаных размоў",
         "${ n } непрачытаных размоў"
       ],
-      "${ numberOfImageTrackers } email tracker blocked": [
-        "Заблакіравана ${ numberOfImageTrackers } праграма сачэння электроннай пошты",
-        "Заблакіраваны ${ numberOfImageTrackers } праграмы сачэння электроннай пошты",
-        "Заблакіраваны ${ numberOfImageTrackers } праграм сачэння электроннай пошты",
-        "Заблакіраваны ${ numberOfImageTrackers } праграм сачэння электроннай пошты"
-      ],
-      "${ numberOfImageTrackers } tracker blocked": [
-        "Заблакіравана ${ numberOfImageTrackers } праграма сачэння",
-        "Заблакіраваны ${ numberOfImageTrackers } праграмы сачэння",
-        "Заблакіраваны ${ numberOfImageTrackers } праграм сачэння",
-        "Заблакіраваны ${ numberOfImageTrackers } праграм сачэння"
-      ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } спасылка ачышчана",
         "${ numberOfUTMTrackers } спасылкі ачышчаны",
@@ -6312,6 +6306,18 @@
       "${ storage } storage": [
         "${ storage } сховішча"
       ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "${ subscription.ReceivedMessageCount } ліст у мінулым месяцы",
+        "${ subscription.ReceivedMessageCount } лісты ў мінулым месяцы",
+        "${ subscription.ReceivedMessageCount } лістоў у мінулым месяцы",
+        "${ subscription.ReceivedMessageCount } лістоў у мінулым месяцы"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } непрачытанае",
+        "${ subscription.UnreadMessageCount } непрачытаныя",
+        "${ subscription.UnreadMessageCount } непрачытаных",
+        "${ subscription.UnreadMessageCount } непрачытаных"
+      ],
       "${ total } conversation": [
         "${ total } размова",
         "${ total } размовы",
@@ -6323,6 +6329,18 @@
         "${ total } паведамленні",
         "${ total } паведамленняў",
         "${ total } паведамленні"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "Заблакіравана ${ trackersCount } праграма сачэння электроннай пошты",
+        "Заблакіраваны ${ trackersCount } праграмы сачэння электроннай пошты",
+        "Заблакіраваны ${ trackersCount } праграм сачэння электроннай пошты",
+        "Заблакіраваны ${ trackersCount } праграм сачэння электроннай пошты"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "Заблакіравана ${ trackersCount } праграма сачэння",
+        "Заблакіраваны ${ trackersCount } праграмы сачэння",
+        "Заблакіраваны ${ trackersCount } праграм сачэння",
+        "Заблакіраваны ${ trackersCount } праграм сачэння"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } запланаванае паведамленне",
@@ -6456,6 +6474,15 @@
         "Усе (${ totalFoldersCount } метак)",
         "Усе (${ totalFoldersCount } меткі)"
       ],
+      "All messages from this mailing list will be marked as read.": [
+        "Усе паведамленні з гэтага спіса рассылкі будуць пазначаны як прачытаныя."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Усе паведамленні з гэтага спіса рассылкі будуць перамешчаны ў архіў."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Усе паведамленні са спіса рассылкі будуць перамешчаны ў сметніцу"
+      ],
       "All messages stored in this folder will be permanently deleted.": [
         "Усе паведамленні, якія захоўваюцца ў гэтай папцы будуць незваротна выдалены."
       ],
@@ -6510,11 +6537,17 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Любыя падпапкі будуць выдалены таксама. Аднак лісты, якія захаваны ў папцы ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў папцы \"Уся пошта\"."
       ],
+      "Apply to future messages ": [
+        "Ужыць да будучых паведамленняў "
+      ],
       "Applying actions to conversations": [
         "Ужыць дзеянні да размоў"
       ],
       "Applying actions to messages": [
         "Ужыць дзеянні да паведамленняў"
+      ],
+      "Archive existing messages": [
+        "Архіваваць існуючыя паведамленні"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Вы сапраўды хочаце выдаліць усе паведамленні ў гэтай папцы?"
@@ -6606,11 +6639,17 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Палепшыце ідэнтычнасць вашай арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
       ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Перанясіце свае паведамленні, кантакты і календары ў ${ BRAND_NAME }."
+      ],
       "Browse privately and access blocked content.": [
         "Прыватны агляд і доступ да заблакіраванага змесціва."
       ],
       "Browser not supported": [
         "Браўзер не падтрымліваецца"
+      ],
+      "Bulk delete": [
+        "Масавае выдаленне"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні вы зноў пяройдзеце на яго."
@@ -6836,6 +6875,9 @@
       ],
       "Each code can only be used once": [
         "Кожны код можа выкарыстоўвацца толькі адзін раз"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Без намаганняў кіруйце і адпісвайцеся ад інфармацыйнай рассылкі, а таксама спіса рассылкі."
       ],
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
@@ -7102,10 +7144,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -7208,6 +7247,9 @@
       ],
       "Manage your labels": [
         "Кіруйце сваімі меткамі"
+      ],
+      "Mark all as read": [
+        "Пазначыць усе як прачытаныя"
       ],
       "Mastercard SecureCode logo": [
         "Лагатып Mastercard SecureCode"
@@ -7350,11 +7392,17 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як скампраметаваныя. Мы рэкамендуем вам не давяраць гэтым ключам."
       ],
+      "One time import": [
+        "Аднаразовае імпартаванне"
+      ],
       "Open shortcut cheat sheet": [
         "Адкрыць спіс спалучэнняў клавіш"
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Адкрыццё дапаможніка з рэкамендаванымі дзеяннямі і карыснымі спасылкамі."
+      ],
+      "Optional": [
+        "Неабавязкова"
       ],
       "or discover other features:": [
         "або пазнаёмцеся з іншымі функцыямі:"
@@ -7515,6 +7563,9 @@
       "Public sharing of documents is not yet supported.": [
         "Публічнае абагульванне дакументаў пакуль не падтрымліваецца."
       ],
+      "Quickly spot": [
+        "Хуткае выяўленне"
+      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Звяртайцеся да нас з любымі пытаннямі, якія датычацца ${ BRAND_NAME }"
       ],
@@ -7589,9 +7640,6 @@
       ],
       "Seems like you are all caught up for now": [
         "У вас пакуль няма лістоў"
-      ],
-      "Select a service provider to start": [
-        "Выберыце пастаўшчыка паслуг, каб пачаць"
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "Выберыце ўсе ${ elementsCount } у ${ location }",
@@ -8010,6 +8058,9 @@
       "Tracking": [
         "Адсочванне"
       ],
+      "Trash existing messages": [
+        "Перамясціць у сметніцу існуючыя паведамленні"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта прывядзе да перазапуску праграмы"
       ],
@@ -8033,6 +8084,9 @@
       ],
       "Unsaved changes": [
         "Незахаваныя змены"
+      ],
+      "Unsubscribe": [
+        "Адпісацца"
       ],
       "Unsupported file": [
         "Файл не падтрымліваецца"
@@ -8513,6 +8567,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Ваша падпіска будзе аўтаматычна падоўжана ${ renewalTime }."
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
       ]
     },
     "info": {
@@ -8800,6 +8857,12 @@
       " and ${ l }": [
         " і ${ l }"
       ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Пазначыць усе паведамленні як прачытаныя"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Перамясціць усе паведамленні ў ${ boldFolderName }"
+      ],
       "${ BRAND_NAME } username": [
         "Імя карыстальніка ${ BRAND_NAME }"
       ],
@@ -8823,6 +8886,9 @@
       ],
       "Actions": [
         "Дзеянні"
+      ],
+      "Active filter:": [
+        "Актыўны фільтр:"
       ],
       "Add email address": [
         "Дадаць адрас электроннай пошты"
@@ -8851,10 +8917,10 @@
       "Always move sender's emails": [
         "Заўсёды перамяшчаць лісты адпраўніка"
       ],
-      "AND": [
+      "And": [
         "І"
       ],
-      "And": [
+      "AND": [
         "І"
       ],
       "and": [
@@ -8871,6 +8937,9 @@
       ],
       "Apply filter to existing emails": [
         "Ужыць фільтр да існуючых лістоў"
+      ],
+      "Apply to future messages": [
+        "Ужыць да будучых паведамленняў"
       ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
@@ -9079,11 +9148,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "КАЛІ"
-      ],
       "If": [
         "Калі"
+      ],
+      "IF": [
+        "КАЛІ"
       ],
       "Import all messages": [
         "Імпартаваць усе паведамленні"
@@ -9136,6 +9205,9 @@
       "Mail Server (IMAP)": [
         "Паштовы сервер (IMAP)"
       ],
+      "Mail subscriptions": [
+        "Падпіскі пошты"
+      ],
       "Main": [
         "Галоўная"
       ],
@@ -9150,6 +9222,9 @@
       ],
       "Move ${ sidebarElementName }": [
         "Перамясціць ${ sidebarElementName }"
+      ],
+      "Move messages to": [
+        "Перамясціць паведамленні ў"
       ],
       "Move to": [
         "Перамясціць у"
@@ -9199,14 +9274,14 @@
       "Optional": [
         "Неабавязкова"
       ],
-      "OR": [
-        "АБО"
-      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
+      ],
+      "OR": [
+        "АБО"
       ],
       "Original link": [
         "Арыгінальная спасылка"
@@ -9318,6 +9393,9 @@
       ],
       "System information": [
         "Сістэмная інфармацыя"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Фільтр адключаны. Вы можаце ўключыць яго ў ${ settingsLink }."
       ],
       "Theme": [
         "Тэма"
@@ -9471,6 +9549,11 @@
         "Каму: ${ to }"
       ]
     },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Праглядайце і кіруйце інфармацыйнай рассылкай і падпіскамі спіса рассылкі ў гэтым месцы."
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Бакавая панэль"
@@ -9549,6 +9632,9 @@
       ],
       "Folders": [
         "Папкі"
+      ],
+      "here": [
+        "тут"
       ],
       "How to add users": [
         "Як дадаць карыстальнікаў"
@@ -9687,6 +9773,9 @@
       ],
       "Types of recovery methods": [
         "Тыпы спосабаў аднаўлення"
+      ],
+      "Views": [
+        "Прагляды"
       ],
       "What’s this?": [
         "Што гэта?"
@@ -10100,29 +10189,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Атрымаць тарыфны план ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Пачніце за ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Пачатковы кошт ${ pricing }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
-      "Upgrade to ${ planName }": [
-        "Палепшыць да ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -10144,6 +10210,14 @@
       ],
       "Switch plan": [
         "Змяніць тарыфны план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Атрымаць тарыфны план ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -10330,9 +10404,6 @@
       "Auto-delete Spam and Trash": [
         "Аўтаматычнае выдаленне спаму і смецця"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Аўтаматычна выдаляць паведамленні ў спаме і сметніцы"
-      ],
       "Auto-reply": [
         "Аўтаматычны адказ"
       ],
@@ -10374,9 +10445,6 @@
       ],
       "Custom fields": [
         "Карыстальніцкія палі"
-      ],
-      "Custom snooze time": [
-        "Карыстальніцкі час адкладання"
       ],
       "Custom workspace branding": [
         "Брэндзіраванне карыстальніцкай працоўнай прасторы"
@@ -10518,12 +10586,6 @@
       ],
       "Schedule and snooze emails for any time": [
         "Планаванне і адкладанне лістоў у любы час"
-      ],
-      "Schedule messages at any time": [
-        "Заплануйце адпраўку паведамленняў у любы час"
-      ],
-      "Search message content": [
-        "Пошук змесціва паведамлення"
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
@@ -10673,9 +10735,6 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Стварайце некалькі розных адрасоў электроннай пошты для сваіх пасведчанняў у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain2 } для падпіскі на навіны"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Адкладайце паведамленні і атрымлівайце напаміны, калі вам гэта неабходна"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
       ]
@@ -10778,6 +10837,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Пачатковы кошт ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Зніжаны кошт у памеры ${ priceCoupon } дзейнічае на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceLine }. Скасаваць можна ў любы момант."
       ],
@@ -13921,9 +13983,6 @@
       "Action all messages": [
         "Прымяніць да ўсіх паведамленняў"
       ],
-      "Activate @pm.me": [
-        "Актываваць @pm.me"
-      ],
       "Add a custom logo": [
         "Дадаць карыстальніцкі лагатып"
       ],
@@ -13965,6 +14024,9 @@
       ],
       "Archive": [
         "Архіў"
+      ],
+      "Archive all messages?": [
+        "Архіваваць усе паведамленні?"
       ],
       "Are you sure you want to close the preview?": [
         "Вы сапраўды хочаце закрыць папярэдні прагляд?"
@@ -14022,9 +14084,6 @@
       ],
       "Change password": [
         "Змяніць пароль"
-      ],
-      "Clear out the junk": [
-        "Ачысціць непажаданую пошту"
       ],
       "Clearing data": [
         "Ачыстка даных"
@@ -14260,9 +14319,6 @@
       "Forward": [
         "Пераслаць"
       ],
-      "Get advanced protection": [
-        "Атрыманне дадатковай абароны"
-      ],
       "Get more from your VPN": [
         "Атрымайце больш ад свайго VPN"
       ],
@@ -14338,9 +14394,6 @@
       "Invalid verification code": [
         "Памылковы праверачны код"
       ],
-      "Keep your inbox organized": [
-        "Захаванне парадку ў вашай паштовай скрыні"
-      ],
       "Label as": [
         "Пазначыць як"
       ],
@@ -14356,8 +14409,17 @@
       "Load remote content": [
         "Загрузіць аддаленае змесціва"
       ],
+      "Mail Subscriptions": [
+        "Падпіскі пошты"
+      ],
+      "Mail subscriptions": [
+        "Падпіскі пошты"
+      ],
       "Make a secure connection your default": [
         "Зрабіце бяспечнае падключэнне сваім прадвызначаным"
+      ],
+      "Mark all messages as read": [
+        "Пазначыць усе паведамленні як прачытаныя"
       ],
       "Mark as read": [
         "Пазначыць як прачытанае"
@@ -14473,6 +14535,9 @@
       "No breaches detected": [
         "Уцечкі не выяўлены"
       ],
+      "No mail subscriptions": [
+        "Няма паштовых падпісак"
+      ],
       "No need to empty the trash": [
         "Няма неабходнасці ачышчаць сметніцу"
       ],
@@ -14584,9 +14649,6 @@
       "Same inbox, shorter email address": [
         "Тая ж паштовая скрыня, карацейшы адрас электроннай пошты"
       ],
-      "Save time with email filters": [
-        "Эканомія часу з паштовымі фільтрамі"
-      ],
       "Schedule now, send later": [
         "Заплануйце цяпер, а адпраўце пазней"
       ],
@@ -14659,9 +14721,6 @@
       "Set up your organization": [
         "Наладзьце сваю арганізацыю"
       ],
-      "Set your own schedule": [
-        "Прызначыць свой уласны расклад"
-      ],
       "Settings": [
         "Налады"
       ],
@@ -14722,6 +14781,9 @@
       "Trash": [
         "Сметніца"
       ],
+      "Trash all messages?": [
+        "Перамясціць у сметніцу ўсе паведамленні?"
+      ],
       "Trust new key?": [
         "Давяраць новаму ключу?",
         "Давяраць новым ключам?",
@@ -14737,11 +14799,11 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Уключэнне ${ DARK_WEB_MONITORING_NAME }"
       ],
-      "Unlock contacts groups": [
-        "Разблакіраваць групы кантактаў"
-      ],
       "Unsubscribe": [
         "Скасаваць падпіску"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Скасаваць падпіску на ${ subscription.Name }?"
       ],
       "Unsubscribe request sent": [
         "Запыт на скасаванне падпіскі адпраўлены"
@@ -14769,9 +14831,6 @@
       ],
       "VPN explained": [
         "Тлумачэнне VPN"
-      ],
-      "Want to snooze any time?": [
-        "Хочаце адкладаць у любы час?"
       ],
       "Warning": [
         "Папярэджанне"
@@ -14826,6 +14885,9 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "Your subscriptions in one place": [
+        "Вашы падпіскі ў адным месцы"
       ]
     },
     "Today icon tooltip in mini calendar": {

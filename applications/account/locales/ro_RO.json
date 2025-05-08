@@ -289,6 +289,9 @@
       "Connect to video conferencing": [
         "Conectați-vă la conferințe video"
       ],
+      "Connect your Gmail address": [
+        "Conectați-vă adresa de Gmail"
+      ],
       "Connected": [
         "Conectat"
       ],
@@ -688,6 +691,9 @@
       "Get the deal": [
         "Obțineți oferta"
       ],
+      "Get the writing assistant": [
+        "Luați asistentul de scriere"
+      ],
       "Get verification code": [
         "Obținere cod de verificare"
       ],
@@ -775,10 +781,10 @@
       "Keep": [
         "Păstrare"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Continuare editare"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Continuare editare"
       ],
       "Keep logo": [
@@ -1138,11 +1144,11 @@
       "Select country ${ country }": [
         "Selectare țara ${ country }"
       ],
-      "select file": [
-        "selectați fișierul"
-      ],
       "Select file": [
         "Selectare fișier"
+      ],
+      "select file": [
+        "selectați fișierul"
       ],
       "Select files": [
         "Selectare fișiere"
@@ -1200,6 +1206,9 @@
       ],
       "Set up a custom domain": [
         "Configurați un domeniu personal"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Setați redirecționarea automată din Gmail"
       ],
       "Set up email forwarding": [
         "Setare redirecționare mesaje"
@@ -1356,9 +1365,6 @@
       ],
       "Upgrade now": [
         "Modificare"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Treceți la ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "Trecere la Business"
@@ -3873,9 +3879,6 @@
       "Also included": [
         "De asemenea, inclus"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Ștergeți automat mesajele nedorite și din gunoi și deblocați mai multe funcții premium trecând la un tip de plan cu plată."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Ștergeți automat mesajele mutate în folderul «Gunoi» și «Nedorite» în urmă cu mai bine de 30 de zile."
       ],
@@ -3978,9 +3981,6 @@
       "Send a code to your recovery email or phone": [
         "Trimitere cod de recuperare pe adresa de e-mail sau numărul de telefon"
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Modernizați-vă contul pentru a vă separa diferitele aspecte ale vieții personale cu mai multe adrese de e-mail și a debloca mai multe funcții premium."
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Configurați conturi pentru toți utilizatorii și invitați-i să se alăture la ${ BRAND_NAME }."
       ],
@@ -3996,23 +3996,11 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pentru a vă importa contactele din Google sau Outlook, ${ easySwitchLink }."
       ],
-      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "Pentru a elimina subsolul mesajelor din ${ MAIL_APP_NAME }, modernizați contul și deblocați și mai multe funcții premium."
-      ],
       "To start, give your organization a name.": [
         "Pentru a începe, dați un nume organizației."
       ],
       "Track the status and activity of your referrals.": [
         "Urmăriți starea și activitatea celor recomandați."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Deblocați adrese de e-mail mai scurte și alte funcții premium modificându-vă contul."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Deblocați filtre nelimitate care vă sortează mesajele și alte funcții premium dacă modernizați contul."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Deblocați foldere și etichete nelimitate și multe alte funcții premium când modernizați contul."
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Treceți la alt plan pentru a obține adresa ${ activatePmUser } mai scurtă și ușor de reținut pe lângă cea actuală."
@@ -6556,45 +6544,6 @@
       ],
       "${ appName } on Play Store": [
         "${ appName } din Magazin Play"
-      ],
-      "${ MAIL_APP_NAME } app": [
-        "aplicația ${ MAIL_APP_NAME }"
-      ],
-      "account logins": [
-        "autentificarea în cont"
-      ],
-      "Auto-forward Gmail": [
-        "Redirecționare automată din Gmail"
-      ],
-      "auto-forwarding": [
-        "redirecționarea automată"
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Schimbați ${ strongText } cu adresa personală ${ BRAND_NAME }"
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Descoperiți cum ${ strongText } vă protejează"
-      ],
-      "Discover privacy features": [
-        "Descoperiți funcțiile de confidențialitate"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Luați ${ strongText } pentru Android sau iOS"
-      ],
-      "Get the App": [
-        "Luați aplicația"
-      ],
-      "privacy features": [
-        "funcțiile de confidențialitate"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Setați ${ strongText } de la Gmail"
-      ],
-      "This feature is currently unavailable": [
-        "Această funcție momentan nu este disponibilă."
-      ],
-      "Update your logins": [
-        "Actualizați-vă autentificarea"
       ]
     },
     "Gmail forwarding": {
@@ -7222,8 +7171,17 @@
       "Import from ${ provider }": [
         "Importare din ${ provider }"
       ],
-      "Other": [
-        "Altele"
+      "Import from Google": [
+        "Importare din Google"
+      ],
+      "Import from other": [
+        "Importare din altă sursă"
+      ],
+      "Import from Outlook": [
+        "Importare din Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importare din Yahoo"
       ]
     },
     "Import rollback status": {
@@ -7914,6 +7872,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Îmbunătățiți-vă identitatea de brand a organizației proprii și creați o experiență online mai consistentă pentru utilizatorii acesteia."
       ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Importați-vă mesajele, contactele și calendarele în ${ BRAND_NAME }."
+      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Prin crearea unui cont ${ PASS_APP_NAME } cu adresa de e-mail SimpleLogin, vă puteți gestiona aliasurile direct din ${ PASS_APP_NAME }."
       ],
@@ -8586,9 +8547,6 @@
       "Import mailbox": [
         "Importare mesaje"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importați mesajele, calendarele și contactele de la un alt serviciu la ${ BRAND_NAME }."
-      ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "IMPORTANT: dacă în consola DNS nu se permite câmpurilor CNAME să se termine cu un punct, puteți elimina ultimul punct din valorile CNAME."
       ],
@@ -8993,6 +8951,9 @@
       "One account. All ${ BRAND_NAME } services.": [
         "Un cont. Toate serviciile ${ BRAND_NAME }."
       ],
+      "One time import": [
+        "Importare unică"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Modificați aceste setări numai dacă utilizați PGP cu destinatari care nu sunt utilizatori ai ${ BRAND_NAME }."
       ],
@@ -9347,9 +9308,6 @@
       "Securing your account": [
         "Securizare cont"
       ],
-      "Select a service provider to start": [
-        "Selectați un furnizor de servicii pentru a începe"
-      ],
       "Select a service to continue": [
         "Selectați un serviciu pentru a continua"
       ],
@@ -9403,6 +9361,9 @@
       ],
       "Set recovery phrase": [
         "Setare frază de recuperare"
+      ],
+      "Set up forwarding": [
+        "Setare redirecționare"
       ],
       "Set up your organization": [
         "Setați organizația"
@@ -9989,11 +9950,11 @@
       "User activated": [
         "Utilizator activat"
       ],
-      "Username": [
-        "Nume de utilizator"
-      ],
       "username": [
         "utilizator"
+      ],
+      "Username": [
+        "Nume de utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -10437,6 +10398,11 @@
         "Plata va fi apoi la ${ renewCycle } lună cu ${ renewAmountStr }.",
         "Plata va fi apoi la ${ renewCycle } luni cu ${ renewAmountStr }.",
         "Plata va fi apoi la ${ renewCycle } de luni cu ${ renewAmountStr }."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of them.": [
+        "Ați activat redirecționarea pentru ${ MAX_SYNC_PAID_USER } adresă de Gmail. Pentru a adăuga alta, mai întâi dezactivați una.",
+        "Ați activat redirecționarea pentru ${ MAX_SYNC_PAID_USER } adrese de Gmail. Pentru a adăuga alta, mai întâi dezactivați una.",
+        "Ați activat redirecționarea pentru ${ MAX_SYNC_PAID_USER } de adrese de Gmail. Pentru a adăuga alta, mai întâi dezactivați una."
       ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Reducerea de ${ boldDiscountPercent } pentru ${ boldPlanTitle } a fost aplicată."
@@ -11184,10 +11150,10 @@
       "Allow sharing outside the organization": [
         "Permitere partajare în afara organizației"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domeniu permis"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domeniu permis"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11199,11 +11165,11 @@
       "Amount due": [
         "Suma datorată"
       ],
-      "AND": [
-        "ȘI"
-      ],
       "And": [
         "Şi"
+      ],
+      "AND": [
+        "ȘI"
       ],
       "and": [
         "și"
@@ -11631,11 +11597,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "DACĂ"
-      ],
       "If": [
         "Dacă"
+      ],
+      "IF": [
+        "DACĂ"
       ],
       "Import all messages": [
         "Importare toate mesajele"
@@ -11844,14 +11810,14 @@
       "Optional": [
         "Opțional"
       ],
-      "OR": [
-        "SAU"
-      ],
       "or": [
         "sau"
       ],
       "Or": [
         "Sau"
+      ],
+      "OR": [
+        "SAU"
       ],
       "Organization name": [
         "Nume organizație"
@@ -12542,11 +12508,11 @@
       "perform a password reset from your active session": [
         "efectuați o resetare a parolei din sesiunea activă"
       ],
-      "privacy policy": [
-        "politica de confidențialitate"
-      ],
       "Privacy policy": [
         "Politica de confidențialitate"
+      ],
+      "privacy policy": [
+        "politica de confidențialitate"
       ],
       "Reactivate now": [
         "Reactivare"
@@ -13197,20 +13163,8 @@
       "From ${ price }": [
         "De la ${ price }"
       ],
-      "Get started for ${ priceCoupon }": [
-        "Începeți cu ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Începând de la ${ pricing }"
-      ],
       "Upgrade": [
         "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ],
-      "Upgrade to ${ planName }": [
-        "Trecere la ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13392,9 +13346,6 @@
       "Auto-delete Spam and Trash": [
         "Ștergere automată mesaje nedorite și din gunoi"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Ștergere automată mesaje nedorite și din gunoi"
-      ],
       "Auto-reply": [
         "Răspuns automat"
       ],
@@ -13439,9 +13390,6 @@
       ],
       "Custom fields": [
         "Câmpuri personalizate"
-      ],
-      "Custom snooze time": [
-        "Timp amânare personal"
       ],
       "Custom workspace branding": [
         "Personalizare logo spațiu de lucru"
@@ -13594,12 +13542,6 @@
       ],
       "Schedule and snooze emails for any time": [
         "Programați și amânați mesaje pentru orice moment"
-      ],
-      "Schedule messages at any time": [
-        "Programați mesajele oricând"
-      ],
-      "Search message content": [
-        "Căutare în conținut mesaj"
       ],
       "Secure Core servers": [
         "Servere Secure Core"
@@ -13759,9 +13701,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Creați adrese de e-mail multiple pentru identitățile personale online, de ex. ionvanzari@${ domain } pentru conturile de cumpărături, ionstiri@${ domain2 } pentru abonamentul la știri."
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Amânați mesajele și fiți notificat când doriți."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
@@ -13942,11 +13881,22 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Începând de la ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Prețul cu reducere de ${ priceCoupon } este valabil pentru prima lună. Apoi se va efectua reînnoirea automată cu ${ priceLine }. Puteți anula oricând."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Deblocați toate produsele și funcțiile premium din ${ BRAND_NAME } cu doar ${ priceLine }. Anulați oricând."
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
       ]
     },
     "new_plans: title": {
@@ -13967,14 +13917,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -14622,6 +14564,17 @@
         "Desktop"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Tuturor"
+      ],
+      "Group members": [
+        "Membrii grup"
+      ],
+      "No one": [
+        "Nimeni"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "Ziua 10 a lunii"
@@ -14877,17 +14830,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Tuturor"
-      ],
-      "Group members": [
-        "Membrii grup"
-      ],
-      "No one": [
-        "Nimeni"
       ]
     },
     "Option delay send seconds": {
@@ -16933,9 +16875,6 @@
       ]
     },
     "Settings description": {
-      "Complete the transition to privacy with our secure importing and forwarding tools.": [
-        "Completați tranziția la confidențialitate cu ajutorul uneltelor de importare și redirecționare sigure."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Păstrați-vă mesajele organizate cu foldere și etichete. ${ learnMoreLink }"
       ]
@@ -18861,9 +18800,6 @@
       "Actions": [
         "Acțiuni"
       ],
-      "Activate @pm.me": [
-        "Activare @pm.me"
-      ],
       "Activate organization key": [
         "Activare chei organizație"
       ],
@@ -19022,10 +18958,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -19060,9 +18996,6 @@
       ],
       "Clear": [
         "Golire"
-      ],
-      "Clear out the junk": [
-        "Eliminare mesaje din gunoi"
       ],
       "Click a value in the table to use it as filter": [
         "Faceți clic pe o valoare din tabel pentru a o folosi ca filtru"
@@ -19600,17 +19533,11 @@
       "Import key": [
         "Importare cheie"
       ],
-      "Import messages": [
-        "Importare mesaje"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importare prin ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Inactive 2FA": [
         "A2F inactive"
-      ],
-      "Increase your privacy with more addresses": [
-        "Măriți-vă intimitatea cu adrese mai multe"
       ],
       "Information exposed in breach": [
         "Informații expuse în divulgare"
@@ -19632,9 +19559,6 @@
       ],
       "Items owned": [
         "Articole deținute"
-      ],
-      "Keep your inbox organized": [
-        "Păstrați-vă mesajele organizate"
       ],
       "Keyboard shortcuts": [
         "Combinații de taste"
@@ -19659,6 +19583,9 @@
       ],
       "Leave group?": [
         "Părăsiți grupul?"
+      ],
+      "Limit reached": [
+        "Limită atinsă"
       ],
       "Link confirmation": [
         "legătură web de confirmare"
@@ -19783,9 +19710,6 @@
       "PayPal verification failed": [
         "Verificarea PayPal a eșuat"
       ],
-      "Personalize your e-mail footer": [
-        "Personalizați-vă subsolul mesajelor"
-      ],
       "Personalize your email footer": [
         "Personalizați-vă subsolul mesajelor"
       ],
@@ -19906,9 +19830,6 @@
       "SAML authentication": [
         "Autentificare SAML"
       ],
-      "Save time with email filters": [
-        "Salvați timp cu filtrele de e-mail"
-      ],
       "Schedule meetings in one click": [
         "Programare întâlniri cu un singur clic"
       ],
@@ -19977,9 +19898,6 @@
       ],
       "Set up email forwarding": [
         "Setare redirecționare mesaje"
-      ],
-      "Set up forwarding": [
-        "Setare redirecționare"
       ],
       "Set up two-factor authentication": [
         "Setare autentificare cu doi factori"
@@ -20919,8 +20837,8 @@
       "Recommended": [
         "Recomandat"
       ],
-      "Save ${ totals.discountPercentage }%": [
-        "Economisiți ${ totals.discountPercentage }%"
+      "Save ${ price.uiData.discountPercent }%": [
+        "Economisiți ${ price.uiData.discountPercent }%"
       ]
     },
     "User referee invited via email": {

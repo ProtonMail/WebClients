@@ -3303,9 +3303,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Kter seg ${ provider }"
-      ],
-      "Other": [
-        "Ayen-nniḍen"
       ]
     },
     "Import warning": {
@@ -3835,9 +3832,6 @@
       ],
       "Removed participants will be notified.": [
         "Imettekkiyen yettwakksen ad ttwalɣun."
-      ],
-      "Select a service provider to start": [
-        "Fren asaǧǧăw n umeẓlu i wakken ad tebduḍ"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Fren amasal n yimayl i tebɣiḍ ad yettwaseqdec d amezwer mi ara tazneḍ imayl ɣer tansa-a imayl."
@@ -4975,17 +4969,6 @@
         "Arured alemmas VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -5004,6 +4987,11 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -5141,12 +5129,6 @@
       ],
       "Router support": [
         "Tallalt n umeglay"
-      ],
-      "Schedule messages at any time": [
-        "Sɣawes akud n tuzna n yizen melmi i tebɣiḍ"
-      ],
-      "Search message content": [
-        "Agbur n yizen n unadi"
       ],
       "Secure Core servers": [
         "Iqeddacen n Secure Core"
@@ -6780,9 +6762,6 @@
       ],
       "Summary": [
         "Agzul"
-      ],
-      "Unlock contacts groups": [
-        "Kkes asekkeṛ i yigrawen n yinermisen"
       ],
       "Update event": [
         "Leqqem tadyant"

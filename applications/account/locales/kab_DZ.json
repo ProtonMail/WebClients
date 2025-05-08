@@ -818,11 +818,11 @@
       "Select country": [
         "Fren tamurt"
       ],
-      "select file": [
-        "fren afaylu"
-      ],
       "Select file": [
         "Fren afaylu"
+      ],
+      "select file": [
+        "fren afaylu"
       ],
       "Select files": [
         "Fren ifuyla"
@@ -4187,44 +4187,6 @@
         "Wezzil aṭas"
       ]
     },
-    "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "asnas ${ MAIL_APP_NAME }"
-      ],
-      "account logins": [
-        "inekcam n umiḍan"
-      ],
-      "Auto-forward Gmail": [
-        "Awelleh awurman seg Gmail"
-      ],
-      "auto-forwarding": [
-        "awelleh awurman"
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Beddel ${ strongText } ɣer tansa-k ${ BRAND_NAME }"
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Snirem amek ${ strongText }-nneɣ yemmestan-ik"
-      ],
-      "Discover privacy features": [
-        "Snirem timahilin n tbaḍnit"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Awi ${ strongText } ɣef Android neɣ iOS"
-      ],
-      "Get the App": [
-        "Awi asnas"
-      ],
-      "privacy features": [
-        "timahilin n tbaḍnit"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Sesteb ${ strongText } seg Gmail"
-      ],
-      "Update your logins": [
-        "Leqqem inekcam-ik"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Yettuwelleh s wudem awurman"
@@ -4633,9 +4595,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Kter seg ${ provider }"
-      ],
-      "Other": [
-        "Ayen-nniḍen"
       ]
     },
     "Import rollback status": {
@@ -5615,9 +5574,6 @@
       "Securing your account": [
         "Aseɣles n umiḍan-ik·im"
       ],
-      "Select a service provider to start": [
-        "Fren asaǧǧăw n umeẓlu i wakken ad tebduḍ"
-      ],
       "Select what you want to import.": [
         "Fren acu i tebɣiḍ ad t-tketreḍ."
       ],
@@ -6508,11 +6464,11 @@
       "Amount due": [
         "Tallayt ara txelseḍ"
       ],
-      "AND": [
-        "AKKED"
-      ],
       "And": [
         "Akked"
+      ],
+      "AND": [
+        "AKKED"
       ],
       "and": [
         "akked"
@@ -6841,11 +6797,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "MA"
-      ],
       "If": [
         "Ma"
+      ],
+      "IF": [
+        "MA"
       ],
       "Import all messages": [
         "Kter akk iznan"
@@ -6988,14 +6944,14 @@
       "Optional": [
         "Afrayan"
       ],
-      "OR": [
-        "NEƔ"
-      ],
       "or": [
         "neɣ"
       ],
       "Or": [
         "Neɣ"
+      ],
+      "OR": [
+        "NEƔ"
       ],
       "Organization name": [
         "Isem n tuddsa"
@@ -7875,9 +7831,6 @@
       ],
       "Upgrade": [
         "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
@@ -8025,12 +7978,6 @@
       "Router support": [
         "Tallalt n umeglay"
       ],
-      "Schedule messages at any time": [
-        "Sɣawes akud n tuzna n yizen melmi i tebɣiḍ"
-      ],
-      "Search message content": [
-        "Agbur n yizen n unadi"
-      ],
       "Secure Core servers": [
         "Iqeddacen n Secure Core"
       ],
@@ -8141,6 +8088,14 @@
         "Tferneḍ aɣawas-a: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Aneɛruḍ n ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Aseqdac-ik n umiḍan"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Kkes amiḍan?"
@@ -8150,14 +8105,6 @@
       ],
       "Switch plans?": [
         "Beddel iɣawasen?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Aneɛruḍ n ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Aseqdac-ik n umiḍan"
       ]
     },
     "new_plans: tooltip": {
@@ -9987,9 +9934,6 @@
       "Action": [
         "Tigawt"
       ],
-      "Activate @pm.me": [
-        "Rmed @pm.me"
-      ],
       "Activate organization key": [
         "Rmed tasarut n tuddsa"
       ],
@@ -10098,10 +10042,10 @@
       "Card verification": [
         "Takerḍa n usenqed"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
       "Change login password": [
@@ -10124,9 +10068,6 @@
       ],
       "Clear": [
         "Teṣfa"
-      ],
-      "Clear out the junk": [
-        "Sfeḍ iznan ur nemɛin"
       ],
       "Close": [
         "Mdel"
@@ -10458,9 +10399,6 @@
       "Import key": [
         "Kter tasarut"
       ],
-      "Import messages": [
-        "Kter iznan"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Kter s ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -10475,9 +10413,6 @@
       ],
       "IP": [
         "Tansa n IP"
-      ],
-      "Keep your inbox organized": [
-        "Eǧǧ tanaka n urmas tṣeggem"
       ],
       "Keyboard shortcuts": [
         "Inegzumen n unasiw"
@@ -10644,9 +10579,6 @@
       "Revoke certificate": [
         "Ḥwi aselkin"
       ],
-      "Save time with email filters": [
-        "Sekles akud s yimsizedgen n yimayl"
-      ],
       "Secure email based in Switzerland": [
         "Imayl aɣelsan yellan di Swis"
       ],
@@ -10688,9 +10620,6 @@
       ],
       "Set up a recovery method": [
         "Sbadu tarrayt n tririt"
-      ],
-      "Set up forwarding": [
-        "Sbadu awelleh"
       ],
       "Set up two-factor authentication": [
         "Sbadu asesteb s snat n tarrayin"

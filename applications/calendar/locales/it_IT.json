@@ -356,6 +356,9 @@
       "Get the apps": [
         "Ottieni le app"
       ],
+      "Get the writing assistant": [
+        "Ottieni l'assistente alla scrittura"
+      ],
       "Get verification code": [
         "Invia il codice di verifica"
       ],
@@ -749,9 +752,6 @@
       "Start setup": [
         "Avvia configurazione"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "A partire da ${ priceUnlimited }"
-      ],
       "Stay": [
         "Resta"
       ],
@@ -811,12 +811,6 @@
       ],
       "Upgrade Now": [
         "Effettua l'upgrade ora"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Passa a ${ BRAND_NAME } Unlimited"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Passa a ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upload and share files": [
         "Carica e condividi file"
@@ -2749,9 +2743,6 @@
       "Availability unknown": [
         "Disponibilità sconosciuta"
       ],
-      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
-        "Organizza al meglio la tua giornata, tieni traccia del tuo tempo e stabilisci la priorità delle attività. Colora il tuo calendario con colori personalizzati per gli eventi."
-      ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Codifica gli eventi con colori per semplificare l'organizzazione della giornata, tieni traccia del tempo e dai priorità alle attività."
       ],
@@ -2772,9 +2763,6 @@
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminando i contatti... Questo potrebbe richiedere qualche minuto. Quando il processo è completato, puoi chiudere questo modale."
-      ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Progettato per gli utenti che cercano una maggiore protezione per i propri account."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Accedi facilmente al tuo indirizzo email e calendario su computer e dispositivo mobile."
@@ -2803,9 +2791,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ricevi una notifica se la tua password o altri dati vengono resi pubblici da un servizio di terze parti."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ PLAN_NAMES[PLANS.BUNDLE] }."
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Aiuta il tuo team ad archiviare in modo sicuro le password relative a informazioni aziendali e dei clienti sensibili."
       ],
@@ -2820,9 +2805,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Unione dei contatti in corso... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Risparmia tempo inviando email a tutti contemporaneamente con i gruppi di contatti. Sblocca questa e altre funzionalità premium effettuando l'upgrade."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Imposta un metodo di recupero dei dati per evitare la perdita dei dati."
@@ -2850,9 +2832,6 @@
       ],
       "To start, give your organization a name.": [
         "Per iniziare, dai un nome alla tua organizzazione."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Effettua l'upgrade del tuo account per attivare ${ PROTON_SENTINEL_NAME }, la nostra soluzione di sicurezza all'avanguardia basata sull'intelligenza artificiale, con assistenza dedicata dai nostri esperti 24 ore su 24, 7 giorni su 7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Usa il Trascina e Rilascia per classificare la priorità di unione tra i contatti. Deseleziona i contatti che non vuoi unire."
@@ -4500,8 +4479,17 @@
       "Import from ${ provider }": [
         "Importa da ${ provider }"
       ],
-      "Other": [
-        "Altro"
+      "Import from Google": [
+        "Importa da Google"
+      ],
+      "Import from other": [
+        "Importa da altro"
+      ],
+      "Import from Outlook": [
+        "Importa da Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importa da Yahoo"
       ]
     },
     "Import warning": {
@@ -4773,6 +4761,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Rafforza l'identità della tua organizzazione e crea un'esperienza online più coerente per i tuoi utenti."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Importa i tuoi messaggi, contatti e calendari in ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
@@ -5202,6 +5193,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o più chiavi attendibili sono state contrassegnate come \"compromesse\" dal loro proprietario. Ti consigliamo di \"non considerare attendibili\" queste chiavi."
       ],
+      "One time import": [
+        "Importazione una tantum"
+      ],
       "Open shortcut cheat sheet": [
         "Apri le istruzioni per le scorciatoie"
       ],
@@ -5324,9 +5318,6 @@
       ],
       "Scan the QR code with your mobile device": [
         "Scansiona il codice QR con il tuo dispositivo mobile"
-      ],
-      "Select a service provider to start": [
-        "Seleziona un fornitore di servizi per iniziare"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleziona il formato email che desideri usare per impostazione predefinita quando invii un'email a questo indirizzo email."
@@ -7036,26 +7027,6 @@
         "Media velocità della VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Inizia per ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "A partire da ${ pricing }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Effettua l'upgrade a ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Elimina l'account"
@@ -7077,6 +7048,11 @@
       ],
       "Switch plan": [
         "Cambia piano"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7229,9 +7205,6 @@
       "Auto-delete Spam and Trash": [
         "Eliminazione automatica dello spam e dal cestino"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Cancella automaticamente i messaggi indesiderati e cestinati"
-      ],
       "Auto-reply": [
         "Risposta automatica"
       ],
@@ -7273,9 +7246,6 @@
       ],
       "Custom fields": [
         "Campi personalizzati"
-      ],
-      "Custom snooze time": [
-        "Periodo di posticipazione personalizzato"
       ],
       "Custom workspace branding": [
         "Branding personalizzato dello spazio di lavoro"
@@ -7416,12 +7386,6 @@
       "Schedule and snooze emails for any time": [
         "Pianifica e posticipa le email in qualsiasi momento"
       ],
-      "Schedule messages at any time": [
-        "Programma i messaggi per qualsiasi momento"
-      ],
-      "Search message content": [
-        "Cerca nel contenuto dei messaggi"
-      ],
       "Secure Core servers": [
         "Server Secure Core"
       ],
@@ -7558,9 +7522,6 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Crea più indirizzi email per le tue identità online, ad esempio LuigiShopping@${ domain } per gli account di shopping, LuigiNotizie@${ domain2 } per gli abbonamenti alle notizie."
       ],
-      "Snooze messages and get reminded when you want": [
-        "Posticipa i messaggi e ricevili quando vuoi"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
       ]
@@ -7663,11 +7624,19 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "A partire da ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Il prezzo scontato di ${ priceCoupon } è valido per il primo mese. Successivamente verrà rinnovato automaticamente a ${ priceLine }. Puoi annullare in qualsiasi momento."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: title": {
@@ -7682,11 +7651,6 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -10510,9 +10474,6 @@
       "Exporting contacts": [
         "Esportazione contatti"
       ],
-      "Get advanced protection": [
-        "Ottieni la protezione avanzata"
-      ],
       "Get more from your VPN": [
         "Ottieni di più dalla tua VPN"
       ],
@@ -10786,9 +10747,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Attiva ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "Unlock contacts groups": [
-        "Sblocca i gruppi di contatti"
       ],
       "Update event": [
         "Aggiorna evento"

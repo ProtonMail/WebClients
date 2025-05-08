@@ -458,11 +458,17 @@
       "Get the apps": [
         "Apps herunterladen"
       ],
+      "Get the writing assistant": [
+        "Hol dir den Schreibassistenten"
+      ],
       "Get verification code": [
         "Verifizierungscode anfordern"
       ],
       "Go back": [
         "Zurück"
+      ],
+      "Go back to album “${ albumName }“": [
+        "Zurück zum Album „${ albumName }“"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Zu ${ DRIVE_SHORT_APP_NAME } gehen"
@@ -956,9 +962,6 @@
       "Start recovering": [
         "Wiederherstellung starten"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Ab ${ priceUnlimited }"
-      ],
       "Stay": [
         "Nicht schließen"
       ],
@@ -979,6 +982,9 @@
       ],
       "Take a tour": [
         "Rundgang"
+      ],
+      "This album is empty": [
+        "Dieses Album ist leer"
       ],
       "Toggle Calendar app": [
         "Kalender-App umschalten"
@@ -1027,9 +1033,6 @@
       ],
       "Upgrade now": [
         "Jetzt upgraden"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Upgrade auf ${ BRAND_NAME } Unlimitiert"
       ],
       "Upload": [
         "Hochladen"
@@ -2630,9 +2633,6 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden gelöscht… Dies kann ein paar Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du dieses Dialogfenster schließen."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Entwickelt für Benutzer, die ihre Konten besser schützen möchten."
-      ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Greife einfach auf deine E-Mails und deinen Kalender auf dem Desktop und Mobilgerät zu."
       ],
@@ -2660,9 +2660,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Lass dich benachrichtigen, wenn dein Passwort oder andere Daten von einem Service eines Drittanbieters preisgegeben wurden."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Erhalte unbegrenzte Aliasse und 500 GB Speicherplatz mit ${ PLAN_NAMES[PLANS.BUNDLE] }"
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hilf deinem Team, Passwörter zu sensiblen Geschäfts- und Kundeninformationen sicher zu speichern."
       ],
@@ -2674,9 +2671,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden zusammengeführt… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Spare Zeit, indem du mit Kontaktgruppen E-Mails an alle auf einmal schickst. Schalte diese und andere Premium-Funktionen frei, wenn du ein Upgrade machst."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Lege eine Methode zur Datenwiederherstellung fest, um Datenverluste zu vermeiden."
@@ -2704,9 +2698,6 @@
       ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Upgrade auf ${ planName } um weiterhin Dateien mit Bearbeitungszugriff teilen zu können"
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Upgrade dein Konto und aktiviere ${ PROTON_SENTINEL_NAME }, unsere hochmoderne KI-gesteuerte Sicherheitslösung mit dediziertem 24/7-Experten-Support."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Durch Ziehen kannst du die Zusammenführungspriorität zwischen den Kontakten festlegen. Deaktiviere die Kontakte, die du nicht zusammenführen möchtest."
@@ -3069,6 +3060,9 @@
       ],
       "Failed to load the STL preview": [
         "Das Laden der STL-Vorschau ist fehlgeschlagen"
+      ],
+      "Failed to save some photos to your Drive": [
+        "Das Speichern einiger Fotos in deinem Drive ist fehlgeschlagen"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Datei „${ item.name }“ kann aufgrund des Fehlers „${ error }“ nicht hochgeladen werden."
@@ -4249,8 +4243,17 @@
       "Import from ${ provider }": [
         "Import von ${ provider }"
       ],
-      "Other": [
-        "Andere"
+      "Import from Google": [
+        "Von Google importieren"
+      ],
+      "Import from other": [
+        "Von anderen importieren"
+      ],
+      "Import from Outlook": [
+        "Von Outlook importieren"
+      ],
+      "Import from Yahoo": [
+        "Von Yahoo importieren"
       ]
     },
     "Import warning": {
@@ -4626,6 +4629,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Stärke die Markenidentität deines Unternehmens und schaffe ein konsistentes Online-Erlebnis für deine Benutzer."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Bringe deine Nachrichten, Kontakte und Kalender zu ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Durch den Wechsel auf das kostenlose Abonnement verlierst du diese Leistungen dauerhaft, auch wenn du in Zukunft wieder auf ein kostenpflichtiges Abonnement umsteigst."
@@ -5233,6 +5239,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Einer oder mehrere deiner vertrauenswürdigen Schlüssel wurden durch dessen Besitzer als „kompromittiert“ gemeldet. Wir empfehlen dir, die betroffenen Schlüssel als „nicht vertrauenswürdig“ zu markieren."
       ],
+      "One time import": [
+        "Einmaliger Import"
+      ],
       "Only the people with the link and the password can access this file.": [
         "Nur die Personen mit dem Link und dem Passwort können auf diese Datei zugreifen."
       ],
@@ -5298,6 +5307,12 @@
       ],
       "Photo was copied to stream and marked favorite there.": [
         "Foto wurde in den Stream kopiert und dort als Favorit markiert."
+      ],
+      "Photo(s) saved to your Drive": [
+        "Foto(s) in deinem Drive gespeichert"
+      ],
+      "Photos": [
+        "Fotos"
       ],
       "Photos have been successfully recovered.": [
         "Die Fotos wurden erfolgreich wiederhergestellt."
@@ -5468,9 +5483,6 @@
       ],
       "Select a folder to move to.": [
         "Wähle ein Zielverzeichnis für das Verschieben aus."
-      ],
-      "Select a service provider to start": [
-        "Wähle einen Dienstanbieter, um anzufangen"
       ],
       "Select all items for": [
         "Wähle alle Elemente aus für"
@@ -6593,7 +6605,7 @@
         "Ort"
       ],
       "Log in or sign up ": [
-        "Anmelden oder registrieren"
+        "Anmelden oder registrieren "
       ],
       "Mail Server (IMAP)": [
         "Mail-Server (IMAP)"
@@ -7490,29 +7502,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Leg los für ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Abonnements ab ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Ab ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
-      ],
-      "Upgrade to ${ planName }": [
-        "Auf ${ planName } upgraden"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Konto löschen"
@@ -7534,6 +7523,17 @@
       ],
       "Switch plan": [
         "Abonnement wechseln"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Abonnements ab ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Upgraden"
       ]
     },
     "new_plans: feature": {
@@ -7686,9 +7686,6 @@
       "Auto-delete Spam and Trash": [
         "Spam und Papierkorb automatisch löschen"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Automatisches Bereinigen von Spam und gelöschten Nachrichten"
-      ],
       "Auto-reply": [
         "Automatische Antworten"
       ],
@@ -7730,9 +7727,6 @@
       ],
       "Custom fields": [
         "Benutzerdefinierte Felder"
-      ],
-      "Custom snooze time": [
-        "Benutzerdefinierte Zurückstellzeit"
       ],
       "Custom workspace branding": [
         "Eigenes Workspace-Branding"
@@ -7873,12 +7867,6 @@
       "Schedule and snooze emails for any time": [
         "E-Mails für einen beliebigen Zeitpunkt planen und zurückstellen"
       ],
-      "Schedule messages at any time": [
-        "Nachrichten zu jeder Zeit planen"
-      ],
-      "Search message content": [
-        "Nachrichteninhalt durchsuchen"
-      ],
       "Secure Core servers": [
         "Secure Core-Server"
       ],
@@ -8015,9 +8003,6 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Erstelle mehrere E-Mail-Adressen für deine Online-Identitäten, z.B. MaxEinkaufen@${ domain } für Einkaufskonten oder MaxNachrichten@${ domain2 } für Nachrichten-Abonnements."
       ],
-      "Snooze messages and get reminded when you want": [
-        "Stelle Nachrichten zurück und werde daran erinnert wann immer du möchtest."
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
       ]
@@ -8120,6 +8105,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Ab ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Der ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird es automatisch jeden Monat zum Preis von ${ priceLine } verlängert. Du kannst jederzeit kündigen."
       ],
@@ -11081,9 +11069,6 @@
         "${ searchView.numberOfResults } Ergebnis gefunden",
         "${ searchView.numberOfResults } Ergebnisse gefunden"
       ],
-      "Get advanced protection": [
-        "Erweiterten Schutz erhalten"
-      ],
       "Get more from your VPN": [
         "Hole mehr aus deinem VPN heraus"
       ],
@@ -11150,6 +11135,9 @@
       ],
       "Location": [
         "Speicherort"
+      ],
+      "Mail Subscriptions": [
+        "Mail-Abonnemente"
       ],
       "Make a secure connection your default": [
         "Mach eine sichere Verbindung zum Standard"
@@ -11457,9 +11445,6 @@
       ],
       "Type": [
         "Typ"
-      ],
-      "Unlock contacts groups": [
-        "Kontaktgruppen freischalten"
       ],
       "Untitled document ${ date }": [
         "Unbenanntes Dokument ${ date }"

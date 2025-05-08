@@ -400,11 +400,11 @@
       "Move to another vault": [
         "Verplaatsen naar andere kluis"
       ],
-      "Move to trash": [
-        "Naar prullenbak verplaatsen"
-      ],
       "Move to Trash": [
         "Verplaats naar prullenbak"
+      ],
+      "Move to trash": [
+        "Naar prullenbak verplaatsen"
       ],
       "Multiple select": [
         "Meervoudige selectie"
@@ -1804,6 +1804,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"

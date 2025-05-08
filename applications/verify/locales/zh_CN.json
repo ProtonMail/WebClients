@@ -83,71 +83,6 @@
     "Cancellation upsell": {
       "Cloud storage and sharing for large files": [
         "大型文件的云存储和共享"
-      ],
-      "Secure personal and shared calendar": [
-        "安全的个人和共享日历"
-      ]
-    },
-    "color": {
-      "carrot": [
-        "胡萝卜橙"
-      ],
-      "cerise": [
-        "水红色"
-      ],
-      "cobalt": [
-        "钴蓝色"
-      ],
-      "copper": [
-        "紫铜色"
-      ],
-      "enzian": [
-        "龙胆蓝"
-      ],
-      "fern": [
-        "丝袍绿"
-      ],
-      "forest": [
-        "森林绿"
-      ],
-      "ocean": [
-        "海蓝色"
-      ],
-      "olive": [
-        "橄榄绿"
-      ],
-      "pacific": [
-        "太平洋蓝"
-      ],
-      "pickle": [
-        "橄榄黄"
-      ],
-      "pine": [
-        "松林绿"
-      ],
-      "pink": [
-        "粉色"
-      ],
-      "plum": [
-        "绛紫色"
-      ],
-      "purple": [
-        "紫色"
-      ],
-      "reef": [
-        "珊瑚绿"
-      ],
-      "sahara": [
-        "撒哈拉棕"
-      ],
-      "slateblue": [
-        "板岩蓝"
-      ],
-      "soil": [
-        "土地灰"
-      ],
-      "strawberry": [
-        "草莓红"
       ]
     },
     "Country name": {
@@ -1238,12 +1173,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 写作助手"
       ],
-      "${ n } calendar": [
-        "${ n } 份日历"
-      ],
-      "${ n } calendar per user": [
-        "每位用户 ${ n } 份日历"
-      ],
       "${ n } custom email domain": [
         "${ n } 个自有域名"
       ],
@@ -1316,9 +1245,6 @@
       "Auto-delete Spam and Trash": [
         "自动清理垃圾邮件和回收站"
       ],
-      "Auto-delete spam and trashed messages": [
-        "自动删除垃圾邮件和回收站中邮件"
-      ],
       "Auto-reply": [
         "自动回复"
       ],
@@ -1345,9 +1271,6 @@
       ],
       "Custom email domains": [
         "自有域名"
-      ],
-      "Custom snooze time": [
-        "自由调整通知延迟时间"
       ],
       "Desktop app": [
         "桌面应用"
@@ -1400,20 +1323,8 @@
       "Schedule and snooze emails for any time": [
         "自由选择邮件收发时间"
       ],
-      "Schedule messages at any time": [
-        "自由选择发送时间"
-      ],
-      "Search message content": [
-        "搜索邮件全文"
-      ],
       "Secure file storage and sharing": [
         "安全文件存储与共享"
-      ],
-      "See team's availability": [
-        "查看团队成员的繁忙状态"
-      ],
-      "Send & receive invitations": [
-        "发送和接收邀请"
       ],
       "Share files with no size limit": [
         "共享文件无大小限制"
@@ -1453,17 +1364,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "为您的各类网络需求创建不同的邮箱地址；例如 ChenGouwu@${ domain } 用于注册购物网站，ChenXinwen@${ domain2 } 用于收取时事新闻"
       ],
-      "Snooze messages and get reminded when you want": [
-        "推迟邮件提醒，自由决定何时接收通知"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间"
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }：通过端到端加密确保日程安全。包括支持自定义日历、日历共享等功能。"
-      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }：使用加密云存储保护您的文件。包括自动同步、加密文件共享等功能。"
       ],
@@ -1494,14 +1399,8 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "为您的各类网络需求创建不同的邮箱地址；例如 ChenGouwu@${ domain } 用于注册购物网站，ChenXinwen@${ domain } 用于收取时事新闻"
       ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "创建多达 ${ n } 份日历或添加朋友、家人、同事、企业分享的日历"
-      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "为全家人创建多达 ${ n } 个邮箱地址/别名，用于不同的网络服务。例如 ChenGouwu@${ domain } 用于网购商品。"
-      ],
-      "Easily share your calendars with your family, friends, or colleagues": [
-        "与同事、亲友轻松分享日程安排"
       ],
       "Email everyone in a group with a single email address": [
         "使用单个电子邮件地址向群组中的每个人发送电子邮件"
@@ -1511,9 +1410,6 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP 仅支持桌面客户端（如 Outlook、Apple Mail、Thunderbird）配合 ${ MAIL_APP_NAME } Bridge 使用。目前不支持云服务接入 IMAP。"
-      ],
-      "Keep your plans private to you and your family with an encrypted calendar": [
-        "使用加密日历为您和家人保密您们的计划"
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "为邮件添加标签，方便查询与筛选"
@@ -1535,9 +1431,6 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "在通讯录中安全地存储联系人的电话号码、住址、生日、备注等详细信息，全封闭加密技术保证了 ${ BRAND_NAME } 自身也无法解密其内容。"
-      ],
-      "See the availability of meeting participants and save time scheduling meetings": [
-        "查看参会者的空闲时间，节省会议安排时间"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "创建任意数量的联系人群组（每个群组最多可容纳 100 位联系人），便于向多人群发邮件"
@@ -1576,9 +1469,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "总存储空间升至 ${ bundleStorage }"
-      ],
-      "Create up to ${ n } calendar": [
-        "最多可创建 ${ n } 份日历"
       ],
       "Support for ${ n } custom email domains": [
         "支持 ${ n } 个自定义域"

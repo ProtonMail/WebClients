@@ -83,71 +83,6 @@
     "Cancellation upsell": {
       "Cloud storage and sharing for large files": [
         "Stocare în cloud și partajare pentru fișiere mari"
-      ],
-      "Secure personal and shared calendar": [
-        "Calendar personal și partajat securizat"
-      ]
-    },
-    "color": {
-      "carrot": [
-        "morcov"
-      ],
-      "cerise": [
-        "cireșiu"
-      ],
-      "cobalt": [
-        "cobalt"
-      ],
-      "copper": [
-        "cupru"
-      ],
-      "enzian": [
-        "gențiană"
-      ],
-      "fern": [
-        "ferigă"
-      ],
-      "forest": [
-        "pădure"
-      ],
-      "ocean": [
-        "ocean"
-      ],
-      "olive": [
-        "măsliniu"
-      ],
-      "pacific": [
-        "pacific"
-      ],
-      "pickle": [
-        "murături"
-      ],
-      "pine": [
-        "pin"
-      ],
-      "pink": [
-        "roz"
-      ],
-      "plum": [
-        "prună"
-      ],
-      "purple": [
-        "violet"
-      ],
-      "reef": [
-        "recif"
-      ],
-      "sahara": [
-        "Sahara"
-      ],
-      "slateblue": [
-        "ardezie albastră"
-      ],
-      "soil": [
-        "pământiu"
-      ],
-      "strawberry": [
-        "căpșună"
       ]
     },
     "Country name": {
@@ -1250,16 +1185,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent de scriere ${ BRAND_NAME } Scribe"
       ],
-      "${ n } calendar": [
-        "${ n } calendar",
-        "${ n } calendare",
-        "${ n } de calendare"
-      ],
-      "${ n } calendar per user": [
-        "${ n } calendar per utilizator",
-        "${ n } calendare per utilizator",
-        "${ n } de calendare per utilizator"
-      ],
       "${ n } custom email domain": [
         "Un domeniu personal de e-mail",
         "${ n } domenii personale de e-mail",
@@ -1350,9 +1275,6 @@
       "Auto-delete Spam and Trash": [
         "Ștergere automată mesaje nedorite și din gunoi"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Ștergere automată mesaje nedorite și din gunoi"
-      ],
       "Auto-reply": [
         "Răspuns automat"
       ],
@@ -1379,9 +1301,6 @@
       ],
       "Custom email domains": [
         "Domenii personale de e-mail"
-      ],
-      "Custom snooze time": [
-        "Timp amânare personal"
       ],
       "Desktop app": [
         "Aplicația desktop"
@@ -1434,20 +1353,8 @@
       "Schedule and snooze emails for any time": [
         "Programați și amânați mesaje pentru orice moment"
       ],
-      "Schedule messages at any time": [
-        "Programați mesajele oricând"
-      ],
-      "Search message content": [
-        "Căutare în conținut mesaj"
-      ],
       "Secure file storage and sharing": [
         "Stocare și partajare securizată fișiere"
-      ],
-      "See team's availability": [
-        "Vedeți disponibilitatea echipei"
-      ],
-      "Send & receive invitations": [
-        "Trimiteți și primiți invitații"
       ],
       "Share files with no size limit": [
         "Partajați fișiere fără limită de dimensiune"
@@ -1487,17 +1394,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Creați adrese de e-mail multiple pentru identitățile personale online, de ex. ionvanzari@${ domain } pentru conturile de cumpărături, ionstiri@${ domain2 } pentru abonamentul la știri."
       ],
-      "Snooze messages and get reminded when you want": [
-        "Amânați mesajele și fiți notificat când doriți."
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: Asigurați-vă programul personal cu criptarea bilaterală. Include suport pentru calendare personale, calendare partajate și multe altele."
-      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Securizați-vă fișierele cu stocare criptată în cloud. Include sincronizare automată, partajarea fișierelor criptate și multe altele."
       ],
@@ -1528,16 +1429,8 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Creați adrese de e-mail multiple pentru identitățile personale online, de exemplu, ionvanzari@${ domain } pentru conturile de cumpărături, ionstiri@${ domain } pentru abonamentul la știri."
       ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Creați până la ${ n } calendar sau adăugați calendare de la prieteni, familie, colegi și organizații",
-        "Creați până la ${ n } calendare sau adăugați calendare de la prieteni, familie, colegi și organizații",
-        "Creați până la ${ n } de calendare sau adăugați calendare de la prieteni, familie, colegi și organizații"
-      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creați până la ${ n } adrese/aliasuri ce pot fi atribuite membrilor familiei. Folosiți-le pentru autentificările online, de exemplu ioncumparaturi@${ domain } pentru conturi de cumpărături."
-      ],
-      "Easily share your calendars with your family, friends, or colleagues": [
-        "Partajați calendarele ușor cu familia, prietenii sau colegii."
       ],
       "Email everyone in a group with a single email address": [
         "Trimiteți mesaje tuturor dintr-un grup cu o singură adresă de e-mail"
@@ -1547,9 +1440,6 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Suportul IMAP este limitat la utilizarea aplicațiilor desktop (de ex., Outlook, Apple Mail, Thunderbird) prin ${ MAIL_APP_NAME } Bridge. În prezent, integrările IMAP bazate pe cloud nu sunt acceptate."
-      ],
-      "Keep your plans private to you and your family with an encrypted calendar": [
-        "Păstrați-vă private propriile planuri și ale familiei cu calendarul criptat"
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etichetele sunt etichete simple pe care le puteți adăuga la mesaje pentru a le face mai ușor de găsit sau de aplicat filtre."
@@ -1571,9 +1461,6 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Stocați în siguranță detaliile contactelor personale, cum ar fi numărul de telefon, adresa, ziua de naștere și notele personale. Criptarea cu acces zero vă garantează că nici chiar ${ BRAND_NAME } nu le poate accesa."
-      ],
-      "See the availability of meeting participants and save time scheduling meetings": [
-        "Vedeți disponibilitatea participanților la întâlnire și economisiți timp programând întâlniri."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Trimiteți e-mailuri către grupuri mari rapid și ușor prin crearea a cât mai multe grupuri de contact de care aveți nevoie (până la 100 de contacte per grup)."
@@ -1612,11 +1499,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Măriți spațiul de stocare la ${ bundleStorage } în total"
-      ],
-      "Create up to ${ n } calendar": [
-        "Creați maxim ${ n } calendar",
-        "Creați până la ${ n } calendare",
-        "Creați până la ${ n } de calendare"
       ],
       "Support for ${ n } custom email domains": [
         "Suport pentru ${ n } domenii de e-mail personale"

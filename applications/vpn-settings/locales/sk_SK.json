@@ -4,6 +4,14 @@
     "language": "sk_SK"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Preposielanie začne čoskoro. Nové emaily sa zobrazia vo vašej doručenej pošte."
+      ],
+      "Mail forward stopped": [
+        "Preposielanie pošty zastavené"
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name } a ${ remainingCount } ďalšie zistené potenciálne úniky. Ak chcete zobraziť podrobnosti a prijať opatrenia zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
@@ -406,6 +414,9 @@
       "Get the deal": [
         "Využiť ponuku"
       ],
+      "Get the writing assistant": [
+        "Získajte asistenta písania"
+      ],
       "Get verification code": [
         "Odoslať overovací kód"
       ],
@@ -445,10 +456,10 @@
       "Invite user": [
         "Pozvať používateľa"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Pokračovať v úpravách"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Pokračovať v úpravách"
       ],
       "Keep logo": [
@@ -562,11 +573,11 @@
       "Refresh status": [
         "Obnoviť stav"
       ],
-      "Refresh the page": [
-        "Obnoviť stránku"
-      ],
       "refresh the page": [
         "obnoviť stránku"
+      ],
+      "Refresh the page": [
+        "Obnoviť stránku"
       ],
       "Remove": [
         "Vymazať"
@@ -682,11 +693,11 @@
       "Select country ${ country }": [
         "Vyberte krajinu ${ country }"
       ],
-      "select file": [
-        "vybrať súbor"
-      ],
       "Select file": [
         "Vyberte súbor"
+      ],
+      "select file": [
+        "vybrať súbor"
       ],
       "Send code": [
         "Odoslať kód"
@@ -720,6 +731,9 @@
       ],
       "Set up a custom domain": [
         "Nastavte vlastnú doménu"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Nastavte automatické preposielanie z Gmailu"
       ],
       "Set up email forwarding": [
         "Nastavenie preposielania emailov"
@@ -768,6 +782,9 @@
       ],
       "Signing in": [
         "Prihlasuje sa"
+      ],
+      "Skip": [
+        "Preskočiť"
       ],
       "Spam": [
         "Spam"
@@ -1020,6 +1037,26 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Týmto sa odpoja všetky smerovače a klienti používajúci tento certifikát."
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay } doručená pošta"
+      ],
+      "5 trackers removed": [
+        "5 sledovačov odstránených"
+      ],
+      "Auto forwarded": [
+        "Automaticky preposlané"
+      ],
+      "Email received": [
+        "Email prijatý"
+      ],
+      "Encrypted": [
+        "Šifrované"
+      ],
+      "New email": [
+        "Nový email"
       ]
     },
     "Assistant toggle": {
@@ -1601,6 +1638,12 @@
       ]
     },
     "CountriesStep:Info": {
+      "${ selectedCitiesCount } cities selected": [
+        "${ selectedCitiesCount } vybrané mesto",
+        "${ selectedCitiesCount } vybrané mestá",
+        "${ selectedCitiesCount } vybraných miest",
+        "${ selectedCitiesCount } vybraných miest"
+      ],
       "${ selectedCountriesCount } selected": [
         "${ selectedCountriesCount } vybrané",
         "${ selectedCountriesCount } vybrané",
@@ -2605,9 +2648,6 @@
       "No one in your organization can connect to shared servers.": [
         "Nikto vo vašej organizácie sa nemôže pripojiť k zdieľaným serverom."
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Oddeľte rôzne aspekty svojho života pomocou viacerých emailových adries a odomknite viac prémiových funkcií, ak sa rozhodnete pre upgrade."
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Nastavte účty pre všetkých používateľov a pozvite ich, aby sa pripojili k službe ${ BRAND_NAME }."
       ],
@@ -2929,6 +2969,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } sa nedokáže pripojiť k vášmu externému účtu."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Môžete tiež pozrieť, čo hovorí naša ${ statusPageLink }"
       ],
@@ -2943,6 +2986,12 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Suma nižšia ako minimum (${ minimumAmount })."
+      ],
+      "Authentication canceled.": [
+        "Prihlásenie zrušené."
+      ],
+      "Authentication error.": [
+        "Chyba prihlásenia."
       ],
       "Checkout expired, please try again": [
         "Objednávka vypršala, skúste to prosím znova"
@@ -3051,6 +3100,15 @@
       ],
       "Name does not match": [
         "Meno sa nezhoduje"
+      ],
+      "No calendars found to import": [
+        "Neboli nájdené žiadne kalendáre na import"
+      ],
+      "No contacts found to import": [
+        "Neboli nájdené žiadne kontakty na import"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Neboli nájdené žiadne emaily na import - účet nemá priečinok Doručená pošta"
       ],
       "No image selected": [
         "Nebol vybraný žiaden obrázok"
@@ -3199,6 +3257,9 @@
       "Unable to upload file": [
         "Nepodarilo sa nahrať súbor"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "Neočakávaná chyba, nemôžeme importovať kontakty"
+      ],
       "Unknown error": [
         "Neznáma chyba"
       ],
@@ -3222,6 +3283,9 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Nesprávny overovací kód. Uistite sa prosím, že ste skopírovali overovací kód správne a akciu zopakujte. Než sa zmeny prejavia, môže to trvať až 24 hodín."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Dosiahli ste limit počtu kontaktov pre svoj účet"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Limit počtu adries vo vašom pláne bol vyčerpaný. Prejdite na vyšší plán, ak chcete pridať novú adresu."
@@ -3857,6 +3921,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Automaticky preposielajte"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail správy do vašej doručenej pošty"
+      ],
+      "Sign in with Google": [
+        "Prihlásiť sa cez Google"
       ]
     },
     "Go to sign in": {
@@ -5745,11 +5820,11 @@
       "User activated": [
         "Používateľ aktivovaný"
       ],
-      "Username": [
-        "Používateľské meno"
-      ],
       "username": [
         "používateľské meno"
+      ],
+      "Username": [
+        "Používateľské meno"
       ],
       "Users": [
         "Používatelia"
@@ -6060,6 +6135,12 @@
         "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }.",
         "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }."
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of them.": [
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adrese Gmail. Ak chcete pridať ďalšiu, najprv inú deaktivujte.",
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adresách Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte.",
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adresách Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte.",
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adresách Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Vaša ${ boldDiscountPercent } na ${ boldPlanTitle } bola uplatnená"
       ],
@@ -6329,10 +6410,10 @@
       "Allow recovery by phone": [
         "Povoliť obnovenie telefónom"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6572,6 +6653,9 @@
       "IBAN": [
         "IBAN"
       ],
+      "Import all messages": [
+        "Importovať všetky správy"
+      ],
       "Integrated 2FA authenticator": [
         "Integrovaný 2FA autentifikátor"
       ],
@@ -6586,6 +6670,15 @@
       ],
       "Key": [
         "Kľúč"
+      ],
+      "Last 12 months only": [
+        "Len posledných 12 mesiacov"
+      ],
+      "Last 3 months only": [
+        "Iba posledné 3 mesiace"
+      ],
+      "Last month only": [
+        "Iba minulý mesiac"
       ],
       "Last name": [
         "Priezvisko"
@@ -7369,32 +7462,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Preskúmajte všetky plány ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začnite teraz za ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšiť na ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Zmazať účet"
@@ -7416,6 +7483,20 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Preskúmajte všetky plány ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
       ]
     },
     "new_plans: feature": {
@@ -7548,26 +7629,11 @@
       "${ size } storage per user": [
         "${ size } úložisko na používateľa"
       ],
-      "1 TB secure storage": [
-        "1 TB bezpečného úložiska"
-      ],
       "1 user": [
         "1 používateľ"
       ],
-      "10 email addresses/aliases": [
-        "10 emailových adries/aliasov"
-      ],
-      "10 more premium features": [
-        "10 ďalších prémiových funkcií"
-      ],
       "10-year file version history": [
         "10-ročná história verzií súborov"
-      ],
-      "15 GB storage": [
-        "15 GB úložisko"
-      ],
-      "200 GB of storage": [
-        "200 GB úložisko"
       ],
       "24/7 account management support": [
         "Podpora správy účtu 24/7"
@@ -7587,17 +7653,11 @@
       "Administration Panel": [
         "Panel administrácie"
       ],
-      "Advanced account protection": [
-        "Pokročilá ochrana účtu"
-      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Pokročilé funkcie aliasov (založené na SimpleLogin)"
       ],
       "Advanced network security": [
         "Pokročilá bezpečnosť siete"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "Všetky ${ BRAND_NAME } produkty a funkcie"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všetky základné služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -7610,9 +7670,6 @@
       ],
       "Auto-delete Spam and Trash": [
         "Automatické mazanie nevyžiadanej pošty a koša"
-      ],
-      "Auto-delete spam and trashed messages": [
-        "Automaticky mazať správy v spame a koši"
       ],
       "Auto-reply": [
         "Automatická odpoveď"
@@ -7658,9 +7715,6 @@
       ],
       "Custom fields": [
         "Vlastné polia"
-      ],
-      "Custom snooze time": [
-        "Vlastný čas odloženia"
       ],
       "Custom workspace branding": [
         "Prispôsobenie pracovného priestoru"
@@ -7718,9 +7772,6 @@
       ],
       "GDPR data processing agreement": [
         "Dohoda o spracovaní údajov v zmysle GDPR"
-      ],
-      "Generate emails with a prompt": [
-        "Generujte emaily len pomocou podnetu"
       ],
       "Group management (coming soon)": [
         "Správa skupiny (už čoskoro)"
@@ -7785,15 +7836,6 @@
       "Priority support & live chat": [
         "Prioritná podpora a živý chat"
       ],
-      "Private photo backup": [
-        "Zálohovanie súkromných fotografií"
-      ],
-      "Proofread and refine your emails": [
-        "Korigujte a zdokonaľujte vaše emaily"
-      ],
-      "Quickly craft replies": [
-        "Rýchlo vytvárajte odpovede"
-      ],
       "Recover previous file versions": [
         "Obnova predchádzajúcich verzií súborov"
       ],
@@ -7806,23 +7848,11 @@
       "Router support": [
         "Podpora routeru"
       ],
-      "Save time emailing": [
-        "Ušetriť čas pri emailovaní"
-      ],
       "Schedule and snooze emails for any time": [
         "Plánovanie a odkladanie emailov na ľubovoľný čas"
       ],
-      "Schedule messages at any time": [
-        "Plánujte správy kedykoľvek"
-      ],
-      "Search message content": [
-        "Hľadať v obsahu správy"
-      ],
       "Secure Core servers": [
         "Servery Secure Core"
-      ],
-      "Secure file storage and sharing": [
-        "Bezpečné ukladanie a zdieľanie súborov"
       ],
       "Secure link sharing": [
         "Zdieľanie bezpečných odkazov"
@@ -7862,9 +7892,6 @@
       ],
       "Strict no-logs policy": [
         "Prísna politika neuchovávania záznamov"
-      ],
-      "Support for up to 2 users": [
-        "Podpora až pre 2 používateľov"
       ],
       "Sync and backup all your files across devices": [
         "Synchronizácia a zálohovanie všetkých vašich súborov medzi zariadeniami"
@@ -7972,20 +7999,6 @@
         "${ users } používatelia",
         "${ users } používateľov",
         "${ users } používateľov"
-      ]
-    },
-    "new_plans: feature info": {
-      "1 custom email domain": [
-        "1 vlastná emailová doména"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Vytvorte si viacero emailových adries pre svoje online identity, napr. JohnShopper@${ domain } pre nákupné účty, JohnNews@${ domain2 } pre odber noviniek"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Odložte správy a pripomeňte si ich, kedy chcete"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -8118,6 +8131,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Cena od ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Zľavnená cena ${ priceCoupon } platí prvý mesiac. Potom sa automaticky obnoví za ${ priceLine }. Službu môžete kedykoľvek zrušiť."
       ],
@@ -8663,6 +8679,17 @@
         "Víta vás ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Všetci"
+      ],
+      "Group members": [
+        "Členovia skupiny"
+      ],
+      "No one": [
+        "Nikto"
+      ]
+    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Povolené ${ defaultLabel }"
@@ -8732,17 +8759,6 @@
       ],
       "The whole organization": [
         "Celá organizácia"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Všetci"
-      ],
-      "Group members": [
-        "Členovia skupiny"
-      ],
-      "No one": [
-        "Nikto"
       ]
     },
     "Organization capacity error": {
@@ -11102,6 +11118,9 @@
       "Billing details updated": [
         "Fakturačné údaje aktualizované"
       ],
+      "Canceling import": [
+        "Prebieha zrušenie importu"
+      ],
       "Catch-all address updated": [
         "Adresa doménového koša aktualizovaná"
       ],
@@ -11137,6 +11156,9 @@
       ],
       "Gift code applied": [
         "Kód kupónu aplikovaný"
+      ],
+      "Import record deleted": [
+        "Záznam o importe bol zmazaný"
       ],
       "Invitation rejected": [
         "Pozvánka odmietnutá"
@@ -11197,6 +11219,9 @@
       ],
       "SPF value copied to clipboard": [
         "Hodnota SPF záznamu skopírovaná do schránky"
+      ],
+      "Undo in progress": [
+        "Prebieha zrušenie"
       ],
       "User updated": [
         "Používateľ aktualizovaný"
@@ -11548,10 +11573,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -11890,14 +11915,14 @@
       "Import emails, calendars, contacts": [
         "Importovať emaily, kalendáre a kontakty"
       ],
-      "Increase your privacy with more addresses": [
-        "Zvýšte svoje súkromie pomocou viacerých adries"
-      ],
       "Invalid verification code": [
         "Nesprávny overovací kód"
       ],
       "Invoices": [
         "Faktúry"
+      ],
+      "Limit reached": [
+        "Limit dosiahnutý"
       ],
       "Main password": [
         "Hlavné heslo"
@@ -12596,8 +12621,8 @@
       "Recommended": [
         "Odporúčané"
       ],
-      "Save ${ totals.discountPercentage }%": [
-        "Ušetrite ${ totals.discountPercentage }%"
+      "Save ${ price.uiData.discountPercent }%": [
+        "Ušetrite ${ price.uiData.discountPercent }%"
       ]
     },
     "User role": {
