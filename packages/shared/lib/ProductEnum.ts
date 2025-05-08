@@ -11,5 +11,6 @@ export enum Product {
     Verify = 'VPN',
     Admin = 'Admin',
     Pass = 'Pass',
+    Meet = 'Meet',
     Other = 'Other',
 }

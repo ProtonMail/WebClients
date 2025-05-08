@@ -1,0 +1,48 @@
+<svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#a)">
+        <mask id="b" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="1" width="16" height="14">
+            <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M0 13.247c0 .932.756 1.688 1.688 1.688l12.624-.026c.932 0 1.688-.756 1.688-1.689V7.818a6.753 6.753 0 0 0-6.753-6.753l-7.559.026C.756 1.091 0 1.847 0 2.78V13.246Zm0-.521h3.337c1.203 0 2.178-1.042 2.178-2.327S4.54 8.072 3.337 8.072H0v4.654Zm3.17-3.557a1.238 1.238 0 1 1 0 2.476 1.238 1.238 0 0 1 0-2.476Z"
+                fill="#fff"
+            />
+        </mask>
+        <g mask="url(#b)">
+            <path
+                d="M1.69 14.909A1.688 1.688 0 0 1 .003 13.22V2.753c0-.932.756-1.688 1.689-1.688h7.556A6.753 6.753 0 0 1 16 7.818v5.402c0 .933-.756 1.689-1.688 1.689H1.69Z"
+                fill="url(#c)"
+            />
+            <path
+                d="M1.688 14.944A1.688 1.688 0 0 1 0 13.255V3.351H7.56a5.065 5.065 0 0 1 5.065 5.065v6.527H1.688Z"
+                fill="#6D4AFF"
+            />
+            <path
+                d="M1.688 14.944A1.688 1.688 0 0 1 0 13.255V3.351H7.56a5.065 5.065 0 0 1 5.065 5.065v6.527H1.688Z"
+                fill="url(#d)"
+                fill-opacity=".9"
+            />
+            <path d="m2.394 14.909 2.576-2.927-4.97.62v.618c0 .933.756 1.689 1.688 1.689h.706Z" fill="#FFBB93" />
+            <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M3.337 12.726c1.203 0 2.178-1.042 2.178-2.327S4.54 8.073 3.337 8.073H0v4.653h3.337Zm1.07-2.32a1.238 1.238 0 1 0-2.476 0 1.238 1.238 0 0 0 2.476 0Z"
+                fill="#fff"
+            />
+        </g>
+    </g>
+    <defs>
+        <linearGradient id="c" x1="-2.008" y1="2.676" x2="17.785" y2="10.386" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#957AFD" />
+            <stop offset="1" stop-color="#FFC6C6" />
+        </linearGradient>
+        <linearGradient id="d" x1="11.91" y1="5.131" x2="5.771" y2="17.623" gradientUnits="userSpaceOnUse">
+            <stop offset=".15" stop-color="#FA528E" stop-opacity="0" />
+            <stop offset=".721" stop-color="#FF8065" />
+            <stop offset="1" stop-color="#FFA51F" />
+        </linearGradient>
+        <clipPath id="a">
+            <path fill="#fff" d="M0 0h16v16H0z" />
+        </clipPath>
+    </defs>
+</svg>
