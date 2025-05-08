@@ -19,6 +19,11 @@ const subscription: NewsletterSubscription = {
     TrackersCount: 3,
     MarkAsRead: false,
     MoveToFolder: 'inbox',
+    ReceivedMessages: {
+        Last30Days: 0,
+        Last90Days: 0,
+        Total: 0,
+    },
 };
 
 const secondSubscription: NewsletterSubscription = {
@@ -38,6 +43,11 @@ const secondSubscription: NewsletterSubscription = {
     TrackersCount: 3,
     MarkAsRead: false,
     MoveToFolder: 'inbox',
+    ReceivedMessages: {
+        Last30Days: 0,
+        Last90Days: 0,
+        Total: 0,
+    },
 };
 
 describe('Mail subscription slice helpers', () => {
