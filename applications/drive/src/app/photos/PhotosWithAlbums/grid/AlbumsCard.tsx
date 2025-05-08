@@ -8,7 +8,7 @@ import { ButtonLike } from '@proton/atoms';
 import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import folderImages from '@proton/styles/assets/img/drive/empty-image-album.svg';
+import folderImages from '@proton/styles/assets/img/drive/empty-image-album.webp';
 import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-filled.svg';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
@@ -196,7 +196,7 @@ export const AlbumsCard: FC<Props> = ({
                             />
                         ) : (
                             <div className="flex items-center justify-center w-full h-full albums-card-thumbnail albums-card-thumbnail--empty">
-                                <img src={folderImages} alt="" className="m-auto" />
+                                <img src={folderImages} alt="" width={80} className="m-auto" />
                             </div>
                         )}
                         {(album.signatureIssues || album.isShared) && (
