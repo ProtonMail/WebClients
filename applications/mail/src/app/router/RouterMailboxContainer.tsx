@@ -7,6 +7,7 @@ import {
     PrivateMainArea,
 } from '@proton/components';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
+import clsx from '@proton/utils/clsx';
 
 import MailHeader from 'proton-mail/components/header/MailHeader';
 import { NewsletterSubscriptionView } from 'proton-mail/components/view/NewsletterSubscription/NewsletterSubscriptionView';
@@ -36,15 +37,13 @@ export const RouterMailboxContainer = () => {
     const { messageContainerRef, mainAreaRef, resize } = useMailboxLayoutProvider();
 
     const { labelID, elementID } = params;
-    const { elements, loading, placeholderCount } = elementsData;
     const { selectedIDs } = actions;
 
     const { columnMode } = useMailboxLayoutProvider();
     const { drawerSidebarButtons, showDrawerSidebar } = useMailDrawer();
 
     const canShowDrawer = drawerSidebarButtons.length > 0;
-    const elementsLength = loading ? placeholderCount : elements.length;
-    const showContentPanel = (columnMode && !!elementsLength) || !!elementID;
+    const hasRowMode = !columnMode;
 
     /**
      * Temporary: Router mailbox side effects
@@ -53,8 +52,8 @@ export const RouterMailboxContainer = () => {
         isSearch: params.isSearching,
         handleCheckAll: actions.handleCheckAll,
         elementsParams,
-        elements,
-        loading,
+        elements: elementsData.elements,
+        loading: elementsData.loading,
         labelID,
     });
 
@@ -72,21 +71,30 @@ export const RouterMailboxContainer = () => {
                 elementID={elementID}
                 selectedIDs={selectedIDs}
                 labelID={labelID}
-                toolbar={
-                    <MailboxToolbar
-                        inHeader
-                        params={params}
-                        navigation={navigation}
-                        elementsData={elementsData}
-                        actions={actions}
-                    />
-                }
                 settingsButton={<InboxQuickSettingsAppButton />}
+                toolbar={
+                    // Show toolbar in header when in row layout and an email is selected
+                    !columnMode && elementID ? (
+                        <div className="flex flex-nowrap">
+                            <MailboxToolbar
+                                inHeader
+                                params={params}
+                                navigation={navigation}
+                                elementsData={elementsData}
+                                actions={actions}
+                            />
+                        </div>
+                    ) : undefined
+                }
             />
             <PrivateMainArea
-                className="flex"
+                className={clsx([
+                    'flex',
+                    !columnMode && elementID && 'row-layout-email-view full-width-email',
+                    columnMode && 'column-layout-view',
+                ])}
                 hasToolbar
-                hasRowMode={!showContentPanel}
+                hasRowMode={hasRowMode}
                 ref={mainAreaRef}
                 drawerVisibilityButton={canShowDrawer ? <DrawerVisibilityButton /> : undefined}
                 drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
@@ -95,7 +103,22 @@ export const RouterMailboxContainer = () => {
                 <Switch>
                     <Route
                         path={CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].route}
-                        component={NewsletterSubscriptionView}
+                        render={() => (
+                            <NewsletterSubscriptionView
+                                params={params}
+                                navigation={navigation}
+                                elementsData={elementsData}
+                                actions={actions}
+                                toolbar={
+                                    <MailboxToolbar
+                                        params={params}
+                                        navigation={navigation}
+                                        elementsData={elementsData}
+                                        actions={actions}
+                                    />
+                                }
+                            />
+                        )}
                     />
                     <Route
                         path={ROUTE_LABEL}
@@ -105,6 +128,7 @@ export const RouterMailboxContainer = () => {
                                 navigation={navigation}
                                 elementsData={elementsData}
                                 actions={actions}
+                                hasRowMode={hasRowMode}
                             />
                         )}
                     />
