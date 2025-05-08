@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import ConnectGmailButton from '@proton/activation/src/components/SettingsArea/ConnectGmailButton';
 import { type APP_NAMES, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { isAdmin } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash';
 
 const getFeatureDescription = (hasAccessToBYOE: boolean) => {
@@ -26,7 +28,9 @@ interface Props {
 }
 
 const GmailForwarding = ({ app }: Props) => {
-    const hasAccessToBYOE = useFlag('InboxBringYourOwnEmail');
+    const [user] = useUser();
+    // Only admins can access to BYOE for now, this will change later
+    const hasAccessToBYOE = useFlag('InboxBringYourOwnEmail') && isAdmin(user);
 
     return (
         <>
