@@ -112,6 +112,7 @@ export const importReader = async (payload: ImportReaderPayload): Promise<Import
             }
 
         case ImportProvider.SAFARI:
+        case ImportProvider.APPLEPASSWORDS:
             return readSafariData(file);
 
         case ImportProvider.KEEPER:

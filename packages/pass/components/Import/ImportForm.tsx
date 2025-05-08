@@ -26,6 +26,7 @@ import './ImportForm.scss';
 
 const providerHasUnsupportedItemTypes = (provider: ImportProvider) =>
     ![
+        ImportProvider.APPLEPASSWORDS,
         ImportProvider.BRAVE,
         ImportProvider.FIREFOX,
         ImportProvider.CHROME,
