@@ -36,11 +36,17 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
+      "A to Z": [
+        "De la A a la Z"
+      ],
       "Activate": [
         "Activa"
       ],
       "Activate recovery": [
         "Activa la recuperació"
+      ],
+      "Active": [
+        "Actiu"
       ],
       "Add": [
         "Afegeix"
@@ -189,6 +195,9 @@
       ],
       "Change page": [
         "Canviar de pàgina"
+      ],
+      "Change sorting": [
+        "Canvia l'ordenació"
       ],
       "Chat with us": [
         "Xategeu amb nosaltres"
@@ -489,6 +498,9 @@
       "Expand composer": [
         "Ampliar l'editor"
       ],
+      "Expand navigation bar to see custom views": [
+        "Expandeix la barra de navegació per veure les vistes personalitzades"
+      ],
       "Expand navigation bar to see folders": [
         "Expandeix la barra de navegació per a veure les carpetes"
       ],
@@ -546,9 +558,6 @@
       "Generate text": [
         "Genera text"
       ],
-      "Get ${ BRAND_NAME } Duo": [
-        "Obtingueu ${ BRAND_NAME } Duo"
-      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Obteniu ${ planName } per ${ priceCoupon }."
       ],
@@ -557,12 +566,6 @@
       ],
       "Get in touch": [
         "Contacte"
-      ],
-      "Get it": [
-        "Aconseguiu-ho"
-      ],
-      "Get it from only ${ addonPriceWithCurrency } /month": [
-        "Aconseguiu-lo a partir de només ${ addonPriceWithCurrency }/mes"
       ],
       "Get started": [
         "Comença"
@@ -736,6 +739,9 @@
       "Learn more": [
         "Més informació"
       ],
+      "Least read": [
+        "Menys llegit"
+      ],
       "Let's talk": [
         "Parlem-ne"
       ],
@@ -853,6 +859,9 @@
       "More search options": [
         "Més opcions de cerca"
       ],
+      "Most read": [
+        "Més llegit"
+      ],
       "Move": [
         "Mou"
       ],
@@ -870,6 +879,9 @@
       ],
       "Move to archive": [
         "Mou a l'arxiu"
+      ],
+      "Move to folder": [
+        "Mou a la carpeta"
       ],
       "Move to inbox": [
         "Mou a la safata d'entrada"
@@ -1006,6 +1018,9 @@
       "Read receipt sent": [
         "S'ha enviat la confirmació de lectura."
       ],
+      "Recently received": [
+        "Rebuts recentment"
+      ],
       "Reconnect": [
         "Reconnecta"
       ],
@@ -1093,6 +1108,9 @@
       "Restore": [
         "Restaura"
       ],
+      "Resubscribe": [
+        "Torna'm a subscriure"
+      ],
       "Resume": [
         "Continuar"
       ],
@@ -1144,10 +1162,10 @@
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar-ho tot"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar-ho tot"
       ],
       "Select all messages": [
@@ -1303,9 +1321,6 @@
       "Start setup": [
         "Començar la configuració"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Comenceu des de ${ priceUnlimited }"
-      ],
       "Stay": [
         "Mantenir"
       ],
@@ -1363,6 +1378,10 @@
       "Trust": [
         "De confiança"
       ],
+      "Trust key": [
+        "Clau de confiança",
+        "Claus de confiança"
+      ],
       "Trust public key": [
         "Confia en la clau pública"
       ],
@@ -1405,6 +1424,9 @@
       "Unsubscribe": [
         "Anul·la la subscripció"
       ],
+      "Unsubscribed": [
+        "Subscripció cancel·lada"
+      ],
       "Unsubscribing": [
         "Anul·lant la subscripció"
       ],
@@ -1428,9 +1450,6 @@
       ],
       "Upgrade Now": [
         "Millora ara"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Milloreu a ${ BRAND_NAME } Unlimited"
       ],
       "Upload and share files": [
         "Carrega i comparteix fitxers"
@@ -3709,9 +3728,6 @@
       "Also included": [
         "També inclòs"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Suprimiu automàticament el correu brossa i els missatges enviats a la paperera i desbloquegeu més funcions prèmium quan milloreu el pla."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Esborra automàticament els correus electrònics moguts a la paperera i al correu brossa si tenen més de 30 dies."
       ],
@@ -3738,9 +3754,6 @@
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
-      ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Dissenyat per a usuaris que busquen una major protecció per als seus comptes."
       ],
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "No voleu enviar el correu electrònic en aquest moment? Planifiqueu-ho exactament per al moment adequat."
@@ -3775,9 +3788,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ PLAN_NAMES[PLANS.BUNDLE] }."
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ajudeu el vostre equip a emmagatzemar de manera segura les contrasenyes d'informació confidencial de l'empresa i dels clients."
       ],
@@ -3803,9 +3813,6 @@
       "No labels": [
         "Cap etiqueta"
       ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Estalvieu temps enviant correus electrònics a tothom alhora amb grups de contactes. Desbloquegeu aquesta i altres funcions prèmium quan milloreu el pla."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separeu diferents aspectes de la vostra vida amb diverses adreces de correu electrònic i desbloquegeu més característiques prèmium quan milloreu el vostre pla."
       ],
@@ -3820,9 +3827,6 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifiqueu la sincronització i la programació amb calendaris compartits."
-      ],
-      "Starting from ${ price }": [
-        "Comenceu des de ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Per a continuar utilitzant l'assistent d'escriptura, afegiu-lo a la vostra subscripció."
@@ -3845,26 +3849,8 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Activeu la protecció del rastrejador de correu electrònic per evitar que els anunciants i altres persones facin un seguiment de la vostra ubicació i activitat en línia."
       ],
-      "Unlock custom message scheduling and more premium features when you upgrade.": [
-        "Desbloquegeu la planificació personalitzada de missatges i més característiques prèmium quan milloreu el pla."
-      ],
-      "Unlock custom snooze times and more premium features when you upgrade.": [
-        "Desbloquegeu els temps d'ajornament personalitzat i més funcions prèmium quan milloreu el pla."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Desbloquegeu adreces de correu electrònic més curtes i altres característiques prèmium mitjançant la millora del vostre pla."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Desbloquegeu filtres il·limitats que ordenen la vostra safata d'entrada i més característiques prèmium quan milloreu el vostre pla."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Desbloquegeu carpetes i etiquetes il·limitades i més característiques prèmium quan milloreu el vostre pla."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Milloreu el vostre pla per a obtenir ${ activatePmUser } a fi de disposar d'una adreça de correu electrònic més curta i fàcil de recordar, a més de la vostra actual."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Milloreu el compte per activar ${ PROTON_SENTINEL_NAME }, la nostra solució de seguretat d'avantguarda impulsada per IA amb suport expert dedicat 24/7."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "Utilitzeu ${ MAIL_APP_NAME } per a iniciar la sessió als serveis en línia, ja que, a diferència d'altres proveïdors de correu electrònic, mai farem un seguiment de les vostres dades ni les compartirem amb tercers."
@@ -5925,8 +5911,17 @@
       "Import from ${ provider }": [
         "Importa des de ${ provider }"
       ],
-      "Other": [
-        "Altres"
+      "Import from Google": [
+        "Importa des del Google"
+      ],
+      "Import from other": [
+        "Importa des d'un altre"
+      ],
+      "Import from Outlook": [
+        "Importa des de l'Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importa des del Yahoo"
       ]
     },
     "Import warning": {
@@ -5954,6 +5949,15 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, arxiveu o moveu els correus antics a una carpeta."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } quines subscripcions ja no són rellevants."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } des d'ells amb un sol clic."
       ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "${ BRAND_NAME } Scribe us ajuda a crear millors correus electrònics de manera ràpida i sense esforç."
@@ -6067,14 +6071,6 @@
         "${ n } conversació sense llegir",
         "${ n } conversacions sense llegir"
       ],
-      "${ numberOfImageTrackers } email tracker blocked": [
-        "${ numberOfImageTrackers } rastrejador de correu electrònic bloquejat",
-        "${ numberOfImageTrackers } rastrejadors de correu electrònic bloquejats"
-      ],
-      "${ numberOfImageTrackers } tracker blocked": [
-        "${ numberOfImageTrackers } rastrejador bloquejat",
-        "${ numberOfImageTrackers } rastrejadors bloquejats"
-      ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } enllaç netejat",
         "${ numberOfUTMTrackers } enllaços netejats"
@@ -6140,6 +6136,14 @@
       "${ storage } storage": [
         "${ storage } d'emmagatzematge"
       ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "${ subscription.ReceivedMessageCount } correu el mes passat",
+        "${ subscription.ReceivedMessageCount } correus el mes passat"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } sense llegir",
+        "${ subscription.UnreadMessageCount } sense llegir"
+      ],
       "${ total } conversation": [
         "${ total } conversa",
         "${ total } converses"
@@ -6147,6 +6151,14 @@
       "${ total } message": [
         "${ total } missatge",
         "${ total } missatges"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } rastrejador de correu bloquejat",
+        "${ trackersCount } rastrejadors de correu bloquejats"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } rastrejador bloquejat",
+        "${ trackersCount } rastrejadors bloquejats"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } missatge programat",
@@ -6266,6 +6278,15 @@
         "Tot (${ totalFoldersCount } etiqueta)",
         "Tot (${ totalFoldersCount } etiquetes)"
       ],
+      "All messages from this mailing list will be marked as read.": [
+        "Tots els missatges d'aquesta llista de correu es marcaran com a llegits."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Tots els missatges d'aquesta llista de correu es mouran a l'Arxiu."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Tots els missatges d'aquesta llista de correu es mouran a la Paperera."
+      ],
       "All messages stored in this folder will be permanently deleted.": [
         "Tots els missatges emmagatzemats en aquesta carpeta s'eliminaran permanentment."
       ],
@@ -6318,11 +6339,17 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "També s'eliminaran les subcarpetes. Tanmateix, els correus electrònics emmagatzemats en la carpeta ${ nameDeleted } no s'eliminaran i es poden trobar a la carpeta Tot el correu."
       ],
+      "Apply to future messages ": [
+        "Aplica als missatges futurs "
+      ],
       "Applying actions to conversations": [
         "S'estan aplicant les accions a les converses"
       ],
       "Applying actions to messages": [
         "S'estan aplicant les accions als missatges"
+      ],
+      "Archive existing messages": [
+        "Arxiva els missatges existents"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Segur que voleu eliminar tots els missatges d'aquesta carpeta?"
@@ -6408,11 +6435,17 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Potencieu la identitat de marca de la vostra organització i creeu una experiència en línia més coherent per als usuaris."
       ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Porteu els vostres missatges, contactes i calendaris al ${ BRAND_NAME }."
+      ],
       "Browse privately and access blocked content.": [
         "Navegueu en privat i accediu a continguts bloquejats."
       ],
       "Browser not supported": [
         "El navegador no està suportat."
+      ],
+      "Bulk delete": [
+        "Eliminació en massa"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
@@ -6630,6 +6663,9 @@
       ],
       "Each code can only be used once": [
         "Cada codi només es pot utilitzar una vegada."
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Gestioneu i doneu de baixa fàcilment butlletins i llistes de correu."
       ],
       "Edit email address": [
         "Edita l'adreça de correu"
@@ -6880,8 +6916,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -6984,6 +7019,9 @@
       ],
       "Manage your labels": [
         "Gestioneu les vostres etiquetes"
+      ],
+      "Mark all as read": [
+        "Marca tot com a llegit"
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -7126,11 +7164,17 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o més de les vostres claus de confiança han estat marcades com a \"compromeses\" pel seu propietari. Us recomanem que marqueu aquestes claus com a \"no confiables\"."
       ],
+      "One time import": [
+        "Importació única"
+      ],
       "Open shortcut cheat sheet": [
         "Obre el resum de dreceres"
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Obriu la guia per obtenir accions recomanades i enllaços útils."
+      ],
+      "Optional": [
+        "Opcional"
       ],
       "or discover other features:": [
         "o descobriu altres característiques:"
@@ -7287,6 +7331,9 @@
       "Public sharing of documents is not yet supported.": [
         "L'intercanvi públic de documents encara no està suportat."
       ],
+      "Quickly spot": [
+        "Detecta ràpidament"
+      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Poseu-vos en contacte amb nosaltres per a qualsevol ajuda relacionada amb ${ BRAND_NAME }."
       ],
@@ -7361,9 +7408,6 @@
       ],
       "Seems like you are all caught up for now": [
         "Sembla que ara mateix esteu al dia"
-      ],
-      "Select a service provider to start": [
-        "Seleccioneu un proveïdor de serveis per començar"
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "Selecciona ${ elementsCount } element en ${ location }",
@@ -7772,6 +7816,9 @@
       "Tracking": [
         "Seguiment"
       ],
+      "Trash existing messages": [
+        "Elimina els missatges existents"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Això tornarà a carregar l'aplicació"
       ],
@@ -7795,6 +7842,9 @@
       ],
       "Unsaved changes": [
         "Canvis no desats"
+      ],
+      "Unsubscribe": [
+        "Anul·la la subscripció"
       ],
       "Unsupported file": [
         "Fitxer no compatible"
@@ -8241,6 +8291,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "La vostra subscripció es renovarà automàticament el ${ renewalTime }."
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Només sou a uns quants clics d'una safata d'entrada ordenada"
       ]
     },
     "info": {
@@ -8521,6 +8574,12 @@
       " and ${ l }": [
         " i ${ l }"
       ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Marca tots els missatges com a llegits"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Mou tots els missatges a ${ boldFolderName }"
+      ],
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
       ],
@@ -8542,6 +8601,9 @@
       ],
       "Actions": [
         "Accions"
+      ],
+      "Active filter:": [
+        "Filtre actiu:"
       ],
       "Add email address": [
         "Afegeix una adreça de correu electrònic"
@@ -8570,10 +8632,10 @@
       "Always move sender's emails": [
         "Mou sempre els correus electrònics del remitent"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
       "and": [
@@ -8590,6 +8652,9 @@
       ],
       "Apply filter to existing emails": [
         "Aplica el filtre als correus existents"
+      ],
+      "Apply to future messages": [
+        "Aplica als missatges futurs"
       ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
@@ -8798,11 +8863,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "SI"
-      ],
       "If": [
         "Si"
+      ],
+      "IF": [
+        "SI"
       ],
       "Import all messages": [
         "Importar tots els missatges"
@@ -8855,6 +8920,9 @@
       "Mail Server (IMAP)": [
         "Servidor de correu (IMAP)"
       ],
+      "Mail subscriptions": [
+        "Subscripcions de correu"
+      ],
       "Main": [
         "Principal"
       ],
@@ -8869,6 +8937,9 @@
       ],
       "Move ${ sidebarElementName }": [
         "Mou ${ sidebarElementName }"
+      ],
+      "Move messages to": [
+        "Mou els missatges a"
       ],
       "Move to": [
         "Mou a"
@@ -8918,13 +8989,13 @@
       "Optional": [
         "Opcional"
       ],
-      "OR": [
-        "O"
-      ],
       "or": [
         "o"
       ],
       "Or": [
+        "O"
+      ],
+      "OR": [
         "O"
       ],
       "Original link": [
@@ -9037,6 +9108,9 @@
       ],
       "System information": [
         "Informació del sistema"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "El filtre està desactivat. Podeu habilitar-lo a ${ settingsLink }"
       ],
       "Theme": [
         "Tema"
@@ -9190,6 +9264,11 @@
         "A: ${ to }"
       ]
     },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Visualitzeu i gestioneu les subscripcions a butlletins i llistes de correu aquí."
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Panell lateral"
@@ -9268,6 +9347,9 @@
       ],
       "Folders": [
         "Carpetes"
+      ],
+      "here": [
+        "aquí"
       ],
       "How to add users": [
         "Com afegir usuaris?"
@@ -9406,6 +9488,9 @@
       ],
       "Types of recovery methods": [
         "Tipus de mètodes de recuperació"
+      ],
+      "Views": [
+        "Vistes"
       ],
       "What’s this?": [
         "Què és això?"
@@ -9803,29 +9888,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Obtingueu ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comenceu per ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Des de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ],
-      "Upgrade to ${ planName }": [
-        "Milloreu el pla a ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Elimina el compte"
@@ -9847,6 +9909,14 @@
       ],
       "Switch plan": [
         "Canvia de pla"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Obtingueu ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -9999,9 +10069,6 @@
       "Auto-delete Spam and Trash": [
         "Neteja automàticament el correu brossa i la paperera"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Suprimeix automàticament el correu brossa i els missatges enviats a la paperera"
-      ],
       "Auto-reply": [
         "Resposta automàtica"
       ],
@@ -10043,9 +10110,6 @@
       ],
       "Custom fields": [
         "Camps personalitzats"
-      ],
-      "Custom snooze time": [
-        "Temps d'ajornament personalitzat"
       ],
       "Custom workspace branding": [
         "Marca personalitzada de l'espai de treball"
@@ -10186,12 +10250,6 @@
       "Schedule and snooze emails for any time": [
         "Programeu i ajorneu correus electrònics per a qualsevol moment."
       ],
-      "Schedule messages at any time": [
-        "Programeu missatges en qualsevol moment."
-      ],
-      "Search message content": [
-        "Cerca al contingut del missatge"
-      ],
       "Secure Core servers": [
         "Servidors Secure Core"
       ],
@@ -10328,9 +10386,6 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia. Per exemple: JoanComprador@${ domain } per a comptes de compres, JoanNoticies@${ domain2 } per a la subscripció a notícies"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Ajorneu els missatges i rebeu-ne un recordatori quan vulgueu"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
       ]
@@ -10433,6 +10488,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Des de ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceLine }. Podeu cancel·lar-ho en qualsevol moment."
       ],
@@ -13422,9 +13480,6 @@
       "Action all messages": [
         "Aplica a tots els missatges"
       ],
-      "Activate @pm.me": [
-        "Activa @pm.me"
-      ],
       "Add a custom logo": [
         "Afegeix un logotip personalitzat"
       ],
@@ -13464,6 +13519,9 @@
       ],
       "Archive": [
         "Arxiu"
+      ],
+      "Archive all messages?": [
+        "Voleu arxivar tots els missatges?"
       ],
       "Are you sure you want to close the preview?": [
         "Segur que voleu tancar la previsualització?"
@@ -13521,9 +13579,6 @@
       ],
       "Change password": [
         "Canvia la contrasenya"
-      ],
-      "Clear out the junk": [
-        "Netegeu els missatges innecessaris"
       ],
       "Clearing data": [
         "Netejant dades"
@@ -13749,9 +13804,6 @@
       "Forward": [
         "Reenvia"
       ],
-      "Get advanced protection": [
-        "Obteniu protecció avançada"
-      ],
       "Get more from your VPN": [
         "Obteniu més de la vostra VPN"
       ],
@@ -13825,9 +13877,6 @@
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
       ],
-      "Keep your inbox organized": [
-        "Manteniu la vostra safata d'entrada organitzada"
-      ],
       "Label as": [
         "Etiqueta com a"
       ],
@@ -13843,8 +13892,17 @@
       "Load remote content": [
         "Carrega el contingut remot"
       ],
+      "Mail Subscriptions": [
+        "Subscripcions de correu"
+      ],
+      "Mail subscriptions": [
+        "Subscripcions de correu"
+      ],
       "Make a secure connection your default": [
         "Feu que una connexió segura sigui la vostra predeterminada"
+      ],
+      "Mark all messages as read": [
+        "Marca tots els missatges com a llegits"
       ],
       "Mark as read": [
         "Marca com a llegit"
@@ -13960,6 +14018,9 @@
       "No breaches detected": [
         "No s'han detectat infraccions"
       ],
+      "No mail subscriptions": [
+        "Sense subscripcions de correu"
+      ],
       "No need to empty the trash": [
         "No cal buidar la paperera"
       ],
@@ -14071,9 +14132,6 @@
       "Same inbox, shorter email address": [
         "La mateixa safata d'entrada, amb una adreça de correu electrònic més curta"
       ],
-      "Save time with email filters": [
-        "Estalvieu temps amb els filtres de correu electrònic"
-      ],
       "Schedule now, send later": [
         "Programeu ara i envieu més tard"
       ],
@@ -14146,9 +14204,6 @@
       "Set up your organization": [
         "Configuració de la vostra organització"
       ],
-      "Set your own schedule": [
-        "Establiu el vostre propi horari"
-      ],
       "Settings": [
         "Preferències"
       ],
@@ -14209,6 +14264,9 @@
       "Trash": [
         "Paperera"
       ],
+      "Trash all messages?": [
+        "Voleu eliminar tots els missatges?"
+      ],
       "Trust new key?": [
         "Confiar en la nova clau?",
         "Confiar en les noves claus?"
@@ -14222,11 +14280,11 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activació ${ DARK_WEB_MONITORING_NAME }"
       ],
-      "Unlock contacts groups": [
-        "Desbloqueja grups de contactes"
-      ],
       "Unsubscribe": [
         "Cancel·lar la subscripció"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Voleu anul·lar la subscripció a ${ subscription.Name }?"
       ],
       "Unsubscribe request sent": [
         "Sol·licitud per a cancel·lar la subscripció enviada"
@@ -14254,9 +14312,6 @@
       ],
       "VPN explained": [
         "Explicacions sobre la VPN"
-      ],
-      "Want to snooze any time?": [
-        "Voleu ajornar en qualsevol moment?"
       ],
       "Warning": [
         "Advertència"
@@ -14309,6 +14364,9 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "Your subscriptions in one place": [
+        "Les vostres subscripcions en un sol lloc"
       ]
     },
     "Today icon tooltip in mini calendar": {
