@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { useTheme } from '@proton/components/index';
+import folderImagesDark from '@proton/styles/assets/img/drive/empty-image-album-dark.webp';
 import folderImages from '@proton/styles/assets/img/drive/empty-image-album.webp';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -13,6 +15,7 @@ interface AlbumEmptyViewProps {
 
 export const AlbumEmptyView = ({ album, onAddAlbumPhotos }: AlbumEmptyViewProps) => {
     const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
+    const theme = useTheme();
 
     const showAddToAlbumButton = album.permissions.isOwner || album.permissions.isAdmin || album.permissions.isEditor;
     return (
@@ -21,7 +24,12 @@ export const AlbumEmptyView = ({ album, onAddAlbumPhotos }: AlbumEmptyViewProps)
             style={{ '--max-w-custom': '15rem' }}
             data-testid="album-gallery-empty-view"
         >
-            <img src={folderImages} alt="" width={200} className="mx-auto" />
+            <img
+                src={theme.information.dark ? folderImagesDark : folderImages}
+                alt=""
+                width={200}
+                className="mx-auto"
+            />
 
             <h1 className="mt-4 mb-2 text-bold h2 text-ellipsis" title={album.name}>
                 {album.name}
