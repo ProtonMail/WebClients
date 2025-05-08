@@ -389,10 +389,10 @@
       "Move to another vault": [
         "Flyt til en anden boks"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Flyt til papirkurv"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Flyt til papirkurv"
       ],
       "Multiple select": [
@@ -478,6 +478,9 @@
       ],
       "Reset": [
         "Nulstil"
+      ],
+      "Reset history": [
+        "Nulstil historik"
       ],
       "Restore": [
         "Gendan"
@@ -1133,7 +1136,7 @@
         "Vi stødte på et problem under opstart af ${ PASS_SHORT_APP_NAME }. Hvis problemet fortsætter, kontakt venligst vores kundesupport for hjælp."
       ],
       "Wrong backup password": [
-        "Forkert adgangskode til sikkerhedskopi"
+        "Forkert backupadgangskode"
       ],
       "Wrong extra password": [
         "Forkert ekstra adgangskode"
@@ -1731,6 +1734,9 @@
       "Make it your own": [
         "Gør den til din egen"
       ],
+      "Manager": [
+        "Leder"
+      ],
       "me": [
         "mig"
       ],
@@ -1836,7 +1842,7 @@
         "Bekræft din adgangskode til ${ BRAND_NAME } for at eksportere dine ${ PASS_APP_NAME }-data"
       ],
       "Please confirm your backup password": [
-        "Bekræft din adgangskode til sikkerhedskopi"
+        "Bekræft din backupadgangskode"
       ],
       "Please confirm your backup password in order to auto-lock with biometrics.": [
         "Bekræft din sikkerhedskopi-adgangskode for at få automatisk låsning med biometri."
@@ -1894,6 +1900,9 @@
       ],
       "Please consider leaving a review.": [
         "Skriv gerne en anmeldelse."
+      ],
+      "Please contact your administrator": [
+        "Kontakt din administrator"
       ],
       "Please do not close this window": [
         "Luk venligst ikke dette vindue"
@@ -2087,6 +2096,9 @@
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Denne operation er irreversibel. Alle aliasser, der bruger domænet ${ domainTextBold }, vil blive slettet. Bemærk, at aliasser ikke kan gendannes, når de er slettet."
       ],
+      "This option is currently not available on your browser.": [
+        "Denne mulighed er pt. ikke tilgængelig i din browser."
+      ],
       "This option is currently not available on your device.": [
         "Denne mulighed er pt. ikke til stede på din enhed."
       ],
@@ -2139,10 +2151,13 @@
         "Lås op for ${ PASS_SHORT_APP_NAME } med din adgangskode til ${ BRAND_NAME }."
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
-        "Lås ${ PASS_SHORT_APP_NAME } op med din adgangskode til sikkerhedskopi"
+        "Lås ${ PASS_SHORT_APP_NAME } op med din backupadgangskode"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Lås op for ${ PASS_SHORT_APP_NAME } med din ekstra adgangskode"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "Lås ${ PASS_SHORT_APP_NAME } op med din sekundære adgangskode"
       ],
       "Unlock it with your PIN to access the settings": [
         "Lås den op med din pinkode for at få adgang til indstillingerne."
@@ -2304,6 +2319,10 @@
         "${ config.options.wordCount } ord",
         "${ config.options.wordCount } ord"
       ],
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elementer"
+      ],
       "${ days } day": [
         "${ days } dag",
         "${ days } dage"
@@ -2327,12 +2346,19 @@
         "${ months } måned",
         "${ months } måneder"
       ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } version"
       ],
       "${ repliedCount } reply": [
         "${ repliedCount } svar",
         "${ repliedCount } svar"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } sikkert link",
+        "${ secureLinksCount } sikre links"
       ],
       "${ years } year": [
         "${ years } år",
@@ -2447,7 +2473,7 @@
         "Auto-forslag"
       ],
       "Backup password": [
-        "Adgangskode til sikkerhedskopi"
+        "Backupadgangskode"
       ],
       "Biometrics": [
         "Biometri"
@@ -2860,6 +2886,9 @@
       "Personal website": [
         "Personligt websted"
       ],
+      "PGP-encrypted (recommended)": [
+        "PGP-krypteret (anbefales)"
+      ],
       "Phone number": [
         "Telefonnummer"
       ],
@@ -2916,6 +2945,9 @@
       ],
       "Second password": [
         "Anden adgangskode"
+      ],
+      "Secure links": [
+        "Sikre links"
       ],
       "Security": [
         "Sikkerhed"
@@ -3175,6 +3207,66 @@
       ],
       "Underscores": [
         "Bundstreger"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ filename }\" could not be imported.": [
+        "\"${ filename }\" kunne ikke importeres."
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } fil",
+        "${ filesCount } filer"
+      ],
+      "Attachments": [
+        "Vedhæftede filer"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Slet ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Slet alle filer"
+      ],
+      "Do you want to remove all the files?": [
+        "Vil du fjerne alle filerne?"
+      ],
+      "Download": [
+        "Download"
+      ],
+      "Download \"${ filename }\"": [
+        "Download \"${ filename }\""
+      ],
+      "Download file": [
+        "Download fil"
+      ],
+      "File": [
+        "Fil"
+      ],
+      "File attachments": [
+        "Filvedhæftninger"
+      ],
+      "Include file attachments": [
+        "Medtag filvedhæftninger"
+      ],
+      "Remove all files": [
+        "Fjern alle filer"
+      ],
+      "Rename": [
+        "Omdøb"
+      ],
+      "Restore": [
+        "Gendan"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "De eksporterede filvedhæftninger vil ikke blive krypteret."
+      ],
+      "Total imported files: ": [
+        "Samlet antal importerede filer: "
+      ],
+      "Upload files from your device.": [
+        "Upload filer fra din enhed."
+      ],
+      "You can attach files to items for a better organization": [
+        "Du kan vedhæfte filer til elementer for at få en bedre organisering"
       ]
     },
     "Placeholder": {
@@ -3524,6 +3616,9 @@
       "Email": [
         "E-mail"
       ],
+      "Encrypted import": [
+        "Krypteret import"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Glad for ${ PASS_APP_NAME }?"
       ],
@@ -3568,6 +3663,9 @@
       ],
       "Import to vault(s)": [
         "Importér til boks(e)"
+      ],
+      "Importing your data": [
+        "Importerer dine data"
       ],
       "Item": [
         "Element"
@@ -3658,6 +3756,9 @@
       ],
       "Random Prefix Generation": [
         "Generering af tilfældige præfikser"
+      ],
+      "Reject device?": [
+        "Afvis enhed?"
       ],
       "Remove extra password": [
         "Fjern ekstra adgangskode"
@@ -3758,6 +3859,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Hvad er forskellen mellem en ${ PASS_SHORT_APP_NAME } note og en SimpleLogin note?"
       ],
+      "You don't have any vaults": [
+        "Du har ikke nogen bokse"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Dit ${ planName }-abonnement udløber ${ endDate }"
       ],
@@ -3819,6 +3923,9 @@
       ],
       "An error occurred while exporting your data": [
         "Der opstod en fejl under eksport af dine data"
+      ],
+      "An error occurred while importing your data.": [
+        "Der opstod en fejl under import af dine data."
       ],
       "An error occurred while resuming your session": [
         "Der opstod en fejl under genoptagelse af din session"
