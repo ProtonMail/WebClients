@@ -73,11 +73,13 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
                 }
             />
 
-            <Stepper activeStep={step}>
-                {steps.map((step) => (
-                    <Step key={step.key} />
-                ))}
-            </Stepper>
+            {steps.length > 1 && (
+                <Stepper activeStep={step}>
+                    {steps.map((step) => (
+                        <Step key={step.key} />
+                    ))}
+                </Stepper>
+            )}
 
             <ModalTwoContent>
                 {/* height accommodates largest content without layout shifts */}
@@ -97,15 +99,17 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
             </ModalTwoContent>
             <ModalTwoFooter className="mt-0">
                 <div className="flex justify-end w-full">
-                    <Button
-                        className="mr-auto pass-onboarding-modal--skip"
-                        pill
-                        shape="ghost"
-                        onClick={() => onStep(1)}
-                        disabled={loading}
-                    >
-                        {c('Action').t`Skip`}
-                    </Button>
+                    {steps.length > 1 && (
+                        <Button
+                            className="mr-auto pass-onboarding-modal--skip"
+                            pill
+                            shape="ghost"
+                            onClick={() => onStep(1)}
+                            disabled={loading}
+                        >
+                            {c('Action').t`Skip`}
+                        </Button>
+                    )}
 
                     <Button
                         className={currentStep.actionClassName}
