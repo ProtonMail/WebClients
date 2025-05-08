@@ -87,7 +87,7 @@ export const PromptForReload: FC<Props> = ({ autoReload, browserError, message }
 };
 
 export const ExtensionError: FC = () => (
-    <LobbyLayout overlay>
+    <LobbyLayout>
         <PromptForReload
             message={c('Error')
                 .t`Something went wrong. Please reload the ${PASS_APP_NAME} extension. This issue has been logged`}
