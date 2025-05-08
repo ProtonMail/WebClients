@@ -4,6 +4,14 @@
     "language": "hu_HU"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Az átirányítás hamarosan indul. Az új levelek a bejövő üzeneteinél fognak megjelenni."
+      ],
+      "Mail forward stopped": [
+        "E-mail átirányítás leállítva"
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name } és ${ remainingCount } más lehetséges adatszivárgást észleltünk. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } a részletek megtekintéséhez és intézkedjen. ${ link }"
@@ -403,6 +411,9 @@
       "Get the deal": [
         "Érdekel az ajánlat"
       ],
+      "Get the writing assistant": [
+        "Az írási segéd beszerzése"
+      ],
       "Get verification code": [
         "Ellenőrző kód küldése"
       ],
@@ -553,11 +564,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "Refresh the page": [
-        "Oldal frissítése"
-      ],
       "refresh the page": [
         "frissítse az oldalt"
+      ],
+      "Refresh the page": [
+        "Oldal frissítése"
       ],
       "Remove": [
         "Eltávolítás"
@@ -673,11 +684,11 @@
       "Select country ${ country }": [
         "Ország kiválasztása: ${ country }"
       ],
-      "select file": [
-        "fájl kiválasztása"
-      ],
       "Select file": [
         "Fájl kiválasztása"
+      ],
+      "select file": [
+        "fájl kiválasztása"
       ],
       "Send code": [
         "Kód küldése"
@@ -759,6 +770,9 @@
       ],
       "Signing in": [
         "Bejelentkezés"
+      ],
+      "Skip": [
+        "Kihagyás"
       ],
       "Spam": [
         "Levélszemét"
@@ -1000,6 +1014,26 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Ez le fogja választani az összes routert és klienst, ami ezt a tanúsítvány használja."
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay } fiókja"
+      ],
+      "5 trackers removed": [
+        "5 követő eltávolítva"
+      ],
+      "Auto forwarded": [
+        "Automatikusan továbbítva"
+      ],
+      "Email received": [
+        "Üzenet érkezett"
+      ],
+      "Encrypted": [
+        "Titkosított"
+      ],
+      "New email": [
+        "Új e-mail"
       ]
     },
     "Assistant toggle": {
@@ -2519,9 +2553,6 @@
       ],
       "No one in your organization can connect to shared servers.": [
         "A szervezeten belül senki sem csatlakozhat a megosztott szerverhez."
-      ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Válassza külön élete különböző részeit több e-mail címmel és érjen el még több prémium funkciót, nagyobb csomagra váltással."
       ]
     },
     "Disable address prompt": {
@@ -2832,6 +2863,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } nem tudd kapcsolódni az ön külső fiókjaihoz."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Továbbá meglátogathatja az ${ statusPageLink }"
       ],
@@ -2846,6 +2880,12 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Az összeg a minimum alatt (${ minimumAmount })."
+      ],
+      "Authentication canceled.": [
+        "Hitelesítés megszakítva."
+      ],
+      "Authentication error.": [
+        "Hitelesítési hiba."
       ],
       "Checkout expired, please try again": [
         "A fizetés időtúllépéssel megszakadt, kérjük próbálja újra"
@@ -2954,6 +2994,15 @@
       ],
       "Name does not match": [
         "Név nem egyezik"
+      ],
+      "No calendars found to import": [
+        "Nincs importálandó naptár"
+      ],
+      "No contacts found to import": [
+        "Nincs importálandó névjegy"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Nincs importálandó e-mail - a fiókban nincsenek beérkezett levelek"
       ],
       "No image selected": [
         "Nincs kép kiválasztva"
@@ -3102,6 +3151,9 @@
       "Unable to upload file": [
         "Nem sikerült feltölteni fájlt"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "Váratlan hiba történt, a névjegyek importálása nem sikerült"
+      ],
       "Unknown error": [
         "Ismeretlen hiba"
       ],
@@ -3125,6 +3177,9 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Hibás visszaigazoló kód. Bizonyosodjon meg róla, hogy jól másolta ki a visszaigazoló kódot és próbálja újból. 24 órába is beletelhet, amíg a változások érvénybe lépnek."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Elérte a fiókhoz létrehozható névjegyek maximális számát"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Valamennyi, az előfizetéséhez rendelkezésére álló címet elhasználta. Több cím létrehozásához váltson nagyobb csomagra."
@@ -3734,6 +3789,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Továbbítsa automatikusan a"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail üzeneteit a fiókjába"
+      ],
+      "Sign in with Google": [
+        "Bejelentkezés Google-fiókkal"
       ]
     },
     "Go to sign in": {
@@ -5509,11 +5575,11 @@
       "User activated": [
         "Felhasználó aktiválva"
       ],
-      "Username": [
-        "Felhasználónév"
-      ],
       "username": [
         "felhasználónév"
+      ],
+      "Username": [
+        "Felhasználónév"
       ],
       "Users": [
         "Felhasználók"
@@ -6062,10 +6128,10 @@
       "Allow recovery by phone": [
         "Helyreállítás engedélyezése telefonszámmal"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Engedélyezett domain"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Engedélyezett domain"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6299,6 +6365,9 @@
       "IBAN": [
         "IBAN szám"
       ],
+      "Import all messages": [
+        "Összes üzenet importálása"
+      ],
       "Integrated 2FA authenticator": [
         "Beépített kétfaktoros (2FA) hitelesítés"
       ],
@@ -6313,6 +6382,15 @@
       ],
       "Key": [
         "Kulcs"
+      ],
+      "Last 12 months only": [
+        "Csak az utolsó 12 hónap"
+      ],
+      "Last 3 months only": [
+        "Csak az utolsó 3 hónap"
+      ],
+      "Last month only": [
+        "Csak az utolsó hónap"
       ],
       "Last name": [
         "Vezetéknév"
@@ -7040,32 +7118,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kezdje el a használatot ${ priceCoupon } áron"
-      ],
-      "Starting from ${ pricing }": [
-        "Kezdőár: ${ pricing }"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade to ${ planName }": [
-        "Váltás ${ planName } csomagra"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -7087,6 +7139,20 @@
       ],
       "Switch plan": [
         "Csomag váltása"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -7185,26 +7251,11 @@
       "${ size } storage per user": [
         "${ size } tárhely felhasználónként"
       ],
-      "1 TB secure storage": [
-        "1 TB biztonságos tárhely"
-      ],
       "1 user": [
         "1 felhasználó"
       ],
-      "10 email addresses/aliases": [
-        "10 email cím / e-mail álnév"
-      ],
-      "10 more premium features": [
-        "További 10 prémium funkció"
-      ],
       "10-year file version history": [
         "10 éves fájlverzió-történet"
-      ],
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "200 GB of storage": [
-        "200 GB tároló"
       ],
       "24/7 account management support": [
         "Non-stop fiókkezelési támogatás"
@@ -7224,17 +7275,11 @@
       "Administration Panel": [
         "Adminisztrációs panel"
       ],
-      "Advanced account protection": [
-        "Fejlett fiókvédelem"
-      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Speciális e-mail álnév funkciók (a SimpleLogin biztosítja)"
       ],
       "Advanced network security": [
         "Fejlett hálózati biztonság"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "Az összes ${ BRAND_NAME } termék és funkció"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Minden alapvető ${ BRAND_NAME } szolgáltatás (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -7247,9 +7292,6 @@
       ],
       "Auto-delete Spam and Trash": [
         "Levélszemét és lomtár automatikus törlése"
-      ],
-      "Auto-delete spam and trashed messages": [
-        "A Levélszemét és a Lomtár mappában lévő üzenetek automatikus törlése"
       ],
       "Auto-reply": [
         "Automatikus válasz"
@@ -7295,9 +7337,6 @@
       ],
       "Custom fields": [
         "Egyéni mezők"
-      ],
-      "Custom snooze time": [
-        "Egyéni halasztási idő"
       ],
       "Custom workspace branding": [
         "Egyéni munkaterület márkajelzései"
@@ -7355,9 +7394,6 @@
       ],
       "GDPR data processing agreement": [
         "GDPR adatfeldolgozói megállapodás"
-      ],
-      "Generate emails with a prompt": [
-        "E-mail létrehozása kérésre"
       ],
       "Group management (coming soon)": [
         "Csoportkezelés (hamarosan elérhető)"
@@ -7420,15 +7456,6 @@
       "Priority support & live chat": [
         "Elsőbbségi támogatás és élő csevegés"
       ],
-      "Private photo backup": [
-        "Privát fotó biztonsági mentés"
-      ],
-      "Proofread and refine your emails": [
-        "Lektorálja és finomítsa e-mailjeit"
-      ],
-      "Quickly craft replies": [
-        "Gyorsan fogalmazzon válaszokat"
-      ],
       "Recover previous file versions": [
         "Régebbi fájl verziók visszaállítása"
       ],
@@ -7441,23 +7468,11 @@
       "Router support": [
         "Router támogatás"
       ],
-      "Save time emailing": [
-        "E-mailezés közben időt takaríthat meg"
-      ],
       "Schedule and snooze emails for any time": [
         "E-mailek időzítése vagy halasztása"
       ],
-      "Schedule messages at any time": [
-        "Üzenetek ütemezése bármikor"
-      ],
-      "Search message content": [
-        "Keresés az üzenetek tartalmában"
-      ],
       "Secure Core servers": [
         "Secure Core szerverek"
-      ],
-      "Secure file storage and sharing": [
-        "Biztonságos file-tárhely és -megosztás"
       ],
       "Secure link sharing": [
         "Biztonságos hivatkozás megosztás"
@@ -7495,9 +7510,6 @@
       ],
       "Strict no-logs policy": [
         "Szigorú nincs-naplózás irányelv"
-      ],
-      "Support for up to 2 users": [
-        "Legfeljebb 2 felhasználó támogatása"
       ],
       "Sync and backup all your files across devices": [
         "Szinkronizálja az összes fájlt és készítsen biztonsági mentést az eszközök között"
@@ -7593,20 +7605,6 @@
       "${ users } user": [
         "${ users } felhasználó",
         "${ users } felhasználók"
-      ]
-    },
-    "new_plans: feature info": {
-      "1 custom email domain": [
-        "1 saját e-mail domain név"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Hozzon létre több email címet a különböző online személyiségei számára, mint például PistiVasarlas@${ domain } a vásárlási fiókjaihoz, vagy PistiHirek@${ domain2 } a hírleveleinek"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Üzenetek némítása és emlékeztető beállítása a kívánt időpontra"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } közt."
       ]
     },
     "new_plans: heading": {
@@ -8280,6 +8278,17 @@
         "Üdvözli a ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Mindenki"
+      ],
+      "Group members": [
+        "Csoporttagok"
+      ],
+      "No one": [
+        "Senki"
+      ]
+    },
     "Option": {
       "Country configs": [
         "Ország konfigurációk"
@@ -8343,17 +8352,6 @@
       ],
       "The whole organization": [
         "A teljes szervezet"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Mindenki"
-      ],
-      "Group members": [
-        "Csoporttagok"
-      ],
-      "No one": [
-        "Senki"
       ]
     },
     "Organization capacity error": {
@@ -10559,6 +10557,9 @@
       "Billing details updated": [
         "Számlázási adatok frissítve"
       ],
+      "Canceling import": [
+        "Importálás megszakítása"
+      ],
       "Catch-all address updated": [
         "Gyűjtő e-mail cím frissítve"
       ],
@@ -10594,6 +10595,9 @@
       ],
       "Gift code applied": [
         "Ajándék kód alkalmazva"
+      ],
+      "Import record deleted": [
+        "Importálási elem törölve"
       ],
       "Invitation rejected": [
         "Meghívás elutasítva"
@@ -10654,6 +10658,9 @@
       ],
       "SPF value copied to clipboard": [
         "Az SPF érték a vágólapra másolva"
+      ],
+      "Undo in progress": [
+        "Visszavonás folyamatban"
       ],
       "User updated": [
         "Felhasználó frissítve"
@@ -10997,10 +11004,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
@@ -11323,9 +11330,6 @@
       ],
       "Import emails, calendars, contacts": [
         "E-mailek, naptárak, névjegyek importálása"
-      ],
-      "Increase your privacy with more addresses": [
-        "Növelje adatai védelmét további e-mail címek használatával"
       ],
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
@@ -12013,9 +12017,6 @@
       ],
       "Recommended": [
         "Ajánlott"
-      ],
-      "Save ${ totals.discountPercentage }%": [
-        "Megtakarítás ${ totals.discountPercentage }%"
       ]
     },
     "User role": {

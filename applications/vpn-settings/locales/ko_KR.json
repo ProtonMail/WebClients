@@ -4,6 +4,14 @@
     "language": "ko_KR"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타날 것입니다."
+      ],
+      "Mail forward stopped": [
+        "메일 전달 중단됨"
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name }과 ${ remainingCount }개의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
@@ -406,6 +414,9 @@
       "Get the deal": [
         "혜택 얻기"
       ],
+      "Get the writing assistant": [
+        "글쓰기 도우미 시작하기"
+      ],
       "Get verification code": [
         "인증코드 전송"
       ],
@@ -445,11 +456,11 @@
       "Invite user": [
         "사용자 초대"
       ],
-      "Keep Editing": [
-        "계속 편집하기"
-      ],
       "Keep editing": [
         "계속 수정하기"
+      ],
+      "Keep Editing": [
+        "계속 편집하기"
       ],
       "Keep logo": [
         "로고 유지"
@@ -562,11 +573,11 @@
       "Refresh status": [
         "상태 새로고침"
       ],
-      "Refresh the page": [
-        "페이지 새로 고침"
-      ],
       "refresh the page": [
         "페이지 새로고침"
+      ],
+      "Refresh the page": [
+        "페이지 새로 고침"
       ],
       "Remove": [
         "삭제"
@@ -682,10 +693,10 @@
       "Select country ${ country }": [
         "선택된 국가 ${ country }"
       ],
-      "select file": [
+      "Select file": [
         "파일 선택"
       ],
-      "Select file": [
+      "select file": [
         "파일 선택"
       ],
       "Send code": [
@@ -768,6 +779,9 @@
       ],
       "Signing in": [
         "로그인 중"
+      ],
+      "Skip": [
+        "건너뛰기"
       ],
       "Spam": [
         "스팸"
@@ -1008,6 +1022,26 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "이 인증서를 사용하는 모든 라우터와 클라이언트의 연결이 끊어집니다."
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay }님의 받은 편지함"
+      ],
+      "5 trackers removed": [
+        "5개 트래커 삭제됨"
+      ],
+      "Auto forwarded": [
+        "자동 포워딩"
+      ],
+      "Email received": [
+        "이메일 수신됨"
+      ],
+      "Encrypted": [
+        "암호화됨"
+      ],
+      "New email": [
+        "새로운 이메일"
       ]
     },
     "Assistant toggle": {
@@ -2572,9 +2606,6 @@
       "No one in your organization can connect to shared servers.": [
         "조직 내에 공유된 서버에 연결할 수 있는 구성원이 없습니다."
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "여러 이메일 주소로 삶의 다양한 측면을 분리하고 업그레이드할 때 더 많은 프리미엄 기능을 잠금 해제하세요."
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "모든 사용자의 계정을 설정하며 ${ BRAND_NAME }에 가입하도록 초대합니다."
       ],
@@ -2896,6 +2927,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } 외부 계정에 연결할 수 없었습니다."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. ${ statusPageLink }를 확인해볼 수도 있습니다"
       ],
@@ -2910,6 +2944,12 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "최소 금액 (${ minimumAmount })미만입니다."
+      ],
+      "Authentication canceled.": [
+        "인증이 취소되었습니다."
+      ],
+      "Authentication error.": [
+        "인증 오류"
       ],
       "Checkout expired, please try again": [
         "체크아웃 만료됨, 다시 시도하십시오"
@@ -3018,6 +3058,15 @@
       ],
       "Name does not match": [
         "이름이 일치하기 않습니다"
+      ],
+      "No calendars found to import": [
+        "불러올 캘린더를 찾을 수 없음"
+      ],
+      "No contacts found to import": [
+        "불러올 연락처를 찾을 수 없음"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "불러올 이메일을 찾을 수 없음 - 계정에 받은 편지가 없습니다"
       ],
       "No image selected": [
         "선택된 이미지가 없습니다"
@@ -3166,6 +3215,9 @@
       "Unable to upload file": [
         "업로드 파일 불가"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "예상치 못한 오류가 발생하여, 연락처를 가져올 수 없습니다."
+      ],
       "Unknown error": [
         "알 수 없는 오류"
       ],
@@ -3189,6 +3241,9 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "잘못된 인증 코드입니다. 제대로 인증 코드를 복사했는지 확인하고 다시 시도해보세요. 변경할 때까지 24시간이 걸릴 수도 있습니다."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "계정의 최대 연락처 수를 초과했습니다"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "현재 요금제에서 가능한 모든 주소를 사용했습니다. 새 주소를 추가하려면 요금제를 업그레이드해 주세요."
@@ -3785,6 +3840,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "자동으로 Gmail에서 당신의 받은 편지함으로"
+      ],
+      "Gmail messages to your inbox": [
+        "메시지를 가져오세요"
+      ],
+      "Sign in with Google": [
+        "Google로 로그인"
       ]
     },
     "Go to sign in": {
@@ -5556,10 +5622,10 @@
       "User activated": [
         "사용자 활성화됨"
       ],
-      "Username": [
+      "username": [
         "사용자 이름"
       ],
-      "username": [
+      "Username": [
         "사용자 이름"
       ],
       "Users": [
@@ -6098,10 +6164,10 @@
       "Allow recovery by phone": [
         "스마트폰을 통한 복구 허용"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "허용된 도메인"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "허용된 도메인"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6341,6 +6407,9 @@
       "IBAN": [
         "IBAN"
       ],
+      "Import all messages": [
+        "모든 메시지 가져오기"
+      ],
       "Integrated 2FA authenticator": [
         "2단계 인증기 내장"
       ],
@@ -6355,6 +6424,15 @@
       ],
       "Key": [
         "키"
+      ],
+      "Last 12 months only": [
+        "지난 12개월"
+      ],
+      "Last 3 months only": [
+        "지난 3개월"
+      ],
+      "Last month only": [
+        "지난 달"
       ],
       "Last name": [
         "성"
@@ -7132,32 +7210,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
-      ],
-      "From ${ price }": [
-        "시작 가격: ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }에 시작하기"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName }(으)로 업그레이드"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "계정 삭제"
@@ -7179,6 +7231,20 @@
       ],
       "Switch plan": [
         "플랜 변경"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
+      ],
+      "From ${ price }": [
+        "시작 가격: ${ price }"
+      ],
+      "Upgrade": [
+        "업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -7260,26 +7326,11 @@
       "${ size } storage per user": [
         "사용자 당 ${ size } 저장 공간"
       ],
-      "1 TB secure storage": [
-        "1 TB 보안 저장공간"
-      ],
       "1 user": [
         "사용자 1명"
       ],
-      "10 email addresses/aliases": [
-        "10개의 이메일 주소/별칭"
-      ],
-      "10 more premium features": [
-        "10개 더 많은 프리미엄 기능들"
-      ],
       "10-year file version history": [
         "10년 파일 버전 기록"
-      ],
-      "15 GB storage": [
-        "저장 공간 15GB"
-      ],
-      "200 GB of storage": [
-        "200GB 저장공간"
       ],
       "24/7 account management support": [
         "24/7 계정 관리 지원"
@@ -7299,17 +7350,11 @@
       "Administration Panel": [
         "관리 패널"
       ],
-      "Advanced account protection": [
-        "향상된 계정 보호"
-      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "고급 별칭 기능 (SimpleLogin 제공)"
       ],
       "Advanced network security": [
         "향상된 네트워크 보안"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "모든 ${ BRAND_NAME } 제품 및 기능"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "모든 기본 ${ BRAND_NAME } 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -7319,9 +7364,6 @@
       ],
       "Auto-delete Spam and Trash": [
         "스팸 및 휴지통 자동 삭제"
-      ],
-      "Auto-delete spam and trashed messages": [
-        "스팸 및 휴지통의 메시지를 자동 삭제"
       ],
       "Auto-reply": [
         "자동 회신"
@@ -7367,9 +7409,6 @@
       ],
       "Custom fields": [
         "사용자 지정 필드"
-      ],
-      "Custom snooze time": [
-        "사용자 지정 방해 금지 시간"
       ],
       "Custom workspace branding": [
         "커스텀 워크스페이스 브랜딩"
@@ -7427,9 +7466,6 @@
       ],
       "GDPR data processing agreement": [
         "GDPR 데이터 처리 동의서"
-      ],
-      "Generate emails with a prompt": [
-        "프롬프트로 이메일 생성하기"
       ],
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
@@ -7491,15 +7527,6 @@
       "Priority support & live chat": [
         "우선 지원 및 라이브 채팅"
       ],
-      "Private photo backup": [
-        "안전한 사진 백업"
-      ],
-      "Proofread and refine your emails": [
-        "이메일 교정 및 수정하기"
-      ],
-      "Quickly craft replies": [
-        "신속하게 답변 작성하기"
-      ],
       "Recover previous file versions": [
         "이전 파일 버전 복구"
       ],
@@ -7512,23 +7539,11 @@
       "Router support": [
         "라우터 지원"
       ],
-      "Save time emailing": [
-        "이메일 작성 시간 줄이기"
-      ],
       "Schedule and snooze emails for any time": [
         "언제든지 이메일을 예약하거나 다시 알림받기"
       ],
-      "Schedule messages at any time": [
-        "언제든지 메시지를 예약하세요"
-      ],
-      "Search message content": [
-        "메시지 내용 검색"
-      ],
       "Secure Core servers": [
         "Secure Core 서버"
-      ],
-      "Secure file storage and sharing": [
-        "안전한 파일 저장 공간 및 공유"
       ],
       "Secure link sharing": [
         "안전한 링크 공유"
@@ -7565,9 +7580,6 @@
       ],
       "Strict no-logs policy": [
         "엄격한 무로그 정책"
-      ],
-      "Support for up to 2 users": [
-        "최대 2명 지원"
       ],
       "Sync and backup all your files across devices": [
         "기기를 넘나들며 파일을 동기화 및 백업하세요"
@@ -7657,20 +7669,6 @@
       ],
       "${ users } user": [
         "${ users }명 사용자"
-      ]
-    },
-    "new_plans: feature info": {
-      "1 custom email domain": [
-        "1개 커스텀 이메일 도메인"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "원하는 시간대에 메시지를 방해 금지 상태로 전환하고 알림 받을 수 있습니다."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
       ]
     },
     "new_plans: heading": {
@@ -8342,6 +8340,17 @@
         "${ appName }에 오신 것을 환영합니다"
       ]
     },
+    "option": {
+      "Everyone": [
+        "모두"
+      ],
+      "Group members": [
+        "그룹 구성원"
+      ],
+      "No one": [
+        "아무도"
+      ]
+    },
     "Option": {
       "Android": [
         "Android"
@@ -8426,17 +8435,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "모두"
-      ],
-      "Group members": [
-        "그룹 구성원"
-      ],
-      "No one": [
-        "아무도"
       ]
     },
     "Organization capacity error": {
@@ -10616,6 +10614,9 @@
       "Billing details updated": [
         "청구 상세 정보가 업데이트되었습니다."
       ],
+      "Canceling import": [
+        "가져오기 취소 중"
+      ],
       "Catch-all address updated": [
         "Catch-all 주소 업데이트됨"
       ],
@@ -10651,6 +10652,9 @@
       ],
       "Gift code applied": [
         "기프트 코드 적용됨"
+      ],
+      "Import record deleted": [
+        "불러오기 기록 삭제됨"
       ],
       "Invitation rejected": [
         "초대 거부됨"
@@ -10711,6 +10715,9 @@
       ],
       "SPF value copied to clipboard": [
         "SPF 값 복사됨"
+      ],
+      "Undo in progress": [
+        "실행 취소 중"
       ],
       "User updated": [
         "사용자 업데이트됨"
@@ -11056,11 +11063,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-all address": [
-        "Catch-all 주소"
-      ],
       "Catch-All address": [
         "Catch-All 주소"
+      ],
+      "Catch-all address": [
+        "Catch-all 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -11388,9 +11395,6 @@
       ],
       "Import emails, calendars, contacts": [
         "이메일, 캘린더 및 연락처 불러오기"
-      ],
-      "Increase your privacy with more addresses": [
-        "더 많은 주소로 프라이버시를 한 층 향상시키세요"
       ],
       "Invalid verification code": [
         "잘못된 검증 코드"
@@ -12089,8 +12093,8 @@
       "Recommended": [
         "권장"
       ],
-      "Save ${ totals.discountPercentage }%": [
-        "${ totals.discountPercentage }% 절약"
+      "Save ${ price.uiData.discountPercent }%": [
+        "${ price.uiData.discountPercent }% 절약"
       ]
     },
     "User role": {

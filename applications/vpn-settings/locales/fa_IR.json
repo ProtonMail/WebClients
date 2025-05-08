@@ -293,10 +293,10 @@
       "Refresh status": [
         "وضعیت بازخوانی"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "بازخوانی صفحه"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "بازخوانی صفحه"
       ],
       "Remove": [
@@ -371,10 +371,10 @@
       "Select country": [
         "انتخاب کشور"
       ],
-      "select file": [
+      "Select file": [
         "انتخاب فایل"
       ],
-      "Select file": [
+      "select file": [
         "انتخاب فایل"
       ],
       "Send code": [
@@ -427,6 +427,9 @@
       ],
       "Signing in": [
         "در حال ورود به حساب"
+      ],
+      "Skip": [
+        "جهش"
       ],
       "Spam": [
         "هرزنامه"
@@ -580,6 +583,11 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "این کار ارتباط تمام روتر ها و سرویس گیرندگانی که از این گواهی استفاده میکنند را قطع میکند."
+      ]
+    },
+    "Animation": {
+      "Encrypted": [
+        "رمزگذاری شده"
       ]
     },
     "Badge for domain": {
@@ -1719,6 +1727,12 @@
       "Amount below minimum (${ minimumAmount }).": [
         "مبلغ کمتر از حداقل است (${ minimumAmount })."
       ],
+      "Authentication canceled.": [
+        "احراز هویت لغو شود."
+      ],
+      "Authentication error.": [
+        "خطا در احراز هویت."
+      ],
       "Checkout expired, please try again": [
         "پرداخت نهایی منقضی شد، لطفاً دوباره سعی کنید"
       ],
@@ -1778,6 +1792,15 @@
       ],
       "Name does not match": [
         "نام مطابقت ندارد"
+      ],
+      "No calendars found to import": [
+        "هیچ تقویمی برای واردسازی پیدا نشد"
+      ],
+      "No contacts found to import": [
+        "هیچ مخاطبی برای واردسازی پیدا نشد"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "هیچ ایمیلی برای واردسازی پیدا نشد - حساب کاربری صندوق ورودی ندارد"
       ],
       "No image selected": [
         "هیچ تصویری انتخاب نشده است"
@@ -3143,6 +3166,9 @@
       "Hide password": [
         "پنهان‌سازی گذرواژه"
       ],
+      "Import all messages": [
+        "واردسازی همه پیام ها"
+      ],
       "Interval": [
         "بازه"
       ],
@@ -3151,6 +3177,15 @@
       ],
       "Key": [
         "کلید"
+      ],
+      "Last 12 months only": [
+        "فقط 12 ماه اخیر"
+      ],
+      "Last 3 months only": [
+        "فقط 3 ماه اخیر"
+      ],
+      "Last month only": [
+        "فقط ماه اخیر"
       ],
       "Level for NetShield blocker filtering": [
         "سطح فیلتر کردن مسدود کننده NetShield"
@@ -3567,23 +3602,6 @@
         "سرعت متوسط VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "تنزل به ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "همه طرح های ${ BRAND_NAME } را بررسی کنید"
-      ],
-      "From ${ price }": [
-        "از ${ price }"
-      ],
-      "Upgrade": [
-        "ارتقاء"
-      ],
-      "Upgrade now": [
-        "اکنون ارتقا دهید"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "حذف حساب کاربری"
@@ -3605,6 +3623,20 @@
       ],
       "Switch plan": [
         "تغییر دادن طرح"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "تنزل به ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "همه طرح های ${ BRAND_NAME } را بررسی کنید"
+      ],
+      "From ${ price }": [
+        "از ${ price }"
+      ],
+      "Upgrade": [
+        "ارتقاء"
       ]
     },
     "new_plans: feature": {
@@ -3759,9 +3791,6 @@
       ],
       "Router support": [
         "پشتیبانی روتر"
-      ],
-      "Search message content": [
-        "جستجوی محتوای پیام"
       ],
       "Secure Core servers": [
         "سرورهای هسته امن"
@@ -4685,6 +4714,9 @@
       "Gift code applied": [
         "کد هدیه اعمال شد"
       ],
+      "Import record deleted": [
+        "پیشینه درون‌برد حذف شد"
+      ],
       "Invoice customized": [
         "صورت‌حساب سفارشی شد"
       ],
@@ -4726,6 +4758,9 @@
       ],
       "SPF value copied to clipboard": [
         "مقدار SPF در کلیپ‌بورد کپی شد"
+      ],
+      "Undo in progress": [
+        "در حال واگرد"
       ],
       "User updated": [
         "کاربر بروز شد"
@@ -4934,11 +4969,11 @@
       "Card verification": [
         "تایید کارت"
       ],
-      "Catch-all address": [
-        "نشانی دریافت-همه"
-      ],
       "Catch-All address": [
         "نشانی همه‌گیر"
+      ],
+      "Catch-all address": [
+        "نشانی دریافت-همه"
       ],
       "Change login password": [
         "گذرواژه ورود را تغییر دهید"

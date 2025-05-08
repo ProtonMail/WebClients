@@ -4,6 +4,14 @@
     "language": "pt_BR"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "O encaminhamento começará em breve. Novos e-mails aparecerão na sua caixa de entrada."
+      ],
+      "Mail forward stopped": [
+        "Encaminhamento de correio parou"
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name } e ${ remainingCount } outros potenciais vazamentos detectados. Ligue o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
@@ -406,6 +414,9 @@
       "Get the deal": [
         "Obtenha a oferta"
       ],
+      "Get the writing assistant": [
+        "Obter assistente de escrita"
+      ],
       "Get verification code": [
         "Obter código de verificação"
       ],
@@ -445,10 +456,10 @@
       "Invite user": [
         "Convidar usuário"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Continuar editando"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Continuar editando"
       ],
       "Keep logo": [
@@ -562,11 +573,11 @@
       "Refresh status": [
         "Atualizar status"
       ],
-      "Refresh the page": [
-        "Atualizar a página"
-      ],
       "refresh the page": [
         "atualizar a página"
+      ],
+      "Refresh the page": [
+        "Atualizar a página"
       ],
       "Remove": [
         "Remover"
@@ -682,11 +693,11 @@
       "Select country ${ country }": [
         "Selecione o país ${ country }"
       ],
-      "select file": [
-        "selecionar arquivo"
-      ],
       "Select file": [
         "Selecionar arquivo"
+      ],
+      "select file": [
+        "selecionar arquivo"
       ],
       "Send code": [
         "Enviar um código"
@@ -720,6 +731,9 @@
       ],
       "Set up a custom domain": [
         "Configurar um domínio personalizado"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Configure o encaminhamento automático do Gmail"
       ],
       "Set up email forwarding": [
         "Configurar encaminhamento de e-mail"
@@ -768,6 +782,9 @@
       ],
       "Signing in": [
         "Iniciando sessão"
+      ],
+      "Skip": [
+        "Ignorar"
       ],
       "Spam": [
         "Spam"
@@ -1012,6 +1029,26 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Isso irá desconectar todos os roteadores e clientes usando esse certificado."
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "E-mail de ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "5 rastreadores removidos"
+      ],
+      "Auto forwarded": [
+        "Encaminhado automaticamente"
+      ],
+      "Email received": [
+        "E-mail recebido"
+      ],
+      "Encrypted": [
+        "Criptografado"
+      ],
+      "New email": [
+        "Novo e-mail"
       ]
     },
     "Assistant toggle": {
@@ -2587,9 +2624,6 @@
       "No one in your organization can connect to shared servers.": [
         "Ninguém na sua organização pode se conectar a servidores compartilhados."
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Separe diferentes aspectos da sua vida com vários endereços de e-mail e desbloqueie mais recursos premium ao atualizar."
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Configure contas para todos os usuários e convide-os a ingressar no ${ BRAND_NAME }."
       ],
@@ -2911,6 +2945,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } não pode se conectar na sua conta externa"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Você também pode conferir nossa ${ statusPageLink }"
       ],
@@ -2925,6 +2962,12 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Valor abaixo do mínimo (${ minimumAmount })."
+      ],
+      "Authentication canceled.": [
+        "Autenticação cancelada."
+      ],
+      "Authentication error.": [
+        "Erro de autenticação."
       ],
       "Checkout expired, please try again": [
         "Pedido expirado. Tente novamente"
@@ -3033,6 +3076,15 @@
       ],
       "Name does not match": [
         "Nome não corresponde"
+      ],
+      "No calendars found to import": [
+        "Nenhum calendário encontrado para importação"
+      ],
+      "No contacts found to import": [
+        "Nenhum contato encontrado para importação"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Nenhum e-mail encontrado para importação - a conta não possui uma caixa de entrada."
       ],
       "No image selected": [
         "Nenhuma imagem selecionada"
@@ -3181,6 +3233,9 @@
       "Unable to upload file": [
         "Não foi possível fazer o upload do arquivo"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "Erro inesperado, não podemos importar os contatos"
+      ],
       "Unknown error": [
         "Erro desconhecido"
       ],
@@ -3204,6 +3259,9 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Código de verificação incorreto. Certifique-se de copiar corretamente o código de verificação e tentar novamente. Pode levar até 24 horas para que as mudanças entrem em vigor."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Você atingiu o limite de contatos para sua conta"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Você usou todos os endereços do seu plano. Faça o upgrade do seu plano para adicionar um novo endereço."
@@ -3813,6 +3871,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "encaminhe automaticamente"
+      ],
+      "Gmail messages to your inbox": [
+        "mensagens do Gmail na sua caixa de entrada"
+      ],
+      "Sign in with Google": [
+        "Iniciar sessão com Google"
       ]
     },
     "Go to sign in": {
@@ -5626,10 +5695,10 @@
       "User activated": [
         "Usuário ativado"
       ],
-      "Username": [
+      "username": [
         "Nome de usuário"
       ],
-      "username": [
+      "Username": [
         "Nome de usuário"
       ],
       "Users": [
@@ -5923,6 +5992,10 @@
         "Você então será cobrado a cada ${ renewCycle } mês em ${ renewAmountStr }.",
         "Você então será cobrado a cada ${ renewCycle } meses em ${ renewAmountStr }."
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of them.": [
+        "Você ativou o encaminhamento em ${ MAX_SYNC_PAID_USER } endereço do Gmail. Para adicionar outro, primeiro desativá-lo.",
+        "Você ativou o encaminhamento em ${ MAX_SYNC_PAID_USER } endereços do Gmail. Para adicionar outro, primeiro desative um deles."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Sua ${ boldDiscountPercent } para o ${ boldPlanTitle } foi aplicada."
       ],
@@ -6182,10 +6255,10 @@
       "Allow recovery by phone": [
         "Permitir a recuperação por telefone"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domínio permitido"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domínio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6425,6 +6498,9 @@
       "IBAN": [
         "IBAN"
       ],
+      "Import all messages": [
+        "Importar todas as mensagens"
+      ],
       "Integrated 2FA authenticator": [
         "Autenticador A2F integrado"
       ],
@@ -6439,6 +6515,15 @@
       ],
       "Key": [
         "Chave"
+      ],
+      "Last 12 months only": [
+        "Somente os últimos 12 meses"
+      ],
+      "Last 3 months only": [
+        "Somente os últimos 3 meses"
+      ],
+      "Last month only": [
+        "Apenas no mês passado"
       ],
       "Last name": [
         "Sobrenome"
@@ -7223,32 +7308,6 @@
         "Velocidade média de VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorar todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comece por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "A partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Faça upgrade para ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Excluir conta"
@@ -7270,6 +7329,20 @@
       ],
       "Switch plan": [
         "Mudar de plano"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorar todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
       ]
     },
     "new_plans: feature": {
@@ -7368,26 +7441,11 @@
       "${ size } storage per user": [
         "${ size } de armazenamento por usuário"
       ],
-      "1 TB secure storage": [
-        "1 TB de armazenamento seguro"
-      ],
       "1 user": [
         "1 usuário"
       ],
-      "10 email addresses/aliases": [
-        "10 endereços de e-mail/aliases"
-      ],
-      "10 more premium features": [
-        "10 recursos premium adicionais"
-      ],
       "10-year file version history": [
         "Histórico de versões de arquivos por 10 anos"
-      ],
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "200 GB of storage": [
-        "200 GB de armazenamento"
       ],
       "24/7 account management support": [
         "Suporte de administração de conta 24/7"
@@ -7407,17 +7465,11 @@
       "Administration Panel": [
         "Painel de Administração"
       ],
-      "Advanced account protection": [
-        "Proteção avançada de conta"
-      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Recursos avançados de alias (com tecnologia do SimpleLogin)"
       ],
       "Advanced network security": [
         "Segurança de rede avançada"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "Todos os produtos e recursos da ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos os serviços básicos da ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -7430,9 +7482,6 @@
       ],
       "Auto-delete Spam and Trash": [
         "Excluir conteúdo de Spam e Lixeira de forma automática"
-      ],
-      "Auto-delete spam and trashed messages": [
-        "Excluir automaticamente spam e mensagens da lixeira"
       ],
       "Auto-reply": [
         "Resposta automática"
@@ -7478,9 +7527,6 @@
       ],
       "Custom fields": [
         "Campos personalizados"
-      ],
-      "Custom snooze time": [
-        "Adiamento personalizado"
       ],
       "Custom workspace branding": [
         "Marca personalizada do espaço de trabalho"
@@ -7538,9 +7584,6 @@
       ],
       "GDPR data processing agreement": [
         "Acordo de processamento de dados do RGPD"
-      ],
-      "Generate emails with a prompt": [
-        "Gere e-mails com um prompt"
       ],
       "Group management (coming soon)": [
         "Gerenciamento de grupo (em breve)"
@@ -7603,15 +7646,6 @@
       "Priority support & live chat": [
         "Suporte prioritário e chat ao-vivo"
       ],
-      "Private photo backup": [
-        "Backup de fotos privadas"
-      ],
-      "Proofread and refine your emails": [
-        "Revise e otimize seus e-mails"
-      ],
-      "Quickly craft replies": [
-        "Elabore respostas rapidamente"
-      ],
       "Recover previous file versions": [
         "Recuperar versões anteriores de arquivos"
       ],
@@ -7624,23 +7658,11 @@
       "Router support": [
         "Suporte a roteador"
       ],
-      "Save time emailing": [
-        "Economize tempo enviando e-mails"
-      ],
       "Schedule and snooze emails for any time": [
         "Programe e adie e-mails para qualquer momento"
       ],
-      "Schedule messages at any time": [
-        "Agende mensagens a qualquer momento"
-      ],
-      "Search message content": [
-        "Pesquisar conteúdo da mensagem"
-      ],
       "Secure Core servers": [
         "Servidores Secure Core"
-      ],
-      "Secure file storage and sharing": [
-        "Armazenamento e compartilhamento seguro de arquivos"
       ],
       "Secure link sharing": [
         "Compartilhamento de link seguro"
@@ -7678,9 +7700,6 @@
       ],
       "Strict no-logs policy": [
         "Rigorosa política de inexistência de registros"
-      ],
-      "Support for up to 2 users": [
-        "Suporte para até 2 usuários"
       ],
       "Sync and backup all your files across devices": [
         "Sincronize e faça backup dos seus arquivos em todos os dispositivos"
@@ -7776,20 +7795,6 @@
       "${ users } user": [
         "${ users } usuário",
         "${ users } usuários"
-      ]
-    },
-    "new_plans: feature info": {
-      "1 custom email domain": [
-        "1 domínio de e-mail personalizado"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Crie vários endereços de e-mail para suas identidades on-line, por exemplo: JoaoLojas@${ domain } para contas de lojas e JoaoNoticias@${ domain2 } para assinaturas de notícias"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Adie mensagens e receba lembretes quando quiser"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, o ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }."
       ]
     },
     "new_plans: heading": {
@@ -7922,6 +7927,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "A partir de ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "O preço com desconto de ${ priceCoupon } é válido no primeiro mês. Em seguida, será renovado automaticamente por ${ priceLine }. Você pode cancelar a qualquer momento."
       ],
@@ -8466,6 +8474,17 @@
         "Bem-vindo ao ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Todos"
+      ],
+      "Group members": [
+        "Membros do grupo"
+      ],
+      "No one": [
+        "Ninguém"
+      ]
+    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "${ defaultLabel } permitido"
@@ -8544,17 +8563,6 @@
       ],
       "UDP": [
         "UDP"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Todos"
-      ],
-      "Group members": [
-        "Membros do grupo"
-      ],
-      "No one": [
-        "Ninguém"
       ]
     },
     "Organization capacity error": {
@@ -10800,6 +10808,9 @@
       "Billing details updated": [
         "Os detalhes de faturamento forem atualizados"
       ],
+      "Canceling import": [
+        "Cancelando a importação"
+      ],
       "Catch-all address updated": [
         "Endereço catch-all atualizado"
       ],
@@ -10835,6 +10846,9 @@
       ],
       "Gift code applied": [
         "Código de vale-presente aplicado"
+      ],
+      "Import record deleted": [
+        "Importação de registro excluído"
       ],
       "Invitation rejected": [
         "Convite recusado"
@@ -10895,6 +10909,9 @@
       ],
       "SPF value copied to clipboard": [
         "Valor SPF copiado para a área de transferência"
+      ],
+      "Undo in progress": [
+        "Desfazer em andamento"
       ],
       "User updated": [
         "Usuário atualizado"
@@ -11244,11 +11261,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-all address": [
-        "Endereço catch-all"
-      ],
       "Catch-All address": [
         "Endereço Catch-All (captura tudo)"
+      ],
+      "Catch-all address": [
+        "Endereço catch-all"
       ],
       "Change login password": [
         "Alterar a senha de login"
@@ -11580,14 +11597,14 @@
       "Import emails, calendars, contacts": [
         "Importar e-mails, calendários e contatos"
       ],
-      "Increase your privacy with more addresses": [
-        "Aumente sua privacidade com mais endereços"
-      ],
       "Invalid verification code": [
         "O código de verificação não é válido."
       ],
       "Invoices": [
         "Faturas"
+      ],
+      "Limit reached": [
+        "Limite atingido"
       ],
       "Main password": [
         "Senha principal"
@@ -12282,8 +12299,8 @@
       "Recommended": [
         "Recomendado"
       ],
-      "Save ${ totals.discountPercentage }%": [
-        "Economize ${ totals.discountPercentage }%"
+      "Save ${ price.uiData.discountPercent }%": [
+        "Economize ${ price.uiData.discountPercent }%"
       ]
     },
     "User role": {
