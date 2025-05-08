@@ -39,9 +39,10 @@ export function getPricePerCycle(plan: Plan | undefined, cycle: CYCLE) {
 }
 
 export function isMultiUserPersonalPlan(plan: Plan) {
-    // even though Duo, Family and Visionary plans can have up to 6 users in the org,
+    // even though Duo, Family, Visionary, and Pass Family plans can have up to 6 users in the org,
     // for the price displaying purposes we count it as 1 member.
-    return plan.Name === PLANS.DUO || plan.Name === PLANS.FAMILY || plan.Name === PLANS.VISIONARY;
+    const plans = [PLANS.DUO, PLANS.FAMILY, PLANS.VISIONARY, PLANS.PASS_FAMILY];
+    return plans.includes(plan.Name as PLANS);
 }
 
 export function getPricePerMember(plan: Plan, cycle: CYCLE): number {
