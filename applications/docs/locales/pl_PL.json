@@ -369,6 +369,9 @@
       "Get the apps": [
         "Pobierz aplikacje"
       ],
+      "Get the writing assistant": [
+        "Uzyskaj asystenta pisania"
+      ],
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
       ],
@@ -735,9 +738,6 @@
       "Start import": [
         "Rozpocznij importowanie"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Od ${ priceUnlimited }"
-      ],
       "Stay": [
         "Pozostań"
       ],
@@ -797,9 +797,6 @@
       ],
       "Upgrade now": [
         "Ulepsz teraz"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Ulepsz plan do wersji ${ BRAND_NAME } Unlimited"
       ],
       "Upload and share files": [
         "Prześlij i udostępnij pliki"
@@ -2353,11 +2350,6 @@
         "Zaległa faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Użyj asystenta importu Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } w ${ DRIVE_APP_NAME } umożliwia współpracę z innymi w bezpiecznym i szyfrowanym środowisku."
@@ -2392,9 +2384,6 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa usuwanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Zaprojektowany dla użytkowników poszukujących zwiększonej ochrony swoich kont."
-      ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Łatwy dostęp do poczty i kalendarza na komputerach oraz urządzeniach mobilnych."
       ],
@@ -2422,9 +2411,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych przez usługi stron trzecich."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ PLAN_NAMES[PLANS.BUNDLE] }."
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Pomóż zespołowi bezpiecznie przechowywać hasła do poufnych danych firmowych i informacji o klientach."
       ],
@@ -2436,9 +2422,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa scalanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Zaoszczędź czas, wysyłając wiadomości do grup kontaktów. Odblokuj tę i inne funkcje premium po ulepszeniu konta."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Ustaw metodę odzyskiwania danych, aby uniknąć utraty danych."
@@ -2467,9 +2450,6 @@
       "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
         "Ulepsz do planu ${ BRAND_NAME } ${ planName }, aby nadal udostępniać pliki z uprawnieniem do edycji"
       ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Ulepsz konto, aby włączyć program ${ PROTON_SENTINEL_NAME } — nasze najnowocześniejsze rozwiązanie bezpieczeństwa oparte na sztucznej inteligencji z dedykowanym wsparciem ekspertów 24/7."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Przeciągnij i upuść, aby ustalić priorytet scalania kontaktów. Odznacz kontakty, których nie chcesz scalić."
       ],
@@ -2493,6 +2473,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3973,8 +3958,17 @@
       "Import from ${ provider }": [
         "Importuj z ${ provider }"
       ],
-      "Other": [
-        "Inny"
+      "Import from Google": [
+        "Importuj z konta Google"
+      ],
+      "Import from other": [
+        "Importuj z innego konta"
+      ],
+      "Import from Outlook": [
+        "Importuj z konta Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importuj z konta Yahoo"
       ]
     },
     "Import warning": {
@@ -4297,6 +4291,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Cykl rozliczeniowy: ${ text }"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Przenieś wiadomości, kontakty i kalendarze do ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Obniżając plan do wersji Free, utracisz te bonusy na zawsze, nawet jeśli w przyszłości ponownie ulepszysz swoje konto."
@@ -4808,6 +4805,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Co najmniej jeden z zaufanych kluczy został oznaczony przez właściciela jako zagrożony. Zalecamy przestać ufać tym kluczom."
       ],
+      "One time import": [
+        "Jednorazowy import"
+      ],
       "Only the people with the link and the password can access this file.": [
         "Tylko posiadacz linku i hasła ma dostęp do pliku."
       ],
@@ -4969,9 +4969,6 @@
       ],
       "Select a folder to move to.": [
         "Wybierz folder do przeniesienia."
-      ],
-      "Select a service provider to start": [
-        "Aby rozpocząć, wybierz dostawcę usługi"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wybierz domyślny format wiadomości, który ma zostać użyty podczas wysyłania wiadomości na ten adres e-mail."
@@ -6706,23 +6703,11 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Obniż plan do wersji ${ downgradedPlanName }"
       ],
-      "Get started for ${ priceCoupon }": [
-        "Od ${ priceCoupon }"
-      ],
       "Plans starting from ${ priceDrivePlus }": [
         "Od ${ priceDrivePlus }"
       ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
       "Upgrade": [
         "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Ulepsz do planu ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -6932,9 +6917,6 @@
       "Auto-delete Spam and Trash": [
         "Automatyczne usuwanie spamu i kosza"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Automatyczne usuwanie spamu i kosza"
-      ],
       "Auto-reply": [
         "Autoresponder"
       ],
@@ -6976,9 +6958,6 @@
       ],
       "Custom fields": [
         "Pola niestandardowe"
-      ],
-      "Custom snooze time": [
-        "Niestandardowy czas odłożenia"
       ],
       "Custom workspace branding": [
         "Niestandardowy branding"
@@ -7120,12 +7099,6 @@
       ],
       "Schedule and snooze emails for any time": [
         "Planowanie i usypianie wiadomości o dowolnej porze"
-      ],
-      "Schedule messages at any time": [
-        "Zaplanuj wiadomości w dowolnym momencie"
-      ],
-      "Search message content": [
-        "Wyszukiwanie zawartości wiadomości"
       ],
       "Secure Core servers": [
         "Serwery Secure Core"
@@ -7275,9 +7248,6 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Utwórz wiele adresów e-mail dla swoich tożsamości internetowych, np. JanZakupowy@${ domain } dla kont zakupowych i JanWiadomości@${ domain2 } dla subskrybowania wiadomości"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Odłóż wiadomości i otrzymaj powiadomienie o nich w dowolnym momencie"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
       ]
@@ -7380,6 +7350,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Od ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Niższa cena ${ priceCoupon } jest ważna przez pierwszy miesiąc. Automatycznie odnowienie nastąpi w kwocie ${ priceLine }. Możesz anulować w dowolnym momencie."
       ],
@@ -9901,9 +9874,6 @@
       "Exporting contacts": [
         "Eksportowanie kontaktów"
       ],
-      "Get advanced protection": [
-        "Uzyskaj zaawansowaną ochronę"
-      ],
       "Get more from your VPN": [
         "Uzyskaj więcej z VPN"
       ],
@@ -10158,9 +10128,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Włącz ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "Unlock contacts groups": [
-        "Odblokuj grupy kontaktów"
       ],
       "Untitled document ${ date }": [
         "Dokument bez nazwy ${ date }"

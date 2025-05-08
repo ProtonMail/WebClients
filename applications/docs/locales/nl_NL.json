@@ -369,6 +369,9 @@
       "Get the apps": [
         "De apps downloaden"
       ],
+      "Get the writing assistant": [
+        "Verkrijg de schrijfassistent"
+      ],
       "Get verification code": [
         "Krijg verificatie code"
       ],
@@ -735,9 +738,6 @@
       "Start import": [
         "Begin met importeren"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Vanaf ${ priceUnlimited }"
-      ],
       "Stay": [
         "Blijf"
       ],
@@ -797,9 +797,6 @@
       ],
       "Upgrade now": [
         "Nu upgraden"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Upgrade naar ${ BRAND_NAME } Unlimited"
       ],
       "Upload and share files": [
         "Bestanden uploaden en delen"
@@ -2341,11 +2338,6 @@
         "Onbetaalde factuur"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gebruik de Easy Switch-importhulp"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Met ${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } kunt u samenwerken met anderen in een veilige, versleutelde omgeving."
@@ -2380,9 +2372,6 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen verwijderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Ontworpen voor gebruikers die verhoogde bescherming zoeken voor hun accounts."
-      ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Krijg eenvoudig toegang tot uw e-mail en agenda op desktop en mobiel."
       ],
@@ -2410,9 +2399,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Krijg onbeperkte aliassen en 500 GB opslagruimte met ${ PLAN_NAMES[PLANS.BUNDLE] }."
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Help uw team om wachtwoorden veilig op te slaan voor gevoelige bedrijfs- en klantinformatie."
       ],
@@ -2424,9 +2410,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen samenvoegen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Bespaar tijd door met contactgroepen iedereen tegelijk e-mails te sturen. Ontgrendel deze en andere premium-functies wanneer u upgrade."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Stel een methode voor gegevensherstel in om gegevensverlies te voorkomen."
@@ -2455,9 +2438,6 @@
       "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
         "Upgrade naar ${ BRAND_NAME } ${ planName } om bestanden te blijven delen met bewerkingstoegang"
       ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Upgrade uw account om ${ PROTON_SENTINEL_NAME } te activeren, onze geavanceerde AI-gedreven beveiligingsoplossing met toegewijde 24/7 deskundige ondersteuning."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wilt samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
       ],
@@ -2481,6 +2461,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3917,8 +3902,17 @@
       "Import from ${ provider }": [
         "Importeer uit ${ provider }"
       ],
-      "Other": [
-        "Overig"
+      "Import from Google": [
+        "Importeer uit Google"
+      ],
+      "Import from other": [
+        "Importeer uit andere"
+      ],
+      "Import from Outlook": [
+        "Importeer uit Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importeer uit Outlook"
       ]
     },
     "Import warning": {
@@ -4197,6 +4191,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Facturatiefrequentie: ${ text }"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Breng uw berichten, contacten en agenda's naar ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
@@ -4706,6 +4703,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
       ],
+      "One time import": [
+        "Eenmalige import"
+      ],
       "Only the people with the link and the password can access this file.": [
         "Alleen de mensen met de link en het wachtwoord hebben toegang tot dit bestand."
       ],
@@ -4863,9 +4863,6 @@
       ],
       "Select a folder to move to.": [
         "Kies een map om naartoe te verplaatsen"
-      ],
-      "Select a service provider to start": [
-        "Selecteer een dienstverlener om te beginnen"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecteer het e-mailformaat dat u standaard wil gebruiken wanneer u een e-mail stuurt aan deze geadresseerde."
@@ -6520,23 +6517,11 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade naar ${ downgradedPlanName }"
       ],
-      "Get started for ${ priceCoupon }": [
-        "Aan de slag voor ${ priceCoupon }"
-      ],
       "Plans starting from ${ priceDrivePlus }": [
         "Plannen vanaf ${ priceDrivePlus }"
       ],
-      "Starting from ${ pricing }": [
-        "Vanaf ${ pricing }"
-      ],
       "Upgrade": [
         "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Upgraden naar ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -6712,9 +6697,6 @@
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Automatisch spam en verwijderde berichten verwijderen"
-      ],
       "Auto-reply": [
         "Automatisch beantwoorden"
       ],
@@ -6756,9 +6738,6 @@
       ],
       "Custom fields": [
         "Aangepaste velden"
-      ],
-      "Custom snooze time": [
-        "Aangepaste snoozetijd"
       ],
       "Custom workspace branding": [
         "Aangepaste workspace branding"
@@ -6899,12 +6878,6 @@
       "Schedule and snooze emails for any time": [
         "E-mails plannen en snoozen wanneer u wilt"
       ],
-      "Schedule messages at any time": [
-        "Plan berichten in op ieder moment"
-      ],
-      "Search message content": [
-        "Doorzoek berichtinhoud"
-      ],
       "Secure Core servers": [
         "Secure Core-servers"
       ],
@@ -7041,9 +7014,6 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Berichten snoozen en ontvangen wanneer u wil"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
       ]
@@ -7146,6 +7116,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Vanaf ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "De prijs van ${ priceCoupon } is alleen voor de eerste maand, hierna wordt uw abonnement automatisch verlengt voor ${ priceLine }. U kunt op ieder moment annuleren."
       ],
@@ -9537,9 +9510,6 @@
       "Exporting contacts": [
         "Contacten worden geëxporteerd"
       ],
-      "Get advanced protection": [
-        "Kies geavanceerde bescherming"
-      ],
       "Get more from your VPN": [
         "Haal meer uit uw VPN"
       ],
@@ -9792,9 +9762,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } inschakelen"
-      ],
-      "Unlock contacts groups": [
-        "Ontgrendel contactgroepen"
       ],
       "Untitled document ${ date }": [
         "Naamloos document ${ date }"
