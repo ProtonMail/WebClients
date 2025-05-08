@@ -688,6 +688,9 @@
       "Get the deal": [
         "Dapatkan penawaran ini"
       ],
+      "Get the writing assistant": [
+        "Dapatkan asisten penulisan"
+      ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
@@ -775,11 +778,11 @@
       "Keep": [
         "Simpan"
       ],
-      "Keep Editing": [
-        "Lanjut Menyunting"
-      ],
       "Keep editing": [
         "Lanjut menyunting"
+      ],
+      "Keep Editing": [
+        "Lanjut Menyunting"
       ],
       "Keep logo": [
         "Pertahankan logo"
@@ -1138,11 +1141,11 @@
       "Select country ${ country }": [
         "Pilih negara ${ country }"
       ],
-      "select file": [
-        "pilih berkas"
-      ],
       "Select file": [
         "Pilih berkas"
+      ],
+      "select file": [
+        "pilih berkas"
       ],
       "Select files": [
         "Pilih berkas"
@@ -1356,9 +1359,6 @@
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "Tingkatkan ke Business"
@@ -3839,9 +3839,6 @@
       "Also included": [
         "Turut meliputi"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Hapus pesan spam dan sampah secara otomatis dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Hapus email di Sampah dan Spam lebih dari 30 hari yang lalu."
       ],
@@ -3944,9 +3941,6 @@
       "Send a code to your recovery email or phone": [
         "Kirim kode ke alamat email atau nomor telepon pemulihan Anda"
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Pisahkan berbagai aspek kehidupan Anda dengan alamat emailnya masing-masing dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Siapkan akun untuk seluruh pengguna dan undang mereka untuk bergabung dengan ${ BRAND_NAME }"
       ],
@@ -3962,23 +3956,11 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Untuk mengimpor kontak Anda dari Google atau Outlook, ${ easySwitchLink }."
       ],
-      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "Untuk menghilangkan footer ${ MAIL_APP_NAME }, tingkatkan akun Anda dan dapatkan berbagai fitur premium lainnya."
-      ],
       "To start, give your organization a name.": [
         "Untuk memulai, beri nama organisasi Anda."
       ],
       "Track the status and activity of your referrals.": [
         "Lacak status dan aktivitas rujukan Anda."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Dapatkan alamat email yang lebih pendek dan berbagai fitur premium lainnya dengan meningkatkan akun."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Dapatkan filter tanpa batas yang menyortir kotak masuk Anda dan berbagai fitur premium lainnya pada saat Anda meningkatkan akun."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Dapatkan folder tak terbatas, label tak terbatas, dan berbagai fitur premium lainnya pada saat Anda meningkatkan akun."
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Tingkatkan untuk mendapatkan ${ activatePmUser } untuk alamat email yang lebih pendek dan mudah untuk diingat sebagai tambahan dari yang Anda punya saat ini."
@@ -6482,45 +6464,6 @@
       ],
       "${ appName } on Play Store": [
         "${ appName } di Play Store"
-      ],
-      "${ MAIL_APP_NAME } app": [
-        "Aplikasi ${ MAIL_APP_NAME }"
-      ],
-      "account logins": [
-        "login akun"
-      ],
-      "Auto-forward Gmail": [
-        "Penerusan otomatis Gmail"
-      ],
-      "auto-forwarding": [
-        "penerusan otomatis"
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Ubah ${ strongText } ke alamat ${ BRAND_NAME } Anda"
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Cari tahu bagaimana ${ strongText } kami bekerja melindungi Anda"
-      ],
-      "Discover privacy features": [
-        "Telusuri berbagai fitur privasi kami"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Dapatkan ${ strongText } di Android dan iOS"
-      ],
-      "Get the App": [
-        "Dapatkan Aplikasinya"
-      ],
-      "privacy features": [
-        "fitur privasi"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Atur ${ strongText } dari Gmail"
-      ],
-      "This feature is currently unavailable": [
-        "Fitur saat ini belum tersedia"
-      ],
-      "Update your logins": [
-        "Perbarui login Anda"
       ]
     },
     "Gmail forwarding": {
@@ -7131,9 +7074,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Impor dari ${ provider }"
-      ],
-      "Other": [
-        "Lainnya"
       ]
     },
     "Import rollback status": {
@@ -8416,9 +8356,6 @@
       "Import mailbox": [
         "Impor kotak surat"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Impor email, kalender, dan kontak Anda dari layanan lain ke ${ BRAND_NAME }."
-      ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "PENTING: Apabila konsol DNS Anda tidak mengizinkan nilai CNAME yang diakhiri dengan tanda titik, Anda dapat menghapus tanda titik terakhir pada nilai CNAME yang bersangkutan."
       ],
@@ -9160,9 +9097,6 @@
       "Securing your account": [
         "Mengamankan akun Anda"
       ],
-      "Select a service provider to start": [
-        "Pilih layanan email yang Anda gunakan untuk memulai"
-      ],
       "Select a service to continue": [
         "Pilih layanan untuk melanjutkan"
       ],
@@ -9790,11 +9724,11 @@
       "User activated": [
         "Pengguna diaktifkan"
       ],
-      "Username": [
-        "Nama pengguna"
-      ],
       "username": [
         "nama pengguna"
+      ],
+      "Username": [
+        "Nama pengguna"
       ],
       "Users": [
         "Pengguna"
@@ -10947,11 +10881,11 @@
       "Allow sharing outside the organization": [
         "Izinkan pembagian di luar organisasi"
       ],
-      "Allowed domain": [
-        "Domain yang diizinkan"
-      ],
       "Allowed Domain": [
         "Domain yang Diizinkan"
+      ],
+      "Allowed domain": [
+        "Domain yang diizinkan"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Memungkinkan semua orang dalam organisasi Anda untuk menambahkan tautan konferensi video dalam undangan kalender secara terpadu."
@@ -10962,11 +10896,11 @@
       "Amount due": [
         "Jumlah tagihan"
       ],
-      "AND": [
-        "DAN"
-      ],
       "And": [
         "Dan"
+      ],
+      "AND": [
+        "DAN"
       ],
       "and": [
         "dan"
@@ -11394,11 +11328,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "JIKA"
-      ],
       "If": [
         "Jika"
+      ],
+      "IF": [
+        "JIKA"
       ],
       "Import all messages": [
         "Impor seluruh pesan"
@@ -11607,14 +11541,14 @@
       "Optional": [
         "Opsional"
       ],
-      "OR": [
-        "ATAU"
-      ],
       "or": [
         "atau"
       ],
       "Or": [
         "Atau"
+      ],
+      "OR": [
+        "ATAU"
       ],
       "Organization name": [
         "Nama organisasi"
@@ -12297,11 +12231,11 @@
       "perform a password reset from your active session": [
         "melangsungkan pengaturan ulang kata sandi dari sesi Anda yang sedang aktif"
       ],
-      "privacy policy": [
-        "kebijakan privasi"
-      ],
       "Privacy policy": [
         "Kebijakan privasi"
+      ],
+      "privacy policy": [
+        "kebijakan privasi"
       ],
       "Reactivate now": [
         "Aktifkan kembali"
@@ -12932,20 +12866,8 @@
       "From ${ price }": [
         "Dari ${ price }"
       ],
-      "Get started for ${ priceCoupon }": [
-        "Mulai dengan harga ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Mulai dari ${ pricing }"
-      ],
       "Upgrade": [
         "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ],
-      "Upgrade to ${ planName }": [
-        "Tingkatkan ke ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13093,9 +13015,6 @@
       "Auto-delete Spam and Trash": [
         "Kosongkan Spam dan Sampah secara otomatis"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Hapus pesan spam dan sampah secara otomatis"
-      ],
       "Auto-reply": [
         "Pesan balasan otomatis"
       ],
@@ -13140,9 +13059,6 @@
       ],
       "Custom fields": [
         "Kolom khusus"
-      ],
-      "Custom snooze time": [
-        "Pilih sendiri waktu tunda"
       ],
       "Custom workspace branding": [
         "Penjenamaan ruang kerja yang disesuaikan"
@@ -13294,12 +13210,6 @@
       "Schedule and snooze emails for any time": [
         "Jadwalkan dan tunda email kapan saja"
       ],
-      "Schedule messages at any time": [
-        "Jadwalkan pesan sesuai keinginan Anda"
-      ],
-      "Search message content": [
-        "Pencarian konten pesan"
-      ],
       "Secure Core servers": [
         "Server Secure Core"
       ],
@@ -13444,9 +13354,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Buat berbagai alamat email untuk masing-masing identitas online Anda, mis. JohnShopper@${ domain } untuk akun belanja dan JohnNews@${ domain2 } untuk akun langganan berita"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Tunda pesan dan dapatkan peringatan di waktu yang Anda inginkan"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }"
@@ -13634,6 +13541,14 @@
         "Dapatkan seluruh produk dan fitur premium ${ BRAND_NAME } seharga hanya ${ priceLine }. Batalkan kapan saja."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -13652,14 +13567,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -14293,6 +14200,17 @@
         "Desktop"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Semua orang"
+      ],
+      "Group members": [
+        "Anggota grup"
+      ],
+      "No one": [
+        "Tidak seorang pun"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "Tanggal 10"
@@ -14527,17 +14445,6 @@
       ],
       "Trash": [
         "Buang ke Sampah"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Semua orang"
-      ],
-      "Group members": [
-        "Anggota grup"
-      ],
-      "No one": [
-        "Tidak seorang pun"
       ]
     },
     "Option delay send seconds": {
@@ -16535,9 +16442,6 @@
       ]
     },
     "Settings description": {
-      "Complete the transition to privacy with our secure importing and forwarding tools.": [
-        "Selesaikan transisi menuju privasi dengan perangkat impor dan penerusan pesan aman kami."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Jaga agar kotak masuk Anda tetap teratur dengan folder dan label. ${ learnMoreLink }"
       ]
@@ -18377,9 +18281,6 @@
       "Actions": [
         "Tindakan"
       ],
-      "Activate @pm.me": [
-        "Aktifkan @pm.me"
-      ],
       "Activate organization key": [
         "Aktifkan kunci organisasi"
       ],
@@ -18536,11 +18437,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-all address": [
-        "Alamat catch-all"
-      ],
       "Catch-All address": [
         "Alamat Catch-All"
+      ],
+      "Catch-all address": [
+        "Alamat catch-all"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -18574,9 +18475,6 @@
       ],
       "Clear": [
         "Bersihkan"
-      ],
-      "Clear out the junk": [
-        "Hapus sampah yang ada"
       ],
       "Click a value in the table to use it as filter": [
         "Klik nilai di tabel untuk menggunakannya sebagai penyaring"
@@ -19106,17 +19004,11 @@
       "Import key": [
         "Impor kunci"
       ],
-      "Import messages": [
-        "Impor pesan"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Impor melalui ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Inactive 2FA": [
         "2FA yang tidak aktif"
-      ],
-      "Increase your privacy with more addresses": [
-        "Tingkatkan privasi Anda dengan lebih banyak alamat"
       ],
       "Information exposed in breach": [
         "Informasi yang terpapar dalam kebocoran data"
@@ -19138,9 +19030,6 @@
       ],
       "Items owned": [
         "Item yang dimiliki"
-      ],
-      "Keep your inbox organized": [
-        "Tetap kotak masuk Anda teratur"
       ],
       "Keyboard shortcuts": [
         "Pintasan keyboard"
@@ -19289,9 +19178,6 @@
       "PayPal verification failed": [
         "Verifikasi PayPal gagal"
       ],
-      "Personalize your e-mail footer": [
-        "Sesuaikan footer email Anda"
-      ],
       "Personalize your email footer": [
         "Sesuaikan footer email Anda"
       ],
@@ -19412,9 +19298,6 @@
       "SAML authentication": [
         "Autentikasi SAML"
       ],
-      "Save time with email filters": [
-        "Hemat waktu dengan filter email"
-      ],
       "Schedule meetings in one click": [
         "Jadwalkan rapat dalam sekali klik"
       ],
@@ -19482,9 +19365,6 @@
         "Siapkan metode pemulihan"
       ],
       "Set up email forwarding": [
-        "Atur penerusan email"
-      ],
-      "Set up forwarding": [
         "Atur penerusan email"
       ],
       "Set up two-factor authentication": [
@@ -20418,9 +20298,6 @@
       ],
       "Recommended": [
         "Direkomendasikan"
-      ],
-      "Save ${ totals.discountPercentage }%": [
-        "Hemat ${ totals.discountPercentage }%"
       ]
     },
     "User referee invited via email": {

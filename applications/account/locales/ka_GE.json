@@ -688,6 +688,9 @@
       "Get the deal": [
         "ფასდაკლების მიღება"
       ],
+      "Get the writing assistant": [
+        "მიიღეთ წერის დამხმარე"
+      ],
       "Get verification code": [
         "შემოწმების კოდის მიღება"
       ],
@@ -775,10 +778,10 @@
       "Keep": [
         "დატოვება"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "ჩასწორების გაგრძელება"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "ჩასწორების გაგრძელება"
       ],
       "Keep logo": [
@@ -1138,10 +1141,10 @@
       "Select country ${ country }": [
         "${ country } ქვეყნის არჩევა"
       ],
-      "select file": [
+      "Select file": [
         "აირჩიეთ ფაილი"
       ],
-      "Select file": [
+      "select file": [
         "აირჩიეთ ფაილი"
       ],
       "Select files": [
@@ -1356,9 +1359,6 @@
       ],
       "Upgrade now": [
         "ტარიფის განახლება"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "ასწიეთ სატარიფო გეგმა ${ MAIL_SHORT_APP_NAME } Plus-მდე"
       ],
       "Upgrade to Business": [
         "Business-მდე აწევა"
@@ -2809,6 +2809,10 @@
       ]
     },
     "CountriesStep:Info": {
+      "${ selectedCitiesCount } cities selected": [
+        "მონიშნულია ${ selectedCitiesCount } ქალაქი",
+        "მონიშნულია ${ selectedCitiesCount } ქალაქი"
+      ],
       "${ selectedCountriesCount } selected": [
         "მონიშნულია ${ selectedCountriesCount }",
         "მონიშნულია ${ selectedCountriesCount }"
@@ -3837,9 +3841,6 @@
       "Also included": [
         "ასევე შეიცავს"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "განბლოკეთ სპამისა და სანაგვე ყუთის ავტომატური წაშლა და სხვა ფასიანი ფუნქციები, როცა სატარიფო გეგმას ასწევთ."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "ნაგვის ყუთში და სპამში 30 დღეზე მეტი დროით გადატანილი ელფოსტების ავტომატური გასუფთავება."
       ],
@@ -3918,8 +3919,8 @@
       "Send a code to your recovery email or phone": [
         "კოდის გაგზავნა თქვენს აღდგენის ელფოსტაზე ან ტელეფონზე"
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "ასწიეთ სატარიფო გეგმა და გამოყავით თქვენი ცხოვრების სხვადასხვა ასპექტები სხვადასხვა ელფოსტის მისამართებით და მიიღეთ კიდევ ბევრი სხვა ფასიანი ფუნქცია."
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "მოირგეთ ანგარიშები ყველა მომხმარებლისთვის და მოიწვიეთ ისინი ${ BRAND_NAME }-ზე."
       ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
         "მოირგეთ ავტომატური გადაგაზვნა, რომ გადაამისამართოთ შემომავალი ელფოსტები სხვა ელფოსტის მისამართზე."
@@ -3933,23 +3934,11 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google-დან ან Outlook-დან კონტაქტების შემოსატანად, ${ easySwitchLink }."
       ],
-      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "${ MAIL_APP_NAME }-ის ქვედა კოლონტიტულის მოსაცილებლად ასწიეთ სატარიფო გეგმა და მიიღეთ კიდევ უფრო მეტი ფასიანი ფუნქცია."
-      ],
       "To start, give your organization a name.": [
         "დასაწყებად, მიანიჭეთ თქვენს ორგანიზაიას სახელი."
       ],
       "Track the status and activity of your referrals.": [
         "თქვენი მიმართვების სტატუსისა და აქტივობების ტრეკინგი."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "ასწიეთ სატარიფო გეგმა და იქონით წვდომა უფრო მოკლე ელფოსტის მისამართებთან და სხვა ფასიან ფუნქციებთან."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "ასწიეთ სატარიფო გეგმა და მიიღეთ განუსაზღვრელი რაოდენობის ფილტრები და სხვა ფასიანი ფუნქციები."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "აწიეთ სატარიფო გეგმა და მიიღეთ განუსაზღვრელი რაოდენობის საქაღალდეები, ჭდეები და მეტი ფასიანი ფუნქცია."
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "ასწიეთ ტრაფიკი, რომ მიიღოთ ${ activatePmUser } უფრო მოკლე და ადვილად დასამახსოვრებელი ელფოსტის მისამართი იმასთან ერთად, რაც ახლა გაქვთ."
@@ -4208,6 +4197,14 @@
         "Windows 8/8.1/7 ან Windows 32-bit (ARM64)"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb Debian/Ubuntu-სთვის"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm Fedora / Red Hat-სთვის"
+      ]
+    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "შექმენით უფასო ${ DRIVE_APP_NAME }-ის ანგარიში, რომ ამ ფაილთან უსაფრთხო წვდომა გქონდეთ"
@@ -4289,6 +4286,9 @@
       "Generate QR code": [
         "QR კოდის გენერაცია"
       ],
+      "Get another device that’s signed in to your ${ BRAND_NAME } Account": [
+        "მიიღეთ კიდევ ერთი მოწყობილობა, რომელიც შესულია თქვენს ${ BRAND_NAME }-ის ანგარიშში"
+      ],
       "How to sign in using another device": [
         "როგორ შევიდე სხვა მოწყობილობის გამოყენებით"
       ],
@@ -4321,6 +4321,9 @@
       ],
       "Try generating a new QR code.": [
         "სცადეთ, ახალი QR კოდი დააგენერიროთ"
+      ],
+      "Works if you have another device that’s signed in to ${ BRAND_NAME }": [
+        "მუშაობს, თუ გაქვთ კიდევ ერთი მოწყობილობა, რომელიც ${ BRAND_NAME }-შია შესული"
       ],
       "You have successfully signed in to another device": [
         "თქვენ წარმატებით შესვედით სხვა მოწყობილობაზე"
@@ -6398,44 +6401,11 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME } აპი"
+      "${ appName } on App Store": [
+        "${ appName }-ი App Store-ში"
       ],
-      "account logins": [
-        "ანგარიშის შესვლის დეტალები"
-      ],
-      "Auto-forward Gmail": [
-        "Gmail-ის ავტომატური გადაგზავნა"
-      ],
-      "auto-forwarding": [
-        "ავტომატურად გადაგზავნა"
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "შეცვალეთ ${ strongText } თქვენს ${ BRAND_NAME }-ის მისამართზე"
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "აღმოაჩინეთ, როგორ გიცავთ ჩვენი ${ strongText }"
-      ],
-      "Discover privacy features": [
-        "აღმოაჩინეთ კონფიდენციალობის ფუნქციები"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "დააყენეთ ${ strongText } Android-ზე ან iOS-ზე"
-      ],
-      "Get the App": [
-        "გადმოიწერეთ აპი"
-      ],
-      "privacy features": [
-        "კონფიდენციალობის ფუნქციები"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "მოირგეთ ${ strongText }-ი Gmail-დან"
-      ],
-      "This feature is currently unavailable": [
-        "ეს ფუნქცია ამჟამად მიუწვდომელია"
-      ],
-      "Update your logins": [
-        "განაახლეთ თქვენი შესვლის დეტალები"
+      "${ appName } on Play Store": [
+        "${ appName }-ი Play Store-ში"
       ]
     },
     "Gmail forwarding": {
@@ -7054,9 +7024,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider }-დან შემოტანა"
-      ],
-      "Other": [
-        "სხვა"
       ]
     },
     "Import rollback status": {
@@ -8151,6 +8118,9 @@
       "Failed to fetch logs.": [
         "ჟურნალის მოთხოვნის შეცდომა."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "სწრაფი და ფოკუსის მქონე. ელფოსტა და კალენდარი პირდაპირ თქვენს სამუშაო მაგიდაზე."
+      ],
       "Featured in": [
         "მოიცავს"
       ],
@@ -8349,9 +8319,6 @@
       ],
       "Import mailbox": [
         "საფოსტო ყუთის შემოტანა"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "თქვენი ელფოსტის, კალენდრების და კონტაქტების შემოტანა სხვა სერვისიდან ${ BRAND_NAME }-ში."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "მნიშვნელოვანია: თუ თქვენს DNS კონსოლს CNAME მნიშვნელობების, რომლებიც მძიმით მთავრდება, მხარდაჭერა არ აქვს, CNAME-ის მნიშვნელობებში ბოლო წერტილი შეგიძლიათ წაშალოთ."
@@ -9098,9 +9065,6 @@
       "Securing your account": [
         "თქვენი ანგარიშის დაცვა"
       ],
-      "Select a service provider to start": [
-        "დასაწყებად აირჩიეთ მომსახურების მომწოდებელი"
-      ],
       "Select a service to continue": [
         "გასაგრძელებლად აირჩიეთ სერვისი"
       ],
@@ -9452,6 +9416,9 @@
       "This promotion link has expired.": [
         "ამ სარელამო აქციის ბმულის ვადა ამოწურულია."
       ],
+      "This service is not available to users signing in with single sign-on.": [
+        "ეს სერვისი ხელმისაწვდომი არაა მომმხარებლებისთვის, რომლებიც SSO-ს იყენებენ."
+      ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "ეს კოდი ხელმისაწვდომი არ იქნება, თუ ამ ფანჯარას დახურავთ და ის არავის არ უნდა გაუზიაროთ."
       ],
@@ -9716,10 +9683,10 @@
       "User activated": [
         "მომხმრებელი გააქტიურდა"
       ],
-      "Username": [
+      "username": [
         "მომხმარებლის სახელი"
       ],
-      "username": [
+      "Username": [
         "მომხმარებლის სახელი"
       ],
       "Users": [
@@ -10869,10 +10836,10 @@
       "Allow sharing outside the organization": [
         "ორგანიზაციის გარეთ გაზიარების დაშვება"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "დაშვებული დომენი"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "დაშვებული დომენი"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10884,10 +10851,10 @@
       "Amount due": [
         "გადასახდელი თანხა"
       ],
-      "AND": [
+      "And": [
         "და"
       ],
-      "And": [
+      "AND": [
         "და"
       ],
       "and": [
@@ -10952,6 +10919,9 @@
       ],
       "Backup password": [
         "მარქაფი პაროლი"
+      ],
+      "Beta": [
+        "ბეტა"
       ],
       "Billing cycle": [
         "გადახდის პერიოდი"
@@ -11310,10 +11280,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "თუ"
       ],
-      "If": [
+      "IF": [
         "თუ"
       ],
       "Import all messages": [
@@ -11523,13 +11493,13 @@
       "Optional": [
         "არასავალდებულო"
       ],
-      "OR": [
-        "ან"
-      ],
       "or": [
         "ან"
       ],
       "Or": [
+        "ან"
+      ],
+      "OR": [
         "ან"
       ],
       "Organization name": [
@@ -12217,11 +12187,11 @@
       "perform a password reset from your active session": [
         "პაროლი ჩამოყრა აქტიური სესიიდან"
       ],
-      "privacy policy": [
-        "კონფიდენციალობის პოლიტიკა"
-      ],
       "Privacy policy": [
         "პირადულობის დაცვა"
+      ],
+      "privacy policy": [
+        "კონფიდენციალობის პოლიტიკა"
       ],
       "Reactivate now": [
         "რეაქტივაცია ახლავე"
@@ -12862,20 +12832,8 @@
       "From ${ price }": [
         "${ price }-დან"
       ],
-      "Get started for ${ priceCoupon }": [
-        "დაწყება ${ priceCoupon }-დან"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }-დან"
-      ],
       "Upgrade": [
         "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ],
-      "Upgrade to ${ planName }": [
-        "სატარიფო გეგმის განახლება: ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13040,9 +12998,6 @@
       "Auto-delete Spam and Trash": [
         "სპამისა და ნაგვის ყუთის ავტომატური წაშლა"
       ],
-      "Auto-delete spam and trashed messages": [
-        "სპამისა და სანაგვე ყუთში მდებარე შეტყობინებების ავტომატური წაშლა"
-      ],
       "Auto-reply": [
         "თვითმოპასუხე"
       ],
@@ -13087,9 +13042,6 @@
       ],
       "Custom fields": [
         "მორგებადი ველები"
-      ],
-      "Custom snooze time": [
-        "მომხმარებლის დროებით დადუმების დრო"
       ],
       "Custom workspace branding": [
         "მორგებული სამუშაო სივრცის ბრენდინგი"
@@ -13242,12 +13194,6 @@
       "Schedule and snooze emails for any time": [
         "დაგეგმეთ და ჩააჩუმეთ ელფოსტები სასურველი დროით"
       ],
-      "Schedule messages at any time": [
-        "შეტყობინებების განრიგში ნებისმიერ დროს ჩასმა"
-      ],
-      "Search message content": [
-        "შეტყობინების შიგთავსში ძებნა"
-      ],
       "Secure Core servers": [
         "Secure Core-ის სერვერები"
       ],
@@ -13399,9 +13345,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "შექმენით მრავალი ელექტრონული ფოსტის მისამართი თქვენი ონლაინ ვინაობისთვის, მაგ., JohnShopper@p${ domain } სავაჭრო ანგარიშებისთვის, JohnNews@${ domain2 } ახალი ამბების გამოწერებისთვის"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "დაადუმეთ დროებით შეტყობინებები და ჩვენ შეგახსენებთ, როცა გნებავთ"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "საცავის სივრცე გაზიარებულია ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } და ${ DRIVE_APP_NAME } შორის"
@@ -13589,6 +13532,14 @@
         "განბლოკეთ ${ BRAND_NAME }-ის ყველა ფასიანი პროდუქტი და ფუნქცია სულ რაღაც ${ priceLine }-ად. გააუქმეთ როცა მოინდომებთ."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } საცდელი"
+      ],
+      "Your account's usage": [
+        "თქვენი ანგარიშის გამოყენება"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -13607,14 +13558,6 @@
       ],
       "Unlock premium features by upgrading": [
         "განბლოკეთ პრემიუმ თვისებები ტარიფის აწევით"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } საცდელი"
-      ],
-      "Your account's usage": [
-        "თქვენი ანგარიშის გამოყენება"
       ]
     },
     "new_plans: tooltip": {
@@ -14255,6 +14198,17 @@
         "სამუშაო მაგიდა"
       ]
     },
+    "option": {
+      "Everyone": [
+        "ყველა"
+      ],
+      "Group members": [
+        "ჯგუფის წევრები"
+      ],
+      "No one": [
+        "არავინ"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "თვის მეათე დღე"
@@ -14489,17 +14443,6 @@
       ],
       "Trash": [
         "ნაგვის ყუთი"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "ყველა"
-      ],
-      "Group members": [
-        "ჯგუფის წევრები"
-      ],
-      "No one": [
-        "არავინ"
       ]
     },
     "Option delay send seconds": {
@@ -16508,9 +16451,6 @@
       ]
     },
     "Settings description": {
-      "Complete the transition to privacy with our secure importing and forwarding tools.": [
-        "დაასრულეთ მიგრაცია კონფიდენციალობაზე ჩვენი დაცული შემოტანის და გადაგზავნის პროგრამებით."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "დაალაგეთ თქვენი საფოსტო ყუთი საქაღალდეებითა და ჭდეებით. ${ learnMoreLink }"
       ]
@@ -18378,9 +18318,6 @@
       "Actions": [
         "ქმედებები"
       ],
-      "Activate @pm.me": [
-        "გაააქტიურეთ @pm.me"
-      ],
       "Activate organization key": [
         "ორგანიზაციის გასაღების აქტივაცია"
       ],
@@ -18538,10 +18475,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -18576,9 +18513,6 @@
       ],
       "Clear": [
         "გასუფთავება"
-      ],
-      "Clear out the junk": [
-        "ნაგვის მოსუფთავება"
       ],
       "Click a value in the table to use it as filter": [
         "დააწკაპუნეთ მნიშვნელობაზე ცხრილში, მისი ფილტრის სახით გამოსაყენებლად"
@@ -18979,6 +18913,15 @@
       "Folders and labels": [
         "საქაღალდეები და ჭდეები"
       ],
+      "For Linux": [
+        "Linux-სთვის"
+      ],
+      "For macOS": [
+        "macOS-სთვის"
+      ],
+      "For Windows": [
+        "Windows-სთვის"
+      ],
       "Forgot password": [
         "პაროლი დამავიწყდა"
       ],
@@ -19103,17 +19046,11 @@
       "Import key": [
         "გასაღების შემოტანა"
       ],
-      "Import messages": [
-        "შეტყობინებების შემოტანა"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH }-ის გავლით შემოტანა"
       ],
       "Inactive 2FA": [
         "არააქტიური 2FA"
-      ],
-      "Increase your privacy with more addresses": [
-        "გაზარდეთ თქვენი კონფიდენციალობა მეტი მისამართით"
       ],
       "Information exposed in breach": [
         "გაჟონილი ინფორმაცია"
@@ -19135,9 +19072,6 @@
       ],
       "Items owned": [
         "ელემენტები მფლობელობაში"
-      ],
-      "Keep your inbox organized": [
-        "დაალაგეთ თქვენი საფოსტო ყუთი"
       ],
       "Keyboard shortcuts": [
         "კლავიატურის მალსახმობები"
@@ -19286,9 +19220,6 @@
       "PayPal verification failed": [
         "PayPal-ით გადახდის შეცდომა"
       ],
-      "Personalize your e-mail footer": [
-        "მოირგეთ თქვენი ელფოსტის ქვედა კოლონტიტული"
-      ],
       "Personalize your email footer": [
         "მოირგეთ თქვენი ელფოსტის ქვედა კოლონტიტული"
       ],
@@ -19409,9 +19340,6 @@
       "SAML authentication": [
         "SAML ავთენტიკაცია"
       ],
-      "Save time with email filters": [
-        "დაზოგეთ დრო ელფოსტის ფილტრებით"
-      ],
       "Schedule meetings in one click": [
         "დაგეგმეთ შეხვედრები ერთი წკაპით"
       ],
@@ -19480,9 +19408,6 @@
       ],
       "Set up email forwarding": [
         "ელფოსტის გადაგზავნის მორგება"
-      ],
-      "Set up forwarding": [
-        "გადაგზავნის მორგება"
       ],
       "Set up two-factor authentication": [
         "2FA-ის დაყენება"
@@ -20409,9 +20334,6 @@
       ],
       "Recommended": [
         "რეკომენდებულია"
-      ],
-      "Save ${ totals.discountPercentage }%": [
-        "დაზოგეთ ${ totals.discountPercentage }%"
       ]
     },
     "User referee invited via email": {
