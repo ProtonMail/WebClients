@@ -289,6 +289,9 @@
       "Connect to video conferencing": [
         "连接至视频会议"
       ],
+      "Connect your Gmail address": [
+        "连接您的 Gmail 地址"
+      ],
       "Connected": [
         "已连接"
       ],
@@ -688,6 +691,9 @@
       "Get the deal": [
         "立即享受优惠"
       ],
+      "Get the writing assistant": [
+        "获取写作助手"
+      ],
       "Get verification code": [
         "获取验证码"
       ],
@@ -775,10 +781,10 @@
       "Keep": [
         "保留"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "继续编辑"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "继续编辑"
       ],
       "Keep logo": [
@@ -1138,10 +1144,10 @@
       "Select country ${ country }": [
         "选择国家/地区 ${ country }"
       ],
-      "select file": [
+      "Select file": [
         "选择文件"
       ],
-      "Select file": [
+      "select file": [
         "选择文件"
       ],
       "Select files": [
@@ -1200,6 +1206,9 @@
       ],
       "Set up a custom domain": [
         "设置自定义域名"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "设置从 Gmail 自动转发邮件"
       ],
       "Set up email forwarding": [
         "设置邮件转发"
@@ -1356,9 +1365,6 @@
       ],
       "Upgrade now": [
         "立即升级账户"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "升级至 ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "升级到 Business 套餐"
@@ -2807,6 +2813,9 @@
       ]
     },
     "CountriesStep:Info": {
+      "${ selectedCitiesCount } cities selected": [
+        "已选择 ${ selectedCitiesCount } 个城市"
+      ],
       "${ selectedCountriesCount } selected": [
         "${ selectedCountriesCount } 个城市已选择"
       ]
@@ -3836,9 +3845,6 @@
       "Also included": [
         "还包含"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "自动删除垃圾邮件和垃圾信息，升级后还能解锁更多高级功能。"
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "自动清除 30 天前移至回收站和垃圾邮件的电子邮件。"
       ],
@@ -3941,9 +3947,6 @@
       "Send a code to your recovery email or phone": [
         "将验证码发送至您的恢复邮箱或手机号码"
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "升级账户即可使用多个邮箱地址隔离工作与生活中的各项事务，还可解锁更多高级功能。"
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "为所有用户建立账户并邀请他们加入 ${ BRAND_NAME }。"
       ],
@@ -3959,23 +3962,11 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "如需导入 Google 或 Outlook 中的联系人，请${ easySwitchLink }。"
       ],
-      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "要删除 ${ MAIL_APP_NAME } 页脚，请升级并解锁更多高级功能。"
-      ],
       "To start, give your organization a name.": [
         "首先，请为您的组织命名。"
       ],
       "Track the status and activity of your referrals.": [
         "实时跟踪已发出的邀请动态。"
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "升级账户即可解锁更短的邮箱地址以及更多高级功能。"
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "升级账户即可使用无限量的筛选规则为您自动整理邮箱，还有更多功能等您体验。"
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "升级账户即可使用无限量的文件夹和标签，还有更多功能等您体验。"
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "升级后，除现有电子邮件地址外，还可以获得一个更短、更易记的 ${ activatePmUser } 电子邮件地址。"
@@ -4235,6 +4226,14 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 或 Windows 32位 (ARM64)"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        "Debian / Ubuntu (.deb)"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        "Fedora / Red Hat (.rpm)"
       ]
     },
     "drive_signup_2023: Title": {
@@ -6466,44 +6465,11 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME } 移动应用"
+      "${ appName } on App Store": [
+        "App Store 上的 ${ appName }"
       ],
-      "account logins": [
-        "注册邮箱"
-      ],
-      "Auto-forward Gmail": [
-        "自动转发 Gmail 邮件"
-      ],
-      "auto-forwarding": [
-        "自动转发"
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "将各类网络账号的${ strongText }改为 ${ BRAND_NAME } 地址"
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "了解我们的${ strongText }如何为您提供防护"
-      ],
-      "Discover privacy features": [
-        "探索隐私保护功能"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "在 Android 或 iOS 系统中安装 ${ strongText }"
-      ],
-      "Get the App": [
-        "下载移动应用"
-      ],
-      "privacy features": [
-        "隐私保护功能"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "设置${ strongText } Gmail 邮件"
-      ],
-      "This feature is currently unavailable": [
-        "此功能当前不可用。"
-      ],
-      "Update your logins": [
-        "更新注册邮箱"
+      "${ appName } on Play Store": [
+        "Play Store 上的 ${ appName }"
       ]
     },
     "Gmail forwarding": {
@@ -7115,8 +7081,17 @@
       "Import from ${ provider }": [
         "从 ${ provider } 导入"
       ],
-      "Other": [
-        "其它"
+      "Import from Google": [
+        "从 Google 导入"
+      ],
+      "Import from other": [
+        "从其他服务商导入"
+      ],
+      "Import from Outlook": [
+        "从 Outlook 导入"
+      ],
+      "Import from Yahoo": [
+        "从 Yahoo 导入"
       ]
     },
     "Import rollback status": {
@@ -7739,6 +7714,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "提升组织品牌形象，为用户创造更加一致的在线体验。"
       ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "将您的信息、联系人和日历同步至 ${ BRAND_NAME }。"
+      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "通过使用 SimpleLogin 电子邮件创建 ${ PASS_APP_NAME } 账户，您可以直接从 ${ PASS_APP_NAME } 管理别名。"
       ],
@@ -8192,6 +8170,9 @@
       "Failed to fetch logs.": [
         "获取日志失败。"
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "邮件和日程尽在您的桌面呈现，为您带来快捷而专注的体验。"
+      ],
       "Featured in": [
         "推荐"
       ],
@@ -8395,9 +8376,6 @@
       ],
       "Import mailbox": [
         "导入收件箱"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "将您的邮件、日历和通讯录从其他邮箱导入至 ${ BRAND_NAME }。"
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "重要提示：如果您的 DNS 不允许CNAME值以「.」（英文句点）结尾，您可以移除这个句点。"
@@ -8801,6 +8779,9 @@
       "One account. All ${ BRAND_NAME } services.": [
         "一个账户，所有 ${ BRAND_NAME } 服务通用。"
       ],
+      "One time import": [
+        "一次性导入"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "只有在与非 ${ BRAND_NAME } 用户使用 PGP 通讯时才应更改下列选项。"
       ],
@@ -9140,9 +9121,6 @@
       "Securing your account": [
         "确保账户安全"
       ],
-      "Select a service provider to start": [
-        "请选择一个服务提供商并开始导入"
-      ],
       "Select a service to continue": [
         "选择一项服务来继续"
       ],
@@ -9196,6 +9174,9 @@
       ],
       "Set recovery phrase": [
         "设置恢复密语"
+      ],
+      "Set up forwarding": [
+        "设置转发"
       ],
       "Set up your organization": [
         "设置您的组织"
@@ -9770,10 +9751,10 @@
       "User activated": [
         "用户已激活"
       ],
-      "Username": [
+      "username": [
         "用户名"
       ],
-      "username": [
+      "Username": [
         "用户名"
       ],
       "Users": [
@@ -10927,10 +10908,10 @@
       "Allow sharing outside the organization": [
         "允许组织外部共享"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "允许的域"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "允许的域"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10942,10 +10923,10 @@
       "Amount due": [
         "应付金额"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
       "and": [
@@ -11010,6 +10991,9 @@
       ],
       "Backup password": [
         "备用密码"
+      ],
+      "Beta": [
+        "测试版"
       ],
       "Billing cycle": [
         "计费周期"
@@ -11371,10 +11355,10 @@
       "IBAN": [
         "国际银行账户号码（IBAN）"
       ],
-      "IF": [
+      "If": [
         "如果"
       ],
-      "If": [
+      "IF": [
         "如果"
       ],
       "Import all messages": [
@@ -11584,13 +11568,13 @@
       "Optional": [
         "非必填"
       ],
-      "OR": [
-        "或"
-      ],
       "or": [
         "或"
       ],
       "Or": [
+        "或"
+      ],
+      "OR": [
         "或"
       ],
       "Organization name": [
@@ -12277,10 +12261,10 @@
       "perform a password reset from your active session": [
         "从您的活动会话中执行密码重置"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "隐私政策"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "隐私政策"
       ],
       "Reactivate now": [
@@ -12912,20 +12896,8 @@
       "From ${ price }": [
         "低至 ${ price }"
       ],
-      "Get started for ${ priceCoupon }": [
-        "以 ${ priceCoupon } 价格开始"
-      ],
-      "Starting from ${ pricing }": [
-        "低至 ${ pricing }"
-      ],
       "Upgrade": [
         "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ],
-      "Upgrade to ${ planName }": [
-        "升级至 ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13073,9 +13045,6 @@
       "Auto-delete Spam and Trash": [
         "自动清理垃圾邮件和回收站"
       ],
-      "Auto-delete spam and trashed messages": [
-        "自动删除垃圾邮件和回收站中邮件"
-      ],
       "Auto-reply": [
         "自动回复"
       ],
@@ -13120,9 +13089,6 @@
       ],
       "Custom fields": [
         "自定义字段"
-      ],
-      "Custom snooze time": [
-        "自由调整通知延迟时间"
       ],
       "Custom workspace branding": [
         "定制工作室品牌"
@@ -13274,12 +13240,6 @@
       "Schedule and snooze emails for any time": [
         "自由选择邮件收发时间"
       ],
-      "Schedule messages at any time": [
-        "自由选择发送时间"
-      ],
-      "Search message content": [
-        "搜索邮件全文"
-      ],
       "Secure Core servers": [
         "Secure Core 服务器"
       ],
@@ -13424,9 +13384,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "为您的各类网络需求创建不同的邮箱地址；例如 ChenGouwu@${ domain } 用于注册购物网站，ChenXinwen@${ domain2 } 用于收取时事新闻"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "推迟邮件提醒，自由决定何时接收通知"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间"
@@ -13607,11 +13564,22 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "低至 ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "${ priceCoupon } 折扣价的有效期仅限第一个月。之后将以 ${ priceLine } 的价格自动续订。您可以随时取消。"
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "只需 ${ priceLine } 即可解锁所有 ${ BRAND_NAME } 高级产品和功能。随时取消。"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } $ 试用"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
       ]
     },
     "new_plans: title": {
@@ -13632,14 +13600,6 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户即可解锁更多高级功能"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } $ 试用"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -14273,6 +14233,17 @@
         "电脑版"
       ]
     },
+    "option": {
+      "Everyone": [
+        "所有人"
+      ],
+      "Group members": [
+        "群组成员"
+      ],
+      "No one": [
+        "没有人"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "每月 10 日"
@@ -14507,17 +14478,6 @@
       ],
       "Trash": [
         "回收站"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "所有人"
-      ],
-      "Group members": [
-        "群组成员"
-      ],
-      "No one": [
-        "没有人"
       ]
     },
     "Option delay send seconds": {
@@ -16515,9 +16475,6 @@
       ]
     },
     "Settings description": {
-      "Complete the transition to privacy with our secure importing and forwarding tools.": [
-        "使用我们的安全导入与转发工具即可迈出捍卫隐私的第一步。"
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "善用文件夹与标签，让您的邮箱井井有条。${ learnMoreLink }"
       ]
@@ -18354,9 +18311,6 @@
       "Actions": [
         "操作"
       ],
-      "Activate @pm.me": [
-        "激活 @pm.me"
-      ],
       "Activate organization key": [
         "激活机构密钥"
       ],
@@ -18513,10 +18467,10 @@
       "Card verification": [
         "银行卡验证"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "通配邮箱"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "通配邮箱"
       ],
       "Change login password": [
@@ -18551,9 +18505,6 @@
       ],
       "Clear": [
         "清除"
-      ],
-      "Clear out the junk": [
-        "邮件也需辞旧迎新"
       ],
       "Click a value in the table to use it as filter": [
         "单击表格中的一个值以将其用作筛选条件。"
@@ -18951,6 +18902,15 @@
       "Folders and labels": [
         "标签与文件夹"
       ],
+      "For Linux": [
+        "Linux 客户端"
+      ],
+      "For macOS": [
+        "macOS 客户端"
+      ],
+      "For Windows": [
+        "Windows 客户端"
+      ],
       "Forgot password": [
         "忘记密码"
       ],
@@ -19074,17 +19034,11 @@
       "Import key": [
         "导入密钥"
       ],
-      "Import messages": [
-        "导入邮件"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "通过 ${ PRODUCT_NAMES.EASY_SWITCH } 导入"
       ],
       "Inactive 2FA": [
         "未启用 2FA"
-      ],
-      "Increase your privacy with more addresses": [
-        "通过更多地址增强您的隐私"
       ],
       "Information exposed in breach": [
         "数据外泄事件中泄露的信息"
@@ -19106,9 +19060,6 @@
       ],
       "Items owned": [
         "已拥有的物品"
-      ],
-      "Keep your inbox organized": [
-        "整理邮箱更加得心应手"
       ],
       "Keyboard shortcuts": [
         "键盘快捷键"
@@ -19133,6 +19084,9 @@
       ],
       "Leave group?": [
         "离开群组"
+      ],
+      "Limit reached": [
+        "数量已达上限"
       ],
       "Link confirmation": [
         "确认打开链接"
@@ -19257,9 +19211,6 @@
       "PayPal verification failed": [
         "PayPal 验证失败"
       ],
-      "Personalize your e-mail footer": [
-        "个性化您的邮件页脚"
-      ],
       "Personalize your email footer": [
         "个性化您的邮件页脚"
       ],
@@ -19380,9 +19331,6 @@
       "SAML authentication": [
         "SAML 授权"
       ],
-      "Save time with email filters": [
-        "将琐事交给筛选规则"
-      ],
       "Schedule meetings in one click": [
         "一键安排会议"
       ],
@@ -19451,9 +19399,6 @@
       ],
       "Set up email forwarding": [
         "设置邮件转发"
-      ],
-      "Set up forwarding": [
-        "设置邮件自动转发"
       ],
       "Set up two-factor authentication": [
         "设置双因素身份验证"
@@ -20387,8 +20332,8 @@
       "Recommended": [
         "推荐"
       ],
-      "Save ${ totals.discountPercentage }%": [
-        "节省 ${ totals.discountPercentage }%"
+      "Save ${ price.uiData.discountPercent }%": [
+        "节省 ${ price.uiData.discountPercent }%"
       ]
     },
     "User referee invited via email": {

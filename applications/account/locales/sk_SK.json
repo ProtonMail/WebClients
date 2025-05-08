@@ -289,6 +289,9 @@
       "Connect to video conferencing": [
         "Pripojiť sa k videokonferencii"
       ],
+      "Connect your Gmail address": [
+        "Pripojte svoju Gmail adresu"
+      ],
       "Connected": [
         "Pripojené"
       ],
@@ -688,6 +691,9 @@
       "Get the deal": [
         "Využiť ponuku"
       ],
+      "Get the writing assistant": [
+        "Získajte asistenta písania"
+      ],
       "Get verification code": [
         "Odoslať overovací kód"
       ],
@@ -775,10 +781,10 @@
       "Keep": [
         "Zachovať"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Pokračovať v úpravách"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Pokračovať v úpravách"
       ],
       "Keep logo": [
@@ -1138,11 +1144,11 @@
       "Select country ${ country }": [
         "Vyberte krajinu ${ country }"
       ],
-      "select file": [
-        "vybrať súbor"
-      ],
       "Select file": [
         "Vyberte súbor"
+      ],
+      "select file": [
+        "vybrať súbor"
       ],
       "Select files": [
         "Vybrať súbory"
@@ -1200,6 +1206,9 @@
       ],
       "Set up a custom domain": [
         "Nastavte vlastnú doménu"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Nastavte automatické preposielanie z Gmailu"
       ],
       "Set up email forwarding": [
         "Nastavenie preposielania emailov"
@@ -1356,9 +1365,6 @@
       ],
       "Upgrade now": [
         "Aktualizovať teraz"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Navýšte na ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "Aktualizovať na Biznis predplatné"
@@ -2840,6 +2846,12 @@
       ]
     },
     "CountriesStep:Info": {
+      "${ selectedCitiesCount } cities selected": [
+        "${ selectedCitiesCount } vybrané mesto",
+        "${ selectedCitiesCount } vybrané mestá",
+        "${ selectedCitiesCount } vybraných miest",
+        "${ selectedCitiesCount } vybraných miest"
+      ],
       "${ selectedCountriesCount } selected": [
         "${ selectedCountriesCount } vybrané",
         "${ selectedCountriesCount } vybrané",
@@ -3884,9 +3896,6 @@
       "Also included": [
         "Zahŕňa aj"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Po navýšení je možné automaticky mazať správy zo zložky nevyžiadanej pošty a koša a odomknúť ďalšie prémiové funkcie."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Automatické mazanie emailov presunutých do koša a spamu pred viac než 30 dňami."
       ],
@@ -3989,9 +3998,6 @@
       "Send a code to your recovery email or phone": [
         "Odoslať kód na váš obnovovací email alebo telefón"
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Oddeľte rôzne aspekty svojho života pomocou viacerých emailových adries a odomknite viac prémiových funkcií, ak sa rozhodnete pre upgrade."
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Nastavte účty pre všetkých používateľov a pozvite ich, aby sa pripojili k službe ${ BRAND_NAME }."
       ],
@@ -4007,23 +4013,11 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pre import kontaktov zo služby Google alebo Outlook ${ easySwitchLink }."
       ],
-      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "Ak chcete odstrániť pätu ${ MAIL_APP_NAME }, upgradujte a odomknite ešte viac prémiových funkcií."
-      ],
       "To start, give your organization a name.": [
         "Začnite tým, že zadáte názov svojej organizácie."
       ],
       "Track the status and activity of your referrals.": [
         "Sledujte stav a aktivitu svojich odporúčaní."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Inováciou odomknete kratšie emailové adresy a ďalšie prémiové funkcie."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Odomknite upgradovaním neobmedzené množstvo filtrov na triedenie vašej doručenej pošty a ďalšie prémiové funkcie."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Odomknite upgradovaním neobmedzené množstvo priečinkov, štítkov a ďalšie prémiové funkcie."
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Upgradovaním získate ${ activatePmUser } kratšiu, ľahko zapamätateľnú emailovú adresu k vašej súčasnej adrese."
@@ -4283,6 +4277,14 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 alebo Windows 32-bit (ARM64)"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb pre Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm pre Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Title": {
@@ -6574,44 +6576,11 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME } aplikácia"
+      "${ appName } on App Store": [
+        "${ appName } v App Store"
       ],
-      "account logins": [
-        "prihlásenia k účtom"
-      ],
-      "Auto-forward Gmail": [
-        "Automaticky preposielať Gmail"
-      ],
-      "auto-forwarding": [
-        "automatické preposielanie"
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Zmeňte ${ strongText } na vašu ${ BRAND_NAME } adresu"
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Zistite, ako vás chráni náš ${ strongText }"
-      ],
-      "Discover privacy features": [
-        "Objavte funkcie ochrany súkromia"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Získať ${ strongText } pre Android alebo iOS"
-      ],
-      "Get the App": [
-        "Získať aplikáciu"
-      ],
-      "privacy features": [
-        "funkcie ochrany súkromia"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Nastaviť ${ strongText } zo služby Gmail"
-      ],
-      "This feature is currently unavailable": [
-        "Táto funkcia je aktuálne nedostupná"
-      ],
-      "Update your logins": [
-        "Aktualizujte svoje prihlasovacie údaje"
+      "${ appName } on Play Store": [
+        "${ appName } v Play Store"
       ]
     },
     "Gmail forwarding": {
@@ -7247,8 +7216,17 @@
       "Import from ${ provider }": [
         "Importovať z ${ provider }"
       ],
-      "Other": [
-        "Ďalší"
+      "Import from Google": [
+        "Importovať z Google"
+      ],
+      "Import from other": [
+        "Importovať z inej služby"
+      ],
+      "Import from Outlook": [
+        "Importovať z Outlooku"
+      ],
+      "Import from Yahoo": [
+        "Importovať z Yahoo"
       ]
     },
     "Import rollback status": {
@@ -7973,6 +7951,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Posilnite identitu značky vašej organizácie a vytvorte konzistentnejší online zážitok pre vašich používateľov."
       ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Preneste svoje správy, kontakty a kalendáre do ${ BRAND_NAME }."
+      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Vytvorením ${ PASS_APP_NAME } účtu so svojím SimpleLogin emailom môžete spravovať svoje aliasy priamo z ${ PASS_APP_NAME }."
       ],
@@ -8441,6 +8422,9 @@
       "Failed to fetch logs.": [
         "Načítanie záznamov zlyhalo."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Rýchle a cielené. Email a kalendár, priamo na vašej pracovnej ploche."
+      ],
       "Featured in": [
         "Odporúčané v"
       ],
@@ -8647,9 +8631,6 @@
       ],
       "Import mailbox": [
         "Importovať poštovú schránku"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importujte svoje emaily, kalendáre a kontakty z inej služby do ${ BRAND_NAME }u."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "DÔLEŽITÉ: Ak vaša DNS konzola neumožňuje, aby hodnoty CNAME končili bodkou, môžete poslednú bodku v hodnotách CNAME odstrániť."
@@ -9056,6 +9037,9 @@
       "One account. All ${ BRAND_NAME } services.": [
         "Jeden účet. Všetky služby ${ BRAND_NAME }."
       ],
+      "One time import": [
+        "Jednorazový import"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Tieto nastavenia zmeňte len vtedy, ak používate PGP s príjemcami, ktorí nepoužívajú ${ BRAND_NAME }."
       ],
@@ -9413,9 +9397,6 @@
       "Securing your account": [
         "Zabezpečujeme váš účet"
       ],
-      "Select a service provider to start": [
-        "Vyberte poskytovateľa služieb a začnite"
-      ],
       "Select a service to continue": [
         "Pre pokračovanie vyberte službu"
       ],
@@ -9469,6 +9450,9 @@
       ],
       "Set recovery phrase": [
         "Nastaviť obnovovaciu frázu"
+      ],
+      "Set up forwarding": [
+        "Nastaviť preposielanie"
       ],
       "Set up your organization": [
         "Nastaviť svoju organizáciu"
@@ -10061,11 +10045,11 @@
       "User activated": [
         "Používateľ aktivovaný"
       ],
-      "Username": [
-        "Používateľské meno"
-      ],
       "username": [
         "používateľské meno"
+      ],
+      "Username": [
+        "Používateľské meno"
       ],
       "Users": [
         "Používatelia"
@@ -10519,6 +10503,12 @@
         "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }.",
         "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }.",
         "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of them.": [
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adrese Gmail. Ak chcete pridať ďalšiu, najprv inú deaktivujte.",
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adresách Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte.",
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adresách Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte.",
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adresách Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte."
       ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Vaša ${ boldDiscountPercent } na ${ boldPlanTitle } bola uplatnená"
@@ -11275,10 +11265,10 @@
       "Allow sharing outside the organization": [
         "Umožniť zdieľanie mimo organizácie"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11290,10 +11280,10 @@
       "Amount due": [
         "Čiastka k zaplateniu"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
       "and": [
@@ -11358,6 +11348,9 @@
       ],
       "Backup password": [
         "Záložné heslo"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing cycle": [
         "Fakturačné obdobie"
@@ -11719,11 +11712,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "AK"
-      ],
       "If": [
         "Ak"
+      ],
+      "IF": [
+        "AK"
       ],
       "Import all messages": [
         "Importovať všetky správy"
@@ -11932,14 +11925,14 @@
       "Optional": [
         "Voliteľné"
       ],
-      "OR": [
-        "ALEBO"
-      ],
       "or": [
         "alebo"
       ],
       "Or": [
         "Alebo"
+      ],
+      "OR": [
+        "ALEBO"
       ],
       "Organization name": [
         "Názov organizácie"
@@ -12628,11 +12621,11 @@
       "perform a password reset from your active session": [
         "resetovať heslo z Vášho aktuálneho prihlásenia"
       ],
-      "privacy policy": [
-        "zásadami ochrany osobných údajov"
-      ],
       "Privacy policy": [
         "Ochrana osobných údajov"
+      ],
+      "privacy policy": [
+        "zásadami ochrany osobných údajov"
       ],
       "Reactivate now": [
         "Znovu aktivovať teraz"
@@ -13293,20 +13286,8 @@
       "From ${ price }": [
         "Od ${ price }"
       ],
-      "Get started for ${ priceCoupon }": [
-        "Začnite teraz za ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
       "Upgrade": [
         "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšiť na ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13505,9 +13486,6 @@
       "Auto-delete Spam and Trash": [
         "Automatické mazanie nevyžiadanej pošty a koša"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Automaticky mazať správy v spame a koši"
-      ],
       "Auto-reply": [
         "Automatická odpoveď"
       ],
@@ -13552,9 +13530,6 @@
       ],
       "Custom fields": [
         "Vlastné polia"
-      ],
-      "Custom snooze time": [
-        "Vlastný čas odloženia"
       ],
       "Custom workspace branding": [
         "Prispôsobenie pracovného priestoru"
@@ -13708,12 +13683,6 @@
       ],
       "Schedule and snooze emails for any time": [
         "Plánovanie a odkladanie emailov na ľubovoľný čas"
-      ],
-      "Schedule messages at any time": [
-        "Plánujte správy kedykoľvek"
-      ],
-      "Search message content": [
-        "Hľadať v obsahu správy"
       ],
       "Secure Core servers": [
         "Servery Secure Core"
@@ -13880,9 +13849,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Vytvorte si viacero emailových adries pre svoje online identity, napr. JohnShopper@${ domain } pre nákupné účty, JohnNews@${ domain2 } pre odber noviniek"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Odložte správy a pripomeňte si ich, kedy chcete"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
@@ -14063,11 +14029,22 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Cena od ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Zľavnená cena ${ priceCoupon } platí prvý mesiac. Potom sa automaticky obnoví za ${ priceLine }. Službu môžete kedykoľvek zrušiť."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Odomknite všetky prémiové produkty a funkcie ${ BRAND_NAME } len za ${ priceLine }. Zrušiť môžete kedykoľvek."
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Skúšobná verzia ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využitie vášho účtu"
       ]
     },
     "new_plans: title": {
@@ -14088,14 +14065,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odomknite prémiové funkcie navýšením účtu"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Skúšobná verzia ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využitie vášho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -14750,6 +14719,17 @@
         "Počítač"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Všetci"
+      ],
+      "Group members": [
+        "Členovia skupiny"
+      ],
+      "No one": [
+        "Nikto"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10. deň v mesiaci"
@@ -14984,17 +14964,6 @@
       ],
       "Trash": [
         "Kôš"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Všetci"
-      ],
-      "Group members": [
-        "Členovia skupiny"
-      ],
-      "No one": [
-        "Nikto"
       ]
     },
     "Option delay send seconds": {
@@ -17064,9 +17033,6 @@
       ]
     },
     "Settings description": {
-      "Complete the transition to privacy with our secure importing and forwarding tools.": [
-        "Dokončite prechod k súkromiu pomocou našich nástrojov na bezpečný import a preposielanie."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Udržujte svoju doručenú poštu organizovanú pomocou priečinkov a štítkov. ${ learnMoreLink }"
       ]
@@ -19035,9 +19001,6 @@
       "Actions": [
         "Akcie"
       ],
-      "Activate @pm.me": [
-        "Aktivovať @pm.me"
-      ],
       "Activate organization key": [
         "Aktivovať kľúč organizácie"
       ],
@@ -19197,10 +19160,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -19235,9 +19198,6 @@
       ],
       "Clear": [
         "Vyčistiť"
-      ],
-      "Clear out the junk": [
-        "Prečistenie nevyžiadanej pošty"
       ],
       "Click a value in the table to use it as filter": [
         "Kliknutím na hodnotu v tabuľke ju použijete ako filter."
@@ -19644,6 +19604,15 @@
       "Folders and labels": [
         "Priečinky a štítky"
       ],
+      "For Linux": [
+        "Pre Linux"
+      ],
+      "For macOS": [
+        "Pre macOS"
+      ],
+      "For Windows": [
+        "Pre Windows"
+      ],
       "Forgot password": [
         "Zabudol/la som heslo"
       ],
@@ -19770,17 +19739,11 @@
       "Import key": [
         "Importovať kľúč"
       ],
-      "Import messages": [
-        "Importovať správy"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Import cez ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Inactive 2FA": [
         "Neaktívne 2FA"
-      ],
-      "Increase your privacy with more addresses": [
-        "Zvýšte svoje súkromie pomocou viacerých adries"
       ],
       "Information exposed in breach": [
         "Informácie odhalené pri úniku"
@@ -19802,9 +19765,6 @@
       ],
       "Items owned": [
         "Vlastnené položky"
-      ],
-      "Keep your inbox organized": [
-        "Majte svoju doručenú poštu organizovanú"
       ],
       "Keyboard shortcuts": [
         "Klávesové skratky"
@@ -19829,6 +19789,9 @@
       ],
       "Leave group?": [
         "Opustiť skupinu?"
+      ],
+      "Limit reached": [
+        "Limit dosiahnutý"
       ],
       "Link confirmation": [
         "Potvrdenie pred otvorením odkazu"
@@ -19953,9 +19916,6 @@
       "PayPal verification failed": [
         "Overenie platby PayPal zlyhalo"
       ],
-      "Personalize your e-mail footer": [
-        "Prispôsobte si pätičku vašich emailov"
-      ],
       "Personalize your email footer": [
         "Prispôsobte si zápätie vašich emailov"
       ],
@@ -20076,9 +20036,6 @@
       "SAML authentication": [
         "SAML overenie"
       ],
-      "Save time with email filters": [
-        "Ušetrite čas pomocou emailových filtrov"
-      ],
       "Schedule meetings in one click": [
         "Naplánujte si stretnutia jedným kliknutím"
       ],
@@ -20147,9 +20104,6 @@
       ],
       "Set up email forwarding": [
         "Nastaviť preposielanie emailov"
-      ],
-      "Set up forwarding": [
-        "Nastaviť preposielanie"
       ],
       "Set up two-factor authentication": [
         "Nastavenie dvojstupňového overenia"
@@ -21092,8 +21046,8 @@
       "Recommended": [
         "Odporúčané"
       ],
-      "Save ${ totals.discountPercentage }%": [
-        "Ušetrite ${ totals.discountPercentage }%"
+      "Save ${ price.uiData.discountPercent }%": [
+        "Ušetrite ${ price.uiData.discountPercent }%"
       ]
     },
     "User referee invited via email": {
