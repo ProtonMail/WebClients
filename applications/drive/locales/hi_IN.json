@@ -432,6 +432,9 @@
       "Get Started": [
         "शुरू करें"
       ],
+      "Get the writing assistant": [
+        "लेखन सहायक प्राप्त करें"
+      ],
       "Get verification code": [
         "सत्यापन कोड लें"
       ],
@@ -885,9 +888,6 @@
       "Start recovering": [
         "पुनर्प्राप्ति शुरू करें"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "शुरुआत ${ priceUnlimited } से"
-      ],
       "Stay": [
         "रुकें"
       ],
@@ -953,9 +953,6 @@
       ],
       "Upgrade now": [
         "अभी अपग्रेड करें"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } अनलिमिटेड में अपग्रेड करें"
       ],
       "Upload": [
         "अपलोड"
@@ -2492,26 +2489,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्क मिटाए जा रहे हैं... इसमें कुछ मिनट लग सकते हैं. जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "उन उपयोगकर्ताओं के लिए डिज़ाइन किया गया जो अपने खातों के लिए बढ़ी हुई सुरक्षा चाहते हैं।"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को एन्क्रिप्ट और आयात किया जा रहा है... इसमें कुछ मिनट लग सकते हैं. जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "यदि आपका पासवर्ड या अन्य डाटा किसी तीसरें-पार्टी से लीक हुआ है, तो इसकी सूचना प्राप्त करें।"
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "असीमित नकली-नाम और 500 GB स्टोरेज प्राप्त करें ${ PLAN_NAMES[PLANS.BUNDLE] } के साथ।"
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "ऐसा लगता है कि आप जिस संपर्क सूची को आयात कर रहे हैं उसमें कुछ समूह हैं। कृपया समीक्षा करें कि इन समूहों को कैसे आयात किया जाना चाहिए।"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को मर्ज किया जा रहा है... इसमें कुछ मिनट लग सकते हैं। जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "संपर्क ग्रुप्स का उपयोग करके एक साथ सभी को ईमेल भेजकर समय बचाएं। इसे और अन्य प्रीमियम सुविधाओं को अनलॉक करें जब आप अपग्रेड करें।"
       ],
       "Set a data recovery method to prevent data loss.": [
         "डाटा लॉस से बचने के लिए एक डाटा पुनर्प्राप्ति विधि सेट करें।"
@@ -2527,9 +2515,6 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google या Outlook से अपने संपर्कों को आयात करने के लिए, ${ easySwitchLink }।"
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "अपने खाते को अपग्रेड करें ताकि ${ PROTON_SENTINEL_NAME } सक्रिय हो सके, हमारी अत्याधुनिक ए.आई.-चालित सुरक्षा समाधान के साथ समर्पित 24/7 विशेषज्ञ सहायता"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "संपर्कों के बीच विलय प्राथमिकता को रैंक करने के लिए ड्रैग एंड ड्रॉप का उपयोग करें। उन संपर्कों को अनचेक करें जिन्हें आप मर्ज नहीं करना चाहते हैं।"
@@ -4011,9 +3996,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } से आयात करें"
-      ],
-      "Other": [
-        "दूसरा"
       ]
     },
     "Import warning": {
@@ -5149,9 +5131,6 @@
       ],
       "Select a folder to move to.": [
         "स्थानांतरित करने के लिए फ़ोल्डर चुनें।"
-      ],
-      "Select a service provider to start": [
-        "शुरू करने के लिए एक सेवा प्रदाता का चयन करें"
       ],
       "Select all items for": [
         "के लिए सभी मदें चुनें"
@@ -6958,29 +6937,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "शुरू करें ${ priceCoupon } के लिए"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "प्लैन ${ priceDrivePlus } से शुरू"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } से शुरू"
-      ],
-      "Upgrade": [
-        "अपग्रेड"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } पे अपग्रेड करें"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "खाता हटा दो"
@@ -7002,6 +6958,17 @@
       ],
       "Switch plan": [
         "प्लान बदले"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "प्लैन ${ priceDrivePlus } से शुरू"
+      ],
+      "Upgrade": [
+        "अपग्रेड"
       ]
     },
     "new_plans: feature": {
@@ -7151,9 +7118,6 @@
       "Auto-delete Spam and Trash": [
         "स्पैम और ट्रैश को स्वचालित रूप से हटाएं"
       ],
-      "Auto-delete spam and trashed messages": [
-        "स्पैम और कचरे के संदेशो को अपनेआप मिटाएं"
-      ],
       "Auto-reply": [
         "ऑटोमैटिक-जवाब"
       ],
@@ -7195,9 +7159,6 @@
       ],
       "Custom fields": [
         "कस्टम फील्ड"
-      ],
-      "Custom snooze time": [
-        "कस्टम स्नूज़ समय"
       ],
       "Custom workspace branding": [
         "कस्टम कार्यक्षेत्र ब्रांडिंग"
@@ -7331,12 +7292,6 @@
       ],
       "Schedule and snooze emails for any time": [
         "किसी भी समय के लिए ईमेल शेड्यूल करें और स्नूज़ करें"
-      ],
-      "Schedule messages at any time": [
-        "संदेश कभी भी शेड्यूल करें"
-      ],
-      "Search message content": [
-        "संदेश कंटेंट खोजें"
       ],
       "Secure Core servers": [
         "सुरक्षित कोर सर्वर"
@@ -7473,9 +7428,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "अपनी ऑनलाइन पहचान के लिए एकाधिक ईमेल पते बनाएं, उदा. शॉपिंग खातों के लिए जॉनशॉपर@${ domain }, समाचार सदस्यता के लिए जॉनन्यूज@${ domain2 }"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "संदेशों को स्नूज़ करें और जब चाहें तो याद दिलाएं"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "स्टोरेज जगह का इस्तेमाल ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, और ${ DRIVE_APP_NAME } करते है।"
@@ -10364,9 +10316,6 @@
         "${ searchView.numberOfResults } परिणाम मिला",
         "${ searchView.numberOfResults } परिणाम मिले"
       ],
-      "Get advanced protection": [
-        "उन्नत सुरक्षा प्राप्त करें"
-      ],
       "Get more from your VPN": [
         "अपने VPN से और पाएं"
       ],
@@ -10653,9 +10602,6 @@
       ],
       "Type": [
         "प्रकार"
-      ],
-      "Unlock contacts groups": [
-        "संपर्क ग्रुप अनलॉक करें"
       ],
       "Untitled document ${ date }": [
         "शीर्षकहीन दस्तावेज़ ${ date }"

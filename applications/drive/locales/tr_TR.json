@@ -458,11 +458,17 @@
       "Get the apps": [
         "Uygulamaları edinin"
       ],
+      "Get the writing assistant": [
+        "Yazma yardımcısını edinin"
+      ],
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
       "Go back": [
         "Geri dön"
+      ],
+      "Go back to album “${ albumName }“": [
+        "Albüm “${ albumName }” geri dön"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME } uygulamasına git"
@@ -956,9 +962,6 @@
       "Start recovering": [
         "Kurtarmayı başlat"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "${ priceUnlimited } tutarından başlayan fiyatlarla"
-      ],
       "Stay": [
         "Kal"
       ],
@@ -979,6 +982,9 @@
       ],
       "Take a tour": [
         "Keşfedin"
+      ],
+      "This album is empty": [
+        "Bu albüm boş"
       ],
       "Toggle Calendar app": [
         "Takvim uygulamasına geç"
@@ -1027,9 +1033,6 @@
       ],
       "Upgrade now": [
         "Şimdi yükselt"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } Unlimited tarifesine yükseltin"
       ],
       "Upload": [
         "Yükle"
@@ -2630,9 +2633,6 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler siliniyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında bu pencereyi kapatabilirsiniz."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Hesapları için daha yüksek koruma isteyen kullanıcılara yönelik olarak tasarlanmıştır."
-      ],
       "Easily access your email and calendar on desktop and mobile.": [
         "E-postanıza ve takviminize bilgisayarınızdan ve mobil aygıtınızdan kolayca erişin."
       ],
@@ -2660,9 +2660,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmetten açığa çıkarsa bildirim alın."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "${ PLAN_NAMES[PLANS.BUNDLE] } ile sınırsız takma ad ve 500 GB depolama alanı edinin."
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ekibinizin önemli kuruluş ve müşteri bilgilerine ait parolaları güvenli bir şekilde kaydetmesini sağlayın."
       ],
@@ -2674,9 +2671,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler birleştiriliyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Kişi gruplarını kullanarak herkese aynı anda e-posta gönderin ve zaman kazanın. Tarifenizi yükselterek bunun gibi diğer ücretli özelliklere erişin."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Veri kaybını önlemek için bir veri kurtarma yöntemi belirleyin."
@@ -2704,9 +2698,6 @@
       ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Dosya paylaşmayı sürdürebilmek ve düzenleme erişimi sağlamak için ${ planName } tarifesine yükseltin"
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "${ PROTON_SENTINEL_NAME }, 7/24 size özel uzman desteği olan, yapay zeka temelli son teknoloji güvenlik çözümümüzü kullanmak için tarifenizi yükseltin."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
@@ -3069,6 +3060,9 @@
       ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
+      ],
+      "Failed to save some photos to your Drive": [
+        "Bazı fotoğraflar Drive'ınıza kaydedilemedi"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "\"${ item.name }\" dosyası \"${ error }\" hatası nedeniyle yüklenemedi"
@@ -4249,8 +4243,17 @@
       "Import from ${ provider }": [
         "${ provider } üzerinden içe aktar"
       ],
-      "Other": [
-        "Diğer"
+      "Import from Google": [
+        "Google'dan içe aktar"
+      ],
+      "Import from other": [
+        "Diğerlerinden içe aktar"
+      ],
+      "Import from Outlook": [
+        "Outlook'tan içe aktar"
+      ],
+      "Import from Yahoo": [
+        "Yahoo'dan içe aktar"
       ]
     },
     "Import warning": {
@@ -4626,6 +4629,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha kararlı bir çevrim içi deneyim sağlayın."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Mesajlarınızı, kişilerinizi ve takvimlerinizi ${ BRAND_NAME }'e taşıyın."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
@@ -5233,6 +5239,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilen anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
       ],
+      "One time import": [
+        "Tek seferlik içe aktarma"
+      ],
       "Only the people with the link and the password can access this file.": [
         "Bu dosyaya yalnızca bağlantıya ve parolaya sahip olan kişiler erişebilir."
       ],
@@ -5298,6 +5307,9 @@
       ],
       "Photo was copied to stream and marked favorite there.": [
         "Fotoğraf akışa kopyalandı ve orada beğenilenlere eklendi."
+      ],
+      "Photo(s) saved to your Drive": [
+        "Fotoğraf(lar) Drive'ınıza kaydedildi"
       ],
       "Photos have been successfully recovered.": [
         "Fotoğraflar geri yüklendi."
@@ -5468,9 +5480,6 @@
       ],
       "Select a folder to move to.": [
         "Taşınacak bir klasör seçin."
-      ],
-      "Select a service provider to start": [
-        "Başlamak için bir hizmet sağlayıcı seçin"
       ],
       "Select all items for": [
         "Şunun için tüm ögeleri seç"
@@ -7433,29 +7442,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon } ile başlayın"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "${ priceDrivePlus } tutarından başlayan tarifeler"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } tutarından başlayan fiyatlarla"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -7477,6 +7463,17 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "${ priceDrivePlus } tutarından başlayan tarifeler"
+      ],
+      "Upgrade": [
+        "Yükselt"
       ]
     },
     "new_plans: feature": {
@@ -7629,9 +7626,6 @@
       "Auto-delete Spam and Trash": [
         "İstenmeyenleri ve çöpü otomatik olarak boşaltma"
       ],
-      "Auto-delete spam and trashed messages": [
-        "İstenmeyen ve çöp kutularındaki iletileri otomatik olarak silin"
-      ],
       "Auto-reply": [
         "Otomatik yanıtlama"
       ],
@@ -7673,9 +7667,6 @@
       ],
       "Custom fields": [
         "Özel alanlar"
-      ],
-      "Custom snooze time": [
-        "Özel erteleme zamanı"
       ],
       "Custom workspace branding": [
         "Özel çalışma alanı markası"
@@ -7816,12 +7807,6 @@
       "Schedule and snooze emails for any time": [
         "İletileri istediğiniz zamana planlayın veya erteleyin"
       ],
-      "Schedule messages at any time": [
-        "İletileri istediğiniz zamanda gönderin"
-      ],
-      "Search message content": [
-        "İleti içeriğinde arama"
-      ],
       "Secure Core servers": [
         "Secure Core sunucuları"
       ],
@@ -7958,9 +7943,6 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Çevrim içi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain2 } gibi takma adlar oluşturabilirsiniz"
       ],
-      "Snooze messages and get reminded when you want": [
-        "İletileri erteleyin ve istediğiniz zaman yeniden görün"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır"
       ]
@@ -8063,6 +8045,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "${ priceLine }'dan başlayan fiyatlarla"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "İlk ay için ${ priceCoupon } indirimli tutar uygulanır. Ardından, otomatik olarak ${ priceLine } tutarla yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
@@ -11024,9 +11009,6 @@
         "${ searchView.numberOfResults } sonuç bulundu",
         "${ searchView.numberOfResults } sonuç bulundu"
       ],
-      "Get advanced protection": [
-        "Gelişmiş koruma edinin"
-      ],
       "Get more from your VPN": [
         "VPN hizmetinizden fazlasını alın"
       ],
@@ -11400,9 +11382,6 @@
       ],
       "Type": [
         "Tür"
-      ],
-      "Unlock contacts groups": [
-        "Kişi gruplarının kilidini açın"
       ],
       "Untitled document ${ date }": [
         "Adlandırılmamış belge ${ date }"
