@@ -76,7 +76,7 @@ const AlbumSquare = ({
                             '--h-custom': '2.5rem',
                         }}
                     >
-                        <Icon name="album" />
+                        <Icon name="album-folder" />
                     </div>
                 )}
                 <span className="grow-2 text-left text-ellipsis">{album.name}</span>

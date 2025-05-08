@@ -22,7 +22,7 @@ export function GridViewItem({ item }: { item: DriveItem | TrashItem | SharedLin
     const IconComponent = (
         <>
             {item.albumProperties && (
-                <Icon name="album" alt={c('Label').t`Album`} className="file-browser-grid-item--icon mr-2" />
+                <Icon name="album-folder" alt={c('Label').t`Album`} className="file-browser-grid-item--icon mr-2" />
             )}
             {item.cachedThumbnailUrl && !item.albumProperties && (
                 <img
