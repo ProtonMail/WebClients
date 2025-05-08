@@ -356,6 +356,9 @@
       "Get the apps": [
         "Obtén les aplicacions"
       ],
+      "Get the writing assistant": [
+        "Obteniu l'assistent d'escriptura"
+      ],
       "Get verification code": [
         "Obtenir codi de verificació"
       ],
@@ -749,9 +752,6 @@
       "Start setup": [
         "Començar la configuració"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Comenceu des de ${ priceUnlimited }"
-      ],
       "Stay": [
         "Mantenir"
       ],
@@ -811,12 +811,6 @@
       ],
       "Upgrade Now": [
         "Millora ara"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Milloreu a ${ BRAND_NAME } Unlimited"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Milloreu a ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upload and share files": [
         "Carrega i comparteix fitxers"
@@ -2749,9 +2743,6 @@
       "Availability unknown": [
         "Se'n desconeix la disponibilitat"
       ],
-      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
-        "Organitzeu millor el dia, feu un seguiment del vostre temps i prioritzeu tasques. Codifiqueu el vostre calendari amb colors d'esdeveniment personalitzats."
-      ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Codifiqueu els esdeveniments per colors per a facilitar l'organització diària, controlar el temps i la priorització de tasques."
       ],
@@ -2772,9 +2763,6 @@
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
-      ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Dissenyat per a usuaris que busquen una major protecció per als seus comptes."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Accediu fàcilment al vostre correu i calendari a l'escriptori i al mòbil."
@@ -2803,9 +2791,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ PLAN_NAMES[PLANS.BUNDLE] }."
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ajudeu el vostre equip a emmagatzemar de manera segura les contrasenyes d'informació confidencial de l'empresa i dels clients."
       ],
@@ -2820,9 +2805,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Estalvieu temps enviant correus electrònics a tothom alhora amb grups de contactes. Desbloquegeu aquesta i altres funcions prèmium quan milloreu el pla."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Establiu un mètode de recuperació de dades per evitar la pèrdua de dades."
@@ -2850,9 +2832,6 @@
       ],
       "To start, give your organization a name.": [
         "Per començar, assigneu un nom a la vostra organització."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Milloreu el compte per activar ${ PROTON_SENTINEL_NAME }, la nostra solució de seguretat d'avantguarda impulsada per IA amb suport expert dedicat 24/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrossegueu i solteu per a classificar la prioritat de combinació entre els contactes. Desmarqueu els contactes que no vulgueu combinar."
@@ -4500,8 +4479,17 @@
       "Import from ${ provider }": [
         "Importa des de ${ provider }"
       ],
-      "Other": [
-        "Altres"
+      "Import from Google": [
+        "Importa des del Google"
+      ],
+      "Import from other": [
+        "Importa des d'un altre"
+      ],
+      "Import from Outlook": [
+        "Importa des de l'Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importa des del Yahoo"
       ]
     },
     "Import warning": {
@@ -4773,6 +4761,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Potencieu la identitat de marca de la vostra organització i creeu una experiència en línia més coherent per als usuaris."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Porteu els vostres missatges, contactes i calendaris al ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
@@ -5202,6 +5193,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o més de les vostres claus de confiança han estat marcades com a \"compromeses\" pel seu propietari. Us recomanem que marqueu aquestes claus com a \"no confiables\"."
       ],
+      "One time import": [
+        "Importació única"
+      ],
       "Open shortcut cheat sheet": [
         "Obre el resum de dreceres"
       ],
@@ -5324,9 +5318,6 @@
       ],
       "Scan the QR code with your mobile device": [
         "Escanegeu el codi QR amb el vostre dispositiu mòbil"
-      ],
-      "Select a service provider to start": [
-        "Seleccioneu un proveïdor de serveis per començar"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccioni el format de correu electronic que vols fer us per defecte quan enviis un correu electronic a aquesta direcció."
@@ -7036,26 +7027,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comenceu per ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Des de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ],
-      "Upgrade to ${ planName }": [
-        "Milloreu el pla a ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Elimina el compte"
@@ -7077,6 +7048,11 @@
       ],
       "Switch plan": [
         "Canvia de pla"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7229,9 +7205,6 @@
       "Auto-delete Spam and Trash": [
         "Neteja automàticament el correu brossa i la paperera"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Suprimeix automàticament el correu brossa i els missatges enviats a la paperera"
-      ],
       "Auto-reply": [
         "Resposta automàtica"
       ],
@@ -7273,9 +7246,6 @@
       ],
       "Custom fields": [
         "Camps personalitzats"
-      ],
-      "Custom snooze time": [
-        "Temps d'ajornament personalitzat"
       ],
       "Custom workspace branding": [
         "Marca personalitzada de l'espai de treball"
@@ -7416,12 +7386,6 @@
       "Schedule and snooze emails for any time": [
         "Programeu i ajorneu correus electrònics per a qualsevol moment."
       ],
-      "Schedule messages at any time": [
-        "Programeu missatges en qualsevol moment."
-      ],
-      "Search message content": [
-        "Cerca al contingut del missatge"
-      ],
       "Secure Core servers": [
         "Servidors Secure Core"
       ],
@@ -7558,9 +7522,6 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia. Per exemple: JoanComprador@${ domain } per a comptes de compres, JoanNoticies@${ domain2 } per a la subscripció a notícies"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Ajorneu els missatges i rebeu-ne un recordatori quan vulgueu"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
       ]
@@ -7663,6 +7624,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Des de ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceLine }. Podeu cancel·lar-ho en qualsevol moment."
       ],
@@ -10505,9 +10469,6 @@
       "Exporting contacts": [
         "Exportant contactes"
       ],
-      "Get advanced protection": [
-        "Obteniu protecció avançada"
-      ],
       "Get more from your VPN": [
         "Obteniu més de la vostra VPN"
       ],
@@ -10568,6 +10529,9 @@
       ],
       "Link confirmation": [
         "Confirmació d'enllaç"
+      ],
+      "Mail Subscriptions": [
+        "Subscripcions de correu"
       ],
       "Make a secure connection your default": [
         "Feu que una connexió segura sigui la vostra predeterminada"
@@ -10781,9 +10745,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activació ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "Unlock contacts groups": [
-        "Desbloqueja grups de contactes"
       ],
       "Update event": [
         "Actualitza l'esdeveniment"
