@@ -6,7 +6,7 @@ import type {
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { formatSubscriptionResponse, updateSubscriptionKeysIfCorrectID } from './helpers';
-import type { FilteredSubscriptionsValue } from './interface';
+import type { SubscriptionTabs } from './interface';
 import type { filterSubscriptionList, unsubscribeSubscription } from './newsletterSubscriptionsActions';
 import type { NewsletterSubscriptionsStateType } from './newsletterSubscriptionsSlice';
 
@@ -23,7 +23,7 @@ export const setSelectedSubscriptionReducer = (
 
 export const setFilteredSubscriptionsReducer = (
     state: NewsletterSubscriptionsStateType,
-    action: PayloadAction<FilteredSubscriptionsValue>
+    action: PayloadAction<SubscriptionTabs>
 ) => {
     if (!state.value) {
         return;
@@ -33,6 +33,8 @@ export const setFilteredSubscriptionsReducer = (
         const isUnsubscribed = !!subscription.UnsubscribedTime;
         return action.payload === 'active' ? !isUnsubscribed : isUnsubscribed;
     });
+
+    state.value.selectedTab = action.payload;
 };
 
 export const sortSubscriptionPending = (state: NewsletterSubscriptionsStateType) => {
