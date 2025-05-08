@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import folderImages from '@proton/styles/assets/img/drive/empty-image-album.svg';
+import folderImages from '@proton/styles/assets/img/drive/empty-image-album.webp';
 import useFlag from '@proton/unleash/useFlag';
 
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
