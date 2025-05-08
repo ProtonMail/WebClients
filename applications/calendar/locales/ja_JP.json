@@ -353,6 +353,9 @@
       "Get the apps": [
         "アプリを入手"
       ],
+      "Get the writing assistant": [
+        "執筆アシスタントを入手"
+      ],
       "Get verification code": [
         "認証コードを取得"
       ],
@@ -746,9 +749,6 @@
       "Start setup": [
         "セットアップを開始"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "${ priceUnlimited }から始める"
-      ],
       "Stay": [
         "終了しない"
       ],
@@ -808,12 +808,6 @@
       ],
       "Upgrade Now": [
         "今すぐアップグレード"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } Unlimitedへアップグレード"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME }Plusにアップグレード"
       ],
       "Upload and share files": [
         "ファイルをアップロードして共有"
@@ -2729,9 +2723,6 @@
       "Availability unknown": [
         "利用可能状況は不明"
       ],
-      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
-        "あなたの一日をより良く整理し、時間を追跡し、タスクに優先順位を付けましょう。カスタムイベントの色でカレンダーを色分けしてください。"
-      ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "イベントを色分けして、一日の整理をしやすくし、時間を管理し、タスクの優先順位を付けましょう。"
       ],
@@ -2752,9 +2743,6 @@
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先を削除しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
-      ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "アカウントの高度な保護を求めるユーザー向けに設計されています。"
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "デスクトップとモバイルでメールとカレンダーに簡単にアクセスできます。"
@@ -2783,9 +2771,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "他社のサービスからパスワードやその他のデータが漏洩した場合に通知します。"
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "${ PLAN_NAMES[PLANS.BUNDLE] }で無制限のエイリアスと 500 GBの容量を獲得しましょう。"
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "チームが機密性の高いビジネスおよびクライアント情報のパスワードを安全に保管できるよう支援します。"
       ],
@@ -2800,9 +2785,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "連絡先グループを使用して、一度に全員にメールを送信することで時間を節約できます。アップグレードすると、この機能や他のプレミアム機能が利用可能になります。"
       ],
       "Set a data recovery method to prevent data loss.": [
         "データの損失を防ぐには、データの回復手段を設定します。"
@@ -2830,9 +2812,6 @@
       ],
       "To start, give your organization a name.": [
         "まず、組織に名前を付けてください。"
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "アカウントをアップグレードして、24時間年中無休の専門家によるサポート付きの最先端のAI駆動セキュリティソリューション${ PROTON_SENTINEL_NAME }を有効にしましょう。"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
@@ -4451,9 +4430,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } からインポート"
-      ],
-      "Other": [
-        "その他"
       ]
     },
     "Import warning": {
@@ -5247,9 +5223,6 @@
       ],
       "Scan the QR code with your mobile device": [
         "携帯のデバイスでQRコードをスキャンしてください"
-      ],
-      "Select a service provider to start": [
-        "サービスプロバイダーを選択して開始"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
@@ -6937,26 +6910,6 @@
         "中程度の VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }で開始"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }から始める"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } へアップグレード"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "アカウントを削除"
@@ -6978,6 +6931,11 @@
       ],
       "Switch plan": [
         "プランを変更"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
       ]
     },
     "new_plans: feature": {
@@ -7113,9 +7071,6 @@
       "Auto-delete Spam and Trash": [
         "迷惑メールとごみ箱を自動削除"
       ],
-      "Auto-delete spam and trashed messages": [
-        "迷惑メールとごみ箱のメッセージを自動削除"
-      ],
       "Auto-reply": [
         "自動返信"
       ],
@@ -7157,9 +7112,6 @@
       ],
       "Custom fields": [
         "カスタムフィールド"
-      ],
-      "Custom snooze time": [
-        "スヌーズ時間をカスタム"
       ],
       "Custom workspace branding": [
         "カスタムワークスペースブランディング"
@@ -7299,12 +7251,6 @@
       "Schedule and snooze emails for any time": [
         "いつでもメールをスケジュールしてスヌーズする"
       ],
-      "Schedule messages at any time": [
-        "いつでもメッセージを送信予約できます"
-      ],
-      "Search message content": [
-        "メッセージ内容の検索"
-      ],
       "Secure Core servers": [
         "Secure Core サーバー"
       ],
@@ -7434,9 +7380,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "例えば、JohnShopper@${ domain }はショッピングアカウント用、JohnNews@${ domain2 }はニュース購読用です。"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "メッセージをスヌーズし、必要なときに再通知します"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
@@ -10303,9 +10246,6 @@
       "Exporting contacts": [
         "連絡先のエクスポート中"
       ],
-      "Get advanced protection": [
-        "高度な保護を入手"
-      ],
       "Get more from your VPN": [
         "VPNからさらに入手する"
       ],
@@ -10578,9 +10518,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } をオンにする"
-      ],
-      "Unlock contacts groups": [
-        "連絡先グループをアンロック"
       ],
       "Update event": [
         "予定の更新"

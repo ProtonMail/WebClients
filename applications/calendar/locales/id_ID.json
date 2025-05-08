@@ -353,6 +353,9 @@
       "Get the apps": [
         "Dapatkan aplikasinya"
       ],
+      "Get the writing assistant": [
+        "Dapatkan asisten penulisan"
+      ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
@@ -746,9 +749,6 @@
       "Start setup": [
         "Mulai pengaturan"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Mulai dari ${ priceUnlimited }"
-      ],
       "Stay": [
         "Tinggal"
       ],
@@ -808,12 +808,6 @@
       ],
       "Upgrade Now": [
         "Tingkatkan Sekarang"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Tingkatkan ke ${ BRAND_NAME } Unlimited"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upload and share files": [
         "Unggah dan bagikan berkas"
@@ -2729,9 +2723,6 @@
       "Availability unknown": [
         "Ketersediaan tidak diketahui"
       ],
-      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
-        "Organisir hari Anda secara lebih baik, lacak waktu Anda, dan prioritaskan tugas tertentu. Warnai kalender Anda dengan warna acara yang dapat disesuaikan."
-      ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Berikan warna pada acara untuk mengatur hari Anda, melacak waktu Anda, dan memprioritaskan tugas dengan lebih mudah."
       ],
@@ -2752,9 +2743,6 @@
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Menghapus kontak... Proses ini dapat memakan waktu hingga beberapa menit. Setelah proses ini selesai, Anda dapat menutup jendela ini."
-      ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Dirancang untuk para pengguna yang menginginkan keamanan lebih bagi akun mereka."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Akses email dan kalender Anda pada desktop dan perangkat seluler dengan mudah."
@@ -2783,9 +2771,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Dapatkan pemberitahuan apabila kata sandi atau data lain Anda terbocorkan dari layanan pihak ketiga."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ PLAN_NAMES[PLANS.BUNDLE] }."
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Bantu tim Anda menyimpan kata sandi bisnis dan informasi klien yang sensitif secara aman."
       ],
@@ -2800,9 +2785,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Penggabungan kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Hemat waktu Anda dengan mengirim email ke seluruh pengguna yang memiliki grup kontak secara sekaligus. Dapatkan fitur ini dan berbagai fitur premium lainnya pada saat Anda meningkatkan akun."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Tentukan metode pemulihan untuk mencegah hilangnya data."
@@ -2830,9 +2812,6 @@
       ],
       "To start, give your organization a name.": [
         "Untuk memulai, beri nama organisasi Anda."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Tingkatkan akun Anda untuk mengaktifkan ${ PROTON_SENTINEL_NAME }, solusi keamanan mutakhir berbasis AI kami dengan dukungan ahli yang tersedia 24/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Tandai kontak yang ingin digabung."
@@ -4451,9 +4430,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Impor dari ${ provider }"
-      ],
-      "Other": [
-        "Lainnya"
       ]
     },
     "Import warning": {
@@ -5247,9 +5223,6 @@
       ],
       "Scan the QR code with your mobile device": [
         "Pindai kode QR dengan perangkat seluler Anda"
-      ],
-      "Select a service provider to start": [
-        "Pilih layanan email yang Anda gunakan untuk memulai"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Pilih format email yang akan digunakan setiap kali Anda mengirim email ke alamat ini."
@@ -6937,26 +6910,6 @@
         "Kecepatan VPN sedang"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Mulai dengan harga ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Mulai dari ${ pricing }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ],
-      "Upgrade to ${ planName }": [
-        "Tingkatkan ke ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hapus akun"
@@ -6978,6 +6931,11 @@
       ],
       "Switch plan": [
         "Ganti paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7113,9 +7071,6 @@
       "Auto-delete Spam and Trash": [
         "Kosongkan Spam dan Sampah secara otomatis"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Hapus pesan spam dan sampah secara otomatis"
-      ],
       "Auto-reply": [
         "Pesan balasan otomatis"
       ],
@@ -7157,9 +7112,6 @@
       ],
       "Custom fields": [
         "Kolom khusus"
-      ],
-      "Custom snooze time": [
-        "Pilih sendiri waktu tunda"
       ],
       "Custom workspace branding": [
         "Penjenamaan ruang kerja yang disesuaikan"
@@ -7299,12 +7251,6 @@
       "Schedule and snooze emails for any time": [
         "Jadwalkan dan tunda email kapan saja"
       ],
-      "Schedule messages at any time": [
-        "Jadwalkan pesan sesuai keinginan Anda"
-      ],
-      "Search message content": [
-        "Pencarian konten pesan"
-      ],
       "Secure Core servers": [
         "Server Secure Core"
       ],
@@ -7434,9 +7380,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Buat berbagai alamat email untuk masing-masing identitas online Anda, mis. JohnShopper@${ domain } untuk akun belanja dan JohnNews@${ domain2 } untuk akun langganan berita"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Tunda pesan dan dapatkan peringatan di waktu yang Anda inginkan"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }"
@@ -10303,9 +10246,6 @@
       "Exporting contacts": [
         "Mengekspor kontak"
       ],
-      "Get advanced protection": [
-        "Dapatkan perlindungan tingkat lanjut"
-      ],
       "Get more from your VPN": [
         "Dapatkan yang lebh dari VPN Anda"
       ],
@@ -10578,9 +10518,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Aktifkan ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "Unlock contacts groups": [
-        "Buka kunci grup kontak"
       ],
       "Update event": [
         "Perbarui acara"
