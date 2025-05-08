@@ -109,7 +109,7 @@ export const Tabs = ({
         if (!isReady && translate !== undefined && scale !== undefined && width !== undefined) {
             setReady(true);
             setTimeout(() => {
-                rootRef.current?.classList.add('withTransition');
+                rootRef.current?.classList.add('with-transition');
                 indicatortRef.current?.classList.remove('hides');
             }, 300 /* same with transition duration in css */);
         }
@@ -151,7 +151,7 @@ export const Tabs = ({
                         role="tablist"
                         ref={containerRef}
                         style={
-                            translate && scale && width
+                            translate !== undefined && scale !== undefined && width !== undefined
                                 ? { '--tabs_translate': translate, '--tabs_scale': scale, '--tabs_width': width }
                                 : {}
                         }
