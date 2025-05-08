@@ -1,7 +1,11 @@
 @import '~@proton/styles/scss/lib';
 
 .subscription-container {
-	background-color: var(--optional-background-lowered);
+	background-color: var(--background-lowered);
+
+	.subscriptions-list-header {
+		background-color: var(--background-lowered);
+	}
 
 	.subscription-card {
 		background-color: var(--background-elevated);
