@@ -1,7 +1,7 @@
 /* eslint-disable monorepo-cop/no-relative-import-outside-package */
 
 import { useEffect, useMemo, useRef, useState } from 'react'
-import type { SheetData } from '../../../../../vendor/rowsncolumns'
+import type { SheetData } from '../../../../../vendor/rowsncolumns/spreadsheet-state'
 import {
   DeleteSheetConfirmation,
   NamedRangeEditor,
@@ -10,7 +10,7 @@ import {
   TableEditor,
   useSearch,
   useSpreadsheetState,
-} from '../../../../../vendor/rowsncolumns'
+} from '../../../../../vendor/rowsncolumns/spreadsheet-state'
 import type {
   CellData,
   Sheet,
@@ -22,8 +22,9 @@ import type {
   SpreadsheetTheme,
   ColorMode,
   NamedRange,
-} from '../../../../../vendor/rowsncolumns'
+} from '../../../../../vendor/rowsncolumns/spreadsheet'
 import {
+  ButtonInsertChart,
   CanvasGrid,
   defaultSpreadsheetTheme,
   BackgroundColorSelector,
@@ -64,14 +65,14 @@ import {
   SheetStatus,
   SheetSwitcher,
   SheetTabs,
-} from '../../../../../vendor/rowsncolumns'
-import { useCharts } from '../../../../../vendor/rowsncolumns'
-import { IconButton, Separator } from '../../../../../vendor/rowsncolumns'
-import { functionDescriptions, functions } from '../../../../../vendor/rowsncolumns'
-import { MagnifyingGlassIcon } from '../../../../../vendor/rowsncolumns'
+} from '../../../../../vendor/rowsncolumns/spreadsheet'
+import { ChartComponent, useCharts, ChartEditor, ChartEditorDialog } from '../../../../../vendor/rowsncolumns/charts'
+import { IconButton, Separator } from '../../../../../vendor/rowsncolumns/ui'
+import { functionDescriptions, functions } from '../../../../../vendor/rowsncolumns/functions'
+import { MagnifyingGlassIcon } from '../../../../../vendor/rowsncolumns/icons'
 import type { EditorInitializationConfig, DocStateInterface } from '@proton/docs-shared'
 import { DocProvider, TranslatedResult } from '@proton/docs-shared'
-import { useYSpreadsheetV2 } from '../../../../../vendor/rowsncolumns'
+import { useYSpreadsheetV2 } from '../../../../../vendor/rowsncolumns/y-spreadsheet'
 import { useSyncedState } from '../Hooks/useSyncedState'
 import '../../../../../vendor/rowsncolumns/spreadsheet.min.css'
 import type { EditorLoadResult } from '../Lib/EditorLoadResult'
@@ -126,6 +127,7 @@ export function Spreadsheet({
     onRedo,
     getCellData,
     getSheetName,
+    getSheetId,
     getEffectiveFormat,
     onRequestCalculate,
     onChangeActiveCell,
@@ -208,6 +210,10 @@ export function Spreadsheet({
     getNonEmptyColumnCount,
     getNonEmptyRowCount,
     calculateNow,
+
+    getSeriesValuesFromRange,
+    getDomainValuesFromRange,
+    sheetObserver,
   } = useSpreadsheetState({
     sheets,
     sheetData,
@@ -264,10 +270,11 @@ export function Spreadsheet({
   })
 
   // Charts module
-  const { onDeleteChart, onMoveChart, onResizeChart } = useCharts({
-    onChangeCharts,
-    createHistory,
-  })
+  const { onRequestEditChart, onDeleteChart, onMoveChart, onResizeChart, onUpdateChart, onCreateChart, selectedChart } =
+    useCharts({
+      onChangeCharts,
+      createHistory,
+    })
 
   const {
     onSearch,
@@ -470,6 +477,7 @@ export function Spreadsheet({
           <ToolbarSeparator />
 
           <ButtonInsertImage onInsertFile={onInsertFile} />
+          <ButtonInsertChart onClick={() => onCreateChart(activeSheetId, activeCell, selections)} />
 
           <TableStyleSelector
             theme={theme}
@@ -540,6 +548,7 @@ export function Spreadsheet({
           bandedRanges={bandedRanges}
           functionDescriptions={functionDescriptions}
           getSheetName={getSheetName}
+          getSheetId={getSheetId}
           getCellData={getCellData}
           onChangeActiveCell={onChangeActiveCell}
           onChangeSelections={onChangeSelections}
@@ -603,7 +612,26 @@ export function Spreadsheet({
           onRequestSearch={onRequestSearch}
           users={users}
           userId={userName}
+          getChartComponent={(props) => (
+            <ChartComponent
+              {...props}
+              getSeriesValuesFromRange={getSeriesValuesFromRange}
+              getDomainValuesFromRange={getDomainValuesFromRange}
+              onRequestEdit={onRequestEditChart}
+              onRequestCalculate={onRequestCalculate}
+              sheetObserver={sheetObserver}
+            />
+          )}
         />
+        <ChartEditorDialog>
+          <ChartEditor
+            sheetId={activeSheetId}
+            chart={selectedChart}
+            onSubmit={onUpdateChart}
+            rowCount={rowCount}
+            columnCount={columnCount}
+          />
+        </ChartEditorDialog>
         <BottomBar>
           <NewSheetButton onClick={onCreateNewSheet} />
           <SheetSwitcher
