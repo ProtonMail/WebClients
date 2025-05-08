@@ -4,6 +4,14 @@
     "language": "cs_CZ"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Přeposílání bude brzy zahájeno. Nové e-maily se zobrazí ve vaší schránce."
+      ],
+      "Mail forward stopped": [
+        "Přeposílání e-mailů bylo zastaveno"
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Byl zjištěn potenciální únik ${ name } a ${ remainingCount } dalších. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností a provedení akce. ${ link }"
@@ -406,6 +414,9 @@
       "Get the deal": [
         "Využít nabídku"
       ],
+      "Get the writing assistant": [
+        "Získat asistenta psaní"
+      ],
       "Get verification code": [
         "Odeslat ověřovací kód"
       ],
@@ -445,10 +456,10 @@
       "Invite user": [
         "Pozvat uživatele"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Pokračovat v úpravách"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Pokračovat v úpravách"
       ],
       "Keep logo": [
@@ -562,11 +573,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "Refresh the page": [
-        "Obnovit stránku"
-      ],
       "refresh the page": [
         "obnovit stránku"
+      ],
+      "Refresh the page": [
+        "Obnovit stránku"
       ],
       "Remove": [
         "Odstranit"
@@ -682,11 +693,11 @@
       "Select country ${ country }": [
         "Vybrat zemi ${ country }"
       ],
-      "select file": [
-        "vybrat soubor"
-      ],
       "Select file": [
         "Vybrat soubor"
+      ],
+      "select file": [
+        "vybrat soubor"
       ],
       "Send code": [
         "Odeslat kód"
@@ -720,6 +731,9 @@
       ],
       "Set up a custom domain": [
         "Nastavit vlastní doménu"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Nastavit automatické přeposílání z Gmailu"
       ],
       "Set up email forwarding": [
         "Nastavit přeposílání e-mailů"
@@ -768,6 +782,9 @@
       ],
       "Signing in": [
         "Přihlašování"
+      ],
+      "Skip": [
+        "Přeskočit"
       ],
       "Spam": [
         "Spam"
@@ -1020,6 +1037,26 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Tím se odpojí všechny routery a klienti, kteří používají tento certifikát."
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay } doručená pošta"
+      ],
+      "5 trackers removed": [
+        "5 sledovacích prvků odstraněno"
+      ],
+      "Auto forwarded": [
+        "Automaticky přeposláno"
+      ],
+      "Email received": [
+        "E-mail přijat"
+      ],
+      "Encrypted": [
+        "Šifrováno"
+      ],
+      "New email": [
+        "Nový e-mail"
       ]
     },
     "Assistant toggle": {
@@ -2611,9 +2648,6 @@
       "No one in your organization can connect to shared servers.": [
         "Nikdo ve vaší organizaci se nemůže připojit ke sdíleným serverům."
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Oddělte různé aspekty svého života pomocí více e-mailových adres a po navýšení tarifu odemkněte další prémiové funkce."
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Nastavte účty pro všechny uživatele a pozvěte je, aby se připojili k ${ BRAND_NAME }."
       ],
@@ -2935,6 +2969,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } se nemůže připojit k vašemu externímu účtu"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Můžete se také podívat na to, co říká naše ${ statusPageLink }"
       ],
@@ -2949,6 +2986,12 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Částka je nižší než minimální možná hodnota (${ minimumAmount })."
+      ],
+      "Authentication canceled.": [
+        "Ověření zrušeno."
+      ],
+      "Authentication error.": [
+        "Chyba ověření."
       ],
       "Checkout expired, please try again": [
         "Objednávka vypršela, zkuste to prosím znovu"
@@ -3057,6 +3100,15 @@
       ],
       "Name does not match": [
         "Název se neshoduje"
+      ],
+      "No calendars found to import": [
+        "Nebyly nalezeny žádné kalendáře k importu"
+      ],
+      "No contacts found to import": [
+        "Nebyly nalezeny žádné kontakty k importu"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Nebyly nalezeny žádné e-maily k importu - účet nemá složku Doručená pošta"
       ],
       "No image selected": [
         "Není vybrán žádný obrázek"
@@ -3205,6 +3257,9 @@
       "Unable to upload file": [
         "Soubor nelze nahrát"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "Neočekávaná chyba, kontakty nelze importovat"
+      ],
       "Unknown error": [
         "Neznámá chyba"
       ],
@@ -3228,6 +3283,9 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Nesprávný ověřovací kód. Ujistěte se prosím, že jste zkopírovali ověřovací kód správně a akci opakujte. Než se změny projeví, může to trvat až 24 hodin."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Dosáhli jste limitu počtu kontaktů vašeho účtu"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Všechny adresy ve vašem tarifu jsou vyčerpány. Přejděte na vyšší tarif, abyste mohli přidat další adresu."
@@ -3863,6 +3921,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Automaticky přeposlat"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail zprávy do složky Doručená pošta"
+      ],
+      "Sign in with Google": [
+        "Přihlásit se pomocí Googlu"
       ]
     },
     "Go to sign in": {
@@ -5754,11 +5823,11 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "Username": [
-        "Uživatelské jméno"
-      ],
       "username": [
         "uživatelské jméno"
+      ],
+      "Username": [
+        "Uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -6338,10 +6407,10 @@
       "Allow recovery by phone": [
         "Povolit obnovení telefonem"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6581,6 +6650,9 @@
       "IBAN": [
         "IBAN"
       ],
+      "Import all messages": [
+        "Importovat všechny zprávy"
+      ],
       "Integrated 2FA authenticator": [
         "Integrované ověřování 2FA"
       ],
@@ -6595,6 +6667,15 @@
       ],
       "Key": [
         "Klíč"
+      ],
+      "Last 12 months only": [
+        "Pouze posledních 12 měsíců"
+      ],
+      "Last 3 months only": [
+        "Pouze poslední 3 měsíce"
+      ],
+      "Last month only": [
+        "Pouze minulý měsíc"
       ],
       "Last name": [
         "Příjmení"
@@ -7381,32 +7462,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začněte za ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšit na ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Smazat účet"
@@ -7428,6 +7483,20 @@
       ],
       "Switch plan": [
         "Změnit tarif"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Navýšit"
       ]
     },
     "new_plans: feature": {
@@ -7560,26 +7629,11 @@
       "${ size } storage per user": [
         "${ size } úložiště na uživatele"
       ],
-      "1 TB secure storage": [
-        "1 TB bezpečného úložiště"
-      ],
       "1 user": [
         "1 uživatel"
       ],
-      "10 email addresses/aliases": [
-        "10 e-mailových adres/aliasů"
-      ],
-      "10 more premium features": [
-        "10 dalších prémiových funkcí"
-      ],
       "10-year file version history": [
         "10letá historie verzí souborů"
-      ],
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "200 GB of storage": [
-        "200 GB úložiště"
       ],
       "24/7 account management support": [
         "24/7 podpora správy účtu"
@@ -7599,17 +7653,11 @@
       "Administration Panel": [
         "Panel správce"
       ],
-      "Advanced account protection": [
-        "Pokročilá ochrana účtu"
-      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Pokročilé funkce aliasů (založeno na SimpleLogin)"
       ],
       "Advanced network security": [
         "Pokročilé zabezpečení sítě"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "Všechny ${ BRAND_NAME } produkty a funkce"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všechny základní služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -7622,9 +7670,6 @@
       ],
       "Auto-delete Spam and Trash": [
         "Automatické smazání obsahu složek spam a koš"
-      ],
-      "Auto-delete spam and trashed messages": [
-        "Automaticky mazat zprávy ve spamu a koši"
       ],
       "Auto-reply": [
         "Automatická odpověď"
@@ -7670,9 +7715,6 @@
       ],
       "Custom fields": [
         "Vlastní pole"
-      ],
-      "Custom snooze time": [
-        "Vlastní čas odložení"
       ],
       "Custom workspace branding": [
         "Přizpůsobení pracovního prostoru pro vlastní značku"
@@ -7730,9 +7772,6 @@
       ],
       "GDPR data processing agreement": [
         "GDPR dohoda o správě dat"
-      ],
-      "Generate emails with a prompt": [
-        "Vygenerujte e-maily pomocí příkazů"
       ],
       "Group management (coming soon)": [
         "Správa skupiny (již brzy)"
@@ -7797,15 +7836,6 @@
       "Priority support & live chat": [
         "Přednostní podpora a živý chat"
       ],
-      "Private photo backup": [
-        "Soukromé zálohování fotek"
-      ],
-      "Proofread and refine your emails": [
-        "Proveďte korektury a zpřesnění vašich e-mailů"
-      ],
-      "Quickly craft replies": [
-        "Rychle vytvářejte odpovědi"
-      ],
       "Recover previous file versions": [
         "Obnova předchozích verzí souborů"
       ],
@@ -7818,23 +7848,11 @@
       "Router support": [
         "Podpora routeru"
       ],
-      "Save time emailing": [
-        "Ušetřete čas při e-mailové komunikaci"
-      ],
       "Schedule and snooze emails for any time": [
         "Naplánujte a odložte e-maily na později"
       ],
-      "Schedule messages at any time": [
-        "Plánování zpráv v libovolném čase"
-      ],
-      "Search message content": [
-        "Hledat v obsahu zpráv"
-      ],
       "Secure Core servers": [
         "Servery Secure Core"
-      ],
-      "Secure file storage and sharing": [
-        "Bezpečné ukládání a sdílení souborů"
       ],
       "Secure link sharing": [
         "Sdílení bezpečných odkazů"
@@ -7874,9 +7892,6 @@
       ],
       "Strict no-logs policy": [
         "Přísné zásady neukládání logů"
-      ],
-      "Support for up to 2 users": [
-        "Podpora pro až 2 uživatele"
       ],
       "Sync and backup all your files across devices": [
         "Synchronizace a zálohování všech vašich souborů mezi zařízeními"
@@ -7984,20 +7999,6 @@
         "${ users } uživatelé",
         "${ users } uživatelů",
         "${ users } uživatelů"
-      ]
-    },
-    "new_plans: feature info": {
-      "1 custom email domain": [
-        "1 vlastní e-mailová doména"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Vytvořte více e-mailových adres pro své online identity, např. HonzaNakupy@${ domain } pro nákupní účty a HonzaZpravy@${ domain2 } pro odběry zpráv"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Odložte zprávy a nechte si je připomenout, kdy chcete"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -8130,6 +8131,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Cena od ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Zvýhodněná cena ${ priceCoupon } platí první měsíc. Poté dojde k automatickému obnovení za cenu ${ priceLine }. Službu můžete kdykoli zrušit."
       ],
@@ -8675,6 +8679,17 @@
         "Vítejte v ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Všichni"
+      ],
+      "Group members": [
+        "Členové skupiny"
+      ],
+      "No one": [
+        "Nikdo"
+      ]
+    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Povoleno ${ defaultLabel }"
@@ -8765,17 +8780,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Všichni"
-      ],
-      "Group members": [
-        "Členové skupiny"
-      ],
-      "No one": [
-        "Nikdo"
       ]
     },
     "Organization capacity error": {
@@ -11135,6 +11139,9 @@
       "Billing details updated": [
         "Fakturační údaje aktualizovány"
       ],
+      "Canceling import": [
+        "Ruším import"
+      ],
       "Catch-all address updated": [
         "Záchytná adresa aktualizována"
       ],
@@ -11170,6 +11177,9 @@
       ],
       "Gift code applied": [
         "Kód kupónu byl použit"
+      ],
+      "Import record deleted": [
+        "Záznam o importu byl smazán"
       ],
       "Invitation rejected": [
         "Pozvánka odmítnuta"
@@ -11230,6 +11240,9 @@
       ],
       "SPF value copied to clipboard": [
         "Hodnota SPF byla zkopírována do schránky"
+      ],
+      "Undo in progress": [
+        "Probíhá zrušení"
       ],
       "User updated": [
         "Uživatel aktualizován"
@@ -11581,10 +11594,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -11923,14 +11936,14 @@
       "Import emails, calendars, contacts": [
         "Importovat e-maily, kalendáře a kontakty"
       ],
-      "Increase your privacy with more addresses": [
-        "Zvyšte své soukromí pomocí dalších adres"
-      ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
       ],
       "Invoices": [
         "Faktury"
+      ],
+      "Limit reached": [
+        "Limit dosažen"
       ],
       "Main password": [
         "Hlavní heslo"
@@ -12629,8 +12642,8 @@
       "Recommended": [
         "Doporučeno"
       ],
-      "Save ${ totals.discountPercentage }%": [
-        "Ušetřete ${ totals.discountPercentage }%"
+      "Save ${ price.uiData.discountPercent }%": [
+        "Ušetřete ${ price.uiData.discountPercent } %"
       ]
     },
     "User role": {
