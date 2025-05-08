@@ -12,13 +12,12 @@ import {
     type IconName,
     usePopperAnchor,
 } from '@proton/components';
+import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
+import { getUnreadCount } from 'proton-mail/components/sidebar/locationAsideHelpers';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
-import type {
-    FilteredSubscriptionsValue,
-    SortSubscriptionsValue,
-} from 'proton-mail/store/newsletterSubscriptions/interface';
+import type { SortSubscriptionsValue, SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/interface';
 import { sortSubscriptionList } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
 import { subscriptionCountSelector } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
@@ -122,7 +121,7 @@ const HeaderTab = ({ onClick, copy, count, active }: HeaderTabProps) => {
                 <span
                     className={clsx('px-1 ml-2 rounded-sm text-xs align-text-bottom', active ? 'bg-norm' : 'bg-strong')}
                 >
-                    {count}
+                    {getUnreadCount(CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS, count)}
                 </span>
             ) : null}
         </Button>
@@ -130,12 +129,12 @@ const HeaderTab = ({ onClick, copy, count, active }: HeaderTabProps) => {
 };
 
 export const NewsletterSubscriptionListHeader = () => {
-    const [active, setActive] = useState<FilteredSubscriptionsValue>('active');
+    const [active, setActive] = useState<SubscriptionTabs>('active');
 
     const counts = useMailSelector(subscriptionCountSelector);
     const dispatch = useMailDispatch();
 
-    const handleTabClick = (tab: FilteredSubscriptionsValue) => {
+    const handleTabClick = (tab: SubscriptionTabs) => {
         setActive(tab);
         dispatch(newsletterSubscriptionsActions.setFilteredSubscriptions(tab));
     };
