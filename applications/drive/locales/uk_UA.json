@@ -399,6 +399,9 @@
       "Get Started": [
         "Розпочнімо"
       ],
+      "Get the writing assistant": [
+        "Отримати помічника з написання"
+      ],
       "Get verification code": [
         "Отримати код підтвердження"
       ],
@@ -807,9 +810,6 @@
       "Start recovering": [
         "Почати відновлення"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Починаючи з ${ priceUnlimited }"
-      ],
       "Stay": [
         "Залишитися"
       ],
@@ -872,9 +872,6 @@
       ],
       "Upgrade now": [
         "Покращити"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Оновити до ${ BRAND_NAME } Необмежено"
       ],
       "Upload": [
         "Вивантажити"
@@ -2400,26 +2397,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Видалення контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Призначений для користувачів, які шукають посилений захист для своїх облікових записів."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Отримуйте сповіщення, якщо ваш пароль або інші дані отримали витік зі стороннього сервісу."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Отримайте необмежену кількість псевдонімів і 500 ГБ сховища з ${ PLAN_NAMES[PLANS.BUNDLE] }."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Схоже, що список контактів, який ви імпортуєте, містить групи. Перегляньте, як ці групи повинні бути імпортовані."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Об'єднання контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Заощаджуйте час, відсилаючи електронні листи всім одночасно за допомогою груп контактів. Розблокуйте ці та інші преміумфункції під час покращення."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Налаштуйте спосіб відновлення, щоб запобігти втраті даних."
@@ -2435,9 +2423,6 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Щоб імпортувати свої контакти з Google або Outlook, ${ easySwitchLink }."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Покращте свій обліковий запис, щоб активувати ${ PROTON_SENTINEL_NAME }, – наше найсучасніше рішення щодо безпеки на базі ШІ з експертною цілодобовою підтримкою."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
@@ -3942,9 +3927,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Імпорт з ${ provider }"
-      ],
-      "Other": [
-        "Інший"
       ]
     },
     "Import warning": {
@@ -5104,9 +5086,6 @@
       ],
       "Select a folder to move to.": [
         "Виберіть теку для переміщення."
-      ],
-      "Select a service provider to start": [
-        "Виберіть постачальника послуг, щоб розпочати"
       ],
       "Select all items for": [
         "Виберіть усі елементи для"
@@ -6837,20 +6816,6 @@
         "Середня швидкість VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Розпочати з ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Видалити обліковий запис"
@@ -6872,6 +6837,14 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Покращити"
       ]
     },
     "new_plans: feature": {
@@ -7052,9 +7025,6 @@
       "Auto-delete Spam and Trash": [
         "Автоматичне видалення спаму та смітника"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Автоматичне видалення спаму та повідомлень зі смітника"
-      ],
       "Auto-reply": [
         "Автовідповідь"
       ],
@@ -7096,9 +7066,6 @@
       ],
       "Custom fields": [
         "Власні поля"
-      ],
-      "Custom snooze time": [
-        "Власний час відкладення"
       ],
       "Custom workspace branding": [
         "Брендинг робочого середовища"
@@ -7228,12 +7195,6 @@
       ],
       "Schedule and snooze emails for any time": [
         "Плануйте і відкладайте електронні листи на будь-який час"
-      ],
-      "Schedule messages at any time": [
-        "Заплануйте надсилання повідомлень в будь-який час"
-      ],
-      "Search message content": [
-        "Пошук вмісту повідомлень"
       ],
       "Secure Core servers": [
         "Сервери Secure Core"
@@ -7373,9 +7334,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Створіть різні адреси електронної пошти для ваших онлайн-профілів, наприклад, ArtemShopper@${ domain } для інтернет-магазинів, ArtemNews@${ domain2 } для підписки на новини"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Відкладайте повідомлення та отримуйте нагадування, коли захочете"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
@@ -10229,9 +10187,6 @@
         "Знайдено ${ searchView.numberOfResults } результатів",
         "Знайдено ${ searchView.numberOfResults } результата"
       ],
-      "Get advanced protection": [
-        "Отримайте розширений захист"
-      ],
       "Get the apps": [
         "Отримати програми"
       ],
@@ -10507,9 +10462,6 @@
       ],
       "Type": [
         "Тип"
-      ],
-      "Unlock contacts groups": [
-        "Розблокувати групи контактів"
       ],
       "Untitled document ${ date }": [
         "Документ без назви ${ date }"

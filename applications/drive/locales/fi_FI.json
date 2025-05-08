@@ -451,6 +451,9 @@
       "Get the apps": [
         "Hanki sovellukset"
       ],
+      "Get the writing assistant": [
+        "Hanki kirjoitusavustaja"
+      ],
       "Get verification code": [
         "Hanki vahvistuskoodi"
       ],
@@ -937,9 +940,6 @@
       "Start recovering": [
         "Aloita palautus"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Alkaen ${ priceUnlimited }"
-      ],
       "Stay": [
         "Pysy"
       ],
@@ -1005,9 +1005,6 @@
       ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Päivitä ${ BRAND_NAME } Unlimitediin"
       ],
       "Upload": [
         "Lähetä"
@@ -2590,26 +2587,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja poistetaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Suunniteltu käyttäjille, jotka haluavat parantaa tiliensä suojausta."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja salataan ja tuodaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut kolmannen osapuolen palvelusta."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Hanki ${ PLAN_NAMES[PLANS.BUNDLE] } ja saat rajattomasti aliaksia ja 500 Gt tallennustilaa."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Yhteystiedot, joita olet tuomassa, näyttävät sisältävän ryhmiä. Määritä miten ryhmät tuodaan."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja yhdistetään... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Säästä aikaa lähettämällä sähköposteja kaikille samanaikaisesti yhteystietoryhmien avulla. Avaa tämä ja muita premium-ominaisuuksia päivittämällä tilauksesi."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Aseta tiedoillesi palautustapa, jottet menetä niitä."
@@ -2628,9 +2616,6 @@
       ],
       "To start, give your organization a name.": [
         "Aloita antamalla organisaatiollesi nimi."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Päivitä tilisi aktivoidaksesi huippumoderniin tekoälyyn perustuvan ${ PROTON_SENTINEL_NAME } -tietoturvaratkaisumme, johon sisältyy myös 24/7 asiantuntijatuki."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
@@ -4147,9 +4132,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Tuo palvelusta ${ provider }"
-      ],
-      "Other": [
-        "Muu"
       ]
     },
     "Import warning": {
@@ -5331,9 +5313,6 @@
       ],
       "Select a folder to move to.": [
         "Valitse kohdekansio."
-      ],
-      "Select a service provider to start": [
-        "Aloita valitsemalla palveluntarjoaja"
       ],
       "Select all items for": [
         "Valitse kaikki kohteet ryhmästä"
@@ -7217,29 +7196,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Aloita hintaan ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Tilaukset alkaen hintaan ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Alkaen ${ pricing }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ planName }": [
-        "Päivitä tilaukseen ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Poista tili"
@@ -7261,6 +7217,17 @@
       ],
       "Switch plan": [
         "Vaihda tilausta"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Tilaukset alkaen hintaan ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
       ]
     },
     "new_plans: feature": {
@@ -7413,9 +7380,6 @@
       "Auto-delete Spam and Trash": [
         "Roskapostin ja roskakorin automaattinen tyhjennys"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Poista roskakorin ja roskapostin viestit automaattisesti"
-      ],
       "Auto-reply": [
         "Automaattivastaus"
       ],
@@ -7457,9 +7421,6 @@
       ],
       "Custom fields": [
         "Mukautetut kentät"
-      ],
-      "Custom snooze time": [
-        "Oma torkutusaika"
       ],
       "Custom workspace branding": [
         "Mukautettu työtilan ilme"
@@ -7600,12 +7561,6 @@
       "Schedule and snooze emails for any time": [
         "Viestien vapaa ajoitus ja torkutus"
       ],
-      "Schedule messages at any time": [
-        "Ajoita viestit lähtemään milloin tahansa"
-      ],
-      "Search message content": [
-        "Etsi viestien sisällöstä"
-      ],
       "Secure Core servers": [
         "Secure Core -palvelimet"
       ],
@@ -7741,9 +7696,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Luo verkkoidentiteeteillesi useita sähköpostiosoitteita, kuten MikkoOstokset@${ domain } ostoksille ja MikkoUutiset@${ domain2 } uutiskirjeille"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Torkuta viestejä ja saa muistutus haluamaasi aikaan"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä"
@@ -10747,9 +10699,6 @@
         "Löytyi ${ searchView.numberOfResults } tulos",
         "Löytyi ${ searchView.numberOfResults } tulosta"
       ],
-      "Get advanced protection": [
-        "Hanki edistynyt suojaus"
-      ],
       "Get more from your VPN": [
         "Saa enemmän VPN-yhteydestäsi"
       ],
@@ -11099,9 +11048,6 @@
       ],
       "Type": [
         "Tyyppi"
-      ],
-      "Unlock contacts groups": [
-        "Avaa yhteystietoryhmät"
       ],
       "Untitled document ${ date }": [
         "Nimetön dokumentti ${ date }"
