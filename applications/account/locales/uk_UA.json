@@ -607,6 +607,9 @@
       "Get the deal": [
         "Скористатися пропозицією"
       ],
+      "Get the writing assistant": [
+        "Отримати помічника з написання"
+      ],
       "Get verification code": [
         "Отримати код підтвердження"
       ],
@@ -1006,11 +1009,11 @@
       "Select country": [
         "Виберіть країну"
       ],
-      "select file": [
-        "виберіть файл"
-      ],
       "Select file": [
         "Вибрати файл"
+      ],
+      "select file": [
+        "виберіть файл"
       ],
       "Select files": [
         "Вибрати файли"
@@ -1197,9 +1200,6 @@
       ],
       "Upgrade now": [
         "Покращити"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Покращити до ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "Перейти на Business"
@@ -3573,9 +3573,6 @@
       "Also included": [
         "Також включено"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Автоматично видаляйте спам і видалені повідомлення та розблокуйте більше преміумфункцій при покращенні."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Автоматично очищати листи, що переміщені в Кошик і Спам більше ніж 30 днів тому."
       ],
@@ -3627,9 +3624,6 @@
       "No one in your organization can connect to shared servers.": [
         "Ніхто з вашої організації не може під'єднуватися до спільних серверів."
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Передплатіть тарифний план, щоб відокремити різні аспекти свого життя за допомогою декількох адрес електронної пошти та отримати доступ до інших преміумфункцій."
-      ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
         "Налаштуйте автопереадресацію, щоб перенаправляти вхідні електронні листи на іншу адресу електронної пошти."
       ],
@@ -3639,20 +3633,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Щоб імпортувати свої контакти з Google або Outlook, ${ easySwitchLink }."
       ],
-      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "Передплатіть тарифний план, щоб вилучити нижній колонтитул ${ MAIL_APP_NAME } та отримати доступ до інших преміальних функцій."
-      ],
       "Track the status and activity of your referrals.": [
         "Відстежуйте стан і активність ваших запрошень."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Передплатіть тарифний план і розблокуйте короткі адреси електронної пошти та інші преміальні функції."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Отримайте доступ до безмежної кількості фільтрів для впорядкування поштової скриньки, передплативши тарифний план."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Отримайте доступ до безмежної кількості тек, міток та інших преміумфункцій, передплативши тарифний план."
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Оновіться, щоб отримати ${ activatePmUser } для коротшої, легкої для запам'ятовування адреси електронної пошти на додаток до вашої поточної."
@@ -5910,47 +5892,6 @@
         "Безплатний пробний період вашої програми для комп'ютера завершився"
       ]
     },
-    "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "Програма ${ MAIL_APP_NAME }"
-      ],
-      "account logins": [
-        "імена користувачів"
-      ],
-      "Auto-forward Gmail": [
-        "Автопересилання Gmail"
-      ],
-      "auto-forwarding": [
-        "автопересилання"
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Змініть ${ strongText } на свою адресу ${ BRAND_NAME }"
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Дізнайтеся, як наші ${ strongText } захищають вас"
-      ],
-      "Discover privacy features": [
-        "Відкрийте для себе функції приватності"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Отримайте ${ strongText } на Android або iOS"
-      ],
-      "Get the App": [
-        "Отримати програму"
-      ],
-      "privacy features": [
-        "функції приватності"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Налаштуйте ${ strongText } з Gmail"
-      ],
-      "This feature is currently unavailable": [
-        "Ця функція наразі недоступна"
-      ],
-      "Update your logins": [
-        "Оновіть свої записи входу"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Автоматичне пересилання"
@@ -6547,9 +6488,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Імпорт з ${ provider }"
-      ],
-      "Other": [
-        "Інший"
       ]
     },
     "Import rollback status": {
@@ -7740,9 +7678,6 @@
       "Import mailbox": [
         "Імпортувати поштову скриньку"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Імпортуйте ваші електронні листи, календарі та контакти з іншої служби до ${ BRAND_NAME }."
-      ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "ВАЖЛИВО: якщо ваша консоль DNS не допускає, щоб значення CNAME закінчувалися крапкою, ви можете видалити останню крапку в значеннях CNAME."
       ],
@@ -8442,9 +8377,6 @@
       "Securing your account": [
         "Захист вашого облікового запису"
       ],
-      "Select a service provider to start": [
-        "Виберіть постачальника послуг, щоб розпочати"
-      ],
       "Select one or multiple user affiliations": [
         "Виберіть одну або кілька приналежностей користувачів"
       ],
@@ -9003,11 +8935,11 @@
       "User activated": [
         "Користувач активований"
       ],
-      "Username": [
-        "Ім’я користувача"
-      ],
       "username": [
         "ім'я користувача"
+      ],
+      "Username": [
+        "Ім’я користувача"
       ],
       "Users": [
         "Користувачі"
@@ -10088,10 +10020,10 @@
       "Allow recovery using a trusted device": [
         "Дозволити відновлення за допомогою довіреного пристрою"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дозволений домен"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дозволений домен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10103,11 +10035,11 @@
       "Amount due": [
         "До сплати"
       ],
-      "AND": [
-        "ТА"
-      ],
       "And": [
         "Та"
+      ],
+      "AND": [
+        "ТА"
       ],
       "and": [
         "та"
@@ -10508,11 +10440,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ЯКЩО"
-      ],
       "If": [
         "Якщо"
+      ],
+      "IF": [
+        "ЯКЩО"
       ],
       "Import all messages": [
         "Імпортувати всі повідомлення"
@@ -10709,14 +10641,14 @@
       "Optional": [
         "Необов'язково"
       ],
-      "OR": [
-        "АБО"
-      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
+      ],
+      "OR": [
+        "АБО"
       ],
       "Organization name": [
         "Назва організації"
@@ -11965,13 +11897,7 @@
       "From ${ price }": [
         "Від ${ price }"
       ],
-      "Get started for ${ priceCoupon }": [
-        "Розпочати з ${ priceCoupon }"
-      ],
       "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
         "Покращити"
       ]
     },
@@ -12162,9 +12088,6 @@
       "Auto-delete Spam and Trash": [
         "Автоматичне видалення спаму та смітника"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Автоматичне видалення спаму та повідомлень зі смітника"
-      ],
       "Auto-reply": [
         "Автовідповідь"
       ],
@@ -12209,9 +12132,6 @@
       ],
       "Custom fields": [
         "Власні поля"
-      ],
-      "Custom snooze time": [
-        "Власний час відкладення"
       ],
       "Custom workspace branding": [
         "Брендинг робочого середовища"
@@ -12350,12 +12270,6 @@
       ],
       "Schedule and snooze emails for any time": [
         "Плануйте і відкладайте електронні листи на будь-який час"
-      ],
-      "Schedule messages at any time": [
-        "Заплануйте надсилання повідомлень в будь-який час"
-      ],
-      "Search message content": [
-        "Пошук вмісту повідомлень"
       ],
       "Secure Core servers": [
         "Сервери Secure Core"
@@ -12507,9 +12421,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Створіть різні адреси електронної пошти для ваших онлайн-профілів, наприклад, ArtemShopper@${ domain } для інтернет-магазинів, ArtemNews@${ domain2 } для підписки на новини"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Відкладайте повідомлення та отримуйте нагадування, коли захочете"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
@@ -12686,6 +12597,14 @@
         "Обраний вами тарифний план: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробна версія ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Використання вашого облікового запису"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Видалити обліковий запис?"
@@ -12704,14 +12623,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Передплатіть тарифний план та розблокуйте преміумфункції"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробна версія ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Використання вашого облікового запису"
       ]
     },
     "new_plans: tooltip": {
@@ -13261,6 +13172,17 @@
         "Вітаємо у ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Будь-хто"
+      ],
+      "Group members": [
+        "Учасники групи"
+      ],
+      "No one": [
+        "Ніхто"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10-е число місяця"
@@ -13483,17 +13405,6 @@
       ],
       "Trash": [
         "Смітник"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Будь-хто"
-      ],
-      "Group members": [
-        "Учасники групи"
-      ],
-      "No one": [
-        "Ніхто"
       ]
     },
     "Option delay send seconds": {
@@ -15409,9 +15320,6 @@
       ]
     },
     "Settings description": {
-      "Complete the transition to privacy with our secure importing and forwarding tools.": [
-        "Перейдіть на новий рівень приватності завдяки нашим інструментам безпечного імпортування і пересилання."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Впорядковуйте свою поштову скриньку за допомогою тек і міток. ${ learnMoreLink }"
       ]
@@ -17310,9 +17218,6 @@
       "Actions": [
         "Дії"
       ],
-      "Activate @pm.me": [
-        "Активувати @pm.me"
-      ],
       "Activate organization key": [
         "Активувати ключ організації"
       ],
@@ -17451,11 +17356,11 @@
       "Card verification": [
         "Перевірка картки"
       ],
-      "Catch-all address": [
-        "Catch-all адреси"
-      ],
       "Catch-All address": [
         "Catch-All адреса"
+      ],
+      "Catch-all address": [
+        "Catch-all адреси"
       ],
       "Change login password": [
         "Змінити пароль входу"
@@ -17483,9 +17388,6 @@
       ],
       "Clear": [
         "Очистити"
-      ],
-      "Clear out the junk": [
-        "Приберіть усе зайве"
       ],
       "Click a value in the table to use it as filter": [
         "Клацніть на значення в таблиці, щоб використовувати його як фільтр"
@@ -17937,17 +17839,11 @@
       "Import key": [
         "Імпорт ключа"
       ],
-      "Import messages": [
-        "Імпортувати повідомлення"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Імпорт через ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Inactive 2FA": [
         "Неактивна 2FA"
-      ],
-      "Increase your privacy with more addresses": [
-        "Вдоскональте свою приватність за допомогою більшої кількості адрес"
       ],
       "Integrations": [
         "Інтеграції"
@@ -17963,9 +17859,6 @@
       ],
       "IP": [
         "IP-адреса"
-      ],
-      "Keep your inbox organized": [
-        "Упорядкуйте свою поштову скриньку"
       ],
       "Keyboard shortcuts": [
         "Комбінації клавіш"
@@ -18207,9 +18100,6 @@
       "SAML authentication": [
         "Автентифікація SAML"
       ],
-      "Save time with email filters": [
-        "Заощаджуйте час за допомогою фільтрів електронної пошти"
-      ],
       "Secure email based in Switzerland": [
         "Захищена електронна пошта, що розташована у Швейцарії"
       ],
@@ -18263,9 +18153,6 @@
       ],
       "Set up a recovery method": [
         "Налаштувати спосіб відновлення"
-      ],
-      "Set up forwarding": [
-        "Налаштувати пересилання"
       ],
       "Set up two-factor authentication": [
         "Налаштувати двоетапну перевірку"
