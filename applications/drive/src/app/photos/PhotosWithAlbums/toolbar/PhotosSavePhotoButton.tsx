@@ -30,7 +30,7 @@ export const PhotosSavePhotoButton: FC<Props> = ({ onSavePhotos, showIconOnly, d
             data-testid="toolbar-save-photo"
             className="inline-flex flex-nowrap flex-row items-center"
         >
-            <Icon name="cloud" className={clsx(!showIconOnly && 'mr-2')} />
+            <Icon name="cloud-arrow-down" className={clsx(!showIconOnly && 'mr-2')} />
             <span className={clsx(showIconOnly && 'sr-only')}>{c('Action').t`Save`}</span>
         </ButtonComp>
     );
