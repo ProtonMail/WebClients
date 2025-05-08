@@ -4,6 +4,14 @@
     "language": "sv_SE"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Vidarebefordran kommer snart starta. Nya e-postmeddelanden kommer visas i din inkorg."
+      ],
+      "Mail forward stopped": [
+        "Vidarebefordran av e-post stoppad"
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
@@ -406,6 +414,9 @@
       "Get the deal": [
         "Ta del av erbjudandet"
       ],
+      "Get the writing assistant": [
+        "Skaffa skrivassistenten"
+      ],
       "Get verification code": [
         "Skaffa verifieringskod"
       ],
@@ -445,10 +456,10 @@
       "Invite user": [
         "Bjud in användare"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Fortsätt redigera"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Fortsätt redigera"
       ],
       "Keep logo": [
@@ -562,11 +573,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "Refresh the page": [
-        "Uppdatera sidan"
-      ],
       "refresh the page": [
         "uppdatera sidan"
+      ],
+      "Refresh the page": [
+        "Uppdatera sidan"
       ],
       "Remove": [
         "Ta bort"
@@ -682,11 +693,11 @@
       "Select country ${ country }": [
         "Välj land ${ country }"
       ],
-      "select file": [
-        "välj fil"
-      ],
       "Select file": [
         "Välj fil"
+      ],
+      "select file": [
+        "välj fil"
       ],
       "Send code": [
         "Skicka kod"
@@ -720,6 +731,9 @@
       ],
       "Set up a custom domain": [
         "Ställ in en anpassad domän"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Ställ in automatisk vidarebefordran från Gmail"
       ],
       "Set up email forwarding": [
         "Ställ in vidarebefordran av e-post"
@@ -768,6 +782,9 @@
       ],
       "Signing in": [
         "Loggar in"
+      ],
+      "Skip": [
+        "Hoppa över"
       ],
       "Spam": [
         "Skräppost"
@@ -1012,6 +1029,26 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Detta kommer att koppla från alla routrar och klienter som använder detta certifikat."
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay }s inkorg"
+      ],
+      "5 trackers removed": [
+        "5 spårare borttagna"
+      ],
+      "Auto forwarded": [
+        "Automatiskt vidarebefordrad"
+      ],
+      "Email received": [
+        "E-post mottagen"
+      ],
+      "Encrypted": [
+        "Krypterad"
+      ],
+      "New email": [
+        "Ny e-post"
       ]
     },
     "Assistant toggle": {
@@ -2583,9 +2620,6 @@
       "No one in your organization can connect to shared servers.": [
         "Ingen i din organisation kan ansluta till delade servrar."
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Ställ in konton för alla användare och bjud in dem att gå med i ${ BRAND_NAME }."
       ],
@@ -2907,6 +2941,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } kan inte ansluta till ditt externa konto"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan också kontrollera vår ${ statusPageLink }"
       ],
@@ -2921,6 +2958,12 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Belopp under minimum (${ minimumAmount })."
+      ],
+      "Authentication canceled.": [
+        "Autentiseringen avbröts."
+      ],
+      "Authentication error.": [
+        "Autentiseringsfel."
       ],
       "Checkout expired, please try again": [
         "Kassan löpt ut, försök igen"
@@ -3029,6 +3072,15 @@
       ],
       "Name does not match": [
         "Namn matchar inte"
+      ],
+      "No calendars found to import": [
+        "Inga kalendrar hittades att importera"
+      ],
+      "No contacts found to import": [
+        "Inga kontakter hittades att importera"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Inga e-postmeddelanden hittades att importera - kontot har ingen inkorg"
       ],
       "No image selected": [
         "Ingen bild vald"
@@ -3177,6 +3229,9 @@
       "Unable to upload file": [
         "Kan inte ladda upp fil"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "Oväntat fel, vi kan inte importera kontakterna"
+      ],
       "Unknown error": [
         "Okänt fel"
       ],
@@ -3200,6 +3255,9 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Fel verifieringskod. Se till att du kopierade verifieringskoden korrekt och försök igen. Det kan ta upp till 24 timmar innan ändringarna träder i kraft."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Du har nått gränsen för antalet kontakter för ditt konto"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Du har använt alla adresser i ditt paket. Uppgradera ditt paket för att lägga till en ny adress."
@@ -3809,6 +3867,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Automatiskt vidarebefordrad"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail-meddelanden till din inkorg"
+      ],
+      "Sign in with Google": [
+        "Logga in med Google"
       ]
     },
     "Go to sign in": {
@@ -5613,11 +5682,11 @@
       "User activated": [
         "Användare aktiverad"
       ],
-      "Username": [
-        "Användarnamn"
-      ],
       "username": [
         "användarnamn"
+      ],
+      "Username": [
+        "Användarnamn"
       ],
       "Users": [
         "Användare"
@@ -6160,10 +6229,10 @@
       "Allow recovery by phone": [
         "Tillåt återställning via telefon"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillåten domän"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillåten domän"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6403,6 +6472,9 @@
       "IBAN": [
         "IBAN"
       ],
+      "Import all messages": [
+        "Importera alla meddelanden"
+      ],
       "Integrated 2FA authenticator": [
         "Integrerad 2FA-autentisering"
       ],
@@ -6417,6 +6489,15 @@
       ],
       "Key": [
         "Nyckel"
+      ],
+      "Last 12 months only": [
+        "Endast de 12 senaste månaderna"
+      ],
+      "Last 3 months only": [
+        "Endast de 3 senaste månaderna"
+      ],
+      "Last month only": [
+        "Endast den senaste månaden"
       ],
       "Last name": [
         "Efternamn"
@@ -7201,32 +7282,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom igång för ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Startar från ${ pricing }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Uppgradera till ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -7248,6 +7303,20 @@
       ],
       "Switch plan": [
         "Byt paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
       ]
     },
     "new_plans: feature": {
@@ -7346,26 +7415,11 @@
       "${ size } storage per user": [
         "${ size } lagringsutrymme per användare"
       ],
-      "1 TB secure storage": [
-        "1 TB säkert lagringsutrymme"
-      ],
       "1 user": [
         "1 användare"
       ],
-      "10 email addresses/aliases": [
-        "10 e-postadresser/alias"
-      ],
-      "10 more premium features": [
-        "10 fler premiumfunktioner"
-      ],
       "10-year file version history": [
         "10-års filversionshistorik"
-      ],
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "200 GB of storage": [
-        "200 GB lagringsutrymme"
       ],
       "24/7 account management support": [
         "24/7-support för kontohantering"
@@ -7385,17 +7439,11 @@
       "Administration Panel": [
         "Administrationspanel"
       ],
-      "Advanced account protection": [
-        "Avancerat kontoskydd"
-      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Avancerade funktioner för alias (drivs av SimpleLogin)"
       ],
       "Advanced network security": [
         "Avancerad nätverkssäkerhet"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "Alla ${ BRAND_NAME }-produkter och -funktioner"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alla grundläggande tjänster för ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -7408,9 +7456,6 @@
       ],
       "Auto-delete Spam and Trash": [
         "Ta automatiskt bort skräppost och papperskorg"
-      ],
-      "Auto-delete spam and trashed messages": [
-        "Ta bort skräppost och kastade meddelanden automatiskt"
       ],
       "Auto-reply": [
         "Automatiskt svar"
@@ -7456,9 +7501,6 @@
       ],
       "Custom fields": [
         "Anpassade fält"
-      ],
-      "Custom snooze time": [
-        "Anpassad snooztid"
       ],
       "Custom workspace branding": [
         "Anpassat utseende för arbetsyta"
@@ -7516,9 +7558,6 @@
       ],
       "GDPR data processing agreement": [
         "GDPR-databehandlingsavtal"
-      ],
-      "Generate emails with a prompt": [
-        "Generera e-post med en prompt"
       ],
       "Group management (coming soon)": [
         "Grupphantering (kommer snart)"
@@ -7578,15 +7617,6 @@
       "Priority support & live chat": [
         "Prioriterad support och livechatt"
       ],
-      "Private photo backup": [
-        "Privat säkerhetskopiering av foton"
-      ],
-      "Proofread and refine your emails": [
-        "Korrekturläs och finjustera din e-post"
-      ],
-      "Quickly craft replies": [
-        "Skapa svar snabbt"
-      ],
       "Recover previous file versions": [
         "Återställ tidigare filversioner"
       ],
@@ -7599,23 +7629,11 @@
       "Router support": [
         "Router-stöd"
       ],
-      "Save time emailing": [
-        "Spara tid på att skicka e-post"
-      ],
       "Schedule and snooze emails for any time": [
         "Schemalägg och snooza e-post när som helst"
       ],
-      "Schedule messages at any time": [
-        "Schemalägg meddelanden när som helst"
-      ],
-      "Search message content": [
-        "Sök meddelandeinnehåll"
-      ],
       "Secure Core servers": [
         "Secure Core-servrar"
-      ],
-      "Secure file storage and sharing": [
-        "Säker fillagring och delning"
       ],
       "Secure link sharing": [
         "Säker länkdelning"
@@ -7653,9 +7671,6 @@
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
-      ],
-      "Support for up to 2 users": [
-        "Stöd för upp till 2 användare"
       ],
       "Sync and backup all your files across devices": [
         "Synkronisera och säkerhetskopiera alla dina filer mellan enheter"
@@ -7751,20 +7766,6 @@
       "${ users } user": [
         "${ users } användare",
         "${ users } användare"
-      ]
-    },
-    "new_plans: feature info": {
-      "1 custom email domain": [
-        "1 anpassad e-postdomän"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Skapa flera e-postadresser för dina onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton, JohnNews@${ domain2 } för nyhetsprenumeration"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Snooza meddelanden och bli påmind när du vill"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Lagringsutrymmet delas mellan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } och ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -7897,6 +7898,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Startar från ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Det rabatterade priset på ${ priceCoupon } är giltigt för den första månaden. Därefter kommer det förnyas automatiskt med ${ priceLine }. Du kan avbryta när som helst."
       ],
@@ -8441,6 +8445,17 @@
         "Välkommen till ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Alla"
+      ],
+      "Group members": [
+        "Gruppmedlemmar"
+      ],
+      "No one": [
+        "Ingen"
+      ]
+    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Tillåtet ${ defaultLabel }"
@@ -8531,17 +8546,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Alla"
-      ],
-      "Group members": [
-        "Gruppmedlemmar"
-      ],
-      "No one": [
-        "Ingen"
       ]
     },
     "Organization capacity error": {
@@ -10778,6 +10782,9 @@
       "Billing details updated": [
         "Faktureringsuppgifterna har uppdaterats"
       ],
+      "Canceling import": [
+        "Avbryter import"
+      ],
       "Catch-all address updated": [
         "Catch-all-adress uppdaterad"
       ],
@@ -10813,6 +10820,9 @@
       ],
       "Gift code applied": [
         "Presentkod tillämpad"
+      ],
+      "Import record deleted": [
+        "Importpost borttagen"
       ],
       "Invitation rejected": [
         "Inbjudan avvisad"
@@ -10873,6 +10883,9 @@
       ],
       "SPF value copied to clipboard": [
         "SPF-värde kopierat till urklipp"
+      ],
+      "Undo in progress": [
+        "Ångra pågår"
       ],
       "User updated": [
         "Användare uppdaterad"
@@ -11222,10 +11235,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -11558,14 +11571,14 @@
       "Import emails, calendars, contacts": [
         "Importera e-post, kalendrar, kontakter"
       ],
-      "Increase your privacy with more addresses": [
-        "Öka din integritet med fler adresser"
-      ],
       "Invalid verification code": [
         "Ogiltig verifieringskod"
       ],
       "Invoices": [
         "Fakturor"
+      ],
+      "Limit reached": [
+        "Gräns uppnådd"
       ],
       "Main password": [
         "Huvudlösenord"
@@ -12245,8 +12258,8 @@
       "Recommended": [
         "Rekommenderad"
       ],
-      "Save ${ totals.discountPercentage }%": [
-        "Spara ${ totals.discountPercentage } %"
+      "Save ${ price.uiData.discountPercent }%": [
+        "Spara ${ price.uiData.discountPercent } %"
       ]
     },
     "User role": {

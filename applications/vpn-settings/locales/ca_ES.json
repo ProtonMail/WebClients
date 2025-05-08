@@ -4,6 +4,14 @@
     "language": "ca_ES"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "El reenviament començarà aviat. Els correus electrònics nous apareixeran a la vostra safata d'entrada."
+      ],
+      "Mail forward stopped": [
+        "El reenviament de correu s'ha aturat."
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
@@ -406,6 +414,9 @@
       "Get the deal": [
         "Obteniu l’oferta"
       ],
+      "Get the writing assistant": [
+        "Obteniu l'assistent d'escriptura"
+      ],
       "Get verification code": [
         "Obtenir codi de verificació"
       ],
@@ -445,10 +456,10 @@
       "Invite user": [
         "Convida l'usuari"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Continua editant"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Continua editant"
       ],
       "Keep logo": [
@@ -562,11 +573,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "Refresh the page": [
-        "Refresca la pàgina"
-      ],
       "refresh the page": [
         "refresca la pàgina"
+      ],
+      "Refresh the page": [
+        "Refresca la pàgina"
       ],
       "Remove": [
         "Esborra"
@@ -682,11 +693,11 @@
       "Select country ${ country }": [
         "Seleccioneu el país ${ country }"
       ],
-      "select file": [
-        "selecciona un fitxer"
-      ],
       "Select file": [
         "Selecciona un fitxer"
+      ],
+      "select file": [
+        "selecciona un fitxer"
       ],
       "Send code": [
         "Enviar codi"
@@ -720,6 +731,9 @@
       ],
       "Set up a custom domain": [
         "Configura un domini personalitzat"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Configura el reenviament automàtic des del Gmail"
       ],
       "Set up email forwarding": [
         "Configura el reenviament de correu"
@@ -768,6 +782,9 @@
       ],
       "Signing in": [
         "Iniciant sessió"
+      ],
+      "Skip": [
+        "Omet"
       ],
       "Spam": [
         "Correu brossa"
@@ -1012,6 +1029,26 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Això desconnectarà tots els rúters i clients que utilitzin aquest certificat."
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Enviat a ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "S'han esborrat 5 rastrejadors"
+      ],
+      "Auto forwarded": [
+        "Reenviat automàticament"
+      ],
+      "Email received": [
+        "S'ha rebut el correu"
+      ],
+      "Encrypted": [
+        "Xifrat"
+      ],
+      "New email": [
+        "Correu nou"
       ]
     },
     "Assistant toggle": {
@@ -2587,9 +2624,6 @@
       "No one in your organization can connect to shared servers.": [
         "Ningú de la vostra organització no es pot connectar a servidors compartits."
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Separeu diferents aspectes de la vostra vida amb diverses adreces de correu electrònic i desbloquegeu més característiques prèmium quan milloreu el vostre pla."
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Configureu comptes per a tots els usuaris i convideu-los a unir-se a ${ BRAND_NAME }."
       ],
@@ -2911,6 +2945,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } no es pot connectar al vostre compte extern"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
       ],
@@ -2925,6 +2962,12 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "L'import és inferior al mínim (${ minimumAmount })."
+      ],
+      "Authentication canceled.": [
+        "S'ha cancel·lat l'autenticació."
+      ],
+      "Authentication error.": [
+        "Error d'autenticació."
       ],
       "Checkout expired, please try again": [
         "El termini de pagament ha expirat. Torneu-ho a provar"
@@ -3033,6 +3076,15 @@
       ],
       "Name does not match": [
         "El nom no coincideix."
+      ],
+      "No calendars found to import": [
+        "No s'ha trobat cap calendari per importar"
+      ],
+      "No contacts found to import": [
+        "No s'ha trobat cap contacte per importar"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "No s'han trobat correus electrònics per a importar. El compte no té una safata d'entrada"
       ],
       "No image selected": [
         "No s'ha seleccionat cap imatge."
@@ -3181,6 +3233,9 @@
       "Unable to upload file": [
         "No es pot carregar el fitxer."
       ],
+      "Unexpected error, we can't import the contacts": [
+        "S'ha produït un error inesperat. No es poden importar els contactes"
+      ],
       "Unknown error": [
         "Error desconegut"
       ],
@@ -3204,6 +3259,9 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Codi de verificació erroni. Assegureu-vos que heu copiat el codi de verificació correctament i intenteu-ho de nou. Els canvis poden trigar fins a 24 hores a produir-se."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Heu arribat al nombre límit de contactes per al vostre compte."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Heu utilitzat totes les adreces del vostre pla. Milloreu-lo per a afegir adreces."
@@ -3813,6 +3871,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Reenvieu automàticament"
+      ],
+      "Gmail messages to your inbox": [
+        "els missatges de Gmail a la vostra safata d'entrada"
+      ],
+      "Sign in with Google": [
+        "Inicia la sessió amb Google"
       ]
     },
     "Go to sign in": {
@@ -5623,11 +5692,11 @@
       "User activated": [
         "S'ha activat l'usuari."
       ],
-      "Username": [
-        "Nom d'usuari"
-      ],
       "username": [
         "nom d'usuari"
+      ],
+      "Username": [
+        "Nom d'usuari"
       ],
       "Users": [
         "Usuaris"
@@ -5920,6 +5989,10 @@
         "Després, se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }.",
         "Després, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of them.": [
+        "Heu habilitat el reenviament a ${ MAX_SYNC_PAID_USER } adreça de Gmail. Per afegir-ne una altra, primer heu de desactivar-la.",
+        "Heu habilitat el reenviament en ${ MAX_SYNC_PAID_USER } adreces de Gmail. Per afegir-ne una altra, primer desactiveu-ne una."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "S'ha aplicat el vostre ${ boldDiscountPercent } a ${ boldPlanTitle }."
       ],
@@ -6179,10 +6252,10 @@
       "Allow recovery by phone": [
         "Permet la recuperació per telèfon"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domini permès"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domini permès"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6422,6 +6495,9 @@
       "IBAN": [
         "IBAN"
       ],
+      "Import all messages": [
+        "Importar tots els missatges"
+      ],
       "Integrated 2FA authenticator": [
         "Autenticador de doble factor (2FA) integrat"
       ],
@@ -6436,6 +6512,15 @@
       ],
       "Key": [
         "Clau"
+      ],
+      "Last 12 months only": [
+        "Només els darrers 12 mesos"
+      ],
+      "Last 3 months only": [
+        "Només els darrers 3 mesos"
+      ],
+      "Last month only": [
+        "Només el darrer mes"
       ],
       "Last name": [
         "Cognom"
@@ -7217,32 +7302,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora tots els plans de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comenceu per ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Des de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ],
-      "Upgrade to ${ planName }": [
-        "Milloreu el pla a ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Elimina el compte"
@@ -7264,6 +7323,20 @@
       ],
       "Switch plan": [
         "Canvia de pla"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora tots els plans de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "Upgrade": [
+        "Millora"
       ]
     },
     "new_plans: feature": {
@@ -7362,26 +7435,11 @@
       "${ size } storage per user": [
         "${ size } d'emmagatzematge per usuari"
       ],
-      "1 TB secure storage": [
-        "1 TB d'emmagatzematge segur"
-      ],
       "1 user": [
         "1 usuari"
       ],
-      "10 email addresses/aliases": [
-        "10 adreces de correu electrònic/àlies"
-      ],
-      "10 more premium features": [
-        "10 característiques prèmium més"
-      ],
       "10-year file version history": [
         "Historial de versions de fitxers de 10 anys"
-      ],
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "200 GB of storage": [
-        "200 GB d'emmagatzematge"
       ],
       "24/7 account management support": [
         "Suport per a la gestió de comptes 24/7"
@@ -7401,17 +7459,11 @@
       "Administration Panel": [
         "Panell d'administració"
       ],
-      "Advanced account protection": [
-        "Protecció avançada dels comptes"
-      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Funcions d'àlies avançades (impulsades pel SimpleLogin)"
       ],
       "Advanced network security": [
         "Seguretat de xarxa avançada"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "Tots els productes i funcions de ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tots els serveis bàsics de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -7424,9 +7476,6 @@
       ],
       "Auto-delete Spam and Trash": [
         "Neteja automàticament el correu brossa i la paperera"
-      ],
-      "Auto-delete spam and trashed messages": [
-        "Suprimeix automàticament el correu brossa i els missatges enviats a la paperera"
       ],
       "Auto-reply": [
         "Resposta automàtica"
@@ -7472,9 +7521,6 @@
       ],
       "Custom fields": [
         "Camps personalitzats"
-      ],
-      "Custom snooze time": [
-        "Temps d'ajornament personalitzat"
       ],
       "Custom workspace branding": [
         "Marca personalitzada de l'espai de treball"
@@ -7532,9 +7578,6 @@
       ],
       "GDPR data processing agreement": [
         "Acord de processament de dades RGPD"
-      ],
-      "Generate emails with a prompt": [
-        "Genera correus electrònics amb una indicació"
       ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
@@ -7597,15 +7640,6 @@
       "Priority support & live chat": [
         "Suport prioritari i xat en directe"
       ],
-      "Private photo backup": [
-        "Còpia de seguretat de fotos privada"
-      ],
-      "Proofread and refine your emails": [
-        "Corregiu i refineu els vostres correus electrònics"
-      ],
-      "Quickly craft replies": [
-        "Crea respostes ràpidament"
-      ],
       "Recover previous file versions": [
         "Recupera les versions anteriors del fitxer"
       ],
@@ -7618,23 +7652,11 @@
       "Router support": [
         "Suport per a rúter"
       ],
-      "Save time emailing": [
-        "Estalvieu temps en l'enviament dels vostres correus electrònics"
-      ],
       "Schedule and snooze emails for any time": [
         "Programeu i ajorneu correus electrònics per a qualsevol moment."
       ],
-      "Schedule messages at any time": [
-        "Programeu missatges en qualsevol moment."
-      ],
-      "Search message content": [
-        "Cerca al contingut del missatge"
-      ],
       "Secure Core servers": [
         "Servidors Secure Core"
-      ],
-      "Secure file storage and sharing": [
-        "Compartició i emmagatzematge segurs de fitxers"
       ],
       "Secure link sharing": [
         "Compartició d'enllaços segurs"
@@ -7672,9 +7694,6 @@
       ],
       "Strict no-logs policy": [
         "Política estricta de no conservació de registres"
-      ],
-      "Support for up to 2 users": [
-        "Suport per a 2 usuaris"
       ],
       "Sync and backup all your files across devices": [
         "Sincronitzeu i feu una còpia de seguretat de tots els fitxers entre dispositius."
@@ -7770,20 +7789,6 @@
       "${ users } user": [
         "${ users } usuari",
         "${ users } usuaris"
-      ]
-    },
-    "new_plans: feature info": {
-      "1 custom email domain": [
-        "1 domini de correu electrònic personalitzat"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia. Per exemple: JoanComprador@${ domain } per a comptes de compres, JoanNoticies@${ domain2 } per a la subscripció a notícies"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Ajorneu els missatges i rebeu-ne un recordatori quan vulgueu"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -7916,6 +7921,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Des de ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceLine }. Podeu cancel·lar-ho en qualsevol moment."
       ],
@@ -8457,6 +8465,17 @@
         "Us donem la benvinguda a ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Tothom"
+      ],
+      "Group members": [
+        "Membres del grup"
+      ],
+      "No one": [
+        "Ningú"
+      ]
+    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "${ defaultLabel } permès"
@@ -8526,17 +8545,6 @@
       ],
       "The whole organization": [
         "Tota l'organització"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Tothom"
-      ],
-      "Group members": [
-        "Membres del grup"
-      ],
-      "No one": [
-        "Ningú"
       ]
     },
     "Organization capacity error": {
@@ -10776,6 +10784,9 @@
       "Billing details updated": [
         "S'han actualitzat els detalls de facturació."
       ],
+      "Canceling import": [
+        "S'està cancel·lant la importació"
+      ],
       "Catch-all address updated": [
         "S'ha actualitzat l'adreça d'arreplega"
       ],
@@ -10811,6 +10822,9 @@
       ],
       "Gift code applied": [
         "Codi regal aplicat"
+      ],
+      "Import record deleted": [
+        "S'ha suprimit el registre d'importació"
       ],
       "Invitation rejected": [
         "S'ha rebutjat la invitació."
@@ -10871,6 +10885,9 @@
       ],
       "SPF value copied to clipboard": [
         "Valor SPF copiat al portaretalls"
+      ],
+      "Undo in progress": [
+        "S'està desfent"
       ],
       "User updated": [
         "S'ha actualitzat l'usuari"
@@ -11220,10 +11237,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -11556,14 +11573,14 @@
       "Import emails, calendars, contacts": [
         "Importació de correus, calendaris i contactes"
       ],
-      "Increase your privacy with more addresses": [
-        "Augmenteu la vostra privacitat amb més adreces"
-      ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
       ],
       "Invoices": [
         "Factures"
+      ],
+      "Limit reached": [
+        "S'ha assolit el límit."
       ],
       "Main password": [
         "Contrasenya principal"
@@ -12258,8 +12275,8 @@
       "Recommended": [
         "Recomanat"
       ],
-      "Save ${ totals.discountPercentage }%": [
-        "Estalvieu el ${ totals.discountPercentage }%"
+      "Save ${ price.uiData.discountPercent }%": [
+        "Estalvieu el ${ price.uiData.discountPercent }%"
       ]
     },
     "User role": {

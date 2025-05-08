@@ -4,6 +4,14 @@
     "language": "be_BY"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Неўзабаве пачнецца перасылка. Новыя лісты будуць з'яўляцца ў вашай паштовай скрыні."
+      ],
+      "Mail forward stopped": [
+        "Перасылка пошты спынена"
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Выяўлены ${ name } і ${ remainingCount } іншыя(х) патэнцыяльныя(х) ўцечкі(ак). Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
@@ -406,6 +414,9 @@
       "Get the deal": [
         "Скарыстацца прапановай"
       ],
+      "Get the writing assistant": [
+        "Атрымаць памочніка ў напісанні"
+      ],
       "Get verification code": [
         "Атрымаць праверачны код"
       ],
@@ -445,10 +456,10 @@
       "Invite user": [
         "Запрасіць карыстальніка"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Працягнуць рэдагаванне"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Працягнуць рэдагаванне"
       ],
       "Keep logo": [
@@ -562,11 +573,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "Refresh the page": [
-        "Абнавіць старонку"
-      ],
       "refresh the page": [
         "абнавіць старонку"
+      ],
+      "Refresh the page": [
+        "Абнавіць старонку"
       ],
       "Remove": [
         "Выдаліць"
@@ -682,11 +693,11 @@
       "Select country ${ country }": [
         "Выбраць краіну ${ country }"
       ],
-      "select file": [
-        "выбраць файл"
-      ],
       "Select file": [
         "Выбраць файл"
+      ],
+      "select file": [
+        "выбраць файл"
       ],
       "Send code": [
         "Адправіць код"
@@ -720,6 +731,9 @@
       ],
       "Set up a custom domain": [
         "Наладзіць карыстальніцкі дамен"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Наладзьце аўтаперасылку з Gmail"
       ],
       "Set up email forwarding": [
         "Наладзіць перасылку лістоў"
@@ -768,6 +782,9 @@
       ],
       "Signing in": [
         "Адбываецца ўваход"
+      ],
+      "Skip": [
+        "Прапусціць"
       ],
       "Spam": [
         "Спам"
@@ -1020,6 +1037,26 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Гэта адключыць усе маршрутызатары і кліенты, якія выкарыстоўваюць гэты сертыфікат."
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Паштовая скрыня ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "Выдалены 5 праграм сачэння"
+      ],
+      "Auto forwarded": [
+        "Пераслана аўтаматычна"
+      ],
+      "Email received": [
+        "Атрыманы ліст"
+      ],
+      "Encrypted": [
+        "Зашыфравана"
+      ],
+      "New email": [
+        "Новы ліст"
       ]
     },
     "Assistant toggle": {
@@ -2611,9 +2648,6 @@
       "No one in your organization can connect to shared servers.": [
         "Ніводны ўдзельнік вашай арганізацыі не можа падключацца да абагуленых сервераў."
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Размяжуйце асобныя аспекты свайго жыцця з дапамогай некалькіх адрасоў электроннай пошты і разблакіруйце больш прэміяльных функцый пасля паляпшэння."
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Наладзьце ўліковыя запісы для ўсіх карыстальнікаў і запрасіце іх далучыцца да ${ BRAND_NAME }."
       ],
@@ -2935,6 +2969,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } не можа падключыцца да вашага знешняга ўліковага запісу"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можаце таксама праверыць наш ${ statusPageLink }"
       ],
@@ -2949,6 +2986,12 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Сума ніжэй за мінімум (${ minimumAmount })."
+      ],
+      "Authentication canceled.": [
+        "Аўтэнтыфікацыя скасавана."
+      ],
+      "Authentication error.": [
+        "Памылка аўтэнтыфікацыі."
       ],
       "Checkout expired, please try again": [
         "Час завяршэння пакупкі пратэрмінаваны. Паспрабуйце яшчэ раз"
@@ -3057,6 +3100,15 @@
       ],
       "Name does not match": [
         "Назва не супадае"
+      ],
+      "No calendars found to import": [
+        "Не знойдзены календары для імпартавання"
+      ],
+      "No contacts found to import": [
+        "Не знойдзены кантакты для імпартавання"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Не знойдзена лістоў для імпартавання - уліковы запіс не мае ўваходных"
       ],
       "No image selected": [
         "Відарыс не выбраны"
@@ -3205,6 +3257,9 @@
       "Unable to upload file": [
         "Немагчыма запампаваць файл"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "Нечаканая памылка. Немагчыма імпартаваць кантакты."
+      ],
       "Unknown error": [
         "Невядомая памылка"
       ],
@@ -3228,6 +3283,9 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Няправільны праверачны код. Пераканайцеся, што вы правільна скапіявалі код і паспрабуйце яшчэ раз. Змяненні ўступяць у сілу на працягу 24 гадзін."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Вы дасягнулі абмежавання па колькасці кантактаў для вашага ўліковага запісу"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Вы дасягнулі максімальнай колькасці адрасоў на вашым тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новы адрас."
@@ -3863,6 +3921,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Аўтаматычна перасылаць"
+      ],
+      "Gmail messages to your inbox": [
+        "паведамленні Gmail у вашу паштовую скрыню"
+      ],
+      "Sign in with Google": [
+        "Увайсці праз Google"
       ]
     },
     "Go to sign in": {
@@ -5751,11 +5820,11 @@
       "User activated": [
         "Карыстальнік актываваны"
       ],
-      "Username": [
-        "Імя карыстальніка"
-      ],
       "username": [
         "імя карыстальніка"
+      ],
+      "Username": [
+        "Імя карыстальніка"
       ],
       "Users": [
         "Карыстальнікі"
@@ -6066,6 +6135,12 @@
         "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцаў у памеры ${ renewAmountStr }.",
         "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцаў у памеры ${ renewAmountStr }."
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of them.": [
+        "Вы ўключылі перасылку на ${ MAX_SYNC_PAID_USER } адрас Gmail. Спачатку адключыце адзін з адрасоў, каб дадаць яшчэ адзін.",
+        "Вы ўключылі перасылку на ${ MAX_SYNC_PAID_USER } адрасы Gmail. Спачатку адключыце адзін з адрасоў, каб дадаць яшчэ адзін.",
+        "Вы ўключылі перасылку на ${ MAX_SYNC_PAID_USER } адрасоў Gmail. Спачатку адключыце адзін з адрасоў, каб дадаць яшчэ адзін.",
+        "Вы ўключылі перасылку на ${ MAX_SYNC_PAID_USER } адрасоў Gmail. Спачатку адключыце адзін з адрасоў, каб дадаць яшчэ адзін."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Ваша ${ boldDiscountPercent } на ${ boldPlanTitle } была ўжыта"
       ],
@@ -6335,10 +6410,10 @@
       "Allow recovery by phone": [
         "Дазволіць аднаўленне доступу па нумары тэлефона"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дазволены дамен"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дазволены дамен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6578,6 +6653,9 @@
       "IBAN": [
         "IBAN"
       ],
+      "Import all messages": [
+        "Імпартаваць усе паведамленні"
+      ],
       "Integrated 2FA authenticator": [
         "Інтэграваны аўтэнтыфікатар 2ФА"
       ],
@@ -6592,6 +6670,15 @@
       ],
       "Key": [
         "Ключ"
+      ],
+      "Last 12 months only": [
+        "Толькі за апошнія 12 месяцаў"
+      ],
+      "Last 3 months only": [
+        "Толькі за апошнія 3 месяцы"
+      ],
+      "Last month only": [
+        "Толькі за апошні месяц"
       ],
       "Last name": [
         "Прозвішча"
@@ -7375,32 +7462,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Даследаваць усе тарыфныя планы ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Пачніце за ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Пачатковы кошт ${ pricing }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
-      "Upgrade to ${ planName }": [
-        "Палепшыць да ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -7422,6 +7483,20 @@
       ],
       "Switch plan": [
         "Змяніць тарыфны план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Даследаваць усе тарыфныя планы ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
       ]
     },
     "new_plans: feature": {
@@ -7554,26 +7629,11 @@
       "${ size } storage per user": [
         "${ size } сховішча на карыстальніка"
       ],
-      "1 TB secure storage": [
-        "1 ТБ бяспечнага сховішча"
-      ],
       "1 user": [
         "1 карыстальнік"
       ],
-      "10 email addresses/aliases": [
-        "10 адрасоў электроннай пошты/псеўданімаў"
-      ],
-      "10 more premium features": [
-        "І больш за 10 прэміяльных функцый"
-      ],
       "10-year file version history": [
         "Гісторыя версій файлаў за 10 гадоў"
-      ],
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "200 GB of storage": [
-        "200 ГБ сховішча"
       ],
       "24/7 account management support": [
         "Падтрымка 24/7 па кіраванні ўліковым запісам"
@@ -7593,17 +7653,11 @@
       "Administration Panel": [
         "Панэль адміністратара"
       ],
-      "Advanced account protection": [
-        "Пашыраная абарона ўліковага запісу"
-      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Пашыраныя функцыі псеўданіма (на платформе SimpleLogin)"
       ],
       "Advanced network security": [
         "Пашыраная бяспека сеткі"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "Усе прадукты і функцыі ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Усе базавыя сэрвісы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -7616,9 +7670,6 @@
       ],
       "Auto-delete Spam and Trash": [
         "Аўтаматычнае выдаленне спаму і смецця"
-      ],
-      "Auto-delete spam and trashed messages": [
-        "Аўтаматычна выдаляць паведамленні ў спаме і сметніцы"
       ],
       "Auto-reply": [
         "Аўтаматычны адказ"
@@ -7664,9 +7715,6 @@
       ],
       "Custom fields": [
         "Карыстальніцкія палі"
-      ],
-      "Custom snooze time": [
-        "Карыстальніцкі час адкладання"
       ],
       "Custom workspace branding": [
         "Брэндзіраванне карыстальніцкай працоўнай прасторы"
@@ -7724,9 +7772,6 @@
       ],
       "GDPR data processing agreement": [
         "Пагадненне аб апрацоўцы даных GDPR"
-      ],
-      "Generate emails with a prompt": [
-        "Генерыраваць лісты з запытам"
       ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
@@ -7791,15 +7836,6 @@
       "Priority support & live chat": [
         "Прыярытэтная падтрымка і чат у рэальным часе"
       ],
-      "Private photo backup": [
-        "Прыватнае рэзерваванне фатаграфій"
-      ],
-      "Proofread and refine your emails": [
-        "Правярайце і ўдакладняйце свае электронныя лісты"
-      ],
-      "Quickly craft replies": [
-        "Хутка стварайце адказы"
-      ],
       "Recover previous file versions": [
         "Аднавіць папярэднія версіі файла"
       ],
@@ -7812,23 +7848,11 @@
       "Router support": [
         "Падтрымка маршрутызатараў"
       ],
-      "Save time emailing": [
-        "Ашчаджайце час на напісанне лістоў"
-      ],
       "Schedule and snooze emails for any time": [
         "Планаванне і адкладанне лістоў у любы час"
       ],
-      "Schedule messages at any time": [
-        "Заплануйце адпраўку паведамленняў у любы час"
-      ],
-      "Search message content": [
-        "Пошук змесціва паведамлення"
-      ],
       "Secure Core servers": [
         "Серверы Secure Core"
-      ],
-      "Secure file storage and sharing": [
-        "Бяспечнае файлавае сховішча і абагульванне"
       ],
       "Secure link sharing": [
         "Бяспечнае абагульванне спасылкі"
@@ -7868,9 +7892,6 @@
       ],
       "Strict no-logs policy": [
         "Палітыка строгай адсутнасці журналаў актыўнасці"
-      ],
-      "Support for up to 2 users": [
-        "Падтрымка да 2 карыстальнікаў"
       ],
       "Sync and backup all your files across devices": [
         "Сінхранізацыя і рэзервовае капіяванне ўсіх вашых файлаў паміж прыладамі"
@@ -7978,20 +7999,6 @@
         "${ users } карыстальнікі",
         "${ users } карыстальнікаў",
         "${ users } карыстальнікаў"
-      ]
-    },
-    "new_plans: feature info": {
-      "1 custom email domain": [
-        "1 карыстальніцкі дамен электроннай пошты"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Стварайце некалькі розных адрасоў электроннай пошты для сваіх пасведчанняў у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain2 } для падпіскі на навіны"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Адкладайце паведамленні і атрымлівайце напаміны, калі вам гэта неабходна"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -8124,6 +8131,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Пачатковы кошт ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Зніжаны кошт у памеры ${ priceCoupon } дзейнічае на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceLine }. Скасаваць можна ў любы момант."
       ],
@@ -8669,6 +8679,17 @@
         "Вітаем у ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Кожнаму"
+      ],
+      "Group members": [
+        "Удзельнікі групы"
+      ],
+      "No one": [
+        "Нікому"
+      ]
+    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Дазволена ${ defaultLabel }"
@@ -8738,17 +8759,6 @@
       ],
       "The whole organization": [
         "Уся арганізацыя"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Кожнаму"
-      ],
-      "Group members": [
-        "Удзельнікі групы"
-      ],
-      "No one": [
-        "Нікому"
       ]
     },
     "Organization capacity error": {
@@ -11108,6 +11118,9 @@
       "Billing details updated": [
         "Плацежныя падрабязнасці абноўлены"
       ],
+      "Canceling import": [
+        "Скасаванне імпартавання"
+      ],
       "Catch-all address updated": [
         "Адрас для ўсёй пошты дамена абноўлены"
       ],
@@ -11143,6 +11156,9 @@
       ],
       "Gift code applied": [
         "Падарункавы код ужыты"
+      ],
+      "Import record deleted": [
+        "Запіс імпартавання выдалены"
       ],
       "Invitation rejected": [
         "Запрашэнне адхілена"
@@ -11203,6 +11219,9 @@
       ],
       "SPF value copied to clipboard": [
         "Значэнне SPF скапіявана ў буфер абмену"
+      ],
+      "Undo in progress": [
+        "Выконваецца адрабленне"
       ],
       "User updated": [
         "Карыстальнік абноўлены"
@@ -11554,10 +11573,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -11896,14 +11915,14 @@
       "Import emails, calendars, contacts": [
         "Імпартаванне лістоў, календароў, кантактаў"
       ],
-      "Increase your privacy with more addresses": [
-        "Павялічце сваю прыватнасць з большай колькасцю адрасоў"
-      ],
       "Invalid verification code": [
         "Памылковы праверачны код"
       ],
       "Invoices": [
         "Рахункі"
+      ],
+      "Limit reached": [
+        "Дасягнута абмежаванне"
       ],
       "Main password": [
         "Галоўны пароль"
@@ -12602,8 +12621,8 @@
       "Recommended": [
         "Рэкамендавана"
       ],
-      "Save ${ totals.discountPercentage }%": [
-        "Эканомія ${ totals.discountPercentage }%"
+      "Save ${ price.uiData.discountPercent }%": [
+        "Эканомія ${ price.uiData.discountPercent }%"
       ]
     },
     "User role": {

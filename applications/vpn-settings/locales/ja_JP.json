@@ -4,6 +4,14 @@
     "language": "ja_JP"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "転送がすぐに始まります。新しいメールが受信トレイに出現します。"
+      ],
+      "Mail forward stopped": [
+        "メールの転送を停止しました"
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name } および他 ${ remainingCount } 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
@@ -406,6 +414,9 @@
       "Get the deal": [
         "割引をゲット"
       ],
+      "Get the writing assistant": [
+        "執筆アシスタントを入手"
+      ],
       "Get verification code": [
         "認証コードを取得"
       ],
@@ -445,10 +456,10 @@
       "Invite user": [
         "ユーザーを招待"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "編集を続ける"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "編集を続ける"
       ],
       "Keep logo": [
@@ -562,10 +573,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
       "Remove": [
@@ -682,10 +693,10 @@
       "Select country ${ country }": [
         "国 ${ country }を選択"
       ],
-      "select file": [
+      "Select file": [
         "ファイルを選択"
       ],
-      "Select file": [
+      "select file": [
         "ファイルを選択"
       ],
       "Send code": [
@@ -768,6 +779,9 @@
       ],
       "Signing in": [
         "サインイン中"
+      ],
+      "Skip": [
+        "スキップ"
       ],
       "Spam": [
         "迷惑メール"
@@ -1008,6 +1022,26 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "この認証情報を使用しているすべてのルーターやクライアントが切断されます。"
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay } の受信トレイ"
+      ],
+      "5 trackers removed": [
+        "5 件のトラッカーを削除"
+      ],
+      "Auto forwarded": [
+        "自動転送"
+      ],
+      "Email received": [
+        "メールを受信"
+      ],
+      "Encrypted": [
+        "暗号化済み"
+      ],
+      "New email": [
+        "新しいメール"
       ]
     },
     "Assistant toggle": {
@@ -1571,6 +1605,9 @@
       ]
     },
     "CountriesStep:Info": {
+      "${ selectedCitiesCount } cities selected": [
+        "${ selectedCitiesCount } 都市が選択されました"
+      ],
       "${ selectedCountriesCount } selected": [
         "${ selectedCountriesCount }個が選択済み"
       ]
@@ -2572,9 +2609,6 @@
       "No one in your organization can connect to shared servers.": [
         "組織内の誰も共有サーバーに接続することはできません。"
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "アップグレードすると、複数のメールアドレスを生活のシーンによって使い分け、より多くのプレミアム機能が利用できるようになります。"
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "すべてのユーザーに対してアカウントを設定し、${ BRAND_NAME }に参加するよう招待してください。"
       ],
@@ -2896,6 +2930,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } から外部アカウントに接続できません"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。必要に応じて${ statusPageLink }も確認してください。"
       ],
@@ -2910,6 +2947,12 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "最低金額 (${ minimumAmount }) を下回っています。"
+      ],
+      "Authentication canceled.": [
+        "認証がキャンセルされました。"
+      ],
+      "Authentication error.": [
+        "認証エラー。"
       ],
       "Checkout expired, please try again": [
         "チェックアウトの有効期限が切れました。もう一度やり直してください。"
@@ -3018,6 +3061,15 @@
       ],
       "Name does not match": [
         "名前が一致しません"
+      ],
+      "No calendars found to import": [
+        "インポートするカレンダーが見つかりません"
+      ],
+      "No contacts found to import": [
+        "インポートする連絡先が見つかりません"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "インポートするメールがありません - アカウントに受信箱がありません"
       ],
       "No image selected": [
         "画像が選択されていません"
@@ -3166,6 +3218,9 @@
       "Unable to upload file": [
         "ファイルをアップロードできません"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "予期しないエラーにより、連絡先をインポートできません"
+      ],
       "Unknown error": [
         "原因不明なエラーが発生しました"
       ],
@@ -3189,6 +3244,9 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "間違った検証コードです。 検証コードが正しくコピーされているか確認し、もう一度試してください。 変更が有効になるまでに最大24時間を要する場合があります。"
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "このアカウントの連絡先の数が上限に達しています"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "現在のプランでのメールアドレス数の上限に達しました。新規アドレスを追加するにはアップグレードしてください。"
@@ -3785,6 +3843,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "自動転送"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail のメッセージを、あなたの受信トレイに転送します。"
+      ],
+      "Sign in with Google": [
+        "Google でサインイン"
       ]
     },
     "Go to sign in": {
@@ -5556,11 +5625,11 @@
       "User activated": [
         "ユーザーがアクティブ化"
       ],
-      "Username": [
-        "ユーザーネーム"
-      ],
       "username": [
         "ユーザー名"
+      ],
+      "Username": [
+        "ユーザーネーム"
       ],
       "Users": [
         "ユーザー"
@@ -6098,10 +6167,10 @@
       "Allow recovery by phone": [
         "電話番号での回復を許可"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "許可されたドメイン"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "許可されたドメイン"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6341,6 +6410,9 @@
       "IBAN": [
         "IBAN"
       ],
+      "Import all messages": [
+        "すべてのメッセージをインポート"
+      ],
       "Integrated 2FA authenticator": [
         "2要素認証システムの統合"
       ],
@@ -6355,6 +6427,15 @@
       ],
       "Key": [
         "鍵"
+      ],
+      "Last 12 months only": [
+        "過去 12 か月のみ"
+      ],
+      "Last 3 months only": [
+        "過去 3 か月のみ"
+      ],
+      "Last month only": [
+        "過去 1 か月のみ"
       ],
       "Last name": [
         "姓"
@@ -7135,32 +7216,6 @@
         "中程度の VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "すべての ${ BRAND_NAME } プランを表示"
-      ],
-      "From ${ price }": [
-        "${ price } から"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }で開始"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }から始める"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } へアップグレード"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "アカウントを削除"
@@ -7182,6 +7237,20 @@
       ],
       "Switch plan": [
         "プランを変更"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "すべての ${ BRAND_NAME } プランを表示"
+      ],
+      "From ${ price }": [
+        "${ price } から"
+      ],
+      "Upgrade": [
+        "アップグレード"
       ]
     },
     "new_plans: feature": {
@@ -7263,26 +7332,11 @@
       "${ size } storage per user": [
         "ユーザーあたり ${ size }のストレージ"
       ],
-      "1 TB secure storage": [
-        "1 TBの安全なストレージ"
-      ],
       "1 user": [
         "1ユーザー"
       ],
-      "10 email addresses/aliases": [
-        "10 件のメールアドレス / エイリアス"
-      ],
-      "10 more premium features": [
-        "10 以上のプレミアム機能"
-      ],
       "10-year file version history": [
         "10 年間のファイルバージョン履歴"
-      ],
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "200 GB of storage": [
-        "200 GBストレージ"
       ],
       "24/7 account management support": [
         "24時間365日のアカウント管理サポート"
@@ -7302,17 +7356,11 @@
       "Administration Panel": [
         "管理パネル"
       ],
-      "Advanced account protection": [
-        "高度なアカウント保護"
-      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "高度なエイリアス機能(Simple Loginによるサポート)"
       ],
       "Advanced network security": [
         "高度なネットワークセキュリティ"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "${ BRAND_NAME } のすべての製品と機能"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "すべての基本的な${ BRAND_NAME }サービス(${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME })"
@@ -7325,9 +7373,6 @@
       ],
       "Auto-delete Spam and Trash": [
         "迷惑メールとごみ箱を自動削除"
-      ],
-      "Auto-delete spam and trashed messages": [
-        "迷惑メールとごみ箱のメッセージを自動削除"
       ],
       "Auto-reply": [
         "自動返信"
@@ -7373,9 +7418,6 @@
       ],
       "Custom fields": [
         "カスタムフィールド"
-      ],
-      "Custom snooze time": [
-        "スヌーズ時間をカスタム"
       ],
       "Custom workspace branding": [
         "カスタムワークスペースブランディング"
@@ -7433,9 +7475,6 @@
       ],
       "GDPR data processing agreement": [
         "GDPR データ処理契約"
-      ],
-      "Generate emails with a prompt": [
-        "プロンプトを使ってメールを生成"
       ],
       "Group management (coming soon)": [
         "グループ管理 (近日公開)"
@@ -7497,15 +7536,6 @@
       "Priority support & live chat": [
         "優先サポートとライブチャット"
       ],
-      "Private photo backup": [
-        "プライベート写真のバックアップ"
-      ],
-      "Proofread and refine your emails": [
-        "メールを校正し、洗練させる"
-      ],
-      "Quickly craft replies": [
-        "素早く返信を作成"
-      ],
       "Recover previous file versions": [
         "以前のファイルバージョンを復元"
       ],
@@ -7518,23 +7548,11 @@
       "Router support": [
         "ルーター対応"
       ],
-      "Save time emailing": [
-        "メールの時間を節約"
-      ],
       "Schedule and snooze emails for any time": [
         "いつでもメールをスケジュールしてスヌーズする"
       ],
-      "Schedule messages at any time": [
-        "いつでもメッセージを送信予約できます"
-      ],
-      "Search message content": [
-        "メッセージ内容の検索"
-      ],
       "Secure Core servers": [
         "Secure Core サーバー"
-      ],
-      "Secure file storage and sharing": [
-        "安全なファイルストレージと共有"
       ],
       "Secure link sharing": [
         "セキュアリンク共有"
@@ -7571,9 +7589,6 @@
       ],
       "Strict no-logs policy": [
         "厳格なノーログポリシー"
-      ],
-      "Support for up to 2 users": [
-        "最大2ユーザーのサポート"
       ],
       "Sync and backup all your files across devices": [
         "デバイス間のすべてのファイルを同期とバックアップ"
@@ -7663,20 +7678,6 @@
       ],
       "${ users } user": [
         "${ users }名のユーザー"
-      ]
-    },
-    "new_plans: feature info": {
-      "1 custom email domain": [
-        "1 件の独自メールドメイン"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "例えば、JohnShopper@${ domain }はショッピングアカウント用、JohnNews@${ domain2 }はニュース購読用です。"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "メッセージをスヌーズし、必要なときに再通知します"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
       ]
     },
     "new_plans: heading": {
@@ -8348,6 +8349,17 @@
         "${ appName } へようこそ"
       ]
     },
+    "option": {
+      "Everyone": [
+        "みんな"
+      ],
+      "Group members": [
+        "グループメンバー"
+      ],
+      "No one": [
+        "誰も"
+      ]
+    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "許可済み${ defaultLabel }"
@@ -8417,17 +8429,6 @@
       ],
       "The whole organization": [
         "組織全体"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "みんな"
-      ],
-      "Group members": [
-        "グループメンバー"
-      ],
-      "No one": [
-        "誰も"
       ]
     },
     "Organization capacity error": {
@@ -10607,6 +10608,9 @@
       "Billing details updated": [
         "請求の詳細が更新されました"
       ],
+      "Canceling import": [
+        "インポートをキャンセル中"
+      ],
       "Catch-all address updated": [
         "Catch-All アドレスが更新されました"
       ],
@@ -10642,6 +10646,9 @@
       ],
       "Gift code applied": [
         "ギフトコードが適用されました"
+      ],
+      "Import record deleted": [
+        "インポート記録が削除されました"
       ],
       "Invitation rejected": [
         "招待が拒否されました"
@@ -10702,6 +10709,9 @@
       ],
       "SPF value copied to clipboard": [
         "SPF 値がクリップボードにコピーされました"
+      ],
+      "Undo in progress": [
+        "取り消し中"
       ],
       "User updated": [
         "ユーザが更新されました"
@@ -11050,10 +11060,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
       "Change login password": [
@@ -11382,9 +11392,6 @@
       ],
       "Import emails, calendars, contacts": [
         "メール、カレンダー、連絡先をインポート"
-      ],
-      "Increase your privacy with more addresses": [
-        "より多くのメールアドレスを使用してプライバシーを向上させましょう"
       ],
       "Invalid verification code": [
         "無効な検証コードです"
@@ -12083,8 +12090,8 @@
       "Recommended": [
         "おすすめ"
       ],
-      "Save ${ totals.discountPercentage }%": [
-        "${ totals.discountPercentage }%を節約"
+      "Save ${ price.uiData.discountPercent }%": [
+        "${ price.uiData.discountPercent }%を節約"
       ]
     },
     "User role": {
