@@ -16,10 +16,13 @@ const WriteWebpackPlugin = require('./write-webpack-plugin').default;
 const HtmlEditWebpackPlugin = require('./html-edit-webpack-plugin').default;
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const SriWebpackPlugin = require('./sri-webpack-plugin').default;
+const { WebpackCollectMetricsPlugin } = require('@proton/collect-metrics');
 
 const defaultFaviconConfig = require('./favicon.config');
 const faviconConfig = require(path.resolve('./favicon.config.js'));
 const { getIndexChunks } = require('../webpack/entries');
+
+const { CI } = process.env;
 
 module.exports = ({
     isProduction,
@@ -220,5 +223,7 @@ module.exports = ({
             new BundleAnalyzerPlugin({
                 excludeAssets: `assets/static/locales`,
             }),
+
+        CI && new WebpackCollectMetricsPlugin(buildData),
     ].filter(Boolean);
 };
