@@ -36,11 +36,17 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
+      "A to Z": [
+        "A-Z"
+      ],
       "Activate": [
         "Activar"
       ],
       "Activate recovery": [
         "Activar recuperación"
+      ],
+      "Active": [
+        "Activa"
       ],
       "Add": [
         "Agregar"
@@ -189,6 +195,9 @@
       ],
       "Change page": [
         "Cambiar página"
+      ],
+      "Change sorting": [
+        "Cambiar orden"
       ],
       "Chat with us": [
         "Chatee con nosotros"
@@ -489,6 +498,9 @@
       "Expand composer": [
         "Expandir el editor"
       ],
+      "Expand navigation bar to see custom views": [
+        "Expandir la barra de navegación para ver las vistas personalizadas"
+      ],
       "Expand navigation bar to see folders": [
         "Expandir la barra de navegación para ver las carpetas"
       ],
@@ -546,9 +558,6 @@
       "Generate text": [
         "Generar texto"
       ],
-      "Get ${ BRAND_NAME } Duo": [
-        "Obtenga ${ BRAND_NAME } Duo"
-      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Obtenga ${ planName } por ${ priceCoupon }"
       ],
@@ -557,12 +566,6 @@
       ],
       "Get in touch": [
         "Contáctenos"
-      ],
-      "Get it": [
-        "Obtenerlo"
-      ],
-      "Get it from only ${ addonPriceWithCurrency } /month": [
-        "Obténgalo por solo ${ addonPriceWithCurrency }/mes"
       ],
       "Get started": [
         "Comenzar"
@@ -736,6 +739,9 @@
       "Learn more": [
         "Más información"
       ],
+      "Least read": [
+        "Menos leído"
+      ],
       "Let's talk": [
         "Hablemos"
       ],
@@ -853,6 +859,9 @@
       "More search options": [
         "Más opciones de búsqueda"
       ],
+      "Most read": [
+        "Más leído"
+      ],
       "Move": [
         "Mover"
       ],
@@ -870,6 +879,9 @@
       ],
       "Move to archive": [
         "Mover al archivo"
+      ],
+      "Move to folder": [
+        "Mover a la carpeta"
       ],
       "Move to inbox": [
         "Mover al buzón"
@@ -1006,6 +1018,9 @@
       "Read receipt sent": [
         "Acuse de recibo enviado"
       ],
+      "Recently received": [
+        "Recibidos recientemente"
+      ],
       "Reconnect": [
         "Reconectar"
       ],
@@ -1093,6 +1108,9 @@
       "Restore": [
         "Restaurar"
       ],
+      "Resubscribe": [
+        "Volver a suscribirme"
+      ],
       "Resume": [
         "Reanudar"
       ],
@@ -1144,10 +1162,10 @@
       "Select ${ planTitle }": [
         "Seleccione ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar todo"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar todo"
       ],
       "Select all messages": [
@@ -1303,9 +1321,6 @@
       "Start setup": [
         "Iniciar la configuración"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "A partir de ${ priceUnlimited }"
-      ],
       "Stay": [
         "Permanecer"
       ],
@@ -1364,7 +1379,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1408,6 +1424,9 @@
       "Unsubscribe": [
         "Cancelar suscripción"
       ],
+      "Unsubscribed": [
+        "Suscripción cancelada"
+      ],
       "Unsubscribing": [
         "Cancelando suscripción"
       ],
@@ -1431,9 +1450,6 @@
       ],
       "Upgrade Now": [
         "Mejorar ahora"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Mejore a ${ BRAND_NAME } Unlimited"
       ],
       "Upload and share files": [
         "Cargar y compartir archivos"
@@ -3712,9 +3728,6 @@
       "Also included": [
         "También incluido"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Elimine automáticamente los mensajes de spam y de la papelera y desbloquee más funciones premium al mejorar el plan."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Elimine automáticamente los correos electrónicos movidos a la papelera y spam de hace más de 30 días."
       ],
@@ -3741,9 +3754,6 @@
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
-      ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Diseñado para usuarios que buscan una mayor protección para sus cuentas."
       ],
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "¿No desea enviar el correo electrónico ahora mismo? Prográmelo para el momento exacto."
@@ -3778,9 +3788,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Reciba notificaciones si la contraseña u otro dato fue filtrado desde un servicio de terceros."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Obtenga alias ilimitados y 500 GB de almacenamiento con ${ PLAN_NAMES[PLANS.BUNDLE] }."
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ayude a su equipo a almacenar de forma segura las contraseñas de información confidencial de la empresa y de los clientes."
       ],
@@ -3806,9 +3813,6 @@
       "No labels": [
         "Sin etiquetas"
       ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Ahorre tiempo al enviar correos a todos de una vez con grupos de contactos. Desbloquee esta y otras funciones premium cuando mejore el plan."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separe diferentes aspectos de su vida con múltiples direcciones de correo y desbloquee funciones premium cuando actualiza el plan."
       ],
@@ -3823,9 +3827,6 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifique la sincronización y la programación con calendarios compartidos."
-      ],
-      "Starting from ${ price }": [
-        "A partir de ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Para continuar usando el asistente de escritura, añádalo a su suscripción."
@@ -3848,26 +3849,8 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Active la protección de rastreo de correo para evitar que los anunciantes y otros rastreen su ubicación y actividad en línea."
       ],
-      "Unlock custom message scheduling and more premium features when you upgrade.": [
-        "Desbloquee la programación personalizada de mensajes y más funciones premium al mejorar su plan."
-      ],
-      "Unlock custom snooze times and more premium features when you upgrade.": [
-        "Desbloquee tiempos de pausa personalizados y más funciones premium al mejorar su plan."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Desbloquee direcciones de correo cortas y otras funciones premium al mejorar."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Desbloquee filtros ilimitados que ordenan el buzón para usted y más funciones premium cuando actualiza el plan."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Desbloquee carpetas y etiquetas ilimitadas y más funciones premium cuando actualiza el plan."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Mejore su plan para obtener ${ activatePmUser } para una dirección de correo electrónico más corta y fácil de recordar, además de su dirección actual."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Mejore la cuenta para activar ${ PROTON_SENTINEL_NAME }, nuestra solución de seguridad de vanguardia basada en IA con soporte experto dedicado las 24 horas, los 7 días de la semana."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "Use ${ MAIL_APP_NAME } para iniciar sesión en servicios en línea, a diferencia de otros proveedores de correo electrónico, nosotros nunca rastrearemos sus datos ni los compartiremos con terceros."
@@ -5928,8 +5911,17 @@
       "Import from ${ provider }": [
         "Importar desde ${ provider }"
       ],
-      "Other": [
-        "Otro"
+      "Import from Google": [
+        "Importar desde Google"
+      ],
+      "Import from other": [
+        "Importar desde otro proveedor"
+      ],
+      "Import from Outlook": [
+        "Importar desde Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importar desde Yahoo"
       ]
     },
     "Import warning": {
@@ -5957,6 +5949,15 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita permiso para ${ enableDesktopNotifications }."
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, archive o mueva los correos electrónicos antiguos a una carpeta."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } las suscripciones que ya no son relevantes."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } de ellos con un solo clic."
       ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "${ BRAND_NAME } Scribe le ayuda a redactar mejores correos electrónicos de manera rápida y sencilla."
@@ -6070,14 +6071,6 @@
         "${ n } conversación sin leer",
         "${ n } conversaciones sin leer"
       ],
-      "${ numberOfImageTrackers } email tracker blocked": [
-        "${ numberOfImageTrackers } rastreador de correo electrónico bloqueado",
-        "${ numberOfImageTrackers } rastreadores de correo electrónicos bloqueados"
-      ],
-      "${ numberOfImageTrackers } tracker blocked": [
-        "${ numberOfImageTrackers } rastreador bloqueado",
-        "${ numberOfImageTrackers } rastreadores bloqueados"
-      ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } enlace limpiado",
         "${ numberOfUTMTrackers } enlaces limpiados"
@@ -6143,6 +6136,14 @@
       "${ storage } storage": [
         "${ storage } de almacenamiento"
       ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "${ subscription.ReceivedMessageCount } correo electrónico el mes pasado",
+        "${ subscription.ReceivedMessageCount } correos electrónicos el mes pasado"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } no leído",
+        "${ subscription.UnreadMessageCount } no leídos"
+      ],
       "${ total } conversation": [
         "${ total } conversación",
         "${ total } conversación"
@@ -6150,6 +6151,14 @@
       "${ total } message": [
         "${ total } mensaje",
         "${ total } mensajes"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } rastreador de correo electrónico bloqueado",
+        "${ trackersCount } rastreadores de correo electrónicos bloqueados"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } rastreador bloqueado",
+        "${ trackersCount } rastreadores bloqueados"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } mensaje programado",
@@ -6269,6 +6278,15 @@
         "Todo (${ totalFoldersCount } etiqueta)",
         "Todo (${ totalFoldersCount } etiquetas)"
       ],
+      "All messages from this mailing list will be marked as read.": [
+        "Todos los mensajes de esta lista de correo serán marcados como leídos."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Todos los mensajes de esta lista de correo se moverán al archivo."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Todos los mensajes de esta lista de correo se moverán a la Papelera."
+      ],
       "All messages stored in this folder will be permanently deleted.": [
         "Todos los mensajes guardados en esta carpeta se eliminarán permanentemente."
       ],
@@ -6321,11 +6339,17 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Las subcarpetas también se eliminarán. Sin embargo, los correos electrónicos almacenados en la carpeta ${ nameDeleted } no se eliminarán y se pueden encontrar en la carpeta Todos los mensajes."
       ],
+      "Apply to future messages ": [
+        "Aplicar a los mensajes futuros "
+      ],
       "Applying actions to conversations": [
         "Aplicando acciones a las conversaciones"
       ],
       "Applying actions to messages": [
         "Aplicando acciones a los mensajes"
+      ],
+      "Archive existing messages": [
+        "Archivar los mensajes existentes"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "¿Está seguro de que quiere eliminar todos los mensajes en esta carpeta?"
@@ -6411,11 +6435,17 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Impulse la identidad de marca de su organización y cree una experiencia en línea más consistente para sus usuarios."
       ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Traiga sus mensajes, contactos y calendarios a ${ BRAND_NAME }."
+      ],
       "Browse privately and access blocked content.": [
         "Navegue de forma privada y accedea a contenidos bloqueados."
       ],
       "Browser not supported": [
         "El navegador no es compatible."
+      ],
+      "Bulk delete": [
+        "Eliminar en bloque"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Al pasar a un plan gratuito, perderá permanentemente estos beneficios, incluso si mejore de nuevo el plan en el futuro."
@@ -6633,6 +6663,9 @@
       ],
       "Each code can only be used once": [
         "Cada código solo puede usarse una vez"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Administre y cancele fácilmente la suscripción a boletines y lista de correo."
       ],
       "Edit email address": [
         "Editar dirección de correo"
@@ -6883,8 +6916,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -6987,6 +7019,9 @@
       ],
       "Manage your labels": [
         "Administre las etiquetas"
+      ],
+      "Mark all as read": [
+        "Marcar todos como leídos"
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -7129,11 +7164,17 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de las claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Le recomendamos que \"desconfíe\" de estas claves."
       ],
+      "One time import": [
+        "Importación única"
+      ],
       "Open shortcut cheat sheet": [
         "Abrir lista de trucos de atajos"
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Abra la guía para ver las acciones recomendadas y los enlaces útiles."
+      ],
+      "Optional": [
+        "Opcional"
       ],
       "or discover other features:": [
         "o descubra otras funciones:"
@@ -7290,6 +7331,9 @@
       "Public sharing of documents is not yet supported.": [
         "El intercambio público de documentos aún no está admitido."
       ],
+      "Quickly spot": [
+        "Detectar inmediatamente"
+      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contáctenos para obtener ayuda con cualquier cosa de ${ BRAND_NAME }."
       ],
@@ -7364,9 +7408,6 @@
       ],
       "Seems like you are all caught up for now": [
         "Parece que está al corriente por ahora"
-      ],
-      "Select a service provider to start": [
-        "Seleccione un proveedor de servicios para comenzar"
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "Seleccionar ${ elementsCount } elemento en ${ location }",
@@ -7775,6 +7816,9 @@
       "Tracking": [
         "Rastreadores"
       ],
+      "Trash existing messages": [
+        "Mover a la Papelera los mensajes existentes"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Pruebe las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
       ],
@@ -7798,6 +7842,9 @@
       ],
       "Unsaved changes": [
         "Cambios sin guardar"
+      ],
+      "Unsubscribe": [
+        "Cancelar la suscripción"
       ],
       "Unsupported file": [
         "Archivo no soportado"
@@ -8244,6 +8291,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Su suscripción se renovará automáticamente en ${ renewalTime }."
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Estás a solo unos clics de tener una bandeja de entrada ordenada"
       ]
     },
     "info": {
@@ -8524,6 +8574,12 @@
       " and ${ l }": [
         " y ${ l }"
       ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Marcar todos los mensajes como leídos"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Mover todos los mensajes a ${ boldFolderName }"
+      ],
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
@@ -8545,6 +8601,9 @@
       ],
       "Actions": [
         "Acciones"
+      ],
+      "Active filter:": [
+        "Filtro activo:"
       ],
       "Add email address": [
         "Agregar correo electrónico"
@@ -8573,10 +8632,10 @@
       "Always move sender's emails": [
         "Mover siempre los correos de remitentes"
       ],
-      "AND": [
+      "And": [
         "Y"
       ],
-      "And": [
+      "AND": [
         "Y"
       ],
       "and": [
@@ -8593,6 +8652,9 @@
       ],
       "Apply filter to existing emails": [
         "Aplicar filtro a los correos existentes"
+      ],
+      "Apply to future messages": [
+        "Aplicar a los mensajes futuros"
       ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s)"
@@ -8801,11 +8863,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "SI"
-      ],
       "If": [
         "Si"
+      ],
+      "IF": [
+        "SI"
       ],
       "Import all messages": [
         "Importar todos los mensajes"
@@ -8858,6 +8920,9 @@
       "Mail Server (IMAP)": [
         "Servidor de correo (IMAP)"
       ],
+      "Mail subscriptions": [
+        "Suscripciones de Mail"
+      ],
       "Main": [
         "Principal"
       ],
@@ -8872,6 +8937,9 @@
       ],
       "Move ${ sidebarElementName }": [
         "Mover ${ sidebarElementName }"
+      ],
+      "Move messages to": [
+        "Mover mensajes a"
       ],
       "Move to": [
         "Mover a"
@@ -8921,13 +8989,13 @@
       "Optional": [
         "Opcional"
       ],
-      "OR": [
-        "O"
-      ],
       "or": [
         "o"
       ],
       "Or": [
+        "O"
+      ],
+      "OR": [
         "O"
       ],
       "Original link": [
@@ -9040,6 +9108,9 @@
       ],
       "System information": [
         "Información del sistema"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "El filtro está desactivado. Puede activarlo ${ settingsLink }"
       ],
       "Theme": [
         "Tema"
@@ -9193,6 +9264,11 @@
         "Para: ${ to }"
       ]
     },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Aquí puede ver y gestionar las suscripciones a los boletines y a la lista de correo."
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Panel lateral"
@@ -9271,6 +9347,9 @@
       ],
       "Folders": [
         "Carpetas"
+      ],
+      "here": [
+        "aquí"
       ],
       "How to add users": [
         "Cómo agregar usuarios"
@@ -9409,6 +9488,9 @@
       ],
       "Types of recovery methods": [
         "Tipos de métodos de recuperación"
+      ],
+      "Views": [
+        "Vistas"
       ],
       "What’s this?": [
         "¿Qué es esto?"
@@ -9806,29 +9888,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Bajar a ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Obtenga ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comenzar por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Desde ${ pricing }"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Mejorar a ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Eliminar cuenta"
@@ -9850,6 +9909,14 @@
       ],
       "Switch plan": [
         "Cambiar plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Bajar a ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Obtenga ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -10002,9 +10069,6 @@
       "Auto-delete Spam and Trash": [
         "Eliminación automática de spam y papelera"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Eliminar automáticamente spam y mensajes de la papelera"
-      ],
       "Auto-reply": [
         "Respuesta automática"
       ],
@@ -10046,9 +10110,6 @@
       ],
       "Custom fields": [
         "Campos personalizados"
-      ],
-      "Custom snooze time": [
-        "Tiempo de pausa personalizado"
       ],
       "Custom workspace branding": [
         "Marca personalizada del espacio de trabajo"
@@ -10189,12 +10250,6 @@
       "Schedule and snooze emails for any time": [
         "Programar y pausar correos a cualquier hora"
       ],
-      "Schedule messages at any time": [
-        "Programar mensajes a cualquier hora"
-      ],
-      "Search message content": [
-        "Buscar contenido del mensaje"
-      ],
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
@@ -10331,9 +10386,6 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Cree múltiples direcciones de correo para sus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain2 } para suscripciones de noticias"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Pause los mensajes y reciba un recordatorio cuando quiera."
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }"
       ]
@@ -10436,6 +10488,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "A partir de ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceLine }. Puede cancelar en cualquier momento."
       ],
@@ -13425,9 +13480,6 @@
       "Action all messages": [
         "Aplicar a todos los mensajes"
       ],
-      "Activate @pm.me": [
-        "Activar @pm.me"
-      ],
       "Add a custom logo": [
         "Agregue un logo personalizado"
       ],
@@ -13467,6 +13519,9 @@
       ],
       "Archive": [
         "Archivo"
+      ],
+      "Archive all messages?": [
+        "¿Archivar todos los mensajes?"
       ],
       "Are you sure you want to close the preview?": [
         "¿Está seguro de que quiere cerrar la vista previa?"
@@ -13524,9 +13579,6 @@
       ],
       "Change password": [
         "Cambiar contraseña"
-      ],
-      "Clear out the junk": [
-        "Elimine los mensajes no deseados."
       ],
       "Clearing data": [
         "Limpiando datos"
@@ -13752,9 +13804,6 @@
       "Forward": [
         "Reenviar"
       ],
-      "Get advanced protection": [
-        "Obtener protección avanzada"
-      ],
       "Get more from your VPN": [
         "Obtenga más de su VPN"
       ],
@@ -13828,9 +13877,6 @@
       "Invalid verification code": [
         "Código de verificación inválido"
       ],
-      "Keep your inbox organized": [
-        "Mantenga el buzón organizado"
-      ],
       "Label as": [
         "Etiquetar como"
       ],
@@ -13846,8 +13892,17 @@
       "Load remote content": [
         "Cargar contenido remoto"
       ],
+      "Mail Subscriptions": [
+        "Suscripciones de Mail"
+      ],
+      "Mail subscriptions": [
+        "Suscripciones de Mail"
+      ],
       "Make a secure connection your default": [
         "Elija una conexión segura como opción predeterminada"
+      ],
+      "Mark all messages as read": [
+        "Marcar todos los mensajes como leídos"
       ],
       "Mark as read": [
         "Marcar como leído"
@@ -13963,6 +14018,9 @@
       "No breaches detected": [
         "No se detectaron vulneraciones"
       ],
+      "No mail subscriptions": [
+        "No hay suscripciones de correo"
+      ],
       "No need to empty the trash": [
         "No es necesario vaciar la papelera"
       ],
@@ -14074,9 +14132,6 @@
       "Same inbox, shorter email address": [
         "El mismo buzón con una dirección de correo más corta"
       ],
-      "Save time with email filters": [
-        "Ahorre tiempo con filtros de correo"
-      ],
       "Schedule now, send later": [
         "Programe ahora, envíe después"
       ],
@@ -14149,9 +14204,6 @@
       "Set up your organization": [
         "Configure su organización"
       ],
-      "Set your own schedule": [
-        "Establezca su propia programación"
-      ],
       "Settings": [
         "Ajustes"
       ],
@@ -14212,6 +14264,9 @@
       "Trash": [
         "Papelera"
       ],
+      "Trash all messages?": [
+        "¿Enviar todos los mensajes a la Papelera?"
+      ],
       "Trust new key?": [
         "¿Confiar clave nueva?",
         "¿Confiar claves nuevas?"
@@ -14225,11 +14280,11 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Active ${ DARK_WEB_MONITORING_NAME }"
       ],
-      "Unlock contacts groups": [
-        "Desbloquear grupos de contactos"
-      ],
       "Unsubscribe": [
         "Cancelar suscripción"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "¿Cancelar la suscripción de ${ subscription.Name }?"
       ],
       "Unsubscribe request sent": [
         "Solicitud de cancelación de suscripción enviada"
@@ -14257,9 +14312,6 @@
       ],
       "VPN explained": [
         "Explicaciones sobre la VPN"
-      ],
-      "Want to snooze any time?": [
-        "¿Desea pausar los mensajes cuando quiera?"
       ],
       "Warning": [
         "Advertencia"
@@ -14312,6 +14364,9 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
+      ],
+      "Your subscriptions in one place": [
+        "Sus suscripciones en un solo lugar"
       ]
     },
     "Today icon tooltip in mini calendar": {

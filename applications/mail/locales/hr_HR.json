@@ -590,6 +590,9 @@
       "Move to archive": [
         "Premjesti u arhiv"
       ],
+      "Move to folder": [
+        "Premjesti u mapu"
+      ],
       "Move to inbox": [
         "Premjesti u pristiglu poštu"
       ],
@@ -809,10 +812,10 @@
       "Select ${ planTitle }": [
         "Odaberite ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Odaberi sve"
       ],
-      "Select all": [
+      "Select All": [
         "Odaberi sve"
       ],
       "Select all messages": [
@@ -925,6 +928,11 @@
       ],
       "Trust": [
         "Vjeruj"
+      ],
+      "Trust key": [
+        "Ključ povjerenja",
+        "Ključevi povjerenja",
+        "Ključevi povjerenja"
       ],
       "Trust public key": [
         "Vjeruj javnom ključu"
@@ -3743,9 +3751,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Uvoz iz ${ provider }a"
-      ],
-      "Other": [
-        "Ostalo"
       ]
     },
     "Import warning": {
@@ -4137,6 +4142,9 @@
       ],
       "Inherited from parent folder": [
         "Nasljedno iz roditeljske mape"
+      ],
+      "Insert image": [
+        "Umetni sliku"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -4874,10 +4882,10 @@
       "Also archive": [
         "Također i arhivu"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
       "and": [
@@ -5039,11 +5047,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "AKO"
-      ],
       "If": [
         "Ako"
+      ],
+      "IF": [
+        "AKO"
       ],
       "Import all messages": [
         "Uvoz svih poruka"
@@ -5135,14 +5143,14 @@
       "Optional": [
         "Neobavezno"
       ],
-      "OR": [
-        "ILI"
-      ],
       "or": [
         "ili"
       ],
       "Or": [
         "Ili"
+      ],
+      "OR": [
+        "ILI"
       ],
       "Participants": [
         "Sudionici"
@@ -5391,6 +5399,9 @@
       ],
       "Folders": [
         "Mape"
+      ],
+      "here": [
+        "ovdje"
       ],
       "Inbox": [
         "Pristigla pošta"
@@ -5712,14 +5723,6 @@
         "Najviša VPN brzina"
       ]
     },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -5837,9 +5840,6 @@
       ],
       "Priority support": [
         "Prioritetna podrška"
-      ],
-      "Search message content": [
-        "Pretraži sadržaj poruka"
       ],
       "Secure Core servers": [
         "Secure Core poslužitelji"

@@ -543,9 +543,6 @@
       "Generate text": [
         "텍스트 생성"
       ],
-      "Get ${ BRAND_NAME } Duo": [
-        "${ BRAND_NAME } Duo 플랜 받기"
-      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName }을(를) ${ priceCoupon }로 구매하기"
       ],
@@ -554,12 +551,6 @@
       ],
       "Get in touch": [
         "연락하기"
-      ],
-      "Get it": [
-        "다운로드"
-      ],
-      "Get it from only ${ addonPriceWithCurrency } /month": [
-        "매월 ${ addonPriceWithCurrency }부터 시작해 보세요"
       ],
       "Get started": [
         "시작하기"
@@ -867,6 +858,9 @@
       "Move to archive": [
         "보관함으로 이동"
       ],
+      "Move to folder": [
+        "폴더로 이동"
+      ],
       "Move to inbox": [
         "받은메일함으로 이동"
       ],
@@ -1140,11 +1134,11 @@
       "Select ${ planTitle }": [
         "${ planTitle } 선택"
       ],
-      "Select All": [
-        "모두 선택"
-      ],
       "Select all": [
         "전체 선택"
+      ],
+      "Select All": [
+        "모두 선택"
       ],
       "Select all messages": [
         "모든 메시지 선택"
@@ -1299,9 +1293,6 @@
       "Start setup": [
         "설정 시작"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "${ priceUnlimited }부터 시작"
-      ],
       "Stay": [
         "기다리기"
       ],
@@ -1358,6 +1349,9 @@
       ],
       "Trust": [
         "신뢰"
+      ],
+      "Trust key": [
+        "키 신뢰하기"
       ],
       "Trust public key": [
         "공개 키 신뢰하기"
@@ -1424,9 +1418,6 @@
       ],
       "Upgrade Now": [
         "지금 업그레이드"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } Unlimited로 업그레이드하기"
       ],
       "Upload and share files": [
         "파일 업로드 및 공유하기"
@@ -3692,9 +3683,6 @@
       "Also included": [
         "이것 외에도"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "업그레이드시 스펨 메일함과 휴지통 내 메시지를 자동으로 삭제하며 더 많은 프리미엄 기능이 해제됩니다."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "30일 혹은 그 전에 휴지통 및 스팸으로 이동한 이메일을 자동으로 삭제합니다."
       ],
@@ -3721,9 +3709,6 @@
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "연락처 삭제중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
-      ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "계정에 대한 강화된 보호를 원하는 사용자를 위해 설계되었습니다."
       ],
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "이메일을 지금 전송하고 싶지 않으신가요? 알맞은 시간대로 예약하세요."
@@ -3758,9 +3743,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "내 비밀번호나 다른 데이터가 제 3자 서비스에서 유출되면 알림받으세요."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "${ PLAN_NAMES[PLANS.BUNDLE] }으로 무제한 별칭과 500 GB 스토리지 공간을 받으세요."
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "팀이 민감한 비즈니스 및 고객 정보에 대한 암호를 안전하게 저장할 수 있도록 지원하세요"
       ],
@@ -3785,9 +3767,6 @@
       "No labels": [
         "레이블 없음"
       ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "연락처 그룹으로 모두에게 한 번에 이메일을 보내 시간을 절약하십시오. 이 외에도 다른 프리미엄 기능이 업그레이드시 해제됩니다."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "여러 이메일 주소로 삶의 다양한 측면을 분리하고 업그레이드할 때 더 많은 프리미엄 기능을 잠금 해제하세요."
       ],
@@ -3802,9 +3781,6 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "공유 캘린더로 동기화 및 일정 예약을 간소화하세요."
-      ],
-      "Starting from ${ price }": [
-        "${ price }부터 시작합니다."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "글쓰기 도우미를 계속 사용하기 위해, 구독에 추가해 주세요."
@@ -3827,26 +3803,8 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "위치와 온라인 활동을 추적하는 광고주와 기타 사람들로부터의 추적을 방지하기 위해 이메일 추적기 보호 기능을 활성화하세요."
       ],
-      "Unlock custom message scheduling and more premium features when you upgrade.": [
-        "업그레이드하여 커스텀 메시지 예약과 더 많은 프리미엄 기능을 경험해 보세요."
-      ],
-      "Unlock custom snooze times and more premium features when you upgrade.": [
-        "업그레이드 하여 사용자 지정 방해 금지 시간과 더 많은 프리미엄 기능을 경험하세요."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "업그레이드하여 더 짧은 이메일 주소와 기타 프리미엄 기능을 잠금 해제하세요."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "업그레이드하여 받은 편지함을 정렬하는 무제한 필터와 더 많은 프리미엄 기능을 잠금 해제하세요."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "업그레이드하여 무제한 폴더, 라벨과 더 많은 프리미엄 기능들을 잠금 해제하세요."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "업그레이드하여 현재 이메일 주소보다 더 짧고, 기억하기 쉬운 주소인 ${ activatePmUser }를 받아보세요"
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "지정 24시간 추가적인 지원이 포함된 최첨단 AI 방식의 보안 솔루션인 ${ PROTON_SENTINEL_NAME }을 활성화 하려면 계정을 업그레이드 하세요."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "${ MAIL_APP_NAME }을 온라인 서비스 로그인 시 사용해 보세요. 타 이메일 서비스와 달리 제3자와 데이터를 추적 및 공유하지 않습니다."
@@ -5875,9 +5833,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } 으로부터 불러오기"
-      ],
-      "Other": [
-        "기타"
       ]
     },
     "Import warning": {
@@ -5993,12 +5948,6 @@
       ],
       "${ n } unread conversation": [
         "읽지 않은 대화 ${ n }개"
-      ],
-      "${ numberOfImageTrackers } email tracker blocked": [
-        "${ numberOfImageTrackers } 개 이메일 트래커 차단됨"
-      ],
-      "${ numberOfImageTrackers } tracker blocked": [
-        "${ numberOfImageTrackers } 개 트래커 차단됨"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } 링크가 정리되었습니다"
@@ -6515,6 +6464,9 @@
       ],
       "Drop to import": [
         "드래그해서 불러오기"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "수신자의 구성으로 인해 이 메시지는 만료일과 함께 다음 연락처로 보낼 수 없습니다: "
       ],
       "Duplicate key updated": [
         "중복 키 업데이트됨"
@@ -7241,9 +7193,6 @@
       ],
       "Seems like you are all caught up for now": [
         "표시할 메일이 없는 거 같습니다"
-      ],
-      "Select a service provider to start": [
-        "서비스 제공자를 선택해 시작하기"
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "${ location }(에)서 모두 ${ elementsCount } 선택"
@@ -8419,11 +8368,11 @@
       "Always move sender's emails": [
         "항상 보낸 사람 이메일 이동"
       ],
-      "AND": [
-        "및"
-      ],
       "And": [
         "그리고"
+      ],
+      "AND": [
+        "및"
       ],
       "and": [
         "그리고"
@@ -8647,10 +8596,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "만약"
       ],
-      "If": [
+      "IF": [
         "만약"
       ],
       "Import all messages": [
@@ -8767,13 +8716,13 @@
       "Optional": [
         "선택 사항"
       ],
-      "OR": [
-        "또는"
-      ],
       "or": [
         "또는"
       ],
       "Or": [
+        "또는"
+      ],
+      "OR": [
         "또는"
       ],
       "Original link": [
@@ -9117,6 +9066,9 @@
       ],
       "Folders": [
         "폴더"
+      ],
+      "here": [
+        "."
       ],
       "How to add users": [
         "사용자 추가 방법"
@@ -9641,29 +9593,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle }로 계속하기"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }에 시작하기"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName }(으)로 업그레이드"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "계정 삭제"
@@ -9685,6 +9614,14 @@
       ],
       "Switch plan": [
         "플랜 변경"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle }로 계속하기"
       ]
     },
     "new_plans: feature": {
@@ -9820,9 +9757,6 @@
       "Auto-delete Spam and Trash": [
         "스팸 및 휴지통 자동 삭제"
       ],
-      "Auto-delete spam and trashed messages": [
-        "스팸 및 휴지통의 메시지를 자동 삭제"
-      ],
       "Auto-reply": [
         "자동 회신"
       ],
@@ -9864,9 +9798,6 @@
       ],
       "Custom fields": [
         "사용자 지정 필드"
-      ],
-      "Custom snooze time": [
-        "사용자 지정 방해 금지 시간"
       ],
       "Custom workspace branding": [
         "커스텀 워크스페이스 브랜딩"
@@ -10006,12 +9937,6 @@
       "Schedule and snooze emails for any time": [
         "언제든지 이메일을 예약하거나 다시 알림받기"
       ],
-      "Schedule messages at any time": [
-        "언제든지 메시지를 예약하세요"
-      ],
-      "Search message content": [
-        "메시지 내용 검색"
-      ],
       "Secure Core servers": [
         "Secure Core 서버"
       ],
@@ -10141,9 +10066,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "원하는 시간대에 메시지를 방해 금지 상태로 전환하고 알림 받을 수 있습니다."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
@@ -13150,9 +13072,6 @@
       "Action all messages": [
         "모든 메시지 조치"
       ],
-      "Activate @pm.me": [
-        "@pm.me 활성화"
-      ],
       "Add a custom logo": [
         "커스텀 로고 추가하기"
       ],
@@ -13248,9 +13167,6 @@
       ],
       "Change password": [
         "비밀번호 변경"
-      ],
-      "Clear out the junk": [
-        "정크 삭제"
       ],
       "Clearing data": [
         "데이터 지우기"
@@ -13471,9 +13387,6 @@
       "Forward": [
         "앞으로"
       ],
-      "Get advanced protection": [
-        "향상된 보호 얻기"
-      ],
       "Get more from your VPN": [
         "VPN에 대해 더 알아보기"
       ],
@@ -13545,9 +13458,6 @@
       ],
       "Invalid verification code": [
         "잘못된 검증 코드"
-      ],
-      "Keep your inbox organized": [
-        "받은 편지함 정리"
       ],
       "Label as": [
         "라벨 추가"
@@ -13792,9 +13702,6 @@
       "Same inbox, shorter email address": [
         "같은 받은 편지함, 더 짧은 이메일 주소."
       ],
-      "Save time with email filters": [
-        "이메일 필터로 시간을 절약하세요"
-      ],
       "Schedule now, send later": [
         "지금 발송 예약하여 나중에 발송하기"
       ],
@@ -13866,9 +13773,6 @@
       ],
       "Set up your organization": [
         "내 조직 설정하기"
-      ],
-      "Set your own schedule": [
-        "나만의 스케쥴 설정"
       ],
       "Settings": [
         "설정"
@@ -13942,9 +13846,6 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 켜기"
       ],
-      "Unlock contacts groups": [
-        "연락처 그룹 잠금 해제"
-      ],
       "Unsubscribe": [
         "구독 해지"
       ],
@@ -13974,9 +13875,6 @@
       ],
       "VPN explained": [
         "VPN 심층탐구"
-      ],
-      "Want to snooze any time?": [
-        "언제 방해 금지 상태로 전환하시겠어요?"
       ],
       "Warning": [
         "경고"
