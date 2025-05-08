@@ -315,6 +315,9 @@
       "Get in touch": [
         "Зв'яжіться з нами"
       ],
+      "Get the writing assistant": [
+        "Отримати помічника з написання"
+      ],
       "Get verification code": [
         "Отримати код підтвердження"
       ],
@@ -630,9 +633,6 @@
       "Start import": [
         "Розпочати імпорт"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Починаючи з ${ priceUnlimited }"
-      ],
       "Stay": [
         "Залишитися"
       ],
@@ -680,9 +680,6 @@
       ],
       "Upgrade now": [
         "Покращити"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Оновити до ${ BRAND_NAME } Необмежено"
       ],
       "Upload anyway": [
         "Все одно вивантажити"
@@ -2167,11 +2164,6 @@
         "Протермінований рахунок"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "скористайтеся помічником з імпортування Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } захищає ваш обліковий запис із виділеним цілодобовим моніторингом підозрілої діяльності, включно з ескалацією до фахівців з безпеки."
@@ -2188,26 +2180,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Видалення контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Призначений для користувачів, які шукають посилений захист для своїх облікових записів."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Отримуйте сповіщення, якщо ваш пароль або інші дані отримали витік зі стороннього сервісу."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Отримайте необмежену кількість псевдонімів і 500 ГБ сховища з ${ PLAN_NAMES[PLANS.BUNDLE] }."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Схоже, що список контактів, який ви імпортуєте, містить групи. Перегляньте, як ці групи повинні бути імпортовані."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Об'єднання контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Заощаджуйте час, відсилаючи електронні листи всім одночасно за допомогою груп контактів. Розблокуйте ці та інші преміумфункції під час покращення."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Налаштуйте спосіб відновлення, щоб запобігти втраті даних."
@@ -2223,9 +2206,6 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Щоб імпортувати свої контакти з Google або Outlook, ${ easySwitchLink }."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Покращте свій обліковий запис, щоб активувати ${ PROTON_SENTINEL_NAME }, – наше найсучасніше рішення щодо безпеки на базі ШІ з експертною цілодобовою підтримкою."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
@@ -2247,6 +2227,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ви вже створили 10 псевдонімів. Отримайте необмежені псевдоніми та 500 ГБ сховища з ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "скористайтеся помічником з імпортування Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3692,9 +3677,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Імпорт з ${ provider }"
-      ],
-      "Other": [
-        "Інший"
       ]
     },
     "Import warning": {
@@ -4548,9 +4530,6 @@
       ],
       "Select a folder to move to.": [
         "Виберіть теку для переміщення."
-      ],
-      "Select a service provider to start": [
-        "Виберіть постачальника послуг, щоб розпочати"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
@@ -5983,13 +5962,7 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Понизити до ${ downgradedPlanName }"
       ],
-      "Get started for ${ priceCoupon }": [
-        "Розпочати з ${ priceCoupon }"
-      ],
       "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
         "Покращити"
       ]
     },
@@ -6194,9 +6167,6 @@
       "Auto-delete Spam and Trash": [
         "Автоматичне видалення спаму та смітника"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Автоматичне видалення спаму та повідомлень зі смітника"
-      ],
       "Auto-reply": [
         "Автовідповідь"
       ],
@@ -6238,9 +6208,6 @@
       ],
       "Custom fields": [
         "Власні поля"
-      ],
-      "Custom snooze time": [
-        "Власний час відкладення"
       ],
       "Custom workspace branding": [
         "Брендинг робочого середовища"
@@ -6370,12 +6337,6 @@
       ],
       "Schedule and snooze emails for any time": [
         "Плануйте і відкладайте електронні листи на будь-який час"
-      ],
-      "Schedule messages at any time": [
-        "Заплануйте надсилання повідомлень в будь-який час"
-      ],
-      "Search message content": [
-        "Пошук вмісту повідомлень"
       ],
       "Secure Core servers": [
         "Сервери Secure Core"
@@ -6515,9 +6476,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Створіть різні адреси електронної пошти для ваших онлайн-профілів, наприклад, ArtemShopper@${ domain } для інтернет-магазинів, ArtemNews@${ domain2 } для підписки на новини"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Відкладайте повідомлення та отримуйте нагадування, коли захочете"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
@@ -8828,9 +8786,6 @@
       "Exporting contacts": [
         "Експортування контактів"
       ],
-      "Get advanced protection": [
-        "Отримайте розширений захист"
-      ],
       "Get the apps": [
         "Отримати програми"
       ],
@@ -9028,9 +8983,6 @@
       ],
       "This document is password protected": [
         "Цей документ захищено паролем"
-      ],
-      "Unlock contacts groups": [
-        "Розблокувати групи контактів"
       ],
       "Untitled document ${ date }": [
         "Документ без назви ${ date }"
