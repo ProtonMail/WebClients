@@ -29,7 +29,7 @@ export const AlbumsInvitations = ({ refreshSharedWithMeAlbums }: { refreshShared
                                             className="rounded-full custom-bg shrink-0 mr-2 p-1 ratio-square flex"
                                             style={{ '--custom-bg': 'var(--signal-info-minor-1)' }}
                                         >
-                                            <Icon name="album-with-cards" className="m-auto" />
+                                            <Icon name="album-folder" className="m-auto" />
                                         </span>
                                         <span className="mt-0.5">
                                             {
