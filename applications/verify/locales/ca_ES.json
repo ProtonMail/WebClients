@@ -83,71 +83,6 @@
     "Cancellation upsell": {
       "Cloud storage and sharing for large files": [
         "Emmagatzematge al núvol i compartició dels vostres fitxers"
-      ],
-      "Secure personal and shared calendar": [
-        "Calendari personal i compartit segur"
-      ]
-    },
-    "color": {
-      "carrot": [
-        "pastanaga"
-      ],
-      "cerise": [
-        "vermell cirera"
-      ],
-      "cobalt": [
-        "cobalt"
-      ],
-      "copper": [
-        "coure"
-      ],
-      "enzian": [
-        "genciana"
-      ],
-      "fern": [
-        "verd falguera"
-      ],
-      "forest": [
-        "verd bosc"
-      ],
-      "ocean": [
-        "oceà"
-      ],
-      "olive": [
-        "verd oliva"
-      ],
-      "pacific": [
-        "pacífic"
-      ],
-      "pickle": [
-        "cogombre"
-      ],
-      "pine": [
-        "verd pi"
-      ],
-      "pink": [
-        "rosa"
-      ],
-      "plum": [
-        "pruna"
-      ],
-      "purple": [
-        "porpra"
-      ],
-      "reef": [
-        "corall"
-      ],
-      "sahara": [
-        "sahara"
-      ],
-      "slateblue": [
-        "blau pissarra"
-      ],
-      "soil": [
-        "terra"
-      ],
-      "strawberry": [
-        "maduixa"
       ]
     },
     "Country name": {
@@ -1244,14 +1179,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistent d'escriptura ${ BRAND_NAME } Scribe"
       ],
-      "${ n } calendar": [
-        "${ n } calendari",
-        "${ n } calendaris"
-      ],
-      "${ n } calendar per user": [
-        "${ n } calendari per usuari",
-        "${ n } calendaris per usuari"
-      ],
       "${ n } custom email domain": [
         "${ n } domini de correu electrònic personalitzat",
         "${ n } dominis de correu electrònic personalitzats"
@@ -1333,9 +1260,6 @@
       "Auto-delete Spam and Trash": [
         "Neteja automàticament el correu brossa i la paperera"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Suprimeix automàticament el correu brossa i els missatges enviats a la paperera"
-      ],
       "Auto-reply": [
         "Resposta automàtica"
       ],
@@ -1362,9 +1286,6 @@
       ],
       "Custom email domains": [
         "Dominis de correu personalitzats"
-      ],
-      "Custom snooze time": [
-        "Temps d'ajornament personalitzat"
       ],
       "Desktop app": [
         "Aplicació d'escriptori"
@@ -1417,20 +1338,8 @@
       "Schedule and snooze emails for any time": [
         "Programeu i ajorneu correus electrònics per a qualsevol moment."
       ],
-      "Schedule messages at any time": [
-        "Programeu missatges en qualsevol moment."
-      ],
-      "Search message content": [
-        "Cerca al contingut del missatge"
-      ],
       "Secure file storage and sharing": [
         "Compartició i emmagatzematge segurs de fitxers"
-      ],
-      "See team's availability": [
-        "Consulteu la disponibilitat de l'equip"
-      ],
-      "Send & receive invitations": [
-        "Enviament i recepció d'invitacions"
       ],
       "Share files with no size limit": [
         "Compartiu fitxers sense límit de mida"
@@ -1470,17 +1379,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia. Per exemple: JoanComprador@${ domain } per a comptes de compres, JoanNoticies@${ domain2 } per a la subscripció a notícies"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Ajorneu els missatges i rebeu-ne un recordatori quan vulgueu"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: Protegiu el vostre calendari amb xifratge d'extrem a extrem. Inclou suport per a calendaris personalitzats, compartició de calendaris, etc."
-      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, sincronització automàtica i compartició de fitxers xifrats."
       ],
@@ -1511,15 +1414,8 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia; p. ex., JoanCompres@${ domain } per a comptes de compres, JoanNoticies@${ domain } per a la subscripció a notícies."
       ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Creeu fins a ${ n } calendari o afegiu calendaris d'amics, família, col·legues i organitzacions",
-        "Creeu fins a ${ n } calendaris o afegiu calendaris d'amics, família, col·legues i organitzacions"
-      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creeu fins a ${ n } adreces de correu electrònic o àlies que podeu assignar als membres de la família. Utilitzeu-los per a les identitats en línia, p. ex., JoanCompres@${ domain } per als comptes de compres."
-      ],
-      "Easily share your calendars with your family, friends, or colleagues": [
-        "Compartiu fàcilment els vostres calendaris amb la família, els amics o els col·legues."
       ],
       "Email everyone in a group with a single email address": [
         "Envieu un correu electrònic a tothom en un grup amb una única adreça de correu electrònic."
@@ -1529,9 +1425,6 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "El suport IMAP es limita a l'ús d'aplicacions d'escriptori (p. ex., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Actualment, no s'admeten les integracions IMAP basades en el núvol."
-      ],
-      "Keep your plans private to you and your family with an encrypted calendar": [
-        "Manteniu els vostres plans en privat amb la vostra família amb un calendari xifrat."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Podeu afegir etiquetes als missatges per facilitar-ne la cerca o l'aplicació de filtres"
@@ -1553,9 +1446,6 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Emmagatzemeu amb seguretat els detalls dels vostres contactes, com el número de telèfon, l'adreça, l'aniversari i les notes personals. El xifratge d'accés zero assegura que fins i tot ${ BRAND_NAME } no hi pugui accedir."
-      ],
-      "See the availability of meeting participants and save time scheduling meetings": [
-        "Consulteu la disponibilitat dels participants en les reunions i estalvieu temps programant-les."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Envieu correus electrònics a grups grans de manera ràpida i fàcil creant tants grups de contactes com necessiteu (fins a 100 contactes per grup)"
@@ -1594,10 +1484,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Augmenteu l'espai d'emmagatzematge a ${ bundleStorage } en total"
-      ],
-      "Create up to ${ n } calendar": [
-        "Crea fins a ${ n } calendari",
-        "Crea fins a ${ n } calendaris"
       ],
       "Support for ${ n } custom email domains": [
         "Suport per a ${ n } dominis de correu personalitzats"

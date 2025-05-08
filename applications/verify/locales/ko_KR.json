@@ -83,71 +83,6 @@
     "Cancellation upsell": {
       "Cloud storage and sharing for large files": [
         "큰 용량의 파일 보관과 공유를 위한 클라우드 스토리지"
-      ],
-      "Secure personal and shared calendar": [
-        "안전한 개인용 캘린더 및 공유된 캘린더"
-      ]
-    },
-    "color": {
-      "carrot": [
-        "캐럿"
-      ],
-      "cerise": [
-        "체리"
-      ],
-      "cobalt": [
-        "코발트"
-      ],
-      "copper": [
-        "코퍼"
-      ],
-      "enzian": [
-        "엔지안"
-      ],
-      "fern": [
-        "펀"
-      ],
-      "forest": [
-        "포레스트"
-      ],
-      "ocean": [
-        "오션"
-      ],
-      "olive": [
-        "올리브"
-      ],
-      "pacific": [
-        "퍼시픽"
-      ],
-      "pickle": [
-        "피클"
-      ],
-      "pine": [
-        "파인"
-      ],
-      "pink": [
-        "핑크"
-      ],
-      "plum": [
-        "프럼"
-      ],
-      "purple": [
-        "퍼플"
-      ],
-      "reef": [
-        "리프"
-      ],
-      "sahara": [
-        "사하라"
-      ],
-      "slateblue": [
-        "슬레이트 블루"
-      ],
-      "soil": [
-        "소일"
-      ],
-      "strawberry": [
-        "스트로베리"
       ]
     },
     "Country name": {
@@ -1238,12 +1173,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
-      "${ n } calendar": [
-        "캘린더 ${ n }개"
-      ],
-      "${ n } calendar per user": [
-        "사용자 당 ${ n }개 캘린더"
-      ],
       "${ n } custom email domain": [
         "사용자 지정 이메일 도메인 ${ n }개"
       ],
@@ -1316,9 +1245,6 @@
       "Auto-delete Spam and Trash": [
         "스팸 및 휴지통 자동 삭제"
       ],
-      "Auto-delete spam and trashed messages": [
-        "스팸 및 휴지통의 메시지를 자동 삭제"
-      ],
       "Auto-reply": [
         "자동 회신"
       ],
@@ -1345,9 +1271,6 @@
       ],
       "Custom email domains": [
         "사용자 지정 이메일 도메인"
-      ],
-      "Custom snooze time": [
-        "사용자 지정 방해 금지 시간"
       ],
       "Desktop app": [
         "데스크톱 앱"
@@ -1400,20 +1323,8 @@
       "Schedule and snooze emails for any time": [
         "언제든지 이메일을 예약하거나 다시 알림받기"
       ],
-      "Schedule messages at any time": [
-        "언제든지 메시지를 예약하세요"
-      ],
-      "Search message content": [
-        "메시지 내용 검색"
-      ],
       "Secure file storage and sharing": [
         "안전한 파일 저장 공간 및 공유"
-      ],
-      "See team's availability": [
-        "팀의 가용성 확인"
-      ],
-      "Send & receive invitations": [
-        "전송 및 받은 초대"
       ],
       "Share files with no size limit": [
         "크기 제한 없는 파일 공유"
@@ -1453,17 +1364,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
       ],
-      "Snooze messages and get reminded when you want": [
-        "원하는 시간대에 메시지를 방해 금지 상태로 전환하고 알림 받을 수 있습니다."
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: 커스텀 캘린더, 캘린더 공유 등의 기능을 포함하는 종단 간 암호화로 보호되는 캘린더를 사용해 보세요."
-      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: 버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
       ],
@@ -1494,14 +1399,8 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
       ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "최대 ${ n }개 캘린더를 생성하거나 친구, 가족, 동료 및 조직에서 생성하세요."
-      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "가족 구성원에게 할당할 수 있는 이메일 주소/별칭을 ${ n }개까지 생성할 수 있습니다. 온라인 신원으로 사용할 수 있고, 쇼핑 계정으로 홍쇼핑@${ domain }을(를) 사용하는 것을 예로 들 수 있습니다."
-      ],
-      "Easily share your calendars with your family, friends, or colleagues": [
-        "캘린더를 가족, 친구 및 동료들에게 쉽게 공유하세요"
       ],
       "Email everyone in a group with a single email address": [
         "그룹 내의 모두에게 하나의 주소로 이메일을 전송하기"
@@ -1511,9 +1410,6 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP 지원은 ${ MAIL_APP_NAME } Bridge를 통한 데스크톱 앱(예: Outlook, Apple Mail, Thunderbird)의 사용에만 한합니다. 클라우드 기반의 IMAP 통합은 현재 지원되지 않습니다."
-      ],
-      "Keep your plans private to you and your family with an encrypted calendar": [
-        "암호화된 캘린더로 나와 나의 가족의 사적인 계획을 지키세요"
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "라벨은 메시지를 찾기 쉽게하거나 필터를 적용하기 위해 추가 할 수 있는 간단한 태그입니다"
@@ -1535,9 +1431,6 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "전화번호, 주소, 생일과 개인 노트와 같은 연락처 상세 정보를 안전하게 저장하세요. 제로 엑세스 암호화는 ${ BRAND_NAME } 또한 접근할 수 없음을 보장합니다."
-      ],
-      "See the availability of meeting participants and save time scheduling meetings": [
-        "회의 참가자의 가용성을 확인하고 회의 일정을 잡는 시간을 절약하세요"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "필요한 만큼 많은 연락처 그룹을 만들어 큰 그룹에 이메일을 빠르고 쉽게 전송하세요. (그룹당 최대 100개의 연락처)"
@@ -1576,9 +1469,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "최종 ${ bundleStorage }으로 저장 공간을 부스트 하세요"
-      ],
-      "Create up to ${ n } calendar": [
-        "최대 ${ n }개 캘린더 생성"
       ],
       "Support for ${ n } custom email domains": [
         "${ n }개의 지정 이메일 도메인 지원"
