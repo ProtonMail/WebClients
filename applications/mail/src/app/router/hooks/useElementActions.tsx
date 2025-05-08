@@ -44,11 +44,12 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
     const page = useMailSelector((state) => state.elements.page);
 
     const { selectAll, setSelectAll } = useSelectAll({ labelID });
-    const { handleDelete: permanentDelete } = usePermanentDelete(labelID);
+    const { handleDelete: permanentDelete, deleteSelectionModal, deleteAllModal } = usePermanentDelete(labelID);
 
-    const { markAs } = useMarkAs();
+    const { markAs, selectAllMarkModal } = useMarkAs();
     const getElementsFromIDs = useGetElementsFromIDs();
-    const { moveToFolder } = useMoveToFolder();
+    const { moveToFolder, moveToSpamModal, moveSnoozedModal, moveScheduledModal, selectAllMoveModal } =
+        useMoveToFolder();
     const onCompose = useOnCompose();
 
     const [folders] = useFolders();
@@ -184,5 +185,12 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
         handleCheckRange,
         onMessageLoad,
         onMessageReady,
+        deleteSelectionModal,
+        deleteAllModal,
+        selectAllMarkModal,
+        moveToSpamModal,
+        moveSnoozedModal,
+        moveScheduledModal,
+        selectAllMoveModal,
     };
 };
