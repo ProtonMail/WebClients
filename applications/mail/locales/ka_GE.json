@@ -546,9 +546,6 @@
       "Generate text": [
         "ტექსტის გენერაცია"
       ],
-      "Get ${ BRAND_NAME } Duo": [
-        "მიიღეთ ${ BRAND_NAME } Duo"
-      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "დააყენეთ ${ planName } ${ priceCoupon }-სთვის"
       ],
@@ -557,12 +554,6 @@
       ],
       "Get in touch": [
         "დაგვიკავშირდით"
-      ],
-      "Get it": [
-        "მიღება"
-      ],
-      "Get it from only ${ addonPriceWithCurrency } /month": [
-        "მიიღეთ ტარიფი, მხოლოდ, ${ addonPriceWithCurrency }-ად თვეში"
       ],
       "Get started": [
         "დაიწყეთ"
@@ -871,6 +862,9 @@
       "Move to archive": [
         "არქივში გადატანა"
       ],
+      "Move to folder": [
+        "საქაღალდეში გადატანა"
+      ],
       "Move to inbox": [
         "შემომავლებში გადატანა"
       ],
@@ -1144,10 +1138,10 @@
       "Select ${ planTitle }": [
         "აირჩიეთ ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "ყველაფრის მონიშვნა"
       ],
-      "Select all": [
+      "Select All": [
         "ყველაფრის მონიშვნა"
       ],
       "Select all messages": [
@@ -1303,9 +1297,6 @@
       "Start setup": [
         "მორგების დაწყება"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "${ priceUnlimited }-დან"
-      ],
       "Stay": [
         "დარჩენა"
       ],
@@ -1362,6 +1353,10 @@
       ],
       "Trust": [
         "ნდობა"
+      ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -1428,9 +1423,6 @@
       ],
       "Upgrade Now": [
         "ახლა გაუმჯობესება"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "ასწიეთ სატარიფო გეგმა ${ BRAND_NAME } Unlimited-ზე"
       ],
       "Upload and share files": [
         "ფაილების ატვირთვა და გაზიარება"
@@ -3703,9 +3695,6 @@
       "Also included": [
         "ასევე შეიცავს"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "განბლოკეთ სპამისა და სანაგვე ყუთის ავტომატური წაშლა და სხვა ფასიანი ფუნქციები, როცა სატარიფო გეგმას ასწევთ."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "ნაგვის ყუთში და სპამში 30 დღეზე მეტი დროით გადატანილი ელფოსტების ავტომატური გასუფთავება."
       ],
@@ -3730,9 +3719,6 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების წაშლა... ამას რამდენიმე წუთი შეიძლება დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "შექმნილია მომხმარებლებისთვის, რომლების თავიანთი ანგარიშებისთვის გაძლიერებულ უსაფრთხოებას ეძებენ."
-      ],
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "არ გნებავთ, თქვენი ელფოსტიდან ახლავე გააგზავნოთ? დაგეგმეთ ის სწორ დროს."
       ],
@@ -3747,9 +3733,6 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
-      ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "მიიღეთ შეუზღუდავი ფსევდონიმები და 500 გბ საცავი ${ PLAN_NAMES[PLANS.BUNDLE] }-სთან ერთად."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "როგორც ჩანს კონტაქტების სია, რომლის შემოტანასაც ცდილობთ, ჯგუფებსაც შეიცავს. გადახედეთ, გნებავთ თუ არა ამ ჯგუფების შემოტანა."
@@ -3773,9 +3756,6 @@
       "No labels": [
         "ჭდეების გარეშე"
       ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "დაზოგეთ დრო ელფოსტის კონტაქტების ჯგუფისთვის გაგზავნით. განბლოკეთ ეს და სხვა ფასიანი ფუნქციები, როცა სატარიფო გეგმას აწევთ."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "ასწიეთ სატარიფო გეგმა და გამოყავით თქვენი ცხოვრების სხვადასხვა ასპექტები სხვადასხვა ელფოსტის მისამართებით და მიიღეთ კიდევ ბევრი სხვა ფასიანი ფუნქცია."
       ],
@@ -3785,11 +3765,11 @@
       "Set a recovery method to prevent losing access to your account.": [
         "დააყენეთ აღდგენის მეთოდი, რომ თავიდან აიცილოთ თქვენს ანგარიშზე წვდომის დაკარგვა."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "მოირგეთ ანგარიშები ყველა მომხმარებლისთვის და მოიწვიეთ ისინი ${ BRAND_NAME }-ზე."
+      ],
       "Simplify syncing and scheduling with shared calendars.": [
         "გაამართივეთ გაზიარებული კალენდრების დაგეგმვა და სინქრონიზაცია."
-      ],
-      "Starting from ${ price }": [
-        "${ price }-დან"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "იმისათვის, რომ გააგრძელოთ წერის დამხმარის გამოყენება, დაამატეთ ის თქვენს გამოწერაში."
@@ -3812,26 +3792,8 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "ჩართეთ ელფოსტის ტრეკრებისგან დაცვა, რათა თავიდან აიცილოთ რეკლამისა და სხვების მიერ თქვენი მდებარეობის და ონლაინ აქტივობების ტრეკინგი."
       ],
-      "Unlock custom message scheduling and more premium features when you upgrade.": [
-        "აწიეთ სატარიფო გეგმა და მიიღეთ მორგებული შეტყობინებების დაგეგმვა და სხვა ფასიანი ფუნქციები."
-      ],
-      "Unlock custom snooze times and more premium features when you upgrade.": [
-        "აწიეთ სატარიფო გეგმა და მიიღეთ მორგებული დადუმების დრო და სხვა ფასიანი ფუნქციები."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "ასწიეთ სატარიფო გეგმა და იქონით წვდომა უფრო მოკლე ელფოსტის მისამართებთან და სხვა ფასიან ფუნქციებთან."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "ასწიეთ სატარიფო გეგმა და მიიღეთ განუსაზღვრელი რაოდენობის ფილტრები და სხვა ფასიანი ფუნქციები."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "აწიეთ სატარიფო გეგმა და მიიღეთ განუსაზღვრელი რაოდენობის საქაღალდეები, ჭდეები და მეტი ფასიანი ფუნქცია."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "ასწიეთ ტრაფიკი, რომ მიიღოთ ${ activatePmUser } უფრო მოკლე და ადვილად დასამახსოვრებელი ელფოსტის მისამართი იმასთან ერთად, რაც ახლა გაქვთ."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "ასწიეთ თქვენი სატარიფო გეგმა, რომ გაააქტიუროთ ${ PROTON_SENTINEL_NAME }, ჩვენი უახლესი AI-ზე დაფუძნებული უსაფრთხოების გადაწყვეტილება თავისი საკუთარი 24/7 პროფესიონალური მხარდაჭერით."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "გამოიყენეთ ${ MAIL_APP_NAME } ონლაინ სერვისებში შესასვლელად, რადგან, სხვა ელფოსტის პროვაიდერებისგან განსხვავებით, ჩვენ თქვენს მონაცემებს არც ვტრეკავთ, არც მესამე პირებს ვუზიარებთ."
@@ -5885,9 +5847,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider }-დან შემოტანა"
-      ],
-      "Other": [
-        "სხვა"
       ]
     },
     "Import warning": {
@@ -6027,14 +5986,6 @@
       "${ n } unread conversation": [
         "${ n } წაუკითხავი საუბარი",
         "${ n } წაუკითხავი საუბარი"
-      ],
-      "${ numberOfImageTrackers } email tracker blocked": [
-        "დაბლოკილია ${ numberOfImageTrackers } ელფოსტის ტრეკერი",
-        "დაბლოკილია ${ numberOfImageTrackers } ელფოსტის ტრეკერი"
-      ],
-      "${ numberOfImageTrackers } tracker blocked": [
-        "დაბლოკილია ${ numberOfImageTrackers } ტრეკერი",
-        "დაბლოკილია ${ numberOfImageTrackers } ტრეკერი"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } ბმული გასუფთავდა",
@@ -6242,6 +6193,9 @@
       ],
       "and": [
         "და"
+      ],
+      "and more.": [
+        "და სხვა."
       ],
       "Another tip will be displayed next time you open Mail": [
         "ელფოსტის შემდეგი გახსნისას სხვა მინიშნებას გაჩვენებთ"
@@ -6807,7 +6761,6 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
         "გამოსახულების ჩასმა"
       ],
       "Insert link": [
@@ -7282,9 +7235,6 @@
       ],
       "Seems like you are all caught up for now": [
         "მგონი აქ ჯერ საქმე აღარ გაქვთ"
-      ],
-      "Select a service provider to start": [
-        "დასაწყებად აირჩიეთ მომსახურების მომწოდებელი"
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "${ location }-ში ყველა ${ elementsCount }-ის მონიშვნა",
@@ -8461,10 +8411,10 @@
       "Always move sender's emails": [
         "გამომგზავნის ელფოსტების ყოველთვის გადატანა"
       ],
-      "AND": [
+      "And": [
         "და"
       ],
-      "And": [
+      "AND": [
         "და"
       ],
       "and": [
@@ -8689,10 +8639,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "თუ"
       ],
-      "If": [
+      "IF": [
         "თუ"
       ],
       "Import all messages": [
@@ -8809,13 +8759,13 @@
       "Optional": [
         "არასავალდებულო"
       ],
-      "OR": [
-        "ან"
-      ],
       "or": [
         "ან"
       ],
       "Or": [
+        "ან"
+      ],
+      "OR": [
         "ან"
       ],
       "Original link": [
@@ -9159,6 +9109,9 @@
       ],
       "Folders": [
         "საქაღალდეები"
+      ],
+      "here": [
+        "აქ"
       ],
       "How to add users": [
         "როგორ დავამატო მომხმარებლები"
@@ -9694,29 +9647,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle }-ის მიღება"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "დაწყება ${ priceCoupon }-დან"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }-დან"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ],
-      "Upgrade to ${ planName }": [
-        "სატარიფო გეგმის განახლება: ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -9738,6 +9668,14 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle }-ის მიღება"
       ]
     },
     "new_plans: feature": {
@@ -9890,9 +9828,6 @@
       "Auto-delete Spam and Trash": [
         "სპამისა და ნაგვის ყუთის ავტომატური წაშლა"
       ],
-      "Auto-delete spam and trashed messages": [
-        "სპამისა და სანაგვე ყუთში მდებარე შეტყობინებების ავტომატური წაშლა"
-      ],
       "Auto-reply": [
         "თვითმოპასუხე"
       ],
@@ -9934,9 +9869,6 @@
       ],
       "Custom fields": [
         "მორგებადი ველები"
-      ],
-      "Custom snooze time": [
-        "მომხმარებლის დროებით დადუმების დრო"
       ],
       "Custom workspace branding": [
         "მორგებული სამუშაო სივრცის ბრენდინგი"
@@ -10077,12 +10009,6 @@
       "Schedule and snooze emails for any time": [
         "დაგეგმეთ და ჩააჩუმეთ ელფოსტები სასურველი დროით"
       ],
-      "Schedule messages at any time": [
-        "შეტყობინებების განრიგში ნებისმიერ დროს ჩასმა"
-      ],
-      "Search message content": [
-        "შეტყობინების შიგთავსში ძებნა"
-      ],
       "Secure Core servers": [
         "Secure Core-ის სერვერები"
       ],
@@ -10218,9 +10144,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "შექმენით მრავალი ელექტრონული ფოსტის მისამართი თქვენი ონლაინ ვინაობისთვის, მაგ., JohnShopper@p${ domain } სავაჭრო ანგარიშებისთვის, JohnNews@${ domain2 } ახალი ამბების გამოწერებისთვის"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "დაადუმეთ დროებით შეტყობინებები და ჩვენ შეგახსენებთ, როცა გნებავთ"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "საცავის სივრცე გაზიარებულია ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } და ${ DRIVE_APP_NAME } შორის"
@@ -13288,9 +13211,6 @@
       "Action all messages": [
         "გადატარება ყველა შეტყობნებაზე"
       ],
-      "Activate @pm.me": [
-        "გაააქტიურეთ @pm.me"
-      ],
       "Add a custom logo": [
         "დაამატეთ სასურველი ლოგო"
       ],
@@ -13387,9 +13307,6 @@
       ],
       "Change password": [
         "პაროლის შეცვლა"
-      ],
-      "Clear out the junk": [
-        "ნაგვის მოსუფთავება"
       ],
       "Clearing data": [
         "მონაცემების გასუფთავება"
@@ -13615,9 +13532,6 @@
       "Forward": [
         "გადაგზავნა"
       ],
-      "Get advanced protection": [
-        "დამატებითი უსაფრთხოების მიღება"
-      ],
       "Get more from your VPN": [
         "მიიღეთ მეტი თქვენი VPN-სგან"
       ],
@@ -13690,9 +13604,6 @@
       ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
-      ],
-      "Keep your inbox organized": [
-        "დაალაგეთ თქვენი საფოსტო ყუთი"
       ],
       "Label as": [
         "ჭდის დადება"
@@ -13937,9 +13848,6 @@
       "Same inbox, shorter email address": [
         "იგივე საფოსტო ყუთი, უფრო მოკლე ელფოსტის მისამართი"
       ],
-      "Save time with email filters": [
-        "დაზოგეთ დრო ელფოსტის ფილტრებით"
-      ],
       "Schedule now, send later": [
         "დაგეგმეთ ახლა, გააგზავნეთ მოგვიანებით"
       ],
@@ -14011,9 +13919,6 @@
       ],
       "Set up your organization": [
         "მოირგეთ თქვენი ორგანიზაცია"
-      ],
-      "Set your own schedule": [
-        "თქვენი განრიგის დაყენება"
       ],
       "Settings": [
         "მორგება"
@@ -14088,9 +13993,6 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
       ],
-      "Unlock contacts groups": [
-        "განბლოკეთ კონტაქტის ჯგუფები"
-      ],
       "Unsubscribe": [
         "გამოწერის გაუქმება"
       ],
@@ -14120,9 +14022,6 @@
       ],
       "VPN explained": [
         "VPN-ის ახსნა"
-      ],
-      "Want to snooze any time?": [
-        "გნებავთ, დროებით დაადუმოთ ნებისმიერ დროს?"
       ],
       "Warning": [
         "გაფრთხილება"

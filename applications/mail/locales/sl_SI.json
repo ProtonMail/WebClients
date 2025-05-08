@@ -546,9 +546,6 @@
       "Generate text": [
         "Ustvari besedilo"
       ],
-      "Get ${ BRAND_NAME } Duo": [
-        "Pridobi ${ BRAND_NAME } Duo"
-      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Pridobite ${ planName } za ${ priceCoupon }."
       ],
@@ -557,12 +554,6 @@
       ],
       "Get in touch": [
         "Oglasite se nam!"
-      ],
-      "Get it": [
-        "Razumem"
-      ],
-      "Get it from only ${ addonPriceWithCurrency } /month": [
-        "Pridobite ga lahko že za ${ addonPriceWithCurrency } /mesec"
       ],
       "Get started": [
         "Začnite"
@@ -870,6 +861,9 @@
       "Move to archive": [
         "Premakni v arhiv"
       ],
+      "Move to folder": [
+        "Premakni v mapo"
+      ],
       "Move to inbox": [
         "Premakni v prejeto"
       ],
@@ -1143,11 +1137,11 @@
       "Select ${ planTitle }": [
         "Izberite ${ planTitle }"
       ],
-      "Select All": [
-        "Izberi vse"
-      ],
       "Select all": [
         "Označi vse"
+      ],
+      "Select All": [
+        "Izberi vse"
       ],
       "Select all messages": [
         "Izberi vsa sporočila"
@@ -1302,9 +1296,6 @@
       "Start setup": [
         "Začni nastavitev"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Od ${ priceUnlimited }"
-      ],
       "Stay": [
         "Ostani"
       ],
@@ -1358,6 +1349,12 @@
       ],
       "Trust": [
         "Zaupaj"
+      ],
+      "Trust key": [
+        "Zaupaj ključu",
+        "Zaupaj ključema",
+        "Zaupaj ključem",
+        "Zaupaj ključem"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -1424,9 +1421,6 @@
       ],
       "Upgrade Now": [
         "Nadgradi zdaj"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Nadgradite na ${ BRAND_NAME } Unlimited"
       ],
       "Upload and share files": [
         "Naloži in deli datoteke"
@@ -3711,9 +3705,6 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Brisanje stikov … To lahko traja nekaj minut. Ko se postopek konča, lahko zaprete to okno."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Zasnovan za uporabnike, ki iščejo večjo zaščito svojih računov."
-      ],
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "Ne želite poslati svojega e-poštnega sporočila zdaj? Načrtujte pošiljanje na točno določen čas."
       ],
@@ -3740,9 +3731,6 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe."
-      ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Zagotovite si neomejeno število vzdevkov in 500 GB prostora za shranjevanje z ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Pomagajte svoji ekipi varno shranjevati gesla za občutljive poslovne informacije in informacije o strankah."
@@ -3780,9 +3768,6 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Nastavite način obnovitve, da preprečite izgubo dostopa do svojega računa."
       ],
-      "Starting from ${ price }": [
-        "Od ${ price }"
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Če želite še naprej uporabljati pisnega pomočnika, ga dodajte v svojo naročnino."
       ],
@@ -3798,26 +3783,8 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Vključite zaščito pred e-poštnimi sledilniki, da oglaševalcem in ostalim preprečite zbiranje podatkov o vaši lokaciji in spletni dejavnosti."
       ],
-      "Unlock custom message scheduling and more premium features when you upgrade.": [
-        "Z nadgradnjo odklenete razporejanje sporočil po meri in več premijskih funkcij."
-      ],
-      "Unlock custom snooze times and more premium features when you upgrade.": [
-        "Z nadgradnjo odklenete čase dremeža po meri in več premijskih funkcij."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Z nadgradnjo omogočite krajše e-poštne naslove in druge premijske funkcije."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Z nadgradnjo odklenete neomejeno število filtrov, s katerimi uredite vaš nabiralnik in še več drugih premijskih funkcij."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Z nadgradnjo odklenete neomejeno število map, oznak in več premijskih funkcij."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Nadgradite, da dobite ${ activatePmUser } za krajši in lažje zapomnljiv e-poštni naslov poleg trenutnega."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Nadgradite svoj račun, da aktivirate ${ PROTON_SENTINEL_NAME }, našo vrhunsko varnostno rešitev, ki temelji na umetni inteligenci, z namensko neprekinjeno strokovno podporo."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "Uporabite ${ MAIL_APP_NAME } za prijavo v spletne storitve, saj za razliko od drugih ponudnikov e-pošte nikoli ne bomo sledili vašim podatkom in jih delili s tretjimi osebami."
@@ -5898,8 +5865,14 @@
       "Import from ${ provider }": [
         "Uvoz iz ${ provider }"
       ],
-      "Other": [
-        "Drugo"
+      "Import from Google": [
+        "Uvoz iz Googlovega računa"
+      ],
+      "Import from Outlook": [
+        "Uvoz iz Outlooka"
+      ],
+      "Import from Yahoo": [
+        "Uvoz iz Yahoo"
       ]
     },
     "Import warning": {
@@ -6084,18 +6057,6 @@
         "${ n } neprebrana pogovora",
         "${ n } neprebrani pogovori",
         "${ n } neprebranih pogovorov"
-      ],
-      "${ numberOfImageTrackers } email tracker blocked": [
-        "${ numberOfImageTrackers } blokiran e-poštni sledilnik",
-        "${ numberOfImageTrackers } blokirana e-poštna sledilnika",
-        "${ numberOfImageTrackers } blokirani e-poštni sledilniki",
-        "${ numberOfImageTrackers } blokiranih e-poštnih sledilnikov"
-      ],
-      "${ numberOfImageTrackers } tracker blocked": [
-        "${ numberOfImageTrackers } blokiran sledilnik",
-        "${ numberOfImageTrackers } blokirana sledilnika",
-        "${ numberOfImageTrackers } blokirani sledilniki",
-        "${ numberOfImageTrackers } blokiranih sledilnikov"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } očiščena povezava",
@@ -6453,6 +6414,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Okrepite prepoznavnost blagovne znamke vaše organizacije in ustvarite doslednejšo spletno izkušnjo za svoje uporabnike."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Prenesite svoja sporočila, stike in koledarje v storitev ${ BRAND_NAME }"
       ],
       "Browse privately and access blocked content.": [
         "Brskajte zasebno in dostopajte do blokirane vsebine."
@@ -6925,6 +6889,9 @@
       "Initializing…": [
         "Zagon …"
       ],
+      "Insert image": [
+        "Vstavi sliko"
+      ],
       "Insert link": [
         "Vstavi povezavo"
       ],
@@ -7162,6 +7129,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Enega ali več vaših zaupanja vrednih ključev je njihov lastnik označil kot \"ogroženo\". Priporočamo, da tem ključem \"ne zaupate\"."
       ],
+      "One time import": [
+        "Enkraten uvoz"
+      ],
       "Open shortcut cheat sheet": [
         "Odpri seznam bližnjic"
       ],
@@ -7384,9 +7354,6 @@
       "Seems like you are all caught up for now": [
         "Videti je, da ste zaenkrat na tekočem."
       ],
-      "Select a service provider to start": [
-        "Za začetek izberite ponudnika storitve"
-      ],
       "Select all ${ elementsCount } in ${ location }": [
         "Izberite vsa ${ elementsCount } v ${ location }",
         "Izberite oba ${ elementsCount } v ${ location }",
@@ -7485,6 +7452,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začnite ga deliti s stiki in ga uporabljajte za spletne storitve."
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Uporabite krajšo in lažjo različico svojega e-poštnega naslova."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Ostanite povezani brez težav tako, da omogočite naslednje nastavitve VPN:"
@@ -7638,6 +7608,9 @@
       ],
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "Namenjen je kot pripomoček pri pisanju. Preverite točnost predlaganega besedila. ${ learnMoreResult }"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "To je zdaj vaš naslov ${ defaultEmailAddress } za pošiljanje novih sporočil."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ta povezava vodi na spletno mesto, ki bi lahko poskušalo ukrasti vaše podatke, kot so gesla in podatki o plačilnih karticah."
@@ -8591,11 +8564,11 @@
       "Always move sender's emails": [
         "Vedno premakni pošiljateljeva sporočila"
       ],
-      "AND": [
-        "IN"
-      ],
       "And": [
         "In"
+      ],
+      "AND": [
+        "IN"
       ],
       "and": [
         "in"
@@ -8819,11 +8792,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ČE"
-      ],
       "If": [
         "Če"
+      ],
+      "IF": [
+        "ČE"
       ],
       "Import all messages": [
         "Uvozi vsa sporočila"
@@ -8933,14 +8906,14 @@
       "Optional": [
         "Neobvezno"
       ],
-      "OR": [
-        "ALI"
-      ],
       "or": [
         "ali"
       ],
       "Or": [
         "Ali"
+      ],
+      "OR": [
+        "ALI"
       ],
       "Original link": [
         "Izvorna povezava"
@@ -9280,6 +9253,9 @@
       ],
       "Folders": [
         "Mape"
+      ],
+      "here": [
+        "tukaj"
       ],
       "How to add users": [
         "Kako dodati uporabnike"
@@ -9825,29 +9801,6 @@
         "Srednja hitrost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Get ${ planTitle }": [
-        "Pridobite ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začnite za ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
-      ],
-      "Upgrade to ${ planName }": [
-        "Nadgradi na ${ planName }."
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Izbriši račun"
@@ -9869,6 +9822,14 @@
       ],
       "Switch plan": [
         "Zamenjaj paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Get ${ planTitle }": [
+        "Pridobite ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -10043,9 +10004,6 @@
       "Auto-delete Spam and Trash": [
         "Samodejno brisanje neželene pošte in smeti"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Samodejno briši sporočila iz neželene pošte in iz smetnjaka"
-      ],
       "Auto-reply": [
         "Samodejni odgovor"
       ],
@@ -10087,9 +10045,6 @@
       ],
       "Custom fields": [
         "Polja po meri"
-      ],
-      "Custom snooze time": [
-        "Čas dremeža po meri"
       ],
       "Custom workspace branding": [
         "Prilagodite delovni prostor svojemu podjetju"
@@ -10232,12 +10187,6 @@
       "Schedule and snooze emails for any time": [
         "Načrtujte pošiljanje ali prestavite dostavo za čas po meri"
       ],
-      "Schedule messages at any time": [
-        "Načrtujte sporočila kadar koli"
-      ],
-      "Search message content": [
-        "Išči po vsebini sporočila"
-      ],
       "Secure Core servers": [
         "Strežniki Secure Core"
       ],
@@ -10373,9 +10322,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Ustvarite več e-poštnih naslovov za vaše spletne identitete, npr. JanezNakupi@${ domain } za nakupovalne račune in JanezNovice@${ domain2 } za naročnine na novice."
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Sporočila pošljite v dremež in prejmite opomnik, ko želite"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Prostor za shranjevanje si delijo ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } in ${ DRIVE_APP_NAME }."
@@ -13438,9 +13384,6 @@
       "Action all messages": [
         "Udejanji za vsa sporočila"
       ],
-      "Activate @pm.me": [
-        "Aktiviraj @pm.me"
-      ],
       "Add a custom logo": [
         "Dodaj logotip po meri"
       ],
@@ -13539,9 +13482,6 @@
       ],
       "Change password": [
         "Spremeni geslo"
-      ],
-      "Clear out the junk": [
-        "Očistite navlako"
       ],
       "Clearing data": [
         "Čiščenje podatkov"
@@ -13774,9 +13714,6 @@
       "Forward": [
         "Posreduj"
       ],
-      "Get advanced protection": [
-        "Pridobite napredno zaščito"
-      ],
       "Get more from your VPN": [
         "Izkoristite več od svoje VPN"
       ],
@@ -13851,9 +13788,6 @@
       ],
       "Invalid verification code": [
         "Neveljavna koda za preverjanje"
-      ],
-      "Keep your inbox organized": [
-        "Imejte urejen poštni predal"
       ],
       "Label as": [
         "Označi kot"
@@ -14098,9 +14032,6 @@
       "Same inbox, shorter email address": [
         "Isti nabiralnik, krajši e-poštni naslov"
       ],
-      "Save time with email filters": [
-        "Prihranite čas z e-poštnimi filtri"
-      ],
       "Schedule now, send later": [
         "Načrtujte zdaj, pošljite pozneje"
       ],
@@ -14172,9 +14103,6 @@
       ],
       "Set up your organization": [
         "Nastavite svojo organizacijo"
-      ],
-      "Set your own schedule": [
-        "Nastavite svoj urnik."
       ],
       "Settings": [
         "Nastavitve"
@@ -14251,9 +14179,6 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Vklopi ${ DARK_WEB_MONITORING_NAME }"
       ],
-      "Unlock contacts groups": [
-        "Odkleni skupine stikov."
-      ],
       "Unsubscribe": [
         "Odjavi se"
       ],
@@ -14283,9 +14208,6 @@
       ],
       "VPN explained": [
         "Pojasnilo o VPN"
-      ],
-      "Want to snooze any time?": [
-        "Želite dremež kadar koli?"
       ],
       "Warning": [
         "Opozorilo"

@@ -519,17 +519,8 @@
       "Generate text": [
         "Згенерувати текст"
       ],
-      "Get ${ BRAND_NAME } Duo": [
-        "Отримати ${ BRAND_NAME } Duo"
-      ],
       "Get in touch": [
         "Зв'яжіться з нами"
-      ],
-      "Get it": [
-        "Отримати"
-      ],
-      "Get it from only ${ addonPriceWithCurrency } /month": [
-        "Отримайте його лише за ${ addonPriceWithCurrency } /місяць"
       ],
       "Get started": [
         "Розпочнімо"
@@ -794,6 +785,9 @@
       ],
       "Move to archive": [
         "Перемістити до архіву"
+      ],
+      "Move to folder": [
+        "Перемістити до теки"
       ],
       "Move to inbox": [
         "Перемістити до вхідних"
@@ -1065,10 +1059,10 @@
       "Select ${ planTitle }": [
         "Оберіть ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Вибрати все"
       ],
-      "Select all": [
+      "Select All": [
         "Вибрати все"
       ],
       "Select all messages": [
@@ -1206,9 +1200,6 @@
       "Start setup": [
         "Почати налаштування"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Починаючи з ${ priceUnlimited }"
-      ],
       "Stay": [
         "Залишитися"
       ],
@@ -1259,6 +1250,12 @@
       ],
       "Trust": [
         "Довіряти"
+      ],
+      "Trust key": [
+        "Довіряти ключу",
+        "Довіряти ключам",
+        "Довіряти ключам",
+        "Довіряти ключам"
       ],
       "Trust public key": [
         "Довіряти відкритому ключу"
@@ -1322,9 +1319,6 @@
       ],
       "Upgrade Now": [
         "Передплатити"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Оновити до ${ BRAND_NAME } Необмежено"
       ],
       "Upload picture": [
         "Вивантажити зображення"
@@ -3547,9 +3541,6 @@
       "Also included": [
         "Також включено"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Автоматично видаляйте спам і видалені повідомлення та розблокуйте більше преміумфункцій при покращенні."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Автоматично очищати листи, що переміщені в Кошик і Спам більше ніж 30 днів тому."
       ],
@@ -3565,9 +3556,6 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Видалення контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Призначений для користувачів, які шукають посилений захист для своїх облікових записів."
-      ],
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "Не бажаєте відправити лист просто зараз? Заплануйте відправлення на потрібний час."
       ],
@@ -3579,9 +3567,6 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Отримуйте сповіщення, якщо ваш пароль або інші дані отримали витік зі стороннього сервісу."
-      ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Отримайте необмежену кількість псевдонімів і 500 ГБ сховища з ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Схоже, що список контактів, який ви імпортуєте, містить групи. Перегляньте, як ці групи повинні бути імпортовані."
@@ -3604,9 +3589,6 @@
       "No labels": [
         "Немає міток"
       ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Заощаджуйте час, відсилаючи електронні листи всім одночасно за допомогою груп контактів. Розблокуйте ці та інші преміумфункції під час покращення."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Передплатіть тарифний план, щоб відокремити різні аспекти свого життя за допомогою декількох адрес електронної пошти та отримати доступ до інших преміумфункцій."
       ],
@@ -3615,9 +3597,6 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Налаштуйте спосіб відновлення, щоб запобігти втраті доступу до облікового запису."
-      ],
-      "Starting from ${ price }": [
-        "Починаючи з ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Щоб продовжувати користуватися помічником з написання, додайте його до своєї передплати."
@@ -3637,26 +3616,8 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Увімкніть захист від стеження для електронної пошти, щоб рекламодавці та сторонні служби не відстежували ваше розташування й активність в інтернеті."
       ],
-      "Unlock custom message scheduling and more premium features when you upgrade.": [
-        "Розблокуйте власний планувальник повідомлень та більше преміумфункцій при оновленні."
-      ],
-      "Unlock custom snooze times and more premium features when you upgrade.": [
-        "Розблокуйте власне відкладання й більше преміумфункцій при покращенні."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Передплатіть тарифний план і розблокуйте короткі адреси електронної пошти та інші преміальні функції."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Отримайте доступ до безмежної кількості фільтрів для впорядкування поштової скриньки, передплативши тарифний план."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Отримайте доступ до безмежної кількості тек, міток та інших преміумфункцій, передплативши тарифний план."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Оновіться, щоб отримати ${ activatePmUser } для коротшої, легкої для запам'ятовування адреси електронної пошти на додаток до вашої поточної."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Покращте свій обліковий запис, щоб активувати ${ PROTON_SENTINEL_NAME }, – наше найсучасніше рішення щодо безпеки на базі ШІ з експертною цілодобовою підтримкою."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "Використовуйте ${ MAIL_APP_NAME } , щоб увійти в онлайн-сервіси, на відміну від інших email-провайдерів, ми ніколи не будемо відстежувати дані та обмінюватися ними з третіми особами."
@@ -5733,9 +5694,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Імпорт з ${ provider }"
-      ],
-      "Other": [
-        "Інший"
       ]
     },
     "Import warning": {
@@ -5920,18 +5878,6 @@
         "${ n } непрочитані розмови",
         "${ n } непрочитаних розмов",
         "${ n } непрочитаних розмов"
-      ],
-      "${ numberOfImageTrackers } email tracker blocked": [
-        "Заблоковано ${ numberOfImageTrackers } поштовий вистежувач",
-        "Заблоковано ${ numberOfImageTrackers } поштові вистежувачі",
-        "Заблоковано ${ numberOfImageTrackers } поштових вистежувачів",
-        "Заблоковано ${ numberOfImageTrackers } поштових вистежувачів"
-      ],
-      "${ numberOfImageTrackers } tracker blocked": [
-        "Заблоковано ${ numberOfImageTrackers } вистежувач",
-        "Заблоковано ${ numberOfImageTrackers } вистежувачі",
-        "Заблоковано ${ numberOfImageTrackers } вистежувачів",
-        "Заблоковано ${ numberOfImageTrackers } вистежувачів"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "Очищено ${ numberOfUTMTrackers } посилання",
@@ -6702,9 +6648,6 @@
         "Ініціалізація…"
       ],
       "Insert image": [
-        "Вставити зображення",
-        "Вставити зображення",
-        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
@@ -7123,9 +7066,6 @@
       ],
       "Seems like you are all caught up for now": [
         "У вас немає листів"
-      ],
-      "Select a service provider to start": [
-        "Виберіть постачальника послуг, щоб розпочати"
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "Вибрати ${ elementsCount } в ${ location }",
@@ -8269,11 +8209,11 @@
       "Always move sender's emails": [
         "Завжди переміщувати е-пошту відправника"
       ],
-      "AND": [
-        "ТА"
-      ],
       "And": [
         "Та"
+      ],
+      "AND": [
+        "ТА"
       ],
       "and": [
         "та"
@@ -8491,11 +8431,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ЯКЩО"
-      ],
       "If": [
         "Якщо"
+      ],
+      "IF": [
+        "ЯКЩО"
       ],
       "Import all messages": [
         "Імпортувати всі повідомлення"
@@ -8605,14 +8545,14 @@
       "Optional": [
         "Необов'язково"
       ],
-      "OR": [
-        "АБО"
-      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
+      ],
+      "OR": [
+        "АБО"
       ],
       "Original link": [
         "Оригінальне посилання"
@@ -8928,6 +8868,9 @@
       ],
       "Folders": [
         "Теки"
+      ],
+      "here": [
+        "тут"
       ],
       "How to pay with Bitcoin?": [
         "Як оплатити за допомогою Bitcoin?"
@@ -9422,23 +9365,6 @@
         "Середня швидкість VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Отримати ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Розпочати з ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Видалити обліковий запис"
@@ -9460,6 +9386,14 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Отримати ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -9640,9 +9574,6 @@
       "Auto-delete Spam and Trash": [
         "Автоматичне видалення спаму та смітника"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Автоматичне видалення спаму та повідомлень зі смітника"
-      ],
       "Auto-reply": [
         "Автовідповідь"
       ],
@@ -9684,9 +9615,6 @@
       ],
       "Custom fields": [
         "Власні поля"
-      ],
-      "Custom snooze time": [
-        "Власний час відкладення"
       ],
       "Custom workspace branding": [
         "Брендинг робочого середовища"
@@ -9816,12 +9744,6 @@
       ],
       "Schedule and snooze emails for any time": [
         "Плануйте і відкладайте електронні листи на будь-який час"
-      ],
-      "Schedule messages at any time": [
-        "Заплануйте надсилання повідомлень в будь-який час"
-      ],
-      "Search message content": [
-        "Пошук вмісту повідомлень"
       ],
       "Secure Core servers": [
         "Сервери Secure Core"
@@ -9961,9 +9883,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Створіть різні адреси електронної пошти для ваших онлайн-профілів, наприклад, ArtemShopper@${ domain } для інтернет-магазинів, ArtemNews@${ domain2 } для підписки на новини"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Відкладайте повідомлення та отримуйте нагадування, коли захочете"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
@@ -12947,9 +12866,6 @@
       "Action all messages": [
         "Застосувати до всіх повідомлень"
       ],
-      "Activate @pm.me": [
-        "Активувати @pm.me"
-      ],
       "Add a custom logo": [
         "Додати власний логотип"
       ],
@@ -13039,9 +12955,6 @@
       ],
       "Change password": [
         "Змінити пароль"
-      ],
-      "Clear out the junk": [
-        "Приберіть усе зайве"
       ],
       "Clearing data": [
         "Стирання даних"
@@ -13241,9 +13154,6 @@
       "Forward": [
         "Переслати"
       ],
-      "Get advanced protection": [
-        "Отримайте розширений захист"
-      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Отримайте програми ${ appName[APP_NAME] }"
       ],
@@ -13297,9 +13207,6 @@
       ],
       "Invalid verification code": [
         "Недійсний код підтвердження"
-      ],
-      "Keep your inbox organized": [
-        "Упорядкуйте свою поштову скриньку"
       ],
       "Label as": [
         "Позначити міткою"
@@ -13520,9 +13427,6 @@
       "Same inbox, shorter email address": [
         "Та сама тека Вхідні, коротша адреса електронної пошти"
       ],
-      "Save time with email filters": [
-        "Заощаджуйте час за допомогою фільтрів електронної пошти"
-      ],
       "Schedule now, send later": [
         "Заплануйте зараз, надішліть пізніше"
       ],
@@ -13576,9 +13480,6 @@
       ],
       "Set recovery phrase": [
         "Встановити фразу відновлення"
-      ],
-      "Set your own schedule": [
-        "Налаштувати власний розклад"
       ],
       "Settings": [
         "Налаштування"
@@ -13640,9 +13541,6 @@
       "Trust public key?": [
         "Довіряти відкритому ключу?"
       ],
-      "Unlock contacts groups": [
-        "Розблокувати групи контактів"
-      ],
       "Unsubscribe": [
         "Відписатися"
       ],
@@ -13663,9 +13561,6 @@
       ],
       "Verifying your payment...": [
         "Триває перевірка платежу..."
-      ],
-      "Want to snooze any time?": [
-        "Хочете відкладати в будь-який час?"
       ],
       "Warning": [
         "Попередження"

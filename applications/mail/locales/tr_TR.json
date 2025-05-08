@@ -546,9 +546,6 @@
       "Generate text": [
         "Metin oluştur"
       ],
-      "Get ${ BRAND_NAME } Duo": [
-        "${ BRAND_NAME } Duo edinin"
-      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ priceCoupon } ödeyerek ${ planName } alın"
       ],
@@ -557,12 +554,6 @@
       ],
       "Get in touch": [
         "Bizimle görüşün"
-      ],
-      "Get it": [
-        "Alın"
-      ],
-      "Get it from only ${ addonPriceWithCurrency } /month": [
-        "${ addonPriceWithCurrency } /ay tutarla alın"
       ],
       "Get started": [
         "Başlayalım"
@@ -871,6 +862,9 @@
       "Move to archive": [
         "Arşivle"
       ],
+      "Move to folder": [
+        "Klasöre taşı"
+      ],
       "Move to inbox": [
         "Gelen kutusuna taşı"
       ],
@@ -1144,10 +1138,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } tarifesini seçin"
       ],
-      "Select All": [
+      "Select all": [
         "Tümünü seç"
       ],
-      "Select all": [
+      "Select All": [
         "Tümünü seç"
       ],
       "Select all messages": [
@@ -1303,9 +1297,6 @@
       "Start setup": [
         "Kurulumu başlat"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "${ priceUnlimited } tutarından başlayan fiyatlarla"
-      ],
       "Stay": [
         "Kal"
       ],
@@ -1364,7 +1355,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1431,9 +1423,6 @@
       ],
       "Upgrade Now": [
         "Şimdi yükselt"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } Unlimited tarifesine yükseltin"
       ],
       "Upload and share files": [
         "Dosyaları yükleyin ve paylaşın"
@@ -3712,9 +3701,6 @@
       "Also included": [
         "Ayrıca şunlar da bulunur"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Tarifenizi yükselterek, çöp kutusundaki ve istenmeyen iletilerin otomatik olarak silinmesi gibi ücretli pek çok özelliğe erişebilirsiniz."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Çöp ve İstenmeyen klasörlerine konmuş 30 günden eski e-postaları otomatik olarak temizleyin."
       ],
@@ -3741,9 +3727,6 @@
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler siliniyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında bu pencereyi kapatabilirsiniz."
-      ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Hesapları için daha yüksek koruma isteyen kullanıcılara yönelik olarak tasarlanmıştır."
       ],
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "E-postanızı hemen göndermek istemiyor musunuz? Uygun zamanda gönderin."
@@ -3778,9 +3761,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmetten açığa çıkarsa bildirim alın."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "${ PLAN_NAMES[PLANS.BUNDLE] } ile sınırsız takma ad ve 500 GB depolama alanı edinin."
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ekibinizin önemli kuruluş ve müşteri bilgilerine ait parolaları güvenli bir şekilde kaydetmesini sağlayın."
       ],
@@ -3806,9 +3786,6 @@
       "No labels": [
         "Henüz bir etiket yok"
       ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Kişi gruplarını kullanarak herkese aynı anda e-posta gönderin ve zaman kazanın. Tarifenizi yükselterek bunun gibi diğer ücretli özelliklere erişin."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Birkaç e-posta adresi kullanarak hayatınızın farklı yönlerini ayırın ve tarifenizi yükselterek daha fazla ücretli özelliğe erişin."
       ],
@@ -3823,9 +3800,6 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Paylaşılan takvimler ile zamanlamayı eşitlemeyi ve planlamayı kolaylaştırın."
-      ],
-      "Starting from ${ price }": [
-        "${ price } tutarından başlayan fiyatlarla"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Yazma yardımcısını kullanmayı sürdürmek için aboneliğinize ekleyin."
@@ -3848,26 +3822,8 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Reklam verenlerin ve diğer kişilerin konumunuzu ve çevrim içi etkinliğinizi izlemesini önlemek için e-posta izleyici korumasını açın."
       ],
-      "Unlock custom message scheduling and more premium features when you upgrade.": [
-        "Tarifenizi yükselterek özel ileti gönderim zamanlaması gibi pek çok ücretli özelliğe erişin."
-      ],
-      "Unlock custom snooze times and more premium features when you upgrade.": [
-        "Tarifenizi yükselterek özel ileti erteleme zamanlaması gibi pek çok ücretli özelliğe erişin."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Tarifenizi yükselterek daha kısa e-posta adreslerine ve diğer ücretli özelliklere erişin."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Tarifenizi yükselterek gelen kutunuzu düzenleyecek sınırsız sayıda süzgeç gibi pek çok ücretli özelliğe erişin."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Tarifenizi yükselterek sınırsız sayıda klasör ve etiket gibi pek çok ücretli özelliğe erişin."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Var olan e-posta adresinize ek olarak, daha kısa ve hatırlaması kolay ${ activatePmUser } e-posta adresini edinin."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "${ PROTON_SENTINEL_NAME }, 7/24 size özel uzman desteği olan, yapay zeka temelli son teknoloji güvenlik çözümümüzü kullanmak için tarifenizi yükseltin."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "Çevrim içi hizmetlerde oturum açmak için ${ MAIL_APP_NAME } adresini kullanın. Diğer e-posta hizmeti sağlayıcılarının aksine, verilerinizi asla izlemeyeceğiz ve üçüncü taraflarla paylaşmayacağız."
@@ -5928,8 +5884,17 @@
       "Import from ${ provider }": [
         "${ provider } üzerinden içe aktar"
       ],
-      "Other": [
-        "Diğer"
+      "Import from Google": [
+        "Google'dan içe aktar"
+      ],
+      "Import from other": [
+        "Diğerlerinden içe aktar"
+      ],
+      "Import from Outlook": [
+        "Outlook'tan içe aktar"
+      ],
+      "Import from Yahoo": [
+        "Yahoo'dan içe aktar"
       ]
     },
     "Import warning": {
@@ -6069,14 +6034,6 @@
       "${ n } unread conversation": [
         "${ n } okunmamış yazışma",
         "${ n } okunmamış yazışma"
-      ],
-      "${ numberOfImageTrackers } email tracker blocked": [
-        "${ numberOfImageTrackers } e-posta izleyici engellendi",
-        "${ numberOfImageTrackers } e-posta izleyici engellendi"
-      ],
-      "${ numberOfImageTrackers } tracker blocked": [
-        "${ numberOfImageTrackers } izleyici engellendi",
-        "${ numberOfImageTrackers } izleyici engellendi"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } bağlantı temizlendi",
@@ -6309,6 +6266,9 @@
       "and": [
         "ve"
       ],
+      "and more.": [
+        "ve daha fazlası."
+      ],
       "Another tip will be displayed next time you open Mail": [
         "Mail uygulamasını bir sonraki açışınızda başka bir ipucu görüntülenecek"
       ],
@@ -6407,6 +6367,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha kararlı bir çevrim içi deneyim sağlayın."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Mesajlarınızı, kişilerinizi ve takvimlerinizi ${ BRAND_NAME }'e taşıyın."
       ],
       "Browse privately and access blocked content.": [
         "Gizliğinizi koruyarak gezinin ve engellenen içeriklere erişin."
@@ -6876,8 +6839,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7122,6 +7084,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilen anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
       ],
+      "One time import": [
+        "Tek seferlik içe aktarma"
+      ],
       "Open shortcut cheat sheet": [
         "Kısayol rehberini aç"
       ],
@@ -7357,9 +7322,6 @@
       ],
       "Seems like you are all caught up for now": [
         "Şimdilik her şeyi okumuşsunuz gibi görünüyor"
-      ],
-      "Select a service provider to start": [
-        "Başlamak için bir hizmet sağlayıcı seçin"
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "${ location } içindeki ${ elementsCount } ögeyi seç",
@@ -8563,11 +8525,11 @@
       "Always move sender's emails": [
         "Göndericinin e-postaları şuraya taşınsın"
       ],
-      "AND": [
-        "VE"
-      ],
       "And": [
         "Ve"
+      ],
+      "AND": [
+        "VE"
       ],
       "and": [
         "ve"
@@ -8791,11 +8753,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "EĞER"
-      ],
       "If": [
         "Eğer"
+      ],
+      "IF": [
+        "EĞER"
       ],
       "Import all messages": [
         "Tüm iletileri içe aktar"
@@ -8911,14 +8873,14 @@
       "Optional": [
         "İsteğe bağlı"
       ],
-      "OR": [
-        "VEYA"
-      ],
       "or": [
         "veya"
       ],
       "Or": [
         "Veya"
+      ],
+      "OR": [
+        "VEYA"
       ],
       "Original link": [
         "Özgün bağlantı"
@@ -9261,6 +9223,9 @@
       ],
       "Folders": [
         "Klasörler"
+      ],
+      "here": [
+        "buradan"
       ],
       "How to add users": [
         "Kullanıcılar nasıl eklenir"
@@ -9796,29 +9761,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } edinin"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon } ile başlayın"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } tutarından başlayan fiyatlarla"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -9840,6 +9782,14 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle } edinin"
       ]
     },
     "new_plans: feature": {
@@ -9992,9 +9942,6 @@
       "Auto-delete Spam and Trash": [
         "İstenmeyenleri ve çöpü otomatik olarak boşaltma"
       ],
-      "Auto-delete spam and trashed messages": [
-        "İstenmeyen ve çöp kutularındaki iletileri otomatik olarak silin"
-      ],
       "Auto-reply": [
         "Otomatik yanıtlama"
       ],
@@ -10036,9 +9983,6 @@
       ],
       "Custom fields": [
         "Özel alanlar"
-      ],
-      "Custom snooze time": [
-        "Özel erteleme zamanı"
       ],
       "Custom workspace branding": [
         "Özel çalışma alanı markası"
@@ -10179,12 +10123,6 @@
       "Schedule and snooze emails for any time": [
         "İletileri istediğiniz zamana planlayın veya erteleyin"
       ],
-      "Schedule messages at any time": [
-        "İletileri istediğiniz zamanda gönderin"
-      ],
-      "Search message content": [
-        "İleti içeriğinde arama"
-      ],
       "Secure Core servers": [
         "Secure Core sunucuları"
       ],
@@ -10321,9 +10259,6 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Çevrim içi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain2 } gibi takma adlar oluşturabilirsiniz"
       ],
-      "Snooze messages and get reminded when you want": [
-        "İletileri erteleyin ve istediğiniz zaman yeniden görün"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır"
       ]
@@ -10426,6 +10361,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "${ priceLine }'dan başlayan fiyatlarla"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "İlk ay için ${ priceCoupon } indirimli tutar uygulanır. Ardından, otomatik olarak ${ priceLine } tutarla yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
@@ -13409,9 +13347,6 @@
       "Action all messages": [
         "Tüm iletilere uygula"
       ],
-      "Activate @pm.me": [
-        "@pm.me adresini kullanıma al"
-      ],
       "Add a custom logo": [
         "Özel logo ekle"
       ],
@@ -13508,9 +13443,6 @@
       ],
       "Change password": [
         "Parolayı değiştir"
-      ],
-      "Clear out the junk": [
-        "Çöpleri temizleyin"
       ],
       "Clearing data": [
         "Veriler temizleniyor"
@@ -13736,9 +13668,6 @@
       "Forward": [
         "İlet"
       ],
-      "Get advanced protection": [
-        "Gelişmiş koruma edinin"
-      ],
       "Get more from your VPN": [
         "VPN hizmetinizden fazlasını alın"
       ],
@@ -13811,9 +13740,6 @@
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
-      ],
-      "Keep your inbox organized": [
-        "Gelen kutunuzu düzenli şekilde tutun"
       ],
       "Label as": [
         "Etiketle"
@@ -14058,9 +13984,6 @@
       "Same inbox, shorter email address": [
         "Aynı gelen kutusu, daha kısa e-posta adresi"
       ],
-      "Save time with email filters": [
-        "E-posta süzgeçleri ile zaman kazanın"
-      ],
       "Schedule now, send later": [
         "Şimdi zamanlayın sonra gönderin"
       ],
@@ -14132,9 +14055,6 @@
       ],
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
-      ],
-      "Set your own schedule": [
-        "Kendi zamanlamanızı yapın"
       ],
       "Settings": [
         "Ayarlar"
@@ -14209,9 +14129,6 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
       ],
-      "Unlock contacts groups": [
-        "Kişi gruplarının kilidini açın"
-      ],
       "Unsubscribe": [
         "Abonelikten ayrıl"
       ],
@@ -14241,9 +14158,6 @@
       ],
       "VPN explained": [
         "VPN nedir"
-      ],
-      "Want to snooze any time?": [
-        "İstediğiniz zamana ertelemek ister misiniz?"
       ],
       "Warning": [
         "Uyarı"
