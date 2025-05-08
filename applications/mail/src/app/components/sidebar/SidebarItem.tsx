@@ -209,6 +209,7 @@ const SidebarItem = ({
                     }
                     right={
                         <LocationAside
+                            labelID={labelID}
                             unreadCount={needsTotalDisplay ? totalMessagesCount : unreadCount}
                             weak={labelID !== MAILBOX_LABEL_IDS.INBOX}
                             refreshing={refreshing}
