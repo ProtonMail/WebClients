@@ -12,8 +12,6 @@ import { type SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry
 import useScrollToTop from 'proton-mail/components/list/useScrollToTop';
 import { ROUTE_ELEMENT } from 'proton-mail/constants';
 import MailboxContainerPlaceholder from 'proton-mail/containers/mailbox/MailboxContainerPlaceholder';
-import { usePermanentDelete } from 'proton-mail/hooks/actions/delete/usePermanentDelete';
-import { useMarkAs } from 'proton-mail/hooks/actions/markAs/useMarkAs';
 import { useMailCommander } from 'proton-mail/hooks/commander/useMailCommander';
 import { type ElementsStructure, useGetElementsFromIDs } from 'proton-mail/hooks/mailbox/useElements';
 import { useMailboxFocus } from 'proton-mail/hooks/mailbox/useMailboxFocus';
@@ -52,6 +50,13 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
         handleCheckOnlyOne,
         handleCheckRange,
         handleCheckAll,
+        deleteAllModal,
+        deleteSelectionModal,
+        selectAllMarkModal,
+        moveToSpamModal,
+        moveSnoozedModal,
+        moveScheduledModal,
+        selectAllMoveModal,
     } = actions;
 
     const listRef = useRef<HTMLDivElement>(null);
@@ -73,8 +78,6 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
     const breakpoints = useActiveBreakpoint();
 
     const [commanderModalProps, showCommander, commanderRender] = useModalState();
-    const { deleteSelectionModal, deleteAllModal } = usePermanentDelete(labelID);
-    const { selectAllMarkModal } = useMarkAs();
     const welcomeFlag = useWelcomeFlag([labelID, selectedIDs.length]);
 
     const [folders] = useFolders();
@@ -106,13 +109,13 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
         moveToFolder,
         selectAll,
         elementRef,
-        moveScheduledModal,
-        moveSnoozedModal,
-        moveToSpamModal,
-        deleteSelectionModal: deleteSelectionShortcutModal,
-        deleteAllModal: deleteAllShortcutModal,
-        selectAllMoveModal,
-        selectAllMarkModal: markAllModal,
+        moveScheduledModal: hotkeyMoveScheduledModal,
+        moveSnoozedModal: hotkeyMoveSnoozedModal,
+        moveToSpamModal: hotkeyMoveToSpamModal,
+        deleteSelectionModal: hotkeyDeleteSelectionShortcutModal,
+        deleteAllModal: hotkeyDeleteAllShortcutModal,
+        selectAllMoveModal: hotkeySelectAllMoveModal,
+        selectAllMarkModal: hotkeyMarkAllModal,
     } = useMailboxHotkeys(
         {
             labelID,
@@ -250,16 +253,20 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
                 </Switch>
             </section>
             {commanderRender ? <Commander list={commanderList} {...commanderModalProps} /> : null}
-            {deleteSelectionModal}
             {deleteAllModal}
-            {deleteSelectionShortcutModal}
-            {deleteAllShortcutModal}
-            {moveScheduledModal}
-            {moveSnoozedModal}
             {moveToSpamModal}
+            {moveSnoozedModal}
+            {moveScheduledModal}
             {selectAllMoveModal}
             {selectAllMarkModal}
-            {markAllModal}
+            {deleteSelectionModal}
+            {hotkeyMarkAllModal}
+            {hotkeyMoveToSpamModal}
+            {hotkeyMoveSnoozedModal}
+            {hotkeyMoveScheduledModal}
+            {hotkeySelectAllMoveModal}
+            {hotkeyDeleteAllShortcutModal}
+            {hotkeyDeleteSelectionShortcutModal}
         </div>
     );
 };
