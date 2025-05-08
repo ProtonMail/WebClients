@@ -369,6 +369,9 @@
       "Get the apps": [
         "Uygulamaları edinin"
       ],
+      "Get the writing assistant": [
+        "Yazma yardımcısını edinin"
+      ],
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
@@ -735,9 +738,6 @@
       "Start import": [
         "İçe aktarmayı başlat"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "${ priceUnlimited } tutarından başlayan fiyatlarla"
-      ],
       "Stay": [
         "Kal"
       ],
@@ -797,9 +797,6 @@
       ],
       "Upgrade now": [
         "Şimdi yükselt"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } Unlimited tarifesine yükseltin"
       ],
       "Upload and share files": [
         "Dosyaları yükleyin ve paylaşın"
@@ -2341,11 +2338,6 @@
         "Süresi geçmiş fatura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch içe aktarma yardımcısını kullanın"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME }, ${ DRIVE_APP_NAME } ile diğer kişilerle güvenli, şifrelenmiş bir ortamda birlikte çalışın."
@@ -2380,9 +2372,6 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler siliniyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında bu pencereyi kapatabilirsiniz."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Hesapları için daha yüksek koruma isteyen kullanıcılara yönelik olarak tasarlanmıştır."
-      ],
       "Easily access your email and calendar on desktop and mobile.": [
         "E-postanıza ve takviminize bilgisayarınızdan ve mobil aygıtınızdan kolayca erişin."
       ],
@@ -2410,9 +2399,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmetten açığa çıkarsa bildirim alın."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "${ PLAN_NAMES[PLANS.BUNDLE] } ile sınırsız takma ad ve 500 GB depolama alanı edinin."
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ekibinizin önemli kuruluş ve müşteri bilgilerine ait parolaları güvenli bir şekilde kaydetmesini sağlayın."
       ],
@@ -2424,9 +2410,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler birleştiriliyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Kişi gruplarını kullanarak herkese aynı anda e-posta gönderin ve zaman kazanın. Tarifenizi yükselterek bunun gibi diğer ücretli özelliklere erişin."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Veri kaybını önlemek için bir veri kurtarma yöntemi belirleyin."
@@ -2455,9 +2438,6 @@
       "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
         "Dosya paylaşmayı sürdürebilmek ve düzenleme erişimi sağlamak için ${ BRAND_NAME } ${ planName } tarifesine yükseltin"
       ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "${ PROTON_SENTINEL_NAME }, 7/24 size özel uzman desteği olan, yapay zeka temelli son teknoloji güvenlik çözümümüzü kullanmak için tarifenizi yükseltin."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
       ],
@@ -2481,6 +2461,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3917,8 +3902,17 @@
       "Import from ${ provider }": [
         "${ provider } üzerinden içe aktar"
       ],
-      "Other": [
-        "Diğer"
+      "Import from Google": [
+        "Google'dan içe aktar"
+      ],
+      "Import from other": [
+        "Diğerlerinden içe aktar"
+      ],
+      "Import from Outlook": [
+        "Outlook'tan içe aktar"
+      ],
+      "Import from Yahoo": [
+        "Yahoo'dan içe aktar"
       ]
     },
     "Import warning": {
@@ -4197,6 +4191,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Faturalama dönemi: ${ text }"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Mesajlarınızı, kişilerinizi ve takvimlerinizi ${ BRAND_NAME }'e taşıyın."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
@@ -4706,6 +4703,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilen anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
       ],
+      "One time import": [
+        "Tek seferlik içe aktarma"
+      ],
       "Only the people with the link and the password can access this file.": [
         "Bu dosyaya yalnızca bağlantıya ve parolaya sahip olan kişiler erişebilir."
       ],
@@ -4863,9 +4863,6 @@
       ],
       "Select a folder to move to.": [
         "Taşınacak bir klasör seçin."
-      ],
-      "Select a service provider to start": [
-        "Başlamak için bir hizmet sağlayıcı seçin"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, bir e-posta gönderilirken varsayılan olarak kullanılmasını istediğiniz e-posta biçimini seçin."
@@ -6520,23 +6517,11 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } tarifesine düşür"
       ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon } ile başlayın"
-      ],
       "Plans starting from ${ priceDrivePlus }": [
         "${ priceDrivePlus } tutarından başlayan tarifeler"
       ],
-      "Starting from ${ pricing }": [
-        "${ pricing } tutarından başlayan fiyatlarla"
-      ],
       "Upgrade": [
         "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
       ]
     },
     "new_plans: action": {
@@ -6712,9 +6697,6 @@
       "Auto-delete Spam and Trash": [
         "İstenmeyenleri ve çöpü otomatik olarak boşaltma"
       ],
-      "Auto-delete spam and trashed messages": [
-        "İstenmeyen ve çöp kutularındaki iletileri otomatik olarak silin"
-      ],
       "Auto-reply": [
         "Otomatik yanıtlama"
       ],
@@ -6756,9 +6738,6 @@
       ],
       "Custom fields": [
         "Özel alanlar"
-      ],
-      "Custom snooze time": [
-        "Özel erteleme zamanı"
       ],
       "Custom workspace branding": [
         "Özel çalışma alanı markası"
@@ -6899,12 +6878,6 @@
       "Schedule and snooze emails for any time": [
         "İletileri istediğiniz zamana planlayın veya erteleyin"
       ],
-      "Schedule messages at any time": [
-        "İletileri istediğiniz zamanda gönderin"
-      ],
-      "Search message content": [
-        "İleti içeriğinde arama"
-      ],
       "Secure Core servers": [
         "Secure Core sunucuları"
       ],
@@ -7041,9 +7014,6 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Çevrim içi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain2 } gibi takma adlar oluşturabilirsiniz"
       ],
-      "Snooze messages and get reminded when you want": [
-        "İletileri erteleyin ve istediğiniz zaman yeniden görün"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır"
       ]
@@ -7146,6 +7116,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "${ priceLine }'dan başlayan fiyatlarla"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "İlk ay için ${ priceCoupon } indirimli tutar uygulanır. Ardından, otomatik olarak ${ priceLine } tutarla yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
@@ -9537,9 +9510,6 @@
       "Exporting contacts": [
         "Kişileri dışa aktarma"
       ],
-      "Get advanced protection": [
-        "Gelişmiş koruma edinin"
-      ],
       "Get more from your VPN": [
         "VPN hizmetinizden fazlasını alın"
       ],
@@ -9792,9 +9762,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
-      ],
-      "Unlock contacts groups": [
-        "Kişi gruplarının kilidini açın"
       ],
       "Untitled document ${ date }": [
         "Adlandırılmamış belge ${ date }"
