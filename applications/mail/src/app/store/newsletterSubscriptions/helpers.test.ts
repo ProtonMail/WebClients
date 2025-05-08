@@ -137,6 +137,7 @@ describe('Mail subscription slice helpers', () => {
                 selectedSubscription: activeSubscription1,
                 filteredSubscriptions: [activeSubscription1, activeSubscription2],
                 loading: false,
+                selectedTab: 'active',
             });
         });
 
@@ -160,6 +161,7 @@ describe('Mail subscription slice helpers', () => {
                 selectedSubscription: activeSubscription,
                 filteredSubscriptions: [activeSubscription],
                 loading: false,
+                selectedTab: 'active',
             });
         });
 
@@ -183,6 +185,7 @@ describe('Mail subscription slice helpers', () => {
                 selectedSubscription: undefined,
                 filteredSubscriptions: [],
                 loading: false,
+                selectedTab: 'active',
             });
         });
 
@@ -204,6 +207,7 @@ describe('Mail subscription slice helpers', () => {
                 selectedSubscription: undefined,
                 filteredSubscriptions: [],
                 loading: false,
+                selectedTab: 'active',
             });
         });
     });

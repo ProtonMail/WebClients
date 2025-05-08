@@ -8,6 +8,7 @@ const selectedSub = (state: MailState) => state.newsletterSubscription.value?.se
 const filteredSubs = (state: MailState) => state.newsletterSubscription.value?.filteredSubscriptions;
 const counts = (state: MailState) => state.newsletterSubscription.value?.counts;
 const loading = (state: MailState) => state.newsletterSubscription.value?.loading;
+export const selectedTab = (state: MailState) => state.newsletterSubscription.value?.selectedTab;
 
 export const subscriptionListSelector = createSelector([subscriptions], (subs) => subs || []);
 export const loadingSelector = createSelector([loading], (loading) => loading || false);
