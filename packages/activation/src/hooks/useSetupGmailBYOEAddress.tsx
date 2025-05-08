@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { createBYOEAddress } from '@proton/account/addresses/actions';
+import { useUser } from '@proton/account/user/hooks';
 import {
     G_OAUTH_SCOPE_DEFAULT,
     G_OAUTH_SCOPE_MAIL_FULL_SCOPE,
@@ -16,10 +17,13 @@ import { getAllSync } from '@proton/activation/src/logic/sync/sync.selectors';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
+import { isAdmin } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/index';
 
 const useSetupGmailBYOEAddress = () => {
-    const hasAccessToBYOE = useFlag('InboxBringYourOwnEmail');
+    const [user] = useUser();
+    // Only admins can access to BYOE for now, this will change later
+    const hasAccessToBYOE = useFlag('InboxBringYourOwnEmail') && isAdmin(user);
     const isInMaintenance = useFlag('MaintenanceImporter');
     const easySwitchDispatch = useEasySwitchDispatch();
     const allSyncs = useEasySwitchSelector(getAllSync);

@@ -1,9 +1,11 @@
 import { c, msgid } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { MAX_SYNC_PAID_USER } from '@proton/activation/src/constants';
 import { Button } from '@proton/atoms';
 import { Prompt } from '@proton/components';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import { isAdmin } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/index';
 
 const getModalText = (hasAccessToBYOE: boolean) => {
@@ -27,7 +29,9 @@ const getModalText = (hasAccessToBYOE: boolean) => {
 interface Props extends ModalStateProps {}
 
 const ReachedLimitForwardingModal = ({ ...rest }: Props) => {
-    const hasAccessToBYOE = useFlag('InboxBringYourOwnEmail');
+    const [user] = useUser();
+    // Only admins can access to BYOE for now, this will change later
+    const hasAccessToBYOE = useFlag('InboxBringYourOwnEmail') && isAdmin(user);
 
     return (
         <Prompt
