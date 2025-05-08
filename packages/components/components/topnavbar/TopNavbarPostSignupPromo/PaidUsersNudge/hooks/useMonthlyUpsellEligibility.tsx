@@ -7,7 +7,7 @@ import useFeature from '@proton/features/useFeature';
 import { CYCLE, type PLANS } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
-import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
+import { hasMigrationDiscount, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -42,6 +42,7 @@ export const useMonthlyUpsellEligibility = ({ eligiblePlan, allowedApps, offerFl
     const isNextSubscriptionYearly = subscription.UpcomingSubscription?.Cycle === CYCLE.YEARLY;
 
     const isEligiblePlan = subscription.Plans?.some(({ Name }) => Name === eligiblePlan);
+    const isMigratedUser = hasMigrationDiscount(subscription);
 
     const isMobileSubscriber = isManagedExternally(subscription);
     const isInEligbilityWindow = isInWindow(differenceInDays(Date.now(), fromUnixTime(subscription.PeriodStart)));
@@ -52,6 +53,7 @@ export const useMonthlyUpsellEligibility = ({ eligiblePlan, allowedApps, offerFl
         isEligiblePlan &&
         isInEligbilityWindow &&
         !isMobileSubscriber &&
+        !isMigratedUser &&
         !isNextSubscriptionYearly
     );
 };
