@@ -83,71 +83,6 @@
     "Cancellation upsell": {
       "Cloud storage and sharing for large files": [
         "Cloud opslag en het delen van grote bestanden"
-      ],
-      "Secure personal and shared calendar": [
-        "Veilige persoonlijke en gedeelde agenda"
-      ]
-    },
-    "color": {
-      "carrot": [
-        "wortel"
-      ],
-      "cerise": [
-        "kers"
-      ],
-      "cobalt": [
-        "kobalt"
-      ],
-      "copper": [
-        "koper"
-      ],
-      "enzian": [
-        "gentiaan"
-      ],
-      "fern": [
-        "varen"
-      ],
-      "forest": [
-        "bos"
-      ],
-      "ocean": [
-        "oceaan"
-      ],
-      "olive": [
-        "olijf"
-      ],
-      "pacific": [
-        "stille oceaan"
-      ],
-      "pickle": [
-        "augurk"
-      ],
-      "pine": [
-        "den"
-      ],
-      "pink": [
-        "roze"
-      ],
-      "plum": [
-        "pruim"
-      ],
-      "purple": [
-        "paars"
-      ],
-      "reef": [
-        "rif"
-      ],
-      "sahara": [
-        "sahara"
-      ],
-      "slateblue": [
-        "leisteenblauw"
-      ],
-      "soil": [
-        "aarde"
-      ],
-      "strawberry": [
-        "aardbei"
       ]
     },
     "Country name": {
@@ -1244,14 +1179,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
       ],
-      "${ n } calendar": [
-        "${ n } agenda",
-        "${ n } agenda's"
-      ],
-      "${ n } calendar per user": [
-        "${ n } agenda per gebruiker",
-        "${ n } agenda's per gebruiker"
-      ],
       "${ n } custom email domain": [
         "${ n } aangepast e-maildomein",
         "${ n } aangepaste e-maildomeinen"
@@ -1333,9 +1260,6 @@
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Automatisch spam en verwijderde berichten verwijderen"
-      ],
       "Auto-reply": [
         "Automatisch beantwoorden"
       ],
@@ -1362,9 +1286,6 @@
       ],
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
-      ],
-      "Custom snooze time": [
-        "Aangepaste snoozetijd"
       ],
       "Desktop app": [
         "Desktop-app"
@@ -1417,20 +1338,8 @@
       "Schedule and snooze emails for any time": [
         "E-mails plannen en snoozen wanneer u wilt"
       ],
-      "Schedule messages at any time": [
-        "Plan berichten in op ieder moment"
-      ],
-      "Search message content": [
-        "Doorzoek berichtinhoud"
-      ],
       "Secure file storage and sharing": [
         "Veilige bestandsopslag en delen"
-      ],
-      "See team's availability": [
-        "Bekijk beschikbaarheid van het team"
-      ],
-      "Send & receive invitations": [
-        "Uitnodigingen verzenden & ontvangen"
       ],
       "Share files with no size limit": [
         "Deel bestanden zonder maximale grootte"
@@ -1470,17 +1379,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Berichten snoozen en ontvangen wanneer u wil"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: Beveilig uw agenda met end-to-end versleuteling. Dit is inclusief ondersteuning voor aangepaste agenda's, agenda-delen en meer."
-      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Beveilig uw bestanden met versleutelde cloud-opslag. Inclusief automatisch synchroniseren, versleutelde bestandsdeling en meer."
       ],
@@ -1511,15 +1414,8 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Maak meerdere e-mailadressen aan voor uw online identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain } voor nieuwsabonnementen"
       ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Maak tot ${ n } agenda of voeg agenda's van vrienden, familie, collega's of andere organisaties toe",
-        "Maak tot ${ n } agenda's of voeg agenda's van vrienden, familie, collega's of andere organisaties toe"
-      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Maak maximaal ${ n } e-mailadressen/aliassen aan die u aan gezinsleden kunt toewijzen. Gebruik ze voor online identiteiten, bijvoorbeeld JohnShopper@${ domain } voor shopping-accounts."
-      ],
-      "Easily share your calendars with your family, friends, or colleagues": [
-        "Deel uw agenda's eenvoudig met uw familie, vrienden of collega's."
       ],
       "Email everyone in a group with a single email address": [
         "E-mail iedereen in een groep met één e-mailadres"
@@ -1529,9 +1425,6 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP-ondersteuning is beperkt tot het gebruik van desktop-apps (zoals Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. IMAP-integraties in de cloud worden op dit moment niet ondersteund."
-      ],
-      "Keep your plans private to you and your family with an encrypted calendar": [
-        "Houd uw plannen privé voor u en uw gezin met een versleutelde agenda"
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Labels zijn simpele tags die u kunt toevoegen aan berichten zodat u ze makkelijker kunt vinden of filteren"
@@ -1553,9 +1446,6 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Sla de gegevens van uw contactpersonen, zoals telefoonnummer, adres, geboortedatum en persoonlijke notities, veilig op. Dankzij zero-access versleuteling heeft zelfs ${ BRAND_NAME } geen toegang tot deze gegevens."
-      ],
-      "See the availability of meeting participants and save time scheduling meetings": [
-        "Zie de beschikbaarheid van de deelnemers aan de vergadering en bespaar tijd bij het plannen van vergaderingen"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Stuur snel en eenvoudig e-mails naar grote groepen door zoveel contactgroepen te maken als u wilt (tot 100 contactpersonen per groep)"
@@ -1594,10 +1484,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Verhoog uw opslagruimte tot ${ bundleStorage }"
-      ],
-      "Create up to ${ n } calendar": [
-        "Maak tot ${ n } agenda",
-        "Maak tot ${ n } agenda's"
       ],
       "Support for ${ n } custom email domains": [
         "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
