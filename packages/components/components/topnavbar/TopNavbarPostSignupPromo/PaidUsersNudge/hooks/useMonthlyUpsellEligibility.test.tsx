@@ -315,10 +315,10 @@ describe('Mail Paid user nudge', () => {
 
             expect(
                 useMonthlyUpsellEligibility({
-                    allowedApps: paidConfig[PLANS.MAIL].allowedApps,
-                    offerTimestampFlag: paidConfig[PLANS.MAIL].offerTimestampFlag,
-                    offerFlag: paidConfig[PLANS.MAIL].offerFlag,
-                    eligiblePlan: paidConfig[PLANS.MAIL].currentPlan,
+                    allowedApps: new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]),
+                    offerTimestampFlag: FeatureCode.MailPaidUserNudgeTimestamp,
+                    offerFlag: 'SubscriberNudgeMailMonthly',
+                    eligiblePlan: PLANS.MAIL,
                 })
             ).toBe(true);
         });
