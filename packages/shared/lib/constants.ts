@@ -55,6 +55,7 @@ export const PROTON_SENTINEL_NAME = 'Proton Sentinel';
 export const DARK_WEB_MONITORING_NAME = 'Dark Web Monitoring';
 export const AUTHENTICATOR_SHORT_APP_NAME = 'Authenticator';
 export const AUTHENTICATOR_APP_NAME = `${BRAND_NAME} ${AUTHENTICATOR_SHORT_APP_NAME}`;
+export const MEET_APP_NAME = 'Proton Meet';
 
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
@@ -77,6 +78,7 @@ export const APPS = {
     PROTONSHEETSEDITOR: 'proton-sheets-editor',
     PROTONLUMO: 'proton-lumo',
     PROTONAUTHENTICATOR: 'proton-authenticator',
+    PROTONMEET: 'proton-meet',
 } as const;
 
 interface AppConfiguration {
@@ -308,6 +310,16 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         icon: '', // TODO: brand icon for Authenticator
         settingsSlug: '',
         product: Product.Authenticator,
+    },
+    [APPS.PROTONMEET]: {
+        publicPath: '',
+        subdomain: 'wallet',
+        name: WALLET_APP_NAME,
+        bareName: 'Wallet',
+        clientID: 'web-wallet',
+        icon: 'brand-proton',
+        settingsSlug: 'wallet',
+        product: Product.Wallet,
     },
 };
 

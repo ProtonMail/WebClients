@@ -1,0 +1,190 @@
+import type { ProtonThunkArguments } from 'packages/redux-shared-store-types';
+
+import { addressesThunk } from '@proton/account/addresses';
+import * as bootstrap from '@proton/account/bootstrap';
+import { type SessionPayloadData } from '@proton/account/bootstrap';
+import { bootstrapEvent } from '@proton/account/bootstrap/action';
+import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActions } from '@proton/account/index';
+import { type NotificationsManager } from '@proton/components/containers/notifications/manager';
+import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
+import { FeatureCode, fetchFeatures } from '@proton/features/index';
+import createApi from '@proton/shared/lib/api/createApi';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { registerSessionRemovalListener } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import { type APP_NAMES } from '@proton/shared/lib/constants';
+import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
+import { type ProtonConfig } from '@proton/shared/lib/interfaces';
+import { appMode } from '@proton/shared/lib/webpack.constants';
+import noop from '@proton/utils/noop';
+import { clearSettings } from '@proton/wallet';
+
+import locales from './locales';
+import { type MeetDispatch, type MeetStore, setupStore } from './store';
+
+const getApis = (config: ProtonConfig) => {
+    const api = createApi({ config });
+    const silentApi = getSilentApi(api);
+
+    return { api, silentApi };
+};
+
+const getSession = async ({ authentication, api }: Pick<ProtonThunkArguments, 'authentication' | 'api'>) => {
+    const sessionResult = await bootstrap.loadSession({
+        authentication,
+        api,
+        pathname: window.location.pathname,
+        searchParams: new URLSearchParams(window.location.search),
+    });
+
+    return sessionResult as SessionPayloadData;
+};
+
+const loadUserData = async (dispatch: MeetDispatch, appName: APP_NAMES) => {
+    const [user, userSettings, features] = await Promise.all([
+        dispatch(userThunk()),
+        dispatch(userSettingsThunk()),
+        dispatch(fetchFeatures([FeatureCode.EarlyAccessScope])),
+    ]);
+
+    dispatch(welcomeFlagsActions.initial(userSettings));
+
+    const [scopes] = await Promise.all([
+        bootstrap.initUser({ appName, user, userSettings }),
+        bootstrap.loadLocales({ userSettings, locales }),
+    ]);
+
+    return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope], scopes };
+};
+
+const eventManagerSetup = ({
+    eventManager,
+    store,
+    signal,
+    unleashClient,
+}: {
+    eventManager: ProtonThunkArguments['eventManager'];
+    unleashClient: ProtonThunkArguments['unleashClient'];
+    signal?: AbortSignal;
+    store: MeetStore;
+}) => {
+    const unsubscribeEventManager = eventManager.subscribe((event) => {
+        store.dispatch(serverEvent(event));
+    });
+
+    eventManager.start();
+
+    bootstrap.onAbort(signal, () => {
+        unsubscribeEventManager();
+        eventManager.reset();
+        unleashClient.stop();
+        store.unsubscribe();
+    });
+};
+
+export const initAppDependencies = async (
+    config: ProtonConfig,
+    authentication: ProtonThunkArguments['authentication']
+): Promise<Omit<ProtonThunkArguments, 'config'> & { sessionResult: bootstrap.SessionPayloadData }> => {
+    const { api, silentApi } = getApis(config);
+
+    const unleashClient = bootstrap.createUnleash({ api: silentApi });
+    const eventManager = bootstrap.eventManager({ api: silentApi });
+    const sessionResult = await getSession({ authentication, api });
+    const history = bootstrap.createHistory({ sessionResult, pathname: window.location.pathname });
+
+    return { api, authentication, unleashClient, eventManager, history, sessionResult };
+};
+
+const completeAppBootstrap = async ({
+    store,
+    authentication,
+    unleashClient,
+    eventManager,
+    signal,
+    config,
+    sessionResult,
+    history,
+}: ProtonThunkArguments & {
+    signal?: AbortSignal;
+    store: MeetStore;
+    sessionResult: bootstrap.SessionPayloadData;
+    notificationsManager: NotificationsManager;
+}) => {
+    const dispatch = store.dispatch;
+
+    if (sessionResult.session?.User) {
+        dispatch(initEvent({ User: sessionResult.session.User }));
+    }
+
+    const [userData] = await Promise.all([
+        loadUserData(dispatch, config.APP_NAME),
+        bootstrap.loadCrypto({ appName: config.APP_NAME }),
+        bootstrap.unleashReady({ unleashClient }).catch(noop),
+    ]);
+
+    await bootstrap.postLoad({ appName: config.APP_NAME, authentication, ...userData, history });
+    await dispatch(addressesThunk());
+
+    eventManagerSetup({ store, signal, eventManager, unleashClient });
+
+    dispatch(bootstrapEvent({ type: 'complete' }));
+
+    return userData;
+};
+
+interface BootstrapParameters {
+    config: ProtonConfig;
+    signal?: AbortSignal;
+    notificationsManager: NotificationsManager;
+}
+
+export const executeBootstrapSteps = async ({
+    config,
+    signal,
+    notificationsManager,
+    authentication,
+}: BootstrapParameters & Pick<ProtonThunkArguments, 'authentication'>) => {
+    setupGuestCrossStorage({ appMode, appName: config.APP_NAME });
+
+    const { sessionResult, ...restServices } = await initAppDependencies(config, authentication);
+
+    initElectronClassnames();
+    bootstrap.init({ config, authentication, locales });
+
+    const store = setupStore({
+        ...restServices,
+        authentication,
+        notificationsManager,
+        config,
+    });
+
+    const userData = await completeAppBootstrap({
+        ...restServices,
+        authentication,
+        notificationsManager,
+        signal,
+        store,
+        config,
+        sessionResult,
+    });
+
+    registerSessionRemovalListener(async () => {
+        clearSettings();
+    });
+
+    return {
+        ...restServices,
+        ...userData,
+        store,
+        authentication,
+    };
+};
+
+export const bootstrapApp = async (parameters: BootstrapParameters) => {
+    const authentication = bootstrap.createAuthentication();
+
+    return bootstrap.wrap(
+        { appName: parameters.config.APP_NAME, authentication },
+        executeBootstrapSteps({ ...parameters, authentication })
+    );
+};
