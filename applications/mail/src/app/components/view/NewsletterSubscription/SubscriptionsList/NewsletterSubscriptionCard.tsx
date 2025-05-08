@@ -170,12 +170,12 @@ export const NewsletterSubscriptionCard = ({ subscription }: Props) => {
                                     )}
                                 </SubscriptionStat>
                             ) : null}
-                            {subscription.ReceivedMessageCount !== undefined ? (
+                            {subscription.ReceivedMessages.Last30Days !== undefined ? (
                                 <SubscriptionStat iconName="inbox">
                                     {c('Info').ngettext(
-                                        msgid`${subscription.ReceivedMessageCount} email last month`,
-                                        `${subscription.ReceivedMessageCount} emails last month`,
-                                        subscription.ReceivedMessageCount
+                                        msgid`${subscription.ReceivedMessages.Last30Days} email last month`,
+                                        `${subscription.ReceivedMessages.Last30Days} emails last month`,
+                                        subscription.ReceivedMessages.Last30Days
                                     )}
                                 </SubscriptionStat>
                             ) : null}
