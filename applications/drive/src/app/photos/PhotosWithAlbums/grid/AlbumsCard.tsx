@@ -5,9 +5,18 @@ import { formatDuration } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components';
+import {
+    Dropdown,
+    DropdownButton,
+    DropdownMenu,
+    DropdownMenuButton,
+    Icon,
+    usePopperAnchor,
+    useTheme,
+} from '@proton/components';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import folderImagesDark from '@proton/styles/assets/img/drive/empty-image-album-dark.webp';
 import folderImages from '@proton/styles/assets/img/drive/empty-image-album.webp';
 import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-filled.svg';
 import useFlag from '@proton/unleash/useFlag';
@@ -131,6 +140,8 @@ export const AlbumsCard: FC<Props> = ({
         !isDecrypted || (album.hasThumbnail && !imageReady) || (album.cover?.hasThumbnail && !imageReady);
     const isLoaded = !isThumbnailLoading && isDecrypted;
 
+    const theme = useTheme();
+
     useEffect(() => {
         const hasName = album.name;
         if (!hasName) {
@@ -196,7 +207,12 @@ export const AlbumsCard: FC<Props> = ({
                             />
                         ) : (
                             <div className="flex items-center justify-center w-full h-full albums-card-thumbnail albums-card-thumbnail--empty">
-                                <img src={folderImages} alt="" width={80} className="m-auto" />
+                                <img
+                                    src={theme.information.dark ? folderImagesDark : folderImages}
+                                    alt=""
+                                    width={80}
+                                    className="m-auto"
+                                />
                             </div>
                         )}
                         {(album.signatureIssues || album.isShared) && (
