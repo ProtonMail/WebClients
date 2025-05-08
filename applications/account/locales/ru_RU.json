@@ -259,6 +259,12 @@
       "Color": [
         "Цвет"
       ],
+      "Compare all plans": [
+        "Сравнить все тарифы"
+      ],
+      "Compare plans": [
+        "Сравнить тарифы"
+      ],
       "Configure SAML": [
         "Настройка SAML"
       ],
@@ -270,6 +276,9 @@
       ],
       "Connect": [
         "Подключить"
+      ],
+      "Connect your Gmail address": [
+        "Подключить свой адрес Gmail"
       ],
       "Connected": [
         "Подключено"
@@ -445,6 +454,12 @@
       "Discard changes": [
         "Сбросить изменения"
       ],
+      "Discard Changes": [
+        "Сбросить изменения"
+      ],
+      "Discover ${ planName }": [
+        "Узнать о ${ planName }"
+      ],
       "Dismiss": [
         "Отклонить"
       ],
@@ -489,6 +504,9 @@
       ],
       "Edit billing cycle": [
         "Изменить платежный цикл"
+      ],
+      "Edit countries": [
+        "Изменить страны"
       ],
       "Edit display name": [
         "Редактировать отображаемое имя"
@@ -552,6 +570,12 @@
       ],
       "Encrypt and export": [
         "Зашифровать и экспортировать"
+      ],
+      "Explore ${ target }": [
+        "Ознакомиться с ${ target }"
+      ],
+      "Explore group plans": [
+        "Ознакомиться с групповыми тарифами"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Изучите другие тарифы ${ BRAND_NAME }"
@@ -649,6 +673,9 @@
       "Get the deal": [
         "Воспользоваться"
       ],
+      "Get the writing assistant": [
+        "Получить помощник по написанию"
+      ],
       "Get verification code": [
         "Получить проверочный код"
       ],
@@ -726,6 +753,12 @@
       ],
       "Keep": [
         "Оставить"
+      ],
+      "Keep editing": [
+        "Продолжить изменение"
+      ],
+      "Keep Editing": [
+        "Продолжить изменение"
       ],
       "Keep logo": [
         "Оставить логотип"
@@ -871,6 +904,9 @@
       "Previous page": [
         "Предыдущая страница"
       ],
+      "Publish changes": [
+        "Опубликовать изменения"
+      ],
       "Quit": [
         "Выход"
       ],
@@ -1015,6 +1051,9 @@
       "Save address": [
         "Сохранить адрес"
       ],
+      "Save and continue": [
+        "Сохранить и продолжить"
+      ],
       "Save changes": [
         "Сохранить изменения"
       ],
@@ -1063,11 +1102,11 @@
       "Select country ${ country }": [
         "Выбрать страну ${ country }"
       ],
-      "select file": [
-        "выбрать файл"
-      ],
       "Select file": [
         "Выбрать файл"
+      ],
+      "select file": [
+        "выбрать файл"
       ],
       "Select files": [
         "Выбрать файлы"
@@ -1105,6 +1144,9 @@
       "Set as default": [
         "Установить по умолчанию"
       ],
+      "Set as default mail application": [
+        "Установить как почтовое приложение по умолчанию"
+      ],
       "Set catch-all": [
         "Установить прием всей почты домена"
       ],
@@ -1113,6 +1155,9 @@
       ],
       "Set recovery phrase": [
         "Установить фразу для восстановления"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Настройте автоматическую переадресацию из Gmail"
       ],
       "Settings": [
         "Настройки"
@@ -1260,9 +1305,6 @@
       ],
       "Upgrade now": [
         "Улучшить сейчас"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Улучшить до ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "Улучшить до Business"
@@ -3663,9 +3705,6 @@
       "Also included": [
         "Также включены"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Автоматически удаляйте спам и сообщения в Корзине, а также откройте дополнительные платные функции при обновлении."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Автоматическая очистка писем, перемещенных в корзину и спам более 30 дней назад."
       ],
@@ -3723,9 +3762,6 @@
       "No one in your organization can connect to shared servers.": [
         "Никто из вашей организации не может подключиться к общим серверам."
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Выделите различные аспекты своей жизни с помощью нескольких адресов электронной почты и получите доступ к дополнительным функциям при обновлении тарифа."
-      ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
         "Настройте автопереадресацию, чтобы перенаправлять входящие электронные письма на другой адрес электронной почты."
       ],
@@ -3735,20 +3771,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Чтобы импортировать контакты из Google или Outlook, ${ easySwitchLink }."
       ],
-      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "Для удаления нижнего колонтитула ${ MAIL_APP_NAME } обновите тариф и разблокируйте ещё больше премиум-функций."
-      ],
       "Track the status and activity of your referrals.": [
         "Отлеживайте состояние и активность ваших рефералов."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Обновите тариф, чтобы разблокировать более короткие адреса электронной почты и другие премиум-функции."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Разблокируют неограниченные фильтры, которые сортируют Вашу почту за Вас и другие премиум функции при обновлении."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Разблокируют неограниченные папки, ярлыки и другие премиум функции при обновлении."
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Обновитесь до ${ activatePmUser } для получения более короткого и запоминаемого адреса электронной почты в дополнение к текущему."
@@ -4533,6 +4557,9 @@
       ],
       "Error in one of the conditions": [
         "Ошибка в одном из условий"
+      ],
+      "Error publishing changes.": [
+        "Ошибка при публикации изменений."
       ],
       "Expired": [
         "Срок действия истёк"
@@ -6034,47 +6061,6 @@
         "Бесплатный пробный период вашего приложения для настольных компьютеров закончился"
       ]
     },
-    "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "приложение ${ MAIL_APP_NAME }"
-      ],
-      "account logins": [
-        "имена пользователей аккаунта"
-      ],
-      "Auto-forward Gmail": [
-        "Автоматическая пересылка Gmail"
-      ],
-      "auto-forwarding": [
-        "автопереадресация"
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Измените ${ strongText } на ваш адрес ${ BRAND_NAME }."
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Узнайте, как наши ${ strongText } защищают вас"
-      ],
-      "Discover privacy features": [
-        "Откройте для себя функции конфиденциальности"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Получить ${ strongText } на Android или iOS"
-      ],
-      "Get the App": [
-        "Скачать приложение"
-      ],
-      "privacy features": [
-        "функции конфиденциальности"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Настроить из ${ strongText } из Gmail"
-      ],
-      "This feature is currently unavailable": [
-        "Эта функция временно недоступна"
-      ],
-      "Update your logins": [
-        "Обновите ваше имя пользователя"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Автоматическая пересылка"
@@ -6689,9 +6675,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Импортировать из ${ provider }"
-      ],
-      "Other": [
-        "Другой"
       ]
     },
     "Import rollback status": {
@@ -7558,11 +7541,17 @@
         "Удаление ${ deletedServerCount } шлюзовых серверов",
         "Удаление ${ deletedServerCount } шлюзовых серверов"
       ],
+      "Did you know?": [
+        "Вы знали?"
+      ],
       "Disable recovery by email address": [
         "Отключить восстановление по адресу электронной почты"
       ],
       "Disable recovery by phone number": [
         "Отключить восстановление по номеру телефона"
+      ],
+      "Disabled countries": [
+        "Выключенные страны"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Отключено на ${ formattedDateAndTime }"
@@ -7698,6 +7687,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Включите TLS или SSL внешней почтовой службы, если она поддерживает данные протоколы."
+      ],
+      "Enabled countries": [
+        "Включенные страны"
       ],
       "Enabled on ${ formattedDateAndTime }": [
         "Включено на ${ formattedDateAndTime }"
@@ -7864,6 +7856,9 @@
       "Group deleted": [
         "Группа удалена"
       ],
+      "Groups": [
+        "Группы"
+      ],
       "here": [
         "здесь"
       ],
@@ -7977,9 +7972,6 @@
       ],
       "Import mailbox": [
         "Импорт почтового ящика"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Импортируйте ваши письма, календари и контакты в ${ BRAND_NAME } из другого сервиса."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "ВАЖНО: Если ваша консоль DNS не позволяет значениям CNAME заканчиваться точкой, вы можете удалить последнюю точку в значениях CNAME."
@@ -8713,9 +8705,6 @@
       "Securing your account": [
         "Защита вашей учетной записи"
       ],
-      "Select a service provider to start": [
-        "Выберите поставщика услуг, чтобы начать"
-      ],
       "Select one or multiple user affiliations": [
         "Выберите одну или несколько связей пользователей"
       ],
@@ -8758,8 +8747,14 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Установите ${ MAIL_APP_NAME } в качестве почтового приложения по умолчанию. Приложение ${ MAIL_APP_NAME } будет открываться автоматически при нажатии на ссылку электронной почты."
       ],
+      "Set password": [
+        "Установить пароль"
+      ],
       "Set recovery phrase": [
         "Установить фразу для восстановления"
+      ],
+      "Set up forwarding": [
+        "Настроить пересылку"
       ],
       "Setting successfully saved": [
         "Настройка успешно сохранена"
@@ -9322,11 +9317,11 @@
       "User activated": [
         "Пользователь активирован"
       ],
-      "Username": [
-        "Имя пользователя"
-      ],
       "username": [
         "имя пользователя"
+      ],
+      "Username": [
+        "Имя пользователя"
       ],
       "Users": [
         "Пользователи"
@@ -10477,11 +10472,11 @@
       "Allow sharing outside the organization": [
         "Разрешить совместное использование вне организации"
       ],
-      "Allowed domain": [
-        "Разрешённый домен"
-      ],
       "Allowed Domain": [
         "Разрешённый Домен"
+      ],
+      "Allowed domain": [
+        "Разрешённый домен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Разрешает всем участникам вашей организации добавлять ссылки на видеоконференции в приглашения календаря."
@@ -10492,10 +10487,10 @@
       "Amount due": [
         "К оплате"
       ],
-      "AND": [
+      "And": [
         "И"
       ],
-      "And": [
+      "AND": [
         "И"
       ],
       "and": [
@@ -10560,6 +10555,9 @@
       ],
       "Backup password": [
         "Пароль резервной копии"
+      ],
+      "Beta": [
+        "Бета"
       ],
       "Billing cycle": [
         "Платежный цикл"
@@ -10633,6 +10631,9 @@
       "Colors": [
         "Цвета"
       ],
+      "Common passwords": [
+        "Распространенные пароли"
+      ],
       "Company": [
         "Компания"
       ],
@@ -10698,6 +10699,9 @@
       ],
       "Could you please specify?": [
         "Не могли бы вы уточнить?"
+      ],
+      "Countries": [
+        "Страны"
       ],
       "Country": [
         "Страна"
@@ -10912,11 +10916,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ЕСЛИ"
-      ],
       "If": [
         "Если"
+      ],
+      "IF": [
+        "ЕСЛИ"
       ],
       "Import all messages": [
         "Импортировать все сообщения"
@@ -11014,6 +11018,9 @@
       "Maximum number of characters": [
         "Максимальное количество символов"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "Максимальное количество символов: ${ MAX_CHARS }"
+      ],
       "Maximum number of words": [
         "Максимальное количество слов"
       ],
@@ -11037,6 +11044,9 @@
       ],
       "Minimum number of characters": [
         "Минимальное количество символов"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "Минимальное количество символов: ${ MIN_CHARS }"
       ],
       "Minimum number of words": [
         "Минимальное количество слов"
@@ -11119,14 +11129,14 @@
       "Optional": [
         "Необязательно"
       ],
-      "OR": [
-        "ИЛИ"
-      ],
       "or": [
         "или"
       ],
       "Or": [
         "Или"
+      ],
+      "OR": [
+        "ИЛИ"
       ],
       "Organization name": [
         "Название организации"
@@ -11265,6 +11275,9 @@
       ],
       "Send in": [
         "Отправить в"
+      ],
+      "Sequences": [
+        "Последовательности"
       ],
       "Show ${ n } administrator": [
         "Показать ${ n } администратора",
@@ -11731,6 +11744,9 @@
       "How does monitoring work?": [
         "Как работает мониторинг?"
       ],
+      "How to create strong passwords": [
+        "Как создать надежные пароли"
+      ],
       "How to pay with Bitcoin?": [
         "Как оплатить с помощью Bitcoin?"
       ],
@@ -11758,11 +11774,11 @@
       "perform a password reset from your active session": [
         "выполнить сброс пароля из вашего активного сеанса"
       ],
-      "privacy policy": [
-        "политика конфиденциальности"
-      ],
       "Privacy policy": [
         "Политика конфиденциальности"
+      ],
+      "privacy policy": [
+        "политика конфиденциальности"
       ],
       "Reactivate now": [
         "Восстановить подписку"
@@ -12417,20 +12433,8 @@
       "From ${ price }": [
         "От: ${ price }"
       ],
-      "Get started for ${ priceCoupon }": [
-        "Начните с ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Начиная с ${ pricing }"
-      ],
       "Upgrade": [
         "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ],
-      "Upgrade to ${ planName }": [
-        "Улучшить на ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12626,9 +12630,6 @@
       "Auto-delete Spam and Trash": [
         "Автоудаление спама и сообщений в корзине"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Автоудаление спама и удаленных сообщений"
-      ],
       "Auto-reply": [
         "Автоответчик"
       ],
@@ -12673,9 +12674,6 @@
       ],
       "Custom fields": [
         "Настраиваемые поля"
-      ],
-      "Custom snooze time": [
-        "Настраиваемое время пробуждения"
       ],
       "Custom workspace branding": [
         "Пользовательское брендирование рабочего пространства"
@@ -12823,12 +12821,6 @@
       ],
       "Schedule and snooze emails for any time": [
         "Планируйте и откладывайте сообщения электронной почты на любое время"
-      ],
-      "Schedule messages at any time": [
-        "Планируйте сообщения в любое время"
-      ],
-      "Search message content": [
-        "Поиск содержимого сообщения"
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
@@ -12995,9 +12987,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, VanyaShopper@${ domain } для учетных записей покупок, VanyaNews@${ domain2 } для подписки на новости"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Отложите сообщения и получите напоминание в нужное время"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Объём хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
@@ -13182,6 +13171,14 @@
         "Разблокируйте все премиум продукты и возможности ${ BRAND_NAME } всего за ${ priceLine }. Отменить можно в любое время."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробная версия ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -13200,14 +13197,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Улучшите тариф и разблокируйте платные функции"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробная версия ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -13856,6 +13845,17 @@
         "Рабочий стол"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Все"
+      ],
+      "Group members": [
+        "Участники группы"
+      ],
+      "No one": [
+        "Никто"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10-ое число месяца"
@@ -14086,17 +14086,6 @@
         "Корзина"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Все"
-      ],
-      "Group members": [
-        "Участники группы"
-      ],
-      "No one": [
-        "Никто"
-      ]
-    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 секунд"
@@ -14266,7 +14255,18 @@
         "Начните использовать ${ PASS_APP_NAME }"
       ]
     },
+    "pass_lifetime_signup: Info": {
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
+        "Получите пожизненный доступ ко всем текущим и будущим платным функциям ${ PASS_APP_NAME }, совершив единовременный платеж."
+      ],
+      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
+        "Добро пожаловать в ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
+      ]
+    },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Купите сейчас"
+      ],
       "Continue": [
         "Продолжить"
       ],
@@ -14540,6 +14540,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Специальное стартовое предложение: Получите ${ title } навсегда за ${ price }!"
       ],
+      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "Специальное предложение: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } по цене ${ priceString }."
+      ],
       "Start using ${ PASS_APP_NAME }": [
         "Начните использовать ${ PASS_APP_NAME }"
       ],
@@ -14612,6 +14615,9 @@
       "Activity log": [
         "Журнал действий"
       ],
+      "Additional mailboxes for aliases": [
+        "Дополнительные почтовые ящики для псевдонимов"
+      ],
       "Admin panel to manage users and subscription": [
         "Панель администратора для управления пользователями и подпиской"
       ],
@@ -14621,11 +14627,17 @@
       "Advanced alias features (powered by SimpleLogin)": [
         "Расширенные возможности псевдонимов (с помощью SimpleLogin)"
       ],
+      "File attachments (coming soon)": [
+        "Вложения файлов (скоро)"
+      ],
       "One-time payment, lifetime deal": [
         "Единовременная оплата, пожизненное предложение"
       ],
       "Team policies": [
         "Политики команды"
+      ],
+      "Your custom domain for aliases": [
+        "Ваш пользовательский домен для псевдонимов"
       ]
     },
     "PassFamilyPlan2024": {
@@ -16051,9 +16063,6 @@
       ]
     },
     "Settings description": {
-      "Complete the transition to privacy with our secure importing and forwarding tools.": [
-        "Завершите переход к конфиденциальности с нашими безопасными инструментами импорта и пересылки."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Упорядочивайте свой почтовый ящик с помощью папок и ярлыков. ${ learnMoreLink }"
       ]
@@ -17924,6 +17933,9 @@
       "${ appName } keyboard shortcuts": [
         "${ appName } быстрых клавиш"
       ],
+      "${ BRAND_NAME } Account password rules": [
+        "Правила для пароля аккаунта ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -17969,6 +17981,9 @@
       "A filter with this name already exists": [
         "Фильтр с этим именем уже существует"
       ],
+      "Access control": [
+        "Контроль доступа"
+      ],
       "Accessibility": [
         "Специальные возможности"
       ],
@@ -17995,9 +18010,6 @@
       ],
       "Actions": [
         "Действия"
-      ],
-      "Activate @pm.me": [
-        "Активируйте @pm.me"
       ],
       "Activate organization key": [
         "Активация ключа организации"
@@ -18080,6 +18092,9 @@
       "Allocate storage": [
         "Выделение объёма в хранилище"
       ],
+      "Also in your plan": [
+        "Также в вашем тарифе"
+      ],
       "Amount": [
         "Сумма"
       ],
@@ -18137,6 +18152,9 @@
       "Bridge for ${ platform }": [
         "Bridge для ${ platform }"
       ],
+      "Browser extensions": [
+        "Расширения для браузера"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Отменить подписку ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -18149,10 +18167,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -18176,6 +18194,9 @@
       "Change second password": [
         "Изменить второй пароль"
       ],
+      "Check your default mail application": [
+        "Проверьте почтовое приложение по умолчанию"
+      ],
       "Choose an account": [
         "Выберите аккаунт"
       ],
@@ -18184,9 +18205,6 @@
       ],
       "Clear": [
         "Очистить"
-      ],
-      "Clear out the junk": [
-        "Очистить от спама"
       ],
       "Click a value in the table to use it as filter": [
         "Нажмите значение в таблице, чтобы использовать его в качестве фильтра"
@@ -18563,6 +18581,18 @@
       "Folders and labels": [
         "Папки и ярлыки"
       ],
+      "For Linux": [
+        "Для Linux"
+      ],
+      "For macOS": [
+        "Для macOS"
+      ],
+      "For Windows": [
+        "Для Windows"
+      ],
+      "Forgot password": [
+        "Забыл пароль"
+      ],
       "Forgot recovery method": [
         "Забыли метод восстановления"
       ],
@@ -18626,6 +18656,9 @@
       "History": [
         "История"
       ],
+      "Home": [
+        "Главная"
+      ],
       "How does it work?": [
         "Как это работает?"
       ],
@@ -18668,17 +18701,11 @@
       "Import key": [
         "Импортировать ключ"
       ],
-      "Import messages": [
-        "Импортировать сообщения"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Импорт через ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Inactive 2FA": [
         "Неактивная двухфакторная аутентификация"
-      ],
-      "Increase your privacy with more addresses": [
-        "Повысьте уровень конфиденциальности с помощью большего количества адресов"
       ],
       "Integrations": [
         "Интеграции"
@@ -18697,9 +18724,6 @@
       ],
       "Items owned": [
         "Доступные элементы"
-      ],
-      "Keep your inbox organized": [
-        "Поддерживайте порядок в папке \"Входящие\""
       ],
       "Keyboard shortcuts": [
         "Быстрые клавиши"
@@ -18724,6 +18748,9 @@
       ],
       "Leave group?": [
         "Покинуть группу?"
+      ],
+      "Limit reached": [
+        "Достигнут предел"
       ],
       "Link confirmation": [
         "Подтверждение ссылки"
@@ -18809,6 +18836,9 @@
       "Other preferences": [
         "Другие настройки"
       ],
+      "Other sign-in issues": [
+        "Другие проблемы со входом"
+      ],
       "Password": [
         "Пароль"
       ],
@@ -18835,9 +18865,6 @@
       ],
       "PayPal verification failed": [
         "Сбой проверки PayPal"
-      ],
-      "Personalize your e-mail footer": [
-        "Персонализация нижнего колонтитула электронной почты"
       ],
       "Personalize your email footer": [
         "Персонализируйте нижний колонтитул электронной почты"
@@ -18959,9 +18986,6 @@
       "SAML authentication": [
         "Аутентификация SAML"
       ],
-      "Save time with email filters": [
-        "Экономьте время с почтовыми фильтрами"
-      ],
       "Schedule send:": [
         "Запланированная отправка:"
       ],
@@ -19022,9 +19046,6 @@
       "Set up a recovery method": [
         "Настроить способ восстановления"
       ],
-      "Set up forwarding": [
-        "Настроить пересылку"
-      ],
       "Set up two-factor authentication": [
         "Настройка двухфакторной аутентификации"
       ],
@@ -19081,6 +19102,9 @@
       ],
       "Spam, block, and allow lists": [
         "Списки спама, блокировки и белый"
+      ],
+      "Special Offer": [
+        "Специальное предложение"
       ],
       "Start a new import": [
         "Начать новый импорт"
@@ -19171,6 +19195,9 @@
       ],
       "Upgrade plan": [
         "Улучшить план"
+      ],
+      "Upgrade your privacy": [
+        "Повысьте вашу приватность"
       ],
       "Upload CSV file to create multiple accounts": [
         "Загрузите файл CSV, чтобы создать множество пользователей"
@@ -20039,6 +20066,12 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } устройство",
+        "${ n } устройства",
+        "${ n } устройств",
+        "${ n } устройств"
+      ],
       "${ n } server": [
         "${ n } сервер",
         "${ n }+ сервера",

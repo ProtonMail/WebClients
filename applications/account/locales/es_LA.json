@@ -289,6 +289,9 @@
       "Connect to video conferencing": [
         "Conectarse a la videoconferencia"
       ],
+      "Connect your Gmail address": [
+        "Conecte su dirección de Gmail"
+      ],
       "Connected": [
         "Conectado"
       ],
@@ -688,6 +691,9 @@
       "Get the deal": [
         "Obtener la promoción"
       ],
+      "Get the writing assistant": [
+        "Obtener el asistente de escritura"
+      ],
       "Get verification code": [
         "Obtener código de verificación"
       ],
@@ -775,11 +781,11 @@
       "Keep": [
         "Conservar"
       ],
-      "Keep Editing": [
-        "Seguir editando"
-      ],
       "Keep editing": [
         "Continuar editando"
+      ],
+      "Keep Editing": [
+        "Seguir editando"
       ],
       "Keep logo": [
         "Conservar logo"
@@ -1138,11 +1144,11 @@
       "Select country ${ country }": [
         "Seleccione el país ${ country }"
       ],
-      "select file": [
-        "seleccionar archivo"
-      ],
       "Select file": [
         "Seleccionar archivo"
+      ],
+      "select file": [
+        "seleccionar archivo"
       ],
       "Select files": [
         "Seleccionar archivos"
@@ -1200,6 +1206,9 @@
       ],
       "Set up a custom domain": [
         "Configurar un dominio personalizado"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Configurar el reenvío automático desde Gmail"
       ],
       "Set up email forwarding": [
         "Configurar el reenvío de correo electrónico"
@@ -1356,9 +1365,6 @@
       ],
       "Upgrade now": [
         "Actualizar ahora"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Mejore a ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "Mejorar a Business"
@@ -3856,9 +3862,6 @@
       "Also included": [
         "También incluido"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Elimine automáticamente los mensajes de spam y de la papelera y desbloquee más funciones premium al mejorar el plan."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Elimine automáticamente los correos electrónicos movidos a la papelera y spam de hace más de 30 días."
       ],
@@ -3961,9 +3964,6 @@
       "Send a code to your recovery email or phone": [
         "Envíe un código a su correo electrónico o teléfono de recuperación"
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Separe diferentes aspectos de su vida con múltiples direcciones de correo y desbloquee funciones premium cuando actualiza el plan."
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Configure las cuentas para todos los usuarios e invítelos a unirse a ${ BRAND_NAME }."
       ],
@@ -3979,23 +3979,11 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar los contactos desde Google o Outlook, ${ easySwitchLink }."
       ],
-      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "Para eliminar el pie de página de ${ MAIL_APP_NAME }, mejore y desbloquee aún más funciones premium."
-      ],
       "To start, give your organization a name.": [
         "Para comenzar, asigne un nombre a su organización."
       ],
       "Track the status and activity of your referrals.": [
         "Rastree el estado y actividad de sus referencias."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Desbloquee direcciones de correo cortas y otras funciones premium al mejorar."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Desbloquee filtros ilimitados que ordenan el buzón para usted y más funciones premium cuando actualiza el plan."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Desbloquee carpetas y etiquetas ilimitadas y más funciones premium cuando actualiza el plan."
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Mejore su plan para obtener ${ activatePmUser } para una dirección de correo electrónico más corta y fácil de recordar, además de su dirección actual."
@@ -6522,45 +6510,6 @@
       ],
       "${ appName } on Play Store": [
         "${ appName } en Play Store"
-      ],
-      "${ MAIL_APP_NAME } app": [
-        "App de ${ MAIL_APP_NAME }"
-      ],
-      "account logins": [
-        "los inicios de sesión de la cuenta"
-      ],
-      "Auto-forward Gmail": [
-        "Reenvío automático de Gmail"
-      ],
-      "auto-forwarding": [
-        "reenvío automático"
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Cambie ${ strongText } a la dirección de ${ BRAND_NAME }"
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Descubra cómo nuestras ${ strongText } le protegen"
-      ],
-      "Discover privacy features": [
-        "Descubra las funciones de privacidad"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Obtenga la ${ strongText } en Android o iOS"
-      ],
-      "Get the App": [
-        "Descargue la aplicación"
-      ],
-      "privacy features": [
-        "funciones de privacidad"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Configure el ${ strongText } desde Gmail"
-      ],
-      "This feature is currently unavailable": [
-        "Esta función no está actualmente disponible."
-      ],
-      "Update your logins": [
-        "Actualice sus inicios de sesión"
       ]
     },
     "Gmail forwarding": {
@@ -7180,8 +7129,17 @@
       "Import from ${ provider }": [
         "Importar desde ${ provider }"
       ],
-      "Other": [
-        "Otro"
+      "Import from Google": [
+        "Importar desde Google"
+      ],
+      "Import from other": [
+        "Importar desde otro proveedor"
+      ],
+      "Import from Outlook": [
+        "Importar desde Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importar desde Yahoo"
       ]
     },
     "Import rollback status": {
@@ -7837,6 +7795,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Impulse la identidad de marca de su organización y cree una experiencia en línea más consistente para sus usuarios."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Traiga sus mensajes, contactos y calendarios a ${ BRAND_NAME }."
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Al crear una cuenta ${ PASS_APP_NAME } con su correo electrónico de SimpleLogin, puede administrar sus alias directamente desde ${ PASS_APP_NAME }."
@@ -8504,9 +8465,6 @@
       "Import mailbox": [
         "Importar buzón"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importe los correos, calendarios y contactos desde otro servicio a ${ BRAND_NAME }."
-      ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "IMPORTANTE: Si su panel de DNS no permite que los valores CNAME terminen con un punto, puede eliminar el último punto de los valores CNAME."
       ],
@@ -8910,6 +8868,9 @@
       "One account. All ${ BRAND_NAME } services.": [
         "Una cuenta. Todos los servicios de ${ BRAND_NAME }."
       ],
+      "One time import": [
+        "Importación única"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Solo cambie estos ajustes si está usando PGP con destinatarios que no son de ${ BRAND_NAME }."
       ],
@@ -9255,9 +9216,6 @@
       "Securing your account": [
         "Asegurando la cuenta"
       ],
-      "Select a service provider to start": [
-        "Seleccione un proveedor de servicios para comenzar"
-      ],
       "Select a service to continue": [
         "Seleccione un servicio para continuar"
       ],
@@ -9311,6 +9269,9 @@
       ],
       "Set recovery phrase": [
         "Establecer frase de recuperación"
+      ],
+      "Set up forwarding": [
+        "Configurar el reenvío"
       ],
       "Set up your organization": [
         "Configure su organización"
@@ -9891,11 +9852,11 @@
       "User activated": [
         "El usuario fue activado."
       ],
-      "Username": [
-        "Nombre de usuario"
-      ],
       "username": [
         "nombre de usuario"
+      ],
+      "Username": [
+        "Nombre de usuario"
       ],
       "Users": [
         "Usuarios"
@@ -10329,6 +10290,10 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Después se le facturará cada ${ renewCycle } mes por ${ renewAmountStr }.",
         "Después se le facturará cada ${ renewCycle } meses por ${ renewAmountStr }."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of them.": [
+        "Ha activado el reenvío en ${ MAX_SYNC_PAID_USER } dirección de Gmail. Para añadir otra, primero desactívela.",
+        "Ha activado el reenvío en ${ MAX_SYNC_PAID_USER } direcciones de Gmail. Para añadir otra, primero desactive una de ellas."
       ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Se aplicó su ${ boldDiscountPercent } a ${ boldPlanTitle }."
@@ -11067,10 +11032,10 @@
       "Allow sharing outside the organization": [
         "Permitir intercambio fuera de la organización"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dominio permitido"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dominio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11082,10 +11047,10 @@
       "Amount due": [
         "Monto adeudado"
       ],
-      "AND": [
+      "And": [
         "Y"
       ],
-      "And": [
+      "AND": [
         "Y"
       ],
       "and": [
@@ -11514,11 +11479,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "SI"
-      ],
       "If": [
         "Si"
+      ],
+      "IF": [
+        "SI"
       ],
       "Import all messages": [
         "Importar todos los mensajes"
@@ -11727,13 +11692,13 @@
       "Optional": [
         "Opcional"
       ],
-      "OR": [
-        "O"
-      ],
       "or": [
         "o"
       ],
       "Or": [
+        "O"
+      ],
+      "OR": [
         "O"
       ],
       "Organization name": [
@@ -12421,11 +12386,11 @@
       "perform a password reset from your active session": [
         "restablecer la contraseña desde una sesión activa"
       ],
-      "privacy policy": [
-        "política de privacidad"
-      ],
       "Privacy policy": [
         "Política de privacidad"
+      ],
+      "privacy policy": [
+        "política de privacidad"
       ],
       "Reactivate now": [
         "Reactivar ahora"
@@ -13066,20 +13031,8 @@
       "From ${ price }": [
         "Desde ${ price }"
       ],
-      "Get started for ${ priceCoupon }": [
-        "Comenzar por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Desde ${ pricing }"
-      ],
       "Upgrade": [
         "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Mejorar a ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13244,9 +13197,6 @@
       "Auto-delete Spam and Trash": [
         "Eliminación automática de spam y papelera"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Eliminar automáticamente spam y mensajes de la papelera"
-      ],
       "Auto-reply": [
         "Respuesta automática"
       ],
@@ -13291,9 +13241,6 @@
       ],
       "Custom fields": [
         "Campos personalizados"
-      ],
-      "Custom snooze time": [
-        "Tiempo de pausa personalizado"
       ],
       "Custom workspace branding": [
         "Marca personalizada del espacio de trabajo"
@@ -13446,12 +13393,6 @@
       "Schedule and snooze emails for any time": [
         "Programar y pausar correos a cualquier hora"
       ],
-      "Schedule messages at any time": [
-        "Programar mensajes a cualquier hora"
-      ],
-      "Search message content": [
-        "Buscar contenido del mensaje"
-      ],
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
@@ -13603,9 +13544,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Cree múltiples direcciones de correo para sus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain2 } para suscripciones de noticias"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Pause los mensajes y reciba un recordatorio cuando quiera."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }"
@@ -13786,11 +13724,22 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "A partir de ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceLine }. Puede cancelar en cualquier momento."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Desbloquee todos los productos y funciones premium de ${ BRAND_NAME } por solo ${ priceLine }. Cancele en cualquier momento."
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prueba de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
       ]
     },
     "new_plans: title": {
@@ -13811,14 +13760,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Desbloquee funciones premium al actualizar"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prueba de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {
@@ -14459,6 +14400,17 @@
         "Escritorio"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Todos"
+      ],
+      "Group members": [
+        "Miembros del grupo"
+      ],
+      "No one": [
+        "Nadie"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10º del mes"
@@ -14693,17 +14645,6 @@
       ],
       "Trash": [
         "Enviar a papelera"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Todos"
-      ],
-      "Group members": [
-        "Miembros del grupo"
-      ],
-      "No one": [
-        "Nadie"
       ]
     },
     "Option delay send seconds": {
@@ -16725,9 +16666,6 @@
       ]
     },
     "Settings description": {
-      "Complete the transition to privacy with our secure importing and forwarding tools.": [
-        "Complete la transición a la privacidad con nuestras herramientas seguras de importación y reenvío."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Mantenga el buzón organizado con carpetas y etiquetas. ${ learnMoreLink }"
       ]
@@ -18610,9 +18548,6 @@
       "Actions": [
         "Acciones"
       ],
-      "Activate @pm.me": [
-        "Activar @pm.me"
-      ],
       "Activate organization key": [
         "Activar clave de la organización"
       ],
@@ -18770,10 +18705,10 @@
       "Card verification": [
         "Verificación de tarjeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
       "Change login password": [
@@ -18808,9 +18743,6 @@
       ],
       "Clear": [
         "Borrar"
-      ],
-      "Clear out the junk": [
-        "Elimine los mensajes no deseados."
       ],
       "Click a value in the table to use it as filter": [
         "Pulse un valor en la tabla para usarlo como filtro"
@@ -19344,17 +19276,11 @@
       "Import key": [
         "Importar la clave"
       ],
-      "Import messages": [
-        "Importar mensajes"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importar con ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Inactive 2FA": [
         "2FA inactiva"
-      ],
-      "Increase your privacy with more addresses": [
-        "Incremente su privacidad con más direcciones"
       ],
       "Information exposed in breach": [
         "Información expuesta en la vulneración"
@@ -19376,9 +19302,6 @@
       ],
       "Items owned": [
         "Elementos propios"
-      ],
-      "Keep your inbox organized": [
-        "Mantenga el buzón organizado"
       ],
       "Keyboard shortcuts": [
         "Atajos de teclado"
@@ -19403,6 +19326,9 @@
       ],
       "Leave group?": [
         "¿Desea salir del grupo?"
+      ],
+      "Limit reached": [
+        "Límite alcanzado"
       ],
       "Link confirmation": [
         "Confirmación de enlace"
@@ -19527,9 +19453,6 @@
       "PayPal verification failed": [
         "Error con la verificación de PayPal"
       ],
-      "Personalize your e-mail footer": [
-        "Personalice su pie de correo"
-      ],
       "Personalize your email footer": [
         "Personalice su pie de correo"
       ],
@@ -19650,9 +19573,6 @@
       "SAML authentication": [
         "Autenticación SAML"
       ],
-      "Save time with email filters": [
-        "Ahorre tiempo con filtros de correo"
-      ],
       "Schedule meetings in one click": [
         "Programe reuniones con un solo clic"
       ],
@@ -19721,9 +19641,6 @@
       ],
       "Set up email forwarding": [
         "Configure el reenvío de correo electrónico"
-      ],
-      "Set up forwarding": [
-        "Establecer reenvío"
       ],
       "Set up two-factor authentication": [
         "Configurar autenticación de dos factores"
@@ -20660,8 +20577,8 @@
       "Recommended": [
         "Recomendado"
       ],
-      "Save ${ totals.discountPercentage }%": [
-        "Ahorre ${ totals.discountPercentage }%"
+      "Save ${ price.uiData.discountPercent }%": [
+        "Ahorre un ${ price.uiData.discountPercent }%"
       ]
     },
     "User referee invited via email": {

@@ -543,9 +543,6 @@
       "Generate text": [
         "Luo tekstiä"
       ],
-      "Get ${ BRAND_NAME } Duo": [
-        "Hanki ${ BRAND_NAME } Duo"
-      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Hanki ${ planName } hintaan ${ priceCoupon }"
       ],
@@ -554,12 +551,6 @@
       ],
       "Get in touch": [
         "Ota yhteyttä"
-      ],
-      "Get it": [
-        "Hanki se"
-      ],
-      "Get it from only ${ addonPriceWithCurrency } /month": [
-        "Saat sen hintaan ${ addonPriceWithCurrency }/kuukausi"
       ],
       "Get started": [
         "Aloita"
@@ -862,6 +853,9 @@
       "Move to archive": [
         "Siirrä arkistoon"
       ],
+      "Move to folder": [
+        "Siirrä kansioon"
+      ],
       "Move to inbox": [
         "Siirrä saapuneisiin"
       ],
@@ -1132,10 +1126,10 @@
       "Select ${ planTitle }": [
         "Valitse ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Valitse kaikki"
       ],
-      "Select all": [
+      "Select All": [
         "Valitse kaikki"
       ],
       "Select all messages": [
@@ -1288,9 +1282,6 @@
       "Start setup": [
         "Aloita määritys"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Alkaen ${ priceUnlimited }"
-      ],
       "Stay": [
         "Pysy"
       ],
@@ -1344,6 +1335,10 @@
       ],
       "Trust": [
         "Luota"
+      ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -1407,9 +1402,6 @@
       ],
       "Upgrade Now": [
         "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Päivitä ${ BRAND_NAME } Unlimitediin"
       ],
       "Upload and share files": [
         "Lähetä ja jaa tiedostoja"
@@ -3676,9 +3668,6 @@
       "Also included": [
         "Sisältää myös:"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Päivitä tilauksesi poistaaksesi roskapostit ja roskakorissa olevat viestit automaattisesti, ja avataksesi muita premium-ominaisuuksia."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Tyhjennä yli 30 päivää sitten roskakoriin ja -postiin siirretyt sähköpostit automaattisesti."
       ],
@@ -3700,9 +3689,6 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja poistetaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Suunniteltu käyttäjille, jotka haluavat parantaa tiliensä suojausta."
-      ],
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "Etkö halua lähettää sähköpostia juuri nyt? Ajoita se juuri oikeaan aikaan."
       ],
@@ -3714,9 +3700,6 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut kolmannen osapuolen palvelusta."
-      ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Hanki ${ PLAN_NAMES[PLANS.BUNDLE] } ja saat rajattomasti aliaksia ja 500 Gt tallennustilaa."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Yhteystiedot, joita olet tuomassa, näyttävät sisältävän ryhmiä. Määritä miten ryhmät tuodaan."
@@ -3737,9 +3720,6 @@
       "No labels": [
         "Tunnisteita ei ole"
       ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Säästä aikaa lähettämällä sähköposteja kaikille samanaikaisesti yhteystietoryhmien avulla. Avaa tämä ja muita premium-ominaisuuksia päivittämällä tilauksesi."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Erota elämäsi eri alueet useilla sähköpostiosoitteilla ja avaa myös muita premium-ominaisuuksia päivittämällä tilauksesi."
       ],
@@ -3748,9 +3728,6 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Aseta palautustapa, jottet menetä pääsyä tilillesi."
-      ],
-      "Starting from ${ price }": [
-        "Alkaen ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Jos haluat jatkaa kirjoitusavustajan käyttöä, lisää se tilaukseesi."
@@ -3773,26 +3750,8 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Ota sähköpostin seurantasuojaus käyttöön, jotta mainostajat ja muut tahot eivät voi jäljittää sijaintiasi ja valvoa verkkotoimintaasi."
       ],
-      "Unlock custom message scheduling and more premium features when you upgrade.": [
-        "Päivittämällä tilauksesi avaat viestien ajoituksen ja muita premium-ominaisuuksia."
-      ],
-      "Unlock custom snooze times and more premium features when you upgrade.": [
-        "Päivittämällä tilauksesi avaat mukautetut torkutusajat ja muita premium-ominaisuuksia."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Avaa lyhyemmät sähköpostiosoitteet ja myös muita premium-ominaisuuksia päivittämällä tilauksesi."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Päivitä tilauksesi ja avaa rajaton määrä postilaatikkosi puolestasi lajittelevia suodattimia sekä muita premium-ominaisuuksia."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Päivittämällä tilauksesi avaat rajattomasti kansioita, tunnisteita ja muita premium-ominaisuuksia."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Päivitä tilauksesi saadaksesi ${ activatePmUser }, toisen lyhyemmän ja helpommin muistettavan sähköpostiosoitten nykyisen lisäksi."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Päivitä tilisi aktivoidaksesi huippumoderniin tekoälyyn perustuvan ${ PROTON_SENTINEL_NAME } -tietoturvaratkaisumme, johon sisältyy myös 24/7 asiantuntijatuki."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "Käytä ${ MAIL_APP_NAME }ia verkkopalveluihin kirjautumiseen, koska toisin kuin muut sähköpostipalveluntarjoajat, me emme koskaan seuraa tietojasi tai jaa niitä kolmansille osapuolille."
@@ -5835,9 +5794,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Tuo palvelusta ${ provider }"
-      ],
-      "Other": [
-        "Muu"
       ]
     },
     "Import warning": {
@@ -5977,14 +5933,6 @@
       "${ n } unread conversation": [
         "${ n } lukematon keskustelu",
         "${ n } lukematonta keskustelua"
-      ],
-      "${ numberOfImageTrackers } email tracker blocked": [
-        "${ numberOfImageTrackers } sähköpostiseuranta estetty",
-        "${ numberOfImageTrackers } sähköpostiseurantaa estetty"
-      ],
-      "${ numberOfImageTrackers } tracker blocked": [
-        "${ numberOfImageTrackers } seuranta estetty",
-        "${ numberOfImageTrackers } seurantaa estetty"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } linkki puhdistettu",
@@ -6763,8 +6711,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -7232,9 +7179,6 @@
       ],
       "Seems like you are all caught up for now": [
         "Kaikki näyttää olevan tällä erää ajan tasalla"
-      ],
-      "Select a service provider to start": [
-        "Aloita valitsemalla palveluntarjoaja"
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "Valitse kaikki ${ elementsCount } sijainnista ${ location }",
@@ -8423,11 +8367,11 @@
       "Always move sender's emails": [
         "Siirrä lähettäjän viestit aina"
       ],
-      "AND": [
-        "JA"
-      ],
       "And": [
         "Ja"
+      ],
+      "AND": [
+        "JA"
       ],
       "and": [
         "ja"
@@ -8651,11 +8595,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "JOS"
-      ],
       "If": [
         "Jos"
+      ],
+      "IF": [
+        "JOS"
       ],
       "Import all messages": [
         "Tuo kaikki viestit"
@@ -8768,14 +8712,14 @@
       "Optional": [
         "Valinnainen"
       ],
-      "OR": [
-        "TAI"
-      ],
       "or": [
         "tai"
       ],
       "Or": [
         "Tai"
+      ],
+      "OR": [
+        "TAI"
       ],
       "Original link": [
         "Alkuperäinen linkki"
@@ -9115,6 +9059,9 @@
       ],
       "Folders": [
         "Kansiot"
+      ],
+      "here": [
+        "täältä"
       ],
       "How to add users": [
         "Miten käyttäjiä lisätään"
@@ -9617,29 +9564,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Hanki ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Aloita hintaan ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Alkaen ${ pricing }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ planName }": [
-        "Päivitä tilaukseen ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Poista tili"
@@ -9661,6 +9585,14 @@
       ],
       "Switch plan": [
         "Vaihda tilausta"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Hanki ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -9813,9 +9745,6 @@
       "Auto-delete Spam and Trash": [
         "Roskapostin ja roskakorin automaattinen tyhjennys"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Poista roskakorin ja roskapostin viestit automaattisesti"
-      ],
       "Auto-reply": [
         "Automaattivastaus"
       ],
@@ -9857,9 +9786,6 @@
       ],
       "Custom fields": [
         "Mukautetut kentät"
-      ],
-      "Custom snooze time": [
-        "Oma torkutusaika"
       ],
       "Custom workspace branding": [
         "Mukautettu työtilan ilme"
@@ -10000,12 +9926,6 @@
       "Schedule and snooze emails for any time": [
         "Viestien vapaa ajoitus ja torkutus"
       ],
-      "Schedule messages at any time": [
-        "Ajoita viestit lähtemään milloin tahansa"
-      ],
-      "Search message content": [
-        "Etsi viestien sisällöstä"
-      ],
       "Secure Core servers": [
         "Secure Core -palvelimet"
       ],
@@ -10141,9 +10061,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Luo verkkoidentiteeteillesi useita sähköpostiosoitteita, kuten MikkoOstokset@${ domain } ostoksille ja MikkoUutiset@${ domain2 } uutiskirjeille"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Torkuta viestejä ja saa muistutus haluamaasi aikaan"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä"
@@ -13178,9 +13095,6 @@
       "Action all messages": [
         "Käytä kaikkiin viesteihin"
       ],
-      "Activate @pm.me": [
-        "Aktivoi @pm.me"
-      ],
       "Add a custom logo": [
         "Lisää oma logo"
       ],
@@ -13277,9 +13191,6 @@
       ],
       "Change password": [
         "Vaihda salasana"
-      ],
-      "Clear out the junk": [
-        "Tyhjennä roskat"
       ],
       "Clearing data": [
         "Tyhjennetään tietoja"
@@ -13505,9 +13416,6 @@
       "Forward": [
         "Välitä"
       ],
-      "Get advanced protection": [
-        "Hanki edistynyt suojaus"
-      ],
       "Get more from your VPN": [
         "Saa enemmän VPN-yhteydestäsi"
       ],
@@ -13574,9 +13482,6 @@
       ],
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
-      ],
-      "Keep your inbox organized": [
-        "Pidä postilaatikkosi järjestyksessä"
       ],
       "Label as": [
         "Merkitse tunnisteella"
@@ -13821,9 +13726,6 @@
       "Same inbox, shorter email address": [
         "Sama postilaatikko, lyhyempi sähköpostiosoite"
       ],
-      "Save time with email filters": [
-        "Säästä aikaa sähköpostisuodattimilla"
-      ],
       "Schedule now, send later": [
         "Ajoita nyt, lähetä myöhemmin"
       ],
@@ -13893,9 +13795,6 @@
       "Set up your organization": [
         "Määritä organisaatiosi"
       ],
-      "Set your own schedule": [
-        "Aseta ajoitus itse"
-      ],
       "Settings": [
         "Asetukset"
       ],
@@ -13960,9 +13859,6 @@
       "Trust public key?": [
         "Luotetaanko julkiseen avaimeen?"
       ],
-      "Unlock contacts groups": [
-        "Avaa yhteystietoryhmät"
-      ],
       "Unsubscribe": [
         "Lopeta tilaus"
       ],
@@ -13986,9 +13882,6 @@
       ],
       "Verifying your payment...": [
         "Vahvistetaan maksua..."
-      ],
-      "Want to snooze any time?": [
-        "Haluatko torkuttaa vapaasti?"
       ],
       "Warning": [
         "Varoitus"

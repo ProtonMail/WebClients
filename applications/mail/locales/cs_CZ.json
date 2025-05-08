@@ -552,9 +552,6 @@
       "Generate text": [
         "Vygenerovat text"
       ],
-      "Get ${ BRAND_NAME } Duo": [
-        "Získejte ${ BRAND_NAME } Duo"
-      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Získat ${ planName } za ${ priceCoupon }"
       ],
@@ -563,12 +560,6 @@
       ],
       "Get in touch": [
         "Kontaktujte nás"
-      ],
-      "Get it": [
-        "Získat"
-      ],
-      "Get it from only ${ addonPriceWithCurrency } /month": [
-        "Získejte ho jen za ${ addonPriceWithCurrency } /měsíc"
       ],
       "Get started": [
         "Začínáme"
@@ -879,6 +870,9 @@
       "Move to archive": [
         "Přesunout do archivu"
       ],
+      "Move to folder": [
+        "Přesunout do složky"
+      ],
       "Move to inbox": [
         "Přesunout do Doručené pošty"
       ],
@@ -1152,10 +1146,10 @@
       "Select ${ planTitle }": [
         "Vybrat ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Vybrat vše"
       ],
-      "Select all": [
+      "Select All": [
         "Vybrat vše"
       ],
       "Select all messages": [
@@ -1311,9 +1305,6 @@
       "Start setup": [
         "Spustit nastavení"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Cena od ${ priceUnlimited }"
-      ],
       "Stay": [
         "Zůstat"
       ],
@@ -1370,6 +1361,12 @@
       ],
       "Trust": [
         "Důvěřovat"
+      ],
+      "Trust key": [
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -1436,9 +1433,6 @@
       ],
       "Upgrade Now": [
         "Navýšit nyní"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Navýšit na ${ BRAND_NAME } Unlimited"
       ],
       "Upload and share files": [
         "Nahrát a sdílet soubory"
@@ -3743,9 +3737,6 @@
       "Also included": [
         "Zahrnuje také"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Po navýšení je možné automaticky mazat zprávy ze složky nevyžádaná pošta a koš a odemknout další prémiové funkce."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Automatické mazání e-mailů přesunutých do koše a spamu před více než 30 dny."
       ],
@@ -3772,9 +3763,6 @@
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Mazání kontaktů... Tento proces může trvat několik minut. Po dokončení můžete okno zavřít."
-      ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Určeno pro uživatele, kteří hledají zvýšenou ochranu svých účtů."
       ],
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "Nechcete odeslat e-mail hned teď? Naplánujte si odeslání přesně na ten správný čas."
@@ -3809,9 +3797,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Získejte neomezený počet aliasů a 500 GB úložiště s ${ PLAN_NAMES[PLANS.BUNDLE] }."
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Pomozte svému týmu bezpečně ukládat hesla k citlivým obchodním informacím a informacím o klientech."
       ],
@@ -3839,9 +3824,6 @@
       "No labels": [
         "Bez štítků"
       ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Ušetřete čas odesláním e-mailů všem najednou pomocí skupin kontaktů. Odemkněte si tuto a další prémiové funkce navýšením tarifu."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddělte různé aspekty svého života pomocí více e-mailových adres a po navýšení tarifu odemkněte další prémiové funkce."
       ],
@@ -3856,9 +3838,6 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Zjednodušte synchronizaci a plánování pomocí sdílených kalendářů."
-      ],
-      "Starting from ${ price }": [
-        "Cena od ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Pro pokračování v používání asistenta psaní, ho přidejte k vašemu předplatnému."
@@ -3881,26 +3860,8 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Zapnutím ochrany proti sledování e-mailů zabráníte inzerentům a dalším subjektům sledovat vaši polohu a online aktivity."
       ],
-      "Unlock custom message scheduling and more premium features when you upgrade.": [
-        "Navýšením si odemkněte vlastní plánování zpráv a další prémiové funkce."
-      ],
-      "Unlock custom snooze times and more premium features when you upgrade.": [
-        "Navýšením si odemkněte vlastní čas odložení zpráv a další prémiové funkce."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Navýšením tarifu odemknete kratší e-mailové adresy a další prémiové funkce."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Navýšením tarifu odemknete neomezený počet filtrů, které za vás třídí doručenou poštu a další prémiové funkce."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Navýšením tarifu odemknete neomezený počet složek, štítků a dalších prémiových funkcí."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Navyšte a získejte kratší, snadno zapamatovatelnou adresu ${ activatePmUser } kromě své stávající e-mailové adresy."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Navyšte svůj účet a aktivujte ${ PROTON_SENTINEL_NAME }, naše špičkové bezpečnostní řešení s umělou inteligencí a specializovanou odbornou podporou 24 hodin denně, 7 dní v týdnu."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "Pro přihlášení k online službám používejte ${ MAIL_APP_NAME }, protože na rozdíl od jiných poskytovatelů e-mailových služeb nikdy nesledujeme vaše údaje a nesdílíme je s třetími stranami."
@@ -6023,8 +5984,17 @@
       "Import from ${ provider }": [
         "Importovat z ${ provider }"
       ],
-      "Other": [
-        "Ostatní"
+      "Import from Google": [
+        "Importovat z Google"
+      ],
+      "Import from other": [
+        "Importovat z jiných"
+      ],
+      "Import from Outlook": [
+        "Importovat z Outlooku"
+      ],
+      "Import from Yahoo": [
+        "Importovat z Yahoo!"
       ]
     },
     "Import warning": {
@@ -6213,18 +6183,6 @@
         "${ n } nepřečtených konverzací",
         "${ n } nepřečtených konverzací"
       ],
-      "${ numberOfImageTrackers } email tracker blocked": [
-        "${ numberOfImageTrackers } e-mailový sledovací prvek zablokován",
-        "${ numberOfImageTrackers } e-mailové sledovací prvky zablokovány",
-        "${ numberOfImageTrackers } e-mailových sledovacích prvků zablokováno",
-        "${ numberOfImageTrackers } e-mailových sledovacích prvků zablokováno"
-      ],
-      "${ numberOfImageTrackers } tracker blocked": [
-        "${ numberOfImageTrackers } sledovací prvek zablokován",
-        "${ numberOfImageTrackers } sledovací prvky zablokovány",
-        "${ numberOfImageTrackers } sledovacích prvků zablokováno",
-        "${ numberOfImageTrackers } sledovacích prvků zablokováno"
-      ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } vyčištěný odkaz",
         "${ numberOfUTMTrackers } vyčištěné odkazy",
@@ -6323,6 +6281,18 @@
         "${ total } zprávy",
         "${ total } zpráv",
         "${ total } zpráv"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } sledovací prvek e-mailu zablokován",
+        "${ trackersCount } sledovací prvky e-mailu zablokovány",
+        "${ trackersCount } sledovacích prvků e-mailu zablokováno",
+        "${ trackersCount } sledovacích prvků e-mailu zablokováno"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } sledovací prvek zablokován",
+        "${ trackersCount } sledovací prvky zablokovány",
+        "${ trackersCount } sledovacích prvků zablokováno",
+        "${ trackersCount } sledovacích prvků zablokováno"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } naplánovaná zpráva",
@@ -6498,6 +6468,9 @@
       "and": [
         "a"
       ],
+      "and more.": [
+        "a další."
+      ],
       "Another tip will be displayed next time you open Mail": [
         "Jiný tip bude zobrazen až příště otevřete Mail"
       ],
@@ -6602,6 +6575,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Zlepšete identitu značky své organizace a vytvořte konzistentnější online prostředí pro své uživatele."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Přeneste své zprávy, kontakty a kalendáře do ${ BRAND_NAME }."
       ],
       "Browse privately and access blocked content.": [
         "Procházejte soukromě a přistupujte k blokovanému obsahu."
@@ -6821,6 +6797,12 @@
       ],
       "Drop to import": [
         "Přetažením provedete import"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "Vzhledem k nastavení příjemce, nelze tuto zprávu odeslat s datem vypršení platnosti na následující kontakt: ",
+        "Vzhledem k nastavení příjemce, nelze tuto zprávu odeslat s datem vypršení platnosti na následující kontakty: ",
+        "Vzhledem k nastavení příjemce, nelze tuto zprávu odeslat s datem vypršení platnosti na následující kontakty: ",
+        "Vzhledem k nastavení příjemce, nelze tuto zprávu odeslat s datem vypršení platnosti na následující kontakty: "
       ],
       "Duplicate key updated": [
         "Duplicitní klíč byl aktualizován"
@@ -7093,10 +7075,7 @@
         "Inicializuji..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -7341,11 +7320,17 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste u takových klíčů vybrali volbu \"Nedůvěřovat\"."
       ],
+      "One time import": [
+        "Jednorázový import"
+      ],
       "Open shortcut cheat sheet": [
         "Otevření nápovědy pro klávesové zkratky"
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Otevřete průvodce, kde najdete doporučené kroky a užitečné odkazy."
+      ],
+      "Optional": [
+        "Volitelné"
       ],
       "or discover other features:": [
         "nebo objevte další funkce:"
@@ -7580,9 +7565,6 @@
       ],
       "Seems like you are all caught up for now": [
         "Zdá se, že prozatím nemáte co dohánět"
-      ],
-      "Select a service provider to start": [
-        "Vyberte poskytovatele služeb a začněte"
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "Vybrat ${ elementsCount } v ${ location }",
@@ -8842,10 +8824,10 @@
       "Always move sender's emails": [
         "Vždy přesunout e-maily odesílatele"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
       "and": [
@@ -9070,11 +9052,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "POKUD"
-      ],
       "If": [
         "Pokud"
+      ],
+      "IF": [
+        "POKUD"
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
@@ -9190,14 +9172,14 @@
       "Optional": [
         "Volitelné"
       ],
-      "OR": [
-        "NEBO"
-      ],
       "or": [
         "nebo"
       ],
       "Or": [
         "Nebo"
+      ],
+      "OR": [
+        "NEBO"
       ],
       "Original link": [
         "Původní odkaz"
@@ -9541,6 +9523,9 @@
       "Folders": [
         "Složky"
       ],
+      "here": [
+        "zde"
+      ],
       "How to add users": [
         "Jak přidat uživatele"
       ],
@@ -9678,6 +9663,9 @@
       ],
       "Types of recovery methods": [
         "Typy metod obnovení"
+      ],
+      "Views": [
+        "Zobrazení"
       ],
       "What’s this?": [
         "Co je to?"
@@ -10091,29 +10079,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Získat ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začněte za ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšit na ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Smazat účet"
@@ -10135,6 +10100,14 @@
       ],
       "Switch plan": [
         "Změnit tarif"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Získat ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -10321,9 +10294,6 @@
       "Auto-delete Spam and Trash": [
         "Automatické smazání obsahu složek spam a koš"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Automaticky mazat zprávy ve spamu a koši"
-      ],
       "Auto-reply": [
         "Automatická odpověď"
       ],
@@ -10365,9 +10335,6 @@
       ],
       "Custom fields": [
         "Vlastní pole"
-      ],
-      "Custom snooze time": [
-        "Vlastní čas odložení"
       ],
       "Custom workspace branding": [
         "Přizpůsobení pracovního prostoru pro vlastní značku"
@@ -10509,12 +10476,6 @@
       ],
       "Schedule and snooze emails for any time": [
         "Naplánujte a odložte e-maily na později"
-      ],
-      "Schedule messages at any time": [
-        "Plánování zpráv v libovolném čase"
-      ],
-      "Search message content": [
-        "Hledat v obsahu zpráv"
       ],
       "Secure Core servers": [
         "Servery Secure Core"
@@ -10664,9 +10625,6 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Vytvořte více e-mailových adres pro své online identity, např. HonzaNakupy@${ domain } pro nákupní účty a HonzaZpravy@${ domain2 } pro odběry zpráv"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Odložte zprávy a nechte si je připomenout, kdy chcete"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
       ]
@@ -10769,6 +10727,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Cena od ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Zvýhodněná cena ${ priceCoupon } platí první měsíc. Poté dojde k automatickému obnovení za cenu ${ priceLine }. Službu můžete kdykoli zrušit."
       ],
@@ -13912,9 +13873,6 @@
       "Action all messages": [
         "Akce všech zpráv"
       ],
-      "Activate @pm.me": [
-        "Aktivovat @pm.me"
-      ],
       "Add a custom logo": [
         "Přidejte vlastní logo"
       ],
@@ -14013,9 +13971,6 @@
       ],
       "Change password": [
         "Změnit heslo"
-      ],
-      "Clear out the junk": [
-        "Pročištění nevyžádané pošty"
       ],
       "Clearing data": [
         "Mazání dat"
@@ -14251,9 +14206,6 @@
       "Forward": [
         "Přeposlat"
       ],
-      "Get advanced protection": [
-        "Získat pokročilou ochranu"
-      ],
       "Get more from your VPN": [
         "Získejte více ze své VPN"
       ],
@@ -14328,9 +14280,6 @@
       ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
-      ],
-      "Keep your inbox organized": [
-        "Mějte pořádek ve své doručené poště"
       ],
       "Label as": [
         "Označit jako"
@@ -14575,9 +14524,6 @@
       "Same inbox, shorter email address": [
         "Stejná schránka, kratší e-mailová adresa"
       ],
-      "Save time with email filters": [
-        "Šetřete čas s e-mailovými filtry"
-      ],
       "Schedule now, send later": [
         "Naplánujte nyní, odešlete později"
       ],
@@ -14649,9 +14595,6 @@
       ],
       "Set up your organization": [
         "Nastavte svou organizaci"
-      ],
-      "Set your own schedule": [
-        "Nastavte si vlastní plán"
       ],
       "Settings": [
         "Nastavení"
@@ -14728,9 +14671,6 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Zapnout ${ DARK_WEB_MONITORING_NAME }"
       ],
-      "Unlock contacts groups": [
-        "Odemknout skupiny kontaktů"
-      ],
       "Unsubscribe": [
         "Odhlásit odběr"
       ],
@@ -14760,9 +14700,6 @@
       ],
       "VPN explained": [
         "Vysvětlení VPN"
-      ],
-      "Want to snooze any time?": [
-        "Chcete odložit na kdykoliv?"
       ],
       "Warning": [
         "Varování"

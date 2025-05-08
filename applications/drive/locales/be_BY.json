@@ -468,6 +468,9 @@
       "Get the apps": [
         "Атрымаць праграмы"
       ],
+      "Get the writing assistant": [
+        "Атрымаць памочніка ў напісанні"
+      ],
       "Get verification code": [
         "Атрымаць праверачны код"
       ],
@@ -969,9 +972,6 @@
       "Start recovering": [
         "Пачаць аднаўленне"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Пачатковы кошт ${ priceUnlimited }"
-      ],
       "Stay": [
         "Застацца"
       ],
@@ -992,6 +992,9 @@
       ],
       "Take a tour": [
         "Пачаць знаёмства"
+      ],
+      "This album is empty": [
+        "Гэты альбом пусты"
       ],
       "Toggle Calendar app": [
         "Пераключыць на праграму Каляндар"
@@ -1040,9 +1043,6 @@
       ],
       "Upgrade now": [
         "Палепшыць зараз"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Палепшыць да ${ BRAND_NAME } Unlimited"
       ],
       "Upload": [
         "Запампаваць"
@@ -2661,9 +2661,6 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Выдаленне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Распрацаваны для карыстальнікаў, якія шукаюць дадатковую абарону для сваіх уліковых запісаў."
-      ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Лёгкі доступ да вашай электроннай пошты і календара на камп’ютары або мабільнай прыладзе."
       ],
@@ -2691,9 +2688,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Атрымайце неабмежаваную колькасць псеўданімаў і сховішча аб'ёмам у 500 ГБ з тарыфным планам ${ PLAN_NAMES[PLANS.BUNDLE] }."
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Дапамажыце сваёй камандзе бяспечна захоўваць паролі да важных дзелавых і кліенцкіх звестак."
       ],
@@ -2705,9 +2699,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Аб'яднанне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Ашчаджайце час, адпраўляючы электронныя лісты ўсім адначасова з групамі кантактаў. Разблакіруйце гэту і іншыя прэміяльныя функцыі пасля паляпшэння."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Задаць спосаб аднаўлення, каб прадухіліць страту даных."
@@ -2735,9 +2726,6 @@
       ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Палепшыце да ${ planName }, каб працягваць абагульваць файлы з доступам да рэдагавання"
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Палепшыце свой уліковы запіс, каб актываваць ${ PROTON_SENTINEL_NAME }, наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту з падтрымкай ад экспертаў 24/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Выкарыстоўвайце перацягванне, каб задаць прыярытэт аб'яднання паміж кантактамі. Здыміце пазнаку з кантактаў, якія вы не хочаце аб'ядноўваць."
@@ -4333,8 +4321,17 @@
       "Import from ${ provider }": [
         "Імпартаваць з ${ provider }"
       ],
-      "Other": [
-        "Іншы"
+      "Import from Google": [
+        "Імпартаваць з Google"
+      ],
+      "Import from other": [
+        "Імпартаваць з іншых паштовых сэрвісаў"
+      ],
+      "Import from Outlook": [
+        "Імпартаваць з Outlook"
+      ],
+      "Import from Yahoo": [
+        "Імпартаваць з Yahoo"
       ]
     },
     "Import warning": {
@@ -4780,6 +4777,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Палепшыце ідэнтычнасць вашай арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Перанясіце свае паведамленні, кантакты і календары ў ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні вы зноў пяройдзеце на яго."
@@ -5399,6 +5399,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як скампраметаваныя. Мы рэкамендуем вам не давяраць гэтым ключам."
       ],
+      "One time import": [
+        "Аднаразовае імпартаванне"
+      ],
       "Only the people with the link and the password can access this file.": [
         "Толькі карыстальнікі са спасылкай і паролем змогуць атрымаць доступ да гэтага файла."
       ],
@@ -5467,6 +5470,9 @@
       ],
       "Photo(s) saved to your Drive": [
         "Фатаграфіі захаваны ў ваш Drive"
+      ],
+      "Photos": [
+        "Фатаграфіі"
       ],
       "Photos have been successfully recovered.": [
         "Фатаграфіі былі паспяхова адноўлены."
@@ -5641,9 +5647,6 @@
       ],
       "Select a folder to move to.": [
         "Выберыце папку для перамяшчэння."
-      ],
-      "Select a service provider to start": [
-        "Выберыце пастаўшчыка паслуг, каб пачаць"
       ],
       "Select all items for": [
         "Выбраць усе элементы для"
@@ -7697,29 +7700,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Пачніце за ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Тарыфныя планы, якія пачынаюцца з ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Пачатковы кошт ${ pricing }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
-      "Upgrade to ${ planName }": [
-        "Палепшыць да ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -7741,6 +7721,17 @@
       ],
       "Switch plan": [
         "Змяніць тарыфны план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Тарыфныя планы, якія пачынаюцца з ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
       ]
     },
     "new_plans: feature": {
@@ -7927,9 +7918,6 @@
       "Auto-delete Spam and Trash": [
         "Аўтаматычнае выдаленне спаму і смецця"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Аўтаматычна выдаляць паведамленні ў спаме і сметніцы"
-      ],
       "Auto-reply": [
         "Аўтаматычны адказ"
       ],
@@ -7971,9 +7959,6 @@
       ],
       "Custom fields": [
         "Карыстальніцкія палі"
-      ],
-      "Custom snooze time": [
-        "Карыстальніцкі час адкладання"
       ],
       "Custom workspace branding": [
         "Брэндзіраванне карыстальніцкай працоўнай прасторы"
@@ -8115,12 +8100,6 @@
       ],
       "Schedule and snooze emails for any time": [
         "Планаванне і адкладанне лістоў у любы час"
-      ],
-      "Schedule messages at any time": [
-        "Заплануйце адпраўку паведамленняў у любы час"
-      ],
-      "Search message content": [
-        "Пошук змесціва паведамлення"
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
@@ -8270,9 +8249,6 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Стварайце некалькі розных адрасоў электроннай пошты для сваіх пасведчанняў у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain2 } для падпіскі на навіны"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Адкладайце паведамленні і атрымлівайце напаміны, калі вам гэта неабходна"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
       ]
@@ -8375,6 +8351,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Пачатковы кошт ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Зніжаны кошт у памеры ${ priceCoupon } дзейнічае на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceLine }. Скасаваць можна ў любы момант."
       ],
@@ -11490,9 +11469,6 @@
         "Знойдзена ${ searchView.numberOfResults } вынікаў",
         "Знойдзена ${ searchView.numberOfResults } вынікаў"
       ],
-      "Get advanced protection": [
-        "Атрыманне дадатковай абароны"
-      ],
       "Get more from your VPN": [
         "Атрымайце больш ад свайго VPN"
       ],
@@ -11561,6 +11537,9 @@
       ],
       "Location": [
         "Размяшчэнне"
+      ],
+      "Mail Subscriptions": [
+        "Падпіскі пошты"
       ],
       "Make a secure connection your default": [
         "Зрабіце бяспечнае падключэнне сваім прадвызначаным"
@@ -11870,9 +11849,6 @@
       ],
       "Type": [
         "Тып"
-      ],
-      "Unlock contacts groups": [
-        "Разблакіраваць групы кантактаў"
       ],
       "Untitled document ${ date }": [
         "Дакумент без назвы ад ${ date }"

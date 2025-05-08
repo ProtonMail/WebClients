@@ -83,71 +83,6 @@
     "Cancellation upsell": {
       "Cloud storage and sharing for large files": [
         "ღრუბლოვანი საცავი და გაზიარება დიდი ფაილებისთვის"
-      ],
-      "Secure personal and shared calendar": [
-        "უსაფრთხო საკუთარი და გაზიარებული კალენდარი"
-      ]
-    },
-    "color": {
-      "carrot": [
-        "სტაფილოსფერი"
-      ],
-      "cerise": [
-        "ალუბლისფერი"
-      ],
-      "cobalt": [
-        "კობალტისფერი"
-      ],
-      "copper": [
-        "სპილენძიფერი"
-      ],
-      "enzian": [
-        "ენიზანი"
-      ],
-      "fern": [
-        "გვიმრა"
-      ],
-      "forest": [
-        "ტყისფერი"
-      ],
-      "ocean": [
-        "ოკეანე"
-      ],
-      "olive": [
-        "ზეთისხილი"
-      ],
-      "pacific": [
-        "წყნარი ოკეანე"
-      ],
-      "pickle": [
-        "კიტრი"
-      ],
-      "pine": [
-        "ფიჭვი"
-      ],
-      "pink": [
-        "ვარდისფერი"
-      ],
-      "plum": [
-        "ქლიავისფერი"
-      ],
-      "purple": [
-        "იისფერი"
-      ],
-      "reef": [
-        "მარჯნისფერი"
-      ],
-      "sahara": [
-        "საჰარა"
-      ],
-      "slateblue": [
-        "მოცისფერო-ნაცრისფერი"
-      ],
-      "soil": [
-        "მიწისფერი"
-      ],
-      "strawberry": [
-        "მარწყვისფერი"
       ]
     },
     "Country name": {
@@ -1244,14 +1179,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe წერის დამხმარე"
       ],
-      "${ n } calendar": [
-        "${ n } კალენდარი",
-        "${ n } კალენდარი"
-      ],
-      "${ n } calendar per user": [
-        "${ n } კალენდარი თითოეული მომხმარებლისათვის",
-        "${ n } კალენდარი თითოეული მომხმარებლისათვის"
-      ],
       "${ n } custom email domain": [
         "ელფოსტის ${ n } ხელით მითითებული დომენი",
         "ელფოსტის ${ n } ხელით მითითებული დომენი"
@@ -1333,9 +1260,6 @@
       "Auto-delete Spam and Trash": [
         "სპამისა და ნაგვის ყუთის ავტომატური წაშლა"
       ],
-      "Auto-delete spam and trashed messages": [
-        "სპამისა და სანაგვე ყუთში მდებარე შეტყობინებების ავტომატური წაშლა"
-      ],
       "Auto-reply": [
         "თვითმოპასუხე"
       ],
@@ -1362,9 +1286,6 @@
       ],
       "Custom email domains": [
         "თქვენი ელფოსტის დომენები"
-      ],
-      "Custom snooze time": [
-        "მომხმარებლის დროებით დადუმების დრო"
       ],
       "Desktop app": [
         "კომპიუტერის აპი"
@@ -1417,20 +1338,8 @@
       "Schedule and snooze emails for any time": [
         "დაგეგმეთ და ჩააჩუმეთ ელფოსტები სასურველი დროით"
       ],
-      "Schedule messages at any time": [
-        "შეტყობინებების განრიგში ნებისმიერ დროს ჩასმა"
-      ],
-      "Search message content": [
-        "შეტყობინების შიგთავსში ძებნა"
-      ],
       "Secure file storage and sharing": [
         "დაცული ფაილების საცავი და გაზიარება"
-      ],
-      "See team's availability": [
-        "გუნდის ხელმისაწვდომობის ნახვა"
-      ],
-      "Send & receive invitations": [
-        "მოსაწვევების გაგზავნა და მიღება"
       ],
       "Share files with no size limit": [
         "გააზიარეთ ფაილები ზომის შეზღუდვის გარეშე"
@@ -1470,17 +1379,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "შექმენით მრავალი ელექტრონული ფოსტის მისამართი თქვენი ონლაინ ვინაობისთვის, მაგ., JohnShopper@p${ domain } სავაჭრო ანგარიშებისთვის, JohnNews@${ domain2 } ახალი ამბების გამოწერებისთვის"
       ],
-      "Snooze messages and get reminded when you want": [
-        "დაადუმეთ დროებით შეტყობინებები და ჩვენ შეგახსენებთ, როცა გნებავთ"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "საცავის სივრცე გაზიარებულია ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } და ${ DRIVE_APP_NAME } შორის"
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: დაიცავით თქვენი განრიგი გამჭოლი დაშიფვრით. შეიცავს მომხმარებლის კალენდრების მხარდაჭერას, კალენდრის გაზიარებას და ა.შ."
-      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს ავტომატურ სინქრონზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
       ],
@@ -1511,15 +1414,8 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "შექმენით მრავალი ელექტრონული ფოსტის მისამართი თქვენი ონლაინ ვინაობისთვის, მაგ., JohnShopper@p${ domain } სავაჭრო ანგარიშებისთვის, JohnNews@${ domain } ახალი ამბების გამოწერებისთვის"
       ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "შექმენით ${ n }-მდე კალენდარი ან დაამატეთ მეგობრების, ოჯახის, კოლეგების და ორგანიზაციების კალენდრები",
-        "შექმენით ${ n }-მდე კალენდარი ან დაამატეთ მეგობრების, ოჯახის, კოლეგების და ორგანიზაციების კალენდრები"
-      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "შექმენით ${ n }-მდე ელფოსტის მისამართი/ფსევდონიმი, რომლებიც შეგიძლიათ, ოჯახის წევრებს მიანიჭოთ. გამოიყენეთ ისინი, მაგალითად, შოინგისთვის. JemalShpper@${ domain }."
-      ],
-      "Easily share your calendars with your family, friends, or colleagues": [
-        "გაუზიარეთ კალენდარი თქვენს ოჯახს, მეგობრებს და კოლეგებს"
       ],
       "Email everyone in a group with a single email address": [
         "მიწერეთ ყველას ჯგუფში ერთი ელფოსტის მისამართით"
@@ -1529,9 +1425,6 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP-ის მხარდაჭერა შეზღუდულია კომპიუტერის აპებზე (მაგ: Outlook, Apple Mail, Thunderbird) ${ MAIL_APP_NAME }-ის ხიდის მიერ. ღრუბლოვანი IMAP ინტეგრაციები ჯერ მხარდაჭერილი არაა."
-      ],
-      "Keep your plans private to you and your family with an encrypted calendar": [
-        "დაიტოვეთ თქვენი გეგმები თქვენთვის და თქვენი ოჯახისთვის, დაშიფრული კალენდრით"
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "ჭდეები მარტივი ტეგებია, რომლებიც შეგიძლიათ, დაამატოთ შეტყობინებებს, რათა უფრო ადვილად იპოვოთ ისინი ან გამოიყენოთ ფილტრები"
@@ -1553,9 +1446,6 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "შეინახეთ კონტაქტების ისეთი დეტალები, როგორიცაა ტელეფონის ნომერი, მისამართი, დაბადების დღე და პირადი შენიშვნები, უსაფრთხოდ. ნულოვანი წვდომით დაშიფვრა უზრუნველყოფს, რომ მათზე წვდომა ${ BRAND_NAME }-საც კი არ ჰქონდეს."
-      ],
-      "See the availability of meeting participants and save time scheduling meetings": [
-        "იხილეთ შეხვედრის წევრების წვდომადობა და დაზოგეთ შეხვედრები დაგეგმვის დრო"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "გაუგზავნეთ ელფოსტა დიდ ჯგუფებს სწრაფად და ადვილად ჯგუფების გამოყენებით. შექმენით იმდენი ჯგუფი, რამდენიც გნებავთ (100 კონტაქტი თითოეულში)"
@@ -1594,10 +1484,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "გაზარდეთ თქვენი საცავი ${ bundleStorage }-მდე"
-      ],
-      "Create up to ${ n } calendar": [
-        "შექმენით ${ n }-მდე კალენდარი",
-        "შექმენით ${ n }-მდე კალენდარი"
       ],
       "Support for ${ n } custom email domains": [
         "${ n } მომხმარებლის დომენის მხარდაჭერა"

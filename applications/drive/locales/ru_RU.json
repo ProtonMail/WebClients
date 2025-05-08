@@ -438,6 +438,9 @@
       "Get Started": [
         "Начать"
       ],
+      "Get the writing assistant": [
+        "Получить помощник по написанию"
+      ],
       "Get verification code": [
         "Получить проверочный код"
       ],
@@ -888,9 +891,6 @@
       "Start recovering": [
         "Начать восстановление"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Начиная с ${ priceUnlimited }"
-      ],
       "Stay": [
         "Остаться"
       ],
@@ -956,9 +956,6 @@
       ],
       "Upgrade now": [
         "Улучшить сейчас"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Улучшить до ${ BRAND_NAME } Unlimited"
       ],
       "Upload": [
         "Загрузить"
@@ -2510,26 +2507,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Удаление контактов... Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это окно."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Создан для пользователей, желающих получить усиленную защиту своих аккаунтов."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Получите неограниченное количество псевдонимов и 500 ГБ в облачном хранилище с ${ PLAN_NAMES[PLANS.BUNDLE] }."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Похоже, что список контактов, который вы импортируете, содержит группы. Пожалуйста, уточните, как их нужно импортировать."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Выполняется объединение контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Экономьте время, отправляя электронные письма всем сразу с помощью групп контактов. Разблокируйте эти и другие платные функции при обновлении."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Установите метод восстановления данных, чтобы предотвратить их потерю."
@@ -2545,9 +2533,6 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Чтобы импортировать контакты из Google или Outlook, ${ easySwitchLink }."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Обновите свой аккаунт, чтобы активировать ${ PROTON_SENTINEL_NAME }, наше передовое решение безопасности на основе искусственного интеллекта с круглосуточной поддержкой экспертов."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Перетаскивайте контакты, чтобы задавать им приоритет при объединении. Снимите галочку с контактов, которые вы не хотите объединять."
@@ -4072,9 +4057,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Импортировать из ${ provider }"
-      ],
-      "Other": [
-        "Другой"
       ]
     },
     "Import warning": {
@@ -5295,9 +5277,6 @@
       "Select a folder to move to.": [
         "Выберите папку для перемещения."
       ],
-      "Select a service provider to start": [
-        "Выберите поставщика услуг, чтобы начать"
-      ],
       "Select all items for": [
         "Выберите все элементы для"
       ],
@@ -5888,6 +5867,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Ваша информация была найдена ${ displayedDate }"
+      ],
+      "Your IP": [
+        "Ваш IP-адрес"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваши данные для входа не будут сохранены после завершения импорта."
@@ -6607,6 +6589,12 @@
       "Your alias": [
         "Ваш псевдоним"
       ],
+      "Your IP": [
+        "Ваш IP-адрес"
+      ],
+      "Your location": [
+        "Ваше местоположение"
+      ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
       ]
@@ -7119,26 +7107,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Начните с ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Начиная с ${ pricing }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ],
-      "Upgrade to ${ planName }": [
-        "Улучшить на ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -7160,6 +7128,14 @@
       ],
       "Switch plan": [
         "Сменить тариф"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Улучшить"
       ]
     },
     "new_plans: feature": {
@@ -7343,9 +7319,6 @@
       "Auto-delete Spam and Trash": [
         "Автоудаление спама и сообщений в корзине"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Автоудаление спама и удаленных сообщений"
-      ],
       "Auto-reply": [
         "Автоответчик"
       ],
@@ -7387,9 +7360,6 @@
       ],
       "Custom fields": [
         "Настраиваемые поля"
-      ],
-      "Custom snooze time": [
-        "Настраиваемое время пробуждения"
       ],
       "Custom workspace branding": [
         "Пользовательское брендирование рабочего пространства"
@@ -7525,12 +7495,6 @@
       ],
       "Schedule and snooze emails for any time": [
         "Планируйте и откладывайте сообщения электронной почты на любое время"
-      ],
-      "Schedule messages at any time": [
-        "Планируйте сообщения в любое время"
-      ],
-      "Search message content": [
-        "Поиск содержимого сообщения"
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
@@ -7679,9 +7643,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, VanyaShopper@${ domain } для учетных записей покупок, VanyaNews@${ domain2 } для подписки на новости"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Отложите сообщения и получите напоминание в нужное время"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Объём хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
@@ -10726,9 +10687,6 @@
         "Найдено ${ searchView.numberOfResults } результатов",
         "Найдено ${ searchView.numberOfResults } результатов"
       ],
-      "Get advanced protection": [
-        "Получить расширенную защиту"
-      ],
       "Get the apps": [
         "Получить приложения"
       ],
@@ -11014,9 +10972,6 @@
       "Type": [
         "Тип"
       ],
-      "Unlock contacts groups": [
-        "Разблокировать группы контактов"
-      ],
       "Untitled document ${ date }": [
         "Документ без названия ${ date }"
       ],
@@ -11225,6 +11180,12 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } устройство",
+        "${ n } устройства",
+        "${ n } устройств",
+        "${ n } устройств"
+      ],
       "${ n } server": [
         "${ n } сервер",
         "${ n }+ сервера",

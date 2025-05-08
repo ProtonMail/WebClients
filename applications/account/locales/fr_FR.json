@@ -289,6 +289,9 @@
       "Connect to video conferencing": [
         "Se connecter à la vidéoconférence"
       ],
+      "Connect your Gmail address": [
+        "Connectez votre adresse Gmail"
+      ],
       "Connected": [
         "Connecté"
       ],
@@ -688,6 +691,9 @@
       "Get the deal": [
         "J'en profite"
       ],
+      "Get the writing assistant": [
+        "Obtenir l'assistant d'écriture"
+      ],
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
@@ -775,11 +781,11 @@
       "Keep": [
         "Conserver"
       ],
-      "Keep Editing": [
-        "Poursuivre les modifications"
-      ],
       "Keep editing": [
         "Continuer les modifications"
+      ],
+      "Keep Editing": [
+        "Poursuivre les modifications"
       ],
       "Keep logo": [
         "Conserver le logo"
@@ -1138,11 +1144,11 @@
       "Select country ${ country }": [
         "Sélectionnez le pays ${ country }"
       ],
-      "select file": [
-        "sélectionnez un fichier."
-      ],
       "Select file": [
         "Sélectionner un fichier"
+      ],
+      "select file": [
+        "sélectionnez un fichier."
       ],
       "Select files": [
         "Sélectionner les fichiers"
@@ -1200,6 +1206,9 @@
       ],
       "Set up a custom domain": [
         "Configurer un domaine personnalisé"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Configurer le transfert automatique depuis Gmail"
       ],
       "Set up email forwarding": [
         "Configurer le transfert automatique des messages"
@@ -1357,9 +1366,6 @@
       "Upgrade now": [
         "Changer d'abonnement"
       ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Je passe à ${ MAIL_SHORT_APP_NAME } Plus"
-      ],
       "Upgrade to Business": [
         "Passer à l'abonnement Business"
       ],
@@ -1388,7 +1394,7 @@
         "Utiliser le thème ${ label }"
       ],
       "Use ${ PASS_APP_NAME } for Business": [
-        "Utiliser ${ PASS_APP_NAME } pour Business"
+        "Utiliser ${ PASS_APP_NAME } for Business"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilisez ${ VPN_SHORT_APP_NAME } pour la confidentialité des données"
@@ -3856,9 +3862,6 @@
       "Also included": [
         "Également inclus"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Supprimez automatiquement les messages indésirables et ceux dans la corbeille, et débloquez davantage de fonctionnalités premium lorsque vous améliorez votre abonnement."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Effacez automatiquement les e-mails déplacés dans la corbeille et le dossier Indésirables/spam de plus de 30 jours."
       ],
@@ -3961,9 +3964,6 @@
       "Send a code to your recovery email or phone": [
         "Envoyer un code à votre adresse e-mail de récupération ou à votre téléphone"
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "En passant à un abonnement supérieur, vous disposez de plusieurs adresses e-mail qui vous permettent de mieux gérer vos différentes activités et vous bénéficiez de fonctionnalités premium."
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Configurez les comptes pour tous les utilisateurs et invitez-les à rejoindre ${ BRAND_NAME }."
       ],
@@ -3979,23 +3979,11 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
       ],
-      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "Pour retirer le pied de page ${ MAIL_APP_NAME }, changez d'abonnement. Vous disposerez aussi de bien plus de fonctionnalités premium."
-      ],
       "To start, give your organization a name.": [
         "Pour commencer, donnez un nom à votre organisation."
       ],
       "Track the status and activity of your referrals.": [
         "Suivez vos parrainages."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Disposez d'adresses e-mail plus courtes et d'autres fonctionnalités premium en changeant d'abonnement."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Bénéficiez d'un nombre illimité de filtres pour trier automatiquement votre boite de réception et d'autres fonctionnalités premium en passant à un abonnement supérieur."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Bénéficiez d'un nombre illimité de dossiers, de labels et d'autres fonctionnalités premium en passant à un abonnement supérieur."
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Changez d'abonnement pour obtenir ${ activatePmUser } pour une adresse e-mail plus courte et facile à retenir en plus de votre adresse actuelle."
@@ -6522,45 +6510,6 @@
       ],
       "${ appName } on Play Store": [
         "${ appName } sur le Play Store"
-      ],
-      "${ MAIL_APP_NAME } app": [
-        "application ${ MAIL_APP_NAME }"
-      ],
-      "account logins": [
-        "identifiants du compte"
-      ],
-      "Auto-forward Gmail": [
-        "Transfert automatique depuis Gmail"
-      ],
-      "auto-forwarding": [
-        "le transfert automatique"
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Changez les ${ strongText } pour votre adresse ${ BRAND_NAME }"
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Découvrez comment nos ${ strongText } vous protègent."
-      ],
-      "Discover privacy features": [
-        "Découvrez les fonctionnalités de protection de la vie privée"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Téléchargez l'${ strongText } sur Android ou iOS."
-      ],
-      "Get the App": [
-        "Téléchargez l'application"
-      ],
-      "privacy features": [
-        "fonctionnalités de protection de la vie privée"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Configurer ${ strongText } depuis Gmail"
-      ],
-      "This feature is currently unavailable": [
-        "Cette fonctionnalité n'est pas disponible pour le moment."
-      ],
-      "Update your logins": [
-        "Mettez à jour vos identifiants"
       ]
     },
     "Gmail forwarding": {
@@ -7180,8 +7129,17 @@
       "Import from ${ provider }": [
         "Importer depuis ${ provider }"
       ],
-      "Other": [
-        "Autre"
+      "Import from Google": [
+        "Importer depuis Google"
+      ],
+      "Import from other": [
+        "Importer depuis un autre fournisseur"
+      ],
+      "Import from Outlook": [
+        "Importer depuis Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importer depuis Yahoo"
       ]
     },
     "Import rollback status": {
@@ -7837,6 +7795,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Mettez en avant l'image de marque de votre organisation et créez une expérience en ligne plus cohérente pour vos utilisateurs."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Importez vos messages, vos contacts et vos calendriers dans ${ BRAND_NAME } !"
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "En créant un compte ${ PASS_APP_NAME } avec votre e-mail SimpleLogin, vous pouvez gérer vos alias directement depuis ${ PASS_APP_NAME }."
@@ -8504,9 +8465,6 @@
       "Import mailbox": [
         "Importer une messagerie"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importez vos messages, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }."
-      ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "IMPORTANT : si votre console DNS n'autorise pas les valeurs CNAME finissant par un point, vous pouvez retirer le dernier point dans les valeurs CNAME."
       ],
@@ -8910,6 +8868,9 @@
       "One account. All ${ BRAND_NAME } services.": [
         "Un seul compte. Tous les services ${ BRAND_NAME }."
       ],
+      "One time import": [
+        "Importation unique"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ne modifiez ces paramètres que si vous utilisez PGP avec des destinataires qui n'utilisent pas ${ BRAND_NAME }."
       ],
@@ -9255,9 +9216,6 @@
       "Securing your account": [
         "Sécurisation de votre compte"
       ],
-      "Select a service provider to start": [
-        "Commencez par sélectionner un service"
-      ],
       "Select a service to continue": [
         "Sélectionnez un service pour continuer"
       ],
@@ -9311,6 +9269,9 @@
       ],
       "Set recovery phrase": [
         "Créer une phrase de récupération"
+      ],
+      "Set up forwarding": [
+        "Configurer le transfert"
       ],
       "Set up your organization": [
         "Configurez votre organisation"
@@ -9891,11 +9852,11 @@
       "User activated": [
         "L'utilisateur a été activé."
       ],
-      "Username": [
-        "Nom d'utilisateur"
-      ],
       "username": [
         "nom d'utilisateur"
+      ],
+      "Username": [
+        "Nom d'utilisateur"
       ],
       "Users": [
         "Utilisateurs"
@@ -10329,6 +10290,10 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois.",
         "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of them.": [
+        "Vous avez activé le transfert sur ${ MAX_SYNC_PAID_USER } adresse Gmail. Pour en ajouter une autre, veuillez d’abord la désactiver.",
+        "Vous avez activé le transfert sur ${ MAX_SYNC_PAID_USER } adresses Gmail. Pour en ajouter une autre, veuillez d’abord en désactiver une."
       ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Votre ${ boldDiscountPercent } pour ${ boldPlanTitle } a été appliqué."
@@ -11067,10 +11032,10 @@
       "Allow sharing outside the organization": [
         "Autoriser le partage en dehors de l'organisation"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domaine autorisé"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domaine autorisé"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11082,11 +11047,11 @@
       "Amount due": [
         "Montant à payer"
       ],
-      "AND": [
-        "ET"
-      ],
       "And": [
         "Et"
+      ],
+      "AND": [
+        "ET"
       ],
       "and": [
         "et"
@@ -11514,11 +11479,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "SI"
-      ],
       "If": [
         "Si"
+      ],
+      "IF": [
+        "SI"
       ],
       "Import all messages": [
         "Importer tous les messages"
@@ -11727,14 +11692,14 @@
       "Optional": [
         "Facultatif"
       ],
-      "OR": [
-        "OU"
-      ],
       "or": [
         "ou"
       ],
       "Or": [
         "Ou"
+      ],
+      "OR": [
+        "OU"
       ],
       "Organization name": [
         "Nom de l'organisation"
@@ -12421,11 +12386,11 @@
       "perform a password reset from your active session": [
         "réinitialiser le mot de passe depuis votre session active"
       ],
-      "privacy policy": [
-        "politique de confidentialité"
-      ],
       "Privacy policy": [
         "Politique de confidentialité"
+      ],
+      "privacy policy": [
+        "politique de confidentialité"
       ],
       "Reactivate now": [
         "Réactiver maintenant"
@@ -13066,20 +13031,8 @@
       "From ${ price }": [
         "À partir de ${ price }"
       ],
-      "Get started for ${ priceCoupon }": [
-        "Commencez pour ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "À partir de ${ pricing }"
-      ],
       "Upgrade": [
         "Changer d'abonnement"
-      ],
-      "Upgrade now": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade to ${ planName }": [
-        "Passer à ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13244,9 +13197,6 @@
       "Auto-delete Spam and Trash": [
         "Suppression automatique des indésirables/spam et de la corbeille"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Suppression automatique des messages dans les dossiers Indésirables/spam et Corbeille"
-      ],
       "Auto-reply": [
         "Réponse automatique"
       ],
@@ -13291,9 +13241,6 @@
       ],
       "Custom fields": [
         "Champs personnalisés"
-      ],
-      "Custom snooze time": [
-        "Périodes de mise en attente personnalisées"
       ],
       "Custom workspace branding": [
         "Personnalisation de l'espace de travail avec votre marque"
@@ -13446,12 +13393,6 @@
       "Schedule and snooze emails for any time": [
         "Planifier et mettre en attente les messages à tout moment"
       ],
-      "Schedule messages at any time": [
-        "Planification de l'envoi de messages quand vous le voulez"
-      ],
-      "Search message content": [
-        "Recherche dans le contenu des messages"
-      ],
       "Secure Core servers": [
         "Serveurs Secure Core"
       ],
@@ -13603,9 +13544,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Créez différentes adresses selon vos activités, comme « SebShopping@${ domain } » pour les achats et « SebNews@${ domain2 } » pour les abonnements à des sites d'informations par exemple."
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Mettez les messages en attente et recevez un rappel quand vous le voulez."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Espace de stockage partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
@@ -13786,11 +13724,22 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "À partir de ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Le prix réduit de ${ priceCoupon } est valable le premier mois. Ensuite, il sera automatiquement renouvelé à ${ priceLine }. Vous pouvez annuler à tout moment."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Accédez à tous les produits et toutes les fonctions premium de ${ BRAND_NAME } pour seulement ${ priceLine } avec possibilité de résiliation à tout moment."
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Essai de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilisation de votre compte"
       ]
     },
     "new_plans: title": {
@@ -13811,14 +13760,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Accédez à des fonctionnalités premium en changeant d'abonnement."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Essai de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilisation de votre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -14459,6 +14400,17 @@
         "Bureau"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Tout le monde"
+      ],
+      "Group members": [
+        "Membres du groupe"
+      ],
+      "No one": [
+        "Personne"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10 du mois"
@@ -14693,17 +14645,6 @@
       ],
       "Trash": [
         "Déplacer dans le dossier Corbeille"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Tout le monde"
-      ],
-      "Group members": [
-        "Membres du groupe"
-      ],
-      "No one": [
-        "Personne"
       ]
     },
     "Option delay send seconds": {
@@ -16728,9 +16669,6 @@
       ]
     },
     "Settings description": {
-      "Complete the transition to privacy with our secure importing and forwarding tools.": [
-        "Terminez votre transition vers un internet respectueux de votre vie privée avec nos outils d'importation et de transfert sécurisés."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Organisez votre boite de réception avec des dossiers et des labels. ${ learnMoreLink }"
       ]
@@ -18613,9 +18551,6 @@
       "Actions": [
         "Actions"
       ],
-      "Activate @pm.me": [
-        "Activer @pm.me"
-      ],
       "Activate organization key": [
         "Activer la clé de l'organisation"
       ],
@@ -18773,10 +18708,10 @@
       "Card verification": [
         "Vérification de la carte"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresse catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresse catch-all"
       ],
       "Change login password": [
@@ -18811,9 +18746,6 @@
       ],
       "Clear": [
         "Effacer"
-      ],
-      "Clear out the junk": [
-        "Débarrassez-vous des messages inutiles"
       ],
       "Click a value in the table to use it as filter": [
         "Cliquez sur une valeur dans le tableau pour l'utiliser comme filtre."
@@ -19347,17 +19279,11 @@
       "Import key": [
         "Importer une clé"
       ],
-      "Import messages": [
-        "Importer les messages"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importer avec ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Inactive 2FA": [
         "A2F inactive"
-      ],
-      "Increase your privacy with more addresses": [
-        "Renforcez la protection de votre vie privée en utilisant plusieurs adresses"
       ],
       "Information exposed in breach": [
         "Informations divulguées lors de la fuite de données"
@@ -19379,9 +19305,6 @@
       ],
       "Items owned": [
         "Éléments possédés"
-      ],
-      "Keep your inbox organized": [
-        "Gardez votre boite de réception organisée"
       ],
       "Keyboard shortcuts": [
         "Raccourcis clavier"
@@ -19406,6 +19329,9 @@
       ],
       "Leave group?": [
         "Voulez-vous quitter le groupe ?"
+      ],
+      "Limit reached": [
+        "La limite est atteinte."
       ],
       "Link confirmation": [
         "Confirmation du lien"
@@ -19530,9 +19456,6 @@
       "PayPal verification failed": [
         "La vérification PayPal n'a pas abouti."
       ],
-      "Personalize your e-mail footer": [
-        "Personnalisez le pied de page de vos messages."
-      ],
       "Personalize your email footer": [
         "Personnalisez le pied de page de vos messages."
       ],
@@ -19653,9 +19576,6 @@
       "SAML authentication": [
         "Authentification SAML"
       ],
-      "Save time with email filters": [
-        "Gagnez du temps avec les filtres de messagerie"
-      ],
       "Schedule meetings in one click": [
         "Programmez des réunions en un clic"
       ],
@@ -19724,9 +19644,6 @@
       ],
       "Set up email forwarding": [
         "Configurer le transfert automatique des messages"
-      ],
-      "Set up forwarding": [
-        "Configurer le transfert"
       ],
       "Set up two-factor authentication": [
         "Configurer l'authentification à deux facteurs"
@@ -20663,8 +20580,8 @@
       "Recommended": [
         "Recommandé"
       ],
-      "Save ${ totals.discountPercentage }%": [
-        "Économisez ${ totals.discountPercentage } %"
+      "Save ${ price.uiData.discountPercent }%": [
+        "Économisez ${ price.uiData.discountPercent } %"
       ]
     },
     "User referee invited via email": {

@@ -4,6 +4,14 @@
     "language": "ka_GE"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "გადაგზავნა მალე დაიწყება. თქვენს საფოსტო ყუთში ახალი ელფოსტები გამოჩნდება."
+      ],
+      "Mail forward stopped": [
+        "ფოსტის გაგზავნა შეჩერდა"
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "აღმოჩენილია ${ name } და კიდევ ${ remainingCount } სხვა პოტენციური გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ზომების მისაღებად. ${ link }"
@@ -406,6 +414,9 @@
       "Get the deal": [
         "ფასდაკლების მიღება"
       ],
+      "Get the writing assistant": [
+        "მიიღეთ წერის დამხმარე"
+      ],
       "Get verification code": [
         "შემოწმების კოდის მიღება"
       ],
@@ -445,10 +456,10 @@
       "Invite user": [
         "მომხმარებლის მოწვევა"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "ჩასწორების გაგრძელება"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "ჩასწორების გაგრძელება"
       ],
       "Keep logo": [
@@ -562,10 +573,10 @@
       "Refresh status": [
         "სტატუსის განახლება"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "გვერდის განახლება"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "გვერდის განახლება"
       ],
       "Remove": [
@@ -682,10 +693,10 @@
       "Select country ${ country }": [
         "${ country } ქვეყნის არჩევა"
       ],
-      "select file": [
+      "Select file": [
         "აირჩიეთ ფაილი"
       ],
-      "Select file": [
+      "select file": [
         "აირჩიეთ ფაილი"
       ],
       "Send code": [
@@ -768,6 +779,9 @@
       ],
       "Signing in": [
         "შესვლა"
+      ],
+      "Skip": [
+        "გამოტოვება"
       ],
       "Spam": [
         "სპამი"
@@ -1012,6 +1026,26 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "გაითიშება ყველა რაუტერი და კლიენტი, რომელიც ამ სერტიფიკატს იყენებს."
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay }-ის საფოსტო ყუთი"
+      ],
+      "5 trackers removed": [
+        "წაშლილია 5 ტრეკერი"
+      ],
+      "Auto forwarded": [
+        "ავტომატურად გადაგზავნილი"
+      ],
+      "Email received": [
+        "ელფოსტა მიღებულია"
+      ],
+      "Encrypted": [
+        "დაშიფრული"
+      ],
+      "New email": [
+        "ახალი ელფოსტა"
       ]
     },
     "Assistant toggle": {
@@ -1572,6 +1606,10 @@
       ]
     },
     "CountriesStep:Info": {
+      "${ selectedCitiesCount } cities selected": [
+        "მონიშნულია ${ selectedCitiesCount } ქალაქი",
+        "მონიშნულია ${ selectedCitiesCount } ქალაქი"
+      ],
       "${ selectedCountriesCount } selected": [
         "მონიშნულია ${ selectedCountriesCount }",
         "მონიშნულია ${ selectedCountriesCount }"
@@ -2544,8 +2582,8 @@
       "No one in your organization can connect to shared servers.": [
         "თქვენს ორგანიზაციაში გაზიარებულ სერვერებთან დაკავშირება არავის შეუძლია."
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "ასწიეთ სატარიფო გეგმა და გამოყავით თქვენი ცხოვრების სხვადასხვა ასპექტები სხვადასხვა ელფოსტის მისამართებით და მიიღეთ კიდევ ბევრი სხვა ფასიანი ფუნქცია."
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "მოირგეთ ანგარიშები ყველა მომხმარებლისთვის და მოიწვიეთ ისინი ${ BRAND_NAME }-ზე."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "გაამართივეთ გაზიარებული კალენდრების დაგეგმვა და სინქრონიზაცია."
@@ -2839,6 +2877,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } თქვენს გარე ანგარიშს ვერ დაუკავშირდა"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. ასევე შეგიძლიათ, შეამოწმოთ ჩვენი ${ statusPageLink }"
       ],
@@ -2850,6 +2891,12 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "თანხა მინიმუმზე ნაკლებია (${ minimumAmount })."
+      ],
+      "Authentication canceled.": [
+        "ავთენტიკაცია გაუქმებულია."
+      ],
+      "Authentication error.": [
+        "ავთენტიკაციის შეცდომა."
       ],
       "Checkout expired, please try again": [
         "გადახდის დრო გავიდა. თავიდან სცადეთ"
@@ -2958,6 +3005,15 @@
       ],
       "Name does not match": [
         "სახელი არ ემთხვევა"
+      ],
+      "No calendars found to import": [
+        "შემოსატანი კალენდრები ვერ ვიპოვე"
+      ],
+      "No contacts found to import": [
+        "შემოსატანი კონტაქტები ვერ ვიპოვე"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "შემოსატანი ელფოსტების გარეშე - ანგარიშს საფოსტო ყუთი არ გააჩნია"
       ],
       "No image selected": [
         "გამოსახულება არჩეული არაა"
@@ -3106,6 +3162,9 @@
       "Unable to upload file": [
         "ფაილის ატვრთვის შეცდომა"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "მოულოდნელი შეცდომა. კონტაქტები ვერ შემოვიტანე"
+      ],
       "Unknown error": [
         "უცნობი შეცდომა"
       ],
@@ -3129,6 +3188,9 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "შემოწმების არასწორი კოდი. დარწმუნდით, რომ კოდი სწორად დააკოპირეთ და თავიდან სცადეთ. ცვლილებებს შეიძლება 24 საათამდე დასჭირდეს."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "თქვენ მიაღწიეთ კონტაქტების რაოდენობის ზღვარს თქვენი ანგარიშისთვის"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "თქვენს სატარიფო გეგმაში შემავალ ყველა მისამართს უკვე იყენებთ. ახალი მისამართის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
@@ -3738,6 +3800,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. კონფიდენციალობა ნაგულისხმევია."
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "ავტომატური გადაგზავნა"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail-ის შეტყობინებები თქვენს საფოსტო ყუთში"
+      ],
+      "Sign in with Google": [
+        "შედით Google-ით"
       ]
     },
     "Go to sign in": {
@@ -5357,6 +5430,9 @@
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "ეს შეტყობინება არ მიაღწევს მხარდაჭერის გუნდამდე. თუ გაქვთ პრობლემა ჩვენს სერვითან, ან ჩვენი მხრიდან დამატებითი ქმედებების საჭირო, დაგვიკავშირდით ბმულზე ${ supportLink }."
       ],
+      "This service is not available to users signing in with single sign-on.": [
+        "ეს სერვისი ხელმისაწვდომი არაა მომმხარებლებისთვის, რომლებიც SSO-ს იყენებენ."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "ეს მომხმარებელი, ამჟამად, პასუხისმგებელია თქვენი ორგანიზაციის გადასახადების გადახდაზე. მისი ჩამოქვეითებით, ორგანიზაციის გადახდებზე პასუხისმგებელი თქვენ გახდებით."
       ],
@@ -5522,10 +5598,10 @@
       "User activated": [
         "მომხმრებელი გააქტიურდა"
       ],
-      "Username": [
+      "username": [
         "მომხმარებლის სახელი"
       ],
-      "username": [
+      "Username": [
         "მომხმარებლის სახელი"
       ],
       "Users": [
@@ -6061,10 +6137,10 @@
       "Allow recovery by phone": [
         "ტელეფონით აღდგენის ჩართვა"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "დაშვებული დომენი"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "დაშვებული დომენი"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6301,6 +6377,9 @@
       "IBAN": [
         "IBAN"
       ],
+      "Import all messages": [
+        "ყველა შეტყობინების შემოტანა"
+      ],
       "Integrated 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
       ],
@@ -6315,6 +6394,15 @@
       ],
       "Key": [
         "გასაღები"
+      ],
+      "Last 12 months only": [
+        "მხოლოდ, ბოლო 12 თვე"
+      ],
+      "Last 3 months only": [
+        "მხოლოდ ბოლო 3 თვე"
+      ],
+      "Last month only": [
+        "მხოლოდ ბოლო თვეში"
       ],
       "Last name": [
         "გვარი"
@@ -7096,32 +7184,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
-      ],
-      "From ${ price }": [
-        "${ price }-დან"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "დაწყება ${ priceCoupon }-დან"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }-დან"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ],
-      "Upgrade to ${ planName }": [
-        "სატარიფო გეგმის განახლება: ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -7143,6 +7205,20 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
+      ],
+      "From ${ price }": [
+        "${ price }-დან"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
       ]
     },
     "new_plans: feature": {
@@ -7241,26 +7317,11 @@
       "${ size } storage per user": [
         "${ size }/მომხმარებელი"
       ],
-      "1 TB secure storage": [
-        "1 ტბ დაცული საცავი"
-      ],
       "1 user": [
         "1 მომხმარებელი"
       ],
-      "10 email addresses/aliases": [
-        "10 ელ ფოსტა/ფსევდონიმი"
-      ],
-      "10 more premium features": [
-        "და კიდევ 10 ფასიანი ფუნქცია"
-      ],
       "10-year file version history": [
         "10-წლიანი ფაილის ვერსიის ისტორია"
-      ],
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "200 GB of storage": [
-        "200 გბ საცავი"
       ],
       "24/7 account management support": [
         "24/7 ანგარიშის მართვის მხარდაჭერა."
@@ -7280,17 +7341,11 @@
       "Administration Panel": [
         "ადმინისტრატორის პანელი"
       ],
-      "Advanced account protection": [
-        "დამატებითი ანგარიშის დაცვა"
-      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "დამატებითი ფსევდონიმის ფუნქციები (SimpleLogin-ით)"
       ],
       "Advanced network security": [
         "დამატებითი ქსელის უსაფრთხოება"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "${ BRAND_NAME }-ის ყველა პროდუქტი და ფუნქცია"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "ყველა ${ BRAND_NAME }-ის სერვისი (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -7303,9 +7358,6 @@
       ],
       "Auto-delete Spam and Trash": [
         "სპამისა და ნაგვის ყუთის ავტომატური წაშლა"
-      ],
-      "Auto-delete spam and trashed messages": [
-        "სპამისა და სანაგვე ყუთში მდებარე შეტყობინებების ავტომატური წაშლა"
       ],
       "Auto-reply": [
         "თვითმოპასუხე"
@@ -7351,9 +7403,6 @@
       ],
       "Custom fields": [
         "მორგებადი ველები"
-      ],
-      "Custom snooze time": [
-        "მომხმარებლის დროებით დადუმების დრო"
       ],
       "Custom workspace branding": [
         "მორგებული სამუშაო სივრცის ბრენდინგი"
@@ -7411,9 +7460,6 @@
       ],
       "GDPR data processing agreement": [
         "GDPR მონაცემების დამუშავების შეთანხმება"
-      ],
-      "Generate emails with a prompt": [
-        "ელფოსტების გენერაცია მოთხოვნით"
       ],
       "Group management (coming soon)": [
         "ჯგუფების მართვა (მალე)"
@@ -7476,15 +7522,6 @@
       "Priority support & live chat": [
         "პრიორიტეტული დახმარება და ცოცხალი ჩატი"
       ],
-      "Private photo backup": [
-        "კონფიდენციალური სურათების მარქაფი"
-      ],
-      "Proofread and refine your emails": [
-        "თქვენი ელფოსტების კორექტურა და ოპტიმიზაცია"
-      ],
-      "Quickly craft replies": [
-        "უცებ შექმენით პასუხები"
-      ],
       "Recover previous file versions": [
         "წინა ფაილის ვერსიების აღდგენა"
       ],
@@ -7497,23 +7534,11 @@
       "Router support": [
         "რაუტერის მხარდაჭერა"
       ],
-      "Save time emailing": [
-        "დაზოგეთ ელფოსტის წერის დრო"
-      ],
       "Schedule and snooze emails for any time": [
         "დაგეგმეთ და ჩააჩუმეთ ელფოსტები სასურველი დროით"
       ],
-      "Schedule messages at any time": [
-        "შეტყობინებების განრიგში ნებისმიერ დროს ჩასმა"
-      ],
-      "Search message content": [
-        "შეტყობინების შიგთავსში ძებნა"
-      ],
       "Secure Core servers": [
         "Secure Core-ის სერვერები"
-      ],
-      "Secure file storage and sharing": [
-        "დაცული ფაილების საცავი და გაზიარება"
       ],
       "Secure link sharing": [
         "დაცული ბმულის გაზიარება"
@@ -7551,9 +7576,6 @@
       ],
       "Strict no-logs policy": [
         "ჩვენ არ ვინახავთ ჟურნალს"
-      ],
-      "Support for up to 2 users": [
-        "მხარდაჭერა 2 მომხმარებლამდე"
       ],
       "Sync and backup all your files across devices": [
         "დაასინქრონეთ და დაამარქაფეთ ყველა თქვენი ფაილი ყველა თქვენს მოწყობილობაზე"
@@ -7649,20 +7671,6 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
-      ]
-    },
-    "new_plans: feature info": {
-      "1 custom email domain": [
-        "1 ელფოსტის ხელით მითითებული დომენი"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "შექმენით მრავალი ელექტრონული ფოსტის მისამართი თქვენი ონლაინ ვინაობისთვის, მაგ., JohnShopper@p${ domain } სავაჭრო ანგარიშებისთვის, JohnNews@${ domain2 } ახალი ამბების გამოწერებისთვის"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "დაადუმეთ დროებით შეტყობინებები და ჩვენ შეგახსენებთ, როცა გნებავთ"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "საცავის სივრცე გაზიარებულია ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } და ${ DRIVE_APP_NAME } შორის"
       ]
     },
     "new_plans: heading": {
@@ -8336,6 +8344,17 @@
         "კეთილი იყოს თქვენი მობრძანება ${ appName }-ში"
       ]
     },
+    "option": {
+      "Everyone": [
+        "ყველა"
+      ],
+      "Group members": [
+        "ჯგუფის წევრები"
+      ],
+      "No one": [
+        "არავინ"
+      ]
+    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "დაშვებულია ${ defaultLabel }"
@@ -8405,17 +8424,6 @@
       ],
       "The whole organization": [
         "მთელი ორგანიზაცია"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "ყველა"
-      ],
-      "Group members": [
-        "ჯგუფის წევრები"
-      ],
-      "No one": [
-        "არავინ"
       ]
     },
     "Organization capacity error": {
@@ -10633,6 +10641,9 @@
       "Billing details updated": [
         "გადახდის დეტალები განახლდა"
       ],
+      "Canceling import": [
+        "შემოტანის გაუქმება"
+      ],
       "Catch-all address updated": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი განახლებულია"
       ],
@@ -10668,6 +10679,9 @@
       ],
       "Gift code applied": [
         "სასაჩუქრე ბარათის კოდი გადატარებულია"
+      ],
+      "Import record deleted": [
+        "შემოტანის ჩანაწერი წაშლილია"
       ],
       "Invitation rejected": [
         "მოსაწვევი უარყოფილია"
@@ -10728,6 +10742,9 @@
       ],
       "SPF value copied to clipboard": [
         "SPF-ის მნიშვნელობა დაკოპირდა გაცვლის ბაფერში"
+      ],
+      "Undo in progress": [
+        "მიმდინარეობს გაუქმება"
       ],
       "User updated": [
         "მომხმარებელი განახლებულია"
@@ -11077,10 +11094,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -11412,9 +11429,6 @@
       ],
       "Import emails, calendars, contacts": [
         "ელფოსტების, კალენდრების, კონტაქტების შემოტანა"
-      ],
-      "Increase your privacy with more addresses": [
-        "გაზარდეთ თქვენი კონფიდენციალობა მეტი მისამართით"
       ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
@@ -12105,9 +12119,6 @@
       ],
       "Recommended": [
         "რეკომენდებულია"
-      ],
-      "Save ${ totals.discountPercentage }%": [
-        "დაზოგეთ ${ totals.discountPercentage }%"
       ]
     },
     "User role": {
