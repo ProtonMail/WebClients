@@ -369,6 +369,9 @@
       "Get the apps": [
         "აპების გადმოწერა"
       ],
+      "Get the writing assistant": [
+        "მიიღეთ წერის დამხმარე"
+      ],
       "Get verification code": [
         "შემოწმების კოდის მიღება"
       ],
@@ -735,9 +738,6 @@
       "Start import": [
         "შემოტანის დაწყება"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "${ priceUnlimited }-დან"
-      ],
       "Stay": [
         "დარჩენა"
       ],
@@ -797,9 +797,6 @@
       ],
       "Upgrade now": [
         "ტარიფის განახლება"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "ასწიეთ სატარიფო გეგმა ${ BRAND_NAME } Unlimited-ზე"
       ],
       "Upload and share files": [
         "ფაილების ატვირთვა და გაზიარება"
@@ -2341,11 +2338,6 @@
         "ინვოისი გადაცილებულია"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } თქვენს ანგარიშს საეჭვო აქტივობებზე 24/7 მონიტორინგით იცავს - საჭიროების შემთხვევაში უსაფრთხოების სპეციალისტების ჩართვით."
@@ -2371,9 +2363,6 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების წაშლა... ამას რამდენიმე წუთი შეიძლება დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "შექმნილია მომხმარებლებისთვის, რომლების თავიანთი ანგარიშებისთვის გაძლიერებულ უსაფრთხოებას ეძებენ."
-      ],
       "Easily access your email and calendar on desktop and mobile.": [
         "იოლი წვდომა თქვენს ელფოსტასთან და კალენდართან კომპიუტერიდან და მობილურიდან."
       ],
@@ -2382,9 +2371,6 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
-      ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "მიიღეთ შეუზღუდავი ფსევდონიმები და 500 გბ საცავი ${ PLAN_NAMES[PLANS.BUNDLE] }-სთან ერთად."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "როგორც ჩანს კონტაქტების სია, რომლის შემოტანასაც ცდილობთ, ჯგუფებსაც შეიცავს. გადახედეთ, გნებავთ თუ არა ამ ჯგუფების შემოტანა."
@@ -2395,14 +2381,14 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების შერწყმა... ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
       ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "დაზოგეთ დრო ელფოსტის კონტაქტების ჯგუფისთვის გაგზავნით. განბლოკეთ ეს და სხვა ფასიანი ფუნქციები, როცა სატარიფო გეგმას აწევთ."
-      ],
       "Set a data recovery method to prevent data loss.": [
         "დააყენეთ მონაცემების აღდგენის მეთოდი, მისი დაკარგვის თავიდან ასაცილებლად."
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "დააყენეთ აღდგენის მეთოდი, რომ თავიდან აიცილოთ თქვენს ანგარიშზე წვდომის დაკარგვა."
+      ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "მოირგეთ ანგარიშები ყველა მომხმარებლისთვის და მოიწვიეთ ისინი ${ BRAND_NAME }-ზე."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "გაამართივეთ გაზიარებული კალენდრების დაგეგმვა და სინქრონიზაცია."
@@ -2421,9 +2407,6 @@
       ],
       "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
         "ასწიეთ სატარიფო გეგმა ${ BRAND_NAME } ${ planName }-ზე, რომ შეინარჩუნოთ გაზიარებული ფაილები ჩასწორების წვდომით"
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "ასწიეთ თქვენი სატარიფო გეგმა, რომ გაააქტიუროთ ${ PROTON_SENTINEL_NAME }, ჩვენი უახლესი AI-ზე დაფუძნებული უსაფრთხოების გადაწყვეტილება თავისი საკუთარი 24/7 პროფესიონალური მხარდაჭერით."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "გადაათრიეთ და ისე დაალაგეთ პრიორიტეტები კონტაქტებს შორის. ნუ შემოიტანთ კონტაქტებს, რომლის შერწყმაც არ გსურთ."
@@ -2445,6 +2428,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3877,9 +3865,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider }-დან შემოტანა"
-      ],
-      "Other": [
-        "სხვა"
       ]
     },
     "Import warning": {
@@ -4785,9 +4770,6 @@
       ],
       "Select a folder to move to.": [
         "აირჩიეთ საქაღალდე, სადაც გადაიტანთ."
-      ],
-      "Select a service provider to start": [
-        "დასაწყებად აირჩიეთ მომსახურების მომწოდებელი"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "აირჩიეთ მითითებულ მისამართზე ელფოსტის გაგზავნისას გამოყენებული ფორმატი."
@@ -6400,23 +6382,11 @@
       "Downgrade to ${ downgradedPlanName }": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
       ],
-      "Get started for ${ priceCoupon }": [
-        "დაწყება ${ priceCoupon }-დან"
-      ],
       "Plans starting from ${ priceDrivePlus }": [
         "${ priceDrivePlus }-დან დაწყებული სატარიფო გეგმები"
       ],
-      "Starting from ${ pricing }": [
-        "${ pricing }-დან"
-      ],
       "Upgrade": [
         "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ],
-      "Upgrade to ${ planName }": [
-        "სატარიფო გეგმის განახლება: ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -6592,9 +6562,6 @@
       "Auto-delete Spam and Trash": [
         "სპამისა და ნაგვის ყუთის ავტომატური წაშლა"
       ],
-      "Auto-delete spam and trashed messages": [
-        "სპამისა და სანაგვე ყუთში მდებარე შეტყობინებების ავტომატური წაშლა"
-      ],
       "Auto-reply": [
         "თვითმოპასუხე"
       ],
@@ -6636,9 +6603,6 @@
       ],
       "Custom fields": [
         "მორგებადი ველები"
-      ],
-      "Custom snooze time": [
-        "მომხმარებლის დროებით დადუმების დრო"
       ],
       "Custom workspace branding": [
         "მორგებული სამუშაო სივრცის ბრენდინგი"
@@ -6779,12 +6743,6 @@
       "Schedule and snooze emails for any time": [
         "დაგეგმეთ და ჩააჩუმეთ ელფოსტები სასურველი დროით"
       ],
-      "Schedule messages at any time": [
-        "შეტყობინებების განრიგში ნებისმიერ დროს ჩასმა"
-      ],
-      "Search message content": [
-        "შეტყობინების შიგთავსში ძებნა"
-      ],
       "Secure Core servers": [
         "Secure Core-ის სერვერები"
       ],
@@ -6920,9 +6878,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "შექმენით მრავალი ელექტრონული ფოსტის მისამართი თქვენი ონლაინ ვინაობისთვის, მაგ., JohnShopper@p${ domain } სავაჭრო ანგარიშებისთვის, JohnNews@${ domain2 } ახალი ამბების გამოწერებისთვის"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "დაადუმეთ დროებით შეტყობინებები და ჩვენ შეგახსენებთ, როცა გნებავთ"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "საცავის სივრცე გაზიარებულია ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } და ${ DRIVE_APP_NAME } შორის"
@@ -9404,9 +9359,6 @@
       "Exporting contacts": [
         "კონტაქტების გატანა"
       ],
-      "Get advanced protection": [
-        "დამატებითი უსაფრთხოების მიღება"
-      ],
       "Get more from your VPN": [
         "მიიღეთ მეტი თქვენი VPN-სგან"
       ],
@@ -9659,9 +9611,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
-      ],
-      "Unlock contacts groups": [
-        "განბლოკეთ კონტაქტის ჯგუფები"
       ],
       "Untitled document ${ date }": [
         "უსათაურო დოკუმენტი ${ date }"
