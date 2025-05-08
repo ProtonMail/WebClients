@@ -166,7 +166,7 @@ export const ToolbarLeftActionsGallery = ({
             id: 'albums',
             label: c('Link').t`Albums`,
             onClick: onAlbumsClick,
-            icon: 'album-with-cards',
+            icon: 'album-folder',
         },
     ];
 
