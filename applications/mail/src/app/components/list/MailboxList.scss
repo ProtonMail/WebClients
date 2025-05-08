@@ -1,0 +1,7 @@
+@import '~@proton/styles/scss/lib';
+
+.enhanced-list-container.items-column-list.is-column {
+	inline-size: auto;
+	min-inline-size: auto;
+	max-inline-size: none;
+}

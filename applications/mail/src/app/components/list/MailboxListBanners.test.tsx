@@ -11,8 +11,8 @@ import { mockUseEncryptedSearchContext } from 'proton-mail/helpers/test/mockUseE
 import { render } from 'proton-mail/helpers/test/render';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import ListBanners from './ListBanners';
-import { mockUseAutoDeleteBanner, mockUseShowUpsellBanner } from './ListBanners.test.utils';
+import MailboxListBanners from './MailboxListBanners';
+import { mockUseAutoDeleteBanner, mockUseShowUpsellBanner } from './MailboxListBanners.test.utils';
 
 const baseProps = {
     labelID: MAILBOX_LABEL_IDS.INBOX,
@@ -42,7 +42,7 @@ describe('ListBanners', () => {
     });
 
     it('should display no banner', async () => {
-        await render(<ListBanners {...baseProps} />);
+        await render(<MailboxListBanners {...baseProps} />);
         expect(screen.queryByText(/\w/)).not.toBeInTheDocument();
     });
 
@@ -59,7 +59,7 @@ describe('ListBanners', () => {
 
         it('should display es slow banner', async () => {
             await render(
-                <ListBanners
+                <MailboxListBanners
                     {...baseProps}
                     esState={{
                         isESLoading: false,
@@ -95,7 +95,7 @@ describe('ListBanners', () => {
 
         it('should display almost all mail banner', async () => {
             await render(
-                <ListBanners
+                <MailboxListBanners
                     {...baseProps}
                     labelID={MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL}
                     esState={{
@@ -124,7 +124,7 @@ describe('ListBanners', () => {
         });
 
         it('should render upsell banner', async () => {
-            await render(<ListBanners {...baseProps} />);
+            await render(<MailboxListBanners {...baseProps} />);
 
             expect(screen.getByText(/Use keyboard shortcuts to manage your email faster./i)).toBeInTheDocument();
             expect(screen.getByText(/Learn more/i)).toBeInTheDocument();
@@ -134,7 +134,7 @@ describe('ListBanners', () => {
     describe('when canDisplayTaskRunningBanner is true', () => {
         it('should display task running banner', async () => {
             useMailSelectorMock.mockReturnValue(true);
-            await render(<ListBanners {...baseProps} canDisplayTaskRunningBanner={true} />);
+            await render(<MailboxListBanners {...baseProps} canDisplayTaskRunningBanner={true} />);
             expect(screen.getByText(/Message actions in progress. This may take a while./i)).toBeInTheDocument();
         });
     });
@@ -149,7 +149,7 @@ describe('ListBanners', () => {
         });
 
         it('should display auto delete banner', async () => {
-            await render(<ListBanners {...baseProps} labelID={MAILBOX_LABEL_IDS.TRASH} />);
+            await render(<MailboxListBanners {...baseProps} labelID={MAILBOX_LABEL_IDS.TRASH} />);
             expect(
                 screen.getByText(
                     /Automatically delete messages that have been in trash and spam for more than 30 days./i
