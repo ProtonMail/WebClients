@@ -652,6 +652,9 @@
       "Get the deal": [
         "取得優惠"
       ],
+      "Get the writing assistant": [
+        "取得寫作幫手"
+      ],
       "Get verification code": [
         "取得驗證碼"
       ],
@@ -730,10 +733,10 @@
       "Keep": [
         "保留"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "繼續編輯"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "繼續編輯"
       ],
       "Keep logo": [
@@ -1066,10 +1069,10 @@
       "Select country": [
         "選擇國家"
       ],
-      "select file": [
+      "Select file": [
         "選取檔案"
       ],
-      "Select file": [
+      "select file": [
         "選取檔案"
       ],
       "Select files": [
@@ -1266,9 +1269,6 @@
       ],
       "Upgrade now": [
         "立即升級"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "升級至${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "升級企業版"
@@ -3594,9 +3594,6 @@
       "Also included": [
         "並包含"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "當您升級以自動刪除垃圾郵件和垃圾訊息及解鎖更多頂級功能"
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "自動清除電子郵件移除超過 30 天垃圾桶和垃圾郵件。"
       ],
@@ -3648,9 +3645,6 @@
       "No one in your organization can connect to shared servers.": [
         "於您的組織內無人可連接至於共享伺服器"
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "使用多個電子郵件位址分隔生活的不同方面，並在升級時解鎖更多進階功能。"
-      ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
         "設置自動轉寄將使寄入電子郵件導向其他電子郵件地址"
       ],
@@ -3660,20 +3654,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "從 Google 或 Outlook, ${ easySwitchLink } 來匯入你的聯絡人"
       ],
-      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "移除${ MAIL_APP_NAME }頁尾，升級以解鎖付費版功能"
-      ],
       "Track the status and activity of your referrals.": [
         "追蹤您推介的狀態和活動。"
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "透過升級付費版解鎖短電子郵件位址功能和其他服務"
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "升級時解鎖用來排序您收件匣的無限過濾條件與更多進階功能。"
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "升級時解鎖無限資料夾、標籤與更多進階功能。"
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "升級至${ activatePmUser }以取得更短更好記的電子郵件地址並增加於現有的。"
@@ -5846,47 +5828,6 @@
         "您的桌面應用程式試用已結束。"
       ]
     },
-    "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME }應用程式"
-      ],
-      "account logins": [
-        "帳號登錄"
-      ],
-      "Auto-forward Gmail": [
-        "自動轉寄 Gmail"
-      ],
-      "auto-forwarding": [
-        "自動轉寄"
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "變更${ strongText }至${ BRAND_NAME }位址"
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "了解${ strongText }如何保護您。"
-      ],
-      "Discover privacy features": [
-        "發現隱私功能"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "於Android或iOS取得${ strongText }"
-      ],
-      "Get the App": [
-        "取得應用程式"
-      ],
-      "privacy features": [
-        "隱私功能"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "設定${ strongText }至Gmail"
-      ],
-      "This feature is currently unavailable": [
-        "此功能暫未開放"
-      ],
-      "Update your logins": [
-        "更新您的登入"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "自動轉寄"
@@ -6457,9 +6398,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "從 ${ provider } 匯入"
-      ],
-      "Other": [
-        "其它"
       ]
     },
     "Import rollback status": {
@@ -7611,9 +7549,6 @@
       "Import mailbox": [
         "匯入郵箱"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "從其它服務匯入您的電子郵件、行事曆與通訊錄至 ${ BRAND_NAME }。"
-      ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "重要事項：若您的 DNS 不允許 CNAME 以「.」 (英文句點) 結尾，您可以移除這個句點。"
       ],
@@ -8316,9 +8251,6 @@
       "Securing your account": [
         "保護您的帳號"
       ],
-      "Select a service provider to start": [
-        "選取您的服務提供者以開始"
-      ],
       "Select recently used servers": [
         "選取最近使用的伺服器"
       ],
@@ -8892,10 +8824,10 @@
       "User activated": [
         "使用者已啟用"
       ],
-      "Username": [
+      "username": [
         "使用者名稱"
       ],
-      "username": [
+      "Username": [
         "使用者名稱"
       ],
       "Users": [
@@ -9969,11 +9901,11 @@
       "Allow recovery using a trusted device": [
         "允許復原時使用信任的裝置"
       ],
-      "Allowed domain": [
-        "已允許網域"
-      ],
       "Allowed Domain": [
         "網域白名單"
+      ],
+      "Allowed domain": [
+        "已允許網域"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "允許您組織內任何人無痕地添加會議連結至它們的行事曆邀請函。"
@@ -9984,10 +9916,10 @@
       "Amount due": [
         "應付金額"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
       "and": [
@@ -10398,10 +10330,10 @@
       "IBAN": [
         "國際銀行帳號"
       ],
-      "IF": [
+      "If": [
         "如"
       ],
-      "If": [
+      "IF": [
         "如"
       ],
       "Import all messages": [
@@ -10599,13 +10531,13 @@
       "Optional": [
         "自由列席"
       ],
-      "OR": [
-        "或"
-      ],
       "or": [
         "或"
       ],
       "Or": [
+        "或"
+      ],
+      "OR": [
         "或"
       ],
       "Organization name": [
@@ -11218,10 +11150,10 @@
       "perform a password reset from your active session": [
         "從您目前的作業階段採取密碼重設"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "隱私權政策"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "隱私權政策"
       ],
       "Reactivate now": [
@@ -11811,20 +11743,8 @@
       "From ${ price }": [
         "${ price }起"
       ],
-      "Get started for ${ priceCoupon }": [
-        "使用${ priceCoupon }取得"
-      ],
-      "Starting from ${ pricing }": [
-        "從${ pricing }起"
-      ],
       "Upgrade": [
         "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ],
-      "Upgrade to ${ planName }": [
-        "升級至${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -11966,9 +11886,6 @@
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
       ],
-      "Auto-delete spam and trashed messages": [
-        "自動刪除垃圾郵件與垃圾桶中的訊息"
-      ],
       "Auto-reply": [
         "自動回覆"
       ],
@@ -12013,9 +11930,6 @@
       ],
       "Custom fields": [
         "自訂欄位"
-      ],
-      "Custom snooze time": [
-        "自訂延遲時間"
       ],
       "Custom workspace branding": [
         "自訂工作空間的品牌"
@@ -12161,12 +12075,6 @@
       "Schedule and snooze emails for any time": [
         "隨時計畫和延後電子郵件"
       ],
-      "Schedule messages at any time": [
-        "在任意時間排程訊息"
-      ],
-      "Search message content": [
-        "搜尋郵件內容"
-      ],
       "Secure Core servers": [
         "Secure Core 伺服器"
       ],
@@ -12308,9 +12216,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "創建多重電子郵件位址身分，如JohnShopper@${ domain }給購物用途， JohnNews@${ domain2 }給訂閱新聞使用"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "緩辦郵件，容後依時提醒"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
@@ -12489,6 +12394,14 @@
         "只要${ priceLine }解鎖全部的${ BRAND_NAME }頂級產品及功能。隨時取消。"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }滿意體驗"
+      ],
+      "Your account's usage": [
+        "您帳號的使用情況"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "要刪除帳號？"
@@ -12507,14 +12420,6 @@
       ],
       "Unlock premium features by upgrading": [
         "透過升級來解鎖高級功能"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }滿意體驗"
-      ],
-      "Your account's usage": [
-        "您帳號的使用情況"
       ]
     },
     "new_plans: tooltip": {
@@ -13082,6 +12987,11 @@
         "電腦版應用程式"
       ]
     },
+    "option": {
+      "Group members": [
+        "群組成員"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "每月10日"
@@ -13307,11 +13217,6 @@
       ],
       "Trash": [
         "垃圾"
-      ]
-    },
-    "option": {
-      "Group members": [
-        "群組成員"
       ]
     },
     "Option delay send seconds": {
@@ -14861,9 +14766,6 @@
       ]
     },
     "Settings description": {
-      "Complete the transition to privacy with our secure importing and forwarding tools.": [
-        "以我們安全的匯入與轉寄工具，完成隱私之進化。"
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "善用資料夾和標籤，保持您的收件匣井井有條。${ learnMoreLink }"
       ]
@@ -16567,9 +16469,6 @@
       "Actions": [
         "操作"
       ],
-      "Activate @pm.me": [
-        "啟用 @pm.me"
-      ],
       "Activate organization key": [
         "啟用組織金鑰"
       ],
@@ -16723,10 +16622,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [
@@ -16752,9 +16651,6 @@
       ],
       "Clear": [
         "清除"
-      ],
-      "Clear out the junk": [
-        "清除垃圾"
       ],
       "Click a value in the table to use it as filter": [
         "點及於表格中的任何值以當作過濾器"
@@ -17239,17 +17135,11 @@
       "Import key": [
         "匯入金鑰"
       ],
-      "Import messages": [
-        "匯入郵件"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "使用${ PRODUCT_NAMES.EASY_SWITCH }匯入"
       ],
       "Inactive 2FA": [
         "未啟用雙重驗證"
-      ],
-      "Increase your privacy with more addresses": [
-        "使用更多位址增加您的隱私"
       ],
       "Integrations": [
         "整合"
@@ -17268,9 +17158,6 @@
       ],
       "Items owned": [
         "擁有項目"
-      ],
-      "Keep your inbox organized": [
-        "保持收件匣井然有序"
       ],
       "Keyboard shortcuts": [
         "鍵盤快捷鍵"
@@ -17410,9 +17297,6 @@
       "PayPal verification failed": [
         "PayPal 驗證失敗"
       ],
-      "Personalize your e-mail footer": [
-        "自訂您電子郵件的註腳"
-      ],
       "Personalize your email footer": [
         "自訂您電郵的頁尾"
       ],
@@ -17533,9 +17417,6 @@
       "SAML authentication": [
         "SAML 驗證"
       ],
-      "Save time with email filters": [
-        "使用篩選器來幫你節省時間"
-      ],
       "Schedule send:": [
         "排程送出:"
       ],
@@ -17595,9 +17476,6 @@
       ],
       "Set up a recovery method": [
         "設定復原方法"
-      ],
-      "Set up forwarding": [
-        "設定郵件轉寄"
       ],
       "Set up two-factor authentication": [
         "啟用二步驟驗證 (2FA)"

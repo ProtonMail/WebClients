@@ -36,11 +36,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
+      "A to Z": [
+        "A tot Z"
+      ],
       "Activate": [
         "Activeren"
       ],
       "Activate recovery": [
         "Herstel activeren"
+      ],
+      "Active": [
+        "Actief"
       ],
       "Add": [
         "Voeg toe"
@@ -189,6 +195,9 @@
       ],
       "Change page": [
         "Pagina veranderen"
+      ],
+      "Change sorting": [
+        "Sortering wijzigen"
       ],
       "Chat with us": [
         "Chat met ons"
@@ -489,6 +498,9 @@
       "Expand composer": [
         "Opstelvenster vergroten"
       ],
+      "Expand navigation bar to see custom views": [
+        "Navigatiebalk uitklappen om aangepaste weergave te zien"
+      ],
       "Expand navigation bar to see folders": [
         "Navigatiebalk uitklappen om mappen te zien"
       ],
@@ -546,9 +558,6 @@
       "Generate text": [
         "Genereer tekst"
       ],
-      "Get ${ BRAND_NAME } Duo": [
-        "Neem ${ BRAND_NAME } Duo"
-      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Neem ${ planName } voor ${ priceCoupon }"
       ],
@@ -557,12 +566,6 @@
       ],
       "Get in touch": [
         "Neem contact op"
-      ],
-      "Get it": [
-        "Neem het"
-      ],
-      "Get it from only ${ addonPriceWithCurrency } /month": [
-        "Krijg het vanaf slechts ${ addonPriceWithCurrency } /maand"
       ],
       "Get started": [
         "Aan de slag"
@@ -736,6 +739,9 @@
       "Learn more": [
         "Meer informatie"
       ],
+      "Least read": [
+        "Minst gelezen"
+      ],
       "Let's talk": [
         "Laten we praten!"
       ],
@@ -853,6 +859,9 @@
       "More search options": [
         "Meer zoekopties"
       ],
+      "Most read": [
+        "Meest gelezen"
+      ],
       "Move": [
         "Verplaatsen"
       ],
@@ -870,6 +879,9 @@
       ],
       "Move to archive": [
         "Naar archief verplaatsen"
+      ],
+      "Move to folder": [
+        "Naar map verplaatsen"
       ],
       "Move to inbox": [
         "Naar Postvak IN verplaatsen"
@@ -1006,6 +1018,9 @@
       "Read receipt sent": [
         "Ontvangstbewijs verzonden"
       ],
+      "Recently received": [
+        "Onlangs ontvangen"
+      ],
       "Reconnect": [
         "Opnieuw verbinden"
       ],
@@ -1093,6 +1108,9 @@
       "Restore": [
         "Herstel"
       ],
+      "Resubscribe": [
+        "Opnieuw aanmelden"
+      ],
       "Resume": [
         "Hervatten"
       ],
@@ -1144,10 +1162,10 @@
       "Select ${ planTitle }": [
         "Selecteer ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Alles selecteren"
       ],
-      "Select all": [
+      "Select All": [
         "Alles selecteren"
       ],
       "Select all messages": [
@@ -1303,9 +1321,6 @@
       "Start setup": [
         "Installatie starten"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Vanaf ${ priceUnlimited }"
-      ],
       "Stay": [
         "Blijf"
       ],
@@ -1364,7 +1379,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Vertrouwde sleutels"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1408,6 +1424,9 @@
       "Unsubscribe": [
         "Afmelden"
       ],
+      "Unsubscribed": [
+        "Afgemeld"
+      ],
       "Unsubscribing": [
         "Afmelden"
       ],
@@ -1431,9 +1450,6 @@
       ],
       "Upgrade Now": [
         "Upgrade Nu"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Upgrade naar ${ BRAND_NAME } Unlimited"
       ],
       "Upload and share files": [
         "Bestanden uploaden en delen"
@@ -3712,9 +3728,6 @@
       "Also included": [
         "Ook inbegrepen"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Automatisch spam en weggegooide berichten verwijderen en meer premium-functies ontgrendelen als u upgrade."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Wis automatisch e-mails die meer dan 30 dagen geleden naar Prullenbak en Spam zijn verplaatst."
       ],
@@ -3741,9 +3754,6 @@
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen verwijderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
-      ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Ontworpen voor gebruikers die verhoogde bescherming zoeken voor hun accounts."
       ],
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "Wilt u uw mail nu niet meteen verzenden? Plan later verzenden in voor het juiste moment."
@@ -3778,9 +3788,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Krijg onbeperkte aliassen en 500 GB opslagruimte met ${ PLAN_NAMES[PLANS.BUNDLE] }."
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Help uw team om wachtwoorden veilig op te slaan voor gevoelige bedrijfs- en klantinformatie."
       ],
@@ -3806,9 +3813,6 @@
       "No labels": [
         "Geen labels"
       ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Bespaar tijd door met contactgroepen iedereen tegelijk e-mails te sturen. Ontgrendel deze en andere premium-functies wanneer u upgrade."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Scheid verschillende aspecten van uw leven met meerdere e-mailadressen en ontgrendel meer premiumfuncties wanneer u upgradet."
       ],
@@ -3823,9 +3827,6 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Vereenvoudig het synchroniseren en plannen met gedeelde agenda's."
-      ],
-      "Starting from ${ price }": [
-        "Beginnen vanaf ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Voeg de schrijfassistent toe aan uw abonnement om deze te blijven gebruiken."
@@ -3848,26 +3849,8 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Schakel e-mail tracker beveiliging in om te voorkomen dat adverteerders en anderen uw locatie en online activiteit kunnen volgen."
       ],
-      "Unlock custom message scheduling and more premium features when you upgrade.": [
-        "Ontgrendel aangepaste berichtsplanning en meer premium-functies bij het upgraden."
-      ],
-      "Unlock custom snooze times and more premium features when you upgrade.": [
-        "Ontgrendel aangepaste snoozetijden en meer premium-functies wanneer u upgrade."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Ontgrendel kortere e-mailadressen en andere premiumfuncties door te upgraden."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Krijg onbeperkt filters die uw postvak voor u sorteren en andere premiumfuncties als u upgrade."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Krijg onbeperkt mappen, labels en meer premium functies als u upgrade."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Upgrade om ${ activatePmUser } te krijgen voor een korter, makkelijk te onthouden e-mailadres, toegevoegd aan uw huidige adres."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Upgrade uw account om ${ PROTON_SENTINEL_NAME } te activeren, onze geavanceerde AI-gedreven beveiligingsoplossing met toegewijde 24/7 deskundige ondersteuning."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "Gebruik ${ MAIL_APP_NAME } om in te loggen bij online diensten, omdat we, in tegenstelling tot andere e-mailproviders, nooit uw gegevens zullen volgen en delen met derden."
@@ -5928,8 +5911,17 @@
       "Import from ${ provider }": [
         "Importeer uit ${ provider }"
       ],
-      "Other": [
-        "Overig"
+      "Import from Google": [
+        "Importeer uit Google"
+      ],
+      "Import from other": [
+        "Importeer uit andere"
+      ],
+      "Import from Outlook": [
+        "Importeer uit Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importeer uit Outlook"
       ]
     },
     "Import warning": {
@@ -5957,6 +5949,15 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, oude e-mails archiveren of naar een map verplaatsen."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } welke abonnementen niet meer relevant zijn."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } met één klik."
       ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "${ BRAND_NAME } Scribe helpt u om betere e-mails snel en moeiteloos te maken."
@@ -6070,14 +6071,6 @@
         "${ n } ongelezen gesprek",
         "${ n } ongelezen gesprekken"
       ],
-      "${ numberOfImageTrackers } email tracker blocked": [
-        "${ numberOfImageTrackers } e-mail tracker geblokkeerd",
-        "${ numberOfImageTrackers } e-mail trackers geblokkeerd"
-      ],
-      "${ numberOfImageTrackers } tracker blocked": [
-        "${ numberOfImageTrackers } tracker geblokkeerd",
-        "${ numberOfImageTrackers } trackers geblokkeerd"
-      ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } link opgeruimd",
         "${ numberOfUTMTrackers } links opgeruimd"
@@ -6150,6 +6143,10 @@
       "${ total } message": [
         "${ total } bericht",
         "${ total } berichten"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } e-mail tracker geblokkeerd",
+        "${ trackersCount } e-mail trackers geblokkeerd"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } ingepland bericht",
@@ -6269,6 +6266,15 @@
         "Alle (${ totalFoldersCount } label)",
         "Alle (${ totalFoldersCount } labels)"
       ],
+      "All messages from this mailing list will be marked as read.": [
+        "Alle berichten van deze mailinglijst worden gemarkeerd als gelezen."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Alle berichten van deze mailinglijst worden verplaatst naar het archief."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Alle berichten van deze adressenlijst worden verplaatst naar de Prullenbak."
+      ],
       "All messages stored in this folder will be permanently deleted.": [
         "Alle berichten die in deze map zijn opgeslagen, worden permanent gewist."
       ],
@@ -6321,11 +6327,17 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Eventuele submappen zullen ook worden verwijderd. Echter, mails die zijn opgeslagen in deze map ${ nameDeleted } zullen niet worden verwijderd en zijn terug te vinden in de map Alle berichten."
       ],
+      "Apply to future messages ": [
+        "Pas toe op toekomstige berichten "
+      ],
       "Applying actions to conversations": [
         "Acties op gesprekken toepassen"
       ],
       "Applying actions to messages": [
         "Acties op berichten toepassen"
+      ],
+      "Archive existing messages": [
+        "Bestaande berichten archiveren"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Weet u zeker dat u alle berichten in deze map wilt verwijderen?"
@@ -6411,11 +6423,17 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Boost de merkidentiteit van uw organisatie en creëer een consistentere online ervaring voor uw gebruikers."
       ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Breng uw berichten, contacten en agenda's naar ${ BRAND_NAME }."
+      ],
       "Browse privately and access blocked content.": [
         "Blader privé en krijg toegang tot geblokkeerde content."
       ],
       "Browser not supported": [
         "Browser niet ondersteund"
+      ],
+      "Bulk delete": [
+        "Verwijderen in bulk"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
@@ -6633,6 +6651,9 @@
       ],
       "Each code can only be used once": [
         "Elke code kan maar één keer gebruikt worden"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Beheer en meld u eenvoudig af voor nieuwsbrieven en adressenlijsten."
       ],
       "Edit email address": [
         "Wijzig e-mailadres"
@@ -6883,8 +6904,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Link invoegen"
@@ -6987,6 +7007,9 @@
       ],
       "Manage your labels": [
         "Labels beheren"
+      ],
+      "Mark all as read": [
+        "Alles markeren als gelezen"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -7129,11 +7152,17 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
       ],
+      "One time import": [
+        "Eenmalige import"
+      ],
       "Open shortcut cheat sheet": [
         "Open de shortcut voor cheat sheet"
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Open de handleiding voor aanbevolen acties en nuttige links."
+      ],
+      "Optional": [
+        "Optioneel"
       ],
       "or discover other features:": [
         "of andere functies ontdekken:"
@@ -7290,6 +7319,9 @@
       "Public sharing of documents is not yet supported.": [
         "Publiek delen van documenten is nog niet ondersteund."
       ],
+      "Quickly spot": [
+        "Snel herkennen"
+      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contacteer ons voor hulp met ${ BRAND_NAME }."
       ],
@@ -7364,9 +7396,6 @@
       ],
       "Seems like you are all caught up for now": [
         "Het lijkt erop dat u helemaal bij bent voor nu"
-      ],
-      "Select a service provider to start": [
-        "Selecteer een dienstverlener om te beginnen"
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "Selecteer alle ${ elementsCount } in ${ location }",
@@ -7775,6 +7804,9 @@
       "Tracking": [
         "Tracking"
       ],
+      "Trash existing messages": [
+        "Verwijder bestaande berichten"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
       ],
@@ -7798,6 +7830,9 @@
       ],
       "Unsaved changes": [
         "Niet-opgeslagen wijzigingen"
+      ],
+      "Unsubscribe": [
+        "Afmelden"
       ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
@@ -8244,6 +8279,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Uw abonnement wordt automatisch verlengd op ${ renewalTime }."
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
       ]
     },
     "info": {
@@ -8521,6 +8559,12 @@
       " and ${ l }": [
         " en ${ l }"
       ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Markeer alle berichten als gelezen"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Verplaats alle berichten naar ${ boldFolderName }"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
       ],
@@ -8542,6 +8586,9 @@
       ],
       "Actions": [
         "Acties"
+      ],
+      "Active filter:": [
+        "Actief filter:"
       ],
       "Add email address": [
         "E-mailadres toevoegen"
@@ -8570,11 +8617,11 @@
       "Always move sender's emails": [
         "Verplaats altijd mails van afzenders"
       ],
-      "AND": [
-        "EN"
-      ],
       "And": [
         "En"
+      ],
+      "AND": [
+        "EN"
       ],
       "and": [
         "en"
@@ -8590,6 +8637,9 @@
       ],
       "Apply filter to existing emails": [
         "Filter toepassen op bestaande e-mails"
+      ],
+      "Apply to future messages": [
+        "Pas toe op toekomstige berichten"
       ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
@@ -8798,11 +8848,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ALS"
-      ],
       "If": [
         "Als"
+      ],
+      "IF": [
+        "ALS"
       ],
       "Import all messages": [
         "Alle berichten importeren"
@@ -8855,6 +8905,9 @@
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
       ],
+      "Mail subscriptions": [
+        "E-mail abonnementen"
+      ],
       "Main": [
         "Primair"
       ],
@@ -8869,6 +8922,9 @@
       ],
       "Move ${ sidebarElementName }": [
         "Verplaats ${ sidebarElementName }"
+      ],
+      "Move messages to": [
+        "Verplaats berichten naar"
       ],
       "Move to": [
         "Verplaatsen naar"
@@ -8918,14 +8974,14 @@
       "Optional": [
         "Optioneel"
       ],
-      "OR": [
-        "OF"
-      ],
       "or": [
         "of"
       ],
       "Or": [
         "Of"
+      ],
+      "OR": [
+        "OF"
       ],
       "Original link": [
         "Originele link"
@@ -9037,6 +9093,9 @@
       ],
       "System information": [
         "Systeeminformatie"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Het filter is uitgeschakeld. U kunt het inschakelen ${ settingsLink }"
       ],
       "Theme": [
         "Thema"
@@ -9190,6 +9249,11 @@
         "Aan: ${ to }"
       ]
     },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Bekijk en beheer hier uw abonnementen op nieuwsbrieven en adressenlijsten."
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Zijpaneel"
@@ -9268,6 +9332,9 @@
       ],
       "Folders": [
         "Mappen"
+      ],
+      "here": [
+        "hier"
       ],
       "How to add users": [
         "Hoe gebruikers toe te voegen"
@@ -9406,6 +9473,9 @@
       ],
       "Types of recovery methods": [
         "Soorten herstelmethoden"
+      ],
+      "Views": [
+        "Weergaven"
       ],
       "What’s this?": [
         "Wat is dit?"
@@ -9803,29 +9873,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Neem ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Aan de slag voor ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Vanaf ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Upgraden naar ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -9847,6 +9894,14 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Neem ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -9999,9 +10054,6 @@
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Automatisch spam en verwijderde berichten verwijderen"
-      ],
       "Auto-reply": [
         "Automatisch beantwoorden"
       ],
@@ -10043,9 +10095,6 @@
       ],
       "Custom fields": [
         "Aangepaste velden"
-      ],
-      "Custom snooze time": [
-        "Aangepaste snoozetijd"
       ],
       "Custom workspace branding": [
         "Aangepaste workspace branding"
@@ -10186,12 +10235,6 @@
       "Schedule and snooze emails for any time": [
         "E-mails plannen en snoozen wanneer u wilt"
       ],
-      "Schedule messages at any time": [
-        "Plan berichten in op ieder moment"
-      ],
-      "Search message content": [
-        "Doorzoek berichtinhoud"
-      ],
       "Secure Core servers": [
         "Secure Core-servers"
       ],
@@ -10328,9 +10371,6 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Berichten snoozen en ontvangen wanneer u wil"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
       ]
@@ -10433,6 +10473,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Vanaf ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "De prijs van ${ priceCoupon } is alleen voor de eerste maand, hierna wordt uw abonnement automatisch verlengt voor ${ priceLine }. U kunt op ieder moment annuleren."
       ],
@@ -13416,9 +13459,6 @@
       "Action all messages": [
         "Toepassen op alle berichten"
       ],
-      "Activate @pm.me": [
-        "Activeer @pm.me"
-      ],
       "Add a custom logo": [
         "Voeg een aangepast logo toe"
       ],
@@ -13458,6 +13498,9 @@
       ],
       "Archive": [
         "Archief"
+      ],
+      "Archive all messages?": [
+        "Alle berichten archiveren?"
       ],
       "Are you sure you want to close the preview?": [
         "Weet u zeker dat u het voorbeeld wil sluiten?"
@@ -13515,9 +13558,6 @@
       ],
       "Change password": [
         "Wachtwoord wijzigen"
-      ],
-      "Clear out the junk": [
-        "Spam opruimen"
       ],
       "Clearing data": [
         "Data aan het wissen"
@@ -13743,9 +13783,6 @@
       "Forward": [
         "Doorsturen"
       ],
-      "Get advanced protection": [
-        "Kies geavanceerde bescherming"
-      ],
       "Get more from your VPN": [
         "Haal meer uit uw VPN"
       ],
@@ -13819,9 +13856,6 @@
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
-      "Keep your inbox organized": [
-        "Houd uw postvak georganiseerd"
-      ],
       "Label as": [
         "Labellen als"
       ],
@@ -13837,8 +13871,17 @@
       "Load remote content": [
         "Externe inhoud laden"
       ],
+      "Mail Subscriptions": [
+        "E-mail abonnementen"
+      ],
+      "Mail subscriptions": [
+        "E-mail abonnementen"
+      ],
       "Make a secure connection your default": [
         "Maak een beveiligde verbinding uw standaard"
+      ],
+      "Mark all messages as read": [
+        "Markeer alle berichten als gelezen"
       ],
       "Mark as read": [
         "Markeer als gelezen"
@@ -13954,6 +13997,9 @@
       "No breaches detected": [
         "Geen inbreuken gevonden"
       ],
+      "No mail subscriptions": [
+        "Geen e-mail abonnementen"
+      ],
       "No need to empty the trash": [
         "Het is niet nodig om de prullenbak te legen"
       ],
@@ -14065,9 +14111,6 @@
       "Same inbox, shorter email address": [
         "Zelfde inbox, korter e-mailadres"
       ],
-      "Save time with email filters": [
-        "Bespaar tijd met e-mailfilters"
-      ],
       "Schedule now, send later": [
         "Nu inplannen, later verzenden"
       ],
@@ -14140,9 +14183,6 @@
       "Set up your organization": [
         "Stel uw organisatie in"
       ],
-      "Set your own schedule": [
-        "Maak uw eigen planning"
-      ],
       "Settings": [
         "Instellingen"
       ],
@@ -14203,6 +14243,9 @@
       "Trash": [
         "Prullenbak"
       ],
+      "Trash all messages?": [
+        "Verwijder alle berichten?"
+      ],
       "Trust new key?": [
         "Nieuwe sleutel vertrouwen?",
         "Nieuwe sleutels vertrouwen?"
@@ -14216,11 +14259,11 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } inschakelen"
       ],
-      "Unlock contacts groups": [
-        "Ontgrendel contactgroepen"
-      ],
       "Unsubscribe": [
         "Afmelden"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Afmelden van ${ subscription.Name }?"
       ],
       "Unsubscribe request sent": [
         "Verzoek tot uitschrijven gestuurd"
@@ -14248,9 +14291,6 @@
       ],
       "VPN explained": [
         "VPN uitgelegd"
-      ],
-      "Want to snooze any time?": [
-        "Voor enige tijd snoozen?"
       ],
       "Warning": [
         "Waarschuwing"
@@ -14303,6 +14343,9 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "Your subscriptions in one place": [
+        "Uw abonnementen op één plek"
       ]
     },
     "Today icon tooltip in mini calendar": {

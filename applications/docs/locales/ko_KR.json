@@ -366,6 +366,9 @@
       "Get the apps": [
         "앱 다운로드"
       ],
+      "Get the writing assistant": [
+        "글쓰기 도우미 시작하기"
+      ],
       "Get verification code": [
         "인증코드 전송"
       ],
@@ -732,9 +735,6 @@
       "Start import": [
         "가져오기 시작"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "${ priceUnlimited }부터 시작"
-      ],
       "Stay": [
         "기다리기"
       ],
@@ -794,9 +794,6 @@
       ],
       "Upgrade now": [
         "지금 업그레이드"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } Unlimited로 업그레이드하기"
       ],
       "Upload and share files": [
         "파일 업로드 및 공유하기"
@@ -2329,11 +2326,6 @@
         "기한이 지난 청구서"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch 불러오기 마법사를 사용하세요."
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DRIVE_APP_NAME }의 ${ DOCS_SHORT_APP_NAME }를 사용하면 안전하고 암호화된 환경에서 다른 사람들과 함께 작업할 수 있습니다."
@@ -2368,9 +2360,6 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "연락처 삭제중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "계정에 대한 강화된 보호를 원하는 사용자를 위해 설계되었습니다."
-      ],
       "Easily access your email and calendar on desktop and mobile.": [
         "데스크톱 및 휴대기기에서 회원님의 이메일과 캘린더에 간편하게 접근해 보세요."
       ],
@@ -2398,9 +2387,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "내 비밀번호나 다른 데이터가 제 3자 서비스에서 유출되면 알림받으세요."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "${ PLAN_NAMES[PLANS.BUNDLE] }으로 무제한 별칭과 500 GB 스토리지 공간을 받으세요."
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "팀이 민감한 비즈니스 및 고객 정보에 대한 암호를 안전하게 저장할 수 있도록 지원하세요"
       ],
@@ -2412,9 +2398,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "연락처 병합 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "연락처 그룹으로 모두에게 한 번에 이메일을 보내 시간을 절약하십시오. 이 외에도 다른 프리미엄 기능이 업그레이드시 해제됩니다."
       ],
       "Set a data recovery method to prevent data loss.": [
         "데이터 손실을 방지하려면 데이터 복구 방법을 설정하세요."
@@ -2443,9 +2426,6 @@
       "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
         "편집 권한과 함께 파일 공유를 유지하려면 ${ BRAND_NAME } ${ planName }로 업그레이드하세요"
       ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "지정 24시간 추가적인 지원이 포함된 최첨단 AI 방식의 보안 솔루션인 ${ PROTON_SENTINEL_NAME }을 활성화 하려면 계정을 업그레이드 하세요."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "드래그 앤 드롭을 사용하여 연락처 간의 병합 우선 순위를 매기세요. 병합하고 싶지 않은 연락처는 선택 취소하세요."
       ],
@@ -2469,6 +2449,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch 불러오기 마법사를 사용하세요."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3882,9 +3867,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } 으로부터 불러오기"
-      ],
-      "Other": [
-        "기타"
       ]
     },
     "Import warning": {
@@ -4801,9 +4783,6 @@
       ],
       "Select a folder to move to.": [
         "이동할 폴더 선택"
-      ],
-      "Select a service provider to start": [
-        "서비스 제공자를 선택해 시작하기"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "이 이메일 주소로 이메일을 보낼 때 기본적으로 사용할 이메일 형식을 선택하세요."
@@ -6442,23 +6421,11 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName }(으)로 다운그래이드"
       ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }에 시작하기"
-      ],
       "Plans starting from ${ priceDrivePlus }": [
         "${ priceDrivePlus }부터 시작"
       ],
-      "Starting from ${ pricing }": [
-        "${ pricing }부터 시작"
-      ],
       "Upgrade": [
         "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName }(으)로 업그레이드"
       ]
     },
     "new_plans: action": {
@@ -6617,9 +6584,6 @@
       "Auto-delete Spam and Trash": [
         "스팸 및 휴지통 자동 삭제"
       ],
-      "Auto-delete spam and trashed messages": [
-        "스팸 및 휴지통의 메시지를 자동 삭제"
-      ],
       "Auto-reply": [
         "자동 회신"
       ],
@@ -6661,9 +6625,6 @@
       ],
       "Custom fields": [
         "사용자 지정 필드"
-      ],
-      "Custom snooze time": [
-        "사용자 지정 방해 금지 시간"
       ],
       "Custom workspace branding": [
         "커스텀 워크스페이스 브랜딩"
@@ -6803,12 +6764,6 @@
       "Schedule and snooze emails for any time": [
         "언제든지 이메일을 예약하거나 다시 알림받기"
       ],
-      "Schedule messages at any time": [
-        "언제든지 메시지를 예약하세요"
-      ],
-      "Search message content": [
-        "메시지 내용 검색"
-      ],
       "Secure Core servers": [
         "Secure Core 서버"
       ],
@@ -6938,9 +6893,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "원하는 시간대에 메시지를 방해 금지 상태로 전환하고 알림 받을 수 있습니다."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
@@ -9367,9 +9319,6 @@
       "Exporting contacts": [
         "연락처 내보내기"
       ],
-      "Get advanced protection": [
-        "향상된 보호 얻기"
-      ],
       "Get more from your VPN": [
         "VPN에 대해 더 알아보기"
       ],
@@ -9621,9 +9570,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 켜기"
-      ],
-      "Unlock contacts groups": [
-        "연락처 그룹 잠금 해제"
       ],
       "Untitled document ${ date }": [
         "무제 문서 ${ date }"

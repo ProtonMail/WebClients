@@ -468,11 +468,17 @@
       "Get the apps": [
         "Stiahnť aplikácie"
       ],
+      "Get the writing assistant": [
+        "Získajte asistenta písania"
+      ],
       "Get verification code": [
         "Odoslať overovací kód"
       ],
       "Go back": [
         "Späť"
+      ],
+      "Go back to album “${ albumName }“": [
+        "Späť na album „${ albumName }“"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Prejsť na ${ DRIVE_SHORT_APP_NAME }"
@@ -966,9 +972,6 @@
       "Start recovering": [
         "Začať obnovenie"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Cena od ${ priceUnlimited }"
-      ],
       "Stay": [
         "Zostať"
       ],
@@ -989,6 +992,9 @@
       ],
       "Take a tour": [
         "Absolvovať prehliadku"
+      ],
+      "This album is empty": [
+        "Tento album je prázdny"
       ],
       "Toggle Calendar app": [
         "Prepnúť na Kalendár"
@@ -1037,9 +1043,6 @@
       ],
       "Upgrade now": [
         "Aktualizovať teraz"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Navýšiť na ${ BRAND_NAME } Unlimited"
       ],
       "Upload": [
         "Nahrať"
@@ -2658,9 +2661,6 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Mazanie kontaktov... Tento proces môže trvať niekoľko minút. Po dokončení môžete okno zavrieť."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Určené pre používateľov, ktorí hľadajú zvýšenú ochranu svojich účtov."
-      ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Získajte jednoduchý prístup k svojmu emailu a kalendáru v počítači aj v mobile."
       ],
@@ -2688,9 +2688,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Dostávajte upozornenia, keď dôjde k úniku vášho hesla alebo iných údajov zo služieb tretích strán."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ PLAN_NAMES[PLANS.BUNDLE] }."
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Pomôžte svojmu tímu bezpečne ukladať heslá k citlivým obchodným a klientskym informáciám."
       ],
@@ -2702,9 +2699,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Zlučovanie kontaktov... Tento proces môže trvať niekoľko minút. Po dokončení môžete okno zavrieť."
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Ušetrite čas odosielaním emailov všetkým naraz pomocou skupín kontaktov. Odomknite si túto a ďalšie prémiové funkcie navýšením predplatného."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Nastavte metódu obnovy údajov, aby ste zabránili strate údajov."
@@ -2732,9 +2726,6 @@
       ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Navýšte na ${ planName }, aby ste mohli naďalej zdieľať súbory s prístupom na úpravu"
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Aktualizujte si svoj účet a aktivujte si ${ PROTON_SENTINEL_NAME }, naše špičkové bezpečnostné riešenie založené na umelej inteligencii (AI) s vyhradenou nepretržitou (24/7) odbornou podporou."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocou myši ťahajte a pustite pre zmenu priority spojenie kontaktov. Odškrtnite kontakty, ktoré nechcete zlúčiť."
@@ -3101,6 +3092,9 @@
       ],
       "Failed to load the STL preview": [
         "Načítanie STL náhľadu zlyhalo"
+      ],
+      "Failed to save some photos to your Drive": [
+        "Nepodarilo sa uložiť niektoré fotografie do vášho Drive"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Súbor „${ item.name }“ nemôže byť nahratý kvôli chybe „${ error }“"
@@ -4327,8 +4321,17 @@
       "Import from ${ provider }": [
         "Importovať z ${ provider }"
       ],
-      "Other": [
-        "Ďalší"
+      "Import from Google": [
+        "Importovať z Google"
+      ],
+      "Import from other": [
+        "Importovať z inej služby"
+      ],
+      "Import from Outlook": [
+        "Importovať z Outlooku"
+      ],
+      "Import from Yahoo": [
+        "Importovať z Yahoo"
       ]
     },
     "Import warning": {
@@ -4774,6 +4777,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Posilnite identitu značky vašej organizácie a vytvorte konzistentnejší online zážitok pre vašich používateľov."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Preneste svoje správy, kontakty a kalendáre do ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ak prejdete na bezplatnú verziu, natrvalo stratíte súčasné výhody a to i v budúcnosti, ak opäť upgradujte svoj účet na platenú verziu."
@@ -5393,6 +5399,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden alebo viac dôveryhodných kľúčov bol vlastníkom označený ako \"kompromitovaný\". Odporúčame, aby ste u takýchto kľúčov vybrali voľbu \"Nedôverovať\"."
       ],
+      "One time import": [
+        "Jednorazový import"
+      ],
       "Only the people with the link and the password can access this file.": [
         "Iba ľudia s odkazom a heslom majú prístup k tomuto súboru."
       ],
@@ -5458,6 +5467,9 @@
       ],
       "Photo was copied to stream and marked favorite there.": [
         "Fotka bola skopírovaná do streamu a tam označená ako obľúbená."
+      ],
+      "Photo(s) saved to your Drive": [
+        "Fotografia(e) uložená(é) do vášho Drive"
       ],
       "Photos have been successfully recovered.": [
         "Fotografie boli úspešne obnovené."
@@ -5632,9 +5644,6 @@
       ],
       "Select a folder to move to.": [
         "Vyberte priečinok na presun."
-      ],
-      "Select a service provider to start": [
-        "Vyberte poskytovateľa služieb a začnite"
       ],
       "Select all items for": [
         "Vybrať všetky položky za"
@@ -7637,29 +7646,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začnite teraz za ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Predplatné začína od ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšiť na ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Zmazať účet"
@@ -7681,6 +7667,17 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Predplatné začína od ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
       ]
     },
     "new_plans: feature": {
@@ -7867,9 +7864,6 @@
       "Auto-delete Spam and Trash": [
         "Automatické mazanie nevyžiadanej pošty a koša"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Automaticky mazať správy v spame a koši"
-      ],
       "Auto-reply": [
         "Automatická odpoveď"
       ],
@@ -7911,9 +7905,6 @@
       ],
       "Custom fields": [
         "Vlastné polia"
-      ],
-      "Custom snooze time": [
-        "Vlastný čas odloženia"
       ],
       "Custom workspace branding": [
         "Prispôsobenie pracovného priestoru"
@@ -8055,12 +8046,6 @@
       ],
       "Schedule and snooze emails for any time": [
         "Plánovanie a odkladanie emailov na ľubovoľný čas"
-      ],
-      "Schedule messages at any time": [
-        "Plánujte správy kedykoľvek"
-      ],
-      "Search message content": [
-        "Hľadať v obsahu správy"
       ],
       "Secure Core servers": [
         "Servery Secure Core"
@@ -8210,9 +8195,6 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Vytvorte si viacero emailových adries pre svoje online identity, napr. JohnShopper@${ domain } pre nákupné účty, JohnNews@${ domain2 } pre odber noviniek"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Odložte správy a pripomeňte si ich, kedy chcete"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
       ]
@@ -8315,6 +8297,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Cena od ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Zľavnená cena ${ priceCoupon } platí prvý mesiac. Potom sa automaticky obnoví za ${ priceLine }. Službu môžete kedykoľvek zrušiť."
       ],
@@ -11430,9 +11415,6 @@
         "Nájdených ${ searchView.numberOfResults } výsledkov",
         "Nájdených ${ searchView.numberOfResults } výsledkov"
       ],
-      "Get advanced protection": [
-        "Získať pokročilú ochranu"
-      ],
       "Get more from your VPN": [
         "Získajte zo svojej VPN viac"
       ],
@@ -11810,9 +11792,6 @@
       ],
       "Type": [
         "Typ"
-      ],
-      "Unlock contacts groups": [
-        "Odomknúť skupiny kontaktov"
       ],
       "Untitled document ${ date }": [
         "Dokument bez názvu ${ date }"

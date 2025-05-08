@@ -356,6 +356,9 @@
       "Get the apps": [
         "Alkalmazások letöltése"
       ],
+      "Get the writing assistant": [
+        "Az írási segéd beszerzése"
+      ],
       "Get verification code": [
         "Ellenőrző kód küldése"
       ],
@@ -749,9 +752,6 @@
       "Start setup": [
         "Beállítás megkezdése"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Kezdőár: ${ priceUnlimited }"
-      ],
       "Stay": [
         "Marad"
       ],
@@ -811,12 +811,6 @@
       ],
       "Upgrade Now": [
         "Váltás nagyobb csomagra"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Frissítsen a ${ BRAND_NAME } Unlimited verzióra"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Előfizetés a ${ MAIL_SHORT_APP_NAME } Pluszra"
       ],
       "Upload and share files": [
         "Fájlok feltöltése és megosztása"
@@ -2737,9 +2731,6 @@
       "Availability unknown": [
         "Elérhetőség ismeretlen"
       ],
-      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
-        "Szervezze meg jobban a napját, kövesse nyomon az idejét, és rangsorolja a feladatokat. Színkódolja a naptárát saját eseményszínekkel."
-      ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Színkódolja az eseményeket, hogy könnyebben megszervezze a napját, nyomon kövesse az idejét, és rangsorolja a feladatokat."
       ],
@@ -2752,17 +2743,11 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek törlése. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Azoknak a felhasználóknak készült, akik fokozott védelmet szeretnének a fiókjukhoz."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Kapjon értesítést ha az ön jelszava vagy más információja benne volt egy harmadik féltől származó adatszivárgásban."
-      ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Tegyen szert korlátlan számú e-mail álnévre és 500 GB tárhelyre a ${ PLAN_NAMES[PLANS.BUNDLE] } csomaggal."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Az importálás alatt álló fájl csoportokat is tartalmaz. Határozza meg, hogyan kerüljenek importálásra a csoportok."
@@ -2772,9 +2757,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek egyesítése. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Takarítson meg időt azzal, hogy névjegy csoportok segítségével egyszerre küld e-maileket mindenkinek. Oldja fel ezt és más prémium funkciókat a verziófrissítéssel."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Állítson be egy adat-helyreállítási módszert az adatvesztés megelőzése érdekében."
@@ -2793,9 +2775,6 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Névjegyeinek importálásához a Google-ból vagy az Outlookból ${ easySwitchLink }."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Frissítse fiókját, hogy aktiválja a ${ PROTON_SENTINEL_NAME } fejlesztést, az élvonalbeli, mesterséges intelligencia vezérelt biztonsági megoldásunkat, amelyhez 24/7 szakértői támogatást biztosítunk."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Húzással határozza meg az egyesítés prioritását. Szüntesse meg a kijelölést azoknál, amelyeket nem szeretne egyesíteni."
@@ -4428,9 +4407,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Importálás innen: ${ provider }"
-      ],
-      "Other": [
-        "Egyéb"
       ]
     },
     "Import warning": {
@@ -5244,9 +5220,6 @@
       ],
       "Scan the QR code with your mobile device": [
         "Olvassa be a QR-kódot a mobilkészülékével"
-      ],
-      "Select a service provider to start": [
-        "Válaszon ki egy szolgáltatót a kezdéshez"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Válassza ki az e-mail alapértelmezett formátumát, erre a címre való küldéshez."
@@ -6908,26 +6881,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kezdje el a használatot ${ priceCoupon } áron"
-      ],
-      "Starting from ${ pricing }": [
-        "Kezdőár: ${ pricing }"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade to ${ planName }": [
-        "Váltás ${ planName } csomagra"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -6949,6 +6902,11 @@
       ],
       "Switch plan": [
         "Csomag váltása"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7101,9 +7059,6 @@
       "Auto-delete Spam and Trash": [
         "Levélszemét és lomtár automatikus törlése"
       ],
-      "Auto-delete spam and trashed messages": [
-        "A Levélszemét és a Lomtár mappában lévő üzenetek automatikus törlése"
-      ],
       "Auto-reply": [
         "Automatikus válasz"
       ],
@@ -7145,9 +7100,6 @@
       ],
       "Custom fields": [
         "Egyéni mezők"
-      ],
-      "Custom snooze time": [
-        "Egyéni halasztási idő"
       ],
       "Custom workspace branding": [
         "Egyéni munkaterület márkajelzései"
@@ -7288,12 +7240,6 @@
       "Schedule and snooze emails for any time": [
         "E-mailek időzítése vagy halasztása"
       ],
-      "Schedule messages at any time": [
-        "Üzenetek ütemezése bármikor"
-      ],
-      "Search message content": [
-        "Keresés az üzenetek tartalmában"
-      ],
       "Secure Core servers": [
         "Secure Core szerverek"
       ],
@@ -7429,9 +7375,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Hozzon létre több email címet a különböző online személyiségei számára, mint például PistiVasarlas@${ domain } a vásárlási fiókjaihoz, vagy PistiHirek@${ domain2 } a hírleveleinek"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Üzenetek némítása és emlékeztető beállítása a kívánt időpontra"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } közt."
@@ -10324,9 +10267,6 @@
       "Exporting contacts": [
         "Névjegyek exportálása"
       ],
-      "Get advanced protection": [
-        "Kapjon speciális védelmet"
-      ],
       "Get more from your VPN": [
         "Hozzon ki többet a VPN-ből"
       ],
@@ -10594,9 +10534,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } bekapcsolása"
-      ],
-      "Unlock contacts groups": [
-        "Névjegy csoportok feloldása"
       ],
       "Update event": [
         "Esemény frissítése"

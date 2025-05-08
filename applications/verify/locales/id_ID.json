@@ -83,71 +83,6 @@
     "Cancellation upsell": {
       "Cloud storage and sharing for large files": [
         "Penyimpanan awan dan pembagian untuk berkas besar"
-      ],
-      "Secure personal and shared calendar": [
-        "Kalender personal dan bersama yang aman"
-      ]
-    },
-    "color": {
-      "carrot": [
-        "wortel"
-      ],
-      "cerise": [
-        "ceri"
-      ],
-      "cobalt": [
-        "kobalt"
-      ],
-      "copper": [
-        "tembaga"
-      ],
-      "enzian": [
-        "enzian"
-      ],
-      "fern": [
-        "perdu"
-      ],
-      "forest": [
-        "hutan"
-      ],
-      "ocean": [
-        "samudera"
-      ],
-      "olive": [
-        "zaitun"
-      ],
-      "pacific": [
-        "pasifik"
-      ],
-      "pickle": [
-        "acar"
-      ],
-      "pine": [
-        "pinus"
-      ],
-      "pink": [
-        "merah jambu"
-      ],
-      "plum": [
-        "plem"
-      ],
-      "purple": [
-        "ungu"
-      ],
-      "reef": [
-        "karang"
-      ],
-      "sahara": [
-        "sahara"
-      ],
-      "slateblue": [
-        "biru tanah"
-      ],
-      "soil": [
-        "tanah"
-      ],
-      "strawberry": [
-        "stroberi"
       ]
     },
     "Country name": {
@@ -1238,12 +1173,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asisten penulisan ${ BRAND_NAME } Scribe"
       ],
-      "${ n } calendar": [
-        "${ n } kalender"
-      ],
-      "${ n } calendar per user": [
-        "${ n } kalender per pengguna"
-      ],
       "${ n } custom email domain": [
         "${ n } domain email khusus"
       ],
@@ -1316,9 +1245,6 @@
       "Auto-delete Spam and Trash": [
         "Kosongkan Spam dan Sampah secara otomatis"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Hapus pesan spam dan sampah secara otomatis"
-      ],
       "Auto-reply": [
         "Pesan balasan otomatis"
       ],
@@ -1345,9 +1271,6 @@
       ],
       "Custom email domains": [
         "Domain email khusus"
-      ],
-      "Custom snooze time": [
-        "Pilih sendiri waktu tunda"
       ],
       "Desktop app": [
         "Aplikasi desktop"
@@ -1400,20 +1323,8 @@
       "Schedule and snooze emails for any time": [
         "Jadwalkan dan tunda email kapan saja"
       ],
-      "Schedule messages at any time": [
-        "Jadwalkan pesan sesuai keinginan Anda"
-      ],
-      "Search message content": [
-        "Pencarian konten pesan"
-      ],
       "Secure file storage and sharing": [
         "Penyimpanan dan pembagian berkas yang aman"
-      ],
-      "See team's availability": [
-        "Lihat ketersediaan tim"
-      ],
-      "Send & receive invitations": [
-        "Kirim & terima undangan"
       ],
       "Share files with no size limit": [
         "Bagikan berkas tanpa batasan ukuran"
@@ -1453,17 +1364,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Buat berbagai alamat email untuk masing-masing identitas online Anda, mis. JohnShopper@${ domain } untuk akun belanja dan JohnNews@${ domain2 } untuk akun langganan berita"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Tunda pesan dan dapatkan peringatan di waktu yang Anda inginkan"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: Amankan jadwal Anda dengan enkripsi ujung ke ujung. Meliputi dukungan untuk kalender khusus, fitur berbagi kalender, dan masih banyak lagi."
-      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Amankan berkas Anda dengan penyimpanan cloud terenkripsi. Meliputi sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
       ],
@@ -1494,14 +1399,8 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain } untuk berlangganan berita"
       ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Buat hingga ${ n } kalender atau tambahkan kalender dari teman, keluarga, rekan kerja, dan organisasi Anda"
-      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Buat hingga ${ n } alamat/alias email yang dapat Anda tentukan kepada para anggota keluarga. Gunakan alamat/alias ini untuk identitas online-nya masing-masing, mis. JohnShopper@${ domain } untuk akun berbelanja."
-      ],
-      "Easily share your calendars with your family, friends, or colleagues": [
-        "Bagikan kalender Anda dengan keluarga, teman, atau rekan kerja Anda secara mudah"
       ],
       "Email everyone in a group with a single email address": [
         "Email seluruh anggota grup dengan satu alamat email"
@@ -1511,9 +1410,6 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Dukungan IMAP terbatas hanya pada aplikasi desktop (mis. Outlook, Apple Mail, dan Thunderbird) via ${ MAIL_APP_NAME } Bridge. Integrasi IMAP berbasis cloud saat ini tidak didukung."
-      ],
-      "Keep your plans private to you and your family with an encrypted calendar": [
-        "Jaga agar rencana Anda tetap privat antara Anda dan keluarga Anda dengan kalender yang terenkripsi"
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Label merupakan penanda yang dapat Anda sematkan kepada pesan tertentu agar mereka dapat dicari atau difilter dengan mudah"
@@ -1535,9 +1431,6 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Simpan rincian kontak Anda seperti nomor telepon, alamat, tanggal ulang tahun, catatan personal, dan lain sebagainya secara aman. Enkripsi zero-access kami memastikan bahwa tidak ada siapapun yang dapat mengakses data Anda, termasuk ${ BRAND_NAME } sendiri."
-      ],
-      "See the availability of meeting participants and save time scheduling meetings": [
-        "Lihat ketersediaan peserta rapat dan menghemat waktu dalam menjadawalkan rapat"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Kirim email ke grup yang besar dengan mudah dan cepat ke dengan cara membuat kontak grup khusus sejumlah pesan yang Anda butuhkan (hingga 100 kontak per grup)"
@@ -1576,9 +1469,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Tingkatkan total ruang penyimpanan Anda ke ${ bundleStorage }"
-      ],
-      "Create up to ${ n } calendar": [
-        "Buat hingga ${ n } kalender"
       ],
       "Support for ${ n } custom email domains": [
         "Dukungan untuk ${ n } domain email khusus"

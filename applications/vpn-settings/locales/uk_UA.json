@@ -4,6 +4,14 @@
     "language": "uk_UA"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Незабаром розпочнеться пересилання. Нові листи з'являться у вашій поштовій скриньці."
+      ],
+      "Mail forward stopped": [
+        "Пересилання пошти зупинено"
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Виявлено ${ name } та ${ remainingCount } інші потенційні витоки даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
@@ -343,6 +351,9 @@
       "Get the deal": [
         "Скористатися пропозицією"
       ],
+      "Get the writing assistant": [
+        "Отримати помічника з написання"
+      ],
       "Get verification code": [
         "Отримати код підтвердження"
       ],
@@ -469,11 +480,11 @@
       "Refresh status": [
         "Оновити стан"
       ],
-      "Refresh the page": [
-        "Оновити сторінку"
-      ],
       "refresh the page": [
         "оновити сторінку"
+      ],
+      "Refresh the page": [
+        "Оновити сторінку"
       ],
       "Remove": [
         "Вилучити"
@@ -580,11 +591,11 @@
       "Select country": [
         "Виберіть країну"
       ],
-      "select file": [
-        "виберіть файл"
-      ],
       "Select file": [
         "Вибрати файл"
+      ],
+      "select file": [
+        "виберіть файл"
       ],
       "Send code": [
         "Надіслати код"
@@ -648,6 +659,9 @@
       ],
       "Signing in": [
         "Виконується вхід"
+      ],
+      "Skip": [
+        "Пропустити"
       ],
       "Spam": [
         "Спам"
@@ -885,6 +899,26 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Це від'єднає всі маршрутизатори та клієнти, котрі використовують цей сертифікат."
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Поштова скринька ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "Вилучено 5 елементів стеження"
+      ],
+      "Auto forwarded": [
+        "Автоматично переслано"
+      ],
+      "Email received": [
+        "Лист отримано"
+      ],
+      "Encrypted": [
+        "Зашифровано"
+      ],
+      "New email": [
+        "Новий лист"
       ]
     },
     "Assistant toggle": {
@@ -2296,9 +2330,6 @@
       ],
       "No one in your organization can connect to shared servers.": [
         "Ніхто з вашої організації не може під'єднуватися до спільних серверів."
-      ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Передплатіть тарифний план, щоб відокремити різні аспекти свого життя за допомогою декількох адрес електронної пошти та отримати доступ до інших преміумфункцій."
       ]
     },
     "Disable address prompt": {
@@ -2462,6 +2493,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } не може під'єднатися до вашого зовнішнього облікового запису"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Ви також можете перевірити нашу ${ statusPageLink }"
       ],
@@ -2476,6 +2510,12 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Сума нижче допустимої (${ minimumAmount })."
+      ],
+      "Authentication canceled.": [
+        "Автентифікацію скасовано."
+      ],
+      "Authentication error.": [
+        "Помилка автентифікації."
       ],
       "Checkout expired, please try again": [
         "Час оформлення минув, повторіть спробу"
@@ -2575,6 +2615,15 @@
       ],
       "Name does not match": [
         "Імена відрізняються"
+      ],
+      "No calendars found to import": [
+        "Не знайдено календарів для імпортування"
+      ],
+      "No contacts found to import": [
+        "Не знайдено контактів для імпортування"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Не знайдено електронних листів для імпортування - обліковий запис не має вхідних"
       ],
       "No image selected": [
         "Жодного зображення не вибрано"
@@ -2714,6 +2763,9 @@
       "Unable to upload file": [
         "Не вдається вивантажити файл"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "Неочікувана помилка, неможливо імпортувати контакти"
+      ],
       "Unknown error": [
         "Невідома помилка"
       ],
@@ -2737,6 +2789,9 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Неправильний код перевірки. Переконайтеся, що ви правильно скопіювали код і спробуйте знову. Застосування змін може тривати до 24 годин."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Ви досягли ліміту кількості контактів для вашого облікового запису"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Ви вже використали усі адреси з вашого тарифного плану. Для додавання нової адреси необхідно покращити тарифний план."
@@ -3339,6 +3394,17 @@
       ],
       "Very small": [
         "Дуже маленький"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Автоматичне пересилання"
+      ],
+      "Gmail messages to your inbox": [
+        "повідомлень Gmail до вашої скриньки"
+      ],
+      "Sign in with Google": [
+        "Увійти за допомогою Google"
       ]
     },
     "Go to sign in": {
@@ -4960,11 +5026,11 @@
       "User activated": [
         "Користувач активований"
       ],
-      "Username": [
-        "Ім’я користувача"
-      ],
       "username": [
         "ім'я користувача"
+      ],
+      "Username": [
+        "Ім’я користувача"
       ],
       "Users": [
         "Користувачі"
@@ -5483,10 +5549,10 @@
       "Allow recovery by phone": [
         "Дозволити відновлення за телефоном"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дозволений домен"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дозволений домен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -5702,6 +5768,9 @@
       "IBAN": [
         "IBAN"
       ],
+      "Import all messages": [
+        "Імпортувати всі повідомлення"
+      ],
       "Integrated 2FA authenticator": [
         "Інтегрований автентифікатор 2FA"
       ],
@@ -5716,6 +5785,15 @@
       ],
       "Key": [
         "Ключ"
+      ],
+      "Last 12 months only": [
+        "Лише останні 12 місяців"
+      ],
+      "Last 3 months only": [
+        "Лише останні 3 місяці"
+      ],
+      "Last month only": [
+        "Лише останній місяць"
       ],
       "Last name": [
         "Прізвище"
@@ -6391,26 +6469,6 @@
         "Середня швидкість VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Переглянути всі тарифні плани ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Від ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Розпочати з ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Видалити обліковий запис"
@@ -6432,6 +6490,20 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Переглянути всі тарифні плани ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Від ${ price }"
+      ],
+      "Upgrade": [
+        "Покращити"
       ]
     },
     "new_plans: feature": {
@@ -6561,23 +6633,11 @@
       "${ size } storage": [
         "${ size } сховища"
       ],
-      "1 TB secure storage": [
-        "1 ТБ безпечного сховища"
-      ],
       "1 user": [
         "1 користувач"
       ],
-      "10 email addresses/aliases": [
-        "10 адрес/псевдонімів е-пошти"
-      ],
-      "10 more premium features": [
-        "Ще 10 преміум функцій"
-      ],
       "10-year file version history": [
         "10-річна історія версій файлу"
-      ],
-      "15 GB storage": [
-        "15 ГБ сховища"
       ],
       "24/7 account management support": [
         "Цілодобова підтримка щодо керування обліковими записами"
@@ -6597,17 +6657,11 @@
       "Administration Panel": [
         "Панель адміністрування"
       ],
-      "Advanced account protection": [
-        "Розширений захист облікового запису"
-      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Розширені функції псевдонімів (на базі SimpleLogin)"
       ],
       "Advanced network security": [
         "Розширений захист мережі"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "Всі ${ BRAND_NAME } продукти та функції"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Всі базові ${ BRAND_NAME } послуги (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6617,9 +6671,6 @@
       ],
       "Auto-delete Spam and Trash": [
         "Автоматичне видалення спаму та смітника"
-      ],
-      "Auto-delete spam and trashed messages": [
-        "Автоматичне видалення спаму та повідомлень зі смітника"
       ],
       "Auto-reply": [
         "Автовідповідь"
@@ -6665,9 +6716,6 @@
       ],
       "Custom fields": [
         "Власні поля"
-      ],
-      "Custom snooze time": [
-        "Власний час відкладення"
       ],
       "Custom workspace branding": [
         "Брендинг робочого середовища"
@@ -6723,9 +6771,6 @@
       "GDPR data processing agreement": [
         "Угода про обробку даних GDPR"
       ],
-      "Generate emails with a prompt": [
-        "Генерувати електронні листи за запитом"
-      ],
       "Group management (coming soon)": [
         "Керування групами (незабаром)"
       ],
@@ -6780,12 +6825,6 @@
       "Priority support & live chat": [
         "Пріоритетна підтримка і чат"
       ],
-      "Proofread and refine your emails": [
-        "Вичитуйте та вдосконалюйте свої електронні листи"
-      ],
-      "Quickly craft replies": [
-        "Швидко створюйте відповіді"
-      ],
       "Recover previous file versions": [
         "Відновити попередні версії файлів"
       ],
@@ -6798,17 +6837,8 @@
       "Router support": [
         "Підтримка маршрутизатора"
       ],
-      "Save time emailing": [
-        "Заощаджуйте час з електронною поштою"
-      ],
       "Schedule and snooze emails for any time": [
         "Плануйте і відкладайте електронні листи на будь-який час"
-      ],
-      "Schedule messages at any time": [
-        "Заплануйте надсилання повідомлень в будь-який час"
-      ],
-      "Search message content": [
-        "Пошук вмісту повідомлень"
       ],
       "Secure Core servers": [
         "Сервери Secure Core"
@@ -6845,9 +6875,6 @@
       ],
       "Strict no-logs policy": [
         "Суворе дотримання політики без журналювання"
-      ],
-      "Support for up to 2 users": [
-        "Підтримка до 2 користувачів"
       ],
       "Sync and backup all your files across devices": [
         "Синхронізуйте та створюйте резервні копії всіх файлів на різних пристроях"
@@ -6949,20 +6976,6 @@
         "${ users } користувачі",
         "${ users } користувачів",
         "${ users } користувачів"
-      ]
-    },
-    "new_plans: feature info": {
-      "1 custom email domain": [
-        "1 користувацький домен електронної пошти"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Створіть різні адреси електронної пошти для ваших онлайн-профілів, наприклад, ArtemShopper@${ domain } для інтернет-магазинів, ArtemNews@${ domain2 } для підписки на новини"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Відкладайте повідомлення та отримуйте нагадування, коли захочете"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -7535,6 +7548,17 @@
         "Вітаємо у ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Будь-хто"
+      ],
+      "Group members": [
+        "Учасники групи"
+      ],
+      "No one": [
+        "Ніхто"
+      ]
+    },
     "Option": {
       "Country configs": [
         "Конфігурації країн"
@@ -7595,17 +7619,6 @@
       ],
       "The whole organization": [
         "Вся організація"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Будь-хто"
-      ],
-      "Group members": [
-        "Учасники групи"
-      ],
-      "No one": [
-        "Ніхто"
       ]
     },
     "Organization capacity error": {
@@ -9798,6 +9811,9 @@
       "Backup password updated": [
         "Резервний пароль оновлено"
       ],
+      "Canceling import": [
+        "Скасування імпорту"
+      ],
       "Catch-all address updated": [
         "Catch-all адресу оновлено"
       ],
@@ -9830,6 +9846,9 @@
       ],
       "Gift code applied": [
         "Подарунковий код застосовано"
+      ],
+      "Import record deleted": [
+        "Запис імпорту видалено"
       ],
       "Invitation rejected": [
         "Запрошення відхилено"
@@ -9890,6 +9909,9 @@
       ],
       "SPF value copied to clipboard": [
         "Значення SPF скопійовано в буфер обміну"
+      ],
+      "Undo in progress": [
+        "Скасовується"
       ],
       "User updated": [
         "Користувача оновлено"
@@ -10214,11 +10236,11 @@
       "Card verification": [
         "Перевірка картки"
       ],
-      "Catch-all address": [
-        "Catch-all адреси"
-      ],
       "Catch-All address": [
         "Catch-All адреса"
+      ],
+      "Catch-all address": [
+        "Catch-all адреси"
       ],
       "Change login password": [
         "Змінити пароль входу"
@@ -10489,9 +10511,6 @@
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""
-      ],
-      "Increase your privacy with more addresses": [
-        "Вдоскональте свою приватність за допомогою більшої кількості адрес"
       ],
       "Invalid verification code": [
         "Недійсний код підтвердження"

@@ -83,71 +83,6 @@
     "Cancellation upsell": {
       "Cloud storage and sharing for large files": [
         "Felhőalapú tárhely és megosztás nagy méretű fájlokhoz"
-      ],
-      "Secure personal and shared calendar": [
-        "Biztonságos személyes és megosztott naptár"
-      ]
-    },
-    "color": {
-      "carrot": [
-        "sárgarépa"
-      ],
-      "cerise": [
-        "cseresznye"
-      ],
-      "cobalt": [
-        "kobalt"
-      ],
-      "copper": [
-        "réz"
-      ],
-      "enzian": [
-        "encián"
-      ],
-      "fern": [
-        "páfrány"
-      ],
-      "forest": [
-        "erdő"
-      ],
-      "ocean": [
-        "óceán"
-      ],
-      "olive": [
-        "olíva"
-      ],
-      "pacific": [
-        "csendes-óceáni"
-      ],
-      "pickle": [
-        "pác"
-      ],
-      "pine": [
-        "fenyő"
-      ],
-      "pink": [
-        "rózsaszín"
-      ],
-      "plum": [
-        "szilva"
-      ],
-      "purple": [
-        "lila"
-      ],
-      "reef": [
-        "zátony"
-      ],
-      "sahara": [
-        "szahara"
-      ],
-      "slateblue": [
-        "palakék"
-      ],
-      "soil": [
-        "föld"
-      ],
-      "strawberry": [
-        "eper"
       ]
     },
     "Country name": {
@@ -1244,14 +1179,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe írási segéd"
       ],
-      "${ n } calendar": [
-        "${ n } naptár",
-        "${ n } naptár"
-      ],
-      "${ n } calendar per user": [
-        "${ n } naptár felhasználónként",
-        "${ n } naptár felhasználónként"
-      ],
       "${ n } custom email domain": [
         "${ n } saját e-mail domain név",
         "${ n } saját e-mail domain név"
@@ -1333,9 +1260,6 @@
       "Auto-delete Spam and Trash": [
         "Levélszemét és lomtár automatikus törlése"
       ],
-      "Auto-delete spam and trashed messages": [
-        "A Levélszemét és a Lomtár mappában lévő üzenetek automatikus törlése"
-      ],
       "Auto-reply": [
         "Automatikus válasz"
       ],
@@ -1362,9 +1286,6 @@
       ],
       "Custom email domains": [
         "Saját domain nevek"
-      ],
-      "Custom snooze time": [
-        "Egyéni halasztási idő"
       ],
       "Desktop app": [
         "Asztali alkalmazás"
@@ -1417,20 +1338,8 @@
       "Schedule and snooze emails for any time": [
         "E-mailek időzítése vagy halasztása"
       ],
-      "Schedule messages at any time": [
-        "Üzenetek ütemezése bármikor"
-      ],
-      "Search message content": [
-        "Keresés az üzenetek tartalmában"
-      ],
       "Secure file storage and sharing": [
         "Biztonságos file-tárhely és -megosztás"
-      ],
-      "See team's availability": [
-        "Lásd a csoport elérhetőségét"
-      ],
-      "Send & receive invitations": [
-        "Meghívók küldése és fogadása"
       ],
       "Share files with no size limit": [
         "Fájlok megosztása méretkorlátozás nélkül"
@@ -1470,17 +1379,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Hozzon létre több email címet a különböző online személyiségei számára, mint például PistiVasarlas@${ domain } a vásárlási fiókjaihoz, vagy PistiHirek@${ domain2 } a hírleveleinek"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Üzenetek némítása és emlékeztető beállítása a kívánt időpontra"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } közt."
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: Tartsa biztonságban az ütemezését végpontok közti titkosítással. Tartalmazza az egyéni naptárak támogatását, a naptármegosztást és egyebeket."
-      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Tartsa biztonságban fájljait titkosított felhőalapú tárolással. Tartalmazza az automatikus szinkronizálást, a titkosított fájlmegosztást és egyebeket."
       ],
@@ -1511,15 +1414,8 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Hozzon létre több email címet a különböző online személyiségei számára, mint például PistiVasarlas@${ domain } a vásárlási fiókjaihoz, vagy PistiHirek@${ domain } a hírleveleinek"
       ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől",
-        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől"
-      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Hozzon létre legfeljebb ${ n } e-mail címet/álnevet, amelyet hozzárendelhet családtagokhoz. Használja őket online személyazonosságokhoz, pl. VasarloSanyi@${ domain } a vásárlási fiókokhoz."
-      ],
-      "Easily share your calendars with your family, friends, or colleagues": [
-        "Könnyedén megoszthatja a naptárait családjával, barátaival vagy kollégáival"
       ],
       "Email everyone in a group with a single email address": [
         "E-mail küldése a csoport minden tagjának egyetlen e-mail címmel"
@@ -1529,9 +1425,6 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Az IMAP támogatás asztali alkalmazásokra korlátozódik (pl. Outlook, Apple Mail, Thunderbird) a ${ MAIL_APP_NAME } Bridge-en keresztül. Felhő alapú IMAP megoldások jelenleg nem támogatottak."
-      ],
-      "Keep your plans private to you and your family with an encrypted calendar": [
-        "Tartsa terveit bizalmasan az Ön és családja számára a titkosított naptárral"
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "A címkék egyszerű jelölők amelyet az e-mailhez rendelhet, hogy könnyebben megtalálhassa vagy leszűrhesse"
@@ -1553,9 +1446,6 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Tárolja biztonságban a névjegyei adatait, mint például telefonszám, cím, születésnap és személyes jegyzetek. A zéró-hozzáférés titkosítás biztosítja, hogy még a ${ BRAND_NAME } sem fér hozzá."
-      ],
-      "See the availability of meeting participants and save time scheduling meetings": [
-        "Tekintse meg az értekezlet résztvevőinek elérhetőségét, és takarítson meg időt az értekezletek ütemezésével"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Küldjön e-mailt nagyobb csoportoknak könnyedén, tetszőleges számú névjegy csoport létrehozásával (maximum 100 címzett csoportonként)"
@@ -1594,10 +1484,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Emelje meg tárhelyét ${ bundleStorage } méretűre"
-      ],
-      "Create up to ${ n } calendar": [
-        "Akár ${ n } naptár létrehozása",
-        "Akár ${ n } naptár létrehozása"
       ],
       "Support for ${ n } custom email domains": [
         "${ n } saját e-mail domain név használata"

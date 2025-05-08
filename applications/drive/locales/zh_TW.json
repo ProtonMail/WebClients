@@ -429,6 +429,9 @@
       "Get the apps": [
         "取得應用程式"
       ],
+      "Get the writing assistant": [
+        "取得寫作幫手"
+      ],
       "Get verification code": [
         "取得驗證碼"
       ],
@@ -879,9 +882,6 @@
       "Start recovering": [
         "開始恢復"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "${ priceUnlimited }起"
-      ],
       "Stay": [
         "停留"
       ],
@@ -950,9 +950,6 @@
       ],
       "Upgrade now": [
         "立即升級"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "升級至${ BRAND_NAME }無限版"
       ],
       "Upload": [
         "上傳"
@@ -2483,26 +2480,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在刪除聯絡人…該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "為想要更保護自己帳號的人量身訂做。"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "取得通知當您的密碼或其他資料在第三方服務中洩漏。"
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "駐冊 ${ PLAN_NAMES[PLANS.BUNDLE] } 可得到無限別名及 500 GB 儲存量"
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在匯入的聯絡人清單似乎包含一些群組，請查看並選擇應如何匯入這些群組。"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在合併聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "透過傳送電子郵件給通訊群組每一人以節省時間。當您升級以解鎖次頂級功能。"
       ],
       "Set a data recovery method to prevent data loss.": [
         "設定資料救援手段以防資料丟失"
@@ -2518,9 +2506,6 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "從 Google 或 Outlook, ${ easySwitchLink } 來匯入你的聯絡人"
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "升級您的帳號以啟動 ${ PROTON_SENTINEL_NAME }，我們最新的 AI 安全方案，包含24小時的專家支援服務。"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
@@ -3965,9 +3950,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "從 ${ provider } 匯入"
-      ],
-      "Other": [
-        "其它"
       ]
     },
     "Import warning": {
@@ -5046,9 +5028,6 @@
       ],
       "Select a folder to move to.": [
         "選擇要移動至的資料夾。"
-      ],
-      "Select a service provider to start": [
-        "選取您的服務提供者以開始"
       ],
       "Select all items for": [
         "選取全部項目"
@@ -6826,29 +6805,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "使用${ priceCoupon }取得"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "方案從${ priceDrivePlus }起"
-      ],
-      "Starting from ${ pricing }": [
-        "從${ pricing }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ],
-      "Upgrade to ${ planName }": [
-        "升級至${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -6870,6 +6826,17 @@
       ],
       "Switch plan": [
         "切換方案"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "方案從${ priceDrivePlus }起"
+      ],
+      "Upgrade": [
+        "升級"
       ]
     },
     "new_plans: feature": {
@@ -7002,9 +6969,6 @@
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
       ],
-      "Auto-delete spam and trashed messages": [
-        "自動刪除垃圾郵件與垃圾桶中的訊息"
-      ],
       "Auto-reply": [
         "自動回覆"
       ],
@@ -7046,9 +7010,6 @@
       ],
       "Custom fields": [
         "自訂欄位"
-      ],
-      "Custom snooze time": [
-        "自訂延遲時間"
       ],
       "Custom workspace branding": [
         "自訂工作空間的品牌"
@@ -7182,12 +7143,6 @@
       "Schedule and snooze emails for any time": [
         "隨時計畫和延後電子郵件"
       ],
-      "Schedule messages at any time": [
-        "在任意時間排程訊息"
-      ],
-      "Search message content": [
-        "搜尋郵件內容"
-      ],
       "Secure Core servers": [
         "Secure Core 伺服器"
       ],
@@ -7317,9 +7272,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "創建多重電子郵件位址身分，如JohnShopper@${ domain }給購物用途， JohnNews@${ domain2 }給訂閱新聞使用"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "緩辦郵件，容後依時提醒"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
@@ -10056,9 +10008,6 @@
       "Found ${ searchView.numberOfResults } result": [
         "找到 ${ searchView.numberOfResults } 個結果"
       ],
-      "Get advanced protection": [
-        "取得進階保護"
-      ],
       "Get more from your VPN": [
         "從您的VPN取得更多"
       ],
@@ -10346,9 +10295,6 @@
       ],
       "Type": [
         "類型"
-      ],
-      "Unlock contacts groups": [
-        "解鎖通訊群組"
       ],
       "Untitled document ${ date }": [
         "未命名文件 ${ date }"

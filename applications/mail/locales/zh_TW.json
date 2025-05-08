@@ -522,9 +522,6 @@
       "Generate text": [
         "生成文本"
       ],
-      "Get ${ BRAND_NAME } Duo": [
-        "取得${ BRAND_NAME }Duo"
-      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "盡快為${ priceCoupon }取得${ planName }。"
       ],
@@ -533,12 +530,6 @@
       ],
       "Get in touch": [
         "保持聯絡"
-      ],
-      "Get it": [
-        "獲得它"
-      ],
-      "Get it from only ${ addonPriceWithCurrency } /month": [
-        "取得每月只要${ addonPriceWithCurrency }"
       ],
       "Get started": [
         "開始使用"
@@ -822,6 +813,9 @@
       "Move to archive": [
         "移至封存檔"
       ],
+      "Move to folder": [
+        "移至資料夾"
+      ],
       "Move to inbox": [
         "移至收件匣"
       ],
@@ -1092,11 +1086,11 @@
       "Select ${ planTitle }": [
         "選擇方案 ${ planTitle }"
       ],
-      "Select All": [
-        "選擇全部"
-      ],
       "Select all": [
         "全選"
+      ],
+      "Select All": [
+        "選擇全部"
       ],
       "Select all messages": [
         "選取所有郵件"
@@ -1236,9 +1230,6 @@
       "Start setup": [
         "開始設定"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "${ priceUnlimited }起"
-      ],
       "Stay": [
         "停留"
       ],
@@ -1292,6 +1283,9 @@
       ],
       "Trust": [
         "信任"
+      ],
+      "Trust key": [
+        "信任金鑰"
       ],
       "Trust public key": [
         "信任公開金鑰"
@@ -1358,9 +1352,6 @@
       ],
       "Upgrade Now": [
         "請升級"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "升級至${ BRAND_NAME }無限版"
       ],
       "Upload picture": [
         "上載圖像"
@@ -3580,9 +3571,6 @@
       "Also included": [
         "並包含"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "當您升級以自動刪除垃圾郵件和垃圾訊息及解鎖更多頂級功能"
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "自動清除電子郵件移除超過 30 天垃圾桶和垃圾郵件。"
       ],
@@ -3598,9 +3586,6 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在刪除聯絡人…該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "為想要更保護自己帳號的人量身訂做。"
-      ],
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "不想現在寄出電子郵件？將它放入排程可以在對的時間點寄出。"
       ],
@@ -3612,9 +3597,6 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "取得通知當您的密碼或其他資料在第三方服務中洩漏。"
-      ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "駐冊 ${ PLAN_NAMES[PLANS.BUNDLE] } 可得到無限別名及 500 GB 儲存量"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在匯入的聯絡人清單似乎包含一些群組，請查看並選擇應如何匯入這些群組。"
@@ -3634,9 +3616,6 @@
       "No labels": [
         "沒有標籤"
       ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "透過傳送電子郵件給通訊群組每一人以節省時間。當您升級以解鎖次頂級功能。"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "使用多個電子郵件位址分隔生活的不同方面，並在升級時解鎖更多進階功能。"
       ],
@@ -3645,9 +3624,6 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "設定救援方法可以避免您再也無法存取您的帳戶。"
-      ],
-      "Starting from ${ price }": [
-        "始於${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "添加至您的訂閱，以繼續使用撰寫幫手。"
@@ -3667,26 +3643,8 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "開啟電郵追蹤程式保護以避免廣告商或其他人追踪您的地點或網上活動。"
       ],
-      "Unlock custom message scheduling and more premium features when you upgrade.": [
-        "升級後解鎖自訂訊息調度和更多的頂級質子版功能。"
-      ],
-      "Unlock custom snooze times and more premium features when you upgrade.": [
-        "升級後解鎖自訂延後時間和更多的頂級質子版功能。"
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "透過升級付費版解鎖短電子郵件位址功能和其他服務"
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "升級時解鎖用來排序您收件匣的無限過濾條件與更多進階功能。"
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "升級時解鎖無限資料夾、標籤與更多進階功能。"
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "升級至${ activatePmUser }以取得更短更好記的電子郵件地址並增加於現有的。"
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "升級您的帳號以啟動 ${ PROTON_SENTINEL_NAME }，我們最新的 AI 安全方案，包含24小時的專家支援服務。"
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "使用 ${ MAIL_APP_NAME } 登入線上服務，與其他郵件服務商不同的地方，我們不會追踪您的資料或與第三方分享"
@@ -5684,9 +5642,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "從 ${ provider } 匯入"
-      ],
-      "Other": [
-        "其它"
       ]
     },
     "Import warning": {
@@ -5802,12 +5757,6 @@
       ],
       "${ n } unread conversation": [
         "${ n } 篇未讀往來對話"
-      ],
-      "${ numberOfImageTrackers } email tracker blocked": [
-        "${ numberOfImageTrackers } 電郵追蹤程式已攔截"
-      ],
-      "${ numberOfImageTrackers } tracker blocked": [
-        "${ numberOfImageTrackers } 個追蹤程式已攔截"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } 個連結已清理"
@@ -6527,7 +6476,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖片"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -6966,9 +6915,6 @@
       ],
       "Seems like you are all caught up for now": [
         "目前您已完成最新進度"
-      ],
-      "Select a service provider to start": [
-        "選取您的服務提供者以開始"
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "選取於${ location }全部的${ elementsCount }"
@@ -8090,10 +8036,10 @@
       "Always move sender's emails": [
         "總是移動寄件者的電子郵件"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
       "and": [
@@ -8315,10 +8261,10 @@
       "IBAN": [
         "國際銀行帳號"
       ],
-      "IF": [
+      "If": [
         "如"
       ],
-      "If": [
+      "IF": [
         "如"
       ],
       "Import all messages": [
@@ -8429,13 +8375,13 @@
       "Optional": [
         "自由列席"
       ],
-      "OR": [
-        "或"
-      ],
       "or": [
         "或"
       ],
       "Or": [
+        "或"
+      ],
+      "OR": [
         "或"
       ],
       "Original link": [
@@ -8767,6 +8713,9 @@
       ],
       "Folders": [
         "資料夾"
+      ],
+      "here": [
+        "這裡"
       ],
       "How to pay with Bitcoin?": [
         "如何以比特幣繳款？"
@@ -9243,29 +9192,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "選用 ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "使用${ priceCoupon }取得"
-      ],
-      "Starting from ${ pricing }": [
-        "從${ pricing }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ],
-      "Upgrade to ${ planName }": [
-        "升級至${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -9287,6 +9213,14 @@
       ],
       "Switch plan": [
         "切換方案"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "選用 ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -9419,9 +9353,6 @@
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
       ],
-      "Auto-delete spam and trashed messages": [
-        "自動刪除垃圾郵件與垃圾桶中的訊息"
-      ],
       "Auto-reply": [
         "自動回覆"
       ],
@@ -9463,9 +9394,6 @@
       ],
       "Custom fields": [
         "自訂欄位"
-      ],
-      "Custom snooze time": [
-        "自訂延遲時間"
       ],
       "Custom workspace branding": [
         "自訂工作空間的品牌"
@@ -9599,12 +9527,6 @@
       "Schedule and snooze emails for any time": [
         "隨時計畫和延後電子郵件"
       ],
-      "Schedule messages at any time": [
-        "在任意時間排程訊息"
-      ],
-      "Search message content": [
-        "搜尋郵件內容"
-      ],
       "Secure Core servers": [
         "Secure Core 伺服器"
       ],
@@ -9734,9 +9656,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "創建多重電子郵件位址身分，如JohnShopper@${ domain }給購物用途， JohnNews@${ domain2 }給訂閱新聞使用"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "緩辦郵件，容後依時提醒"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
@@ -12604,9 +12523,6 @@
       "Action all messages": [
         "動作於全部訊息"
       ],
-      "Activate @pm.me": [
-        "啟用 @pm.me"
-      ],
       "Add a custom logo": [
         "新增自訂標誌"
       ],
@@ -12702,9 +12618,6 @@
       ],
       "Change password": [
         "更改密碼"
-      ],
-      "Clear out the junk": [
-        "清除垃圾"
       ],
       "Clearing data": [
         "清除資料中"
@@ -12901,9 +12814,6 @@
       "Forward": [
         "轉寄"
       ],
-      "Get advanced protection": [
-        "取得進階保護"
-      ],
       "Get more from your VPN": [
         "從您的VPN取得更多"
       ],
@@ -12960,9 +12870,6 @@
       ],
       "Invalid verification code": [
         "驗證碼無效"
-      ],
-      "Keep your inbox organized": [
-        "保持收件匣井然有序"
       ],
       "Label as": [
         "標籤為"
@@ -13192,9 +13099,6 @@
       "Same inbox, shorter email address": [
         "一樣的收件匣，較短的電郵位址"
       ],
-      "Save time with email filters": [
-        "使用篩選器來幫你節省時間"
-      ],
       "Schedule now, send later": [
         "現在排定，稍後寄送"
       ],
@@ -13257,9 +13161,6 @@
       ],
       "Set up your family account": [
         "設定您的家庭帳號"
-      ],
-      "Set your own schedule": [
-        "設定您自己的排程"
       ],
       "Settings": [
         "設定"
@@ -13324,9 +13225,6 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "啟用${ DARK_WEB_MONITORING_NAME }"
       ],
-      "Unlock contacts groups": [
-        "解鎖通訊群組"
-      ],
       "Unsubscribe": [
         "取消訂閱"
       ],
@@ -13347,9 +13245,6 @@
       ],
       "Verifying your payment...": [
         "正在驗證您的付款..."
-      ],
-      "Want to snooze any time?": [
-        "想隨時延後?"
       ],
       "Warning": [
         "警告"
