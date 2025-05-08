@@ -317,5 +317,28 @@ describe('Mail Paid user nudge', () => {
                 })
             ).toBe(true);
         });
+
+        it('Should return true because user has migration coupon', () => {
+            mockUseFeature.mockReturnValue(featureEnabled);
+            mockUseConfig.mockReturnValue(defaultConfigMail);
+            mockUseFlag.mockReturnValue(true);
+            mockUseSubscription.mockReturnValue([
+                {
+                    PeriodStart: subDays(today.getTime(), 25).getTime() / 1000,
+                    Cycle: CYCLE.MONTHLY,
+                    Plans: [{ Name: PLANS.MAIL }],
+                    Coupon: { Name: 'MIGRATION' },
+                } as unknown as Subscription,
+            ]);
+
+            expect(
+                useMonthlyUpsellEligibility({
+                    allowedApps: paidConfig[PLANS.MAIL].allowedApps,
+                    offerTimestampFlag: paidConfig[PLANS.MAIL].offerTimestampFlag,
+                    offerFlag: paidConfig[PLANS.MAIL].offerFlag,
+                    eligiblePlan: paidConfig[PLANS.MAIL].currentPlan,
+                })
+            ).toBe(true);
+        });
     });
 });
