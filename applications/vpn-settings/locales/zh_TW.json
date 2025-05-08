@@ -4,6 +4,14 @@
     "language": "zh_TW"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "轉發將很快開始。新電子郵件將會出現在您的收件匣中。"
+      ],
+      "Mail forward stopped": [
+        "已停止郵件轉寄"
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "偵測到 ${ name } 及 ${ remainingCount } 個其他潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
@@ -370,6 +378,9 @@
       "Get the deal": [
         "取得優惠"
       ],
+      "Get the writing assistant": [
+        "取得寫作幫手"
+      ],
       "Get verification code": [
         "取得驗證碼"
       ],
@@ -400,10 +411,10 @@
       "Invite user": [
         "邀請使用者"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "繼續編輯"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "繼續編輯"
       ],
       "Keep logo": [
@@ -502,10 +513,10 @@
       "Refresh status": [
         "重新整理狀態"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
       "Remove": [
@@ -613,10 +624,10 @@
       "Select country": [
         "選擇國家"
       ],
-      "select file": [
+      "Select file": [
         "選取檔案"
       ],
-      "Select file": [
+      "select file": [
         "選取檔案"
       ],
       "Send code": [
@@ -684,6 +695,9 @@
       ],
       "Signing in": [
         "正在登入"
+      ],
+      "Skip": [
+        "略過"
       ],
       "Spam": [
         "垃圾郵件"
@@ -912,6 +926,26 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "這將會把使用此憑證的所有路由器和客戶端都中斷連線。"
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay } 的收件匣"
+      ],
+      "5 trackers removed": [
+        "已移除 5 個追蹤程式"
+      ],
+      "Auto forwarded": [
+        "自動轉寄"
+      ],
+      "Email received": [
+        "收到的電子郵件"
+      ],
+      "Encrypted": [
+        "已加密"
+      ],
+      "New email": [
+        "新電子郵件"
       ]
     },
     "Assistant toggle": {
@@ -2317,9 +2351,6 @@
       ],
       "No one in your organization can connect to shared servers.": [
         "於您的組織內無人可連接至於共享伺服器"
-      ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "使用多個電子郵件位址分隔生活的不同方面，並在升級時解鎖更多進階功能。"
       ]
     },
     "Disable address prompt": {
@@ -2550,6 +2581,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME }無法連接外部帳號"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
       ],
@@ -2564,6 +2598,12 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "金額不得低於 (${ minimumAmount })。"
+      ],
+      "Authentication canceled.": [
+        "驗證已取消。"
+      ],
+      "Authentication error.": [
+        "認證錯誤。"
       ],
       "Checkout expired, please try again": [
         "結帳已逾時，請重試"
@@ -2666,6 +2706,15 @@
       ],
       "Name does not match": [
         "名稱不相符"
+      ],
+      "No calendars found to import": [
+        "沒有找到行事曆可以匯入"
+      ],
+      "No contacts found to import": [
+        "沒有找到聯絡人可以匯入"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "沒有找到電子郵件可以匯入 - 該帳號沒有收件匣"
       ],
       "No image selected": [
         "沒有選擇圖像"
@@ -2805,6 +2854,9 @@
       "Unable to upload file": [
         "無法上傳文件"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "未知錯誤，無法匯入聯絡人"
+      ],
       "Unknown error": [
         "未知錯誤"
       ],
@@ -2828,6 +2880,9 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "驗證碼錯誤，請確保已正確複製驗證碼後重試。變更或需時最長 24 小時才能生效。"
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "您的帳號已達聯絡人數量限制"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "您已使用您的方案中所有電郵位址。請升級您的方案以加入電郵位址。"
@@ -3378,6 +3433,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "自動轉寄"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail 訊息到您的收件匣"
+      ],
+      "Sign in with Google": [
+        "使用 Google 帳號登入"
       ]
     },
     "Go to sign in": {
@@ -4975,10 +5041,10 @@
       "User activated": [
         "使用者已啟用"
       ],
-      "Username": [
+      "username": [
         "使用者名稱"
       ],
-      "username": [
+      "Username": [
         "使用者名稱"
       ],
       "Users": [
@@ -5485,11 +5551,11 @@
       "Allow recovery by phone": [
         "允許透過電話復原"
       ],
-      "Allowed domain": [
-        "已允許網域"
-      ],
       "Allowed Domain": [
         "網域白名單"
+      ],
+      "Allowed domain": [
+        "已允許網域"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "允許您組織內任何人無痕地添加會議連結至它們的行事曆邀請函。"
@@ -5713,6 +5779,9 @@
       "IBAN": [
         "國際銀行帳號"
       ],
+      "Import all messages": [
+        "匯入全部郵件"
+      ],
       "Integrated 2FA authenticator": [
         "整合雙重驗證"
       ],
@@ -5727,6 +5796,15 @@
       ],
       "Key": [
         "金鑰"
+      ],
+      "Last 12 months only": [
+        "僅過去 12 個月"
+      ],
+      "Last 3 months only": [
+        "僅過去 3 個月"
+      ],
+      "Last month only": [
+        "僅過去 1 個月"
       ],
       "Last name": [
         "姓"
@@ -6406,32 +6484,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "探索其他 ${ BRAND_NAME } 方案"
-      ],
-      "From ${ price }": [
-        "${ price }起"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "使用${ priceCoupon }取得"
-      ],
-      "Starting from ${ pricing }": [
-        "從${ pricing }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ],
-      "Upgrade to ${ planName }": [
-        "升級至${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -6453,6 +6505,20 @@
       ],
       "Switch plan": [
         "切換方案"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "探索其他 ${ BRAND_NAME } 方案"
+      ],
+      "From ${ price }": [
+        "${ price }起"
+      ],
+      "Upgrade": [
+        "升級"
       ]
     },
     "new_plans: feature": {
@@ -6531,26 +6597,11 @@
       "${ size } storage": [
         "${ size } 儲存空間"
       ],
-      "1 TB secure storage": [
-        "1TB安全儲存空間"
-      ],
       "1 user": [
         "1 位使用者"
       ],
-      "10 email addresses/aliases": [
-        "10 組電子郵件地址/別名"
-      ],
-      "10 more premium features": [
-        "10多項豐富的頂級功能"
-      ],
       "10-year file version history": [
         "10年的檔案版本紀錄"
-      ],
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "200 GB of storage": [
-        "200 GB的儲存空間"
       ],
       "24/7 account management support": [
         "24/7 帳戶管理支援"
@@ -6570,17 +6621,11 @@
       "Administration Panel": [
         "管理介面"
       ],
-      "Advanced account protection": [
-        "進階的帳號保護"
-      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "進階別功能(由SimpleLogin驅動)"
       ],
       "Advanced network security": [
         "進階網路安全"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "全部${ BRAND_NAME }產品及功能"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "全部基於${ BRAND_NAME }的服務(${ MAIL_SHORT_APP_NAME },${ VPN_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME })"
@@ -6590,9 +6635,6 @@
       ],
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
-      ],
-      "Auto-delete spam and trashed messages": [
-        "自動刪除垃圾郵件與垃圾桶中的訊息"
       ],
       "Auto-reply": [
         "自動回覆"
@@ -6638,9 +6680,6 @@
       ],
       "Custom fields": [
         "自訂欄位"
-      ],
-      "Custom snooze time": [
-        "自訂延遲時間"
       ],
       "Custom workspace branding": [
         "自訂工作空間的品牌"
@@ -6699,9 +6738,6 @@
       "GDPR data processing agreement": [
         "GDRP資料處理協議"
       ],
-      "Generate emails with a prompt": [
-        "透過提示生成電子郵件"
-      ],
       "Group management (coming soon)": [
         "群組管理(即將推出)"
       ],
@@ -6756,15 +6792,6 @@
       "Priority support & live chat": [
         "優先處理您的客服單與線上聊天客服"
       ],
-      "Private photo backup": [
-        "私人照片備份"
-      ],
-      "Proofread and refine your emails": [
-        "校閱與修飾你的電子郵件"
-      ],
-      "Quickly craft replies": [
-        "快速替回復打草稿"
-      ],
       "Recover previous file versions": [
         "復原先前的檔案版本"
       ],
@@ -6777,23 +6804,11 @@
       "Router support": [
         "路由器支援"
       ],
-      "Save time emailing": [
-        "儲存寄件時間"
-      ],
       "Schedule and snooze emails for any time": [
         "隨時計畫和延後電子郵件"
       ],
-      "Schedule messages at any time": [
-        "在任意時間排程訊息"
-      ],
-      "Search message content": [
-        "搜尋郵件內容"
-      ],
       "Secure Core servers": [
         "Secure Core 伺服器"
-      ],
-      "Secure file storage and sharing": [
-        "安全地儲存和共享檔案"
       ],
       "Secure link sharing": [
         "安全連結分享"
@@ -6830,9 +6845,6 @@
       ],
       "Strict no-logs policy": [
         "嚴格的無日誌政策"
-      ],
-      "Support for up to 2 users": [
-        "支援最多2位使用者"
       ],
       "Sync and backup all your files across devices": [
         "於裝置同步及備份您全部的檔案"
@@ -6919,20 +6931,6 @@
       ],
       "${ users } user": [
         "${ users }位使用者"
-      ]
-    },
-    "new_plans: feature info": {
-      "1 custom email domain": [
-        "1個自訂電子郵件網域"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "創建多重電子郵件位址身分，如JohnShopper@${ domain }給購物用途， JohnNews@${ domain2 }給訂閱新聞使用"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "緩辦郵件，容後依時提醒"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -7535,6 +7533,11 @@
         "歡迎來到 ${ appName }"
       ]
     },
+    "option": {
+      "Group members": [
+        "群組成員"
+      ]
+    },
     "Option": {
       "Country configs": [
         "國家組態設定"
@@ -7595,11 +7598,6 @@
       ],
       "The whole organization": [
         "整個組織"
-      ]
-    },
-    "option": {
-      "Group members": [
-        "群組成員"
       ]
     },
     "Organization capacity error": {
@@ -9443,6 +9441,9 @@
       "Billing details updated": [
         "帳單詳情已更新"
       ],
+      "Canceling import": [
+        "正在取消匯入"
+      ],
       "Catch-all address updated": [
         "全部擷取電子郵件位址已更新"
       ],
@@ -9475,6 +9476,9 @@
       ],
       "Gift code applied": [
         "禮品代碼已套用"
+      ],
+      "Import record deleted": [
+        "匯入記錄已刪除"
       ],
       "Invitation rejected": [
         "邀請已拒絕"
@@ -9535,6 +9539,9 @@
       ],
       "SPF value copied to clipboard": [
         "SFP 字串已複製到剪貼簿"
+      ],
+      "Undo in progress": [
+        "復原進行中"
       ],
       "User updated": [
         "使用者已更新"
@@ -9868,10 +9875,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [
@@ -10161,9 +10168,6 @@
       ],
       "Human verification": [
         "真人身分驗證"
-      ],
-      "Increase your privacy with more addresses": [
-        "使用更多位址增加您的隱私"
       ],
       "Invalid verification code": [
         "驗證碼無效"

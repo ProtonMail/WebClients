@@ -289,6 +289,9 @@
       "Connect to video conferencing": [
         "Verbinding maken met videovergadering"
       ],
+      "Connect your Gmail address": [
+        "Verbind uw Gmail-adres"
+      ],
       "Connected": [
         "Verbonden"
       ],
@@ -688,6 +691,9 @@
       "Get the deal": [
         "Pak deze deal"
       ],
+      "Get the writing assistant": [
+        "Verkrijg de schrijfassistent"
+      ],
       "Get verification code": [
         "Krijg verificatie code"
       ],
@@ -775,11 +781,11 @@
       "Keep": [
         "Behouden"
       ],
-      "Keep Editing": [
-        "Doorgaan met bewerken"
-      ],
       "Keep editing": [
         "Blijf bewerken"
+      ],
+      "Keep Editing": [
+        "Doorgaan met bewerken"
       ],
       "Keep logo": [
         "Logo behouden"
@@ -1138,11 +1144,11 @@
       "Select country ${ country }": [
         "Selecteer land ${ country }"
       ],
-      "select file": [
-        "selecteer bestand"
-      ],
       "Select file": [
         "Selecteer bestand"
+      ],
+      "select file": [
+        "selecteer bestand"
       ],
       "Select files": [
         "Selecteer bestanden"
@@ -1200,6 +1206,9 @@
       ],
       "Set up a custom domain": [
         "Een eigen domein instellen"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Stel automatisch doorsturen in vanaf Gmail"
       ],
       "Set up email forwarding": [
         "E-mail doorsturen instellen"
@@ -1356,9 +1365,6 @@
       ],
       "Upgrade now": [
         "Nu upgraden"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Upgrade naar ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "Upgraden naar Business"
@@ -3856,9 +3862,6 @@
       "Also included": [
         "Ook inbegrepen"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Automatisch spam en weggegooide berichten verwijderen en meer premium-functies ontgrendelen als u upgrade."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Wis automatisch e-mails die meer dan 30 dagen geleden naar Prullenbak en Spam zijn verplaatst."
       ],
@@ -3961,9 +3964,6 @@
       "Send a code to your recovery email or phone": [
         "Verzend een code naar uw herstel e-mailadres of telefoon"
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Scheid verschillende aspecten van uw leven met meerdere e-mailadressen en ontgrendel meer premiumfuncties wanneer u upgradet."
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Stel accounts in voor alle gebruikers en nodig hen uit om lid te worden van ${ BRAND_NAME }."
       ],
@@ -3979,23 +3979,11 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Importeer uw contacten uit Google of Outlook, ${ easySwitchLink }."
       ],
-      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "Upgrade om de ${ MAIL_APP_NAME }-voet te verwijderen en ontgrendel nog meer premium functies."
-      ],
       "To start, give your organization a name.": [
         "Geef uw organisatie een naam om te beginnen."
       ],
       "Track the status and activity of your referrals.": [
         "Volg de status en activiteiten van uw doorverwijzingen."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Ontgrendel kortere e-mailadressen en andere premiumfuncties door te upgraden."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Krijg onbeperkt filters die uw postvak voor u sorteren en andere premiumfuncties als u upgrade."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Krijg onbeperkt mappen, labels en meer premium functies als u upgrade."
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Upgrade om ${ activatePmUser } te krijgen voor een korter, makkelijk te onthouden e-mailadres, toegevoegd aan uw huidige adres."
@@ -6519,45 +6507,6 @@
       ],
       "${ appName } on Play Store": [
         "${ appName } in de Play Store"
-      ],
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME }-app"
-      ],
-      "account logins": [
-        "account logins"
-      ],
-      "Auto-forward Gmail": [
-        "Gmail automatisch doorsturen"
-      ],
-      "auto-forwarding": [
-        "automatisch doorsturen"
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Wijzig ${ strongText } in uw adres ${ BRAND_NAME }"
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Ontdek hoe onze ${ strongText } u beschermt"
-      ],
-      "Discover privacy features": [
-        "Ontdek privacyfuncties"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Download de ${ strongText } op Android of iOS"
-      ],
-      "Get the App": [
-        "Download de app"
-      ],
-      "privacy features": [
-        "privacy-functies"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Stel ${ strongText } in vanuit Gmail"
-      ],
-      "This feature is currently unavailable": [
-        "Deze functie is momenteel niet beschikbaar."
-      ],
-      "Update your logins": [
-        "Werk uw aanmeldingen bij"
       ]
     },
     "Gmail forwarding": {
@@ -7177,8 +7126,17 @@
       "Import from ${ provider }": [
         "Importeer uit ${ provider }"
       ],
-      "Other": [
-        "Overig"
+      "Import from Google": [
+        "Importeer uit Google"
+      ],
+      "Import from other": [
+        "Importeer uit andere"
+      ],
+      "Import from Outlook": [
+        "Importeer uit Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importeer uit Outlook"
       ]
     },
     "Import rollback status": {
@@ -7834,6 +7792,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Boost de merkidentiteit van uw organisatie en creëer een consistentere online ervaring voor uw gebruikers."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Breng uw berichten, contacten en agenda's naar ${ BRAND_NAME }."
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Door een ${ PASS_APP_NAME }-account te maken met uw SimpleLogin e-mailadres, kunt u uw aliassen direct vanuit ${ PASS_APP_NAME } beheren."
@@ -8501,9 +8462,6 @@
       "Import mailbox": [
         "Mailbox importeren"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importeer uw e-mails, agenda, en contactpersonen van een andere dienst naar ${ BRAND_NAME }."
-      ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "BELANGRIJK: Als uw DNS-console CNAME waarden niet toestaat te eindigen met een punt, kunt u de laatste stip in de CNAME waarden verwijderen."
       ],
@@ -8907,6 +8865,9 @@
       "One account. All ${ BRAND_NAME } services.": [
         "Eén account. Alle ${ BRAND_NAME }-diensten."
       ],
+      "One time import": [
+        "Eenmalige import"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Wijzig deze instellingen alleen als u PGP met niet-${ BRAND_NAME }-ontvangers gebruikt."
       ],
@@ -9252,9 +9213,6 @@
       "Securing your account": [
         "Beveiliging van uw account"
       ],
-      "Select a service provider to start": [
-        "Selecteer een dienstverlener om te beginnen"
-      ],
       "Select a service to continue": [
         "Selecteer een service om door te gaan"
       ],
@@ -9308,6 +9266,9 @@
       ],
       "Set recovery phrase": [
         "Herstelzin instellen"
+      ],
+      "Set up forwarding": [
+        "Doorsturen instellen"
       ],
       "Set up your organization": [
         "Stel uw organisatie in"
@@ -9888,11 +9849,11 @@
       "User activated": [
         "Gebruiker geactiveerd"
       ],
-      "Username": [
-        "Gebruikersnaam"
-      ],
       "username": [
         "gebruikersnaam"
+      ],
+      "Username": [
+        "Gebruikersnaam"
       ],
       "Users": [
         "Gebruikers"
@@ -10326,6 +10287,10 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
         "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of them.": [
+        "U heeft doorsturen ingeschakeld op ${ MAX_SYNC_PAID_USER } Gmailadres. Schakel deze eerst uit om een ander adres toe te voegen.",
+        "U heeft doorsturen ingeschakeld op ${ MAX_SYNC_PAID_USER } Gmailadressen. Schakel een van deze eerst uit om een ander adres toe te voegen."
       ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Uw ${ boldDiscountPercent } naar ${ boldPlanTitle } is toegepast"
@@ -11064,11 +11029,11 @@
       "Allow sharing outside the organization": [
         "Delen toestaan buiten de organisatie"
       ],
-      "Allowed domain": [
-        "Domein toegestaan"
-      ],
       "Allowed Domain": [
         "Toegestaan domein"
+      ],
+      "Allowed domain": [
+        "Domein toegestaan"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Laat iedereen in uw organisatie toe om naadloos koppelingen aan hun agenda-uitnodigingen toe te voegen."
@@ -11079,11 +11044,11 @@
       "Amount due": [
         "Verschuldigd bedrag"
       ],
-      "AND": [
-        "EN"
-      ],
       "And": [
         "En"
+      ],
+      "AND": [
+        "EN"
       ],
       "and": [
         "en"
@@ -11511,11 +11476,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ALS"
-      ],
       "If": [
         "Als"
+      ],
+      "IF": [
+        "ALS"
       ],
       "Import all messages": [
         "Alle berichten importeren"
@@ -11724,14 +11689,14 @@
       "Optional": [
         "Optioneel"
       ],
-      "OR": [
-        "OF"
-      ],
       "or": [
         "of"
       ],
       "Or": [
         "Of"
+      ],
+      "OR": [
+        "OF"
       ],
       "Organization name": [
         "Organisatienaam"
@@ -12418,11 +12383,11 @@
       "perform a password reset from your active session": [
         "mogelijk een wachtwoord reset vanuit uw actieve sessie uitvoeren"
       ],
-      "privacy policy": [
-        "privacybeleid"
-      ],
       "Privacy policy": [
         "Privacybeleid"
+      ],
+      "privacy policy": [
+        "privacybeleid"
       ],
       "Reactivate now": [
         "Nu heractiveren"
@@ -13063,20 +13028,8 @@
       "From ${ price }": [
         "Vanaf ${ price }"
       ],
-      "Get started for ${ priceCoupon }": [
-        "Aan de slag voor ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Vanaf ${ pricing }"
-      ],
       "Upgrade": [
         "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Upgraden naar ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13241,9 +13194,6 @@
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Automatisch spam en verwijderde berichten verwijderen"
-      ],
       "Auto-reply": [
         "Automatisch beantwoorden"
       ],
@@ -13288,9 +13238,6 @@
       ],
       "Custom fields": [
         "Aangepaste velden"
-      ],
-      "Custom snooze time": [
-        "Aangepaste snoozetijd"
       ],
       "Custom workspace branding": [
         "Aangepaste workspace branding"
@@ -13443,12 +13390,6 @@
       "Schedule and snooze emails for any time": [
         "E-mails plannen en snoozen wanneer u wilt"
       ],
-      "Schedule messages at any time": [
-        "Plan berichten in op ieder moment"
-      ],
-      "Search message content": [
-        "Doorzoek berichtinhoud"
-      ],
       "Secure Core servers": [
         "Secure Core-servers"
       ],
@@ -13600,9 +13541,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Berichten snoozen en ontvangen wanneer u wil"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
@@ -13783,11 +13721,22 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Vanaf ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "De prijs van ${ priceCoupon } is alleen voor de eerste maand, hierna wordt uw abonnement automatisch verlengt voor ${ priceLine }. U kunt op ieder moment annuleren."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Ontgrendel alle ${ BRAND_NAME } premium producten en functies voor ${ priceLine }. U kunt op ieder moment annuleren."
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Proefversie"
+      ],
+      "Your account's usage": [
+        "Verbruik van uw account"
       ]
     },
     "new_plans: title": {
@@ -13808,14 +13757,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Ontgrendel premium functies door te upgraden"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Proefversie"
-      ],
-      "Your account's usage": [
-        "Verbruik van uw account"
       ]
     },
     "new_plans: tooltip": {
@@ -14456,6 +14397,17 @@
         "Desktop"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Iedereen"
+      ],
+      "Group members": [
+        "Groepsleden"
+      ],
+      "No one": [
+        "Niemand"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10e dag van de maand"
@@ -14690,17 +14642,6 @@
       ],
       "Trash": [
         "Prullenbak"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Iedereen"
-      ],
-      "Group members": [
-        "Groepsleden"
-      ],
-      "No one": [
-        "Niemand"
       ]
     },
     "Option delay send seconds": {
@@ -16722,9 +16663,6 @@
       ]
     },
     "Settings description": {
-      "Complete the transition to privacy with our secure importing and forwarding tools.": [
-        "Voltooi de transitie naar privacy met onze veilige importeer- en doorstuurtools."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Houd uw inbox georganiseerd met mappen en labels. ${ learnMoreLink }"
       ]
@@ -18607,9 +18545,6 @@
       "Actions": [
         "Acties"
       ],
-      "Activate @pm.me": [
-        "Activeer @pm.me"
-      ],
       "Activate organization key": [
         "Organisatiesleutel activeren"
       ],
@@ -18767,11 +18702,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-all address": [
-        "Catch-all adres"
-      ],
       "Catch-All address": [
         "Catch-All adres"
+      ],
+      "Catch-all address": [
+        "Catch-all adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"
@@ -18805,9 +18740,6 @@
       ],
       "Clear": [
         "Wissen"
-      ],
-      "Clear out the junk": [
-        "Spam opruimen"
       ],
       "Click a value in the table to use it as filter": [
         "Klik op een waarde in de tabel om deze als filter te gebruiken"
@@ -19341,17 +19273,11 @@
       "Import key": [
         "Sleutel importeren"
       ],
-      "Import messages": [
-        "Berichten importeren"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importeren via ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Inactive 2FA": [
         "Inactieve 2FA"
-      ],
-      "Increase your privacy with more addresses": [
-        "Verbeter uw privacy met meer adressen"
       ],
       "Information exposed in breach": [
         "Informatie die is blootgesteld bij datalek"
@@ -19373,9 +19299,6 @@
       ],
       "Items owned": [
         "Eigen items"
-      ],
-      "Keep your inbox organized": [
-        "Houd uw postvak georganiseerd"
       ],
       "Keyboard shortcuts": [
         "Sneltoetsen"
@@ -19400,6 +19323,9 @@
       ],
       "Leave group?": [
         "Groep verlaten?"
+      ],
+      "Limit reached": [
+        "Limiet bereikt"
       ],
       "Link confirmation": [
         "Link bevestigen"
@@ -19524,9 +19450,6 @@
       "PayPal verification failed": [
         "PayPal verificatie mislukt"
       ],
-      "Personalize your e-mail footer": [
-        "Personaliseer de voettekst van uw e-mail"
-      ],
       "Personalize your email footer": [
         "Personaliseer de voettekst van uw e-mail"
       ],
@@ -19647,9 +19570,6 @@
       "SAML authentication": [
         "SAML-authenticatie"
       ],
-      "Save time with email filters": [
-        "Bespaar tijd met e-mailfilters"
-      ],
       "Schedule meetings in one click": [
         "Plan vergaderingen in één klik"
       ],
@@ -19718,9 +19638,6 @@
       ],
       "Set up email forwarding": [
         "E-mail doorsturen instellen"
-      ],
-      "Set up forwarding": [
-        "Doorsturen instellen"
       ],
       "Set up two-factor authentication": [
         "Tweestapsverificatie instellen"
@@ -20657,8 +20574,8 @@
       "Recommended": [
         "Aanbevolen"
       ],
-      "Save ${ totals.discountPercentage }%": [
-        "Bespaar ${ totals.discountPercentage }%"
+      "Save ${ price.uiData.discountPercent }%": [
+        "Bespaar ${ price.uiData.discountPercent }%"
       ]
     },
     "User referee invited via email": {

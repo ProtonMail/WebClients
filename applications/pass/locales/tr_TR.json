@@ -400,10 +400,10 @@
       "Move to another vault": [
         "Başka bir kasaya taşı"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Çöpe at"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Çöpe at"
       ],
       "Multiple select": [
@@ -1804,6 +1804,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"

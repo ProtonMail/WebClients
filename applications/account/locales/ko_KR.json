@@ -688,6 +688,9 @@
       "Get the deal": [
         "혜택 얻기"
       ],
+      "Get the writing assistant": [
+        "글쓰기 도우미 시작하기"
+      ],
       "Get verification code": [
         "인증코드 전송"
       ],
@@ -775,11 +778,11 @@
       "Keep": [
         "보관"
       ],
-      "Keep Editing": [
-        "계속 편집하기"
-      ],
       "Keep editing": [
         "계속 수정하기"
+      ],
+      "Keep Editing": [
+        "계속 편집하기"
       ],
       "Keep logo": [
         "로고 유지"
@@ -1138,10 +1141,10 @@
       "Select country ${ country }": [
         "선택된 국가 ${ country }"
       ],
-      "select file": [
+      "Select file": [
         "파일 선택"
       ],
-      "Select file": [
+      "select file": [
         "파일 선택"
       ],
       "Select files": [
@@ -1356,9 +1359,6 @@
       ],
       "Upgrade now": [
         "지금 업그레이드"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME } Plus로 업그레이드하기"
       ],
       "Upgrade to Business": [
         "Business로 업그레이드"
@@ -3836,9 +3836,6 @@
       "Also included": [
         "이것 외에도"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "업그레이드시 스펨 메일함과 휴지통 내 메시지를 자동으로 삭제하며 더 많은 프리미엄 기능이 해제됩니다."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "30일 혹은 그 전에 휴지통 및 스팸으로 이동한 이메일을 자동으로 삭제합니다."
       ],
@@ -3941,9 +3938,6 @@
       "Send a code to your recovery email or phone": [
         "복구 이메일 또는 전화로 코드 전송"
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "여러 이메일 주소로 삶의 다양한 측면을 분리하고 업그레이드할 때 더 많은 프리미엄 기능을 잠금 해제하세요."
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "모든 사용자의 계정을 설정하며 ${ BRAND_NAME }에 가입하도록 초대합니다."
       ],
@@ -3959,23 +3953,11 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google 및 Outlook에서 콘텐츠를 불러오려면, ${ easySwitchLink }"
       ],
-      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "${ MAIL_APP_NAME } 바닥글을 지우기 위해 업그레이드 하고, 다른 프리미엄 기능들도 함께 잠금 해제하세요."
-      ],
       "To start, give your organization a name.": [
         "시작하려면 먼저 조직의 이름을 지정하세요."
       ],
       "Track the status and activity of your referrals.": [
         "사용자의 리퍼럴 상태와 활동을 추적하세요."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "업그레이드하여 더 짧은 이메일 주소와 기타 프리미엄 기능을 잠금 해제하세요."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "업그레이드하여 받은 편지함을 정렬하는 무제한 필터와 더 많은 프리미엄 기능을 잠금 해제하세요."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "업그레이드하여 무제한 폴더, 라벨과 더 많은 프리미엄 기능들을 잠금 해제하세요."
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "업그레이드하여 현재 이메일 주소보다 더 짧고, 기억하기 쉬운 주소인 ${ activatePmUser }를 받아보세요"
@@ -4235,6 +4217,14 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 및 Windows 32비트 (ARM64)"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        "Debian / Ubuntu용 .deb"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        "Fedora / Red Hat용 .rpm"
       ]
     },
     "drive_signup_2023: Title": {
@@ -6466,44 +6456,11 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME } 앱"
+      "${ appName } on App Store": [
+        "App Store에서 ${ appName } 받기"
       ],
-      "account logins": [
-        "계정 로그인"
-      ],
-      "Auto-forward Gmail": [
-        "Gmail 자동 포워딩"
-      ],
-      "auto-forwarding": [
-        "자동 포워딩"
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "${ BRAND_NAME } 주소에 ${ strongText } 변경"
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "${ strongText }이 당신을 보호하는 방법을 알아보기"
-      ],
-      "Discover privacy features": [
-        "개인정보 보호 기능 알아보기"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "${ strongText } 을(를) Android 및 iOS에서 다운로드 하세요."
-      ],
-      "Get the App": [
-        "앱 다운로드"
-      ],
-      "privacy features": [
-        "개인정보 보호 기능"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Gmail에서 ${ strongText } 설정"
-      ],
-      "This feature is currently unavailable": [
-        "이 기능을 현재 사용할 수 없습니다."
-      ],
-      "Update your logins": [
-        "로그인 업데이트"
+      "${ appName } on Play Store": [
+        "Play Store에서 ${ appName } 받기"
       ]
     },
     "Gmail forwarding": {
@@ -7114,9 +7071,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } 으로부터 불러오기"
-      ],
-      "Other": [
-        "기타"
       ]
     },
     "Import rollback status": {
@@ -8189,6 +8143,9 @@
       "Failed to fetch logs.": [
         "로그를 가져오지 못했습니다."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "신속하고 충실하도록. 당신의 데스크톱으로 찾아온 이메일과 캘린더."
+      ],
       "Featured in": [
         "소개된 주요 매스미디어"
       ],
@@ -8392,9 +8349,6 @@
       ],
       "Import mailbox": [
         "메일함 불러오기"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "이메일, 캘린더 및 연락처를 타사 서비스에서 ${ BRAND_NAME }으로 불러오세요."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "중요 사항: 만일 사용자의 DNS 콘솔이 온 점으로 끝나는 것을 허용하지 않을시, 뒷 편의 CNAME 값에서 온 점 (.) 제거가 가능합니다."
@@ -9140,9 +9094,6 @@
       "Securing your account": [
         "계정을 보호하는 중"
       ],
-      "Select a service provider to start": [
-        "서비스 제공자를 선택해 시작하기"
-      ],
       "Select a service to continue": [
         "계속하려면 서비스를 선택하세요"
       ],
@@ -9770,10 +9721,10 @@
       "User activated": [
         "사용자 활성화됨"
       ],
-      "Username": [
+      "username": [
         "사용자 이름"
       ],
-      "username": [
+      "Username": [
         "사용자 이름"
       ],
       "Users": [
@@ -10927,10 +10878,10 @@
       "Allow sharing outside the organization": [
         "조직 외부로 공유 허용"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "허용된 도메인"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "허용된 도메인"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10942,11 +10893,11 @@
       "Amount due": [
         "지불할 금액"
       ],
-      "AND": [
-        "및"
-      ],
       "And": [
         "그리고"
+      ],
+      "AND": [
+        "및"
       ],
       "and": [
         "그리고"
@@ -11010,6 +10961,9 @@
       ],
       "Backup password": [
         "백업 비밀번호"
+      ],
+      "Beta": [
+        "베타"
       ],
       "Billing cycle": [
         "결제 주기"
@@ -11371,10 +11325,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "만약"
       ],
-      "If": [
+      "IF": [
         "만약"
       ],
       "Import all messages": [
@@ -11584,13 +11538,13 @@
       "Optional": [
         "선택 사항"
       ],
-      "OR": [
-        "또는"
-      ],
       "or": [
         "또는"
       ],
       "Or": [
+        "또는"
+      ],
+      "OR": [
         "또는"
       ],
       "Organization name": [
@@ -12277,11 +12231,11 @@
       "perform a password reset from your active session": [
         "활성 상태의 세션에서 비밀번호를 재설정하시기 바랍니다."
       ],
-      "privacy policy": [
-        "개인정보 취급방침"
-      ],
       "Privacy policy": [
         "개인 정보 정책"
+      ],
+      "privacy policy": [
+        "개인정보 취급방침"
       ],
       "Reactivate now": [
         "지금 재활성화"
@@ -12909,20 +12863,8 @@
       "From ${ price }": [
         "시작 가격: ${ price }"
       ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }에 시작하기"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }부터 시작"
-      ],
       "Upgrade": [
         "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName }(으)로 업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -13067,9 +13009,6 @@
       "Auto-delete Spam and Trash": [
         "스팸 및 휴지통 자동 삭제"
       ],
-      "Auto-delete spam and trashed messages": [
-        "스팸 및 휴지통의 메시지를 자동 삭제"
-      ],
       "Auto-reply": [
         "자동 회신"
       ],
@@ -13114,9 +13053,6 @@
       ],
       "Custom fields": [
         "사용자 지정 필드"
-      ],
-      "Custom snooze time": [
-        "사용자 지정 방해 금지 시간"
       ],
       "Custom workspace branding": [
         "커스텀 워크스페이스 브랜딩"
@@ -13268,12 +13204,6 @@
       "Schedule and snooze emails for any time": [
         "언제든지 이메일을 예약하거나 다시 알림받기"
       ],
-      "Schedule messages at any time": [
-        "언제든지 메시지를 예약하세요"
-      ],
-      "Search message content": [
-        "메시지 내용 검색"
-      ],
       "Secure Core servers": [
         "Secure Core 서버"
       ],
@@ -13418,9 +13348,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "원하는 시간대에 메시지를 방해 금지 상태로 전환하고 알림 받을 수 있습니다."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
@@ -13608,6 +13535,14 @@
         "모든 ${ BRAND_NAME } 프리미엄 제품 및 기능을 단돈 ${ priceLine }에 누리세요. 언제든지 취소하세요."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } 체험"
+      ],
+      "Your account's usage": [
+        "계정 사용량"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -13626,14 +13561,6 @@
       ],
       "Unlock premium features by upgrading": [
         "업그레이드로 프리미엄 기능 해제"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } 체험"
-      ],
-      "Your account's usage": [
-        "계정 사용량"
       ]
     },
     "new_plans: tooltip": {
@@ -14267,6 +14194,17 @@
         "데스크탑"
       ]
     },
+    "option": {
+      "Everyone": [
+        "모두"
+      ],
+      "Group members": [
+        "그룹 구성원"
+      ],
+      "No one": [
+        "아무도"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "매월 10일"
@@ -14516,17 +14454,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "모두"
-      ],
-      "Group members": [
-        "그룹 구성원"
-      ],
-      "No one": [
-        "아무도"
       ]
     },
     "Option delay send seconds": {
@@ -16524,9 +16451,6 @@
       ]
     },
     "Settings description": {
-      "Complete the transition to privacy with our secure importing and forwarding tools.": [
-        "안전한 가져오기 도구로 개인 정보 보호로의 전환을 완료하세요."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "폴더와 라벨로 편지함을 정리하세요. ${ learnMoreLink }"
       ]
@@ -18360,9 +18284,6 @@
       "Actions": [
         "작업"
       ],
-      "Activate @pm.me": [
-        "@pm.me 활성화"
-      ],
       "Activate organization key": [
         "조직 키 활성화하기"
       ],
@@ -18519,11 +18440,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-all address": [
-        "Catch-all 주소"
-      ],
       "Catch-All address": [
         "Catch-All 주소"
+      ],
+      "Catch-all address": [
+        "Catch-all 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -18557,9 +18478,6 @@
       ],
       "Clear": [
         "비우기"
-      ],
-      "Clear out the junk": [
-        "정크 삭제"
       ],
       "Click a value in the table to use it as filter": [
         "표의 값을 클릭하여 필터로 사용하세요"
@@ -18957,6 +18875,15 @@
       "Folders and labels": [
         "폴더와 라벨"
       ],
+      "For Linux": [
+        "Linux용"
+      ],
+      "For macOS": [
+        "macOS용"
+      ],
+      "For Windows": [
+        "Windows용"
+      ],
       "Forgot password": [
         "비밀번호를 잊어버리셨나요?"
       ],
@@ -19080,17 +19007,11 @@
       "Import key": [
         "키 가져오기"
       ],
-      "Import messages": [
-        "대화 가져오기"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH }로 불러오기"
       ],
       "Inactive 2FA": [
         "2단계 인증 꺼짐"
-      ],
-      "Increase your privacy with more addresses": [
-        "더 많은 주소로 프라이버시를 한 층 향상시키세요"
       ],
       "Information exposed in breach": [
         "유출 시 노출된 정보"
@@ -19112,9 +19033,6 @@
       ],
       "Items owned": [
         "항목 소유됨"
-      ],
-      "Keep your inbox organized": [
-        "받은 편지함 정리"
       ],
       "Keyboard shortcuts": [
         "키보드 단축키"
@@ -19263,9 +19181,6 @@
       "PayPal verification failed": [
         "PayPal 인증 실패"
       ],
-      "Personalize your e-mail footer": [
-        "이메일 바닥글 개인화"
-      ],
       "Personalize your email footer": [
         "이메일 바닥글 개인화"
       ],
@@ -19386,9 +19301,6 @@
       "SAML authentication": [
         "SAML 인증"
       ],
-      "Save time with email filters": [
-        "이메일 필터로 시간을 절약하세요"
-      ],
       "Schedule meetings in one click": [
         "클릭 한 번으로 회의 예약하기"
       ],
@@ -19457,9 +19369,6 @@
       ],
       "Set up email forwarding": [
         "이메일 포워딩 설정하기"
-      ],
-      "Set up forwarding": [
-        "포워딩 설정"
       ],
       "Set up two-factor authentication": [
         "2단계 인증 설정"
@@ -20393,8 +20302,8 @@
       "Recommended": [
         "권장"
       ],
-      "Save ${ totals.discountPercentage }%": [
-        "${ totals.discountPercentage }% 절약"
+      "Save ${ price.uiData.discountPercent }%": [
+        "${ price.uiData.discountPercent }% 절약"
       ]
     },
     "User referee invited via email": {

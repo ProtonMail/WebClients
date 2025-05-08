@@ -661,6 +661,9 @@
       "Get the deal": [
         "सौदा लें"
       ],
+      "Get the writing assistant": [
+        "लेखन सहायक प्राप्त करें"
+      ],
       "Get verification code": [
         "सत्यापन कोड लें"
       ],
@@ -1072,11 +1075,11 @@
       "Select country ${ country }": [
         "देश चुनें ${ country }"
       ],
-      "select file": [
-        "फ़ाइल चुनें"
-      ],
       "Select file": [
         "फाइल चुनें"
+      ],
+      "select file": [
+        "फ़ाइल चुनें"
       ],
       "Select files": [
         "फ़ाइल चुनें"
@@ -1269,9 +1272,6 @@
       ],
       "Upgrade now": [
         "अभी अपग्रेड करें"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME } Plus पे अपग्रेड करें"
       ],
       "Upgrade to Business": [
         "Business में अपग्रेड करें"
@@ -3698,9 +3698,6 @@
       "Also included": [
         "साथ ही शामिल"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "अपग्रेड करने पर स्पैम और ट्रैश किए गए संदेशों को स्वचालित रूप से हटाएं और अधिक प्रीमियम सुविधाएँ अनलॉक करें।"
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "30 दिनों से अधिक पुरानी, ट्रैश और स्पैम में डाले गए ईमेल्स को स्वचालित रूप से साफ करें।"
       ],
@@ -3758,9 +3755,6 @@
       "No one in your organization can connect to shared servers.": [
         "आपके संगठन में कोई भी साझा सर्वर से कनेक्ट नहीं कर सकता।"
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "अपने जीवन के विभिन्न पहलुओं को एकाधिक ईमेल पतों के साथ अलग करें और अपग्रेड करने पर अधिक प्रीमियम सुविधाओं को अनलॉक करें।"
-      ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
         "आगामी ईमेल को दूसरे ईमेल पते पर पुनर्निर्देशित करने के लिए ऑटो-फॉरवर्डिंग सेट करें।"
       ],
@@ -3770,20 +3764,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google या Outlook से अपने संपर्कों को आयात करने के लिए, ${ easySwitchLink }।"
       ],
-      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "${ MAIL_APP_NAME } फ़ुटर को हटाने के लिए, अपग्रेड करें और साथ ही अधिक प्रीमियम सुविधाएँ अनलॉक करें।"
-      ],
       "Track the status and activity of your referrals.": [
         "अपने रेफरल के स्थिति ट्रैक करें।"
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "अपग्रेड करके छोटे ईमेल पते और अन्य प्रीमियम सुविधाएं अनलॉक करें।"
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "जब आप अपग्रेड करें, तो आपके इनबॉक्स को सॉर्ट करने वाले असीमित फिल्टर्स और अन्य प्रीमियम फीचर्स अनलॉक करें।"
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "जब आप अपग्रेड करें, तो असीमित फोल्डर, लेबल और अन्य प्रीमियम खासियतें अनलॉक करें।"
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "अपने वर्तमान पते के अलावा एक छोटा, आसानी से याद रखने योग्य ईमेल पता पाने के लिए ${ activatePmUser } में अपग्रेड करें।"
@@ -6146,47 +6128,6 @@
         "आपका डेस्कटॉप ऐप मुफ्त ट्रायल समाप्त हो गया है"
       ]
     },
-    "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME } ऐप"
-      ],
-      "account logins": [
-        "खाता लॉगिन"
-      ],
-      "Auto-forward Gmail": [
-        "Gmail स्वतः अग्रेषण"
-      ],
-      "auto-forwarding": [
-        "स्वतः अग्रेषण"
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "${ strongText } को अपने ${ BRAND_NAME } पते में बदलें"
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "जानें कि हमारी ${ strongText } आपको कैसे सुरक्षित रखती है"
-      ],
-      "Discover privacy features": [
-        "गोपनीयता सुविधाएँ पता लागाएँ"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Android या iOS पर ${ strongText } प्राप्त करें"
-      ],
-      "Get the App": [
-        "एप्प प्राप्त करे"
-      ],
-      "privacy features": [
-        "गोपनीयता सुविधाएँ"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Gmail से ${ strongText } सेट अप करें"
-      ],
-      "This feature is currently unavailable": [
-        "यह सुविधा वर्तमान में अनुपलब्ध है"
-      ],
-      "Update your logins": [
-        "अपना लॉगिन अपडेट करें"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "अपनेआप फॉरवर्ड"
@@ -6800,9 +6741,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } से आयात करें"
-      ],
-      "Other": [
-        "दूसरा"
       ]
     },
     "Import rollback status": {
@@ -8040,9 +7978,6 @@
       "Import mailbox": [
         "मेलबॉक्स आयात करें"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "किसी दूसरे सेवा से अपने ईमेल, कैलेंडर, और संपर्क ${ BRAND_NAME } पे आयात करें।"
-      ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "महत्वपूर्ण: यदि आपका DNS कंसोल CNAME संख्या को बिंदु से समाप्त करने की अनुमति नहीं देता है, तो आप CNAME संख्या में अंतिम बिंदु को हटा सकते हैं।"
       ],
@@ -8764,9 +8699,6 @@
       "Securing your account": [
         "आपका खाता सुरक्षित कर रहे"
       ],
-      "Select a service provider to start": [
-        "शुरू करने के लिए एक सेवा प्रदाता का चयन करें"
-      ],
       "Select one or multiple user affiliations": [
         "एक या एकाधिक उपयोगकर्ता संबद्धताएँ चुनें"
       ],
@@ -9363,10 +9295,10 @@
       "User activated": [
         "उपयोगकर्ता सक्रिय किया गया"
       ],
-      "Username": [
+      "username": [
         "यूज़रनेम"
       ],
-      "username": [
+      "Username": [
         "यूज़रनेम"
       ],
       "Users": [
@@ -10489,10 +10421,10 @@
       "Allow sharing outside the organization": [
         "संगठन के बाहर शेयर करने की अनुमति दें"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "अनुमत डोमेन"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "अनुमत डोमेन"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10504,10 +10436,10 @@
       "Amount due": [
         "देय राशि"
       ],
-      "AND": [
+      "And": [
         "और"
       ],
-      "And": [
+      "AND": [
         "और"
       ],
       "and": [
@@ -10924,10 +10856,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "अगर"
       ],
-      "If": [
+      "IF": [
         "अगर"
       ],
       "Import all messages": [
@@ -11131,13 +11063,13 @@
       "Optional": [
         "वैकल्पिक"
       ],
-      "OR": [
-        "या"
-      ],
       "or": [
         "या"
       ],
       "Or": [
+        "या"
+      ],
+      "OR": [
         "या"
       ],
       "Organization name": [
@@ -11765,11 +11697,11 @@
       "perform a password reset from your active session": [
         "अपने सक्रिय सत्र से पासवर्ड रीसेट करें"
       ],
-      "privacy policy": [
-        "निजता नीति"
-      ],
       "Privacy policy": [
         "गोपनीयता नीति"
+      ],
+      "privacy policy": [
+        "निजता नीति"
       ],
       "Reactivate now": [
         "अब पुनः सक्रिय करें"
@@ -12404,20 +12336,8 @@
       "From ${ price }": [
         "${ price } से"
       ],
-      "Get started for ${ priceCoupon }": [
-        "शुरू करें ${ priceCoupon } के लिए"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } से शुरू"
-      ],
       "Upgrade": [
         "अपग्रेड"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } पे अपग्रेड करें"
       ]
     },
     "new_plans: feature": {
@@ -12579,9 +12499,6 @@
       "Auto-delete Spam and Trash": [
         "स्पैम और ट्रैश को स्वचालित रूप से हटाएं"
       ],
-      "Auto-delete spam and trashed messages": [
-        "स्पैम और कचरे के संदेशो को अपनेआप मिटाएं"
-      ],
       "Auto-reply": [
         "ऑटोमैटिक-जवाब"
       ],
@@ -12626,9 +12543,6 @@
       ],
       "Custom fields": [
         "कस्टम फील्ड"
-      ],
-      "Custom snooze time": [
-        "कस्टम स्नूज़ समय"
       ],
       "Custom workspace branding": [
         "कस्टम कार्यक्षेत्र ब्रांडिंग"
@@ -12774,12 +12688,6 @@
       ],
       "Schedule and snooze emails for any time": [
         "किसी भी समय के लिए ईमेल शेड्यूल करें और स्नूज़ करें"
-      ],
-      "Schedule messages at any time": [
-        "संदेश कभी भी शेड्यूल करें"
-      ],
-      "Search message content": [
-        "संदेश कंटेंट खोजें"
       ],
       "Secure Core servers": [
         "सुरक्षित कोर सर्वर"
@@ -12932,9 +12840,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "अपनी ऑनलाइन पहचान के लिए एकाधिक ईमेल पते बनाएं, उदा. शॉपिंग खातों के लिए जॉनशॉपर@${ domain }, समाचार सदस्यता के लिए जॉनन्यूज@${ domain2 }"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "संदेशों को स्नूज़ करें और जब चाहें तो याद दिलाएं"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "स्टोरेज जगह का इस्तेमाल ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, और ${ DRIVE_APP_NAME } करते है।"
@@ -13119,6 +13024,14 @@
         "सिर्फ ${ priceLine } में सभी ${ BRAND_NAME } प्रीमियम उत्पाद और खासियतें अनलॉक करें। किसी भी समय रद्द करें।"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } ट्रायल"
+      ],
+      "Your account's usage": [
+        "आपका खाते का इस्तेमाल"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "खाता मिटाएं?"
@@ -13137,14 +13050,6 @@
       ],
       "Unlock premium features by upgrading": [
         "अपग्रेड करके प्रीमियम सुविधाओं का लाभ उठाएँ"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } ट्रायल"
-      ],
-      "Your account's usage": [
-        "आपका खाते का इस्तेमाल"
       ]
     },
     "new_plans: tooltip": {
@@ -13776,6 +13681,17 @@
         "डेस्कटॉप"
       ]
     },
+    "option": {
+      "Everyone": [
+        "सभी"
+      ],
+      "Group members": [
+        "ग्रुप सदस्य"
+      ],
+      "No one": [
+        "कोई भी नहीं"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "महीने की 10 तारीख"
@@ -14004,17 +13920,6 @@
       ],
       "Trash": [
         "कचरा"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "सभी"
-      ],
-      "Group members": [
-        "ग्रुप सदस्य"
-      ],
-      "No one": [
-        "कोई भी नहीं"
       ]
     },
     "Option delay send seconds": {
@@ -15962,9 +15867,6 @@
       ]
     },
     "Settings description": {
-      "Complete the transition to privacy with our secure importing and forwarding tools.": [
-        "हमारे सुरक्षित आयात और फॉरवर्ड प्रोडक्ट के साथ अपने ज़िंदगी को निजी करने के सफर को पूरा करें।"
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "अपने इनबॉक्स को फ़ोल्डर्स और लेबल के साथ व्यवस्थित रखें। ${ learnMoreLink }"
       ]
@@ -17805,9 +17707,6 @@
       "Actions": [
         "एक्शन"
       ],
-      "Activate @pm.me": [
-        "@pm.me सक्रिय करें"
-      ],
       "Activate organization key": [
         "संगठन की कुंजी सक्रिय करें"
       ],
@@ -17959,10 +17858,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [
@@ -17991,9 +17890,6 @@
       ],
       "Clear": [
         "साफ करें"
-      ],
-      "Clear out the junk": [
-        "कचरा खाली करें"
       ],
       "Click a value in the table to use it as filter": [
         "टेबल में किसी मान पर क्लिक करें ताकि उसे फिल्टर के रूप में उपयोग किया जा सके"
@@ -18485,17 +18381,11 @@
       "Import key": [
         "आयात कुंजी"
       ],
-      "Import messages": [
-        "संदेश आयात करें"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH } के माध्यम से आयात करें"
       ],
       "Inactive 2FA": [
         "निष्क्रिय 2-एफए"
-      ],
-      "Increase your privacy with more addresses": [
-        "ज़्यादा पतो के साथ अपनी निजता बढ़ाएं"
       ],
       "Integrations": [
         "एकीकरण"
@@ -18514,9 +18404,6 @@
       ],
       "Items owned": [
         "स्वामित्व वाले आइटम"
-      ],
-      "Keep your inbox organized": [
-        "अपना इनबॉक्स व्यवस्थित रखें"
       ],
       "Keyboard shortcuts": [
         "कीबोर्ड शॉर्टकट्स"
@@ -18653,9 +18540,6 @@
       "PayPal verification failed": [
         "पेपाल सत्यापन विफल रहा"
       ],
-      "Personalize your e-mail footer": [
-        "ईमेल फुटर अपने पसंद का बनाएं"
-      ],
       "Personalize your email footer": [
         "अपने ईमेल फुटर को अपने पसंद का बनाएं"
       ],
@@ -18776,9 +18660,6 @@
       "SAML authentication": [
         "SAML सत्यापन"
       ],
-      "Save time with email filters": [
-        "ईमेल फिल्टर के साथ समय बचाएं"
-      ],
       "Schedule send:": [
         "शेड्यूल भेजें:"
       ],
@@ -18838,9 +18719,6 @@
       ],
       "Set up a recovery method": [
         "रिकवरी तरीका सेट करें"
-      ],
-      "Set up forwarding": [
-        "फॉरवर्ड सेट करें"
       ],
       "Set up two-factor authentication": [
         "दो-कारक प्रमाणीकरण सेट करें"
@@ -19717,9 +19595,6 @@
       ],
       "Recommended": [
         "सुझाव"
-      ],
-      "Save ${ totals.discountPercentage }%": [
-        "${ totals.discountPercentage } की छूट%"
       ]
     },
     "User referee invited via email": {

@@ -528,9 +528,6 @@
       "Generate text": [
         "टेक्स्ट जनरेट करें"
       ],
-      "Get ${ BRAND_NAME } Duo": [
-        "${ BRAND_NAME } Duo प्राप्त करें"
-      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName } पाएं ${ priceCoupon } के लिए"
       ],
@@ -539,12 +536,6 @@
       ],
       "Get in touch": [
         "हमसे संपर्क करें"
-      ],
-      "Get it": [
-        "इसे प्राप्त करें"
-      ],
-      "Get it from only ${ addonPriceWithCurrency } /month": [
-        "इसे केवल ${ addonPriceWithCurrency } /माह पर प्राप्त करें"
       ],
       "Get started": [
         "शुरू करें"
@@ -826,6 +817,9 @@
       "Move to archive": [
         "संग्रह में ले जाएं"
       ],
+      "Move to folder": [
+        "फोल्डर में डालें"
+      ],
       "Move to inbox": [
         "इनबॉक्स में ले जाएँ"
       ],
@@ -1096,10 +1090,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } चुनें"
       ],
-      "Select All": [
+      "Select all": [
         "सब चुनें"
       ],
-      "Select all": [
+      "Select All": [
         "सब चुनें"
       ],
       "Select all messages": [
@@ -1240,9 +1234,6 @@
       "Start setup": [
         "सेट करें"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "शुरुआत ${ priceUnlimited } से"
-      ],
       "Stay": [
         "रुकें"
       ],
@@ -1298,7 +1289,8 @@
         "भरोसा करें"
       ],
       "Trust key": [
-        "विश्वसनीय चाबी"
+        "ट्रस्ट कुंजी",
+        "ट्रस्ट कुंजी"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -1362,9 +1354,6 @@
       ],
       "Upgrade Now": [
         "अभी अपग्रेड करें"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } अनलिमिटेड में अपग्रेड करें"
       ],
       "Upload picture": [
         "तस्वीर अपलोड करें"
@@ -3594,9 +3583,6 @@
       "Also included": [
         "साथ ही शामिल"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "अपग्रेड करने पर स्पैम और ट्रैश किए गए संदेशों को स्वचालित रूप से हटाएं और अधिक प्रीमियम सुविधाएँ अनलॉक करें।"
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "30 दिनों से अधिक पुरानी, ट्रैश और स्पैम में डाले गए ईमेल्स को स्वचालित रूप से साफ करें।"
       ],
@@ -3612,9 +3598,6 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्क मिटाए जा रहे हैं... इसमें कुछ मिनट लग सकते हैं. जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "उन उपयोगकर्ताओं के लिए डिज़ाइन किया गया जो अपने खातों के लिए बढ़ी हुई सुरक्षा चाहते हैं।"
-      ],
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "अभी अपना ईमेल भेजना नहीं चाहते? इसे बिल्कुल सही समय के लिए शेड्यूल करें।"
       ],
@@ -3626,9 +3609,6 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "यदि आपका पासवर्ड या अन्य डाटा किसी तीसरें-पार्टी से लीक हुआ है, तो इसकी सूचना प्राप्त करें।"
-      ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "असीमित नकली-नाम और 500 GB स्टोरेज प्राप्त करें ${ PLAN_NAMES[PLANS.BUNDLE] } के साथ।"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "ऐसा लगता है कि आप जिस संपर्क सूची को आयात कर रहे हैं उसमें कुछ समूह हैं। कृपया समीक्षा करें कि इन समूहों को कैसे आयात किया जाना चाहिए।"
@@ -3649,9 +3629,6 @@
       "No labels": [
         "कोई परचीयां नहीं"
       ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "संपर्क ग्रुप्स का उपयोग करके एक साथ सभी को ईमेल भेजकर समय बचाएं। इसे और अन्य प्रीमियम सुविधाओं को अनलॉक करें जब आप अपग्रेड करें।"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "अपने जीवन के विभिन्न पहलुओं को एकाधिक ईमेल पतों के साथ अलग करें और अपग्रेड करने पर अधिक प्रीमियम सुविधाओं को अनलॉक करें।"
       ],
@@ -3660,9 +3637,6 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "अपने खाते तक पहुंच खोने से बचने के लिए एक पुनर्प्राप्ति विधि सेट करें।"
-      ],
-      "Starting from ${ price }": [
-        "शुरुआत ${ price } से"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "लेखन सहायक का उपयोग जारी रखने के लिए, इसे अपनी सदस्यता में जोड़ें।"
@@ -3682,26 +3656,8 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "विज्ञापनदाताओं और अन्य लोगों द्वारा आपकी लोकेशन और ऑनलाइन गतिविधि पर नज़र रखने से बचने के लिए ईमेल ट्रैकर सुरक्षा चालू करें।"
       ],
-      "Unlock custom message scheduling and more premium features when you upgrade.": [
-        "अपग्रेड करने पर कस्टम संदेश शेड्यूलिंग और अधिक प्रीमियम सुविधाएँ अनलॉक करें।"
-      ],
-      "Unlock custom snooze times and more premium features when you upgrade.": [
-        "अपग्रेड करने पर कस्टम सूचना बंद समय और अधिक प्रीमियम सुविधाएँ अनलॉक करें।"
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "अपग्रेड करके छोटे ईमेल पते और अन्य प्रीमियम सुविधाएं अनलॉक करें।"
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "जब आप अपग्रेड करें, तो आपके इनबॉक्स को सॉर्ट करने वाले असीमित फिल्टर्स और अन्य प्रीमियम फीचर्स अनलॉक करें।"
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "जब आप अपग्रेड करें, तो असीमित फोल्डर, लेबल और अन्य प्रीमियम खासियतें अनलॉक करें।"
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "अपने वर्तमान पते के अलावा एक छोटा, आसानी से याद रखने योग्य ईमेल पता पाने के लिए ${ activatePmUser } में अपग्रेड करें।"
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "अपने खाते को अपग्रेड करें ताकि ${ PROTON_SENTINEL_NAME } सक्रिय हो सके, हमारी अत्याधुनिक ए.आई.-चालित सुरक्षा समाधान के साथ समर्पित 24/7 विशेषज्ञ सहायता"
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "ऑनलाइन सेवाओं में साइन इन करने के लिए ${ MAIL_APP_NAME } का उपयोग करें, क्योंकि अन्य ईमेल प्रदाताओं के विपरीत, हम कभी भी आपके डाटा को ट्रैक नहीं करेंगे और न ही इसे तीसरें-पार्टी के साथ साझा करेंगे।"
@@ -5730,9 +5686,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } से आयात करें"
-      ],
-      "Other": [
-        "दूसरा"
       ]
     },
     "Import warning": {
@@ -5872,14 +5825,6 @@
       "${ n } unread conversation": [
         "${ n } अपठित वार्तालाप",
         "${ n } अपठित वार्तालाप"
-      ],
-      "${ numberOfImageTrackers } email tracker blocked": [
-        "${ numberOfImageTrackers } ईमेल ट्रैकर ब्लॉक किया गया",
-        "${ numberOfImageTrackers } ईमेल ट्रैकर ब्लॉक किए गए"
-      ],
-      "${ numberOfImageTrackers } tracker blocked": [
-        "${ numberOfImageTrackers } ट्रैकर ब्लॉक किया गया",
-        "${ numberOfImageTrackers } ट्रैकर ब्लॉक किए गए"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } लिंक साफ किया गया",
@@ -6634,8 +6579,7 @@
         "शुरू किया जा रहा है…"
       ],
       "Insert image": [
-        "तस्वीर डालें",
-        "तस्वीरें डालें"
+        "तस्वीर डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -7070,9 +7014,6 @@
       ],
       "Seems like you are all caught up for now": [
         "कुछ नया नहीं है"
-      ],
-      "Select a service provider to start": [
-        "शुरू करने के लिए एक सेवा प्रदाता का चयन करें"
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "सभी ${ elementsCount } को ${ location } में चुनें",
@@ -8207,10 +8148,10 @@
       "Always move sender's emails": [
         "भेजनेवाले के ईमेल हमेशा ले जाएं"
       ],
-      "AND": [
+      "And": [
         "और"
       ],
-      "And": [
+      "AND": [
         "और"
       ],
       "and": [
@@ -8432,10 +8373,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "अगर"
       ],
-      "If": [
+      "IF": [
         "अगर"
       ],
       "Import all messages": [
@@ -8549,13 +8490,13 @@
       "Optional": [
         "वैकल्पिक"
       ],
-      "OR": [
-        "या"
-      ],
       "or": [
         "या"
       ],
       "Or": [
+        "या"
+      ],
+      "OR": [
         "या"
       ],
       "Original link": [
@@ -8884,6 +8825,9 @@
       ],
       "Folders": [
         "फ़ोल्डर्स"
+      ],
+      "here": [
+        "यहाँ"
       ],
       "How to pay with Bitcoin?": [
         "बिटकॉइन से भुगतान कैसे करें?"
@@ -9368,29 +9312,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } लें"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "शुरू करें ${ priceCoupon } के लिए"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } से शुरू"
-      ],
-      "Upgrade": [
-        "अपग्रेड"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } पे अपग्रेड करें"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "खाता हटा दो"
@@ -9412,6 +9333,14 @@
       ],
       "Switch plan": [
         "प्लान बदले"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle } लें"
       ]
     },
     "new_plans: feature": {
@@ -9561,9 +9490,6 @@
       "Auto-delete Spam and Trash": [
         "स्पैम और ट्रैश को स्वचालित रूप से हटाएं"
       ],
-      "Auto-delete spam and trashed messages": [
-        "स्पैम और कचरे के संदेशो को अपनेआप मिटाएं"
-      ],
       "Auto-reply": [
         "ऑटोमैटिक-जवाब"
       ],
@@ -9605,9 +9531,6 @@
       ],
       "Custom fields": [
         "कस्टम फील्ड"
-      ],
-      "Custom snooze time": [
-        "कस्टम स्नूज़ समय"
       ],
       "Custom workspace branding": [
         "कस्टम कार्यक्षेत्र ब्रांडिंग"
@@ -9741,12 +9664,6 @@
       ],
       "Schedule and snooze emails for any time": [
         "किसी भी समय के लिए ईमेल शेड्यूल करें और स्नूज़ करें"
-      ],
-      "Schedule messages at any time": [
-        "संदेश कभी भी शेड्यूल करें"
-      ],
-      "Search message content": [
-        "संदेश कंटेंट खोजें"
       ],
       "Secure Core servers": [
         "सुरक्षित कोर सर्वर"
@@ -9883,9 +9800,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "अपनी ऑनलाइन पहचान के लिए एकाधिक ईमेल पते बनाएं, उदा. शॉपिंग खातों के लिए जॉनशॉपर@${ domain }, समाचार सदस्यता के लिए जॉनन्यूज@${ domain2 }"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "संदेशों को स्नूज़ करें और जब चाहें तो याद दिलाएं"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "स्टोरेज जगह का इस्तेमाल ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, और ${ DRIVE_APP_NAME } करते है।"
@@ -12878,9 +12792,6 @@
       "Action all messages": [
         "सभी संदेशों पर कार्रवाई करें"
       ],
-      "Activate @pm.me": [
-        "@pm.me सक्रिय करें"
-      ],
       "Add a custom logo": [
         "एक कस्टम लोगो जोड़ें"
       ],
@@ -12974,9 +12885,6 @@
       ],
       "Change password": [
         "पासवर्ड परिवर्तित करें"
-      ],
-      "Clear out the junk": [
-        "कचरा खाली करें"
       ],
       "Clearing data": [
         "डेटा साफ़ करना"
@@ -13175,9 +13083,6 @@
       "Forward": [
         "आगे"
       ],
-      "Get advanced protection": [
-        "उन्नत सुरक्षा प्राप्त करें"
-      ],
       "Get more from your VPN": [
         "अपने VPN से और पाएं"
       ],
@@ -13235,9 +13140,6 @@
       ],
       "Invalid verification code": [
         "अवैध सत्यापन कोड"
-      ],
-      "Keep your inbox organized": [
-        "अपना इनबॉक्स व्यवस्थित रखें"
       ],
       "Label as": [
         "के रूप में लेबल"
@@ -13467,9 +13369,6 @@
       "Same inbox, shorter email address": [
         "वहीं इनबॉक्स, छोटा ईमेल पता"
       ],
-      "Save time with email filters": [
-        "ईमेल फिल्टर के साथ समय बचाएं"
-      ],
       "Schedule now, send later": [
         "अब शेड्यूल करें, बाद में भेजें"
       ],
@@ -13533,9 +13432,6 @@
       "Set up your family account": [
         "अपना परिवार खाता सेट करें"
       ],
-      "Set your own schedule": [
-        "अपना शेड्यूल सेट करें"
-      ],
       "Settings": [
         "सेटिंग्स"
       ],
@@ -13597,9 +13493,6 @@
       "Trust public key?": [
         "जनता की चाबी पर भरोसा?"
       ],
-      "Unlock contacts groups": [
-        "संपर्क ग्रुप अनलॉक करें"
-      ],
       "Unsubscribe": [
         "सदस्यता रद्द करें"
       ],
@@ -13620,9 +13513,6 @@
       ],
       "Verifying your payment...": [
         "आपका भुगतान सत्यापित कर रहे..."
-      ],
-      "Want to snooze any time?": [
-        "क्या आप कभी भी स्नूज़ करना चाहेंगे?"
       ],
       "Warning": [
         "चेतावनी"

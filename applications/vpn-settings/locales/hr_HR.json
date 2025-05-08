@@ -323,11 +323,11 @@
       "Refresh status": [
         "Osvježi status"
       ],
-      "Refresh the page": [
-        "Osvježi stranicu"
-      ],
       "refresh the page": [
         "osvježi stranicu"
+      ],
+      "Refresh the page": [
+        "Osvježi stranicu"
       ],
       "Remove": [
         "Ukloni"
@@ -398,11 +398,11 @@
       "Select country": [
         "Odaberi državu"
       ],
-      "select file": [
-        "odaberi datoteku"
-      ],
       "Select file": [
         "Odaberi datoteku"
+      ],
+      "select file": [
+        "odaberi datoteku"
       ],
       "Send code": [
         "Pošalji kôd"
@@ -445,6 +445,9 @@
       ],
       "sign up for free": [
         "registrirajte se besplatno"
+      ],
+      "Skip": [
+        "Preskoči"
       ],
       "Spam": [
         "Neželjena pošta"
@@ -585,6 +588,26 @@
     "Admin": {
       "admin": [
         "administrator"
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Pristigla pošta ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "5 pratitelja uklonjeno"
+      ],
+      "Auto forwarded": [
+        "Automatski proslijeđeno"
+      ],
+      "Email received": [
+        "E-pošta primljena"
+      ],
+      "Encrypted": [
+        "Šifrirano"
+      ],
+      "New email": [
+        "Nova e-pošta"
       ]
     },
     "Badge for domain": {
@@ -1776,6 +1799,12 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Iznos ispod minimuma (${ minimumAmount })."
       ],
+      "Authentication canceled.": [
+        "Otkazana autentikacija."
+      ],
+      "Authentication error.": [
+        "Pogreška autentikacije."
+      ],
       "Code wrong or not valid anymore": [
         "Kôd je pogrešan ili više ne vrijedi"
       ],
@@ -2135,6 +2164,14 @@
       ],
       "Very small": [
         "Jako malo"
+      ]
+    },
+    "Gmail forwarding": {
+      "Gmail messages to your inbox": [
+        "Gmail poruke u svoju pristiglu poštu"
+      ],
+      "Sign in with Google": [
+        "Prijava putem Google računa"
       ]
     },
     "Go to sign in": {
@@ -3047,11 +3084,23 @@
       "IBAN": [
         "IBAN"
       ],
+      "Import all messages": [
+        "Uvoz svih poruka"
+      ],
       "Interval": [
         "Interval"
       ],
       "Key": [
         "Ključ"
+      ],
+      "Last 12 months only": [
+        "Samo zadnjih 12 mjeseci"
+      ],
+      "Last 3 months only": [
+        "Samo zadnja 3 mjeseca"
+      ],
+      "Last month only": [
+        "Samo posljednji mjesec"
       ],
       "Last name": [
         "Prezime"
@@ -3418,14 +3467,6 @@
         "Najviša VPN brzina"
       ]
     },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -3435,6 +3476,11 @@
       ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
       ]
     },
     "new_plans: feature": {
@@ -3543,9 +3589,6 @@
       ],
       "Priority support": [
         "Prioritetna podrška"
-      ],
-      "Search message content": [
-        "Pretraži sadržaj poruka"
       ],
       "Secure Core servers": [
         "Secure Core poslužitelji"
@@ -4327,6 +4370,9 @@
       "Gift code applied": [
         "Kôd darovnog kupona je primjenjen"
       ],
+      "Import record deleted": [
+        "Zapis uvoza je izbrisan"
+      ],
       "Invoice customized": [
         "Prilagođena je faktura"
       ],
@@ -4540,10 +4586,10 @@
       "Card verification": [
         "Potvrda kartice"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dohvati-sve adrese e-pošte"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dohvati-sve adrese e-pošte"
       ],
       "Change login password": [

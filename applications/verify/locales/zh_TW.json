@@ -83,71 +83,6 @@
     "Cancellation upsell": {
       "Cloud storage and sharing for large files": [
         "大型文件雲端儲存與共享"
-      ],
-      "Secure personal and shared calendar": [
-        "安全保護個人及共享行事曆"
-      ]
-    },
-    "color": {
-      "carrot": [
-        "胡蘿蔔"
-      ],
-      "cerise": [
-        "櫻桃"
-      ],
-      "cobalt": [
-        "鈷"
-      ],
-      "copper": [
-        "銅"
-      ],
-      "enzian": [
-        "龍膽"
-      ],
-      "fern": [
-        "蕨類"
-      ],
-      "forest": [
-        "森林"
-      ],
-      "ocean": [
-        "海洋"
-      ],
-      "olive": [
-        "橄欖"
-      ],
-      "pacific": [
-        "太平洋"
-      ],
-      "pickle": [
-        "泡菜"
-      ],
-      "pine": [
-        "松樹"
-      ],
-      "pink": [
-        "粉紅色"
-      ],
-      "plum": [
-        "梅子"
-      ],
-      "purple": [
-        "紫色"
-      ],
-      "reef": [
-        "礁石"
-      ],
-      "sahara": [
-        "撒哈拉"
-      ],
-      "slateblue": [
-        "板岩藍"
-      ],
-      "soil": [
-        "土壤"
-      ],
-      "strawberry": [
-        "草莓"
       ]
     },
     "Country name": {
@@ -1238,12 +1173,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME }Scribe撰寫幫手"
       ],
-      "${ n } calendar": [
-        "${ n } 個行事曆"
-      ],
-      "${ n } calendar per user": [
-        "${ n } 個行事曆分配給每位使用者"
-      ],
       "${ n } custom email domain": [
         "${ n } 個自訂電郵網域"
       ],
@@ -1313,9 +1242,6 @@
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
       ],
-      "Auto-delete spam and trashed messages": [
-        "自動刪除垃圾郵件與垃圾桶中的訊息"
-      ],
       "Auto-reply": [
         "自動回覆"
       ],
@@ -1342,9 +1268,6 @@
       ],
       "Custom email domains": [
         "自訂電郵網域"
-      ],
-      "Custom snooze time": [
-        "自訂延遲時間"
       ],
       "Desktop app": [
         "桌面應用程式"
@@ -1397,20 +1320,8 @@
       "Schedule and snooze emails for any time": [
         "隨時計畫和延後電子郵件"
       ],
-      "Schedule messages at any time": [
-        "在任意時間排程訊息"
-      ],
-      "Search message content": [
-        "搜尋郵件內容"
-      ],
       "Secure file storage and sharing": [
         "安全地儲存和共享檔案"
-      ],
-      "See team's availability": [
-        "查看團隊可用程度"
-      ],
-      "Send & receive invitations": [
-        "傳送並接收邀請"
       ],
       "Share files with no size limit": [
         "分享檔案無大小限制"
@@ -1450,17 +1361,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "創建多重電子郵件位址身分，如JohnShopper@${ domain }給購物用途， JohnNews@${ domain2 }給訂閱新聞使用"
       ],
-      "Snooze messages and get reminded when you want": [
-        "緩辦郵件，容後依時提醒"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }：透過端對端加密保護您的行程安排。包括對自訂行事曆、行事曆共用等的支援。"
-      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }：透過加密的雲端儲存保護檔案。包含自動同步、加密的檔案共享、及更多。"
       ],
@@ -1485,14 +1390,8 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "為您的線上身分創建多個電子郵件位址，例如 JohnShopper@${ domain } 作購物帳號、JohnNews@${ domain } 作新聞訂閱"
       ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "創建多達 ${ n } 個行事曆或新增好友、家人、同事和組織的行事曆"
-      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "創建${ n }個電子郵件位址/別名分配至家庭成員。包含線上身分，如，JohnShopper@${ domain }給購物帳號。"
-      ],
-      "Easily share your calendars with your family, friends, or colleagues": [
-        "輕鬆與您的家人、好友或同事分享您的行事曆"
       ],
       "Email everyone in a group with a single email address": [
         "使用一個電子郵件地址給群組中的每位使用者"
@@ -1502,9 +1401,6 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP 支援僅限透過 ${ MAIL_APP_NAME } Bridge 使用桌面應用程式 (例如 Outlook、Apple Mail、Thunderbird)。目前不支援雲端型 IMAP 整合。"
-      ],
-      "Keep your plans private to you and your family with an encrypted calendar": [
-        "使用加密日曆讓您的方案對您和您的家人保密"
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "標籤是簡單的標記，讓您加到郵件上，好以更容易找到或者套用篩選器"
@@ -1526,9 +1422,6 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "安全地儲存您的聯絡人詳細資訊，例如電話號碼、位址、生日以及個人備忘。零存取加密，確保即使 ${ BRAND_NAME } 也無法存取。"
-      ],
-      "See the availability of meeting participants and save time scheduling meetings": [
-        "查看可參與會議的人員並儲存會議計畫"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "創建通訊群組 (每個群組最多100名聯絡人) 可以簡單迅速的將信件寄送給一大群人。"
@@ -1567,9 +1460,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "將現有儲存空間加大至 ${ bundleStorage }為總可用量"
-      ],
-      "Create up to ${ n } calendar": [
-        "創建多達 ${ n } 個行事曆"
       ],
       "Support for ${ n } custom email domains": [
         "支援 ${ n } 組自訂電子郵件網域"

@@ -289,6 +289,9 @@
       "Connect to video conferencing": [
         "Koble til videokonferanser"
       ],
+      "Connect your Gmail address": [
+        "Koble til din Gmail-adresse"
+      ],
       "Connected": [
         "Tilkoblet"
       ],
@@ -688,6 +691,9 @@
       "Get the deal": [
         "Skaff deg tilbudet"
       ],
+      "Get the writing assistant": [
+        "Skaff deg skriveassistenten"
+      ],
       "Get verification code": [
         "Få verifiseringskode"
       ],
@@ -775,10 +781,10 @@
       "Keep": [
         "Behold"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Fortsett å redigere"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Fortsett å redigere"
       ],
       "Keep logo": [
@@ -1138,11 +1144,11 @@
       "Select country ${ country }": [
         "Velg land ${ country }"
       ],
-      "select file": [
-        "velg fil"
-      ],
       "Select file": [
         "Velg fil"
+      ],
+      "select file": [
+        "velg fil"
       ],
       "Select files": [
         "Velg filer"
@@ -1200,6 +1206,9 @@
       ],
       "Set up a custom domain": [
         "Konfigurer et egendefinert domene"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Konfigurer automatisk videresending fra Gmail"
       ],
       "Set up email forwarding": [
         "Konfigurer videresending av e-post"
@@ -1356,9 +1365,6 @@
       ],
       "Upgrade now": [
         "Oppgrader nå"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "Oppgrader til Business"
@@ -2818,6 +2824,10 @@
       ]
     },
     "CountriesStep:Info": {
+      "${ selectedCitiesCount } cities selected": [
+        "${ selectedCitiesCount } by valgt",
+        "${ selectedCitiesCount } byer valgt"
+      ],
       "${ selectedCountriesCount } selected": [
         "${ selectedCountriesCount } valgt",
         "${ selectedCountriesCount } valgt"
@@ -3852,9 +3862,6 @@
       "Also included": [
         "Også inkludert"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Slett automatisk søppelpost og meldinger i papirkurven, og lås opp flere premiumfunksjoner når du oppgraderer."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Fjern automatisk e-poster som ble flyttet til papirkurven og søppelpost for mer enn 30 dager siden."
       ],
@@ -3957,9 +3964,6 @@
       "Send a code to your recovery email or phone": [
         "Send en kode til gjenopprettings-e-postadressen eller -telefonen din"
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Skill forskjellige aspekter av livet ditt med flere e-postadresser og lås opp flere premiumfunksjoner når du oppgraderer."
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Konfigurer kontoer for alle brukere og inviter dem til å bli med i ${ BRAND_NAME }."
       ],
@@ -3975,23 +3979,11 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For å importere kontaktene dine fra Google eller Outlook, ${ easySwitchLink }."
       ],
-      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "For å fjerne ${ MAIL_APP_NAME }-bunnteksten, oppgrader og lås opp enda flere premiumfunksjoner."
-      ],
       "To start, give your organization a name.": [
         "For å starte, gi organisasjonen din et navn."
       ],
       "Track the status and activity of your referrals.": [
         "Spor statusen og aktiviteten til vervingene dine."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Lås opp kortere e-postadresser og andre premiumfunksjoner ved å oppgradere."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Lås opp ubegrensede filtre som sorterer innboksen din for deg og flere premiumfunksjoner når du oppgraderer."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Lås opp ubegrensede mapper, etiketter og flere premiumfunksjoner når du oppgraderer."
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Oppgrader for å få ${ activatePmUser } som en kortere e-postadresse som er enklere å huske, i tillegg til den nåværende e-postadressen din."
@@ -4251,6 +4243,14 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 eller Windows 32-bit (ARM64)"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb for Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm for Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Title": {
@@ -6502,44 +6502,11 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME }-app"
+      "${ appName } on App Store": [
+        "${ appName } på App Store"
       ],
-      "account logins": [
-        "kontopålogginger"
-      ],
-      "Auto-forward Gmail": [
-        "Videresend automatisk Gmail"
-      ],
-      "auto-forwarding": [
-        "automatisk videresending"
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Endre ${ strongText } til din ${ BRAND_NAME }-adresse"
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Oppdag hvordan våre ${ strongText } beskytter deg"
-      ],
-      "Discover privacy features": [
-        "Oppdag personvernfunksjoner"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Skaff deg ${ strongText }-en på Android eller iOS"
-      ],
-      "Get the App": [
-        "Skaff deg appen"
-      ],
-      "privacy features": [
-        "personvernfunksjoner"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Sett opp ${ strongText } fra Gmail"
-      ],
-      "This feature is currently unavailable": [
-        "Denne funksjonen er utilgjengelig for øyeblikket."
-      ],
-      "Update your logins": [
-        "Oppdater påloggingene dine"
+      "${ appName } on Play Store": [
+        "${ appName } på Play Store"
       ]
     },
     "Gmail forwarding": {
@@ -7159,8 +7126,17 @@
       "Import from ${ provider }": [
         "Importer fra ${ provider }"
       ],
-      "Other": [
-        "Annen"
+      "Import from Google": [
+        "Importer fra Google"
+      ],
+      "Import from other": [
+        "Importer fra andre"
+      ],
+      "Import from Outlook": [
+        "Importer fra Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importer fra Yahoo"
       ]
     },
     "Import rollback status": {
@@ -7817,6 +7793,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Styrk organisasjonens merkeidentitet og skap en mer konsekvent nettopplevelse for brukerne."
       ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Ta med dine meldinger, kontakter og kalendere til ${ BRAND_NAME }."
+      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Ved å opprette en ${ PASS_APP_NAME }-konto med SimpleLogin-e-posten din, kan du administrere aliasene dine direkte fra ${ PASS_APP_NAME }."
       ],
@@ -8275,6 +8254,9 @@
       "Failed to fetch logs.": [
         "Kunne ikke hente logger."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Rask og fokusert. E-post og kalender, rett på skrivebordet."
+      ],
       "Featured in": [
         "Som fremhevet i"
       ],
@@ -8479,9 +8461,6 @@
       ],
       "Import mailbox": [
         "Importer postboks"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importer dine e-poster, kalendere og kontakter fra en annen tjeneste til ${ BRAND_NAME }."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "VIKTIG: Hvis DNS-konsollen ikke tillater at CNAME-verdier slutter med en prikk, kan du fjerne den siste prikken i CNAME-verdiene."
@@ -8886,6 +8865,9 @@
       "One account. All ${ BRAND_NAME } services.": [
         "En konto. Alle ${ BRAND_NAME }-tjenester."
       ],
+      "One time import": [
+        "Engangsimport"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Kun endre disse innstillingene hvis du bruker PGP med ikke-${ BRAND_NAME } mottakere."
       ],
@@ -9234,9 +9216,6 @@
       "Securing your account": [
         "Sikrer kontoen din"
       ],
-      "Select a service provider to start": [
-        "Velg en tjenestetilbyder for å starte"
-      ],
       "Select a service to continue": [
         "Velg en tjeneste for å fortsette"
       ],
@@ -9290,6 +9269,9 @@
       ],
       "Set recovery phrase": [
         "Sett gjenopprettingsfrase"
+      ],
+      "Set up forwarding": [
+        "Konfigurer videresending"
       ],
       "Set up your organization": [
         "Konfigurer organisasjonen din"
@@ -9870,11 +9852,11 @@
       "User activated": [
         "Bruker aktivert"
       ],
-      "Username": [
-        "Brukernavn"
-      ],
       "username": [
         "brukernavn"
+      ],
+      "Username": [
+        "Brukernavn"
       ],
       "Users": [
         "Brukere"
@@ -10308,6 +10290,10 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }",
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of them.": [
+        "Du har aktivert videresending på ${ MAX_SYNC_PAID_USER } Gmail-adresse. For å legge til en til, må du først deaktivere det.",
+        "Du har aktivert videresending på ${ MAX_SYNC_PAID_USER } Gmail-adresser. Hvis du vil legge til en til, må du først deaktivere en av dem."
       ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Din ${ boldDiscountPercent } på ${ boldPlanTitle } er brukt"
@@ -11046,10 +11032,10 @@
       "Allow sharing outside the organization": [
         "Tillat deling utenfor organisasjonen"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillatt domene"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillatt domene"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11061,11 +11047,11 @@
       "Amount due": [
         "Skyldig beløp"
       ],
-      "AND": [
-        "OG"
-      ],
       "And": [
         "Og"
+      ],
+      "AND": [
+        "OG"
       ],
       "and": [
         "og"
@@ -11129,6 +11115,9 @@
       ],
       "Backup password": [
         "Reservepassord"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing cycle": [
         "Faktureringssyklus"
@@ -11490,11 +11479,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "HVIS"
-      ],
       "If": [
         "Hvis"
+      ],
+      "IF": [
+        "HVIS"
       ],
       "Import all messages": [
         "Importer alle meldinger"
@@ -11703,14 +11692,14 @@
       "Optional": [
         "Valgfritt"
       ],
-      "OR": [
-        "ELLER"
-      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
+      ],
+      "OR": [
+        "ELLER"
       ],
       "Organization name": [
         "Organisasjonsnavn"
@@ -12400,11 +12389,11 @@
       "perform a password reset from your active session": [
         "utføre en tilbakestilling av passord fra den aktive økten"
       ],
-      "privacy policy": [
-        "personvernerklæring"
-      ],
       "Privacy policy": [
         "Personvernerklæring"
+      ],
+      "privacy policy": [
+        "personvernerklæring"
       ],
       "Reactivate now": [
         "Aktiver på nytt nå"
@@ -13045,20 +13034,8 @@
       "From ${ price }": [
         "Fra ${ price }"
       ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Starter fra ${ pricing }"
-      ],
       "Upgrade": [
         "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
-      ],
-      "Upgrade to ${ planName }": [
-        "Oppgrader til ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13223,9 +13200,6 @@
       "Auto-delete Spam and Trash": [
         "Slett automatisk elementer i søppelpost og papirkurv"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Fjern automatisk søppelpost og meldinger som er slettet"
-      ],
       "Auto-reply": [
         "Autosvar"
       ],
@@ -13270,9 +13244,6 @@
       ],
       "Custom fields": [
         "Tilpassede felt"
-      ],
-      "Custom snooze time": [
-        "Tilpasset slumretid"
       ],
       "Custom workspace branding": [
         "Tilpasset merkevarebygging for arbeidsområdet"
@@ -13425,12 +13396,6 @@
       "Schedule and snooze emails for any time": [
         "Planlegg og slumre e-poster når som helst"
       ],
-      "Schedule messages at any time": [
-        "Planlegg meldinger når som helst"
-      ],
-      "Search message content": [
-        "Søk i meldingsinnhold"
-      ],
       "Secure Core servers": [
         "Secure Core-tjenere"
       ],
@@ -13582,9 +13547,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Opprett flere e-postadresser for dine nettbaserte identiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer, alexnyheter@${ domain2 } for nyhetsabonnement."
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Slumre/utsett meldinger og bli påminnet når du vil."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lagringsplass er delt mellom ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
@@ -13765,11 +13727,22 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Starter fra ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Den rabatterte prisen på ${ priceCoupon } er gyldig den første måneden. Deretter blir den automatisk fornyet til ${ priceLine }. Du kan avbryte når som helst."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Lås opp alle ${ BRAND_NAME }-premiumprodukter og funksjoner for bare ${ priceLine }. Avslutt når som helst."
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } prøveversjon"
+      ],
+      "Your account's usage": [
+        "Kontoens forbruk"
       ]
     },
     "new_plans: title": {
@@ -13790,14 +13763,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås opp premiumfunksjoner ved å oppgradere"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } prøveversjon"
-      ],
-      "Your account's usage": [
-        "Kontoens forbruk"
       ]
     },
     "new_plans: tooltip": {
@@ -14438,6 +14403,17 @@
         "Skrivebord"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Alle"
+      ],
+      "Group members": [
+        "Gruppemedlemmer"
+      ],
+      "No one": [
+        "Ingen"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10. i måneden"
@@ -14693,17 +14669,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Alle"
-      ],
-      "Group members": [
-        "Gruppemedlemmer"
-      ],
-      "No one": [
-        "Ingen"
       ]
     },
     "Option delay send seconds": {
@@ -16725,9 +16690,6 @@
       ]
     },
     "Settings description": {
-      "Complete the transition to privacy with our secure importing and forwarding tools.": [
-        "Fullfør overgangen til personvern med våre sikre import- og videresendingsverktøy."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Hold innboksen din organisert med mapper og etiketter. ${ learnMoreLink }"
       ]
@@ -18607,9 +18569,6 @@
       "Actions": [
         "Handlinger"
       ],
-      "Activate @pm.me": [
-        "Aktiver @pm.me"
-      ],
       "Activate organization key": [
         "Aktiver organisasjonsnøkkel"
       ],
@@ -18767,10 +18726,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -18805,9 +18764,6 @@
       ],
       "Clear": [
         "Tøm"
-      ],
-      "Clear out the junk": [
-        "Fjern søppelet"
       ],
       "Click a value in the table to use it as filter": [
         "Klikk på en verdi i tabellen for å bruke den som filter"
@@ -19208,6 +19164,15 @@
       "Folders and labels": [
         "Mapper og etiketter"
       ],
+      "For Linux": [
+        "For Linux"
+      ],
+      "For macOS": [
+        "For macOS"
+      ],
+      "For Windows": [
+        "For Windows"
+      ],
       "Forgot password": [
         "Glemt passord"
       ],
@@ -19332,17 +19297,11 @@
       "Import key": [
         "Importer nøkkel"
       ],
-      "Import messages": [
-        "Importer meldinger"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importer via ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Inactive 2FA": [
         "Inaktiv 2FA"
-      ],
-      "Increase your privacy with more addresses": [
-        "Øk personvernet ditt med flere adresser"
       ],
       "Information exposed in breach": [
         "Informasjon avslørt i brudd"
@@ -19364,9 +19323,6 @@
       ],
       "Items owned": [
         "Egne elementer"
-      ],
-      "Keep your inbox organized": [
-        "Hold innboksen din organisert"
       ],
       "Keyboard shortcuts": [
         "Tastatursnarveier"
@@ -19391,6 +19347,9 @@
       ],
       "Leave group?": [
         "Forlate gruppen?"
+      ],
+      "Limit reached": [
+        "Grense nådd"
       ],
       "Link confirmation": [
         "Bekreftelse av kobling"
@@ -19515,9 +19474,6 @@
       "PayPal verification failed": [
         "PayPal-bekreftelse mislyktes"
       ],
-      "Personalize your e-mail footer": [
-        "Tilpass bunnteksten i e-post"
-      ],
       "Personalize your email footer": [
         "Tilpass bunnteksten i e-post"
       ],
@@ -19638,9 +19594,6 @@
       "SAML authentication": [
         "SAML-autentisering"
       ],
-      "Save time with email filters": [
-        "Spar tid med e-postfiltre"
-      ],
       "Schedule meetings in one click": [
         "Planlegg møter med ett klikk"
       ],
@@ -19709,9 +19662,6 @@
       ],
       "Set up email forwarding": [
         "Konfigurer videresending av e-post"
-      ],
-      "Set up forwarding": [
-        "Sett opp videresending"
       ],
       "Set up two-factor authentication": [
         "Konfigurer tofaktorautentisering"
@@ -20648,8 +20598,8 @@
       "Recommended": [
         "Anbefalt"
       ],
-      "Save ${ totals.discountPercentage }%": [
-        "Spar ${ totals.discountPercentage }%"
+      "Save ${ price.uiData.discountPercent }%": [
+        "Spar ${ price.uiData.discountPercent }%"
       ]
     },
     "User referee invited via email": {

@@ -688,6 +688,9 @@
       "Get the deal": [
         "割引をゲット"
       ],
+      "Get the writing assistant": [
+        "執筆アシスタントを入手"
+      ],
       "Get verification code": [
         "認証コードを取得"
       ],
@@ -775,10 +778,10 @@
       "Keep": [
         "保持"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "編集を続ける"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "編集を続ける"
       ],
       "Keep logo": [
@@ -1138,10 +1141,10 @@
       "Select country ${ country }": [
         "国 ${ country }を選択"
       ],
-      "select file": [
+      "Select file": [
         "ファイルを選択"
       ],
-      "Select file": [
+      "select file": [
         "ファイルを選択"
       ],
       "Select files": [
@@ -1356,9 +1359,6 @@
       ],
       "Upgrade now": [
         "今すぐアップグレード"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME }Plusにアップグレード"
       ],
       "Upgrade to Business": [
         "ビジネスへのアップグレード"
@@ -2807,6 +2807,9 @@
       ]
     },
     "CountriesStep:Info": {
+      "${ selectedCitiesCount } cities selected": [
+        "${ selectedCitiesCount } 都市が選択されました"
+      ],
       "${ selectedCountriesCount } selected": [
         "${ selectedCountriesCount }個が選択済み"
       ]
@@ -3836,9 +3839,6 @@
       "Also included": [
         "含まれています"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "スパムや削除済みメッセージを自動的に削除し、アップグレードするとさらに多くのプレミアム機能を利用できます。"
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "30 日以上前にゴミ箱やスパムに移動されたメールを自動的に削除します。"
       ],
@@ -3941,9 +3941,6 @@
       "Send a code to your recovery email or phone": [
         "回復用メールアドレスまたは電話番号にコードを送信"
       ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "アップグレードすると、複数のメールアドレスを生活のシーンによって使い分け、より多くのプレミアム機能が利用できるようになります。"
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "すべてのユーザーに対してアカウントを設定し、${ BRAND_NAME }に参加するよう招待してください。"
       ],
@@ -3959,23 +3956,11 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "${ easySwitchLink }で、GoogleやOutlookから連絡先をインポート"
       ],
-      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "${ MAIL_APP_NAME }フッターを削除するには、アップグレードしてさらなるプレミアム機能をアンロックしましょう。"
-      ],
       "To start, give your organization a name.": [
         "まず、組織に名前を付けてください。"
       ],
       "Track the status and activity of your referrals.": [
         "招待の状態やアクティビティを確認します。"
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "アップグレードして短いメールアドレスとその他のプレミアム機能を使用できるようにします。"
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "アップグレードすると、受信トレイを整理するフィルターを無制限に作成するなどのプレミアム機能が利用できます。"
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "アップグレードすると、フォルダーやラベルを無制限に作成するなどのプレミアム機能が利用できます。"
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "現在のメールアドレスに加えて、短くて覚えやすいメールアドレスで${ activatePmUser }を獲得するためにアップグレードしてください。"
@@ -4235,6 +4220,14 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 または Windows 32-bit (ARM64)"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        "Debian / Ubuntu 用の .deb"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        "Fedora / Red Hat 用の .rpm"
       ]
     },
     "drive_signup_2023: Title": {
@@ -6466,44 +6459,11 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME } アプリ"
+      "${ appName } on App Store": [
+        "App Store での ${ appName }"
       ],
-      "account logins": [
-        "アカウントログイン"
-      ],
-      "Auto-forward Gmail": [
-        "Gmailへ自動転送"
-      ],
-      "auto-forwarding": [
-        "自動転送"
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "${ strongText } を ${ BRAND_NAME } のアドレスに変更します"
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "${ strongText } がどのように保護されているかをご覧ください"
-      ],
-      "Discover privacy features": [
-        "プライバシー機能の発見"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "AndroidまたはiOSで ${ strongText } を入手"
-      ],
-      "Get the App": [
-        "アプリを入手する"
-      ],
-      "privacy features": [
-        "プライバシー機能"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Gmail から ${ strongText } を設定する"
-      ],
-      "This feature is currently unavailable": [
-        "この機能は現在ご利用いただけません。"
-      ],
-      "Update your logins": [
-        "ログイン情報を更新する"
+      "${ appName } on Play Store": [
+        "Play Store での ${ appName }"
       ]
     },
     "Gmail forwarding": {
@@ -7114,9 +7074,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } からインポート"
-      ],
-      "Other": [
-        "その他"
       ]
     },
     "Import rollback status": {
@@ -8192,6 +8149,9 @@
       "Failed to fetch logs.": [
         "ログの読み込みに失敗しました。"
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "速くて集中力できる。メールとカレンダーをデスクトップ上で。"
+      ],
       "Featured in": [
         "注目の"
       ],
@@ -8395,9 +8355,6 @@
       ],
       "Import mailbox": [
         "メールボックスのインポート"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートします。"
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "重要: DNS コンソールで CNAME 値がドットで終わることが許可されていない場合は、CNAME 値の最後のドットを削除できます。"
@@ -9140,9 +9097,6 @@
       "Securing your account": [
         "アカウントを安全にしています"
       ],
-      "Select a service provider to start": [
-        "サービスプロバイダーを選択して開始"
-      ],
       "Select a service to continue": [
         "続けるサービスを選択してください"
       ],
@@ -9770,11 +9724,11 @@
       "User activated": [
         "ユーザーがアクティブ化"
       ],
-      "Username": [
-        "ユーザーネーム"
-      ],
       "username": [
         "ユーザー名"
+      ],
+      "Username": [
+        "ユーザーネーム"
       ],
       "Users": [
         "ユーザー"
@@ -10927,10 +10881,10 @@
       "Allow sharing outside the organization": [
         "組織外の共有を許可"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "許可されたドメイン"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "許可されたドメイン"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10942,11 +10896,11 @@
       "Amount due": [
         "支払い総額"
       ],
-      "AND": [
-        "かつ"
-      ],
       "And": [
         "と"
+      ],
+      "AND": [
+        "かつ"
       ],
       "and": [
         "と"
@@ -11010,6 +10964,9 @@
       ],
       "Backup password": [
         "バックアップパスワード"
+      ],
+      "Beta": [
+        "ベータ"
       ],
       "Billing cycle": [
         "支払い間隔"
@@ -11371,10 +11328,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "条件"
       ],
-      "If": [
+      "IF": [
         "条件"
       ],
       "Import all messages": [
@@ -11584,13 +11541,13 @@
       "Optional": [
         "任意"
       ],
-      "OR": [
-        "または"
-      ],
       "or": [
         "または"
       ],
       "Or": [
+        "または"
+      ],
+      "OR": [
         "または"
       ],
       "Organization name": [
@@ -12277,10 +12234,10 @@
       "perform a password reset from your active session": [
         "アクティブなセッションからパスワードリセットを実行する"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "プライバシーポリシー"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "プライバシーポリシー"
       ],
       "Reactivate now": [
@@ -12912,20 +12869,8 @@
       "From ${ price }": [
         "${ price } から"
       ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }で開始"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }から始める"
-      ],
       "Upgrade": [
         "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } へアップグレード"
       ]
     },
     "new_plans: feature": {
@@ -13073,9 +13018,6 @@
       "Auto-delete Spam and Trash": [
         "迷惑メールとごみ箱を自動削除"
       ],
-      "Auto-delete spam and trashed messages": [
-        "迷惑メールとごみ箱のメッセージを自動削除"
-      ],
       "Auto-reply": [
         "自動返信"
       ],
@@ -13120,9 +13062,6 @@
       ],
       "Custom fields": [
         "カスタムフィールド"
-      ],
-      "Custom snooze time": [
-        "スヌーズ時間をカスタム"
       ],
       "Custom workspace branding": [
         "カスタムワークスペースブランディング"
@@ -13274,12 +13213,6 @@
       "Schedule and snooze emails for any time": [
         "いつでもメールをスケジュールしてスヌーズする"
       ],
-      "Schedule messages at any time": [
-        "いつでもメッセージを送信予約できます"
-      ],
-      "Search message content": [
-        "メッセージ内容の検索"
-      ],
       "Secure Core servers": [
         "Secure Core サーバー"
       ],
@@ -13424,9 +13357,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "例えば、JohnShopper@${ domain }はショッピングアカウント用、JohnNews@${ domain2 }はニュース購読用です。"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "メッセージをスヌーズし、必要なときに再通知します"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
@@ -13614,6 +13544,14 @@
         "全ての ${ BRAND_NAME } プレミアム製品と機能を ${ priceLine }だけでアンロックできます。いつでもキャンセルできます。"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -13632,14 +13570,6 @@
       ],
       "Unlock premium features by upgrading": [
         "アップグレードしてプレミアム機能の制限を解除"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }トライアル"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -14273,6 +14203,17 @@
         "デスクトップ"
       ]
     },
+    "option": {
+      "Everyone": [
+        "みんな"
+      ],
+      "Group members": [
+        "グループメンバー"
+      ],
+      "No one": [
+        "誰も"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "毎月 10 日"
@@ -14507,17 +14448,6 @@
       ],
       "Trash": [
         "ごみ箱"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "みんな"
-      ],
-      "Group members": [
-        "グループメンバー"
-      ],
-      "No one": [
-        "誰も"
       ]
     },
     "Option delay send seconds": {
@@ -16515,9 +16445,6 @@
       ]
     },
     "Settings description": {
-      "Complete the transition to privacy with our secure importing and forwarding tools.": [
-        "安全なインポート・転送ツールで、プライバシーに移行しましょう。"
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "フォルダーとラベルで受信トレイを整理できます。${ learnMoreLink }"
       ]
@@ -18357,9 +18284,6 @@
       "Actions": [
         "アクション"
       ],
-      "Activate @pm.me": [
-        "@pm.meを有効にする"
-      ],
       "Activate organization key": [
         "組織の鍵を有効化する"
       ],
@@ -18516,10 +18440,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
       "Change login password": [
@@ -18554,9 +18478,6 @@
       ],
       "Clear": [
         "消去"
-      ],
-      "Clear out the junk": [
-        "ジャンクメールを自動で削除"
       ],
       "Click a value in the table to use it as filter": [
         "フィルターとして使うにはテーブル内の値をクリックしてください"
@@ -18954,6 +18875,15 @@
       "Folders and labels": [
         "フォルダーとラベル"
       ],
+      "For Linux": [
+        "Linuxの場合"
+      ],
+      "For macOS": [
+        "macOSの場合"
+      ],
+      "For Windows": [
+        "Windowsの場合"
+      ],
       "Forgot password": [
         "パスワードを忘れました"
       ],
@@ -19077,17 +19007,11 @@
       "Import key": [
         "インポートキー"
       ],
-      "Import messages": [
-        "メッセージのインポート"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH } でインポート"
       ],
       "Inactive 2FA": [
         "非アクティブな 2FA"
-      ],
-      "Increase your privacy with more addresses": [
-        "より多くのメールアドレスを使用してプライバシーを向上させましょう"
       ],
       "Information exposed in breach": [
         "侵害で漏洩した情報"
@@ -19109,9 +19033,6 @@
       ],
       "Items owned": [
         "所有するアイテム"
-      ],
-      "Keep your inbox organized": [
-        "受信トレイを整理整頓"
       ],
       "Keyboard shortcuts": [
         "キーボードショートカット"
@@ -19260,9 +19181,6 @@
       "PayPal verification failed": [
         "PayPal 認証に失敗しました。"
       ],
-      "Personalize your e-mail footer": [
-        "メールフッターを個別にカスタマイズする"
-      ],
       "Personalize your email footer": [
         "メールフッターを個別にカスタマイズする"
       ],
@@ -19383,9 +19301,6 @@
       "SAML authentication": [
         "SAML認証"
       ],
-      "Save time with email filters": [
-        "メールフィルターで時間を節約"
-      ],
       "Schedule meetings in one click": [
         "ワンクリックでミーティングをスケジュール"
       ],
@@ -19454,9 +19369,6 @@
       ],
       "Set up email forwarding": [
         "メール転送の設定"
-      ],
-      "Set up forwarding": [
-        "転送の設定"
       ],
       "Set up two-factor authentication": [
         "2 要素認証の設定"
@@ -20390,8 +20302,8 @@
       "Recommended": [
         "おすすめ"
       ],
-      "Save ${ totals.discountPercentage }%": [
-        "${ totals.discountPercentage }%を節約"
+      "Save ${ price.uiData.discountPercent }%": [
+        "${ price.uiData.discountPercent }%を節約"
       ]
     },
     "User referee invited via email": {

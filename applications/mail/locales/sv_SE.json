@@ -36,11 +36,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
+      "A to Z": [
+        "A till Ö"
+      ],
       "Activate": [
         "Aktivera"
       ],
       "Activate recovery": [
         "Aktivera återställning"
+      ],
+      "Active": [
+        "Aktiv"
       ],
       "Add": [
         "Lägg till"
@@ -189,6 +195,9 @@
       ],
       "Change page": [
         "Ändra sida"
+      ],
+      "Change sorting": [
+        "Ändra sortering"
       ],
       "Chat with us": [
         "Chatta med oss"
@@ -546,9 +555,6 @@
       "Generate text": [
         "Generera text"
       ],
-      "Get ${ BRAND_NAME } Duo": [
-        "Skaffa ${ BRAND_NAME } Duo"
-      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Skaffa ${ planName } för ${ priceCoupon }"
       ],
@@ -557,12 +563,6 @@
       ],
       "Get in touch": [
         "Kontakta oss"
-      ],
-      "Get it": [
-        "Skaffa det"
-      ],
-      "Get it from only ${ addonPriceWithCurrency } /month": [
-        "Få det från endast ${ addonPriceWithCurrency }/månad"
       ],
       "Get started": [
         "Kom igång"
@@ -736,6 +736,9 @@
       "Learn more": [
         "Lär dig mer"
       ],
+      "Least read": [
+        "Minst läst"
+      ],
       "Let's talk": [
         "Låt oss prata!"
       ],
@@ -853,6 +856,9 @@
       "More search options": [
         "Fler sökalternativ"
       ],
+      "Most read": [
+        "Mest läst"
+      ],
       "Move": [
         "Flytta"
       ],
@@ -870,6 +876,9 @@
       ],
       "Move to archive": [
         "Flytta till arkiv"
+      ],
+      "Move to folder": [
+        "Flytta till mapp"
       ],
       "Move to inbox": [
         "Flytta till inkorg"
@@ -1093,6 +1102,9 @@
       "Restore": [
         "Återställ"
       ],
+      "Resubscribe": [
+        "Prenumerera igen"
+      ],
       "Resume": [
         "Återuppta"
       ],
@@ -1144,11 +1156,11 @@
       "Select ${ planTitle }": [
         "Välj ${ planTitle }"
       ],
-      "Select All": [
-        "Välj alla"
-      ],
       "Select all": [
         "Markera alla"
+      ],
+      "Select All": [
+        "Välj alla"
       ],
       "Select all messages": [
         "Markera alla meddelanden"
@@ -1303,9 +1315,6 @@
       "Start setup": [
         "Starta inställning"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Startar från ${ priceUnlimited }"
-      ],
       "Stay": [
         "Stanna"
       ],
@@ -1363,6 +1372,10 @@
       "Trust": [
         "Lita på"
       ],
+      "Trust key": [
+        "Lita på nyckel",
+        "Lita på nycklar"
+      ],
       "Trust public key": [
         "Lita på offentlig nyckel"
       ],
@@ -1405,6 +1418,9 @@
       "Unsubscribe": [
         "Avsluta prenumeration"
       ],
+      "Unsubscribed": [
+        "Prenumeration avslutad"
+      ],
       "Unsubscribing": [
         "Avslutar prenumerationen"
       ],
@@ -1428,9 +1444,6 @@
       ],
       "Upgrade Now": [
         "Uppgradera nu"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Uppgradera till ${ BRAND_NAME } Unlimited"
       ],
       "Upload and share files": [
         "Ladda upp och dela filer"
@@ -3709,9 +3722,6 @@
       "Also included": [
         "Även inkluderat"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Ta bort skräppost och meddelanden i papperskorgen automatiskt och lås upp fler premiumfunktioner när du uppgraderar."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Rensa automatiskt bort e-post som flyttats till papperskorg och skräppost för mer än 30 dagar sedan."
       ],
@@ -3738,9 +3748,6 @@
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Tar bort kontakter... Detta kan ta några minuter. När processen är klar kan du stänga detta fönster."
-      ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Designad för användare som söker utökat skydd för sina konton."
       ],
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "Vill du inte skicka din e-post just nu? Schemalägg det för exakt rätt tid."
@@ -3775,9 +3782,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Bli aviserad om ditt lösenord eller annan data har läckts från en tredjepartstjänst."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ PLAN_NAMES[PLANS.BUNDLE] }"
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hjälp ditt team att säkert lagra lösenord till känslig företags- och klientinformation."
       ],
@@ -3803,9 +3807,6 @@
       "No labels": [
         "Inga etiketter"
       ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Spara tid genom att skicka e-post till alla på en gång med kontaktgrupper. Lås upp denna och andra premiumfunktioner när du uppgraderar."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
       ],
@@ -3820,9 +3821,6 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Förenkla synkronisering och schemaläggning med delade kalendrar."
-      ],
-      "Starting from ${ price }": [
-        "Startar från ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "För att fortsätta använda skrivassistenten, lägg till den i din prenumeration."
@@ -3845,26 +3843,8 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Slå på skydd för e-postspårning för att förhindra annonsörer och andra från att spåra din plats och onlineaktivitet."
       ],
-      "Unlock custom message scheduling and more premium features when you upgrade.": [
-        "Lås upp anpassad schemaläggning av meddelanden och fler premiumfunktioner när du uppgraderar."
-      ],
-      "Unlock custom snooze times and more premium features when you upgrade.": [
-        "Lås upp anpassade snoozetider och fler premiumfunktioner när du uppgraderar."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Lås upp kortare e-postadresser och andra premiumfunktioner genom att uppgradera."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Lås upp obegränsade filter som sorterar din inkorg åt dig och fler premiumfunktioner när du uppgraderar."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Lås upp obegränsade mappar, etiketter och fler premiumfunktioner när du uppgraderar."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Uppgradera för att få ${ activatePmUser } för en kortare e-postadress som är lätt att komma ihåg utöver din nuvarande."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Uppgradera ditt konto för att aktivera ${ PROTON_SENTINEL_NAME }, vår banbrytande AI-drivna säkerhetslösning med dedikerad expertsupport dygnet runt."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "Använd ${ MAIL_APP_NAME } för att logga in på tjänster online eftersom vi, till skillnad från andra e-postleverantörer, aldrig kommer att spåra din data och dela den med tredje part."
@@ -5925,8 +5905,17 @@
       "Import from ${ provider }": [
         "Importera från ${ provider }"
       ],
-      "Other": [
-        "Annat"
+      "Import from Google": [
+        "Importera från Google"
+      ],
+      "Import from other": [
+        "Importera från andra"
+      ],
+      "Import from Outlook": [
+        "Importera från Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importera från Yahoo"
       ]
     },
     "Import warning": {
@@ -5954,6 +5943,15 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse för att ${ enableDesktopNotifications }."
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, arkivera eller flytta gamla e-postmeddelanden till en mapp."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } vilka prenumerationer som inte längre är relevanta."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } från dem med ett klick."
       ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "${ BRAND_NAME } Scribe hjälper dig att skapa bättre e-postmeddelanden snabbt och enkelt."
@@ -6067,14 +6065,6 @@
         "${ n } oläst konversation",
         "${ n } olästa konversationer"
       ],
-      "${ numberOfImageTrackers } email tracker blocked": [
-        "${ numberOfImageTrackers } e-postspårare blockerad",
-        "${ numberOfImageTrackers } e-postspårare blockerade"
-      ],
-      "${ numberOfImageTrackers } tracker blocked": [
-        "${ numberOfImageTrackers } spårare blockerad",
-        "${ numberOfImageTrackers } spårare blockerade"
-      ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } länk rensad",
         "${ numberOfUTMTrackers } länkar rensade"
@@ -6140,6 +6130,10 @@
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
       ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } oläst",
+        "${ subscription.UnreadMessageCount } olästa"
+      ],
       "${ total } conversation": [
         "${ total } konversation",
         "${ total } konversationer"
@@ -6147,6 +6141,14 @@
       "${ total } message": [
         "${ total } meddelande",
         "${ total } meddelanden"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } e-postspårare blockerad",
+        "${ trackersCount } e-postspårare blockerade"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } spårare blockerad",
+        "${ trackersCount } spårare blockerade"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } schemalagt meddelande",
@@ -6266,6 +6268,15 @@
         "Alla (${ totalFoldersCount } etikett)",
         "Alla (${ totalFoldersCount } etiketter)"
       ],
+      "All messages from this mailing list will be marked as read.": [
+        "Alla meddelanden från denna e-postlista kommer att markeras som lästa."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Alla meddelanden från denna e-postlista kommer att flyttas till arkiv."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Alla meddelanden från denna e-postlista kommer att flyttas till papperskorg."
+      ],
       "All messages stored in this folder will be permanently deleted.": [
         "Alla meddelanden lagrade i denna mapp kommer att tas bort permanent."
       ],
@@ -6318,11 +6329,17 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Alla undermappar kommer också att tas bort. E-post lagrad i mappen ${ nameDeleted } kommer dock inte att tas bort och kan hittas i mappen ”All e-post”."
       ],
+      "Apply to future messages ": [
+        "Tillämpa till framtida meddelanden "
+      ],
       "Applying actions to conversations": [
         "Tillämpar åtgärder på konversationer"
       ],
       "Applying actions to messages": [
         "Tillämpar åtgärder på meddelanden"
+      ],
+      "Archive existing messages": [
+        "Arkivera befintliga meddelanden"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Är du säker på att du vill ta bort alla meddelanden i denna mapp?"
@@ -6408,11 +6425,17 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Förstärk din organisations varumärkesidentitet och skapa en mer konsekvent upplevelse online för dina användare."
       ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Ta med dina meddelanden, kontakter och kalendrar till ${ BRAND_NAME }."
+      ],
       "Browse privately and access blocked content.": [
         "Surfa privat och kom åt blockerat innehåll."
       ],
       "Browser not supported": [
         "Webbläsare stöds inte"
+      ],
+      "Bulk delete": [
+        "Massborttagning"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Genom att nedgradera till ett gratiskonto kommer du permanent att förlora dessa fördelar, även om du uppgraderar igen i framtiden."
@@ -6876,8 +6899,7 @@
         "Initierar…"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -6980,6 +7002,9 @@
       ],
       "Manage your labels": [
         "Hantera dina etiketter"
+      ],
+      "Mark all as read": [
+        "Markera alla som lästa"
       ],
       "Mastercard SecureCode logo": [
         "Logga för Mastercard SecureCode"
@@ -7122,11 +7147,17 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flera av dina betrodda nycklar markerades som \"läckta\" av dess ägare. Vi rekommenderar att du återkallar \"lita\" på dessa nycklar."
       ],
+      "One time import": [
+        "Engångsimport"
+      ],
       "Open shortcut cheat sheet": [
         "Öppna fuskblad för genvägar"
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Öppna guiden för rekommenderade åtgärder och användbara länkar."
+      ],
+      "Optional": [
+        "Valfritt"
       ],
       "or discover other features:": [
         "eller upptäck andra funktioner:"
@@ -7283,6 +7314,9 @@
       "Public sharing of documents is not yet supported.": [
         "Offentlig delning av dokument stöds ännu inte."
       ],
+      "Quickly spot": [
+        "Identifiera snabbt"
+      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Kontakta oss för att få hjälp med allt om ${ BRAND_NAME }."
       ],
@@ -7357,9 +7391,6 @@
       ],
       "Seems like you are all caught up for now": [
         "Ser ut som att du är ikapp just nu"
-      ],
-      "Select a service provider to start": [
-        "Välj en tjänsteleverantör för att starta"
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "Välj ${ elementsCount } i ${ location }",
@@ -7768,6 +7799,9 @@
       "Tracking": [
         "Spårning"
       ],
+      "Trash existing messages": [
+        "Kasta befintliga meddelanden"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
       ],
@@ -7791,6 +7825,9 @@
       ],
       "Unsaved changes": [
         "Osparade ändringar"
+      ],
+      "Unsubscribe": [
+        "Avsluta prenumeration"
       ],
       "Unsupported file": [
         "Fil stöds inte"
@@ -8517,6 +8554,12 @@
       " and ${ l }": [
         " och ${ l }"
       ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Markera alla meddelanden som lästa"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Flytta alla meddelanden till ${ boldFolderName }"
+      ],
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
       ],
@@ -8538,6 +8581,9 @@
       ],
       "Actions": [
         "Åtgärder"
+      ],
+      "Active filter:": [
+        "Aktivt filter:"
       ],
       "Add email address": [
         "Lägg till e-postadress"
@@ -8566,11 +8612,11 @@
       "Always move sender's emails": [
         "Flytta alltid avsändarens e-postmeddelanden"
       ],
-      "AND": [
-        "OCH"
-      ],
       "And": [
         "Och"
+      ],
+      "AND": [
+        "OCH"
       ],
       "and": [
         "och"
@@ -8586,6 +8632,9 @@
       ],
       "Apply filter to existing emails": [
         "Tillämpa filter till all befintlig e-post"
+      ],
+      "Apply to future messages": [
+        "Tillämpa till framtida meddelanden"
       ],
       "Attach screenshot(s)": [
         "Bifoga skärmdump(ar)"
@@ -8794,11 +8843,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "OM"
-      ],
       "If": [
         "Om"
+      ],
+      "IF": [
+        "OM"
       ],
       "Import all messages": [
         "Importera alla meddelanden"
@@ -8866,6 +8915,9 @@
       "Move ${ sidebarElementName }": [
         "Flytta ${ sidebarElementName }"
       ],
+      "Move messages to": [
+        "Flytta meddelande till"
+      ],
       "Move to": [
         "Flytta till"
       ],
@@ -8914,14 +8966,14 @@
       "Optional": [
         "Valfritt"
       ],
-      "OR": [
-        "ELLER"
-      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
+      ],
+      "OR": [
+        "ELLER"
       ],
       "Original link": [
         "Originallänk"
@@ -9033,6 +9085,9 @@
       ],
       "System information": [
         "Systeminformation"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Filtret är inaktiverat. Du kan aktivera det ${ settingsLink }"
       ],
       "Theme": [
         "Tema"
@@ -9186,6 +9241,11 @@
         "Till: ${ to }"
       ]
     },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Visa och hantera prenumerationer för nyhetsbrev och e-postlistor här."
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Sidopanel"
@@ -9264,6 +9324,9 @@
       ],
       "Folders": [
         "Mappar"
+      ],
+      "here": [
+        "här"
       ],
       "How to add users": [
         "Hur man lägger till användare"
@@ -9402,6 +9465,9 @@
       ],
       "Types of recovery methods": [
         "Typer av återställningsmetoder"
+      ],
+      "Views": [
+        "Visningar"
       ],
       "What’s this?": [
         "Vad är detta?"
@@ -9799,29 +9865,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Skaffa ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom igång för ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Startar från ${ pricing }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Uppgradera till ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -9843,6 +9886,14 @@
       ],
       "Switch plan": [
         "Byt paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Skaffa ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -9995,9 +10046,6 @@
       "Auto-delete Spam and Trash": [
         "Ta automatiskt bort skräppost och papperskorg"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Ta bort skräppost och kastade meddelanden automatiskt"
-      ],
       "Auto-reply": [
         "Automatiskt svar"
       ],
@@ -10039,9 +10087,6 @@
       ],
       "Custom fields": [
         "Anpassade fält"
-      ],
-      "Custom snooze time": [
-        "Anpassad snooztid"
       ],
       "Custom workspace branding": [
         "Anpassat utseende för arbetsyta"
@@ -10182,12 +10227,6 @@
       "Schedule and snooze emails for any time": [
         "Schemalägg och snooza e-post när som helst"
       ],
-      "Schedule messages at any time": [
-        "Schemalägg meddelanden när som helst"
-      ],
-      "Search message content": [
-        "Sök meddelandeinnehåll"
-      ],
       "Secure Core servers": [
         "Secure Core-servrar"
       ],
@@ -10324,9 +10363,6 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Skapa flera e-postadresser för dina onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton, JohnNews@${ domain2 } för nyhetsprenumeration"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Snooza meddelanden och bli påmind när du vill"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lagringsutrymmet delas mellan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } och ${ DRIVE_APP_NAME }"
       ]
@@ -10429,11 +10465,19 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Startar från ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Det rabatterade priset på ${ priceCoupon } är giltigt för den första månaden. Därefter kommer det förnyas automatiskt med ${ priceLine }. Du kan avbryta när som helst."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: title": {
@@ -10448,11 +10492,6 @@
       ],
       "Switch plans?": [
         "Byt paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -13409,9 +13448,6 @@
       "Action all messages": [
         "Åtgärda alla meddelanden"
       ],
-      "Activate @pm.me": [
-        "Aktivera @pm.me"
-      ],
       "Add a custom logo": [
         "Lägg till en anpassad logga"
       ],
@@ -13451,6 +13487,9 @@
       ],
       "Archive": [
         "Arkiv"
+      ],
+      "Archive all messages?": [
+        "Arkivera alla meddelanden?"
       ],
       "Are you sure you want to close the preview?": [
         "Är du säker på att du vill stänga förhandsgranskningen?"
@@ -13508,9 +13547,6 @@
       ],
       "Change password": [
         "Ändra lösenord"
-      ],
-      "Clear out the junk": [
-        "Rensa bort skräpet"
       ],
       "Clearing data": [
         "Rensar data"
@@ -13736,9 +13772,6 @@
       "Forward": [
         "Vidarebefordra"
       ],
-      "Get advanced protection": [
-        "Skaffa avancerat skydd"
-      ],
       "Get more from your VPN": [
         "Få ut mer av din VPN"
       ],
@@ -13812,9 +13845,6 @@
       "Invalid verification code": [
         "Ogiltig verifieringskod"
       ],
-      "Keep your inbox organized": [
-        "Håll din inkorg organiserad"
-      ],
       "Label as": [
         "Märk som"
       ],
@@ -13830,8 +13860,14 @@
       "Load remote content": [
         "Ladda fjärrinnehåll"
       ],
+      "Mail subscriptions": [
+        "E-postprenumerationer"
+      ],
       "Make a secure connection your default": [
         "Gör en säker anslutning till din standard"
+      ],
+      "Mark all messages as read": [
+        "Markera alla meddelanden som lästa"
       ],
       "Mark as read": [
         "Markera som läst"
@@ -13947,6 +13983,9 @@
       "No breaches detected": [
         "Inga intrång upptäckta"
       ],
+      "No mail subscriptions": [
+        "Inga e-postprenumerationer"
+      ],
       "No need to empty the trash": [
         "Inget behov att tömma papperskorgen"
       ],
@@ -14058,9 +14097,6 @@
       "Same inbox, shorter email address": [
         "Samma inkorg, kortare e-postadress"
       ],
-      "Save time with email filters": [
-        "Spara tid med e-postfilter"
-      ],
       "Schedule now, send later": [
         "Schemalägg nu, skicka senare"
       ],
@@ -14133,9 +14169,6 @@
       "Set up your organization": [
         "Ställ in din organisation"
       ],
-      "Set your own schedule": [
-        "Ställ in ditt eget schema"
-      ],
       "Settings": [
         "Inställningar"
       ],
@@ -14196,6 +14229,9 @@
       "Trash": [
         "Papperskorg"
       ],
+      "Trash all messages?": [
+        "Kasta alla meddelanden?"
+      ],
       "Trust new key?": [
         "Lita på ny nyckel?",
         "Lita på nya nycklar?"
@@ -14209,11 +14245,11 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
       ],
-      "Unlock contacts groups": [
-        "Lås upp kontaktgrupper"
-      ],
       "Unsubscribe": [
         "Avsluta prenumeration"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Avsluta prenumeration från ${ subscription.Name }?"
       ],
       "Unsubscribe request sent": [
         "Begäran om att avsluta prenumeration skickat"
@@ -14241,9 +14277,6 @@
       ],
       "VPN explained": [
         "VPN förklarat"
-      ],
-      "Want to snooze any time?": [
-        "Vill du snooza hur länge som helst?"
       ],
       "Warning": [
         "Varning"
@@ -14296,6 +14329,9 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Your subscriptions in one place": [
+        "Dina prenumerationer på ett ställe"
       ]
     },
     "Today icon tooltip in mini calendar": {
