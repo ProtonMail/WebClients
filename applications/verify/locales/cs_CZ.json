@@ -83,71 +83,6 @@
     "Cancellation upsell": {
       "Cloud storage and sharing for large files": [
         "Cloudové úložiště a sdílení velkých souborů"
-      ],
-      "Secure personal and shared calendar": [
-        "Zabezpečený osobní a sdílený kalendář"
-      ]
-    },
-    "color": {
-      "carrot": [
-        "mrkev"
-      ],
-      "cerise": [
-        "třešeň"
-      ],
-      "cobalt": [
-        "kobalt"
-      ],
-      "copper": [
-        "měď"
-      ],
-      "enzian": [
-        "hořec"
-      ],
-      "fern": [
-        "kapradina"
-      ],
-      "forest": [
-        "les"
-      ],
-      "ocean": [
-        "oceán"
-      ],
-      "olive": [
-        "oliva"
-      ],
-      "pacific": [
-        "pacifik"
-      ],
-      "pickle": [
-        "okurka"
-      ],
-      "pine": [
-        "borovice"
-      ],
-      "pink": [
-        "růžová"
-      ],
-      "plum": [
-        "švestka"
-      ],
-      "purple": [
-        "purpurová"
-      ],
-      "reef": [
-        "útes"
-      ],
-      "sahara": [
-        "sahara"
-      ],
-      "slateblue": [
-        "břidličná modř"
-      ],
-      "soil": [
-        "půda"
-      ],
-      "strawberry": [
-        "jahoda"
       ]
     },
     "Country name": {
@@ -1256,18 +1191,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent psaní ${ BRAND_NAME } Scribe"
       ],
-      "${ n } calendar": [
-        "${ n } kalendář",
-        "${ n } kalendáře",
-        "${ n } kalendářů",
-        "${ n } kalendářů"
-      ],
-      "${ n } calendar per user": [
-        "${ n } kalendář na uživatele",
-        "${ n } kalendáře na uživatele",
-        "${ n } kalendářů na uživatele",
-        "${ n } kalendářů na uživatele"
-      ],
       "${ n } custom email domain": [
         "${ n } vlastní e-mailová doména",
         "${ n } vlastní e-mailové domény",
@@ -1367,9 +1290,6 @@
       "Auto-delete Spam and Trash": [
         "Automatické smazání obsahu složek spam a koš"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Automaticky mazat zprávy ve spamu a koši"
-      ],
       "Auto-reply": [
         "Automatická odpověď"
       ],
@@ -1396,9 +1316,6 @@
       ],
       "Custom email domains": [
         "Vlastní e-mailové domény"
-      ],
-      "Custom snooze time": [
-        "Vlastní čas odložení"
       ],
       "Desktop app": [
         "Desktopová aplikace"
@@ -1451,20 +1368,8 @@
       "Schedule and snooze emails for any time": [
         "Naplánujte a odložte e-maily na později"
       ],
-      "Schedule messages at any time": [
-        "Plánování zpráv v libovolném čase"
-      ],
-      "Search message content": [
-        "Hledat v obsahu zpráv"
-      ],
       "Secure file storage and sharing": [
         "Bezpečné ukládání a sdílení souborů"
-      ],
-      "See team's availability": [
-        "Podívejte se, jaká je dostupnost týmu"
-      ],
-      "Send & receive invitations": [
-        "Odesílání a přijímání pozvánek"
       ],
       "Share files with no size limit": [
         "Sdílení souborů bez omezení velikosti"
@@ -1504,17 +1409,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Vytvořte více e-mailových adres pro své online identity, např. HonzaNakupy@${ domain } pro nákupní účty a HonzaZpravy@${ domain2 } pro odběry zpráv"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Odložte zprávy a nechte si je připomenout, kdy chcete"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: Zabezpečte svůj tarif pomocí koncového šifrování. Obsahuje podporu vlastních kalendářů, sdílení kalendáře a další funkce."
-      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
       ],
@@ -1545,17 +1444,8 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Vytvořte více e-mailových adres pro své online identity, např. HonzaNakupy@${ domain } pro nákupní účty a HonzaZpravy@${ domain } pro odběry zpráv"
       ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Vytvořte až ${ n } kalendář nebo přidejte kalendáře přátel, rodiny, kolegů a organizací",
-        "Vytvořte až ${ n } kalendáře nebo přidejte kalendáře přátel, rodiny, kolegů a organizací",
-        "Vytvořte až ${ n } kalendářů nebo přidejte kalendáře přátel, rodiny, kolegů a organizací",
-        "Vytvořte až ${ n } kalendářů nebo přidejte kalendáře přátel, rodiny, kolegů a organizací"
-      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvořte si až ${ n } e-mailových adres/aliasů, které můžete přiřadit členům rodiny. Používejte je pro online identity, např. HonzaNakupy@${ domain } při nakupování."
-      ],
-      "Easily share your calendars with your family, friends, or colleagues": [
-        "Snadno sdílejte své kalendáře s rodinou, přáteli nebo kolegy"
       ],
       "Email everyone in a group with a single email address": [
         "Odešlete e-mail všem členům skupiny pomocí jediné e-mailové adresy"
@@ -1565,9 +1455,6 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP podpora je omezená na využití v desktop aplikacích (např. Outlook, Apple Mail, Thunderbird) přes ${ MAIL_APP_NAME } Most. Kloudové IMAP integrace momentálně nejsou podporovány."
-      ],
-      "Keep your plans private to you and your family with an encrypted calendar": [
-        "Pomocí šifrovaného kalendáře uchovejte své plány v soukromí pouze pro sebe a svou rodinu"
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Jmenovky jsou jednoduché štítky, které můžete přidat ke zprávám aby se vám lépe hledaly a používaly filtry"
@@ -1589,9 +1476,6 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Bezpečně ukládejte údaje vašich kontaktů, např. telefonní číslo, adresu, narozeniny a osobní poznámky. Šifrování bez přístupu (koncové) znamená, že ani ${ BRAND_NAME } si nemůže přečíst tyto údaje."
-      ],
-      "See the availability of meeting participants and save time scheduling meetings": [
-        "Zjistěte dostupnost účastníků schůzek a ušetřete čas při jejich plánování"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Odešlete e-maily velkým skupinám rychle a snadno vytvořením kontaktních skupin (až 100 kontaktů na skupinu)"
@@ -1630,12 +1514,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Zvyšte úložný prostor na ${ bundleStorage } celkem"
-      ],
-      "Create up to ${ n } calendar": [
-        "Vytvořte až ${ n } kalendář",
-        "Vytvořte až ${ n } kalendáře",
-        "Vytvořte až ${ n } kalendářů",
-        "Vytvořte až ${ n } kalendářů"
       ],
       "Support for ${ n } custom email domains": [
         "Podpora ${ n } vlastních e-mailových domén"

@@ -83,71 +83,6 @@
     "Cancellation upsell": {
       "Cloud storage and sharing for large files": [
         "大きなファイルのためのクラウドストレージと共有"
-      ],
-      "Secure personal and shared calendar": [
-        "安全な個人向け及び共有のカレンダー"
-      ]
-    },
-    "color": {
-      "carrot": [
-        "キャロット"
-      ],
-      "cerise": [
-        "セリース"
-      ],
-      "cobalt": [
-        "コバルト"
-      ],
-      "copper": [
-        "赤錆色"
-      ],
-      "enzian": [
-        "濃藍"
-      ],
-      "fern": [
-        "緑"
-      ],
-      "forest": [
-        "フォレスト"
-      ],
-      "ocean": [
-        "オーシャン"
-      ],
-      "olive": [
-        "オリーブ"
-      ],
-      "pacific": [
-        "パシフィック"
-      ],
-      "pickle": [
-        "璃寛茶"
-      ],
-      "pine": [
-        "パイン"
-      ],
-      "pink": [
-        "ピンク"
-      ],
-      "plum": [
-        "プラム"
-      ],
-      "purple": [
-        "パープル"
-      ],
-      "reef": [
-        "リーフ"
-      ],
-      "sahara": [
-        "サハラ"
-      ],
-      "slateblue": [
-        "スレートブルー"
-      ],
-      "soil": [
-        "ソイル"
-      ],
-      "strawberry": [
-        "ストロベリー"
       ]
     },
     "Country name": {
@@ -1238,12 +1173,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタント"
       ],
-      "${ n } calendar": [
-        "${ n } 個のカレンダー"
-      ],
-      "${ n } calendar per user": [
-        "1 ユーザーあたり ${ n } 件のカレンダー"
-      ],
       "${ n } custom email domain": [
         "${ n } 件の独自メールドメイン"
       ],
@@ -1316,9 +1245,6 @@
       "Auto-delete Spam and Trash": [
         "迷惑メールとごみ箱を自動削除"
       ],
-      "Auto-delete spam and trashed messages": [
-        "迷惑メールとごみ箱のメッセージを自動削除"
-      ],
       "Auto-reply": [
         "自動返信"
       ],
@@ -1345,9 +1271,6 @@
       ],
       "Custom email domains": [
         "独自メールドメイン"
-      ],
-      "Custom snooze time": [
-        "スヌーズ時間をカスタム"
       ],
       "Desktop app": [
         "デスクトップアプリ"
@@ -1400,20 +1323,8 @@
       "Schedule and snooze emails for any time": [
         "いつでもメールをスケジュールしてスヌーズする"
       ],
-      "Schedule messages at any time": [
-        "いつでもメッセージを送信予約できます"
-      ],
-      "Search message content": [
-        "メッセージ内容の検索"
-      ],
       "Secure file storage and sharing": [
         "安全なファイルストレージと共有"
-      ],
-      "See team's availability": [
-        "チームの空き状況を確認"
-      ],
-      "Send & receive invitations": [
-        "招待を送受信"
       ],
       "Share files with no size limit": [
         "サイズ制限のないファイル共有"
@@ -1453,17 +1364,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "例えば、JohnShopper@${ domain }はショッピングアカウント用、JohnNews@${ domain2 }はニュース購読用です。"
       ],
-      "Snooze messages and get reminded when you want": [
-        "メッセージをスヌーズし、必要なときに再通知します"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: エンドツーエンドの暗号化でスケジュールを保護します。 カスタム カレンダー、カレンダー共有などのサポートが含まれます。"
-      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }：暗号化されたクラウドストレージでファイルを保護。自動同期、暗号化ファイル共有などを含みます。"
       ],
@@ -1494,14 +1399,8 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "複数のメールアドレスを作成して使用できます。例えば、買い物用に JohnShopper@${ domain } 、ニュース購読用に JohnNews@${ domain } を使用するなどです。"
       ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "${ n } 個までのカレンダーを作成または友人/家族/同僚/組織のカレンダーを追加"
-      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "最大 ${ n } 個のメール アドレス/エイリアスを作成し、家族に割り当てることができます。 これらはオンライン Id に使用します。\n例: ショッピングアカウントのJohnShopper@${ domain }。"
-      ],
-      "Easily share your calendars with your family, friends, or colleagues": [
-        "家族、友人、同僚とカレンダーを簡単に共有できます。"
       ],
       "Email everyone in a group with a single email address": [
         "一つのメールアドレスでグループ全員にメール"
@@ -1511,9 +1410,6 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP サポートは ${ MAIL_APP_NAME } Bridge を経由したデスクトップアプリ (Outlook、メール (Apple)、Thunderbird) のみに制限されます。クラウドベースの IMAP 統合は現在サポートされていません。"
-      ],
-      "Keep your plans private to you and your family with an encrypted calendar": [
-        "暗号化されたカレンダーで、自分自身や家族の予定を非公開にすることができます。"
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "ラベルはメッセージを簡単に探したり、フィルターを適用できるようにするシンプルなタグです"
@@ -1535,9 +1431,6 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "電話番号、住所、誕生日、個人的なメモなどの連絡先の詳細を安全に保存します。 ゼロアクセス暗号化により、${ BRAND_NAME } であってもアクセスできなくなります。"
-      ],
-      "See the availability of meeting participants and save time scheduling meetings": [
-        "会議の参加者の空き状況を確認し、会議のスケジュール設定の時間を節約する"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "必要な数の連絡先グループを作成することで、大規模なグループにメールを迅速かつ簡単に送信できます (グループあたり最大 100 件の連絡先)。"
@@ -1576,9 +1469,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "ストレージ容量を合計 ${ bundleStorage } に拡張"
-      ],
-      "Create up to ${ n } calendar": [
-        "最大 ${ n } 個までのカレンダーを作成"
       ],
       "Support for ${ n } custom email domains": [
         "${ n } 個のカスタムドメインメールアドレスのサポート"
