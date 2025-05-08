@@ -138,6 +138,8 @@ export const NewsletterSubscriptionCard = ({ subscription }: Props) => {
                             variant="large"
                             className="rounded relative"
                             displaySenderImage
+                            initialsStyle={{ '--h-custom': '2.25rem' }}
+                            initialsClassName="bg-strong flex h-custom items-center justify-center rounded w-full"
                         />
                     </div>
                     <div className="flex flex-column text-left gap-2 w-full md:gap-4 md:flex-row">
