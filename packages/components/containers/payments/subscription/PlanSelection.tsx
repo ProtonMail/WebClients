@@ -188,6 +188,7 @@ export function useAccessiblePlans({
     audience,
 }: AccessiblePlansHookProps) {
     const passLifetimeFeatureFlag = useFlag('PassLifetimeFrontend');
+    const lumoPlusEnabled = useFlag('LumoPlusFrontend');
 
     const plansMap = getPlansMap(plans, currency, false);
 
@@ -199,7 +200,7 @@ export function useAccessiblePlans({
         getVPNPlanToUse({ plansMap, planIDs, cycle: subscription?.Cycle }),
         PLANS.DRIVE,
         !user.hasPassLifetime && PLANS.PASS,
-        PLANS.LUMO,
+        lumoPlusEnabled && PLANS.LUMO,
     ].filter(isTruthy);
 
     let enabledProductB2CPlans = enabledProductB2CPlanNames.map((planName) => plansMap[planName]).filter(isTruthy);
