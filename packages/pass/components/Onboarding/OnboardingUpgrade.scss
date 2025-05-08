@@ -1,0 +1,42 @@
+.pass-onboarding-upgrade {
+	.description {
+		&--banner-badge {
+			width: 78px;
+			background: linear-gradient(30deg, #F6C592 50%, #D397BE 90%), #191927;
+		}
+		&--banner-card {
+			border: 2px solid var(--signal-warning);
+		}
+	}
+
+	.table {
+		&--main-content {
+			th, td {
+				border-bottom: 0;
+			}
+
+			th:nth-child(3) {
+				background-color: var(--background-weak);
+				border-radius: 1rem 1rem 0 0;
+			}
+
+			tr {
+				td:nth-child(3) {
+					background-color: var(--background-weak);
+				}
+			}
+
+			tr:last-child {
+				td:nth-child(3) {
+					background-color: var(--background-weak);
+					border-radius: 0 0 1rem 1rem;
+				}
+			}
+
+			/* Override the hover BG only for this table */
+			.pass-table--row:hover {
+				background-color: inherit;
+			}
+		}
+	}
+}

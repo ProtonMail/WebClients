@@ -27,3 +27,8 @@
 		}
 	}
 }
+
+.bg-invert {
+	background-color: var(--background-invert);
+	color: var(--text-invert);
+}
