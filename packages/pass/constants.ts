@@ -100,6 +100,9 @@ export enum UpsellRef {
     PROTON_BDAY_25_BUNDLE_WEB = 'proton_bday_25_bundle_web',
     PROTON_BDAY_25_DUO_WEB = 'proton_bday_25_duo_web',
     PROTON_BDAY_25_FAMILY_WEB = 'proton_bday_25_family_web',
+    LIFETIME_PLAN_ONBOARDING = 'lifetime_plan_onboarding',
+    PLUS_PLAN_ONBOARDING = 'plus_plan_onboarding',
+    UNLIMITED_PLAN_ONBOARDING = 'unlimited_plan_onboarding',
 }
 
 export const MAX_LOCAL_STORAGE_SIZE = 5 * 1024 * 1024; /* 5MB */
@@ -127,7 +130,7 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
 export const RUNTIME_RELOAD_TIMEOUT = 2_000; /* ms */
 export const RUNTIME_RELOAD_THROTTLE = 10; /* seconds */
 
-export const PASS_DEFAULT_THEME = PassThemeOption.PassDark;
+export const PASS_DEFAULT_THEME = PassThemeOption.OS;
 
 export const FILE_UNIQUE_ID_LENGTH = 16;
 export const FILE_CHUNK_SIZE = 4 * 1024 * 1024; // 5MB
