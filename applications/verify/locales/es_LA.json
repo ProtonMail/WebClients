@@ -83,71 +83,6 @@
     "Cancellation upsell": {
       "Cloud storage and sharing for large files": [
         "Almacenamiento en la nube e intercambio de archivos grandes"
-      ],
-      "Secure personal and shared calendar": [
-        "Calendario personal y compartido seguro"
-      ]
-    },
-    "color": {
-      "carrot": [
-        "zanahoria"
-      ],
-      "cerise": [
-        "cereza"
-      ],
-      "cobalt": [
-        "cobalto"
-      ],
-      "copper": [
-        "cobre"
-      ],
-      "enzian": [
-        "genciana"
-      ],
-      "fern": [
-        "helecho"
-      ],
-      "forest": [
-        "bosque"
-      ],
-      "ocean": [
-        "océano"
-      ],
-      "olive": [
-        "aceituna"
-      ],
-      "pacific": [
-        "pacífico"
-      ],
-      "pickle": [
-        "pepinillo"
-      ],
-      "pine": [
-        "pino"
-      ],
-      "pink": [
-        "rosa"
-      ],
-      "plum": [
-        "ciruela"
-      ],
-      "purple": [
-        "púrpura"
-      ],
-      "reef": [
-        "arrecife"
-      ],
-      "sahara": [
-        "sahara"
-      ],
-      "slateblue": [
-        "azul pizarra"
-      ],
-      "soil": [
-        "suelo"
-      ],
-      "strawberry": [
-        "fresa"
       ]
     },
     "Country name": {
@@ -1244,14 +1179,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
       ],
-      "${ n } calendar": [
-        "${ n } calendario",
-        "${ n } calendarios"
-      ],
-      "${ n } calendar per user": [
-        "${ n } calendario por usuario",
-        "${ n } calendarios por usuario"
-      ],
       "${ n } custom email domain": [
         "${ n } dominio de correo electrónico personalizado",
         "${ n } dominios de correo electrónico personalizados"
@@ -1333,9 +1260,6 @@
       "Auto-delete Spam and Trash": [
         "Eliminación automática de spam y papelera"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Eliminar automáticamente spam y mensajes de la papelera"
-      ],
       "Auto-reply": [
         "Respuesta automática"
       ],
@@ -1362,9 +1286,6 @@
       ],
       "Custom email domains": [
         "Dominios de correo electrónico personalizados"
-      ],
-      "Custom snooze time": [
-        "Tiempo de pausa personalizado"
       ],
       "Desktop app": [
         "App de escritorio"
@@ -1417,20 +1338,8 @@
       "Schedule and snooze emails for any time": [
         "Programar y pausar correos a cualquier hora"
       ],
-      "Schedule messages at any time": [
-        "Programar mensajes a cualquier hora"
-      ],
-      "Search message content": [
-        "Buscar contenido del mensaje"
-      ],
       "Secure file storage and sharing": [
         "Almacenamiento y uso compartido seguro de archivos"
-      ],
-      "See team's availability": [
-        "Ver la disponibilidad del equipo"
-      ],
-      "Send & receive invitations": [
-        "Enviar y recibir invitaciones"
       ],
       "Share files with no size limit": [
         "Comparta archivos sin límite de tamaño"
@@ -1470,17 +1379,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Cree múltiples direcciones de correo para sus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain2 } para suscripciones de noticias"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Pause los mensajes y reciba un recordatorio cuando quiera."
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: Proteja el calendario con cifrado de extremo a extremo. Incluye compatibilidad con calendarios personalizados, calendarios compartidos y más."
-      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Proteja sus archivos con almacenamiento cifrado en la nube. Incluye sincronización automática, intercambio de archivos cifrado y más."
       ],
@@ -1511,15 +1414,8 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Cree múltiples direcciones de correo para sus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain } para suscripciones de noticias"
       ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Cree ${ n } calendario o agregue calendarios de amistades, familiares, colegas y organizaciones.",
-        "Cree hasta ${ n } calendarios o agregue calendarios de amistades, familiares, colegas y organizaciones."
-      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Cree hasta ${ n } direcciones de correo/alias que puede asignar a sus familiares. Úselas para las identidades en línea, p.ej., JuanCompras@${ domain } para cuentas de compras."
-      ],
-      "Easily share your calendars with your family, friends, or colleagues": [
-        "Comparta calendarios con familiares, amistades y colegas fácilmente"
       ],
       "Email everyone in a group with a single email address": [
         "Envíe correos a todos en un grupo con una sola dirección de correo"
@@ -1529,9 +1425,6 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Solo se puede usar IMAP con aplicaciones de escritorio (Outlook, Mail de Apple o Thunderbird) con ${ MAIL_APP_NAME } Bridge. Por ahora no existe compatibilidad con integraciones IMAP en la nube."
-      ],
-      "Keep your plans private to you and your family with an encrypted calendar": [
-        "Mantenga privados sus planes y los de su familia con un calendario cifrado"
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Las etiquetas son muy fáciles de agregar a los mensajes y le permiten encontrarlos fácilmente o aplicarles filtros"
@@ -1553,9 +1446,6 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Almacene de forma segura los detalles de los contactos, como el número de teléfono, la dirección, la fecha de nacimiento y las notas personales. El cifrado de acceso cero garantiza que incluso ${ BRAND_NAME } no pueda acceder a ellos."
-      ],
-      "See the availability of meeting participants and save time scheduling meetings": [
-        "Vea la disponibilidad de los participantes de la reunión y ahorre tiempo programando reuniones"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Envíe correos electrónicos a muchas personas fácil y rápidamente creando todos los grupos de contactos que necesite (hasta 100 contactos por grupo)"
@@ -1594,10 +1484,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Aumente el espacio de almacenamiento hasta ${ bundleStorage }"
-      ],
-      "Create up to ${ n } calendar": [
-        "Cree hasta ${ n } calendario",
-        "Cree hasta ${ n } calendarios"
       ],
       "Support for ${ n } custom email domains": [
         "Soporte para ${ n } dominios de correo personalizados"

@@ -83,71 +83,6 @@
     "Cancellation upsell": {
       "Cloud storage and sharing for large files": [
         "Воблачнае сховішча і абагульванне для вялікіх файлаў"
-      ],
-      "Secure personal and shared calendar": [
-        "Бяспечны асабісты і абагулены каляндар"
-      ]
-    },
-    "color": {
-      "carrot": [
-        "маркоўны"
-      ],
-      "cerise": [
-        "вішнёвы"
-      ],
-      "cobalt": [
-        "кобальтавы"
-      ],
-      "copper": [
-        "медны"
-      ],
-      "enzian": [
-        "чарнільны"
-      ],
-      "fern": [
-        "папаратнікавы"
-      ],
-      "forest": [
-        "лясны"
-      ],
-      "ocean": [
-        "акіянічны"
-      ],
-      "olive": [
-        "аліўкавы"
-      ],
-      "pacific": [
-        "ціхаакіянскі"
-      ],
-      "pickle": [
-        "агурочны"
-      ],
-      "pine": [
-        "сасновы"
-      ],
-      "pink": [
-        "ружовы"
-      ],
-      "plum": [
-        "слівавы"
-      ],
-      "purple": [
-        "фіялетавы"
-      ],
-      "reef": [
-        "рыфавы"
-      ],
-      "sahara": [
-        "сахара"
-      ],
-      "slateblue": [
-        "сланцава-блакітны"
-      ],
-      "soil": [
-        "зямлісты"
-      ],
-      "strawberry": [
-        "клубнічны"
       ]
     },
     "Country name": {
@@ -1256,18 +1191,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
-      "${ n } calendar": [
-        "${ n } каляндар",
-        "${ n } календары",
-        "${ n } календароў",
-        "${ n } календароў"
-      ],
-      "${ n } calendar per user": [
-        "${ n } каляндар на карыстальніка",
-        "${ n } календары на карыстальніка",
-        "${ n } календароў на карыстальніка",
-        "${ n } календароў на карыстальніка"
-      ],
       "${ n } custom email domain": [
         "${ n } карыстальніцкі дамен электроннай пошты",
         "${ n } карыстальніцкія дамены электроннай пошты",
@@ -1367,9 +1290,6 @@
       "Auto-delete Spam and Trash": [
         "Аўтаматычнае выдаленне спаму і смецця"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Аўтаматычна выдаляць паведамленні ў спаме і сметніцы"
-      ],
       "Auto-reply": [
         "Аўтаматычны адказ"
       ],
@@ -1396,9 +1316,6 @@
       ],
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
-      ],
-      "Custom snooze time": [
-        "Карыстальніцкі час адкладання"
       ],
       "Desktop app": [
         "Настольная праграма"
@@ -1451,20 +1368,8 @@
       "Schedule and snooze emails for any time": [
         "Планаванне і адкладанне лістоў у любы час"
       ],
-      "Schedule messages at any time": [
-        "Заплануйце адпраўку паведамленняў у любы час"
-      ],
-      "Search message content": [
-        "Пошук змесціва паведамлення"
-      ],
       "Secure file storage and sharing": [
         "Бяспечнае файлавае сховішча і абагульванне"
-      ],
-      "See team's availability": [
-        "Прагляд даступнасці каманды"
-      ],
-      "Send & receive invitations": [
-        "Адпраўка і атрыманне запрашэнняў"
       ],
       "Share files with no size limit": [
         "Абагульванне файлаў без абмежавання памеру"
@@ -1504,17 +1409,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Стварайце некалькі розных адрасоў электроннай пошты для сваіх пасведчанняў у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain2 } для падпіскі на навіны"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Адкладайце паведамленні і атрымлівайце напаміны, калі вам гэта неабходна"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: Абараняйце свой расклад з дапамогай скразнога шыфравання. Уключае падтрымку для карыстальніцкіх календароў, абагуленых календароў і іншыя функцыі."
-      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: абараняйце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ],
@@ -1545,17 +1444,8 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Стварайце некалькі розных адрасоў электроннай пошты для сваіх пасведчанняў у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain } для падпіскі на навіны"
       ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Стварайце да ${ n } календара або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
-        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
-        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
-        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
-      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Стварыце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтыфікацыі ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
-      ],
-      "Easily share your calendars with your family, friends, or colleagues": [
-        "Лёгка дзяліцеся вашымі календарамі з сям'ёй, сябрамі або калегамі"
       ],
       "Email everyone in a group with a single email address": [
         "Адпраўка паведамлення кожнаму ў групе з адзінага адраса электроннай пошты"
@@ -1565,9 +1455,6 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Падтрымка IMAP абмежавана выкарыстаннем праграм для камп'ютараў (напрыклад, Outlook, Apple Mail, Thunderbird) праз ${ MAIL_APP_NAME } Bridge. Воблачныя сродкі інтэграцыі IMAP у дадзены момант не падтрымліваюцца."
-      ],
-      "Keep your plans private to you and your family with an encrypted calendar": [
-        "Трымайце ў прыватнасці свае і сямейныя планы з зашыфраваным календаром"
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або ўжываць фільтры"
@@ -1589,9 +1476,6 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Бяспечна захоўвайце кантактныя звесткі, такія як нумары тэлефонаў, адрасы, дні нараджэнняў і іншыя асабістыя нататкі. Шыфраванне з нулявым доступам гарантуе, што даныя не будуць даступны нікому, нават супрацоўнікам ${ BRAND_NAME }."
-      ],
-      "See the availability of meeting participants and save time scheduling meetings": [
-        "Прагляд даступнасці ўдзельнікаў сустрэчы і эканомія часу пры планаванні сустрэч"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Хутка і лёгка адпраўляйце электронныя лісты вялікім групам з дапамогай стварэння неабходнай колькасці груп кантактаў (да 100 кантактаў у кожнай групе)"
@@ -1630,12 +1514,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Палепшыце агульны аб'ём свайго сховішча да ${ bundleStorage }"
-      ],
-      "Create up to ${ n } calendar": [
-        "Стварыць да ${ n } календара",
-        "Стварыць да ${ n } календароў",
-        "Стварыць да ${ n } календароў",
-        "Стварыць да ${ n } календароў"
       ],
       "Support for ${ n } custom email domains": [
         "Падтрымка для ${ n } карыстальніцкіх даменаў электроннай пошты"

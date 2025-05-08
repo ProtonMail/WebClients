@@ -83,71 +83,6 @@
     "Cancellation upsell": {
       "Cloud storage and sharing for large files": [
         "Αποθήκευση και κοινή χρήση στο cloud για μεγάλα αρχεία"
-      ],
-      "Secure personal and shared calendar": [
-        "Ασφαλές προσωπικό και κοινόχρηστο ημερολόγιο"
-      ]
-    },
-    "color": {
-      "carrot": [
-        "καρότο"
-      ],
-      "cerise": [
-        "κεράσι"
-      ],
-      "cobalt": [
-        "κοβάλτιο"
-      ],
-      "copper": [
-        "χαλκός"
-      ],
-      "enzian": [
-        "βαθύ μπλέ"
-      ],
-      "fern": [
-        "φτέρη"
-      ],
-      "forest": [
-        "δάσος"
-      ],
-      "ocean": [
-        "ωκεανός"
-      ],
-      "olive": [
-        "λαδί"
-      ],
-      "pacific": [
-        "ειρηνικός"
-      ],
-      "pickle": [
-        "τουρσί"
-      ],
-      "pine": [
-        "πεύκο"
-      ],
-      "pink": [
-        "ροζ"
-      ],
-      "plum": [
-        "δαμάσκηνο"
-      ],
-      "purple": [
-        "μωβ"
-      ],
-      "reef": [
-        "ύφαλος"
-      ],
-      "sahara": [
-        "Σαχάρα"
-      ],
-      "slateblue": [
-        "μπλε ροζέ"
-      ],
-      "soil": [
-        "χώμα"
-      ],
-      "strawberry": [
-        "φράουλα"
       ]
     },
     "Country name": {
@@ -1244,14 +1179,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe βοηθός γραφής"
       ],
-      "${ n } calendar": [
-        "${ n } ημερολόγιο",
-        "${ n } ημερολόγια"
-      ],
-      "${ n } calendar per user": [
-        "${ n } ημερολόγιο ανά χρήστη",
-        "${ n } ημερολόγια ανά χρήστη"
-      ],
       "${ n } custom email domain": [
         "${ n } προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου",
         "${ n } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
@@ -1333,9 +1260,6 @@
       "Auto-delete Spam and Trash": [
         "Αυτόματη διαγραφή Ανεπιθύμητων μηνυμάτων και Κάδου απορριμμάτων"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Αυτόματη διαγραφή διαγραμμένων και απορριφθέντων μηνυμάτων"
-      ],
       "Auto-reply": [
         "Αυτόματη απάντηση"
       ],
@@ -1362,9 +1286,6 @@
       ],
       "Custom email domains": [
         "Προσαρμοσμένοι τομείς"
-      ],
-      "Custom snooze time": [
-        "Προσαρμοσμένος χρόνος αναβολής"
       ],
       "Desktop app": [
         "Εφαρμογή σταθερού υπολογιστή"
@@ -1417,20 +1338,8 @@
       "Schedule and snooze emails for any time": [
         "Προγραμματίστε και αναβάλλετε μηνύματα ηλεκτρονικού ταχυδρομείου για οποιαδήποτε στιγμή"
       ],
-      "Schedule messages at any time": [
-        "Προγραμματισμός μηνυμάτων ανά πάσα στιγμή"
-      ],
-      "Search message content": [
-        "Αναζήτηση εντός περιεχομένου μηνυμάτων"
-      ],
       "Secure file storage and sharing": [
         "Ασφαλής αποθήκευση και κοινή χρήση αρχείων"
-      ],
-      "See team's availability": [
-        "Δείτε τη διαθεσιμότητα της ομάδας"
-      ],
-      "Send & receive invitations": [
-        "Αποστολή & λήψη προσκλήσεων"
       ],
       "Share files with no size limit": [
         "Κοινή χρήση αρχείων χωρίς όριο μεγέθους"
@@ -1470,17 +1379,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Δημιουργήστε πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου για τις διαδικτυακές ταυτότητες σας, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών, JohnNews@${ domain2 } για συνδρομή ειδήσεων"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Αναβολή μηνυμάτων και λήψη υπενθύμισης όποτε θέλετε"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: Ασφαλίστε το χρονοδιάγραμμά σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένα ημερολόγια, κοινή χρήση ημερολογίου και πολλά άλλα."
-      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης στο cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ],
@@ -1511,15 +1414,8 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Δημιουργήστε πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου για τις διαδικτυακές ταυτότητες σας, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών, JohnNews@${ domain } για συνδρομή ειδήσεων"
       ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Δημιουργήστε έως και ${ n } ημερολόγιο ή προσθέστε ημερολόγια από φίλους, συγγενείς, συναδέλφους και οργανισμούς",
-        "Δημιουργήστε έως και ${ n } ημερολόγια ή προσθέστε ημερολόγια από φίλους, συγγενείς, συναδέλφους και οργανισμούς"
-      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Δημιουργήστε έως και ${ n } διευθύνσεις ηλεκτρονικού ταχυδρομείου/ψευδώνυμα που μπορείτε να αντιστοιχίσετε σε μέλη της οικογένειας. Χρησιμοποιήστε τα για διαδικτυακές ταυτότητες, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών."
-      ],
-      "Easily share your calendars with your family, friends, or colleagues": [
-        "Μοιραστείτε εύκολα τα ημερολόγιά σας με την οικογένεια, τους φίλους ή τους συναδέλφους σας"
       ],
       "Email everyone in a group with a single email address": [
         "Στείλτε μηνύματα ηλεκτρονικού ταχυδρομείου σε όλα τα μέλη μιας ομάδας με μία μόνο διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -1529,9 +1425,6 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Η υποστήριξη IMAP περιορίζεται στη χρήση εφαρμογών επιφάνειας εργασίας (π.χ. Outlook, Apple Mail, Thunderbird) μέσω του ${ MAIL_APP_NAME } Bridge. Οι ενσωματώσεις IMAP που βασίζονται στο cloud δεν υποστηρίζονται προς το παρόν."
-      ],
-      "Keep your plans private to you and your family with an encrypted calendar": [
-        "Διατηρήστε τα σχέδιά σας ιδιωτικά για εσάς και την οικογένειά σας με ένα κρυπτογραφημένο ημερολόγιο"
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Οι ετικέτες είναι απλό κείμενο που μπορείτε να προσθέσετε στα μηνύματα για να διευκολύνετε την εύρεση ή την εφαρμογή φίλτρων"
@@ -1553,9 +1446,6 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Αποθηκεύστε με ασφάλεια τα στοιχεία των επαφών σας, όπως τον αριθμό τηλεφώνου, τη διεύθυνση, τα γενέθλια και τις προσωπικές σημειώσεις. Η κρυπτογράφηση μηδενικής πρόσβασης διασφαλίζει ότι ακόμη και η${ BRAND_NAME } δεν μπορεί να έχουν πρόσβαση σε αυτά."
-      ],
-      "See the availability of meeting participants and save time scheduling meetings": [
-        "Δείτε τη διαθεσιμότητα των συμμετεχόντων στη σύσκεψη και εξοικονομήστε χρόνο προγραμματίζοντας συναντήσεις"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Στείλτε μηνύματα ηλεκτρονικού ταχυδρομείου σε μεγάλες ομάδες γρήγορα και εύκολα δημιουργώντας όσες ομάδες επαφών χρειάζεστε (έως 100 επαφές ανά ομάδα)"
@@ -1594,10 +1484,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Μεγαλώστε τον αποθηκευτικό σας χώρο σε συνολικά ${ bundleStorage }"
-      ],
-      "Create up to ${ n } calendar": [
-        "Δημιουργήστε μέχρι και ${ n } ημερολόγιο",
-        "Δημιουργήστε μέχρι και ${ n } ημερολόγια"
       ],
       "Support for ${ n } custom email domains": [
         "Υποστήριξη για ${ n } παραμετροποιημένους τομείς ηλεκτρονικού ταχυδρομείου"
