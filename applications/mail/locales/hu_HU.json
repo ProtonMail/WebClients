@@ -546,9 +546,6 @@
       "Generate text": [
         "Szöveg létrehozása"
       ],
-      "Get ${ BRAND_NAME } Duo": [
-        "Szerezzen ${ BRAND_NAME } Duo-t"
-      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName } csomag beszerzése ${ priceCoupon } áron"
       ],
@@ -557,12 +554,6 @@
       ],
       "Get in touch": [
         "Lépjen velünk kapcsolatba"
-      ],
-      "Get it": [
-        "Szerezze meg"
-      ],
-      "Get it from only ${ addonPriceWithCurrency } /month": [
-        "Szerezze be csak ${ addonPriceWithCurrency } / havonta"
       ],
       "Get started": [
         "Kezdés"
@@ -871,6 +862,9 @@
       "Move to archive": [
         "Archiválás"
       ],
+      "Move to folder": [
+        "Áthelyezés mappába"
+      ],
       "Move to inbox": [
         "Áthelyezés a beérkezett üzenetekhez"
       ],
@@ -1144,10 +1138,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } választása"
       ],
-      "Select All": [
+      "Select all": [
         "Összes kijelölése"
       ],
-      "Select all": [
+      "Select All": [
         "Összes kijelölése"
       ],
       "Select all messages": [
@@ -1303,9 +1297,6 @@
       "Start setup": [
         "Beállítás megkezdése"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Kezdőár: ${ priceUnlimited }"
-      ],
       "Stay": [
         "Marad"
       ],
@@ -1362,6 +1353,10 @@
       ],
       "Trust": [
         "Megbízható"
+      ],
+      "Trust key": [
+        "Megbízható kulcs",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -1428,9 +1423,6 @@
       ],
       "Upgrade Now": [
         "Váltás nagyobb csomagra"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Frissítsen a ${ BRAND_NAME } Unlimited verzióra"
       ],
       "Upload and share files": [
         "Fájlok feltöltése és megosztása"
@@ -3700,9 +3692,6 @@
       "Also included": [
         "Benne van a csomagban"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "A levélszemét és a Lomtárba helyezett üzenetek automatikus törlése, és még több prémium funkció feloldása a verzió frissítése után."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Automatikusan üríti a 30 napnál régebbi, Lomtárba és levélszemétbe helyezett e-maileket."
       ],
@@ -3718,9 +3707,6 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek törlése. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Azoknak a felhasználóknak készült, akik fokozott védelmet szeretnének a fiókjukhoz."
-      ],
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "Nem akarja most elküldeni az e-mailt? Ütemezze át a megfelelő időpontra."
       ],
@@ -3732,9 +3718,6 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Kapjon értesítést ha az ön jelszava vagy más információja benne volt egy harmadik féltől származó adatszivárgásban."
-      ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Tegyen szert korlátlan számú e-mail álnévre és 500 GB tárhelyre a ${ PLAN_NAMES[PLANS.BUNDLE] } csomaggal."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Az importálás alatt álló fájl csoportokat is tartalmaz. Határozza meg, hogyan kerüljenek importálásra a csoportok."
@@ -3755,9 +3738,6 @@
       "No labels": [
         "Nincsenek címkék"
       ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Takarítson meg időt azzal, hogy névjegy csoportok segítségével egyszerre küld e-maileket mindenkinek. Oldja fel ezt és más prémium funkciókat a verziófrissítéssel."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Válassza külön élete különböző részeit több e-mail címmel és érjen el még több prémium funkciót, nagyobb csomagra váltással."
       ],
@@ -3766,9 +3746,6 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Állítson be egy helyreállítási módszert, hogy megakadályozza a fiókjához való hozzáférés elvesztését."
-      ],
-      "Starting from ${ price }": [
-        "Kezdőár: ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Ha továbbra is használni szeretné az írási segédet, adja hozzá az előfizetéséhez."
@@ -3788,26 +3765,8 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Kapcsolja be az e-mail nyomkövetés elleni védelmet, hogy megakadályozza, hogy a hirdetők és mások nyomon kövessék az Ön tartózkodási helyét és online tevékenységét."
       ],
-      "Unlock custom message scheduling and more premium features when you upgrade.": [
-        "Frissítsen, és oldja fel az egyéni ütemezett üzenetküldést és a további prémium funkciókat."
-      ],
-      "Unlock custom snooze times and more premium features when you upgrade.": [
-        "Frissítéssel egyéni halasztási időket és további prémium funkciókat oldhat fel."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Szerezzen rövidebb e-mail címeket és egyéb prémium funkciókat, nagyobb csomagra váltással."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "A csomagváltással korlátlan számú szűrőt használhat az üzenetek rendezésére és további prémium funkciókat érhet el."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "A csomagváltással korlátlan számú mappát, címkét és további prémium funkciókat érhet el."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Frissítsen a ${ activatePmUser } verzióra, hogy a jelenlegi mellett egy rövidebb, könnyen megjegyezhető e-mail címet kapjon."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Frissítse fiókját, hogy aktiválja a ${ PROTON_SENTINEL_NAME } fejlesztést, az élvonalbeli, mesterséges intelligencia vezérelt biztonsági megoldásunkat, amelyhez 24/7 szakértői támogatást biztosítunk."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "A ${ MAIL_APP_NAME } használatával jelentkezzen be az online szolgáltatásokba, mivel más e-mail szolgáltatókkal ellentétben mi soha nem fogjuk nyomon követni az adatait, és megosztani azokat harmadik féllel."
@@ -5853,9 +5812,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Importálás innen: ${ provider }"
-      ],
-      "Other": [
-        "Egyéb"
       ]
     },
     "Import warning": {
@@ -5995,14 +5951,6 @@
       "${ n } unread conversation": [
         "${ n } olvasatlan beszélgetés",
         "${ n } olvasatlan beszélgetés"
-      ],
-      "${ numberOfImageTrackers } email tracker blocked": [
-        "${ numberOfImageTrackers } e-mail követő blokkolva",
-        "${ numberOfImageTrackers } e-mail követő blokkolva"
-      ],
-      "${ numberOfImageTrackers } tracker blocked": [
-        "${ numberOfImageTrackers } követő blokkolva",
-        "${ numberOfImageTrackers } követő blokkolva"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } hivatkozás megtisztítva",
@@ -6802,7 +6750,6 @@
         "Inicializálás…"
       ],
       "Insert image": [
-        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -7271,9 +7218,6 @@
       ],
       "Seems like you are all caught up for now": [
         "Úgy tűnik minden el van intézve"
-      ],
-      "Select a service provider to start": [
-        "Válaszon ki egy szolgáltatót a kezdéshez"
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "Az ${ elementsCount } üzenet kiválasztása, itt: ${ location }",
@@ -8465,11 +8409,11 @@
       "Always move sender's emails": [
         "A feladó leveleit mindig helyezze mappába"
       ],
-      "AND": [
-        "ÉS"
-      ],
       "And": [
         "És"
+      ],
+      "AND": [
+        "ÉS"
       ],
       "and": [
         "és"
@@ -8693,11 +8637,11 @@
       "IBAN": [
         "IBAN szám"
       ],
-      "IF": [
-        "HA"
-      ],
       "If": [
         "Ha"
+      ],
+      "IF": [
+        "HA"
       ],
       "Import all messages": [
         "Összes üzenet importálása"
@@ -8813,14 +8757,14 @@
       "Optional": [
         "Választható"
       ],
-      "OR": [
-        "VAGY"
-      ],
       "or": [
         "vagy"
       ],
       "Or": [
         "Vagy"
+      ],
+      "OR": [
+        "VAGY"
       ],
       "Original link": [
         "Eredeti hivatkozás"
@@ -9160,6 +9104,9 @@
       ],
       "Folders": [
         "Mappák"
+      ],
+      "here": [
+        "ide"
       ],
       "How to add users": [
         "Hogyan adhatok hozzá felhasználókat?"
@@ -9659,29 +9606,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } beszerzése"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kezdje el a használatot ${ priceCoupon } áron"
-      ],
-      "Starting from ${ pricing }": [
-        "Kezdőár: ${ pricing }"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade to ${ planName }": [
-        "Váltás ${ planName } csomagra"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -9703,6 +9627,14 @@
       ],
       "Switch plan": [
         "Csomag váltása"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle } beszerzése"
       ]
     },
     "new_plans: feature": {
@@ -9855,9 +9787,6 @@
       "Auto-delete Spam and Trash": [
         "Levélszemét és lomtár automatikus törlése"
       ],
-      "Auto-delete spam and trashed messages": [
-        "A Levélszemét és a Lomtár mappában lévő üzenetek automatikus törlése"
-      ],
       "Auto-reply": [
         "Automatikus válasz"
       ],
@@ -9899,9 +9828,6 @@
       ],
       "Custom fields": [
         "Egyéni mezők"
-      ],
-      "Custom snooze time": [
-        "Egyéni halasztási idő"
       ],
       "Custom workspace branding": [
         "Egyéni munkaterület márkajelzései"
@@ -10042,12 +9968,6 @@
       "Schedule and snooze emails for any time": [
         "E-mailek időzítése vagy halasztása"
       ],
-      "Schedule messages at any time": [
-        "Üzenetek ütemezése bármikor"
-      ],
-      "Search message content": [
-        "Keresés az üzenetek tartalmában"
-      ],
       "Secure Core servers": [
         "Secure Core szerverek"
       ],
@@ -10183,9 +10103,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Hozzon létre több email címet a különböző online személyiségei számára, mint például PistiVasarlas@${ domain } a vásárlási fiókjaihoz, vagy PistiHirek@${ domain2 } a hírleveleinek"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Üzenetek némítása és emlékeztető beállítása a kívánt időpontra"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } közt."
@@ -13228,9 +13145,6 @@
       "Action all messages": [
         "Művelet az összes üzeneten"
       ],
-      "Activate @pm.me": [
-        "@pm.me aktiválása"
-      ],
       "Add a custom logo": [
         "Egyedi logó hozzáadása"
       ],
@@ -13327,9 +13241,6 @@
       ],
       "Change password": [
         "Jelszó megváltoztatása"
-      ],
-      "Clear out the junk": [
-        "Szabaduljon meg a szeméttől"
       ],
       "Clearing data": [
         "Adatok törlése"
@@ -13546,9 +13457,6 @@
       "Forward": [
         "Továbbítás"
       ],
-      "Get advanced protection": [
-        "Kapjon speciális védelmet"
-      ],
       "Get more from your VPN": [
         "Hozzon ki többet a VPN-ből"
       ],
@@ -13621,9 +13529,6 @@
       ],
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
-      ],
-      "Keep your inbox organized": [
-        "Tartsa rendezetten a fiókját"
       ],
       "Label as": [
         "Címkézés"
@@ -13868,9 +13773,6 @@
       "Same inbox, shorter email address": [
         "Ugyanaz a postafiók, rövidebb e-mail cím"
       ],
-      "Save time with email filters": [
-        "Takarítson meg időt az e-mail szűrőkkel"
-      ],
       "Schedule now, send later": [
         "Ütemezze most, küldje el később"
       ],
@@ -13939,9 +13841,6 @@
       ],
       "Set up your family account": [
         "Family csomag beállítása"
-      ],
-      "Set your own schedule": [
-        "Határozzon meg saját ütemezést"
       ],
       "Settings": [
         "Beállítások"
@@ -14016,9 +13915,6 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } bekapcsolása"
       ],
-      "Unlock contacts groups": [
-        "Névjegy csoportok feloldása"
-      ],
       "Unsubscribe": [
         "Leiratkozás"
       ],
@@ -14048,9 +13944,6 @@
       ],
       "VPN explained": [
         "A VPN működése"
-      ],
-      "Want to snooze any time?": [
-        "Tetszőleges szüneteltetést szeretne?"
       ],
       "Warning": [
         "Figyelem"

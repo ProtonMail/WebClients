@@ -534,9 +534,6 @@
       "Generate text": [
         "Сгенерировать текст"
       ],
-      "Get ${ BRAND_NAME } Duo": [
-        "Оформить ${ BRAND_NAME } Duo"
-      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Получить ${ planName } за ${ priceCoupon }"
       ],
@@ -545,12 +542,6 @@
       ],
       "Get in touch": [
         "Связаться с нами"
-      ],
-      "Get it": [
-        "Получить"
-      ],
-      "Get it from only ${ addonPriceWithCurrency } /month": [
-        "Получите его всего за ${ addonPriceWithCurrency } в месяц"
       ],
       "Get started": [
         "Приступить к работе"
@@ -834,6 +825,9 @@
       "Move to archive": [
         "Переместить в Архив"
       ],
+      "Move to folder": [
+        "Переместить в папку"
+      ],
       "Move to inbox": [
         "Переместить во Входящие"
       ],
@@ -1104,11 +1098,11 @@
       "Select ${ planTitle }": [
         "Выбрать ${ planTitle }"
       ],
-      "Select All": [
-        "Выбрать все"
-      ],
       "Select all": [
         "Выделить все"
+      ],
+      "Select All": [
+        "Выбрать все"
       ],
       "Select all messages": [
         "Выбрать все сообщения"
@@ -1248,9 +1242,6 @@
       "Start setup": [
         "Приступить к настройке"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Начиная с ${ priceUnlimited }"
-      ],
       "Stay": [
         "Остаться"
       ],
@@ -1304,6 +1295,12 @@
       ],
       "Trust": [
         "Доверять"
+      ],
+      "Trust key": [
+        "Доверять ключу",
+        "Доверять ключам",
+        "Доверять ключам",
+        "Доверять ключам"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -1367,9 +1364,6 @@
       ],
       "Upgrade Now": [
         "Улучшить сейчас"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Улучшить до ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Загрузить картинку"
@@ -3622,9 +3616,6 @@
       "Also included": [
         "Также включены"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Автоматически удаляйте спам и сообщения в Корзине, а также откройте дополнительные платные функции при обновлении."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Автоматическая очистка писем, перемещенных в корзину и спам более 30 дней назад."
       ],
@@ -3640,9 +3631,6 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Удаление контактов... Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это окно."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Создан для пользователей, желающих получить усиленную защиту своих аккаунтов."
-      ],
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "Не хотите отправлять письмо прямо сейчас? Запланируйте его на нужное время."
       ],
@@ -3654,9 +3642,6 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
-      ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Получите неограниченное количество псевдонимов и 500 ГБ в облачном хранилище с ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Похоже, что список контактов, который вы импортируете, содержит группы. Пожалуйста, уточните, как их нужно импортировать."
@@ -3679,9 +3664,6 @@
       "No labels": [
         "Нет ярлыков"
       ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Экономьте время, отправляя электронные письма всем сразу с помощью групп контактов. Разблокируйте эти и другие платные функции при обновлении."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Выделите различные аспекты своей жизни с помощью нескольких адресов электронной почты и получите доступ к дополнительным функциям при обновлении тарифа."
       ],
@@ -3690,9 +3672,6 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Установите метод восстановления, чтобы не потерять доступ к своему аккаунту."
-      ],
-      "Starting from ${ price }": [
-        "Начальная цена ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Чтобы продолжить пользоваться помощником по написанию, добавьте его к своей подписке."
@@ -3712,26 +3691,8 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Включите защиту от отслеживания электронной почты, чтобы предотвратить слежку рекламодателей и других лиц за вашим местоположением и активностью в сети."
       ],
-      "Unlock custom message scheduling and more premium features when you upgrade.": [
-        "Разблокируйте настраиваемое расписание сообщений и другие платные функции при обновлении."
-      ],
-      "Unlock custom snooze times and more premium features when you upgrade.": [
-        "При обновлении вы сможете настроить время пробуждения и получить дополнительные платные функции."
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Обновите тариф, чтобы разблокировать более короткие адреса электронной почты и другие премиум-функции."
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Разблокируют неограниченные фильтры, которые сортируют Вашу почту за Вас и другие премиум функции при обновлении."
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Разблокируют неограниченные папки, ярлыки и другие премиум функции при обновлении."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Обновитесь до ${ activatePmUser } для получения более короткого и запоминаемого адреса электронной почты в дополнение к текущему."
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Обновите свой аккаунт, чтобы активировать ${ PROTON_SENTINEL_NAME }, наше передовое решение безопасности на основе искусственного интеллекта с круглосуточной поддержкой экспертов."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "Используйте ${ MAIL_APP_NAME } для входа в онлайн-сервисы, поскольку, в отличие от других провайдеров электронной почты, мы никогда не будем отслеживать ваши данные и делиться ими с третьими лицами."
@@ -5822,9 +5783,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Импортировать из ${ provider }"
-      ],
-      "Other": [
-        "Другой"
       ]
     },
     "Import warning": {
@@ -6012,18 +5970,6 @@
         "${ n } непрочитанные цепочки писем",
         "${ n } непрочитанных цепочек писем",
         "${ n } непрочитанных цепочек писем"
-      ],
-      "${ numberOfImageTrackers } email tracker blocked": [
-        "${ numberOfImageTrackers } почтовый трекер заблокирован",
-        "${ numberOfImageTrackers } почтовых трекера заблокированы",
-        "${ numberOfImageTrackers } почтовых трекеров заблокировано",
-        "${ numberOfImageTrackers } почтовых трекеров заблокировано"
-      ],
-      "${ numberOfImageTrackers } tracker blocked": [
-        "${ numberOfImageTrackers } трекер заблокирован",
-        "${ numberOfImageTrackers } трекера заблокированы",
-        "${ numberOfImageTrackers } трекеров заблокировано",
-        "${ numberOfImageTrackers } трекеров заблокировано"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } ссылка очищена",
@@ -6847,6 +6793,9 @@
       "Initializing…": [
         "Инициализация…"
       ],
+      "Insert image": [
+        "Вставить изображение"
+      ],
       "Insert link": [
         "Вставить ссылку"
       ],
@@ -7284,9 +7233,6 @@
       ],
       "Seems like you are all caught up for now": [
         "Похоже, делать тут пока нечего"
-      ],
-      "Select a service provider to start": [
-        "Выберите поставщика услуг, чтобы начать"
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "Выбрать все ${ elementsCount } в ${ location }",
@@ -8101,6 +8047,9 @@
       "Your information was found on ${ displayedDate }": [
         "Ваша информация была найдена ${ displayedDate }"
       ],
+      "Your IP": [
+        "Ваш IP-адрес"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Ваши данные для входа не будут сохранены после завершения импорта."
       ],
@@ -8471,10 +8420,10 @@
       "Always move sender's emails": [
         "Всегда перемещать сообщения отправителя"
       ],
-      "AND": [
+      "And": [
         "И"
       ],
-      "And": [
+      "AND": [
         "И"
       ],
       "and": [
@@ -8696,11 +8645,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ЕСЛИ"
-      ],
       "If": [
         "Если"
+      ],
+      "IF": [
+        "ЕСЛИ"
       ],
       "Import all messages": [
         "Импортировать все сообщения"
@@ -8813,14 +8762,14 @@
       "Optional": [
         "Необязательно"
       ],
-      "OR": [
-        "ИЛИ"
-      ],
       "or": [
         "или"
       ],
       "Or": [
         "Или"
+      ],
+      "OR": [
+        "ИЛИ"
       ],
       "Original link": [
         "Оригинальная ссылка"
@@ -8999,6 +8948,12 @@
       "Your alias": [
         "Ваш псевдоним"
       ],
+      "Your IP": [
+        "Ваш IP-адрес"
+      ],
+      "Your location": [
+        "Ваше местоположение"
+      ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
       ]
@@ -9148,6 +9103,9 @@
       ],
       "Folders": [
         "Папки"
+      ],
+      "here": [
+        "здесь"
       ],
       "How to pay with Bitcoin?": [
         "Как оплатить с помощью Bitcoin?"
@@ -9648,29 +9606,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Перейти на тариф ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Начните с ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Начиная с ${ pricing }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ],
-      "Upgrade to ${ planName }": [
-        "Улучшить на ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -9692,6 +9627,14 @@
       ],
       "Switch plan": [
         "Сменить тариф"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Перейти на тариф ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -9875,9 +9818,6 @@
       "Auto-delete Spam and Trash": [
         "Автоудаление спама и сообщений в корзине"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Автоудаление спама и удаленных сообщений"
-      ],
       "Auto-reply": [
         "Автоответчик"
       ],
@@ -9919,9 +9859,6 @@
       ],
       "Custom fields": [
         "Настраиваемые поля"
-      ],
-      "Custom snooze time": [
-        "Настраиваемое время пробуждения"
       ],
       "Custom workspace branding": [
         "Пользовательское брендирование рабочего пространства"
@@ -10057,12 +9994,6 @@
       ],
       "Schedule and snooze emails for any time": [
         "Планируйте и откладывайте сообщения электронной почты на любое время"
-      ],
-      "Schedule messages at any time": [
-        "Планируйте сообщения в любое время"
-      ],
-      "Search message content": [
-        "Поиск содержимого сообщения"
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
@@ -10211,9 +10142,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, VanyaShopper@${ domain } для учетных записей покупок, VanyaNews@${ domain2 } для подписки на новости"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "Отложите сообщения и получите напоминание в нужное время"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Объём хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
@@ -13371,9 +13299,6 @@
       "Action all messages": [
         "Действие со всеми сообщениями"
       ],
-      "Activate @pm.me": [
-        "Активируйте @pm.me"
-      ],
       "Add a custom logo": [
         "Добавить свой логотип"
       ],
@@ -13469,9 +13394,6 @@
       ],
       "Change password": [
         "Изменить пароль"
-      ],
-      "Clear out the junk": [
-        "Очистить от спама"
       ],
       "Clearing data": [
         "Очистка данных"
@@ -13680,9 +13602,6 @@
       "Forward": [
         "Переслать"
       ],
-      "Get advanced protection": [
-        "Получить расширенную защиту"
-      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Получить приложения ${ appName[APP_NAME] }"
       ],
@@ -13739,9 +13658,6 @@
       ],
       "Invalid verification code": [
         "Неверный проверочный код"
-      ],
-      "Keep your inbox organized": [
-        "Поддерживайте порядок в папке \"Входящие\""
       ],
       "Label as": [
         "Отметить как"
@@ -13971,9 +13887,6 @@
       "Same inbox, shorter email address": [
         "Тот же почтовый ящик, более короткий адрес электронной почты"
       ],
-      "Save time with email filters": [
-        "Экономьте время с почтовыми фильтрами"
-      ],
       "Schedule now, send later": [
         "Запланируйте сейчас, отправьте позже"
       ],
@@ -14036,9 +13949,6 @@
       ],
       "Set up your family account": [
         "Настройте семейный аккаунт"
-      ],
-      "Set your own schedule": [
-        "Установить своё собственное расписание"
       ],
       "Settings": [
         "Настройки"
@@ -14103,9 +14013,6 @@
       "Trust public key?": [
         "Доверять открытому ключу?"
       ],
-      "Unlock contacts groups": [
-        "Разблокировать группы контактов"
-      ],
       "Unsubscribe": [
         "Отписаться"
       ],
@@ -14126,9 +14033,6 @@
       ],
       "Verifying your payment...": [
         "Проверяем ваш платёж..."
-      ],
-      "Want to snooze any time?": [
-        "Хотите отложить в любое время?"
       ],
       "Warning": [
         "Предупреждение"
@@ -14313,6 +14217,12 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } устройство",
+        "${ n } устройства",
+        "${ n } устройств",
+        "${ n } устройств"
+      ],
       "${ n } server": [
         "${ n } сервер",
         "${ n }+ сервера",

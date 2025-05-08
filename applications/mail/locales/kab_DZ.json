@@ -652,6 +652,9 @@
       "Move to archive": [
         "Awi ar uɣbaṛ"
       ],
+      "Move to folder": [
+        "Awi ɣer ukaram"
+      ],
       "Move to inbox": [
         "Awi ar tanaka n urmas"
       ],
@@ -895,11 +898,11 @@
       "Select ${ planTitle }": [
         "Fren ${ planTitle }"
       ],
-      "Select All": [
-        "Fren kullec"
-      ],
       "Select all": [
         "Fren akk"
+      ],
+      "Select All": [
+        "Fren kullec"
       ],
       "Select all messages": [
         "Fren akk iznan"
@@ -1047,6 +1050,10 @@
       ],
       "Trust": [
         "Amen"
+      ],
+      "Trust key": [
+        "Tasarut yettwamanen",
+        "Tisura yettwamanen"
       ],
       "Trust public key": [
         "Tasarut tazayezt yettwamanen"
@@ -4337,9 +4344,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Kter seg ${ provider }"
-      ],
-      "Other": [
-        "Ayen-nniḍen"
       ]
     },
     "Import warning": {
@@ -4427,14 +4431,6 @@
       "${ n } unread conversation": [
         "${ n } n udiwenni ur yettwaɣran ara",
         "${ n } n yidiwenniyen ur yettwaɣran ara"
-      ],
-      "${ numberOfImageTrackers } email tracker blocked": [
-        "${ numberOfImageTrackers } n umeḍfar n yimayl iweḥlen",
-        "${ numberOfImageTrackers } n yimeḍfaren n yimayl iweḥlen"
-      ],
-      "${ numberOfImageTrackers } tracker blocked": [
-        "${ numberOfImageTrackers } n uneḍfar iweḥlen",
-        "${ numberOfImageTrackers } n yimeḍfaren iweḥlen"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } useɣwen yettwasfeḍ",
@@ -4920,8 +4916,7 @@
         "Yettwaɣellet seg ukaram agejdan"
       ],
       "Insert image": [
-        "Ger tugna",
-        "Ger tugniwn"
+        "Ger tugna"
       ],
       "Insert link": [
         "Ger aseɣwen"
@@ -5193,9 +5188,6 @@
       ],
       "Seems like you are all caught up for now": [
         "Akka i d-yettban tettwafem akken ma tellam akka tura"
-      ],
-      "Select a service provider to start": [
-        "Fren asaǧǧăw n umeẓlu i wakken ad tebduḍ"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Fren amasal n yimayl i tebɣiḍ ad yettwaseqdec d amezwer mi ara tazneḍ imayl ɣer tansa-a imayl."
@@ -5933,11 +5925,11 @@
       "Always move sender's emails": [
         "Asenkez yal tikkelt imaylen n yimazanen"
       ],
-      "AND": [
-        "AKKED"
-      ],
       "And": [
         "Akked"
+      ],
+      "AND": [
+        "AKKED"
       ],
       "and": [
         "akked"
@@ -6134,11 +6126,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "MA"
-      ],
       "If": [
         "Ma"
+      ],
+      "IF": [
+        "MA"
       ],
       "Import all messages": [
         "Kter akk iznan"
@@ -6242,14 +6234,14 @@
       "Optional": [
         "Afrayan"
       ],
-      "OR": [
-        "NEƔ"
-      ],
       "or": [
         "neɣ"
       ],
       "Or": [
         "Neɣ"
+      ],
+      "OR": [
+        "NEƔ"
       ],
       "Original link": [
         "Aseɣwen agejdan"
@@ -6515,6 +6507,9 @@
       ],
       "Folders": [
         "Ikaramen"
+      ],
+      "here": [
+        "da"
       ],
       "How to pay with Bitcoin?": [
         "Amek ara txellseḍ s Bitcoin?"
@@ -6920,17 +6915,6 @@
         "Arured alemmas VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -6949,6 +6933,11 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7086,12 +7075,6 @@
       ],
       "Router support": [
         "Tallalt n umeglay"
-      ],
-      "Schedule messages at any time": [
-        "Sɣawes akud n tuzna n yizen melmi i tebɣiḍ"
-      ],
-      "Search message content": [
-        "Agbur n yizen n unadi"
       ],
       "Secure Core servers": [
         "Iqeddacen n Secure Core"
@@ -8551,9 +8534,6 @@
       "Account security": [
         "Taɣellist n umiḍan"
       ],
-      "Activate @pm.me": [
-        "Rmed @pm.me"
-      ],
       "Add contact group name": [
         "Rnu isem n ugraw n unermes"
       ],
@@ -8635,9 +8615,6 @@
       ],
       "Change password": [
         "Snifel awal uffir"
-      ],
-      "Clear out the junk": [
-        "Sfeḍ iznan ur nemɛin"
       ],
       "Clearing data": [
         "Asfaḍ n isefka"
@@ -8840,9 +8817,6 @@
       "Invalid verification code": [
         "Tangalt n usentem mačči d tameɣtut"
       ],
-      "Keep your inbox organized": [
-        "Eǧǧ tanaka n urmas tṣeggem"
-      ],
       "Label as": [
         "(rnu tabzimt am)"
       ],
@@ -9011,9 +8985,6 @@
       "Request new code": [
         "Suter tangalt tamaynutt"
       ],
-      "Save time with email filters": [
-        "Sekles akud s yimsizedgen n yimayl"
-      ],
       "Schedule send": [
         "Sɣiwes tuzna"
       ],
@@ -9058,9 +9029,6 @@
       ],
       "Set recovery phrase": [
         "Sbadu tafyirt n tririt"
-      ],
-      "Set your own schedule": [
-        "Sbadu asɣawas-ik"
       ],
       "Settings": [
         "Iɣewwaren"
@@ -9113,9 +9081,6 @@
       ],
       "Trust public key?": [
         "Tasarut tazayezt yettwamanen?"
-      ],
-      "Unlock contacts groups": [
-        "Kkes asekkeṛ i yigrawen n yinermisen"
       ],
       "Unsubscribe": [
         "Ffeɣ seg ujerred"

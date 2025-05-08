@@ -543,9 +543,6 @@
       "Generate text": [
         "テキストを生成"
       ],
-      "Get ${ BRAND_NAME } Duo": [
-        "${ BRAND_NAME } Duoを入手"
-      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName } を ${ priceCoupon }で入手"
       ],
@@ -554,12 +551,6 @@
       ],
       "Get in touch": [
         "連絡する"
-      ],
-      "Get it": [
-        "了解"
-      ],
-      "Get it from only ${ addonPriceWithCurrency } /month": [
-        "たった${ addonPriceWithCurrency } / 月で獲得しましょう"
       ],
       "Get started": [
         "利用開始"
@@ -867,6 +858,9 @@
       "Move to archive": [
         "アーカイブに移動"
       ],
+      "Move to folder": [
+        "フォルダーに移動"
+      ],
       "Move to inbox": [
         "受信トレイに移動"
       ],
@@ -1140,10 +1134,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } を選択"
       ],
-      "Select All": [
+      "Select all": [
         "すべて選択"
       ],
-      "Select all": [
+      "Select All": [
         "すべて選択"
       ],
       "Select all messages": [
@@ -1299,9 +1293,6 @@
       "Start setup": [
         "セットアップを開始"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "${ priceUnlimited }から始める"
-      ],
       "Stay": [
         "終了しない"
       ],
@@ -1358,6 +1349,9 @@
       ],
       "Trust": [
         "信頼する"
+      ],
+      "Trust key": [
+        "鍵を信頼する"
       ],
       "Trust public key": [
         "公開鍵を信頼"
@@ -1424,9 +1418,6 @@
       ],
       "Upgrade Now": [
         "今すぐアップグレード"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } Unlimitedへアップグレード"
       ],
       "Upload and share files": [
         "ファイルをアップロードして共有"
@@ -3692,9 +3683,6 @@
       "Also included": [
         "含まれています"
       ],
-      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "スパムや削除済みメッセージを自動的に削除し、アップグレードするとさらに多くのプレミアム機能を利用できます。"
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "30 日以上前にゴミ箱やスパムに移動されたメールを自動的に削除します。"
       ],
@@ -3721,9 +3709,6 @@
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先を削除しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
-      ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "アカウントの高度な保護を求めるユーザー向けに設計されています。"
       ],
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "今すぐメールを送信したくないですか？適切な時間に予約しましょう。"
@@ -3758,9 +3743,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "他社のサービスからパスワードやその他のデータが漏洩した場合に通知します。"
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "${ PLAN_NAMES[PLANS.BUNDLE] }で無制限のエイリアスと 500 GBの容量を獲得しましょう。"
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "チームが機密性の高いビジネスおよびクライアント情報のパスワードを安全に保管できるよう支援します。"
       ],
@@ -3785,9 +3767,6 @@
       "No labels": [
         "ラベルがありません"
       ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "連絡先グループを使用して、一度に全員にメールを送信することで時間を節約できます。アップグレードすると、この機能や他のプレミアム機能が利用可能になります。"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "アップグレードすると、複数のメールアドレスを生活のシーンによって使い分け、より多くのプレミアム機能が利用できるようになります。"
       ],
@@ -3802,9 +3781,6 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "共有カレンダーで同期やスケジューリングを簡単に。"
-      ],
-      "Starting from ${ price }": [
-        "${ price } から"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "執筆アシスタントを引き続き使用するには、サブスクリプションを追加してください。"
@@ -3827,26 +3803,8 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "メール トラッカー保護をオンにして、広告主などがあなたの位置情報やオンライン アクティビティを追跡しないようにします。"
       ],
-      "Unlock custom message scheduling and more premium features when you upgrade.": [
-        "カスタム予約メールやその他のプレミアム機能をアンロックするには、アップグレードしてください。"
-      ],
-      "Unlock custom snooze times and more premium features when you upgrade.": [
-        "カスタムスヌーズ時間やその他のプレミアム機能をアンロックするには、アップグレードしてください。"
-      ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "アップグレードして短いメールアドレスとその他のプレミアム機能を使用できるようにします。"
-      ],
-      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "アップグレードすると、受信トレイを整理するフィルターを無制限に作成するなどのプレミアム機能が利用できます。"
-      ],
-      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "アップグレードすると、フォルダーやラベルを無制限に作成するなどのプレミアム機能が利用できます。"
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "現在のメールアドレスに加えて、短くて覚えやすいメールアドレスで${ activatePmUser }を獲得するためにアップグレードしてください。"
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "アカウントをアップグレードして、24時間年中無休の専門家によるサポート付きの最先端のAI駆動セキュリティソリューション${ PROTON_SENTINEL_NAME }を有効にしましょう。"
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "オンラインサービスにサインインするには、${ MAIL_APP_NAME } を使用してください。他のメールプロバイダーとは異なり、私たちはあなたのデータを追跡したり、第三者と共有したりすることは決してありません。"
@@ -5875,9 +5833,6 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } からインポート"
-      ],
-      "Other": [
-        "その他"
       ]
     },
     "Import warning": {
@@ -5993,12 +5948,6 @@
       ],
       "${ n } unread conversation": [
         "${ n } 件の未読の会話"
-      ],
-      "${ numberOfImageTrackers } email tracker blocked": [
-        "${ numberOfImageTrackers } 個のメールトラッカーをブロックしました"
-      ],
-      "${ numberOfImageTrackers } tracker blocked": [
-        "${ numberOfImageTrackers }個のトラッカーをブロックしました"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } 件のリンクがクリアされました"
@@ -6209,6 +6158,9 @@
       ],
       "and": [
         "と"
+      ],
+      "and more.": [
+        "など。"
       ],
       "Another tip will be displayed next time you open Mail": [
         "次回メールを開いた際に、別のヒントが表示されます"
@@ -6516,6 +6468,9 @@
       "Drop to import": [
         "ドロップしてインポート"
       ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "宛先の構成により、次の連絡先に有効期限付きでこのメッセージを送信できません: "
+      ],
       "Duplicate key updated": [
         "重複した鍵がアップデートされました"
       ],
@@ -6763,7 +6718,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -7241,9 +7196,6 @@
       ],
       "Seems like you are all caught up for now": [
         "現在、確認すべきメッセージはありません"
-      ],
-      "Select a service provider to start": [
-        "サービスプロバイダーを選択して開始"
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "${ location } 内のすべての ${ elementsCount } を選択"
@@ -8419,11 +8371,11 @@
       "Always move sender's emails": [
         "この差出人のメールを常に移動"
       ],
-      "AND": [
-        "かつ"
-      ],
       "And": [
         "と"
+      ],
+      "AND": [
+        "かつ"
       ],
       "and": [
         "と"
@@ -8647,10 +8599,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "条件"
       ],
-      "If": [
+      "IF": [
         "条件"
       ],
       "Import all messages": [
@@ -8767,13 +8719,13 @@
       "Optional": [
         "任意"
       ],
-      "OR": [
-        "または"
-      ],
       "or": [
         "または"
       ],
       "Or": [
+        "または"
+      ],
+      "OR": [
         "または"
       ],
       "Original link": [
@@ -9117,6 +9069,9 @@
       ],
       "Folders": [
         "フォルダー"
+      ],
+      "here": [
+        "こちら"
       ],
       "How to add users": [
         "ユーザーを追加する方法"
@@ -9644,29 +9599,6 @@
         "中程度の VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle }を獲得"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }で開始"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }から始める"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } へアップグレード"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "アカウントを削除"
@@ -9688,6 +9620,14 @@
       ],
       "Switch plan": [
         "プランを変更"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle }を獲得"
       ]
     },
     "new_plans: feature": {
@@ -9823,9 +9763,6 @@
       "Auto-delete Spam and Trash": [
         "迷惑メールとごみ箱を自動削除"
       ],
-      "Auto-delete spam and trashed messages": [
-        "迷惑メールとごみ箱のメッセージを自動削除"
-      ],
       "Auto-reply": [
         "自動返信"
       ],
@@ -9867,9 +9804,6 @@
       ],
       "Custom fields": [
         "カスタムフィールド"
-      ],
-      "Custom snooze time": [
-        "スヌーズ時間をカスタム"
       ],
       "Custom workspace branding": [
         "カスタムワークスペースブランディング"
@@ -10009,12 +9943,6 @@
       "Schedule and snooze emails for any time": [
         "いつでもメールをスケジュールしてスヌーズする"
       ],
-      "Schedule messages at any time": [
-        "いつでもメッセージを送信予約できます"
-      ],
-      "Search message content": [
-        "メッセージ内容の検索"
-      ],
       "Secure Core servers": [
         "Secure Core サーバー"
       ],
@@ -10144,9 +10072,6 @@
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "例えば、JohnShopper@${ domain }はショッピングアカウント用、JohnNews@${ domain2 }はニュース購読用です。"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "メッセージをスヌーズし、必要なときに再通知します"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
@@ -13153,9 +13078,6 @@
       "Action all messages": [
         "すべてのメッセージを操作"
       ],
-      "Activate @pm.me": [
-        "@pm.meを有効にする"
-      ],
       "Add a custom logo": [
         "カスタムロゴを追加"
       ],
@@ -13251,9 +13173,6 @@
       ],
       "Change password": [
         "パスワードを変更"
-      ],
-      "Clear out the junk": [
-        "ジャンクメールを自動で削除"
       ],
       "Clearing data": [
         "データのクリア中"
@@ -13474,9 +13393,6 @@
       "Forward": [
         "転送"
       ],
-      "Get advanced protection": [
-        "高度な保護を入手"
-      ],
       "Get more from your VPN": [
         "VPNからさらに入手する"
       ],
@@ -13548,9 +13464,6 @@
       ],
       "Invalid verification code": [
         "無効な検証コードです"
-      ],
-      "Keep your inbox organized": [
-        "受信トレイを整理整頓"
       ],
       "Label as": [
         "ラベル付け"
@@ -13795,9 +13708,6 @@
       "Same inbox, shorter email address": [
         "同じ受信箱で、より短いメールアドレスを"
       ],
-      "Save time with email filters": [
-        "メールフィルターで時間を節約"
-      ],
       "Schedule now, send later": [
         "今すぐ予約、後で送信"
       ],
@@ -13869,9 +13779,6 @@
       ],
       "Set up your organization": [
         "組織を設定"
-      ],
-      "Set your own schedule": [
-        "スケジュールを設定"
       ],
       "Settings": [
         "設定"
@@ -13945,9 +13852,6 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } をオンにする"
       ],
-      "Unlock contacts groups": [
-        "連絡先グループをアンロック"
-      ],
       "Unsubscribe": [
         "登録解除"
       ],
@@ -13977,9 +13881,6 @@
       ],
       "VPN explained": [
         "VPNの説明"
-      ],
-      "Want to snooze any time?": [
-        "いつでもスヌーズしたいですか？"
       ],
       "Warning": [
         "警告"
