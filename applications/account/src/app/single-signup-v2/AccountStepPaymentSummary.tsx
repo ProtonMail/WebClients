@@ -6,8 +6,7 @@ import InclusiveVatText from '@proton/components/containers/payments/InclusiveVa
 import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import { Info, Price } from '@proton/components/index';
-import { type Plan } from '@proton/payments';
-import { getHas2024OfferCoupon, getIsB2BAudienceFromPlan, isTaxInclusive } from '@proton/payments';
+import { type Plan, getHas2024OfferCoupon, getIsB2BAudienceFromPlan, isTaxInclusive } from '@proton/payments';
 import { COUPON_CODES } from '@proton/payments/index';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
@@ -18,7 +17,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import RightPlanSummary, { RightPlanSummaryAddons } from './RightPlanSummary';
 import RightSummary from './RightSummary';
-import SaveLabel from './SaveLabel';
 import { getSummaryPlan } from './configuration';
 import type { OptimisticOptions, SignupModelV2 } from './interface';
 
@@ -131,14 +129,7 @@ const AccountStepPaymentSummary = ({
             !hideDiscount &&
                 couponDiscount !== 0 && {
                     id: 'discount',
-                    left: (
-                        <div>
-                            {c('Info').t`Discount`}{' '}
-                            <span className="text-sm">
-                                <SaveLabel percent={currentCheckout.discountPercent} />
-                            </span>
-                        </div>
-                    ),
+                    left: c('Info').t`Discount`,
                     right: getPrice(couponDiscount),
                 },
             proration !== 0 && {
