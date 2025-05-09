@@ -22,9 +22,9 @@ import {
     type Plan,
     type PlanIDs,
     type Subscription,
+    getPlanIDs,
     isLifetimePlanSelected,
 } from '@proton/payments';
-import { getPlanIDs } from '@proton/payments';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
@@ -169,7 +169,7 @@ const SubscriptionCheckout = ({
             type="success"
             tooltip={c('Info')
                 .t`Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.`}
-            className="ml-2 text-semibold absolute"
+            className="ml-2 text-semibold"
         >
             -{discountPercent}%
         </Badge>
