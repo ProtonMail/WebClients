@@ -58,6 +58,7 @@ export const buildUser = (value?: Partial<UserModel>): UserModel => {
             'no-proton-address': false,
             'recovery-attempt': false,
             'pass-lifetime': false,
+            'pass-from-sl': false,
             sso: false,
         },
         isAdmin: true,

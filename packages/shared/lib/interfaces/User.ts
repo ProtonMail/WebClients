@@ -100,6 +100,7 @@ export interface User {
         'no-proton-address': boolean;
         'recovery-attempt': boolean;
         'pass-lifetime': boolean;
+        'pass-from-sl': boolean;
         sso: boolean;
     };
     AccountRecovery: {
