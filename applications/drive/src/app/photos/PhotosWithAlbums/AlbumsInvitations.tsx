@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, useConfirmActionModal } from '@proton/components';
+import { MimeIcon, useConfirmActionModal } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
@@ -25,13 +25,10 @@ export const AlbumsInvitations = ({ refreshSharedWithMeAlbums }: { refreshShared
                             <div key={invitation.invitation.invitationId} className="banner-invite">
                                 <div className="banner-invite-inner border border-info rounded m-2 py-1 px-2 flex flex-row flex-nowrap items-center *:min-size-auto">
                                     <div className="flex-1 flex flex-nowrap flex-row items-start py-0.5">
-                                        <span
-                                            className="rounded-full custom-bg shrink-0 mr-2 p-1 ratio-square flex"
-                                            style={{ '--custom-bg': 'var(--signal-info-minor-1)' }}
-                                        >
-                                            <Icon name="album-folder" className="m-auto" />
+                                        <span className="shrink-0 mr-2 p-1 ratio-square flex">
+                                            <MimeIcon name="album" size={5} className="m-auto" />
                                         </span>
-                                        <span className="mt-0.5">
+                                        <span className="mt-1 pt-0.5">
                                             {
                                                 // translator: please keep **${albumName}** so album name is properly put in bold. Full sentence example is: doc.brown@proton.me invited you to join **Back to Hill Valley**
                                                 getBoldFormattedText(
