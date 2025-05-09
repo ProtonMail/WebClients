@@ -69,11 +69,15 @@ export function* hydrate(
                 ? (cachedState?.organization ?? ((yield getOrganization()) as OrganizationState))
                 : null;
 
-        const twoPwd = userState.userSettings.Password.Mode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
+        const twoPasswordMode = userState.userSettings.Password.Mode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
 
-        if (twoPwd !== authStore.getTwoPasswordMode()) {
-            authStore.setTwoPasswordMode(twoPwd);
-            yield getAuthService().persistSession().catch(noop);
+        /** NOTE: This should only happen on first hydration as changing the password-mode
+         * setting should invalidate the session. User settings are not retrieved during
+         * the session fork sequence so we have to wait for initial settings hydration. */
+        if (twoPasswordMode !== authStore.getTwoPasswordMode()) {
+            const localID = authStore.getLocalID();
+            authStore.setTwoPasswordMode(twoPasswordMode);
+            yield getAuthService().syncPersistedSession(localID, { twoPasswordMode }).catch(noop);
         }
 
         /** Note: Settings may have been modified offline, thus they might not align

@@ -18,6 +18,7 @@ import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { withCallCount } from '@proton/pass/utils/fp/with-call-count';
 import { logger } from '@proton/pass/utils/logger';
+import { partialMerge } from '@proton/pass/utils/object/merge';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { revoke, setLocalKey } from '@proton/shared/lib/api/auth';
 import {
@@ -494,6 +495,20 @@ export const createAuthService = (config: AuthServiceConfig) => {
             } catch (error) {
                 logger.warn(`[AuthService] Persisting session failure`, error);
             }
+        },
+
+        /** Syncs the persisted session without re-encrypting the session blob. Use
+         * when updating session components that do not require re-generating the
+         * encrypted blob or the session digest. (FIXME: use in refresh flow) */
+        syncPersistedSession: async (localID: Maybe<number>, update: Omit<Partial<EncryptedAuthSession>, 'blob'>) => {
+            const encryptedSession = await config.getPersistedSession(localID);
+            if (!encryptedSession) return;
+
+            const updatedKeys = Object.keys(update).join(', ');
+            const syncedEncryptedSession = partialMerge(encryptedSession, update);
+            await config.onSessionPersist?.(JSON.stringify(syncedEncryptedSession));
+
+            logger.info(`[AuthService] Synced persisted session ${localID ?? 0} [${updatedKeys}]`);
         },
 
         resumeSession: withCallCount(
