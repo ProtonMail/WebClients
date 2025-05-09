@@ -453,6 +453,28 @@ export const getStandardPriceDescription = (cycle: CYCLE, amount: ReactElement):
     }
 };
 
+export const getDealMonthDurationText = (cycle: CYCLE | undefined) => {
+    const n = Number(cycle);
+
+    if (n === 12) {
+        return c('anniversary_2025: Offers').t`12 months`;
+    }
+
+    if (n === 24) {
+        return c('anniversary_2025: Offers').t`24 months`;
+    }
+
+    if (n === 15) {
+        return c('anniversary_2025: Offers').t`15 months`;
+    }
+
+    if (n === 30) {
+        return c('anniversary_2025: Offers').t`30 months`;
+    }
+
+    return c('anniversary_2025: Offers').ngettext(msgid`${n} month`, `${n} months`, n);
+};
+
 export const getDealDurationText = (cycle: CYCLE | undefined) => {
     const n = Number(cycle);
 
