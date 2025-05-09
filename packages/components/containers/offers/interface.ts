@@ -7,7 +7,18 @@ import type { PlanIDs } from '@proton/payments';
 import { type COUPON_CODES, type CYCLE, type Currency } from '@proton/payments';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
-export type OfferId = 'go-unlimited-2022' | 'mail-trial-2023' | 'mail-trial-2024' | 'pass-family-plan-2024-yearly';
+export type OfferId =
+    | 'go-unlimited-2022'
+    | 'mail-trial-2023'
+    | 'mail-trial-2024'
+    | 'pass-family-plan-2024-yearly'
+    | 'anniversary-2025-bundle'
+    | 'anniversary-2025-duo'
+    | 'anniversary-2025-family'
+    | 'anniversary-2025-mail-plus'
+    | 'anniversary-2025-drive-plus'
+    | 'anniversary-2025-pass-plus'
+    | 'anniversary-2025-vpn-plus';
 
 export type OfferGlobalFeatureCodeValue = Record<OfferId, boolean>;
 
@@ -46,6 +57,7 @@ export interface OfferConfig {
     ID: OfferId;
     featureCode: FeatureCode;
     autoPopUp?: 'each-time' | 'one-time';
+    title?: string;
     canBeDisabled?: boolean;
     deals: Deal[];
     layout: JSXElementConstructor<OfferLayoutProps>;
