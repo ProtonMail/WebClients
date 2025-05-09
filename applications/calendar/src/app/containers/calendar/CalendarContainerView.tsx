@@ -546,7 +546,6 @@ const CalendarContainerView = ({
                 onToggleExpand={onToggleExpand}
                 isSmallViewport={viewportWidth['<=small']}
                 actionArea={!isDrawerApp ? toolbar : null}
-                hideUpsellButton={viewportWidth['<=small']}
                 settingsButton={drawerSettingsButton}
             />
         </>

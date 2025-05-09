@@ -94,4 +94,17 @@
 			border: 0;
 		}
 	}
+
+	// Temporary layout
+	&--anniversary-2025 {
+		&#{&} {
+			// --button-hover-background-color: --interaction-default-hover;
+			// --button-active-background-color: --interaction-default-hover;
+			--button-default-text-color: var(--primary);
+			--button-hover-text-color: var(--primary);
+			--button-active-text-color: var(--primary);
+
+			border-color: var(--primary);
+		}
+	}
 }
