@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/index';
 import Anniversary2025FeatureList from '@proton/components/containers/offers/components/anniversary2025/Anniversary2025FeatureList';
 import Anniversary2025Header from '@proton/components/containers/offers/components/anniversary2025/Anniversary2025Header';
-import Anniversary2025Pricing from '@proton/components/containers/offers/components/anniversary2025/Anniversary2025Pricing';
 import OfferCloseButton from '@proton/components/containers/offers/components/shared/OfferCloseButton';
 import type { OfferId, OfferProps } from '@proton/components/containers/offers/interface';
 import { ModalTwoContent } from '@proton/components/index';
@@ -14,10 +13,11 @@ import type { FeatureCode } from '@proton/features/interface';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { selectUser } from '@proton/pass/store/selectors';
-import { CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_NAMES } from '@proton/payments';
+import { CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import noop from '@proton/utils/noop';
 
 import { type EligiblePlan, UPSELL_MAP } from './ProtonAnniversaryPromo2025.utils';
+import { Anniversary2025Pricing } from './ProtonAnniversaryPromo2025Pricing';
 
 import './ProtonAnniversaryPromo2025Modal.scss';
 
@@ -50,37 +50,41 @@ export const ProtonAnniversaryPromo2025Modal: FC<Props> = ({ onClose, onNeverSho
         disableEdit: true,
     });
 
-    const offerProps: OfferProps = {
-        currency: displayedCurrency,
-        offer: {
-            title:
-                planToUpsell === PLANS.PASS
-                    ? c('anniversary_2025: Offer').t`Save big on premium Pass features with a limited-time discount.`
-                    : c('anniversary_2025: Offer').t`Here's an exclusive gift to celebrate our journey together.`,
-            deals: [
-                {
-                    features: () => features,
-                    dealName,
-                    prices: {
-                        withCoupon: priceWithCoupon * CYCLE.YEARLY,
-                        withoutCoupon: priceWithoutCoupon * CYCLE.YEARLY,
-                        withoutCouponMonthly: priceWithoutCoupon,
+    const offerProps: OfferProps = useMemo(
+        () => ({
+            currency: displayedCurrency,
+            offer: {
+                title:
+                    planToUpsell === PLANS.PASS
+                        ? c('anniversary_2025: Offer')
+                              .t`Save big on premium Pass features with a limited-time discount.`
+                        : c('anniversary_2025: Offer').t`Here's an exclusive gift to celebrate our journey together.`,
+                deals: [
+                    {
+                        features: () => features,
+                        dealName,
+                        prices: {
+                            withCoupon: priceWithCoupon * CYCLE.YEARLY,
+                            withoutCoupon: priceWithoutCoupon * CYCLE.YEARLY,
+                            withoutCouponMonthly: priceWithoutCoupon,
+                        },
+                        cycle: CYCLE.YEARLY,
+                        // variables below not used by the component but required by TypeScript
+                        ref: '',
+                        planIDs: {},
                     },
-                    cycle: CYCLE.YEARLY,
-                    // variables below not used by the component but required by TypeScript
-                    ref: '',
-                    planIDs: {},
-                },
-            ],
-            // variables below not used by the component but required by TypeScript
-            featureCode: '' as FeatureCode,
-            ID: '' as OfferId,
-            layout: () => <></>,
-        },
-        onChangeCurrency: noop,
-        onCloseModal: noop,
-        onSelectDeal: noop,
-    };
+                ],
+                // variables below not used by the component but required by TypeScript
+                featureCode: '' as FeatureCode,
+                ID: '' as OfferId,
+                layout: () => <></>,
+            },
+            onChangeCurrency: noop,
+            onCloseModal: noop,
+            onSelectDeal: noop,
+        }),
+        [currentPlan, displayedCurrency]
+    );
 
     return (
         <PassModal
