@@ -61,6 +61,12 @@ export function hasLifetimeCoupon(subscription: Subscription | FreeSubscription 
     return subscription?.CouponCode === COUPON_CODES.LIFETIME;
 }
 
+export function hasAnniversary2025Coupon(subscription: Subscription | FreeSubscription | undefined) {
+    return (
+        [COUPON_CODES.COMMUNITYSPECIALDEAL25, COUPON_CODES.PROTONBDAYSALE25, COUPON_CODES.PROTONBDAYSALEB25] as string[]
+    ).includes(subscription?.CouponCode || '');
+}
+
 export function getSubscriptionPlanTitle(
     user: UserModel,
     subscription: Subscription | FreeSubscription | undefined
@@ -246,6 +252,7 @@ export const isManagedExternally = (
 export const hasVisionary = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VISIONARY);
 export const hasDeprecatedVPN = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN);
 export const hasVPN2024 = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN2024);
+export const hasVPN2022 = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN);
 export const hasVPNPassBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN_PASS_BUNDLE);
 export const hasMail = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, MAIL);
 export const hasMailPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, MAIL_PRO);
