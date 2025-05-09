@@ -96,6 +96,10 @@ export enum UpsellRef {
     VD_25_PASS_PLUS_WEB = 'vd_25_pass_plus_web',
     VD_25_PASS_FREE_EXTENSION = 'vd_25_pass_free_extension',
     VD_25_PASS_PLUS_EXTENSION = 'vd_25_pass_plus_extension',
+    PROTON_BDAY_25_PASS_PLUS_WEB = 'proton_bday_25_pass_plus_web',
+    PROTON_BDAY_25_BUNDLE_WEB = 'proton_bday_25_bundle_web',
+    PROTON_BDAY_25_DUO_WEB = 'proton_bday_25_duo_web',
+    PROTON_BDAY_25_FAMILY_WEB = 'proton_bday_25_family_web',
 }
 
 export const MAX_LOCAL_STORAGE_SIZE = 5 * 1024 * 1024; /* 5MB */
@@ -133,3 +137,5 @@ export const FILE_MIME_TYPE_DETECTION_CHUNK_SIZE = 1.5 * 1024 * 1024; // 1.5MB
 export const FILE_UPLOAD_TIMEOUT = 90_000;
 export const FILE_DOWNLOAD_TIMEOUT = 90_000;
 export const FILE_PUBLIC_SHARE = 'secure-link';
+
+export const PASS_PROTON_ANNIVERSARY_END_DATE = new Date('2025-05-28T12:00:00+01:00').getTime();
