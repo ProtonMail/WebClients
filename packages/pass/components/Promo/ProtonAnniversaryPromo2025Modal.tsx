@@ -23,12 +23,13 @@ import './ProtonAnniversaryPromo2025Modal.scss';
 
 type Props = {
     onClose: () => void;
+    onNeverShowAgain: () => void;
     currentPlan: EligiblePlan;
 };
 
 /* Copied from packages/components/containers/offers/components/anniversary2025/Anniversary2025Layout.tsx
  * with modifications due to it using incompatible hooks */
-export const ProtonAnniversaryPromo2025Modal: FC<Props> = ({ onClose, currentPlan }) => {
+export const ProtonAnniversaryPromo2025Modal: FC<Props> = ({ onClose, onNeverShowAgain, currentPlan }) => {
     const user = useSelector(selectUser);
 
     const { coupon, planToUpsell, upsellRef, priceWithCoupon, priceWithoutCoupon, features } = UPSELL_MAP[currentPlan];
@@ -112,9 +113,7 @@ export const ProtonAnniversaryPromo2025Modal: FC<Props> = ({ onClose, currentPla
                                 color="norm"
                                 data-testid="cta:hide-offer"
                                 className="offer-disable-button color-weak text-sm hover:color-weak"
-                                onClick={async () => {
-                                    // TODO
-                                }}
+                                onClick={onNeverShowAgain}
                             >{c('specialoffer: Action').t`Don't show this offer again`}</Button>
                         </div>
                     </>

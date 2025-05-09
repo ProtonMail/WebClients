@@ -52,6 +52,8 @@ export enum SpotlightMessage {
     ALIAS_DISCOVERY_CONTACT = 24,
     /** File Attachments discovery */
     FILE_ATTACHMENTS_DISCOVERY = 25,
+    /** Proton anniversary 2025 promo for web/desktop only */
+    PROTON_ANNIVERSARY_2025_PROMO = 26,
 }
 
 export type SpotlightAcknowledgment = {
