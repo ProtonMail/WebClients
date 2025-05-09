@@ -5,8 +5,10 @@ import { c } from 'ttag';
 
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import { WithFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
+import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight';
 import { PASS_PROTON_ANNIVERSARY_END_DATE } from '@proton/pass/constants';
 import { selectInAppNotificationsEnabled, selectUser, selectUserPlan } from '@proton/pass/store/selectors';
+import { SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { isDelinquent } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
@@ -22,6 +24,7 @@ const ProtonAnniversaryPromo2025: FC = memo(() => {
     const inAppNotificationEnabled = useSelector(selectInAppNotificationsEnabled);
 
     const [showModal, setShowModal] = useState(false);
+    const promoSpotlight = useSpotlightFor(SpotlightMessage.PROTON_ANNIVERSARY_2025_PROMO);
 
     const planName = plan?.InternalName;
     const subscriptionCoupon = plan?.SubscriptionCoupon;
@@ -32,7 +35,7 @@ const ProtonAnniversaryPromo2025: FC = memo(() => {
     /** Safe-guard promo end date in case feature flags could not be revalidated */
     const promoOngoing = useMemo(() => new Date().getTime() < PASS_PROTON_ANNIVERSARY_END_DATE, []);
 
-    const canShowPromo = isUserEligible && promoOngoing;
+    const canShowPromo = promoSpotlight.open && isUserEligible && promoOngoing;
 
     const handlePromoButtonClick = () => setShowModal(true);
     const onClose = () => setShowModal(false);
@@ -54,7 +57,13 @@ const ProtonAnniversaryPromo2025: FC = memo(() => {
             >
                 {c('anniversary_2025: offer').t`Anniversary offer`}
             </PromotionButton>
-            {showModal && <ProtonAnniversaryPromo2025Modal onClose={onClose} currentPlan={planName} />}
+            {showModal && (
+                <ProtonAnniversaryPromo2025Modal
+                    onClose={onClose}
+                    onNeverShowAgain={promoSpotlight.close}
+                    currentPlan={planName}
+                />
+            )}
         </>
     ) : null;
 });
