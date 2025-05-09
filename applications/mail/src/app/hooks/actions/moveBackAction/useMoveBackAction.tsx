@@ -77,7 +77,11 @@ export const useMoveBackAction = () => {
                 // Else, if we are in conversation mode, it means we need to check that no item will remain in the current location after moving the current one. If there are items remaining, do not move out
                 const conversationID = (openedElementMoved as Message).ConversationID;
                 const conversationFromState = getConversation(conversationID);
-                const hasRemainingItem = hasRemainingItemAfterAction(sourceLabelID, conversationFromState);
+                const hasRemainingItem = hasRemainingItemAfterAction(
+                    props.elements[0] as Message,
+                    sourceLabelID,
+                    conversationFromState
+                );
 
                 if (hasRemainingItem) {
                     return;
