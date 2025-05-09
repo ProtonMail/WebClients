@@ -28,6 +28,7 @@ import { DEFAULT_CURRENCY, PLANS } from '@proton/payments/core/constants';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
+    DARK_WEB_MONITORING_NAME,
     DRIVE_SHORT_APP_NAME,
     MAIL_SHORT_APP_NAME,
     PASS_SHORT_APP_NAME,
@@ -58,7 +59,7 @@ const getTableContent = (): Record<AvailablePlans, FeaturesTable> => ({
             { title: c('Label').t`Built-in 2FA`, nextPlan: <CheckIcon /> },
             { title: c('Label').t`Vault, item & link sharing`, nextPlan: <CheckIcon /> },
             { title: c('Label').t`Credit cards`, nextPlan: <InfiniteIcon /> },
-            { title: c('Label').t`Dark Web Monitoring`, nextPlan: <CheckIcon /> },
+            { title: DARK_WEB_MONITORING_NAME, nextPlan: <CheckIcon /> },
             { title: c('Label').t`File attachments`, nextPlan: '10 GB' },
         ],
     },
@@ -111,7 +112,7 @@ const Content: FC<PlanSelectProps> = ({ selected }) => {
                     >{c('Label').t`Limited time`}</div>
                     <div className="description--banner-card flex justify-space-between rounded-lg p-3">
                         <div>
-                            <div className="text-semibold">{c('Title')
+                            <div className="text-semibold">{c('PassOnboardingOffer')
                                 .t`${PASS_SHORT_APP_NAME} Plus Lifetime for ${plusLifetimePrice}`}</div>
                             <div className="text-sm color-weak">{c('Title').t`Pay once, access forever.`}</div>
                         </div>
@@ -190,17 +191,20 @@ const Description: FC<PlanSelectProps> = ({ selected, setSelected }) => {
 
     const changePlan = (selected: AvailablePlans) => setSelected?.(selected);
 
+    // Moved into a function since the label is the same, but the variable changes (preventing lint error)
+    const getPriceLabel = (price: string) => c('PassOnboardingOffer').t`${price}/month`;
+
     const plansOptions = useMemo<PassPlanOption[]>(
         () => [
             {
                 value: PLANS.PASS,
                 title: c('Title').t`${PASS_SHORT_APP_NAME} Plus`,
-                label: c('Label').t`${passPlusPrice}/month`,
+                label: getPriceLabel(passPlusPrice),
             },
             {
                 value: PLANS.BUNDLE,
                 title: c('Title').t`${BRAND_NAME} Unlimited`,
-                label: c('Label').t`${protonUnlimitedPrice}/month`,
+                label: getPriceLabel(protonUnlimitedPrice),
             },
         ],
         []
