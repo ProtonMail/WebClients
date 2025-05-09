@@ -366,6 +366,7 @@ export {
     hasSomePlan,
     hasThirty,
     hasTwoYears,
+    hasVPN2022,
     hasVPN2024,
     hasVPNPassBundle,
     hasVisionary,
