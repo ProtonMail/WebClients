@@ -1,6 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import diff from '@proton/utils/diff';
@@ -43,10 +44,6 @@ export const reset = (state: Draft<ElementsState>, action: PayloadAction<NewStat
 
 export const updatePage = (state: Draft<ElementsState>, action: PayloadAction<number>) => {
     state.page = action.payload;
-};
-
-export const resetByPassFilter = (state: Draft<ElementsState>) => {
-    state.bypassFilter = [];
 };
 
 export const retry = (
@@ -437,6 +434,14 @@ export const setParams = (
     action: PayloadAction<Partial<ElementsStateParams> & { total?: number }>
 ) => {
     const { total, ...params } = action.payload;
+
+    // Some items can bypass filter when a filter is active (e.g. Unread filter, and opening emails, we want them to stay in the list)
+    // If sort or filter is being updated, we can reset bypass filter value from the state, otherwise it could create
+    // false placeholders when switching filters.
+    if (!isDeepEqual(state.params.sort, params.sort) || !isDeepEqual(state.params.filter, params.filter)) {
+        state.bypassFilter = [];
+    }
+
     state.params = {
         ...state.params,
         ...params,
