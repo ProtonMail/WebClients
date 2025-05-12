@@ -1,3 +1,11 @@
+### Version 1.31.2
+
+- Improve invite members modal UX
+- Improve password prompt text by taking into account second password
+- Rename vault/item "admin" to "manager"
+- Make app header more easily draggable
+- Improve biometrics unlock error reporting
+
 ### Version 1.31.1
 
 - File attachments improvements
