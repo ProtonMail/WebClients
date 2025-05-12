@@ -18,8 +18,14 @@ export const AlbumsInvitations = ({ refreshSharedWithMeAlbums }: { refreshShared
             {invitations.length !== 0 && (
                 <>
                     {invitations.map((invitation) => {
-                        const email = <span className="text-break">{invitation.share.creatorEmail}</span>;
-                        const albumName = <strong>{invitation.decryptedLinkName}</strong>;
+                        const email = (
+                            <span key={`span-${invitation.link.linkId}`} className="text-break">
+                                {invitation.share.creatorEmail}
+                            </span>
+                        );
+                        const albumName = (
+                            <strong key={`strong-${invitation.link.linkId}`}>{invitation.decryptedLinkName}</strong>
+                        );
                         return (
                             <div key={invitation.invitation.invitationId} className="banner-invite shrink-0">
                                 <div className="banner-invite-inner border border-info rounded m-2 py-1 px-2 flex flex-column md:flex-row flex-nowrap items-center *:min-size-auto">
