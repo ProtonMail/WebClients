@@ -10,6 +10,7 @@ import {
     createItemSharingRule,
     createMonitorLearnMoreRule,
     createPendingShareAccessRule,
+    createProtonAnniversary2025Rule,
     createSSOChangeLockRule,
     createSecurityRule,
     createTrialRule,
@@ -57,6 +58,7 @@ export const spotlight = createSpotlightService({
         createItemSharingRule(),
         ...createAliasDiscoveryRules(store),
         createFileAttachmentsDiscoveryRule(store),
+        createProtonAnniversary2025Rule(),
     ],
 });
 
