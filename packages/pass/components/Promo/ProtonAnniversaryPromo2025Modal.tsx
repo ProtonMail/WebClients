@@ -13,6 +13,7 @@ import type { FeatureCode } from '@proton/features/interface';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { selectUser } from '@proton/pass/store/selectors';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import noop from '@proton/utils/noop';
 
@@ -40,7 +41,7 @@ export const ProtonAnniversaryPromo2025Modal: FC<Props> = ({ onClose, onNeverSho
     /** Prices are only correct for USD, EUR and CHF. If user uses another currency, defaults to EUR */
     const displayedCurrency = ['USD', 'EUR', 'CHF'].includes(userCurrency) ? userCurrency : DEFAULT_CURRENCY;
 
-    const handleCTAClick = useNavigateToUpgrade({
+    const upgrade = useNavigateToUpgrade({
         coupon,
         cycle: '12',
         email: user?.Email,
@@ -49,6 +50,8 @@ export const ProtonAnniversaryPromo2025Modal: FC<Props> = ({ onClose, onNeverSho
         type: 'offer',
         disableEdit: true,
     });
+
+    const handleCTAClick = pipe(upgrade, onClose);
 
     const offerProps: OfferProps = useMemo(
         () => ({
