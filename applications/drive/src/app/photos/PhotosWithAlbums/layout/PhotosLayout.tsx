@@ -654,7 +654,7 @@ export const PhotosLayout = () => {
             onFileUpload={(file: OnFileUploadSuccessCallbackData) => onPhotoUploadedToAlbum(album, file)}
             onFileSkipped={(file: OnFileUploadSuccessCallbackData) => onPhotoUploadedToAlbum(album, file)}
             onDrop={currentPageType === AlbumsPageTypes.ALBUMSADDPHOTOS ? handleRedirectToAlbum : undefined}
-            className="flex flex-column flex-nowrap flex-1"
+            className="flex flex-column *:min-size-auto flex-nowrap flex-1"
         >
             {driveAlbumsDisabled && (
                 <TopBanner className="bg-warning">{c('Info')
