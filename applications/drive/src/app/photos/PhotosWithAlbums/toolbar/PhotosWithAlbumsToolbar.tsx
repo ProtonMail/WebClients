@@ -180,11 +180,11 @@ export const ToolbarLeftActionsGallery = ({
                         'h3 inline-flex items-center gap-1 text-bold toolbar-photos-gallery-button text-no-decoration',
                         tab.id === selection
                             ? 'color-inherit toolbar-photos-gallery-button--selected'
-                            : 'color-weak hover:color-norm'
+                            : 'color-hint hover:color-norm'
                     )}
                     onClick={() => tab.onClick()}
                 >
-                    <Icon name={tab.icon} /> <span>{tab.label}</span>
+                    <Icon name={tab.icon} size={5} /> <span>{tab.label}</span>
                 </InlineLinkButton>
             ))}
         </nav>
