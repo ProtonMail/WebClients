@@ -62,6 +62,8 @@ export const MailSidebarViewList = () => {
                             applyLabels={noop}
                             unreadCount={counts?.active}
                             onClickCallback={() => spotlight.onClose()}
+                            hideCountOnHover={false}
+                            hideSpinner
                         />
                     </div>
                 </Spotlight>
