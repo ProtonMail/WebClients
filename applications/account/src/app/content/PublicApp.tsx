@@ -44,6 +44,7 @@ import { APPS, CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
+import { telemetry } from '@proton/shared/lib/telemetry';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { FlagProvider } from '@proton/unleash';
 import noop from '@proton/utils/noop';
@@ -103,6 +104,7 @@ const bootstrapApp = () => {
     handleLogoutFromURL({ api });
     const authentication = createAuthentication({ initialAuth: false });
     init({ config, authentication, locales });
+    telemetry.init({ config, uid: authentication.UID });
     initMainHost();
     initElectronClassnames();
     initSafariFontFixClassnames();
