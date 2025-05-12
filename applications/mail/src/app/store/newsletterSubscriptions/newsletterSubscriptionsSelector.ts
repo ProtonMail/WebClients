@@ -16,5 +16,11 @@ export const filteredSubscriptionList = createSelector([filteredSubs], (filtered
 export const selectedSubscriptionSelector = createSelector([selectedSub], (selectedSub) => selectedSub || null);
 export const subscriptionCountSelector = createSelector([counts], (counts) => counts || DEFAULT_SUBSCRIPTION_COUNTS);
 
+export const getFilteredSubscriptionIndex = (subscriptionID: string) => {
+    return createSelector([filteredSubs], (filteredSubs) =>
+        filteredSubs?.findIndex((sub) => sub.ID === subscriptionID)
+    );
+};
+
 export const isSubscriptionActiveSelector = (subscriptionId: string) =>
     createSelector([selectedSub], (selectedSub) => selectedSub?.ID === subscriptionId);
