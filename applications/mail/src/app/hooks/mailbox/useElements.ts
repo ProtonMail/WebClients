@@ -26,14 +26,7 @@ import { isSearch } from '../../helpers/elements';
 import { pageCount } from '../../helpers/paging';
 import type { Element } from '../../models/element';
 import { conversationByID } from '../../store/conversations/conversationsSelectors';
-import {
-    load as loadAction,
-    removeExpired,
-    reset,
-    resetByPassFilter,
-    setParams,
-    updatePage,
-} from '../../store/elements/elementsActions';
+import { load as loadAction, removeExpired, reset, setParams, updatePage } from '../../store/elements/elementsActions';
 import {
     dynamicTotal as dynamicTotalSelector,
     elementIDs as elementIDsSelector,
@@ -270,12 +263,6 @@ export const useElements: UseElements = ({
             })
         );
     }, [mailSettings.PageSize, mailSettings.ViewMode]);
-
-    // If sort or filter is being updated, we can reset bypass filter value from the state, otherwise it could create
-    // false placeholders when switching filters.
-    useEffect(() => {
-        dispatch(resetByPassFilter());
-    }, [sort, filter]);
 
     // Main effect watching all inputs and responsible to trigger actions on the state
     useEffect(() => {
