@@ -1,3 +1,11 @@
+### Version 1.31.2
+
+- Improve invite members modal UX
+- Fix gradient rendering issue on Safari extension
+- Improve WASM support for safari extension
+- Rename vault/item "admin" to "manager"
+- Edge extension uses Edge Addons URL instead of Chrome store URL
+
 ### Version 1.31.1
 
 - File attachments improvements
