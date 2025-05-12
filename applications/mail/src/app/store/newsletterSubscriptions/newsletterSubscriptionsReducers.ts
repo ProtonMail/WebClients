@@ -114,8 +114,8 @@ export const filterSubscriptionListRejected = (
     state: NewsletterSubscriptionsStateType,
     action: ReturnType<typeof filterSubscriptionList.rejected>
 ) => {
-    const previousState = action.payload?.previousState;
-    if (!state.value || !previousState) {
+    const { previousState, originalIndex } = action.payload || {};
+    if (!state.value || !previousState || originalIndex === undefined) {
         return;
     }
 
@@ -123,9 +123,8 @@ export const filterSubscriptionListRejected = (
         subscription.ID === previousState.ID ? previousState : subscription
     );
 
-    state.value.filteredSubscriptions = state.value.filteredSubscriptions.map((subscription) =>
-        subscription.ID === previousState.ID ? previousState : subscription
-    );
+    // In case of failure, we add the subscription back to the filtered list
+    state.value.filteredSubscriptions = state.value.filteredSubscriptions.toSpliced(originalIndex, 0, previousState);
 };
 
 export const unsubscribeSubscriptionPending = (
@@ -158,8 +157,8 @@ export const unsubscribeSubscriptionRejected = (
     state: NewsletterSubscriptionsStateType,
     action: ReturnType<typeof unsubscribeSubscription.rejected>
 ) => {
-    const previousState = action.payload?.previousState;
-    if (!state.value || !previousState) {
+    const { previousState, originalIndex } = action.payload || {};
+    if (!state.value || !previousState || originalIndex === undefined) {
         return;
     }
 
@@ -167,6 +166,6 @@ export const unsubscribeSubscriptionRejected = (
         subscription.ID === previousState.ID ? previousState : subscription
     );
 
-    // We remove the subscription in the pending reducer, we need to add it back in case of failure
-    state.value.filteredSubscriptions.push(previousState);
+    // In case of failure, we add the subscription back to the filtered list
+    state.value.filteredSubscriptions = state.value.filteredSubscriptions.toSpliced(originalIndex, 0, previousState);
 };

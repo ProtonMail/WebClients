@@ -29,11 +29,13 @@ export type SortSubscriptionsValue =
 
 export interface FilterSubscriptionPayload {
     subscription: NewsletterSubscription;
+    subscriptionIndex?: number;
     data: ApplyNewsletterSubscriptionsFilter;
 }
 
 export interface UnsubscribePayload {
     subscription: NewsletterSubscription;
+    subscriptionIndex?: number;
 }
 
 export interface UpdateSubscriptionParams {
