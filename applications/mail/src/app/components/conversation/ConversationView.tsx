@@ -88,7 +88,7 @@ const ConversationView = ({
 
     const messagesToShow = !loadingMessages && filter ? filteredMessages : messages;
 
-    const sortedMessages = messagesToShow.sort((a, b) => a.Time - b.Time);
+    const sortedMessages = [...messagesToShow].sort((a, b) => a.Time - b.Time);
 
     // "messagesWithoutQuickReplies" contains filtered messages to display or not in the conversation view.
     // We can use this variable to get unread notifications since trashed or inbox messages (depending on the current location) will be filtered or not.
