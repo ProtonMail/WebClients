@@ -24,7 +24,7 @@ const upsellToUnlimited = {
     upsellRef: UpsellRef.PROTON_BDAY_25_BUNDLE_WEB,
     priceWithCoupon: 779,
     priceWithoutCoupon: 1299,
-    features: [
+    features: () => [
         { name: c('anniversary_2025: Offer').t`500 GB encrypted storage` },
         { name: c('anniversary_2025: Offer').t`High speed streaming with VPN` },
         { name: c('anniversary_2025: Offer').t`Encrypted password manager` },
@@ -45,7 +45,7 @@ export const UPSELL_MAP: Record<
         coupon: COUPON_CODES;
         priceWithCoupon: number;
         priceWithoutCoupon: number;
-        features: Feature[];
+        features: () => Feature[];
     }
 > = {
     [PLANS.FREE]: {
@@ -54,7 +54,7 @@ export const UPSELL_MAP: Record<
         upsellRef: UpsellRef.PROTON_BDAY_25_PASS_PLUS_WEB,
         priceWithCoupon: 249,
         priceWithoutCoupon: 499,
-        features: [
+        features: () => [
             { name: c('anniversary_2025: Offer').t`Share passwords easily` },
             { name: c('anniversary_2025: Offer').t`Add unlimited credit cards` },
             { name: c('anniversary_2025: Offer').t`Save time with built-in 2FA` },
@@ -72,7 +72,7 @@ export const UPSELL_MAP: Record<
         upsellRef: UpsellRef.PROTON_BDAY_25_DUO_WEB,
         priceWithCoupon: 1199,
         priceWithoutCoupon: 1999,
-        features: [
+        features: () => [
             { name: c('anniversary_2025: Offer').t`Online privacy for up to 2 people` },
             { name: c('anniversary_2025: Offer').t`Double your encrypted storage – get 1 TB for all your data` },
             {
@@ -87,7 +87,7 @@ export const UPSELL_MAP: Record<
         upsellRef: UpsellRef.PROTON_BDAY_25_FAMILY_WEB,
         priceWithCoupon: 1799,
         priceWithoutCoupon: 2999,
-        features: [
+        features: () => [
             { name: c('anniversary_2025: Offer').t`Online privacy for your whole family (up to 6 users)` },
             { name: c('anniversary_2025: Offer').t`Triple your encrypted storage – get 3 TB for all your data` },
             {
