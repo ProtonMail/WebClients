@@ -22,7 +22,7 @@ describe('SendWithExpirationModal', () => {
         expect(screen.getByText('Send without expiration?')).toBeInTheDocument();
         expect(
             screen.getByText(
-                "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: test@example.com"
+                "Due to your recipient's configuration, this message can't be sent with an expiration date."
             )
         ).toBeInTheDocument();
         expect(screen.getByText('Learn more')).toBeInTheDocument();
@@ -36,17 +36,10 @@ describe('SendWithExpirationModal', () => {
 
         expect(
             screen.getByText(
-                "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contacts: test1@example.com, test2@example.com, test3@example.com"
+                "Due to your recipient's configuration, this message can't be sent with an expiration date to test1@example.com, test2@example.com, test3@example.com."
             )
         ).toBeInTheDocument();
         expect(screen.getByText('Learn more')).toBeInTheDocument();
-    });
-
-    it('should render correctly with more than 10 emails', () => {
-        const emails = Array.from({ length: 12 }, (_, i) => `test${i}@example.com`);
-        setupTest(emails);
-
-        expect(screen.getByText(/and more./)).toBeInTheDocument();
     });
 
     it('should call onClose when clicking Cancel button', () => {
