@@ -148,6 +148,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const { updatePhotoLinkTags } = useLinksState();
     const { setVolumeShareIds } = useVolumesState();
     const { shouldMigratePhotos, migratePhotos } = useShareActions();
+    const eventAbortController = useRef<AbortController | undefined>(undefined);
 
     const { createNotification } = useNotifications();
 
@@ -495,16 +496,18 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     );
 
     useEffect(() => {
-        const abortController = new AbortController();
         const unsubscribe = driveEventManager.eventHandlers.subscribeToCore((event) => {
             if (event.DriveShareRefresh?.Action === 2) {
-                loadSharedWithMeAlbums(abortController.signal, true).catch(sendErrorReport);
+                if (eventAbortController.current) {
+                    eventAbortController.current.abort();
+                }
+                eventAbortController.current = new AbortController();
+                loadSharedWithMeAlbums(eventAbortController.current.signal, true).catch(sendErrorReport);
             }
         });
 
         return () => {
             unsubscribe();
-            abortController.abort();
         };
     }, [loadSharedWithMeAlbums, driveEventManager.eventHandlers]);
 
