@@ -61,7 +61,7 @@ export const ProtonAnniversaryPromo2025Modal: FC<Props> = ({ onClose, onNeverSho
                         : c('anniversary_2025: Offer').t`Here's an exclusive gift to celebrate our journey together.`,
                 deals: [
                     {
-                        features: () => features,
+                        features,
                         dealName,
                         prices: {
                             withCoupon: priceWithCoupon * CYCLE.YEARLY,
