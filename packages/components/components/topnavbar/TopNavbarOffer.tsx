@@ -8,6 +8,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useOfferFlags from '@proton/components/containers/offers/hooks/useOfferFlags';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useConfig from '@proton/components/hooks/useConfig';
 import { CYCLE } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
@@ -29,7 +30,9 @@ interface Props {
 
 const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: Props) => {
     const { welcomeFlags } = useWelcomeFlags();
-    const onceRef = useRef(false);
+    const protonConfig = useConfig();
+    const isVPNApp = protonConfig.APP_NAME === APPS.PROTONVPN_SETTINGS;
+    const onceRef = useRef(false); // This is used to prevent the offer modal from being shown more than once
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const history = useHistory();
@@ -84,7 +87,8 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
             return;
         }
 
-        const combinedIgnoreVisited = ignoreVisited || autoOffer;
+        // We want to always auto-show the offer modal for the VPN application
+        const combinedIgnoreVisited = ignoreVisited || autoOffer || isVPNApp;
         if (
             (isVisited && !combinedIgnoreVisited) ||
             onceRef.current ||
@@ -111,7 +115,10 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
         CTAText.length > 20 && viewportWidth['>=large'] ? undefined : offerConfig.topButton?.icon || 'bag-percent';
 
     const buttonSize =
-        viewportWidth['<=small'] || (CTAText.length > 14 && app === APPS.PROTONCALENDAR) ? 'small' : 'medium';
+        viewportWidth['<=small'] ||
+        (CTAText.length > 15 && app === APPS.PROTONCALENDAR && protonConfig.APP_NAME !== APPS.PROTONACCOUNT)
+            ? 'small'
+            : 'medium';
 
     return (
         <>
@@ -135,8 +142,13 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
                     className={clsx([
                         offerConfig.topButton?.variant && `button-promotion--${offerConfig.topButton?.variant}`,
                         offerConfig.topButton?.variant === 'bf-2024' && 'text-uppercase text-semibold',
+                        offerConfig.topButton?.variant === 'anniversary-2025' && 'text-uppercase text-semibold',
                     ])}
-                    pill={!!offerConfig.topButton?.variant && offerConfig.topButton?.variant !== 'bf-2024'}
+                    pill={
+                        !!offerConfig.topButton?.variant &&
+                        offerConfig.topButton?.variant !== 'bf-2024' &&
+                        offerConfig.topButton?.variant !== 'anniversary-2025'
+                    }
                     data-testid="cta:special-offer"
                 >
                     {CTAText}
