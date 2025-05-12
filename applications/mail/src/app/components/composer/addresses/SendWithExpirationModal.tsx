@@ -1,4 +1,4 @@
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
@@ -15,21 +15,21 @@ const SendWithExpirationModal = ({ emails, onSubmit, onClose, ...rest }: Props) 
         onSubmit();
         onClose();
     };
+
+    const MAX_RECIPIENTS_DISPLAY = 10;
+
+    const firstRecipients = emails.slice(0, MAX_RECIPIENTS_DISPLAY).join(', ');
+
     return (
         <ModalTwo as={Form} data-testid="composer:send-anyway" onSubmit={handleSubmit} onClose={onClose} {...rest}>
             <ModalTwoHeader title={c('Title').t`Send without expiration?`} />
             <ModalTwoContent>
                 <p>
-                    {
-                        // translator - Complete sentence: Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: email1@provider.com, email2@provider.com, etc.
-                        c('Info').ngettext(
-                            msgid`Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: `,
-                            `Due to your recipient's configuration, this message can't be sent with an expiration date to the following contacts: `,
-                            emails.length
-                        ) +
-                            emails.slice(0, 10).join(', ') +
-                            (emails.length > 10 ? ` ${c('Info').t`and more.`}` : '')
-                    }
+                    {emails.length <= 1
+                        ? c('Info')
+                              .t`Due to your recipient's configuration, this message can't be sent with an expiration date.`
+                        : c('Info')
+                              .t`Due to your recipient's configuration, this message can't be sent with an expiration date to ${firstRecipients}.`}
                     <br />
                     <br />
                     <Href href={getKnowledgeBaseUrl('/expiration')}>{c('Info').t`Learn more`}</Href>
