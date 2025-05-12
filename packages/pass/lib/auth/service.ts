@@ -483,8 +483,12 @@ export const createAuthService = (config: AuthServiceConfig) => {
                     return getPersistedSessionKey(api, authStore);
                 })();
 
-                logger.info('[AuthService] Persisting session');
+                if (!clientKey) {
+                    logger.info('[AuthService] Cannot persist session before `clientKey` is set');
+                    return;
+                }
 
+                logger.info('[AuthService] Persisting session');
                 /* If the clientKey resolution sequence triggered a refresh,
                  * make sure we persist the session with the new tokens */
                 session.lastUsedAt = getEpoch();

@@ -107,9 +107,11 @@ export const syncAuthSession = (session: AuthSession, authStore: AuthStore): Aut
     persistent: authStore.getPersistent() ?? session.persistent,
 });
 
-/** Retrieves the current local key to decrypt the persisted session */
-export const getPersistedSessionKey = async (api: Api, authStore: AuthStore): Promise<CryptoKey> => {
-    const clientKey =
+/** Retrieves the current local key to decrypt the persisted session.
+ * NOTE: the `LocalKeyResponse` type is wrong - the `ClientKey` could
+ * potentially be `null` if it hasn't be set yet. */
+export const getPersistedSessionKey = async (api: Api, authStore: AuthStore): Promise<Maybe<CryptoKey>> => {
+    const clientKey: MaybeNull<string> =
         authStore.getClientKey() ??
         (
             await api<LocalKeyResponse>({
@@ -117,6 +119,8 @@ export const getPersistedSessionKey = async (api: Api, authStore: AuthStore): Pr
                 silence: true,
             })
         ).ClientKey;
+
+    if (!clientKey) return;
 
     authStore.setClientKey(clientKey);
     return getClientKey(clientKey);
@@ -172,7 +176,7 @@ export const resumeSession = async (
             api<{ User: UserType }>(getUser()),
         ]);
 
-        if (!persistedSession || persistedSession.UserID !== User.ID) throw InactiveSessionError();
+        if (!persistedSession || persistedSession.UserID !== User.ID || !clientKey) throw InactiveSessionError();
 
         const payloadVersion = session.payloadVersion ?? SESSION_VERSION;
         const decryptedBlob = await decryptSessionBlob(clientKey, blob, payloadVersion);
