@@ -16,6 +16,7 @@ interface Props {
     isOptionDropdownOpened?: boolean;
     collapsed?: boolean;
     labelID: string;
+    hideSpinner?: boolean;
 }
 
 const LocationAside = ({
@@ -29,6 +30,7 @@ const LocationAside = ({
     isOptionDropdownOpened,
     collapsed = false,
     labelID,
+    hideSpinner = false,
 }: Props) => {
     const mailSettings = useMailModel('MailSettings');
 
@@ -37,7 +39,7 @@ const LocationAside = ({
 
     return (
         <>
-            {!collapsed && (
+            {!hideSpinner && !collapsed && (
                 <ReloadSpinner
                     className={clsx(['reload-spinner hidden', unreadCount > 0 ? 'mr-2' : 'mr-0.5'])}
                     refreshing={refreshing}

@@ -64,6 +64,7 @@ interface Props {
     applyLabels: (params: ApplyLabelsParams) => void;
     className?: string;
     onClickCallback?: () => void;
+    hideSpinner?: boolean;
 }
 
 const SidebarItem = ({
@@ -90,6 +91,7 @@ const SidebarItem = ({
     applyLabels,
     className,
     onClickCallback,
+    hideSpinner = false,
 }: Props) => {
     const { call } = useEventManager();
     const history = useHistory();
@@ -219,6 +221,7 @@ const SidebarItem = ({
                             itemOptions={itemOptions}
                             isOptionDropdownOpened={isOptionDropdownOpened}
                             collapsed={collapsed}
+                            hideSpinner={hideSpinner}
                         />
                     }
                 >
