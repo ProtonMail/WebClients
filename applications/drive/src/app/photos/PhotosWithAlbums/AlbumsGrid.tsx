@@ -170,7 +170,7 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
     ]);
 
     return (
-        <div className="mt-6 pt-4 px-4 overflow-auto outline-none--at-all" ref={containerRef} onScroll={handleScroll}>
+        <div className="mt-2 pt-4 px-4 overflow-auto outline-none--at-all" ref={containerRef} onScroll={handleScroll}>
             <div className="relative w-full" style={innerStyle}>
                 {gridItems}
             </div>
