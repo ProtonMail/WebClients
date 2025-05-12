@@ -97,11 +97,13 @@ export const PhotosWithAlbumsView = () => {
     return (
         <>
             {!isPhotosEmpty && !isAddAlbumPhotosView && (
-                <PhotosTags
-                    selectedTags={selectedTags}
-                    tags={[PhotoTag.All, ...photoTags]}
-                    onTagSelect={(newTags) => handleSelectTag(new AbortController().signal, newTags)}
-                />
+                <div className="mb-2">
+                    <PhotosTags
+                        selectedTags={selectedTags}
+                        tags={[PhotoTag.All, ...photoTags]}
+                        onTagSelect={(newTags) => handleSelectTag(new AbortController().signal, newTags)}
+                    />
+                </div>
             )}
 
             {isPhotosEmpty && <EmptyPhotos shareId={shareId} linkId={linkId} />}
