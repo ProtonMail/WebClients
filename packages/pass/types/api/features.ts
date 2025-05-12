@@ -8,6 +8,7 @@ export enum PassFeature {
     PassFileAttachments = 'PassFileAttachmentsV1',
     PassFileAttachmentEncryptionV2 = 'PassFileAttachmentEncryptionV2',
     PassRenameAdminToManager = 'PassRenameAdminToManager',
+    PassProtonAnniversaryPromo2025 = 'PassProtonAnniversaryPromo2025',
 }
 
 export const PassFeaturesValues = Object.values(PassFeature);
