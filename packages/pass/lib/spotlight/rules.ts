@@ -197,3 +197,9 @@ export const createFileAttachmentsDiscoveryRule = (store: Store<State>): Spotlig
             return fileAttachmentsEnabled && !previous;
         },
     });
+
+export const createProtonAnniversary2025Rule = () =>
+    createSpotlightRule({
+        message: SpotlightMessage.PROTON_ANNIVERSARY_2025_PROMO,
+        when: (previous) => !previous,
+    });
