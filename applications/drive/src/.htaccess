@@ -1,7 +1,7 @@
 RewriteEngine On
 
 # Exclude the bots we want to support
-RewriteCond %{HTTP_USER_AGENT} !(Applebot|Twitterbot|facebookexternalhit|Facebot) [NC]
+RewriteCond %{HTTP_USER_AGENT} !(Applebot|Twitterbot|facebookexternalhit|Facebot|FB_IAB) [NC]
 
 # Detect unsupported browsers
 # IE, Edge (non-Chromium), Chrome < 73, Firefox < 68, Safari < 14
