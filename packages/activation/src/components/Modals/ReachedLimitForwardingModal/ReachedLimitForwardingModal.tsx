@@ -12,7 +12,7 @@ const getModalText = (hasAccessToBYOE: boolean) => {
     if (hasAccessToBYOE) {
         /*translator: full sentence is "You've connected 3 Gmail addresses. To add another, first disable one of your connected accounts."*/
         return c('loc_nightly: BYOE').ngettext(
-            msgid`You've connected ${MAX_SYNC_PAID_USER} Gmail addresses. To add another, first disable one of your connected accounts.`,
+            msgid`You've connected ${MAX_SYNC_PAID_USER} Gmail address. To add another, first disable one of your connected accounts.`,
             `You've connected ${MAX_SYNC_PAID_USER} Gmail addresses. To add another, first disable one of your connected accounts.`,
             MAX_SYNC_PAID_USER
         );
@@ -20,7 +20,7 @@ const getModalText = (hasAccessToBYOE: boolean) => {
 
     /*translator: full sentence is "You've enabled forwarding on 3 Gmail addresses. To add another, first disable one of your them."*/
     return c('Info').ngettext(
-        msgid`You've enabled forwarding on ${MAX_SYNC_PAID_USER} Gmail addresses. To add another, first disable one of them.`,
+        msgid`You've enabled forwarding on ${MAX_SYNC_PAID_USER} Gmail address. To add another, first disable one of them.`,
         `You've enabled forwarding on ${MAX_SYNC_PAID_USER} Gmail addresses. To add another, first disable one of them.`,
         MAX_SYNC_PAID_USER
     );
