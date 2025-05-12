@@ -6,11 +6,12 @@ import { Button } from '@proton/atoms/index';
 import { Checkbox, ContactImage, type ModalProps, Prompt } from '@proton/components';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import {
     filterSubscriptionList,
     unsubscribeSubscription,
 } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
+import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import { getUnsubscribeData } from '../helper';
 
@@ -22,18 +23,20 @@ interface Props extends ModalProps {
 
 const ModalUnsubscribe = ({ subscription, ...props }: Props) => {
     const dispatch = useMailDispatch();
+    const subscriptionIndex = useMailSelector(getFilteredSubscriptionIndex(subscription.ID));
 
     const [trash, setTrash] = useState(false);
     const [archive, setArchive] = useState(false);
     const [read, setRead] = useState(false);
 
     const onUnsubscribe = async () => {
-        void dispatch(unsubscribeSubscription({ subscription }));
+        void dispatch(unsubscribeSubscription({ subscription, subscriptionIndex }));
 
         if (trash || archive || read) {
             await dispatch(
                 filterSubscriptionList({
                     subscription,
+                    subscriptionIndex,
                     data: getUnsubscribeData({ trash, archive, read }),
                 })
             );
