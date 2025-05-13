@@ -152,11 +152,11 @@
       "Create": [
         "Criar"
       ],
-      "Create a ${ BRAND_NAME } account": [
-        "Criar uma conta no ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Criar uma conta na ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Criar uma conta no ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Criar alias"
@@ -1781,8 +1781,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro."
       ],
       "Moving items": [
         "Movendo itens"

@@ -152,10 +152,10 @@
       "Create": [
         "Crear"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Crear una cuenta de ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Crear una cuenta de ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -1393,7 +1393,7 @@
         "Se han eliminado todos los elementos de la papelera permanentemente."
       ],
       "All trashed items successfully restored": [
-        "Todos los elementos de la papelera han sido restaurados."
+        "Se han restaurado todos los elementos de la papelera."
       ],
       "An item previously shared with you was removed": [
         "Se ha eliminado un elemento previamente compartido contigo."
@@ -1781,8 +1781,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
-        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2047,7 +2046,7 @@
         "Selecciona dónde quieres guardar tus cajas fuertes importadas."
       ],
       "Selected items permanently deleted": [
-        "Los elementos seleccionados han sido eliminados permanentemente."
+        "Se han eliminado los elementos seleccionados permanentemente."
       ],
       "Selected items successfully moved to trash": [
         "Se han movido los elementos seleccionados a la papelera."
