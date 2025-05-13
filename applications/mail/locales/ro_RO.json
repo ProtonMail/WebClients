@@ -6219,11 +6219,6 @@
       "${ storage } storage": [
         "Stocare ${ storage }"
       ],
-      "${ subscription.ReceivedMessageCount } email last month": [
-        "Mesaje luna trecută: ${ subscription.ReceivedMessageCount }",
-        "Mesaje luna trecută: ${ subscription.ReceivedMessageCount }",
-        "Mesaje luna trecută: ${ subscription.ReceivedMessageCount }"
-      ],
       "${ subscription.UnreadMessageCount } unread": [
         "Necitite: ${ subscription.UnreadMessageCount }",
         "Necitite: ${ subscription.UnreadMessageCount }",
