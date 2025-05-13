@@ -34,11 +34,7 @@ const ProtonAnniversaryPromo2025: FC = memo(() => {
 
     /** Safe-guard promo end date in case feature flags could not be revalidated */
     const promoOngoing = useMemo(() => new Date().getTime() < PASS_PROTON_ANNIVERSARY_END_DATE, []);
-
     const canShowPromo = promoSpotlight.open && isUserEligible && promoOngoing;
-
-    const handlePromoButtonClick = () => setShowModal(true);
-    const onClose = () => setShowModal(false);
 
     return canShowPromo ? (
         <>
@@ -52,16 +48,18 @@ const ProtonAnniversaryPromo2025: FC = memo(() => {
                 buttonGradient={false}
                 iconGradient={false}
                 iconName="gift"
-                onClick={handlePromoButtonClick}
+                onClick={() => setShowModal(true)}
                 className={clsx('button-anniversary-2025 text-uppercase text-semibold')}
             >
                 {c('anniversary_2025: offer').t`Anniversary offer`}
             </PromotionButton>
             {showModal && (
                 <ProtonAnniversaryPromo2025Modal
-                    onClose={onClose}
-                    onNeverShowAgain={promoSpotlight.close}
+                    currency={user.Currency}
                     currentPlan={planName}
+                    email={user.Email}
+                    onClose={() => setShowModal(false)}
+                    onDiscard={promoSpotlight.close}
                 />
             )}
         </>
