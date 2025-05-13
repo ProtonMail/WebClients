@@ -1535,6 +1535,36 @@
       ],
       "Zoom out": [
         "Reduzir"
+      ],
+      "A to Z": [
+        "A a Z"
+      ],
+      "Active": [
+        "Ativo"
+      ],
+      "Change sorting": [
+        "Alterar a ordenação"
+      ],
+      "Expand navigation bar to see custom views": [
+        "Expandir a barra de navegação para ver as vistas personalizadas"
+      ],
+      "Least read": [
+        "Menos lido"
+      ],
+      "Most read": [
+        "Mais lido"
+      ],
+      "Recently received": [
+        "Recebido recentemente"
+      ],
+      "Resize panel": [
+        "Redimensionar painel"
+      ],
+      "Resubscribe": [
+        "Renovar a subscrição"
+      ],
+      "Unsubscribed": [
+        "Subscrição cancelada"
       ]
     },
     "action": {
@@ -1848,7 +1878,7 @@
         "Faturação de ${ amount } uma vez"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
-        "Renova após 1 mês a ${ regularAmount }. "
+        "Renova após 1 mês a ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
@@ -6843,7 +6873,8 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir uma imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -8203,6 +8234,70 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "A sua subscrição será renovada automaticamente em ${ renewalTime }."
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, arquive ou mova os e-mails antigos para uma pasta."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } quais as subscrições que já não são relevantes."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } deles com um clique."
+      ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "${ subscription.ReceivedMessageCount } e-mail no mês passado",
+        "${ subscription.ReceivedMessageCount } e-mails no mês passado"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } não lido",
+        "${ subscription.UnreadMessageCount } não lidos"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } rastreador de e-mail bloqueado",
+        "${ trackersCount } rastreadores de e-mail bloqueados"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } rastreador bloqueado",
+        "${ trackersCount } rastreadores bloqueados"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Todas as mensagens desta lista de correio serão marcadas como lidas."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Todas as mensagens desta lista de correio serão movidas para o arquivo."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Todas as mensagens desta lista de correio serão movidas para o lixo."
+      ],
+      "Apply to future messages ": [
+        "Aplicar às futuras mensagens "
+      ],
+      "Archive existing messages": [
+        "Arquivar mensagens existentes"
+      ],
+      "Bulk delete": [
+        "Eliminar em massa"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Gira e cancela facilmente a subscrição de boletins e listas de correio."
+      ],
+      "Mark all as read": [
+        "Marcar tudo como lido"
+      ],
+      "Optional": [
+        "Opcional"
+      ],
+      "Quickly spot": [
+        "Identifique rapidamente"
+      ],
+      "Trash existing messages": [
+        "Remover as mensagens existentes"
+      ],
+      "Unsubscribe": [
+        "Cancelar a subscrição"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Está a alguns cliques de ter uma caixa de entrada organizada"
       ]
     },
     "info": {
@@ -9077,6 +9172,27 @@
       ],
       "Your password (admin)": [
         "A sua palavra-passe (admin)"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Marcar todas as mensagens como lidas"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Mover todas as mensagens para ${ boldFolderName }"
+      ],
+      "Active filter:": [
+        "Filtro ativo:"
+      ],
+      "Apply to future messages": [
+        "Aplicar às mensagens futuras"
+      ],
+      "Mail subscriptions": [
+        "Subscrições de e-mails"
+      ],
+      "Move messages to": [
+        "Mover mensagens para"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "O filtro está desativado. Pode ativá-lo ${ settingsLink }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9395,6 +9511,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Tem de reativar as suas chaves para ver o convite actualizado."
+      ],
+      "Views": [
+        "Visualizações"
       ]
     },
     "Link to calendar event": {
@@ -12305,7 +12424,7 @@
         "Introduza o seu endereço ${ MAIL_APP_NAME } como o novo endereço e guarde, confirme ou verifique a alteração."
       ],
       "In the account settings, look for the option to edit or change your email address ": [
-        "Nas definições da conta, procure a opção para editar ou alterar o seu endereço de email."
+        "Nas definições da conta, procure a opção para editar ou alterar o seu endereço de email. "
       ],
       "Select service to update": [
         "Selecione o serviço para atualizar"
@@ -14214,6 +14333,30 @@
       ],
       "Your shorter address is now ready": [
         "O seu endereço mais curto já está pronto"
+      ],
+      "Archive all messages?": [
+        "Arquivar todas as mensagens?"
+      ],
+      "Mail subscriptions": [
+        "Subscrições de e-mails"
+      ],
+      "Mail Subscriptions": [
+        "Subscrições de e-mails"
+      ],
+      "Mark all messages as read": [
+        "Marcar todas as mensagens como lidas"
+      ],
+      "No mail subscriptions": [
+        "Sem subscrições de e-mails"
+      ],
+      "Trash all messages?": [
+        "Mover todas as mensagens para o lixo?"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Cancelar a subscrição de ${ subscription.Name }?"
+      ],
+      "Your subscriptions in one place": [
+        "As suas subscrições num só lugar"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14799,6 +14942,11 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Veja e gira as subscrições de boletins e lista de correio aqui."
       ]
     }
   }

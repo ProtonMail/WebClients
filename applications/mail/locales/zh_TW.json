@@ -1454,6 +1454,33 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Active": [
+        "啟用的"
+      ],
+      "Add account": [
+        "加入帳號"
+      ],
+      "Collaborate on documents": [
+        "於文件上合作"
+      ],
+      "hide-my-email aliases": [
+        "個 hide-my-email 別名"
+      ],
+      "Manage groups": [
+        "管理群組"
+      ],
+      "Resubscribe": [
+        "重新訂閱"
+      ],
+      "Set recovery methods": [
+        "設定復原方式"
+      ],
+      "Set up 2FA": [
+        "設定兩步驟驗證"
+      ],
+      "Unsubscribed": [
+        "已取消訂閱"
       ]
     },
     "action": {
@@ -3799,6 +3826,9 @@
       ],
       "This event was updated.": [
         "該行程已更新。"
+      ],
+      "NOTE:": [
+        "備注:"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5642,6 +5672,9 @@
     "Import provider": {
       "Import from ${ provider }": [
         "從 ${ provider } 匯入"
+      ],
+      "Import from Outlook": [
+        "從 Outlook 匯入"
       ]
     },
     "Import warning": {
@@ -6476,7 +6509,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖像"
+        "插入圖片"
       ],
       "Insert link": [
         "插入連結"
@@ -7716,6 +7749,33 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "您的訂購授權將於 ${ renewalTime } 自動更新。"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } 電郵追蹤程式已攔截"
+      ],
+      "and more.": [
+        "以及更多."
+      ],
+      "Not connected": [
+        "未連線"
+      ],
+      "Optional": [
+        "選項"
+      ],
+      "Other accounts": [
+        "其他帳號"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "防止您的郵件位址外洩到郵件清單或垃圾郵件發送者手上，使用 ${ hideMyEmailAliasesLink }。"
+      ],
+      "Set up your organization": [
+        "設定您的組織"
+      ],
+      "Unsubscribe": [
+        "取消訂閱"
+      ],
+      "Your IP": [
+        "您的 IP"
       ]
     },
     "info": {
@@ -8566,6 +8626,9 @@
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
+      ],
+      "Your IP": [
+        "您的 IP"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8833,6 +8896,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "您需要先重新啟用您的金鑰，才可查看已更新的邀請"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "如何使用${ DARK_WEB_MONITORING_NAME }"
       ]
     },
     "Link to calendar event": {
@@ -9640,6 +9706,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "${ size } storage per user": [
+        "${ size } 可用空間 / 每位使用者"
+      ],
+      "Password manager to secure credentials": [
+        "密碼管理器以確保身分安全"
       ]
     },
     "new_plans: feature highlight": {
@@ -10551,6 +10623,12 @@
       ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "更新價 ${ renewPriceStr }，任何時間都可取消。"
+      ],
+      "terms & conditions": [
+        "條款及細則"
       ]
     },
     "Payments.Error": {
@@ -10751,6 +10829,9 @@
       ],
       "Type text or keyword": [
         "鍵入文字或關鍵詞"
+      ],
+      "Organization name": [
+        "組織名稱"
       ]
     },
     "Placeholder for contact group name": {
@@ -13284,6 +13365,30 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Collaborate on documents": [
+        "於文件上合作"
+      ],
+      "Download the app": [
+        "下載應用程式"
+      ],
+      "Mobile": [
+        "手機"
+      ],
+      "Organization setup": [
+        "組織機構設定"
+      ],
+      "Set recovery methods": [
+        "設定復原方式"
+      ],
+      "Set up email forwarding": [
+        "設定電子郵件轉發"
+      ],
+      "Set up your organization": [
+        "設定您的組織"
+      ],
+      "What is a VPN?": [
+        "甚麼是 VPN?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13435,6 +13540,9 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "從 ${ numberOfCountries } 國家自動選擇"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "伺服器遍布 ${ numberOfCountries }+ 國家"
       ]
     },
     "vpn_2024: renew": {
@@ -13797,6 +13905,16 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "所有 ${ BRAND_NAME } 服務"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "加入Zoom會議"
       ]
     }
   }

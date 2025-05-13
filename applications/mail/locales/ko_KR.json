@@ -1204,7 +1204,7 @@
         "커스텀 도메인 설정"
       ],
       "Set up email forwarding": [
-        "이메일 포워딩 설정하기"
+        "이메일 가져오기 설정"
       ],
       "Settings": [
         "설정"
@@ -5833,6 +5833,18 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } 으로부터 불러오기"
+      ],
+      "Import from Google": [
+        "Google에서 가져오기"
+      ],
+      "Import from other": [
+        "다른 곳에서 가져오기"
+      ],
+      "Import from Outlook": [
+        "Outlook에서 가져오기"
+      ],
+      "Import from Yahoo": [
+        "Yahoo에서 가져오기"
       ]
     },
     "Import warning": {
@@ -8048,6 +8060,30 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "사용자의 구독이 ${ renewalTime }에 자동으로 갱신됩니다."
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount }개 트래커 차단됨"
+      ],
+      "Archive existing messages": [
+        "존재하는 메시지 보관함 이동"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "${ BRAND_NAME }로 메시지, 연락처 및 캘린더를 가져오세요."
+      ],
+      "Mark all as read": [
+        "모두 읽은 상태로 표시"
+      ],
+      "One time import": [
+        "한 번만 가져오기"
+      ],
+      "Optional": [
+        "선택 사항"
+      ],
+      "Trash existing messages": [
+        "존재하는 메시지 휴지통 이동"
+      ],
+      "Unsubscribe": [
+        "구독 해지"
       ]
     },
     "info": {
@@ -13766,7 +13802,7 @@
         "${ protonDuoPlanName } 설정하기"
       ],
       "Set up email forwarding": [
-        "이메일 포워딩 설정하기"
+        "이메일 가져오기 설정"
       ],
       "Set up your family account": [
         "가족 계정 설정하기"
@@ -13926,6 +13962,9 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "Your subscriptions in one place": [
+        "뉴스레터 구독을 모아보기"
       ]
     },
     "Today icon tooltip in mini calendar": {

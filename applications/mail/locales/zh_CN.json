@@ -37,7 +37,7 @@
         "${ BRAND_NAME } 商店"
       ],
       "A to Z": [
-        "从 A 到 Z"
+        "按名称排序"
       ],
       "Activate": [
         "启用"
@@ -46,7 +46,7 @@
         "激活恢复"
       ],
       "Active": [
-        "启用"
+        "订阅中"
       ],
       "Add": [
         "添加"
@@ -1366,7 +1366,7 @@
         "信任"
       ],
       "Trust key": [
-        "信任此密钥"
+        "信任密钥"
       ],
       "Trust public key": [
         "信任公钥"
@@ -1411,7 +1411,7 @@
         "取消订阅"
       ],
       "Unsubscribed": [
-        "取消订阅"
+        "已退订"
       ],
       "Unsubscribing": [
         "正在退订"
@@ -1547,6 +1547,18 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Least read": [
+        "阅读次数最少"
+      ],
+      "Most read": [
+        "阅读次数最多"
+      ],
+      "Recently received": [
+        "最近收到"
+      ],
+      "Resize panel": [
+        "调整面板大小"
       ]
     },
     "action": {
@@ -6037,7 +6049,7 @@
         "上个月已收到 ${ subscription.ReceivedMessageCount } 封邮件"
       ],
       "${ subscription.UnreadMessageCount } unread": [
-        "${ subscription.UnreadMessageCount } 个未读"
+        "${ subscription.UnreadMessageCount } 封未读"
       ],
       "${ total } conversation": [
         "${ total } 项会话"
@@ -6781,7 +6793,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert link": [
         "插入链接"
@@ -8135,6 +8147,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "只需点击几下，您的收件箱就不会杂乱无章了"
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }、归档或将旧邮件移至文件夹。"
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } 哪些订阅不再相关。"
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "一键即可 ${ boldUnsubscribe }。"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "由于收件方的设置，以下联系人无法接收带有过期日期的邮件："
       ]
     },
     "info": {
@@ -8747,7 +8771,7 @@
         "邮件服务器 (IMAP)"
       ],
       "Mail subscriptions": [
-        "Mail 订阅"
+        "邮件订阅"
       ],
       "Main": [
         "主要"
@@ -9015,6 +9039,15 @@
       ],
       "Your password (admin)": [
         "您的密码（管理员）"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } 标记所有邮件为已读"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } 将所有邮件移至 ${ boldFolderName }"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "过滤器已禁用。您可以启用它 ${ settingsLink }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13594,7 +13627,7 @@
         "Mail 订阅"
       ],
       "Mail subscriptions": [
-        "Mail 订阅"
+        "邮件订阅"
       ],
       "Make a secure connection your default": [
         "将安全连接设为默认首选"
@@ -13717,7 +13750,7 @@
         "未检测到数据泄露"
       ],
       "No mail subscriptions": [
-        "没有 Mail 订阅"
+        "未订阅邮件"
       ],
       "No need to empty the trash": [
         "无需清空回收站"
