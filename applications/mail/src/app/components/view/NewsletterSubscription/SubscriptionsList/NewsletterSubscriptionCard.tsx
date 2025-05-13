@@ -138,27 +138,20 @@ export const NewsletterSubscriptionCard = ({ subscription }: Props) => {
                             variant="large"
                             className="rounded relative"
                             displaySenderImage
+                            initialsStyle={{ '--h-custom': '2.25rem' }}
+                            initialsClassName="bg-strong flex h-custom items-center justify-center rounded w-full"
                         />
                     </div>
                     <div className="flex flex-column text-left gap-2 w-full md:gap-4 md:flex-row">
-                        <div className="max-w-full md:w-3/5 lg:w-1/2">
+                        <div className="max-w-full flex-1">
                             <h3 className="text-rg text-bold mb-1 text-ellipsis" title={subscription.Name}>
                                 {subscription.Name}
                             </h3>
                             <p className="m-0 color-weak text-sm text-ellipsis" title={subscription.SenderAddress}>
                                 {subscription.SenderAddress}
                             </p>
-                            <div className="mt-2 flex gap-2 md:mt-3">
-                                {subscription.UnsubscribedTime ? (
-                                    <InactiveSubscriptionButtons
-                                        onMoveToTrash={() => handleFilterClick('MoveToTrash')}
-                                    />
-                                ) : (
-                                    <ActiveSubscriptionButtons subscription={subscription} />
-                                )}
-                            </div>
                         </div>
-                        <div className="flex flex-column gap-3 text-sm color-weak">
+                        <div className="flex flex-1 flex-column gap-3 text-sm color-weak">
                             {subscription.UnreadMessageCount !== undefined ? (
                                 <SubscriptionStat iconName="envelope-dot">
                                     {c('Info').ngettext(
@@ -168,12 +161,12 @@ export const NewsletterSubscriptionCard = ({ subscription }: Props) => {
                                     )}
                                 </SubscriptionStat>
                             ) : null}
-                            {subscription.ReceivedMessageCount !== undefined ? (
+                            {subscription.ReceivedMessages.Last30Days !== undefined ? (
                                 <SubscriptionStat iconName="inbox">
                                     {c('Info').ngettext(
-                                        msgid`${subscription.ReceivedMessageCount} email last month`,
-                                        `${subscription.ReceivedMessageCount} emails last month`,
-                                        subscription.ReceivedMessageCount
+                                        msgid`${subscription.ReceivedMessages.Last30Days} email last month`,
+                                        `${subscription.ReceivedMessages.Last30Days} emails last month`,
+                                        subscription.ReceivedMessages.Last30Days
                                     )}
                                 </SubscriptionStat>
                             ) : null}
@@ -183,6 +176,14 @@ export const NewsletterSubscriptionCard = ({ subscription }: Props) => {
                         subscription={subscription}
                         handleSubscriptionFilter={(filter) => handleFilterClick(filter)}
                     />
+                </div>
+                <div className="mt-2 flex gap-2 md:mt-3">
+                    <div className="hidden sm:block subscription-card-image" />
+                    {subscription.UnsubscribedTime ? (
+                        <InactiveSubscriptionButtons onMoveToTrash={() => handleFilterClick('MoveToTrash')} />
+                    ) : (
+                        <ActiveSubscriptionButtons subscription={subscription} />
+                    )}
                 </div>
                 <div className="flex gap-3">
                     <div className="hidden sm:block subscription-card-image" />

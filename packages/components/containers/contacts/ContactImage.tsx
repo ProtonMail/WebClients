@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { type CSSProperties, useEffect, useState } from 'react';
 
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { getInitials } from '@proton/shared/lib/helpers/string';
@@ -13,6 +13,8 @@ interface Props {
     email: string;
     name: string;
     className?: string;
+    initialsClassName?: string;
+    initialsStyle?: CSSProperties;
     bimiSelector?: string;
     displaySenderImage?: boolean;
     variant?: Variant;
@@ -40,7 +42,16 @@ const getInlineSize = (variant: Variant) => {
     }
 };
 
-const ContactImage = ({ email, name, className, bimiSelector, displaySenderImage, variant = 'default' }: Props) => {
+const ContactImage = ({
+    email,
+    name,
+    className,
+    initialsClassName: initialClassName,
+    initialsStyle,
+    bimiSelector,
+    displaySenderImage,
+    variant = 'default',
+}: Props) => {
     const [mailSettings] = useMailSettings();
     const canLoad = !!displaySenderImage && !!email && mailSettings?.HideSenderImages === HIDE_SENDER_IMAGES.SHOW;
     const url = useSenderImage(canLoad ? email : '', bimiSelector);
@@ -70,7 +81,11 @@ const ContactImage = ({ email, name, className, bimiSelector, displaySenderImage
         );
     }
 
-    return <span data-testid="contact-initials">{getInitials(name)}</span>;
+    return (
+        <span data-testid="contact-initials" className={initialClassName} style={initialsStyle}>
+            {getInitials(name)}
+        </span>
+    );
 };
 
 export default ContactImage;
