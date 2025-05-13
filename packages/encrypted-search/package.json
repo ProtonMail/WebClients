@@ -18,17 +18,17 @@
         "@proton/i18n": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/utils": "workspace:^",
-        "idb": "^8.0.2",
+        "idb": "^8.0.3",
         "react": "^18.3.1",
         "ttag": "^1.8.7"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
-        "@types/jasmine": "^5.1.7",
+        "@types/jasmine": "^5.1.8",
         "eslint": "^8.57.1",
         "eslint-plugin-jasmine": "^4.2.2",
-        "jasmine": "^5.6.0",
-        "jasmine-core": "^5.6.0",
+        "jasmine": "^5.7.1",
+        "jasmine-core": "^5.7.1",
         "karma": "^6.4.4",
         "karma-chrome-launcher": "^3.2.0",
         "karma-jasmine": "^5.1.0",
@@ -37,6 +37,6 @@
         "playwright": "^1.52.0",
         "ts-loader": "^9.5.2",
         "typescript": "^5.8.3",
-        "webpack": "^5.99.7"
+        "webpack": "^5.99.8"
     }
 }
