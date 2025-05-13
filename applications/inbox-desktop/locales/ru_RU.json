@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "О ${ MAIL_APP_NAME }"
+      ],
       "Actual Size": [
         "Исходный размер"
       ],
@@ -14,11 +17,53 @@
       "Clear application data": [
         "Удаление данных приложения"
       ],
+      "Close Window": [
+        "Закрыть окно"
+      ],
+      "Copy": [
+        "Копировать"
+      ],
+      "Cut": [
+        "Вырезать"
+      ],
+      "Delete": [
+        "Удалить"
+      ],
       "Force Reload": [
         "Принудительная перезагрузка"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "Скрыть ${ MAIL_APP_NAME }"
+      ],
+      "Hide Others": [
+        "Скрыть другие"
+      ],
+      "Minimize": [
+        "Свернуть"
+      ],
+      "Paste": [
+        "Вставить"
+      ],
+      "Paste and Match Style": [
+        "Вставить и подобрать стиль"
+      ],
+      "Quit": [
+        "Выйти"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "Выйти из ${ MAIL_APP_NAME }l"
+      ],
+      "Redo": [
+        "Повторить"
+      ],
       "Reload": [
         "Перезагрузить"
+      ],
+      "Select All": [
+        "Выбрать всё"
+      ],
+      "Show All": [
+        "Показать все"
       ],
       "Show logs": [
         "Показать журналы"
@@ -26,11 +71,37 @@
       "Speech": [
         "Речь"
       ],
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Запуск ${ MAIL_APP_NAME } при входе"
+      ],
+      "Start Speaking": [
+        "Начать говорить"
+      ],
+      "Stop Speaking": [
+        "Закончить говорить"
+      ],
+      "Toggle Full Screen": [
+        "Переключить в полноэкранный режим"
+      ],
+      "Undo": [
+        "Отменить"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Удалить ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "Приблизить"
+      ],
       "Zoom In": [
         "Увеличить масштаб"
       ],
       "Zoom Out": [
         "Уменьшить масштаб"
+      ]
+    },
+    "App Menu": {
+      "Services": [
+        "Службы"
       ]
     },
     "Context menu": {
@@ -42,11 +113,44 @@
       ],
       "Emoji and Symbols": [
         "Эмодзи и символы"
+      ],
+      "Save image as…": [
+        "Сохранить изображение как ..."
+      ],
+      "Speech": [
+        "Речь"
+      ],
+      "Start Speaking": [
+        "Начать говорить"
+      ],
+      "Stop Speaking": [
+        "Закончить говорить"
       ]
     },
     "Context Menu": {
       "Copy": [
         "Копировать"
+      ],
+      "Cut": [
+        "Вырезать"
+      ],
+      "Look Up “${ text }”": [
+        "Искать “${ text }”"
+      ],
+      "Paste": [
+        "Вставить"
+      ],
+      "Paste and Match Style": [
+        "Вставить и подобрать стиль"
+      ],
+      "Redo": [
+        "Повторить"
+      ],
+      "Select All": [
+        "Выбрать все"
+      ],
+      "Undo": [
+        "Отменить"
       ]
     },
     "Error dialog": {
