@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activa"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activa"
       ],
       "Activate organization key": [
         "Activar la clau d'organització"
@@ -169,7 +169,7 @@
         "Connecta aplicacions i dispositius"
       ],
       "Connect to video conferencing": [
-        "Connecta a la videoconferència"
+        "Connecta't a la videoconferència"
       ],
       "Contact support": [
         "Contactar amb el suport"
@@ -267,10 +267,10 @@
       "Discard": [
         "Descarta"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Descarta els canvis"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Descarta els canvis"
       ],
       "Discover ${ planName }": [
@@ -456,10 +456,10 @@
       "Invite user": [
         "Convida l'usuari"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Continua editant"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Continua editant"
       ],
       "Keep logo": [
@@ -573,11 +573,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "refresh the page": [
-        "refresca la pàgina"
-      ],
       "Refresh the page": [
         "Refresca la pàgina"
+      ],
+      "refresh the page": [
+        "refresca la pàgina"
       ],
       "Remove": [
         "Esborra"
@@ -727,7 +727,7 @@
         "Estableix mètodes de recuperació"
       ],
       "Set up 2FA": [
-        "Configuració 2FA"
+        "Configuració de l'A2F"
       ],
       "Set up a custom domain": [
         "Configura un domini personalitzat"
@@ -748,7 +748,7 @@
         "Comparteix amb un enllaç"
       ],
       "Share your calendar with your team": [
-        "Comparteix el calendari amb el vostre equip"
+        "Compartiu el calendari amb el vostre equip"
       ],
       "Sharing options": [
         "Opcions de compartició"
@@ -859,7 +859,7 @@
         "Utilitzar el tema ${ label }"
       ],
       "Use ${ PASS_APP_NAME } for Business": [
-        "Utilitza ${ PASS_APP_NAME } per al Business"
+        "Utilitza ${ PASS_APP_NAME } for Business"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilitza el ${ VPN_SHORT_APP_NAME } per a la privadesa de dades"
@@ -4515,11 +4515,11 @@
       "Data recoverable on this device": [
         "Dades recuperables en aquest dispositiu"
       ],
-      "Dedicated servers": [
-        "Servidors dedicats"
-      ],
       "dedicated servers": [
         "servidors dedicats"
+      ],
+      "Dedicated servers": [
+        "Servidors dedicats"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Es poden afegir servidors dedicats amb adreces IP dedicades a portes d'enllaç privades per a activar un control d'accés més optimitzat."
@@ -5188,7 +5188,7 @@
         "Introduïu la frase de recuperació de 12 paraules associada amb el vostre compte."
       ],
       "Please fill in all required fields.": [
-        "Ompliu tots els camps obligatoris."
+        "Empleneu tots els camps obligatoris."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Tingueu en compte que quan feu clic al botó «Confirmar», el vostre compte tindrà ${ creditsRemaining } crèdit restant.",
@@ -5989,9 +5989,9 @@
         "Després, se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }.",
         "Després, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
       ],
-      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of them.": [
-        "Heu habilitat el reenviament a ${ MAX_SYNC_PAID_USER } adreça de Gmail. Per afegir-ne una altra, primer heu de desactivar-la.",
-        "Heu habilitat el reenviament en ${ MAX_SYNC_PAID_USER } adreces de Gmail. Per afegir-ne una altra, primer desactiveu-ne una."
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Heu habilitat el reenviament en ${ MAX_SYNC_PAID_USER } adreça del Gmail. Per afegir-ne una altra, primer desactiveu-ne una.",
+        "Heu habilitat el reenviament en ${ MAX_SYNC_PAID_USER } adreces del Gmail. Per afegir-ne una altra, primer desactiveu-ne una."
       ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "S'ha aplicat el vostre ${ boldDiscountPercent } a ${ boldPlanTitle }."
@@ -6952,7 +6952,7 @@
         "No teniu accés a l'A2F?"
       ],
       "Enforcing 2FA for organizations": [
-        "Requereix 2FA per a organitzacions"
+        "Aplicació obligatòria de l'autenticació de doble factor (A2F) per a organitzacions"
       ],
       "Forgot email?": [
         "Heu oblidat el vostre correu electrònic?"
@@ -7012,13 +7012,13 @@
         "Com utilitzar ${ DARK_WEB_MONITORING_NAME }?"
       ],
       "How to use ${ PASS_APP_NAME } for Business": [
-        "Com utilitzar ${ PASS_APP_NAME } per al Business?"
+        "Com utilitzar ${ PASS_APP_NAME } for Business?"
       ],
       "How to use email forwarding": [
         "Com utilitzar el reenviament de correu?"
       ],
       "How to use Groups": [
-        "Com utilitzar grups?"
+        "Com utilitzar els grups?"
       ],
       "Learn more": [
         "Més informació"
@@ -8465,17 +8465,6 @@
         "Us donem la benvinguda a ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Tothom"
-      ],
-      "Group members": [
-        "Membres del grup"
-      ],
-      "No one": [
-        "Ningú"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "${ defaultLabel } permès"
@@ -8545,6 +8534,17 @@
       ],
       "The whole organization": [
         "Tota l'organització"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tothom"
+      ],
+      "Group members": [
+        "Membres del grup"
+      ],
+      "No one": [
+        "Ningú"
       ]
     },
     "Organization capacity error": {
@@ -10393,6 +10393,47 @@
         "Per ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenviament automàtic de correu electrònic ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de filtracions de dades ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
+      ],
+      "Support our mission": [
+        "Doneu suport a la nostra missió"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
@@ -10681,47 +10722,6 @@
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "and 15 more premium features": [
-        "i 15 característiques prèmium més"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenviament automàtic de correu electrònic ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de filtracions de dades ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
-      ],
-      "No ads or tracking": [
-        "Sense anuncis ni rastreig"
-      ],
-      "Short @pm.me email address": [
-        "Adreça electrònica curta de @pm.me"
-      ],
-      "Support our mission": [
-        "Doneu suport a la nostra missió"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade your productivity": [
-        "Milloreu la vostra productivitat"
-      ],
-      "We don't sell your data": [
-        "No venem les vostres dades"
-      ],
-      "Your privacy is our mission": [
-        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription renewal state": {
