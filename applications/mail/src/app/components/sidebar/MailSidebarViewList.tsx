@@ -15,18 +15,20 @@ import { useNewsletterSubscriptionSpotlight } from '../view/NewsletterSubscripti
 import SidebarItem from './SidebarItem';
 
 export const MailSidebarViewList = () => {
-    const newsletterSubscriptionView = useFlag('NewsletterSubscriptionView');
+    const newsletterSubscriptionsView = useFlag('NewsletterSubscriptionView');
+    const mailboxRefactoring = useFlag('MailboxRefactoring');
+
     const spotlight = useNewsletterSubscriptionSpotlight();
 
     const [{ counts }] = useNewsletterSubscriptions();
 
     const [user] = useUser();
-    const [displayView, toggleView] = useLocalState(newsletterSubscriptionView, `${user.ID || 'item'}-display-views`);
+    const [displayView, toggleView] = useLocalState(newsletterSubscriptionsView, `${user.ID || 'item'}-display-views`);
 
     const mailParams = useMailSelector(params);
 
     // We need this because there is only one view for the moment
-    if (!newsletterSubscriptionView) {
+    if (!newsletterSubscriptionsView || !mailboxRefactoring) {
         return null;
     }
 

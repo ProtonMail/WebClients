@@ -25,6 +25,8 @@ import './NewsletterSubscriptionView.scss';
 
 export const NewsletterSubscriptionView = () => {
     const newsletterSubscriptionsView = useFlag('NewsletterSubscriptionView');
+    const mailboxRefactoring = useFlag('MailboxRefactoring');
+
     const { feature } = useFeature(FeatureCode.NewsletterSubscriptionViewOnboarding);
 
     const newsletterSubscriptions = useMailSelector(subscriptionListSelector);
@@ -41,7 +43,7 @@ export const NewsletterSubscriptionView = () => {
         }
     }, [feature?.Value, isDomBusy]);
 
-    if (!newsletterSubscriptionsView) {
+    if (!newsletterSubscriptionsView || !mailboxRefactoring) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
