@@ -197,7 +197,7 @@
         "Cambiar página"
       ],
       "Change sorting": [
-        "Cambiar orden"
+        "Cambiar el orden"
       ],
       "Chat with us": [
         "Chatea con nosotros"
@@ -1106,7 +1106,7 @@
         "Restablecer valores por defecto"
       ],
       "Resize panel": [
-        "Redimensionar panel"
+        "Cambiar el tamaño del panel"
       ],
       "Restore": [
         "Restaurar"
@@ -1424,7 +1424,7 @@
         "Cancelar suscripción"
       ],
       "Unsubscribed": [
-        "Suscripción cancelada"
+        "Se ha cancelado la suscripción."
       ],
       "Unsubscribing": [
         "Cancelando suscripción"
@@ -1688,6 +1688,138 @@
       ],
       "New email": [
         "Nuevo correo electrónico"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Aprovecha la oferta"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "200 GB storage": [
+        "200 GB de almacenamiento"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB de almacenamiento cifrado"
+      ],
+      "Add unlimited credit cards": [
+        "Añade tarjetas de crédito ilimitadas"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Todas las funciones prémium de ${ BRAND_NAME } Mail, Pass, VPN, Drive y Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloquea anuncios, rastreadores y malware"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Los descuentos se basan en el precio mensual estándar. Al final del ciclo de facturación, tu suscripción se renovará a la tarifa anual estándar."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Duplica tu almacenamiento cifrado: obtén 1 TB para todos tus datos"
+      ],
+      "Encrypted password manager": [
+        "Gestor de contraseñas cifrado"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Aquí tienes un regalo exclusivo para celebrar nuestro viaje juntos."
+      ],
+      "High speed streaming with VPN": [
+        "Streaming de alta velocidad con VPN"
+      ],
+      "of privacy": [
+        "de privacidad"
+      ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
+      "Online privacy for up to 2 people": [
+        "Privacidad online para hasta 2 personas"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Privacidad online para toda tu familia (hasta 6 usuarios)"
+      ],
+      "Protect up to 10 devices": [
+        "Protege hasta 10 dispositivos"
+      ],
+      "Recover previous file versions": [
+        "Recuperar las versiones previas de los archivos"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Ahorra mucho en funciones prémium de Drive con un descuento por tiempo limitado."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Ahorra mucho en funciones prémium de Mail con un descuento por tiempo limitado."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Ahorra mucho en funciones prémium de Pass con un descuento por tiempo limitado."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Ahorra mucho en funciones prémium de VPN con un descuento por tiempo limitado"
+      ],
+      "Save time with built-in 2FA": [
+        "Ahorra tiempo con 2FA integrado"
+      ],
+      "Secure email with unlimited aliases": [
+        "Correo seguro con alias ilimitados"
+      ],
+      "Select any server": [
+        "Selecciona cualquier servidor"
+      ],
+      "Share passwords easily": [
+        "Comparte contraseñas fácilmente"
+      ],
+      "Short @pm.me address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Transmite tu contenido favorito"
+      ],
+      "thanks to you": [
+        "gracias a ti"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Triplica tu almacenamiento cifrado: obtén 3 TB para todos tus datos"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Número ilimitado de carpetas, etiquetas y filtros"
+      ],
+      "Use your own email domain": [
+        "Usa tu propio dominio de correo electrónico"
+      ],
+      "years": [
+        "años"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Oferta de aniversario"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ],
+      "/ month": [
+        "/ mes"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "15 months": [
+        "15 meses"
+      ],
+      "24 months": [
+        "24 meses"
+      ],
+      "30 months": [
+        "30 meses"
+      ],
+      "for ${ durationDeal }": [
+        "durante ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -2399,6 +2531,14 @@
       ],
       "Expand": [
         "Expandir"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } es una IA centrada en la privacidad que te ayuda a hacer más, mientras mantiene tus datos seguros. Desbloquea todo su potencial y disfruta de acceso anticipado a nuevas funciones a medida que se introducen."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Añadir ${ LUMO_APP_NAME }"
       ]
     },
     "color": {
@@ -6135,9 +6275,9 @@
       "${ storage } storage": [
         "${ storage } de almacenamiento"
       ],
-      "${ subscription.ReceivedMessageCount } email last month": [
-        "${ subscription.ReceivedMessageCount } correo el mes pasado",
-        "${ subscription.ReceivedMessageCount } correos el mes pasado"
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } correo el mes pasado",
+        "${ subscription.ReceivedMessages.Last30Days } correos el mes pasado"
       ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } no leído",
@@ -8103,7 +8243,7 @@
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
       ],
       "You have ${ unread } in your inbox.": [
-        "Tienes ${ unread } en su bandeja de entrada."
+        "Tienes ${ unread } en tu bandeja de entrada."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Tienes **${ count } conversación** almacenada en esta carpeta.",
@@ -8938,7 +9078,7 @@
         "Mover ${ sidebarElementName }"
       ],
       "Move messages to": [
-        "Mover mensajes a"
+        "Mover los mensajes a"
       ],
       "Move to": [
         "Mover a"
@@ -9264,6 +9404,9 @@
       ]
     },
     "Labels": {
+      "Newsletters you unsubscribe from will appear here.": [
+        "Los boletines cuyas suscripciones hayas cancelado aparecerán aquí."
+      ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Aquí puedes ver y administrar las suscripciones a boletines y listas de correo."
       ]
@@ -12528,10 +12671,10 @@
         "El ${ appStorage } está lleno."
       ],
       "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
-        "Su ${ productString } está ${ percentage }% lleno. ${ cta }."
+        "Tu ${ productString } está ${ percentage }% lleno. ${ cta }."
       ],
       "Your ${ productString } is full. ${ cta }.": [
-        "Su ${ productString } está lleno. ${ cta }."
+        "Tu ${ productString } está lleno. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Tu almacenamiento está al ${ percentage }% lleno. ${ cta }."
@@ -13583,7 +13726,7 @@
         "Limpiando datos"
       ],
       "Collaborate on documents": [
-        "Colabore en documentos"
+        "Colabora en documentos"
       ],
       "Confirm downgrade": [
         "Confirmar el paso a un plan inferior"
@@ -14026,6 +14169,9 @@
       "No trackers found": [
         "No se han encontrado rastreadores."
       ],
+      "No unsubscribed mail subscriptions": [
+        "No hay suscripciones de correo dadas de baja"
+      ],
       "No-reply address detected": [
         "Se ha detectado una dirección de no responder"
       ],
@@ -14264,7 +14410,7 @@
         "Papelera"
       ],
       "Trash all messages?": [
-        "¿Enviar todos los mensajes de la Papelera?"
+        "¿Enviar todos los mensajes a la papelera?"
       ],
       "Trust new key?": [
         "¿Confiar en la nueva clave?",
@@ -14884,7 +15030,7 @@
         "Cada semana los jueves ${ untilString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Semanalmente los martes, ${ untilString }"
+        "Cada martes hasta ${ untilString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
         "Semanalmente los miércoles, ${ untilString }"
