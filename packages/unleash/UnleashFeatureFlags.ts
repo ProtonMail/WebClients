@@ -40,6 +40,7 @@ enum CommonFeatureFlag {
     B2BOnboarding = 'B2BOnboarding',
     InboxBringYourOwnEmail = 'InboxBringYourOwnEmail',
     LumoPlusFrontend = 'LumoPlusFrontend',
+    CryptoEnforceOpenpgpGrammar = 'CryptoEnforceOpenpgpGrammar'
 }
 
 enum AccountFlag {
