@@ -1105,6 +1105,9 @@
       "Reset to default": [
         "Auf Standardwert zurücksetzen"
       ],
+      "Resize panel": [
+        "Größe der Seitenleiste ändern"
+      ],
       "Restore": [
         "Wiederherstellen"
       ],
@@ -1377,10 +1380,6 @@
       ],
       "Trust": [
         "Vertrauen"
-      ],
-      "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -7246,7 +7245,7 @@
         "Bitte beachte, dass dieser Vorgang (je nach Größe deines Adressbuchs) einige Zeit dauern kann."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ auf deinem Konto noch ${ creditsRemaining } Guthaben verbleibt.",
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleibt.",
         "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleiben."
       ],
       "Please open the document to view it.": [
@@ -8629,11 +8628,11 @@
       "Always move sender's emails": [
         "Nachrichten dieses Absenders immer verschieben"
       ],
-      "And": [
-        "Und"
-      ],
       "AND": [
         "UND"
+      ],
+      "And": [
+        "Und"
       ],
       "and": [
         "und"
@@ -8860,11 +8859,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Wenn"
-      ],
       "IF": [
         "WENN"
+      ],
+      "If": [
+        "Wenn"
       ],
       "Import all messages": [
         "Alle Nachrichten importieren"
@@ -8986,14 +8985,14 @@
       "Optional": [
         "Optional"
       ],
+      "OR": [
+        "ODER"
+      ],
       "or": [
         "oder"
       ],
       "Or": [
         "Oder"
-      ],
-      "OR": [
-        "ODER"
       ],
       "Original link": [
         "Original-Link"
@@ -9885,6 +9884,14 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle } holen"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Konto löschen"
@@ -9906,14 +9913,6 @@
       ],
       "Switch plan": [
         "Abonnement wechseln"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } holen"
       ]
     },
     "new_plans: feature": {
@@ -12622,6 +12621,47 @@
         "Für ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -12880,47 +12920,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {

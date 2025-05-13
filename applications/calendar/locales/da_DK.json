@@ -171,6 +171,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Bekræft åbning af link ${ linkToShow }"
       ],
+      "Connect apps and devices": [
+        "Forbind apps og enheder"
+      ],
       "Connect to video conferencing": [
         "Forbind til videokonferencer"
       ],
@@ -506,6 +509,9 @@
       "More options": [
         "Flere muligheder"
       ],
+      "More options for accounts": [
+        "Flere muligheder for konti"
+      ],
       "New event": [
         "Ny begivenhed"
       ],
@@ -688,6 +694,9 @@
       ],
       "Set up a custom domain": [
         "Konfigurer et brugerdomæne"
+      ],
+      "Set up email forwarding": [
+        "Indstil videresendelse af e-mail"
       ],
       "Settings": [
         "Indstillinger"
@@ -921,6 +930,9 @@
       "${ price } per domain": [
         "${ price } per domæne"
       ],
+      "${ price } per seat": [
+        "${ price } per plads"
+      ],
       "${ price } per user": [
         "${ price } per bruger"
       ],
@@ -1118,6 +1130,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Ubegrænsede indlogninger, betalingskort, hide-my-email-aliasser og mere"
       ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
@@ -2698,6 +2713,9 @@
       "Also included": [
         "Også inkluderet"
       ],
+      "Automatically forward incoming email to another email address.": [
+        "Videresend automatisk indkommende e-mails til en anden e-mailadresse."
+      ],
       "Availability unknown": [
         "Tilgængelighed ukendt"
       ],
@@ -2751,6 +2769,9 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For at importere dine kontakter fra Google eller Outlook, ${ easySwitchLink }."
+      ],
+      "To start, give your organization a name.": [
+        "Start med at give deres organisation et navn."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
@@ -4935,6 +4956,12 @@
       "Internet connection restored.": [
         "Internetforbindelse genoprettet."
       ],
+      "It's better to have:": [
+        "Det er bedre at have:"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Det er bedst at bruge en VPN til enhver tid. Men her er, hvornår cybertrusler kan være højest:"
+      ],
       "JCB logo": [
         "JCB logo"
       ],
@@ -5052,6 +5079,9 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Forekomster som arrangøren tidligere har opdateret vil blive opbevaret."
       ],
+      "On public WiFi networks": [
+        "På offentlige WiFi-netværk"
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
       ],
@@ -5084,6 +5114,9 @@
       ],
       "Password copied to clipboard": [
         "Adgangskode kopieret til udklipsholder"
+      ],
+      "Password must have:": [
+        "Adgangskoden skal have:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet af TLS-kryptering og schweizisk lovgivning om beskyttelse af privatlivets fred."
@@ -5216,6 +5249,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynd at dele det med dine kontakter, og brug det til onlinetjenester."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Hold forbindelsen ubesværet ved at aktivere følgende VPN-indstillinger:"
       ],
       "Storage allocated to other users in this organisation": [
         "Lagerplads tildelt andre brugere i denne organisation"
@@ -6230,6 +6266,9 @@
       "Vulnerable": [
         "Sårbar"
       ],
+      "Vulnerable password": [
+        "Sårbar adgangskode"
+      ],
       "Weak": [
         "Svag"
       ],
@@ -6371,8 +6410,14 @@
       "How to set up SMTP": [
         "Sådan konfigureres SMTP"
       ],
+      "How to share a calendar": [
+        "Sådan deles en kalender"
+      ],
       "How to share via email": [
         "Sådan deles via e-mail"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Sådan bruges ${ DARK_WEB_MONITORING_NAME }"
       ],
       "How to use ${ PASS_APP_NAME } for Business": [
         "Sådan bruges ${ PASS_APP_NAME } for Business"
@@ -7356,6 +7401,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Vores ${ visionary }-abonnement er ikke længere tilgængeligt for nye abonnenter, da det er et særligt abonnement for oprindelige ${ BRAND_NAME }-brugere med særlige funktioner og fordele."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Betal én gang, beskyt dine adgangskoder og identitet for evigt."
       ],
       "Popular": [
         "Populær"
@@ -8923,6 +8971,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Dette særtilbud gælder i de første 2 år."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Dit abonnement fornyes til samme pris hvert år."
       ]
@@ -9246,6 +9297,47 @@
         "Til ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME } med premium funktioner"
@@ -9501,47 +9593,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -10014,6 +10065,9 @@
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Bekræft tab af ${ BRAND_NAME }-bonusser"
       ],
+      "Connect apps and devices": [
+        "Forbind apps og enheder"
+      ],
       "Connect to video conferencing": [
         "Forbind til videokonferencer"
       ],
@@ -10171,6 +10225,9 @@
       ],
       "Exporting contacts": [
         "Eksporterer kontakter"
+      ],
+      "Get more from your VPN": [
+        "Få mere ud af deres VPN"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Hent ${ appName[APP_NAME] } apps"
@@ -10335,6 +10392,9 @@
       "Save changes": [
         "Gem ændringer"
       ],
+      "Schedule meetings in one click": [
+        "Planlæg møder med ét klik"
+      ],
       "Security center": [
         "Sikkerhedscenter"
       ],
@@ -10416,6 +10476,9 @@
       "Simplify email distribution": [
         "Forenkl e-maildistribution"
       ],
+      "Simplify password management": [
+        "Forenkle adgangskodehåndtering"
+      ],
       "Start a new import": [
         "Start en ny import"
       ],
@@ -10451,6 +10514,9 @@
       ],
       "Verifying your payment...": [
         "Verificerer din betaling..."
+      ],
+      "VPN explained": [
+        "VPN forklaret"
       ],
       "Warning": [
         "Advarsel"

@@ -1105,6 +1105,9 @@
       "Reset to default": [
         "Restaurar para padrão"
       ],
+      "Resize panel": [
+        "Redimensionar painel"
+      ],
       "Restore": [
         "Restaurar"
       ],
@@ -1379,8 +1382,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -6136,6 +6138,14 @@
       "${ storage } storage": [
         "${ storage } de armazenamento"
       ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "${ subscription.ReceivedMessageCount } e-mail no mês passado",
+        "${ subscription.ReceivedMessageCount } e-mails no mês passado"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } não lido",
+        "${ subscription.UnreadMessageCount } não lidos"
+      ],
       "${ total } conversation": [
         "${ total } conversa",
         "${ total } conversas"
@@ -7324,7 +7334,7 @@
         "O compartilhamento público de documentos ainda não é suportado."
       ],
       "Quickly spot": [
-        "Identificado rapidamente"
+        "Identifique rapidamente"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Entre em contato conosco para obter ajuda sobre qualquer coisa relacionada a ${ BRAND_NAME }."
@@ -8624,10 +8634,10 @@
       "Always move sender's emails": [
         "Sempre mover os e-mails do remetente"
       ],
-      "And": [
+      "AND": [
         "E"
       ],
-      "AND": [
+      "And": [
         "E"
       ],
       "and": [
@@ -8646,7 +8656,7 @@
         "Aplicar filtro aos e-mails existentes"
       ],
       "Apply to future messages": [
-        "Aplicar para mensagens faturas"
+        "Aplicar para mensagens futuras"
       ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
@@ -8855,11 +8865,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Se"
-      ],
       "IF": [
         "SE"
+      ],
+      "If": [
+        "Se"
       ],
       "Import all messages": [
         "Importar todas as mensagens"
@@ -8981,14 +8991,14 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "OU"
+      ],
       "or": [
         "ou"
       ],
       "Or": [
         "Ou"
-      ],
-      "OR": [
-        "OU"
       ],
       "Original link": [
         "Link original"
@@ -9102,7 +9112,7 @@
         "Informações do sistema"
       ],
       "The filter is disabled. You can enable it ${ settingsLink }": [
-        "O filtro está desativado. Você pode ativa-lo ${ settingsLink }"
+        "O filtro está desativado. Você pode ativá-lo ${ settingsLink }"
       ],
       "Theme": [
         "Tema"
@@ -9880,6 +9890,14 @@
         "Velocidade média de VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Obtenha ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Excluir conta"
@@ -9901,14 +9919,6 @@
       ],
       "Switch plan": [
         "Mudar de plano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Obtenha ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -12634,6 +12644,47 @@
         "Por ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Armazenamento de 15 GB"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 recursos premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento de e-mail automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerta de violações de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicativo para computador"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Faça upgrade para um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie nossa missão"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Faça upgrade da sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos seus dados"
+      ],
+      "Your privacy is our mission": [
+        "Sua privacidade é a nossa missão"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com recursos premium"
@@ -12892,47 +12943,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Seu próprio alias de e-mail @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Armazenamento de 15 GB"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 recursos premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento de e-mail automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerta de violações de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicativo para computador"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Faça upgrade para um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie nossa missão"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade your productivity": [
-        "Faça upgrade da sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos seus dados"
-      ],
-      "Your privacy is our mission": [
-        "Sua privacidade é a nossa missão"
       ]
     },
     "Subscription renewal state": {

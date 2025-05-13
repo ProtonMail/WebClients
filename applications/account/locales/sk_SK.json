@@ -463,10 +463,10 @@
       "Discard": [
         "Zahodiť"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Zahodiť zmeny"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Zahodiť zmeny"
       ],
       "Discover ${ planName }": [
@@ -781,10 +781,10 @@
       "Keep": [
         "Zachovať"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Pokračovať v úpravách"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Pokračovať v úpravách"
       ],
       "Keep logo": [
@@ -967,11 +967,11 @@
       "Refresh status": [
         "Obnoviť stav"
       ],
-      "refresh the page": [
-        "obnoviť stránku"
-      ],
       "Refresh the page": [
         "Obnoviť stránku"
+      ],
+      "refresh the page": [
+        "obnoviť stránku"
       ],
       "Reject": [
         "Odmietnuť"
@@ -7663,11 +7663,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivujte aspoň jeden spôsob obnovy údajov, aby ste mali istotu, že v prípade straty hesla budete mať naďalej prístup k obsahu svojho ${ BRAND_NAME } účtu."
       ],
-      "active": [
-        "aktívne"
-      ],
       "Active": [
         "Aktívne"
+      ],
+      "active": [
+        "aktívne"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Pridajte do svojho konta emailovú adresu @pm.me. Táto jednoduchá, kratšia doména znamená \"${ MAIL_APP_NAME } me\" alebo \"Private Message me.\""
@@ -8128,11 +8128,11 @@
       "Data recoverable on this device": [
         "Údaje obnoviteľné v tomto zariadení"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -10504,12 +10504,6 @@
         "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }.",
         "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }."
       ],
-      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of them.": [
-        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adrese Gmail. Ak chcete pridať ďalšiu, najprv inú deaktivujte.",
-        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adresách Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte.",
-        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adresách Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte.",
-        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adresách Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte."
-      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Vaša ${ boldDiscountPercent } na ${ boldPlanTitle } bola uplatnená"
       ],
@@ -11280,10 +11274,10 @@
       "Amount due": [
         "Čiastka k zaplateniu"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
       "and": [
@@ -11712,11 +11706,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Ak"
-      ],
       "IF": [
         "AK"
+      ],
+      "If": [
+        "Ak"
       ],
       "Import all messages": [
         "Importovať všetky správy"
@@ -11925,14 +11919,14 @@
       "Optional": [
         "Voliteľné"
       ],
+      "OR": [
+        "ALEBO"
+      ],
       "or": [
         "alebo"
       ],
       "Or": [
         "Alebo"
-      ],
-      "OR": [
-        "ALEBO"
       ],
       "Organization name": [
         "Názov organizácie"
@@ -14719,17 +14713,6 @@
         "Počítač"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Všetci"
-      ],
-      "Group members": [
-        "Členovia skupiny"
-      ],
-      "No one": [
-        "Nikto"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10. deň v mesiaci"
@@ -14964,6 +14947,17 @@
       ],
       "Trash": [
         "Kôš"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Všetci"
+      ],
+      "Group members": [
+        "Členovia skupiny"
+      ],
+      "No one": [
+        "Nikto"
       ]
     },
     "Option delay send seconds": {
@@ -18066,6 +18060,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "and 15 more premium features": [
+        "a ďalších 15 prémiových funkcií"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické presmerovanie emailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornenia na úniky údajov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
+      ],
+      "No ads or tracking": [
+        "Žiadne reklamy alebo sledovanie"
+      ],
+      "Short @pm.me email address": [
+        "Skrátená emailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podporte naše poslanie"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšite svoju produktivitu"
+      ],
+      "We don't sell your data": [
+        "Nepredávame vaše údaje"
+      ],
+      "Your privacy is our mission": [
+        "Vaše súkromie je naším poslaním"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkciami"
@@ -18366,47 +18401,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastný skrátený emailový alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložného priestoru"
-      ],
-      "and 15 more premium features": [
-        "a ďalších 15 prémiových funkcií"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické presmerovanie emailu ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornenia na úniky údajov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikácia"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
-      ],
-      "No ads or tracking": [
-        "Žiadne reklamy alebo sledovanie"
-      ],
-      "Short @pm.me email address": [
-        "Skrátená emailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podporte naše poslanie"
-      ],
-      "Upgrade": [
-        "Prejsť na platený plán"
-      ],
-      "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
-      ],
-      "We don't sell your data": [
-        "Nepredávame vaše údaje"
-      ],
-      "Your privacy is our mission": [
-        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription renewal state": {
