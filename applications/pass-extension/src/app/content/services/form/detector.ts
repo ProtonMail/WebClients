@@ -1,6 +1,5 @@
 import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from 'proton-pass-extension/app/content/constants.static';
 import type { CSFeatures } from 'proton-pass-extension/app/content/context/types';
-import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/types';
 import { selectNodeFromPath } from 'proton-pass-extension/app/content/utils/nodes';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -21,7 +20,7 @@ import {
 } from '@proton/pass/fathom';
 import type { Fnode } from '@proton/pass/fathom/fathom';
 import type { DetectionRulesMatch } from '@proton/pass/lib/extension/rules/types';
-import type { MaybeNull } from '@proton/pass/types';
+import type { Callback, MaybeNull } from '@proton/pass/types';
 import { compareDomNodes } from '@proton/pass/utils/dom/sort';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -35,7 +34,16 @@ const ruleset = rulesetMaker();
 const NOOP_EL = document.createElement('form');
 const DETECTION_TIE_TRESHOLD = 0.01;
 
+type DetectorConfig = {
+    fieldTypes?: FieldType[];
+    formTypes?: FormType[];
+    onBottleneck?: (data: { detectionTime: number; hostname: string }) => void;
+};
+
+export type DetectedForm = { formType: FormType; form: HTMLElement; fields: DetectedField[] };
+export type DetectedField = { fieldType: FieldType; field: HTMLInputElement };
 type DetectorState = { rules: MaybeNull<DetectionRulesMatch> };
+
 type BoundRuleset = ReturnType<typeof ruleset.against>;
 type PredictionResult<T extends string> = { fnode: Fnode; type: T; score: number };
 type PredictionBestSelector<T extends string> = (
@@ -56,6 +64,7 @@ const getPredictionsFor = <T extends string>(
 
     const predictions = options.subTypes.reduce<Map<Fnode, PredictionResult<T>>>((results, subType) => {
         const fnodes: Fnode[] = boundRuleset.get(subType);
+
         fnodes.forEach((fnode) => {
             const score = getTypeScore(fnode, subType);
             const candidate = { type: subType, fnode, score };
@@ -115,44 +124,52 @@ const selectBestForm: PredictionBestSelector<FormType> = (candidates) => {
     else return login;
 };
 
-type DetectionRunnerOptions = {
-    excludedFieldTypes?: FieldType[];
-    onBottleneck: (data: { detectionTime: number; hostname: string }) => void;
-};
+const isEnabled = (features: Record<CSFeatures, boolean>): boolean =>
+    features.Autofill ||
+    features.Autofill2FA ||
+    features.Autosave ||
+    features.AutosuggestAlias ||
+    features.AutosuggestPassword;
 
-/* Runs the fathom detection and returns a form handle for each detected form.. */
-const createDetectionRunner =
-    (ruleset: ReturnType<typeof rulesetMaker>, doc: Document) =>
-    ({ excludedFieldTypes = [], onBottleneck }: DetectionRunnerOptions): DetectedForm[] => {
-        const [formPredictions, fieldPredictions] = withMaxExecutionTime(
-            (): [PredictionResult<FormType>[], PredictionResult<FieldType>[]] => {
-                const boundRuleset = ruleset.against(doc.body);
-                return [
-                    getPredictionsFor<FormType>(boundRuleset, {
-                        type: 'form',
-                        subTypes: formTypes,
-                        selectBest: selectBestForm,
-                    }),
-                    getPredictionsFor<FieldType>(boundRuleset, {
-                        type: 'field',
-                        subTypes: fieldTypes.filter((type) => !excludedFieldTypes.includes(type)),
-                        selectBest,
-                    }),
-                ];
+export const createDetectorService = (config: DetectorConfig) => {
+    const state: DetectorState = { rules: null };
+
+    const guard = <F extends Callback>(fn: F) =>
+        withMaxExecutionTime(fn, {
+            maxTime: MIN_MAX_DETECTION_TIME,
+            onMaxTime: (detectionTime) => {
+                const { hostname } = window.location;
+                logger.info(`[Detector] Slow down detected on ${hostname} (took ${detectionTime}ms)`);
+
+                if (detectionTime >= MAX_MAX_DETECTION_TIME) {
+                    config?.onBottleneck?.({ detectionTime, hostname });
+                    throw new Error();
+                }
             },
-            {
-                maxTime: MIN_MAX_DETECTION_TIME,
-                onMaxTime: (detectionTime) => {
-                    const { hostname } = window.location;
+        });
 
-                    if (detectionTime >= MAX_MAX_DETECTION_TIME) {
-                        onBottleneck({ detectionTime, hostname });
-                        throw new Error();
-                    }
-                },
-            }
-        )();
+    const predictForms = guard((subTypes: FormType[], boundRuleset?: BoundRuleset) =>
+        getPredictionsFor<FormType>(boundRuleset ?? ruleset.against(document.body), {
+            type: 'form',
+            subTypes,
+            selectBest: selectBestForm,
+        })
+    );
 
+    const predictFields = guard((subTypes: FieldType[], boundRuleset?: BoundRuleset) =>
+        getPredictionsFor<FieldType>(boundRuleset ?? ruleset.against(document.body), {
+            type: 'field',
+            subTypes,
+            selectBest,
+        })
+    );
+
+    const predictAll = guard((options?: { excludedFieldTypes?: FieldType[] }) => {
+        const fieldSubTypes = fieldTypes.filter((type) => !options?.excludedFieldTypes?.includes(type));
+
+        const boundRuleset = ruleset.against(document.body);
+        const formPredictions = predictForms(config.formTypes ?? formTypes, boundRuleset);
+        const fieldPredictions = predictFields(config.fieldTypes ?? fieldSubTypes, boundRuleset);
         const fieldMap = groupFields(formPredictions, fieldPredictions);
 
         const forms = formPredictions.map(({ fnode: formFNode, type: formType }) => {
@@ -164,34 +181,13 @@ const createDetectionRunner =
             };
         });
 
-        /* Form / fields flagging :
-         * each detected form should be flagged via the `data-protonpass-form` attribute so as to
-         * avoid triggering unnecessary detections if nothing of interest has changed in the DOM.
-         * · `formPredictions` will include only visible forms : flag them with prediction class
-         * · all form fields which have been detected should be flagged as processed with the
-         *   `data-protonpass-field` attr. The remaining fields without classification results
-         *   should only be flagged as processed if they are visible or `[type="hidden"]`. This
-         *   heuristic flagging allows detection triggers to monitor new fields correctly.
-         * · query all unprocessed forms (including invisible ones) and flag them as `NOOP` */
-
         /* only start tracking forms which have a positive detection result or
          * dangling forms which have at least one detected field */
         const formsToTrack = forms.filter(({ formType, fields }) => formType !== FormType.NOOP || fields.length > 0);
-
         clearDetectionCache(); /* clear visibility cache on each detection run */
 
         return formsToTrack;
-    };
-
-const isEnabled = (features: Record<CSFeatures, boolean>): boolean =>
-    features.Autofill ||
-    features.Autofill2FA ||
-    features.Autosave ||
-    features.AutosuggestAlias ||
-    features.AutosuggestPassword;
-
-export const createDetectorService = () => {
-    const state: DetectorState = { rules: null };
+    });
 
     const detector = {
         init: async () => {
@@ -238,7 +234,7 @@ export const createDetectorService = () => {
          * then runs prepass for clustering and heuristic exclusions.
          * Uses requestIdleCallback since visibility checks can be costly and
          * trigger DOM repaints, with a small delay to ensure DOM stability. */
-        shouldRunDetection: (): Promise<boolean> =>
+        shouldPredict: (): Promise<boolean> =>
             new Promise(async (resolve) => {
                 await wait(50);
                 requestIdleCallback(() => {
@@ -248,7 +244,9 @@ export const createDetectorService = () => {
                 });
             }),
 
-        runDetection: createDetectionRunner(ruleset, document),
+        predictAll,
+        predictFields,
+        predictForms,
     };
 
     return detector;

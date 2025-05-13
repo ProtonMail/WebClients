@@ -12,6 +12,7 @@ import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/red
 import { AppStatus } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
+import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
 import { CSContext } from './context';
@@ -50,7 +51,12 @@ export const createContentScriptContext = (options: {
         service: {
             autofill: createAutofillService(),
             autosave: createAutosaveService(),
-            detector: createDetectorService(),
+            detector: createDetectorService({
+                onBottleneck: ({ detectionTime }) => {
+                    logger.info(`[Detector] Prediction bottleneck detected [${detectionTime}ms]`);
+                    context.destroy({ reason: 'bottleneck' });
+                },
+            }),
             formManager: createFormManager({
                 onDetection: async (forms) => {
                     /* attach or detach dropdown based on the detection results */
