@@ -895,6 +895,9 @@
       ],
       "Generate password": [
         "Vygenerovať heslo"
+      ],
+      "Get the writing assistant": [
+        "Získajte asistenta písania"
       ]
     },
     "action": {
@@ -4601,6 +4604,18 @@
       ],
       "Other": [
         "Ďalší"
+      ],
+      "Import from Google": [
+        "Importovať z Google"
+      ],
+      "Import from other": [
+        "Importovať z inej služby"
+      ],
+      "Import from Outlook": [
+        "Importovať z Outlooku"
+      ],
+      "Import from Yahoo": [
+        "Importovať z Yahoo"
       ]
     },
     "Import warning": {
@@ -5997,6 +6012,12 @@
       ],
       "Uppercase and lowercase letters": [
         "Veľké a malé písmená"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Preneste svoje správy, kontakty a kalendáre do ${ BRAND_NAME }."
+      ],
+      "One time import": [
+        "Jednorazový import"
       ]
     },
     "info": {
@@ -7908,6 +7929,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Odomknite všetky prémiové produkty a funkcie ${ BRAND_NAME } len za ${ priceLine }. Zrušiť môžete kedykoľvek."
+      ],
+      "Starting from ${ priceLine }": [
+        "Cena od ${ priceLine }"
       ]
     },
     "new_plans: title": {
@@ -9588,6 +9612,9 @@
       ],
       "Your subscription will renew at the same rate every year.": [
         "Vaše predplatné sa bude obnovovať každý rok za rovnakú cenu."
+      ],
+      "The special offer is valid for the first 2 years.": [
+        "Špeciálna ponuka platí počas prvých 2 rokov."
       ]
     },
     "specialoffer: Link": {
@@ -9667,6 +9694,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Štandardná cena ${ amount } na 30 mesiacov"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Špeciálna ponuka platí počas prvých 2 rokov"
       ]
     },
     "specialoffer: Title": {
@@ -9823,6 +9853,15 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Stratíte prístup k neobmedzenému počtu prihlásení a poznámok, neobmedzenému počtu hide-my-email aliasov, 20 trezorom, ako aj prioritnej podpore."
+      ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Ak chcete naďalej používať produkty ${ BRAND_NAME }, uvoľnite miesto alebo ${ upgrade }"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Vaše úložisko ${ productString } je zaplnené na ${ percentage }%. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Vaše úložisko ${ productString } je plné. ${ cta }."
       ]
     },
     "Subscribe to calendar modal": {
@@ -11262,6 +11301,9 @@
       ],
       "Schedule meetings in one click": [
         "Naplánujte si stretnutia jedným kliknutím"
+      ],
+      "Mail Subscriptions": [
+        "Emailové odbery"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

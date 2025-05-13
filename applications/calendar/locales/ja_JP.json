@@ -883,6 +883,9 @@
       ],
       "Generate password": [
         "パスワードを生成"
+      ],
+      "Get the writing assistant": [
+        "執筆アシスタントを入手"
       ]
     },
     "action": {
@@ -4457,6 +4460,18 @@
       ],
       "Other": [
         "その他"
+      ],
+      "Import from Google": [
+        "Googleからインポート"
+      ],
+      "Import from other": [
+        "その他からインポート"
+      ],
+      "Import from Outlook": [
+        "Outlook からインポート"
+      ],
+      "Import from Yahoo": [
+        "Yahooからインポート"
       ]
     },
     "Import warning": {
@@ -5748,6 +5763,15 @@
       ],
       "Uppercase and lowercase letters": [
         "大文字と小文字"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "メッセージ、連絡先、カレンダーを ${ BRAND_NAME }に移行。"
+      ],
+      "One time import": [
+        "1 回限りのインポート"
+      ],
+      "Password must have:": [
+        "パスワードは以下を含む必要があります:"
       ]
     },
     "info": {
@@ -6379,6 +6403,9 @@
       ],
       "Weak password": [
         "弱いパスワード"
+      ],
+      "Password strength": [
+        "パスワードの強度"
       ]
     },
     "Label for contact group color": {
@@ -7542,6 +7569,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "全ての ${ BRAND_NAME } プレミアム製品と機能を ${ priceLine }だけでアンロックできます。いつでもキャンセルできます。"
+      ],
+      "Starting from ${ priceLine }": [
+        "${ priceLine } から"
       ]
     },
     "new_plans: title": {
@@ -9066,6 +9096,9 @@
       ],
       "Your subscription will renew at the same rate every year.": [
         "サブスクリプションは毎年同じ料金で更新されます。"
+      ],
+      "The special offer is valid for the first 2 years.": [
+        "特別オファーは最初の2年間有効です。"
       ]
     },
     "specialoffer: Link": {
@@ -9142,6 +9175,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "標準価格では 30 か月毎に ${ amount }"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "特別オファーは最初の2年間有効です"
       ]
     },
     "specialoffer: Title": {
@@ -9295,6 +9331,15 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "無制限のログインとメモ、無制限のhide-my-email エイリアス、20 個の保管庫、および優先サポートにアクセスできなくなります。"
+      ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "${ BRAND_NAME }製品を引き続きご利用いただくには、容量を空けるか、${ upgrade }ください。"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString }は${ percentage }%使用中です。${ cta }。"
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString }はいっぱいです。${ cta }。"
       ]
     },
     "Subscribe to calendar modal": {
@@ -10653,6 +10698,12 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Mail Subscriptions": [
+        "メール購読"
+      ],
+      "Schedule meetings in one click": [
+        "ワンクリックでミーティングをスケジュール"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11224,6 +11275,26 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "Slack": {
+      "Join Slack huddle": [
+        "Slackに参加する"
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "${ priceString }を節約"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Teamsに参加する"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Zoomミーティングに参加"
       ]
     }
   }

@@ -895,6 +895,9 @@
       ],
       "Generate password": [
         "Згенерыраваць пароль"
+      ],
+      "Get the writing assistant": [
+        "Атрымаць памочніка ў напісанні"
       ]
     },
     "action": {
@@ -4601,6 +4604,18 @@
       ],
       "Other": [
         "Іншы"
+      ],
+      "Import from Google": [
+        "Імпартаваць з Google"
+      ],
+      "Import from other": [
+        "Імпартаваць з іншых паштовых сэрвісаў"
+      ],
+      "Import from Outlook": [
+        "Імпартаваць з Outlook"
+      ],
+      "Import from Yahoo": [
+        "Імпартаваць з Yahoo"
       ]
     },
     "Import warning": {
@@ -5997,6 +6012,12 @@
       ],
       "Uppercase and lowercase letters": [
         "Маленькія і вялікія літары"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Перанясіце свае паведамленні, кантакты і календары ў ${ BRAND_NAME }."
+      ],
+      "One time import": [
+        "Аднаразовае імпартаванне"
       ]
     },
     "info": {
@@ -6522,7 +6543,7 @@
         "Асноўны"
       ],
       "Proration": [
-        "Прапарцыйнае размеркаванне"
+        "Прапарцыянальнае размеркаванне"
       ],
       "Public keys": [
         "Публічныя ключы"
@@ -7908,6 +7929,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Разблакіраваць усе прэміяльныя прадукты ${ BRAND_NAME } і функцыі ўсяго за ${ priceLine }. Скасаваць можна ў любы момант."
+      ],
+      "Starting from ${ priceLine }": [
+        "Пачатковы кошт ${ priceLine }"
       ]
     },
     "new_plans: title": {
@@ -9836,7 +9860,7 @@
         "Вы згубіце доступ да наступных функцый: неабмежаваную колькасць запісаў уваходу і нататак; неабмежаваную колькасць псеўданімаў hide-my-email; 20 сховішчаў; прыярытэтную падтрымку."
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
-        "Каб працягваць карыстацца прадуктамі ${ BRAND_NAME }, вызваліце месца або ${ upgrade }"
+        "Вызваліце месца або ${ upgrade }, каб працягнуць карыстацца прадуктамі ${ BRAND_NAME }"
       ],
       "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
         "Ваша ${ productString } запоўнена на ${ percentage }%. ${ cta }."
@@ -11292,6 +11316,9 @@
       ],
       "Schedule meetings in one click": [
         "Плануйце сустрэчы адным націскам мышы"
+      ],
+      "Mail Subscriptions": [
+        "Падпіскі пошты"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

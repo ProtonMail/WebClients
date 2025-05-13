@@ -808,6 +808,30 @@
       ],
       "Generate password": [
         "生成密碼"
+      ],
+      "Add account": [
+        "加入帳號"
+      ],
+      "Collaborate on documents": [
+        "於文件上合作"
+      ],
+      "Get the apps": [
+        "取得應用程式"
+      ],
+      "Get the writing assistant": [
+        "取得寫作幫手"
+      ],
+      "Manage groups": [
+        "管理群組"
+      ],
+      "Set recovery methods": [
+        "設定復原方式"
+      ],
+      "Set up 2FA": [
+        "設定兩步驟驗證"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "啟用${ DARK_WEB_MONITORING_NAME }"
       ]
     },
     "action": {
@@ -1125,6 +1149,9 @@
       ],
       "Two-year": [
         "兩年"
+      ],
+      "Lifetime": [
+        "終身"
       ]
     },
     "Browser": {
@@ -2840,6 +2867,9 @@
       ],
       "This event was updated.": [
         "該行程已更新。"
+      ],
+      "NOTE:": [
+        "備注:"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4260,6 +4290,9 @@
       ],
       "Other": [
         "其它"
+      ],
+      "Import from Outlook": [
+        "從 Outlook 匯入"
       ]
     },
     "Import warning": {
@@ -5413,6 +5446,33 @@
       ],
       "Uppercase and lowercase letters": [
         "大寫及小寫字母"
+      ],
+      "Calendar is disabled": [
+        "行事曆已停用"
+      ],
+      "Not connected": [
+        "未連線"
+      ],
+      "Other accounts": [
+        "其他帳號"
+      ],
+      "Set up your organization": [
+        "設定您的組織"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "每${ cycle }個月自動續訂。"
+      ],
+      "VPN IP": [
+        "VPN IP"
+      ],
+      "Your IP": [
+        "您的 IP"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "您的方案開始於${ renewalTime }及於${ cycle }月重新開始。"
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "您的訂購授權將於 ${ renewalTime } 自動更新。"
       ]
     },
     "info": {
@@ -6023,6 +6083,12 @@
       ],
       "Weak password": [
         "脆弱密碼"
+      ],
+      "Your IP": [
+        "您的 IP"
+      ],
+      "Your location": [
+        "您的位置"
       ]
     },
     "Label for contact group color": {
@@ -6152,6 +6218,9 @@
       ],
       "What’s this?": [
         "這是什麼？"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "如何使用${ DARK_WEB_MONITORING_NAME }"
       ]
     },
     "Link label (optional)": {
@@ -6996,6 +7065,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "${ size } storage per user": [
+        "${ size } 可用空間 / 每位使用者"
+      ],
+      "Password manager to secure credentials": [
+        "密碼管理器以確保身分安全"
       ]
     },
     "new_plans: feature highlight": {
@@ -7891,6 +7966,18 @@
       ],
       "Timeout exceeded": [
         "已經逾時"
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "更新價 ${ renewPriceStr }，任何時間都可取消。"
+      ],
+      "terms & conditions": [
+        "條款及細則"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPriceStr } 續約。您可以在任何時候取消。"
+      ],
+      "Your payment is still being processed": [
+        "您的付款仍在處理中"
       ]
     },
     "Payments.Error": {
@@ -8043,6 +8130,9 @@
       ],
       "Start typing an email address": [
         "在此輸入一個電郵位址"
+      ],
+      "Organization name": [
+        "組織名稱"
       ]
     },
     "Placeholder for contact group name": {
@@ -8766,6 +8856,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "您將不能使用我們的無限密碼記錄、無限的 hide-my-email 別名、高達20個密碼保險箱與我們的全力支援。"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "您已使用 ${ percentage }% 的 ${ productString }。${ cta }。"
       ]
     },
     "Subscribe to calendar modal": {
@@ -9998,6 +10091,39 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Add user": [
+        "加入使用者"
+      ],
+      "Collaborate on documents": [
+        "於文件上合作"
+      ],
+      "Desktop": [
+        "電腦版應用程式"
+      ],
+      "Download the app": [
+        "下載應用程式"
+      ],
+      "Mobile": [
+        "手機"
+      ],
+      "Organization setup": [
+        "組織機構設定"
+      ],
+      "Set recovery methods": [
+        "設定復原方式"
+      ],
+      "Set up email forwarding": [
+        "設定電子郵件轉發"
+      ],
+      "Set up your organization": [
+        "設定您的組織"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "啟用${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "What is a VPN?": [
+        "甚麼是 VPN?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10152,6 +10278,9 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "從 ${ numberOfCountries } 國家自動選擇"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "伺服器遍布 ${ numberOfCountries }+ 國家"
       ]
     },
     "vpn_2024: renew": {
@@ -10549,6 +10678,26 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "所有 ${ BRAND_NAME } 服務"
+      ]
+    },
+    "Note": {
+      "Note:": [
+        "備注:"
+      ]
+    },
+    "RSVP Note": {
+      "Remove note": [
+        "移除備註"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "加入Zoom會議"
       ]
     }
   }

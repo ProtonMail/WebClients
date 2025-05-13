@@ -887,6 +887,9 @@
       ],
       "Generate password": [
         "პაროლის გენერირება"
+      ],
+      "Get the writing assistant": [
+        "მიიღეთ წერის დამხმარე"
       ]
     },
     "action": {
@@ -2835,6 +2838,21 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "შემომავალი ელფოსტის ავტომატური გადაგზავნა სხვა ელფოსტის მისამართზე."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "მოირგეთ ეს ჯერ, რომ გაააქტიუროთ თქვენი ორგანიზაცია და მოირგოთ თქვენი ელფოსტის მისამართი."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "იოლი წვდომა თქვენს ელფოსტასთან და კალენდართან კომპიუტერიდან და მობილურიდან."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "საშუალებას გაძლევთ, მყისიერად დაამატოთ შეხვედრის ბმულები თქვვენი მოვლენის მოსაწვევებს."
+      ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "მოირგეთ ანგარიშები ყველა მომხმარებლისთვის და მოიწვიეთ ისინი ${ BRAND_NAME }-ზე."
       ]
     },
     "description": {
@@ -4457,6 +4475,18 @@
       ],
       "Other": [
         "სხვა"
+      ],
+      "Import from Google": [
+        "Google-დან შემოტანა"
+      ],
+      "Import from other": [
+        "სხვა ადგილიდან შემოტანა"
+      ],
+      "Import from Outlook": [
+        "Outlook-დან შემოტანა"
+      ],
+      "Import from Yahoo": [
+        "yahoo-დან შემოტანა"
       ]
     },
     "Import warning": {
@@ -5737,6 +5767,12 @@
       ],
       "Uppercase and lowercase letters": [
         "დიდი და პატარა ასოები"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "გადმოიტანეთ თქვენი შეტყობინებები, კონტაქტები და კალენდრები ${ BRAND_NAME }-ზე."
+      ],
+      "One time import": [
+        "ერთჯერადი შემოტანა"
       ]
     },
     "info": {
@@ -6374,6 +6410,9 @@
       ],
       "Weak password": [
         "სუსტი პაროლი"
+      ],
+      "Let others know if you have a conflict, will be late, or can’t wait for the event.": [
+        "გააგებინეთ სხვებსაც, თუ კონფლიქტი გაქვთ, დაგაგვიანდებათ, ან ვერ მოუცდით მოვლენას."
       ]
     },
     "Label for contact group color": {
@@ -7569,6 +7608,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "განბლოკეთ ${ BRAND_NAME }-ის ყველა ფასიანი პროდუქტი და ფუნქცია სულ რაღაც ${ priceLine }-ად. გააუქმეთ როცა მოინდომებთ."
+      ],
+      "Starting from ${ priceLine }": [
+        "${ priceLine }-დან"
       ]
     },
     "new_plans: title": {
@@ -9135,6 +9177,9 @@
       ],
       "Your subscription will renew at the same rate every year.": [
         "თქვენი გამოწერა განახლდება იგივე ტარიფით ყოველ წელს."
+      ],
+      "The special offer is valid for the first 2 years.": [
+        "სპეციალური შეთავაზება ძალაშია პირველი 2 წელი."
       ]
     },
     "specialoffer: Link": {
@@ -9212,6 +9257,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "სტანდარტული ფასი ${ amount } 30 თვისთვის"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "სპეციალური შეთავაზება ძალაშია პირველი 2 წელი"
       ]
     },
     "specialoffer: Title": {
@@ -9369,6 +9417,12 @@
       ],
       "Your ${ productString } is full. ${ cta }.": [
         "თქვენი ${ productString } სავსეა. ${ cta }."
+      ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "${ BRAND_NAME }-ის პროდუქტების გამოყენების გასაგრძენებლად გაათავისუფლეთ ადგილი, ან ${ upgrade }"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "თქვენი ${ productString } ${ percentage }%-ითაა სავსე. ${ cta }."
       ]
     },
     "Subscribe to calendar modal": {
@@ -10753,6 +10807,9 @@
       ],
       "Schedule meetings in one click": [
         "დაგეგმეთ შეხვედრები ერთი წკაპით"
+      ],
+      "Mail Subscriptions": [
+        "ელფოსტის გამოწერები"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

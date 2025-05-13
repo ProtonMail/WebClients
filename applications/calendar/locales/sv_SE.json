@@ -887,6 +887,9 @@
       ],
       "Generate password": [
         "Generera lösenord"
+      ],
+      "Get the writing assistant": [
+        "Skaffa skrivassistenten"
       ]
     },
     "action": {
@@ -4500,6 +4503,18 @@
       ],
       "Other": [
         "Annat"
+      ],
+      "Import from Google": [
+        "Importera från Google"
+      ],
+      "Import from other": [
+        "Importera från andra"
+      ],
+      "Import from Outlook": [
+        "Importera från Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importera från Yahoo"
       ]
     },
     "Import warning": {
@@ -5828,6 +5843,12 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer att förnyas automatiskt varje ${ cycle } månad.",
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer att förnyas automatiskt var ${ cycle }:e månad."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Ta med dina meddelanden, kontakter och kalendrar till ${ BRAND_NAME }."
+      ],
+      "One time import": [
+        "Engångsimport"
       ]
     },
     "info": {
@@ -7666,6 +7687,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
+      ],
+      "Starting from ${ priceLine }": [
+        "Startar från ${ priceLine }"
       ]
     },
     "new_plans: title": {
