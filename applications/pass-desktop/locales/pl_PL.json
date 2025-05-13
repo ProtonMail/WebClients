@@ -215,7 +215,7 @@
         "Usuń wszystko"
       ],
       "Delete it, I will never need it": [
-        "Usuń go. Nigdy nie będę go potrzebować"
+        "Usuń trwale"
       ],
       "Delete mailbox": [
         "Usuń skrzynkę pocztową"
@@ -626,10 +626,10 @@
         "Odblokuj kontakt"
       ],
       "Understood, I will never need it": [
-        "Zrozumiałem. Nigdy nie będę go potrzebować",
-        "Zrozumiałem. Nigdy nie będę ich potrzebować",
-        "Zrozumiałem. Nigdy nie będę ich potrzebować",
-        "Zrozumiałem. Nigdy nie będę ich potrzebować"
+        "Usuń trwale",
+        "Usuń trwale",
+        "Usuń trwale",
+        "Usuń trwale"
       ],
       "Unlock": [
         "Odblokuj"
@@ -2112,7 +2112,7 @@
         "Wykonaj poniższe kroki, aby skonfigurować domenę."
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
-        "Pozostaw to okno otwarte podczas importowania danych. Proces może potrwać kilka minut."
+        "Pozostaw okno otwarte podczas importowania danych. Proces może potrwać kilka minut."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Pamiętaj, że usuniętego aliasu nie można przywrócić. Czy chcesz, zamiast tego wyłączyć alias?"
@@ -3776,6 +3776,14 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Twoje informacje zostały znalezione w co najmniej 1 wycieku danych. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły. ${ link }"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Zamknij"
+      ],
+      "Don't show this offer again": [
+        "Nie pokazuj tej oferty ponownie"
       ]
     },
     "sso": {

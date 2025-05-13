@@ -3681,6 +3681,14 @@
         "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Tanca"
+      ],
+      "Don't show this offer again": [
+        "No tornis a mostrar aquesta oferta"
+      ]
+    },
     "sso": {
       "Approve or deny it now": [
         "Aprova-ho o denega-ho ara"
@@ -4015,7 +4023,7 @@
         "2FA inactiva"
       ],
       "Information exposed in breach": [
-        "Informació exposada en la infracció"
+        "Informació exposada en la filtració"
       ],
       "Install extension": [
         "Instal·la l'extensió"
