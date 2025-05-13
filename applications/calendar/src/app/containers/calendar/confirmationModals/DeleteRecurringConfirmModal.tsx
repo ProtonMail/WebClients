@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Alert, Prompt } from '@proton/components';
+import { Banner, Button } from '@proton/atoms';
+import { Prompt } from '@proton/components';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 
 import type { InviteActions, RecurringActionData } from '../../../interfaces/Invite';
@@ -151,9 +151,9 @@ const DeleteRecurringConfirmModal = ({
         >
             <div className="mb-4">{alertText}</div>
             {warningText && (
-                <Alert className="mb-4" type="warning">
+                <Banner className="mb-4" variant="warning">
                     {warningText}
-                </Alert>
+                </Banner>
             )}
             {types.length > 1 ? (
                 <SelectRecurringType
