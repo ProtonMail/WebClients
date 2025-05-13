@@ -1457,6 +1457,9 @@ const Step1 = ({
                                             giftCode={
                                                 <GiftCodeSummary
                                                     coupon={coupon}
+                                                    checkResult={model.subscriptionData.checkResult}
+                                                    planIDs={options.planIDs}
+                                                    plansMap={model.plansMap}
                                                     onApplyCode={async (code) => {
                                                         const checkResult = await getSubscriptionPrices(
                                                             getPaymentsApi(silentApi),

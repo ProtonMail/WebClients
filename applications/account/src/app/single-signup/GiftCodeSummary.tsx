@@ -4,7 +4,9 @@ import { c } from 'ttag';
 
 import { Button, CircleLoader, Input } from '@proton/atoms';
 import { Icon, Info, Price, UnderlineButton, useNotifications } from '@proton/components';
-import { type Currency } from '@proton/payments';
+import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
+import { type Currency, type PlanIDs, type PlansMap } from '@proton/payments';
+import { type SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 interface Props {
     coupon?: {
@@ -15,9 +17,13 @@ interface Props {
     };
     onApplyCode: (code: string) => Promise<void>;
     onRemoveCode: () => Promise<void>;
+
+    planIDs: PlanIDs;
+    plansMap: PlansMap;
+    checkResult: SubscriptionCheckResponse;
 }
 
-const GiftCodeSummary = ({ coupon, onApplyCode, onRemoveCode }: Props) => {
+const GiftCodeSummary = ({ coupon, onApplyCode, onRemoveCode, planIDs, plansMap, checkResult }: Props) => {
     const [showInput, setShowInput] = useState(false);
     const [inputValue, setInputValue] = useState('');
     const [applyingCode, setApplyingCode] = useState(false);
@@ -25,6 +31,8 @@ const GiftCodeSummary = ({ coupon, onApplyCode, onRemoveCode }: Props) => {
     const [removingCode, setRemovingCode] = useState(false);
 
     const { createNotification } = useNotifications();
+
+    const couponConfig = useCouponConfig({ planIDs, plansMap, checkResult });
 
     if (coupon) {
         const { code, description, discount, currency } = coupon;
@@ -45,10 +53,14 @@ const GiftCodeSummary = ({ coupon, onApplyCode, onRemoveCode }: Props) => {
                         {removingCode ? <CircleLoader /> : <Icon onClick={handleRemoveCode} name="cross" />}
                     </span>
                 </div>
-                <div className="color-weak flex-auto">{description}</div>
-                <Price currency={currency} className="color-weak">
-                    {discount}
-                </Price>
+                {!couponConfig?.hidden && (
+                    <>
+                        <div className="color-weak flex-auto">{description}</div>
+                        <Price currency={currency} className="color-weak">
+                            {discount}
+                        </Price>
+                    </>
+                )}
             </div>
         );
     }
