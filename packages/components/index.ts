@@ -826,7 +826,7 @@ export { default as useThemeQueryParameter } from './containers/themes/useThemeQ
 export { ThirdPartySection } from './containers/thirdParty/ThirdPartySection';
 export { default as BadAppVersionBanner } from './containers/topBanners/BadAppVersionBanner';
 export { default as DelinquentTopBanner } from './containers/topBanners/DelinquentTopBanner';
-export { default as LockedStateTopBanner } from './containers/topBanners/LockedStateTopBanner';
+export { LockedStateTopBanner } from './containers/topBanners/LockedStateTopBanner';
 export { default as OnlineTopBanner } from './containers/topBanners/OnlineTopBanner';
 export { default as PublicTopBanners } from './containers/topBanners/PublicTopBanners';
 export { default as StorageLimitTopBanner } from './containers/topBanners/StorageLimitTopBanner';
