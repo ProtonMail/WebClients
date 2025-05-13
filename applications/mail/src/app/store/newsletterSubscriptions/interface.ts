@@ -3,6 +3,8 @@ import type {
     NewsletterSubscription,
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
+export type SubscriptionTabs = 'active' | 'unsubscribe';
+
 export interface SubscriptionCounts {
     active: number;
     unsubscribe: number;
@@ -14,9 +16,8 @@ export interface NewsletterSubscriptionsInterface {
     filteredSubscriptions: NewsletterSubscription[];
     selectedSubscription?: NewsletterSubscription;
     loading: boolean;
+    selectedTab: SubscriptionTabs;
 }
-
-export type FilteredSubscriptionsValue = 'active' | 'unsubscribe';
 
 export type SortSubscriptionsValue =
     | 'last-read'
@@ -28,11 +29,13 @@ export type SortSubscriptionsValue =
 
 export interface FilterSubscriptionPayload {
     subscription: NewsletterSubscription;
+    subscriptionIndex?: number;
     data: ApplyNewsletterSubscriptionsFilter;
 }
 
 export interface UnsubscribePayload {
     subscription: NewsletterSubscription;
+    subscriptionIndex?: number;
 }
 
 export interface UpdateSubscriptionParams {

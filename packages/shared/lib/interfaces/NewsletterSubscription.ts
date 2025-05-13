@@ -16,6 +16,11 @@ export interface NewsletterSubscription {
     TrackersCount?: number;
     MarkAsRead: boolean;
     MoveToFolder: string;
+    ReceivedMessages: {
+        Total: number;
+        Last30Days: number;
+        Last90Days: number;
+    };
 }
 
 export interface FilterSubscriptionAPIResponse {
