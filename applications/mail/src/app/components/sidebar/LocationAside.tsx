@@ -1,11 +1,9 @@
-import { c, msgid } from 'ttag';
-
 import { ReloadSpinner } from '@proton/components';
-import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 
-import { getNUnreadConversationsText, getNUnreadMessagesText } from 'proton-mail/helpers/text';
 import useMailModel from 'proton-mail/hooks/useMailModel';
+
+import { getUnreadCount, getUnreadTitle } from './locationAsideHelpers';
 
 interface Props {
     unreadCount?: number;
@@ -17,10 +15,9 @@ interface Props {
     onRefresh?: () => void;
     isOptionDropdownOpened?: boolean;
     collapsed?: boolean;
+    labelID: string;
+    hideSpinner?: boolean;
 }
-
-const { GROUP } = VIEW_MODE;
-const UNREAD_LIMIT = 9999;
 
 const LocationAside = ({
     unreadCount = 0,
@@ -32,28 +29,17 @@ const LocationAside = ({
     itemOptions,
     isOptionDropdownOpened,
     collapsed = false,
+    labelID,
+    hideSpinner = false,
 }: Props) => {
     const mailSettings = useMailModel('MailSettings');
 
-    const getUnreadTitle = () => {
-        if (shouldDisplayTotal) {
-            return c('Info').ngettext(
-                msgid`${unreadCount} scheduled message`,
-                `${unreadCount} scheduled messages`,
-                unreadCount
-            );
-        }
-        if (mailSettings.ViewMode === GROUP) {
-            return getNUnreadConversationsText(unreadCount);
-        }
-        return getNUnreadMessagesText(unreadCount);
-    };
-
-    const unreadText = unreadCount > UNREAD_LIMIT ? '9999+' : unreadCount;
+    const unreadCountCopy = getUnreadCount(labelID, unreadCount);
+    const unreadTitleCopy = getUnreadTitle(shouldDisplayTotal, unreadCount, mailSettings);
 
     return (
         <>
-            {!collapsed && (
+            {!hideSpinner && !collapsed && (
                 <ReloadSpinner
                     className={clsx(['reload-spinner hidden', unreadCount > 0 ? 'mr-2' : 'mr-0.5'])}
                     refreshing={refreshing}
@@ -69,12 +55,12 @@ const LocationAside = ({
                         weak && 'navigation-counter-item--weak pl-0',
                         isOptionDropdownOpened && 'hidden',
                     ])}
-                    title={getUnreadTitle()}
-                    aria-label={getUnreadTitle()}
+                    title={unreadTitleCopy}
+                    aria-label={unreadTitleCopy}
                     data-testid="navigation-link:unread-count"
-                    data-unread-count={unreadText}
+                    data-unread-count={unreadCountCopy}
                 >
-                    {unreadText}
+                    {unreadCountCopy}
                 </span>
             ) : null}
             {itemOptions && (
