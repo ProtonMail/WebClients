@@ -3,7 +3,7 @@ import { SpaceState, getCompleteSpaceDetails, type getSpace } from '@proton/shar
 
 import TopBanner from '../TopBanner';
 import { StorageUpgradeCta } from './StorageUpgradeCta';
-import { generateStorageBannerText } from './helperStorageBanner';
+import { getSplitStorageBannerText } from './helperStorageBanner';
 
 export const SplitStorageLimitTopBanner = ({
     app,
@@ -21,11 +21,10 @@ export const SplitStorageLimitTopBanner = ({
 
     if (details.base.type === SpaceState.Danger && details.drive.type === SpaceState.Danger) {
         return (
-            <TopBanner className="bg-danger">
-                {generateStorageBannerText({
+            <TopBanner className="bg-danger" data-testid="storage-banner:split-storage">
+                {getSplitStorageBannerText({
                     percentage: app === APPS.PROTONDRIVE ? details.drive.displayed : details.base.displayed,
                     mode: 'both',
-                    app,
                     upgrade,
                 })}
             </TopBanner>
@@ -34,8 +33,8 @@ export const SplitStorageLimitTopBanner = ({
 
     if (details.base.type === SpaceState.Danger) {
         return (
-            <TopBanner className="bg-danger">
-                {generateStorageBannerText({
+            <TopBanner className="bg-danger" data-testid="storage-banner:split-storage">
+                {getSplitStorageBannerText({
                     percentage: details.base.displayed,
                     mode: 'mail',
                     upgrade,
@@ -44,10 +43,11 @@ export const SplitStorageLimitTopBanner = ({
         );
     }
 
+    // We only show the top banner if the user is in the drive app and not in the mail app
     if (details.drive.type === SpaceState.Danger && app === APPS.PROTONDRIVE) {
         return (
-            <TopBanner className="bg-danger">
-                {generateStorageBannerText({
+            <TopBanner className="bg-danger" data-testid="storage-banner:split-storage">
+                {getSplitStorageBannerText({
                     percentage: details.drive.displayed,
                     mode: 'drive',
                     upgrade,
@@ -62,20 +62,28 @@ export const SplitStorageLimitTopBanner = ({
 
     if (details.drive.type === SpaceState.Warning && details.base.type === SpaceState.Warning) {
         return (
-            <TopBanner className="bg-warning" onClose={() => setIgnoreStorageLimit(true)}>
-                {generateStorageBannerText({
+            <TopBanner
+                className="bg-warning"
+                onClose={() => setIgnoreStorageLimit(true)}
+                data-testid="storage-banner:split-storage"
+            >
+                {getSplitStorageBannerText({
                     percentage: app === APPS.PROTONDRIVE ? details.drive.displayed : details.base.displayed,
-                    mode: app === APPS.PROTONDRIVE ? 'drive' : 'mail',
+                    mode: 'both',
                     upgrade,
                 })}
             </TopBanner>
         );
     }
 
-    if (details.drive.type === SpaceState.Warning && app === APPS.PROTONDRIVE) {
+    if (details.drive.type === SpaceState.Warning) {
         return (
-            <TopBanner className="bg-warning" onClose={() => setIgnoreStorageLimit(true)}>
-                {generateStorageBannerText({
+            <TopBanner
+                className="bg-warning"
+                onClose={() => setIgnoreStorageLimit(true)}
+                data-testid="storage-banner:split-storage"
+            >
+                {getSplitStorageBannerText({
                     percentage: details.drive.displayed,
                     mode: 'drive',
                     upgrade,
@@ -86,8 +94,12 @@ export const SplitStorageLimitTopBanner = ({
 
     if (details.base.type === SpaceState.Warning) {
         return (
-            <TopBanner className="bg-warning" onClose={() => setIgnoreStorageLimit(true)}>
-                {generateStorageBannerText({
+            <TopBanner
+                className="bg-warning"
+                onClose={() => setIgnoreStorageLimit(true)}
+                data-testid="storage-banner:split-storage"
+            >
+                {getSplitStorageBannerText({
                     percentage: details.base.displayed,
                     mode: 'mail',
                     upgrade,
