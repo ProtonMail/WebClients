@@ -36,11 +36,17 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
+      "A to Z": [
+        "od A po Z"
+      ],
       "Activate": [
         "Aktivovať"
       ],
       "Activate recovery": [
         "Aktivovať obnovu"
+      ],
+      "Active": [
+        "Aktívne"
       ],
       "Add": [
         "Pridať"
@@ -191,6 +197,9 @@
       ],
       "Change page": [
         "Zmeniť stranu"
+      ],
+      "Change sorting": [
+        "Zmeniť triedenie"
       ],
       "Chat with us": [
         "Komunikácia s nami"
@@ -495,6 +504,9 @@
       "Expand composer": [
         "Celá obrazovka"
       ],
+      "Expand navigation bar to see custom views": [
+        "Rozbaliť navigačný panel pre zobrazenie vlastných zobrazení"
+      ],
       "Expand navigation bar to see folders": [
         "Rozbaliť navigačný panel pre zobrazenie priečinkov"
       ],
@@ -735,6 +747,9 @@
       "Learn more": [
         "Zistiť viac"
       ],
+      "Least read": [
+        "Najmenej čítané"
+      ],
       "Let's talk": [
         "Porozprávajme sa"
       ],
@@ -851,6 +866,9 @@
       ],
       "More search options": [
         "Viac možností vyhľadávania"
+      ],
+      "Most read": [
+        "Najčítanejšie"
       ],
       "Move": [
         "Presun"
@@ -1008,6 +1026,9 @@
       "Read receipt sent": [
         "Odoslané potvrdenie o prijatí"
       ],
+      "Recently received": [
+        "Nedávno prijaté"
+      ],
       "Reconnect": [
         "Obnoviť pripojenie"
       ],
@@ -1092,8 +1113,14 @@
       "Reset to default": [
         "Obnoviť východzie nastavenie"
       ],
+      "Resize panel": [
+        "Zmeniť veľkosť panela"
+      ],
       "Restore": [
         "Obnoviť"
+      ],
+      "Resubscribe": [
+        "Obnoviť odber"
       ],
       "Resume": [
         "Pokračovať"
@@ -1362,12 +1389,6 @@
       "Trust": [
         "Dôverovať"
       ],
-      "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodný kľúč",
-        "Dôverovať kľúčom",
-        "Dôverovať novým kľúčom"
-      ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
       ],
@@ -1409,6 +1430,9 @@
       ],
       "Unsubscribe": [
         "Odhlásiť odber"
+      ],
+      "Unsubscribed": [
+        "Odber bol odhlásený"
       ],
       "Unsubscribing": [
         "Odhlasovanie odberu"
@@ -6027,6 +6051,15 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
       ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, archivácia alebo presun starých emailov do priečinka."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot }, ktoré predplatné už nie sú relevantné."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } od nich jedným kliknutím."
+      ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "${ BRAND_NAME } Scribe vám pomáha rýchlo a jednoducho vytvárať lepšie emaily."
       ],
@@ -6270,6 +6303,18 @@
       "${ storage } storage": [
         "${ storage } úložisko"
       ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "${ subscription.ReceivedMessageCount } email za posledný mesiac",
+        "${ subscription.ReceivedMessageCount } emaily za posledný mesiac",
+        "${ subscription.ReceivedMessageCount } emailov za posledný mesiac",
+        "${ subscription.ReceivedMessageCount } emailov za posledný mesiac"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } neprečítaná",
+        "${ subscription.UnreadMessageCount } neprečítané",
+        "${ subscription.UnreadMessageCount } neprečítaných",
+        "${ subscription.UnreadMessageCount } neprečítaných"
+      ],
       "${ total } conversation": [
         "${ total } konverzácia",
         "${ total } konverzácie",
@@ -6281,6 +6326,18 @@
         "${ total } správy",
         "${ total } správ",
         "${ total } správ"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } emailový sledovač zablokovaný",
+        "${ trackersCount } emailové sledovače zablokované",
+        "${ trackersCount } emailových sledovačov zablokovaných",
+        "${ trackersCount } emailových sledovačov zablokovaných"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } sledovač zablokovaný",
+        "${ trackersCount } sledovače zablokované",
+        "${ trackersCount } sledovačov zablokovaných",
+        "${ trackersCount } sledovačov zablokovaných"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } naplánovaná správa",
@@ -6414,6 +6471,15 @@
         "Všetky (${ totalFoldersCount } štítkov)",
         "Všetky (${ totalFoldersCount } štítkov)"
       ],
+      "All messages from this mailing list will be marked as read.": [
+        "Všetky správy z tohto zosielacieho zoznamu budú označené ako prečítané."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Všetky správy z tohto zasielacieho zoznamu budú presunuté do Archívu."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Všetky správy z tohto adresára budú presunuté do Koša."
+      ],
       "All messages stored in this folder will be permanently deleted.": [
         "Všetky správy uložené v tomto priečinku budú natrvalo vymazané."
       ],
@@ -6468,11 +6534,17 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Budú odstránené aj všetky podpriečinky. Emaily uložené v priečinku ${ nameDeleted } sa však neodstránia a nájdete ich v priečinku Všetka pošta."
       ],
+      "Apply to future messages ": [
+        "Použiť na budúce správy "
+      ],
       "Applying actions to conversations": [
         "Použitie akcií na konverzácie"
       ],
       "Applying actions to messages": [
         "Použitie akcií na správy"
+      ],
+      "Archive existing messages": [
+        "Archivovať existujúce správy"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Naozaj chcete vymazať všetky správy v tomto priečinku?"
@@ -6572,6 +6644,9 @@
       ],
       "Browser not supported": [
         "Prehliadač nie je podporovaný"
+      ],
+      "Bulk delete": [
+        "Hromadné vymazanie"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ak prejdete na bezplatnú verziu, natrvalo stratíte súčasné výhody a to i v budúcnosti, ak opäť upgradujte svoj účet na platenú verziu."
@@ -6797,6 +6872,9 @@
       ],
       "Each code can only be used once": [
         "Každý kód je možné použiť iba raz"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Jednoducho spravujte a odhlasujte sa z odberu informačných bulletinov a rozposielacích zoznamov"
       ],
       "Edit email address": [
         "Upraviť emailovú adresu"
@@ -7167,6 +7245,9 @@
       "Manage your labels": [
         "Spravovať štítky"
       ],
+      "Mark all as read": [
+        "Označiť všetko ako prečítané"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
@@ -7316,6 +7397,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Otvorte príručku s odporúčanými akciami a užitočnými odkazmi."
+      ],
+      "Optional": [
+        "Voliteľné"
       ],
       "or discover other features:": [
         "alebo objavte ďalšie funkcie:"
@@ -7475,6 +7559,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Verejné zdieľanie dokumentov zatiaľ nie je podporované."
+      ],
+      "Quickly spot": [
+        "Rýchlo zistíte"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Obráťte sa na nás, ak potrebujete pomoc s čímkoľvek od ${ BRAND_NAME }."
@@ -7968,6 +8055,9 @@
       "Tracking": [
         "Sledovanie"
       ],
+      "Trash existing messages": [
+        "Presunúť existujúce správy do Koša"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyskúšajte nové ${ BRAND_NAME } funkcie, aktualizácie a produkty pred ich zverejnením. Týmto sa obnoví aplikácia"
       ],
@@ -7991,6 +8081,9 @@
       ],
       "Unsaved changes": [
         "Neuložené zmeny"
+      ],
+      "Unsubscribe": [
+        "Odhláste sa z odberu"
       ],
       "Unsupported file": [
         "Nepodporovaný súbor"
@@ -8471,6 +8564,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Vaše predplatné sa automaticky obnoví dňa ${ renewalTime }."
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Ste len pár kliknutí od prehľadnej doručenej pošty."
       ]
     },
     "info": {
@@ -8758,6 +8854,12 @@
       " and ${ l }": [
         " a ${ l }"
       ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Označiť všetky správy ako prečítané"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Presunúť všetky správy do ${ boldFolderName }"
+      ],
       "${ BRAND_NAME } username": [
         "Používateľské meno ${ BRAND_NAME }"
       ],
@@ -8781,6 +8883,9 @@
       ],
       "Actions": [
         "Akcia"
+      ],
+      "Active filter:": [
+        "Aktívny filter:"
       ],
       "Add email address": [
         "Pridať emailovú adresu"
@@ -8809,10 +8914,10 @@
       "Always move sender's emails": [
         "Vždy presunúť emaily odosielateľa"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
       "and": [
@@ -8829,6 +8934,9 @@
       ],
       "Apply filter to existing emails": [
         "Použiť filter na existujúce emaily"
+      ],
+      "Apply to future messages": [
+        "Použiť na budúce správy"
       ],
       "Attach screenshot(s)": [
         "Priložiť snímok(ky) obrazovky"
@@ -9037,11 +9145,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Ak"
-      ],
       "IF": [
         "AK"
+      ],
+      "If": [
+        "Ak"
       ],
       "Import all messages": [
         "Importovať všetky správy"
@@ -9094,6 +9202,9 @@
       "Mail Server (IMAP)": [
         "Emailový server (IMAP)"
       ],
+      "Mail subscriptions": [
+        "Zasielanie pravidelných emailov"
+      ],
       "Main": [
         "Hlavné"
       ],
@@ -9108,6 +9219,9 @@
       ],
       "Move ${ sidebarElementName }": [
         "Presunúť ${ sidebarElementName }"
+      ],
+      "Move messages to": [
+        "Presunúť správy do"
       ],
       "Move to": [
         "Presunúť do"
@@ -9157,14 +9271,14 @@
       "Optional": [
         "Voliteľné"
       ],
+      "OR": [
+        "ALEBO"
+      ],
       "or": [
         "alebo"
       ],
       "Or": [
         "Alebo"
-      ],
-      "OR": [
-        "ALEBO"
       ],
       "Original link": [
         "Pôvodný odkaz"
@@ -9276,6 +9390,9 @@
       ],
       "System information": [
         "Systémové informácie"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Filter je vypnutý. Môžete ho povoliť v ${ settingsLink }"
       ],
       "Theme": [
         "Motív"
@@ -9427,6 +9544,11 @@
       ],
       "To: ${ to }": [
         "Komu: ${ to }"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Tu si môžete zobraziť a spravovať odber noviniek a odber zo zasielacieho zoznamu."
       ]
     },
     "Landmarks": {
@@ -9648,6 +9770,9 @@
       ],
       "Types of recovery methods": [
         "Typy spôsobov obnovenia"
+      ],
+      "Views": [
+        "Zobrazenia"
       ],
       "What’s this?": [
         "Čo je to?"
@@ -10061,6 +10186,14 @@
         "Stredná VPN rýchlosť"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Získať ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Zmazať účet"
@@ -10082,14 +10215,6 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Získať ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -12926,6 +13051,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "and 15 more premium features": [
+        "a ďalších 15 prémiových funkcií"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické presmerovanie emailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornenia na úniky údajov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
+      ],
+      "No ads or tracking": [
+        "Žiadne reklamy alebo sledovanie"
+      ],
+      "Short @pm.me email address": [
+        "Skrátená emailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podporte naše poslanie"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšite svoju produktivitu"
+      ],
+      "We don't sell your data": [
+        "Nepredávame vaše údaje"
+      ],
+      "Your privacy is our mission": [
+        "Vaše súkromie je naším poslaním"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkciami"
@@ -13196,47 +13362,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastný skrátený emailový alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložného priestoru"
-      ],
-      "and 15 more premium features": [
-        "a ďalších 15 prémiových funkcií"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické presmerovanie emailu ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornenia na úniky údajov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikácia"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
-      ],
-      "No ads or tracking": [
-        "Žiadne reklamy alebo sledovanie"
-      ],
-      "Short @pm.me email address": [
-        "Skrátená emailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podporte naše poslanie"
-      ],
-      "Upgrade": [
-        "Prejsť na platený plán"
-      ],
-      "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
-      ],
-      "We don't sell your data": [
-        "Nepredávame vaše údaje"
-      ],
-      "Your privacy is our mission": [
-        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription renewal state": {
@@ -13897,6 +14022,9 @@
       "Archive": [
         "Archív"
       ],
+      "Archive all messages?": [
+        "Archivovať všetky správy?"
+      ],
       "Are you sure you want to close the preview?": [
         "Naozaj chcete zatvoriť náhľad?"
       ],
@@ -14278,8 +14406,17 @@
       "Load remote content": [
         "Načítať vzdialený obsah"
       ],
+      "Mail Subscriptions": [
+        "Emailové odbery"
+      ],
+      "Mail subscriptions": [
+        "Zasielanie pravidelných emailov"
+      ],
       "Make a secure connection your default": [
         "Nastavte zabezpečené pripojenie ako východzie"
+      ],
+      "Mark all messages as read": [
+        "Označiť všetky správy ako prečítané"
       ],
       "Mark as read": [
         "Označiť ako prečítané"
@@ -14394,6 +14531,9 @@
       ],
       "No breaches detected": [
         "Nebol zistený únik"
+      ],
+      "No mail subscriptions": [
+        "Žiadne zasielanie pravidelných emailov"
       ],
       "No need to empty the trash": [
         "Kôš nie je potrebné vyprázdniť"
@@ -14638,6 +14778,9 @@
       "Trash": [
         "Kôš"
       ],
+      "Trash all messages?": [
+        "Presunúť všetky správy do koša?"
+      ],
       "Trust new key?": [
         "Dôverovať novému kľúču?",
         "Dôverovať novým kľúčom?",
@@ -14655,6 +14798,9 @@
       ],
       "Unsubscribe": [
         "Odhlásiť odber"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Odhlásiť odber z ${ subscription.Name }?"
       ],
       "Unsubscribe request sent": [
         "Žiadosť o odhlásenie odoslaná"
@@ -14736,6 +14882,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Your subscriptions in one place": [
+        "Vaše emailové odbery na jednom mieste"
       ]
     },
     "Today icon tooltip in mini calendar": {

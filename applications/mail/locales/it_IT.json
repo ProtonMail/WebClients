@@ -498,6 +498,9 @@
       "Expand composer": [
         "Espandi il compositore"
       ],
+      "Expand navigation bar to see custom views": [
+        "Espandi la barra di navigazione per mostrare le visualizzazioni personalizzate"
+      ],
       "Expand navigation bar to see folders": [
         "Espandi la barra di navigazione per visualizzare le cartelle"
       ],
@@ -1102,6 +1105,9 @@
       "Reset to default": [
         "Reimposta al valore predefinito"
       ],
+      "Resize panel": [
+        "Ridimensiona pannello"
+      ],
       "Restore": [
         "Ripristina"
       ],
@@ -1374,10 +1380,6 @@
       ],
       "Trust": [
         "Considera attendibile"
-      ],
-      "Trust key": [
-        "Considera attendibile la chiave",
-        "Considera attendibili le chiavi"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -5947,6 +5949,15 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
       ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, archivia o sposta le vecchie email in una cartella."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } quali abbonamenti non sono più rilevanti."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } da loro con un clic."
+      ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "${ BRAND_NAME } Scribe ti aiuta a scrivere email migliori in modo veloce e senza sforzo."
       ],
@@ -6124,6 +6135,10 @@
       "${ storage } storage": [
         "${ storage } di archiviazione"
       ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "${ subscription.ReceivedMessageCount } email il mese scorso",
+        "${ subscription.ReceivedMessageCount } email il mese scorso"
+      ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } non letto",
         "${ subscription.UnreadMessageCount } non letti"
@@ -6135,6 +6150,10 @@
       "${ total } message": [
         "${ total } messaggio",
         "${ total } messaggi"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } tracker email bloccato",
+        "${ trackersCount } tracker email bloccati"
       ],
       "${ trackersCount } tracker blocked": [
         "${ trackersCount } tracker bloccato",
@@ -6257,6 +6276,15 @@
       "All (${ totalFoldersCount } label)": [
         "Tutta la (${ totalFoldersCount } etichetta)",
         "Tutte le (${ totalFoldersCount } etichette)"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Tutti i messaggi di questa mailing list verranno segnati come letti."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Tutti i messaggi di questa mailing list verranno spostati nell’archivio."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Tutti i messaggi di questa mailing list verranno spostati nel cestino."
       ],
       "All messages stored in this folder will be permanently deleted.": [
         "Tutti i messaggi memorizzati in questa cartella verranno eliminati definitivamente."
@@ -6634,6 +6662,9 @@
       ],
       "Each code can only be used once": [
         "Ogni codice può essere usato una sola volta"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Gestisci facilmente e annulla l'iscrizione a newsletter e mailing list."
       ],
       "Edit email address": [
         "Modifica l'indirizzo email"
@@ -7298,6 +7329,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "La condivisione pubblica dei documenti non è ancora supportata."
+      ],
+      "Quickly spot": [
+        "Individua rapidamente"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contattaci per ricevere aiuto su qualsiasi cosa ${ BRAND_NAME }."
@@ -8256,6 +8290,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Il tuo abbonamento si rinnoverà automaticamente il ${ renewalTime }."
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Sei a pochi clic da una posta in arrivo organizzata"
       ]
     },
     "info": {
@@ -8539,6 +8576,9 @@
       "${ boldActive } Mark all messages as read": [
         "${ boldActive } Segna tutti i messaggi come letti"
       ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Sposta tutti i messaggi in ${ boldFolderName }"
+      ],
       "${ BRAND_NAME } username": [
         "Nome utente ${ BRAND_NAME }"
       ],
@@ -8591,10 +8631,10 @@
       "Always move sender's emails": [
         "Sposta sempre le email del mittente"
       ],
-      "And": [
+      "AND": [
         "E"
       ],
-      "AND": [
+      "And": [
         "E"
       ],
       "and": [
@@ -8822,11 +8862,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Se"
-      ],
       "IF": [
         "SE"
+      ],
+      "If": [
+        "Se"
       ],
       "Import all messages": [
         "Importa tutti i messaggi"
@@ -8878,6 +8918,9 @@
       ],
       "Mail Server (IMAP)": [
         "Server di posta (IMAP)"
+      ],
+      "Mail subscriptions": [
+        "Abbonamenti alle email"
       ],
       "Main": [
         "Principale"
@@ -8945,13 +8988,13 @@
       "Optional": [
         "Facoltativo"
       ],
+      "OR": [
+        "O"
+      ],
       "or": [
         "o"
       ],
       "Or": [
-        "O"
-      ],
-      "OR": [
         "O"
       ],
       "Original link": [
@@ -9064,6 +9107,9 @@
       ],
       "System information": [
         "Informazioni sul sistema"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Il filtro è disattivato. Puoi attivarlo ${ settingsLink }"
       ],
       "Theme": [
         "Tema"
@@ -9215,6 +9261,11 @@
       ],
       "To: ${ to }": [
         "A: ${ to }"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Visualizza e gestisci qui gli abbonamenti alla newsletter e alla mailing list."
       ]
     },
     "Landmarks": {
@@ -9836,6 +9887,14 @@
         "Media velocità della VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Passa a ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Elimina l'account"
@@ -9857,14 +9916,6 @@
       ],
       "Switch plan": [
         "Cambia piano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Passa a ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -12578,6 +12629,47 @@
         "Per ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB di spazio di archiviazione"
+      ],
+      "and 15 more premium features": [
+        "e altre 15 funzionalità premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Inoltro automatico delle email ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Avvisi sulle violazioni di dati ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Applicazione desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
+      ],
+      "No ads or tracking": [
+        "Nessun annuncio o tracciamento"
+      ],
+      "Short @pm.me email address": [
+        "Indirizzo email breve @pm.me"
+      ],
+      "Support our mission": [
+        "Sostieni la nostra missione"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Migliora la tua produttività"
+      ],
+      "We don't sell your data": [
+        "Non vendiamo i tuoi dati"
+      ],
+      "Your privacy is our mission": [
+        "La tua privacy è la nostra missione"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, e ${ VPN_SHORT_APP_NAME } con funzionalità premium"
@@ -12836,47 +12928,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Il tuo alias email breve @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB di spazio di archiviazione"
-      ],
-      "and 15 more premium features": [
-        "e altre 15 funzionalità premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Inoltro automatico delle email ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Avvisi sulle violazioni di dati ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Applicazione desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
-      ],
-      "No ads or tracking": [
-        "Nessun annuncio o tracciamento"
-      ],
-      "Short @pm.me email address": [
-        "Indirizzo email breve @pm.me"
-      ],
-      "Support our mission": [
-        "Sostieni la nostra missione"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade your productivity": [
-        "Migliora la tua produttività"
-      ],
-      "We don't sell your data": [
-        "Non vendiamo i tuoi dati"
-      ],
-      "Your privacy is our mission": [
-        "La tua privacy è la nostra missione"
       ]
     },
     "Subscription renewal state": {
@@ -13839,6 +13890,12 @@
       "Load remote content": [
         "Carica i contenuti remoti"
       ],
+      "Mail Subscriptions": [
+        "Abbonamenti alle email"
+      ],
+      "Mail subscriptions": [
+        "Abbonamenti alle email"
+      ],
       "Make a secure connection your default": [
         "Rendi la connessione sicura la tua connessione predefinita"
       ],
@@ -13958,6 +14015,9 @@
       ],
       "No breaches detected": [
         "Nessuna violazione di dati rilevata"
+      ],
+      "No mail subscriptions": [
+        "Nessun abbonamento alle email"
       ],
       "No need to empty the trash": [
         "Non c'è bisogno di svuotare il cestino"
