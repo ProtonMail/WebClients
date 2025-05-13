@@ -460,6 +460,9 @@
       "Discard": [
         "Elvetés"
       ],
+      "Discard Changes": [
+        "Változtatások elvetése"
+      ],
       "Discard changes": [
         "Módosítások elvetése"
       ],
@@ -775,6 +778,12 @@
       "Keep": [
         "Megtartás"
       ],
+      "Keep Editing": [
+        "Szerkesztés folytatása"
+      ],
+      "Keep editing": [
+        "Szerkesztés folytatása"
+      ],
       "Keep logo": [
         "Logó megtartása"
       ],
@@ -952,11 +961,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "refresh the page": [
-        "frissítse az oldalt"
-      ],
       "Refresh the page": [
         "Oldal frissítése"
+      ],
+      "refresh the page": [
+        "frissítse az oldalt"
       ],
       "Reject": [
         "Elutasítás"
@@ -4157,6 +4166,14 @@
         "Windows 8/8.1/7 vagy Windows 32-bit (ARM64)"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm Fedora / Red Hat"
+      ]
+    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Hozzon létre egy ingyenes ${ DRIVE_APP_NAME } fiókot, a fájl biztonságos eléréséhez"
@@ -4495,6 +4512,9 @@
       "Edit conditions": [
         "Feltételek szerkesztése"
       ],
+      "Got it": [
+        "Értem."
+      ],
       "Next": [
         "Következő"
       ],
@@ -4705,6 +4725,9 @@
       ],
       "Forwarding activated": [
         "Továbbítás bekapcsolva"
+      ],
+      "Request sent": [
+        "Kérés elküldve"
       ],
       "Set up forwarding": [
         "Továbbítás beállítása"
@@ -7246,6 +7269,9 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice } /hónap)"
       ],
+      "(default)": [
+        "(alapértelmezett)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Szűrés ha az alábbi ÖSSZES feltétel teljesül)"
       ],
@@ -7331,11 +7357,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktiváljon legalább egy helyreállítási módszert, hogy abban az esetben is visszaszerezhesse a hozzáférést a ${ BRAND_NAME } fiókjában tárolt adataihoz, ha elfelejtené a jelszavát."
       ],
-      "active": [
-        "aktív"
-      ],
       "Active": [
         "Aktív"
+      ],
+      "active": [
+        "aktív"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hozzon létre @pm.me címet a fiókjához. Ez a rövid név a \"${ MAIL_APP_NAME } nekem\", vagy \"személyes üzenet nekem\" (Private Message me) rövidítésre utal"
@@ -7773,11 +7799,11 @@
       "Data recoverable on this device": [
         "Ezen az eszközön helyreállíthatók az adatok"
       ],
-      "Dedicated servers": [
-        "Dedikált szerverek"
-      ],
       "dedicated servers": [
         "dedikált szerverek"
+      ],
+      "Dedicated servers": [
+        "Dedikált szerverek"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikált IP-címekkel rendelkező dedikált kiszolgálók adhatók hozzá a privát átjárókhoz a finoman hangolható hozzáférés-szabályozás érdekében."
@@ -9057,6 +9083,12 @@
       ],
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
+      ],
+      "Set up forwarding": [
+        "Továbbítás beállítása"
+      ],
+      "Set up your organization": [
+        "Állítsa be a szervezet adatait"
       ],
       "Setting successfully saved": [
         "A beállítások sikeresen elmentve"
@@ -10807,11 +10839,11 @@
       "Amount due": [
         "Esedékes összeg"
       ],
-      "And": [
-        "És"
-      ],
       "AND": [
         "ÉS"
+      ],
+      "And": [
+        "És"
       ],
       "and": [
         "és"
@@ -10875,6 +10907,9 @@
       ],
       "Backup password": [
         "Biztonsági jelszó"
+      ],
+      "Beta": [
+        "Béta"
       ],
       "Billing cycle": [
         "Számlázási ciklus"
@@ -11134,6 +11169,9 @@
       "Emails (last month)": [
         "E-mailek (utolsó hónap)"
       ],
+      "Enabled": [
+        "Elérhető"
+      ],
       "End date": [
         "Befejező dátum"
       ],
@@ -11230,11 +11268,11 @@
       "IBAN": [
         "IBAN szám"
       ],
-      "If": [
-        "Ha"
-      ],
       "IF": [
         "HA"
+      ],
+      "If": [
+        "Ha"
       ],
       "Import all messages": [
         "Összes üzenet importálása"
@@ -11437,14 +11475,14 @@
       "Optional": [
         "Választható"
       ],
+      "OR": [
+        "VAGY"
+      ],
       "or": [
         "vagy"
       ],
       "Or": [
         "Vagy"
-      ],
-      "OR": [
-        "VAGY"
       ],
       "Organization name": [
         "Szervezet neve"
@@ -11722,6 +11760,9 @@
       ],
       "Uppercase": [
         "Nagybetű"
+      ],
+      "Uppercase and lowercase letters": [
+        "Kis- és nagybetűk"
       ],
       "URL": [
         "URL"
@@ -14091,17 +14132,6 @@
         "Asztali számítógép"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Mindenki"
-      ],
-      "Group members": [
-        "Csoporttagok"
-      ],
-      "No one": [
-        "Senki"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "a hónap 10-ik napja"
@@ -14330,6 +14360,17 @@
       ],
       "Trash": [
         "Lomtár"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Mindenki"
+      ],
+      "Group members": [
+        "Csoporttagok"
+      ],
+      "No one": [
+        "Senki"
       ]
     },
     "Option delay send seconds": {
@@ -15248,6 +15289,9 @@
       ],
       "Name": [
         "Név"
+      ],
+      "Organization name": [
+        "Szervezet neve"
       ],
       "Other": [
         "Egyéb"
@@ -17293,6 +17337,47 @@
         "${ totalPrice } áron"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatikus e-mail továbbítás ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Short @pm.me email address": [
+        "Rövid @pm.me e-mail cím"
+      ],
+      "Support our mission": [
+        "Támogassa küldetésünket"
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "Upgrade your productivity": [
+        "Növelje a termelékenységét"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
+      ],
+      "Your privacy is our mission": [
+        "Az Ön adatvédelme a mi küldetésünk"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } és ${ VPN_SHORT_APP_NAME } prémium funkciókkal"
@@ -17581,47 +17666,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Az Ön saját rövid @pm.me e-mail álnévcíme"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatikus e-mail továbbítás ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Short @pm.me email address": [
-        "Rövid @pm.me e-mail cím"
-      ],
-      "Support our mission": [
-        "Támogassa küldetésünket"
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "Upgrade your productivity": [
-        "Növelje a termelékenységét"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
-      ],
-      "Your privacy is our mission": [
-        "Az Ön adatvédelme a mi küldetésünk"
       ]
     },
     "Subscription renewal state": {
@@ -18416,6 +18460,9 @@
       "Connect ${ name }": [
         "${ name } kapcsolása"
       ],
+      "Connect apps and devices": [
+        "Alkalmazások és eszközök összekapcsolása"
+      ],
       "Connect organization": [
         "Kapcsolódás a szervezethez"
       ],
@@ -18776,6 +18823,15 @@
       "Folders and labels": [
         "Mappák és címkék"
       ],
+      "For Linux": [
+        "Linux rendszerre"
+      ],
+      "For macOS": [
+        "macOS rendszerre"
+      ],
+      "For Windows": [
+        "Windows rendszerre"
+      ],
       "Forgot password": [
         "Elfelejtett jelszó"
       ],
@@ -18950,6 +19006,9 @@
       ],
       "Leave group?": [
         "Csoport elhagyása?"
+      ],
+      "Limit reached": [
+        "Korlát elérve"
       ],
       "Link confirmation": [
         "Hivatkozás jóváhagyása"
@@ -19265,6 +19324,9 @@
       ],
       "Set up your family account": [
         "Family csomag beállítása"
+      ],
+      "Set up your organization": [
+        "Állítsa be a szervezet adatait"
       ],
       "Set your password": [
         "Jelszó beállítása"
