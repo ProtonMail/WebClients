@@ -14,7 +14,13 @@ export const useAnniversary2025PassPlus = (): Operation => {
     const [subscription, loadingSubscription] = useSubscription();
     const { isActive, loading: flagsLoading } = useOfferFlags(anniversary2025PassPlus);
     const [lastSubscriptionEnd, loadingLastSubscriptionEnd] = useLastSubscriptionEnd();
-    const isEligible = getIsEligible({ user, protonConfig, lastSubscriptionEnd, subscription });
+    const isEligible = getIsEligible({
+        user,
+        protonConfig,
+        lastSubscriptionEnd,
+        subscription,
+        offerConfig: anniversary2025PassPlus,
+    });
 
     return {
         isValid: isEligible && isActive,
