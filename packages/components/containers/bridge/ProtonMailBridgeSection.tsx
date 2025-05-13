@@ -11,6 +11,7 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import UpgradeBanner from '@proton/components/containers/account/UpgradeBanner';
 import metrics from '@proton/metrics';
+import { semver } from '@proton/pass/utils/string/semver';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { VersionLoadError } from '@proton/shared/lib/apps/desktopVersions';
 import {
@@ -29,9 +30,22 @@ interface BridgeClient {
     id: string;
     icon: IconName;
     platform: string;
-    versionFile: string;
     version: string;
+    versionFileURL: string;
     downloads: string[];
+}
+
+interface BridgeRelease {
+    CategoryName: string;
+    Version: string;
+    ReleaseDate: string;
+    File: BridgeFile[];
+}
+
+interface BridgeFile {
+    Url: string;
+    Sha512CheckSum: string;
+    Identifier: string;
 }
 
 const initialBridgeClients: BridgeClient[] = [
@@ -39,32 +53,31 @@ const initialBridgeClients: BridgeClient[] = [
         id: 'windows',
         icon: 'brand-windows',
         platform: 'Windows',
-        versionFile: 'version_windows.json',
+        versionFileURL: 'windows/x86/v1/version.json',
         version: 'Latest',
-        // NOTE: These URLs don't exist on proton.me yet, and are replaced with the version.json anyway
-        downloads: ['https://protonmail.com/download/bridge/Bridge-Installer.exe'],
+        downloads: ['https://proton.me/download/bridge/Bridge-Installer.exe'],
     },
     {
         id: 'apple',
         icon: 'brand-apple',
         platform: 'macOS',
-        versionFile: 'version_darwin.json',
+        versionFileURL: 'darwin/universal/v1/version.json',
         version: 'Latest',
-        downloads: ['https://protonmail.com/download/bridge/Bridge-Installer.dmg'],
+        downloads: ['https://proton.me/download/bridge/Bridge-Installer.dmg'],
     },
     {
         id: 'linux',
         icon: 'brand-linux',
         platform: 'GNU/Linux',
-        versionFile: 'version_linux.json',
+        versionFileURL: 'linux/x86/v1/version.json',
         version: 'Latest',
-        downloads: ['https://protonmail.com/bridge/download'],
+        downloads: ['https://proton.me/bridge/download'],
     },
 ];
 
 const fetchBridgeVersion = async (bridgeClient: BridgeClient): Promise<BridgeClient> => {
     try {
-        const response = await fetch(getStaticURL(`/download/bridge/${bridgeClient.versionFile}`)).catch((error) => {
+        const response = await fetch(getStaticURL(`/download/bridge/${bridgeClient.versionFileURL}`)).catch((error) => {
             throw new VersionLoadError('NETWORK_ERROR', error.message);
         });
 
@@ -77,10 +90,20 @@ const fetchBridgeVersion = async (bridgeClient: BridgeClient): Promise<BridgeCli
             }
         });
 
+        const latestStableRelease: BridgeRelease = jsonResponse.Releases.filter(
+            (release: BridgeRelease) => release.CategoryName === 'Stable'
+        )
+            .sort((a: BridgeRelease, b: BridgeRelease) => semver(b.Version) - semver(a.Version))
+            .shift();
+
+        const installerDownloads: string[] = latestStableRelease.File.filter(
+            (file) => file.Identifier === 'installer'
+        ).map((file) => file.Url);
+
         return {
             ...bridgeClient,
-            version: jsonResponse.stable.Version,
-            downloads: jsonResponse.stable.Installers,
+            version: latestStableRelease.Version,
+            downloads: installerDownloads,
         };
     } catch (e: any) {
         const platform = (() => {
@@ -115,7 +138,7 @@ export const ProtonMailBridgeSection = () => {
 
     const fileTypes = new Map([
         ['.exe', c('OS compatibility').t`.exe (64-bit)`],
-        ['.dmg', c('OS compatibility').t`.dmg (10.12 or later)`],
+        ['.dmg', c('OS compatibility').t`.dmg (12.0 or later)`],
         ['.deb', c('OS compatibility').t`.deb (for Debian/Ubuntu)`],
         ['.rpm', c('OS compatibility').t`.rpm (for Fedora/openSUSE)`],
         ['PKGBUILD', c('OS compatibility').t`PKGBUILD (for other distributions)`],
