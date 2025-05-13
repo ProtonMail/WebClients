@@ -4,15 +4,18 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
 import { isValidStandaloneApp } from '../../helpers/anniversary2025';
+import isCheckAllowed from '../../helpers/isCheckAllowed';
 import OfferSubscription from '../../helpers/offerSubscription';
+import { type OfferConfig } from '../../interface';
 
 interface Props {
     user: UserModel;
     subscription?: Subscription;
     protonConfig: ProtonConfig;
+    offerConfig: OfferConfig;
 }
 
-export const getIsEligible = ({ user, subscription, protonConfig }: Props) => {
+export const getIsEligible = ({ user, subscription, protonConfig, offerConfig }: Props) => {
     if (!subscription) {
         return false;
     }
@@ -22,9 +25,18 @@ export const getIsEligible = ({ user, subscription, protonConfig }: Props) => {
     const isBundle = offerSubscription.hasBundle();
     const isNotExternal = !offerSubscription.isManagedExternally();
     const noAnniversary2025Coupon = !offerSubscription.hasAnniversary2025Coupon();
+    const checkAllowed = isCheckAllowed(subscription, offerConfig);
     const hasValidApp =
         isValidStandaloneApp(protonConfig.APP_NAME) ||
         (protonConfig.APP_NAME === APPS.PROTONACCOUNT && isValidStandaloneApp(parentApp));
 
-    return hasValidApp && isNotExternal && noAnniversary2025Coupon && user.canPay && !user.isDelinquent && isBundle;
+    return (
+        hasValidApp &&
+        checkAllowed &&
+        isNotExternal &&
+        noAnniversary2025Coupon &&
+        user.canPay &&
+        !user.isDelinquent &&
+        isBundle
+    );
 };
