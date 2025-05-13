@@ -27,8 +27,8 @@
         "@protontech/timezone-support": "^2.1.0",
         "@scure/base": "^1.2.5",
         "@sentry/browser": "^7.120.3",
-        "@types/node": "^22.15.2",
-        "@types/papaparse": "^5.3.15",
+        "@types/node": "^22.15.17",
+        "@types/papaparse": "^5.3.16",
         "@types/ua-parser-js": "^0.7.39",
         "@types/webpack-env": "^1.18.8",
         "date-fns": "^2.30.0",
@@ -41,19 +41,19 @@
         "ua-parser-js": "^1.0.40",
         "web-streams-polyfill": "^3.3.3",
         "web-vitals": "^4.2.4",
-        "zod": "^3.24.3"
+        "zod": "^3.24.4"
     },
     "devDependencies": {
-        "@babel/plugin-transform-runtime": "^7.26.10",
+        "@babel/plugin-transform-runtime": "^7.27.1",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
-        "@types/jasmine": "^5.1.7",
+        "@types/jasmine": "^5.1.8",
         "@types/karma-junit-reporter": "^2.0.4",
         "@webgpu/types": "^0.1.60",
         "eslint": "^8.57.1",
         "eslint-plugin-jasmine": "^4.2.2",
-        "jasmine": "^5.6.0",
-        "jasmine-core": "^5.6.0",
+        "jasmine": "^5.7.1",
+        "jasmine-core": "^5.7.1",
         "karma": "^6.4.4",
         "karma-chrome-launcher": "^3.2.0",
         "karma-jasmine": "^5.1.0",
@@ -66,6 +66,6 @@
         "ttag": "^1.8.7",
         "typescript": "^5.8.3",
         "url-loader": "^4.1.1",
-        "webpack": "^5.99.7"
+        "webpack": "^5.99.8"
     }
 }
