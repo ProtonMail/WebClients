@@ -27,6 +27,10 @@ import type { KeyCompatibilityLevel } from '../constants';
 export type MaybeArray<T> = T[] | T;
 export type { enums, SessionKey, AlgorithmInfo, MIMEAttachment, ContextSigningOptions, ContextVerificationOptions };
 
+export interface InitOptions {
+    enforceOpenpgpGrammar: boolean;
+}
+
 // TODO TS: do not allow mutually exclusive properties
 export interface WorkerDecryptionOptions
     extends Omit<

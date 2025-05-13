@@ -62,7 +62,7 @@ export const bootstrapApp = async ({
         const [MainContainer, userData] = await Promise.all([
             appContainerPromise,
             userPromise,
-            bootstrap.loadCrypto({ appName }),
+            bootstrap.loadCrypto({ appName, unleashClient }),
             unleashPromise,
         ]);
         // Needs everything to be loaded.
