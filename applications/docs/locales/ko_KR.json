@@ -697,7 +697,7 @@
         "커스텀 도메인 설정"
       ],
       "Set up email forwarding": [
-        "이메일 포워딩 설정하기"
+        "이메일 가져오기 설정"
       ],
       "Settings": [
         "설정"
@@ -3867,6 +3867,18 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } 으로부터 불러오기"
+      ],
+      "Import from Google": [
+        "Google에서 가져오기"
+      ],
+      "Import from other": [
+        "다른 곳에서 가져오기"
+      ],
+      "Import from Outlook": [
+        "Outlook에서 가져오기"
+      ],
+      "Import from Yahoo": [
+        "Yahoo에서 가져오기"
       ]
     },
     "Import warning": {
@@ -4123,6 +4135,9 @@
       ],
       "Billing cycle: ${ text }": [
         "청구 주기: ${ text }"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "${ BRAND_NAME }로 메시지, 연락처 및 캘린더를 가져오세요."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "무료 플랜으로 다운그레이드하면, 만약에 나중에 다시 업그레이드 한다 해도 다음 혜택을 영구적으로 잃을 것입니다."
@@ -4627,6 +4642,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "신뢰할 수 있는 키 중 하나 이상이 소유자에 의해 \"유출되었음\"으로 표시되었습니다. 이 열쇠들을 \"신뢰하지 않는\" 것을 추천합니다."
+      ],
+      "One time import": [
+        "한 번만 가져오기"
       ],
       "Only the people with the link and the password can access this file.": [
         "링크와 비밀번호를 가지고 있는 사람만 이 파일에 접근할 수 있습니다."
@@ -6417,17 +6435,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "${ priceDrivePlus }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "계정 삭제"
@@ -6449,6 +6456,17 @@
       ],
       "Switch plan": [
         "플랜 변경"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "${ priceDrivePlus }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -8764,23 +8782,6 @@
         "${ totalPrice }용"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "사용자 당 ${ planMaxSpace } 스토리지"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains }개 커스텀 이메일 도메인"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails }개 이메일 주소"
-      ],
-      "Folders, labels, and custom filters": [
-        "폴더, 라벨, 커스텀 필터"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "저장공간 15GB"
@@ -8820,6 +8821,23 @@
       ],
       "Your privacy is our mission": [
         "당신의 프라이버시는 저희의 사명입니다"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "사용자 당 ${ planMaxSpace } 스토리지"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains }개 커스텀 이메일 도메인"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails }개 이메일 주소"
+      ],
+      "Folders, labels, and custom filters": [
+        "폴더, 라벨, 커스텀 필터"
       ]
     },
     "Subscription renewal state": {
@@ -9515,7 +9533,7 @@
         "복구 키 설정"
       ],
       "Set up email forwarding": [
-        "이메일 포워딩 설정하기"
+        "이메일 가져오기 설정"
       ],
       "Set up your organization": [
         "내 조직 설정하기"

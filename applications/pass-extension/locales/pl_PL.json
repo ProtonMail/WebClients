@@ -152,10 +152,10 @@
       "Create": [
         "Utwórz"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -204,7 +204,7 @@
         "Usuń wszystko"
       ],
       "Delete it, I will never need it": [
-        "Usuń go. Nigdy nie będę go potrzebować"
+        "Usuń trwale"
       ],
       "Delete mailbox": [
         "Usuń skrzynkę pocztową"
@@ -392,10 +392,10 @@
       "Move to another vault": [
         "Przenieś do innego sejfu"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Przenieś do kosza"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Przenieś do kosza"
       ],
       "Multiple select": [
@@ -612,10 +612,10 @@
         "Odblokuj kontakt"
       ],
       "Understood, I will never need it": [
-        "Zrozumiałem. Nigdy nie będę go potrzebować",
-        "Zrozumiałem. Nigdy nie będę ich potrzebować",
-        "Zrozumiałem. Nigdy nie będę ich potrzebować",
-        "Zrozumiałem. Nigdy nie będę ich potrzebować"
+        "Usuń trwale",
+        "Usuń trwale",
+        "Usuń trwale",
+        "Usuń trwale"
       ],
       "Unlock": [
         "Odblokuj"
@@ -1829,7 +1829,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -2015,7 +2018,7 @@
         "Wykonaj poniższe kroki, aby skonfigurować domenę."
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
-        "Pozostaw to okno otwarte podczas importowania danych. Proces może potrwać kilka minut."
+        "Pozostaw okno otwarte podczas importowania danych. Proces może potrwać kilka minut."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Pamiętaj, że usuniętego aliasu nie można przywrócić. Czy chcesz, zamiast tego wyłączyć alias?"
