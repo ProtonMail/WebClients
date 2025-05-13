@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Alert, SettingsLink } from '@proton/components';
+import { Banner } from '@proton/atoms';
+import { SettingsLink } from '@proton/components';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
@@ -59,23 +60,23 @@ const ExtraEventAlert = ({ model }: Props) => {
                     ? c('Link').t`Re-enable the address linked to this calendar to manage your invitation.`
                     : c('Link').t`Re-enable the address linked to this calendar to update your invitation.`;
             return (
-                <Alert className={alertClassName} type="warning">
+                <Banner className={alertClassName} variant="warning">
                     <span className="mr-2">{c('Info').t`This invitation is saved in a disabled calendar.`}</span>
                     <span>
                         <SettingsLink path="/identity-addresses" app={APPS.PROTONMAIL}>
                             {text}
                         </SettingsLink>
                     </span>
-                </Alert>
+                </Banner>
             );
         }
         const singleAnswersNotSupported = getHasRecurrenceId(veventIcs) && !getHasRecurrenceId(invitationApi?.vevent);
         if (isPartyCrasher && !singleAnswersNotSupported) {
             const participantName = attendeeIcs.displayName;
             return (
-                <Alert className={alertClassName} type="warning">
+                <Banner className={alertClassName} variant="warning">
                     {c('Calendar invite info').t`${participantName} is not in the participants list.`}
-                </Alert>
+                </Banner>
             );
         }
         return null;
@@ -100,10 +101,10 @@ const ExtraEventAlert = ({ model }: Props) => {
         // If organizer is internal, we cannot accept the event for now.
         // But we can for external organizers.
         return (
-            <Alert className={alertClassName} type="warning">
+            <Banner className={alertClassName} variant="warning">
                 {c('Calendar invite info')
                     .t`You cannot respond to ${BRAND_NAME} invites if you're not on the participants list at the moment.`}
-            </Alert>
+            </Banner>
         );
     }
     // attendee can take no action for outdated invitations
@@ -117,14 +118,14 @@ const ExtraEventAlert = ({ model }: Props) => {
         }
         if (!isAddressActive && !isImport) {
             return (
-                <Alert className={alertClassName} type="warning">
+                <Banner className={alertClassName} variant="warning">
                     <span className="mr-2">{c('Info').t`You cannot reply from the invited address.`}</span>
                     <span>
                         <SettingsLink path="/identity-addresses" app={APPS.PROTONMAIL}>
                             {c('Link').t`Enable your address to answer this invitation.`}
                         </SettingsLink>
                     </span>
-                </Alert>
+                </Banner>
             );
         }
         if (!calendarData) {
@@ -135,17 +136,17 @@ const ExtraEventAlert = ({ model }: Props) => {
             }
             if (canCreateCalendar) {
                 return (
-                    <Alert className={alertClassName} type="warning">
+                    <Banner className={alertClassName} variant="warning">
                         <span className="mr-2">{c('Info').t`All your calendars are disabled.`}</span>
                         <SettingsLink path={getCalendarsSettingsPath()} app={APPS.PROTONCALENDAR}>
                             {c('Link').t`Create a calendar linked to an active email address.`}
                         </SettingsLink>
-                    </Alert>
+                    </Banner>
                 );
             }
             if (maxUserCalendarsDisabled) {
                 return (
-                    <Alert className={alertClassName} type="warning">
+                    <Banner className={alertClassName} variant="warning">
                         <span className="mr-2">{c('Info').t`All your calendars are disabled.`}</span>
                         <span className="mr-2">
                             <SettingsLink path="/identity-addresses" app={APPS.PROTONMAIL}>
@@ -158,7 +159,7 @@ const ExtraEventAlert = ({ model }: Props) => {
                                     .t`Or you can delete one of your calendars and create a new one linked to an active email address.`}
                             </SettingsLink>
                         </span>
-                    </Alert>
+                    </Banner>
                 );
             }
         }
@@ -182,14 +183,14 @@ const ExtraEventAlert = ({ model }: Props) => {
             return null;
         }
         return (
-            <Alert className={alertClassName} type="warning">
+            <Banner className={alertClassName} variant="warning">
                 <span className="mr-2">{c('Info').t`You cannot reply from the invited address.`}</span>
                 <span>
                     <SettingsLink path="/identity-addresses" app={APPS.PROTONMAIL}>
                         {c('Link').t`Enable your address again to modify your answer.`}
                     </SettingsLink>
                 </span>
-            </Alert>
+            </Banner>
         );
     }
     if (calendarData?.isCalendarDisabled) {
@@ -197,22 +198,22 @@ const ExtraEventAlert = ({ model }: Props) => {
             ? c('Link').t`Enable the email address linked to the disabled calendar to cancel the event.`
             : c('Link').t`Enable the email address linked to the disabled calendar to modify your answer.`;
         return (
-            <Alert className={alertClassName} type="warning">
+            <Banner className={alertClassName} variant="warning">
                 <span className="mr-2">{c('Info').t`This invitation is saved in a disabled calendar.`}</span>
                 <span>
                     <SettingsLink path="/identity-addresses" app={APPS.PROTONMAIL}>
                         {text}
                     </SettingsLink>
                 </span>
-            </Alert>
+            </Banner>
         );
     }
 
     if (isPartyCrasherNonBlocking) {
         return (
-            <Alert className={alertClassName} type="warning">
+            <Banner className={alertClassName} variant="warning">
                 {c('Calendar invite info').t`Your email address is not in the original participants list.`}
-            </Alert>
+            </Banner>
         );
     }
 
