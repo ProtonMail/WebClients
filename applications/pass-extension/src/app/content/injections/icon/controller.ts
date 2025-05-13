@@ -4,30 +4,47 @@ import {
     DISABLED_ICON_SRC,
     LOCKED_ICON_SRC,
 } from 'proton-pass-extension/app/content/constants.runtime';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
 import {
     applyInjectionStyles,
     cleanupInjectionStyles,
     createIcon,
-} from 'proton-pass-extension/app/content/injections/icon';
-import type { FieldHandle, FieldIconHandle } from 'proton-pass-extension/app/content/types';
-import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
+} from 'proton-pass-extension/app/content/injections/icon/utils';
 
-import { clientDisabled, clientLocked, clientSessionLocked } from '@proton/pass/lib/client';
+import { clientDisabled, clientLocked } from '@proton/pass/lib/client';
 import type { AppStatus } from '@proton/pass/types';
-import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { animatePositionChange } from '@proton/pass/utils/dom/position';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 
-type CreateIconOptions = { field: FieldHandle; elements: PassElementsConfig };
+type IconControllerOptions = {
+    input: HTMLInputElement;
+    /** parent form element */
+    form: HTMLElement;
+    /** `protonpass-control` custom element tag name */
+    tag: string;
+    /** z-index for the control element */
+    zIndex: number;
 
-export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): FieldIconHandle => {
+    getAnchor: (options: { reflow: boolean }) => HTMLElement;
+    onClick: () => void;
+};
+
+export interface IconController {
+    element: HTMLElement;
+    detach: () => void;
+    reposition: (reflow: boolean) => void;
+    setCount: (count: number) => void;
+    setStatus: (status: AppStatus) => void;
+}
+
+export const createIconController = (options: IconControllerOptions): IconController => {
+    const { input, form, zIndex, tag } = options;
+
+    const anchor = options.getAnchor({ reflow: false });
+    const { icon, control } = createIcon({ anchor, zIndex, tag });
+
     const listeners = createListenerStore();
     const repositioning = { request: -1, animate: -1 };
-
-    const input = field.element as HTMLInputElement;
-    const { icon, control } = createIcon(field, elements.control);
 
     const setStatus = (status: AppStatus) => {
         const iconUrl = (() => {
@@ -39,15 +56,11 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
         icon.style.setProperty('background-image', `url("${iconUrl}")`, 'important');
     };
 
-    const setCount = withContext<(count: number) => void>((ctx, count: number) => {
-        if (!ctx) return;
-
+    const setCount = (count: number) => {
         const safeCount = count === 0 || !count ? '' : String(count);
         icon.style.setProperty(`--control-count`, `"${safeCount}"`);
-
-        if (count > 0) return icon.style.setProperty('background-image', `url("${COUNTER_ICON_SRC}")`, 'important');
-        setStatus(ctx?.getState().status);
-    });
+        if (count > 0) icon.style.setProperty('background-image', `url("${COUNTER_ICON_SRC}")`, 'important');
+    };
 
     /* `reposition` is debounced and wrapped in a `requestAnimationFrame`
      * for performance reasons. If form is detached, we must cancel the
@@ -59,57 +72,26 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
 
     const reposition = (reflow: boolean = false) => {
         cancelReposition();
-
-        const inputBox = field.getBoxElement({ reflow });
-        const form = field.getFormHandle().element;
+        const anchor = options.getAnchor({ reflow });
 
         repositioning.request = requestAnimationFrame(() => {
             animatePositionChange({
                 onAnimate: (request) => (repositioning.animate = request),
-                get: () => field.element.getBoundingClientRect(),
+                get: () => options.input.getBoundingClientRect(),
                 set: () => {
                     cleanupInjectionStyles({ input, control });
-                    applyInjectionStyles({ icon, control, input, inputBox, form });
+                    applyInjectionStyles({ icon, control, input, anchor, form });
                 },
             });
         });
     };
 
-    const onPointerDown: (evt: PointerEvent) => void = withContext((ctx, evt) => {
+    const onPointerDown = (evt: PointerEvent) => {
         icon.setPointerCapture(evt.pointerId);
         evt.preventDefault();
         evt.stopPropagation();
-
-        if (!field.action || !ctx) return;
-
-        const iframe = ctx.service.iframe;
-
-        /** If the dropdown is currently visible then close it */
-        const visible = iframe.dropdown?.getState().visible;
-        const attachedTo = iframe.dropdown?.getCurrentField();
-
-        if (visible) {
-            if (field === attachedTo) {
-                actionTrap(field.element);
-                field.element.focus();
-            }
-
-            return iframe.dropdown?.close();
-        }
-
-        /** If the session is locked: trigger auto-focus in the injected dropdown
-         * for PIN unlock. Force blur the field to prevent aggressive website focus
-         * capture. Action trap prevents icon detachment during this sequence */
-        if (clientSessionLocked(ctx.getState().status)) {
-            actionTrap(field.element);
-            field.element.blur();
-        }
-
-        iframe?.attachDropdown(field.getFormHandle().element)?.open({
-            action: field.action.type,
-            field,
-        });
-    });
+        options.onClick();
+    };
 
     const onPointerUp = (evt: PointerEvent) => {
         /** Release pointer capture and prevent any residual click events */
@@ -130,7 +112,7 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
      * · on window resize
      * · on form resize (handled in `FormHandles`)
      * · on new elements added to the field box (ie: icons) */
-    const target = field.element === field.boxElement ? field.element.parentElement! : field.boxElement;
+    const target = anchor === input ? input.parentElement! : anchor;
 
     /** Pointer capturing events are preferred to handle cases where icon
      * repositioning during interaction could generate unintended clicks */

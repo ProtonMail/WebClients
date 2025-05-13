@@ -6,7 +6,6 @@ import {
 } from 'proton-pass-extension/app/content/constants.static';
 import type { ProtonPassControl } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassControl';
 import ProtonPassControlStyles from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassControl.raw.scss';
-import type { FieldHandle } from 'proton-pass-extension/app/content/types';
 
 import {
     type StyleParser,
@@ -16,21 +15,25 @@ import {
     pixelParser,
 } from '@proton/pass/utils/dom/computed-styles';
 import { createCustomElement, createElement } from '@proton/pass/utils/dom/create-element';
-import { isHTMLElement } from '@proton/pass/utils/dom/predicates';
+import { isHTMLElement, isInputElement } from '@proton/pass/utils/dom/predicates';
 import { repaint } from '@proton/pass/utils/dom/repaint';
 
-type InjectionElements = {
-    form: HTMLElement;
-    input: HTMLInputElement;
-    inputBox: HTMLElement;
+type IconElement = {
+    /** Button element injected into shadow DOM */
     icon: HTMLButtonElement;
+    /** Control custom element */
     control: ProtonPassControl;
 };
 
-type InjectionOptions = {
-    inputBox: HTMLElement;
+type IconElementRefs = IconElement & {
+    form: HTMLElement;
+    input: HTMLInputElement;
+    anchor: HTMLElement;
+};
+
+type IconInjectionOptions = {
     getInputStyle: StyleParser;
-    getBoxStyle: StyleParser;
+    getAnchorStyle: StyleParser;
 };
 
 /* input styles we may override */
@@ -41,13 +44,15 @@ type InputInitialStyles = { ['padding-right']?: string };
 const getOverlayShift = (options: {
     x: number;
     y: number;
-    inputBox: HTMLElement;
+    anchor: HTMLElement;
     input: HTMLElement;
     form: HTMLElement;
 }): number => {
+    const restore: { el: HTMLElement; pointerEvents: string }[] = [];
+
     try {
-        const { x, y, form, input, inputBox } = options;
-        const maxWidth = inputBox.offsetWidth;
+        const { x, y, form, input, anchor } = options;
+        const maxWidth = anchor.offsetWidth;
         const maxShift = maxWidth * 0.5; /* Maximum allowed shift */
 
         if (Number.isNaN(x) || Number.isNaN(y)) return 0;
@@ -59,10 +64,24 @@ const getOverlayShift = (options: {
          * from the shadow DOM element in the topmost layer to the document root node. */
         const overlays = document.elementsFromPoint(x, y);
 
+        /** Prepass: `document.elementsFromPoint` will exclude elements that are
+         * set to `pointer-events: none`. These may be part of the shift we want
+         * to resolve. Set them to `auto` temporarily and restore */
+        anchor.querySelectorAll('*').forEach((el) => {
+            if (isHTMLElement(el)) {
+                if (window.getComputedStyle(el).pointerEvents === 'none') {
+                    const pointerEvents = el.style.pointerEvents;
+                    el.style.pointerEvents = 'auto';
+                    restore.push({ el, pointerEvents });
+                }
+            }
+        });
+
         let maxDx: number = 0;
 
         for (const el of overlays) {
-            if (el === input || el === inputBox) break; /* Stop at target elements */
+            if (el.classList.contains('protonpass-debug')) continue;
+            if (el === input || el === anchor) break; /* Stop at target elements */
             if (!isHTMLElement(el)) continue; /* Skip non-HTMLElements */
             if (el.tagName.startsWith('PROTONPASS')) continue; /* Skip injected pass elements */
             if (!form.contains(el)) continue; /* Skip elements outside form */
@@ -84,6 +103,8 @@ const getOverlayShift = (options: {
         return maxDx;
     } catch (e) {
         return 0;
+    } finally {
+        restore.forEach(({ el, pointerEvents }) => (el.style.pointerEvents = pointerEvents));
     }
 };
 
@@ -94,25 +115,26 @@ const getOverlayShift = (options: {
  * ie: check amazon sign-in page without repaint to
  * reproduce issue */
 const computeIconInjectionStyles = (
-    { input, control, form }: Omit<InjectionElements, 'icon'>,
-    { getInputStyle, getBoxStyle, inputBox }: InjectionOptions
+    { anchor, input, control, form }: Omit<IconElementRefs, 'icon'>,
+    { getInputStyle, getAnchorStyle: getBoxStyle }: IconInjectionOptions
 ) => {
     repaint(input, control);
 
     const { right: inputRight, top: inputTop, height: inputHeight } = input.getBoundingClientRect();
-    const { top: boxTop, height: boxMaxHeight } = inputBox.getBoundingClientRect();
+    const { top: boxTop, height: boxMaxHeight } = anchor.getBoundingClientRect();
     const { top: controlTop, right: controlRight } = control.getBoundingClientRect();
 
     /* If inputBox is not the input element in the case we
      * resolved a bounding element : compute inner height
      * without offsets in order to correctly position icon
      * if bounding element has some padding-top/border-top */
-    const boxed = inputBox !== input;
+    const boxed = anchor !== input;
     const { value: boxHeight, offset: boxOffset } = getComputedHeight(getBoxStyle, boxed ? 'inner' : 'outer');
 
     const size = Math.max(Math.min(boxMaxHeight - ICON_PADDING, ICON_MAX_HEIGHT), ICON_MIN_HEIGHT);
     const pl = getInputStyle('padding-left', pixelParser);
     const pr = getInputStyle('padding-right', pixelParser);
+
     const iconPaddingLeft = size / 5; /* dynamic "responsive" padding */
     const iconPaddingRight = Math.max(Math.min(pl, pr) / 1.5, iconPaddingLeft);
 
@@ -122,7 +144,7 @@ const computeIconInjectionStyles = (
     let overlayDx = getOverlayShift({
         x: inputRight - (iconPaddingRight + size / 2),
         y: inputTop + inputHeight / 2,
-        inputBox,
+        anchor,
         input,
         form,
     });
@@ -174,16 +196,16 @@ export const cleanupInputInjectedStyles = (input: HTMLInputElement) => {
     input.removeAttribute(INPUT_BASE_STYLES_ATTR);
 };
 
-export const cleanupInjectionStyles = ({ control, input }: Pick<InjectionElements, 'control' | 'input'>) => {
+export const cleanupInjectionStyles = ({ control, input }: Pick<IconElementRefs, 'control' | 'input'>) => {
     control.style.removeProperty('float');
     control.style.removeProperty('max-width');
     control.style.removeProperty('margin-left');
     cleanupInputInjectedStyles(input);
 };
 
-const applyIconInjectionStyles = (elements: InjectionElements, options: InjectionOptions) => {
-    const { icon, input } = elements;
-    const styles = computeIconInjectionStyles(elements, options);
+const applyIconInjectionStyles = (refs: IconElementRefs, options: IconInjectionOptions) => {
+    const { icon, input } = refs;
+    const styles = computeIconInjectionStyles(refs, options);
 
     /* Handle a specific scenario where input has transitions or
      * animations set, which could affect width change detection
@@ -232,37 +254,32 @@ const applyIconInjectionStyles = (elements: InjectionElements, options: Injectio
  *   its possible margin left offset + max width
  * - Use the re-renderer control element for positioning the icon
  * + Pre-compute shared styles and DOMRects between two passes */
-export const applyInjectionStyles = (elements: InjectionElements) => {
-    const { input, inputBox } = elements;
-    cleanupInputInjectedStyles(input);
-
-    const options = {
-        inputBox,
-        getInputStyle: createStyleParser(input),
-        getBoxStyle: createStyleParser(inputBox),
-    };
-
-    applyIconInjectionStyles(elements, options);
+export const applyInjectionStyles = (refs: IconElementRefs) => {
+    cleanupInputInjectedStyles(refs.input);
+    applyIconInjectionStyles(refs, {
+        getInputStyle: createStyleParser(refs.input),
+        getAnchorStyle: createStyleParser(refs.anchor),
+    });
 };
 
-export const createIcon = (field: FieldHandle, controlTag: string): InjectionElements => {
-    const input = field.element as HTMLInputElement;
-    const inputBox = field.boxElement;
+export type CreateIconConfig = {
+    anchor: HTMLElement;
+    tag: string;
+    zIndex: number;
+};
 
-    const control = createCustomElement<ProtonPassControl>({ type: controlTag, styles: ProtonPassControlStyles });
+export const createIcon = ({ anchor, tag, zIndex }: CreateIconConfig): IconElement => {
+    const control = createCustomElement<ProtonPassControl>({ type: tag, styles: ProtonPassControlStyles });
     const icon = createElement<HTMLButtonElement>({ type: 'button', classNames: [] });
 
     icon.tabIndex = -1;
-    icon.style.zIndex = field.zIndex.toString();
+    icon.style.zIndex = zIndex.toString();
     icon.setAttribute('type', 'button');
 
-    const elements = { icon, control: control.customElement, input, inputBox, form: field.getFormHandle().element };
-    const boxed = input !== inputBox;
-
-    if (boxed) inputBox.insertBefore(control.customElement, inputBox.firstElementChild);
-    else input.parentElement!.insertBefore(control.customElement, input);
+    if (isInputElement(anchor)) anchor.parentElement!.insertBefore(control.customElement, anchor);
+    else anchor.insertBefore(control.customElement, anchor.firstElementChild);
 
     control.shadowRoot.appendChild(icon);
 
-    return elements;
+    return { icon, control: control.customElement };
 };
