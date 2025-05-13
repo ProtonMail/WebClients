@@ -36,11 +36,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
+      "A to Z": [
+        "A～Z"
+      ],
       "Activate": [
         "有効化"
       ],
       "Activate recovery": [
         "回復を有効にする"
+      ],
+      "Active": [
+        "アクティブ"
       ],
       "Add": [
         "追加"
@@ -188,6 +194,9 @@
       ],
       "Change page": [
         "ページの変更"
+      ],
+      "Change sorting": [
+        "並べ替えの変更"
       ],
       "Chat with us": [
         "チャットする"
@@ -486,6 +495,9 @@
       "Expand composer": [
         "広げる"
       ],
+      "Expand navigation bar to see custom views": [
+        "ナビゲーションバーを展開して、カスタムビューを表示"
+      ],
       "Expand navigation bar to see folders": [
         "ナビゲーションバーを展開してフォルダーを表示"
       ],
@@ -723,6 +735,9 @@
       "Learn more": [
         "詳細"
       ],
+      "Least read": [
+        "既読数が少ない順"
+      ],
       "Let's talk": [
         "話をしよう"
       ],
@@ -839,6 +854,9 @@
       ],
       "More search options": [
         "検索オプションを表示"
+      ],
+      "Most read": [
+        "既読が多い順"
       ],
       "Move": [
         "移動"
@@ -996,6 +1014,9 @@
       "Read receipt sent": [
         "開封確認が送信されました"
       ],
+      "Recently received": [
+        "最近受信したもの"
+      ],
       "Reconnect": [
         "再接続"
       ],
@@ -1082,6 +1103,9 @@
       ],
       "Restore": [
         "復元"
+      ],
+      "Resubscribe": [
+        "再購読"
       ],
       "Resume": [
         "再開"
@@ -1350,9 +1374,6 @@
       "Trust": [
         "信頼する"
       ],
-      "Trust key": [
-        "鍵を信頼する"
-      ],
       "Trust public key": [
         "公開鍵を信頼"
       ],
@@ -1394,6 +1415,9 @@
       ],
       "Unsubscribe": [
         "登録解除"
+      ],
+      "Unsubscribed": [
+        "登録解除されました"
       ],
       "Unsubscribing": [
         "登録を解除しています"
@@ -5833,6 +5857,18 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } からインポート"
+      ],
+      "Import from Google": [
+        "Googleからインポート"
+      ],
+      "Import from other": [
+        "その他からインポート"
+      ],
+      "Import from Outlook": [
+        "Outlook からインポート"
+      ],
+      "Import from Yahoo": [
+        "Yahooからインポート"
       ]
     },
     "Import warning": {
@@ -5858,6 +5894,15 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }、アーカイブ、古いメールをフォルダに移動します。"
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "サブスクリプションに関連がなくなった${ boldQuicklySpot }"
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "ワンクリックで${ boldUnsubscribe }できます。"
       ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "${ BRAND_NAME } Scribeは、より良いメールを迅速かつ簡単に作成するのを手助けします。"
@@ -6003,11 +6048,23 @@
       "${ storage } storage": [
         "${ storage } ストレージ"
       ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "先月受信した${ subscription.ReceivedMessageCount }件のメール"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } 件が未読"
+      ],
       "${ total } conversation": [
         "${ total } 件の会話"
       ],
       "${ total } message": [
         "${ total } 件のメッセージ"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } 個のメールトラッカーをブロックしました"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount }個のトラッカーをブロックしました"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } 件の送信予約メッセージ"
@@ -6120,6 +6177,15 @@
       "All (${ totalFoldersCount } label)": [
         "すべて (${ totalFoldersCount } 件のラベル)"
       ],
+      "All messages from this mailing list will be marked as read.": [
+        "このメーリングリストからのすべてのメッセージは、既読としてマークされます。"
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "このメーリングリストからのすべてのメッセージは、アーカイブに移動されます。"
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "このメーリングリストからのすべてのメッセージは、ごみ箱に移動されます。"
+      ],
       "All messages stored in this folder will be permanently deleted.": [
         "このフォルダーに保存されているすべてのメッセージが完全に削除されます。"
       ],
@@ -6171,11 +6237,17 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "「${ nameDeleted }」フォルダ内のサブフォルダはすべて削除されますが、フォルダ内に保存されているメールは削除されずに「すべてのメール」フォルダに残ります。"
       ],
+      "Apply to future messages ": [
+        "今後のメッセージに適用する "
+      ],
       "Applying actions to conversations": [
         "会話に適用する操作"
       ],
       "Applying actions to messages": [
         "メッセージに適用する操作"
+      ],
+      "Archive existing messages": [
+        "既存のメッセージをアーカイブする"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "このフォルダー内のすべてのメッセージを削除してよろしいですか?"
@@ -6258,11 +6330,17 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "御社のイメージ力を強め、ユーザーにより一貫したオンラインサービスを提供しましょう。"
       ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "メッセージ、連絡先、カレンダーを ${ BRAND_NAME }に移行。"
+      ],
       "Browse privately and access blocked content.": [
         "非公開で閲覧し、ブロックされたコンテンツにアクセスします。"
       ],
       "Browser not supported": [
         "このブラウザはサポートされていません"
+      ],
+      "Bulk delete": [
+        "一括削除"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "無料プランへダウングレードすると、現在の特典は利用できなくなります。今後アップグレードしても現在の特典は復活しません。"
@@ -6476,6 +6554,9 @@
       ],
       "Each code can only be used once": [
         "各コードは 1 回のみ使用可能です"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "ニュースレターとメーリングリストの管理と登録解除が簡単に行えます。"
       ],
       "Edit email address": [
         "メールアドレスを編集"
@@ -6822,6 +6903,9 @@
       "Manage your labels": [
         "ラベルを管理"
       ],
+      "Mark all as read": [
+        "すべて既読にする"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode ロゴ"
       ],
@@ -6963,11 +7047,17 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "相手から「漏洩」と判断された鍵があります。対象の鍵の信頼を解除することを推奨します。"
       ],
+      "One time import": [
+        "1 回限りのインポート"
+      ],
       "Open shortcut cheat sheet": [
         "ショートカットのチートシートを開く"
       ],
       "Open the guide for recommended actions and helpful links.": [
         "推奨されるアクションと役立つリンクのガイドを開きます。"
+      ],
+      "Optional": [
+        "オプション"
       ],
       "or discover other features:": [
         "または他の機能を発見することもできます:"
@@ -7121,6 +7211,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "ドキュメントの公開共有はまだサポートされていません。"
+      ],
+      "Quickly spot": [
+        "すばやく見つける"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "何かお困りの際は、${ BRAND_NAME }までお問い合わせください。"
@@ -7599,6 +7692,9 @@
       "Tracking": [
         "トラッキング"
       ],
+      "Trash existing messages": [
+        "既存のメッセージを破棄する"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "${ BRAND_NAME } の新しい機能、アップデート、製品を一般公開される前にお試しください。 これによりアプリケーションがリロードされます"
       ],
@@ -7622,6 +7718,9 @@
       ],
       "Unsaved changes": [
         "未保存の変更"
+      ],
+      "Unsubscribe": [
+        "登録解除"
       ],
       "Unsupported file": [
         "非対応のファイル"
@@ -8051,6 +8150,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "あなたのサブスクリプションは${ renewalTime }に自動的に更新されます。"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "不要なものが整理された受信トレイまで、あと数クリックです。"
       ]
     },
     "info": {
@@ -8323,6 +8425,12 @@
       " and ${ l }": [
         " と ${ l }"
       ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } すべてのメッセージを既読としてマークする"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } すべてのメッセージを ${ boldFolderName } に移動"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } ユーザー名"
       ],
@@ -8343,6 +8451,9 @@
       ],
       "Actions": [
         "操作"
+      ],
+      "Active filter:": [
+        "有効なフィルター:"
       ],
       "Add email address": [
         "メールアドレスの追加"
@@ -8371,11 +8482,11 @@
       "Always move sender's emails": [
         "この差出人のメールを常に移動"
       ],
-      "And": [
-        "と"
-      ],
       "AND": [
         "かつ"
+      ],
+      "And": [
+        "と"
       ],
       "and": [
         "と"
@@ -8391,6 +8502,9 @@
       ],
       "Apply filter to existing emails": [
         "既存のメールにフィルターを適用"
+      ],
+      "Apply to future messages": [
+        "今後のメッセージに適用する"
       ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
@@ -8599,10 +8713,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "条件"
       ],
-      "IF": [
+      "If": [
         "条件"
       ],
       "Import all messages": [
@@ -8656,6 +8770,9 @@
       "Mail Server (IMAP)": [
         "メールサーバー (IMAP)"
       ],
+      "Mail subscriptions": [
+        "メール購読"
+      ],
       "Main": [
         "メイン"
       ],
@@ -8670,6 +8787,9 @@
       ],
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } へ移動"
+      ],
+      "Move messages to": [
+        "メッセージを移動"
       ],
       "Move to": [
         "移動先"
@@ -8719,13 +8839,13 @@
       "Optional": [
         "任意"
       ],
+      "OR": [
+        "または"
+      ],
       "or": [
         "または"
       ],
       "Or": [
-        "または"
-      ],
-      "OR": [
         "または"
       ],
       "Original link": [
@@ -8838,6 +8958,9 @@
       ],
       "System information": [
         "システム情報"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "フィルターは無効になっています。${ settingsLink }で有効にできます"
       ],
       "Theme": [
         "テーマ"
@@ -8989,6 +9112,11 @@
       ],
       "To: ${ to }": [
         "宛先: ${ to }"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "ニュースレターとメーリングリストのサブスクリプションの表示と管理は、こちらで行います。"
       ]
     },
     "Landmarks": {
@@ -9210,6 +9338,9 @@
       ],
       "Types of recovery methods": [
         "回復手段の種類"
+      ],
+      "Views": [
+        "閲覧数"
       ],
       "What’s this?": [
         "これは何ですか?"
@@ -9599,6 +9730,14 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle }を獲得"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "アカウントを削除"
@@ -9620,14 +9759,6 @@
       ],
       "Switch plan": [
         "プランを変更"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle }を獲得"
       ]
     },
     "new_plans: feature": {
@@ -10175,6 +10306,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "${ priceLine } から"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "${ priceCoupon }の割引価格は最初の月のみ有効です。そのあとは${ priceLine }で自動更新されます。いつでもキャンセル可能です。"
       ],
@@ -12269,6 +12403,47 @@
         "${ totalPrice } の場合"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
@@ -12521,47 +12696,6 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
@@ -13117,6 +13251,9 @@
       "Archive": [
         "アーカイブ"
       ],
+      "Archive all messages?": [
+        "すべてのメッセージをアーカイブしますか？"
+      ],
       "Are you sure you want to close the preview?": [
         "プレビューを閉じてよろしいですか?"
       ],
@@ -13480,8 +13617,17 @@
       "Load remote content": [
         "外部コンテンツの読み込み"
       ],
+      "Mail Subscriptions": [
+        "メール購読"
+      ],
+      "Mail subscriptions": [
+        "メール購読"
+      ],
       "Make a secure connection your default": [
         "安全な接続をデフォルトにする"
+      ],
+      "Mark all messages as read": [
+        "すべてのメッセージを既読にする"
       ],
       "Mark as read": [
         "既読にする"
@@ -13596,6 +13742,9 @@
       ],
       "No breaches detected": [
         "侵害は検出されませんでした"
+      ],
+      "No mail subscriptions": [
+        "メールの購読がありません"
       ],
       "No need to empty the trash": [
         "ゴミ箱を空にする必要はありません"
@@ -13840,6 +13989,9 @@
       "Trash": [
         "ごみ箱"
       ],
+      "Trash all messages?": [
+        "すべてのメッセージをごみ箱に入れますか？"
+      ],
       "Trust new key?": [
         "新しい鍵を信頼しますか？"
       ],
@@ -13854,6 +14006,9 @@
       ],
       "Unsubscribe": [
         "登録解除"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "${ subscription.Name } の登録を解除しますか？"
       ],
       "Unsubscribe request sent": [
         "購読解除リクエストを送信しました"
@@ -13932,6 +14087,9 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Your subscriptions in one place": [
+        "サブスクリプションを一元管理"
       ]
     },
     "Today icon tooltip in mini calendar": {

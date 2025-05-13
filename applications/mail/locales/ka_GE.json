@@ -36,11 +36,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
       ],
+      "A to Z": [
+        "A-დან Z-მდე"
+      ],
       "Activate": [
         "აქტივაცია"
       ],
       "Activate recovery": [
         "აღდგენის აქტივაცია"
+      ],
+      "Active": [
+        "აქტიური"
       ],
       "Add": [
         "დამატება"
@@ -189,6 +195,9 @@
       ],
       "Change page": [
         "გვერდის შეცვლა"
+      ],
+      "Change sorting": [
+        "დალაგების შეცვლა"
       ],
       "Chat with us": [
         "დაგველაპარაკეთ"
@@ -489,6 +498,9 @@
       "Expand composer": [
         "რედაქტორის გადიდება"
       ],
+      "Expand navigation bar to see custom views": [
+        "ნავიგაციის პანელის გაშლა მორგებული ხედების დასანახად"
+      ],
       "Expand navigation bar to see folders": [
         "ნავიგაციის პანელის გაშლა საქაღალდეების დასანახად"
       ],
@@ -727,6 +739,9 @@
       "Learn more": [
         "გაიგეთ მეტი"
       ],
+      "Least read": [
+        "ყველაზე ნაკლებად წაკითხვადი"
+      ],
       "Let's talk": [
         "ვიბაზროთ"
       ],
@@ -843,6 +858,9 @@
       ],
       "More search options": [
         "მეტი ძებნის პარამეტრი"
+      ],
+      "Most read": [
+        "ყველაზე წაკითხვადი"
       ],
       "Move": [
         "გადატანა"
@@ -1000,6 +1018,9 @@
       "Read receipt sent": [
         "წაკითხულობის ანგარიში გაიგზავნა"
       ],
+      "Recently received": [
+        "ახლახან მიღებული"
+      ],
       "Reconnect": [
         "თავიდან დაკავშირება"
       ],
@@ -1084,8 +1105,14 @@
       "Reset to default": [
         "ნაგულისხმებზე დაბრუნება"
       ],
+      "Resize panel": [
+        "პანელის ზომის შეცვლა"
+      ],
       "Restore": [
         "აღდგენა"
+      ],
+      "Resubscribe": [
+        "თავიდან გამოწერა"
       ],
       "Resume": [
         "გაგრძელება"
@@ -1354,10 +1381,6 @@
       "Trust": [
         "ნდობა"
       ],
-      "Trust key": [
-        "ნდობის გასაღები",
-        "ნდობის გასაღებები"
-      ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
       ],
@@ -1399,6 +1422,9 @@
       ],
       "Unsubscribe": [
         "გამოწერის გაუქმება"
+      ],
+      "Unsubscribed": [
+        "გამოწერა გაუქმებულია"
       ],
       "Unsubscribing": [
         "გამოწერის გაუქმება"
@@ -3704,6 +3730,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "თქვენი შემომავალი შეტყობინებების ავტომატური დალაგება მანამდე, სანამ ის თქვენს საფოსტო ყუთამდე მოაღწევს."
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "მოირგეთ ეს ჯერ, რომ გაააქტიუროთ თქვენი ორგანიზაცია და მოირგოთ თქვენი ელფოსტის მისამართი."
+      ],
       "Connect your CRM, website, printers, and more.": [
         "დააკავსირეთ თქვენი CRM, ვებგვერდი, პრინტერი და ა.შ."
       ],
@@ -5847,6 +5876,18 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider }-დან შემოტანა"
+      ],
+      "Import from Google": [
+        "Google-დან შემოტანა"
+      ],
+      "Import from other": [
+        "სხვა ადგილიდან შემოტანა"
+      ],
+      "Import from Outlook": [
+        "Outlook-დან შემოტანა"
+      ],
+      "Import from Yahoo": [
+        "yahoo-დან შემოტანა"
       ]
     },
     "Import warning": {
@@ -5874,6 +5915,15 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, დააარქივეთ, ან გადაიტანეთ ძველი ელფოსტები საქაღალდეში."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } რომელი გამოწერებიც აღარ გნებავთ."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } მათგან ერთი წკაპით."
       ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "${ BRAND_NAME } Scribe დაგეხმარებათ, ელფოსტები სწრაფად და ეფექტურად დაწეროთ."
@@ -6046,6 +6096,14 @@
       "${ storage } storage": [
         "${ storage } საცავი"
       ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "${ subscription.ReceivedMessageCount } ელფოსტა გასულ თვეში",
+        "${ subscription.ReceivedMessageCount } ელფოსტა გასულ თვეში"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } წაუკითხავი",
+        "${ subscription.UnreadMessageCount } წაუკითხავი"
+      ],
       "${ total } conversation": [
         "${ total } საუბარი",
         "${ total } საუბარი"
@@ -6053,6 +6111,14 @@
       "${ total } message": [
         "${ total } შეტყობინება",
         "${ total } შეტყობინება"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "დაბლოკილია ${ trackersCount } ელფოსტის ტრეკერი",
+        "დაბლოკილია ${ trackersCount } ელფოსტის ტრეკერი"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "დაბლოკილია ${ trackersCount } ტრეკერი",
+        "დაბლოკილია ${ trackersCount } ტრეკერი"
       ],
       "${ unreadCount } scheduled message": [
         "რიგშია ${ unreadCount } შეტყობინება",
@@ -6154,6 +6220,15 @@
         "ყველა (${ totalFoldersCount } ჭდე)",
         "ყველა (${ totalFoldersCount } ჭდე)"
       ],
+      "All messages from this mailing list will be marked as read.": [
+        "ამ დაგზავნის სიის ყველა შეტყობინება წაკითხულად მოინიშნება."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "ამ დაგზავნის სიის ყველა შეტყობინება გადატანილი იქნება არქივში."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "ამ დაგზავნის სიის ყველა შეტყობინება გადატანილი იქნება ნაგვის ყუთში."
+      ],
       "All messages stored in this folder will be permanently deleted.": [
         "საქაღალდეში შენახული ყველა შეტყობინება სამუდამოდ წაიშლება."
       ],
@@ -6206,11 +6281,17 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "წაშლება ასევე ყველა ქვესაქაღალდეც. მაგრამ ელფოსტა, რომელიც დამახსოვრებულია საქაღალდეში ${ nameDeleted }, არ წაიშლება და შეგიძლიათ, ყველა ელფოსტის საქაღალდეში იპოვოთ."
       ],
+      "Apply to future messages ": [
+        "გადატარება მომავალ შეტყობინებებზე "
+      ],
       "Applying actions to conversations": [
         "ქმედებების გადატარება საუბრებზე"
       ],
       "Applying actions to messages": [
         "ქმედებების გადატარება შეტყობინებებზე"
+      ],
+      "Archive existing messages": [
+        "არსებული შეტყობინებების დაარქივება"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ ამ საქაღალდეში ყველა შეტყობინების წაშლა?"
@@ -6296,11 +6377,17 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "გააძლიერეთ თქვენი ორგანიზაციის ბრენდინგი და შეექმენით უფრო ერთგვაროვანი გამოცდილება თქვენი მომხმარებლებისთვის."
       ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "გადმოიტანეთ თქვენი შეტყობინებები, კონტაქტები და კალენდრები ${ BRAND_NAME }-ზე."
+      ],
       "Browse privately and access blocked content.": [
         "იმუშავეთ კონფიდენციალურად და იქონიეთ წვდომა დაბლოკილ შემცველობასთან."
       ],
       "Browser not supported": [
         "ბრაუზერი მხარდაუჭერელია"
+      ],
+      "Bulk delete": [
+        "ერთდროული წაშლა"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "უფასო გეგმაზე ჩამოწევით ამ ბენეფიტებს სამუდამოდ დაკარგავთ. მაშინაც კი, თუ მომავალში ფასიან ტარიფზე ისევ განახლდებით."
@@ -6514,6 +6601,9 @@
       ],
       "Each code can only be used once": [
         "თითოეული კოდის გამოყენება, მხოლოდ, ერთხელ შეგიძლიათ"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "ადვილად მართეთ და გააუქმეთ გამოწერები ახალი ამბებიდან და დაგზავნის სიებიდან."
       ],
       "Edit email address": [
         "ელფოსტის მისამართის ჩასწორება"
@@ -6865,6 +6955,9 @@
       "Manage your labels": [
         "გამართეთ თქვენი ჭდეები"
       ],
+      "Mark all as read": [
+        "ყველას მონიშვნა წაკითხულად"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode-ის ლოგო"
       ],
@@ -7003,11 +7096,17 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "ერთი ან მეტი თქვენს მიერ სანდოდ მიჩნეული გასაღები მონიშნულ იქნა, როგორც \"გატეხილი\", მათი მფლობელების მიერ. გირჩევთ, ეს გასაღებები \"არასანდოდ\" მონიშნოთ."
       ],
+      "One time import": [
+        "ერთჯერადი შემოტანა"
+      ],
       "Open shortcut cheat sheet": [
         "მალსახმობების ჩამონათვლის გახსნა"
       ],
       "Open the guide for recommended actions and helpful links.": [
         "გახსენით დამხმარე რეკომენდებული ქმედებებისა და სასარგებლო ბმულებისთვის."
+      ],
+      "Optional": [
+        "არასავალდებულო"
       ],
       "or discover other features:": [
         "ან აღმოაჩინეთ სხვა ფუნქციები:"
@@ -7160,6 +7259,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "დოკუმენტების საჯაროდ გაზიარება ჯერ მხარდაჭერილი არაა."
+      ],
+      "Quickly spot": [
+        "სწრაფი პოვნა"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "გამოაღწიეთ ჩვენამდე, თუ ${ BRAND_NAME }-ის შესახებ ნებისმიერი კითხვა გაგიჩნდათ."
@@ -7622,6 +7724,9 @@
       "Tracking": [
         "ტრეკინგი"
       ],
+      "Trash existing messages": [
+        "არსებული შეტყობინებების გადატანა ნაგვის ყუთში"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "სცადეთ ახალი ${ BRAND_NAME }-ის თვისებები, განახლებები და პროდუქტები მანამდე, სანამ ისინი საჯარო გახდება. ეს ქმედება აპლიკაციას თავიდან ჩატვირთავს."
       ],
@@ -7642,6 +7747,9 @@
       ],
       "Unsaved changes": [
         "შეუნახავი ცვლილებები"
+      ],
+      "Unsubscribe": [
+        "გამოწერის გაუქმება"
       ],
       "Unsupported file": [
         "ფაილის მხარდაჭერა არ არსებობს"
@@ -8085,6 +8193,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "თქვენი გამოწერის ავტომატური განახლების თარიღი: ${ renewalTime }."
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
       ]
     },
     "info": {
@@ -8362,6 +8473,12 @@
       " and ${ l }": [
         " და ${ l }"
       ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } ყველა შეტყობინების წაკთხულად მონიშვნა"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } ყველა შეტყობინების გადატანა საქაღალდეში ${ boldFolderName }"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-ის მომხმარებელი"
       ],
@@ -8383,6 +8500,9 @@
       ],
       "Actions": [
         "ქმედებები"
+      ],
+      "Active filter:": [
+        "აქტიური ფილტრი:"
       ],
       "Add email address": [
         "ელფოსტის მისამართის დამატება"
@@ -8411,10 +8531,10 @@
       "Always move sender's emails": [
         "გამომგზავნის ელფოსტების ყოველთვის გადატანა"
       ],
-      "And": [
+      "AND": [
         "და"
       ],
-      "AND": [
+      "And": [
         "და"
       ],
       "and": [
@@ -8431,6 +8551,9 @@
       ],
       "Apply filter to existing emails": [
         "ფილტრის არსებულ ელფოსტებზე გადატარება"
+      ],
+      "Apply to future messages": [
+        "გადატარება მომავალ შეტყობინებებზე"
       ],
       "Attach screenshot(s)": [
         "ეკრანის ანაბეჭდ(ებ)-ის მიბმა"
@@ -8639,10 +8762,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "თუ"
       ],
-      "IF": [
+      "If": [
         "თუ"
       ],
       "Import all messages": [
@@ -8696,6 +8819,9 @@
       "Mail Server (IMAP)": [
         "მეილსერვერი (IMAP)"
       ],
+      "Mail subscriptions": [
+        "ელფოსტის გამოწერები"
+      ],
       "Main": [
         "მთავარი"
       ],
@@ -8710,6 +8836,9 @@
       ],
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName }-ის გადატანა"
+      ],
+      "Move messages to": [
+        "შეტყობინების გადატანა სად"
       ],
       "Move to": [
         "გადატანა"
@@ -8759,13 +8888,13 @@
       "Optional": [
         "არასავალდებულო"
       ],
+      "OR": [
+        "ან"
+      ],
       "or": [
         "ან"
       ],
       "Or": [
-        "ან"
-      ],
-      "OR": [
         "ან"
       ],
       "Original link": [
@@ -8878,6 +9007,9 @@
       ],
       "System information": [
         "სისტემის ინფორმაცია"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "ფილტრი გათიშულია. მისი ჩართვა შეგიძლია ბმულზე ${ settingsLink }"
       ],
       "Theme": [
         "თემა"
@@ -9029,6 +9161,11 @@
       ],
       "To: ${ to }": [
         "მიმღები: ${ to }"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "დაათვალიერეთ და მართეთ ახალი ამბები და დაგზავნის სიების გამოწერები აქ."
       ]
     },
     "Landmarks": {
@@ -9250,6 +9387,9 @@
       ],
       "Types of recovery methods": [
         "აღდგენის მეთოდის ტიპები"
+      ],
+      "Views": [
+        "ხედები"
       ],
       "What’s this?": [
         "რა არის ეს?"
@@ -9647,6 +9787,14 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle }-ის მიღება"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -9668,14 +9816,6 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle }-ის მიღება"
       ]
     },
     "new_plans: feature": {
@@ -10247,6 +10387,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "${ priceLine }-დან"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "დაკლებული ფასი ${ priceCoupon }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასით ${ priceLine } თვით. გაუქმება ყოველთვის შეგიძლიათ."
       ],
@@ -12240,6 +12383,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "ფაილების ატვირთვის და სინქრონიზაციის გასაგრძელებლად გაათავისუფლეთ ადგილი ან ასწიეთ სატარიფო გეგმა, მეტი საცავის მისაღებად."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "${ BRAND_NAME }-ის პროდუქტების გამოყენების გასაგრძენებლად გაათავისუფლეთ ადგილი, ან ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "ელფოსტის გასაგზავნად ან მისაღებად გაათავისუფლეთ ადგილი ან ასწიეთ სატარიფო გეგმა მეტი საცავის მისაღებად."
       ],
@@ -12363,6 +12509,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }-თვის"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription reminder": {
@@ -12620,47 +12807,6 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -13251,6 +13397,9 @@
       "Archive": [
         "არქივი"
       ],
+      "Archive all messages?": [
+        "დავაარქივო ყველა შეტყობინება?"
+      ],
       "Are you sure you want to close the preview?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, დახუროთ მინიატურა?"
       ],
@@ -13620,8 +13769,17 @@
       "Load remote content": [
         "გარე შემცველობის ჩატვირთვა"
       ],
+      "Mail Subscriptions": [
+        "ელფოსტის გამოწერები"
+      ],
+      "Mail subscriptions": [
+        "ელფოსტის გამოწერები"
+      ],
       "Make a secure connection your default": [
         "დაცული კავშირის გამოყენება ნაგულისხმევად"
+      ],
+      "Mark all messages as read": [
+        "ყველა შეტყობინებების მონიშვნა წაკითხულად"
       ],
       "Mark as read": [
         "წაკითხულად მონიშვნა"
@@ -13736,6 +13894,9 @@
       ],
       "No breaches detected": [
         "გაჟონვები აღმოჩენილი არაა"
+      ],
+      "No mail subscriptions": [
+        "ელფოსტის გამოწერების გარეშე"
       ],
       "No need to empty the trash": [
         "ნაგვის ყუთის გასუფთავება საჭირო არაა"
@@ -13980,6 +14141,9 @@
       "Trash": [
         "ნაგვის ყუთი"
       ],
+      "Trash all messages?": [
+        "გადავიტანო ნაგვის ყუთში ყველაფერი?"
+      ],
       "Trust new key?": [
         "ენდობით ახალ გასაღებს?",
         "ენდობით ახალ გასაღებებს?"
@@ -13995,6 +14159,9 @@
       ],
       "Unsubscribe": [
         "გამოწერის გაუქმება"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "გავაუქმო ${ subscription.Name }-ის გამოწერა?"
       ],
       "Unsubscribe request sent": [
         "გამოწერის გაუქმების ელფოსტა გაგზავნილია"
@@ -14074,6 +14241,9 @@
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"
+      ],
+      "Your subscriptions in one place": [
+        "თქვენი გამოწერები ერთ ადგილას"
       ]
     },
     "Today icon tooltip in mini calendar": {

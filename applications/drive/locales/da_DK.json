@@ -45,6 +45,10 @@
       "Add": [
         "Tilføj"
       ],
+      "Add ${ photoCount } photo to a new album": [
+        "Tilføj ${ photoCount } foto til et nyt album",
+        "Tilføj ${ photoCount } fotos til et nyt album"
+      ],
       "Add account": [
         "Tilføj konto"
       ],
@@ -202,6 +206,9 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Bekræft åbning af link ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Forbind apps og enheder"
       ],
       "Connect to video conferencing": [
         "Forbind til videokonferencer"
@@ -622,6 +629,9 @@
       "More options": [
         "Flere muligheder"
       ],
+      "More options for accounts": [
+        "Flere muligheder for konti"
+      ],
       "Move": [
         "Flyt"
       ],
@@ -886,6 +896,9 @@
       "Set up a custom domain": [
         "Konfigurer et brugerdomæne"
       ],
+      "Set up email forwarding": [
+        "Indstil videresendelse af e-mail"
+      ],
       "Settings": [
         "Indstillinger"
       ],
@@ -1135,6 +1148,9 @@
       "${ price } per domain": [
         "${ price } per domæne"
       ],
+      "${ price } per seat": [
+        "${ price } per plads"
+      ],
       "${ price } per user": [
         "${ price } per bruger"
       ],
@@ -1283,6 +1299,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Ubegrænsede indlogninger, betalingskort, hide-my-email-aliasser og mere"
       ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
@@ -2572,6 +2591,9 @@
       "Also included": [
         "Også inkluderet"
       ],
+      "Automatically forward incoming email to another email address.": [
+        "Videresend automatisk indkommende e-mails til en anden e-mailadresse."
+      ],
       "Connect your CRM, website, printers, and more.": [
         "Forbind din CRM, dit websted, dine printere og mere."
       ],
@@ -2610,6 +2632,9 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For at importere dine kontakter fra Google eller Outlook, ${ easySwitchLink }."
+      ],
+      "To start, give your organization a name.": [
+        "Start med at give deres organisation et navn."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
@@ -2911,6 +2936,9 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Indholdssøgning kan ikke aktiveres. Genstart applikationen, eller ryd data."
       ],
+      "Could not add to favorites": [
+        "Kunne ikke tilføje til favoritter"
+      ],
       "Could not open created vault": [
         "Kunne ikke åbne den oprettede boks"
       ],
@@ -2957,6 +2985,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Eksterne invitationer er midlertidigt deaktiveret. Prøv igen senere."
+      ],
+      "Failed to copy photo to album": [
+        "Kunne ikke kopiere foto til album"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Filen \"${ item.name }\" kan ikke uploades på grund af \"${ error }\" fejl"
@@ -3788,6 +3819,12 @@
       ],
       "Create new album": [
         "Opret nyt album"
+      ],
+      "Create new shared album": [
+        "Opret nyt delt album"
+      ],
+      "Rename album": [
+        "Omdøb album"
       ],
       "Security Center": [
         "Sikkerhedscenter"
@@ -4901,11 +4938,17 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Det ser ud til, at du for nylig har forsøgt at uploade ${ uploadName }. Hvis upload mislykkedes, bedes du ${ replaceFile }. Hvis upload stadig er i gang, vil det annullere den igangværende upload, hvis du erstatter den."
       ],
+      "It's better to have:": [
+        "Det er bedre at have:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Indhold i papirkurven forbliver der, indtil du sletter det permanent"
       ],
       "Items moved to the trash will stay here until deleted": [
         "Elementer, der flyttes til papirkurven, bliver her, indtil de slettes."
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Det er bedst at bruge en VPN til enhver tid. Men her er, hvornår cybertrusler kan være højest:"
       ],
       "It’s easy and secure": [
         "Det er nemt og sikkert"
@@ -5061,6 +5104,9 @@
       "of": [
         "af"
       ],
+      "On public WiFi networks": [
+        "På offentlige WiFi-netværk"
+      ],
       "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
         "Når denne proces er færdig, finder du en kopi af dine gendannede data i en ny mappe med navnet \"Automatiseret gendannelse (dags dato)\". Denne kopi af dine data vil ikke tælle med i din lagerkvote."
       ],
@@ -5108,6 +5154,9 @@
       ],
       "Password copied to clipboard": [
         "Adgangskode kopieret til udklipsholder"
+      ],
+      "Password must have:": [
+        "Adgangskoden skal have:"
       ],
       "Paused": [
         "Sat på pause"
@@ -5392,6 +5441,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynd at dele det med dine kontakter, og brug det til onlinetjenester."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Hold forbindelsen ubesværet ved at aktivere følgende VPN-indstillinger:"
       ],
       "Storage allocated to other users in this organisation": [
         "Lagerplads tildelt andre brugere i denne organisation"
@@ -6500,9 +6552,6 @@
       "Set recovery method": [
         "Indstil gendannelsesmetode"
       ],
-      "Share a file": [
-        "Del en fil"
-      ],
       "Shared": [
         "Delt"
       ],
@@ -6613,6 +6662,9 @@
       ],
       "Vulnerable": [
         "Sårbar"
+      ],
+      "Vulnerable password": [
+        "Sårbar adgangskode"
       ],
       "Weak": [
         "Svag"
@@ -6752,8 +6804,14 @@
       "How to set up SMTP": [
         "Sådan konfigureres SMTP"
       ],
+      "How to share a calendar": [
+        "Sådan deles en kalender"
+      ],
       "How to share via email": [
         "Sådan deles via e-mail"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Sådan bruges ${ DARK_WEB_MONITORING_NAME }"
       ],
       "How to use ${ PASS_APP_NAME } for Business": [
         "Sådan bruges ${ PASS_APP_NAME } for Business"
@@ -7738,6 +7796,9 @@
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Vores ${ visionary }-abonnement er ikke længere tilgængeligt for nye abonnenter, da det er et særligt abonnement for oprindelige ${ BRAND_NAME }-brugere med særlige funktioner og fordele."
       ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Betal én gang, beskyt dine adgangskoder og identitet for evigt."
+      ],
       "Popular": [
         "Populær"
       ],
@@ -8328,6 +8389,9 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Dine gamle filer vil blive slettet om 72 timer"
+      ],
+      "Your photo(s) have been added to \"${ albumName }\"": [
+        "Dine billeder er blevet tilføjet til \"${ albumName }\""
       ],
       "Your settings failed to be saved": [
         "Dine indstillinger kunne ikke gemmes"
@@ -9371,6 +9435,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Dette særtilbud gælder i de første 2 år."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Dit abonnement fornyes til samme pris hvert år."
       ]
@@ -9695,6 +9762,47 @@
         "Til ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME } med premium funktioner"
@@ -9952,47 +10060,6 @@
         "Dit eget korte @pm.me e-mail-alias"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
-      ]
-    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Er du sikker?"
@@ -10036,6 +10103,9 @@
       ],
       "Your screenshots will appear here": [
         "Dine skærmfotos vises her"
+      ],
+      "Your tagged photos will appear here": [
+        "Dine taggede fotos vises her"
       ],
       "Your videos will appear here": [
         "Dine videoer vises her"
@@ -10435,6 +10505,9 @@
       "Confirmation required": [
         "Bekræftelse påkrævet"
       ],
+      "Connect apps and devices": [
+        "Forbind apps og enheder"
+      ],
       "Connect to video conferencing": [
         "Forbind til videokonferencer"
       ],
@@ -10627,6 +10700,9 @@
         "Fandt ${ searchView.numberOfResults } resultat",
         "Fandt ${ searchView.numberOfResults } resultater"
       ],
+      "Get more from your VPN": [
+        "Få mere ud af deres VPN"
+      ],
       "Get the apps": [
         "Hent appsene"
       ],
@@ -10727,14 +10803,26 @@
       "Night theme": [
         "Nattetema"
       ],
+      "No albums shared with me": [
+        "Ingen album delt med mig"
+      ],
       "No breaches detected": [
         "Ingen databrud registreret"
+      ],
+      "No favorites": [
+        "Ingen favoritter"
       ],
       "No Live Photos": [
         "Ingen live fotos"
       ],
+      "No panorama": [
+        "Intet panorama"
+      ],
       "No photos": [
         "Ingen fotos"
+      ],
+      "No portraits": [
+        "Ingen portrætter"
       ],
       "No RAW": [
         "Ingen RAW"
@@ -10920,6 +11008,9 @@
       "Simplify email distribution": [
         "Forenkl e-maildistribution"
       ],
+      "Simplify password management": [
+        "Forenkle adgangskodehåndtering"
+      ],
       "Size": [
         "Størrelse"
       ],
@@ -11006,6 +11097,9 @@
       ],
       "Version history": [
         "Versionshistorik"
+      ],
+      "VPN explained": [
+        "VPN forklaret"
       ],
       "Warning": [
         "Advarsel"

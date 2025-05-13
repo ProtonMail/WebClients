@@ -122,6 +122,9 @@
       "Confirm access": [
         "Подтвердить доступ"
       ],
+      "Confirm all": [
+        "Подтвердить все"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Подключите свой аккаунт ${ BRAND_NAME }"
       ],
@@ -149,11 +152,11 @@
       "Create": [
         "Создать"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Создайте свой аккаунт ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Создать аккаунт ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Создайте свой аккаунт ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Создать псевдоним"
@@ -199,6 +202,9 @@
       ],
       "Delete all": [
         "Удалить все"
+      ],
+      "Delete it, I will never need it": [
+        "Удалить, мне это никогда не понадобится"
       ],
       "Delete mailbox": [
         "Удалить почтовый ящик"
@@ -353,6 +359,9 @@
       "Make editor": [
         "Сделать редактором"
       ],
+      "Make manager": [
+        "Назначить менеджером"
+      ],
       "Make viewer": [
         "Сделать зрителем"
       ],
@@ -383,11 +392,11 @@
       "Move to another vault": [
         "Переместить в другое хранилище"
       ],
-      "Move to trash": [
-        "Переместить в Корзину"
-      ],
       "Move to Trash": [
         "Переместить в корзину"
+      ],
+      "Move to trash": [
+        "Переместить в Корзину"
       ],
       "Multiple select": [
         "Множественный выбор"
@@ -472,6 +481,9 @@
       ],
       "Reset": [
         "Сбросить"
+      ],
+      "Reset history": [
+        "Сбросить историю"
       ],
       "Restore": [
         "Восстановить"
@@ -599,6 +611,12 @@
       "Unblock contact": [
         "Разблокировать контакт"
       ],
+      "Understood, I will never need it": [
+        "Понятно, мне это никогда не понадобится",
+        "Понятно, мне это никогда не понадобится",
+        "Понятно, мне это никогда не понадобится",
+        "Понятно, мне это никогда не понадобится"
+      ],
       "Unlock": [
         "Разблокировать"
       ],
@@ -610,6 +628,9 @@
       ],
       "Update": [
         "Обновить"
+      ],
+      "Update this login": [
+        "Обновить это имя пользователя"
       ],
       "Updating": [
         "Обновление"
@@ -673,6 +694,9 @@
       ]
     },
     "Description": {
+      "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
+        "${ DARK_WEB_MONITORING_NAME } доступен в платном тарифе. Улучшите тариф, чтобы получить немедленный доступ."
+      ],
       "${ total } other login uses the same password": [
         "${ total } другое имя пользователя использует тот же пароль",
         "${ total } других имен пользователей используют тот же пароль",
@@ -749,11 +773,23 @@
       "Alias options could not be resolved": [
         "Параметры псевдонима не могут быть определены"
       ],
+      "An error occured during the import process": [
+        "Произошла ошибка во время процесса импорта"
+      ],
       "Authentication error": [
         "Ошибка аутентификации"
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Аутентификация не удалась. Подтвердите ваш пароль ${ BRAND_NAME } для продолжения экспорта"
+      ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Аутентификация не удалась. Подтвердите ваш резервный пароль для продолжения экспорта"
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Аутентификация не удалась. Подтвердите ваш дополнительный пароль для продолжения экспорта"
+      ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "Аутентификация не удалась. Подтвердите ваш второй пароль для продолжения экспорта"
       ],
       "Authentication failure: ${ message }": [
         "Сбой аутентификации: ${ message }"
@@ -794,6 +830,9 @@
       "Could not resolve share members": [
         "Не удалось сопоставить членов общего доступа"
       ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "Не удалось получить приглашения пользователей для хранилища «${ vaultName }»."
+      ],
       "Could not validate addresses at the moment.": [
         "Не удалось проверить адреса в данный момент."
       ],
@@ -805,6 +844,9 @@
       ],
       "Deleting item failed": [
         "Ошибка при удалении элемента"
+      ],
+      "Deleting item history failed": [
+        "Не удалось удалить историю элемента"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Сбой при удалении хранилища \"${ payload.content.name }\""
@@ -920,6 +962,9 @@
       "Failed to restore items from trash": [
         "Не удалось восстановить элементы из Корзины"
       ],
+      "Failed to set default mailbox": [
+        "Не удалось установить почтовый ящик по умолчанию"
+      ],
       "Failed to sync aliases": [
         "Не удалось синхронизировать псевдонимы"
       ],
@@ -967,6 +1012,9 @@
       ],
       "File does not match expected format": [
         "Файл не соответствует ожидаемому формату"
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Не удалось выполнить импорт для хранилища «${ vaultData.name }» : ${ errorMessage }"
       ],
       "Importing items failed": [
         "Сбой импорта элементов"
@@ -1133,6 +1181,12 @@
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Ваш браузер испытывает трудности с активацией ${ PASS_APP_NAME }."
       ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "Ваша DNS настроена неправильно. Запись MX, которую мы получаем, следующая:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "Ваша DNS настроена неправильно. Запись TXT, которую мы получаем, следующая:"
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN был удален другим клиентом ${ PASS_APP_NAME }"
       ]
@@ -1204,6 +1258,12 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Обновление \"${ payload.item.data.metadata.name }\" было отклонено"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } заблокировано",
+        "${ blockedEmailsCount } заблокированы",
+        "${ blockedEmailsCount } заблокированы",
+        "${ blockedEmailsCount } заблокированы"
+      ],
       "${ count } time": [
         "${ count } раз",
         "${ count } раза",
@@ -1218,6 +1278,12 @@
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } просмотров"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } переслано",
+        "${ forwardedEmailsCount } пересланы",
+        "${ forwardedEmailsCount } пересланы",
+        "${ forwardedEmailsCount } пересланы"
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } хочет поделиться с вами элементом."
@@ -1239,6 +1305,9 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } отобразит фавикон элемента через ${ BRAND_NAME } анонимизированный прокси-сервер изображений."
+      ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } будет соответствовать вашей системной теме."
       ],
       "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
         "${ PASS_APP_NAME } сгенерирует адрес пересылки (также называемый обратным псевдонимом), который вы сможете скопировать в буфер обмена."
@@ -1276,11 +1345,20 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } успешно включен"
       ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } отправлено",
+        "${ repliedEmailsCount } отправлены",
+        "${ repliedEmailsCount } отправлены",
+        "${ repliedEmailsCount } отправлены"
+      ],
       "${ trialDaysLeft } day left": [
         "Остался ${ trialDaysLeft } день",
         "Осталось ${ trialDaysLeft } дня",
         "Осталось ${ trialDaysLeft } дней",
         "Осталось ${ trialDaysLeft } дней"
+      ],
+      "(Empty)": [
+        "(Пусто)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 дней, чтобы попробовать платные функции бесплатно. Только в течение первой недели использования ${ BRAND_NAME }."
@@ -1306,6 +1384,9 @@
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "Для доступа к ${ PASS_APP_NAME } всегда потребуется дополнительный пароль ."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "Для доступа к ${ PASS_APP_NAME } всегда будет требоваться ваш второй пароль."
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Для доступа к ${ PASS_APP_NAME } потребуется ваш отпечаток пальца или PIN-код устройства."
       ],
@@ -1317,6 +1398,12 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "После успешного импорта данных вы можете удалить файл CSV, содержащий ваши пароли, для безопасности."
+      ],
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Псевдоним успешно отключен. Вы больше не будете получать электронные письма, отправленные на ${ item.aliasEmail }"
+      ],
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Псевдоним успешно включен. Теперь вы можете получать электронные письма, отправленные на ${ item.aliasEmail }"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "Синхронизация псевдонимов между вашими аккаунтами ${ BRAND_NAME } и SimpleLogin активна."
@@ -1594,6 +1681,12 @@
       "For security reasons, this action requires identity verification.": [
         "По соображениям безопасности это действие требует проверки личных данных"
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "В целях безопасности вам необходимо подтвердить доступ к этому общему хранилищу",
+        "В целях безопасности вам необходимо подтвердить доступ к этим общим хранилищам",
+        "В целях безопасности вам необходимо подтвердить доступ к этим общим хранилищам",
+        "В целях безопасности вам необходимо подтвердить доступ к этим общим хранилищам"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "По причинам безопасности, ваш доступ должен быть подтверждён"
       ],
@@ -1660,6 +1753,9 @@
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "Элемент \"${ payload.item.data.metadata.name }\" обновлен"
       ],
+      "Item history permanently deleted": [
+        "История элемента безвозвратно удалена"
+      ],
       "Item moved to trash": [
         "Элемент перемещён в Корзину"
       ],
@@ -1711,6 +1807,9 @@
       "Make it your own": [
         "Сделайте всё по-своему"
       ],
+      "Manager": [
+        "Менеджер"
+      ],
       "me": [
         "я"
       ],
@@ -1728,6 +1827,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ],
       "Moving items": [
         "Перемещение элементов"
@@ -1755,6 +1860,9 @@
       ],
       "None": [
         "Ничего"
+      ],
+      "Not recommended": [
+        "Не рекомендуется"
       ],
       "Offline mode could not be disabled at the moment": [
         "Режим офлайн не может быть отключен в данный момент"
@@ -1873,8 +1981,29 @@
       "Please confirm your PIN code to edit this setting.": [
         "Пожалуйста, подтвердите ваш PIN-код, чтобы изменить эту настройку."
       ],
+      "Please confirm your second password": [
+        "Подтвердите ваш второй пароль"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "Для автоматической блокировки с помощью биометрии подтвердите второй пароль."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "Для автоблокировки с помощью пароля подтвердите второй пароль."
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "Пожалуйста, подтвердите ваш второй пароль для экспорта данных ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "Чтобы отключить текущую блокировку, подтвердите второй пароль."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "Чтобы обновить время автоблокировки, подтвердите второй пароль."
+      ],
       "Please consider leaving a review.": [
         "Пожалуйста, подумайте о том, чтобы оставить отзыв."
+      ],
+      "Please contact your administrator": [
+        "Обратитесь к своему администратору"
       ],
       "Please do not close this window": [
         "Пожалуйста, не закрывайте это окно."
@@ -1887,6 +2016,15 @@
       ],
       "Please follow the steps below to set up your domain.": [
         "Следуйте инструкциям ниже, чтобы настроить домен."
+      ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Не закрывайте это окно, пока импортируются ваши данные. Этот процесс может занять несколько минут."
+      ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Обратите внимание, что после удаления псевдоним не может быть восстановлен. Возможно, вы хотите отключить псевдоним вместо этого?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Обратите внимание, что после удаления псевдоним невозможно восстановить. Псевдоним уже отключен и не будет пересылать электронные письма в ваш почтовый ящик."
       ],
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Используйте полный путь к домену, например moy-domen.com или moy-subdomen.moy-domen.com, если вы используете поддомен."
@@ -1930,6 +2068,9 @@
       "Removing secure link...": [
         "Удаление защищенной ссылки..."
       ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "Сброс истории приведет к окончательному удалению всех прошлых версий элементов и не может быть отменен."
+      ],
       "Restoring items from trash": [
         "Восстановление элементов из Корзины"
       ],
@@ -1954,6 +2095,9 @@
       "Select destination vault": [
         "Выберите целевое хранилище:"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "Выберите куда вы хотите сохранить импортированные хранилища."
+      ],
       "Selected items permanently deleted": [
         "Выбранные элементы удалены безвозвратно"
       ],
@@ -1977,6 +2121,9 @@
       ],
       "Share aliases with others by adding their inbox as a forwarding mailbox.": [
         "Поделитесь псевдонимами с другими людьми, добавив их почтовый ящик в качестве пересылающего."
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Обменивайтесь своими логинами и защищенными заметками с 10 людьми."
       ],
       "Shared item invitation": [
         "Приглашение для общего предмета"
@@ -2032,6 +2179,12 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Дополнительный пароль потребуется для использования ${ PASS_APP_NAME }. Он действует как дополнительный пароль поверх вашего пароля ${ BRAND_NAME }."
       ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Следующий ${ totalIgnored } элемент не может быть импортирован:",
+        "Следующие ${ totalIgnored } элемента не могут быть импортированы:",
+        "Следующие ${ totalIgnored } элементов не могут быть импортированы:",
+        "Следующие ${ totalIgnored } элементов не могут быть импортированы:"
+      ],
       "The secure link has been removed": [
         "Защищенная ссылка удалена"
       ],
@@ -2056,11 +2209,17 @@
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Эта операция необратима. Все псевдонимы, использующие домен ${ domainTextBold }, будут удалены. Обратите внимание, что после удаления псевдонимы не могут быть восстановлены."
       ],
+      "This option is currently not available on your browser.": [
+        "В настоящее время эта функция недоступна в вашем браузере."
+      ],
       "This option is currently not available on your device.": [
         "В настоящее время эта опция недоступна на вашем устройстве."
       ],
       "This setting is disabled on the organization level": [
         "Этот параметр отключен на уровне организации"
+      ],
+      "This setting is enforced by your organization": [
+        "Этот параметр устанавливается вашей организацией"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Это хранилище в данный момент не является общим с кем-либо. Пригласите людей, чтобы поделиться им с другими."
@@ -2079,6 +2238,9 @@
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Чтобы перенести данные из другого менеджера паролей, перейдите в менеджер паролей, экспортируйте свои данные, а затем загрузите их в ${ PASS_APP_NAME }. После того как данные будут импортированы, удалите экспортированный файл."
+      ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Чтобы просмотреть ваши импортированные данные, нажмите на значок ${ PASS_APP_NAME } на панели инструментов вашего браузера."
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Попробуйте перезагрузить или переустановить расширение и убедитесь, что ваш браузер и ${ PASS_SHORT_APP_NAME } являются обновленными."
@@ -2104,8 +2266,14 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Разблокируйте ${ PASS_SHORT_APP_NAME } с вашим паролем ${ BRAND_NAME }"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "Разблокируйте ${ PASS_SHORT_APP_NAME } с помощью резервного пароля"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Разблокируйте ${ PASS_SHORT_APP_NAME } с помощью дополнительного пароля"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "Разблокируйте ${ PASS_SHORT_APP_NAME } с помощью второго пароля"
       ],
       "Unlock it with your PIN to access the settings": [
         "Разблокируйте его с помощью вашего PIN-кода, чтобы получить доступ к настройкам"
@@ -2182,11 +2350,20 @@
       "You are about to create:": [
         "Вы собираетесь создать:"
       ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "Вы также можете задать PIN-код для разблокировки ${ PASS_APP_NAME }"
+      ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Теперь вы можете использовать свой пароль ${ BRAND_NAME } для доступа к ${ PASS_SHORT_APP_NAME } в офлайновом режиме."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Вы не можете изменить почтовые ящики для этого псевдонима."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "У вас есть ${ aliasCount } псевдоним, который присутствует в SimpleLogin, но отсутствует в ${ PASS_APP_NAME }. Не хотите ли вы синхронизировать его?",
+        "У вас есть ${ aliasCount } псевдонима, которые присутствуют в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Хотите ли вы синхронизировать их?",
+        "У вас есть ${ aliasCount } псевдонимов, которые присутствуют в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Хотите ли вы синхронизировать их?",
+        "У вас есть ${ aliasCount } псевдонимов, которые присутствуют в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Хотите ли вы синхронизировать их?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "У вас остался ${ daysRemaining } день, чтобы опробовать эти и другие платные функции.",
@@ -2215,11 +2392,17 @@
       "You may close this tab.": [
         "Вы можете закрыть эту вкладку."
       ],
+      "You need a vault with edit permission before you can import items.": [
+        "Чтобы импортировать элементы, необходимо иметь хранилище с правами изменения."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "После проверки домена вы сможете настроить параметры домена (универсальные почтовые псевдонимы, отображаемое имя по умолчанию для псевдонимов и т. д.)."
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Вы выйдете из системы и должны будете заново войти в нее на всех остальных устройствах."
+      ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "Общий доступ, двухфакторная аутентификация, кредитная карта и другие расширенные функции в ${ PASS_APP_NAME } будут больше недоступны"
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Вы будете использовать этот ПИН-код, чтобы разблокировать ${ PASS_APP_NAME }, когда он автоматически заблокируется после бездействия."
@@ -2271,6 +2454,12 @@
         "${ config.options.wordCount } слов",
         "${ config.options.wordCount } слов"
       ],
+      "${ count } item": [
+        "${ count } элемент",
+        "${ count } элемента",
+        "${ count } элементов",
+        "${ count } элементов"
+      ],
       "${ days } day": [
         "${ days } день",
         "${ days } дня",
@@ -2282,6 +2471,9 @@
         "${ forwardCount } пересылки",
         "${ forwardCount } пересылок",
         "${ forwardCount } пересылок"
+      ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, за последние 14 дней."
       ],
       "${ hours } hour": [
         "${ hours } час",
@@ -2301,6 +2493,9 @@
         "${ months } месяцев",
         "${ months } месяцев"
       ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "Монитор ${ PASS_SHORT_APP_NAME }"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Версия ${ PASS_SHORT_APP_NAME }"
       ],
@@ -2309,6 +2504,12 @@
         "${ repliedCount } ответа",
         "${ repliedCount } ответов",
         "${ repliedCount } ответов"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } защищенная ссылка",
+        "${ secureLinksCount } защищенные ссылки",
+        "${ secureLinksCount } защищенных ссылок",
+        "${ secureLinksCount } защищенных ссылок"
       ],
       "${ years } year": [
         "${ years } год",
@@ -2730,6 +2931,9 @@
       "Make all editors": [
         "Сделать всех редакторами"
       ],
+      "Make all managers": [
+        "Назначить всех менеджерами"
+      ],
       "Make all viewers": [
         "Заставьте всех зрителями"
       ],
@@ -2838,6 +3042,9 @@
       "Personal website": [
         "Личный сайт"
       ],
+      "PGP-encrypted (recommended)": [
+        "Зашифровано PGP (рекомендуется)"
+      ],
       "Phone number": [
         "Номер телефона"
       ],
@@ -2894,6 +3101,9 @@
       ],
       "Second password": [
         "Второй пароль"
+      ],
+      "Secure links": [
+        "Защищенные ссылки"
       ],
       "Security": [
         "Безопасность"
@@ -3099,6 +3309,9 @@
       "Your domain": [
         "Ваш домен"
       ],
+      "ZIP": [
+        "Почтовый индекс"
+      ],
       "ZIP or Postal code": [
         "ZIP-код или почтовый индекс"
       ]
@@ -3114,6 +3327,12 @@
         "${ count } элемента",
         "${ count } элементов",
         "${ count } элементов"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Вы можете перетащить выбранный элемент в другое хранилище",
+        "Вы можете перетащить выбранные элементы в другое хранилище",
+        "Вы можете перетащить выбранные элементы в другое хранилище",
+        "Вы можете перетащить выбранные элементы в другое хранилище"
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Вы выбрали ${ semiboldText } в этом хранилище."
@@ -3151,6 +3370,119 @@
       ],
       "Underscores": [
         "Подчёркивания"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "\"${ file.name }\" не может быть загружен."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "\"${ filename }\" не может быть импортирован."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "\"${ filename }\" слишком велик для загрузки. Максимально допустимый размер составляет (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } файл",
+        "${ filesCount } файла",
+        "${ filesCount } файлов",
+        "${ filesCount } файлов"
+      ],
+      "Attachments": [
+        "Вложения"
+      ],
+      "Choose a file or drag it here": [
+        "Выберите файл или перетащите его сюда"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Удалить ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Удалить все файлы"
+      ],
+      "Do you want to remove all the files?": [
+        "Вы хотите удалить все файлы?"
+      ],
+      "Download": [
+        "Скачать"
+      ],
+      "Download \"${ filename }\"": [
+        "Скачать \"${ filename }\""
+      ],
+      "Download file": [
+        "Скачать файл"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Из-за ограничения в Firefox, ${ PASS_APP_NAME } необходимо снова открыть в новом окне, прежде чем вы сможете загрузить файлы."
+      ],
+      "Exporting files": [
+        "Экспорт файлов"
+      ],
+      "Failed linking files to item": [
+        "Не удалось связать файлы с элементом"
+      ],
+      "File": [
+        "Файл"
+      ],
+      "File attachments": [
+        "Вложенные файлы"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Если эта функция включена, при экспорте будут скачаны все файлы. Это может занять некоторое время в зависимости от вашего подключения к Интернету."
+      ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Если ваши данные содержат файловые вложения, они не будут импортированы."
+      ],
+      "Include file attachments": [
+        "Включить файловые вложения"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Недостаточно свободного места в хранилище для выбранных файлов."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "После удаления этот файл все еще можно восстановить из истории элемента."
+      ],
+      "Open new window to upload files": [
+        "Открыть новое окно для загрузки файлов"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Подождите пока скачиваются ваши файлы."
+      ],
+      "Remove all files": [
+        "Удалить все файлы"
+      ],
+      "Rename": [
+        "Переименовать"
+      ],
+      "Restore": [
+        "Восстановить"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Некоторые файлы слишком велики для загрузки. Максимально допустимый размер составляет (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "Экспортированные файловые вложения не будут зашифрованы."
+      ],
+      "The file you are trying to import is empty": [
+        "Файл, который вы пытаетесь импортировать, пуст"
+      ],
+      "Total files: ": [
+        "Всего файлов: "
+      ],
+      "Total imported files: ": [
+        "Всего импортированных файлов: "
+      ],
+      "Upgrade to support file attachments": [
+        "Улучшите тариф для поддержки вложений файлов"
+      ],
+      "Upload files from your device.": [
+        "Загрузить файлы с устройства."
+      ],
+      "You can attach files to items for a better organization": [
+        "Вы можете прикреплять файлы к элементам для лучшей организации"
+      ],
+      "You may close this window after saving the file.": [
+        "Вы можете закрыть это окно после сохранения файла."
       ]
     },
     "Placeholder": {
@@ -3398,6 +3730,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Logs": [
+        "Журналы ${ PASS_APP_NAME }"
+      ],
       "${ PASS_APP_NAME } Settings": [
         "Настройки ${ PASS_APP_NAME }"
       ],
@@ -3436,6 +3771,9 @@
       ],
       "Change mailbox email": [
         "Изменить электронную почту почтового ящика"
+      ],
+      "Change your lock method": [
+        "Измените способ блокировки"
       ],
       "Confirm extra password": [
         "Подтвердить дополнительный пароль"
@@ -3476,11 +3814,20 @@
       "Default Display Name": [
         "Отображаемое имя по умолчанию"
       ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Удалить ${ deletedItemsCount } элемент?",
+        "Удалить ${ deletedItemsCount } элемента?",
+        "Удалить ${ deletedItemsCount } элементов?",
+        "Удалить ${ deletedItemsCount } элементов?"
+      ],
       "Delete domain": [
         "Удалить домен"
       ],
       "Delete mailbox": [
         "Удалить почтовый ящик"
+      ],
+      "Delete this item?": [
+        "Удалить этот элемент?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Удалить хранилище \"${ vaultName }\"?"
@@ -3506,11 +3853,17 @@
       "Email": [
         "Эл. почта"
       ],
+      "Encrypted import": [
+        "Зашифрованный импорт"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Наслаждаетесь ${ PASS_APP_NAME }?"
       ],
       "Enter coupon code": [
         "Введите код с купона"
+      ],
+      "Enter your ${ BRAND_NAME } password": [
+        "Введите ваш пароль ${ BRAND_NAME }"
       ],
       "Enter your backup password": [
         "Введите пароль резервной копии"
@@ -3520,6 +3873,9 @@
       ],
       "Enter your PIN": [
         "Введите свой PIN"
+      ],
+      "Enter your second password": [
+        "Введите ваш второй пароль"
       ],
       "Fill & copy password": [
         "Заполнить и скопировать пароль"
@@ -3550,6 +3906,9 @@
       ],
       "Import to vault(s)": [
         "Импорт в хранилище"
+      ],
+      "Importing your data": [
+        "Импорт ваших данных"
       ],
       "Item": [
         "Элемент"
@@ -3584,6 +3943,18 @@
       "Modified": [
         "Изменено"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Переместить ${ count } элемент в ${ vaultName }",
+        "Переместить ${ count } элемента в ${ vaultName }",
+        "Переместить ${ count } элементов в ${ vaultName }",
+        "Переместить ${ count } элементов в ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Переместить ${ trashedItemsCount } элемент в Корзину?",
+        "Переместить ${ trashedItemsCount } элемента в Корзину?",
+        "Переместить ${ trashedItemsCount } элементов в Корзину?",
+        "Переместить ${ trashedItemsCount } элементов в Корзину?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Переместить все элементы в \"${ vaultName }\"?"
       ],
@@ -3611,14 +3982,26 @@
       "Password": [
         "Пароль"
       ],
+      "Pending access confirmation": [
+        "Ожидается подтверждение доступа"
+      ],
       "Pending access to the shared data": [
         "Pending access to the shared data"
+      ],
+      "Permanently remove all items?": [
+        "Безвозвратно удалить все элементы?"
       ],
       "Pin the extension": [
         "Закрепить расширение"
       ],
       "Pinned (${ items.length })": [
         "Закреплено (${ items.length })"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Обратите внимание, что после удаления псевдоним не может быть восстановлен.",
+        "Обратите внимание, что после удаления псевдонимы не могут быть восстановлены.",
+        "Обратите внимание, что после удаления псевдонимы не могут быть восстановлены.",
+        "Обратите внимание, что после удаления псевдонимы не могут быть восстановлены."
       ],
       "Random Prefix Generation": [
         "Создание случайного префикса"
@@ -3631,6 +4014,9 @@
       ],
       "Remove secure link?": [
         "Удалить защищенную ссылку?"
+      ],
+      "Reset history for this item?": [
+        "Сбросить историю для этого элемента?"
       ],
       "Restore this version?": [
         "Восстановить эту версию?"
@@ -3680,6 +4066,9 @@
       "Sync alias": [
         "Синхронизировать псевдонимы"
       ],
+      "Sync your aliases from SimpleLogin": [
+        "Синхронизировать псевдонимы с SimpleLogin"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Спасибо за установку ${ PASS_APP_NAME }"
       ],
@@ -3722,11 +4111,23 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "В чем разница между заметкой ${ PASS_SHORT_APP_NAME } и заметкой SimpleLogin?"
       ],
+      "You don't have any vaults": [
+        "У вас нет хранилищ"
+      ],
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "Ваша подписка на ${ planName } закончится в ${ endDate }"
+      ],
       "Your vault is empty": [
         "Ваше хранилище пусто"
       ],
       "Your welcome gift": [
         "Ваш приветственный подарок"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Вы собираетесь навсегда удалить ${ aliasCount } псевдоним.",
+        "Вы собираетесь навсегда удалить ${ aliasCount } псевдонима.",
+        "Вы собираетесь навсегда удалить ${ aliasCount } псевдонимов.",
+        "Вы собираетесь навсегда удалить ${ aliasCount } псевдонимов."
       ]
     },
     "Validation": {
@@ -3748,6 +4149,9 @@
       "Section name cannot be empty": [
         "Название раздела не может быть пустым"
       ],
+      "URL already exists": [
+        "Url уже существует"
+      ],
       "URL cannot be empty": [
         "URL не может быть пустым"
       ],
@@ -3768,14 +4172,35 @@
       "Addresses already invited.": [
         "Адреса уже приглашены."
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Псевдонимы в корзине будут продолжать пересылать письма."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Все ваши объекты, попавшие в корзину, будут удалены безвозвратно. Отменить это действие невозможно."
       ],
       "An error occurred while exporting your data": [
         "При экспорте данных произошла ошибка"
       ],
+      "An error occurred while importing your data.": [
+        "При импорте данных произошла ошибка."
+      ],
       "An error occurred while resuming your session": [
         "При возобновлении сеанса произошла ошибка"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Вы уверены, что хотите переместить ${ trashedItemsCount } элемент в корзину?",
+        "Вы уверены, что хотите переместить ${ trashedItemsCount } элемента в корзину?",
+        "Вы уверены, что хотите переместить ${ trashedItemsCount } элементов в корзину?",
+        "Вы уверены, что хотите переместить ${ trashedItemsCount } элементов в корзину?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Вы уверены, что хотите навсегда удалить ${ deletedItemsCount } элемент?",
+        "Вы уверены, что хотите навсегда удалить ${ deletedItemsCount } элемента?",
+        "Вы уверены, что хотите навсегда удалить ${ deletedItemsCount } элементов?",
+        "Вы уверены, что хотите навсегда удалить ${ deletedItemsCount } элементов?"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "Вы уверены, что хотите безвозвратно удалить этот элемент?"
       ],
       "At least one email address is required": [
         "Требуется хотя бы один адрес электронной почты"
@@ -3888,6 +4313,9 @@
       "No shared items matching": [
         "Нет совпадающих элементов в общем доступе"
       ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "После синхронизации удаление псевдонимов в ${ PASS_SHORT_APP_NAME } также удалит их в SimpleLogin."
+      ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Допускаются только алфавитно-цифровые строчные символы, точки, дефисы и символы подчеркивания"
       ],
@@ -3980,6 +4408,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "У вас больше не будет доступа к этому хранилищу. Чтобы присоединиться снова, вам понадобится новое приглашение."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Ваш администратор должен создать для вас хранилище, прежде чем вы сможете создавать элементы."
+      ],
+      "Your organization does not allow creating a vault": [
+        "Ваша организация не разрешает создание хранилища"
       ],
       "Your organization does not allow sharing individual items": [
         "Ваша организация не разрешает совместное использование отдельных элементов"
