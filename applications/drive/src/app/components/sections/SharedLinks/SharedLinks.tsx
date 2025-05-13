@@ -88,7 +88,7 @@ const SORT_FIELDS: SharedLinksSortFields[] = [
 const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
-    const { navigateToLink } = useDriveNavigation();
+    const { navigateToLink, navigateToAlbum } = useDriveNavigation();
     const browserItemContextMenu = useItemContextMenu();
     const thumbnails = useThumbnailsDownload();
     const selectionControls = useSelection();
@@ -136,6 +136,9 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
                         openBehavior: 'tab',
                     });
                 }
+                return;
+            } else if (item.mimeType === 'Album') {
+                navigateToAlbum(item.rootShareId, item.linkId);
                 return;
             }
 
