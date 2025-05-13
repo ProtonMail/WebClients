@@ -1529,6 +1529,33 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "A to Z": [
+        "A～Z"
+      ],
+      "Active": [
+        "アクティブ"
+      ],
+      "Change sorting": [
+        "並べ替えの変更"
+      ],
+      "Expand navigation bar to see custom views": [
+        "ナビゲーションバーを展開して、カスタムビューを表示"
+      ],
+      "Least read": [
+        "既読数が少ない順"
+      ],
+      "Most read": [
+        "既読が多い順"
+      ],
+      "Recently received": [
+        "最近受信したもの"
+      ],
+      "Resubscribe": [
+        "再購読"
+      ],
+      "Unsubscribed": [
+        "登録解除されました"
       ]
     },
     "action": {
@@ -5833,6 +5860,18 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } からインポート"
+      ],
+      "Import from Google": [
+        "Googleからインポート"
+      ],
+      "Import from other": [
+        "その他からインポート"
+      ],
+      "Import from Outlook": [
+        "Outlook からインポート"
+      ],
+      "Import from Yahoo": [
+        "Yahooからインポート"
       ]
     },
     "Import warning": {
@@ -6718,7 +6757,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -8051,6 +8090,69 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "あなたのサブスクリプションは${ renewalTime }に自動的に更新されます。"
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }、アーカイブ、古いメールをフォルダに移動します。"
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "サブスクリプションに関連がなくなった${ boldQuicklySpot }"
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "ワンクリックで${ boldUnsubscribe }できます。"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } 件が未読"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } 個のメールトラッカーをブロックしました"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount }個のトラッカーをブロックしました"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "このメーリングリストからのすべてのメッセージは、既読としてマークされます。"
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "このメーリングリストからのすべてのメッセージは、アーカイブに移動されます。"
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "このメーリングリストからのすべてのメッセージは、ごみ箱に移動されます。"
+      ],
+      "Apply to future messages ": [
+        "今後のメッセージに適用する "
+      ],
+      "Archive existing messages": [
+        "既存のメッセージをアーカイブする"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "メッセージ、連絡先、カレンダーを ${ BRAND_NAME }に移行。"
+      ],
+      "Bulk delete": [
+        "一括削除"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "ニュースレターとメーリングリストの管理と登録解除が簡単に行えます。"
+      ],
+      "Mark all as read": [
+        "すべて既読にする"
+      ],
+      "One time import": [
+        "1 回限りのインポート"
+      ],
+      "Optional": [
+        "オプション"
+      ],
+      "Quickly spot": [
+        "すばやく見つける"
+      ],
+      "Trash existing messages": [
+        "既存のメッセージを破棄する"
+      ],
+      "Unsubscribe": [
+        "登録解除"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "不要なものが整理された受信トレイまで、あと数クリックです。"
       ]
     },
     "info": {
@@ -8919,6 +9021,27 @@
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } すべてのメッセージを既読としてマークする"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } すべてのメッセージを ${ boldFolderName } に移動"
+      ],
+      "Active filter:": [
+        "有効なフィルター:"
+      ],
+      "Apply to future messages": [
+        "今後のメッセージに適用する"
+      ],
+      "Mail subscriptions": [
+        "メール購読"
+      ],
+      "Move messages to": [
+        "メッセージを移動"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "フィルターは無効になっています。${ settingsLink }で有効にできます"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9237,6 +9360,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "更新された招待を表示するには、鍵を再度有効にする必要があります"
+      ],
+      "Views": [
+        "閲覧数"
       ]
     },
     "Link to calendar event": {
@@ -10180,6 +10306,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "全ての ${ BRAND_NAME } プレミアム製品と機能を ${ priceLine }だけでアンロックできます。いつでもキャンセルできます。"
+      ],
+      "Starting from ${ priceLine }": [
+        "${ priceLine } から"
       ]
     },
     "new_plans: title": {
@@ -13932,6 +14061,30 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Archive all messages?": [
+        "すべてのメッセージをアーカイブしますか？"
+      ],
+      "Mail subscriptions": [
+        "メール購読"
+      ],
+      "Mail Subscriptions": [
+        "メール購読"
+      ],
+      "Mark all messages as read": [
+        "すべてのメッセージを既読にする"
+      ],
+      "No mail subscriptions": [
+        "メールの購読がありません"
+      ],
+      "Trash all messages?": [
+        "すべてのメッセージをごみ箱に入れますか？"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "${ subscription.Name } の登録を解除しますか？"
+      ],
+      "Your subscriptions in one place": [
+        "サブスクリプションを一元管理"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14470,6 +14623,11 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "ニュースレターとメーリングリストのサブスクリプションの表示と管理は、こちらで行います。"
       ]
     }
   }

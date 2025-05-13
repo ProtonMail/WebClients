@@ -1535,6 +1535,36 @@
       ],
       "Zoom out": [
         "დაპატარავება"
+      ],
+      "A to Z": [
+        "A-დან Z-მდე"
+      ],
+      "Active": [
+        "აქტიური"
+      ],
+      "Change sorting": [
+        "დალაგების შეცვლა"
+      ],
+      "Expand navigation bar to see custom views": [
+        "ნავიგაციის პანელის გაშლა მორგებული ხედების დასანახად"
+      ],
+      "Least read": [
+        "ყველაზე ნაკლებად წაკითხვადი"
+      ],
+      "Most read": [
+        "ყველაზე წაკითხვადი"
+      ],
+      "Recently received": [
+        "ახლახან მიღებული"
+      ],
+      "Resize panel": [
+        "პანელის ზომის შეცვლა"
+      ],
+      "Resubscribe": [
+        "თავიდან გამოწერა"
+      ],
+      "Unsubscribed": [
+        "გამოწერა გაუქმებულია"
       ]
     },
     "action": {
@@ -3827,6 +3857,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "მოირგეთ ეს ჯერ, რომ გაააქტიუროთ თქვენი ორგანიზაცია და მოირგოთ თქვენი ელფოსტის მისამართი."
       ]
     },
     "description": {
@@ -5847,6 +5880,18 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider }-დან შემოტანა"
+      ],
+      "Import from Google": [
+        "Google-დან შემოტანა"
+      ],
+      "Import from other": [
+        "სხვა ადგილიდან შემოტანა"
+      ],
+      "Import from Outlook": [
+        "Outlook-დან შემოტანა"
+      ],
+      "Import from Yahoo": [
+        "yahoo-დან შემოტანა"
       ]
     },
     "Import warning": {
@@ -6761,6 +6806,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
+        "გამოსახულების ჩასმა",
         "გამოსახულების ჩასმა"
       ],
       "Insert link": [
@@ -8085,6 +8131,76 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "თქვენი გამოწერის ავტომატური განახლების თარიღი: ${ renewalTime }."
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, დააარქივეთ, ან გადაიტანეთ ძველი ელფოსტები საქაღალდეში."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } რომელი გამოწერებიც აღარ გნებავთ."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } მათგან ერთი წკაპით."
+      ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "${ subscription.ReceivedMessageCount } ელფოსტა გასულ თვეში",
+        "${ subscription.ReceivedMessageCount } ელფოსტა გასულ თვეში"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } წაუკითხავი",
+        "${ subscription.UnreadMessageCount } წაუკითხავი"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "დაბლოკილია ${ trackersCount } ელფოსტის ტრეკერი",
+        "დაბლოკილია ${ trackersCount } ელფოსტის ტრეკერი"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "დაბლოკილია ${ trackersCount } ტრეკერი",
+        "დაბლოკილია ${ trackersCount } ტრეკერი"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "ამ დაგზავნის სიის ყველა შეტყობინება წაკითხულად მოინიშნება."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "ამ დაგზავნის სიის ყველა შეტყობინება გადატანილი იქნება არქივში."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "ამ დაგზავნის სიის ყველა შეტყობინება გადატანილი იქნება ნაგვის ყუთში."
+      ],
+      "Apply to future messages ": [
+        "გადატარება მომავალ შეტყობინებებზე "
+      ],
+      "Archive existing messages": [
+        "არსებული შეტყობინებების დაარქივება"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "გადმოიტანეთ თქვენი შეტყობინებები, კონტაქტები და კალენდრები ${ BRAND_NAME }-ზე."
+      ],
+      "Bulk delete": [
+        "ერთდროული წაშლა"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "ადვილად მართეთ და გააუქმეთ გამოწერები ახალი ამბებიდან და დაგზავნის სიებიდან."
+      ],
+      "Mark all as read": [
+        "ყველას მონიშვნა წაკითხულად"
+      ],
+      "One time import": [
+        "ერთჯერადი შემოტანა"
+      ],
+      "Optional": [
+        "არასავალდებულო"
+      ],
+      "Quickly spot": [
+        "სწრაფი პოვნა"
+      ],
+      "Trash existing messages": [
+        "არსებული შეტყობინებების გადატანა ნაგვის ყუთში"
+      ],
+      "Unsubscribe": [
+        "გამოწერის გაუქმება"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
       ]
     },
     "info": {
@@ -8959,6 +9075,27 @@
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } ყველა შეტყობინების წაკთხულად მონიშვნა"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } ყველა შეტყობინების გადატანა საქაღალდეში ${ boldFolderName }"
+      ],
+      "Active filter:": [
+        "აქტიური ფილტრი:"
+      ],
+      "Apply to future messages": [
+        "გადატარება მომავალ შეტყობინებებზე"
+      ],
+      "Mail subscriptions": [
+        "ელფოსტის გამოწერები"
+      ],
+      "Move messages to": [
+        "შეტყობინების გადატანა სად"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "ფილტრი გათიშულია. მისი ჩართვა შეგიძლია ბმულზე ${ settingsLink }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9277,6 +9414,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "განახლებული მოსაწვევის სანახავად საჭიროა თქვენი გასაღების თავიდან გააქტიურება"
+      ],
+      "Views": [
+        "ხედები"
       ]
     },
     "Link to calendar event": {
@@ -10252,6 +10392,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "განბლოკეთ ${ BRAND_NAME }-ის ყველა ფასიანი პროდუქტი და ფუნქცია სულ რაღაც ${ priceLine }-ად. გააუქმეთ როცა მოინდომებთ."
+      ],
+      "Starting from ${ priceLine }": [
+        "${ priceLine }-დან"
       ]
     },
     "new_plans: title": {
@@ -12288,6 +12431,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "დაკარგავთ წვდომას შეუზღუდავ შესვლის დეტალებთან და შენიშვნებთან, შეუზღუდავ hide-my-email-ის ფსევდონიმებთან, 20 საცავთან და პრიორიტეტულ ხარდაჭერასთან."
+      ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "${ BRAND_NAME }-ის პროდუქტების გამოყენების გასაგრძენებლად გაათავისუფლეთ ადგილი, ან ${ upgrade }"
       ]
     },
     "Subscription": {
@@ -14074,6 +14220,30 @@
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"
+      ],
+      "Archive all messages?": [
+        "დავაარქივო ყველა შეტყობინება?"
+      ],
+      "Mail subscriptions": [
+        "ელფოსტის გამოწერები"
+      ],
+      "Mail Subscriptions": [
+        "ელფოსტის გამოწერები"
+      ],
+      "Mark all messages as read": [
+        "ყველა შეტყობინებების მონიშვნა წაკითხულად"
+      ],
+      "No mail subscriptions": [
+        "ელფოსტის გამოწერების გარეშე"
+      ],
+      "Trash all messages?": [
+        "გადავიტანო ნაგვის ყუთში ყველაფერი?"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "გავაუქმო ${ subscription.Name }-ის გამოწერა?"
+      ],
+      "Your subscriptions in one place": [
+        "თქვენი გამოწერები ერთ ადგილას"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14659,6 +14829,11 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "დაათვალიერეთ და მართეთ ახალი ამბები და დაგზავნის სიების გამოწერები აქ."
       ]
     }
   }
