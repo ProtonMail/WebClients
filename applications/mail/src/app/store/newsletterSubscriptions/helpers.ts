@@ -26,6 +26,7 @@ export const formatSubscriptionResponse = (
         selectedSubscription: activeSubs[0],
         filteredSubscriptions: activeSubs,
         loading: false,
+        selectedTab: 'active',
     };
 };
 

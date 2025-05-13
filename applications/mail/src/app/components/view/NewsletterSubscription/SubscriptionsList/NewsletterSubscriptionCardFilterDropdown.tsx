@@ -89,9 +89,9 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
                             key={item.icon}
                             disabled={userLoading || filterLoading}
                             onClick={(e) => handleClick(item.filter, e)}
-                            className="text-left flex items-center"
+                            className="text-left flex flex-nowrap"
                         >
-                            <Icon name={item.icon} className="mr-2" />
+                            <Icon name={item.icon} className="mr-2 mt-0.5" />
                             {item.label}
                         </DropdownMenuButton>
                     ))}
