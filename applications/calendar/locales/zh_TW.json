@@ -808,6 +808,21 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Add account": [
+        "加入帳號"
+      ],
+      "Collaborate on documents": [
+        "於文件上合作"
+      ],
+      "Manage groups": [
+        "管理群組"
+      ],
+      "Set recovery methods": [
+        "設定復原方式"
+      ],
+      "Set up 2FA": [
+        "設定兩步驟驗證"
       ]
     },
     "action": {
@@ -2828,6 +2843,9 @@
       ],
       "This event was updated.": [
         "該行程已更新。"
+      ],
+      "NOTE:": [
+        "備注:"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4245,6 +4263,9 @@
     "Import provider": {
       "Import from ${ provider }": [
         "從 ${ provider } 匯入"
+      ],
+      "Import from Outlook": [
+        "從 Outlook 匯入"
       ]
     },
     "Import warning": {
@@ -5407,6 +5428,21 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "您的系統時區似乎已更改為 ${ timezone }。您要更新您的時區喜好設定嗎？"
+      ],
+      "Calendar is disabled": [
+        "行事曆已停用"
+      ],
+      "Not connected": [
+        "未連線"
+      ],
+      "Other accounts": [
+        "其他帳號"
+      ],
+      "Set up your organization": [
+        "設定您的組織"
+      ],
+      "Your IP": [
+        "您的 IP"
       ]
     },
     "info": {
@@ -6020,6 +6056,9 @@
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
+      ],
+      "Your IP": [
+        "您的 IP"
       ]
     },
     "Label for contact group color": {
@@ -6149,6 +6188,9 @@
       ],
       "What’s this?": [
         "這是什麼？"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "如何使用${ DARK_WEB_MONITORING_NAME }"
       ]
     },
     "Link label (optional)": {
@@ -6966,6 +7008,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "${ size } storage per user": [
+        "${ size } 可用空間 / 每位使用者"
+      ],
+      "Password manager to secure credentials": [
+        "密碼管理器以確保身分安全"
       ]
     },
     "new_plans: feature highlight": {
@@ -7864,6 +7912,12 @@
       ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "更新價 ${ renewPriceStr }，任何時間都可取消。"
+      ],
+      "terms & conditions": [
+        "條款及細則"
       ]
     },
     "Payments.Error": {
@@ -8016,6 +8070,9 @@
       ],
       "Start typing an email address": [
         "在此輸入一個電郵位址"
+      ],
+      "Organization name": [
+        "組織名稱"
       ]
     },
     "Placeholder for contact group name": {
@@ -9947,6 +10004,30 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Collaborate on documents": [
+        "於文件上合作"
+      ],
+      "Download the app": [
+        "下載應用程式"
+      ],
+      "Mobile": [
+        "手機"
+      ],
+      "Organization setup": [
+        "組織機構設定"
+      ],
+      "Set recovery methods": [
+        "設定復原方式"
+      ],
+      "Set up email forwarding": [
+        "設定電子郵件轉發"
+      ],
+      "Set up your organization": [
+        "設定您的組織"
+      ],
+      "What is a VPN?": [
+        "甚麼是 VPN?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10101,6 +10182,9 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "從 ${ numberOfCountries } 國家自動選擇"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "伺服器遍布 ${ numberOfCountries }+ 國家"
       ]
     },
     "vpn_2024: renew": {
@@ -10468,6 +10552,26 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "所有 ${ BRAND_NAME } 服務"
+      ]
+    },
+    "Note": {
+      "Note:": [
+        "備注:"
+      ]
+    },
+    "RSVP Note": {
+      "Remove note": [
+        "移除備註"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "加入Zoom會議"
       ]
     }
   }

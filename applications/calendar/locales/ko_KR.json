@@ -693,7 +693,7 @@
         "커스텀 도메인 설정"
       ],
       "Set up email forwarding": [
-        "이메일 포워딩 설정하기"
+        "이메일 가져오기 설정"
       ],
       "Settings": [
         "설정"
@@ -4427,6 +4427,18 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } 으로부터 불러오기"
+      ],
+      "Import from Google": [
+        "Google에서 가져오기"
+      ],
+      "Import from other": [
+        "다른 곳에서 가져오기"
+      ],
+      "Import from Outlook": [
+        "Outlook에서 가져오기"
+      ],
+      "Import from Yahoo": [
+        "Yahoo에서 가져오기"
       ]
     },
     "Import warning": {
@@ -5718,6 +5730,12 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "시스템 시간대가 ${ timezone } 로 변경된 것 같습니다. 여기의 시간대도 변경하시겠습니까?"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "${ BRAND_NAME }로 메시지, 연락처 및 캘린더를 가져오세요."
+      ],
+      "One time import": [
+        "한 번만 가져오기"
       ]
     },
     "info": {
@@ -10472,7 +10490,7 @@
         "복구 키 설정"
       ],
       "Set up email forwarding": [
-        "이메일 포워딩 설정하기"
+        "이메일 가져오기 설정"
       ],
       "Set up your organization": [
         "내 조직 설정하기"

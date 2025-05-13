@@ -4430,6 +4430,18 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Impor dari ${ provider }"
+      ],
+      "Import from Google": [
+        "Impor dari Google"
+      ],
+      "Import from other": [
+        "Impor dari yang lain"
+      ],
+      "Import from Outlook": [
+        "Impor dari Outlook"
+      ],
+      "Import from Yahoo": [
+        "Masukan dari Yahoo"
       ]
     },
     "Import warning": {
@@ -5721,6 +5733,12 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Zona waktu sistem Anda sepertinya telah diubah menjadi ${ timezone }. Apakah Anda ingin memperbarui preferensi zona waktu Anda?"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Bawa pesan, kontak, dan kalender Anda ke ${ BRAND_NAME }."
+      ],
+      "One time import": [
+        "Satu kali impor"
       ]
     },
     "info": {
@@ -7488,6 +7506,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Dapatkan seluruh produk dan fitur premium ${ BRAND_NAME } seharga hanya ${ priceLine }. Batalkan kapan saja."
+      ],
+      "Starting from ${ priceLine }": [
+        "Mulai dari ${ priceLine }"
       ]
     },
     "new_plans: title": {
@@ -10596,6 +10617,9 @@
       ],
       "Your shorter address is now ready": [
         "Alamat lebih pendek Anda sudah siap"
+      ],
+      "Mail Subscriptions": [
+        "Langganan email"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

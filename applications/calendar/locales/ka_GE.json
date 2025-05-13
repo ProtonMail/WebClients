@@ -2823,6 +2823,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "მოირგეთ ეს ჯერ, რომ გაააქტიუროთ თქვენი ორგანიზაცია და მოირგოთ თქვენი ელფოსტის მისამართი."
       ]
     },
     "description": {
@@ -4442,6 +4445,18 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider }-დან შემოტანა"
+      ],
+      "Import from Google": [
+        "Google-დან შემოტანა"
+      ],
+      "Import from other": [
+        "სხვა ადგილიდან შემოტანა"
+      ],
+      "Import from Outlook": [
+        "Outlook-დან შემოტანა"
+      ],
+      "Import from Yahoo": [
+        "yahoo-დან შემოტანა"
       ]
     },
     "Import warning": {
@@ -5719,6 +5734,12 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "თქვენი სისტემის დროის სარტყელი, როგორც ჩანს, შეიცვალა ${ timezone }-ზე. გსურთ, განაახლოთ თქვენი დროის სარტყელის პარამეტრი?"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "გადმოიტანეთ თქვენი შეტყობინებები, კონტაქტები და კალენდრები ${ BRAND_NAME }-ზე."
+      ],
+      "One time import": [
+        "ერთჯერადი შემოტანა"
       ]
     },
     "info": {
@@ -6356,6 +6377,9 @@
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
+      ],
+      "Let others know if you have a conflict, will be late, or can’t wait for the event.": [
+        "გააგებინეთ სხვებსაც, თუ კონფლიქტი გაქვთ, დაგაგვიანდებათ, ან ვერ მოუცდით მოვლენას."
       ]
     },
     "Label for contact group color": {
@@ -7521,6 +7545,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "განბლოკეთ ${ BRAND_NAME }-ის ყველა ფასიანი პროდუქტი და ფუნქცია სულ რაღაც ${ priceLine }-ად. გააუქმეთ როცა მოინდომებთ."
+      ],
+      "Starting from ${ priceLine }": [
+        "${ priceLine }-დან"
       ]
     },
     "new_plans: title": {
@@ -9323,6 +9350,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "დაკარგავთ წვდომას შეუზღუდავ შესვლის დეტალებთან და შენიშვნებთან, შეუზღუდავ hide-my-email-ის ფსევდონიმებთან, 20 საცავთან და პრიორიტეტულ ხარდაჭერასთან."
+      ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "${ BRAND_NAME }-ის პროდუქტების გამოყენების გასაგრძენებლად გაათავისუფლეთ ადგილი, ან ${ upgrade }"
       ]
     },
     "Subscribe to calendar modal": {
@@ -10693,6 +10723,9 @@
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"
+      ],
+      "Mail Subscriptions": [
+        "ელფოსტის გამოწერები"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -4430,6 +4430,18 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } からインポート"
+      ],
+      "Import from Google": [
+        "Googleからインポート"
+      ],
+      "Import from other": [
+        "その他からインポート"
+      ],
+      "Import from Outlook": [
+        "Outlook からインポート"
+      ],
+      "Import from Yahoo": [
+        "Yahooからインポート"
       ]
     },
     "Import warning": {
@@ -5721,6 +5733,12 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "システムのタイムゾーンが${ timezone }に変更されたようです。タイムゾーンの設定を更新しますか？"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "メッセージ、連絡先、カレンダーを ${ BRAND_NAME }に移行。"
+      ],
+      "One time import": [
+        "1 回限りのインポート"
       ]
     },
     "info": {
@@ -7488,6 +7506,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "全ての ${ BRAND_NAME } プレミアム製品と機能を ${ priceLine }だけでアンロックできます。いつでもキャンセルできます。"
+      ],
+      "Starting from ${ priceLine }": [
+        "${ priceLine } から"
       ]
     },
     "new_plans: title": {
@@ -10596,6 +10617,9 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Mail Subscriptions": [
+        "メール購読"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
