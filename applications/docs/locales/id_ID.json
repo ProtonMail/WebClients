@@ -3867,6 +3867,18 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Impor dari ${ provider }"
+      ],
+      "Import from Google": [
+        "Impor dari Google"
+      ],
+      "Import from other": [
+        "Impor dari yang lain"
+      ],
+      "Import from Outlook": [
+        "Impor dari Outlook"
+      ],
+      "Import from Yahoo": [
+        "Masukan dari Yahoo"
       ]
     },
     "Import warning": {
@@ -4123,6 +4135,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Bawa pesan, kontak, dan kalender Anda ke ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
@@ -4627,6 +4642,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Satu atau lebih kunci terpercaya Anda telah ditandai sebagai \"bocor\" oleh pemiliknya. Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci tersebut."
+      ],
+      "One time import": [
+        "Satu kali impor"
       ],
       "Only the people with the link and the password can access this file.": [
         "Hanya mereka yang memiliki tautan dan kata sandi yang dapat mengakses berkas ini."
@@ -7056,6 +7074,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Mulai dari ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Harga diskon ${ priceCoupon } ini valid untuk bulan pertama. Setelahnya, paket Anda akan diperbarui secara otomatis dengan harga ${ priceLine }. Anda dapat membatalkan langganan ini kapan saja."
       ],
