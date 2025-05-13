@@ -24,9 +24,9 @@ const Anniversary2025Pricing = (props: OfferProps) => {
                     <p className="color-weak m-0 block">{c('anniversary_2025: Offers').t`for ${durationDeal}`}</p>
                 </div>
                 <span className="anniversary-2025-price-off ratio-square border border-norm text-bold p-2 shrink-0 flex">
-                    <span className="m-auto">
+                    <span className="m-auto" lang="en">
                         <span className="block">{`${salePercentage}%`}</span>
-                        <span className="block">OFF</span>
+                        <span className="block text-uppercase">off</span>
                     </span>
                 </span>
             </div>
