@@ -23,7 +23,7 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
     const [loading, setLoading] = useState(false);
     const [step, setStep] = useState(0);
 
-    const currentStep = steps[step];
+    const { component: Component, description: Description, ...currentStep } = steps[step];
 
     const onComplete = () => {
         setLoading(true);
@@ -91,10 +91,14 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
                             </p>
                         )}
                         <p className="text-4xl text-bold m-0 mb-3">{currentStep.title}</p>
-                        <p className="color-weak text-pre-wrap m-0">{currentStep.description}</p>
+                        <div className="color-weak text-pre-wrap m-0">
+                            <Description />
+                        </div>
                     </div>
 
-                    <div className="flex-1">{currentStep.component}</div>
+                    <div className="flex-1">
+                        <Component />
+                    </div>
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter className="mt-0">
