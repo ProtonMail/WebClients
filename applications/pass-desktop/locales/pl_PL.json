@@ -403,10 +403,10 @@
       "Move to another vault": [
         "Przenieś do innego sejfu"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Przenieś do kosza"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Przenieś do kosza"
       ],
       "Multiple select": [
@@ -681,6 +681,98 @@
       ],
       "Your password manager is not here? Request it.": [
         "Nie ma Twojego menadżera haseł? Zgłoś to."
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "500 GB encrypted storage": [
+        "500 GB zaszyfrowanej przestrzeni dyskowej"
+      ],
+      "Add unlimited credit cards": [
+        "Dodaj nieograniczoną liczbę kart płatniczych"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Wszystkie funkcje premium ${ BRAND_NAME } Mail, Pass, VPN, Drive i Calendar"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Zniżki oparte są na standardowych cenach miesięcznych. Po zakończeniu cyklu rozliczeniowego Twoja subskrypcja zostanie odnowiona według standardowej rocznej stawki."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Podwój zaszyfrowaną przestrzeń dyskową — zyskaj 1 TB i chroń wszystkie swoje dane"
+      ],
+      "Encrypted password manager": [
+        "Szyfrowany menadżer haseł"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Oto ekskluzywny prezent, którym chcemy uczcić naszą wspólną podróż."
+      ],
+      "High speed streaming with VPN": [
+        "Szybki streaming z VPN"
+      ],
+      "of privacy": [
+        "prywatności"
+      ],
+      "Online privacy for up to 2 people": [
+        "Prywatność online dla maksymalnie 2 osób"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Prywatność online dla całej Twojej rodziny (do 6 osób)"
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Dużo zaoszczędź na funkcjach Pass premium dzięki ograniczonej czasowo zniżce."
+      ],
+      "Save time with built-in 2FA": [
+        "Zaoszczędź czas dzięki wbudowanemu 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Bezpieczna poczta e-mail z nieograniczoną liczbą aliasów"
+      ],
+      "Share passwords easily": [
+        "Łatwe udostępnianie haseł"
+      ],
+      "thanks to you": [
+        "dzięki Tobie"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Potrój zaszyfrowaną przestrzeń dyskową — zyskaj 3 TB i chroń wszystkie swoje dane"
+      ],
+      "years": [
+        "lat"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Oferta jubileuszowa"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } miesiąc",
+        "${ n } miesiące",
+        "${ n } miesięcy",
+        "${ n } miesiąca"
+      ],
+      "/ month": [
+        "/ miesiąc"
+      ],
+      "12 months": [
+        "12 miesięcy"
+      ],
+      "15 months": [
+        "15 miesięcy"
+      ],
+      "24 months": [
+        "24 miesiące"
+      ],
+      "30 months": [
+        "30 miesięcy"
+      ],
+      "for ${ durationDeal }": [
+        "na ${ durationDeal }"
       ]
     },
     "App menu": {
@@ -1905,7 +1997,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
