@@ -400,11 +400,11 @@
       "Move to another vault": [
         "In einen anderen Tresor verschieben"
       ],
-      "Move to Trash": [
-        "In Papierkorb verschieben"
-      ],
       "Move to trash": [
         "In den Papierkorb verschieben"
+      ],
+      "Move to Trash": [
+        "In Papierkorb verschieben"
       ],
       "Multiple select": [
         "Mehrfachauswahl"
@@ -3528,6 +3528,14 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Schließen"
+      ],
+      "Don't show this offer again": [
+        "Angebot nicht erneut anzeigen"
       ]
     },
     "sso": {
