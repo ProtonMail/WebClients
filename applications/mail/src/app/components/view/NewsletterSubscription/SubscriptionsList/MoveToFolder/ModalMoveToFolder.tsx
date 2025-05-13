@@ -18,8 +18,9 @@ import { type NewsletterSubscription } from '@proton/shared/lib/interfaces/Newsl
 
 import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';
 import { useMailFolderTreeView } from 'proton-mail/hooks/useMailTreeView/useMailFolderTreeView';
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { filterSubscriptionList } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
+import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import './ModalMoveToFolder.scss';
 
@@ -30,6 +31,7 @@ interface Props extends ModalProps {
 export const ModalMoveToFolder = ({ subscription, ...props }: Props) => {
     const { list } = useMailFolderTreeView();
     const dispatch = useMailDispatch();
+    const subscriptionIndex = useMailSelector(getFilteredSubscriptionIndex(subscription.ID));
 
     const [search, setSearch] = useState('');
     const words = useDebounceInput(search, 200);
@@ -88,6 +90,7 @@ export const ModalMoveToFolder = ({ subscription, ...props }: Props) => {
         void dispatch(
             filterSubscriptionList({
                 subscription,
+                subscriptionIndex,
                 data: {
                     ApplyTo: applyFuture ? 'All' : 'Existing',
                     DestinationFolder: selectedFolder.ID,

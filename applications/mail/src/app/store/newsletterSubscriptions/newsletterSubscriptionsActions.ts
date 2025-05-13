@@ -29,7 +29,7 @@ export const sortSubscriptionList = createAsyncThunk<
 export const filterSubscriptionList = createAsyncThunk<
     FilterSubscriptionAPIResponse,
     FilterSubscriptionPayload,
-    MailThunkExtra & { rejectValue: { previousState: NewsletterSubscription } }
+    MailThunkExtra & { rejectValue: { previousState: NewsletterSubscription; originalIndex: number } }
 >('newsletterSubscriptions/filterList', async (payload, thunkExtra) => {
     try {
         return await thunkExtra.extra.api<FilterSubscriptionAPIResponse>(
@@ -38,6 +38,7 @@ export const filterSubscriptionList = createAsyncThunk<
     } catch (error) {
         return thunkExtra.rejectWithValue({
             previousState: payload.subscription,
+            originalIndex: payload.subscriptionIndex ?? -1,
         });
     }
 });
@@ -45,13 +46,14 @@ export const filterSubscriptionList = createAsyncThunk<
 export const unsubscribeSubscription = createAsyncThunk<
     void,
     UnsubscribePayload,
-    MailThunkExtra & { rejectValue: { previousState: NewsletterSubscription } }
+    MailThunkExtra & { rejectValue: { previousState: NewsletterSubscription; originalIndex: number } }
 >('newsletterSubscriptions/unsubscribe', async (payload, thunkExtra) => {
     try {
         return await thunkExtra.extra.api(unsubscribeNewsletterSubscription(payload.subscription.ID));
     } catch (error) {
         return thunkExtra.rejectWithValue({
             previousState: payload.subscription,
+            originalIndex: payload.subscriptionIndex ?? -1,
         });
     }
 });

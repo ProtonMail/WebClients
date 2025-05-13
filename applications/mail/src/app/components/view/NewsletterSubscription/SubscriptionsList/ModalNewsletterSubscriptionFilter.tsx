@@ -6,8 +6,9 @@ import { Button } from '@proton/atoms/index';
 import { Checkbox, type ModalProps, Prompt } from '@proton/components';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { filterSubscriptionList } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
+import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import { getFilterData } from '../helper';
 import type { ModalFilterType } from '../interface';
@@ -54,11 +55,13 @@ const ModalNewsletterSubscriptionFilter = ({ subscription, filterType, ...props 
     const [applyToFuture, setApplyToFuture] = useState(false);
 
     const dispatch = useMailDispatch();
+    const subscriptionIndex = useMailSelector(getFilteredSubscriptionIndex(subscription.ID));
 
     const handleApplyFilter = () => {
         void dispatch(
             filterSubscriptionList({
                 subscription,
+                subscriptionIndex,
                 data: getFilterData(filterType, subscription, applyToFuture),
             })
         );
