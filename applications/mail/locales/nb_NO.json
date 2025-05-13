@@ -6135,10 +6135,6 @@
       "${ storage } storage": [
         "${ storage } lagringsplass"
       ],
-      "${ subscription.ReceivedMessageCount } email last month": [
-        "${ subscription.ReceivedMessageCount } e-post forrige måned",
-        "${ subscription.ReceivedMessageCount } e-poster forrige måned"
-      ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } ulest",
         "${ subscription.UnreadMessageCount } uleste"

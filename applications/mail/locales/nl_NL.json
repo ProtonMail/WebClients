@@ -1693,6 +1693,138 @@
         "Nieuwe e-mail"
       ]
     },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Pak deze deal"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "200 GB storage": [
+        "200 GB opslagruimte"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB versleutelde opslag"
+      ],
+      "Add unlimited credit cards": [
+        "Voeg een onbeperkt aantal creditcards toe"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Alle premium-functies van ${ BRAND_NAME } Mail, Pass, VPN, Drive en Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokkeer advertenties, trackers en malware"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Aan het einde van de factureringscyclus wordt uw abonnement verlengd tegen het standaard jaarlijkse tarief."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Verdubbel uw versleutelde opslag – krijg 1 TB voor al uw data"
+      ],
+      "Encrypted password manager": [
+        "Versleutelde wachtwoordmanager"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Hier is een exclusief cadeau om onze gezamenlijke reis te vieren."
+      ],
+      "High speed streaming with VPN": [
+        "Streamen met hoge snelheid met VPN"
+      ],
+      "of privacy": [
+        "privacy"
+      ],
+      "Online document editor": [
+        "Online document editor"
+      ],
+      "Online privacy for up to 2 people": [
+        "Online privacy voor maximaal 2 personen"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Online privacy voor uw hele gezin (maximaal 6 gebruikers)"
+      ],
+      "Protect up to 10 devices": [
+        "Bescherm tot 10 apparaten"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Bespaar fors op premium Drive-functies met een tijdelijke korting."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Bespaar fors op premium Mail-functies met een tijdelijke korting."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Bespaar fors op premium Pass-functies met een tijdelijke korting."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Bespaar fors op premium VPN-functies met een tijdelijke korting."
+      ],
+      "Save time with built-in 2FA": [
+        "Bespaar tijd met ingebouwde 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Beveiligde e-mail met onbeperkte aliassen"
+      ],
+      "Select any server": [
+        "Selecteer een server"
+      ],
+      "Share passwords easily": [
+        "Deel wachtwoorden eenvoudig"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Stream your favorite content": [
+        "Stream uw favoriete inhoud"
+      ],
+      "thanks to you": [
+        "dankzij u"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Verdriedubbel uw versleutelde opslag – krijg 3 TB voor al uw data"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Onbeperkt aantal mappen, labels en filters"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ],
+      "years": [
+        "jaar"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubileumaanbieding"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "/ month": [
+        "/ maand"
+      ],
+      "12 months": [
+        "12 maanden"
+      ],
+      "15 months": [
+        "15 maanden"
+      ],
+      "24 months": [
+        "24 maanden"
+      ],
+      "30 months": [
+        "30 maanden"
+      ],
+      "for ${ durationDeal }": [
+        "voor ${ durationDeal }"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-applicaties"
@@ -2402,6 +2534,14 @@
       ],
       "Expand": [
         "Uitvouwen"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } is een privacy-first AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Toevoegen ${ LUMO_APP_NAME }"
       ]
     },
     "color": {
@@ -6138,9 +6278,9 @@
       "${ storage } storage": [
         "${ storage } opslag"
       ],
-      "${ subscription.ReceivedMessageCount } email last month": [
-        "${ subscription.ReceivedMessageCount } e-mails afgelopen maand",
-        "${ subscription.ReceivedMessageCount } e-mails afgelopen maand"
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } e-mail afgelopen maand",
+        "${ subscription.ReceivedMessages.Last30Days } e-mails afgelopen maand"
       ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } ongelezen",
@@ -9264,6 +9404,9 @@
       ]
     },
     "Labels": {
+      "Newsletters you unsubscribe from will appear here.": [
+        "Nieuwsbrieven waarvan u zich afmeldt, verschijnen hier."
+      ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Bekijk en beheer hier uw abonnementen op nieuwsbrieven en adressenlijsten."
       ]
@@ -14019,6 +14162,9 @@
       ],
       "No trackers found": [
         "Geen trackers gevonden"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Geen abonnementen afgemeld"
       ],
       "No-reply address detected": [
         "No-reply-adres gedetecteerd"
