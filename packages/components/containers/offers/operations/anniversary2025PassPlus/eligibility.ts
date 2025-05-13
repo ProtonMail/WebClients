@@ -6,34 +6,51 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime, hasPassViaSimpleLogin } from '@proton/shared/lib/user/helpers';
 
+import isCheckAllowed from '../../helpers/isCheckAllowed';
 import { FREE_DOWNGRADER_LIMIT } from '../../helpers/offerPeriods';
 import OfferSubscription from '../../helpers/offerSubscription';
+import { type OfferConfig } from '../../interface';
 
 interface Props {
     protonConfig: ProtonConfig;
     user: UserModel;
     lastSubscriptionEnd: number;
     subscription?: Subscription;
+    offerConfig: OfferConfig;
 }
 
-export const getIsEligible = ({ user, subscription, protonConfig, lastSubscriptionEnd = 0 }: Props) => {
+export const getIsEligible = ({ user, subscription, protonConfig, lastSubscriptionEnd = 0, offerConfig }: Props) => {
+    if (!subscription) {
+        return false;
+    }
+
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
     const hasValidApp =
         protonConfig.APP_NAME === APPS.PROTONPASS ||
         (protonConfig.APP_NAME === APPS.PROTONACCOUNT && parentApp === APPS.PROTONPASS);
     const noPassViaSimpleLogin = !hasPassViaSimpleLogin(user);
     const noPassLifetime = !hasPassLifetime(user);
+    const checkAllowed = isCheckAllowed(subscription, offerConfig);
 
-    if (subscription) {
+    if (user.isPaid) {
         const offerSubscription = new OfferSubscription(subscription);
         const isNotExternal = !offerSubscription.isManagedExternally();
         const hasPassMonthly = offerSubscription.hasPass() && offerSubscription.isMonthly();
 
-        return hasValidApp && hasPassMonthly && isNotExternal && noPassLifetime && user.canPay && !user.isDelinquent;
+        return (
+            hasValidApp &&
+            checkAllowed &&
+            hasPassMonthly &&
+            isNotExternal &&
+            noPassLifetime &&
+            user.canPay &&
+            !user.isDelinquent
+        );
     }
 
     return (
         hasValidApp &&
+        checkAllowed &&
         isBefore(fromUnixTime(lastSubscriptionEnd), FREE_DOWNGRADER_LIMIT) &&
         noPassViaSimpleLogin &&
         user.canPay &&
