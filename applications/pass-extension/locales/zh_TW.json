@@ -95,10 +95,10 @@
       "Create": [
         "創建"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "創建一個${ BRAND_NAME } 帳號"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "創建一個${ BRAND_NAME } 帳號"
       ],
       "Create alias": [
@@ -260,6 +260,9 @@
       "Make admin": [
         "設為管理員"
       ],
+      "Make default": [
+        "設為預設值"
+      ],
       "Make editor": [
         "設為編輯者"
       ],
@@ -271,6 +274,9 @@
       ],
       "Manually sync your data": [
         "手動同步您的資料"
+      ],
+      "More info": [
+        "更多資訊"
       ],
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
@@ -287,10 +293,10 @@
       "Move to another vault": [
         "移動到另一個保管庫"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "移至垃圾桶"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "移至垃圾桶"
       ],
       "Multiple select": [
@@ -395,6 +401,9 @@
       "Select": [
         "選取"
       ],
+      "Send email": [
+        "發送電郵"
+      ],
       "Send invite": [
         "寄送邀請"
       ],
@@ -441,6 +450,9 @@
         "正在送出報告..."
       ],
       "Sync alias": [
+        "同步別名"
+      ],
+      "Sync aliases": [
         "同步別名"
       ],
       "Transfer ownership": [
@@ -887,6 +899,9 @@
       "${ trialDaysLeft } day left": [
         "剩下${ trialDaysLeft }天"
       ],
+      "(Empty)": [
+        "(清空)"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "為期 7 天完全免費體驗頂級質子版功能。${ BRAND_NAME } 授權後首週七天內皆可額外享用。"
       ],
@@ -922,6 +937,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "自動鎖定停用成功."
+      ],
+      "automatically": [
+        "自動"
       ],
       "Automatically copy the generated password to the clipboard": [
         "自動複製生成的密碼至剪貼簿"
@@ -1118,6 +1136,9 @@
       "Loading...": [
         "載入中‧‧‧"
       ],
+      "Make it your own": [
+        "讓它專屬於您"
+      ],
       "me": [
         "我"
       ],
@@ -1213,6 +1234,15 @@
       ],
       "Quickly autofill your saved credentials.": [
         "快速填入您儲存的認證"
+      ],
+      "Record: CNAME": [
+        "記錄：CNAME"
+      ],
+      "Record: MX": [
+        "記錄：MX"
+      ],
+      "Record: TXT": [
+        "記錄：TXT"
       ],
       "Registering PIN lock failed": [
         "註冊 PIN 鎖定失敗"
@@ -1346,6 +1376,9 @@
       "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
         "你有 ${ aliasCount } 個別名存在於 SimpleLogin ，但未同步到 ${ PASS_APP_NAME } 。是否需要進行同步？"
       ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "您已超出訂購授權中所包含的保管庫數量上限。新的項目只能在您的前兩個保管庫中建立。若要在所有保管庫中建立新的項目，請升級您的訂購授權。"
+      ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "已用鑿可供創建別名的數量。升級訂購授權即可釋放限制"
       ],
@@ -1381,6 +1414,9 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount }個字"
       ],
+      "${ count } item": [
+        "${ count }項目"
+      ],
       "${ days } day": [
         "${ days }天"
       ],
@@ -1407,6 +1443,9 @@
       ],
       "15 minutes": [
         "15 分鐘"
+      ],
+      "2 minutes": [
+        "2 分鐘"
       ],
       "24 hours": [
         "24 小時"
@@ -1453,6 +1492,9 @@
       "All": [
         "全部"
       ],
+      "All items": [
+        "所有項目"
+      ],
       "Alphabetical": [
         "拼音字母"
       ],
@@ -1480,6 +1522,9 @@
       "Backup password": [
         "備份密碼"
       ],
+      "Biometrics": [
+        "生物特徵辨識"
+      ],
       "Birthdate": [
         "日期"
       ],
@@ -1500,6 +1545,9 @@
       ],
       "Cards": [
         "卡片"
+      ],
+      "Catch-All": [
+        "全部擷取"
       ],
       "City": [
         "縣市"
@@ -1564,6 +1612,9 @@
       "Domain": [
         "網域"
       ],
+      "Domain:": [
+        "網域:"
+      ],
       "Domains": [
         "網域"
       ],
@@ -1590,6 +1641,9 @@
       ],
       "Export": [
         "匯出"
+      ],
+      "Feedback": [
+        "意見回饋"
       ],
       "Field name": [
         "欄位名稱"
@@ -1699,6 +1753,9 @@
       "Learn more": [
         "取得更多資訊"
       ],
+      "License": [
+        "授權條款"
+      ],
       "License number": [
         "許可證號碼"
       ],
@@ -1710,6 +1767,9 @@
       ],
       "Logins": [
         "登入"
+      ],
+      "Mailboxes": [
+        "電郵信箱"
       ],
       "Members": [
         "成員"
@@ -1813,6 +1873,9 @@
       "Prefix": [
         "前綴"
       ],
+      "Priority:": [
+        "優先順序:"
+      ],
       "Prompt for auto-save": [
         "提示自動儲存"
       ],
@@ -1824,6 +1887,9 @@
       ],
       "Recent": [
         "最近"
+      ],
+      "Remove link": [
+        "移除連結"
       ],
       "Report a problem": [
         "回報問題"
@@ -1866,6 +1932,15 @@
       ],
       "Share": [
         "共用"
+      ],
+      "Shared": [
+        "已分享"
+      ],
+      "Shared by me": [
+        "共享的項目"
+      ],
+      "Shared link": [
+        "分享連結"
       ],
       "Show website favicons": [
         "顯示網站圖示"
@@ -1921,8 +1996,14 @@
       "Type": [
         "類型"
       ],
+      "Unknown": [
+        "未知的"
+      ],
       "Unlock ${ PASS_APP_NAME }": [
         "解鎖 ${ PASS_APP_NAME }"
+      ],
+      "Unlock with": [
+        "解鎖搭配使用"
       ],
       "Unlock with:": [
         "解鎖透過："
@@ -1954,6 +2035,9 @@
       "Username/email": [
         "使用者名稱 / 電子郵件"
       ],
+      "Value:": [
+        "值:"
+      ],
       "Vault ID": [
         "保管庫 ID"
       ],
@@ -1983,6 +2067,9 @@
       ],
       "Your browser will stop using its built-in password manager.": [
         "您的瀏覽器將停用內建的密碼管理器"
+      ],
+      "ZIP": [
+        "ZIP檔案"
       ]
     },
     "Message": {
@@ -2024,6 +2111,23 @@
         "底線"
       ]
     },
+    "Pass_file_attachments": {
+      "Attachments": [
+        "附件"
+      ],
+      "Download": [
+        "下載"
+      ],
+      "File": [
+        "檔案"
+      ],
+      "Rename": [
+        "重新命名"
+      ],
+      "Restore": [
+        "還原"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "新增雙重驗證碼"
@@ -2037,6 +2141,9 @@
       "Add text": [
         "新增文字"
       ],
+      "Coupon": [
+        "優惠券"
+      ],
       "Email address": [
         "電郵位址"
       ],
@@ -2045,6 +2152,9 @@
       ],
       "Enter a prefix": [
         "輸入前綴"
+      ],
+      "Enter email": [
+        "輸入電子郵件"
       ],
       "Enter password": [
         "輸入密碼"
@@ -2148,8 +2258,14 @@
       ]
     },
     "Theme": {
+      "Automatic": [
+        "自動"
+      ],
       "Dark": [
         "深色"
+      ],
+      "Light": [
+        "淺色"
       ]
     },
     "Title": {
@@ -2158,6 +2274,9 @@
       ],
       "Actions": [
         "操作"
+      ],
+      "Activity": [
+        "活動"
       ],
       "Auto-lock update": [
         "更新自動鎖定"
@@ -2189,8 +2308,23 @@
       "Current version": [
         "目前版本"
       ],
+      "Default": [
+        "預設"
+      ],
+      "Delete domain": [
+        "刪除網域"
+      ],
+      "Did you know?": [
+        "您知道嗎？"
+      ],
       "Discard changes?": [
         "捨棄變更？"
+      ],
+      "DKIM (Optional)": [
+        "DKIM (選擇性)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (選擇性)"
       ],
       "Domain": [
         "網域"
@@ -2243,11 +2377,17 @@
       "Last modified": [
         "上次修改時間"
       ],
+      "Leave vault?": [
+        "離開保管庫？"
+      ],
       "Log in as...": [
         "以登入..."
       ],
       "Low disk space": [
         "磁碟空間過低"
+      ],
+      "Mailbox": [
+        "電郵信箱"
       ],
       "Member limit": [
         "成員限制"
@@ -2257,6 +2397,9 @@
       ],
       "Modified": [
         "修改日期"
+      ],
+      "MX record": [
+        "MX 記錄"
       ],
       "No items selected": [
         "未選擇任何項目"
@@ -2315,6 +2458,9 @@
       "Switching to ${ PASS_APP_NAME }?": [
         "切換至 ${ PASS_APP_NAME }?"
       ],
+      "Sync alias": [
+        "同步別名"
+      ],
       "Sync your aliases from SimpleLogin": [
         "從 SimpleLogin 同步你的別名"
       ],
@@ -2332,6 +2478,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "解鎖${ brandNameJSX }"
+      ],
+      "Unverified": [
+        "未驗證"
       ],
       "Update available": [
         "有可用更新"
