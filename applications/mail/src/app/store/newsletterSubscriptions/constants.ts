@@ -12,6 +12,7 @@ export const initialStateValue: NewsletterSubscriptionsInterface = {
     selectedSubscription: undefined,
     filteredSubscriptions: [],
     loading: true,
+    selectedTab: 'active',
 };
 
 export const DEFAULT_META = {

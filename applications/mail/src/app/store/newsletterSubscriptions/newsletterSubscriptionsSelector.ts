@@ -8,12 +8,19 @@ const selectedSub = (state: MailState) => state.newsletterSubscription.value?.se
 const filteredSubs = (state: MailState) => state.newsletterSubscription.value?.filteredSubscriptions;
 const counts = (state: MailState) => state.newsletterSubscription.value?.counts;
 const loading = (state: MailState) => state.newsletterSubscription.value?.loading;
+export const selectedTab = (state: MailState) => state.newsletterSubscription.value?.selectedTab;
 
 export const subscriptionListSelector = createSelector([subscriptions], (subs) => subs || []);
 export const loadingSelector = createSelector([loading], (loading) => loading || false);
 export const filteredSubscriptionList = createSelector([filteredSubs], (filteredSubs) => filteredSubs || []);
 export const selectedSubscriptionSelector = createSelector([selectedSub], (selectedSub) => selectedSub || null);
 export const subscriptionCountSelector = createSelector([counts], (counts) => counts || DEFAULT_SUBSCRIPTION_COUNTS);
+
+export const getFilteredSubscriptionIndex = (subscriptionID: string) => {
+    return createSelector([filteredSubs], (filteredSubs) =>
+        filteredSubs?.findIndex((sub) => sub.ID === subscriptionID)
+    );
+};
 
 export const isSubscriptionActiveSelector = (subscriptionId: string) =>
     createSelector([selectedSub], (selectedSub) => selectedSub?.ID === subscriptionId);

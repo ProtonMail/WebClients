@@ -63,6 +63,7 @@ interface Props {
     moveToFolder: (params: MoveParams) => void;
     applyLabels: (params: ApplyLabelsParams) => void;
     onClickCallback?: () => void;
+    hideSpinner?: boolean;
 }
 
 const SidebarItem = ({
@@ -88,6 +89,7 @@ const SidebarItem = ({
     moveToFolder,
     applyLabels,
     onClickCallback,
+    hideSpinner = false,
 }: Props) => {
     const { call } = useEventManager();
     const history = useHistory();
@@ -206,6 +208,7 @@ const SidebarItem = ({
                     }
                     right={
                         <LocationAside
+                            labelID={labelID}
                             unreadCount={needsTotalDisplay ? totalMessagesCount : unreadCount}
                             weak={labelID !== MAILBOX_LABEL_IDS.INBOX}
                             refreshing={refreshing}
@@ -215,6 +218,7 @@ const SidebarItem = ({
                             itemOptions={itemOptions}
                             isOptionDropdownOpened={isOptionDropdownOpened}
                             collapsed={collapsed}
+                            hideSpinner={hideSpinner}
                         />
                     }
                 >
