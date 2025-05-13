@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
       ],
-      "activate": [
-        "aktivoi"
-      ],
       "Activate": [
         "Aktivoi"
+      ],
+      "activate": [
+        "aktivoi"
       ],
       "Activate organization key": [
         "Aktivoi organisaatioavain"
@@ -264,10 +264,10 @@
       "Discard": [
         "Hylkää"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Hylkää muutokset"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Hylkää muutokset"
       ],
       "Discover ${ planName }": [
@@ -450,10 +450,10 @@
       "Invite user": [
         "Kutsu käyttäjä"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Jatka muokkaamista"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Jatka muokkaamista"
       ],
       "Keep logo": [
@@ -561,10 +561,10 @@
       "Refresh status": [
         "Päivitä tila"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Päivitä sivu"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Päivitä sivu"
       ],
       "Remove": [
@@ -4351,11 +4351,11 @@
       "Data recoverable on this device": [
         "Tiedot ovat palautettavissa tällä laitteella"
       ],
-      "dedicated servers": [
-        "omia palvelimia"
-      ],
       "Dedicated servers": [
         "Omat palvelimet"
+      ],
+      "dedicated servers": [
+        "omia palvelimia"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Omia kiinteää IP-osoitetta käyttäviä palvelimia voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -8200,6 +8200,17 @@
         "Tervetuloa ${ appName } -sovellukseen"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Kaikki"
+      ],
+      "Group members": [
+        "Ryhmän jäsenet"
+      ],
+      "No one": [
+        "Ei ketään"
+      ]
+    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Sallittu ${ defaultLabel }"
@@ -8269,17 +8280,6 @@
       ],
       "The whole organization": [
         "Koko organisaatio"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Kaikki"
-      ],
-      "Group members": [
-        "Ryhmän jäsenet"
-      ],
-      "No one": [
-        "Ei ketään"
       ]
     },
     "Organization capacity error": {
@@ -10084,47 +10084,6 @@
         "Hintaan ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Gt tallennustilaa"
-      ],
-      "and 15 more premium features": [
-        "sekä 15 muuta premium-ominaisuutta"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automaattinen sähköpostiohjaus ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Tietomurtohälytykset ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Työpöytäsovellus"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
-      ],
-      "No ads or tracking": [
-        "Ei mainoksia eikä seurantaa"
-      ],
-      "Short @pm.me email address": [
-        "Lyhyt @pm.me-sähköpostiosoite"
-      ],
-      "Support our mission": [
-        "Tue tehtäväämme"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade your productivity": [
-        "Tehosta tuottavuuttasi"
-      ],
-      "We don't sell your data": [
-        "Emme myy tietojasi"
-      ],
-      "Your privacy is our mission": [
-        "Yksityisyytesi on tehtävämme"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ja ${ VPN_SHORT_APP_NAME } premium-ominaisuuksilla"
@@ -10413,6 +10372,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Oma lyhyt @pm.me-sähköpostialiaksesi"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "and 15 more premium features": [
+        "sekä 15 muuta premium-ominaisuutta"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automaattinen sähköpostiohjaus ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Tietomurtohälytykset ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Työpöytäsovellus"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
+      ],
+      "No ads or tracking": [
+        "Ei mainoksia eikä seurantaa"
+      ],
+      "Short @pm.me email address": [
+        "Lyhyt @pm.me-sähköpostiosoite"
+      ],
+      "Support our mission": [
+        "Tue tehtäväämme"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade your productivity": [
+        "Tehosta tuottavuuttasi"
+      ],
+      "We don't sell your data": [
+        "Emme myy tietojasi"
+      ],
+      "Your privacy is our mission": [
+        "Yksityisyytesi on tehtävämme"
       ]
     },
     "Subscription renewal state": {
