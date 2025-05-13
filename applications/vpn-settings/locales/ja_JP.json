@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "activate": [
-        "有効にする"
-      ],
       "Activate": [
         "有効化"
+      ],
+      "activate": [
+        "有効にする"
       ],
       "Activate organization key": [
         "組織の鍵を有効化する"
@@ -267,10 +267,10 @@
       "Discard": [
         "破棄"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "変更を破棄"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "変更を破棄"
       ],
       "Discover ${ planName }": [
@@ -456,10 +456,10 @@
       "Invite user": [
         "ユーザーを招待"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "編集を続ける"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "編集を続ける"
       ],
       "Keep logo": [
@@ -573,10 +573,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
       "Remove": [
@@ -4464,10 +4464,10 @@
       "Data recoverable on this device": [
         "このデバイスでデータを復元できます"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -8355,6 +8355,17 @@
         "${ appName } へようこそ"
       ]
     },
+    "option": {
+      "Everyone": [
+        "みんな"
+      ],
+      "Group members": [
+        "グループメンバー"
+      ],
+      "No one": [
+        "誰も"
+      ]
+    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "許可済み${ defaultLabel }"
@@ -8424,17 +8435,6 @@
       ],
       "The whole organization": [
         "組織全体"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "みんな"
-      ],
-      "Group members": [
-        "グループメンバー"
-      ],
-      "No one": [
-        "誰も"
       ]
     },
     "Organization capacity error": {
@@ -10229,47 +10229,6 @@
         "${ totalPrice } の場合"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
@@ -10552,6 +10511,47 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
