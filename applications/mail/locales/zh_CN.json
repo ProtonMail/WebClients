@@ -1351,7 +1351,7 @@
         "信任"
       ],
       "Trust key": [
-        "信任此密钥"
+        "信任密钥"
       ],
       "Trust public key": [
         "信任公钥"
@@ -1544,6 +1544,36 @@
       ],
       "Move to folder": [
         "移动至文件夹"
+      ],
+      "A to Z": [
+        "按名称排序"
+      ],
+      "Active": [
+        "订阅中"
+      ],
+      "Change sorting": [
+        "更改排序"
+      ],
+      "Expand navigation bar to see custom views": [
+        "展开导航栏查看自定义视图"
+      ],
+      "Least read": [
+        "阅读次数最少"
+      ],
+      "Most read": [
+        "阅读次数最多"
+      ],
+      "Recently received": [
+        "最近收到"
+      ],
+      "Resize panel": [
+        "调整面板大小"
+      ],
+      "Resubscribe": [
+        "重新订阅"
+      ],
+      "Unsubscribed": [
+        "已退订"
       ]
     },
     "action": {
@@ -5887,6 +5917,18 @@
       ],
       "Other": [
         "其它"
+      ],
+      "Import from Google": [
+        "从 Google 导入"
+      ],
+      "Import from other": [
+        "从其他服务商导入"
+      ],
+      "Import from Outlook": [
+        "从 Outlook 导入"
+      ],
+      "Import from Yahoo": [
+        "从 Yahoo 导入"
       ]
     },
     "Import warning": {
@@ -6769,7 +6811,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert link": [
         "插入链接"
@@ -8111,6 +8153,75 @@
       ],
       "Uppercase and lowercase letters": [
         "大写字母和小写字母"
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }、归档或将旧邮件移至文件夹。"
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } 哪些订阅不再相关。"
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "一键即可 ${ boldUnsubscribe }。"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } 封未读"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "已屏蔽 ${ trackersCount } 个邮件跟踪器"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "已屏蔽 ${ trackersCount } 个跟踪器"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "该邮件列表中的所有信息都将标记为已读。"
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "该邮件列表中的所有信息都将移至归档。"
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "该邮件列表中的所有信息都将移至回收站。"
+      ],
+      "and more.": [
+        "等等。"
+      ],
+      "Apply to future messages ": [
+        "应用于今后的消息"
+      ],
+      "Archive existing messages": [
+        "归档现有邮件"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "将您的信息、联系人和日历同步至 ${ BRAND_NAME }。"
+      ],
+      "Bulk delete": [
+        "批量删除"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "由于收件方的设置，以下联系人无法接收带有过期日期的邮件："
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "轻松管理和取消订阅新闻通讯和邮件列表。"
+      ],
+      "Mark all as read": [
+        "全部标为已读"
+      ],
+      "One time import": [
+        "一次性导入"
+      ],
+      "Optional": [
+        "可选"
+      ],
+      "Quickly spot": [
+        "快速识别"
+      ],
+      "Trash existing messages": [
+        "清空现有邮件"
+      ],
+      "Unsubscribe": [
+        "取消订阅"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "只需点击几下，您的收件箱就不会杂乱无章了"
       ]
     },
     "info": {
@@ -8979,6 +9090,27 @@
       ],
       "Weak password": [
         "弱密码"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } 标记所有邮件为已读"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } 将所有邮件移至 ${ boldFolderName }"
+      ],
+      "Active filter:": [
+        "活动过滤器："
+      ],
+      "Apply to future messages": [
+        "应用于今后的消息"
+      ],
+      "Mail subscriptions": [
+        "邮件订阅"
+      ],
+      "Move messages to": [
+        "移动消息到"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "过滤器已禁用。您可以启用它 ${ settingsLink }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9297,6 +9429,9 @@
       ],
       "here": [
         "此处"
+      ],
+      "Views": [
+        "视图"
       ]
     },
     "Link to calendar event": {
@@ -10270,6 +10405,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "只需 ${ priceLine } 即可解锁所有 ${ BRAND_NAME } 高级产品和功能。随时取消。"
+      ],
+      "Starting from ${ priceLine }": [
+        "低至 ${ priceLine }"
       ]
     },
     "new_plans: title": {
@@ -14061,6 +14199,30 @@
       ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"
+      ],
+      "Archive all messages?": [
+        "存档所有邮件？"
+      ],
+      "Mail subscriptions": [
+        "邮件订阅"
+      ],
+      "Mail Subscriptions": [
+        "Mail 订阅"
+      ],
+      "Mark all messages as read": [
+        "标记所有邮件为已读"
+      ],
+      "No mail subscriptions": [
+        "未订阅邮件"
+      ],
+      "Trash all messages?": [
+        "清空所有邮件？"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "取消订阅 ${ subscription.Name }？"
+      ],
+      "Your subscriptions in one place": [
+        "一站式订阅服务"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14665,6 +14827,11 @@
     "Zoom": {
       "Join Zoom meeting": [
         "加入 Zoom 会议"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "在此查看并管理新闻通讯和邮件列表订阅。"
       ]
     }
   }

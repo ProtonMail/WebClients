@@ -1562,6 +1562,36 @@
         "Důvěřovat klíčům",
         "Důvěřovat klíčům",
         "Důvěřovat klíčům"
+      ],
+      "A to Z": [
+        "Od A do Z"
+      ],
+      "Active": [
+        "Aktivní"
+      ],
+      "Change sorting": [
+        "Změnit řazení"
+      ],
+      "Expand navigation bar to see custom views": [
+        "Rozbalit navigační panel pro zobrazení vlastních zobrazení"
+      ],
+      "Least read": [
+        "Nejméně čtené"
+      ],
+      "Most read": [
+        "Nejčtenější"
+      ],
+      "Recently received": [
+        "Nedávno přijaté"
+      ],
+      "Resize panel": [
+        "Změnit velikost panelu"
+      ],
+      "Resubscribe": [
+        "Obnovit odběr"
+      ],
+      "Unsubscribed": [
+        "Odběr odhlášen"
       ]
     },
     "action": {
@@ -7114,7 +7144,10 @@
         "Inicializuji..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -8543,6 +8576,78 @@
       ],
       "One time import": [
         "Jednorázový import"
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, archivace nebo přesutí starých e-mailů do složky."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot }, které odběry již nejsou relevantní."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } z nich můžete jediným kliknutím."
+      ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "${ subscription.ReceivedMessageCount } e-mail za poslední měsíc",
+        "${ subscription.ReceivedMessageCount } e-maily za poslední měsíc",
+        "${ subscription.ReceivedMessageCount } e-mailů za poslední měsíc",
+        "${ subscription.ReceivedMessageCount } e-mailů za poslední měsíc"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } nepřečtená zpráva",
+        "${ subscription.UnreadMessageCount } nepřečtené zprávy",
+        "${ subscription.UnreadMessageCount } nepřečtených zpráv",
+        "${ subscription.UnreadMessageCount } nepřečtených zpráv"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } sledovací prvek e-mailu zablokován",
+        "${ trackersCount } sledovací prvky e-mailu zablokovány",
+        "${ trackersCount } sledovacích prvků e-mailu zablokováno",
+        "${ trackersCount } sledovacích prvků e-mailu zablokováno"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } sledovací prvek zablokován",
+        "${ trackersCount } sledovací prvky zablokovány",
+        "${ trackersCount } sledovacích prvků zablokováno",
+        "${ trackersCount } sledovacích prvků zablokováno"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Všechny zprávy z tohoto e-mailového seznamu budou označeny jako přečtené."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Všechny zprávy z tohoto e-mailového seznamu budou přesunuty do archivu."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Všechny zprávy z tohoto e-mailového seznamu budou přesunuty do koše."
+      ],
+      "Apply to future messages ": [
+        "Použít na budoucí zprávy "
+      ],
+      "Archive existing messages": [
+        "Archivovat existující zprávy"
+      ],
+      "Bulk delete": [
+        "Hromadné smazání"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Snadná správa a odhlašování odběru e-mailových zpravodajů a seznamů."
+      ],
+      "Mark all as read": [
+        "Označit vše jako přečtené"
+      ],
+      "Optional": [
+        "Volitelné"
+      ],
+      "Quickly spot": [
+        "Rychle zjistíte"
+      ],
+      "Trash existing messages": [
+        "Přesunout existující zprávy do koše"
+      ],
+      "Unsubscribe": [
+        "Odhlásit odběr"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
       ]
     },
     "info": {
@@ -9429,6 +9534,27 @@
       ],
       "Weak password": [
         "Slabé heslo"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } označit všechny zprávy jako přečtené"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } přesunout všechny zprávy do ${ boldFolderName }"
+      ],
+      "Active filter:": [
+        "Aktivní filtr:"
+      ],
+      "Apply to future messages": [
+        "Použít na budoucí zprávy"
+      ],
+      "Mail subscriptions": [
+        "E-mailové odběry"
+      ],
+      "Move messages to": [
+        "Přesunout zprávy do"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Filtr je deaktivován. Můžete ho povolit v ${ settingsLink }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9747,6 +9873,9 @@
       ],
       "here": [
         "zde"
+      ],
+      "Views": [
+        "Zobrazení"
       ]
     },
     "Link to calendar event": {
@@ -14895,6 +15024,30 @@
       ],
       "Your shorter address is now ready": [
         "Vaše kratší adresa je nyní připravena"
+      ],
+      "Archive all messages?": [
+        "Archivovat všechny zprávy?"
+      ],
+      "Mail subscriptions": [
+        "E-mailové odběry"
+      ],
+      "Mail Subscriptions": [
+        "E-mailové odběry"
+      ],
+      "Mark all messages as read": [
+        "Označit všechny zprávy jako přečtené"
+      ],
+      "No mail subscriptions": [
+        "Žádné e-mailové odběry"
+      ],
+      "Trash all messages?": [
+        "Přesunout všechny zprávy do koše?"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Odhlásit odběr z ${ subscription.Name }?"
+      ],
+      "Your subscriptions in one place": [
+        "Vaše e-mailové odběry na jednom místě"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15625,6 +15778,11 @@
       ],
       "Passcode:": [
         "Přístupový kód:"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Zde můžete zobrazit a spravovat přihlášení k odběru e-mailových zpravodajů a e-mailových seznamů."
       ]
     }
   }

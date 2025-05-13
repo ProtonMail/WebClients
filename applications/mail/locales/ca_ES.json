@@ -269,7 +269,7 @@
         "Connecta aplicacions i dispositius"
       ],
       "Connect to video conferencing": [
-        "Connecta a la videoconferència"
+        "Connecta't a la videoconferència"
       ],
       "Contact group": [
         "Grups de contactes"
@@ -1199,7 +1199,7 @@
         "Estableix la frase de recuperació"
       ],
       "Set up 2FA": [
-        "Configuració 2FA"
+        "Configuració de l'A2F"
       ],
       "Set up a custom domain": [
         "Configura un domini personalitzat"
@@ -1217,7 +1217,7 @@
         "Comparteix amb un enllaç"
       ],
       "Share your calendar with your team": [
-        "Comparteix el calendari amb el vostre equip"
+        "Compartiu el calendari amb el vostre equip"
       ],
       "Sharing options": [
         "Opcions de compartició"
@@ -1436,7 +1436,7 @@
         "Utilitzeu ${ PASS_APP_NAME }"
       ],
       "Use ${ PASS_APP_NAME } for Business": [
-        "Utilitza ${ PASS_APP_NAME } per al Business"
+        "Utilitza ${ PASS_APP_NAME } for Business"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilitza el ${ VPN_SHORT_APP_NAME } per a la privadesa de dades"
@@ -1550,6 +1550,36 @@
       "Trust key": [
         "Clau de confiança",
         "Claus de confiança"
+      ],
+      "A to Z": [
+        "De la A a la Z"
+      ],
+      "Active": [
+        "Actiu"
+      ],
+      "Change sorting": [
+        "Canvia l'ordenació"
+      ],
+      "Expand navigation bar to see custom views": [
+        "Expandeix la barra de navegació per veure les vistes personalitzades"
+      ],
+      "Least read": [
+        "Menys llegit"
+      ],
+      "Most read": [
+        "El més llegit"
+      ],
+      "Recently received": [
+        "Rebuts recentment"
+      ],
+      "Resize panel": [
+        "Redimensiona el panell"
+      ],
+      "Resubscribe": [
+        "Torna'm a subscriure"
+      ],
+      "Unsubscribed": [
+        "Subscripció cancel·lada"
       ]
     },
     "action": {
@@ -6892,7 +6922,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -6913,7 +6944,7 @@
         "Convideu la vostra parella, un amic o qui sigui amb qui estigueu compartint el vostre pla ${ protonDuoPlanName }."
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "El millor és utilitzar una VPN en tot moment. Però aquí és quan les amenaces de ciberseguretat poden ser més altes:"
+        "El millor és utilitzar una VPN en tot moment. Però aquí és quan les amenaces de ciberseguretat poden ser majors:"
       ],
       "JCB logo": [
         "Logotip de JCB"
@@ -7189,7 +7220,7 @@
         "Autentiqueu el vostre pagament a la pestanya de verificació."
       ],
       "Please fill in all required fields.": [
-        "Ompliu tots els camps obligatoris."
+        "Empleneu tots els camps obligatoris."
       ],
       "Please fill out this field.": [
         "Empleneu aquest camp."
@@ -7471,7 +7502,7 @@
         "Comenceu a utilitzar la versió més curta i atractiva de la vostra adreça de correu electrònic."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
-        "Mantingueu-vos connectat sense esforç activant la configuració VPN següent:"
+        "Mantingueu-vos connectat fàcilment activant la configuració següent de la VPN:"
       ],
       "Storage allocated to other users in this organisation": [
         "Emmagatzematge assignat a altres usuaris d'aquesta organització"
@@ -8186,7 +8217,7 @@
         "La vostra informació es va trobar el ${ displayedDate }"
       ],
       "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "El vostre proveïdor de serveis d'internet pot supervisar i de vegades vendre les vostres dades, o fins i tot restringir els llocs web als quals podeu accedir."
+        "El vostre proveïdor de serveis d'internet pot supervisar i, de vegades, vendre les vostres dades o, fins i tot, restringir els llocs web als quals podeu accedir."
       ],
       "Your IP": [
         "La vostra IP"
@@ -8260,17 +8291,81 @@
         "Lletres majúscules i minúscules"
       ],
       "and more.": [
-        "i més."
+        "i molt més."
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Porteu els vostres missatges, contactes i calendaris al ${ BRAND_NAME }."
       ],
       "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
-        "A causa de la configuració del destinatari, aquest missatge no es pot enviar amb data de caducitat al següent contacte: ",
+        "A causa de la configuració del destinatari, aquest missatge no es pot enviar amb data de caducitat al contacte següent: ",
         "A causa de la configuració del destinatari, aquest missatge no es pot enviar amb data de caducitat als contactes següents: "
       ],
       "One time import": [
         "Importació única"
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, arxiveu o moveu els correus antics a una carpeta."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } quines subscripcions ja no són rellevants."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } d'aquests amb un sol clic."
+      ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "${ subscription.ReceivedMessageCount } correu el mes passat",
+        "${ subscription.ReceivedMessageCount } correus el mes passat"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } sense llegir",
+        "${ subscription.UnreadMessageCount } sense llegir"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "S'ha bloquejat ${ trackersCount } rastrejador de correu",
+        "S'han bloquejat ${ trackersCount } rastrejadors de correu"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "S'ha bloquejat ${ trackersCount } rastrejador",
+        "S'han bloquejat ${ trackersCount } rastrejadors"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Tots els missatges d'aquesta llista de correu es marcaran com a llegits."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Tots els missatges d'aquesta llista de correu es mouran a l'Arxiu."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Tots els missatges d'aquesta llista de correu es mouran a la Paperera."
+      ],
+      "Apply to future messages ": [
+        "Aplica als missatges futurs "
+      ],
+      "Archive existing messages": [
+        "Arxiva els missatges existents"
+      ],
+      "Bulk delete": [
+        "Elimineu en massa"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Gestioneu i doneu de baixa fàcilment butlletins i llistes de correu."
+      ],
+      "Mark all as read": [
+        "Marca-ho tot com a llegit"
+      ],
+      "Optional": [
+        "Opcional"
+      ],
+      "Quickly spot": [
+        "Detecteu ràpidament"
+      ],
+      "Trash existing messages": [
+        "Envia els missatges existents a la paperera"
+      ],
+      "Unsubscribe": [
+        "Anul·leu la subscripció"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Només sou a uns quants clics d'una safata d'entrada ordenada"
       ]
     },
     "info": {
@@ -9148,6 +9243,27 @@
       ],
       "Weak password": [
         "Contrasenya feble."
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Marca tots els missatges com a llegits"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Mou tots els missatges a ${ boldFolderName }"
+      ],
+      "Active filter:": [
+        "Filtre actiu:"
+      ],
+      "Apply to future messages": [
+        "Aplica als missatges futurs"
+      ],
+      "Mail subscriptions": [
+        "Subscripcions de correu"
+      ],
+      "Move messages to": [
+        "Mou els missatges a"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "El filtre està desactivat. Podeu habilitar-lo a ${ settingsLink }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9294,7 +9410,7 @@
         "Activeu la vostra adreça per respondre aquesta invitació."
       ],
       "Enforcing 2FA for organizations": [
-        "Requereix 2FA per a organitzacions"
+        "Aplicació obligatòria de l'autenticació de doble factor (A2F) per a organitzacions"
       ],
       "Folders": [
         "Carpetes"
@@ -9336,13 +9452,13 @@
         "Com utilitzar ${ DARK_WEB_MONITORING_NAME }?"
       ],
       "How to use ${ PASS_APP_NAME } for Business": [
-        "Com utilitzar ${ PASS_APP_NAME } per al Business?"
+        "Com utilitzar ${ PASS_APP_NAME } for Business?"
       ],
       "How to use email forwarding": [
         "Com utilitzar el reenviament de correu?"
       ],
       "How to use Groups": [
-        "Com utilitzar grups?"
+        "Com utilitzar els grups?"
       ],
       "if your data is leaked": [
         "si es filtren les vostres dades"
@@ -9466,6 +9582,9 @@
       ],
       "here": [
         "aquí"
+      ],
+      "Views": [
+        "Vistes"
       ]
     },
     "Link to calendar event": {
@@ -13884,7 +14003,7 @@
         "Augmenteu la vostra privacitat amb més adreces"
       ],
       "Information exposed in breach": [
-        "Informació exposada en la infracció"
+        "Informació exposada en la filtració"
       ],
       "Insert contacts": [
         "Introdueix els contactes"
@@ -14376,6 +14495,30 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "Archive all messages?": [
+        "Voleu arxivar tots els missatges?"
+      ],
+      "Mail subscriptions": [
+        "Subscripcions de correu"
+      ],
+      "Mail Subscriptions": [
+        "Subscripcions de correu"
+      ],
+      "Mark all messages as read": [
+        "Marca tots els missatges com a llegits"
+      ],
+      "No mail subscriptions": [
+        "Sense subscripcions de correu"
+      ],
+      "Trash all messages?": [
+        "Voleu enviar tots els missatges a la paperera?"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Voleu anul·lar la subscripció a ${ subscription.Name }?"
+      ],
+      "Your subscriptions in one place": [
+        "Les vostres subscripcions en un sol lloc"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15012,6 +15155,11 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Visualitzeu i gestioneu les subscripcions a butlletins i llistes de correu aquí."
       ]
     }
   }

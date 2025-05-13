@@ -1544,6 +1544,36 @@
       ],
       "Trust key": [
         "Percayai kunci"
+      ],
+      "A to Z": [
+        "A sampai Z"
+      ],
+      "Active": [
+        "Aktif"
+      ],
+      "Change sorting": [
+        "Ubah pengurutan"
+      ],
+      "Expand navigation bar to see custom views": [
+        "Lebarkan bilah navigasi untuk melihat tampilan khusus"
+      ],
+      "Least read": [
+        "Paling jarang dibaca"
+      ],
+      "Most read": [
+        "Paling sering dibaca"
+      ],
+      "Recently received": [
+        "Baru dihapus"
+      ],
+      "Resize panel": [
+        "Ubah ukuran panel"
+      ],
+      "Resubscribe": [
+        "Berlangganan lagi"
+      ],
+      "Unsubscribed": [
+        "Langganan dihentikan"
       ]
     },
     "action": {
@@ -5882,6 +5912,18 @@
       ],
       "Other": [
         "Lainnya"
+      ],
+      "Import from Google": [
+        "Impor dari Google"
+      ],
+      "Import from other": [
+        "Impor dari yang lain"
+      ],
+      "Import from Outlook": [
+        "Impor dari Outlook"
+      ],
+      "Import from Yahoo": [
+        "Masukan dari Yahoo"
       ]
     },
     "Import warning": {
@@ -8112,6 +8154,69 @@
       ],
       "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
         "Karena konfigurasi penerima Anda, pesan ini tidak dapat dikirim dengan tanggal kedaluwarsa ke kontak berikut: "
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, arsip, atau pindah email lama ke folder."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } langganan yang tidak ada relevan lagi."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } dari mereka dengan satu klik."
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } belum dibaca"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } pelacak email telah diblokir"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } pelacak diblokir"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Semua pesan dari milis ini akan ditandai sebagai telah dibaca."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Semua pesan dari milis ini akan dipindahkan ke Arsip."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Semua pesan dari milis ini akan dipindahkan ke Sampah."
+      ],
+      "Apply to future messages ": [
+        "Terapkan ke pesan yang akan mendatang "
+      ],
+      "Archive existing messages": [
+        "Sampah pesan yang sudah ada"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Bawa pesan, kontak, dan kalender Anda ke ${ BRAND_NAME }."
+      ],
+      "Bulk delete": [
+        "Penghapusan massal"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Mudah kelola dan berhenti berlangganan dari buletin dan milis."
+      ],
+      "Mark all as read": [
+        "Tandai semua sebagai terbaca"
+      ],
+      "One time import": [
+        "Satu kali impor"
+      ],
+      "Optional": [
+        "Opsional"
+      ],
+      "Quickly spot": [
+        "Cepat melihat"
+      ],
+      "Trash existing messages": [
+        "Sampah pesan yang sudah ada"
+      ],
+      "Unsubscribe": [
+        "Berhenti berlangganan"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Anda hanya tinggal beberapa klik lagi untuk memiliki kotak masuk yang rapi"
       ]
     },
     "info": {
@@ -8980,6 +9085,27 @@
       ],
       "Weak password": [
         "Kata sandi yang lemah"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Tandai semua pesan sebagai telah dibaca"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Pindahkan semua pesan ke ${ boldFolderName }"
+      ],
+      "Active filter:": [
+        "Filter aktif:"
+      ],
+      "Apply to future messages": [
+        "Terapkan ke pesan yang akan mendatang"
+      ],
+      "Mail subscriptions": [
+        "Langganan email"
+      ],
+      "Move messages to": [
+        "Pindahkan pesan ke"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Filter dinonaktifkan. Anda dapat mengaktifkannya ${ settingsLink }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9298,6 +9424,9 @@
       ],
       "here": [
         "di sini"
+      ],
+      "Views": [
+        "Lihat"
       ]
     },
     "Link to calendar event": {
@@ -10271,6 +10400,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Dapatkan seluruh produk dan fitur premium ${ BRAND_NAME } seharga hanya ${ priceLine }. Batalkan kapan saja."
+      ],
+      "Starting from ${ priceLine }": [
+        "Mulai dari ${ priceLine }"
       ]
     },
     "new_plans: title": {
@@ -14057,6 +14189,30 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Gunakan ${ VPN_SHORT_APP_NAME } untuk privasi data"
+      ],
+      "Archive all messages?": [
+        "Arsip seluruh pesan?"
+      ],
+      "Mail subscriptions": [
+        "Langganan email"
+      ],
+      "Mail Subscriptions": [
+        "Langganan email"
+      ],
+      "Mark all messages as read": [
+        "Tandai semua pesan sebagai telah dibaca"
+      ],
+      "No mail subscriptions": [
+        "Tidak ada langganan email"
+      ],
+      "Trash all messages?": [
+        "Buang seluruh pesan?"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Berhenti berlangganan dari ${ subscription.Name }?"
+      ],
+      "Your subscriptions in one place": [
+        "Langganan Anda di satu tempat"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14671,6 +14827,11 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Ikuti pertemuan Zoom"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Lihat dan kelola langganan buletin dan milis di sini."
       ]
     }
   }

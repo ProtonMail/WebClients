@@ -1550,6 +1550,36 @@
       "Trust key": [
         "Εμπιστοσύνη στο κλειδί",
         "Εμπιστοσύνη στα κλειδιά"
+      ],
+      "A to Z": [
+        "Α έως Ω"
+      ],
+      "Active": [
+        "Ενεργό"
+      ],
+      "Change sorting": [
+        "Αλλαγή ταξινόμησης"
+      ],
+      "Expand navigation bar to see custom views": [
+        "Ανάπτυξη γραμμής περιήγησης για προβολή προσαρμοσμένων φακέλων"
+      ],
+      "Least read": [
+        "Λιγότερο αναγνωσμένα"
+      ],
+      "Most read": [
+        "Πιο διαβασμένα"
+      ],
+      "Recently received": [
+        "Προσφάτως ληφθέντα"
+      ],
+      "Resize panel": [
+        "Αλλαγή μεγέθους πλαισίου"
+      ],
+      "Resubscribe": [
+        "Επανεγγραφή"
+      ],
+      "Unsubscribed": [
+        "Έγινε κατάργηση εγγραφής"
       ]
     },
     "action": {
@@ -5105,7 +5135,7 @@
     },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users": [
-        "Ρυθμίστε τις παραμέτρους του οικογενειακού λογαριασμού σας και προσκαλέστε χρήστες"
+        "Διαμορφώστε τον οικογενειακό σας λογαριασμό και προσκαλέστε χρήστες"
       ],
       "Invite members and get everything up and running.": [
         "Προσκαλέστε μέλη και ξεκινήστε τα πάντα."
@@ -6892,7 +6922,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8271,6 +8302,70 @@
       ],
       "One time import": [
         "Εφάπαξ εισαγωγή"
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, αρχειοθετήστε ή μετακινήστε παλιά μηνύματα ηλεκτρονικού ταχυδρομείου σε έναν φάκελο."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } ποιες συνδρομές δεν είναι πλέον σχετικές."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } από αυτά με ένα κλικ."
+      ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "${ subscription.ReceivedMessageCount } ηλεκτρονικό μήνυμα τον προηγούμενο μήνα",
+        "${ subscription.ReceivedMessageCount } ηλεκτρονικά μηνύματα τον περασμένο μήνα"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } μη αναγνωσμένο",
+        "${ subscription.UnreadMessageCount } μη αναγνωσμένα"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } ιχνηλάτης μηνυμάτων αποκλείστηκε",
+        "${ trackersCount } εφαρμογές παρακολούθησης email αποκλείστηκαν"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } ιχνηλάτης εμποδίστηκε",
+        "${ trackersCount } ιχνηλάτες εμποδίστηκαν"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Όλα τα μηνύματα από αυτήν τη λίστα αλληλογραφίας θα επισημαίνονται ως αναγνωσμένα."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Όλα τα μηνύματα από αυτήν τη λίστα αλληλογραφίας θα μετακινηθούν στο Αρχείο."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Όλα τα μηνύματα από αυτήν τη λίστα αλληλογραφίας θα μετακινηθούν στον Κάδο Απορριμάτων."
+      ],
+      "Apply to future messages ": [
+        "Εφαρμογή στα μελλοντικά μηνύματα "
+      ],
+      "Archive existing messages": [
+        "Αρχειοθετήστε υπάρχοντα μηνύματα"
+      ],
+      "Bulk delete": [
+        "Μαζική διαγραφή"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Διαχειριστείτε εύκολα και καταργήστε την εγγραφή σας από ενημερωτικά δελτία και λίστες αλληλογραφίας."
+      ],
+      "Mark all as read": [
+        "Σήμανση όλων ως αναγνωσμένα"
+      ],
+      "Optional": [
+        "Προαιρετικό"
+      ],
+      "Quickly spot": [
+        "Εντοπίστε γρήγορα"
+      ],
+      "Trash existing messages": [
+        "Διαγράψτε υπάρχοντα μηνύματα"
+      ],
+      "Unsubscribe": [
+        "Απεγγραφή"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
       ]
     },
     "info": {
@@ -9145,6 +9240,27 @@
       ],
       "Weak password": [
         "Αδύναμος κωδικός πρόσβασης"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Επισήμανση όλων των μηνυμάτων ως αναγνωσμένα"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Μετακίνηση όλων των μηνυμάτων στον φάκελο ${ boldFolderName }"
+      ],
+      "Active filter:": [
+        "Ενεργό φίλτρο:"
+      ],
+      "Apply to future messages": [
+        "Εφαρμογή στα μελλοντικά μηνύματα"
+      ],
+      "Mail subscriptions": [
+        "Συνδρομές Mail"
+      ],
+      "Move messages to": [
+        "Μετακίνηση μηνυμάτων σε"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Το φίλτρο είναι απενεργοποιημένο. Μπορείτε να το ενεργοποιήσετε ${ settingsLink }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9463,6 +9579,9 @@
       ],
       "here": [
         "εδώ"
+      ],
+      "Views": [
+        "Προβολές"
       ]
     },
     "Link to calendar event": {
@@ -14367,6 +14486,30 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Archive all messages?": [
+        "Αρχειοθέτηση όλων των μηνυμάτων;"
+      ],
+      "Mail subscriptions": [
+        "Συνδρομές Mail"
+      ],
+      "Mail Subscriptions": [
+        "Συνδρομές Mail"
+      ],
+      "Mark all messages as read": [
+        "Επισήμανση όλων των μηνυμάτων ως αναγνωσμένα"
+      ],
+      "No mail subscriptions": [
+        "Καμία συνδρομή email"
+      ],
+      "Trash all messages?": [
+        "Αποστολή όλων των μηνυμάτων στον κάδο απορριμμάτων;"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Κατάργηση εγγραφής από ${ subscription.Name };"
+      ],
+      "Your subscriptions in one place": [
+        "Οι συνδρομές σας σε ένα μέρος"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15003,6 +15146,11 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Δείτε και διαχειριστείτε τις συνδρομές ενημερωτικών δελτίων και λιστών αλληλογραφίας εδώ."
       ]
     }
   }

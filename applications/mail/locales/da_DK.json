@@ -1547,6 +1547,18 @@
       ],
       "Use ${ PASS_APP_NAME } for Business": [
         "Brug ${ PASS_APP_NAME } for Business"
+      ],
+      "Connect apps and devices": [
+        "Forbind apps og enheder"
+      ],
+      "More options for accounts": [
+        "Flere muligheder for konti"
+      ],
+      "Most read": [
+        "Mest læste"
+      ],
+      "Set up email forwarding": [
+        "Indstil videresendelse af e-mail"
       ]
     },
     "action": {
@@ -1612,6 +1624,9 @@
       "${ users } user": [
         "${ users } bruger",
         "${ users } brugere"
+      ],
+      "${ price } per seat": [
+        "${ price } per plads"
       ]
     },
     "Alert": {
@@ -1844,6 +1859,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Ubegrænsede indlogninger, betalingskort, hide-my-email-aliasser og mere"
       ]
     },
     "BF2024: Offers": {
@@ -3829,6 +3847,12 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkl synkronisering og planlægning med delte kalendere."
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Videresend automatisk indkommende e-mails til en anden e-mailadresse."
+      ],
+      "To start, give your organization a name.": [
+        "Start med at give deres organisation et navn."
       ]
     },
     "description": {
@@ -6732,7 +6756,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8066,6 +8091,35 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Dit abonnement vil automatisk blive fornyet den ${ renewalTime }."
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } e-mail-tracker blokeret",
+        "${ trackersCount } e-mail-trackere blokeret"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } tracker blokeret",
+        "${ trackersCount } trackere blokeret"
+      ],
+      "Apply to future messages ": [
+        "Anvend på fremtidige beskeder "
+      ],
+      "It's better to have:": [
+        "Det er bedre at have:"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Det er bedst at bruge en VPN til enhver tid. Men her er, hvornår cybertrusler kan være højest:"
+      ],
+      "On public WiFi networks": [
+        "På offentlige WiFi-netværk"
+      ],
+      "Password must have:": [
+        "Adgangskoden skal have:"
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Hold forbindelsen ubesværet ved at aktivere følgende VPN-indstillinger:"
+      ],
+      "Trash existing messages": [
+        "Flyt eksisterende beskeder til Papirkurv"
       ]
     },
     "info": {
@@ -8932,6 +8986,12 @@
       ],
       "Your location": [
         "Din placering"
+      ],
+      "Apply to future messages": [
+        "Anvend på fremtidige beskeder"
+      ],
+      "Vulnerable password": [
+        "Sårbar adgangskode"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9235,6 +9295,15 @@
       ],
       "Types of recovery methods": [
         "Typer af gendannelsesmetoder"
+      ],
+      "How to share a calendar": [
+        "Sådan deles en kalender"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Sådan bruges ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Views": [
+        "Visninger"
       ]
     },
     "Link to calendar event": {
@@ -10220,6 +10289,9 @@
       ],
       "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
         "Beskyt din familie med alle premium funktioner i ${ PASS_SHORT_APP_NAME } Plus til 6 brugere."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Betal én gang, beskyt dine adgangskoder og identitet for evigt."
       ]
     },
     "new_plans: title": {
@@ -11879,6 +11951,9 @@
       ],
       "Your subscription will renew at the same rate every year.": [
         "Dit abonnement fornyes til samme pris hvert år."
+      ],
+      "The special offer is valid for the first 2 years.": [
+        "Dette særtilbud gælder i de første 2 år."
       ]
     },
     "specialoffer: Link": {
@@ -13958,6 +14033,39 @@
       ],
       "When is it most important to use a VPN?": [
         "Hvornår er det vigtigst at bruge en VPN?"
+      ],
+      "Anytime, anywhere access": [
+        "Altid, overalt adgang"
+      ],
+      "Archive all messages?": [
+        "Arkivere alle beskeder?"
+      ],
+      "Connect apps and devices": [
+        "Forbind apps og enheder"
+      ],
+      "Get more from your VPN": [
+        "Få mere ud af deres VPN"
+      ],
+      "Increase security with ${ VPN_APP_NAME }": [
+        "Styrk din sikkerhed med ${ VPN_APP_NAME }"
+      ],
+      "Mark all messages as read": [
+        "Marker alle meddelelser som læste"
+      ],
+      "No mail subscriptions": [
+        "Ingen e-mailabonnementer"
+      ],
+      "Simplify password management": [
+        "Forenkle adgangskodehåndtering"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Afmeld fra ${ subscription.Name }?"
+      ],
+      "VPN explained": [
+        "VPN forklaret"
+      ],
+      "Your subscriptions in one place": [
+        "Dine abonnementer ét sted"
       ]
     },
     "Today icon tooltip in mini calendar": {

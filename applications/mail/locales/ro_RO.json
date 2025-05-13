@@ -1556,6 +1556,36 @@
         "Cheie de încredere",
         "Chei de încredere",
         "Chei de încredere"
+      ],
+      "A to Z": [
+        "De la A la Z"
+      ],
+      "Active": [
+        "Activ"
+      ],
+      "Change sorting": [
+        "Modificare sortare"
+      ],
+      "Expand navigation bar to see custom views": [
+        "Extindeți bara de navigare pentru a vedea vizualizările personale"
+      ],
+      "Least read": [
+        "Cel mai puțin citit"
+      ],
+      "Most read": [
+        "Cele mai citit"
+      ],
+      "Recently received": [
+        "Primite recent"
+      ],
+      "Resize panel": [
+        "Redimensionare panou"
+      ],
+      "Resubscribe": [
+        "Reabonare"
+      ],
+      "Unsubscribed": [
+        "Dezabonat"
       ]
     },
     "action": {
@@ -6998,7 +7028,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8402,6 +8434,74 @@
       ],
       "One time import": [
         "Importare unică"
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, arhivare sau mutare mesaje vechi într-un folder."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } care abonamente nu mai sunt relevante."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } de la ele printr-un singur clic."
+      ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "Mesaje luna trecută: ${ subscription.ReceivedMessageCount }",
+        "Mesaje luna trecută: ${ subscription.ReceivedMessageCount }",
+        "Mesaje luna trecută: ${ subscription.ReceivedMessageCount }"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "Necitite: ${ subscription.UnreadMessageCount }",
+        "Necitite: ${ subscription.UnreadMessageCount }",
+        "Necitite: ${ subscription.UnreadMessageCount }"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "Instrumente de urmărire din e-mail blocate: ${ trackersCount }",
+        "Instrumente de urmărire din e-mail blocate: ${ trackersCount }",
+        "Instrumente de urmărire din e-mail blocate: ${ trackersCount }"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "Instrumente de urmărire blocate: ${ trackersCount }",
+        "Instrumente de urmărire blocate: ${ trackersCount }",
+        "Instrumente de urmărire blocate: ${ trackersCount }"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Toate mesajele din această listă de adrese vor fi marcate ca fiind citite."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Toate mesajele din această listă adrese vor fi mutate în arhivă."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Toate mesajele din această listă adrese vor fi mutate în gunoi."
+      ],
+      "Apply to future messages ": [
+        "Aplicare la mesajele viitoare"
+      ],
+      "Archive existing messages": [
+        "Arhivare mesaje existente"
+      ],
+      "Bulk delete": [
+        "Ștergere în masă"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Gestionați cu ușurință și efectuați dezabonarea de la buletine informative și liste de adrese."
+      ],
+      "Mark all as read": [
+        "Marcare toate ca citite"
+      ],
+      "Optional": [
+        "Opțional"
+      ],
+      "Quickly spot": [
+        "Identificare rapidă"
+      ],
+      "Trash existing messages": [
+        "Golire mesaje din gunoi"
+      ],
+      "Unsubscribe": [
+        "Dezabonare"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate"
       ]
     },
     "info": {
@@ -9282,6 +9382,27 @@
       ],
       "Weak password": [
         "Parolă slabă"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Marcare toate mesajele ca fiind citite"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Mutare toate mesajele în ${ boldFolderName }"
+      ],
+      "Active filter:": [
+        "Filtru activ:"
+      ],
+      "Apply to future messages": [
+        "Aplicare la mesajele viitoare"
+      ],
+      "Mail subscriptions": [
+        "Abonamente Mail"
+      ],
+      "Move messages to": [
+        "Mutare mesaje în"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Filtrul este dezactivat. Puteți să-l activați în ${ settingsLink }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9600,6 +9721,9 @@
       ],
       "here": [
         "aici"
+      ],
+      "Views": [
+        "Vizualizări"
       ]
     },
     "Link to calendar event": {
@@ -14606,6 +14730,30 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Bun venit la ${ BRAND_NAME } for Business"
+      ],
+      "Archive all messages?": [
+        "Arhivați toate mesajele?"
+      ],
+      "Mail subscriptions": [
+        "Abonamente pe e-mail"
+      ],
+      "Mail Subscriptions": [
+        "Abonamente pe e-mail"
+      ],
+      "Mark all messages as read": [
+        "Marcare toate mesajele ca fiind citite"
+      ],
+      "No mail subscriptions": [
+        "Nu sunt abonamente pe e-mail"
+      ],
+      "Trash all messages?": [
+        "Ștergeți toate mesajele?"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Vă dezabonați de la ${ subscription.Name }?"
+      ],
+      "Your subscriptions in one place": [
+        "Abonamentele personale într-un singur loc"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15314,6 +15462,11 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Accesare conferință Zoom"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Aici vizualizați și gestionați abonamentele la buletine informative și la listele de adrese."
       ]
     }
   }

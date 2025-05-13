@@ -1562,6 +1562,36 @@
         "Давяраць ключам",
         "Давяраць ключам",
         "Давяраць ключам"
+      ],
+      "A to Z": [
+        "Ад А да Я"
+      ],
+      "Active": [
+        "Актыўныя"
+      ],
+      "Change sorting": [
+        "Змяніць сартаванне"
+      ],
+      "Expand navigation bar to see custom views": [
+        "Разгарнуць панэль навігацыі, каб убачыць карыстальніцкія выгляды"
+      ],
+      "Least read": [
+        "Найменш прачытанае"
+      ],
+      "Most read": [
+        "Найбольш прачытанае"
+      ],
+      "Recently received": [
+        "Нядаўна атрыманыя"
+      ],
+      "Resize panel": [
+        "Змяніць памер панэлі"
+      ],
+      "Resubscribe": [
+        "Аднавіць падпіску"
+      ],
+      "Unsubscribed": [
+        "Падпіска скасавана"
       ]
     },
     "action": {
@@ -7114,7 +7144,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8530,28 +8563,28 @@
         "Маленькія і вялікія літары"
       ],
       "${ subscription.ReceivedMessageCount } email last month": [
-        "${ subscription.ReceivedMessageCount } электронны ліст за мінулы месяц",
-        "${ subscription.ReceivedMessageCount } электронных ліста за мінулы месяц",
-        "${ subscription.ReceivedMessageCount } электронных лістоў за мінулы месяц",
-        "${ subscription.ReceivedMessageCount } электронных лістоў за мінулы месяц"
+        "${ subscription.ReceivedMessageCount } ліст у мінулым месяцы",
+        "${ subscription.ReceivedMessageCount } лісты ў мінулым месяцы",
+        "${ subscription.ReceivedMessageCount } лістоў у мінулым месяцы",
+        "${ subscription.ReceivedMessageCount } лістоў у мінулым месяцы"
       ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } непрачытанае",
-        "${ subscription.UnreadMessageCount } непрачытаных",
+        "${ subscription.UnreadMessageCount } непрачытаныя",
         "${ subscription.UnreadMessageCount } непрачытаных",
         "${ subscription.UnreadMessageCount } непрачытаных"
       ],
       "${ trackersCount } email tracker blocked": [
         "Заблакіравана ${ trackersCount } праграма сачэння электроннай пошты",
-        "Заблакіравана ${ trackersCount } праграмы сачэння электроннай пошты",
-        "Заблакіравана ${ trackersCount } праграм сачэння электроннай пошты",
-        "Заблакіравана ${ trackersCount } праграм сачэння электроннай пошты"
+        "Заблакіраваны ${ trackersCount } праграмы сачэння электроннай пошты",
+        "Заблакіраваны ${ trackersCount } праграм сачэння электроннай пошты",
+        "Заблакіраваны ${ trackersCount } праграм сачэння электроннай пошты"
       ],
       "${ trackersCount } tracker blocked": [
         "Заблакіравана ${ trackersCount } праграма сачэння",
-        "Заблакіравана ${ trackersCount } праграмы сачэння",
-        "Заблакіравана ${ trackersCount } праграм сачэння",
-        "Заблакіравана ${ trackersCount } праграм сачэння"
+        "Заблакіраваны ${ trackersCount } праграмы сачэння",
+        "Заблакіраваны ${ trackersCount } праграм сачэння",
+        "Заблакіраваны ${ trackersCount } праграм сачэння"
       ],
       "and more.": [
         "і іншым."
@@ -8569,10 +8602,10 @@
         "Па прычыне канфігурацыі атрымальніка гэта паведамленне з тэрмінам дзеяння не можа быць адпраўлена наступным кантактам: "
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
-        "Лёгка кіруйце рассылкамі і спісамі рассылкі, а таксама скасоўвайце падпіску на іх."
+        "Без намаганняў кіруйце і адпісвайцеся ад інфармацыйнай рассылкі, а таксама спіса рассылкі."
       ],
       "Mark all as read": [
-        "Адзначыць усё прачытанымі"
+        "Пазначыць усе як прачытаныя"
       ],
       "One time import": [
         "Аднаразовае імпартаванне"
@@ -8581,7 +8614,40 @@
         "Неабавязкова"
       ],
       "Trash existing messages": [
-        "Выдаліць існуючыя паведамленні са Сметніцы/са Смецця"
+        "Перамясціць у сметніцу існуючыя паведамленні"
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, архівацыя або перамяшчэнне старых лістоў у папку."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } падпісак, якія больш не з'яўляюцца для вас актуальнымі."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } ад іх адным націскам мышы."
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Усе паведамленні з гэтага спіса рассылкі будуць пазначаны як прачытаныя."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Усе паведамленні з гэтага спіса рассылкі будуць перамешчаны ў архіў."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Усе паведамленні са спіса рассылкі будуць перамешчаны ў сметніцу"
+      ],
+      "Apply to future messages ": [
+        "Ужыць да будучых паведамленняў "
+      ],
+      "Bulk delete": [
+        "Масавае выдаленне"
+      ],
+      "Quickly spot": [
+        "Хуткае выяўленне"
+      ],
+      "Unsubscribe": [
+        "Адпісацца"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
       ]
     },
     "info": {
@@ -9311,7 +9377,7 @@
         "Паштовы індэкс"
       ],
       "Proration": [
-        "Прапарцыйнае размеркаванне"
+        "Прапарцыянальнае размеркаванне"
       ],
       "Public keys": [
         "Публічныя ключы"
@@ -9468,6 +9534,27 @@
       ],
       "Weak password": [
         "Ненадзейны пароль"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Пазначыць усе паведамленні як прачытаныя"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Перамясціць усе паведамленні ў ${ boldFolderName }"
+      ],
+      "Active filter:": [
+        "Актыўны фільтр:"
+      ],
+      "Apply to future messages": [
+        "Ужыць да будучых паведамленняў"
+      ],
+      "Mail subscriptions": [
+        "Падпіскі пошты"
+      ],
+      "Move messages to": [
+        "Перамясціць паведамленні ў"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Фільтр адключаны. Вы можаце ўключыць яго ў ${ settingsLink }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9786,6 +9873,9 @@
       ],
       "here": [
         "тут"
+      ],
+      "Views": [
+        "Прагляды"
       ]
     },
     "Link to calendar event": {
@@ -14934,6 +15024,30 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "Archive all messages?": [
+        "Архіваваць усе паведамленні?"
+      ],
+      "Mail subscriptions": [
+        "Падпіскі пошты"
+      ],
+      "Mail Subscriptions": [
+        "Падпіскі пошты"
+      ],
+      "Mark all messages as read": [
+        "Пазначыць усе паведамленні як прачытаныя"
+      ],
+      "No mail subscriptions": [
+        "Няма паштовых падпісак"
+      ],
+      "Trash all messages?": [
+        "Перамясціць у сметніцу ўсе паведамленні?"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Скасаваць падпіску на ${ subscription.Name }?"
+      ],
+      "Your subscriptions in one place": [
+        "Вашы падпіскі ў адным месцы"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15664,6 +15778,11 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Праглядайце і кіруйце інфармацыйнай рассылкай і падпіскамі спіса рассылкі ў гэтым месцы."
       ]
     }
   }

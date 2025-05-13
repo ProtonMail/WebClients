@@ -1550,6 +1550,36 @@
       "Trust key": [
         "Klarér nøkkel",
         "Klarér nøkler"
+      ],
+      "A to Z": [
+        "A til Å"
+      ],
+      "Active": [
+        "Aktiv"
+      ],
+      "Change sorting": [
+        "Endre sortering"
+      ],
+      "Expand navigation bar to see custom views": [
+        "Utvid navigasjonslinjen for å se egendefinerte visninger"
+      ],
+      "Least read": [
+        "Minst lest"
+      ],
+      "Most read": [
+        "Mest lest"
+      ],
+      "Recently received": [
+        "Nylig mottatt"
+      ],
+      "Resize panel": [
+        "Endre størrelse på panel"
+      ],
+      "Resubscribe": [
+        "Abonner på nytt"
+      ],
+      "Unsubscribed": [
+        "Abonnement avsluttet"
       ]
     },
     "action": {
@@ -5937,6 +5967,18 @@
       ],
       "Other": [
         "Annen"
+      ],
+      "Import from Google": [
+        "Importer fra Google"
+      ],
+      "Import from other": [
+        "Importer fra andre"
+      ],
+      "Import from Outlook": [
+        "Importer fra Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importer fra Yahoo"
       ]
     },
     "Import warning": {
@@ -6880,7 +6922,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8253,6 +8296,76 @@
       "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
         "På grunn av mottakerens konfigurasjon kan ikke denne meldingen sendes med en utløpsdato til følgende kontakt: ",
         "På grunn av mottakerens konfigurasjon kan ikke denne meldingen sendes med en utløpsdato til følgende kontakter: "
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, arkiver eller flytt gamle e-poster til en mappe."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } hvilke abonnementer som ikke lenger er relevante."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } på dem med ett klikk."
+      ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "${ subscription.ReceivedMessageCount } e-post forrige måned",
+        "${ subscription.ReceivedMessageCount } e-poster forrige måned"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } ulest",
+        "${ subscription.UnreadMessageCount } uleste"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } e-postsporer blokkert",
+        "${ trackersCount } e-postsporere blokkert"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } sporer blokkert",
+        "${ trackersCount } sporere blokkert"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Alle meldinger fra denne e-postlisten vil bli merket som lest."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Alle meldinger fra denne e-postlisten vil bli flyttet til arkivet."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Alle meldinger fra denne e-postlisten vil bli flyttet til papirkurven."
+      ],
+      "Apply to future messages ": [
+        "Anvend på fremtidige meldinger "
+      ],
+      "Archive existing messages": [
+        "Arkiver eksisterende meldinger"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Ta med dine meldinger, kontakter og kalendere til ${ BRAND_NAME }."
+      ],
+      "Bulk delete": [
+        "Massesletting"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Administrer og meld deg av nyhetsbrev og e-postlister enkelt."
+      ],
+      "Mark all as read": [
+        "Merk alle som lest"
+      ],
+      "One time import": [
+        "Engangsimport"
+      ],
+      "Optional": [
+        "Valgfritt"
+      ],
+      "Quickly spot": [
+        "Identifiser raskt"
+      ],
+      "Trash existing messages": [
+        "Slett eksisterende meldinger"
+      ],
+      "Unsubscribe": [
+        "Avslutt abonnementet"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Du er bare noen få klikk unna en ryddig innboks"
       ]
     },
     "info": {
@@ -9127,6 +9240,27 @@
       ],
       "Weak password": [
         "Svakt passord"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Merk alle meldinger som lest"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Flytt alle meldinger til ${ boldFolderName }"
+      ],
+      "Active filter:": [
+        "Aktivt filter:"
+      ],
+      "Apply to future messages": [
+        "Anvend på fremtidige meldinger"
+      ],
+      "Mail subscriptions": [
+        "E-postabonnementer"
+      ],
+      "Move messages to": [
+        "Flytt meldinger til"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Filteret er deaktivert. Du kan aktivere det ${ settingsLink }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9445,6 +9579,9 @@
       ],
       "here": [
         "her"
+      ],
+      "Views": [
+        "Visninger"
       ]
     },
     "Link to calendar event": {
@@ -10450,6 +10587,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Lås opp alle ${ BRAND_NAME }-premiumprodukter og funksjoner for bare ${ priceLine }. Avslutt når som helst."
+      ],
+      "Starting from ${ priceLine }": [
+        "Starter fra ${ priceLine }"
       ]
     },
     "new_plans: title": {
@@ -14331,6 +14471,30 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "Archive all messages?": [
+        "Arkivere alle meldinger?"
+      ],
+      "Mail subscriptions": [
+        "E-postabonnementer"
+      ],
+      "Mail Subscriptions": [
+        "E-postabonnementer"
+      ],
+      "Mark all messages as read": [
+        "Merk alle meldinger som lest"
+      ],
+      "No mail subscriptions": [
+        "Ingen e-postabonnementer"
+      ],
+      "Trash all messages?": [
+        "Slette alle meldinger?"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Avslutte abonnementet på ${ subscription.Name }?"
+      ],
+      "Your subscriptions in one place": [
+        "Dine abonnementer på ett sted"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14982,6 +15146,11 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Bli med på Zoom-møte"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Vis og administrer abonnementer på nyhetsbrev og e-postlister her."
       ]
     }
   }

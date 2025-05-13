@@ -1550,6 +1550,36 @@
       "Trust key": [
         "Considera attendibile la chiave",
         "Considera attendibili le chiavi"
+      ],
+      "A to Z": [
+        "Dalla A alla Z"
+      ],
+      "Active": [
+        "Attiva"
+      ],
+      "Change sorting": [
+        "Cambia ordinamento"
+      ],
+      "Expand navigation bar to see custom views": [
+        "Espandi la barra di navigazione per mostrare le visualizzazioni personalizzate"
+      ],
+      "Least read": [
+        "Meno letti"
+      ],
+      "Most read": [
+        "Più letti"
+      ],
+      "Recently received": [
+        "Ricevuti di recente"
+      ],
+      "Resize panel": [
+        "Ridimensiona pannello"
+      ],
+      "Resubscribe": [
+        "Riabbonati"
+      ],
+      "Unsubscribed": [
+        "Iscrizione annullata"
       ]
     },
     "action": {
@@ -6892,7 +6922,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -8271,6 +8302,70 @@
       ],
       "One time import": [
         "Importazione una tantum"
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, archivia o sposta le vecchie email in una cartella."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } quali abbonamenti non sono più rilevanti."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } da loro con un clic."
+      ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "${ subscription.ReceivedMessageCount } email il mese scorso",
+        "${ subscription.ReceivedMessageCount } email il mese scorso"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } non letto",
+        "${ subscription.UnreadMessageCount } non letti"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } tracker email bloccato",
+        "${ trackersCount } tracker email bloccati"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } tracker bloccato",
+        "${ trackersCount } tracker bloccati"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Tutti i messaggi di questa mailing list verranno segnati come letti."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Tutti i messaggi di questa mailing list verranno spostati nell’archivio."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Tutti i messaggi di questa mailing list verranno spostati nel cestino."
+      ],
+      "Apply to future messages ": [
+        "Applica ai messaggi futuri "
+      ],
+      "Archive existing messages": [
+        "Archivia i messaggi esistenti"
+      ],
+      "Bulk delete": [
+        "Eliminazione in blocco"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Gestisci facilmente e annulla l'iscrizione a newsletter e mailing list."
+      ],
+      "Mark all as read": [
+        "Segna tutti come letti"
+      ],
+      "Optional": [
+        "Opzionale"
+      ],
+      "Quickly spot": [
+        "Individua rapidamente"
+      ],
+      "Trash existing messages": [
+        "Sposta i messaggi esistenti nel cestino"
+      ],
+      "Unsubscribe": [
+        "Annulla l'iscrizione"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Sei a pochi clic da una posta in arrivo organizzata"
       ]
     },
     "info": {
@@ -9148,6 +9243,27 @@
       ],
       "Weak password": [
         "Password debole"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Segna tutti i messaggi come letti"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Sposta tutti i messaggi in ${ boldFolderName }"
+      ],
+      "Active filter:": [
+        "Filtro attivo:"
+      ],
+      "Apply to future messages": [
+        "Applica ai messaggi futuri"
+      ],
+      "Mail subscriptions": [
+        "Abbonamenti alle email"
+      ],
+      "Move messages to": [
+        "Sposta i messaggi in"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Il filtro è disattivato. Puoi attivarlo ${ settingsLink }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9466,6 +9582,9 @@
       ],
       "here": [
         "qui"
+      ],
+      "Views": [
+        "Visualizzazioni"
       ]
     },
     "Link to calendar event": {
@@ -14375,6 +14494,30 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "Archive all messages?": [
+        "Archiviare tutti i messaggi?"
+      ],
+      "Mail subscriptions": [
+        "Abbonamenti alle email"
+      ],
+      "Mail Subscriptions": [
+        "Abbonamenti alle email"
+      ],
+      "Mark all messages as read": [
+        "Segna tutti i messaggi come letti"
+      ],
+      "No mail subscriptions": [
+        "Nessun abbonamento alle email"
+      ],
+      "Trash all messages?": [
+        "Spostare tutti i messaggi nel cestino?"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Annullare l'iscrizione da ${ subscription.Name }?"
+      ],
+      "Your subscriptions in one place": [
+        "I tuoi abbonamenti in un unico posto"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15011,6 +15154,151 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Ottieni"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB di archiviazione"
+      ],
+      "200 GB storage": [
+        "200 GB di spazio di archiviazione"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB di archiviazione crittografata"
+      ],
+      "Add unlimited credit cards": [
+        "Aggiungi carte di credito illimitate"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Tutte le funzionalità premium di ${ BRAND_NAME } Mail, Pass, VPN, Drive e Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blocca annunci, tracker e malware"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Gli sconti si basano sul prezzo mensile standard. Al termine del ciclo di fatturazione, il tuo abbonamento si rinnoverà al costo annuale standard."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Raddoppia l'archiviazione crittografata: ottieni 1 TB per tutti i tuoi dati"
+      ],
+      "Encrypted password manager": [
+        "Gestore di password crittografato"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Ecco un regalo esclusivo per celebrare il nostro percorso insieme."
+      ],
+      "High speed streaming with VPN": [
+        "Streaming ad alta velocità con VPN"
+      ],
+      "of privacy": [
+        "di privacy"
+      ],
+      "Online document editor": [
+        "Editor di documenti online"
+      ],
+      "Online privacy for up to 2 people": [
+        "Privacy online per un massimo di 2 persone"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Privacy online per tutta la famiglia (fino a 6 utenti)"
+      ],
+      "Protect up to 10 devices": [
+        "Proteggi fino a 10 dispositivi"
+      ],
+      "Recover previous file versions": [
+        "Recupero di versioni precedenti dei file"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Risparmia sulle funzionalità premium di Drive con uno sconto a tempo limitato."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Risparmia sulle funzionalità premium di Mail con uno sconto a tempo limitato."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Risparmia sulle funzionalità premium di Pass con uno sconto a tempo limitato."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Risparmia sulle funzionalità VPN premium con uno sconto a tempo limitato."
+      ],
+      "Save time with built-in 2FA": [
+        "Risparmia tempo con l'autenticazione a due fattori integrata"
+      ],
+      "Secure email with unlimited aliases": [
+        "Email sicura con alias illimitati"
+      ],
+      "Select any server": [
+        "Seleziona qualsiasi server"
+      ],
+      "Share passwords easily": [
+        "Condividi le password facilmente"
+      ],
+      "Short @pm.me address": [
+        "Indirizzo email breve @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Guarda i tuoi contenuti preferiti"
+      ],
+      "thanks to you": [
+        "grazie a te"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Triplica l'archiviazione crittografata: ottieni 3 TB per tutti i tuoi dati"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Cartelle, etichette e filtri illimitati"
+      ],
+      "Use your own email domain": [
+        "Utilizzo del tuo dominio di posta personalizzato"
+      ],
+      "years": [
+        "anni"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Offerta anniversario"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } mese",
+        "${ n } mesi"
+      ],
+      "/ month": [
+        "/mese"
+      ],
+      "12 months": [
+        "12 mesi"
+      ],
+      "15 months": [
+        "15 mesi"
+      ],
+      "24 months": [
+        "24 mesi"
+      ],
+      "30 months": [
+        "30 mesi"
+      ],
+      "for ${ durationDeal }": [
+        "per ${ durationDeal }"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } ?": [
+        "${ LUMO_APP_NAME } è un'IA orientata alla privacy che ti aiuta a fare di più, mantenendo sicuri i tuoi dati. Sblocca tutto il suo potenziale e goditi l'accesso anticipato alle nuove funzionalità non appena saranno introdotte."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Aggiungi ${ LUMO_APP_NAME }"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Visualizza e gestisci qui gli abbonamenti alla newsletter e alla mailing list."
       ]
     }
   }

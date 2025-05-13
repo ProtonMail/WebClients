@@ -1577,6 +1577,9 @@
       ],
       "Unsubscribed": [
         "Suscripción cancelada"
+      ],
+      "Resize panel": [
+        "Redimensionar panel"
       ]
     },
     "action": {
@@ -6919,7 +6922,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar una imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8343,7 +8347,7 @@
         "Opcional"
       ],
       "Quickly spot": [
-        "Detectar inmediatamente"
+        "Detecta inmediatamente"
       ],
       "Trash existing messages": [
         "Borrar los mensajes existentes"
@@ -8353,6 +8357,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Estás a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, archiva o mueve los correos electrónicos antiguos a una carpeta."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } las suscripciones que ya no son relevantes."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } de ellos con un solo clic."
       ]
     },
     "info": {
@@ -9242,6 +9255,15 @@
       ],
       "Move messages to": [
         "Mover mensajes a"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Marcar todos los mensajes como leídos"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Mover todos los mensajes a ${ boldFolderName }"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "El filtro está desactivado. Puedes activarlo ${ settingsLink }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15138,6 +15160,146 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "Aquí puedes ver y administrar las suscripciones a boletines y listas de correo."
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Aprovecha la oferta"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "200 GB storage": [
+        "200 GB de almacenamiento"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB de almacenamiento cifrado"
+      ],
+      "Add unlimited credit cards": [
+        "Añade tarjetas de crédito ilimitadas"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Todas las funciones prémium de ${ BRAND_NAME } Mail, Pass, VPN, Drive y Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloquea anuncios, rastreadores y malware"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Los descuentos se basan en el precio mensual estándar. Al final del ciclo de facturación, tu suscripción se renovará a la tarifa anual estándar."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Duplica tu almacenamiento cifrado: obtén 1 TB para todos tus datos"
+      ],
+      "Encrypted password manager": [
+        "Gestor de contraseñas cifrado"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Aquí tienes un regalo exclusivo para celebrar nuestro viaje juntos."
+      ],
+      "High speed streaming with VPN": [
+        "Streaming de alta velocidad con VPN"
+      ],
+      "of privacy": [
+        "de privacidad"
+      ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
+      "Online privacy for up to 2 people": [
+        "Privacidad online para hasta 2 personas"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Privacidad online para toda tu familia (hasta 6 usuarios)"
+      ],
+      "Protect up to 10 devices": [
+        "Protege hasta 10 dispositivos"
+      ],
+      "Recover previous file versions": [
+        "Recuperar las versiones previas de los archivos"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Ahorra mucho en funciones prémium de Drive con un descuento por tiempo limitado."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Ahorra mucho en funciones prémium de Mail con un descuento por tiempo limitado."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Ahorra mucho en funciones prémium de Pass con un descuento por tiempo limitado."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Ahorra mucho en funciones prémium de VPN con un descuento por tiempo limitado"
+      ],
+      "Save time with built-in 2FA": [
+        "Ahorra tiempo con 2FA integrado"
+      ],
+      "Secure email with unlimited aliases": [
+        "Correo seguro con alias ilimitados"
+      ],
+      "Select any server": [
+        "Selecciona cualquier servidor"
+      ],
+      "Share passwords easily": [
+        "Comparte contraseñas fácilmente"
+      ],
+      "Short @pm.me address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Transmite tu contenido favorito"
+      ],
+      "thanks to you": [
+        "gracias a ti"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Triplica tu almacenamiento cifrado: obtén 3 TB para todos tus datos"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Número ilimitado de carpetas, etiquetas y filtros"
+      ],
+      "Use your own email domain": [
+        "Usa tu propio dominio de correo electrónico"
+      ],
+      "years": [
+        "años"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Oferta de aniversario"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ],
+      "/ month": [
+        "/ mes"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "15 months": [
+        "15 meses"
+      ],
+      "24 months": [
+        "24 meses"
+      ],
+      "30 months": [
+        "30 meses"
+      ],
+      "for ${ durationDeal }": [
+        "durante ${ durationDeal }"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } ?": [
+        "${ LUMO_APP_NAME } es una IA centrada en la privacidad que te ayuda a hacer más, mientras mantiene tus datos seguros. Desbloquea todo su potencial y disfruta de acceso anticipado a nuevas funciones a medida que se introducen."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Añadir ${ LUMO_APP_NAME }"
       ]
     }
   }

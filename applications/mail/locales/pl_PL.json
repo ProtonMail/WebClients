@@ -1363,10 +1363,7 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufaj kluczowi",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom"
+        "Zaufaj kluczowi"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -1562,6 +1559,36 @@
       ],
       "Move to folder": [
         "Przenieś do folderu"
+      ],
+      "A to Z": [
+        "Od A do Z"
+      ],
+      "Active": [
+        "Aktywne"
+      ],
+      "Change sorting": [
+        "Zmień kolejność sortowania"
+      ],
+      "Expand navigation bar to see custom views": [
+        "Rozwiń pasek nawigacji, aby zobaczyć niestandardowe widoki"
+      ],
+      "Least read": [
+        "Ostatnio przeczytane"
+      ],
+      "Most read": [
+        "Najczęściej czytane"
+      ],
+      "Recently received": [
+        "Ostatnio odebrane"
+      ],
+      "Resize panel": [
+        "Zmień rozmiar panelu"
+      ],
+      "Resubscribe": [
+        "Subskrybuj ponownie"
+      ],
+      "Unsubscribed": [
+        "Subskrypcja została anulowana"
       ]
     },
     "action": {
@@ -7114,7 +7141,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"
@@ -8543,6 +8573,78 @@
       ],
       "One time import": [
         "Jednorazowy import"
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, archiwizowanie lub przenoszenie starych wiadomości do folderu."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } nieistotnych subskrypcji."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } jednym kliknięciem."
+      ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "${ subscription.ReceivedMessageCount } wiadomość w ostatnim miesiącu",
+        "${ subscription.ReceivedMessageCount } wiadomości w ostatnim miesiącu",
+        "${ subscription.ReceivedMessageCount } wiadomości w ostatnim miesiącu",
+        "${ subscription.ReceivedMessageCount } wiadomości w ostatnim miesiącu"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } nieprzeczytana",
+        "${ subscription.UnreadMessageCount } nieprzeczytane",
+        "${ subscription.UnreadMessageCount } nieprzeczytanych",
+        "${ subscription.UnreadMessageCount } nieprzeczytanych"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "Zablokowano ${ trackersCount } element śledzący",
+        "Zablokowano ${ trackersCount } elementy śledzące",
+        "Zablokowano ${ trackersCount } elementów śledzących",
+        "Zablokowano ${ trackersCount } elementów śledzących"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "Zablokowano ${ trackersCount } element śledzący",
+        "Zablokowano ${ trackersCount } elementy śledzące",
+        "Zablokowano ${ trackersCount } elementów śledzących",
+        "Zablokowano ${ trackersCount } elementów śledzących"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Wszystkie wiadomości z listy mailingowej zostaną oznaczone jako przeczytane."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Wszystkie wiadomości z listy mailingowej zostaną przeniesione do archiwum."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Wszystkie wiadomości z listy mailingowej zostaną przeniesione do kosza."
+      ],
+      "Apply to future messages ": [
+        "Zastosuj do przyszłych wiadomości "
+      ],
+      "Archive existing messages": [
+        "Archiwizuj istniejące wiadomości"
+      ],
+      "Bulk delete": [
+        "Zbiorcze usuwanie"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Łatwe zarządzanie i anulowanie subskrypcji."
+      ],
+      "Mark all as read": [
+        "Oznacz wszystkie jako przeczytane"
+      ],
+      "Optional": [
+        "Opcjonalne"
+      ],
+      "Quickly spot": [
+        "Szybkie wykrywanie"
+      ],
+      "Trash existing messages": [
+        "Usuń istniejące wiadomości"
+      ],
+      "Unsubscribe": [
+        "Anuluj subskrypcję"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Od uporządkowanej skrzynki odbiorczej dzieli Cię kilka kliknięć"
       ]
     },
     "info": {
@@ -9429,6 +9531,27 @@
       ],
       "Weak password": [
         "Słabe hasło"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Oznacz wszystkie wiadomości jako przeczytane"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Przenieś wszystkie wiadomości do folderu ${ boldFolderName }"
+      ],
+      "Active filter:": [
+        "Aktywny filtr:"
+      ],
+      "Apply to future messages": [
+        "Zastosuj do przyszłych wiadomości"
+      ],
+      "Mail subscriptions": [
+        "Subskrypcje poczty"
+      ],
+      "Move messages to": [
+        "Przenieś wiadomość do"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Filtr jest wyłączony. Możesz go włączyć w ${ settingsLink }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9747,6 +9870,9 @@
       ],
       "here": [
         "tutaj"
+      ],
+      "Views": [
+        "Widoki"
       ]
     },
     "Link to calendar event": {
@@ -14880,6 +15006,30 @@
       ],
       "Your shorter address is now ready": [
         "Krótszy adres jest już gotowy"
+      ],
+      "Archive all messages?": [
+        "Zarchiwizować wszystkie wiadomości?"
+      ],
+      "Mail subscriptions": [
+        "Subskrypcje poczty"
+      ],
+      "Mail Subscriptions": [
+        "Subskrypcje poczty"
+      ],
+      "Mark all messages as read": [
+        "Oznacz wszystkie wiadomości jako przeczytane"
+      ],
+      "No mail subscriptions": [
+        "Brak subskrypcji poczty"
+      ],
+      "Trash all messages?": [
+        "Usunąć wszystkie wiadomości?"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Anulować subskrypcję ${ subscription.Name }?"
+      ],
+      "Your subscriptions in one place": [
+        "Twoje subskrypcje w jednym miejscu"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15619,6 +15769,153 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Dołącz do spotkania Zoom"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "200 GB storage": [
+        "200 GB przestrzeni dyskowej"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB zaszyfrowanej przestrzeni dyskowej"
+      ],
+      "Add unlimited credit cards": [
+        "Dodaj nieograniczoną liczbę kart płatniczych"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Wszystkie funkcje premium ${ BRAND_NAME } Mail, Pass, VPN, Drive i Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokuj reklamy, elementy śledzące i złośliwe oprogramowanie"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Zniżki oparte są na standardowych cenach miesięcznych. Po zakończeniu cyklu rozliczeniowego Twoja subskrypcja zostanie odnowiona według standardowej rocznej stawki."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Podwój zaszyfrowaną przestrzeń dyskową — zyskaj 1 TB i chroń wszystkie swoje dane"
+      ],
+      "Encrypted password manager": [
+        "Szyfrowany menadżer haseł"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Oto ekskluzywny prezent, którym chcemy uczcić naszą wspólną podróż."
+      ],
+      "High speed streaming with VPN": [
+        "Szybki streaming z VPN"
+      ],
+      "of privacy": [
+        "prywatności"
+      ],
+      "Online document editor": [
+        "Edytor dokumentów online"
+      ],
+      "Online privacy for up to 2 people": [
+        "Prywatność online dla maksymalnie 2 osób"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Prywatność online dla całej Twojej rodziny (do 6 osób)"
+      ],
+      "Protect up to 10 devices": [
+        "Chroń nawet 10 urządzeń"
+      ],
+      "Recover previous file versions": [
+        "Odzyskiwanie poprzednich wersji plików"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Dużo zaoszczędź na funkcjach premium Drive dzięki ograniczonej czasowo zniżce."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Dużo zaoszczędź na funkcjach premium Maila dzięki ograniczonej czasowo zniżce."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Dużo zaoszczędź na funkcjach Pass premium dzięki ograniczonej czasowo zniżce."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Dużo zaoszczędź na funkcjach VPN premium dzięki ograniczonej czasowo zniżce."
+      ],
+      "Save time with built-in 2FA": [
+        "Zaoszczędź czas dzięki wbudowanemu 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Bezpieczna poczta e-mail z nieograniczoną liczbą aliasów"
+      ],
+      "Select any server": [
+        "Wybierz dowolny serwer"
+      ],
+      "Share passwords easily": [
+        "Łatwe udostępnianie haseł"
+      ],
+      "Short @pm.me address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Streamuj ulubione treści"
+      ],
+      "thanks to you": [
+        "dzięki Tobie"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Potrój zaszyfrowaną przestrzeń dyskową — zyskaj 3 TB i chroń wszystkie swoje dane"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Nieograniczona liczba folderów, etykiet i filtrów"
+      ],
+      "Use your own email domain": [
+        "Możliwość użycia własnej domeny e-mail"
+      ],
+      "years": [
+        "lat"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Oferta jubileuszowa"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } miesiąc",
+        "${ n } miesiące",
+        "${ n } miesięcy",
+        "${ n } miesiąca"
+      ],
+      "/ month": [
+        "/ miesiąc"
+      ],
+      "12 months": [
+        "12 miesięcy"
+      ],
+      "15 months": [
+        "15 miesięcy"
+      ],
+      "24 months": [
+        "24 miesiące"
+      ],
+      "30 months": [
+        "30 miesięcy"
+      ],
+      "for ${ durationDeal }": [
+        "na ${ durationDeal }"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } ?": [
+        "${ LUMO_APP_NAME } to sztuczna inteligencja stawiająca na prywatność, która pomaga Ci osiągać więcej, dbając jednocześnie o bezpieczeństwo Twoich danych. Odblokuj jej pełny potencjał i ciesz się wczesnym dostępem do nowych funkcji, gdy tylko zostaną wprowadzone."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Dodaj ${ LUMO_APP_NAME }"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Wyświetlaj i zarządzaj subskrypcjami"
       ]
     }
   }
