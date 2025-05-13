@@ -1,4 +1,5 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import { createIconController } from 'proton-pass-extension/app/content/injections/icon/controller';
 import { type FieldHandle, type FormHandle, IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import { actionPrevented, actionTrap, withActionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 import { createAutofill } from 'proton-pass-extension/app/content/utils/autofill';
@@ -10,8 +11,6 @@ import { findBoundingInputElement } from '@proton/pass/utils/dom/input';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import throttle from '@proton/utils/throttle';
-
-import { createFieldIconHandle } from './icon';
 
 type CreateFieldHandlesOptions = {
     element: HTMLInputElement;
@@ -186,7 +185,49 @@ export const createFieldHandles = ({
                     .forEach((form) => form.getFields().forEach((field) => field.detachIcon()));
             }
 
-            field.icon = field.icon ?? createFieldIconHandle({ field, elements: ctx.elements });
+            field.icon =
+                field.icon ??
+                createIconController({
+                    input: field.element,
+                    form: field.getFormHandle().element,
+                    tag: ctx.elements.control,
+                    zIndex: field.zIndex,
+                    getAnchor: field.getBoxElement,
+                    onClick: () => {
+                        if (!field.action || !ctx) return;
+
+                        const iframe = ctx.service.iframe;
+
+                        /** If the dropdown is currently visible then close it */
+                        const visible = iframe.dropdown?.getState().visible;
+                        const attachedTo = iframe.dropdown?.getCurrentField();
+
+                        if (visible) {
+                            if (field === attachedTo) {
+                                actionTrap(field.element);
+                                field.element.focus();
+                            }
+
+                            return iframe.dropdown?.close();
+                        }
+
+                        /** If the session is locked: trigger auto-focus in the injected dropdown
+                         * for PIN unlock. Force blur the field to prevent aggressive website focus
+                         * capture. Action trap prevents icon detachment during this sequence */
+                        if (clientSessionLocked(ctx.getState().status)) {
+                            actionTrap(field.element);
+                            field.element.blur();
+                        }
+
+                        iframe?.attachDropdown(field.getFormHandle().element)?.open({
+                            frame: 'top',
+                            action: field.action.type,
+                            field,
+                        });
+                    },
+                });
+
+            field.icon.setStatus(ctx.getState().status);
             field.icon.setCount(count);
 
             return field.icon;
