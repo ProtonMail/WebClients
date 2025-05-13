@@ -188,7 +188,7 @@
         "Connecta aplicacions i dispositius"
       ],
       "Connect to video conferencing": [
-        "Connecta a la videoconferència"
+        "Connecta't a la videoconferència"
       ],
       "Contact group": [
         "Grups de contactes"
@@ -697,7 +697,7 @@
         "Estableix la frase de recuperació"
       ],
       "Set up 2FA": [
-        "Configuració 2FA"
+        "Configuració de l'A2F"
       ],
       "Set up a custom domain": [
         "Configura un domini personalitzat"
@@ -712,7 +712,7 @@
         "Compartir"
       ],
       "Share your calendar with your team": [
-        "Comparteix el calendari amb el vostre equip"
+        "Compartiu el calendari amb el vostre equip"
       ],
       "Show advanced PGP settings": [
         "Mostra la configuració avançada del PGP"
@@ -814,7 +814,7 @@
         "Utilitzar el tema ${ label }"
       ],
       "Use ${ PASS_APP_NAME } for Business": [
-        "Utilitza ${ PASS_APP_NAME } per al Business"
+        "Utilitza ${ PASS_APP_NAME } for Business"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilitza el ${ VPN_SHORT_APP_NAME } per a la privadesa de dades"
@@ -4556,7 +4556,7 @@
         "És millor tenir:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "El millor és utilitzar una VPN en tot moment. Però aquí és quan les amenaces de ciberseguretat poden ser més altes:"
+        "El millor és utilitzar una VPN en tot moment. Però aquí és quan les amenaces de ciberseguretat poden ser majors:"
       ],
       "JCB logo": [
         "Logotip de JCB"
@@ -4773,7 +4773,7 @@
         "Si us plau, exporteu una còpia dels canvis actuals des del menú principal i torneu a carregar la pàgina."
       ],
       "Please fill in all required fields.": [
-        "Ompliu tots els camps obligatoris."
+        "Empleneu tots els camps obligatoris."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Tingueu en compte que les adreces assignades a aquests grups NO se suprimeixen."
@@ -4937,7 +4937,7 @@
         "Comenceu a compartir-la amb els contactes i utilitzeu-la per als serveis en línia."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
-        "Mantingueu-vos connectat sense esforç activant la configuració VPN següent:"
+        "Mantingueu-vos connectat fàcilment activant la configuració següent de la VPN:"
       ],
       "Storage allocated to other users in this organisation": [
         "Emmagatzematge assignat a altres usuaris d'aquesta organització"
@@ -5403,7 +5403,7 @@
         "La vostra informació es va trobar el ${ displayedDate }"
       ],
       "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "El vostre proveïdor de serveis d'internet pot supervisar i de vegades vendre les vostres dades, o fins i tot restringir els llocs web als quals podeu accedir."
+        "El vostre proveïdor de serveis d'internet pot supervisar i, de vegades, vendre les vostres dades o, fins i tot, restringir els llocs web als quals podeu accedir."
       ],
       "Your IP": [
         "La vostra IP"
@@ -6078,7 +6078,7 @@
         "feu clic aquí"
       ],
       "Enforcing 2FA for organizations": [
-        "Requereix 2FA per a organitzacions"
+        "Aplicació obligatòria de l'autenticació de doble factor (A2F) per a organitzacions"
       ],
       "How to add users": [
         "Com afegir usuaris?"
@@ -6117,13 +6117,13 @@
         "Com utilitzar ${ DARK_WEB_MONITORING_NAME }?"
       ],
       "How to use ${ PASS_APP_NAME } for Business": [
-        "Com utilitzar ${ PASS_APP_NAME } per al Business?"
+        "Com utilitzar ${ PASS_APP_NAME } for Business?"
       ],
       "How to use email forwarding": [
         "Com utilitzar el reenviament de correu?"
       ],
       "How to use Groups": [
-        "Com utilitzar grups?"
+        "Com utilitzar els grups?"
       ],
       "if your data is leaked": [
         "si es filtren les vostres dades"
@@ -6576,17 +6576,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Plans a partir de ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Elimina el compte"
@@ -6608,6 +6597,17 @@
       ],
       "Switch plan": [
         "Canvia de pla"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Plans a partir de ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Millora"
       ]
     },
     "new_plans: feature": {
@@ -9003,25 +9003,6 @@
         "Per ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } d'emmagatzematge per usuari"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } us ofereix totes les aplicacions, totes les característiques, accés anticipat a les versions noves i tot el que necessiteu per a tenir el control de les vostres dades i la vostra seguretat."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } domini de correu electrònic personalitzat",
-        "${ planNumberOfDomains } dominis de correu electrònic personalitzats"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adreça de correu electrònic",
-        "${ planNumberOfEmails } adreces de correu electrònic"
-      ],
-      "Folders, labels, and custom filters": [
-        "Carpetes, etiquetes i filtres personalitzats"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB d'emmagatzematge"
@@ -9061,6 +9042,25 @@
       ],
       "Your privacy is our mission": [
         "La vostra privacitat és la nostra missió"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } d'emmagatzematge per usuari"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } us ofereix totes les aplicacions, totes les característiques, accés anticipat a les versions noves i tot el que necessiteu per a tenir el control de les vostres dades i la vostra seguretat."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domini de correu electrònic personalitzat",
+        "${ planNumberOfDomains } dominis de correu electrònic personalitzats"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adreça de correu electrònic",
+        "${ planNumberOfEmails } adreces de correu electrònic"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetes, etiquetes i filtres personalitzats"
       ]
     },
     "Subscription renewal state": {
@@ -9620,7 +9620,7 @@
         "Importa grups"
       ],
       "Information exposed in breach": [
-        "Informació exposada en la infracció"
+        "Informació exposada en la filtració"
       ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
