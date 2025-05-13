@@ -1,7 +1,8 @@
-.button-anniversary-2025 {
+button.button-anniversary-2025 {
 	--button-default-text-color: var(--primary-major-3);
 	--button-hover-text-color: var(--primary-major-3);
 	--button-active-text-color: var(--primary-major-3);
 
 	border-color: var(--primary-major-3);
+	block-size: auto !important;
 }
