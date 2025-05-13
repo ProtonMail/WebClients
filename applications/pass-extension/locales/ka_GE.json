@@ -152,10 +152,10 @@
       "Create": [
         "შექმნა"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
       "Create alias": [
@@ -392,10 +392,10 @@
       "Move to another vault": [
         "სხვა საცავში გადატანა"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "ნაგვის ყუთში გადატანა"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "ნაგვის ყუთში გადატანა"
       ],
       "Multiple select": [
@@ -1753,6 +1753,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
+      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
@@ -1900,6 +1904,21 @@
       ],
       "Please confirm your second password": [
         "დაადასტურეთ თქვენი მეორე პაროლი"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "დაადასტურეთ თქვენი მეორე პაროლი, რომ ბიომეტრიით ავტოდაბლოკვა ჩართოთ."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "დაადასტურეთ თქვენი მეორე პაროლი, რომ თქვენი პაროლით ავტოდაბლოკვა ჩართოთ."
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "დაადასტურეთ თქვნი მეორე პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "მიმდინარე ბლოკის რეგისტრაციის მოსახსნელად დაადასტურეთ თქვენი მეორე პაროლი."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "დაადასტურეთ თქვენი მეორე პაროლი, რომ ავტოდაბლოკვის დრო განაახლოთ."
       ],
       "Please consider leaving a review.": [
         "სჯობს, გახვიდეთ მიმოხილვიდან."
