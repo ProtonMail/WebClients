@@ -105,7 +105,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             });
         const cryptoFeature = measureFeaturePerformance(api, Features.globalBootstrapAppCrypto);
         cryptoFeature.start();
-        const cryptoPromise = bootstrap.loadCrypto({ appName }).finally(() => {
+        const cryptoPromise = bootstrap.loadCrypto({ appName, unleashClient }).finally(() => {
             cryptoFeature.end();
         });
 
