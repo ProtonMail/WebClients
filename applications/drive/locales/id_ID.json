@@ -978,6 +978,9 @@
       "Take a tour": [
         "Ikuti tur kami"
       ],
+      "This album is empty": [
+        "Album ini kosong"
+      ],
       "Toggle Calendar app": [
         "Tampilkan/sembunyikan aplikasi Calendar"
       ],
@@ -4200,6 +4203,18 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Impor dari ${ provider }"
+      ],
+      "Import from Google": [
+        "Impor dari Google"
+      ],
+      "Import from other": [
+        "Impor dari yang lain"
+      ],
+      "Import from Outlook": [
+        "Impor dari Outlook"
+      ],
+      "Import from Yahoo": [
+        "Masukan dari Yahoo"
       ]
     },
     "Import warning": {
@@ -4285,6 +4300,9 @@
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } di Play Store"
+      ],
+      "${ email } invited you to join ${ albumName }": [
+        "${ email } mengundang Anda untuk bergabung ke ${ albumName }"
       ],
       "${ errorCount } failed": [
         "${ errorCount } gagal terproses"
@@ -4537,6 +4555,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Angkat identitas merek organisasi Anda dan ciptakan pengalaman online yang lebih konsisten bagi para pengguna Anda."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Bawa pesan, kontak, dan kalender Anda ke ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
@@ -5138,6 +5159,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Satu atau lebih kunci terpercaya Anda telah ditandai sebagai \"bocor\" oleh pemiliknya. Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci tersebut."
       ],
+      "One time import": [
+        "Satu kali impor"
+      ],
       "Only the people with the link and the password can access this file.": [
         "Hanya mereka yang memiliki tautan dan kata sandi yang dapat mengakses berkas ini."
       ],
@@ -5206,6 +5230,9 @@
       ],
       "Photo(s) saved to your Drive": [
         "Foto disimpan ke Drive Anda"
+      ],
+      "Photos": [
+        "Foto"
       ],
       "Photos have been successfully recovered.": [
         "Foto telah berhasil dipulihkan."
@@ -6621,6 +6648,9 @@
       "Set recovery method": [
         "Tentukan metode pemulihan"
       ],
+      "Share a file, folder, or album": [
+        "Bagikan file, folder, atau album"
+      ],
       "Shared": [
         "Dibagikan"
       ],
@@ -7949,6 +7979,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Mulai dari ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Harga diskon ${ priceCoupon } ini valid untuk bulan pertama. Setelahnya, paket Anda akan diperbarui secara otomatis dengan harga ${ priceLine }. Anda dapat membatalkan langganan ini kapan saja."
       ],
@@ -10898,6 +10931,9 @@
       ],
       "Location": [
         "Lokasi"
+      ],
+      "Mail Subscriptions": [
+        "Langganan email"
       ],
       "Make a secure connection your default": [
         "Jadikan koneksi yang aman sebagai koneksi bawaan Anda"

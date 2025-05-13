@@ -36,11 +36,17 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
+      "A to Z": [
+        "A sampai Z"
+      ],
       "Activate": [
         "Aktifkan"
       ],
       "Activate recovery": [
         "Aktifkan metode pemulihan"
+      ],
+      "Active": [
+        "Aktif"
       ],
       "Add": [
         "Tambah"
@@ -188,6 +194,9 @@
       ],
       "Change page": [
         "Ubah halaman"
+      ],
+      "Change sorting": [
+        "Ubah pengurutan"
       ],
       "Chat with us": [
         "Mengobrol dengan kami"
@@ -486,6 +495,9 @@
       "Expand composer": [
         "Lebarkan komposer"
       ],
+      "Expand navigation bar to see custom views": [
+        "Lebarkan bilah navigasi untuk melihat tampilan khusus"
+      ],
       "Expand navigation bar to see folders": [
         "Lebarkan bilah navigasi untuk melihat folder"
       ],
@@ -723,6 +735,9 @@
       "Learn more": [
         "Pelajari lebih lanjut"
       ],
+      "Least read": [
+        "Paling jarang dibaca"
+      ],
       "Let's talk": [
         "Mari berbincang"
       ],
@@ -839,6 +854,9 @@
       ],
       "More search options": [
         "Opsi lainnya"
+      ],
+      "Most read": [
+        "Paling sering dibaca"
       ],
       "Move": [
         "Pindahkan"
@@ -996,6 +1014,9 @@
       "Read receipt sent": [
         "Bukti baca telah terkirim"
       ],
+      "Recently received": [
+        "Baru dihapus"
+      ],
       "Reconnect": [
         "Sambungkan kembali"
       ],
@@ -1080,8 +1101,14 @@
       "Reset to default": [
         "Atur ulang ke pengaturan bawaan"
       ],
+      "Resize panel": [
+        "Ubah ukuran panel"
+      ],
       "Restore": [
         "Pulihkan"
+      ],
+      "Resubscribe": [
+        "Berlangganan lagi"
       ],
       "Resume": [
         "Lanjutkan"
@@ -1391,6 +1418,9 @@
       ],
       "Unsubscribe": [
         "Berhenti berlangganan"
+      ],
+      "Unsubscribed": [
+        "Langganan dihentikan"
       ],
       "Unsubscribing": [
         "Menghentikan langganan"
@@ -5830,6 +5860,18 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Impor dari ${ provider }"
+      ],
+      "Import from Google": [
+        "Impor dari Google"
+      ],
+      "Import from other": [
+        "Impor dari yang lain"
+      ],
+      "Import from Outlook": [
+        "Impor dari Outlook"
+      ],
+      "Import from Yahoo": [
+        "Masukan dari Yahoo"
       ]
     },
     "Import warning": {
@@ -5855,6 +5897,15 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, arsip, atau pindah email lama ke folder."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } langganan yang tidak ada relevan lagi."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } dari mereka dengan satu klik."
       ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "${ BRAND_NAME } Scribe membantu Anda menulis email yang lebih baik secara cepat dan mudah."
@@ -6000,11 +6051,20 @@
       "${ storage } storage": [
         "Kuota penyimpanan ${ storage }"
       ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } belum dibaca"
+      ],
       "${ total } conversation": [
         "${ total } percakapan"
       ],
       "${ total } message": [
         "${ total } pesan"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } pelacak email telah diblokir"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } pelacak diblokir"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } pesan terjadwal"
@@ -6117,6 +6177,15 @@
       "All (${ totalFoldersCount } label)": [
         "Semua (${ totalFoldersCount } label)"
       ],
+      "All messages from this mailing list will be marked as read.": [
+        "Semua pesan dari milis ini akan ditandai sebagai telah dibaca."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Semua pesan dari milis ini akan dipindahkan ke Arsip."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Semua pesan dari milis ini akan dipindahkan ke Sampah."
+      ],
       "All messages stored in this folder will be permanently deleted.": [
         "Seluruh pesan yang tersimpan pada folder ini akan dihapus secara permanen."
       ],
@@ -6168,11 +6237,17 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Seluruh subfolder yang ada juga akan dihapus. Meskipun demikian, seluruh email yang tersimpan pada folder ${ nameDeleted } tidak akan dihapus dan tetap akan dapat ditemukan pada folder Semua Surat."
       ],
+      "Apply to future messages ": [
+        "Terapkan ke pesan yang akan mendatang "
+      ],
       "Applying actions to conversations": [
         "Menerapkan tindakan pada percakapan"
       ],
       "Applying actions to messages": [
         "Menerapkan tindakan pada pesan"
+      ],
+      "Archive existing messages": [
+        "Sampah pesan yang sudah ada"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Apakah Anda yakin ingin menghapus semua pesan yang ada di folder ini?"
@@ -6255,11 +6330,17 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Angkat identitas merek organisasi Anda dan ciptakan pengalaman online yang lebih konsisten bagi para pengguna Anda."
       ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Bawa pesan, kontak, dan kalender Anda ke ${ BRAND_NAME }."
+      ],
       "Browse privately and access blocked content.": [
         "Jelajahi internet secara pribadi dan akses konten yang diblokir."
       ],
       "Browser not supported": [
         "Browser tidak didukung"
+      ],
+      "Bulk delete": [
+        "Penghapusan massal"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
@@ -6473,6 +6554,9 @@
       ],
       "Each code can only be used once": [
         "Masing-masing kode hanya dapat digunakan satu kali"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Mudah kelola dan berhenti berlangganan dari buletin dan milis."
       ],
       "Edit email address": [
         "Sunting alamat email"
@@ -6819,6 +6903,9 @@
       "Manage your labels": [
         "Kelola label Anda"
       ],
+      "Mark all as read": [
+        "Tandai semua sebagai terbaca"
+      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
@@ -6960,11 +7047,17 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Satu atau lebih kunci terpercaya Anda telah ditandai sebagai \"bocor\" oleh pemiliknya. Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci tersebut."
       ],
+      "One time import": [
+        "Satu kali impor"
+      ],
       "Open shortcut cheat sheet": [
         "Buka lembar contekan pintasan"
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Buka panduan ini untuk memperoleh tindakan yang disarankan dan tautan yang dapat berguna."
+      ],
+      "Optional": [
+        "Opsional"
       ],
       "or discover other features:": [
         "atau telusuri berbagai fitur lainnya:"
@@ -7118,6 +7211,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Pembagian dokumen secara publik belum didukung."
+      ],
+      "Quickly spot": [
+        "Cepat melihat"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Hubungi kami untuk bantuan seputar segala sesuatunya yang berhubungan dengan ${ BRAND_NAME }."
@@ -7596,6 +7692,9 @@
       "Tracking": [
         "Pelacakan"
       ],
+      "Trash existing messages": [
+        "Sampah pesan yang sudah ada"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Coba berbagai fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum waktu rilisnya kepada publik. Mengubah peraturan ini akan memuat ulang halaman."
       ],
@@ -7619,6 +7718,9 @@
       ],
       "Unsaved changes": [
         "Perubahan yang belum disimpan"
+      ],
+      "Unsubscribe": [
+        "Berhenti berlangganan"
       ],
       "Unsupported file": [
         "Berkas tidak didukung"
@@ -8048,6 +8150,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Langganan Anda akan diperbarui secara otomatis pada ${ renewalTime }."
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Anda hanya tinggal beberapa klik lagi untuk memiliki kotak masuk yang rapi"
       ]
     },
     "info": {
@@ -8320,6 +8425,12 @@
       " and ${ l }": [
         " dan ${ l }"
       ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Tandai semua pesan sebagai telah dibaca"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Pindahkan semua pesan ke ${ boldFolderName }"
+      ],
       "${ BRAND_NAME } username": [
         "Nama pengguna ${ BRAND_NAME }"
       ],
@@ -8340,6 +8451,9 @@
       ],
       "Actions": [
         "Tindakan"
+      ],
+      "Active filter:": [
+        "Filter aktif:"
       ],
       "Add email address": [
         "Tambah alamat email"
@@ -8388,6 +8502,9 @@
       ],
       "Apply filter to existing emails": [
         "Terapkan filter untuk email yang sudah ada"
+      ],
+      "Apply to future messages": [
+        "Terapkan ke pesan yang akan mendatang"
       ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
@@ -8653,6 +8770,9 @@
       "Mail Server (IMAP)": [
         "Server Mail (IMAP)"
       ],
+      "Mail subscriptions": [
+        "Langganan email"
+      ],
       "Main": [
         "Utama"
       ],
@@ -8667,6 +8787,9 @@
       ],
       "Move ${ sidebarElementName }": [
         "Pindahkan ${ sidebarElementName }"
+      ],
+      "Move messages to": [
+        "Pindahkan pesan ke"
       ],
       "Move to": [
         "Pindah ke"
@@ -8836,6 +8959,9 @@
       "System information": [
         "Informasi sistem"
       ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Filter dinonaktifkan. Anda dapat mengaktifkannya ${ settingsLink }"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -8986,6 +9112,11 @@
       ],
       "To: ${ to }": [
         "Kepada: ${ to }"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Lihat dan kelola langganan buletin dan milis di sini."
       ]
     },
     "Landmarks": {
@@ -9207,6 +9338,9 @@
       ],
       "Types of recovery methods": [
         "Berbagai jenis metode pemulihan"
+      ],
+      "Views": [
+        "Lihat"
       ],
       "What’s this?": [
         "Apa ini?"
@@ -10172,6 +10306,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Mulai dari ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Harga diskon ${ priceCoupon } ini valid untuk bulan pertama. Setelahnya, paket Anda akan diperbarui secara otomatis dengan harga ${ priceLine }. Anda dapat membatalkan langganan ini kapan saja."
       ],
@@ -13114,6 +13251,9 @@
       "Archive": [
         "Arsip"
       ],
+      "Archive all messages?": [
+        "Arsip seluruh pesan?"
+      ],
       "Are you sure you want to close the preview?": [
         "Apakah Anda yakin untuk menutup pratinjau?"
       ],
@@ -13477,8 +13617,17 @@
       "Load remote content": [
         "Muat konten eksternal"
       ],
+      "Mail Subscriptions": [
+        "Langganan email"
+      ],
+      "Mail subscriptions": [
+        "Langganan email"
+      ],
       "Make a secure connection your default": [
         "Jadikan koneksi yang aman sebagai koneksi bawaan Anda"
+      ],
+      "Mark all messages as read": [
+        "Tandai semua pesan sebagai telah dibaca"
       ],
       "Mark as read": [
         "Tandai telah dibaca"
@@ -13593,6 +13742,9 @@
       ],
       "No breaches detected": [
         "Tidak ada kebocoran yang terdeteksi"
+      ],
+      "No mail subscriptions": [
+        "Tidak ada langganan email"
       ],
       "No need to empty the trash": [
         "Tanpa perlu mengosongkan kotak sampah"
@@ -13837,6 +13989,9 @@
       "Trash": [
         "Sampah"
       ],
+      "Trash all messages?": [
+        "Buang seluruh pesan?"
+      ],
       "Trust new key?": [
         "Percaya kunci baru?"
       ],
@@ -13851,6 +14006,9 @@
       ],
       "Unsubscribe": [
         "Berhenti berlangganan"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Berhenti berlangganan dari ${ subscription.Name }?"
       ],
       "Unsubscribe request sent": [
         "Permintaan berhenti berlangganan dikirim"
@@ -13929,6 +14087,9 @@
       ],
       "Your shorter address is now ready": [
         "Alamat lebih pendek Anda sudah siap"
+      ],
+      "Your subscriptions in one place": [
+        "Langganan Anda di satu tempat"
       ]
     },
     "Today icon tooltip in mini calendar": {
