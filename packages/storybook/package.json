@@ -32,11 +32,11 @@
         "wait-on": "^8.0.3"
     },
     "devDependencies": {
-        "@babel/core": "^7.26.10",
-        "@babel/plugin-transform-runtime": "^7.26.10",
-        "@babel/preset-env": "^7.26.9",
-        "@babel/preset-react": "^7.26.3",
-        "@babel/preset-typescript": "^7.27.0",
+        "@babel/core": "^7.27.1",
+        "@babel/plugin-transform-runtime": "^7.27.1",
+        "@babel/preset-env": "^7.27.2",
+        "@babel/preset-react": "^7.27.1",
+        "@babel/preset-typescript": "^7.27.1",
         "@playwright/test": "^1.52.0",
         "@storybook/addon-essentials": "^8.6.12",
         "@storybook/addon-interactions": "^8.6.12",
@@ -49,16 +49,16 @@
         "@storybook/source-loader": "^8.6.12",
         "@storybook/test": "^8.6.12",
         "@storybook/theming": "^8.6.12",
-        "@types/node": "^22.15.2",
-        "@types/react": "^18.3.20",
-        "@types/react-dom": "^18.3.6",
+        "@types/node": "^22.15.17",
+        "@types/react": "^18.3.21",
+        "@types/react-dom": "^18.3.7",
         "@types/tinycolor2": "^1.4.6",
         "babel-loader": "^10.0.0",
         "storybook": "^8.6.12",
         "ts-loader": "^9.5.2",
         "ts-node": "^10.9.2",
         "typescript": "^5.8.3",
-        "webpack": "^5.99.7"
+        "webpack": "^5.99.8"
     },
     "packageManager": "yarn@4.9.1"
 }
