@@ -4,10 +4,12 @@ import { c, msgid } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button, UserAvatar } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components';
+import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import folderImages from '@proton/styles/assets/img/drive/folder-images.svg';
 import useFlag from '@proton/unleash/useFlag';
 
+import { getContactNameAndEmail } from '../../../components/modals/ShareLinkModal/DirectSharing/DirectSharingListing';
 import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosAddAlbumPhotosButton } from '../toolbar/PhotosAddAlbumPhotosButton';
@@ -35,9 +37,15 @@ export const AlbumCoverHeader = ({
         dateStyle: 'long',
     }).format(fromUnixTime(album.createTime));
     const [user] = useUser();
+    const [contactEmails] = useContactEmails();
+    // signature email should always be defined, except in anonymous case, not supported yet in Albums
+    const signatureEmail = album.signatureEmail || album.nameSignatureEmail || user.Email;
+    const { contactName, contactEmail } = getContactNameAndEmail(signatureEmail, contactEmails);
     const displayName = user.DisplayName || user.Name;
     const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
     const showAddToAlbumButton = album.permissions.isOwner || album.permissions.isAdmin || album.permissions.isEditor;
+    const sharedByNameOrEmail = contactName || contactEmail;
+
     return (
         <div
             className="flex shrink-0 flex-row gap-4 md:flex-nowrap items-center"
@@ -81,7 +89,7 @@ export const AlbumCoverHeader = ({
                     </span>
                 </p>
                 <div className="flex flex-wrap flex-row gap-2" data-testid="cover-options">
-                    {!isAlbumsWithSharingDisabled && (
+                    {!isAlbumsWithSharingDisabled && album.permissions.isAdmin && (
                         <Tooltip title={displayName}>
                             <UserAvatar name={displayName} data-testid="user-avatar" />
                         </Tooltip>
@@ -103,6 +111,13 @@ export const AlbumCoverHeader = ({
                             <Icon name="user-plus" className="mr-2" />
                             {c('Action').t`Share`}
                         </Button>
+                    )}
+
+                    {!isAlbumsWithSharingDisabled && !album.permissions.isAdmin && (
+                        <span className="color-weak mb-2 mt-1">
+                            {c('Info').t`Shared by `}
+                            <b>{sharedByNameOrEmail}</b>
+                        </span>
                     )}
 
                     {photoCount === 0 && !driveAlbumsDisabled && (
