@@ -5,33 +5,42 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
+import isCheckAllowed from '../../helpers/isCheckAllowed';
 import { FREE_DOWNGRADER_LIMIT } from '../../helpers/offerPeriods';
 import OfferSubscription from '../../helpers/offerSubscription';
+import { type OfferConfig } from '../../interface';
 
 interface Props {
     protonConfig: ProtonConfig;
     user: UserModel;
     lastSubscriptionEnd: number;
     subscription?: Subscription;
+    offerConfig: OfferConfig;
 }
 
-export const getIsEligible = ({ user, subscription, protonConfig, lastSubscriptionEnd = 0 }: Props) => {
+export const getIsEligible = ({ user, subscription, protonConfig, lastSubscriptionEnd = 0, offerConfig }: Props) => {
+    if (!subscription) {
+        return false;
+    }
+
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
     const hasValidApp =
         protonConfig.APP_NAME === APPS.PROTONVPN_SETTINGS ||
         (protonConfig.APP_NAME === APPS.PROTONACCOUNT && parentApp === APPS.PROTONVPN_SETTINGS);
+    const checkAllowed = isCheckAllowed(subscription, offerConfig);
 
-    if (subscription) {
+    if (user.isPaid) {
         const offerSubscription = new OfferSubscription(subscription);
         const isNotExternal = !offerSubscription.isManagedExternally();
         const hasVPNMonthly =
             (offerSubscription.hasVPN2022() || offerSubscription.hasVPN2024()) && offerSubscription.isMonthly();
 
-        return hasValidApp && hasVPNMonthly && isNotExternal && user.canPay && !user.isDelinquent;
+        return hasValidApp && checkAllowed && hasVPNMonthly && isNotExternal && user.canPay && !user.isDelinquent;
     }
 
     return (
         hasValidApp &&
+        checkAllowed &&
         isBefore(fromUnixTime(lastSubscriptionEnd), FREE_DOWNGRADER_LIMIT) &&
         user.canPay &&
         !user.isDelinquent
