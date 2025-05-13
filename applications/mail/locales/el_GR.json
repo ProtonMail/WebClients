@@ -6135,10 +6135,6 @@
       "${ storage } storage": [
         "${ storage } αποθηκευτικού χώρου"
       ],
-      "${ subscription.ReceivedMessageCount } email last month": [
-        "${ subscription.ReceivedMessageCount } ηλεκτρονικό μήνυμα τον προηγούμενο μήνα",
-        "${ subscription.ReceivedMessageCount } ηλεκτρονικά μηνύματα τον περασμένο μήνα"
-      ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } μη αναγνωσμένο",
         "${ subscription.UnreadMessageCount } μη αναγνωσμένα"

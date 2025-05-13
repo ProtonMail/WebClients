@@ -463,10 +463,10 @@
       "Discard": [
         "Zahodit"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Zahodit změny"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Zahodit změny"
       ],
       "Discover ${ planName }": [
@@ -781,10 +781,10 @@
       "Keep": [
         "Zachovat"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Pokračovat v úpravách"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Pokračovat v úpravách"
       ],
       "Keep logo": [
@@ -967,11 +967,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "Refresh the page": [
-        "Obnovit stránku"
-      ],
       "refresh the page": [
         "obnovit stránku"
+      ],
+      "Refresh the page": [
+        "Obnovit stránku"
       ],
       "Reject": [
         "Odmítnout"
@@ -7663,11 +7663,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivujte alespoň jednu metodu obnovy dat, abyste měli jistotu, že v případě ztráty hesla budete mít i nadále přístup k obsahu svého účtu ${ BRAND_NAME }."
       ],
-      "Active": [
-        "Aktivní"
-      ],
       "active": [
         "aktivní"
+      ],
+      "Active": [
+        "Aktivní"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Přidejte e-mailovou adresu @pm.me do svého účtu. Tato jednoduchá a kratší doména znamená \"${ MAIL_APP_NAME } me\" nebo \"Private Message me.\""
@@ -8128,11 +8128,11 @@
       "Data recoverable on this device": [
         "Data obnovitelná v tomto zařízení"
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -11277,10 +11277,10 @@
       "Amount due": [
         "Částka k zaplacení"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
       "and": [
@@ -11709,11 +11709,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "POKUD"
-      ],
       "If": [
         "Pokud"
+      ],
+      "IF": [
+        "POKUD"
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
@@ -11922,14 +11922,14 @@
       "Optional": [
         "Volitelné"
       ],
-      "OR": [
-        "NEBO"
-      ],
       "or": [
         "nebo"
       ],
       "Or": [
         "Nebo"
+      ],
+      "OR": [
+        "NEBO"
       ],
       "Organization name": [
         "Název organizace"
@@ -14719,6 +14719,17 @@
         "Desktop"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Všichni"
+      ],
+      "Group members": [
+        "Členové skupiny"
+      ],
+      "No one": [
+        "Nikdo"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10. den v měsíci"
@@ -14974,17 +14985,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Všichni"
-      ],
-      "Group members": [
-        "Členové skupiny"
-      ],
-      "No one": [
-        "Nikdo"
       ]
     },
     "Option delay send seconds": {
@@ -18087,47 +18087,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
@@ -18428,6 +18387,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
