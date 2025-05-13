@@ -215,6 +215,9 @@
       "Submit": [
         "Отправить"
       ],
+      "Table of contents": [
+        "Оглавление"
+      ],
       "Table options": [
         "Параметры таблицы"
       ],
@@ -439,6 +442,9 @@
       "Request timed out": [
         "Время запроса истекло"
       ],
+      "Tried to import Sheet data into Lexical": [
+        "Попытка импорта данных Sheet в Lexical"
+      ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Не удается преобразовать документ Word. Защищен ли он паролем? Если да, удалите пароль и повторите попытку."
       ]
@@ -486,6 +492,9 @@
         "${ usersTranslation } печатают...",
         "${ usersTranslation } печатают..."
       ],
+      "Alpha only experimental feature": [
+        "Экспериментальная функция только для альфа-версии"
+      ],
       "Are you sure you want to delete this comment?": [
         "Вы уверены, что хотите удалить этот комментарий?"
       ],
@@ -503,6 +512,9 @@
       ],
       "Font size": [
         "Размер шрифта"
+      ],
+      "Headings you add to the document will appear here.": [
+        "Заголовки, которые вы добавите в документ, появятся здесь."
       ],
       "Highlight": [
         "Выделить"
@@ -548,6 +560,15 @@
       ]
     },
     "Label": {
+      "${ name } background color and white text color": [
+        "${ name } цвет фона и белый цвет текста"
+      ],
+      "${ name } text color and highlight": [
+        "${ name } цвет текста и выделение"
+      ],
+      "${ name } text color with no background": [
+        "${ name } цвет текста без фона"
+      ],
       "Add link": [
         "Добавить ссылку"
       ],
@@ -634,6 +655,9 @@
       ],
       "Replace link": [
         "Заменить ссылку"
+      ],
+      "Text and highlight color": [
+        "Цвет текста и выделения"
       ],
       "with \"${ replaceWith }\"": [
         "с помощью \"${ replaceWith }\""
