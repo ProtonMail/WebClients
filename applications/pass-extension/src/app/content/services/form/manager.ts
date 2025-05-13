@@ -93,11 +93,6 @@ export const createFormManager = (options: FormManagerOptions) => {
         return didDetach;
     };
 
-    const onBottleneck = withContext((ctx) => {
-        logger.info(`[FormManager::Detector] Bottleneck detected : destroying context.`);
-        ctx?.destroy({ reason: 'bottleneck' });
-    });
-
     /**
      * Asynchronously runs form detection with throttling to optimize performance.
      * Uses a combination of throttle, leading/trailing edge, and requestIdleCallback
@@ -120,13 +115,14 @@ export const createFormManager = (options: FormManagerOptions) => {
             if (state.detectionRequest !== -1) return false;
             const gcd = garbagecollect();
 
-            if (await ctx?.service.detector.shouldRunDetection()) {
+            if (await ctx?.service.detector.shouldPredict()) {
                 state.detectionRequest = requestIdleCallback(() => {
                     if (state.active) {
                         logger.debug(`[FormTracker::Detector] Running detection for "${reason}"`);
 
                         try {
-                            const forms = ctx?.service.detector.runDetection({ onBottleneck, excludedFieldTypes });
+                            const forms = ctx?.service.detector.predictAll({ excludedFieldTypes });
+
                             forms?.forEach((options) => {
                                 const formHandle = state.trackedForms.get(options.form) ?? createFormHandles(options);
                                 state.trackedForms.set(options.form, formHandle);
