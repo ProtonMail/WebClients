@@ -5,7 +5,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getSpace } from '@proton/shared/lib/user/storage';
 
 import useLocalState from '../../hooks/useLocalState';
-import LockedStateTopBanner from './LockedStateTopBanner';
+import { LockedStateTopBanner } from './LockedStateTopBanner';
 import { PooledStorageLimitTopBanner } from './StorageTopBanner/PooledStorageLimitTopBanner';
 import { SplitStorageLimitTopBanner } from './StorageTopBanner/SplitStorageLimitTopBanner';
 import { getStorageUpsell } from './StorageTopBanner/helperStorageBanner';
@@ -46,7 +46,6 @@ const StorageLimitTopBanner = ({ app }: Props) => {
         />
     ) : (
         <PooledStorageLimitTopBanner
-            app={app}
             space={space}
             ignoreStorageLimit={ignoreStorageLimit}
             setIgnoreStorageLimit={setIgnoreStorageLimit}

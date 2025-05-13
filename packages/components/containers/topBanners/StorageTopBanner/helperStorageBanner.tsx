@@ -3,7 +3,6 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import {
-    APPS,
     type APP_NAMES,
     BRAND_NAME,
     DRIVE_SHORT_APP_NAME,
@@ -32,31 +31,44 @@ const getGenericStorageMessage = (percentage: number, cta: ReactNode) => {
     return c('storage_split: info').jt`Your storage is ${percentage}% full. ${cta}.`;
 };
 
-export const generateStorageBannerText = ({
+export const getPooledStorageBannerText = ({
+    percentage,
+    upgrade,
+}: {
+    percentage: number;
+    upgrade: ReactNode;
+}): ReactNode => {
+    const genericSuffix = c('storage_split: info')
+        .jt`To continue using ${BRAND_NAME} products, free up space or ${upgrade}`;
+
+    return getGenericStorageMessage(percentage, genericSuffix);
+};
+
+export const getSplitStorageBannerText = ({
     percentage,
     mode,
-    app,
     upgrade,
 }: {
     percentage: number;
     mode: 'mail' | 'drive' | 'both';
-    app?: APP_NAMES;
     upgrade: ReactNode;
 }): ReactNode => {
-    const driveCta = c('storage_split: info').jt`To upload or sync files, free up space or ${upgrade}`;
-    const mailCta = c('storage_split: info').jt`To continue using ${BRAND_NAME} products, free up space or ${upgrade}`;
+    const driveCopy = c('storage_split: info').jt`To upload or sync files, free up space or ${upgrade}`;
+    const mailCopy = c('storage_split: info').jt`To send or receive emails, free up space or ${upgrade}`;
 
     if (mode === 'drive') {
-        return getStorageMessageWithProduct(percentage, getAppStorage(DRIVE_SHORT_APP_NAME), driveCta);
+        return getStorageMessageWithProduct(percentage, getAppStorage(DRIVE_SHORT_APP_NAME), driveCopy);
     }
+
     if (mode === 'mail') {
-        return getStorageMessageWithProduct(percentage, getAppStorage(MAIL_SHORT_APP_NAME), mailCta);
+        return getStorageMessageWithProduct(percentage, getAppStorage(MAIL_SHORT_APP_NAME), mailCopy);
     }
+
     if (mode === 'both') {
-        if (app === APPS.PROTONDRIVE) {
-            return getGenericStorageMessage(percentage, driveCta);
-        }
-        return getGenericStorageMessage(percentage, mailCta);
+        const bothCopy = c('storage_split: info')
+            .jt`To continue using ${BRAND_NAME} products, free up space or ${upgrade}`;
+
+        return getGenericStorageMessage(percentage, bothCopy);
     }
 };
 
