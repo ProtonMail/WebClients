@@ -12,7 +12,7 @@ export const useAnniversary2025Family = (): Operation => {
     const [subscription, loadSubscription] = useSubscription();
     const protonConfig = useConfig();
     const { isActive, loading: flagsLoading } = useOfferFlags(anniversary2025Family);
-    const isEligible = getIsEligible({ user, subscription, protonConfig });
+    const isEligible = getIsEligible({ user, subscription, protonConfig, offerConfig: anniversary2025Family });
 
     return {
         isValid: isEligible && isActive,

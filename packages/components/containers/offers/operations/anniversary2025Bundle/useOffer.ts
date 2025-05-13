@@ -12,7 +12,7 @@ export const useAnniversary2025Bundle = (): Operation => {
     const [subscription, loadSubscription] = useSubscription();
     const protonConfig = useConfig();
     const { isActive, loading: flagsLoading } = useOfferFlags(anniversary2025Bundle);
-    const isEligible = getIsEligible({ user, subscription, protonConfig });
+    const isEligible = getIsEligible({ user, subscription, protonConfig, offerConfig: anniversary2025Bundle });
 
     return {
         isValid: isEligible && isActive,
