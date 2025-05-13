@@ -289,6 +289,9 @@
       "Connect to video conferencing": [
         "დაკავსირება ვიდეოკონფერენციასთან"
       ],
+      "Connect your Gmail address": [
+        "თქვენი Gmail-ის მისამართის დაკავსირება"
+      ],
       "Connected": [
         "დაკავშირებულია"
       ],
@@ -460,10 +463,10 @@
       "Discard": [
         "მოცილება"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "ცვლილებების გაუქმება"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "ცვლილებების გაუქმება"
       ],
       "Discover ${ planName }": [
@@ -778,10 +781,10 @@
       "Keep": [
         "დატოვება"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "ჩასწორების გაგრძელება"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "ჩასწორების გაგრძელება"
       ],
       "Keep logo": [
@@ -964,10 +967,10 @@
       "Refresh status": [
         "სტატუსის განახლება"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "გვერდის განახლება"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "გვერდის განახლება"
       ],
       "Reject": [
@@ -1203,6 +1206,9 @@
       ],
       "Set up a custom domain": [
         "მომხმარებლის დომენის მორგება"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Gmail-დან ავტოგადაგზავნის მორგება"
       ],
       "Set up email forwarding": [
         "ელფოსტის გადაგზავნის მორგება"
@@ -3853,6 +3859,9 @@
       "Available with ${ MAIL_APP_NAME } Plus": [
         "ხელმისაწვდომია ${ MAIL_APP_NAME } Plus-თან ერთად"
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "მოირგეთ ეს ჯერ, რომ გაააქტიუროთ თქვენი ორგანიზაცია და მოირგოთ თქვენი ელფოსტის მისამართი."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "გილოცავთ! თქვენ ახლა ${ plusPlanName }-ის, მაქსიმუმ, ${ rewardsLimit } უფასო თვე გაქვთ."
       ],
@@ -4274,6 +4283,9 @@
       "Allow QR code sign‒in": [
         "QR კოდით შესვლის დაშვება"
       ],
+      "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
+        "ფრთხილად იყავით QR კოდის შემცველ შეტყობინებებთან. დაასკანერეთ კოდი მხოლოდ მაშინ, თუ წყაროს ენდობით."
+      ],
       "Code copied to clipboard": [
         "კოდი დაკოპირდა გაცვლის ბუფერში"
       ],
@@ -4321,6 +4333,9 @@
       ],
       "Try generating a new QR code.": [
         "სცადეთ, ახალი QR კოდი დააგენერიროთ"
+      ],
+      "Using that device, open any ${ BRAND_NAME } app and select **Settings**": [
+        "ამ მოწყობილობით გახსენით ნებისმიერი ${ BRAND_NAME }-ის აპი და აირჩიეთ **მორგება**"
       ],
       "Works if you have another device that’s signed in to ${ BRAND_NAME }": [
         "მუშაობს, თუ გაქვთ კიდევ ერთი მოწყობილობა, რომელიც ${ BRAND_NAME }-შია შესული"
@@ -4605,6 +4620,12 @@
       ],
       "Automatically forward emails to another email address.": [
         "ელფოსტის ავტომატური გადაგზავნა სხვა ელფოსტის მისამართზე."
+      ],
+      "For compatibility, a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "თავსებადობისთვის გენერირებულია ახალი დაშიფვრის გასაღები ${ boldForwarderEmail }-სთვის"
+      ],
+      "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "თავსებადობისთვის ახალი დაშიფვრის გასაღები დაგენერირდება ${ boldForwarderEmail }-სთვის"
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
         "პიროვნება, ვისთანაც გადაგზავნას აპირებთ, მოწვეულია და საჭიროა, რომ მოსაწვევს დაეთანხმოს/უარყოს ის, ან განაახლოს"
@@ -7024,6 +7045,18 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider }-დან შემოტანა"
+      ],
+      "Import from Google": [
+        "Google-დან შემოტანა"
+      ],
+      "Import from other": [
+        "სხვა ადგილიდან შემოტანა"
+      ],
+      "Import from Outlook": [
+        "Outlook-დან შემოტანა"
+      ],
+      "Import from Yahoo": [
+        "yahoo-დან შემოტანა"
       ]
     },
     "Import rollback status": {
@@ -7386,10 +7419,10 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "გაააქტიურეთ ანგარიშის აღდგენის ერთი მეთოდი მაინც, რომ დარწმუნდეთ, რომ თქვენს ${ BRAND_NAME }-ის ანგარიშზე წვდომა პაროლის დაკარგვის შემთხვევაშიც კი გექნებათ."
       ],
-      "active": [
+      "Active": [
         "აქტიური"
       ],
-      "Active": [
+      "active": [
         "აქტიური"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
@@ -7660,6 +7693,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "გააძლიერეთ თქვენი ორგანიზაციის ბრენდინგი და შეექმენით უფრო ერთგვაროვანი გამოცდილება თქვენი მომხმარებლებისთვის."
       ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "გადმოიტანეთ თქვენი შეტყობინებები, კონტაქტები და კალენდრები ${ BRAND_NAME }-ზე."
+      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME }-ის ანგარიშის შექმნით თქვენს SimpleLogin-ის ელფოსტასთან ერთად, თქვენი ფსევდონიმების მართვა პირდაპირ ${ PASS_APP_NAME }-დან შეგიძლიათ."
       ],
@@ -7828,11 +7864,11 @@
       "Data recoverable on this device": [
         "ამ მოწყობილობაზე აღმოჩენადი მონაცემები"
       ],
-      "Dedicated servers": [
-        "გამოყოფილი სერვერები"
-      ],
       "dedicated servers": [
         "გამოყოფილი სერვერი"
+      ],
+      "Dedicated servers": [
+        "გამოყოფილი სერვერები"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართებით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ."
@@ -8720,6 +8756,9 @@
       "One account. All ${ BRAND_NAME } services.": [
         "ერთი ანგარიში ${ BRAND_NAME }-ის ყველა სერვისისთვის."
       ],
+      "One time import": [
+        "ერთჯერადი შემოტანა"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "პარამეტრებები, მხოლოდ, მაშინ შეცვალეთ, თუ თქვენ იყენებთ PGP-ს არა${ BRAND_NAME }-ის მიმღებებით."
       ],
@@ -9115,6 +9154,9 @@
       ],
       "Set recovery phrase": [
         "აღსადგენი ფრაზის დაყენება"
+      ],
+      "Set up forwarding": [
+        "გადაგზავნის მორგება"
       ],
       "Set up your organization": [
         "მოირგეთ თქვენი ორგანიზაცია"
@@ -10851,10 +10893,10 @@
       "Amount due": [
         "გადასახდელი თანხა"
       ],
-      "And": [
+      "AND": [
         "და"
       ],
-      "AND": [
+      "And": [
         "და"
       ],
       "and": [
@@ -11280,10 +11322,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "თუ"
       ],
-      "IF": [
+      "If": [
         "თუ"
       ],
       "Import all messages": [
@@ -11493,13 +11535,13 @@
       "Optional": [
         "არასავალდებულო"
       ],
+      "OR": [
+        "ან"
+      ],
       "or": [
         "ან"
       ],
       "Or": [
-        "ან"
-      ],
-      "OR": [
         "ან"
       ],
       "Organization name": [
@@ -13525,6 +13567,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "${ priceLine }-დან"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "დაკლებული ფასი ${ priceCoupon }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასით ${ priceLine } თვით. გაუქმება ყოველთვის შეგიძლიათ."
       ],
@@ -14198,17 +14243,6 @@
         "სამუშაო მაგიდა"
       ]
     },
-    "option": {
-      "Everyone": [
-        "ყველა"
-      ],
-      "Group members": [
-        "ჯგუფის წევრები"
-      ],
-      "No one": [
-        "არავინ"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "თვის მეათე დღე"
@@ -14443,6 +14477,17 @@
       ],
       "Trash": [
         "ნაგვის ყუთი"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "ყველა"
+      ],
+      "Group members": [
+        "ჯგუფის წევრები"
+      ],
+      "No one": [
+        "არავინ"
       ]
     },
     "Option delay send seconds": {
@@ -17210,6 +17255,9 @@
       "Get more storage": [
         "მიიღეთ მეტი საცავი"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "${ BRAND_NAME }-ის პროდუქტების გამოყენების გასაგრძენებლად გაათავისუფლეთ ადგილი, ან ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "ფაილების ასატვრთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ upgrade }"
       ],
@@ -17408,6 +17456,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }-თვის"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription reminder": {
@@ -17695,47 +17784,6 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -19097,6 +19145,9 @@
       "Leave group?": [
         "ჯგუფის დატოვება?"
       ],
+      "Limit reached": [
+        "მიაღწიეთ ლიმიტს"
+      ],
       "Link confirmation": [
         "ბმულის დადასტურება"
       ],
@@ -20334,6 +20385,9 @@
       ],
       "Recommended": [
         "რეკომენდებულია"
+      ],
+      "Save ${ price.uiData.discountPercent }%": [
+        "დაზოგეთ ${ price.uiData.discountPercent }%"
       ]
     },
     "User referee invited via email": {
