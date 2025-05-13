@@ -6,6 +6,7 @@ import Price from '@proton/components/components/price/Price';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
+import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import { ADDON_NAMES, type Plan } from '@proton/payments';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
@@ -60,6 +61,12 @@ const PaymentSummary = ({
         cycle: options.cycle,
     });
 
+    const couponConfig = useCouponConfig({
+        planIDs: options.planIDs,
+        plansMap: model.plansMap,
+        checkResult: model.subscriptionData.checkResult,
+    });
+
     return (
         <div className="flex flex-column gap-3">
             <div className="color-weak text-semibold mx-3">{c('Info').t`Summary`}</div>
@@ -96,7 +103,7 @@ const PaymentSummary = ({
                                 <div className="flex-1 flex items-center gap-2">
                                     <div className="flex-1 text-sm">
                                         <span className="color-weak mr-1">{getBilledText(options.cycle)}</span>
-                                        {actualCheckout.discountPercent > 0 && (
+                                        {actualCheckout.discountPercent > 0 && !couponConfig?.hidden && (
                                             <SaveLabel2 className="text-sm inline-block" highlightPrice>
                                                 {`− ${actualCheckout.discountPercent}%`}
                                             </SaveLabel2>
