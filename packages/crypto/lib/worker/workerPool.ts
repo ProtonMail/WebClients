@@ -1,13 +1,15 @@
 import type { Remote } from 'comlink';
-import { releaseProxy, transferHandlers, wrap } from 'comlink';
+import { proxy as proxyCallback, releaseProxy, transferHandlers, wrap } from 'comlink';
 
 import { getIsNetworkError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
+import { getPluggableOpenPGPGrammarErrorReporter } from '../utils';
 import type { Api as CryptoApi, ApiInterface as CryptoApiInterface } from './api';
+import type { InitOptions } from './api.models';
 import { mainThreadTransferHandlers } from './transferHandlers';
 
-export interface WorkerInitOptions {}
+export interface WorkerInitOptions extends InitOptions {}
 
 export interface WorkerPoolInitOptions {
     poolSize?: number;
@@ -45,6 +47,7 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
     let workerPool: Remote<CryptoApi>[] | null = null;
     let i = -1;
 
+    const pluggableGrammarErrorReporter = getPluggableOpenPGPGrammarErrorReporter(captureMessage);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const initWorker = async (openpgpConfigOptions: WorkerInitOptions) => {
         // Webpack static analyser is not especially powerful at detecting web workers that require bundling,
@@ -60,6 +63,7 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
             )
         );
 
+        await RemoteApi.init(openpgpConfigOptions, proxyCallback(pluggableGrammarErrorReporter));
         const worker = await new RemoteApi();
         return worker;
     };
@@ -96,7 +100,10 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
     };
 
     return {
-        init: async ({ poolSize = navigator.hardwareConcurrency || 1, openpgpConfigOptions = {} } = {}) => {
+        init: async ({
+            poolSize = navigator.hardwareConcurrency || 1,
+            openpgpConfigOptions = { enforceOpenpgpGrammar: false },
+        } = {}) => {
             if (workerPool !== null) {
                 throw new Error('worker pool already initialised');
             }
