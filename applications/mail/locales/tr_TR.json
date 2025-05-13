@@ -36,11 +36,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
+      "A to Z": [
+        "A'dan Z'ye"
+      ],
       "Activate": [
         "Kullanıma al"
       ],
       "Activate recovery": [
         "Kurtarma özelliğini aç"
+      ],
+      "Active": [
+        "Aktif"
       ],
       "Add": [
         "Ekle"
@@ -189,6 +195,9 @@
       ],
       "Change page": [
         "Sayfayı değiştir"
+      ],
+      "Change sorting": [
+        "Sıralamayı değiştir"
       ],
       "Chat with us": [
         "Bizimle canlı görüşün"
@@ -844,6 +853,9 @@
       "More search options": [
         "Daha fazla arama seçeneği"
       ],
+      "Most read": [
+        "En çok okunan"
+      ],
       "Move": [
         "Taşı"
       ],
@@ -1000,6 +1012,9 @@
       "Read receipt sent": [
         "Okundu bilgisi gönderildi"
       ],
+      "Recently received": [
+        "Son zamanda gelenler"
+      ],
       "Reconnect": [
         "Yeniden bağlan"
       ],
@@ -1086,6 +1101,9 @@
       ],
       "Restore": [
         "Geri yükle"
+      ],
+      "Resubscribe": [
+        "Yeniden abone ol"
       ],
       "Resume": [
         "Sürdür"
@@ -1355,8 +1373,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven",
-        "Anahtarlara güven"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1399,6 +1416,9 @@
       ],
       "Unsubscribe": [
         "Abonelikten ayrıl"
+      ],
+      "Unsubscribed": [
+        "Abonelikten ayrıldınız"
       ],
       "Unsubscribing": [
         "Abonelikten çıkılıyor"
@@ -6284,6 +6304,9 @@
       "Applying actions to messages": [
         "İşlemler iletilere uygulanıyor"
       ],
+      "Archive existing messages": [
+        "Var olan mesajları arşivle"
+      ],
       "Are you sure you want to delete all messages in this folder?": [
         "Bu klasördeki tüm iletileri silmek istediğinize emin misiniz?"
       ],
@@ -6376,6 +6399,9 @@
       ],
       "Browser not supported": [
         "Tarayıcı desteklenmiyor"
+      ],
+      "Bulk delete": [
+        "Toplu sil"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
@@ -6943,6 +6969,9 @@
       "Manage your labels": [
         "Etiketlerinizi yönetin"
       ],
+      "Mark all as read": [
+        "Tümünü okundu olarak işaretle"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
       ],
@@ -7092,6 +7121,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Önerilen işlemler ve yararlı bağlantılar için rehberi açın."
+      ],
+      "Optional": [
+        "İsteğe bağlı"
       ],
       "or discover other features:": [
         "veya diğer özellikleri keşfedin:"
@@ -7754,6 +7786,9 @@
       "Unsaved changes": [
         "Kaydedilmemiş değişiklikler"
       ],
+      "Unsubscribe": [
+        "Aboneliği iptal et"
+      ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
       ],
@@ -8199,6 +8234,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Aboneliğiniz ${ renewalTime } tarihinde otomatik olarak yenilenecek."
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Dağınıklıktan arındırılmış bir gelen kutusuna yalnızca birkaç tık uzaktasınız."
       ]
     },
     "info": {
@@ -8525,11 +8563,11 @@
       "Always move sender's emails": [
         "Göndericinin e-postaları şuraya taşınsın"
       ],
-      "And": [
-        "Ve"
-      ],
       "AND": [
         "VE"
+      ],
+      "And": [
+        "Ve"
       ],
       "and": [
         "ve"
@@ -8753,11 +8791,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Eğer"
-      ],
       "IF": [
         "EĞER"
+      ],
+      "If": [
+        "Eğer"
       ],
       "Import all messages": [
         "Tüm iletileri içe aktar"
@@ -8825,6 +8863,9 @@
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } ögesini taşı"
       ],
+      "Move messages to": [
+        "İletileri taşı"
+      ],
       "Move to": [
         "Şuraya taşınsın"
       ],
@@ -8873,14 +8914,14 @@
       "Optional": [
         "İsteğe bağlı"
       ],
+      "OR": [
+        "VEYA"
+      ],
       "or": [
         "veya"
       ],
       "Or": [
         "Veya"
-      ],
-      "OR": [
-        "VEYA"
       ],
       "Original link": [
         "Özgün bağlantı"
@@ -9761,6 +9802,14 @@
         "Orta VPN hızı"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle } edinin"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -9782,14 +9831,6 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } edinin"
       ]
     },
     "new_plans: feature": {
@@ -12498,6 +12539,47 @@
         "${ totalPrice } için"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -12756,47 +12838,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {

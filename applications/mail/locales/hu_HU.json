@@ -42,6 +42,9 @@
       "Activate recovery": [
         "Helyreállítás aktiválása"
       ],
+      "Active": [
+        "Aktív"
+      ],
       "Add": [
         "Hozzáadás"
       ],
@@ -1087,6 +1090,9 @@
       "Restore": [
         "Helyreállítás"
       ],
+      "Resubscribe": [
+        "Feliratkozás ismét"
+      ],
       "Resume": [
         "Folytatás"
       ],
@@ -1354,10 +1360,6 @@
       "Trust": [
         "Megbízható"
       ],
-      "Trust key": [
-        "Megbízható kulcs",
-        "Kulcsok megjelölése megbízhatóként"
-      ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
       ],
@@ -1399,6 +1401,9 @@
       ],
       "Unsubscribe": [
         "Leiratkozás"
+      ],
+      "Unsubscribed": [
+        "Leiratkozás kész"
       ],
       "Unsubscribing": [
         "Leiratkozás"
@@ -6183,6 +6188,9 @@
       "and": [
         "és"
       ],
+      "and more.": [
+        "és továbbiak."
+      ],
       "Another tip will be displayed next time you open Mail": [
         "Még egy tipp ki lesz írva, amikor legközelebb megnyitja a Proton Mail-t."
       ],
@@ -6995,6 +7003,9 @@
       "Open shortcut cheat sheet": [
         "Gyorsbillentyű tippek megnyitása"
       ],
+      "Optional": [
+        "Nem kötelező"
+      ],
       "or discover other features:": [
         "vagy fedezzen fel más funkciókat:"
       ],
@@ -7267,6 +7278,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Állítsa be ${ MAIL_APP_NAME }-t alapértelmezett e-mail alkalmazásnak. ${ MAIL_APP_NAME } automatikusan megnyílik, amikor egy e-mail linkre kattint."
+      ],
+      "Set up your organization": [
+        "Állítsa be a szervezet adatait"
       ],
       "Setting up ${ feature }…": [
         "${ feature } beállítása…"
@@ -7640,6 +7654,9 @@
       ],
       "Unsaved changes": [
         "Nem mentett módosítások"
+      ],
+      "Unsubscribe": [
+        "Leiratkozás"
       ],
       "Unsupported file": [
         "Ismeretlen file"
@@ -8409,11 +8426,11 @@
       "Always move sender's emails": [
         "A feladó leveleit mindig helyezze mappába"
       ],
-      "And": [
-        "És"
-      ],
       "AND": [
         "ÉS"
+      ],
+      "And": [
+        "És"
       ],
       "and": [
         "és"
@@ -8637,11 +8654,11 @@
       "IBAN": [
         "IBAN szám"
       ],
-      "If": [
-        "Ha"
-      ],
       "IF": [
         "HA"
+      ],
+      "If": [
+        "Ha"
       ],
       "Import all messages": [
         "Összes üzenet importálása"
@@ -8757,14 +8774,14 @@
       "Optional": [
         "Választható"
       ],
+      "OR": [
+        "VAGY"
+      ],
       "or": [
         "vagy"
       ],
       "Or": [
         "Vagy"
-      ],
-      "OR": [
-        "VAGY"
       ],
       "Original link": [
         "Eredeti hivatkozás"
@@ -9210,6 +9227,9 @@
       "Types of recovery methods": [
         "Helyreállítási módszerek típusai"
       ],
+      "Views": [
+        "Megtekintések"
+      ],
       "What’s this?": [
         "Mi ez?"
       ],
@@ -9606,6 +9626,14 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle } beszerzése"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -9627,14 +9655,6 @@
       ],
       "Switch plan": [
         "Csomag váltása"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } beszerzése"
       ]
     },
     "new_plans: feature": {
@@ -11194,6 +11214,9 @@
       "Name or email address": [
         "Név vagy e-mail cím"
       ],
+      "Organization name": [
+        "Szervezet neve"
+      ],
       "Password": [
         "Jelszó"
       ],
@@ -12306,6 +12329,47 @@
         "${ totalPrice } áron"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatikus e-mail továbbítás ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Short @pm.me email address": [
+        "Rövid @pm.me e-mail cím"
+      ],
+      "Support our mission": [
+        "Támogassa küldetésünket"
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "Upgrade your productivity": [
+        "Növelje a termelékenységét"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
+      ],
+      "Your privacy is our mission": [
+        "Az Ön adatvédelme a mi küldetésünk"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } és ${ VPN_SHORT_APP_NAME } prémium funkciókkal"
@@ -12564,47 +12628,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Az Ön saját rövid @pm.me e-mail álnévcíme"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatikus e-mail továbbítás ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Short @pm.me email address": [
-        "Rövid @pm.me e-mail cím"
-      ],
-      "Support our mission": [
-        "Támogassa küldetésünket"
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "Upgrade your productivity": [
-        "Növelje a termelékenységét"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
-      ],
-      "Your privacy is our mission": [
-        "Az Ön adatvédelme a mi küldetésünk"
       ]
     },
     "Subscription renewal state": {
@@ -13038,6 +13061,11 @@
         "vCard mező"
       ]
     },
+    "Teams": {
+      "Join Teams meeting": [
+        "Csatlakozás Teams találkozóhoz"
+      ]
+    },
     "Time": {
       "Yesterday": [
         "Tegnap"
@@ -13256,6 +13284,9 @@
       ],
       "Confirm recipient address?": [
         "Elfogadja a címzett címét?"
+      ],
+      "Connect apps and devices": [
+        "Alkalmazások és eszközök összekapcsolása"
       ],
       "Connect to video conferencing": [
         "Kapcsolódás videokonferenciához"
@@ -13841,6 +13872,9 @@
       ],
       "Set up your family account": [
         "Family csomag beállítása"
+      ],
+      "Set up your organization": [
+        "Állítsa be a szervezet adatait"
       ],
       "Settings": [
         "Beállítások"
@@ -14565,6 +14599,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Évente, ${ untilString }"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Csatlakozás Zoom találkozóhoz"
       ]
     },
     "Zoom Meeting": {

@@ -1204,7 +1204,7 @@
         "커스텀 도메인 설정"
       ],
       "Set up email forwarding": [
-        "이메일 포워딩 설정하기"
+        "이메일 가져오기 설정"
       ],
       "Settings": [
         "설정"
@@ -1349,9 +1349,6 @@
       ],
       "Trust": [
         "신뢰"
-      ],
-      "Trust key": [
-        "키 신뢰하기"
       ],
       "Trust public key": [
         "공개 키 신뢰하기"
@@ -5833,6 +5830,18 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } 으로부터 불러오기"
+      ],
+      "Import from Google": [
+        "Google에서 가져오기"
+      ],
+      "Import from other": [
+        "다른 곳에서 가져오기"
+      ],
+      "Import from Outlook": [
+        "Outlook에서 가져오기"
+      ],
+      "Import from Yahoo": [
+        "Yahoo에서 가져오기"
       ]
     },
     "Import warning": {
@@ -6009,6 +6018,9 @@
       "${ total } message": [
         "${ total } 메시지"
       ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount }개 트래커 차단됨"
+      ],
       "${ unreadCount } scheduled message": [
         "예약된 메시지 ${ unreadCount }개"
       ],
@@ -6174,6 +6186,9 @@
       "Applying actions to messages": [
         "메시지에 조치 적용하기"
       ],
+      "Archive existing messages": [
+        "존재하는 메시지 보관함 이동"
+      ],
       "Are you sure you want to delete all messages in this folder?": [
         "정말 모든 메시지를 이 폴더에서 삭제하시겠습니까?"
       ],
@@ -6254,6 +6269,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "조직의 브랜드 아이덴티티를 증진하고 사용자를 위한 더욱 일관된 온라인 경험을 창출하십시오."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "${ BRAND_NAME }로 메시지, 연락처 및 캘린더를 가져오세요."
       ],
       "Browse privately and access blocked content.": [
         "비공개로 방문하면서 차단된 콘텐츠에도 접근해 보세요."
@@ -6819,6 +6837,9 @@
       "Manage your labels": [
         "라벨 관리"
       ],
+      "Mark all as read": [
+        "모두 읽은 상태로 표시"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 로고"
       ],
@@ -6960,11 +6981,17 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "신뢰할 수 있는 키 중 하나 이상이 소유자에 의해 \"유출되었음\"으로 표시되었습니다. 이 열쇠들을 \"신뢰하지 않는\" 것을 추천합니다."
       ],
+      "One time import": [
+        "한 번만 가져오기"
+      ],
       "Open shortcut cheat sheet": [
         "단축키 목록 보기"
       ],
       "Open the guide for recommended actions and helpful links.": [
         "권장 조치 및 유용한 링크들이 포함된 가이드를 열어보세요."
+      ],
+      "Optional": [
+        "선택 사항"
       ],
       "or discover other features:": [
         "혹은 다른 기능 살펴보기:"
@@ -7596,6 +7623,9 @@
       "Tracking": [
         "트래킹"
       ],
+      "Trash existing messages": [
+        "존재하는 메시지 휴지통 이동"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 이렇게 하면 애플리케이션이 새로고침됩니다"
       ],
@@ -7619,6 +7649,9 @@
       ],
       "Unsaved changes": [
         "저장되지 않은 변경 사항"
+      ],
+      "Unsubscribe": [
+        "구독 해지"
       ],
       "Unsupported file": [
         "지원되지 않는 파일"
@@ -8368,11 +8401,11 @@
       "Always move sender's emails": [
         "항상 보낸 사람 이메일 이동"
       ],
-      "And": [
-        "그리고"
-      ],
       "AND": [
         "및"
+      ],
+      "And": [
+        "그리고"
       ],
       "and": [
         "그리고"
@@ -8596,10 +8629,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "만약"
       ],
-      "IF": [
+      "If": [
         "만약"
       ],
       "Import all messages": [
@@ -8716,13 +8749,13 @@
       "Optional": [
         "선택 사항"
       ],
+      "OR": [
+        "또는"
+      ],
       "or": [
         "또는"
       ],
       "Or": [
-        "또는"
-      ],
-      "OR": [
         "또는"
       ],
       "Original link": [
@@ -9593,6 +9626,14 @@
         "중간 VPN 속도"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle }로 계속하기"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "계정 삭제"
@@ -9614,14 +9655,6 @@
       ],
       "Switch plan": [
         "플랜 변경"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle }로 계속하기"
       ]
     },
     "new_plans: feature": {
@@ -12263,6 +12296,47 @@
         "${ totalPrice }용"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "당사는 사용자의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "프리미엄 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ VPN_SHORT_APP_NAME }"
@@ -12515,47 +12589,6 @@
       ],
       "Your own short @pm.me email alias": [
         "사용자의 @pm.me 이메일 별칭"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "저장공간 15GB"
-      ],
-      "and 15 more premium features": [
-        "그리고 15개의 프리미엄 기능"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "자동 이메일 포워딩 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "데이터 침해 경고 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
-      ],
-      "No ads or tracking": [
-        "광고나 트래킹이 없습니다"
-      ],
-      "Short @pm.me email address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Support our mission": [
-        "저희의 사명을 지원해주세요"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade your productivity": [
-        "생산성을 업그레이드하세요"
-      ],
-      "We don't sell your data": [
-        "당사는 사용자의 데이터를 판매하지 않습니다"
-      ],
-      "Your privacy is our mission": [
-        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription renewal state": {
@@ -13766,7 +13799,7 @@
         "${ protonDuoPlanName } 설정하기"
       ],
       "Set up email forwarding": [
-        "이메일 포워딩 설정하기"
+        "이메일 가져오기 설정"
       ],
       "Set up your family account": [
         "가족 계정 설정하기"
@@ -13926,6 +13959,9 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "Your subscriptions in one place": [
+        "뉴스레터 구독을 모아보기"
       ]
     },
     "Today icon tooltip in mini calendar": {
