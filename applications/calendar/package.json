@@ -43,8 +43,8 @@
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
         "@protontech/interval-tree": "^1.0.0",
-        "@types/react": "^18.3.20",
-        "@types/react-dom": "^18.3.6",
+        "@types/react": "^18.3.21",
+        "@types/react-dom": "^18.3.7",
         "@types/react-router-dom": "^5.3.3",
         "date-fns": "^2.30.0",
         "dompurify": "^3.2.5",
@@ -55,7 +55,7 @@
         "ttag": "^1.8.7"
     },
     "devDependencies": {
-        "@babel/preset-typescript": "^7.27.0",
+        "@babel/preset-typescript": "^7.27.1",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
         "@proton/jest-env": "workspace:^",
