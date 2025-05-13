@@ -1,17 +1,14 @@
-import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { SpaceState, getCompleteSpaceDetails, type getSpace } from '@proton/shared/lib/user/storage';
 
 import TopBanner from '../TopBanner';
 import { StorageUpgradeCta } from './StorageUpgradeCta';
-import { generateStorageBannerText } from './helperStorageBanner';
+import { getPooledStorageBannerText } from './helperStorageBanner';
 
 export const PooledStorageLimitTopBanner = ({
-    app,
     ignoreStorageLimit,
     setIgnoreStorageLimit,
     space,
 }: {
-    app: APP_NAMES;
     ignoreStorageLimit: boolean;
     setIgnoreStorageLimit: (value: boolean) => void;
     space: ReturnType<typeof getSpace>;
@@ -21,10 +18,9 @@ export const PooledStorageLimitTopBanner = ({
 
     if (details.pooled.type === SpaceState.Danger) {
         return (
-            <TopBanner className="bg-danger">
-                {generateStorageBannerText({
+            <TopBanner className="bg-danger" data-testid="storage-banner:pooled-storage">
+                {getPooledStorageBannerText({
                     percentage: details.pooled.displayed,
-                    mode: app === APPS.PROTONDRIVE ? 'drive' : 'mail',
                     upgrade,
                 })}
             </TopBanner>
@@ -37,10 +33,13 @@ export const PooledStorageLimitTopBanner = ({
 
     if (details.pooled.type === SpaceState.Warning) {
         return (
-            <TopBanner className="bg-warning" onClose={() => setIgnoreStorageLimit(true)}>
-                {generateStorageBannerText({
+            <TopBanner
+                className="bg-warning"
+                onClose={() => setIgnoreStorageLimit(true)}
+                data-testid="storage-banner:pooled-storage"
+            >
+                {getPooledStorageBannerText({
                     percentage: details.pooled.displayed,
-                    mode: app === APPS.PROTONDRIVE ? 'drive' : 'mail',
                     upgrade,
                 })}
             </TopBanner>
