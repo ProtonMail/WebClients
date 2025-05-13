@@ -278,7 +278,7 @@
         "Connecta aplicacions i dispositius"
       ],
       "Connect to video conferencing": [
-        "Connecta a la videoconferència"
+        "Connecta't a la videoconferència"
       ],
       "Contact group": [
         "Grups de contactes"
@@ -860,7 +860,7 @@
         "Més opcions de cerca"
       ],
       "Most read": [
-        "Més llegit"
+        "El més llegit"
       ],
       "Move": [
         "Mou"
@@ -1105,6 +1105,9 @@
       "Reset to default": [
         "Restableix els valors per defecte"
       ],
+      "Resize panel": [
+        "Redimensiona el panell"
+      ],
       "Restore": [
         "Restaura"
       ],
@@ -1226,7 +1229,7 @@
         "Estableix la frase de recuperació"
       ],
       "Set up 2FA": [
-        "Configuració 2FA"
+        "Configuració de l'A2F"
       ],
       "Set up a custom domain": [
         "Configura un domini personalitzat"
@@ -1244,7 +1247,7 @@
         "Comparteix amb un enllaç"
       ],
       "Share your calendar with your team": [
-        "Comparteix el calendari amb el vostre equip"
+        "Compartiu el calendari amb el vostre equip"
       ],
       "Sharing options": [
         "Opcions de compartició"
@@ -1378,10 +1381,6 @@
       "Trust": [
         "De confiança"
       ],
-      "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
-      ],
       "Trust public key": [
         "Confia en la clau pública"
       ],
@@ -1464,7 +1463,7 @@
         "Utilitzeu ${ PASS_APP_NAME }"
       ],
       "Use ${ PASS_APP_NAME } for Business": [
-        "Utilitza ${ PASS_APP_NAME } per al Business"
+        "Utilitza ${ PASS_APP_NAME } for Business"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilitza el ${ VPN_SHORT_APP_NAME } per a la privadesa de dades"
@@ -5957,7 +5956,7 @@
         "${ boldQuicklySpot } quines subscripcions ja no són rellevants."
       ],
       "${ boldUnsubscribe } from them with one click.": [
-        "${ boldUnsubscribe } des d'ells amb un sol clic."
+        "${ boldUnsubscribe } d'aquests amb un sol clic."
       ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "${ BRAND_NAME } Scribe us ajuda a crear millors correus electrònics de manera ràpida i sense esforç."
@@ -6153,12 +6152,12 @@
         "${ total } missatges"
       ],
       "${ trackersCount } email tracker blocked": [
-        "${ trackersCount } rastrejador de correu bloquejat",
-        "${ trackersCount } rastrejadors de correu bloquejats"
+        "S'ha bloquejat ${ trackersCount } rastrejador de correu",
+        "S'han bloquejat ${ trackersCount } rastrejadors de correu"
       ],
       "${ trackersCount } tracker blocked": [
-        "${ trackersCount } rastrejador bloquejat",
-        "${ trackersCount } rastrejadors bloquejats"
+        "S'ha bloquejat ${ trackersCount } rastrejador",
+        "S'han bloquejat ${ trackersCount } rastrejadors"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } missatge programat",
@@ -6328,7 +6327,7 @@
         "i"
       ],
       "and more.": [
-        "i més."
+        "i molt més."
       ],
       "Another tip will be displayed next time you open Mail": [
         "Es mostrarà un altre consell la pròxima vegada que obriu el Mail"
@@ -6445,7 +6444,7 @@
         "El navegador no està suportat."
       ],
       "Bulk delete": [
-        "Eliminació en massa"
+        "Elimineu en massa"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
@@ -6655,7 +6654,7 @@
         "Arrossegueu aquí per a importar"
       ],
       "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
-        "A causa de la configuració del destinatari, aquest missatge no es pot enviar amb data de caducitat al següent contacte: ",
+        "A causa de la configuració del destinatari, aquest missatge no es pot enviar amb data de caducitat al contacte següent: ",
         "A causa de la configuració del destinatari, aquest missatge no es pot enviar amb data de caducitat als contactes següents: "
       ],
       "Duplicate key updated": [
@@ -6940,7 +6939,7 @@
         "És millor tenir:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "El millor és utilitzar una VPN en tot moment. Però aquí és quan les amenaces de ciberseguretat poden ser més altes:"
+        "El millor és utilitzar una VPN en tot moment. Però aquí és quan les amenaces de ciberseguretat poden ser majors:"
       ],
       "JCB logo": [
         "Logotip de JCB"
@@ -7021,7 +7020,7 @@
         "Gestioneu les vostres etiquetes"
       ],
       "Mark all as read": [
-        "Marca tot com a llegit"
+        "Marca-ho tot com a llegit"
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -7231,7 +7230,7 @@
         "Autentiqueu el vostre pagament a la pestanya de verificació."
       ],
       "Please fill in all required fields.": [
-        "Ompliu tots els camps obligatoris."
+        "Empleneu tots els camps obligatoris."
       ],
       "Please fill out this field.": [
         "Empleneu aquest camp."
@@ -7332,7 +7331,7 @@
         "L'intercanvi públic de documents encara no està suportat."
       ],
       "Quickly spot": [
-        "Detecta ràpidament"
+        "Detecteu ràpidament"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Poseu-vos en contacte amb nosaltres per a qualsevol ajuda relacionada amb ${ BRAND_NAME }."
@@ -7513,7 +7512,7 @@
         "Comenceu a utilitzar la versió més curta i atractiva de la vostra adreça de correu electrònic."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
-        "Mantingueu-vos connectat sense esforç activant la configuració VPN següent:"
+        "Mantingueu-vos connectat fàcilment activant la configuració següent de la VPN:"
       ],
       "Storage allocated to other users in this organisation": [
         "Emmagatzematge assignat a altres usuaris d'aquesta organització"
@@ -7817,7 +7816,7 @@
         "Seguiment"
       ],
       "Trash existing messages": [
-        "Elimina els missatges existents"
+        "Envia els missatges existents a la paperera"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Això tornarà a carregar l'aplicació"
@@ -7844,7 +7843,7 @@
         "Canvis no desats"
       ],
       "Unsubscribe": [
-        "Anul·la la subscripció"
+        "Anul·leu la subscripció"
       ],
       "Unsupported file": [
         "Fitxer no compatible"
@@ -8240,7 +8239,7 @@
         "La vostra informació es va trobar el ${ displayedDate }"
       ],
       "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "El vostre proveïdor de serveis d'internet pot supervisar i de vegades vendre les vostres dades, o fins i tot restringir els llocs web als quals podeu accedir."
+        "El vostre proveïdor de serveis d'internet pot supervisar i, de vegades, vendre les vostres dades o, fins i tot, restringir els llocs web als quals podeu accedir."
       ],
       "Your IP": [
         "La vostra IP"
@@ -8632,10 +8631,10 @@
       "Always move sender's emails": [
         "Mou sempre els correus electrònics del remitent"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
       "and": [
@@ -8863,11 +8862,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Si"
-      ],
       "IF": [
         "SI"
+      ],
+      "If": [
+        "Si"
       ],
       "Import all messages": [
         "Importar tots els missatges"
@@ -8989,13 +8988,13 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "O"
+      ],
       "or": [
         "o"
       ],
       "Or": [
-        "O"
-      ],
-      "OR": [
         "O"
       ],
       "Original link": [
@@ -9343,7 +9342,7 @@
         "Activeu la vostra adreça per respondre aquesta invitació."
       ],
       "Enforcing 2FA for organizations": [
-        "Requereix 2FA per a organitzacions"
+        "Aplicació obligatòria de l'autenticació de doble factor (A2F) per a organitzacions"
       ],
       "Folders": [
         "Carpetes"
@@ -9388,13 +9387,13 @@
         "Com utilitzar ${ DARK_WEB_MONITORING_NAME }?"
       ],
       "How to use ${ PASS_APP_NAME } for Business": [
-        "Com utilitzar ${ PASS_APP_NAME } per al Business?"
+        "Com utilitzar ${ PASS_APP_NAME } for Business?"
       ],
       "How to use email forwarding": [
         "Com utilitzar el reenviament de correu?"
       ],
       "How to use Groups": [
-        "Com utilitzar grups?"
+        "Com utilitzar els grups?"
       ],
       "if your data is leaked": [
         "si es filtren les vostres dades"
@@ -9888,6 +9887,14 @@
         "Velocitat VPN mitjana"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Obtingueu ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Elimina el compte"
@@ -9909,14 +9916,6 @@
       ],
       "Switch plan": [
         "Canvia de pla"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Obtingueu ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -12631,6 +12630,47 @@
         "Per ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenviament automàtic de correu electrònic ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de filtracions de dades ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
+      ],
+      "Support our mission": [
+        "Doneu suport a la nostra missió"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
@@ -12889,47 +12929,6 @@
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "and 15 more premium features": [
-        "i 15 característiques prèmium més"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenviament automàtic de correu electrònic ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de filtracions de dades ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
-      ],
-      "No ads or tracking": [
-        "Sense anuncis ni rastreig"
-      ],
-      "Short @pm.me email address": [
-        "Adreça electrònica curta de @pm.me"
-      ],
-      "Support our mission": [
-        "Doneu suport a la nostra missió"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade your productivity": [
-        "Milloreu la vostra productivitat"
-      ],
-      "We don't sell your data": [
-        "No venem les vostres dades"
-      ],
-      "Your privacy is our mission": [
-        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription renewal state": {
@@ -13869,7 +13868,7 @@
         "Augmenteu la vostra privacitat amb més adreces"
       ],
       "Information exposed in breach": [
-        "Informació exposada en la infracció"
+        "Informació exposada en la filtració"
       ],
       "Insert contacts": [
         "Introdueix els contactes"
@@ -14265,7 +14264,7 @@
         "Paperera"
       ],
       "Trash all messages?": [
-        "Voleu eliminar tots els missatges?"
+        "Voleu enviar tots els missatges a la paperera?"
       ],
       "Trust new key?": [
         "Confiar en la nova clau?",

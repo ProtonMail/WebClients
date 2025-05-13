@@ -978,6 +978,9 @@
       "Take a tour": [
         "ツアーを開始"
       ],
+      "This album is empty": [
+        "このアルバムは空です"
+      ],
       "Toggle Calendar app": [
         "カレンダーアプリを切り替え"
       ],
@@ -4200,6 +4203,18 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } からインポート"
+      ],
+      "Import from Google": [
+        "Googleからインポート"
+      ],
+      "Import from other": [
+        "その他からインポート"
+      ],
+      "Import from Outlook": [
+        "Outlook からインポート"
+      ],
+      "Import from Yahoo": [
+        "Yahooからインポート"
       ]
     },
     "Import warning": {
@@ -4285,9 +4300,6 @@
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "Play Store での ${ DRIVE_APP_NAME }"
-      ],
-      "${ email } invited you to join **${ albumName }**": [
-        "${ email } があなたを **${ albumName }** に招待しました"
       ],
       "${ errorCount } failed": [
         "失敗 ${ errorCount } 件"
@@ -4540,6 +4552,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "御社のイメージ力を強め、ユーザーにより一貫したオンラインサービスを提供しましょう。"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "メッセージ、連絡先、カレンダーを ${ BRAND_NAME }に移行。"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "無料プランへダウングレードすると、現在の特典は利用できなくなります。今後アップグレードしても現在の特典は復活しません。"
@@ -5141,6 +5156,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "相手から「漏洩」と判断された鍵があります。対象の鍵の信頼を解除することを推奨します。"
       ],
+      "One time import": [
+        "1 回限りのインポート"
+      ],
       "Only the people with the link and the password can access this file.": [
         "リンクとパスワードを知っている人のみがファイルにアクセスすることができます。"
       ],
@@ -5209,6 +5227,9 @@
       ],
       "Photo(s) saved to your Drive": [
         "写真がドライブに保存されました"
+      ],
+      "Photos": [
+        "写真"
       ],
       "Photos have been successfully recovered.": [
         "写真は正常に復元されました。"
@@ -6624,9 +6645,6 @@
       "Set recovery method": [
         "回復手段を設定"
       ],
-      "Share a file": [
-        "ファイルを共有"
-      ],
       "Shared": [
         "共有済み"
       ],
@@ -7898,6 +7916,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "${ priceLine } から"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "${ priceCoupon }の割引価格は最初の月のみ有効です。そのあとは${ priceLine }で自動更新されます。いつでもキャンセル可能です。"
       ],
@@ -9848,6 +9869,47 @@
         "${ totalPrice } の場合"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
@@ -10100,47 +10162,6 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
@@ -10847,6 +10868,9 @@
       ],
       "Location": [
         "場所"
+      ],
+      "Mail Subscriptions": [
+        "メール購読"
       ],
       "Make a secure connection your default": [
         "安全な接続をデフォルトにする"

@@ -400,10 +400,10 @@
       "Move to another vault": [
         "სხვა საცავში გადატანა"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "ნაგვის ყუთში გადატანა"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "ნაგვის ყუთში გადატანა"
       ],
       "Multiple select": [
@@ -1945,11 +1945,26 @@
       "Please confirm your second password": [
         "დაადასტურეთ თქვენი მეორე პაროლი"
       ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "დაადასტურეთ თქვენი მეორე პაროლი, რომ ბიომეტრიით ავტოდაბლოკვა ჩართოთ."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "დაადასტურეთ თქვენი მეორე პაროლი, რომ თქვენი პაროლით ავტოდაბლოკვა ჩართოთ."
+      ],
       "Please confirm your second password in order to disable offline mode": [
         "დაადასტურეთ თქვნი მეორე პაროლი, ქსელის გარეშე მუშაობის რეჟიმის გამოსართავად"
       ],
       "Please confirm your second password in order to enable offline mode": [
         "დაადასტურეთ თქვნი მეორე პაროლი, ქსელის გარეშე მუშაობის რეჟიმის ჩასართავად"
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "დაადასტურეთ თქვნი მეორე პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "მიმდინარე ბლოკის რეგისტრაციის მოსახსნელად დაადასტურეთ თქვენი მეორე პაროლი."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "დაადასტურეთ თქვენი მეორე პაროლი, რომ ავტოდაბლოკვის დრო განაახლოთ."
       ],
       "Please consider leaving a review.": [
         "სჯობს, გახვიდეთ მიმოხილვიდან."
@@ -3471,6 +3486,14 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "თქვენი ინფორმაცია, სულ ცოტა, ერთ მონაცემების გაჟონვაშია აღმოჩენილი. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "დახურვა"
+      ],
+      "Don't show this offer again": [
+        "მეტჯერ აღარ მაჩვენო"
       ]
     },
     "sso": {

@@ -45,6 +45,9 @@
       "Add": [
         "加入"
       ],
+      "Add account": [
+        "加入帳號"
+      ],
       "Add address": [
         "加入電郵位址"
       ],
@@ -170,6 +173,9 @@
       ],
       "Close transfers": [
         "關閉傳輸"
+      ],
+      "Collaborate on documents": [
+        "於文件上合作"
       ],
       "Collapse": [
         "收合"
@@ -516,6 +522,9 @@
       "Leave": [
         "離開"
       ],
+      "Leave album": [
+        "離開相簿"
+      ],
       "Let's talk": [
         "我們一起聊聊！"
       ],
@@ -533,6 +542,9 @@
       ],
       "Manage folders": [
         "管理資料夾"
+      ],
+      "Manage groups": [
+        "管理群組"
       ],
       "Manage labels": [
         "管理標籤"
@@ -822,8 +834,14 @@
       "Set as cover": [
         "設為封面"
       ],
+      "Set recovery methods": [
+        "設定復原方式"
+      ],
       "Set recovery phrase": [
         "設定還原短語"
+      ],
+      "Set up 2FA": [
+        "設定兩步驟驗證"
       ],
       "Settings": [
         "設定"
@@ -2436,6 +2454,11 @@
         "奧蘭群島"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "所有 ${ BRAND_NAME } 服務"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/月"
@@ -2637,6 +2660,9 @@
       ],
       "All events in this series were updated.": [
         "該系列中的所有行程皆已更新。"
+      ],
+      "NOTE:": [
+        "備注:"
       ],
       "This event occurrence was canceled.": [
         "該行程已被取消。"
@@ -3638,8 +3664,19 @@
       "Contacts": [
         "聯絡人"
       ],
+      "Rename album": [
+        "重新命名相簿"
+      ],
       "Security Center": [
         "安全中心"
+      ]
+    },
+    "Heading": {
+      "All albums": [
+        "所有相簿"
+      ],
+      "Recent": [
+        "最近"
       ]
     },
     "Hint": {
@@ -3950,6 +3987,9 @@
     "Import provider": {
       "Import from ${ provider }": [
         "從 ${ provider } 匯入"
+      ],
+      "Import from Outlook": [
+        "從 Outlook 匯入"
       ]
     },
     "Import warning": {
@@ -4033,9 +4073,6 @@
       "${ DRIVE_APP_NAME } on Play Store": [
         "Play 商店的${ DRIVE_APP_NAME }"
       ],
-      "${ email } invited you to join **${ albumName }**": [
-        "${ email }邀請您加入**${ albumName }**"
-      ],
       "${ errorCount } failed": [
         "${ errorCount } 個任務失敗"
       ],
@@ -4059,6 +4096,9 @@
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } 個任務已暫停"
+      ],
+      "${ photoCount } item": [
+        "${ photoCount }項目"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
@@ -4801,6 +4841,9 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "並非所有檔案皆已傳輸。請嘗試重新上載或下載檔案。"
       ],
+      "Not connected": [
+        "未連線"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "備註：資料將會持續在安裝 ${ DRIVE_APP_NAME } 的裝置上保持可用狀態。"
       ],
@@ -4833,6 +4876,9 @@
       ],
       "Organization size": [
         "組織規模"
+      ],
+      "Other accounts": [
+        "其他帳號"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "我們的警示偏向於謹慎。如果您不認識任何外洩的資訊，您可以放心地忽略此報告。"
@@ -4869,6 +4915,9 @@
       ],
       "Photo is set as album cover": [
         "照片已設為相簿封面"
+      ],
+      "Photos": [
+        "相片"
       ],
       "Photos have been successfully recovered.": [
         "照片已成功復原。"
@@ -5055,6 +5104,9 @@
       ],
       "Session timed out": [
         "工作階段已逾時"
+      ],
+      "Set up your organization": [
+        "設定您的組織"
       ],
       "Setting up ${ feature }…": [
         "設定${ feature }…"
@@ -5614,6 +5666,9 @@
       "Your information was found on ${ displayedDate }": [
         "您的資料在 ${ displayedDate } 被發現。"
       ],
+      "Your IP": [
+        "您的 IP"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
       ],
@@ -6077,6 +6132,9 @@
       "Move to Inbox": [
         "移動到收件匣"
       ],
+      "My Albums": [
+        "我的相簿"
+      ],
       "Name": [
         "名稱"
       ],
@@ -6179,8 +6237,8 @@
       "Set recovery method": [
         "設定復原方法"
       ],
-      "Share a file": [
-        "分享個檔案"
+      "Shared": [
+        "已分享"
       ],
       "Shared by": [
         "分享自"
@@ -6308,6 +6366,9 @@
       "Your alias": [
         "你的別名"
       ],
+      "Your IP": [
+        "您的 IP"
+      ],
       "Your location": [
         "您的位置"
       ],
@@ -6377,6 +6438,9 @@
       "Add a gift code": [
         "加入禮品代碼"
       ],
+      "Albums": [
+        "專輯"
+      ],
       "All mail": [
         "所有郵件"
       ],
@@ -6394,6 +6458,9 @@
       ],
       "How to pay with Bitcoin?": [
         "如何以比特幣繳款？"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "如何使用${ DARK_WEB_MONITORING_NAME }"
       ],
       "Inbox": [
         "收件匣"
@@ -6915,6 +6982,9 @@
       "${ size } storage": [
         "${ size } 儲存空間"
       ],
+      "${ size } storage per user": [
+        "${ size } 可用空間 / 每位使用者"
+      ],
       "1 TB secure storage": [
         "1TB安全儲存空間"
       ],
@@ -7100,6 +7170,9 @@
       ],
       "Password manager": [
         "密碼管理員"
+      ],
+      "Password manager to secure credentials": [
+        "密碼管理器以確保身分安全"
       ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
@@ -8297,8 +8370,14 @@
       "Please select your billing state first.": [
         "請先選擇您的計費狀態。"
       ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "更新價 ${ renewPriceStr }，任何時間都可取消。"
+      ],
       "Select billing country to pay": [
         "選取繳款國家以付款"
+      ],
+      "terms & conditions": [
+        "條款及細則"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPriceStr } 續約。您可以在任何時候取消。"
@@ -8424,6 +8503,9 @@
       ],
       "New name": [
         "新名稱"
+      ],
+      "Organization name": [
+        "組織名稱"
       ],
       "Password": [
         "密碼"
@@ -9189,6 +9271,47 @@
         "${ totalPrice } 版"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "and 15 more premium features": [
+        "還有額外的15個的加值功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
@@ -9420,47 +9543,6 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "and 15 more premium features": [
-        "還有額外的15個的加值功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動郵件轉寄${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "資料外洩警告 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面應用程式"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
-      ],
-      "No ads or tracking": [
-        "無廣告或追蹤"
-      ],
-      "Short @pm.me email address": [
-        "縮短電子郵件地址@pm.me"
-      ],
-      "Support our mission": [
-        "支援我們的計畫"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade your productivity": [
-        "提升您的生產力"
-      ],
-      "We don't sell your data": [
-        "我們不銷售您的資料"
-      ],
-      "Your privacy is our mission": [
-        "您的隱私是我們責任"
       ]
     },
     "Subscription renewal state": {
@@ -9771,6 +9853,12 @@
       "Addresses": [
         "位址"
       ],
+      "Album": [
+        "相簿"
+      ],
+      "Albums": [
+        "專輯"
+      ],
       "All": [
         "全部"
       ],
@@ -9830,6 +9918,9 @@
       ],
       "Clearing data": [
         "清除資料中"
+      ],
+      "Collaborate on documents": [
+        "於文件上合作"
       ],
       "Completed": [
         "完成"
@@ -9894,6 +9985,9 @@
       "Day theme": [
         "日間布景主題"
       ],
+      "Decline invitation?": [
+        "拒絕邀請?"
+      ],
       "Delete": [
         "刪除"
       ],
@@ -9932,6 +10026,9 @@
       ],
       "Download ${ date }": [
         "下載 ${ date }"
+      ],
+      "Download the app": [
+        "下載應用程式"
       ],
       "Download unverified file?": [
         "要下載未驗證的檔案嗎？"
@@ -10077,6 +10174,9 @@
       "Minicalendar": [
         "小型行事曆"
       ],
+      "Mobile": [
+        "手機"
+      ],
       "Modified": [
         "修改日期"
       ],
@@ -10101,6 +10201,9 @@
       "No breaches detected": [
         "無偵測到外洩"
       ],
+      "No RAW": [
+        "沒有 RAW"
+      ],
       "No results found": [
         "查無結果"
       ],
@@ -10115,6 +10218,9 @@
       ],
       "Open actions dropdown": [
         "展開操作下拉選單"
+      ],
+      "Organization setup": [
+        "組織機構設定"
       ],
       "Original size": [
         "原始大小"
@@ -10221,8 +10327,17 @@
       "Select link expiration time": [
         "選擇連結到期時間"
       ],
+      "Set recovery methods": [
+        "設定復原方式"
+      ],
       "Set recovery phrase": [
         "設定還原短語"
+      ],
+      "Set up email forwarding": [
+        "設定電子郵件轉發"
+      ],
+      "Set up your organization": [
+        "設定您的組織"
       ],
       "Settings": [
         "設定"
@@ -10331,6 +10446,9 @@
       ],
       "Warning: suspected fake website": [
         "警告：疑似假冒網站"
+      ],
+      "What is a VPN?": [
+        "甚麼是 VPN?"
       ],
       "What would you like to import?": [
         "您打算要匯入什麼資料呢？"
@@ -10510,6 +10628,9 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "從 ${ numberOfCountries } 國家自動選擇"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "伺服器遍布 ${ numberOfCountries }+ 國家"
       ]
     },
     "vpn_2024: renew": {

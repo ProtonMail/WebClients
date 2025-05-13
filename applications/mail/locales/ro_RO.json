@@ -36,11 +36,17 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
+      "A to Z": [
+        "De la A la Z"
+      ],
       "Activate": [
         "Activare"
       ],
       "Activate recovery": [
         "Activare recuperare"
+      ],
+      "Active": [
+        "Activ"
       ],
       "Add": [
         "Adăugare"
@@ -190,6 +196,9 @@
       ],
       "Change page": [
         "Schimbare pagină"
+      ],
+      "Change sorting": [
+        "Modificare sortare"
       ],
       "Chat with us": [
         "Conversați cu noi"
@@ -492,6 +501,9 @@
       "Expand composer": [
         "Extindere panou editare"
       ],
+      "Expand navigation bar to see custom views": [
+        "Extindeți bara de navigare pentru a vedea vizualizările personale"
+      ],
       "Expand navigation bar to see folders": [
         "Extindeți bara de navigare pentru a vedea folderele"
       ],
@@ -731,6 +743,9 @@
       "Learn more": [
         "Detalii"
       ],
+      "Least read": [
+        "Cel mai puțin citit"
+      ],
       "Let's talk": [
         "Să discutăm"
       ],
@@ -847,6 +862,9 @@
       ],
       "More search options": [
         "Mai multe opțiuni de căutare"
+      ],
+      "Most read": [
+        "Cele mai citit"
       ],
       "Move": [
         "Mutare"
@@ -1004,6 +1022,9 @@
       "Read receipt sent": [
         "Confirmare de citire trimisă"
       ],
+      "Recently received": [
+        "Primite recent"
+      ],
       "Reconnect": [
         "Reconectare"
       ],
@@ -1088,8 +1109,14 @@
       "Reset to default": [
         "Revenire la setări inițiale"
       ],
+      "Resize panel": [
+        "Redimensionare panou"
+      ],
       "Restore": [
         "Restaurare"
+      ],
+      "Resubscribe": [
+        "Reabonare"
       ],
       "Resume": [
         "Reluare"
@@ -1358,11 +1385,6 @@
       "Trust": [
         "Aprobare"
       ],
-      "Trust key": [
-        "Cheie de încredere",
-        "Chei de încredere",
-        "Chei de încredere"
-      ],
       "Trust public key": [
         "Aprobare cheie publică"
       ],
@@ -1404,6 +1426,9 @@
       ],
       "Unsubscribe": [
         "Dezabonare"
+      ],
+      "Unsubscribed": [
+        "Dezabonat"
       ],
       "Unsubscribing": [
         "Dezabonare"
@@ -5975,6 +6000,15 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
       ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, arhivare sau mutare mesaje vechi într-un folder."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } care abonamente nu mai sunt relevante."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } de la ele printr-un singur clic."
+      ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "${ BRAND_NAME } Scribe vă ajută să redactați mesaje mai bine, rapid și fără efort."
       ],
@@ -6185,6 +6219,16 @@
       "${ storage } storage": [
         "Stocare ${ storage }"
       ],
+      "${ subscription.ReceivedMessageCount } email last month": [
+        "Mesaje luna trecută: ${ subscription.ReceivedMessageCount }",
+        "Mesaje luna trecută: ${ subscription.ReceivedMessageCount }",
+        "Mesaje luna trecută: ${ subscription.ReceivedMessageCount }"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "Necitite: ${ subscription.UnreadMessageCount }",
+        "Necitite: ${ subscription.UnreadMessageCount }",
+        "Necitite: ${ subscription.UnreadMessageCount }"
+      ],
       "${ total } conversation": [
         "o conversație",
         "${ total } conversații",
@@ -6194,6 +6238,16 @@
         "Un mesaj",
         "${ total } mesaje",
         "${ total } de mesaje"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "Instrumente de urmărire din e-mail blocate: ${ trackersCount }",
+        "Instrumente de urmărire din e-mail blocate: ${ trackersCount }",
+        "Instrumente de urmărire din e-mail blocate: ${ trackersCount }"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "Instrumente de urmărire blocate: ${ trackersCount }",
+        "Instrumente de urmărire blocate: ${ trackersCount }",
+        "Instrumente de urmărire blocate: ${ trackersCount }"
       ],
       "${ unreadCount } scheduled message": [
         "S-a programat un mesaj.",
@@ -6320,6 +6374,15 @@
         "Toate (${ totalFoldersCount } etichete)",
         "Toate (${ totalFoldersCount } de etichete)"
       ],
+      "All messages from this mailing list will be marked as read.": [
+        "Toate mesajele din această listă de adrese vor fi marcate ca fiind citite."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Toate mesajele din această listă adrese vor fi mutate în arhivă."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Toate mesajele din această listă adrese vor fi mutate în gunoi."
+      ],
       "All messages stored in this folder will be permanently deleted.": [
         "Toate mesajele stocate în acest folder vor fi șterse definitiv."
       ],
@@ -6373,11 +6436,17 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Va fi șters și orice subfolder. Totuși, mesajele stocate în folderul ${ nameDeleted } nu vor fi șterse și pot fi găsite în folderul «Toate mesajele»."
       ],
+      "Apply to future messages ": [
+        "Aplicare la mesajele viitoare"
+      ],
       "Applying actions to conversations": [
         "Se aplică acțiunile la conversații"
       ],
       "Applying actions to messages": [
         "Se aplică acțiunile la mesaje"
+      ],
+      "Archive existing messages": [
+        "Arhivare mesaje existente"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Sigur doriți să ștergeți toate mesajele din acest folder?"
@@ -6474,6 +6543,9 @@
       ],
       "Browser not supported": [
         "Navigator web neacceptat"
+      ],
+      "Bulk delete": [
+        "Ștergere în masă"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
@@ -6695,6 +6767,9 @@
       ],
       "Each code can only be used once": [
         "Fiecare cod poate fi folosit doar odată."
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Gestionați cu ușurință și efectuați dezabonarea de la buletine informative și liste de adrese."
       ],
       "Edit email address": [
         "Editare adresă de e-mail"
@@ -7057,6 +7132,9 @@
       "Manage your labels": [
         "Gestionare etichete"
       ],
+      "Mark all as read": [
+        "Marcare toate ca citite"
+      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
@@ -7206,6 +7284,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Deschideți ghidul pentru acțiuni recomandate și legături web utile."
+      ],
+      "Optional": [
+        "Opțional"
       ],
       "or discover other features:": [
         "sau descoperiți alte funcții:"
@@ -7363,6 +7444,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Partajarea publică a documentelor nu este încă implementată."
+      ],
+      "Quickly spot": [
+        "Identificare rapidă"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contactați-ne pentru ajutor despre orice din ${ BRAND_NAME }."
@@ -7851,6 +7935,9 @@
       "Tracking": [
         "Urmăritori"
       ],
+      "Trash existing messages": [
+        "Golire mesaje din gunoi"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului. Aceasta va reporni aplicația."
       ],
@@ -7874,6 +7961,9 @@
       ],
       "Unsaved changes": [
         "Modificări nesalvate"
+      ],
+      "Unsubscribe": [
+        "Dezabonare"
       ],
       "Unsupported file": [
         "Fişier nesuportat"
@@ -8337,6 +8427,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Abonamentul se va reînnoi automat la ${ renewalTime }."
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate"
       ]
     },
     "info": {
@@ -8619,6 +8712,12 @@
       " and ${ l }": [
         " și ${ l }"
       ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Marcare toate mesajele ca fiind citite"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Mutare toate mesajele în ${ boldFolderName }"
+      ],
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
       ],
@@ -8641,6 +8740,9 @@
       ],
       "Actions": [
         "Acțiuni"
+      ],
+      "Active filter:": [
+        "Filtru activ:"
       ],
       "Add email address": [
         "Adăugare e-mail"
@@ -8669,11 +8771,11 @@
       "Always move sender's emails": [
         "Mutare întotdeauna mesajele expeditorului"
       ],
-      "And": [
-        "Şi"
-      ],
       "AND": [
         "ȘI"
+      ],
+      "And": [
+        "Şi"
       ],
       "and": [
         "și"
@@ -8689,6 +8791,9 @@
       ],
       "Apply filter to existing emails": [
         "Aplicare filtru la mesajele existente"
+      ],
+      "Apply to future messages": [
+        "Aplicare la mesajele viitoare"
       ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
@@ -8897,11 +9002,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Dacă"
-      ],
       "IF": [
         "DACĂ"
+      ],
+      "If": [
+        "Dacă"
       ],
       "Import all messages": [
         "Importare toate mesajele"
@@ -8954,6 +9059,9 @@
       "Mail Server (IMAP)": [
         "Server e-mail (IMAP)"
       ],
+      "Mail subscriptions": [
+        "Abonamente Mail"
+      ],
       "Main": [
         "Principală"
       ],
@@ -8968,6 +9076,9 @@
       ],
       "Move ${ sidebarElementName }": [
         "Mutare ${ sidebarElementName }"
+      ],
+      "Move messages to": [
+        "Mutare mesaje în"
       ],
       "Move to": [
         "Mutare în"
@@ -9017,14 +9128,14 @@
       "Optional": [
         "Opțional"
       ],
+      "OR": [
+        "SAU"
+      ],
       "or": [
         "sau"
       ],
       "Or": [
         "Sau"
-      ],
-      "OR": [
-        "SAU"
       ],
       "Original link": [
         "Legătura originală"
@@ -9136,6 +9247,9 @@
       ],
       "System information": [
         "Informații sistem"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Filtrul este dezactivat. Puteți să-l activați în ${ settingsLink }."
       ],
       "Theme": [
         "Tema"
@@ -9287,6 +9401,11 @@
       ],
       "To: ${ to }": [
         "Către: ${ to }"
+      ]
+    },
+    "Labels": {
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Aici vizualizați și gestionați abonamentele la buletine informative și la listele de adrese."
       ]
     },
     "Landmarks": {
@@ -9508,6 +9627,9 @@
       ],
       "Types of recovery methods": [
         "Tipuri de metode de recuperare"
+      ],
+      "Views": [
+        "Vizualizări"
       ],
       "What’s this?": [
         "Ce este asta?"
@@ -9913,6 +10035,14 @@
         "Viteză VPN medie"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Luați ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ștergere cont"
@@ -9934,14 +10064,6 @@
       ],
       "Switch plan": [
         "Schimbare plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Luați ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -12714,6 +12836,47 @@
         "Pentru ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
@@ -12978,47 +13141,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {
@@ -13644,6 +13766,9 @@
       "Archive": [
         "Arhivă"
       ],
+      "Archive all messages?": [
+        "Arhivați toate mesajele?"
+      ],
       "Are you sure you want to close the preview?": [
         "Sigur doriți să închideți examinarea?"
       ],
@@ -14019,8 +14144,17 @@
       "Load remote content": [
         "Încărcare conținut extern"
       ],
+      "Mail Subscriptions": [
+        "Abonamente pe e-mail"
+      ],
+      "Mail subscriptions": [
+        "Abonamente pe e-mail"
+      ],
       "Make a secure connection your default": [
         "Faceți o conexiune sigură ca implicită"
+      ],
+      "Mark all messages as read": [
+        "Marcare toate mesajele ca fiind citite"
       ],
       "Mark as read": [
         "Marcare ca citit"
@@ -14135,6 +14269,9 @@
       ],
       "No breaches detected": [
         "Nu există divulgări"
+      ],
+      "No mail subscriptions": [
+        "Nu sunt abonamente pe e-mail"
       ],
       "No need to empty the trash": [
         "Nu trebuie să goliți gunoiul"
@@ -14379,6 +14516,9 @@
       "Trash": [
         "Gunoi"
       ],
+      "Trash all messages?": [
+        "Ștergeți toate mesajele?"
+      ],
       "Trust new key?": [
         "Aveți încredere în noua cheie?",
         "Aveți încredere în noile chei?",
@@ -14395,6 +14535,9 @@
       ],
       "Unsubscribe": [
         "Dezabonare"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Vă dezabonați de la ${ subscription.Name }?"
       ],
       "Unsubscribe request sent": [
         "Solicitare de dezabonare trimisă"
@@ -14475,6 +14618,9 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Your subscriptions in one place": [
+        "Abonamentele personale într-un singur loc"
       ]
     },
     "Today icon tooltip in mini calendar": {

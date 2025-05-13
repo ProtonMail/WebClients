@@ -467,6 +467,9 @@
       "Go back": [
         "Vissza"
       ],
+      "Go back to album “${ albumName }“": [
+        "Vissza az albumhoz: „${ albumName }”"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Nyissa meg a ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -979,6 +982,9 @@
       ],
       "Take a tour": [
         "Bemutató megtekintése"
+      ],
+      "This album is empty": [
+        "Ez az album üres"
       ],
       "Toggle Calendar app": [
         "Naptár alkalmazás váltása"
@@ -2978,8 +2984,14 @@
       "External invitations are temporarily disabled. Please try again later": [
         "A külső meghívók ideiglenesen le vannak tiltva. Kérjük, próbálja meg később újra"
       ],
+      "Failed to copy photo to album": [
+        "Nem sikerült a fénykép másolása az albumba"
+      ],
       "Failed to load the STL preview": [
         "Nem sikerült betölteni az STL előnézetet"
+      ],
+      "Failed to save some photos to your Drive": [
+        "Nem sikerült menteni néhány fényképet az Ön Drive-jába"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "A fájl: \"${ item.name }\", hiba miatt nem tölthető fel: \"${ error }\""
@@ -3826,6 +3838,10 @@
       ]
     },
     "Heading": {
+      "Add ${ photoCount } photo to": [
+        "${ photoCount } fénykép hozzáadása ehhez",
+        "${ photoCount } fénykép hozzáadása ehhez"
+      ],
       "Add to shared album": [
         "Hozzáadás a megosztott albumhoz"
       ],
@@ -3834,6 +3850,10 @@
       ],
       "Recent": [
         "Friss"
+      ],
+      "Share ${ photoCount } photo via": [
+        "${ photoCount } fénykép megosztása a következővel",
+        "${ photoCount } fénykép megosztása a következővel"
       ]
     },
     "Hint": {
@@ -4252,8 +4272,8 @@
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } a Play Áruházban"
       ],
-      "${ email } invited you to join **${ albumName }**": [
-        "${ email } meghívta Önt, hogy csatlakozzon ide: **${ albumName }**"
+      "${ email } invited you to join ${ albumName }": [
+        "${ email } meghívta Önt, hogy csatlakozzon ide: ${ albumName }"
       ],
       "${ errorCount } failed": [
         "${ errorCount } sikertelen",
@@ -4282,6 +4302,10 @@
       "${ pausedCount } paused": [
         "${ pausedCount } felfüggesztve",
         "${ pausedCount } felfüggesztve"
+      ],
+      "${ photoCount } item": [
+        "${ photoCount } elem",
+        "${ photoCount } elem"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } legalább 1 dedikált szervert igényel ${ serverPricePerMonth } havonta."
@@ -4875,6 +4899,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
       ],
+      "If you have a large photo library, it might take some time.": [
+        "Ha nagy a fotótára, ez eltarthat egy ideig."
+      ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Ha megvan valamelyik, nyissa meg a ${ BRAND_NAME } fiók beállításait a feloldási folyamat elindításához."
       ],
@@ -5183,6 +5210,15 @@
       "Photo is set as album cover": [
         "A fénykép az album borítójaként lett beállítva"
       ],
+      "Photo was copied to stream and marked favorite there.": [
+        "A fotó át lett másolva a videózásba és ott kedvencként lett megjelölve."
+      ],
+      "Photo(s) saved to your Drive": [
+        "A meghajtóra mentett fénykép(ek)"
+      ],
+      "Photos": [
+        "Fényképek"
+      ],
       "Photos have been successfully recovered.": [
         "A fényképek sikeresen helyreállítva."
       ],
@@ -5377,6 +5413,9 @@
       "Session timed out": [
         "A munkamenet lejárt"
       ],
+      "Set up your organization": [
+        "Állítsa be a szervezet adatait"
+      ],
       "Setting up ${ feature }…": [
         "${ feature } beállítása…"
       ],
@@ -5430,6 +5469,9 @@
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Néhány fájlja már nem érhető el. Állítsa vissza a fájlok elérését. ${ StartRecoveryButton }"
+      ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Néhány fénykép ebben az albumban nincs mentve az idővonalára. Az album törlése véglegesen törli ezeket a fényképeket."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Egyes weboldalak és videómegosztó szolgáltatások földrajzi régiónként blokkolják a tartalmakat. A VPN segítségével megkerülheti ezeket a korlátozásokat, és szabadon hozzáférhet az internethez."
@@ -5793,6 +5835,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
       ],
+      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
+        "Frissítjük a fényképek funkciót az új élményhez! Ezen átmenet alatt a fényképek helyreállítása átmenetileg nem elérhető. Mindez néhány napon belül elkészül. Köszönjük megértését."
+      ],
       "Week": [
         "Hét"
       ],
@@ -5874,6 +5919,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Közben bezárhatja a lapot vagy a böngészőt."
+      ],
+      "You can close the tab. We'll work on it in the background.": [
+        "Bezárhatja a fület. Háttérben dolgozunk rajta."
       ],
       "You can import one data type at a time.": [
         "Egyszerre egyféle adat importálható."
@@ -6592,9 +6640,6 @@
       ],
       "Set recovery method": [
         "Helyreállítási módszer beállítása"
-      ],
-      "Share a file": [
-        "Fájl megosztása"
       ],
       "Shared": [
         "Megosztva"
@@ -8380,6 +8425,9 @@
       "Root folder failed to be loaded": [
         "A gyökérmappa betöltése nem sikerült"
       ],
+      "Selected photo(s) already in \"${ albumName }\"": [
+        "A kiválasztott fénykép(ek) már a(z) „${ albumName }” albumban vannak"
+      ],
       "Share invitation accepted successfully": [
         "A megosztási meghívó elfogadása megtörtént"
       ],
@@ -8395,6 +8443,9 @@
       ],
       "Subfolder failed to be loaded": [
         "Almappa betöltése nem sikerült"
+      ],
+      "The Albums feature is on its way! We're rolling it out gradually — please try again soon": [
+        "Az albumok funkció hamarosan érkezik! Fokozatosan vezetjük be — kérjük, próbálja meg később"
       ],
       "The document failed to be created": [
         "A dokumentum létrehozása nem sikerült"
@@ -8428,11 +8479,23 @@
       "Your old files will be deleted in 72 hours": [
         "A régi fájljai 72 órán belül törlődnek"
       ],
+      "Your photo(s) have been added to \"${ albumName }\"": [
+        "A fénykép hozzá lett adva a(z) „${ albumName }” albumhoz"
+      ],
       "Your settings failed to be saved": [
         "Beállításainak mentése nem sikerült"
       ],
       "Your settings have been changed successfully": [
         "A beállítások módosítása sikeresen megtörtént"
+      ],
+      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
+        "Néhány fényképet nem sikerült hozzáadni a(z) „${ albumName }” albumhoz"
+      ],
+      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Néhány fotót nem sikerült eltávolítani innen: ${ albumLink.name }"
+      ],
+      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
+        "A fénykép eltávolításra került innen: ${ albumLink.name }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9018,6 +9081,9 @@
       ],
       "New name": [
         "Új név"
+      ],
+      "Organization name": [
+        "Szervezet neve"
       ],
       "Password": [
         "Jelszó"
@@ -9815,6 +9881,47 @@
         "${ totalPrice } áron"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatikus e-mail továbbítás ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Short @pm.me email address": [
+        "Rövid @pm.me e-mail cím"
+      ],
+      "Support our mission": [
+        "Támogassa küldetésünket"
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "Upgrade your productivity": [
+        "Növelje a termelékenységét"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
+      ],
+      "Your privacy is our mission": [
+        "Az Ön adatvédelme a mi küldetésünk"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } és ${ VPN_SHORT_APP_NAME } prémium funkciókkal"
@@ -10073,47 +10180,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Az Ön saját rövid @pm.me e-mail álnévcíme"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatikus e-mail továbbítás ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Short @pm.me email address": [
-        "Rövid @pm.me e-mail cím"
-      ],
-      "Support our mission": [
-        "Támogassa küldetésünket"
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "Upgrade your productivity": [
-        "Növelje a termelékenységét"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
-      ],
-      "Your privacy is our mission": [
-        "Az Ön adatvédelme a mi küldetésünk"
       ]
     },
     "Subscription renewal state": {
@@ -10573,6 +10639,9 @@
       ],
       "Confirmation required": [
         "Megerősítés szükséges"
+      ],
+      "Connect apps and devices": [
+        "Alkalmazások és eszközök összekapcsolása"
       ],
       "Connect to video conferencing": [
         "Kapcsolódás videokonferenciához"
@@ -11046,6 +11115,12 @@
       ],
       "Set up email forwarding": [
         "E-mail továbbítás beállítása"
+      ],
+      "Set up your organization": [
+        "Állítsa be a szervezet adatait"
+      ],
+      "Setting up Albums & Filters": [
+        "Albumok és szűrők beállítása"
       ],
       "Settings": [
         "Beállítások"
