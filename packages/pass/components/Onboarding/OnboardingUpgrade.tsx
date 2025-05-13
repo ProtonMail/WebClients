@@ -1,4 +1,4 @@
-import { type FC, type ReactNode, useMemo, useState } from 'react';
+import { type FC, type ReactNode, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -21,6 +21,7 @@ import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { selectUser } from '@proton/pass/store/selectors';
@@ -38,7 +39,7 @@ import clsx from '@proton/utils/clsx';
 
 import './OnboardingUpgrade.scss';
 
-type AvailablePlans = PLANS.PASS | PLANS.BUNDLE;
+export type AvailablePlans = PLANS.PASS | PLANS.BUNDLE;
 type FeaturesTable = {
     comparisons: { label: string; badge?: 'light' | 'dark' }[];
     included: {
@@ -89,12 +90,8 @@ const getProtonProducts = () => [
     { icon: <VpnLogo variant="glyph-only" />, name: VPN_SHORT_APP_NAME },
 ];
 
-type PlanSelectProps = {
-    selected: AvailablePlans;
-    setSelected?: (p: PLANS.PASS | PLANS.BUNDLE) => void;
-};
-
-const Content: FC<PlanSelectProps> = ({ selected }) => {
+export const Content: FC = () => {
+    const { selected = PLANS.PASS } = useOnboarding<AvailablePlans>();
     const online = useConnectivity();
     const includesFeatures = useMemo(getTableContent, []);
     const protonProducts = useMemo(getProtonProducts, []);
@@ -181,7 +178,8 @@ type PassPlanOption = {
     label: ReactNode;
 };
 
-const Description: FC<PlanSelectProps> = ({ selected, setSelected }) => {
+export const Description: FC = () => {
+    const { selected = PLANS.PASS, setSelected } = useOnboarding<AvailablePlans>();
     const online = useConnectivity();
     const user = useSelector(selectUser);
 
@@ -224,7 +222,7 @@ const Description: FC<PlanSelectProps> = ({ selected, setSelected }) => {
                 options={plansOptions.map(({ value, title, label }) => ({
                     value,
                     label: (
-                        <span className="pass-onboarding-modal--option-dense rounded-xl flex items-center w-full py-3 px-4">
+                        <div className="pass-onboarding-modal--option-dense rounded-xl flex items-center w-full py-3 px-4">
                             <div className="flex-1">
                                 <div className={clsx('text-bold', selected === value ? 'color-invert' : 'color-norm')}>
                                     {title}
@@ -241,26 +239,10 @@ const Description: FC<PlanSelectProps> = ({ selected, setSelected }) => {
                             {selected === value && (
                                 <Icon name="chevron-right" size={4} color="var(--interaction-weak)" />
                             )}
-                        </span>
+                        </div>
                     ),
                 }))}
             />
         </>
-    );
-};
-
-export const useOnboardingUpgrade = () => {
-    const [selected, setSelected] = useState<AvailablePlans>(PLANS.PASS);
-    const navigateToUpgradePlusPlan = useNavigateToUpgrade({ upsellRef: UpsellRef.PLUS_PLAN_ONBOARDING });
-    const navigateToUpgradeUnlimitedPlan = useNavigateToUpgrade({ upsellRef: UpsellRef.UNLIMITED_PLAN_ONBOARDING });
-
-    return useMemo(
-        () => ({
-            Content: () => <Content selected={selected} />,
-            Description: () => <Description selected={selected} setSelected={setSelected} />,
-            navigateToUpgrade: selected === PLANS.PASS ? navigateToUpgradePlusPlan : navigateToUpgradeUnlimitedPlan,
-            selected,
-        }),
-        [selected]
     );
 };
