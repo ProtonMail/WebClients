@@ -10,7 +10,7 @@ const Anniversary2025Header = (props: OfferProps) => {
     return (
         <header className="mb-6">
             <div className="flex flex-nowrap flex-row items-end gap-4 mb-2">
-                <img src={protonAnniversary} alt="11" />
+                <img src={protonAnniversary} width={108} height={97} alt="11" />
                 <h2 className="color-norm lh100 anniversary-2025-header">
                     {
                         // translator: full sentence is: 11 years of privacy thanks to you
