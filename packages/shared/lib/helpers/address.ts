@@ -101,6 +101,7 @@ export const getAvailableAddressDomains = ({
     ];
 };
 
-const { FLAG_DISABLE_E2EE, FLAG_DISABLE_EXPECTED_SIGNED } = ADDRESS_FLAGS;
-export const encryptionDisabled = (address: Address) => hasBit(address.Flags, FLAG_DISABLE_E2EE);
-export const expectSignatureDisabled = (address: Address) => hasBit(address.Flags, FLAG_DISABLE_EXPECTED_SIGNED);
+const { FLAG_DISABLE_E2EE, FLAG_DISABLE_EXPECTED_SIGNED, BYOE } = ADDRESS_FLAGS;
+export const getIsEncryptionDisabled = (address: Address) => hasBit(address.Flags, FLAG_DISABLE_E2EE);
+export const getIsExpectSignatureDisabled = (address: Address) => hasBit(address.Flags, FLAG_DISABLE_EXPECTED_SIGNED);
+export const getIsBYOEAddress = (address: Address) => hasBit(address.Flags, BYOE);

@@ -11,7 +11,7 @@ import { addGroupMember as addGroupMemberApi } from '@proton/shared/lib/api/grou
 import { getAllPublicKeys, replaceAddressTokens } from '@proton/shared/lib/api/keys';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 import { MEMBER_PRIVATE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
-import { encryptionDisabled } from '@proton/shared/lib/helpers/address';
+import { getIsEncryptionDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type {
     Address,
@@ -370,7 +370,7 @@ const useAddGroupMember = () => {
         const canonicalEmail = canonicalizeInternalEmail(email);
         const AddressSignaturePacket = await signMemberEmail(canonicalEmail, forwarderKey.privateKey);
 
-        if (isExternalForMail(forwardeeKeysConfig) && !encryptionDisabled(groupAddress)) {
+        if (isExternalForMail(forwardeeKeysConfig) && !getIsEncryptionDisabled(groupAddress)) {
             await disableEncryption(groupAddress, forwarderKey);
         }
 
