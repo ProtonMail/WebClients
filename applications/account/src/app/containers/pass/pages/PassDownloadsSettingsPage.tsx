@@ -9,6 +9,7 @@ import { DownloadClientCard, SettingsLink, SettingsParagraph, SettingsSectionWid
 import { PLANS } from '@proton/payments';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { Clients, clients } from '@proton/shared/lib/pass/constants';
+import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 
 type Section = { header: string; platforms: Clients[] };
@@ -20,7 +21,7 @@ const UpgradeBanner = ({ className }: { className?: string }) => {
 
     const shouldUpgrade = user.isFree;
 
-    if (loadingPlans || !shouldUpgrade || !passPlan) {
+    if (loadingPlans || !shouldUpgrade || !passPlan || hasPassLifetime(user)) {
         return null;
     }
 
