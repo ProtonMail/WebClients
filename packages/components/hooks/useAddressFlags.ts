@@ -79,7 +79,7 @@ const useAddressFlags: UseAddressFlags = (initialAddress) => {
     const allowDisablingEncryption =
         !isEncryptionDisabled && ((isExternalAddress && !isBYOEAddress) || isCustomDomainAddressWithoutMX);
     const allowDisablingUnsignedMail = isExpectSignatureDisabled && !isExternalAddress;
-    const allowEnablingUnsignedMail = !isExpectSignatureDisabled && isExternalAddress;
+    const allowEnablingUnsignedMail = !isExpectSignatureDisabled && isExternalAddress && !isBYOEAddress;
 
     return {
         allowEnablingEncryption,
