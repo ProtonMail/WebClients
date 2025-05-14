@@ -60,7 +60,8 @@ export const getDecryptedAttachment = async (
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
     api: Api,
-    messageFlags?: number
+    messageFlags?: number,
+    handleMalformedIcsAttachmentContent?: boolean
 ): Promise<DecryptedAttachment> => {
     const isOutside = messageKeys.type === 'outside';
     const encryptedBinary = await getRequest(attachment, api, messageKeys);
@@ -68,12 +69,14 @@ export const getDecryptedAttachment = async (
     try {
         if (!isOutside) {
             const sessionKey = await getSessionKey(attachment, messageKeys.decryptionKeys, messageFlags);
-            const decryptedAttachment = await decryptAndVerify(
-                encryptedBinary,
-                sessionKey,
-                attachment.Signature,
-                verification?.verifyingKeys
-            );
+            const decryptedAttachment = await CryptoProxy.decryptMessage({
+                binaryMessage: new Uint8Array(encryptedBinary),
+                sessionKeys: [sessionKey],
+                armoredSignature: attachment.Signature,
+                verificationKeys: verification?.verifyingKeys,
+                format: 'binary',
+                handleMalformedIcsAttachmentContent,
+            });
 
             const verificationStatus = getVerificationStatusFromKeys(
                 decryptedAttachment,
@@ -124,7 +127,8 @@ export const getAndVerifyAttachment = async (
     api: Api,
     getAttachment?: (ID: string) => DecryptedAttachment | undefined,
     onUpdateAttachment?: (ID: string, attachment: DecryptedAttachment) => void,
-    messageFlags?: number
+    messageFlags?: number,
+    handleMalformedIcsAttachmentContent?: boolean
 ): Promise<DecryptedAttachment> => {
     const isOutside = messageKeys.type === 'outside';
     let attachmentdata: DecryptedAttachment;
@@ -145,7 +149,14 @@ export const getAndVerifyAttachment = async (
         if (attachmentInState) {
             attachmentdata = attachmentInState;
         } else {
-            attachmentdata = await getDecryptedAttachment(attachment, verification, messageKeys, api, messageFlags);
+            attachmentdata = await getDecryptedAttachment(
+                attachment,
+                verification,
+                messageKeys,
+                api,
+                messageFlags,
+                handleMalformedIcsAttachmentContent
+            );
         }
         onUpdateAttachment(attachmentID, attachmentdata);
     } else {
