@@ -8298,6 +8298,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Només sou a uns quants clics d'una safata d'entrada ordenada"
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } correu el mes passat",
+        "${ subscription.ReceivedMessages.Last30Days } correus el mes passat"
       ]
     },
     "info": {
@@ -9271,6 +9275,9 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "Visualitzeu i gestioneu les subscripcions a butlletins i llistes de correu aquí."
+      ],
+      "Newsletters you unsubscribe from will appear here.": [
+        "Els butlletins informatius als quals anul·leu la subscripció apareixeran aquí."
       ]
     },
     "Landmarks": {
@@ -14371,6 +14378,9 @@
       ],
       "Your subscriptions in one place": [
         "Les vostres subscripcions en un sol lloc"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Sense subscripcions de correu donades de baixa"
       ]
     },
     "Today icon tooltip in mini calendar": {

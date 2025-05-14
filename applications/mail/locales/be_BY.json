@@ -8576,6 +8576,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } ліст у мінулым месяцы",
+        "${ subscription.ReceivedMessages.Last30Days } лісты ў мінулым месяцы",
+        "${ subscription.ReceivedMessages.Last30Days } лістоў у мінулым месяцы",
+        "${ subscription.ReceivedMessages.Last30Days } лістоў у мінулым месяцы"
       ]
     },
     "info": {
@@ -9558,6 +9564,9 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "Праглядайце і кіруйце інфармацыйнай рассылкай і падпіскамі спіса рассылкі ў гэтым месцы."
+      ],
+      "Newsletters you unsubscribe from will appear here.": [
+        "Скасаваныя вамі інфармацыйныя рассылкі з'явяцца тут."
       ]
     },
     "Landmarks": {
@@ -9874,6 +9883,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Ваша падпіска завяршылася. ${ cta } і пазбегнуць страты даных."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Ваша сховішча запоўнена. Каб працягваць карыстацца прадуктамі ${ BRAND_NAME } вызваліце месца або ${ cta }."
       ]
     },
     "Log preference": {
@@ -12971,6 +12983,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Вы згубіце доступ да наступных функцый: неабмежаваную колькасць запісаў уваходу і нататак; неабмежаваную колькасць псеўданімаў hide-my-email; 20 сховішчаў; прыярытэтную падтрымку."
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Калі вы хочаце і далей адпраўляць і прымаць лісты, вызваліце месца або ${ upgrade }"
       ]
     },
     "Subscription": {
@@ -14894,6 +14909,9 @@
       ],
       "Your subscriptions in one place": [
         "Вашы падпіскі ў адным месцы"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Няма скасаваных паштовых падпісак"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -8437,6 +8437,11 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate"
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "Mesaje luna trecută: ${ subscription.ReceivedMessages.Last30Days }",
+        "Mesaje luna trecută: ${ subscription.ReceivedMessages.Last30Days }",
+        "Mesaje luna trecută: ${ subscription.ReceivedMessages.Last30Days }"
       ]
     },
     "info": {
@@ -9723,6 +9728,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Abonamentul s-a încheiat. ${ cta } și pentru a evita pierderea datelor."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Spațiul dvs. de stocare este plin. Pentru a continua să utilizați produsele ${ BRAND_NAME }, eliberați spațiu sau ${ cta }."
       ]
     },
     "Log preference": {
@@ -12755,6 +12763,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Veți pierde accesul la autentificări și note nelimitate, aliasuri hide-my-email nelimitate, 20 de seifuri, precum și la asistența prioritară."
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Pentru a trimite sau a primi mesaje, eliberați spațiu sau ${ upgrade }"
       ]
     },
     "Subscription": {
@@ -14623,6 +14634,9 @@
       ],
       "Your subscriptions in one place": [
         "Abonamentele personale într-un singur loc"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Nu există dezabonări de la abonamente"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15260,6 +15274,9 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "Aici vizualizați și gestionați abonamentele la buletine informative și la listele de adrese."
+      ],
+      "Newsletters you unsubscribe from will appear here.": [
+        "Buletinele informative de la care vă dezabonați vor apărea aici."
       ]
     }
   }

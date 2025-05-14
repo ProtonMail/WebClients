@@ -8297,6 +8297,10 @@
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } não lido",
         "${ subscription.UnreadMessageCount } não lidos"
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } e-mail no mês passado",
+        "${ subscription.ReceivedMessages.Last30Days } e-mails no mês passado"
       ]
     },
     "info": {
@@ -9270,6 +9274,9 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "Visualize e gerencie as assinaturas de newsletter e lista de e-mails aqui."
+      ],
+      "Newsletters you unsubscribe from will appear here.": [
+        "As newsletters das quais você se desinscreveu aparecerão aqui."
       ]
     },
     "Landmarks": {
@@ -14381,6 +14388,9 @@
       ],
       "Your subscriptions in one place": [
         "Suas assinaturas em um só lugar"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Sem assinaturas de e-mail canceladas"
       ]
     },
     "Today icon tooltip in mini calendar": {

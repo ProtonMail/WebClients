@@ -8298,6 +8298,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } ηλεκτρονικό μήνυμα τον περασμένο μήνα",
+        "${ subscription.ReceivedMessages.Last30Days } ηλεκτρονικά μηνύματα τον περασμένο μήνα"
       ]
     },
     "info": {
@@ -9268,6 +9272,9 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "Δείτε και διαχειριστείτε τις συνδρομές ενημερωτικών δελτίων και λιστών αλληλογραφίας εδώ."
+      ],
+      "Newsletters you unsubscribe from will appear here.": [
+        "Εδώ θα εμφανίζονται τα ενημερωτικά δελτία από τα οποία έχετε καταργήσει την εγγραφή."
       ]
     },
     "Landmarks": {
@@ -9582,6 +9589,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Η συνδρομή σας έχει λήξει. ${ cta } και για την αποφυγή απώλειας δεδομένων."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Ο αποθηκευτικός χώρος σας είναι πλήρης. Για να συνεχίσετε να χρησιμοποιείτε τα προϊόντα ${ BRAND_NAME }, απελευθερώστε χώρο ή ${ cta }."
       ]
     },
     "Log preference": {
@@ -12549,6 +12559,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Θα χάσετε την πρόσβαση σε απεριόριστες συνδέσεις και σημειώσεις, απεριόριστα ψευδώνυμα hide-my-email, 20 κρύπτες, καθώς και υποστήριξη προτεραιότητας."
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }"
       ]
     },
     "Subscription": {
@@ -14362,6 +14375,9 @@
       ],
       "Your subscriptions in one place": [
         "Οι συνδρομές σας σε ένα μέρος"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Δεν υπάρχουν μη εγγεγραμμένες συνδρομές σε ταχυδρομικά ενημερωτικά δελτία."
       ]
     },
     "Today icon tooltip in mini calendar": {
