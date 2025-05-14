@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import { Banner, Button } from '@proton/atoms';
-import { BasicModal, Prompt } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Alert, BasicModal, Prompt } from '@proton/components';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 
 import type { InviteActions } from '../../../../interfaces/Invite';
@@ -114,14 +114,14 @@ const EditRecurringConfirmModal = ({
                 />
             ) : null}
             {recurringWarningText ? (
-                <Banner className="mb-4" variant="warning">
+                <Alert className="mb-4" type="warning">
                     {recurringWarningText}
-                </Banner>
+                </Alert>
             ) : null}
             {rruleWarningText ? (
-                <Banner className="mb-4" variant="warning">
+                <Alert className="mb-4" type="warning">
                     {rruleWarningText}
-                </Banner>
+                </Alert>
             ) : null}
         </Prompt>
     );
