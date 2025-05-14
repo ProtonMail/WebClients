@@ -1,4 +1,4 @@
-import { type TelemetryConfig, ProtonTelemetry as createTelemetry } from '@proton/telemetry';
+import { type TelemetryConfig, ProtonTelemetry as createTelemetry } from '@protontech/telemetry';
 
 import { getClientID } from '../apps/helper';
 import { getAppVersionStr } from '../fetch/headers';
@@ -41,7 +41,7 @@ class ProtonTelemetry {
         ...args: Parameters<ReturnType<typeof createTelemetry>['sendCustomEvent']>
     ): ReturnType<ReturnType<typeof createTelemetry>['sendCustomEvent']> {
         if (!this.telemetry || !this.UID) {
-            captureMessage('Attempted to send a custom event when @proton/telemetry has not been initialised.');
+            captureMessage('Attempted to send a custom event when @protontech/telemetry has not been initialised.');
             return;
         }
 
