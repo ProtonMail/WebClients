@@ -339,10 +339,18 @@ export const eventManager = ({
     });
 };
 
-export const loadCrypto = ({ appName, unleashClient }: { appName: APP_NAMES, unleashClient: UnleashClient | undefined; }) => {
-    return loadCryptoWorker(getCryptoWorkerOptions(appName, {
-        enforceOpenpgpGrammar:  unleashClient?.isEnabled('CryptoEnforceOpenpgpGrammar')
-    }));
+export const loadCrypto = ({
+    appName,
+    unleashClient,
+}: {
+    appName: APP_NAMES;
+    unleashClient: UnleashClient | undefined;
+}) => {
+    return loadCryptoWorker(
+        getCryptoWorkerOptions(appName, {
+            enforceOpenpgpGrammar: !!unleashClient?.isEnabled('CryptoEnforceOpenpgpGrammar'),
+        })
+    );
 };
 
 export const loadLocales = ({
@@ -488,5 +496,8 @@ export const publicApp = ({
         pathLocale,
     });
 
-    return Promise.all([loadCrypto({ appName: app, unleashClient: undefined }), loadLocalesPublicApp({ locales, localeCode, browserLocale })]);
+    return Promise.all([
+        loadCrypto({ appName: app, unleashClient: undefined }),
+        loadLocalesPublicApp({ locales, localeCode, browserLocale }),
+    ]);
 };
