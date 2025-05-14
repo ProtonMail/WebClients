@@ -43,6 +43,7 @@ export const getIsEligible = ({ user, subscription, protonConfig, lastSubscripti
             hasPassMonthly &&
             isNotExternal &&
             noPassLifetime &&
+            noPassViaSimpleLogin &&
             user.canPay &&
             !user.isDelinquent
         );
@@ -52,6 +53,7 @@ export const getIsEligible = ({ user, subscription, protonConfig, lastSubscripti
         hasValidApp &&
         checkAllowed &&
         isBefore(fromUnixTime(lastSubscriptionEnd), FREE_DOWNGRADER_LIMIT) &&
+        noPassLifetime &&
         noPassViaSimpleLogin &&
         user.canPay &&
         !user.isDelinquent
