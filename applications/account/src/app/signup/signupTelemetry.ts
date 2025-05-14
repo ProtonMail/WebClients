@@ -22,10 +22,10 @@ export const sendSignupLoadTelemetry = ({
     currency: Currency;
     cycle: CYCLE;
 }) => {
-    telemetry.sendCustomEvent('signup_page_load_v0', {
+    telemetry.sendCustomEvent('signup_page_load_v1', {
         selectedPlan: plan,
         flowId,
-        productIntent,
+        productIntent: productIntent || 'generic',
         currency,
         cycle,
     });
@@ -48,17 +48,13 @@ export const sendSignupAccountCreationTelemetry = ({
     signupType: SignupType | undefined;
     amount: number;
 }) => {
-    telemetry.sendCustomEvent(
-        'signup_account_creation_v0',
-        {
-            selectedPlan: plan,
-            flowId,
-            productIntent,
-            currency,
-            cycle,
-            signupType,
-            amount,
-        },
-        {}
-    );
+    telemetry.sendCustomEvent('signup_account_creation_v1', {
+        selectedPlan: plan,
+        flowId,
+        productIntent: productIntent || 'generic',
+        currency,
+        cycle,
+        signupType,
+        amount,
+    });
 };
