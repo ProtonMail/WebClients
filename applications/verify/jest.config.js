@@ -4,7 +4,7 @@ module.exports = {
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/app/locales.ts'],
     testEnvironment: '@proton/jest-env',
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|@proton/telemetry|@protontech/mutex-browser|pmcrypto|@protontech/bip39)/)',
+        'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|@protontech/mutex-browser|pmcrypto|@protontech/bip39)/)',
     ],
     transform: {
         '^.+\\.(js|tsx?)$': '<rootDir>/jest.transform.js',

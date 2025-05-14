@@ -8242,10 +8242,10 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
-    "@proton/telemetry": "npm:^0.1.10"
     "@protontech/bip39": "npm:^1.0.2"
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/mutex-browser": "npm:^1.0.5"
+    "@protontech/telemetry": "npm:^0.1.11"
     "@protontech/tidy-url": "npm:^1.18.3"
     "@protontech/timezone-support": "npm:^2.1.0"
     "@scure/base": "npm:^1.2.5"
@@ -8391,13 +8391,6 @@ __metadata:
     svgo: "npm:^3.3.2"
   languageName: unknown
   linkType: soft
-
-"@proton/telemetry@npm:^0.1.10":
-  version: 0.1.10
-  resolution: "@proton/telemetry@npm:0.1.10"
-  checksum: 10c0/40f97b8b827682fc2aa4494b6282aba705a147f28228faf490b46141a69ef1abb572c0f3a4a101dd569168017ae6c6622d7d07a6e016dc53fa73d75c8e388ee9
-  languageName: node
-  linkType: hard
 
 "@proton/test-tags-mr@workspace:utilities/test-tags-mr":
   version: 0.0.0-use.local
@@ -8557,6 +8550,13 @@ __metadata:
   version: 0.12.0
   resolution: "@protontech/pass-rust-core@npm:0.12.0"
   checksum: 10c0/fc87a8c624c7950b9095c1b9a53b9d43e83aede5abb987f73c4179d95417a9f59b6db7bbd153c26eec12f45885f7efcc9e4b0a23db187e82459f0867ca048a0a
+  languageName: node
+  linkType: hard
+
+"@protontech/telemetry@npm:^0.1.11":
+  version: 0.1.11
+  resolution: "@protontech/telemetry@npm:0.1.11"
+  checksum: 10c0/42b0475c392bccb182f85a9067003a6839159afb39eff96f6c3b14a6a97e2f5dd8e39f049077b32a56f131187563cd6421e5861053fc682033dbb1415f6ed3bb
   languageName: node
   linkType: hard
 
