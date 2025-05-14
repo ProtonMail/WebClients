@@ -110,7 +110,7 @@ export const AutofillLogin: FC<Props> = ({ domain, startsWith }) => {
                                           }),
                                           ({ userIdentifier, password }) => {
                                               controller.forwardMessage({
-                                                  type: IFramePortMessageType.DROPDOWN_AUTOFILL_LOGIN,
+                                                  type: IFramePortMessageType.AUTOFILL_LOGIN,
                                                   payload: { userIdentifier, password },
                                               });
                                               controller.close({ refocus: false });

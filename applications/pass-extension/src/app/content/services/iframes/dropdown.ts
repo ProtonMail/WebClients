@@ -161,7 +161,7 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
      * element to blur to ensure we're in an "unfocused state". */
     iframe.registerMessageHandler(IFramePortMessageType.DROPDOWN_BLUR_FIELD, () => {
         requestAnimationFrame(() => {
-            if (document.activeElement !== popover.root) {
+            if (document.activeElement !== popover.root.customElement) {
                 fieldRef.current?.element.blur();
 
                 setTimeout(() => {
@@ -176,21 +176,22 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
      * worker communication and autofill the parent form of the
      * field the current dropdown is attached to. */
     iframe.registerMessageHandler(
-        IFramePortMessageType.DROPDOWN_AUTOFILL_LOGIN,
+        IFramePortMessageType.AUTOFILL_LOGIN,
         withContext((ctx, { payload }) => {
             const form = fieldRef.current?.getFormHandle();
             if (!form) return;
 
             ctx?.service.autofill.autofillLogin(form, payload);
             fieldRef.current?.focus({ preventAction: true });
-        })
+        }),
+        { userAction: true }
     );
 
     /* For a password auto-suggestion - the password will have
      * been generated in the injected iframe and passed in clear
      * text through the secure extension port channel */
     iframe.registerMessageHandler(
-        IFramePortMessageType.DROPDOWN_AUTOFILL_GENERATED_PW,
+        IFramePortMessageType.AUTOFILL_GENERATED_PW,
         withContext((ctx, { payload }) => {
             const form = fieldRef.current?.getFormHandle();
             const prompt = ctx?.getSettings().autosave.passwordSuggest;
@@ -204,27 +205,33 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
                 ?.sync({ submit: false, partial: true })
                 .then((res) => res && prompt && ctx.service.autosave.promptAutoSave(res))
                 .catch(noop);
-        })
+        }),
+        { userAction: true }
     );
 
     /* When suggesting an alias on a register form, the alias will
      * only be created upon user action - this avoids creating
      * aliases everytime the injected iframe dropdown is opened */
-    iframe.registerMessageHandler(IFramePortMessageType.DROPDOWN_AUTOFILL_EMAIL, ({ payload }) => {
-        fieldRef.current?.autofill(payload.email);
-        fieldRef.current?.focus({ preventAction: true });
-        void fieldRef.current?.getFormHandle()?.tracker?.sync({ submit: false, partial: true });
-    });
+    iframe.registerMessageHandler(
+        IFramePortMessageType.AUTOFILL_EMAIL,
+        ({ payload }) => {
+            fieldRef.current?.autofill(payload.email);
+            fieldRef.current?.focus({ preventAction: true });
+            void fieldRef.current?.getFormHandle()?.tracker?.sync({ submit: false, partial: true });
+        },
+        { userAction: true }
+    );
 
     iframe.registerMessageHandler(
-        IFramePortMessageType.DROPDOWN_AUTOFILL_IDENTITY,
+        IFramePortMessageType.AUTOFILL_IDENTITY,
         withContext((ctx, { payload }) => {
             const field = fieldRef.current;
             if (field) {
                 ctx?.service.autofill.autofillIdentity(field, payload);
                 fieldRef.current?.focus({ preventAction: true });
             }
-        })
+        }),
+        { userAction: true }
     );
 
     listeners.addListener(window, 'popstate', () => iframe.close({ discard: false }));
