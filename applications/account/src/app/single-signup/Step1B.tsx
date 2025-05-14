@@ -1029,7 +1029,7 @@ const Step1B = ({
     );
 
     const signInText = (
-        <div className="text-center">
+        <div className="text-center color-norm">
             {
                 // translator: Full sentence "Already have an account? Sign in"
                 c('Go to sign in').jt`Already have an account? ${signIn}`
@@ -1126,14 +1126,7 @@ const Step1B = ({
             isB2bPlan={isB2bPlan}
             headerCenterElement={viewportWidth['<=small'] ? undefined : signInText}
         >
-            {viewportWidth['<=small'] && (
-                <div className="text-center">
-                    {
-                        // translator: Full sentence "Already have an account? Sign in"
-                        c('Go to sign in').jt`Already have an account? ${signIn}`
-                    }
-                </div>
-            )}
+            {viewportWidth['<=small'] && signInText}
             <div className="flex items-center flex-column">
                 {title && (
                     <div className="signup-v1-header mb-4 mt-4 md:mt-0 text-center">
