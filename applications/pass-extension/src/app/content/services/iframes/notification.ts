@@ -82,14 +82,15 @@ export const createNotification = ({ popover, onDestroy }: NotificationOptions):
     );
 
     iframe.registerMessageHandler(
-        IFramePortMessageType.NOTIFICATION_AUTOFILL_OTP,
+        IFramePortMessageType.AUTOFILL_OTP,
         withContext((ctx, { payload: { code } }) => {
             const form = ctx?.service.formManager
                 .getTrackedForms()
                 .find(({ getFieldsFor }) => getFieldsFor(FieldType.OTP).length > 0);
 
             if (form) ctx?.service.autofill.autofillOTP(form, code);
-        })
+        }),
+        { userAction: true }
     );
 
     const notification: InjectedNotification = {
