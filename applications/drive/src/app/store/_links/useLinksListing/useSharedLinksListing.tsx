@@ -31,7 +31,7 @@ export function useSharedLinksListing() {
     // Do not use useVolumeState as that is including all share IDs available
     // on the volume, including standard shares. For heavy sharing users it then
     // iterates over too many shares for no reason.
-    const contextShareIds = useRef<Set<string>>(new Set());
+    const contextShareIds = useRef<Map<string, Set<string>>>(new Map());
 
     const { loadFullListing, loadFullListingWithAnchor, getDecryptedLinksAndDecryptRest } = useLinksListingHelpers();
     const sharedLinksFetchState = useRef<SharedLinksFetchState>({});
@@ -97,7 +97,12 @@ export function useSharedLinksListing() {
 
         const { response, hasNextPage } = await queryVolumeSharedLinksPage(volumeId, sharedLinksFetchMeta.lastPage);
         response.ShareURLContexts.map((share) => {
-            contextShareIds.current.add(share.ContextShareID);
+            if (contextShareIds.current.has(volumeId)) {
+                const volumeShareIds = contextShareIds.current.get(volumeId);
+                volumeShareIds?.add(share.ContextShareID);
+            } else {
+                contextShareIds.current.set(volumeId, new Set([share.ContextShareID]));
+            }
         });
 
         const transformedResponse = transformSharedLinksResponseToLinkMap(response);
@@ -129,7 +134,12 @@ export function useSharedLinksListing() {
         );
 
         response.Links.map((link) => {
-            contextShareIds.current.add(link.ContextShareID);
+            if (contextShareIds.current.has(volumeId)) {
+                const volumeShareIds = contextShareIds.current.get(volumeId);
+                volumeShareIds?.add(link.ContextShareID);
+            } else {
+                contextShareIds.current.set(volumeId, new Set([link.ContextShareID]));
+            }
         });
 
         const transformedResponse = transformSharedByMeLinksResponseToLinkMap(response);
@@ -177,7 +187,15 @@ export function useSharedLinksListing() {
                     isDecrypting: false,
                 };
             }
-            const result = Array.from(contextShareIds.current).map((shareId) => {
+            const shares = contextShareIds.current.get(volumeId);
+            if (!shares) {
+                return {
+                    links: [],
+                    isDecrypting: false,
+                };
+            }
+
+            const result = Array.from(shares).map((shareId) => {
                 return getDecryptedLinksAndDecryptRest(
                     abortSignal,
                     shareId,
