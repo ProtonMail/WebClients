@@ -50,6 +50,7 @@ const ProtonAnniversaryPromo2025: FC = memo(() => {
                 iconName="gift"
                 onClick={() => setShowModal(true)}
                 className={clsx('button-anniversary-2025 text-uppercase text-semibold')}
+                breakpoint="xlarge"
             >
                 {c('anniversary_2025: offer').t`Anniversary offer`}
             </PromotionButton>

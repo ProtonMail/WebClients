@@ -4,6 +4,7 @@ import { forwardRef } from 'react';
 import type { ButtonLikeProps } from '@proton/atoms';
 import { ButtonLike, CircleLoader } from '@proton/atoms';
 import Icon, { type IconName, type IconSize } from '@proton/components/components/icon/Icon';
+import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useUid from '@proton/components/hooks/useUid';
 import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
@@ -26,6 +27,7 @@ interface OwnProps extends Omit<ButtonLikeProps<'button'>, 'as' | 'ref'> {
     responsive?: boolean;
     buttonGradient?: boolean;
     fullGradient?: boolean;
+    breakpoint?: keyof Breakpoints['viewportWidth'];
 }
 
 export type PromotionButtonProps<E extends ElementType> = PolymorphicPropsWithRef<OwnProps, E>;
@@ -48,6 +50,7 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
         responsive = false,
         buttonGradient = true,
         fullGradient = false,
+        breakpoint = '>=large',
         ...rest
     }: PromotionButtonProps<E>,
     ref: ForwardedRef<Element>
@@ -65,7 +68,7 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
         }
     }
 
-    if (responsive && !viewportWidth['>=large']) {
+    if (responsive && !viewportWidth[breakpoint]) {
         shape = 'ghost';
         icon = true;
         iconSize = 5;
