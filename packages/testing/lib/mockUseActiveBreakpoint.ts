@@ -12,5 +12,6 @@ export const mockDefaultBreakpoints: Breakpoints = {
         '<=small': false,
         '<=medium': false,
         '>=large': false,
+        '>=xlarge': false,
     },
 };
