@@ -8578,7 +8578,7 @@
         "Jednorázový import"
       ],
       "${ boldBulkDelete }, archive, or move old emails to a folder.": [
-        "${ boldBulkDelete }, archivace nebo přesutí starých e-mailů do složky."
+        "${ boldBulkDelete }, archivace nebo přesunutí starých e-mailů do složky."
       ],
       "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
         "${ boldQuicklySpot }, které odběry již nejsou relevantní."
@@ -8638,7 +8638,7 @@
         "Volitelné"
       ],
       "Quickly spot": [
-        "Rychle zjistíte"
+        "Rychle zjistit"
       ],
       "Trash existing messages": [
         "Přesunout existující zprávy do koše"
@@ -8648,6 +8648,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } e-mail za poslední měsíc",
+        "${ subscription.ReceivedMessages.Last30Days } e-maily za poslední měsíc",
+        "${ subscription.ReceivedMessages.Last30Days } e-mailů za poslední měsíc",
+        "${ subscription.ReceivedMessages.Last30Days } e-mailů za poslední měsíc"
       ]
     },
     "info": {
@@ -9941,6 +9947,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Vaše předplatné skončilo. ${ cta } pro předejití ztrátě dat."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Vaše úložiště je plné. Chcete-li dále používat produkty ${ BRAND_NAME }, uvolněte místo nebo ${ cta }."
       ]
     },
     "Log preference": {
@@ -15048,6 +15057,9 @@
       ],
       "Your subscriptions in one place": [
         "Vaše e-mailové odběry na jednom místě"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Žádné odhlášené odběry e-mailů"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15783,6 +15795,9 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "Zde můžete zobrazit a spravovat přihlášení k odběru e-mailových zpravodajů a e-mailových seznamů."
+      ],
+      "Newsletters you unsubscribe from will appear here.": [
+        "E-mailové zpravodaje, z jejichž odběru se odhlásíte, se zobrazí zde."
       ]
     }
   }

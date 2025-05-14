@@ -1551,7 +1551,7 @@
         "Activo"
       ],
       "Change sorting": [
-        "Cambiar orden"
+        "Cambiar el orden"
       ],
       "Expand navigation bar to see custom views": [
         "Expandir la barra de navegación para ver las vistas personalizadas"
@@ -1576,10 +1576,10 @@
         "Confiar claves"
       ],
       "Unsubscribed": [
-        "Suscripción cancelada"
+        "Se ha cancelado la suscripción."
       ],
       "Resize panel": [
-        "Redimensionar panel"
+        "Cambiar el tamaño del panel"
       ]
     },
     "action": {
@@ -8081,7 +8081,7 @@
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
       ],
       "You have ${ unread } in your inbox.": [
-        "Tienes ${ unread } en su bandeja de entrada."
+        "Tienes ${ unread } en tu bandeja de entrada."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Tienes **${ count } conversación** almacenada en esta carpeta.",
@@ -8366,6 +8366,10 @@
       ],
       "${ boldUnsubscribe } from them with one click.": [
         "${ boldUnsubscribe } de ellos con un solo clic."
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } correo el mes pasado",
+        "${ subscription.ReceivedMessages.Last30Days } correos el mes pasado"
       ]
     },
     "info": {
@@ -9254,7 +9258,7 @@
         "Suscripciones de correo"
       ],
       "Move messages to": [
-        "Mover mensajes a"
+        "Mover los mensajes a"
       ],
       "${ boldActive } Mark all messages as read": [
         "${ boldActive } Marcar todos los mensajes como leídos"
@@ -12663,10 +12667,10 @@
         "Para seguir usando los productos de ${ BRAND_NAME }, libera espacio o ${ upgrade }"
       ],
       "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
-        "Su ${ productString } está ${ percentage }% lleno. ${ cta }."
+        "Tu ${ productString } está ${ percentage }% lleno. ${ cta }."
       ],
       "Your ${ productString } is full. ${ cta }.": [
-        "Su ${ productString } está lleno. ${ cta }."
+        "Tu ${ productString } está lleno. ${ cta }."
       ]
     },
     "Subscription": {
@@ -13715,7 +13719,7 @@
         "Limpiando datos"
       ],
       "Collaborate on documents": [
-        "Colabore en documentos"
+        "Colabora en documentos"
       ],
       "Confirm downgrade": [
         "Confirmar el paso a un plan inferior"
@@ -14512,13 +14516,16 @@
         "No hay suscripciones de correo"
       ],
       "Trash all messages?": [
-        "¿Enviar todos los mensajes de la Papelera?"
+        "¿Enviar todos los mensajes a la papelera?"
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "¿Cancelar la suscripción de ${ subscription.Name }?"
       ],
       "Your subscriptions in one place": [
         "Tus suscripciones en un solo lugar"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "No hay suscripciones de correo dadas de baja"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15088,7 +15095,7 @@
         "Cada semana los jueves ${ untilString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Semanalmente los martes, ${ untilString }"
+        "Cada martes hasta ${ untilString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
         "Semanalmente los miércoles, ${ untilString }"
@@ -15160,6 +15167,9 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "Aquí puedes ver y administrar las suscripciones a boletines y listas de correo."
+      ],
+      "Newsletters you unsubscribe from will appear here.": [
+        "Los boletines cuyas suscripciones hayas cancelado aparecerán aquí."
       ]
     },
     "anniversary_2025": {

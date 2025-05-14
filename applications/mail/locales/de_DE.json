@@ -8366,6 +8366,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } E-Mail im letzten Monat",
+        "${ subscription.ReceivedMessages.Last30Days } E-Mails im letzten Monat"
       ]
     },
     "info": {
@@ -9645,6 +9649,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Dein Abonnement ist beendet. ${ cta } und um Datenverlust zu vermeiden."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Dein Speicher ist voll. Um ${ BRAND_NAME }-Produkte weiterhin nutzen zu können, schaffe Speicherplatz oder führe ein ${ cta } durch."
       ]
     },
     "Log preference": {
@@ -14510,6 +14517,9 @@
       ],
       "Your subscriptions in one place": [
         "Deine Abonnemente an einem Ort"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Keine abbestellbare E-Mail-Abonnemente"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15151,6 +15161,9 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "Hier kannst du Newsletter- und Verteilerlisten-Abonnemente ansehen und verwalten."
+      ],
+      "Newsletters you unsubscribe from will appear here.": [
+        "Newsletter, deren Abonnement du kündigst, werden hier angezeigt."
       ]
     },
     "anniversary_2025": {

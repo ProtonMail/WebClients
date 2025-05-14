@@ -8366,6 +8366,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a alguns cliques de ter uma caixa de entrada organizada"
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } e-mail no mês passado",
+        "${ subscription.ReceivedMessages.Last30Days } e-mails no mês passado"
       ]
     },
     "info": {
@@ -14505,6 +14509,9 @@
       ],
       "Your subscriptions in one place": [
         "As suas subscrições num só lugar"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Sem subscrições de e-mail canceladas"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15146,6 +15153,9 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "Veja e gira as subscrições de boletins e lista de correio aqui."
+      ],
+      "Newsletters you unsubscribe from will appear here.": [
+        "Os boletins das quais cancelou a subscrição aparecerão aqui."
       ]
     }
   }

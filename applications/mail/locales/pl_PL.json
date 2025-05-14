@@ -8645,6 +8645,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od uporządkowanej skrzynki odbiorczej dzieli Cię kilka kliknięć"
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } wiadomość w ostatnim miesiącu",
+        "${ subscription.ReceivedMessages.Last30Days } wiadomości w ostatnim miesiącu",
+        "${ subscription.ReceivedMessages.Last30Days } wiadomości w ostatnim miesiącu",
+        "${ subscription.ReceivedMessages.Last30Days } wiadomości w ostatnim miesiącu"
       ]
     },
     "info": {
@@ -9938,6 +9944,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Subskrypcja zakończyła się. ${ cta } i uniknąć utraty danych."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Przestrzeń dyskowa jest pełna. Aby korzystać z usług ${ BRAND_NAME }, zwolnij część miejsca lub ${ cta }."
       ]
     },
     "Log preference": {
@@ -15030,6 +15039,9 @@
       ],
       "Your subscriptions in one place": [
         "Twoje subskrypcje w jednym miejscu"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Brak anulowanych subskrypcji"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15916,6 +15928,9 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "Wyświetlaj i zarządzaj subskrypcjami"
+      ],
+      "Newsletters you unsubscribe from will appear here.": [
+        "Anulowane subskrypcje pojawią się tutaj."
       ]
     }
   }

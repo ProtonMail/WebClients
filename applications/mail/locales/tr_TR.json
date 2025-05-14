@@ -1551,10 +1551,10 @@
         "Klasöre taşı"
       ],
       "A to Z": [
-        "A'dan Z'ye"
+        "A-Z"
       ],
       "Active": [
-        "Aktif"
+        "Etkin"
       ],
       "Change sorting": [
         "Sıralamayı değiştir"
@@ -1563,13 +1563,22 @@
         "En çok okunan"
       ],
       "Recently received": [
-        "Son zamanda gelenler"
+        "Son alınanlar"
       ],
       "Resubscribe": [
         "Yeniden abone ol"
       ],
       "Unsubscribed": [
-        "Abonelikten ayrıldınız"
+        "Abonelikten çıkıldı"
+      ],
+      "Expand navigation bar to see custom views": [
+        "Gezinme çubuğunu özel görünümleri görüntüleyecek şekilde genişlet"
+      ],
+      "Least read": [
+        "En az okunan"
+      ],
+      "Resize panel": [
+        "Panoyu boyutlandır"
       ]
     },
     "action": {
@@ -5959,16 +5968,16 @@
         "Diğer"
       ],
       "Import from Google": [
-        "Google'dan içe aktar"
+        "Google üzerinden içe aktar"
       ],
       "Import from other": [
-        "Diğerlerinden içe aktar"
+        "Diğerleri üzerinden içe aktar"
       ],
       "Import from Outlook": [
-        "Outlook'tan içe aktar"
+        "Outlook üzerinden içe aktar"
       ],
       "Import from Yahoo": [
-        "Yahoo'dan içe aktar"
+        "Yahoo üzerinden içe aktar"
       ]
     },
     "Import warning": {
@@ -8281,31 +8290,81 @@
         "Büyük ve küçük harfler"
       ],
       "and more.": [
-        "ve daha fazlası."
+        "ve diğerlerine."
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Mesajlarınızı, kişilerinizi ve takvimlerinizi ${ BRAND_NAME }'e taşıyın."
+        "İletilerinizi, kişilerinizi ve takvimlerinizi ${ BRAND_NAME } üzerine alın."
       ],
       "One time import": [
         "Tek seferlik içe aktarma"
       ],
       "Archive existing messages": [
-        "Var olan mesajları arşivle"
+        "Var olan iletileri arşivle"
       ],
       "Bulk delete": [
         "Toplu sil"
       ],
       "Mark all as read": [
-        "Tümünü okundu olarak işaretle"
+        "Tümünü okunmuş olarak işaretle"
       ],
       "Optional": [
         "İsteğe bağlı"
       ],
       "Unsubscribe": [
-        "Aboneliği iptal et"
+        "Abonelikten ayrıl"
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusuna yalnızca birkaç tık uzaktasınız."
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "Eski e-postaları ${ boldBulkDelete }, arşivleyin ya da bir klasöre taşıyın."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "Artık ilgilenmediğiniz abonelikleri ${ boldQuicklySpot }."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "Tek tıklamayla ${ boldUnsubscribe }."
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "Geçen ay ${ subscription.ReceivedMessages.Last30Days } e-posta",
+        "Geçen ay ${ subscription.ReceivedMessages.Last30Days } e-posta"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } okunmamış",
+        "${ subscription.UnreadMessageCount } okunmamış"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } e-posta izleyici engellendi",
+        "${ trackersCount } e-posta izleyici engellendi"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } izleyici engellendi",
+        "${ trackersCount } izleyici engellendi"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Bu e-posta listesinden gelen tüm iletiler okunmuş olarak işaretlenecek."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Bu e-posta listesinden gelen tüm iletiler Arşiv klasörüne taşınacak."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Bu e-posta listesinden gelen tüm iletiler çöpe atılacak."
+      ],
+      "Apply to future messages ": [
+        "Gelecekteki iletilere de uygula "
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "Alıcınızın yapılandırması nedeniyle, bu ileti şu kişiye geçerlilik süresi ile gönderilemez: ",
+        "Alıcınızın yapılandırması nedeniyle, bu ileti şu kişilere geçerlilik süresi ile gönderilemez: "
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Duyuru ve e-posta listelerini kolayca yönetin ve aboneliklerinden ayrılın."
+      ],
+      "Quickly spot": [
+        "Hızlı fark edin"
+      ],
+      "Trash existing messages": [
+        "Var olan iletileri çöpe at"
       ]
     },
     "info": {
@@ -9182,7 +9241,25 @@
         "Zayıf parola"
       ],
       "Move messages to": [
-        "İletileri taşı"
+        "İletileri şuraya taşı"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Tüm iletileri okunmuş olarak işaretle"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Tüm iletileri ${ boldFolderName } içine taşı"
+      ],
+      "Active filter:": [
+        "Etkin süzgeç:"
+      ],
+      "Apply to future messages": [
+        "Gelecekteki iletilere de uygula"
+      ],
+      "Mail subscriptions": [
+        "E-posta listesi abonelikleri"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Süzgeç etkisizleştirilmiş. ${ settingsLink } bölümünden etkinleştirebilirsiniz."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9501,6 +9578,9 @@
       ],
       "here": [
         "buradan"
+      ],
+      "Views": [
+        "Görünümler"
       ]
     },
     "Link to calendar event": {
@@ -9564,6 +9644,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Aboneliğinizin süresi dolmuş. Verilerinizin kaybolmasını önlemek için ${ cta }."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Depolama alanınız dolmuş. ${ BRAND_NAME } ürünlerini kullanmayı sürdürmek için yer açın ya da ${ cta }."
       ]
     },
     "Log preference": {
@@ -10508,7 +10591,7 @@
         "Yalnızca ${ priceLine } ile tüm ${ BRAND_NAME } ücretli ürünlerine ve özelliklerine erişin. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Starting from ${ priceLine }": [
-        "${ priceLine }'dan başlayan fiyatlarla"
+        "${ priceLine } tutarından başlayan fiyatlarla"
       ]
     },
     "new_plans: title": {
@@ -12513,7 +12596,7 @@
         "Dosyaları yüklemeyi ve eşitlemeyi sürdürebilmek için boş yer açın ya da daha fazla depolama alanı edinmek için tarifenizi yükseltin."
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "E-postalar gönderebilmek ve alabilmek için depolama alanını boşaltın ya da ${ upgrade }"
+        "E-posta gönderebilmek veya alabilmek için depolama alanını boşaltın ya da ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da daha fazla depolama alanı edinmek için tarifenizi yükseltin."
@@ -14390,6 +14473,33 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "Archive all messages?": [
+        "Tüm iletiler arşivlensin mi?"
+      ],
+      "Mail subscriptions": [
+        "E-posta listesi abonelikleri"
+      ],
+      "Mail Subscriptions": [
+        "E-posta abonelikleri"
+      ],
+      "Mark all messages as read": [
+        "Tüm iletileri okunmuş olarak işaretle"
+      ],
+      "No mail subscriptions": [
+        "Herhangi bir e-posta listesi aboneliği yok"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Herhangi bir e-posta listesinin aboneliğinden çıkılmamış"
+      ],
+      "Trash all messages?": [
+        "Tüm iletiler çöpe atılsın mı?"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "${ subscription.Name } aboneliğinden çıkılsın mı?"
+      ],
+      "Your subscriptions in one place": [
+        "Abonelikleriniz tek bir yerde"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15181,6 +15291,14 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } uygulamasını ekle"
+      ]
+    },
+    "Labels": {
+      "Newsletters you unsubscribe from will appear here.": [
+        "Aboneliğinden ayrıldığınız duyurular burada görüntülenir."
+      ],
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Duyuru ve e-posta listesi aboneliklerini buradan görüntüleyin-p ve yönetebilirsiniz."
       ]
     }
   }

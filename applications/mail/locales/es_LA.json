@@ -1572,7 +1572,7 @@
         "Recibidos recientemente"
       ],
       "Resize panel": [
-        "Cambiar tamaño de panel"
+        "Cambiar el tamaño del panel"
       ],
       "Resubscribe": [
         "Volver a suscribirme"
@@ -8365,6 +8365,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } correos del mes pasado",
+        "${ subscription.ReceivedMessages.Last30Days } correos el mes pasado"
       ]
     },
     "info": {
@@ -9647,6 +9651,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La suscripción ha finalizado. ${ cta } y para evitar la pérdida de datos."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Su almacenamiento está lleno. Para seguir utilizando los productos de ${ BRAND_NAME }, libere espacio o ${ cta }."
       ]
     },
     "Log preference": {
@@ -14518,6 +14525,9 @@
       ],
       "Your subscriptions in one place": [
         "Sus suscripciones en un solo lugar"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "No hay suscripciones de correo dadas de baja"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15202,10 +15212,10 @@
         "Editor de documentos online"
       ],
       "Online privacy for up to 2 people": [
-        "Privacidad en línea para hasta 2 personas"
+        "Privacidad online para hasta 2 personas"
       ],
       "Online privacy for your whole family (up to 6 users)": [
-        "Privacidad en línea para toda su familia (hasta 6 usuarios)"
+        "Privacidad online para toda su familia (hasta 6 usuarios)"
       ],
       "Protect up to 10 devices": [
         "Proteja hasta 10 dispositivos"
@@ -15226,7 +15236,7 @@
         "Ahorre a lo grande en funciones premium de VPN con un descuento por tiempo limitado."
       ],
       "Save time with built-in 2FA": [
-        "Ahorre tiempo con autenticación de dos factores integrada"
+        "Ahorre tiempo con 2FA integrada"
       ],
       "Secure email with unlimited aliases": [
         "Correo electrónico seguro con alias ilimitados"
@@ -15290,7 +15300,7 @@
     },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } ?": [
-        "${ LUMO_APP_NAME } es una IA que prioriza la privacidad y le ayuda a hacer más, manteniendo sus datos seguros. Desbloquee todo su potencial y disfrute del acceso anticipado a nuevas funciones a medida que se introduzcan."
+        "${ LUMO_APP_NAME } es una IA que prioriza la privacidad y le ayuda a hacer más, a la vez que mantiene sus datos seguros. Desbloquee todo su potencial y disfrute del acceso anticipado a nuevas funciones a medida que se introduzcan."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Agregar ${ LUMO_APP_NAME }"
@@ -15299,6 +15309,9 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "Aquí puede ver y gestionar las suscripciones a los boletines y a la lista de correo."
+      ],
+      "Newsletters you unsubscribe from will appear here.": [
+        "Los boletines cuyas suscripciones haya cancelado aparecerán aquí."
       ]
     }
   }

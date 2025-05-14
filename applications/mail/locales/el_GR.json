@@ -8366,6 +8366,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } ηλεκτρονικό μήνυμα τον περασμένο μήνα",
+        "${ subscription.ReceivedMessages.Last30Days } ηλεκτρονικά μηνύματα τον περασμένο μήνα"
       ]
     },
     "info": {
@@ -9645,6 +9649,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Η συνδρομή σας έχει λήξει. ${ cta } και για την αποφυγή απώλειας δεδομένων."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Ο αποθηκευτικός χώρος σας είναι πλήρης. Για να συνεχίσετε να χρησιμοποιείτε τα προϊόντα ${ BRAND_NAME }, απελευθερώστε χώρο ή ${ cta }."
       ]
     },
     "Log preference": {
@@ -14510,6 +14517,9 @@
       ],
       "Your subscriptions in one place": [
         "Οι συνδρομές σας σε ένα μέρος"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Δεν υπάρχουν μη εγγεγραμμένες συνδρομές σε ταχυδρομικά ενημερωτικά δελτία."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15151,6 +15161,9 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "Δείτε και διαχειριστείτε τις συνδρομές ενημερωτικών δελτίων και λιστών αλληλογραφίας εδώ."
+      ],
+      "Newsletters you unsubscribe from will appear here.": [
+        "Εδώ θα εμφανίζονται τα ενημερωτικά δελτία από τα οποία έχετε καταργήσει την εγγραφή."
       ]
     }
   }
