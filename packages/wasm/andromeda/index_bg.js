@@ -216,13 +216,6 @@ function _assertClass(instance, klass) {
         throw new Error(`expected instance of ${klass.name}`);
     }
 }
-/**
- * @returns {number}
- */
-export function getDefaultStopGap() {
-    const ret = wasm.getDefaultStopGap();
-    return ret >>> 0;
-}
 
 function takeFromExternrefTable0(idx) {
     const value = wasm.__wbindgen_export_2.get(idx);
@@ -250,6 +243,30 @@ function passArrayJsValueToWasm0(array, malloc) {
     WASM_VECTOR_LEN = array.length;
     return ptr;
 }
+/**
+ * @param {string} word_start
+ * @returns {string[]}
+ */
+export function getWordsAutocomplete(word_start) {
+    const ptr0 = passStringToWasm0(word_start, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    const len0 = WASM_VECTOR_LEN;
+    const ret = wasm.getWordsAutocomplete(ptr0, len0);
+    var v2 = getArrayJsValueFromWasm0(ret[0], ret[1]).slice();
+    wasm.__wbindgen_free(ret[0], ret[1] * 4, 4);
+    return v2;
+}
+
+export function setPanicHook() {
+    wasm.setPanicHook();
+}
+
+/**
+ * @returns {number}
+ */
+export function getDefaultStopGap() {
+    const ret = wasm.getDefaultStopGap();
+    return ret >>> 0;
+}
 
 function passArray8ToWasm0(arg, malloc) {
     const ptr = malloc(arg.length * 1, 1) >>> 0;
@@ -269,33 +286,20 @@ export function createTransactionFromPsbt(psbt, account) {
     return ret;
 }
 
-/**
- * @param {string} word_start
- * @returns {string[]}
- */
-export function getWordsAutocomplete(word_start) {
-    const ptr0 = passStringToWasm0(word_start, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-    const len0 = WASM_VECTOR_LEN;
-    const ret = wasm.getWordsAutocomplete(ptr0, len0);
-    var v2 = getArrayJsValueFromWasm0(ret[0], ret[1]).slice();
-    wasm.__wbindgen_free(ret[0], ret[1] * 4, 4);
-    return v2;
+function __wbg_adapter_42(arg0, arg1) {
+    wasm._dyn_core__ops__function__FnMut_____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h4643494378b3d270(arg0, arg1);
 }
 
-export function setPanicHook() {
-    wasm.setPanicHook();
+function __wbg_adapter_45(arg0, arg1, arg2) {
+    wasm.closure11252_externref_shim(arg0, arg1, arg2);
 }
 
-function __wbg_adapter_40(arg0, arg1, arg2) {
-    wasm.closure2049_externref_shim(arg0, arg1, arg2);
+function __wbg_adapter_48(arg0, arg1) {
+    wasm._dyn_core__ops__function__FnMut_____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h71cde0578b4fe767(arg0, arg1);
 }
 
-function __wbg_adapter_43(arg0, arg1) {
-    wasm._dyn_core__ops__function__FnMut_____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h03753a26d58729d5(arg0, arg1);
-}
-
-function __wbg_adapter_662(arg0, arg1, arg2, arg3) {
-    wasm.closure2157_externref_shim(arg0, arg1, arg2, arg3);
+function __wbg_adapter_681(arg0, arg1, arg2, arg3) {
+    wasm.closure11374_externref_shim(arg0, arg1, arg2, arg3);
 }
 
 /**
@@ -394,6 +398,14 @@ export const WasmSigningType = Object.freeze({
 export const WasmSortOrder = Object.freeze({
     Asc: 0, "0": "Asc",
     Desc: 1, "1": "Desc",
+});
+/**
+ * @enum {0 | 1 | 2}
+ */
+export const WasmTransactionFilter = Object.freeze({
+    All: 0, "0": "All",
+    Receive: 1, "1": "Receive",
+    Send: 2, "2": "Send",
 });
 /**
  * @enum {0 | 1}
@@ -563,11 +575,12 @@ export class WasmAccount {
     }
     /**
      * @param {WasmPagination} pagination
+     * @param {WasmTransactionFilter} filter
      * @param {WasmSortOrder | null} [sort]
      * @returns {Promise<WasmTransactionDetailsArray>}
      */
-    getTransactions(pagination, sort) {
-        const ret = wasm.wasmaccount_getTransactions(this.__wbg_ptr, pagination, isLikeNone(sort) ? 2 : sort);
+    getTransactions(pagination, filter, sort) {
+        const ret = wasm.wasmaccount_getTransactions(this.__wbg_ptr, pagination, filter, isLikeNone(sort) ? 2 : sort);
         return ret;
     }
     /**
@@ -611,6 +624,62 @@ export class WasmAccount {
      */
     getXpub() {
         const ret = wasm.wasmaccount_getXpub(this.__wbg_ptr);
+        return ret;
+    }
+}
+
+const WasmAccountStatementGeneratorFinalization = (typeof FinalizationRegistry === 'undefined')
+    ? { register: () => {}, unregister: () => {} }
+    : new FinalizationRegistry(ptr => wasm.__wbg_wasmaccountstatementgenerator_free(ptr >>> 0, 1));
+
+export class WasmAccountStatementGenerator {
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+        WasmAccountStatementGeneratorFinalization.unregister(this);
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_wasmaccountstatementgenerator_free(ptr, 0);
+    }
+    /**
+     * @param {WasmApiExchangeRate | null} [wasm_exchange_rate]
+     */
+    constructor(wasm_exchange_rate) {
+        const ret = wasm.wasmaccountstatementgenerator_new(isLikeNone(wasm_exchange_rate) ? 0 : addToExternrefTable0(wasm_exchange_rate));
+        this.__wbg_ptr = ret >>> 0;
+        WasmAccountStatementGeneratorFinalization.register(this, this.__wbg_ptr, this);
+        return this;
+    }
+    /**
+     * @param {WasmAccount} account
+     * @param {string} name
+     * @returns {Promise<void>}
+     */
+    addAccount(account, name) {
+        _assertClass(account, WasmAccount);
+        const ptr0 = passStringToWasm0(name, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.wasmaccountstatementgenerator_addAccount(this.__wbg_ptr, account.__wbg_ptr, ptr0, len0);
+        return ret;
+    }
+    /**
+     * @param {bigint} export_time
+     * @returns {Promise<Uint8Array>}
+     */
+    toPdf(export_time) {
+        const ret = wasm.wasmaccountstatementgenerator_toPdf(this.__wbg_ptr, export_time);
+        return ret;
+    }
+    /**
+     * @param {bigint} export_time
+     * @returns {Promise<Uint8Array>}
+     */
+    toCsv(export_time) {
+        const ret = wasm.wasmaccountstatementgenerator_toCsv(this.__wbg_ptr, export_time);
         return ret;
     }
 }
@@ -683,7 +752,7 @@ export class WasmAccountSyncer {
     constructor(client, account) {
         _assertClass(client, WasmBlockchainClient);
         _assertClass(account, WasmAccount);
-        const ret = wasm.wasmaccountsyncer_new(client.__wbg_ptr, account.__wbg_ptr);
+        const ret = wasm.wasmaccountsweeper_new(client.__wbg_ptr, account.__wbg_ptr);
         this.__wbg_ptr = ret >>> 0;
         WasmAccountSyncerFinalization.register(this, this.__wbg_ptr, this);
         return this;
@@ -2495,14 +2564,14 @@ export class WasmDiscoveredAccount {
      * @returns {number}
      */
     get 1() {
-        const ret = wasm.__wbg_get_wasmdiscoveredaccount_1(this.__wbg_ptr);
+        const ret = wasm.__wbg_get_wasmaddressinfo_index(this.__wbg_ptr);
         return ret >>> 0;
     }
     /**
      * @param {number} arg0
      */
     set 1(arg0) {
-        wasm.__wbg_set_wasmdiscoveredaccount_1(this.__wbg_ptr, arg0);
+        wasm.__wbg_set_wasmaddressinfo_index(this.__wbg_ptr, arg0);
     }
     /**
      * @returns {WasmDerivationPath}
@@ -3461,7 +3530,7 @@ export class WasmOutPoint {
     set 0(arg0) {
         const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         const len0 = WASM_VECTOR_LEN;
-        wasm.__wbg_set_wasmoutpoint_0(this.__wbg_ptr, ptr0, len0);
+        wasm.__wbg_set_wasmaddressinfo_address(this.__wbg_ptr, ptr0, len0);
     }
     /**
      * @param {string} str
@@ -4339,7 +4408,7 @@ export class WasmRecipient {
     set 0(arg0) {
         const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         const len0 = WASM_VECTOR_LEN;
-        wasm.__wbg_set_wasmpsbtrecipient_0(this.__wbg_ptr, ptr0, len0);
+        wasm.__wbg_set_wasmrecipient_0(this.__wbg_ptr, ptr0, len0);
     }
     /**
      * @returns {string}
@@ -4362,20 +4431,20 @@ export class WasmRecipient {
     set 1(arg0) {
         const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         const len0 = WASM_VECTOR_LEN;
-        wasm.__wbg_set_wasmauthdata_refresh(this.__wbg_ptr, ptr0, len0);
+        wasm.__wbg_set_wasmrecipient_1(this.__wbg_ptr, ptr0, len0);
     }
     /**
      * @returns {bigint}
      */
     get 2() {
-        const ret = wasm.__wbg_get_wasmpsbt_total_fees(this.__wbg_ptr);
+        const ret = wasm.__wbg_get_wasmrecipient_2(this.__wbg_ptr);
         return BigInt.asUintN(64, ret);
     }
     /**
      * @param {bigint} arg0
      */
     set 2(arg0) {
-        wasm.__wbg_set_wasmpsbt_total_fees(this.__wbg_ptr, arg0);
+        wasm.__wbg_set_wasmrecipient_2(this.__wbg_ptr, arg0);
     }
 }
 
@@ -4500,27 +4569,27 @@ export class WasmRemainingMonthlyInvitations {
      * @returns {number}
      */
     get Available() {
-        const ret = wasm.__wbg_get_wasmremainingmonthlyinvitations_Available(this.__wbg_ptr);
+        const ret = wasm.__wbg_get_wasmrecommendedfees_FastestFee(this.__wbg_ptr);
         return ret;
     }
     /**
      * @param {number} arg0
      */
     set Available(arg0) {
-        wasm.__wbg_set_wasmremainingmonthlyinvitations_Available(this.__wbg_ptr, arg0);
+        wasm.__wbg_set_wasmrecommendedfees_FastestFee(this.__wbg_ptr, arg0);
     }
     /**
      * @returns {number}
      */
     get Used() {
-        const ret = wasm.__wbg_get_wasmremainingmonthlyinvitations_Used(this.__wbg_ptr);
+        const ret = wasm.__wbg_get_wasmrecommendedfees_HalfHourFee(this.__wbg_ptr);
         return ret;
     }
     /**
      * @param {number} arg0
      */
     set Used(arg0) {
-        wasm.__wbg_set_wasmremainingmonthlyinvitations_Used(this.__wbg_ptr, arg0);
+        wasm.__wbg_set_wasmrecommendedfees_HalfHourFee(this.__wbg_ptr, arg0);
     }
 }
 
@@ -4564,7 +4633,7 @@ export class WasmScript {
     set 0(arg0) {
         const ptr0 = passArray8ToWasm0(arg0, wasm.__wbindgen_malloc);
         const len0 = WASM_VECTOR_LEN;
-        wasm.__wbg_set_wasmoutpoint_0(this.__wbg_ptr, ptr0, len0);
+        wasm.__wbg_set_wasmaddressinfo_address(this.__wbg_ptr, ptr0, len0);
     }
     /**
      * @param {WasmNetwork} network
@@ -5145,14 +5214,14 @@ export class WasmTxOut {
      * @returns {bigint}
      */
     get value() {
-        const ret = wasm.__wbg_get_wasmtxout_value(this.__wbg_ptr);
+        const ret = wasm.__wbg_get_wasmapiwalletbitcoinaddressusedindexdata_Data(this.__wbg_ptr);
         return BigInt.asUintN(64, ret);
     }
     /**
      * @param {bigint} arg0
      */
     set value(arg0) {
-        wasm.__wbg_set_wasmtxout_value(this.__wbg_ptr, arg0);
+        wasm.__wbg_set_wasmapiwalletbitcoinaddressusedindexdata_Data(this.__wbg_ptr, arg0);
     }
     /**
      * @returns {WasmScript}
@@ -5280,14 +5349,14 @@ export class WasmUtxo {
      * @returns {bigint}
      */
     get value() {
-        const ret = wasm.__wbg_get_wasmutxo_value(this.__wbg_ptr);
+        const ret = wasm.__wbg_get_wasmapiwalletbitcoinaddressusedindexdata_Data(this.__wbg_ptr);
         return BigInt.asUintN(64, ret);
     }
     /**
      * @param {bigint} arg0
      */
     set value(arg0) {
-        wasm.__wbg_set_wasmutxo_value(this.__wbg_ptr, arg0);
+        wasm.__wbg_set_wasmapiwalletbitcoinaddressusedindexdata_Data(this.__wbg_ptr, arg0);
     }
     /**
      * @returns {WasmOutPoint}
@@ -5302,7 +5371,7 @@ export class WasmUtxo {
     set outpoint(arg0) {
         _assertClass(arg0, WasmOutPoint);
         var ptr0 = arg0.__destroy_into_raw();
-        wasm.__wbg_set_wasmutxo_outpoint(this.__wbg_ptr, ptr0);
+        wasm.__wbg_set_wasmtxout_script_pubkey(this.__wbg_ptr, ptr0);
     }
     /**
      * @returns {WasmScript}
@@ -5467,12 +5536,13 @@ export class WasmWallet {
         return ret;
     }
     /**
+     * @param {WasmTransactionFilter} filter
      * @param {WasmPagination | null} [pagination]
      * @param {WasmSortOrder | null} [sort]
      * @returns {Promise<WasmTransactionDetailsArray>}
      */
-    getTransactions(pagination, sort) {
-        const ret = wasm.wasmwallet_getTransactions(this.__wbg_ptr, isLikeNone(pagination) ? 0 : addToExternrefTable0(pagination), isLikeNone(sort) ? 2 : sort);
+    getTransactions(filter, pagination, sort) {
+        const ret = wasm.wasmwallet_getTransactions(this.__wbg_ptr, filter, isLikeNone(pagination) ? 0 : addToExternrefTable0(pagination), isLikeNone(sort) ? 2 : sort);
         return ret;
     }
     /**
@@ -6081,6 +6151,10 @@ export class WasmWrappedPriceGraph {
     }
 }
 
+export function __wbg_abort_410ec47a64ac6117(arg0, arg1) {
+    arg0.abort(arg1);
+};
+
 export function __wbg_abort_775ef1d17fc65868(arg0) {
     arg0.abort();
 };
@@ -6109,12 +6183,17 @@ export function __wbg_call_7cccdd69e0791ae2() { return handleError(function (arg
     return ret;
 }, arguments) };
 
+export function __wbg_clearTimeout_86721db0036bea98(arg0) {
+    const ret = clearTimeout(arg0);
+    return ret;
+};
+
 export function __wbg_clearTimeout_96804de0ab838f26(arg0) {
     const ret = clearTimeout(arg0);
     return ret;
 };
 
-export function __wbg_crypto_ed58b8e10a292839(arg0) {
+export function __wbg_crypto_574e78ad8b13b65f(arg0) {
     const ret = arg0.crypto;
     return ret;
 };
@@ -6136,13 +6215,13 @@ export function __wbg_error_7534b8e9a36f1ab4(arg0, arg1) {
     }
 };
 
-export function __wbg_fetch_4465c2b10f21a927(arg0) {
-    const ret = fetch(arg0);
+export function __wbg_fetch_509096533071c657(arg0, arg1) {
+    const ret = arg0.fetch(arg1);
     return ret;
 };
 
-export function __wbg_fetch_509096533071c657(arg0, arg1) {
-    const ret = arg0.fetch(arg1);
+export function __wbg_fetch_d36a73832f0a45e8(arg0) {
+    const ret = fetch(arg0);
     return ret;
 };
 
@@ -6154,13 +6233,18 @@ export function __wbg_getItem_17f98dee3b43fa7e() { return handleError(function (
     getDataViewMemory0().setInt32(arg0 + 4 * 0, ptr1, true);
 }, arguments) };
 
-export function __wbg_getRandomValues_0fd9e2d73ca5f48f() { return handleError(function (arg0, arg1) {
+export function __wbg_getRandomValues_3d90134a348e46b3() { return handleError(function (arg0, arg1) {
     globalThis.crypto.getRandomValues(getArrayU8FromWasm0(arg0, arg1));
 }, arguments) };
 
-export function __wbg_getRandomValues_bcb4912f16000dc4() { return handleError(function (arg0, arg1) {
+export function __wbg_getRandomValues_b8f5dbd5f3995a9e() { return handleError(function (arg0, arg1) {
     arg0.getRandomValues(arg1);
 }, arguments) };
+
+export function __wbg_getTime_46267b1c24877e30(arg0) {
+    const ret = arg0.getTime();
+    return ret;
+};
 
 export function __wbg_get_67b2ba62fc30de12() { return handleError(function (arg0, arg1) {
     const ret = Reflect.get(arg0, arg1);
@@ -6214,8 +6298,13 @@ export function __wbg_localStorage_1406c99c39728187() { return handleError(funct
     return isLikeNone(ret) ? 0 : addToExternrefTable0(ret);
 }, arguments) };
 
-export function __wbg_msCrypto_0a36e2ec3a343d26(arg0) {
+export function __wbg_msCrypto_a61aeb35a24c1329(arg0) {
     const ret = arg0.msCrypto;
+    return ret;
+};
+
+export function __wbg_new0_f788a2397c7ca929() {
+    const ret = new Date();
     return ret;
 };
 
@@ -6231,7 +6320,7 @@ export function __wbg_new_23a2665fac83c611(arg0, arg1) {
             const a = state0.a;
             state0.a = 0;
             try {
-                return __wbg_adapter_662(a, state0.b, arg0, arg1);
+                return __wbg_adapter_681(a, state0.b, arg0, arg1);
             } finally {
                 state0.a = a;
             }
@@ -6308,7 +6397,7 @@ export function __wbg_next_6574e1a8a62d1055() { return handleError(function (arg
     return ret;
 }, arguments) };
 
-export function __wbg_node_02999533c4ea02e3(arg0) {
+export function __wbg_node_905d3e251edff8a2(arg0) {
     const ret = arg0.node;
     return ret;
 };
@@ -6318,7 +6407,7 @@ export function __wbg_now_807e54c39636c349() {
     return ret;
 };
 
-export function __wbg_process_5c1d670bc53614b8(arg0) {
+export function __wbg_process_dc0fbacc7c1c06f7(arg0) {
     const ret = arg0.process;
     return ret;
 };
@@ -6332,17 +6421,22 @@ export function __wbg_queueMicrotask_d3219def82552485(arg0) {
     return ret;
 };
 
-export function __wbg_randomFillSync_ab2cfe79ebbf2740() { return handleError(function (arg0, arg1) {
+export function __wbg_randomFillSync_ac0988aba3254290() { return handleError(function (arg0, arg1) {
     arg0.randomFillSync(arg1);
 }, arguments) };
 
-export function __wbg_require_79b1e9274cde3c87() { return handleError(function () {
+export function __wbg_require_60cc747a6bc5215a() { return handleError(function () {
     const ret = module.require;
     return ret;
 }, arguments) };
 
 export function __wbg_resolve_4851785c9c5f573d(arg0) {
     const ret = Promise.resolve(arg0);
+    return ret;
+};
+
+export function __wbg_setTimeout_2e707715f8cc9497(arg0, arg1) {
+    const ret = setTimeout(arg0, arg1);
     return ret;
 };
 
@@ -6467,7 +6561,7 @@ export function __wbg_value_cd1ffa7b1ab794f1(arg0) {
     return ret;
 };
 
-export function __wbg_versions_c71aa1626a93e0a1(arg0) {
+export function __wbg_versions_c01dfd4722a88165(arg0) {
     const ret = arg0.versions;
     return ret;
 };
@@ -6822,13 +6916,18 @@ export function __wbindgen_cb_drop(arg0) {
     return ret;
 };
 
-export function __wbindgen_closure_wrapper11713(arg0, arg1, arg2) {
-    const ret = makeMutClosure(arg0, arg1, 2050, __wbg_adapter_40);
+export function __wbindgen_closure_wrapper46625(arg0, arg1, arg2) {
+    const ret = makeMutClosure(arg0, arg1, 11239, __wbg_adapter_42);
     return ret;
 };
 
-export function __wbindgen_closure_wrapper12328(arg0, arg1, arg2) {
-    const ret = makeMutClosure(arg0, arg1, 2123, __wbg_adapter_43);
+export function __wbindgen_closure_wrapper46673(arg0, arg1, arg2) {
+    const ret = makeMutClosure(arg0, arg1, 11253, __wbg_adapter_45);
+    return ret;
+};
+
+export function __wbindgen_closure_wrapper47265(arg0, arg1, arg2) {
+    const ret = makeMutClosure(arg0, arg1, 11325, __wbg_adapter_48);
     return ret;
 };
 
@@ -6917,5 +7016,12 @@ export function __wbindgen_string_new(arg0, arg1) {
 
 export function __wbindgen_throw(arg0, arg1) {
     throw new Error(getStringFromWasm0(arg0, arg1));
+};
+
+export function __wbindgen_uint8_array_new(arg0, arg1) {
+    var v0 = getArrayU8FromWasm0(arg0, arg1).slice();
+    wasm.__wbindgen_free(arg0, arg1 * 1, 1);
+    const ret = v0;
+    return ret;
 };
 
