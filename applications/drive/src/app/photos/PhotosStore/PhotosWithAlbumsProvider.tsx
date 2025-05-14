@@ -699,7 +699,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             if (nbFailures) {
                 createNotification({
                     type: 'error',
-                    text: c('Notification').t`⁠Some photo(s) could not be added to "${albumName}"`,
+                    text: c('Notification').t`Some photo(s) could not be added to "${albumName}"`,
                 });
             }
 
@@ -1031,13 +1031,13 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             if (nbFailures) {
                 createNotification({
                     type: 'error',
-                    text: c('Notification').t`⁠Some photo(s) could not be removed from ${albumLink.name}`,
+                    text: c('Notification').t`Some photo(s) could not be removed from ${albumLink.name}`,
                 });
             }
             if (nbSuccesses) {
                 createNotification({
                     type: 'success',
-                    text: c('Notification').t`⁠Your photo(s) have been removed from ${albumLink.name}`,
+                    text: c('Notification').t`Your photo(s) have been removed from ${albumLink.name}`,
                 });
             }
 
