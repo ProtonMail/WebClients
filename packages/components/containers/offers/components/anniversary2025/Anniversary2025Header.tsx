@@ -5,7 +5,7 @@ import protonAnniversary from '@proton/styles/assets/img/illustrations/proton-an
 import type { OfferProps } from '../../interface';
 
 const Anniversary2025Header = (props: OfferProps) => {
-    const { title = '' } = props.offer;
+    const { title } = props.offer;
 
     return (
         <header className="mb-6">
@@ -26,7 +26,7 @@ const Anniversary2025Header = (props: OfferProps) => {
                     }</p>
                 </h2>
             </div>
-            <p className="my-0">{title}</p>
+            {title && <p className="my-0">{title()}</p>}
         </header>
     );
 };
