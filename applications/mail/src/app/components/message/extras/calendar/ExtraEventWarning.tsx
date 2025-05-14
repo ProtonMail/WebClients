@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Banner } from '@proton/atoms';
+import { Alert } from '@proton/components';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
@@ -33,9 +33,9 @@ const ExtraEventWarning = ({ model }: Props) => {
         }
         if (method === ICAL_METHOD.REFRESH) {
             return (
-                <Banner className={alertClassName} color="warning">
+                <Alert className={alertClassName} type="warning">
                     {c('Calendar invite info').t`Event refreshing is not supported for the moment`}
-                </Banner>
+                </Alert>
             );
         }
         const singleAnswersNotSupported = getHasRecurrenceId(veventIcs) && !getHasRecurrenceId(invitationApi?.vevent);
@@ -43,32 +43,32 @@ const ExtraEventWarning = ({ model }: Props) => {
             return (
                 <>
                     {singleAnswersNotSupported && (
-                        <Banner className={alertClassName} color="warning">
+                        <Alert className={alertClassName} type="warning">
                             {c('Calendar invite info')
                                 .t`This answer cannot be added to ${CALENDAR_APP_NAME} as we only support answers to all events of a series for the moment`}
-                        </Banner>
+                        </Alert>
                     )}
-                    <Banner className={alertClassName} color="warning">
+                    <Alert className={alertClassName} type="warning">
                         {c('Calendar invite info').t`Event rescheduling is not supported for the moment`}
-                    </Banner>
+                    </Alert>
                 </>
             );
         }
         if (method === ICAL_METHOD.REPLY && singleAnswersNotSupported) {
             return (
-                <Banner className={alertClassName} color="warning">
+                <Alert className={alertClassName} type="warning">
                     {c('Calendar invite info')
                         .t`This answer cannot be added to ${CALENDAR_APP_NAME} as we only support answers to all events of a series for the moment`}
-                </Banner>
+                </Alert>
             );
         }
     }
 
     if (method === ICAL_METHOD.ADD && invitationApi) {
         return (
-            <Banner className={alertClassName} color="warning">
+            <Alert className={alertClassName} type="warning">
                 {c('Calendar invite info').t`Adding occurrences to an event is not supported for the moment`}
-            </Banner>
+            </Alert>
         );
     }
 

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Banner, Href } from '@proton/atoms';
-import { Checkbox, ErrorButton, useLocalState } from '@proton/components';
+import { Href } from '@proton/atoms';
+import { Alert, Checkbox, ErrorButton, useLocalState } from '@proton/components';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
@@ -91,8 +91,8 @@ const ComposerInnerModals = ({
                     onSubmit={handleDelete}
                     submitActions={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
                 >
-                    <Banner className="mb-4" variant="danger">{c('Info')
-                        .t`Are you sure you want to permanently delete this draft?`}</Banner>
+                    <Alert className="mb-4" type="error">{c('Info')
+                        .t`Are you sure you want to permanently delete this draft?`}</Alert>
                 </ComposerInnerModal>
             )}
             {innerModal === ComposerInnerModalStates.NoRecipients && (
@@ -126,13 +126,13 @@ const ComposerInnerModals = ({
                     onSubmit={handleSendAnyway}
                     submit={c('Action').t`Send anyway`}
                 >
-                    <Banner>
+                    <Alert>
                         {c('Info')
                             .t`You wrote “${attachmentsFoundKeyword}”, but no attachment has been added. Do you want to send your message anyway?`}
                         <div>
                             <Href href={getKnowledgeBaseUrl('/attachment-reminders')}>{c('Link').t`Learn more`}</Href>
                         </div>
-                    </Banner>
+                    </Alert>
                 </ComposerInnerModal>
             )}
             {innerModal === ComposerInnerModalStates.NoReplyEmail && (
@@ -145,13 +145,13 @@ const ComposerInnerModals = ({
                     onSubmit={handleSendAnyway}
                     submit={c('Action').t`Send anyway`}
                 >
-                    <Banner className="mb-4">
+                    <Alert className="mb-4">
                         {
                             // translator: Full sentence is "The email address "boldNoReplyEmail" does not seem to accept replies. Are you sure you want to send your message?"
                             c('Info')
                                 .jt`The email address ${boldNoReplyEmail} does not seem to accept replies. Are you sure you want to send your message?`
                         }
-                    </Banner>
+                    </Alert>
                     <label className="flex flex-align-center">
                         <Checkbox
                             checked={dontShowAgain}
