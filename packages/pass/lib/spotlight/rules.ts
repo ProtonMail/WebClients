@@ -88,6 +88,12 @@ export const createB2BRule = (store: Store<State>) =>
         },
     });
 
+export const createWebOnboardingRule = () =>
+    createSpotlightRule({
+        message: SpotlightMessage.WEB_ONBOARDING,
+        when: (previous) => !DESKTOP_BUILD && !previous,
+    });
+
 export const createSecurityRule = (store: Store<State>) =>
     createSpotlightRule({
         message: SpotlightMessage.SECURE_EXTENSION,

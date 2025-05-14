@@ -1,24 +1,27 @@
-import { type ReactNode, createContext } from 'react';
+import { type ComponentType, createContext } from 'react';
 
 import noop from '@proton/utils/noop';
 
 export enum OnboardingType {
     WELCOME = 'WELCOME',
+    WEB_ONBOARDING = 'WEB_ONBOARDING',
     B2B = 'B2B',
 }
 
 export type OnboardingStep = {
     action?: () => void;
+    actionClassName?: string;
     actionText?: string;
-    component: ReactNode;
-    description: ReactNode;
-    group: string;
+    component: ComponentType;
+    description: ComponentType;
+    group?: string;
     key: string;
     shortTitle: string;
     title: string;
+    withHeader?: boolean;
 };
 
-export type OnboardingContextValue = {
+export type OnboardingContextValue<T = any> = {
     acknowledge: () => void;
     launch: () => void;
     markCompleted: (step: string) => void;
@@ -27,6 +30,8 @@ export type OnboardingContextValue = {
     isActive: boolean;
     steps: OnboardingStep[];
     type: OnboardingType;
+    selected?: T;
+    setSelected?: (v: T) => void;
 };
 
 export const OnboardingContext = createContext<OnboardingContextValue>({

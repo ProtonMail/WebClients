@@ -48,7 +48,7 @@ export const Lobby: FC = () => {
     }, []);
 
     return (
-        <LobbyLayout overlay>
+        <LobbyLayout>
             <LobbyContent
                 error={criticalError}
                 status={state.status}
