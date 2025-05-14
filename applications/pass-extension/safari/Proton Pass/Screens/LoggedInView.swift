@@ -69,8 +69,10 @@ private extension LoggedInView {
                     }
                     .foregroundStyle(plan.color)
                     Spacer()
-                    Button("Manage subscription", action: { viewModel.manageSubscription() })
-                        .hidden()
+
+                    if !plan.isFreeUser {
+                        Button("Manage subscription", action: { viewModel.beginPaymentFlow(isUpgrading: false) })
+                    }
                 }
             }
 
@@ -103,9 +105,8 @@ private extension LoggedInView {
 
             ToolbarItem(placement: .topBarTrailing) {
                 if plan.isFreeUser {
-                    Button("Upgrade", action: { viewModel.upgrade() })
+                    Button("Upgrade", action: { viewModel.beginPaymentFlow(isUpgrading: true) })
                         .buttonStyle(.borderedProminent)
-                        .hidden()
                 }
             }
         }

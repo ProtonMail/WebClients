@@ -37,4 +37,8 @@ extension SharedToolingContainer {
     var keychain: Factory<any KeychainProvider> {
         self { SimpleKeychain(service: Constants.appGroup, accessGroup: Constants.keychainAccessGroup) }
     }
+
+    var appVersion: Factory<String> {
+        self { "macos-pass-safari@\(Bundle.main.versionNumber)" }
+    }
 }
