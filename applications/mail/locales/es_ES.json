@@ -197,7 +197,7 @@
         "Cambiar página"
       ],
       "Change sorting": [
-        "Cambiar orden"
+        "Cambiar el orden"
       ],
       "Chat with us": [
         "Chatea con nosotros"
@@ -1425,7 +1425,7 @@
         "Cancelar suscripción"
       ],
       "Unsubscribed": [
-        "Suscripción cancelada"
+        "Se ha cancelado la suscripción."
       ],
       "Unsubscribing": [
         "Cancelando suscripción"
@@ -1564,7 +1564,7 @@
         "Alejar"
       ],
       "Resize panel": [
-        "Redimensionar panel"
+        "Cambiar el tamaño del panel"
       ]
     },
     "action": {
@@ -8099,7 +8099,7 @@
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
       ],
       "You have ${ unread } in your inbox.": [
-        "Tienes ${ unread } en su bandeja de entrada."
+        "Tienes ${ unread } en tu bandeja de entrada."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Tienes **${ count } conversación** almacenada en esta carpeta.",
@@ -8298,6 +8298,10 @@
       ],
       "${ boldUnsubscribe } from them with one click.": [
         "${ boldUnsubscribe } de ellos con un solo clic."
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } correo el mes pasado",
+        "${ subscription.ReceivedMessages.Last30Days } correos el mes pasado"
       ]
     },
     "info": {
@@ -8937,7 +8941,7 @@
         "Mover ${ sidebarElementName }"
       ],
       "Move messages to": [
-        "Mover mensajes a"
+        "Mover los mensajes a"
       ],
       "Move to": [
         "Mover a"
@@ -9271,6 +9275,9 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "Aquí puedes ver y administrar las suscripciones a boletines y listas de correo."
+      ],
+      "Newsletters you unsubscribe from will appear here.": [
+        "Los boletines cuyas suscripciones hayas cancelado aparecerán aquí."
       ]
     },
     "Landmarks": {
@@ -12533,10 +12540,10 @@
         "El ${ appStorage } está lleno."
       ],
       "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
-        "Su ${ productString } está ${ percentage }% lleno. ${ cta }."
+        "Tu ${ productString } está ${ percentage }% lleno. ${ cta }."
       ],
       "Your ${ productString } is full. ${ cta }.": [
-        "Su ${ productString } está lleno. ${ cta }."
+        "Tu ${ productString } está lleno. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Tu almacenamiento está al ${ percentage }% lleno. ${ cta }."
@@ -13588,7 +13595,7 @@
         "Limpiando datos"
       ],
       "Collaborate on documents": [
-        "Colabore en documentos"
+        "Colabora en documentos"
       ],
       "Confirm downgrade": [
         "Confirmar el paso a un plan inferior"
@@ -14269,7 +14276,7 @@
         "Papelera"
       ],
       "Trash all messages?": [
-        "¿Enviar todos los mensajes de la Papelera?"
+        "¿Enviar todos los mensajes a la papelera?"
       ],
       "Trust new key?": [
         "¿Confiar en la nueva clave?",
@@ -14371,6 +14378,9 @@
       ],
       "Your subscriptions in one place": [
         "Tus suscripciones en un solo lugar"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "No hay suscripciones de correo dadas de baja"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14889,7 +14899,7 @@
         "Cada semana los jueves ${ untilString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Semanalmente los martes, ${ untilString }"
+        "Cada martes hasta ${ untilString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
         "Semanalmente los miércoles, ${ untilString }"

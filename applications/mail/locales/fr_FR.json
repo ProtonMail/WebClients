@@ -8298,6 +8298,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } message le mois dernier",
+        "${ subscription.ReceivedMessages.Last30Days } messages le mois dernier"
       ]
     },
     "info": {
@@ -9271,6 +9275,9 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "Consultez et gérez ici les abonnements aux newsletters et aux listes de diffusion."
+      ],
+      "Newsletters you unsubscribe from will appear here.": [
+        "Les newsletters dont vous vous désabonnez apparaîtront ici."
       ]
     },
     "Landmarks": {
@@ -11002,7 +11009,7 @@
         "Accès à tout moment et depuis n'importe où"
       ],
       "Auto-delete spam and trash": [
-        "Suppression auto spam corbeille"
+        "Suppression auto spam/corbeille"
       ],
       "browser": [
         "navigateur"
@@ -14371,6 +14378,9 @@
       ],
       "Your subscriptions in one place": [
         "Vos abonnements au même endroit"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Aucune inscription à des e-mails dont l'abonnement a été résilié."
       ]
     },
     "Today icon tooltip in mini calendar": {
