@@ -38,7 +38,7 @@ export { Panel } from './Panel/Panel';
 export { default as PanelHeader } from './Panel/PanelHeader';
 export { default as Pill } from './Pill/Pill';
 export type { PillProps } from './Pill/Pill';
-export { default as ProtonLoader } from './ProtonLoader/ProtonLoader';
+export { default as ProtonLoader, ProtonLoaderType } from './ProtonLoader/ProtonLoader';
 export { default as Scroll } from './Scroll/Scroll';
 export type { ScrollProps } from './Scroll/Scroll';
 export { default as ScrollShadows } from './Scroll/ScrollShadows';
