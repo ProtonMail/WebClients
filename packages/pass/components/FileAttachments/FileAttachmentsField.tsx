@@ -232,7 +232,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                                 >
                                     <div className="m-4">
                                         <Button
-                                            className="rounded-full inline-block gap-1"
+                                            className="button-fluid rounded-full inline-block gap-1"
                                             shape="solid"
                                             color="weak"
                                             onClick={() => popup?.expand(pathname)}
@@ -248,7 +248,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                                     /** Disable the "accept" attribute on iOS because the
                                      * "accept" attribute does not support the extension */
                                     {...(isIos() ? {} : { accept: '*' })}
-                                    className="m-4 rounded-full"
+                                    className="button-fluid m-4 rounded-full"
                                     onChange={({ target }) => onAddFiles([...(target.files ?? [])])}
                                     disabled={!online}
                                     shape="solid"
@@ -262,7 +262,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                         {!canUseStorage && (
                             <div className="m-4">
                                 <Button
-                                    className="rounded-full inline-block"
+                                    className="button-fluid rounded-full inline-block"
                                     shape="solid"
                                     color="weak"
                                     onClick={() => upsell({ type: 'pass-plus', upsellRef: UpsellRef.FILE_ATTACHMENTS })}
