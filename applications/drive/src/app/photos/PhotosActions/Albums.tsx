@@ -333,3 +333,47 @@ export const useFavoritePhotoToggle = () => {
         [favoritePhoto, removeTagsFromPhoto, updatePhotoFavoriteFromCache, createNotification]
     );
 };
+
+export const useFavoritePhotoToggleFromLayout = ({
+    updatePhotoFavoriteFromCache,
+    favoritePhoto,
+    removeTagsFromPhoto,
+}: Pick<PhotosLayoutOutletContext, 'updatePhotoFavoriteFromCache' | 'favoritePhoto' | 'removeTagsFromPhoto'>) => {
+    const { createNotification } = useNotifications();
+
+    return useCallback(
+        async (linkId: string, shareId: string, isFavorite: boolean) => {
+            const abortController = new AbortController();
+
+            // Optimistic UI change
+            if (!isFavorite) {
+                updatePhotoFavoriteFromCache(linkId, true);
+                void favoritePhoto(abortController.signal, linkId, shareId)
+                    .then(({ shouldNotififyCopy }) => {
+                        if (shouldNotififyCopy) {
+                            // We show notification only when we copy (from shared album to own photo stream)
+                            // No notification for own photos/own album as it's instand with the heart filled
+                            createNotification({
+                                text: c('Info').t`Photo was copied to stream and marked favorite there.`,
+                            });
+                        }
+                    })
+                    .catch((e) => {
+                        // Revert if something goes wrong
+                        createNotification({ text: c('Error').t`Could not add to favorites`, type: 'error' });
+                        sendErrorReport(e);
+                        updatePhotoFavoriteFromCache(linkId, false);
+                    });
+            } else {
+                updatePhotoFavoriteFromCache(linkId, false);
+                void removeTagsFromPhoto(abortController.signal, linkId, [PhotoTag.Favorites]).catch((e) => {
+                    // Revert if something goes wrong
+                    createNotification({ text: c('Error').t`Could not remove from favorites`, type: 'error' });
+                    sendErrorReport(e);
+                    updatePhotoFavoriteFromCache(linkId, true);
+                });
+            }
+        },
+        [favoritePhoto, removeTagsFromPhoto, updatePhotoFavoriteFromCache, createNotification]
+    );
+};
