@@ -2,13 +2,15 @@ import { c } from 'ttag';
 
 import { FeatureCode } from '@proton/features/interface';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
+import { APPS } from '@proton/shared/lib/constants';
 
 import Anniversary2025Layout from '../../components/anniversary2025/Anniversary2025Layout';
+import { getAnniversary2025Title } from '../../helpers/anniversary2025';
 import { type OfferConfig } from '../../interface';
 
 export const anniversary2025VPNPlus: OfferConfig = {
     ID: 'anniversary-2025-vpn-plus',
-    title: c('anniversary_2025: Offer').t`Save big on premium VPN features with a limited-time discount.`,
+    title: () => getAnniversary2025Title(APPS.PROTONVPN_SETTINGS),
     featureCode: FeatureCode.OfferAnniversary2025VPNPlus,
     autoPopUp: 'one-time',
     canBeDisabled: true,
