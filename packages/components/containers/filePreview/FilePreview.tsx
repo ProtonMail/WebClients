@@ -12,8 +12,8 @@ import { isMinimumSafariVersion, isMobile, isSafari, isWebglSupported } from '@p
 import {
     isAudio,
     isCompatibleCBZ,
-    isIWAD,
     isCompatibleSTL,
+    isIWAD,
     isPDF,
     isProtonDocument,
     isSupportedImage,
@@ -71,6 +71,8 @@ interface FilePreviewProps {
     onRestore?: () => void; // revision's specific
     onOpenInDocs?: () => void;
     onSelectCover?: () => void; // photos inside albums only
+    onFavorite?: () => void; // photos only
+    isFavorite?: boolean; // photos only
     date?: Date | string | number;
 
     navigationControls?: ReactNode;
@@ -267,6 +269,8 @@ const FilePreview = (
         onRestore,
         onOpenInDocs,
         onSelectCover,
+        onFavorite,
+        isFavorite,
         date,
     }: FilePreviewProps,
     ref: Ref<HTMLDivElement>
@@ -356,6 +360,8 @@ const FilePreview = (
                 onRestore={onRestore}
                 onOpenInDocs={onOpenInDocs}
                 onSelectCover={onSelectCover}
+                onFavorite={onFavorite}
+                isFavorite={isFavorite}
                 date={date}
             >
                 {isDirty ? <div className="flex items-center">{c('Info').t`Unsaved changes`}</div> : navigationControls}
