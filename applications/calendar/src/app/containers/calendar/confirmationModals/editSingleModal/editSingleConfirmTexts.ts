@@ -1,14 +1,10 @@
 import { c } from 'ttag';
 
-import ConfirmActionModal from '@proton/components/components/confirmActionModal/ConfirmActionModal';
-import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
-
-import type { InviteActions, RecurringActionData } from '../../../interfaces/Invite';
-import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
+import { INVITE_ACTION_TYPES, type InviteActions } from '../../../../interfaces/Invite';
 
 const { SEND_INVITATION, SEND_UPDATE } = INVITE_ACTION_TYPES;
 
-const getTexts = ({ type, addedAttendees, removedAttendees, hasRemovedAllAttendees }: InviteActions) => {
+export const getTexts = ({ type, addedAttendees, removedAttendees, hasRemovedAllAttendees }: InviteActions) => {
     const hasAddedAttendees = !!addedAttendees?.length;
     const hasRemovedAttendees = !!removedAttendees?.length;
     if (type === SEND_INVITATION) {
@@ -88,36 +84,3 @@ const getTexts = ({ type, addedAttendees, removedAttendees, hasRemovedAllAttende
         alertText: '',
     };
 };
-
-interface Props {
-    inviteActions: InviteActions;
-    onConfirm: ({ type, inviteActions }: RecurringActionData) => void;
-    onClose: () => void;
-    isOpen: boolean;
-}
-
-const EditSingleConfirmModal = ({ inviteActions, onConfirm, onClose, isOpen }: Props) => {
-    const { title, submit, alertText } = getTexts(inviteActions);
-    const handleSubmit = () => {
-        onConfirm({ type: RECURRING_TYPES.SINGLE, inviteActions });
-        onClose();
-    };
-    return (
-        <ConfirmActionModal
-            cancelText={c('Action').t`Cancel`}
-            submitText={submit}
-            title={title}
-            onExit={onClose}
-            onClose={onClose}
-            onCancel={onClose}
-            onSubmit={async () => handleSubmit()}
-            size="small"
-            message={alertText}
-            actionType="norm"
-            canUndo={true}
-            open={isOpen}
-        />
-    );
-};
-
-export default EditSingleConfirmModal;
