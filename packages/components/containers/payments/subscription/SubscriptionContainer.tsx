@@ -1096,8 +1096,8 @@ const SubscriptionContainerInner = ({
             )}
 
             {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (
-                <div className="subscriptionCheckout-top-container">
-                    <div className="flex-1 w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
+                <div className="subscriptionCheckout-top-container gap-4 lg:gap-6">
+                    <div className="flex-1 w-full md:w-auto pt-6">
                         <div
                             className="mx-auto max-w-custom subscriptionCheckout-soptions"
                             style={{ '--max-w-custom': '37em' }}
