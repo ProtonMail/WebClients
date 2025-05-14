@@ -57,7 +57,7 @@ export interface OfferConfig {
     ID: OfferId;
     featureCode: FeatureCode;
     autoPopUp?: 'each-time' | 'one-time';
-    title?: string;
+    title?: () => string;
     canBeDisabled?: boolean;
     deals: Deal[];
     layout: JSXElementConstructor<OfferLayoutProps>;
