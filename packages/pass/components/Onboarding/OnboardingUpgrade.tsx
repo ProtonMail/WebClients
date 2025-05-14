@@ -22,7 +22,7 @@ import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
-import { UpsellRef } from '@proton/pass/constants';
+import { PASS_PLUS_LIFETIME_PRICE, PASS_PLUS_PRICE, PROTON_UNLIMITED_PRICE, UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { selectUser } from '@proton/pass/store/selectors';
 import { DEFAULT_CURRENCY, PLANS } from '@proton/payments/core/constants';
@@ -97,7 +97,7 @@ export const Content: FC = () => {
     const protonProducts = useMemo(getProtonProducts, []);
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIFETIME_PLAN_ONBOARDING });
     const user = useSelector(selectUser);
-    const plusLifetimePrice = getSimplePriceString(user?.Currency ?? DEFAULT_CURRENCY, 19900);
+    const plusLifetimePrice = getSimplePriceString(user?.Currency ?? DEFAULT_CURRENCY, PASS_PLUS_LIFETIME_PRICE);
 
     return (
         <section className="pass-onboarding-upgrade">
@@ -183,17 +183,18 @@ export const Description: FC = () => {
     const online = useConnectivity();
     const user = useSelector(selectUser);
 
-    const [passPlusPrice, protonUnlimitedPrice] = [299, 999].map((price) =>
-        getSimplePriceString(user?.Currency ?? DEFAULT_CURRENCY, price)
-    );
-
     const changePlan = (selected: AvailablePlans) => setSelected?.(selected);
 
-    // Moved into a function since the label is the same, but the variable changes (preventing lint error)
-    const getPriceLabel = (price: string) => c('PassOnboardingOffer').t`${price}/month`;
+    const currency = user?.Currency ?? DEFAULT_CURRENCY;
+    const plansOptions = useMemo<PassPlanOption[]>(() => {
+        const [passPlusPrice, protonUnlimitedPrice] = [PASS_PLUS_PRICE, PROTON_UNLIMITED_PRICE].map((price) =>
+            getSimplePriceString(currency, price)
+        );
 
-    const plansOptions = useMemo<PassPlanOption[]>(
-        () => [
+        // Moved into a function since the label is the same, but the variable changes (preventing lint error)
+        const getPriceLabel = (price: string) => c('PassOnboardingOffer').t`${price}/month`;
+
+        return [
             {
                 value: PLANS.PASS,
                 title: c('Title').t`${PASS_SHORT_APP_NAME} Plus`,
@@ -204,9 +205,8 @@ export const Description: FC = () => {
                 title: c('Title').t`${BRAND_NAME} Unlimited`,
                 label: getPriceLabel(protonUnlimitedPrice),
             },
-        ],
-        []
-    );
+        ];
+    }, [currency]);
 
     return (
         <>

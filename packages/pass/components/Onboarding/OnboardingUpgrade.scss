@@ -1,7 +1,9 @@
+@import '~@proton/styles/scss/lib';
+
 .pass-onboarding-upgrade {
 	.description {
 		&--banner-badge {
-			width: 78px;
+			width: em(78);
 			background: linear-gradient(30deg, #F6C592 50%, #D397BE 90%), #191927;
 		}
 		&--banner-card {
