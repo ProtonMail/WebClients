@@ -1,4 +1,4 @@
-import ProtonLoader from './ProtonLoader';
+import ProtonLoader, { ProtonLoaderType } from './ProtonLoader';
 import mdx from './ProtonLoader.mdx';
 
 export default {
@@ -14,7 +14,7 @@ export const Basic = () => (
         </div>
         <br />
         <div className="p-4 ui-prominent bg-norm">
-            <ProtonLoader type="negative" />
+            <ProtonLoader type={ProtonLoaderType.Default} />
         </div>
     </>
 );
