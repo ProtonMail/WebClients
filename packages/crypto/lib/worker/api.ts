@@ -633,6 +633,7 @@ export class Api extends KeyManagementApi {
         binarySignature,
         armoredEncryptedSignature: armoredEncSignature,
         binaryEncryptedSignature: binaryEncSingature,
+        handleMalformedIcsAttachmentContent,
         ...options
     }: WorkerDecryptionOptions & { format?: FormatType }) {
         const decryptionKeys = toArray(decryptionKeyRefs).map(
@@ -642,7 +643,16 @@ export class Api extends KeyManagementApi {
             this.keyStore.get(keyReference._idx)
         );
 
-        const message = await getMessage({ binaryMessage, armoredMessage });
+        let message;
+        if (handleMalformedIcsAttachmentContent) {
+            if (!binaryMessage) {
+                throw new Error('`binaryMessage` expected with `handleMalformedIcsAttachmentContent = true`');
+            }
+            const messageWithSEIPDOnly = await readMessage({ binaryMessage, config: { enforceGrammar: false } });
+            message = await getMessage({ armoredMessage: messageWithSEIPDOnly.armor() });
+        } else {
+            message = await getMessage({ binaryMessage, armoredMessage });
+        }
         const signature =
             binarySignature || armoredSignature ? await getSignature({ binarySignature, armoredSignature }) : undefined;
         const encryptedSignature =
