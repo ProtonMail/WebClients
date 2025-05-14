@@ -8,7 +8,7 @@ import { type OfferConfig } from '../../interface';
 
 export const anniversary2025VPNPlus: OfferConfig = {
     ID: 'anniversary-2025-vpn-plus',
-    title: c('anniversary_2025: Offer').t`Save big on premium VPN features with a limited-time discount.`,
+    title: () => c('anniversary_2025: Offer').t`Save big on premium VPN features with a limited-time discount.`,
     featureCode: FeatureCode.OfferAnniversary2025VPNPlus,
     autoPopUp: 'one-time',
     canBeDisabled: true,

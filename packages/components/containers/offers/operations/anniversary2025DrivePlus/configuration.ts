@@ -8,7 +8,7 @@ import { type OfferConfig } from '../../interface';
 
 export const anniversary2025DrivePlus: OfferConfig = {
     ID: 'anniversary-2025-drive-plus',
-    title: c('anniversary_2025: Offer').t`Save big on premium Drive features with a limited-time discount.`,
+    title: () => c('anniversary_2025: Offer').t`Save big on premium Drive features with a limited-time discount.`,
     featureCode: FeatureCode.OfferAnniversary2025DrivePlus,
     autoPopUp: 'one-time',
     canBeDisabled: true,
