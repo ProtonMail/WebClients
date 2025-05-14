@@ -1,3 +1,8 @@
+### Version 1.31.3
+
+- Add Proton Anniversary 2025 offer
+- Fix extra-password authentication edge-case
+
 ### Version 1.31.2
 
 - Improve invite members modal UX
