@@ -89,7 +89,7 @@ export const AutofillIdentity: FC<Props> = ({ domain }) => {
                                       }),
                                       (fields) => {
                                           controller.forwardMessage({
-                                              type: IFramePortMessageType.DROPDOWN_AUTOFILL_IDENTITY,
+                                              type: IFramePortMessageType.AUTOFILL_IDENTITY,
                                               payload: fields,
                                           });
                                           controller.close({ refocus: false });
