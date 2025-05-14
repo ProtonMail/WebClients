@@ -4,8 +4,13 @@ import clsx from '@proton/utils/clsx';
 
 import './ProtonLoader.scss';
 
+export enum ProtonLoaderType {
+    Default = 'default',
+    Negative = 'negative',
+}
+
 export interface ProtonLoaderProps extends ComponentPropsWithoutRef<'svg'> {
-    type?: 'default' | 'negative';
+    type?: ProtonLoaderType;
 }
 
 const defaultColors = {
@@ -20,7 +25,7 @@ const negativeColors = {
     stopColor2: '#FFFFFF',
 };
 
-const ProtonLoader = ({ className, type = 'default', ...rest }: ProtonLoaderProps) => {
+const ProtonLoader = ({ className, type = ProtonLoaderType.Default, ...rest }: ProtonLoaderProps) => {
     const colors = type === 'negative' ? negativeColors : defaultColors;
     const logoId = `p-logo-${type}`;
     const logoGradientId = `p-logo-gradient-${type}`;
