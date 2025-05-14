@@ -52,8 +52,7 @@ import type { Api, Environment, ProtonConfig, User, UserSettings } from '@proton
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
-import { createCustomFetch, getUnleashConfig } from '@proton/unleash';
-import { EVENTS, UnleashClient } from '@proton/unleash';
+import { EVENTS, UnleashClient, createCustomFetch, getUnleashConfig } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import { getCryptoWorkerOptions } from './cryptoWorkerOptions';
@@ -350,7 +349,7 @@ export const loadCrypto = ({
 }) => {
     return loadCryptoWorker(
         getCryptoWorkerOptions(appName, {
-            enforceOpenpgpGrammar: unleashClient?.isEnabled('CryptoEnforceOpenpgpGrammar'),
+            enforceOpenpgpGrammar: !!unleashClient?.isEnabled('CryptoEnforceOpenpgpGrammar'),
         })
     );
 };
