@@ -2,13 +2,15 @@ import { c } from 'ttag';
 
 import { FeatureCode } from '@proton/features/interface';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
+import { APPS } from '@proton/shared/lib/constants';
 
 import Anniversary2025Layout from '../../components/anniversary2025/Anniversary2025Layout';
+import { getAnniversary2025Title } from '../../helpers/anniversary2025';
 import { type OfferConfig } from '../../interface';
 
 export const anniversary2025PassPlus: OfferConfig = {
     ID: 'anniversary-2025-pass-plus',
-    title: c('anniversary_2025: Offer').t`Save big on premium Pass features with a limited-time discount.`,
+    title: () => getAnniversary2025Title(APPS.PROTONPASS),
     featureCode: FeatureCode.OfferAnniversary2025PassPlus,
     autoPopUp: 'one-time',
     canBeDisabled: true,
