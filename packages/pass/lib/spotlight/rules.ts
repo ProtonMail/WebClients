@@ -91,10 +91,7 @@ export const createB2BRule = (store: Store<State>) =>
 export const createWebOnboardingRule = () =>
     createSpotlightRule({
         message: SpotlightMessage.WEB_ONBOARDING,
-        when: (previous) => {
-            if (DESKTOP_BUILD || EXTENSION_BUILD) return false;
-            return !previous;
-        },
+        when: (previous) => !DESKTOP_BUILD && !previous,
     });
 
 export const createSecurityRule = (store: Store<State>) =>
