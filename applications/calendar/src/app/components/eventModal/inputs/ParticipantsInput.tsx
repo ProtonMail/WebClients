@@ -2,9 +2,10 @@ import { memo, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Banner, Button } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import {
     AddressesAutocompleteTwo,
+    Alert,
     Details,
     Icon,
     Summary,
@@ -180,9 +181,9 @@ const ParticipantsInput = ({
                 }}
             />
             {error && (
-                <Banner className="mb-4 mt-2" variant="danger">
+                <Alert className="mb-4 mt-2" type="error">
                     {error}
-                </Banner>
+                </Alert>
             )}
             {numberOfAttendees > 0 &&
                 (collapsible ? (
