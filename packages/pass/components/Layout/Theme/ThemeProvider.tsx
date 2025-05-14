@@ -1,15 +1,16 @@
 import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useContext, useEffect, useLayoutEffect, useState } from 'react';
 
-// @ts-ignore
-import passDarkTheme from '@proton/colors/themes/dist/pass-dark.theme.css';
-// @ts-ignore
-import passLightTheme from '@proton/colors/themes/dist/pass-light.theme.css';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { matchDarkTheme } from '@proton/pass/components/Layout/Theme/utils';
 import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import noop from '@proton/utils/noop';
+
+// @ts-ignore
+import passDarkTheme from '@proton/colors/themes/dist/pass-dark.theme.css';
+// @ts-ignore
+import passLightTheme from '@proton/colors/themes/dist/pass-light.theme.css';
 
 export const THEME_ID = 'pass-theme';
 
@@ -34,14 +35,14 @@ export const PassThemeProvider: FC<PropsWithChildren> = ({ children }) => {
     const [config, setConfig] = useState<ThemeConfig>(getThemeConfig(theme));
 
     useEffect(() => {
-        const unsubcribe = core.theme.subscribe(setTheme);
+        const unsubscribe = core.theme.subscribe(setTheme);
 
         core.theme
             .getInitialTheme?.()
             .then((initial) => core.theme.setState(initial ?? PASS_DEFAULT_THEME))
             .catch(noop);
 
-        return unsubcribe;
+        return unsubscribe;
     }, []);
 
     useLayoutEffect(() => {

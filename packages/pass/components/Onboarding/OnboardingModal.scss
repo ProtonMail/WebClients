@@ -7,6 +7,14 @@
 		display: none;
 	}
 
+	&-header-background {
+		background: linear-gradient(160deg, #f08fa4 0, #4B3379 25%, #1F1F31 45%), var(--interaction-weak);
+
+		@at-root .pass-light & {
+			background: linear-gradient(160deg, #CF8287 0%, #E7DAFF 25%, #F7F3FF 45%), #FBF9FE;
+		}
+	}
+
 	/* Customize stepper look */
 	.stepper {
 		position: absolute;
@@ -41,6 +49,20 @@
 		:checked ~ .pass-onboarding-modal--option,
 		.pass-onboarding-modal--option:hover {
 			background-color: var(--interaction-norm-minor-2);
+		}
+	}
+
+	&--radio {
+		.pass-onboarding-modal--option-dense {
+			background-color: var(--interaction-norm-minor-2);
+
+			&:hover {
+				background-color: var(--interaction-norm-minor-2);
+			}
+		}
+
+		:checked ~ .pass-onboarding-modal--option-dense {
+			background-color: var(--interaction-norm);
 		}
 	}
 
