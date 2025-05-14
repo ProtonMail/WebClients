@@ -1,6 +1,6 @@
 import { IFRAME_APP_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { isIFrameMessage, sanitizeIframeStyles } from 'proton-pass-extension/app/content/injections/iframe/utils';
+import { isIFrameMessage } from 'proton-pass-extension/app/content/injections/iframe/utils';
 import type { PopoverController } from 'proton-pass-extension/app/content/services/iframes/popover';
 import type {
     IFrameApp,
@@ -8,6 +8,7 @@ import type {
     IFrameEndpoint,
     IFrameInitPayload,
     IFrameMessage,
+    IFrameMessageHandlerOptions,
     IFrameMessageType,
     IFrameMessageWithSender,
     IFramePortMessageHandler,
@@ -27,9 +28,12 @@ import { WorkerMessageType } from '@proton/pass/types';
 import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';
 import { pixelEncoder } from '@proton/pass/utils/dom/computed-styles';
 import { createElement } from '@proton/pass/utils/dom/create-element';
+import { POPOVER_SUPPORTED, TopLayerManager } from '@proton/pass/utils/dom/popover';
+import { eq } from '@proton/pass/utils/fp/predicates';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
+import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
 
 type CreateIFrameAppOptions<A> = {
@@ -80,30 +84,31 @@ export const createIFrameApp = <A>({
     const ensureLoaded = () => waitUntil({ check: () => state.loaded, cancel: checkStale }, 50);
     const ensureReady = () => waitUntil({ check: () => state.ready, cancel: checkStale }, 50);
 
+    /** Ensures the current action is trusted by verifying it's initiated from the
+     * topmost UI layer. This prevents popover clickjacking attacks where malicious
+     * sites could use `pointer-events: none` to bypass standard detection methods
+     * (`elementsAtPoint` doesn't detect elements with `pointer-events: none`). */
+    const ensureTrustedAction = (): boolean => {
+        if (POPOVER_SUPPORTED) {
+            const popovers = TopLayerManager.elements;
+            const rootIdx = popovers.findIndex(eq<HTMLElement>(popover.root.customElement));
+            if (rootIdx !== popovers.length - 1) return false;
+        }
+
+        return true;
+    };
+
     const listeners = createListenerStore();
     const activeListeners = createListenerStore();
 
     const iframe = createElement<HTMLIFrameElement>({
         type: 'iframe',
         classNames,
-        attributes: { src, popover: '' },
-        parent: popover.root,
-        shadow: true,
+        attributes: { src },
+        parent: popover.root.shadowRoot,
     });
 
     iframe.style.setProperty(`--frame-animation`, animation);
-
-    listeners.addObserver(
-        iframe,
-        (mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.attributeName === 'style') {
-                    sanitizeIframeStyles(iframe);
-                }
-            });
-        },
-        { attributes: true, childList: false, subtree: false }
-    );
 
     const unlisten = listeners.addListener(window, 'message', (event) => {
         if (event.data.type === IFRAME_APP_READY_EVENT && event.data.endpoint === id) {
@@ -141,11 +146,15 @@ export const createIFrameApp = <A>({
      * make sure to filter messages not only by type but by sender id */
     const registerMessageHandler = <M extends IFrameMessageType>(
         type: M,
-        handler: (message: IFrameMessageWithSender<M>) => void
+        handler: (message: IFrameMessageWithSender<M>) => void,
+        options?: IFrameMessageHandlerOptions
     ) => {
         const safeHandler = (message: Maybe<IFrameMessageWithSender>) => {
             if (message?.type === type && message.sender === id) {
-                handler(message as IFrameMessageWithSender<M>);
+                /** If the message handler is a result of an iframe user-action,
+                 * validate the action against potential click-jacking attacks */
+                if (!options?.userAction || ensureTrustedAction()) handler(message as IFrameMessageWithSender<M>);
+                else logger.warn(`[IFrame::${id}] Untrusted user action`);
             }
         };
 
@@ -171,7 +180,7 @@ export const createIFrameApp = <A>({
 
     const updatePosition = () => {
         cancelAnimationFrame(state.positionReq);
-        state.positionReq = requestAnimationFrame(() => setIframePosition(position(popover.root)));
+        state.positionReq = requestAnimationFrame(() => setIframePosition(position(popover.root.customElement)));
     };
 
     const close = (options: IFrameCloseOptions = {}) => {
@@ -250,7 +259,7 @@ export const createIFrameApp = <A>({
         listeners.removeAll();
         activeListeners.removeAll();
         state.port?.onMessage.removeListener(onMessageHandler);
-        safeCall(() => popover.root.removeChild(iframe))();
+        safeCall(() => popover.root.shadowRoot.removeChild(iframe))();
         state.port = null;
     };
 
@@ -269,12 +278,13 @@ export const createIFrameApp = <A>({
     return {
         element: iframe,
         state,
+
         close,
         destroy,
-        getPosition,
-        init,
         ensureLoaded,
         ensureReady,
+        getPosition,
+        init,
         open,
         registerMessageHandler,
         sendPortMessage,
