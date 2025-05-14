@@ -9,7 +9,7 @@ import { type OfferConfig } from '../../interface';
 
 export const anniversary2025MailPlus: OfferConfig = {
     ID: 'anniversary-2025-mail-plus',
-    title: c('anniversary_2025: Offer').t`Save big on premium Mail features with a limited-time discount.`,
+    title: () => c('anniversary_2025: Offer').t`Save big on premium Mail features with a limited-time discount.`,
     featureCode: FeatureCode.OfferAnniversary2025MailPlus,
     autoPopUp: 'one-time',
     canBeDisabled: true,

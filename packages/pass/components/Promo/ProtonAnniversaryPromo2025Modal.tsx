@@ -50,7 +50,7 @@ export const ProtonAnniversaryPromo2025Modal: FC<Props> = ({ currency, currentPl
              * If user uses another currency, defaults to EUR */
             currency: ['USD', 'EUR', 'CHF'].includes(currency) ? currency : DEFAULT_CURRENCY,
             offer: {
-                title:
+                title: () =>
                     planToUpsell === PLANS.PASS
                         ? c('anniversary_2025: Offer')
                               .t`Save big on premium Pass features with a limited-time discount.`
