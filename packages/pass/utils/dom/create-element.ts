@@ -1,3 +1,9 @@
+declare global {
+    interface ShadowRoot {
+        wrappedJSObject?: ShadowRoot;
+    }
+}
+
 export const createElement = <T extends HTMLElement = HTMLElement>(options: {
     type: string;
     classNames?: string[];
@@ -42,7 +48,7 @@ export const createCustomElement = <T extends HTMLElement>(options: {
     if (options.styles) {
         const sheet = new CSSStyleSheet();
         sheet.replaceSync(options.styles);
-        shadowRoot.adoptedStyleSheets.push(sheet);
+        (shadowRoot?.wrappedJSObject ?? shadowRoot).adoptedStyleSheets.push(sheet);
     }
 
     if (options.parent) options.parent.appendChild(customElement);
