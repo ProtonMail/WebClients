@@ -38,6 +38,9 @@ test.describe('visual tests', () => {
                     body svg use {
                         animation: none !important;
                     }
+                    .docblock-argstable {
+                        overflow: hidden !important;
+                    }
                 `,
             });
             // Wait for SB to fully render the components
