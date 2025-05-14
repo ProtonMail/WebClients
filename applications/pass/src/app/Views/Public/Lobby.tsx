@@ -51,7 +51,7 @@ export const Lobby: FC = () => {
     }, [history.location.state, status]);
 
     return (
-        <LobbyLayout overlay>
+        <LobbyLayout>
             <LobbyContent
                 status={status}
                 warning={warning}
