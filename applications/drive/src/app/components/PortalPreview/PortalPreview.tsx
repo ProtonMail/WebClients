@@ -21,6 +21,8 @@ interface PortalPreviewProps {
     onRestore?: () => void;
     onShare?: () => void;
     onSelectCover?: () => void;
+    onFavorite?: () => void;
+    isFavorite?: boolean;
     className?: string;
     navigationControls?: ReactNode;
 }
@@ -34,6 +36,8 @@ const PortalPreview = (
         onRestore,
         onShare,
         onSelectCover,
+        onFavorite,
+        isFavorite,
         date,
         className,
         navigationControls,
@@ -108,6 +112,8 @@ const PortalPreview = (
                     onRestore={onRestore}
                     onShare={onShare}
                     onSelectCover={onSelectCover}
+                    onFavorite={onFavorite}
+                    isFavorite={isFavorite}
                     date={date}
                     navigationControls={navigationControls}
                     signatureStatus={signatureStatus}

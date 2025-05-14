@@ -36,6 +36,8 @@ interface Props {
     onDetails?: () => void;
     onShare?: () => void;
     onSelectCover?: () => void; // photos inside album only
+    onFavorite?: () => void; // photos only
+    isFavorite?: boolean;
     onRestore?: () => void; // revision's specific
     onOpenInDocs?: () => void;
     date?: Date | string | number;
@@ -56,6 +58,8 @@ const Header = ({
     onRestore,
     onOpenInDocs,
     onSelectCover,
+    onFavorite,
+    isFavorite,
     date,
     children,
 }: Props) => {
@@ -200,6 +204,24 @@ const Header = ({
                             size={5}
                             alt={sharedStatus === '' ? c('Action').t`Share via link` : c('Action').t`Sharing options`}
                             className={SHARED_STATUS_TO_COLOR[sharedStatus || '']}
+                        />
+                    </Button>
+                )}
+                {onFavorite && typeof isFavorite !== 'undefined' && !isMobileHeaderPreview && (
+                    <Button
+                        icon
+                        shape="ghost"
+                        title={isFavorite ? c('Action').t`Remove from favorites` : c('Action').t`Mark as favorite`}
+                        onClick={onFavorite}
+                        className="md:ml-2 md:inline-flex"
+                        data-testid={
+                            isFavorite ? 'file-preview:actions:removefavorite' : 'file-preview:actions:markfavorite'
+                        }
+                    >
+                        <Icon
+                            name={isFavorite ? 'heart-filled' : 'heart'}
+                            size={5}
+                            alt={isFavorite ? c('Action').t`Remove from favorites` : c('Action').t`Mark as favorite`}
                         />
                     </Button>
                 )}

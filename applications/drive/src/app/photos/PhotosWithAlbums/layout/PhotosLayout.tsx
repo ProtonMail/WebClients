@@ -34,7 +34,7 @@ import { useMemoArrayNoMatterTheOrder } from '../../../store/_views/utils';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../zustand/photos/layout.store';
 import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
-import { useCreateAlbum } from '../../PhotosActions/Albums';
+import { useCreateAlbum, useFavoritePhotoToggleFromLayout } from '../../PhotosActions/Albums';
 import { AddAlbumPhotosModal } from '../../PhotosModals/AddAlbumPhotosModal';
 import { CreateAlbumModal } from '../../PhotosModals/CreateAlbumModal';
 import { useDeleteAlbumModal } from '../../PhotosModals/DeleteAlbumModal';
@@ -123,6 +123,7 @@ export const PhotosLayout = () => {
     const [removeAlbumPhotosModal, showRemoveAlbumPhotosModal] = useRemoveAlbumPhotosModal();
     const createAlbumModal = useModalStateObject();
     const [isAddModalShared, setIsAddModalShared] = useState<boolean>(false);
+    const favoritePhotoToggle = useFavoritePhotoToggleFromLayout(photosView);
 
     /*
         Refs, Memos & Constants
@@ -694,6 +695,16 @@ export const PhotosLayout = () => {
                             ? onSelectCoverPreview
                             : undefined
                     }
+                    onFavorite={() => {
+                        if (previewItem.photoProperties) {
+                            void favoritePhotoToggle(
+                                previewItem.linkId,
+                                previewShareId,
+                                previewItem.photoProperties.isFavorite
+                            );
+                        }
+                    }}
+                    isFavorite={previewItem.photoProperties?.isFavorite}
                     navigationControls={
                         <NavigationControl
                             current={previewIndex + 1}
