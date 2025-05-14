@@ -156,7 +156,9 @@ export const PhotosCard: FC<Props> = ({
                             <Icon
                                 name={isFavorite ? 'heart-filled' : 'heart'}
                                 size={5}
-                                alt={c('Action').t`Mark as favorite`}
+                                alt={
+                                    isFavorite ? c('Action').t`Remove from favorites` : c('Action').t`Mark as favorite`
+                                }
                             />
                         </button>
                     </Tooltip>
