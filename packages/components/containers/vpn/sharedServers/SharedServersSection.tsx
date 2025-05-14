@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory } from 'react-router';
 
 import { c, msgid } from 'ttag';
@@ -31,10 +31,11 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { getCountryOptions } from '@proton/payments';
-import { MINUTE, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { MINUTE, SECOND, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
+import NotificationButton from '../../notifications/NotificationButton';
 import PolicyPreviewModal from './PolicyModal/PolicyPreviewModal';
 import UnpublishedChangesModal from './PolicyModal/UnpublishedChangesModal';
 import PolicyEditButton from './PolicyTable/PolicyEditButton';
@@ -61,12 +62,14 @@ const OrangeDot = () => (
 
 const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
     const api = useApi();
-    const { createNotification } = useNotifications();
+    const { createNotification, hideNotification } = useNotifications();
     const { loading, locations, policies, refresh, users, countUsersNotInAnyPolicy } = useSharedServers(maxAge);
     const history = useHistory();
 
     const [originalPolicies, setOriginalPolicies] = useState<VpnLocationFilterPolicyLocal[]>([]);
     const [localPolicies, setLocalPolicies] = useState<VpnLocationFilterPolicyLocal[]>([]);
+    const localPoliciesRef = useRef(localPolicies);
+    localPoliciesRef.current = localPolicies;
     const [policyType, setPolicyType] = useState<PolicyType>(PolicyType.None);
     const [previousPolicyType, setOriginalPolicyType] = useState<PolicyType>(PolicyType.None);
 
@@ -81,6 +84,9 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
     const countryOptions = getCountryOptions(userSettings);
     const { sortedLocations, countriesCount } = sortLocationsByLocalizedCountryName(locations, countryOptions);
 
+    const [shouldShowEditNotification, setShowEditNotification] = useState(false);
+    const [shouldShowDeleteNotification, setShowDeleteNotification] = useState(false);
+
     const customPolicies = useMemo(() => {
         return localPolicies.filter((policy) => policy.Type === PolicyType.Custom);
     }, [localPolicies]);
@@ -94,20 +100,6 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
             },
         });
     });
-
-    const addPolicy = useCallback(() => {
-        showCreateModal({
-            onSuccess: (newPolicy: VpnLocationFilterPolicy) => {
-                setLocalPolicies((currentPolicies) => [
-                    ...currentPolicies,
-                    {
-                        ...newPolicy,
-                        localStatus: 'created',
-                    },
-                ]);
-            },
-        });
-    }, [showCreateModal]);
 
     const handleEditPolicy = useCallback(
         (policyToEdit: VpnLocationFilterPolicyLocal, step: number, onSuccess?: () => void) => {
@@ -128,6 +120,8 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                     );
 
                     onSuccess?.();
+
+                    setShowEditNotification(true);
                 },
             });
         },
@@ -148,6 +142,8 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                     );
 
                     onSuccess?.();
+
+                    setShowDeleteNotification(true);
                 },
             });
         },
@@ -168,16 +164,30 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
 
     const handlePublishChanges = useCallback(async () => {
         try {
-            const finalPolicies = localPolicies.filter((p) => p.localStatus !== 'deleted');
+            const finalPolicies = localPoliciesRef.current.filter((p) => p.localStatus !== 'deleted');
 
             const FilterPoliciesInput: FilterPolicyRequest[] = mapPoliciesToFilterRequest(finalPolicies);
             const payload: CreateLocationFilterPayload = { FilterPoliciesInput };
 
             await api(createLocationFilter(payload));
+
+            if (shouldShowEditNotification) {
+                createNotification({
+                    text: c('Success').t`Changes saved.`,
+                    type: 'success',
+                });
+            }
+            if (shouldShowDeleteNotification) {
+                createNotification({
+                    text: c('Success').t`Policy deleted.`,
+                    type: 'success',
+                });
+            }
             createNotification({
                 text: c('Success')
                     .t`Changes published. Your changes will be visible to all users in the next few hours.`,
                 type: 'success',
+                showCloseButton: false,
             });
 
             await refresh();
@@ -188,7 +198,38 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                 type: 'error',
             });
         }
-    }, [api, localPolicies, createNotification, refresh]);
+    }, [api, createNotification, refresh]);
+
+    const addPolicy = useCallback(() => {
+        showCreateModal({
+            onSuccess: (newPolicy: VpnLocationFilterPolicy) => {
+                setLocalPolicies((currentPolicies) => [
+                    ...currentPolicies,
+                    {
+                        ...newPolicy,
+                        localStatus: 'created',
+                    },
+                ]);
+
+                const id = createNotification({
+                    text: (
+                        <>
+                            {c('Success')
+                                .t`New policy created. It will take effect only after you publish the changes.`}
+                            <NotificationButton
+                                onClick={() => {
+                                    hideNotification(id);
+                                    void handlePublishChanges();
+                                }}
+                            >{c('Action').t`Publish changes`}</NotificationButton>
+                        </>
+                    ),
+                    type: 'success',
+                    expiration: 30 * SECOND,
+                });
+            },
+        });
+    }, [showCreateModal]);
 
     const handleClickPolicyType = useCallback(
         (nextType: PolicyType) => {
