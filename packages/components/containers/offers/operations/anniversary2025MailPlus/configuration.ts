@@ -2,14 +2,15 @@ import { c } from 'ttag';
 
 import { FeatureCode } from '@proton/features/interface';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
-import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
+import { APPS, DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 
 import Anniversary2025Layout from '../../components/anniversary2025/Anniversary2025Layout';
+import { getAnniversary2025Title } from '../../helpers/anniversary2025';
 import { type OfferConfig } from '../../interface';
 
 export const anniversary2025MailPlus: OfferConfig = {
     ID: 'anniversary-2025-mail-plus',
-    title: c('anniversary_2025: Offer').t`Save big on premium Mail features with a limited-time discount.`,
+    title: () => getAnniversary2025Title(APPS.PROTONMAIL),
     featureCode: FeatureCode.OfferAnniversary2025MailPlus,
     autoPopUp: 'one-time',
     canBeDisabled: true,
