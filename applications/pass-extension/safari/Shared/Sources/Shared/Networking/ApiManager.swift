@@ -39,14 +39,15 @@ public final class ApiManager {
     public let authHelper: any AuthManagerProtocol
     public let apiService: any APIService
 
-    public var appVersion: String { "macos-pass-catalyst@\(Bundle.main.versionNumber)" }
+    public var appVersion: String
     public var userAgent: String? { UserAgent.default.ua }
     public var locale: String { Locale.autoupdatingCurrent.identifier }
     public var additionalHeaders: [String: String]? { nil }
 
     private let setCredentials: any SetCredentialsUseCase
 
-    public init(doh: any DoHInterface,
+    public init(appVersion: String,
+                doh: any DoHInterface,
                 credentials: Credentials,
                 credentialProvider: any CredentialProvider,
                 setCredentials: any SetCredentialsUseCase) {
@@ -61,6 +62,7 @@ public final class ApiManager {
         let apiService = PMAPIService.createAPIService(doh: doh,
                                                        sessionUID: credentials.sessionID,
                                                        challengeParametersProvider: challengeProvider)
+        self.appVersion = appVersion
         self.apiService = apiService
         self.setCredentials = setCredentials
         authHelper.setUpDelegate(self, callingItOn: .immediateExecutor)

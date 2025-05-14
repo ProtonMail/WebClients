@@ -19,124 +19,90 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
+import Combine
 import Foundation
-import ProtonCorePayments
-import ProtonCorePaymentsUI
+@preconcurrency import OSLog
+import ProtonCorePaymentsUIV2
+import ProtonCorePaymentsV2
 import ProtonCoreServices
 
-public final class PaymentsManager {
-    public typealias PaymentsResult = Result<InAppPurchasePlan?, any Error>
+public final class PaymentsManager: Sendable {
+    private let paymentsV2: PaymentsV2
+    private let transactionsObserver: any TransactionsObserverProviding
+    private nonisolated(unsafe) var cancellables = Set<AnyCancellable>()
+    private let logger: Logger
 
-    private let payments: Payments
-    private let credentials: Credentials
-    public let tokenStorage: (any PaymentTokenStorage)?
+    private let appVersion: String
+    private let sessionID: String
+    private let authToken: String
+    private let doh: PassDoH
 
-    private var paymentsUI: PaymentsUI?
+    public init(paymentsV2: PaymentsV2 = .init(),
+                transactionsObserver: any TransactionsObserverProviding = TransactionsObserver.shared,
+                appVersion: String,
+                sessionID: String,
+                authToken: String,
+                doh: PassDoH,
+                createLogger: any CreateLoggerUseCase) {
+        self.paymentsV2 = paymentsV2
+        self.transactionsObserver = transactionsObserver
+        logger = createLogger(category: String(describing: Self.self))
 
-    public init(userDefaults: UserDefaults,
-                credentials: Credentials,
-                tokenStorage: any PaymentTokenStorage,
-                apiService: any APIService) {
-        self.tokenStorage = tokenStorage
-        self.credentials = credentials
-        let dataStorage = UserDefaultsServicePlanDataStorage(storage: userDefaults)
-        let payments = Payments(inAppPurchaseIdentifiers: PaymentsConstants.inAppPurchaseIdentifiers,
-                                apiService: apiService,
-                                localStorage: dataStorage,
-                                reportBugAlertHandler: nil)
-        self.payments = payments
-        payments.storeKitManager.delegate = self
-        initializePaymentsStack()
+        self.appVersion = appVersion
+        self.sessionID = sessionID
+        self.authToken = authToken
+        self.doh = doh
     }
 }
 
 public extension PaymentsManager {
-    func manageSubscription(completion: @escaping (PaymentsResult) -> Void) {
-        let paymentsUI = createPaymentsUI()
-        paymentsUI.showCurrentPlan(presentationType: .modal, backendFetch: true) { [weak self] result in
-            guard let self else { return }
-            handlePaymentsResponse(result: result, completion: completion)
+    func setUp() async {
+        let configuration = TransactionsObserverConfiguration(sessionID: sessionID,
+                                                              authToken: authToken,
+                                                              appVersion: appVersion,
+                                                              doh: doh)
+
+        transactionsObserver.setConfiguration(configuration)
+
+        do {
+            try await transactionsObserver.start()
+        } catch {
+            logger.error("\(error.localizedDescription, privacy: .public)")
         }
     }
 
-    func upgradeSubscription(completion: @escaping (PaymentsResult) -> Void) {
-        let paymentsUI = createPaymentsUI()
-        paymentsUI.showUpgradePlan(presentationType: .modal, backendFetch: true) { [weak self] reason in
-            guard let self else { return }
-            handlePaymentsResponse(result: reason, completion: completion)
-        }
-    }
-}
-
-private extension PaymentsManager {
-    func initializePaymentsStack() {
-        switch payments.planService {
-        case let .left(service):
-            service.currentSubscriptionChangeDelegate = self
-        default:
-            break
-        }
-
-        payments.storeKitManager.delegate = self
-        payments.storeKitManager.subscribeToPaymentQueue()
-    }
-
-    func createPaymentsUI() -> PaymentsUI {
-        let paymentsUI = PaymentsUI(payments: payments,
-                                    clientApp: PaymentsConstants.clientApp,
-                                    shownPlanNames: PaymentsConstants.shownPlanNames,
-                                    customization: .init(inAppTheme: { .dark }))
-        self.paymentsUI = paymentsUI
-        return paymentsUI
-    }
-
-    func handlePaymentsResponse(result: PaymentsUIResultReason,
-                                completion: @escaping (PaymentsResult) -> Void) {
-        switch result {
-        case let .purchasedPlan(accountPlan: plan):
-            printIfDebug("Purchased plan: \(plan.protonName)")
-            completion(.success(plan))
-        case .open:
-            break
-        case let .planPurchaseProcessingInProgress(accountPlan: plan):
-            printIfDebug("Purchasing \(plan.protonName)")
-        case .close:
-            printIfDebug("Payments closed")
-            completion(.success(nil))
-        case let .purchaseError(error: error):
-            printIfDebug("Purchase failed with error \(error)")
-            completion(.failure(error))
-        case .toppedUpCredits:
-            printIfDebug("Credits topped up")
-            completion(.success(nil))
-        case let .apiMightBeBlocked(message, originalError: error):
-            printIfDebug("\(message), error \(error)")
-            completion(.failure(error))
-        case let .planAlreadyPurchased(error: error):
-            printIfDebug("Purchase failed with error \(error)")
+    func manageSubscription(isUpgrading: Bool,
+                            completion: @escaping (Result<Bool, any Error>) -> Void) {
+        do {
+            try paymentsV2.showAvailablePlans(presentationMode: .modal,
+                                              sessionID: sessionID,
+                                              accessToken: authToken,
+                                              appVersion: appVersion,
+                                              hideCurrentPlan: isUpgrading,
+                                              doh: doh)
+            paymentsV2.transactionProgress
+                .dropFirst()
+                .receive(on: DispatchQueue.main)
+                .sink { [weak self] value in
+                    guard let self else { return }
+                    switch value {
+                    case .transactionCompleted:
+                        completion(.success(true))
+                        paymentsV2.dismissPayments()
+                    case .transactionCancelledByUser:
+                        completion(.success(false)) // to be updated
+                    case .mismatchTransactionIDs,
+                         .transactionProcessError,
+                         .unableToGetUserTransactionUUID,
+                         .unknownError:
+                        completion(.success(false)) // to be updated
+                    default:
+                        logger.error("\("\(value) not handled", privacy: .public)")
+                    }
+                }
+                .store(in: &cancellables)
+        } catch {
             completion(.failure(error))
         }
-    }
-
-    func printIfDebug(_ message: String) {
-        #if DEBUG
-        print(message)
-        #endif
-    }
-}
-
-extension PaymentsManager: StoreKitManagerDelegate {
-    public var isUnlocked: Bool { true }
-
-    public var isSignedIn: Bool { true }
-
-    public var activeUsername: String? { nil }
-
-    public var userId: String? { credentials.userID }
-}
-
-extension PaymentsManager: CurrentSubscriptionChangeDelegate {
-    public func onCurrentSubscriptionChange(old _: Subscription?, new _: Subscription?) {
-        // Nothing to do here for now
     }
 }

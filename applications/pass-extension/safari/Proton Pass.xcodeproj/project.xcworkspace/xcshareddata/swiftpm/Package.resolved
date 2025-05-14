@@ -28,15 +28,6 @@
       }
     },
     {
-      "identity" : "ellipticcurvekeypair",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/agens-no/EllipticCurveKeyPair",
-      "state" : {
-        "revision" : "944ae5c89ca045e9f1a113b736706c73fc51d1c2",
-        "version" : "2.0.0"
-      }
-    },
-    {
       "identity" : "factory",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/hmlongco/Factory",
@@ -68,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ProtonMail/protoncore_ios",
       "state" : {
-        "revision" : "182dc8de3558e142b9b821a2daf93c25c7bab654",
-        "version" : "26.1.2"
+        "revision" : "8567a19408b93a4343511cceba901e2863bf7a9f",
+        "version" : "32.6.0"
       }
     },
     {
@@ -142,6 +133,15 @@
       "state" : {
         "revision" : "d107d7cc825f38ae2d6dc7c54af71d58145c3506",
         "version" : "1.0.3"
+      }
+    },
+    {
+      "identity" : "yams",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jpsim/Yams.git",
+      "state" : {
+        "revision" : "b4b8042411dc7bbb696300a34a4bf3ba1b7ad19b",
+        "version" : "5.3.1"
       }
     }
   ],
