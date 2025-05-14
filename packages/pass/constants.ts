@@ -132,7 +132,6 @@ export const RUNTIME_RELOAD_THROTTLE = 10; /* seconds */
 
 export const PASS_DEFAULT_THEME = PassThemeOption.OS;
 
-export const FILE_UNIQUE_ID_LENGTH = 16;
 export const FILE_CHUNK_SIZE = 4 * 1024 * 1024; // 5MB
 export const FILE_MIME_TYPE_DETECTION_CHUNK_SIZE = 1.5 * 1024 * 1024; // 1.5MB
 
@@ -142,3 +141,7 @@ export const FILE_DOWNLOAD_TIMEOUT = 90_000;
 export const FILE_PUBLIC_SHARE = 'secure-link';
 
 export const PASS_PROTON_ANNIVERSARY_END_DATE = new Date('2025-05-28T12:00:00+01:00').getTime();
+
+export const PASS_PLUS_LIFETIME_PRICE = 19900; // €199
+export const PASS_PLUS_PRICE = 299; // €2.99
+export const PROTON_UNLIMITED_PRICE = 999; // €9.99
