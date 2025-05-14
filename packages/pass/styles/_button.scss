@@ -76,11 +76,14 @@ a {
 	--button-active-text-color: var(--interaction-norm);
 }
 
-.button-invert, .button-invert:active, .button-invert:focus {
+.button-invert,
+.button-invert:active,
+.button-invert:focus {
 	@extend .bg-invert;
 }
 
 .button-invert:hover {
 	@extend .bg-invert;
+
 	opacity: 0.7;
 }
