@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import ProtonLoader from './ProtonLoader';
+import ProtonLoader, { ProtonLoaderType } from './ProtonLoader';
 
 const protonLoaderTestId = 'proton-loader';
 
@@ -22,7 +22,9 @@ describe('<ProtonLoader />', () => {
     });
 
     it('renders negative type', () => {
-        const { getByTestId } = render(<ProtonLoader type="negative" data-testid={protonLoaderTestId} />);
+        const { getByTestId } = render(
+            <ProtonLoader type={ProtonLoaderType.Negative} data-testid={protonLoaderTestId} />
+        );
 
         const element = getByTestId(protonLoaderTestId);
 
