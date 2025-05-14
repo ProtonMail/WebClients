@@ -83,11 +83,11 @@ const getTableContent = (): Record<AvailablePlans, FeaturesTable> => ({
 });
 
 const getProtonProducts = () => [
-    { icon: <PassLogo variant="glyph-only" />, name: PASS_SHORT_APP_NAME },
-    { icon: <MailLogo variant="glyph-only" />, name: MAIL_SHORT_APP_NAME },
-    { icon: <CalendarLogo variant="glyph-only" />, name: CALENDAR_SHORT_APP_NAME },
-    { icon: <DriveLogo variant="glyph-only" />, name: DRIVE_SHORT_APP_NAME },
-    { icon: <VpnLogo variant="glyph-only" />, name: VPN_SHORT_APP_NAME },
+    { icon: PassLogo, name: PASS_SHORT_APP_NAME },
+    { icon: MailLogo, name: MAIL_SHORT_APP_NAME },
+    { icon: CalendarLogo, name: CALENDAR_SHORT_APP_NAME },
+    { icon: DriveLogo, name: DRIVE_SHORT_APP_NAME },
+    { icon: VpnLogo, name: VPN_SHORT_APP_NAME },
 ];
 
 export const Content: FC = () => {
@@ -130,9 +130,9 @@ export const Content: FC = () => {
                     <h2 className="w-full text-center text-lg text-bold">{c('Label')
                         .t`The best of ${BRAND_NAME} with one subscription`}</h2>
                     <div className="flex justify-space-between mt-4">
-                        {protonProducts.map(({ icon, name }) => (
+                        {protonProducts.map(({ icon: Icon, name }) => (
                             <div key={name} className="flex flex-column items-center">
-                                {icon}
+                                <Icon variant="glyph-only" />
                                 <div>{name}</div>
                             </div>
                         ))}
