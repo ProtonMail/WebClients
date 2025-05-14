@@ -4510,16 +4510,16 @@
         "Diğer"
       ],
       "Import from Google": [
-        "Google'dan içe aktar"
+        "Google üzerinden içe aktar"
       ],
       "Import from other": [
-        "Diğerlerinden içe aktar"
+        "Diğerleri üzerinden içe aktar"
       ],
       "Import from Outlook": [
-        "Outlook'tan içe aktar"
+        "Outlook üzerinden içe aktar"
       ],
       "Import from Yahoo": [
-        "Yahoo'dan içe aktar"
+        "Yahoo üzerinden içe aktar"
       ]
     },
     "Import warning": {
@@ -5850,7 +5850,7 @@
         "Büyük ve küçük harfler"
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Mesajlarınızı, kişilerinizi ve takvimlerinizi ${ BRAND_NAME }'e taşıyın."
+        "İletilerinizi, kişilerinizi ve takvimlerinizi ${ BRAND_NAME } üzerine alın."
       ],
       "One time import": [
         "Tek seferlik içe aktarma"
@@ -6742,6 +6742,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Aboneliğinizin süresi dolmuş. Verilerinizin kaybolmasını önlemek için ${ cta }."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Depolama alanınız dolmuş. ${ BRAND_NAME } ürünlerini kullanmayı sürdürmek için yer açın ya da ${ cta }."
       ]
     },
     "Log preference": {
@@ -7691,7 +7694,7 @@
         "Yalnızca ${ priceLine } ile tüm ${ BRAND_NAME } ücretli ürünlerine ve özelliklerine erişin. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Starting from ${ priceLine }": [
-        "${ priceLine }'dan başlayan fiyatlarla"
+        "${ priceLine } tutarından başlayan fiyatlarla"
       ]
     },
     "new_plans: title": {
@@ -9458,7 +9461,7 @@
         "Tüm ${ BRAND_NAME } hizmetleri için"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "E-postalar gönderebilmek ve alabilmek için depolama alanını boşaltın ya da ${ upgrade }"
+        "E-posta gönderebilmek veya alabilmek için depolama alanını boşaltın ya da ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Dosyaları yükleyebilmek ya da eşitleyebilmek için depolama alanını boşaltın ya da ${ upgrade }"
@@ -10901,6 +10904,9 @@
       ],
       "Schedule meetings in one click": [
         "Tek tıklamayla toplantılar planlayın"
+      ],
+      "Mail Subscriptions": [
+        "E-posta abonelikleri"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
