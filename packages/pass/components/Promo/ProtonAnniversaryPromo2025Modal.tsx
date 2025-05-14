@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms/index';
 import Anniversary2025FeatureList from '@proton/components/containers/offers/components/anniversary2025/Anniversary2025FeatureList';
 import Anniversary2025Header from '@proton/components/containers/offers/components/anniversary2025/Anniversary2025Header';
 import OfferCloseButton from '@proton/components/containers/offers/components/shared/OfferCloseButton';
+import { getAnniversary2025Title } from '@proton/components/containers/offers/helpers/anniversary2025';
 import type { OfferId, OfferProps } from '@proton/components/containers/offers/interface';
 import { ModalTwoContent } from '@proton/components/index';
 import type { FeatureCode } from '@proton/features/interface';
@@ -15,6 +16,7 @@ import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
+import { APPS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { type EligiblePlan, UPSELL_MAP } from './ProtonAnniversaryPromo2025.utils';
@@ -52,9 +54,8 @@ export const ProtonAnniversaryPromo2025Modal: FC<Props> = ({ currency, currentPl
             offer: {
                 title:
                     planToUpsell === PLANS.PASS
-                        ? c('anniversary_2025: Offer')
-                              .t`Save big on premium Pass features with a limited-time discount.`
-                        : c('anniversary_2025: Offer').t`Here's an exclusive gift to celebrate our journey together.`,
+                        ? () => getAnniversary2025Title(APPS.PROTONPASS)
+                        : getAnniversary2025Title,
                 deals: [
                     {
                         features,
