@@ -199,14 +199,16 @@ const SubscriptionCheckout = ({
             }
         >
             <div className="mb-4 flex flex-column">
-                <span className="relative">
+                <div className="min-h-custom" style={{ '--min-h-custom': '1.5rem' }}>
                     <strong className="mb-1">{isFreePlanSelected ? c('Payments.plan_name').t`Free` : planTitle}</strong>
                     {discountPercent !== 0 && !loading && !couponConfig?.hidden && discountBadgeElement}
-                </span>
+                </div>
 
-                {isPaidPlanSelected && !isSpecialRenewPlan(planIDs) && !lifetimePlan && (
-                    <BilledCycleText cycle={cycle} planIDs={planIDs} />
-                )}
+                <div className="min-h-custom" style={{ '--min-h-custom': '1.25rem' }}>
+                    {isPaidPlanSelected && !isSpecialRenewPlan(planIDs) && !lifetimePlan && (
+                        <BilledCycleText cycle={cycle} planIDs={planIDs} />
+                    )}
+                </div>
             </div>
             {(() => {
                 if (lifetimePlan) {
