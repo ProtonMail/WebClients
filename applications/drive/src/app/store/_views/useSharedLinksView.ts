@@ -28,7 +28,8 @@ export default function useSharedLinksView(shareId: string) {
         const defaultShare = await getDefaultShare(signal);
         const defaultPhotoShare = await getDefaultPhotosShare(signal);
         volumeId.current = defaultShare.volumeId;
-        volumeId.current = defaultPhotoShare?.volumeId;
+        photoVolumeId.current =
+            volumeId.current !== defaultPhotoShare?.volumeId ? defaultPhotoShare?.volumeId : undefined;
         await Promise.all([
             linksListing.loadLinksSharedByMeLink(signal, defaultShare.volumeId),
             defaultPhotoShare ? linksListing.loadLinksSharedByMeLink(signal, defaultPhotoShare.volumeId) : null,
