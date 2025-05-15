@@ -1,5 +1,3 @@
-import { getNewKeyFlags } from '@proton/components/containers/keys/shared/flags';
-import { FlagAction } from '@proton/components/containers/keys/shared/interface';
 import { updateAddressFlags } from '@proton/shared/lib/api/members';
 import type {
     ActiveKeyWithVersion,
@@ -8,10 +6,11 @@ import type {
     DecryptedAddressKey,
     KeyTransparencyVerify,
 } from '@proton/shared/lib/interfaces';
-import { getSignedKeyListWithDeferredPublish } from '@proton/shared/lib/keys';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
+import { FlagAction, getNewAddressKeyFlags } from '@proton/shared/lib/keys/getNewAddressKeyFlags';
+import { getSignedKeyListWithDeferredPublish } from '@proton/shared/lib/keys/signedKeyList';
 
-export const setAddressFlags = async ({
+export const setAddressFlagsHelper = async ({
     encryptionDisabled,
     expectSignatureDisabled,
     address,
@@ -32,8 +31,8 @@ export const setAddressFlags = async ({
 
     const setFlags = <V extends ActiveKeyWithVersion>(activeKey: V) => ({
         ...activeKey,
-        flags: getNewKeyFlags(
-            getNewKeyFlags(
+        flags: getNewAddressKeyFlags(
+            getNewAddressKeyFlags(
                 activeKey.flags,
                 encryptionDisabled ? FlagAction.DISABLE_ENCRYPTION : FlagAction.ENABLE_ENCRYPTION
             ),
