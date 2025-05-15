@@ -90,8 +90,8 @@ export interface ReferralData {
 }
 
 export enum SignupType {
-    Email = 1,
-    Username,
+    External = 1,
+    Proton = 2,
 }
 
 export interface SignupModel {

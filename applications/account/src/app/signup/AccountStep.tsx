@@ -156,12 +156,12 @@ const AccountStep = ({
             domains,
             defaultDomain: domain,
         });
-        if (accountDetails.signupType === SignupType.Username) {
+        if (accountDetails.signupType === SignupType.Proton) {
             onChangeSignupType(accountDetails.signupType);
             setUsername(accountDetails.local);
             setDomain(accountDetails.domain);
-        } else if (signupTypes.includes(SignupType.Email)) {
-            onChangeSignupType(SignupType.Email);
+        } else if (signupTypes.includes(SignupType.External)) {
+            onChangeSignupType(SignupType.External);
             setEmail(defaultEmail);
         }
     }, [defaultEmail, domains]);
@@ -175,12 +175,12 @@ const AccountStep = ({
         }
 
         void metrics.core_signup_pageLoad_total.increment({
-            step: signupType === SignupType.Email ? 'external_account_creation' : 'proton_account_creation',
+            step: signupType === SignupType.External ? 'external_account_creation' : 'proton_account_creation',
             application: getSignupApplication(APP_NAME),
         });
     }, [isLoadingView, signupType]);
 
-    const emailLabel = signupType === SignupType.Username ? c('Signup label').t`Username` : c('Signup label').t`Email`;
+    const emailLabel = signupType === SignupType.Proton ? c('Signup label').t`Username` : c('Signup label').t`Email`;
 
     const innerChallenge = (
         <InputFieldTwo
@@ -188,7 +188,7 @@ const AccountStep = ({
             bigger
             label={emailLabel}
             error={validator(
-                signupType === SignupType.Username
+                signupType === SignupType.Proton
                     ? [
                           requiredValidator(trimmedUsername),
                           usernameLengthValidator(trimmedUsername),
@@ -200,7 +200,7 @@ const AccountStep = ({
             )}
             inputClassName={hasChallenge ? 'email-input-field' : undefined}
             suffix={(() => {
-                if (signupType === SignupType.Email) {
+                if (signupType === SignupType.External) {
                     /* Something empty to avoid a layout gap when switching */
                     return <></>;
                 }
@@ -231,9 +231,9 @@ const AccountStep = ({
                     </SelectTwo>
                 );
             })()}
-            value={signupType === SignupType.Username ? username : email}
+            value={signupType === SignupType.Proton ? username : email}
             onValue={(() => {
-                if (signupType === SignupType.Username) {
+                if (signupType === SignupType.Proton) {
                     return (value: string) => {
                         const sanitizedValue = value.replaceAll('@', '');
                         setUsername(sanitizedValue);
@@ -293,7 +293,7 @@ const AccountStep = ({
                         type="email"
                         autoComplete="username"
                         value={(() => {
-                            if (signupType === SignupType.Username) {
+                            if (signupType === SignupType.Proton) {
                                 return trimmedUsername.length ? `${trimmedUsername}@${domain}` : '';
                             }
                             return email;
@@ -323,7 +323,7 @@ const AccountStep = ({
                     ) : (
                         innerChallenge
                     )}
-                    {signupTypes.includes(SignupType.Email) && signupTypes.length > 1 ? (
+                    {signupTypes.includes(SignupType.External) && signupTypes.length > 1 ? (
                         <div className="text-center mb-4">
                             <InlineLinkButton
                                 id="existing-email-button"
@@ -331,8 +331,8 @@ const AccountStep = ({
                                     // Reset verification parameters if email is changed
                                     onChangeSignupType(
                                         (() => {
-                                            if (signupType === SignupType.Username) {
-                                                return SignupType.Email;
+                                            if (signupType === SignupType.Proton) {
+                                                return SignupType.External;
                                             }
                                             return signupTypes.find((type) => type !== signupType) || signupType;
                                         })()
@@ -341,7 +341,7 @@ const AccountStep = ({
                                     setEmail('');
                                 }}
                             >
-                                {signupType === SignupType.Email
+                                {signupType === SignupType.External
                                     ? c('Action').t`Get a new encrypted email address`
                                     : c('Action').t`Use your current email instead`}
                             </InlineLinkButton>
@@ -349,7 +349,7 @@ const AccountStep = ({
                                 buttonTabIndex={-1}
                                 className="ml-2"
                                 title={
-                                    signupType === SignupType.Email
+                                    signupType === SignupType.External
                                         ? c('Info')
                                               .t`With an encrypted ${BRAND_NAME} address, you can use all ${BRAND_NAME} services`
                                         : c('Info')

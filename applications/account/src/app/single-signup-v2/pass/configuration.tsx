@@ -631,7 +631,7 @@ export const getPassConfiguration = ({
                 defaultPlan: PLANS.PASS_BUSINESS,
             },
         ],
-        signupTypes: [SignupType.Email, SignupType.Username],
+        signupTypes: [SignupType.External, SignupType.Proton],
         generateMnemonic: true,
         defaults: {
             plan: (() => {

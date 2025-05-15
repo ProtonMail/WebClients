@@ -30,7 +30,7 @@ export const getTokenPayment = (tokenPayment: string | undefined) => {
 };
 
 const getSignupTypeQuery = (accountData: SignupCacheResult['accountData']) => {
-    if (accountData.signupType === SignupType.Username) {
+    if (accountData.signupType === SignupType.Proton) {
         return { Domain: accountData.domain };
     }
 };
@@ -63,7 +63,7 @@ export const handleCreateUser = async ({
             ? subscriptionData.payment.Details.Token
             : undefined;
 
-    if (signupType === SignupType.Username) {
+    if (signupType === SignupType.Proton) {
         const humanVerificationParameters = (() => {
             if (humanVerificationResult) {
                 return {
@@ -147,7 +147,7 @@ export const handleCreateUser = async ({
         }
     }
 
-    if (signupType === SignupType.Email) {
+    if (signupType === SignupType.External) {
         const { User } = await srpVerify<{ User: User }>({
             api,
             credentials: { password },

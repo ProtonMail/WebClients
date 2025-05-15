@@ -123,7 +123,7 @@ export const handleSaveRecovery = async ({
         !!recoveryPhone && srpAuth({ api, credentials: { password }, config: updatePhone({ Phone: recoveryPhone }) }),
         // Always send an update to the recovery email address when signing up with an external email address because the API sets it by default, so the client
         // needs to reset it to an empty string if the user chooses to not save a recovery email address.
-        (!!recoveryEmail || signupType === SignupType.Email) &&
+        (!!recoveryEmail || signupType === SignupType.External) &&
             srpAuth({
                 api,
                 credentials: { password },
@@ -131,7 +131,7 @@ export const handleSaveRecovery = async ({
             }).catch((e) => {
                 const { code } = getApiError(e);
                 // Ignore the error the API throws when updating the recovery email address to the external email address until it's fixed.
-                if (code === API_CUSTOM_ERROR_CODES.USER_UPDATE_EMAIL_SELF && signupType === SignupType.Email) {
+                if (code === API_CUSTOM_ERROR_CODES.USER_UPDATE_EMAIL_SELF && signupType === SignupType.External) {
                     return;
                 }
                 throw e;
@@ -508,10 +508,10 @@ export const handleSetupUser = async ({
     } = cache;
 
     const userEmail = (() => {
-        if (signupType === SignupType.Username) {
+        if (signupType === SignupType.Proton) {
             return `${username}@${domain}`;
         }
-        if (signupType === SignupType.Email) {
+        if (signupType === SignupType.External) {
             return email;
         }
         throw new Error('Unknown type');
@@ -645,7 +645,7 @@ export const handleCreateAccount = async ({
     } = cache;
 
     try {
-        if (signupType === SignupType.Username) {
+        if (signupType === SignupType.Proton) {
             await api(queryCheckUsernameAvailability(`${username}@${domain}`, true));
         }
     } catch (error: any) {
@@ -653,7 +653,7 @@ export const handleCreateAccount = async ({
         throw error;
     }
 
-    if (signupType === SignupType.Email) {
+    if (signupType === SignupType.External) {
         try {
             await api(
                 withVerificationHeaders(
