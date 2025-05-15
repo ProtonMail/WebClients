@@ -1577,6 +1577,12 @@
       ],
       "Unsubscribed": [
         "Odber bol odhlásený"
+      ],
+      "Mark as favorite": [
+        "Označiť ako obľúbené"
+      ],
+      "Remove from favorites": [
+        "Odobrať z obľúbených"
       ]
     },
     "action": {
@@ -7093,10 +7099,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8576,6 +8579,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } email za posledný mesiac",
+        "${ subscription.ReceivedMessages.Last30Days } emaily za posledný mesiac",
+        "${ subscription.ReceivedMessages.Last30Days } emailov za posledný mesiac",
+        "${ subscription.ReceivedMessages.Last30Days } emailov za posledný mesiac"
       ]
     },
     "info": {
@@ -9904,7 +9913,7 @@
     },
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
-        "Asistent písania ${ BRAND_NAME } Scribe"
+        "${ BRAND_NAME } Scribe, asistent písania"
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Pridať asistenta písania ${ BRAND_NAME } Scribe"
@@ -12966,6 +12975,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Stratíte prístup k neobmedzenému počtu prihlásení a poznámok, neobmedzenému počtu hide-my-email aliasov, 20 trezorom, ako aj prioritnej podpore."
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Ak chcete odosielať alebo prijímať emaily, uvoľnite miesto alebo ${ upgrade }"
       ]
     },
     "Subscription": {

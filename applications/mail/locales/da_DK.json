@@ -1544,6 +1544,18 @@
       ],
       "Set up email forwarding": [
         "Indstil videresendelse af e-mail"
+      ],
+      "Explore ${ VPN_APP_NAME }": [
+        "Opdag ${ VPN_APP_NAME }"
+      ],
+      "Mark as favorite": [
+        "Markér som favorit"
+      ],
+      "Remove from favorites": [
+        "Fjern fra favoritter"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Brug ${ VPN_SHORT_APP_NAME } for at beskytte dine data"
       ]
     },
     "action": {
@@ -1900,6 +1912,9 @@
       ],
       "Two-year": [
         "To-År"
+      ],
+      "Lifetime": [
+        "Livstid"
       ]
     },
     "Browser": {
@@ -6303,7 +6318,7 @@
         "Centrér"
       ],
       "Change your password": [
-        "Skift din adgangskode"
+        "Ændr din adgangskode"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tjekker kontakt ${ progress } af ${ max }..."
@@ -6743,8 +6758,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -9610,6 +9624,9 @@
       ],
       "on the third Wednesday": [
         "på den tredje onsdag"
+      ],
+      "on the ${ shortenedDay }": [
+        "den ${ shortenedDay }"
       ]
     },
     "New Label form": {
@@ -10769,6 +10786,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Dit domæne og abonnement er klar til brug."
+      ],
+      "Anytime, anywhere access": [
+        "Altid, overalt adgang"
+      ],
+      "Discover ${ MAIL_APP_NAME }": [
+        "Opdag ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding Proton": {
@@ -11019,6 +11042,12 @@
       ],
       "Your payment is still being processed": [
         "Din betaling behandles stadig"
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Fornyes til ${ renewPriceStr }, annuller når som helst."
+      ],
+      "terms & conditions": [
+        "vilkår og betingelser"
       ]
     },
     "Payments.Error": {
@@ -12199,6 +12228,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Du mister adgang til ubegrænsede logins og noter, ubegrænset hide-my-email aliaser, 20 bokse samt prioriteret support."
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "For at sende eller modtage e-mails, frigør plads eller ${ upgrade }"
       ]
     },
     "Subscription": {
@@ -14160,6 +14192,9 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Dit abonnement vil automatisk forny i ${ cycle } måned.",
         "Dit abonnement vil automatisk forny i ${ cycle } måneder."
+      ],
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Du vil blive faktureret ${ renewPriceStr } hver 12. måned."
       ]
     },
     "vpn_2step: feature": {

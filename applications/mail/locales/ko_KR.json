@@ -1529,6 +1529,21 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Active": [
+        "활성"
+      ],
+      "Mark as favorite": [
+        "즐겨찾기로 표시"
+      ],
+      "Remove from favorites": [
+        "즐겨찾기에서 삭제"
+      ],
+      "Resubscribe": [
+        "다시 구독하기"
+      ],
+      "Unsubscribed": [
+        "구독 해지됨"
       ]
     },
     "action": {
@@ -7705,7 +7720,7 @@
         "사용자 활성화됨"
       ],
       "username": [
-        "사용자 이름"
+        "사용자명"
       ],
       "Users": [
         "사용자"
@@ -8084,6 +8099,12 @@
       ],
       "Unsubscribe": [
         "구독 해지"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } 개 이메일 트래커 차단됨"
+      ],
+      "and more.": [
+        "기타 등등."
       ]
     },
     "info": {
@@ -10210,6 +10231,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "모든 ${ BRAND_NAME } 프리미엄 제품 및 기능을 단돈 ${ priceLine }에 누리세요. 언제든지 취소하세요."
+      ],
+      "Starting from ${ priceLine }": [
+        "${ priceLine }부터 시작"
       ]
     },
     "new_plans: title": {
@@ -12228,6 +12252,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "우선 지원과 무제한 로그인 및 노트, 무제한 hide-my-email 별칭, 20개 금고를 잃게 됩니다."
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "이메일을 수발신 하려면, 공간을 비우거나 ${ upgrade }"
       ]
     },
     "Subscription": {
