@@ -1213,7 +1213,7 @@
         "500 GB zaszyfrowanej przestrzeni dyskowej"
       ],
       "Add unlimited credit cards": [
-        "Dodaj nieograniczoną liczbę kart płatniczych"
+        "Możliwość dodania nieograniczonej liczby kart płatniczych"
       ],
       "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
         "Wszystkie funkcje premium ${ BRAND_NAME } Mail, Pass, VPN, Drive i Calendar"
@@ -1225,10 +1225,10 @@
         "Zniżki oparte są na standardowych cenach miesięcznych. Po zakończeniu cyklu rozliczeniowego Twoja subskrypcja zostanie odnowiona według standardowej rocznej stawki."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
-        "Podwój zaszyfrowaną przestrzeń dyskową — zyskaj 1 TB i chroń wszystkie swoje dane"
+        "Podwój zaszyfrowaną przestrzeń dyskową – zyskaj 1 TB i chroń wszystkie swoje dane"
       ],
       "Encrypted password manager": [
-        "Szyfrowany menadżer haseł"
+        "Szyfrowany menedżer haseł"
       ],
       "Here's an exclusive gift to celebrate our journey together.": [
         "Oto ekskluzywny prezent, którym chcemy uczcić naszą wspólną podróż."
@@ -1255,19 +1255,19 @@
         "Odzyskiwanie poprzednich wersji plików"
       ],
       "Save big on premium Drive features with a limited-time discount.": [
-        "Dużo zaoszczędź na funkcjach premium Drive dzięki ograniczonej czasowo zniżce."
+        "Dużo zaoszczędź na funkcjach premium usługi Drive dzięki ograniczonej czasowo zniżce."
       ],
       "Save big on premium Mail features with a limited-time discount.": [
-        "Dużo zaoszczędź na funkcjach premium Maila dzięki ograniczonej czasowo zniżce."
+        "Dużo zaoszczędź na funkcjach premium usługi Mail dzięki ograniczonej czasowo zniżce."
       ],
       "Save big on premium Pass features with a limited-time discount.": [
-        "Dużo zaoszczędź na funkcjach Pass premium dzięki ograniczonej czasowo zniżce."
+        "Dużo zaoszczędź na funkcjach premium usługi Pass dzięki ograniczonej czasowo zniżce."
       ],
       "Save big on premium VPN features with a limited-time discount.": [
-        "Dużo zaoszczędź na funkcjach VPN premium dzięki ograniczonej czasowo zniżce."
+        "Dużo zaoszczędź na funkcjach premium usługi VPN dzięki ograniczonej czasowo zniżce."
       ],
       "Save time with built-in 2FA": [
-        "Zaoszczędź czas dzięki wbudowanemu 2FA"
+        "Zaoszczędź czas dzięki wbudowanemu uwierzytelnianiu dwustopniowemu"
       ],
       "Secure email with unlimited aliases": [
         "Bezpieczna poczta e-mail z nieograniczoną liczbą aliasów"
@@ -1288,7 +1288,7 @@
         "dzięki Tobie"
       ],
       "Triple your encrypted storage – get 3 TB for all your data": [
-        "Potrój zaszyfrowaną przestrzeń dyskową — zyskaj 3 TB i chroń wszystkie swoje dane"
+        "Potrój zaszyfrowaną przestrzeń dyskową – zyskaj 3 TB i chroń wszystkie swoje dane"
       ],
       "Unlimited folders, labels and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
@@ -1297,7 +1297,7 @@
         "Możliwość użycia własnej domeny e-mail"
       ],
       "years": [
-        "lat"
+        "lata"
       ]
     },
     "anniversary_2025: offer": {
@@ -7462,11 +7462,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Konto może zostać usunięte. Aby uniknąć utraty danych, poproś administratora o ulepszenie konta. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Przestrzeń dyskowa jest pełna. Zwolnij część miejsca lub ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Przestrzeń dyskowa jest pełna. Zwolnij część miejsca lub ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Przestrzeń dyskowa jest pełna. Aby korzystać z usług ${ BRAND_NAME }, zwolnij część miejsca lub ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Subskrypcja zakończyła się. ${ cta } i uniknąć utraty danych."
@@ -9124,15 +9121,6 @@
       ],
       "Your settings have been changed successfully": [
         "Ustawienia zostały zmienione"
-      ],
-      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
-        "Nie udało się dodać niektórych zdjęć do albumu \"${ albumName }\""
-      ],
-      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Nie udało się usunąć niektórych zdjęć z albumu ${ albumLink.name }"
-      ],
-      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
-        "Zdjęcia zostały usunięte z albumu ${ albumLink.name }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10468,6 +10456,9 @@
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Aby korzystać z usług ${ BRAND_NAME }, zwolnij część miejsca lub${ upgrade }"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Zwolnij część miejsca lub ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Zwolnij część miejsca lub ulepsz konto, aby uzyskać większą przestrzeń dyskową."

@@ -1184,13 +1184,13 @@
     },
     "anniversary_2025: Offer": {
       "15 GB storage": [
-        "15 GB Speicher"
+        "15 GB Speicher"
       ],
       "200 GB storage": [
-        "200 GB Speicherplatz"
+        "200 GB Speicherplatz"
       ],
       "500 GB encrypted storage": [
-        "500 GB verschlüsselter Speicher"
+        "500 GB verschlüsselter Speicher"
       ],
       "Add unlimited credit cards": [
         "Füge unbegrenzt Kreditkarten hinzu"
@@ -1199,13 +1199,13 @@
         "Alle Premium-Funktionen von ${ BRAND_NAME } Mail, Pass, VPN, Drive und Calendar"
       ],
       "Block ads, trackers, and malware": [
-        "Blockiere von Werbung, Trackern und Malware"
+        "Blockiere Werbung, Tracker und Malware"
       ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
         "Rabatte basieren auf den Standardpreisen für Monatsabonnements. Am Ende des Abrechnungszeitraums verlängert sich dein Abonnement zum regulären Jahrespreis."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
-        "Verdopple deinen verschlüsselten Speicher – erhalte 1 TB für all deine Daten"
+        "Verdopple deinen verschlüsselten Speicher – erhalte 1 TB für all deine Daten"
       ],
       "Encrypted password manager": [
         "Verschlüsselter Passwortmanager"
@@ -1223,10 +1223,10 @@
         "Editor für Onlinedokumente"
       ],
       "Online privacy for up to 2 people": [
-        "Online-Privatsphäre für bis zu 2 Personen"
+        "Online-Privatsphäre für bis zu 2 Personen"
       ],
       "Online privacy for your whole family (up to 6 users)": [
-        "Online-Privatsphäre für deine ganze Familie (bis zu 6 Personen)"
+        "Online-Privatsphäre für deine ganze Familie (bis zu 6 Benutzer*innen)"
       ],
       "Protect up to 10 devices": [
         "Schütze bis zu 10 Geräte"
@@ -1238,7 +1238,7 @@
         "Sichere dir Premium-Drive-Funktionen mit einem zeitlich begrenzten Rabatt."
       ],
       "Save big on premium Mail features with a limited-time discount.": [
-        "Sichere dir Premium-Mail-Funktionen mit einem zeitlich begrenzten Rabatt."
+        "Sichere dir Premium-Mail-Funktionen mit einen zeitlich begrenzten Rabatt."
       ],
       "Save big on premium Pass features with a limited-time discount.": [
         "Sichere dir Premium-Pass-Funktionen mit einem zeitlich begrenzten Rabatt."
@@ -1250,7 +1250,7 @@
         "Spare Zeit mit integrierter 2FA"
       ],
       "Secure email with unlimited aliases": [
-        "Sichere E-Mail mit unbegrenzten Aliasen"
+        "Sichere E-Mail mit unbegrenzt vielen Aliassen"
       ],
       "Select any server": [
         "Freie Serverwahl"
@@ -1268,7 +1268,7 @@
         "dank dir"
       ],
       "Triple your encrypted storage – get 3 TB for all your data": [
-        "Verdreifache deinen verschlüsselten Speicher – erhalte 3 TB für all deine Daten"
+        "Verdreifache deinen verschlüsselten Speicher – erhalte 3 TB für all deine Daten"
       ],
       "Unlimited folders, labels and filters": [
         "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
@@ -1294,16 +1294,16 @@
         "/ Monat"
       ],
       "12 months": [
-        "12 Monate"
+        "12 Monate"
       ],
       "15 months": [
-        "15 Monate"
+        "15 Monate"
       ],
       "24 months": [
-        "24 Monate"
+        "24 Monate"
       ],
       "30 months": [
-        "30 Monate"
+        "30 Monate"
       ],
       "for ${ durationDeal }": [
         "für ${ durationDeal }"
@@ -1708,10 +1708,10 @@
     },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } ist eine datenschutzorientierte KI, die dir hilft, mehr zu erledigen und gleichzeitig dafür sorgt, dass deine Daten sicher bleiben. Entfalte ihr volles Potenzial und genieße den frühen Zugriff auf neue Funktionen, sobald sie eingeführt werden."
+        "${ LUMO_APP_NAME } ist eine datenschutzorientierte KI, die dir hilft, mehr zu erledigen und gleichzeitig dafür sorgt, dass deine Daten sicher bleiben. Entfalte ihr volles Potenzial und genieße den Vorabzugriff auf neue Funktionen, sobald sie eingeführt werden."
       ],
       "Add ${ LUMO_APP_NAME }": [
-        "Hinzufügen ${ LUMO_APP_NAME }"
+        "${ LUMO_APP_NAME } hinzufügen"
       ]
     },
     "color": {
@@ -5672,6 +5672,9 @@
       "Shared": [
         "Geteilt"
       ],
+      "Shared by ": [
+        "Geteilt von "
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "Geteilt von ${ rootLink.signatureEmail }"
       ],
@@ -7264,11 +7267,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Dein Konto ist von der Löschung bedroht. Um Datenverlust zu vermeiden, bitte deinen Administrator um ein Upgrade. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Dein Speicherplatz ist voll. Um E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Dein Speicherplatz ist voll. Um Dateien hochzuladen oder zu synchronisieren, gib Speicherplatz frei oder ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Dein Speicher ist voll. Um ${ BRAND_NAME }-Produkte weiterhin nutzen zu können, schaffe Speicherplatz oder führe ein ${ cta } durch."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Dein Abonnement ist beendet. ${ cta } und um Datenverlust zu vermeiden."
@@ -8777,6 +8777,12 @@
       "Share invitation declined": [
         "Einladung zur gemeinsamen Nutzung abgelehnt"
       ],
+      "Some photo(s) could not be added to \"${ albumName }\"": [
+        "Ein Foto konnte bzw. einige Fotos konnten nicht zu „${ albumName }“ hinzugefügt werden"
+      ],
+      "Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Ein Foto konnte bzw. einige Fotos konnten nicht aus ${ albumLink.name } entfernt werden"
+      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Entschuldige, wir konnten den Ordner nicht löschen, da er nicht leer war.",
         "Entschuldige, wir konnten die Ordner nicht löschen, da sie nicht leer waren."
@@ -8825,20 +8831,14 @@
       "Your photo(s) have been added to \"${ albumName }\"": [
         "Dein/e Foto(s) wurde(n) zu „${ albumName }“ hinzugefügt"
       ],
+      "Your photo(s) have been removed from ${ albumLink.name }": [
+        "Dein Foto wurde bzw. deine Fotos wurden aus ${ albumLink.name } entfernt"
+      ],
       "Your settings failed to be saved": [
         "Deine Einstellungen konnten nicht gespeichert werden"
       ],
       "Your settings have been changed successfully": [
         "Deine Einstellungen wurden erfolgreich geändert"
-      ],
-      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
-        "Ein/ige Foto(s) konnte(n) nicht zu „${ albumName }“ hinzugefügt werden"
-      ],
-      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Ein/ige Foto(s) konnte(n) nicht aus ${ albumLink.name } entfernt werden"
-      ],
-      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
-        "Dein/e Foto(s) wurde(n) aus ${ albumLink.name } entfernt"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10124,6 +10124,9 @@
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Um ${ BRAND_NAME }-Produkte weiterhin nutzen zu können, schaffe Speicherplatz oder führe ein ${ upgrade } durch."
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Um E-Mails zu senden oder zu empfangen, gib Speicherplatz frei oder ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Um weiterhin E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder führe ein Upgrade durch für zusätzlichen Speicherplatz."

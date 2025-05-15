@@ -7133,11 +7133,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "El vostre compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demaneu al vostre administrador que us el millori. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "El vostre emmagatzematge està ple. Per enviar o rebre correus electrònics, allibereu espai o ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "El vostre emmagatzematge està ple. Per a carregar o sincronitzar fitxers, allibereu espai o ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "El vostre emmagatzematge està ple. Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La vostra subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
@@ -8646,6 +8643,12 @@
       "Share invitation declined": [
         "S'ha rebutjat la invitació per a compartir."
       ],
+      "Some photo(s) could not be added to \"${ albumName }\"": [
+        "No s'han pogut afegir algunes fotos a «${ albumName }»"
+      ],
+      "Some photo(s) could not be removed from ${ albumLink.name }": [
+        "No s'han pogut eliminar algunes fotos de ${ albumLink.name }"
+      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "No hem pogut eliminar la carpeta perquè no està buida.",
         "No hem pogut eliminar les carpetes perquè no estan buides."
@@ -8694,20 +8697,14 @@
       "Your photo(s) have been added to \"${ albumName }\"": [
         "S'han afegit les vostres fotos a «${ albumName }»."
       ],
+      "Your photo(s) have been removed from ${ albumLink.name }": [
+        "Les vostres fotos s'han eliminat de ${ albumLink.name }"
+      ],
       "Your settings failed to be saved": [
         "No s'ha pogut desar la configuració"
       ],
       "Your settings have been changed successfully": [
         "La configuració s'ha modificat."
-      ],
-      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
-        "No s'han pogut afegir algunes fotos a «${ albumName }»."
-      ],
-      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
-        "No s'han pogut esborrar algunes fotos de ${ albumLink.name }."
-      ],
-      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
-        "S'han esborrat les vostres fotos de ${ albumLink.name }."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9993,6 +9990,9 @@
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ upgrade }."
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Per enviar o rebre correus, allibereu espai o ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Per a enviar o rebre correus electrònics, allibereu espai o milloreu per a obtenir més emmagatzematge."
