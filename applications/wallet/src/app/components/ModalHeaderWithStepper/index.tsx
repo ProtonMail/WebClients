@@ -2,7 +2,7 @@ import type { ComponentPropsWithRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Step, Stepper } from '@proton/atoms';
+import { Button, Step, Stepper, StepperPositionEnum } from '@proton/atoms';
 import { AppLink, Icon, Tooltip } from '@proton/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import protonWalletLogoDark from '@proton/styles/assets/img/illustrations/proton-wallet-logo-dark.svg';
@@ -44,7 +44,7 @@ export const ModalHeaderWithStepper = <T extends string>({
                 />
             </AppLink>
 
-            <Stepper position="center" activeStep={steps.findIndex((s) => s.key === currentStep)}>
+            <Stepper position={StepperPositionEnum.Center} activeStep={steps.findIndex((s) => s.key === currentStep)}>
                 {steps.map((step) => (
                     <Step
                         key={step.key}
