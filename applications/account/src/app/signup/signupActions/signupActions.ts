@@ -5,7 +5,7 @@ import { getInitialStorage, getStorageRange } from '@proton/components';
 import type { VerificationModel } from '@proton/components';
 import type { AppIntent } from '@proton/components/containers/login/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency';
-import type { V5PaymentToken } from '@proton/payments';
+import type { Subscription, V5PaymentToken } from '@proton/payments';
 import {
     COUPON_CODES,
     type PaymentsVersion,
@@ -347,7 +347,7 @@ export const handleSubscribeUser = async (
             paymentsVersion = 'v4';
         }
 
-        await api(
+        const { Subscription } = await api<{ Subscription: Subscription }>(
             subscribe(
                 {
                     Plans: subscriptionData.planIDs,
@@ -386,6 +386,8 @@ export const handleSubscribeUser = async (
                 await api(setPaymentMethodV4(subscriptionData.payment));
             }
         }
+
+        return Subscription;
     } catch (error: any) {
         reportPaymentFailure();
         throw error;
@@ -527,7 +529,7 @@ export const handleSetupUser = async ({
     }).then((response): Promise<AuthResponse> => response.json());
 
     // Perform the subscription first to prevent "locked user" while setting up keys.
-    await handleSubscribeUser(
+    const subscription = await handleSubscribeUser(
         api,
         subscriptionData,
         referralData,
@@ -563,6 +565,7 @@ export const handleSetupUser = async ({
     const newCache: SignupCacheResult = {
         ...cache,
         trusted,
+        subscription,
         setupData: {
             user,
             session: sessionResult,
