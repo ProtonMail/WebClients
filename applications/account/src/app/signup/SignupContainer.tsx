@@ -337,9 +337,8 @@ const SignupContainer = ({
                 dimensions: {},
             });
 
-            const plan = getPlanFromPlanIDs(plansMap, subscriptionData.planIDs);
             sendSignupLoadTelemetry({
-                plan: plan?.Name || PLANS.FREE,
+                planIDs: subscriptionData.planIDs,
                 flowId: 'legacy-signup',
                 productIntent: toApp,
                 currency,
@@ -966,7 +965,7 @@ const SignupContainer = ({
                             void measure(getSignupTelemetryData(model.plansMap, cache));
 
                             sendSignupAccountCreationTelemetry({
-                                plan: getPlanNameFromIDs(subscriptionData.planIDs) || PLANS.FREE,
+                                planIDs: subscriptionData.planIDs,
                                 flowId: 'legacy-signup',
                                 productIntent: toApp,
                                 currency: subscriptionData.currency,
