@@ -278,7 +278,7 @@ export const getWalletConfiguration = ({
         benefits,
         planCards,
         audience,
-        signupTypes: [SignupType.Username, SignupType.Email],
+        signupTypes: [SignupType.Proton, SignupType.External],
         generateMnemonic: false,
         defaults: {
             plan: PLANS.BUNDLE,
