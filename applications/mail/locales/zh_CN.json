@@ -783,6 +783,9 @@
       "Manage users/addresses": [
         "管理用户/地址"
       ],
+      "Mark as favorite": [
+        "标记为收藏"
+      ],
       "Mark as read": [
         "标为已读"
       ],
@@ -1049,6 +1052,9 @@
       ],
       "Remove expiration time": [
         "移除邮件有效期"
+      ],
+      "Remove from favorites": [
+        "从收藏夹中删除"
       ],
       "Remove gift code": [
         "移除礼品码"
@@ -9424,12 +9430,6 @@
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "您的帐户有可能被删除。为了避免数据丢失，请要求您的管理员升级计划。 ${ cta }"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "您的存储空间已满。要发送或接收电子邮件，请释放空间或 ${ cta }。"
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "您的存储空间已满。要上传或同步文件，请释放空间或 ${ cta }。"
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "您的订阅已经结束。 ${ cta } 以避免数据丢失。"
