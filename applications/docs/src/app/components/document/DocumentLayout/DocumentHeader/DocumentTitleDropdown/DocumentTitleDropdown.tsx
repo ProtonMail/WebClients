@@ -525,6 +525,17 @@ export function DocumentTitleDropdown({
             </DropdownMenu>
           </SimpleDropdown>
 
+          <DropdownMenuButton
+            className="flex items-center text-left"
+            onClick={() => {
+              void editorController.copyCurrentSelection('md')
+            }}
+            data-testid="dropdown-copy-as-md"
+          >
+            <Icon name="squares" className="color-weak mr-2" />
+            {c('Action').t`Copy as markdown`}
+          </DropdownMenuButton>
+
           <hr className="my-1 min-h-px" />
 
           <DropdownMenuButton
