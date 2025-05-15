@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktifkan"
-      ],
       "activate": [
         "aktifkan"
+      ],
+      "Activate": [
+        "Aktifkan"
       ],
       "Activate organization key": [
         "Aktifkan kunci organisasi"
@@ -267,11 +267,11 @@
       "Discard": [
         "Buang"
       ],
-      "Discard changes": [
-        "Buang perubahan"
-      ],
       "Discard Changes": [
         "Batalkan Perubahan"
+      ],
+      "Discard changes": [
+        "Buang perubahan"
       ],
       "Discover ${ planName }": [
         "Telusuri ${ planName }"
@@ -456,11 +456,11 @@
       "Invite user": [
         "Undang pengguna"
       ],
-      "Keep editing": [
-        "Lanjut menyunting"
-      ],
       "Keep Editing": [
         "Lanjut Menyunting"
+      ],
+      "Keep editing": [
+        "Lanjut menyunting"
       ],
       "Keep logo": [
         "Pertahankan logo"
@@ -497,6 +497,9 @@
       ],
       "Mark as default": [
         "Tandai sebagai bawaan"
+      ],
+      "Mark as favorite": [
+        "Tandai sebagai favorit"
       ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
@@ -573,11 +576,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Refresh the page": [
         "Muat ulang halaman"
+      ],
+      "refresh the page": [
+        "muat ulang halaman"
       ],
       "Remove": [
         "Hapus"
@@ -593,6 +596,9 @@
       ],
       "Remove domain": [
         "Hapus domain"
+      ],
+      "Remove from favorites": [
+        "Hapus dari favorit"
       ],
       "Remove gift code": [
         "Hapus kode hadiah"
@@ -4464,11 +4470,11 @@
       "Data recoverable on this device": [
         "Data pada perangkat ini dapat dipulihkan"
       ],
-      "Dedicated servers": [
-        "Server khusus"
-      ],
       "dedicated servers": [
         "server khusus"
+      ],
+      "Dedicated servers": [
+        "Server khusus"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Server khusus dengan alamat IP khusus dapat ditambahkan ke gateway pribadi untuk memungkinkan kontrol akses yang lebih terperinci."
@@ -7025,12 +7031,6 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Akun Anda berisiko untuk dihapus. Untuk mencegah hilangnya data, mintalah admin Anda untuk meningkatkan paket langganan Anda. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ruang penyimpanan Anda penuh. Untuk tetap dapat mengirim atau menerima email, kosongkan ruang yang ada atau ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ruang penyimpanan Anda penuh. Untuk mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ cta }."
-      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Langganan Anda telah berakhir. ${ cta } dan mencegah hilangnya data."
       ]
@@ -8355,17 +8355,6 @@
         "Selamat datang di ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Semua orang"
-      ],
-      "Group members": [
-        "Anggota grup"
-      ],
-      "No one": [
-        "Tidak seorang pun"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Diizinkan ${ defaultLabel }"
@@ -8435,6 +8424,17 @@
       ],
       "The whole organization": [
         "Seluruh organisasi"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Semua orang"
+      ],
+      "Group members": [
+        "Anggota grup"
+      ],
+      "No one": [
+        "Tidak seorang pun"
       ]
     },
     "Organization capacity error": {
@@ -10229,6 +10229,47 @@
         "Untuk ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
@@ -10511,47 +10552,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {

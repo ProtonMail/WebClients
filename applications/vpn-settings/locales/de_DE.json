@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
-      "Activate": [
-        "Aktivieren"
-      ],
       "activate": [
         "aktivieren"
+      ],
+      "Activate": [
+        "Aktivieren"
       ],
       "Activate organization key": [
         "Organisationsschlüssel aktivieren"
@@ -267,10 +267,10 @@
       "Discard": [
         "Verwerfen"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Änderungen verwerfen"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Änderungen verwerfen"
       ],
       "Discover ${ planName }": [
@@ -456,10 +456,10 @@
       "Invite user": [
         "Benutzer einladen"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Bearbeitung fortsetzen"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Bearbeitung fortsetzen"
       ],
       "Keep logo": [
@@ -497,6 +497,9 @@
       ],
       "Mark as default": [
         "Als Standard festlegen"
+      ],
+      "Mark as favorite": [
+        "Als Favorit markieren"
       ],
       "More info: ${ safeTitle }": [
         "Weitere Informationen: ${ safeTitle }"
@@ -573,11 +576,11 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "refresh the page": [
-        "aktualisiere die Seite"
-      ],
       "Refresh the page": [
         "Seite aktualisieren"
+      ],
+      "refresh the page": [
+        "aktualisiere die Seite"
       ],
       "Remove": [
         "Entfernen"
@@ -593,6 +596,9 @@
       ],
       "Remove domain": [
         "Domain entfernen"
+      ],
+      "Remove from favorites": [
+        "Von Favoriten entfernen"
       ],
       "Remove gift code": [
         "Geschenkgutschein entfernen"
@@ -961,6 +967,9 @@
       ]
     },
     "Address action": {
+      "Allow unsigned mail": [
+        "Unsignierte E-Mails zulassen"
+      ],
       "Delete address": [
         "Adresse löschen"
       ],
@@ -1058,13 +1067,13 @@
     },
     "anniversary_2025: Offer": {
       "15 GB storage": [
-        "15 GB Speicher"
+        "15 GB Speicher"
       ],
       "200 GB storage": [
-        "200 GB Speicherplatz"
+        "200 GB Speicherplatz"
       ],
       "500 GB encrypted storage": [
-        "500 GB verschlüsselter Speicher"
+        "500 GB verschlüsselter Speicher"
       ],
       "Add unlimited credit cards": [
         "Füge unbegrenzt Kreditkarten hinzu"
@@ -1073,13 +1082,13 @@
         "Alle Premium-Funktionen von ${ BRAND_NAME } Mail, Pass, VPN, Drive und Calendar"
       ],
       "Block ads, trackers, and malware": [
-        "Blockiere von Werbung, Trackern und Malware"
+        "Blockiere Werbung, Tracker und Malware"
       ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
         "Rabatte basieren auf den Standardpreisen für Monatsabonnements. Am Ende des Abrechnungszeitraums verlängert sich dein Abonnement zum regulären Jahrespreis."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
-        "Verdopple deinen verschlüsselten Speicher – erhalte 1 TB für all deine Daten"
+        "Verdopple deinen verschlüsselten Speicher – erhalte 1 TB für all deine Daten"
       ],
       "Encrypted password manager": [
         "Verschlüsselter Passwortmanager"
@@ -1097,10 +1106,10 @@
         "Editor für Onlinedokumente"
       ],
       "Online privacy for up to 2 people": [
-        "Online-Privatsphäre für bis zu 2 Personen"
+        "Online-Privatsphäre für bis zu 2 Personen"
       ],
       "Online privacy for your whole family (up to 6 users)": [
-        "Online-Privatsphäre für deine ganze Familie (bis zu 6 Personen)"
+        "Online-Privatsphäre für deine ganze Familie (bis zu 6 Benutzer*innen)"
       ],
       "Protect up to 10 devices": [
         "Schütze bis zu 10 Geräte"
@@ -1112,7 +1121,7 @@
         "Sichere dir Premium-Drive-Funktionen mit einem zeitlich begrenzten Rabatt."
       ],
       "Save big on premium Mail features with a limited-time discount.": [
-        "Sichere dir Premium-Mail-Funktionen mit einem zeitlich begrenzten Rabatt."
+        "Sichere dir Premium-Mail-Funktionen mit einen zeitlich begrenzten Rabatt."
       ],
       "Save big on premium Pass features with a limited-time discount.": [
         "Sichere dir Premium-Pass-Funktionen mit einem zeitlich begrenzten Rabatt."
@@ -1124,7 +1133,7 @@
         "Spare Zeit mit integrierter 2FA"
       ],
       "Secure email with unlimited aliases": [
-        "Sichere E-Mail mit unbegrenzten Aliasen"
+        "Sichere E-Mail mit unbegrenzt vielen Aliassen"
       ],
       "Select any server": [
         "Freie Serverwahl"
@@ -1142,7 +1151,7 @@
         "dank dir"
       ],
       "Triple your encrypted storage – get 3 TB for all your data": [
-        "Verdreifache deinen verschlüsselten Speicher – erhalte 3 TB für all deine Daten"
+        "Verdreifache deinen verschlüsselten Speicher – erhalte 3 TB für all deine Daten"
       ],
       "Unlimited folders, labels and filters": [
         "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
@@ -1168,16 +1177,16 @@
         "/ Monat"
       ],
       "12 months": [
-        "12 Monate"
+        "12 Monate"
       ],
       "15 months": [
-        "15 Monate"
+        "15 Monate"
       ],
       "24 months": [
-        "24 Monate"
+        "24 Monate"
       ],
       "30 months": [
-        "30 Monate"
+        "30 Monate"
       ],
       "for ${ durationDeal }": [
         "für ${ durationDeal }"
@@ -1679,10 +1688,10 @@
     },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } ist eine datenschutzorientierte KI, die dir hilft, mehr zu erledigen und gleichzeitig dafür sorgt, dass deine Daten sicher bleiben. Entfalte ihr volles Potenzial und genieße den frühen Zugriff auf neue Funktionen, sobald sie eingeführt werden."
+        "${ LUMO_APP_NAME } ist eine datenschutzorientierte KI, die dir hilft, mehr zu erledigen und gleichzeitig dafür sorgt, dass deine Daten sicher bleiben. Entfalte ihr volles Potenzial und genieße den Vorabzugriff auf neue Funktionen, sobald sie eingeführt werden."
       ],
       "Add ${ LUMO_APP_NAME }": [
-        "Hinzufügen ${ LUMO_APP_NAME }"
+        "${ LUMO_APP_NAME } hinzufügen"
       ]
     },
     "color": {
@@ -4655,11 +4664,11 @@
       "Data recoverable on this device": [
         "Daten, die auf diesem Gerät wiederhergestellt werden können"
       ],
-      "Dedicated servers": [
-        "Dezidierte Server"
-      ],
       "dedicated servers": [
         "dedizierte Server"
+      ],
+      "Dedicated servers": [
+        "Dezidierte Server"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -7248,11 +7257,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Dein Konto ist von der Löschung bedroht. Um Datenverlust zu vermeiden, bitte deinen Administrator um ein Upgrade. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Dein Speicherplatz ist voll. Um E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Dein Speicherplatz ist voll. Um Dateien hochzuladen oder zu synchronisieren, gib Speicherplatz frei oder ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Dein Speicher ist voll. Um ${ BRAND_NAME }-Produkte weiterhin nutzen zu können, schaffe Speicherplatz oder führe ein ${ cta } durch."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Dein Abonnement ist beendet. ${ cta } und um Datenverlust zu vermeiden."
@@ -8605,17 +8611,6 @@
         "Willkommen bei ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Jeder"
-      ],
-      "Group members": [
-        "Gruppenmitglieder"
-      ],
-      "No one": [
-        "Keiner"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Zugelassen ${ defaultLabel }"
@@ -8685,6 +8680,17 @@
       ],
       "The whole organization": [
         "Die gesamte Organisation"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Jeder"
+      ],
+      "Group members": [
+        "Gruppenmitglieder"
+      ],
+      "No one": [
+        "Keiner"
       ]
     },
     "Organization capacity error": {
@@ -10360,6 +10366,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Um ${ BRAND_NAME }-Produkte weiterhin nutzen zu können, schaffe Speicherplatz oder führe ein ${ upgrade } durch."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Um E-Mails zu senden oder zu empfangen, gib Speicherplatz frei oder ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Um Dateien hochzuladen oder zu synchronisieren, gib Speicherplatz frei oder ${ upgrade }"
       ],
@@ -10531,6 +10540,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Für ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription reminder": {
@@ -10821,47 +10871,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
