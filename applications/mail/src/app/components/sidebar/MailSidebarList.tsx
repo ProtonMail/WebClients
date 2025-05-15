@@ -303,6 +303,17 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
 
                     {collapsed ? (
                         <MailSidebarCollapsedButton
+                            onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_VIEWS)}
+                            iconName="grid-3"
+                            title={c('Action').t`Expand navigation bar to see custom views`}
+                            unread={!!newsletterSub.tabs.active.totalCount}
+                        />
+                    ) : (
+                        <MailSidebarViewList />
+                    )}
+
+                    {collapsed ? (
+                        <MailSidebarCollapsedButton
                             onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_FOLDERS)}
                             iconName="folders"
                             title={c('Action').t`Expand navigation bar to see folders`}
@@ -369,16 +380,6 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                     )}
 
                     {postItems}
-                    {collapsed ? (
-                        <MailSidebarCollapsedButton
-                            onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_VIEWS)}
-                            iconName="grid-3"
-                            title={c('Action').t`Expand navigation bar to see custom views`}
-                            unread={!!newsletterSub.tabs.active.totalCount}
-                        />
-                    ) : (
-                        <MailSidebarViewList />
-                    )}
                 </SidebarList>
             </div>
             {moveScheduledModal}
