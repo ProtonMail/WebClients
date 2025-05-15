@@ -25,7 +25,13 @@ import { rejectAllSuggestions } from '../Plugins/Suggestions/rejectAllSuggestion
 import { removeCommentThreadMarks } from '../Tools/removeCommentThreadMarks'
 import { reportErrorToSentry } from '../Utils/errorMessage'
 import { SHOW_ALL_COMMENTS_COMMAND } from '../Commands'
-import { $getSelection, $setSelection, type LexicalEditor, type SerializedEditorState } from 'lexical'
+import {
+  $getSelection,
+  $isRangeSelection,
+  $setSelection,
+  type LexicalEditor,
+  type SerializedEditorState,
+} from 'lexical'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useSyncedState } from '../Hooks/useSyncedState'
 import * as config from '../config'
@@ -33,7 +39,7 @@ import clsx from '@proton/utils/clsx'
 import debounce from '@proton/utils/debounce'
 import locales from '../locales'
 import noop from '@proton/utils/noop'
-import type { EditorState, BaseSelection } from 'lexical'
+import type { EditorState, BaseSelection, SerializedLexicalNode } from 'lexical'
 import type { useBridge } from '../Lib/useBridge'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { useEditorStateValues } from '../Lib/useEditorStateValues'
@@ -44,6 +50,11 @@ import type { DocumentType } from '@proton/drive-store/store/_documents'
 // eslint-disable-next-line monorepo-cop/no-relative-import-outside-package
 import { SpreadsheetProvider } from '../../../../../vendor/rowsncolumns/spreadsheet'
 import { Spreadsheet } from './Spreadsheet'
+import { $generateJSONFromSelectedNodes } from '@lexical/clipboard'
+import { getEditorStateFromSerializedNodes } from '../Conversion/get-editor-state-from-nodes'
+import { utf8ArrayToString } from '@proton/crypto/lib/utils'
+import { copyTextToClipboard } from '../Utils/copy-to-clipboard'
+import { useNotifications } from '@proton/components/index'
 
 type AppProps = {
   documentType: DocumentType
@@ -53,6 +64,7 @@ type AppProps = {
 
 export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const { application, bridge, docState, docMap, editorConfig, setEditorConfig, didSetInitialConfig } = bridgeState
+  const { createNotification } = useNotifications()
   const { suggestionsEnabled } = useSyncedState()
   const { editorState } = useEditorState()
   const { userMode } = useEditorStateValues()
@@ -366,6 +378,64 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
       async toggleDebugTreeView() {
         setShowTreeView((show) => !show)
       },
+
+      async copyCurrentSelection(format) {
+        const editor = editorRef.current
+        if (!editor) {
+          return
+        }
+
+        try {
+          const selection = editor.read(() => {
+            const selection = $getSelection()
+            if (!$isRangeSelection(selection) || selection.isCollapsed()) {
+              return null
+            }
+            return selection
+          })
+
+          let editorState: SerializedEditorState<SerializedLexicalNode> | null = null
+          if (selection) {
+            editor.update(
+              () => {
+                const { nodes } = $generateJSONFromSelectedNodes(editor, selection)
+                editorState = getEditorStateFromSerializedNodes(nodes)
+              },
+              {
+                discrete: true,
+              },
+            )
+          } else {
+            editorState = editor.getEditorState().toJSON()
+          }
+          if (!editorState) {
+            return
+          }
+
+          const result = await exportDataFromEditorState(editorState, format, {
+            fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
+          })
+          const resultString = utf8ArrayToString(result)
+          copyTextToClipboard(resultString)
+          createNotification({
+            type: 'success',
+            text: c('Info').t`Copied to clipboard`,
+          })
+
+          if (selection) {
+            editor.update(
+              () => {
+                $setSelection(selection.clone())
+              },
+              {
+                discrete: true,
+              },
+            )
+          }
+        } catch (error) {
+          console.error('Could not copy as markdown', error)
+        }
+      },
     }
 
     application.logger.info('Setting request handler for bridge')
@@ -382,6 +452,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     applyBeforePrintFixesForChrome,
     userModeRef,
     editorState,
+    createNotification,
   ])
 
   const onUserModeChange = useCallback(

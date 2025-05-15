@@ -12,7 +12,7 @@ import type { WordCountInfoCollection } from '@proton/docs-shared'
 import type { EditorOrchestratorInterface } from '../Services/Orchestrator/EditorOrchestratorInterface'
 import type { ErrorInfo } from 'react'
 import { ApplicationEvent } from '../Application/ApplicationEvent'
-import { WordCountEvent } from './WordCountEvent'
+import { WordCountEvent } from './Events'
 import type { EditorEvent, EditorEventData } from '@proton/docs-shared'
 
 /** Handle messages sent by the editor to the client */
