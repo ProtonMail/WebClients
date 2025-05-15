@@ -152,11 +152,11 @@
       "Create": [
         "作成"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "${ BRAND_NAME } アカウントを作成する"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } アカウントを作成"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } アカウントを作成する"
       ],
       "Create alias": [
         "エイリアスを作成"
@@ -1755,6 +1755,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
