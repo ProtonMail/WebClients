@@ -791,6 +791,9 @@
       "Manage users/addresses": [
         "Gestionare utilizatori/adrese"
       ],
+      "Mark as favorite": [
+        "Marcare ca favorită"
+      ],
       "Mark as read": [
         "Marcare ca citit"
       ],
@@ -1057,6 +1060,9 @@
       ],
       "Remove expiration time": [
         "Eliminare dată expirare"
+      ],
+      "Remove from favorites": [
+        "Eliminare din favorite"
       ],
       "Remove gift code": [
         "Eliminare cod cadou"
@@ -6219,6 +6225,11 @@
       "${ storage } storage": [
         "Stocare ${ storage }"
       ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "Mesaje luna trecută: ${ subscription.ReceivedMessages.Last30Days }",
+        "Mesaje luna trecută: ${ subscription.ReceivedMessages.Last30Days }",
+        "Mesaje luna trecută: ${ subscription.ReceivedMessages.Last30Days }"
+      ],
       "${ subscription.UnreadMessageCount } unread": [
         "Necitite: ${ subscription.UnreadMessageCount }",
         "Necitite: ${ subscription.UnreadMessageCount }",
@@ -9399,6 +9410,9 @@
       ]
     },
     "Labels": {
+      "Newsletters you unsubscribe from will appear here.": [
+        "Buletinele informative de la care vă dezabonați vor apărea aici."
+      ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Aici vizualizați și gestionați abonamentele la buletine informative și la listele de adrese."
       ]
@@ -9708,11 +9722,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Contul riscă să fie șters. Pentru a evita pierderea datelor solicitați administratorului să modifice tipul de abonament. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Spațiul de stocare este plin. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Spațiul de stocare este plin. Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Spațiul de stocare este plin. Pentru a continua să utilizați produsele ${ BRAND_NAME }, eliberați spațiu sau ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Abonamentul s-a încheiat. ${ cta } și pentru a evita pierderea datelor."
@@ -12699,6 +12710,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Pentru a continua să utilizați produsele ${ BRAND_NAME }, eliberați spațiu sau ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Pentru a trimite sau a primi mesaje, eliberați spațiu sau ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Pentru a trimite sau primi mesaje, eliberați spațiu sau treceți la un plan cu plată pentru a obține mai mult spațiu."
       ],
@@ -14273,6 +14287,9 @@
       ],
       "No trackers found": [
         "Nu s-au găsit funcții de urmărire"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Nu există dezabonări de la abonamente"
       ],
       "No-reply address detected": [
         "Adresă ce nu acceptă răspunsuri detectată"
