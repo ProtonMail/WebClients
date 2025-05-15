@@ -36,10 +36,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate organization key": [
@@ -252,11 +252,11 @@
       "Discard": [
         "放棄"
       ],
-      "Discard changes": [
-        "放棄變更"
-      ],
       "Discard Changes": [
         "放棄修改"
+      ],
+      "Discard changes": [
+        "放棄變更"
       ],
       "Dismiss": [
         "忽略"
@@ -420,10 +420,10 @@
       "Invite user": [
         "邀請使用者"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "繼續編輯"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "繼續編輯"
       ],
       "Keep logo": [
@@ -455,6 +455,9 @@
       ],
       "Mark as default": [
         "標記為預設值"
+      ],
+      "Mark as favorite": [
+        "標記為最愛"
       ],
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
@@ -525,10 +528,10 @@
       "Refresh status": [
         "重新整理狀態"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
       "Remove": [
@@ -542,6 +545,9 @@
       ],
       "Remove domain": [
         "刪除網域"
+      ],
+      "Remove from favorites": [
+        "從我的最愛移除"
       ],
       "Remove gift code": [
         "移除禮品代碼"
@@ -4036,10 +4042,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "自訂 ${ BRAND_NAME } 應用程式的視覺與設計。"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -6383,12 +6389,6 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "您的帳號可能會被刪除。為了避免資料損失，請向您的管理員查詢或升級。 ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "您的儲存已滿，要傳送或接收電子郵件，釋放空間或${ cta }。"
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "您的儲存已滿。要上載或同步檔案，釋放空間或${ cta }。"
-      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "您的訂閱已到期。 ${ cta } 以避免資料遺失。"
       ]
@@ -7632,14 +7632,6 @@
         "歡迎來到 ${ appName }"
       ]
     },
-    "option": {
-      "Group members": [
-        "群組成員"
-      ],
-      "No one": [
-        "沒有人"
-      ]
-    },
     "Option": {
       "Country configs": [
         "國家組態設定"
@@ -7700,6 +7692,14 @@
       ],
       "The whole organization": [
         "整個組織"
+      ]
+    },
+    "option": {
+      "Group members": [
+        "群組成員"
+      ],
+      "No one": [
+        "沒有人"
       ]
     },
     "Organization capacity error": {
@@ -9207,6 +9207,47 @@
         "${ totalPrice } 版"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "and 15 more premium features": [
+        "還有額外的15個的加值功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
@@ -9465,47 +9506,6 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "and 15 more premium features": [
-        "還有額外的15個的加值功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動郵件轉寄${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "資料外洩警告 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面應用程式"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
-      ],
-      "No ads or tracking": [
-        "無廣告或追蹤"
-      ],
-      "Short @pm.me email address": [
-        "縮短電子郵件地址@pm.me"
-      ],
-      "Support our mission": [
-        "支援我們的計畫"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade your productivity": [
-        "提升您的生產力"
-      ],
-      "We don't sell your data": [
-        "我們不銷售您的資料"
-      ],
-      "Your privacy is our mission": [
-        "您的隱私是我們責任"
       ]
     },
     "Subscription renewal state": {

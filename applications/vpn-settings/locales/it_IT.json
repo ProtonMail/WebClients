@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Attiva"
-      ],
       "activate": [
         "attiva"
+      ],
+      "Activate": [
+        "Attiva"
       ],
       "Activate organization key": [
         "Attiva la chiave dell'organizzazione"
@@ -267,10 +267,10 @@
       "Discard": [
         "Scarta"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Annulla le modifiche"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Annulla le modifiche"
       ],
       "Discover ${ planName }": [
@@ -456,10 +456,10 @@
       "Invite user": [
         "Invita utente"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Continua a modificare"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Continua a modificare"
       ],
       "Keep logo": [
@@ -497,6 +497,9 @@
       ],
       "Mark as default": [
         "Segna come predefinito"
+      ],
+      "Mark as favorite": [
+        "Segna come preferito"
       ],
       "More info: ${ safeTitle }": [
         "Maggiori informazioni: ${ safeTitle }"
@@ -573,11 +576,11 @@
       "Refresh status": [
         "Aggiorna stato"
       ],
-      "refresh the page": [
-        "aggiorna la pagina"
-      ],
       "Refresh the page": [
         "Aggiorna la pagina"
+      ],
+      "refresh the page": [
+        "aggiorna la pagina"
       ],
       "Remove": [
         "Rimuovi"
@@ -593,6 +596,9 @@
       ],
       "Remove domain": [
         "Rimuovi dominio"
+      ],
+      "Remove from favorites": [
+        "Rimuovere dai preferiti"
       ],
       "Remove gift code": [
         "Rimuovi codice regalo"
@@ -961,6 +967,9 @@
       ]
     },
     "Address action": {
+      "Allow unsigned mail": [
+        "Consenti mail non firmate."
+      ],
       "Delete address": [
         "Elimina indirizzo"
       ],
@@ -1058,13 +1067,13 @@
     },
     "anniversary_2025: Offer": {
       "15 GB storage": [
-        "15 GB di archiviazione"
+        "15 GB di archiviazione"
       ],
       "200 GB storage": [
-        "200 GB di spazio di archiviazione"
+        "200 GB di spazio di archiviazione"
       ],
       "500 GB encrypted storage": [
-        "500 GB di archiviazione crittografata"
+        "500 GB di archiviazione crittografata"
       ],
       "Add unlimited credit cards": [
         "Aggiungi carte di credito illimitate"
@@ -1079,7 +1088,7 @@
         "Gli sconti si basano sul prezzo mensile standard. Al termine del ciclo di fatturazione, il tuo abbonamento si rinnoverà al costo annuale standard."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
-        "Raddoppia l'archiviazione crittografata: ottieni 1 TB per tutti i tuoi dati"
+        "Raddoppia l'archiviazione crittografata: ottieni 1 TB per tutti i tuoi dati"
       ],
       "Encrypted password manager": [
         "Gestore di password crittografato"
@@ -1121,7 +1130,7 @@
         "Risparmia sulle funzionalità VPN premium con uno sconto a tempo limitato."
       ],
       "Save time with built-in 2FA": [
-        "Risparmia tempo con l'autenticazione a due fattori integrata"
+        "Risparmia tempo con la 2FA integrata"
       ],
       "Secure email with unlimited aliases": [
         "Email sicura con alias illimitati"
@@ -1136,19 +1145,19 @@
         "Indirizzo email breve @pm.me"
       ],
       "Stream your favorite content": [
-        "Guarda i tuoi contenuti preferiti"
+        "Guarda in streaming i tuoi contenuti preferiti"
       ],
       "thanks to you": [
         "grazie a te"
       ],
       "Triple your encrypted storage – get 3 TB for all your data": [
-        "Triplica l'archiviazione crittografata: ottieni 3 TB per tutti i tuoi dati"
+        "Triplica l'archiviazione crittografata: ottieni 3 TB per tutti i tuoi dati"
       ],
       "Unlimited folders, labels and filters": [
         "Cartelle, etichette e filtri illimitati"
       ],
       "Use your own email domain": [
-        "Utilizzo del tuo dominio di posta personalizzato"
+        "Utilizzo del tuo dominio email personalizzato"
       ],
       "years": [
         "anni"
@@ -1156,7 +1165,7 @@
     },
     "anniversary_2025: offer": {
       "Anniversary offer": [
-        "Offerta anniversario"
+        "Offerta per l'anniversario"
       ]
     },
     "anniversary_2025: Offers": {
@@ -4655,11 +4664,11 @@
       "Data recoverable on this device": [
         "Dati recuperabili su questo dispositivo"
       ],
-      "Dedicated servers": [
-        "Server dedicati"
-      ],
       "dedicated servers": [
         "server dedicati"
+      ],
+      "Dedicated servers": [
+        "Server dedicati"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato."
@@ -7254,11 +7263,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Il tuo account è a rischio di cancellazione. Per evitare la perdita di dati, chiedi al tuo amministratore di eseguire l'aggiornamento. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Il tuo spazio di archiviazione è pieno. Per inviare o ricevere email, libera spazio o ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Il tuo spazio di archiviazione è pieno. Per caricare o sincronizzare file, libera spazio o ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "La memoria è piena. Per continuare a usare i prodotti ${ BRAND_NAME }, liberare spazio o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Il tuo abbonamento è terminato. ${ cta } ed evitare la perdita di dati."
@@ -8614,17 +8620,6 @@
         "Ti diamo il benvenuto in ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Tutti"
-      ],
-      "Group members": [
-        "Membri del gruppo"
-      ],
-      "No one": [
-        "Nessuno"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "${ defaultLabel } consentito"
@@ -8715,6 +8710,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tutti"
+      ],
+      "Group members": [
+        "Membri del gruppo"
+      ],
+      "No one": [
+        "Nessuno"
       ]
     },
     "Organization capacity error": {
@@ -10390,6 +10396,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Per continuare a utilizzare i prodotti ${ BRAND_NAME }, libera spazio o esegui l'${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Per inviare o ricevere e-mail, liberare spazio o ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Per caricare o sincronizzare i file, libera spazio o ${ upgrade }"
       ],
@@ -10561,6 +10570,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Per ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB di spazio di archiviazione"
+      ],
+      "and 15 more premium features": [
+        "e altre 15 funzionalità premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Inoltro automatico delle email ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Avvisi sulle violazioni di dati ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Applicazione desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
+      ],
+      "No ads or tracking": [
+        "Nessun annuncio o tracciamento"
+      ],
+      "Short @pm.me email address": [
+        "Indirizzo email breve @pm.me"
+      ],
+      "Support our mission": [
+        "Sostieni la nostra missione"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Migliora la tua produttività"
+      ],
+      "We don't sell your data": [
+        "Non vendiamo i tuoi dati"
+      ],
+      "Your privacy is our mission": [
+        "La tua privacy è la nostra missione"
       ]
     },
     "Subscription reminder": {
@@ -10851,47 +10901,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Il tuo alias email breve @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB di spazio di archiviazione"
-      ],
-      "and 15 more premium features": [
-        "e altre 15 funzionalità premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Inoltro automatico delle email ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Avvisi sulle violazioni di dati ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Applicazione desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
-      ],
-      "No ads or tracking": [
-        "Nessun annuncio o tracciamento"
-      ],
-      "Short @pm.me email address": [
-        "Indirizzo email breve @pm.me"
-      ],
-      "Support our mission": [
-        "Sostieni la nostra missione"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade your productivity": [
-        "Migliora la tua produttività"
-      ],
-      "We don't sell your data": [
-        "Non vendiamo i tuoi dati"
-      ],
-      "Your privacy is our mission": [
-        "La tua privacy è la nostra missione"
       ]
     },
     "Subscription renewal state": {

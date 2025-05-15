@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "Activate": [
-        "Aktivera"
-      ],
       "activate": [
         "aktivera"
+      ],
+      "Activate": [
+        "Aktivera"
       ],
       "Activate organization key": [
         "Aktivera organisationsnyckel"
@@ -267,10 +267,10 @@
       "Discard": [
         "Avfärda"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Kasta ändringar"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Kasta ändringar"
       ],
       "Discover ${ planName }": [
@@ -456,10 +456,10 @@
       "Invite user": [
         "Bjud in användare"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Fortsätt redigera"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Fortsätt redigera"
       ],
       "Keep logo": [
@@ -497,6 +497,9 @@
       ],
       "Mark as default": [
         "Markera som standard"
+      ],
+      "Mark as favorite": [
+        "Markera som favorit"
       ],
       "More info: ${ safeTitle }": [
         "Mer information: ${ safeTitle }"
@@ -573,11 +576,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "refresh the page": [
-        "uppdatera sidan"
-      ],
       "Refresh the page": [
         "Uppdatera sidan"
+      ],
+      "refresh the page": [
+        "uppdatera sidan"
       ],
       "Remove": [
         "Ta bort"
@@ -593,6 +596,9 @@
       ],
       "Remove domain": [
         "Ta bort domän"
+      ],
+      "Remove from favorites": [
+        "Ta bort från favoriter"
       ],
       "Remove gift code": [
         "Ta bort presentkod"
@@ -961,6 +967,9 @@
       ]
     },
     "Address action": {
+      "Allow unsigned mail": [
+        "Tillåt osignerad e-post"
+      ],
       "Delete address": [
         "Ta bort adress"
       ],
@@ -4508,11 +4517,11 @@
       "Data recoverable on this device": [
         "Data återställningsbart på denna enhet"
       ],
-      "Dedicated servers": [
-        "Dedikerade servrar"
-      ],
       "dedicated servers": [
         "dedikerade servrar"
+      ],
+      "Dedicated servers": [
+        "Dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -7088,12 +7097,6 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ditt konto riskerar att tas bort. För att undvika dataförlust, be din administratör att uppgradera. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ditt lagringsutrymme är fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ditt lagringsutrymme är fullt. För att ladda upp eller synkronisera filer, frigör utrymme eller ${ cta }."
-      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Din prenumeration har upphört. ${ cta } och för att undvika dataförlust."
       ]
@@ -8445,17 +8448,6 @@
         "Välkommen till ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Alla"
-      ],
-      "Group members": [
-        "Gruppmedlemmar"
-      ],
-      "No one": [
-        "Ingen"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Tillåtet ${ defaultLabel }"
@@ -8546,6 +8538,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Alla"
+      ],
+      "Group members": [
+        "Gruppmedlemmar"
+      ],
+      "No one": [
+        "Ingen"
       ]
     },
     "Organization capacity error": {
@@ -10391,6 +10394,47 @@
         "För ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -10679,47 +10723,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {
