@@ -53,7 +53,7 @@ export function InvitesTable(props: InvitesTableProps) {
       className={clsx('shrink-0', props.className)}
     >
       <Table.Table data-testid="invites-table">
-        <Table.Head className="border-weak border-b">
+        <Table.Head topLevelSticky className="border-weak border-b">
           <Table.Header isTitle data-testid="invite-column-name">
             <div className="flex w-full items-center justify-between">
               <span className="flex flex-nowrap items-center gap-[.375rem]">

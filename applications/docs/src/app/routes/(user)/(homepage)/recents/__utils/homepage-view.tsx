@@ -10,11 +10,14 @@ import { ServerTime } from '@proton/docs-shared'
 import { useApplication } from '~/utils/application-context'
 import { useEvent, useSubscribe } from '~/utils/misc'
 import { VolumeType } from '@proton/drive-store/store/_volumes'
+import { useContactEmails } from '@proton/mail/contactEmails/hooks'
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
+import { getOwnerName } from './get-owner-name'
 
 // constants
 // ---------
 
-const ALLOWED_SORT_VALUES = ['viewed', 'modified', 'name'] as const
+const ALLOWED_SORT_VALUES = ['viewed', 'modified', 'name', 'owner', 'location'] as const
 const DEFAULT_RECENTS_SORT = 'viewed' satisfies RecentsSort
 const ORDERED_SECTION_IDS = [
   'search-results',
@@ -44,7 +47,7 @@ export type HomepageViewState =
   | { view: 'recents-initial' }
   | { view: 'recents-loading' }
   | { view: 'recents-empty' }
-  | { view: 'recents'; itemSections: ItemsSection[]; sort: RecentsSort; stale: boolean }
+  | { view: 'recents'; itemSections: ItemsSection[]; sort: RecentsSort }
   // Favorites.
   | { view: 'favorites-loading' }
   | { view: 'favorites-empty' }
@@ -179,8 +182,7 @@ function useHomepageViewState({
         } else if (recentDocuments.length === 0) {
           outputState = { view: 'recents-empty' }
         } else {
-          // TODO: actually determine if stale
-          outputState = { view: 'recents', itemSections: [], sort: recentsSort, stale: false }
+          outputState = { view: 'recents', itemSections: [], sort: recentsSort }
         }
       }
       // Favorites.
@@ -215,6 +217,8 @@ function useHomepageViewState({
     throw new Error('Unknown view state')
   }
 
+  const [contactEmails] = useContactEmails()
+
   // Populate the state with ordered and sectioned items.
   // Done in a separate memoized computation to minimize re-computations.
   const state = useMemo(() => {
@@ -225,6 +229,10 @@ function useHomepageViewState({
           recentDocuments,
           recentsSort === 'viewed' ? 'lastViewed' : 'lastModified',
         )
+      } else if (recentsSort === 'owner') {
+        outputState.itemSections = splitIntoSectionsByOwner(recentDocuments, contactEmails)
+      } else if (recentsSort === 'location') {
+        outputState.itemSections = splitIntoSectionsByLocation(recentDocuments)
       } else {
         outputState.itemSections = splitIntoSectionsByName(recentDocuments)
       }
@@ -234,7 +242,7 @@ function useHomepageViewState({
       outputState.itemSections = splitIntoSectionsByName(trashedDocuments)
     }
     return outputState
-  }, [protoState, recentDocuments, recentsSort, trashedDocuments])
+  }, [contactEmails, protoState, recentDocuments, recentsSort, trashedDocuments])
 
   return state
 }
@@ -456,6 +464,52 @@ function splitIntoSectionsByName(
 ): ItemsSection[] {
   return [
     { id: isSearchResults ? 'search-results' : 'name', items: items.sort((a, b) => a.name.localeCompare(b.name)) },
+  ]
+}
+
+function splitIntoSectionsByOwner(items: RecentDocumentsItem[], contactEmails?: ContactEmail[]): ItemsSection[] {
+  return [
+    {
+      id: 'name',
+      items: [...items].sort((a, b) => {
+        if (a.isSharedWithMe !== b.isSharedWithMe) {
+          return !a.isSharedWithMe ? -1 : 1
+        }
+        const aName = getOwnerName(a, contactEmails)
+        const bName = getOwnerName(b, contactEmails)
+        if (aName && bName) {
+          return aName.localeCompare(bName)
+        }
+        if (Boolean(aName) !== Boolean(bName)) {
+          return Boolean(aName) ? -1 : 1
+        }
+        return a.name.localeCompare(b.name)
+      }),
+    },
+  ]
+}
+
+function splitIntoSectionsByLocation(items: RecentDocumentsItem[]): ItemsSection[] {
+  return [
+    {
+      id: 'name',
+      items: [...items].sort((a, b) => {
+        const aIsRoot = a.location.type === 'root'
+        const bIsRoot = b.location.type === 'root'
+        if (aIsRoot !== bIsRoot) {
+          return aIsRoot ? -1 : 1
+        }
+        const aIsPath = a.location.type === 'path'
+        const bIsPath = b.location.type === 'path'
+        if (aIsPath !== bIsPath) {
+          return aIsPath ? -1 : 1
+        }
+        if (aIsPath && bIsPath) {
+          return a.location.path.join('/').localeCompare(b.location.path.join('/'))
+        }
+        return a.name.localeCompare(b.name)
+      }),
+    },
   ]
 }
 
