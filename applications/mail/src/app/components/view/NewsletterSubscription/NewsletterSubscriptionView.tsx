@@ -43,7 +43,7 @@ export const NewsletterSubscriptionView = ({ elementsData, actions, toolbar }: N
     const { feature } = useFeature(FeatureCode.NewsletterSubscriptionViewOnboarding);
     const { appInView } = useDrawer();
     const { resizeAreaRef } = useMailboxLayoutProvider();
-    const { viewportWidth } = useActiveBreakpoint();
+    const breakpoints = useActiveBreakpoint();
 
     const subscriptionsObject = useMailSelector(selectAllSubscriptions);
     const loadingSubscriptions = useMailSelector(selectTabLoadingState);
@@ -51,8 +51,6 @@ export const NewsletterSubscriptionView = ({ elementsData, actions, toolbar }: N
     const onboardingModal = useModalStateObject();
 
     const isDomBusy = domIsBusy();
-
-    const showMailList = !viewportWidth['<=medium'];
 
     useEffect(() => {
         if (feature && !feature?.Value && !isDomBusy) {
@@ -73,7 +71,7 @@ export const NewsletterSubscriptionView = ({ elementsData, actions, toolbar }: N
         <>
             <div className="flex flex-nowrap w-full subscription-container">
                 {loadingSubscriptions ? <NewsletterSubscriptionListLoader /> : <NewsletterSubscriptionList />}
-                {showMailList && (
+                {!breakpoints.viewportWidth['<=medium'] && (
                     <ResizableWrapper
                         resizeHandlePosition={ResizeHandlePosition.LEFT}
                         minWidth={320}
