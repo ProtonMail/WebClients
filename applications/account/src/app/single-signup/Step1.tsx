@@ -1165,7 +1165,7 @@ const Step1 = ({
                                 <div className="relative">
                                     <AccountStepDetails
                                         domains={model.domains}
-                                        signupTypes={[SignupType.Email]}
+                                        signupTypes={[SignupType.External]}
                                         defaultEmail={defaultEmail}
                                         passwordFields={false}
                                         model={model}
