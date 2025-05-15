@@ -1580,6 +1580,12 @@
       ],
       "Unsubscribed": [
         "გამოწერა გაუქმებულია"
+      ],
+      "Mark as favorite": [
+        "რჩეულად მონიშვნა"
+      ],
+      "Remove from favorites": [
+        "წაშლა რჩეულებიდან"
       ]
     },
     "action": {
@@ -6862,7 +6868,6 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
         "გამოსახულების ჩასმა"
       ],
       "Insert link": [
@@ -8269,6 +8274,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } ელფოსტა გასულ თვეში",
+        "${ subscription.ReceivedMessages.Last30Days } ელფოსტა გასულ თვეში"
       ]
     },
     "info": {
@@ -11200,7 +11209,7 @@
         "ადმინის პანელ მომხმარებლებისა და გამოწერების სამართავად"
       ],
       "Advanced account protection": [
-        "დამატებითი ანგარიშის დაცვა"
+        "დამატებითი ანგარიშის დაცვის პროგრამა"
       ],
       "Team policies": [
         "გუნდის პოლიტიკა"
@@ -14382,6 +14391,9 @@
       ],
       "Your subscriptions in one place": [
         "თქვენი გამოწერები ერთ ადგილას"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "გამოწერაგაუქმებული ელფოსტის გამოწერების გარეშე"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15038,6 +15050,9 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "დაათვალიერეთ და მართეთ ახალი ამბები და დაგზავნის სიების გამოწერები აქ."
+      ],
+      "Newsletters you unsubscribe from will appear here.": [
+        "სიახლეები, რომლების გამოწერასაც გააუქმებთ, აქ გამოჩნდება."
       ]
     }
   }

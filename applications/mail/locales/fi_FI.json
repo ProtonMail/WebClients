@@ -1523,6 +1523,27 @@
       "Trust key": [
         "Luota avaimeen",
         "Luota avaimiin"
+      ],
+      "Active": [
+        "Aktiiviset"
+      ],
+      "Connect to video conferencing": [
+        "Yhdistä videoneuvotteluun"
+      ],
+      "Mark as favorite": [
+        "Merkitse suosikiksi"
+      ],
+      "Remove from favorites": [
+        "Poista suosikeista"
+      ],
+      "Resubscribe": [
+        "Tilaa uudelleen"
+      ],
+      "Set up email forwarding": [
+        "Määritä sähköpostin ohjaus"
+      ],
+      "Unsubscribed": [
+        "Tilaus on peruttu"
       ]
     },
     "action": {
@@ -3969,6 +3990,9 @@
       ],
       "This event was updated.": [
         "Tapahtuma päivitettiin."
+      ],
+      "Here's what changed:": [
+        "Tehdyt muutokset:"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5848,6 +5872,9 @@
       ],
       "Other": [
         "Muu"
+      ],
+      "Import from Outlook": [
+        "Tuo Outlookista"
       ]
     },
     "Import warning": {
@@ -6543,7 +6570,7 @@
         "Muokkaa linkkiä"
       ],
       "email": [
-        "sähköpostiosoite"
+        "sähköposti"
       ],
       "Email address": [
         "Sähköpostiosoite"
@@ -6770,8 +6797,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8110,6 +8136,26 @@
       ],
       "Uppercase and lowercase letters": [
         "Isot ja pienet kirjaimet"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } sähköpostiseuranta estetty",
+        "${ trackersCount } sähköpostiseurantaa estetty"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } seuranta estetty",
+        "${ trackersCount } seurantaa estetty"
+      ],
+      "and more.": [
+        "ja muuta."
+      ],
+      "Optional": [
+        "Valinnainen"
+      ],
+      "Unsubscribe": [
+        "Peru tilaus"
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Tilauksesi uudistuu automaattisesti ${ renewalTime }."
       ]
     },
     "info": {
@@ -9266,6 +9312,9 @@
       ],
       "here": [
         "täältä"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Miten ${ DARK_WEB_MONITORING_NAME } toimii"
       ]
     },
     "Link to calendar event": {
@@ -9609,6 +9658,9 @@
       ],
       "on the third Wednesday": [
         "kolmas keskiviikko"
+      ],
+      "on the ${ shortenedDay }": [
+        "${ shortenedDay }"
       ]
     },
     "New Label form": {
@@ -11102,6 +11154,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit peruuttaa tilauksen milloin vain.",
         "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit peruuttaa tilauksen milloin vain."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua milloin tahansa."
       ]
     },
     "Payments.Error": {
@@ -12279,6 +12334,12 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Menetät oikeuden käyttää rajattomasti kirjautumistunnuksia ja muistiinpanoja, rajattomasti hide-my-email-aliaksia, 20 holvia sekä ensisijaista tukea."
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString }stasi on käytössä ${ percentage } %. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString }si on täynnä. ${ cta }."
       ]
     },
     "Subscription": {
@@ -14070,6 +14131,9 @@
       ],
       "Share your calendar with your team": [
         "Jaa kalenterisi tiimillesi"
+      ],
+      "Set up email forwarding": [
+        "Määritä sähköpostin ohjaus"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14252,6 +14316,9 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Tilauksesi uudistuu automaattisesti ${ cycle } kuukauden kuluttua.",
         "Tilauksesi uudistuu automaattisesti ${ cycle } kuukauden kuluttua."
+      ],
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Silloin sinulta laskutetaan ${ renewPriceStr } vuoden välein."
       ]
     },
     "vpn_2step: feature": {
@@ -14712,6 +14779,14 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Liity Zoom-kokoukseen"
+      ]
+    },
+    "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Alkaen ${ priceLine }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceLine } kuukausihintaan. Voit perua milloin tahansa."
       ]
     }
   }

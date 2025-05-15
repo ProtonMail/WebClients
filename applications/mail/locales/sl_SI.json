@@ -1547,6 +1547,24 @@
         "Zaupaj ključema",
         "Zaupaj ključem",
         "Zaupaj ključem"
+      ],
+      "Active": [
+        "Aktivno"
+      ],
+      "hide-my-email aliases": [
+        "vzdevki hide-my-email"
+      ],
+      "Mark as favorite": [
+        "Označi kot priljubljeno"
+      ],
+      "Remove from favorites": [
+        "Odstrani iz priljubljenih"
+      ],
+      "Resubscribe": [
+        "Ponovno se naročite"
+      ],
+      "Unsubscribed": [
+        "Odjavili ste se"
       ]
     },
     "action": {
@@ -8271,6 +8289,30 @@
       ],
       "You can change this anytime in ${ settingsLink }.": [
         "To lahko kadar koli spremenite v ${ settingsLink }"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } blokiran e-poštni sledilnik",
+        "${ trackersCount } blokirana e-poštna sledilnika",
+        "${ trackersCount } blokirani e-poštni sledilniki",
+        "${ trackersCount } blokiranih e-poštnih sledilnikov"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } blokiran sledilnik",
+        "${ trackersCount } blokirana sledilnika",
+        "${ trackersCount } blokirani sledilniki",
+        "${ trackersCount } blokiranih sledilnikov"
+      ],
+      "and more.": [
+        "in več."
+      ],
+      "Optional": [
+        "Neobvezno"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "Preprečite, da bi vaš e-poštni naslov izvedeli poštni seznami ali pošiljatelji neželene pošte, s ${ hideMyEmailAliasesLink }."
+      ],
+      "Unsubscribe": [
+        "Odjavi se"
       ]
     },
     "info": {
@@ -9814,6 +9856,9 @@
       ],
       "on the third Wednesday": [
         "tretja sreda"
+      ],
+      "on the ${ shortenedDay }": [
+        "na ${ shortenedDay }"
       ]
     },
     "New Label form": {
@@ -10929,6 +10974,9 @@
       ],
       "Recover previous file versions": [
         "Obnovi prejšnje različice datoteke"
+      ],
+      "+10 more premium features": [
+        "+Še 10 premijskih funkcij"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11032,6 +11080,9 @@
       ],
       "Make the most of your paid plan.": [
         "Izkoristite svoj plačljiv paket kar najbolje."
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Uživajte v hitrejši in bolj osredotočeni izkušnji e-pošte z namizno aplikacijo."
       ]
     },
     "Onboarding Proton": {
@@ -14526,6 +14577,12 @@
         "${ numberOfServers } v ${ numberOfCountries } državah",
         "${ numberOfServers } v ${ numberOfCountries } državah",
         "${ numberOfServers } v ${ numberOfCountries } državah"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Strežniki v več kot ${ numberOfCountries } državi",
+        "Strežniki v več kot ${ numberOfCountries } državah",
+        "Strežniki v več kot ${ numberOfCountries } državah",
+        "Strežniki v več kot ${ numberOfCountries } državah"
       ]
     },
     "vpn_2024: renew": {
@@ -15062,6 +15119,9 @@
     "new_plans: Subtext": {
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Znižana cena ${ priceCoupon } velja za prvi mesec. Nato se bo samodejno obnovila po ceni ${ priceLine }. Naročnino lahko kadar koli prekličete."
+      ],
+      "Starting from ${ priceLine }": [
+        "Od ${ priceLine }"
       ]
     },
     "Section": {

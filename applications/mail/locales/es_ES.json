@@ -1580,6 +1580,12 @@
       ],
       "Resize panel": [
         "Cambiar el tamaño del panel"
+      ],
+      "Mark as favorite": [
+        "Marcar como favorito"
+      ],
+      "Remove from favorites": [
+        "Eliminar de favoritos"
       ]
     },
     "action": {
@@ -6686,7 +6692,7 @@
         "Editar enlace"
       ],
       "email": [
-        "correo electrónico"
+        "correo"
       ],
       "Email address": [
         "Dirección de correo electrónico"
@@ -6922,8 +6928,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9652,6 +9657,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Tu suscripción ha finalizado. ${ cta } y para evitar la pérdida de datos."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Tu almacenamiento está lleno. Para seguir usando los productos de ${ BRAND_NAME }, libera espacio o ${ cta }."
       ]
     },
     "Log preference": {

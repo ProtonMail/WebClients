@@ -1574,6 +1574,12 @@
       ],
       "Unsubscribed": [
         "Langganan dihentikan"
+      ],
+      "Mark as favorite": [
+        "Tandai sebagai favorit"
+      ],
+      "Remove from favorites": [
+        "Hapus dari favorit"
       ]
     },
     "action": {
@@ -3979,7 +3985,7 @@
         "Terdapat fitur yang hilang"
       ],
       "Other reason (please comment)": [
-        "Alasan lainnya (mohon tulis di kolom komentar)"
+        "Alasan lainnya (silakan tulis di kolom komentar)"
       ],
       "Subscription is too expensive": [
         "Biaya berlangganan terlalu mahal"
@@ -8217,6 +8223,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Anda hanya tinggal beberapa klik lagi untuk memiliki kotak masuk yang rapi"
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } email bulan lalu"
       ]
     },
     "info": {
@@ -9489,6 +9498,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Langganan Anda telah berakhir. ${ cta } dan mencegah hilangnya data."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Ruang penyimpanan Anda penuh. Untuk terus menggunakan produk ${ BRAND_NAME }, kosongkan ruang yang ada atau ${ cta }."
       ]
     },
     "Log preference": {
@@ -11110,7 +11122,7 @@
         "Panel admin untuk mengelola pengguna dan langganan"
       ],
       "Advanced account protection": [
-        "Perlindungan akun bertingkat lanjut"
+        "Perlindungan akun tingkat lanjut"
       ],
       "Team policies": [
         "Kebijakan tim"
@@ -12368,7 +12380,7 @@
         "Untuk dapat lanjut mengunggah dan menyinkronkan berkas, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Untuk dapat mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }"
+        "Untuk mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
@@ -14213,6 +14225,9 @@
       ],
       "Your subscriptions in one place": [
         "Langganan Anda di satu tempat"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Tidak ada langganan email yang berhenti dilanggan"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14832,6 +14847,9 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "Lihat dan kelola langganan buletin dan milis di sini."
+      ],
+      "Newsletters you unsubscribe from will appear here.": [
+        "Milis yang langganannya Anda hentikan akan muncul di sini."
       ]
     }
   }

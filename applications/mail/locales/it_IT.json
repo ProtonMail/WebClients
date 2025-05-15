@@ -1580,6 +1580,12 @@
       ],
       "Unsubscribed": [
         "Iscrizione annullata"
+      ],
+      "Mark as favorite": [
+        "Segna come preferito"
+      ],
+      "Remove from favorites": [
+        "Rimuovere dai preferiti"
       ]
     },
     "action": {
@@ -6476,7 +6482,7 @@
         "Centra"
       ],
       "Change your password": [
-        "Cambia la password"
+        "Gestione delle password"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Controllo contatto ${ progress } di ${ max }..."
@@ -6686,7 +6692,7 @@
         "Modifica link"
       ],
       "email": [
-        "email"
+        "indirizzo email"
       ],
       "Email address": [
         "Indirizzo email"
@@ -6922,8 +6928,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -9652,6 +9657,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Il tuo abbonamento è terminato. ${ cta } ed evitare la perdita di dati."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "La memoria è piena. Per continuare a usare i prodotti ${ BRAND_NAME }, liberare spazio o ${ cta }."
       ]
     },
     "Log preference": {
@@ -12611,7 +12619,7 @@
         "Per continuare a caricare e sincronizzare i file, libera spazio o effettua l'upgrade per ottenere più spazio di archiviazione."
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Per inviare e ricevere le email, libera spazio o ${ upgrade }"
+        "Per inviare o ricevere e-mail, liberare spazio o ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Per inviare e ricevere le email, libera spazio o effettua l'upgrade per più spazio di archiviazione."
@@ -15170,13 +15178,13 @@
     },
     "anniversary_2025: Offer": {
       "15 GB storage": [
-        "15 GB di archiviazione"
+        "15 GB di archiviazione"
       ],
       "200 GB storage": [
-        "200 GB di spazio di archiviazione"
+        "200 GB di spazio di archiviazione"
       ],
       "500 GB encrypted storage": [
-        "500 GB di archiviazione crittografata"
+        "500 GB di archiviazione crittografata"
       ],
       "Add unlimited credit cards": [
         "Aggiungi carte di credito illimitate"
@@ -15191,7 +15199,7 @@
         "Gli sconti si basano sul prezzo mensile standard. Al termine del ciclo di fatturazione, il tuo abbonamento si rinnoverà al costo annuale standard."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
-        "Raddoppia l'archiviazione crittografata: ottieni 1 TB per tutti i tuoi dati"
+        "Raddoppia l'archiviazione crittografata: ottieni 1 TB per tutti i tuoi dati"
       ],
       "Encrypted password manager": [
         "Gestore di password crittografato"
@@ -15233,7 +15241,7 @@
         "Risparmia sulle funzionalità VPN premium con uno sconto a tempo limitato."
       ],
       "Save time with built-in 2FA": [
-        "Risparmia tempo con l'autenticazione a due fattori integrata"
+        "Risparmia tempo con la 2FA integrata"
       ],
       "Secure email with unlimited aliases": [
         "Email sicura con alias illimitati"
@@ -15248,19 +15256,19 @@
         "Indirizzo email breve @pm.me"
       ],
       "Stream your favorite content": [
-        "Guarda i tuoi contenuti preferiti"
+        "Guarda in streaming i tuoi contenuti preferiti"
       ],
       "thanks to you": [
         "grazie a te"
       ],
       "Triple your encrypted storage – get 3 TB for all your data": [
-        "Triplica l'archiviazione crittografata: ottieni 3 TB per tutti i tuoi dati"
+        "Triplica l'archiviazione crittografata: ottieni 3 TB per tutti i tuoi dati"
       ],
       "Unlimited folders, labels and filters": [
         "Cartelle, etichette e filtri illimitati"
       ],
       "Use your own email domain": [
-        "Utilizzo del tuo dominio di posta personalizzato"
+        "Utilizzo del tuo dominio email personalizzato"
       ],
       "years": [
         "anni"
@@ -15268,7 +15276,7 @@
     },
     "anniversary_2025: offer": {
       "Anniversary offer": [
-        "Offerta anniversario"
+        "Offerta per l'anniversario"
       ]
     },
     "anniversary_2025: Offers": {

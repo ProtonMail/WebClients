@@ -1580,6 +1580,12 @@
       ],
       "Resize panel": [
         "Größe der Seitenleiste ändern"
+      ],
+      "Mark as favorite": [
+        "Als Favorit markieren"
+      ],
+      "Remove from favorites": [
+        "Von Favoriten entfernen"
       ]
     },
     "action": {
@@ -6922,8 +6928,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -15173,13 +15178,13 @@
     },
     "anniversary_2025: Offer": {
       "15 GB storage": [
-        "15 GB Speicher"
+        "15 GB Speicher"
       ],
       "200 GB storage": [
-        "200 GB Speicherplatz"
+        "200 GB Speicherplatz"
       ],
       "500 GB encrypted storage": [
-        "500 GB verschlüsselter Speicher"
+        "500 GB verschlüsselter Speicher"
       ],
       "Add unlimited credit cards": [
         "Füge unbegrenzt Kreditkarten hinzu"
@@ -15188,13 +15193,13 @@
         "Alle Premium-Funktionen von ${ BRAND_NAME } Mail, Pass, VPN, Drive und Calendar"
       ],
       "Block ads, trackers, and malware": [
-        "Blockiere von Werbung, Trackern und Malware"
+        "Blockiere Werbung, Tracker und Malware"
       ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
         "Rabatte basieren auf den Standardpreisen für Monatsabonnements. Am Ende des Abrechnungszeitraums verlängert sich dein Abonnement zum regulären Jahrespreis."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
-        "Verdopple deinen verschlüsselten Speicher – erhalte 1 TB für all deine Daten"
+        "Verdopple deinen verschlüsselten Speicher – erhalte 1 TB für all deine Daten"
       ],
       "Encrypted password manager": [
         "Verschlüsselter Passwortmanager"
@@ -15212,10 +15217,10 @@
         "Editor für Onlinedokumente"
       ],
       "Online privacy for up to 2 people": [
-        "Online-Privatsphäre für bis zu 2 Personen"
+        "Online-Privatsphäre für bis zu 2 Personen"
       ],
       "Online privacy for your whole family (up to 6 users)": [
-        "Online-Privatsphäre für deine ganze Familie (bis zu 6 Personen)"
+        "Online-Privatsphäre für deine ganze Familie (bis zu 6 Benutzer*innen)"
       ],
       "Protect up to 10 devices": [
         "Schütze bis zu 10 Geräte"
@@ -15227,7 +15232,7 @@
         "Sichere dir Premium-Drive-Funktionen mit einem zeitlich begrenzten Rabatt."
       ],
       "Save big on premium Mail features with a limited-time discount.": [
-        "Sichere dir Premium-Mail-Funktionen mit einem zeitlich begrenzten Rabatt."
+        "Sichere dir Premium-Mail-Funktionen mit einen zeitlich begrenzten Rabatt."
       ],
       "Save big on premium Pass features with a limited-time discount.": [
         "Sichere dir Premium-Pass-Funktionen mit einem zeitlich begrenzten Rabatt."
@@ -15239,7 +15244,7 @@
         "Spare Zeit mit integrierter 2FA"
       ],
       "Secure email with unlimited aliases": [
-        "Sichere E-Mail mit unbegrenzten Aliasen"
+        "Sichere E-Mail mit unbegrenzt vielen Aliassen"
       ],
       "Select any server": [
         "Freie Serverwahl"
@@ -15257,7 +15262,7 @@
         "dank dir"
       ],
       "Triple your encrypted storage – get 3 TB for all your data": [
-        "Verdreifache deinen verschlüsselten Speicher – erhalte 3 TB für all deine Daten"
+        "Verdreifache deinen verschlüsselten Speicher – erhalte 3 TB für all deine Daten"
       ],
       "Unlimited folders, labels and filters": [
         "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
@@ -15283,16 +15288,16 @@
         "/ Monat"
       ],
       "12 months": [
-        "12 Monate"
+        "12 Monate"
       ],
       "15 months": [
-        "15 Monate"
+        "15 Monate"
       ],
       "24 months": [
-        "24 Monate"
+        "24 Monate"
       ],
       "30 months": [
-        "30 Monate"
+        "30 Monate"
       ],
       "for ${ durationDeal }": [
         "für ${ durationDeal }"
@@ -15300,10 +15305,10 @@
     },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } ?": [
-        "${ LUMO_APP_NAME } ist eine datenschutzorientierte KI, die dir hilft, mehr zu erledigen und gleichzeitig dafür sorgt, dass deine Daten sicher bleiben. Entfalte ihr volles Potenzial und genieße den frühen Zugriff auf neue Funktionen, sobald sie eingeführt werden."
+        "${ LUMO_APP_NAME } ist eine datenschutzorientierte KI, die dir hilft, mehr zu erledigen und gleichzeitig dafür sorgt, dass deine Daten sicher bleiben. Entfalte ihr volles Potenzial und genieße den Vorabzugriff auf neue Funktionen, sobald sie eingeführt werden."
       ],
       "Add ${ LUMO_APP_NAME }": [
-        "Hinzufügen ${ LUMO_APP_NAME }"
+        "${ LUMO_APP_NAME } hinzufügen"
       ]
     }
   }

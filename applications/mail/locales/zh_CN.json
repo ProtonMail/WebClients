@@ -127,7 +127,7 @@
         "应用"
       ],
       "Archive": [
-        "存档"
+        "归档"
       ],
       "As Scheduled": [
         "按原定时间"
@@ -844,7 +844,7 @@
         "移动"
       ],
       "Move all to archive": [
-        "全部存档"
+        "全部归档"
       ],
       "Move all to trash": [
         "全部移至回收站"
@@ -856,7 +856,7 @@
         "移至"
       ],
       "Move to archive": [
-        "存档"
+        "移至归档"
       ],
       "Move to inbox": [
         "移至收件箱"
@@ -1574,6 +1574,12 @@
       ],
       "Unsubscribed": [
         "已退订"
+      ],
+      "Mark as favorite": [
+        "标记为收藏"
+      ],
+      "Remove from favorites": [
+        "从收藏夹中删除"
       ]
     },
     "action": {
@@ -2584,7 +2590,7 @@
         "创建标签"
       ],
       "Go to Archive": [
-        "转至存档"
+        "转至归档"
       ],
       "Go to Drafts": [
         "转至草稿"
@@ -5196,7 +5202,7 @@
     },
     "Filter Actions": {
       "Archive": [
-        "存档"
+        "归档"
       ],
       "Do not move": [
         "不移动"
@@ -6295,7 +6301,7 @@
         "确定要放弃导入吗？"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
-        "确定要将此处所有邮件存档吗？"
+        "您确定要归档此处的所有邮件吗？"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
         "确定要将此处所有邮件移至回收站吗？"
@@ -6583,7 +6589,7 @@
         "修改链接"
       ],
       "email": [
-        "电子邮箱"
+        "邮箱验证"
       ],
       "Email address": [
         "邮箱地址"
@@ -6811,7 +6817,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图像"
+        "插入图片"
       ],
       "Insert link": [
         "插入链接"
@@ -8176,7 +8182,7 @@
         "该邮件列表中的所有信息都将标记为已读。"
       ],
       "All messages from this mailing list will be moved to Archive.": [
-        "该邮件列表中的所有信息都将移至归档。"
+        "该邮件列表中的所有邮件都将移至归档。"
       ],
       "All messages from this mailing list will be moved to Trash.": [
         "该邮件列表中的所有信息都将移至回收站。"
@@ -8222,6 +8228,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "只需点击几下，您的收件箱就不会杂乱无章了"
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "上个月已收到 ${ subscription.ReceivedMessages.Last30Days } 封邮件"
       ]
     },
     "info": {
@@ -8341,7 +8350,7 @@
         "转至所有邮件"
       ],
       "Go to Archive": [
-        "转至存档"
+        "转至归档"
       ],
       "Go to Drafts": [
         "转至草稿箱"
@@ -8398,7 +8407,7 @@
         "右移 / 展开"
       ],
       "Move to Archive": [
-        "存档"
+        "移至归档"
       ],
       "Move to Inbox": [
         "移至收件箱"
@@ -8534,7 +8543,7 @@
         "所有联系人"
       ],
       "Also archive": [
-        "同时存档"
+        "同时归档"
       ],
       "Always label sender's emails": [
         "始终标记发件人的邮件"
@@ -8846,7 +8855,7 @@
         "移至"
       ],
       "Move to Archive": [
-        "存档"
+        "移至归档"
       ],
       "Move to Inbox": [
         "移至收件箱"
@@ -9215,7 +9224,7 @@
         "所有邮件"
       ],
       "Archive": [
-        "存档"
+        "归档"
       ],
       "clearing your browser cache": [
         "清除浏览器缓存"
@@ -9517,7 +9526,7 @@
     },
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe 写作助手"
+        "写作助理 ${ BRAND_NAME } Scribe"
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "添加 ${ BRAND_NAME } Scribe 写作助手"
@@ -9531,7 +9540,7 @@
     },
     "Mailbox": {
       "Archive": [
-        "存档"
+        "归档"
       ],
       "Inbox": [
         "收件箱"
@@ -13361,7 +13370,7 @@
         "使用礼品码"
       ],
       "Archive": [
-        "存档"
+        "归档"
       ],
       "Are you sure you want to close the preview?": [
         "确定要关闭预览吗？"
@@ -13799,7 +13808,7 @@
         "移动所有邮件"
       ],
       "Move all messages to archive": [
-        "将所有邮件存档"
+        "将所有邮件归档"
       ],
       "Move all messages to trash": [
         "将所有邮件移至回收站"
@@ -14201,7 +14210,7 @@
         "您的较短地址现已准备就绪"
       ],
       "Archive all messages?": [
-        "存档所有邮件？"
+        "归档所有邮件？"
       ],
       "Mail subscriptions": [
         "邮件订阅"

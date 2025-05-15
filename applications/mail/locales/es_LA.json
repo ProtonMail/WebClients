@@ -1355,7 +1355,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1579,6 +1580,12 @@
       ],
       "Unsubscribed": [
         "Suscripción cancelada"
+      ],
+      "Mark as favorite": [
+        "Marcar como favorito"
+      ],
+      "Remove from favorites": [
+        "Eliminar de favoritos"
       ]
     },
     "action": {
@@ -6685,7 +6692,7 @@
         "Editar enlace"
       ],
       "email": [
-        "correo"
+        "correo electrónico"
       ],
       "Email address": [
         "Dirección de correo"
@@ -6921,8 +6928,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"

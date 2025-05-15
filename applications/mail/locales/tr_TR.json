@@ -1355,7 +1355,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1579,6 +1580,12 @@
       ],
       "Resize panel": [
         "Panoyu boyutlandır"
+      ],
+      "Mark as favorite": [
+        "Beğenilen olarak işaretle"
+      ],
+      "Remove from favorites": [
+        "Beğenilenlerden kaldır"
       ]
     },
     "action": {
@@ -6685,7 +6692,7 @@
         "Bağlantıyı düzenle"
       ],
       "email": [
-        "e-posta"
+        "E-posta adresi"
       ],
       "Email address": [
         "E-posta adresi"
@@ -6833,7 +6840,7 @@
         "Özgün iletiyi gizle"
       ],
       "High Priority": [
-        "Yüksek öncelik"
+        "Yüksek öncelikli"
       ],
       "How hide-my-email aliases works": [
         "Hide-my-email adları nasıl çalışır"
@@ -6921,8 +6928,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7012,7 +7018,7 @@
         "Yükleniyor..."
       ],
       "Low Priority": [
-        "Düşük Öncelik"
+        "Düşük öncelikli"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
         "${ MAIL_APP_NAME } uygulamasını varsayılan e-posta uygulamanız yapın."

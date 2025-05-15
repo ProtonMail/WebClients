@@ -1580,6 +1580,12 @@
       ],
       "Unsubscribed": [
         "Subscripció cancel·lada"
+      ],
+      "Mark as favorite": [
+        "Marca com a favorit"
+      ],
+      "Remove from favorites": [
+        "Suprimeix dels favorits"
       ]
     },
     "action": {
@@ -6834,7 +6840,7 @@
         "Amaga el missatge original"
       ],
       "High Priority": [
-        "Alta prioritat"
+        "Prioritat alta"
       ],
       "How hide-my-email aliases works": [
         "Funcionament dels àlies hide-my-email"
@@ -6922,8 +6928,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -9652,6 +9657,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La vostra subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "El vostre emmagatzematge està ple. Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ cta }."
       ]
     },
     "Log preference": {
@@ -11313,7 +11321,7 @@
         "Panell d'administració per gestionar usuaris i subscripció"
       ],
       "Advanced account protection": [
-        "Protecció avançada del compte"
+        "Protecció avançada dels comptes"
       ],
       "Team policies": [
         "Regles d'equip"
@@ -12612,7 +12620,7 @@
         "Per a continuar carregant i sincronitzant fitxers, allibereu espai o milloreu per a obtenir més emmagatzematge."
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Per enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
+        "Per enviar o rebre correus, allibereu espai o ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Per a enviar o rebre correus electrònics, allibereu espai o milloreu per a obtenir més emmagatzematge."
