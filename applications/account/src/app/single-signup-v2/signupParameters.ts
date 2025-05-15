@@ -4,7 +4,7 @@ import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments';
 import { getIsPassApp } from '@proton/shared/lib/authentication/apps';
 import { getReturnUrlParameter } from '@proton/shared/lib/authentication/returnUrl';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, REFERRER_CODE_MAIL_TRIAL } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 
 import type { InviteData } from '../signup/interfaces';
 import { getSignupSearchParams } from '../signup/searchParams';
@@ -15,14 +15,12 @@ export const getSignupParameters = ({
     initialSearchParams,
     visionarySignupEnabled,
     location,
-    isMailTrial,
     partner,
 }: {
     toApp?: APP_NAMES;
     initialSearchParams?: URLSearchParams;
     visionarySignupEnabled: boolean;
     location: H.Location<{ invite?: InviteData }>;
-    isMailTrial?: boolean;
     partner?: 'porkbun';
 }): SignupParameters2 => {
     const searchParams = new URLSearchParams(location.search);
@@ -71,10 +69,6 @@ export const getSignupParameters = ({
     }
 
     let signIn: SignupParameters2['signIn'] = 'standard';
-
-    if (isMailTrial) {
-        result.referrer = REFERRER_CODE_MAIL_TRIAL;
-    }
 
     if (partner === 'porkbun') {
         const preVerifiedAddressToken = searchParams.get('jwt') || undefined; // May be undefined in login scenario

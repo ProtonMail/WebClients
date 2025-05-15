@@ -47,7 +47,6 @@ export const WALLET_SHORT_APP_NAME = 'Wallet';
 export const WALLET_APP_NAME = `${BRAND_NAME} ${WALLET_SHORT_APP_NAME}`;
 export const LUMO_SHORT_APP_NAME = 'Lumo';
 export const LUMO_APP_NAME = `${BRAND_NAME} ${LUMO_SHORT_APP_NAME}`;
-export const REFERRER_CODE_MAIL_TRIAL = 'MAILPLUSTRIAL';
 export const PROTON_SENTINEL_NAME = 'Proton Sentinel';
 export const DARK_WEB_MONITORING_NAME = 'Dark Web Monitoring';
 
@@ -348,7 +347,6 @@ export const SSO_PATHS = {
     SIGNUP: '/signup',
     INVITE: '/pre-invite',
     REFER: '/refer-a-friend',
-    TRIAL: '/trial',
     JOIN_MAGIC_LINK: '/join',
     PORKBUN_SIGNUP: '/partner/porkbun/signup',
     PORKBUN_SIGN_IN: '/partner/porkbun/login',
