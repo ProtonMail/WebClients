@@ -16,6 +16,11 @@ import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import type { MessageState } from '../../../store/messages/messagesTypes';
 import Addresses from './Addresses';
 
+jest.mock('@proton/shared/lib/helpers/dom', () => ({
+    ...jest.requireActual('@proton/shared/lib/helpers/dom'),
+    rootFontSize: () => 16,
+}));
+
 const email1 = 'test@test.com';
 const email2 = 'test2@test.com';
 const email3 = 'test3@test.com';
