@@ -91,7 +91,7 @@ describe('HomepageContent', () => {
 
   test('Show no items found message when results are empty', async () => {
     renderWithProviders(<HomepageContent />, 'empty_recents')
-    await screen.findByText(/Create an encrypted document./)
+    await screen.findByText(/Create an end-to-end encrypted document./)
   })
 
   test('Show context menu when button is clicked', async () => {
@@ -141,6 +141,10 @@ describe('HomepageContent', () => {
           share: jest.fn(),
           onTrashed: jest.fn(),
           currentlyTrashingId: undefined,
+          restore: jest.fn(),
+          onRestored: jest.fn(),
+          currentlyRestoringId: undefined,
+          deletePermanently: jest.fn(),
         }}
       >
         {children}
@@ -159,7 +163,7 @@ describe('HomepageContent', () => {
 
     useEffect(() => {
       if (flow === 'one_document') {
-        setState({ view: 'recents', sort: 'viewed', stale: false, itemSections: [{ id: 'today', items: MOCK_DATA }] })
+        setState({ view: 'recents', sort: 'viewed', itemSections: [{ id: 'today', items: MOCK_DATA }] })
       }
 
       if (flow === 'empty_recents') {
