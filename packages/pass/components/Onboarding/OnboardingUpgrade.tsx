@@ -162,7 +162,7 @@ export const Content: FC = () => {
                 <TableBody>
                     {includesFeatures[selected].included.map((row) => (
                         <TableRow className="pass-table--row" key={row.title}>
-                            <TableCell className="pass-table--row-title text-nowrap" title={row.title}>
+                            <TableCell className="pass-table--row-title" title={row.title}>
                                 {row.title}
                             </TableCell>
                             <TableCell className="text-center">{row.currentPlan ?? '-'}</TableCell>

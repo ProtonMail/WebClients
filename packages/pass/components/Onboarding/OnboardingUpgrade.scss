@@ -51,6 +51,7 @@
 
 				&-title {
 					@include media('<medium') {
+						white-space: nowrap;
 						overflow: hidden;
 						text-overflow: ellipsis;
 					}
