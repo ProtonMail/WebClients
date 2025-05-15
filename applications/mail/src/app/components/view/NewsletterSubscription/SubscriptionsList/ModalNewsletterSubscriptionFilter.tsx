@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Checkbox, type ModalProps, Prompt } from '@proton/components';
+import { Checkbox, Label, type ModalProps, Prompt } from '@proton/components';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
@@ -81,14 +81,16 @@ const ModalNewsletterSubscriptionFilter = ({ subscription, filterType, ...props 
             ]}
         >
             <p className="m-0 mb-4">{descriptionCopy(filterType)}</p>
-            <Checkbox
-                checked={applyToFuture}
-                onChange={() => setApplyToFuture((val) => !val)}
-                className="my-2"
-                id="trash"
-            >
-                {c('Info').t`Apply to future messages `}
-            </Checkbox>
+            <div className="flex flex-row items-start align-center mb-2">
+                <Checkbox
+                    checked={applyToFuture}
+                    onChange={() => setApplyToFuture((val) => !val)}
+                    className="mr-2"
+                    id="applyFuture"
+                />
+
+                <Label htmlFor="applyFuture" className="p-0 flex-1">{c('Info').t`Apply to future messages`}</Label>
+            </div>
         </Prompt>
     );
 };
