@@ -1289,7 +1289,8 @@
         "भरोसा करें"
       ],
       "Trust key": [
-        "विश्वसनीय चाबी"
+        "ट्रस्ट कुंजी",
+        "ट्रस्ट कुंजी"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -1456,6 +1457,30 @@
       ],
       "Zoom out": [
         "ज़ूम कम करें"
+      ],
+      "Active": [
+        "सक्रिय"
+      ],
+      "Get the apps": [
+        "ऐप प्राप्त करें"
+      ],
+      "hide-my-email aliases": [
+        "hide-my-email नकलीनाम"
+      ],
+      "Mark as favorite": [
+        "फ़ेवरेट के रूप में मार्क करें"
+      ],
+      "Remove from favorites": [
+        "फेवरेट्स से हटाएं"
+      ],
+      "Resubscribe": [
+        "पुन: सदस्यता लें"
+      ],
+      "Set up email forwarding": [
+        "ईमेल फॉरवर्ड सेट अप करें"
+      ],
+      "Unsubscribed": [
+        "सदस्यता छोड़ दी गई"
       ]
     },
     "action": {
@@ -3812,6 +3837,9 @@
       ],
       "This event was updated.": [
         "यह कार्यक्रम अपडेट किया गया था।"
+      ],
+      "Here's what changed:": [
+        "यहां देखें क्या बदलाव हुए हैं:"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5685,6 +5713,9 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } से आयात करें"
+      ],
+      "Import from Outlook": [
+        "Outlook से आयात करे"
       ]
     },
     "Import warning": {
@@ -6578,8 +6609,7 @@
         "शुरू किया जा रहा है…"
       ],
       "Insert image": [
-        "तस्वीर डालें",
-        "तस्वीरें डालें"
+        "तस्वीर डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -7822,6 +7852,25 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "आपकी निर्धारित योजना ${ renewalTime } से शुरू होती है और हर महीने ऑटो-नवीनीकरण होगी।"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } ईमेल ट्रैकर ब्लॉक किया गया",
+        "${ trackersCount } ईमेल ट्रैकर ब्लॉक किए गए"
+      ],
+      "Optional": [
+        "वैकल्पिक"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "${ hideMyEmailAliasesLink } के साथ अपने ईमेल को मेलिंग सूचियों या स्पैमर्स को लीक होने से बचाएं।"
+      ],
+      "Set up your organization": [
+        "अपना संगठन स्थापित करें"
+      ],
+      "Unsubscribe": [
+        "सदस्यता रद्द"
+      ],
+      "VPN IP": [
+        "VPN IP"
       ]
     },
     "info": {
@@ -9782,6 +9831,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "हम डार्क वेब स्कैन करते हैं ताकि यह जांच सकें कि आपके ${ BRAND_NAME } ईमेल पते या नकली-नाम लीक हुए हैं, और यदि कुछ मिलता है तो तुरंत आपको सूचित करें।"
+      ],
+      "${ size } storage per user": [
+        "${ size } स्टोरेज हर यूज़र पे"
       ]
     },
     "new_plans: feature highlight": {
@@ -10719,6 +10771,12 @@
       ],
       "Timeout exceeded": [
         "Timeout exceeded"
+      ],
+      "terms & conditions": [
+        "नियम और शर्तें"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ renewPriceStr } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
       ]
     },
     "Payments.Error": {
@@ -10922,6 +10980,9 @@
       ],
       "Type text or keyword": [
         "टेक्स्ट या कीवर्ड टाइप करें"
+      ],
+      "Organization name": [
+        "संगठन नाम"
       ]
     },
     "Placeholder for contact group name": {
@@ -13553,6 +13614,18 @@
       ],
       "Your shorter address is now ready": [
         "आपका छोटा पता अब तैयार है"
+      ],
+      "Add user": [
+        "उपयोगकर्ता जोड़ें"
+      ],
+      "Mobile": [
+        "मोबाइल"
+      ],
+      "Set up email forwarding": [
+        "ईमेल फॉरवर्ड सेट अप करें"
+      ],
+      "Set up your organization": [
+        "अपना संगठन स्थापित करें"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13718,6 +13791,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "${ numberOfCountries } देश से स्वतः चयनित",
         "${ numberOfCountries } देशों से स्वतः चयनित"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries }+ देश में सर्वर",
+        "${ numberOfCountries }+ देशों में सर्वर"
       ]
     },
     "vpn_2024: renew": {
@@ -14120,6 +14197,21 @@
       ],
       "Passcode:": [
         "पासकोड:"
+      ]
+    },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "सभी ${ BRAND_NAME } सेवाओं के लिए"
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "${ priceString } की छूट"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "ज़ूम मीटिंग में शामिल हों"
       ]
     }
   }

@@ -1053,6 +1053,36 @@
       ],
       "Zoom out": [
         "Smanji"
+      ],
+      "Active": [
+        "Aktivno"
+      ],
+      "Get ${ planOrAppName }": [
+        "Nabavite ${ planOrAppName }"
+      ],
+      "Get the apps": [
+        "Preuzmite aplikacije"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
+      ],
+      "hide-my-email aliases": [
+        "hide-my-email pseudonimi"
+      ],
+      "Import from Google": [
+        "Uvoz iz Googlea"
+      ],
+      "More actions": [
+        "Više akcija"
+      ],
+      "Replace": [
+        "Zamijeni"
+      ],
+      "Resubscribe": [
+        "Ponovna pretplata"
+      ],
+      "Take a tour": [
+        "Započnite obilazak"
       ]
     },
     "action": {
@@ -1396,6 +1426,24 @@
       ],
       "Next": [
         "Sljedeće"
+      ],
+      "Close": [
+        "Zatvori"
+      ],
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Nastavi koristiti ${ MAIL_APP_NAME }."
+      ],
+      "Create label": [
+        "Stvori oznaku"
+      ],
+      "Got it": [
+        "Razumijem"
+      ],
+      "Maybe later": [
+        "Možda kasnije"
+      ],
+      "Take a tour": [
+        "Započnite obilazak"
       ]
     },
     "Calendar invite buttons label": {
@@ -3106,6 +3154,11 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vaša pretraga je pronašla previše rezultata. Ograničite pretragu i pokušajte ponovno."
+      ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "Uklonjen duplicirani primatelj: ${ recipents }",
+        "Uklonjeni duplicirani primatelji: ${ recipents }",
+        "Uklonjeni duplicirani primatelji: ${ recipents }"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3573,6 +3626,11 @@
     "Hint": {
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Upotrijebite tipke gore i dolje za pristup i pregledavanje prijedloga nakon unosa. Pritisnite Enter da biste potvrdili svoj izbor ili Escape da biste zatvorili okvir za prijedloge."
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Pronađen je ${ itemsCount } prijedlog. Za navigaciju koristite tipkovnicu.",
+        "Pronađena su ${ itemsCount } prijedloga. Za navigaciju koristite tipkovnicu.",
+        "Pronađeno je ${ itemsCount } prijedloga. Za navigaciju koristite tipkovnicu."
       ]
     },
     "Human verification method": {
@@ -3587,6 +3645,9 @@
       ],
       "SMS": [
         "SMS"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
       ]
     },
     "ICS widget label for event details": {
@@ -3751,6 +3812,12 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Uvoz iz ${ provider }a"
+      ],
+      "Import from Google": [
+        "Uvoz iz Googlea"
+      ],
+      "Import from Outlook": [
+        "Uvoz iz Outlooka"
       ]
     },
     "Import warning": {
@@ -4584,6 +4651,21 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
+      ],
+      "Active": [
+        "Aktivno"
+      ],
+      "Address copied to clipboard": [
+        "Adresa je kopirana u međuspremnik"
+      ],
+      "default email address": [
+        "zadana adresa e-pošte"
+      ],
+      "Optional": [
+        "Neobavezno"
+      ],
+      "Unsubscribe": [
+        "Otkaži pretplatu"
       ]
     },
     "info": {
@@ -5274,6 +5356,12 @@
       ],
       "Your password (admin)": [
         "Vaša lozinka (administrator)"
+      ],
+      "/month": [
+        "/mjesec"
+      ],
+      "State": [
+        "Država"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -5495,6 +5583,15 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Morate ponovno aktivirati vaše ključeve da biste vidjeli ažuriranu pozivnicu"
+      ],
+      "contact us": [
+        "kontaktirajte nas"
+      ],
+      "settings": [
+        "postavke"
+      ],
+      "terms of service": [
+        "uvjeti korištenja"
       ]
     },
     "Link to calendar event": {
@@ -5705,6 +5802,9 @@
       ],
       "on the third Wednesday": [
         "na treću srijedu"
+      ],
+      "on the ${ shortenedDay }": [
+        "na ${ shortenedDay }"
       ]
     },
     "New Label form": {
@@ -5867,6 +5967,15 @@
       ],
       "Unlimited messages per day": [
         "Neograničen broj poruka dnevno"
+      ],
+      "${ size } storage per user": [
+        "${ size } prostora za pohranu po korisniku"
+      ],
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Tor over VPN": [
+        "Tor preko VPN-a"
       ]
     },
     "new_plans: heading": {
@@ -5916,11 +6025,23 @@
       ],
       "Contact group updated": [
         "Kontaktna grupa je ažurirana"
+      ],
+      "Link copied to clipboard": [
+        "Poveznica kopirana u međuspremnik"
       ]
     },
     "Offer": {
       "Save": [
         "Spremi"
+      ],
+      "Get the deal": [
+        "Ugrabite ponudu"
+      ],
+      "Maybe later": [
+        "Možda kasnije"
+      ],
+      "Special offer": [
+        "Posebna ponuda"
       ]
     },
     "Offer feature": {
@@ -5929,6 +6050,12 @@
       ],
       "Plus": [
         "Plus"
+      ],
+      "Email addresses": [
+        "Adrese e-pošte"
+      ],
+      "Storage": [
+        "Prostor za pohranu"
       ]
     },
     "Onboarding modal": {
@@ -5949,6 +6076,27 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Počnite upotrebljavati kraću i pamtljiviju verziju svoje e-pošte."
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } na App Storeu"
+      ],
+      "browser": [
+        "preglednik"
+      ],
+      "Continue": [
+        "Nastavite"
+      ],
+      "Maybe later": [
+        "Možda kasnije"
+      ],
+      "Set a display name": [
+        "Postavi zaslonski naziv"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Za početak odaberite ime za prikaz. To je ono što će ljudi vidjeti kada pošaljete e-poštu, pozovete ih na događaj ili podijelite datoteku."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Dobrodošli u ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding Proton": {
@@ -6059,6 +6207,9 @@
       ],
       "MM/YY": [
         "MM/GG"
+      ],
+      "terms & conditions": [
+        "uvjeti i odredbe"
       ]
     },
     "Payments.Error": {
@@ -6177,6 +6328,12 @@
       ],
       "Type text or keyword": [
         "Unesite tekst ili ključnu riječ"
+      ],
+      "Organization name": [
+        "Naziv organizacije"
+      ],
+      "Search date, name, email address, or subject line": [
+        "Traži datum, ime, adresu e-pošte ili predmet"
       ]
     },
     "Placeholder for contact group name": {
@@ -6648,6 +6805,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standardna cijena ${ amount } za 30 mjeseci"
+      ],
+      "/month": [
+        "/mjesec"
       ]
     },
     "Spotlight": {
@@ -6734,6 +6894,29 @@
       ],
       "Version history": [
         "Povijest verzija"
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } kalendar po korisniku",
+        "${ planNumberOfCalendars } kalendara po korisniku",
+        "${ planNumberOfCalendars } kalendara po korisniku"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adresa e-pošte",
+        "${ planNumberOfEmails } adrese e-pošte",
+        "${ planNumberOfEmails } adrese e-pošte"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } e-pošta po korisniku",
+        "${ planNumberOfEmails } e-pošte po korisniku",
+        "${ planNumberOfEmails } e-pošte po korisniku"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } korisnik",
+        "${ planNumberOfUsers } korisnika",
+        "${ planNumberOfUsers } korisnika"
+      ],
+      "2 users": [
+        "2 korisnika"
       ]
     },
     "subscription reminder": {
@@ -7060,6 +7243,9 @@
       ],
       "Open ": [
         "Otvori "
+      ],
+      "Create an alias": [
+        "Stvori pseudonim"
       ]
     },
     "Title": {
@@ -7551,6 +7737,27 @@
       ],
       "Welcome ${ userName }": [
         "Dobrodošli ${ userName }"
+      ],
+      "Add user": [
+        "Dodaj korisnika"
+      ],
+      "Custom domains:": [
+        "Prilagođenih domena:"
+      ],
+      "Help center": [
+        "Centar za pomoć"
+      ],
+      "Import events": [
+        "Uvezi događaje"
+      ],
+      "Priority support:": [
+        "Prioritetna podrška:"
+      ],
+      "Schedule send:": [
+        "Zakaži slanje:"
+      ],
+      "Snooze:": [
+        "Odgodi:"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -7624,6 +7831,11 @@
         "${ n } VPN veza",
         "${ n } VPN veze",
         "${ n } VPN veza"
+      ],
+      "${ n } device": [
+        "${ n } uređaj",
+        "${ n } uređaja",
+        "${ n } uređaja"
       ]
     },
     "vpn_2step: feature": {
@@ -7982,6 +8194,82 @@
       ],
       "Yearly, ${ untilString }": [
         "Godišnje, ${ untilString }"
+      ]
+    },
+    "Cancellation upsell": {
+      "Save ${ upsellSavings }": [
+        "Uštedite ${ upsellSavings }"
+      ],
+      "Try ${ planName }": [
+        "Isprobajte ${ planName }"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Neočekivana pogreška"
+      ]
+    },
+    "Google Meet": {
+      "Less details": [
+        "Manje detalja"
+      ],
+      "Meeting host:": [
+        "Organizator sastanka:"
+      ],
+      "Meeting link:": [
+        "Poveznica sastanka:"
+      ],
+      "More details": [
+        "Više detalja"
+      ]
+    },
+    "ICS event error": {
+      "Edited event not supported": [
+        "Uređeni događaj nije podržan"
+      ],
+      "End time out of bounds": [
+        "Krajnje vrijeme je van granica"
+      ],
+      "Event validation failed": [
+        "Neuspjela provjera valjanosti događaja"
+      ],
+      "Floating times not supported": [
+        "Floating vremena nisu podržana"
+      ],
+      "Malformed all-day event": [
+        "Nevažeći cjelodnevni događaj"
+      ],
+      "Malformed end time": [
+        "Nevažeće krajnje vrijeme"
+      ],
+      "Malformed recurring event": [
+        "Neispravan ponavljajući događaj"
+      ],
+      "Malformed start time": [
+        "Nevažeće početno vrijeme"
+      ],
+      "Recurring rule not supported": [
+        "Ponavljajuće pravilo nije podržano"
+      ],
+      "Start time out of bounds": [
+        "Početno vrijeme je van granica"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Nabavite ${ planTitle }"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ users } user": [
+        "${ users } korisnik",
+        "${ users } korisnika",
+        "${ users } korisnika"
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Uštedite ${ priceString }"
       ]
     }
   }

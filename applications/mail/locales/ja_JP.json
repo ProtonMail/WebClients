@@ -1556,6 +1556,12 @@
       ],
       "Unsubscribed": [
         "登録解除されました"
+      ],
+      "Mark as favorite": [
+        "お気に入りに追加"
+      ],
+      "Remove from favorites": [
+        "お気に入りから削除"
       ]
     },
     "action": {
@@ -6757,7 +6763,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -7735,7 +7741,7 @@
         "ユーザーがアクティブ化"
       ],
       "username": [
-        "ユーザー名"
+        "ユーザーネーム"
       ],
       "Users": [
         "ユーザー"
@@ -8153,6 +8159,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "先月受信した${ subscription.ReceivedMessages.Last30Days }件のメール"
       ]
     },
     "info": {
@@ -12327,6 +12336,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "無制限のログインとメモ、無制限のhide-my-email エイリアス、20 個の保管庫、および優先サポートにアクセスできなくなります。"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "メールを送受信するには、容量を空けるか${ upgrade }"
       ]
     },
     "Subscription": {

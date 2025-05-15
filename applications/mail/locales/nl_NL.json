@@ -1379,7 +1379,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Vertrouwde sleutels"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1564,6 +1565,12 @@
       ],
       "Resize panel": [
         "Grootte paneel aanpassen"
+      ],
+      "Mark as favorite": [
+        "Markeer als favoriet"
+      ],
+      "Remove from favorites": [
+        "Verwijder uit favorieten"
       ]
     },
     "action": {
@@ -6765,7 +6772,7 @@
         "Filters werken op alle e-mails, zowel inkomende als verzonden e-mails. Elk filter moet minstens een naam, voorwaarde en actie bevatten."
       ],
       "finance": [
-        "financiën"
+        "financieel"
       ],
       "Folder": [
         "Map"
@@ -6818,7 +6825,7 @@
         "Verberg origineel bericht"
       ],
       "High Priority": [
-        "Hoge Prioriteit"
+        "Hoge prioriteit"
       ],
       "How hide-my-email aliases works": [
         "Hoe Hide-my-email-aliassen werken"
@@ -6906,8 +6913,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Link invoegen"
@@ -7000,7 +7006,7 @@
         "Laden..."
       ],
       "Low Priority": [
-        "Lage Prioriteit"
+        "Lage prioriteit"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
         "Maak van ${ MAIL_APP_NAME } uw standaard e-mailtoepassing."
@@ -15007,7 +15013,7 @@
         "privacy"
       ],
       "Online document editor": [
-        "Online document editor"
+        "Online documenteditor"
       ],
       "Online privacy for up to 2 people": [
         "Online privacy voor maximaal 2 personen"
@@ -15098,10 +15104,10 @@
     },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } ?": [
-        "${ LUMO_APP_NAME } is een privacy-first AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
+        "${ LUMO_APP_NAME } is een privacygerichte AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
       ],
       "Add ${ LUMO_APP_NAME }": [
-        "Toevoegen ${ LUMO_APP_NAME }"
+        "${ LUMO_APP_NAME } toevoegen"
       ]
     }
   }

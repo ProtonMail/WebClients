@@ -1565,6 +1565,12 @@
       ],
       "Resize panel": [
         "Endre størrelse på panel"
+      ],
+      "Mark as favorite": [
+        "Merk som favoritt"
+      ],
+      "Remove from favorites": [
+        "Fjern fra favoritter"
       ]
     },
     "action": {
@@ -6919,8 +6925,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8298,6 +8303,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } e-post forrige måned",
+        "${ subscription.ReceivedMessages.Last30Days } e-poster forrige måned"
       ]
     },
     "info": {
@@ -9268,6 +9277,9 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "Vis og administrer abonnementer på nyhetsbrev og e-postlister her."
+      ],
+      "Newsletters you unsubscribe from will appear here.": [
+        "Nyhetsbrev du avslutter abonnement på vises her."
       ]
     },
     "Landmarks": {
@@ -9582,6 +9594,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Abonnementet ditt er avsluttet. ${ cta } og unngå tap av data."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Lagringsplassen din er full. For å fortsette å bruke ${ BRAND_NAME }-produkter må du frigjøre plass eller ${ cta }."
       ]
     },
     "Log preference": {
@@ -12549,6 +12564,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Du mister tilgangen til ubegrensede pålogginger og notater, ubegrensede hide-my-email-aliaser, 20 hvelv samt prioritert støtte."
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "For å sende eller motta e-post, frigjør plass eller ${ upgrade }"
       ]
     },
     "Subscription": {
@@ -14362,6 +14380,9 @@
       ],
       "Your subscriptions in one place": [
         "Dine abonnementer på ett sted"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Ingen avmeldte e-postabonnementer"
       ]
     },
     "Today icon tooltip in mini calendar": {

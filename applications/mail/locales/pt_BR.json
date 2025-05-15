@@ -1379,7 +1379,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Confiar na chave",
+        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1564,6 +1565,12 @@
       ],
       "Resize panel": [
         "Redimensionar painel"
+      ],
+      "Mark as favorite": [
+        "Marcar como favorito"
+      ],
+      "Remove from favorites": [
+        "Remover dos favoritos"
       ]
     },
     "action": {
@@ -6769,7 +6776,7 @@
         "Os filtros funcionam em todos os e-mails, incluindo os e-mails recebidos e enviados. Cada filtro deve conter pelo menos um nome, uma condição e uma ação a ser salva."
       ],
       "finance": [
-        "finança"
+        "finanças"
       ],
       "Folder": [
         "Pasta"
@@ -6910,8 +6917,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -7004,7 +7010,7 @@
         "Carregando..."
       ],
       "Low Priority": [
-        "Baixa prioridade"
+        "Prioridade baixa"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
         "Defina ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão."
@@ -9591,6 +9597,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Sua assinatura terminou. ${ cta } e para evitar perda de dados."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Seu armazenamento está cheio. Para continuar usando os produtos da ${ BRAND_NAME }, libere espaço ou ${ cta }."
       ]
     },
     "Log preference": {
@@ -12575,6 +12584,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Você perderá o acesso a logins e notas ilimitados, aliases ilimitados do hide-my-email, a 20 cofres, assim como ao suporte prioritário."
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Para enviar ou receber e-mails, libere espaço ou ${ upgrade }"
       ]
     },
     "Subscription": {
@@ -15006,10 +15018,10 @@
         "Os descontos são baseados no preço mensal padrão. Ao final do ciclo de cobrança, sua assinatura será renovada na tarifa anual padrão."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
-        "Dobre seu armazenamento criptografado – ganhe 1 TB para todos os seus dados"
+        "Dobre seu armazenamento criptografado: ganhe 1 TB para todos os seus dados"
       ],
       "Encrypted password manager": [
-        "Gerenciador de senhas criptografadas"
+        "Gerenciador de senhas criptografado"
       ],
       "Here's an exclusive gift to celebrate our journey together.": [
         "Aqui está um presente exclusivo para comemorarmos nossa jornada juntos."
@@ -15027,7 +15039,7 @@
         "Privacidade on-line para até 2 pessoas"
       ],
       "Online privacy for your whole family (up to 6 users)": [
-        "Privacidade on-line para toda a sua família (até 6 usuários)"
+        "Privacidade on-line para toda a família (até 6 usuários)"
       ],
       "Protect up to 10 devices": [
         "Proteja até 10 dispositivos"
@@ -15048,7 +15060,7 @@
         "Economize muito nos recursos premium de VPN com um desconto por tempo limitado."
       ],
       "Save time with built-in 2FA": [
-        "Economize tempo com 2FA integrado"
+        "Poupe tempo com 2FA integrada"
       ],
       "Secure email with unlimited aliases": [
         "E-mail seguro com aliases ilimitados"
@@ -15063,13 +15075,13 @@
         "Endereço de e-mail curto @pm.me"
       ],
       "Stream your favorite content": [
-        "Faça streaming do seu conteúdo preferido"
+        "Faça streaming do seu conteúdo favorito"
       ],
       "thanks to you": [
         "graças a você"
       ],
       "Triple your encrypted storage – get 3 TB for all your data": [
-        "Triplique seu armazenamento criptografado – ganhe 3 TB para todos os seus dados"
+        "Triplique seu armazenamento criptografado: ganhe 3 TB para todos os seus dados"
       ],
       "Unlimited folders, labels and filters": [
         "Pastas, marcadores e filtros ilimitados"
@@ -15112,7 +15124,7 @@
     },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } ?": [
-        "${ LUMO_APP_NAME } é uma IA que prioriza sua privacidade e te ajuda a realizar mais tarefas, mantendo seus dados seguros. Desbloqueie todo o seu potencial e aproveite o acesso antecipado às novas funcionalidades conforme são lançadas."
+        "${ LUMO_APP_NAME } é uma IA que prioriza a privacidade e ajuda você a fazer mais, mantendo seus dados seguros. Desbloqueie todo o potencial e tenha acesso antecipado a novas funcionalidades conforme forem lançadas."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Adicionar ${ LUMO_APP_NAME }"
