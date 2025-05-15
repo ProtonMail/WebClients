@@ -41,7 +41,7 @@ import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proto
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getHasAppExternalSignup, getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { APPS, BRAND_NAME, MAIL_APP_NAME, REFERRER_CODE_MAIL_TRIAL, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, MAIL_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
@@ -54,7 +54,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import mailReferPage from '../../pages/refer-a-friend';
-import mailTrialPage from '../../pages/trial';
 import Layout from '../public/Layout';
 import { defaultPersistentKey, getContinueToString } from '../public/helper';
 import { getSubscriptionData } from '../single-signup-v2/helper';
@@ -75,13 +74,7 @@ import SignupSupportDropdown from './SignupSupportDropdown';
 import UpsellStep from './UpsellStep';
 import VerificationStep from './VerificationStep';
 import { DEFAULT_SIGNUP_MODEL } from './constants';
-import {
-    getOptimisticDomains,
-    getSignupApplication,
-    getSubscriptionPrices,
-    isMailReferAFriendSignup,
-    isMailTrialSignup,
-} from './helper';
+import { getOptimisticDomains, getSignupApplication, getSubscriptionPrices, isMailReferAFriendSignup } from './helper';
 import type { InviteData, SignupActionResponse, SignupCacheResult, SignupModel, SubscriptionData } from './interfaces';
 import { SignupSteps, SignupType } from './interfaces';
 import type { TelemetryMeasurementData } from './measure';
@@ -143,10 +136,9 @@ const SignupContainer = ({
     const { APP_NAME } = useConfig();
 
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
-    const isMailTrial = isMailTrialSignup(location);
     const isMailRefer = isMailReferAFriendSignup(location);
 
-    useMetaTags(isMailRefer ? mailReferPage() : isMailTrial ? mailTrialPage() : metaTags);
+    useMetaTags(isMailRefer ? mailReferPage() : metaTags);
 
     const normalApi = useApi();
     const history = useHistory();
@@ -156,7 +148,7 @@ const SignupContainer = ({
     const driveTrialOfferEnabled = useFlag('DriveTrialOffer');
 
     // Override the app to always be mail in trial or refer-a-friend signup
-    if (isMailTrial || isMailRefer) {
+    if (isMailRefer) {
         toApp = APPS.PROTONMAIL;
         toAppName = MAIL_APP_NAME;
     }
@@ -164,9 +156,6 @@ const SignupContainer = ({
         const params = getSignupSearchParams(location.pathname, new URLSearchParams(location.search), {
             cycle: DEFAULT_CYCLE,
         });
-        if (isMailTrial) {
-            params.referrer = REFERRER_CODE_MAIL_TRIAL;
-        }
         if (!params.email && initialSearchParams) {
             params.email = initialSearchParams.get('email') || params.email;
         }
@@ -211,7 +200,7 @@ const SignupContainer = ({
     const cache = cacheRef.current;
     const accountData = cache?.accountData;
 
-    const isReferral = model.referralData && !isMailTrial;
+    const isReferral = model.referralData;
 
     const measure = (data: TelemetryMeasurementData) => {
         const values = 'values' in data ? data.values : {};
@@ -301,7 +290,7 @@ const SignupContainer = ({
 
             const { plans: Plans, freePlan } = plansResult;
 
-            if ((location.pathname === SSO_PATHS.REFER || location.pathname === SSO_PATHS.TRIAL) && !referralData) {
+            if (location.pathname === SSO_PATHS.REFER && !referralData) {
                 history.replace(SSO_PATHS.SIGNUP);
             }
 
