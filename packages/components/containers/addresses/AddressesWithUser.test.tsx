@@ -7,6 +7,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
+import useAddressFlags from '@proton/components/hooks/useAddressFlags';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
@@ -43,6 +44,9 @@ const mockedUseAddresses = useAddresses as jest.MockedFunction<typeof useAddress
 
 jest.mock('@proton/components/hooks/useApi');
 const mockedUseApi = useApi as jest.MockedFunction<typeof useApi>;
+
+jest.mock('@proton/components/hooks/useAddressFlags');
+const mockedUseAddressFlags = useAddressFlags as jest.MockedFunction<typeof useAddressFlags>;
 
 jest.mock('@proton/components/hooks/useNotifications');
 const mockedUseNotifications = useNotifications as jest.MockedFunction<typeof useNotifications>;
@@ -84,6 +88,12 @@ describe('addresses with user', () => {
     mockedUseKTVerifier.mockReturnValue({} as any);
     mockedUseOrganizationKey.mockReturnValue([{}] as any);
     mockedUseFlag.mockReturnValue(true);
+    mockedUseAddressFlags.mockReturnValue({
+        data: {
+            permissions: {} as any,
+        } as any,
+        handleSetAddressFlags: async () => {},
+    });
     mockUseFeatureBarrel({ feature: { Value: true } as any });
 
     const getFirstAddress = (container: HTMLElement) => {

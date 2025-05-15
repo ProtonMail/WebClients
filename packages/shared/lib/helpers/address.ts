@@ -105,3 +105,29 @@ const { FLAG_DISABLE_E2EE, FLAG_DISABLE_EXPECTED_SIGNED, BYOE } = ADDRESS_FLAGS;
 export const getIsEncryptionDisabled = (address: Address) => hasBit(address.Flags, FLAG_DISABLE_E2EE);
 export const getIsExpectSignatureDisabled = (address: Address) => hasBit(address.Flags, FLAG_DISABLE_EXPECTED_SIGNED);
 export const getIsBYOEAddress = (address: Address) => hasBit(address.Flags, BYOE);
+
+export const getAddressFlagsData = (address: Address | undefined) => {
+    const isEncryptionDisabled = address ? getIsEncryptionDisabled(address) : false;
+    const isExpectSignatureDisabled = address ? getIsExpectSignatureDisabled(address) : false;
+    const isCustomDomainAddressWithoutMX = !address?.ProtonMX && address?.Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN;
+    const isExternalAddress = address?.Type === ADDRESS_TYPE.TYPE_EXTERNAL;
+    const isBYOEAddress = address && getIsBYOEAddress(address);
+
+    const allowEnablingEncryption = isEncryptionDisabled && (!isExternalAddress || isCustomDomainAddressWithoutMX);
+    const allowDisablingEncryption =
+        !isEncryptionDisabled && ((isExternalAddress && !isBYOEAddress) || isCustomDomainAddressWithoutMX);
+    const allowDisablingUnsignedMail = isExpectSignatureDisabled && !isExternalAddress;
+    const allowEnablingUnsignedMail = !isExpectSignatureDisabled && isExternalAddress && !isBYOEAddress;
+
+    return {
+        isEncryptionDisabled,
+        isExpectSignatureDisabled,
+        isBYOEAddress,
+        permissions: {
+            allowEnablingEncryption,
+            allowDisablingEncryption,
+            allowDisablingUnsignedMail,
+            allowEnablingUnsignedMail,
+        },
+    };
+};
