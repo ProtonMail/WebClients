@@ -1,5 +1,5 @@
 import { useDocumentActions } from '../../__utils/document-actions'
-import type { ReactNode } from 'react'
+import type { ComponentPropsWithoutRef, ReactNode } from 'react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { DocContextMenu } from './DocContextMenu/DocContextMenu'
 import { useContextMenu } from './DocContextMenu/context'
@@ -19,7 +19,6 @@ import { c } from 'ttag'
 import { Avatar, Button, Input } from '@proton/atoms'
 import { getInitials } from '@proton/shared/lib/helpers/string'
 import clsx from '@proton/utils/clsx'
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
 import { useContactEmails } from '@proton/mail/contactEmails/hooks'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
@@ -28,11 +27,19 @@ import { useHomepageView, type ItemsSection, type ItemsSectionId } from '../../_
 import { ContentSheet } from './shared'
 import { useApplication } from '~/utils/application-context'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
+import { getOwnerName } from '../../__utils/get-owner-name'
 
 // table
 // -----
 
-export type TableVariant = 'recents-name' | 'recents-viewed' | 'recents-modified' | 'trash' | 'search'
+export type TableVariant =
+  | 'recents-name'
+  | 'recents-viewed'
+  | 'recents-modified'
+  | 'recents-owner'
+  | 'recents-location'
+  | 'trash'
+  | 'search'
 export type DocumentsTableProps = { itemsSections: ItemsSection[]; variant: TableVariant }
 
 export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) {
@@ -45,13 +52,18 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
     <>
       <ContentSheet isBottom className="shrink-0 grow pb-4">
         <Table.Table>
-          <Table.Title>
+          <Table.Title topLevelSticky>
             {isRecents || isSearch ? c('Info').t`Recents` : c('Info').t`Trash`}
             {isRecents && <SortSelect />}
           </Table.Title>
           {itemsSections.map(({ id, items }, sectionIndex) => (
             <Fragment key={id}>
-              <Head variant={variant} sectionId={id} isSecondary={sectionIndex > 0} />
+              <Head
+                variant={variant}
+                sectionId={id}
+                isSecondary={sectionIndex > 0}
+                topLevelSticky={sectionIndex === 0}
+              />
               <Body variant={variant} items={items} />
             </Fragment>
           ))}
@@ -72,10 +84,10 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
 // head
 // ----
 
-type HeadProps = { sectionId: ItemsSectionId; isSecondary?: boolean; variant: TableVariant }
+type HeadProps = { sectionId: ItemsSectionId; isSecondary?: boolean; variant: TableVariant; topLevelSticky?: boolean }
 
-function Head({ isSecondary = false, sectionId, variant }: HeadProps) {
-  const firstHeaderShowArrow = !isSecondary && (variant === 'recents-name' || variant === 'trash')
+function Head({ isSecondary = false, sectionId, variant, topLevelSticky }: HeadProps) {
+  const firstHeaderSorted = !isSecondary && (variant === 'recents-name' || variant === 'trash')
 
   let secondHeaderLabel = c('Recent documents table header').t`Viewed`
   if (variant === 'recents-modified') {
@@ -84,30 +96,37 @@ function Head({ isSecondary = false, sectionId, variant }: HeadProps) {
   if (variant === 'trash') {
     secondHeaderLabel = c('Recent documents table header').t`Deleted`
   }
-  const secondHeaderShowArrow = variant === 'recents-viewed' || variant === 'recents-modified'
+  const secondHeaderSorted = variant === 'recents-viewed' || variant === 'recents-modified'
+  const thirdHeaderSorted = variant === 'recents-owner'
+  const fourthHeaderSorted = variant === 'recents-location'
 
   return (
-    <Table.Head secondarySticky>
+    <Table.Head
+      secondarySticky
+      topLevelSticky={topLevelSticky}
+      topLevelStickyOnlyOnMobile={topLevelSticky}
+      data-secondary-header={isSecondary ? '' : undefined}
+    >
       <Table.Header>
         <div className="flex items-center justify-between">
-          <span className="flex flex-nowrap items-center gap-[.375rem]">
-            <span>{getSectionLabel(sectionId)}</span>
-            {firstHeaderShowArrow ? <Icon name="arrow-down" size={4} className="text-[--icon-norm]" /> : null}
-          </span>
+          <MaybeSorted sorted={firstHeaderSorted}>{getSectionLabel(sectionId)}</MaybeSorted>
         </div>
       </Table.Header>
       {!isSecondary ? (
         <>
           <Table.Header target="large">
-            <span className="flex flex-nowrap items-center gap-[.375rem]">
+            <MaybeSorted sorted={secondHeaderSorted}>
               <span>{secondHeaderLabel}</span>
-              {secondHeaderShowArrow ? <Icon name="arrow-down" size={4} className="text-[--icon-norm]" /> : null}
-            </span>
+            </MaybeSorted>
           </Table.Header>
-          <Table.Header target="medium">{c('Recent documents table header').t`Created by`}</Table.Header>
+          <Table.Header target="medium">
+            <MaybeSorted sorted={thirdHeaderSorted}>{c('Recent documents table header').t`Created by`}</MaybeSorted>
+          </Table.Header>
           <Table.Header target="medium">
             <div className="flex flex-nowrap items-center justify-between">
-              <span>{c('Recent documents table header').t`Location`}</span>
+              <MaybeSorted sorted={fourthHeaderSorted}>
+                <span>{c('Recent documents table header').t`Location`}</span>
+              </MaybeSorted>
             </div>
           </Table.Header>
         </>
@@ -116,9 +135,9 @@ function Head({ isSecondary = false, sectionId, variant }: HeadProps) {
         // resort to this hack to ensure proper sizing of the main column header, so that other
         // previously stickied column headers are not obscured by it.
         <>
-          <Table.DataCell className="pointer-events-none opacity-0"></Table.DataCell>
-          <Table.DataCell className="pointer-events-none opacity-0"></Table.DataCell>
-          <Table.DataCell className="pointer-events-none opacity-0"></Table.DataCell>
+          <Table.DataCell target="large" className="pointer-events-none opacity-0"></Table.DataCell>
+          <Table.DataCell target="medium" className="pointer-events-none opacity-0"></Table.DataCell>
+          <Table.DataCell target="medium" className="pointer-events-none opacity-0"></Table.DataCell>
         </>
       )}
     </Table.Head>
@@ -126,10 +145,12 @@ function Head({ isSecondary = false, sectionId, variant }: HeadProps) {
 }
 
 const SORT_SELECT_OPTIONS = [
-  { value: 'viewed', label: () => c('Actions').t`Last viewed first` },
+  { value: 'viewed', label: () => c('Sort menu options').t`Last viewed first` },
   // TODO: re-enable once "last modified" is supported.
   // { value: 'modified', label: () => c('Actions').t`Last modified first` },
-  { value: 'name', label: () => c('Actions').t`Name` },
+  { value: 'name', label: () => c('Sort menu options').t`Name` },
+  { value: 'owner', label: () => c('Sort menu options').t`Created by` },
+  { value: 'location', label: () => c('Sort menu options').t`Location` },
 ] satisfies { value: RecentsSort; label: () => string }[]
 
 function SortSelect() {
@@ -174,6 +195,19 @@ function SortSelect() {
         </DropdownMenu>
       </Dropdown>
     </>
+  )
+}
+
+interface MaybeSortedProps extends ComponentPropsWithoutRef<'span'> {
+  sorted?: boolean
+}
+
+function MaybeSorted({ sorted, ...props }: MaybeSortedProps) {
+  return (
+    <span {...props} className={clsx('flex flex-nowrap items-center gap-[.375rem]', props.className)}>
+      <span>{props.children}</span>
+      {sorted ? <Icon name="arrow-down" size={4} className="text-[--icon-norm]" /> : null}
+    </span>
   )
 }
 
@@ -287,9 +321,6 @@ function Row({ document, variant }: RowProps) {
     }
   }
 
-  const isRecents = variant.startsWith('recents')
-  const isSearch = variant === 'search'
-
   const isRenaming = documentActions.isRenaming(document)
 
   return (
@@ -300,9 +331,6 @@ function Row({ document, variant }: RowProps) {
         documentActions.open(document)
       }}
       onContextMenu={(event) => {
-        if (variant === 'trash') {
-          return
-        }
         event.stopPropagation()
         contextMenu.setCurrentDocument(document)
         contextMenu.handleContextMenu(event)
@@ -379,22 +407,20 @@ function Row({ document, variant }: RowProps) {
       <Table.DataCell target="medium">
         <div className="-ms-2 flex w-full flex-nowrap justify-between">
           {locationContent}
-          {isRecents || isSearch ? (
-            <Tooltip title={c('Action').t`Actions`}>
-              <Button
-                onClick={(event) => {
-                  event.stopPropagation()
-                  contextMenu.setCurrentDocument(document)
-                  contextMenu.handleContextMenu(event)
-                }}
-                shape="ghost"
-                className="ml-auto shrink-0 px-2"
-                aria-label={c('Action').t`Actions`}
-              >
-                <Icon name="three-dots-vertical" />
-              </Button>
-            </Tooltip>
-          ) : null}
+          <Tooltip title={c('Action').t`Actions`}>
+            <Button
+              onClick={(event) => {
+                event.stopPropagation()
+                contextMenu.setCurrentDocument(document)
+                contextMenu.handleContextMenu(event)
+              }}
+              shape="ghost"
+              className="ml-auto shrink-0 px-2"
+              aria-label={c('Action').t`Actions`}
+            >
+              <Icon name="three-dots-vertical" />
+            </Button>
+          </Tooltip>
         </div>
       </Table.DataCell>
     </Table.Row>
@@ -403,24 +429,6 @@ function Row({ document, variant }: RowProps) {
 
 // utils
 // -----
-
-export function getOwnerName(recentDocument: RecentDocumentsItem, contactEmails?: ContactEmail[]) {
-  if (!recentDocument.isSharedWithMe) {
-    return c('Info').t`Me`
-  }
-
-  if (!recentDocument.createdBy) {
-    return undefined
-  }
-
-  const foundContact = contactEmails?.find((contactEmail) => contactEmail.Email === recentDocument.createdBy)
-
-  if (foundContact) {
-    return foundContact.Name ?? foundContact.Email
-  }
-
-  return recentDocument.createdBy
-}
 
 export function useOwnerName(recentDocument: RecentDocumentsItem) {
   const [contactEmails] = useContactEmails()

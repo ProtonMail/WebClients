@@ -92,6 +92,7 @@ export interface DriveCompat {
 
     trashDocument: (meta: NodeMeta, parentLinkId: string) => Promise<void>;
     restoreDocument: (meta: NodeMeta, parentLinkId: string) => Promise<void>;
+    deleteDocumentPermanently: (meta: NodeMeta, parentLinkId: string) => Promise<void>;
     /**
      * Gets the URL for a given document.
      */
@@ -157,8 +158,16 @@ export const useDriveCompat = (): DriveCompat => {
         return { encryptionKey: key, namespace: localId };
     }, [authentication]);
 
-    const { createDocumentNode, getDocumentKeys, renameDocument, getDocumentUrl, trashDocument, restoreDocument } =
-        useDocuments();
+    const {
+        createDocumentNode,
+        getDocumentKeys,
+        renameDocument,
+        getDocumentUrl,
+        trashDocument,
+        restoreDocument,
+        deleteDocumentPermanently,
+        confirmModal,
+    } = useDocuments();
     const abortSignal = useAbortSignal([]);
     const { getLink } = useLink();
     const { getNode, getLatestNode, getNodeContents, getNodePermissions, findAvailableNodeName } = useNode();
@@ -231,6 +240,7 @@ export const useDriveCompat = (): DriveCompat => {
         renameDocument: withResolveShareId(renameDocument),
         trashDocument: withResolveShareId(trashDocument),
         restoreDocument: withResolveShareId(restoreDocument),
+        deleteDocumentPermanently: withResolveShareId(deleteDocumentPermanently),
         getDocumentUrl,
         openDocument,
         openDocumentWindow,
@@ -243,6 +253,7 @@ export const useDriveCompat = (): DriveCompat => {
             <>
                 {moveToFolderModal}
                 {linkSharingModal}
+                {confirmModal}
             </>
         ),
         getKeysForLocalStorageEncryption,

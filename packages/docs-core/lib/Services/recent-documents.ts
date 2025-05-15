@@ -38,6 +38,8 @@ export interface RecentDocumentsInterface {
   state: Store
   fetch(): Promise<void>
   trashDocument(recentDocument: RecentDocumentsItem): Promise<void>
+  restoreDocument(recentDocument: RecentDocumentsItem): Promise<void>
+  deleteDocumentPermanently(recentDocument: RecentDocumentsItem): Promise<void>
   getSortedRecents(): RecentDocumentsItem[]
   updateRenamedDocumentInCache(uniqueId: string, name: string): Promise<void>
 }
@@ -257,6 +259,28 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
     this.#sortRecents()
 
     this.state.setProperty('state', 'done')
+  }
+
+  async restoreDocument(recentDocument: RecentDocumentsItem): Promise<void> {
+    if (!recentDocument.parentLinkId) {
+      throw new Error('Node does not have parent link ID')
+    }
+
+    await this.#driveCompat.restoreDocument(
+      { linkId: recentDocument.linkId, volumeId: recentDocument.volumeId },
+      recentDocument.parentLinkId,
+    )
+  }
+
+  async deleteDocumentPermanently(recentDocument: RecentDocumentsItem): Promise<void> {
+    if (!recentDocument.parentLinkId) {
+      throw new Error('Node does not have parent link ID')
+    }
+
+    await this.#driveCompat.deleteDocumentPermanently(
+      { linkId: recentDocument.linkId, volumeId: recentDocument.volumeId },
+      recentDocument.parentLinkId,
+    )
   }
 }
 
