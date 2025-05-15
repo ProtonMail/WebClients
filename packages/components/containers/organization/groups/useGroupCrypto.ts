@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { setNoEncryptFlag } from '@proton/account';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
-import { setAddressFlags } from '@proton/components/hooks/helpers/addressFlagsHelper';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PrivateKeyReference } from '@proton/crypto/lib';
@@ -10,6 +9,7 @@ import { CryptoProxy } from '@proton/crypto/lib';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import { getIsExpectSignatureDisabled } from '@proton/shared/lib/helpers/address';
 import type { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import { setAddressFlagsHelper } from '@proton/shared/lib/keys/addressFlagsHelper';
 
 import useGroupKeys from './useGroupKeys';
 
@@ -40,7 +40,7 @@ const useGroupCrypto = () => {
         }
 
         const { keyTransparencyVerify } = await createKTVerifier();
-        await setAddressFlags({
+        await setAddressFlagsHelper({
             encryptionDisabled: flagState,
             expectSignatureDisabled: getIsExpectSignatureDisabled(forwarderAddress),
             address: forwarderAddress,

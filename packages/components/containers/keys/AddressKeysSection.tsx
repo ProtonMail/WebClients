@@ -34,6 +34,7 @@ import {
     setAddressKeyFlags,
     setPrimaryAddressKey,
 } from '@proton/shared/lib/keys';
+import { FlagAction, getNewAddressKeyFlags } from '@proton/shared/lib/keys/getNewAddressKeyFlags';
 import noop from '@proton/utils/noop';
 
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
@@ -46,9 +47,7 @@ import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';
 import ImportKeyModal from './importKeys/ImportKeyModal';
 import type { ImportKey } from './importKeys/interface';
 import ReactivateKeysModal from './reactivateKeys/ReactivateKeysModal';
-import { getNewKeyFlags } from './shared/flags';
 import { getKeyByID } from './shared/helper';
-import { FlagAction } from './shared/interface';
 import useDisplayKeys from './shared/useDisplayKeys';
 
 const AddressKeysSection = () => {
@@ -169,7 +168,7 @@ const AddressKeysSection = () => {
                 Address,
                 addressKeys,
                 ID,
-                getNewKeyFlags(addressDisplayKey.flags, flagAction),
+                getNewAddressKeyFlags(addressDisplayKey.flags, flagAction),
                 keyTransparencyVerify
             );
             await keyTransparencyCommit(User, userKeys);

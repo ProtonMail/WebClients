@@ -53,14 +53,3 @@ export interface KeyDisplay {
     status: KeyStatus;
     permissions: KeyPermissions;
 }
-
-export enum FlagAction {
-    MARK_OBSOLETE,
-    MARK_NOT_OBSOLETE,
-    MARK_COMPROMISED,
-    MARK_NOT_COMPROMISED,
-    DISABLE_ENCRYPTION,
-    ENABLE_ENCRYPTION,
-    DISABLE_EXPECT_SIGNED,
-    ENABLE_EXPECT_SIGNED,
-}
