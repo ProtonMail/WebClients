@@ -2,6 +2,12 @@ import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
+export enum VerticalStepStatusEnum {
+    Done = 'done',
+    Next = 'next',
+    Passed = 'passed',
+}
+
 export interface VerticalStepProps extends ComponentPropsWithoutRef<'li'> {
     description?: ReactNode;
     titleCentered?: Boolean;
@@ -12,7 +18,7 @@ export interface VerticalStepProps extends ComponentPropsWithoutRef<'li'> {
      * 'done': icon will be colored as success
      * 'passed': icon will be colored as success, text will look like disabled, and green will be applied to the "path" to the next icon
      */
-    status?: 'next' | 'done' | 'passed';
+    status?: VerticalStepStatusEnum;
 }
 
 const VerticalStep = ({
@@ -21,7 +27,7 @@ const VerticalStep = ({
     titleBold = true,
     description,
     icon,
-    status = 'next',
+    status = VerticalStepStatusEnum.Next,
     className,
     ...rest
 }: VerticalStepProps) => {
