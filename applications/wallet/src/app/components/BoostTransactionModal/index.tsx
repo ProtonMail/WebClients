@@ -8,7 +8,7 @@ import { c } from 'ttag';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
-import { Slider } from '@proton/atoms/index';
+import { Slider, SliderSizeEnum } from '@proton/atoms/index';
 import { type ModalStateProps, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { type Address } from '@proton/shared/lib/interfaces';
@@ -282,7 +282,7 @@ export const BoostTransactionModal = ({ transaction, onBoost, ...modalProps }: P
                         step={1}
                         value={feesValue}
                         onChange={(value) => setFeesValue(value)}
-                        size="small"
+                        size={SliderSizeEnum.Small}
                         color="norm"
                     ></Slider>
                 </div>

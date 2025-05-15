@@ -1,10 +1,7 @@
 import { useState } from 'react';
 
-
-
-import Slider from './Slider';
+import Slider, { SliderSizeEnum } from './Slider';
 import mdx from './Slider.mdx';
-
 
 export default {
     component: Slider,
@@ -69,7 +66,7 @@ export const Size = () => {
     return (
         <div className="p-7">
             <div>
-                <Slider size="small" value={value} onInput={setValue} />
+                <Slider size={SliderSizeEnum.Small} value={value} onInput={setValue} />
             </div>
             <div className="mt-8">
                 <Slider value={value} onInput={setValue} />
