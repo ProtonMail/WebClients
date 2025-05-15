@@ -787,6 +787,9 @@
       "Manage users/addresses": [
         "Gebruikers/adressen beheren"
       ],
+      "Mark as favorite": [
+        "Markeer als favoriet"
+      ],
       "Mark as read": [
         "Markeer als gelezen"
       ],
@@ -1053,6 +1056,9 @@
       ],
       "Remove expiration time": [
         "Vervaltijd verwijderen"
+      ],
+      "Remove from favorites": [
+        "Verwijder uit favorieten"
       ],
       "Remove gift code": [
         "Verwijder geschenkcode"
@@ -1736,7 +1742,7 @@
         "privacy"
       ],
       "Online document editor": [
-        "Online document editor"
+        "Online documenteditor"
       ],
       "Online privacy for up to 2 people": [
         "Online privacy voor maximaal 2 personen"
@@ -2538,10 +2544,10 @@
     },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } is een privacy-first AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
+        "${ LUMO_APP_NAME } is een privacygerichte AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
       ],
       "Add ${ LUMO_APP_NAME }": [
-        "Toevoegen ${ LUMO_APP_NAME }"
+        "${ LUMO_APP_NAME } toevoegen"
       ]
     },
     "color": {
@@ -9715,11 +9721,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Uw account loopt het risico om te worden verwijderd. Om het verlies van gegevens te voorkomen vraag uw beheerder om te upgraden. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Uw opslag is vol. Om e-mails te verzenden of te ontvangen, maak ruimte vrij of ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Uw opslag is vol. Maak ruimte vrij om bestanden te uploaden of te synchroniseren of ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Uw opslag is vol. Om ${ BRAND_NAME } producten te kunnen blijven gebruiken, maakt u ruimte vrij of voert u een ${ cta } uit."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Uw abonnement is afgelopen. ${ cta } en om het verlies van gegevens te voorkomen."
@@ -12641,6 +12644,9 @@
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Om ${ BRAND_NAME } producten te kunnen blijven gebruiken, maakt u ruimte vrij of voert u een ${ upgrade } uit"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Maak ruimte vrij of ${ upgrade } om mail te verzenden of te ontvangen"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Maak ruimte vrij of upgrade voor meer opslag om mail te blijven verzenden of te ontvangen."
