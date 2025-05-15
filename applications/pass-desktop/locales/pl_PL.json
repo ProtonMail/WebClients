@@ -403,10 +403,10 @@
       "Move to another vault": [
         "Przenieś do innego sejfu"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Przenieś do kosza"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Przenieś do kosza"
       ],
       "Multiple select": [
@@ -438,6 +438,9 @@
       ],
       "Pause monitoring": [
         "Wstrzymaj monitoring"
+      ],
+      "Pay once": [
+        "Zapłać raz"
       ],
       "Pin item": [
         "Przypnij element"
@@ -693,7 +696,7 @@
         "500 GB zaszyfrowanej przestrzeni dyskowej"
       ],
       "Add unlimited credit cards": [
-        "Dodaj nieograniczoną liczbę kart płatniczych"
+        "Możliwość dodania nieograniczonej liczby kart płatniczych"
       ],
       "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
         "Wszystkie funkcje premium ${ BRAND_NAME } Mail, Pass, VPN, Drive i Calendar"
@@ -702,10 +705,10 @@
         "Zniżki oparte są na standardowych cenach miesięcznych. Po zakończeniu cyklu rozliczeniowego Twoja subskrypcja zostanie odnowiona według standardowej rocznej stawki."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
-        "Podwój zaszyfrowaną przestrzeń dyskową — zyskaj 1 TB i chroń wszystkie swoje dane"
+        "Podwój zaszyfrowaną przestrzeń dyskową – zyskaj 1 TB i chroń wszystkie swoje dane"
       ],
       "Encrypted password manager": [
-        "Szyfrowany menadżer haseł"
+        "Szyfrowany menedżer haseł"
       ],
       "Here's an exclusive gift to celebrate our journey together.": [
         "Oto ekskluzywny prezent, którym chcemy uczcić naszą wspólną podróż."
@@ -722,11 +725,20 @@
       "Online privacy for your whole family (up to 6 users)": [
         "Prywatność online dla całej Twojej rodziny (do 6 osób)"
       ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Dużo zaoszczędź na funkcjach premium usługi Drive dzięki ograniczonej czasowo zniżce."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Dużo zaoszczędź na funkcjach premium usługi Mail dzięki ograniczonej czasowo zniżce."
+      ],
       "Save big on premium Pass features with a limited-time discount.": [
-        "Dużo zaoszczędź na funkcjach Pass premium dzięki ograniczonej czasowo zniżce."
+        "Dużo zaoszczędź na funkcjach premium usługi Pass dzięki ograniczonej czasowo zniżce."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Dużo zaoszczędź na funkcjach premium usługi VPN dzięki ograniczonej czasowo zniżce."
       ],
       "Save time with built-in 2FA": [
-        "Zaoszczędź czas dzięki wbudowanemu 2FA"
+        "Zaoszczędź czas dzięki wbudowanemu uwierzytelnianiu dwustopniowemu"
       ],
       "Secure email with unlimited aliases": [
         "Bezpieczna poczta e-mail z nieograniczoną liczbą aliasów"
@@ -738,10 +750,10 @@
         "dzięki Tobie"
       ],
       "Triple your encrypted storage – get 3 TB for all your data": [
-        "Potrój zaszyfrowaną przestrzeń dyskową — zyskaj 3 TB i chroń wszystkie swoje dane"
+        "Potrój zaszyfrowaną przestrzeń dyskową – zyskaj 3 TB i chroń wszystkie swoje dane"
       ],
       "years": [
-        "lat"
+        "lata"
       ]
     },
     "anniversary_2025: offer": {
@@ -1997,10 +2009,7 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -2428,6 +2437,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Kliknij ikonę ${ PASS_APP_NAME } na pasku narzędzi przeglądarki, aby przejrzeć zaimportowane dane."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Zaufany przez ponad 50 000 użytkowników biznesowych i 100 milionów kont na całym świecie."
+      ],
       "Unable to copy to clipboard": [
         "Nie można skopiować do schowka"
       ],
@@ -2811,6 +2823,9 @@
       "Browse faster, smarter": [
         "Przeglądaj szybciej i mądrzej"
       ],
+      "Built-in 2FA": [
+        "Wbudowana aplikacja uwierzytelniająca"
+      ],
       "Capital letters (A-Z)": [
         "Wielkie litery (A-Z)"
       ],
@@ -2895,6 +2910,9 @@
       "Created at": [
         "Utworzono na stronie"
       ],
+      "Credit cards": [
+        "Karty płatnicze"
+      ],
       "Custom hidden field": [
         "Ukryte tekstowe pole niestandardowe"
       ],
@@ -2967,6 +2985,9 @@
       "Export": [
         "Eksportowanie"
       ],
+      "Extra email addresses": [
+        "Dodatkowe adresy e-mail"
+      ],
       "Extra password": [
         "Dodatkowe hasło"
       ],
@@ -2978,6 +2999,9 @@
       ],
       "Field name": [
         "Nazwa pola"
+      ],
+      "File attachments": [
+        "Załączniki"
       ],
       "File format": [
         "Format pliku"
@@ -3015,6 +3039,12 @@
       "Generic CSV": [
         "Ogólny plik CSV"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Wybierz plan ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Wybierz plan ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "Rozpocznij"
       ],
@@ -3032,6 +3062,9 @@
       ],
       "Hide-my-email aliases": [
         "Aliasy hide-my-email"
+      ],
+      "Highest": [
+        "Najwyższa"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Jak odblokować ${ PASS_SHORT_APP_NAME }"
@@ -3128,6 +3161,9 @@
       ],
       "License number": [
         "Numer prawa jazdy"
+      ],
+      "Limited time": [
+        "Oferta ograniczona czasowo"
       ],
       "LinkedIn account": [
         "Profil LinkedIn"
@@ -3279,6 +3315,9 @@
       "PIN code": [
         "Kod PIN"
       ],
+      "Plus": [
+        "Plus"
+      ],
       "Prefix": [
         "Przedrostek"
       ],
@@ -3405,6 +3444,9 @@
       "Status": [
         "Status"
       ],
+      "Storage": [
+        "Przestrzeń dyskowa"
+      ],
       "Street address": [
         "Ulica"
       ],
@@ -3431,6 +3473,9 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "To, co najlepsze w ${ BRAND_NAME } w jednej subskrypcji"
       ],
       "The URL has been copied to the clipboard": [
         "Link został skopiowany do schowka"
@@ -3467,6 +3512,12 @@
       ],
       "Unknown": [
         "Nieznany"
+      ],
+      "Unlimited": [
+        "Bez limitu"
+      ],
+      "Unlock premium features": [
+        "Odblokuj funkcje premium"
       ],
       "Unlock with": [
         "Odblokuj za pomocą"
@@ -3507,6 +3558,9 @@
       "Vault ID": [
         "Identyfikator sejfu"
       ],
+      "Vault, item & link sharing": [
+        "Udostępnianie sejfu i elementu"
+      ],
       "Vaults": [
         "Sejfy"
       ],
@@ -3515,6 +3569,12 @@
       ],
       "View logs": [
         "Pokaż logi"
+      ],
+      "VPN Devices": [
+        "Urządzenia VPN"
+      ],
+      "VPN Speed": [
+        "Prędkość VPN"
       ],
       "Vulnerable": [
         "Bardzo słabe"
@@ -3527,6 +3587,9 @@
       ],
       "Websites": [
         "Strony internetowe"
+      ],
+      "What's included": [
+        "Co zawiera"
       ],
       "Work details": [
         "Szczegóły służbowe"
@@ -3576,6 +3639,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Włącz ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Menu": {
@@ -3759,6 +3827,14 @@
       ],
       "You can attach files to items for a better organization": [
         "Do elementów możesz dodawać pliki w celu lepszej organizacji"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus Lifetime za ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price } / miesiąc"
       ]
     },
     "Placeholder": {
@@ -4031,8 +4107,14 @@
       "${ BRAND_NAME } addresses": [
         "Adresy ${ BRAND_NAME }"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Ochrona konta"
@@ -4315,6 +4397,9 @@
       ],
       "Pause monitoring?": [
         "Wstrzymać monitoring?"
+      ],
+      "Pay once, access forever.": [
+        "Zapłać raz, uzyskaj dostęp na zawsze."
       ],
       "Pending access confirmation": [
         "Oczekiwanie na potwierdzenie dostępu"
