@@ -128,6 +128,7 @@ const handlePreload = () => {
     if (!cryptoWorkerPromise) {
         cryptoWorkerPromise = loadCrypto({
             appName: APPS.PROTONACCOUNT,
+            unleashClient: undefined
         });
     }
 };
