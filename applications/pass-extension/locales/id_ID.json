@@ -152,11 +152,11 @@
       "Create": [
         "Buat"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Buat Akun ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Buat akun ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Buat Akun ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Buat alias"
@@ -1755,6 +1755,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
       ],
       "Moving items": [
         "Memindahkan item"

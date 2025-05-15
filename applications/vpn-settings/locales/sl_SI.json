@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Trgovina ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate organization key": [
         "Aktiviraj ključ organizacije"
@@ -261,10 +261,10 @@
       "Discard": [
         "Zavrzi"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Zavrzi spremembe"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Zavrzi spremembe"
       ],
       "Dismiss": [
@@ -441,10 +441,10 @@
       "Invite user": [
         "Povabite uporabnika"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Nadaljuj z urejanjem"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Nadaljuj z urejanjem"
       ],
       "Keep logo": [
@@ -479,6 +479,9 @@
       ],
       "Mark as default": [
         "Označi kot privzeto"
+      ],
+      "Mark as favorite": [
+        "Označi kot priljubljeno"
       ],
       "More info: ${ safeTitle }": [
         "Več informacij: ${ safeTitle }"
@@ -555,11 +558,11 @@
       "Refresh status": [
         "Osveži stanje"
       ],
-      "refresh the page": [
-        "Osvežite stran"
-      ],
       "Refresh the page": [
         "Osveži stran"
+      ],
+      "refresh the page": [
+        "Osvežite stran"
       ],
       "Remove": [
         "Odstrani"
@@ -575,6 +578,9 @@
       ],
       "Remove domain": [
         "Odstrani domeno"
+      ],
+      "Remove from favorites": [
+        "Odstrani iz priljubljenih"
       ],
       "Remove gift code": [
         "Odstrani darilno kodo"
@@ -4209,11 +4215,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Prilagodite prikaz aplikacij ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Namenski strežniki"
-      ],
       "dedicated servers": [
         "namenske strežnike"
+      ],
+      "Dedicated servers": [
+        "Namenski strežniki"
       ],
       "default email address": [
         "privzeti e-poštni naslov"
@@ -6463,12 +6469,6 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Vaš račun se lahko izbriše. Če se želite izogniti izgubi podatkov, prosite skrbnika za nadgradnjo. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Shramba je polna. Če želite pošiljati ali prejemati sporočila, sprostite nekaj prostora ali ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Shramba je polna. Če želite uvoziti ali sinhronizirati datoteke, sprostite nekaj prostora ali ${ cta }."
-      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Naročnina se je končala. ${ cta } in se izognite izgubi podatkov."
       ]
@@ -7802,17 +7802,6 @@
         "Dobrodošli v ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Vsi"
-      ],
-      "Group members": [
-        "Člani skupine"
-      ],
-      "No one": [
-        "Nihče"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Dovoljeno ${ defaultLabel }"
@@ -7876,6 +7865,17 @@
       ],
       "The whole organization": [
         "Celotna organizacija"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Vsi"
+      ],
+      "Group members": [
+        "Člani skupine"
+      ],
+      "No one": [
+        "Nihče"
       ]
     },
     "Organization capacity error": {
@@ -9565,6 +9565,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "and 15 more premium features": [
+        "in še 15 premijskih funkcij"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Samodejno posredovanje e-pošte ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Namizna aplikacija"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
+      ],
+      "No ads or tracking": [
+        "Brez oglasov ali sledenja"
+      ],
+      "Short @pm.me email address": [
+        "Kratek e-poštni naslov @pm.me"
+      ],
+      "Support our mission": [
+        "Podprite naše poslanstvo"
+      ],
+      "Upgrade": [
+        "Prehod na plačljiv paket"
+      ],
+      "Upgrade your productivity": [
+        "Povečajte svojo storilnost"
+      ],
+      "We don't sell your data": [
+        "Vaših podatkov ne prodajamo"
+      ],
+      "Your privacy is our mission": [
+        "Vaša zasebnost je naše poslanstvo"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } in ${ VPN_SHORT_APP_NAME } s premijskimi funkcijami"
@@ -9811,47 +9852,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Vaš kratek e-poštni vzdevek @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB prostora za shranjevanje"
-      ],
-      "and 15 more premium features": [
-        "in še 15 premijskih funkcij"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Samodejno posredovanje e-pošte ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Namizna aplikacija"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
-      ],
-      "No ads or tracking": [
-        "Brez oglasov ali sledenja"
-      ],
-      "Short @pm.me email address": [
-        "Kratek e-poštni naslov @pm.me"
-      ],
-      "Support our mission": [
-        "Podprite naše poslanstvo"
-      ],
-      "Upgrade": [
-        "Prehod na plačljiv paket"
-      ],
-      "Upgrade your productivity": [
-        "Povečajte svojo storilnost"
-      ],
-      "We don't sell your data": [
-        "Vaših podatkov ne prodajamo"
-      ],
-      "Your privacy is our mission": [
-        "Vaša zasebnost je naše poslanstvo"
       ]
     },
     "Subscription renewal state": {

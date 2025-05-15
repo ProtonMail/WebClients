@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
-      "Activate": [
-        "Активировать"
-      ],
       "activate": [
         "включить"
+      ],
+      "Activate": [
+        "Активировать"
       ],
       "Activate organization key": [
         "Активировать ключ организации"
@@ -267,10 +267,10 @@
       "Discard": [
         "Сбросить"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Сбросить изменения"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Сбросить изменения"
       ],
       "Discover ${ planName }": [
@@ -456,10 +456,10 @@
       "Invite user": [
         "Пригласить пользователя"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Продолжить изменение"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Продолжить изменение"
       ],
       "Keep logo": [
@@ -497,6 +497,9 @@
       ],
       "Mark as default": [
         "Установить по умолчанию"
+      ],
+      "Mark as favorite": [
+        "Отметить как избранное"
       ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
@@ -573,11 +576,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Refresh the page": [
         "Обновить страницу"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Remove": [
         "Удалить"
@@ -593,6 +596,9 @@
       ],
       "Remove domain": [
         "Удалить домен"
+      ],
+      "Remove from favorites": [
+        "Убрать из избранных"
       ],
       "Remove gift code": [
         "Удалить подарочный код"
@@ -969,6 +975,9 @@
       ]
     },
     "Address action": {
+      "Allow unsigned mail": [
+        "Разрешать почту без подписи"
+      ],
       "Delete address": [
         "Удалить адрес"
       ],
@@ -2727,8 +2736,20 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } в ${ DRIVE_APP_NAME } позволяет вам работать вместе с другими людьми в защищенной и зашифрованной среде."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Добавляйте папки и файлы в ${ DRIVE_APP_NAME } и приглашайте членов команды для просмотра или изменения."
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Автоматически пересылайте входящие сообщения на другой адрес электронной почты."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Сначала настройте это, чтобы активировать вашу организацию и настроить ваш адрес электронной почты."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Подключите CRM (управление взаимоотношениями с клиентами), веб-сайт, принтеры и многое другое."
       ],
       "Create groups you can email with a single address.": [
         "Создавайте группы, в которые вы сможете отправлять электронные письма с одного адреса."
@@ -2739,8 +2760,14 @@
       "Easily access your email and calendar on desktop and mobile.": [
         "Получите легкий доступ к вашей электронной почте и календарю на компьютере и мобильных устройствах."
       ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Легко синхронизируйте файлы с облаком с настольного компьютера и получайте к ним доступ с мобильного устройства."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Поощряйте использование двухфакторной аутентификации в вашей организации для обеспечения дополнительной безопасности."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Обеспечьте защищенный доступ к данным организации, даже если ваша команда работает удаленно или использует публичный WiFi."
       ],
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "Обеспечьте высочайший уровень безопасности для вашего аккаунта с помощью программы ${ PROTON_SENTINEL_NAME }."
@@ -2757,17 +2784,26 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Поможет вашей команде защищенно хранить пароли к конфиденциальной деловой и клиентской информации."
+      ],
       "If disabled, only admins will have access.": [
         "Если отключено, доступ будет иметь только администраторы."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Разделите разные части своей жизни и упорядочьте свой почтовый ящик с помощью дополнительных адресов."
       ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Позволяет мгновенно добавлять ссылки на встречи к вашим приглашениям на события."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Никто из вашей организации не может подключиться к общим серверам."
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Настроить аккаунты для всех пользователей и пригласить их присоединиться к ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Упростите синхронизацию и планирование с общими календарями."
       ],
       "To start, give your organization a name.": [
         "Чтобы начать, дайте имя вашей организации."
@@ -4732,11 +4768,11 @@
       "Data recoverable on this device": [
         "Данные, которые можно восстановить на этом устройстве"
       ],
-      "Dedicated servers": [
-        "Выделенные серверы"
-      ],
       "dedicated servers": [
         "выделенные серверы"
+      ],
+      "Dedicated servers": [
+        "Выделенные серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с выделенными IP-адресами могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -6250,6 +6286,12 @@
         "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }.",
         "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }."
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адрес Gmail. Чтобы добавить еще один, сначала отключите один из них.",
+        "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адреса Gmail. Чтобы добавить еще один, сначала отключите один из них.",
+        "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адресов Gmail. Чтобы добавить еще один, сначала отключите один из них.",
+        "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адресов Gmail. Чтобы добавить еще один, сначала отключите один из них."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Ваша ${ boldDiscountPercent } для ${ boldPlanTitle } была использована."
       ],
@@ -7377,11 +7419,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ваш аккаунт находится под угрозой удаления. Чтобы избежать потери данных, обратитесь к администратору с просьбой об улучшении тарифа. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ваше хранилище заполнено. Чтобы отправлять или получать электронные письма, освободите место или ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ваше хранилище заполнено. Чтобы загружать или синхронизировать файлы, освободите место или ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Ваше хранилище заполнено. Чтобы продолжить использование продуктов ${ BRAND_NAME }, освободите место или ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Ваша подписка закончилась. ${ cta } и избежать потери данных."
@@ -8788,17 +8827,6 @@
         "Добро пожаловать в ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Все"
-      ],
-      "Group members": [
-        "Участники группы"
-      ],
-      "No one": [
-        "Никто"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Разрешено ${ defaultLabel }"
@@ -8868,6 +8896,17 @@
       ],
       "The whole organization": [
         "Вся организация"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Все"
+      ],
+      "Group members": [
+        "Участники группы"
+      ],
+      "No one": [
+        "Никто"
       ]
     },
     "Organization capacity error": {
@@ -10619,6 +10658,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Чтобы продолжить использование продуктов ${ BRAND_NAME }, освободите место или ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Для отправки и получения электронной почты, освободите место или ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Чтобы загрузить или синхронизировать файлы, освободите место или ${ upgrade }"
       ],
@@ -10822,6 +10864,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription reminder": {
@@ -11124,47 +11207,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -12943,6 +12985,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Затем вам будут выставляться счета каждые 12 месяцев по цене ${ renewPriceStr }."
+      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Ваша подписка будет автоматически продлена через ${ cycle } месяц.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",

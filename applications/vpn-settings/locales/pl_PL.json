@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktywuj"
-      ],
       "activate": [
         "aktywować"
+      ],
+      "Activate": [
+        "Aktywuj"
       ],
       "Activate organization key": [
         "Aktywuj klucz organizacji"
@@ -267,10 +267,10 @@
       "Discard": [
         "Odrzuć"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Odrzuć zmiany"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Odrzuć zmiany"
       ],
       "Discover ${ planName }": [
@@ -456,10 +456,10 @@
       "Invite user": [
         "Zaproś użytkownika"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Kontynuuj edytowanie"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Kontynuuj edytowanie"
       ],
       "Keep logo": [
@@ -497,6 +497,9 @@
       ],
       "Mark as default": [
         "Oznacz jako domyślną"
+      ],
+      "Mark as favorite": [
+        "Dodaj do ulubionych"
       ],
       "More info: ${ safeTitle }": [
         "Więcej informacji: ${ safeTitle }"
@@ -573,10 +576,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
       "Remove": [
@@ -593,6 +596,9 @@
       ],
       "Remove domain": [
         "Usuń domenę"
+      ],
+      "Remove from favorites": [
+        "Usuń z ulubionych"
       ],
       "Remove gift code": [
         "Usuń kod podarunkowy"
@@ -969,6 +975,9 @@
       ]
     },
     "Address action": {
+      "Allow unsigned mail": [
+        "Zezwalaj na niepodpisane wiadomości"
+      ],
       "Delete address": [
         "Usuń adres"
       ],
@@ -1075,7 +1084,7 @@
         "500 GB zaszyfrowanej przestrzeni dyskowej"
       ],
       "Add unlimited credit cards": [
-        "Dodaj nieograniczoną liczbę kart płatniczych"
+        "Możliwość dodania nieograniczonej liczby kart płatniczych"
       ],
       "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
         "Wszystkie funkcje premium ${ BRAND_NAME } Mail, Pass, VPN, Drive i Calendar"
@@ -1087,10 +1096,10 @@
         "Zniżki oparte są na standardowych cenach miesięcznych. Po zakończeniu cyklu rozliczeniowego Twoja subskrypcja zostanie odnowiona według standardowej rocznej stawki."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
-        "Podwój zaszyfrowaną przestrzeń dyskową — zyskaj 1 TB i chroń wszystkie swoje dane"
+        "Podwój zaszyfrowaną przestrzeń dyskową – zyskaj 1 TB i chroń wszystkie swoje dane"
       ],
       "Encrypted password manager": [
-        "Szyfrowany menadżer haseł"
+        "Szyfrowany menedżer haseł"
       ],
       "Here's an exclusive gift to celebrate our journey together.": [
         "Oto ekskluzywny prezent, którym chcemy uczcić naszą wspólną podróż."
@@ -1117,19 +1126,19 @@
         "Odzyskiwanie poprzednich wersji plików"
       ],
       "Save big on premium Drive features with a limited-time discount.": [
-        "Dużo zaoszczędź na funkcjach premium Drive dzięki ograniczonej czasowo zniżce."
+        "Dużo zaoszczędź na funkcjach premium usługi Drive dzięki ograniczonej czasowo zniżce."
       ],
       "Save big on premium Mail features with a limited-time discount.": [
-        "Dużo zaoszczędź na funkcjach premium Maila dzięki ograniczonej czasowo zniżce."
+        "Dużo zaoszczędź na funkcjach premium usługi Mail dzięki ograniczonej czasowo zniżce."
       ],
       "Save big on premium Pass features with a limited-time discount.": [
-        "Dużo zaoszczędź na funkcjach Pass premium dzięki ograniczonej czasowo zniżce."
+        "Dużo zaoszczędź na funkcjach premium usługi Pass dzięki ograniczonej czasowo zniżce."
       ],
       "Save big on premium VPN features with a limited-time discount.": [
-        "Dużo zaoszczędź na funkcjach VPN premium dzięki ograniczonej czasowo zniżce."
+        "Dużo zaoszczędź na funkcjach premium usługi VPN dzięki ograniczonej czasowo zniżce."
       ],
       "Save time with built-in 2FA": [
-        "Zaoszczędź czas dzięki wbudowanemu 2FA"
+        "Zaoszczędź czas dzięki wbudowanemu uwierzytelnianiu dwustopniowemu"
       ],
       "Secure email with unlimited aliases": [
         "Bezpieczna poczta e-mail z nieograniczoną liczbą aliasów"
@@ -1150,7 +1159,7 @@
         "dzięki Tobie"
       ],
       "Triple your encrypted storage – get 3 TB for all your data": [
-        "Potrój zaszyfrowaną przestrzeń dyskową — zyskaj 3 TB i chroń wszystkie swoje dane"
+        "Potrój zaszyfrowaną przestrzeń dyskową – zyskaj 3 TB i chroń wszystkie swoje dane"
       ],
       "Unlimited folders, labels and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
@@ -1159,7 +1168,7 @@
         "Możliwość użycia własnej domeny e-mail"
       ],
       "years": [
-        "lat"
+        "lata"
       ]
     },
     "anniversary_2025: offer": {
@@ -4759,11 +4768,11 @@
       "Data recoverable on this device": [
         "Dane możliwe do odzyskania na tym urządzeniu"
       ],
-      "Dedicated servers": [
-        "Dedykowane serwery"
-      ],
       "dedicated servers": [
         "dedykowane serwery"
+      ],
+      "Dedicated servers": [
+        "Dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP mogą zostać dodane do prywatnych bram, aby umożliwić precyzyjną kontrolę nad nimi."
@@ -7410,11 +7419,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Konto może zostać usunięte. Aby uniknąć utraty danych, poproś administratora o ulepszenie konta. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Przestrzeń dyskowa jest pełna. Zwolnij część miejsca lub ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Przestrzeń dyskowa jest pełna. Zwolnij część miejsca lub ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Przestrzeń dyskowa jest pełna. Aby korzystać z usług ${ BRAND_NAME }, zwolnij część miejsca lub ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Subskrypcja zakończyła się. ${ cta } i uniknąć utraty danych."
@@ -8821,17 +8827,6 @@
         "Witaj w ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Wszyscy"
-      ],
-      "Group members": [
-        "Użytkownicy grupy"
-      ],
-      "No one": [
-        "Nikt"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Dozwolono ${ defaultLabel }"
@@ -8901,6 +8896,17 @@
       ],
       "The whole organization": [
         "Cała organizacja"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Wszyscy"
+      ],
+      "Group members": [
+        "Użytkownicy grupy"
+      ],
+      "No one": [
+        "Nikt"
       ]
     },
     "Organization capacity error": {
@@ -10652,6 +10658,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Aby korzystać z usług ${ BRAND_NAME }, zwolnij część miejsca lub${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Zwolnij część miejsca lub ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Zwolnij część miejsca lub ${ upgrade }"
       ],
@@ -10855,6 +10864,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
       ]
     },
     "Subscription reminder": {
@@ -11157,47 +11207,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Krótki alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "and 15 more premium features": [
-        "i 15 więcej funkcji premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatyczne przekierowanie ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerty wycieków ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikacja desktopowa"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
-      ],
-      "No ads or tracking": [
-        "Brak reklam i śledzenia"
-      ],
-      "Short @pm.me email address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Wesprzyj naszą misję"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
-      "We don't sell your data": [
-        "Nie sprzedajemy Twoich danych"
-      ],
-      "Your privacy is our mission": [
-        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {

@@ -37,7 +37,7 @@
         "${ BRAND_NAME } mağazası"
       ],
       "A to Z": [
-        "A'dan Z'ye"
+        "A-Z"
       ],
       "Activate": [
         "Kullanıma al"
@@ -46,7 +46,7 @@
         "Kurtarma özelliğini aç"
       ],
       "Active": [
-        "Aktif"
+        "Etkin"
       ],
       "Add": [
         "Ekle"
@@ -498,6 +498,9 @@
       "Expand composer": [
         "Oluşturucuyu büyüt"
       ],
+      "Expand navigation bar to see custom views": [
+        "Gezinme çubuğunu özel görünümleri görüntüleyecek şekilde genişlet"
+      ],
       "Expand navigation bar to see folders": [
         "Gezinme çubuğunu klasörleri görüntüleyecek şekilde genişlet"
       ],
@@ -736,6 +739,9 @@
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
+      "Least read": [
+        "En az okunan"
+      ],
       "Let's talk": [
         "Hadi konuşalım!"
       ],
@@ -780,6 +786,9 @@
       ],
       "Manage users/addresses": [
         "Kullanıcıları/adresleri yönetin"
+      ],
+      "Mark as favorite": [
+        "Beğenilen olarak işaretle"
       ],
       "Mark as read": [
         "Okunmuş olarak işaretle"
@@ -1013,7 +1022,7 @@
         "Okundu bilgisi gönderildi"
       ],
       "Recently received": [
-        "Son zamanda gelenler"
+        "Son alınanlar"
       ],
       "Reconnect": [
         "Yeniden bağlan"
@@ -1047,6 +1056,9 @@
       ],
       "Remove expiration time": [
         "Geçerlilik süresini kaldır"
+      ],
+      "Remove from favorites": [
+        "Beğenilenlerden kaldır"
       ],
       "Remove gift code": [
         "Hediye kodunu kaldır"
@@ -1098,6 +1110,9 @@
       ],
       "Reset to default": [
         "Varsayılana sıfırla"
+      ],
+      "Resize panel": [
+        "Panoyu boyutlandır"
       ],
       "Restore": [
         "Geri yükle"
@@ -1418,7 +1433,7 @@
         "Abonelikten ayrıl"
       ],
       "Unsubscribed": [
-        "Abonelikten ayrıldınız"
+        "Abonelikten çıkıldı"
       ],
       "Unsubscribing": [
         "Abonelikten çıkılıyor"
@@ -6045,16 +6060,16 @@
         "${ provider } üzerinden içe aktar"
       ],
       "Import from Google": [
-        "Google'dan içe aktar"
+        "Google üzerinden içe aktar"
       ],
       "Import from other": [
-        "Diğerlerinden içe aktar"
+        "Diğerleri üzerinden içe aktar"
       ],
       "Import from Outlook": [
-        "Outlook'tan içe aktar"
+        "Outlook üzerinden içe aktar"
       ],
       "Import from Yahoo": [
-        "Yahoo'dan içe aktar"
+        "Yahoo üzerinden içe aktar"
       ]
     },
     "Import warning": {
@@ -6082,6 +6097,15 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "Eski e-postaları ${ boldBulkDelete }, arşivleyin ya da bir klasöre taşıyın."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "Artık ilgilenmediğiniz abonelikleri ${ boldQuicklySpot }."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "Tek tıklamayla ${ boldUnsubscribe }."
       ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "${ BRAND_NAME } Scribe, hızlı ve kolayca daha iyi e-postalar oluşturmanızı sağlar."
@@ -6260,6 +6284,14 @@
       "${ storage } storage": [
         "${ storage } depolama alanı"
       ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "Geçen ay ${ subscription.ReceivedMessages.Last30Days } e-posta",
+        "Geçen ay ${ subscription.ReceivedMessages.Last30Days } e-posta"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } okunmamış",
+        "${ subscription.UnreadMessageCount } okunmamış"
+      ],
       "${ total } conversation": [
         "${ total } yazışma",
         "${ total } yazışma"
@@ -6267,6 +6299,14 @@
       "${ total } message": [
         "${ total } ileti",
         "${ total } ileti"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } e-posta izleyici engellendi",
+        "${ trackersCount } e-posta izleyici engellendi"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } izleyici engellendi",
+        "${ trackersCount } izleyici engellendi"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } zamanlanmış ileti",
@@ -6386,6 +6426,15 @@
         "Tümü (${ totalFoldersCount } etiket)",
         "Tümü (${ totalFoldersCount } etiket)"
       ],
+      "All messages from this mailing list will be marked as read.": [
+        "Bu e-posta listesinden gelen tüm iletiler okunmuş olarak işaretlenecek."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Bu e-posta listesinden gelen tüm iletiler Arşiv klasörüne taşınacak."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Bu e-posta listesinden gelen tüm iletiler çöpe atılacak."
+      ],
       "All messages stored in this folder will be permanently deleted.": [
         "Bu klasöre kaydedilmiş tüm iletiler kalıcı olarak silinecek."
       ],
@@ -6427,7 +6476,7 @@
         "ve"
       ],
       "and more.": [
-        "ve daha fazlası."
+        "ve diğerlerine."
       ],
       "Another tip will be displayed next time you open Mail": [
         "Mail uygulamasını bir sonraki açışınızda başka bir ipucu görüntülenecek"
@@ -6438,6 +6487,9 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Alt klasörler de silinecek. Ancak ${ nameDeleted } klasöründeki e-postalar silinmeyecek ve Tüm e-postalar klasöründe bulunabilecek."
       ],
+      "Apply to future messages ": [
+        "Gelecekteki iletilere de uygula "
+      ],
       "Applying actions to conversations": [
         "İşlemler yazışmalara uygulanıyor"
       ],
@@ -6445,7 +6497,7 @@
         "İşlemler iletilere uygulanıyor"
       ],
       "Archive existing messages": [
-        "Var olan mesajları arşivle"
+        "Var olan iletileri arşivle"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Bu klasördeki tüm iletileri silmek istediğinize emin misiniz?"
@@ -6532,7 +6584,7 @@
         "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha kararlı bir çevrim içi deneyim sağlayın."
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Mesajlarınızı, kişilerinizi ve takvimlerinizi ${ BRAND_NAME }'e taşıyın."
+        "İletilerinizi, kişilerinizi ve takvimlerinizi ${ BRAND_NAME } üzerine alın."
       ],
       "Browse privately and access blocked content.": [
         "Gizliğinizi koruyarak gezinin ve engellenen içeriklere erişin."
@@ -6750,11 +6802,18 @@
       "Drop to import": [
         "İçe aktarmak için bırakın"
       ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
+        "Alıcınızın yapılandırması nedeniyle, bu ileti şu kişiye geçerlilik süresi ile gönderilemez: ",
+        "Alıcınızın yapılandırması nedeniyle, bu ileti şu kişilere geçerlilik süresi ile gönderilemez: "
+      ],
       "Duplicate key updated": [
         "Çift anahtar güncellendi"
       ],
       "Each code can only be used once": [
         "Her kod yalnızca bir kez kullanılabilir"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Duyuru ve e-posta listelerini kolayca yönetin ve aboneliklerinden ayrılın."
       ],
       "Edit email address": [
         "E-posta adresini düzenle"
@@ -7110,7 +7169,7 @@
         "Etiketlerinizi yönetin"
       ],
       "Mark all as read": [
-        "Tümünü okundu olarak işaretle"
+        "Tümünü okunmuş olarak işaretle"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
@@ -7419,6 +7478,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Henüz belgeleri herkese açık olarak paylaşma özelliği yok."
+      ],
+      "Quickly spot": [
+        "Hızlı fark edin"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "${ BRAND_NAME } ile ilgili her konuda yardım almak için bizimle görüşün."
@@ -7902,6 +7964,9 @@
       "Tracking": [
         "İzleme"
       ],
+      "Trash existing messages": [
+        "Var olan iletileri çöpe at"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Herkese açık olarak sunulmadan önce yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini deneyin. Uygulama yeniden yüklenir"
       ],
@@ -7927,7 +7992,7 @@
         "Kaydedilmemiş değişiklikler"
       ],
       "Unsubscribe": [
-        "Aboneliği iptal et"
+        "Abonelikten ayrıl"
       ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
@@ -8654,6 +8719,12 @@
       " and ${ l }": [
         " ve ${ l }"
       ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Tüm iletileri okunmuş olarak işaretle"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Tüm iletileri ${ boldFolderName } içine taşı"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
@@ -8675,6 +8746,9 @@
       ],
       "Actions": [
         "İşlemler"
+      ],
+      "Active filter:": [
+        "Etkin süzgeç:"
       ],
       "Add email address": [
         "E-posta adresi ekle"
@@ -8723,6 +8797,9 @@
       ],
       "Apply filter to existing emails": [
         "Süzgeci var olan e-postalara uygula"
+      ],
+      "Apply to future messages": [
+        "Gelecekteki iletilere de uygula"
       ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
@@ -8988,6 +9065,9 @@
       "Mail Server (IMAP)": [
         "E-posta sunucusu (IMAP)"
       ],
+      "Mail subscriptions": [
+        "E-posta listesi abonelikleri"
+      ],
       "Main": [
         "Ana"
       ],
@@ -9004,7 +9084,7 @@
         "${ sidebarElementName } ögesini taşı"
       ],
       "Move messages to": [
-        "İletileri taşı"
+        "İletileri şuraya taşı"
       ],
       "Move to": [
         "Şuraya taşınsın"
@@ -9174,6 +9254,9 @@
       "System information": [
         "Sistem bilgileri"
       ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Süzgeç etkisizleştirilmiş. ${ settingsLink } bölümünden etkinleştirebilirsiniz."
+      ],
       "Theme": [
         "Tema"
       ],
@@ -9324,6 +9407,14 @@
       ],
       "To: ${ to }": [
         "Nereye: ${ to }"
+      ]
+    },
+    "Labels": {
+      "Newsletters you unsubscribe from will appear here.": [
+        "Aboneliğinden ayrıldığınız duyurular burada görüntülenir."
+      ],
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Duyuru ve e-posta listesi aboneliklerini buradan görüntüleyin-p ve yönetebilirsiniz."
       ]
     },
     "Landmarks": {
@@ -9546,6 +9637,9 @@
       "Types of recovery methods": [
         "Kurtarma yöntemi türleri"
       ],
+      "Views": [
+        "Görünümler"
+      ],
       "What’s this?": [
         "Bu nedir?"
       ],
@@ -9627,11 +9721,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Hesabınızın silinme riski var. Verileriniz kaybolmasını önlemek için yöneticinizden tarifenizi yükseltmesini isteyin. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Depolama alanınız dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Depolama alanınız dolu. Dosyaları yüklemek ya da eşitlemek için boş yer açın ya da ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Depolama alanınız dolmuş. ${ BRAND_NAME } ürünlerini kullanmayı sürdürmek için yer açın ya da ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Aboneliğinizin süresi dolmuş. Verilerinizin kaybolmasını önlemek için ${ cta }."
@@ -10543,7 +10634,7 @@
     },
     "new_plans: Subtext": {
       "Starting from ${ priceLine }": [
-        "${ priceLine }'dan başlayan fiyatlarla"
+        "${ priceLine } tutarından başlayan fiyatlarla"
       ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "İlk ay için ${ priceCoupon } indirimli tutar uygulanır. Ardından, otomatik olarak ${ priceLine } tutarla yenilenir. İstediğiniz zaman iptal edebilirsiniz."
@@ -12554,6 +12645,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME } ürünlerini kullanmayı sürdürmek için yer açın ya da ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "E-posta gönderebilmek veya alabilmek için depolama alanını boşaltın ya da ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da daha fazla depolama alanı edinmek için tarifenizi yükseltin."
       ],
@@ -13568,6 +13662,9 @@
       "Archive": [
         "Arşivle"
       ],
+      "Archive all messages?": [
+        "Tüm iletiler arşivlensin mi?"
+      ],
       "Are you sure you want to close the preview?": [
         "Ön izlemeyi kapatmak istediğinize emin misiniz?"
       ],
@@ -13937,8 +14034,17 @@
       "Load remote content": [
         "Uzak içeriği yükle"
       ],
+      "Mail Subscriptions": [
+        "E-posta abonelikleri"
+      ],
+      "Mail subscriptions": [
+        "E-posta listesi abonelikleri"
+      ],
       "Make a secure connection your default": [
         "Bağlantınızın her zaman güvenli olmasını sağlayın"
+      ],
+      "Mark all messages as read": [
+        "Tüm iletileri okunmuş olarak işaretle"
       ],
       "Mark as read": [
         "Okunmuş olarak işaretle"
@@ -14054,11 +14160,17 @@
       "No breaches detected": [
         "Herhangi bir veri sızıntısı yok"
       ],
+      "No mail subscriptions": [
+        "Herhangi bir e-posta listesi aboneliği yok"
+      ],
       "No need to empty the trash": [
         "Çöpü boşaltmanız gerekmez"
       ],
       "No trackers found": [
         "Herhangi bir izleyici bulunamadı"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Herhangi bir e-posta listesinin aboneliğinden çıkılmamış"
       ],
       "No-reply address detected": [
         "No-reply adresi bulundu"
@@ -14297,6 +14409,9 @@
       "Trash": [
         "Çöpe at"
       ],
+      "Trash all messages?": [
+        "Tüm iletiler çöpe atılsın mı?"
+      ],
       "Trust new key?": [
         "Yeni anahtara güvenilsin mi?",
         "Yeni anahtarlara güvenilsin mi?"
@@ -14312,6 +14427,9 @@
       ],
       "Unsubscribe": [
         "Abonelikten ayrıl"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "${ subscription.Name } aboneliğinden çıkılsın mı?"
       ],
       "Unsubscribe request sent": [
         "Abonelikten ayrılma isteği gönder"
@@ -14391,6 +14509,9 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "Your subscriptions in one place": [
+        "Abonelikleriniz tek bir yerde"
       ]
     },
     "Today icon tooltip in mini calendar": {

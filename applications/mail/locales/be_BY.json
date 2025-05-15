@@ -795,6 +795,9 @@
       "Manage users/addresses": [
         "Кіраваць карыстальнікамі/адрасамі"
       ],
+      "Mark as favorite": [
+        "Пазначыць як абранае"
+      ],
       "Mark as read": [
         "Пазначыць як прачытанае"
       ],
@@ -1061,6 +1064,9 @@
       ],
       "Remove expiration time": [
         "Выдаліць тэрмін дзеяння"
+      ],
+      "Remove from favorites": [
+        "Выдаліць з абранага"
       ],
       "Remove gift code": [
         "Выдаліць падарункавы код"
@@ -6303,6 +6309,12 @@
       "${ storage } storage": [
         "${ storage } сховішча"
       ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } ліст у мінулым месяцы",
+        "${ subscription.ReceivedMessages.Last30Days } лісты ў мінулым месяцы",
+        "${ subscription.ReceivedMessages.Last30Days } лістоў у мінулым месяцы",
+        "${ subscription.ReceivedMessages.Last30Days } лістоў у мінулым месяцы"
+      ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } непрачытанае",
         "${ subscription.UnreadMessageCount } непрачытаныя",
@@ -9541,6 +9553,9 @@
       ]
     },
     "Labels": {
+      "Newsletters you unsubscribe from will appear here.": [
+        "Скасаваныя вамі інфармацыйныя рассылкі з'явяцца тут."
+      ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Праглядайце і кіруйце інфармацыйнай рассылкай і падпіскамі спіса рассылкі ў гэтым месцы."
       ]
@@ -9851,11 +9866,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ваш уліковы запіс пад пагрозай выдалення. Папрасіце свайго адміністратара палепшыць тарыфны план, каб пазбегнуць страты даных. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ваша сховішча запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ваша сховішча запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Ваша сховішча запоўнена. Каб працягваць карыстацца прадуктамі ${ BRAND_NAME } вызваліце месца або ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Ваша падпіска завяршылася. ${ cta } і пазбегнуць страты даных."
@@ -12906,6 +12918,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Вызваліце месца або ${ upgrade }, каб працягнуць карыстацца прадуктамі ${ BRAND_NAME }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Калі вы хочаце і далей адпраўляць і прымаць лісты, вызваліце месца або ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Калі вы хочаце і далей адпраўляць і прымаць лісты, вызваліце месца або перайдзіце на тарыфны план больш высокага ўзроўню, каб атрымаць больш сховішча."
       ],
@@ -14534,6 +14549,9 @@
       ],
       "No trackers found": [
         "Праграмы сачэння не знойдзены"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Няма скасаваных паштовых падпісак"
       ],
       "No-reply address detected": [
         "Выяўлены адрас без адказу"
