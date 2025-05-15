@@ -59,15 +59,13 @@ export const WalletTransactionDataDrawer = ({
 
     const [settings] = useUserWalletSettings();
 
-    const isSender = networkData.sent > networkData.received;
+    const isSender = networkData.is_send;
 
     /**
-     * If user is sender, we want to display what the amount he actually sent, without change output amount and feees
+     * If user is sender, we want to display what the amount he actually sent, without change output amount and fees
      * If user is recipient, we want to the amount he received
      */
-    const value = isSender
-        ? networkData.sent - (networkData.fee ?? 0) - networkData.received
-        : networkData.received - networkData.sent;
+    const value = networkData.value;
 
     const transactionData: TransactionData = { networkData, apiData };
 

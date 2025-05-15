@@ -1,11 +1,12 @@
 import pick from 'lodash/pick';
 
-import type {
-    WasmApiWallet,
-    WasmApiWalletAccount,
-    WasmBalanceWrapper,
-    WasmPagination,
-    WasmSortOrder,
+import {
+    type WasmApiWallet,
+    type WasmApiWalletAccount,
+    type WasmBalanceWrapper,
+    type WasmPagination,
+    type WasmSortOrder,
+    WasmTransactionFilter,
 } from '@proton/andromeda';
 import isTruthy from '@proton/utils/isTruthy';
 import type { IWasmApiWalletData } from '@proton/wallet';
@@ -86,7 +87,9 @@ export const getAccountTransactions = async (
     sort?: WasmSortOrder
 ) => {
     const account = walletsChainData[walletId]?.accounts?.[accountId]?.account;
-    return (await account?.getTransactions(pagination, sort))?.[0].map(({ Data }) => Data) ?? [];
+    return (
+        (await account?.getTransactions(pagination, WasmTransactionFilter.All, sort))?.[0].map(({ Data }) => Data) ?? []
+    );
 };
 
 export const getAccountsWithChainDataFromManyWallets = (
@@ -123,7 +126,9 @@ export const getWalletTransactions = async (
     sort?: WasmSortOrder
 ) => {
     return (
-        (await walletsChainData[walletId]?.wallet.getTransactions(pagination, sort))?.[0].map(({ Data }) => Data) ?? []
+        (
+            await walletsChainData[walletId]?.wallet.getTransactions(WasmTransactionFilter.All, pagination, sort)
+        )?.[0].map(({ Data }) => Data) ?? []
     );
 };
 
