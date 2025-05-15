@@ -5529,6 +5529,9 @@
       "Shared": [
         "Delat"
       ],
+      "Shared by ": [
+        "Delat av "
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "Delad av ${ rootLink.signatureEmail }"
       ],
@@ -6745,6 +6748,9 @@
       "Set recovery method": [
         "Ställ in återställningsmetod"
       ],
+      "Share a file, folder, or album": [
+        "Dela en fil, mapp eller album"
+      ],
       "Shared": [
         "Delat"
       ],
@@ -7120,12 +7126,6 @@
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ditt konto riskerar att tas bort. För att undvika dataförlust, be din administratör att uppgradera. ${ cta }"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ditt lagringsutrymme är fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ditt lagringsutrymme är fullt. För att ladda upp eller synkronisera filer, frigör utrymme eller ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Din prenumeration har upphört. ${ cta } och för att undvika dataförlust."
@@ -8689,15 +8689,6 @@
       ],
       "Your settings have been changed successfully": [
         "Dina inställningar har ändrats"
-      ],
-      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
-        "Några foton kunde inte läggas till i “${ albumName }“"
-      ],
-      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Några foton kunde inte tas bort från ${ albumLink.name }"
-      ],
-      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
-        "Dina foton har tagits bort från ${ albumLink.name }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

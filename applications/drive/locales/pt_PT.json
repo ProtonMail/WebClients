@@ -7127,12 +7127,6 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "A sua conta corre risco de eliminação. Para evitar a perda de dados, peça ao seu administrador que atualize o plano. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "O seu armazenamento está cheio. Para enviar ou receber emails, liberte espaço ou ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "O seu armazenamento está cheio. Para enviar ou sincronizar ficheiros, liberte espaço ou ${ cta }."
-      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "A sua subscrição terminou. ${ cta } e para evitar a perda de dados."
       ]
@@ -8636,15 +8630,6 @@
       ],
       "Your settings have been changed successfully": [
         "As suas definições foram alteradas."
-      ],
-      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
-        "Não foi possível adicionar algumas fotos a «${ albumName }»."
-      ],
-      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Não foi possível remover algumas fotos de ${ albumLink.name }."
-      ],
-      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
-        "As suas fotos foram removidas de ${ albumLink.name }."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
