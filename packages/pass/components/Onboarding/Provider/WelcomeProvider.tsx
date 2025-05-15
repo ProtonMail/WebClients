@@ -47,15 +47,16 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
         () =>
             [
                 {
+                    key: 'look-and-feel',
                     shortTitle: c('Label').t`Select your theme`,
                     actionText: c('Label').t`Select theme`,
                     description: () => c('Label').t`Choose your preferred look and feel.`,
                     group: c('Label').t`Personalize`,
-                    key: 'look-and-feel',
                     title: c('Label').t`Make it your own.`,
                     component: OnboardingThemeSelect,
                 },
                 hasItems && {
+                    key: 'unlock',
                     shortTitle: c('Label').t`Choose unlock method`,
                     component: () => (
                         <div className="pass-onboarding-modal--lock">
@@ -76,10 +77,10 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
                         </>
                     ),
                     group: c('Label').t`Security`,
-                    key: 'unlock',
                     title: c('Label').t`How to unlock ${PASS_SHORT_APP_NAME}`,
                 },
                 isFreePlan && {
+                    key: 'upgrade',
                     shortTitle: c('Label').t`Unlock premium features`,
                     component: OnboardingUpgrade.Content,
                     description: OnboardingUpgrade.Description,
@@ -89,18 +90,17 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
                         selected === PLANS.PASS
                             ? c('Label').t`Get ${PASS_SHORT_APP_NAME} Plus`
                             : c('Label').t`Get ${PASS_SHORT_APP_NAME} Unlimited`,
-                    key: 'upgrade',
                     title: c('Label').t`Unlock premium features`,
                     withHeader: true,
                 },
                 !hasExtension && {
+                    key: 'extension',
                     shortTitle: c('Label').t`Install extension`,
                     action: () => window.open(PASS_DOWNLOAD_URL, '_blank'),
                     actionText: c('Label').t`Install and continue`,
                     component: () => <img src={onboardingExtension} className="w-full" alt="" />,
                     description: () => c('Label').t`Get the extension for your browser.`,
                     group: c('Label').t`Browse faster, smarter`,
-                    key: 'extension',
                     title: c('Label').t`Your passwords. Everywhere.`,
                 },
             ].filter(truthy),
@@ -142,7 +142,7 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
     return (
         <OnboardingContext.Provider value={context}>
             {children}
-            <OnboardingModal open={enabled && isActive} onClose={() => setIsActive(false)} />
+            {enabled && isActive && <OnboardingModal open onClose={() => setIsActive(false)} />}
         </OnboardingContext.Provider>
     );
 };
