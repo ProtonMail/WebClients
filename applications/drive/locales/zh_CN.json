@@ -7026,12 +7026,6 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "您的帐户有可能被删除。为了避免数据丢失，请要求您的管理员升级计划。 ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "您的存储空间已满。要发送或接收电子邮件，请释放空间或 ${ cta }。"
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "您的存储空间已满。要上传或同步文件，请释放空间或 ${ cta }。"
-      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "您的订阅已经结束。 ${ cta } 以避免数据丢失。"
       ]
@@ -8487,15 +8481,6 @@
       ],
       "Your settings have been changed successfully": [
         "设置已更改"
-      ],
-      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
-        "某些照片无法添加到 “${ albumName }”"
-      ],
-      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
-        "某些照片无法从 ${ albumLink.name } 中移除"
-      ],
-      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
-        "您的照片已从 ${ albumLink.name } 中移除"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

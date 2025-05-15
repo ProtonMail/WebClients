@@ -7273,11 +7273,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Tu cuenta corre el riesgo de ser eliminada. Para evitar la pérdida de datos, pide a tu administrador que la actualice. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "El almacenamiento está lleno. Para enviar o recibir correos, libera espacio o ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "El almacenamiento está lleno. Para cargar o sincronizar archivos, libera espacio o ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Tu almacenamiento está lleno. Para seguir usando los productos de ${ BRAND_NAME }, libera espacio o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Tu suscripción ha finalizado. ${ cta } y para evitar la pérdida de datos."
@@ -8786,6 +8783,12 @@
       "Share invitation declined": [
         "Se ha rechazado la invitación compartida."
       ],
+      "Some photo(s) could not be added to \"${ albumName }\"": [
+        "No se han podido añadir algunas fotos a «${ albumName }»."
+      ],
+      "Some photo(s) could not be removed from ${ albumLink.name }": [
+        "No se han podido eliminar algunas fotos de ${ albumLink.name }."
+      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "No se ha podido eliminar la carpeta porque no está vacía.",
         "No se han podido eliminar la carpeta porque no está vacía."
@@ -8834,20 +8837,14 @@
       "Your photo(s) have been added to \"${ albumName }\"": [
         "Tus fotos se han añadido a «${ albumName }»."
       ],
+      "Your photo(s) have been removed from ${ albumLink.name }": [
+        "Se han eliminado tus fotos de ${ albumLink.name }."
+      ],
       "Your settings failed to be saved": [
         "Error al guardar tu configuración"
       ],
       "Your settings have been changed successfully": [
         "Se ha modificado tu configuración."
-      ],
-      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
-        "No se ha podido añadir algunas fotos a «${ albumName }»."
-      ],
-      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
-        "No se ha podido eliminar algunas fotos de ${ albumLink.name }."
-      ],
-      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
-        "Se han eliminado tus fotos de ${ albumLink.name }."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10133,6 +10130,9 @@
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Para seguir usando los productos de ${ BRAND_NAME }, libera espacio o ${ upgrade }"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Para enviar o recibir correos electrónicos, libera espacio o ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Para enviar o recibir correos, libera espacio o mejora para obtener más almacenamiento."

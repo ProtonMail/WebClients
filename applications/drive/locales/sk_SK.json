@@ -7320,12 +7320,6 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Vášmu kontu hrozí vymazanie. Ak chcete zabrániť strate údajov, požiadajte správcu o aktualizáciu. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Vaše úložisko je plné. Ak chcete odosielať alebo prijímať emaily, uvoľnite miesto alebo ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Vaše úložisko je plné. Ak chcete nahrať alebo synchronizovať súbory, uvoľnite miesto alebo ${ cta }."
-      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Vaše predplatné skončilo. ${ cta } a zabráňte strate údajov."
       ]
@@ -8925,15 +8919,6 @@
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavenia boli úspešne zmenené"
-      ],
-      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
-        "Niektoré fotografie sa nepodarilo pridať do „${ albumName }“"
-      ],
-      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Niektoré fotografie sa nepodarilo odstrániť z ${ albumLink.name }"
-      ],
-      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
-        "Vaše fotografie boli odstránené z ${ albumLink.name }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

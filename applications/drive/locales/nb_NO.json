@@ -5532,6 +5532,9 @@
       "Shared": [
         "Delt"
       ],
+      "Shared by ": [
+        "Delt av "
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "Delt av ${ rootLink.signatureEmail }"
       ],
@@ -7124,11 +7127,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Kontoen din står i fare for å bli slettet. For å unngå tap av data kan du be administratoren om å oppgradere. ${ cta }."
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Lagringsplassen din er full. For å sende eller motta e-post, frigjør plass eller ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Lagringsplassen din er full. For å laste opp eller synkronisere filer, frigjør plass eller ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Lagringsplassen din er full. For å fortsette å bruke ${ BRAND_NAME }-produkter må du frigjøre plass eller ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Abonnementet ditt er avsluttet. ${ cta } og unngå tap av data."
@@ -8637,6 +8637,12 @@
       "Share invitation declined": [
         "Delingsinvitasjon avslått"
       ],
+      "Some photo(s) could not be added to \"${ albumName }\"": [
+        "Noen bilder kunne ikke legges til i \"${ albumName }\""
+      ],
+      "Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Noen bilder kunne ikke fjernes fra ${ albumLink.name }"
+      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Beklager, vi kunne ikke slette mappen fordi den ikke er tom.",
         "Beklager, vi kunne ikke slette mappene fordi de ikke er tomme."
@@ -8685,20 +8691,14 @@
       "Your photo(s) have been added to \"${ albumName }\"": [
         "Bildene dine er lagt til i \"${ albumName }\""
       ],
+      "Your photo(s) have been removed from ${ albumLink.name }": [
+        "Bildene dine er fjernet fra ${ albumLink.name }"
+      ],
       "Your settings failed to be saved": [
         "Innstillingene dine ble ikke lagret"
       ],
       "Your settings have been changed successfully": [
         "Innstillingene dine ble endret"
-      ],
-      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
-        "Noen bilder kunne ikke legges til i \"${ albumName }\""
-      ],
-      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Noen bilder kunne ikke fjernes fra ${ albumLink.name }"
-      ],
-      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
-        "Bildene dine er fjernet fra ${ albumLink.name }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9984,6 +9984,9 @@
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "For å fortsette å bruke ${ BRAND_NAME }-produkter må du frigjøre plass eller ${ upgrade }"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "For å sende eller motta e-post, frigjør plass eller ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "For å sende eller motta e-post, frigjør plass eller oppgrader for mer lagringsplass."
