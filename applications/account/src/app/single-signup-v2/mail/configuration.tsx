@@ -439,7 +439,7 @@ export const getMailConfiguration = ({
         features,
         benefits,
         planCards,
-        signupTypes: [SignupType.Username],
+        signupTypes: [SignupType.Proton],
         onboarding:
             invite?.type === 'porkbun'
                 ? {

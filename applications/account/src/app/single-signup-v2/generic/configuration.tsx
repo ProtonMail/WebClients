@@ -44,7 +44,7 @@ export const getGenericConfiguration = ({
 
     return {
         ...mailConfiguration,
-        signupTypes: [SignupType.Username, SignupType.Email],
+        signupTypes: [SignupType.Proton, SignupType.External],
         logo,
         CustomStep,
     };
