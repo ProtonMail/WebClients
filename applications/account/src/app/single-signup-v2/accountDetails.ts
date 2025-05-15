@@ -25,14 +25,14 @@ export const getAccountDetailsFromEmail = ({
 
     if (protonDomain) {
         return {
-            signupType: SignupType.Username,
+            signupType: SignupType.Proton,
             local,
             domain: protonDomain,
         };
     }
 
     return {
-        signupType: SignupType.Email,
+        signupType: SignupType.External,
         local,
         domain,
     };

@@ -1140,7 +1140,7 @@ const Step1 = ({
                                                             return {
                                                                 defaultEmail: invitation.data.invitee,
                                                                 emailReadOnly: invitation.data.invitee !== '',
-                                                                signupTypes: [SignupType.Email],
+                                                                signupTypes: [SignupType.External],
                                                             };
                                                         }
                                                     })()}

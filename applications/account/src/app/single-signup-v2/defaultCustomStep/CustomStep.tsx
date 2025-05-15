@@ -106,7 +106,7 @@ const CustomStep = ({
             return verificationModel.value;
         }
 
-        if (accountData?.signupType === SignupType.Email) {
+        if (accountData?.signupType === SignupType.External) {
             return accountData.email;
         }
 
@@ -131,7 +131,7 @@ const CustomStep = ({
                 <CongratulationsStep
                     defaultName={
                         accountData.username ||
-                        (accountData?.signupType === SignupType.Email && getLocalPart(accountData.email)) ||
+                        (accountData?.signupType === SignupType.External && getLocalPart(accountData.email)) ||
                         ''
                     }
                     planName={planName}
