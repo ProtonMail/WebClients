@@ -45,7 +45,7 @@ export { default as ScrollShadows } from './Scroll/ScrollShadows';
 export { default as Slider, SliderSizeEnum } from './Slider/Slider';
 export { default as Step } from './Stepper/Step';
 export type { StepProps } from './Stepper/Step';
-export { default as Stepper } from './Stepper/Stepper';
+export { default as Stepper, StepperPositionEnum } from './Stepper/Stepper';
 export type { StepperProps } from './Stepper/Stepper';
 export { default as VerticalStep } from './VerticalSteps/VerticalStep';
 export type { VerticalStepProps } from './VerticalSteps/VerticalStep';
