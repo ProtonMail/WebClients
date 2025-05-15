@@ -23,6 +23,10 @@ export type DocumentActionsContextValue = {
   trash: (document: RecentDocumentsItem) => Promise<void>
   currentlyTrashingId?: string
   onTrashed: (listener: (id: string) => void) => void
+  restore: (document: RecentDocumentsItem) => Promise<void>
+  currentlyRestoringId?: string
+  onRestored: (listener: (id: string) => void) => void
+  deletePermanently: (document: RecentDocumentsItem) => Promise<void>
 }
 
 export const DocumentActionsContext = createContext<DocumentActionsContextValue | undefined>(undefined)
@@ -32,6 +36,7 @@ export type DocumentActionsProviderProps = {
 }
 
 const TRASHED_LISTENERS = new Set<(id: string) => void>()
+const RESTORED_LISTENERS = new Set<(id: string) => void>()
 
 export function DocumentActionsProvider({ children }: DocumentActionsProviderProps) {
   const application = useApplication()
@@ -39,6 +44,7 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   const [renamingDocument, setRenamingDocument] = useState<RecentDocumentsItem>()
   const [isRenameSaving, setRenameSaving] = useState(false)
   const [currentlyTrashingId, setCurrentlyTrashingId] = useState<string | undefined>(undefined)
+  const [currentlyRestoringId, setCurrentlyRestoringId] = useState<string | undefined>(undefined)
   const { getLocalID } = useAuthentication()
 
   const open = useEvent(({ volumeId, linkId }: RecentDocumentsItem) => {
@@ -110,6 +116,21 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
     TRASHED_LISTENERS.add(listener)
   })
 
+  const restore = useEvent(async (document: RecentDocumentsItem) => {
+    setCurrentlyRestoringId(document.uniqueId())
+    await application.recentDocumentsService.restoreDocument(document)
+    setCurrentlyRestoringId(undefined)
+    RESTORED_LISTENERS.forEach((listener) => listener(document.uniqueId()))
+  })
+
+  const onRestored = useEvent((listener: (id: string) => void) => {
+    RESTORED_LISTENERS.add(listener)
+  })
+
+  const deletePermanently = useEvent(async (document: RecentDocumentsItem) => {
+    await application.recentDocumentsService.deleteDocumentPermanently(document)
+  })
+
   const value = useMemo(
     () => ({
       open,
@@ -124,6 +145,10 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
       trash,
       currentlyTrashingId,
       onTrashed,
+      restore,
+      currentlyRestoringId,
+      onRestored,
+      deletePermanently,
     }),
     [
       open,
@@ -138,6 +163,10 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
       trash,
       currentlyTrashingId,
       onTrashed,
+      restore,
+      currentlyRestoringId,
+      onRestored,
+      deletePermanently,
     ],
   )
   return <DocumentActionsContext.Provider value={value}>{children}</DocumentActionsContext.Provider>
