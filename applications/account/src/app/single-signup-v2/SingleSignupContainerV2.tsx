@@ -49,7 +49,7 @@ import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import { getPathFromLocation, stringifySearchParams } from '@proton/shared/lib/helpers/url';
@@ -570,7 +570,7 @@ const SingleSignupContainerV2 = ({
             const plansMap = getPlansMap(plans, currency, false);
 
             sendSignupLoadTelemetry({
-                plan: getPlanFromPlanIDs(plansMap, planParameters.planIDs)?.Name || PLANS.FREE,
+                planIDs: planParameters.planIDs,
                 flowId: 'single-page-signup',
                 productIntent: toApp,
                 currency,
@@ -1522,7 +1522,7 @@ const SingleSignupContainerV2 = ({
                                     }
 
                                     sendSignupAccountCreationTelemetry({
-                                        plan: getPlanNameFromIDs(cache.subscriptionData.planIDs) || PLANS.FREE,
+                                        planIDs: cache.subscriptionData.planIDs,
                                         flowId: 'single-page-signup',
                                         productIntent: toApp,
                                         currency: cache.subscriptionData.currency,
