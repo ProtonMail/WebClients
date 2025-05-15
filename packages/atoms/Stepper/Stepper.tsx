@@ -9,6 +9,13 @@ import StepperContext from './StepperContext';
 
 import './Stepper.scss';
 
+export enum StepperPositionEnum {
+    Start = 'start',
+    // eslint-disable-next-line custom-rules/deprecate-classes
+    Center = 'center',
+    End = 'end',
+}
+
 export interface StepperProps extends ComponentPropsWithoutRef<'div'> {
     /**
      * Index of the currently active step.
@@ -17,10 +24,10 @@ export interface StepperProps extends ComponentPropsWithoutRef<'div'> {
     /**
      * Sets the position of the steps. Defaults to `center`.
      */
-    position?: 'start' | 'center' | 'end';
+    position?: StepperPositionEnum;
 }
 
-const Stepper = ({ activeStep, position = 'center', className, children, ...rest }: StepperProps) => {
+const Stepper = ({ activeStep, position = StepperPositionEnum.Center, className, children, ...rest }: StepperProps) => {
     const childrenArray = Children.toArray(children).filter((child) => isValidElement(child) && child.type === Step);
 
     const stepIndicators = childrenArray.map((step, index) => {
