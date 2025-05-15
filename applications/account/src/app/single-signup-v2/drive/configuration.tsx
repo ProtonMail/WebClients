@@ -391,7 +391,7 @@ export const getDriveConfiguration = ({
         features,
         benefits,
         planCards,
-        signupTypes: [SignupType.Email, SignupType.Username],
+        signupTypes: [SignupType.External, SignupType.Proton],
         generateMnemonic: true,
         onboarding: {
             user: false,

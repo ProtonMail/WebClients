@@ -232,16 +232,16 @@ const SignupContainer = ({
     const signupTypes = (() => {
         // Only on account.protonvpn.com do we suggest external only sign up
         if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
-            return [SignupType.Email];
+            return [SignupType.External];
         }
         if (toApp && getHasAppExternalSignup(toApp)) {
-            return [SignupType.Email, SignupType.Username];
+            return [SignupType.External, SignupType.Proton];
         }
         // Generic signup
         if (!toApp) {
-            return [SignupType.Username, SignupType.Email];
+            return [SignupType.Proton, SignupType.External];
         }
-        return [SignupType.Username];
+        return [SignupType.Proton];
     })();
     const defaultSignupType = signupTypes[0];
 
@@ -570,7 +570,7 @@ const SignupContainer = ({
             payment: c('Signup step').t`Payment`,
         };
 
-        const isExternalAccountFlow = signupType.type === SignupType.Email;
+        const isExternalAccountFlow = signupType.type === SignupType.External;
         if (isExternalAccountFlow) {
             if (step === SignupSteps.AccountCreationUsername) {
                 return {
@@ -643,12 +643,12 @@ const SignupContainer = ({
                             return c('Title').t`Secure email based in Switzerland`;
                         }
                         if (toAppName) {
-                            if (signupType.type === SignupType.Username && signupTypes.includes(SignupType.Email)) {
+                            if (signupType.type === SignupType.Proton && signupTypes.includes(SignupType.External)) {
                                 return c('Info').t`to use ${toAppName} and all ${BRAND_NAME} services`;
                             }
                             return getContinueToString(toAppName);
                         }
-                        if (signupType.type === SignupType.Email) {
+                        if (signupType.type === SignupType.External) {
                             return '';
                         }
                         return c('Info').t`One account. All ${BRAND_NAME} services.`;
@@ -695,7 +695,7 @@ const SignupContainer = ({
                             humanVerificationInline: true,
                         };
 
-                        const accountType = signupType === SignupType.Email ? 'external_account' : 'proton_account';
+                        const accountType = signupType === SignupType.External ? 'external_account' : 'proton_account';
 
                         try {
                             const validateFlow = createFlow();
@@ -1026,7 +1026,7 @@ const SignupContainer = ({
                 <CongratulationsStep
                     defaultName={
                         cache?.accountData.username ||
-                        (accountData?.signupType === SignupType.Email && getLocalPart(accountData.email)) ||
+                        (accountData?.signupType === SignupType.External && getLocalPart(accountData.email)) ||
                         ''
                     }
                     planName={planName}
@@ -1043,7 +1043,7 @@ const SignupContainer = ({
 
                             if (validateFlow()) {
                                 const getNextStep = (cache: SignupCacheResult) => {
-                                    if (cache.accountData.signupType === SignupType.Email) {
+                                    if (cache.accountData.signupType === SignupType.External) {
                                         // Ignore recovery step if signing up with an external email address because it's automatically set.
                                         return cache.ignoreExplore ? undefined : SignupSteps.Explore;
                                     }
@@ -1085,7 +1085,7 @@ const SignupContainer = ({
                     defaultCountry={defaultCountry}
                     defaultEmail={
                         (verificationModel?.method === 'email' && verificationModel?.value) ||
-                        (accountData?.signupType === SignupType.Email && accountData.email) ||
+                        (accountData?.signupType === SignupType.External && accountData.email) ||
                         ''
                     }
                     defaultPhone={verificationModel?.method === 'sms' ? verificationModel?.value : ''}
