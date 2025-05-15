@@ -648,7 +648,13 @@ export class Api extends KeyManagementApi {
             const messageWithoutUnexpectedTrailingPackets = await getMessage({
                 armoredMessage,
                 binaryMessage,
-                config: { enforceGrammar: false },
+                config: {
+                    enforceGrammar: false,
+                    // avoid logging this to sentry, since it's been handled
+                    pluggableGrammarErrorReporter: (grammarErrorMessage) => {
+                        console.warn(`${grammarErrorMessage} (handled)`);
+                    },
+                },
             });
             message = await getMessage({ armoredMessage: messageWithoutUnexpectedTrailingPackets.armor() });
         } else {
@@ -832,7 +838,13 @@ export class Api extends KeyManagementApi {
             const messageWithoutUnexpectedTrailingSignature = await getMessage({
                 armoredMessage,
                 binaryMessage,
-                config: { enforceGrammar: false },
+                config: {
+                    enforceGrammar: false,
+                    // avoid logging this to sentry, since it's been handled
+                    pluggableGrammarErrorReporter: (grammarErrorMessage) => {
+                        console.warn(`${grammarErrorMessage} (handled)`);
+                    },
+                },
             });
             message = await getMessage({ armoredMessage: messageWithoutUnexpectedTrailingSignature.armor() });
         } else {
