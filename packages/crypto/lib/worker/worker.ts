@@ -7,6 +7,5 @@ import { workerTransferHandlers } from './transferHandlers';
 
 workerTransferHandlers.forEach(({ name, handler }) => transferHandlers.set(name, handler));
 
-WorkerApi.init();
-
+// WorkerApi.init() will be called in the main thread, to support passing inputs
 expose(WorkerApi);
