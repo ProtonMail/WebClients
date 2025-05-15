@@ -15,6 +15,7 @@ import { EventType } from '@proton/docs-proto'
 import { LoadLogger } from '../LoadLogger/LoadLogger'
 
 export interface EditorControllerInterface {
+  copyCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
   exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
   exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array>
   getDocumentClientId(): Promise<number | undefined>
@@ -256,6 +257,14 @@ export class EditorController implements EditorControllerInterface {
     }
 
     return this.editorInvoker.exportData(format)
+  }
+
+  async copyCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<void> {
+    if (!this.editorInvoker) {
+      throw new Error(`Attepting to export document before editor invoker or decrypted node is initialized`)
+    }
+
+    return this.editorInvoker.copyCurrentSelection(format)
   }
 
   async getDocumentState(): Promise<Uint8Array> {
