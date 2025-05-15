@@ -6704,11 +6704,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "El vostre compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demaneu al vostre administrador que us el millori. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "El vostre emmagatzematge està ple. Per enviar o rebre correus electrònics, allibereu espai o ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "El vostre emmagatzematge està ple. Per a carregar o sincronitzar fitxers, allibereu espai o ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "El vostre emmagatzematge està ple. Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La vostra subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
@@ -9401,6 +9398,9 @@
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ upgrade }."
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Per enviar o rebre correus, allibereu espai o ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Per a carregar o sincronitzar fitxers, allibereu espai o ${ upgrade }"

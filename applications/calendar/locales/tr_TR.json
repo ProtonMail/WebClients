@@ -4620,16 +4620,16 @@
         "${ provider } üzerinden içe aktar"
       ],
       "Import from Google": [
-        "Google'dan içe aktar"
+        "Google üzerinden içe aktar"
       ],
       "Import from other": [
-        "Diğerlerinden içe aktar"
+        "Diğerleri üzerinden içe aktar"
       ],
       "Import from Outlook": [
-        "Outlook'tan içe aktar"
+        "Outlook üzerinden içe aktar"
       ],
       "Import from Yahoo": [
-        "Yahoo'dan içe aktar"
+        "Yahoo üzerinden içe aktar"
       ]
     },
     "Import warning": {
@@ -4903,7 +4903,7 @@
         "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha kararlı bir çevrim içi deneyim sağlayın."
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Mesajlarınızı, kişilerinizi ve takvimlerinizi ${ BRAND_NAME }'e taşıyın."
+        "İletilerinizi, kişilerinizi ve takvimlerinizi ${ BRAND_NAME } üzerine alın."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
@@ -6841,11 +6841,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Hesabınızın silinme riski var. Verileriniz kaybolmasını önlemek için yöneticinizden tarifenizi yükseltmesini isteyin. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Depolama alanınız dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Depolama alanınız dolu. Dosyaları yüklemek ya da eşitlemek için boş yer açın ya da ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Depolama alanınız dolmuş. ${ BRAND_NAME } ürünlerini kullanmayı sürdürmek için yer açın ya da ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Aboneliğinizin süresi dolmuş. Verilerinizin kaybolmasını önlemek için ${ cta }."
@@ -7762,7 +7759,7 @@
     },
     "new_plans: Subtext": {
       "Starting from ${ priceLine }": [
-        "${ priceLine }'dan başlayan fiyatlarla"
+        "${ priceLine } tutarından başlayan fiyatlarla"
       ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "İlk ay için ${ priceCoupon } indirimli tutar uygulanır. Ardından, otomatik olarak ${ priceLine } tutarla yenilenir. İstediğiniz zaman iptal edebilirsiniz."
@@ -9539,6 +9536,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME } ürünlerini kullanmayı sürdürmek için yer açın ya da ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "E-posta gönderebilmek veya alabilmek için depolama alanını boşaltın ya da ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Dosyaları yükleyebilmek ya da eşitleyebilmek için depolama alanını boşaltın ya da ${ upgrade }"
       ],
@@ -10666,6 +10666,9 @@
       ],
       "Link confirmation": [
         "Bağlantı onayı"
+      ],
+      "Mail Subscriptions": [
+        "E-posta abonelikleri"
       ],
       "Make a secure connection your default": [
         "Bağlantınızın her zaman güvenli olmasını sağlayın"
