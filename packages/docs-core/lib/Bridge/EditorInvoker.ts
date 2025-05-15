@@ -110,6 +110,10 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('exportData', [format])
   }
 
+  async copyCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<void> {
+    return this.invokeEditorMethod('copyCurrentSelection', [format])
+  }
+
   async printAsPDF(): Promise<void> {
     return this.invokeEditorMethod('printAsPDF', [])
   }
