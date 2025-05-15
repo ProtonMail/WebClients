@@ -7,7 +7,7 @@ import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { getNUnreadConversationsText, getNUnreadMessagesText } from 'proton-mail/helpers/text';
 
 const UNREAD_LIMIT = 9999;
-const MAIL_SUBSCRIPTION_LIMIT = 99;
+const MAIL_SUBSCRIPTION_LIMIT = 999;
 
 export const getUnreadTitle = (shouldDisplayTotal: boolean, unreadCount: number, mailSettings: MailSettings) => {
     if (shouldDisplayTotal) {
@@ -25,7 +25,7 @@ export const getUnreadTitle = (shouldDisplayTotal: boolean, unreadCount: number,
 
 export const getUnreadCount = (labelID: string, unreadCount: number) => {
     if (labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS) {
-        return unreadCount > MAIL_SUBSCRIPTION_LIMIT ? '99+' : unreadCount;
+        return unreadCount > MAIL_SUBSCRIPTION_LIMIT ? '999+' : unreadCount;
     }
 
     return unreadCount > UNREAD_LIMIT ? '9999+' : unreadCount;
