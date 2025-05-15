@@ -2,7 +2,7 @@ import { type FC } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Slider } from '@proton/atoms';
+import { Slider, SliderSizeEnum } from '@proton/atoms';
 import { Option, SelectTwo, Toggle } from '@proton/components';
 import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
 import type { PasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
@@ -40,7 +40,7 @@ export const PasswordMemorableOptions: FC<Props> = ({
                         min={policy?.MemorablePasswordMinWords ?? 1}
                         max={policy?.MemorablePasswordMaxWords ?? 10}
                         step={1}
-                        size="small"
+                        size={SliderSizeEnum.Small}
                         color="norm"
                         value={config.options.wordCount}
                         onInput={(wordCount) => setPasswordOptions('memorable', { wordCount })}
