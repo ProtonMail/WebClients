@@ -20,6 +20,11 @@ import SliderMark from './SliderMark';
 
 import './Slider.scss';
 
+export enum SliderSizeEnum {
+    Small = 'small',
+    Medium = 'medium',
+}
+
 interface SliderProps extends Omit<ComponentPropsWithoutRef<'input'>, 'value' | 'size' | 'onChange' | 'onInput'> {
     /**
      * The current value of the Slider. Allows for external control of the Slider.
@@ -40,7 +45,7 @@ interface SliderProps extends Omit<ComponentPropsWithoutRef<'input'>, 'value' | 
     /**
      * Size of the Slider.
      */
-    size?: 'small' | 'medium';
+    size?: SliderSizeEnum;
     /**
      * Adds marks to the beginning and end of the Slider's rail indicating
      * min and max values visually.
@@ -77,7 +82,7 @@ const Slider = ({
     min = 0,
     max = 100,
     marks = false,
-    size = 'medium',
+    size = SliderSizeEnum.Medium,
     color = 'success',
     step,
     getDisplayedValue,
