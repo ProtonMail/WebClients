@@ -62,10 +62,9 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import mailReferPage from '../../pages/refer-a-friend';
-import mailTrialPage from '../../pages/trial';
 import { PublicThemeProvider, getPublicTheme } from '../containers/PublicThemeProvider';
 import type { Paths } from '../content/helper';
-import { getOptimisticDomains, isMailReferAFriendSignup, isMailTrialSignup, isPorkbunSignup } from '../signup/helper';
+import { getOptimisticDomains, isMailReferAFriendSignup, isPorkbunSignup } from '../signup/helper';
 import type {
     InviteData,
     SessionData,
@@ -211,15 +210,14 @@ const SingleSignupContainerV2 = ({
         }
         return Audience.B2C;
     })();
-    const isMailTrial = isMailTrialSignup(location);
     const isMailRefer = isMailReferAFriendSignup(location);
     const isPorkbun = isPorkbunSignup(location);
-    useMetaTags(isMailRefer ? mailReferPage() : isMailTrial ? mailTrialPage() : metaTags);
+    useMetaTags(isMailRefer ? mailReferPage() : metaTags);
 
     const step1Ref = useRef<Step1Rref | undefined>(undefined);
 
     // Override the app to always be mail in trial or refer-a-friend signup
-    if (isMailTrial || isMailRefer) {
+    if (isMailRefer) {
         toApp = APPS.PROTONMAIL;
     }
 
@@ -257,7 +255,6 @@ const SingleSignupContainerV2 = ({
             location,
             visionarySignupEnabled,
             initialSearchParams,
-            isMailTrial,
             partner,
         });
     });
@@ -662,7 +659,7 @@ const SingleSignupContainerV2 = ({
                 if (signupParameters.mode === SignupMode.MailReferral) {
                     signupParametersDiff.mode = SignupMode.Default;
                 }
-                if (isMailTrial || isMailRefer) {
+                if (isMailRefer) {
                     history.replace(SSO_PATHS.SIGNUP);
                 }
             }
