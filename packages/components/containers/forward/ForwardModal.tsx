@@ -46,7 +46,6 @@ import forwardingSetupIllustration from '@proton/styles/assets/img/illustrations
 import forwardingSuccessIllustration from '@proton/styles/assets/img/illustrations/forward-success-confirmation.svg';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import useAddressFlags from '../../hooks/useAddressFlags';
 import ForwardConditions from './ForwardConditions';
 
 interface Props extends ModalProps {
@@ -187,7 +186,6 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
     const dispatch = useDispatch();
 
     const forwarderEmail = initialForwarderAddress?.Email || '';
-    const addressFlags = useAddressFlags(initialForwarderAddress);
 
     const boldForwardeeEmail = <strong key="forwardee-email">{model.forwardeeEmail}</strong>;
     const boldForwarderEmail = <strong key="forwarder-email">{forwarderEmail}</strong>;
@@ -255,7 +253,6 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
                 isInternal: model.isInternal,
                 isExternal: model.isExternal,
                 isReEnablingForwarding,
-                addressFlags,
             })
         );
 
