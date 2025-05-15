@@ -79,6 +79,12 @@ function useRenderHomepageView(): JSX.Element | null {
         case 'name':
           variant = 'recents-name'
           break
+        case 'owner':
+          variant = 'recents-owner'
+          break
+        case 'location':
+          variant = 'recents-location'
+          break
       }
       return (
         <>
@@ -104,7 +110,7 @@ type EmptyStateProps = { variant: EmptyStateVariant }
 function getEmptyStateText(variant: EmptyStateVariant): string {
   switch (variant) {
     case 'recents':
-      return c('Info').t`Create an encrypted document.`
+      return c('Info').t`Create an end-to-end encrypted document.`
     case 'trash':
       return c('Info').t`There are no documents in the trash.`
     case 'search':
