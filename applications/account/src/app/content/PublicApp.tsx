@@ -130,7 +130,7 @@ const handlePreload = () => {
     if (!cryptoWorkerPromise) {
         cryptoWorkerPromise = loadCrypto({
             appName: APPS.PROTONACCOUNT,
-            unleashClient: undefined
+            unleashClient: undefined,
         });
     }
 };
@@ -616,7 +616,6 @@ const BasePublicApp = () => {
                                                     path={[
                                                         SSO_PATHS.SIGNUP,
                                                         SSO_PATHS.REFER,
-                                                        SSO_PATHS.TRIAL,
                                                         SSO_PATHS.BUSINESS_SIGNUP,
                                                         SSO_PATHS.CALENDAR_SIGNUP,
                                                         SSO_PATHS.CALENDAR_SIGNUP_B2B,
