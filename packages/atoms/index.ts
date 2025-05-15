@@ -42,7 +42,7 @@ export { default as ProtonLoader, ProtonLoaderType } from './ProtonLoader/Proton
 export { default as Scroll } from './Scroll/Scroll';
 export type { ScrollProps } from './Scroll/Scroll';
 export { default as ScrollShadows } from './Scroll/ScrollShadows';
-export { default as Slider } from './Slider/Slider';
+export { default as Slider, SliderSizeEnum } from './Slider/Slider';
 export { default as Step } from './Stepper/Step';
 export type { StepProps } from './Stepper/Step';
 export { default as Stepper } from './Stepper/Stepper';
