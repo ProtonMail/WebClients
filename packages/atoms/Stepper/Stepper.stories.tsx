@@ -5,7 +5,7 @@ import { RadioGroup } from '@proton/components';
 
 import Step from './Step';
 import type { StepperProps } from './Stepper';
-import Stepper from './Stepper';
+import Stepper, { StepperPositionEnum } from './Stepper';
 import mdx from './Stepper.mdx';
 
 export default {
@@ -22,7 +22,7 @@ export const Basic = () => {
 
     return (
         <>
-            <Stepper position="center" activeStep={activeStep}>
+            <Stepper position={StepperPositionEnum.Center} activeStep={activeStep}>
                 {steps.map((step) => (
                     <Step key={step}>{step}</Step>
                 ))}
@@ -49,11 +49,9 @@ export const Basic = () => {
     );
 };
 
-const positionVariants: Required<StepperProps>['position'][] = ['start', 'center', 'end'];
-
 export const Centered = () => {
     const [activeStep, setActiveStep] = useState(0);
-    const [position, setPosition] = useState<Required<StepperProps>['position']>('start');
+    const [position, setPosition] = useState<Required<StepperProps>['position']>(StepperPositionEnum.Start);
 
     const steps = ['Item 1', 'Item 2.', 'Item 3', 'Item 4'];
 
@@ -65,7 +63,7 @@ export const Centered = () => {
                     name="selected-variant"
                     onChange={setPosition}
                     value={position}
-                    options={positionVariants.map((variant) => ({ value: variant, label: variant }))}
+                    options={Object.values(StepperPositionEnum).map((variant) => ({ value: variant, label: variant }))}
                 />
             </div>
 

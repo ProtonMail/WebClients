@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useGetPlans } from '@proton/account/plans/hooks';
-import { Step, Stepper } from '@proton/atoms';
+import { Step, Stepper, StepperPositionEnum } from '@proton/atoms';
 import type { OnLoginCallback } from '@proton/components';
 import {
     HumanVerificationSteps,
@@ -1183,7 +1183,7 @@ const SignupContainer = ({
             hasDecoration={hasDecoration}
             stepper={
                 stepper && (
-                    <Stepper position="center" activeStep={stepper.activeStep}>
+                    <Stepper position={StepperPositionEnum.Center} activeStep={stepper.activeStep}>
                         {stepper.steps.map((step) => (
                             <Step key={step}>{step}</Step>
                         ))}
