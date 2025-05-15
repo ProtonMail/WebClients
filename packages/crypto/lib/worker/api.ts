@@ -40,7 +40,7 @@ import {
     verifyMessage,
 } from 'pmcrypto';
 import type { Argon2Options, Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
-import { type UserID, config, enums } from 'pmcrypto/lib/openpgp';
+import { type PartialConfig, type UserID, config, enums } from 'pmcrypto/lib/openpgp';
 
 import { ARGON2_PARAMS, KeyCompatibilityLevel } from '../constants';
 import { arrayToHexString } from '../utils';
@@ -87,12 +87,12 @@ const getSignature = async ({ armoredSignature, binarySignature }: SerializedSig
     throw new Error('Must provide `armoredSignature` or `binarySignature`');
 };
 
-type SerializedMessageOptions = { armoredMessage?: string; binaryMessage?: Uint8Array };
-const getMessage = async ({ armoredMessage, binaryMessage }: SerializedMessageOptions) => {
+type SerializedMessageOptions = { armoredMessage?: string; binaryMessage?: Uint8Array; config?: PartialConfig };
+const getMessage = async ({ armoredMessage, binaryMessage, config }: SerializedMessageOptions) => {
     if (armoredMessage) {
-        return readMessage({ armoredMessage });
+        return readMessage({ armoredMessage, config });
     } else if (binaryMessage) {
-        return readMessage({ binaryMessage });
+        return readMessage({ binaryMessage, config });
     }
     throw new Error('Must provide `armoredMessage` or `binaryMessage`');
 };
@@ -645,11 +645,12 @@ export class Api extends KeyManagementApi {
 
         let message;
         if (handleMalformedIcsAttachmentContent) {
-            if (!binaryMessage) {
-                throw new Error('`binaryMessage` expected with `handleMalformedIcsAttachmentContent = true`');
-            }
-            const messageWithSEIPDOnly = await readMessage({ binaryMessage, config: { enforceGrammar: false } });
-            message = await getMessage({ armoredMessage: messageWithSEIPDOnly.armor() });
+            const messageWithoutUnexpectedTrailingPackets = await getMessage({
+                armoredMessage,
+                binaryMessage,
+                config: { enforceGrammar: false },
+            });
+            message = await getMessage({ armoredMessage: messageWithoutUnexpectedTrailingPackets.armor() });
         } else {
             message = await getMessage({ binaryMessage, armoredMessage });
         }
@@ -819,13 +820,24 @@ export class Api extends KeyManagementApi {
         decryptionKeys: decryptionKeyRefs = [],
         armoredMessage,
         binaryMessage,
+        handleMalformedIcsAttachmentContent,
         ...options
     }: WorkerDecryptionOptions) {
         const decryptionKeys = toArray(decryptionKeyRefs).map(
             (keyReference) => this.keyStore.get(keyReference._idx) as PrivateKey
         );
 
-        const message = await getMessage({ binaryMessage, armoredMessage });
+        let message;
+        if (handleMalformedIcsAttachmentContent) {
+            const messageWithoutUnexpectedTrailingSignature = await getMessage({
+                armoredMessage,
+                binaryMessage,
+                config: { enforceGrammar: false },
+            });
+            message = await getMessage({ armoredMessage: messageWithoutUnexpectedTrailingSignature.armor() });
+        } else {
+            message = await getMessage({ binaryMessage, armoredMessage });
+        }
 
         const sessionKey = await decryptSessionKey({
             ...options,
