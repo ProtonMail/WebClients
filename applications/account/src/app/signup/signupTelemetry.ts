@@ -1,5 +1,5 @@
 import { type CYCLE, type Currency, PLANS, type PlanIDs, getPlanNameFromIDs } from '@proton/payments/index';
-import { type APP_NAMES } from '@proton/shared/lib/constants';
+import { type APP_NAMES, HOUR, SECOND } from '@proton/shared/lib/constants';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import type { SignupType } from './interfaces';
@@ -59,6 +59,46 @@ export const sendSignupAccountCreationTelemetry = ({
         currency,
         cycle,
         signupType,
+        amount,
+    });
+};
+
+export const sendSignupSubscriptionTelemetryEvent = ({
+    planIDs,
+    flowId,
+    currency,
+    cycle,
+    userCreateTime,
+    invoiceID,
+    coupon,
+    amount,
+}: {
+    planIDs: PlanIDs;
+    flowId: FlowId;
+    currency: Currency;
+    cycle: CYCLE;
+    userCreateTime: number;
+    invoiceID: string;
+    coupon: string | null;
+    amount: number;
+}) => {
+    const nowInSeconds = Date.now() / SECOND;
+    const userAgeInSeconds = nowInSeconds - userCreateTime;
+    const immediatePaidSignup = userAgeInSeconds <= 120;
+    const sameDaySignup = userAgeInSeconds <= (24 * HOUR) / SECOND;
+
+    const selectedPlan = getPlanNameFromIDs(planIDs) || PLANS.FREE;
+
+    telemetry.sendCustomEvent('subscription_update_v1', {
+        selectedPlan,
+        flowId,
+        currency,
+        cycle,
+        immediatePaidSignup,
+        sameDaySignup,
+        userAgeInSeconds,
+        invoiceID,
+        coupon,
         amount,
     });
 };

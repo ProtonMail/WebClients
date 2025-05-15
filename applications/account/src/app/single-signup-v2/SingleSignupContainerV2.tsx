@@ -30,6 +30,7 @@ import {
     DEFAULT_CYCLE,
     PAYMENT_METHOD_TYPES,
     PLANS,
+    getPlanIDs,
     getPlanNameFromIDs,
     getPlansMap,
 } from '@proton/payments';
@@ -77,7 +78,11 @@ import type {
 import { getPlanIDsFromParams } from '../signup/searchParams';
 import { handleDone, handleSetupMnemonic, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
-import { sendSignupAccountCreationTelemetry, sendSignupLoadTelemetry } from '../signup/signupTelemetry';
+import {
+    sendSignupAccountCreationTelemetry,
+    sendSignupLoadTelemetry,
+    sendSignupSubscriptionTelemetryEvent,
+} from '../signup/signupTelemetry';
 import { useGetAccountKTActivation } from '../useGetAccountKTActivation';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import type { MetaTags } from '../useMetaTags';
@@ -1184,6 +1189,22 @@ const SingleSignupContainerV2 = ({
             }),
             wait(3500),
         ]);
+
+        const { subscription, userData } = result.cache;
+        if (subscription && userData) {
+            const planIDs = getPlanIDs(subscription);
+
+            sendSignupSubscriptionTelemetryEvent({
+                planIDs,
+                flowId: 'single-page-signup',
+                currency: subscription.Currency,
+                cycle: subscription.Cycle,
+                userCreateTime: userData.User.CreateTime,
+                invoiceID: subscription.InvoiceID,
+                coupon: subscription.CouponCode,
+                amount: subscription.Amount,
+            });
+        }
 
         measure(getSignupTelemetryData(model.plansMap, cache));
 
