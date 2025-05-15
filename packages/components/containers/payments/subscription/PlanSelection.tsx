@@ -506,7 +506,9 @@ const PlanSelection = (props: Props) => {
                       };
                   })
                 : [];
-        const isSelectable = plansList.some(({ planName: otherPlanName }) => otherPlanName === plan.Name);
+        // Only show the selectable plans dropdown in case the user is free
+        const isSelectable =
+            plansList.some(({ planName: otherPlanName }) => otherPlanName === plan.Name) && user.isFree;
         const selectedPlan = plansList.some(
             ({ planName: otherPlanName }) => otherPlanName === selectedProductPlans[audience]
         )
