@@ -1,7 +1,7 @@
 import { addMonths, format } from 'date-fns';
 import { c } from 'ttag';
 
-import { VerticalStep, VerticalSteps } from '@proton/atoms';
+import { VerticalStep, VerticalStepStatusEnum, VerticalSteps } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -18,13 +18,13 @@ export const ReferralHowItWorks = () => {
                 icon={<Icon name="checkmark" className="m-auto" size={4} />}
                 title={c('info').t`Create an email address`}
                 description={c('info').t`Your new email address is ready to go!`}
-                status="passed"
+                status={VerticalStepStatusEnum.Passed}
             />
             <VerticalStep
                 icon={<Icon name="lock" className="m-auto" size={4} />}
                 title={c('info').t`Try ${planName}`}
                 description={c('info').t`Enjoy secure, easy-to-use emailing with plenty of premium features.`}
-                status="done"
+                status={VerticalStepStatusEnum.Done}
             />
             <VerticalStep
                 icon={<Icon name="bell" className="m-auto" size={4} />}
