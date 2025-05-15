@@ -50,11 +50,12 @@ describe('locationAsideHelpers', () => {
         it('should show the exact count for newsletter subscriptions when below limit', () => {
             expect(getUnreadCount(CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS, 5)).toBe(5);
             expect(getUnreadCount(CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS, 99)).toBe(99);
+            expect(getUnreadCount(CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS, 150)).toBe(150);
         });
 
         it('should show 99+ when count exceeds MAIL_SUBSCRIPTION_LIMIT for newsletter subscriptions', () => {
-            expect(getUnreadCount(CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS, 100)).toBe('99+');
-            expect(getUnreadCount(CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS, 150)).toBe('99+');
+            expect(getUnreadCount(CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS, 1000)).toBe('999+');
+            expect(getUnreadCount(CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS, 1500)).toBe('999+');
         });
     });
 });
