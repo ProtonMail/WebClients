@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktivovat"
-      ],
       "activate": [
         "aktivovat"
+      ],
+      "Activate": [
+        "Aktivovat"
       ],
       "Activate organization key": [
         "Aktivovat klíč organizace"
@@ -267,10 +267,10 @@
       "Discard": [
         "Zahodit"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Zahodit změny"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Zahodit změny"
       ],
       "Discover ${ planName }": [
@@ -456,10 +456,10 @@
       "Invite user": [
         "Pozvat uživatele"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Pokračovat v úpravách"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Pokračovat v úpravách"
       ],
       "Keep logo": [
@@ -497,6 +497,9 @@
       ],
       "Mark as default": [
         "Označit jako výchozí"
+      ],
+      "Mark as favorite": [
+        "Označit jako oblíbené"
       ],
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
@@ -573,11 +576,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "refresh the page": [
-        "obnovit stránku"
-      ],
       "Refresh the page": [
         "Obnovit stránku"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Remove": [
         "Odstranit"
@@ -593,6 +596,9 @@
       ],
       "Remove domain": [
         "Odebrat doménu"
+      ],
+      "Remove from favorites": [
+        "Odebrat z oblíbených"
       ],
       "Remove gift code": [
         "Odstranit dárkový kód"
@@ -969,6 +975,9 @@
       ]
     },
     "Address action": {
+      "Allow unsigned mail": [
+        "Povolit nepodepsanou poštu"
+      ],
       "Delete address": [
         "Smazat adresu"
       ],
@@ -4617,11 +4626,11 @@
       "Data recoverable on this device": [
         "Data obnovitelná v tomto zařízení"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -6138,6 +6147,12 @@
         "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }.",
         "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }."
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Povolili jste přeposílání na ${ MAX_SYNC_PAID_USER } Gmail adresu. Chcete-li přidat další, nejprve jednu z nich deaktivujte.",
+        "Povolili jste přeposílánína ${ MAX_SYNC_PAID_USER } Gmail adresy. Chcete-li přidat další, nejprve jednu z nich deaktivujte.",
+        "Povolili jste přeposílánína ${ MAX_SYNC_PAID_USER } Gmail adres. Chcete-li přidat další, nejprve jednu z nich deaktivujte.",
+        "Povolili jste přeposílánína ${ MAX_SYNC_PAID_USER } Gmail adres. Chcete-li přidat další, nejprve jednu z nich deaktivujte."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Vaše ${ boldDiscountPercent } na ${ boldPlanTitle } byla použita"
       ],
@@ -7268,11 +7283,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Váš účet je ohrožen smazáním. Abyste zabránili ztrátě dat, požádejte vašeho správce o navýšení. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Vaše úložiště je plné. Chcete-li odesílat nebo přijímat e-maily, uvolněte místo nebo ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Vaše úložiště je plné. Abyste mohli nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Vaše úložiště je plné. Chcete-li dále používat produkty ${ BRAND_NAME }, uvolněte místo nebo ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Vaše předplatné skončilo. ${ cta } pro předejití ztrátě dat."
@@ -8679,17 +8691,6 @@
         "Vítejte v ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Všichni"
-      ],
-      "Group members": [
-        "Členové skupiny"
-      ],
-      "No one": [
-        "Nikdo"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Povoleno ${ defaultLabel }"
@@ -8780,6 +8781,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Všichni"
+      ],
+      "Group members": [
+        "Členové skupiny"
+      ],
+      "No one": [
+        "Nikdo"
       ]
     },
     "Organization capacity error": {
@@ -10531,6 +10543,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Chcete-li dále používat produkty ${ BRAND_NAME }, uvolněte místo nebo ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Abyste odeslali nebo přijímali e-maily, uvolněte místo nebo ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Abyste nahráli nebo synchronizovali soubory, uvolněte místo nebo ${ upgrade }"
       ],
@@ -10734,6 +10749,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription reminder": {
@@ -11036,47 +11092,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {

@@ -787,6 +787,9 @@
       "Manage users/addresses": [
         "Administrer brukere/adresser"
       ],
+      "Mark as favorite": [
+        "Merk som favoritt"
+      ],
       "Mark as read": [
         "Marker som lest"
       ],
@@ -1053,6 +1056,9 @@
       ],
       "Remove expiration time": [
         "Fjern utløpstid"
+      ],
+      "Remove from favorites": [
+        "Fjern fra favoritter"
       ],
       "Remove gift code": [
         "Fjern gavekode"
@@ -6135,6 +6141,10 @@
       "${ storage } storage": [
         "${ storage } lagringsplass"
       ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } e-post forrige måned",
+        "${ subscription.ReceivedMessages.Last30Days } e-poster forrige måned"
+      ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } ulest",
         "${ subscription.UnreadMessageCount } uleste"
@@ -9257,6 +9267,9 @@
       ]
     },
     "Labels": {
+      "Newsletters you unsubscribe from will appear here.": [
+        "Nyhetsbrev du avslutter abonnement på vises her."
+      ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Vis og administrer abonnementer på nyhetsbrev og e-postlister her."
       ]
@@ -9565,11 +9578,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Kontoen din står i fare for å bli slettet. For å unngå tap av data kan du be administratoren om å oppgradere. ${ cta }."
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Lagringsplassen din er full. For å sende eller motta e-post, frigjør plass eller ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Lagringsplassen din er full. For å laste opp eller synkronisere filer, frigjør plass eller ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Lagringsplassen din er full. For å fortsette å bruke ${ BRAND_NAME }-produkter må du frigjøre plass eller ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Abonnementet ditt er avsluttet. ${ cta } og unngå tap av data."
@@ -12492,6 +12502,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "For å fortsette å bruke ${ BRAND_NAME }-produkter må du frigjøre plass eller ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "For å sende eller motta e-post, frigjør plass eller ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "For å sende eller motta e-post, frigjør plass eller oppgrader for mer lagringsplass."
       ],
@@ -14012,6 +14025,9 @@
       ],
       "No trackers found": [
         "Ingen sporere funnet"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Ingen avmeldte e-postabonnementer"
       ],
       "No-reply address detected": [
         "Ingen svaradresse oppdaget"

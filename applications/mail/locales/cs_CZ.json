@@ -795,6 +795,9 @@
       "Manage users/addresses": [
         "Spravovat uživatele/adresy"
       ],
+      "Mark as favorite": [
+        "Označit jako oblíbené"
+      ],
       "Mark as read": [
         "Označit jako přečtené"
       ],
@@ -1061,6 +1064,9 @@
       ],
       "Remove expiration time": [
         "Odebrat dobu platnosti"
+      ],
+      "Remove from favorites": [
+        "Odebrat z oblíbených"
       ],
       "Remove gift code": [
         "Odstranit dárkový kód"
@@ -6052,7 +6058,7 @@
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
       "${ boldBulkDelete }, archive, or move old emails to a folder.": [
-        "${ boldBulkDelete }, archivace nebo přesutí starých e-mailů do složky."
+        "${ boldBulkDelete }, archivace nebo přesunutí starých e-mailů do složky."
       ],
       "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
         "${ boldQuicklySpot }, které odběry již nejsou relevantní."
@@ -6302,6 +6308,12 @@
       ],
       "${ storage } storage": [
         "${ storage } úložiště"
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } e-mail za poslední měsíc",
+        "${ subscription.ReceivedMessages.Last30Days } e-maily za poslední měsíc",
+        "${ subscription.ReceivedMessages.Last30Days } e-mailů za poslední měsíc",
+        "${ subscription.ReceivedMessages.Last30Days } e-mailů za poslední měsíc"
       ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } nepřečtená zpráva",
@@ -7555,7 +7567,7 @@
         "Veřejné sdílení dokumentů ještě není podporováno."
       ],
       "Quickly spot": [
-        "Rychle zjistíte"
+        "Rychle zjistit"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Obraťte se na nás pro pomoc s čímkoli od ${ BRAND_NAME }"
@@ -9541,6 +9553,9 @@
       ]
     },
     "Labels": {
+      "Newsletters you unsubscribe from will appear here.": [
+        "E-mailové zpravodaje, z jejichž odběru se odhlásíte, se zobrazí zde."
+      ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Zde můžete zobrazit a spravovat přihlášení k odběru e-mailových zpravodajů a e-mailových seznamů."
       ]
@@ -9851,11 +9866,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Váš účet je ohrožen smazáním. Abyste zabránili ztrátě dat, požádejte vašeho správce o navýšení. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Vaše úložiště je plné. Chcete-li odesílat nebo přijímat e-maily, uvolněte místo nebo ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Vaše úložiště je plné. Abyste mohli nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Vaše úložiště je plné. Chcete-li dále používat produkty ${ BRAND_NAME }, uvolněte místo nebo ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Vaše předplatné skončilo. ${ cta } pro předejití ztrátě dat."
@@ -12906,6 +12918,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Chcete-li dále používat produkty ${ BRAND_NAME }, uvolněte místo nebo ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Abyste odeslali nebo přijímali e-maily, uvolněte místo nebo ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Abyste mohli přijímat a odesílat e-maily, uvolněte úložný prostor a nebo navyšte na tarif s větším úložištěm."
       ],
@@ -14534,6 +14549,9 @@
       ],
       "No trackers found": [
         "Bez sledovacích prvků"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Žádné odhlášené odběry e-mailů"
       ],
       "No-reply address detected": [
         "Rozpoznána adresa nepřijímající odpovědi"

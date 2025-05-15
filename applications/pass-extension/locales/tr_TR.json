@@ -152,10 +152,10 @@
       "Create": [
         "Ekle"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Bir ${ BRAND_NAME } hesabı açın"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Bir ${ BRAND_NAME } hesabı açın"
       ],
       "Create alias": [
@@ -1779,6 +1779,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"

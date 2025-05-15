@@ -787,6 +787,9 @@
       "Manage users/addresses": [
         "მომხმარებლების/ფსევდონიმების მართვა"
       ],
+      "Mark as favorite": [
+        "რჩეულად მონიშვნა"
+      ],
       "Mark as read": [
         "წაკითხულად მონიშვნა"
       ],
@@ -1053,6 +1056,9 @@
       ],
       "Remove expiration time": [
         "ვადის მოცილება"
+      ],
+      "Remove from favorites": [
+        "წაშლა რჩეულებიდან"
       ],
       "Remove gift code": [
         "სასაჩუქრე კოდის წაშლა"
@@ -9467,12 +9473,6 @@
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "თქვენს ანგარიშს წაშლის საფრთხე ემუქრება. მონაცემთა დაკარგვის თავიდან ასაცილებლად, სთხოვეთ თქვენს ადმინისტრატორს განახლება. ${ cta }"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "თქვენი საცავი სავსეა. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "თქვენი საცავი სავსეა. ფაილების ასატვირთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "თქვენი გამოწერა ამოიწურა. ${ cta } მონაცემების კარგვის თავიდან ასაცილებლად."

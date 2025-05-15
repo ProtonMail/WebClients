@@ -787,6 +787,9 @@
       "Manage users/addresses": [
         "Διαχείριση χρηστών/διευθύνσεων"
       ],
+      "Mark as favorite": [
+        "Ορισμός ως αγαπημένο"
+      ],
       "Mark as read": [
         "Σήμανση ως διαβασμένο"
       ],
@@ -1053,6 +1056,9 @@
       ],
       "Remove expiration time": [
         "Αφαίρεση χρόνου λήξης"
+      ],
+      "Remove from favorites": [
+        "Κατάργηση από τα αγαπημένα"
       ],
       "Remove gift code": [
         "Αφαιρέστε τον κωδικό δώρου"
@@ -6135,6 +6141,10 @@
       "${ storage } storage": [
         "${ storage } αποθηκευτικού χώρου"
       ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } ηλεκτρονικό μήνυμα τον περασμένο μήνα",
+        "${ subscription.ReceivedMessages.Last30Days } ηλεκτρονικά μηνύματα τον περασμένο μήνα"
+      ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } μη αναγνωσμένο",
         "${ subscription.UnreadMessageCount } μη αναγνωσμένα"
@@ -9257,6 +9267,9 @@
       ]
     },
     "Labels": {
+      "Newsletters you unsubscribe from will appear here.": [
+        "Εδώ θα εμφανίζονται τα ενημερωτικά δελτία από τα οποία έχετε καταργήσει την εγγραφή."
+      ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Δείτε και διαχειριστείτε τις συνδρομές ενημερωτικών δελτίων και λιστών αλληλογραφίας εδώ."
       ]
@@ -9565,11 +9578,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ο λογαριασμός σας κινδυνεύει να διαγραφεί. Για να αποφύγετε την απώλεια δεδομένων, ζητήστε από τον διαχειριστή σας να κάνει αναβάθμιση. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ο αποθηκευτικός σας χώρος είναι πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ο αποθηκευτικός σας χώρος είναι πλήρης. Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Ο αποθηκευτικός χώρος σας είναι πλήρης. Για να συνεχίσετε να χρησιμοποιείτε τα προϊόντα ${ BRAND_NAME }, απελευθερώστε χώρο ή ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Η συνδρομή σας έχει λήξει. ${ cta } και για την αποφυγή απώλειας δεδομένων."
@@ -12492,6 +12502,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Για να συνεχίσετε να χρησιμοποιείτε τα προϊόντα ${ BRAND_NAME }, απελευθερώστε χώρο ή ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή κάντε αναβάθμιση για περισσότερο χώρο αποθήκευσης."
       ],
@@ -14012,6 +14025,9 @@
       ],
       "No trackers found": [
         "Δεν βρέθηκαν ιχνηλάτες"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Δεν υπάρχουν μη εγγεγραμμένες συνδρομές σε ταχυδρομικά ενημερωτικά δελτία."
       ],
       "No-reply address detected": [
         "Εντοπίστηκε διεύθυνση που εκ φύσεως δεν απαντά σε μηνύματα"
