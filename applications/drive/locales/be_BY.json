@@ -5696,6 +5696,9 @@
       "Shared": [
         "Абагулена"
       ],
+      "Shared by ": [
+        "Абагулена "
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "Абагулена ${ rootLink.signatureEmail }"
       ],
@@ -7320,11 +7323,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ваш уліковы запіс пад пагрозай выдалення. Папрасіце свайго адміністратара палепшыць тарыфны план, каб пазбегнуць страты даных. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ваша сховішча запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ваша сховішча запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Ваша сховішча запоўнена. Каб працягваць карыстацца прадуктамі ${ BRAND_NAME } вызваліце месца або ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Ваша падпіска завяршылася. ${ cta } і пазбегнуць страты даных."
@@ -8917,6 +8917,12 @@
       "Share invitation declined": [
         "Абагуленае запрашэнне адхілена"
       ],
+      "Some photo(s) could not be added to \"${ albumName }\"": [
+        "Некаторыя фатаграфіі немагчыма дадаць у \"${ albumName }\""
+      ],
+      "Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Некаторыя фатаграфіі немагчыма выдаліць з ${ albumLink.name }"
+      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Немагчыма выдаліць папку, бо яна не пустая.",
         "Немагчыма выдаліць папкі, бо яны не пустыя.",
@@ -8971,20 +8977,14 @@
       "Your photo(s) have been added to \"${ albumName }\"": [
         "Вашы фатаграфіі былі дададзены ў \"${ albumName }\""
       ],
+      "Your photo(s) have been removed from ${ albumLink.name }": [
+        "Вашы фатаграфіі былі выдалены з ${ albumLink.name }"
+      ],
       "Your settings failed to be saved": [
         "Не ўдалося захаваць вашы налады"
       ],
       "Your settings have been changed successfully": [
         "Вашы налады былі паспяхова зменены"
-      ],
-      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
-        "Некаторыя фатаграфіі немагчыма дадаць у \"${ albumName }\""
-      ],
-      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Некаторыя фатаграфіі немагчыма выдаліць з ${ albumLink.name }"
-      ],
-      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
-        "Вашы фатаграфіі былі выдалены з ${ albumLink.name }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10320,6 +10320,9 @@
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Вызваліце месца або ${ upgrade }, каб працягнуць карыстацца прадуктамі ${ BRAND_NAME }"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Калі вы хочаце і далей адпраўляць і прымаць лісты, вызваліце месца або ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Калі вы хочаце і далей адпраўляць і прымаць лісты, вызваліце месца або перайдзіце на тарыфны план больш высокага ўзроўню, каб атрымаць больш сховішча."

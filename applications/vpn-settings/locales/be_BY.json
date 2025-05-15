@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Актываваць"
-      ],
       "activate": [
         "актываваць"
+      ],
+      "Activate": [
+        "Актываваць"
       ],
       "Activate organization key": [
         "Актываваць ключ арганізацыі"
@@ -267,10 +267,10 @@
       "Discard": [
         "Адхіліць"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Адхіліць змены"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Адхіліць змены"
       ],
       "Discover ${ planName }": [
@@ -456,10 +456,10 @@
       "Invite user": [
         "Запрасіць карыстальніка"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Працягнуць рэдагаванне"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Працягнуць рэдагаванне"
       ],
       "Keep logo": [
@@ -497,6 +497,9 @@
       ],
       "Mark as default": [
         "Пазначыць як прадвызначаны"
+      ],
+      "Mark as favorite": [
+        "Пазначыць як абранае"
       ],
       "More info: ${ safeTitle }": [
         "Больш інфармацыі: ${ safeTitle }"
@@ -573,11 +576,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "refresh the page": [
-        "абнавіць старонку"
-      ],
       "Refresh the page": [
         "Абнавіць старонку"
+      ],
+      "refresh the page": [
+        "абнавіць старонку"
       ],
       "Remove": [
         "Выдаліць"
@@ -593,6 +596,9 @@
       ],
       "Remove domain": [
         "Выдаліць дамен"
+      ],
+      "Remove from favorites": [
+        "Выдаліць з абранага"
       ],
       "Remove gift code": [
         "Выдаліць падарункавы код"
@@ -969,6 +975,9 @@
       ]
     },
     "Address action": {
+      "Allow unsigned mail": [
+        "Дазвол. непадпіс. пошту"
+      ],
       "Delete address": [
         "Выдаліць адрас"
       ],
@@ -4617,11 +4626,11 @@
       "Data recoverable on this device": [
         "Даныя, якія можна аднавіць на гэтай прыладзе"
       ],
-      "Dedicated servers": [
-        "Вылучаныя серверы"
-      ],
       "dedicated servers": [
         "вылучаныя серверы"
+      ],
+      "Dedicated servers": [
+        "Вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -7268,11 +7277,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ваш уліковы запіс пад пагрозай выдалення. Папрасіце свайго адміністратара палепшыць тарыфны план, каб пазбегнуць страты даных. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ваша сховішча запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ваша сховішча запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Ваша сховішча запоўнена. Каб працягваць карыстацца прадуктамі ${ BRAND_NAME } вызваліце месца або ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Ваша падпіска завяршылася. ${ cta } і пазбегнуць страты даных."
@@ -8679,17 +8685,6 @@
         "Вітаем у ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Кожнаму"
-      ],
-      "Group members": [
-        "Удзельнікі групы"
-      ],
-      "No one": [
-        "Нікому"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Дазволена ${ defaultLabel }"
@@ -8759,6 +8754,17 @@
       ],
       "The whole organization": [
         "Уся арганізацыя"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Кожнаму"
+      ],
+      "Group members": [
+        "Удзельнікі групы"
+      ],
+      "No one": [
+        "Нікому"
       ]
     },
     "Organization capacity error": {
@@ -10510,6 +10516,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Вызваліце месца або ${ upgrade }, каб працягнуць карыстацца прадуктамі ${ BRAND_NAME }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Калі вы хочаце і далей адпраўляць і прымаць лісты, вызваліце месца або ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Вызваліце месца або ${ upgrade }, каб запампоўваць або сінхранізаваць файлы"
       ],
@@ -10713,6 +10722,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription reminder": {
@@ -11015,47 +11065,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {

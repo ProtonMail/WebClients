@@ -795,6 +795,9 @@
       "Manage users/addresses": [
         "Управление пользователями/адресами"
       ],
+      "Mark as favorite": [
+        "Отметить как избранное"
+      ],
       "Mark as read": [
         "Отметить как прочитанное"
       ],
@@ -1061,6 +1064,9 @@
       ],
       "Remove expiration time": [
         "Удалить время истечения срока действия"
+      ],
+      "Remove from favorites": [
+        "Убрать из избранных"
       ],
       "Remove gift code": [
         "Удалить подарочный код"
@@ -3885,6 +3891,9 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } в ${ DRIVE_APP_NAME } позволяет вам работать вместе с другими людьми в защищенной и зашифрованной среде."
+      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } в настройках."
       ],
@@ -3894,17 +3903,26 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Двухфакторная аутентификация (2FA) делает вашу учетную запись более защищенной, предотвращая несанкционированный доступ."
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Добавляйте папки и файлы в ${ DRIVE_APP_NAME } и приглашайте членов команды для просмотра или изменения."
+      ],
       "Also included": [
         "Также включены"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Автоматическая очистка писем, перемещенных в корзину и спам более 30 дней назад."
       ],
+      "Automatically forward incoming email to another email address.": [
+        "Автоматически пересылайте входящие сообщения на другой адрес электронной почты."
+      ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Автоматическая сортировка сообщений, прежде чем они попадут во входящие."
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Сначала настройте это, чтобы активировать вашу организацию и настроить ваш адрес электронной почты."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Подключите CRM (управление взаимоотношениями с клиентами), веб-сайт, принтеры и многое другое."
       ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Создавайте столько ярлыков или папок, сколько вам нужно, чтобы держать входящие в порядке."
@@ -3924,11 +3942,17 @@
       "Easily access your email and calendar on desktop and mobile.": [
         "Получите легкий доступ к вашей электронной почте и календарю на компьютере и мобильных устройствах."
       ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Легко синхронизируйте файлы с облаком с настольного компьютера и получайте к ним доступ с мобильного устройства."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Поощряйте использование двухфакторной аутентификации в вашей организации для обеспечения дополнительной безопасности."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Обеспечьте защищенный доступ к данным организации, даже если ваша команда работает удаленно или использует публичный WiFi."
       ],
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "Обеспечьте высочайший уровень безопасности для вашего аккаунта с помощью программы ${ PROTON_SENTINEL_NAME }."
@@ -3945,8 +3969,14 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Поможет вашей команде защищенно хранить пароли к конфиденциальной деловой и клиентской информации."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Похоже, что список контактов, который вы импортируете, содержит группы. Пожалуйста, уточните, как их нужно импортировать."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Позволяет мгновенно добавлять ссылки на встречи к вашим приглашениям на события."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Выполняется объединение контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
@@ -3977,6 +4007,9 @@
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Настроить аккаунты для всех пользователей и пригласить их присоединиться к ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Упростите синхронизацию и планирование с общими календарями."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Чтобы продолжить пользоваться помощником по написанию, добавьте его к своей подписке."
@@ -9661,6 +9694,14 @@
         "Кому: ${ to }"
       ]
     },
+    "Labels": {
+      "Newsletters you unsubscribe from will appear here.": [
+        "Новости, от которых вы отписываетесь, будут отображаться здесь."
+      ],
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Просматривайте и управляйте подписками на новости и списки рассылки здесь."
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Боковая панель"
@@ -9967,11 +10008,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ваш аккаунт находится под угрозой удаления. Чтобы избежать потери данных, обратитесь к администратору с просьбой об улучшении тарифа. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ваше хранилище заполнено. Чтобы отправлять или получать электронные письма, освободите место или ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ваше хранилище заполнено. Чтобы загружать или синхронизировать файлы, освободите место или ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Ваше хранилище заполнено. Чтобы продолжить использование продуктов ${ BRAND_NAME }, освободите место или ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Ваша подписка закончилась. ${ cta } и избежать потери данных."
@@ -13022,6 +13060,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Чтобы продолжить использование продуктов ${ BRAND_NAME }, освободите место или ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Для отправки и получения электронной почты, освободите место или ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Чтобы отправлять или получать электронные письма, освободите место или улучшите тариф для получения большего места в хранилище."
       ],
@@ -15196,6 +15237,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Затем вам будут выставляться счета каждые 12 месяцев по цене ${ renewPriceStr }."
+      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Ваша подписка будет автоматически продлена через ${ cycle } месяц.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",

@@ -787,6 +787,9 @@
       "Manage users/addresses": [
         "Gérer les utilisateurs/adresses"
       ],
+      "Mark as favorite": [
+        "Marquer comme favori"
+      ],
       "Mark as read": [
         "Marquer comme lu"
       ],
@@ -1053,6 +1056,9 @@
       ],
       "Remove expiration time": [
         "Retirer le délai d'expiration"
+      ],
+      "Remove from favorites": [
+        "Retirer des favoris"
       ],
       "Remove gift code": [
         "Retirer le code-cadeau"
@@ -6584,7 +6590,7 @@
         "Le navigateur n'est pas pris en charge."
       ],
       "Bulk delete": [
-        "Supprimer en masse"
+        "Supprimez en masse"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
@@ -9714,12 +9720,6 @@
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Votre compte risque d'être supprimé. Pour éviter de perdre des données, demandez à votre administrateur de mettre à jour votre abonnement. ${ cta }"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Votre espace de stockage est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Votre espace de stockage est plein. Pour importer ou synchroniser vos fichiers, veuillez libérer de l'espace ou ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Votre abonnement est terminé. ${ cta } et pour éviter de perdre des données."

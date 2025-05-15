@@ -787,6 +787,9 @@
       "Manage users/addresses": [
         "Gerir os utilizadores/endereços"
       ],
+      "Mark as favorite": [
+        "Marcar como favorito"
+      ],
       "Mark as read": [
         "Marcar como lido"
       ],
@@ -1053,6 +1056,9 @@
       ],
       "Remove expiration time": [
         "Remover data de expiração"
+      ],
+      "Remove from favorites": [
+        "Remover dos favoritos"
       ],
       "Remove gift code": [
         "Remover código de oferta"
@@ -6135,6 +6141,10 @@
       "${ storage } storage": [
         "${ storage } de armazenamento"
       ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } e-mail no mês passado",
+        "${ subscription.ReceivedMessages.Last30Days } e-mails no mês passado"
+      ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } não lido",
         "${ subscription.UnreadMessageCount } não lidos"
@@ -9257,6 +9267,9 @@
       ]
     },
     "Labels": {
+      "Newsletters you unsubscribe from will appear here.": [
+        "Os boletins das quais cancelou a subscrição aparecerão aqui."
+      ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Veja e gira as subscrições de boletins e lista de correio aqui."
       ]
@@ -9564,12 +9577,6 @@
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "A sua conta corre risco de eliminação. Para evitar a perda de dados, peça ao seu administrador que atualize o plano. ${ cta }"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "O seu armazenamento está cheio. Para enviar ou receber emails, liberte espaço ou ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "O seu armazenamento está cheio. Para enviar ou sincronizar ficheiros, liberte espaço ou ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "A sua subscrição terminou. ${ cta } e para evitar a perda de dados."
@@ -14012,6 +14019,9 @@
       ],
       "No trackers found": [
         "Nenhum rastreador encontrado"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Sem subscrições de e-mail canceladas"
       ],
       "No-reply address detected": [
         "Endereço de não responder detetado"

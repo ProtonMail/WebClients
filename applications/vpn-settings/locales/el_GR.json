@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "activate": [
         "ενεργοποιήστε"
+      ],
+      "Activate": [
+        "Ενεργοποίηση"
       ],
       "Activate organization key": [
         "Ενεργοποιήστε το κλειδί οργανισμού"
@@ -267,11 +267,11 @@
       "Discard": [
         "Απόρριψη"
       ],
-      "Discard changes": [
-        "Απόρριψη αλλαγών"
-      ],
       "Discard Changes": [
         "Απόρριψη Αλλαγών"
+      ],
+      "Discard changes": [
+        "Απόρριψη αλλαγών"
       ],
       "Discover ${ planName }": [
         "Ανακαλύψτε το ${ planName }"
@@ -456,11 +456,11 @@
       "Invite user": [
         "Πρόσκληση χρήστη"
       ],
-      "Keep editing": [
-        "Συνέχιση επεξεργασίας"
-      ],
       "Keep Editing": [
         "Συνεχίστε την Επεξεργασία"
+      ],
+      "Keep editing": [
+        "Συνέχιση επεξεργασίας"
       ],
       "Keep logo": [
         "Διατηρήστε το λογότυπο"
@@ -497,6 +497,9 @@
       ],
       "Mark as default": [
         "Ορισμός ως προεπιλογή"
+      ],
+      "Mark as favorite": [
+        "Ορισμός ως αγαπημένο"
       ],
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
@@ -573,11 +576,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Remove": [
         "Αφαίρεση"
@@ -593,6 +596,9 @@
       ],
       "Remove domain": [
         "Αφαίρεση τομέα"
+      ],
+      "Remove from favorites": [
+        "Κατάργηση από τα αγαπημένα"
       ],
       "Remove gift code": [
         "Αφαιρέστε τον κωδικό δώρου"
@@ -961,6 +967,9 @@
       ]
     },
     "Address action": {
+      "Allow unsigned mail": [
+        "Να επιτρέπεται η ανυπόγραφη αλληλογραφία"
+      ],
       "Delete address": [
         "Διαγραφή διεύθυνσης"
       ],
@@ -4515,11 +4524,11 @@
       "Data recoverable on this device": [
         "Δεδομένα ανακτήσιμα σε αυτήν τη συσκευή"
       ],
-      "Dedicated servers": [
-        "Αποκλειστικοί διακομιστές"
-      ],
       "dedicated servers": [
         "αφοσιωμένοι διακομιστές"
+      ],
+      "Dedicated servers": [
+        "Αποκλειστικοί διακομιστές"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστικές διευθύνσεις IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να επιτρέψουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -7108,11 +7117,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ο λογαριασμός σας κινδυνεύει να διαγραφεί. Για να αποφύγετε την απώλεια δεδομένων, ζητήστε από τον διαχειριστή σας να κάνει αναβάθμιση. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ο αποθηκευτικός σας χώρος είναι πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ο αποθηκευτικός σας χώρος είναι πλήρης. Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Ο αποθηκευτικός χώρος σας είναι πλήρης. Για να συνεχίσετε να χρησιμοποιείτε τα προϊόντα ${ BRAND_NAME }, απελευθερώστε χώρο ή ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Η συνδρομή σας έχει λήξει. ${ cta } και για την αποφυγή απώλειας δεδομένων."
@@ -8465,17 +8471,6 @@
         "Καλώς ήρθατε στο ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Όλοι"
-      ],
-      "Group members": [
-        "Μέλη ομάδας"
-      ],
-      "No one": [
-        "Κανένας"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Επιτρέπεται ${ defaultLabel }"
@@ -8545,6 +8540,17 @@
       ],
       "The whole organization": [
         "Ολόκληρος ο οργανισμός"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Όλοι"
+      ],
+      "Group members": [
+        "Μέλη ομάδας"
+      ],
+      "No one": [
+        "Κανένας"
       ]
     },
     "Organization capacity error": {
@@ -10220,6 +10226,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Για να συνεχίσετε να χρησιμοποιείτε τα προϊόντα ${ BRAND_NAME }, απελευθερώστε χώρο ή ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ upgrade }"
       ],
@@ -10391,6 +10400,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Για ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερες premium δυνατότητες"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription reminder": {
@@ -10681,47 +10731,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερες premium δυνατότητες"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription renewal state": {
