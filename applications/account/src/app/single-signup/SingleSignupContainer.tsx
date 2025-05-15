@@ -521,7 +521,7 @@ const SingleSignupContainer = ({
             });
 
             sendSignupLoadTelemetry({
-                plan: selectedPlan.Name,
+                planIDs: subscriptionData.planIDs,
                 flowId: 'single-page-signup-vpn',
                 productIntent: toApp,
                 currency: preferredCurrency,
@@ -830,7 +830,7 @@ const SingleSignupContainer = ({
                                 }
 
                                 sendSignupAccountCreationTelemetry({
-                                    plan: getPlanNameFromIDs(cache.subscriptionData.planIDs) || PLANS.FREE,
+                                    planIDs: cache.subscriptionData.planIDs,
                                     flowId: 'single-page-signup-vpn',
                                     productIntent: toApp,
                                     currency: cache.subscriptionData.currency,
