@@ -667,7 +667,9 @@ const SingleSignupContainer = ({
                             onComplete={async (data) => {
                                 const { accountData, subscriptionData } = data;
                                 const accountType =
-                                    accountData.signupType === SignupType.Email ? 'external_account' : 'proton_account';
+                                    accountData.signupType === SignupType.External
+                                        ? 'external_account'
+                                        : 'proton_account';
                                 try {
                                     const cache: SignupCacheResult = {
                                         type: 'signup',
@@ -737,7 +739,9 @@ const SingleSignupContainer = ({
                             onComplete={async (data) => {
                                 const { accountData, subscriptionData } = data;
                                 const accountType =
-                                    accountData.signupType === SignupType.Email ? 'external_account' : 'proton_account';
+                                    accountData.signupType === SignupType.External
+                                        ? 'external_account'
+                                        : 'proton_account';
                                 try {
                                     const cache: SignupCacheResult = {
                                         type: 'signup',

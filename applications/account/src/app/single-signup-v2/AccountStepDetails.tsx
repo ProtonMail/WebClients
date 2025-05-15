@@ -360,14 +360,14 @@ const AccountStepDetails = ({
         let emailError: ErrorDetails['email'] = undefined;
         let usernameError: ErrorDetails['username'] = undefined;
 
-        if (signupType === SignupType.Email) {
+        if (signupType === SignupType.External) {
             const accountDetails = getAccountDetailsFromEmail({
                 email: details.email,
                 domains,
                 defaultDomain: undefined,
             });
 
-            if (accountDetails.signupType === SignupType.Username) {
+            if (accountDetails.signupType === SignupType.Proton) {
                 emailError = getUsernameError({
                     username: accountDetails.local,
                     domain: accountDetails.domain,
@@ -406,8 +406,8 @@ const AccountStepDetails = ({
 
             return (
                 [
-                    signupType === SignupType.Email && !hasValidAsyncEmailState ? 'email' : undefined,
-                    signupType === SignupType.Username && !hasValidAsyncUsernameState ? 'username' : undefined,
+                    signupType === SignupType.External && !hasValidAsyncEmailState ? 'email' : undefined,
+                    signupType === SignupType.Proton && !hasValidAsyncUsernameState ? 'username' : undefined,
                     errorDetails.username ? 'username' : undefined,
                     errorDetails.email ? 'email' : undefined,
                     errorDetails.password ? 'password' : undefined,
@@ -483,7 +483,7 @@ const AccountStepDetails = ({
             domains,
             defaultDomain: undefined,
         });
-        if (accountDetails.signupType === SignupType.Username) {
+        if (accountDetails.signupType === SignupType.Proton) {
             handleUsernameError(accountDetails.local, accountDetails.domain, setEmailAsyncValidationState);
         } else {
             handleEmailError(email);
@@ -513,14 +513,14 @@ const AccountStepDetails = ({
         data: async (): Promise<AccountData> => {
             const payload = await challengeRefEmail.current?.getChallenge().catch(noop);
 
-            if (signupType === SignupType.Email) {
+            if (signupType === SignupType.External) {
                 const emailAccountDetails = getAccountDetailsFromEmail({
                     email: trimmedEmail,
                     domains,
                     defaultDomain: undefined,
                 });
 
-                if (signupType === SignupType.Email && emailAccountDetails.signupType === SignupType.Username) {
+                if (signupType === SignupType.External && emailAccountDetails.signupType === SignupType.Proton) {
                     return {
                         email: trimmedEmail,
                         username: emailAccountDetails.local,
@@ -575,13 +575,13 @@ const AccountStepDetails = ({
             domains,
             defaultDomain: domain,
         });
-        if (accountDetails.signupType === SignupType.Username) {
+        if (accountDetails.signupType === SignupType.Proton) {
             setSignupType(accountDetails.signupType);
             onUsernameValue(accountDetails.local, accountDetails.domain);
             // Ensures the error is displayed
             setInputsStateDiff({ username: { focus: true } });
-        } else if (signupTypes.includes(SignupType.Email)) {
-            setSignupType(SignupType.Email);
+        } else if (signupTypes.includes(SignupType.External)) {
+            setSignupType(SignupType.External);
             onEmailValue(defaultEmail);
             // Ensures the error is displayed
             setInputsStateDiff({ email: { focus: true } });
@@ -595,7 +595,7 @@ const AccountStepDetails = ({
     const passwordConfirmError = getAssistVisible(states.passwordConfirm) ? errorDetails.passwordConfirm : undefined;
 
     const inputsWrapper = 'flex flex-column';
-    const hasSwitchSignupType = signupTypes.includes(SignupType.Email) && signupTypes.length > 1;
+    const hasSwitchSignupType = signupTypes.includes(SignupType.External) && signupTypes.length > 1;
     const dense = !passwordFields && signupTypes.length <= 1;
 
     const handleSubmit = () => {
@@ -664,7 +664,7 @@ const AccountStepDetails = ({
                         }}
                     >
                         <div className={clsx(inputsWrapper, theme.dark && 'ui-prominent', 'bg-transparent')}>
-                            {signupType === SignupType.Email && (
+                            {signupType === SignupType.External && (
                                 <InputFieldTwo
                                     ref={emailRef}
                                     id="email"
@@ -720,7 +720,7 @@ const AccountStepDetails = ({
                                 />
                             )}
 
-                            {signupType === SignupType.Username && (
+                            {signupType === SignupType.Proton && (
                                 <InputFieldTwo
                                     ref={usernameRef}
                                     id="username"
@@ -836,8 +836,8 @@ const AccountStepDetails = ({
                                 onClick={() => {
                                     setSignupType(
                                         (() => {
-                                            if (signupType === SignupType.Username) {
-                                                return SignupType.Email;
+                                            if (signupType === SignupType.Proton) {
+                                                return SignupType.External;
                                             }
                                             return signupTypes.find((type) => type !== signupType) || signupType;
                                         })()
@@ -845,7 +845,7 @@ const AccountStepDetails = ({
                                     setInputsDiff({ email: '', username: '' });
                                 }}
                             >
-                                {signupType === SignupType.Email
+                                {signupType === SignupType.External
                                     ? c('Action').t`Get a new encrypted email address`
                                     : c('Action').t`Use your current email instead`}
                             </InlineLinkButton>
@@ -853,7 +853,7 @@ const AccountStepDetails = ({
                                 buttonTabIndex={-1}
                                 className="ml-2"
                                 title={
-                                    signupType === SignupType.Email
+                                    signupType === SignupType.External
                                         ? c('Info')
                                               .t`With an encrypted ${BRAND_NAME} address, you can use all ${BRAND_NAME} services`
                                         : c('Info')
@@ -933,7 +933,7 @@ const AccountStepDetails = ({
                     emailAlreadyUsed,
                     details,
                     email: (() => {
-                        if (signupType === SignupType.Username) {
+                        if (signupType === SignupType.Proton) {
                             if (details.username.trim()) {
                                 return joinUsernameDomain(details.username, domain);
                             }
