@@ -38,6 +38,7 @@ export interface ClientRequiresEditorMethods {
   changeLockedState(locked: boolean): Promise<void>
   broadcastPresenceState(): Promise<void>
   exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array>
+  copyCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
   printAsPDF(): Promise<void>
   loadUserSettings(settings: UserSettings): Promise<void>
   toggleDebugTreeView(): Promise<void>
