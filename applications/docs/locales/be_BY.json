@@ -6337,11 +6337,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ваш уліковы запіс пад пагрозай выдалення. Папрасіце свайго адміністратара палепшыць тарыфны план, каб пазбегнуць страты даных. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ваша сховішча запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ваша сховішча запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Ваша сховішча запоўнена. Каб працягваць карыстацца прадуктамі ${ BRAND_NAME } вызваліце месца або ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Ваша падпіска завяршылася. ${ cta } і пазбегнуць страты даных."
@@ -9155,6 +9152,9 @@
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Вызваліце месца або ${ upgrade }, каб працягнуць карыстацца прадуктамі ${ BRAND_NAME }"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Калі вы хочаце і далей адпраўляць і прымаць лісты, вызваліце месца або ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Вызваліце месца або ${ upgrade }, каб запампоўваць або сінхранізаваць файлы"

@@ -787,6 +787,9 @@
       "Manage users/addresses": [
         "Gestionar usuarios/direcciones"
       ],
+      "Mark as favorite": [
+        "Marcar como favorito"
+      ],
       "Mark as read": [
         "Marcar como leído"
       ],
@@ -1053,6 +1056,9 @@
       ],
       "Remove expiration time": [
         "Eliminar el tiempo de expiración"
+      ],
+      "Remove from favorites": [
+        "Eliminar de favoritos"
       ],
       "Remove gift code": [
         "Eliminar el código de regalo"
@@ -1739,10 +1745,10 @@
         "Editor de documentos online"
       ],
       "Online privacy for up to 2 people": [
-        "Privacidad en línea para hasta 2 personas"
+        "Privacidad online para hasta 2 personas"
       ],
       "Online privacy for your whole family (up to 6 users)": [
-        "Privacidad en línea para toda su familia (hasta 6 usuarios)"
+        "Privacidad online para toda su familia (hasta 6 usuarios)"
       ],
       "Protect up to 10 devices": [
         "Proteja hasta 10 dispositivos"
@@ -1763,7 +1769,7 @@
         "Ahorre a lo grande en funciones premium de VPN con un descuento por tiempo limitado."
       ],
       "Save time with built-in 2FA": [
-        "Ahorre tiempo con autenticación de dos factores integrada"
+        "Ahorre tiempo con 2FA integrada"
       ],
       "Secure email with unlimited aliases": [
         "Correo electrónico seguro con alias ilimitados"
@@ -2538,7 +2544,7 @@
     },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } es una IA que prioriza la privacidad y le ayuda a hacer más, manteniendo sus datos seguros. Desbloquee todo su potencial y disfrute del acceso anticipado a nuevas funciones a medida que se introduzcan."
+        "${ LUMO_APP_NAME } es una IA que prioriza la privacidad y le ayuda a hacer más, a la vez que mantiene sus datos seguros. Desbloquee todo su potencial y disfrute del acceso anticipado a nuevas funciones a medida que se introduzcan."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Agregar ${ LUMO_APP_NAME }"
@@ -6278,6 +6284,10 @@
       "${ storage } storage": [
         "${ storage } de almacenamiento"
       ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } correos del mes pasado",
+        "${ subscription.ReceivedMessages.Last30Days } correos el mes pasado"
+      ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } no leído",
         "${ subscription.UnreadMessageCount } no leídos"
@@ -9403,6 +9413,9 @@
       ]
     },
     "Labels": {
+      "Newsletters you unsubscribe from will appear here.": [
+        "Los boletines cuyas suscripciones haya cancelado aparecerán aquí."
+      ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Aquí puede ver y gestionar las suscripciones a los boletines y a la lista de correo."
       ]
@@ -9711,11 +9724,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "La cuenta corre el riesgo de ser eliminada. Para evitar la pérdida de datos, pida al administrador que la actualice. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "El almacenamiento está lleno. Para enviar o recibir correos, libere espacio o ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "El almacenamiento está lleno. Para cargar o sincronizar archivos, libere espacio o ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Su almacenamiento está lleno. Para seguir utilizando los productos de ${ BRAND_NAME }, libere espacio o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La suscripción ha finalizado. ${ cta } y para evitar la pérdida de datos."
@@ -12644,6 +12654,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Para seguir utilizando los productos de ${ BRAND_NAME }, libere espacio o ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Para enviar o recibir correos, libere espacio o ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Para enviar o recibir correos, libere espacio o mejore para obtener más almacenamiento."
       ],
@@ -14164,6 +14177,9 @@
       ],
       "No trackers found": [
         "No se encontraron rastreadores."
+      ],
+      "No unsubscribed mail subscriptions": [
+        "No hay suscripciones de correo dadas de baja"
       ],
       "No-reply address detected": [
         "Se detectó una dirección de no responder (no-reply)."

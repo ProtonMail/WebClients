@@ -403,10 +403,10 @@
       "Move to another vault": [
         "Μετακίνηση σε άλλη κρύπτη"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Μετακίνηση στα Διαγραμμένα"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Μετακίνηση στα Διαγραμμένα"
       ],
       "Multiple select": [
@@ -438,6 +438,9 @@
       ],
       "Pause monitoring": [
         "Παύση παρακολούθησης"
+      ],
+      "Pay once": [
+        "Πληρώστε μία φορά"
       ],
       "Pin item": [
         "Καρφίτσωμα στοιχείου"
@@ -1856,10 +1859,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
-        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
-      ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
       ],
@@ -2282,6 +2281,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Για να ελέγξετε τα εισαγόμενα δεδομένα σας, κάντε κλικ στο εικονίδιο ${ PASS_APP_NAME } στη γραμμή εργαλείων του προγράμματος περιήγησής σας."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Εμπιστευόμενο από πάνω από 50.000 επαγγελματίες χρήστες και 100 εκατομμύρια λογαριασμούς παγκοσμίως."
+      ],
       "Unable to copy to clipboard": [
         "Αδυναμία αντιγραφής στο πρόχειρο"
       ],
@@ -2629,6 +2631,9 @@
       "Browse faster, smarter": [
         "Ταχύτερη και εξυπνότερη περιήγηση"
       ],
+      "Built-in 2FA": [
+        "Ενσωματωμένη Πιστοποίηση δύο παραγόντων"
+      ],
       "Capital letters (A-Z)": [
         "Κεφαλαία γράμματα (A-Z)"
       ],
@@ -2713,6 +2718,9 @@
       "Created at": [
         "Δημιουργήθηκε στις"
       ],
+      "Credit cards": [
+        "Πιστωτικές κάρτες"
+      ],
       "Custom hidden field": [
         "Προσαρμοσμένο κρυφό πεδίο"
       ],
@@ -2785,6 +2793,9 @@
       "Export": [
         "Εξαγωγή"
       ],
+      "Extra email addresses": [
+        "Επιπλέον ηλεκτρονικές διευθύνσεις"
+      ],
       "Extra password": [
         "Επιπλέον κωδικός πρόσβασης"
       ],
@@ -2796,6 +2807,9 @@
       ],
       "Field name": [
         "Όνομα πεδίου"
+      ],
+      "File attachments": [
+        "Συνημμένα αρχεία"
       ],
       "File format": [
         "Μορφή αρχείου"
@@ -2815,6 +2829,9 @@
       "Forwards to": [
         "Προώθηση σε"
       ],
+      "Free": [
+        "Free"
+      ],
       "Free forever": [
         "Δωρεάν για πάντα"
       ],
@@ -2833,6 +2850,12 @@
       "Generic CSV": [
         "Γενικό CSV"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Αποκτήστε το ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Αποκτήστε ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "Ξεκινήστε"
       ],
@@ -2850,6 +2873,9 @@
       ],
       "Hide-my-email aliases": [
         "Hide-my-email ψευδώνυμα"
+      ],
+      "Highest": [
+        "Ύψιστη"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Πώς να ξεκλειδώσετε το ${ PASS_SHORT_APP_NAME }"
@@ -2946,6 +2972,9 @@
       ],
       "License number": [
         "Αριθμός άδειας"
+      ],
+      "Limited time": [
+        "Περιορισμένος χρόνος"
       ],
       "LinkedIn account": [
         "Λογαριασμός LinkedIn"
@@ -3097,6 +3126,9 @@
       "PIN code": [
         "Κωδικός PIN"
       ],
+      "Plus": [
+        "Plus"
+      ],
       "Prefix": [
         "Πρόθεμα"
       ],
@@ -3223,6 +3255,9 @@
       "Status": [
         "Κατάσταση"
       ],
+      "Storage": [
+        "Αποθηκευτικός χώρος"
+      ],
       "Street address": [
         "Οδός"
       ],
@@ -3249,6 +3284,9 @@
       ],
       "Text": [
         "Κείμενο"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Το καλύτερο της ${ BRAND_NAME } με μία συνδρομή"
       ],
       "The URL has been copied to the clipboard": [
         "Αυτός το URL αντιγράφτηκε στο πρόχειρο"
@@ -3285,6 +3323,12 @@
       ],
       "Unknown": [
         "Άγνωστο"
+      ],
+      "Unlimited": [
+        "Απεριόριστο"
+      ],
+      "Unlock premium features": [
+        "Ξεκλειδώστε premium δυνατότητες"
       ],
       "Unlock with": [
         "Ξεκλείδωμα με"
@@ -3325,6 +3369,9 @@
       "Vault ID": [
         "Αναγνωριστικό κρύπτης"
       ],
+      "Vault, item & link sharing": [
+        "Κρύπτη, στοιχεία και κοινοποίηση συνδέσμων"
+      ],
       "Vaults": [
         "Κρύπτες"
       ],
@@ -3333,6 +3380,12 @@
       ],
       "View logs": [
         "Προβολή αρχείων καταγραφής"
+      ],
+      "VPN Devices": [
+        "VPN Συσκευές"
+      ],
+      "VPN Speed": [
+        "Ταχύτητα VPN"
       ],
       "Vulnerable": [
         "Ευάλωτο"
@@ -3345,6 +3398,9 @@
       ],
       "Websites": [
         "Ιστοσελίδες"
+      ],
+      "What's included": [
+        "Τι περιλαμβάνεται"
       ],
       "Work details": [
         "Λεπτομέρειες εργασίας"
@@ -3394,6 +3450,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Ενεργοποίηση ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Menu": {
@@ -3571,6 +3632,14 @@
       ],
       "You can attach files to items for a better organization": [
         "Μπορείτε να επισυνάψετε αρχεία στα στοιχεία για καλύτερη οργάνωση"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus Lifetime για ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price }/μήνα"
       ]
     },
     "Placeholder": {
@@ -3839,8 +3908,14 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } διευθύνσεις"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Προστασία λογαριασμού"
@@ -4117,6 +4192,9 @@
       ],
       "Pause monitoring?": [
         "Παύση παρακολούθησης;"
+      ],
+      "Pay once, access forever.": [
+        "Πληρώστε μία φορά, αποκτήστε πρόσβαση για πάντα."
       ],
       "Pending access confirmation": [
         "Εκκρεμεί επιβεβαίωση πρόσβασης"

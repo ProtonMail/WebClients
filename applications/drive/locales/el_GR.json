@@ -5532,6 +5532,9 @@
       "Shared": [
         "Κοινόχρηστα"
       ],
+      "Shared by ": [
+        "Κοινοποιήθηκε από "
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "Κοινοποιήθηκε από τον/την ${ rootLink.signatureEmail }"
       ],
@@ -7124,11 +7127,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ο λογαριασμός σας κινδυνεύει να διαγραφεί. Για να αποφύγετε την απώλεια δεδομένων, ζητήστε από τον διαχειριστή σας να κάνει αναβάθμιση. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ο αποθηκευτικός σας χώρος είναι πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ο αποθηκευτικός σας χώρος είναι πλήρης. Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Ο αποθηκευτικός χώρος σας είναι πλήρης. Για να συνεχίσετε να χρησιμοποιείτε τα προϊόντα ${ BRAND_NAME }, απελευθερώστε χώρο ή ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Η συνδρομή σας έχει λήξει. ${ cta } και για την αποφυγή απώλειας δεδομένων."
@@ -8580,6 +8580,12 @@
       "Share invitation declined": [
         "Η πρόσκληση κοινής χρήσης απορρίφθηκε"
       ],
+      "Some photo(s) could not be added to \"${ albumName }\"": [
+        "Δεν ήταν δυνατή η προσθήκη ορισμένων φωτογραφιών στο \"${ albumName }\""
+      ],
+      "Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Δεν ήταν δυνατή η κατάργηση ορισμένων φωτογραφιών από το ${ albumLink.name }"
+      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Λυπούμαστε, δεν ήταν δυνατή η διαγραφή του φακέλου επειδή δεν είναι κενός.",
         "Λυπούμαστε, δεν ήταν δυνατή η διαγραφή των φακέλων επειδή δεν είναι κενοί."
@@ -8628,20 +8634,14 @@
       "Your photo(s) have been added to \"${ albumName }\"": [
         "Οι φωτογραφίες σας προστέθηκαν στο ${ albumName }"
       ],
+      "Your photo(s) have been removed from ${ albumLink.name }": [
+        "Οι φωτογραφίες σας έχουν αφαιρεθεί από το ${ albumLink.name }"
+      ],
       "Your settings failed to be saved": [
         "Αποτυχία αποθήκευσης των ρυθμίσεών σας"
       ],
       "Your settings have been changed successfully": [
         "Οι ρυθμίσεις σας άλλαξαν επιτυχώς"
-      ],
-      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
-        "Δεν ήταν δυνατή η προσθήκη ορισμένων φωτογραφιών στο \"${ albumName }\""
-      ],
-      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Δεν ήταν δυνατή η κατάργηση ορισμένων φωτογραφιών από το ${ albumLink.name }"
-      ],
-      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
-        "Οι φωτογραφίες σας έχουν αφαιρεθεί από το ${ albumLink.name }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9927,6 +9927,9 @@
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Για να συνεχίσετε να χρησιμοποιείτε τα προϊόντα ${ BRAND_NAME }, απελευθερώστε χώρο ή ${ upgrade }"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή κάντε αναβάθμιση για περισσότερο χώρο αποθήκευσης."

@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Активувати"
-      ],
       "activate": [
         "активувати"
+      ],
+      "Activate": [
+        "Активувати"
       ],
       "Activate organization key": [
         "Активувати ключ організації"
@@ -480,11 +480,11 @@
       "Refresh status": [
         "Оновити стан"
       ],
-      "refresh the page": [
-        "оновити сторінку"
-      ],
       "Refresh the page": [
         "Оновити сторінку"
+      ],
+      "refresh the page": [
+        "оновити сторінку"
       ],
       "Remove": [
         "Вилучити"
@@ -3970,11 +3970,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Налаштуйте зовнішній вигляд програм ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Виділені сервери"
-      ],
       "dedicated servers": [
         "виділені сервери"
+      ],
+      "Dedicated servers": [
+        "Виділені сервери"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Виділені сервери з окремими IP-адресами можуть бути додані до приватних шлюзів для забезпечення точного контролю доступу."
@@ -6278,12 +6278,6 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ваш обліковий запис під загрозою видалення. Щоб уникнути втрати даних, попросіть свого адміністратора покращити обліковий запис. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ваше сховище заповнене. Щоб надсилати або отримувати електронні листи, звільніть простір або ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ваше сховище заповнене. Щоб вивантажити або синхронізувати файли, звільніть простір або ${ cta }."
-      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Ваша передплата завершилася. ${ cta } і щоб уникнути втрати даних."
       ]
@@ -7548,17 +7542,6 @@
         "Вітаємо у ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Будь-хто"
-      ],
-      "Group members": [
-        "Учасники групи"
-      ],
-      "No one": [
-        "Ніхто"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Конфігурації країн"
@@ -7619,6 +7602,17 @@
       ],
       "The whole organization": [
         "Вся організація"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Будь-хто"
+      ],
+      "Group members": [
+        "Учасники групи"
+      ],
+      "No one": [
+        "Ніхто"
       ]
     },
     "Organization capacity error": {
@@ -9416,6 +9410,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "and 15 more premium features": [
+        "та ще 15 преміальних функцій"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматичне пересилання пошти ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Сповіщення про витоки даних ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Програма для комп'ютера"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
+      ],
+      "No ads or tracking": [
+        "Без реклами і стеження"
+      ],
+      "Short @pm.me email address": [
+        "Коротка адреса електронної пошти @pm.me"
+      ],
+      "Support our mission": [
+        "Підтримайте нашу місію"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade your productivity": [
+        "Вдоскональте свою продуктивність"
+      ],
+      "We don't sell your data": [
+        "Ми не продаємо ваші дані"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватність є нашою місією"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, та ${ VPN_SHORT_APP_NAME } з преміумфункіями"
@@ -9716,47 +9751,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш власний короткий псевдонім електронної пошти @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховища"
-      ],
-      "and 15 more premium features": [
-        "та ще 15 преміальних функцій"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматичне пересилання пошти ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Сповіщення про витоки даних ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Програма для комп'ютера"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
-      ],
-      "No ads or tracking": [
-        "Без реклами і стеження"
-      ],
-      "Short @pm.me email address": [
-        "Коротка адреса електронної пошти @pm.me"
-      ],
-      "Support our mission": [
-        "Підтримайте нашу місію"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade your productivity": [
-        "Вдоскональте свою продуктивність"
-      ],
-      "We don't sell your data": [
-        "Ми не продаємо ваші дані"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватність є нашою місією"
       ]
     },
     "Subscription renewal state": {

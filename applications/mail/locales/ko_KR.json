@@ -768,6 +768,9 @@
       "Manage users/addresses": [
         "사용자 및 주소 관리"
       ],
+      "Mark as favorite": [
+        "즐겨찾기로 표시"
+      ],
       "Mark as read": [
         "읽음으로 표시"
       ],
@@ -1028,6 +1031,9 @@
       ],
       "Remove expiration time": [
         "만료 시간 해제"
+      ],
+      "Remove from favorites": [
+        "즐겨찾기에서 삭제"
       ],
       "Remove gift code": [
         "기프트 코드 삭제"
@@ -6271,7 +6277,7 @@
         "조직의 브랜드 아이덴티티를 증진하고 사용자를 위한 더욱 일관된 온라인 경험을 창출하십시오."
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "${ BRAND_NAME }로 메시지, 연락처 및 캘린더를 가져오세요."
+        "${ BRAND_NAME }으로 메시지, 연락처 및 캘린더를 가져오세요."
       ],
       "Browse privately and access blocked content.": [
         "비공개로 방문하면서 차단된 콘텐츠에도 접근해 보세요."
@@ -9143,7 +9149,7 @@
         "${ PASS_APP_NAME } for Business 사용 방법"
       ],
       "How to use email forwarding": [
-        "이메일 포워딩 설정 방법"
+        "이메일 가져오기 설정 방법"
       ],
       "How to use Groups": [
         "그룹 사용 방법"
@@ -9320,12 +9326,6 @@
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "사용자의 계정이 삭제될 수도 있습니다. 데이터 손실 방지를 위해서, 관리자에게 업그레이드를 문의하십시오. ${ cta }"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "사용자의 저장 공간이 찼습니다. 메일을 계속 주고 받으려면, 저장 공간을 비우거나 ${ cta }해주세요."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "사용자의 스토리지가 가득 찼습니다. 파일을 업로드 하거나 동기화하려면, 공간을 비우거나 ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "구독이 종료되었습니다. 데이터 접근 권한 상실 방지를 위해 ${ cta }."

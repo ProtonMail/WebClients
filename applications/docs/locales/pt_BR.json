@@ -963,10 +963,10 @@
         "Os descontos são baseados no preço mensal padrão. Ao final do ciclo de cobrança, sua assinatura será renovada na tarifa anual padrão."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
-        "Dobre seu armazenamento criptografado – ganhe 1 TB para todos os seus dados"
+        "Dobre seu armazenamento criptografado: ganhe 1 TB para todos os seus dados"
       ],
       "Encrypted password manager": [
-        "Gerenciador de senhas criptografadas"
+        "Gerenciador de senhas criptografado"
       ],
       "Here's an exclusive gift to celebrate our journey together.": [
         "Aqui está um presente exclusivo para comemorarmos nossa jornada juntos."
@@ -984,7 +984,7 @@
         "Privacidade on-line para até 2 pessoas"
       ],
       "Online privacy for your whole family (up to 6 users)": [
-        "Privacidade on-line para toda a sua família (até 6 usuários)"
+        "Privacidade on-line para toda a família (até 6 usuários)"
       ],
       "Protect up to 10 devices": [
         "Proteja até 10 dispositivos"
@@ -1005,7 +1005,7 @@
         "Economize muito nos recursos premium de VPN com um desconto por tempo limitado."
       ],
       "Save time with built-in 2FA": [
-        "Economize tempo com 2FA integrado"
+        "Poupe tempo com 2FA integrada"
       ],
       "Secure email with unlimited aliases": [
         "E-mail seguro com aliases ilimitados"
@@ -1020,13 +1020,13 @@
         "Endereço de e-mail curto @pm.me"
       ],
       "Stream your favorite content": [
-        "Faça streaming do seu conteúdo preferido"
+        "Faça streaming do seu conteúdo favorito"
       ],
       "thanks to you": [
         "graças a você"
       ],
       "Triple your encrypted storage – get 3 TB for all your data": [
-        "Triplique seu armazenamento criptografado – ganhe 3 TB para todos os seus dados"
+        "Triplique seu armazenamento criptografado: ganhe 3 TB para todos os seus dados"
       ],
       "Unlimited folders, labels and filters": [
         "Pastas, marcadores e filtros ilimitados"
@@ -1450,7 +1450,7 @@
     },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } é uma IA que prioriza sua privacidade e te ajuda a realizar mais tarefas, mantendo seus dados seguros. Desbloqueie todo o seu potencial e aproveite o acesso antecipado às novas funcionalidades conforme são lançadas."
+        "${ LUMO_APP_NAME } é uma IA que prioriza a privacidade e ajuda você a fazer mais, mantendo seus dados seguros. Desbloqueie todo o potencial e tenha acesso antecipado a novas funcionalidades conforme forem lançadas."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Adicionar ${ LUMO_APP_NAME }"
@@ -6338,11 +6338,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Sua conta corre o risco de exclusão. Para evitar a perda de dados, peça ao seu administrador para atualizar. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Seu armazenamento está cheio. Para enviar ou receber e-mails, libere espaço ou ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "O seu armazenamento está cheio. Para carregar ou sincronizar arquivos, liberte espaço ou ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Seu armazenamento está cheio. Para continuar usando os produtos da ${ BRAND_NAME }, libere espaço ou ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Sua assinatura terminou. ${ cta } e para evitar perda de dados."
@@ -9025,6 +9022,9 @@
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Para continuar a usar os produtos ${ BRAND_NAME }, libere espaço ou faça um ${ upgrade }"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Para enviar ou receber e-mails, libere espaço ou ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Para enviar ou sincronizar arquivos, libere espaço ou ${ upgrade }"

@@ -787,6 +787,9 @@
       "Manage users/addresses": [
         "Administrar usuarios/direcciones"
       ],
+      "Mark as favorite": [
+        "Marcar como favorito"
+      ],
       "Mark as read": [
         "Marcar como leído"
       ],
@@ -1053,6 +1056,9 @@
       ],
       "Remove expiration time": [
         "Eliminar el tiempo de expiración"
+      ],
+      "Remove from favorites": [
+        "Eliminar de favoritos"
       ],
       "Remove gift code": [
         "Eliminar el código de regalo"
@@ -9715,11 +9721,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Tu cuenta corre el riesgo de ser eliminada. Para evitar la pérdida de datos, pide a tu administrador que la actualice. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "El almacenamiento está lleno. Para enviar o recibir correos, libera espacio o ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "El almacenamiento está lleno. Para cargar o sincronizar archivos, libera espacio o ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Tu almacenamiento está lleno. Para seguir usando los productos de ${ BRAND_NAME }, libera espacio o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Tu suscripción ha finalizado. ${ cta } y para evitar la pérdida de datos."
@@ -12647,6 +12650,9 @@
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Para seguir usando los productos de ${ BRAND_NAME }, libera espacio o ${ upgrade }"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Para enviar o recibir correos electrónicos, libera espacio o ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Para enviar o recibir correos, libera espacio o mejora para obtener más almacenamiento."

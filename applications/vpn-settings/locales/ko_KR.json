@@ -36,10 +36,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
       ],
-      "Activate": [
+      "activate": [
         "활성화"
       ],
-      "activate": [
+      "Activate": [
         "활성화"
       ],
       "Activate organization key": [
@@ -267,11 +267,11 @@
       "Discard": [
         "저장 안함"
       ],
-      "Discard changes": [
-        "변경사항 취소"
-      ],
       "Discard Changes": [
         "변경 내용 취소"
+      ],
+      "Discard changes": [
+        "변경사항 취소"
       ],
       "Discover ${ planName }": [
         "${ planName } 알아보기"
@@ -456,11 +456,11 @@
       "Invite user": [
         "사용자 초대"
       ],
-      "Keep editing": [
-        "계속 수정하기"
-      ],
       "Keep Editing": [
         "계속 편집하기"
+      ],
+      "Keep editing": [
+        "계속 수정하기"
       ],
       "Keep logo": [
         "로고 유지"
@@ -497,6 +497,9 @@
       ],
       "Mark as default": [
         "기본으로 설정"
+      ],
+      "Mark as favorite": [
+        "즐겨찾기로 표시"
       ],
       "More info: ${ safeTitle }": [
         "추가 정보: ${ safeTitle }"
@@ -573,11 +576,11 @@
       "Refresh status": [
         "상태 새로고침"
       ],
-      "refresh the page": [
-        "페이지 새로고침"
-      ],
       "Refresh the page": [
         "페이지 새로 고침"
+      ],
+      "refresh the page": [
+        "페이지 새로고침"
       ],
       "Remove": [
         "삭제"
@@ -593,6 +596,9 @@
       ],
       "Remove domain": [
         "도메인 제거"
+      ],
+      "Remove from favorites": [
+        "즐겨찾기에서 삭제"
       ],
       "Remove gift code": [
         "기프트 코드 삭제"
@@ -1608,6 +1614,9 @@
       ]
     },
     "CountriesStep:Info": {
+      "${ selectedCitiesCount } cities selected": [
+        "${ selectedCitiesCount }개 도시 선택됨"
+      ],
       "${ selectedCountriesCount } selected": [
         "${ selectedCountriesCount }개 선택됨"
       ]
@@ -4458,10 +4467,10 @@
       "Data recoverable on this device": [
         "이 장치에서 데이터 복구 가능"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -5913,6 +5922,9 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "${ renewCycle }개월마다 ${ renewAmountStr }의 가격으로 갱신됩니다."
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "${ MAX_SYNC_PAID_USER } Gmail 주소에 대한 전달이 활성화됨. 다른 전달을 추가하려면 먼저 그 중 하나를 비활성화하십시오."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "${ boldPlanTitle }에 대한 ${ boldDiscountPercent }이(가) 적용되었습니다."
       ],
@@ -6929,7 +6941,7 @@
         "${ PASS_APP_NAME } for Business 사용 방법"
       ],
       "How to use email forwarding": [
-        "이메일 포워딩 설정 방법"
+        "이메일 가져오기 설정 방법"
       ],
       "How to use Groups": [
         "그룹 사용 방법"
@@ -7021,12 +7033,6 @@
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "사용자의 계정이 삭제될 수도 있습니다. 데이터 손실 방지를 위해서, 관리자에게 업그레이드를 문의하십시오. ${ cta }"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "사용자의 저장 공간이 찼습니다. 메일을 계속 주고 받으려면, 저장 공간을 비우거나 ${ cta }해주세요."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "사용자의 스토리지가 가득 찼습니다. 파일을 업로드 하거나 동기화하려면, 공간을 비우거나 ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "구독이 종료되었습니다. 데이터 접근 권한 상실 방지를 위해 ${ cta }."
@@ -8343,17 +8349,6 @@
         "${ appName }에 오신 것을 환영합니다"
       ]
     },
-    "option": {
-      "Everyone": [
-        "모두"
-      ],
-      "Group members": [
-        "그룹 구성원"
-      ],
-      "No one": [
-        "아무도"
-      ]
-    },
     "Option": {
       "Android": [
         "Android"
@@ -8438,6 +8433,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "모두"
+      ],
+      "Group members": [
+        "그룹 구성원"
+      ],
+      "No one": [
+        "아무도"
       ]
     },
     "Organization capacity error": {
@@ -10232,6 +10238,47 @@
         "${ totalPrice }용"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "당사는 사용자의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "프리미엄 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ VPN_SHORT_APP_NAME }"
@@ -10514,47 +10561,6 @@
       ],
       "Your own short @pm.me email alias": [
         "사용자의 @pm.me 이메일 별칭"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "저장공간 15GB"
-      ],
-      "and 15 more premium features": [
-        "그리고 15개의 프리미엄 기능"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "자동 이메일 포워딩 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "데이터 침해 경고 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
-      ],
-      "No ads or tracking": [
-        "광고나 트래킹이 없습니다"
-      ],
-      "Short @pm.me email address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Support our mission": [
-        "저희의 사명을 지원해주세요"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade your productivity": [
-        "생산성을 업그레이드하세요"
-      ],
-      "We don't sell your data": [
-        "당사는 사용자의 데이터를 판매하지 않습니다"
-      ],
-      "Your privacy is our mission": [
-        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription renewal state": {
@@ -11404,6 +11410,9 @@
       ],
       "Invoices": [
         "청구서"
+      ],
+      "Limit reached": [
+        "제한 도달"
       ],
       "Main password": [
         "기본 비밀번호"
