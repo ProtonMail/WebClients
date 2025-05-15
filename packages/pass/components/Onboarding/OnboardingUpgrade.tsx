@@ -24,8 +24,9 @@ import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvid
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { PASS_PLUS_LIFETIME_PRICE, PASS_PLUS_PRICE, PROTON_UNLIMITED_PRICE, UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
+import { getUserCurrency } from '@proton/pass/lib/user/user.currency';
 import { selectUser } from '@proton/pass/store/selectors';
-import { DEFAULT_CURRENCY, PLANS } from '@proton/payments/core/constants';
+import { PLANS } from '@proton/payments/core/constants';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
@@ -97,18 +98,18 @@ export const Content: FC = () => {
     const protonProducts = useMemo(getProtonProducts, []);
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIFETIME_PLAN_ONBOARDING });
     const user = useSelector(selectUser);
-    const plusLifetimePrice = getSimplePriceString(user?.Currency ?? DEFAULT_CURRENCY, PASS_PLUS_LIFETIME_PRICE);
+    const plusLifetimePrice = getSimplePriceString(getUserCurrency(user?.Currency), PASS_PLUS_LIFETIME_PRICE);
 
     return (
         <section className="pass-onboarding-upgrade">
             {selected === PLANS.PASS ? (
                 <div className="relative">
                     <div
-                        className="description--banner-badge absolute top-custom left-custom color-invert text-semibold text-xs px-2 text-center rounded-sm"
+                        className="description--banner-badge absolute top-custom left-custom color-invert text-semibold text-xs px-2 text-center text-ellipsis rounded-sm"
                         style={{ '--top-custom': '-7px', '--left-custom': '1rem' }}
                     >{c('Label').t`Limited time`}</div>
-                    <div className="description--banner-card flex justify-space-between rounded-lg p-3">
-                        <div>
+                    <div className="description--banner-card flex justify-space-between rounded-lg p-3 gap-2">
+                        <div className="description--banner-card-content">
                             <div className="text-semibold">{c('PassOnboardingOffer')
                                 .t`${PASS_SHORT_APP_NAME} Plus Lifetime for ${plusLifetimePrice}`}</div>
                             <div className="text-sm color-weak">{c('Title').t`Pay once, access forever.`}</div>
@@ -161,7 +162,9 @@ export const Content: FC = () => {
                 <TableBody>
                     {includesFeatures[selected].included.map((row) => (
                         <TableRow className="pass-table--row" key={row.title}>
-                            <TableCell className="text-nowrap">{row.title}</TableCell>
+                            <TableCell className="pass-table--row-title text-nowrap" title={row.title}>
+                                {row.title}
+                            </TableCell>
                             <TableCell className="text-center">{row.currentPlan ?? '-'}</TableCell>
                             <TableCell className="text-center">{row.nextPlan}</TableCell>
                         </TableRow>
@@ -185,10 +188,10 @@ export const Description: FC = () => {
 
     const changePlan = (selected: AvailablePlans) => setSelected?.(selected);
 
-    const currency = user?.Currency ?? DEFAULT_CURRENCY;
+    const currencyToUse = getUserCurrency(user?.Currency);
     const plansOptions = useMemo<PassPlanOption[]>(() => {
         const [passPlusPrice, protonUnlimitedPrice] = [PASS_PLUS_PRICE, PROTON_UNLIMITED_PRICE].map((price) =>
-            getSimplePriceString(currency, price)
+            getSimplePriceString(currencyToUse, price)
         );
 
         // Moved into a function since the label is the same, but the variable changes (preventing lint error)
@@ -206,7 +209,7 @@ export const Description: FC = () => {
                 label: getPriceLabel(protonUnlimitedPrice),
             },
         ];
-    }, [currency]);
+    }, [currencyToUse]);
 
     return (
         <>

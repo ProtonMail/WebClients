@@ -1,5 +1,4 @@
-import type { FC } from 'react';
-import { useState } from 'react';
+import { type FC, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -19,9 +18,9 @@ import { useOnboarding } from './OnboardingProvider';
 import './OnboardingModal.scss';
 
 export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) => {
-    const { acknowledge, steps, markCompleted } = useOnboarding();
+    const { acknowledge, steps, markCompleted, completed } = useOnboarding();
     const [loading, setLoading] = useState(false);
-    const [step, setStep] = useState(0);
+    const [step, setStep] = useState(Math.min(completed.length, steps.length - 1));
 
     const { component: Component, description: Description, ...currentStep } = steps[step];
 
@@ -46,7 +45,7 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
 
     const backButton =
         step > 0 ? (
-            <Button className="mr-auto" icon pill shape="ghost" onClick={() => onStep(-1)}>
+            <Button className="mr-auto z-1" icon pill shape="ghost" onClick={() => onStep(-1)}>
                 <Icon name="arrow-left" />
             </Button>
         ) : undefined;
@@ -74,7 +73,7 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
             />
 
             {steps.length > 1 && (
-                <Stepper activeStep={step}>
+                <Stepper activeStep={step} className="z-1">
                     {steps.map((step) => (
                         <Step key={step.key} />
                     ))}
