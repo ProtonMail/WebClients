@@ -187,6 +187,7 @@ export const decryptPassphrase = async ({
         decryptionKeys: privateKeys,
         verificationKeys: publicKeys,
         sessionKeys: sessionKey,
+        handleMalformedIcsAttachmentContent: true,
     });
 
     if (publicKeys?.length && verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
@@ -211,6 +212,9 @@ export const decryptPassphraseSessionKey = ({
     return CryptoProxy.decryptSessionKey({
         armoredMessage: armoredPassphrase,
         decryptionKeys: privateKeys,
+        // TODO: calendar share invitation have an invalid message structure [1, 18, 2]
+        // the trailing signature is not needed
+        handleMalformedIcsAttachmentContent: true,
     });
 };
 
