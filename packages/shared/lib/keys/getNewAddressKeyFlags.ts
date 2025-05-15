@@ -1,9 +1,18 @@
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 
-import { FlagAction } from './interface';
+export enum FlagAction {
+    MARK_OBSOLETE,
+    MARK_NOT_OBSOLETE,
+    MARK_COMPROMISED,
+    MARK_NOT_COMPROMISED,
+    DISABLE_ENCRYPTION,
+    ENABLE_ENCRYPTION,
+    DISABLE_EXPECT_SIGNED,
+    ENABLE_EXPECT_SIGNED,
+}
 
-export const getNewKeyFlags = (Flags = 0, action: FlagAction) => {
+export const getNewAddressKeyFlags = (Flags = 0, action: FlagAction) => {
     if (action === FlagAction.MARK_OBSOLETE) {
         return clearBit(Flags, KEY_FLAG.FLAG_NOT_OBSOLETE);
     }
