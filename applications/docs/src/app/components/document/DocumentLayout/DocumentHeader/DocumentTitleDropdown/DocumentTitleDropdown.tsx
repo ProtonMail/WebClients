@@ -198,9 +198,10 @@ export function DocumentTitleDropdown({
         versionHistory: authenticatedController.getVersionHistory(),
         editorController,
         docController: authenticatedController,
+        documentType,
       })
     }
-  }, [authenticatedController, action, showHistoryModal, editorController])
+  }, [authenticatedController, action, showHistoryModal, editorController, documentType])
 
   const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
   const focusInputOnMount = useCallback((input: HTMLInputElement | null) => {
@@ -347,6 +348,7 @@ export function DocumentTitleDropdown({
                   versionHistory: authenticatedController.getVersionHistory(),
                   editorController,
                   docController: authenticatedController,
+                  documentType,
                 })
               }}
               data-testid="dropdown-versioning"
