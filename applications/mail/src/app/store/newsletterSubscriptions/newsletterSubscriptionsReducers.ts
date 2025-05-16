@@ -6,8 +6,12 @@ import type {
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { getPaginationDataFromNextPage, normalizeSubscriptions } from './helpers';
-import type { SortSubscriptionsValue, SubscriptionTabs } from './interface';
-import type { filterSubscriptionList, unsubscribeSubscription } from './newsletterSubscriptionsActions';
+import { type SortSubscriptionsValue, SubscriptionTabs } from './interface';
+import type {
+    fetchNextNewsletterSubscriptionsPage,
+    filterSubscriptionList,
+    unsubscribeSubscription,
+} from './newsletterSubscriptionsActions';
 import type { NewsletterSubscriptionsStateType } from './newsletterSubscriptionsSlice';
 
 export const setSortingOrderReducer = (
@@ -184,4 +188,27 @@ export const filterSubscriptionListRejected = (
         ...state.value.byId[subscriptionId],
         ...previousState,
     };
+};
+
+export const fetchNextNewsletterSubscriptionsPageFulfilled = (
+    state: NewsletterSubscriptionsStateType,
+    action: ReturnType<typeof fetchNextNewsletterSubscriptionsPage.fulfilled>
+) => {
+    if (!state.value) {
+        return;
+    }
+
+    const normalizedData = normalizeSubscriptions(action.payload.NewsletterSubscriptions);
+
+    state.value.byId = {
+        ...state.value.byId,
+        ...normalizedData.byId,
+    };
+
+    const tab = state.value.selectedTab;
+    state.value.tabs[tab].ids = [...state.value.tabs[tab].ids, ...normalizedData.ids];
+    state.value.tabs[tab].paginationData = getPaginationDataFromNextPage(
+        tab === SubscriptionTabs.Active ? '1' : '0',
+        action.payload.PageInfo.NextPage
+    );
 };
