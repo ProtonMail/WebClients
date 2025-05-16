@@ -1,4 +1,10 @@
-import type { NewsletterSubscriptionsInterface, SubscriptionCounts } from './interface';
+import {
+    type NewsletterSubscriptionsInterface,
+    type NewsletterSubscriptionsTabState,
+    SortSubscriptionsValue,
+    type SubscriptionCounts,
+    SubscriptionTabs,
+} from './interface';
 import type { NewsletterSubscriptionsStateType } from './newsletterSubscriptionsSlice';
 
 export const DEFAULT_SUBSCRIPTION_COUNTS: SubscriptionCounts = {
@@ -6,13 +12,25 @@ export const DEFAULT_SUBSCRIPTION_COUNTS: SubscriptionCounts = {
     unsubscribe: 0,
 };
 
-export const initialStateValue: NewsletterSubscriptionsInterface = {
-    counts: DEFAULT_SUBSCRIPTION_COUNTS,
-    subscriptions: [],
-    selectedSubscription: undefined,
-    filteredSubscriptions: [],
+export const DEFAULT_PAGINATION_PAGE_SIZE = 100;
+export const DEFAULT_SORTING = SortSubscriptionsValue.RecentlyReceived;
+
+const initialTabState: NewsletterSubscriptionsTabState = {
+    ids: [],
+    totalCount: 0,
+    paginationData: undefined,
     loading: true,
-    selectedTab: 'active',
+    sorting: DEFAULT_SORTING,
+};
+
+export const initialStateValue: NewsletterSubscriptionsInterface = {
+    byId: {},
+    tabs: {
+        active: { ...initialTabState, paginationData: { ...initialTabState.paginationData, Active: '1' } },
+        unsubscribe: { ...initialTabState, paginationData: { ...initialTabState.paginationData, Active: '0' } },
+    },
+    selectedTab: SubscriptionTabs.Active,
+    selectedSubscriptionId: undefined,
 };
 
 export const DEFAULT_META = {

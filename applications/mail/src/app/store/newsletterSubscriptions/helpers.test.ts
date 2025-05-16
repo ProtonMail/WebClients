@@ -1,224 +1,195 @@
-import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
+import { describe, expect, it } from '@jest/globals';
 
-import { formatSubscriptionResponse, updateSubscriptionKeysIfCorrectID } from './helpers';
+import type {
+    GetNewsletterSubscriptionsApiResponse,
+    NewsletterSubscription,
+} from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-const subscription: NewsletterSubscription = {
-    ID: 'subscription-123',
-    UserId: 'user-123',
-    AddressId: 'address-123',
-    ListId: 'list-123',
-    SenderAddress: 'sender@example.com',
-    BimiSelector: 'selector-123',
-    Name: 'Old Name',
-    UnsubscribedTime: 0,
-    FirstReceivedTime: '2023-01-01T00:00:00Z',
-    LastReceivedTime: '2023-01-10T00:00:00Z',
-    LastReadTime: '2023-01-09T00:00:00Z',
-    ReceivedMessageCount: 10,
-    UnreadMessageCount: 5,
-    TrackersCount: 3,
-    MarkAsRead: false,
-    MoveToFolder: 'inbox',
-    ReceivedMessages: {
-        Last30Days: 0,
-        Last90Days: 0,
-        Total: 0,
-    },
-};
+import { DEFAULT_PAGINATION_PAGE_SIZE, DEFAULT_SORTING } from './constants';
+import { getPaginationDataFromNextPage, getSortParams, getTabData, normalizeSubscriptions } from './helpers';
+import { SortSubscriptionsValue } from './interface';
 
-const secondSubscription: NewsletterSubscription = {
-    ID: 'subscription-456',
-    UserId: 'user-456',
-    AddressId: 'address-456',
-    ListId: 'list-456',
-    SenderAddress: 'sender@example.com',
-    BimiSelector: 'selector-456',
-    Name: 'Test Name',
-    UnsubscribedTime: 0,
-    FirstReceivedTime: '2023-01-01T00:00:00Z',
-    LastReceivedTime: '2023-01-10T00:00:00Z',
-    LastReadTime: '2023-01-09T00:00:00Z',
-    ReceivedMessageCount: 10,
-    UnreadMessageCount: 5,
-    TrackersCount: 3,
-    MarkAsRead: false,
-    MoveToFolder: 'inbox',
-    ReceivedMessages: {
-        Last30Days: 0,
-        Last90Days: 0,
-        Total: 0,
-    },
-};
+describe('newsletterSubscriptions helpers', () => {
+    describe('normalizeSubscriptions', () => {
+        it('should return empty objects when given empty array', () => {
+            const result = normalizeSubscriptions([]);
+            expect(result).toEqual({ byId: {}, ids: [] });
+        });
 
-describe('Mail subscription slice helpers', () => {
-    describe('updateSubscriptionKeysIfCorrectID', () => {
-        it('should update the subscription when ID matches', () => {
-            const keys: Partial<NewsletterSubscription> = {
-                Name: 'New Name',
-                SenderAddress: 'new-sender@example.com',
-                MarkAsRead: true,
+        it('should properly normalize an array of subscriptions', () => {
+            const subscriptions: NewsletterSubscription[] = [
+                { ID: '1', Name: 'Sub1' } as NewsletterSubscription,
+                { ID: '2', Name: 'Sub2' } as NewsletterSubscription,
+                { ID: '3', Name: 'Sub3' } as NewsletterSubscription,
+            ];
+
+            const expected = {
+                byId: {
+                    '1': { ID: '1', Name: 'Sub1' },
+                    '2': { ID: '2', Name: 'Sub2' },
+                    '3': { ID: '3', Name: 'Sub3' },
+                },
+                ids: ['1', '2', '3'],
             };
 
-            expect(
-                updateSubscriptionKeysIfCorrectID({
-                    idToUpdate: subscription.ID,
-                    subscription,
-                    keys,
-                })
-            ).toStrictEqual({
-                ...subscription,
-                ...keys,
+            const result = normalizeSubscriptions(subscriptions);
+            expect(result).toEqual(expected);
+        });
+    });
+
+    describe('getPaginationDataFromNextPage', () => {
+        it('should return undefined when nextPage is null', () => {
+            const result = getPaginationDataFromNextPage('1', null);
+            expect(result).toBeUndefined();
+        });
+
+        it('should return pagination data with defaults when values are missing', () => {
+            const nextPage = {
+                Pagination: {} as any,
+            };
+
+            const result = getPaginationDataFromNextPage('1', nextPage);
+
+            expect(result).toEqual({
+                Active: '1',
+                PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
+                AnchorID: '',
+                AnchorLastReceivedTime: '',
             });
         });
 
-        it('should not update the subscription when ID does not match', () => {
-            const keys: Partial<NewsletterSubscription> = {
-                Name: 'New Name',
-                SenderAddress: 'new-sender@example.com',
-                MarkAsRead: true,
+        it('should return correct pagination data with provided values', () => {
+            const nextPage = {
+                Pagination: {
+                    AnchorID: 'anchor123',
+                    AnchorLastReceivedTime: '2023-01-01T12:00:00Z',
+                } as any,
             };
 
-            expect(
-                updateSubscriptionKeysIfCorrectID({
-                    idToUpdate: 'subscription-123',
-                    subscription: secondSubscription,
-                    keys,
-                })
-            ).toBe(secondSubscription);
-        });
+            const result = getPaginationDataFromNextPage('0', nextPage);
 
-        it('should handle updating UnsubscribedTime property', () => {
-            const keys: Partial<NewsletterSubscription> = {
-                UnsubscribedTime: 987654321,
-            };
-
-            expect(
-                updateSubscriptionKeysIfCorrectID({
-                    idToUpdate: 'subscription-123',
-                    subscription,
-                    keys,
-                })
-            ).toStrictEqual({
-                ...subscription,
-                ...keys,
-            });
-        });
-
-        it('should handle updating multiple properties at once', () => {
-            const keys: Partial<NewsletterSubscription> = {
-                SenderAddress: 'updated@example.com',
-                UnsubscribedTime: 987654321,
-                Name: 'Updated Name',
-                MarkAsRead: true,
-                MoveToFolder: 'spam',
-            };
-
-            expect(
-                updateSubscriptionKeysIfCorrectID({
-                    idToUpdate: 'subscription-123',
-                    subscription,
-                    keys,
-                })
-            ).toStrictEqual({
-                ...subscription,
-                ...keys,
+            expect(result).toEqual({
+                Active: '0',
+                PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
+                AnchorID: 'anchor123',
+                AnchorLastReceivedTime: '2023-01-01T12:00:00Z',
             });
         });
     });
 
-    describe('formatSubscriptionResponse', () => {
-        it('should correctly format response with active subscriptions', () => {
-            const activeSubscription1 = { ...subscription, UnsubscribedTime: 0 };
-            const activeSubscription2 = { ...secondSubscription, UnsubscribedTime: 0 };
-            const data = {
-                NewsletterSubscriptions: [activeSubscription1, activeSubscription2],
-                PageInfo: {
-                    Total: 2,
-                    NextPage: null,
-                },
-            };
-
-            expect(formatSubscriptionResponse(data)).toStrictEqual({
-                counts: {
-                    active: 2,
-                    unsubscribe: 0,
-                },
-                subscriptions: data.NewsletterSubscriptions,
-                selectedSubscription: activeSubscription1,
-                filteredSubscriptions: [activeSubscription1, activeSubscription2],
-                loading: false,
-                selectedTab: 'active',
-            });
-        });
-
-        it('should correctly format response with mixed active and unsubscribed subscriptions', () => {
-            const activeSubscription = { ...subscription, UnsubscribedTime: 0 };
-            const unsubscribedSubscription = { ...secondSubscription, UnsubscribedTime: 123456789 };
-            const data = {
-                NewsletterSubscriptions: [activeSubscription, unsubscribedSubscription],
-                PageInfo: {
-                    Total: 2,
-                    NextPage: null,
-                },
-            };
-
-            expect(formatSubscriptionResponse(data)).toStrictEqual({
-                counts: {
-                    active: 1,
-                    unsubscribe: 1,
-                },
-                subscriptions: data.NewsletterSubscriptions,
-                selectedSubscription: activeSubscription,
-                filteredSubscriptions: [activeSubscription],
-                loading: false,
-                selectedTab: 'active',
-            });
-        });
-
-        it('should correctly format response with only unsubscribed subscriptions', () => {
-            const unsubscribedSubscription1 = { ...subscription, UnsubscribedTime: 123456789 };
-            const unsubscribedSubscription2 = { ...secondSubscription, UnsubscribedTime: 987654321 };
-            const data = {
-                NewsletterSubscriptions: [unsubscribedSubscription1, unsubscribedSubscription2],
-                PageInfo: {
-                    Total: 2,
-                    NextPage: null,
-                },
-            };
-
-            expect(formatSubscriptionResponse(data)).toStrictEqual({
-                counts: {
-                    active: 0,
-                    unsubscribe: 2,
-                },
-                subscriptions: data.NewsletterSubscriptions,
-                selectedSubscription: undefined,
-                filteredSubscriptions: [],
-                loading: false,
-                selectedTab: 'active',
-            });
-        });
-
-        it('should correctly format response with empty subscriptions array', () => {
-            const data = {
+    describe('getTabData', () => {
+        it('should return default tab data with provided values', () => {
+            const ids = ['1', '2', '3'];
+            const apiData: GetNewsletterSubscriptionsApiResponse = {
                 NewsletterSubscriptions: [],
                 PageInfo: {
-                    Total: 0,
+                    Total: 42,
                     NextPage: null,
                 },
             };
 
-            expect(formatSubscriptionResponse(data)).toStrictEqual({
-                counts: {
-                    active: 0,
-                    unsubscribe: 0,
-                },
-                subscriptions: [],
-                selectedSubscription: undefined,
-                filteredSubscriptions: [],
+            const result = getTabData(ids, apiData);
+
+            expect(result).toEqual({
+                ids,
                 loading: false,
-                selectedTab: 'active',
+                sorting: DEFAULT_SORTING,
+                totalCount: 42,
+                paginationData: undefined,
             });
+        });
+
+        it('should use provided loading and sorting values', () => {
+            const ids = ['1', '2'];
+            const apiData: GetNewsletterSubscriptionsApiResponse = {
+                NewsletterSubscriptions: [],
+                PageInfo: {
+                    Total: 5,
+                    NextPage: null,
+                },
+            };
+            const loading = true;
+
+            const result = getTabData(ids, apiData, loading, SortSubscriptionsValue.Alphabetical);
+
+            expect(result).toEqual({
+                ids,
+                loading: true,
+                sorting: SortSubscriptionsValue.Alphabetical,
+                totalCount: 5,
+                paginationData: undefined,
+            });
+        });
+
+        it('should include pagination data when NextPage is present', () => {
+            const ids = ['1'];
+            const apiData: GetNewsletterSubscriptionsApiResponse = {
+                NewsletterSubscriptions: [],
+                PageInfo: {
+                    Total: 10,
+                    NextPage: {
+                        Pagination: {
+                            AnchorID: 'next-anchor',
+                            AnchorLastReceivedTime: '2023-05-01T00:00:00Z',
+                        } as any,
+                    },
+                },
+            };
+
+            const result = getTabData(ids, apiData);
+
+            expect(result).toEqual({
+                ids,
+                loading: false,
+                sorting: DEFAULT_SORTING,
+                totalCount: 10,
+                paginationData: {
+                    Active: '1',
+                    PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
+                    AnchorID: 'next-anchor',
+                    AnchorLastReceivedTime: '2023-05-01T00:00:00Z',
+                },
+            });
+        });
+    });
+
+    describe('getSortParams', () => {
+        it('should return undefined when no sort option is provided', () => {
+            const result = getSortParams();
+            expect(result).toBeUndefined();
+        });
+
+        it('should return last-read sort parameters', () => {
+            const result = getSortParams(SortSubscriptionsValue.LastRead);
+            expect(result).toEqual({
+                UnreadMessageCount: 'ASC',
+            });
+        });
+
+        it('should return most-read sort parameters', () => {
+            const result = getSortParams(SortSubscriptionsValue.MostRead);
+            expect(result).toEqual({
+                UnreadMessageCount: 'DESC',
+            });
+        });
+
+        it('should return alphabetical sort parameters', () => {
+            const result = getSortParams(SortSubscriptionsValue.Alphabetical);
+            expect(result).toEqual({
+                Name: 'ASC',
+            });
+        });
+
+        it('should return recently-received sort parameters', () => {
+            const result = getSortParams(SortSubscriptionsValue.RecentlyReceived);
+            expect(result).toEqual({
+                LastReceivedTime: 'DESC',
+            });
+        });
+
+        it('should return undefined for unhandled sort option', () => {
+            const result = getSortParams('most-frequent' as any);
+            expect(result).toBeUndefined();
         });
     });
 });

@@ -27,11 +27,20 @@ export interface FilterSubscriptionAPIResponse {
     NewsletterSubscription: NewsletterSubscription;
 }
 
+export interface GetNewsletterSubscriptionsNextPage {
+    Pagination: {
+        AddressIDs: string[];
+        AnchorID: string | null;
+        AnchorLastReceivedTime: string | null;
+        PageSize: number;
+    };
+}
+
 export interface GetNewsletterSubscriptionsApiResponse {
     NewsletterSubscriptions: NewsletterSubscription[];
     PageInfo: {
         Total: number;
-        NextPage: string | null;
+        NextPage: GetNewsletterSubscriptionsNextPage | null;
     };
 }
 

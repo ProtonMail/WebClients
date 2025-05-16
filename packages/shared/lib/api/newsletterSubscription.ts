@@ -3,7 +3,11 @@ import type { SortSubscriptionsValue } from 'proton-mail/store/newsletterSubscri
 
 import type { ApplyNewsletterSubscriptionsFilter } from '../interfaces/NewsletterSubscription';
 
-export const getNewsletterSubscription = (sort?: SortSubscriptionsValue) => ({
+interface GetNewslettersProps {
+    sort?: SortSubscriptionsValue;
+}
+
+export const getNewsletterSubscription = ({ sort }: GetNewslettersProps) => ({
     url: 'mail/v4/newsletter-subscriptions',
     method: 'GET',
     params: {

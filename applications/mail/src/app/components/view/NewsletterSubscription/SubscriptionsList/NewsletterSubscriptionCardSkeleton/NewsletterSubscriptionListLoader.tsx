@@ -1,7 +1,7 @@
 import range from '@proton/utils/range';
 
 import { useMailSelector } from 'proton-mail/store/hooks';
-import { subscriptionCountSelector } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+import { selectSubscriptionsCount } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import { NewsletterSubscriptionListWrapper } from '../NewsletterSubscriptionListWrapper';
 import { NewsletterSubscriptionCardSkeleton } from './NewsletterSubscriptionCardSkeleton';
@@ -9,7 +9,7 @@ import { NewsletterSubscriptionCardSkeleton } from './NewsletterSubscriptionCard
 const DEFAULT_SKELETON_COUNT = 3;
 
 export const NewsletterSubscriptionListLoader = () => {
-    const count = useMailSelector(subscriptionCountSelector);
+    const count = useMailSelector(selectSubscriptionsCount);
     const scale = range(0, count.active === 0 ? DEFAULT_SKELETON_COUNT : count.active);
 
     return (
