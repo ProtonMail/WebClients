@@ -25,6 +25,7 @@ import {
     type Currency,
     PLANS,
     type Plan,
+    getPlanIDs,
     getPlanNameFromIDs,
     getPlansMap,
     isMainCurrency,
@@ -60,7 +61,11 @@ import {
     handleSetupUser,
 } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
-import { sendSignupAccountCreationTelemetry, sendSignupLoadTelemetry } from '../signup/signupTelemetry';
+import {
+    sendSignupAccountCreationTelemetry,
+    sendSignupLoadTelemetry,
+    sendSignupSubscriptionTelemetryEvent,
+} from '../signup/signupTelemetry';
 import { defaultSignupModel } from '../single-signup-v2/constants';
 import { cachedPlans, cachedPlansMap } from '../single-signup-v2/defaultPlans';
 import type { SubscriptionDataCycleMapping } from '../single-signup-v2/helper';
@@ -521,7 +526,7 @@ const SingleSignupContainer = ({
             });
 
             sendSignupLoadTelemetry({
-                plan: selectedPlan.Name,
+                planIDs: subscriptionData.planIDs,
                 flowId: 'single-page-signup-vpn',
                 productIntent: toApp,
                 currency: preferredCurrency,
@@ -594,6 +599,22 @@ const SingleSignupContainer = ({
             }),
             wait(3500),
         ]);
+
+        const { subscription, userData } = result.cache;
+        if (subscription && userData) {
+            const planIDs = getPlanIDs(subscription);
+
+            sendSignupSubscriptionTelemetryEvent({
+                planIDs,
+                flowId: 'single-page-signup-vpn',
+                currency: subscription.Currency,
+                cycle: subscription.Cycle,
+                userCreateTime: userData.User.CreateTime,
+                invoiceID: subscription.InvoiceID,
+                coupon: subscription.CouponCode,
+                amount: subscription.Amount,
+            });
+        }
 
         const signupFinishEvents = getSignupTelemetryData(model.plansMap, cache);
         if (signupFinishEvents.dimensions.type === 'free') {
@@ -830,7 +851,7 @@ const SingleSignupContainer = ({
                                 }
 
                                 sendSignupAccountCreationTelemetry({
-                                    plan: getPlanNameFromIDs(cache.subscriptionData.planIDs) || PLANS.FREE,
+                                    planIDs: cache.subscriptionData.planIDs,
                                     flowId: 'single-page-signup-vpn',
                                     productIntent: toApp,
                                     currency: cache.subscriptionData.currency,

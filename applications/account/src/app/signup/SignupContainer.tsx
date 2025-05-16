@@ -30,6 +30,7 @@ import {
     DEFAULT_CYCLE,
     PLANS,
     type PlanIDs,
+    getPlanIDs,
     getPlanNameFromIDs,
     getPlansMap,
 } from '@proton/payments';
@@ -91,7 +92,11 @@ import {
     handleSetupUser,
     usernameAvailabilityError,
 } from './signupActions';
-import { sendSignupAccountCreationTelemetry, sendSignupLoadTelemetry } from './signupTelemetry';
+import {
+    sendSignupAccountCreationTelemetry,
+    sendSignupLoadTelemetry,
+    sendSignupSubscriptionTelemetryEvent,
+} from './signupTelemetry';
 
 const {
     AccountCreationUsername,
@@ -337,9 +342,8 @@ const SignupContainer = ({
                 dimensions: {},
             });
 
-            const plan = getPlanFromPlanIDs(plansMap, subscriptionData.planIDs);
             sendSignupLoadTelemetry({
-                plan: plan?.Name || PLANS.FREE,
+                planIDs: subscriptionData.planIDs,
                 flowId: 'legacy-signup',
                 productIntent: toApp,
                 currency,
@@ -966,7 +970,7 @@ const SignupContainer = ({
                             void measure(getSignupTelemetryData(model.plansMap, cache));
 
                             sendSignupAccountCreationTelemetry({
-                                plan: getPlanNameFromIDs(subscriptionData.planIDs) || PLANS.FREE,
+                                planIDs: subscriptionData.planIDs,
                                 flowId: 'legacy-signup',
                                 productIntent: toApp,
                                 currency: subscriptionData.currency,
@@ -997,6 +1001,22 @@ const SignupContainer = ({
 
                             if (validateFlow()) {
                                 await handleResult(signupActionResponse);
+                            }
+
+                            const { subscription, userData } = signupActionResponse.cache;
+                            if (subscription && userData) {
+                                const planIDs = getPlanIDs(subscription);
+
+                                sendSignupSubscriptionTelemetryEvent({
+                                    planIDs,
+                                    flowId: 'legacy-signup',
+                                    currency: subscription.Currency,
+                                    cycle: subscription.Cycle,
+                                    userCreateTime: userData.User.CreateTime,
+                                    invoiceID: subscription.InvoiceID,
+                                    coupon: subscription.CouponCode,
+                                    amount: subscription.Amount,
+                                });
                             }
 
                             metrics.core_signup_loadingStep_accountSetup_total.increment({
