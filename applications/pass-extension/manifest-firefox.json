@@ -49,7 +49,8 @@
         "storage",
         "unlimitedStorage",
         "webRequest",
-        "webRequestBlocking"
+        "webRequestBlocking",
+        "webRequestAuthProvider"
     ],
     "optional_permissions": ["privacy"],
     "host_permissions": ["https://*/*", "http://*/*"],
