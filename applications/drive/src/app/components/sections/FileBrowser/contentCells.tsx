@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Avatar, Button, UserAvatar } from '@proton/atoms';
+import { Avatar, Button, UserAvatar, UserAvatarSizeEnum } from '@proton/atoms';
 import { FileIcon, Icon, TableCell, useActiveBreakpoint, useConfirmActionModal } from '@proton/components';
 import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import clsx from '@proton/utils/clsx';
@@ -220,7 +220,7 @@ export const SharedByCell = ({ item }: { item: SharedWithMeItem }) => {
         <TableCell className="flex flex-nowrap items-center gap-2 m-0 w-1/5" data-testid="column-shared-by">
             {displayName && (
                 <>
-                    <UserAvatar name={displayName} size="small" />
+                    <UserAvatar name={displayName} size={UserAvatarSizeEnum.Small} />
                     <span className="text-ellipsis">{displayName}</span>
                 </>
             )}
