@@ -91,7 +91,7 @@ export const PhotosWithAlbumsContext = createContext<{
     loadSharedWithMeAlbums: (abortSignal: AbortSignal) => Promise<void>;
     removePhotosFromCache: (linkIds: string[]) => void;
     updateAlbumsFromCache: (linkIds: string[]) => void;
-    deletePhotosShare: () => Promise<void>;
+    deletePhotosShare: (volumeId: string, shareId: string) => Promise<void>;
     updatePhotoFavoriteFromCache: (linkId: string, isFavorite: boolean) => void;
     addNewAlbumPhotoToCache: (
         abortSignal: AbortSignal,
@@ -155,10 +155,17 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const startPhotosMigration = useCallback(async () => {
         const signal = new AbortController().signal;
         const status = await shouldMigratePhotos();
+        // eslint-disable-next-line no-console
+        console.info('Photo migration status:', status);
         let result;
         let newPhotosShare;
         if (status === SHOULD_MIGRATE_PHOTOS_STATUS.MIGRATED) {
-            const defaultPhotosShare = await getDefaultPhotosShare();
+            let defaultPhotosShare = await getDefaultPhotosShare();
+            if (!defaultPhotosShare) {
+                // Furce=true to re-fetch the share in case the local state is outdated.
+                // It can happen after recovery process depending on timing and user action.
+                defaultPhotosShare = await getDefaultPhotosShare(signal, true);
+            }
             if (!defaultPhotosShare) {
                 throw new Error('No default photos share found');
             }
@@ -986,12 +993,12 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         });
     }, []);
 
-    const deletePhotosShare = useCallback(async (): Promise<void> => {
-        if (!volumeId || !shareId) {
-            return;
-        }
-        await request(queryDeletePhotosShare(volumeId, shareId));
-    }, [request, volumeId, shareId]);
+    const deletePhotosShare = useCallback(
+        async (volumeId: string, shareId: string): Promise<void> => {
+            await request(queryDeletePhotosShare(volumeId, shareId));
+        },
+        [request]
+    );
 
     const deleteAlbum = useCallback(
         async (abortSignal: AbortSignal, albumLinkId: string, force: boolean): Promise<void> => {

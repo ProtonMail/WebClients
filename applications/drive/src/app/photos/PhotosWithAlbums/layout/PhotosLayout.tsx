@@ -42,7 +42,6 @@ import { useRemoveAlbumPhotosModal } from '../../PhotosModals/RemoveAlbumPhotosM
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { usePhotosWithAlbumsView } from '../../PhotosStore/usePhotosWithAlbumView';
 import PhotosRecoveryBanner from '../components/PhotosRecoveryBanner/PhotosRecoveryBanner';
-import { TempPhotosRecoveryWarningBanner } from '../components/PhotosRecoveryBanner/TempPhotosRecoveryWarningBanner';
 import { usePhotosSelection } from '../hooks/usePhotosSelection';
 import { TitleArea } from '../toolbar/TitleArea';
 import { Toolbar } from '../toolbar/Toolbar';
@@ -85,6 +84,7 @@ export const PhotosLayout = () => {
         setPhotoAsCover,
 
         refreshSharedWithMeAlbums,
+        refreshAlbums,
         addNewAlbumPhotoToCache,
 
         userAddressEmail,
@@ -662,10 +662,8 @@ export const PhotosLayout = () => {
                     .t`We are experiencing technical issues. Any albums related actions are temporarily disabled.`}</TopBanner>
             )}
 
-            <PhotosRecoveryBanner />
-
-            {/* TODO: Temporary until we handle photos recovery */}
-            <TempPhotosRecoveryWarningBanner />
+            {/* TODO: Remove this hack when albums cache is fixed and refactored */}
+            <PhotosRecoveryBanner onSucceed={refreshAlbums} />
 
             {hasPreview && (
                 <PortalPreview

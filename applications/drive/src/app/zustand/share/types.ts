@@ -42,7 +42,7 @@ export interface SharesState {
         devices: (Share | ShareWithKey)[];
         photos: (Share | ShareWithKey)[];
     }[];
-    haveLockedPhotosShare: () => boolean;
+    haveLockedOrRestoredOldPhotosShare: () => boolean;
     getDefaultShareId: () => string | undefined;
     getDefaultPhotosShareId: () => string | undefined;
     getDefaultShareEmail: () => string | undefined;

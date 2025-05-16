@@ -21,10 +21,11 @@ import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper
 import { API_CODES } from '@proton/shared/lib/constants';
 import { MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import type { MovePhotoLink, MultipleMoveResponse } from '@proton/shared/lib/interfaces/drive/link';
+import { LinkType, type MovePhotoLink } from '@proton/shared/lib/interfaces/drive/link';
 import { encryptPassphrase, generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import groupWith from '@proton/utils/groupWith';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -388,7 +389,12 @@ export function useLinksActions({
                 try {
                     const originalParentIds: { [linkId: string]: string } = {};
                     const { address } = await getShareCreatorKeys(abortSignal, newShareId);
-                    const Links: MovePhotoLink[] = [];
+                    const photoLinksToMove: Map<
+                        string,
+                        MovePhotoLink & {
+                            relatedPhotoLinksToMove: Map<string, MovePhotoLink>;
+                        }
+                    > = new Map();
 
                     const datas = await preventLeave(
                         batchPromiseHelper(
@@ -407,15 +413,60 @@ export function useLinksActions({
                     );
 
                     for (const { data, link } of datas) {
+                        const relatedPhotoLinksToMove = new Map<string, MovePhotoLink>();
+                        for (const relatedId of link.activeRevision?.photo?.relatedPhotosLinkIds || []) {
+                            originalParentIds[relatedId] = link.parentLinkId;
+                            const relatedData = await getMoveLinkData(abortSignal, {
+                                shareId,
+                                newParentLinkId,
+                                linkId: relatedId,
+                                newShareId,
+                                silence,
+                            });
+                            relatedPhotoLinksToMove.set(relatedId, {
+                                ...relatedData.data,
+                                OriginalHash: relatedData.link.hash,
+                                LinkID: relatedId,
+                                // TODO: Until DRVBE-1208 is done
+                                ContentHash: relatedData.data.ContentHash,
+                            });
+                        }
+
                         originalParentIds[link.linkId] = link.parentLinkId;
-                        Links.push({ ...data, OriginalHash: link.hash, LinkID: link.linkId });
+                        photoLinksToMove.set(link.linkId, {
+                            ...data,
+                            OriginalHash: link.hash,
+                            LinkID: link.linkId,
+                            // TODO: Until DRVBE-1208 is done
+                            ContentHash: link.type !== LinkType.ALBUM ? data.ContentHash : '',
+                            relatedPhotoLinksToMove,
+                        });
                     }
 
                     const successes: string[] = [];
                     const failures: { [linkId: string]: any } = {};
-                    const { Responses } = await preventLeave(
-                        debouncedRequest<MultipleMoveResponse>(
-                            action === 'recovery'
+                    // If nothing to recover that means the share can be now deleted
+                    // Can happen if everything was moved but not the share,
+                    // the user will be able to retry and delete the share
+                    if (!photoLinksToMove.size) {
+                        return { successes, failures, originalParentIds };
+                    }
+                    let trasnferedLinkIds: string[] = [];
+                    const { responses } = await batchAPIHelper(abortSignal, {
+                        linkIds: [...photoLinksToMove.keys()],
+                        query: (batchLinkIds) => {
+                            const Links = batchLinkIds
+                                .filter((linkId) => !trasnferedLinkIds.includes(linkId))
+                                .map((batchLinkId) => photoLinksToMove.get(batchLinkId))
+                                .filter(isTruthy)
+                                .reduce((acc, { relatedPhotoLinksToMove, ...link }) => {
+                                    return [...acc, link, ...Array.from(relatedPhotoLinksToMove.values())];
+                                }, [] as MovePhotoLink[]);
+                            if (Links.length === 0) {
+                                return;
+                            }
+                            trasnferedLinkIds = [...trasnferedLinkIds, ...Links.map(({ LinkID }) => LinkID)];
+                            return action === 'recovery'
                                 ? {
                                       ...queryRecoverPhotoLinks(volumeId, {
                                           NewShareId: newShareId,
@@ -432,20 +483,23 @@ export function useLinksActions({
                                           NameSignatureEmail: address.Email,
                                       }),
                                       silence,
-                                  }
-                        ).catch((err) => {
-                            if (INVALID_REQUEST_ERROR_CODES.includes(err?.data?.Code)) {
-                                throw new ValidationError(err.data.Error);
-                            }
-                            throw err;
-                        })
-                    );
+                                  };
+                        },
+                        batchRequestSize: 10,
+                    }).catch((err) => {
+                        if (INVALID_REQUEST_ERROR_CODES.includes(err?.data?.Code)) {
+                            throw new ValidationError(err.data.Error);
+                        }
+                        throw err;
+                    });
 
-                    for (const response of Responses) {
-                        if (response.Response.Code === 1000) {
-                            successes.push(response.LinkID);
-                        } else {
-                            failures[response.LinkID] = response.Response.Error;
+                    for (const { response } of responses) {
+                        for (const { LinkID, Response } of response.Responses) {
+                            if (Response.Code === 1000) {
+                                successes.push(LinkID);
+                            } else {
+                                failures[LinkID] = Response.Error;
+                            }
                         }
                     }
 
