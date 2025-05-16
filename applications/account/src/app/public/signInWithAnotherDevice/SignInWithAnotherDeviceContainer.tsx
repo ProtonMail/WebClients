@@ -21,7 +21,7 @@ import observeApiError from '@proton/metrics/lib/observeApiError';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getToAppName } from '@proton/shared/lib/authentication/apps';
-import { type APP_NAMES, BRAND_NAME, SECOND } from '@proton/shared/lib/constants';
+import { type APP_NAMES, BRAND_NAME, MAIL_APP_NAME, SECOND } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { Api } from '@proton/shared/lib/interfaces';
 import { useFlagsStatus } from '@proton/unleash/index';
@@ -181,7 +181,7 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
                                     {c('edm').t`Generate QR code`}
                                 </Button>
                                 <ButtonLike size="large" as={Link} to={paths.login} fullWidth>
-                                    {c('Action').t`Sign in with ${BRAND_NAME}`}
+                                    {c('Action').t`Back to sign in`}
                                 </ButtonLike>
                             </div>
                         </div>
@@ -215,7 +215,7 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
                                 .t`Get another device that’s signed in to your ${BRAND_NAME} Account`}</li>
                             <li className="mb-2">
                                 {getBoldFormattedText(
-                                    c('edm').t`Using that device, open any ${BRAND_NAME} app and select **Settings**`
+                                    c('edm').t`Using that device, open the ${MAIL_APP_NAME} app and select **Settings**`
                                 )}
                             </li>
                             <li className="mb-2">
