@@ -97,7 +97,6 @@ export const readBitwardenData = async (file: File): Promise<ImportReaderResult>
                                     expirationDate: formatBitwardenCCExpirationDate(item),
                                 });
                             case BitwardenType.IDENTITY:
-                                addCustomFieldsWarning(ignored, item);
                                 return importIdentityItem({
                                     name: item.name,
                                     note: item.notes,
