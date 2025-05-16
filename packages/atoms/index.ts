@@ -47,7 +47,7 @@ export { default as Step } from './Stepper/Step';
 export type { StepProps } from './Stepper/Step';
 export { default as Stepper, StepperPositionEnum } from './Stepper/Stepper';
 export type { StepperProps } from './Stepper/Stepper';
-export { default as VerticalStep } from './VerticalSteps/VerticalStep';
+export { default as VerticalStep, VerticalStepStatusEnum } from './VerticalSteps/VerticalStep';
 export type { VerticalStepProps } from './VerticalSteps/VerticalStep';
 export { default as VerticalSteps } from './VerticalSteps/VerticalSteps';
 export type { VerticalStepsProps } from './VerticalSteps/VerticalSteps';

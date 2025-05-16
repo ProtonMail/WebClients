@@ -1,6 +1,6 @@
 import { Icon } from '@proton/components';
 
-import VerticalStep from './VerticalStep';
+import VerticalStep, { VerticalStepStatusEnum } from './VerticalStep';
 import VerticalSteps from './VerticalSteps';
 import mdx from './VerticalSteps.mdx';
 
@@ -17,13 +17,13 @@ export const Basic = () => (
             icon={<Icon name="checkmark" className="m-auto" size={4} />}
             title="Choose a username"
             description="You successfully selected your new email address."
-            status="passed"
+            status={VerticalStepStatusEnum.Passed}
         />
         <VerticalStep
             icon={<Icon name="lock" className="m-auto" size={4} />}
             title="Today: get instant access"
             description="15 GB secure mailbox with unlimited personalisation."
-            status="done"
+            status={VerticalStepStatusEnum.Done}
         />
         <VerticalStep
             icon={<Icon name="bell" className="m-auto" size={4} />}

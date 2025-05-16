@@ -1,7 +1,7 @@
 import type { RenderResult } from '@testing-library/react';
 import { render } from '@testing-library/react';
 
-import VerticalStep from './VerticalStep';
+import VerticalStep, { VerticalStepStatusEnum } from './VerticalStep';
 import VerticalSteps from './VerticalSteps';
 
 function renderBasicVerticalSteps() {
@@ -11,13 +11,13 @@ function renderBasicVerticalSteps() {
                 icon="checkmark"
                 title="Choose a username"
                 description="You successfully selected your new email address."
-                status="passed"
+                status={VerticalStepStatusEnum.Passed}
             />
             <VerticalStep
                 icon="lock"
                 title="Today: get instant access"
                 description="15 GB secure mailbox with unlimited personalisation."
-                status="done"
+                status={VerticalStepStatusEnum.Done}
             />
             <VerticalStep
                 icon="bell"
