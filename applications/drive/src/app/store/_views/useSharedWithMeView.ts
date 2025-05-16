@@ -89,7 +89,6 @@ export default function useSharedWithMeView(shareId: string) {
     const { sortedItems } = useMemo(() => {
         const newItemsPositions = new Map(itemsPositions.current);
         const allItems = [...invitationsBrowserItems, ...browserItems];
-
         if (!itemsPositions.current.size) {
             allItems.forEach((item, index) => {
                 newItemsPositions.set(item.rootShareId, index);
