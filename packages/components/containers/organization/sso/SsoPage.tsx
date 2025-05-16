@@ -406,7 +406,6 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
             <SubSettingsSection
                 id="saml-authentication"
                 title={c('Title').t`SAML authentication`}
-                beta
                 className="container-section-sticky-section"
             >
                 <SettingsSectionWide>
