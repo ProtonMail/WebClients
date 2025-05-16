@@ -71,6 +71,7 @@ import { IconButton, Separator } from '../../../../../vendor/rowsncolumns/ui'
 import { functionDescriptions, functions } from '../../../../../vendor/rowsncolumns/functions'
 import { MagnifyingGlassIcon } from '../../../../../vendor/rowsncolumns/icons'
 import type { EditorInitializationConfig, DocStateInterface } from '@proton/docs-shared'
+import { EditorSystemMode } from '@proton/docs-shared'
 import { DocProvider, TranslatedResult } from '@proton/docs-shared'
 import { useYSpreadsheetV2 } from '../../../../../vendor/rowsncolumns/y-spreadsheet'
 import { useSyncedState } from '../Hooks/useSyncedState'
@@ -83,11 +84,13 @@ export function Spreadsheet({
   hidden,
   onEditorLoadResult,
   editorInitializationConfig,
+  systemMode,
 }: {
   docState: DocStateInterface
   hidden: boolean
   onEditorLoadResult: EditorLoadResult
   editorInitializationConfig: EditorInitializationConfig | undefined
+  systemMode: EditorSystemMode
 }) {
   const { userName } = useSyncedState()
 
@@ -106,6 +109,8 @@ export function Spreadsheet({
   const locale = 'en-GB'
   const currency = 'USD'
   const yDoc = useMemo(() => docState.getDoc(), [docState])
+
+  const isRevisionMode = systemMode === EditorSystemMode.Revision
 
   const {
     activeCell,
@@ -341,163 +346,171 @@ export function Spreadsheet({
         ></div>
       )}
       <div className="flex h-full w-full flex-1 flex-col [grid-column:1/3] [grid-row:1/3]">
-        <Toolbar>
-          <ButtonUndo onClick={onUndo} disabled={!canUndo} />
-          <ButtonRedo onClick={onRedo} disabled={!canRedo} />
-          <ToolbarSeparator />
-          <ScaleSelector value={scale} onChange={onChangeScale} />
-          <ToolbarSeparator />
-          <ButtonFormatCurrency
-            onClick={() => {
-              onChangeFormatting(activeSheetId, activeCell, selections, 'numberFormat', {
-                type: 'CURRENCY',
-                pattern: pattern_currency_decimal,
-              })
-            }}
-          />
-          <ButtonFormatPercent
-            onClick={() => {
-              onChangeFormatting(activeSheetId, activeCell, selections, 'numberFormat', {
-                type: 'PERCENT',
-                pattern: pattern_percent_decimal,
-              })
-            }}
-          />
-          <ButtonDecreaseDecimal onClick={() => onChangeDecimals(activeSheetId, activeCell, selections, 'decrement')} />
-          <ButtonIncreaseDecimal onClick={() => onChangeDecimals(activeSheetId, activeCell, selections, 'increment')} />
-          <TextFormatSelector
-            locale={locale}
-            currency={currency}
-            onChangeFormatting={(type, value) => onChangeFormatting(activeSheetId, activeCell, selections, type, value)}
-          />
-          <ToolbarSeparator />
-          <FontFamilySelector
-            value={currentCellFormat?.textFormat?.fontFamily}
-            theme={theme}
-            onChange={(value) => {
-              onChangeFormatting(activeSheetId, activeCell, selections, 'textFormat', {
-                fontFamily: value,
-              })
-            }}
-          />
-          <ToolbarSeparator />
-          <FontSizeSelector
-            value={currentCellFormat?.textFormat?.fontSize ?? DEFAULT_FONT_SIZE_PT}
-            onChange={(value) => {
-              onChangeFormatting(activeSheetId, activeCell, selections, 'textFormat', {
-                fontSize: Number(value),
-              })
-            }}
-          />
-          <ToolbarSeparator />
-          <ButtonBold
-            isActive={currentCellFormat?.textFormat?.bold}
-            onClick={() => {
-              onChangeFormatting(activeSheetId, activeCell, selections, 'textFormat', {
-                bold: !currentCellFormat?.textFormat?.bold,
-              })
-            }}
-          />
-          <ButtonItalic
-            isActive={currentCellFormat?.textFormat?.italic}
-            onClick={() => {
-              onChangeFormatting(activeSheetId, activeCell, selections, 'textFormat', {
-                italic: !currentCellFormat?.textFormat?.italic,
-              })
-            }}
-          />
-          <ButtonUnderline
-            isActive={currentCellFormat?.textFormat?.underline}
-            onClick={() => {
-              onChangeFormatting(activeSheetId, activeCell, selections, 'textFormat', {
-                underline: !currentCellFormat?.textFormat?.underline,
-              })
-            }}
-          />
-          <ButtonStrikethrough
-            isActive={currentCellFormat?.textFormat?.strikethrough}
-            onClick={() => {
-              onChangeFormatting(activeSheetId, activeCell, selections, 'textFormat', {
-                strikethrough: !currentCellFormat?.textFormat?.strikethrough,
-              })
-            }}
-          />
-          <TextColorSelector
-            color={currentCellFormat?.textFormat?.color}
-            theme={theme}
-            onChange={(color) => {
-              onChangeFormatting(activeSheetId, activeCell, selections, 'textFormat', {
-                color,
-              })
-            }}
-          />
-          <ToolbarSeparator />
-          <BackgroundColorSelector
-            color={currentCellFormat?.backgroundColor}
-            theme={theme}
-            onChange={(color) => {
-              onChangeFormatting(activeSheetId, activeCell, selections, 'backgroundColor', color)
-            }}
-          />
+        {!isRevisionMode && (
+          <Toolbar>
+            <ButtonUndo onClick={onUndo} disabled={!canUndo} />
+            <ButtonRedo onClick={onRedo} disabled={!canRedo} />
+            <ToolbarSeparator />
+            <ScaleSelector value={scale} onChange={onChangeScale} />
+            <ToolbarSeparator />
+            <ButtonFormatCurrency
+              onClick={() => {
+                onChangeFormatting(activeSheetId, activeCell, selections, 'numberFormat', {
+                  type: 'CURRENCY',
+                  pattern: pattern_currency_decimal,
+                })
+              }}
+            />
+            <ButtonFormatPercent
+              onClick={() => {
+                onChangeFormatting(activeSheetId, activeCell, selections, 'numberFormat', {
+                  type: 'PERCENT',
+                  pattern: pattern_percent_decimal,
+                })
+              }}
+            />
+            <ButtonDecreaseDecimal
+              onClick={() => onChangeDecimals(activeSheetId, activeCell, selections, 'decrement')}
+            />
+            <ButtonIncreaseDecimal
+              onClick={() => onChangeDecimals(activeSheetId, activeCell, selections, 'increment')}
+            />
+            <TextFormatSelector
+              locale={locale}
+              currency={currency}
+              onChangeFormatting={(type, value) =>
+                onChangeFormatting(activeSheetId, activeCell, selections, type, value)
+              }
+            />
+            <ToolbarSeparator />
+            <FontFamilySelector
+              value={currentCellFormat?.textFormat?.fontFamily}
+              theme={theme}
+              onChange={(value) => {
+                onChangeFormatting(activeSheetId, activeCell, selections, 'textFormat', {
+                  fontFamily: value,
+                })
+              }}
+            />
+            <ToolbarSeparator />
+            <FontSizeSelector
+              value={currentCellFormat?.textFormat?.fontSize ?? DEFAULT_FONT_SIZE_PT}
+              onChange={(value) => {
+                onChangeFormatting(activeSheetId, activeCell, selections, 'textFormat', {
+                  fontSize: Number(value),
+                })
+              }}
+            />
+            <ToolbarSeparator />
+            <ButtonBold
+              isActive={currentCellFormat?.textFormat?.bold}
+              onClick={() => {
+                onChangeFormatting(activeSheetId, activeCell, selections, 'textFormat', {
+                  bold: !currentCellFormat?.textFormat?.bold,
+                })
+              }}
+            />
+            <ButtonItalic
+              isActive={currentCellFormat?.textFormat?.italic}
+              onClick={() => {
+                onChangeFormatting(activeSheetId, activeCell, selections, 'textFormat', {
+                  italic: !currentCellFormat?.textFormat?.italic,
+                })
+              }}
+            />
+            <ButtonUnderline
+              isActive={currentCellFormat?.textFormat?.underline}
+              onClick={() => {
+                onChangeFormatting(activeSheetId, activeCell, selections, 'textFormat', {
+                  underline: !currentCellFormat?.textFormat?.underline,
+                })
+              }}
+            />
+            <ButtonStrikethrough
+              isActive={currentCellFormat?.textFormat?.strikethrough}
+              onClick={() => {
+                onChangeFormatting(activeSheetId, activeCell, selections, 'textFormat', {
+                  strikethrough: !currentCellFormat?.textFormat?.strikethrough,
+                })
+              }}
+            />
+            <TextColorSelector
+              color={currentCellFormat?.textFormat?.color}
+              theme={theme}
+              onChange={(color) => {
+                onChangeFormatting(activeSheetId, activeCell, selections, 'textFormat', {
+                  color,
+                })
+              }}
+            />
+            <ToolbarSeparator />
+            <BackgroundColorSelector
+              color={currentCellFormat?.backgroundColor}
+              theme={theme}
+              onChange={(color) => {
+                onChangeFormatting(activeSheetId, activeCell, selections, 'backgroundColor', color)
+              }}
+            />
 
-          <BorderSelector
-            borders={currentCellFormat?.borders}
-            onChange={(location, color, style) =>
-              onChangeBorder(activeSheetId, activeCell, selections, location, color, style)
-            }
-            theme={theme}
-          />
-          <MergeCellsSelector
-            activeCell={activeCell}
-            selections={selections}
-            sheetId={activeSheetId}
-            merges={merges}
-            onUnMerge={onUnMergeCells}
-            onMerge={onMergeCells}
-          />
-          <ToolbarSeparator />
-          <TextHorizontalAlignSelector
-            value={currentCellFormat?.horizontalAlignment}
-            onChange={(value) => {
-              onChangeFormatting(activeSheetId, activeCell, selections, 'horizontalAlignment', value)
-            }}
-          />
-          <TextVerticalAlignSelector
-            value={currentCellFormat?.verticalAlignment}
-            onChange={(value) => {
-              onChangeFormatting(activeSheetId, activeCell, selections, 'verticalAlignment', value)
-            }}
-          />
-          <TextWrapSelector
-            value={currentCellFormat?.wrapStrategy}
-            onChange={(value) => {
-              onChangeFormatting(activeSheetId, activeCell, selections, 'wrapStrategy', value)
-            }}
-          />
-          <ToolbarSeparator />
+            <BorderSelector
+              borders={currentCellFormat?.borders}
+              onChange={(location, color, style) =>
+                onChangeBorder(activeSheetId, activeCell, selections, location, color, style)
+              }
+              theme={theme}
+            />
+            <MergeCellsSelector
+              activeCell={activeCell}
+              selections={selections}
+              sheetId={activeSheetId}
+              merges={merges}
+              onUnMerge={onUnMergeCells}
+              onMerge={onMergeCells}
+            />
+            <ToolbarSeparator />
+            <TextHorizontalAlignSelector
+              value={currentCellFormat?.horizontalAlignment}
+              onChange={(value) => {
+                onChangeFormatting(activeSheetId, activeCell, selections, 'horizontalAlignment', value)
+              }}
+            />
+            <TextVerticalAlignSelector
+              value={currentCellFormat?.verticalAlignment}
+              onChange={(value) => {
+                onChangeFormatting(activeSheetId, activeCell, selections, 'verticalAlignment', value)
+              }}
+            />
+            <TextWrapSelector
+              value={currentCellFormat?.wrapStrategy}
+              onChange={(value) => {
+                onChangeFormatting(activeSheetId, activeCell, selections, 'wrapStrategy', value)
+              }}
+            />
+            <ToolbarSeparator />
 
-          <ButtonInsertImage onInsertFile={onInsertFile} />
-          <ButtonInsertChart onClick={() => onCreateChart(activeSheetId, activeCell, selections)} />
+            <ButtonInsertImage onInsertFile={onInsertFile} />
+            <ButtonInsertChart onClick={() => onCreateChart(activeSheetId, activeCell, selections)} />
 
-          <TableStyleSelector
-            theme={theme}
-            tables={tables}
-            activeCell={activeCell}
-            selections={selections}
-            sheetId={activeSheetId}
-            onCreateTable={onCreateTable}
-            onUpdateTable={onUpdateTable}
-          />
-          <ToolbarSeparator />
-          <ThemeSelector theme={theme} onChangeTheme={onChangeSpreadsheetTheme} />
-          <ButtonSwitchColorMode
-            colorMode={colorMode}
-            onClick={() => onChangeColorMode((prev) => (prev === 'dark' ? 'light' : 'dark'))}
-          />
-          <IconButton onClick={onRequestSearch}>
-            <MagnifyingGlassIcon />
-          </IconButton>
-        </Toolbar>
+            <TableStyleSelector
+              theme={theme}
+              tables={tables}
+              activeCell={activeCell}
+              selections={selections}
+              sheetId={activeSheetId}
+              onCreateTable={onCreateTable}
+              onUpdateTable={onUpdateTable}
+            />
+            <ToolbarSeparator />
+            <ThemeSelector theme={theme} onChangeTheme={onChangeSpreadsheetTheme} />
+            <ButtonSwitchColorMode
+              colorMode={colorMode}
+              onClick={() => onChangeColorMode((prev) => (prev === 'dark' ? 'light' : 'dark'))}
+            />
+            <IconButton onClick={onRequestSearch}>
+              <MagnifyingGlassIcon />
+            </IconButton>
+          </Toolbar>
+        )}
         <FormulaBar>
           <RangeSelector
             selections={selections}
@@ -522,6 +535,7 @@ export function Spreadsheet({
             sheetId={activeSheetId}
             activeCell={activeCell}
             functionDescriptions={functionDescriptions}
+            readOnly={isRevisionMode}
           />
         </FormulaBar>
         <CanvasGrid
@@ -617,11 +631,12 @@ export function Spreadsheet({
               {...props}
               getSeriesValuesFromRange={getSeriesValuesFromRange}
               getDomainValuesFromRange={getDomainValuesFromRange}
-              onRequestEdit={onRequestEditChart}
+              onRequestEdit={!isRevisionMode ? onRequestEditChart : undefined}
               onRequestCalculate={onRequestCalculate}
               sheetObserver={sheetObserver}
             />
           )}
+          readonly={isRevisionMode}
         />
         <ChartEditorDialog>
           <ChartEditor
@@ -633,7 +648,7 @@ export function Spreadsheet({
           />
         </ChartEditorDialog>
         <BottomBar>
-          <NewSheetButton onClick={onCreateNewSheet} />
+          {!isRevisionMode && <NewSheetButton onClick={onCreateNewSheet} />}
           <SheetSwitcher
             sheets={sheets}
             activeSheetId={activeSheetId}
@@ -654,6 +669,7 @@ export function Spreadsheet({
             onProtectSheet={onProtectSheet}
             onUnProtectSheet={onUnProtectSheet}
             onDuplicateSheet={onDuplicateSheet}
+            readonly={isRevisionMode}
           />
           <SheetStatus
             sheetId={activeSheetId}
