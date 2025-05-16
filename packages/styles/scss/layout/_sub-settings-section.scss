@@ -4,5 +4,21 @@
 	&-anchor {
 		inset-inline-start: rem(-22);
 		padding-inline-end: rem(6); // Cover the title to avoid it disappearing and reappearing when hovering
+
+		@at-root {
+			.settings-cards & {
+				inset-block-start: rem(3);
+
+				@include media('<=medium') {
+					inset-inline-start: rem(-16);
+					inset-block-start: rem(2);
+					padding-inline-end: rem(4);
+
+					svg {
+						scale: 0.8;
+					}
+				}
+			}
+		}
 	}
 }
