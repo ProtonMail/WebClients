@@ -217,6 +217,7 @@ export enum RAWThumbnailExtractionSupported {
     cr2 = 'image/x-canon-cr2',
     cr3 = 'image/x-canon-cr3',
     heic = 'image/heic',
+    nef = 'image/x-nikon-nef',
 }
 
 export const EXTRA_EXTENSION_TYPES: { [ext: string]: string } = {
