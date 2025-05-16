@@ -1,181 +1,126 @@
-import { useState } from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from '@proton/atoms/Button/Button';
-import ButtonLike from '@proton/atoms/Button/ButtonLike';
-import { Checkbox, Icon, RadioGroup, Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
+import { ThemeColor } from '@proton/colors';
 
-import mdx from './Button.mdx';
+import { Button, ButtonLikeShapeEnum, ButtonLikeSizeEnum } from '..';
+import type { ButtonLikeOwnProps } from '..';
 
-export default {
+const meta: Meta<typeof Button> = {
+    args: {
+        color: ThemeColor.Norm,
+        children: 'I am a button',
+        'data-testid': '',
+        disabled: false,
+        fullWidth: false,
+        group: false,
+        icon: false,
+        loading: false,
+        noDisabledStyles: false,
+        pill: false,
+        selected: false,
+        shape: ButtonLikeShapeEnum.Solid,
+        size: ButtonLikeSizeEnum.Medium,
+    },
     component: Button,
-    title: 'components/Button',
     parameters: {
         docs: {
-            page: mdx,
+            description: {
+                component: 'Button component.',
+            },
         },
     },
+    tags: ['autodocs'],
 };
 
-export const Example = () => (
-    <Button color="norm" size="large">
-        Loremium
-    </Button>
+export default meta;
+
+type Story = StoryObj<typeof Button>;
+
+export const Default: Story = {};
+
+// Colors
+const AllColorsSorted = Object.values(ThemeColor).sort();
+const AllColorsWithProps = (props: ButtonLikeOwnProps = {}) => (
+    <>
+        {AllColorsSorted.map((color: ThemeColor) => (
+            <Button key={color} {...props} children={color} color={color} />
+        ))}
+    </>
 );
 
-export const Basic = ({ ...args }) => <Button {...args}>Loremium</Button>;
-
-Basic.args = {};
-
-type ButtonProps = React.ComponentProps<typeof Button>;
-
-const shapes: Required<ButtonProps>['shape'][] = ['solid', 'outline', 'ghost', 'underline'];
-
-const colors: Required<ButtonProps>['color'][] = ['norm', 'weak', 'danger', 'warning', 'success', 'info'];
-
-const sizes: Required<ButtonProps>['size'][] = ['small', 'medium', 'large'];
-
-const toggles = ['loading', 'pill', 'fullWidth', 'icon', 'disabled'] as const;
-
-const buttonContainerClassName = 'flex md:flex-1 items-center justify-center border';
-
-export const Sandbox = () => {
-    const [selectedShape, setSelectedShape] = useState<Required<ButtonProps>['shape']>('solid');
-    const [selectedColor, setSelectedColor] = useState<Required<ButtonProps>['color']>('weak');
-    const [selectedSize, setSelectedSize] = useState<Required<ButtonProps>['size']>('medium');
-    const [selectedToggles, setSelectedToggles] = useState(toggles.map(() => false));
-
-    const button = (
-        <Button
-            shape={selectedShape}
-            color={selectedColor}
-            size={selectedSize}
-            {...selectedToggles.reduce<{ [key: string]: boolean }>((acc, value, i) => {
-                acc[toggles[i]] = value;
-                return acc;
-            }, {})}
-        >
-            {selectedToggles[toggles.indexOf('icon')] ? (
-                <Icon name="brand-proton-mail" />
-            ) : (
-                <>
-                    {selectedShape} {selectedColor} {selectedSize}
-                </>
-            )}
-        </Button>
-    );
-
-    return (
-        <div className="flex *:min-size-auto flex-column md:flex-row py-7">
-            <div className="flex flex-column flex-nowrap md:flex-1">
-                <div className="mr-8 mb-4">
-                    <strong className="block mb-4">Color</strong>
-                    <RadioGroup
-                        name="selected-color"
-                        onChange={(v) => setSelectedColor(v)}
-                        value={selectedColor}
-                        options={colors.map((color) => ({ value: color, label: color }))}
-                    />
-                </div>
-                <div className="mr-8 mb-4">
-                    <strong className="block mb-4">Shape</strong>
-                    <RadioGroup
-                        name="selected-shape"
-                        onChange={(v) => setSelectedShape(v)}
-                        value={selectedShape}
-                        options={shapes.map((shape) => ({ value: shape, label: shape }))}
-                    />
-                </div>
-                <div className="mr-8 mb-4">
-                    <strong className="block mb-4">Size</strong>
-                    <RadioGroup
-                        name="selected-size"
-                        onChange={(v) => setSelectedSize(v)}
-                        value={selectedSize}
-                        options={sizes.map((size) => ({ value: size, label: size }))}
-                    />
-                </div>
-                <div className="mr-8 mb-4">
-                    <strong className="block mb-4">Toggles</strong>
-                    {toggles.map((prop, i) => {
-                        return (
-                            <div className="mb-2" key={i}>
-                                <Checkbox
-                                    checked={selectedToggles[i]}
-                                    onChange={({ target: { checked } }) => {
-                                        setSelectedToggles(
-                                            selectedToggles.map((oldValue, otherIndex) =>
-                                                otherIndex === i ? checked : oldValue
-                                            )
-                                        );
-                                    }}
-                                >
-                                    {prop}
-                                </Checkbox>
-                            </div>
-                        );
-                    })}
-                </div>
-            </div>
-            <div className={buttonContainerClassName}>{button}</div>
-        </div>
-    );
+export const AllColors: Story = {
+    render: () => AllColorsWithProps(),
+};
+export const AllColorsDisabled: Story = {
+    render: () => AllColorsWithProps({ disabled: true }),
+};
+export const AllColorsFullWidth: Story = {
+    render: () => AllColorsWithProps({ fullWidth: true }),
+};
+export const AllColorsAsIcon: Story = {
+    render: () => AllColorsWithProps({ icon: true }),
+};
+export const AllColorsLoading: Story = {
+    render: () => AllColorsWithProps({ loading: true }),
+};
+export const AllColorsPill: Story = {
+    render: () => AllColorsWithProps({ pill: true }),
 };
 
-export const Variants = () => {
-    return (
-        <Table className="color-norm">
-            <TableHeader>
-                <TableRow>
-                    <TableCell>
-                        <></>
-                    </TableCell>
-                    {colors.map((color) => (
-                        <TableCell key={color} scope="col">
-                            {color}
-                        </TableCell>
-                    ))}
-                </TableRow>
-            </TableHeader>
-            <TableBody>
-                {shapes.map((shape) => (
-                    <TableRow key={shape}>
-                        <TableCell>{shape}</TableCell>
-                        {colors.map((color) => (
-                            <TableCell key={color}>
-                                <div className="flex gap-2 justify-center">
-                                    <Button shape={shape} color={color}>
-                                        Lorem
-                                    </Button>
-                                    {shape !== 'underline' && (
-                                        <Button icon shape={shape} color={color}>
-                                            <Icon name="brand-proton-mail" alt="Lorem" />
-                                        </Button>
-                                    )}
-                                </div>
-                            </TableCell>
-                        ))}
-                    </TableRow>
-                ))}
-            </TableBody>
-        </Table>
-    );
+// Shapes
+const AllShapesSorted = Object.values(ButtonLikeShapeEnum).sort();
+const AllShapesWithProps = (props: ButtonLikeOwnProps = {}) => (
+    <>
+        {AllShapesSorted.map((shape: ButtonLikeShapeEnum) => (
+            <Button key={shape} {...props} children={shape} color={ThemeColor.Norm} shape={shape} />
+        ))}
+    </>
+);
+
+export const AllShapes: Story = {
+    render: () => AllShapesWithProps(),
+};
+export const AllShapesDisabled: Story = {
+    render: () => AllShapesWithProps({ disabled: true }),
+};
+export const AllShapesFullWidth: Story = {
+    render: () => AllShapesWithProps({ fullWidth: true }),
+};
+export const AllShapesAsIcon: Story = {
+    render: () => AllShapesWithProps({ icon: true }),
+};
+export const AllShapesLoading: Story = {
+    render: () => AllShapesWithProps({ loading: true }),
+};
+export const AllShapesPill: Story = {
+    render: () => AllShapesWithProps({ pill: true }),
 };
 
-const Component = (props: any) => {
-    return <div {...props}>Component</div>;
-};
+// Sizes
+const AllSizesSorted = Object.values(ButtonLikeSizeEnum).sort();
+const AllSizesWithProps = (props: ButtonLikeOwnProps = {}) => (
+    <>
+        {AllSizesSorted.map((size: ButtonLikeSizeEnum) => (
+            <Button key={size} {...props} children={size} color={ThemeColor.Norm} size={size} />
+        ))}
+    </>
+);
 
-export const Like = () => {
-    return (
-        <div>
-            <div>
-                <ButtonLike as="a" shape="outline" color="norm" href="https://proton.me">
-                    Link
-                </ButtonLike>
-            </div>
-            <div className="mt-4">
-                <ButtonLike as={Component} color="danger" className="mb-4" />
-            </div>
-        </div>
-    );
+export const AllSizes: Story = {
+    render: () => AllSizesWithProps(),
+};
+export const AllSizesDisabled: Story = {
+    render: () => AllSizesWithProps({ disabled: true }),
+};
+export const AllSizesFullWidth: Story = {
+    render: () => AllSizesWithProps({ fullWidth: true }),
+};
+export const AllSizesAsIcon: Story = {
+    render: () => AllSizesWithProps({ icon: true }),
+};
+export const AllSizesLoading: Story = {
+    render: () => AllSizesWithProps({ loading: true }),
+};
+export const AllSizesPill: Story = {
+    render: () => AllSizesWithProps({ pill: true }),
 };
