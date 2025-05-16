@@ -800,7 +800,8 @@ export const getVPNDedicatedIPs = (subscription: Subscription | FreeSubscription
 
     // Some plans might have included IPs without any indication on the backend.
     // For example, 1 IP is included in the Business plan
-    const includedIPs = IPS_INCLUDED_IN_PLAN[planName] || 0;
+    const includedIPs =
+        planName in IPS_INCLUDED_IN_PLAN ? (isTrial(subscription) ? 1 : IPS_INCLUDED_IN_PLAN[planName] || 0) : 0;
 
     return (subscription as Subscription).Plans.reduce(
         (acc, { Name: addonOrPlanName, Quantity }) => acc + (isIpAddon(addonOrPlanName) ? Quantity : 0),
