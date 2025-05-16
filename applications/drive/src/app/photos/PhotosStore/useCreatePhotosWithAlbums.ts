@@ -38,9 +38,10 @@ export function useCreatePhotosWithAlbums() {
         );
 
         return {
-            volumeId: Volume.ID,
+            volumeId: Volume.VolumeID,
             shareId: Volume.Share.ID,
             linkId: Volume.Share.LinkID,
+            addressId: address.ID,
         };
     };
 

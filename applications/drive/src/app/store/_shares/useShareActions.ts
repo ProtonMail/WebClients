@@ -30,6 +30,7 @@ import { useDriveEventManager } from '../_events';
 import { useLink } from '../_links';
 import useLinksState from '../_links/useLinksState';
 import { useVolumesState } from '../_volumes';
+import { ShareType } from './interface';
 import useDefaultShare from './useDefaultShare';
 import useShare from './useShare';
 
@@ -54,11 +55,12 @@ export default function useShareActions() {
     const { getShareCreatorKeys, getShare, getShareSessionKey } = useShare();
     const events = useDriveEventManager();
     const { getDefaultPhotosShare } = useDefaultShare();
-    const { clearDefaultPhotosSharePromise, removeShares, getDefaultPhotosShareId } = useSharesStore(
+    const { clearDefaultPhotosSharePromise, removeShares, getDefaultPhotosShareId, shares } = useSharesStore(
         useShallow((state) => ({
             clearDefaultPhotosSharePromise: state.clearDefaultPhotosSharePromise,
             removeShares: state.removeShares,
             getDefaultPhotosShareId: state.getDefaultPhotosShareId,
+            shares: state.shares,
         }))
     );
 
@@ -288,7 +290,15 @@ export default function useShareActions() {
     }, [debouncedRequest]);
 
     const shouldMigratePhotos = useCallback(async (): Promise<SHOULD_MIGRATE_PHOTOS_STATUS> => {
-        const photosShare = await getDefaultPhotosShare();
+        const lockedOldPhotoShares = Object.values(shares).filter(
+            (share) => share.isLocked && share.type == ShareType.photos && share.volumeType !== VolumeType.Photos
+        );
+        if (lockedOldPhotoShares.length > 0) {
+            return SHOULD_MIGRATE_PHOTOS_STATUS.NEED_MIGRATION;
+        }
+
+        // Force=true to re-fetch the share in case recovery happened and there is new photo share.
+        const photosShare = await getDefaultPhotosShare(undefined, true);
         if (!photosShare) {
             try {
                 const migrationState = await checkMigrationState(true);
@@ -303,7 +313,7 @@ export default function useShareActions() {
         return photosShare.volumeType === VolumeType.Photos
             ? SHOULD_MIGRATE_PHOTOS_STATUS.MIGRATED
             : SHOULD_MIGRATE_PHOTOS_STATUS.NEED_MIGRATION;
-    }, [checkMigrationState, getDefaultPhotosShare]);
+    }, [checkMigrationState, getDefaultPhotosShare, shares]);
 
     const migratePhotos = useCallback(
         (skipStartMigration: boolean = false) =>
