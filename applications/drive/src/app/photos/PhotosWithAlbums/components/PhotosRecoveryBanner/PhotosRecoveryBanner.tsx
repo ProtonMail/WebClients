@@ -41,14 +41,18 @@ const getPhotosRecoveryProgressText = (
     return `${baseText}.`;
 };
 
-const PhotosRecoveryBanner = () => {
+interface PhotosRecoveryBannerProps {
+    onSucceed: () => void;
+}
+
+const PhotosRecoveryBanner = ({ onSucceed }: PhotosRecoveryBannerProps) => {
     const {
         start,
         state: recoveryState,
         countOfUnrecoveredLinksLeft,
         countOfFailedLinks,
         needsRecovery,
-    } = usePhotosRecovery();
+    } = usePhotosRecovery({ onSucceed });
 
     const [showBanner, setShowBanner] = useState<boolean>(false);
 

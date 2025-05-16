@@ -1,11 +1,15 @@
 import { type ReactNode, useContext, useEffect, useState } from 'react';
 
+import { c } from 'ttag';
+
+import { useNotifications } from '@proton/components/index';
 import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 import useFlag from '@proton/unleash/useFlag';
 
 import { PhotosContainer } from '../../containers/PhotosContainer';
 import { PhotosWithAlbumsContext, PhotosWithAlbumsProvider } from '../../photos/PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosWithAlbumsContainer } from '../../photos/PhotosWithAlbumsContainer';
+import { useSharesStore } from '../../zustand/share/shares.store';
 import { useUserSettings } from '../_settings';
 import { useDefaultShare } from '../_shares';
 import { PhotosContext, PhotosProvider } from './PhotosProvider';
@@ -58,6 +62,21 @@ export const PhotosOrPhotosWithAlbumsProvider = ({ children }: { children: React
     const photosWithAlbumsForNewVolume = useFlag('DriveAlbumsNewVolumes');
     const [customerPhotoState, setCustomerPhotoState] = useState<CustomerPhotoState>(CustomerPhotoState.UNKNOWN);
     const { getDefaultPhotosShare } = useDefaultShare();
+    const { haveLockedOrRestoredOldPhotosShare } = useSharesStore((state) => ({
+        haveLockedOrRestoredOldPhotosShare: state.haveLockedOrRestoredOldPhotosShare(),
+    }));
+    const { createNotification } = useNotifications();
+
+    useEffect(() => {
+        if (haveLockedOrRestoredOldPhotosShare && photosEnabled && photosWithAlbumsEnabled) {
+            createNotification({
+                type: 'info',
+                expiration: 10000,
+                text: c('Notification')
+                    .t`Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.`,
+            });
+        }
+    }, [haveLockedOrRestoredOldPhotosShare, createNotification, photosEnabled, photosWithAlbumsEnabled]);
 
     useEffect(() => {
         if (photosEnabled && !photosWithAlbumsEnabled) {
@@ -76,6 +95,7 @@ export const PhotosOrPhotosWithAlbumsProvider = ({ children }: { children: React
 
     // Photos global FF is enabled
     if (
+        !haveLockedOrRestoredOldPhotosShare &&
         photosEnabled &&
         // AND
         // Either

@@ -206,5 +206,10 @@ export const queryPhotosVolumeMigrationState = () => ({
 export const queryPhotosVolumeMigrate = () => ({
     method: 'POST',
     url: `drive/photos/migrate-legacy`,
-    silence: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
+    silence: [
+        API_CUSTOM_ERROR_CODES.ALREADY_EXISTS,
+        // With locked volumes and feature flags it can wrongly assume the migration should start.
+        // It is safe to ignore and not bother user about it.
+        API_CUSTOM_ERROR_CODES.INCOMPATIBLE_STATE,
+    ],
 });
