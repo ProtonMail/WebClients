@@ -1,6 +1,8 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
+import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
+
 import type { Share, ShareWithKey } from '../../store/_shares';
 import { ShareState, ShareType } from '../../store/_shares';
 import type { SharesState } from './types';
@@ -33,7 +35,10 @@ export const useSharesStore = create<SharesState>()(
         getLockedShares: () => {
             const { shares } = get();
             return Object.values(shares)
-                .filter((share) => share.isLocked && share.isDefault && !share.forASV)
+                .filter(
+                    (share) =>
+                        share.isLocked && (share.isDefault || share.volumeType === VolumeType.Photos) && !share.forASV
+                )
                 .map((defaultShare) => ({
                     defaultShare,
                     devices: Object.values(shares).filter(
@@ -50,11 +55,6 @@ export const useSharesStore = create<SharesState>()(
                     ),
                 }));
         },
-        // TODO: Temporary until recovery is handle for albums
-        haveLockedPhotosShare: () => {
-            const { shares } = get();
-            return Object.values(shares).some((share) => share.isLocked && share.type === ShareType.photos);
-        },
         getDefaultShareId: () => {
             const { shares } = get();
             return findDefaultShareId(Object.values(shares));
@@ -62,6 +62,20 @@ export const useSharesStore = create<SharesState>()(
         getDefaultPhotosShareId: () => {
             const { shares } = get();
             return findDefaultPhotosShareId(Object.values(shares));
+        },
+        haveLockedOrRestoredOldPhotosShare: () => {
+            const { shares } = get();
+            const sharesValues = Object.values(shares);
+            return sharesValues
+                .filter((share) => share.isDefault)
+                .some((defaultShare) =>
+                    sharesValues.some(
+                        (share) =>
+                            (share.state === ShareState.restored || share.isLocked) &&
+                            share.type === ShareType.photos &&
+                            share.volumeId === defaultShare.volumeId
+                    )
+                );
         },
         getRestoredPhotosShares: () => {
             const { shares } = get();
