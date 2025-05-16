@@ -3,11 +3,17 @@
 .pass-onboarding-upgrade {
 	.description {
 		&--banner-badge {
-			width: em(78);
+			max-width: 80%;
 			background: linear-gradient(30deg, #F6C592 50%, #D397BE 90%), #191927;
 		}
 		&--banner-card {
 			border: 2px solid var(--signal-warning);
+
+			&-content {
+				@include media('<small') {
+					display: contents;
+				}
+			}
 		}
 	}
 
@@ -36,8 +42,20 @@
 			}
 
 			/* Override the hover BG only for this table */
-			.pass-table--row:hover {
-				background-color: inherit;
+			.pass-table--row {
+				cursor: default;
+
+				&:hover {
+					background-color: inherit;
+				}
+
+				&-title {
+					@include media('<medium') {
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
+				}
 			}
 		}
 	}

@@ -13,8 +13,9 @@ import { ModalTwoContent } from '@proton/components/index';
 import type { FeatureCode } from '@proton/features/interface';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
+import { getUserCurrency } from '@proton/pass/lib/user/user.currency';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
 import { APPS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
@@ -50,7 +51,7 @@ export const ProtonAnniversaryPromo2025Modal: FC<Props> = ({ currency, currentPl
         () => ({
             /** Prices are only correct for USD, EUR and CHF.
              * If user uses another currency, defaults to EUR */
-            currency: ['USD', 'EUR', 'CHF'].includes(currency) ? currency : DEFAULT_CURRENCY,
+            currency: getUserCurrency(currency),
             offer: {
                 title:
                     planToUpsell === PLANS.PASS
