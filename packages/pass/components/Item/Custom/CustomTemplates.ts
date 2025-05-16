@@ -68,26 +68,23 @@ export const groupedTemplates: CustomTemplateGroup[] = [
                     { label: 'Owner', type: 'text' },
                 ],
             },
+            /**
+             * SSH key and WiFi network need to appear in the template list,
+             * but are their own item type under the hood. Instead of
+             * custom/extra fields, their data properties are defined
+             * on ItemSSHKey and ItemWifi respectively.
+             */
             {
                 label: c('Label').t`SSH key`,
                 icon: 'filing-cabinet',
                 type: 'sshKey',
-                fields: [
-                    // { label: 'Private Key', type: 'hidden' },
-                    // { label: 'Public Key', type: 'hidden' },
-                    // { label: 'Username', type: 'text' },
-                    // { label: 'Host', type: 'text' },
-                ],
+                fields: [],
             },
             {
                 label: c('Label').t`WiFi network`,
                 icon: 'shield-2-bolt',
                 type: 'wifi',
-                fields: [
-                    // { label: 'Name (SSID)', type: 'text' },
-                    // { label: 'Password', type: 'hidden' },
-                    // { label: 'Security Type', type: 'text' },
-                ],
+                fields: [],
             },
         ],
     },
