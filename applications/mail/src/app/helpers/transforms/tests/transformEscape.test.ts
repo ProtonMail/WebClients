@@ -534,11 +534,56 @@ describe('transformEscape', () => {
                 expect(input).not.toBeNull();
                 expect(input?.tagName).toBe('INPUT');
             });
-        });
-        it('Should escape form textareas', () => {
-            const { document } = setup(`<textarea>hey</textarea>`);
 
-            expect(document.querySelector('textarea')).toBeNull();
+            it('should only allow permitted attributes on textarea elements', () => {
+                const textareaHtml = `
+                  <div>
+                    <textarea
+                      id="test-id"
+                      class="test-class"
+                      style="color: red;"
+                      value="test-value"
+                      readonly
+                      disabled
+                      name="test-name"
+                      placeholder="test-placeholder"
+                      autocomplete="off"
+                      required
+                      minlength="3"
+                      maxlength="10"
+                      onclick="alert('XSS')"
+                      onmouseover="alert('XSS')"
+                      data-custom="something"
+                    >Initial content</textarea>
+                  </div>
+                `;
+
+                const { document } = setup(textareaHtml);
+                const textareaElement = document.querySelector('textarea');
+
+                expect(textareaElement).not.toBeNull();
+
+                // Test allowed attributes are preserved
+                expect(textareaElement?.hasAttribute('id')).toBe(true);
+                expect(textareaElement?.hasAttribute('class')).toBe(true);
+                expect(textareaElement?.hasAttribute('style')).toBe(true);
+                expect(textareaElement?.hasAttribute('readonly')).toBe(true);
+                expect(textareaElement?.hasAttribute('disabled')).toBe(true);
+                expect(textareaElement?.hasAttribute('name')).toBe(true);
+
+                // Test disallowed attributes are removed
+                expect(textareaElement?.hasAttribute('placeholder')).toBe(false);
+                expect(textareaElement?.hasAttribute('autocomplete')).toBe(false);
+                expect(textareaElement?.hasAttribute('required')).toBe(false);
+                expect(textareaElement?.hasAttribute('minlength')).toBe(false);
+                expect(textareaElement?.hasAttribute('maxlength')).toBe(false);
+                expect(textareaElement?.hasAttribute('onclick')).toBe(false);
+                expect(textareaElement?.hasAttribute('onmouseover')).toBe(false);
+                expect(textareaElement?.hasAttribute('data-custom')).toBe(false);
+
+                // Test content is preserved
+                expect(textareaElement?.textContent).toBe('Initial content');
+            });
         });
     });
 });
