@@ -7,12 +7,7 @@ export const NewsletterSubscriptionListWrapper = ({ children }: PropsWithChildre
         <>
             <div className="flex-1 border-right border-weak h-full overflow-auto">
                 <NewsletterSubscriptionListHeader />
-                <section
-                    className="flex px-6 flex-column flex-nowrap gap-4 h-custom pb-4 px-1"
-                    style={{ '--h-custom': 'calc(100% - 3.5rem)' }}
-                >
-                    {children}
-                </section>
+                <section className="flex px-6 flex-column flex-nowrap gap-4 pb-4 px-1">{children}</section>
             </div>
         </>
     );
