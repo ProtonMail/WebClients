@@ -638,6 +638,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
             hidden={editorHidden}
             onEditorLoadResult={onEditorLoadResult}
             editorInitializationConfig={editorConfig.current.editorInitializationConfig}
+            systemMode={systemMode}
           />
         </SpreadsheetProvider>
       )}
