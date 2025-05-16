@@ -19,14 +19,17 @@ export const useInvitationsView = () => {
     const { getCachedInvitations, loadInvitations } = useInvitationsListing();
     const driveEventManager = useDriveEventManager();
     const [showPhotosWithAlbums, setShowPhotosWithAlbums] = useState<undefined | boolean>();
-
+    const { photosWithAlbumsEnabled } = useUserSettings();
     const cachedInvitations = getCachedInvitations();
+
     const invitations = useMemoArrayNoMatterTheOrder(
-        cachedInvitations.filter((invitation) => invitation.link.type !== LinkType.ALBUM || showPhotosWithAlbums)
+        cachedInvitations.filter(
+            (invitation) => invitation.link.type !== LinkType.ALBUM || showPhotosWithAlbums || photosWithAlbumsEnabled
+        )
     );
+
     const { getDefaultPhotosShare } = useDefaultShare();
     const photosWithAlbumsForNewVolume = useFlag('DriveAlbumsNewVolumes');
-    const { photosWithAlbumsEnabled } = useUserSettings();
 
     const invitationsBrowserItems: SharedWithMeItem[] = useMemo(
         () =>
