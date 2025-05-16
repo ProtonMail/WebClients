@@ -1,10 +1,26 @@
-import Href from './Href';
-import mdx from './Href.mdx';
+import type { Meta, StoryObj } from '@storybook/react';
 
-export default {
+import { Href } from '..';
+
+const meta: Meta<typeof Href> = {
+    args: {
+        children: 'Visit the Proton website',
+        href: 'https://proton.me',
+    },
     component: Href,
-    title: 'components/Href',
-    parameters: { docs: { page: mdx } },
+    parameters: {
+        docs: {
+            description: {
+                component:
+                    'Simple anchor tag wrapper with opinionated defaults, `href` defaults to `#`, `target` defaults to `_blank`, and `rel` defaults to `noopener noreferrer nofollow`.',
+            },
+        },
+    },
+    tags: ['autodocs'],
 };
 
-export const Basic = () => <Href href="https://proton.me">Visit the Proton website</Href>;
+export default meta;
+
+type Story = StoryObj<typeof Href>;
+
+export const Default: Story = {};

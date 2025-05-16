@@ -1,20 +1,42 @@
-import ProtonLoader, { ProtonLoaderType } from './ProtonLoader';
-import mdx from './ProtonLoader.mdx';
+import type { Meta, StoryObj } from '@storybook/react';
 
-export default {
+import { ProtonLoader, ProtonLoaderType } from '..';
+
+const meta: Meta<typeof ProtonLoader> = {
+    args: {
+        type: ProtonLoaderType.Default,
+    },
+    argTypes: {
+        type: {
+            control: 'radio',
+            options: Object.values(ProtonLoaderType),
+        },
+    },
     component: ProtonLoader,
-    title: 'components/ProtonLoader',
-    parameters: { docs: { page: mdx } },
+    parameters: {
+        docs: {
+            description: {
+                component:
+                    'The `ProtonLoader` should be used to indicate that the page is loading.<br /> The loader color can be changed using the type prop. Negative can be used for dark backgrounds.',
+            },
+        },
+    },
+    tags: ['autodocs'],
 };
 
-export const Basic = () => (
-    <>
-        <div className="p-4">
-            <ProtonLoader />
+export default meta;
+
+type Story = StoryObj<typeof ProtonLoader>;
+
+export const Default: Story = {};
+
+export const Negative: Story = {
+    args: {
+        type: ProtonLoaderType.Negative,
+    },
+    render: (args) => (
+        <div className="ui-prominent bg-norm p-4">
+            <ProtonLoader {...args} />
         </div>
-        <br />
-        <div className="p-4 ui-prominent bg-norm">
-            <ProtonLoader type={ProtonLoaderType.Default} />
-        </div>
-    </>
-);
+    ),
+};
