@@ -42,6 +42,7 @@ export interface Share {
     createTime: number;
     // Will tell us if the locked share is for auto-restore process
     forASV?: boolean;
+    volumeType?: VolumeType;
 }
 
 export interface ShareWithKey extends Share {
@@ -51,7 +52,6 @@ export interface ShareWithKey extends Share {
     passphraseSignature: string;
     rootLinkRecoveryPassphrase?: string;
     memberships: ShareMembership[];
-    volumeType?: VolumeType;
 }
 
 export type ShareURLLEGACY = WithSRPPayload<{
@@ -104,7 +104,7 @@ export interface LockedVolumeForRestore {
     lockedVolumeId: string;
     defaultShare: LockedShareForRestore;
     devices: LockedDeviceForRestore[];
-    photos: LockedDeviceForRestore[];
+    photos: LockedPhotosForRestore[];
 }
 
 export interface LockedShareForRestore {
