@@ -4,7 +4,7 @@ import clsx from '@proton/utils/clsx'
 import { useApplication } from '~/utils/application-context'
 import type { DocsAwarenessStateChangeData, SafeDocsUserState } from '@proton/docs-shared'
 import { DocAwarenessEvent } from '@proton/docs-shared'
-import { Button, UserAvatar } from '@proton/atoms/index'
+import { Button, UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/index'
 
 export type DocumentActiveUsersProps = { className?: string }
 
@@ -54,7 +54,7 @@ export function DocumentActiveUsers({ className }: DocumentActiveUsersProps) {
           <Tooltip title={name} key={index}>
             <UserAvatar
               as="button"
-              size="small"
+              size={UserAvatarSizeEnum.Small}
               name={letter ? letter : name}
               className={clsx('text-[0.75rem]', awarenessData && !focusing && 'opacity-50')}
               color={{ hsl: color }}
@@ -100,7 +100,7 @@ export function DocumentActiveUsers({ className }: DocumentActiveUsersProps) {
                   >
                     <UserAvatar
                       as="button"
-                      size="small"
+                      size={UserAvatarSizeEnum.Small}
                       name={letter ? letter : name}
                       className={clsx('text-[0.75rem]', awarenessData && !focusing && 'opacity-50')}
                       color={{ hsl: color }}
