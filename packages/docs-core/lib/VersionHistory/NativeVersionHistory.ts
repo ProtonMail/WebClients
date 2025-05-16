@@ -7,19 +7,29 @@ import { DateFormatter } from './DateFormatter'
  * How many DUs should make up a presentable revision in the history viewer. If the threshold is 10 and a
  * document has 100 DUs, the UI will show 10 revisions.
  */
-const BatchThreshold = 10
+const DefaultBatchThreshold = 10
 
 export class NativeVersionHistory {
   private versionHistoryBatches: VersionHistoryBatch[] = []
   private _batchDocumentUpdates = new BatchDocumentUpdates()
   private dateFormatter = new DateFormatter()
+  private _batchThreshold = DefaultBatchThreshold
 
-  constructor(updates: VersionHistoryUpdate[]) {
-    this.versionHistoryBatches = this._batchDocumentUpdates.execute(updates, BatchThreshold).getValue()
+  constructor(private updates: VersionHistoryUpdate[]) {
+    this.versionHistoryBatches = this._batchDocumentUpdates.execute(updates, this._batchThreshold).getValue()
   }
 
   get batches() {
     return this.versionHistoryBatches
+  }
+
+  get batchThreshold() {
+    return this._batchThreshold
+  }
+
+  public setBatchThreshold(threshold: number = DefaultBatchThreshold) {
+    this._batchThreshold = Math.max(1, threshold)
+    this.versionHistoryBatches = this._batchDocumentUpdates.execute(this.updates, this._batchThreshold).getValue()
   }
 
   public getTimestampForBatch(batch: VersionHistoryBatch) {
