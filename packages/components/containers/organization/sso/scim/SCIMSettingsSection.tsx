@@ -75,7 +75,6 @@ const SCIMSettingsSection = ({ domain, onShowVerifyDomain, hasSsoConfig, scimInf
                 id="scim-automatic-provisioning"
                 title={c('scim: Title').t`SCIM automatic provisioning`}
                 className="container-section-sticky-section"
-                beta
             >
                 <SettingsSectionWide>
                     <SettingsParagraph learnMoreUrl="">{getDescriptionString(BRAND_NAME)}</SettingsParagraph>
