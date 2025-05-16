@@ -188,10 +188,10 @@ export const Description: FC = () => {
 
     const changePlan = (selected: AvailablePlans) => setSelected?.(selected);
 
-    const currencyToUse = getUserCurrency(user?.Currency);
+    const currency = getUserCurrency(user?.Currency);
     const plansOptions = useMemo<PassPlanOption[]>(() => {
         const [passPlusPrice, protonUnlimitedPrice] = [PASS_PLUS_PRICE, PROTON_UNLIMITED_PRICE].map((price) =>
-            getSimplePriceString(currencyToUse, price)
+            getSimplePriceString(currency, price)
         );
 
         // Moved into a function since the label is the same, but the variable changes (preventing lint error)
@@ -209,7 +209,7 @@ export const Description: FC = () => {
                 label: getPriceLabel(protonUnlimitedPrice),
             },
         ];
-    }, [currencyToUse]);
+    }, [currency]);
 
     return (
         <>
