@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { UserAvatar, type UserAvatarProps } from './UserAvatar';
+import { UserAvatar, type UserAvatarProps, UserAvatarSizeEnum } from './UserAvatar';
 import UserAvatarDocs from './UserAvatar.mdx';
 
 type DefaultUserAvatarProps = UserAvatarProps<'span'>;
@@ -31,7 +31,7 @@ const meta: Meta<DefaultUserAvatarProps> = {
         },
         size: {
             control: 'radio',
-            options: ['small', 'medium'],
+            options: Object.values(UserAvatarSizeEnum),
             description: 'Size of the avatar',
             table: {
                 type: { summary: 'small | medium' },
@@ -65,15 +65,15 @@ type Story = StoryObj<DefaultUserAvatarProps>;
 export const Default: Story = {
     args: {
         name: 'John Doe',
-        size: 'medium',
+        size: UserAvatarSizeEnum.Medium,
     },
 };
 
 export const Sizes: Story = {
     render: () => (
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-            <UserAvatar name="John" size="small" />
-            <UserAvatar name="Jane" size="medium" />
+            <UserAvatar name="John" size={UserAvatarSizeEnum.Small} />
+            <UserAvatar name="Jane" size={UserAvatarSizeEnum.Medium} />
         </div>
     ),
 };
