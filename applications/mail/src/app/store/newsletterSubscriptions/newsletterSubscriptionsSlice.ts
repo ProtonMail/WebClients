@@ -6,15 +6,17 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 import { getNewsletterSubscription } from '@proton/shared/lib/api/newsletterSubscription';
 import type { GetNewsletterSubscriptionsApiResponse } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import { initialState, initialStateValue } from './constants';
+import { DEFAULT_PAGINATION_PAGE_SIZE, initialState, initialStateValue } from './constants';
 import { getTabData, normalizeSubscriptions } from './helpers';
 import { type NewsletterSubscriptionsInterface, SubscriptionTabs } from './interface';
 import {
+    fetchNextNewsletterSubscriptionsPage,
     filterSubscriptionList,
     sortSubscriptionList,
     unsubscribeSubscription,
 } from './newsletterSubscriptionsActions';
 import {
+    fetchNextNewsletterSubscriptionsPageFulfilled,
     filterSubscriptionListFulfilled,
     filterSubscriptionListPending,
     filterSubscriptionListRejected,
@@ -45,8 +47,22 @@ const modelThunk = createAsyncModelThunk<
     miss: async ({ extraArgument }) => {
         try {
             const [active, unsubscribed] = await Promise.all([
-                extraArgument.api<GetNewsletterSubscriptionsApiResponse>(getNewsletterSubscription({})),
-                extraArgument.api<GetNewsletterSubscriptionsApiResponse>(getNewsletterSubscription({})),
+                extraArgument.api<GetNewsletterSubscriptionsApiResponse>(
+                    getNewsletterSubscription({
+                        pagination: {
+                            PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
+                            Active: '1',
+                        },
+                    })
+                ),
+                extraArgument.api<GetNewsletterSubscriptionsApiResponse>(
+                    getNewsletterSubscription({
+                        pagination: {
+                            PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
+                            Active: '0',
+                        },
+                    })
+                ),
             ]);
 
             const normalizedActive = normalizeSubscriptions(active.NewsletterSubscriptions);
@@ -99,6 +115,8 @@ const slice = createSlice({
         builder.addCase(filterSubscriptionList.pending, filterSubscriptionListPending);
         builder.addCase(filterSubscriptionList.fulfilled, filterSubscriptionListFulfilled);
         builder.addCase(filterSubscriptionList.rejected, filterSubscriptionListRejected);
+
+        builder.addCase(fetchNextNewsletterSubscriptionsPage.fulfilled, fetchNextNewsletterSubscriptionsPageFulfilled);
     },
 });
 
