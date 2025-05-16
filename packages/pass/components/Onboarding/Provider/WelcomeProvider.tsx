@@ -16,6 +16,7 @@ import { usePassExtensionInstalled } from '@proton/pass/hooks/usePassExtensionIn
 import { selectAllItems, selectPassPlan } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { PLANS } from '@proton/payments/core/constants';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -138,6 +139,11 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
         }),
         [enabled, isActive, steps, completed, selected]
     );
+
+    useEffect(() => {
+        const stepKeys = steps.map(prop('key'));
+        setCompleted((completed) => completed.filter((step) => stepKeys.includes(step)));
+    }, [steps]);
 
     return (
         <OnboardingContext.Provider value={context}>
