@@ -1,19 +1,19 @@
 import { useMailSelector } from 'proton-mail/store/hooks';
-import { filteredSubscriptionList } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+import { selectTabSubscriptionsList } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import { NewsletterSubscriptionCard } from './NewsletterSubscriptionCard';
 import { NewsletterSubscriptionListPlaceholder } from './NewsletterSubscriptionListPlaceholder';
 import { NewsletterSubscriptionListWrapper } from './NewsletterSubscriptionListWrapper';
 
 export const NewsletterSubscriptionList = () => {
-    const filteredSubscriptions = useMailSelector(filteredSubscriptionList);
+    const subscriptionList = useMailSelector(selectTabSubscriptionsList);
 
     return (
         <NewsletterSubscriptionListWrapper>
-            {filteredSubscriptions.length === 0 ? (
+            {subscriptionList.length === 0 ? (
                 <NewsletterSubscriptionListPlaceholder />
             ) : (
-                filteredSubscriptions.map((sub) => <NewsletterSubscriptionCard key={sub.ID} subscription={sub} />)
+                subscriptionList.map((sub) => <NewsletterSubscriptionCard key={sub.ID} subscription={sub} />)
             )}
         </NewsletterSubscriptionListWrapper>
     );
