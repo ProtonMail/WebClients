@@ -194,6 +194,7 @@ export interface SignupCacheResult {
     setupData?: SetupData;
     accountData: AccountData;
     subscriptionData: SubscriptionData;
+    subscription?: Subscription;
     ktActivation: KeyTransparencyActivation;
     appName: APP_NAMES;
     inviteData: InviteData | undefined;
