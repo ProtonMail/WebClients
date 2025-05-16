@@ -1,23 +1,20 @@
 import clsx from '@proton/utils/clsx'
 import type { NativeVersionHistory } from '@proton/docs-core'
-import { useMemo } from 'react'
 import { c } from 'ttag'
 
 export type HistoryTimelineProps = {
   versionHistory: NativeVersionHistory
+  formattedBatchGroups: ReturnType<NativeVersionHistory['getFormattedBatchGroups']>
   selectedBatchIndex: number
   onSelectedBatchIndexChange: (batchIndex: number) => void
 }
 
 export function HistoryTimeline({
   versionHistory,
+  formattedBatchGroups,
   selectedBatchIndex,
   onSelectedBatchIndexChange,
 }: HistoryTimelineProps) {
-  const formattedBatchGroups = useMemo(() => {
-    return versionHistory.getFormattedBatchGroups()
-  }, [versionHistory])
-
   return (
     <>
       {formattedBatchGroups.map(({ formattedDate, batchIndexes }, index) => {
