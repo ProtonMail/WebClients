@@ -7,8 +7,8 @@ import { getNewsletterSubscription } from '@proton/shared/lib/api/newsletterSubs
 import type { GetNewsletterSubscriptionsApiResponse } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { initialState, initialStateValue } from './constants';
-import { formatSubscriptionResponse } from './helpers';
-import type { NewsletterSubscriptionsInterface } from './interface';
+import { getTabData, normalizeSubscriptions } from './helpers';
+import { type NewsletterSubscriptionsInterface, SubscriptionTabs } from './interface';
 import {
     filterSubscriptionList,
     sortSubscriptionList,
@@ -20,6 +20,7 @@ import {
     filterSubscriptionListRejected,
     setFilteredSubscriptionsReducer,
     setSelectedSubscriptionReducer,
+    setSortingOrderReducer,
     sortSubscriptionFulfilled,
     sortSubscriptionPending,
     sortSubscriptionRejected,
@@ -27,52 +28,80 @@ import {
     unsubscribeSubscriptionRejected,
 } from './newsletterSubscriptionsReducers';
 
-export const name = 'newsletterSubscription' as const;
+export const newsletterSubscriptionName = 'newsletterSubscriptions' as const;
 
 export type NewsletterSubscriptionsStateType = ModelState<NewsletterSubscriptionsInterface>;
 
 export interface NewsletterSubscriptionsState {
-    [name]: NewsletterSubscriptionsStateType;
+    [newsletterSubscriptionName]: NewsletterSubscriptionsStateType;
 }
-export const selectNewsletterSubscriptions = (state: NewsletterSubscriptionsState) => state[name];
+export const selectNewsletterSubscriptions = (state: NewsletterSubscriptionsState) => state[newsletterSubscriptionName];
 
 const modelThunk = createAsyncModelThunk<
     NewsletterSubscriptionsInterface,
     NewsletterSubscriptionsState,
     ProtonThunkArguments
->(`${name}/fetch`, {
+>(`${newsletterSubscriptionName}/fetch`, {
     miss: async ({ extraArgument }) => {
         try {
-            const data = await extraArgument.api<GetNewsletterSubscriptionsApiResponse>(getNewsletterSubscription());
-            return formatSubscriptionResponse(data);
+            const [active, unsubscribed] = await Promise.all([
+                extraArgument.api<GetNewsletterSubscriptionsApiResponse>(getNewsletterSubscription({})),
+                extraArgument.api<GetNewsletterSubscriptionsApiResponse>(getNewsletterSubscription({})),
+            ]);
+
+            const normalizedActive = normalizeSubscriptions(active.NewsletterSubscriptions);
+            const normalizedUnsubscribed = normalizeSubscriptions(unsubscribed.NewsletterSubscriptions);
+
+            return {
+                byId: {
+                    ...normalizedActive.byId,
+                    ...normalizedUnsubscribed.byId,
+                },
+                tabs: {
+                    active: getTabData(normalizedActive.ids, active),
+                    unsubscribe: getTabData(normalizedUnsubscribed.ids, unsubscribed),
+                },
+                selectedTab: SubscriptionTabs.Active,
+                selectedSubscriptionId: normalizedActive.ids[0],
+            };
         } catch (error) {
-            return { ...initialStateValue, loading: false };
+            return {
+                ...initialStateValue,
+                tabs: {
+                    ...initialStateValue.tabs,
+                    active: { ...initialStateValue.tabs.active, loading: false },
+                    unsubscribe: { ...initialStateValue.tabs.unsubscribe, loading: false },
+                },
+            };
         }
     },
     previous: previousSelector(selectNewsletterSubscriptions),
 });
 
 const slice = createSlice({
-    name,
+    name: newsletterSubscriptionName,
     initialState,
     reducers: {
-        setSelectedSubscription: setSelectedSubscriptionReducer,
+        setSortingOrder: setSortingOrderReducer,
         setFilteredSubscriptions: setFilteredSubscriptionsReducer,
+        setSelectedSubscription: setSelectedSubscriptionReducer,
     },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
+
+        builder.addCase(unsubscribeSubscription.pending, unsubscribeSubscriptionPending);
+        builder.addCase(unsubscribeSubscription.rejected, unsubscribeSubscriptionRejected);
+
         builder.addCase(sortSubscriptionList.pending, sortSubscriptionPending);
         builder.addCase(sortSubscriptionList.fulfilled, sortSubscriptionFulfilled);
         builder.addCase(sortSubscriptionList.rejected, sortSubscriptionRejected);
+
         builder.addCase(filterSubscriptionList.pending, filterSubscriptionListPending);
         builder.addCase(filterSubscriptionList.fulfilled, filterSubscriptionListFulfilled);
         builder.addCase(filterSubscriptionList.rejected, filterSubscriptionListRejected);
-        builder.addCase(unsubscribeSubscription.pending, unsubscribeSubscriptionPending);
-        builder.addCase(unsubscribeSubscription.rejected, unsubscribeSubscriptionRejected);
-        // TODO future add a fulfilled reduced when the backend returns the updated subscription
     },
 });
 
 export const newsletterSubscriptionsActions = slice.actions;
-export const newsletterSubscriptionsReducer = { [name]: slice.reducer };
+export const newsletterSubscriptionsReducer = { [newsletterSubscriptionName]: slice.reducer };
 export const newsletterSubscriptionsThunk = modelThunk.thunk;

@@ -20,7 +20,7 @@ export const MailSidebarViewList = () => {
 
     const spotlight = useNewsletterSubscriptionSpotlight();
 
-    const [{ counts }] = useNewsletterSubscriptions();
+    const [newsletterSub] = useNewsletterSubscriptions();
 
     const [user] = useUser();
     const [displayView, toggleView] = useLocalState(newsletterSubscriptionsView, `${user.ID || 'item'}-display-views`);
@@ -62,7 +62,7 @@ export const MailSidebarViewList = () => {
                             text={c('Label').t`Mail subscriptions`}
                             moveToFolder={noop}
                             applyLabels={noop}
-                            unreadCount={counts?.active}
+                            unreadCount={newsletterSub.tabs.active.totalCount}
                             onClickCallback={() => spotlight.onClose()}
                             hideCountOnHover={false}
                             hideSpinner

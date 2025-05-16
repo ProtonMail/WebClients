@@ -17,17 +17,23 @@ import clsx from '@proton/utils/clsx';
 
 import { getUnreadCount } from 'proton-mail/components/sidebar/locationAsideHelpers';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
-import type { SortSubscriptionsValue, SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/interface';
+import { SortSubscriptionsValue, SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/interface';
 import { sortSubscriptionList } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
-import { subscriptionCountSelector } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+import {
+    selectSubscriptionsCount,
+    selectTabSortingState,
+} from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
 const SortingDropdownMenu = () => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
+    const selectedSort = useMailSelector(selectTabSortingState);
+
     const dispatch = useMailDispatch();
 
     const handleSortChange = (value: SortSubscriptionsValue) => {
+        void dispatch(newsletterSubscriptionsActions.setSortingOrder(value));
         void dispatch(sortSubscriptionList(value));
     };
 
@@ -35,38 +41,45 @@ const SortingDropdownMenu = () => {
         text: string;
         icon: IconName;
         onClick: () => void;
+        active: boolean;
     }[] = [
         {
             text: c('Action').t`Least read`,
             icon: 'list-arrow-down',
-            onClick: () => handleSortChange('last-read'),
+            onClick: () => handleSortChange(SortSubscriptionsValue.LastRead),
+            active: selectedSort === SortSubscriptionsValue.LastRead,
         },
         {
             text: c('Action').t`Most read`,
             icon: 'list-arrow-up',
-            onClick: () => handleSortChange('most-read'),
+            onClick: () => handleSortChange(SortSubscriptionsValue.MostRead),
+            active: selectedSort === SortSubscriptionsValue.MostRead,
         },
         // Not supported for the moment
         // {
         //     text: c('Action').t`Most frequent`,
         //     icon: 'arrow-right-arrow-left',
-        //     onClick: () => handleSortChange('most-frequent'),
+        //     onClick: () => handleSortChange(SortSubscriptionsValue.MostFrequent),
+        //     active: selectedSort === SortSubscriptionsValue.MostFrequent,
         // },
         {
             text: c('Action').t`A to Z`,
             icon: 'sort-alphabetically',
-            onClick: () => handleSortChange('alphabetical'),
+            onClick: () => handleSortChange(SortSubscriptionsValue.Alphabetical),
+            active: selectedSort === SortSubscriptionsValue.Alphabetical,
         },
         // Not supported for the moment
         // {
         //     text: c('Action').t`Recently read`,
         //     icon: 'envelope-open',
-        //     onClick: () => handleSortChange('recently-read'),
+        //     onClick: () => handleSortChange(SortSubscriptionsValue.RecentlyRead),
+        //     active: selectedSort === SortSubscriptionsValue.RecentlyRead,
         // },
         {
             text: c('Action').t`Recently received`,
             icon: 'inbox',
-            onClick: () => handleSortChange('recently-received'),
+            onClick: () => handleSortChange(SortSubscriptionsValue.RecentlyReceived),
+            active: selectedSort === SortSubscriptionsValue.RecentlyReceived,
         },
     ];
 
@@ -88,6 +101,7 @@ const SortingDropdownMenu = () => {
                     {items.map((option) => (
                         <DropdownMenuButton
                             key={option.icon}
+                            isSelected={option.active}
                             onClick={option.onClick}
                             className="text-left flex items-center"
                         >
@@ -129,9 +143,9 @@ const HeaderTab = ({ onClick, copy, count, active }: HeaderTabProps) => {
 };
 
 export const NewsletterSubscriptionListHeader = () => {
-    const [active, setActive] = useState<SubscriptionTabs>('active');
+    const [active, setActive] = useState<SubscriptionTabs>(SubscriptionTabs.Active);
 
-    const counts = useMailSelector(subscriptionCountSelector);
+    const counts = useMailSelector(selectSubscriptionsCount);
     const dispatch = useMailDispatch();
 
     const handleTabClick = (tab: SubscriptionTabs) => {
@@ -145,16 +159,16 @@ export const NewsletterSubscriptionListHeader = () => {
                 <h2 className="text-bold text-xl hidden sm:block">{c('Title').t`Mail subscriptions`}</h2>
                 <div>
                     <HeaderTab
-                        onClick={() => handleTabClick('active')}
+                        onClick={() => handleTabClick(SubscriptionTabs.Active)}
                         copy={c('Action').t`Active`}
                         count={counts.active}
-                        active={active === 'active'}
+                        active={active === SubscriptionTabs.Active}
                     />
                     <HeaderTab
-                        onClick={() => handleTabClick('unsubscribe')}
+                        onClick={() => handleTabClick(SubscriptionTabs.Unsubscribe)}
                         copy={c('Action').t`Unsubscribed`}
                         count={counts.unsubscribe}
-                        active={active === 'unsubscribe'}
+                        active={active === SubscriptionTabs.Unsubscribe}
                     />
                 </div>
             </div>

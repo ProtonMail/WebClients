@@ -11,8 +11,8 @@ import clsx from '@proton/utils/clsx';
 
 import { useMailSelector } from 'proton-mail/store/hooks';
 import {
-    loadingSelector,
-    subscriptionListSelector,
+    selectAllSubscriptions,
+    selectTabLoadingState,
 } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import { NewsletterSubscriptionViewPlaceholder } from './NewsletterSubscriptionViewPlaceholder';
@@ -29,8 +29,8 @@ export const NewsletterSubscriptionView = () => {
 
     const { feature } = useFeature(FeatureCode.NewsletterSubscriptionViewOnboarding);
 
-    const newsletterSubscriptions = useMailSelector(subscriptionListSelector);
-    const loadingSubscriptions = useMailSelector(loadingSelector);
+    const subscriptionsObject = useMailSelector(selectAllSubscriptions);
+    const loadingSubscriptions = useMailSelector(selectTabLoadingState);
 
     const onboardingModal = useModalStateObject();
     const breakpoints = useActiveBreakpoint();
@@ -47,7 +47,7 @@ export const NewsletterSubscriptionView = () => {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
-    if (!loadingSubscriptions && newsletterSubscriptions.length === 0) {
+    if (!loadingSubscriptions && !subscriptionsObject && Object.keys(subscriptionsObject || {}).length === 0) {
         return <NewsletterSubscriptionListPlaceholder />;
     }
 
