@@ -20,9 +20,27 @@ export const sortSubscriptionList = createAsyncThunk<
     MailThunkExtra
 >('newsletterSubscriptions/sortList', async (value, thunkExtra) => {
     try {
-        return await thunkExtra.extra.api<GetNewsletterSubscriptionsApiResponse>(getNewsletterSubscription(value));
+        // We don't give pagination information here since changing the sort order override the store
+        return await thunkExtra.extra.api<GetNewsletterSubscriptionsApiResponse>(
+            getNewsletterSubscription({ sort: value })
+        );
     } catch (error) {
         throw error;
+    }
+});
+
+export const unsubscribeSubscription = createAsyncThunk<
+    void,
+    UnsubscribePayload,
+    MailThunkExtra & { rejectValue: { previousState: NewsletterSubscription; originalIndex: number } }
+>('newsletterSubscriptions/unsubscribe', async (payload, thunkExtra) => {
+    try {
+        return await thunkExtra.extra.api(unsubscribeNewsletterSubscription(payload.subscription.ID));
+    } catch (error) {
+        return thunkExtra.rejectWithValue({
+            previousState: payload.subscription,
+            originalIndex: payload.subscriptionIndex ?? -1,
+        });
     }
 });
 
@@ -35,21 +53,6 @@ export const filterSubscriptionList = createAsyncThunk<
         return await thunkExtra.extra.api<FilterSubscriptionAPIResponse>(
             applyNewsletterSubscriptionFilter(payload.subscription.ID, payload.data)
         );
-    } catch (error) {
-        return thunkExtra.rejectWithValue({
-            previousState: payload.subscription,
-            originalIndex: payload.subscriptionIndex ?? -1,
-        });
-    }
-});
-
-export const unsubscribeSubscription = createAsyncThunk<
-    void,
-    UnsubscribePayload,
-    MailThunkExtra & { rejectValue: { previousState: NewsletterSubscription; originalIndex: number } }
->('newsletterSubscriptions/unsubscribe', async (payload, thunkExtra) => {
-    try {
-        return await thunkExtra.extra.api(unsubscribeNewsletterSubscription(payload.subscription.ID));
     } catch (error) {
         return thunkExtra.rejectWithValue({
             previousState: payload.subscription,

@@ -79,7 +79,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
         return (labelCount?.LabelID && isCustomLabel(labelCount.LabelID, labels) && labelCount?.Unread) || 0 > 0;
     });
 
-    const [{ counts }] = useNewsletterSubscriptions();
+    const [newsletterSub] = useNewsletterSubscriptions();
 
     useEffect(() => {
         if (folders) {
@@ -374,7 +374,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                             onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_VIEWS)}
                             iconName="grid-3"
                             title={c('Action').t`Expand navigation bar to see custom views`}
-                            unread={!!(counts.active || counts.unsubscribe)}
+                            unread={!!newsletterSub.tabs.active.totalCount}
                         />
                     ) : (
                         <MailSidebarViewList />

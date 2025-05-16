@@ -13,7 +13,7 @@ export const useNewsletterSubscriptionSpotlight = () => {
     const [user] = useUser();
     const { welcomeFlags } = useWelcomeFlags();
 
-    const [{ counts }] = useNewsletterSubscriptions();
+    const [newsletterSub] = useNewsletterSubscriptions();
 
     const {
         show: showSpotlight,
@@ -25,7 +25,8 @@ export const useNewsletterSubscriptionSpotlight = () => {
         isUserAccountOlderThanOrEqualToDays(user, 2) &&
             welcomeFlags.isDone &&
             // With more than 10 mail subscriptions
-            counts.active + counts.unsubscribe >= REQUIRED_MAIL_SUBSCRIPTIONS
+            newsletterSub.tabs.active.totalCount + newsletterSub.tabs.unsubscribe.totalCount >=
+                REQUIRED_MAIL_SUBSCRIPTIONS
     );
 
     const shouldShowSpotlight = useSpotlightShow(showSpotlight, 3 * SECOND);
