@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Avatar, Button, UserAvatar } from '@proton/atoms';
+import { Avatar, Button, UserAvatar, UserAvatarSizeEnum } from '@proton/atoms';
 import { FileIcon, Icon, TableCell } from '@proton/components';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
@@ -75,7 +75,7 @@ function UploadedByCell({ item }: { item: PublicLink }) {
     const email = item.signatureEmail;
     return (
         <TableCell className="flex flex-nowrap items-center gap-2 m-0 w-1/5 color-weak" data-testid="column-shared-by">
-            {email && <UserAvatar name={email} size="small" />}
+            {email && <UserAvatar name={email} size={UserAvatarSizeEnum.Small} />}
             {!email && (
                 <Avatar
                     color="weak"
