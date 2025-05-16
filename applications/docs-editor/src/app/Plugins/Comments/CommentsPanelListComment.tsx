@@ -1,4 +1,4 @@
-import { Button, UserAvatar } from '@proton/atoms'
+import { Button, UserAvatar, UserAvatarSizeEnum } from '@proton/atoms'
 import type { MouseEventHandler } from 'react'
 import { useCallback, useState } from 'react'
 import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, ToolbarButton, Tooltip } from '@proton/components'
@@ -161,7 +161,7 @@ export function CommentsPanelListComment({
         <div className="mb-1.5 flex flex-nowrap items-center gap-1.5">
           {comment.author ? (
             <UserAvatar
-              size="small"
+              size={UserAvatarSizeEnum.Small}
               name={displayNameForEmail(comment.author)}
               color={color ? { hsl: color } : undefined}
               className="mr-1 flex-shrink-0 rounded-[--border-radius-md] text-[0.75rem]"
