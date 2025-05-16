@@ -26,7 +26,7 @@ const CONFIG: { [key: string]: any } = {
             /^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|blob|xmpp|data):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i, // eslint-disable-line no-useless-escape
         ADD_TAGS: ['proton-src', 'base'],
         ADD_ATTR: ['target', 'proton-src'],
-        FORBID_TAGS: ['style', 'input', 'form'],
+        FORBID_TAGS: ['style', 'input', 'form', 'textarea'],
         FORBID_ATTR: ['srcset', 'for'],
         // Accept HTML (official) tags only and automatically excluding all SVG & MathML tags
         USE_PROFILES: { html: true },
@@ -35,7 +35,7 @@ const CONFIG: { [key: string]: any } = {
     raw: { WHOLE_DOCUMENT: true, RETURN_DOM: true },
     html: { WHOLE_DOCUMENT: false, RETURN_DOM: true },
     protonizer: {
-        FORBID_TAGS: ['form', 'video', 'audio', 'textarea'], // Override defaults to allow style (will be processed by juice afterward)
+        FORBID_TAGS: ['form', 'video', 'audio'], // Override defaults to allow style (will be processed by juice afterward)
         FORBID_ATTR: {},
         ADD_ATTR: ['target', ...LIST_PROTON_ATTR.map((attr) => `proton-${attr}`)],
         WHOLE_DOCUMENT: true,
@@ -59,7 +59,7 @@ const CONFIG: { [key: string]: any } = {
 const getConfig = (type: string): Config => ({ ...CONFIG.default, ...(CONFIG[type] || {}) });
 
 /**
- * Rename some attributes adding the proton- prefix configured in LIST_PROTON_ATTR
+ * Rename some attributes adding the "proton-" prefix configured in LIST_PROTON_ATTR
  * Also escape urls in style attributes
  */
 const beforeSanitizeElements = (node: Node) => {
@@ -94,8 +94,8 @@ const beforeSanitizeElements = (node: Node) => {
     return element;
 };
 
-const filterInputAttributes = (node: Node) => {
-    if (node.nodeName === 'INPUT') {
+const filterFormAttributes = (node: Node) => {
+    if (node.nodeName === 'INPUT' || node.nodeName === 'TEXTAREA') {
         const element = node as HTMLElement;
         const allowedAttributes = ['id', 'class', 'style', 'value', 'readonly', 'disabled', 'type', 'name'];
 
@@ -110,7 +110,7 @@ const filterInputAttributes = (node: Node) => {
 const purifyHTMLHooks = (active: boolean) => {
     if (active) {
         DOMPurify.addHook('beforeSanitizeElements', beforeSanitizeElements);
-        DOMPurify.addHook('beforeSanitizeAttributes', filterInputAttributes);
+        DOMPurify.addHook('beforeSanitizeAttributes', filterFormAttributes);
         return;
     }
 
