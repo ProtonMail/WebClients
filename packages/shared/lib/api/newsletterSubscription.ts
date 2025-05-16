@@ -1,16 +1,21 @@
 import { getSortParams } from 'proton-mail/store/newsletterSubscriptions/helpers';
-import type { SortSubscriptionsValue } from 'proton-mail/store/newsletterSubscriptions/interface';
+import type {
+    SortSubscriptionsValue,
+    SubscriptionPagination,
+} from 'proton-mail/store/newsletterSubscriptions/interface';
 
 import type { ApplyNewsletterSubscriptionsFilter } from '../interfaces/NewsletterSubscription';
 
 interface GetNewslettersProps {
     sort?: SortSubscriptionsValue;
+    pagination?: SubscriptionPagination;
 }
 
-export const getNewsletterSubscription = ({ sort }: GetNewslettersProps) => ({
+export const getNewsletterSubscription = ({ pagination, sort }: GetNewslettersProps) => ({
     url: 'mail/v4/newsletter-subscriptions',
     method: 'GET',
     params: {
+        ...pagination,
         ...getSortParams(sort),
     },
 });
