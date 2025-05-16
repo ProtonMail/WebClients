@@ -1,9 +1,10 @@
-import { type ReactNode } from 'react';
-import { useEffect, useReducer, useState } from 'react';
+import { type ReactNode, useEffect, useRef, useState } from 'react';
 
+import { type ApiStatusState, apiStatusActions, defaultApiStatus } from '@proton/account/apiStatus';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { ApiListenerCallback, ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { handleInvalidSession } from '@proton/shared/lib/authentication/logout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -11,29 +12,18 @@ import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import ApiModals from './ApiModals';
 import ApiContext from './apiContext';
 import ApiServerTimeContext from './apiServerTimeContext';
-import ApiStatusContext, { defaultApiStatus } from './apiStatusContext';
 
-const reducer = (oldState: typeof defaultApiStatus, diff: Partial<typeof defaultApiStatus>) => {
-    const newState = {
-        ...oldState,
-        ...diff,
-    };
-    if (isDeepEqual(oldState, newState)) {
-        return oldState;
-    }
-    return newState;
-};
+const hasApiStatusChanged = (old: Partial<ApiStatusState>, next: Partial<ApiStatusState>) => !isDeepEqual(next, old);
 
 const ApiProvider = ({ api, children }: { api: ApiWithListener; children: ReactNode }) => {
     const { APP_NAME } = useConfig();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const authentication = useAuthentication();
-    const [apiStatus, setApiStatus] = useReducer(reducer, defaultApiStatus);
     const [apiServerTime, setApiServerTime] = useState<Date | undefined>(undefined);
+    const apiStatusRef = useRef<Partial<ApiStatusState>>(defaultApiStatus);
 
     useEffect(() => {
-        setApiStatus(defaultApiStatus);
-
         const handleEvent: ApiListenerCallback = (event) => {
             if (event.type === 'notification') {
                 createNotification(event.payload);
@@ -45,8 +35,9 @@ const ApiProvider = ({ api, children }: { api: ApiWithListener; children: ReactN
                 return true;
             }
 
-            if (event.type === 'status') {
-                setApiStatus(event.payload);
+            if (event.type === 'status' && hasApiStatusChanged(apiStatusRef.current, event.payload)) {
+                dispatch(apiStatusActions.update(event.payload));
+                apiStatusRef.current = event.payload;
                 return true;
             }
 
@@ -65,12 +56,10 @@ const ApiProvider = ({ api, children }: { api: ApiWithListener; children: ReactN
 
     return (
         <ApiContext.Provider value={api}>
-            <ApiStatusContext.Provider value={apiStatus}>
-                <ApiServerTimeContext.Provider value={apiServerTime}>
-                    {children}
-                    <ApiModals api={api} />
-                </ApiServerTimeContext.Provider>
-            </ApiStatusContext.Provider>
+            <ApiServerTimeContext.Provider value={apiServerTime}>
+                {children}
+                <ApiModals api={api} />
+            </ApiServerTimeContext.Provider>
         </ApiContext.Provider>
     );
 };
