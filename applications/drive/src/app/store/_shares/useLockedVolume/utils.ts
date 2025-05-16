@@ -4,6 +4,7 @@ import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS, getMatchingSigningKey } from '@proton/crypto';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
@@ -140,6 +141,7 @@ async function prepareShareForRestore(
     addressPrivateKeys: PrivateKeyReference[]
 ): Promise<
     | (LockedShareForRestore & {
+          isPhotosVolume: boolean;
           shareSessionKey: LockedDeviceForRestore['shareSessionKey'];
           shareDecryptedPassphrase: LockedDeviceForRestore['shareDecryptedPassphrase'];
       })
@@ -161,6 +163,7 @@ async function prepareShareForRestore(
         }
 
         return {
+            isPhotosVolume: share.volumeType === VolumeType.Photos,
             shareId: share.shareId,
             shareSessionKey: result.shareSessionKey,
             shareDecryptedPassphrase: result.shareDecryptedPassphrase,
