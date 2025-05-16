@@ -2,7 +2,9 @@ module.exports = {
     setupFilesAfterEnv: ['./jest.setup.js'],
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     testEnvironment: '@proton/jest-env',
-    transformIgnorePatterns: ['node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|mutex-browser|pmcrypto|bip39)/)'],
+    transformIgnorePatterns: [
+        'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|mutex-browser|pmcrypto|bip39)/)',
+    ],
     transform: {
         '^.+\\.(ts|js|mjs)x?$': [
             '@swc/jest',
@@ -28,6 +30,7 @@ module.exports = {
         '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
         '\\.(md)$': '<rootDir>/src/__mocks__/mdMock.ts',
     },
+    modulePathIgnorePatterns: ['<rootDir>/tests'],
     coverageReporters: ['text-summary', 'json'],
     reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
     collectCoverageFrom: ['**/*.tsx', '!**/*.stories.tsx'],
