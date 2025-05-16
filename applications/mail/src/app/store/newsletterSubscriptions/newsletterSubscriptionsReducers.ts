@@ -5,20 +5,21 @@ import type {
     NewsletterSubscription,
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import { formatSubscriptionResponse, updateSubscriptionKeysIfCorrectID } from './helpers';
-import type { SubscriptionTabs } from './interface';
+import { getPaginationDataFromNextPage, normalizeSubscriptions } from './helpers';
+import type { SortSubscriptionsValue, SubscriptionTabs } from './interface';
 import type { filterSubscriptionList, unsubscribeSubscription } from './newsletterSubscriptionsActions';
 import type { NewsletterSubscriptionsStateType } from './newsletterSubscriptionsSlice';
 
-export const setSelectedSubscriptionReducer = (
+export const setSortingOrderReducer = (
     state: NewsletterSubscriptionsStateType,
-    action: PayloadAction<NewsletterSubscription>
+    action: PayloadAction<SortSubscriptionsValue>
 ) => {
     if (!state.value) {
         return;
     }
 
-    state.value.selectedSubscription = action.payload;
+    const tab = state.value.selectedTab;
+    state.value.tabs[tab].sorting = action.payload;
 };
 
 export const setFilteredSubscriptionsReducer = (
@@ -29,31 +30,109 @@ export const setFilteredSubscriptionsReducer = (
         return;
     }
 
-    state.value.filteredSubscriptions = state.value.subscriptions.filter((subscription: NewsletterSubscription) => {
-        const isUnsubscribed = !!subscription.UnsubscribedTime;
-        return action.payload === 'active' ? !isUnsubscribed : isUnsubscribed;
-    });
-
     state.value.selectedTab = action.payload;
 };
 
-export const sortSubscriptionPending = (state: NewsletterSubscriptionsStateType) => {
-    if (state.value) {
-        state.value.loading = true;
+export const setSelectedSubscriptionReducer = (
+    state: NewsletterSubscriptionsStateType,
+    action: PayloadAction<NewsletterSubscription>
+) => {
+    if (!state.value) {
+        return;
     }
+
+    state.value.selectedSubscriptionId = action.payload.ID;
+};
+
+export const unsubscribeSubscriptionPending = (
+    state: NewsletterSubscriptionsStateType,
+    action: ReturnType<typeof unsubscribeSubscription.pending>
+) => {
+    if (!state.value) {
+        return;
+    }
+
+    const subscriptionId = action.meta.arg.subscription.ID;
+    const originalIndex = state.value.tabs.active.ids.indexOf(subscriptionId);
+
+    state.value.byId[subscriptionId] = {
+        ...state.value.byId[subscriptionId],
+        UnsubscribedTime: Date.now(),
+    };
+
+    if (originalIndex !== -1) {
+        state.value.tabs.active.ids.splice(originalIndex, 1);
+        state.value.tabs.active.totalCount = Math.max(0, state.value.tabs.active.totalCount - 1);
+    }
+
+    state.value.tabs.unsubscribe.ids.unshift(subscriptionId);
+    state.value.tabs.unsubscribe.totalCount += 1;
+};
+
+export const unsubscribeSubscriptionRejected = (
+    state: NewsletterSubscriptionsStateType,
+    action: ReturnType<typeof unsubscribeSubscription.rejected>
+) => {
+    const { previousState, originalIndex } = action.payload || {};
+    if (!state.value || !previousState || originalIndex === undefined || originalIndex < 0) {
+        return;
+    }
+
+    const subscriptionId = previousState.ID;
+
+    state.value.byId[subscriptionId] = previousState;
+
+    const unsubscribedId = state.value.tabs.unsubscribe.ids.indexOf(subscriptionId);
+    if (unsubscribedId !== -1) {
+        state.value.tabs.unsubscribe.ids.splice(unsubscribedId, 1);
+        state.value.tabs.unsubscribe.totalCount = Math.max(0, state.value.tabs.unsubscribe.totalCount - 1);
+    }
+
+    state.value.tabs.active.ids.splice(originalIndex, 0, subscriptionId);
+    state.value.tabs.active.totalCount += 1;
+};
+
+export const sortSubscriptionPending = (state: NewsletterSubscriptionsStateType) => {
+    if (!state.value) {
+        return;
+    }
+
+    state.value.tabs.active.loading = true;
+    state.value.tabs.unsubscribe.loading = true;
 };
 
 export const sortSubscriptionFulfilled = (
     state: NewsletterSubscriptionsStateType,
     action: PayloadAction<GetNewsletterSubscriptionsApiResponse>
 ) => {
-    state.value = formatSubscriptionResponse(action.payload);
+    if (!state.value) {
+        return;
+    }
+
+    const normalizedData = normalizeSubscriptions(action.payload.NewsletterSubscriptions);
+
+    state.value.byId = {
+        ...normalizedData.byId,
+    };
+
+    const tab = state.value.selectedTab;
+    state.value.tabs[tab].ids = [...normalizedData.ids];
+    state.value.tabs[tab].paginationData = getPaginationDataFromNextPage(
+        tab === 'active' ? '1' : '0',
+        action.payload.PageInfo.NextPage
+    );
+
+    state.value.tabs.active.loading = false;
+    state.value.tabs.unsubscribe.loading = false;
 };
 
 export const sortSubscriptionRejected = (state: NewsletterSubscriptionsStateType) => {
-    if (state.value) {
-        state.value.loading = false;
+    if (!state.value) {
+        return;
     }
+
+    state.value.tabs.active.loading = false;
+    state.value.tabs.unsubscribe.loading = false;
 };
 
 export const filterSubscriptionListPending = (
@@ -68,27 +147,13 @@ export const filterSubscriptionListPending = (
 
     // We show the mark as read status when marking future subscriptions as read.
     const MarkAsRead = !!action.meta.arg.data.MarkAsRead && action.meta.arg.data.ApplyTo === 'All';
-    const ApplyTo = action.meta.arg.data.ApplyTo;
-    const DestinationFolder = action.meta.arg.data.DestinationFolder;
+    const MoveToFolder = action.meta.arg.data.DestinationFolder ?? '';
 
-    const updateParams = {
-        idToUpdate: subscriptionId,
-        keys: { MarkAsRead, ApplyTo, DestinationFolder },
+    state.value.byId[subscriptionId] = {
+        ...state.value.byId[subscriptionId],
+        MarkAsRead,
+        MoveToFolder,
     };
-
-    state.value.subscriptions = state.value.subscriptions.map((subscription) =>
-        updateSubscriptionKeysIfCorrectID({
-            ...updateParams,
-            subscription,
-        })
-    );
-
-    state.value.filteredSubscriptions = state.value.filteredSubscriptions.map((subscription) =>
-        updateSubscriptionKeysIfCorrectID({
-            ...updateParams,
-            subscription,
-        })
-    );
 };
 
 export const filterSubscriptionListFulfilled = (
@@ -99,15 +164,10 @@ export const filterSubscriptionListFulfilled = (
         return;
     }
 
-    const updatedSub = action.payload.NewsletterSubscription;
-
-    state.value.subscriptions = state.value.subscriptions.map((subscription) =>
-        subscription.ID === updatedSub.ID ? updatedSub : subscription
-    );
-
-    state.value.filteredSubscriptions = state.value.filteredSubscriptions.map((subscription) =>
-        subscription.ID === updatedSub.ID ? updatedSub : subscription
-    );
+    const subscriptionId = action.meta.arg.subscription.ID;
+    state.value.byId[subscriptionId] = {
+        ...action.payload.NewsletterSubscription,
+    };
 };
 
 export const filterSubscriptionListRejected = (
@@ -119,53 +179,9 @@ export const filterSubscriptionListRejected = (
         return;
     }
 
-    state.value.subscriptions = state.value.subscriptions.map((subscription) =>
-        subscription.ID === previousState.ID ? previousState : subscription
-    );
-
-    // In case of failure, we add the subscription back to the filtered list
-    state.value.filteredSubscriptions = state.value.filteredSubscriptions.toSpliced(originalIndex, 0, previousState);
-};
-
-export const unsubscribeSubscriptionPending = (
-    state: NewsletterSubscriptionsStateType,
-    action: ReturnType<typeof unsubscribeSubscription.pending>
-) => {
-    if (!state.value) {
-        return;
-    }
-
     const subscriptionId = action.meta.arg.subscription.ID;
-    const updateParams = {
-        idToUpdate: subscriptionId,
-        keys: { UnsubscribedTime: Date.now() },
+    state.value.byId[subscriptionId] = {
+        ...state.value.byId[subscriptionId],
+        ...previousState,
     };
-
-    state.value.subscriptions = state.value.subscriptions.map((subscription) =>
-        updateSubscriptionKeysIfCorrectID({
-            ...updateParams,
-            subscription,
-        })
-    );
-
-    state.value.filteredSubscriptions = state.value.filteredSubscriptions.filter(
-        (subscription) => subscription.ID !== subscriptionId
-    );
-};
-
-export const unsubscribeSubscriptionRejected = (
-    state: NewsletterSubscriptionsStateType,
-    action: ReturnType<typeof unsubscribeSubscription.rejected>
-) => {
-    const { previousState, originalIndex } = action.payload || {};
-    if (!state.value || !previousState || originalIndex === undefined) {
-        return;
-    }
-
-    state.value.subscriptions = state.value.subscriptions.map((subscription) =>
-        subscription.ID === previousState.ID ? previousState : subscription
-    );
-
-    // In case of failure, we add the subscription back to the filtered list
-    state.value.filteredSubscriptions = state.value.filteredSubscriptions.toSpliced(originalIndex, 0, previousState);
 };
