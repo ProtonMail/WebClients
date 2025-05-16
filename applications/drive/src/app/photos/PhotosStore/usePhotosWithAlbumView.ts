@@ -354,6 +354,16 @@ export const usePhotosWithAlbumsView = () => {
         addToQueue(shareId, linkId, domRef);
     }, []);
 
+    const refreshAlbums = useCallback(
+        (abortSignal: AbortSignal = new AbortController().signal) => {
+            if (!volumeId || !shareId) {
+                return;
+            }
+            return loadAlbums(abortSignal);
+        },
+        [volumeId, shareId, loadAlbums]
+    );
+
     const refreshSharedWithMeAlbums = useCallback(
         (abortSignal: AbortSignal = new AbortController().signal) => {
             if (!volumeId || !shareId) {
@@ -512,6 +522,7 @@ export const usePhotosWithAlbumsView = () => {
         isAlbumPhotosLoading,
         refreshSharedWithMeAlbums,
         refreshAlbumPhotos,
+        refreshAlbums,
         addAlbumPhoto,
         addAlbumPhotos,
         setPhotoAsCover,

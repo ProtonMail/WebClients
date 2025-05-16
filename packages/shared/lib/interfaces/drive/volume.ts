@@ -75,11 +75,11 @@ export interface CreatedDriveVolumeResult {
 }
 
 export interface RestoreDriveVolume {
-    Name: string;
+    Name?: string;
     SignatureAddress: string;
-    Hash: string;
-    NodePassphrase: string;
-    NodePassphraseSignature: string;
+    Hash?: string;
+    NodePassphrase?: string;
+    NodePassphraseSignature?: string;
     TargetVolumeID: string;
     Devices?: {
         LockedShareID: string;

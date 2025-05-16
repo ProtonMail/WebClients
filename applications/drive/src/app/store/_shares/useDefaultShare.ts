@@ -10,7 +10,7 @@ import { shareMetaShortToShare, useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { useDebouncedFunction } from '../_utils';
 import { useVolumesState } from '../_volumes';
-import type { Share, ShareWithKey } from './interface';
+import { type Share, ShareType, type ShareWithKey } from './interface';
 import useShare from './useShare';
 import useVolume from './useVolume';
 
@@ -40,8 +40,8 @@ export function useDefaultShare() {
     const volumesState = useVolumesState();
     const { getOwnAddressAndPrimaryKeys } = useDriveCrypto();
 
-    const loadUserShares = useCallback(async (): Promise<Share[]> => {
-        if (sharesState.loadUserSharesPromise) {
+    const loadUserShares = useCallback(async (force = false): Promise<Share[]> => {
+        if (sharesState.loadUserSharesPromise && !force) {
             return sharesState.loadUserSharesPromise;
         }
 
@@ -64,7 +64,7 @@ export function useDefaultShare() {
             });
 
             const cachedPromise = useSharesStore.getState().loadUserSharesPromise;
-            if (cachedPromise) {
+            if (cachedPromise && !force) {
                 return cachedPromise;
             }
         }
@@ -139,8 +139,10 @@ export function useDefaultShare() {
     );
 
     const getDefaultPhotosShare = useCallback(
-        async (abortSignal?: AbortSignal): Promise<ShareWithKey | undefined> => {
-            if (sharesState.defaultPhotosSharePromise) {
+        async (abortSignal?: AbortSignal, force: boolean = false): Promise<ShareWithKey | undefined> => {
+            // The force will be use for recovery mostly
+            // In case the user did not refresh between he created a new photos share and he started the recovery
+            if (sharesState.defaultPhotosSharePromise && !force) {
                 return sharesState.defaultPhotosSharePromise;
             }
 
@@ -149,11 +151,25 @@ export function useDefaultShare() {
                     let defaultPhotosShareId = sharesState.getDefaultPhotosShareId();
                     // First try to load fresh list of shares from API
                     if (!defaultPhotosShareId) {
-                        const shares = await loadUserShares();
+                        const shares = await loadUserShares(force);
                         // Do not use sharesState.getDefaultPhotosShare as useState
                         // is not sync operation and thus the new state might
                         // not be set just yet.
                         defaultPhotosShareId = findDefaultPhotosShareId(shares);
+                        const lockedShares = shares.filter(
+                            (share) => share.type === ShareType.photos && share.isLocked
+                        );
+
+                        for (let lockedShare of lockedShares) {
+                            const { Volume } = await debouncedRequest<GetDriveVolumeResult>(
+                                queryGetDriveVolume(lockedShare.volumeId)
+                            );
+                            const share = await getShareWithKey(
+                                abortSignal || new AbortController().signal,
+                                lockedShare.shareId
+                            );
+                            sharesState.setShares([{ ...share, volumeType: Volume.Type }]);
+                        }
                     }
                     // We currently don't support photos share creation on web
                     const share = defaultPhotosShareId
