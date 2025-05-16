@@ -1,95 +1,63 @@
-import { useState } from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { RadioGroup } from '@proton/components';
+import { Step, Stepper, StepperPositionEnum } from '..';
 
-import Step from './Step';
-import type { StepperProps } from './Stepper';
-import Stepper, { StepperPositionEnum } from './Stepper';
-import mdx from './Stepper.mdx';
+const ITEMS = ['Item 1', 'Item 2.', 'Item 3', 'Item 4'];
+const Steps = ITEMS.map((step) => <Step key={step}>{step}</Step>);
 
-export default {
+const meta: Meta<typeof Stepper> = {
+    args: {
+        activeStep: 0,
+        children: Steps,
+        position: StepperPositionEnum.Center,
+    },
+    argTypes: {
+        activeStep: {
+            control: 'radio',
+            options: ITEMS.map((_, index) => index),
+        },
+        position: {
+            control: 'radio',
+            options: Object.values(StepperPositionEnum),
+        },
+    },
     component: Stepper,
     subcomponents: { Step },
-    title: 'components/Stepper',
-    parameters: { docs: { page: mdx } },
+    parameters: {
+        docs: {
+            description: {
+                component:
+                    'The `Stepper` displays progress through sequential steps. It is controlled by passing the current step index as the `activeStep` prop.',
+            },
+        },
+    },
+    tags: ['autodocs'],
 };
 
-export const Basic = () => {
-    const [activeStep, setActiveStep] = useState(0);
+export default meta;
 
-    const steps = ['Item 1', 'Item 2 with super long label. I should wrap.', 'Item 3', 'Item 4'];
+type Story = StoryObj<typeof Stepper>;
 
-    return (
-        <>
-            <Stepper position={StepperPositionEnum.Center} activeStep={activeStep}>
-                {steps.map((step) => (
-                    <Step key={step}>{step}</Step>
+export const Default: Story = {};
+
+export const AllPositions: Story = {
+    render: (args) => (
+        <div className="flex flex-col gap-8">
+            {Object.values(StepperPositionEnum)
+                .sort()
+                .map((position) => (
+                    <Stepper {...args} key={position} position={position} />
                 ))}
-            </Stepper>
-
-            <div className="mt-11 flex justify-end">
-                <Button
-                    className="mr-2"
-                    color="norm"
-                    disabled={activeStep === 0}
-                    onClick={() => setActiveStep((step) => step - 1)}
-                >
-                    Previous
-                </Button>
-                <Button
-                    color="norm"
-                    disabled={activeStep === steps.length - 1}
-                    onClick={() => setActiveStep((step) => step + 1)}
-                >
-                    Next
-                </Button>
-            </div>
-        </>
-    );
+        </div>
+    ),
 };
 
-export const Centered = () => {
-    const [activeStep, setActiveStep] = useState(0);
-    const [position, setPosition] = useState<Required<StepperProps>['position']>(StepperPositionEnum.Start);
-
-    const steps = ['Item 1', 'Item 2.', 'Item 3', 'Item 4'];
-
-    return (
-        <>
-            <div className="mb-8">
-                <strong className="block mb-4">Position</strong>
-                <RadioGroup
-                    name="selected-variant"
-                    onChange={setPosition}
-                    value={position}
-                    options={Object.values(StepperPositionEnum).map((variant) => ({ value: variant, label: variant }))}
-                />
-            </div>
-
-            <Stepper position={position} activeStep={activeStep}>
-                {steps.map((step) => (
-                    <Step key={step}>{step}</Step>
-                ))}
-            </Stepper>
-
-            <div className="mt-11 flex justify-end">
-                <Button
-                    className="mr-2"
-                    color="norm"
-                    disabled={activeStep === 0}
-                    onClick={() => setActiveStep((step) => step - 1)}
-                >
-                    Previous
-                </Button>
-                <Button
-                    color="norm"
-                    disabled={activeStep === steps.length - 1}
-                    onClick={() => setActiveStep((step) => step + 1)}
-                >
-                    Next
-                </Button>
-            </div>
-        </>
-    );
+export const AllSteps: Story = {
+    render: (args) => (
+        <div className="flex flex-col gap-8">
+            {ITEMS.map((_, index) => (
+                <Stepper {...args} key={index} activeStep={index} />
+            ))}
+        </div>
+    ),
 };

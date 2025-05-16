@@ -1,14 +1,24 @@
-import Vr from './Vr';
-import mdx from './Vr.mdx';
+import type { Meta, StoryObj } from '@storybook/react';
 
-export default {
+import { Vr } from '..';
+
+const meta: Meta<typeof Vr> = {
+    args: {
+        className: '',
+    },
     component: Vr,
-    title: 'components/Vr',
-    parameters: { docs: { page: mdx } },
+    parameters: {
+        docs: {
+            description: {
+                component: 'This component is simply a vertical separator styled using the class `vr`.',
+            },
+        },
+    },
+    tags: ['autodocs'],
 };
 
-export const Basic = () => (
-    <div style={{ display: 'flex', justifyContent: 'center', height: 50 }}>
-        <Vr />
-    </div>
-);
+export default meta;
+
+type Story = StoryObj<typeof Vr>;
+
+export const Default: Story = {};

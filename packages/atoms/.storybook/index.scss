@@ -71,3 +71,8 @@ table {
 		@extend .link;
 	}
 }
+
+input[type='radio'],
+input[type='checkbox'] {
+	opacity: 1;
+}
