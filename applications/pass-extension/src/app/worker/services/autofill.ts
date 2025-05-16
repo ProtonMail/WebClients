@@ -31,6 +31,8 @@ import { parseUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
 
 export const createAutoFillService = () => {
+    const attemptedBasicAuthRequests = new Map<string, number>();
+
     const getLoginCandidates = withContext<(options: SelectAutofillCandidatesOptions) => ItemRevision<'login'>[]>(
         (ctx, options) => selectAutofillLoginCandidates(options)(ctx.service.store.getState())
     );
@@ -205,6 +207,39 @@ export const createAutoFillService = () => {
                 }
             } catch {}
         })
+    );
+
+    browser.webRequest.onAuthRequired.addListener(
+        (details) => {
+            const items = getLoginCandidates(parseUrl(details.url));
+
+            // If there are no items, do nothing
+            if (!items.length) return { cancel: false };
+
+            // If url already has the credentials embedded, do nothing
+            if (/:\/\/(.)+:(.)+@/.test(details.url)) return { cancel: false };
+
+            // Mechanism to prevent infinite loop when credentials are incorrect
+            const requestAttempt = attemptedBasicAuthRequests.get(details.requestId) ?? 0;
+            if (requestAttempt >= items.length) return { cancel: false };
+
+            attemptedBasicAuthRequests.set(details.requestId, requestAttempt + 1);
+
+            // Clear the Map after 2 seconds
+            setTimeout(() => attemptedBasicAuthRequests.delete(details.requestId), 2000);
+
+            // If there are more than 1 login credentials, try with each one
+            const item = items[requestAttempt];
+
+            return {
+                authCredentials: {
+                    username: intoUserIdentifier(item),
+                    password: deobfuscate(item.data.content.password),
+                },
+            };
+        },
+        { urls: ['<all_urls>'] },
+        ['blocking']
     );
 
     return {
