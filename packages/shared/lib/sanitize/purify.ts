@@ -35,7 +35,7 @@ const CONFIG: { [key: string]: any } = {
     raw: { WHOLE_DOCUMENT: true, RETURN_DOM: true },
     html: { WHOLE_DOCUMENT: false, RETURN_DOM: true },
     protonizer: {
-        FORBID_TAGS: ['input', 'form', 'video', 'audio', 'textarea'], // Override defaults to allow style (will be processed by juice afterward)
+        FORBID_TAGS: ['form', 'video', 'audio', 'textarea'], // Override defaults to allow style (will be processed by juice afterward)
         FORBID_ATTR: {},
         ADD_ATTR: ['target', ...LIST_PROTON_ATTR.map((attr) => `proton-${attr}`)],
         WHOLE_DOCUMENT: true,
@@ -94,9 +94,23 @@ const beforeSanitizeElements = (node: Node) => {
     return element;
 };
 
+const filterInputAttributes = (node: Node) => {
+    if (node.nodeName === 'INPUT') {
+        const element = node as HTMLElement;
+        const allowedAttributes = ['id', 'class', 'style', 'value', 'readonly', 'disabled', 'type', 'name'];
+
+        Array.from(element.attributes).forEach((attr) => {
+            if (!allowedAttributes.includes(attr.name)) {
+                element.removeAttribute(attr.name);
+            }
+        });
+    }
+};
+
 const purifyHTMLHooks = (active: boolean) => {
     if (active) {
         DOMPurify.addHook('beforeSanitizeElements', beforeSanitizeElements);
+        DOMPurify.addHook('beforeSanitizeAttributes', filterInputAttributes);
         return;
     }
 
