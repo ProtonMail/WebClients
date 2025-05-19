@@ -106,9 +106,6 @@
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
-      "Authenticate": [
-        "Authentifizieren"
-      ],
       "Back": [
         "Zurück"
       ],
@@ -639,6 +636,9 @@
       "Restore": [
         "Wiederherstellen"
       ],
+      "Restore from trash": [
+        "Aus dem Papierkorb wiederherstellen"
+      ],
       "Restore this version": [
         "Diese Version wiederherstellen"
       ],
@@ -822,14 +822,8 @@
       "Use a different payment method": [
         "Eine andere Zahlungsmethode verwenden"
       ],
-      "Use authentication code": [
-        "Authentifizierungscode verwenden"
-      ],
       "Use for sending": [
         "Für den Versand verwenden"
-      ],
-      "Use recovery code": [
-        "Wiederherstellungscode verwenden"
       ],
       "Verify": [
         "Verifizieren"
@@ -867,14 +861,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakt enthalten.",
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten."
-      ]
-    },
-    "Actions": {
-      "Last viewed first": [
-        "Letzte Anzeigen zuerst"
-      ],
-      "Name": [
-        "Name"
       ]
     },
     "Actions message": {
@@ -2478,6 +2464,11 @@
         "Überfällige Rechnung"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "den Easy Switch-Importassistenten"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } ermöglicht es dir, mit anderen in einer sicheren, verschlüsselten Umgebung zusammenzuarbeiten."
@@ -2601,11 +2592,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "den Easy Switch-Importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3621,24 +3607,6 @@
         "Unbegrenzte hide-my-email-Aliasse"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Bei der Authentifizierung mit deinem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte versuche es erneut."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Stecke einen Sicherheitsschlüssel ein, der mit deinem ${ BRAND_NAME }-Konto verknüpft ist."
-      ],
-      "Security key": [
-        "Sicherheitsschlüssel"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Sicherheitsschlüssel"
-      ]
-    },
     "file size format": {
       "byte": [
         "Byte",
@@ -4403,9 +4371,6 @@
         "Erstelle eine sichere Cloud für ${ value } Mitglied",
         "Erstelle eine sichere Cloud für ${ value } Mitglieder"
       ],
-      "Create an encrypted document.": [
-        "Ein verschlüsseltes Dokument erstellen."
-      ],
       "Create in": [
         "Erstellen in"
       ],
@@ -4496,9 +4461,6 @@
       "Duplicate key updated": [
         "Zweitschlüssel aktualisiert"
       ],
-      "Each code can only be used once": [
-        "Jeder Code kann nur einmal verwendet werden"
-      ],
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
       ],
@@ -4526,17 +4488,11 @@
       "Enter password": [
         "Passwort eingeben"
       ],
-      "Enter the code from your authenticator app": [
-        "Code aus der Authenticator App eingeben"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Bestätigungscode eingeben. Ziffer ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Gib dein eigenes Passwort ein (als Organisationsadministrator)."
@@ -5365,9 +5321,6 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Wenn du eine Verbindung zu VPN herstellst, wird deine IP-Adresse (ein eindeutiger Code, der deinem Gerät zugewiesen ist) mithilfe von Verschlüsselungstechnologie verborgen."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
-      ],
       "words": [
         "Wörter"
       ],
@@ -5717,9 +5670,6 @@
       ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
-      ],
-      "Authenticator app": [
-        "Authenticator App"
       ],
       "Beta Access": [
         "Beta-Zugang"
@@ -6707,6 +6657,17 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Abonnements ab ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Konto löschen"
@@ -6728,17 +6689,6 @@
       ],
       "Switch plan": [
         "Abonnement wechseln"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Abonnements ab ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Upgraden"
       ]
     },
     "new_plans: feature": {
@@ -8734,6 +8684,20 @@
         "Signieren"
       ]
     },
+    "Sort menu options": {
+      "Created by": [
+        "Erstellt von"
+      ],
+      "Last viewed first": [
+        "Letzte Anzeigen zuerst"
+      ],
+      "Location": [
+        "Standort"
+      ],
+      "Name": [
+        "Name"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Schließen"
@@ -9137,6 +9101,25 @@
         "Für ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } Speicherplatz pro Benutzer"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Mit ${ planName } erhältst du alle Anwendungen, alle Funktionen, frühen Zugriff auf neue Versionen und alles, was du brauchst, um die Kontrolle über deine Daten und deren Sicherheit zu behalten."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigene E-Mail-Domain",
+        "${ planNumberOfDomains } eigene E-Mail-Domains"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } E-Mail-Adresse",
+        "${ planNumberOfEmails } E-Mail-Adressen"
+      ],
+      "Folders, labels, and custom filters": [
+        "Ordner, Kategorien und benutzerdefinierte Filter"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB Speicherplatz"
@@ -9176,25 +9159,6 @@
       ],
       "Your privacy is our mission": [
         "Deine Privatsphäre ist unsere Mission"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } Speicherplatz pro Benutzer"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "Mit ${ planName } erhältst du alle Anwendungen, alle Funktionen, frühen Zugriff auf neue Versionen und alles, was du brauchst, um die Kontrolle über deine Daten und deren Sicherheit zu behalten."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } eigene E-Mail-Domain",
-        "${ planNumberOfDomains } eigene E-Mail-Domains"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } E-Mail-Adresse",
-        "${ planNumberOfEmails } E-Mail-Adressen"
-      ],
-      "Folders, labels, and custom filters": [
-        "Ordner, Kategorien und benutzerdefinierte Filter"
       ]
     },
     "Subscription renewal state": {

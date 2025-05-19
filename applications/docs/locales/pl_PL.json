@@ -108,9 +108,6 @@
       "Attention required": [
         "Wymagana uwaga"
       ],
-      "Authenticate": [
-        "Uwierzytelnij"
-      ],
       "Back": [
         "Wstecz"
       ],
@@ -131,6 +128,9 @@
       ],
       "Change sort order": [
         "Zmień kolejność sortowania"
+      ],
+      "characters": [
+        "znaki"
       ],
       "Chat with us": [
         "Czat z nami"
@@ -639,11 +639,17 @@
       "Restore": [
         "Przywróć"
       ],
+      "Restore from trash": [
+        "Przywróć z kosza"
+      ],
       "Restore this version": [
         "Przywróć tę wersję"
       ],
       "Restore this version?": [
         "Przywrócić tę wersję?"
+      ],
+      "Restoring...": [
+        "Przywracanie..."
       ],
       "Retry": [
         "Spróbuj ponownie"
@@ -822,14 +828,8 @@
       "Use a different payment method": [
         "Użyj innej metody płatności"
       ],
-      "Use authentication code": [
-        "Użyj kodu uwierzytelniającego"
-      ],
       "Use for sending": [
         "Używaj do wysyłania"
-      ],
-      "Use recovery code": [
-        "Użyj kodu odzyskiwania"
       ],
       "Verify": [
         "Zweryfikuj"
@@ -863,14 +863,6 @@
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontakty",
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontaktów",
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontaktów"
-      ]
-    },
-    "Actions": {
-      "Last viewed first": [
-        "Ostatnio oglądano"
-      ],
-      "Name": [
-        "Nazwa"
       ]
     },
     "Actions message": {
@@ -2492,6 +2484,11 @@
         "Zaległa faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } w ${ DRIVE_APP_NAME } umożliwia współpracę z innymi w bezpiecznym i szyfrowanym środowisku."
@@ -2615,11 +2612,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3653,24 +3645,6 @@
         "Nieograniczona liczba aliasów hide-my-email"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Użyj klucza bezpieczeństwa powiązanego z kontem ${ BRAND_NAME }."
-      ],
-      "Security key": [
-        "Klucz bezpieczeństwa"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Klucz bezpieczeństwa"
-      ]
-    },
     "file size format": {
       "byte": [
         "bajt",
@@ -4449,6 +4423,9 @@
       "Change your password": [
         "Zmień hasło"
       ],
+      "characters": [
+        "znaki"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Sprawdzanie kontaktów... (${ progress } z ${ max })"
       ],
@@ -4503,8 +4480,8 @@
         "Utwórz bezpieczną chmurę dla ${ value } użytkowników",
         "Utwórz bezpieczną chmurę dla ${ value } użytkowników"
       ],
-      "Create an encrypted document.": [
-        "Utwórz zaszyfrowany dokument."
+      "Create an end-to-end encrypted document.": [
+        "Utwórz dokument szyfrowany end-to-end."
       ],
       "Create in": [
         "Utwórz w"
@@ -4596,9 +4573,6 @@
       "Duplicate key updated": [
         "Zduplikowany klucz został zaktualizowany"
       ],
-      "Each code can only be used once": [
-        "Każdy kod może zostać użyty tylko jeden raz"
-      ],
       "Edit email address": [
         "Edytuj adres e-mail"
       ],
@@ -4626,17 +4600,11 @@
       "Enter password": [
         "Wpisz hasło"
       ],
-      "Enter the code from your authenticator app": [
-        "Wpisz kod z aplikacji uwierzytelniającej"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Wpisz dane logowania do konta e-mail, z którego chcesz zaimportować dane."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Wpisz swoje hasło (jako administrator organizacji)."
@@ -5475,9 +5443,6 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Usługa VPN wykorzystuje szyfrowanie, aby ukryć Twój adres IP (unikalny kod przypisany do Twojego urządzenia)."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Podczas ustawiania uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, które możesz wykorzystać po utracie dostępu do aplikacji uwierzytelniającej."
-      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Czy chcesz otrzymać nowy kod weryfikacyjny lub użyć innej metody weryfikacji?"
       ],
@@ -5838,9 +5803,6 @@
       ],
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
-      ],
-      "Authenticator app": [
-        "Aplikacja uwierzytelniająca"
       ],
       "Beta Access": [
         "Dostęp beta"
@@ -6838,6 +6800,17 @@
         "Umiarkowana prędkość VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Od ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Usuń konto"
@@ -6859,17 +6832,6 @@
       ],
       "Switch plan": [
         "Zmień plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Od ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
       ]
     },
     "new_plans: feature": {
@@ -8987,6 +8949,20 @@
         "Podpisz"
       ]
     },
+    "Sort menu options": {
+      "Created by": [
+        "Utworzono przez"
+      ],
+      "Last viewed first": [
+        "Ostatnio oglądano"
+      ],
+      "Location": [
+        "Lokalizacja"
+      ],
+      "Name": [
+        "Nazwa"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Zamknij"
@@ -9416,6 +9392,29 @@
         "Za ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } przestrzeni dyskowej na użytkownika"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Plan ${ planName } zawiera wszystkie aplikacje, wszystkie funkcje, wcześniejszy dostęp do nowych wersji i wszystko, czego potrzebujesz, aby mieć kontrolę nad swoimi danymi i ich bezpieczeństwem."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } niestandardowa domena",
+        "${ planNumberOfDomains } niestandardowe domeny",
+        "${ planNumberOfDomains } niestandardowych domen",
+        "${ planNumberOfDomains } niestandardowych domen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adres e-mail",
+        "${ planNumberOfEmails } adresy e-mail",
+        "${ planNumberOfEmails } adresów e-mail",
+        "${ planNumberOfEmails } adresów e-mail"
+      ],
+      "Folders, labels, and custom filters": [
+        "Foldery, etykiety i filtry niestandardowe"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB przestrzeni dyskowej"
@@ -9455,29 +9454,6 @@
       ],
       "Your privacy is our mission": [
         "Prywatność to nasza misja"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } przestrzeni dyskowej na użytkownika"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "Plan ${ planName } zawiera wszystkie aplikacje, wszystkie funkcje, wcześniejszy dostęp do nowych wersji i wszystko, czego potrzebujesz, aby mieć kontrolę nad swoimi danymi i ich bezpieczeństwem."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } niestandardowa domena",
-        "${ planNumberOfDomains } niestandardowe domeny",
-        "${ planNumberOfDomains } niestandardowych domen",
-        "${ planNumberOfDomains } niestandardowych domen"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adres e-mail",
-        "${ planNumberOfEmails } adresy e-mail",
-        "${ planNumberOfEmails } adresów e-mail",
-        "${ planNumberOfEmails } adresów e-mail"
-      ],
-      "Folders, labels, and custom filters": [
-        "Foldery, etykiety i filtry niestandardowe"
       ]
     },
     "Subscription renewal state": {
@@ -10493,6 +10469,12 @@
         "${ n } połączenia VPN",
         "${ n } połączeń VPN",
         "${ n } połączeń VPN"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } kraju",
+        "${ numberOfCountries } krajach",
+        "${ numberOfCountries } krajach",
+        "${ numberOfCountries } krajach"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } w ${ numberOfCountries } kraju",
