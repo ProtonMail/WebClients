@@ -76,9 +76,6 @@
       "Apply lifetime coupon code": [
         "生涯クーポンコードを適用"
       ],
-      "Authenticate": [
-        "認証"
-      ],
       "Back": [
         "戻る"
       ],
@@ -438,6 +435,9 @@
       ],
       "Pause monitoring": [
         "監視を一時停止する"
+      ],
+      "Pay once": [
+        "一度だけの支払い"
       ],
       "Pin item": [
         "アイテムをピン留め"
@@ -1631,9 +1631,6 @@
       "Enter the address you want to email.": [
         "メールを送りたいアドレスを入力してください。"
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "検証コードを入力してください。桁数は ${ digit } 桁です。"
-      ],
       "Enter your extra password": [
         "追加パスワードを入力してください"
       ],
@@ -1831,6 +1828,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -2665,6 +2665,9 @@
       "Created at": [
         "作成日時"
       ],
+      "Credit cards": [
+        "クレジットカード"
+      ],
       "Custom hidden field": [
         "カスタム非表示フィールド"
       ],
@@ -2737,6 +2740,9 @@
       "Export": [
         "エクスポート"
       ],
+      "Extra email addresses": [
+        "個の追加のメールアドレス"
+      ],
       "Extra password": [
         "追加パスワード"
       ],
@@ -2748,6 +2754,9 @@
       ],
       "Field name": [
         "フィールド名"
+      ],
+      "File attachments": [
+        "添付ファイル"
       ],
       "File format": [
         "ファイル形式"
@@ -2766,6 +2775,9 @@
       ],
       "Forwards to": [
         "転送先"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "永久無料"
@@ -3049,6 +3061,9 @@
       "PIN code": [
         "PIN コード"
       ],
+      "Plus": [
+        "Plus"
+      ],
       "Prefix": [
         "プレフィックス"
       ],
@@ -3175,6 +3190,9 @@
       "Status": [
         "ステータス"
       ],
+      "Storage": [
+        "容量"
+      ],
       "Street address": [
         "番地"
       ],
@@ -3237,6 +3255,9 @@
       ],
       "Unknown": [
         "不明"
+      ],
+      "Unlimited": [
+        "無制限"
       ],
       "Unlock with": [
         "ロック解除方法"
@@ -3346,6 +3367,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } を有効にする"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Menu": {
@@ -3520,6 +3546,11 @@
       ],
       "You can attach files to items for a better organization": [
         "アイテムにファイルを添付して整理できます"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ price }/month": [
+        "${ price } /月"
       ]
     },
     "Placeholder": {
