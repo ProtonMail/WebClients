@@ -55,9 +55,6 @@
       "Advanced options": [
         "進階選項"
       ],
-      "Authenticate": [
-        "驗證"
-      ],
       "Back": [
         "返回"
       ],
@@ -121,6 +118,9 @@
       "Create card": [
         "創建一個卡片"
       ],
+      "Create contact": [
+        "創建聯絡人"
+      ],
       "Create item": [
         "新增"
       ],
@@ -180,6 +180,9 @@
       ],
       "Edit vault": [
         "編輯保管庫"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "啟用${ DARK_WEB_MONITORING_NAME }"
       ],
       "Exclude from monitoring": [
         "排除監控"
@@ -340,6 +343,9 @@
       "Previous": [
         "上一步"
       ],
+      "Reactivate now": [
+        "現在重新啟用"
+      ],
       "Refresh the page": [
         "重新整理此頁面"
       ],
@@ -414,6 +420,9 @@
       ],
       "Set access level": [
         "設定存取層級"
+      ],
+      "Set extra password": [
+        "設定第二密碼"
       ],
       "Setup 2FA": [
         "設定兩步驟驗證"
@@ -554,17 +563,26 @@
       ]
     },
     "Description": {
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "電子郵件別名就像電子郵件地址，但減少垃圾郵件及保持隱藏您真實電子郵件地址及身分。"
+      ],
       "Change your passwords": [
         "更改您的密碼"
       ],
       "Create unique passwords": [
         "建立獨立的密碼"
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "透過導引及建議確保您的資料安全及隱私。"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "最新的 AI 安全方案，為希望加強帳號防護的人而設計。 ${ learnMoreLink }"
       ],
       "Set up 2FA for more security": [
         "為更好安全設定雙重驗證"
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "暗網是隱藏的網路充斥著個人資訊，如身分，可為買賣。"
       ]
     },
     "Error": {
@@ -573,6 +591,9 @@
       ],
       "Alias options could not be resolved": [
         "別名選項無法解析處理"
+      ],
+      "An error occurred while resuming your session": [
+        "恢復作業階段時發生錯誤"
       ],
       "Authentication error": [
         "認證錯誤"
@@ -687,6 +708,9 @@
       ],
       "File does not match expected format": [
         "檔案不符合預期格式"
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "匯入保管庫失敗${ vaultData.name }:${ errorMessage }"
       ],
       "Importing items failed": [
         "匯入項目失敗"
@@ -897,6 +921,9 @@
       "${ n } item": [
         "${ n } 項目"
       ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count }邀請成功寄出"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } 成功停用"
       ],
@@ -1014,8 +1041,8 @@
       "Enabling PIN auto-lock": [
         "啟用 PIN 自動鎖定"
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "輸入驗證代碼。正在按下 ${ digit } 。"
+      "Enter your extra password": [
+        "輸入你的第二密碼"
       ],
       "Enter your PIN code": [
         "輸入個人識別數字代碼"
@@ -1127,6 +1154,9 @@
       ],
       "Monitoring settings successfully updated": [
         "監控設定已成功更新"
+      ],
+      "Move ${ count } item": [
+        "移動 ${ count } 個項目"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "移動全部於\"${ payload.content.name }\"的項目"
@@ -1376,11 +1406,17 @@
       "${ minutes } minute": [
         "${ minutes }分鐘"
       ],
+      "${ months } month": [
+        "${ months }個月"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }版本"
       ],
       "${ usageCount } login": [
         "${ usageCount }登入"
+      ],
+      "${ years } year": [
+        "${ years } 年"
       ],
       "1 hour": [
         "1 小時"
@@ -1487,6 +1523,9 @@
       "Catch-All": [
         "全部擷取"
       ],
+      "Choose your preferred look and feel.": [
+        "選擇您喜歡的外觀與感覺。"
+      ],
       "City": [
         "縣市"
       ],
@@ -1529,6 +1568,9 @@
       "Create an encrypted note": [
         "新增加密的備註"
       ],
+      "Create an Identity": [
+        "創建新身份"
+      ],
       "Create new vault": [
         "新增保管庫"
       ],
@@ -1537,6 +1579,9 @@
       ],
       "Created at": [
         "建立於"
+      ],
+      "Credit cards": [
+        "信用卡"
       ],
       "Date": [
         "日期"
@@ -1559,6 +1604,9 @@
       "Domains": [
         "網域"
       ],
+      "Don't remind me again": [
+        "下次無需再詢問"
+      ],
       "Download logs": [
         "下載記錄檔"
       ],
@@ -1580,6 +1628,9 @@
       "Enable offline access": [
         "啟用離線存取"
       ],
+      "Enter email or username": [
+        "輸入您的電子信箱或使用者名稱"
+      ],
       "Expiration date": [
         "有效期限"
       ],
@@ -1588,6 +1639,9 @@
       ],
       "Export": [
         "匯出"
+      ],
+      "Extra password": [
+        "第二密碼"
       ],
       "Feedback": [
         "意見回饋"
@@ -1606,6 +1660,9 @@
       ],
       "Forwards to": [
         "轉寄至"
+      ],
+      "Free": [
+        "免費"
       ],
       "Free forever": [
         "永久免費"
@@ -1639,6 +1696,12 @@
       ],
       "Hide password": [
         "隱藏密碼"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email 別名"
+      ],
+      "Highest": [
+        "最高速"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "如何解鎖 ${ PASS_SHORT_APP_NAME }"
@@ -1739,6 +1802,9 @@
       "Mailboxes": [
         "電郵信箱"
       ],
+      "Make it your own.": [
+        "讓它專屬於您."
+      ],
       "Members": [
         "成員"
       ],
@@ -1838,6 +1904,9 @@
       "PIN code": [
         "PIN 碼"
       ],
+      "Plus": [
+        "進階"
+      ],
       "Prefix": [
         "前綴"
       ],
@@ -1910,6 +1979,9 @@
       "Shared link": [
         "分享連結"
       ],
+      "Shared with me": [
+        "與我共享"
+      ],
       "Show website favicons": [
         "顯示網站圖示"
       ],
@@ -1927,6 +1999,9 @@
       ],
       "Status": [
         "狀態"
+      ],
+      "Storage": [
+        "雲端儲存"
       ],
       "Street address": [
         "街道位址"
@@ -1972,6 +2047,9 @@
       ],
       "Unknown": [
         "未知的"
+      ],
+      "Unlimited": [
+        "吃到飽"
       ],
       "Unlock with": [
         "解鎖搭配使用"
@@ -2056,6 +2134,11 @@
         "啟用${ reason }"
       ]
     },
+    "Medium": {
+      "Plus": [
+        "進階"
+      ]
+    },
     "Menu": {
       "Edit": [
         "編輯"
@@ -2073,6 +2156,9 @@
     "Message": {
       "${ count } item": [
         "${ count } 個項目"
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "您選取於保管庫的${ semiboldText }."
       ]
     },
     "new_plans: feature": {
@@ -2121,8 +2207,17 @@
       ]
     },
     "Pass_file_attachments": {
+      "${ filesCount } file": [
+        "${ filesCount } 檔案"
+      ],
       "Attachments": [
         "附件"
+      ],
+      "Choose a file or drag it here": [
+        "選擇檔案或拖曳到此處"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "刪除 ${ deleteFile.state.name }"
       ],
       "Download": [
         "下載"
@@ -2135,6 +2230,17 @@
       ],
       "Restore": [
         "還原"
+      ],
+      "The file you are trying to import is empty": [
+        "您匯入的檔案為空白的"
+      ],
+      "Upload files from your device.": [
+        "從你的裝置上傳檔案."
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ price }/month": [
+        "${ price }/月"
       ]
     },
     "Placeholder": {
@@ -2176,6 +2282,9 @@
       ],
       "MM/YY": [
         "月月/年年"
+      ],
+      "my-domain.com": [
+        "my-domain.com"
       ],
       "Password": [
         "密碼"
@@ -2315,6 +2424,9 @@
       "Activity": [
         "活動"
       ],
+      "Aliases": [
+        "別名"
+      ],
       "Auto-lock update": [
         "更新自動鎖定"
       ],
@@ -2354,6 +2466,9 @@
       "Custom addresses": [
         "自訂地址"
       ],
+      "Custom domains": [
+        "個自訂網域"
+      ],
       "Custom email monitoring": [
         "自訂電子郵件監控"
       ],
@@ -2362,6 +2477,9 @@
       ],
       "Default": [
         "預設"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "刪除${ deletedItemsCount }項目?"
       ],
       "Delete domain": [
         "刪除網域"
@@ -2383,6 +2501,12 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "享受 ${ PASS_APP_NAME }?"
+      ],
+      "Enter your backup password": [
+        "輸入您的備份密碼"
+      ],
+      "Enter your extra password": [
+        "輸入你的第二密碼"
       ],
       "Enter your PIN": [
         "輸入 PIN"
@@ -2519,6 +2643,9 @@
       "Set access level": [
         "設定存取層級"
       ],
+      "Set extra password": [
+        "設定第二密碼"
+      ],
       "Set up 2FA for better security": [
         "為更好安全設定雙重驗證"
       ],
@@ -2643,6 +2770,9 @@
       "Could not create vault \"${ vaultName }\"": [
         "無法創建保管庫${ vaultName }"
       ],
+      "Could not send invitations to the following addresses:": [
+        "無法發送邀請到以下的電子郵件位:"
+      ],
       "Delete alias": [
         "刪除信箱別名"
       ],
@@ -2678,6 +2808,9 @@
       ],
       "Missing alias suffix": [
         "缺少別名後綴"
+      ],
+      "Move to trash": [
+        "移至垃圾桶"
       ],
       "Name is required": [
         "名稱為必填"

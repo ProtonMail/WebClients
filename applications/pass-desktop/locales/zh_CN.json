@@ -76,9 +76,6 @@
       "Apply lifetime coupon code": [
         "使用终身优惠券代码"
       ],
-      "Authenticate": [
-        "认证"
-      ],
       "Back": [
         "上一步"
       ],
@@ -438,6 +435,9 @@
       ],
       "Pause monitoring": [
         "暂停监测"
+      ],
+      "Pay once": [
+        "一次性支付"
       ],
       "Pin item": [
         "固定项"
@@ -1631,9 +1631,6 @@
       "Enter the address you want to email.": [
         "输入您要发送电子邮件的地址。"
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "输入第 ${ digit } 位验证码。"
-      ],
       "Enter your extra password": [
         "输入您的额外密码"
       ],
@@ -1831,6 +1828,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2665,6 +2665,9 @@
       "Created at": [
         "创建于"
       ],
+      "Credit cards": [
+        "信用卡"
+      ],
       "Custom hidden field": [
         "自定义隐藏字段"
       ],
@@ -2746,6 +2749,9 @@
       "Field name": [
         "字段名称"
       ],
+      "File attachments": [
+        "文件附件"
+      ],
       "File format": [
         "文件格式"
       ],
@@ -2763,6 +2769,9 @@
       ],
       "Forwards to": [
         "转发至"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "永久免费"
@@ -2799,6 +2808,9 @@
       ],
       "Hide-my-email aliases": [
         "Hide-my-email 别名"
+      ],
+      "Highest": [
+        "最快"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "如何解锁 ${ PASS_SHORT_APP_NAME }"
@@ -3046,6 +3058,9 @@
       "PIN code": [
         "PIN 码"
       ],
+      "Plus": [
+        "Plus"
+      ],
       "Prefix": [
         "前綴"
       ],
@@ -3172,6 +3187,9 @@
       "Status": [
         "状态"
       ],
+      "Storage": [
+        "存储"
+      ],
       "Street address": [
         "街道地址"
       ],
@@ -3234,6 +3252,9 @@
       ],
       "Unknown": [
         "未知"
+      ],
+      "Unlimited": [
+        "无限制"
       ],
       "Unlock with": [
         "解锁方式"
@@ -3343,6 +3364,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "启用 ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Menu": {
@@ -3517,6 +3543,11 @@
       ],
       "You can attach files to items for a better organization": [
         "您可以将文件附加到项目上，以便更好地进行整理"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ price }/month": [
+        "${ price }/月"
       ]
     },
     "Placeholder": {
