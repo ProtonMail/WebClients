@@ -48,7 +48,7 @@ export const PhotosAddAlbumPhotosButton = ({
             shape="solid"
             size={buttonSize}
             onClick={onClick}
-            data-testid="toolbar-add-to-album"
+            data-testid="add-to-album"
             title={c('Action').t`Add photos`}
             className="inline-flex flex-nowrap flex-row items-center"
         >
