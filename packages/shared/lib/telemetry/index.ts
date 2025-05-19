@@ -72,9 +72,20 @@ class ProtonTelemetry {
             return;
         }
 
-        this.telemetry = createTelemetry({ ...this.config, uidHeader: this.UID });
+        try {
+            this.telemetry = createTelemetry({ ...this.config, uidHeader: this.UID });
 
-        this.processQueue();
+            this.processQueue();
+        } catch (error) {
+            /**
+             * Browsers such as Pale moon do not support the performance observer.
+             * This catches these errors
+             */
+            captureMessage('@proton/Telemetry: Failed to create telemetry instance', {
+                level: 'error',
+                extra: { error },
+            });
+        }
     }
 }
 
