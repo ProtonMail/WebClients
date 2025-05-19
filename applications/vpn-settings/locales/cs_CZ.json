@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktivovat"
-      ],
       "Activate": [
         "Aktivovat"
+      ],
+      "activate": [
+        "aktivovat"
       ],
       "Activate organization key": [
         "Aktivovat klíč organizace"
@@ -108,7 +108,7 @@
       "Back": [
         "Zpět"
       ],
-      "Back to sign-in": [
+      "Back to sign in": [
         "Zpět k přihlášení"
       ],
       "Block": [
@@ -267,10 +267,10 @@
       "Discard": [
         "Zahodit"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Zahodit změny"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Zahodit změny"
       ],
       "Discover ${ planName }": [
@@ -286,7 +286,7 @@
         "Hotovo"
       ],
       "Downgrade": [
-        "Downgradovat"
+        "Snížit"
       ],
       "Download": [
         "Stáhnout"
@@ -699,11 +699,11 @@
       "Select country ${ country }": [
         "Vybrat zemi ${ country }"
       ],
-      "Select file": [
-        "Vybrat soubor"
-      ],
       "select file": [
         "vybrat soubor"
+      ],
+      "Select file": [
+        "Vybrat soubor"
       ],
       "Send code": [
         "Odeslat kód"
@@ -2696,10 +2696,10 @@
     },
     "Domain spam notification": {
       "${ name } added": [
-        "Doména ${ name } přidána"
+        "E-mailová adresa ${ name } přidána"
       ],
       "${ name } deletion failed": [
-        "Smazání domény ${ name } selhalo"
+        "Smazání e-mailové adresy ${ name } selhalo"
       ],
       "${ name } failed to move to allow list": [
         "${ name } se nepodařilo přesunout na Seznam povolených"
@@ -2717,10 +2717,10 @@
         "E-mailová adresa ${ name } přesunuta na Seznam blokovaných"
       ],
       "${ name } moved to spam list": [
-        "Doména ${ name } byla přesunuta na seznam spamů"
+        "E-mailová adresa ${ name } byla přesunuta na seznam nevyžádaných e-mailů"
       ],
       "${ name } successfully deleted": [
-        "Doména ${ name } úspěšně smazána"
+        "E-mailová adresa ${ name } úspěšně smazána"
       ]
     },
     "Downgrade account reason": {
@@ -3093,7 +3093,7 @@
         "Neplatná e-mailová adresa"
       ],
       "Invalid expiration date": [
-        "Neplatné datum expirace"
+        "Neplatné datum vypršení platnosti"
       ],
       "Invalid IBAN": [
         "Neplatný IBAN"
@@ -4012,7 +4012,7 @@
         "Typ klíče"
       ],
       "Location": [
-        "Umístění"
+        "Lokace"
       ],
       "Members": [
         "Členové"
@@ -4626,11 +4626,11 @@
       "Data recoverable on this device": [
         "Data obnovitelná v tomto zařízení"
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -5724,8 +5724,8 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Chcete-li potvrdit, zadejte jméno uživatele, kterého chcete odstranit."
       ],
-      "to continue to ${ product }": [
-        "pro pokračování na ${ product }"
+      "To continue to ${ product }": [
+        "Pro pokračování na ${ product }"
       ],
       "To create your first user group, go to": [
         "Chcete-li vytvořit první skupinu uživatelů, přejděte do"
@@ -5832,11 +5832,11 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "username": [
-        "uživatelské jméno"
-      ],
       "Username": [
         "Uživatelské jméno"
+      ],
+      "username": [
+        "uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -6422,10 +6422,10 @@
       "Allow recovery by phone": [
         "Povolit obnovení telefonem"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6477,7 +6477,7 @@
         "Verze prohlížeče"
       ],
       "BTC address": [
-        "Adresa BTC"
+        "BTC adresa"
       ],
       "BTC amount": [
         "Částka BTC"
@@ -7011,7 +7011,7 @@
         "Ano, chci trvale smazat tento účet a všechna data s ním spojená."
       ],
       "Your password (admin)": [
-        "Vaše heslo (admin)"
+        "Vaše heslo (správce)"
       ],
       "ZIP code": [
         "PSČ"
@@ -7474,29 +7474,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Smazat účet"
-      ],
-      "Downgrade account": [
-        "Snížit úroveň účtu"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Získat ${ BRAND_NAME } zdarma"
-      ],
-      "Get ${ planName }": [
-        "Získejte ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Ponechat ${ plan }"
-      ],
-      "Keep account": [
-        "Ponechat si svůj účet"
-      ],
-      "Switch plan": [
-        "Změnit tarif"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Snížit na ${ downgradedPlanName }"
@@ -7511,6 +7488,29 @@
         "Navýšit"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Smazat účet"
+      ],
+      "Downgrade account": [
+        "Downgrade účtu"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Získat ${ BRAND_NAME } zdarma"
+      ],
+      "Get ${ planName }": [
+        "Získat ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Ponechat ${ plan }"
+      ],
+      "Keep account": [
+        "Ponechat si svůj účet"
+      ],
+      "Switch plan": [
+        "Změnit tarif"
+      ]
+    },
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent psaní ${ BRAND_NAME } Scribe"
@@ -7520,15 +7520,9 @@
       ],
       "${ n } calendar": [
         "${ n } kalendář",
-        "${ n } kalendáře",
+        "${ n } kalendářů",
         "${ n } kalendářů",
         "${ n } kalendářů"
-      ],
-      "${ n } calendar per user": [
-        "${ n } kalendář na uživatele",
-        "${ n } kalendáře na uživatele",
-        "${ n } kalendářů na uživatele",
-        "${ n } kalendářů na uživatele"
       ],
       "${ n } custom email domain": [
         "${ n } vlastní e-mailová doména",
@@ -7548,29 +7542,11 @@
         "${ n } e-mailových adres na uživatele",
         "${ n } e-mailových adres na uživatele"
       ],
-      "${ n } filter": [
-        "${ n } filtr",
-        "${ n } filtry",
-        "${ n } filtrů",
-        "${ n } filtrů"
-      ],
       "${ n } folder": [
         "${ n } složka",
         "${ n } složky",
         "${ n } složek",
         "${ n } složek"
-      ],
-      "${ n } folder and label": [
-        "${ n } složka a štítek",
-        "${ n } složky a štítky",
-        "${ n } složek a štítků",
-        "${ n } složek a štítků"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } hide-my-email alias",
-        "${ n } hide-my-email aliasy",
-        "${ n } hide-my-email aliasů",
-        "${ n } hide-my-email aliasů"
       ],
       "${ n } label": [
         "${ n } štítek",
@@ -7681,7 +7657,7 @@
         "Aplikace pro"
       ],
       "Auto-delete Spam and Trash": [
-        "Automatické smazání obsahu složek spam a koš"
+        "Automatické smazání spamu a koše"
       ],
       "Auto-reply": [
         "Automatická odpověď"
@@ -7855,7 +7831,7 @@
         "Pravidelné kontroly zabezpečení účtu. Upozorníme vás, pokud máte slabá nebo opakovaně používaná hesla, která je třeba aktualizovat."
       ],
       "Require 2FA for organization": [
-        "Vyžaduje 2FA pro organizaci"
+        "Vyžadujte u vaší organizace 2FA"
       ],
       "Router support": [
         "Podpora routeru"
@@ -7888,7 +7864,7 @@
         "Přihlasit se jako uživatel"
       ],
       "SMTP submission": [
-        "SMTP odesílání"
+        "Odeslání SMTP"
       ],
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android a Windows)"
@@ -7912,7 +7888,7 @@
         "TOR skrze VPN"
       ],
       "Two-factor authentication": [
-        "Dvoufázové ověření"
+        "Dvoufaktorové ověření"
       ],
       "Unlimited devices": [
         "Neomezený počet zařízení"
@@ -8166,7 +8142,7 @@
         "Smazat účet?"
       ],
       "Downgrade account?": [
-        "Snížit účet na nižší úroveň?"
+        "Downgrade účtu?"
       ],
       "Review subscription and pay": [
         "Zkontrolovat předplatné a zaplatit"
@@ -8218,12 +8194,6 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Vytvořte více e-mailových adres pro své online identity, např. HonzaNakupy@${ domain } pro nákupní účty a HonzaZpravy@${ domain } pro odběry zpráv"
       ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Vytvořte až ${ n } kalendář nebo přidejte kalendáře přátel, rodiny, kolegů a organizací",
-        "Vytvořte až ${ n } kalendáře nebo přidejte kalendáře přátel, rodiny, kolegů a organizací",
-        "Vytvořte až ${ n } kalendářů nebo přidejte kalendáře přátel, rodiny, kolegů a organizací",
-        "Vytvořte až ${ n } kalendářů nebo přidejte kalendáře přátel, rodiny, kolegů a organizací"
-      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvořte si až ${ n } e-mailových adres/aliasů, které můžete přiřadit členům rodiny. Používejte je pro online identity, např. HonzaNakupy@${ domain } při nakupování."
       ],
@@ -8234,7 +8204,7 @@
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
-        "Chrání před hrozbami pro soukromí VPN předáváním vašeho internetového provozu přes více serverů"
+        "Chrání před ohrožením soukromí VPN tím, že váš internetový provoz prochází přes více serverů"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Chrání před ohrožením soukromí VPN tím, že váš internetový provoz prochází přes více serverů."
@@ -9060,11 +9030,17 @@
       "Bank transfer": [
         "Bankovní převod"
       ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
       "Credit/debit card": [
         "Kreditní/debetní karta"
       ],
       "New credit/debit card": [
         "Nová kreditní/debetní karta"
+      ],
+      "PayPal": [
+        "PayPal"
       ]
     },
     "Payment.Sepa.Action": {
@@ -9095,7 +9071,7 @@
         "Rozumím"
       ],
       "MM/YY": [
-        "MM/RR"
+        "00/00"
       ],
       "More plans are available in other currencies": [
         "Další tarify jsou k dispozici v jiných měnách"
@@ -9394,12 +9370,12 @@
     },
     "Price": {
       "Free": [
-        "Zdarma"
+        "Bezplatné"
       ]
     },
     "Recovery Email": {
       "Cancel": [
-        "Zrušit"
+        "Zpět"
       ],
       "Email address has been verified.": [
         "E-mailová adresa byla ověřena."
@@ -9417,7 +9393,7 @@
         "Ověřit e-mail obnovení?"
       ],
       "Verify with email": [
-        "Ověřit e-mailem"
+        "Ověřit přes e-mail"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Ověření e-mailové adresy zvyšuje zabezpečení účtu a umožňuje další možnosti obnovení."
@@ -9436,7 +9412,7 @@
     },
     "Recovery Phone": {
       "Cancel": [
-        "Zrušit"
+        "Zpět"
       ],
       "Phone number has been verified.": [
         "Telefonní číslo bylo ověřeno."
@@ -10492,7 +10468,7 @@
         "Odhlášeno"
       ],
       "Unknown": [
-        "Neznámý"
+        "Neznámá"
       ]
     },
     "State": {
@@ -10649,12 +10625,6 @@
         "${ n } VPN připojení",
         "${ n } VPN připojení"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN připojení na uživatele",
-        "${ n } VPN připojení na uživatele",
-        "${ n } VPN připojení na uživatele",
-        "${ n } VPN připojení na uživatele"
-      ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } adresa",
         "${ UsedAddresses } adresy",
@@ -10749,47 +10719,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription reminder": {
@@ -11094,9 +11023,50 @@
         "Váš vlastní krátký e-mailový alias @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
-        "Jste si jistý?"
+        "Jste si jisti?"
       ],
       "Auto-pay is disabled": [
         "Automatická platba je zakázána"
@@ -11105,7 +11075,7 @@
         "Automatická platba je povolena"
       ],
       "Disable": [
-        "Zakázat"
+        "Deaktivovat"
       ],
       "Enable auto-pay support": [
         "Zapnout podporu pro automatickou platbu"
@@ -11341,7 +11311,7 @@
     },
     "Suffix": {
       "/month": [
-        "/měsíc"
+        "/měsíčně"
       ],
       "/user per month": [
         "/uživatel měsíčně"
@@ -11349,7 +11319,7 @@
     },
     "Suffix for price": {
       "per month": [
-        "za měsíc"
+        "měsíčně"
       ],
       "per user per month": [
         "za uživatele měsíčně"
@@ -11595,7 +11565,7 @@
         "Automatické mazání je aktivní"
       ],
       "Billing cycle": [
-        "Fakturační cyklus"
+        "Fakturační období"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Zrušit předplatné ${ MAIL_SHORT_APP_NAME }"
@@ -11609,10 +11579,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -11787,7 +11757,7 @@
         "Názvy domén"
       ],
       "Downgrade account": [
-        "Snížit úroveň účtu"
+        "Downgrade účtu"
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Snížit na ${ downgradedPlanName }?"
@@ -11871,7 +11841,7 @@
         "Zadejte své detaily k ${ BRAND_NAME } účtu pro připojení k ${ app } Beta programu"
       ],
       "Enter your password": [
-        "Zadejte Vaše heslo"
+        "Zadejte své heslo"
       ],
       "Error": [
         "Chyba"
@@ -12048,7 +12018,7 @@
         "QR kód"
       ],
       "Recommended": [
-        "Doporučeno"
+        "Doporučené"
       ],
       "Recovery": [
         "Obnovení"
@@ -12847,12 +12817,6 @@
         "${ numberOfCountries } zemí",
         "${ numberOfCountries } zemí"
       ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } v ${ numberOfCountries } zemi",
-        "${ numberOfServers } ve ${ numberOfCountries } zemích",
-        "${ numberOfServers } v ${ numberOfCountries } zemích",
-        "${ numberOfServers } v ${ numberOfCountries } zemích"
-      ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } v ${ numberOfCountries } zemi",
         "${ numberOfServers } v ${ numberOfCountries } zemích",
@@ -12888,7 +12852,7 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Vaše předplatné se automaticky obnoví za ${ cycle } měsíc.",
         "Vaše předplatné se automaticky obnoví za ${ cycle } měsíce.",
-        "Vaše předplatné se automaticky obnoví za ${ cycle } měsíců.",
+        "Vaše předplatné se automaticky obnoví za ${ cycle } měsíce.",
         "Vaše předplatné se automaticky obnoví za ${ cycle } měsíců."
       ]
     },
