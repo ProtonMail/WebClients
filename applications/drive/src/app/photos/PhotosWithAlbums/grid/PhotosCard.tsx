@@ -174,7 +174,10 @@ export const PhotosCard: FC<Props> = ({
                                 className="w-full h-full photos-card-thumbnail rounded"
                             />
                         ) : (
-                            <div className="flex items-center justify-center w-full h-full photos-card-thumbnail photos-card-thumbnail--empty">
+                            <div
+                                className="flex items-center justify-center w-full h-full photos-card-thumbnail photos-card-thumbnail--empty"
+                                data-testid={getAltText(photo)}
+                            >
                                 <FileIcon mimeType={photo.mimeType || ''} size={12} />
                             </div>
                         )}

@@ -124,6 +124,7 @@ export const TitleArea = ({
                     <Button
                         shape="ghost"
                         className="inline-flex flex-nowrap flex-row text-semibold items-center"
+                        data-testid="toolbar-go-back"
                         onClick={() => {
                             if (!albumShareId || !albumLinkId) {
                                 return;
