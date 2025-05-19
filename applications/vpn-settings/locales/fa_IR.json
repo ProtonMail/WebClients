@@ -8,17 +8,20 @@
       "${ BRAND_NAME } shop": [
         "فروشگاه ${ BRAND_NAME }"
       ],
-      "activate": [
-        "فعال‌سازی"
-      ],
       "Activate": [
         "فعالسازی"
+      ],
+      "activate": [
+        "فعال‌سازی"
       ],
       "Activate organization key": [
         "کلید سازمان را فعال کنید"
       ],
       "Add": [
         "افزودن"
+      ],
+      "Add account": [
+        "افزودن حساب"
       ],
       "Add address": [
         "افزودن نشانی"
@@ -92,6 +95,9 @@
       "Copy address": [
         "روگرفت نشانی"
       ],
+      "Copy password": [
+        "کپی گذرواژه"
+      ],
       "Create": [
         "ایجاد"
       ],
@@ -99,7 +105,7 @@
         "ایجاد پوشه"
       ],
       "Current plan": [
-        "طرح فعلی"
+        "اشتراک کنونی"
       ],
       "Customize plan": [
         "طرح خود را شخصی سازی کنید"
@@ -109,6 +115,9 @@
       ],
       "Delete": [
         "حذف"
+      ],
+      "Delete account": [
+        "حذف حساب کاربری"
       ],
       "Delete user": [
         "حذف کاربر"
@@ -188,8 +197,8 @@
       "Fit to window": [
         "متناسب کردن با پنجره"
       ],
-      "Forgot password?": [
-        "فراموشی گذرواژه?"
+      "Get ${ planOrAppName }": [
+        "دریافت ${ planOrAppName }"
       ],
       "Get a new encrypted email address": [
         "دریافت یک آدرس ایمیل رمزگذاری شده جدید"
@@ -214,6 +223,9 @@
       ],
       "Invite": [
         "دعوت"
+      ],
+      "Keep editing": [
+        "ادامه ویرایش"
       ],
       "Load more": [
         "بارگذاری بیشتر"
@@ -371,10 +383,10 @@
       "Select country": [
         "انتخاب کشور"
       ],
-      "Select file": [
+      "select file": [
         "انتخاب فایل"
       ],
-      "select file": [
+      "Select file": [
         "انتخاب فایل"
       ],
       "Send code": [
@@ -411,7 +423,7 @@
         "نمایش پیش‌نمایش"
       ],
       "Sign in": [
-        "ورود"
+        "ورود به حساب"
       ],
       "Sign in with password": [
         "ورود با گذرواژه"
@@ -445,6 +457,9 @@
       ],
       "Switch or add account": [
         "تغییر یا افزودن حساب"
+      ],
+      "Take a tour": [
+        "نمایش آموزش"
       ],
       "Top up": [
         "شارژ مجدد"
@@ -526,10 +541,6 @@
       ]
     },
     "Addon": {
-      "${ ips } server": [
-        "${ ips } سرور",
-        "${ ips } سرور"
-      ],
       "${ users } user": [
         "${ users } کاربر",
         "${ users } کاربران"
@@ -622,9 +633,37 @@
         "ضمانت ۳۰ روزهٔ بازگشت پول"
       ]
     },
+    "BF2024: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } فضای ذخیره سازی"
+      ],
+      "1 user": [
+        "۱ کاربر"
+      ],
+      "10 email addresses": [
+        "۱۰ نشانی ایمیل"
+      ],
+      "2 users": [
+        "2 کاربر"
+      ],
+      "6 users": [
+        "6 کاربر"
+      ],
+      "Ad-blocker and malware protection": [
+        "محدودسازی تبلیغات و محافظت در برابر بدافزارها"
+      ],
+      "VPN Accelerator": [
+        "شتاب دهنده VPN"
+      ]
+    },
+    "Billing cycle": {
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "بطور خودکار در ${ subscriptionManagerName } تمدید میشود"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
-        "1 ماه"
+        "۱ ماه"
       ],
       "12 months": [
         "12 ماه"
@@ -637,6 +676,11 @@
       ],
       "Two-year": [
         "دو ساله"
+      ]
+    },
+    "Blog": {
+      "Watch your favorite movies and TV shows": [
+        "فیلم‌ها و برنامه‌های تلویزیونی مورد علاقه‌تان را تماشا کنید"
       ]
     },
     "Bug category": {
@@ -711,21 +755,34 @@
       ]
     },
     "Button": {
+      "Close": [
+        "بستن"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "ادامه با استفاده از ${ MAIL_APP_NAME }."
       ],
       "Continue using ${ planTitle }": [
         "ادامه با استفاده از ${ planTitle }"
+      ],
+      "Create label": [
+        "ایجاد برچسب"
+      ],
+      "Take a tour": [
+        "نمایش آموزش"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } فضای ذخیره سازی"
+      ],
+      "Save ${ upsellSavings }": [
+        "${ upsellSavings } پس‌انداز کنید"
       ]
     },
     "Checkout row": {
       "${ users } user": [
         "${ users } کاربر",
         "${ users } کاربر"
-      ],
-      "Total for ${ n } month": [
-        "جمعا برای ${ n } ماه",
-        "جمعا برای ${ n } ماه‌ها"
       ]
     },
     "Checkout summary": {
@@ -1690,6 +1747,23 @@
         "به پیشرفت ما کمک کنید"
       ]
     },
+    "Download": {
+      "Android": [
+        "اندروید"
+      ],
+      "Browser": [
+        "مرورگر"
+      ],
+      "macOS": [
+        "سیستم عامل مک"
+      ],
+      "Mobile": [
+        "همراه"
+      ],
+      "Windows": [
+        "ویندوز"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Priority support": [
         "اولویت پشتیبانی"
@@ -1954,6 +2028,9 @@
       "customer support": [
         "پشتیبانی مشتری"
       ],
+      "Manage addresses": [
+        "مدیریت نشانی‌ها"
+      ],
       "Pending": [
         "در انتظار"
       ]
@@ -1990,6 +2067,9 @@
       ],
       "Continue": [
         "ادامه"
+      ],
+      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
+        "همه چیز موجود در ${ PLAN_NAMES[PLANS.VPN2024] }"
       ],
       "Fastest VPN servers": [
         "سریع‌ترین سرورهای وی‌پی‌ان"
@@ -2028,6 +2108,11 @@
     "fido2: Label": {
       "Security key": [
         "کلید امنیتی"
+      ]
+    },
+    "fido2: Title": {
+      "Security keys": [
+        "کلیدهای امنیتی"
       ]
     },
     "file size format": {
@@ -2126,8 +2211,14 @@
       "Device": [
         "دستگاه"
       ],
+      "Enter your email address": [
+        "نشانی ایمیل خود را وارد کنید"
+      ],
       "Event": [
         "رویداد"
+      ],
+      "IP address": [
+        "آدرس IP"
       ],
       "Key type": [
         "نوع کلید"
@@ -2200,14 +2291,27 @@
     "Headline": {
       "Contact us": [
         "تماس با ما"
+      ],
+      "Upgrade your privacy": [
+        "حريم خصوصی خود را ارتقا دهید"
+      ],
+      "Your plan": [
+        "طرح شما"
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } پیشنهاد یافت شد، از صفحه کلید برای پیمایش استفاده کنید.",
+        "${ itemsCount } پیشنهاد یافت شد، از صفحه کلید برای پیمایش استفاده کنید."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "پس از درج، از کلیدهای بالا و پایین برای دسترسی و مرور پیشنهادها استفاده کنید. برای تایید انتخاب خود Enter را فشار داده یا برای بستن جعبه پیشنهادات Escape را فشار دهید."
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "کپچا"
+      ],
       "Email": [
         "رایانامه"
       ],
@@ -2216,6 +2320,9 @@
       ],
       "No verification method available": [
         "هیچ شیوه تاییدی در دسترس نیست"
+      ],
+      "SMS": [
+        "پیامک"
       ]
     },
     "Info": {
@@ -2224,6 +2331,9 @@
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } اگر ادامه دهید تمام داده های رمزگذاری شده موجود در حساب خود را از دست میدهید."
+      ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } و ${ CALENDAR_APP_NAME }"
       ],
       "${ n } address": [
         "${ n } نشانی",
@@ -2249,6 +2359,13 @@
       "(${ memberCount } member)": [
         "(${ memberCount } عضو)",
         "(${ memberCount } عضو)"
+      ],
+      "(default)": [
+        "(پیش‌فرض)"
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } دیگر",
+        "+ ${ invisibleCount } دیگر"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } فضای ذخیره‌سازی هدیه"
@@ -2283,6 +2400,9 @@
       ],
       "Add domain": [
         "افزودن دامنه"
+      ],
+      "Address copied to clipboard": [
+        "نشانی به حافظه موقت روگرفت شد"
       ],
       "Admin account allocation": [
         "تخصیص حساب مدیر"
@@ -2347,6 +2467,9 @@
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
         "برای دیگران ایمیل ایجاد کنید، ${ MAIL_APP_NAME } را برای مشاغل، مدرسه یا گروه مدیریت کنید. با افزودن نام سازمان و دامنه سفارشی خود شروع کنید (برای مثال yourcompany.com@). "
       ],
+      "Create your first Gateway": [
+        "اولین دروازه خود را ایجاد کنید."
+      ],
       "Creating your account": [
         "درحال ایجاد حساب کاربری شما"
       ],
@@ -2361,6 +2484,9 @@
       ],
       "Custom email domains": [
         "دامنه های ایمیل سفارشی"
+      ],
+      "default email address": [
+        "آدرس ایمیل پیش‌فرض"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "سایر سوابق MX را حذف کنید یا مطمئن شوید که اولویت ${ MAIL_APP_NAME } کمترین عدد است."
@@ -2402,6 +2528,9 @@
       "Emailing preference saved": [
         "تنظیمات رایانامه‌نگاری بروز شد"
       ],
+      "End date": [
+        "تاریخ پایان"
+      ],
       "Enter key manually instead": [
         "در عوض کلید را به صورت دستی وارد کنید"
       ],
@@ -2426,9 +2555,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "آدرس ایمیل یا نام کاربری حساب ${ BRAND_NAME } خودرا وارد کنید."
       ],
-      "Enter your own password (as organization admin).": [
-        "گذرواژه خود را وارد نمایید (به عنوان مدیر سازمان)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "رایانشانی بازیابی خود را وارد کنید و ما نام کاربری‌ یا رایانشانی شما را برایتان ارسال خواهیم کرد."
       ],
@@ -2446,6 +2572,9 @@
       ],
       "Get ${ upsellPlanName }": [
         "دریافت ${ upsellPlanName }"
+      ],
+      "Groups": [
+        "گروه‌ها"
       ],
       "here": [
         "اینجا"
@@ -2558,6 +2687,12 @@
       "of": [
         "از"
       ],
+      "Off": [
+        "خاموش"
+      ],
+      "On": [
+        "روشن"
+      ],
       "Open source": [
         "متن‌باز"
       ],
@@ -2593,6 +2728,9 @@
       ],
       "Plus or Visionary subscription required": [
         "اشتراک Plus یا Visionary مورد نیاز است"
+      ],
+      "Preference saved": [
+        "تنظیمات ذخیره شد"
       ],
       "Preview": [
         "پیش‌نمایش"
@@ -2654,6 +2792,9 @@
       "Step ${ step }": [
         "قدم ${ step }",
         "مرحله ${ step }"
+      ],
+      "Storage": [
+        "حافظه"
       ],
       "Storage allocated to other users in this organisation": [
         "فضای ذخیره سازی اختصاص داده شده به کابران دیگر این سازمان"
@@ -2723,9 +2864,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "برای تایید، لطفا نام کاربری که مایلید حذف کنید را وارد کنید."
       ],
-      "to continue to ${ product }": [
-        "برای ادامه به ${ product }"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "برای نبرد با هرزنامه و سوء استفاده، لطفا تایید کنید که شما انسان هستید."
       ],
@@ -2767,6 +2905,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "از اطلاعات ذیل برای اتصال به سرورهای ${ VPN_APP_NAME } بدون برنامه استفاده کنید. مثال های موارد استفاده: Tunnelblick در macOS، OpenVPN در لینوکس/GNU."
+      ],
+      "Username": [
+        "نام‌کاربری"
       ],
       "username": [
         "نام‌کاربری"
@@ -2968,6 +3109,10 @@
       ]
     },
     "Label": {
+      "${ group.UserCount } user": [
+        "${ group.UserCount } کاربر",
+        "${ group.UserCount } کاربر"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } از ${ humanMaxSpace }"
       ],
@@ -2997,6 +3142,9 @@
       ],
       "Addresses": [
         "نشانی‌ها"
+      ],
+      "Advanced": [
+        "پیشرفته"
       ],
       "Allow": [
         "اجازه بده"
@@ -3050,7 +3198,7 @@
         "صاحب کارت"
       ],
       "Card number": [
-        "شماره کارت"
+        "شماره كارت"
       ],
       "Cash": [
         "نقدی"
@@ -3096,6 +3244,9 @@
       ],
       "Could you please specify?": [
         "آیا می‌توانید آن را واضح‌تر کنید؟"
+      ],
+      "Countries": [
+        "کشورها"
       ],
       "Country": [
         "کشور"
@@ -3145,14 +3296,23 @@
       "Email or username": [
         "رایانامه یا نام‌کاربری"
       ],
+      "Enabled": [
+        "فعال"
+      ],
       "Enter the code displayed on your TV": [
         "کد نشان داده شده بر روی تلویزیون خود را وارد کنید"
+      ],
+      "Enter your password": [
+        "کلمه عبور خود را وارد نمایید"
       ],
       "Event": [
         "رویداد"
       ],
       "Expires": [
         "تاریخ انقضا"
+      ],
+      "First name": [
+        "نام"
       ],
       "Folder location": [
         "مکان پوشه"
@@ -3163,11 +3323,17 @@
       "Group name": [
         "نام گروه"
       ],
+      "Groups": [
+        "گروه‌ها"
+      ],
       "Hide password": [
         "پنهان‌سازی گذرواژه"
       ],
       "Import all messages": [
         "واردسازی همه پیام ها"
+      ],
+      "Integrated 2FA authenticator": [
+        "احراز هویت دو عاملی یکپارچه"
       ],
       "Interval": [
         "بازه"
@@ -3186,6 +3352,9 @@
       ],
       "Last month only": [
         "فقط ماه اخیر"
+      ],
+      "Last name": [
+        "نام خانوادگی"
       ],
       "Level for NetShield blocker filtering": [
         "سطح فیلتر کردن مسدود کننده NetShield"
@@ -3292,6 +3461,9 @@
       "Recovery phrase": [
         "عبارت بازیابی"
       ],
+      "Remove": [
+        "حذف کردن"
+      ],
       "Reveal password": [
         "افشای گذرواژه"
       ],
@@ -3306,6 +3478,9 @@
       ],
       "Start date": [
         "تاریخ شروع"
+      ],
+      "State": [
+        "ایالت"
       ],
       "Street address": [
         "نشانی خیابان"
@@ -3334,6 +3509,9 @@
       "Username": [
         "نام کاربری"
       ],
+      "Users": [
+        "کاربر"
+      ],
       "Verification code": [
         "کد تایید"
       ],
@@ -3352,8 +3530,8 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "بلی، من می‌خواهم که برای همیشه این حساب و همه داده‌هایش را حذف کنم."
       ],
-      "Your password (admin)": [
-        "گذرواژه شما (مدیر)"
+      "ZIP code": [
+        "کد پستی"
       ]
     },
     "label": {
@@ -3475,6 +3653,9 @@
       ],
       "Request an invite": [
         "درخواست دعوت‌نامه"
+      ],
+      "settings": [
+        "تنظیمات"
       ],
       "Sign in": [
         "ورود"
@@ -3602,12 +3783,26 @@
         "سرعت متوسط VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "تنزل به ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "همه طرح های ${ BRAND_NAME } را بررسی کنید"
+      ],
+      "From ${ price }": [
+        "از ${ price }"
+      ],
+      "Upgrade": [
+        "ارتقاء"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "حذف حساب کاربری"
       ],
       "Downgrade account": [
-        "اکانت را تنزل دهید"
+        "تنزیل درجه حساب کاربری"
       ],
       "Get ${ BRAND_NAME } for free": [
         "دریافت ${ BRAND_NAME } بطور رایگان"
@@ -3623,20 +3818,6 @@
       ],
       "Switch plan": [
         "تغییر دادن طرح"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "تنزل به ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "همه طرح های ${ BRAND_NAME } را بررسی کنید"
-      ],
-      "From ${ price }": [
-        "از ${ price }"
-      ],
-      "Upgrade": [
-        "ارتقاء"
       ]
     },
     "new_plans: feature": {
@@ -3671,10 +3852,6 @@
         "${ n } پوشه و برچسب",
         "${ n } پوشه و برچسب"
       ],
-      "${ n } label": [
-        "${ n } برچسب",
-        "${ n } برچسب"
-      ],
       "${ n } message per day": [
         "${ n } پیام در روز",
         "${ n } پیام در روز"
@@ -3688,6 +3865,9 @@
       ],
       "${ size } storage": [
         "${ size } ذخیره سازی"
+      ],
+      "${ size } storage per user": [
+        "${ size } فضای ذخیره‌سازی برای هر کاربر"
       ],
       "1 user": [
         "۱ کاربر"
@@ -3750,7 +3930,7 @@
         "رمزگذاری سرتاسر"
       ],
       "Free VPN on a single device": [
-        "VPN رایگان در یک دستگاه"
+        "VPN رایگان روی یک دستگاه"
       ],
       "Fully refundable for 30 days": [
         "قابل بازگشت طی ۳۰ روز"
@@ -3780,6 +3960,9 @@
       "Password-protected Emails": [
         "ایمیل محافظت شده با رمزعبور"
       ],
+      "Phone support (20+ users)": [
+        "پشتیبانی تلفنی (20+ کاربر)"
+      ],
       "Priority email support": [
         "اولویت پشتیبانی ایمیلی"
       ],
@@ -3793,7 +3976,7 @@
         "پشتیبانی روتر"
       ],
       "Secure Core servers": [
-        "سرورهای هسته امن"
+        "سرورهای Secure Core"
       ],
       "Sign in as user": [
         "ورود بعنوان کاربر"
@@ -3803,6 +3986,9 @@
       ],
       "Strict no-logs policy": [
         "سیاست سخت‌گیرانه عدم ثبت رویدادها"
+      ],
+      "Tor over VPN": [
+        "Tor روی VPN"
       ],
       "Two-factor authentication": [
         "احراز هویت دو مرحله‌ای"
@@ -3839,6 +4025,12 @@
       ],
       "User session management": [
         "مدیریت نشست کاربر"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ users } user": [
+        "${ users } کاربر",
+        "${ users } کاربران"
       ]
     },
     "new_plans: heading": {
@@ -3878,13 +4070,13 @@
         "فضای ابری امن که به شما اجازه می دهد تا به راحتی و ایمن فایلهای خود را ذخیره، همگام‌سازی و به اشتراک بگذارید."
       ],
       "Secure email with advanced features for your everyday communications.": [
-        "ایمیل امن با امکانات پیشرفته برای ارتباطات روزمره شما."
+        "ایمیل امن با قابلیت‌های پیشرفته برای ارتباطات روزانهٔ شما."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "راه حل VPN اختصاصی که دسترسی امن، بدون محدودیت و با سرعت بالا به اینترنت را ارائه میکند."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "حساب آغازین بدون هزینه طراحی شده تا به هر کسی با حریم خصوصی بصورت پیش فرض قدرت بدهد."
+        "حساب بی‌هزینهٔ آغازگر طراحی شده است حریم‌خصوصی را به هرکسی به‌صورت پیش‌فرض اعطا می‌کند."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "شما در حال لذت بردن از قیمتی تبلیغاتی بر روی طرح فعلی خود هستید. اگر حساب خود را حذف کنید، قیمت تبلیغاتی خود را از دست خواهید داد و اگر حساب جدیدی بسازید دیگر در دسترس نخواهد بود."
@@ -4020,6 +4212,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "برای کاربران رمزعبور کاربری و تایید دو مرحله ای را بازیابی کنید"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "با تنها یک کلیک ترافیک اینترنت خود را از طریق شبکه Tor عبور دهید"
+      ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "جزئیات مخاطبین خود را مانند شماره تلفن، آدرس، روز تولد و یادداشت های شخصی را بطور امن ذخیره کنید. رمزگذاری دسترسی صفر تضمین میکند که ${ BRAND_NAME } هیچوقت به آنها دسترسی نداشته باشد."
       ],
@@ -4085,6 +4280,20 @@
         "پشتیبانی از ${ n } دامنه ایمیل سفارشی"
       ]
     },
+    "news": {
+      "${ BRAND_NAME } offers and promotions": [
+        "$پیشنهادات و تبلیغات ${ BRAND_NAME }"
+      ],
+      "1 email per month": [
+        "1 رایانامه در هر ماه"
+      ],
+      "1 email per quarter": [
+        "1 رایانامه در هر 3 ماه"
+      ],
+      "1-2 emails per month": [
+        "1-2 رایانامه در هر ماه"
+      ]
+    },
     "Notification": {
       "Invalid code": [
         "کد نامعتبر است"
@@ -4094,6 +4303,25 @@
       ],
       "Too many recent API requests": [
         "تعداد درخواست‌های API اخیر بیش از حد زیاد است"
+      ]
+    },
+    "Offer": {
+      "Maybe later": [
+        "شاید بعدا"
+      ],
+      "Save": [
+        "ذخیره"
+      ]
+    },
+    "Offer feature": {
+      "Email addresses": [
+        "آدرس ایمیل"
+      ],
+      "Free": [
+        "رایگان"
+      ],
+      "Storage": [
+        "حافظه"
       ]
     },
     "Onboarding": {
@@ -4187,6 +4415,11 @@
         "کارت شما پذیرفته نشد. لطفا کارت دیگری را امتحان کنید یا با بانک خود تماس بگیرید تا مبلغ را اجازه دهند."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "رایگان"
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "راهی برای تماس با شما"
@@ -4259,6 +4492,12 @@
         "ﺗﻤﺎﺱ"
       ]
     },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } ماه",
+        "${ cycle } ماه"
+      ]
+    },
     "Price": {
       "Free": [
         "رایگان"
@@ -4266,7 +4505,7 @@
     },
     "Recovery Email": {
       "Cancel": [
-        "انصراف"
+        "لغو"
       ],
       "Email address has been verified.": [
         "آدرس ایمیل تایید شده است."
@@ -4300,7 +4539,7 @@
     },
     "Recovery Phone": {
       "Cancel": [
-        "انصراف"
+        "لغو"
       ],
       "Phone number has been verified.": [
         "شماره تلفن تایید شده است."
@@ -4537,6 +4776,9 @@
       "/ month": [
         "/ ماه"
       ],
+      "/month": [
+        "/ماهانه"
+      ],
       "1 year": [
         "۱ سال"
       ],
@@ -4548,6 +4790,55 @@
       ],
       "30 months": [
         "30 ماه"
+      ],
+      "Save ${ discount }%": [
+        "${ discount } پس‌انداز کنید%"
+      ]
+    },
+    "sso": {
+      "Access denied": [
+        "دسترسی رد شد"
+      ],
+      "Approve the sign-in from another device": [
+        "تایید ورود از دستگاهی دیگر"
+      ],
+      "Cancel": [
+        "لغو"
+      ],
+      "Confirmation code": [
+        "کد تایید"
+      ],
+      "Deny": [
+        "رد کردن"
+      ],
+      "Share the confirmation code with your administrator": [
+        "اشتراک گذاری کد اعتبارسنجی با مدیر سیستم"
+      ],
+      "Sign in": [
+        "ورود به حساب"
+      ],
+      "Sign in to your organization": [
+        "به سازمان خود وارد شوید"
+      ],
+      "Use backup password instead": [
+        "استفاده از رمز عبور پشتیبان"
+      ],
+      "Welcome": [
+        "خوش آمدید"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "فعال"
+      ],
+      "Inactive": [
+        "غیرفعال"
+      ],
+      "Signed out": [
+        "از حساب خارج شده"
+      ],
+      "Unknown": [
+        "ناشناخته"
       ]
     },
     "Storage": {
@@ -4639,15 +4930,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "متوجه شدم"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "۱۵ گیگابایت فضای ذخیره‌سازی"
-      ],
-      "Upgrade": [
-        "ارتقاء"
+        "فهمیدم"
       ]
     },
     "Subscription reminder": {
@@ -4656,6 +4939,25 @@
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } فضای ذخیره‌سازی کلی"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } دامنه ایمیل سفارشی",
+        "${ planNumberOfDomains } دامنه ایمیل سفارشی"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } آدرس ایمیل",
+        "${ planNumberOfEmails } آدرس ایمیل"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } آدرس ایمیل برای هر کاربر",
+        "${ planNumberOfEmails } آدرس ایمیل برای هر کاربر"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } کاربر",
+        "${ planNumberOfUsers } کاربر"
+      ],
+      "2 users": [
+        "2 کاربر"
       ],
       "Got it": [
         "متوجه شدم"
@@ -4670,9 +4972,22 @@
         "اولویت پشتیبانی"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "۱۵ گیگابایت فضای ذخیره‌سازی"
+      ],
+      "Upgrade": [
+        "ارتقاء"
+      ]
+    },
     "Subscription renewal state": {
       "Disable": [
         "غیرفعال"
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "${ priceString } پس‌انداز کنید"
       ]
     },
     "Subscription status": {
@@ -4925,7 +5240,10 @@
         "حساب کاربری معلق شده است"
       ],
       "Action": [
-        "اقدام"
+        "عملیات"
+      ],
+      "Actions": [
+        "اقدامات"
       ],
       "Activate organization key": [
         "کلید سازمان را فعال کنید"
@@ -4969,11 +5287,11 @@
       "Card verification": [
         "تایید کارت"
       ],
-      "Catch-All address": [
-        "نشانی همه‌گیر"
-      ],
       "Catch-all address": [
         "نشانی دریافت-همه"
+      ],
+      "Catch-All address": [
+        "نشانی همه‌گیر"
       ],
       "Change login password": [
         "گذرواژه ورود را تغییر دهید"
@@ -5024,7 +5342,7 @@
         "در حال ایجاد حساب های کاربری"
       ],
       "Credits": [
-        "اعتبار"
+        "اعتبارها"
       ],
       "Currency": [
         "واحد پول"
@@ -5035,11 +5353,17 @@
       "Delete": [
         "حذف"
       ],
+      "Delete ${ policyName }?": [
+        "حذف ${ policyName }?"
+      ],
       "Delete account": [
         "حذف حساب کاربری"
       ],
       "Delete user?": [
         "حذف کاربر?"
+      ],
+      "Device": [
+        "دستگاه"
       ],
       "Device connected!": [
         "دستگاه متصل شد!"
@@ -5092,9 +5416,6 @@
       "Email subscriptions": [
         "اشتراک‌های رایانامه"
       ],
-      "Enter your password": [
-        "گذرواژه خود را وارد کنید"
-      ],
       "Error": [
         "خطا"
       ],
@@ -5122,6 +5443,9 @@
       "Groups": [
         "گروه‌ها"
       ],
+      "Home": [
+        "خانه"
+      ],
       "Human verification": [
         "تشخیص انسان"
       ],
@@ -5130,6 +5454,9 @@
       ],
       "Invoices": [
         "صورت‌حساب‌ها"
+      ],
+      "Limit reached": [
+        "حداکثر تعداد مجاز"
       ],
       "Main password": [
         "گذرواژه اصلی"
@@ -5198,7 +5525,7 @@
         "در حال پردازش..."
       ],
       "Recommended": [
-        "پیشنهاد شده"
+        "توصیه شده"
       ],
       "Recovery": [
         "بازیابی"
@@ -5268,6 +5595,9 @@
       ],
       "Type": [
         "نوع"
+      ],
+      "Upgrade your privacy": [
+        "حريم خصوصی خود را ارتقا دهید"
       ],
       "User": [
         "کاربر"
@@ -5368,11 +5698,53 @@
     "Tor out of date": {
       "stable release": [
         "نسخه پایدار"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "این نسخه از مرورگر Tor پشتیبانی نمیشود. لطفا به آخرین نسخه ${ stableRelease } بروزرسانی کنید"
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "بازگشت هزینه"
+      ],
+      "Failed": [
+        "ناموفق"
+      ],
+      "Success": [
+        "موفقیت آمیز"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Cash": [
+        "نقدی"
+      ],
+      "Chargeback": [
+        "بازگشت هزینه"
+      ],
+      "Credit": [
+        "اعتبار"
+      ],
+      "Payment": [
+        "پرداخت"
+      ],
+      "Refund": [
+        "باز پرداخت"
+      ]
+    },
+    "unprivatization": {
+      "Cancel request": [
+        "لغو درخواست"
       ]
     },
     "upsell panel": {
+      "Best deal": [
+        "بهترین پیشنهاد"
+      ],
       "Recommended": [
         "توصیه شده"
+      ],
+      "Save ${ price.uiData.discountPercent }%": [
+        "${ price.uiData.discountPercent } پس‌انداز کنید%"
       ]
     },
     "User role": {
@@ -5416,6 +5788,9 @@
       ]
     },
     "Users table: badge": {
+      "Inactive": [
+        "غیرفعال"
+      ],
       "Private": [
         "خصوصی"
       ]
@@ -5444,6 +5819,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } دستگاه",
+        "${ n } دستگاه"
+      ],
       "${ n } server": [
         "${ n } سرور",
         "${ n }+ سرور"
@@ -5451,6 +5830,10 @@
       "${ n } VPN connection": [
         "${ n } اتصال VPN",
         "${ n } اتصال VPN"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } کشور",
+        "${ numberOfCountries } کشور"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } در ${ numberOfCountries } کشور",

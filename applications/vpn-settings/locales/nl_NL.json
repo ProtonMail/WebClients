@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
-      "activate": [
-        "activeer"
-      ],
       "Activate": [
         "Activeren"
+      ],
+      "activate": [
+        "activeer"
       ],
       "Activate organization key": [
         "Organisatiesleutel activeren"
@@ -82,7 +82,7 @@
         "Gebruiker toevoegen"
       ],
       "Allow": [
-        "Toestaan"
+        "Geautoriseerde adressen"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "Versleutelde end-to-end e-mail voor deze groep toestaan"
@@ -107,9 +107,6 @@
       ],
       "Back": [
         "Terug"
-      ],
-      "Back to sign-in": [
-        "Terug naar aanmelden"
       ],
       "Block": [
         "Blokkeer"
@@ -267,11 +264,11 @@
       "Discard": [
         "Verwijderen"
       ],
-      "Discard Changes": [
-        "Wijzigingen annuleren"
-      ],
       "Discard changes": [
         "Wijzigingen weggooien"
+      ],
+      "Discard Changes": [
+        "Wijzigingen annuleren"
       ],
       "Discover ${ planName }": [
         "Ontdek ${ planName }"
@@ -374,9 +371,6 @@
       ],
       "Fit to window": [
         "Passend in venster"
-      ],
-      "Forgot password?": [
-        "Wachtwoord vergeten?"
       ],
       "Forgot recovery method?": [
         "Herstelmethode vergeten?"
@@ -699,11 +693,11 @@
       "Select country ${ country }": [
         "Selecteer land ${ country }"
       ],
-      "Select file": [
-        "Selecteer bestand"
-      ],
       "select file": [
         "selecteer bestand"
+      ],
+      "Select file": [
+        "Selecteer bestand"
       ],
       "Send code": [
         "Code versturen"
@@ -772,7 +766,7 @@
         "Voorbeeld tonen"
       ],
       "Sign in": [
-        "Inloggen"
+        "Aanmelden"
       ],
       "Sign in with password": [
         "Aanmelden met wachtwoord"
@@ -2645,7 +2639,7 @@
     },
     "Cycle": {
       "/month": [
-        "/maand"
+        "/maandelijks"
       ],
       "/user per month": [
         "/gebruiker per maand"
@@ -4073,7 +4067,7 @@
     },
     "Header": {
       "App version": [
-        "App versie"
+        "App-versie"
       ],
       "Best deal": [
         "Beste deal"
@@ -4664,11 +4658,11 @@
       "Data recoverable on this device": [
         "Gegevens herstelbaar op dit apparaat"
       ],
-      "dedicated servers": [
-        "toegewijde servers"
-      ],
       "Dedicated servers": [
         "Dedicated servers"
+      ],
+      "dedicated servers": [
+        "toegewijde servers"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
@@ -4857,9 +4851,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Voer het e-mailadres of de gebruikersnaam van uw ${ BRAND_NAME }-account in."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Voer uw herstel-e-mailadres in en wij sturen u uw gebruikersnaam of e-mailadres."
@@ -5733,9 +5724,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Om te bevestigen, voer de naam in van de gebruiker die u wilt verwijderen."
       ],
-      "to continue to ${ product }": [
-        "om door te gaan naar ${ product }"
-      ],
       "To create your first user group, go to": [
         "Om uw eerste gebruikersgroep aan te maken, ga naar"
       ],
@@ -5841,11 +5829,11 @@
       "User activated": [
         "Gebruiker geactiveerd"
       ],
-      "username": [
-        "gebruikersnaam"
-      ],
       "Username": [
         "Gebruikersnaam"
+      ],
+      "username": [
+        "gebruikersnaam"
       ],
       "Users": [
         "Gebruikers"
@@ -6401,11 +6389,11 @@
       "Allow recovery by phone": [
         "Herstellen via telefoon toestaan"
       ],
-      "Allowed Domain": [
-        "Toegestaan domein"
-      ],
       "Allowed domain": [
         "Domein toegestaan"
+      ],
+      "Allowed Domain": [
+        "Toegestaan domein"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Laat iedereen in uw organisatie toe om naadloos koppelingen aan hun agenda-uitnodigingen toe te voegen."
@@ -6984,9 +6972,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, ik wil permanent mijn account inclusief alle gegevens verwijderen."
       ],
-      "Your password (admin)": [
-        "Uw wachtwoord (admin)"
-      ],
       "ZIP code": [
         "Postcode"
       ]
@@ -7414,7 +7399,7 @@
     },
     "Navigation": {
       "All": [
-        "Alles"
+        "Alle"
       ],
       "Allow": [
         "Geautoriseerde adressen"
@@ -7448,6 +7433,20 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Bekijk alle ${ BRAND_NAME }-abonnementen"
+      ],
+      "From ${ price }": [
+        "Vanaf ${ price }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -7471,30 +7470,12 @@
         "Van abonnement wisselen"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Bekijk alle ${ BRAND_NAME }-abonnementen"
-      ],
-      "From ${ price }": [
-        "Vanaf ${ price }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ]
-    },
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } en ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ n } calendar": [
-        "${ n } agenda",
-        "${ n } agenda's"
       ],
       "${ n } calendar per user": [
         "${ n } agenda per gebruiker",
@@ -7524,14 +7505,6 @@
         "${ n } map en label",
         "${ n } mappen en labels"
       ],
-      "${ n } hide-my-email alias": [
-        "${ n } hide-my-email-alias",
-        "${ n } hide-my-email-aliassen"
-      ],
-      "${ n } label": [
-        "${ n } label",
-        "${ n } labels"
-      ],
       "${ n } message per day": [
         "${ n } bericht per dag",
         "${ n } berichten per dag"
@@ -7558,10 +7531,6 @@
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + levenslang SimpleLogin"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } met ${ n } hide-my-email-aliassen",
-        "${ PASS_APP_NAME } met ${ n } hide-my-email aliassen"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } met onbeperkte hide-my-email-aliassen"
@@ -7636,7 +7605,7 @@
         "Beschikbaar op alle platformen"
       ],
       "Calendar sharing": [
-        "Agenda-delen"
+        "Agenda's delen"
       ],
       "Catch-all": [
         "Catch-all"
@@ -7651,7 +7620,7 @@
         "Samenwerken en grote bestanden delen"
       ],
       "Contact groups": [
-        "Contactgroepen"
+        "Contactpersonen groep"
       ],
       "Contact groups management": [
         "Beheer van contactgroepen"
@@ -7666,7 +7635,7 @@
         "Aangepaste e-maildomeinen"
       ],
       "Custom fields": [
-        "Aangepaste velden"
+        "Zelf gedefinieerde velden"
       ],
       "Custom workspace branding": [
         "Aangepaste workspace branding"
@@ -7919,10 +7888,6 @@
       "User storage management": [
         "Beheer gebruikersopslag"
       ],
-      "Vault sharing (up to ${ n } person)": [
-        "Kluis delen (tot ${ n } persoon)",
-        "Kluis delen (tot ${ n } personen)"
-      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
       ]
@@ -8116,7 +8081,7 @@
         "Krijg toegang tot ${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME } via het gemak van uw desktop"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        "Bekijk content van streamingdiensten, waaronder Netflix, Disney+ en Prime Video, waar u maar wilt"
+        "Bekijk inhoud van streamingdiensten, waaronder Netflix, Disney+ en Prime Video, waar u maar wilt"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Adressen beschikken over alle functies voor verzenden en ontvangen. Aan één gebruiker kunnen meerdere adressen worden toegewezen; een adres kan echter niet aan meerdere gebruikers worden toegewezen."
@@ -8622,7 +8587,7 @@
         "Gratis server configuratiebestanden"
       ],
       "I found another service that I like better": [
-        "Ik heb een anderen service gevonden die mijn voorkeur heeft"
+        "Ik heb een andere service gevonden die mijn voorkeur heeft"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Ik gebruik een ander ${ BRAND_NAME }-account"
@@ -8951,6 +8916,9 @@
       "Bank transfer": [
         "Bankoverschrijving"
       ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
       "Credit/debit card": [
         "Krediet/debetkaart"
       ],
@@ -9058,7 +9026,7 @@
     },
     "Payments.Error": {
       "Invalid card number": [
-        "Ongeldig kaartnummer"
+        "Ongeldig creditcardnummer"
       ],
       "Invalid expiration date": [
         "Ongeldige vervaldatum"
@@ -10312,7 +10280,7 @@
         "Afgewezen"
       ],
       "Signed out": [
-        "Uitgelogd"
+        "Afgemeld"
       ],
       "Unknown": [
         "Onbekend"
@@ -10377,10 +10345,6 @@
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "We zullen de credits voor de resterende tijd toevoegen aan uw ${ BRAND_NAME }-account."
-      ],
-      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "U heeft nog **${ daysRemaining }** dag over van uw **${ currentPlanName }** abonnement.",
-        "U heeft nog **${ daysRemaining }** dagen over van uw **${ currentPlanName }** abonnement."
       ],
       "Your ${ appStorage } is almost full": [
         "Uw ${ appStorage } is bijna vol"
@@ -10448,14 +10412,6 @@
         "${ n } supersnelle VPN-verbinding",
         "${ n } supersnelle VPN-verbindingen"
       ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } supersnelle VPN-verbinding per gebruiker",
-        "${ n } supersnelle VPN-verbindingen per gebruiker"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-verbinding",
-        "${ n } VPN-verbindingen"
-      ],
       "${ n } VPN connection per user": [
         "${ n } VPN-verbinding per gebruiker",
         "${ n } VPN-verbindingen per gebruiker"
@@ -10506,7 +10462,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Begrepen"
+        "Ik begrijp het"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Log in op uw Apple App Store account, selecteer dan op ${ subscriptions }."
@@ -10540,47 +10496,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Voor ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
       ]
     },
     "Subscription reminder": {
@@ -10873,6 +10788,47 @@
         "Uw eigen korte @pm.me e-mailalias"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Weet u het zeker?"
@@ -11120,7 +11076,7 @@
     },
     "Suffix": {
       "/month": [
-        "/maand"
+        "/maandelijks"
       ],
       "/user per month": [
         "/gebruiker per maand"
@@ -11175,7 +11131,7 @@
         "Land"
       ],
       "Edit": [
-        "Bewerken"
+        "Bewerk"
       ],
       "Email": [
         "E-mail"
@@ -11372,7 +11328,7 @@
         "Automatisch verwijderen is actief"
       ],
       "Billing cycle": [
-        "Factuurperiode"
+        "Facturatieperiode"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME }-abonnement annuleren"
@@ -11386,11 +11342,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-All address": [
-        "Catch-All adres"
-      ],
       "Catch-all address": [
         "Catch-all adres"
+      ],
+      "Catch-All address": [
+        "Catch-All adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"
@@ -11643,9 +11599,6 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Vul uw ${ BRAND_NAME }-account gegevens in om deel te nemen aan het ${ app } Bèta programma"
       ],
-      "Enter your password": [
-        "Voer uw wachtwoord in"
-      ],
       "Error": [
         "Fout"
       ],
@@ -11813,7 +11766,7 @@
         "Vorige"
       ],
       "Processing...": [
-        "Wordt verwerkt..."
+        "Verwerken..."
       ],
       "QR Code": [
         "QR-code"
@@ -12593,10 +12546,6 @@
       "${ n } server": [
         "${ n } server",
         "${ n }+ servers"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-verbinding",
-        "${ n } VPN-verbindingen"
       ],
       "${ numberOfCountries } country": [
         "${ numberOfCountries } land",

@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktivovať"
-      ],
       "Activate": [
         "Aktivovať"
+      ],
+      "activate": [
+        "aktivovať"
       ],
       "Activate organization key": [
         "Aktivovať kľúč organizácie"
@@ -108,7 +108,7 @@
       "Back": [
         "Späť"
       ],
-      "Back to sign-in": [
+      "Back to sign in": [
         "Späť na prihlásenie"
       ],
       "Block": [
@@ -217,7 +217,7 @@
         "Vytvoriť používateľov"
       ],
       "Current plan": [
-        "Aktuálny plán"
+        "Súčasný plán"
       ],
       "Customize plan": [
         "Prispôsobiť plán"
@@ -229,7 +229,7 @@
         "Odstrániť"
       ],
       "Delete account": [
-        "Vymazať účet"
+        "Odstrániť účet"
       ],
       "Delete Gateway": [
         "Odstrániť bránu"
@@ -267,10 +267,10 @@
       "Discard": [
         "Zahodiť"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Zahodiť zmeny"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Zahodiť zmeny"
       ],
       "Discover ${ planName }": [
@@ -376,7 +376,7 @@
         "Prispôsobiť oknu"
       ],
       "Forgot password?": [
-        "Zabudnuté heslo?"
+        "Zabudli ste heslo?"
       ],
       "Forgot recovery method?": [
         "Zabudli ste metódu obnovenia?"
@@ -699,11 +699,11 @@
       "Select country ${ country }": [
         "Vyberte krajinu ${ country }"
       ],
-      "Select file": [
-        "Vyberte súbor"
-      ],
       "select file": [
         "vybrať súbor"
+      ],
+      "Select file": [
+        "Vyberte súbor"
       ],
       "Send code": [
         "Odoslať kód"
@@ -793,7 +793,7 @@
         "Preskočiť"
       ],
       "Spam": [
-        "Spam"
+        "Nevyžiadaná pošta"
       ],
       "Start live chat": [
         "Spustiť živý chat"
@@ -975,6 +975,9 @@
       ]
     },
     "Address action": {
+      "Allow unsigned mail": [
+        "Povoliť nepodpísanú poštu"
+      ],
       "Delete address": [
         "Vymazať adresu"
       ],
@@ -1540,7 +1543,7 @@
         "${ users } používateľ",
         "${ users } používatelia",
         "${ users } používateľov",
-        "${ users } používateľov"
+        "${ users } užívateľov"
       ],
       "Total": [
         "Celkom"
@@ -2714,10 +2717,10 @@
         "${ name } presunuté do zoznamu blokovaných"
       ],
       "${ name } moved to spam list": [
-        "Doména ${ name } bola presunutá do zoznamu nevyžiadaných"
+        "${ name } bola presunutá na zoznam spamov"
       ],
       "${ name } successfully deleted": [
-        "${ name } úspešne odstránené"
+        "${ name } úspešne odstránený"
       ]
     },
     "Downgrade account reason": {
@@ -2937,7 +2940,7 @@
     },
     "Email spam notification": {
       "${ name } added": [
-        "${ name } pridaný"
+        "${ name } pridaná"
       ],
       "${ name } deletion failed": [
         "${ name } sa nepodarilo odstrániť"
@@ -3615,7 +3618,7 @@
         "Odstrániť rodinnú skupinu?"
       ],
       "Delete organization?": [
-        "Odstrániť organizáciu"
+        "Zmazať organizáciu?"
       ],
       "Edit user storage": [
         "Upraviť úložisko používateľa"
@@ -3881,7 +3884,7 @@
         "Vyhľadať v zozname"
       ],
       "Spam:": [
-        "Spam:"
+        "Nevyžiadaná pošta:"
       ],
       "Take control over what lands in your organization members' inboxes by creating the following lists:": [
         "Získajte kontrolu nad tým, čo sa dostane do doručenej pošty členov vašej organizácie vytvorením nasledujúcich zoznamov:"
@@ -4009,7 +4012,7 @@
         "Typ kľúča"
       ],
       "Location": [
-        "Poloha"
+        "Umiestnenie"
       ],
       "Members": [
         "Členovia"
@@ -4603,7 +4606,7 @@
         "Kredit za nevyužitú časť vášho predchádzajúceho predplatného plánu"
       ],
       "Current plan": [
-        "Aktuálny plán"
+        "Súčasný plán"
       ],
       "Custom": [
         "Vlastné"
@@ -4623,11 +4626,11 @@
       "Data recoverable on this device": [
         "Údaje obnoviteľné v tomto zariadení"
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -4837,7 +4840,7 @@
         "Príklad: ${ spfExample }"
       ],
       "Expired": [
-        "Platnosť vypršala"
+        "Exspirované"
       ],
       "expires ${ expirationDate }": [
         "vyprší ${ expirationDate }"
@@ -5467,7 +5470,7 @@
         "Relácia vypršala"
       ],
       "Set up your organization": [
-        "Nastaviť svoju organizáciu"
+        "Nastavte svoju organizáciu"
       ],
       "Setting up ${ feature }…": [
         "Nastavovanie ${ feature }…"
@@ -5718,8 +5721,8 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Ak chcete potvrdiť, zadajte meno používateľa, ktorého chcete odstrániť."
       ],
-      "to continue to ${ product }": [
-        "pokračovať na ${ product }"
+      "To continue to ${ product }": [
+        "Pre pokračovanie do ${ product }"
       ],
       "To create your first user group, go to": [
         "Pre vytvorenie vašej prvej skupiny používateľov prejdite do"
@@ -5749,7 +5752,7 @@
         "Všetky e-mailové adresy"
       ],
       "Total storage": [
-        "Celkové úložisko "
+        "Celkové úložisko"
       ],
       "Total supported domains": [
         "Celkom podporovaných domén"
@@ -5826,11 +5829,11 @@
       "User activated": [
         "Používateľ aktivovaný"
       ],
-      "username": [
-        "používateľské meno"
-      ],
       "Username": [
         "Používateľské meno"
+      ],
+      "username": [
+        "používateľské meno"
       ],
       "Users": [
         "Používatelia"
@@ -6141,6 +6144,12 @@
         "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }.",
         "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }."
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adrese Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte.",
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adresách Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte.",
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adresách Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte.",
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adresách Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Vaša ${ boldDiscountPercent } na ${ boldPlanTitle } bola uplatnená"
       ],
@@ -6410,10 +6419,10 @@
       "Allow recovery by phone": [
         "Povoliť obnovenie telefónom"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6798,7 +6807,7 @@
         "Platca"
       ],
       "Payment details": [
-        "Platobné údaje"
+        "Detaily platby"
       ],
       "Payment method": [
         "Spôsob platby"
@@ -6837,7 +6846,7 @@
         "Dôvod"
       ],
       "Recovery email address": [
-        "Emailová adresa pre obnovenie"
+        "Emailová adresa na obnovu"
       ],
       "Recovery phone number": [
         "Telefónne číslo pre obnovenie"
@@ -6996,7 +7005,7 @@
         "Áno, chcem trvale zmazať tento účet a všetky údaje s ním spojené."
       ],
       "Your password (admin)": [
-        "Vaše heslo (admin)"
+        "Vaše heslo (správca)"
       ],
       "ZIP code": [
         "PSČ"
@@ -7268,6 +7277,9 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Vášmu kontu hrozí vymazanie. Ak chcete zabrániť strate údajov, požiadajte správcu o aktualizáciu. ${ cta }"
       ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Vaše úložisko je plné. Ak chcete naďalej používať produkty ${ BRAND_NAME }, uvoľnite miesto alebo ${ cta }."
+      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Vaše predplatné skončilo. ${ cta } a zabráňte strate údajov."
       ]
@@ -7422,16 +7434,16 @@
     },
     "Navigation": {
       "All": [
-        "Všetky"
+        "Všetko"
       ],
       "Allow": [
         "Povolené"
       ],
       "Block": [
-        "Blokované"
+        "Blokovať"
       ],
       "Spam": [
-        "Spam"
+        "Nevyžiadaná pošta"
       ]
     },
     "New Label form": {
@@ -7456,12 +7468,26 @@
         "Stredná VPN rýchlosť"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Preskúmajte všetky plány ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
-        "Zmazať účet"
+        "Odstrániť účet"
       ],
       "Downgrade account": [
-        "Znížiť účet"
+        "Znížiť úroveň účtu"
       ],
       "Get ${ BRAND_NAME } for free": [
         "Získať ${ BRAND_NAME } zadarmo"
@@ -7477,20 +7503,6 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Preskúmajte všetky plány ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
       ]
     },
     "new_plans: feature": {
@@ -7522,19 +7534,13 @@
         "${ n } emailová adresa",
         "${ n } emailové adresy/aliasy",
         "${ n } emailových adries/aliasov",
-        "${ n } emailových adries/aliasov"
+        "${ n } e-mailových adries/aliasov"
       ],
       "${ n } email address per user": [
         "${ n } emailová adresa na používateľa",
         "${ n } emailové adresy na používateľa",
         "${ n } emailových adries na používateľa",
         "${ n } emailových adries na používateľa"
-      ],
-      "${ n } filter": [
-        "${ n } filter",
-        "${ n } filtre",
-        "${ n } filtrov",
-        "${ n } filtrov"
       ],
       "${ n } folder": [
         "${ n } priečinok",
@@ -7544,7 +7550,7 @@
       ],
       "${ n } folder and label": [
         "${ n } priečinok a štítok",
-        "${ n } priečinky a štítky",
+        "${ n } priečinkov a štítkov",
         "${ n } priečinkov a štítkov",
         "${ n } priečinkov a štítkov"
       ],
@@ -7560,12 +7566,6 @@
         "${ n } štítkov",
         "${ n } štítkov"
       ],
-      "${ n } message per day": [
-        "${ n } správa za deň",
-        "${ n } správy za deň",
-        "${ n } správ za deň",
-        "${ n } správ za deň"
-      ],
       "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
         "${ n } zdieľaný trezor ${ PASS_SHORT_APP_NAME } na používateľa",
         "${ n } zdieľané trezory ${ PASS_SHORT_APP_NAME } na používateľa",
@@ -7580,7 +7580,7 @@
       ],
       "${ n } VPN connection": [
         "${ n } VPN pripojenie",
-        "${ n } VPN pripojenia",
+        "${ n } VPN pripojení",
         "${ n } VPN pripojení",
         "${ n } VPN pripojení"
       ],
@@ -7639,7 +7639,7 @@
         "99,95 % SLA"
       ],
       "Ad-blocker and malware protection": [
-        "Blokovanie reklám a ochrana pred škodlivým softvérom"
+        "Blokovač reklám a ochrana pred malvérom"
       ],
       "Admin console": [
         "Admin konzola"
@@ -7663,7 +7663,7 @@
         "Aplikácie pre"
       ],
       "Auto-delete Spam and Trash": [
-        "Automatické mazanie nevyžiadanej pošty a koša"
+        "Automatické mazanie spamu a koša"
       ],
       "Auto-reply": [
         "Automatická odpoveď"
@@ -7750,7 +7750,7 @@
         "Šifrované VPN servery"
       ],
       "End-to-end encryption": [
-        "Šifrovanie End-to-end"
+        "Šifrovanie end-to-end"
       ],
       "Fast P2P/BitTorrent downloads": [
         "Rýchle sťahovanie P2P/BitTorrent"
@@ -7759,7 +7759,7 @@
         "Bezplatné funkcie od ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, a ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Free VPN on a single device": [
-        "VPN zdarma na jednom zariadení"
+        "Bezplatná VPN na jednom zariadení"
       ],
       "Fully refundable for 30 days": [
         "Možnosť vrátenia peňazí do 30 dní"
@@ -7885,7 +7885,7 @@
         "Začnite sa chrániť online v 2 jednoduchých krokoch"
       ],
       "Strict no-logs policy": [
-        "Prísna politika neuchovávania záznamov"
+        "Prísna zásada neuchovávania záznamov"
       ],
       "Sync and backup all your files across devices": [
         "Synchronizácia a zálohovanie všetkých vašich súborov medzi zariadeniami"
@@ -7971,12 +7971,6 @@
       "User storage management": [
         "Správa používateľského úložiska"
       ],
-      "Vault sharing (up to ${ n } person)": [
-        "Zdieľanie trezora (s ${ n } osobou)",
-        "Zdieľanie trezora (s ${ n } osobami)",
-        "Zdieľanie trezora (až s ${ n } osobami)",
-        "Zdieľanie trezora (až s ${ n } osobami)"
-      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme temný web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
       ]
@@ -8035,10 +8029,10 @@
         "Vylepšená bezpečnosť a prémiové funkcie pre tímy."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
-        "Základná ochrana a bezpečná spolupráca pre neobmedzený počet používateľov."
+        "Nevyhnutná ochrana a bezpečná spolupráca neobmedzeného počtu užívateľov."
       ],
       "For next-level password management and identity protection.": [
-        "Pre správu hesiel a ochranu identity ďalšej úrovne."
+        "Na novú úroveň správy hesiel a ochrany identity."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Ak svoj účet odstránite, stratíte všetky výhody plánu ${ visionary } a tie už nebudú k dispozícii po opätovnom vytvorení nového účtu."
@@ -8053,7 +8047,7 @@
         "Náš ${ visionary } plán už nie je k dispozícii pre nových predplatiteľov, pretože ide o špeciálny plán pre pôvodných používateľov ${ BRAND_NAME } so špeciálnymi funkciami a výhodami."
       ],
       "Pay once, secure your passwords and identity forever.": [
-        "Zaplaťte raz a zabezpečte svoje heslá a identity navždy."
+        "Zaplaťte raz a zabezpečte navždy svoje heslá a identity."
       ],
       "Popular": [
         "Populárne"
@@ -8148,7 +8142,7 @@
         "Vymazať účet?"
       ],
       "Downgrade account?": [
-        "Prejsť na nižšiu verziu účtu?"
+        "Znížiť úroveň účtu?"
       ],
       "Review subscription and pay": [
         "Skontrolujte predplatné a zaplaťte"
@@ -8199,12 +8193,6 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Vytvorte si viacero emailových adries pre svoje online identity, napr. JanNakupy@${ domain } pre nákupné účty, JanSpravy@${ domain } pre odber noviniek"
-      ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Vytvorte si ${ n } kalendár alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
-        "Vytvorte si až ${ n } kalendáre alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
-        "Vytvorte si až ${ n } kalendárov alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
-        "Vytvorte si až ${ n } kalendárov alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvorte až ${ n } emailových adries/aliasov, ktoré môžete priradiť členom rodiny. Použite ich pre online identity, napr. JanNakupy@${ domain } pre nákupné účty."
@@ -8318,7 +8306,7 @@
         "Smerujte vašu internetovú prevádzku cez sieť Tor jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, zdieľanie šifrovaných súborov a ďalšie."
+        "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
       ],
       "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
         "Bezpečne zdieľajte jednotlivé položky s kýmkoľvek (aj keď nepoužívajú ${ PASS_APP_NAME })"
@@ -8360,7 +8348,7 @@
         "Nahrajte logo svojej firmy a prispôsobte tak tímové prostredie na webových aplikáciách ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Použite svoje vlastné emailové adresy domény, napr. vy@vasemeno.sk"
+        "Použite emailové adresy z vašej vlastnej domény, napr. vy@vasemeno.sk"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
         "Neuchovávame žiadne záznamy používania relácie o tom, čo robíte online, a nezaznamenávame metadáta, ktoré by mohli ohroziť vaše súkromie"
@@ -8409,7 +8397,7 @@
         "Zvýšte úložný priestor na ${ bundleStorage } celkom"
       ],
       "Browser extension": [
-        "Rozšírenie prehliadača"
+        "Doplnok prehliadača"
       ],
       "Censorship circumvention": [
         "Obchádzanie cenzúry"
@@ -8957,7 +8945,7 @@
         "Aktualizovaný kľúč organizácie"
       ],
       "Permission denied, administrator privileges have been restricted.": [
-        "Prístup zamietnutý, oprávnenia správcu boli obmedzené."
+        "Prístup zamietnutý, boli obmedzené oprávnenia správcu."
       ],
       "Please ensure they have an enabled address and invite them separately later.": [
         "Uistite sa, že majú povolenú adresu, a neskôr ich pozvite samostatne."
@@ -9021,6 +9009,9 @@
       "Bank transfer": [
         "Bankový prevod"
       ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
       "Credit/debit card": [
         "Platobná karta"
       ],
@@ -9056,7 +9047,7 @@
         "Rozumiem"
       ],
       "MM/YY": [
-        "MM/RR"
+        "MM/YY"
       ],
       "More plans are available in other currencies": [
         "Ďalšie plány sú k dispozícii v iných menách"
@@ -9333,7 +9324,7 @@
     },
     "plan customizer, users": {
       "contact": [
-        "kontaktujte"
+        "kontakt"
       ]
     },
     "Plans": {
@@ -9355,7 +9346,7 @@
     },
     "Price": {
       "Free": [
-        "Zdarma"
+        "Free"
       ]
     },
     "Recovery Email": {
@@ -10450,7 +10441,7 @@
         "Odmietnuté"
       ],
       "Signed out": [
-        "Odhlásené"
+        "Odhlásený"
       ],
       "Unknown": [
         "Neznáme"
@@ -10499,10 +10490,13 @@
         "spojte sa s vaším administrátorom"
       ],
       "For all ${ BRAND_NAME } services": [
-        "Pre všetky ${ BRAND_NAME } služby"
+        "Za všetky ${ BRAND_NAME } služby"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Ak chcete naďalej používať produkty ${ BRAND_NAME }, uvoľnite miesto alebo ${ upgrade }"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Ak chcete odosielať alebo prijímať emaily, uvoľnite miesto alebo ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Ak chcete nahrať alebo synchronizovať súbory, uvoľnite miesto alebo ${ upgrade }"
@@ -10526,10 +10520,10 @@
         "Vaše úložisko ${ appStorage } je plné"
       ],
       "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
-        "Vaše úložisko ${ productString } je zaplnené na ${ percentage }%. ${ cta }."
+        "Vaše ${ productString } je zaplnené na ${ percentage }%. ${ cta }."
       ],
       "Your ${ productString } is full. ${ cta }.": [
-        "Vaše úložisko ${ productString } je plné. ${ cta }."
+        "Vaše ${ productString } je plné. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Vaše úložisko je zaplnené na ${ percentage }%. ${ cta }."
@@ -10603,7 +10597,7 @@
       ],
       "${ n } VPN connection": [
         "${ n } VPN pripojenie",
-        "${ n } VPN pripojenia",
+        "${ n } VPN pripojení",
         "${ n } VPN pripojení",
         "${ n } VPN pripojení"
       ],
@@ -10673,7 +10667,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Rozumiem"
+        "Chápem"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Stačí sa prihlásiť do účtu v Apple App Store a vybrať ${ subscriptions }."
@@ -10707,47 +10701,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložného priestoru"
-      ],
-      "and 15 more premium features": [
-        "a ďalších 15 prémiových funkcií"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické presmerovanie emailu ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornenia na úniky údajov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikácia"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
-      ],
-      "No ads or tracking": [
-        "Žiadne reklamy alebo sledovanie"
-      ],
-      "Short @pm.me email address": [
-        "Skrátená emailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podporte naše poslanie"
-      ],
-      "Upgrade": [
-        "Prejsť na platený plán"
-      ],
-      "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
-      ],
-      "We don't sell your data": [
-        "Nepredávame vaše údaje"
-      ],
-      "Your privacy is our mission": [
-        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription reminder": {
@@ -11052,6 +11005,47 @@
         "Váš vlastný skrátený emailový alias @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "and 15 more premium features": [
+        "a ďalších 15 prémiových funkcií"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické presmerovanie emailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornenia na úniky údajov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
+      ],
+      "No ads or tracking": [
+        "Žiadne reklamy alebo sledovanie"
+      ],
+      "Short @pm.me email address": [
+        "Skrátená emailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podporte naše poslanie"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšite svoju produktivitu"
+      ],
+      "We don't sell your data": [
+        "Nepredávame vaše údaje"
+      ],
+      "Your privacy is our mission": [
+        "Vaše súkromie je naším poslaním"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Naozaj?"
@@ -11063,7 +11057,7 @@
         "Automatická platba je povolená"
       ],
       "Disable": [
-        "Deaktivovať"
+        "Zakázať"
       ],
       "Enable auto-pay support": [
         "Zapnutie podpory automatických platieb"
@@ -11567,10 +11561,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -11703,7 +11697,7 @@
         "Vymazať ${ policyName }?"
       ],
       "Delete account": [
-        "Zmazať účet"
+        "Odstrániť účet"
       ],
       "Delete group?": [
         "Vymazať skupinu?"
@@ -11829,7 +11823,7 @@
         "Zadajte údaje svojho ${ BRAND_NAME } účtu pre vstup do ${ app } beta programu."
       ],
       "Enter your password": [
-        "Zadajte Vaše heslo"
+        "Zadajte svoje heslo"
       ],
       "Error": [
         "Chyba"
@@ -12135,7 +12129,7 @@
         "${ n } používateľských účtov bolo úspešne vytvorených"
       ],
       "Summary": [
-        "Zhrnutie"
+        "Súhrn"
       ],
       "Switch to one-password mode": [
         "Prepnúť do režimu s jedným heslom"
@@ -12168,7 +12162,7 @@
         "Typ"
       ],
       "Unlock your data": [
-        "Odomknúť vaše údaje"
+        "Odomknite svoje údaje"
       ],
       "Upgrade complete!": [
         "Aktualizácia dokončená!"
@@ -12787,15 +12781,9 @@
         "${ n } zariadení",
         "${ n } zariadení"
       ],
-      "${ n } server": [
-        "${ n } server",
-        "${ n } servery",
-        "${ n } serverov",
-        "${ n } serverov"
-      ],
       "${ n } VPN connection": [
         "${ n } VPN pripojenie",
-        "${ n } VPN pripojenia",
+        "${ n } VPN pripojení",
         "${ n } VPN pripojení",
         "${ n } VPN pripojení"
       ],

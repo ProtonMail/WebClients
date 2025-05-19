@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "activate": [
-        "kullanıma al"
-      ],
       "Activate": [
         "Kullanıma al"
+      ],
+      "activate": [
+        "kullanıma al"
       ],
       "Activate organization key": [
         "Kuruluş anahtarını kullanıma al"
@@ -82,7 +82,7 @@
         "Kullanıcı ekle"
       ],
       "Allow": [
-        "İzin ver"
+        "İzin verilen"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "Bu grupta uçtan uca şifrelenmiş e-posta kullanılabilsin"
@@ -108,7 +108,7 @@
       "Back": [
         "Geri"
       ],
-      "Back to sign-in": [
+      "Back to sign in": [
         "Oturum açmaya dön"
       ],
       "Block": [
@@ -267,11 +267,11 @@
       "Discard": [
         "Sil"
       ],
-      "Discard Changes": [
-        "Değişiklikleri sil"
-      ],
       "Discard changes": [
         "Değişiklileri yok say"
+      ],
+      "Discard Changes": [
+        "Değişiklikleri sil"
       ],
       "Discover ${ planName }": [
         "${ planName } tarifesini keşfedin"
@@ -469,7 +469,7 @@
         "Aboneliğimi sürdür"
       ],
       "Let's talk": [
-        "Hadi konuşalım!"
+        "Hadi konuşalım."
       ],
       "Load more": [
         "Diğerlerini yükle"
@@ -699,11 +699,11 @@
       "Select country ${ country }": [
         "${ country } ülkesini seç"
       ],
-      "Select file": [
-        "Dosya seçin"
-      ],
       "select file": [
         "dosya seçin"
+      ],
+      "Select file": [
+        "Dosya seçin"
       ],
       "Send code": [
         "Kodu gönder"
@@ -793,7 +793,7 @@
         "Atla"
       ],
       "Spam": [
-        "İstenmeyen"
+        "İstenmeyenlere taşı"
       ],
       "Start live chat": [
         "Canlı sohbet başlat"
@@ -2645,7 +2645,7 @@
     },
     "Cycle": {
       "/month": [
-        "/ay"
+        "/aylık"
       ],
       "/user per month": [
         "/kullanıcı aylık"
@@ -3974,7 +3974,7 @@
         "Arama listesi"
       ],
       "Spam:": [
-        "İstenmeyen:"
+        "İstenmeyenlere taşı:"
       ],
       "Take control over what lands in your organization members' inboxes by creating the following lists:": [
         "Bu listeleri kullanarak üyelerinizin gelen kutularına ulaşmasını istediğiniz e-postaları belirleyin:"
@@ -4392,7 +4392,7 @@
         "30 gün içinde ücreti geri ödeme garantisi"
       ],
       "30-day money-back guarantee.": [
-        "30 gün içinde ücreti geri ödeme garantisi."
+        "30 gün ücret iade garantisi."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ BRAND_NAME } tarafından sunulan bir ${ protonSubdomain }, hızlıca bir alt etki alanı kurmanızı sağlar. ${ learnMoreLink }"
@@ -4664,11 +4664,11 @@
       "Data recoverable on this device": [
         "Bu aygıttaki veriler kurtarılabilir"
       ],
-      "dedicated servers": [
-        "size ayrılmış sunucular"
-      ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "dedicated servers": [
+        "size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -5733,8 +5733,8 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Onaylamak için lütfen silmek istediğiniz kullanıcının adını yazın."
       ],
-      "to continue to ${ product }": [
-        "${ product } ile ilerlemek için"
+      "To continue to ${ product }": [
+        "${ product }'e devam etmek için"
       ],
       "To create your first user group, go to": [
         "İlk kullanıcı grubunuzu oluşturmak için şuraya gidin"
@@ -5841,11 +5841,11 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "username": [
-        "kullanıcı adı"
-      ],
       "Username": [
         "Kullanıcı adı"
+      ],
+      "username": [
+        "kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -6045,10 +6045,6 @@
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Tüm ücretli gizlilik hizmetlerimizi tek bir pakette alabilirsiniz. Yalnızca **${ priceString }/ay**."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
-        "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. Aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
@@ -6401,10 +6397,10 @@
       "Allow recovery by phone": [
         "Telefon ile hesap kurtarılabilsin"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "İzin verilen etki alanı"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "İzin verilen etki alanı"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -7423,7 +7419,7 @@
         "Engellenen"
       ],
       "Spam": [
-        "İstenmeyen"
+        "İstenmeyenlere taşı"
       ]
     },
     "New Label form": {
@@ -7446,6 +7442,20 @@
       ],
       "Medium VPN speed": [
         "Orta VPN hızı"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşürülsün mü"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Upgrade": [
+        "Yükselt"
       ]
     },
     "new_plans: action": {
@@ -7471,30 +7481,12 @@
         "Tarifeyi değiştir"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ]
-    },
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } ve ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ n } calendar": [
-        "${ n } takvim",
-        "${ n } takvim"
       ],
       "${ n } calendar per user": [
         "Her kullanıcı için ${ n } takvim",
@@ -7512,10 +7504,6 @@
         "Her kullanıcı için ${ n } e-posta adresi",
         "Her kullanıcı için ${ n } e-posta adresi"
       ],
-      "${ n } filter": [
-        "${ n } süzgeç",
-        "${ n } süzgeç"
-      ],
       "${ n } folder": [
         "${ n } klasör",
         "${ n } klasör"
@@ -7527,10 +7515,6 @@
       "${ n } hide-my-email alias": [
         "${ n } hide-my-email takma adı",
         "${ n } hide-my-email takma adı"
-      ],
-      "${ n } label": [
-        "${ n } etiket",
-        "${ n } etiket"
       ],
       "${ n } message per day": [
         "Her gün ${ n } ileti",
@@ -7717,7 +7701,7 @@
         "Ücretsiz ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ve ${ DRIVE_SHORT_APP_NAME } özellikleri"
       ],
       "Free VPN on a single device": [
-        "Tek bir aygıt için ücretsiz VPN"
+        "Free VPN ile tek aygıt bağlantısı"
       ],
       "Fully refundable for 30 days": [
         "30 gün içinde tamamı geri ödenebilir"
@@ -7919,10 +7903,6 @@
       "User storage management": [
         "Kullanıcı depolama alanı yönetimi"
       ],
-      "Vault sharing (up to ${ n } person)": [
-        "Kasa paylaşma (${ n } kişiye kadar)",
-        "Kasa paylaşma (${ n } kişiye kadar)"
-      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını kontrol etmek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
       ]
@@ -8096,7 +8076,7 @@
         "Aboneliği ve ödemeyi gözden geçirin"
       ],
       "Switch plans?": [
-        "Tarifeler değiştirilsin mi?"
+        "Tarifeleri değiştir?"
       ]
     },
     "new_plans: tooltip": {
@@ -8328,7 +8308,7 @@
     },
     "new_plans: Upsell attribute": {
       "24/7 support": [
-        "7/24 Destek"
+        "7/24 destek"
       ],
       "Access advanced VPN features": [
         "Gelişmiş VPN özelliklerine erişin"
@@ -8951,6 +8931,9 @@
       "Bank transfer": [
         "Banka havalesi"
       ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
       "Credit/debit card": [
         "Kredi ya da banka kartı"
       ],
@@ -9273,12 +9256,12 @@
     },
     "Price": {
       "Free": [
-        "Ücretsiz"
+        "Free"
       ]
     },
     "Recovery Email": {
       "Cancel": [
-        "İptal"
+        "İptal et"
       ],
       "Email address has been verified.": [
         "E-posta adresi doğrulanmış."
@@ -9315,7 +9298,7 @@
     },
     "Recovery Phone": {
       "Cancel": [
-        "İptal"
+        "İptal et"
       ],
       "Phone number has been verified.": [
         "Telefon numarası doğrulandı."
@@ -10297,10 +10280,10 @@
     },
     "sso: auth device state": {
       "Active": [
-        "Etkin"
+        "Aktif"
       ],
       "Inactive": [
-        "Etkin değil"
+        "Kapalı"
       ],
       "Pending activation": [
         "Etkinleştirilmesi bekleniyor"
@@ -10378,10 +10361,6 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Kalan sürenize karşı gelen krediyi ${ BRAND_NAME } hesabınıza ekleyeceğiz."
       ],
-      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "**${ currentPlanName }** tarifenizde hâlâ **${ daysRemaining }** günlük kullanım hakkınız var.",
-        "**${ currentPlanName }** tarifenizde hâlâ **${ daysRemaining }** günlük kullanım hakkınız var."
-      ],
       "Your ${ appStorage } is almost full": [
         "Kullandığınız ${ appStorage } dolmak üzere"
       ],
@@ -10448,14 +10427,6 @@
         "${ n } yüksek hızlı VPN bağlantısı",
         "${ n } yüksek hızlı VPN bağlantısı"
       ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } yüksek hızlı VPN bağlantısı / kullanıcı",
-        "${ n } yüksek hızlı VPN bağlantısı / kullanıcı"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN bağlantısı",
-        "${ n } VPN bağlantısı"
-      ],
       "${ n } VPN connection per user": [
         "${ n } VPN bağlantısı / kullanıcı",
         "${ n } VPN bağlantısı / kullanıcı"
@@ -10506,7 +10477,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Anladım"
+        "Tamam"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Apple App Store hesabınızda oturum açın, ardından ${ subscriptions } seçin."
@@ -10540,47 +10511,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } için"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription reminder": {
@@ -10873,6 +10803,47 @@
         "Kendi kısa @pm.me e-posta takma adınız"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Emin misiniz?"
@@ -11120,7 +11091,7 @@
     },
     "Suffix": {
       "/month": [
-        "/ay"
+        "/aylık"
       ],
       "/user per month": [
         "/kullanıcı aylık"
@@ -11155,7 +11126,7 @@
     },
     "Tab subscription modal": {
       "For businesses": [
-        "Kurumlar için"
+        "Kuruluşlar için"
       ],
       "For families": [
         "Aileler için"
@@ -11386,10 +11357,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -11744,7 +11715,7 @@
         "Ağ sorunu"
       ],
       "Next": [
-        "Sonraki"
+        "İlerle"
       ],
       "Night theme": [
         "Gece teması"
@@ -11819,7 +11790,7 @@
         "Kare kod"
       ],
       "Recommended": [
-        "Önerilen"
+        "Önerilir"
       ],
       "Recovery": [
         "Kurtarma"
@@ -12593,10 +12564,6 @@
       "${ n } server": [
         "${ n } sunucu",
         "${ n } sunucu"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN bağlantısı",
-        "${ n } VPN bağlantısı"
       ],
       "${ numberOfCountries } country": [
         "${ numberOfCountries } ülke",

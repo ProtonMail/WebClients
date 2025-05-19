@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
-      "activate": [
-        "актываваць"
-      ],
       "Activate": [
         "Актываваць"
+      ],
+      "activate": [
+        "актываваць"
       ],
       "Activate organization key": [
         "Актываваць ключ арганізацыі"
@@ -108,7 +108,7 @@
       "Back": [
         "Назад"
       ],
-      "Back to sign-in": [
+      "Back to sign in": [
         "Вярнуцца да ўваходу"
       ],
       "Block": [
@@ -267,10 +267,10 @@
       "Discard": [
         "Адхіліць"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Адхіліць змены"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Адхіліць змены"
       ],
       "Discover ${ planName }": [
@@ -699,11 +699,11 @@
       "Select country ${ country }": [
         "Выбраць краіну ${ country }"
       ],
-      "Select file": [
-        "Выбраць файл"
-      ],
       "select file": [
         "выбраць файл"
+      ],
+      "Select file": [
+        "Выбраць файл"
       ],
       "Send code": [
         "Адправіць код"
@@ -772,7 +772,7 @@
         "Папярэдні прагляд"
       ],
       "Sign in": [
-        "Увайсці"
+        "Уваход"
       ],
       "Sign in with password": [
         "Увайсці з паролем"
@@ -1543,7 +1543,7 @@
         "${ users } карыстальнік",
         "${ users } карыстальнікі",
         "${ users } карыстальнікаў",
-        "${ users } карыстальнікі"
+        "${ users } карыстальнікаў"
       ],
       "Total": [
         "Агулам"
@@ -2711,7 +2711,7 @@
         "Не ўдалося перамясціць ${ name } у спіс са спамам"
       ],
       "${ name } moved to allow list": [
-        "${ name } перамешчаны ў спіс дазволеных адрасоў"
+        "${ name } перамешчаны ў спіс дазволеных"
       ],
       "${ name } moved to block list": [
         "${ name } перамешчаны ў спіс заблакіраваных"
@@ -3093,7 +3093,7 @@
         "Памылковы адрас электроннай пошты"
       ],
       "Invalid expiration date": [
-        "Памылковая дата завяршэння тэрміну дзеяння"
+        "Памылковая дата заканчэння тэрміну дзеяння карткі"
       ],
       "Invalid IBAN": [
         "Памылковы IBAN"
@@ -4357,7 +4357,7 @@
         "Нумар тэлефона можа быць выкарыстаны для праверкі аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        "Карыстальнік - гэта ўліковы запіс, звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
+        "Карыстальнік - гэта ўліковы запіс, які звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ да ўліковага запісу абмежаваны па прычыне неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
@@ -4626,11 +4626,11 @@
       "Data recoverable on this device": [
         "Даныя, якія можна аднавіць на гэтай прыладзе"
       ],
-      "dedicated servers": [
-        "вылучаныя серверы"
-      ],
       "Dedicated servers": [
         "Вылучаныя серверы"
+      ],
+      "dedicated servers": [
+        "вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -4840,7 +4840,7 @@
         "Прыклад: ${ spfExample }"
       ],
       "Expired": [
-        "Пратэрмінавана"
+        "Пратэрмінаваныя"
       ],
       "expires ${ expirationDate }": [
         "дзейнічае да ${ expirationDate }"
@@ -4930,7 +4930,7 @@
         "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ MAIL_APP_NAME } і ${ VPN_APP_NAME }."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ MAIL_APP_NAME }, уключаючы дадатковае сховішча і фільтры."
+        "Калі вы працягнеце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ MAIL_APP_NAME }, уключаючы дадатковае сховішча і фільтры."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ VPN_APP_NAME }."
@@ -5721,8 +5721,8 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Для пацвярджэння ўвядзіце імя карыстальніка, якое вы хочаце выдаліць."
       ],
-      "to continue to ${ product }": [
-        "для працягу ў ${ product }"
+      "To continue to ${ product }": [
+        "Для працягу ў ${ product }"
       ],
       "To create your first user group, go to": [
         "Для стварэння першай карыстальніцкай групы, перайдзіце ў"
@@ -5758,7 +5758,7 @@
         "Колькасць даменаў, якія падтрымліваюцца"
       ],
       "Total VPN connections": [
-        "Колькасць падключэнняў па VPN"
+        "Усяго падключэнняў па VPN"
       ],
       "trusted device": [
         "даверанай прыладзе"
@@ -5829,11 +5829,11 @@
       "User activated": [
         "Карыстальнік актываваны"
       ],
-      "username": [
-        "імя карыстальніка"
-      ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "username": [
+        "імя карыстальніка"
       ],
       "Users": [
         "Карыстальнікі"
@@ -6047,12 +6047,6 @@
         "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
         "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
         "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску."
       ],
       "You can now access and manage the account as an administrator.": [
         "Цяпер вы можаце атрымаць доступ да ўліковага запісу ў якасці адміністратара."
@@ -6419,10 +6413,10 @@
       "Allow recovery by phone": [
         "Дазволіць аднаўленне доступу па нумары тэлефона"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дазволены дамен"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дазволены дамен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6459,7 +6453,7 @@
         "Перыяд аплаты"
       ],
       "Block": [
-        "Заблакіраваць"
+        "Заблакіраваныя адрасы"
       ],
       "Block malware only": [
         "Блакіраваць толькі шкодныя праграмы"
@@ -6846,7 +6840,7 @@
         "Мэта"
       ],
       "Recovery email address": [
-        "Адрас электроннай пошты для аднаўлення доступу"
+        "Адрас электроннай пошты для аднаўлення"
       ],
       "Recovery phone number": [
         "Нумар тэлефона для аднаўлення"
@@ -7013,7 +7007,7 @@
     },
     "label": {
       "Recovery phone number": [
-        "Нумар тэлефона для аднаўлення"
+        "Нумар тэлефона для аднаўлення доступу"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -7278,7 +7272,7 @@
         "Ваш уліковы запіс пад пагрозай выдалення. Папрасіце свайго адміністратара палепшыць тарыфны план, каб пазбегнуць страты даных. ${ cta }"
       ],
       "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
-        "Ваша сховішча запоўнена. Каб працягваць карыстацца прадуктамі ${ BRAND_NAME } вызваліце месца або ${ cta }."
+        "Ваша сховішча запоўнена. Вызваліце месца або ${ cta }, каб працягваць карыстацца прадуктамі ${ BRAND_NAME }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Ваша падпіска завяршылася. ${ cta } і пазбегнуць страты даных."
@@ -7437,7 +7431,7 @@
         "Усе"
       ],
       "Allow": [
-        "Дазволеныя"
+        "Дазволіць"
       ],
       "Block": [
         "Заблакіраваныя адрасы"
@@ -7468,6 +7462,20 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Даследаваць усе тарыфныя планы ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -7491,20 +7499,6 @@
         "Змяніць тарыфны план"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Даследаваць усе тарыфныя планы ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ]
-    },
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Памочнік у напісанні ${ BRAND_NAME } Scribe"
@@ -7514,7 +7508,7 @@
       ],
       "${ n } calendar": [
         "${ n } каляндар",
-        "${ n } календары",
+        "${ n } календароў",
         "${ n } календароў",
         "${ n } календароў"
       ],
@@ -7554,12 +7548,6 @@
         "${ n } папак",
         "${ n } папак"
       ],
-      "${ n } folder and label": [
-        "${ n } папка і метка",
-        "${ n } папкі і меткі",
-        "${ n } папак і метак",
-        "${ n } папак і метак"
-      ],
       "${ n } hide-my-email alias": [
         "${ n } псеўданім hide-my-email",
         "${ n } псеўданімы hide-my-email",
@@ -7571,12 +7559,6 @@
         "${ n } меткі",
         "${ n } метак",
         "${ n } метак"
-      ],
-      "${ n } message per day": [
-        "${ n } паведамленне ў дзень",
-        "${ n } паведамленні ў дзень",
-        "${ n } паведамленняў у дзень",
-        "${ n } паведамленняў у дзень"
       ],
       "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
         "${ n } абагуленае сховішча ${ PASS_SHORT_APP_NAME } на карыстальніка",
@@ -7603,10 +7585,10 @@
         "Да ${ numberOfUsers } карыстальнікаў"
       ],
       "${ options }-day file version history": [
-        "${ options }-дзённая гісторыя змяненняў версіі файла",
-        "${ options }-дзённая гісторыя змяненняў версіі файла",
-        "${ options }-дзённая гісторыя змяненняў версіі файла",
-        "${ options }-дзённая гісторыя змяненняў версіі файла"
+        "${ options }-дзённая гісторыя версій файла",
+        "${ options }-дзённая гісторыя версій файла",
+        "${ options }-дзённая гісторыя версій файла",
+        "${ options }-дзённая гісторыя версій файла"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Пажыццёвая прапанова ${ PASS_APP_NAME } + SimpleLogin"
@@ -7684,13 +7666,13 @@
         "Аўтазапаўненне крэдытных картак (неўзабаве з'явіцца)"
       ],
       "Automatic email forwarding": [
-        "Аўтаматычная перасылка пошты"
+        "Аўтаматычная перасылка электроннай пошты"
       ],
       "Available on all platforms": [
         "Даступна на ўсіх платформах"
       ],
       "Calendar sharing": [
-        "Абагулены каляндар"
+        "Абагульванне календара"
       ],
       "Catch-all": [
         "Уся пошта дамена"
@@ -8068,7 +8050,7 @@
         "Заплаціце адзін раз, засцеражыце свае паролі і ідэнтычнасць назаўжды."
       ],
       "Popular": [
-        "Папулярны"
+        "Папулярныя"
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Абарона адчувальных звестак бізнесу і бяспечнае супрацоўніцтва."
@@ -8086,7 +8068,7 @@
         "Бяспечнае воблачнае сховішча, якое дазваляе вам лёгка і бяспечна захоўваць, сінхранізаваць і абагульваць файлы."
       ],
       "Secure email with advanced features for your everyday communications.": [
-        "Бяспечная электронная пошта з пашыранымі функцыямі для штодзённых зносін."
+        "Бяспечная электронная пошта з дадатковымі функцыямі для штодзённых камунікацый."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Індывідуальныя рашэнні для буйных арганізацый з асаблівымі патрабаваннямі ў вобласці бяспекі"
@@ -8095,7 +8077,7 @@
         "Спецыялізаванае рашэнне VPN, якое дае магчымасць атрымаць бяспечны доступ у інтэрнэт, без абмежаванняў і на высокай хуткасці."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "Бясплатны стартавы ўліковы запіс прызначаны для ўсіх, хто лічыць прыватнасць абавязковым параметрам."
+        "Бясплатны стартавы ўліковы запіс распрацаваны для кожнага хто лічыць, што прыватнасць з'яўляецца неад'емнай часткай яго жыцця."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Неабмежаваная прыватнасць і больш сховішча. Разлічаны на 1 або 2 карыстальнікаў."
@@ -8243,7 +8225,7 @@
         "Гарантуе, што вы атрымаеце ўсе лісты, якія адпраўлены на ваш дамен, нават калі адрас электроннай пошты не існуе, больш не існуе або ў напісанні адраса зроблена памылка"
       ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
-        "Прымусова завяршайце сеансы карыстальнікаў пры падазрэнні, што іх уліковыя даныя скампраметаваны"
+        "Прымусова завяршайце сеансы карыстальніка пры падазрэнні, што яго ўліковыя даныя скампраметаваны"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Падтрымка IMAP абмежавана выкарыстаннем праграм для камп'ютараў (напрыклад, Outlook, Apple Mail, Thunderbird) праз ${ MAIL_APP_NAME } Bridge. Воблачныя сродкі інтэграцыі IMAP у дадзены момант не падтрымліваюцца."
@@ -8372,7 +8354,7 @@
         "Запампуйце ваш лагатып для бізнесу, каб персаналізаваць досвед вашых каманд у вэб-праграме ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, you@yourname.com"
+        "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, vy@vashaimya.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
         "Мы не пакідаем журналы выкарыстання сеансаў з вашымі дзеяннямі ў інтэрнэце, а таксама нас не цікавяць метадыныя, якія могуць скампраметаваць вашу прыватнасць"
@@ -9033,11 +9015,17 @@
       "Bank transfer": [
         "Банкаўскі перавод"
       ],
+      "Bitcoin": [
+        "Біткойн"
+      ],
       "Credit/debit card": [
         "Банкаўская картка"
       ],
       "New credit/debit card": [
         "Новая банкаўская картка"
+      ],
+      "PayPal": [
+        "PayPal"
       ]
     },
     "Payment.Sepa.Action": {
@@ -9243,7 +9231,7 @@
         "Дата завяршэння"
       ],
       "example@domain.com": [
-        "pryklad@domain.com"
+        "pryklad@damen.com"
       ],
       "Feedback": [
         "Зваротная сувязь"
@@ -9367,7 +9355,7 @@
     },
     "Price": {
       "Free": [
-        "Бясплатна"
+        "Бясплатны"
       ]
     },
     "Recovery Email": {
@@ -10447,7 +10435,7 @@
     },
     "sso: auth device state": {
       "Active": [
-        "Актыўна"
+        "Актыўныя"
       ],
       "Inactive": [
         "Неактыўна"
@@ -10462,7 +10450,7 @@
         "Адхілена"
       ],
       "Signed out": [
-        "Вы выйшлі"
+        "Выкананы выхад"
       ],
       "Unknown": [
         "Невядома"
@@ -10511,13 +10499,13 @@
         "звязацца з адміністратарам"
       ],
       "For all ${ BRAND_NAME } services": [
-        "Для ўсіх сэрвісаў ${ BRAND_NAME }"
+        "За ўсе сэрвісы ${ BRAND_NAME }"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Вызваліце месца або ${ upgrade }, каб працягнуць карыстацца прадуктамі ${ BRAND_NAME }"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Калі вы хочаце і далей адпраўляць і прымаць лісты, вызваліце месца або ${ upgrade }"
+        "Вызваліце месца або ${ upgrade }, каб адпраўляць і атрымліваць лісты"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Вызваліце месца або ${ upgrade }, каб запампоўваць або сінхранізаваць файлы"
@@ -10607,14 +10595,8 @@
       "${ n } high-speed VPN connection": [
         "${ n } высакахуткаснае падключэнне па VPN",
         "${ n } высакахуткасныя падключэнні па VPN",
-        "${ n } высакахуткасных падключэнняў па VPN",
-        "${ n } высакахуткасных падключэнняў па VPN"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } высакахуткаснае падключэнне па VPN на карыстальніка",
-        "${ n } высакахуткасныя падключэнні па VPN на карыстальніка",
-        "${ n } высакахуткасных падключэнняў па VPN на карыстальніка",
-        "${ n } высакахуткасных падключэнняў па VPN на карыстальніка"
+        "${ n } высакахуткасныя падключэнні па VPN",
+        "${ n } высакахуткасныя падключэнні па VPN"
       ],
       "${ n } VPN connection": [
         "${ n } падключэнне па VPN",
@@ -10722,47 +10704,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription reminder": {
@@ -11067,6 +11008,47 @@
         "Кароткі псеўданім электроннай пошты @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Вы ўпэўнены?"
@@ -11322,7 +11304,7 @@
     },
     "Suffix for price": {
       "per month": [
-        "у месяц"
+        "ў месяц"
       ],
       "per user per month": [
         "на карыстальніка ў месяц"
@@ -11493,7 +11475,7 @@
         "Дадаць краіны ў \"${ policyName }\""
       ],
       "Add credit/debit card": [
-        "Дадаць крэдытную/плацежную картку"
+        "Дадаць банкаўскую картку"
       ],
       "Add credits": [
         "Дадаць крэдыты"
@@ -11582,10 +11564,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -11844,7 +11826,7 @@
         "Увядзіце падрабязнасці вашага ўліковага запісу ${ BRAND_NAME }, каб далучыцца да бэта-праграмы ${ app }"
       ],
       "Enter your password": [
-        "Увядзіце пароль"
+        "Увядзіце свой пароль"
       ],
       "Error": [
         "Памылка"
@@ -12000,7 +11982,7 @@
         "Праверка плацяжу"
       ],
       "PayPal verification failed": [
-        "Не ўдалося ажыццявіць праверку PayPal"
+        "Збой праверкі PayPal"
       ],
       "Phone": [
         "Тэлефон"
@@ -12072,7 +12054,7 @@
         "Бяспечныя падзеі"
       ],
       "Select a plan": [
-        "Выбар тарыфнага плана"
+        "Выберыце тарыфны план"
       ],
       "Send email reminders?": [
         "Адправіць напаміны поштай?"
@@ -12810,7 +12792,7 @@
       ],
       "${ n } VPN connection": [
         "${ n } падключэнне па VPN",
-        "${ n } падключэнні па VPN",
+        "${ n } падключэнняў па VPN",
         "${ n } падключэнняў па VPN",
         "${ n } падключэнняў па VPN"
       ],
