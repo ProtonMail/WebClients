@@ -33,7 +33,6 @@ import { useLinkActions, useLinksActions } from '../../../store/_links';
 import { useMemoArrayNoMatterTheOrder } from '../../../store/_views/utils';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../zustand/photos/layout.store';
-import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import { useCreateAlbum, useFavoritePhotoToggleFromLayout } from '../../PhotosActions/Albums';
 import { AddAlbumPhotosModal } from '../../PhotosModals/AddAlbumPhotosModal';
 import { CreateAlbumModal } from '../../PhotosModals/CreateAlbumModal';
@@ -189,7 +188,6 @@ export const PhotosLayout = () => {
         currentPageType === AlbumsPageTypes.ALBUMSGALLERY && album ? album.photoCount : photoLinkIds.length;
     const hasPreview = !!previewItem && currentPageType !== AlbumsPageTypes.ALBUMS;
     const previewShareId = albumShareId || shareId;
-    const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
     const isGalleryOrAdmin =
         currentPageType === AlbumsPageTypes.GALLERY ||
         (currentPageType === AlbumsPageTypes.ALBUMSGALLERY && album?.permissions.isAdmin);
@@ -418,21 +416,19 @@ export const PhotosLayout = () => {
     );
 
     const onRemoveAlbumPhotos = useCallback(async () => {
-        const { missingPhotosIds, selectedPhotosIds } = isAlbumsWithSharingDisabled
-            ? { selectedPhotosIds: [], missingPhotosIds: [] }
-            : selectedItemsLinkIds.reduce<{
-                  selectedPhotosIds: string[];
-                  missingPhotosIds: string[];
-              }>(
-                  (acc, linkId) => {
-                      if (!photoLinkIds.includes(linkId)) {
-                          acc.missingPhotosIds.push(linkId);
-                      }
-                      acc.selectedPhotosIds.push(linkId);
-                      return acc;
-                  },
-                  { selectedPhotosIds: [], missingPhotosIds: [] }
-              );
+        const { missingPhotosIds, selectedPhotosIds } = selectedItemsLinkIds.reduce<{
+            selectedPhotosIds: string[];
+            missingPhotosIds: string[];
+        }>(
+            (acc, linkId) => {
+                if (!photoLinkIds.includes(linkId)) {
+                    acc.missingPhotosIds.push(linkId);
+                }
+                acc.selectedPhotosIds.push(linkId);
+                return acc;
+            },
+            { selectedPhotosIds: [], missingPhotosIds: [] }
+        );
         const abortSignal = new AbortController().signal;
         if (!missingPhotosIds.length) {
             await handleRemoveAlbumPhotos(abortSignal, { selectedPhotosIds });
@@ -446,13 +442,7 @@ export const PhotosLayout = () => {
                     }),
             });
         }
-    }, [
-        isAlbumsWithSharingDisabled,
-        selectedItemsLinkIds,
-        photoLinkIds,
-        handleRemoveAlbumPhotos,
-        showRemoveAlbumPhotosModal,
-    ]);
+    }, [selectedItemsLinkIds, photoLinkIds, handleRemoveAlbumPhotos, showRemoveAlbumPhotosModal]);
 
     const onPhotoUploadedToAlbum = useCallback(
         async (album: DecryptedAlbum | undefined, file: OnFileUploadSuccessCallbackData) => {
@@ -678,9 +668,7 @@ export const PhotosLayout = () => {
                         (isDecryptedLink(previewItem) ? previewItem.createTime : undefined)
                     }
                     onShare={
-                        (isDecryptedLink(previewItem) && previewItem?.trashed) ||
-                        isAlbumsWithSharingDisabled ||
-                        !canChangeSharePhotoInPreview
+                        (isDecryptedLink(previewItem) && previewItem?.trashed) || !canChangeSharePhotoInPreview
                             ? undefined
                             : () => showLinkSharingModal({ shareId: previewShareId, linkId: previewItem.linkId })
                     }
