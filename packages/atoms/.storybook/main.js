@@ -1,15 +1,18 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { getJsLoader } = require('@proton/pack/webpack/js.loader');
-const getCssLoaders = require('@proton/pack/webpack/css.loader');
-const getAssetsLoaders = require('@proton/pack/webpack/assets.loader');
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-module.exports = {
+import getAssetsLoaders from '@proton/pack/webpack/assets.loader';
+import getCssLoaders from '@proton/pack/webpack/css.loader';
+import { getJsLoaders } from '@proton/pack/webpack/js.loader';
+
+/** @type { import('@storybook/react-webpack5').StorybookConfig } */
+const config = {
     core: {
-        builder: 'webpack5',
+        disableTelemetry: true,
     },
+    stories: ['../**/*.stories.@(js|jsx|mjs|ts|tsx)'],
     staticDirs: [],
-    stories: ['../**/*.stories.mdx', '../**/*.stories.@(js|jsx|ts|tsx)'],
-    addons: ['@storybook/addon-links', '@storybook/addon-storysource', '@storybook/addon-essentials'],
+    addons: ['@storybook/addon-webpack5-compiler-babel', '@storybook/addon-links', '@storybook/addon-essentials'],
+    framework: '@storybook/react-webpack5',
     typescript: {
         check: false,
         checkOptions: {},
@@ -65,8 +68,9 @@ module.exports = {
             module: {
                 ...config.module,
                 rules: [
+                    // Filter out JS/CSS loaders that are not related to MDX to prevent Webpack from blowing up due to conflicting rules
                     ...config.module.rules.filter((rule) => {
-                        return rule.test.toString().includes('mdx');
+                        return rule && rule.test && rule.test.toString().includes('mdx');
                     }),
                     {
                         test: /\.stories\.(tsx|mdx)?$/,
@@ -78,7 +82,9 @@ module.exports = {
                         ],
                         enforce: 'pre',
                     },
-                    ...[getJsLoader(options), ...getCssLoaders(options), ...getAssetsLoaders(options)],
+                    ...getJsLoaders(options),
+                    ...getCssLoaders(options),
+                    ...getAssetsLoaders(options),
                 ],
             },
             plugins: [
@@ -96,3 +102,5 @@ module.exports = {
         };
     },
 };
+
+export default config;
