@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms';
 import { Icon, useNotifications } from '@proton/components/index';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
