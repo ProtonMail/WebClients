@@ -10,7 +10,6 @@ import folderImages from '@proton/styles/assets/img/drive/folder-images.svg';
 import useFlag from '@proton/unleash/useFlag';
 
 import { getContactNameAndEmail } from '../../../components/modals/ShareLinkModal/DirectSharing/DirectSharingListing';
-import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosAddAlbumPhotosButton } from '../toolbar/PhotosAddAlbumPhotosButton';
 import { AlbumMembers } from './AlbumMembers';
@@ -42,7 +41,6 @@ export const AlbumCoverHeader = ({
     const signatureEmail = album.signatureEmail || album.nameSignatureEmail || user.Email;
     const { contactName, contactEmail } = getContactNameAndEmail(signatureEmail, contactEmails);
     const displayName = user.DisplayName || user.Name;
-    const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
     const showAddToAlbumButton = album.permissions.isOwner || album.permissions.isAdmin || album.permissions.isEditor;
     const sharedByNameOrEmail = contactName || contactEmail;
 
@@ -89,17 +87,15 @@ export const AlbumCoverHeader = ({
                     </span>
                 </p>
                 <div className="flex flex-wrap flex-row gap-2" data-testid="cover-options">
-                    {!isAlbumsWithSharingDisabled && album.permissions.isAdmin && (
+                    {album.permissions.isAdmin && (
                         <Tooltip title={displayName}>
                             <UserAvatar name={displayName} data-testid="user-avatar" />
                         </Tooltip>
                     )}
 
-                    {!isAlbumsWithSharingDisabled && album.permissions.isAdmin && (
-                        <AlbumMembers shareId={shareId} linkId={linkId} onShare={onShare} />
-                    )}
+                    {album.permissions.isAdmin && <AlbumMembers shareId={shareId} linkId={linkId} onShare={onShare} />}
 
-                    {!isAlbumsWithSharingDisabled && album.permissions.isAdmin && (
+                    {album.permissions.isAdmin && (
                         <Button
                             color="weak"
                             shape="solid"
@@ -113,7 +109,7 @@ export const AlbumCoverHeader = ({
                         </Button>
                     )}
 
-                    {!isAlbumsWithSharingDisabled && !album.permissions.isAdmin && (
+                    {!album.permissions.isAdmin && (
                         <span className="color-weak mb-2 mt-1">
                             {c('Info').t`Shared by `}
                             <b>{sharedByNameOrEmail}</b>

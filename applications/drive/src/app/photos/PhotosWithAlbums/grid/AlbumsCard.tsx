@@ -25,7 +25,6 @@ import clsx from '@proton/utils/clsx';
 import SignatureIcon from '../../../components/SignatureIcon';
 import { getMimeTypeDescription } from '../../../components/sections/helpers';
 import { type DecryptedLink, isDecryptedLink } from '../../../store';
-import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { formatVideoDuration } from './formatVideoDuration';
 
@@ -53,7 +52,6 @@ interface AlbumDropdownButtonprops {
 
 export const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdownButtonprops) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
     const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
 
     return (
@@ -86,18 +84,17 @@ export const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdo
                             {c('Action').t`Rename album`}
                         </DropdownMenuButton>
                     )}
-                    {!isAlbumsWithSharingDisabled && (
-                        <DropdownMenuButton
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                onShare();
-                            }}
-                            className="text-left flex items-center flex-nowrap"
-                        >
-                            <Icon className="mr-2" name="user-plus" />
-                            {c('Action').t`Share album`}
-                        </DropdownMenuButton>
-                    )}
+
+                    <DropdownMenuButton
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onShare();
+                        }}
+                        className="text-left flex items-center flex-nowrap"
+                    >
+                        <Icon className="mr-2" name="user-plus" />
+                        {c('Action').t`Share album`}
+                    </DropdownMenuButton>
 
                     {!driveAlbumsDisabled && (
                         <DropdownMenuButton
