@@ -96,7 +96,6 @@ export const acceptCalendarShareInvitation = async ({
                     armoredSignature,
                     verificationKeys: verifyingPinnedKeys,
                     sessionKeys: passphraseSessionKey,
-                    handleMalformedIcsAttachmentContent: true,
                 });
                 if (passphraseVerificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
                     throw new ShareCalendarSignatureVerificationError(senderEmail, errors);
