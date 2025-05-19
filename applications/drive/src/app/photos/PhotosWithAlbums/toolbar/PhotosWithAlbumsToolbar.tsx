@@ -183,6 +183,7 @@ export const ToolbarLeftActionsGallery = ({
                             : 'color-hint hover:color-norm'
                     )}
                     onClick={() => tab.onClick()}
+                    data-testid={`toolbar-${tab.label.toLowerCase()}-tab`}
                 >
                     <Icon name={tab.icon} size={5} /> <span>{tab.label}</span>
                 </InlineLinkButton>
@@ -214,6 +215,7 @@ export const ToolbarLeftActionsAlbumsGallery = ({
             className="inline-flex flex-nowrap flex-row text-semibold items-center"
             {...getButtonStyles()}
             onClick={onAlbumsClick}
+            data-testid="toolbar-go-back"
         >
             <Icon name="arrow-left" className="mr-2 shrink-0" /> {c('Action').t`Go back`}
         </Button>
