@@ -1,8 +1,12 @@
+import { config as dotenvConfig } from 'dotenv';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import webpack from 'webpack';
+import path from 'node:path';
+import webpack, { DefinePlugin } from 'webpack';
 
 import getConfig from '@proton/pack/webpack.config';
 import { addDevEntry, getIndexChunks } from '@proton/pack/webpack/entries';
+
+dotenvConfig({ path: path.join(__dirname, '.env') });
 
 const result = (env: any): webpack.Configuration => {
     const config = getConfig(env);
@@ -27,6 +31,22 @@ const result = (env: any): webpack.Configuration => {
             scriptLoading: 'defer',
             inject: 'body',
             chunks: getIndexChunks('index'),
+        })
+    );
+
+    config.plugins?.push(
+        new DefinePlugin({
+            'process.env.LIVEKIT_URL': JSON.stringify(process.env.LIVEKIT_URL),
+            'process.env.LIVEKIT_API_KEY': JSON.stringify(process.env.LIVEKIT_API_KEY),
+            'process.env.LIVEKIT_API_SECRET': JSON.stringify(process.env.LIVEKIT_API_SECRET),
+            'process.env.LIVEKIT_ROOM_KEY': JSON.stringify(process.env.LIVEKIT_ROOM_KEY),
+            'process.env.EXPERIMENTAL_FACE_CROP': JSON.stringify(process.env.EXPERIMENTAL_FACE_CROP),
+            'process.env.EXPERIMENTAL_DYNAMIC_SUBSCRIPTION': JSON.stringify(
+                process.env.EXPERIMENTAL_DYNAMIC_SUBSCRIPTION
+            ),
+            'process.env.EXPERIMENTAL_ACTIVE_SPEAKER_ORDERING': JSON.stringify(
+                process.env.EXPERIMENTAL_ACTIVE_SPEAKER_ORDERING
+            ),
         })
     );
 

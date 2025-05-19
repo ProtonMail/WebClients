@@ -59,6 +59,10 @@ export const getIsLumoApp = (toApp?: APP_NAMES) => {
     return toApp === APPS.PROTONLUMO;
 };
 
+export const getIsMeetApp = (toApp?: APP_NAMES) => {
+    return toApp === APPS.PROTONMEET;
+};
+
 export const getRequiresAddress = (toApp: APP_NAMES) => {
     return requiresAddress.includes(toApp);
 };

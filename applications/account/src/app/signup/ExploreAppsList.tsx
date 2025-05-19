@@ -81,6 +81,11 @@ export const getExploreApps = ({
                 return c('collider_2025: app-switcher').t`Chat with a private AI assistant`;
             },
         },
+        {
+            name: APPS.PROTONMEET,
+            bit: PRODUCT_BIT.MEET,
+            description: () => '',
+        },
     ]
         .sort((a, b) => {
             if (

@@ -59,6 +59,8 @@ const allApps = new Set([
     APPS.PROTONDOCS,
     APPS.PROTONWALLET,
     APPS.PROTONLUMO,
+    APPS.PROTONAUTHENTICATOR,
+    APPS.PROTONMEET,
 ]);
 
 const sort = (a: APP_NAMES[], b: APP_NAMES[] | Set<APP_NAMES>) => {
@@ -260,6 +262,7 @@ describe('available apps', () => {
                     user: getNonPrivateExternalUser(),
                 }),
                 [
+                    APPS.PROTONMEET,
                     APPS.PROTONPASS,
                     APPS.PROTONDRIVE,
                     APPS.PROTONDOCS,
@@ -403,6 +406,7 @@ describe('available apps', () => {
                     organization: getAllowedProducts([]),
                 }),
                 [
+                    APPS.PROTONMEET,
                     APPS.PROTONPASS,
                     APPS.PROTONDRIVE,
                     APPS.PROTONDOCS,

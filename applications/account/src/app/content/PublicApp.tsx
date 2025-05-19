@@ -200,6 +200,7 @@ const loginPaths = [
     SSO_PATHS.PASS_SIGN_IN,
     SSO_PATHS.WALLET_SIGN_IN,
     SSO_PATHS.LUMO_SIGN_IN,
+    SSO_PATHS.MEET_SIGN_IN,
 ];
 
 const ephemeralLoginPaths = [SSO_PATHS.APP_SWITCHER, SSO_PATHS.REAUTH];

@@ -3,6 +3,7 @@ import { getCalendarAppRoutes } from '../containers/calendar/routes';
 import { getDocsAppRoutes } from '../containers/docs/routes';
 import { getDriveAppRoutes } from '../containers/drive/routes';
 import { getMailAppRoutes } from '../containers/mail/routes';
+import { getMeetAppRoutes } from '../containers/meet/routes';
 import { getOrganizationAppRoutes } from '../containers/organization/routes';
 import { getPassAppRoutes } from '../containers/pass/routes';
 import { getVpnAppRoutes } from '../containers/vpn/routes';
@@ -103,6 +104,7 @@ export const getRoutes = ({
         }),
         vpn: getVpnAppRoutes({ app }),
         wallet: getWalletAppRoutes(),
+        meet: getMeetAppRoutes(),
     };
 };
 

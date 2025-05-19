@@ -46,6 +46,8 @@ const getAppNameFromParentKey = (parentKey: RouteParents): APP_NAMES => {
             return APPS.PROTONPASS;
         case 'wallet':
             return APPS.PROTONWALLET;
+        case 'meet':
+            return APPS.PROTONMEET;
     }
     throw new Error('Unknown route');
 };

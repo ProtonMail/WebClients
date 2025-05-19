@@ -21,6 +21,8 @@
         "test:watch": "yarn test --watch"
     },
     "dependencies": {
+        "@livekit/components-react": "^2.9.3",
+        "@livekit/components-styles": "^1.1.5",
         "@proton/components": "workspace:packages/components",
         "@proton/cross-storage": "workspace:packages/cross-storage",
         "@proton/crypto": "workspace:packages/crypto",
@@ -30,10 +32,13 @@
         "@proton/shared": "workspace:packages/shared",
         "@proton/styles": "workspace:packages/styles",
         "@proton/testing": "workspace:packages/testing",
+        "@tensorflow-models/blazeface": "^0.1.0",
+        "@tensorflow/tfjs": "^4.22.0",
         "@types/react": "^18.3.20",
         "@types/react-dom": "^18.3.6",
         "@types/react-router-dom": "^5.3.3",
         "cross-env": "^7.0.3",
+        "livekit-client": "^2.11.4",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-redux": "^9.2.0",
