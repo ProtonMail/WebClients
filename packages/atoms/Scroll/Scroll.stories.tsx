@@ -1,15 +1,10 @@
-import Scroll from './Scroll';
-import mdx from './Scroll.mdx';
+import type { Meta, StoryObj } from '@storybook/react';
 
-export default {
-    component: Scroll,
-    title: 'components/Scroll',
-    parameters: { docs: { page: mdx } },
-};
+import { Scroll } from '..';
 
-export const Basic = () => {
-    return (
-        <Scroll className="border" style={{ height: 160 }}>
+const meta: Meta<typeof Scroll> = {
+    args: {
+        children: (
             <div className="px-4 text-justify">
                 <p style={{ maxWidth: 400 }}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus
@@ -32,13 +27,33 @@ export const Basic = () => {
                     blanditiis quos?
                 </p>
             </div>
-        </Scroll>
-    );
+        ),
+        className: 'border',
+        horizontal: false,
+        style: { height: 160 },
+    },
+
+    component: Scroll,
+    parameters: {
+        docs: {
+            description: {
+                component:
+                    'The `Scroll` component is a utility component which makes an area scrollable should its content overflow the maximum dimensions of its parent. It also adds some styling in the form of shadows to indicate to the user that an area is scrollable/has off-screen parts.',
+            },
+        },
+    },
+    tags: ['autodocs'],
 };
 
-export const Horizontal = () => {
-    return (
-        <Scroll horizontal className="border">
+export default meta;
+
+type Story = StoryObj<typeof Scroll>;
+
+export const Default: Story = {};
+
+export const Horizontal: Story = {
+    args: {
+        children: (
             <div className="p-4 flex flex-nowrap">
                 <p className="pr-7" style={{ minWidth: 400 }}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus
@@ -61,6 +76,7 @@ export const Horizontal = () => {
                     blanditiis quos?
                 </p>
             </div>
-        </Scroll>
-    );
+        ),
+        horizontal: true,
+    },
 };

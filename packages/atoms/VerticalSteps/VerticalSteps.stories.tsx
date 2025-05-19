@@ -1,68 +1,79 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
 import { Icon } from '@proton/components';
 
-import VerticalStep, { VerticalStepStatusEnum } from './VerticalStep';
-import VerticalSteps from './VerticalSteps';
-import mdx from './VerticalSteps.mdx';
+import { VerticalStep, VerticalStepStatusEnum, VerticalSteps } from '..';
 
-export default {
+const meta: Meta<typeof VerticalSteps> = {
     component: VerticalSteps,
-    subcomponents: { VerticalStep },
-    title: 'components/VerticalSteps',
-    parameters: { docs: { page: mdx } },
+    parameters: {
+        docs: {
+            description: {
+                component:
+                    'Creates a vertical timeline UI. Each item accepts a few props: `title`, `description`, `status` (done, passed, next), `icon`.',
+            },
+        },
+    },
+    tags: ['autodocs'],
 };
 
-export const Basic = () => (
-    <VerticalSteps>
-        <VerticalStep
-            icon={<Icon name="checkmark" className="m-auto" size={4} />}
-            title="Choose a username"
-            description="You successfully selected your new email address."
-            status={VerticalStepStatusEnum.Passed}
-        />
-        <VerticalStep
-            icon={<Icon name="lock" className="m-auto" size={4} />}
-            title="Today: get instant access"
-            description="15 GB secure mailbox with unlimited personalisation."
-            status={VerticalStepStatusEnum.Done}
-        />
-        <VerticalStep
-            icon={<Icon name="bell" className="m-auto" size={4} />}
-            title="Day 24: Trial end reminder"
-            description="We’ll send you a notice. Cancel anytime."
-        />
-        <VerticalStep
-            icon={<Icon name="calendar-row" className="m-auto" size={4} />}
-            title="Day 30: Trial ends"
-            description="Your subscription will start Jan 16th. Cancel anytime before."
-        />
-    </VerticalSteps>
-);
+export default meta;
 
-export const Primary = () => (
-    <VerticalSteps className="vertical-steps--primary">
-        <VerticalStep
-            titleCentered
-            titleBold={false}
-            title="Select service to update"
-            icon={<span className="m-auto">1</span>}
-        />
-        <VerticalStep
-            titleCentered
-            titleBold={false}
-            title="Do another great step"
-            icon={<span className="m-auto">2</span>}
-        />
-        <VerticalStep
-            titleCentered
-            titleBold={false}
-            title="Do another great step again"
-            icon={<span className="m-auto">3</span>}
-        />
-        <VerticalStep
-            titleCentered
-            titleBold={false}
-            title="Do another great step final step"
-            icon={<span className="m-auto">4</span>}
-        />
-    </VerticalSteps>
-);
+type Story = StoryObj<typeof VerticalSteps>;
+
+export const Default: Story = {
+    render: () => (
+        <VerticalSteps>
+            <VerticalStep
+                icon={<Icon name="checkmark" className="m-auto" size={4} />}
+                title="Step 1"
+                description="Description for Step 1"
+                status={VerticalStepStatusEnum.Passed}
+            />
+            <VerticalStep
+                icon={<Icon name="lock" className="m-auto" size={4} />}
+                title="Step 2"
+                description="Description for Step 2"
+                status={VerticalStepStatusEnum.Done}
+            />
+            <VerticalStep
+                icon={<Icon name="bell" className="m-auto" size={4} />}
+                title="Step 3"
+                description="Description for Step 3"
+                status={VerticalStepStatusEnum.Next}
+            />
+        </VerticalSteps>
+    ),
+};
+
+export const AllStatuses: Story = {
+    render: () => (
+        <VerticalSteps>
+            {Object.values(VerticalStepStatusEnum)
+                .sort()
+                .map((status) => (
+                    <VerticalStep
+                        key={status}
+                        icon={<Icon name="checkmark" className="m-auto" size={4} />}
+                        title={`Status: ${status}`}
+                        description="Description"
+                        status={status}
+                    />
+                ))}
+        </VerticalSteps>
+    ),
+};
+
+export const WithTitleNotBold: Story = {
+    render: () => (
+        <VerticalSteps>
+            <VerticalStep
+                icon={<Icon name="checkmark" className="m-auto" size={4} />}
+                title="Step"
+                description="Description"
+                status={VerticalStepStatusEnum.Next}
+                titleBold={false}
+            />
+        </VerticalSteps>
+    ),
+};

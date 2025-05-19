@@ -1,80 +1,55 @@
-import { useState } from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Icon, Option, SelectTwo } from '@proton/components';
+import { Icon } from '@proton/components';
 
-import { Input } from './Input';
-import mdx from './Input.mdx';
+import { Input } from '..';
 
-export default {
+const meta: Meta<typeof Input> = {
+    args: {
+        placeholder: 'Placeholder',
+    },
     component: Input,
-    title: 'components/Input',
-    parameters: { docs: { page: mdx } },
+    parameters: {
+        docs: {
+            description: {
+                component: 'CircleLoader component.',
+            },
+        },
+    },
+    tags: ['autodocs'],
 };
 
-export const Basic = () => {
-    const [value, setValue] = useState('');
+export default meta;
 
-    const handleValue = (updatedValue: string) => setValue(updatedValue);
+type Story = StoryObj<typeof Input>;
 
-    return <Input placeholder="Placeholder" value={value} onValue={handleValue} />;
+export const Default: Story = {};
+
+export const Disabled: Story = {
+    args: {
+        disabled: true,
+    },
 };
 
-export const Controlled = () => {
-    const [value, setValue] = useState('');
-
-    const handleValue = (updatedValue: string) => setValue(updatedValue);
-
-    return (
-        <>
-            <Input placeholder="Placeholder" value={value} onValue={handleValue} />
-
-            <p className="mb-1">
-                The `disableChange` prop can be used to prevent the input value from updating. Try updating the value
-                from the input below.
-            </p>
-            <Input disableChange placeholder="Placeholder" value={value} onValue={handleValue} />
-        </>
-    );
+export const Unstyled: Story = {
+    args: {
+        unstyled: true,
+    },
 };
 
-export const Error = () => {
-    return <Input error />;
+export const WithError: Story = {
+    args: {
+        error: true,
+    },
 };
 
-export const Disabled = () => {
-    return (
-        <>
-            <Input disabled />
-            <p className="mb-1">Note the disabled styling added to the prefix and suffix</p>
-            <Input disabled prefix={<Icon name="magnifier" />} suffix="@protonmail.com" />
-        </>
-    );
+export const WithPrefix: Story = {
+    args: {
+        prefix: <Icon name="magnifier" />,
+    },
 };
-
-export const Unstyled = () => {
-    return <Input unstyled prefix={<Icon name="magnifier" />} placeholder="Search" />;
-};
-
-export const Adornments = () => {
-    return (
-        <>
-            <Input className="mb-2" prefix={<Icon name="magnifier" />} />
-            <Input className="mb-2" placeholder="**** **** **** ****" suffix={<Icon name="credit-card" />} />
-            <Input className="mb-2" placeholder="username" suffix="@protonmail.com" />
-            <Input
-                className="mb-2"
-                placeholder="username"
-                suffix={
-                    <SelectTwo unstyled value="pm.me">
-                        <Option key="pm.me" value="pm.me" title="pm.me">
-                            @pm.me
-                        </Option>
-                        <Option key="protonmail.com" value="protonmail.com" title="protonmail.com">
-                            @protonmail.com
-                        </Option>
-                    </SelectTwo>
-                }
-            />
-        </>
-    );
+export const WithSuffix: Story = {
+    args: {
+        suffix: '@protonmail.com',
+    },
 };

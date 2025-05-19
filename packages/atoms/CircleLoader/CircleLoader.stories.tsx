@@ -1,32 +1,61 @@
-import CircleLoader from './CircleLoader';
-import mdx from './CircleLoader.mdx';
+import type { Meta, StoryObj } from '@storybook/react';
 
+import type { CircleLoaderProps } from '..';
+import { CircleLoader, CircleLoaderSizeEnum } from '..';
 
-export default {
+const meta: Meta<typeof CircleLoader> = {
+    args: {
+        className: 'color-primary',
+        size: CircleLoaderSizeEnum.Medium,
+        srLabelHidden: true,
+    },
+    argTypes: {
+        size: {
+            control: 'radio',
+            options: Object.values(CircleLoaderSizeEnum),
+        },
+    },
     component: CircleLoader,
-    title: 'components/CircleLoader',
-    parameters: { docs: { page: mdx } },
+    parameters: {
+        docs: {
+            description: {
+                component: 'CircleLoader component.',
+            },
+        },
+    },
+    tags: ['autodocs'],
 };
 
-export const Basic = () => (
+export default meta;
+
+type Story = StoryObj<typeof CircleLoader>;
+
+export const Default: Story = {};
+
+// Sizes
+const allSizesSorted = Object.values(CircleLoaderSizeEnum).sort();
+const AllSizesWithProps = (props: CircleLoaderProps = {}) => (
     <>
-        <CircleLoader />
-        <br />
-        <CircleLoader size="medium" className="color-primary" />
-        <br />
-        <CircleLoader size="large" className="color-danger" />
+        {allSizesSorted.map((size: CircleLoaderSizeEnum) => (
+            <CircleLoader key={size} {...props} children={size} size={size} />
+        ))}
     </>
 );
 
-export const Sizes = () => (
-    <div className="block">
-        <div>Small</div>
-        <CircleLoader />
+export const AllSizes: Story = {
+    render: () => AllSizesWithProps(),
+};
 
-        <div className="mt-8">Medium</div>
-        <CircleLoader size="medium" />
-
-        <div className="mt-8">Large</div>
-        <CircleLoader size="large" />
-    </div>
+// Colors
+const classNamesSorted = ['', 'color-danger', 'color-primary'];
+const ClassNamesWithProps = (props: CircleLoaderProps = {}) => (
+    <>
+        {classNamesSorted.map((className: string) => (
+            <CircleLoader key={className} {...props} className={className} size={CircleLoaderSizeEnum.Medium} />
+        ))}
+    </>
 );
+
+export const WithClassNames: Story = {
+    render: () => ClassNamesWithProps(),
+};

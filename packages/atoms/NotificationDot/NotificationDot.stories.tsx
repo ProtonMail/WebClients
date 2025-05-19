@@ -1,34 +1,77 @@
-import { ThemeColor } from '@proton/colors';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Card } from '..';
-import NotificationDot from './NotificationDot';
-import mdx from './NotificationDot.mdx';
+import { ThemeColor } from '@proton/colors/types';
 
-export default {
+import { Card, NotificationDot, type NotificationDotProps } from '..';
+
+const meta: Meta<typeof NotificationDot> = {
+    args: {
+        alt: 'dot',
+        color: ThemeColor.Norm,
+    },
+    argTypes: {
+        color: {
+            control: 'radio',
+            options: Object.values(ThemeColor),
+        },
+    },
     component: NotificationDot,
-    title: 'components/NotificationDot',
-    parameters: { docs: { page: mdx } },
+    parameters: {
+        docs: {
+            description: {
+                component:
+                    'The `NotificationDot` is a circle which can be colored. It takes no opinion on its positioning.',
+            },
+        },
+    },
+    tags: ['autodocs'],
 };
 
-export const Basic = () => <NotificationDot />;
+export default meta;
 
-export const Colors = () => (
+type Story = StoryObj<typeof NotificationDot>;
+
+export const Default: Story = {
+    render: (args) => (
+        <div className="flex">
+            <NotificationDot {...args} />
+        </div>
+    ),
+};
+
+// Colors
+const allColorsSorted = Object.values(ThemeColor).sort();
+const allColorsWithProps = (props: NotificationDotProps) => (
     <div className="flex">
-        {Object.values(ThemeColor).map((color) => (
-            <NotificationDot className="mr-4" color={color} />
+        {allColorsSorted.map((color: ThemeColor) => (
+            <NotificationDot key={color} {...props} color={color} className="mr-4" />
         ))}
     </div>
 );
 
-export const PositionHelper = () => (
-    <>
-        <Card className="relative mb-4">
-            With helper
-            <NotificationDot className="absolute top-0 right-0 notification-dot--top-right" />
-        </Card>
-        <Card className="relative">
-            Without helper
-            <NotificationDot className="absolute top-0 right-0" />
-        </Card>
-    </>
-);
+export const AllColors: Story = {
+    render: (args) => allColorsWithProps(args),
+};
+
+export const WithPositionHelper: Story = {
+    parameters: {
+        docs: {
+            description: {
+                // eslint-disable-next-line custom-rules/deprecate-classes
+                story: 'A `notification-dot--top-right` css class to align the center of the dot to the top right of the container.',
+            },
+        },
+    },
+    render: (args) => (
+        <>
+            <Card className="relative mb-4">
+                With helper
+                <NotificationDot {...args} className="absolute top-0 right-0 notification-dot--top-right" />
+            </Card>
+            <Card className="relative">
+                Without helper
+                <NotificationDot {...args} className="absolute top-0 right-0" />
+            </Card>
+        </>
+    ),
+};
