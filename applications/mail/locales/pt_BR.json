@@ -1171,11 +1171,11 @@
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
       ],
-      "Select all": [
-        "Selecionar tudo"
-      ],
       "Select All": [
         "Selecionar todos"
+      ],
+      "Select all": [
+        "Selecionar tudo"
       ],
       "Select all messages": [
         "Selecionar todas as mensagens"
@@ -1484,13 +1484,13 @@
         "Usar um método de pagamento diferente"
       ],
       "Use authentication code": [
-        "Usar código de autenticação"
+        "Usar um código de autenticação"
       ],
       "Use for sending": [
         "Usar para envio"
       ],
       "Use recovery code": [
-        "Usar código de recuperação"
+        "Usar um código de recuperação"
       ],
       "Use this": [
         "Usar isso"
@@ -6475,9 +6475,6 @@
       "and": [
         "e"
       ],
-      "and more.": [
-        "e mais."
-      ],
       "Another tip will be displayed next time you open Mail": [
         "Outra dica será exibida na próxima vez que você abrir o Mail"
       ],
@@ -6802,15 +6799,17 @@
       "Drop to import": [
         "Solte para importar"
       ],
-      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
-        "Devido à configuração do seu destinatário, esta mensagem não pode ser enviada com uma data de expiração para o seguinte contato: ",
-        "Devido à configuração do destinatário, esta mensagem não pode ser enviada com uma data de expiração para os seguintes contatos: "
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Devido à configuração do seu destinatário, esta mensagem não pode ser enviada com uma data de expiração para ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Devido à configuração do seu destinatário, esta mensagem não pode ser enviada com uma data de expiração."
       ],
       "Duplicate key updated": [
         "Chave duplicada atualizada"
       ],
       "Each code can only be used once": [
-        "Cada código só pode ser usado uma única vez"
+        "Cada código só pode ser usado uma única vez."
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Gerencie e cancele a assinatura de newsletters e listas de e-mails facilmente."
@@ -6868,7 +6867,7 @@
         "Curta uma experiência de e-mail mais rápida e focada com o aplicativo para desktop."
       ],
       "Enter the code from your authenticator app": [
-        "Insira o código do seu aplicativo autenticador"
+        "Insira o código do seu aplicativo de autenticação."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Digite as credenciais da conta de e-mail da qual você deseja importar."
@@ -6923,7 +6922,7 @@
         "Os filtros funcionam em todos os e-mails, incluindo os e-mails recebidos e enviados. Cada filtro deve conter pelo menos um nome, uma condição e uma ação a ser salva."
       ],
       "finance": [
-        "finança"
+        "finanças"
       ],
       "Folder": [
         "Pasta"
@@ -7064,7 +7063,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -7157,7 +7157,7 @@
         "Carregando..."
       ],
       "Low Priority": [
-        "Baixa prioridade"
+        "Prioridade baixa"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
         "Defina ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão."
@@ -8160,7 +8160,7 @@
         "Quando você ativou as chaves de confiança para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contato."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
+        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação"
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Ao se inscrever para receber um boletim informativo, use um alias em vez do seu endereço de e-mail. Sua identidade permanece oculta, e você pode desativar o alias a qualquer momento."
@@ -8808,7 +8808,7 @@
         "Anexar captura(s) de tela"
       ],
       "Authenticator app": [
-        "Aplicativo autenticador"
+        "Aplicativo de autenticação"
       ],
       "BCC": [
         "CCO"
@@ -10646,11 +10646,6 @@
         "Desbloqueie todos os produtos e recursos premium da ${ BRAND_NAME } por apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -10663,6 +10658,11 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -12793,47 +12793,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Armazenamento de 15 GB"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 recursos premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento de e-mail automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerta de violações de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicativo para computador"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Faça upgrade para um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie nossa missão"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade your productivity": [
-        "Faça upgrade da sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos seus dados"
-      ],
-      "Your privacy is our mission": [
-        "Sua privacidade é a nossa missão"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com recursos premium"
@@ -13092,6 +13051,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Seu próprio alias de e-mail @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Armazenamento de 15 GB"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 recursos premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento de e-mail automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerta de violações de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicativo para computador"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Faça upgrade para um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie nossa missão"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Faça upgrade da sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos seus dados"
+      ],
+      "Your privacy is our mission": [
+        "Sua privacidade é a nossa missão"
       ]
     },
     "Subscription renewal state": {
@@ -14054,10 +14054,10 @@
       "Load remote content": [
         "Carregar conteúdo remoto"
       ],
-      "Mail Subscriptions": [
+      "Mail subscriptions": [
         "Inscrições do Mail"
       ],
-      "Mail subscriptions": [
+      "Mail Subscriptions": [
         "Inscrições do Mail"
       ],
       "Make a secure connection your default": [
