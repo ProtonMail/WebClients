@@ -439,6 +439,9 @@
       "Pause monitoring": [
         "Suspendare monitorizare"
       ],
+      "Pay once": [
+        "Plată o dată"
+      ],
       "Pin item": [
         "Fixare"
       ],
@@ -1880,6 +1883,11 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -2304,6 +2312,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Pentru a revizui datele importate, faceți clic pe pictograma ${ PASS_APP_NAME } din bara de utilitare a navigatorului web."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Aprobat de peste 50.000 de utilizatori de afaceri și 100 de milioane de conturi din întreaga lume."
+      ],
       "Unable to copy to clipboard": [
         "Nu se poate copia în memorie."
       ],
@@ -2669,6 +2680,9 @@
       "Browse faster, smarter": [
         "Navigați pe web mai repede și mai inteligent"
       ],
+      "Built-in 2FA": [
+        "A2F încorporată"
+      ],
       "Capital letters (A-Z)": [
         "Majuscule (A-Z)"
       ],
@@ -2753,6 +2767,9 @@
       "Created at": [
         "Creat la"
       ],
+      "Credit cards": [
+        "Carduri de plată"
+      ],
       "Custom hidden field": [
         "Câmp ascuns personal"
       ],
@@ -2825,6 +2842,9 @@
       "Export": [
         "Exportare"
       ],
+      "Extra email addresses": [
+        "Adrese de e-mail suplimentare"
+      ],
       "Extra password": [
         "Parola suplimentară"
       ],
@@ -2836,6 +2856,9 @@
       ],
       "Field name": [
         "Nume câmp"
+      ],
+      "File attachments": [
+        "Fișiere atașate"
       ],
       "File format": [
         "Format fișier"
@@ -2855,6 +2878,9 @@
       "Forwards to": [
         "Redirecționare către"
       ],
+      "Free": [
+        "Free"
+      ],
       "Free forever": [
         "Gratuit întotdeauna"
       ],
@@ -2873,6 +2899,12 @@
       "Generic CSV": [
         "CSV generic"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Luați ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Obțineți ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "Începeți"
       ],
@@ -2890,6 +2922,9 @@
       ],
       "Hide-my-email aliases": [
         "Aliasuri hide-my-email"
+      ],
+      "Highest": [
+        "Maximă"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Cum se deblochează ${ PASS_SHORT_APP_NAME }"
@@ -2986,6 +3021,9 @@
       ],
       "License number": [
         "Permis de conducere"
+      ],
+      "Limited time": [
+        "Timp limitat"
       ],
       "LinkedIn account": [
         "Cont LinkdIn"
@@ -3137,6 +3175,9 @@
       "PIN code": [
         "Cod PIN"
       ],
+      "Plus": [
+        "Plus"
+      ],
       "Prefix": [
         "Prefix"
       ],
@@ -3263,6 +3304,9 @@
       "Status": [
         "Stare"
       ],
+      "Storage": [
+        "Spațiu de stocare"
+      ],
       "Street address": [
         "Strada"
       ],
@@ -3289,6 +3333,9 @@
       ],
       "Text": [
         "Text"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Tot ce e mai bun de la ${ BRAND_NAME } cu un singur abonament"
       ],
       "The URL has been copied to the clipboard": [
         "Legătura web a fost copiată în memorie"
@@ -3325,6 +3372,12 @@
       ],
       "Unknown": [
         "Necunoscut"
+      ],
+      "Unlimited": [
+        "Nelimitat"
+      ],
+      "Unlock premium features": [
+        "Deblocați funcțiile speciale"
       ],
       "Unlock with": [
         "Deblocare cu"
@@ -3365,6 +3418,9 @@
       "Vault ID": [
         "ID seif"
       ],
+      "Vault, item & link sharing": [
+        "Partajare seif, elemente și legături web"
+      ],
       "Vaults": [
         "Seifuri"
       ],
@@ -3373,6 +3429,12 @@
       ],
       "View logs": [
         "Afișare jurnale"
+      ],
+      "VPN Devices": [
+        "Dispozitive VPN"
+      ],
+      "VPN Speed": [
+        "Viteză VPN"
       ],
       "Vulnerable": [
         "Vulnerabilă"
@@ -3385,6 +3447,9 @@
       ],
       "Websites": [
         "Pagini web"
+      ],
+      "What's included": [
+        "Ce este inclus"
       ],
       "Work details": [
         "Detalii loc de muncă"
@@ -3434,6 +3499,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Activare ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Menu": {
@@ -3614,6 +3684,14 @@
       ],
       "You can attach files to items for a better organization": [
         "Puteți atașa fișiere la articole pentru o organizare mai bună."
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus pe viață cu ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price }/lună"
       ]
     },
     "Placeholder": {
@@ -3884,8 +3962,14 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adrese"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Nelimitat"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Protecție cont"
@@ -4165,6 +4249,9 @@
       ],
       "Pause monitoring?": [
         "Suspendați monitorizarea?"
+      ],
+      "Pay once, access forever.": [
+        "Plătiți o dată, accesați pe viață."
       ],
       "Pending access confirmation": [
         "Se așteaptă confirmarea accesului"

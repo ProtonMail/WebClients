@@ -439,6 +439,9 @@
       "Pause monitoring": [
         "Pozastaviť monitorovanie"
       ],
+      "Pay once": [
+        "Zaplaťte raz"
+      ],
       "Pin item": [
         "Pripnúť položku"
       ],
@@ -1904,6 +1907,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+      ],
       "Moving items": [
         "Presúvanie položiek"
       ],
@@ -2330,6 +2339,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Ak chcete skontrolovať importované údaje, kliknite na ikonu ${ PASS_APP_NAME } v nástrojovom paneli prehliadača."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Má dôveru viac ako 50 000 firemných používateľov a 100 miliónov účtov na celom svete."
+      ],
       "Unable to copy to clipboard": [
         "Nedá sa kopírovať do schránky"
       ],
@@ -2713,6 +2725,9 @@
       "Browse faster, smarter": [
         "Prehliadajte rýchlejšie a inteligentnejšie"
       ],
+      "Built-in 2FA": [
+        "Vstavané 2FA"
+      ],
       "Capital letters (A-Z)": [
         "Veľké písmená (A-Z)"
       ],
@@ -2797,6 +2812,9 @@
       "Created at": [
         "Vytvorené"
       ],
+      "Credit cards": [
+        "Platobné karty"
+      ],
       "Custom hidden field": [
         "Vlastné ukryté pole"
       ],
@@ -2869,6 +2887,9 @@
       "Export": [
         "Export"
       ],
+      "Extra email addresses": [
+        "Ďalších emailových adries"
+      ],
       "Extra password": [
         "Dodatočné heslo"
       ],
@@ -2880,6 +2901,9 @@
       ],
       "Field name": [
         "Názov poľa"
+      ],
+      "File attachments": [
+        "Priložené súbory"
       ],
       "File format": [
         "Formát súboru"
@@ -2899,6 +2923,9 @@
       "Forwards to": [
         "Preposielať na"
       ],
+      "Free": [
+        "Free"
+      ],
       "Free forever": [
         "Navždy zadarmo"
       ],
@@ -2917,6 +2944,12 @@
       "Generic CSV": [
         "Všeobecné CSV"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Získajte ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Získajte ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "Začíname"
       ],
@@ -2934,6 +2967,9 @@
       ],
       "Hide-my-email aliases": [
         "Hide-my-email aliasy"
+      ],
+      "Highest": [
+        "Najvyššia"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Ako odomknúť ${ PASS_SHORT_APP_NAME }"
@@ -3030,6 +3066,9 @@
       ],
       "License number": [
         "Licenčné číslo"
+      ],
+      "Limited time": [
+        "Časovo obmedzené"
       ],
       "LinkedIn account": [
         "Účet LinkedIn"
@@ -3181,6 +3220,9 @@
       "PIN code": [
         "PIN kód"
       ],
+      "Plus": [
+        "Plus"
+      ],
       "Prefix": [
         "Predpona"
       ],
@@ -3307,6 +3349,9 @@
       "Status": [
         "Stav"
       ],
+      "Storage": [
+        "Úložisko"
+      ],
       "Street address": [
         "Ulica a č."
       ],
@@ -3333,6 +3378,9 @@
       ],
       "Text": [
         "Text"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "To najlepšie od ${ BRAND_NAME } s jedným predplatným"
       ],
       "The URL has been copied to the clipboard": [
         "URL adresa bola skopírovaná do schránky"
@@ -3369,6 +3417,12 @@
       ],
       "Unknown": [
         "Neznáme"
+      ],
+      "Unlimited": [
+        "Bez obmedzenia"
+      ],
+      "Unlock premium features": [
+        "Odomknúť prémiové funkcie"
       ],
       "Unlock with": [
         "Odomknúť pomocou"
@@ -3409,6 +3463,9 @@
       "Vault ID": [
         "ID trezoru"
       ],
+      "Vault, item & link sharing": [
+        "Zdieľanie trezoru, položiek a odkazov"
+      ],
       "Vaults": [
         "Trezory"
       ],
@@ -3417,6 +3474,12 @@
       ],
       "View logs": [
         "Zobraziť záznamy"
+      ],
+      "VPN Devices": [
+        "VPN zariadenia"
+      ],
+      "VPN Speed": [
+        "Rýchlosť VPN"
       ],
       "Vulnerable": [
         "Zraniteľné"
@@ -3429,6 +3492,9 @@
       ],
       "Websites": [
         "Webové stránky"
+      ],
+      "What's included": [
+        "Čo je zahrnuté"
       ],
       "Work details": [
         "Podrobnosti o pracovnej činnosti"
@@ -3478,6 +3544,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Povoliť ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Menu": {
@@ -3661,6 +3732,14 @@
       ],
       "You can attach files to items for a better organization": [
         "Pre lepšiu organizáciu môžete k položkám pripojiť súbory"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus Lifetime za ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price }/mesiac"
       ]
     },
     "Placeholder": {
@@ -3933,8 +4012,14 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adresy"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Ochrana účtu"
@@ -4217,6 +4302,9 @@
       ],
       "Pause monitoring?": [
         "Pozastaviť monitorovanie?"
+      ],
+      "Pay once, access forever.": [
+        "Zaplaťte raz, prístup navždy."
       ],
       "Pending access confirmation": [
         "Čaká sa na potvrdenie prístupu"
