@@ -105,9 +105,6 @@
       "Attention required": [
         "Χρειάζεται προσοχή"
       ],
-      "Authenticate": [
-        "Ταυτοποίηση"
-      ],
       "Back": [
         "Πίσω"
       ],
@@ -331,9 +328,6 @@
       ],
       "Export selection as .vcf": [
         "Εξαγωγή επιλογής ως .vcf"
-      ],
-      "Forgot password?": [
-        "Ξεχάσατε τον κωδικό πρόσβασης;"
       ],
       "Forward as attachment": [
         "Προώθηση ως συνημμένο"
@@ -833,14 +827,8 @@
       "Use a different payment method": [
         "Χρησιμοποιήστε διαφορετικό τρόπο πληρωμής"
       ],
-      "Use authentication code": [
-        "Χρησιμοποιήστε έναν κωδικό ελέγχου ταυτότητας"
-      ],
       "Use for sending": [
         "Χρήση για αποστολή"
-      ],
-      "Use recovery code": [
-        "Χρησιμοποιήστε κωδικό ανάκτησης"
       ],
       "Verify": [
         "Επαλήθευση"
@@ -4021,24 +4009,6 @@
         "Απεριόριστα hide-my-email ψευδώνυμα"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Εισαγάγετε ένα κλειδί ασφαλείας συνδεδεμένο με τον ${ BRAND_NAME } λογαριασμό σας ."
-      ],
-      "Security key": [
-        "Κλειδί ασφαλείας"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Κλειδί ασφαλείας"
-      ]
-    },
     "file size format": {
       "byte": [
         "byte",
@@ -4915,9 +4885,6 @@
       "Duplicate key updated": [
         "Το διπλότυπο κλειδί ενημερώθηκε"
       ],
-      "Each code can only be used once": [
-        "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
-      ],
       "Edit email address": [
         "Επεξεργασία ηλεκτρονικής διεύθυνσης"
       ],
@@ -4936,20 +4903,11 @@
       "Enabling auto-deletion…": [
         "Ενεργοποίηση αυτόματης διαγραφής…"
       ],
-      "Enter the code from your authenticator app": [
-        "Πληκτρολογήστε τον κωδικό από την εφαρμογή ταυτοποίησης"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Συμπληρώστε τα διαπιστευτήρια του λογαριασμού email από τον οποίο θέλετε να εισάγετε."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Εισάγετε τον κωδικό επαλήθευσης που εστάλη στο ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Εισάγετε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτό",
@@ -5581,9 +5539,6 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Όταν συνδέεστε στο VPN, χρησιμοποιεί τεχνολογία κρυπτογράφησης για να κρύψει τη διεύθυνση IP σας (ένας μοναδικός κωδικός που έχει εκχωρηθεί στη συσκευή σας)."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
-      ],
       "Which event would you like to delete?": [
         "Ποια εκδήλωση θα θέλατε να διαγράψετε;"
       ],
@@ -6029,9 +5984,6 @@
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
       ],
-      "Authenticator app": [
-        "Εφαρμογή επαλήθευσης"
-      ],
       "Beta Access": [
         "Πρόσβαση Beta"
       ],
@@ -6458,9 +6410,6 @@
       ],
       "Your location": [
         "Η τοποθεσία σας"
-      ],
-      "Your password (admin)": [
-        "Ο κωδικός σας (διαχειριστής)"
       ]
     },
     "Label for contact group color": {
@@ -7021,6 +6970,11 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Διαγραφή λογαριασμού"
@@ -7042,11 +6996,6 @@
       ],
       "Switch plan": [
         "Αλλαγή προγράμματος"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -9534,47 +9483,6 @@
         "Για ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερες premium δυνατότητες"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium δυνατότητες"
@@ -9833,6 +9741,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερες premium δυνατότητες"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription renewal state": {
@@ -10435,9 +10384,6 @@
       ],
       "Enter 2FA code": [
         "Εισαγωγή κωδικού 2FA"
-      ],
-      "Enter your password": [
-        "Εισάγετε τον κωδικό σας"
       ],
       "Error": [
         "Σφάλμα"

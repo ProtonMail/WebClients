@@ -339,7 +339,7 @@
         "Exportovať výber ako .vcf"
       ],
       "Forgot password?": [
-        "Zabudnuté heslo?"
+        "Zabudli ste heslo?"
       ],
       "Forward as attachment": [
         "Preposlať ako prílohu"
@@ -4093,12 +4093,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Prosím skúste znova."
+        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vložte bezpečnostný kľúč prepojený s vaším účtom ${ BRAND_NAME }."
+        "Vložte bezpečnostný kľúč prepojený s vaším ${ BRAND_NAME } účtom."
       ],
       "Security key": [
         "Bezpečnostný kľúč"
@@ -5492,7 +5492,7 @@
         "Relácia vypršala"
       ],
       "Set up your organization": [
-        "Nastaviť svoju organizáciu"
+        "Nastavte svoju organizáciu"
       ],
       "Setting up ${ feature }…": [
         "Nastavovanie ${ feature }…"
@@ -5738,7 +5738,7 @@
         "Pri pripájaní k VPN sa používa šifrovacia technológia na skrytie vašej IP adresy (jedinečný kód pridelený vášmu zariadeniu)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
+        "Pri nastavení dvojstupňového overenia poskytujeme kódy na obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k vašej overovacej aplikácii."
       ],
       "Which event would you like to delete?": [
         "Ktorú udalosť si prajete zmazať?"
@@ -6204,7 +6204,7 @@
         "Priložiť snímok(ky) obrazovky"
       ],
       "Authenticator app": [
-        "Aplikácia 2FA"
+        "Overovacia aplikácia"
       ],
       "Beta Access": [
         "Beta prístup"
@@ -6456,7 +6456,7 @@
         "Notifikácie"
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
-        "Notifikácie sú zakázané. Ak ich chcete povoliť, zmeňte nastavenia prehliadača."
+        "Notifikácie sú deaktivované. Ak ich chcete povoliť, zmeňte nastavenia prehliadača."
       ],
       "On": [
         "Zap."
@@ -6636,7 +6636,7 @@
         "Vaša poloha"
       ],
       "Your password (admin)": [
-        "Vaše heslo (admin)"
+        "Vaše heslo (správca)"
       ]
     },
     "Label for contact group color": {
@@ -6878,6 +6878,9 @@
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Vášmu kontu hrozí vymazanie. Ak chcete zabrániť strate údajov, požiadajte správcu o aktualizáciu. ${ cta }"
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Vaše úložisko je plné. Ak chcete naďalej používať produkty ${ BRAND_NAME }, uvoľnite miesto alebo ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Vaše predplatné skončilo. ${ cta } a zabráňte strate údajov."
@@ -7210,6 +7213,11 @@
         "Stredná VPN rýchlosť"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Zmazať účet"
@@ -7231,11 +7239,6 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7812,7 +7815,7 @@
         "Náš ${ visionary } plán už nie je k dispozícii pre nových predplatiteľov, pretože ide o špeciálny plán pre pôvodných používateľov ${ BRAND_NAME } so špeciálnymi funkciami a výhodami."
       ],
       "Pay once, secure your passwords and identity forever.": [
-        "Zaplaťte raz a zabezpečte svoje heslá a identity navždy."
+        "Zaplaťte raz a zabezpečte navždy svoje heslá a identity."
       ],
       "Popular": [
         "Populárne"
@@ -9440,7 +9443,7 @@
     },
     "Slack": {
       "Join Slack huddle": [
-        "Pripojiť sa k hromadnej konverzácii Slack"
+        "Pripojiť sa k Slack huddle"
       ]
     },
     "SmartBanner": {
@@ -9739,6 +9742,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Ak chcete naďalej používať produkty ${ BRAND_NAME }, uvoľnite miesto alebo ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Ak chcete odosielať alebo prijímať emaily, uvoľnite miesto alebo ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Ak chcete nahrať alebo synchronizovať súbory, uvoľnite miesto alebo ${ upgrade }"
       ],
@@ -9761,10 +9767,10 @@
         "Vaše úložisko ${ appStorage } je plné"
       ],
       "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
-        "Vaše úložisko ${ productString } je zaplnené na ${ percentage }%. ${ cta }."
+        "Vaše ${ productString } je zaplnené na ${ percentage }%. ${ cta }."
       ],
       "Your ${ productString } is full. ${ cta }.": [
-        "Vaše úložisko ${ productString } je plné. ${ cta }."
+        "Vaše ${ productString } je plné. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Vaše úložisko je zaplnené na ${ percentage }%. ${ cta }."
@@ -9886,47 +9892,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložného priestoru"
-      ],
-      "and 15 more premium features": [
-        "a ďalších 15 prémiových funkcií"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické presmerovanie emailu ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornenia na úniky údajov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikácia"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
-      ],
-      "No ads or tracking": [
-        "Žiadne reklamy alebo sledovanie"
-      ],
-      "Short @pm.me email address": [
-        "Skrátená emailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podporte naše poslanie"
-      ],
-      "Upgrade": [
-        "Prejsť na platený plán"
-      ],
-      "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
-      ],
-      "We don't sell your data": [
-        "Nepredávame vaše údaje"
-      ],
-      "Your privacy is our mission": [
-        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription reminder": {
@@ -10199,6 +10164,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastný skrátený emailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "and 15 more premium features": [
+        "a ďalších 15 prémiových funkcií"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické presmerovanie emailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornenia na úniky údajov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
+      ],
+      "No ads or tracking": [
+        "Žiadne reklamy alebo sledovanie"
+      ],
+      "Short @pm.me email address": [
+        "Skrátená emailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podporte naše poslanie"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšite svoju produktivitu"
+      ],
+      "We don't sell your data": [
+        "Nepredávame vaše údaje"
+      ],
+      "Your privacy is our mission": [
+        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription renewal state": {
@@ -10521,7 +10527,7 @@
     },
     "Teams": {
       "Join Teams meeting": [
-        "Pripojiť sa k stretnutiu cez Teams"
+        "Pripojiť sa k Teams mítingu"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -10829,7 +10835,7 @@
         "Zadajte 2FA kód"
       ],
       "Enter your password": [
-        "Zadajte Vaše heslo"
+        "Zadajte svoje heslo"
       ],
       "Error": [
         "Chyba"
@@ -11878,7 +11884,7 @@
     },
     "Zoom": {
       "Join Zoom meeting": [
-        "Pripojiť sa k stretnutiu na Zoome"
+        "Pripojiť sa k Zoom mítingu"
       ]
     },
     "Zoom integration": {
