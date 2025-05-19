@@ -76,9 +76,6 @@
       "Apply lifetime coupon code": [
         "Pas de lifetime kortingscode toe"
       ],
-      "Authenticate": [
-        "Authenticeren"
-      ],
       "Back": [
         "Terug"
       ],
@@ -433,6 +430,9 @@
       "Pause monitoring": [
         "Monitoren onderbreken"
       ],
+      "Pay once": [
+        "Eenmalig betalen"
+      ],
       "Pin item": [
         "Item vastpinnen"
       ],
@@ -571,6 +571,9 @@
       "Sign out": [
         "Uitloggen"
       ],
+      "Skip": [
+        "Overslaan"
+      ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Iemand heeft een item met u gedeeld op ${ PASS_APP_NAME }."
       ],
@@ -626,9 +629,6 @@
       ],
       "Unpin item": [
         "Item losmaken"
-      ],
-      "Update": [
-        "Bijwerken"
       ],
       "Upgrade": [
         "Upgraden"
@@ -1699,9 +1699,6 @@
       "Enter the address you want to email.": [
         "Vul het adres in dat u wilt mailen."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Voer verificatiecode in. Cijfer ${ digit }."
-      ],
       "Enter your extra password": [
         "Voer uw extra wachtwoord in"
       ],
@@ -1903,10 +1900,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2324,6 +2317,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Klik op het ${ PASS_APP_NAME }-pictogram in de werkbalk om uw geïmporteerde gegevens te bekijken."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Vertrouwd door meer dan 50 000 zakelijke gebruikers en 100 miljoen accounts over de hele wereld."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
       ],
@@ -2665,6 +2661,12 @@
       "Birthdate": [
         "Geboortedatum"
       ],
+      "Browse faster, smarter": [
+        "Blader sneller, slimmer"
+      ],
+      "Built-in 2FA": [
+        "2FA ingebouwd"
+      ],
       "Capital letters (A-Z)": [
         "Hoofdletters (A-Z)"
       ],
@@ -2682,6 +2684,12 @@
       ],
       "Catch-All": [
         "Catch-all"
+      ],
+      "Choose unlock method": [
+        "Ontgrendelingsmethode kiezen"
+      ],
+      "Choose your preferred look and feel.": [
+        "Kies uw favoriete look & feel."
       ],
       "City": [
         "Stad"
@@ -2740,6 +2748,9 @@
       "Created at": [
         "Aangemaakt op"
       ],
+      "Credit cards": [
+        "Kredietkaarten"
+      ],
       "Custom hidden field": [
         "Aangepast verborgen veld"
       ],
@@ -2762,7 +2773,7 @@
         "DNS"
       ],
       "Domain": [
-        "Domeinnaam"
+        "Domein"
       ],
       "Domain:": [
         "Domein:"
@@ -2809,6 +2820,9 @@
       "Export": [
         "Exporteren"
       ],
+      "Extra email addresses": [
+        "Extra e-mailadressen"
+      ],
       "Extra password": [
         "Extra wachtwoord"
       ],
@@ -2820,6 +2834,9 @@
       ],
       "Field name": [
         "Veldnaam"
+      ],
+      "File attachments": [
+        "Bestandsbijlagen"
       ],
       "File format": [
         "Bestandsformaat"
@@ -2833,8 +2850,14 @@
       "For a one-off sharing": [
         "Voor eenmalig delen"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Om veiligheidsredenen vergrendelt ${ PASS_SHORT_APP_NAME } zichzelf automatisch na 10 minuten inactiviteit."
+      ],
       "Forwards to": [
         "Stuurt door na"
+      ],
+      "Free": [
+        "Gratis"
       ],
       "Free forever": [
         "Voor altijd gratis"
@@ -2851,8 +2874,17 @@
       "Generic CSV": [
         "Generieke CSV"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Krijg ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Krijg ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "Aan de slag"
+      ],
+      "Get the extension for your browser.": [
+        "Download de extensie voor uw browser."
       ],
       "Grant": [
         "Verlenen"
@@ -2862,6 +2894,15 @@
       ],
       "Hide password": [
         "Wachtwoord verbergen"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email aliassen"
+      ],
+      "Highest": [
+        "Hoogste"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Hoe ontgrendelt u ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://voorbeeld.com"
@@ -2901,6 +2942,12 @@
       ],
       "Instagram handle": [
         "Instagram gebruikersnaam"
+      ],
+      "Install and continue": [
+        "Installeren en doorgaan"
+      ],
+      "Install extension": [
+        "Extensie installeren"
       ],
       "Invitations": [
         "Uitnodigingen"
@@ -2947,6 +2994,9 @@
       "License number": [
         "Licentienummer"
       ],
+      "Limited time": [
+        "Beperkte tijd"
+      ],
       "LinkedIn account": [
         "LinkedIn-account"
       ],
@@ -2970,6 +3020,9 @@
       ],
       "Make all viewers": [
         "Maak alle lezers"
+      ],
+      "Make it your own.": [
+        "Pas naar eigen wens aan."
       ],
       "max views reached": [
         "max weergaven bereikt"
@@ -3073,6 +3126,9 @@
       "Personal website": [
         "Persoonlijke website"
       ],
+      "Personalize": [
+        "Personaliseren"
+      ],
       "PGP-encrypted (recommended)": [
         "PGP-versleuteld (aanbevolen)"
       ],
@@ -3084,6 +3140,9 @@
       ],
       "PIN code": [
         "Pincode"
+      ],
+      "Plus": [
+        "Plus"
       ],
       "Prefix": [
         "Prefix"
@@ -3151,8 +3210,14 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Selecteer de kluis waar SimpleLogin aliassen worden geïmporteerd in"
       ],
+      "Select theme": [
+        "Selecteer thema"
+      ],
       "Select your password manager": [
         "Selecteer uw wachtwoordbeheerder"
+      ],
+      "Select your theme": [
+        "Selecteer uw thema"
       ],
       "Selected": [
         "Geselecteerd"
@@ -3190,6 +3255,9 @@
       "Status": [
         "Status"
       ],
+      "Storage": [
+        "Opslag"
+      ],
       "Street address": [
         "Adres"
       ],
@@ -3216,6 +3284,9 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Het beste van ${ BRAND_NAME } met één abonnement"
       ],
       "The URL has been copied to the clipboard": [
         "De URL is naar het klembord gekopieerd."
@@ -3250,6 +3321,12 @@
       "Unknown": [
         "Onbekend"
       ],
+      "Unlimited": [
+        "Onbeperkt"
+      ],
+      "Unlock premium features": [
+        "Ontgrendel premium functies"
+      ],
       "Unlock with": [
         "Ontgrendelen met"
       ],
@@ -3272,7 +3349,7 @@
         "Naamloos"
       ],
       "Update": [
-        "Bijwerken"
+        "Update"
       ],
       "Used in": [
         "Gebruikt in"
@@ -3289,6 +3366,9 @@
       "Vault ID": [
         "Kluis ID"
       ],
+      "Vault, item & link sharing": [
+        "Kluis, item en koppeling delen"
+      ],
       "Vaults": [
         "Kluizen"
       ],
@@ -3297,6 +3377,12 @@
       ],
       "View logs": [
         "Logboeken bekijken"
+      ],
+      "VPN Devices": [
+        "VPN Apparaten"
+      ],
+      "VPN Speed": [
+        "VPN-snelheid"
       ],
       "Vulnerable": [
         "Kwetsbaar"
@@ -3309,6 +3395,9 @@
       ],
       "Websites": [
         "Websites"
+      ],
+      "What's included": [
+        "Wat zit inbegrepen"
       ],
       "Work details": [
         "Werk gegevens"
@@ -3328,8 +3417,14 @@
       "You are about to create": [
         "U staat op het punt volgende aan te maken"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "U kunt kiezen uit een pincode, biometrische gegevens of uw accountwachtwoord om te ontgrendelen."
+      ],
       "Your domain": [
         "Uw domein"
+      ],
+      "Your passwords. Everywhere.": [
+        "Uw wachtwoorden. Overal."
       ],
       "ZIP": [
         "Postcode"
@@ -3352,6 +3447,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } inschakelen"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Message": {
@@ -3515,6 +3615,14 @@
       ],
       "You can attach files to items for a better organization": [
         "U kunt bestanden toevoegen aan items voor een betere organisatie"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus Lifetime voor ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price }/maand"
       ]
     },
     "Placeholder": {
@@ -3783,8 +3891,14 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adressen"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Account beveiliging"
@@ -4061,6 +4175,9 @@
       ],
       "Pause monitoring?": [
         "Monitoren onderbreken?"
+      ],
+      "Pay once, access forever.": [
+        "Betaal één keer, altijd toegang."
       ],
       "Pending access confirmation": [
         "Wachtend op toegangsbevestiging"
