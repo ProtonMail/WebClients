@@ -150,9 +150,6 @@
       "Attention required": [
         "注意が必要です"
       ],
-      "Authenticate": [
-        "認証"
-      ],
       "Auto-delete spam and trash": [
         "迷惑メールとごみ箱のメールを自動削除"
       ],
@@ -471,9 +468,6 @@
       "Email settings": [
         "メールの設定"
       ],
-      "Emoji": [
-        "絵文字"
-      ],
       "Enable": [
         "有効化"
       ],
@@ -539,9 +533,6 @@
       ],
       "Font": [
         "フォント"
-      ],
-      "Forgot password?": [
-        "パスワードを忘れましたか？"
       ],
       "Formalize": [
         "フォーマルにする"
@@ -1164,10 +1155,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } を選択"
       ],
-      "Select all": [
+      "Select All": [
         "すべて選択"
       ],
-      "Select All": [
+      "Select all": [
         "すべて選択"
       ],
       "Select all messages": [
@@ -1473,14 +1464,8 @@
       "Use a different payment method": [
         "別の支払い方法を使用"
       ],
-      "Use authentication code": [
-        "認証コードを使用"
-      ],
       "Use for sending": [
         "送信に使用"
-      ],
-      "Use recovery code": [
-        "回復用コードを使用"
       ],
       "Use this": [
         "これを使用"
@@ -5086,24 +5071,6 @@
         "無制限の Hide-my-email エイリアス"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "セキュリティキーの認証に失敗しました。もう一度お試しください。"
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } アカウントに紐づけられたセキュリティキーを挿入してください。"
-      ],
-      "Security key": [
-        "セキュリティキー"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "セキュリティキー"
-      ]
-    },
     "file size format": {
       "byte": [
         "バイト"
@@ -6054,6 +6021,9 @@
       "${ storage } storage": [
         "${ storage } ストレージ"
       ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "先月受信した${ subscription.ReceivedMessages.Last30Days }件のメール"
+      ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } 件が未読"
       ],
@@ -6227,9 +6197,6 @@
       ],
       "and": [
         "と"
-      ],
-      "and more.": [
-        "など。"
       ],
       "Another tip will be displayed next time you open Mail": [
         "次回メールを開いた際に、別のヒントが表示されます"
@@ -6549,14 +6516,8 @@
       "Drop to import": [
         "ドロップしてインポート"
       ],
-      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
-        "宛先の構成により、次の連絡先に有効期限付きでこのメッセージを送信できません: "
-      ],
       "Duplicate key updated": [
         "重複した鍵がアップデートされました"
-      ],
-      "Each code can only be used once": [
-        "各コードは 1 回のみ使用可能です"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "ニュースレターとメーリングリストの管理と登録解除が簡単に行えます。"
@@ -6612,20 +6573,11 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "デスクトップアプリで、より速く、集中できるメール送信をお楽しみください。"
       ],
-      "Enter the code from your authenticator app": [
-        "認証アプリのコードを入力してください"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "インポートするメールアカウントの認証情報を入力します。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "検証コードを入力してください。桁数は ${ digit } 桁です。"
-      ],
-      "Enter your own password (as organization admin).": [
-        "自分(組織管理者として)のパスワードを入力してください。"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "推定残り時間: ${ estimatedMinutes } 分"
@@ -6802,7 +6754,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -6896,9 +6848,6 @@
       ],
       "Low Priority": [
         "優先度：低"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } をデフォルトのメールアプリとして設定する。"
       ],
       "Manage your folders": [
         "フォルダーを管理"
@@ -7798,7 +7747,7 @@
         "ユーザーがアクティブ化"
       ],
       "username": [
-        "ユーザー名"
+        "ユーザーネーム"
       ],
       "Users": [
         "ユーザー"
@@ -7889,9 +7838,6 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName } の信頼された鍵を有効にすると、公開鍵は連絡先の詳細に追加されます。"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "ニュースレターを購読する際は、メールアドレスの代わりにエイリアスを使用しましょう。あなたの個人情報は秘匿され、いつでもエイリアスを無効にすることができます。"
@@ -8512,9 +8458,6 @@
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
-      "Authenticator app": [
-        "認証アプリ"
-      ],
       "BCC": [
         "BCC"
       ],
@@ -9042,9 +8985,6 @@
       ],
       "Your location": [
         "あなたの現在地"
-      ],
-      "Your password (admin)": [
-        "あなたのパスワード (管理者)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12282,6 +12222,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME }製品を引き続きご利用いただくには、容量を空けるか、${ upgrade }ください。"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "メールを送受信するには、容量を空けるか${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "メールを送受信するには、容量を空けるかより大きな容量のプランにアップグレードしてください。"
       ],
@@ -12398,47 +12341,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } の場合"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription reminder": {
@@ -12693,6 +12595,47 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
@@ -13500,9 +13443,6 @@
       "Enter 2FA code": [
         "2要素認証コードを入力"
       ],
-      "Enter your password": [
-        "パスワードを入力"
-      ],
       "Error": [
         "エラー"
       ],
@@ -13614,10 +13554,10 @@
       "Load remote content": [
         "外部コンテンツの読み込み"
       ],
-      "Mail Subscriptions": [
+      "Mail subscriptions": [
         "メール購読"
       ],
-      "Mail subscriptions": [
+      "Mail Subscriptions": [
         "メール購読"
       ],
       "Make a secure connection your default": [
