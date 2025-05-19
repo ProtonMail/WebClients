@@ -76,9 +76,6 @@
       "Apply lifetime coupon code": [
         "평생 쿠폰 코드 적용"
       ],
-      "Authenticate": [
-        "인증"
-      ],
       "Back": [
         "이전"
       ],
@@ -570,6 +567,9 @@
       ],
       "Sign out": [
         "로그아웃"
+      ],
+      "Skip": [
+        "건너뛰기"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME }에서 사용자와 타인이 항목을 공유하고 있습니다."
@@ -1580,9 +1580,6 @@
       "Enter the address you want to email.": [
         "받을 사람의 이메일 주소를 입력하세요."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "인증 코드를 입력하세요. ${ digit } 자리."
-      ],
       "Enter your extra password": [
         "추가 비밀번호 입력"
       ],
@@ -1780,9 +1777,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2518,6 +2512,9 @@
       "Birthdate": [
         "생년월일"
       ],
+      "Browse faster, smarter": [
+        "빠르고 스마트하게 브라우징"
+      ],
       "Capital letters (A-Z)": [
         "대문자 알파벳 (A-Z)"
       ],
@@ -2535,6 +2532,12 @@
       ],
       "Catch-All": [
         "Catch-All"
+      ],
+      "Choose unlock method": [
+        "잠금 해제 방법 선택"
+      ],
+      "Choose your preferred look and feel.": [
+        "마음에 드는 모양과 느낌을 골라주세요."
       ],
       "City": [
         "시/군/구"
@@ -2592,6 +2595,9 @@
       ],
       "Created at": [
         "생성일:"
+      ],
+      "Credit cards": [
+        "신용카드"
       ],
       "Custom hidden field": [
         "사용자 지정 숨겨진 필드"
@@ -2674,6 +2680,9 @@
       "Field name": [
         "필드 이름"
       ],
+      "File attachments": [
+        "파일 첨부"
+      ],
       "File format": [
         "파일 형식"
       ],
@@ -2686,8 +2695,14 @@
       "For a one-off sharing": [
         "일회성 공유에 유용합니다"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "보안 상의 이유로 인해, 10분 동안 아무 행동이 없으면 ${ PASS_SHORT_APP_NAME }는 자동으로 잠깁니다"
+      ],
       "Forwards to": [
         "다음으로 전달:"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "영원히 무료"
@@ -2707,6 +2722,9 @@
       "Get Started": [
         "시작하기"
       ],
+      "Get the extension for your browser.": [
+        "브라우저용 확장 프로그램을 다운로드하세요."
+      ],
       "Grant": [
         "허용"
       ],
@@ -2715,6 +2733,12 @@
       ],
       "Hide password": [
         "비밀번호 숨기기"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email 별칭"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME }을 잠금 해제하는 방법"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2754,6 +2778,12 @@
       ],
       "Instagram handle": [
         "Instagram 핸들"
+      ],
+      "Install and continue": [
+        "설치 및 계속"
+      ],
+      "Install extension": [
+        "확장 프로그램 설치"
       ],
       "Invitations": [
         "초대"
@@ -2800,6 +2830,9 @@
       "License number": [
         "라이선스 번호"
       ],
+      "Limited time": [
+        "기간 한정"
+      ],
       "LinkedIn account": [
         "LinkedIn 계정"
       ],
@@ -2823,6 +2856,9 @@
       ],
       "Make all viewers": [
         "전체 구성원을 뷰어로 선택"
+      ],
+      "Make it your own.": [
+        "내 것으로 만들기."
       ],
       "max views reached": [
         "최대 보기 수 도달"
@@ -2926,6 +2962,9 @@
       "Personal website": [
         "개인 웹사이트"
       ],
+      "Personalize": [
+        "맞춤 설정"
+      ],
       "PGP-encrypted (recommended)": [
         "PGP-암호화됨 (권장)"
       ],
@@ -2937,6 +2976,9 @@
       ],
       "PIN code": [
         "PIN 코드"
+      ],
+      "Plus": [
+        "Plus"
       ],
       "Prefix": [
         "접두어"
@@ -3004,8 +3046,14 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "SimpleLogin 별칭을 불러올 금고 위치를 선택하세요."
       ],
+      "Select theme": [
+        "테마 선택"
+      ],
       "Select your password manager": [
         "비밀 번호 관리자를 선택하세요"
+      ],
+      "Select your theme": [
+        "테마를 선택하세요"
       ],
       "Selected": [
         "선택됨"
@@ -3042,6 +3090,9 @@
       ],
       "Status": [
         "상태"
+      ],
+      "Storage": [
+        "저장 공간"
       ],
       "Street address": [
         "도로명 주소"
@@ -3102,6 +3153,9 @@
       ],
       "Unknown": [
         "알 수 없음"
+      ],
+      "Unlimited": [
+        "제한 없음"
       ],
       "Unlock with": [
         "다음으로 잠금 해제:"
@@ -3181,8 +3235,14 @@
       "You are about to create": [
         "생성하려고 하는 주소:"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "PIN 번호, 생체 인식, 계정 비밀번호 중 원하는 것을 사용하실 수 있습니다."
+      ],
       "Your domain": [
         "나의 도메인"
+      ],
+      "Your passwords. Everywhere.": [
+        "어디에서나 확인하는 나의 비밀번호."
       ],
       "ZIP": [
         "ZIP"
@@ -3205,6 +3265,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } 활성화"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Message": {
@@ -3365,6 +3430,11 @@
       ],
       "You can attach files to items for a better organization": [
         "더 나은 조직을 위해 항목에 파일 첨부가 가능합니다."
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ price }/month": [
+        "${ price }/월간"
       ]
     },
     "Placeholder": {

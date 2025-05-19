@@ -433,6 +433,9 @@
       "Pause monitoring": [
         "Posa en pausa el monitoratge"
       ],
+      "Pay once": [
+        "Pagament únic"
+      ],
       "Pin item": [
         "Ancora l'element"
       ],
@@ -458,7 +461,7 @@
         "Rebutja la invitació"
       ],
       "Reload": [
-        "Recarrega"
+        "Torna a carregar"
       ],
       "Remove": [
         "Esborra"
@@ -570,6 +573,9 @@
       ],
       "Sign out": [
         "Tanca la sessió"
+      ],
+      "Skip": [
+        "Omet"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Algú ha posat un element compartit a la vostra disposició a ${ PASS_APP_NAME }."
@@ -1805,10 +1811,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
-      ],
       "Moving items": [
         "S'estan movent elements"
       ],
@@ -2225,6 +2227,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Per revisar les dades importades, feu clic a la icona del ${ PASS_APP_NAME } de la barra d'eines del navegador."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Més de 50.000 usuaris empresarials i 100 milions de comptes a tot el món confien en nosaltres."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Això tornarà a carregar l'aplicació"
       ],
@@ -2566,6 +2571,12 @@
       "Birthdate": [
         "Data de naixement"
       ],
+      "Browse faster, smarter": [
+        "Navegueu de forma més ràpida i eficient"
+      ],
+      "Built-in 2FA": [
+        "2FA integrat"
+      ],
       "Capital letters (A-Z)": [
         "Lletres majúscules (A-Z)"
       ],
@@ -2583,6 +2594,12 @@
       ],
       "Catch-All": [
         "Catch-all"
+      ],
+      "Choose unlock method": [
+        "Trieu el mètode de desbloqueig"
+      ],
+      "Choose your preferred look and feel.": [
+        "Trieu el vostre aspecte preferit."
       ],
       "City": [
         "Ciutat"
@@ -2640,6 +2657,9 @@
       ],
       "Created at": [
         "Creat a"
+      ],
+      "Credit cards": [
+        "Targetes de crèdit"
       ],
       "Custom hidden field": [
         "Camp amagat personalitzat"
@@ -2710,6 +2730,9 @@
       "Export": [
         "Exporta"
       ],
+      "Extra email addresses": [
+        "Adreces de correu electrònic addicionals"
+      ],
       "Extra password": [
         "Contrasenya addicional"
       ],
@@ -2721,6 +2744,9 @@
       ],
       "Field name": [
         "Nom del camp"
+      ],
+      "File attachments": [
+        "Fitxers adjunts"
       ],
       "File format": [
         "Format de fitxer"
@@ -2734,8 +2760,14 @@
       "For a one-off sharing": [
         "Per a un ús únic"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Per motius de seguretat, ${ PASS_SHORT_APP_NAME } es bloqueja automàticament després de 10 minuts d'inactivitat."
+      ],
       "Forwards to": [
         "Reenvia a"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "Gratuït per sempre"
@@ -2752,8 +2784,17 @@
       "Generic CSV": [
         "CSV genèric"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Obteniu ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Obteniu ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "Comenceu"
+      ],
+      "Get the extension for your browser.": [
+        "Obteniu l'extensió per al vostre navegador."
       ],
       "Grant": [
         "Autoritza"
@@ -2763,6 +2804,15 @@
       ],
       "Hide password": [
         "Amaga la contrasenya"
+      ],
+      "Hide-my-email aliases": [
+        "Àlies de hide-my-email"
+      ],
+      "Highest": [
+        "Més alt"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Com desbloquejar ${ PASS_SHORT_APP_NAME }?"
       ],
       "https://example.com": [
         "https://exemple.cat"
@@ -2802,6 +2852,12 @@
       ],
       "Instagram handle": [
         "Nom d'usuari d'Instagram"
+      ],
+      "Install and continue": [
+        "Insta-la i continua"
+      ],
+      "Install extension": [
+        "Instal·leu l'extensió"
       ],
       "Invitations": [
         "Invitacions"
@@ -2848,6 +2904,9 @@
       "License number": [
         "Número de llicència"
       ],
+      "Limited time": [
+        "Oferta per temps limitat"
+      ],
       "LinkedIn account": [
         "Compte de LinkedIn"
       ],
@@ -2871,6 +2930,9 @@
       ],
       "Make all viewers": [
         "Estableix tots com a visualitzadors"
+      ],
+      "Make it your own.": [
+        "Personalitzeu l'aplicació."
       ],
       "max views reached": [
         "s'ha assolit el nombre màxim de visualitzacions."
@@ -2974,6 +3036,9 @@
       "Personal website": [
         "Lloc web personal"
       ],
+      "Personalize": [
+        "Personalitza"
+      ],
       "PGP-encrypted (recommended)": [
         "Xifrat amb PGP (recomanat)"
       ],
@@ -2985,6 +3050,9 @@
       ],
       "PIN code": [
         "Codi PIN"
+      ],
+      "Plus": [
+        "Plus"
       ],
       "Prefix": [
         "Prefix"
@@ -3052,8 +3120,14 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Seleccioneu la caixa forta on s'importaran els àlies de SimpleLogin"
       ],
+      "Select theme": [
+        "Selecciona el tema"
+      ],
       "Select your password manager": [
         "Seleccioneu el gestor de contrasenyes"
+      ],
+      "Select your theme": [
+        "Seleccioneu el vostre tema"
       ],
       "Selected": [
         "Seleccionat"
@@ -3091,6 +3165,9 @@
       "Status": [
         "Estat"
       ],
+      "Storage": [
+        "Emmagatzematge"
+      ],
       "Street address": [
         "Adreça de carrer"
       ],
@@ -3117,6 +3194,9 @@
       ],
       "Text": [
         "Text"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "El millor de ${ BRAND_NAME } amb una subscripció"
       ],
       "The URL has been copied to the clipboard": [
         "S'ha copiat l'URL al porta-retalls."
@@ -3150,6 +3230,12 @@
       ],
       "Unknown": [
         "Desconegut"
+      ],
+      "Unlimited": [
+        "Il·limitat"
+      ],
+      "Unlock premium features": [
+        "Desbloqueu característiques prèmium"
       ],
       "Unlock with": [
         "Desbloqueja amb"
@@ -3190,6 +3276,9 @@
       "Vault ID": [
         "ID de la caixa forta"
       ],
+      "Vault, item & link sharing": [
+        "Compartició de caixes fortes, elements i enllaços"
+      ],
       "Vaults": [
         "Caixes fortes"
       ],
@@ -3198,6 +3287,12 @@
       ],
       "View logs": [
         "Mostra els registres"
+      ],
+      "VPN Devices": [
+        "Dispositius VPN"
+      ],
+      "VPN Speed": [
+        "Velocitat de la VPN"
       ],
       "Vulnerable": [
         "Vulnerable"
@@ -3210,6 +3305,9 @@
       ],
       "Websites": [
         "Llocs web"
+      ],
+      "What's included": [
+        "Què s'inclou"
       ],
       "Work details": [
         "Detalls de la feina"
@@ -3229,8 +3327,14 @@
       "You are about to create": [
         "Esteu a punt de crear"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Podeu triar entre el codi PIN, les dades biomètriques o la contrasenya del vostre compte per desbloquejar."
+      ],
       "Your domain": [
         "El vostre domini"
+      ],
+      "Your passwords. Everywhere.": [
+        "Les vostres contrasenyes allà on sigueu."
       ],
       "ZIP": [
         "Fitxer ZIP"
@@ -3253,6 +3357,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Activa ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Message": {
@@ -3416,6 +3525,14 @@
       ],
       "You can attach files to items for a better organization": [
         "Podeu adjuntar fitxers als elements per a una millor organització."
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus Lifetime per a ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price }/mes"
       ]
     },
     "Placeholder": {
@@ -3684,8 +3801,14 @@
       "${ BRAND_NAME } addresses": [
         "Adreces de ${ BRAND_NAME }"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Protecció del compte"
@@ -3962,6 +4085,9 @@
       ],
       "Pause monitoring?": [
         "Voleu posar en pausa el monitoratge?"
+      ],
+      "Pay once, access forever.": [
+        "Únic pagament, accés per sempre"
       ],
       "Pending access confirmation": [
         "Confirmació d'accés pendent"
