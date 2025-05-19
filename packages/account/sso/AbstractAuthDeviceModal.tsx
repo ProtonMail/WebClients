@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';

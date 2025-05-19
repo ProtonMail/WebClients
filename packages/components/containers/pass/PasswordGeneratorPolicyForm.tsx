@@ -4,7 +4,7 @@ import type { FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/index';
+import { Button } from '@proton/atoms';
 import type { Maybe, MaybeNull, OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types';
 
 import { PasswordGeneratorPolicyOption } from './PasswordGeneratorOption';

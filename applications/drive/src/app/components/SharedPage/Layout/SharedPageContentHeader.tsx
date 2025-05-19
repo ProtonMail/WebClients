@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/index';
+import { CircleLoader } from '@proton/atoms';
 import { FileNameDisplay } from '@proton/components';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';

@@ -14,7 +14,7 @@ import {
 
 import { bootstrapEditorApp } from '../Lib/Bootstrap'
 import { c } from 'ttag'
-import { CircleLoader } from '@proton/atoms/index'
+import { CircleLoader } from '@proton/atoms'
 import { Editor } from './Editor'
 import { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
 import { EditorUserMode } from '../Lib/EditorUserMode'

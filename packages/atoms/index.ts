@@ -54,4 +54,5 @@ export type { VerticalStepsProps } from './VerticalSteps/VerticalSteps';
 export { default as Vr } from './Vr/Vr';
 export type { VrProps } from './Vr/Vr';
 export { UserAvatar, UserAvatarSizeEnum } from './UserAvatar/UserAvatar';
+export { getAccentColorForUsername } from './UserAvatar/getAccentColorForUsername';
 export type { UserAvatarProps } from './UserAvatar/UserAvatar';

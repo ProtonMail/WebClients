@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { WasmAccountSweeper, type WasmApiWalletAccount, type WasmBitcoinUnit, type WasmPsbt } from '@proton/andromeda';
-import { CircleLoader } from '@proton/atoms/index';
+import { CircleLoader } from '@proton/atoms';
 import { MiddleEllipsis, type ModalStateProps } from '@proton/components';
 import { Icon, Tooltip, useModalState, useModalStateWithData } from '@proton/components';
 import { Prompt } from '@proton/components';

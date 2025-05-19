@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button, ButtonLike } from '@proton/atoms/index';
+import { Button, ButtonLike } from '@proton/atoms';
 import { AppLink, Checkbox, Icon, Logo, Tooltip, useActiveBreakpoint, useModalState } from '@proton/components';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useLocalState from '@proton/components/hooks/useLocalState';

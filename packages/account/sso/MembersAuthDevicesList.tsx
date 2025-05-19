@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms';
 import { ButtonGroup, Icon, Table, TableBody, TableHeader, TableRow } from '@proton/components';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 

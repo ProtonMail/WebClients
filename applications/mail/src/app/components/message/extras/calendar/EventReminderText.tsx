@@ -3,8 +3,7 @@ import { useEffect, useState } from 'react';
 import { differenceInDays } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Banner } from '@proton/atoms';
-import { BannerVariants } from '@proton/atoms/Banner/Banner';
+import { Banner, BannerVariants } from '@proton/atoms';
 import { DAY, HOUR, MINUTE, SECOND } from '@proton/shared/lib/constants';
 import type { Nullable } from '@proton/shared/lib/interfaces';
 
