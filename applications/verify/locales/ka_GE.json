@@ -923,7 +923,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "თქვენი უსაფრთხოების გასაღების ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
+        "თქვენი უსაფრთხოების გასაღებით ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
       ]
     },
     "fido2: Info": {
@@ -1096,9 +1096,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "შემოწმების ახალი კოდი გაიგზავნება ${ strong }-ზე"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "გნებავთ შემოწმების ახალი კოდის მიღება, თუ შემოწმების ალტერნატიულ მეთოდს გამოიყენებთ?"
