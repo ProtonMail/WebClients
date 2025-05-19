@@ -76,9 +76,6 @@
       "Apply lifetime coupon code": [
         "Anvend livstids-kuponkode"
       ],
-      "Authenticate": [
-        "Godkend"
-      ],
       "Back": [
         "Tilbage"
       ],
@@ -571,6 +568,9 @@
       "Sign out": [
         "Log ud"
       ],
+      "Skip": [
+        "Spring over"
+      ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Nogen har delt et element med dig på ${ PASS_APP_NAME }."
       ],
@@ -1025,6 +1025,9 @@
       ],
       "File does not match expected format": [
         "Fil svarer ikke til det forventede format"
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Import mislykkedes for boks \"${ vaultData.name }\" : ${ errorMessage }"
       ],
       "Importing items failed": [
         "Import af elementer mislykkedes"
@@ -1585,9 +1588,6 @@
       "Enter the address you want to email.": [
         "Indtast den adresse, du ønsker at sende en e-mail til."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Indtast verifikationskode. Ciffer ${ digit }."
-      ],
       "Enter your extra password": [
         "Indtast din ekstra adgangskode"
       ],
@@ -1783,10 +1783,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2115,6 +2111,10 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Den ekstra adgangskode er påkrævet for at bruge ${ PASS_APP_NAME }. Den virker som en tillægskode til din ${ BRAND_NAME }-adgangskode."
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Følgende ${ totalIgnored } element kunne ikke importeres:",
+        "Følgende ${ totalIgnored } elementer kunne ikke importeres:"
       ],
       "The secure link has been removed": [
         "Det sikre link er blevet fjernet"
@@ -2511,6 +2511,9 @@
       "Birthdate": [
         "Fødselsdato"
       ],
+      "Browse faster, smarter": [
+        "Browse hurtigere og smartere"
+      ],
       "Capital letters (A-Z)": [
         "Store bogstaver (A-Z)"
       ],
@@ -2528,6 +2531,12 @@
       ],
       "Catch-All": [
         "Catch-All"
+      ],
+      "Choose unlock method": [
+        "Vælg metode til at låse op"
+      ],
+      "Choose your preferred look and feel.": [
+        "Vælg dit foretrukne udseende og stil."
       ],
       "City": [
         "By"
@@ -2585,6 +2594,9 @@
       ],
       "Created at": [
         "Oprettet kl."
+      ],
+      "Credit cards": [
+        "Betalingskort"
       ],
       "Custom hidden field": [
         "Tilpasset skjult felt"
@@ -2655,6 +2667,9 @@
       "Export": [
         "Eksportér"
       ],
+      "Extra email addresses": [
+        "Ekstra e-mailadresser"
+      ],
       "Extra password": [
         "Ekstra adgangskode"
       ],
@@ -2666,6 +2681,9 @@
       ],
       "Field name": [
         "Feltnavn"
+      ],
+      "File attachments": [
+        "Filvedhæftninger"
       ],
       "File format": [
         "Filformat"
@@ -2679,8 +2697,14 @@
       "For a one-off sharing": [
         "Til engangsdeling"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Af sikkerhedsmæssige årsager låser ${ PASS_SHORT_APP_NAME } automatisk sig selv efter 10 minutters inaktivitet."
+      ],
       "Forwards to": [
         "Videresender til"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "Gratis for evigt"
@@ -2700,6 +2724,9 @@
       "Get Started": [
         "Kom i gang"
       ],
+      "Get the extension for your browser.": [
+        "Hent udvidelsen til din browser."
+      ],
       "Grant": [
         "Tildel"
       ],
@@ -2708,6 +2735,15 @@
       ],
       "Hide password": [
         "Skjul adgangskode"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliasser"
+      ],
+      "Highest": [
+        "Hurtigst"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Sådan låses ${ PASS_SHORT_APP_NAME } op"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2747,6 +2783,12 @@
       ],
       "Instagram handle": [
         "Instagram - brugernavn"
+      ],
+      "Install and continue": [
+        "Installér og fortsæt"
+      ],
+      "Install extension": [
+        "Installér udvidelse"
       ],
       "Invitations": [
         "Invitationer"
@@ -2793,6 +2835,9 @@
       "License number": [
         "Licensnummer"
       ],
+      "Limited time": [
+        "Begrænset tid"
+      ],
       "LinkedIn account": [
         "LinkedIn-konto"
       ],
@@ -2813,6 +2858,9 @@
       ],
       "Make all viewers": [
         "Gør alle til seere"
+      ],
+      "Make it your own.": [
+        "Gør den til dit eget."
       ],
       "max views reached": [
         "maks. visninger opnået"
@@ -2916,6 +2964,9 @@
       "Personal website": [
         "Personligt websted"
       ],
+      "Personalize": [
+        "Personliggør"
+      ],
       "PGP-encrypted (recommended)": [
         "PGP-krypteret (anbefales)"
       ],
@@ -2927,6 +2978,9 @@
       ],
       "PIN code": [
         "Pinkode"
+      ],
+      "Plus": [
+        "Plus"
       ],
       "Prefix": [
         "Præfiks"
@@ -2994,8 +3048,14 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Vælg den boks, hvor SimpleLogin-alias skal importeres til"
       ],
+      "Select theme": [
+        "Vælg tema"
+      ],
       "Select your password manager": [
         "Vælg din adgangskodeadministrator"
+      ],
+      "Select your theme": [
+        "Vælg dit tema"
       ],
       "Selected": [
         "Valgte"
@@ -3032,6 +3092,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Storage": [
+        "Lagerplads"
       ],
       "Street address": [
         "Adresse"
@@ -3092,6 +3155,9 @@
       ],
       "Unknown": [
         "Ukendt"
+      ],
+      "Unlimited": [
+        "Ubegrænset"
       ],
       "Unlock with": [
         "Lås op med"
@@ -3171,8 +3237,14 @@
       "You are about to create": [
         "Du er ved at oprette"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Du kan vælge mellem pinkode, biometri eller din kontoadgangskode for at låse op."
+      ],
       "Your domain": [
         "Dit domæne"
+      ],
+      "Your passwords. Everywhere.": [
+        "Dine adgangskoder. Overalt."
       ],
       "ZIP": [
         "ZIP-fil"
@@ -3192,6 +3264,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Aktiver ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Message": {
@@ -3314,6 +3391,9 @@
       "The exported file attachments will not be encrypted.": [
         "De eksporterede filvedhæftninger vil ikke blive krypteret."
       ],
+      "The file you are trying to import is empty": [
+        "Filen du prøver at importere er tom"
+      ],
       "Total imported files: ": [
         "Samlet antal importerede filer: "
       ],
@@ -3325,6 +3405,11 @@
       ],
       "You can attach files to items for a better organization": [
         "Du kan vedhæfte filer til elementer for at få en bedre organisering"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ price }/month": [
+        "${ price }/måned"
       ]
     },
     "Placeholder": {

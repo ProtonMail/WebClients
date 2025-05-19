@@ -151,9 +151,6 @@
       "Attention required": [
         "Opmærksomhed påkrævet"
       ],
-      "Authenticate": [
-        "Godkend"
-      ],
       "Auto-delete spam and trash": [
         "Tøm spam og papirkurv automatisk"
       ],
@@ -474,9 +471,6 @@
       "Email settings": [
         "E-mailindstillinger"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "Enable": [
         "Aktivér"
       ],
@@ -513,6 +507,9 @@
       "Expiration time": [
         "Udløbstid"
       ],
+      "Explore ${ VPN_APP_NAME }": [
+        "Opdag ${ VPN_APP_NAME }"
+      ],
       "Export": [
         "Eksportér"
       ],
@@ -536,9 +533,6 @@
       ],
       "Font": [
         "Skrifttype"
-      ],
-      "Forgot password?": [
-        "Glemt adgangskode?"
       ],
       "Formalize": [
         "Formaliser"
@@ -1153,10 +1147,10 @@
       "Select ${ planTitle }": [
         "Vælg ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Vælg alle"
       ],
-      "Select All": [
+      "Select all": [
         "Vælg alle"
       ],
       "Select all messages": [
@@ -1453,20 +1447,17 @@
       "Use ${ PASS_APP_NAME } for Business": [
         "Brug ${ PASS_APP_NAME } for Business"
       ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Brug ${ VPN_SHORT_APP_NAME } for at beskytte dine data"
+      ],
       "Use a different card": [
         "Benyt et andet kort"
       ],
       "Use a different payment method": [
         "Benyt en anden betalingsmetode"
       ],
-      "Use authentication code": [
-        "Brug godkendelseskode"
-      ],
       "Use for sending": [
         "Benyt til afsendelse"
-      ],
-      "Use recovery code": [
-        "Brug gendannelseskode"
       ],
       "Use this": [
         "Brug dette"
@@ -1896,6 +1887,9 @@
       ],
       "Annually": [
         "Årlig"
+      ],
+      "Lifetime": [
+        "Livstid"
       ],
       "Monthly": [
         "Månedlig"
@@ -5038,24 +5032,6 @@
         "Ubegrænsede hide-my-email-aliasser"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
-      ],
-      "Security key": [
-        "Sikkerhedsnøgle"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Sikkerhedsnøgle"
-      ]
-    },
     "file size format": {
       "byte": [
         "byte",
@@ -6192,9 +6168,6 @@
       "and": [
         "og"
       ],
-      "and more.": [
-        "og mere."
-      ],
       "Another tip will be displayed next time you open Mail": [
         "Et andet tip vises næste gang, du åbner Mail"
       ],
@@ -6316,7 +6289,7 @@
         "Centrér"
       ],
       "Change your password": [
-        "Skift din adgangskode"
+        "Ændr din adgangskode"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tjekker kontakt ${ progress } af ${ max }..."
@@ -6507,9 +6480,6 @@
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
       ],
-      "Each code can only be used once": [
-        "Hver kode kan kun bruges én gang"
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Administrer og afmeld nemt nyhedsbreve og mailinglister."
       ],
@@ -6565,20 +6535,11 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Få en hurtigere og mere fokuseret e-mailoplevelse med desktop-appen."
       ],
-      "Enter the code from your authenticator app": [
-        "Indtast koden fra din godkendelsesapp"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Indtast loginoplysningerne for den e-mail-konto, du ønsker at importere fra."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Indtast verifikationskode. Ciffer ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Indtast din egen adgangskode (som organisationsadministrator)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Anslået resterende tid: ${ estimatedMinutes } minut",
@@ -6756,7 +6717,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -6847,9 +6809,6 @@
       ],
       "Low Priority": [
         "Lav prioritet"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Gør ${ MAIL_APP_NAME } til din standard e-mail-applikation."
       ],
       "Manage your folders": [
         "Administrer dine mapper"
@@ -7818,9 +7777,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Da du aktiverede betroede nøgler for ${ senderName }, blev de offentlige nøgler tilføjet til kontaktoplysningerne."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Brug et alias i stedet for din e-mailadresse, når du tilmelder dig et nyhedsbrev. Din identitet forbliver skjult, og du kan altid deaktivere aliasset."
       ],
@@ -8432,9 +8388,6 @@
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
-      "Authenticator app": [
-        "Godkendelsesapp"
-      ],
       "BCC": [
         "BCC"
       ],
@@ -8953,9 +8906,6 @@
       ],
       "Your location": [
         "Din placering"
-      ],
-      "Your password (admin)": [
-        "Din adgangskode (admin)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9501,6 +9451,9 @@
       ]
     },
     "Monthly recurring event, repeats on": {
+      "on the ${ shortenedDay }": [
+        "den ${ shortenedDay }"
+      ],
       "on the first Friday": [
         "på den første fredag"
       ],
@@ -10696,6 +10649,9 @@
       "Advanced encryption": [
         "Avanceret kryptering"
       ],
+      "Anytime, anywhere access": [
+        "Altid, overalt adgang"
+      ],
       "Auto-delete spam and trash": [
         "Slet spam og papirkurv auto."
       ],
@@ -10710,6 +10666,9 @@
       ],
       "Desktop": [
         "Desktop"
+      ],
+      "Discover ${ MAIL_APP_NAME }": [
+        "Opdag ${ MAIL_APP_NAME }"
       ],
       "Download the desktop app": [
         "Download skrivebords-appen"
@@ -10995,8 +10954,14 @@
       "Please select your billing state first.": [
         "Vælg venligst dit faktureringsstat først."
       ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Fornyes til ${ renewPriceStr }, annuller når som helst."
+      ],
       "Select billing country to pay": [
         "Vælg faktureringsland for at betale"
+      ],
+      "terms & conditions": [
+        "vilkår og betingelser"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Den særlige udsalgspris på ${ priceWithDiscount } gælder for den første ${ subscriptionLength } måned.",
@@ -12146,6 +12111,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Hvis du vil fortsætte med at uploade og synkronisere filer, skal du frigøre plads eller opgradere til mere lagerplads."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "For at sende eller modtage e-mails, frigør plads eller ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "For at sende eller modtage e-mails, frigør plads eller opgrader til mere lagerplads."
       ],
@@ -12269,47 +12237,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Til ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
       ]
     },
     "Subscription reminder": {
@@ -12567,6 +12494,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -13411,9 +13379,6 @@
       "Enter 2FA code": [
         "Indtast 2FA-kode"
       ],
-      "Enter your password": [
-        "Indtast din adgangskode"
-      ],
       "Error": [
         "Fejl"
       ],
@@ -14148,6 +14113,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Du vil blive faktureret ${ renewPriceStr } hver 12. måned."
+      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måned.",
         "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måneder."

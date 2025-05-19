@@ -76,9 +76,6 @@
       "Apply lifetime coupon code": [
         "Zastosuj kod kuponu dożywotniego konta"
       ],
-      "Authenticate": [
-        "Uwierzytelnij"
-      ],
       "Back": [
         "Wstecz"
       ],
@@ -433,6 +430,9 @@
       "Pause monitoring": [
         "Wstrzymaj monitoring"
       ],
+      "Pay once": [
+        "Zapłać raz"
+      ],
       "Pin item": [
         "Przypnij element"
       ],
@@ -570,6 +570,9 @@
       ],
       "Sign out": [
         "Wyloguj"
+      ],
+      "Skip": [
+        "Pomiń"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Udostępniono Ci element w ${ PASS_APP_NAME }"
@@ -1741,9 +1744,6 @@
       "Enter the address you want to email.": [
         "Wpisz adres odbiorcy."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
-      ],
       "Enter your extra password": [
         "Wpisz dodatkowe hasło"
       ],
@@ -1955,10 +1955,7 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -2380,6 +2377,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Kliknij ikonę ${ PASS_APP_NAME } na pasku narzędzi przeglądarki, aby przejrzeć zaimportowane dane."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Zaufany przez ponad 50 000 użytkowników biznesowych i 100 milionów kont na całym świecie."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Wypróbuj nowe funkcje, aktualizacje i usługi ${ BRAND_NAME } przed ich premierą. Spowoduje to odświeżenie strony"
       ],
@@ -2757,6 +2757,12 @@
       "Birthdate": [
         "Urodziny"
       ],
+      "Browse faster, smarter": [
+        "Przeglądaj szybciej i mądrzej"
+      ],
+      "Built-in 2FA": [
+        "Wbudowana aplikacja uwierzytelniająca"
+      ],
       "Capital letters (A-Z)": [
         "Wielkie litery (A-Z)"
       ],
@@ -2774,6 +2780,12 @@
       ],
       "Catch-All": [
         "Catch-all"
+      ],
+      "Choose unlock method": [
+        "Wybierz metodę odblokowania"
+      ],
+      "Choose your preferred look and feel.": [
+        "Wybierz preferowany wygląd i styl."
       ],
       "City": [
         "Miasto"
@@ -2831,6 +2843,9 @@
       ],
       "Created at": [
         "Utworzono na stronie"
+      ],
+      "Credit cards": [
+        "Karty płatnicze"
       ],
       "Custom hidden field": [
         "Ukryte tekstowe pole niestandardowe"
@@ -2901,6 +2916,9 @@
       "Export": [
         "Eksportowanie"
       ],
+      "Extra email addresses": [
+        "Dodatkowe adresy e-mail"
+      ],
       "Extra password": [
         "Dodatkowe hasło"
       ],
@@ -2912,6 +2930,9 @@
       ],
       "Field name": [
         "Nazwa pola"
+      ],
+      "File attachments": [
+        "Załączniki"
       ],
       "File format": [
         "Format pliku"
@@ -2925,8 +2946,14 @@
       "For a one-off sharing": [
         "Do jednorazowego udostępnienia"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Ze względów bezpieczeństwa, aplikacja ${ PASS_SHORT_APP_NAME } zostanie automatycznie zablokowana po 10 minutach nieaktywności."
+      ],
       "Forwards to": [
         "Przekaż do"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "Darmowy na zawsze"
@@ -2943,8 +2970,17 @@
       "Generic CSV": [
         "Ogólny plik CSV"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Wybierz plan ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Wybierz plan ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "Rozpocznij"
+      ],
+      "Get the extension for your browser.": [
+        "Pobierz rozszerzenie do przeglądarki"
       ],
       "Grant": [
         "Przyznaj"
@@ -2954,6 +2990,15 @@
       ],
       "Hide password": [
         "Ukryj hasło"
+      ],
+      "Hide-my-email aliases": [
+        "Aliasy hide-my-email"
+      ],
+      "Highest": [
+        "Najwyższa"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Jak odblokować ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://przyklad.pl"
@@ -2993,6 +3038,12 @@
       ],
       "Instagram handle": [
         "Profil Instagram"
+      ],
+      "Install and continue": [
+        "Zainstaluj i kontynuuj"
+      ],
+      "Install extension": [
+        "Zainstaluj rozszerzenie"
       ],
       "Invitations": [
         "Zaproszenia"
@@ -3039,6 +3090,9 @@
       "License number": [
         "Numer prawa jazdy"
       ],
+      "Limited time": [
+        "Oferta ograniczona czasowo"
+      ],
       "LinkedIn account": [
         "Profil LinkedIn"
       ],
@@ -3062,6 +3116,9 @@
       ],
       "Make all viewers": [
         "Ustaw uprawnienie odczytu wszystkim"
+      ],
+      "Make it your own.": [
+        "Stwórz własny."
       ],
       "max views reached": [
         "maksymalna liczba dostępów została osiągnięta"
@@ -3165,6 +3222,9 @@
       "Personal website": [
         "Osobista strona internetowa"
       ],
+      "Personalize": [
+        "Personalizuj"
+      ],
       "PGP-encrypted (recommended)": [
         "Zaszyfrowany PGP (zalecany)"
       ],
@@ -3176,6 +3236,9 @@
       ],
       "PIN code": [
         "Kod PIN"
+      ],
+      "Plus": [
+        "Plus"
       ],
       "Prefix": [
         "Przedrostek"
@@ -3243,8 +3306,14 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Wybierz sejf do zaimportowania aliasów SimpleLogin"
       ],
+      "Select theme": [
+        "Wybierz motyw"
+      ],
       "Select your password manager": [
         "Wybierz menadżer haseł"
+      ],
+      "Select your theme": [
+        "Wybierz motyw"
       ],
       "Selected": [
         "Zaznaczono"
@@ -3282,6 +3351,9 @@
       "Status": [
         "Status"
       ],
+      "Storage": [
+        "Przestrzeń dyskowa"
+      ],
       "Street address": [
         "Ulica"
       ],
@@ -3308,6 +3380,9 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "To, co najlepsze w ${ BRAND_NAME } w jednej subskrypcji"
       ],
       "The URL has been copied to the clipboard": [
         "Link został skopiowany do schowka"
@@ -3341,6 +3416,12 @@
       ],
       "Unknown": [
         "Nieznany"
+      ],
+      "Unlimited": [
+        "Bez limitu"
+      ],
+      "Unlock premium features": [
+        "Odblokuj funkcje premium"
       ],
       "Unlock with": [
         "Odblokuj za pomocą"
@@ -3381,6 +3462,9 @@
       "Vault ID": [
         "Identyfikator sejfu"
       ],
+      "Vault, item & link sharing": [
+        "Udostępnianie sejfu i elementu"
+      ],
       "Vaults": [
         "Sejfy"
       ],
@@ -3389,6 +3473,12 @@
       ],
       "View logs": [
         "Pokaż logi"
+      ],
+      "VPN Devices": [
+        "Urządzenia VPN"
+      ],
+      "VPN Speed": [
+        "Prędkość VPN"
       ],
       "Vulnerable": [
         "Bardzo słabe"
@@ -3401,6 +3491,9 @@
       ],
       "Websites": [
         "Strony internetowe"
+      ],
+      "What's included": [
+        "Co zawiera"
       ],
       "Work details": [
         "Szczegóły służbowe"
@@ -3420,8 +3513,14 @@
       "You are about to create": [
         "Utworzysz"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Wybierz kod PIN, dane biometryczne lub hasło konta do odblokowania aplikacji."
+      ],
       "Your domain": [
         "Twoja domena"
+      ],
+      "Your passwords. Everywhere.": [
+        "Twoje hasła. Wszędzie."
       ],
       "ZIP": [
         "ZIP"
@@ -3444,6 +3543,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Włącz ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Message": {
@@ -3613,6 +3717,14 @@
       ],
       "You can attach files to items for a better organization": [
         "Do elementów możesz dodawać pliki w celu lepszej organizacji"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus Lifetime za ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price } / miesiąc"
       ]
     },
     "Placeholder": {
@@ -3885,8 +3997,14 @@
       "${ BRAND_NAME } addresses": [
         "Adresy ${ BRAND_NAME }"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Ochrona konta"
@@ -4169,6 +4287,9 @@
       ],
       "Pause monitoring?": [
         "Wstrzymać monitoring?"
+      ],
+      "Pay once, access forever.": [
+        "Zapłać raz, uzyskaj dostęp na zawsze."
       ],
       "Pending access confirmation": [
         "Oczekiwanie na potwierdzenie dostępu"

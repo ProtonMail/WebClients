@@ -76,9 +76,6 @@
       "Apply lifetime coupon code": [
         "Pas de lifetime kortingscode toe"
       ],
-      "Authenticate": [
-        "Authenticeren"
-      ],
       "Back": [
         "Terug"
       ],
@@ -638,9 +635,6 @@
       ],
       "Unpin item": [
         "Item losmaken"
-      ],
-      "Update": [
-        "Bijwerken"
       ],
       "Upgrade": [
         "Upgraden"
@@ -1753,9 +1747,6 @@
       "Enter the address you want to email.": [
         "Vul het adres in dat u wilt mailen."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Voer verificatiecode in. Cijfer ${ digit }."
-      ],
       "Enter your extra password": [
         "Voer uw extra wachtwoord in"
       ],
@@ -1957,6 +1948,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2381,7 +2376,7 @@
         "Klik op het ${ PASS_APP_NAME }-pictogram in de werkbalk om uw geïmporteerde gegevens te bekijken."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
-        "Vertrouwd door meer dan 50.000 zakelijke gebruikers en 100 miljoen accounts over de hele wereld."
+        "Vertrouwd door meer dan 50 000 zakelijke gebruikers en 100 miljoen accounts over de hele wereld."
       ],
       "Unable to copy to clipboard": [
         "Kan niet kopiëren naar Klembord"
@@ -3451,7 +3446,7 @@
         "Naamloos"
       ],
       "Update": [
-        "Bijwerken"
+        "Update"
       ],
       "Used in": [
         "Gebruikt in"
@@ -4008,7 +4003,7 @@
         "${ BRAND_NAME } adressen"
       ],
       "${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } Onbeperkt"
+        "${ BRAND_NAME } Unlimited"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"

@@ -392,10 +392,10 @@
       "Move to another vault": [
         "სხვა საცავში გადატანა"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "ნაგვის ყუთში გადატანა"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "ნაგვის ყუთში გადატანა"
       ],
       "Multiple select": [
@@ -763,6 +763,9 @@
       ],
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "ავთენტიკაცია ჩავარდა. დაადასტურეთ თქვენი დამატებითი პაროლი, რომ გატანა გაგრძელდეს"
+      ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "ავთენტიკაცია ჩავარდა. დაადასტურეთ თქვენი მეორე პაროლი, რომ გატანა გაგრძელდეს"
       ],
       "Authentication failure: ${ message }": [
         "ავთენტიკაცია ჩავარდა: ${ message }"
@@ -3282,6 +3285,9 @@
       "Download file": [
         "ფაილის გადმოწერა"
       ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Firefox-ის შეზღუდვების გამო საჭიროა, ${ PASS_APP_NAME } თავიდან გახსნათ ახალ ფანჯარაში, სანამ ფაილების ატვირთვას შეძლებთ."
+      ],
       "Exporting files": [
         "ფაილების გატანა"
       ],
@@ -3293,6 +3299,9 @@
       ],
       "File attachments": [
         "მიმაგრებული ფაილები"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "თუ ჩართულია, გატანისას ყველა თქვენი ფაილის გადმოწერა მოხდება. ამას რაღაც დრო შეიძლება დასჭირდეს, თქვენი ინტერნეტის სიჩქარეზე დამოკიდებულებით."
       ],
       "If your data contains file attachments, they will not be imported.": [
         "თუ თქვენი მონაცემები მიმაგრებულ ფაილებს შეიცავს, მათი შემოტანა არ მოხდება."

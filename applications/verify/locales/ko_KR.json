@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "Authenticate": [
-        "인증"
-      ],
       "Cancel": [
         "취소"
       ],
@@ -28,9 +25,6 @@
       ],
       "Edit sign-in details": [
         "로그인 정보 변경"
-      ],
-      "Forgot password?": [
-        "비밀번호를 잊으셨나요?"
       ],
       "Get verification code": [
         "인증코드 전송"
@@ -55,12 +49,6 @@
       ],
       "Try another method": [
         "다른 방법 시도"
-      ],
-      "Use authentication code": [
-        "인증 코드를 사용"
-      ],
-      "Use recovery code": [
-        "복구코드 사용"
       ],
       "Verify": [
         "인증"
@@ -921,24 +909,6 @@
         "이 페이지를 로드할 수 없습니다. 페이지를 새로고침 하거나 인터넷 연결을 확인하세요."
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "사용자의 보안 키 인증에 문제가 발생했습니다. 나중에 다시 시도하세요."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입하십시오."
-      ],
-      "Security key": [
-        "보안 키"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "보안 키"
-      ]
-    },
     "file size format": {
       "byte": [
         "바이트"
@@ -1031,23 +1001,11 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "여러개의 무료 계정을 만드는 것은 저희의 ${ termsLink } 에 따라 허용되지 않습니다."
       ],
-      "Each code can only be used once": [
-        "각각의 코드는 한 번만 사용 가능합니다"
-      ],
       "Edit email address": [
         "이메일 주소 변경"
       ],
-      "Enter the code from your authenticator app": [
-        "인증 앱의 코드를 입력하세요"
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText }(으)로 인증 코드가 전송되었습니다."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "인증 코드를 입력하세요. ${ digit } 자리."
-      ],
-      "Enter your own password (as organization admin).": [
-        "자신의 비밀번호 입력 (조직 관리자와 같음)"
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "추가적인 정보와 제한을 없애기 위해 ${ mailLink }(에)서 로그인 해주세요."
@@ -1091,9 +1049,6 @@
       "We'll send a new verification code to ${ strong }": [
         "${ strong } 에 새 인증 코드를 보내드려요."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "이중 인증을 설정하면, 인증 앱에 접근할 수 없을 때 로그인 시 사용할 수 없는 복구 코드를 제공해드립니다."
-      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "새 인증 코드를 받거나 다른 인증 방법을 사용하시겠습니까?"
       ],
@@ -1117,9 +1072,6 @@
       ]
     },
     "Label": {
-      "Authenticator app": [
-        "인증 앱"
-      ],
       "Code is 6 digits without spaces": [
         "코드는 공백 없이 6자리에요."
       ],
@@ -1140,9 +1092,6 @@
       ],
       "Verification code": [
         "인증 코드"
-      ],
-      "Your password (admin)": [
-        "사용자의 비밀번호 (관리자)"
       ]
     },
     "Link": {
@@ -1525,9 +1474,6 @@
       ],
       "Enter 2FA code": [
         "2단계 인증 코드 입력"
-      ],
-      "Enter your password": [
-        "비밀번호를 입력하세요"
       ],
       "Human verification": [
         "사람임을 인증"

@@ -523,7 +523,7 @@
         "Platnosť do"
       ],
       "Explore ${ VPN_APP_NAME }": [
-        "Preskúmajte ${ VPN_APP_NAME }"
+        "Preskúmať ${ VPN_APP_NAME }"
       ],
       "Export": [
         "Exportovať"
@@ -550,7 +550,7 @@
         "Písmo"
       ],
       "Forgot password?": [
-        "Zabudnuté heslo?"
+        "Zabudli ste heslo?"
       ],
       "Formalize": [
         "Formalizovať"
@@ -1179,10 +1179,10 @@
       "Select ${ planTitle }": [
         "Vybrať ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Vybrať všetko"
       ],
-      "Select All": [
+      "Select all": [
         "Vybrať všetko"
       ],
       "Select all messages": [
@@ -1384,7 +1384,7 @@
         "Prepnúť nastavenia"
       ],
       "Toggle VPN dashboard": [
-        "Prepnúť nástenku VPN"
+        "Prepnúť VPN nástenku"
       ],
       "Tomorrow": [
         "Zajtra"
@@ -5190,12 +5190,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Prosím skúste znova."
+        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vložte bezpečnostný kľúč prepojený s vaším účtom ${ BRAND_NAME }."
+        "Vložte bezpečnostný kľúč prepojený s vaším ${ BRAND_NAME } účtom."
       ],
       "Security key": [
         "Bezpečnostný kľúč"
@@ -6064,7 +6064,7 @@
         "${ boldQuicklySpot }, ktoré predplatné už nie sú relevantné."
       ],
       "${ boldUnsubscribe } from them with one click.": [
-        "${ boldUnsubscribe } od nich jedným kliknutím."
+        "${ boldUnsubscribe } len jedným kliknutím."
       ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "${ BRAND_NAME } Scribe vám pomáha rýchlo a jednoducho vytvárať lepšie emaily."
@@ -6309,6 +6309,12 @@
       "${ storage } storage": [
         "${ storage } úložisko"
       ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } email za posledný mesiac",
+        "${ subscription.ReceivedMessages.Last30Days } emaily za posledný mesiac",
+        "${ subscription.ReceivedMessages.Last30Days } emailov za posledný mesiac",
+        "${ subscription.ReceivedMessages.Last30Days } emailov za posledný mesiac"
+      ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } neprečítaná",
         "${ subscription.UnreadMessageCount } neprečítané",
@@ -6472,10 +6478,10 @@
         "Všetky (${ totalFoldersCount } štítkov)"
       ],
       "All messages from this mailing list will be marked as read.": [
-        "Všetky správy z tohto zosielacieho zoznamu budú označené ako prečítané."
+        "Všetky správy z tohto emailového zoznamu budú označené ako prečítané."
       ],
       "All messages from this mailing list will be moved to Archive.": [
-        "Všetky správy z tohto zasielacieho zoznamu budú presunuté do Archívu."
+        "Všetky správy z tohto emailového zoznamu budú presunuté do Archívu."
       ],
       "All messages from this mailing list will be moved to Trash.": [
         "Všetky správy z tohto adresára budú presunuté do Koša."
@@ -6521,9 +6527,6 @@
       ],
       "and": [
         "a"
-      ],
-      "and more.": [
-        "a ďalšie."
       ],
       "Another tip will be displayed next time you open Mail": [
         "Pri ďalšom otvorení služby Mail sa zobrazí ďalší tip"
@@ -6861,11 +6864,11 @@
       "Drop to import": [
         "Presuňte na import"
       ],
-      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
-        "Z dôvodu konfigurácie príjemcu nie je možné túto správu odoslať s dátumom expirácie nasledujúcemu kontaktu: ",
-        "Z dôvodu konfigurácie príjemcu nie je možné túto správu odoslať s dátumom expirácie nasledujúcim kontaktom: ",
-        "Z dôvodu konfigurácie príjemcu nie je možné túto správu odoslať s dátumom expirácie nasledujúcim kontaktom: ",
-        "Z dôvodu konfigurácie príjemcu nie je možné túto správu odoslať s dátumom expirácie nasledujúcim kontaktom: "
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Z dôvodu konfigurácie príjemcu nie je možné túto správu odoslať s dátumom expirácie pre ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Z dôvodu konfigurácie príjemcu nie je možné túto správu odoslať s dátumom expirácie."
       ],
       "Duplicate key updated": [
         "Duplicitný kľúč bol aktualizovaný"
@@ -6874,7 +6877,7 @@
         "Každý kód je možné použiť iba raz"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
-        "Jednoducho spravujte a odhlasujte sa z odberu informačných bulletinov a rozposielacích zoznamov"
+        "Jednoduchá správa a odhlásenie sa z odberu informačných bulletinov a emailových zoznamov."
       ],
       "Edit email address": [
         "Upraviť emailovú adresu"
@@ -7141,7 +7144,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -7561,7 +7567,7 @@
         "Verejné zdieľanie dokumentov zatiaľ nie je podporované."
       ],
       "Quickly spot": [
-        "Rýchlo zistíte"
+        "Rýchlo zistiť"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Obráťte sa na nás, ak potrebujete pomoc s čímkoľvek od ${ BRAND_NAME }."
@@ -7690,7 +7696,7 @@
         "Nastavte ${ MAIL_APP_NAME } ako vašu predvolenú emailovú aplikáciu. ${ MAIL_APP_NAME } sa otvorí automaticky po kliknutí na emailový odkaz."
       ],
       "Set up your organization": [
-        "Nastaviť svoju organizáciu"
+        "Nastavte svoju organizáciu"
       ],
       "Setting up ${ feature }…": [
         "Nastavovanie ${ feature }…"
@@ -8083,7 +8089,7 @@
         "Neuložené zmeny"
       ],
       "Unsubscribe": [
-        "Odhláste sa z odberu"
+        "Odhlásiť odber"
       ],
       "Unsupported file": [
         "Nepodporovaný súbor"
@@ -8251,7 +8257,7 @@
         "Hneď ako povolíte dôverné kľúče pre ${ senderName }, verejné kľúče budú doplnené k detailu kontaktu."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
+        "Pri nastavení dvojstupňového overenia poskytujeme kódy na obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k vašej overovacej aplikácii."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Pri registrácii na odber noviniek používajte namiesto svojej emailovej adresy alias. Vaša identita zostane skrytá a alias môžete kedykoľvek vypnúť."
@@ -8942,7 +8948,7 @@
         "Priložiť snímok(ky) obrazovky"
       ],
       "Authenticator app": [
-        "Aplikácia 2FA"
+        "Overovacia aplikácia"
       ],
       "BCC": [
         "Skrytá kópia (BCC)"
@@ -9257,7 +9263,7 @@
         "Notifikácia"
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
-        "Notifikácie sú zakázané. Ak ich chcete povoliť, zmeňte nastavenia prehliadača."
+        "Notifikácie sú deaktivované. Ak ich chcete povoliť, zmeňte nastavenia prehliadača."
       ],
       "Open in a new tab": [
         "Otvoriť na novej karte"
@@ -9473,7 +9479,7 @@
         "Vaša poloha"
       ],
       "Your password (admin)": [
-        "Vaše heslo (admin)"
+        "Vaše heslo (správca)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9547,8 +9553,11 @@
       ]
     },
     "Labels": {
+      "Newsletters you unsubscribe from will appear here.": [
+        "Tu sa zobrazia newslettery, u ktorých zrušíte odber."
+      ],
       "View and manage newsletter and mailing list subscriptions here.": [
-        "Tu si môžete zobraziť a spravovať odber noviniek a odber zo zasielacieho zoznamu."
+        "Tu si môžete zobraziť a spravovať odber noviniek a odber z emailového zoznamu."
       ]
     },
     "Landmarks": {
@@ -9857,6 +9866,9 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Vášmu kontu hrozí vymazanie. Ak chcete zabrániť strate údajov, požiadajte správcu o aktualizáciu. ${ cta }"
       ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Vaše úložisko je plné. Ak chcete naďalej používať produkty ${ BRAND_NAME }, uvoľnite miesto alebo ${ cta }."
+      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Vaše predplatné skončilo. ${ cta } a zabráňte strate údajov."
       ]
@@ -9894,7 +9906,7 @@
     },
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
-        "Asistent písania ${ BRAND_NAME } Scribe"
+        "${ BRAND_NAME } Scribe, asistent písania"
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Pridať asistenta písania ${ BRAND_NAME } Scribe"
@@ -10785,7 +10797,7 @@
         "Náš ${ visionary } plán už nie je k dispozícii pre nových predplatiteľov, pretože ide o špeciálny plán pre pôvodných používateľov ${ BRAND_NAME } so špeciálnymi funkciami a výhodami."
       ],
       "Pay once, secure your passwords and identity forever.": [
-        "Zaplaťte raz a zabezpečte svoje heslá a identity navždy."
+        "Zaplaťte raz a zabezpečte navždy svoje heslá a identity."
       ],
       "Popular": [
         "Populárne"
@@ -11327,7 +11339,7 @@
         "${ protectionFromTrackersTitle } znamená, že už vás nebudú sledovať na internete."
       ],
       "Activate premium features": [
-        "Aktivujte premium funkcie"
+        "Aktivujte prémium funkcie"
       ],
       "Activate selected": [
         "Aktivovať vybrané"
@@ -11369,7 +11381,7 @@
         "Ak chcete mať k emailom prístup kedykoľvek a mať optimalizované mobilné prostredie, stiahnite si našu aplikáciu ${ mobileAppAppStoreLink } alebo ${ mobileAppGooglePlayLink }."
       ],
       "Get notified if your password is compromised.": [
-        "Dostávajte upozornenia, ak dôjde ku kompromitácii vášho hesla."
+        "Dostávejte upozornění, pokud dojde ke kompromitaci vašeho hesla."
       ],
       "Industry-leading spam protection": [
         "Špičková ochrana proti spamu"
@@ -11399,7 +11411,7 @@
         "Začnite používať ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Používajte kratšiu verziu svojej emailovej adresy."
+        "Začnite používať kratšiu verziu vašej emailovej adresy."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Ak chcete začať, vyberte si zobrazované meno. Toto sa zobrazí ľuďom, keď im pošlete email, pozvete ich na udalosť alebo zdieľate súbor."
@@ -12528,7 +12540,7 @@
     },
     "Slack": {
       "Join Slack huddle": [
-        "Pripojiť sa k hromadnej konverzácii Slack"
+        "Pripojiť sa k Slack huddle"
       ]
     },
     "SmartBanner": {
@@ -12906,6 +12918,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Ak chcete naďalej používať produkty ${ BRAND_NAME }, uvoľnite miesto alebo ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Ak chcete odosielať alebo prijímať emaily, uvoľnite miesto alebo ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Ak chcete odosielať alebo prijímať emaily, uvoľnite miesto alebo aktualizujte úložisko."
       ],
@@ -12931,10 +12946,10 @@
         "Vaše úložisko ${ appStorage } je plné"
       ],
       "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
-        "Vaše úložisko ${ productString } je zaplnené na ${ percentage }%. ${ cta }."
+        "Vaše ${ productString } je zaplnené na ${ percentage }%. ${ cta }."
       ],
       "Your ${ productString } is full. ${ cta }.": [
-        "Vaše úložisko ${ productString } je plné. ${ cta }."
+        "Vaše ${ productString } je plné. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Vaše úložisko je zaplnené na ${ percentage }%. ${ cta }."
@@ -13043,47 +13058,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložného priestoru"
-      ],
-      "and 15 more premium features": [
-        "a ďalších 15 prémiových funkcií"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické presmerovanie emailu ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornenia na úniky údajov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikácia"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
-      ],
-      "No ads or tracking": [
-        "Žiadne reklamy alebo sledovanie"
-      ],
-      "Short @pm.me email address": [
-        "Skrátená emailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podporte naše poslanie"
-      ],
-      "Upgrade": [
-        "Prejsť na platený plán"
-      ],
-      "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
-      ],
-      "We don't sell your data": [
-        "Nepredávame vaše údaje"
-      ],
-      "Your privacy is our mission": [
-        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription reminder": {
@@ -13356,6 +13330,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastný skrátený emailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "and 15 more premium features": [
+        "a ďalších 15 prémiových funkcií"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické presmerovanie emailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornenia na úniky údajov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
+      ],
+      "No ads or tracking": [
+        "Žiadne reklamy alebo sledovanie"
+      ],
+      "Short @pm.me email address": [
+        "Skrátená emailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podporte naše poslanie"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšite svoju produktivitu"
+      ],
+      "We don't sell your data": [
+        "Nepredávame vaše údaje"
+      ],
+      "Your privacy is our mission": [
+        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription renewal state": {
@@ -13848,7 +13863,7 @@
     },
     "Teams": {
       "Join Teams meeting": [
-        "Pripojiť sa k stretnutiu cez Teams"
+        "Pripojiť sa k Teams mítingu"
       ]
     },
     "Time": {
@@ -14284,7 +14299,7 @@
         "Zadajte 2FA kód"
       ],
       "Enter your password": [
-        "Zadajte Vaše heslo"
+        "Zadajte svoje heslo"
       ],
       "Error": [
         "Chyba"
@@ -14400,11 +14415,11 @@
       "Load remote content": [
         "Načítať vzdialený obsah"
       ],
-      "Mail Subscriptions": [
-        "Emailové odbery"
-      ],
       "Mail subscriptions": [
         "Zasielanie pravidelných emailov"
+      ],
+      "Mail Subscriptions": [
+        "Emailové odbery"
       ],
       "Make a secure connection your default": [
         "Nastavte zabezpečené pripojenie ako východzie"
@@ -14534,6 +14549,9 @@
       ],
       "No trackers found": [
         "Neboli nájdené žiadne trackery."
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Žiadne odhlásené mailové predplatné"
       ],
       "No-reply address detected": [
         "Bola identifikovaná adresa neprijímajúca odpovede"
@@ -15549,7 +15567,7 @@
     },
     "Zoom": {
       "Join Zoom meeting": [
-        "Pripojiť sa k stretnutiu na Zoome"
+        "Pripojiť sa k Zoom mítingu"
       ]
     },
     "Zoom Meeting": {

@@ -28,6 +28,9 @@
       "Accept": [
         "Схвалити"
       ],
+      "Accept and view the item": [
+        "Прийняти та переглянути елемент"
+      ],
       "Add": [
         "Додати"
       ],
@@ -66,9 +69,6 @@
       ],
       "Advanced options": [
         "Додаткові параметри"
-      ],
-      "Authenticate": [
-        "Автентифікація"
       ],
       "Back": [
         "Назад"
@@ -541,6 +541,9 @@
       "Sign out": [
         "Вийти"
       ],
+      "Skip": [
+        "Пропустити"
+      ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Хтось поділився з вами елементом у ${ PASS_APP_NAME }."
       ],
@@ -985,6 +988,9 @@
       "File does not match expected format": [
         "Файл не відповідає очікуваному формату"
       ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Не вдалося імпортувати дані до сховища \"${ vaultData.name }\" : ${ errorMessage }"
+      ],
       "Importing items failed": [
         "Не вдалося імпортувати елементи"
       ],
@@ -1247,6 +1253,9 @@
         "${ forwardedEmailsCount } переслано",
         "${ forwardedEmailsCount } переслано"
       ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } хоче поділитися з вами елементом."
+      ],
       "${ memberCount } member": [
         "${ memberCount } учасник",
         "${ memberCount } учасники",
@@ -1276,6 +1285,12 @@
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } вимагатиме вашого паролю ${ BRAND_NAME } для доступу до даних в автономному режимі."
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } запрошення успішно відправлено",
+        "${ payload.count } запрошень успішно відправлено",
+        "${ payload.count } запрошень успішно відправлено",
+        "${ payload.count } запрошень успішно відправлено"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } успішно вимкнено"
@@ -1403,6 +1418,9 @@
       "Can be viewed": [
         "Можна переглянути"
       ],
+      "Can grant and revoke access to this item.": [
+        "Може надавати та відкликати доступ до цього елементу."
+      ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Може надавати та відкликати доступ до цього сховища, та видалити його."
       ],
@@ -1411,6 +1429,9 @@
       ],
       "Can view items in this vault.": [
         "Може переглядати елементи в цьому сховищі."
+      ],
+      "Can view this item.": [
+        "Можна переглянути цей елемент."
       ],
       "Change your password": [
         "Змініть свій пароль"
@@ -1529,9 +1550,6 @@
       "Enter the address you want to email.": [
         "Введіть адресу, на яку ви хочете надіслати листа."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Введіть код підтвердження. Цифри ${ digit }."
-      ],
       "Enter your extra password": [
         "Уведіть ваш додатковий пароль"
       ],
@@ -1642,6 +1660,12 @@
       ],
       "Item restored": [
         "Елемент відновлено"
+      ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Спільний доступ до елемента: ${ itemAccessCount } користувач",
+        "Спільний доступ до елемента: ${ itemAccessCount } користувачі",
+        "Спільний доступ до елемента: ${ itemAccessCount } користувачів",
+        "Спільний доступ до елемента: ${ itemAccessCount } користувачів"
       ],
       "Item successfully excluded from monitoring": [
         "Елемент успішно виключено з моніторингу"
@@ -1937,6 +1961,9 @@
       "Share your logins and secure notes, with up to 10 people": [
         "Діліться своїми даними входу та захищеними нотатками з 10 людьми"
       ],
+      "Shared item invitation": [
+        "Запрошення на спільний елемент"
+      ],
       "Sign in to your account": [
         "Увійдіть у свій обліковий запис"
       ],
@@ -2093,6 +2120,12 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Сховище \"${ share.content.name }\" видалено"
       ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Спільний доступ до сховища: ${ vaultMembersCount } учасник",
+        "Спільний доступ до сховища: ${ vaultMembersCount } учасники",
+        "Спільний доступ до сховища: ${ vaultMembersCount } учасників",
+        "Спільний доступ до сховища: ${ vaultMembersCount } учасників"
+      ],
       "Verification code sent.": [
         "Код підтвердження відправлено."
       ],
@@ -2227,6 +2260,12 @@
         "${ config.options.wordCount } слів",
         "${ config.options.wordCount } слів"
       ],
+      "${ count } item": [
+        "${ count } елемент",
+        "${ count } елементи",
+        "${ count } елементи",
+        "${ count } елементів"
+      ],
       "${ days } day": [
         "${ days } день",
         "${ days } дні",
@@ -2356,6 +2395,9 @@
       "All": [
         "Усі"
       ],
+      "All items": [
+        "Всі елементи"
+      ],
       "Alphabetical": [
         "За абеткою"
       ],
@@ -2380,6 +2422,9 @@
       "Birthdate": [
         "Дата народження"
       ],
+      "Browse faster, smarter": [
+        "Перегляд швидший, розумніший"
+      ],
       "Capital letters (A-Z)": [
         "Великі літери (А-Я)"
       ],
@@ -2397,6 +2442,12 @@
       ],
       "Catch-All": [
         "Catch-all"
+      ],
+      "Choose unlock method": [
+        "Оберіть спосіб розблокування"
+      ],
+      "Choose your preferred look and feel.": [
+        "Виберіть ваш бажаний вигляд та почуття."
       ],
       "City": [
         "Місто"
@@ -2454,6 +2505,9 @@
       ],
       "Created at": [
         "Створено"
+      ],
+      "Credit cards": [
+        "Банківські картки"
       ],
       "Custom hidden field": [
         "Власне приховане поле"
@@ -2524,14 +2578,23 @@
       "Export": [
         "Експорт"
       ],
+      "Extra email addresses": [
+        "Додаткових адрес електронної пошти"
+      ],
       "Extra password": [
         "Додатковий пароль"
       ],
       "Facebook account": [
         "Обліковий запис Facebook"
       ],
+      "Feedback": [
+        "Відгук"
+      ],
       "Field name": [
         "Назва поля"
+      ],
+      "File attachments": [
+        "Вкладені файли"
       ],
       "File format": [
         "Формат файлу"
@@ -2542,8 +2605,14 @@
       "Floor, apartment, building": [
         "Поверх, квартира, будівля"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "З міркувань безпеки ${ PASS_SHORT_APP_NAME } автоматично блокується після 10 хвилин бездіяльності."
+      ],
       "Forwards to": [
         "Пересилається на"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "Безплатно назавжди"
@@ -2563,6 +2632,9 @@
       "Get Started": [
         "Розпочати"
       ],
+      "Get the extension for your browser.": [
+        "Отримайте розширення для вашого браузера."
+      ],
       "Grant": [
         "Дозволити"
       ],
@@ -2571,6 +2643,15 @@
       ],
       "Hide password": [
         "Приховати пароль"
+      ],
+      "Hide-my-email aliases": [
+        "Псевдоніми Hide-my-email"
+      ],
+      "Highest": [
+        "Найвища"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Як розблокувати ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2610,6 +2691,12 @@
       ],
       "Instagram handle": [
         "Instagram обробник"
+      ],
+      "Install and continue": [
+        "Встановити й продовжити"
+      ],
+      "Install extension": [
+        "Встановити розширення"
       ],
       "Invitations": [
         "Запрошення"
@@ -2677,6 +2764,9 @@
       "Make all viewers": [
         "Зробити всіх глядачами"
       ],
+      "Make it your own.": [
+        "Зробіть це по-своєму."
+      ],
       "max views reached": [
         "досягнуто максимального числа переглядів"
       ],
@@ -2703,6 +2793,9 @@
       ],
       "Need help?": [
         "Потрібна допомога?"
+      ],
+      "New": [
+        "Новий"
       ],
       "New email": [
         "Нова адреса електронної пошти"
@@ -2776,6 +2869,9 @@
       "Personal website": [
         "Персональний вебсайт"
       ],
+      "Personalize": [
+        "Персоналізувати"
+      ],
       "Phone number": [
         "Номер телефону"
       ],
@@ -2824,6 +2920,9 @@
       "Second password": [
         "Другий пароль"
       ],
+      "Secure links": [
+        "Безпечні посилання"
+      ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Безпечно зберігайте, діліться та автоматично входьте у свої облікові записи за допомогою ${ PASS_APP_NAME }, використовуючи наскрізне шифрування, якому довіряють мільйони."
       ],
@@ -2832,6 +2931,9 @@
       ],
       "Security code": [
         "Код безпеки"
+      ],
+      "See member and permission overview": [
+        "Дивіться огляд учасників та дозволів"
       ],
       "Select a domain": [
         "Обрати домен"
@@ -2845,8 +2947,14 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Виберіть сховище, до якого буде імпортовано псевдоніми SimpleLogin"
       ],
+      "Select theme": [
+        "Вибрати тему"
+      ],
       "Select your password manager": [
         "Виберіть менеджер паролів"
+      ],
+      "Select your theme": [
+        "Виберіть вашу тему"
       ],
       "Selected": [
         "Вибрано"
@@ -2854,8 +2962,17 @@
       "Share": [
         "Поділитися"
       ],
+      "Shared": [
+        "Спільний доступ"
+      ],
+      "Shared by me": [
+        "Поширено мною"
+      ],
       "Shared link": [
         "Поширене посилання"
+      ],
+      "Shared with me": [
+        "Поширено для мене"
       ],
       "Show website favicons": [
         "Показувати піктограми вебсайтів"
@@ -2874,6 +2991,9 @@
       ],
       "Status": [
         "Статус"
+      ],
+      "Storage": [
+        "Сховище"
       ],
       "Street address": [
         "Вулиця"
@@ -2932,6 +3052,9 @@
       "Unknown": [
         "Невідомий"
       ],
+      "Unlimited": [
+        "Необмежено"
+      ],
       "Unlock with": [
         "Спосіб розблокування"
       ],
@@ -2958,6 +3081,9 @@
       ],
       "Used in": [
         "Використано в"
+      ],
+      "Useful for permanent sharing": [
+        "Корисно для постійного спільного використання"
       ],
       "Username": [
         "Ім'я користувача"
@@ -3007,8 +3133,17 @@
       "You are about to create": [
         "Ви збираєтеся створити"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Для розблокування ви можете вибрати PIN-код, біометричні дані або пароль вашого облікового запису."
+      ],
       "Your domain": [
         "Ваш домен"
+      ],
+      "Your passwords. Everywhere.": [
+        "Ваші паролі. Усюди."
+      ],
+      "ZIP": [
+        "Поштовий індекс"
       ],
       "ZIP or Postal code": [
         "Поштовий індекс"
@@ -3086,6 +3221,52 @@
         "Підкреслення"
       ]
     },
+    "Pass_file_attachments": {
+      "${ filesCount } file": [
+        "${ filesCount } файл",
+        "${ filesCount } файли",
+        "${ filesCount } файлів",
+        "${ filesCount } файлів"
+      ],
+      "Attachments": [
+        "Вкладення"
+      ],
+      "Choose a file or drag it here": [
+        "Виберіть файл або перетягніть його сюди"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Видалити ${ deleteFile.state.name }"
+      ],
+      "Download": [
+        "Завантажити"
+      ],
+      "File": [
+        "Файл"
+      ],
+      "File attachments": [
+        "Вкладені файли"
+      ],
+      "Rename": [
+        "Перейменувати"
+      ],
+      "Restore": [
+        "Відновити"
+      ],
+      "The file you are trying to import is empty": [
+        "Ви намагаєтеся імпортувати порожній файл"
+      ],
+      "Upload files from your device.": [
+        "Вивантажити файли з вашого пристрою."
+      ],
+      "You can attach files to items for a better organization": [
+        "Ви можете прикріплювати файли до елементів для кращої організації"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ price }/month": [
+        "${ price } / місяць"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Додати секретний ключ 2FA"
@@ -3101,6 +3282,9 @@
       ],
       "Alias Display Name": [
         "Показувати псевдонім як"
+      ],
+      "Coupon": [
+        "Купон"
       ],
       "Email address": [
         "Адреса е-пошти"
@@ -3155,6 +3339,9 @@
       ],
       "Search in ${ vaultName }": [
         "Пошук у ${ vaultName }"
+      ],
+      "Search in all items": [
+        "Шукати у всіх елементах"
       ],
       "Search in Trash": [
         "Пошук у Смітнику"
@@ -3313,6 +3500,12 @@
       "Random prefix generation successfully enabled": [
         "Генерацію випадкових префіксів успішно увімкнено"
       ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Сховища не можуть містити більше ніж ${ targetMaxMembers } користувача.",
+        "Сховища не можуть містити більше ніж ${ targetMaxMembers } користувачів.",
+        "Сховища не можуть містити більше ніж ${ targetMaxMembers } користувачів.",
+        "Сховища не можуть містити більше ніж ${ targetMaxMembers } користувачів."
+      ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Підтверджувальний лист надіслано. Будь ласка, перевірте свою поштову скриньку, щоб підтвердити свою поштову скриньку"
       ]
@@ -3458,6 +3651,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Вам подобається ${ PASS_APP_NAME }?"
       ],
+      "Enter your backup password": [
+        "Введіть ваш резервний пароль"
+      ],
       "Enter your extra password": [
         "Уведіть ваш додатковий пароль"
       ],
@@ -3494,11 +3690,17 @@
       "Install extension": [
         "Встановити розширення"
       ],
+      "Item": [
+        "Елемент"
+      ],
       "Last autofill": [
         "Останнє автозаповнення"
       ],
       "Last modified": [
         "Востаннє змінено"
+      ],
+      "Leave this item?": [
+        "Залишити цей елемент?"
       ],
       "Leave vault?": [
         "Покинути сховище?"
@@ -3658,6 +3860,12 @@
       ],
       "Share with": [
         "Поділитися"
+      ],
+      "Shared item invitation": [
+        "Запрошення на спільний елемент"
+      ],
+      "Shared via": [
+        "Поширено через"
       ],
       "SPF (Optional)": [
         "SPF (необов'язково)"
@@ -3983,6 +4191,9 @@
       ],
       "You must select at least one mailbox": [
         "Виберіть принаймні одну поштову скриньку"
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Ви втратите доступ до цього елемент та його подробиць. Ви точно хочете продовжити?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Ви більше не матимете доступу до цього сховища. Щоб приєднатися до нього знову, вам знадобиться нове запрошення."

@@ -439,6 +439,9 @@
       "Pause monitoring": [
         "Pausar el monitoreo"
       ],
+      "Pay once": [
+        "Pago único"
+      ],
       "Pin item": [
         "Anclar elemento"
       ],
@@ -1751,7 +1754,7 @@
         "Ingresa la dirección a la que deseas enviar un correo electrónico."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Introduce el código de verificación. Dígito ${ digit }."
+        "Introduce el código de verificación. Ingresa ${ digit }."
       ],
       "Enter your extra password": [
         "Ingresa tu contraseña adicional."
@@ -1956,7 +1959,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte borrará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
+        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2380,6 +2384,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Para verificar los datos importados, haz clic en el ícono de ${ PASS_APP_NAME } en la barra de herramientas del navegador."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Con la confianza de más de 50,000 empresas y 100 millones de cuentas en todo el mundo."
+      ],
       "Unable to copy to clipboard": [
         "No se pudo copiar al portapapeles."
       ],
@@ -2727,6 +2734,9 @@
       "Browse faster, smarter": [
         "Navega más rápido y eficiente"
       ],
+      "Built-in 2FA": [
+        "2FA integrada"
+      ],
       "Capital letters (A-Z)": [
         "Letras mayúsculas (A-Z)"
       ],
@@ -2811,6 +2821,9 @@
       "Created at": [
         "Creada a la"
       ],
+      "Credit cards": [
+        "Tarjetas de crédito"
+      ],
       "Custom hidden field": [
         "Campo oculto personalizado"
       ],
@@ -2883,6 +2896,9 @@
       "Export": [
         "Exportar"
       ],
+      "Extra email addresses": [
+        " Direcciones de correo electrónico extra"
+      ],
       "Extra password": [
         "Contraseña adicional"
       ],
@@ -2894,6 +2910,9 @@
       ],
       "Field name": [
         "Nombre del campo"
+      ],
+      "File attachments": [
+        "Archivos adjuntos"
       ],
       "File format": [
         "Formato del archivo"
@@ -2913,6 +2932,9 @@
       "Forwards to": [
         "Reenvía a"
       ],
+      "Free": [
+        "Gratuito"
+      ],
       "Free forever": [
         "Gratis para siempre"
       ],
@@ -2931,6 +2953,12 @@
       "Generic CSV": [
         "CSV genérico"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Obtén ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Obtén ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "Comenzar"
       ],
@@ -2948,6 +2976,9 @@
       ],
       "Hide-my-email aliases": [
         "Alias de hide-my-email"
+      ],
+      "Highest": [
+        "Máxima"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Cómo desbloquear ${ PASS_SHORT_APP_NAME }"
@@ -3044,6 +3075,9 @@
       ],
       "License number": [
         "Número de licencia"
+      ],
+      "Limited time": [
+        "Por tiempo limitado"
       ],
       "LinkedIn account": [
         "Cuenta de LinkedIn"
@@ -3195,6 +3229,9 @@
       "PIN code": [
         "Código PIN"
       ],
+      "Plus": [
+        "Plus"
+      ],
       "Prefix": [
         "Prefijo"
       ],
@@ -3321,6 +3358,9 @@
       "Status": [
         "Estado"
       ],
+      "Storage": [
+        "Almacenamiento"
+      ],
       "Street address": [
         "Nombre de la calle"
       ],
@@ -3347,6 +3387,9 @@
       ],
       "Text": [
         "Texto"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Lo mejor de ${ BRAND_NAME } con una suscripción"
       ],
       "The URL has been copied to the clipboard": [
         "Se ha copiado la URL al portapapeles."
@@ -3383,6 +3426,12 @@
       ],
       "Unknown": [
         "Desconocido"
+      ],
+      "Unlimited": [
+        "Sin límite"
+      ],
+      "Unlock premium features": [
+        "Desbloquea características premium"
       ],
       "Unlock with": [
         "Desbloquear con"
@@ -3423,6 +3472,9 @@
       "Vault ID": [
         "ID de caja fuerte"
       ],
+      "Vault, item & link sharing": [
+        "Uso compartido de caja fuerte, elemento y enlace"
+      ],
       "Vaults": [
         "Cajas fuertes"
       ],
@@ -3431,6 +3483,12 @@
       ],
       "View logs": [
         "Ver los registros"
+      ],
+      "VPN Devices": [
+        "Dispositivos VPN"
+      ],
+      "VPN Speed": [
+        "Velocidad de VPN"
       ],
       "Vulnerable": [
         "Vulnerable"
@@ -3443,6 +3501,9 @@
       ],
       "Websites": [
         "Sitios web"
+      ],
+      "What's included": [
+        "¿Qué incluye?"
       ],
       "Work details": [
         "Detalles de trabajo"
@@ -3492,6 +3553,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Activar ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Menu": {
@@ -3669,6 +3735,14 @@
       ],
       "You can attach files to items for a better organization": [
         "Puedes adjuntar archivos a los elementos para una mejor organización."
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus Lifetime por ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price }/mes"
       ]
     },
     "Placeholder": {
@@ -3937,8 +4011,14 @@
       "${ BRAND_NAME } addresses": [
         "Direcciones de ${ BRAND_NAME }"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Protección de la cuenta"
@@ -4215,6 +4295,9 @@
       ],
       "Pause monitoring?": [
         "¿Pausar el monitoreo?"
+      ],
+      "Pay once, access forever.": [
+        "Único pago, acceso para siempre"
       ],
       "Pending access confirmation": [
         "Confirmación de acceso pendiente"

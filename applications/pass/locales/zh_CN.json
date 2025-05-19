@@ -76,9 +76,6 @@
       "Apply lifetime coupon code": [
         "使用终身优惠券代码"
       ],
-      "Authenticate": [
-        "认证"
-      ],
       "Back": [
         "上一步"
       ],
@@ -433,6 +430,9 @@
       "Pause monitoring": [
         "暂停监测"
       ],
+      "Pay once": [
+        "一次性支付"
+      ],
       "Pin item": [
         "固定项"
       ],
@@ -458,7 +458,7 @@
         "拒绝邀请"
       ],
       "Reload": [
-        "刷新"
+        "重新加载"
       ],
       "Remove": [
         "移除"
@@ -570,6 +570,9 @@
       ],
       "Sign out": [
         "登出"
+      ],
+      "Skip": [
+        "跳过"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "有人在 ${ PASS_APP_NAME } 上与您分享了一个项目。"
@@ -1580,9 +1583,6 @@
       "Enter the address you want to email.": [
         "输入您要发送电子邮件的地址。"
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "输入第 ${ digit } 位验证码。"
-      ],
       "Enter your extra password": [
         "输入您的额外密码"
       ],
@@ -1780,9 +1780,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2521,6 +2518,9 @@
       "Birthdate": [
         "生日"
       ],
+      "Browse faster, smarter": [
+        "更快、更智能地浏览"
+      ],
       "Capital letters (A-Z)": [
         "大写字母 (A-Z)"
       ],
@@ -2538,6 +2538,12 @@
       ],
       "Catch-All": [
         "通配邮箱"
+      ],
+      "Choose unlock method": [
+        "选择解锁方式"
+      ],
+      "Choose your preferred look and feel.": [
+        "请选择您喜欢的外观"
       ],
       "City": [
         "城市"
@@ -2595,6 +2601,9 @@
       ],
       "Created at": [
         "创建于"
+      ],
+      "Credit cards": [
+        "信用卡"
       ],
       "Custom hidden field": [
         "自定义隐藏字段"
@@ -2674,6 +2683,9 @@
       "Field name": [
         "字段名称"
       ],
+      "File attachments": [
+        "文件附件"
+      ],
       "File format": [
         "文件格式"
       ],
@@ -2686,8 +2698,14 @@
       "For a one-off sharing": [
         "用于一次性共享"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "出于安全考虑，${ PASS_SHORT_APP_NAME }在 10 分钟未活动后会自动锁定。"
+      ],
       "Forwards to": [
         "转发至"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "永久免费"
@@ -2707,6 +2725,9 @@
       "Get Started": [
         "立即体验"
       ],
+      "Get the extension for your browser.": [
+        "获取您的浏览器插件。"
+      ],
       "Grant": [
         "授权"
       ],
@@ -2715,6 +2736,15 @@
       ],
       "Hide password": [
         "隐藏密码"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email 别名"
+      ],
+      "Highest": [
+        "最快"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "如何解锁 ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2754,6 +2784,12 @@
       ],
       "Instagram handle": [
         "Instagram 用户名"
+      ],
+      "Install and continue": [
+        "安装并继续"
+      ],
+      "Install extension": [
+        "安装插件"
       ],
       "Invitations": [
         "邀请"
@@ -2823,6 +2859,9 @@
       ],
       "Make all viewers": [
         "将所有查看者设为"
+      ],
+      "Make it your own.": [
+        "专属定制"
       ],
       "max views reached": [
         "达到最大浏览量"
@@ -2926,6 +2965,9 @@
       "Personal website": [
         "个人网站"
       ],
+      "Personalize": [
+        "个性化设置"
+      ],
       "PGP-encrypted (recommended)": [
         "PGP 加密（推荐）"
       ],
@@ -2937,6 +2979,9 @@
       ],
       "PIN code": [
         "PIN 码"
+      ],
+      "Plus": [
+        "Plus"
       ],
       "Prefix": [
         "前綴"
@@ -3004,8 +3049,14 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "选择将 SimpleLogin 别名导入的保险库"
       ],
+      "Select theme": [
+        "选择主题"
+      ],
       "Select your password manager": [
         "选择您的密码管理器"
+      ],
+      "Select your theme": [
+        "选择您的主题"
       ],
       "Selected": [
         "已选中"
@@ -3042,6 +3093,9 @@
       ],
       "Status": [
         "状态"
+      ],
+      "Storage": [
+        "存储"
       ],
       "Street address": [
         "街道地址"
@@ -3102,6 +3156,9 @@
       ],
       "Unknown": [
         "未知"
+      ],
+      "Unlimited": [
+        "无限制"
       ],
       "Unlock with": [
         "解锁方式"
@@ -3181,8 +3238,14 @@
       "You are about to create": [
         "你即将创建"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "您可以选择 PIN 码、生物识别或账户密码来解锁。"
+      ],
       "Your domain": [
         "您的域名"
+      ],
+      "Your passwords. Everywhere.": [
+        "您的密码，无处不在。"
       ],
       "ZIP": [
         "ZIP 文件"
@@ -3205,6 +3268,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "启用 ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Message": {
@@ -3365,6 +3433,11 @@
       ],
       "You can attach files to items for a better organization": [
         "您可以将文件附加到项目上，以便更好地进行整理"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ price }/month": [
+        "${ price }/月"
       ]
     },
     "Placeholder": {

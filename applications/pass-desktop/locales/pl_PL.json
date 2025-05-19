@@ -76,9 +76,6 @@
       "Apply lifetime coupon code": [
         "Zastosuj kod kuponu dożywotniego konta"
       ],
-      "Authenticate": [
-        "Uwierzytelnij"
-      ],
       "Back": [
         "Wstecz"
       ],
@@ -1795,9 +1792,6 @@
       "Enter the address you want to email.": [
         "Wpisz adres odbiorcy."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
-      ],
       "Enter your extra password": [
         "Wpisz dodatkowe hasło"
       ],
@@ -2009,7 +2003,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -3020,6 +3017,9 @@
       ],
       "Forwards to": [
         "Przekaż do"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "Darmowy na zawsze"
