@@ -1,10 +1,25 @@
-import Kbd from './Kbd';
-import mdx from './Kbd.mdx';
+import type { Meta, StoryObj } from '@storybook/react';
 
-export default {
+import { Kbd } from '..';
+
+const meta: Meta<typeof Kbd> = {
+    args: {
+        shortcut: 'N',
+    },
     component: Kbd,
-    title: 'components/Kbd',
-    parameters: { docs: { page: mdx } },
+    parameters: {
+        docs: {
+            description: {
+                component:
+                    'The `Kbd` component is used to display keyboard shortcuts and provides the correct aria-label for screen readers.',
+            },
+        },
+    },
+    tags: ['autodocs'],
 };
 
-export const Basic = () => <Kbd shortcut="N" />;
+export default meta;
+
+type Story = StoryObj<typeof Kbd>;
+
+export const Default: Story = {};
