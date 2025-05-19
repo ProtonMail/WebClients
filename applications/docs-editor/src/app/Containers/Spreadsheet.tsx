@@ -218,7 +218,6 @@ export function Spreadsheet({
 
     getSeriesValuesFromRange,
     getDomainValuesFromRange,
-    sheetObserver,
   } = useSpreadsheetState({
     sheets,
     sheetData,
@@ -321,7 +320,7 @@ export function Spreadsheet({
       const file = new File([editorInitializationConfig.data], 'import.xlsx', {
         type: SupportedProtonDocsMimeTypes.xlsx,
       })
-      onInsertFile(file).catch(console.error)
+      onInsertFile(file, true, 1000, 100).catch(console.error)
     }
   }, [calculateNow, editorInitializationConfig, onChange, onInsertFile])
 
@@ -633,19 +632,13 @@ export function Spreadsheet({
               getDomainValuesFromRange={getDomainValuesFromRange}
               onRequestEdit={!isRevisionMode ? onRequestEditChart : undefined}
               onRequestCalculate={onRequestCalculate}
-              sheetObserver={sheetObserver}
+              readonly={isRevisionMode}
             />
           )}
           readonly={isRevisionMode}
         />
         <ChartEditorDialog>
-          <ChartEditor
-            sheetId={activeSheetId}
-            chart={selectedChart}
-            onSubmit={onUpdateChart}
-            rowCount={rowCount}
-            columnCount={columnCount}
-          />
+          <ChartEditor sheetId={activeSheetId} chart={selectedChart} onSubmit={onUpdateChart} />
         </ChartEditorDialog>
         <BottomBar>
           {!isRevisionMode && <NewSheetButton onClick={onCreateNewSheet} />}
@@ -681,22 +674,12 @@ export function Spreadsheet({
             merges={merges}
           />
         </BottomBar>
-        <TableEditor
-          sheetId={activeSheetId}
-          onSubmit={onUpdateTable}
-          theme={theme}
-          rowCount={rowCount}
-          columnCount={columnCount}
-          merges={merges}
-        />
+        <TableEditor sheetId={activeSheetId} onSubmit={onUpdateTable} theme={theme} />
         <DeleteSheetConfirmation sheetId={activeSheetId} onDeleteSheet={onDeleteSheet} />
         <NamedRangeEditor
           sheetId={activeSheetId}
           onCreateNamedRange={onCreateNamedRange}
           onUpdateNamedRange={onUpdateNamedRange}
-          rowCount={rowCount}
-          columnCount={columnCount}
-          merges={merges}
         />
         <SheetSearch
           isActive={isSearchActive}
