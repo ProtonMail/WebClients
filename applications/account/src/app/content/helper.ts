@@ -5,6 +5,7 @@ import {
     getIsDriveApp,
     getIsLumoApp,
     getIsMailApp,
+    getIsMeetApp,
     getIsPassApp,
     getIsVPNApp,
     getIsWalletApp,
@@ -44,6 +45,9 @@ export const getLoginUrl = (localePath: string, app: APP_NAMES | undefined) => {
         }
         if (getIsLumoApp(app)) {
             return { path: SSO_PATHS.LUMO_SIGN_IN };
+        }
+        if (getIsMeetApp(app)) {
+            return { path: SSO_PATHS.MEET_SIGN_IN };
         }
 
         return { path: SSO_PATHS.LOGIN };

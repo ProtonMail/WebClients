@@ -22,6 +22,7 @@ export const ForkableApps = new Set(
         APPS.PROTONWALLET,
         APPS.PROTONLUMO,
         APPS.PROTONAUTHENTICATOR,
+        APPS.PROTONMEET,
     ].filter(Boolean)
 );
 

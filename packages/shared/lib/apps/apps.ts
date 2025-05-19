@@ -31,6 +31,8 @@ const allApps: APP_NAMES[] = [
     APPS.PROTONDOCS,
     APPS.PROTONWALLET,
     APPS.PROTONLUMO,
+    APPS.PROTONAUTHENTICATOR,
+    APPS.PROTONMEET,
 ];
 
 const allAppsSet: Set<APP_NAMES> = new Set(allApps);
@@ -70,6 +72,7 @@ const getAvailableAppsByUser = (options: GetAvailableAppsByUserTypeArguments): A
             APPS.PROTONDOCS,
             APPS.PROTONWALLET,
             APPS.PROTONLUMO,
+            APPS.PROTONMEET,
         ]);
     }
 

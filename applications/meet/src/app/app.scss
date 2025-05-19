@@ -1,1 +1,11 @@
+@import '~@proton/styles/scss/proton-meet';
+
+@import '~@proton/styles/scss/lib';
+
+@import '~@proton/styles/scss/layout/native';
+
 @import '~@proton/styles/scss/specifics/placeholder-loading', '~@proton/styles/scss/specifics/settings';
+
+.modal-two-backdrop {
+	display: none;
+}

@@ -39,10 +39,7 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
         try {
             const { store, authentication, unleashClient, eventManager, api, history } = await bootstrapApp({
                 notificationsManager,
-                config: {
-                    ...config,
-                    APP_NAME: 'proton-wallet',
-                },
+                config,
             });
 
             storeRef.current = store;
