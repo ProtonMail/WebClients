@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/index';
+import { Button } from '@proton/atoms';
 import {
     Icon,
     type ModalStateReturnObj,

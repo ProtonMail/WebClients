@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { type FieldProps } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/index';
+import { Button } from '@proton/atoms';
 import { Dropzone, FileInput, Icon, Tooltip, useNotifications } from '@proton/components';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';

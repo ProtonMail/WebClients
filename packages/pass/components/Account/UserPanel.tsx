@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from 'react';
 
-import Avatar from '@proton/atoms/Avatar/Avatar';
+import { Avatar } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import type { UserPassPlan } from '@proton/pass/types/api/plan';

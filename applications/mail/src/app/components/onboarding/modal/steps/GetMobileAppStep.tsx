@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
-import Href from '@proton/atoms/Href/Href';
+import { Button, Href } from '@proton/atoms';
 import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
 import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';

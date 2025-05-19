@@ -9,7 +9,7 @@ import {
     type SignInWithAnotherDeviceResult,
     signInWithAnotherDevicePull,
 } from '@proton/account/signInWithAnotherDevice/signInWithAnotherDevicePull';
-import { Button, ButtonLike } from '@proton/atoms/index';
+import { Button, ButtonLike } from '@proton/atoms';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';

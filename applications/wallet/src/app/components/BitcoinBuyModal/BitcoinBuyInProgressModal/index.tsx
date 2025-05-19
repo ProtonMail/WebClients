@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/index';
+import { Href } from '@proton/atoms';
 import type { ModalOwnProps } from '@proton/components';
 import { Prompt } from '@proton/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';

@@ -2,7 +2,7 @@ import { type ComponentPropsWithoutRef, type ReactNode, useEffect, useRef, useSt
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/index';
+import { Button } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 import Icon from '../icon/Icon';
