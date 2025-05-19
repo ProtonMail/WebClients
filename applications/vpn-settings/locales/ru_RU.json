@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
-      "activate": [
-        "включить"
-      ],
       "Activate": [
         "Активировать"
+      ],
+      "activate": [
+        "включить"
       ],
       "Activate organization key": [
         "Активировать ключ организации"
@@ -67,7 +67,7 @@
         "Пополнить счёт"
       ],
       "Add domain": [
-        "Добавить домен"
+        "Добавление домена"
       ],
       "Add external address": [
         "Добавить внешний адрес"
@@ -107,9 +107,6 @@
       ],
       "Back": [
         "Назад"
-      ],
-      "Back to sign-in": [
-        "Вернуться к входу"
       ],
       "Block": [
         "Заблокировать"
@@ -267,10 +264,10 @@
       "Discard": [
         "Сбросить"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Сбросить изменения"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Сбросить изменения"
       ],
       "Discover ${ planName }": [
@@ -286,7 +283,7 @@
         "Готово"
       ],
       "Downgrade": [
-        "Перейти на более дешевую версию"
+        "Перейти на более дешёвую версию"
       ],
       "Download": [
         "Скачать"
@@ -374,9 +371,6 @@
       ],
       "Fit to window": [
         "Вписать в окно"
-      ],
-      "Forgot password?": [
-        "Забыли пароль?"
       ],
       "Forgot recovery method?": [
         "Забыли метод восстановления?"
@@ -699,11 +693,11 @@
       "Select country ${ country }": [
         "Выбрать страну ${ country }"
       ],
-      "Select file": [
-        "Выбрать файл"
-      ],
       "select file": [
         "выбрать файл"
+      ],
+      "Select file": [
+        "Выбрать файл"
       ],
       "Send code": [
         "Отправить код"
@@ -970,7 +964,7 @@
       "${ users } user": [
         "${ users } пользователь",
         "${ users } пользователя",
-        "${ users } пользователей",
+        "${ users } пользователя",
         "${ users } пользователей"
       ]
     },
@@ -2671,7 +2665,7 @@
     },
     "Cycle": {
       "/month": [
-        "/месяц"
+        "в месяц"
       ],
       "/user per month": [
         "/за пользователя в месяц"
@@ -2844,7 +2838,7 @@
         "Удаление ${ name } не удалось"
       ],
       "${ name } failed to move to allow list": [
-        "${ name } не удалось переместить в черный список"
+        "${ name } не удалось переместить в белый список"
       ],
       "${ name } failed to move to block list": [
         "Не удалось переместить ${ name } в список блокируемых"
@@ -3226,7 +3220,7 @@
         "Недействительный номер карты"
       ],
       "Invalid code": [
-        "Недействительный код"
+        "Неверный код"
       ],
       "Invalid domain": [
         "Недействительный домен"
@@ -3716,7 +3710,7 @@
         "Для подтверждения введите название семейной группы"
       ],
       "Enter organization name to confirm": [
-        "Для подтверждения введите название организации"
+        "Введите название организации для подтверждения"
       ],
       "Family name": [
         "Название семьи"
@@ -4768,11 +4762,11 @@
       "Data recoverable on this device": [
         "Данные, которые можно восстановить на этом устройстве"
       ],
-      "dedicated servers": [
-        "выделенные серверы"
-      ],
       "Dedicated servers": [
         "Выделенные серверы"
+      ],
+      "dedicated servers": [
+        "выделенные серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с выделенными IP-адресами могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -4966,9 +4960,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Введите электронный адрес вашего аккаунта или имя пользователя ${ BRAND_NAME }."
       ],
-      "Enter your own password (as organization admin).": [
-        "Введите собственный пароль (как администратор организации)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Введите адрес своей резервной электронной почты, и мы отправим вам ваше имя пользователя или адрес электронной почты."
       ],
@@ -4982,7 +4973,7 @@
         "Пример: ${ spfExample }"
       ],
       "Expired": [
-        "Истёкший"
+        "Срок действия истёк"
       ],
       "expires ${ expirationDate }": [
         "истекает ${ expirationDate }"
@@ -5863,9 +5854,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Для подтверждения введите имя пользователя, которого вы хотите удалить."
       ],
-      "to continue to ${ product }": [
-        "чтобы продолжить в ${ product }"
-      ],
       "To create your first user group, go to": [
         "Чтобы создать свою первую группу пользователей, перейдите к"
       ],
@@ -5971,11 +5959,11 @@
       "User activated": [
         "Пользователь активирован"
       ],
-      "username": [
-        "имя пользователя"
-      ],
       "Username": [
         "Имя пользователя"
+      ],
+      "username": [
+        "имя пользователя"
       ],
       "Users": [
         "Пользователи"
@@ -6561,11 +6549,11 @@
       "Allow recovery by phone": [
         "Разрешить восстановление по номеру телефона"
       ],
-      "Allowed Domain": [
-        "Разрешённый Домен"
-      ],
       "Allowed domain": [
         "Разрешённый домен"
+      ],
+      "Allowed Domain": [
+        "Разрешённый Домен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Разрешает всем участникам вашей организации добавлять ссылки на видеоконференции в приглашения календаря."
@@ -6616,7 +6604,7 @@
         "Версия браузера"
       ],
       "BTC address": [
-        "Адрес BTC"
+        "BTC-адрес"
       ],
       "BTC amount": [
         "Сумма BTC"
@@ -6949,7 +6937,7 @@
         "Плательщик"
       ],
       "Payment details": [
-        "Информация о платеже"
+        "Информация платежа"
       ],
       "Payment method": [
         "Способ оплаты"
@@ -7155,7 +7143,7 @@
     },
     "label": {
       "Recovery phone number": [
-        "Номер телефона для восстановления"
+        "Номер телефона для восстановления доступа"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -7207,7 +7195,7 @@
     },
     "Label, credit card": {
       "ZIP code": [
-        "Индекс"
+        "Почтовый индекс"
       ]
     },
     "Label/folder modal": {
@@ -7601,36 +7589,13 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "Максимальная скорость VPN"
+        "Высочайшая скорость VPN"
       ],
       "Keep your inbox organized with folders": [
         "Поддерживайте порядок в почтовом ящике с помощью папок"
       ],
       "Medium VPN speed": [
         "Средняя скорость VPN"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "Удалить аккаунт"
-      ],
-      "Downgrade account": [
-        "Перейти на более дешевую версию аккаунта"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Получить ${ BRAND_NAME } бесплатно"
-      ],
-      "Get ${ planName }": [
-        "Получить ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Сохранить ${ plan }"
-      ],
-      "Keep account": [
-        "Сохранить аккаунт"
-      ],
-      "Switch plan": [
-        "Сменить тариф"
       ]
     },
     "new_plans: Action": {
@@ -7645,6 +7610,29 @@
       ],
       "Upgrade": [
         "Улучшить"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Удалить аккаунт"
+      ],
+      "Downgrade account": [
+        "Перейти на более дешевую версию аккаунта"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Получить ${ BRAND_NAME } бесплатно"
+      ],
+      "Get ${ planName }": [
+        "Перейти на тариф ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Сохранить ${ plan }"
+      ],
+      "Keep account": [
+        "Сохранить аккаунт"
+      ],
+      "Switch plan": [
+        "Сменить тариф"
       ]
     },
     "new_plans: feature": {
@@ -7684,12 +7672,6 @@
         "${ n } адресов электронной почты на пользователя",
         "Адресов электронной почты на пользователя: ${ n }"
       ],
-      "${ n } filter": [
-        "${ n } фильтр",
-        "${ n } фильтра",
-        "${ n } фильтров",
-        "${ n } фильтра"
-      ],
       "${ n } folder": [
         "${ n } папка",
         "${ n } папки",
@@ -7708,12 +7690,6 @@
         "${ n } псевдонимов hide-my-email",
         "${ n } псевдонимов hide-my-email"
       ],
-      "${ n } label": [
-        "${ n } ярлык",
-        "${ n } ярлыка",
-        "${ n } ярлыков",
-        "${ n } ярлыка"
-      ],
       "${ n } message per day": [
         "${ n } сообщение в день",
         "${ n } сообщения в день",
@@ -7729,7 +7705,7 @@
       "${ n } vault": [
         "${ n } хранилище",
         "${ n } хранилища",
-        "${ n } хранилищ",
+        "${ n } хранилища",
         "${ n } хранилищ"
       ],
       "${ n } VPN connection": [
@@ -7778,7 +7754,7 @@
         "${ size } хранилища на пользователя"
       ],
       "1 user": [
-        "1 пользователь"
+        "1 пользователь"
       ],
       "10-year file version history": [
         "10-летняя история версий файла"
@@ -7832,7 +7808,7 @@
         "Доступно на всех платформах"
       ],
       "Calendar sharing": [
-        "Совместное использование календаря"
+        "Общий доступ к календарю"
       ],
       "Catch-all": [
         "Прием всей почты домена"
@@ -7877,7 +7853,7 @@
         "Выделенные серверы, оптимизированные для трансляций"
       ],
       "Desktop app": [
-        "Приложение для настольного компьютера"
+        "Приложение для настольных компьютеров"
       ],
       "DNS leak prevention": [
         "Предотвращение утечки DNS"
@@ -7913,7 +7889,7 @@
         "Бесплатные функции из ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, и ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Free VPN on a single device": [
-        "Бесплатная VPN на одном устройстве"
+        "Бесплатный VPN на одном устройстве"
       ],
       "Fully refundable for 30 days": [
         "Полный возврат средств в течение 30 дней"
@@ -7928,7 +7904,7 @@
         "Высокоскоростная Швейцарская VPN, защищающая вашу конфиденциальность"
       ],
       "High-speed VPN on ${ n } device": [
-        "Высокоскоростная VPN на ${ n } устройстве",
+        "Высокоскоростной VPN на ${ n } устройстве",
         "Высокоскоростная VPN на ${ n } устройствах",
         "Высокоскоростная VPN на ${ n } устройствах",
         "Высокоскоростная VPN на ${ n } устройствах"
@@ -8051,7 +8027,7 @@
         "Двухфакторная аутентификация"
       ],
       "Unlimited devices": [
-        "Неограниченное число устройств"
+        "Неограниченное количество устройств"
       ],
       "Unlimited devices and aliases": [
         "Неограниченное количество устройств и псевдонимов"
@@ -8154,7 +8130,7 @@
         "Поддержка"
       ],
       "Team management": [
-        "Управление командами"
+        "Управление командой"
       ]
     },
     "new_plans: info": {
@@ -8192,7 +8168,7 @@
         "Основательная защита и безопасная совместная работа для неограниченного числа пользователей."
       ],
       "For next-level password management and identity protection.": [
-        "Для нового уровня управления паролями и защиты личных данных."
+        "Для управления паролями и защиты личных данных на новом уровне."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Если вы удалите аккаунт, то потеряете все преимущества тарифа ${ visionary } и он не будет доступен, если вы создадите новый аккаунт."
@@ -8210,7 +8186,7 @@
         "Заплатите один раз и навсегда защитите свои пароли и личные данные."
       ],
       "Popular": [
-        "Популярный"
+        "Популярные"
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Защитите конфиденциальную деловую информацию и сотрудничайте безопасно."
@@ -8228,7 +8204,7 @@
         "Защищенное облачное хранилище, позволяющее легко и безопасно хранить, синхронизировать и обмениваться файлами."
       ],
       "Secure email with advanced features for your everyday communications.": [
-        "Защищенная электронная почта с дополнительными возможностями для повседневного общения."
+        "Защищенная электронная почта с дополнительными функциями для вашего повседневного общения."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Используйте индивидуальные решения для более крупных организаций с особыми требованиями к безопасности"
@@ -8370,7 +8346,7 @@
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
-        "Защищает конфиденциальность VPN от угроз, передавая ваш интернет-трафик через несколько серверов"
+        "Защищает от угроз конфиденциальности VPN, пропуская трафик через несколько серверов"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Защищает от угроз конфиденциальности VPN, пропуская трафик через несколько серверов."
@@ -8472,7 +8448,7 @@
         "Направляйте свой трафик через сеть Tor одним нажатием"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Защитите свои файлы с помощью зашифрованного облачного хранилища. Возможности включают автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
+        "Защитите свои материалы при помощи зашифрованного облачного хранилища. Используйте автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
       ],
       "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
         "Защищенно делитесь отдельными элементами со всеми (даже если они не используют ${ PASS_APP_NAME })."
@@ -8514,7 +8490,7 @@
         "Загрузите логотип вашей компании, чтобы настроить работу команды в веб-приложениях ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Используйте собственные пользовательские доменные адреса электронной почты, например, sebe@yourname.com"
+        "Используйте собственные пользовательские доменные адреса электронной почты, например, ty@tvoeimya.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
         "Мы не ведем журналы использования сеансов, в которых отображаются ваши действия в Интернете и мы не регистрируем метаданные, которые могут поставить под угрозу вашу конфиденциальность"
@@ -8542,7 +8518,7 @@
     },
     "new_plans: Upsell attribute": {
       "24/7 support": [
-        "В любое время"
+        "Круглосуточная поддержка"
       ],
       "Access advanced VPN features": [
         "Получите доступ к расширенным функциям VPN"
@@ -8838,7 +8814,7 @@
         "Конфигурации бесплатных серверов"
       ],
       "I found another service that I like better": [
-        "Я нашел другую службу, которая мне нравится больше"
+        "Я нашел другой сервис, который мне больше нравится"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Я использую другой аккаунт ${ BRAND_NAME }"
@@ -9175,6 +9151,9 @@
       "Bank transfer": [
         "Банковский перевод"
       ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
       "Credit/debit card": [
         "Кредитная/дебетовая карта"
       ],
@@ -9210,7 +9189,7 @@
         "Понятно"
       ],
       "MM/YY": [
-        "ММ/ГГ"
+        "MM/YY"
       ],
       "More plans are available in other currencies": [
         "Другие тарифы доступны в других валютах"
@@ -9290,10 +9269,10 @@
     },
     "Payments.Error": {
       "Invalid card number": [
-        "Неверный номер карты"
+        "Недействительный номер карты"
       ],
       "Invalid expiration date": [
-        "Неверный срок годности"
+        "Недействительный срок действия"
       ],
       "Invalid security code": [
         "Недействительный код безопасности"
@@ -9509,12 +9488,12 @@
     },
     "Price": {
       "Free": [
-        "Бесплатно"
+        "Free"
       ]
     },
     "Recovery Email": {
       "Cancel": [
-        "Отменить"
+        "Отмена"
       ],
       "Email address has been verified.": [
         "Адрес электронной почты был подтвержден."
@@ -9551,7 +9530,7 @@
     },
     "Recovery Phone": {
       "Cancel": [
-        "Отменить"
+        "Отмена"
       ],
       "Phone number has been verified.": [
         "Номер телефона подтвержден."
@@ -10653,7 +10632,7 @@
         "свяжитесь с администратором"
       ],
       "For all ${ BRAND_NAME } services": [
-        "Для всех служб ${ BRAND_NAME }"
+        "За все службы ${ BRAND_NAME }"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Чтобы продолжить использование продуктов ${ BRAND_NAME }, освободите место или ${ upgrade }"
@@ -10752,12 +10731,6 @@
         "${ n } высокоскоростных подключений к VPN",
         "${ n } высокоскоростных подключений к VPN"
       ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } высокоскоростное подключение к VPN на пользователя",
-        "${ n } высокоскоростных подключения к VPN на пользователя",
-        "${ n } высокоскоростных подключений к VPN на пользователя",
-        "${ n } высокоскоростных подключений к VPN на пользователя"
-      ],
       "${ n } VPN connection": [
         "${ n } подключение к VPN",
         "${ n } подключения к VPN",
@@ -10830,7 +10803,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Понятно"
+        "Применить"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Просто войдите в свой аккаунт Apple App Store, и выберите ${ subscriptions }."
@@ -10864,47 +10837,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription reminder": {
@@ -11209,6 +11141,47 @@
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Вы уверены?"
@@ -11456,7 +11429,7 @@
     },
     "Suffix": {
       "/month": [
-        "/месяц"
+        "в месяц"
       ],
       "/user per month": [
         "/за пользователя в месяц"
@@ -11608,7 +11581,7 @@
         "Аккаунт временно заблокирован"
       ],
       "Action": [
-        "Действие"
+        "Действия"
       ],
       "Actions": [
         "Действия"
@@ -11683,7 +11656,7 @@
         "Сумма"
       ],
       "Amount due": [
-        "К оплате"
+        "Сумма к оплате"
       ],
       "An address for each role": [
         "Адрес для каждой должности"
@@ -11707,7 +11680,7 @@
         "Автоматическое удаление включено"
       ],
       "Billing cycle": [
-        "Период оплаты"
+        "Платежный цикл"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Отменить подписку ${ MAIL_SHORT_APP_NAME }"
@@ -11721,10 +11694,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -11982,9 +11955,6 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Введите информацию об аккаунте ${ BRAND_NAME }, чтобы присоединиться к программе \"Бета\" ${ app }"
       ],
-      "Enter your password": [
-        "Введите свой пароль"
-      ],
       "Error": [
         "Ошибка"
       ],
@@ -12085,7 +12055,7 @@
         "Ошибка сети"
       ],
       "Next": [
-        "Далее"
+        "Следующий этап"
       ],
       "Night theme": [
         "Ночная тема"
@@ -12160,7 +12130,7 @@
         "Код QR"
       ],
       "Recommended": [
-        "Рекомендуется"
+        "Рекомендованный"
       ],
       "Recovery": [
         "Восстановление"
@@ -12211,7 +12181,7 @@
         "События безопасности"
       ],
       "Select a plan": [
-        "Выбор тарифа"
+        "Выбрать тариф"
       ],
       "Send email reminders?": [
         "Отправить напоминания по почте?"
@@ -12941,29 +12911,17 @@
         "${ n } устройств",
         "${ n } устройств"
       ],
-      "${ n } server": [
-        "${ n } сервер",
-        "${ n }+ сервера",
-        "${ n }+ серверов",
-        "${ n }+ серверов"
-      ],
       "${ n } VPN connection": [
         "${ n } подключение к VPN",
         "${ n } подключения к VPN",
-        "${ n } подключений к VPN",
-        "${ n } подключений к VPN"
+        "${ n } подключения к VPN",
+        "${ n } подключения к VPN"
       ],
       "${ numberOfCountries } country": [
         "${ numberOfCountries } страны",
         "${ numberOfCountries } стран",
         "${ numberOfCountries } стран",
         "${ numberOfCountries } стран"
-      ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } в ${ numberOfCountries } стране",
-        "${ numberOfServers } в более чем ${ numberOfCountries } странах",
-        "${ numberOfServers } в более чем ${ numberOfCountries } странах",
-        "${ numberOfServers } в более чем ${ numberOfCountries } странах"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } в ${ numberOfCountries } стране",

@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
-      "activate": [
-        "aktiválás"
-      ],
       "Activate": [
         "Aktiválás"
+      ],
+      "activate": [
+        "aktiválás"
       ],
       "Activate organization key": [
         "Szervezeti kulcs aktiválása"
@@ -67,7 +67,7 @@
         "Kredit hozzáadása"
       ],
       "Add domain": [
-        "Domain hozzáadása"
+        "Domain név hozzáadása"
       ],
       "Add external address": [
         "Külső cím hozzáadása"
@@ -107,9 +107,6 @@
       ],
       "Back": [
         "Vissza"
-      ],
-      "Back to sign-in": [
-        "Vissza a bejelentkezéshez"
       ],
       "Block": [
         "Tiltás"
@@ -267,11 +264,11 @@
       "Discard": [
         "Elvetés"
       ],
-      "Discard Changes": [
-        "Változtatások elvetése"
-      ],
       "Discard changes": [
         "Módosítások elvetése"
+      ],
+      "Discard Changes": [
+        "Változtatások elvetése"
       ],
       "Discover ${ planName }": [
         "${ planName } felfedezése"
@@ -286,7 +283,7 @@
         "Kész"
       ],
       "Downgrade": [
-        "Kisebb csomagra váltás"
+        "Váltás kisebb csomagra"
       ],
       "Download": [
         "Letöltés"
@@ -374,9 +371,6 @@
       ],
       "Fit to window": [
         "Ablakhoz illesztés"
-      ],
-      "Forgot password?": [
-        "Elfelejtette a jelszavát?"
       ],
       "Forgot recovery method?": [
         "Elfelejtette a helyreállítási módszert?"
@@ -699,11 +693,11 @@
       "Select country ${ country }": [
         "Ország kiválasztása: ${ country }"
       ],
-      "Select file": [
-        "Fájl kiválasztása"
-      ],
       "select file": [
         "fájl kiválasztása"
+      ],
+      "Select file": [
+        "Fájl kiválasztása"
       ],
       "Send code": [
         "Kód küldése"
@@ -950,6 +944,9 @@
       ],
       "${ price } per domain": [
         "${ price } / domain"
+      ],
+      "${ price } per seat": [
+        "${ price } felhasználónként"
       ],
       "${ price } per user": [
         "${ price } felhasználónként"
@@ -1296,7 +1293,7 @@
         "Élettartam"
       ],
       "Monthly": [
-        "Havonta"
+        "Minden hónapban"
       ],
       "Two-year": [
         "Kétévente"
@@ -2573,17 +2570,44 @@
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Adjon hozzá mappákat és fájlokat a ${ DRIVE_APP_NAME }-hoz, és hívjon meg csapattagokat megtekinteni vagy szerkeszteni."
       ],
+      "Automatically forward incoming email to another email address.": [
+        "Bejövő e-mailek automatikus továbbítása másik e-mail címre."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Konfigurálja először ezt, hogy aktiválja a szervezetét és testre szabja az Ön e-mail címét."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Csatlakoztassa a CRM-jét, weboldalát, nyomtatóit és egyebeket."
+      ],
+      "Create groups you can email with a single address.": [
+        "Hozzon létre csoportokat, amelyeknek egyetlen címre küldhet e-mailt."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Hozzon létre irányelveket annak meghatározásához, hogy mely országokban ki kapcsolódhat a megosztott szerverekhez."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Könnyen elérheti e-mailjeit és naptárát asztali és mobil eszközökön egyaránt."
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Könnyedén szinkronizálhatja a fájlokat az asztali gépéről a felhőbe, és elérheti őket a mobilkészülékéről."
       ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Ösztönözze a kétlépcsős hitelesítés használatát az Ön szervezetében a nagyobb biztonság érdekében."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Biztosítson biztonságos hozzáférést a szervezeti adatokhoz, még akkor is, ha a csapata távolról dolgozik vagy nyilvános Wi-Fi-t használ."
       ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Biztosítsa fiókjának kiváló biztonságát a ${ PROTON_SENTINEL_NAME } programmal."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Biztosítsa be, hogy továbbra is hozzáférhessen a fiókjához és az adataihoz, még akkor is, ha elveszíti a ${ BRAND_NAME } jelszavát."
+      ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "A szervezetben mindenki kapcsolódhat a megosztott szerverekhez az összes országban."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "A zökkenőmentes átálláshoz a ${ BRAND_NAME }-ra, importálja adatait a Google-ból, az Outlook-ból és más forrásokból."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Kapjon értesítést ha az ön jelszava vagy más információja benne volt egy harmadik féltől származó adatszivárgásban."
@@ -2603,8 +2627,17 @@
       "No one in your organization can connect to shared servers.": [
         "A szervezeten belül senki sem csatlakozhat a megosztott szerverhez."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Állítson be fiókokat minden felhasználó számára, és hívja meg őket, hogy csatlakozzanak a(z) ${ BRAND_NAME }-hoz/höz."
+      ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Egyszerűsítse a szinkronizálást és az ütemezést megosztott naptárakkal."
+      ],
+      "To start, give your organization a name.": [
+        "Kezdésnek adjon nevet a szervezetének."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Ezzel az útmutatóval szervezete gyorsan részesülhet ${ BRAND_NAME } iparágvezető titkosítási és adatvédelmi ökoszisztémájának előnyeiből."
       ]
     },
     "Disable address prompt": {
@@ -3921,7 +3954,7 @@
         "Kulcs típusa"
       ],
       "Location": [
-        "Hely"
+        "Helyszín"
       ],
       "Members": [
         "Tagok"
@@ -4213,7 +4246,7 @@
         "30 napos pénz-visszafizetési garancia"
       ],
       "30-day money-back guarantee.": [
-        "30 napos pénz-visszafizetési garancia."
+        "30 napos pénzvisszatérítési garancia."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "A(z) ${ protonSubdomain } domain nevet a ${ BRAND_NAME } tárolja, így gyorsan létrehozhat egy aldomain nevet. ${ learnMoreLink }"
@@ -4485,11 +4518,11 @@
       "Data recoverable on this device": [
         "Ezen az eszközön helyreállíthatók az adatok"
       ],
-      "dedicated servers": [
-        "dedikált szerverek"
-      ],
       "Dedicated servers": [
         "Dedikált szerverek"
+      ],
+      "dedicated servers": [
+        "dedikált szerverek"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikált IP-címekkel rendelkező dedikált kiszolgálók adhatók hozzá a privát átjárókhoz a finoman hangolható hozzáférés-szabályozás érdekében."
@@ -4678,9 +4711,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Adja meg a ${ BRAND_NAME } fiókja e-mail címét vagy felhasználónevét."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Írja be a helyreállítási e-mail címét és elküldjük a felhasználónevét vagy e-mail címét."
@@ -5554,9 +5584,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "A jóváhagyáshoz írja be a törölni kívánt felhasználó nevét."
       ],
-      "to continue to ${ product }": [
-        "alkalmazás: ${ product }"
-      ],
       "To create your first user group, go to": [
         "Az első felhasználói csoport létrehozásához lépjen a következőre:"
       ],
@@ -5662,11 +5689,11 @@
       "User activated": [
         "Felhasználó aktiválva"
       ],
-      "username": [
-        "felhasználónév"
-      ],
       "Username": [
         "Felhasználónév"
+      ],
+      "username": [
+        "felhasználónév"
       ],
       "Users": [
         "Felhasználók"
@@ -6218,10 +6245,10 @@
       "Allow recovery by phone": [
         "Helyreállítás engedélyezése telefonszámmal"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Engedélyezett domain"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Engedélyezett domain"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6258,7 +6285,7 @@
         "Számlázási ciklus"
       ],
       "Block": [
-        "Letiltás"
+        "Tiltás"
       ],
       "Block malware only": [
         "Csak a rosszindulatú programok blokkolása"
@@ -6273,7 +6300,7 @@
         "Böngésző verziója"
       ],
       "BTC address": [
-        "BTC cím"
+        "Bitcoin cím"
       ],
       "BTC amount": [
         "BTC összeg"
@@ -6384,7 +6411,7 @@
         "Kikapcsolva"
       ],
       "Display name": [
-        "Megjelenített név"
+        "Megjelenítendő név"
       ],
       "Do you have any suggestions for our team?": [
         "Lenne valamilyen javaslata a csapatunk számára?"
@@ -6645,7 +6672,7 @@
         "Cél"
       ],
       "Recovery email address": [
-        "Helyreállító e-mail cím"
+        "Helyreállítási e-mail cím"
       ],
       "Recovery phone number": [
         "Helyreállítási telefonszám"
@@ -6800,9 +6827,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Igen, törölni szeretném a fiókomat és az összes adatát."
-      ],
-      "Your password (admin)": [
-        "Jelszó (adminisztrátor)"
       ],
       "ZIP code": [
         "Irányítószám"
@@ -7074,6 +7098,9 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Az ön fiókja lehet törölve lesz. Kérje meg az adminisztrátort, hogy fizessen elő és, hogy elkerülje az adatok elvesztését. ${ cta }"
       ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "A tárhelye megtelt. A ${ BRAND_NAME } termékek további használatához szabadítson fel tárhelyet vagy ${ cta }."
+      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Az előfizetése lejárt. ${ cta } az adatvesztés elkerülése érdekében."
       ]
@@ -7228,13 +7255,13 @@
     },
     "Navigation": {
       "All": [
-        "Mind"
+        "Összes"
       ],
       "Allow": [
         "Engedélyezés"
       ],
       "Block": [
-        "Letiltás"
+        "Tiltás"
       ],
       "Spam": [
         "Levélszemét"
@@ -7262,29 +7289,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Fiók törlése"
-      ],
-      "Downgrade account": [
-        "Váltás kisebb csomagra"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Legyen ${ BRAND_NAME }os ingyen"
-      ],
-      "Get ${ planName }": [
-        "${ planName } megszerzése"
-      ],
-      "Keep ${ plan }": [
-        "Maradjon ${ plan }"
-      ],
-      "Keep account": [
-        "Maradjon a fiók"
-      ],
-      "Switch plan": [
-        "Csomag váltása"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Váltás kisebb csomagra: ${ downgradedPlanName }"
@@ -7299,20 +7303,35 @@
         "Váltás nagyobb csomagra"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Fiók törlése"
+      ],
+      "Downgrade account": [
+        "Váltás kisebb csomagra"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Legyen ${ BRAND_NAME }os ingyen"
+      ],
+      "Get ${ planName }": [
+        "${ planName } beszerzése"
+      ],
+      "Keep ${ plan }": [
+        "Maradjon ${ plan }"
+      ],
+      "Keep account": [
+        "Maradjon a fiók"
+      ],
+      "Switch plan": [
+        "Csomag váltása"
+      ]
+    },
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe írási segéd"
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } és ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ n } calendar": [
-        "${ n } naptár",
-        "${ n } naptár"
-      ],
-      "${ n } calendar per user": [
-        "${ n } naptár felhasználónként",
-        "${ n } naptár felhasználónként"
       ],
       "${ n } custom email domain": [
         "${ n } saját e-mail domain név",
@@ -7338,10 +7357,6 @@
         "${ n } mappa és címke",
         "${ n } mappa és címke"
       ],
-      "${ n } hide-my-email alias": [
-        "${ n } hide-my-email e-mail álnév",
-        "${ n } hide-my-email e-mail álnév"
-      ],
       "${ n } label": [
         "${ n } címke",
         "${ n } címke"
@@ -7360,7 +7375,7 @@
       ],
       "${ n } VPN connection": [
         "${ n } VPN kapcsolat",
-        "${ n } VPN kapcsolat"
+        "${ n } VPN kapcsolódás"
       ],
       "${ numberOfUsers } user": [
         "${ numberOfUsers } felhasználó",
@@ -7435,7 +7450,7 @@
         "Alkalmazások ehhez:"
       ],
       "Auto-delete Spam and Trash": [
-        "Levélszemét és lomtár automatikus törlése"
+        "Levélszemét és Lomtár automatikus törlése"
       ],
       "Auto-reply": [
         "Automatikus válasz"
@@ -7465,7 +7480,7 @@
         "Együttműködés és nagyméretű fájlok megosztása"
       ],
       "Contact groups": [
-        "Névjegy csoportok"
+        "Névjegycsoportok"
       ],
       "Contact groups management": [
         "Névjegy csoportok kezelése"
@@ -7531,7 +7546,7 @@
         "A ${ BRAND_NAME }${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } és ${ DRIVE_SHORT_APP_NAME } ingyenes funkciói"
       ],
       "Free VPN on a single device": [
-        "Ingyenes VPN egy eszközön"
+        "Ingyenes VPN, egy eszközön"
       ],
       "Fully refundable for 30 days": [
         "30 napig teljesen visszaigényelhető"
@@ -7708,7 +7723,7 @@
       ],
       "Up to ${ n } user": [
         "Akár ${ n } felhasználó",
-        "Akár ${ n } felhasználó"
+        "${ n } felhasználóig"
       ],
       "Up to ${ n } user (${ adminsText }, ${ usersText })": [
         "Akár ${ n } felhasználó (${ adminsText }, ${ usersText })",
@@ -7782,7 +7797,7 @@
         "Széleskörű adatvédelem és biztonság az összes ${ BRAND_NAME } szolgáltatással."
       ],
       "Early access to new apps and features": [
-        "Korai hozzáférés az új alkalmazásokhoz és lehetőségekhez"
+        "Korai hozzáférés az új alkalmazásokhoz és funkciókhoz"
       ],
       "Encrypted email and calendar to get you started.": [
         "Titkosított e-mail és naptár, az induláshoz."
@@ -8072,7 +8087,7 @@
         "Egyetlen kattintással irányítsa a teljes internetforgalmát a Tor hálózaton keresztül"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Automatikus szinkronizálást, titkosított megosztás és további lehetőségeket tartalmaz."
+        "Tartsa biztonságban fájljait titkosított felhőalapú tárolással. Tartalmazza az automatikus szinkronizálást, a titkosított fájlmegosztást és egyebeket."
       ],
       "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
         "Egyes elemek biztonságos megosztása bárkivel (akkor is, ha nem használják a ${ PASS_APP_NAME } szolgáltatást)"
@@ -8765,6 +8780,9 @@
       "Bank transfer": [
         "Banki átutalás"
       ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
       "Credit/debit card": [
         "Bankkártya/hitelkártya"
       ],
@@ -8800,7 +8818,7 @@
         "Rendben"
       ],
       "MM/YY": [
-        "HH/ÉÉ"
+        "MM/YY"
       ],
       "More plans are available in other currencies": [
         "További csomagok érhetők el más pénznemekben"
@@ -9032,6 +9050,9 @@
       "VAT number": [
         "Áfa-szám"
       ],
+      "Your organization name": [
+        "A szervezet neve"
+      ],
       "yourdomain.com": [
         "domainneve.com"
       ]
@@ -9089,7 +9110,7 @@
     },
     "Recovery Email": {
       "Cancel": [
-        "Mégsem"
+        "Törlés"
       ],
       "Email address has been verified.": [
         "Az e-mail cím megerősítésre került."
@@ -9107,7 +9128,7 @@
         "Helyreállító e-mail megerősítése?"
       ],
       "Verify with email": [
-        "Ellenőrzés e-maillel"
+        "Ellenőrzés email-el"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Az e-mail címének megerősítése növeli a fiókja biztonságát, illeve több helyreállítási lehetőséget biztosít."
@@ -9126,7 +9147,7 @@
     },
     "Recovery Phone": {
       "Cancel": [
-        "Mégsem"
+        "Törlés"
       ],
       "Phone number has been verified.": [
         "A telefonszám ellenőrizve."
@@ -9775,6 +9796,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "A különleges ajánlat az első 2 évre érvényes."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Az ön előfizetése évente ugyanazon az áron újul meg."
       ]
@@ -9854,6 +9878,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "30 hónapra a standard ár ${ amount }"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "A különleges ajánlat az első 2 évre érvényes"
       ]
     },
     "specialoffer: Title": {
@@ -10138,7 +10165,7 @@
     },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
-        "Maradjon ${ currentPlanName }"
+        "${ currentPlanName } megtartása"
       ]
     },
     "storage_split: feature": {
@@ -10168,6 +10195,12 @@
       "For all ${ BRAND_NAME } services": [
         "Minden ${ BRAND_NAME } szolgáltatáshoz"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "A ${ BRAND_NAME } termékek további használatához szabadítson fel tárhelyet vagy ${ upgrade }"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "E-mailek küldéséhez vagy fogadásához szabadítson fel helyet, vagy ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Fájlok feltöltéséhez vagy szinkronizálásához szabadítson fel helyet vagy ${ upgrade }"
       ],
@@ -10186,6 +10219,12 @@
       ],
       "Your ${ appStorage } is full": [
         "Az ön ${ appStorage } tele van."
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "A ${ productString } ${ percentage }%-ban megtelt. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "A(z) ${ productString } tárhelye megtelt. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "A tárhelye ${ percentage }%-ban megtelt. ${ cta }."
@@ -10299,7 +10338,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Rendben"
+        "Értem."
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Jelentkezzen be az Apple App Store fiókjába, majd válassza a ${ subscriptions } lehetőséget."
@@ -10333,47 +10372,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } áron"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatikus e-mail továbbítás ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Short @pm.me email address": [
-        "Rövid @pm.me e-mail cím"
-      ],
-      "Support our mission": [
-        "Támogassa küldetésünket"
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "Upgrade your productivity": [
-        "Növelje a termelékenységét"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
-      ],
-      "Your privacy is our mission": [
-        "Az Ön adatvédelme a mi küldetésünk"
       ]
     },
     "Subscription reminder": {
@@ -10666,6 +10664,47 @@
         "Az Ön saját rövid @pm.me e-mail álnévcíme"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatikus e-mail továbbítás ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Short @pm.me email address": [
+        "Rövid @pm.me e-mail cím"
+      ],
+      "Support our mission": [
+        "Támogassa küldetésünket"
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "Upgrade your productivity": [
+        "Növelje a termelékenységét"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
+      ],
+      "Your privacy is our mission": [
+        "Az Ön adatvédelme a mi küldetésünk"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Biztos benne?"
@@ -10677,7 +10716,7 @@
         "Az automatikus fizetés engedélyezve van"
       ],
       "Disable": [
-        "Letiltás"
+        "Kikapcsolás"
       ],
       "Enable auto-pay support": [
         "A automatikus fizetés támogatásának aktiválása."
@@ -11176,10 +11215,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
@@ -11433,9 +11472,6 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Adja meg a ${ BRAND_NAME } fiókja adatait a ${ app } Béta programhoz való csatlakozáshoz"
       ],
-      "Enter your password": [
-        "Adja meg a jelszavát"
-      ],
       "Error": [
         "Hiba"
       ],
@@ -11534,7 +11570,7 @@
         "Hálózati hiba"
       ],
       "Next": [
-        "Következő"
+        "Tovább"
       ],
       "Night theme": [
         "Éjszakai téma"
@@ -11609,7 +11645,7 @@
         "QR-kód"
       ],
       "Recommended": [
-        "Javasolt"
+        "Ajánlott"
       ],
       "Recovery": [
         "Helyreállítás"
@@ -12385,7 +12421,7 @@
         "${ n }+ kiszolgáló"
       ],
       "${ n } VPN connection": [
-        "${ n } VPN kapcsolódás",
+        "${ n } VPN kapcsolat",
         "${ n } VPN kapcsolódás"
       ],
       "${ numberOfCountries } country": [
