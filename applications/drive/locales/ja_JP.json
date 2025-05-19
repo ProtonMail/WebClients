@@ -111,9 +111,6 @@
       "Attention required": [
         "注意が必要です"
       ],
-      "Authenticate": [
-        "認証"
-      ],
       "Back": [
         "戻る"
       ],
@@ -425,9 +422,6 @@
       ],
       "Fit to window": [
         "ウィンドウに合わせる"
-      ],
-      "Forgot password?": [
-        "パスワードを忘れましたか？"
       ],
       "Forward as attachment": [
         "添付ファイルとして転送"
@@ -1071,14 +1065,8 @@
       "Use a different payment method": [
         "別の支払い方法を使用"
       ],
-      "Use authentication code": [
-        "認証コードを使用"
-      ],
       "Use for sending": [
         "送信に使用"
-      ],
-      "Use recovery code": [
-        "回復用コードを使用"
       ],
       "Verify": [
         "検証"
@@ -3762,24 +3750,6 @@
         "無制限の Hide-my-email エイリアス"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "セキュリティキーの認証に失敗しました。もう一度お試しください。"
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } アカウントに紐づけられたセキュリティキーを挿入してください。"
-      ],
-      "Security key": [
-        "セキュリティキー"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "セキュリティキー"
-      ]
-    },
     "file size format": {
       "byte": [
         "バイト"
@@ -4301,6 +4271,9 @@
       "${ DRIVE_APP_NAME } on Play Store": [
         "Play Store での ${ DRIVE_APP_NAME }"
       ],
+      "${ email } invited you to join ${ albumName }": [
+        "${ email } があなたを ${ albumName } に招待しました"
+      ],
       "${ errorCount } failed": [
         "失敗 ${ errorCount } 件"
       ],
@@ -4742,9 +4715,6 @@
       "Duplicate key updated": [
         "重複した鍵がアップデートされました"
       ],
-      "Each code can only be used once": [
-        "各コードは 1 回のみ使用可能です"
-      ],
       "Edit email address": [
         "メールアドレスを編集"
       ],
@@ -4781,20 +4751,11 @@
       "Enter password": [
         "パスワードを入力"
       ],
-      "Enter the code from your authenticator app": [
-        "認証アプリのコードを入力してください"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "インポートするメールアカウントの認証情報を入力します。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "検証コードを入力してください。桁数は ${ digit } 桁です。"
-      ],
-      "Enter your own password (as organization admin).": [
-        "自分(組織管理者として)のパスワードを入力してください。"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "推定残り時間: ${ estimatedMinutes } 分"
@@ -5447,6 +5408,9 @@
       "Shared": [
         "共有"
       ],
+      "Shared by ": [
+        "共有元 "
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "${ rootLink.signatureEmail }が共有しました"
       ],
@@ -5849,9 +5813,6 @@
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
       ],
-      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
-        "写真を新しい体験にアップグレードしています！この移行中、写真の復元は一時的に利用できません。 すべてのものは数日後に準備が整います。"
-      ],
       "Week": [
         "週"
       ],
@@ -5866,9 +5827,6 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "VPNに接続すると、暗号化技術を使用してIPアドレス(デバイスに割り当てられた固有のコード)を非表示にします。"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "は${ formattedRevisionDate }のバージョンに復元されます。他のバージョンもすべて保存されたままになります。"
@@ -6254,9 +6212,6 @@
       ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
-      ],
-      "Authenticator app": [
-        "認証アプリ"
       ],
       "Beta Access": [
         "ベータ版アクセス"
@@ -6785,9 +6740,6 @@
       ],
       "Your location": [
         "あなたの現在地"
-      ],
-      "Your password (admin)": [
-        "あなたのパスワード (管理者)"
       ]
     },
     "Label for contact group color": {
@@ -7331,6 +7283,17 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "プランは${ priceDrivePlus }から始まります"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "アカウントを削除"
@@ -7352,17 +7315,6 @@
       ],
       "Switch plan": [
         "プランを変更"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "プランは${ priceDrivePlus }から始まります"
-      ],
-      "Upgrade": [
-        "アップグレード"
       ]
     },
     "new_plans: feature": {
@@ -8469,6 +8421,9 @@
       ],
       "Your photo(s) have been added to \"${ albumName }\"": [
         "写真が「${ albumName }」に追加されました"
+      ],
+      "Your photo(s) have been removed from ${ albumLink.name }": [
+        "写真が${ albumLink.name }から削除されました"
       ],
       "Your settings failed to be saved": [
         "設定の保存に失敗しました"
@@ -9736,6 +9691,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME }製品を引き続きご利用いただくには、容量を空けるか、${ upgrade }ください。"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "メールを送受信するには、容量を空けるか${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "メールを送受信するには、容量を空けるかより大きな容量のプランにアップグレードしてください。"
       ],
@@ -9852,47 +9810,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } の場合"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription reminder": {
@@ -10147,6 +10064,47 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
@@ -10763,9 +10721,6 @@
       ],
       "Enter 2FA code": [
         "2要素認証コードを入力"
-      ],
-      "Enter your password": [
-        "パスワードを入力"
       ],
       "Error": [
         "エラー"
