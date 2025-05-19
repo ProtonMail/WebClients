@@ -40,7 +40,6 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Api, Unwrap } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import type { Paths } from '../content/helper';
@@ -139,7 +138,6 @@ const LoginForm = ({
     const [maybePersistent, setPersistent] = useLocalState(false, defaultPersistentKey);
     const persistent = isElectronApp ? true : maybePersistent;
     const { createNotification } = useNotifications();
-    const qrCodeSignInEnabled = useFlag('QRCodeSignIn');
 
     const usernameRef = useRef<HTMLInputElement>(null);
     const challengeRefLogin = useRef<ChallengeRef>();
@@ -546,7 +544,7 @@ const LoginForm = ({
                                     <Link
                                         to={
                                             // Checking the path here because VPN doesn't support the sign in with another device functionality
-                                            qrCodeSignInEnabled && paths.signinHelp ? signinHelpPath : resetPath
+                                            paths.signinHelp ? signinHelpPath : resetPath
                                         }
                                     >
                                         {c('Link').t`Forgot password?`}
@@ -691,7 +689,7 @@ const LoginForm = ({
                                             </Link>
                                             {
                                                 /* VPN unsupported, check path */
-                                                qrCodeSignInEnabled && paths.signinAnotherDevice && (
+                                                paths.signinAnotherDevice && (
                                                     <Link
                                                         to={paths.signinAnotherDevice}
                                                         className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
