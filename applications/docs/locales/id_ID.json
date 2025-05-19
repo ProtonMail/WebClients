@@ -210,6 +210,9 @@
       "Copy address": [
         "Salin alamat"
       ],
+      "Copy as markdown": [
+        "Salin sebagai markdown"
+      ],
       "Copy email to clipboard": [
         "Salin email ke papan klip"
       ],
@@ -636,11 +639,17 @@
       "Restore": [
         "Pulihkan"
       ],
+      "Restore from trash": [
+        "Kembalikan dari sampah"
+      ],
       "Restore this version": [
         "Pulihkan versi ini"
       ],
       "Restore this version?": [
         "Pulihkan versi ini?"
+      ],
+      "Restoring...": [
+        "Memulihkan..."
       ],
       "Retry": [
         "Coba lagi"
@@ -863,14 +872,6 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Anda tidak dapat mengirim berkas vCard ke lebih dari ${ maxAttachments } kontak"
-      ]
-    },
-    "Actions": {
-      "Last viewed first": [
-        "Terakhir dilihat terlebih dahulu"
-      ],
-      "Name": [
-        "Nama"
       ]
     },
     "Actions message": {
@@ -2326,6 +2327,11 @@
         "Faktur yang tertunggak"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gunakan alat bantu impor Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } di ${ DRIVE_APP_NAME } memungkinkan Anda untuk saling bekerja sama dalam lingkungan yang aman dan terenkripsi."
@@ -2451,11 +2457,6 @@
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gunakan alat bantu impor Easy Switch"
-      ]
-    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "Di samping itu, kami telah menyamakan isi kolom CSV dengan isi kolom vCard milik Anda secara otomatis. Anda dapat memeriksa dan mengubah isi kedua kolom tersebut secara manual."
@@ -2493,7 +2494,7 @@
         "Terdapat fitur yang hilang"
       ],
       "Other reason (please comment)": [
-        "Alasan lainnya (mohon tulis di kolom komentar)"
+        "Alasan lainnya (silakan tulis di kolom komentar)"
       ],
       "Subscription is too expensive": [
         "Biaya berlangganan terlalu mahal"
@@ -4205,8 +4206,8 @@
       "Create a secure cloud for ${ value } member": [
         "Buat ruang cloud yang aman untuk ${ value } anggota"
       ],
-      "Create an encrypted document.": [
-        "Buat dokumen yang terenkripsi."
+      "Create an end-to-end encrypted document.": [
+        "Buat dokumen terenkripsi secara end-to-end."
       ],
       "Create in": [
         "Buat di"
@@ -4410,10 +4411,10 @@
         "Pemblokiran wilayah"
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Dapatkan pembaruan email untuk komentar dan saran yang ditambahkan ke dokumen Anda."
+        "Dapatkan pembaruan via email untuk komentar dan saran yang ditambahkan ke dokumen Anda."
       ],
       "Get Notified About Comments": [
-        "Beri Tahu Tentang Komentar"
+        "Dapatkan Notifikasi Seputar Komentar"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Tuju ${ DRIVE_APP_NAME }"
@@ -6121,6 +6122,9 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Akun Anda berisiko untuk dihapus. Untuk mencegah hilangnya data, mintalah admin Anda untuk meningkatkan paket langganan Anda. ${ cta }"
       ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Ruang penyimpanan Anda penuh. Untuk terus menggunakan produk ${ BRAND_NAME }, kosongkan ruang yang ada atau ${ cta }."
+      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Langganan Anda telah berakhir. ${ cta } dan mencegah hilangnya data."
       ]
@@ -6489,6 +6493,17 @@
         "Kecepatan VPN sedang"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Paket dimulai dari ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Hapus akun"
@@ -6510,17 +6525,6 @@
       ],
       "Switch plan": [
         "Ganti paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Paket dimulai dari ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
       ]
     },
     "new_plans: feature": {
@@ -8455,6 +8459,20 @@
         "Tandatangani"
       ]
     },
+    "Sort menu options": {
+      "Created by": [
+        "Dibuat oleh"
+      ],
+      "Last viewed first": [
+        "Terakhir dilihat terlebih dahulu"
+      ],
+      "Location": [
+        "Lokasi"
+      ],
+      "Name": [
+        "Nama"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Tutup"
@@ -8727,6 +8745,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Untuk terus menggunakan produk ${ BRAND_NAME }, kosongkan ruang yang ada atau ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Untuk mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Untuk dapat mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ upgrade }"
       ],
@@ -8842,6 +8863,23 @@
         "Untuk ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Ruang penyimpanan ${ planMaxSpace } per pengguna"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } alamat email khusus"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } alamat email"
+      ],
+      "Folders, labels, and custom filters": [
+        "Folder, label, dan filter khusus"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "Ruang penyimpanan 15 GB"
@@ -8881,23 +8919,6 @@
       ],
       "Your privacy is our mission": [
         "Privasi Anda adalah misi kami"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Ruang penyimpanan ${ planMaxSpace } per pengguna"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } alamat email khusus"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } alamat email"
-      ],
-      "Folders, labels, and custom filters": [
-        "Folder, label, dan filter khusus"
       ]
     },
     "Subscription renewal state": {
