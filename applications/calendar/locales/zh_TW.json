@@ -101,9 +101,6 @@
       "Attention required": [
         "需要您的處理"
       ],
-      "Authenticate": [
-        "驗證"
-      ],
       "Back": [
         "返回"
       ],
@@ -316,9 +313,6 @@
       ],
       "Export selection as .vcf": [
         "以.vcf匯出選項"
-      ],
-      "Forgot password?": [
-        "忘記密碼?"
       ],
       "Forward as attachment": [
         "以附件形式轉寄"
@@ -656,6 +650,9 @@
       "Set up 2FA": [
         "設定兩步驟驗證"
       ],
+      "Set up email forwarding": [
+        "設定電子郵件轉發"
+      ],
       "Settings": [
         "設定"
       ],
@@ -776,14 +773,8 @@
       "Use a different payment method": [
         "改用另一個繳款方式"
       ],
-      "Use authentication code": [
-        "使用驗證代碼"
-      ],
       "Use for sending": [
         "用於寄送"
-      ],
-      "Use recovery code": [
-        "使用復原代碼"
       ],
       "Verify": [
         "驗證"
@@ -2535,6 +2526,26 @@
         "所有 ${ BRAND_NAME } 服務"
       ]
     },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "為期 ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "為期 ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "為期 ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "為期 ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/月"
@@ -3824,24 +3835,6 @@
         "無限制的 hide-my-email 別名"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
-      ],
-      "Security key": [
-        "安全性金鑰"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "安全性金鑰"
-      ]
-    },
     "file size format": {
       "byte": [
         "位元組"
@@ -4639,9 +4632,6 @@
       "Duplicate key updated": [
         "重複金鑰已更新"
       ],
-      "Each code can only be used once": [
-        "每組驗證代碼只能使用一次"
-      ],
       "Edit email address": [
         "編輯電子郵件位址"
       ],
@@ -4660,20 +4650,11 @@
       "Enabling auto-deletion…": [
         "啟用自動刪除…"
       ],
-      "Enter the code from your authenticator app": [
-        "輸入驗證應用程式中的驗證代碼"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "請輸入您想匯入的電郵帳號所使用的憑證。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "輸入驗證代碼。正在按下 ${ digit } 。"
-      ],
-      "Enter your own password (as organization admin).": [
-        "輸入您的個人密碼 (組織機構管理員身份)。"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "預計尚餘時間：${ estimatedMinutes } 分鐘"
@@ -5227,9 +5208,6 @@
       "Week and month views only apply to desktop.": [
         "週和月檢視僅適用於電腦版。"
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "設置雙重身分驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
-      ],
       "Which event would you like to delete?": [
         "您要刪除哪一個事件？"
       ],
@@ -5651,9 +5629,6 @@
       "Attach screenshot(s)": [
         "附加螢幕截圖"
       ],
-      "Authenticator app": [
-        "驗證 app"
-      ],
       "Beta Access": [
         "測試版體驗"
       ],
@@ -6061,9 +6036,6 @@
       ],
       "Your location": [
         "您的位置"
-      ],
-      "Your password (admin)": [
-        "您的密碼（管理員）"
       ]
     },
     "Label for contact group color": {
@@ -6562,6 +6534,11 @@
         "一般 VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -6583,11 +6560,6 @@
       ],
       "Switch plan": [
         "切換方案"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7123,6 +7095,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "從${ priceLine }起"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "於第一個月享受${ priceCoupon }優惠折扣。而後將以每 ${ priceLine } 月的價格自動續約。您可以於任何時候取消訂閱。"
       ],
@@ -8877,47 +8852,6 @@
         "${ totalPrice } 版"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "and 15 more premium features": [
-        "還有額外的15個的加值功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動郵件轉寄${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "資料外洩警告 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面應用程式"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
-      ],
-      "No ads or tracking": [
-        "無廣告或追蹤"
-      ],
-      "Short @pm.me email address": [
-        "縮短電子郵件地址@pm.me"
-      ],
-      "Support our mission": [
-        "支援我們的計畫"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade your productivity": [
-        "提升您的生產力"
-      ],
-      "We don't sell your data": [
-        "我們不銷售您的資料"
-      ],
-      "Your privacy is our mission": [
-        "您的隱私是我們責任"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
@@ -9151,6 +9085,47 @@
         "您自己短@pm.me電子郵件別名"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "and 15 more premium features": [
+        "還有額外的15個的加值功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "您確定嗎？"
@@ -9175,6 +9150,11 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "我們的系統將不再以此付款方法自動向您收費，惟您的訂購授權仍會在繳款單週期屆滿時續約。若您想降級或更改您的訂購授權，您仍需於繳款單週期完結前自行辦妥。我們無法自動為您降級，因為若您已超過免費方案的儲存空間配額，或是在使用其它付款功能，我們無法為您自動刪除檔案、電子郵件或其它資料。若您停用自動付款，請記得在到期日之前繳付您下一張訂購授權帳單，以免帳號被暫停。"
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "降價 ${ priceString }"
       ]
     },
     "Success": {
@@ -9710,9 +9690,6 @@
       ],
       "Enter 2FA code": [
         "輸入雙重驗證碼"
-      ],
-      "Enter your password": [
-        "請輸入您的密碼"
       ],
       "Error": [
         "錯誤"

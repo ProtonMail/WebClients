@@ -107,9 +107,6 @@
       "Attention required": [
         "Требуется внимание"
       ],
-      "Authenticate": [
-        "Аутентифицировать"
-      ],
       "Back": [
         "Назад"
       ],
@@ -337,9 +334,6 @@
       ],
       "Export selection as .vcf": [
         "Экспортировать выбор как .vcf"
-      ],
-      "Forgot password?": [
-        "Забыли пароль?"
       ],
       "Forward as attachment": [
         "Переслать как вложение"
@@ -839,14 +833,8 @@
       "Use a different payment method": [
         "Использовать другой способ оплаты"
       ],
-      "Use authentication code": [
-        "Используйте код аутентификации"
-      ],
       "Use for sending": [
         "Использовать для отправки"
-      ],
-      "Use recovery code": [
-        "Использовать код восстановления"
       ],
       "Verify": [
         "Подтвердить"
@@ -4233,24 +4221,6 @@
         "Неограниченное количество псевдонимов hide-my-email"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте ещё раз."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Вставьте ключ безопасности, связанный с вашим аккаунтом ${ BRAND_NAME }."
-      ],
-      "Security key": [
-        "Ключ безопасности"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Ключ безопасности"
-      ]
-    },
     "file size format": {
       "byte": [
         "байт",
@@ -5201,9 +5171,6 @@
       "Duplicate key updated": [
         "Дубликат ключа обновлён"
       ],
-      "Each code can only be used once": [
-        "Каждый код может быть использован только один раз"
-      ],
       "Edit email address": [
         "Изменить адрес эл. почты"
       ],
@@ -5223,19 +5190,13 @@
         "Включение автоудаления…"
       ],
       "Enter the code from your authenticator app": [
-        "Введите код из приложения для аутентификации"
+        "Введите код из приложения-аутентификатора"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Введите учетные данные аккаунта электронной почты, из которого вы хотите импортировать данные."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Введите код подтверждения. Цифра ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Введите собственный пароль (как администратор организации)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Оставшееся время: ${ estimatedMinutes } минута",
@@ -5878,9 +5839,6 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Когда вы подключаетесь к VPN, используется технология шифрования, чтобы скрыть ваш адрес IP (уникальный код, присвоенный вашему устройству)."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
       ],
       "Which event would you like to delete?": [
         "Какое событие вы хотите удалить?"
@@ -7355,6 +7313,11 @@
         "Средняя скорость VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -7376,11 +7339,6 @@
       ],
       "Switch plan": [
         "Сменить тариф"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -10036,47 +9994,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
@@ -10347,6 +10264,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -10975,9 +10933,6 @@
       ],
       "Enter 2FA code": [
         "Введите код двухфакторной аутентификации"
-      ],
-      "Enter your password": [
-        "Введите свой пароль"
       ],
       "Error": [
         "Ошибка"

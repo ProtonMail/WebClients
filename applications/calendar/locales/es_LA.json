@@ -840,7 +840,7 @@
         "Usar para el envío"
       ],
       "Use recovery code": [
-        "Usar código de recuperación"
+        "Usar un código de recuperación"
       ],
       "Verify": [
         "Verificar"
@@ -4163,7 +4163,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Hubo un problema al autenticar con la clave de seguridad. Intente de nuevo."
+        "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
       ]
     },
     "fido2: Info": {
@@ -5077,7 +5077,7 @@
         "Activando la eliminación automática…"
       ],
       "Enter the code from your authenticator app": [
-        "Ingrese el código de la aplicación de autenticación"
+        "Ingrese el código de la aplicación de autenticación."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Ingrese las credenciales de la cuenta de correo electrónico desde la que quiere importar."
@@ -5086,7 +5086,7 @@
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Ingrese el código de verificación. Digite ${ digit }."
+        "Ingrese el código de verificación. Ingrese ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Ingrese su propia contraseña (como administrador de la organización)."
@@ -6173,7 +6173,7 @@
         "Adjuntar captura(s)"
       ],
       "Authenticator app": [
-        "App autenticadora"
+        "Aplicación de autenticación"
       ],
       "Beta Access": [
         "Acceso beta"
@@ -6603,7 +6603,7 @@
         "Su ubicación"
       ],
       "Your password (admin)": [
-        "La contraseña (admin)"
+        "Tu contraseña (admin)"
       ]
     },
     "Label for contact group color": {
@@ -7164,6 +7164,11 @@
         "Velocidad VPN media"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Bajar a ${ downgradedPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Eliminar cuenta"
@@ -7185,11 +7190,6 @@
       ],
       "Switch plan": [
         "Cambiar plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Bajar a ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -9677,47 +9677,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "App de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoye nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejore su productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos sus datos."
-      ],
-      "Your privacy is our mission": [
-        "Su privacidad es nuestra misión"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } con funciones premium"
@@ -9976,6 +9935,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Su alias de correo electrónico @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "App de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoye nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejore su productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos sus datos."
+      ],
+      "Your privacy is our mission": [
+        "Su privacidad es nuestra misión"
       ]
     },
     "Subscription renewal state": {
@@ -10580,7 +10580,7 @@
         "Ingrese el código 2FA"
       ],
       "Enter your password": [
-        "Ingrese la contraseña"
+        "Introduce tu contraseña"
       ],
       "Error": [
         "Error"
