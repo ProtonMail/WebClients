@@ -8,7 +8,7 @@ import { c } from 'ttag';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
-import { Slider, SliderSizeEnum } from '@proton/atoms/index';
+import { Slider, SliderSizeEnum } from '@proton/atoms';
 import { type ModalStateProps, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { type Address } from '@proton/shared/lib/interfaces';

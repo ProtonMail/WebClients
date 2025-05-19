@@ -3,7 +3,7 @@ import { type FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/index';
+import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components/index';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { ShareMember } from '@proton/pass/components/Invite/Member/ShareMember';

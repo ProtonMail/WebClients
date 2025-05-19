@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms/index';
+import { Button, ButtonLike } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Price from '@proton/components/components/price/Price';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';

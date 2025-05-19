@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/index';
+import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import { Pagination } from '@proton/components/components/pagination';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';

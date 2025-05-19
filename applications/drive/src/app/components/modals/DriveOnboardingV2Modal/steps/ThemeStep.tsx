@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/index';
+import { Button } from '@proton/atoms';
 import { ONBOARDING_THEMES } from '@proton/components/containers/onboarding/constants';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';

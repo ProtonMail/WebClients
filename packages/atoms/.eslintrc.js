@@ -12,9 +12,9 @@ module.exports = {
         'import/no-internal-modules': [
             'error',
             {
-                forbid: ['@proton/atoms', '@proton/atoms/index'],
+                forbid: ['@proton/atoms', '@proton/atoms'],
             },
         ],
     },
-    ignorePatterns: ['.eslintrc.js'],
+    ignorePatterns: ['.eslintrc.js', 'storybook-static/*'],
 };

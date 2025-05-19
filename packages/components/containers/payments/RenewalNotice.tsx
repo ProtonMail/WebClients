@@ -3,7 +3,7 @@ import { type ReactNode } from 'react';
 import { addMonths } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Href } from '@proton/atoms/index';
+import { Href } from '@proton/atoms';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getReadableTime } from '@proton/components/components/time/Time';
 import type { CheckoutModifiers } from '@proton/payments';

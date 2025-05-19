@@ -111,6 +111,10 @@ module.exports = {
                         group: ['@proton/payments/ui/*'],
                         message: 'You should import from `@proton/payments/ui` instead.',
                     },
+                    {
+                        group: ['@proton/atoms/*'],
+                        message: 'You should import from `@proton/atoms` instead.',
+                    },
                 ],
             },
         ],

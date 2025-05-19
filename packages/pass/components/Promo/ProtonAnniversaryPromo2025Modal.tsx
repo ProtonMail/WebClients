@@ -3,7 +3,7 @@ import { type FC, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/index';
+import { Button } from '@proton/atoms';
 import Anniversary2025FeatureList from '@proton/components/containers/offers/components/anniversary2025/Anniversary2025FeatureList';
 import Anniversary2025Header from '@proton/components/containers/offers/components/anniversary2025/Anniversary2025Header';
 import OfferCloseButton from '@proton/components/containers/offers/components/shared/OfferCloseButton';
