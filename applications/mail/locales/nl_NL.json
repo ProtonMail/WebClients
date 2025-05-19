@@ -151,9 +151,6 @@
       "Attention required": [
         "Aandacht vereist"
       ],
-      "Authenticate": [
-        "Authenticeren"
-      ],
       "Auto-delete spam and trash": [
         "Spam en prullenbak automatisch verwijderen"
       ],
@@ -474,9 +471,6 @@
       "Email settings": [
         "E-mailinstellingen"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "Enable": [
         "Inschakelen"
       ],
@@ -542,9 +536,6 @@
       ],
       "Font": [
         "Lettertype"
-      ],
-      "Forgot password?": [
-        "Wachtwoord vergeten?"
       ],
       "Formalize": [
         "Formaliseren"
@@ -1171,10 +1162,10 @@
       "Select ${ planTitle }": [
         "Selecteer ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Alles selecteren"
       ],
-      "Select All": [
+      "Select all": [
         "Alles selecteren"
       ],
       "Select all messages": [
@@ -1441,9 +1432,6 @@
       "Untrust": [
         "Niet meer vertrouwen"
       ],
-      "Update": [
-        "Bijwerken"
-      ],
       "Update recovery file": [
         "Herstelbestand bijwerken"
       ],
@@ -1483,14 +1471,8 @@
       "Use a different payment method": [
         "Gebruik een andere betaalmethode"
       ],
-      "Use authentication code": [
-        "Verificatiecode gebruiken"
-      ],
       "Use for sending": [
         "Gebruiken om te versturen"
-      ],
-      "Use recovery code": [
-        "Herstelcode gebruiken"
       ],
       "Use this": [
         "Gebruik dit"
@@ -5265,24 +5247,6 @@
         "Onbeperkt aantal hide-my-email-aliassen"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Er is iets fout gegaan bij het verifiëren van uw beveiligingssleutel. Probeer het opnieuw."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME }-account."
-      ],
-      "Security key": [
-        "Beveiligingssleutel"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Beveiligingssleutel"
-      ]
-    },
     "file size format": {
       "byte": [
         "byte",
@@ -6475,9 +6439,6 @@
       "and": [
         "en"
       ],
-      "and more.": [
-        "en meer."
-      ],
       "Another tip will be displayed next time you open Mail": [
         "De volgende keer dat u Mail opent, zal er een andere tip worden weergeven"
       ],
@@ -6802,15 +6763,8 @@
       "Drop to import": [
         "Neerzetten om te importeren"
       ],
-      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
-        "Vanwege de configuratie van uw ontvanger kan dit bericht niet met een verloopdatum worden verzonden naar het volgende contact: ",
-        "Vanwege de configuratie van uw ontvanger kan dit bericht niet met een verloopdatum worden verzonden naar de volgende contactpersonen: "
-      ],
       "Duplicate key updated": [
         "Dubbele sleutel bijgewerkt"
-      ],
-      "Each code can only be used once": [
-        "Elke code kan maar één keer gebruikt worden"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Beheer en meld u eenvoudig af voor nieuwsbrieven en adressenlijsten."
@@ -6867,20 +6821,11 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Geniet van een snellere, doelgerichte e-mailervaring met de desktop app."
       ],
-      "Enter the code from your authenticator app": [
-        "Voer de code van uw verificatie-app in"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Voer verificatiecode in. Cijfer ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Geschatte resterende tijd: ${ estimatedMinutes } minuut",
@@ -6923,7 +6868,7 @@
         "Filters werken op alle e-mails, zowel inkomende als verzonden e-mails. Elk filter moet minstens een naam, voorwaarde en actie bevatten."
       ],
       "finance": [
-        "financiën"
+        "financieel"
       ],
       "Folder": [
         "Map"
@@ -6976,7 +6921,7 @@
         "Verberg origineel bericht"
       ],
       "High Priority": [
-        "Hoge Prioriteit"
+        "Hoge prioriteit"
       ],
       "How hide-my-email aliases works": [
         "Hoe Hide-my-email-aliassen werken"
@@ -7064,7 +7009,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Link invoegen"
@@ -7157,10 +7103,7 @@
         "Laden..."
       ],
       "Low Priority": [
-        "Lage Prioriteit"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Maak van ${ MAIL_APP_NAME } uw standaard e-mailtoepassing."
+        "Lage prioriteit"
       ],
       "Manage your folders": [
         "Mappen beheren"
@@ -8159,9 +8102,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Toen u vertrouwde sleutels inschakelde voor ${ senderName }, zijn de openbare sleutels meteen toegevoegd aan deze contactpersoon."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Wanneer u zich aanmeldt voor een nieuwsbrief, gebruik dan een alias in plaats van uw e-mailadres. Uw identiteit blijft verborgen, en u kunt de alias op elk moment uitschakelen."
       ],
@@ -8804,9 +8744,6 @@
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
       ],
-      "Authenticator app": [
-        "Authenticator-app"
-      ],
       "BCC": [
         "Bcc"
       ],
@@ -9334,9 +9271,6 @@
       ],
       "Your location": [
         "Uw locatie"
-      ],
-      "Your password (admin)": [
-        "Uw wachtwoord (admin)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12773,47 +12707,6 @@
         "Voor ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -13072,6 +12965,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
@@ -13919,9 +13853,6 @@
       "Enter 2FA code": [
         "Voer 2FA-code in"
       ],
-      "Enter your password": [
-        "Voer uw wachtwoord in"
-      ],
       "Error": [
         "Fout"
       ],
@@ -14034,10 +13965,10 @@
       "Load remote content": [
         "Externe inhoud laden"
       ],
-      "Mail Subscriptions": [
+      "Mail subscriptions": [
         "E-mail abonnementen"
       ],
-      "Mail subscriptions": [
+      "Mail Subscriptions": [
         "E-mail abonnementen"
       ],
       "Make a secure connection your default": [

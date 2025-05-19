@@ -133,7 +133,7 @@
         "应用"
       ],
       "Archive": [
-        "存档"
+        "归档"
       ],
       "As Scheduled": [
         "按原定时间"
@@ -149,9 +149,6 @@
       ],
       "Attention required": [
         "需要关注"
-      ],
-      "Authenticate": [
-        "认证"
       ],
       "Auto-delete spam and trash": [
         "自动清理垃圾邮件和回收站"
@@ -471,9 +468,6 @@
       "Email settings": [
         "邮件设置"
       ],
-      "Emoji": [
-        "表情符号"
-      ],
       "Enable": [
         "启用"
       ],
@@ -539,9 +533,6 @@
       ],
       "Font": [
         "字体"
-      ],
-      "Forgot password?": [
-        "忘记密码?"
       ],
       "Formalize": [
         "正式化"
@@ -865,7 +856,7 @@
         "移动"
       ],
       "Move all to archive": [
-        "全部存档"
+        "全部归档"
       ],
       "Move all to trash": [
         "全部移至回收站"
@@ -877,7 +868,7 @@
         "移至"
       ],
       "Move to archive": [
-        "存档"
+        "移至归档"
       ],
       "Move to folder": [
         "移动至文件夹"
@@ -1167,10 +1158,10 @@
       "Select ${ planTitle }": [
         "开通 ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "全选"
       ],
-      "Select All": [
+      "Select all": [
         "全选"
       ],
       "Select all messages": [
@@ -1479,14 +1470,8 @@
       "Use a different payment method": [
         "使用其他方式支付"
       ],
-      "Use authentication code": [
-        "使用验证码"
-      ],
       "Use for sending": [
         "用于发送邮件"
-      ],
-      "Use recovery code": [
-        "使用恢复码"
       ],
       "Use this": [
         "确定使用"
@@ -2572,7 +2557,7 @@
         "创建标签"
       ],
       "Go to Archive": [
-        "转至存档"
+        "转至归档"
       ],
       "Go to Drafts": [
         "转至草稿"
@@ -5092,24 +5077,6 @@
         "无限制地 hide-my-email"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "使用安全密钥进行身份验证时出错。请重试。"
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "插入与 ${ BRAND_NAME } 账户关联的安全密匙"
-      ],
-      "Security key": [
-        "安全密钥"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "安全密钥"
-      ]
-    },
     "file size format": {
       "byte": [
         "B"
@@ -5151,7 +5118,7 @@
     },
     "Filter Actions": {
       "Archive": [
-        "存档"
+        "归档"
       ],
       "Do not move": [
         "不移动"
@@ -6060,6 +6027,9 @@
       "${ storage } storage": [
         "${ storage } 存储空间"
       ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "上个月已收到 ${ subscription.ReceivedMessages.Last30Days } 封邮件"
+      ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } 封未读"
       ],
@@ -6190,7 +6160,7 @@
         "该邮件列表中的所有信息都将标记为已读。"
       ],
       "All messages from this mailing list will be moved to Archive.": [
-        "该邮件列表中的所有信息都将移至归档。"
+        "该邮件列表中的所有邮件都将移至归档。"
       ],
       "All messages from this mailing list will be moved to Trash.": [
         "该邮件列表中的所有信息都将移至回收站。"
@@ -6234,9 +6204,6 @@
       "and": [
         "并"
       ],
-      "and more.": [
-        "等等。"
-      ],
       "Another tip will be displayed next time you open Mail": [
         "下次打开邮件时将显示另一个提示"
       ],
@@ -6277,7 +6244,7 @@
         "确定要放弃导入吗？"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
-        "确定要将此处所有邮件存档吗？"
+        "您确定要归档此处的所有邮件吗？"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
         "确定要将此处所有邮件移至回收站吗？"
@@ -6555,14 +6522,8 @@
       "Drop to import": [
         "拖至此处即可导入"
       ],
-      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
-        "由于收件方的设置，以下联系人无法接收带有过期日期的邮件："
-      ],
       "Duplicate key updated": [
         "重复的密钥已更新"
-      ],
-      "Each code can only be used once": [
-        "每条恢复码只能使用一次"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "轻松管理和取消订阅新闻通讯和邮件列表。"
@@ -6580,7 +6541,7 @@
         "修改链接"
       ],
       "email": [
-        "电子邮箱"
+        "邮箱验证"
       ],
       "Email address": [
         "邮箱地址"
@@ -6618,20 +6579,11 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "使用桌面应用程序，享受更快、更集中的电子邮件发送体验。"
       ],
-      "Enter the code from your authenticator app": [
-        "请输入您的双重验证应用中显示的验证码"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "输入您要导入的邮箱账号和密码。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "输入第 ${ digit } 位验证码。"
-      ],
-      "Enter your own password (as organization admin).": [
-        "请输入你的密码（作为组织管理员）。"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "预计剩余时间：${ estimatedMinutes } 分钟"
@@ -6808,7 +6760,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert link": [
         "插入链接"
@@ -6902,9 +6854,6 @@
       ],
       "Low Priority": [
         "较低优先顺序"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "将 ${ MAIL_APP_NAME } 设为默认邮件应用。"
       ],
       "Manage your folders": [
         "管理您的文件夹"
@@ -7896,9 +7845,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "当您为 ${ senderName } 启用可信密钥时，公钥被添加到联系人详细信息中。"
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "当您设置双因素身份验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "订阅新闻通讯时，使用别名而不是您的真实邮箱地址。这样可以保护你的身份，而且你可以随时禁用该别名。"
       ],
@@ -8281,7 +8227,7 @@
         "转至所有邮件"
       ],
       "Go to Archive": [
-        "转至存档"
+        "转至归档"
       ],
       "Go to Drafts": [
         "转至草稿箱"
@@ -8338,7 +8284,7 @@
         "右移 / 展开"
       ],
       "Move to Archive": [
-        "存档"
+        "移至归档"
       ],
       "Move to Inbox": [
         "移至收件箱"
@@ -8483,7 +8429,7 @@
         "所有联系人"
       ],
       "Also archive": [
-        "同时存档"
+        "同时归档"
       ],
       "Always label sender's emails": [
         "始终标记发件人的邮件"
@@ -8517,9 +8463,6 @@
       ],
       "Attach screenshot(s)": [
         "截图"
-      ],
-      "Authenticator app": [
-        "身份验证应用"
       ],
       "BCC": [
         "密送"
@@ -8804,7 +8747,7 @@
         "移至"
       ],
       "Move to Archive": [
-        "存档"
+        "移至归档"
       ],
       "Move to Inbox": [
         "移至收件箱"
@@ -9048,9 +8991,6 @@
       ],
       "Your location": [
         "您的位置"
-      ],
-      "Your password (admin)": [
-        "您的密码（管理员）"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9160,7 +9100,7 @@
         "所有邮件"
       ],
       "Archive": [
-        "存档"
+        "归档"
       ],
       "clearing your browser cache": [
         "清除浏览器缓存"
@@ -9456,7 +9396,7 @@
     },
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe 写作助手"
+        "写作助理 ${ BRAND_NAME } Scribe"
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "添加 ${ BRAND_NAME } Scribe 写作助手"
@@ -9470,7 +9410,7 @@
     },
     "Mailbox": {
       "Archive": [
-        "存档"
+        "归档"
       ],
       "Inbox": [
         "收件箱"
@@ -12288,6 +12228,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "若要继续使用 ${ BRAND_NAME } 产品，请释放空间或 ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "如需继续收发邮件，请释放部分存储空间或${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "若要发送或接收电子邮件，请释放存储空间或升级以获取更多存储空间。"
       ],
@@ -12404,47 +12347,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "总计 ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动邮件转发 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "简短的 @pm.me 邮箱地址"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription reminder": {
@@ -12699,6 +12601,47 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己的短 @pm.me 邮箱别名"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动邮件转发 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "简短的 @pm.me 邮箱地址"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription renewal state": {
@@ -13252,10 +13195,10 @@
         "使用礼品码"
       ],
       "Archive": [
-        "存档"
+        "归档"
       ],
       "Archive all messages?": [
-        "存档所有邮件？"
+        "归档所有邮件？"
       ],
       "Are you sure you want to close the preview?": [
         "确定要关闭预览吗？"
@@ -13506,9 +13449,6 @@
       "Enter 2FA code": [
         "输入 2FA 验证码"
       ],
-      "Enter your password": [
-        "输入密码"
-      ],
       "Error": [
         "失败"
       ],
@@ -13620,11 +13560,11 @@
       "Load remote content": [
         "加载外链内容"
       ],
-      "Mail Subscriptions": [
-        "Mail 订阅"
-      ],
       "Mail subscriptions": [
         "邮件订阅"
+      ],
+      "Mail Subscriptions": [
+        "Mail 订阅"
       ],
       "Make a secure connection your default": [
         "将安全连接设为默认首选"
@@ -13693,7 +13633,7 @@
         "移动所有邮件"
       ],
       "Move all messages to archive": [
-        "将所有邮件存档"
+        "将所有邮件归档"
       ],
       "Move all messages to trash": [
         "将所有邮件移至回收站"

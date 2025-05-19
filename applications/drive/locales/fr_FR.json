@@ -3928,12 +3928,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
+        "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clé de sécurité"
@@ -5002,7 +5002,7 @@
         "Saisissez le mot de passe"
       ],
       "Enter the code from your authenticator app": [
-        "Entrez le code de votre application d'authentification."
+        "Saisissez le code de votre application d'authentification."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Saisissez les identifiants du compte de messagerie depuis lequel vous voulez importer."
@@ -5011,7 +5011,7 @@
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Enter verification code. Digit ${ digit }."
+        "Saisissez le code de vérification. Entrez ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
@@ -6078,9 +6078,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }."
-      ],
-      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
-        "Une nouvelle aventure commence pour vos photos ! Pendant cette transition, la restauration des photos est temporairement indisponible. Tout devrait être prêt dans quelques jours. Nous vous remercions de votre compréhension."
       ],
       "Week": [
         "Semaine"
@@ -7273,6 +7270,9 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Votre compte risque d'être supprimé. Pour éviter de perdre des données, demandez à votre administrateur de mettre à jour votre abonnement. ${ cta }"
       ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Votre espace de stockage est plein. Pour continuer à utiliser les produits ${ BRAND_NAME }, libérez de l’espace ou ${ cta }."
+      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Votre abonnement est terminé. ${ cta } et pour éviter de perdre des données."
       ]
@@ -7645,6 +7645,17 @@
         "Vitesse VPN moyenne"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Abonnements à partir de ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Supprimer le compte"
@@ -7665,17 +7676,6 @@
         "Conserver le compte"
       ],
       "Switch plan": [
-        "Changer d'abonnement"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Abonnements à partir de ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
         "Changer d'abonnement"
       ]
     },
@@ -8650,6 +8650,9 @@
       "Access for the member removed": [
         "L'accès pour le membre a été retiré."
       ],
+      "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
+        "Accédez à nos nouveaux albums, filtres et bien plus encore en agissant sur votre volume verrouillé. Restaurez-le ou supprimez-le dès maintenant pour profiter immédiatement de ces nouvelles fonctionnalités."
+      ],
       "Access updated": [
         "L'accès a été mis à jour."
       ],
@@ -8780,6 +8783,12 @@
       "Share invitation declined": [
         "L'invitation au partage a été refusée."
       ],
+      "Some photo(s) could not be added to \"${ albumName }\"": [
+        "Certaines photos n'ont pas pu être ajoutées à « ${ albumName } »."
+      ],
+      "Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Certaines photos n'ont pas pu être retirées de ${ albumLink.name }."
+      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Nous n'avons malheureusement pas pu supprimer le dossier car il n'est pas vide.",
         "Nous n'avons malheureusement pas pu supprimer les dossiers car ils ne sont pas vides."
@@ -8827,6 +8836,9 @@
       ],
       "Your photo(s) have been added to \"${ albumName }\"": [
         "Vos photos ont été ajoutées à « ${ albumName } »."
+      ],
+      "Your photo(s) have been removed from ${ albumLink.name }": [
+        "Vos photos ont été retirées de ${ albumLink.name }."
       ],
       "Your settings failed to be saved": [
         "Vos paramètres n'ont pas pu être enregistrés."
@@ -10119,6 +10131,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Pour continuer à utiliser les produits ${ BRAND_NAME }, libérez de l’espace ou ${ upgrade }."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Pour envoyer ou recevoir des messages, veuillez libérer de l'espace de stockage ou changer d'abonnement pour augmenter votre espace de stockage."
       ],
@@ -10242,47 +10257,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Pour ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "and 15 more premium features": [
-        "et 15 fonctionnalités premium en plus"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Transfert automatique des messages ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de fuites de données ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Application de bureau"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
-      ],
-      "No ads or tracking": [
-        "Aucune publicité, aucun suivi"
-      ],
-      "Short @pm.me email address": [
-        "Adresses e-mail courtes @pm.me"
-      ],
-      "Support our mission": [
-        "Soutenez notre mission"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade your productivity": [
-        "Améliorez votre productivité"
-      ],
-      "We don't sell your data": [
-        "Nous ne vendons pas vos données"
-      ],
-      "Your privacy is our mission": [
-        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription reminder": {
@@ -10543,6 +10517,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail courtes @pm.me"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données"
+      ],
+      "Your privacy is our mission": [
+        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {
@@ -11179,7 +11194,7 @@
         "Entrez le code A2F"
       ],
       "Enter your password": [
-        "Saisissez votre mot de passe."
+        "Saisissez votre mot de passe"
       ],
       "Error": [
         "Erreur"

@@ -433,6 +433,9 @@
       "Pause monitoring": [
         "Pozastavit sledování"
       ],
+      "Pay once": [
+        "Zaplatit jednorázově"
+      ],
       "Pin item": [
         "Připnout položku"
       ],
@@ -570,6 +573,9 @@
       ],
       "Sign out": [
         "Odhlásit se"
+      ],
+      "Skip": [
+        "Přeskočit"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Někdo s vámi sdílel položku ${ PASS_APP_NAME }."
@@ -1853,12 +1859,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
-      ],
       "Moving items": [
         "Přesouvání položek"
       ],
@@ -2279,6 +2279,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Chcete-li si prohlédnout importovaná data, klikněte na ikonu ${ PASS_APP_NAME } v panelu nástrojů svého prohlížeče."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Důvěřa více než 50000 firemních uživatelů a 100 milionů účtů po celém světě."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyzkoušejte si nové funkce, aktualizace a produkty ${ BRAND_NAME } ještě před jejich zveřejněním. Toto znovu načte aplikaci"
       ],
@@ -2656,6 +2659,12 @@
       "Birthdate": [
         "Datum narození"
       ],
+      "Browse faster, smarter": [
+        "Procházejte internet rychleji a chytřeji"
+      ],
+      "Built-in 2FA": [
+        "Vestavěné 2FA"
+      ],
       "Capital letters (A-Z)": [
         "Velká písmena (A-Z)"
       ],
@@ -2673,6 +2682,12 @@
       ],
       "Catch-All": [
         "Doménový koš"
+      ],
+      "Choose unlock method": [
+        "Vyberte způsob odemknutí"
+      ],
+      "Choose your preferred look and feel.": [
+        "Vyberte si svůj oblíbený vzhled."
       ],
       "City": [
         "Město"
@@ -2730,6 +2745,9 @@
       ],
       "Created at": [
         "Vytvořeno"
+      ],
+      "Credit cards": [
+        "Platební karty"
       ],
       "Custom hidden field": [
         "Vlastní skryté pole"
@@ -2800,6 +2818,9 @@
       "Export": [
         "Export"
       ],
+      "Extra email addresses": [
+        "Další e-mailové adresy"
+      ],
       "Extra password": [
         "Dodatečné heslo"
       ],
@@ -2811,6 +2832,9 @@
       ],
       "Field name": [
         "Název pole"
+      ],
+      "File attachments": [
+        "Přílohy souborů"
       ],
       "File format": [
         "Formát souboru"
@@ -2824,8 +2848,14 @@
       "For a one-off sharing": [
         "Pro jednorázové sdílení"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Z bezpečnostních důvodů se ${ PASS_SHORT_APP_NAME } po 10 minutách nečinnosti automaticky uzamkne."
+      ],
       "Forwards to": [
         "Přeposílá na"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "Navždy zdarma"
@@ -2842,8 +2872,17 @@
       "Generic CSV": [
         "Obyčejný CSV"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Získejte ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Získejte ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "Začínáme"
+      ],
+      "Get the extension for your browser.": [
+        "Získejte rozšíření pro svůj prohlížeč."
       ],
       "Grant": [
         "Udělit"
@@ -2853,6 +2892,15 @@
       ],
       "Hide password": [
         "Skrýt heslo"
+      ],
+      "Hide-my-email aliases": [
+        "Aliasy hide-my-email"
+      ],
+      "Highest": [
+        "Nejvyšší"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Jak odemknout ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2892,6 +2940,12 @@
       ],
       "Instagram handle": [
         "Uživatelské jméno Instagram"
+      ],
+      "Install and continue": [
+        "Nainstalovat a pokračovat"
+      ],
+      "Install extension": [
+        "Instalovat rozšíření"
       ],
       "Invitations": [
         "Pozvánky"
@@ -2938,6 +2992,9 @@
       "License number": [
         "Licenční číslo"
       ],
+      "Limited time": [
+        "Omezený čas"
+      ],
       "LinkedIn account": [
         "Účet LinkedIn"
       ],
@@ -2961,6 +3018,9 @@
       ],
       "Make all viewers": [
         "Udělat ze všech prohlížející"
+      ],
+      "Make it your own.": [
+        "Přizpůsobte podle potřeby."
       ],
       "max views reached": [
         "max. zobrazení dosaženo"
@@ -3064,6 +3124,9 @@
       "Personal website": [
         "Osobní web"
       ],
+      "Personalize": [
+        "Přizpůsobení"
+      ],
       "PGP-encrypted (recommended)": [
         "PGP-šifrováno (doporučeno)"
       ],
@@ -3075,6 +3138,9 @@
       ],
       "PIN code": [
         "PIN kód"
+      ],
+      "Plus": [
+        "Plus"
       ],
       "Prefix": [
         "Předpona"
@@ -3142,8 +3208,14 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Vyberte trezor, do kterého budou importovány aliasy SimpleLogin"
       ],
+      "Select theme": [
+        "Vyberte motiv"
+      ],
       "Select your password manager": [
         "Zvolte si svého správce hesel"
+      ],
+      "Select your theme": [
+        "Vyberte motiv"
       ],
       "Selected": [
         "Vybráno"
@@ -3181,6 +3253,9 @@
       "Status": [
         "Stav"
       ],
+      "Storage": [
+        "Úložiště"
+      ],
       "Street address": [
         "Ulice a č. p."
       ],
@@ -3207,6 +3282,9 @@
       ],
       "Text": [
         "Text"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "To nejlepší z ${ BRAND_NAME } s jedním předplatným"
       ],
       "The URL has been copied to the clipboard": [
         "Odkaz byl zkopírován do schránky"
@@ -3240,6 +3318,12 @@
       ],
       "Unknown": [
         "Neznámé"
+      ],
+      "Unlimited": [
+        "Neomezeně"
+      ],
+      "Unlock premium features": [
+        "Odemkněte prémiové funkce"
       ],
       "Unlock with": [
         "Odemknout pomocí"
@@ -3280,6 +3364,9 @@
       "Vault ID": [
         "ID trezoru"
       ],
+      "Vault, item & link sharing": [
+        "Sdílení trezorů, položek a odkazů"
+      ],
       "Vaults": [
         "Trezory"
       ],
@@ -3288,6 +3375,12 @@
       ],
       "View logs": [
         "Zobrazit logy"
+      ],
+      "VPN Devices": [
+        "Zařízení VPN"
+      ],
+      "VPN Speed": [
+        "Rychlost VPN"
       ],
       "Vulnerable": [
         "Zranitelné"
@@ -3300,6 +3393,9 @@
       ],
       "Websites": [
         "Webové stránky"
+      ],
+      "What's included": [
+        "Co je v ceně"
       ],
       "Work details": [
         "Podrobnosti o práci"
@@ -3319,8 +3415,14 @@
       "You are about to create": [
         "Chystáte se vytvořit"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Pro odemknutí si můžete vybrat mezi kódem PIN, biometrickými údaji nebo heslem účtu."
+      ],
       "Your domain": [
         "Vaše doména"
+      ],
+      "Your passwords. Everywhere.": [
+        "Vaše hesla. Kdekoliv."
       ],
       "ZIP": [
         "ZIP"
@@ -3343,6 +3445,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Povolit ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Message": {
@@ -3512,6 +3619,14 @@
       ],
       "You can attach files to items for a better organization": [
         "Pro lepší organizaci můžete k položkám připojit soubory"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "Doživotní tarif ${ PASS_SHORT_APP_NAME } Plus za ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price }/měsíc"
       ]
     },
     "Placeholder": {
@@ -3784,8 +3899,14 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adresy"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Ochrana účtu"
@@ -4068,6 +4189,9 @@
       ],
       "Pause monitoring?": [
         "Pozastavit sledování?"
+      ],
+      "Pay once, access forever.": [
+        "Zaplaťte jednou a přistupujte navždy."
       ],
       "Pending access confirmation": [
         "Čeká se na potvrzení přístupu"

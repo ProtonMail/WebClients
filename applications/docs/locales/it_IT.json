@@ -211,6 +211,9 @@
       "Copy address": [
         "Copia indirizzo"
       ],
+      "Copy as markdown": [
+        "Copia come markdown"
+      ],
       "Copy email to clipboard": [
         "Copia email negli appunti"
       ],
@@ -639,11 +642,17 @@
       "Restore": [
         "Ripristina"
       ],
+      "Restore from trash": [
+        "Ripristina dal cestino"
+      ],
       "Restore this version": [
         "Ripristina questa versione"
       ],
       "Restore this version?": [
         "Ripristina questa versione?"
+      ],
+      "Restoring...": [
+        "Ripristino..."
       ],
       "Retry": [
         "Riprova"
@@ -867,14 +876,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatto",
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti"
-      ]
-    },
-    "Actions": {
-      "Last viewed first": [
-        "Prima gli ultimi visti"
-      ],
-      "Name": [
-        "Nome"
       ]
     },
     "Actions message": {
@@ -2478,6 +2479,11 @@
         "Fattura scaduta"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "usa l'assistente di importazione Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } ti consente di lavorare insieme ad altri in un ambiente sicuro e crittografato."
@@ -2601,11 +2607,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "usa l'assistente di importazione Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3623,12 +3624,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Qualcosa è andato storto durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
+        "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserisci una chiave di sicurezza collegata al tuo Account ${ BRAND_NAME }."
+        "Inserisci una chiave di sicurezza collegata al tuo account ${ BRAND_NAME }."
       ],
       "Security key": [
         "Chiave di sicurezza"
@@ -4403,8 +4404,8 @@
         "Crea un cloud sicuro per ${ value } membro",
         "Crea un cloud sicuro per ${ value } membri"
       ],
-      "Create an encrypted document.": [
-        "Crea un documento crittografato."
+      "Create an end-to-end encrypted document.": [
+        "Crea un documento crittografato end-to-end."
       ],
       "Create in": [
         "Crea in"
@@ -4497,7 +4498,7 @@
         "Chiave duplicata aggiornata"
       ],
       "Each code can only be used once": [
-        "Ogni codice può essere usato una sola volta"
+        "Ogni codice può essere usato una sola volta."
       ],
       "Edit email address": [
         "Modifica l'indirizzo email"
@@ -4527,7 +4528,7 @@
         "Inserisci la password"
       ],
       "Enter the code from your authenticator app": [
-        "Inserisci il codice dalla tua app di autenticazione"
+        "Inserisci il codice dalla tua app di autenticazione."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Inserisci le credenziali dell'account email da cui vuoi importare."
@@ -5366,7 +5367,7 @@
         "Quando ti connetti a una VPN, questa utilizza la tecnologia di crittografia per nascondere il tuo indirizzo IP (un codice univoco assegnato al tuo dispositivo)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando configuri l'autenticazione a due fattori, forniamo dei codici di recupero che puoi usare per accedere se perdi l'accesso alla tua app di autenticazione."
+        "Quando imposti l'autenticazione a due fattori, forniamo codici di ripristino che puoi utilizzare per accedere se perdi l'accesso alla tua app di autenticazione."
       ],
       "words": [
         "parole"
@@ -6701,6 +6702,17 @@
         "Media velocità della VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Piani a partire da ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Elimina l'account"
@@ -6722,17 +6734,6 @@
       ],
       "Switch plan": [
         "Cambia piano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Piani a partire da ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
       ]
     },
     "new_plans: feature": {
@@ -7314,11 +7315,6 @@
         "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -7331,6 +7327,11 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -8733,6 +8734,20 @@
         "Firma"
       ]
     },
+    "Sort menu options": {
+      "Created by": [
+        "Creato da"
+      ],
+      "Last viewed first": [
+        "Prima gli ultimi visti"
+      ],
+      "Location": [
+        "Localizzazione"
+      ],
+      "Name": [
+        "Nome"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Chiudi"
@@ -9136,6 +9151,25 @@
         "Per ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } di spazio di archiviazione per utente"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } ti offre tutte le app, tutte le funzionalità, l'accesso anticipato alle nuove versioni e tutto ciò di cui hai bisogno per avere il controllo dei tuoi dati e della loro sicurezza."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } dominio email personalizzato",
+        "${ planNumberOfDomains } domini email personalizzati"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } indirizzo email",
+        "${ planNumberOfEmails } indirizzi email"
+      ],
+      "Folders, labels, and custom filters": [
+        "Cartelle, etichette, e filtri personalizzati"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB di spazio di archiviazione"
@@ -9175,25 +9209,6 @@
       ],
       "Your privacy is our mission": [
         "La tua privacy è la nostra missione"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } di spazio di archiviazione per utente"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } ti offre tutte le app, tutte le funzionalità, l'accesso anticipato alle nuove versioni e tutto ciò di cui hai bisogno per avere il controllo dei tuoi dati e della loro sicurezza."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } dominio email personalizzato",
-        "${ planNumberOfDomains } domini email personalizzati"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } indirizzo email",
-        "${ planNumberOfEmails } indirizzi email"
-      ],
-      "Folders, labels, and custom filters": [
-        "Cartelle, etichette, e filtri personalizzati"
       ]
     },
     "Subscription renewal state": {

@@ -76,9 +76,6 @@
       "Apply lifetime coupon code": [
         "生涯クーポンコードを適用"
       ],
-      "Authenticate": [
-        "認証"
-      ],
       "Back": [
         "戻る"
       ],
@@ -433,6 +430,9 @@
       "Pause monitoring": [
         "監視を一時停止する"
       ],
+      "Pay once": [
+        "一度だけの支払い"
+      ],
       "Pin item": [
         "アイテムをピン留め"
       ],
@@ -570,6 +570,9 @@
       ],
       "Sign out": [
         "サインアウト"
+      ],
+      "Skip": [
+        "スキップ"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "誰かが ${ PASS_APP_NAME }上でアイテムを共有しました。"
@@ -1580,9 +1583,6 @@
       "Enter the address you want to email.": [
         "メールを送りたいアドレスを入力してください。"
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "検証コードを入力してください。桁数は ${ digit } 桁です。"
-      ],
       "Enter your extra password": [
         "追加パスワードを入力してください"
       ],
@@ -1780,9 +1780,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -2521,6 +2518,9 @@
       "Birthdate": [
         "生年月日"
       ],
+      "Browse faster, smarter": [
+        "より早く、より賢くブラウジング"
+      ],
       "Capital letters (A-Z)": [
         "大文字のアルファベット (A ～ Z)"
       ],
@@ -2538,6 +2538,12 @@
       ],
       "Catch-All": [
         "キャッチオール"
+      ],
+      "Choose unlock method": [
+        "アンロック方法を選択"
+      ],
+      "Choose your preferred look and feel.": [
+        "お好みの外観と雰囲気を選んでください。"
       ],
       "City": [
         "市区町村"
@@ -2595,6 +2601,9 @@
       ],
       "Created at": [
         "作成日時"
+      ],
+      "Credit cards": [
+        "クレジットカード"
       ],
       "Custom hidden field": [
         "カスタム非表示フィールド"
@@ -2665,6 +2674,9 @@
       "Export": [
         "エクスポート"
       ],
+      "Extra email addresses": [
+        "個の追加のメールアドレス"
+      ],
       "Extra password": [
         "追加パスワード"
       ],
@@ -2676,6 +2688,9 @@
       ],
       "Field name": [
         "フィールド名"
+      ],
+      "File attachments": [
+        "添付ファイル"
       ],
       "File format": [
         "ファイル形式"
@@ -2689,8 +2704,14 @@
       "For a one-off sharing": [
         "一度限りの共有のために"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "セキュリティ上の理由により、${ PASS_SHORT_APP_NAME }は非アクティブ状態が 10 分経過すると自動でロックされます。"
+      ],
       "Forwards to": [
         "転送先"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "永久無料"
@@ -2710,6 +2731,9 @@
       "Get Started": [
         "始めましょう"
       ],
+      "Get the extension for your browser.": [
+        "ブラウザ拡張機能を入手"
+      ],
       "Grant": [
         "付与"
       ],
@@ -2718,6 +2742,12 @@
       ],
       "Hide password": [
         "パスワードを隠す"
+      ],
+      "Hide-my-email aliases": [
+        "非ide-my-email表示メールアドレスエイリアス"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME }の解除方法"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2757,6 +2787,12 @@
       ],
       "Instagram handle": [
         "Instagram ユーザー名"
+      ],
+      "Install and continue": [
+        "インストールして続ける"
+      ],
+      "Install extension": [
+        "拡張機能をインストール"
       ],
       "Invitations": [
         "招待"
@@ -2826,6 +2862,9 @@
       ],
       "Make all viewers": [
         "全ての閲覧者を対象に"
+      ],
+      "Make it your own.": [
+        "自分のものにする。"
       ],
       "max views reached": [
         "閲覧回数の上限に達しました"
@@ -2929,6 +2968,9 @@
       "Personal website": [
         "個人ウェブサイト"
       ],
+      "Personalize": [
+        "パーソナライズ"
+      ],
       "PGP-encrypted (recommended)": [
         "PGP 暗号化 (推奨)"
       ],
@@ -2940,6 +2982,9 @@
       ],
       "PIN code": [
         "PIN コード"
+      ],
+      "Plus": [
+        "Plus"
       ],
       "Prefix": [
         "プレフィックス"
@@ -3007,8 +3052,14 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "SimpleLoginエイリアスをインポートする保管庫を選択してください"
       ],
+      "Select theme": [
+        "テーマを選択"
+      ],
       "Select your password manager": [
         "パスワードマネージャーを選択"
+      ],
+      "Select your theme": [
+        "テーマを選択"
       ],
       "Selected": [
         "選択済み"
@@ -3045,6 +3096,9 @@
       ],
       "Status": [
         "ステータス"
+      ],
+      "Storage": [
+        "容量"
       ],
       "Street address": [
         "番地"
@@ -3105,6 +3159,9 @@
       ],
       "Unknown": [
         "不明"
+      ],
+      "Unlimited": [
+        "無制限"
       ],
       "Unlock with": [
         "ロック解除方法"
@@ -3184,8 +3241,14 @@
       "You are about to create": [
         "作成されるメールアドレス"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "PINコード、生体認証、またはアカウントのパスワードのいずれかを選んでロックを解除することができます。"
+      ],
       "Your domain": [
         "あなたのドメイン"
+      ],
+      "Your passwords. Everywhere.": [
+        "あなたのパスワード。どこででも。"
       ],
       "ZIP": [
         "ZIP"
@@ -3208,6 +3271,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } を有効にする"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Message": {
@@ -3368,6 +3436,11 @@
       ],
       "You can attach files to items for a better organization": [
         "アイテムにファイルを添付して整理できます"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ price }/month": [
+        "${ price } /月"
       ]
     },
     "Placeholder": {

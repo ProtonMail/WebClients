@@ -106,9 +106,6 @@
       "Attention required": [
         "Opmærksomhed påkrævet"
       ],
-      "Authenticate": [
-        "Godkend"
-      ],
       "Back": [
         "Tilbage"
       ],
@@ -633,6 +630,9 @@
       "Restore": [
         "Gendan"
       ],
+      "Restore from trash": [
+        "Gendan fra papirkurven"
+      ],
       "Restore this version": [
         "Gendan denne version"
       ],
@@ -807,20 +807,17 @@
       "Use ${ PASS_APP_NAME } for Business": [
         "Brug ${ PASS_APP_NAME } for Business"
       ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Brug ${ VPN_SHORT_APP_NAME } for at beskytte dine data"
+      ],
       "Use a different card": [
         "Benyt et andet kort"
       ],
       "Use a different payment method": [
         "Benyt en anden betalingsmetode"
       ],
-      "Use authentication code": [
-        "Brug godkendelseskode"
-      ],
       "Use for sending": [
         "Benyt til afsendelse"
-      ],
-      "Use recovery code": [
-        "Brug gendannelseskode"
       ],
       "Verify": [
         "Bekræft"
@@ -858,11 +855,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner",
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner"
-      ]
-    },
-    "Actions": {
-      "Name": [
-        "Navn"
       ]
     },
     "Actions message": {
@@ -1102,6 +1094,9 @@
       ],
       "Annually": [
         "Årlig"
+      ],
+      "Lifetime": [
+        "Livstid"
       ],
       "Monthly": [
         "Månedlig"
@@ -2314,6 +2309,11 @@
         "Forfalden faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "skal du bruge Easy Switch importassistenten"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter din konto med målrettet 24/7-overvågning af mistænkelig aktivitet - inklusive eskalering til sikkerhedsspecialister."
@@ -2392,11 +2392,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "skal du bruge Easy Switch importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3409,24 +3404,6 @@
         "Ubegrænsede hide-my-email-aliasser"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
-      ],
-      "Security key": [
-        "Sikkerhedsnøgle"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Sikkerhedsnøgle"
-      ]
-    },
     "file size format": {
       "byte": [
         "byte",
@@ -4161,9 +4138,6 @@
         "Opret en sikker sky til ${ value } medlem",
         "Opret en sikker sky til ${ value } medlemmer"
       ],
-      "Create an encrypted document.": [
-        "Opret et krypteret dokument."
-      ],
       "Create in": [
         "Opret i"
       ],
@@ -4254,9 +4228,6 @@
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
       ],
-      "Each code can only be used once": [
-        "Hver kode kan kun bruges én gang"
-      ],
       "Edit email address": [
         "Rediger e-mailadresse"
       ],
@@ -4284,17 +4255,11 @@
       "Enter password": [
         "Indtast adgangskode"
       ],
-      "Enter the code from your authenticator app": [
-        "Indtast koden fra din godkendelsesapp"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Indtast loginoplysningerne for den e-mail-konto, du ønsker at importere fra."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Indtast verifikationskode. Ciffer ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Indtast din egen adgangskode (som organisationsadministrator)."
@@ -4364,6 +4329,9 @@
       ],
       "Geoblocking": [
         "Geoblokering"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Få e-mailopdateringer om kommentarer og forslag, der tilføjes til dine dokumenter."
       ],
       "Get Notified About Comments": [
         "Få besked om kommentarer"
@@ -4540,6 +4508,9 @@
       ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Intet dokument angivet i URL. Gå tilbage til ${ DRIVE_APP_NAME }, og vælg et dokument."
       ],
       "No email address": [
         "Ingen e-mailadresse"
@@ -5072,9 +5043,6 @@
       "When working remotely": [
         "Når du arbejder eksternt"
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
-      ],
       "words": [
         "ord"
       ],
@@ -5390,9 +5358,6 @@
       ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
-      ],
-      "Authenticator app": [
-        "Godkendelsesapp"
       ],
       "Beta Access": [
         "Beta-adgang"
@@ -6311,6 +6276,17 @@
         "Mellem VPN-hastighed"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Abonnementer starter fra ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Slet konto"
@@ -6332,17 +6308,6 @@
       ],
       "Switch plan": [
         "Skift abonnement"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Abonnementer starter fra ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Opgradér"
       ]
     },
     "new_plans: feature": {
@@ -7701,8 +7666,14 @@
       "Please select your billing state first.": [
         "Vælg venligst dit faktureringsstat først."
       ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Fornyes til ${ renewPriceStr }, annuller når som helst."
+      ],
       "Select billing country to pay": [
         "Vælg faktureringsland for at betale"
+      ],
+      "terms & conditions": [
+        "vilkår og betingelser"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Den særlige udsalgspris på ${ priceWithDiscount } gælder for den første ${ subscriptionLength } måned.",
@@ -8273,6 +8244,17 @@
         "Signér"
       ]
     },
+    "Sort menu options": {
+      "Created by": [
+        "Oprettet af"
+      ],
+      "Location": [
+        "Placering"
+      ],
+      "Name": [
+        "Navn"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Luk"
@@ -8548,6 +8530,9 @@
       "For all ${ BRAND_NAME } services": [
         "For alle ${ BRAND_NAME } tjenester"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "For at sende eller modtage e-mails, frigør plads eller ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "For at uploade eller synkronisere filer, frigør plads eller ${ upgrade }"
       ],
@@ -8670,6 +8655,25 @@
         "Til ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } lagerplads pr. bruger"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } giver dig alle apps, alle funktioner, forhåndstilgang til nye udgivelser og alt, hvad der kræves for at have kontrol over dine datasikkerhed."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } tilpasset e-maildomæne",
+        "${ planNumberOfDomains } tilpassede e-maildomæner"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailadresse",
+        "${ planNumberOfEmails } e-mailadresser"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mapper, etiketter og brugerdefinerede filtre"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB lagerplads"
@@ -8709,25 +8713,6 @@
       ],
       "Your privacy is our mission": [
         "Dit privatliv er vores mission"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } lagerplads pr. bruger"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } giver dig alle apps, alle funktioner, forhåndstilgang til nye udgivelser og alt, hvad der kræves for at have kontrol over dine datasikkerhed."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } tilpasset e-maildomæne",
-        "${ planNumberOfDomains } tilpassede e-maildomæner"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-mailadresse",
-        "${ planNumberOfEmails } e-mailadresser"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mapper, etiketter og brugerdefinerede filtre"
       ]
     },
     "Subscription renewal state": {
@@ -9707,6 +9692,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Du vil blive faktureret ${ renewPriceStr } hver 12. måned."
+      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måned.",
         "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måneder."

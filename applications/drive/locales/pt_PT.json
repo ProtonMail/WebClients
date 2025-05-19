@@ -432,7 +432,7 @@
         "Ajustar na janela"
       ],
       "Forgot password?": [
-        "Esqueceu-se da palavra-passe?"
+        "Palavra-passe esquecida?"
       ],
       "Forward as attachment": [
         "Encaminhar como anexo"
@@ -4823,7 +4823,7 @@
         "Chave duplicada actualizada"
       ],
       "Each code can only be used once": [
-        "Cada código só pode ser utilizado uma vez"
+        "Cada código só pode ser utilizado uma vez."
       ],
       "Edit email address": [
         "Editar o endereço de e-mail"
@@ -4871,7 +4871,7 @@
         "Introduza o código de verificação que foi enviado para ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Introduzir o código de verificação. Digite ${ digit }."
+        "Introduzir o código de verificação. Introduza ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Introduza a sua palavra-passe (como administrador da organização)."
@@ -5939,9 +5939,6 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
       ],
-      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
-        "Uma nova aventura começa para as suas fotos! Durante esta transição, a recuperação de fotos está temporariamente indisponível. Tudo deverá estar pronto dentro de alguns dias. Agradecemos a sua compreensão."
-      ],
       "Week": [
         "Semana"
       ],
@@ -5958,7 +5955,7 @@
         "Quando se liga a uma VPN, esta utiliza tecnologia de encriptação para ocultar o seu endereço IP (um código único atribuído ao seu dispositivo)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Após a configuração da autenticação de dois factores, serão fornecidos códigos de recuperação que poderá utilizar para se autenticar, no caso de perder o acesso à aplicação de autenticação."
+        "Após a configuração da autenticação de dois fatores, serão fornecidos códigos de recuperação que poderá utilizar para se autenticar, no caso de perder o acesso à aplicação de autenticação."
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "será restaurado para a versão de ${ formattedRevisionDate }. Todas as outras versões continuarão a ser guardadas."
@@ -7127,6 +7124,9 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "A sua conta corre risco de eliminação. Para evitar a perda de dados, peça ao seu administrador que atualize o plano. ${ cta }"
       ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "O seu armazenamento está cheio. Para continuar a usar os produtos ${ BRAND_NAME }, liberte espaço ou ${ cta }."
+      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "A sua subscrição terminou. ${ cta } e para evitar a perda de dados."
       ]
@@ -7442,6 +7442,17 @@
         "Velocidade VPN média"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planos a partir de ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Apagar conta"
@@ -7463,17 +7474,6 @@
       ],
       "Switch plan": [
         "Alterar o plano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planos a partir de ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
       ]
     },
     "new_plans: feature": {
@@ -8447,6 +8447,9 @@
       "Access for the member removed": [
         "Acesso para o membro retirado"
       ],
+      "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
+        "Aceda aos nossos novos álbuns, filtros e muito mais, efetuando uma ação no seu volume bloqueado. Restaure ou elimine-o agora para desfrutar destas novas funcionalidades imediatamente."
+      ],
       "Access updated": [
         "O acesso foi atualizado."
       ],
@@ -8577,6 +8580,12 @@
       "Share invitation declined": [
         "O convite para partilhar foi recusado."
       ],
+      "Some photo(s) could not be added to \"${ albumName }\"": [
+        "Não foi possível adicionar algumas fotos a «${ albumName }»."
+      ],
+      "Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Não foi possível remover algumas fotos de ${ albumLink.name }."
+      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Não foi possível eliminar a pasta porque ela não está vazia.",
         "Não foi possível eliminar as pastas porque elas não estão vazias."
@@ -8624,6 +8633,9 @@
       ],
       "Your photo(s) have been added to \"${ albumName }\"": [
         "As suas fotos foram adicionadas a «${ albumName }»."
+      ],
+      "Your photo(s) have been removed from ${ albumLink.name }": [
+        "As suas fotos foram removidas de ${ albumLink.name }."
       ],
       "Your settings failed to be saved": [
         "Erro ao guardar as suas definições"
@@ -9916,6 +9928,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Para continuar a usar os produtos ${ BRAND_NAME }, liberte espaço ou ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Para enviar ou receber e-mails, liberte espaço ou ${ upgrade }."
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Para enviar ou receber e-mails, liberte espaço ou atualize para obter mais espaço de armazenamento."
       ],
@@ -10039,47 +10054,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Por ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento automático de e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de violação de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription reminder": {
@@ -10340,6 +10314,47 @@
       ],
       "Your own short @pm.me email alias": [
         "O seu próprio alias de e-mail curto @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento automático de e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violação de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {

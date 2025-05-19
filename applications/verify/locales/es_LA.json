@@ -60,7 +60,7 @@
         "Usar código de autenticación"
       ],
       "Use recovery code": [
-        "Usar código de recuperación"
+        "Usar un código de recuperación"
       ],
       "Verify": [
         "Verificar"
@@ -923,7 +923,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Hubo un problema al autenticar con la clave de seguridad. Intente de nuevo."
+        "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
       ]
     },
     "fido2: Info": {
@@ -1044,13 +1044,13 @@
         "Editar dirección de correo"
       ],
       "Enter the code from your authenticator app": [
-        "Ingrese el código de la aplicación de autenticación"
+        "Ingrese el código de la aplicación de autenticación."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Ingrese el código de verificación. Digite ${ digit }."
+        "Ingrese el código de verificación. Ingrese ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Ingrese su propia contraseña (como administrador de la organización)."
@@ -1124,7 +1124,7 @@
     },
     "Label": {
       "Authenticator app": [
-        "App autenticadora"
+        "Aplicación de autenticación"
       ],
       "Code is 6 digits without spaces": [
         "El código es de 6 dígitos sin espacios"
@@ -1148,7 +1148,7 @@
         "Código de verificación"
       ],
       "Your password (admin)": [
-        "La contraseña (admin)"
+        "Tu contraseña (admin)"
       ]
     },
     "Link": {
@@ -1542,7 +1542,7 @@
         "Ingrese el código 2FA"
       ],
       "Enter your password": [
-        "Ingrese la contraseña"
+        "Introduce tu contraseña"
       ],
       "Human verification": [
         "Verificación humana"

@@ -439,6 +439,9 @@
       "Pause monitoring": [
         "Pausa övervakning"
       ],
+      "Pay once": [
+        "Betala en gång"
+      ],
       "Pin item": [
         "Fäst objekt"
       ],
@@ -1856,6 +1859,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -2625,6 +2632,9 @@
       "Browse faster, smarter": [
         "Surfa snabbare, smartare"
       ],
+      "Built-in 2FA": [
+        "Inbyggd 2FA"
+      ],
       "Capital letters (A-Z)": [
         "Versaler (A–Ö)"
       ],
@@ -2709,6 +2719,9 @@
       "Created at": [
         "Skapad"
       ],
+      "Credit cards": [
+        "Kreditkort"
+      ],
       "Custom hidden field": [
         "Anpassat dolt fält"
       ],
@@ -2781,6 +2794,9 @@
       "Export": [
         "Exportera"
       ],
+      "Extra email addresses": [
+        "Extra e-postadresser"
+      ],
       "Extra password": [
         "Extralösenord"
       ],
@@ -2792,6 +2808,9 @@
       ],
       "Field name": [
         "Fältnamn"
+      ],
+      "File attachments": [
+        "Filbilagor"
       ],
       "File format": [
         "Filformat"
@@ -2811,6 +2830,9 @@
       "Forwards to": [
         "Vidarebefordras till"
       ],
+      "Free": [
+        "Free"
+      ],
       "Free forever": [
         "Gratis för alltid"
       ],
@@ -2829,6 +2851,12 @@
       "Generic CSV": [
         "Generisk CSV"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Skaffa ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Skaffa ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "Kom igång"
       ],
@@ -2846,6 +2874,9 @@
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-alias"
+      ],
+      "Highest": [
+        "Högsta"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Hur man låser upp ${ PASS_SHORT_APP_NAME }"
@@ -2942,6 +2973,9 @@
       ],
       "License number": [
         "Körkortsnummer"
+      ],
+      "Limited time": [
+        "Begränsad tid"
       ],
       "LinkedIn account": [
         "LinkedIn-konto"
@@ -3093,6 +3127,9 @@
       "PIN code": [
         "PIN-kod"
       ],
+      "Plus": [
+        "Plus"
+      ],
       "Prefix": [
         "Prefix"
       ],
@@ -3219,6 +3256,9 @@
       "Status": [
         "Status"
       ],
+      "Storage": [
+        "Lagringsutrymme"
+      ],
       "Street address": [
         "Gatuadress"
       ],
@@ -3245,6 +3285,9 @@
       ],
       "Text": [
         "Text"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Det bästa av ${ BRAND_NAME } med en prenumeration"
       ],
       "The URL has been copied to the clipboard": [
         "URL:en har kopierats till urklipp"
@@ -3281,6 +3324,12 @@
       ],
       "Unknown": [
         "Okänd"
+      ],
+      "Unlimited": [
+        "Obegränsat"
+      ],
+      "Unlock premium features": [
+        "Lås upp premiumfunktioner"
       ],
       "Unlock with": [
         "Lås upp med"
@@ -3321,6 +3370,9 @@
       "Vault ID": [
         "Valv-ID"
       ],
+      "Vault, item & link sharing": [
+        "Delning av valv, objekt och länk"
+      ],
       "Vaults": [
         "Valv"
       ],
@@ -3329,6 +3381,12 @@
       ],
       "View logs": [
         "Visa loggar"
+      ],
+      "VPN Devices": [
+        "VPN-enheter"
+      ],
+      "VPN Speed": [
+        "VPN-hastighet"
       ],
       "Vulnerable": [
         "Sårbart"
@@ -3341,6 +3399,9 @@
       ],
       "Websites": [
         "Webbplatser"
+      ],
+      "What's included": [
+        "Vad som är inkluderat"
       ],
       "Work details": [
         "Arbetsdetaljer"
@@ -3390,6 +3451,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Aktivera ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Menu": {
@@ -3567,6 +3633,11 @@
       ],
       "You can attach files to items for a better organization": [
         "Du kan bifoga filer till objekt för en bättre organisering"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ price }/month": [
+        "${ price }/månad"
       ]
     },
     "Placeholder": {
@@ -3835,8 +3906,14 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME }-adresser"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Kontoskydd"
@@ -4113,6 +4190,9 @@
       ],
       "Pause monitoring?": [
         "Pausa övervakning?"
+      ],
+      "Pay once, access forever.": [
+        "Betala en gång, åtkomst för alltid."
       ],
       "Pending access confirmation": [
         "Väntande åtkomstbekräftelse"

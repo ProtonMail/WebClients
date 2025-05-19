@@ -107,9 +107,6 @@
       "Attention required": [
         "Pozornost!"
       ],
-      "Authenticate": [
-        "Preverjanje pristnosti"
-      ],
       "Back": [
         "Nazaj"
       ],
@@ -337,9 +334,6 @@
       ],
       "Export selection as .vcf": [
         "Izvozi izbor kot .vcf"
-      ],
-      "Forgot password?": [
-        "Pozabljeno geslo?"
       ],
       "Forward as attachment": [
         "Posreduj kot priponko"
@@ -839,14 +833,8 @@
       "Use a different payment method": [
         "Uporabite drug način plačila"
       ],
-      "Use authentication code": [
-        "Uporabi kodo za preverjanje pristnosti"
-      ],
       "Use for sending": [
         "Uporabi za pošiljanje"
-      ],
-      "Use recovery code": [
-        "Uporabi kodo za obnovitev"
       ],
       "Verify": [
         "Preveri"
@@ -4013,24 +4001,6 @@
         "Neomejeno število vzdevkov hide-my-email"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vstavite varnostni ključ, povezan z vašim računom ${ BRAND_NAME }."
-      ],
-      "Security key": [
-        "Varnostni ključ"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Varnostni ključ"
-      ]
-    },
     "file size format": {
       "byte": [
         "bajt",
@@ -4957,9 +4927,6 @@
       "Duplicate key updated": [
         "Podvojeni ključ je posodobljen"
       ],
-      "Each code can only be used once": [
-        "Vsaka koda se lahko uporabi samo enkrat"
-      ],
       "Edit email address": [
         "Uredi e-poštni naslov"
       ],
@@ -4978,20 +4945,11 @@
       "Enabling auto-deletion…": [
         "Omogočanje samodejnega brisanja …"
       ],
-      "Enter the code from your authenticator app": [
-        "Vnesite kodo iz aplikacije za preverjanje pristnosti"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Vnesite poverilnice e-poštnega računa, iz katerega želite uvoziti podatke."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vnesite kodo za preverjanje, ki je bila poslana na ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Vnesite potrditveno kodo. Števka ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Predvideni preostali čas: ${ estimatedMinutes } minuta",
@@ -5614,9 +5572,6 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Ko se povežete z VPN, ta uporablja tehnologijo šifriranja, da skrije vaš IP naslov (edinstvena koda, dodeljena vaši napravi)."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
-      ],
       "Which event would you like to delete?": [
         "Kateri dogodek želite izbrisati?"
       ],
@@ -6053,9 +6008,6 @@
       "Attach screenshot(s)": [
         "Priloži posnetke zaslona"
       ],
-      "Authenticator app": [
-        "Aplikacija za preverjanje pristnosti"
-      ],
       "Beta Access": [
         "Dostop beta"
       ],
@@ -6235,6 +6187,9 @@
       ],
       "Import to:": [
         "Uvozi v:"
+      ],
+      "Integrated 2FA authenticator": [
+        "Vgrajen modul za preverjanje pristnosti 2FA"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Bližnjica na tipkovnici: ${ shortcut }"
@@ -6478,9 +6433,6 @@
       ],
       "Your location": [
         "Vaša lokacija"
-      ],
-      "Your password (admin)": [
-        "Vaše geslo (admin)"
       ]
     },
     "Label for contact group color": {
@@ -6917,6 +6869,9 @@
       ]
     },
     "Monthly recurring event, repeats on": {
+      "on the ${ shortenedDay }": [
+        "na ${ shortenedDay }"
+      ],
       "on the first Friday": [
         "prvi petek"
       ],
@@ -7045,6 +7000,11 @@
         "Srednja hitrost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Izbriši račun"
@@ -7066,11 +7026,6 @@
       ],
       "Switch plan": [
         "Zamenjaj paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
       ]
     },
     "new_plans: feature": {
@@ -7666,6 +7621,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Od ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Znižana cena ${ priceCoupon } velja za prvi mesec. Nato se bo samodejno obnovila po ceni ${ priceLine }. Naročnino lahko kadar koli prekličete."
       ]
@@ -8256,6 +8214,9 @@
       ]
     },
     "Offer feature": {
+      "+10 more premium features": [
+        "+Še 10 premijskih funkcij"
+      ],
       "Custom email domain": [
         "E-poštna domena po meri"
       ],
@@ -9605,47 +9566,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB prostora za shranjevanje"
-      ],
-      "and 15 more premium features": [
-        "in še 15 premijskih funkcij"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Samodejno posredovanje e-pošte ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Namizna aplikacija"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
-      ],
-      "No ads or tracking": [
-        "Brez oglasov ali sledenja"
-      ],
-      "Short @pm.me email address": [
-        "Kratek e-poštni naslov @pm.me"
-      ],
-      "Support our mission": [
-        "Podprite naše poslanstvo"
-      ],
-      "Upgrade": [
-        "Prehod na plačljiv paket"
-      ],
-      "Upgrade your productivity": [
-        "Povečajte svojo storilnost"
-      ],
-      "We don't sell your data": [
-        "Vaših podatkov ne prodajamo"
-      ],
-      "Your privacy is our mission": [
-        "Vaša zasebnost je naše poslanstvo"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } in ${ VPN_SHORT_APP_NAME } s premijskimi funkcijami"
@@ -9865,6 +9785,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Vaš kratek e-poštni vzdevek @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "and 15 more premium features": [
+        "in še 15 premijskih funkcij"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Samodejno posredovanje e-pošte ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Namizna aplikacija"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
+      ],
+      "No ads or tracking": [
+        "Brez oglasov ali sledenja"
+      ],
+      "Short @pm.me email address": [
+        "Kratek e-poštni naslov @pm.me"
+      ],
+      "Support our mission": [
+        "Podprite naše poslanstvo"
+      ],
+      "Upgrade": [
+        "Prehod na plačljiv paket"
+      ],
+      "Upgrade your productivity": [
+        "Povečajte svojo storilnost"
+      ],
+      "We don't sell your data": [
+        "Vaših podatkov ne prodajamo"
+      ],
+      "Your privacy is our mission": [
+        "Vaša zasebnost je naše poslanstvo"
       ]
     },
     "Subscription renewal state": {
@@ -10488,9 +10449,6 @@
       "Enter 2FA code": [
         "Vnesite kodo 2FA"
       ],
-      "Enter your password": [
-        "Vnesite geslo"
-      ],
       "Error": [
         "Napaka"
       ],
@@ -11052,6 +11010,12 @@
         "${ numberOfServers } v ${ numberOfCountries } državah",
         "${ numberOfServers } v ${ numberOfCountries } državah",
         "${ numberOfServers } v ${ numberOfCountries } državah"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Strežniki v več kot ${ numberOfCountries } državi",
+        "Strežniki v več kot ${ numberOfCountries } državah",
+        "Strežniki v več kot ${ numberOfCountries } državah",
+        "Strežniki v več kot ${ numberOfCountries } državah"
       ]
     },
     "vpn_2024: renew": {

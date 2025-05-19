@@ -42,6 +42,9 @@
       "Activate recovery": [
         "पुनर्प्राप्ति सक्रिय करें"
       ],
+      "Active": [
+        "सक्रिय"
+      ],
       "Add": [
         "जोड़ें"
       ],
@@ -141,9 +144,6 @@
       ],
       "Attention required": [
         "ध्यान दें"
-      ],
-      "Authenticate": [
-        "सत्यापन करें"
       ],
       "Auto-delete spam and trash": [
         "स्पैम और ट्रैश को स्वचालित रूप से हटाएं"
@@ -450,9 +450,6 @@
       "Email settings": [
         "ईमेल सेटिंग"
       ],
-      "Emoji": [
-        "इमोजी"
-      ],
       "Enable": [
         "सक्षम करें"
       ],
@@ -513,9 +510,6 @@
       "Font": [
         "फॉन्ट"
       ],
-      "Forgot password?": [
-        "पासवर्ड भूल गए?"
-      ],
       "Formalize": [
         "संक्षेपित करें"
       ],
@@ -541,6 +535,9 @@
         "शुरू करें"
       ],
       "Get the app": [
+        "ऐप प्राप्त करें"
+      ],
+      "Get the apps": [
         "ऐप प्राप्त करें"
       ],
       "Get the browser extension": [
@@ -599,6 +596,9 @@
       ],
       "Hide toolbar": [
         "टूलबार छिपाएँ"
+      ],
+      "hide-my-email aliases": [
+        "hide-my-email नकलीनाम"
       ],
       "I like this response": [
         "मुझे यह उत्तर पसंद है"
@@ -1045,6 +1045,9 @@
       "Restore": [
         "रिस्टोर करें"
       ],
+      "Resubscribe": [
+        "पुन: सदस्यता लें"
+      ],
       "Resume": [
         "जारी रखें"
       ],
@@ -1096,10 +1099,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } चुनें"
       ],
-      "Select all": [
+      "Select All": [
         "सब चुनें"
       ],
-      "Select All": [
+      "Select all": [
         "सब चुनें"
       ],
       "Select all messages": [
@@ -1155,6 +1158,9 @@
       ],
       "Set recovery phrase": [
         "पुनर्प्राप्ति वाक्यांश सेट करें"
+      ],
+      "Set up email forwarding": [
+        "ईमेल फॉरवर्ड सेट अप करें"
       ],
       "Settings": [
         "सेटिंग"
@@ -1336,6 +1342,9 @@
       "Unsubscribe": [
         "सदस्यता रद्द करें"
       ],
+      "Unsubscribed": [
+        "सदस्यता छोड़ दी गई"
+      ],
       "Unsubscribing": [
         "सदस्यता रद्द हो रही है"
       ],
@@ -1375,14 +1384,8 @@
       "Use a different payment method": [
         "अन्य भुगतान विधि का उपयोग करें"
       ],
-      "Use authentication code": [
-        "सत्यापन कोड इस्तेमाल करें"
-      ],
       "Use for sending": [
         "भेजने के लिए इस्तेमाल करें"
-      ],
-      "Use recovery code": [
-        "रिकवरी कोड इस्तेमाल करें"
       ],
       "Use this": [
         "इस्तेमाल करें"
@@ -3477,6 +3480,11 @@
         "ऑलैंड द्वीप"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "सभी ${ BRAND_NAME } सेवाओं के लिए"
+      ]
+    },
     "CustomFilter": {
       "Attachment": [
         "अटैचमेंट"
@@ -3809,6 +3817,9 @@
       ],
       "All events in this series were updated.": [
         "इस श्रृंखला में सभी कार्यक्रमों को अपडेट किया गया था।"
+      ],
+      "Here's what changed:": [
+        "यहां देखें क्या बदलाव हुए हैं:"
       ],
       "This event occurrence was canceled.": [
         "इस कार्यक्रम घटना रद्द कर दी गई।"
@@ -4898,24 +4909,6 @@
         "असीमित Hide-my-email नकलीनाम"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "आपकी सुरक्षा चाबी सत्यापित करते वक्त कुछ गलती हो गई। वापस कोशिश करें।"
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "अपने ${ BRAND_NAME } खाते से जुड़ा एक सुरक्षा चाबी डालें।"
-      ],
-      "Security key": [
-        "सुरक्षा चाबी"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "सुरक्षा चाबी"
-      ]
-    },
     "file size format": {
       "byte": [
         "बाइट",
@@ -5691,6 +5684,9 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } से आयात करें"
+      ],
+      "Import from Outlook": [
+        "Outlook से आयात करे"
       ]
     },
     "Import warning": {
@@ -5903,6 +5899,10 @@
       "${ total } message": [
         "${ total } संदेश",
         "${ total } संदेश"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } ईमेल ट्रैकर ब्लॉक किया गया",
+        "${ trackersCount } ईमेल ट्रैकर ब्लॉक किए गए"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } शेड्यूल संदेश",
@@ -6344,9 +6344,6 @@
       "Duplicate key updated": [
         "डुप्लिकेट कुंजी अपडेट की गई"
       ],
-      "Each code can only be used once": [
-        "हर कूटक का उपयोग केवल एक बार हो सकता है"
-      ],
       "Edit email address": [
         "ईमेल पता संपादित करें"
       ],
@@ -6399,20 +6396,11 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "डेस्कटॉप ऐप के साथ तेज़ और केंद्रित ईमेलिंग अनुभव का आनंद लें।"
       ],
-      "Enter the code from your authenticator app": [
-        "अपने प्रमाणिक ऐप से कोड दर्ज करें"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "आप जिस ईमेल खाते से आयात करना चाहते हैं, उसके क्रेडेंशियल दर्ज करें।"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "वह सत्यापन कोड दर्ज करें जो ${ destinationText } को भेजा गया था।"
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "सत्यापन कोड डालें। ${ digit } अंक का।"
-      ],
-      "Enter your own password (as organization admin).": [
-        "अपना स्वयं का पासवर्ड दर्ज करें (संगठन व्यवस्थापक के रूप में)।"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "अनुमानित समय शेष: ${ estimatedMinutes } मिनट",
@@ -6584,7 +6572,8 @@
         "शुरू किया जा रहा है…"
       ],
       "Insert image": [
-        "तस्वीर डालें"
+        "तस्वीर डालें",
+        "तस्वीरें डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -6814,6 +6803,9 @@
       "Open shortcut cheat sheet": [
         "शॉर्टकट चीट शीट खोलें"
       ],
+      "Optional": [
+        "वैकल्पिक"
+      ],
       "or discover other features:": [
         "या अन्य सुविधाओं का पता लगाएँ:"
       ],
@@ -6945,6 +6937,9 @@
       "Proofread text": [
         "टेक्स्ट का प्रूफरीड करें"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "${ hideMyEmailAliasesLink } के साथ अपने ईमेल को मेलिंग सूचियों या स्पैमर्स को लीक होने से बचाएं।"
+      ],
       "Public sharing of documents is not yet supported.": [
         "दस्तावेजों का सार्वजनिक साझा करना अभी तक समर्थित नहीं है।"
       ],
@@ -7068,6 +7063,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "अपने ${ MAIL_APP_NAME } को डिफ़ॉल्ट ईमेल एप्लीकेशन के रूप में सेट करें। ${ MAIL_APP_NAME } स्वचालित रूप से खुलेगा जब आप किसी ईमेल लिंक पर क्लिक करेंगे।"
+      ],
+      "Set up your organization": [
+        "अपना संगठन स्थापित करें"
       ],
       "Setting up ${ feature }…": [
         "${ feature } सेटअप किया जा रहा है…"
@@ -7417,6 +7415,9 @@
       "Unsaved changes": [
         "सेव नहीं बदलाव"
       ],
+      "Unsubscribe": [
+        "सदस्यता रद्द"
+      ],
       "Unsupported file": [
         "असमर्थित फ़ाइल"
       ],
@@ -7510,6 +7511,9 @@
       "Visa Secure logo": [
         "Visa सेक्योर लोगो"
       ],
+      "VPN IP": [
+        "VPN IP"
+      ],
       "Warning": [
         "चेतावनी"
       ],
@@ -7572,9 +7576,6 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "जब आपने ${ senderName } के लिए विश्वसनीय कुंजियाँ सक्षम कीं, तो सार्वजनिक कुंजी संपर्क विवरणों में जोड़ दी गई।"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "जब आप टू-फैक्टर ऑथेंटिकेशन सेट करते हैं, तो हम रिकवरी कोड प्रदान करते हैं जिनका उपयोग आप अपने ऑथेंटिकेटर ऐप का एक्सेस खो देने पर साइन इन करने के लिए कर सकते हैं।"
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "जब आप न्यूज़लेटर के लिए साइन अप करते हैं, तो अपने ईमेल पते के बजाय एक नकली-नाम का उपयोग करें। आपकी पहचान छिपी रहती है, और आप कभी भी नकली-नाम को अक्षम कर सकते हैं।"
@@ -8177,9 +8178,6 @@
       "Attach screenshot(s)": [
         "स्क्रीनशॉट(स) संलग्न करें"
       ],
-      "Authenticator app": [
-        "प्रमाणीकरण अनुप्रयोग"
-      ],
       "BCC": [
         "बीसीसी"
       ],
@@ -8680,9 +8678,6 @@
       ],
       "Your alias": [
         "आपका उपनाम"
-      ],
-      "Your password (admin)": [
-        "आपका पासवर्ड (व्यवस्थापक)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9434,6 +9429,9 @@
       ],
       "${ size } storage": [
         "${ size } स्टोरेज"
+      ],
+      "${ size } storage per user": [
+        "${ size } स्टोरेज हर यूज़र पे"
       ],
       "1 TB secure storage": [
         "1 टीबी सुरक्षित स्टोरेज"
@@ -10716,6 +10714,12 @@
       "Select billing country to pay": [
         "भुगतान के लिए बिलिंग देश चुनें"
       ],
+      "terms & conditions": [
+        "नियम और शर्तें"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ renewPriceStr } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
+      ],
       "Timeout exceeded": [
         "Timeout exceeded"
       ]
@@ -10840,6 +10844,9 @@
       ],
       "Name or email address": [
         "नाम या ईमेल पता"
+      ],
+      "Organization name": [
+        "संगठन नाम"
       ],
       "Password": [
         "पासवर्ड"
@@ -11952,47 +11959,6 @@
         "के लिए ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 जीबी स्टोरेज"
-      ],
-      "and 15 more premium features": [
-        "और 15 अन्य प्रीमियम सुविधाएँ"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "डाटा लीक अलर्ट ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "डेस्कटॉप ऐप"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
-      ],
-      "No ads or tracking": [
-        "कोई विज्ञापन या ट्रैकिंग नहीं"
-      ],
-      "Short @pm.me email address": [
-        "छोटा @pm.me ईमेल पता"
-      ],
-      "Support our mission": [
-        "हमारे मिशन का समर्थन करें"
-      ],
-      "Upgrade": [
-        "अपग्रेड करें"
-      ],
-      "Upgrade your productivity": [
-        "अपनी उत्पादकता बढ़ाएँ"
-      ],
-      "We don't sell your data": [
-        "हम आपका डाटा नहीं बेचते"
-      ],
-      "Your privacy is our mission": [
-        "आपकी निजता हमारा मिशन है"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, और ${ VPN_SHORT_APP_NAME } प्रीमियम सुविधाओं के साथ"
@@ -12253,6 +12219,47 @@
         "आपका अपना छोटा @pm.me ईमेल नकली-नाम"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "and 15 more premium features": [
+        "और 15 अन्य प्रीमियम सुविधाएँ"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "डाटा लीक अलर्ट ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
+      ],
+      "No ads or tracking": [
+        "कोई विज्ञापन या ट्रैकिंग नहीं"
+      ],
+      "Short @pm.me email address": [
+        "छोटा @pm.me ईमेल पता"
+      ],
+      "Support our mission": [
+        "हमारे मिशन का समर्थन करें"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
+      ],
+      "Upgrade your productivity": [
+        "अपनी उत्पादकता बढ़ाएँ"
+      ],
+      "We don't sell your data": [
+        "हम आपका डाटा नहीं बेचते"
+      ],
+      "Your privacy is our mission": [
+        "आपकी निजता हमारा मिशन है"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "पक्का?"
@@ -12277,6 +12284,11 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "हमारा सिस्टम अब इस भुगतान विधि का उपयोग करके आपको स्वतः चार्ज नहीं करेगा, लेकिन आपकी सदस्यता बिलिंग चक्र के अंत में अभी भी नवीनीकृत होगी। यदि आप अपनी सदस्यता को डाउनग्रेड या बदलना चाहते हैं, तो आपको बिलिंग अवधि समाप्त होने से पहले खुद ऐसा करना होगा। हम आपको स्वचालित रूप से डाउनग्रेड नहीं कर सकते क्योंकि यदि आप Free योजना की स्टोरेज सीमा से अधिक या अन्य भुगतान की गई सुविधाओं का उपयोग कर रहे हैं, तो हम आपके लिए फ़ाइलें, ईमेल, या अन्य डेटा स्वचालित रूप से हटा नहीं सकते। यदि आप स्वचालित भुगतान अक्षम करते हैं, तो खाते को निलंबित होने से रोकने के लिए नियत तारीख से पहले अपनी अगली सदस्यता रसीद का भुगतान करना याद रखें।"
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "${ priceString } की छूट"
       ]
     },
     "Success": {
@@ -12810,6 +12822,9 @@
       "Add to ${ groupName }": [
         "${ groupName } में जोड़ें"
       ],
+      "Add user": [
+        "उपयोगकर्ता जोड़ें"
+      ],
       "Addresses": [
         "पतों"
       ],
@@ -13055,9 +13070,6 @@
       "Enter 2FA code": [
         "2-एफए कोड डालें"
       ],
-      "Enter your password": [
-        "आपका पासवर्ड डालें"
-      ],
       "Error": [
         "गड़बड़"
       ],
@@ -13193,6 +13205,9 @@
       ],
       "Minicalendar": [
         "छोटा-कैलेंडर"
+      ],
+      "Mobile": [
+        "मोबाइल"
       ],
       "More": [
         "और"
@@ -13428,8 +13443,14 @@
       "Set up ${ protonDuoPlanName }": [
         "सेटअप करें ${ protonDuoPlanName }"
       ],
+      "Set up email forwarding": [
+        "ईमेल फॉरवर्ड सेट अप करें"
+      ],
       "Set up your family account": [
         "अपना परिवार खाता सेट करें"
+      ],
+      "Set up your organization": [
+        "अपना संगठन स्थापित करें"
       ],
       "Settings": [
         "सेटिंग्स"
@@ -13717,6 +13738,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "${ numberOfCountries } देश से स्वतः चयनित",
         "${ numberOfCountries } देशों से स्वतः चयनित"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries }+ देश में सर्वर",
+        "${ numberOfCountries }+ देशों में सर्वर"
       ]
     },
     "vpn_2024: renew": {
@@ -14111,6 +14136,11 @@
       ],
       "Yearly, ${ untilString }": [
         "वार्षिक, ${ untilString }"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "ज़ूम मीटिंग में शामिल हों"
       ]
     },
     "Zoom Meeting": {
