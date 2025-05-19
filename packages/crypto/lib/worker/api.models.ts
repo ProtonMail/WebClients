@@ -47,7 +47,6 @@ export interface WorkerDecryptionOptions
     decryptionKeys?: MaybeArray<PrivateKeyReference>;
     sessionKeys?: MaybeArray<SessionKey>;
     config?: PartialConfig;
-    handleMalformedIcsAttachmentContent?: boolean;
 }
 export interface WorkerDecryptionResult<T extends Data> extends Omit<DecryptResultPmcrypto<T>, 'signatures'> {
     signatures: Uint8Array[];
