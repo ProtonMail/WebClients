@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -24,8 +24,6 @@ import { getToAppName } from '@proton/shared/lib/authentication/apps';
 import { type APP_NAMES, BRAND_NAME, MAIL_APP_NAME, SECOND } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { Api } from '@proton/shared/lib/interfaces';
-import { useFlagsStatus } from '@proton/unleash/index';
-import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import type { Paths } from '../../content/helper';
@@ -55,8 +53,6 @@ type State =
 
 const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartAuth }: Props) => {
     const [result, setResult] = useState<State>(null);
-    const qrCodeSignInEnabled = useFlag('QRCodeSignIn');
-    const { flagsReady } = useFlagsStatus();
     const { APP_NAME } = useConfig();
     const [persistent] = useLocalState(false, defaultPersistentKey);
     const getKtActivation = useGetAccountKTActivation();
@@ -135,10 +131,6 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
     }, []);
 
     const toAppName = getToAppName(toApp);
-
-    if (flagsReady && !qrCodeSignInEnabled) {
-        return <Redirect to={paths.login} />;
-    }
 
     if (result?.type === 'error') {
         return (
