@@ -1,3 +1,4 @@
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
@@ -17,23 +18,33 @@ describe('locationAsideHelpers', () => {
         } as MailSettings;
 
         it('should return scheduled message text when shouldDisplayTotal is true with singular form', () => {
-            const result = getUnreadTitle(true, 1, mockMailSettings);
+            const result = getUnreadTitle(true, 1, mockMailSettings, MAILBOX_LABEL_IDS.INBOX);
             expect(result).toBe('1 scheduled message');
         });
 
         it('should return scheduled message text when shouldDisplayTotal is true with plural form', () => {
-            const result = getUnreadTitle(true, 5, mockMailSettings);
+            const result = getUnreadTitle(true, 5, mockMailSettings, MAILBOX_LABEL_IDS.INBOX);
             expect(result).toBe('5 scheduled messages');
         });
 
         it('should return unread conversations text when shouldDisplayTotal is false and ViewMode is GROUP', () => {
-            const result = getUnreadTitle(false, 5, mockMailSettings);
+            const result = getUnreadTitle(false, 5, mockMailSettings, MAILBOX_LABEL_IDS.INBOX);
             expect(result).toBe('5 unread conversations');
         });
 
         it('should return unread messages text when shouldDisplayTotal is false and ViewMode is not GROUP', () => {
-            const result = getUnreadTitle(false, 5, { ViewMode: VIEW_MODE.SINGLE } as MailSettings);
+            const result = getUnreadTitle(
+                false,
+                5,
+                { ViewMode: VIEW_MODE.SINGLE } as MailSettings,
+                MAILBOX_LABEL_IDS.INBOX
+            );
             expect(result).toBe('5 unread messages');
+        });
+
+        it('should return unread newsletter subscriptions when in the newsletter subscriptions view', () => {
+            const result = getUnreadTitle(false, 5, mockMailSettings, CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS);
+            expect(result).toBe('5 newsletter subscriptions');
         });
     });
 
