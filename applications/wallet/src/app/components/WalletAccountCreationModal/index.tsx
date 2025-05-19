@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { WasmScriptType } from '@proton/andromeda';
-import Href from '@proton/atoms/Href/Href';
+import { Href } from '@proton/atoms';
 import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';

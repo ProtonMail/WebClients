@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/index';
+import { Button } from '@proton/atoms';
 
 import type { FeatureProps, SUPPORTED_PRODUCTS } from '../interface';
 import { PostSignupOneDollarFooter } from './PostSignupOneDollarFooter';

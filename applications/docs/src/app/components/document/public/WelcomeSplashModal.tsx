@@ -5,7 +5,7 @@ import { ModalTwo, ModalTwoContent, ModalTwoFooter, PrimaryButton, useModalTwoSt
 import { useState } from 'react'
 import { DOCS_APP_NAME, DOCS_SHORT_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { useDocsContext } from '../context'
-import { Button } from '@proton/atoms/index'
+import { Button } from '@proton/atoms'
 import EncryptedBanner from '@proton/styles/assets/img/docs/encrypted-bg.png'
 import type { PublicDocumentState } from '@proton/docs-core'
 import type { EditorControllerInterface } from '@proton/docs-core'

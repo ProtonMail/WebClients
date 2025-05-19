@@ -3,7 +3,7 @@ import { type ReactElement, type ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { DashboardCard, DashboardCardContent } from '@proton/atoms/index';
+import { DashboardCard, DashboardCardContent } from '@proton/atoms';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { IcChevronRight } from '@proton/icons';
