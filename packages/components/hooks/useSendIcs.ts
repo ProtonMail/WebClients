@@ -78,8 +78,6 @@ const useSendIcs = () => {
             const attachment = {
                 Filename: packets.Filename,
                 MIMEType: packets.MIMEType,
-                // TODO: `concatenatedPackets` is not a valid openpgp encrypted message; change to
-                // `Contents = packets.data`
                 Contents: uint8ArrayToBase64String(concatenatedPackets),
                 KeyPackets: uint8ArrayToBase64String(packets.keys),
                 Signature: packets.signature ? uint8ArrayToBase64String(packets.signature) : undefined,
