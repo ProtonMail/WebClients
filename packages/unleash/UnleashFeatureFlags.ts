@@ -40,7 +40,7 @@ enum CommonFeatureFlag {
     B2BOnboarding = 'B2BOnboarding',
     InboxBringYourOwnEmail = 'InboxBringYourOwnEmail',
     LumoPlusFrontend = 'LumoPlusFrontend',
-    CryptoEnforceOpenpgpGrammar = 'CryptoEnforceOpenpgpGrammar'
+    CryptoEnforceOpenpgpGrammar = 'CryptoEnforceOpenpgpGrammar',
 }
 
 enum AccountFlag {
@@ -118,7 +118,6 @@ enum DriveFeatureFlag {
     // Albums
     DriveAlbums = 'DriveAlbums',
     DriveAlbumsDisabled = 'DriveAlbumsDisabled',
-    DriveAlbumsTempDisabledOnRelease = 'DriveAlbumsTempDisabledOnRelease',
     DriveAlbumsNewVolumes = 'DriveAlbumsNewVolumes',
     // One-dollar offer
     DrivePostSignupOneDollarPromo = 'DrivePostSignupOneDollarPromo',

@@ -28,7 +28,6 @@ import {
 } from '../../../store';
 import { isPhotoGroup } from '../../../store/_photos';
 import { AlbumsPageTypes } from '../../../zustand/photos/layout.store';
-import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosAddAlbumPhotosButton } from './PhotosAddAlbumPhotosButton';
 import { PhotosAddToAlbumButton } from './PhotosAddToAlbumButton';
@@ -297,7 +296,6 @@ const ToolbarRightActionsAlbumGallery = ({
     const { viewportWidth } = useActiveBreakpoint();
     const showIconOnly = !viewportWidth['>=large'];
     const showUploadButton = !album.permissions.isOwner && !uploadDisabled;
-    const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
     const showAddAlbumsButton =
         (album.permissions.isOwner || album.permissions.isAdmin || album.permissions.isEditor) && !driveAlbumsDisabled;
     return (
@@ -340,7 +338,7 @@ const ToolbarRightActionsAlbumGallery = ({
                     <span className={clsx(showIconOnly && 'sr-only')}>{c('Action').t`Download`}</span>
                 </ToolbarButton>
             )}
-            {!isAlbumsWithSharingDisabled && album.permissions.isOwner && (
+            {album.permissions.isOwner && (
                 <PhotosAlbumShareButton
                     showIconOnly={showIconOnly}
                     onClick={() => {
@@ -469,7 +467,6 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
             selectedItems.every(({ parentLinkId }) => parentLinkId !== rootLinkId)
     );
     const canRemoveAlbum = Boolean(album && album.permissions.isEditor && removeAlbumPhotos && !driveAlbumsDisabled);
-    const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
     const canShare = Boolean(
         (openSharePhotoModal && !hasMultipleSelected && !album) ||
             (!hasMultipleSelected && album && album.permissions.isAdmin)
@@ -526,14 +523,14 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         {canSelectCover && (
                             <PhotosMakeCoverButton showIconOnly={showIconOnly} onSelectCover={onSelectCover!} />
                         )}
-                        {!isAlbumsWithSharingDisabled && canShare && (
+                        {canShare && (
                             <PhotosShareLinkButton
                                 showIconOnly={showIconOnly}
                                 selectedLink={selectedItems[0]}
                                 onClick={openSharePhotoModal!}
                             />
                         )}
-                        {!isAlbumsWithSharingDisabled && canShareMultiple && (
+                        {canShareMultiple && (
                             <PhotosShareMultipleLinkButton
                                 showIconOnly={showIconOnly}
                                 onClick={openSharePhotosIntoAnAlbumModal!}
@@ -571,7 +568,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                                     onSelectCover={onSelectCover!}
                                 />
                             )}
-                            {!isAlbumsWithSharingDisabled && canShare && (
+                            {canShare && (
                                 <PhotosShareLinkButton
                                     dropDownMenuButton={true}
                                     showIconOnly={false}
@@ -579,7 +576,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                                     onClick={openSharePhotoModal!}
                                 />
                             )}
-                            {!isAlbumsWithSharingDisabled && canShareMultiple && (
+                            {canShareMultiple && (
                                 <PhotosShareMultipleLinkButton
                                     dropDownMenuButton={true}
                                     showIconOnly={false}
