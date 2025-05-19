@@ -211,6 +211,9 @@
       "Copy address": [
         "მისამართის კოპირება"
       ],
+      "Copy as markdown": [
+        "Markdown-ად კოპირება"
+      ],
       "Copy email to clipboard": [
         "ელფოსტის მისამართის ბაფერში კოპირება"
       ],
@@ -639,11 +642,17 @@
       "Restore": [
         "აღდგენა"
       ],
+      "Restore from trash": [
+        "ნაგვის ყუთიდან აღდგენა"
+      ],
       "Restore this version": [
         "ამ ვერსიის აღდგენა"
       ],
       "Restore this version?": [
         "აღვადგინო ეს ვერსია?"
+      ],
+      "Restoring...": [
+        "აღდგენა..."
       ],
       "Retry": [
         "თავიდან"
@@ -867,14 +876,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია",
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია"
-      ]
-    },
-    "Actions": {
-      "Last viewed first": [
-        "ჯერ ბოლოს ნანახები"
-      ],
-      "Name": [
-        "სახელი"
       ]
     },
     "Actions message": {
@@ -2338,6 +2339,11 @@
         "ინვოისი გადაცილებულია"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } თქვენს ანგარიშს საეჭვო აქტივობებზე 24/7 მონიტორინგით იცავს - საჭიროების შემთხვევაში უსაფრთხოების სპეციალისტების ჩართვით."
@@ -2431,11 +2437,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3450,7 +3451,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "თქვენი უსაფრთხოების გასაღების ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
+        "თქვენი უსაფრთხოების გასაღებით ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
       ]
     },
     "fido2: Info": {
@@ -3947,6 +3948,9 @@
         "${ contactsLength } კონტაქტი",
         "${ contactsLength } კონტაქტი"
       ],
+      "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
+        "${ DOCS_APP_NAME } საშუალებას გაძლევთ, რეალურ დროში იმუშაოთ სხვასთან ერთად გამჭოლი დაშიფვრით, სრული კონფიდენციალობისთვის. შექმენით ასლი, რომ დაიწყოთ ჩასწორება, ან სთხოვთ მფლობელს, ჩასწორების უფლება მოგცეთ."
+      ],
       "${ DOCS_SHORT_APP_NAME } in": [
         "${ DOCS_SHORT_APP_NAME }"
       ],
@@ -4206,8 +4210,8 @@
         "დაცული ღრუბლის შექმნა ${ value } წევრისთვის",
         "დაცული ღრუბლის შექმნა ${ value } წევრისთვის"
       ],
-      "Create an encrypted document.": [
-        "დაშიფრული დოკუმენტის შექმნა."
+      "Create an end-to-end encrypted document.": [
+        "შექმენით თქვენი გამჭოლად დაშიფრული დოკუმენტი."
       ],
       "Create in": [
         "რაში შევქმნა"
@@ -4919,6 +4923,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "ამ მისამართის მფლობელმა გამჭოლი დაშიფვრა გამორთო. იმისათვის, რომ შეგეძლოთ, ამ მისამართზე დაშიფრული შეტყობინებები გააგზავნოთ, მფლობელმა გამჭოლი დაშიფვრა თავიდან უნდა ჩართოს."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
+        "URL, რომელიც შეიყვანეთ, როგორც ჩანს, Slack-დან არასწორად დააკოპირეთ, როცა ბმულებს Slack-დან აკოპირებთ, დააწკაპუნეთ ზედ მარჯვენა ღილაკით და აირჩიეთ \"ბმულის კოპირება\". წინააღმდეგ შემთხვევაში ბმულის ტექსტი წაკვეთილ ვერსიას დააკოპირებთ."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "გადამოწმების პროცესი ბრაუზერის ახალ ჩანართს გახსნის. გთხოვთ, გამორთოთ მხტუნარა ფანჯრებს მბლოკავები."
       ],
@@ -5135,9 +5142,6 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "როცა მიუერთდებით VPN-ს, ის იყენებს დაშიფვრის ტექნოლოგიებს, რომ თქვენი IP მისამართი (თქვენი მოწყობილობისთვის მინიჭებული ნიკალური კოდი) დამალოს."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
-      ],
       "words": [
         "სიტყვა"
       ],
@@ -5218,6 +5222,9 @@
       "You may be redirected to your bank’s website.": [
         "შეიძლება, თქვენი ბანკის ვებგვერდზე გადამისამართდეთ."
       ],
+      "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
+        "შეიძლება, საკმარისი წვდომები არ გაქვთ თქვენი არჩეული ანგარიშით. სცადეთ სხვა ანგარიში, ან დაუკავშირდით მფლობელს წვდომებისთვის."
+      ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "სატარიფო გეგმის ჩამოწევამდე საჭიროა ${ MAIL_APP_NAME }-ის მომხმარებლების, მისამართების და ხელით მითითებული დომენების წაშლა."
       ],
@@ -5269,6 +5276,9 @@
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "თქვენს მიმდინარე ბრაუზერს გაშვებული ასლებს მხარდაჭერის არქონის გამო დიდი ფაილების გადმოწერის საშუალება არ გააჩნია. დააყენეთ ${ recommendedBrowser }-ის ბოლო ვერსია და თავიდან სცადეთ."
+      ],
+      "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
+        "თქვენი მიმდინარე დოკუმენტი ამ ვერსიით ჩანაცვლდება. კომენტარები და მინიშნებები წაიშლება დოკუმენტიდან, მაგრამ დარჩება ხელმისაწვდომად კომენტარების ისტორიაში."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "მონაცემების შემოტანა ${ importedEmailAddressStrong }-დან ${ BRAND_NAME }-ის თქვენს ანგარიშზე მზადაა დასაწყებად."
@@ -6399,6 +6409,17 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "${ priceDrivePlus }-დან დაწყებული სატარიფო გეგმები"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -6420,17 +6441,6 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "${ priceDrivePlus }-დან დაწყებული სატარიფო გეგმები"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
       ]
     },
     "new_plans: feature": {
@@ -8416,6 +8426,20 @@
         "ხელმოწერა"
       ]
     },
+    "Sort menu options": {
+      "Created by": [
+        "შექმნილია"
+      ],
+      "Last viewed first": [
+        "ჯერ ბოლოს ნანახები"
+      ],
+      "Location": [
+        "მდებარეობა"
+      ],
+      "Name": [
+        "სახელი"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "დახურვა"
@@ -8694,6 +8718,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME }-ის პროდუქტების გამოყენების გასაგრძენებლად გაათავისუფლეთ ადგილი, ან ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "ელფოსტის გასაგზავნად ან მისაღებად გაათავისუფლეთ ადგილი ან ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "ფაილების ასატვრთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ upgrade }"
       ],
@@ -8816,6 +8843,25 @@
         "${ totalPrice }-თვის"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace }/მომხმარებელი"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } გაძლევთ ყველა აპს, ყველა ფუნქციას, ადრეულ წვდომას ახალ რელიზებთან და ყველაფერს, რაც გჭირდებათ, რომ მართოთ თქვენი მონაცემები და მისი უსაფრთხოება."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი",
+        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } ელფოსტის მისამართი",
+        "${ planNumberOfEmails } ელფოსტის მისამართი"
+      ],
+      "Folders, labels, and custom filters": [
+        "საქაღალდეები, ჭდეები და მომხმარებლის ფილტრები"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 გბ საცავი"
@@ -8855,25 +8901,6 @@
       ],
       "Your privacy is our mission": [
         "თქვენი კონფიდენციალობა ჩვენი მისიაა"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace }/მომხმარებელი"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } გაძლევთ ყველა აპს, ყველა ფუნქციას, ადრეულ წვდომას ახალ რელიზებთან და ყველაფერს, რაც გჭირდებათ, რომ მართოთ თქვენი მონაცემები და მისი უსაფრთხოება."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი",
-        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } ელფოსტის მისამართი",
-        "${ planNumberOfEmails } ელფოსტის მისამართი"
-      ],
-      "Folders, labels, and custom filters": [
-        "საქაღალდეები, ჭდეები და მომხმარებლის ფილტრები"
       ]
     },
     "Subscription renewal state": {

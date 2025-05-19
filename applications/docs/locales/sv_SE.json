@@ -211,6 +211,9 @@
       "Copy address": [
         "Kopiera adress"
       ],
+      "Copy as markdown": [
+        "Kopiera som markdown"
+      ],
       "Copy email to clipboard": [
         "Kopiera e-post till urklipp"
       ],
@@ -639,11 +642,17 @@
       "Restore": [
         "Återställ"
       ],
+      "Restore from trash": [
+        "Återställ från papperskorgen"
+      ],
       "Restore this version": [
         "Återställ denna version"
       ],
       "Restore this version?": [
         "Återställ denna version?"
+      ],
+      "Restoring...": [
+        "Återställer …"
       ],
       "Retry": [
         "Försök igen"
@@ -867,14 +876,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakt",
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
-      ]
-    },
-    "Actions": {
-      "Last viewed first": [
-        "Senast visad först"
-      ],
-      "Name": [
-        "Namn"
       ]
     },
     "Actions message": {
@@ -2338,6 +2339,11 @@
         "Försenad faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } låter dig arbeta tillsammans med andra i en säker, krypterad miljö."
@@ -2461,11 +2467,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4263,8 +4264,8 @@
         "Skapa ett säkert moln för ${ value } medlem",
         "Skapa ett säkert moln för ${ value } medlemmar"
       ],
-      "Create an encrypted document.": [
-        "Skapa ett krypterat dokument."
+      "Create an end-to-end encrypted document.": [
+        "Skapa ett end-to-end-krypterat dokument."
       ],
       "Create in": [
         "Skapa i"
@@ -6195,6 +6196,9 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ditt konto riskerar att tas bort. För att undvika dataförlust, be din administratör att uppgradera. ${ cta }"
       ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Ditt lagringsutrymme är fullt. För att fortsätta använda ${ BRAND_NAME }-produkter, frigör utrymme eller ${ cta }."
+      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Din prenumeration har upphört. ${ cta } och för att undvika dataförlust."
       ]
@@ -6567,6 +6571,17 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Paket startar från ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -6588,17 +6603,6 @@
       ],
       "Switch plan": [
         "Byt paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Paket startar från ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
       ]
     },
     "new_plans: feature": {
@@ -7180,11 +7184,6 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -7197,6 +7196,11 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -8034,6 +8038,9 @@
         "Det rabatterade priset på ${ priceWithDiscount } gäller den första månaden. Kupongen är giltig för ${ couponRedemptions } förnyelse. Därefter förnyas det automatiskt till ${ renewPriceStr } i 1 månad. Du kan avbryt när som helst.",
         "Det rabatterade priset på ${ priceWithDiscount } gäller den första månaden. Kupongen är giltig för ${ couponRedemptions } förnyelse. Därefter förnyas det automatiskt till ${ renewPriceStr } i 1 månad. Du kan avbryt när som helst."
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltig för den första månaden. Sedan kommer det förnyas den automatiskt med ${ renewPriceStr } varje månad. Du kan avbryta när som helst."
+      ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Därefter förnyas det automatiskt i ${ renewalLength } månad för ${ renewPriceStr }. Du kan avbryta när som helst.",
         "Därefter förnyas det automatiskt i ${ renewalLength } månader för ${ renewPriceStr }. Du kan avbryta när som helst."
@@ -8602,6 +8609,20 @@
         "Signera"
       ]
     },
+    "Sort menu options": {
+      "Created by": [
+        "Skapad av"
+      ],
+      "Last viewed first": [
+        "Senast visad först"
+      ],
+      "Location": [
+        "Plats"
+      ],
+      "Name": [
+        "Namn"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Stäng"
@@ -8874,6 +8895,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "För att fortsätta använda ${ BRAND_NAME }-produkter, frigör utrymme eller ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "För att ladda upp eller synkronisera filer, frigör utrymme eller ${ upgrade }"
       ],
@@ -8996,6 +9020,25 @@
         "För ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } lagringsutrymme per användare"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } anpassad e-postdomän",
+        "${ planNumberOfDomains } anpassade e-postdomäner"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-postadress",
+        "${ planNumberOfEmails } e-postadresser"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mappar, etiketter och anpassade filter"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB lagringsutrymme"
@@ -9035,25 +9078,6 @@
       ],
       "Your privacy is our mission": [
         "Din integritet är vårt uppdrag"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } lagringsutrymme per användare"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } anpassad e-postdomän",
-        "${ planNumberOfDomains } anpassade e-postdomäner"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-postadress",
-        "${ planNumberOfEmails } e-postadresser"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mappar, etiketter och anpassade filter"
       ]
     },
     "Subscription renewal state": {

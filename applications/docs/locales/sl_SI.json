@@ -108,9 +108,6 @@
       "Attention required": [
         "Pozornost!"
       ],
-      "Authenticate": [
-        "Preverjanje pristnosti"
-      ],
       "Back": [
         "Nazaj"
       ],
@@ -645,6 +642,9 @@
       "Restore": [
         "Obnovi"
       ],
+      "Restore from trash": [
+        "Obnovi iz smeti"
+      ],
       "Restore this version": [
         "Obnovi to različico"
       ],
@@ -825,14 +825,8 @@
       "Use a different payment method": [
         "Uporabite drug način plačila"
       ],
-      "Use authentication code": [
-        "Uporabi kodo za preverjanje pristnosti"
-      ],
       "Use for sending": [
         "Uporabi za pošiljanje"
-      ],
-      "Use recovery code": [
-        "Uporabi kodo za obnovitev"
       ],
       "Verify": [
         "Preveri"
@@ -872,11 +866,6 @@
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stikoma ni mogoče.",
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stiki ni mogoče.",
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stiki ni mogoče."
-      ]
-    },
-    "Actions": {
-      "Name": [
-        "Ime"
       ]
     },
     "Actions message": {
@@ -2326,6 +2315,11 @@
         "Zapadel račun"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "uporabite pomočnika za uvoz Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vam omogočata varno in šifrirano sodelovanje z drugimi."
@@ -2425,11 +2419,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ustvarili ste že 10 vzdevkov. Zagotovite si neomejeno število vzdevkov in 500 GB shrambe s paketom ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "uporabite pomočnika za uvoz Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3445,24 +3434,6 @@
         "Neomejeno število vzdevkov hide-my-email"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vstavite varnostni ključ, povezan z vašim računom ${ BRAND_NAME }."
-      ],
-      "Security key": [
-        "Varnostni ključ"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Varnostni ključ"
-      ]
-    },
     "file size format": {
       "byte": [
         "bajt",
@@ -4274,9 +4245,6 @@
       "Create a new contact group": [
         "Ustvari novo skupino stikov"
       ],
-      "Create an encrypted document.": [
-        "Ustvarite šifriran dokument."
-      ],
       "Create in": [
         "Ustvari v"
       ],
@@ -4367,9 +4335,6 @@
       "Duplicate key updated": [
         "Podvojeni ključ je posodobljen"
       ],
-      "Each code can only be used once": [
-        "Vsaka koda se lahko uporabi samo enkrat"
-      ],
       "Edit email address": [
         "Uredi e-poštni naslov"
       ],
@@ -4397,20 +4362,20 @@
       "Enter password": [
         "Vnesite geslo"
       ],
-      "Enter the code from your authenticator app": [
-        "Vnesite kodo iz aplikacije za preverjanje pristnosti"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Vnesite poverilnice e-poštnega računa, iz katerega želite uvoziti podatke."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vnesite kodo za preverjanje, ki je bila poslana na ${ destinationText }."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Vnesite potrditveno kodo. Števka ${ digit }."
-      ],
       "Enter your own password (as organization admin).": [
         "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
+      ],
+      "Error converting document: ${ errorMessage }": [
+        "Napaka pri pretvorbi dokumenta: ${ errorMessage }"
+      ],
+      "Error loading document${ errorDetail }": [
+        "Napaka pri nalaganju dokumenta: ${ errorDetail }"
       ],
       "Error Syncing": [
         "Napaka pri sinhronizaciji"
@@ -4471,6 +4436,9 @@
       ],
       "Geoblocking": [
         "Geoblokiranje"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Prejemajte e-poštna obvestila o komentarjih in predlogih, dodanih v vaše dokumente."
       ],
       "Get Notified About Comments": [
         "Prejemajte obvestila o komentarjih"
@@ -4985,6 +4953,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Lastnik tega naslova je onemogočil šifriranje od konca do konca. Šifrirana sporočila boste na ta naslov lahko pošiljali, če bo lastnik znova omogočil šifriranje od konca do konca."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
+        "Videti je, da je bila URL, ki ste jo vnesli, nepravilno kopirana iz Slacka. Ko kopirate dolge povezave iz Slacka, z desno tipko miške kliknite na povezavo in izberite »Kopiraj povezavo« namesto, da bi neposredno kopirali skrajšano besedilo URL."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Postopek preverjanja bo odprl nov zavihek brskalnika. Pred tem onemogočite prepoved pojavnih oken."
       ],
@@ -5194,9 +5165,6 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Ko se povežete z VPN, ta uporablja tehnologijo šifriranja, da skrije vaš IP naslov (edinstvena koda, dodeljena vaši napravi)."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
       ],
       "words": [
         "besed"
@@ -5523,9 +5491,6 @@
       "Attach screenshot(s)": [
         "Priloži posnetke zaslona"
       ],
-      "Authenticator app": [
-        "Aplikacija za preverjanje pristnosti"
-      ],
       "Beta Access": [
         "Dostop beta"
       ],
@@ -5708,6 +5673,9 @@
       ],
       "Include message and file name in invite email": [
         "Vključi sporočilo in ime datoteke v vabilo"
+      ],
+      "Integrated 2FA authenticator": [
+        "Vgrajen modul za preverjanje pristnosti 2FA"
       ],
       "Keep both": [
         "Obdrži oboje"
@@ -6450,6 +6418,14 @@
         "Srednja hitrost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Izbriši račun"
@@ -6471,14 +6447,6 @@
       ],
       "Switch plan": [
         "Zamenjaj paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Upgrade": [
-        "Nadgradnja"
       ]
     },
     "new_plans: feature": {
@@ -7074,6 +7042,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Od ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Znižana cena ${ priceCoupon } velja za prvi mesec. Nato se bo samodejno obnovila po ceni ${ priceLine }. Naročnino lahko kadar koli prekličete."
       ]
@@ -7700,6 +7671,9 @@
       ]
     },
     "Offer feature": {
+      "+10 more premium features": [
+        "+Še 10 premijskih funkcij"
+      ],
       "Custom email domain": [
         "E-poštna domena po meri"
       ],
@@ -7753,6 +7727,9 @@
       ],
       "Recents": [
         "Nedavno"
+      ],
+      "Trash": [
+        "Smeti"
       ]
     },
     "Participant name": {
@@ -8480,6 +8457,14 @@
         "Podpiši"
       ]
     },
+    "Sort menu options": {
+      "Location": [
+        "Kraj"
+      ],
+      "Name": [
+        "Ime"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Zapri"
@@ -8871,6 +8856,29 @@
         "Za ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } shrambe na uporabnika"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vam nudi vse aplikacije, vse funkcije, zgodnji dostop do novih izdaj in vse potrebno za nadzor nad svojimi podatki in njihovo varnostjo."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } e-poštna domena po meri",
+        "${ planNumberOfDomains } e-poštni domeni po meri",
+        "${ planNumberOfDomains } e-poštne domene po meri",
+        "${ planNumberOfDomains } e-poštnih domen po meri"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-poštni naslov",
+        "${ planNumberOfEmails } e-poštna naslova",
+        "${ planNumberOfEmails } e-poštni naslovi",
+        "${ planNumberOfEmails } e-poštnih naslovov"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mape, oznake in filtri po meri"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB prostora za shranjevanje"
@@ -8910,29 +8918,6 @@
       ],
       "Your privacy is our mission": [
         "Vaša zasebnost je naše poslanstvo"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } shrambe na uporabnika"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vam nudi vse aplikacije, vse funkcije, zgodnji dostop do novih izdaj in vse potrebno za nadzor nad svojimi podatki in njihovo varnostjo."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } e-poštna domena po meri",
-        "${ planNumberOfDomains } e-poštni domeni po meri",
-        "${ planNumberOfDomains } e-poštne domene po meri",
-        "${ planNumberOfDomains } e-poštnih domen po meri"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-poštni naslov",
-        "${ planNumberOfEmails } e-poštna naslova",
-        "${ planNumberOfEmails } e-poštni naslovi",
-        "${ planNumberOfEmails } e-poštnih naslovov"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mape, oznake in filtri po meri"
       ]
     },
     "Subscription renewal state": {
@@ -9952,6 +9937,12 @@
         "${ numberOfServers } v ${ numberOfCountries } državah",
         "${ numberOfServers } v ${ numberOfCountries } državah",
         "${ numberOfServers } v ${ numberOfCountries } državah"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Strežniki v več kot ${ numberOfCountries } državi",
+        "Strežniki v več kot ${ numberOfCountries } državah",
+        "Strežniki v več kot ${ numberOfCountries } državah",
+        "Strežniki v več kot ${ numberOfCountries } državah"
       ]
     },
     "vpn_2024: renew": {
