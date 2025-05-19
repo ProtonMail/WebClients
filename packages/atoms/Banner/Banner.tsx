@@ -3,12 +3,12 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import type { ButtonLikeOwnProps, ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import type { ThemeColorUnion } from '@proton/colors/types';
 import { IcCross, IcExclamationTriangleFilled, IcInfoCircle } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
 import { Button } from '../Button/Button';
+import type { ButtonLikeOwnProps, ButtonLikeShape } from '../Button/ButtonLike';
 import type { HrefProps } from '../Href/Href';
 
 import './Banner.scss';
@@ -131,9 +131,7 @@ const Banner = ({
         <div
             className={clsx(
                 `banner banner--${variant} w-full`,
-                BannerVariantsBordered.includes(variant as BannerVariants)
-                    ? 'border border-weak'
-                    : 'banner--no-border',
+                BannerVariantsBordered.includes(variant as BannerVariants) ? 'border border-weak' : 'banner--no-border',
                 largeRadius ? 'rounded-lg' : 'rounded',
                 className
             )}

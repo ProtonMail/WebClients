@@ -7,7 +7,7 @@ import { useExtensionClient } from 'proton-pass-extension/lib/components/Extensi
 import { useOpenSettingsTab } from 'proton-pass-extension/lib/hooks/useOpenSettingsTab';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms';
 import type { DropdownProps } from '@proton/components';
 import { Dropdown, DropdownMenu, DropdownSizeUnit, usePopperAnchor } from '@proton/components';
 import { verticalPopperPlacements } from '@proton/components/components/popper/utils';

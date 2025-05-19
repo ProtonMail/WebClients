@@ -4,7 +4,7 @@ import clsx from '@proton/utils/clsx'
 import { useApplication } from '~/utils/application-context'
 import type { DocsAwarenessStateChangeData, SafeDocsUserState } from '@proton/docs-shared'
 import { DocAwarenessEvent } from '@proton/docs-shared'
-import { Button, UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/index'
+import { Button, UserAvatar, UserAvatarSizeEnum } from '@proton/atoms'
 
 export type DocumentActiveUsersProps = { className?: string }
 

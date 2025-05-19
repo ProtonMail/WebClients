@@ -5,8 +5,7 @@ import { ListItem } from 'proton-pass-extension/app/content/injections/apps/comp
 import { ScrollableItemsList } from 'proton-pass-extension/app/content/injections/apps/components/ScrollableItemsList';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import ButtonLike from '@proton/atoms/Button/ButtonLike';
+import { Button, ButtonLike } from '@proton/atoms';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import type { AutosaveFormValues, AutosaveUpdatePayload, LoginItemPreview } from '@proton/pass/types';
 import { AutosaveMode } from '@proton/pass/types';
