@@ -57,10 +57,10 @@ import { getMessageHasData } from '../../../helpers/message/messages';
 import { useGetAttachment } from '../../../hooks/attachments/useAttachment';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import { updateAttachment } from '../../../store/attachments/attachmentsActions';
-import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 import type { MessageErrors, MessageStateWithData } from '../../../store/messages/messagesTypes';
 import { errors as errorsAction } from '../../../store/messages/read/messagesReadActions';
 import ExtraEvent from './calendar/ExtraEvent';
+import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 
 interface Props {
     message: MessageStateWithData;
@@ -182,8 +182,7 @@ const ExtraEvents = ({ message }: Props) => {
                                         onUpdateAttachment,
                                         api,
                                         getAttachment,
-                                        message.data.Flags,
-                                        true
+                                        message.data.Flags
                                     );
                                     if (download.isError) {
                                         return new EventInvitationError(INVITATION_ERROR_TYPE.DECRYPTION_ERROR);
