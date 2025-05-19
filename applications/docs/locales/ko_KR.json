@@ -105,9 +105,6 @@
       "Attention required": [
         "주의 필요"
       ],
-      "Authenticate": [
-        "인증"
-      ],
       "Back": [
         "이전"
       ],
@@ -636,6 +633,9 @@
       "Restore": [
         "복원"
       ],
+      "Restore from trash": [
+        "휴지통에서 복구"
+      ],
       "Restore this version": [
         "이 버전으로 복구"
       ],
@@ -819,14 +819,8 @@
       "Use a different payment method": [
         "다른 결제 수단 사용하기"
       ],
-      "Use authentication code": [
-        "인증 코드를 사용"
-      ],
       "Use for sending": [
         "발신에 사용"
-      ],
-      "Use recovery code": [
-        "복구코드 사용"
       ],
       "Verify": [
         "인증"
@@ -863,14 +857,6 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "vCard 파일을 ${ maxAttachments }개 이상 연락처로 보낼 수 없습니다"
-      ]
-    },
-    "Actions": {
-      "Last viewed first": [
-        "최근 본 항목 우선"
-      ],
-      "Name": [
-        "이름"
       ]
     },
     "Actions message": {
@@ -2326,6 +2312,11 @@
         "기한이 지난 청구서"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch 불러오기 마법사를 사용하세요."
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DRIVE_APP_NAME }의 ${ DOCS_SHORT_APP_NAME }를 사용하면 안전하고 암호화된 환경에서 다른 사람들과 함께 작업할 수 있습니다."
@@ -2449,11 +2440,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch 불러오기 마법사를 사용하세요."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3460,24 +3446,6 @@
         "무제한 hide-my-email 별칭"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "사용자의 보안 키 인증에 문제가 발생했습니다. 나중에 다시 시도하세요."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입하십시오."
-      ],
-      "Security key": [
-        "보안 키"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "보안 키"
-      ]
-    },
     "file size format": {
       "byte": [
         "바이트"
@@ -4205,9 +4173,6 @@
       "Create a secure cloud for ${ value } member": [
         "${ value }명의 구성원을 위한 보안 클라우드 만들기"
       ],
-      "Create an encrypted document.": [
-        "암호화된 문서를 생성하세요."
-      ],
       "Create in": [
         "만들기"
       ],
@@ -4298,9 +4263,6 @@
       "Duplicate key updated": [
         "중복 키 업데이트됨"
       ],
-      "Each code can only be used once": [
-        "각각의 코드는 한 번만 사용 가능합니다"
-      ],
       "Edit email address": [
         "이메일 주소 변경"
       ],
@@ -4328,17 +4290,11 @@
       "Enter password": [
         "비밀번호 입력"
       ],
-      "Enter the code from your authenticator app": [
-        "인증 앱의 코드를 입력하세요"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "가져오기를 원하는 이메일 계정의 계정 정보를 입력하세요."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText }(으)로 인증 코드가 전송되었습니다."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "인증 코드를 입력하세요. ${ digit } 자리."
       ],
       "Enter your own password (as organization admin).": [
         "자신의 비밀번호 입력 (조직 관리자와 같음)"
@@ -5162,9 +5118,6 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "VPN에 연결하여 암호화 기술을 사용하여 IP 주소(기기에 할당된 고유 코드)를 숨길 수 있습니다."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "이중 인증을 설정하면, 인증 앱에 접근할 수 없을 때 로그인 시 사용할 수 없는 복구 코드를 제공해드립니다."
-      ],
       "words": [
         "개 (단어)"
       ],
@@ -5507,9 +5460,6 @@
       ],
       "Attach screenshot(s)": [
         "스크린샷 첨부"
-      ],
-      "Authenticator app": [
-        "인증 앱"
       ],
       "Beta Access": [
         "베타 참여"
@@ -6429,6 +6379,17 @@
         "중간 VPN 속도"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "${ priceDrivePlus }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "계정 삭제"
@@ -6450,17 +6411,6 @@
       ],
       "Switch plan": [
         "플랜 변경"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "${ priceDrivePlus }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -7008,6 +6958,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "${ priceLine }부터 시작"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고 나면 자동으로 ${ priceLine }에 갱신됩니다. 언제든지 취소하실 수 있습니다."
       ],
@@ -8389,6 +8342,20 @@
         "서명"
       ]
     },
+    "Sort menu options": {
+      "Created by": [
+        "만든이"
+      ],
+      "Last viewed first": [
+        "최근 본 항목 우선"
+      ],
+      "Location": [
+        "위치"
+      ],
+      "Name": [
+        "성명"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "닫기"
@@ -8661,6 +8628,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME } 제품을 계속 사용하려면 공간을 비우거나 ${ upgrade }하세요."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "이메일을 수발신 하려면, 공간을 비우거나 ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "파일을 업로드 및 동기화하려면, 공간을 비우거나 ${ upgrade }"
       ],
@@ -8776,6 +8746,23 @@
         "${ totalPrice }용"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "사용자 당 ${ planMaxSpace } 스토리지"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains }개 커스텀 이메일 도메인"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails }개 이메일 주소"
+      ],
+      "Folders, labels, and custom filters": [
+        "폴더, 라벨, 커스텀 필터"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "저장공간 15GB"
@@ -8815,23 +8802,6 @@
       ],
       "Your privacy is our mission": [
         "당신의 프라이버시는 저희의 사명입니다"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "사용자 당 ${ planMaxSpace } 스토리지"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains }개 커스텀 이메일 도메인"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails }개 이메일 주소"
-      ],
-      "Folders, labels, and custom filters": [
-        "폴더, 라벨, 커스텀 필터"
       ]
     },
     "Subscription renewal state": {

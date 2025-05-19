@@ -211,6 +211,9 @@
       "Copy address": [
         "Copiar l'adreça"
       ],
+      "Copy as markdown": [
+        "Copiar com a markdown"
+      ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
       ],
@@ -642,11 +645,17 @@
       "Restore": [
         "Restaura"
       ],
+      "Restore from trash": [
+        "Recuperar de la paperera"
+      ],
       "Restore this version": [
         "Restaura aquesta versió"
       ],
       "Restore this version?": [
         "Voleu restaurar aquesta versió?"
+      ],
+      "Restoring...": [
+        "S'està restaurant..."
       ],
       "Retry": [
         "Reintenta"
@@ -826,7 +835,7 @@
         "Utilitzeu un mètode de pagament diferent"
       ],
       "Use authentication code": [
-        "Utilitzar el codi d'autenticació"
+        "Utilitza el codi d'autenticació"
       ],
       "Use for sending": [
         "Usar per enviar"
@@ -870,14 +879,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
         "No podeu enviar fitxers vCard de més de ${ maxAttachments } contactes."
-      ]
-    },
-    "Actions": {
-      "Last viewed first": [
-        "Darrera visita primer"
-      ],
-      "Name": [
-        "Nom"
       ]
     },
     "Actions message": {
@@ -2341,6 +2342,11 @@
         "Factura vençuda"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilitzeu l'assistent d'importació Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } al ${ DRIVE_APP_NAME } us permet treballar amb altres persones en un entorn segur i xifrat."
@@ -2464,11 +2470,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3486,12 +3487,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Alguna cosa no ha anat bé amb l'autenticació amb la vostra clau de seguretat. Proveu-ho de nou."
+        "Quelcom va anar malament autenticant-se amb la vostra clau de seguretat. Torneu-ho a provar."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inseriu una clau de seguretat enllaçada al vostre compte ${ BRAND_NAME }."
+        "Inseriu una clau de seguretat enllaçada al vostre compte de ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clau de seguretat"
@@ -4266,8 +4267,8 @@
         "Crea un núvol segur per a ${ value } membre",
         "Crea un núvol segur per a ${ value } membres"
       ],
-      "Create an encrypted document.": [
-        "Creeu un document xifrat."
+      "Create an end-to-end encrypted document.": [
+        "Creeu un document xifrat d'extrem a extrem."
       ],
       "Create in": [
         "Crear a"
@@ -4360,7 +4361,7 @@
         "Clau duplicada actualitzada"
       ],
       "Each code can only be used once": [
-        "Cada codi només es pot utilitzar una vegada."
+        "Cada codi només es pot utilitzar una vegada"
       ],
       "Edit email address": [
         "Edita l'adreça de correu"
@@ -4390,7 +4391,7 @@
         "Introduïu la contrasenya"
       ],
       "Enter the code from your authenticator app": [
-        "Introduïu el codi de la vostra aplicació d'autenticació"
+        "Introduïu el codi de la vostra aplicació d'autenticació."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduïu les credencials del compte de correu electrònic des d'on voleu importar."
@@ -5229,7 +5230,7 @@
         "Quan us connecteu a la VPN, utilitza tecnologia de xifratge per ocultar la vostra adreça IP (un codi únic assignat al vostre dispositiu)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configureu l'autenticació de doble factor, se us proporcionen codis de recuperació que podeu fer servir per a iniciar la sessió en cas que perdeu l'accés a l'aplicació d'autenticació."
+        "Quan configureu l’autenticació de dos factors, proporcionem codis de recuperació que podeu utilitzar per iniciar la sessió si perdeu l’accés a l’aplicació d'autenticació."
       ],
       "words": [
         "paraules"
@@ -6573,6 +6574,17 @@
         "Velocitat VPN mitjana"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Plans a partir de ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Elimina el compte"
@@ -6594,17 +6606,6 @@
       ],
       "Switch plan": [
         "Canvia de pla"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Plans a partir de ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Millora"
       ]
     },
     "new_plans: feature": {
@@ -8600,6 +8601,20 @@
         "Signa"
       ]
     },
+    "Sort menu options": {
+      "Created by": [
+        "Creat per"
+      ],
+      "Last viewed first": [
+        "Darrera visita primer"
+      ],
+      "Location": [
+        "Ubicació"
+      ],
+      "Name": [
+        "Nom"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Tanca"
@@ -9003,6 +9018,25 @@
         "Per ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } d'emmagatzematge per usuari"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } us ofereix totes les aplicacions, totes les característiques, accés anticipat a les versions noves i tot el que necessiteu per a tenir el control de les vostres dades i la vostra seguretat."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domini de correu electrònic personalitzat",
+        "${ planNumberOfDomains } dominis de correu electrònic personalitzats"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adreça de correu electrònic",
+        "${ planNumberOfEmails } adreces de correu electrònic"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetes, etiquetes i filtres personalitzats"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB d'emmagatzematge"
@@ -9042,25 +9076,6 @@
       ],
       "Your privacy is our mission": [
         "La vostra privacitat és la nostra missió"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } d'emmagatzematge per usuari"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } us ofereix totes les aplicacions, totes les característiques, accés anticipat a les versions noves i tot el que necessiteu per a tenir el control de les vostres dades i la vostra seguretat."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } domini de correu electrònic personalitzat",
-        "${ planNumberOfDomains } dominis de correu electrònic personalitzats"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adreça de correu electrònic",
-        "${ planNumberOfEmails } adreces de correu electrònic"
-      ],
-      "Folders, labels, and custom filters": [
-        "Carpetes, etiquetes i filtres personalitzats"
       ]
     },
     "Subscription renewal state": {
