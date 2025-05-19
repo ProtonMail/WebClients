@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "Authenticate": [
-        "Preverjanje pristnosti"
-      ],
       "Cancel": [
         "Prekliči"
       ],
@@ -28,9 +25,6 @@
       ],
       "Edit sign-in details": [
         "Uredi podrobnosti prijave"
-      ],
-      "Forgot password?": [
-        "Pozabljeno geslo?"
       ],
       "Get verification code": [
         "Pridobi kodo za preverjanje"
@@ -55,12 +49,6 @@
       ],
       "Try another method": [
         "Poskusi z drugim načinom"
-      ],
-      "Use authentication code": [
-        "Uporabi kodo za preverjanje pristnosti"
-      ],
-      "Use recovery code": [
-        "Uporabi kodo za obnovitev"
       ],
       "Verify": [
         "Preveri"
@@ -916,24 +904,6 @@
         "Te strani ni bilo mogoče naložiti. Osvežite stran ali preverite svojo povezavo z internetom."
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vstavite varnostni ključ, povezan z vašim računom ${ BRAND_NAME }."
-      ],
-      "Security key": [
-        "Varnostni ključ"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Varnostni ključ"
-      ]
-    },
     "file size format": {
       "byte": [
         "bajt",
@@ -1044,23 +1014,11 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Ustvarjanje več brezplačnih računov ni dovoljeno v skladu z našimi ${ termsLink }."
       ],
-      "Each code can only be used once": [
-        "Vsaka koda se lahko uporabi samo enkrat"
-      ],
       "Edit email address": [
         "Uredi e-poštni naslov"
       ],
-      "Enter the code from your authenticator app": [
-        "Vnesite kodo iz aplikacije za preverjanje pristnosti"
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vnesite kodo za preverjanje, ki je bila poslana na ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Vnesite potrditveno kodo. Števka ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "Za dodatne informacije in odstranitev omejitev se prijavite na ${ mailLink }."
@@ -1104,9 +1062,6 @@
       "We'll send a new verification code to ${ strong }": [
         "Poslali vam bomo novo kodo za preverjanje na ${ strong }."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
-      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ali želite prejeti novo kodo za preverjanje ali uporabiti drugačen način preverjanja?"
       ],
@@ -1130,9 +1085,6 @@
       ]
     },
     "Label": {
-      "Authenticator app": [
-        "Aplikacija za preverjanje pristnosti"
-      ],
       "Code is 6 digits without spaces": [
         "Koda vsebuje 6 števk brez presledkov"
       ],
@@ -1153,9 +1105,6 @@
       ],
       "Verification code": [
         "Koda za preverjanje"
-      ],
-      "Your password (admin)": [
-        "Vaše geslo (admin)"
       ]
     },
     "Link": {
@@ -1548,9 +1497,6 @@
       ],
       "Enter 2FA code": [
         "Vnesite kodo 2FA"
-      ],
-      "Enter your password": [
-        "Vnesite geslo"
       ],
       "Human verification": [
         "Ali si človek"
