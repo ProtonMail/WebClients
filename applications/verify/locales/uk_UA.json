@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "Authenticate": [
-        "Автентифікація"
-      ],
       "Cancel": [
         "Скасувати"
       ],
@@ -28,9 +25,6 @@
       ],
       "Edit sign-in details": [
         "Змінити дані входу"
-      ],
-      "Forgot password?": [
-        "Забули пароль?"
       ],
       "Get verification code": [
         "Отримати код підтвердження"
@@ -55,12 +49,6 @@
       ],
       "Try another method": [
         "Спробувати інший спосіб"
-      ],
-      "Use authentication code": [
-        "Використати код підтвердження"
-      ],
-      "Use recovery code": [
-        "Використати код відновлення"
       ],
       "Verify": [
         "Перевірити"
@@ -921,24 +909,6 @@
         "Не вдалося завантажити цю сторінку. Перезавантажте сторінку або перевірте з'єднання з інтернетом."
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Щось пішло не так під час автентифікації за допомогою вашого ключа безпеки. Будь ласка, повторіть спробу."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Вставте ключ безпеки, прив'язаний до вашого облікового запису ${ BRAND_NAME }."
-      ],
-      "Security key": [
-        "Ключ безпеки"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Ключ безпеки"
-      ]
-    },
     "file size format": {
       "byte": [
         "байт",
@@ -1017,6 +987,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Е-пошта"
       ],
@@ -1025,6 +998,9 @@
       ],
       "No verification method available": [
         "Немає доступних способів перевірки"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
@@ -1040,23 +1016,11 @@
       "Country code": [
         "Код країни"
       ],
-      "Each code can only be used once": [
-        "Кожен код можна використати лише один раз"
-      ],
       "Edit email address": [
         "Змінити адресу електронної пошти"
       ],
-      "Enter the code from your authenticator app": [
-        "Введіть код з програми автентифікації"
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Введіть код підтвердження. Цифри ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Введіть власний пароль (як адміністратор організації)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
@@ -1097,9 +1061,6 @@
       "We'll send a new verification code to ${ strong }": [
         "Ми надішлемо новий код підтвердження на ${ strong }"
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Коли ви налаштовуєте двоетапну перевірку, ми надаємо коди відновлення, які ви можете використовувати для входу в систему, якщо втратите доступ до програми автентифікації."
-      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
       ],
@@ -1123,9 +1084,6 @@
       ]
     },
     "Label": {
-      "Authenticator app": [
-        "Програма автентифікації"
-      ],
       "Code is 6 digits without spaces": [
         "Код складається з 6 цифр без пробілів"
       ],
@@ -1146,9 +1104,6 @@
       ],
       "Verification code": [
         "Код підтвердження"
-      ],
-      "Your password (admin)": [
-        "Новий пароль (адмін)"
       ]
     },
     "Link": {
@@ -1241,6 +1196,9 @@
       ],
       "${ size } storage": [
         "${ size } сховища"
+      ],
+      "${ size } storage per user": [
+        "${ size } сховища на користувача"
       ],
       "1 TB secure storage": [
         "1 ТБ безпечного сховища"
@@ -1543,9 +1501,6 @@
     "Title": {
       "Enter 2FA code": [
         "Введіть код 2FA"
-      ],
-      "Enter your password": [
-        "Введіть свій пароль"
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""

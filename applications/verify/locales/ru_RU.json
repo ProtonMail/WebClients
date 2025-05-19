@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "Authenticate": [
-        "Аутентифицировать"
-      ],
       "Cancel": [
         "Отменить"
       ],
@@ -28,9 +25,6 @@
       ],
       "Edit sign-in details": [
         "Изменить информацию о входе в систему"
-      ],
-      "Forgot password?": [
-        "Забыли пароль?"
       ],
       "Get verification code": [
         "Получить проверочный код"
@@ -55,12 +49,6 @@
       ],
       "Try another method": [
         "Попробуйте другой способ"
-      ],
-      "Use authentication code": [
-        "Используйте код аутентификации"
-      ],
-      "Use recovery code": [
-        "Использовать код восстановления"
       ],
       "Verify": [
         "Подтвердить"
@@ -921,24 +909,6 @@
         "Мы не смогли загрузить эту страницу. Пожалуйста, обновите страницу или проверьте подключение к Интернету."
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте ещё раз."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Вставьте ключ безопасности, связанный с вашим аккаунтом ${ BRAND_NAME }."
-      ],
-      "Security key": [
-        "Ключ безопасности"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Ключ безопасности"
-      ]
-    },
     "file size format": {
       "byte": [
         "байт",
@@ -1049,23 +1019,14 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Создание нескольких бесплатных учетных записей не допускается нашим ${ termsLink }."
       ],
-      "Each code can only be used once": [
-        "Каждый код может быть использован только один раз"
-      ],
       "Edit email address": [
         "Изменить адрес эл. почты"
       ],
       "Enter the code from your authenticator app": [
-        "Введите код из приложения для аутентификации"
+        "Введите код из приложения-аутентификатора"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Введите код подтверждения. Цифра ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Введите собственный пароль (как администратор организации)."
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "Для получения дополнительной информации и снятия ограничений, пожалуйста, войдите на ${ mailLink }."
@@ -1108,9 +1069,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Мы отправим новый код подтверждения на ${ strong }"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Вы хотите получить новый проверочный код или использовать другой метод проверки?"
@@ -1570,9 +1528,6 @@
       ],
       "Enter 2FA code": [
         "Введите код двухфакторной аутентификации"
-      ],
-      "Enter your password": [
-        "Введите свой пароль"
       ],
       "Human verification": [
         "Проверка \"Я не робот\""
