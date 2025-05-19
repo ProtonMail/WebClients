@@ -433,6 +433,9 @@
       "Pause monitoring": [
         "Metti in pausa il monitoraggio"
       ],
+      "Pay once": [
+        "Paga una volta"
+      ],
       "Pin item": [
         "Fissa l'elemento"
       ],
@@ -570,6 +573,9 @@
       ],
       "Sign out": [
         "Esci dall'account"
+      ],
+      "Skip": [
+        "Salta"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Qualcuno ha condiviso un elemento con te su ${ PASS_APP_NAME }."
@@ -1904,10 +1910,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
-      ],
       "Moving items": [
         "Spostamento degli elementi"
       ],
@@ -2324,6 +2326,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Per controllare i tuoi dati importati, clicca sull'icona di ${ PASS_APP_NAME } nella barra degli strumenti del tuo browser."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Scelto da oltre 50.000 utenti business e 100 milioni di account in tutto il mondo."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nuove funzionalità, aggiornamenti e prodotti di ${ BRAND_NAME } prima che vengano rilasciati al pubblico. Questo ricaricherà l'applicazione"
       ],
@@ -2665,6 +2670,12 @@
       "Birthdate": [
         "Data di nascita"
       ],
+      "Browse faster, smarter": [
+        "Naviga più velocemente e in modo più intelligente"
+      ],
+      "Built-in 2FA": [
+        "2FA integrato"
+      ],
       "Capital letters (A-Z)": [
         "Lettere maiuscole (A-Z)"
       ],
@@ -2682,6 +2693,12 @@
       ],
       "Catch-All": [
         "Catch-all"
+      ],
+      "Choose unlock method": [
+        "Scegli il metodo di sblocco"
+      ],
+      "Choose your preferred look and feel.": [
+        "Scegli l'aspetto che preferisci."
       ],
       "City": [
         "Città"
@@ -2739,6 +2756,9 @@
       ],
       "Created at": [
         "Creato il"
+      ],
+      "Credit cards": [
+        "Carte"
       ],
       "Custom hidden field": [
         "Campo nascosto personalizzato"
@@ -2809,6 +2829,9 @@
       "Export": [
         "Esporta"
       ],
+      "Extra email addresses": [
+        "Indirizzi email extra"
+      ],
       "Extra password": [
         "Password aggiuntiva"
       ],
@@ -2820,6 +2843,9 @@
       ],
       "Field name": [
         "Nome campo"
+      ],
+      "File attachments": [
+        "File allegati"
       ],
       "File format": [
         "Formato del file"
@@ -2833,8 +2859,14 @@
       "For a one-off sharing": [
         "Per una condivisione unica"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Per motivi di sicurezza, ${ PASS_SHORT_APP_NAME } si blocca automaticamente dopo 10 minuti di inattività."
+      ],
       "Forwards to": [
         "Inoltra a"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "Gratis per sempre"
@@ -2851,8 +2883,17 @@
       "Generic CSV": [
         "CSV generico"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Ottieni ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Ottieni ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "Inizia ora"
+      ],
+      "Get the extension for your browser.": [
+        "Ottieni l'estensione per il tuo browser."
       ],
       "Grant": [
         "Concedi"
@@ -2862,6 +2903,15 @@
       ],
       "Hide password": [
         "Nascondi la password"
+      ],
+      "Hide-my-email aliases": [
+        "Alias hide-my-email"
+      ],
+      "Highest": [
+        "Il più alto"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Come sbloccare ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2901,6 +2951,12 @@
       ],
       "Instagram handle": [
         "Nome utente di Instagram"
+      ],
+      "Install and continue": [
+        "Installa e continua"
+      ],
+      "Install extension": [
+        "Installa l'estensione"
       ],
       "Invitations": [
         "Inviti"
@@ -2947,6 +3003,9 @@
       "License number": [
         "Numero patente"
       ],
+      "Limited time": [
+        "A tempo limitato"
+      ],
       "LinkedIn account": [
         "Account Linkedin"
       ],
@@ -2970,6 +3029,9 @@
       ],
       "Make all viewers": [
         "Rendi tutti visualizzatori"
+      ],
+      "Make it your own.": [
+        "Fallo tuo."
       ],
       "max views reached": [
         "numero massimo di visualizzazioni raggiunto"
@@ -3073,6 +3135,9 @@
       "Personal website": [
         "Sito web personale"
       ],
+      "Personalize": [
+        "Personalizza"
+      ],
       "PGP-encrypted (recommended)": [
         "Crittografia PGP (consigliata)"
       ],
@@ -3084,6 +3149,9 @@
       ],
       "PIN code": [
         "Codice PIN"
+      ],
+      "Plus": [
+        "Plus"
       ],
       "Prefix": [
         "Prefisso"
@@ -3151,8 +3219,14 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Seleziona la cassaforte in cui verranno importati gli alias SimpleLogin"
       ],
+      "Select theme": [
+        "Seleziona tema"
+      ],
       "Select your password manager": [
         "Seleziona il tuo gestore di password"
+      ],
+      "Select your theme": [
+        "Scegli il tuo tema"
       ],
       "Selected": [
         "Selezionato"
@@ -3190,6 +3264,9 @@
       "Status": [
         "Stato"
       ],
+      "Storage": [
+        "Archiviazione"
+      ],
       "Street address": [
         "Indirizzo"
       ],
@@ -3216,6 +3293,9 @@
       ],
       "Text": [
         "Testo"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Il meglio di ${ BRAND_NAME } con un solo abbonamento"
       ],
       "The URL has been copied to the clipboard": [
         "L'URL è stato copiato negli appunti"
@@ -3249,6 +3329,12 @@
       ],
       "Unknown": [
         "Sconosciuto"
+      ],
+      "Unlimited": [
+        "Senza limiti"
+      ],
+      "Unlock premium features": [
+        "Sblocca funzionalità premium"
       ],
       "Unlock with": [
         "Metodo di sblocco"
@@ -3289,6 +3375,9 @@
       "Vault ID": [
         "ID cassaforte"
       ],
+      "Vault, item & link sharing": [
+        "Cassaforte, elementi e condivisione dei link"
+      ],
       "Vaults": [
         "Casseforti"
       ],
@@ -3297,6 +3386,12 @@
       ],
       "View logs": [
         "Visualizza i log"
+      ],
+      "VPN Devices": [
+        "Dispositivi VPN"
+      ],
+      "VPN Speed": [
+        "Velocità della VPN"
       ],
       "Vulnerable": [
         "Vulnerabile"
@@ -3309,6 +3404,9 @@
       ],
       "Websites": [
         "Siti web"
+      ],
+      "What's included": [
+        "Cosa è incluso"
       ],
       "Work details": [
         "Dettagli di lavoro"
@@ -3328,8 +3426,14 @@
       "You are about to create": [
         "Stai per creare"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Puoi scegliere tra codice PIN, dati biometrici o password del tuo account per sbloccare."
+      ],
       "Your domain": [
         "Il tuo dominio"
+      ],
+      "Your passwords. Everywhere.": [
+        "Le tue password. Ovunque."
       ],
       "ZIP": [
         "CAP"
@@ -3352,6 +3456,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Abilita ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Message": {
@@ -3515,6 +3624,14 @@
       ],
       "You can attach files to items for a better organization": [
         "Puoi allegare file agli elementi per una migliore organizzazione."
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus Lifetime per ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price }/mese"
       ]
     },
     "Placeholder": {
@@ -3783,8 +3900,14 @@
       "${ BRAND_NAME } addresses": [
         "Indirizzi ${ BRAND_NAME }"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Protezione dell'account"
@@ -4061,6 +4184,9 @@
       ],
       "Pause monitoring?": [
         "Vuoi mettere in pausa il monitoraggio?"
+      ],
+      "Pay once, access forever.": [
+        "Paga una volta, accedi per sempre."
       ],
       "Pending access confirmation": [
         "In attesa della conferma di accesso"
