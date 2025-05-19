@@ -2,9 +2,7 @@ import { type FC, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
-import Step from '@proton/atoms/Stepper/Step';
-import Stepper from '@proton/atoms/Stepper/Stepper';
+import { Button, Step, Stepper } from '@proton/atoms';
 import { type ModalProps, ModalTwoFooter } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import { ModalTwoContent, ModalTwoHeader } from '@proton/components/index';

@@ -1,4 +1,4 @@
-import { CircleLoader } from '@proton/atoms/index';
+import { CircleLoader } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 import Icon from '../icon/Icon';

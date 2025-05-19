@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/index';
+import { Button } from '@proton/atoms';
 import { Checkbox, ContactImage, type ModalProps, Prompt } from '@proton/components';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 

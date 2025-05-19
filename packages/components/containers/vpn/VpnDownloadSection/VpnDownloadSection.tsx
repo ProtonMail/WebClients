@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike, DashboardCard, DashboardCardContent } from '@proton/atoms/index';
+import { ButtonLike, DashboardCard, DashboardCardContent } from '@proton/atoms';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';

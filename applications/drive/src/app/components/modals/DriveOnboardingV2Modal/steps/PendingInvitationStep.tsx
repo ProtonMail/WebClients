@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import type { IconName } from 'packages/icons';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/index';
+import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components/index';
 
 import { Container } from '../Container';

@@ -2,7 +2,7 @@ import React, { type ChangeEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/index';
+import { Button } from '@proton/atoms';
 import {
     InputFieldTwo,
     type ModalStateReturnObj,
