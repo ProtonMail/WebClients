@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "Authenticate": [
-        "Authenticeren"
-      ],
       "Cancel": [
         "Annuleren"
       ],
@@ -28,9 +25,6 @@
       ],
       "Edit sign-in details": [
         "Bewerk aanmeldgegevens"
-      ],
-      "Forgot password?": [
-        "Wachtwoord vergeten?"
       ],
       "Get verification code": [
         "Krijg verificatie code"
@@ -55,12 +49,6 @@
       ],
       "Try another method": [
         "Andere methode proberen"
-      ],
-      "Use authentication code": [
-        "Verificatiecode gebruiken"
-      ],
-      "Use recovery code": [
-        "Herstelcode gebruiken"
       ],
       "Verify": [
         "Verifiëren"
@@ -921,24 +909,6 @@
         "We konden deze pagina niet laden. Ververs de pagina of controleer uw internetverbinding."
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Er is iets fout gegaan bij het verifiëren van uw beveiligingssleutel. Probeer het opnieuw."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME }-account."
-      ],
-      "Security key": [
-        "Beveiligingssleutel"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Beveiligingssleutel"
-      ]
-    },
     "file size format": {
       "byte": [
         "byte",
@@ -1037,23 +1007,11 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Het creëren van meerdere gratis accounts is niet toegestaan door onze ${ termsLink }."
       ],
-      "Each code can only be used once": [
-        "Elke code kan maar één keer gebruikt worden"
-      ],
       "Edit email address": [
         "Wijzig e-mailadres"
       ],
-      "Enter the code from your authenticator app": [
-        "Voer de code van uw verificatie-app in"
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Voer verificatiecode in. Cijfer ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "Voor meer informatie en het opheffen van beperkingen, meld u aan bij ${ mailLink }."
@@ -1097,9 +1055,6 @@
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
-      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
       ],
@@ -1123,9 +1078,6 @@
       ]
     },
     "Label": {
-      "Authenticator app": [
-        "Authenticator-app"
-      ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
       ],
@@ -1146,9 +1098,6 @@
       ],
       "Verification code": [
         "Verificatiecode"
-      ],
-      "Your password (admin)": [
-        "Uw wachtwoord (admin)"
       ]
     },
     "Link": {
@@ -1540,9 +1489,6 @@
       ],
       "Enter 2FA code": [
         "Voer 2FA-code in"
-      ],
-      "Enter your password": [
-        "Voer uw wachtwoord in"
       ],
       "Human verification": [
         "Persoonsverificatie"

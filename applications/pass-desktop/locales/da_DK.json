@@ -76,9 +76,6 @@
       "Apply lifetime coupon code": [
         "Anvend livstids-kuponkode"
       ],
-      "Authenticate": [
-        "Godkend"
-      ],
       "Back": [
         "Tilbage"
       ],
@@ -1058,6 +1055,9 @@
       "File does not match expected format": [
         "Fil svarer ikke til det forventede format"
       ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Import mislykkedes for boks \"${ vaultData.name }\" : ${ errorMessage }"
+      ],
       "Importing items failed": [
         "Import af elementer mislykkedes"
       ],
@@ -1636,9 +1636,6 @@
       "Enter the address you want to email.": [
         "Indtast den adresse, du ønsker at sende en e-mail til."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Indtast verifikationskode. Ciffer ${ digit }."
-      ],
       "Enter your extra password": [
         "Indtast din ekstra adgangskode"
       ],
@@ -1834,6 +1831,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2168,6 +2169,10 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Den ekstra adgangskode er påkrævet for at bruge ${ PASS_APP_NAME }. Den virker som en tillægskode til din ${ BRAND_NAME }-adgangskode."
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Følgende ${ totalIgnored } element kunne ikke importeres:",
+        "Følgende ${ totalIgnored } elementer kunne ikke importeres:"
       ],
       "The secure link has been removed": [
         "Det sikre link er blevet fjernet"
@@ -2654,6 +2659,9 @@
       "Created at": [
         "Oprettet kl."
       ],
+      "Credit cards": [
+        "Betalingskort"
+      ],
       "Custom hidden field": [
         "Tilpasset skjult felt"
       ],
@@ -2726,6 +2734,9 @@
       "Export": [
         "Eksportér"
       ],
+      "Extra email addresses": [
+        "Ekstra e-mailadresser"
+      ],
       "Extra password": [
         "Ekstra adgangskode"
       ],
@@ -2737,6 +2748,9 @@
       ],
       "Field name": [
         "Feltnavn"
+      ],
+      "File attachments": [
+        "Filvedhæftninger"
       ],
       "File format": [
         "Filformat"
@@ -2755,6 +2769,9 @@
       ],
       "Forwards to": [
         "Videresender til"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "Gratis for evigt"
@@ -2791,6 +2808,9 @@
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliasser"
+      ],
+      "Highest": [
+        "Hurtigst"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Sådan låses ${ PASS_SHORT_APP_NAME } op"
@@ -2887,6 +2907,9 @@
       ],
       "License number": [
         "Licensnummer"
+      ],
+      "Limited time": [
+        "Begrænset tid"
       ],
       "LinkedIn account": [
         "LinkedIn-konto"
@@ -3035,6 +3058,9 @@
       "PIN code": [
         "Pinkode"
       ],
+      "Plus": [
+        "Plus"
+      ],
       "Prefix": [
         "Præfiks"
       ],
@@ -3161,6 +3187,9 @@
       "Status": [
         "Status"
       ],
+      "Storage": [
+        "Lagerplads"
+      ],
       "Street address": [
         "Adresse"
       ],
@@ -3223,6 +3252,9 @@
       ],
       "Unknown": [
         "Ukendt"
+      ],
+      "Unlimited": [
+        "Ubegrænset"
       ],
       "Unlock with": [
         "Lås op med"
@@ -3329,6 +3361,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Aktiver ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Menu": {
@@ -3465,6 +3502,9 @@
       "The exported file attachments will not be encrypted.": [
         "De eksporterede filvedhæftninger vil ikke blive krypteret."
       ],
+      "The file you are trying to import is empty": [
+        "Filen du prøver at importere er tom"
+      ],
       "Total imported files: ": [
         "Samlet antal importerede filer: "
       ],
@@ -3476,6 +3516,11 @@
       ],
       "You can attach files to items for a better organization": [
         "Du kan vedhæfte filer til elementer for at få en bedre organisering"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ price }/month": [
+        "${ price }/måned"
       ]
     },
     "Placeholder": {

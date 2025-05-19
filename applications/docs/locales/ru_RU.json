@@ -108,9 +108,6 @@
       "Attention required": [
         "Требуется внимание"
       ],
-      "Authenticate": [
-        "Аутентифицировать"
-      ],
       "Back": [
         "Назад"
       ],
@@ -212,6 +209,9 @@
       ],
       "Copy address": [
         "Копировать адрес"
+      ],
+      "Copy as markdown": [
+        "Копировать в формате markdown"
       ],
       "Copy email to clipboard": [
         "Скопировать адрес электронной почты в буфер обмена"
@@ -645,11 +645,17 @@
       "Restore": [
         "Восстановить"
       ],
+      "Restore from trash": [
+        "Восстановить из корзины"
+      ],
       "Restore this version": [
         "Восстановить эту версию"
       ],
       "Restore this version?": [
         "Восстановить эту версию?"
+      ],
+      "Restoring...": [
+        "Восстановление..."
       ],
       "Retry": [
         "Повторить"
@@ -828,14 +834,8 @@
       "Use a different payment method": [
         "Использовать другой способ оплаты"
       ],
-      "Use authentication code": [
-        "Используйте код аутентификации"
-      ],
       "Use for sending": [
         "Использовать для отправки"
-      ],
-      "Use recovery code": [
-        "Использовать код восстановления"
       ],
       "Verify": [
         "Подтвердить"
@@ -875,14 +875,6 @@
         "Вы не можете отправлять файлы vCard, содержащие больше ${ maxAttachments } контактов",
         "Вы не можете отправлять файлы vCard, содержащие больше ${ maxAttachments } контактов",
         "Вы не можете отправлять файлы vCard, содержащие больше ${ maxAttachments } контактов"
-      ]
-    },
-    "Actions": {
-      "Last viewed first": [
-        "Сначала последние просмотренные"
-      ],
-      "Name": [
-        "Название"
       ]
     },
     "Actions message": {
@@ -2504,6 +2496,11 @@
         "Просроченный счёт"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } в ${ DRIVE_APP_NAME } позволяет вам работать вместе с другими людьми в защищенной и зашифрованной среде."
@@ -2627,11 +2624,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3665,24 +3657,6 @@
         "Неограниченное количество псевдонимов hide-my-email"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте ещё раз."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Вставьте ключ безопасности, связанный с вашим аккаунтом ${ BRAND_NAME }."
-      ],
-      "Security key": [
-        "Ключ безопасности"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Ключ безопасности"
-      ]
-    },
     "file size format": {
       "byte": [
         "байт",
@@ -4521,8 +4495,8 @@
         "Создать безопасное облако для ${ value } участников",
         "Создать безопасное облако для ${ value } участника"
       ],
-      "Create an encrypted document.": [
-        "Создать зашифрованный документ."
+      "Create an end-to-end encrypted document.": [
+        "Создайте документ, зашифрованный сквозным методом."
       ],
       "Create in": [
         "Создать в"
@@ -4614,9 +4588,6 @@
       "Duplicate key updated": [
         "Дубликат ключа обновлён"
       ],
-      "Each code can only be used once": [
-        "Каждый код может быть использован только один раз"
-      ],
       "Edit email address": [
         "Изменить адрес эл. почты"
       ],
@@ -4645,16 +4616,13 @@
         "Введите пароль"
       ],
       "Enter the code from your authenticator app": [
-        "Введите код из приложения для аутентификации"
+        "Введите код из приложения-аутентификатора"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Введите учетные данные аккаунта электронной почты, из которого вы хотите импортировать данные."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Введите код подтверждения. Цифра ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Введите собственный пароль (как администратор организации)."
@@ -5492,9 +5460,6 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Когда вы подключаетесь к VPN, используется технология шифрования, чтобы скрыть ваш адрес IP (уникальный код, присвоенный вашему устройству)."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
       ],
       "words": [
         "слова"
@@ -6802,6 +6767,17 @@
         "Средняя скорость VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Тарифы начиная с ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -6823,17 +6799,6 @@
       ],
       "Switch plan": [
         "Сменить тариф"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Тарифы начиная с ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Улучшить"
       ]
     },
     "new_plans: feature": {
@@ -8951,6 +8916,20 @@
         "Подписать"
       ]
     },
+    "Sort menu options": {
+      "Created by": [
+        "Создано"
+      ],
+      "Last viewed first": [
+        "Сначала последние просмотренные"
+      ],
+      "Location": [
+        "Расположение"
+      ],
+      "Name": [
+        "Название"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Закрыть"
@@ -9380,6 +9359,29 @@
         "За ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Объем хранилища на пользователя: ${ planMaxSpace }"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } предоставляет вам все приложения и функции, ранний доступ к новым версиям и все, что нужно для управления вашими данными и их безопасностью."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } пользовательский домен электронной почты",
+        "${ planNumberOfDomains } пользовательских домена электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } адрес электронной почты",
+        "${ planNumberOfEmails } адреса электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты"
+      ],
+      "Folders, labels, and custom filters": [
+        "Папки, ярлыки и пользовательские фильтры"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 ГБ хранилища"
@@ -9419,29 +9421,6 @@
       ],
       "Your privacy is our mission": [
         "Ваша приватность является нашей задачей"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Объем хранилища на пользователя: ${ planMaxSpace }"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } предоставляет вам все приложения и функции, ранний доступ к новым версиям и все, что нужно для управления вашими данными и их безопасностью."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } пользовательский домен электронной почты",
-        "${ planNumberOfDomains } пользовательских домена электронной почты",
-        "${ planNumberOfDomains } пользовательских доменов электронной почты",
-        "${ planNumberOfDomains } пользовательских доменов электронной почты"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } адрес электронной почты",
-        "${ planNumberOfEmails } адреса электронной почты",
-        "${ planNumberOfEmails } адресов электронной почты",
-        "${ planNumberOfEmails } адресов электронной почты"
-      ],
-      "Folders, labels, and custom filters": [
-        "Папки, ярлыки и пользовательские фильтры"
       ]
     },
     "Subscription renewal state": {

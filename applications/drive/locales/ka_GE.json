@@ -3755,7 +3755,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "თქვენი უსაფრთხოების გასაღების ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
+        "თქვენი უსაფრთხოების გასაღებით ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
       ]
     },
     "fido2: Info": {
@@ -5463,6 +5463,9 @@
       "Shared": [
         "გაზიარებული"
       ],
+      "Shared by ": [
+        "გამზიარებელი "
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "გაზიარებულია ${ rootLink.signatureEmail }-ის მიერ"
       ],
@@ -5847,9 +5850,6 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "როცა მიუერთდებით VPN-ს, ის იყენებს დაშიფვრის ტექნოლოგიებს, რომ თქვენი IP მისამართი (თქვენი მოწყობილობისთვის მინიჭებული ნიკალური კოდი) დამალოს."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "${ formattedRevisionDate }-დან ამ ვერსიამდე აღდგება. ყველა დანარჩენი ვერსია ჯერ კიდევ დაგრჩებათ."
@@ -6627,6 +6627,9 @@
       "Set recovery method": [
         "აღდგენის მეთოდის დაყენება"
       ],
+      "Share a file, folder, or album": [
+        "გააზიარეთ ფაილი, საქაღალდე, ან ალბომი"
+      ],
       "Shared": [
         "გაზიარებული"
       ],
@@ -7318,6 +7321,17 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "${ priceDrivePlus }-დან დაწყებული სატარიფო გეგმები"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -7339,17 +7353,6 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "${ priceDrivePlus }-დან დაწყებული სატარიფო გეგმები"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
       ]
     },
     "new_plans: feature": {
@@ -8453,6 +8456,12 @@
       "Share invitation declined": [
         "გაზიარების მოსაწვევი უარყოფილია"
       ],
+      "Some photo(s) could not be added to \"${ albumName }\"": [
+        "შეუძლებელია ზოგიერთი სურათის ჩამატება\"${ albumName }\"-ში"
+      ],
+      "Some photo(s) could not be removed from ${ albumLink.name }": [
+        "ზოგიერთი სურათი ვერ წაიშალა ${ albumLink.name }-დან"
+      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "უკაცრავად, საქაღალდის წაშლა შეუძლებელია, რადგან ის ცარიელი არაა.",
         "უკაცრავად, საქაღალდეების წაშლა შეუძლებელია, რადგან ისინი ცარიელი არაა."
@@ -8462,6 +8471,9 @@
       ],
       "Subfolder failed to be loaded": [
         "ქვესაქაღალდის ჩატვირთვის შეცდომა"
+      ],
+      "The Albums feature is on its way! We're rolling it out gradually — please try again soon": [
+        "ალბომის ფუნქცია მალე იქნება! ჩვენ ნელნელა ვუშვებთ მას - სულ მალე თავიდან სცადეთ"
       ],
       "The document failed to be created": [
         "დოკუმენტის შექმნა ჩავარდა"
@@ -8497,6 +8509,9 @@
       ],
       "Your photo(s) have been added to \"${ albumName }\"": [
         "თქვენი სურათები დაემტაა \"${ albumName }\"-ში"
+      ],
+      "Your photo(s) have been removed from ${ albumLink.name }": [
+        "თქვენი სურათები წაიშალა ${ albumLink.name }-დან"
       ],
       "Your settings failed to be saved": [
         "პარამეტრების შენახვის შეცდომა"
@@ -9779,6 +9794,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME }-ის პროდუქტების გამოყენების გასაგრძენებლად გაათავისუფლეთ ადგილი, ან ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "ელფოსტის გასაგზავნად ან მისაღებად გაათავისუფლეთ ადგილი ან ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "ელფოსტის გასაგზავნად ან მისაღებად გაათავისუფლეთ ადგილი ან ასწიეთ სატარიფო გეგმა მეტი საცავის მისაღებად."
       ],
@@ -9902,47 +9920,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }-თვის"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription reminder": {
@@ -10200,6 +10177,47 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {

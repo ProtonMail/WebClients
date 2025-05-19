@@ -433,6 +433,9 @@
       "Pause monitoring": [
         "მონიტორინგის შეჩერება"
       ],
+      "Pay once": [
+        "ერთმაგი გადახდა"
+      ],
       "Pin item": [
         "ელემენტის მიმაგრება"
       ],
@@ -458,7 +461,7 @@
         "მოსაწვევის უარყოფა"
       ],
       "Reload": [
-        "თავიდან ჩატვირთვა"
+        "გადატვირთვა"
       ],
       "Remove": [
         "წაშლა"
@@ -570,6 +573,9 @@
       ],
       "Sign out": [
         "გასვლა"
+      ],
+      "Skip": [
+        "გამოტოვება"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "ვიღაცამ გაგიზიარათ ელემენტი ${ PASS_APP_NAME }-ზე."
@@ -801,6 +807,9 @@
       ],
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "ავთენტიკაცია ჩავარდა. დაადასტურეთ თქვენი დამატებითი პაროლი, რომ გატანა გაგრძელდეს"
+      ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "ავთენტიკაცია ჩავარდა. დაადასტურეთ თქვენი მეორე პაროლი, რომ გატანა გაგრძელდეს"
       ],
       "Cannot send invitation at the moment": [
         "ამჟამად მოსაწვევს ვერ გავაგზავნი",
@@ -1778,10 +1787,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
-      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
@@ -2189,6 +2194,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "შემოტანილი მონაცემების სანახავად დააწკაპუნეთ ${ PASS_APP_NAME }-ის ხატულაზე თქვენი ბრაუზერის პანელზე."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "გვენდობა 50, 000-ზე მეტი ბიზნეს-მომხმარებელი და 100 მილიონი ანგარიში მთელი დედამიწიდან."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "სცადეთ ახალი ${ BRAND_NAME }-ის თვისებები, განახლებები და პროდუქტები მანამდე, სანამ ისინი საჯარო გახდება. ეს ქმედება აპლიკაციას თავიდან ჩატვირთავს."
       ],
@@ -2530,6 +2538,12 @@
       "Birthdate": [
         "დაბადების თარიღი"
       ],
+      "Browse faster, smarter": [
+        "იმუშავეთ უფრო სწრაფად და ჭკვიანურად"
+      ],
+      "Built-in 2FA": [
+        "ჩაშენებული 2FA"
+      ],
       "Capital letters (A-Z)": [
         "მაღალი რეგისტრის სიმბოლოები (A-Z)"
       ],
@@ -2547,6 +2561,12 @@
       ],
       "Catch-All": [
         "ყველას დაჭერა"
+      ],
+      "Choose unlock method": [
+        "აირჩიეთ განბლოკვის მეთოდი"
+      ],
+      "Choose your preferred look and feel.": [
+        "აირჩიეთ სასურველი გარეგნობა."
       ],
       "City": [
         "ქალაქი"
@@ -2604,6 +2624,9 @@
       ],
       "Created at": [
         "შექმნის დრო"
+      ],
+      "Credit cards": [
+        "საკრედიტო ბარათები"
       ],
       "Custom hidden field": [
         "მორგებული დამალული ველი"
@@ -2674,6 +2697,9 @@
       "Export": [
         "გატანა"
       ],
+      "Extra email addresses": [
+        "დამატებითი ელფოსტის მისამართები"
+      ],
       "Extra password": [
         "დამატებითი პაროლი"
       ],
@@ -2685,6 +2711,9 @@
       ],
       "Field name": [
         "ველის სახელწოდება"
+      ],
+      "File attachments": [
+        "მიმაგრებული ფაილები"
       ],
       "File format": [
         "ფაილის ფორმატი"
@@ -2698,8 +2727,14 @@
       "For a one-off sharing": [
         "ერთჯერადი გაზიარებისთვის"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "უსაფრთხოებისთვის, ${ PASS_SHORT_APP_NAME } ავტომატურად დაიბლოკება უქმეობის 10 წუთში."
+      ],
       "Forwards to": [
         "გადაგზავნა"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "სამუდამოდ უფასო"
@@ -2716,8 +2751,17 @@
       "Generic CSV": [
         "ზოგადი CSV"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "მიიღეთ ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "მიიღეთ ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "დაიწყეთ"
+      ],
+      "Get the extension for your browser.": [
+        "მიიღეთ გაფართოება თქვენი ბრაუზერისთვის"
       ],
       "Grant": [
         "უფლების მიცემა"
@@ -2727,6 +2771,15 @@
       ],
       "Hide password": [
         "პაროლის დამალვა"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-ის ფსევდონიმები"
+      ],
+      "Highest": [
+        "უმაღლესი"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "როგორ განვბლოკოთ ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2766,6 +2819,12 @@
       ],
       "Instagram handle": [
         "Instagram-ის წარწერა"
+      ],
+      "Install and continue": [
+        "დაყენება და გაგრძელება"
+      ],
+      "Install extension": [
+        "გაფართოების დაყენება"
       ],
       "Invitations": [
         "მოწვევები"
@@ -2812,6 +2871,9 @@
       "License number": [
         "ლიცენზიის ნომერი"
       ],
+      "Limited time": [
+        "შეზღუდული დრო"
+      ],
       "LinkedIn account": [
         "LinkedIn-ის ანგარიში"
       ],
@@ -2835,6 +2897,9 @@
       ],
       "Make all viewers": [
         "ყველას მონიშვნა დამთვალიერებლად"
+      ],
+      "Make it your own.": [
+        "გახადეთ ის თქვენი."
       ],
       "max views reached": [
         "მიღწეულია მაქს. ნახვები"
@@ -2938,6 +3003,9 @@
       "Personal website": [
         "პირადი ვებგვერდი"
       ],
+      "Personalize": [
+        "მორგება"
+      ],
       "PGP-encrypted (recommended)": [
         "PGP-ით დაშიფრული (რეკომენდებულია)"
       ],
@@ -2949,6 +3017,9 @@
       ],
       "PIN code": [
         "PIN კოდი"
+      ],
+      "Plus": [
+        "Plus"
       ],
       "Prefix": [
         "პრეფიქსი"
@@ -3016,8 +3087,14 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "აირჩიეთ საცავი, სადაც SimpleLogin-ის ფსევდონიმების შემოტანა მოხდება"
       ],
+      "Select theme": [
+        "აირჩიეთ თემა"
+      ],
       "Select your password manager": [
         "აირჩიეთ თქვენი პაროლების მმართველი"
+      ],
+      "Select your theme": [
+        "აირჩიეთ თქვენი თემა"
       ],
       "Selected": [
         "მონიშნულია"
@@ -3055,6 +3132,9 @@
       "Status": [
         "სტატუსი"
       ],
+      "Storage": [
+        "საცავი"
+      ],
       "Street address": [
         "ქუჩის მისამართი"
       ],
@@ -3081,6 +3161,9 @@
       ],
       "Text": [
         "ტექსტი"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "${ BRAND_NAME }-ის საუკეთესო ფუნქციები ერთი გამოწერით"
       ],
       "The URL has been copied to the clipboard": [
         "ბმული დაკოპირდა ბუფერში"
@@ -3114,6 +3197,12 @@
       ],
       "Unknown": [
         "უცნობი"
+      ],
+      "Unlimited": [
+        "შეუზღუდავი"
+      ],
+      "Unlock premium features": [
+        "განბლოკეთ ფასიანი ფუნქციები"
       ],
       "Unlock with": [
         "განბლოკვის მექანიზმი"
@@ -3154,6 +3243,9 @@
       "Vault ID": [
         "საცავის ID"
       ],
+      "Vault, item & link sharing": [
+        "საცავის, ელემენტის და ბმულის გაზიარება"
+      ],
       "Vaults": [
         "საცავები"
       ],
@@ -3162,6 +3254,12 @@
       ],
       "View logs": [
         "ჟურნალის ნახვა"
+      ],
+      "VPN Devices": [
+        "VPN მოწყობილობები"
+      ],
+      "VPN Speed": [
+        "VPN-ის სიჩქარე"
       ],
       "Vulnerable": [
         "მოწყვლადი"
@@ -3174,6 +3272,9 @@
       ],
       "Websites": [
         "ვებსაიტები"
+      ],
+      "What's included": [
+        "რას მოიცავს"
       ],
       "Work details": [
         "სამსახურის დეტალები"
@@ -3193,8 +3294,14 @@
       "You are about to create": [
         "აპირებთ, შექმნათ"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "განბლოკვისთვის, შეგიძლიათ, აირჩიოთ PIN-კოდს, ბიომეტრიას, ან თქვენი ანგარიშის პაროლი."
+      ],
       "Your domain": [
         "თქვენი დომენი"
+      ],
+      "Your passwords. Everywhere.": [
+        "თქვენი პაროლები. ყველგან."
       ],
       "ZIP": [
         "ZIP"
@@ -3217,6 +3324,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason }-ის ჩართვა"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Message": {
@@ -3312,6 +3424,9 @@
       "Download file": [
         "ფაილის გადმოწერა"
       ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Firefox-ის შეზღუდვების გამო საჭიროა, ${ PASS_APP_NAME } თავიდან გახსნათ ახალ ფანჯარაში, სანამ ფაილების ატვირთვას შეძლებთ."
+      ],
       "Exporting files": [
         "ფაილების გატანა"
       ],
@@ -3323,6 +3438,9 @@
       ],
       "File attachments": [
         "მიმაგრებული ფაილები"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "თუ ჩართულია, გატანისას ყველა თქვენი ფაილის გადმოწერა მოხდება. ამას რაღაც დრო შეიძლება დასჭირდეს, თქვენი ინტერნეტის სიჩქარეზე დამოკიდებულებით."
       ],
       "If your data contains file attachments, they will not be imported.": [
         "თუ თქვენი მონაცემები მიმაგრებულ ფაილებს შეიცავს, მათი შემოტანა არ მოხდება."
@@ -3374,6 +3492,14 @@
       ],
       "You can attach files to items for a better organization": [
         "უკეთესად ორგანიზმებისთვის ელემენტებს, შეგიძლიათ, ფაილები მიამაგროთ"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus Lifetime ფასით ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price } /თვეში"
       ]
     },
     "Placeholder": {
@@ -3642,8 +3768,14 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } მისამართი"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME }-ის მონიტორი"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "ანგარიშის დაცვა"
@@ -3920,6 +4052,9 @@
       ],
       "Pause monitoring?": [
         "მონიტორინგის შეჩერება?"
+      ],
+      "Pay once, access forever.": [
+        "გადაიხადეთ ერთხელ და იქონიეთ სამუდამო წვდომა"
       ],
       "Pending access confirmation": [
         "დარჩენილი წვდომის დადასტურება"

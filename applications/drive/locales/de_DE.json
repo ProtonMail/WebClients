@@ -114,9 +114,6 @@
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
-      "Authenticate": [
-        "Authentifizieren"
-      ],
       "Back": [
         "Zurück"
       ],
@@ -430,9 +427,6 @@
       ],
       "Fit to window": [
         "An das Fenster anpassen"
-      ],
-      "Forgot password?": [
-        "Passwort vergessen?"
       ],
       "Forward as attachment": [
         "Als Anhang weiterleiten"
@@ -1076,14 +1070,8 @@
       "Use a different payment method": [
         "Eine andere Zahlungsmethode verwenden"
       ],
-      "Use authentication code": [
-        "Authentifizierungscode verwenden"
-      ],
       "Use for sending": [
         "Für den Versand verwenden"
-      ],
-      "Use recovery code": [
-        "Wiederherstellungscode verwenden"
       ],
       "Verify": [
         "Verifizieren"
@@ -3926,24 +3914,6 @@
         "Unbegrenzte hide-my-email-Aliasse"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Bei der Authentifizierung mit deinem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte versuche es erneut."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Stecke einen Sicherheitsschlüssel ein, der mit deinem ${ BRAND_NAME }-Konto verknüpft ist."
-      ],
-      "Security key": [
-        "Sicherheitsschlüssel"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Sicherheitsschlüssel"
-      ]
-    },
     "file size format": {
       "byte": [
         "Byte",
@@ -4962,9 +4932,6 @@
       "Duplicate key updated": [
         "Zweitschlüssel aktualisiert"
       ],
-      "Each code can only be used once": [
-        "Jeder Code kann nur einmal verwendet werden"
-      ],
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
       ],
@@ -5001,20 +4968,11 @@
       "Enter password": [
         "Passwort eingeben"
       ],
-      "Enter the code from your authenticator app": [
-        "Code aus der Authenticator App eingeben"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Bestätigungscode eingeben. Ziffer ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Gib dein eigenes Passwort ein (als Organisationsadministrator)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Geschätzte verbleibende Zeit: ${ estimatedMinutes } Minute",
@@ -6079,9 +6037,6 @@
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
       ],
-      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
-        "Wir führen ein Upgrade der Fotos auf die neue Version durch! Während dieser Umstellung ist die Fotowiederherstellung vorübergehend nicht verfügbar. In ein paar Tagen sollte alles fertig sein. Wir bedanken uns für dein Verständnis."
-      ],
       "Week": [
         "Woche"
       ],
@@ -6096,9 +6051,6 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Wenn du eine Verbindung zu VPN herstellst, wird deine IP-Adresse (ein eindeutiger Code, der deinem Gerät zugewiesen ist) mithilfe von Verschlüsselungstechnologie verborgen."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "wird auf die Version vom ${ formattedRevisionDate } wiederhergestellt. Alle anderen Versionen bleiben erhalten."
@@ -6496,9 +6448,6 @@
       ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
-      ],
-      "Authenticator app": [
-        "Authenticator App"
       ],
       "Beta Access": [
         "Beta-Zugang"
@@ -7031,9 +6980,6 @@
       ],
       "Your location": [
         "Dein Standort"
-      ],
-      "Your password (admin)": [
-        "Dein Passwort (Admin)"
       ]
     },
     "Label for contact group color": {
@@ -7642,6 +7588,17 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Abonnements ab ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Konto löschen"
@@ -7663,17 +7620,6 @@
       ],
       "Switch plan": [
         "Abonnement wechseln"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Abonnements ab ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Upgraden"
       ]
     },
     "new_plans: feature": {
@@ -8646,6 +8592,9 @@
       ],
       "Access for the member removed": [
         "Zugriff für das Mitglied entfernt"
+      ],
+      "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
+        "Greife auf unsere neuen Alben, Filter und mehr zu, indem du auf dein gesperrtes Volume zugreifst. Stelle es jetzt wieder her oder lösche es, um diese neuen Funktionen sofort nutzen zu können."
       ],
       "Access updated": [
         "Zugriff aktualisiert"
@@ -10253,47 +10202,6 @@
         "Für ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -10552,6 +10460,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -11186,9 +11135,6 @@
       ],
       "Enter 2FA code": [
         "2FA Code eingeben"
-      ],
-      "Enter your password": [
-        "Passwort eingeben"
       ],
       "Error": [
         "Fehler"

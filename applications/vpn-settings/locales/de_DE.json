@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
-      "activate": [
-        "aktivieren"
-      ],
       "Activate": [
         "Aktivieren"
+      ],
+      "activate": [
+        "aktivieren"
       ],
       "Activate organization key": [
         "Organisationsschlüssel aktivieren"
@@ -82,7 +82,7 @@
         "Benutzer hinzuf."
       ],
       "Allow": [
-        "Erlauben"
+        "Zugelassen"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "Ende-zu-Ende-verschlüsselte E-Mail für diese Gruppe zulassen"
@@ -107,9 +107,6 @@
       ],
       "Back": [
         "Zurück"
-      ],
-      "Back to sign-in": [
-        "Zurück zur Anmeldung"
       ],
       "Block": [
         "Sperren"
@@ -267,10 +264,10 @@
       "Discard": [
         "Verwerfen"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Änderungen verwerfen"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Änderungen verwerfen"
       ],
       "Discover ${ planName }": [
@@ -286,7 +283,7 @@
         "Fertig"
       ],
       "Downgrade": [
-        "Zurückstufen"
+        "Downgraden"
       ],
       "Download": [
         "Herunterladen"
@@ -374,9 +371,6 @@
       ],
       "Fit to window": [
         "An das Fenster anpassen"
-      ],
-      "Forgot password?": [
-        "Passwort vergessen?"
       ],
       "Forgot recovery method?": [
         "Wiederherstellungsmethode vergessen?"
@@ -699,10 +693,10 @@
       "Select country ${ country }": [
         "Land ${ country } auswählen"
       ],
-      "Select file": [
+      "select file": [
         "Datei auswählen"
       ],
-      "select file": [
+      "Select file": [
         "Datei auswählen"
       ],
       "Send code": [
@@ -772,7 +766,7 @@
         "Vorschau anzeigen"
       ],
       "Sign in": [
-        "Anmelden"
+        "Anmeldung"
       ],
       "Sign in with password": [
         "Mit Passwort anmelden"
@@ -793,7 +787,7 @@
         "Überspringen"
       ],
       "Spam": [
-        "Spam"
+        "In Spam verschieben"
       ],
       "Start live chat": [
         "Live-Chat starten"
@@ -2645,7 +2639,7 @@
     },
     "Cycle": {
       "/month": [
-        "/Monat"
+        "/ Monat"
       ],
       "/user per month": [
         "/Benutzer pro Monat"
@@ -2818,19 +2812,19 @@
         "${ name } konnte nicht gelöscht werden"
       ],
       "${ name } failed to move to allow list": [
-        "${ name } konnte nicht in die Liste zugelassener Domains verschoben werden."
+        "${ name } konnte nicht in die Liste zugelassener E-Mail-Adressen verschoben werden."
       ],
       "${ name } failed to move to block list": [
-        "${ name } konnte nicht in die Liste gesperrter Domains verschoben werden."
+        "${ name } konnte nicht in die Liste gesperrter E-Mail-Adressen verschoben werden."
       ],
       "${ name } failed to move to spam list": [
         "${ name } konnte nicht in die Spamliste verschoben werden."
       ],
       "${ name } moved to allow list": [
-        "${ name } wurde in die Liste zugelassener Domains verschoben."
+        "${ name } wurde in die Liste zugelassener E-Mail-Adressen verschoben."
       ],
       "${ name } moved to block list": [
-        "${ name } wurde in die Liste gesperrter Domains verschoben."
+        "${ name } wurde in die Liste gesperrter E-Mail-Adressen verschoben."
       ],
       "${ name } moved to spam list": [
         "${ name } in Spamliste verschoben."
@@ -3974,7 +3968,7 @@
         "Liste durchsuchen"
       ],
       "Spam:": [
-        "Spam:"
+        "In Spam verschieben:"
       ],
       "Take control over what lands in your organization members' inboxes by creating the following lists:": [
         "Übernimm die Kontrolle darüber, was in den Posteingängen der Mitglieder deiner Organisation landet, indem du die folgenden Listen erstellst:"
@@ -4664,11 +4658,11 @@
       "Data recoverable on this device": [
         "Daten, die auf diesem Gerät wiederhergestellt werden können"
       ],
-      "dedicated servers": [
-        "dedizierte Server"
-      ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "dedicated servers": [
+        "dedizierte Server"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -4857,9 +4851,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Gib die E-Mail-Adresse oder den Benutzernamen deines ${ BRAND_NAME }-Kontos ein."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Gib dein eigenes Passwort ein (als Organisationsadministrator)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Gib deine E-Mail-Adresse für die Wiederherstellung ein und es wird dir dein Benutzername oder deine E-Mail-Adresse zugeschickt."
@@ -5733,9 +5724,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Gib zur Bestätigung bitte den Namen des zu löschenden Benutzers ein."
       ],
-      "to continue to ${ product }": [
-        "um zu ${ product } zu gelangen."
-      ],
       "To create your first user group, go to": [
         "Um deine erste Benutzergruppe zu erstellen, gehe zu"
       ],
@@ -5841,10 +5829,10 @@
       "User activated": [
         "Benutzer aktiviert"
       ],
-      "username": [
+      "Username": [
         "Benutzername"
       ],
-      "Username": [
+      "username": [
         "Benutzername"
       ],
       "Users": [
@@ -6384,7 +6372,7 @@
         "Anschrift"
       ],
       "Address type": [
-        "Art der Adresse"
+        "Adresstyp"
       ],
       "Addresses": [
         "E-Mail-Adressen"
@@ -6401,10 +6389,10 @@
       "Allow recovery by phone": [
         "Wiederherstellung per Telefon zulassen"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Erlaubte Domain"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Erlaubte Domain"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6441,7 +6429,7 @@
         "Abrechnungszeitraum"
       ],
       "Block": [
-        "Gesperrt"
+        "Blockieren"
       ],
       "Block malware only": [
         "Nur Malware blockieren"
@@ -6456,7 +6444,7 @@
         "Browserversion"
       ],
       "BTC address": [
-        "Bitcoin‐Adresse"
+        "BTC‐Adresse"
       ],
       "BTC amount": [
         "Betrag in Bitcoin"
@@ -6789,7 +6777,7 @@
         "Zahlungsleistender"
       ],
       "Payment details": [
-        "Zahlungsdetails"
+        "Zahlungsinformationen"
       ],
       "Payment method": [
         "Zahlungsmethode"
@@ -6984,16 +6972,13 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, ich möchte dieses Konto und alle enthaltenen Daten endgültig und unwiderruflich löschen."
       ],
-      "Your password (admin)": [
-        "Dein Passwort (Admin)"
-      ],
       "ZIP code": [
         "Postleitzahl"
       ]
     },
     "label": {
       "Recovery phone number": [
-        "Telefonnummer für die Wiederherstellung"
+        "Wiederherstellung-Telefonnummer"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -7420,10 +7405,10 @@
         "Zugelassen"
       ],
       "Block": [
-        "Gesperrt"
+        "Blockieren"
       ],
       "Spam": [
-        "Spam"
+        "In Spam verschieben"
       ]
     },
     "New Label form": {
@@ -7442,10 +7427,24 @@
         "Höchste VPN-Geschwindigkeit"
       ],
       "Keep your inbox organized with folders": [
-        "Organisiere deinen Posteingang mit Ordnern."
+        "Organisiere deinen Posteingang mit Ordnern"
       ],
       "Medium VPN speed": [
         "Mittlere VPN-Geschwindigkeit"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Auf ${ downgradedPlanName } downgraden"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Upgrade": [
+        "Upgraden"
       ]
     },
     "new_plans: action": {
@@ -7471,30 +7470,12 @@
         "Abonnement wechseln"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ]
-    },
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } und ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ n } calendar": [
-        "${ n } Kalender",
-        "${ n } Kalender"
       ],
       "${ n } calendar per user": [
         "${ n } Kalender je Benutzer",
@@ -7527,10 +7508,6 @@
       "${ n } hide-my-email alias": [
         "${ n } hide-my-email-Alias",
         "${ n } hide-my-email-Aliasse"
-      ],
-      "${ n } label": [
-        "${ n } Kategorie",
-        "${ n } Kategorien"
       ],
       "${ n } message per day": [
         "${ n } Nachricht pro Tag",
@@ -7576,7 +7553,7 @@
         "${ size } sicherer Speicherplatz pro Benutzer"
       ],
       "${ size } storage": [
-        "${ size } Speicherplatz"
+        "${ size }-Speicherplatz"
       ],
       "${ size } storage per user": [
         "${ size } Speicherplatz pro Benutzer"
@@ -7597,7 +7574,7 @@
         "Dienstleistungsvereinbarung über 99,95 % Verfügbarkeit"
       ],
       "Ad-blocker and malware protection": [
-        "Werbeblocker & Malware-Schutz"
+        "Werbeblocker und Malware-Schutz"
       ],
       "Admin console": [
         "Adminkonsole"
@@ -7624,7 +7601,7 @@
         "Spam und Papierkorb automatisch löschen"
       ],
       "Auto-reply": [
-        "Automatische Antworten"
+        "Automatisch antworten"
       ],
       "Autofill credit cards (coming soon)": [
         "Kreditkarten automatisch ausfüllen (bald verfügbar)"
@@ -7681,7 +7658,7 @@
         "Für Streaming optimierte dedizierte Server"
       ],
       "Desktop app": [
-        "Desktop-App"
+        "Desktopanwendung"
       ],
       "DNS leak prevention": [
         "DNS-Leakschutz"
@@ -7717,7 +7694,7 @@
         "Kostenlose Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Free VPN on a single device": [
-        "Kostenloses VPN auf einem Gerät"
+        "Kostenloses VPN auf einem einzigen Gerät"
       ],
       "Fully refundable for 30 days": [
         "Vollständig rückerstattbar für 30 Tage"
@@ -7781,7 +7758,7 @@
         "Priorisierter E-Mail-Support"
       ],
       "Priority support": [
-        "Vorrangiger Support"
+        "Priorisierter Support"
       ],
       "Priority support & live chat": [
         "Priorisierter Support & Live-Chat"
@@ -7839,7 +7816,7 @@
         "Schütze dich online in 2 einfachen Schritten"
       ],
       "Strict no-logs policy": [
-        "Strenge No-Logs-Richtlinie"
+        "Strenge No Logs-Richtlinie"
       ],
       "Sync and backup all your files across devices": [
         "Synchronisiere und sichere alle deine Dateien auf all deinen Geräten"
@@ -7848,10 +7825,10 @@
         "Tor über VPN"
       ],
       "Two-factor authentication": [
-        "Zwei‐Faktor‐Authentifizierung"
+        "Zwei-Faktor-Authentifizierung"
       ],
       "Unlimited devices": [
-        "Unbegrenzte Geräte"
+        "Unbegrenzte Anzahl an Geräten"
       ],
       "Unlimited devices and aliases": [
         "Unbegrenzt viele Geräte und Aliasse"
@@ -7918,10 +7895,6 @@
       ],
       "User storage management": [
         "Benutzer-Speicherverwaltung"
-      ],
-      "Vault sharing (up to ${ n } person)": [
-        "Tresor teilen (bis zu ${ n } Person)",
-        "Tresor teilen (bis zu ${ n } Personen)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
@@ -8025,7 +7998,7 @@
         "Die dedizierte VPN-Lösung, die einen sicheren und uneingeschränkten Zugriff auf ein Hochgeschwindigkeitsinternet bietet."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "Das kostenlose Starterkonto, das standardmäßig allen Benutzern Privatsphäre gibt."
+        "Das kostenlose Starterkonto, das standardmäßig allen Benutzern Privatsphäre bietet."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Unbegrenzte Privatsphäre und mehr Speicher für bis zu 2 Personen."
@@ -8096,7 +8069,7 @@
         "Abonnement prüfen und bezahlen"
       ],
       "Switch plans?": [
-        "Abonnement wechseln?"
+        "Tarife wechseln?"
       ]
     },
     "new_plans: tooltip": {
@@ -8156,7 +8129,7 @@
         "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
-        "Diese Funktion schützt vor der Bedrohung der VPN-Privatsphäre, indem dein Internet-Verkehr über mehrere Server geleitet wird."
+        "Diese Funktion schützt vor der Bedrohung der VPN-Privatsphäre, indem dein Internetverkehr über mehrere Server geleitet wird"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Diese Funktion schützt vor der Bedrohung der VPN-Privatsphäre, indem dein Internetverkehr über mehrere Server geleitet wird."
@@ -8258,7 +8231,7 @@
         "Leite deinen Internetverkehr mit einem einzigen Klick durch das Tor-Netzwerk."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
+        "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet automatische Synchronisierung, verschlüsselte Dateifreigabe und mehr."
       ],
       "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
         "Sicheres Teilen von einzelnen Einträgen mit anderen (selbst wenn sie ${ PASS_APP_NAME } nicht nutzen)"
@@ -8300,7 +8273,7 @@
         "Lade dein Unternehmenslogo hoch, um die Erfahrung deines Teams in der ${ BRAND_NAME } Web-App zu personalisieren"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Verwende deine eigenen E-Mail-Domain-Adressen, z. B. du@deinedomain.de"
+        "Verwende deine eigenen E-Mail-Domains, z. B. du@deinedomain.de"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
         "Wir führen keine Sitzungsprotokolle darüber, was du online tust. Wir zeichnen keine Metadaten auf, die deine Privatsphäre gefährden könnten."
@@ -8951,6 +8924,9 @@
       "Bank transfer": [
         "Banküberweisung"
       ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
       "Credit/debit card": [
         "Kredit-/Debitkarte"
       ],
@@ -9273,7 +9249,7 @@
     },
     "Price": {
       "Free": [
-        "Kostenlos"
+        "Free"
       ]
     },
     "Recovery Email": {
@@ -10315,7 +10291,7 @@
         "Abgemeldet"
       ],
       "Unknown": [
-        "Unbekannt"
+        "Unbekannte"
       ]
     },
     "State": {
@@ -10421,7 +10397,7 @@
         "Wird alle 2 Jahre abgerechnet"
       ],
       "Billed monthly": [
-        "Wird monatlich abgerechnet"
+        "Monatlich abgerechnet"
       ],
       "Billed yearly": [
         "Wird jährlich abgerechnet"
@@ -10447,10 +10423,6 @@
       "${ n } high-speed VPN connection": [
         "${ n } Hochgeschwindigkeits-VPN-Verbindung",
         "${ n } Hochgeschwindigkeits-VPN-Verbindungen"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } Hochgeschwindigkeits-VPN-Verbindung pro Benutzer",
-        "${ n } Hochgeschwindigkeits-VPN-Verbindungen pro Benutzer"
       ],
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",
@@ -10540,47 +10512,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Für ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription reminder": {
@@ -10873,6 +10804,47 @@
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Bist du sicher?"
@@ -11057,7 +11029,7 @@
         "Du hast dein Abonnement erfolgreich gekündigt."
       ],
       "You have successfully unsubscribed": [
-        "Du hast das Abonnement erfolgreich gekündigt."
+        "Sie haben erfolgreich das Abonnement gekündigt"
       ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Du erhältst deinen Benutzernamen innerhalb einer Minute per E-Mail, wenn du eine gültige E-Mail-Adresse für die Wiederherstellung eingegeben hast."
@@ -11120,7 +11092,7 @@
     },
     "Suffix": {
       "/month": [
-        "/Monat"
+        "/ Monat"
       ],
       "/user per month": [
         "/Benutzer pro Monat"
@@ -11161,7 +11133,7 @@
         "Für Familien"
       ],
       "For individuals": [
-        "Für Einzelpersonen"
+        "Für Privatpersonen"
       ]
     },
     "TableHeader": {
@@ -11386,11 +11358,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-All address": [
-        "Catch-all-Adresse"
-      ],
       "Catch-all address": [
         "Catch-all-Weiterleitungsadresse"
+      ],
+      "Catch-All address": [
+        "Catch-all-Adresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -11642,9 +11614,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Gib deine ${ BRAND_NAME }-Kontodaten ein, um am ${ app } Beta-Programm teilzunehmen."
-      ],
-      "Enter your password": [
-        "Passwort eingeben"
       ],
       "Error": [
         "Fehler"
@@ -12170,7 +12139,7 @@
         "Öffentlicher Schlüssel des Identitätsanbieters zum Signieren von Authentifizierungs-Assertationen. Hole dir den Zertifikatshash von deinem Identitätsanbieter."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Wenn du einen Geschenkgutschein erworben oder von unserem Support-Team erhalten hast, kannst du ihn hier eingeben."
+        "Wenn Sie einen Geschenkgutschein erworben oder von unserem Support-Team erhalten haben, können Sie ihn hier eingeben."
       ],
       "IP address (Internet Service Provider)": [
         "IP-Adresse (Internetdienstanbieter)"
@@ -12592,7 +12561,7 @@
       ],
       "${ n } server": [
         "${ n } Server",
-        "${ n }+ Server"
+        "Mehr als ${ n } Server"
       ],
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",

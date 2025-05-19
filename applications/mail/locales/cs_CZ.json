@@ -1179,10 +1179,10 @@
       "Select ${ planTitle }": [
         "Vybrat ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Vybrat vše"
       ],
-      "Select All": [
+      "Select all": [
         "Vybrat vše"
       ],
       "Select all messages": [
@@ -5198,12 +5198,12 @@
         "Vložte bezpečnostní klíč spojený s vaším účtem ${ BRAND_NAME }."
       ],
       "Security key": [
-        "Klíč zabezpečení"
+        "Bezpečnostní klíč"
       ]
     },
     "fido2: Label": {
       "Security key": [
-        "Klíč zabezpečení"
+        "Bezpečnostní klíč"
       ]
     },
     "file size format": {
@@ -6528,9 +6528,6 @@
       "and": [
         "a"
       ],
-      "and more.": [
-        "a další."
-      ],
       "Another tip will be displayed next time you open Mail": [
         "Jiný tip bude zobrazen až příště otevřete Mail"
       ],
@@ -6867,11 +6864,11 @@
       "Drop to import": [
         "Přetažením provedete import"
       ],
-      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
-        "Vzhledem k nastavení příjemce, nelze tuto zprávu odeslat s datem vypršení platnosti na následující kontakt: ",
-        "Vzhledem k nastavení příjemce, nelze tuto zprávu odeslat s datem vypršení platnosti na následující kontakty: ",
-        "Vzhledem k nastavení příjemce, nelze tuto zprávu odeslat s datem vypršení platnosti na následující kontakty: ",
-        "Vzhledem k nastavení příjemce, nelze tuto zprávu odeslat s datem vypršení platnosti na následující kontakty: "
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Vzhledem k nastavení příjemce, nelze tuto zprávu odeslat s datem vypršení platnosti příjemci ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Vzhledem k nastavení příjemce, nelze tuto zprávu odeslat s datem vypršení platnosti."
       ],
       "Duplicate key updated": [
         "Duplicitní klíč byl aktualizován"
@@ -7000,7 +6997,7 @@
         "Filtry fungují na všech e-mailech, včetně příchozích i odeslaných e-mailů. Každý filtr musí obsahovat alespoň jméno, podmínku a činnost k vykonání."
       ],
       "finance": [
-        "finance"
+        "peníze"
       ],
       "Folder": [
         "Složka"
@@ -7147,7 +7144,10 @@
         "Inicializuji..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -9479,7 +9479,7 @@
         "Vaše poloha"
       ],
       "Your password (admin)": [
-        "Vaše heslo (admin)"
+        "Vaše heslo (správce)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13060,47 +13060,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
@@ -13371,6 +13330,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -14299,7 +14299,7 @@
         "Zadejte kód 2FA"
       ],
       "Enter your password": [
-        "Zadejte Vaše heslo"
+        "Zadejte své heslo"
       ],
       "Error": [
         "Chyba"
@@ -14415,10 +14415,10 @@
       "Load remote content": [
         "Načíst vzdálený obsah"
       ],
-      "Mail Subscriptions": [
+      "Mail subscriptions": [
         "E-mailové odběry"
       ],
-      "Mail subscriptions": [
+      "Mail Subscriptions": [
         "E-mailové odběry"
       ],
       "Make a secure connection your default": [

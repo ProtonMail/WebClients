@@ -77,7 +77,7 @@
         "Ужыць пажыццёвы код купона"
       ],
       "Authenticate": [
-        "Аўтэнтыфікацыя"
+        "Аўтэнтыфікаваць"
       ],
       "Back": [
         "Назад"
@@ -433,6 +433,9 @@
       "Pause monitoring": [
         "Прыпыніць назіранне"
       ],
+      "Pay once": [
+        "Аднаразовая аплата"
+      ],
       "Pin item": [
         "Замацаваць элемент"
       ],
@@ -570,6 +573,9 @@
       ],
       "Sign out": [
         "Выйсці з уліковага запісу"
+      ],
+      "Skip": [
+        "Прапусціць"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Нехта абагуліў элемент з вамі ў ${ PASS_APP_NAME }."
@@ -1853,12 +1859,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
-      ],
       "Moving items": [
         "Перамяшчэнне элементаў"
       ],
@@ -2279,6 +2279,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Для прагляду імпартаваных даных, націсніце на значок ${ PASS_APP_NAME } у панэлі інструментаў свайго браўзера."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Нам давяраюць больш за 50 000 карыстальнікаў у сферы бізнесу і 100 мільёнаў уліковых запісаў па ўсім свеце."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта прывядзе да перазапуску праграмы"
       ],
@@ -2656,6 +2659,12 @@
       "Birthdate": [
         "Дата нараджэння"
       ],
+      "Browse faster, smarter": [
+        "Праглядайце хутчэй і разумней"
+      ],
+      "Built-in 2FA": [
+        "Убудаваная 2ФА"
+      ],
       "Capital letters (A-Z)": [
         "Вялікія літары (A-Z)"
       ],
@@ -2673,6 +2682,12 @@
       ],
       "Catch-All": [
         "Уся пошта дамена"
+      ],
+      "Choose unlock method": [
+        "Выберыце спосаб разблакіроўкі"
+      ],
+      "Choose your preferred look and feel.": [
+        "Выберыце пажаданы выгляд."
       ],
       "City": [
         "Горад"
@@ -2730,6 +2745,9 @@
       ],
       "Created at": [
         "Створана"
+      ],
+      "Credit cards": [
+        "Крэдытныя карткі"
       ],
       "Custom hidden field": [
         "Карыстальніцкія схаваныя палі"
@@ -2800,6 +2818,9 @@
       "Export": [
         "Экспартаванне"
       ],
+      "Extra email addresses": [
+        "Дадатковыя адрасы электроннай пошты"
+      ],
       "Extra password": [
         "Дадатковы пароль"
       ],
@@ -2811,6 +2832,9 @@
       ],
       "Field name": [
         "Назва поля"
+      ],
+      "File attachments": [
+        "Далучэнні файлаў"
       ],
       "File format": [
         "Фармат файла"
@@ -2824,8 +2848,14 @@
       "For a one-off sharing": [
         "Для аднаразовага абагульвання"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "У мэтах бяспекі ${ PASS_SHORT_APP_NAME } аўтаматычна заблакіруецца пасля 10 хвілін не актыўнасці."
+      ],
       "Forwards to": [
         "Перасылаць на"
+      ],
+      "Free": [
+        "Бясплатна"
       ],
       "Free forever": [
         "Бясплатна назаўсёды"
@@ -2842,8 +2872,17 @@
       "Generic CSV": [
         "Агульны CSV"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Атрымайце ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Атрымайце ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "Пачаць працу"
+      ],
+      "Get the extension for your browser.": [
+        "Атрымайце пашырэнні для свайго браўзера."
       ],
       "Grant": [
         "Дазволіць"
@@ -2853,6 +2892,15 @@
       ],
       "Hide password": [
         "Схаваць пароль"
+      ],
+      "Hide-my-email aliases": [
+        "Псеўданімы Hide-my-email"
+      ],
+      "Highest": [
+        "Найвышэйшая"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Як разблакіраваць ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://pryklad.com"
@@ -2892,6 +2940,12 @@
       ],
       "Instagram handle": [
         "Профіль Instagram"
+      ],
+      "Install and continue": [
+        "Усталяваць і працягнуць"
+      ],
+      "Install extension": [
+        "Усталяваць пашырэнне"
       ],
       "Invitations": [
         "Запрашэнні"
@@ -2938,6 +2992,9 @@
       "License number": [
         "Пасведчанне кіроўцы"
       ],
+      "Limited time": [
+        "Абмежаваны час"
+      ],
       "LinkedIn account": [
         "Уліковы запіс LinkedIn"
       ],
@@ -2961,6 +3018,9 @@
       ],
       "Make all viewers": [
         "Даць усім правы прагляду"
+      ],
+      "Make it your own.": [
+        "Персаналізуйце выгляд"
       ],
       "max views reached": [
         "дасягнута максімальная колькасць праглядаў"
@@ -3064,6 +3124,9 @@
       "Personal website": [
         "Асабісты вэб-сайт"
       ],
+      "Personalize": [
+        "Персаналізацыя"
+      ],
       "PGP-encrypted (recommended)": [
         "Зашыфравана PGP (рэкамендавана)"
       ],
@@ -3075,6 +3138,9 @@
       ],
       "PIN code": [
         "PIN-код"
+      ],
+      "Plus": [
+        "Plus"
       ],
       "Prefix": [
         "Прэфікс"
@@ -3089,7 +3155,7 @@
         "Абарона ${ PASS_APP_NAME } з дапамогай дадатковага пароля"
       ],
       "Public domain": [
-        "публічны дамен"
+        "Публічны дамен"
       ],
       "Rate us": [
         "Ацаніце нас"
@@ -3142,8 +3208,14 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Выберыце сховішча ў якое будуць імпартаваны псеўданімы SimpleLogin"
       ],
+      "Select theme": [
+        "Выбраць тэму"
+      ],
       "Select your password manager": [
         "Выберыце менеджар пароляў"
+      ],
+      "Select your theme": [
+        "Выберыце тэму"
       ],
       "Selected": [
         "Выбрана"
@@ -3181,6 +3253,9 @@
       "Status": [
         "Статус"
       ],
+      "Storage": [
+        "Сховішча"
+      ],
       "Street address": [
         "Вуліца"
       ],
@@ -3207,6 +3282,9 @@
       ],
       "Text": [
         "Тэкст"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Лепшае ад ${ BRAND_NAME } з адной падпіскай"
       ],
       "The URL has been copied to the clipboard": [
         "URL-адрас скапіяваны ў буфер абмену"
@@ -3240,6 +3318,12 @@
       ],
       "Unknown": [
         "Невядома"
+      ],
+      "Unlimited": [
+        "Unlimited"
+      ],
+      "Unlock premium features": [
+        "Разблакіраваць прэміяльныя функцыі"
       ],
       "Unlock with": [
         "Разблакіраваць з дапамогай"
@@ -3280,6 +3364,9 @@
       "Vault ID": [
         "Ідэнтыфікатар сховішча"
       ],
+      "Vault, item & link sharing": [
+        "Абагульванне сховішча, элемента і спасылкі"
+      ],
       "Vaults": [
         "Сховішчы"
       ],
@@ -3288,6 +3375,12 @@
       ],
       "View logs": [
         "Паглядзець журнал"
+      ],
+      "VPN Devices": [
+        "Прылады VPN"
+      ],
+      "VPN Speed": [
+        "Хуткасць VPN"
       ],
       "Vulnerable": [
         "Уразлівы"
@@ -3300,6 +3393,9 @@
       ],
       "Websites": [
         "Вэб-сайты"
+      ],
+      "What's included": [
+        "Што вы атрымаеце?"
       ],
       "Work details": [
         "Звесткі аб працы"
@@ -3319,8 +3415,14 @@
       "You are about to create": [
         "Вы збіраецеся стварыць"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Вы можаце выбіраць паміж PIN-кодам, біяметрыяй або разблакіроўкай уліковага запісу паролем."
+      ],
       "Your domain": [
         "Ваш дамен"
+      ],
+      "Your passwords. Everywhere.": [
+        "Вашы паролі. У любым месцы."
       ],
       "ZIP": [
         "Архіў ZIP"
@@ -3343,6 +3445,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Уключыць ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Message": {
@@ -3512,6 +3619,14 @@
       ],
       "You can attach files to items for a better organization": [
         "Вы можаце далучаць файлы да элементаў для лепшай арганізацыі"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "Пажыццёвы доступ да ${ PASS_SHORT_APP_NAME } Plus за ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price } у месяц"
       ]
     },
     "Placeholder": {
@@ -3784,8 +3899,14 @@
       "${ BRAND_NAME } addresses": [
         "Адрасы ${ BRAND_NAME }"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Абарона ўліковага запісу"
@@ -4068,6 +4189,9 @@
       ],
       "Pause monitoring?": [
         "Прыпыніць назіранне?"
+      ],
+      "Pay once, access forever.": [
+        "Аплаціце адзін раз і атрымайце пажыццёвы доступ."
       ],
       "Pending access confirmation": [
         "Чакаецца пацвярджэнне доступу"

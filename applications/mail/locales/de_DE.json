@@ -151,9 +151,6 @@
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
-      "Authenticate": [
-        "Authentifizieren"
-      ],
       "Auto-delete spam and trash": [
         "Spam und Papierkorb automatisch löschen"
       ],
@@ -474,9 +471,6 @@
       "Email settings": [
         "E-Mail-Einstellungen"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "Enable": [
         "Aktivieren"
       ],
@@ -542,9 +536,6 @@
       ],
       "Font": [
         "Schriftart"
-      ],
-      "Forgot password?": [
-        "Passwort vergessen?"
       ],
       "Formalize": [
         "Formalisieren"
@@ -1171,10 +1162,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } auswählen"
       ],
-      "Select all": [
+      "Select All": [
         "Alle auswählen"
       ],
-      "Select All": [
+      "Select all": [
         "Alle auswählen"
       ],
       "Select all messages": [
@@ -1480,14 +1471,8 @@
       "Use a different payment method": [
         "Eine andere Zahlungsmethode verwenden"
       ],
-      "Use authentication code": [
-        "Authentifizierungscode verwenden"
-      ],
       "Use for sending": [
         "Für den Versand verwenden"
-      ],
-      "Use recovery code": [
-        "Wiederherstellungscode verwenden"
       ],
       "Use this": [
         "Dies verwenden"
@@ -5262,24 +5247,6 @@
         "Unbegrenzte hide-my-email-Aliasse"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Bei der Authentifizierung mit deinem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte versuche es erneut."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Stecke einen Sicherheitsschlüssel ein, der mit deinem ${ BRAND_NAME }-Konto verknüpft ist."
-      ],
-      "Security key": [
-        "Sicherheitsschlüssel"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Sicherheitsschlüssel"
-      ]
-    },
     "file size format": {
       "byte": [
         "Byte",
@@ -6472,9 +6439,6 @@
       "and": [
         "und"
       ],
-      "and more.": [
-        "und mehr."
-      ],
       "Another tip will be displayed next time you open Mail": [
         "Ein weiterer Tipp wird beim nächsten Öffnen von Mail angezeigt"
       ],
@@ -6799,15 +6763,8 @@
       "Drop to import": [
         "Ablegen zum Importieren"
       ],
-      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
-        "Aufgrund der Konfiguration deines Empfängers kann diese Nachricht nicht mit einem Ablaufdatum an den folgenden Kontakt gesendet werden: ",
-        "Aufgrund der Konfiguration deines Empfängers kann diese Nachricht nicht mit einem Ablaufdatum an die folgenden Kontakte gesendet werden: "
-      ],
       "Duplicate key updated": [
         "Zweitschlüssel aktualisiert"
-      ],
-      "Each code can only be used once": [
-        "Jeder Code kann nur einmal verwendet werden"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Verwalte Newsletter und Verteilerlisten und kündige Abonnements ganz einfach."
@@ -6864,20 +6821,11 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Genieße ein schnelleres, konzentriertes E-Mail-Erlebnis mit der Desktop-App."
       ],
-      "Enter the code from your authenticator app": [
-        "Code aus der Authenticator App eingeben"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Bestätigungscode eingeben. Ziffer ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Gib dein eigenes Passwort ein (als Organisationsadministrator)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Geschätzte verbleibende Zeit: ${ estimatedMinutes } Minute",
@@ -7061,7 +7009,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -7155,9 +7104,6 @@
       ],
       "Low Priority": [
         "Niedrige Priorität"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } als Standard-E-Mail-Anwendung festlegen."
       ],
       "Manage your folders": [
         "Ordner verwalten"
@@ -8156,9 +8102,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Wenn du für ${ senderName } vertrauenswürdige Schlüssel aktiviert hast, wurden die öffentlichen Schlüssel zu den Kontaktdaten hinzugefügt."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Wenn du dich für einen Newsletter anmeldest, verwende einen Alias anstelle deiner E-Mail-Adresse. Deine Identität bleibt verborgen, und du kannst den Alias jederzeit deaktivieren."
       ],
@@ -8801,9 +8744,6 @@
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
       ],
-      "Authenticator app": [
-        "Authenticator App"
-      ],
       "BCC": [
         "BCC"
       ],
@@ -9331,9 +9271,6 @@
       ],
       "Your location": [
         "Dein Standort"
-      ],
-      "Your password (admin)": [
-        "Dein Passwort (Admin)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12770,47 +12707,6 @@
         "Für ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -13069,6 +12965,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -13916,9 +13853,6 @@
       "Enter 2FA code": [
         "2FA Code eingeben"
       ],
-      "Enter your password": [
-        "Passwort eingeben"
-      ],
       "Error": [
         "Fehler"
       ],
@@ -14031,10 +13965,10 @@
       "Load remote content": [
         "Inhalte aus externen Quellen laden"
       ],
-      "Mail Subscriptions": [
+      "Mail subscriptions": [
         "Mail-Abonnemente"
       ],
-      "Mail subscriptions": [
+      "Mail Subscriptions": [
         "Mail-Abonnemente"
       ],
       "Make a secure connection your default": [

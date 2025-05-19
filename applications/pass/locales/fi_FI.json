@@ -77,7 +77,7 @@
         "Käytä elinikäistä etukoodia"
       ],
       "Authenticate": [
-        "Tunnistaudu"
+        "Todenna"
       ],
       "Back": [
         "Takaisin"
@@ -430,6 +430,9 @@
       "Pause monitoring": [
         "Pysäytä valvonta"
       ],
+      "Pay once": [
+        "Maksa kerran"
+      ],
       "Pin item": [
         "Kiinnitä kohde"
       ],
@@ -567,6 +570,9 @@
       ],
       "Sign out": [
         "Kirjaudu ulos"
+      ],
+      "Skip": [
+        "Ohita"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Joku jakoi sinulle kohteen ${ PASS_APP_NAME }ista."
@@ -1007,6 +1013,9 @@
       ],
       "File does not match expected format": [
         "Tiedosto ei vastaa odotettua muotoa"
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Holvin \"${ vaultData.name }\" tuonti epäonnistui: ${ errorMessage }"
       ],
       "Importing items failed": [
         "Kohteiden tuonti epäonnistui"
@@ -1561,9 +1570,6 @@
       "Enter the address you want to email.": [
         "Syötä osoite, johon haluat lähettää sähköpostia."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Syötä vahvistuskoodi. Numero ${ digit }."
-      ],
       "Enter your extra password": [
         "Syötä lisäsalasanasi"
       ],
@@ -1714,6 +1720,9 @@
       "Latest breach on ${ formattedDate }": [
         "Edellinen murto tapahtui ${ formattedDate }"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Lue, mitä tehdä, ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "Poistutaan kohteesta..."
       ],
@@ -1759,10 +1768,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -2494,6 +2499,9 @@
       "Birthdate": [
         "Syntymäpäivä"
       ],
+      "Browse faster, smarter": [
+        "Selaa nopeammin ja älykkäämmin"
+      ],
       "Capital letters (A-Z)": [
         "Isot kirjaimet (A-Z)"
       ],
@@ -2511,6 +2519,12 @@
       ],
       "Catch-All": [
         "Nappaa kaikki"
+      ],
+      "Choose unlock method": [
+        "Valitse avaustapa"
+      ],
+      "Choose your preferred look and feel.": [
+        "Valitse haluamasi ulkoasu ja tunnelma."
       ],
       "City": [
         "Kaupunki"
@@ -2568,6 +2582,9 @@
       ],
       "Created at": [
         "Luotu"
+      ],
+      "Credit cards": [
+        "Maksukortit"
       ],
       "Custom hidden field": [
         "Mukautettu piilotettu kenttä"
@@ -2638,6 +2655,9 @@
       "Export": [
         "Vienti"
       ],
+      "Extra email addresses": [
+        "Lisäsähköpostiosoitetta"
+      ],
       "Extra password": [
         "Lisäsalasana"
       ],
@@ -2649,6 +2669,9 @@
       ],
       "Field name": [
         "Kentän nimi"
+      ],
+      "File attachments": [
+        "Liitetiedostot"
       ],
       "File format": [
         "Tiedostomuoto"
@@ -2662,8 +2685,14 @@
       "For a one-off sharing": [
         "Kertaluonteista jakamista varten"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Turvallisuussyistä ${ PASS_SHORT_APP_NAME } lukitsee itsensä automaattisesti 10 minuutin käyttämättömyyden jälkeen."
+      ],
       "Forwards to": [
         "Ohjaa osoitteeseen"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "Ikuisesti ilmainen"
@@ -2683,6 +2712,9 @@
       "Get Started": [
         "Aloita"
       ],
+      "Get the extension for your browser.": [
+        "Hanki laajennus selaimeesi."
+      ],
       "Grant": [
         "Myönnä"
       ],
@@ -2691,6 +2723,12 @@
       ],
       "Hide password": [
         "Piilota salasana"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliakset"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Miten ${ PASS_SHORT_APP_NAME }in lukitus avataan"
       ],
       "https://example.com": [
         "https://esimerkki.fi"
@@ -2730,6 +2768,12 @@
       ],
       "Instagram handle": [
         "Instagram-tunnus"
+      ],
+      "Install and continue": [
+        "Asenna ja jatka"
+      ],
+      "Install extension": [
+        "Asenna laajennus"
       ],
       "Invitations": [
         "Kutsut"
@@ -2776,6 +2820,9 @@
       "License number": [
         "Ajokortin numero"
       ],
+      "Limited time": [
+        "Rajoitetun ajan"
+      ],
       "LinkedIn account": [
         "LinkedIn-tili"
       ],
@@ -2796,6 +2843,9 @@
       ],
       "Make all viewers": [
         "Määritä kaikki tarkastelijoiksi"
+      ],
+      "Make it your own.": [
+        "Tee siitä omasi."
       ],
       "max views reached": [
         "avausrajoitus on saavutettu"
@@ -2899,6 +2949,9 @@
       "Personal website": [
         "Henkilökohtainen verkkosivusto"
       ],
+      "Personalize": [
+        "Mukauta"
+      ],
       "PGP-encrypted (recommended)": [
         "PGP-salattu (suositus)"
       ],
@@ -2910,6 +2963,9 @@
       ],
       "PIN code": [
         "PIN-koodi"
+      ],
+      "Plus": [
+        "Plus"
       ],
       "Prefix": [
         "Etuliite"
@@ -2977,8 +3033,14 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Valitse holvi, johon SimpleLogin-aliakset tuodaan"
       ],
+      "Select theme": [
+        "Valitse teema"
+      ],
       "Select your password manager": [
         "Valitse salasanahallintasi"
+      ],
+      "Select your theme": [
+        "Valitse teemasi"
       ],
       "Selected": [
         "Valittu"
@@ -3015,6 +3077,9 @@
       ],
       "Status": [
         "Tila"
+      ],
+      "Storage": [
+        "Tallennustila"
       ],
       "Street address": [
         "Katuosoite"
@@ -3076,6 +3141,9 @@
       "Unknown": [
         "Tuntematon"
       ],
+      "Unlimited": [
+        "Unlimited"
+      ],
       "Unlock with": [
         "Lukituksen avaustapa"
       ],
@@ -3124,6 +3192,12 @@
       "View logs": [
         "Näytä lokitiedot"
       ],
+      "VPN Devices": [
+        "VPN-laitteet"
+      ],
+      "VPN Speed": [
+        "VPN:n nopeus"
+      ],
       "Vulnerable": [
         "Haavoittuvainen"
       ],
@@ -3154,8 +3228,14 @@
       "You are about to create": [
         "Luot aliasta"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Voit käyttää avaamiseen PIN-koodia, biometriaa tai tilisi salasanaa."
+      ],
       "Your domain": [
         "Sinun verkkotunnuksesi"
+      ],
+      "Your passwords. Everywhere.": [
+        "Sinun salasanasi. Kaikkialla."
       ],
       "ZIP": [
         "Postinumero"
@@ -3168,6 +3248,9 @@
       "auto create rules ››": [
         "automaattisen luomisen sääntöjä ››"
       ],
+      "if your data is leaked": [
+        "jos tietosi vuotavat"
+      ],
       "Learn more": [
         "Lue lisää"
       ]
@@ -3175,6 +3258,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Ota ${ reason } käyttöön"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Message": {
@@ -3332,6 +3420,11 @@
       ],
       "You can attach files to items for a better organization": [
         "Voit liittää kohteisiin tiedostoja parempaa organisointia varten"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ price }/month": [
+        "${ price }/kuukausi"
       ]
     },
     "Placeholder": {
@@ -3784,6 +3877,9 @@
       "Inactive 2FA": [
         "2FA ei ole käytössä"
       ],
+      "Information exposed in breach": [
+        "Tietomurrossa paljastuneet tiedot"
+      ],
       "Install extension": [
         "Asenna laajennus"
       ],
@@ -4043,6 +4139,14 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Olet poistamassa ${ aliasCount } aliaksen pysyvästi.",
         "Olet poistamassa ${ aliasCount } aliasta pysyvästi."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Kaikkia tässä lueteltuja tietoja ei paljastettu kaikille käyttäjille."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Salatut salasanat pysyvät turvassa, vaikka ne paljastuisivat, ellei niiden salausta pureta."
       ]
     },
     "Validation": {

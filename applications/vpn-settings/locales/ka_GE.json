@@ -36,10 +36,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
       "Activate organization key": [
@@ -82,7 +82,7 @@
         "მომხმარებლის დამატება"
       ],
       "Allow": [
-        "დაშვება"
+        "ავტორიზებული მისამართები"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "გამჭოლად დაშიფრული ელფოსტის დაშვება ამ ჯგუფისთვის"
@@ -108,7 +108,7 @@
       "Back": [
         "უკან"
       ],
-      "Back to sign-in": [
+      "Back to sign in": [
         "შესვლის გვერდზე დაბრუნება"
       ],
       "Block": [
@@ -267,10 +267,10 @@
       "Discard": [
         "მოცილება"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "ცვლილებების გაუქმება"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "ცვლილებების გაუქმება"
       ],
       "Discover ${ planName }": [
@@ -469,7 +469,7 @@
         "ჩემი გამოწერის შენარჩუნება"
       ],
       "Let's talk": [
-        "ვიბაზროთ"
+        "ვისაუბროთ"
       ],
       "Load more": [
         "მეტის ჩატვირთვა"
@@ -699,10 +699,10 @@
       "Select country ${ country }": [
         "${ country } ქვეყნის არჩევა"
       ],
-      "Select file": [
+      "select file": [
         "აირჩიეთ ფაილი"
       ],
-      "select file": [
+      "Select file": [
         "აირჩიეთ ფაილი"
       ],
       "Send code": [
@@ -772,7 +772,7 @@
         "გადახედვის ჩვენება"
       ],
       "Sign in": [
-        "შესვლა"
+        "Შესვლა"
       ],
       "Sign in with password": [
         "პაროლით შესვლა"
@@ -967,6 +967,9 @@
       ]
     },
     "Address action": {
+      "Allow unsigned mail": [
+        "ხელმოუწერელი ელფოსტის დაშვება"
+      ],
       "Delete address": [
         "მისამართის წაშლა"
       ],
@@ -2636,10 +2639,10 @@
         "${ name }-ის წაშლის შეცდომა"
       ],
       "${ name } failed to move to allow list": [
-        "შეცდომა დაშვებულების სიაში ჩამატებისას: ${ name }"
+        "${ name }-ის დაშვებული მისამართების სიაში გადატანის შეცდომა"
       ],
       "${ name } failed to move to block list": [
-        "შეცდომა დაბლოკილების სიაში ჩამატებისას: ${ name }"
+        "${ name }-ის დაბლოკილების სიაში ჩამატების შეცდომა"
       ],
       "${ name } failed to move to spam list": [
         "შეცდომა სპამის სიაში ჩამატებისას: ${ name }"
@@ -2992,7 +2995,7 @@
         "არასწორი კოდი ${ name }"
       ],
       "Invalid card number": [
-        "ბარათის არასწორი ნომერი"
+        "არასწორი ბარათის ნომერი"
       ],
       "Invalid code": [
         "არასწორი კოდი"
@@ -3763,7 +3766,7 @@
         "დაშვება:"
       ],
       "Block:": [
-        "დაბლოკვა:"
+        "დაბლოკილი მისამართები:"
       ],
       "Search list": [
         "ძებნის სია"
@@ -4437,7 +4440,7 @@
         "მორგებული ბრენდინგი"
       ],
       "Custom email domains": [
-        "ელფოსტის თქვენი დომენები"
+        "თქვენი ელფოსტის დომენები"
       ],
       "Custom policies": [
         "მომხმარებლის პოლიტიკები"
@@ -4448,11 +4451,11 @@
       "Data recoverable on this device": [
         "ამ მოწყობილობაზე აღმოჩენადი მონაცემები"
       ],
-      "dedicated servers": [
-        "გამოყოფილი სერვერი"
-      ],
       "Dedicated servers": [
         "გამოყოფილი სერვერები"
+      ],
+      "dedicated servers": [
+        "გამოყოფილი სერვერი"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართებით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ."
@@ -5508,8 +5511,8 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "დასადასტურებლად შეიყვანეთ წასაშლელი მომხმარებლის სახელი."
       ],
-      "to continue to ${ product }": [
-        "${ product }-ზე გაგრძელება"
+      "To continue to ${ product }": [
+        "${ product }-ზე გასაგრძელებლად"
       ],
       "To create your first user group, go to": [
         "პირველი მომხმარებლის ჯგუფის შესაქმნელად გადადით"
@@ -5539,7 +5542,7 @@
         "ელფოსტები სულ"
       ],
       "Total storage": [
-        "სრული საცავი"
+        "საცავი სულ"
       ],
       "Total supported domains": [
         "მხარდაჭერილი დომენები სულ"
@@ -5613,10 +5616,10 @@
       "User activated": [
         "მომხმრებელი გააქტიურდა"
       ],
-      "username": [
+      "Username": [
         "მომხმარებლის სახელი"
       ],
-      "Username": [
+      "username": [
         "მომხმარებლის სახელი"
       ],
       "Users": [
@@ -6147,15 +6150,15 @@
         "ავტორიზებული მისამართები"
       ],
       "Allow recovery by email": [
-        "ელფოსტით აღდგენის ჩართვა"
+        "ელ-ფოსტით აღდგენის ჩართვა"
       ],
       "Allow recovery by phone": [
         "ტელეფონით აღდგენის ჩართვა"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "დაშვებული დომენი"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "დაშვებული დომენი"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6192,7 +6195,7 @@
         "გადახდის პერიოდი"
       ],
       "Block": [
-        "დაბლოკვა"
+        "დაბლოკილი მისამართები"
       ],
       "Block malware only": [
         "მხოლოდ malware-ის დაბლოკვა"
@@ -6634,7 +6637,7 @@
         "სპეცსიმბოლოები"
       ],
       "Start date": [
-        "საწყისი თარიღი"
+        "დაწყების თარიღი"
       ],
       "State": [
         "მდგომარეობა"
@@ -6822,7 +6825,7 @@
     },
     "Link": {
       "Add a gift code": [
-        "ჩასვით სასაჩუქრე კოდი"
+        "სასაჩუქრე კოდის დამატება"
       ],
       "Add gift code": [
         "ჩასვით სასაჩუქრე კოდი"
@@ -7193,6 +7196,20 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
+      ],
+      "From ${ price }": [
+        "${ price }-დან"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -7214,20 +7231,6 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
-      ],
-      "From ${ price }": [
-        "${ price }-დან"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
       ]
     },
     "new_plans: feature": {
@@ -7269,17 +7272,9 @@
         "${ n } საქაღალდე და ჭდე",
         "${ n } საქაღალდე და ჭდე"
       ],
-      "${ n } hide-my-email alias": [
-        "${ n } მეტსახელი Hide-my-email-სთვის",
-        "${ n } მეტსახელი Hide-my-email-სთვის"
-      ],
       "${ n } label": [
         "${ n } ჭდე",
         "${ n } ჭდე"
-      ],
-      "${ n } message per day": [
-        "${ n }-მდე შეტყობინება დღეში",
-        "${ n }-მდე შეტყობინება დღეში"
       ],
       "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
         "${ n } გაზიარებული ${ PASS_SHORT_APP_NAME }-ის საცავი თითოეული მომხმარებლისთვის",
@@ -7342,7 +7337,7 @@
         "99.95% SLA"
       ],
       "Ad-blocker and malware protection": [
-        "რეკლამების ბლოკირება და არასასურველი პროგრამებისგან დაცვა"
+        "რეკლამების დაბლოკვა და არასასურველი პროგრამებისგან დაცვა"
       ],
       "Admin console": [
         "ადმინისტრირების კონსოლი"
@@ -7411,7 +7406,7 @@
         "თქვენი ელფოსტის დომენები"
       ],
       "Custom fields": [
-        "მორგებადი ველები"
+        "მომხმარებლის ველები"
       ],
       "Custom workspace branding": [
         "მორგებული სამუშაო სივრცის ბრენდინგი"
@@ -7453,7 +7448,7 @@
         "დაშიფრული VPN სერვერები"
       ],
       "End-to-end encryption": [
-        "გამჭოლი შიფრაცია"
+        "გამჭოლი დაშიფვრა"
       ],
       "Fast P2P/BitTorrent downloads": [
         "სწრაფი გადმოწერა P2P/BitTorrent-ით"
@@ -7596,7 +7591,7 @@
         "2FA"
       ],
       "Unlimited devices": [
-        "მოწყობილობების ულიმიტო რაოდენობა"
+        "მოწყობილობების უსაზღვრო რაოდენობა"
       ],
       "Unlimited devices and aliases": [
         "შეუზღუდავი მოწყობილობები და ფსევდონიმები"
@@ -7663,10 +7658,6 @@
       ],
       "User storage management": [
         "მომხმარებლის საცავის მართვა"
-      ],
-      "Vault sharing (up to ${ n } person)": [
-        "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)",
-        "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ჩვენ ვასკანერებთ ბნელ ვებს, რომ აღმოვაჩინოთ, არის თუ არა თქვენი ${ BRAND_NAME }-ის მისამართები ან ფსევდონიმები გაჟონილი და გაგაფრთხილოთ, თუ რამეს აღმოვაჩენთ."
@@ -7826,6 +7817,9 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } საცდელი"
       ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
       "Your account's usage": [
         "თქვენი ანგარიშის გამოყენება"
       ]
@@ -7841,7 +7835,7 @@
         "გადახედეთ გამოწერას და გადაიხადეთ"
       ],
       "Switch plans?": [
-        "გადავრთო სატარიფო გეგმა?"
+        "სატარიფო გეგმის გადართვა?"
       ]
     },
     "new_plans: tooltip": {
@@ -8367,7 +8361,7 @@
         "უფასო სერვერების კონფიგურაციები"
       ],
       "I found another service that I like better": [
-        "მე სხვა სერვისი ვიპოვე, რომელიც უფრო მომწონს"
+        "სხვა სერვისი ვიპოვე, რომელიც უფრო მომწონს"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "მე ${ BRAND_NAME }-ის განსხვავებულ ანგარიშს ვიყენებ"
@@ -8650,7 +8644,7 @@
         "შემდეგი ადმინისტრატორები მიიღებენ წვდომას ორგანიზაციის გასაღებზე."
       ],
       "The organization key must be activated first.": [
-        "ჯერ საჭიროა ორგანიზაციის გასაღების აქტივაცია."
+        "ჯერ ორგანიზაცია უნდა გაააქტიუროთ."
       ],
       "This will send the latest organization key to the administrators that currently don't have access to it.": [
         "ეს გააგზავნის უახლეს ორგანიზაციის გასაღებს ადმინისტრატორებთან, რომლებსაც ამჟამადდ მასზე წვდომა არ გააჩნიათ."
@@ -8696,11 +8690,17 @@
       "Bank transfer": [
         "საბანკო გადარიცხვა"
       ],
+      "Bitcoin": [
+        "ბიტკოინი"
+      ],
       "Credit/debit card": [
         "საკრედიტო/სადებეტო ბარათი"
       ],
       "New credit/debit card": [
         "ახალი საკრედიტო/სადებეტო ბარათი"
+      ],
+      "PayPal": [
+        "PayPal"
       ]
     },
     "Payment.Sepa.Action": {
@@ -8796,7 +8796,7 @@
     },
     "Payments.Error": {
       "Invalid card number": [
-        "ბარათის არასწორი ნომერი"
+        "არასწორი ბარათის ნომერი"
       ],
       "Invalid expiration date": [
         "არასწორი ვადა"
@@ -9008,7 +9008,7 @@
     },
     "Price": {
       "Free": [
-        "უფასო"
+        "Free"
       ]
     },
     "Recovery Email": {
@@ -9031,7 +9031,7 @@
         "შევამოწმო აღდგენის ელფოსტა?"
       ],
       "Verify with email": [
-        "ელფოსტით შემოწმება"
+        "ელფოსტით გადამოწმება"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "ელფოსტის შემოწმება ზრდის თქვენი ანგარიშის უსაფრთხოებას და აღდგენის დამატებით შესაძლებლობებს გაძლევთ."
@@ -10095,6 +10095,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME }-ის პროდუქტების გამოყენების გასაგრძენებლად გაათავისუფლეთ ადგილი, ან ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "ელფოსტის გასაგზავნად ან მისაღებად გაათავისუფლეთ ადგილი ან ${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "ფაილების ასატვრთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ upgrade }"
       ],
@@ -10147,7 +10150,7 @@
         "გადახდა 2 წელიწადში ერთხელ"
       ],
       "Billed monthly": [
-        "გადაიხდით თვეში ერთხელ"
+        "თვიური გადახდა"
       ],
       "Billed yearly": [
         "გადახდა წელიწადში ერთხელ"
@@ -10266,47 +10269,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }-თვის"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription reminder": {
@@ -10594,6 +10556,47 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -11071,7 +11074,7 @@
         "რაოდენობა"
       ],
       "Amount due": [
-        "გადასახდელი თანხა"
+        "გადახდის თანხა"
       ],
       "An address for each role": [
         "მისამართი თითოეული როლისთვის"
@@ -11109,10 +11112,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -12306,7 +12309,7 @@
       ],
       "${ n } server": [
         "${ n } სერვერი",
-        "${ n } სერვერი"
+        "${ n }+ სერვერი"
       ],
       "${ n } VPN connection": [
         "${ n } VPN კავშირი",

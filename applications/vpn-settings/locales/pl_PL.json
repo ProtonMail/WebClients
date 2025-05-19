@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktywować"
-      ],
       "Activate": [
         "Aktywuj"
+      ],
+      "activate": [
+        "aktywować"
       ],
       "Activate organization key": [
         "Aktywuj klucz organizacji"
@@ -82,7 +82,7 @@
         "Dodaj użytkownika"
       ],
       "Allow": [
-        "Zezwól"
+        "Dozwolone"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "Zezwalaj na szyfrowanie ent-to-end w grupie"
@@ -107,9 +107,6 @@
       ],
       "Back": [
         "Wstecz"
-      ],
-      "Back to sign-in": [
-        "Powrót do logowania"
       ],
       "Block": [
         "Zablokuj"
@@ -267,10 +264,10 @@
       "Discard": [
         "Odrzuć"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Odrzuć zmiany"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Odrzuć zmiany"
       ],
       "Discover ${ planName }": [
@@ -374,9 +371,6 @@
       ],
       "Fit to window": [
         "Dopasuj do okna"
-      ],
-      "Forgot password?": [
-        "Nie pamiętasz hasła?"
       ],
       "Forgot recovery method?": [
         "Nie pamiętasz metody odzyskiwania?"
@@ -699,11 +693,11 @@
       "Select country ${ country }": [
         "Wybierz kraj ${ country }"
       ],
-      "Select file": [
-        "Wybierz plik"
-      ],
       "select file": [
         "wybierz plik"
+      ],
+      "Select file": [
+        "Wybierz plik"
       ],
       "Send code": [
         "Wyślij kod"
@@ -772,7 +766,7 @@
         "Pokaż podgląd"
       ],
       "Sign in": [
-        "Zaloguj się"
+        "Logowanie"
       ],
       "Sign in with password": [
         "Zaloguj się za pomocą hasła"
@@ -793,7 +787,7 @@
         "Pomiń"
       ],
       "Spam": [
-        "Spam"
+        "Przenieś do spamu"
       ],
       "Start live chat": [
         "Rozpocznij czat"
@@ -1437,7 +1431,7 @@
     },
     "Billing cycle option": {
       "1 month": [
-        "1 miesiąc"
+        "miesiąc"
       ],
       "12 months": [
         "12 miesięcy"
@@ -1449,7 +1443,7 @@
         "Dożywotnio"
       ],
       "Monthly": [
-        "Miesięcznie"
+        "Co miesiąc"
       ],
       "Two-year": [
         "Co dwa lata"
@@ -1674,7 +1668,7 @@
     },
     "Checkout row": {
       "${ users } user": [
-        "${ users } użytkownik",
+        "${ users } użytkownika",
         "${ users } użytkowników",
         "${ users } użytkowników",
         "${ users } użytkowników"
@@ -2838,16 +2832,16 @@
     },
     "Domain spam notification": {
       "${ name } added": [
-        "Domena ${ name } została dodana"
+        "Adres ${ name } został dodany"
       ],
       "${ name } deletion failed": [
-        "Usunięcie domeny ${ name } nie powiodło się"
+        "Usunięcie adresu ${ name } nie powiodło się"
       ],
       "${ name } failed to move to allow list": [
         "Przenoszenie domeny ${ name } do listy dozwolonych adresów nie powiodło się"
       ],
       "${ name } failed to move to block list": [
-        "Przenoszenie domeny ${ name } do listy zablokowanych nie powiodło się"
+        "Przenoszenie adresu ${ name } do listy zablokowanych nie powiodło się"
       ],
       "${ name } failed to move to spam list": [
         "Przenoszenie domeny ${ name } do listy spamu nie powiodło się"
@@ -2862,7 +2856,7 @@
         "Domena ${ name } została przeniesiona do listy spamu"
       ],
       "${ name } successfully deleted": [
-        "Domena ${ name } została usunięta"
+        "Adres ${ name } został usunięty"
       ]
     },
     "Downgrade account reason": {
@@ -3235,7 +3229,7 @@
         "Adres e-mail jest nieprawidłowy"
       ],
       "Invalid expiration date": [
-        "Termin ważności jest nieprawidłowy"
+        "Data wygaśnięcia jest nieprawidłowa"
       ],
       "Invalid IBAN": [
         "Numer IBAN jest nieprawidłowy"
@@ -4026,7 +4020,7 @@
         "Przeszukaj"
       ],
       "Spam:": [
-        "Spam:"
+        "Przenieś do spamu:"
       ],
       "Take control over what lands in your organization members' inboxes by creating the following lists:": [
         "Przejmij kontrolę nad tym, co ląduje w skrzynkach odbiorczych użytkowników organizacji za pomocą następujących list:"
@@ -4166,7 +4160,7 @@
         "Odcisk klucza organizacji"
       ],
       "Protection": [
-        "Ochrona"
+        "ochrona"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Zaoszczędź dzięki najlepszym ofertom ${ VPN_APP_NAME }"
@@ -4768,11 +4762,11 @@
       "Data recoverable on this device": [
         "Dane możliwe do odzyskania na tym urządzeniu"
       ],
-      "dedicated servers": [
-        "dedykowane serwery"
-      ],
       "Dedicated servers": [
         "Dedykowane serwery"
+      ],
+      "dedicated servers": [
+        "dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP mogą zostać dodane do prywatnych bram, aby umożliwić precyzyjną kontrolę nad nimi."
@@ -4966,9 +4960,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Wpisz adres e-mail lub nazwę użytkownika konta ${ BRAND_NAME }."
       ],
-      "Enter your own password (as organization admin).": [
-        "Wpisz swoje hasło (jako administrator organizacji)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Wpisz adres pomocniczy w celu wysłania Twojej nazwy użytkownika lub adresu e-mail."
       ],
@@ -4982,7 +4973,7 @@
         "Przykład: ${ spfExample }"
       ],
       "Expired": [
-        "Wygasła"
+        "Wygasł"
       ],
       "expires ${ expirationDate }": [
         "wygasa ${ expirationDate }"
@@ -5863,9 +5854,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Wpisz nazwę użytkownika, którego chcesz usunąć."
       ],
-      "to continue to ${ product }": [
-        "i przejdź do ${ product }"
-      ],
       "To create your first user group, go to": [
         "Aby utworzyć pierwszą grupę użytkowników, przejdź do"
       ],
@@ -5971,11 +5959,11 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
-      "username": [
-        "nazwa użytkownika"
-      ],
       "Username": [
         "Nazwa użytkownika"
+      ],
+      "username": [
+        "nazwa użytkownika"
       ],
       "Users": [
         "Użytkownicy"
@@ -6561,10 +6549,10 @@
       "Allow recovery by phone": [
         "Zezwalaj na odzyskiwanie przez telefon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dozwolona domena"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dozwolona domena"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -7146,9 +7134,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Tak, chcę trwale usunąć konto i wszystkie dane z nim powiązane."
       ],
-      "Your password (admin)": [
-        "Twoje hasło (administratora)"
-      ],
       "ZIP code": [
         "Kod pocztowy"
       ]
@@ -7576,7 +7561,7 @@
     },
     "Navigation": {
       "All": [
-        "Wszystkie"
+        "Wszystko"
       ],
       "Allow": [
         "Dozwolone"
@@ -7585,7 +7570,7 @@
         "Zablokowane"
       ],
       "Spam": [
-        "Spam"
+        "Przenieś do spamu"
       ]
     },
     "New Label form": {
@@ -7608,6 +7593,20 @@
       ],
       "Medium VPN speed": [
         "Umiarkowana prędkość VPN"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniżyć plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
       ]
     },
     "new_plans: action": {
@@ -7633,38 +7632,12 @@
         "Zmień plan"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ]
-    },
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asystent pisania ${ BRAND_NAME } Scribe"
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } i ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ n } calendar": [
-        "${ n } kalendarz",
-        "${ n } kalendarze",
-        "${ n } kalendarzy",
-        "${ n } kalendarzy"
-      ],
-      "${ n } calendar per user": [
-        "${ n } kalendarz na użytkownika",
-        "${ n } kalendarze na użytkownika",
-        "${ n } kalendarzy na użytkownika",
-        "${ n } kalendarzy na użytkownika"
       ],
       "${ n } custom email domain": [
         "${ n } niestandardowa domena",
@@ -7684,35 +7657,11 @@
         "${ n } adresów e-mail na użytkownika",
         "${ n } adresów e-mail na użytkownika"
       ],
-      "${ n } filter": [
-        "${ n } filtr",
-        "${ n } filtry",
-        "${ n } filtrów",
-        "${ n } filtrów"
-      ],
       "${ n } folder": [
         "${ n } folder",
         "${ n } foldery",
         "${ n } folderów",
         "${ n } folderów"
-      ],
-      "${ n } folder and label": [
-        "${ n } folder i etykieta",
-        "${ n } foldery i etykiety",
-        "${ n } folderów i etykiet",
-        "${ n } folderów i etykiet"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } alias hide-my-email",
-        "${ n } aliasy hide-my-email",
-        "${ n } aliasów hide-my-email",
-        "${ n } aliasów hide-my-email"
-      ],
-      "${ n } label": [
-        "${ n } etykieta",
-        "${ n } etykiety",
-        "${ n } etykiet",
-        "${ n } etykiety"
       ],
       "${ n } message per day": [
         "${ n } wiadomość dziennie",
@@ -7926,12 +7875,6 @@
       ],
       "High-speed Swiss VPN that protects your privacy": [
         "Szybki szwajcarski VPN, który chroni prywatność użytkowników"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "Szybki VPN na ${ n } urządzenie",
-        "Szybki VPN na ${ n } urządzenia",
-        "Szybki VPN na ${ n } urządzeń",
-        "Szybki VPN na ${ n } urządzeń"
       ],
       "HTML signatures": [
         "Podpisy HTML"
@@ -8210,7 +8153,7 @@
         "Zapłać raz, zabezpiecz swoje hasła i tożsamość na zawsze."
       ],
       "Popular": [
-        "Popularny"
+        "Popularne"
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Ochrona poufnych informacji biznesowych i bezpieczna współpraca."
@@ -9175,6 +9118,9 @@
       "Bank transfer": [
         "Przelew bankowy"
       ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
       "Credit/debit card": [
         "Karta płatnicza"
       ],
@@ -9509,7 +9455,7 @@
     },
     "Price": {
       "Free": [
-        "Za darmo"
+        "Free"
       ]
     },
     "Recovery Email": {
@@ -10589,7 +10535,7 @@
     },
     "sso: auth device state": {
       "Active": [
-        "Aktywne"
+        "Włączony"
       ],
       "Inactive": [
         "Nieaktywne"
@@ -10607,7 +10553,7 @@
         "Wylogowano"
       ],
       "Unknown": [
-        "Nieznane"
+        "Nieznana"
       ]
     },
     "State": {
@@ -10830,7 +10776,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Ok"
+        "OK"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Zaloguj się do konta App Store, a następnik kliknij ${ subscriptions }."
@@ -10864,47 +10810,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "and 15 more premium features": [
-        "i 15 więcej funkcji premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatyczne przekierowanie ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerty wycieków ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikacja desktopowa"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
-      ],
-      "No ads or tracking": [
-        "Brak reklam i śledzenia"
-      ],
-      "Short @pm.me email address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Wesprzyj naszą misję"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
-      "We don't sell your data": [
-        "Nie sprzedajemy Twoich danych"
-      ],
-      "Your privacy is our mission": [
-        "Prywatność to nasza misja"
       ]
     },
     "Subscription reminder": {
@@ -11207,6 +11112,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Krótki alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {
@@ -11724,10 +11670,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -11985,9 +11931,6 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Wpisz szczegóły konta ${ BRAND_NAME }, aby dołączyć do ${ app } w wersji beta"
       ],
-      "Enter your password": [
-        "Wpisz hasło"
-      ],
       "Error": [
         "Błąd"
       ],
@@ -12163,7 +12106,7 @@
         "Kod QR"
       ],
       "Recommended": [
-        "Zalecany"
+        "Zalecane"
       ],
       "Recovery": [
         "Odzyskiwanie"
@@ -12952,9 +12895,15 @@
       ],
       "${ n } VPN connection": [
         "${ n } połączenie VPN",
-        "${ n } połączenia VPN",
+        "${ n } połączeń VPN",
         "${ n } połączeń VPN",
         "${ n } połączeń VPN"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } kraju",
+        "${ numberOfCountries } krajach",
+        "${ numberOfCountries } krajach",
+        "${ numberOfCountries } krajach"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } w ${ numberOfCountries } kraju",

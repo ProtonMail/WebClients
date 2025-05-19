@@ -153,9 +153,6 @@
       "Attention required": [
         "Требуется внимание"
       ],
-      "Authenticate": [
-        "Аутентифицировать"
-      ],
       "Auto-delete spam and trash": [
         "Автоматическое удаление спама и сообщений в корзине"
       ],
@@ -480,9 +477,6 @@
       "Email settings": [
         "Настройки электронной почты"
       ],
-      "Emoji": [
-        "Эмоджи"
-      ],
       "Enable": [
         "Включить"
       ],
@@ -548,9 +542,6 @@
       ],
       "Font": [
         "Шрифт"
-      ],
-      "Forgot password?": [
-        "Забыли пароль?"
       ],
       "Formalize": [
         "Формализовать"
@@ -1179,11 +1170,11 @@
       "Select ${ planTitle }": [
         "Выбрать ${ planTitle }"
       ],
-      "Select all": [
-        "Выделить все"
-      ],
       "Select All": [
         "Выбрать все"
+      ],
+      "Select all": [
+        "Выделить все"
       ],
       "Select all messages": [
         "Выбрать все сообщения"
@@ -1488,14 +1479,8 @@
       "Use a different payment method": [
         "Использовать другой способ оплаты"
       ],
-      "Use authentication code": [
-        "Используйте код аутентификации"
-      ],
       "Use for sending": [
         "Использовать для отправки"
-      ],
-      "Use recovery code": [
-        "Использовать код восстановления"
       ],
       "Use this": [
         "Использовать"
@@ -5330,24 +5315,6 @@
         "Неограниченное количество псевдонимов hide-my-email"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте ещё раз."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Вставьте ключ безопасности, связанный с вашим аккаунтом ${ BRAND_NAME }."
-      ],
-      "Security key": [
-        "Ключ безопасности"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Ключ безопасности"
-      ]
-    },
     "file size format": {
       "byte": [
         "байт",
@@ -6670,9 +6637,6 @@
       "and": [
         "и"
       ],
-      "and more.": [
-        "и другое."
-      ],
       "Another tip will be displayed next time you open Mail": [
         "В следующий раз при открытии Mail вы увидите другую подсказку."
       ],
@@ -7009,17 +6973,14 @@
       "Drop to import": [
         "Импортировать"
       ],
-      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
-        "Из-за конфигурации вашего получателя это сообщение не может быть отправлено со сроком действия следующему контакту: ",
-        "Из-за конфигурации вашего получателя это сообщение не может быть отправлено со сроком действия следующим контактам: ",
-        "Из-за конфигурации вашего получателя это сообщение не может быть отправлено со сроком действия следующим контактам: ",
-        "Из-за конфигурации вашего получателя это сообщение не может быть отправлено со сроком действия следующим контактам: "
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Это сообщение не может быть отправлено ${ firstRecipients } со сроком действия из-за конфигурации вашего получателя ."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Это сообщение не может быть отправлено со сроком действия из-за конфигурации вашего получателя."
       ],
       "Duplicate key updated": [
         "Дубликат ключа обновлён"
-      ],
-      "Each code can only be used once": [
-        "Каждый код может быть использован только один раз"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Удобное управление и отказ от подписки на новостные рассылки и списки рассылок."
@@ -7037,7 +6998,7 @@
         "Изменить ссылку"
       ],
       "email": [
-        "электронная почта"
+        "эл. почта"
       ],
       "Email address": [
         "Адрес электронной почты"
@@ -7079,19 +7040,13 @@
         "Наслаждайтесь более быстрой и целенаправленной отправкой электронных писем с помощью приложения для ПК."
       ],
       "Enter the code from your authenticator app": [
-        "Введите код из приложения для аутентификации"
+        "Введите код из приложения-аутентификатора"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Введите учетные данные аккаунта электронной почты, из которого вы хотите импортировать данные."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Введите код подтверждения. Цифра ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Введите собственный пароль (как администратор организации)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Оставшееся время: ${ estimatedMinutes } минута",
@@ -7289,7 +7244,10 @@
         "Инициализация…"
       ],
       "Insert image": [
-        "Вставить изображение"
+        "Вставить изображение",
+        "Вставить изображения",
+        "Вставить изображения",
+        "Вставить изображения"
       ],
       "Insert link": [
         "Вставить ссылку"
@@ -8397,9 +8355,6 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Когда вы сделали активными доверенные ключи для ${ senderName }, эти открытые ключи были добавлены к контактным данным."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Когда вы подписываетесь на рассылку, используйте псевдоним вместо своего адреса электронной почты. Ваши личные данные остаются скрытыми, и отключить псевдоним можно в любое время."
@@ -13202,47 +13157,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
@@ -13513,6 +13427,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -14440,9 +14395,6 @@
       "Enter 2FA code": [
         "Введите код двухфакторной аутентификации"
       ],
-      "Enter your password": [
-        "Введите свой пароль"
-      ],
       "Error": [
         "Ошибка"
       ],
@@ -14557,10 +14509,10 @@
       "Load remote content": [
         "Загрузить внешнее содержимое"
       ],
-      "Mail Subscriptions": [
+      "Mail subscriptions": [
         "Подписки"
       ],
-      "Mail subscriptions": [
+      "Mail Subscriptions": [
         "Подписки"
       ],
       "Make a secure connection your default": [

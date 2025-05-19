@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butikk"
       ],
-      "activate": [
-        "aktiver"
-      ],
       "Activate": [
         "Aktiver"
+      ],
+      "activate": [
+        "aktiver"
       ],
       "Activate organization key": [
         "Aktiver organisasjonsnøkkel"
@@ -108,7 +108,7 @@
       "Back": [
         "Tilbake"
       ],
-      "Back to sign-in": [
+      "Back to sign in": [
         "Tilbake til pålogging"
       ],
       "Block": [
@@ -267,10 +267,10 @@
       "Discard": [
         "Forkast"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Forkast endringer"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Forkast endringer"
       ],
       "Discover ${ planName }": [
@@ -699,11 +699,11 @@
       "Select country ${ country }": [
         "Velg land ${ country }"
       ],
-      "Select file": [
-        "Velg fil"
-      ],
       "select file": [
         "velg fil"
+      ],
+      "Select file": [
+        "Velg fil"
       ],
       "Send code": [
         "Send kode"
@@ -2505,7 +2505,7 @@
     },
     "Cycle": {
       "/month": [
-        "/måned"
+        "/måneders"
       ],
       "/user per month": [
         "/bruker per måned"
@@ -2678,7 +2678,7 @@
         "${ name } sletting mislyktes"
       ],
       "${ name } failed to move to allow list": [
-        "${ name } kunne ikke flytte til tillatelseslisten"
+        "${ name } kunne ikke flyttes til tillatelseslisten"
       ],
       "${ name } failed to move to block list": [
         "${ name } kunne ikke flyttes til blokkeringsliste"
@@ -3960,7 +3960,7 @@
         "Nøkkeltype"
       ],
       "Location": [
-        "Plassering"
+        "Lokasjon"
       ],
       "Members": [
         "Medlemmer"
@@ -4252,7 +4252,7 @@
         "30 dagers tilbakebetalingsgaranti"
       ],
       "30-day money-back guarantee.": [
-        "30 dagers tilbakebetalingsgaranti."
+        "30 dager pengene-tilbake-garanti."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Et ${ protonSubdomain } er vertet av ${ BRAND_NAME }, som lar deg raskt sette opp et underdomene. ${ learnMoreLink }."
@@ -4524,11 +4524,11 @@
       "Data recoverable on this device": [
         "Data kan gjenopprettes på denne enheten"
       ],
-      "dedicated servers": [
-        "dedikerte tjenere"
-      ],
       "Dedicated servers": [
         "Dedikerte tjenere"
+      ],
+      "dedicated servers": [
+        "dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll."
@@ -5596,7 +5596,7 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "For å bekrefte, angi navnet på brukeren du ønsker å slette."
       ],
-      "to continue to ${ product }": [
+      "To continue to ${ product }": [
         "for å fortsette til ${ product }"
       ],
       "To create your first user group, go to": [
@@ -5704,11 +5704,11 @@
       "User activated": [
         "Bruker aktivert"
       ],
-      "username": [
-        "brukernavn"
-      ],
       "Username": [
         "Brukernavn"
+      ],
+      "username": [
+        "brukernavn"
       ],
       "Users": [
         "Brukere"
@@ -6264,10 +6264,10 @@
       "Allow recovery by phone": [
         "Tillat gjenoppretting ved telefon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillatt domene"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillatt domene"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6304,7 +6304,7 @@
         "Faktureringssyklus"
       ],
       "Block": [
-        "Blokkér"
+        "Blokker"
       ],
       "Block malware only": [
         "Blokkér kun skadevare"
@@ -7286,7 +7286,7 @@
         "Tillat"
       ],
       "Block": [
-        "Blokkér"
+        "Blokker"
       ],
       "Spam": [
         "Søppelpost"
@@ -7314,6 +7314,20 @@
         "Middels VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradere til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforsk alle ${ BRAND_NAME }-planer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -7335,20 +7349,6 @@
       ],
       "Switch plan": [
         "Bytt plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforsk alle ${ BRAND_NAME }-planer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
       ]
     },
     "new_plans: feature": {
@@ -7377,10 +7377,6 @@
       "${ n } email address per user": [
         "${ n } e-postadresse per bruker",
         "${ n } e-postadresser per bruker"
-      ],
-      "${ n } filter": [
-        "${ n } filter",
-        "${ n } filtre"
       ],
       "${ n } folder": [
         "${ n } mappe",
@@ -7424,10 +7420,6 @@
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin livstid"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
-        "${ PASS_APP_NAME } med ${ n } hide-my-email-aliaser"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } med ubegrensede hide-my-email-aliaser"
@@ -7574,7 +7566,7 @@
         "Krypterte VPN-tjenere"
       ],
       "End-to-end encryption": [
-        "Ende-til-ende-kryptering"
+        "Ende-til-ende kryptering"
       ],
       "Fast P2P/BitTorrent downloads": [
         "Raske P2P/BitTorrent-nedlastinger"
@@ -7596,10 +7588,6 @@
       ],
       "High-speed Swiss VPN that protects your privacy": [
         "Høyhastighets Sveitsisk VPN som beskytter personvernet ditt"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "Høyhastighets VPN på ${ n } enhet",
-        "Høyhastighets VPN på ${ n } enheter"
       ],
       "HTML signatures": [
         "HTML-signaturer"
@@ -7647,7 +7635,7 @@
         "Prioritert e-poststøtte"
       ],
       "Priority support": [
-        "Prioritert støtte"
+        "Prioritert brukerstøtte"
       ],
       "Priority support & live chat": [
         "Proritert kundestøtte & chat"
@@ -7741,7 +7729,7 @@
         "Ubegrenset antall pålogginger, notater og kredittkort"
       ],
       "Unlimited messages per day": [
-        "Ubegrenset antall meldinger per dag"
+        "Ubegrensede meldinger per dag"
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Ubegrenset delte ${ PASS_SHORT_APP_NAME }-hvelv per bruker"
@@ -7846,7 +7834,7 @@
         "Essensiell beskyttelse og sikkert samarbeid for ubegrensede brukere."
       ],
       "For next-level password management and identity protection.": [
-        "For neste-nivå passordbehandlig og identitetbeskyttelse."
+        "For passordadministrasjon og identitetsbeskyttelse på neste nivå."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Hvis du sletter kontoen din, mister du alle ${ visionary }-plan fordeler og den vil ikke være tilgjengelig hvis du oppretter en ny konto."
@@ -8838,6 +8826,9 @@
       "Bank transfer": [
         "Bankoverføring"
       ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
       "Credit/debit card": [
         "Kreditt-/debetkort"
       ],
@@ -8873,7 +8864,7 @@
         "Skjønner"
       ],
       "MM/YY": [
-        "MM/ÅÅ"
+        "MM / ÅÅ"
       ],
       "More plans are available in other currencies": [
         "Flere planer er tilgjengelige i andre valutaer"
@@ -9043,7 +9034,7 @@
         "eksempel@domain.no"
       ],
       "Feedback": [
-        "Tilbakemelding"
+        "Ttilbakemelding"
       ],
       "Gift code": [
         "Gavekode"
@@ -9160,7 +9151,7 @@
     },
     "Price": {
       "Free": [
-        "Gratis"
+        "Free"
       ]
     },
     "Recovery Email": {
@@ -10339,10 +10330,6 @@
         "${ n } høyhastighets VPN-tilkobling per bruker",
         "${ n } høyhastighets VPN-tilkoblinger per bruker"
       ],
-      "${ n } VPN connection": [
-        "${ n } VPN-tilkobling",
-        "${ n } VPN-tilkoblinger"
-      ],
       "${ n } VPN connection per user": [
         "${ n } VPN-tilkobling per bruker",
         "${ n } VPN-tilkoblinger per bruker"
@@ -10427,47 +10414,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "For ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription reminder": {
@@ -10760,6 +10706,47 @@
         "Ditt eget korte @pm.me e-postalias"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Er du sikker?"
@@ -11007,7 +10994,7 @@
     },
     "Suffix": {
       "/month": [
-        "/måned"
+        "/måneders"
       ],
       "/user per month": [
         "/bruker per måned"
@@ -11270,10 +11257,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -11528,7 +11515,7 @@
         "Angi din ${ BRAND_NAME }-kontoinformasjon for å bli med i ${ app }-testprogrammet"
       ],
       "Enter your password": [
-        "Skriv inn passord"
+        "Skriv inn passordet"
       ],
       "Error": [
         "Feil"
@@ -12473,14 +12460,6 @@
       "${ n } device": [
         "${ n } enhet",
         "${ n } enheter"
-      ],
-      "${ n } server": [
-        "${ n } tjener",
-        "${ n }+ tjenere"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-tilkobling",
-        "${ n } VPN-tilkoblinger"
       ],
       "${ numberOfCountries } country": [
         "${ numberOfCountries } land",

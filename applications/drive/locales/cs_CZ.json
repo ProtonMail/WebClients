@@ -3844,12 +3844,12 @@
         "Vložte bezpečnostní klíč spojený s vaším účtem ${ BRAND_NAME }."
       ],
       "Security key": [
-        "Klíč zabezpečení"
+        "Bezpečnostní klíč"
       ]
     },
     "fido2: Label": {
       "Security key": [
-        "Klíč zabezpečení"
+        "Bezpečnostní klíč"
       ]
     },
     "file size format": {
@@ -6107,9 +6107,6 @@
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na ${ strong }"
       ],
-      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
-        "Vylepšujeme fotky na nový zážitek! Během tohoto přechodu je dočasně nedostupná obnova fotek. Vše by mělo být připraveno během několika dní. Děkujeme za pochopení."
-      ],
       "Week": [
         "Týden"
       ],
@@ -7087,7 +7084,7 @@
         "Vaše poloha"
       ],
       "Your password (admin)": [
-        "Vaše heslo (admin)"
+        "Vaše heslo (správce)"
       ]
     },
     "Label for contact group color": {
@@ -7649,6 +7646,17 @@
         "Střední rychlost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Tarify začínají od ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Smazat účet"
@@ -7670,17 +7678,6 @@
       ],
       "Switch plan": [
         "Změnit tarif"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Tarify začínají od ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Navýšit"
       ]
     },
     "new_plans: feature": {
@@ -8728,6 +8725,9 @@
       "Access for the member removed": [
         "Přístup pro člena odebrán"
       ],
+      "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
+        "Získejte přístup k Albům, Filtrům a dalším funkcím provedením akce na uzamčené jednotce. Obnovte ji nebo smažte a ihned si užijte tyto nové funkce."
+      ],
       "Access updated": [
         "Přístup aktualizován"
       ],
@@ -8866,6 +8866,12 @@
       "Share invitation declined": [
         "Pozvánka sdílení byla odmítnuta"
       ],
+      "Some photo(s) could not be added to \"${ albumName }\"": [
+        "Některé fotografie nebylo možné přidat do alba \"${ albumName }\""
+      ],
+      "Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Některé fotografie nebylo možné odebrat z alba ${ albumLink.name }"
+      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Je nám líto, ale složku jsme nemohli smazat, protože není prázdná.",
         "Je nám líto, ale složky jsme nemohli smazat, protože nejsou prázdné.",
@@ -8919,6 +8925,9 @@
       ],
       "Your photo(s) have been added to \"${ albumName }\"": [
         "Vaše fotografie byly přidány do alba \"${ albumName }\""
+      ],
+      "Your photo(s) have been removed from ${ albumLink.name }": [
+        "Vaše fotografie byly odebrány z alba ${ albumLink.name }"
       ],
       "Your settings failed to be saved": [
         "Vaše nastavení se nepodařilo uložit"
@@ -10403,47 +10412,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
@@ -10714,6 +10682,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -11386,7 +11395,7 @@
         "Zadejte kód 2FA"
       ],
       "Enter your password": [
-        "Zadejte Vaše heslo"
+        "Zadejte své heslo"
       ],
       "Error": [
         "Chyba"

@@ -151,9 +151,6 @@
       "Attention required": [
         "Χρειάζεται προσοχή"
       ],
-      "Authenticate": [
-        "Ταυτοποίηση"
-      ],
       "Auto-delete spam and trash": [
         "Αυτόματη διαγραφή ανεπιθύμητων και διαγεγραμμένων μηνυμάτων"
       ],
@@ -474,9 +471,6 @@
       "Email settings": [
         "Ρυθμίσεις Email"
       ],
-      "Emoji": [
-        "Εικονίδια"
-      ],
       "Enable": [
         "Ενεργοποίηση"
       ],
@@ -542,9 +536,6 @@
       ],
       "Font": [
         "Γραμματοσειρά"
-      ],
-      "Forgot password?": [
-        "Ξεχάσατε τον κωδικό πρόσβασης;"
       ],
       "Formalize": [
         "Επισημοποίηση"
@@ -1171,11 +1162,11 @@
       "Select ${ planTitle }": [
         "Επιλογή ${ planTitle }"
       ],
-      "Select all": [
-        "Επιλογή όλων"
-      ],
       "Select All": [
         "Επιλογή Όλων"
+      ],
+      "Select all": [
+        "Επιλογή όλων"
       ],
       "Select all messages": [
         "Επιλογή όλων των μηνυμάτων"
@@ -1480,14 +1471,8 @@
       "Use a different payment method": [
         "Χρησιμοποιήστε διαφορετικό τρόπο πληρωμής"
       ],
-      "Use authentication code": [
-        "Χρησιμοποιήστε έναν κωδικό ελέγχου ταυτότητας"
-      ],
       "Use for sending": [
         "Χρήση για αποστολή"
-      ],
-      "Use recovery code": [
-        "Χρησιμοποιήστε κωδικό ανάκτησης"
       ],
       "Use this": [
         "Χρησιμοποιήστε αυτό"
@@ -5122,24 +5107,6 @@
         "Απεριόριστα hide-my-email ψευδώνυμα"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Εισαγάγετε ένα κλειδί ασφαλείας συνδεδεμένο με τον ${ BRAND_NAME } λογαριασμό σας ."
-      ],
-      "Security key": [
-        "Κλειδί ασφαλείας"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Κλειδί ασφαλείας"
-      ]
-    },
     "file size format": {
       "byte": [
         "byte",
@@ -6332,9 +6299,6 @@
       "and": [
         "και"
       ],
-      "and more.": [
-        "και άλλα."
-      ],
       "Another tip will be displayed next time you open Mail": [
         "Μια άλλη συμβουλή θα εμφανιστεί την επόμενη φορά που θα ανοίξετε το Mail"
       ],
@@ -6659,15 +6623,14 @@
       "Drop to import": [
         "Απόθεση για εισαγωγή"
       ],
-      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
-        "Λόγω της διαμόρφωσης του παραλήπτη σας, αυτό το μήνυμα δεν μπορεί να αποσταλεί με ημερομηνία λήξης στην ακόλουθη επαφή: ",
-        "Λόγω της διαμόρφωσης του παραλήπτη σας, αυτό το μήνυμα δεν μπορεί να αποσταλεί με ημερομηνία λήξης στις ακόλουθες επαφές: "
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Λόγω της διαμόρφωσης του παραλήπτη σας, αυτό το μήνυμα δεν μπορεί να αποσταλεί με ημερομηνία λήξης σε ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Λόγω της διαμόρφωσης του παραλήπτη σας, αυτό το μήνυμα δεν μπορεί να αποσταλεί με ημερομηνία λήξης."
       ],
       "Duplicate key updated": [
         "Το διπλότυπο κλειδί ενημερώθηκε"
-      ],
-      "Each code can only be used once": [
-        "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Διαχειριστείτε εύκολα και καταργήστε την εγγραφή σας από ενημερωτικά δελτία και λίστες αλληλογραφίας."
@@ -6724,20 +6687,11 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Απολαύστε μια ταχύτερη, εστιασμένη εμπειρία αποστολής μηνυμάτων με την εφαρμογή για υπολογιστές."
       ],
-      "Enter the code from your authenticator app": [
-        "Πληκτρολογήστε τον κωδικό από την εφαρμογή ταυτοποίησης"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Συμπληρώστε τα διαπιστευτήρια του λογαριασμού email από τον οποίο θέλετε να εισάγετε."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Εισάγετε τον κωδικό επαλήθευσης που εστάλη στο ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Εισάγετε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτό",
@@ -6833,7 +6787,7 @@
         "Απόκρυψη αρχικού μηνύματος"
       ],
       "High Priority": [
-        "Υψηλή προτεραιότητα"
+        "Υψηλή Προτεραιότητα"
       ],
       "How hide-my-email aliases works": [
         "Πώς λειτουργούν τα hide-my-email ψευδώνυμα"
@@ -6921,7 +6875,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -7014,7 +6969,7 @@
         "Φόρτωση..."
       ],
       "Low Priority": [
-        "Χαμηλή προτεραιότητα"
+        "Χαμηλή Προτεραιότητα"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
         "Κάντε το ${ MAIL_APP_NAME } την προεπιλεγμένη εφαρμογή ηλεκτρονικού ταχυδρομείου σας."
@@ -7200,7 +7155,7 @@
         "Το σύστημά μας επισήμανε αυτό το μήνυμα ως απόπειρα ηλεκτρονικού ψαρέματος. Παρακαλούμε ελέγξτε το για να βεβαιωθείτε ότι είναι νόμιμο."
       ],
       "password": [
-        "κωδικός πρόσβασης"
+        "κωδικός"
       ],
       "Password copied to clipboard": [
         "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
@@ -7924,7 +7879,7 @@
         "Ο χρήστης ενεργοποιήθηκε"
       ],
       "username": [
-        "όνομα χρήστη"
+        "όνομα Χρήστη"
       ],
       "Users": [
         "Χρήστες"
@@ -8015,9 +7970,6 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Όταν ενεργοποιήσατε τα αξιόπιστα κλειδιά για ${ senderName }, τα δημόσια κλειδιά προστέθηκαν στα στοιχεία της επαφής."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Όταν εγγράφεστε σε ένα ενημερωτικό δελτίο, χρησιμοποιήστε ένα ψευδώνυμο αντί για τη διεύθυνση ηλ. ταχυδρομείου σας. Η ταυτότητά σας παραμένει κρυφή και μπορείτε να απενεργοποιήσετε το ψευδώνυμο ανά πάσα στιγμή."
@@ -8661,9 +8613,6 @@
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
       ],
-      "Authenticator app": [
-        "Εφαρμογή επαλήθευσης"
-      ],
       "BCC": [
         "Κρυφή Κοιν."
       ],
@@ -9191,9 +9140,6 @@
       ],
       "Your location": [
         "Η τοποθεσία σας"
-      ],
-      "Your password (admin)": [
-        "Ο κωδικός σας (διαχειριστής)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9268,7 +9214,7 @@
     },
     "Labels": {
       "Newsletters you unsubscribe from will appear here.": [
-        "Εδώ θα εμφανίζονται τα ενημερωτικά δελτία από τα οποία έχετε καταργήσει την εγγραφή."
+        "Ενημερωτικά δελτία από τα οποία κάνετε απεγγραφή θα εμφανίζονται εδώ."
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Δείτε και διαχειριστείτε τις συνδρομές ενημερωτικών δελτίων και λιστών αλληλογραφίας εδώ."
@@ -12630,47 +12576,6 @@
         "Για ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερες premium δυνατότητες"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium δυνατότητες"
@@ -12929,6 +12834,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερες premium δυνατότητες"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription renewal state": {
@@ -13776,9 +13722,6 @@
       "Enter 2FA code": [
         "Εισαγωγή κωδικού 2FA"
       ],
-      "Enter your password": [
-        "Εισάγετε τον κωδικό σας"
-      ],
       "Error": [
         "Σφάλμα"
       ],
@@ -13891,10 +13834,10 @@
       "Load remote content": [
         "Φόρτωση απομακρυσμένου περιεχομένου"
       ],
-      "Mail Subscriptions": [
+      "Mail subscriptions": [
         "Συνδρομές Mail"
       ],
-      "Mail subscriptions": [
+      "Mail Subscriptions": [
         "Συνδρομές Mail"
       ],
       "Make a secure connection your default": [
@@ -14027,7 +13970,7 @@
         "Δεν βρέθηκαν ιχνηλάτες"
       ],
       "No unsubscribed mail subscriptions": [
-        "Δεν υπάρχουν μη εγγεγραμμένες συνδρομές σε ταχυδρομικά ενημερωτικά δελτία."
+        "Δεν υπάρχουν μη εγγεγραμμένες συνδρομές αλληλογραφίας"
       ],
       "No-reply address detected": [
         "Εντοπίστηκε διεύθυνση που εκ φύσεως δεν απαντά σε μηνύματα"

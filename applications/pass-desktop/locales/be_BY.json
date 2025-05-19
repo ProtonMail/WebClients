@@ -77,7 +77,7 @@
         "Ужыць пажыццёвы код купона"
       ],
       "Authenticate": [
-        "Аўтэнтыфікацыя"
+        "Аўтэнтыфікаваць"
       ],
       "Back": [
         "Назад"
@@ -438,6 +438,9 @@
       ],
       "Pause monitoring": [
         "Прыпыніць назіранне"
+      ],
+      "Pay once": [
+        "Аднаразовая аплата"
       ],
       "Pin item": [
         "Замацаваць элемент"
@@ -1904,6 +1907,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
+      ],
       "Moving items": [
         "Перамяшчэнне элементаў"
       ],
@@ -2330,6 +2339,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Для прагляду імпартаваных даных, націсніце на значок ${ PASS_APP_NAME } у панэлі інструментаў свайго браўзера."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Нам давяраюць больш за 50 000 карыстальнікаў у сферы бізнесу і 100 мільёнаў уліковых запісаў па ўсім свеце."
+      ],
       "Unable to copy to clipboard": [
         "Немагчыма скапіяваць у буфер абмену"
       ],
@@ -2713,6 +2725,9 @@
       "Browse faster, smarter": [
         "Праглядайце хутчэй і разумней"
       ],
+      "Built-in 2FA": [
+        "Убудаваная 2ФА"
+      ],
       "Capital letters (A-Z)": [
         "Вялікія літары (A-Z)"
       ],
@@ -2797,6 +2812,9 @@
       "Created at": [
         "Створана"
       ],
+      "Credit cards": [
+        "Крэдытныя карткі"
+      ],
       "Custom hidden field": [
         "Карыстальніцкія схаваныя палі"
       ],
@@ -2869,6 +2887,9 @@
       "Export": [
         "Экспартаванне"
       ],
+      "Extra email addresses": [
+        "Дадатковыя адрасы электроннай пошты"
+      ],
       "Extra password": [
         "Дадатковы пароль"
       ],
@@ -2880,6 +2901,9 @@
       ],
       "Field name": [
         "Назва поля"
+      ],
+      "File attachments": [
+        "Далучэнні файлаў"
       ],
       "File format": [
         "Фармат файла"
@@ -2899,6 +2923,9 @@
       "Forwards to": [
         "Перасылаць на"
       ],
+      "Free": [
+        "Бясплатна"
+      ],
       "Free forever": [
         "Бясплатна назаўсёды"
       ],
@@ -2917,6 +2944,12 @@
       "Generic CSV": [
         "Агульны CSV"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Атрымайце ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Атрымайце ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "Пачаць працу"
       ],
@@ -2934,6 +2967,9 @@
       ],
       "Hide-my-email aliases": [
         "Псеўданімы Hide-my-email"
+      ],
+      "Highest": [
+        "Найвышэйшая"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Як разблакіраваць ${ PASS_SHORT_APP_NAME }"
@@ -3030,6 +3066,9 @@
       ],
       "License number": [
         "Пасведчанне кіроўцы"
+      ],
+      "Limited time": [
+        "Абмежаваны час"
       ],
       "LinkedIn account": [
         "Уліковы запіс LinkedIn"
@@ -3181,6 +3220,9 @@
       "PIN code": [
         "PIN-код"
       ],
+      "Plus": [
+        "Plus"
+      ],
       "Prefix": [
         "Прэфікс"
       ],
@@ -3194,7 +3236,7 @@
         "Абарона ${ PASS_APP_NAME } з дапамогай дадатковага пароля"
       ],
       "Public domain": [
-        "публічны дамен"
+        "Публічны дамен"
       ],
       "Rate us": [
         "Ацаніце нас"
@@ -3307,6 +3349,9 @@
       "Status": [
         "Статус"
       ],
+      "Storage": [
+        "Сховішча"
+      ],
       "Street address": [
         "Вуліца"
       ],
@@ -3333,6 +3378,9 @@
       ],
       "Text": [
         "Тэкст"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Лепшае ад ${ BRAND_NAME } з адной падпіскай"
       ],
       "The URL has been copied to the clipboard": [
         "URL-адрас скапіяваны ў буфер абмену"
@@ -3369,6 +3417,12 @@
       ],
       "Unknown": [
         "Невядома"
+      ],
+      "Unlimited": [
+        "Unlimited"
+      ],
+      "Unlock premium features": [
+        "Разблакіраваць прэміяльныя функцыі"
       ],
       "Unlock with": [
         "Разблакіраваць з дапамогай"
@@ -3409,6 +3463,9 @@
       "Vault ID": [
         "Ідэнтыфікатар сховішча"
       ],
+      "Vault, item & link sharing": [
+        "Абагульванне сховішча, элемента і спасылкі"
+      ],
       "Vaults": [
         "Сховішчы"
       ],
@@ -3417,6 +3474,12 @@
       ],
       "View logs": [
         "Паглядзець журнал"
+      ],
+      "VPN Devices": [
+        "Прылады VPN"
+      ],
+      "VPN Speed": [
+        "Хуткасць VPN"
       ],
       "Vulnerable": [
         "Уразлівы"
@@ -3429,6 +3492,9 @@
       ],
       "Websites": [
         "Вэб-сайты"
+      ],
+      "What's included": [
+        "Што вы атрымаеце?"
       ],
       "Work details": [
         "Звесткі аб працы"
@@ -3478,6 +3544,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Уключыць ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Menu": {
@@ -3661,6 +3732,14 @@
       ],
       "You can attach files to items for a better organization": [
         "Вы можаце далучаць файлы да элементаў для лепшай арганізацыі"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "Пажыццёвы доступ да ${ PASS_SHORT_APP_NAME } Plus за ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price } у месяц"
       ]
     },
     "Placeholder": {
@@ -3933,8 +4012,14 @@
       "${ BRAND_NAME } addresses": [
         "Адрасы ${ BRAND_NAME }"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Абарона ўліковага запісу"
@@ -4217,6 +4302,9 @@
       ],
       "Pause monitoring?": [
         "Прыпыніць назіранне?"
+      ],
+      "Pay once, access forever.": [
+        "Аплаціце адзін раз і атрымайце пажыццёвы доступ."
       ],
       "Pending access confirmation": [
         "Чакаецца пацвярджэнне доступу"

@@ -1171,10 +1171,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } tarifesini seçin"
       ],
-      "Select all": [
+      "Select All": [
         "Tümünü seç"
       ],
-      "Select All": [
+      "Select all": [
         "Tümünü seç"
       ],
       "Select all messages": [
@@ -1490,7 +1490,7 @@
         "Gönderim için kullan"
       ],
       "Use recovery code": [
-        "Kurtarma kodunu kullan"
+        "Kurtarma kodunu kullanın"
       ],
       "Use this": [
         "Bunu kullan"
@@ -5272,7 +5272,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
+        "${ BRAND_NAME } Hesabınıza bağlı bir güvenlik anahtarı girin."
       ],
       "Security key": [
         "Güvenlik anahtarı"
@@ -6475,9 +6475,6 @@
       "and": [
         "ve"
       ],
-      "and more.": [
-        "ve diğerlerine."
-      ],
       "Another tip will be displayed next time you open Mail": [
         "Mail uygulamasını bir sonraki açışınızda başka bir ipucu görüntülenecek"
       ],
@@ -6802,9 +6799,11 @@
       "Drop to import": [
         "İçe aktarmak için bırakın"
       ],
-      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
-        "Alıcınızın yapılandırması nedeniyle, bu ileti şu kişiye geçerlilik süresi ile gönderilemez: ",
-        "Alıcınızın yapılandırması nedeniyle, bu ileti şu kişilere geçerlilik süresi ile gönderilemez: "
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Alıcının yapılandırması nedeniyle, bu mesaj ${ firstRecipients }'e son kullanma tarihi ile gönderilemez."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Alıcının yapılandırması nedeniyle, bu mesaj son kullanma tarihi ile gönderilemez."
       ],
       "Duplicate key updated": [
         "Çift anahtar güncellendi"
@@ -6828,7 +6827,7 @@
         "Bağlantıyı düzenle"
       ],
       "email": [
-        "e-posta"
+        "E-posta adresi"
       ],
       "Email address": [
         "E-posta adresi"
@@ -6877,7 +6876,7 @@
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu yazın. Rakam ${ digit }."
+        "Doğrulama kodunu girin. Rakam ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
@@ -6976,7 +6975,7 @@
         "Özgün iletiyi gizle"
       ],
       "High Priority": [
-        "Yüksek öncelik"
+        "Yüksek öncelikli"
       ],
       "How hide-my-email aliases works": [
         "Hide-my-email adları nasıl çalışır"
@@ -7064,7 +7063,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7157,10 +7157,10 @@
         "Yükleniyor..."
       ],
       "Low Priority": [
-        "Düşük Öncelik"
+        "Düşük öncelikli"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } uygulamasını varsayılan e-posta uygulamanız yapın."
+        "${ MAIL_APP_NAME }'i varsayılan e-posta uygulamanız yapın."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -12773,47 +12773,6 @@
         "${ totalPrice } için"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -13072,6 +13031,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -14034,11 +14034,11 @@
       "Load remote content": [
         "Uzak içeriği yükle"
       ],
-      "Mail Subscriptions": [
-        "E-posta abonelikleri"
-      ],
       "Mail subscriptions": [
         "E-posta listesi abonelikleri"
+      ],
+      "Mail Subscriptions": [
+        "E-posta abonelikleri"
       ],
       "Make a secure connection your default": [
         "Bağlantınızın her zaman güvenli olmasını sağlayın"
