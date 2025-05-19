@@ -1,17 +1,37 @@
-import type { AvatarProps } from './Avatar';
-import Avatar from './Avatar';
-import mdx from './Avatar.mdx';
+import type { Meta, StoryObj } from '@storybook/react';
 
-export default {
+import { Avatar } from '..';
+
+const meta: Meta<typeof Avatar> = {
+    argTypes: {
+        color: {
+            control: 'radio',
+            options: ['norm', 'weak'],
+        },
+    },
+    args: {
+        color: 'norm',
+        children: 'PM',
+    },
     component: Avatar,
-    title: 'components/Avatar',
-    parameters: { docs: { page: mdx } },
+    parameters: {
+        docs: {
+            description: {
+                component: 'Generally used to highlight user initials.',
+            },
+        },
+    },
+    tags: ['autodocs'],
 };
 
-export const Playground = ({ ...args }) => <Avatar {...args}>PM</Avatar>;
+export default meta;
 
-const args: AvatarProps<'span'> = {};
+type Story = StoryObj<typeof Avatar>;
 
-Playground.args = args;
+export const Default: Story = {};
 
-export const Basic = () => <Avatar>HF</Avatar>;
+export const Weak: Story = {
+    args: {
+        color: 'weak',
+    },
+};
