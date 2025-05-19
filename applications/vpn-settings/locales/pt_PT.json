@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate organization key": [
         "Ativar a chave da organização"
@@ -67,7 +67,7 @@
         "Adicionar créditos"
       ],
       "Add domain": [
-        "Adicionar domínio"
+        "Adicionar um domínio"
       ],
       "Add external address": [
         "Adicionar um endereço externo"
@@ -82,7 +82,7 @@
         "Adicionar utilizador"
       ],
       "Allow": [
-        "Permitir"
+        "Endereços permitidos"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "Permitir correio encriptado de ponta a ponta para este grupo"
@@ -108,7 +108,7 @@
       "Back": [
         "Recuar"
       ],
-      "Back to sign-in": [
+      "Back to sign in": [
         "Voltar para o início de sessão"
       ],
       "Block": [
@@ -217,7 +217,7 @@
         "Criar utilizadores"
       ],
       "Current plan": [
-        "Plano atual"
+        "Plano actual"
       ],
       "Customize plan": [
         "Personalizar plano"
@@ -229,7 +229,7 @@
         "Eliminar"
       ],
       "Delete account": [
-        "Eliminar a conta"
+        "Apagar conta"
       ],
       "Delete Gateway": [
         "Eliminar a porta de entrada"
@@ -267,11 +267,11 @@
       "Discard": [
         "Descartar"
       ],
-      "Discard Changes": [
-        "Remover as alterações"
-      ],
       "Discard changes": [
         "Descartar alterações"
+      ],
+      "Discard Changes": [
+        "Remover as alterações"
       ],
       "Discover ${ planName }": [
         "Descubra o ${ planName }"
@@ -376,7 +376,7 @@
         "Ajustar na janela"
       ],
       "Forgot password?": [
-        "Esqueceu-se da palavra-passe?"
+        "Palavra-passe esquecida?"
       ],
       "Forgot recovery method?": [
         "Esqueceu-se do método de recuperação?"
@@ -699,11 +699,11 @@
       "Select country ${ country }": [
         "Selecione o país ${ country }"
       ],
-      "Select file": [
-        "Selecionar um ficheiro"
-      ],
       "select file": [
         "selecionar ficheiro"
+      ],
+      "Select file": [
+        "Selecionar um ficheiro"
       ],
       "Send code": [
         "Enviar código"
@@ -967,6 +967,9 @@
       ]
     },
     "Address action": {
+      "Allow unsigned mail": [
+        "Permitir e-mails sem assinatura"
+      ],
       "Delete address": [
         "Excluir o endereço"
       ],
@@ -2687,7 +2690,7 @@
         "${ name } foi movido para a lista de endereços permitidos."
       ],
       "${ name } moved to block list": [
-        "${ name } foi movido para a lista de endereços bloqueados"
+        "${ name } foi movido para a lista de endereços bloqueados."
       ],
       "${ name } moved to spam list": [
         "${ name } foi movido para a lista de spam."
@@ -3066,7 +3069,7 @@
         "Endereço de email inválido"
       ],
       "Invalid expiration date": [
-        "A data de expiração é inválida."
+        "A data de expiração não é válida."
       ],
       "Invalid IBAN": [
         "IBAN inválido"
@@ -3969,7 +3972,7 @@
         "Impressão digital da chave da organização"
       ],
       "Protection": [
-        "Proteção"
+        "Protecção"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Poupe em grande nas melhores promoções do ${ VPN_APP_NAME }"
@@ -4270,7 +4273,7 @@
         "O acesso à conta restringido devido a faturas por pagar. Contacte o administrador."
       ],
       "Account successfully updated": [
-        "Conta atualizada"
+        "Conta actualizada"
       ],
       "active": [
         "ativa"
@@ -4415,7 +4418,7 @@
         "Ciclo de faturação: ${ text }"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a atualizar de novo no futuro."
+        "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a actualizar de novo no futuro."
       ],
       "By leaving now, changes may not be saved": [
         "Se sair agora, as alterações podem não ficar guardadas"
@@ -4501,7 +4504,7 @@
         "Crédito pela parte não utilizada no plano anterior da sua subscrição"
       ],
       "Current plan": [
-        "Plano atual"
+        "Plano actual"
       ],
       "Custom": [
         "Personalizado"
@@ -4521,11 +4524,11 @@
       "Data recoverable on this device": [
         "Dados recuperáveis neste dispositivo"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereços IP dedicados podem ser adicionados a portas de entrada privadas para ativar um controlo de acesso personalizado."
@@ -5593,8 +5596,8 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Para confirmar, introduza o nome do utilizador que deseja eliminar."
       ],
-      "to continue to ${ product }": [
-        "para continuar para ${ product }"
+      "To continue to ${ product }": [
+        "Para continuar para o ${ product }"
       ],
       "To create your first user group, go to": [
         "Para criar o seu primeiro grupo de utilizadores, vá para"
@@ -5624,7 +5627,7 @@
         "Total de endereços de e-mail"
       ],
       "Total storage": [
-        "Total de armazenamento"
+        "Armazenamento total"
       ],
       "Total supported domains": [
         "Total de domínios suportados"
@@ -5701,11 +5704,11 @@
       "User activated": [
         "O utilizador foi ativado."
       ],
-      "username": [
-        "nome de utilizador"
-      ],
       "Username": [
         "Nome de utilizador"
+      ],
+      "username": [
+        "nome de utilizador"
       ],
       "Users": [
         "Utilizadores"
@@ -6244,7 +6247,7 @@
         "Endereço"
       ],
       "Address type": [
-        "Tipo de endereço"
+        "Categoria de endereço"
       ],
       "Addresses": [
         "Endereços"
@@ -6261,10 +6264,10 @@
       "Allow recovery by phone": [
         "Permitir recuperação por telefone"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domínio permitido"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domínio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6427,7 +6430,7 @@
         "Desativado"
       ],
       "Display name": [
-        "Nome a mostrar"
+        "Nome exibido"
       ],
       "Do you have any suggestions for our team?": [
         "Tem algumas sugestões para a nossa equipa?"
@@ -6649,7 +6652,7 @@
         "Pagante"
       ],
       "Payment details": [
-        "Detalhes de pagamento"
+        "Detalhes de Pagamento"
       ],
       "Payment method": [
         "Método de pagamento"
@@ -7117,6 +7120,9 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "A sua conta corre risco de eliminação. Para evitar a perda de dados, peça ao seu administrador que atualize o plano. ${ cta }"
       ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "O seu armazenamento está cheio. Para continuar a usar os produtos ${ BRAND_NAME }, liberte espaço ou ${ cta }."
+      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "A sua subscrição terminou. ${ cta } e para evitar a perda de dados."
       ]
@@ -7271,7 +7277,7 @@
     },
     "Navigation": {
       "All": [
-        "Todos"
+        "Tudo"
       ],
       "Allow": [
         "Endereços permitidos"
@@ -7296,7 +7302,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "Velocidade VPN máxima"
+        "Velocidade VPN mais alta"
       ],
       "Keep your inbox organized with folders": [
         "Mantenha a sua caixa de entrada organizada com pastas"
@@ -7305,12 +7311,26 @@
         "Velocidade VPN média"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Apagar conta"
       ],
       "Downgrade account": [
-        "Mudar para uma conta com menos funcionalidades"
+        "Optar por um plano inferior"
       ],
       "Get ${ BRAND_NAME } for free": [
         "Obter o ${ BRAND_NAME } gratuitamente"
@@ -7326,20 +7346,6 @@
       ],
       "Switch plan": [
         "Alterar o plano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
       ]
     },
     "new_plans: feature": {
@@ -7362,7 +7368,7 @@
         "${ n } domínios de e-mail personalizados"
       ],
       "${ n } email address": [
-        "${ n } endereço de e-mail",
+        "${ n } endereço de e-mail ",
         "${ n } endereços de e-mail/aliases"
       ],
       "${ n } email address per user": [
@@ -7574,7 +7580,7 @@
         "Recursos gratuitos de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Free VPN on a single device": [
-        "VPN gratuita num único dispositivo"
+        "VPN gratuito num único dispositivo"
       ],
       "Fully refundable for 30 days": [
         "Totalmente reembolsável por 30 dias"
@@ -7696,7 +7702,7 @@
         "Comece a proteger-se online em 2 passos simples"
       ],
       "Strict no-logs policy": [
-        "Política rigorosa de não registo"
+        "Política estrita sem registos"
       ],
       "Sync and backup all your files across devices": [
         "Sincronize e guarde cópias de segurança de todos os seus ficheiros em vários dispositivos."
@@ -7708,7 +7714,7 @@
         "Autenticação de dois fatores"
       ],
       "Unlimited devices": [
-        "Número ilimitado de dispositivos"
+        "Dispositivos ilimitados"
       ],
       "Unlimited devices and aliases": [
         "Dispositivos e aliases ilimitados"
@@ -7796,7 +7802,7 @@
     },
     "new_plans: heading": {
       "Support": [
-        "Apoio ao cliente"
+        "Suporte"
       ],
       "Team management": [
         "Gestão de equipa"
@@ -7837,7 +7843,7 @@
         "Proteção essencial e colaboração segura para um número ilimitado de utilizadores."
       ],
       "For next-level password management and identity protection.": [
-        "Para uma gestão de palavras-passe e proteção de identidade de nível superior."
+        "Para gestão de palavras-passe de nível superior e proteção de identidade."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Se eliminar a sua conta, perde todos os benefícios do plano ${ visionary } e este não estará disponível se criar uma nova conta."
@@ -7873,7 +7879,7 @@
         "Armazenamento em nuvem seguro que permite armazenar, sincronizar e compartilhar ficheiros com facilidade e segurança."
       ],
       "Secure email with advanced features for your everyday communications.": [
-        "E-mail seguro com caraterísticas avançadas para as suas comunicações diárias."
+        "E-mail seguro com funcionalidades avançadas para as suas comunicações diárias."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Soluções à medida para organizações maiores com necessidades de segurança específicas"
@@ -7882,7 +7888,7 @@
         "A solução de VPN dedicada que oferece acesso seguro, irrestrito e de alta velocidade à internet."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "A conta inicial gratuita criada para oferecer privacidade a todos por padrão."
+        "A conta de iniciação sem custo concebida para empoderar todas as pessoas com privacidade por defeito."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Privacidade ilimitada e mais armazenamento para até 2 pessoas."
@@ -7938,6 +7944,9 @@
       "${ shortPlan.title } Trial": [
         "Avaliação do ${ shortPlan.title }"
       ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
       "Your account's usage": [
         "Utilização da sua conta"
       ]
@@ -7947,7 +7956,7 @@
         "Apagar a conta?"
       ],
       "Downgrade account?": [
-        "Mudar para uma conta com menos funcionalidades?"
+        "Mudar para um conta com menos funcionalidades?"
       ],
       "Review subscription and pay": [
         "Reveja a subscrição e pague"
@@ -8157,7 +8166,7 @@
         "Envie o logo da sua empresa para personalizar a experiência das suas equipas nas aplicações Web da ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Utilize os seus próprios endereços de domínio de e-mail personalizado. Por exemplo: você@oseunome.pt"
+        "Utilize o seus próprios endereços de domínio de e-mail personalizado, e.g., voce@oseunome.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
         "Não mantemos registos de utilização de sessões do que faz online e não registamos metadados que possam comprometer a sua privacidade."
@@ -8228,7 +8237,7 @@
         "Localizações de servidor dedicado em América do Norte e Europa"
       ],
       "Multi-platform support": [
-        "Apoio ao cliente multiplataforma"
+        "Suporte multi-plataforma"
       ],
       "Private gateways": [
         "Portas de entrada privadas"
@@ -8479,7 +8488,7 @@
         "Definições do servidor Free"
       ],
       "I found another service that I like better": [
-        "Encontrei outro serviço de que gosto mais"
+        "Encontrei outro serviço do qual gosto mais"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Utilizo outra conta da ${ BRAND_NAME }."
@@ -8771,7 +8780,7 @@
         "Os seguintes administradores terão acesso à chave da organização."
       ],
       "The organization key must be activated first.": [
-        "Tem de ativar a chave da organização primeiro."
+        "Tem de activar a chave da organização primeiro."
       ],
       "This will send the latest organization key to the administrators that currently don't have access to it.": [
         "Isto irá enviar a chave da organização mais recente para os administradores que atualmente não têm acesso a ela."
@@ -8817,11 +8826,17 @@
       "Bank transfer": [
         "Transferência bancária"
       ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
       "Credit/debit card": [
         "Cartão de crédito/débito"
       ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
+      ],
+      "PayPal": [
+        "PayPal"
       ]
     },
     "Payment.Sepa.Action": {
@@ -9139,7 +9154,7 @@
     },
     "Price": {
       "Free": [
-        "Gratuito"
+        "Free"
       ]
     },
     "Recovery Email": {
@@ -10232,6 +10247,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Para continuar a usar os produtos ${ BRAND_NAME }, liberte espaço ou ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Para enviar ou receber e-mails, liberte espaço ou ${ upgrade }."
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Para enviar ou sincronizar ficheiros, libere espaço ou ${ upgrade }"
       ],
@@ -10284,7 +10302,7 @@
         "Faturado a cada 2 anos"
       ],
       "Billed monthly": [
-        "Faturado mensalmente"
+        "Faturação mensal"
       ],
       "Billed yearly": [
         "Faturação anual"
@@ -10369,7 +10387,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Entendido"
+        "Percebi"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Basta iniciar sessão na sua conta da Apple App Store e, em seguida, selecionar ${ subscriptions }."
@@ -10403,47 +10421,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Por ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento automático de e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de violação de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription reminder": {
@@ -10736,6 +10713,47 @@
         "O seu próprio alias de e-mail curto @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento automático de e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violação de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Tem a certeza?"
@@ -11024,7 +11042,7 @@
         "Para famílias"
       ],
       "For individuals": [
-        "Para indivíduos"
+        "Para particulares"
       ]
     },
     "TableHeader": {
@@ -11091,6 +11109,9 @@
       ],
       "${ BRAND_NAME } Account password rules": [
         "Regras da palavra-passe da conta da ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente de escrita ${ BRAND_NAME } Scribe"
@@ -11208,7 +11229,7 @@
         "Quantia"
       ],
       "Amount due": [
-        "Quantia devida"
+        "Montante devido"
       ],
       "An address for each role": [
         "Um endereço para cada função"
@@ -11246,11 +11267,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço captura-tudo"
-      ],
       "Catch-all address": [
         "Endereço Catch-All"
+      ],
+      "Catch-All address": [
+        "Endereço captura-tudo"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"
@@ -11380,7 +11401,7 @@
         "Eliminar ${ policyName }?"
       ],
       "Delete account": [
-        "Eliminar a conta"
+        "Apagar conta"
       ],
       "Delete group?": [
         "Apagar grupo?"
@@ -11881,7 +11902,7 @@
         "Verificação do seu cartão..."
       ],
       "Verifying your payment...": [
-        "Verificação do seu pagamento..."
+        "A verificar o seu pagamento..."
       ],
       "Video conferencing": [
         "Videoconferência"

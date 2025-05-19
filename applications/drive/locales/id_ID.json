@@ -2760,7 +2760,7 @@
         "Terdapat fitur yang hilang"
       ],
       "Other reason (please comment)": [
-        "Alasan lainnya (mohon tulis di kolom komentar)"
+        "Alasan lainnya (silakan tulis di kolom komentar)"
       ],
       "Subscription is too expensive": [
         "Biaya berlangganan terlalu mahal"
@@ -5450,6 +5450,9 @@
       "Shared": [
         "Dibagikan"
       ],
+      "Shared by ": [
+        "Dibagikan oleh "
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "Dibagikan oleh ${ rootLink.signatureEmail }"
       ],
@@ -5851,9 +5854,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
-      ],
-      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
-        "Kami sedang meningkatkan foto ke pengalaman yang baru! Selama masa transisi ini, pemulihan foto akan tidak tersedia untuk sementara. Segala sesuatunya akan siap dalam beberapa hari ke depan. Terima kasih atas pengertian Anda."
       ],
       "Week": [
         "Pekan"
@@ -7026,6 +7026,9 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Akun Anda berisiko untuk dihapus. Untuk mencegah hilangnya data, mintalah admin Anda untuk meningkatkan paket langganan Anda. ${ cta }"
       ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Ruang penyimpanan Anda penuh. Untuk terus menggunakan produk ${ BRAND_NAME }, kosongkan ruang yang ada atau ${ cta }."
+      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Langganan Anda telah berakhir. ${ cta } dan mencegah hilangnya data."
       ]
@@ -7394,6 +7397,17 @@
         "Kecepatan VPN sedang"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Paket dimulai dari ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Hapus akun"
@@ -7415,17 +7429,6 @@
       ],
       "Switch plan": [
         "Ganti paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Paket dimulai dari ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
       ]
     },
     "new_plans: feature": {
@@ -8362,6 +8365,9 @@
       "Access for the member removed": [
         "Akses untuk anggota dihapus"
       ],
+      "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
+        "Akses Album, Filter, dan lainnya yang baru dengan mengambil tindakan pada volume terkunci Anda. Pulihkan atau hapus sekarang untuk segera menikmati fitur-fitur baru ini."
+      ],
       "Access updated": [
         "Akses telah diperbarui"
       ],
@@ -8488,6 +8494,12 @@
       "Share invitation declined": [
         "Undangan untuk berbagi ditolak"
       ],
+      "Some photo(s) could not be added to \"${ albumName }\"": [
+        "Sebagian foto tidak dapat ditambahkan ke \"${ albumName }\""
+      ],
+      "Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Beberapa foto tidak dapat dihapus dari ${ albumLink.name }"
+      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Maaf, kami tidak dapat menghapus folder ini karena folder tidak kosong."
       ],
@@ -8532,6 +8544,9 @@
       ],
       "Your photo(s) have been added to \"${ albumName }\"": [
         "Foto Anda telah ditambahkan ke \"${ albumName }\""
+      ],
+      "Your photo(s) have been removed from ${ albumLink.name }": [
+        "Foto Anda telah dihapus dari ${ albumLink.name }"
       ],
       "Your settings failed to be saved": [
         "Pengaturan Anda gagal disimpan"
@@ -9799,6 +9814,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Untuk terus menggunakan produk ${ BRAND_NAME }, kosongkan ruang yang ada atau ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Untuk mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
       ],
@@ -9915,47 +9933,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Untuk ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription reminder": {
@@ -10210,6 +10187,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {

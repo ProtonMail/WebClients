@@ -433,6 +433,9 @@
       "Pause monitoring": [
         "Suspendare monitorizare"
       ],
+      "Pay once": [
+        "Plată o dată"
+      ],
       "Pin item": [
         "Fixare"
       ],
@@ -570,6 +573,9 @@
       ],
       "Sign out": [
         "Deconectare"
+      ],
+      "Skip": [
+        "Omitere"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Cineva v-a partajat un articol în ${ PASS_APP_NAME }."
@@ -1829,11 +1835,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
-      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -2252,6 +2253,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Pentru a revizui datele importate, faceți clic pe pictograma ${ PASS_APP_NAME } din bara de utilitare a navigatorului web."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Aprobat de peste 50.000 de utilizatori de afaceri și 100 de milioane de conturi din întreaga lume."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului. Aceasta va reporni aplicația."
       ],
@@ -2611,6 +2615,12 @@
       "Birthdate": [
         "Data nașterii"
       ],
+      "Browse faster, smarter": [
+        "Navigați pe web mai repede și mai inteligent"
+      ],
+      "Built-in 2FA": [
+        "A2F încorporată"
+      ],
       "Capital letters (A-Z)": [
         "Majuscule (A-Z)"
       ],
@@ -2628,6 +2638,12 @@
       ],
       "Catch-All": [
         "Adresă de agregare"
+      ],
+      "Choose unlock method": [
+        "Alegeți metoda de deblocare"
+      ],
+      "Choose your preferred look and feel.": [
+        "Alegeți stilul și aspectul preferat."
       ],
       "City": [
         "Oraş"
@@ -2685,6 +2701,9 @@
       ],
       "Created at": [
         "Creat la"
+      ],
+      "Credit cards": [
+        "Carduri de plată"
       ],
       "Custom hidden field": [
         "Câmp ascuns personal"
@@ -2755,6 +2774,9 @@
       "Export": [
         "Exportare"
       ],
+      "Extra email addresses": [
+        "Adrese de e-mail suplimentare"
+      ],
       "Extra password": [
         "Parola suplimentară"
       ],
@@ -2766,6 +2788,9 @@
       ],
       "Field name": [
         "Nume câmp"
+      ],
+      "File attachments": [
+        "Fișiere atașate"
       ],
       "File format": [
         "Format fișier"
@@ -2779,8 +2804,14 @@
       "For a one-off sharing": [
         "Pentru o partajare unică"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Din motive de securitate, ${ PASS_SHORT_APP_NAME } se blochează automat după 10 minute de inactivitate."
+      ],
       "Forwards to": [
         "Redirecționare către"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "Gratuit întotdeauna"
@@ -2797,8 +2828,17 @@
       "Generic CSV": [
         "CSV generic"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Luați ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Obțineți ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "Începeți"
+      ],
+      "Get the extension for your browser.": [
+        "Luați extensia pentru navigatorul web."
       ],
       "Grant": [
         "Permitere"
@@ -2808,6 +2848,15 @@
       ],
       "Hide password": [
         "Ascundere parolă"
+      ],
+      "Hide-my-email aliases": [
+        "Aliasuri hide-my-email"
+      ],
+      "Highest": [
+        "Maximă"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Cum se deblochează ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2847,6 +2896,12 @@
       ],
       "Instagram handle": [
         "Nume utilizator Instagram"
+      ],
+      "Install and continue": [
+        "Instalare și continuare"
+      ],
+      "Install extension": [
+        "Instalare extensie"
       ],
       "Invitations": [
         "Invitații"
@@ -2893,6 +2948,9 @@
       "License number": [
         "Permis de conducere"
       ],
+      "Limited time": [
+        "Timp limitat"
+      ],
       "LinkedIn account": [
         "Cont LinkdIn"
       ],
@@ -2916,6 +2974,9 @@
       ],
       "Make all viewers": [
         "Setare toți ca utilizator"
+      ],
+      "Make it your own.": [
+        "Personalizați aplicația."
       ],
       "max views reached": [
         "vizualizări maxime depășite"
@@ -3019,6 +3080,9 @@
       "Personal website": [
         "Site web personal"
       ],
+      "Personalize": [
+        "Personalizați"
+      ],
       "PGP-encrypted (recommended)": [
         "Criptat cu PGP (recomandat)"
       ],
@@ -3030,6 +3094,9 @@
       ],
       "PIN code": [
         "Cod PIN"
+      ],
+      "Plus": [
+        "Plus"
       ],
       "Prefix": [
         "Prefix"
@@ -3097,8 +3164,14 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Selectați seiful unde să fie importate aliasurile SimpleLogin"
       ],
+      "Select theme": [
+        "Selectați tema"
+      ],
       "Select your password manager": [
         "Selectare manager de parole"
+      ],
+      "Select your theme": [
+        "Selectați tema"
       ],
       "Selected": [
         "Selectat"
@@ -3136,6 +3209,9 @@
       "Status": [
         "Stare"
       ],
+      "Storage": [
+        "Spațiu de stocare"
+      ],
       "Street address": [
         "Strada"
       ],
@@ -3162,6 +3238,9 @@
       ],
       "Text": [
         "Text"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Tot ce e mai bun de la ${ BRAND_NAME } cu un singur abonament"
       ],
       "The URL has been copied to the clipboard": [
         "Legătura web a fost copiată în memorie"
@@ -3195,6 +3274,12 @@
       ],
       "Unknown": [
         "Necunoscut"
+      ],
+      "Unlimited": [
+        "Nelimitat"
+      ],
+      "Unlock premium features": [
+        "Deblocați funcțiile speciale"
       ],
       "Unlock with": [
         "Deblocare cu"
@@ -3235,6 +3320,9 @@
       "Vault ID": [
         "ID seif"
       ],
+      "Vault, item & link sharing": [
+        "Partajare seif, elemente și legături web"
+      ],
       "Vaults": [
         "Seifuri"
       ],
@@ -3243,6 +3331,12 @@
       ],
       "View logs": [
         "Afișare jurnale"
+      ],
+      "VPN Devices": [
+        "Dispozitive VPN"
+      ],
+      "VPN Speed": [
+        "Viteză VPN"
       ],
       "Vulnerable": [
         "Vulnerabilă"
@@ -3255,6 +3349,9 @@
       ],
       "Websites": [
         "Pagini web"
+      ],
+      "What's included": [
+        "Ce este inclus"
       ],
       "Work details": [
         "Detalii loc de muncă"
@@ -3274,8 +3371,14 @@
       "You are about to create": [
         "Sunteți pe cale să creați"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Pentru deblocare puteți alege codul PIN, datele biometrice sau parola contului."
+      ],
       "Your domain": [
         "Domeniul personal"
+      ],
+      "Your passwords. Everywhere.": [
+        "Parolele proprii. Oriunde."
       ],
       "ZIP": [
         "Cod poștal"
@@ -3298,6 +3401,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Activare ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Message": {
@@ -3464,6 +3572,14 @@
       ],
       "You can attach files to items for a better organization": [
         "Puteți atașa fișiere la articole pentru o organizare mai bună."
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus pe viață cu ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price }/lună"
       ]
     },
     "Placeholder": {
@@ -3734,8 +3850,14 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adrese"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Nelimitat"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Protecție cont"
@@ -4015,6 +4137,9 @@
       ],
       "Pause monitoring?": [
         "Suspendați monitorizarea?"
+      ],
+      "Pay once, access forever.": [
+        "Plătiți o dată, accesați pe viață."
       ],
       "Pending access confirmation": [
         "Se așteaptă confirmarea accesului"

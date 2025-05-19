@@ -36,11 +36,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
       ],
+      "A to Z": [
+        "A - Ö"
+      ],
       "Activate": [
         "Aktivoi"
       ],
       "Activate recovery": [
         "Aktivoi palautus"
+      ],
+      "Active": [
+        "Aktiiviset"
       ],
       "Add": [
         "Lisää"
@@ -146,7 +152,7 @@
         "Huomiota vaaditaan"
       ],
       "Authenticate": [
-        "Tunnistaudu"
+        "Todenna"
       ],
       "Auto-delete spam and trash": [
         "Roskapostin ja roskakorin automaattinen tyhjennys"
@@ -189,6 +195,9 @@
       ],
       "Change page": [
         "Vaihda sivua"
+      ],
+      "Change sorting": [
+        "Muuta lajittelua"
       ],
       "Chat with us": [
         "Keskustele kanssamme"
@@ -267,6 +276,9 @@
       ],
       "Connect apps and devices": [
         "Yhdistä sovelluksia ja laitteita"
+      ],
+      "Connect to video conferencing": [
+        "Yhdistä videoneuvotteluun"
       ],
       "Contact group": [
         "Yhteystietoryhmä"
@@ -724,6 +736,9 @@
       "Learn more": [
         "Lue lisää"
       ],
+      "Least read": [
+        "Vähiten luetut"
+      ],
       "Let's talk": [
         "Keskustellaan"
       ],
@@ -750,6 +765,9 @@
       ],
       "Make it friendly": [
         "Tee siitä ystävällisempi"
+      ],
+      "Manage advanced account protections": [
+        "Hallitse edistynyttä tilisuojausta"
       ],
       "Manage folders": [
         "Hallitse kansioita"
@@ -837,6 +855,9 @@
       ],
       "More search options": [
         "Lisää hakuvalintoja"
+      ],
+      "Most read": [
+        "Luetuimmat"
       ],
       "Move": [
         "Siirrä"
@@ -1018,6 +1039,9 @@
       "Remove bonuses": [
         "Poista edut"
       ],
+      "Remove button": [
+        "Poista-painike"
+      ],
       "Remove encryption": [
         "Poista salaus"
       ],
@@ -1078,8 +1102,14 @@
       "Reset to default": [
         "Palauta oletukset"
       ],
+      "Resize panel": [
+        "Muuta paneelin kokoa"
+      ],
       "Restore": [
         "Palauta"
+      ],
+      "Resubscribe": [
+        "Tilaa uudelleen"
       ],
       "Resume": [
         "Jatka"
@@ -1132,10 +1162,10 @@
       "Select ${ planTitle }": [
         "Valitse ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Valitse kaikki"
       ],
-      "Select All": [
+      "Select all": [
         "Valitse kaikki"
       ],
       "Select all messages": [
@@ -1200,6 +1230,9 @@
       ],
       "Set up a custom domain": [
         "Määritä oma verkkotunnus"
+      ],
+      "Set up email forwarding": [
+        "Määritä sähköpostin ohjaus"
       ],
       "Settings": [
         "Asetukset"
@@ -1354,6 +1387,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Yritä tallennusta uudelleen. Tallennus epäonnistui: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"
+      ],
       "Unblock": [
         "Poista esto"
       ],
@@ -1380,6 +1416,9 @@
       ],
       "Unsubscribe": [
         "Lopeta tilaus"
+      ],
+      "Unsubscribed": [
+        "Tilaus on peruttu"
       ],
       "Unsubscribing": [
         "Tilausta lopetetaan"
@@ -1417,14 +1456,17 @@
       "Use ${ PASS_APP_NAME }": [
         "Käytä ${ PASS_APP_NAME }ia"
       ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Käytä ${ PASS_APP_NAME } for Businessia"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Käytä ${ VPN_SHORT_APP_NAME }:ää tietosuojaa varten"
+      ],
       "Use a different card": [
         "Käytä toista korttia"
       ],
       "Use a different payment method": [
         "Käytä eri maksutapaa"
-      ],
-      "Use authentication code": [
-        "Käytä vahvistuskoodia"
       ],
       "Use for sending": [
         "Käytä lähetykseen"
@@ -3912,6 +3954,9 @@
       "All events in this series were updated.": [
         "Ketjun kaikki tapahtumakerrat päivitettiin."
       ],
+      "Here's what changed:": [
+        "Tehdyt muutokset:"
+      ],
       "This event occurrence was canceled.": [
         "Tämä tapahtumakerta peruttiin."
       ],
@@ -5003,24 +5048,6 @@
         "Rajattomasti Hide-my-email-aliaksia"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Jotain meni pieleen suojausavaimellasi tunnistauduttaessa. Yritä uudelleen."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Kytke ${ BRAND_NAME }-tiliisi liitetty suojausavain."
-      ],
-      "Security key": [
-        "Suojausavain"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Suojausavain"
-      ]
-    },
     "file size format": {
       "byte": [
         "tavu",
@@ -5796,6 +5823,18 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Tuo palvelusta ${ provider }"
+      ],
+      "Import from Google": [
+        "Tuo Googlesta"
+      ],
+      "Import from other": [
+        "Tuo muualta"
+      ],
+      "Import from Outlook": [
+        "Tuo Outlookista"
+      ],
+      "Import from Yahoo": [
+        "Tuo Yahoosta"
       ]
     },
     "Import warning": {
@@ -5823,6 +5862,15 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, arkistoi tai siirrä vanhat sähköpostit kansioon."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } tilaukset, jotka eivät ole enää ajankohtaisia."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } yhdellä klikkauksella."
       ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "${ BRAND_NAME } Scribe auttaa sinua laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
@@ -6001,6 +6049,14 @@
       "${ storage } storage": [
         "${ storage } tallennustilaa"
       ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } sähköposti viime kuussa",
+        "${ subscription.ReceivedMessages.Last30Days } sähköpostia viime kuussa"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } lukematon",
+        "${ subscription.UnreadMessageCount } lukematonta"
+      ],
       "${ total } conversation": [
         "${ total } keskustelu",
         "${ total } keskustelua"
@@ -6008,6 +6064,14 @@
       "${ total } message": [
         "${ total } viesti",
         "${ total } viestiä"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } sähköpostiseuranta estetty",
+        "${ trackersCount } sähköpostiseurantaa estetty"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } seuranta estetty",
+        "${ trackersCount } seurantaa estetty"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } ajoitettu viesti",
@@ -6068,6 +6132,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Käyttäjä tarkoittaa tiliä, joka on liitetty yksittäiseen käyttäjätunnukseen, postilaatikkoon ja henkilöön."
       ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN piilottaa IP-osoitteesi ja salaa selaustoimintasi, joten verkkosivustojen, mainostajien ja Internet-palveluntarjoajien on vaikeampi seurata sinua ajan mittaan."
+      ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN on suojattu tunneli laitteesi ja Internetin välillä. Se piilottaa sijaintisi ja toimintasi Internet-palveluntarjoajaltasi (ISP) ja verkkosivustoilta, joilla vierailet."
       ],
@@ -6114,6 +6181,15 @@
       "All (${ totalFoldersCount } label)": [
         "Kaikki (${ totalFoldersCount } tunniste)",
         "Kaikki (${ totalFoldersCount } tunnistetta)"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Kaikki tämän postituslistan viestit merkitään luetuiksi."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Kaikki tämän postituslistan viestit siirretään arkistoon."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Kaikki tämän postituslistan viestit siirretään roskakoriin."
       ],
       "All messages stored in this folder will be permanently deleted.": [
         "Kaikki kansion sisältämät viestit poistetaan pysyvästi."
@@ -6164,11 +6240,17 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Myös kaikki alikansiot poistetaan. Kansiossa ${ nameDeleted } olevia sähköposteja ei kuitenkaan poisteta, vaan ne löytyvät \"Kaikki viestit\" -kansiosta."
       ],
+      "Apply to future messages ": [
+        "Käytä tuleville viesteille "
+      ],
       "Applying actions to conversations": [
         "Käytetään toimintoa kaikille keskusteluille"
       ],
       "Applying actions to messages": [
         "Käytetään toimintoa kaikille viesteille"
+      ],
+      "Archive existing messages": [
+        "Arkistoi olemassa olevat viestit"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Haluatko varmasti poistaa kaikki tämän kansion viestit?"
@@ -6254,11 +6336,17 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Tehosta organisaatiosi brändi-identiteettiä ja tee käyttäjiesi verkkokokemuksesta yhtenäisempi."
       ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Tuo viestisi, yhteystietosi ja kalenterisi ${ BRAND_NAME }iin."
+      ],
       "Browse privately and access blocked content.": [
         "Selaa yksityisesti ja käytä estettyä sisältöä."
       ],
       "Browser not supported": [
         "Selainta ei tueta"
+      ],
+      "Bulk delete": [
+        "Massapoista"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Alentamalla ilmaiseen palveluun, menetät nämä edut pysyvästi, vaikka päivittäisit tilauksesi tulevaisuudessa uudelleen."
@@ -6467,11 +6555,17 @@
       "Drop to import": [
         "Tuo pudottamalla"
       ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Vastaanottajan asetuksista johtuen tätä viestiä ei voida lähettää erääntymisajalla vastaanottajalle ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Vastaanottajan asetuksista johtuen tätä viestiä ei voida lähettää erääntymisajalla"
+      ],
       "Duplicate key updated": [
         "Avaimen kaksoiskappale päivitettiin"
       ],
-      "Each code can only be used once": [
-        "Koodit ovat kertakäyttöisiä"
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Hallitse ja peru uutiskirjeitä ja postituslistoja helposti."
       ],
       "Edit email address": [
         "Muokkaa sähköpostiosoitetta"
@@ -6486,7 +6580,7 @@
         "Muokkaa linkkiä"
       ],
       "email": [
-        "sähköpostiosoite"
+        "sähköposti"
       ],
       "Email address": [
         "Sähköpostiosoite"
@@ -6522,20 +6616,11 @@
       "Encrypt message": [
         "Salaa viesti"
       ],
-      "Enter the code from your authenticator app": [
-        "Syötä todennussovelluksen näyttämä koodi"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Syötä tuotavan tilin kirjautumistiedot."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Syötä kohteeseen ${ destinationText } lähetetty vahvistuskoodi."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Syötä vahvistuskoodi. Numero ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Syötä oma salasanasi (organisaation ylläpitäjänä)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Arviolta ${ estimatedMinutes } minuutti jäljellä",
@@ -6713,7 +6798,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -6729,6 +6815,9 @@
       ],
       "Invite family members and get everything up and running.": [
         "Kutsu perheenjäseniä ja aloita käyttö."
+      ],
+      "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
+        "Kutsu kumppanisi, ystäväsi tai kuka tahansa, jonka kanssa jaat ${ protonDuoPlanName } -tilauksesi."
       ],
       "It's better to have:": [
         "On parempi olla:"
@@ -6772,6 +6861,9 @@
       "Learn more about the writing assistant": [
         "Lue lisää kirjoittamisen avustajasta"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Lue, mitä tehdä, ${ dataLeakedLink }"
+      ],
       "Left to Right": [
         "Vasemmalta oikealle"
       ],
@@ -6810,6 +6902,9 @@
       ],
       "Manage your labels": [
         "Hallitse tunnisteitasi"
+      ],
+      "Mark all as read": [
+        "Merkitse kaikki luetuiksi"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode -logo"
@@ -6952,8 +7047,14 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ainakin yksi luotetuista avaimistasi on merkitty niiden omistajien toimesta \"vaarantuneeksi\". Suosittelemme että muutat avaimet \"epäluotettaviksi\"."
       ],
+      "One time import": [
+        "Kertaluontoinen tuonti"
+      ],
       "Open shortcut cheat sheet": [
         "Avaa pikanäppäinlista"
+      ],
+      "Optional": [
+        "Valinnainen"
       ],
       "or discover other features:": [
         "tai tutustu muihin ominaisuuksiin:"
@@ -7106,6 +7207,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Dokumenttien julkista jakamista ei vielä tueta."
+      ],
+      "Quickly spot": [
+        "Löydä nopeasti"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Ota meihin yhteyttä saadaksesi apua mihin tahansa ${ BRAND_NAME }."
@@ -7580,6 +7684,9 @@
       "Tracking": [
         "Seuranta"
       ],
+      "Trash existing messages": [
+        "Poista olemassa olevat viestit"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Kokeile uusia ${ BRAND_NAME }-ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen."
       ],
@@ -7603,6 +7710,9 @@
       ],
       "Unsaved changes": [
         "Tallentamattomia muutoksia"
+      ],
+      "Unsubscribe": [
+        "Peru tilaus"
       ],
       "Unsupported file": [
         "Tiedostomuotoa ei tueta"
@@ -7765,9 +7875,6 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Kun otit luotetut avaimet käyttöön lähettäjälle ${ senderName }, lisättiin julkiset avaimet yhteystiedon tietoihin."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Kun tilaat uutiskirjeen, käytä sähköpostiosoitteesi sijaan aliasta. Identiteettisi pysyy piilossa, ja voit poistaa aliaksen käytöstä milloin tahansa."
@@ -8043,6 +8150,12 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti kuukausittain."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Tilauksesi uudistuu automaattisesti ${ renewalTime }."
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
       ]
     },
     "info": {
@@ -8320,6 +8433,12 @@
       " and ${ l }": [
         " ja ${ l }"
       ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Merkitse kaikki viestit luetuiksi"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Siirrä kaikki veistit kansioon ${ boldFolderName }"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
       ],
@@ -8341,6 +8460,9 @@
       ],
       "Actions": [
         "Toiminnot"
+      ],
+      "Active filter:": [
+        "Aktiivinen suodatin:"
       ],
       "Add email address": [
         "Lisää sähköpostiosoite"
@@ -8389,6 +8511,9 @@
       ],
       "Apply filter to existing emails": [
         "Käytä suodatinta nykyisille viesteille"
+      ],
+      "Apply to future messages": [
+        "Käytä tuleville viesteille"
       ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
@@ -8654,6 +8779,9 @@
       "Mail Server (IMAP)": [
         "Sähköpostipalvelin (IMAP)"
       ],
+      "Mail subscriptions": [
+        "Sähköpostitilaukset"
+      ],
       "Main": [
         "Pää"
       ],
@@ -8701,6 +8829,9 @@
       ],
       "Notification": [
         "Ilmoitus"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Ilmoitukset on poistettu käytöstä. Voit ottaa ne käyttöön selaimen asetuksissa."
       ],
       "Open in a new tab": [
         "Avaa uudessa välilehdessä"
@@ -8834,6 +8965,9 @@
       "System information": [
         "Järjestelmätiedot"
       ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Suodatin ei ole käytössä. Voit ottaa sen käyttöön ${ settingsLink }"
+      ],
       "Theme": [
         "Teema"
       ],
@@ -8911,9 +9045,6 @@
       ],
       "Your location": [
         "Sinun sijaintisi"
-      ],
-      "Your password (admin)": [
-        "Salasanasi (ylläpitäjä)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8984,6 +9115,14 @@
       ],
       "To: ${ to }": [
         "Vastaanottaja: ${ to }"
+      ]
+    },
+    "Labels": {
+      "Newsletters you unsubscribe from will appear here.": [
+        "Uutiskirjeet, joiden tilauksen peruutat, näkyvät täällä."
+      ],
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Näytä ja hallitse uutiskirjeiden ja postituslistojen tilauksia täällä."
       ]
     },
     "Landmarks": {
@@ -9071,8 +9210,20 @@
       "How to add Zoom links": [
         "Miten Zoom-linkkejä lisätään"
       ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Miten yhteiskäytät ${ DOCS_SHORT_APP_NAME }issa"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Miten otat ${ PROTON_SENTINEL_NAME }in käyttöön"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Miten siirryt ${ BRAND_NAME }iin"
+      ],
       "How to pay with Bitcoin?": [
         "Miten maksan Bitcoineilla?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } määrittäminen"
       ],
       "How to set up a custom domain": [
         "Oman verkkotunnuksen määrittäminen"
@@ -9083,8 +9234,23 @@
       "How to share a calendar": [
         "Miten jaat kalenterin"
       ],
+      "How to share via email": [
+        "Miten jaat sähköpostitse"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Miten ${ DARK_WEB_MONITORING_NAME } toimii"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Miten käytät ${ PASS_APP_NAME } for Businessia"
+      ],
+      "How to use email forwarding": [
+        "Miten sähköpostin edelleenlähetystä käytetään"
+      ],
       "How to use Groups": [
         "Miten ryhmiä käytetään"
+      ],
+      "if your data is leaked": [
+        "jos tietosi vuotavat"
       ],
       "Inbox": [
         "Saapuneet"
@@ -9253,6 +9419,9 @@
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Tilisi on vaarassa poistua. Pyydä ylläpitäjääsi päivittämään tilauksesi, jotta vältät tietojen menettämisen. ${ cta }"
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Tallennustilasi on täynnä. Jatkaaksesi ${ BRAND_NAME } -tuotteiden käyttöä, vapauta tilaa tai ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Tilauksesi on päättynyt. ${ cta } välttääksesi tietojen menetyksen."
@@ -9432,6 +9601,9 @@
       ]
     },
     "Monthly recurring event, repeats on": {
+      "on the ${ shortenedDay }": [
+        "${ shortenedDay }"
+      ],
       "on the first Friday": [
         "ensimmäinen perjantai"
       ],
@@ -10159,6 +10331,17 @@
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
       ]
     },
+    "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Alkaen ${ priceLine }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceLine } kuukausihintaan. Voit perua milloin tahansa."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Avaa kaikki ${ BRAND_NAME } -premium-tuotteet ja -ominaisuudet hintaan ${ priceLine }. Peruuta milloin tahansa."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -10537,6 +10720,9 @@
       ],
       "Get the deal": [
         "Hyödynnä tarjous"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Viimeinen mahdollisuus saada 80 % alennus ${ plan } Plussan ensimmäisestä kuukaudesta."
       ],
       "Last day to save": [
         "Viimeisin tallennettava päivä"
@@ -10945,6 +11131,9 @@
       "CVC": [
         "Turvakoodi"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Et voi muuttaa tai peruuttaa tilaustasi tänä aikana. Odota, kunnes maksusi on suoritettu, ennen kuin yrität tehdä muutoksia. Kiitos kärsivällisyydestäsi."
+      ],
       "Got it": [
         "Selvä"
       ],
@@ -10969,6 +11158,9 @@
       "Please select your billing state first.": [
         "Valitse laskutusosavaltiosi ensin."
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Uusimishinnoittelu voi muuttua ehtojen ${ termsAndConditionsLink } mukaan."
+      ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Uusitaan hintaan ${ renewPriceStr }, peru milloin tahansa."
       ],
@@ -10989,6 +11181,9 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Erikoisalennettu ${ priceWithDiscount } hinta on voimassa ensimmäisen kuukauden. Etukoodi kelpaa ${ couponRedemptions } uusintakerran.Tämän jälkeen uusinta tapahtuu automaattisesti hintaan ${ renewPriceStr } per kuukausi. Voit peruuttaa tilauksen milloin vain.",
         "Erikoisalennettu ${ priceWithDiscount } hinta on voimassa ensimmäisen kuukauden. Etukoodi kelpaa ${ couponRedemptions } uusintakertaa.Tämän jälkeen uusinta tapahtuu automaattisesti hintaan ${ renewPriceStr } per kuukausi. Voit peruuttaa tilauksen milloin vain."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua milloin tahansa."
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit peruuttaa tilauksen milloin vain.",
@@ -11881,6 +12076,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Erikoistarjous on voimassa kahden ensimmäisen vuoden ajan."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Tilauksesi uusiutuu samaan hintaan joka vuosi."
       ]
@@ -11960,6 +12158,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Normaalihinta 30 kuukaudelta on ${ amount }"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Erikoistarjous on voimassa kahden ensimmäisen vuoden ajan"
       ]
     },
     "specialoffer: Title": {
@@ -12123,6 +12324,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Jatkaaksesi tiedostojen tallennusta ja synkronointia, vapauta tilaa tai hanki lisää päivittämällä tilauksesi."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Jos haluat lähettää tai vastaanottaa sähköposteja, vapauta tilaa tai ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai hanki lisää päivittämällä tilauksesi."
       ],
@@ -12144,6 +12348,12 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage }si on täynnä"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString }stasi on käytössä ${ percentage } %. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString }si on täynnä. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Tallennustilastasi on käytössä ${ percentage } %. ${ cta }."
@@ -12240,47 +12450,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Hintaan ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Gt tallennustilaa"
-      ],
-      "and 15 more premium features": [
-        "sekä 15 muuta premium-ominaisuutta"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automaattinen sähköpostiohjaus ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Tietomurtohälytykset ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Työpöytäsovellus"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
-      ],
-      "No ads or tracking": [
-        "Ei mainoksia eikä seurantaa"
-      ],
-      "Short @pm.me email address": [
-        "Lyhyt @pm.me-sähköpostiosoite"
-      ],
-      "Support our mission": [
-        "Tue tehtäväämme"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade your productivity": [
-        "Tehosta tuottavuuttasi"
-      ],
-      "We don't sell your data": [
-        "Emme myy tietojasi"
-      ],
-      "Your privacy is our mission": [
-        "Yksityisyytesi on tehtävämme"
       ]
     },
     "Subscription reminder": {
@@ -12541,6 +12710,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Oma lyhyt @pm.me-sähköpostialiaksesi"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "and 15 more premium features": [
+        "sekä 15 muuta premium-ominaisuutta"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automaattinen sähköpostiohjaus ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Tietomurtohälytykset ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Työpöytäsovellus"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
+      ],
+      "No ads or tracking": [
+        "Ei mainoksia eikä seurantaa"
+      ],
+      "Short @pm.me email address": [
+        "Lyhyt @pm.me-sähköpostiosoite"
+      ],
+      "Support our mission": [
+        "Tue tehtäväämme"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade your productivity": [
+        "Tehosta tuottavuuttasi"
+      ],
+      "We don't sell your data": [
+        "Emme myy tietojasi"
+      ],
+      "Your privacy is our mission": [
+        "Yksityisyytesi on tehtävämme"
       ]
     },
     "Subscription renewal state": {
@@ -13131,6 +13341,9 @@
       "Archive": [
         "Arkisto"
       ],
+      "Archive all messages?": [
+        "Arkistoidaanko kaikki viestit?"
+      ],
       "Are you sure you want to close the preview?": [
         "Haluatko varmasti sulkea esikatselun?"
       ],
@@ -13385,9 +13598,6 @@
       "Enter 2FA code": [
         "Syötä vahvistuskoodi"
       ],
-      "Enter your password": [
-        "Syötä salasanasi"
-      ],
       "Error": [
         "Virhe"
       ],
@@ -13443,7 +13653,7 @@
         "Miten se kaikki toimii?"
       ],
       "How to update your email address": [
-        "Miten vaihdat sähköpostiosoitteesi"
+        "Miten päivität sähköpostiosoitteesi"
       ],
       "Human verification": [
         "Ihmisvahvistus"
@@ -13470,8 +13680,14 @@
       "Import groups": [
         "Tuo ryhmiä"
       ],
+      "Increase security with ${ VPN_APP_NAME }": [
+        "Paranna turvallisuutta ${ VPN_APP_NAME }:llä"
+      ],
       "Increase your privacy with more addresses": [
         "Paranna yksityisyyttäsi lisäosoitteilla"
+      ],
+      "Information exposed in breach": [
+        "Tietomurrossa paljastuneet tiedot"
       ],
       "Insert contacts": [
         "Lisää yhteystietoja"
@@ -13494,8 +13710,17 @@
       "Load remote content": [
         "Lataa ulkoinen sisältö"
       ],
+      "Mail subscriptions": [
+        "Sähköpostitilaukset"
+      ],
+      "Mail Subscriptions": [
+        "Sähköpostitilaukset"
+      ],
       "Make a secure connection your default": [
         "Aseta suojattu yhteys oletuksesi"
+      ],
+      "Mark all messages as read": [
+        "Merkitse kaikki viestit luetuiksi"
       ],
       "Mark as read": [
         "Merkitse luetuksi"
@@ -13611,11 +13836,17 @@
       "No breaches detected": [
         "Tietomurtoja ei ole havaittu"
       ],
+      "No mail subscriptions": [
+        "Ei sähköpostitilauksia"
+      ],
       "No need to empty the trash": [
         "Roskia ei tarvitse tyhjentää"
       ],
       "No trackers found": [
         "Seurantoja ei löydetty"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Ei peruutettuja sähköpostitilauksia"
       ],
       "No-reply address detected": [
         "No-reply-viesti havaittu"
@@ -13785,6 +14016,9 @@
       "Set up ${ protonDuoPlanName }": [
         "Määritä ${ protonDuoPlanName }"
       ],
+      "Set up email forwarding": [
+        "Määritä sähköpostin ohjaus"
+      ],
       "Set up your family account": [
         "Määritä perhetilisi"
       ],
@@ -13802,6 +14036,12 @@
       ],
       "Sign out": [
         "Kirjaudu ulos"
+      ],
+      "Simplify email distribution": [
+        "Yksinkertaista sähköpostijakelua"
+      ],
+      "Simplify password management": [
+        "Yksinkertaista salasanahallintaa"
       ],
       "Snooze": [
         "Torkuta"
@@ -13845,6 +14085,9 @@
       "Trash": [
         "Roskakori"
       ],
+      "Trash all messages?": [
+        "Poistetaanko kaikki viestit?"
+      ],
       "Trust new key?": [
         "Luotetaanko uuteen avaimeen?",
         "Luotetaanko uusiin avaimiin?"
@@ -13855,8 +14098,14 @@
       "Trust public key?": [
         "Luotetaanko julkiseen avaimeen?"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"
+      ],
       "Unsubscribe": [
         "Lopeta tilaus"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Perutaanko tilaus ${ subscription.Name }?"
       ],
       "Unsubscribe request sent": [
         "Tilauksen lopetuspyyntö lähetettiin"
@@ -13866,6 +14115,9 @@
       ],
       "Upload and share files": [
         "Lähetä ja jaa tiedostoja"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Käytä ${ VPN_SHORT_APP_NAME }:ää tietosuojaa varten"
       ],
       "Verification error": [
         "Vahvistusvirhe"
@@ -13878,6 +14130,9 @@
       ],
       "Verifying your payment...": [
         "Vahvistetaan maksua..."
+      ],
+      "VPN explained": [
+        "VPN selitetty"
       ],
       "Warning": [
         "Varoitus"
@@ -13894,6 +14149,9 @@
       ],
       "Welcome ${ userName }": [
         "Tervetuloa ${ userName }"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Tervetuloa ${ BRAND_NAME } for Businessiin"
       ],
       "What can a VPN protect you from?": [
         "Miltä VPN voi suojata sinua?"
@@ -13927,6 +14185,9 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Your subscriptions in one place": [
+        "Tilauksesi yhdessä paikassa"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13980,6 +14241,9 @@
       "Load image": [
         "Lataa kuva"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Kaikkia tässä lueteltuja tietoja ei paljastettu kaikille käyttäjille."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Valitse PGP-malli, jota käytetään kun allekirjoitetaan tai salataan sisältöä käyttäjälle. Huomioi, että PGP/Inline-standardi pakottaa viestien muotoiluksi pelkän tekstin"
       ],
@@ -14012,6 +14276,9 @@
       ],
       "This feature is only available for paid users": [
         "Ominaisuus on vain maksavien käyttäjien käytettävissä"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Salatut salasanat pysyvät turvassa, vaikka ne paljastuisivat, ellei niiden salausta pureta."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lataa julkinen avain mahdollistaaksesi päästä päähän -salattujen viestien lähetyksen tähän osoitteeseen"
@@ -14099,6 +14366,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Silloin sinulta laskutetaan ${ renewPriceStr } vuoden välein."
+      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Uusi tilauksesi uusitaan automaattisesti ${ cycle } kuukauden kuluttua.",
         "Uusi tilauksesi uusitaan automaattisesti ${ cycle } kuukauden kuluttua."

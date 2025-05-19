@@ -1175,10 +1175,10 @@
       "Select ${ planTitle }": [
         "Selectare ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Selectare toate"
       ],
-      "Select All": [
+      "Select all": [
         "Selectare toate"
       ],
       "Select all messages": [
@@ -6430,9 +6430,6 @@
       "and": [
         "și"
       ],
-      "and more.": [
-        "și altele."
-      ],
       "Another tip will be displayed next time you open Mail": [
         "Data viitoare când deschideți Mail va fi afișat un alt sfat"
       ],
@@ -6763,16 +6760,17 @@
       "Drop to import": [
         "Plasare pentru importare"
       ],
-      "Due to your recipient's configuration, this message can't be sent with an expiration date to the following contact: ": [
-        "Din cauza configurării destinatarului, acest mesaj nu poate fi trimis cu o dată de expirare către următorul contact: ",
-        "Din cauza configurării destinatarului, acest mesaj nu poate fi trimis cu o dată de expirare către următoarele contacte: ",
-        "Din cauza configurării destinatarului, acest mesaj nu poate fi trimis cu o dată de expirare către următoarele contacte: "
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Din cauza configurării destinatarului, acest mesaj nu poate fi trimis cu o dată de expirare către ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Din cauza configurării destinatarului, acest mesaj nu poate fi trimis cu o dată de expirare."
       ],
       "Duplicate key updated": [
         "Cheie duplicat actualizată"
       ],
       "Each code can only be used once": [
-        "Fiecare cod poate fi folosit doar odată."
+        "Fiecare cod poate fi folosit doar o dată."
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Gestionați cu ușurință și efectuați dezabonarea de la buletine informative și liste de adrese."
@@ -7034,7 +7032,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -7313,7 +7313,7 @@
         "Sistemul nostru a marcat acest mesaj ca o încercare de înșelăciune. Verificați dacă este legitim."
       ],
       "password": [
-        "parola"
+        "parolă"
       ],
       "Password copied to clipboard": [
         "Parola a fost copiată în memorie."
@@ -8044,7 +8044,7 @@
         "Utilizator activat"
       ],
       "username": [
-        "utilizator"
+        "nume de utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -8137,7 +8137,7 @@
         "Când ați activat cheile de încredere pentru ${ senderName }, cheile publice au fost adăugate la datele de contact."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
+        "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Când vă înscrieți pentru un buletin informativ, utilizați un alias în loc de adresa de e-mail reală. Identitatea vă va rămâne ascunsă și puteți dezactiva oricând aliasul."
@@ -8805,7 +8805,7 @@
         "Atașare capturi de ecran"
       ],
       "Authenticator app": [
-        "Aplicație Authenticator"
+        "Aplicația Authenticator"
       ],
       "BCC": [
         "Ca"
@@ -12845,47 +12845,6 @@
         "Pentru ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
@@ -13150,6 +13109,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {
@@ -14038,7 +14038,7 @@
         "Introduceți codul de A2F"
       ],
       "Enter your password": [
-        "Introduceţi parola"
+        "Introduceți parola"
       ],
       "Error": [
         "Eroare"
@@ -14153,10 +14153,10 @@
       "Load remote content": [
         "Încărcare conținut extern"
       ],
-      "Mail Subscriptions": [
+      "Mail subscriptions": [
         "Abonamente pe e-mail"
       ],
-      "Mail subscriptions": [
+      "Mail Subscriptions": [
         "Abonamente pe e-mail"
       ],
       "Make a secure connection your default": [

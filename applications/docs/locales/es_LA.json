@@ -211,6 +211,9 @@
       "Copy address": [
         "Copiar dirección"
       ],
+      "Copy as markdown": [
+        "Copiar como markdown"
+      ],
       "Copy email to clipboard": [
         "Copiar correo al portapapeles"
       ],
@@ -642,11 +645,17 @@
       "Restore": [
         "Restaurar"
       ],
+      "Restore from trash": [
+        "Restaurar desde la papelera"
+      ],
       "Restore this version": [
         "Restaurar esta versión"
       ],
       "Restore this version?": [
         "¿Restaurar esta versión?"
+      ],
+      "Restoring...": [
+        "Restaurando..."
       ],
       "Retry": [
         "Reintentar"
@@ -832,7 +841,7 @@
         "Usar para el envío"
       ],
       "Use recovery code": [
-        "Usar código de recuperación"
+        "Usar un código de recuperación"
       ],
       "Verify": [
         "Verificar"
@@ -870,14 +879,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puede enviar archivos vCard de más de ${ maxAttachments } contactos."
-      ]
-    },
-    "Actions": {
-      "Last viewed first": [
-        "Visto recientemente primero"
-      ],
-      "Name": [
-        "Nombre"
       ]
     },
     "Actions message": {
@@ -2481,6 +2482,11 @@
         "Factura atrasada"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use el asistente de importación Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } en ${ DRIVE_APP_NAME } le permite trabajar juntos en un entorno seguro y cifrado."
@@ -2604,11 +2610,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3626,7 +3627,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Hubo un problema al autenticar con la clave de seguridad. Intente de nuevo."
+        "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
       ]
     },
     "fido2: Info": {
@@ -4406,8 +4407,8 @@
         "Crear una nube segura para ${ value } miembro",
         "Crear una nube segura para ${ value } miembros"
       ],
-      "Create an encrypted document.": [
-        "Cree un documento cifrado."
+      "Create an end-to-end encrypted document.": [
+        "Cree un documento cifrado de extremo a extremo."
       ],
       "Create in": [
         "Crear en"
@@ -4530,7 +4531,7 @@
         "Ingrese la contraseña"
       ],
       "Enter the code from your authenticator app": [
-        "Ingrese el código de la aplicación de autenticación"
+        "Ingrese el código de la aplicación de autenticación."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Ingrese las credenciales de la cuenta de correo electrónico desde la que quiere importar."
@@ -4539,7 +4540,7 @@
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Ingrese el código de verificación. Digite ${ digit }."
+        "Ingrese el código de verificación. Ingrese ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Ingrese su propia contraseña (como administrador de la organización)."
@@ -5725,7 +5726,7 @@
         "Adjuntar captura(s)"
       ],
       "Authenticator app": [
-        "App autenticadora"
+        "Aplicación de autenticación"
       ],
       "Beta Access": [
         "Acceso beta"
@@ -6713,6 +6714,17 @@
         "Velocidad VPN media"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Bajar a ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planes desde ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Eliminar cuenta"
@@ -6734,17 +6746,6 @@
       ],
       "Switch plan": [
         "Cambiar plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Bajar a ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planes desde ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Mejorar"
       ]
     },
     "new_plans: feature": {
@@ -8740,6 +8741,20 @@
         "Firmar"
       ]
     },
+    "Sort menu options": {
+      "Created by": [
+        "Creado por"
+      ],
+      "Last viewed first": [
+        "Visto recientemente primero"
+      ],
+      "Location": [
+        "Ubicación"
+      ],
+      "Name": [
+        "Nombre"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Cerrar"
@@ -9143,6 +9158,25 @@
         "Por ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de almacenamiento por usuario"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } le ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesita para tener control de sus datos y seguridad."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } dominio de correo personalizado",
+        "${ planNumberOfDomains } dominios de correo personalizados"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } dirección de correo",
+        "${ planNumberOfEmails } direcciones de correo"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetas, etiquetas y filtros personalizados"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB de espacio de almacenamiento"
@@ -9182,25 +9216,6 @@
       ],
       "Your privacy is our mission": [
         "Su privacidad es nuestra misión"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } de almacenamiento por usuario"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } le ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesita para tener control de sus datos y seguridad."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } dominio de correo personalizado",
-        "${ planNumberOfDomains } dominios de correo personalizados"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } dirección de correo",
-        "${ planNumberOfEmails } direcciones de correo"
-      ],
-      "Folders, labels, and custom filters": [
-        "Carpetas, etiquetas y filtros personalizados"
       ]
     },
     "Subscription renewal state": {

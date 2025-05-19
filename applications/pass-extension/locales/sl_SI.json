@@ -47,9 +47,6 @@
       "Advanced options": [
         "Napredne nastavitve"
       ],
-      "Authenticate": [
-        "Preverjanje pristnosti"
-      ],
       "Back": [
         "Nazaj"
       ],
@@ -356,10 +353,10 @@
       "Move to another vault": [
         "Premakni v drug trezor"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Premakni v smetnjak"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Premakni v smetnjak"
       ],
       "Multiple select": [
@@ -505,6 +502,9 @@
       ],
       "Share item": [
         "Daj predmet v skupno rabo"
+      ],
+      "Share secure link": [
+        "Deljenje varne povezave"
       ],
       "Share vault": [
         "Skupni trezor"
@@ -806,6 +806,9 @@
       ],
       "File does not match expected format": [
         "Datoteka se ne ujema s pričakovano obliko"
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Uvoz za trezor \"${ vaultData.name }\" : ${ errorMessage } ni uspel"
       ],
       "Importing items failed": [
         "Uvoz predmetov ni uspel"
@@ -1121,6 +1124,9 @@
       "Can be viewed": [
         "Lahko se ogleda"
       ],
+      "Can grant and revoke access to this item.": [
+        "Lahko odobri in prekliče dostop do tega predmeta."
+      ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Lahko odobri in prekliče dostop do tega trezorja ter ga izbriše."
       ],
@@ -1213,9 +1219,6 @@
       ],
       "Enter the address you want to email.": [
         "Vnesite naslov, na katerega želite poslati e-pošto."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Vnesite potrditveno kodo. Števka ${ digit }."
       ],
       "Enter your extra password": [
         "Vnesite dodatno geslo"
@@ -1331,6 +1334,9 @@
       "Loading...": [
         "Nalaganje ..."
       ],
+      "Make it your own": [
+        "Prilagodite ga po svojih željah"
+      ],
       "Manager": [
         "Vodja"
       ],
@@ -1339,6 +1345,12 @@
       ],
       "Monitoring settings successfully updated": [
         "Nastavitve nadzora so bile posodobljene."
+      ],
+      "Move ${ count } item": [
+        "Premakni ${ count } predmet",
+        "Premakni ${ count } predmeta",
+        "Premakni ${ count } predmete",
+        "Premakni ${ count } predmete"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Premikanje vseh predmetov iz »${ payload.content.name }«"
@@ -1595,6 +1607,9 @@
       "Upgrade Now to Unlock Premium Features": [
         "Nadgradite zdaj, da odklenete premijske funkcije"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Nadgradite na plačljivi paket, da ustvarite več trezorjev."
+      ],
       "User's access removed": [
         "Uporabnikov dostop odstranjen"
       ],
@@ -1670,6 +1685,9 @@
       "Your ${ PASS_APP_NAME } session is locked": [
         "Vaša seja ${ PASS_APP_NAME } je zaklenjena"
       ],
+      "your domain": [
+        "vaša domena"
+      ],
       "Your files will be encrypted and then saved": [
         "Vaše datoteke bodo šifrirane in nato shranjene."
       ]
@@ -1686,6 +1704,12 @@
         "${ config.options.wordCount } besedi",
         "${ config.options.wordCount } besede",
         "${ config.options.wordCount } besed"
+      ],
+      "${ count } item": [
+        "${ count } predmet",
+        "${ count } predmeta",
+        "${ count } predmeti",
+        "${ count } predmetov"
       ],
       "${ days } day": [
         "${ days } dan",
@@ -1705,8 +1729,23 @@
         "${ minutes } minute",
         "${ minutes } minut"
       ],
+      "${ months } month": [
+        "${ months } mesec",
+        "${ months } meseci",
+        "${ months } meseci",
+        "${ months } meseci"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Nadzor"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Različica ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ years } year": [
+        "${ years } leto",
+        "${ years } leta",
+        "${ years } let",
+        "${ years } let"
       ],
       "1 hour": [
         "1 ura"
@@ -1927,6 +1966,9 @@
       "Empty trash": [
         "Izprazni smetnjak"
       ],
+      "Enter email or username": [
+        "Vnesite e-pošto ali uporabniško ime"
+      ],
       "Expiration date": [
         "Datum poteka"
       ],
@@ -2004,6 +2046,9 @@
       ],
       "Import passwords": [
         "Uvozi gesla"
+      ],
+      "Imported from: ": [
+        "Uvoženo iz: "
       ],
       "Imported on : ": [
         "Uvoženo dne : "
@@ -2332,6 +2377,9 @@
       "Today": [
         "Danes"
       ],
+      "Total imported items: ": [
+        "Skupaj uvoženih predmetov: "
+      ],
       "Total items: ": [
         "Skupaj predmetov: "
       ],
@@ -2441,6 +2489,9 @@
         "${ count } predmeta",
         "${ count } predmeti",
         "${ count } predmetov"
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "V tem trezorju ste izbrali ${ semiboldText }."
       ]
     },
     "Onboarding": {
@@ -2478,8 +2529,20 @@
       ]
     },
     "Pass_file_attachments": {
+      "${ filesCount } file": [
+        "Datoteka ${ filesCount }",
+        "${ filesCount } datoteki",
+        "${ filesCount } datoteke",
+        "${ filesCount } datotek"
+      ],
       "Attachments": [
         "Priponke"
+      ],
+      "Choose a file or drag it here": [
+        "Izberite datoteko ali jo povlecite sem"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Izbrišem ${ deleteFile.state.name }"
       ],
       "Delete all files": [
         "Izbriši vse datoteke"
@@ -2617,6 +2680,9 @@
       "Sign-in failed": [
         "Prijava ni uspela"
       ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Zahteva za prijavo na drugi napravi. Ste bili vi? "
+      ],
       "Yes, it was me": [
         "Da, bil sem jaz."
       ]
@@ -2730,6 +2796,9 @@
       "Delete mailbox": [
         "Izbriši poštni predal"
       ],
+      "Did you know?": [
+        "Ali ste vedeli?"
+      ],
       "Discard changes?": [
         "Zavrzi spremembe?"
       ],
@@ -2753,6 +2822,12 @@
       ],
       "Enter coupon code": [
         "Vnesite kodo kupona"
+      ],
+      "Enter your backup password": [
+        "Vnesite vaše varnostno geslo"
+      ],
+      "Enter your extra password": [
+        "Vnesite dodatno geslo"
       ],
       "Enter your PIN": [
         "Vnesite PIN"
@@ -3081,6 +3156,9 @@
       ],
       "Passwords do not match": [
         "Gesli se ne ujemata"
+      ],
+      "Please contact us to investigate the issue": [
+        "Obrnite se na nas, da raziščemo težavo."
       ],
       "Please verify your email address in order to use email aliases": [
         "Prosimo, potrdite svoj e-poštni naslov, če želite uporabljati e-poštne vzdevke"

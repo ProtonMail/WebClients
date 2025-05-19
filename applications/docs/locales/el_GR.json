@@ -106,9 +106,6 @@
       "Attention required": [
         "Χρειάζεται προσοχή"
       ],
-      "Authenticate": [
-        "Ταυτοποίηση"
-      ],
       "Back": [
         "Πίσω"
       ],
@@ -210,6 +207,9 @@
       ],
       "Copy address": [
         "Αντιγραφή διεύθυνσης"
+      ],
+      "Copy as markdown": [
+        "Αντιγραφή ως markdown"
       ],
       "Copy email to clipboard": [
         "Αντιγραφή μηνύματος στο πρόχειρο"
@@ -639,11 +639,17 @@
       "Restore": [
         "Επαναφορά"
       ],
+      "Restore from trash": [
+        "Επαναφορά από Διαγραμμένα"
+      ],
       "Restore this version": [
         "Επαναφορά αυτής της έκδοσης"
       ],
       "Restore this version?": [
         "Επαναφορά αυτής της έκδοσης;"
+      ],
+      "Restoring...": [
+        "Γίνεται επαναφορά..."
       ],
       "Retry": [
         "Δοκιμάστε ξανά"
@@ -822,14 +828,8 @@
       "Use a different payment method": [
         "Χρησιμοποιήστε διαφορετικό τρόπο πληρωμής"
       ],
-      "Use authentication code": [
-        "Χρησιμοποιήστε έναν κωδικό ελέγχου ταυτότητας"
-      ],
       "Use for sending": [
         "Χρήση για αποστολή"
-      ],
-      "Use recovery code": [
-        "Χρησιμοποιήστε κωδικό ανάκτησης"
       ],
       "Verify": [
         "Επαλήθευση"
@@ -867,14 +867,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφή",
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
-      ]
-    },
-    "Actions": {
-      "Last viewed first": [
-        "Τελευταία προβολή πρώτα"
-      ],
-      "Name": [
-        "Όνομα"
       ]
     },
     "Actions message": {
@@ -2338,6 +2330,11 @@
         "Καθυστερημένο τιμολόγιο"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Το ${ DOCS_SHORT_APP_NAME } στο ${ DRIVE_APP_NAME } σάς επιτρέπει να συνεργάζεστε με άλλους σε ένα ασφαλές, κρυπτογραφημένο περιβάλλον."
@@ -2461,11 +2458,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3481,24 +3473,6 @@
         "Απεριόριστα hide-my-email ψευδώνυμα"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Εισαγάγετε ένα κλειδί ασφαλείας συνδεδεμένο με τον ${ BRAND_NAME } λογαριασμό σας ."
-      ],
-      "Security key": [
-        "Κλειδί ασφαλείας"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Κλειδί ασφαλείας"
-      ]
-    },
     "file size format": {
       "byte": [
         "byte",
@@ -4263,8 +4237,8 @@
         "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλος",
         "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλη"
       ],
-      "Create an encrypted document.": [
-        "Δημιουργία κρυπτογραφημένου έγγραφου."
+      "Create an end-to-end encrypted document.": [
+        "Δημιουργήστε ένα διατερματικά κρυπτογραφημένο έγγραφό."
       ],
       "Create in": [
         "Δημιουργία σε"
@@ -4356,9 +4330,6 @@
       "Duplicate key updated": [
         "Το διπλότυπο κλειδί ενημερώθηκε"
       ],
-      "Each code can only be used once": [
-        "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
-      ],
       "Edit email address": [
         "Επεξεργασία ηλεκτρονικής διεύθυνσης"
       ],
@@ -4386,17 +4357,11 @@
       "Enter password": [
         "Εισάγετε κωδικό πρόσβασης"
       ],
-      "Enter the code from your authenticator app": [
-        "Πληκτρολογήστε τον κωδικό από την εφαρμογή ταυτοποίησης"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Συμπληρώστε τα διαπιστευτήρια του λογαριασμού email από τον οποίο θέλετε να εισάγετε."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Εισάγετε τον κωδικό επαλήθευσης που εστάλη στο ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Εισάγετε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
@@ -5225,9 +5190,6 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Όταν συνδέεστε στο VPN, χρησιμοποιεί τεχνολογία κρυπτογράφησης για να κρύψει τη διεύθυνση IP σας (ένας μοναδικός κωδικός που έχει εκχωρηθεί στη συσκευή σας)."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
-      ],
       "words": [
         "λέξεις"
       ],
@@ -5577,9 +5539,6 @@
       ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
-      ],
-      "Authenticator app": [
-        "Εφαρμογή επαλήθευσης"
       ],
       "Beta Access": [
         "Πρόσβαση Beta"
@@ -6510,6 +6469,17 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Πλάνα που ξεκινούν από ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Διαγραφή λογαριασμού"
@@ -6531,17 +6501,6 @@
       ],
       "Switch plan": [
         "Αλλαγή προγράμματος"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Πλάνα που ξεκινούν από ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
       ]
     },
     "new_plans: feature": {
@@ -8537,6 +8496,20 @@
         "Υπογράψτε"
       ]
     },
+    "Sort menu options": {
+      "Created by": [
+        "Δημιουργήθηκε από"
+      ],
+      "Last viewed first": [
+        "Τελευταία προβολή πρώτα"
+      ],
+      "Location": [
+        "Τοποθεσία"
+      ],
+      "Name": [
+        "Ονομα"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Κλείσιμο"
@@ -8940,6 +8913,25 @@
         "Για ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } αποθηκευτικός χώρος ανά χρήστη"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλ. ταχυδρομείου",
+        "${ planNumberOfDomains } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } διεύθυνση email",
+        "${ planNumberOfEmails } διευθύνσεις email"
+      ],
+      "Folders, labels, and custom filters": [
+        "Φάκελοι, ετικέτες, και προσαρμοσμένα φίλτρα"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB αποθηκευτικός χώρος"
@@ -8979,25 +8971,6 @@
       ],
       "Your privacy is our mission": [
         "Το απόρρητό σας είναι η αποστολή μας"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } αποθηκευτικός χώρος ανά χρήστη"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλ. ταχυδρομείου",
-        "${ planNumberOfDomains } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } διεύθυνση email",
-        "${ planNumberOfEmails } διευθύνσεις email"
-      ],
-      "Folders, labels, and custom filters": [
-        "Φάκελοι, ετικέτες, και προσαρμοσμένα φίλτρα"
       ]
     },
     "Subscription renewal state": {

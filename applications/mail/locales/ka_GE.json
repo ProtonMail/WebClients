@@ -1171,10 +1171,10 @@
       "Select ${ planTitle }": [
         "აირჩიეთ ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "ყველაფრის მონიშვნა"
       ],
-      "Select All": [
+      "Select all": [
         "ყველაფრის მონიშვნა"
       ],
       "Select all messages": [
@@ -5091,7 +5091,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "თქვენი უსაფრთხოების გასაღების ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
+        "თქვენი უსაფრთხოების გასაღებით ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
       ]
     },
     "fido2: Info": {
@@ -6102,6 +6102,10 @@
       "${ storage } storage": [
         "${ storage } საცავი"
       ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } ელფოსტა გასულ თვეში",
+        "${ subscription.ReceivedMessages.Last30Days } ელფოსტა გასულ თვეში"
+      ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } წაუკითხავი",
         "${ subscription.UnreadMessageCount } წაუკითხავი"
@@ -6270,9 +6274,6 @@
       ],
       "and": [
         "და"
-      ],
-      "and more.": [
-        "და სხვა."
       ],
       "Another tip will be displayed next time you open Mail": [
         "ელფოსტის შემდეგი გახსნისას სხვა მინიშნებას გაჩვენებთ"
@@ -6853,6 +6854,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
+        "გამოსახულების ჩასმა",
         "გამოსახულების ჩასმა"
       ],
       "Insert link": [
@@ -7917,9 +7919,6 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "როცა ჩართეთ სანდო გასაღებები ${ senderName }-სთვის, საჯარო გასაღებები კონტაქტის დეტალებში იქნა ჩამატებული."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "როცა გაზეთს გამოიწერთ, გამოიყენეთ ფსევდონიმი თქვენი ელფოსტის მისამართის მაგიერ. თქვენი იდენტიფიკატორი ასევე დარჩება დამალულად და ამ ფსევდონიმის გათიშვა ნებისმიერ დროს შეგიძლიათ."
@@ -9166,6 +9165,9 @@
       ]
     },
     "Labels": {
+      "Newsletters you unsubscribe from will appear here.": [
+        "სიახლეები, რომლების გამოწერასაც გააუქმებთ, აქ გამოჩნდება."
+      ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "დაათვალიერეთ და მართეთ ახალი ამბები და დაგზავნის სიების გამოწერები აქ."
       ]
@@ -11098,7 +11100,7 @@
         "ადმინის პანელ მომხმარებლებისა და გამოწერების სამართავად"
       ],
       "Advanced account protection": [
-        "დამატებითი ანგარიშის დაცვა"
+        "დამატებითი ანგარიშის დაცვის პროგრამა"
       ],
       "Team policies": [
         "გუნდის პოლიტიკა"
@@ -12382,6 +12384,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME }-ის პროდუქტების გამოყენების გასაგრძენებლად გაათავისუფლეთ ადგილი, ან ${ upgrade }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "ელფოსტის გასაგზავნად ან მისაღებად გაათავისუფლეთ ადგილი ან ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "ელფოსტის გასაგზავნად ან მისაღებად გაათავისუფლეთ ადგილი ან ასწიეთ სატარიფო გეგმა მეტი საცავის მისაღებად."
       ],
@@ -12505,47 +12510,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }-თვის"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription reminder": {
@@ -12803,6 +12767,47 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -13765,10 +13770,10 @@
       "Load remote content": [
         "გარე შემცველობის ჩატვირთვა"
       ],
-      "Mail Subscriptions": [
+      "Mail subscriptions": [
         "ელფოსტის გამოწერები"
       ],
-      "Mail subscriptions": [
+      "Mail Subscriptions": [
         "ელფოსტის გამოწერები"
       ],
       "Make a secure connection your default": [
@@ -13899,6 +13904,9 @@
       ],
       "No trackers found": [
         "ტრეკერები ვერ ვიპოვე"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "გამოწერაგაუქმებული ელფოსტის გამოწერების გარეშე"
       ],
       "No-reply address detected": [
         "აღმოჩენილია უპასუხო (no-reply) მისამართი"

@@ -56,9 +56,6 @@
       "Apply lifetime coupon code": [
         "Anvend livstids-kuponkode"
       ],
-      "Authenticate": [
-        "Godkend"
-      ],
       "Back": [
         "Tilbage"
       ],
@@ -392,10 +389,10 @@
       "Move to another vault": [
         "Flyt til en anden boks"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Flyt til papirkurv"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Flyt til papirkurv"
       ],
       "Multiple select": [
@@ -994,6 +991,9 @@
       "File does not match expected format": [
         "Fil svarer ikke til det forventede format"
       ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Import mislykkedes for boks \"${ vaultData.name }\" : ${ errorMessage }"
+      ],
       "Importing items failed": [
         "Import af elementer mislykkedes"
       ],
@@ -1584,9 +1584,6 @@
       "Enter the address you want to email.": [
         "Indtast den adresse, du ønsker at sende en e-mail til."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Indtast verifikationskode. Ciffer ${ digit }."
-      ],
       "Enter your extra password": [
         "Indtast din ekstra adgangskode"
       ],
@@ -2084,6 +2081,10 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Den ekstra adgangskode er påkrævet for at bruge ${ PASS_APP_NAME }. Den virker som en tillægskode til din ${ BRAND_NAME }-adgangskode."
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Følgende ${ totalIgnored } element kunne ikke importeres:",
+        "Følgende ${ totalIgnored } elementer kunne ikke importeres:"
       ],
       "The secure link has been removed": [
         "Det sikre link er blevet fjernet"
@@ -3292,6 +3293,9 @@
       ],
       "The exported file attachments will not be encrypted.": [
         "De eksporterede filvedhæftninger vil ikke blive krypteret."
+      ],
+      "The file you are trying to import is empty": [
+        "Filen du prøver at importere er tom"
       ],
       "Total imported files: ": [
         "Samlet antal importerede filer: "

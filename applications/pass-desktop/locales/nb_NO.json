@@ -439,6 +439,9 @@
       "Pause monitoring": [
         "Sett overvåking på vent"
       ],
+      "Pay once": [
+        "Betal én gang"
+      ],
       "Pin item": [
         "Fest element"
       ],
@@ -1856,6 +1859,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2278,6 +2285,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "For å se gjennom de importerte dataene dine, klikk på ${ PASS_APP_NAME }-ikonet i nettleserens verktøylinje."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Klarert av over 50 000 forretningsbrukere og 100 millioner kontoer rundt om i verden."
+      ],
       "Unable to copy to clipboard": [
         "Ikke i stand til å kopiere til utklippstavlen"
       ],
@@ -2625,6 +2635,9 @@
       "Browse faster, smarter": [
         "Surf raskere, smartere"
       ],
+      "Built-in 2FA": [
+        "Innebygd 2FA"
+      ],
       "Capital letters (A-Z)": [
         "Store bokstaver (A–Å)"
       ],
@@ -2709,6 +2722,9 @@
       "Created at": [
         "Opprettet den"
       ],
+      "Credit cards": [
+        "Kredittkort"
+      ],
       "Custom hidden field": [
         "Tilpasset skjult felt"
       ],
@@ -2781,6 +2797,9 @@
       "Export": [
         "Eksporter"
       ],
+      "Extra email addresses": [
+        "Ekstra e-postadresser"
+      ],
       "Extra password": [
         "Ekstra passord"
       ],
@@ -2792,6 +2811,9 @@
       ],
       "Field name": [
         "Feltnavn"
+      ],
+      "File attachments": [
+        "Filvedlegg"
       ],
       "File format": [
         "Filformat"
@@ -2811,6 +2833,9 @@
       "Forwards to": [
         "Videresendes til"
       ],
+      "Free": [
+        "Free"
+      ],
       "Free forever": [
         "Gratis for alltid"
       ],
@@ -2829,6 +2854,12 @@
       "Generic CSV": [
         "Generisk CSV"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Skaff deg ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Skaff deg ${ PASS_SHORT_APP_NAME } Ubegrenset"
+      ],
       "Get Started": [
         "Kom i gang"
       ],
@@ -2846,6 +2877,9 @@
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliaser"
+      ],
+      "Highest": [
+        "Høyeste"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Hvordan låse opp ${ PASS_SHORT_APP_NAME }"
@@ -2942,6 +2976,9 @@
       ],
       "License number": [
         "Førerkortnummer"
+      ],
+      "Limited time": [
+        "Kun i en begrenset periode"
       ],
       "LinkedIn account": [
         "LinkedIn-konto"
@@ -3093,6 +3130,9 @@
       "PIN code": [
         "PIN-kode"
       ],
+      "Plus": [
+        "Plus"
+      ],
       "Prefix": [
         "Prefiks"
       ],
@@ -3219,6 +3259,9 @@
       "Status": [
         "Status"
       ],
+      "Storage": [
+        "Lagringsplass"
+      ],
       "Street address": [
         "Gateadresse"
       ],
@@ -3245,6 +3288,9 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Det beste av ${ BRAND_NAME } med ett abonnement"
       ],
       "The URL has been copied to the clipboard": [
         "Nettadressen er kopiert til utklippstavlen"
@@ -3281,6 +3327,12 @@
       ],
       "Unknown": [
         "Ukjent"
+      ],
+      "Unlimited": [
+        "Ubegrenset"
+      ],
+      "Unlock premium features": [
+        "Lås opp premiumfunksjoner"
       ],
       "Unlock with": [
         "Lås opp med"
@@ -3321,6 +3373,9 @@
       "Vault ID": [
         "Hvelv ID"
       ],
+      "Vault, item & link sharing": [
+        "Deling av hvelv, elementer og koblinger"
+      ],
       "Vaults": [
         "Hvelv"
       ],
@@ -3329,6 +3384,12 @@
       ],
       "View logs": [
         "Se logger"
+      ],
+      "VPN Devices": [
+        "VPN-enheter"
+      ],
+      "VPN Speed": [
+        "VPN-hastighet"
       ],
       "Vulnerable": [
         "Sårbar"
@@ -3341,6 +3402,9 @@
       ],
       "Websites": [
         "Nettsteder"
+      ],
+      "What's included": [
+        "Hva som er inkludert"
       ],
       "Work details": [
         "Arbeidsdetaljer"
@@ -3390,6 +3454,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Aktiver ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Menu": {
@@ -3567,6 +3636,14 @@
       ],
       "You can attach files to items for a better organization": [
         "Du kan legge ved filer til elementer for en bedre organisering"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus Livstid for ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price }/måned"
       ]
     },
     "Placeholder": {
@@ -3835,8 +3912,14 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME }-adresser"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Ubegrenset"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Kontobeskyttelse"
@@ -4113,6 +4196,9 @@
       ],
       "Pause monitoring?": [
         "Sette overvåking på vent?"
+      ],
+      "Pay once, access forever.": [
+        "Betal én gang, få tilgang for alltid."
       ],
       "Pending access confirmation": [
         "Venter på tilgangsbekreftelse"
