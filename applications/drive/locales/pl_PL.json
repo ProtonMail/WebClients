@@ -120,9 +120,6 @@
       "Attention required": [
         "Wymagana uwaga"
       ],
-      "Authenticate": [
-        "Uwierzytelnij"
-      ],
       "Back": [
         "Wstecz"
       ],
@@ -440,9 +437,6 @@
       ],
       "Fit to window": [
         "Dopasuj do okna"
-      ],
-      "Forgot password?": [
-        "Nie pamiętasz hasła?"
       ],
       "Forward as attachment": [
         "Przekaż jako załącznik"
@@ -1086,14 +1080,8 @@
       "Use a different payment method": [
         "Użyj innej metody płatności"
       ],
-      "Use authentication code": [
-        "Użyj kodu uwierzytelniającego"
-      ],
       "Use for sending": [
         "Używaj do wysyłania"
-      ],
-      "Use recovery code": [
-        "Użyj kodu odzyskiwania"
       ],
       "Verify": [
         "Zweryfikuj"
@@ -3976,24 +3964,6 @@
         "Nieograniczona liczba aliasów hide-my-email"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Użyj klucza bezpieczeństwa powiązanego z kontem ${ BRAND_NAME }."
-      ],
-      "Security key": [
-        "Klucz bezpieczeństwa"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Klucz bezpieczeństwa"
-      ]
-    },
     "file size format": {
       "byte": [
         "bajt",
@@ -5118,9 +5088,6 @@
       "Duplicate key updated": [
         "Zduplikowany klucz został zaktualizowany"
       ],
-      "Each code can only be used once": [
-        "Każdy kod może zostać użyty tylko jeden raz"
-      ],
       "Edit email address": [
         "Edytuj adres e-mail"
       ],
@@ -5157,20 +5124,11 @@
       "Enter password": [
         "Wpisz hasło"
       ],
-      "Enter the code from your authenticator app": [
-        "Wpisz kod z aplikacji uwierzytelniającej"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Wpisz dane logowania do konta e-mail, z którego chcesz zaimportować dane."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Wpisz swoje hasło (jako administrator organizacji)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Szacowany pozostały czas: ${ estimatedMinutes } minuta",
@@ -6246,9 +6204,6 @@
       "We'll send a new verification code to ${ strong }": [
         "Wyślemy nowy kod weryfikacyjny do ${ strong }"
       ],
-      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
-        "Aktualizujemy zdjęcia do nowej wersji! Podczas tego procesu przywracanie zdjęć jest tymczasowo niedostępne. Wszystko powinno być gotowe za kilka dni. Dziękujemy za wyrozumiałość."
-      ],
       "Week": [
         "Tydzień"
       ],
@@ -6263,9 +6218,6 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Usługa VPN wykorzystuje szyfrowanie, aby ukryć Twój adres IP (unikalny kod przypisany do Twojego urządzenia)."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Podczas ustawiania uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, które możesz wykorzystać po utracie dostępu do aplikacji uwierzytelniającej."
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "zostanie przywrócony do wersji z ${ formattedRevisionDate }. Wszystkie pozostałe wersje zostaną nadal zachowane."
@@ -6687,9 +6639,6 @@
       ],
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
-      ],
-      "Authenticator app": [
-        "Aplikacja uwierzytelniająca"
       ],
       "Beta Access": [
         "Dostęp beta"
@@ -7224,9 +7173,6 @@
       ],
       "Your location": [
         "Twoja lokalizacja"
-      ],
-      "Your password (admin)": [
-        "Twoje hasło (administratora)"
       ]
     },
     "Label for contact group color": {
@@ -7845,6 +7791,17 @@
         "Umiarkowana prędkość VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Od ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Usuń konto"
@@ -7866,17 +7823,6 @@
       ],
       "Switch plan": [
         "Zmień plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Od ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
       ]
     },
     "new_plans: feature": {
@@ -8923,6 +8869,9 @@
       ],
       "Access for the member removed": [
         "Dostęp został usunięty"
+      ],
+      "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
+        "Uzyskaj dostęp do albumów, filtrów i nie tylko, podejmując akcję na zablokowanym woluminie. Przywróć lub usuń go, aby skorzystać z nowych funkcji."
       ],
       "Access updated": [
         "Dostęp został zaktualizowany"
@@ -10599,47 +10548,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "and 15 more premium features": [
-        "i 15 więcej funkcji premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatyczne przekierowanie ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerty wycieków ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikacja desktopowa"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
-      ],
-      "No ads or tracking": [
-        "Brak reklam i śledzenia"
-      ],
-      "Short @pm.me email address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Wesprzyj naszą misję"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
-      "We don't sell your data": [
-        "Nie sprzedajemy Twoich danych"
-      ],
-      "Your privacy is our mission": [
-        "Prywatność to nasza misja"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } z funkcjami premium"
@@ -10910,6 +10818,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Krótki alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {
@@ -11581,9 +11530,6 @@
       "Enter 2FA code": [
         "Wpisz kod uwierzytelniający"
       ],
-      "Enter your password": [
-        "Wpisz hasło"
-      ],
       "Error": [
         "Błąd"
       ],
@@ -12244,6 +12190,12 @@
         "${ n } połączenia VPN",
         "${ n } połączeń VPN",
         "${ n } połączeń VPN"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } kraju",
+        "${ numberOfCountries } krajach",
+        "${ numberOfCountries } krajach",
+        "${ numberOfCountries } krajach"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } w ${ numberOfCountries } kraju",

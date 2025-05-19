@@ -111,9 +111,6 @@
       "Attention required": [
         "주의 필요"
       ],
-      "Authenticate": [
-        "인증"
-      ],
       "Back": [
         "이전"
       ],
@@ -425,9 +422,6 @@
       ],
       "Fit to window": [
         "창에 맞게"
-      ],
-      "Forgot password?": [
-        "비밀번호를 잊으셨나요?"
       ],
       "Forward as attachment": [
         "첨부 파일로 전달"
@@ -1068,14 +1062,8 @@
       "Use a different payment method": [
         "다른 결제 수단 사용하기"
       ],
-      "Use authentication code": [
-        "인증 코드를 사용"
-      ],
       "Use for sending": [
         "발신에 사용"
-      ],
-      "Use recovery code": [
-        "복구코드 사용"
       ],
       "Verify": [
         "인증"
@@ -3759,24 +3747,6 @@
         "무제한 hide-my-email 별칭"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "사용자의 보안 키 인증에 문제가 발생했습니다. 나중에 다시 시도하세요."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입하십시오."
-      ],
-      "Security key": [
-        "보안 키"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "보안 키"
-      ]
-    },
     "file size format": {
       "byte": [
         "바이트"
@@ -4298,6 +4268,9 @@
       "${ DRIVE_APP_NAME } on Play Store": [
         "Play Store에서 ${ DRIVE_APP_NAME } 받기"
       ],
+      "${ email } invited you to join ${ albumName }": [
+        "${ email }님이 ${ albumName }에 참가하도록 초대했습니다."
+      ],
       "${ errorCount } failed": [
         "${ errorCount }개 실패"
       ],
@@ -4739,9 +4712,6 @@
       "Duplicate key updated": [
         "중복 키 업데이트됨"
       ],
-      "Each code can only be used once": [
-        "각각의 코드는 한 번만 사용 가능합니다"
-      ],
       "Edit email address": [
         "이메일 주소 변경"
       ],
@@ -4778,20 +4748,11 @@
       "Enter password": [
         "비밀번호 입력"
       ],
-      "Enter the code from your authenticator app": [
-        "인증 앱의 코드를 입력하세요"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "가져오기를 원하는 이메일 계정의 계정 정보를 입력하세요."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText }(으)로 인증 코드가 전송되었습니다."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "인증 코드를 입력하세요. ${ digit } 자리."
-      ],
-      "Enter your own password (as organization admin).": [
-        "자신의 비밀번호 입력 (조직 관리자와 같음)"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "남은 예상 시간: ${ estimatedMinutes }분"
@@ -5224,6 +5185,9 @@
       ],
       "Photo(s) saved to your Drive": [
         "사진이 Drive에 저장되었습니다."
+      ],
+      "Photos": [
+        "사진"
       ],
       "Photos have been successfully recovered.": [
         "사진이 성공적으로 복구되었습니다."
@@ -5843,9 +5807,6 @@
       "We'll send a new verification code to ${ strong }": [
         "${ strong } 에 새 인증 코드를 보내드려요."
       ],
-      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
-        "새로운 환경으로 사진을 업그레이드하는 중입니다! 전환 중에는 사진 복원이 일시적으로 불가능합니다. 모든 진행 사항이 며칠 내에 완료될 예정입니다. 이해해 주셔서 감사합니다."
-      ],
       "Week": [
         "주"
       ],
@@ -5860,9 +5821,6 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "VPN에 연결하여 암호화 기술을 사용하여 IP 주소(기기에 할당된 고유 코드)를 숨길 수 있습니다."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "이중 인증을 설정하면, 인증 앱에 접근할 수 없을 때 로그인 시 사용할 수 없는 복구 코드를 제공해드립니다."
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "이(가) ${ formattedRevisionDate }의 버전으로 복구됩니다. 타 버전들이 여전히 저장됩니다."
@@ -6248,9 +6206,6 @@
       ],
       "Attach screenshot(s)": [
         "스크린샷 첨부"
-      ],
-      "Authenticator app": [
-        "인증 앱"
       ],
       "Beta Access": [
         "베타 참여"
@@ -6779,9 +6734,6 @@
       ],
       "Your location": [
         "나의 위치"
-      ],
-      "Your password (admin)": [
-        "사용자의 비밀번호 (관리자)"
       ]
     },
     "Label for contact group color": {
@@ -7322,6 +7274,17 @@
         "중간 VPN 속도"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "${ priceDrivePlus }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "계정 삭제"
@@ -7343,17 +7306,6 @@
       ],
       "Switch plan": [
         "플랜 변경"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "${ priceDrivePlus }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -7901,6 +7853,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "${ priceLine }부터 시작"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고 나면 자동으로 ${ priceLine }에 갱신됩니다. 언제든지 취소하실 수 있습니다."
       ],
@@ -9724,6 +9679,9 @@
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME } 제품을 계속 사용하려면 공간을 비우거나 ${ upgrade }하세요."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "이메일을 수발신 하려면, 공간을 비우거나 ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "이메일을 주고 받으려면, 저장 공간을 비우거나 저장 공간 확보를 위해 업그레이드 하세요."
       ],
@@ -9840,47 +9798,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }용"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "저장공간 15GB"
-      ],
-      "and 15 more premium features": [
-        "그리고 15개의 프리미엄 기능"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "자동 이메일 포워딩 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "데이터 침해 경고 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
-      ],
-      "No ads or tracking": [
-        "광고나 트래킹이 없습니다"
-      ],
-      "Short @pm.me email address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Support our mission": [
-        "저희의 사명을 지원해주세요"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade your productivity": [
-        "생산성을 업그레이드하세요"
-      ],
-      "We don't sell your data": [
-        "당사는 사용자의 데이터를 판매하지 않습니다"
-      ],
-      "Your privacy is our mission": [
-        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription reminder": {
@@ -10135,6 +10052,47 @@
       ],
       "Your own short @pm.me email alias": [
         "사용자의 @pm.me 이메일 별칭"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "당사는 사용자의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription renewal state": {
@@ -10751,9 +10709,6 @@
       ],
       "Enter 2FA code": [
         "2단계 인증 코드 입력"
-      ],
-      "Enter your password": [
-        "비밀번호를 입력하세요"
       ],
       "Error": [
         "오류"

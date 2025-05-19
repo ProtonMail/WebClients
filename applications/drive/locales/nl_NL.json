@@ -114,9 +114,6 @@
       "Attention required": [
         "Aandacht vereist"
       ],
-      "Authenticate": [
-        "Authenticeren"
-      ],
       "Back": [
         "Terug"
       ],
@@ -430,9 +427,6 @@
       ],
       "Fit to window": [
         "Passend in venster"
-      ],
-      "Forgot password?": [
-        "Wachtwoord vergeten?"
       ],
       "Forward as attachment": [
         "Doorsturen als bijlage"
@@ -1076,14 +1070,8 @@
       "Use a different payment method": [
         "Gebruik een andere betaalmethode"
       ],
-      "Use authentication code": [
-        "Verificatiecode gebruiken"
-      ],
       "Use for sending": [
         "Gebruiken om te versturen"
-      ],
-      "Use recovery code": [
-        "Herstelcode gebruiken"
       ],
       "Verify": [
         "Verifiëren"
@@ -3926,24 +3914,6 @@
         "Onbeperkt aantal hide-my-email-aliassen"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Er is iets fout gegaan bij het verifiëren van uw beveiligingssleutel. Probeer het opnieuw."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME }-account."
-      ],
-      "Security key": [
-        "Beveiligingssleutel"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Beveiligingssleutel"
-      ]
-    },
     "file size format": {
       "byte": [
         "byte",
@@ -4962,9 +4932,6 @@
       "Duplicate key updated": [
         "Dubbele sleutel bijgewerkt"
       ],
-      "Each code can only be used once": [
-        "Elke code kan maar één keer gebruikt worden"
-      ],
       "Edit email address": [
         "Wijzig e-mailadres"
       ],
@@ -5001,20 +4968,11 @@
       "Enter password": [
         "Vul login wachtwoord in"
       ],
-      "Enter the code from your authenticator app": [
-        "Voer de code van uw verificatie-app in"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Voer verificatiecode in. Cijfer ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Geschatte resterende tijd: ${ estimatedMinutes } minuut",
@@ -6079,9 +6037,6 @@
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
-      "We're upgrading photos to the new experience! During this transition, photo restoration is temporarily unavailable. Everything should be ready in a couple of days. We appreciate your understanding.": [
-        "We upgraden de foto's naar de nieuwe ervaring! Gedurende deze overgang is fotoherstel tijdelijk niet beschikbaar. Alles zou binnen een paar dagen klaar moeten zijn. Bedankt voor uw begrip."
-      ],
       "Week": [
         "Week"
       ],
@@ -6096,9 +6051,6 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Wanneer u verbinding maakt met VPN, gebruikt het versleutelingstechnologie om uw IP-adres te verbergen (een unieke code toegewezen aan uw apparaat)."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "wordt hersteld naar de versie van ${ formattedRevisionDate }. Alle andere versies blijven bewaard."
@@ -6496,9 +6448,6 @@
       ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
-      ],
-      "Authenticator app": [
-        "Authenticator-app"
       ],
       "Beta Access": [
         "Bèta toegang"
@@ -7031,9 +6980,6 @@
       ],
       "Your location": [
         "Uw locatie"
-      ],
-      "Your password (admin)": [
-        "Uw wachtwoord (admin)"
       ]
     },
     "Label for contact group color": {
@@ -7585,6 +7531,17 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Plannen vanaf ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -7606,17 +7563,6 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Plannen vanaf ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Upgraden"
       ]
     },
     "new_plans: feature": {
@@ -8590,6 +8536,9 @@
       "Access for the member removed": [
         "Toegang voor het lid verwijderd"
       ],
+      "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
+        "Krijg toegang tot onze nieuwe Albums, Filters en meer door actie te ondernemen op uw vergrendelde volume. Herstel of verwijder deze nu om onmiddellijk van deze nieuwe functies te genieten."
+      ],
       "Access updated": [
         "Toegang bijgewerkt."
       ],
@@ -8775,7 +8724,7 @@
         "Uw foto('s) zijn toegevoegd aan \"${ albumName }\""
       ],
       "Your photo(s) have been removed from ${ albumLink.name }": [
-        "Je foto('s) zijn verwijderd uit ${ albumLink.name }"
+        "Uw foto('s) zijn verwijderd uit ${ albumLink.name }"
       ],
       "Your settings failed to be saved": [
         "Uw instellingen konden niet worden bewaard"
@@ -10196,47 +10145,6 @@
         "Voor ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -10495,6 +10403,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
@@ -11129,9 +11078,6 @@
       ],
       "Enter 2FA code": [
         "Voer 2FA-code in"
-      ],
-      "Enter your password": [
-        "Voer uw wachtwoord in"
       ],
       "Error": [
         "Fout"
