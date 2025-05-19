@@ -6,6 +6,8 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
+import isTruthy from '@proton/utils/isTruthy';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import ItemColumnLayout from 'proton-mail/components/list/ItemColumnLayout';
 import { MAX_COLUMN_ATTACHMENT_THUMBNAILS } from 'proton-mail/constants';
@@ -278,7 +280,10 @@ describe('ItemAttachmentThumbnails - Preview', () => {
                 const attachmentPackets = await encryptAttachment(fileContent, file, false, keys.publicKeys[0], []);
                 // Trigger a fail during decrypt (when necessary) to test some scenarios (e.g. decryption failed)
                 const attachmentKeyPackets = decryptShouldFail ? new Uint8Array() : attachmentPackets.keys;
-                const attachmentSpy = jest.fn(() => attachmentPackets.data);
+                const concatenatedPackets = mergeUint8Arrays(
+                    [attachmentPackets.data, attachmentKeyPackets, attachmentPackets.signature].filter(isTruthy)
+                );
+                const attachmentSpy = jest.fn(() => concatenatedPackets);
                 const attachmentMetadataSpy = jest.fn(() => ({
                     Attachment: {
                         KeyPackets: arrayToBase64(attachmentKeyPackets),
