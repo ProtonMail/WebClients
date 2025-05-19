@@ -9,7 +9,12 @@ import { getNUnreadConversationsText, getNUnreadMessagesText } from 'proton-mail
 const UNREAD_LIMIT = 9999;
 const MAIL_SUBSCRIPTION_LIMIT = 999;
 
-export const getUnreadTitle = (shouldDisplayTotal: boolean, unreadCount: number, mailSettings: MailSettings) => {
+export const getUnreadTitle = (
+    shouldDisplayTotal: boolean,
+    unreadCount: number,
+    mailSettings: MailSettings,
+    labelID: string
+) => {
     if (shouldDisplayTotal) {
         return c('Info').ngettext(
             msgid`${unreadCount} scheduled message`,
@@ -17,6 +22,15 @@ export const getUnreadTitle = (shouldDisplayTotal: boolean, unreadCount: number,
             unreadCount
         );
     }
+
+    if (labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS) {
+        return c('Info').ngettext(
+            msgid`${unreadCount} newsletter subscription`,
+            `${unreadCount} newsletter subscriptions`,
+            unreadCount
+        );
+    }
+
     if (mailSettings.ViewMode === VIEW_MODE.GROUP) {
         return getNUnreadConversationsText(unreadCount);
     }
