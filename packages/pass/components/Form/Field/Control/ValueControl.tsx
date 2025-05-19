@@ -116,7 +116,8 @@ export const ValueControl = <E extends ElementType = 'div'>({
                 disabled && 'opacity-50',
                 className
             )}
-            {...(canCopy ? { value: clipboardValue ?? value } : { onClick: disabled ? undefined : onClick })}
+            onClick={disabled ? undefined : onClick}
+            {...(canCopy ? { value: clipboardValue ?? value } : {})}
         >
             <FieldBox
                 actions={
