@@ -3,7 +3,7 @@ import { type ComponentProps, type ReactElement, useEffect, useState } from 'rea
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import ButtonLike from '@proton/atoms/Button/ButtonLike';
+import { ButtonLike } from '@proton/atoms';
 import useApi from '@proton/components/hooks/useApi';
 import { COUPON_CODES, PLANS } from '@proton/payments/core/constants';
 import { queryScopes } from '@proton/shared/lib/api/auth';

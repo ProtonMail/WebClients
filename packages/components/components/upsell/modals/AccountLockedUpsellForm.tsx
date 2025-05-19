@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike, Href } from '@proton/atoms/index';
+import { ButtonLike, Href } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import UpsellFeatureList from '@proton/components/components/upsell/UpsellFeatureList';
 import type { UpsellFeatureName } from '@proton/components/components/upsell/constants';

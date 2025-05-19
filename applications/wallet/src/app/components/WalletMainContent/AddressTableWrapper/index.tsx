@@ -3,7 +3,7 @@ import { type ChangeEvent, type ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { type WasmApiWalletAccount, WasmKeychainKind } from '@proton/andromeda';
-import { Input } from '@proton/atoms/Input/Input';
+import { Input } from '@proton/atoms';
 import { Icon } from '@proton/components/index';
 import clsx from '@proton/utils/clsx';
 import { type IWasmApiWalletData } from '@proton/wallet';

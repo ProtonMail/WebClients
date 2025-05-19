@@ -14,7 +14,7 @@ import {
     DashboardGrid,
     DashboardGridSection,
     DashboardGridSectionHeader,
-} from '@proton/atoms/index';
+} from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';

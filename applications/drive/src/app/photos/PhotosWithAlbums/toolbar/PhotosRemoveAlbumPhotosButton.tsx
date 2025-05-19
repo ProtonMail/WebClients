@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/index';
+import { CircleLoader } from '@proton/atoms';
 import { DropdownMenuButton, Icon, ToolbarButton } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import clsx from '@proton/utils/clsx';

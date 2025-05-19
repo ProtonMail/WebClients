@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 
-import { CircleLoader } from '@proton/atoms/index';
+import { CircleLoader } from '@proton/atoms';
 
 import { SettingsTabs } from './SettingsTabs';
 
