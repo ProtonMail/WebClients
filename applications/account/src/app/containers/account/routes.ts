@@ -37,7 +37,6 @@ export const getAccountAppRoutes = ({
     subscription,
     isDataRecoveryAvailable,
     isReferralProgramEnabled,
-    isQRCodeSignInEnabled,
     recoveryNotification,
     organization,
     isBreachesAccountDashboardEnabled,
@@ -55,7 +54,6 @@ export const getAccountAppRoutes = ({
     isDataRecoveryAvailable: boolean;
     isSessionRecoveryAvailable: boolean;
     isReferralProgramEnabled: boolean;
-    isQRCodeSignInEnabled: boolean;
     recoveryNotification?: ThemeColor;
     organization?: OrganizationExtended;
     isBreachesAccountDashboardEnabled: boolean;
@@ -359,7 +357,7 @@ export const getAccountAppRoutes = ({
                         text: c('Title').t`Account recovery`,
                         id: 'account-recovery',
                         // This is a special section for non-private users that only contains the QR code sign in
-                        available: isQRCodeSignInEnabled && !user.isPrivate && !isAccountRecoveryAvailable,
+                        available: !user.isPrivate && !isAccountRecoveryAvailable,
                     },
                     {
                         text: isFamilyOrg
