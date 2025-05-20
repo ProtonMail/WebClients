@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Checkbox, ContactImage, type ModalProps, Prompt } from '@proton/components';
+import { Checkbox, ContactImage, Label, type ModalProps, Prompt } from '@proton/components';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
@@ -75,27 +75,34 @@ const ModalUnsubscribe = ({ subscription, ...props }: Props) => {
             ]}
         >
             <p className="m-0 mb-2 text-sm color-weak">{c('Info').t`Optional`}</p>
-            <Checkbox
-                checked={trash}
-                disabled={archive}
-                onChange={() => setTrash((val) => !val)}
-                className="my-2"
-                id="trash"
-            >
-                {c('Info').t`Trash existing messages`}
-            </Checkbox>
-            <Checkbox
-                checked={archive}
-                disabled={trash}
-                onChange={() => setArchive((val) => !val)}
-                className="my-2"
-                id="archive"
-            >
-                {c('Info').t`Archive existing messages`}
-            </Checkbox>
-            <Checkbox checked={read} onChange={() => setRead((val) => !val)} className="mt-2" id="read">
-                {c('Info').t`Mark all as read`}
-            </Checkbox>
+
+            <div className="flex flex-row items-start align-center mb-2">
+                <Checkbox
+                    checked={trash}
+                    disabled={archive}
+                    onChange={() => setTrash((val) => !val)}
+                    className="mr-2"
+                    id="trash"
+                />
+                <Label htmlFor="trash" className="p-0 flex-1">{c('Info').t`Trash existing messages`}</Label>
+            </div>
+
+            <div className="flex flex-row items-start align-center mb-2">
+                <Checkbox
+                    checked={archive}
+                    disabled={trash}
+                    onChange={() => setArchive((val) => !val)}
+                    className="mr-2"
+                    id="archive"
+                />
+
+                <Label htmlFor="archive" className="p-0 flex-1">{c('Info').t`Archive existing messages`}</Label>
+            </div>
+
+            <div className="flex flex-row items-start align-center mb-2">
+                <Checkbox checked={read} onChange={() => setRead((val) => !val)} className="mr-2" id="read" />
+                <Label htmlFor="read" className="p-0 flex-1">{c('Info').t`Mark all as read`}</Label>
+            </div>
         </Prompt>
     );
 };

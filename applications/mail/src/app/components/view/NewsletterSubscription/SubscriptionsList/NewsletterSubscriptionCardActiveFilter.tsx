@@ -3,7 +3,7 @@ import type { PropsWithChildren } from 'react';
 import { c } from 'ttag';
 
 import { SettingsLink } from '@proton/components';
-import { IcCheckmarkCircleFilled, IcCrossCircleFilled } from '@proton/icons';
+import { IcCheckmarkCircleFilled } from '@proton/icons';
 import { useFilters } from '@proton/mail/filters/hooks';
 import { useFolders } from '@proton/mail/index';
 import { APPS, FILTER_STATUS } from '@proton/shared/lib/constants';
@@ -15,20 +15,21 @@ interface Props {
     subscription: NewsletterSubscription;
 }
 
-const FilterWrapper = ({ children }: PropsWithChildren) => {
+interface WrapperProps extends PropsWithChildren {
+    iconClassName: string;
+}
+
+const FilterWrapper = ({ children, iconClassName }: WrapperProps) => {
     return (
-        <div className="bg-weak color-weak px-3 py-1 rounded-full mt-3 text-sm w-fit-content">
-            <span className="flex gap-1">{children}</span>
+        <div className="flex flex-nowrap gap-2 bg-weak color-weak px-3 py-1 rounded-xl mt-3 text-sm">
+            <IcCheckmarkCircleFilled className={iconClassName} />
+            <span>{children}</span>
         </div>
     );
 };
 
 const ActiveFilter = ({ children }: PropsWithChildren) => {
-    return (
-        <FilterWrapper>
-            <IcCheckmarkCircleFilled className="color-success" /> {children}
-        </FilterWrapper>
-    );
+    return <FilterWrapper iconClassName="color-success shrink-0">{children}</FilterWrapper>;
 };
 
 const DisabledFilter = () => {
@@ -39,8 +40,7 @@ const DisabledFilter = () => {
     );
 
     return (
-        <FilterWrapper>
-            <IcCrossCircleFilled className="color-weak" />
+        <FilterWrapper iconClassName="color-weak shrink-0">
             {c('Label').jt`The filter is disabled. You can enable it ${settingsLink}`}
         </FilterWrapper>
     );

@@ -35,7 +35,7 @@ const LocationAside = ({
     const mailSettings = useMailModel('MailSettings');
 
     const unreadCountCopy = getUnreadCount(labelID, unreadCount);
-    const unreadTitleCopy = getUnreadTitle(shouldDisplayTotal, unreadCount, mailSettings);
+    const unreadTitleCopy = getUnreadTitle(shouldDisplayTotal, unreadCount, mailSettings, labelID);
 
     return (
         <>
