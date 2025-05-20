@@ -242,7 +242,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
                                     <Field
                                         name="displayName"
                                         label={c('Label').t`Display name`}
-                                        placeholder={c('Placeholder').t`Name to display when sending an email`}
+                                        placeholder={c('Placeholder').t`Name displayed in emails`}
                                         component={TextField}
                                         icon="card-identity"
                                         maxLength={MAX_ITEM_NAME_LENGTH}
