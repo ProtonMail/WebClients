@@ -2,6 +2,7 @@ import { findByTestId, fireEvent, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
+import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
@@ -133,7 +134,7 @@ describe('Message images', () => {
     });
 
     it('should load correctly all elements other than images with proxy', async () => {
-        const forgedURL = `${windowHostname}/api/core/v4/images?Url=imageURL&DryRun=0&UID=uid`;
+        const forgedURL = `${windowHostname}/api/${PROXY_IMG_URL}?Url=imageURL&DryRun=0&UID=uid`;
         const document = createDocument(content);
 
         const message: MessageState = {
@@ -228,7 +229,7 @@ describe('Message images', () => {
             },
         };
 
-        addApiMock(`core/v4/images`, () => {
+        addApiMock(PROXY_IMG_URL, () => {
             const error = new Error();
             (error as any).data = { Code: 2902, Error: 'TEST error message' };
             return Promise.reject(error);
@@ -275,7 +276,7 @@ describe('Message images', () => {
         const loadedImage = iframeRerendered.querySelector('.proton-image-anchor img') as HTMLImageElement;
         expect(loadedImage).toBeDefined();
         expect(loadedImage.getAttribute('src')).toEqual(
-            `https://mail.proton.pink/api/core/v4/images?Url=${imageURL}&DryRun=0&UID=uid`
+            `https://mail.proton.pink/api/${PROXY_IMG_URL}?Url=${imageURL}&DryRun=0&UID=uid`
         );
     });
 });
