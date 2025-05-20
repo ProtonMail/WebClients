@@ -8,13 +8,15 @@ import {
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
 import { ItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
-import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
+import { MAX_ITEM_NAME_LENGTH, MODEL_VERSION } from '@proton/pass/constants';
 import type { AutosavePayload } from '@proton/pass/types';
 import { type AutosaveFormValues, AutosaveMode } from '@proton/pass/types';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
 type Props = {
     busy: boolean;
@@ -23,6 +25,7 @@ type Props = {
 };
 
 export const AutosaveForm: FC<Props> = ({ data, busy, form }) => {
+    const { onTelemetry } = usePassCore();
     const { settings, domain } = useIFrameAppState();
     const controller = useIFrameAppController();
 
@@ -72,7 +75,19 @@ export const AutosaveForm: FC<Props> = ({ data, busy, form }) => {
                 />
             </FieldsetCluster>
             <div className="flex justify-space-between gap-3 mt-1">
-                <Button pill color="norm" shape="outline" onClick={() => controller.close({ discard: shouldDiscard })}>
+                <Button
+                    pill
+                    color="norm"
+                    shape="outline"
+                    onClick={() => {
+                        onTelemetry(
+                            TelemetryEventName.AutosaveDismissed,
+                            {},
+                            { dismissReason: 'not_now', modelVersion: MODEL_VERSION }
+                        );
+                        controller.close({ discard: shouldDiscard });
+                    }}
+                >
                     {c('Action').t`Not now`}
                 </Button>
                 <Button pill color="norm" type="submit" loading={busy} disabled={busy} className="flex-auto">

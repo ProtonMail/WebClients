@@ -2,6 +2,7 @@ import { hasPauseCriteria } from 'proton-pass-extension/app/content/context/util
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 
+import { MODEL_VERSION } from '@proton/pass/constants';
 import { clientReady } from '@proton/pass/lib/client';
 import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
@@ -91,8 +92,7 @@ export const createTelemetryService = (storage: ExtensionStorage<Record<'telemet
                             }).Autofill
                                 ? 1
                                 : 0,
-                            // In the future this may be dynamically set
-                            modelVersion: '0',
+                            modelVersion: MODEL_VERSION,
                         };
 
                         event.Dimensions = dimensions;

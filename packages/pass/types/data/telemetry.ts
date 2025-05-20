@@ -7,6 +7,7 @@ export type TelemetryPlatform = 'browser' | 'any';
 export enum TelemetryEventName {
     AutofillDisplay = 'autofill.display',
     AutofillTriggered = 'autofill.triggered',
+    AutosaveDismissed = 'autosave.dismissed',
     AutosaveDisplay = 'autosave.display',
     AutosaveDone = 'autosave.done',
     AutosuggestAliasCreated = 'autosuggest.alias_created',
@@ -97,11 +98,13 @@ type FileDimensions = { mimeType: string };
 type NotificationDimensions = { notificationKey: InAppNotification['NotificationKey'] };
 type NotificationChangeDimensions = NotificationDimensions & { notificationStatus: TelemetryInAppNotificationStatus };
 type AutofillDimensions = { location: 'source' | 'app' };
+type AutosaveDismissedDimensions = { dismissReason: 'not_now' | 'close' | 'disable'; modelVersion: string };
 type ErrorResumingSessionDimensions = { extensionBrowser: string; extensionReloadRequired: number };
 
 type TelemetryEvents =
     | BaseTelemetryEvent<TelemetryEventName.AutofillDisplay, {}, AutofillDimensions>
     | BaseTelemetryEvent<TelemetryEventName.AutofillTriggered, {}, AutofillDimensions>
+    | BaseTelemetryEvent<TelemetryEventName.AutosaveDismissed, {}, AutosaveDismissedDimensions>
     | BaseTelemetryEvent<TelemetryEventName.AutosaveDisplay>
     | BaseTelemetryEvent<TelemetryEventName.AutosaveDone>
     | BaseTelemetryEvent<TelemetryEventName.AutosuggestAliasCreated>
