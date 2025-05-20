@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -22,6 +20,7 @@ import { sortSubscriptionList } from 'proton-mail/store/newsletterSubscriptions/
 import {
     selectSubscriptionsCount,
     selectTabSortingState,
+    selectedTab,
 } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
@@ -143,14 +142,12 @@ const HeaderTab = ({ onClick, copy, count, active }: HeaderTabProps) => {
 };
 
 export const NewsletterSubscriptionListHeader = () => {
-    const [active, setActive] = useState<SubscriptionTabs>(SubscriptionTabs.Active);
-
     const counts = useMailSelector(selectSubscriptionsCount);
+    const tab = useMailSelector(selectedTab);
     const dispatch = useMailDispatch();
 
     const handleTabClick = (tab: SubscriptionTabs) => {
-        setActive(tab);
-        dispatch(newsletterSubscriptionsActions.setFilteredSubscriptions(tab));
+        dispatch(newsletterSubscriptionsActions.setSelectedTab(tab));
     };
 
     return (
@@ -162,13 +159,13 @@ export const NewsletterSubscriptionListHeader = () => {
                         onClick={() => handleTabClick(SubscriptionTabs.Active)}
                         copy={c('Action').t`Active`}
                         count={counts.active}
-                        active={active === SubscriptionTabs.Active}
+                        active={tab === SubscriptionTabs.Active}
                     />
                     <HeaderTab
                         onClick={() => handleTabClick(SubscriptionTabs.Unsubscribe)}
                         copy={c('Action').t`Unsubscribed`}
                         count={counts.unsubscribe}
-                        active={active === SubscriptionTabs.Unsubscribe}
+                        active={tab === SubscriptionTabs.Unsubscribe}
                     />
                 </div>
             </div>
