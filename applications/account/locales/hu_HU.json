@@ -457,11 +457,11 @@
       "Discard": [
         "Elvetés"
       ],
-      "Discard changes": [
-        "Módosítások elvetése"
-      ],
       "Discard Changes": [
         "Változtatások elvetése"
+      ],
+      "Discard changes": [
+        "Módosítások elvetése"
       ],
       "Discover ${ planName }": [
         "${ planName } felfedezése"
@@ -958,11 +958,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "refresh the page": [
-        "frissítse az oldalt"
-      ],
       "Refresh the page": [
         "Oldal frissítése"
+      ],
+      "refresh the page": [
+        "frissítse az oldalt"
       ],
       "Reject": [
         "Elutasítás"
@@ -1138,11 +1138,11 @@
       "Select country ${ country }": [
         "Ország kiválasztása: ${ country }"
       ],
-      "select file": [
-        "fájl kiválasztása"
-      ],
       "Select file": [
         "Fájl kiválasztása"
+      ],
+      "select file": [
+        "fájl kiválasztása"
       ],
       "Select files": [
         "Fájlok kiválasztása"
@@ -7492,11 +7492,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktiváljon legalább egy helyreállítási módszert, hogy abban az esetben is visszaszerezhesse a hozzáférést a ${ BRAND_NAME } fiókjában tárolt adataihoz, ha elfelejtené a jelszavát."
       ],
-      "active": [
-        "aktív"
-      ],
       "Active": [
         "Aktív"
+      ],
+      "active": [
+        "aktív"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hozzon létre @pm.me címet a fiókjához. Ez a rövid név a \"${ MAIL_APP_NAME } nekem\", vagy \"személyes üzenet nekem\" (Private Message me) rövidítésre utal"
@@ -7937,11 +7937,11 @@
       "Data recoverable on this device": [
         "Ezen az eszközön helyreállíthatók az adatok"
       ],
-      "Dedicated servers": [
-        "Dedikált szerverek"
-      ],
       "dedicated servers": [
         "dedikált szerverek"
+      ],
+      "Dedicated servers": [
+        "Dedikált szerverek"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikált IP-címekkel rendelkező dedikált kiszolgálók adhatók hozzá a privát átjárókhoz a finoman hangolható hozzáférés-szabályozás érdekében."
@@ -9807,11 +9807,11 @@
       "User activated": [
         "Felhasználó aktiválva"
       ],
-      "Username": [
-        "Felhasználónév"
-      ],
       "username": [
         "felhasználónév"
+      ],
+      "Username": [
+        "Felhasználónév"
       ],
       "Users": [
         "Felhasználók"
@@ -10977,10 +10977,10 @@
       "Allow sharing outside the organization": [
         "A szervezeten kívüli megosztás engedélyezése"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Engedélyezett domain"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Engedélyezett domain"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -12325,11 +12325,11 @@
       "perform a password reset from your active session": [
         "visszaállítani a jelszavát az aktív munkafolyamatból."
       ],
-      "privacy policy": [
-        "adatvédelmi irányelvek"
-      ],
       "Privacy policy": [
         "Adatvédelmi irányelvek"
+      ],
+      "privacy policy": [
+        "adatvédelmi irányelvek"
       ],
       "Reactivate now": [
         "Újraaktiválás most"
@@ -13670,6 +13670,14 @@
         "Oldja fel az összes ${ BRAND_NAME } prémium terméket és funkciót mindössze ${ priceLine }-ért. Bármikor lemondható."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } próbaváltozat"
+      ],
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -13688,14 +13696,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Váltson nagyobb csomagra a prémium funkciók eléréshez"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } próbaváltozat"
-      ],
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
@@ -17573,6 +17573,47 @@
         "${ totalPrice } áron"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatikus e-mail továbbítás ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Short @pm.me email address": [
+        "Rövid @pm.me e-mail cím"
+      ],
+      "Support our mission": [
+        "Támogassa küldetésünket"
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "Upgrade your productivity": [
+        "Növelje a termelékenységét"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
+      ],
+      "Your privacy is our mission": [
+        "Az Ön adatvédelme a mi küldetésünk"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } és ${ VPN_SHORT_APP_NAME } prémium funkciókkal"
@@ -17861,47 +17902,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Az Ön saját rövid @pm.me e-mail álnévcíme"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatikus e-mail továbbítás ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Short @pm.me email address": [
-        "Rövid @pm.me e-mail cím"
-      ],
-      "Support our mission": [
-        "Támogassa küldetésünket"
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "Upgrade your productivity": [
-        "Növelje a termelékenységét"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
-      ],
-      "Your privacy is our mission": [
-        "Az Ön adatvédelme a mi küldetésünk"
       ]
     },
     "Subscription renewal state": {
@@ -18638,10 +18638,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
