@@ -39,7 +39,7 @@ const useCalendarShareInvitationActions = () => {
             const {
                 CalendarID: calendarID,
                 Email: invitedEmail,
-                Passphrase: armoredPassphrase, // TODO: this has invalid OpenPGP format
+                Passphrase: armoredPassphrase,
                 Calendar: { SenderEmail: senderEmail, Name: calendarName },
                 Signature: armoredSignature,
             } = invitation;
