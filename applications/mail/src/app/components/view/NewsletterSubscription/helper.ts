@@ -1,3 +1,5 @@
+import { c, msgid } from 'ttag';
+
 import type { Filter } from '@proton/components/containers/filters/interfaces';
 import { getStandardFolders } from '@proton/mail/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -96,4 +98,20 @@ export const shouldOpenUpsellOnFilterClick = (
     }
 
     return !filters.some((filter) => filter.ID === subscription.FilterID);
+};
+
+export const getNewsletterCopyForFilterAction = (subscription: NewsletterSubscription, filterType: ModalFilterType) => {
+    const count = subscription.ReceivedMessages.Total;
+
+    if (filterType === 'MarkAsRead') {
+        return c('Label').ngettext(msgid`Marked ${count} message as read.`, `Marked ${count} messages as read.`, count);
+    } else if (filterType === 'MoveToArchive') {
+        return c('Label').ngettext(
+            msgid`Moved ${count} message to Archive.`,
+            `Moved ${count} messages to Archive.`,
+            count
+        );
+    }
+
+    return c('Label').ngettext(msgid`Moved ${count} message to Trash.`, `Moved ${count} messages to Trash.`, count);
 };

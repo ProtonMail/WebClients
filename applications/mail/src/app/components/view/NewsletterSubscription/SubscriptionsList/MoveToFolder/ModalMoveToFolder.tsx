@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
@@ -11,6 +11,7 @@ import {
     type ModalProps,
     Prompt,
     useDebounceInput,
+    useNotifications,
 } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { normalize } from '@proton/shared/lib/helpers/string';
@@ -35,6 +36,8 @@ export const ModalMoveToFolder = ({ subscription, ...props }: Props) => {
 
     const [search, setSearch] = useState('');
     const words = useDebounceInput(search, 200);
+
+    const { createNotification } = useNotifications();
 
     const [applyFuture, setApplyFuture] = useState(false);
     const [selectedFolder, setSelectedFolder] = useState<FolderItem | null>(null);
@@ -98,6 +101,16 @@ export const ModalMoveToFolder = ({ subscription, ...props }: Props) => {
                 },
             })
         );
+
+        const count = subscription.ReceivedMessages.Total;
+        createNotification({
+            // TODO add undo actions once the API returns a undo token
+            text: c('Label').ngettext(
+                msgid`Moved ${count} message to ${selectedFolder.Name}.`,
+                `Moved ${count} messages to ${selectedFolder.Name}.`,
+                count
+            ),
+        });
 
         props?.onClose?.();
     };

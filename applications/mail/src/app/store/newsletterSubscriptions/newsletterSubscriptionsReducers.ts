@@ -26,7 +26,7 @@ export const setSortingOrderReducer = (
     state.value.tabs[tab].sorting = action.payload;
 };
 
-export const setFilteredSubscriptionsReducer = (
+export const setSelectedTabReducer = (
     state: NewsletterSubscriptionsStateType,
     action: PayloadAction<SubscriptionTabs>
 ) => {
