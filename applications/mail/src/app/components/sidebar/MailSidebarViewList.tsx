@@ -59,7 +59,7 @@ export const MailSidebarViewList = () => {
                             currentLabelID={mailParams.labelID}
                             isFolder={false}
                             icon="envelope-check"
-                            text={c('Label').t`Mail subscriptions`}
+                            text={c('Label').t`Newsletters`}
                             moveToFolder={noop}
                             applyLabels={noop}
                             unreadCount={newsletterSub.tabs.active.totalCount}
