@@ -97,7 +97,7 @@ const MessageBodyIframe = ({
         isPhishingAttempt: isAutoFlaggedPhishing(message.data) || isSuspicious(message.data),
     });
 
-    useIframeDispatchEvents(initStatus === 'done', iframeRef, onFocus);
+    useIframeDispatchEvents(initStatus === 'done', iframeRef, onFocus, isPlainText);
 
     useObserveIframeHeight(initStatus === 'done', iframeRef);
 
