@@ -164,7 +164,7 @@ export const getCustomViewFromLabel = (label: string) => {
 export const getViewTitleFromLabel = (label: string) => {
     switch (label) {
         case CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS:
-            return c('Title').t`Mail Subscriptions`;
+            return c('Title').t`Newsletters view`;
         default:
             return label;
     }

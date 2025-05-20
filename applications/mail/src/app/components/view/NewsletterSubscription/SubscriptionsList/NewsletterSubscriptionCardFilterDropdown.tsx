@@ -60,7 +60,7 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
         },
         {
             icon: 'trash',
-            label: c('Action').t`Delete`,
+            label: c('Action').t`Move to trash`,
             filter: 'MoveToTrash',
         },
     ];

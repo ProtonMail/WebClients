@@ -61,14 +61,14 @@ export enum MARK_AS_STATUS {
 export const AUTO_REPLY_CHARACTER_COUNT_LIMIT = 4000;
 
 export enum CUSTOM_VIEWS_LABELS {
-    NEWSLETTER_SUBSCRIPTIONS = 'views/newsletter-subscriptions',
+    NEWSLETTER_SUBSCRIPTIONS = 'views/newsletters',
 }
 
 export const CUSTOM_VIEWS = {
     [CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS]: {
         id: 'newsletter-subscriptions',
         label: CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS,
-        route: '/views/newsletter-subscriptions',
+        route: '/views/newsletters',
     },
 };
 
