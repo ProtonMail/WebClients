@@ -20,8 +20,8 @@ import {
     filterSubscriptionListFulfilled,
     filterSubscriptionListPending,
     filterSubscriptionListRejected,
-    setFilteredSubscriptionsReducer,
     setSelectedSubscriptionReducer,
+    setSelectedTabReducer,
     setSortingOrderReducer,
     sortSubscriptionFulfilled,
     sortSubscriptionPending,
@@ -99,7 +99,7 @@ const slice = createSlice({
     initialState,
     reducers: {
         setSortingOrder: setSortingOrderReducer,
-        setFilteredSubscriptions: setFilteredSubscriptionsReducer,
+        setSelectedTab: setSelectedTabReducer,
         setSelectedSubscription: setSelectedSubscriptionReducer,
     },
     extraReducers: (builder) => {
