@@ -13,12 +13,17 @@ import type { Item, ItemType } from '@proton/pass/types';
 import capitalize from '@proton/utils/capitalize';
 import clsx from '@proton/utils/clsx';
 
+import { CustomContent } from '../Custom/Custom.content';
+
 const itemContentViewMap: { [T in ItemType]: FC<ItemContentProps<T>> } = {
     alias: AliasContent,
     creditCard: CreditCardContent,
     login: LoginContent,
     note: NoteContent,
     identity: IdentityContent,
+    sshKey: CustomContent,
+    wifi: CustomContent,
+    custom: CustomContent,
 };
 
 export const ItemContentView: FC<PropsWithChildren<ItemContentProps>> = ({ children, revision }) => {

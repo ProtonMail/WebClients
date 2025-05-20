@@ -7,11 +7,20 @@ import type {
     Metadata,
     ProtobufItemAlias,
     ProtobufItemCreditCard,
+    ProtobufItemCustom,
     ProtobufItemIdentity,
     ProtobufItemLogin,
     ProtobufItemNote,
+    ProtobufItemSSHKey,
+    ProtobufItemWifi,
 } from '@proton/pass/types/protobuf';
-import type { ExtraField, ExtraHiddenField, ExtraTotp, PlatformSpecific } from '@proton/pass/types/protobuf/item-v1';
+import type {
+    ExtraField,
+    ExtraHiddenField,
+    ExtraTimestampField,
+    ExtraTotp,
+    PlatformSpecific,
+} from '@proton/pass/types/protobuf/item-v1';
 import type { MaybeNull, TypeMapper } from '@proton/pass/types/utils';
 import type { SanitizedBuffers } from '@proton/pass/utils/buffer/sanitization';
 
@@ -19,14 +28,20 @@ type ExtraFieldContent<T extends ExtraFieldType> = {
     totp: Obfuscate<ExtraTotp, 'totpUri', never>;
     text: Obfuscate<ExtraHiddenField, 'content', never>;
     hidden: Obfuscate<ExtraHiddenField, 'content', never>;
+    timestamp: Obfuscate<ExtraTimestampField, 'timestamp', never>;
 }[T];
+
+type WithSubExtraFields<T> = TypeMapper<T, [[ExtraField, DeobfuscatedItemExtraField]]>;
 
 export type ItemContent<T extends ItemType> = {
     alias: ProtobufItemAlias;
     note: ProtobufItemNote;
     login: Obfuscate<SanitizedBuffers<ProtobufItemLogin>, 'itemEmail' | 'itemUsername' | 'totpUri', 'password'>;
     creditCard: Obfuscate<ProtobufItemCreditCard, never, 'number' | 'verificationNumber' | 'pin'>;
-    identity: TypeMapper<ProtobufItemIdentity, [[ExtraField, DeobfuscatedItemExtraField]]>;
+    identity: WithSubExtraFields<ProtobufItemIdentity>;
+    sshKey: WithSubExtraFields<Obfuscate<ProtobufItemSSHKey, never, 'privateKey'>>;
+    wifi: WithSubExtraFields<Obfuscate<ProtobufItemWifi, never, 'password'>>;
+    custom: WithSubExtraFields<ProtobufItemCustom>;
 }[T];
 
 export type ItemExtraField<T extends ExtraFieldType = ExtraFieldType> = {

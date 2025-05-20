@@ -80,7 +80,7 @@ const matchesLoginItem: ItemMatch<'login'> = combineMatchers<'login'>(
     matchFields((item) => item.data.content.urls),
     matchFieldsLazy(function* matchExtraFields(item): IterableIterator<string> {
         for (const field of item.data.extraFields) {
-            if (field.type !== 'totp') {
+            if (field.type !== 'totp' && field.type !== 'timestamp') {
                 yield field.fieldName;
                 yield memoDeobfuscate(field.data.content);
             }
@@ -114,7 +114,7 @@ const matchesIdentityItem: ItemMatch<'identity'> = combineMatchers<'identity'>(
                     case 'extraPersonalDetails':
                     case 'extraWorkDetails': {
                         for (const field of item.data.content[key]) {
-                            if (field.type !== 'totp') yield field.data.content;
+                            if (field.type !== 'totp' && field.type !== 'timestamp') yield field.data.content;
                         }
                         break;
                     }
@@ -122,7 +122,7 @@ const matchesIdentityItem: ItemMatch<'identity'> = combineMatchers<'identity'>(
                         for (const section of item.data.content[key]) {
                             yield section.sectionName;
                             for (const field of section.sectionFields) {
-                                if (field.type !== 'totp') yield field.data.content;
+                                if (field.type !== 'totp' && field.type !== 'timestamp') yield field.data.content;
                             }
                         }
                         break;
@@ -133,6 +133,12 @@ const matchesIdentityItem: ItemMatch<'identity'> = combineMatchers<'identity'>(
     })
 );
 
+const matchesSSHItem: ItemMatch<'sshKey'> = combineMatchers<'sshKey'>(matchField((item) => item.data.metadata.name));
+
+const matchesWifiItem: ItemMatch<'wifi'> = combineMatchers<'wifi'>(matchField((item) => item.data.metadata.name));
+
+const matchesCustomItem: ItemMatch<'custom'> = combineMatchers<'custom'>(matchField((item) => item.data.metadata.name));
+
 /* Each item should expose its own searching mechanism :
  * we may include/exclude certain fields or add extra criteria
  * depending on the type of item we're targeting */
@@ -142,6 +148,9 @@ const itemMatchers: ItemMatchMap = {
     alias: matchesAliasItem,
     creditCard: matchesCreditCardItem,
     identity: matchesIdentityItem,
+    sshKey: matchesSSHItem,
+    wifi: matchesWifiItem,
+    custom: matchesCustomItem,
 };
 
 const matchItem: ItemMatch = <T extends ItemType>(item: ItemRevision<T>) => itemMatchers[item.data.type](item);

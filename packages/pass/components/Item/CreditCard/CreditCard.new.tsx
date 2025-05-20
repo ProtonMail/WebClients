@@ -72,7 +72,6 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
                     verificationNumber: obfuscate(creditCardValues.verificationNumber),
                     pin: obfuscate(creditCardValues.pin),
                 },
-                extraData: {},
                 extraFields: [],
             });
         },

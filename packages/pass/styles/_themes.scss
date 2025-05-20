@@ -6,7 +6,8 @@ hr {
 .ui-orange,
 .ui-red,
 .ui-teal,
-.ui-violet {
+.ui-violet,
+.ui-gray {
 	--focus-outline: var(--interaction-norm-major-2);
 	--focus-ring: var(--interaction-norm-minor-1);
 	--interaction-norm-hover: var(--interaction-norm-major-1);
@@ -17,7 +18,8 @@ hr {
 
 .ui-lime,
 .ui-teal,
-.ui-violet {
+.ui-violet,
+.ui-gray {
 	--link-norm: var(--interaction-norm);
 	--link-hover: var(--interaction-norm-hover);
 	--link-active: var(--interaction-norm-active);

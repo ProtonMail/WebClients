@@ -6,6 +6,7 @@ import { attachFilesToItem } from '@proton/pass/lib/import/helpers/files';
 import {
     getImportedVaultName,
     importCreditCardItem,
+    importCustomItem,
     importIdentityItem,
     importLoginItem,
     importNoteItem,
@@ -22,6 +23,7 @@ import {
     ENPASS_FIELD_TYPES,
     enpassFileReader,
     extractEnpassCC,
+    extractEnpassCustom,
     extractEnpassExtraFields,
     extractEnpassIdentity,
     extractEnpassLogin,
@@ -101,6 +103,16 @@ const processIdentityItem = (item: EnpassItem<EnpassCategory.IDENTITY>): ItemImp
         ...extractEnpassIdentity(item),
     });
 
+const processCustomItem = (item: EnpassItem<any>): ItemImportIntent<'custom'> => {
+    const { remaining } = extractEnpassCustom(item.fields ?? []);
+
+    return importCustomItem({
+        name: item.title,
+        note: item.note,
+        extraFields: extractEnpassExtraFields(remaining),
+    });
+};
+
 const validateEnpassData = (data: any): data is EnpassData =>
     isObject(data) && 'items' in data && Array.isArray(data.items);
 
@@ -145,8 +157,7 @@ export const readEnpassData = async (file: File): Promise<ImportReaderResult> =>
                                 case EnpassCategory.IDENTITY:
                                     return attachFilesToItem(processIdentityItem(item), files);
                                 default:
-                                    ignored.push(`[${type}] ${title}`);
-                                    return;
+                                    return attachFilesToItem(processCustomItem(item), files);
                             }
                         } catch (err) {
                             ignored.push(`[${type}] ${title}`);
