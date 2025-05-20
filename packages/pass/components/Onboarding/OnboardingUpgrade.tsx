@@ -24,7 +24,7 @@ import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvid
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { PASS_PLUS_LIFETIME_PRICE, PASS_PLUS_PRICE, PROTON_UNLIMITED_PRICE, UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
-import { getUserCurrency } from '@proton/pass/lib/user/user.currency';
+import { getUserCurrency, supportedCurrencies } from '@proton/pass/lib/user/user.currency';
 import { selectUser } from '@proton/pass/store/selectors';
 import { PLANS } from '@proton/payments/core/constants';
 import {
@@ -99,33 +99,36 @@ export const Content: FC = () => {
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIFETIME_PLAN_ONBOARDING });
     const user = useSelector(selectUser);
     const plusLifetimePrice = getSimplePriceString(getUserCurrency(user?.Currency), PASS_PLUS_LIFETIME_PRICE);
+    const displayLifetimeCard = supportedCurrencies.includes(user?.Currency ?? '');
 
     return (
         <section className="pass-onboarding-upgrade">
             {selected === PLANS.PASS ? (
-                <div className="relative">
-                    <div
-                        className="description--banner-badge absolute top-custom left-custom color-invert text-semibold text-xs px-2 text-center text-ellipsis rounded-sm"
-                        style={{ '--top-custom': '-7px', '--left-custom': '1rem' }}
-                    >{c('Label').t`Limited time`}</div>
-                    <div className="description--banner-card flex justify-space-between rounded-lg p-3 gap-2">
-                        <div className="description--banner-card-content">
-                            <div className="text-semibold">{c('PassOnboardingOffer')
-                                .t`${PASS_SHORT_APP_NAME} Plus Lifetime for ${plusLifetimePrice}`}</div>
-                            <div className="text-sm color-weak">{c('Title').t`Pay once, access forever.`}</div>
+                displayLifetimeCard && (
+                    <div className="relative">
+                        <div
+                            className="description--banner-badge absolute top-custom left-custom color-invert text-semibold text-xs px-2 text-center text-ellipsis rounded-sm"
+                            style={{ '--top-custom': '-7px', '--left-custom': '1rem' }}
+                        >{c('Label').t`Limited time`}</div>
+                        <div className="description--banner-card flex justify-space-between rounded-lg p-3 gap-2">
+                            <div className="description--banner-card-content">
+                                <div className="text-semibold">{c('PassOnboardingOffer')
+                                    .t`${PASS_SHORT_APP_NAME} Plus Lifetime for ${plusLifetimePrice}`}</div>
+                                <div className="text-sm color-weak">{c('Title').t`Pay once, access forever.`}</div>
+                            </div>
+                            <Button
+                                className="button-invert"
+                                pill
+                                shape="solid"
+                                color="norm"
+                                onClick={navigateToUpgrade}
+                                disabled={!online}
+                            >
+                                {c('Action').t`Pay once`}
+                            </Button>
                         </div>
-                        <Button
-                            className="button-invert"
-                            pill
-                            shape="solid"
-                            color="norm"
-                            onClick={navigateToUpgrade}
-                            disabled={!online}
-                        >
-                            {c('Action').t`Pay once`}
-                        </Button>
                     </div>
-                </div>
+                )
             ) : (
                 <div>
                     <h2 className="w-full text-center text-lg text-bold">{c('Label')
