@@ -9,8 +9,7 @@
 
 	.subscription-card {
 		background-color: var(--background-elevated);
-		transition: box-shadow 0.25s easing(ease);
-		transition: border-color 0.15s easing(ease-in-quint);
+		transition: box-shadow 0.2s easing(ease);
 
 		.subscription-card-image {
 			inline-size: 2.25rem;
