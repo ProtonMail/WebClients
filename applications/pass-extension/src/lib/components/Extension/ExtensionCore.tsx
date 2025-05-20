@@ -162,11 +162,11 @@ const getPassCoreProviderProps = (
                 .catch(noop);
         },
 
-        onTelemetry: (Event, Values, Dimensions, platform) =>
+        onTelemetry: (Event, Values, Dimensions, platform, extra) =>
             sendMessage(
                 messageFactory({
                     type: WorkerMessageType.TELEMETRY_EVENT,
-                    payload: { event: createTelemetryEvent(Event, Values, Dimensions, platform) },
+                    payload: { event: createTelemetryEvent(Event, Values, Dimensions, platform), extra },
                 })
             ).catch(noop),
 
