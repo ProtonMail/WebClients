@@ -2339,11 +2339,6 @@
         "ინვოისი გადაცილებულია"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } თქვენს ანგარიშს საეჭვო აქტივობებზე 24/7 მონიტორინგით იცავს - საჭიროების შემთხვევაში უსაფრთხოების სპეციალისტების ჩართვით."
@@ -2437,6 +2432,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6409,17 +6409,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "${ priceDrivePlus }-დან დაწყებული სატარიფო გეგმები"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -6441,6 +6430,17 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "${ priceDrivePlus }-დან დაწყებული სატარიფო გეგმები"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
       ]
     },
     "new_plans: feature": {
@@ -8843,25 +8843,6 @@
         "${ totalPrice }-თვის"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace }/მომხმარებელი"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } გაძლევთ ყველა აპს, ყველა ფუნქციას, ადრეულ წვდომას ახალ რელიზებთან და ყველაფერს, რაც გჭირდებათ, რომ მართოთ თქვენი მონაცემები და მისი უსაფრთხოება."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი",
-        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } ელფოსტის მისამართი",
-        "${ planNumberOfEmails } ელფოსტის მისამართი"
-      ],
-      "Folders, labels, and custom filters": [
-        "საქაღალდეები, ჭდეები და მომხმარებლის ფილტრები"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 გბ საცავი"
@@ -8901,6 +8882,25 @@
       ],
       "Your privacy is our mission": [
         "თქვენი კონფიდენციალობა ჩვენი მისიაა"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace }/მომხმარებელი"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } გაძლევთ ყველა აპს, ყველა ფუნქციას, ადრეულ წვდომას ახალ რელიზებთან და ყველაფერს, რაც გჭირდებათ, რომ მართოთ თქვენი მონაცემები და მისი უსაფრთხოება."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი",
+        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } ელფოსტის მისამართი",
+        "${ planNumberOfEmails } ელფოსტის მისამართი"
+      ],
+      "Folders, labels, and custom filters": [
+        "საქაღალდეები, ჭდეები და მომხმარებლის ფილტრები"
       ]
     },
     "Subscription renewal state": {
