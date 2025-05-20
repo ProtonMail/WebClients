@@ -28,8 +28,7 @@ export const formatDownload = async (
     onUpdateAttachment: (ID: string, attachment: DecryptedAttachment) => void,
     api: Api,
     getAttachment?: (ID: string) => DecryptedAttachment | undefined,
-    messageFlags?: number,
-    handleMalformedIcsAttachmentContent?: boolean
+    messageFlags?: number
 ): Promise<Download> => {
     try {
         const { data, verificationStatus } = await getAndVerifyAttachment(
@@ -39,8 +38,7 @@ export const formatDownload = async (
             api,
             getAttachment,
             onUpdateAttachment,
-            messageFlags,
-            handleMalformedIcsAttachmentContent
+            messageFlags
         );
         return {
             attachment,
