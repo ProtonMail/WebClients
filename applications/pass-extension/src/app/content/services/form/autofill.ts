@@ -4,7 +4,6 @@ import { sendTelemetryEvent } from 'proton-pass-extension/app/content/utils/tele
 
 import { FieldType, FormType, isIgnored } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { passwordSave } from '@proton/pass/store/actions/creators/password';
 import type { FormCredentials, ItemContent, MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
@@ -76,25 +75,12 @@ export const createAutofillService = () => {
         if (identityFields && authorized) await getIdentitiesCount();
     });
 
-    const telemetry = (type: '2fa' | 'login') => {
-        const event = (() => {
-            switch (type) {
-                case 'login':
-                    return createTelemetryEvent(TelemetryEventName.AutofillTriggered, {}, { location: 'source' });
-                case '2fa':
-                    return createTelemetryEvent(TelemetryEventName.TwoFAAutofill, {}, {});
-            }
-        })();
-
-        sendTelemetryEvent(event);
-    };
-
     const autofillLogin = (form: FormHandle, data: FormCredentials) => {
         first(form.getFieldsFor(FieldType.USERNAME) ?? [])?.autofill(data.userIdentifier);
         first(form.getFieldsFor(FieldType.EMAIL) ?? [])?.autofill(data.userIdentifier);
         form.getFieldsFor(FieldType.PASSWORD_CURRENT).forEach((field) => field.autofill(data.password));
 
-        telemetry('login');
+        sendTelemetryEvent(TelemetryEventName.AutofillTriggered, {}, { location: 'source' });
     };
 
     const autofillPassword = withContext<(form: FormHandle, password: string) => void>((ctx, form, password) => {
@@ -135,7 +121,7 @@ export const createAutofillService = () => {
             });
         }
 
-        telemetry('2fa');
+        sendTelemetryEvent(TelemetryEventName.TwoFAAutofill, {}, {});
     };
 
     /** Clears previously autofilled identity fields when called with a new identity item */
