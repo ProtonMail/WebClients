@@ -16,7 +16,12 @@ import type { SettingsService } from '@proton/pass/lib/settings/service';
 import type { SpotlightProxy } from '@proton/pass/lib/spotlight/service';
 import type { ApiState, ClientEndpoint, Maybe, MaybeNull, MaybePromise, TabId } from '@proton/pass/types';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
-import type { TelemetryEvent, TelemetryEventName, TelemetryPlatform } from '@proton/pass/types/data/telemetry';
+import type {
+    TelemetryEvent,
+    TelemetryEventName,
+    TelemetryEventWithExtra,
+    TelemetryPlatform,
+} from '@proton/pass/types/data/telemetry';
 import type { EventDispatcher } from '@proton/pass/utils/event/dispatcher';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import noop from '@proton/utils/noop';
@@ -38,6 +43,14 @@ export type ExtensionClientState = {
     /** Port name of the current client */
     port: string;
 };
+
+export type OnTelemetryEvent = <T extends TelemetryEventName = TelemetryEventName>(
+    Event: T,
+    Values: TelemetryEvent<T>['Values'],
+    Dimensions: TelemetryEvent<T>['Dimensions'],
+    platform?: TelemetryPlatform,
+    extra?: TelemetryEventWithExtra<T>['extra']
+) => void;
 
 export type PassCoreContextValue = {
     endpoint: ClientEndpoint;
@@ -75,12 +88,7 @@ export type PassCoreContextValue = {
      * whereas in the web-app, we can use `window.location` */
     onLink: (url: string, options?: { replace?: boolean }) => void;
     /** Processes a telemetry event */
-    onTelemetry: <T extends TelemetryEventName>(
-        Event: T,
-        Values: TelemetryEvent<T>['Values'],
-        Dimensions: TelemetryEvent<T>['Dimensions'],
-        platform?: TelemetryPlatform
-    ) => void;
+    onTelemetry: OnTelemetryEvent;
     /** Processes an event for B2B users only */
     onB2BEvent: EventDispatcher<B2BEvent>['push'];
     /* Will get called when user tries to update a client manually */

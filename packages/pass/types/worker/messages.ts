@@ -32,8 +32,8 @@ import type {
     SelectedItem,
     UniqueItem,
 } from '../data';
-import type { TelemetryEvent } from '../data/telemetry';
-import type { Maybe, MaybeNull } from '../utils';
+import type { TelemetryEventWithExtra } from '../data/telemetry';
+import type { Maybe, MaybeNull, OptionalProp } from '../utils';
 import type { AutofillIdentityResult, AutofillLoginResult, AutofillOptions } from './autofill';
 import type { AutosaveRequest } from './autosave';
 import type { AutosaveFormEntry, FormCredentials, FormStatusPayload, FormSubmitPayload } from './form';
@@ -77,6 +77,7 @@ export enum WorkerMessageType {
     AUTH_INIT = 'AUTH_INIT',
     AUTH_PULL_FORK = 'AUTH_PULL_FORK',
     AUTH_UNLOCK = 'AUTH_UNLOCK',
+    AUTOFILL_CHECK_FORM = 'AUTOFILL_CHECK_FORM',
     AUTOFILL_IDENTITY = 'AUTOFILL_IDENTITY',
     AUTOFILL_IDENTITY_QUERY = 'AUTOFILL_IDENTITY_QUERY',
     AUTOFILL_LOGIN = 'AUTOFILL_LOGIN',
@@ -148,6 +149,7 @@ export type AuthConfirmPasswordMessage = WithPayload<WorkerMessageType.AUTH_CONF
 export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: AuthOptions };
 export type AuthPullForkMessage = WithPayload<WorkerMessageType.AUTH_PULL_FORK, { selector: string }>;
 export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, UnlockDTO>;
+export type AutofillCheckFormMessage = { type: WorkerMessageType.AUTOFILL_CHECK_FORM };
 export type AutofillIdentityMessage = WithPayload<WorkerMessageType.AUTOFILL_IDENTITY, SelectedItem>;
 export type AutofillIdentityQueryMessage = { type: WorkerMessageType.AUTOFILL_IDENTITY_QUERY };
 export type AutofillLoginMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN, SelectedItem>;
@@ -197,7 +199,10 @@ export type SpotlightCheckMessage = WithPayload<WorkerMessageType.SPOTLIGHT_CHEC
 export type SpotlightRequestMessage = { type: WorkerMessageType.SPOTLIGHT_REQUEST };
 export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, { action: Action }>;
 export type TabsQueryMessage = WithPayload<WorkerMessageType.TABS_QUERY, { current?: boolean }>;
-export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVENT, { event: TelemetryEvent }>;
+export type TelemetryEventMessage = WithPayload<
+    WorkerMessageType.TELEMETRY_EVENT,
+    OptionalProp<TelemetryEventWithExtra, 'extra'>
+>;
 export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT };
 export type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };
 export type VaultsQueryMessage = { type: WorkerMessageType.VAULTS_QUERY };
@@ -217,6 +222,7 @@ export type WorkerMessage =
     | AuthInitMessage
     | AuthPullForkMessage
     | AuthUnlockMessage
+    | AutofillCheckFormMessage
     | AutofillIdentityMessage
     | AutofillIdentityQueryMessage
     | AutofillLoginMessage
@@ -290,6 +296,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTH_PULL_FORK]: Result<PullForkResponse>;
     [WorkerMessageType.AUTH_UNLOCK]: Result;
     [WorkerMessageType.AUTOFILL_IDENTITY_QUERY]: AutofillIdentityResult;
+    [WorkerMessageType.AUTOFILL_CHECK_FORM]: { hasLoginForm: boolean };
     [WorkerMessageType.AUTOFILL_IDENTITY]: ItemContent<'identity'>;
     [WorkerMessageType.AUTOFILL_LOGIN_QUERY]: AutofillLoginResult;
     [WorkerMessageType.AUTOFILL_LOGIN]: FormCredentials;
