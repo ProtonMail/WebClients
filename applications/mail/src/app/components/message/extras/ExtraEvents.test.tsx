@@ -27,8 +27,6 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar';
 import { CalendarKeyFlags } from '@proton/shared/lib/interfaces/calendar';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
-import isTruthy from '@proton/utils/isTruthy';
-import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import * as inviteApi from '../../../helpers/calendar/inviteApi';
 import { generateApiCalendarEvent } from '../../../helpers/test/calendar';
@@ -207,11 +205,8 @@ const getSetup = async ({
                 addressKey.publicKeys[0],
                 []
             );
-            const concatenatedPackets = mergeUint8Arrays(
-                [attachmentPackets.data, attachmentPackets.keys, attachmentPackets.signature].filter(isTruthy)
-            );
             // Mock API calls to get attachment
-            addApiMock(`mail/v4/attachments/${attachmentID}`, () => concatenatedPackets);
+            addApiMock(`mail/v4/attachments/${attachmentID}`, () => attachmentPackets.data);
             return {
                 attachmentID,
                 filename,
