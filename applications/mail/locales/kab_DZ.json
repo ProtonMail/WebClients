@@ -916,11 +916,11 @@
       "Select ${ planTitle }": [
         "Fren ${ planTitle }"
       ],
-      "Select All": [
-        "Fren kullec"
-      ],
       "Select all": [
         "Fren akk"
+      ],
+      "Select All": [
+        "Fren kullec"
       ],
       "Select all messages": [
         "Fren akk iznan"
@@ -5019,8 +5019,7 @@
         "Yettwaɣellet seg ukaram agejdan"
       ],
       "Insert image": [
-        "Ger tugna",
-        "Ger tugniwn"
+        "Ger tugna"
       ],
       "Insert link": [
         "Ger aseɣwen"
@@ -8297,6 +8296,14 @@
         "Imultaɣen"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Mazal ${ dayDiff } wass",
@@ -8331,14 +8338,6 @@
       ],
       "Version history": [
         "Azray n lqem"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GAṬ n uḥraz"
-      ],
-      "Upgrade": [
-        "Leqqem"
       ]
     },
     "Subscription renewal state": {
