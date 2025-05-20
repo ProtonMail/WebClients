@@ -15,7 +15,7 @@ import { PasskeyContentModal } from '@proton/pass/components/Item/Passkey/Passke
 import { PasswordStrength } from '@proton/pass/components/Password/PasswordStrength';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
-import { UpsellRef } from '@proton/pass/constants';
+import { MODEL_VERSION, UpsellRef } from '@proton/pass/constants';
 import { usePasswordStrength } from '@proton/pass/hooks/monitor/usePasswordStrength';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';
@@ -58,7 +58,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                   extensionField,
                   hasLoginItemForCurrentWebsite: 0,
                   loginAutofillEnabled: 0,
-                  modelVersion: '0',
+                  modelVersion: MODEL_VERSION,
                   uniqueMatch: 0,
               };
               onTelemetry(TelemetryEventName.ExtensionCopiedFromLogin, {}, DEFAULT_TELEMETRY_DIMENSIONS, undefined, {
