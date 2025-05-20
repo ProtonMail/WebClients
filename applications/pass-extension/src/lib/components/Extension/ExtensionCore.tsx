@@ -154,7 +154,7 @@ const getPassCoreProviderProps = (
                 .query({ url: settingsUrl })
                 .then(async (match) => {
                     await (match.length > 0 && match[0].id
-                        ? browser.tabs.update(match[0].id, { highlighted: true, url })
+                        ? browser.tabs.update(match[0].id, { active: true, url })
                         : browser.tabs.create({ url }));
 
                     window.close();
