@@ -11,6 +11,7 @@ export enum TelemetryEventName {
     AutosaveDone = 'autosave.done',
     AutosuggestAliasCreated = 'autosuggest.alias_created',
     ErrorResumingSession = 'error.resuming_session',
+    ExtensionCopiedFromLogin = 'extension.copied_from_login',
     ImportCompletion = 'import.complete',
     ItemCreation = 'item.creation',
     ItemDeletion = 'item.deletion',
@@ -52,6 +53,15 @@ export enum TelemetryItemType {
     identity = 'identity',
 }
 
+export enum TelemetryFieldType {
+    email = 'email',
+    username = 'username',
+    password = 'password',
+    totp = 'totp',
+    note = 'note',
+    customField = 'custom_field',
+}
+
 /** Telemetry payloads support only ints and strings */
 type TelemetryPayload = Record<string, number | string>;
 
@@ -64,6 +74,17 @@ export type BaseTelemetryEvent<
     Event: T;
     Values: V;
     Dimensions: { user_tier?: PassPlanResponse['InternalName'] } & D;
+};
+
+export type ExtensionCopiedFromLoginDimensions = {
+    extensionField: TelemetryFieldType;
+    hasLoginItemForCurrentWebsite: number;
+    extensionCopiedFromCurrentPage: number;
+    autofillLoginFormDetected: number;
+    loginAutofillEnabled: number;
+    uniqueMatch: number;
+    autofillPaused: number;
+    modelVersion: string;
 };
 
 type ImportValues = { item_count: number; vaults: number };
@@ -82,6 +103,7 @@ type TelemetryEvents =
     | BaseTelemetryEvent<TelemetryEventName.AutosaveDone>
     | BaseTelemetryEvent<TelemetryEventName.AutosuggestAliasCreated>
     | BaseTelemetryEvent<TelemetryEventName.ErrorResumingSession, {}, ErrorResumingSessionDimensions>
+    | BaseTelemetryEvent<TelemetryEventName.ExtensionCopiedFromLogin, {}, ExtensionCopiedFromLoginDimensions>
     | BaseTelemetryEvent<TelemetryEventName.ImportCompletion, ImportValues, ImportDimensions>
     | BaseTelemetryEvent<TelemetryEventName.ItemCreation, {}, ItemDimensions>
     | BaseTelemetryEvent<TelemetryEventName.ItemDeletion, {}, ItemDimensions>
@@ -115,3 +137,13 @@ type TelemetryEvents =
     | BaseTelemetryEvent<TelemetryEventName.TwoFAUpdate>;
 
 export type TelemetryEvent<T extends TelemetryEventName = TelemetryEventName> = Extract<TelemetryEvents, { Event: T }>;
+
+export type TelemetryEventWithExtra<T extends TelemetryEventName = TelemetryEventName> = {
+    event: TelemetryEvent<T>;
+    extra: T extends TelemetryEventName.ExtensionCopiedFromLogin ?
+        {
+            extensionField: TelemetryFieldType;
+            itemUrls: string[];
+        }
+    :   never;
+};
