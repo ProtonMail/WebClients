@@ -32,6 +32,7 @@ export const selectShowUsernameField = ({ settings }: State) => settings.showUse
 export const selectTheme = ({ settings }: State): Maybe<PassThemeOption> => settings?.theme;
 export const selectClipboardTTL = ({ settings }: State) => settings.clipboard?.timeoutMs;
 export const selectAliasTrashAcknowledged = ({ settings }: State) => settings.aliasTrashAcknowledged;
+export const selectAutofillSettings = ({ settings }: State) => settings.autofill;
 
 export const selectLockSetupRequired = createSelector(
     [selectLockMode, selectOrganizationSettings],
