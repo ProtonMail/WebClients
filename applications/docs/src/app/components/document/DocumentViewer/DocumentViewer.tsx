@@ -443,7 +443,12 @@ export function DocumentViewer({
   return (
     <div className="relative h-full w-full">
       {ready && debug && docController && editorController && documentState && (
-        <DebugMenu docController={docController} editorController={editorController} documentState={documentState} />
+        <DebugMenu
+          docController={docController}
+          editorController={editorController}
+          documentState={documentState}
+          documentType={openAction.type}
+        />
       )}
 
       {ready && <WordCountOverlay />}
