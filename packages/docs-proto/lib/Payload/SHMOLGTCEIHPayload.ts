@@ -1,4 +1,5 @@
 export interface SHMOLGTCEIHPayload {
-  userId: string
+  userIdentifier: string
+  userIdentifierType: 'user' | 'share-url'
   connectionId: string
 }
