@@ -117,7 +117,7 @@ export interface DriveCompat {
     /**
      * Opens a document in a new window.
      */
-    openDocument: (meta: NodeMeta) => void;
+    openDocument: (meta: NodeMeta, type?: DocumentType) => void;
     openDocumentWindow: (
         action: DocumentAction & {
             window: Window;

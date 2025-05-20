@@ -22,6 +22,7 @@ import { isDocumentState, type DocumentState } from '../State/DocumentState'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { getErrorString } from '../Util/GetErrorString'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
+import { isProtonSheet } from '@proton/shared/lib/helpers/mimetype'
 
 /**
  * Controls the lifecycle of a single document for an authenticated user.
@@ -229,9 +230,10 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
   }
 
   public async duplicateDocument(editorYjsState: Uint8Array): Promise<void> {
+    const node = this.documentState.getProperty('decryptedNode')
     const result = await this._duplicateDocument.executePrivate(
       this.documentState.getProperty('entitlements').nodeMeta,
-      this.documentState.getProperty('decryptedNode'),
+      node,
       editorYjsState,
     )
 
@@ -247,13 +249,14 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
 
     const shell = result.getValue()
 
-    void this.driveCompat.openDocument(shell)
+    void this.driveCompat.openDocument(shell, isProtonSheet(node.mimeType) ? 'sheet' : 'doc')
   }
 
   public async restoreRevisionAsCopy(yjsContent: YjsState): Promise<void> {
+    const node = this.documentState.getProperty('decryptedNode')
     const result = await this._duplicateDocument.executePrivate(
       this.documentState.getProperty('entitlements').nodeMeta,
-      this.documentState.getProperty('decryptedNode'),
+      node,
       yjsContent,
     )
 
@@ -269,7 +272,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
 
     const shell = result.getValue()
 
-    void this.driveCompat.openDocument(shell)
+    void this.driveCompat.openDocument(shell, isProtonSheet(node.mimeType) ? 'sheet' : 'doc')
   }
 
   public async createNewDocument(documentType: DocumentType): Promise<void> {
