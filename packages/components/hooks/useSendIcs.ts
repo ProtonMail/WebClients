@@ -71,16 +71,16 @@ const useSendIcs = () => {
                 type: `text/calendar; method=${method}`,
             });
             const packets = await encryptAttachment(ics, inviteAttachment, false, encryptionKey, signingKeys);
-            const concatenatedPackets = mergeUint8Arrays(
+            // NB: this is not a valid OpenPGP message, but the BE does not treat the data at such;
+            // it processes the different packet types separately
+            const attachmentContents = mergeUint8Arrays(
                 [packets.data, packets.keys, packets.signature].filter(isTruthy)
             );
             const emails = to.map(({ Address }) => Address);
             const attachment = {
                 Filename: packets.Filename,
                 MIMEType: packets.MIMEType,
-                // TODO: `concatenatedPackets` is not a valid openpgp encrypted message; change to
-                // `Contents = packets.data`
-                Contents: uint8ArrayToBase64String(concatenatedPackets),
+                Contents: uint8ArrayToBase64String(attachmentContents),
                 KeyPackets: uint8ArrayToBase64String(packets.keys),
                 Signature: packets.signature ? uint8ArrayToBase64String(packets.signature) : undefined,
             };
