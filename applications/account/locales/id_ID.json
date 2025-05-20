@@ -463,11 +463,11 @@
       "Discard": [
         "Buang"
       ],
-      "Discard changes": [
-        "Buang perubahan"
-      ],
       "Discard Changes": [
         "Batalkan Perubahan"
+      ],
+      "Discard changes": [
+        "Buang perubahan"
       ],
       "Discover ${ planName }": [
         "Telusuri ${ planName }"
@@ -970,11 +970,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Refresh the page": [
         "Muat ulang halaman"
+      ],
+      "refresh the page": [
+        "muat ulang halaman"
       ],
       "Reject": [
         "Tolak"
@@ -1150,11 +1150,11 @@
       "Select country ${ country }": [
         "Pilih negara ${ country }"
       ],
-      "select file": [
-        "pilih berkas"
-      ],
       "Select file": [
         "Pilih berkas"
+      ],
+      "select file": [
+        "pilih berkas"
       ],
       "Select files": [
         "Pilih berkas"
@@ -7453,11 +7453,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktifkan setidaknya satu metode pemulihan agar Anda dapat tetap mengakses isi akun ${ BRAND_NAME } Anda apabila kata sandi Anda hilang."
       ],
-      "active": [
-        "aktif"
-      ],
       "Active": [
         "Aktif"
+      ],
+      "active": [
+        "aktif"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Buat akun Anda lebih hidup dengan alamat email khusus yang berakhiran @pm.me. Alamat yang sederhana dan mudah diingat ini merupakan kependekan dari \"${ MAIL_APP_NAME } me\" atau \"Private Message me.\""
@@ -7888,11 +7888,11 @@
       "Data recoverable on this device": [
         "Data pada perangkat ini dapat dipulihkan"
       ],
-      "Dedicated servers": [
-        "Server khusus"
-      ],
       "dedicated servers": [
         "server khusus"
+      ],
+      "Dedicated servers": [
+        "Server khusus"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Server khusus dengan alamat IP khusus dapat ditambahkan ke gateway pribadi untuk memungkinkan kontrol akses yang lebih terperinci."
@@ -9757,11 +9757,11 @@
       "User activated": [
         "Pengguna diaktifkan"
       ],
-      "Username": [
-        "Nama pengguna"
-      ],
       "username": [
         "nama pengguna"
+      ],
+      "Username": [
+        "Nama pengguna"
       ],
       "Users": [
         "Pengguna"
@@ -10917,11 +10917,11 @@
       "Allow sharing outside the organization": [
         "Izinkan pembagian di luar organisasi"
       ],
-      "Allowed domain": [
-        "Domain yang diizinkan"
-      ],
       "Allowed Domain": [
         "Domain yang Diizinkan"
+      ],
+      "Allowed domain": [
+        "Domain yang diizinkan"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Memungkinkan semua orang dalam organisasi Anda untuk menambahkan tautan konferensi video dalam undangan kalender secara terpadu."
@@ -12267,11 +12267,11 @@
       "perform a password reset from your active session": [
         "melangsungkan pengaturan ulang kata sandi dari sesi Anda yang sedang aktif"
       ],
-      "privacy policy": [
-        "kebijakan privasi"
-      ],
       "Privacy policy": [
         "Kebijakan privasi"
+      ],
+      "privacy policy": [
+        "kebijakan privasi"
       ],
       "Reactivate now": [
         "Aktifkan kembali"
@@ -13577,6 +13577,14 @@
         "Dapatkan seluruh produk dan fitur premium ${ BRAND_NAME } seharga hanya ${ priceLine }. Batalkan kapan saja."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -13595,14 +13603,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -17421,6 +17421,47 @@
         "Untuk ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
@@ -17703,47 +17744,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {
@@ -18476,11 +18476,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-all address": [
-        "Alamat catch-all"
-      ],
       "Catch-All address": [
         "Alamat Catch-All"
+      ],
+      "Catch-all address": [
+        "Alamat catch-all"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"

@@ -2330,11 +2330,6 @@
         "Erääntynyt lasku"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch -tuontiapurilla"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } suojaa käyttäjätilisi 24/7 epäilyttävän toiminnan tarkkailulla - sisältäen eskaloinnin tietoturva-asiantuntijoille."
@@ -2407,6 +2402,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch -tuontiapurilla"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6344,17 +6344,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Tilaukset alkaen hintaan ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Poista tili"
@@ -6376,6 +6365,17 @@
       ],
       "Switch plan": [
         "Vaihda tilausta"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Tilaukset alkaen hintaan ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
       ]
     },
     "new_plans: feature": {
@@ -8759,25 +8759,6 @@
         "Hintaan ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } tallennustilaa/käyttäjä"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen käyttöoikeuden uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } oma verkkotunnus",
-        "${ planNumberOfDomains } omaa verkkotunnusta"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } sähköpostiosoite",
-        "${ planNumberOfEmails } sähköpostiosoitetta"
-      ],
-      "Folders, labels, and custom filters": [
-        "Kansioita, tunnisteita ja omia suodattimia"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 Gt tallennustilaa"
@@ -8817,6 +8798,25 @@
       ],
       "Your privacy is our mission": [
         "Yksityisyytesi on tehtävämme"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } tallennustilaa/käyttäjä"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen käyttöoikeuden uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } oma verkkotunnus",
+        "${ planNumberOfDomains } omaa verkkotunnusta"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } sähköpostiosoite",
+        "${ planNumberOfEmails } sähköpostiosoitetta"
+      ],
+      "Folders, labels, and custom filters": [
+        "Kansioita, tunnisteita ja omia suodattimia"
       ]
     },
     "Subscription renewal state": {
