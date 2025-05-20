@@ -6,6 +6,7 @@ import {
     getEmailOrUsername,
     getImportedVaultName,
     importCreditCardItem,
+    importCustomItem,
     importIdentityItem,
     importLoginItem,
     importNoteItem,
@@ -45,7 +46,7 @@ const processLoginItem = async (
     item: Extract<OnePassItem, { categoryUuid: OnePassCategory.LOGIN }>
 ): Promise<ItemImportIntent<'login'>> => {
     const [totp, extraFields] = extractFirst(
-        extract1PasswordExtraFields(item),
+        item.details.sections?.flatMap(extract1PasswordExtraFields) ?? [],
         (extraField): extraField is DeobfuscatedItemExtraField<'totp'> => extraField.type === 'totp'
     );
 
@@ -117,6 +118,20 @@ const processCreditCardItem = (item: Extract<OnePassItem, { categoryUuid: OnePas
     });
 };
 
+const processCustomItem = (item: OnePassItem) => {
+    return importCustomItem({
+        name: item.overview.title,
+        note: item.details.notesPlain,
+        createTime: item.createdAt,
+        modifyTime: item.updatedAt,
+        trashed: item.state === OnePassState.ARCHIVED,
+        sections: item.details.sections?.map((s) => ({
+            sectionName: s.title,
+            sectionFields: extract1PasswordExtraFields(s),
+        })),
+    });
+};
+
 export const read1Password1PuxData = async (file: File): Promise<ImportReaderResult> => {
     try {
         const fileReader = await readZIP(file);
@@ -160,7 +175,7 @@ export const read1Password1PuxData = async (file: File): Promise<ImportReaderRes
                                 return 'loginFields' in unknownItem.details &&
                                     unknownItem.details.loginFields.length > 0
                                     ? attachFilesToItem(await processLoginItem(unknownItem as any), files)
-                                    : attachFilesToItem(processNoteItem(unknownItem as any), files);
+                                    : attachFilesToItem(processCustomItem(unknownItem as any), files);
                         }
                     })();
 

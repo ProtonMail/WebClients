@@ -50,6 +50,9 @@ export enum TelemetryItemType {
     alias = 'alias',
     creditCard = 'credit_card',
     identity = 'identity',
+    sshKey = 'ssh_key',
+    wifi = 'wifi',
+    custom = 'custom',
 }
 
 /** Telemetry payloads support only ints and strings */

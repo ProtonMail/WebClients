@@ -31,7 +31,6 @@ export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmi
                 metadata: { name, note: obfuscate(note), itemUuid: id },
                 files,
                 content,
-                extraData: {},
                 extraFields: [],
             });
         },
