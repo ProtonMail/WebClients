@@ -337,21 +337,23 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
       },
 
       async exportData(format): Promise<Uint8Array> {
-        if (!editorRef.current) {
-          throw new Error('Editor is not initialized')
+        if (editorRef.current) {
+          const editorState = editorRef.current.getEditorState().toJSON()
+
+          try {
+            const result = await exportDataFromEditorState(editorState, format, {
+              fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
+            })
+            return result
+          } catch (error) {
+            void bridge.getClientInvoker().showGenericAlertModal(c('Error').t`Failed to export document.`)
+            throw error
+          }
+        } else if (spreadsheetRef.current && format === 'yjs') {
+          return docState.getDocState()
         }
 
-        const editorState = editorRef.current.getEditorState().toJSON()
-
-        try {
-          const result = await exportDataFromEditorState(editorState, format, {
-            fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
-          })
-          return result
-        } catch (error) {
-          void bridge.getClientInvoker().showGenericAlertModal(c('Error').t`Failed to export document.`)
-          throw error
-        }
+        throw new Error('Could not export data for current doc/sheet')
       },
 
       async printAsPDF(): Promise<void> {
