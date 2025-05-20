@@ -23,7 +23,6 @@ import { SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
-import { useNewsletterSubscriptions } from 'proton-mail/store/newsletterSubscriptions/hook';
 
 import { getCounterMap } from '../../helpers/elements';
 import { useApplyLabels } from '../../hooks/actions/label/useApplyLabels';
@@ -31,9 +30,9 @@ import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import { LabelActionsContextProvider } from './EditLabelContext';
 import { MailSidebarCollapsedButton } from './MailSidebarCollapsedButton';
+import { MailSidebarCustomView } from './MailSidebarCustomView';
 import MailSidebarListActions from './MailSidebarListActions';
 import MailSidebarSystemFolders from './MailSidebarSystemFolders';
-import { MailSidebarViewList } from './MailSidebarViewList';
 import SidebarFolders from './SidebarFolders';
 import SidebarLabels from './SidebarLabels';
 
@@ -78,8 +77,6 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
     const labelsUnread = !!mailboxCount?.find((labelCount) => {
         return (labelCount?.LabelID && isCustomLabel(labelCount.LabelID, labels) && labelCount?.Unread) || 0 > 0;
     });
-
-    const [newsletterSub] = useNewsletterSubscriptions();
 
     useEffect(() => {
         if (folders) {
@@ -301,6 +298,8 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                         moveToFolder={moveToFolder}
                     />
 
+                    <MailSidebarCustomView collapsed={collapsed} onClickExpandNav={onClickExpandNav} />
+
                     {collapsed ? (
                         <MailSidebarCollapsedButton
                             onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_FOLDERS)}
@@ -369,16 +368,6 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                     )}
 
                     {postItems}
-                    {collapsed ? (
-                        <MailSidebarCollapsedButton
-                            onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_VIEWS)}
-                            iconName="grid-3"
-                            title={c('Action').t`Expand navigation bar to see custom views`}
-                            unread={!!newsletterSub.tabs.active.totalCount}
-                        />
-                    ) : (
-                        <MailSidebarViewList />
-                    )}
                 </SidebarList>
             </div>
             {moveScheduledModal}

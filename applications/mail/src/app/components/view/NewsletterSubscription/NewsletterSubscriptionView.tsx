@@ -43,7 +43,8 @@ export const NewsletterSubscriptionView = () => {
         }
     }, [feature?.Value, isDomBusy]);
 
-    if (!newsletterSubscriptionsView || !mailboxRefactoring) {
+    // The view is not availabe on mobile, we want to make sure to avoid showing it to users
+    if (!newsletterSubscriptionsView || !mailboxRefactoring || breakpoints.viewportWidth['<=small']) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
