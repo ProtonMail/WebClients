@@ -3,7 +3,7 @@
     "description": "",
     "license": "GPL-3.0",
     "sideEffects": false,
-    "main": "index.ts",
+    "main": "./src/index.ts",
     "scripts": {
         "check-types": "tsc",
         "create-atom": "ts-node -P create-atom/tsconfig.create-atom.json create-atom/index",
