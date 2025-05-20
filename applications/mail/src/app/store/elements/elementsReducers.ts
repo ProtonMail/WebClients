@@ -461,5 +461,6 @@ export const setParams = (
             keyword: params.search?.keyword,
         });
         state.total[contextFilter] = total;
+        state.retry = newRetry(state.retry, state.params, undefined);
     }
 };
