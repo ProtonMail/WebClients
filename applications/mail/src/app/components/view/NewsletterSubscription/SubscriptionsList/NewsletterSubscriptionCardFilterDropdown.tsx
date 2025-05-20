@@ -97,6 +97,7 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
                     ))}
                 </DropdownMenu>
             </Dropdown>
+
             {renderUpsellModal && (
                 <FiltersUpsellModal
                     modalProps={upsellModalProps}

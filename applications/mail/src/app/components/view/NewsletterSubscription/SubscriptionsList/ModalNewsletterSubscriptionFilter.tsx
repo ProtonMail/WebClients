@@ -3,14 +3,14 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Checkbox, Label, type ModalProps, Prompt } from '@proton/components';
+import { Checkbox, Label, type ModalProps, Prompt, useNotifications } from '@proton/components';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { filterSubscriptionList } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
 import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
-import { getFilterData } from '../helper';
+import { getFilterData, getNewsletterCopyForFilterAction } from '../helper';
 import type { ModalFilterType } from '../interface';
 
 interface Props extends ModalProps {
@@ -54,6 +54,8 @@ const descriptionCopy = (filterType: ModalFilterType) => {
 const ModalNewsletterSubscriptionFilter = ({ subscription, filterType, ...props }: Props) => {
     const [applyToFuture, setApplyToFuture] = useState(false);
 
+    const { createNotification } = useNotifications();
+
     const dispatch = useMailDispatch();
     const subscriptionIndex = useMailSelector(getFilteredSubscriptionIndex(subscription.ID));
 
@@ -65,6 +67,11 @@ const ModalNewsletterSubscriptionFilter = ({ subscription, filterType, ...props 
                 data: getFilterData(filterType, subscription, applyToFuture),
             })
         );
+
+        createNotification({
+            // TODO add undo actions once the API returns a undo token
+            text: getNewsletterCopyForFilterAction(subscription, filterType),
+        });
 
         props?.onClose?.();
     };
