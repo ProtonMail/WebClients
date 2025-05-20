@@ -22,6 +22,7 @@ import createApi from '@proton/shared/lib/api/createApi';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 
+import NotificationManagerInjector from './components/notification/NotificationManagerInjector';
 import * as config from './config';
 import EOContainer from './containers/eo/EOContainer';
 import locales from './locales';
@@ -59,6 +60,7 @@ const App = () => {
                                                 <ApiProvider api={api}>
                                                     <CacheProvider cache={cache}>
                                                         <StandardPublicApp loader={<LoaderPage />} locales={locales}>
+                                                            <NotificationManagerInjector />
                                                             <EOContainer />
                                                         </StandardPublicApp>
                                                     </CacheProvider>
