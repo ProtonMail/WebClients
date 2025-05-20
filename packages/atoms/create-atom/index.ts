@@ -22,7 +22,7 @@ async function run(AtomName: string, options: { tag: string }) {
 
     logIntro(AtomName);
 
-    const atomsDir = '.';
+    const atomsDir = './src';
     const atomDir = `${atomsDir}/${AtomName}`;
 
     // Check to see if a directory at the given path exists

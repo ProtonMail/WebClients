@@ -9,7 +9,7 @@ const config = {
     core: {
         disableTelemetry: true,
     },
-    stories: ['../**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+    stories: ['../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
     staticDirs: [],
     addons: ['@storybook/addon-webpack5-compiler-babel', '@storybook/addon-links', '@storybook/addon-essentials'],
     framework: '@storybook/react-webpack5',
