@@ -49,6 +49,7 @@ import { useStateRef } from '../Hooks/useStateRef'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 // eslint-disable-next-line monorepo-cop/no-relative-import-outside-package
 import { SpreadsheetProvider } from '../../../../../vendor/rowsncolumns/spreadsheet'
+import type { SheetRef } from './Spreadsheet'
 import { Spreadsheet } from './Spreadsheet'
 import { $generateJSONFromSelectedNodes } from '@lexical/clipboard'
 import { getEditorStateFromSerializedNodes } from '../Conversion/get-editor-state-from-nodes'
@@ -89,6 +90,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   })
 
   const editorRef = useRef<LexicalEditor | null>(null)
+  const spreadsheetRef = useRef<SheetRef | null>(null)
   const [clonedEditorState, setClonedEditorState] = useState<EditorState>()
 
   useEffect(() => {
@@ -436,6 +438,15 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
           console.error('Could not copy as markdown', error)
         }
       },
+
+      async getSheetsJSON() {
+        const sheet = spreadsheetRef.current
+        if (!sheet) {
+          return
+        }
+
+        return sheet.getSheetState()
+      },
     }
 
     application.logger.info('Setting request handler for bridge')
@@ -634,6 +645,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
       ) : (
         <SpreadsheetProvider>
           <Spreadsheet
+            ref={spreadsheetRef}
             docState={docState}
             hidden={editorHidden}
             onEditorLoadResult={onEditorLoadResult}

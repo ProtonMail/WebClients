@@ -126,6 +126,10 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('toggleDebugTreeView', [])
   }
 
+  async getSheetsJSON(): Promise<unknown> {
+    return this.invokeEditorMethod('getSheetsJSON', [])
+  }
+
   async initializeEditor(
     documentId: string,
     userAddress: string,
