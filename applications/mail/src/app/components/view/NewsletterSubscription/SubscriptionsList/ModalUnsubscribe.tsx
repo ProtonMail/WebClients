@@ -3,17 +3,29 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Checkbox, ContactImage, Label, type ModalProps, Prompt } from '@proton/components';
+import {
+    Checkbox,
+    ContactImage,
+    Label,
+    type ModalProps,
+    NotificationButton,
+    Prompt,
+    useNotifications,
+} from '@proton/components';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
+import truncate from '@proton/utils/truncate';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/interface';
 import {
     filterSubscriptionList,
     unsubscribeSubscription,
 } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
 import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
 import { getUnsubscribeData } from '../helper';
+import { MAX_LENGTH_SUB_NAME } from '../interface';
 
 import './ModalUnsubscribe.scss';
 
@@ -29,8 +41,25 @@ const ModalUnsubscribe = ({ subscription, ...props }: Props) => {
     const [archive, setArchive] = useState(false);
     const [read, setRead] = useState(false);
 
+    const { createNotification } = useNotifications();
+
     const onUnsubscribe = async () => {
         void dispatch(unsubscribeSubscription({ subscription, subscriptionIndex }));
+
+        const truncatedName = truncate(subscription.Name.trim(), MAX_LENGTH_SUB_NAME);
+        createNotification({
+            text: (
+                <>
+                    <span>{c('Label').t`Unsubscribed from ${truncatedName}.`}</span>
+                    <NotificationButton
+                        onClick={() => {
+                            // TODO update this to a undo action once API returns undo token
+                            dispatch(newsletterSubscriptionsActions.setSelectedTab(SubscriptionTabs.Unsubscribe));
+                        }}
+                    >{c('Action').t`Undo`}</NotificationButton>
+                </>
+            ),
+        });
 
         if (trash || archive || read) {
             await dispatch(

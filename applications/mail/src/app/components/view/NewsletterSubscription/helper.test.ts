@@ -5,6 +5,7 @@ import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/Newsl
 
 import {
     getFilterData,
+    getNewsletterCopyForFilterAction,
     getSubscriptionMoveToFolderName,
     getUnsubscribeData,
     shouldOpenUpsellOnFilterClick,
@@ -240,6 +241,62 @@ describe('Newsletter subscriptions helpers', () => {
                     ])
                 ).toBe(false);
             });
+        });
+    });
+
+    describe('getNewsletterCopyForFilterAction', () => {
+        it('Should return copy for mark as read', () => {
+            expect(
+                getNewsletterCopyForFilterAction(
+                    { ReceivedMessages: { Total: 10 } } as NewsletterSubscription,
+                    'MarkAsRead'
+                )
+            ).toBe('Marked 10 messages as read.');
+        });
+
+        it('Should return copy for move to archive', () => {
+            expect(
+                getNewsletterCopyForFilterAction(
+                    { ReceivedMessages: { Total: 10 } } as NewsletterSubscription,
+                    'MoveToArchive'
+                )
+            ).toBe('Moved 10 messages to Archive.');
+        });
+
+        it('Should return copy for move to trash', () => {
+            expect(
+                getNewsletterCopyForFilterAction(
+                    { ReceivedMessages: { Total: 10 } } as NewsletterSubscription,
+                    'MoveToTrash'
+                )
+            ).toBe('Moved 10 messages to Trash.');
+        });
+
+        it('Should return singular copy for mark as read', () => {
+            expect(
+                getNewsletterCopyForFilterAction(
+                    { ReceivedMessages: { Total: 1 } } as NewsletterSubscription,
+                    'MarkAsRead'
+                )
+            ).toBe('Marked 1 message as read.');
+        });
+
+        it('Should return singular copy for move to archive', () => {
+            expect(
+                getNewsletterCopyForFilterAction(
+                    { ReceivedMessages: { Total: 1 } } as NewsletterSubscription,
+                    'MoveToArchive'
+                )
+            ).toBe('Moved 1 message to Archive.');
+        });
+
+        it('Should return singular copy for move to trash', () => {
+            expect(
+                getNewsletterCopyForFilterAction(
+                    { ReceivedMessages: { Total: 1 } } as NewsletterSubscription,
+                    'MoveToTrash'
+                )
+            ).toBe('Moved 1 message to Trash.');
         });
     });
 });
