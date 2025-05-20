@@ -400,11 +400,11 @@
       "Move to another vault": [
         "Verplaatsen naar andere kluis"
       ],
-      "Move to trash": [
-        "Naar prullenbak verplaatsen"
-      ],
       "Move to Trash": [
         "Verplaats naar prullenbak"
+      ],
+      "Move to trash": [
+        "Naar prullenbak verplaatsen"
       ],
       "Multiple select": [
         "Meervoudige selectie"
@@ -681,6 +681,11 @@
         "Pak deze deal"
       ]
     },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubileumaanbieding"
+      ]
+    },
     "anniversary_2025: Offer": {
       "500 GB encrypted storage": [
         "500 GB versleutelde opslag"
@@ -744,11 +749,6 @@
       ],
       "years": [
         "jaar"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Jubileumaanbieding"
       ]
     },
     "anniversary_2025: Offers": {
@@ -1948,10 +1948,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
