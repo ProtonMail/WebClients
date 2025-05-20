@@ -1,6 +1,7 @@
 /* eslint-disable monorepo-cop/no-relative-import-outside-package */
 
-import { useEffect, useMemo, useRef, useState } from 'react'
+import type { ForwardedRef } from 'react'
+import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import type { SheetData } from '../../../../../vendor/rowsncolumns/spreadsheet-state'
 import {
   DeleteSheetConfirmation,
@@ -79,19 +80,35 @@ import '../../../../../vendor/rowsncolumns/spreadsheet.min.css'
 import type { EditorLoadResult } from '../Lib/EditorLoadResult'
 import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
 
-export function Spreadsheet({
-  docState,
-  hidden,
-  onEditorLoadResult,
-  editorInitializationConfig,
-  systemMode,
-}: {
-  docState: DocStateInterface
-  hidden: boolean
-  onEditorLoadResult: EditorLoadResult
-  editorInitializationConfig: EditorInitializationConfig | undefined
-  systemMode: EditorSystemMode
-}) {
+export type SheetRef = {
+  getSheetState: () => {
+    sheets: Sheet[]
+    sheetData: SheetData<CellData>
+    conditionalFormats: ConditionalFormatRule[]
+    protectedRanges: ProtectedRange[]
+    charts: EmbeddedChart[]
+    embeds: EmbeddedObject[]
+    tables: TableView[]
+    namedRanges: NamedRange[]
+  }
+}
+
+export const Spreadsheet = forwardRef(function Spreadsheet(
+  {
+    docState,
+    hidden,
+    onEditorLoadResult,
+    editorInitializationConfig,
+    systemMode,
+  }: {
+    docState: DocStateInterface
+    hidden: boolean
+    onEditorLoadResult: EditorLoadResult
+    editorInitializationConfig: EditorInitializationConfig | undefined
+    systemMode: EditorSystemMode
+  },
+  ref: ForwardedRef<SheetRef>,
+) {
   const { userName } = useSyncedState()
 
   const didImportFromExcelFile = useRef(false)
@@ -109,6 +126,19 @@ export function Spreadsheet({
   const locale = 'en-GB'
   const currency = 'USD'
   const yDoc = useMemo(() => docState.getDoc(), [docState])
+
+  useImperativeHandle(ref, () => ({
+    getSheetState: () => ({
+      sheets,
+      sheetData,
+      conditionalFormats,
+      protectedRanges,
+      charts,
+      embeds,
+      tables,
+      namedRanges,
+    }),
+  }))
 
   const isRevisionMode = systemMode === EditorSystemMode.Revision
 
@@ -696,4 +726,4 @@ export function Spreadsheet({
       </div>
     </>
   )
-}
+})
