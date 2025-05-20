@@ -400,10 +400,10 @@
       "Move to another vault": [
         "Przenieś do innego sejfu"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Przenieś do kosza"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Przenieś do kosza"
       ],
       "Multiple select": [
@@ -688,6 +688,11 @@
         "Skorzystaj z oferty"
       ]
     },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Oferta jubileuszowa"
+      ]
+    },
     "anniversary_2025: Offer": {
       "500 GB encrypted storage": [
         "500 GB zaszyfrowanej przestrzeni dyskowej"
@@ -751,11 +756,6 @@
       ],
       "years": [
         "lata"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Oferta jubileuszowa"
       ]
     },
     "anniversary_2025: Offers": {
@@ -2003,10 +2003,7 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
