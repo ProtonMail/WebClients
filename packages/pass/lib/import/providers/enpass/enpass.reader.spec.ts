@@ -27,7 +27,7 @@ describe('Import Enpass json', () => {
 
         const [primary] = payload.vaults;
         expect(primary.name).not.toBeUndefined();
-        expect(primary.items.length).toEqual(11);
+        expect(primary.items.length).toEqual(16);
 
         /* Login */
         const loginItem1 = deobfuscateItem(primary.items[0]) as unknown as ItemImportIntent<'login'>;
@@ -146,9 +146,21 @@ describe('Import Enpass json', () => {
         expect(loginFileAttachments.files?.[1]).toContain('pass-banner.jpg');
     });
 
-    test('correctly keeps a reference to ignored items', () => {
-        expect(payload.ignored).not.toEqual([]);
-        expect(payload.ignored.length).toEqual(5);
-        expect(payload.ignored[0]).toEqual('[Travel] Passport Sample');
+    test('correctly parses custom items', () => {
+        expect(payload.ignored.length).toEqual(0);
+
+        const [primary] = payload.vaults;
+        const travelItem1 = deobfuscateItem(primary.items[11]) as unknown as ItemImportIntent<'custom'>;
+        expect(travelItem1.type).toEqual('custom');
+        expect(travelItem1.metadata.name).toEqual('Passport Sample');
+        expect(travelItem1.extraFields.length).toEqual(8);
+        expect((travelItem1.extraFields[0].data as any).content).toEqual('ENP123456789');
+        expect((travelItem1.extraFields[1].data as any).content).toEqual('Emily');
+        expect((travelItem1.extraFields[2].data as any).content).toEqual('Female');
+        expect((travelItem1.extraFields[3].data as any).content).toEqual('Regular');
+        expect((travelItem1.extraFields[4].data as any).content).toEqual('United States of America');
+        expect((travelItem1.extraFields[5].data as any).content).toEqual('New York');
+        expect((travelItem1.extraFields[6].data as any).content).toEqual('01/01/1989');
+        expect((travelItem1.extraFields[7].data as any).content).toEqual('10/01/2027');
     });
 });

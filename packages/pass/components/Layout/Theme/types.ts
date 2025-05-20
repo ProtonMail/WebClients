@@ -7,6 +7,7 @@ export enum SubTheme {
     TEAL = 'ui-teal',
     VIOLET = 'ui-violet',
     PURPLE = 'ui-purple',
+    GRAY = 'ui-gray',
 }
 
 export const itemTypeToSubThemeClassName: ItemMap<SubTheme> = {
@@ -15,6 +16,9 @@ export const itemTypeToSubThemeClassName: ItemMap<SubTheme> = {
     login: SubTheme.VIOLET,
     note: SubTheme.ORANGE,
     identity: SubTheme.PURPLE,
+    sshKey: SubTheme.GRAY,
+    wifi: SubTheme.GRAY,
+    custom: SubTheme.GRAY,
 };
 
 /** Avoid importing `ThemeTypes` as it is not

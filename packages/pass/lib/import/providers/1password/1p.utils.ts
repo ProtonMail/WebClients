@@ -151,50 +151,42 @@ export const extract1PasswordLegacyURLs = (item: OnePassLegacyItem): string[] =>
     return item.secureContents.URLs.map(({ url }: OnePassLegacyURL) => url);
 };
 
-export const extract1PasswordExtraFields = (item: OnePassItem): DeobfuscatedItemExtraField[] => {
-    const { sections } = item.details;
-    if (!sections) return [];
+export const extract1PasswordExtraFields = (section: OnePassSection): DeobfuscatedItemExtraField[] => {
+    return section.fields
+        .filter((field) => is1PasswordSupportedField(field) && !is1PasswordCCField(field))
+        .map<MaybeNull<DeobfuscatedItemExtraField>>(({ title, value }) => {
+            const [fieldKey] = objectKeys(value);
+            const data = value[fieldKey];
+            if (!data) return null;
 
-    return (
-        sections
-            /* check that field value key is supported and remove any credit card fields */
-            .flatMap(({ fields }) =>
-                fields.filter((field) => is1PasswordSupportedField(field) && !is1PasswordCCField(field))
-            )
-            .map<MaybeNull<DeobfuscatedItemExtraField>>(({ title, value }) => {
-                const [fieldKey] = objectKeys(value);
-                const data = value[fieldKey];
-                if (!data) return null;
-
-                switch (fieldKey) {
-                    case OnePassFieldKey.STRING:
-                    case OnePassFieldKey.DATE:
-                    case OnePassFieldKey.MONTH_YEAR:
-                    case OnePassFieldKey.URL:
-                        return {
-                            fieldName: title || c('Label').t`Text`,
-                            type: 'text',
-                            data: { content: format1PasswordFieldValue(value, fieldKey) },
-                        };
-                    case OnePassFieldKey.TOTP:
-                        return {
-                            fieldName: title || c('Label').t`TOTP`,
-                            type: 'totp',
-                            data: { totpUri: format1PasswordFieldValue(value, fieldKey) },
-                        };
-                    case OnePassFieldKey.CONCEALED:
-                    case OnePassFieldKey.CREDIT_CARD_NUMBER:
-                        return {
-                            fieldName: title || c('Label').t`Hidden`,
-                            type: 'hidden',
-                            data: { content: format1PasswordFieldValue(value, fieldKey) },
-                        };
-                    default:
-                        return null;
-                }
-            })
-            .filter(truthy)
-    );
+            switch (fieldKey) {
+                case OnePassFieldKey.STRING:
+                case OnePassFieldKey.DATE:
+                case OnePassFieldKey.MONTH_YEAR:
+                case OnePassFieldKey.URL:
+                    return {
+                        fieldName: title || c('Label').t`Text`,
+                        type: 'text',
+                        data: { content: format1PasswordFieldValue(value, fieldKey) },
+                    };
+                case OnePassFieldKey.TOTP:
+                    return {
+                        fieldName: title || c('Label').t`TOTP`,
+                        type: 'totp',
+                        data: { totpUri: format1PasswordFieldValue(value, fieldKey) },
+                    };
+                case OnePassFieldKey.CONCEALED:
+                case OnePassFieldKey.CREDIT_CARD_NUMBER:
+                    return {
+                        fieldName: title || c('Label').t`Hidden`,
+                        type: 'hidden',
+                        data: { content: format1PasswordFieldValue(value, fieldKey) },
+                    };
+                default:
+                    return null;
+            }
+        })
+        .filter(truthy);
 };
 
 export const extract1PasswordLegacyExtraFields = (item: OnePassLegacyItem) => {
