@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button, Kbd } from '@proton/atoms';
-import { Icon, Tooltip } from '@proton/components';
+import { Icon, Tooltip, type IconName } from '@proton/components';
 import { ItemFeatureDiscovery } from '@proton/pass/components/Layout/Panel/ItemFeatureDiscovery/ItemFeatureDiscovery';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { useSaveShortcut } from '@proton/pass/hooks/useSaveShortcut';
@@ -21,6 +21,7 @@ type Props = {
     handleCancelClick: () => void;
     submitButton?: ReactNode;
     actions?: ReactNode;
+    cancelIcon?: IconName;
 } & Omit<DiscardableModalProps, 'onDiscard'>;
 
 function getItemTypeSubmitButtonLabel(type: ItemType) {
@@ -49,6 +50,7 @@ export const ItemCreatePanel = ({
     children,
     handleCancelClick,
     actions,
+    cancelIcon = 'cross',
 }: Props) => {
     useSaveShortcut(() => {
         if (valid && !discardable) {
@@ -75,7 +77,7 @@ export const ItemCreatePanel = ({
                                     onClick={() => (discardable ? handleCancelClick() : props.confirm())}
                                     title={c('Action').t`Cancel`}
                                 >
-                                    <Icon name="cross" alt={c('Action').t`Cancel`} />
+                                    <Icon name={cancelIcon} alt={c('Action').t`Cancel`} />
                                 </Button>,
                                 <div key="actions" className="flex flex-nowrap gap-2">
                                     {actions}

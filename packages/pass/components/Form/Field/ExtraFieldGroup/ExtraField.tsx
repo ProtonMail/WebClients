@@ -10,6 +10,7 @@ import type { DeobfuscatedItemExtraField, ExtraFieldType } from '@proton/pass/ty
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import clsx from '@proton/utils/clsx';
 
+import { BaseDateField } from '../DateField';
 import type { FieldBoxProps } from '../Layout/FieldBox';
 import { FieldBox } from '../Layout/FieldBox';
 import type { BaseTextFieldProps } from '../TextField';
@@ -52,6 +53,11 @@ export const getExtraFieldOptions = (): Record<ExtraFieldType, ExtraFieldOption>
         // translator: label for a field that is hidden. Singular only.
         label: c('Label').t`Hidden`,
         placeholder: c('Placeholder').t`Add hidden text`,
+    },
+    timestamp: {
+        icon: 'calendar-grid',
+        label: c('Label').t`Date`,
+        placeholder: c('Placeholder').t`Add date`,
     },
 });
 
@@ -126,6 +132,26 @@ export const ExtraFieldComponent: FC<ExtraFieldProps> = ({
                                     onChange: onChangeHandler((evt, values) =>
                                         partialMerge(values, { data: { content: evt.target.value } })
                                     ),
+                                }}
+                                {...rest}
+                            />
+                        );
+                    }
+                    case 'timestamp': {
+                        const fieldError = error as ExtraFieldError<'timestamp'>;
+                        return (
+                            <BaseDateField
+                                placeholder={placeholder}
+                                error={touched && (error?.fieldName || fieldError?.data?.timestamp)}
+                                field={{
+                                    ...field,
+                                    value: field.value.data.timestamp,
+                                    onChange: (stringValue: any) => {
+                                        void rest.form.setFieldValue(
+                                            field.name,
+                                            partialMerge(field.value, { data: { timestamp: stringValue } })
+                                        );
+                                    },
                                 }}
                                 {...rest}
                             />

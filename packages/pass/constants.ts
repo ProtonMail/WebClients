@@ -71,6 +71,7 @@ export enum UpsellRefPrefix {
 
 export enum UpsellRef {
     DEFAULT = 'banner',
+    CUSTOM_ITEMS = 'custom_items',
     FREE_TRIAL = 'free_trial_banner',
     IDENTITY_CUSTOM_FIELDS = 'identity_custom_fields',
     ITEM_SHARING = 'item_sharing',

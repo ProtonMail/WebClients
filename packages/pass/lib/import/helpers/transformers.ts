@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
 import PassUI from '@proton/pass/lib/core/ui.proxy';
-import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
+import { obfuscateExtraFields, obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import type {
+    CustomSectionValue,
     DeobfuscatedItemExtraField,
     Item,
     ItemContent,
@@ -11,6 +12,7 @@ import type {
     Maybe,
     MaybeNull,
 } from '@proton/pass/types';
+import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
 import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -107,6 +109,7 @@ export const importLoginItem = (options: {
 export const importNoteItem = (options: {
     name?: MaybeNull<string>;
     note?: MaybeNull<string>;
+    extraFields?: DeobfuscatedItemExtraField[];
     trashed?: boolean;
     createTime?: number;
     modifyTime?: number;
@@ -119,7 +122,7 @@ export const importNoteItem = (options: {
             itemUuid: uniqueId(),
         },
         content: {},
-        extraFields: [],
+        extraFields: obfuscateExtraFields(options.extraFields),
         trashed: options.trashed ?? false,
         createTime: options.createTime,
         modifyTime: options.modifyTime,
@@ -134,6 +137,7 @@ export const importCreditCardItem = (options: {
     verificationNumber?: MaybeNull<string>;
     expirationDate?: MaybeNull<string>;
     pin?: MaybeNull<string>;
+    extraFields?: DeobfuscatedItemExtraField[];
     trashed?: boolean;
     createTime?: number;
     modifyTime?: number;
@@ -154,7 +158,7 @@ export const importCreditCardItem = (options: {
             pin: options.pin || '',
         },
 
-        extraFields: [],
+        extraFields: options.extraFields ?? [],
     }) as Item<'creditCard'>),
     extraData: [],
     trashed: options.trashed ?? false,
@@ -171,6 +175,7 @@ export const importIdentityItem = ({
 }: ItemContent<'identity'> & {
     name?: MaybeNull<string>;
     note?: MaybeNull<string>;
+    extraFields?: DeobfuscatedItemExtraField[];
     createTime?: number;
     modifyTime?: number;
 }): ItemImportIntent<'identity'> => ({
@@ -187,3 +192,90 @@ export const importIdentityItem = ({
     createTime: createTime,
     modifyTime: modifyTime,
 });
+
+export const importCustomItem = (options: {
+    name?: MaybeNull<string>;
+    note?: MaybeNull<string>;
+    extraFields?: DeobfuscatedItemExtraField[];
+    trashed?: boolean;
+    createTime?: number;
+    modifyTime?: number;
+    sections?: CustomSectionValue[];
+}): ItemImportIntent<'custom'> => {
+    return {
+        type: 'custom',
+        metadata: {
+            name: options.name || c('Label').t`Unnamed custom item`,
+            note: obfuscate(options.note || ''),
+            itemUuid: uniqueId(),
+        },
+        content: { sections: options.sections ?? [] },
+        extraData: [],
+        extraFields: obfuscateExtraFields(options.extraFields),
+        trashed: options.trashed ?? false,
+        createTime: options.createTime,
+        modifyTime: options.modifyTime,
+    };
+};
+
+export const importSshKeyItem = (options: {
+    name?: MaybeNull<string>;
+    privateKey?: MaybeNull<string>;
+    publicKey?: MaybeNull<string>;
+    note?: MaybeNull<string>;
+    extraFields?: DeobfuscatedItemExtraField[];
+    trashed?: boolean;
+    createTime?: number;
+    modifyTime?: number;
+}): ItemImportIntent<'sshKey'> => {
+    return {
+        type: 'sshKey',
+        metadata: {
+            name: options.name || c('Label').t`Unnamed SSH key`,
+            note: obfuscate(options.note || ''),
+            itemUuid: uniqueId(),
+        },
+        content: {
+            privateKey: obfuscate(options.privateKey ?? ''),
+            publicKey: options.publicKey ?? '',
+            sections: [],
+        },
+        extraData: [],
+        extraFields: obfuscateExtraFields(options.extraFields),
+        trashed: options.trashed ?? false,
+        createTime: options.createTime,
+        modifyTime: options.modifyTime,
+    };
+};
+
+export const importWifiItem = (options: {
+    name?: MaybeNull<string>;
+    ssid?: MaybeNull<string>;
+    password?: MaybeNull<string>;
+    security: MaybeNull<WifiSecurity>;
+    note?: MaybeNull<string>;
+    extraFields?: DeobfuscatedItemExtraField[];
+    trashed?: boolean;
+    createTime?: number;
+    modifyTime?: number;
+}): ItemImportIntent<'wifi'> => {
+    return {
+        type: 'wifi',
+        metadata: {
+            name: options.name || c('Label').t`Unnamed WiFi item`,
+            note: obfuscate(options.note || ''),
+            itemUuid: uniqueId(),
+        },
+        content: {
+            ssid: options.ssid ?? '',
+            password: obfuscate(options.password ?? ''),
+            security: options.security ?? WifiSecurity.UnspecifiedWifiSecurity,
+            sections: [],
+        },
+        extraData: [],
+        extraFields: obfuscateExtraFields(options.extraFields),
+        trashed: options.trashed ?? false,
+        createTime: options.createTime,
+        modifyTime: options.modifyTime,
+    };
+};
