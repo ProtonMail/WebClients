@@ -403,11 +403,11 @@
       "Move to another vault": [
         "Mover para outro cofre"
       ],
-      "Move to trash": [
-        "Mover para a lixeira"
-      ],
       "Move to Trash": [
         "Mover para a Lixeira"
+      ],
+      "Move to trash": [
+        "Mover para a lixeira"
       ],
       "Multiple select": [
         "Seleção múltipla"
@@ -687,6 +687,11 @@
         "Aproveitar a oferta"
       ]
     },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Oferta de aniversário"
+      ]
+    },
     "anniversary_2025: Offer": {
       "500 GB encrypted storage": [
         "500 GB de armazenamento criptografado"
@@ -750,11 +755,6 @@
       ],
       "years": [
         "anos"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Oferta de aniversário"
       ]
     },
     "anniversary_2025: Offers": {
@@ -1957,10 +1957,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
