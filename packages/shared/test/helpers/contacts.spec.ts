@@ -1,3 +1,5 @@
+import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
+
 import { getContactImageSource } from '../../lib/helpers/contacts';
 
 const uid = 'uid';
@@ -28,7 +30,7 @@ describe('getContactImageSource', () => {
             origin: windowOrigin,
         });
 
-        const expected = `${windowOrigin}/api/core/v4/images?Url=${encodeURIComponent(
+        const expected = `${windowOrigin}/api/${PROXY_IMG_URL}?Url=${encodeURIComponent(
             originalURL
         )}&DryRun=0&UID=${uid}`;
 
