@@ -39,6 +39,8 @@ export const SearchBar = memo(({ disabled, trash }: Props) => {
     const vault = useSelector(selectShare<ShareType.Vault>(selectedShareId));
 
     const placeholder = useMemo(() => {
+        if (trash) return c('Placeholder').t`Search in Trash`;
+
         const ITEM_TYPE_TO_LABEL_MAP = getItemTypeOptions();
         const pluralItemType = ITEM_TYPE_TO_LABEL_MAP[type].label.toLowerCase();
 
@@ -67,7 +69,7 @@ export const SearchBar = memo(({ disabled, trash }: Props) => {
                     : c('Placeholder').t`Search ${pluralItemType} in all items`;
             }
         }
-    }, [vault, type, scope]);
+    }, [vault, type, scope, trash]);
 
     const handleClear = () => {
         setSearch('');
@@ -97,12 +99,13 @@ export const SearchBar = memo(({ disabled, trash }: Props) => {
         <Input
             autoFocus
             className="pass-searchbar"
-            inputClassName="text-rg"
+            inputClassName="text-rg text-ellipsis"
             disabled={disabled}
             onBlur={handleBlur}
             onFocus={handleFocus}
             onValue={setSearch}
-            placeholder={`${trash ? c('Placeholder').t`Search in Trash` : placeholder}…`}
+            placeholder={`${placeholder}…`}
+            title={`${placeholder}…`}
             prefix={<Icon name="magnifier" />}
             ref={inputRef}
             suffix={
