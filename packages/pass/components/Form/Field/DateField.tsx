@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 import formatISO from 'date-fns/formatISO';
 import { type FieldProps } from 'formik';
 
-import { type Input } from '@proton/atoms/index';
+import { type Input } from '@proton/atoms';
 import { DateInputTwo, InputFieldTwo } from '@proton/components';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import { type Maybe } from '@proton/pass/types/utils';
