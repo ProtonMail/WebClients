@@ -8324,54 +8324,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/storybook@workspace:packages/storybook":
-  version: 0.0.0-use.local
-  resolution: "@proton/storybook@workspace:packages/storybook"
-  dependencies:
-    "@babel/core": "npm:^7.27.1"
-    "@babel/plugin-transform-runtime": "npm:^7.27.1"
-    "@babel/preset-env": "npm:^7.27.2"
-    "@babel/preset-react": "npm:^7.27.1"
-    "@babel/preset-typescript": "npm:^7.27.1"
-    "@playwright/test": "npm:^1.52.0"
-    "@proton/atoms": "workspace:^"
-    "@proton/colors": "workspace:^"
-    "@proton/i18n": "workspace:^"
-    "@proton/icons": "workspace:^"
-    "@proton/pack": "workspace:^"
-    "@proton/shared": "workspace:^"
-    "@proton/styles": "workspace:^"
-    "@storybook/addon-essentials": "npm:^8.6.12"
-    "@storybook/addon-interactions": "npm:^8.6.12"
-    "@storybook/addon-links": "npm:^8.6.12"
-    "@storybook/addon-webpack5-compiler-babel": "npm:^3.0.6"
-    "@storybook/blocks": "npm:^8.6.12"
-    "@storybook/manager-api": "npm:^8.6.12"
-    "@storybook/react": "npm:^8.6.12"
-    "@storybook/react-webpack5": "npm:^8.6.12"
-    "@storybook/source-loader": "npm:^8.6.12"
-    "@storybook/test": "npm:^8.6.12"
-    "@storybook/theming": "npm:^8.6.12"
-    "@types/node": "npm:^22.15.17"
-    "@types/react": "npm:^18.3.21"
-    "@types/react-dom": "npm:^18.3.7"
-    "@types/tinycolor2": "npm:^1.4.6"
-    babel-loader: "npm:^10.0.0"
-    http-server: "npm:^14.1.1"
-    iconv-lite: "npm:^0.6.3"
-    react: "npm:^18.3.1"
-    react-dom: "npm:^18.3.1"
-    storybook: "npm:^8.6.12"
-    tinycolor2: "npm:^1.6.0"
-    ts-loader: "npm:^9.5.2"
-    ts-node: "npm:^10.9.2"
-    ttag: "npm:^1.8.7"
-    typescript: "npm:^5.8.3"
-    wait-on: "npm:^8.0.3"
-    webpack: "npm:^5.99.8"
-  languageName: unknown
-  linkType: soft
-
 "@proton/stylelint-config-proton@workspace:^, @proton/stylelint-config-proton@workspace:packages/stylelint-config-proton":
   version: 0.0.0-use.local
   resolution: "@proton/stylelint-config-proton@workspace:packages/stylelint-config-proton"
@@ -9819,7 +9771,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-essentials@npm:^8.6.12, @storybook/addon-essentials@npm:^8.6.14":
+"@storybook/addon-essentials@npm:^8.6.14":
   version: 8.6.14
   resolution: "@storybook/addon-essentials@npm:8.6.14"
   dependencies:
@@ -9850,7 +9802,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-interactions@npm:^8.6.12, @storybook/addon-interactions@npm:^8.6.14":
+"@storybook/addon-interactions@npm:^8.6.14":
   version: 8.6.14
   resolution: "@storybook/addon-interactions@npm:8.6.14"
   dependencies:
@@ -9893,7 +9845,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-links@npm:^8.6.12, @storybook/addon-links@npm:^8.6.14":
+"@storybook/addon-links@npm:^8.6.14":
   version: 8.6.14
   resolution: "@storybook/addon-links@npm:8.6.14"
   dependencies:
@@ -10142,7 +10094,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/blocks@npm:8.6.14, @storybook/blocks@npm:^8.6.12, @storybook/blocks@npm:^8.6.14":
+"@storybook/blocks@npm:8.6.14, @storybook/blocks@npm:^8.6.14":
   version: 8.6.14
   resolution: "@storybook/blocks@npm:8.6.14"
   dependencies:
@@ -10746,7 +10698,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/manager-api@npm:8.6.14, @storybook/manager-api@npm:^8.6.12, @storybook/manager-api@npm:^8.6.14":
+"@storybook/manager-api@npm:8.6.14, @storybook/manager-api@npm:^8.6.14":
   version: 8.6.14
   resolution: "@storybook/manager-api@npm:8.6.14"
   peerDependencies:
@@ -10991,7 +10943,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react-webpack5@npm:^8.6.12, @storybook/react-webpack5@npm:^8.6.14":
+"@storybook/react-webpack5@npm:^8.6.14":
   version: 8.6.14
   resolution: "@storybook/react-webpack5@npm:8.6.14"
   dependencies:
@@ -11010,7 +10962,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react@npm:8.6.14, @storybook/react@npm:^8.6.12, @storybook/react@npm:^8.6.14":
+"@storybook/react@npm:8.6.14, @storybook/react@npm:^8.6.14":
   version: 8.6.14
   resolution: "@storybook/react@npm:8.6.14"
   dependencies:
@@ -11149,7 +11101,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/source-loader@npm:^8.6.12, @storybook/source-loader@npm:^8.6.14":
+"@storybook/source-loader@npm:^8.6.14":
   version: 8.6.14
   resolution: "@storybook/source-loader@npm:8.6.14"
   dependencies:
@@ -11208,7 +11160,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/test@npm:8.6.14, @storybook/test@npm:^8.6.12":
+"@storybook/test@npm:8.6.14":
   version: 8.6.14
   resolution: "@storybook/test@npm:8.6.14"
   dependencies:
@@ -11240,7 +11192,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/theming@npm:8.6.14, @storybook/theming@npm:^8.6.12, @storybook/theming@npm:^8.6.14":
+"@storybook/theming@npm:8.6.14, @storybook/theming@npm:^8.6.14":
   version: 8.6.14
   resolution: "@storybook/theming@npm:8.6.14"
   peerDependencies:
@@ -41794,7 +41746,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:^8.6.12, storybook@npm:^8.6.14":
+"storybook@npm:^8.6.14":
   version: 8.6.14
   resolution: "storybook@npm:8.6.14"
   dependencies:
