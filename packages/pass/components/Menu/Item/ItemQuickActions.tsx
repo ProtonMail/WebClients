@@ -31,10 +31,14 @@ import type { ItemType, MaybeNull } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { truthy } from '@proton/pass/utils/fp/predicates';
 import noop from '@proton/utils/noop';
 
-type QuickAction = { label: string; type: ItemType; locked?: boolean };
+type QuickAction = {
+    label: string;
+    type: ItemType;
+    locked?: boolean;
+    hidden?: boolean;
+};
 
 type Props = {
     /** Current origin if in the extension to hydrate the generated
@@ -78,18 +82,18 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
         });
     };
 
-    const quickActions = useMemo<QuickAction[]>(
-        () =>
-            [
-                { label: c('Label').t`Login`, type: 'login' } as const,
-                { label: c('Label').t`Alias`, type: 'alias' } as const,
-                { label: c('Label').t`Card`, type: 'creditCard', locked: isFreePlan } as const,
-                { label: c('Label').t`Note`, type: 'note' } as const,
-                { label: c('Label').t`Identity`, type: 'identity' } as const,
-                showCustomItem && ({ label: c('Label').t`More`, type: 'custom', locked: isFreePlan } as const),
-            ].filter(truthy),
-        []
-    );
+    const quickActions = useMemo<QuickAction[]>(() => {
+        const actions: QuickAction[] = [
+            { label: c('Label').t`Login`, type: 'login' },
+            { label: c('Label').t`Alias`, type: 'alias' },
+            { label: c('Label').t`Card`, type: 'creditCard', locked: isFreePlan },
+            { label: c('Label').t`Note`, type: 'note' },
+            { label: c('Label').t`Identity`, type: 'identity' },
+            { label: c('Label').t`More`, type: 'custom', locked: isFreePlan, hidden: !showCustomItem },
+        ];
+
+        return actions.filter(({ hidden }) => !hidden);
+    }, [showCustomItem]);
 
     const disabled = !useSelector(selectCanCreateItems);
     const vaultCreationDisabled = useSelector(selectOrganizationVaultCreationDisabled);
