@@ -16,8 +16,10 @@ import type {
     IFrameState,
 } from 'proton-pass-extension/app/content/types';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
+import { sendTelemetryEvent } from 'proton-pass-extension/app/content/utils/telemetry';
 import type { Runtime } from 'webextension-polyfill';
 
+import { MODEL_VERSION } from '@proton/pass/constants';
 import {
     contentScriptMessage,
     portForwardingMessage,
@@ -25,6 +27,7 @@ import {
 } from '@proton/pass/lib/extension/message/send-message';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';
 import { pixelEncoder } from '@proton/pass/utils/dom/computed-styles';
 import { createElement } from '@proton/pass/utils/dom/create-element';
@@ -181,6 +184,8 @@ export const createIFrameApp = <A>({
             iframe.classList.remove('visible');
             state.visible = false;
             state.action = null;
+
+            sendTelemetryEvent(TelemetryEventName.ExtensionUsed, {}, { modelVersion: MODEL_VERSION });
 
             void sendPortMessage({ type: IFramePortMessageType.IFRAME_HIDDEN });
         }
