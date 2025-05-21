@@ -35,7 +35,7 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import clsx from '@proton/utils/clsx';
 
 import { CustomFormSections } from './CustomFormSections';
-import { type CustomTemplate, customTemplateToFormFields, groupedTemplates } from './CustomTemplates';
+import { type CustomTemplate, customTemplateToFormFields, getGroupedTemplates } from './CustomTemplates';
 
 const getInitialValues = <T extends ItemCustomType>(
     type: ItemCustomType,
@@ -194,6 +194,7 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
 
     const initialValues = useMemo(() => getInitialValues(type, shareId), []);
     const initialErrors = useMemo(() => validateCustomItemForm(initialValues), []);
+    const groups = useMemo(getGroupedTemplates, []);
 
     const form = useFormik<CustomItemFormValues>({
         initialValues,
@@ -246,28 +247,29 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
             {({ didEnter }) => (
                 <>
                     {!showForm &&
-                        groupedTemplates.map((g) => (
-                            <div key={g.label} className={clsx(g.theme, 'mb-4')}>
-                                <div className="mb-2 color-weak">{g.label}</div>
+                        groups.map(({ label, theme, templates }) => (
+                            <div key={label} className={clsx(theme, 'mb-4')}>
+                                <div className="mb-2 color-weak">{label}</div>
                                 <div className="grid gap-3" style={{ gridTemplateColumns: '1fr 1fr' }}>
-                                    {g.templates.map((t) => (
+                                    {templates.map((template) => (
                                         <Button
-                                            key={t.label}
+                                            key={template.label}
                                             pill
                                             color="weak"
                                             shape="solid"
                                             className="w-full"
-                                            onClick={() => onSelectTemplate(t)}
+                                            onClick={() => onSelectTemplate(template)}
                                         >
                                             <div className="flex items-center w-full text-left">
-                                                <Icon name={t.icon} className="mr-2" />
-                                                <span>{t.label}</span>
+                                                <Icon name={template.icon} className="mr-2" />
+                                                <span>{template.label}</span>
                                             </div>
                                         </Button>
                                     ))}
                                 </div>
                             </div>
                         ))}
+
                     {showForm && (
                         <FormikProvider value={form}>
                             <Form id={FORM_ID} className="ui-violet">
