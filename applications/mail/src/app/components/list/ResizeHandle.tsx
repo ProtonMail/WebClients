@@ -4,8 +4,6 @@ import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
-import './ResizeHandle.scss';
-
 export enum ResizeHandlePosition {
     LEFT = 'left',
     RIGHT = 'right',
@@ -15,29 +13,22 @@ interface Props {
     enableResize: (event: React.MouseEvent) => void;
     resetWidth: () => void;
     scrollBarWidth: number;
-    isAbsolute?: boolean;
     position?: ResizeHandlePosition;
 }
 
-export const ResizeHandle = ({
-    resizeAreaRef,
-    enableResize,
-    resetWidth,
-    scrollBarWidth,
-    isAbsolute = false,
-    position = ResizeHandlePosition.RIGHT,
-}: Props) => {
+export const ResizeHandle = ({ resizeAreaRef, enableResize, resetWidth, scrollBarWidth, position }: Props) => {
     return (
-        <div className="resize-area-container" style={{ '--scrollbar-width': scrollBarWidth }}>
+        <div
+            className={clsx('resize-area-container', {
+                'right-0 absolute': position === ResizeHandlePosition.RIGHT,
+                'left-0 absolute': position === ResizeHandlePosition.LEFT,
+            })}
+            style={{ '--scrollbar-width': scrollBarWidth }}
+        >
             <button
                 type="button"
                 ref={resizeAreaRef}
-                className={clsx(
-                    'resize-area-button cursor-col-resize',
-                    isAbsolute ? 'absolute' : '',
-                    position === ResizeHandlePosition.RIGHT ? 'right-0' : '',
-                    position === ResizeHandlePosition.LEFT ? 'left-0' : ''
-                )}
+                className="resize-area-button cursor-col-resize"
                 data-position={position}
                 title="Drag to resize or double-click to reset"
                 onMouseDown={enableResize}
