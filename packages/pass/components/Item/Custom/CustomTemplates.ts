@@ -17,7 +17,7 @@ export type CustomTemplateGroup = {
     templates: CustomTemplate[];
 };
 
-export const groupedTemplates: CustomTemplateGroup[] = [
+export const getGroupedTemplates = (): CustomTemplateGroup[] => [
     {
         label: c('Label').t`Technology`,
         theme: SubTheme.VIOLET,
