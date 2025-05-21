@@ -95,21 +95,30 @@ const getCreateIntent = <T extends ItemCustomType>(values: CustomItemFormValues)
     return create as ItemCreateIntent<T>;
 };
 
-const extraTypeFieldValues = (type: ItemCustomType) => {
+const extraTypeFieldValues = (template: CustomTemplate, values: CustomItemFormValues): CustomItemFormValues => {
+    const base = { ...values, extraFields: customTemplateToFormFields(template) };
+    const { type } = template;
+
     switch (type) {
+        case 'custom':
+            return { ...base, type } satisfies CustomItemFormValues<'custom'>;
+
         case 'wifi':
             return {
+                ...base,
+                type,
                 ssid: '',
                 password: '',
                 security: WifiSecurity.UnspecifiedWifiSecurity,
-            };
+            } satisfies CustomItemFormValues<'wifi'>;
+
         case 'sshKey':
             return {
+                ...base,
+                type,
                 publicKey: '',
                 privateKey: '',
-            };
-        default:
-            return {};
+            } satisfies CustomItemFormValues<'sshKey'>;
     }
 };
 
@@ -208,16 +217,9 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
     });
 
     const onSelectTemplate = async (template: CustomTemplate) => {
-        const values: CustomItemFormValues = {
-            ...form.values,
-            type: template.type ?? 'custom',
-            extraFields: customTemplateToFormFields(template),
-            ...extraTypeFieldValues(template.type),
-        } as any;
-
+        const values = extraTypeFieldValues(template, form.values);
         await form.setValues(values);
         form.resetForm({ values });
-
         setShowForm(true);
     };
 
