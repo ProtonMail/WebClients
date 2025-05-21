@@ -19,7 +19,6 @@ import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectAllVaults, selectCanCreateItems, selectShare } from '@proton/pass/store/selectors';
 import type { ItemType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
-import { truthy } from '@proton/pass/utils/fp/predicates';
 import clsx from '@proton/utils/clsx';
 
 type ItemQuickAction = {
@@ -47,61 +46,61 @@ export const QuickActionsPlaceholder: FC = () => {
     const canCreate = useSelector(selectCanCreateItems);
     const showCustomItem = useFeatureFlag(PassFeature.PassCustomTypeV1);
 
-    const quickActions = useMemo<ItemQuickAction[]>(
-        () =>
-            [
-                {
-                    icon: itemTypeToIconName.login,
-                    label: c('Label').t`Create a login`,
-                    subTheme: SubTheme.VIOLET,
-                    type: 'login',
-                    onClick: () => onCreate('login'),
-                } as const,
-                {
-                    icon: itemTypeToIconName.alias,
-                    label: c('Label').t`Create a hide-my-email alias`,
-                    subTheme: SubTheme.TEAL,
-                    type: 'alias',
-                    onClick: () => onCreate('alias'),
-                } as const,
-                {
-                    icon: itemTypeToIconName.creditCard,
-                    label: c('Label').t`Create a credit card`,
-                    subTheme: SubTheme.LIME,
-                    type: 'creditCard',
-                    onClick: () => onCreate('creditCard'),
-                } as const,
-                {
-                    icon: itemTypeToIconName.note,
-                    label: c('Label').t`Create an encrypted note`,
-                    subTheme: SubTheme.ORANGE,
-                    type: 'note',
-                    onClick: () => onCreate('note'),
-                } as const,
-                {
-                    icon: itemTypeToIconName.identity,
-                    label: c('Label').t`Create an Identity`,
-                    type: 'identity',
-                    onClick: () => onCreate('identity'),
-                } as const,
-                showCustomItem &&
-                    ({
-                        icon: itemTypeToIconName.custom,
-                        label: c('Label').t`Create a custom item`,
-                        subTheme: SubTheme.GRAY,
-                        type: 'custom',
-                        onClick: () => onCreate('custom'),
-                    } as const),
-                {
-                    type: 'import',
-                    icon: 'arrow-up-line',
-                    shape: 'outline',
-                    label: c('Label').t`Import passwords`,
-                    onClick: () => openSettings?.('import'),
-                } as const,
-            ].filter(truthy),
-        [onCreate]
-    );
+    const quickActions = useMemo<ItemQuickAction[]>(() => {
+        const actions: ItemQuickAction[] = [
+            {
+                icon: itemTypeToIconName.login,
+                label: c('Label').t`Create a login`,
+                subTheme: SubTheme.VIOLET,
+                type: 'login',
+                onClick: () => onCreate('login'),
+            },
+            {
+                icon: itemTypeToIconName.alias,
+                label: c('Label').t`Create a hide-my-email alias`,
+                subTheme: SubTheme.TEAL,
+                type: 'alias',
+                onClick: () => onCreate('alias'),
+            },
+            {
+                icon: itemTypeToIconName.creditCard,
+                label: c('Label').t`Create a credit card`,
+                subTheme: SubTheme.LIME,
+                type: 'creditCard',
+                onClick: () => onCreate('creditCard'),
+            },
+            {
+                icon: itemTypeToIconName.note,
+                label: c('Label').t`Create an encrypted note`,
+                subTheme: SubTheme.ORANGE,
+                type: 'note',
+                onClick: () => onCreate('note'),
+            },
+            {
+                icon: itemTypeToIconName.identity,
+                label: c('Label').t`Create an Identity`,
+                type: 'identity',
+                onClick: () => onCreate('identity'),
+            },
+            {
+                hidden: !showCustomItem,
+                icon: itemTypeToIconName.custom,
+                label: c('Label').t`Create a custom item`,
+                subTheme: SubTheme.GRAY,
+                type: 'custom',
+                onClick: () => onCreate('custom'),
+            },
+            {
+                type: 'import',
+                icon: 'arrow-up-line',
+                shape: 'outline',
+                label: c('Label').t`Import passwords`,
+                onClick: () => openSettings?.('import'),
+            },
+        ];
+
+        return actions.filter(({ hidden }) => !hidden);
+    }, [onCreate, showCustomItem]);
 
     return (
         <div className="flex flex-column gap-3 text-center">
@@ -114,28 +113,26 @@ export const QuickActionsPlaceholder: FC = () => {
                 </span>
             </div>
 
-            {quickActions
-                .filter(({ hidden }) => !hidden)
-                .map(({ type, icon, label, shape, subTheme, onClick }) => (
-                    <Button
-                        pill
-                        shape={shape ?? 'solid'}
-                        color="weak"
-                        key={`quick-action-${type}`}
-                        className={clsx('pass-sub-sidebar--hidable w-full relative', subTheme)}
-                        onClick={onClick}
-                        disabled={(selectedShare && !isWritableVault(selectedShare)) || !canCreate}
-                        size={EXTENSION_BUILD ? 'small' : 'medium'}
-                    >
-                        <Icon
-                            name={icon}
-                            color="var(--interaction-norm)"
-                            className="absolute left-custom top-0 bottom-0 my-auto"
-                            style={{ '--left-custom': '1rem' }}
-                        />
-                        <span className="max-w-full px-8 text-ellipsis">{label}</span>
-                    </Button>
-                ))}
+            {quickActions.map(({ type, icon, label, shape, subTheme, onClick }) => (
+                <Button
+                    pill
+                    shape={shape ?? 'solid'}
+                    color="weak"
+                    key={`quick-action-${type}`}
+                    className={clsx('pass-sub-sidebar--hidable w-full relative', subTheme)}
+                    onClick={onClick}
+                    disabled={(selectedShare && !isWritableVault(selectedShare)) || !canCreate}
+                    size={EXTENSION_BUILD ? 'small' : 'medium'}
+                >
+                    <Icon
+                        name={icon}
+                        color="var(--interaction-norm)"
+                        className="absolute left-custom top-0 bottom-0 my-auto"
+                        style={{ '--left-custom': '1rem' }}
+                    />
+                    <span className="max-w-full px-8 text-ellipsis">{label}</span>
+                </Button>
+            ))}
         </div>
     );
 };

@@ -35,7 +35,7 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import clsx from '@proton/utils/clsx';
 
 import { CustomFormSections } from './CustomFormSections';
-import { type CustomTemplate, customTemplateToFormFields, groupedTemplates } from './CustomTemplates';
+import { type CustomTemplate, customTemplateToFormFields, getGroupedTemplates } from './CustomTemplates';
 
 const getInitialValues = <T extends ItemCustomType>(
     type: ItemCustomType,
@@ -95,21 +95,30 @@ const getCreateIntent = <T extends ItemCustomType>(values: CustomItemFormValues)
     return create as ItemCreateIntent<T>;
 };
 
-const extraTypeFieldValues = (type: ItemCustomType) => {
+const extraTypeFieldValues = (template: CustomTemplate, values: CustomItemFormValues): CustomItemFormValues => {
+    const base = { ...values, extraFields: customTemplateToFormFields(template) };
+    const { type } = template;
+
     switch (type) {
+        case 'custom':
+            return { ...base, type } satisfies CustomItemFormValues<'custom'>;
+
         case 'wifi':
             return {
+                ...base,
+                type,
                 ssid: '',
                 password: '',
                 security: WifiSecurity.UnspecifiedWifiSecurity,
-            };
+            } satisfies CustomItemFormValues<'wifi'>;
+
         case 'sshKey':
             return {
+                ...base,
+                type,
                 publicKey: '',
                 privateKey: '',
-            };
-        default:
-            return {};
+            } satisfies CustomItemFormValues<'sshKey'>;
     }
 };
 
@@ -121,6 +130,16 @@ const StartFromScratch: FC<{ onClick: () => void }> = ({ onClick }) => (
         <span>{c('Action').t`Start from scratch`}</span>
     </Button>
 );
+
+const wifiSecurityLabel: Record<WifiSecurity, () => string> = {
+    [WifiSecurity.UnspecifiedWifiSecurity]: () => c('Label').t`Unspecified`,
+    [WifiSecurity.WPA]: () => 'WPA',
+    [WifiSecurity.WPA2]: () => 'WPA2',
+    [WifiSecurity.WPA3]: () => 'WPA3',
+    [WifiSecurity.WEP]: () => 'WEP',
+};
+
+const WifiSecurities = Object.values(WifiSecurity).filter((val) => typeof val === 'number') as WifiSecurity[];
 
 export const ExtraTypeFields: FC<{ type: 'sshKey' | 'wifi' | 'custom' }> = ({ type }) => {
     switch (type) {
@@ -165,21 +184,14 @@ export const ExtraTypeFields: FC<{ type: 'sshKey' | 'wifi' | 'custom' }> = ({ ty
                         placeholder={c('Placeholder').t`Select option`}
                         component={SelectField}
                     >
-                        <Option value={0} title="WPA">
-                            Unspecified
-                        </Option>
-                        <Option value={1} title="WPA">
-                            WPA
-                        </Option>
-                        <Option value={2} title="WPA2">
-                            WPA2
-                        </Option>
-                        <Option value={3} title="WPA3">
-                            WPA3
-                        </Option>
-                        <Option value={4} title="WEP">
-                            WEP
-                        </Option>
+                        {WifiSecurities.map((value) => {
+                            const label = wifiSecurityLabel[value]();
+                            return (
+                                <Option value={value} title={label} key={value}>
+                                    {label}
+                                </Option>
+                            );
+                        })}
                     </Field>
                 </FieldsetCluster>
             );
@@ -194,6 +206,7 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
 
     const initialValues = useMemo(() => getInitialValues(type, shareId), []);
     const initialErrors = useMemo(() => validateCustomItemForm(initialValues), []);
+    const groups = useMemo(getGroupedTemplates, []);
 
     const form = useFormik<CustomItemFormValues>({
         initialValues,
@@ -207,29 +220,17 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
     });
 
     const onSelectTemplate = async (template: CustomTemplate) => {
-        const values: CustomItemFormValues = {
-            ...form.values,
-            type: template.type ?? 'custom',
-            extraFields: customTemplateToFormFields(template),
-            ...extraTypeFieldValues(template.type),
-        } as any;
-
+        const values = extraTypeFieldValues(template, form.values);
         await form.setValues(values);
         form.resetForm({ values });
-
         setShowForm(true);
     };
 
     const handleCancelClick = () => (showForm ? setShowForm(false) : onCancel());
 
     const SubmitButton = (() => {
-        if (!showForm) {
-            return <StartFromScratch onClick={() => setShowForm(true)} />;
-        }
-
-        if (isFreePlan) {
-            return <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.CUSTOM_ITEMS} />;
-        }
+        if (!showForm) return <StartFromScratch onClick={() => setShowForm(true)} />;
+        if (isFreePlan) return <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.CUSTOM_ITEMS} />;
     })();
 
     return (
@@ -246,28 +247,29 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
             {({ didEnter }) => (
                 <>
                     {!showForm &&
-                        groupedTemplates.map((g) => (
-                            <div key={g.label} className={clsx(g.theme, 'mb-4')}>
-                                <div className="mb-2 color-weak">{g.label}</div>
+                        groups.map(({ label, theme, templates }) => (
+                            <div key={label} className={clsx(theme, 'mb-4')}>
+                                <div className="mb-2 color-weak">{label}</div>
                                 <div className="grid gap-3" style={{ gridTemplateColumns: '1fr 1fr' }}>
-                                    {g.templates.map((t) => (
+                                    {templates.map((template) => (
                                         <Button
-                                            key={t.label}
+                                            key={template.label}
                                             pill
                                             color="weak"
                                             shape="solid"
                                             className="w-full"
-                                            onClick={() => onSelectTemplate(t)}
+                                            onClick={() => onSelectTemplate(template)}
                                         >
                                             <div className="flex items-center w-full text-left">
-                                                <Icon name={t.icon} className="mr-2" />
-                                                <span>{t.label}</span>
+                                                <Icon name={template.icon} className="mr-2" />
+                                                <span>{template.label}</span>
                                             </div>
                                         </Button>
                                     ))}
                                 </div>
                             </div>
                         ))}
+
                     {showForm && (
                         <FormikProvider value={form}>
                             <Form id={FORM_ID} className="ui-violet">

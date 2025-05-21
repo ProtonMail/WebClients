@@ -6,17 +6,16 @@ import { c } from 'ttag';
 import { Button, type ButtonProps } from '@proton/atoms';
 import type { IconName } from '@proton/components';
 import { Icon } from '@proton/components';
+import { DateField } from '@proton/pass/components/Form/Field/DateField';
+import type { FieldBoxProps } from '@proton/pass/components/Form/Field/Layout/FieldBox';
+import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
+import type { BaseTextFieldProps } from '@proton/pass/components/Form/Field/TextField';
+import { BaseTextField } from '@proton/pass/components/Form/Field/TextField';
+import type { BaseTextAreaFieldProps } from '@proton/pass/components/Form/Field/TextareaField';
+import { BaseMaskedTextAreaField, BaseTextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
 import type { DeobfuscatedItemExtraField, ExtraFieldType } from '@proton/pass/types';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import clsx from '@proton/utils/clsx';
-
-import { BaseDateField } from '../DateField';
-import type { FieldBoxProps } from '../Layout/FieldBox';
-import { FieldBox } from '../Layout/FieldBox';
-import type { BaseTextFieldProps } from '../TextField';
-import { BaseTextField } from '../TextField';
-import type { BaseTextAreaFieldProps } from '../TextareaField';
-import { BaseMaskedTextAreaField, BaseTextAreaField } from '../TextareaField';
 
 type ExtraFieldOption = {
     icon: IconName;
@@ -140,17 +139,19 @@ export const ExtraFieldComponent: FC<ExtraFieldProps> = ({
                     case 'timestamp': {
                         const fieldError = error as ExtraFieldError<'timestamp'>;
                         return (
-                            <BaseDateField
+                            <DateField
                                 placeholder={placeholder}
                                 error={touched && (error?.fieldName || fieldError?.data?.timestamp)}
                                 field={{
                                     ...field,
                                     value: field.value.data.timestamp,
-                                    onChange: (stringValue: any) => {
-                                        void rest.form.setFieldValue(
-                                            field.name,
-                                            partialMerge(field.value, { data: { timestamp: stringValue } })
-                                        );
+                                    onChange: (timestamp: string | ChangeEvent) => {
+                                        if (typeof timestamp === 'string') {
+                                            void rest.form.setFieldValue(
+                                                field.name,
+                                                partialMerge(field.value, { data: { timestamp } })
+                                            );
+                                        }
                                     },
                                 }}
                                 {...rest}

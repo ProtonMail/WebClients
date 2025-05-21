@@ -1,5 +1,5 @@
 import type { ForwardRefRenderFunction } from 'react';
-import { forwardRef } from 'react';
+import { forwardRef, useMemo } from 'react';
 
 import formatISO from 'date-fns/formatISO';
 import { type FieldProps } from 'formik';
@@ -7,31 +7,29 @@ import { type FieldProps } from 'formik';
 import { type Input } from '@proton/atoms';
 import { DateInputTwo, InputFieldTwo } from '@proton/components';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
+import { useFieldControl } from '@proton/pass/hooks/useFieldControl';
 import { type Maybe } from '@proton/pass/types/utils';
 import clsx from '@proton/utils/clsx';
 
-import { useFieldControl } from '../../../hooks/useFieldControl';
-import { FieldBox, type FieldBoxProps } from './Layout/FieldBox';
-
-export type BaseDateFieldProps = FieldProps & InputFieldProps<typeof Input>;
+export type Props = FieldProps<string> & InputFieldProps<typeof Input>;
 
 export const formatDate = (date: Date) => new Intl.DateTimeFormat(navigator.language, { timeZone: 'UTC' }).format(date);
 
-const BaseDateFieldRender: ForwardRefRenderFunction<HTMLInputElement, BaseDateFieldProps> = (
+const DateFieldRender: ForwardRefRenderFunction<HTMLInputElement, Props> = (
     { field, form, meta, inputClassName, labelContainerClassName, placeholder, disabled },
     ref
 ) => {
     const { value, onChange } = field;
     const { error } = useFieldControl({ field, form, meta });
 
-    const dateValue: Maybe<Date> = (() => {
-        if (!value) return undefined;
-        const date = new Date(value);
-        if (isFinite(date.getTime())) return date;
-        return undefined;
-    })();
+    const dateValue = useMemo<Maybe<Date>>(() => {
+        if (value) {
+            const date = new Date(value);
+            if (isFinite(date.getTime())) return date;
+        }
+    }, [value]);
 
-    const handleDateChange = (date: Date | undefined) => {
+    const handleDateChange = (date: Maybe<Date>): void => {
         const stringValue = date ? formatISO(date).split('T')[0] : '';
         onChange?.(stringValue);
     };
@@ -54,26 +52,6 @@ const BaseDateFieldRender: ForwardRefRenderFunction<HTMLInputElement, BaseDateFi
             value={dateValue}
             toFormatter={formatDate}
         />
-    );
-};
-
-export const BaseDateField = forwardRef(BaseDateFieldRender);
-
-export type DateFieldProps = FieldBoxProps & BaseDateFieldProps;
-
-export const DateFieldRender: ForwardRefRenderFunction<HTMLInputElement, DateFieldProps> = (
-    { actions, actionsContainerClassName, className, icon, ...rest },
-    ref
-) => {
-    return (
-        <FieldBox
-            actions={actions}
-            actionsContainerClassName={actionsContainerClassName}
-            className={className}
-            icon={icon}
-        >
-            <BaseDateField {...rest} ref={ref} />
-        </FieldBox>
     );
 };
 
