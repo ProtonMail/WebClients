@@ -5,13 +5,3 @@
 [data-position='left']:hover {
 	border-inline-start: 1px solid var(--primary);
 }
-
-.resizable-wrapper.user-select-none {
-	[data-position='right'] {
-		border-inline-end: 2px solid var(--primary);
-	}
-
-	[data-position='left'] {
-		border-inline-start: 2px solid var(--primary);
-	}
-}
