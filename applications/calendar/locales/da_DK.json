@@ -875,6 +875,9 @@
       ],
       "Set up email forwarding": [
         "Indstil videresendelse af e-mail"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Brug ${ VPN_SHORT_APP_NAME } for at beskytte dine data"
       ]
     },
     "action": {
@@ -1195,6 +1198,9 @@
       ],
       "Two-year": [
         "To-År"
+      ],
+      "Lifetime": [
+        "Livstid"
       ]
     },
     "Browser": {
@@ -6828,6 +6834,9 @@
       ],
       "on the third Wednesday": [
         "på den tredje onsdag"
+      ],
+      "on the ${ shortenedDay }": [
+        "den ${ shortenedDay }"
       ]
     },
     "New Label form": {
@@ -8275,6 +8284,12 @@
       ],
       "Your payment is still being processed": [
         "Din betaling behandles stadig"
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Fornyes til ${ renewPriceStr }, annuller når som helst."
+      ],
+      "terms & conditions": [
+        "vilkår og betingelser"
       ]
     },
     "Payments.Error": {
@@ -9207,6 +9222,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Du mister adgang til ubegrænsede logins og noter, ubegrænset hide-my-email aliaser, 20 bokse samt prioriteret support."
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "For at sende eller modtage e-mails, frigør plads eller ${ upgrade }"
       ]
     },
     "Subscribe to calendar modal": {
@@ -10746,6 +10764,9 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Dit abonnement vil automatisk forny i ${ cycle } måned.",
         "Dit abonnement vil automatisk forny i ${ cycle } måneder."
+      ],
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Du vil blive faktureret ${ renewPriceStr } hver 12. måned."
       ]
     },
     "vpn_2step: feature": {

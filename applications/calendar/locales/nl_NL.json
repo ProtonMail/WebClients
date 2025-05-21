@@ -795,7 +795,7 @@
         "Niet meer vertrouwen"
       ],
       "Update": [
-        "Bijwerken"
+        "Update"
       ],
       "Update recovery file": [
         "Herstelbestand bijwerken"
@@ -834,7 +834,7 @@
         "Gebruik een andere betaalmethode"
       ],
       "Use authentication code": [
-        "Verificatiecode gebruiken"
+        "Authenticatiecode gebruiken"
       ],
       "Use for sending": [
         "Gebruiken om te versturen"
@@ -4028,7 +4028,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME }-account."
+        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME } account."
       ],
       "Security key": [
         "Beveiligingssleutel"
@@ -4937,7 +4937,7 @@
         "Activatie automatisch verwijderen"
       ],
       "Enter the code from your authenticator app": [
-        "Voer de code van uw verificatie-app in"
+        "Voer de code van uw authenticatie app in"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
@@ -5582,7 +5582,7 @@
         "Wanneer u verbinding maakt met VPN, gebruikt het versleutelingstechnologie om uw IP-adres te verbergen (een unieke code toegewezen aan uw apparaat)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw authenticatie app."
       ],
       "Which event would you like to delete?": [
         "Welke afspraken wilt u verwijderen?"
@@ -6030,7 +6030,7 @@
         "Schermafbeelding(en) toevoegen"
       ],
       "Authenticator app": [
-        "Authenticator-app"
+        "Authenticatie app"
       ],
       "Beta Access": [
         "Bèta toegang"
@@ -6460,7 +6460,7 @@
         "Uw locatie"
       ],
       "Your password (admin)": [
-        "Uw wachtwoord (admin)"
+        "Uw wachtwoord (beheerder)"
       ]
     },
     "Label for contact group color": {
@@ -10826,6 +10826,9 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "Newsletters view": [
+        "Nieuwsbrievenoverzicht"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11463,7 +11466,7 @@
         "privacy"
       ],
       "Online document editor": [
-        "Online document editor"
+        "Online documenteditor"
       ],
       "Online privacy for up to 2 people": [
         "Online privacy voor maximaal 2 personen"
@@ -11554,10 +11557,10 @@
     },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } ?": [
-        "${ LUMO_APP_NAME } is een privacy-first AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
+        "${ LUMO_APP_NAME } is een privacygerichte AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
       ],
       "Add ${ LUMO_APP_NAME }": [
-        "Toevoegen ${ LUMO_APP_NAME }"
+        "${ LUMO_APP_NAME } toevoegen"
       ]
     }
   }

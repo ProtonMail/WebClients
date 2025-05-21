@@ -809,6 +809,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "आपका डेस्कटॉप ऐप मुफ्त ट्रायल ${ formattedEndDate } को समाप्त होता है ${ upgradeButton }"
+      ],
+      "Get the apps": [
+        "ऐप प्राप्त करें"
+      ],
+      "Set up email forwarding": [
+        "ईमेल फॉरवर्ड सेट अप करें"
       ]
     },
     "action": {
@@ -2845,6 +2851,9 @@
       ],
       "This event was updated.": [
         "यह कार्यक्रम अपडेट किया गया था।"
+      ],
+      "Here's what changed:": [
+        "यहां देखें क्या बदलाव हुए हैं:"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4290,6 +4299,9 @@
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } से आयात करें"
+      ],
+      "Import from Outlook": [
+        "Outlook से आयात करे"
       ]
     },
     "Import warning": {
@@ -5471,6 +5483,15 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "आपका सिस्टम समय क्षेत्र ${ timezone } में बदल गया है। अपने समय क्षेत्र पसंद को अपडेट करें?"
+      ],
+      "Calendar is disabled": [
+        "कैलेंडर अक्षम है"
+      ],
+      "Set up your organization": [
+        "अपना संगठन स्थापित करें"
+      ],
+      "VPN IP": [
+        "VPN IP"
       ]
     },
     "info": {
@@ -7066,6 +7087,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "हम डार्क वेब स्कैन करते हैं ताकि यह जांच सकें कि आपके ${ BRAND_NAME } ईमेल पते या नकली-नाम लीक हुए हैं, और यदि कुछ मिलता है तो तुरंत आपको सूचित करें।"
+      ],
+      "${ size } storage per user": [
+        "${ size } स्टोरेज हर यूज़र पे"
       ]
     },
     "new_plans: feature highlight": {
@@ -8015,6 +8039,12 @@
       ],
       "Timeout exceeded": [
         "Timeout exceeded"
+      ],
+      "terms & conditions": [
+        "नियम और शर्तें"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ renewPriceStr } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
       ]
     },
     "Payments.Error": {
@@ -8170,6 +8200,9 @@
       ],
       "Start typing an email address": [
         "ईमेल पता लिखना शुरू करें"
+      ],
+      "Organization name": [
+        "संगठन नाम"
       ]
     },
     "Placeholder for contact group name": {
@@ -10165,6 +10198,18 @@
       ],
       "Your shorter address is now ready": [
         "आपका छोटा पता अब तैयार है"
+      ],
+      "Add user": [
+        "उपयोगकर्ता जोड़ें"
+      ],
+      "Mobile": [
+        "मोबाइल"
+      ],
+      "Set up email forwarding": [
+        "ईमेल फॉरवर्ड सेट अप करें"
+      ],
+      "Set up your organization": [
+        "अपना संगठन स्थापित करें"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10333,6 +10378,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "${ numberOfCountries } देश से स्वतः चयनित",
         "${ numberOfCountries } देशों से स्वतः चयनित"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries }+ देश में सर्वर",
+        "${ numberOfCountries }+ देशों में सर्वर"
       ]
     },
     "vpn_2024: renew": {
@@ -10739,6 +10788,26 @@
       ],
       "Passcode:": [
         "पासकोड:"
+      ]
+    },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "सभी ${ BRAND_NAME } सेवाओं के लिए"
+      ]
+    },
+    "Note": {
+      "Note:": [
+        "नोट:"
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "${ priceString } की छूट"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "ज़ूम मीटिंग में शामिल हों"
       ]
     }
   }
