@@ -1476,13 +1476,13 @@
         "Utilizar un método de pago diferente"
       ],
       "Use authentication code": [
-        "Utilizar código de autenticación"
+        "Usar un código de autenticación"
       ],
       "Use for sending": [
         "Usar para el envío"
       ],
       "Use recovery code": [
-        "Utilizar código de recuperación"
+        "Usar un código de recuperación"
       ],
       "Use this": [
         "Usar esto"
@@ -5133,15 +5133,15 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserta una llave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
+        "Inserta una clave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
       ],
       "Security key": [
-        "Llave de seguridad"
+        "Clave de seguridad"
       ]
     },
     "fido2: Label": {
       "Security key": [
-        "Llave de seguridad"
+        "Clave de seguridad"
       ]
     },
     "file size format": {
@@ -6662,7 +6662,7 @@
         "Clave duplicada actualizada"
       ],
       "Each code can only be used once": [
-        "Cada código puede utilizarse solo una vez."
+        "Cada código puede usarse solo una vez."
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Administra y cancela fácilmente la suscripción a boletines y listas de correo."
@@ -6720,7 +6720,7 @@
         "Disfruta de una experiencia de correo electrónico más rápida y centrada con la aplicación de escritorio."
       ],
       "Enter the code from your authenticator app": [
-        "Introduce el código de tu aplicación de autenticación."
+        "Ingresa el código de la aplicación de autenticación."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduce las credenciales de la cuenta de correo electrónico desde la que quieres importar."
@@ -6729,7 +6729,7 @@
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Introduce el código de verificación. Dígito ${ digit }."
+        "Introduce el código de verificación. Ingresa ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Introduce tu propia contraseña (como administrador de la organización)."
@@ -8012,7 +8012,7 @@
         "Cuando has activado las claves de confianza para ${ senderName }, las claves públicas se han añadido a los datos del contacto."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
+        "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes usar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Cuando te registras en un boletín, usa un alias en lugar de tu dirección de correo. Tu identidad se mantiene oculta y podrás desactivar el alias en cualquier momento."
@@ -8307,6 +8307,19 @@
       "${ subscription.ReceivedMessages.Last30Days } email last month": [
         "${ subscription.ReceivedMessages.Last30Days } correo el mes pasado",
         "${ subscription.ReceivedMessages.Last30Days } correos el mes pasado"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } suscripción de boletín",
+        "${ unreadCount } suscripciones de boletín"
+      ],
+      "Apply to future messages": [
+        "Aplicar a los mensajes futuros"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Debido a la configuración de tus destinatarios, este mensaje no se puede enviar con una fecha de expiración a ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Debido a la configuración del destinatario, este mensaje no se puede enviar con una fecha de expiración."
       ]
     },
     "info": {
@@ -9205,6 +9218,28 @@
       ],
       "${ boldActive } Move all messages to ${ boldFolderName }": [
         "${ boldActive } Mover todos los mensajes a ${ boldFolderName }"
+      ],
+      "Marked ${ count } message as read.": [
+        "Se ha marcado ${ count } mensaje como leído.",
+        "Se han marcado ${ count } mensajes como leído."
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "Se ha movido ${ count } mensaje a ${ selectedFolder.Name }.",
+        "Se han movido ${ count } mensajes a ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "Se ha movido ${ count } mensaje al archivo.",
+        "Se han movido ${ count } mensajes al archivo."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "Se ha movido ${ count } mensaje a la papelera.",
+        "Se han movido ${ count } mensajes a la papelera."
+      ],
+      "Newsletters": [
+        "Boletines"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Se ha cancelado la suscripción de ${ truncatedName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13800,7 +13835,7 @@
         "Ingresa el código 2FA"
       ],
       "Enter your password": [
-        "Introduce tu contraseña."
+        "Introduce tu contraseña"
       ],
       "Error": [
         "Error"
@@ -14392,6 +14427,12 @@
       ],
       "No unsubscribed mail subscriptions": [
         "No hay suscripciones de correo dadas de baja"
+      ],
+      "Newsletters": [
+        "Boletines"
+      ],
+      "Newsletters view": [
+        "Vista de boletines"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -6803,7 +6803,7 @@
         "Наслаждайтесь более быстрой и целенаправленной отправкой электронных писем с помощью приложения для ПК."
       ],
       "Enter the code from your authenticator app": [
-        "Введите код из приложения для аутентификации"
+        "Введите код из приложения-аутентификатора"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Введите учетные данные аккаунта электронной почты, из которого вы хотите импортировать данные."
@@ -8544,6 +8544,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вы всего в нескольких нажатиях от почтового ящика, свободного от хлама"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Это сообщение не может быть отправлено ${ firstRecipients } со сроком действия из-за конфигурации вашего получателя ."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Это сообщение не может быть отправлено со сроком действия из-за конфигурации вашего получателя."
       ]
     },
     "info": {

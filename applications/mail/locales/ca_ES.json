@@ -1476,7 +1476,7 @@
         "Utilitzeu un mètode de pagament diferent"
       ],
       "Use authentication code": [
-        "Utilitzar el codi d'autenticació"
+        "Utilitza el codi d'autenticació"
       ],
       "Use for sending": [
         "Usar per enviar"
@@ -5128,12 +5128,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Alguna cosa no ha anat bé amb l'autenticació amb la vostra clau de seguretat. Proveu-ho de nou."
+        "Quelcom va anar malament autenticant-se amb la vostra clau de seguretat. Torneu-ho a provar."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inseriu una clau de seguretat enllaçada al vostre compte ${ BRAND_NAME }."
+        "Inseriu una clau de seguretat enllaçada al vostre compte de ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clau de seguretat"
@@ -6671,7 +6671,7 @@
         "Clau duplicada actualitzada"
       ],
       "Each code can only be used once": [
-        "Cada codi només es pot utilitzar una vegada."
+        "Cada codi només es pot utilitzar una vegada"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Gestioneu i doneu de baixa fàcilment butlletins i llistes de correu."
@@ -6729,7 +6729,7 @@
         "Gaudiu d'una experiència de correu electrònic més ràpida i centrada amb l'aplicació d'escriptori."
       ],
       "Enter the code from your authenticator app": [
-        "Introduïu el codi de la vostra aplicació d'autenticació"
+        "Introduïu el codi de la vostra aplicació d'autenticació."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduïu les credencials del compte de correu electrònic des d'on voleu importar."
@@ -7021,7 +7021,7 @@
         "Prioritat baixa"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Establiu ${ MAIL_APP_NAME } com a aplicació de correu electrònic predeterminada."
+        "Establiu ${ MAIL_APP_NAME } com aplicació de correu per defecte."
       ],
       "Manage your folders": [
         "Gestioneu les vostres carpetes"
@@ -8021,7 +8021,7 @@
         "Quan actives les claus de confiança per ${ senderName }, les claus públiques s'afegeixen a les dades de contacte."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configureu l'autenticació de doble factor, se us proporcionen codis de recuperació que podeu fer servir per a iniciar la sessió en cas que perdeu l'accés a l'aplicació d'autenticació."
+        "Quan configureu l’autenticació de dos factors, proporcionem codis de recuperació que podeu utilitzar per iniciar la sessió si perdeu l’accés a l’aplicació d'autenticació."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Quan us subscrigueu a un butlletí, utilitzeu un àlies en lloc de la vostra adreça de correu electrònic. La vostra identitat queda amagada i podeu desactivar l'àlies en qualsevol moment."
@@ -8307,6 +8307,19 @@
       "${ subscription.ReceivedMessages.Last30Days } email last month": [
         "${ subscription.ReceivedMessages.Last30Days } correu el mes passat",
         "${ subscription.ReceivedMessages.Last30Days } correus el mes passat"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } subscripció al butlletí",
+        "${ unreadCount } subscripcions a butlletins"
+      ],
+      "Apply to future messages": [
+        "Aplica als missatges futurs"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "A causa de la configuració del destinatari, aquest missatge no es pot enviar amb data de caducitat a ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "A causa de la configuració del destinatari, aquest missatge no es pot enviar amb data de caducitat."
       ]
     },
     "info": {
@@ -9204,7 +9217,29 @@
         "La vostra ubicació"
       ],
       "Your password (admin)": [
-        "La seva contrasenya (admin)"
+        "La vostra contrasenya (administrador)"
+      ],
+      "Marked ${ count } message as read.": [
+        "S'ha marcat ${ count } missatge com a llegit.",
+        "S'han marcat ${ count } missatges com a llegits."
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "S'ha mogut ${ count } missatge a ${ selectedFolder.Name }.",
+        "S'han mogut ${ count } missatges a ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "S'ha mogut ${ count } missatge a l'arxiu.",
+        "S'han mogut ${ count } missatges a l'arxiu."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "S'ha mogut ${ count } missatge a la paperera.",
+        "S'han mogut ${ count } missatges a la paperera."
+      ],
+      "Newsletters": [
+        "Butlletins"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Us heu donat de baixa de ${ truncatedName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14392,6 +14427,12 @@
       ],
       "No unsubscribed mail subscriptions": [
         "Sense subscripcions de correu donades de baixa"
+      ],
+      "Newsletters": [
+        "Butlletins"
+      ],
+      "Newsletters view": [
+        "Vista de butlletins"
       ]
     },
     "Today icon tooltip in mini calendar": {

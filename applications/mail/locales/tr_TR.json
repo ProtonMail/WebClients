@@ -1355,8 +1355,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven",
-        "Anahtarlara güven"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1455,7 +1454,7 @@
         "Gönderim için kullan"
       ],
       "Use recovery code": [
-        "Kurtarma kodunu kullan"
+        "Kurtarma kodunu kullanın"
       ],
       "Use this": [
         "Bunu kullan"
@@ -5133,7 +5132,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
+        "${ BRAND_NAME } Hesabınıza bağlı bir güvenlik anahtarı girin."
       ],
       "Security key": [
         "Güvenlik anahtarı"
@@ -6688,7 +6687,7 @@
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu yazın. Rakam ${ digit }."
+        "Doğrulama kodunu girin. Rakam ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
@@ -6971,7 +6970,7 @@
         "Düşük öncelikli"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } uygulamasını varsayılan e-posta uygulamanız yapın."
+        "${ MAIL_APP_NAME }'i varsayılan e-posta uygulamanız yapın."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -8303,6 +8302,12 @@
       ],
       "Trash existing messages": [
         "Var olan iletileri çöpe at"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Alıcının yapılandırması nedeniyle, bu mesaj ${ firstRecipients }'e son kullanma tarihi ile gönderilemez."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Alıcının yapılandırması nedeniyle, bu mesaj son kullanma tarihi ile gönderilemez."
       ]
     },
     "info": {
