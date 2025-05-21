@@ -10,6 +10,7 @@ import { createCoreTelemetryService } from '@proton/pass/lib/telemetry/service';
 import {
     selectAutofillSettings,
     selectDisallowedDomains,
+    selectFeatureFlags,
     selectTelemetryEnabled,
     selectUserTier,
 } from '@proton/pass/store/selectors';
@@ -45,12 +46,23 @@ export const createTelemetryService = (storage: ExtensionStorage<Record<'telemet
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.TELEMETRY_EVENT,
         withContext(async (ctx, { payload: { event, extra } }) => {
+            const state = ctx.service.store.getState();
+            const autofillTelemetryEnabled = selectFeatureFlags(state)?.LoginAutofillTelemetry;
+            const autofillTelemetryEvents = [
+                TelemetryEventName.ExtensionCopiedFromLogin,
+                TelemetryEventName.AutosaveDismissed,
+                TelemetryEventName.ExtensionUsed,
+            ];
+
+            if (!autofillTelemetryEnabled && autofillTelemetryEvents.includes(event.Event)) {
+                return true;
+            }
+
             // FIXME: improve "extra" type definition so we don't need to verify if it's defined
             if (extra) {
                 switch (event.Event) {
                     case TelemetryEventName.ExtensionCopiedFromLogin: {
                         const { itemUrls, extensionField } = extra;
-                        const state = ctx.service.store.getState();
                         const tab = first(await browser.tabs.query({ active: true }));
                         const tabUrl = parseUrl(tab?.url);
 
