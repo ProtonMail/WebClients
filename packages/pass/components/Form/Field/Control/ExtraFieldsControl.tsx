@@ -37,13 +37,13 @@ export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, i
             switch (type) {
                 case 'totp':
                     return isEmptyString(data.totpUri) ? (
-                        <ValueControl icon={icon} key={key} label={fieldName} value={undefined} />
+                        <ValueControl icon={icon} key={key} label={fieldName} />
                     ) : (
                         <OTPValueControl key={key} label={fieldName} payload={{ totpUri: data.totpUri, type: 'uri' }} />
                     );
                 case 'timestamp':
                     return isEmptyString(data.timestamp) ? (
-                        <ValueControl icon={icon} key={key} label={fieldName} value={undefined} />
+                        <ValueControl icon={icon} key={key} label={fieldName} />
                     ) : (
                         <ValueControl
                             clickToCopy
@@ -57,7 +57,7 @@ export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, i
                 case 'hidden':
                 case 'text':
                     return isEmptyString(data.content) ? (
-                        <ValueControl icon={icon} key={key} label={fieldName} value={undefined} />
+                        <ValueControl icon={icon} key={key} label={fieldName} />
                     ) : (
                         <ValueControl
                             clickToCopy
