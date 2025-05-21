@@ -131,6 +131,16 @@ const StartFromScratch: FC<{ onClick: () => void }> = ({ onClick }) => (
     </Button>
 );
 
+const wifiSecurityLabel: Record<WifiSecurity, () => string> = {
+    [WifiSecurity.UnspecifiedWifiSecurity]: () => c('Label').t`Unspecified`,
+    [WifiSecurity.WPA]: () => 'WPA',
+    [WifiSecurity.WPA2]: () => 'WPA2',
+    [WifiSecurity.WPA3]: () => 'WPA3',
+    [WifiSecurity.WEP]: () => 'WEP',
+};
+
+const WifiSecurities = Object.values(WifiSecurity).filter((val) => typeof val === 'number') as WifiSecurity[];
+
 export const ExtraTypeFields: FC<{ type: 'sshKey' | 'wifi' | 'custom' }> = ({ type }) => {
     switch (type) {
         case 'sshKey':
@@ -174,21 +184,14 @@ export const ExtraTypeFields: FC<{ type: 'sshKey' | 'wifi' | 'custom' }> = ({ ty
                         placeholder={c('Placeholder').t`Select option`}
                         component={SelectField}
                     >
-                        <Option value={0} title="WPA">
-                            Unspecified
-                        </Option>
-                        <Option value={1} title="WPA">
-                            WPA
-                        </Option>
-                        <Option value={2} title="WPA2">
-                            WPA2
-                        </Option>
-                        <Option value={3} title="WPA3">
-                            WPA3
-                        </Option>
-                        <Option value={4} title="WEP">
-                            WEP
-                        </Option>
+                        {WifiSecurities.map((value) => {
+                            const label = wifiSecurityLabel[value]();
+                            return (
+                                <Option value={value} title={label} key={value}>
+                                    {label}
+                                </Option>
+                            );
+                        })}
                     </Field>
                 </FieldsetCluster>
             );
@@ -226,13 +229,8 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
     const handleCancelClick = () => (showForm ? setShowForm(false) : onCancel());
 
     const SubmitButton = (() => {
-        if (!showForm) {
-            return <StartFromScratch onClick={() => setShowForm(true)} />;
-        }
-
-        if (isFreePlan) {
-            return <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.CUSTOM_ITEMS} />;
-        }
+        if (!showForm) return <StartFromScratch onClick={() => setShowForm(true)} />;
+        if (isFreePlan) return <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.CUSTOM_ITEMS} />;
     })();
 
     return (
