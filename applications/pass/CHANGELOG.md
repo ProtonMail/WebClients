@@ -1,3 +1,7 @@
+### Version 1.31.4
+
+- Add support for OpenPGP grammar check
+
 ### Version 1.31.3
 
 - Add Proton Anniversary 2025 offer
