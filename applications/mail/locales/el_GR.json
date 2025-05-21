@@ -1482,7 +1482,7 @@
         "Χρήση για αποστολή"
       ],
       "Use recovery code": [
-        "Χρησιμοποιήστε κωδικό ανάκτησης"
+        "Χρήση κωδικού ανάκτησης"
       ],
       "Use this": [
         "Χρησιμοποιήστε αυτό"
@@ -8307,6 +8307,19 @@
       "${ subscription.ReceivedMessages.Last30Days } email last month": [
         "${ subscription.ReceivedMessages.Last30Days } ηλεκτρονικό μήνυμα τον περασμένο μήνα",
         "${ subscription.ReceivedMessages.Last30Days } ηλεκτρονικά μηνύματα τον περασμένο μήνα"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } συνδρομή ενημερωτικού δελτίου",
+        "${ unreadCount } συνδρομές ενημερωτικών δελτίων"
+      ],
+      "Apply to future messages": [
+        "Εφαρμογή στα μελλοντικά μηνύματα"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Λόγω της διαμόρφωσης του παραλήπτη σας, αυτό το μήνυμα δεν μπορεί να αποσταλεί με ημερομηνία λήξης σε ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Λόγω της διαμόρφωσης του παραλήπτη σας, αυτό το μήνυμα δεν μπορεί να αποσταλεί με ημερομηνία λήξης."
       ]
     },
     "info": {
@@ -9202,6 +9215,28 @@
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "Marked ${ count } message as read.": [
+        "Επισημάνθηκε ${ count } μήνυμα ως αναγνωσμένο.",
+        "Επισημάνθηκαν ${ count } μηνύματα ως αναγνωσμένα."
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "Μετακινήθηκε ${ count } μήνυμα στο ${ selectedFolder.Name }.",
+        "Μετακινήθηκαν ${ count } μηνύματα στο ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "Μετακινήθηκε ${ count } μήνυμα στα Αρχειοθετημένα.",
+        "Μετακινήθηκαν ${ count } μηνύματα στα Αρχειοθετημένα."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "Μετακινήθηκε ${ count } μήνυμα στον Κάδο Απορριμμάτων.",
+        "Μετακινήθηκαν ${ count } μηνύματα στον Κάδο Απορριμμάτων."
+      ],
+      "Newsletters": [
+        "Ενημερωτικά δελτία"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Καταργήθηκε η εγγραφή από το ${ truncatedName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9279,7 +9314,7 @@
         "Δείτε και διαχειριστείτε τις συνδρομές ενημερωτικών δελτίων και λιστών αλληλογραφίας εδώ."
       ],
       "Newsletters you unsubscribe from will appear here.": [
-        "Εδώ θα εμφανίζονται τα ενημερωτικά δελτία από τα οποία έχετε καταργήσει την εγγραφή."
+        "Ενημερωτικά δελτία από τα οποία κάνετε απεγγραφή θα εμφανίζονται εδώ."
       ]
     },
     "Landmarks": {
@@ -13791,7 +13826,7 @@
         "Εισαγωγή κωδικού 2FA"
       ],
       "Enter your password": [
-        "Εισάγετε τον κωδικό σας"
+        "Εισάγετε τον κωδικό πρόσβασης σας"
       ],
       "Error": [
         "Σφάλμα"
@@ -14382,7 +14417,13 @@
         "Οι συνδρομές σας σε ένα μέρος"
       ],
       "No unsubscribed mail subscriptions": [
-        "Δεν υπάρχουν μη εγγεγραμμένες συνδρομές σε ταχυδρομικά ενημερωτικά δελτία."
+        "Δεν υπάρχουν μη εγγεγραμμένες συνδρομές αλληλογραφίας"
+      ],
+      "Newsletters": [
+        "Ενημερωτικά δελτία"
+      ],
+      "Newsletters view": [
+        "Προβολή ενημερωτικών δελτίων"
       ]
     },
     "Today icon tooltip in mini calendar": {

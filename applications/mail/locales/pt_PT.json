@@ -532,7 +532,7 @@
         "Letra"
       ],
       "Forgot password?": [
-        "Esqueceu-se da palavra-passe?"
+        "Palavra-passe esquecida?"
       ],
       "Formalize": [
         "Formalizar"
@@ -6628,7 +6628,7 @@
         "Chave duplicada actualizada"
       ],
       "Each code can only be used once": [
-        "Cada código só pode ser utilizado uma vez"
+        "Cada código só pode ser utilizado uma vez."
       ],
       "Edit email address": [
         "Editar o endereço de e-mail"
@@ -6692,7 +6692,7 @@
         "Introduza o código de verificação que foi enviado para ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Introduzir o código de verificação. Digite ${ digit }."
+        "Introduzir o código de verificação. Introduza ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Introduza a sua palavra-passe (como administrador da organização)."
@@ -7960,7 +7960,7 @@
         "Quando ativou as chaves confiadas para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contacto."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Após a configuração da autenticação de dois factores, serão fornecidos códigos de recuperação que poderá utilizar para se autenticar, no caso de perder o acesso à aplicação de autenticação."
+        "Após a configuração da autenticação de dois fatores, serão fornecidos códigos de recuperação que poderá utilizar para se autenticar, no caso de perder o acesso à aplicação de autenticação."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Quando se inscrever para receber uma newsletter, utilize um alias em vez do seu endereço de e-mail. A sua identidade permanece oculta e pode desativar o alias em qualquer altura."
@@ -8307,6 +8307,12 @@
       "${ subscription.ReceivedMessages.Last30Days } email last month": [
         "${ subscription.ReceivedMessages.Last30Days } e-mail no mês passado",
         "${ subscription.ReceivedMessages.Last30Days } e-mails no mês passado"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Devido à configuração do destinatário, esta mensagem não pode ser enviada com uma data de expiração para ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Devido à configuração do destinatário, esta mensagem não pode ser enviada com uma data de expiração."
       ]
     },
     "info": {
@@ -9586,6 +9592,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "A sua subscrição terminou. ${ cta } e para evitar a perda de dados."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "O seu armazenamento está cheio. Para continuar a usar os produtos ${ BRAND_NAME }, liberte espaço ou ${ cta }."
       ]
     },
     "Log preference": {

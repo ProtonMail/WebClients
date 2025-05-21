@@ -1379,8 +1379,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Vertrouwde sleutels"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1434,7 +1433,7 @@
         "Niet meer vertrouwen"
       ],
       "Update": [
-        "Bijwerken"
+        "Update"
       ],
       "Update recovery file": [
         "Herstelbestand bijwerken"
@@ -1476,7 +1475,7 @@
         "Gebruik een andere betaalmethode"
       ],
       "Use authentication code": [
-        "Verificatiecode gebruiken"
+        "Authenticatiecode gebruiken"
       ],
       "Use for sending": [
         "Gebruiken om te versturen"
@@ -5133,7 +5132,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME }-account."
+        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME } account."
       ],
       "Security key": [
         "Beveiligingssleutel"
@@ -6717,7 +6716,7 @@
         "Geniet van een snellere, doelgerichte e-mailervaring met de desktop app."
       ],
       "Enter the code from your authenticator app": [
-        "Voer de code van uw verificatie-app in"
+        "Voer de code van uw authenticatie app in"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
@@ -7009,7 +7008,7 @@
         "Lage prioriteit"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Maak van ${ MAIL_APP_NAME } uw standaard e-mailtoepassing."
+        "Maak ${ MAIL_APP_NAME } uw standaard e-mailapplicatie."
       ],
       "Manage your folders": [
         "Mappen beheren"
@@ -8009,7 +8008,7 @@
         "Toen u vertrouwde sleutels inschakelde voor ${ senderName }, zijn de openbare sleutels meteen toegevoegd aan deze contactpersoon."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw authenticatie app."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Wanneer u zich aanmeldt voor een nieuwsbrief, gebruik dan een alias in plaats van uw e-mailadres. Uw identiteit blijft verborgen, en u kunt de alias op elk moment uitschakelen."
@@ -8307,6 +8306,19 @@
       "${ subscription.ReceivedMessages.Last30Days } email last month": [
         "${ subscription.ReceivedMessages.Last30Days } e-mail afgelopen maand",
         "${ subscription.ReceivedMessages.Last30Days } e-mails afgelopen maand"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } nieuwsbriefabonnement",
+        "${ unreadCount } nieuwsbriefabonnementen"
+      ],
+      "Apply to future messages": [
+        "Pas toe op toekomstige berichten"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Vanwege de configuratie van uw ontvanger kan dit bericht niet met een verloopdatum worden verzonden naar ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Vanwege de configuratie van uw ontvanger kan dit bericht niet met een verloopdatum worden verzonden."
       ]
     },
     "info": {
@@ -8670,7 +8682,7 @@
         "Schermafbeelding(en) toevoegen"
       ],
       "Authenticator app": [
-        "Authenticator-app"
+        "Authenticatie app"
       ],
       "BCC": [
         "Bcc"
@@ -9201,7 +9213,29 @@
         "Uw locatie"
       ],
       "Your password (admin)": [
-        "Uw wachtwoord (admin)"
+        "Uw wachtwoord (beheerder)"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } bericht als gelezen gemarkeerd.",
+        "${ count } berichten als gelezen gemarkeerd."
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } bericht verplaatst naar ${ selectedFolder.Name }.",
+        "${ count } berichten verplaatst naar ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } bericht verplaatst naar Archief.",
+        "${ count } berichten verplaatst naar Archief."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } bericht verplaatst naar Prullenbak.",
+        "${ count } berichten verplaatst naar Prullenbak."
+      ],
+      "Newsletters": [
+        "Nieuwsbrieven"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Afgemeld van ${ truncatedName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14383,6 +14417,12 @@
       ],
       "No unsubscribed mail subscriptions": [
         "Geen abonnementen afgemeld"
+      ],
+      "Newsletters": [
+        "Nieuwsbrieven"
+      ],
+      "Newsletters view": [
+        "Nieuwsbrievenoverzicht"
       ]
     },
     "Today icon tooltip in mini calendar": {
