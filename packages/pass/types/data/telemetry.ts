@@ -13,6 +13,7 @@ export enum TelemetryEventName {
     AutosuggestAliasCreated = 'autosuggest.alias_created',
     ErrorResumingSession = 'error.resuming_session',
     ExtensionCopiedFromLogin = 'extension.copied_from_login',
+    ExtensionUsed = 'extension.used',
     ImportCompletion = 'import.complete',
     ItemCreation = 'item.creation',
     ItemDeletion = 'item.deletion',
@@ -94,6 +95,7 @@ export type ExtensionCopiedFromLoginDimensions = {
 type ImportValues = { item_count: number; vaults: number };
 type ImportDimensions = { source: ImportProvider };
 type ItemDimensions = { type: TelemetryItemType };
+type ExtensionUsedDimensions = { modelVersion: string };
 type FileDimensions = { mimeType: string };
 type NotificationDimensions = { notificationKey: InAppNotification['NotificationKey'] };
 type NotificationChangeDimensions = NotificationDimensions & { notificationStatus: TelemetryInAppNotificationStatus };
@@ -110,6 +112,7 @@ type TelemetryEvents =
     | BaseTelemetryEvent<TelemetryEventName.AutosuggestAliasCreated>
     | BaseTelemetryEvent<TelemetryEventName.ErrorResumingSession, {}, ErrorResumingSessionDimensions>
     | BaseTelemetryEvent<TelemetryEventName.ExtensionCopiedFromLogin, {}, ExtensionCopiedFromLoginDimensions>
+    | BaseTelemetryEvent<TelemetryEventName.ExtensionUsed, {}, ExtensionUsedDimensions>
     | BaseTelemetryEvent<TelemetryEventName.ImportCompletion, ImportValues, ImportDimensions>
     | BaseTelemetryEvent<TelemetryEventName.ItemCreation, {}, ItemDimensions>
     | BaseTelemetryEvent<TelemetryEventName.ItemDeletion, {}, ItemDimensions>
