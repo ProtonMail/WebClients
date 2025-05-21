@@ -15,6 +15,7 @@ interface Props {
     enableResize: (event: React.MouseEvent) => void;
     resetWidth: () => void;
     scrollBarWidth: number;
+    isAbsolute?: boolean;
     position?: ResizeHandlePosition;
 }
 
@@ -23,38 +24,37 @@ export const ResizeHandle = ({
     enableResize,
     resetWidth,
     scrollBarWidth,
+    isAbsolute = false,
     position = ResizeHandlePosition.RIGHT,
 }: Props) => {
     return (
-        <button
-            type="button"
-            ref={resizeAreaRef}
-            className={clsx(
-                'resize-area-container absolute flex items-center justify-center h-full z-up cursor-col-resize border-0 bg-transparent',
-                position === ResizeHandlePosition.RIGHT ? 'right-0' : '',
-                position === ResizeHandlePosition.LEFT ? 'left-0' : ''
-            )}
-            style={{
-                '--scrollbar-width': `${scrollBarWidth}px`,
-                width: '8px',
-                padding: 0,
-            }}
-            data-position={position}
-            title="Drag to resize or double-click to reset"
-            onMouseDown={enableResize}
-            onDoubleClick={resetWidth}
-            aria-label={c('Action').t`Resize panel`}
-        >
-            <div
+        <div className="resize-area-container" style={{ '--scrollbar-width': scrollBarWidth }}>
+            <button
+                type="button"
+                ref={resizeAreaRef}
                 className={clsx(
-                    'absolute h-10 w-0.5 bg-primary rounded opacity-0 hover:opacity-70',
-                    position === ResizeHandlePosition.RIGHT ? 'left-0' : 'right-0'
+                    'resize-area-button cursor-col-resize',
+                    isAbsolute ? 'absolute' : '',
+                    position === ResizeHandlePosition.RIGHT ? 'right-0' : '',
+                    position === ResizeHandlePosition.LEFT ? 'left-0' : ''
                 )}
-                aria-hidden="true"
-            ></div>
+                data-position={position}
+                title="Drag to resize or double-click to reset"
+                onMouseDown={enableResize}
+                onDoubleClick={resetWidth}
+                aria-label={c('Action').t`Resize panel`}
+            >
+                <div
+                    className={clsx(
+                        'absolute h-10 w-0.5 bg-primary rounded opacity-0 hover:opacity-70',
+                        position === ResizeHandlePosition.RIGHT ? 'left-0' : 'right-0'
+                    )}
+                    aria-hidden="true"
+                ></div>
 
-            <span className="sr-only">{c('Action')
-                .t`Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.`}</span>
-        </button>
+                <span className="sr-only">{c('Action')
+                    .t`Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.`}</span>
+            </button>
+        </div>
     );
 };
