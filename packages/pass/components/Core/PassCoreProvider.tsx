@@ -18,8 +18,8 @@ import type { ApiState, ClientEndpoint, Maybe, MaybeNull, MaybePromise, TabId } 
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type {
     TelemetryEvent,
+    TelemetryEventDTO,
     TelemetryEventName,
-    TelemetryEventWithExtra,
     TelemetryPlatform,
 } from '@proton/pass/types/data/telemetry';
 import type { EventDispatcher } from '@proton/pass/utils/event/dispatcher';
@@ -49,7 +49,7 @@ export type OnTelemetryEvent = <T extends TelemetryEventName = TelemetryEventNam
     Values: TelemetryEvent<T>['Values'],
     Dimensions: TelemetryEvent<T>['Dimensions'],
     platform?: TelemetryPlatform,
-    extra?: TelemetryEventWithExtra<T>['extra']
+    extra?: TelemetryEventDTO<T>['extra']
 ) => void;
 
 export type PassCoreContextValue = {
