@@ -76,6 +76,9 @@
       "Apply lifetime coupon code": [
         "Zastosuj kod kuponu dożywotniego konta"
       ],
+      "Authenticate": [
+        "Uwierzytelnij"
+      ],
       "Back": [
         "Wstecz"
       ],
@@ -412,6 +415,9 @@
       "Next": [
         "Dalej"
       ],
+      "Next month": [
+        "Następny miesiąc"
+      ],
       "No expired links": [
         "Brak wygaśniętych linków"
       ],
@@ -447,6 +453,9 @@
       ],
       "Previous": [
         "Wstecz"
+      ],
+      "Previous month": [
+        "Poprzedni miesiąc"
       ],
       "Re-verify": [
         "Zweryfikuj ponownie"
@@ -1792,6 +1801,9 @@
       "Enter the address you want to email.": [
         "Wpisz adres odbiorcy."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
+      ],
       "Enter your extra password": [
         "Wpisz dodatkowe hasło"
       ],
@@ -2515,6 +2527,9 @@
         "Masz ${ aliasCount } aliasów SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zaimportować?",
         "Masz ${ aliasCount } aliasów SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zaimportować?"
       ],
+      "Week": [
+        "Tydzień"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Wyślemy kod weryfikacyjny do ${ email }. Wpisz go poniżej:"
       ],
@@ -2760,6 +2775,9 @@
       "Account": [
         "Konto"
       ],
+      "Account Number": [
+        "Numer konta"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Dodaj losowy przedrostek domeny podczas tworzenia nowego aliasu."
       ],
@@ -2768,6 +2786,9 @@
       ],
       "Additional details": [
         "Dodatkowe szczegóły"
+      ],
+      "Address": [
+        "Adres"
       ],
       "Address details": [
         "Szczegóły adresu"
@@ -2796,6 +2817,9 @@
       "Always show username field": [
         "Zawsze pokazuj pole nazwy użytkownika"
       ],
+      "API Credential": [
+        "Poświadczenia API"
+      ],
       "Application logs": [
         "Logi aplikacji"
       ],
@@ -2804,6 +2828,12 @@
       ],
       "Backup password": [
         "Hasło zapasowe"
+      ],
+      "Bank Account": [
+        "Konto bankowe"
+      ],
+      "Bank Name": [
+        "Nazwa banku"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Poza przechowywaniem loginów ${ PASS_APP_NAME } chroni Twoją tożsamość dzięki zintegrowanej funkcji aliasów e-mail. Za każdym razem, gdy rejestrujesz nowe konto online, ${ PASS_APP_NAME } może automatycznie utworzyć alias, aby chronić Twój rzeczywisty adres e-mail."
@@ -2913,8 +2943,14 @@
       "Custom text field": [
         "Tekstowe pole niestandardowe"
       ],
+      "Database": [
+        "Baza danych"
+      ],
       "Date": [
         "Data"
+      ],
+      "Date of Birth": [
+        "Data urodzenia"
       ],
       "Device": [
         "Urządzenie"
@@ -2942,6 +2978,9 @@
       ],
       "Download logs": [
         "Pobierz logi"
+      ],
+      "Driver License": [
+        "Prawo jazdy"
       ],
       "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
         "Łatwe udostępnianie poufnych danych każdemu, nawet jeśli nie korzysta z ${ PASS_APP_NAME }. Możesz udostępnić pojedyncze hasło, notatkę, kartę płatniczą lub wiele elementów w tym samym folderze."
@@ -2976,6 +3015,9 @@
       "Expired": [
         "Wygasł"
       ],
+      "Expiry Date": [
+        "Data wygaśnięcia"
+      ],
       "Export": [
         "Eksportowanie"
       ],
@@ -2999,6 +3041,9 @@
       ],
       "File format": [
         "Format pliku"
+      ],
+      "Finance": [
+        "Finanse"
       ],
       "First name": [
         "Imię"
@@ -3063,11 +3108,17 @@
       "Highest": [
         "Najwyższa"
       ],
+      "Holder Name": [
+        "Nazwa właściciela"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Jak odblokować ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://przyklad.pl"
+      ],
+      "IBAN": [
+        "Numer IBAN"
       ],
       "ID Card": [
         "Dowód osobisty"
@@ -3116,6 +3167,9 @@
       ],
       "Invitations": [
         "Zaproszenia"
+      ],
+      "Issuing Authority": [
+        "Organ wydający"
       ],
       "Item ID": [
         "Identyfikator elementu"
@@ -3195,11 +3249,17 @@
       "Members": [
         "Użytkownicy"
       ],
+      "Membership": [
+        "Członkostwo"
+      ],
       "Middle name": [
         "Drugie imię"
       ],
       "Modified": [
         "Zmodyfikowano"
+      ],
+      "More": [
+        "Więcej"
       ],
       "More than a month": [
         "Ponad miesiąc"
@@ -3210,11 +3270,17 @@
       "Name": [
         "Nazwa"
       ],
+      "Name (SSID)": [
+        "Nazwa (SSID)"
+      ],
       "Name on card": [
         "Właściciel karty"
       ],
       "Need help?": [
         "Potrzebujesz pomocy?"
+      ],
+      "Network": [
+        "Sieć"
       ],
       "Never": [
         "Nigdy"
@@ -3315,6 +3381,9 @@
       "Plus": [
         "Plus"
       ],
+      "Points Balance": [
+        "Saldo punktów"
+      ],
       "Prefix": [
         "Przedrostek"
       ],
@@ -3324,11 +3393,23 @@
       "Priority:": [
         "Priorytet:"
       ],
+      "Private Key": [
+        "Klucz prywatny"
+      ],
+      "Private key": [
+        "Klucz prywatny"
+      ],
+      "Program Name": [
+        "Nazwa programu"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Chroń ${ PASS_APP_NAME } za pomocą dodatkowego hasła"
       ],
       "Public domain": [
         "Domena publiczna"
+      ],
+      "Public key": [
+        "Klucz publiczny"
       ],
       "Rate us": [
         "Oceń nas"
@@ -3353,6 +3434,9 @@
       ],
       "Reveal password": [
         "Pokaż hasło"
+      ],
+      "Reward Program": [
+        "Program lojalnościowy"
       ],
       "Second password": [
         "Drugie hasło"
@@ -3405,6 +3489,9 @@
       "Selected": [
         "Zaznaczono"
       ],
+      "Server": [
+        "Serwer"
+      ],
       "Share": [
         "Udostępnij"
       ],
@@ -3434,6 +3521,15 @@
       ],
       "Special characters (!&*)": [
         "Znaki specjalne (!&*)"
+      ],
+      "SSH key": [
+        "Klucz SSH"
+      ],
+      "SSH Keys": [
+        "Klucze SSH"
+      ],
+      "SSN": [
+        "SSN"
       ],
       "State or province": [
         "Stan lub województwo"
@@ -3467,6 +3563,9 @@
       ],
       "Tax number": [
         "NIP"
+      ],
+      "Technology": [
+        "Technologia"
       ],
       "Text": [
         "Tekst"
@@ -3525,6 +3624,9 @@
       "Unnamed Credit Card": [
         "Karta płatnicza bez nazwy"
       ],
+      "Unnamed custom item": [
+        "Niestandardowy element bez nazwy"
+      ],
       "Unnamed identity": [
         "Tożsamość bez nazwy"
       ],
@@ -3533,6 +3635,9 @@
       ],
       "Unnamed note": [
         "Notatka bez nazwy"
+      ],
+      "Unnamed SSH key": [
+        "Klucz SSH bez nazwy"
       ],
       "Untitled": [
         "Bez nazwy"
@@ -3576,6 +3681,9 @@
       "Vulnerable": [
         "Bardzo słabe"
       ],
+      "Wallet Name": [
+        "Nazwa portfela"
+      ],
       "Weak": [
         "Słabe"
       ],
@@ -3587,6 +3695,12 @@
       ],
       "What's included": [
         "Co zawiera"
+      ],
+      "WiFi network": [
+        "Sieć Wi-Fi"
+      ],
+      "WiFi Networks": [
+        "Sieci Wi-Fi"
       ],
       "Work details": [
         "Szczegóły służbowe"
@@ -3838,6 +3952,9 @@
       "Add 2FA secret key": [
         "Dodaj sekret TOTP"
       ],
+      "Add date": [
+        "Dodaj datę"
+      ],
       "Add hidden text": [
         "Dodaj ukryty tekst"
       ],
@@ -3852,6 +3969,9 @@
       ],
       "Coupon": [
         "Kupon"
+      ],
+      "E.g., ": [
+        "Np. "
       ],
       "Email address": [
         "Adres e-mail"
@@ -3882,9 +4002,6 @@
       ],
       "my-domain.com": [
         "moja-domena.pl"
-      ],
-      "Name to display when sending an email": [
-        "Nazwa wyświetlana podczas wysyłania wiadomości"
       ],
       "Note from SimpleLogin": [
         "Notatka z SimpleLogin"
@@ -3918,6 +4035,9 @@
       ],
       "Select a suffix": [
         "Wybierz przyrostek"
+      ],
+      "Select option": [
+        "Wybierz opcję"
       ],
       "Unknown origin": [
         "Nieznana strona"
@@ -4338,6 +4458,9 @@
       "Members": [
         "Użytkownicy"
       ],
+      "Minicalendar": [
+        "Minikalendarz"
+      ],
       "Modified": [
         "Zmodyfikowano"
       ],
@@ -4574,6 +4697,11 @@
         "Zamierzasz trwale usunąć ${ aliasCount } aliasy.",
         "Zamierzasz trwale usunąć ${ aliasCount } aliasów.",
         "Zamierzasz trwale usunąć ${ aliasCount } aliasów."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Dzisiaj"
       ]
     },
     "Tooltip": {

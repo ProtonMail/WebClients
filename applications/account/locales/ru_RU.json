@@ -187,6 +187,9 @@
       "Attention required": [
         "Требуется внимание"
       ],
+      "Authenticate": [
+        "Аутентификация"
+      ],
       "Authenticating": [
         "Аутентификация"
       ],
@@ -562,6 +565,9 @@
       "Edit users": [
         "Изменить пользователей"
       ],
+      "Emoji": [
+        "Смайлики"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Включите ${ darkWebMonitoring }"
       ],
@@ -609,6 +615,9 @@
       ],
       "Font": [
         "Шрифт"
+      ],
+      "Forgot password?": [
+        "Забыли пароль?"
       ],
       "Forgot recovery method?": [
         "Забыли метод восстановления?"
@@ -1399,8 +1408,14 @@
       "Use a different payment method": [
         "Использовать другой способ оплаты"
       ],
+      "Use authentication code": [
+        "Использовать код аутентификации"
+      ],
       "Use group sending permissions": [
         "Использовать групповые разрешения на отправку"
+      ],
+      "Use recovery code": [
+        "Использовать код восстановлени"
       ],
       "Use your current email instead": [
         "Вместо этого используйте свой текущий адрес электронной почты"
@@ -6382,6 +6397,9 @@
       "Please disable 2FA via security key before disabling TOTP": [
         "Отключите 2FA через ключ безопасности перед отключением TOTP"
       ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Произошла ошибка при аутентификации с помощью ключа безопасности. Попробуйте снова."
+      ],
       "Something went wrong registering your security key. Please try again.": [
         "Что-то пошло не так при регистрации вашего ключа безопасности. Попробуйте снова."
       ]
@@ -6402,8 +6420,14 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Вы уверены, что хотите удалить ключ безопасности ${ name }?"
       ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Вставьте ключ безопасности, привязанный к аккаунту ${ BRAND_NAME }."
+      ],
       "Insert your security key into your device's USB port.": [
         "Вставьте свой ключ безопасности в порт USB вашего устройства."
+      ],
+      "Security key": [
+        "Ключ безопасности"
       ],
       "Security key removed": [
         "Ключ безопасности удален"
@@ -6433,6 +6457,9 @@
     "fido2: Label": {
       "Key name": [
         "Имя ключа"
+      ],
+      "Security key": [
+        "Ключ безопасности"
       ]
     },
     "fido2: Title": {
@@ -8501,6 +8528,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Введите электронный адрес вашего аккаунта или имя пользователя ${ BRAND_NAME }."
       ],
+      "Enter your own password (as organization admin).": [
+        "Введите свой пароль как администратора организации."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Введите адрес своей резервной электронной почты, и мы отправим вам ваше имя пользователя или адрес электронной почты."
       ],
@@ -10336,6 +10366,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Когда вы удаляете сервер из шлюза, он входит в 10-дневный период деактивации. Этот сервер может быть добавлен в новый шлюз, но его страна не может быть изменена."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "При настройке двухфакторной аутентификации, мы предоставляем коды восстановления для входа в аккаунт, если вы потеряете доступ к приложению аутентификатора."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "При продлении вашей подписки мы сначала используем любой доступный баланс и только после этого списываем недостающую сумму через вышеуказанный способ оплаты."
@@ -19649,6 +19682,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Введите информацию об аккаунте ${ BRAND_NAME }, чтобы присоединиться к программе \"Бета\" ${ app }"
+      ],
+      "Enter your password": [
+        "Введите пароль"
       ],
       "Error": [
         "Ошибка"

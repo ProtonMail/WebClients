@@ -6537,8 +6537,8 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Budú odstránené aj všetky podpriečinky. Emaily uložené v priečinku ${ nameDeleted } sa však neodstránia a nájdete ich v priečinku Všetka pošta."
       ],
-      "Apply to future messages ": [
-        "Použiť na budúce správy "
+      "Apply to future messages": [
+        "Použiť na budúce správy"
       ],
       "Applying actions to conversations": [
         "Použitie akcií na konverzácie"
@@ -9205,9 +9205,6 @@
       "Mail Server (IMAP)": [
         "Emailový server (IMAP)"
       ],
-      "Mail subscriptions": [
-        "Zasielanie pravidelných emailov"
-      ],
       "Main": [
         "Hlavné"
       ],
@@ -9219,6 +9216,12 @@
       ],
       "Mark as": [
         "Označiť ako"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } správa označená ako prečítaná",
+        "${ count } správy označené ako prečítané",
+        "${ count } správ označených ako prečítané",
+        "${ count } správ označených ako prečítané"
       ],
       "Move ${ sidebarElementName }": [
         "Presunúť ${ sidebarElementName }"
@@ -9234,6 +9237,24 @@
       ],
       "Move to Inbox": [
         "Presunúť do Doručených"
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } správa presunutá do ${ selectedFolder.Name }",
+        "${ count } správy presunuté do ${ selectedFolder.Name }",
+        "${ count } správ presunutých do ${ selectedFolder.Name }",
+        "${ count } správ presunutých do ${ selectedFolder.Name }"
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } správa presunutá do Archívu",
+        "${ count } správy presunuté do Archívu",
+        "${ count } správ presunutých do Archívu",
+        "${ count } správ presunutých do Archívu"
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } správa presunutá do Koša",
+        "${ count } správy presunuté do Koša",
+        "${ count } správ presunutých do Koša",
+        "${ count } správ presunutých do Koša"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
@@ -9426,6 +9447,9 @@
       ],
       "Unsafe or problematic": [
         "Nebezpečné alebo problematické"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Odber z ${ truncatedName } bol odhlásený."
       ],
       "Upload picture": [
         "Nahrať obrázok"
@@ -14411,12 +14435,6 @@
       ],
       "Load remote content": [
         "Načítať vzdialený obsah"
-      ],
-      "Mail Subscriptions": [
-        "Emailové odbery"
-      ],
-      "Mail subscriptions": [
-        "Zasielanie pravidelných emailov"
       ],
       "Make a secure connection your default": [
         "Nastavte zabezpečené pripojenie ako východzie"

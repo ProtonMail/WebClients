@@ -415,6 +415,9 @@
       "Next": [
         "Nästa"
       ],
+      "Next month": [
+        "Nästa månad"
+      ],
       "No expired links": [
         "Inga utlöpta länkar"
       ],
@@ -450,6 +453,9 @@
       ],
       "Previous": [
         "Föregående"
+      ],
+      "Previous month": [
+        "Föregående månad"
       ],
       "Re-verify": [
         "Verifiera igen"
@@ -588,6 +594,9 @@
       ],
       "Sort vault items": [
         "Sortera valvobjekt"
+      ],
+      "Start from scratch": [
+        "Börja från början"
       ],
       "Submit": [
         "Skicka"
@@ -2281,6 +2290,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "För att granska dina importerade data, klicka på ${ PASS_APP_NAME }-ikonen i din webbläsares verktygsfält."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Betrodd av över 50 000 företagsanvändare och 100 miljoner konton runt om i världen."
+      ],
       "Unable to copy to clipboard": [
         "Kan inte kopiera till urklipp"
       ],
@@ -2357,6 +2369,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "Vi upptäckte att du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du importera det?",
         "Vi upptäckte att du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du importera dem?"
+      ],
+      "Week": [
+        "Vecka"
       ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Vi har skickat en verifieringskod till ${ email }. Ange den nedan:"
@@ -2571,6 +2586,12 @@
       "Account": [
         "Konto"
       ],
+      "Account Number": [
+        "Kontonummer"
+      ],
+      "Account Type": [
+        "Kontotyp"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Lägg till ett slumpmässigt prefix för denna domän när du skapar ett nytt alias."
       ],
@@ -2579,6 +2600,9 @@
       ],
       "Additional details": [
         "Ytterligare detaljer"
+      ],
+      "Address": [
+        "Adress"
       ],
       "Address details": [
         "Adressuppgifter"
@@ -2615,6 +2639,12 @@
       ],
       "Backup password": [
         "Reservlösenord"
+      ],
+      "Bank Account": [
+        "Bankkonto"
+      ],
+      "Bank Name": [
+        "Banknamn"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Förutom att lagra dina inloggningar skyddar ${ PASS_APP_NAME } din identitet med en integrerad funktion för e-postalias. När du registrerar dig för ett nytt konto online kan ${ PASS_APP_NAME } automatiskt skapa ett alias för att hålla din faktiska e-postadress skyddad. "
@@ -2685,11 +2715,17 @@
       "Country or Region": [
         "Land eller region"
       ],
+      "Country,": [
+        "Land,"
+      ],
       "County": [
         "Län"
       ],
       "Create a credit card": [
         "Skapa ett kreditkort"
+      ],
+      "Create a custom item": [
+        "Skapa ett anpassat objekt"
       ],
       "Create a hide-my-email alias": [
         "Skapa ett hide-my-email-alias"
@@ -2721,11 +2757,20 @@
       "Custom hidden field": [
         "Anpassat dolt fält"
       ],
+      "Custom Items": [
+        "Anpassade objekt"
+      ],
       "Custom text field": [
         "Anpassat textfält"
       ],
+      "Database": [
+        "Databas"
+      ],
       "Date": [
         "Datum"
+      ],
+      "Date of Birth": [
+        "Födelsedatum"
       ],
       "Device": [
         "Enhet"
@@ -2753,6 +2798,9 @@
       ],
       "Download logs": [
         "Ladda ner loggar"
+      ],
+      "Driver License": [
+        "Körkort"
       ],
       "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
         "Dela enkelt känslig information med vem som helst, även om de inte använder ${ PASS_APP_NAME }. Du kan dela ett enda lösenord, anteckning eller kreditkort eller flera objekt i samma mapp."
@@ -2787,6 +2835,9 @@
       "Expired": [
         "Löpt ut"
       ],
+      "Expiry Date": [
+        "Utgångsdatum"
+      ],
       "Export": [
         "Exportera"
       ],
@@ -2810,6 +2861,9 @@
       ],
       "File format": [
         "Filformat"
+      ],
+      "Finance": [
+        "Ekonomi"
       ],
       "First name": [
         "Förnamn"
@@ -2874,11 +2928,17 @@
       "Highest": [
         "Högsta"
       ],
+      "Holder Name": [
+        "Innehavarens namn"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Hur man låser upp ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "ID-kort"
@@ -2927,6 +2987,12 @@
       ],
       "Invitations": [
         "Inbjudningar"
+      ],
+      "Issuing Authority": [
+        "Utfärdande myndighet"
+      ],
+      "Issuing Country": [
+        "Utfärdande land"
       ],
       "Item ID": [
         "Objekt-ID"
@@ -3003,14 +3069,26 @@
       "max views reached": [
         "maximalt antal visningar uppnått"
       ],
+      "Medical Record": [
+        "Medicinsk journal"
+      ],
+      "Member ID": [
+        "Medlems-ID"
+      ],
       "Members": [
         "Medlemmar"
+      ],
+      "Membership": [
+        "Medlemskap"
       ],
       "Middle name": [
         "Mellannamn"
       ],
       "Modified": [
         "Ändrad"
+      ],
+      "More": [
+        "Mer"
       ],
       "More than a month": [
         "Mer än en månad"
@@ -3021,11 +3099,17 @@
       "Name": [
         "Namn"
       ],
+      "Name (SSID)": [
+        "Namn (SSID)"
+      ],
       "Name on card": [
         "Namn på kort"
       ],
       "Need help?": [
         "Behöver du hjälp?"
+      ],
+      "Network": [
+        "Nätverk"
       ],
       "Never": [
         "Aldrig"
@@ -3096,6 +3180,9 @@
       "Passport number": [
         "Passnummer"
       ],
+      "Passport Number": [
+        "Passnummer"
+      ],
       "Password": [
         "Lösenord"
       ],
@@ -3126,6 +3213,9 @@
       "Plus": [
         "Plus"
       ],
+      "Points Balance": [
+        "Poängsaldo"
+      ],
       "Prefix": [
         "Prefix"
       ],
@@ -3135,11 +3225,23 @@
       "Priority:": [
         "Prioritet:"
       ],
+      "Private Key": [
+        "Privat nyckel"
+      ],
+      "Private key": [
+        "Privat nyckel"
+      ],
+      "Program Name": [
+        "Programnamn"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Skydda ${ PASS_APP_NAME } med ett extralösenord"
       ],
       "Public domain": [
         "Offentlig domän"
+      ],
+      "Public key": [
+        "Offentlig nyckel"
       ],
       "Rate us": [
         "Betygsätt oss"
@@ -3164,6 +3266,9 @@
       ],
       "Reveal password": [
         "Visa lösenord"
+      ],
+      "Reward Program": [
+        "Belöningsprogram"
       ],
       "Second password": [
         "Andra lösenord"
@@ -3192,6 +3297,9 @@
       "See member and permission overview": [
         "Se översikt över medlemmar och behörigheter"
       ],
+      "Seed Phrase": [
+        "Säkerhetsfras"
+      ],
       "Select a domain": [
         "Välj en domän"
       ],
@@ -3215,6 +3323,9 @@
       ],
       "Selected": [
         "Valda"
+      ],
+      "Server": [
+        "Server"
       ],
       "Share": [
         "Dela"
@@ -3240,11 +3351,26 @@
       "Social security": [
         "Social säkerhet"
       ],
+      "Social Security": [
+        "Social säkerhet"
+      ],
       "Social security number": [
         "Personnummer"
       ],
+      "Software license": [
+        "Programvarulicens"
+      ],
       "Special characters (!&*)": [
         "Specialtecken (!&*)"
+      ],
+      "SSH key": [
+        "SSH-nyckel"
+      ],
+      "SSH Keys": [
+        "SSH-nycklar"
+      ],
+      "SSN": [
+        "SSN"
       ],
       "State or province": [
         "Delstat eller provins"
@@ -3270,6 +3396,9 @@
       "Support": [
         "Support"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Synkronisera alias med SimpleLogin"
       ],
@@ -3278,6 +3407,9 @@
       ],
       "Tax number": [
         "Momsnummer"
+      ],
+      "Technology": [
+        "Teknologi"
       ],
       "Text": [
         "Text"
@@ -3293,6 +3425,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Detta objekt är tillgängligt fram till ${ date } eller tills visningsgränsen nås."
+      ],
+      "Tier/Status": [
+        "Nivå/status"
       ],
       "Title": [
         "Rubrik"
@@ -3336,6 +3471,9 @@
       "Unnamed Credit Card": [
         "Namnlöst kreditkort"
       ],
+      "Unnamed custom item": [
+        "Namnlöst anpassat objekt"
+      ],
       "Unnamed identity": [
         "Namnlös identitet"
       ],
@@ -3344,6 +3482,15 @@
       ],
       "Unnamed note": [
         "Namnlös anteckning"
+      ],
+      "Unnamed SSH key": [
+        "Namnlös SSH-nyckel"
+      ],
+      "Unnamed WiFi item": [
+        "Namnlöst WiFi-objekt"
+      ],
+      "Unspecified": [
+        "Ospecificerad"
       ],
       "Untitled": [
         "Ingen rubrik"
@@ -3387,6 +3534,9 @@
       "Vulnerable": [
         "Sårbart"
       ],
+      "Wallet Name": [
+        "Plånboksnamn"
+      ],
       "Weak": [
         "Svagt"
       ],
@@ -3398,6 +3548,12 @@
       ],
       "What's included": [
         "Vad som är inkluderat"
+      ],
+      "WiFi network": [
+        "WiFi-nätverk"
+      ],
+      "WiFi Networks": [
+        "WiFi-nätverk"
       ],
       "Work details": [
         "Arbetsdetaljer"
@@ -3640,6 +3796,9 @@
       "Add 2FA secret key": [
         "Lägg till hemlig nyckel för 2FA"
       ],
+      "Add date": [
+        "Lägg till datum"
+      ],
       "Add hidden text": [
         "Lägg till dold text"
       ],
@@ -3654,6 +3813,9 @@
       ],
       "Coupon": [
         "Kupong"
+      ],
+      "E.g., ": [
+        "T.ex., "
       ],
       "Email address": [
         "E-postadress"
@@ -3685,8 +3847,8 @@
       "my-domain.com": [
         "my-domain.com"
       ],
-      "Name to display when sending an email": [
-        "Namn att visa när e-post skickas"
+      "Name displayed in emails": [
+        "Namn visad i e-post"
       ],
       "Note from SimpleLogin": [
         "Anteckning från SimpleLogin"
@@ -3720,6 +3882,9 @@
       ],
       "Select a suffix": [
         "Välj ett suffix"
+      ],
+      "Select option": [
+        "Välj alternativ"
       ],
       "Unknown origin": [
         "Okänt ursprung"
@@ -4134,6 +4299,9 @@
       "Members": [
         "Medlemmar"
       ],
+      "Minicalendar": [
+        "Minikalender"
+      ],
       "Modified": [
         "Ändrad"
       ],
@@ -4360,6 +4528,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du håller på att ta bort ${ aliasCount } alias permanent.",
         "Du håller på att ta bort ${ aliasCount } alias permanent."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Idag"
       ]
     },
     "Tooltip": {

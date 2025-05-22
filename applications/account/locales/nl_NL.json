@@ -187,6 +187,9 @@
       "Attention required": [
         "Aandacht vereist"
       ],
+      "Authenticate": [
+        "Authenticeren"
+      ],
       "Authenticating": [
         "Aan het inloggen"
       ],
@@ -195,6 +198,9 @@
       ],
       "Back": [
         "Terug"
+      ],
+      "Back to sign in": [
+        "Terug naar aanmelden"
       ],
       "Block": [
         "Blokkeer"
@@ -562,6 +568,9 @@
       "Edit users": [
         "Gebruikers bewerken"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } activeren"
       ],
@@ -609,6 +618,9 @@
       ],
       "Font": [
         "Lettertype"
+      ],
+      "Forgot password?": [
+        "Wachtwoord vergeten?"
       ],
       "Forgot recovery method?": [
         "Herstelmethode vergeten?"
@@ -1345,6 +1357,9 @@
       "Unsubscribe": [
         "Afmelden"
       ],
+      "Update": [
+        "Update"
+      ],
       "Update recovery file": [
         "Herstelbestand bijwerken"
       ],
@@ -1396,8 +1411,14 @@
       "Use a different payment method": [
         "Gebruik een andere betaalmethode"
       ],
+      "Use authentication code": [
+        "Authenticatiecode gebruiken"
+      ],
       "Use group sending permissions": [
         "Groepsverzend machtigingen gebruiken"
+      ],
+      "Use recovery code": [
+        "Herstelcode gebruiken"
       ],
       "Use your current email instead": [
         "Gebruik in plaats daarvan uw huidige e-mailadres"
@@ -6317,6 +6338,9 @@
       "Please disable 2FA via security key before disabling TOTP": [
         "Schakel 2FA via een beveiligingssleutel uit voordat u TOTP uitschakelt"
       ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Er is iets fout gegaan bij het verifiëren van uw beveiligingssleutel. Probeer het opnieuw."
+      ],
       "Something went wrong registering your security key. Please try again.": [
         "Er is iets fout gegaan bij het registreren van uw beveiligingssleutel. Probeer het opnieuw."
       ]
@@ -6337,8 +6361,14 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Weet u zeker dat u de beveiligingssleutel ${ name } wilt verwijderen?"
       ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME } account."
+      ],
       "Insert your security key into your device's USB port.": [
         "Steek uw beveiligingssleutel in de USB-poort van uw apparaat."
+      ],
+      "Security key": [
+        "Beveiligingssleutel"
       ],
       "Security key removed": [
         "Veiligheidssleutel verwijderd"
@@ -6366,6 +6396,9 @@
     "fido2: Label": {
       "Key name": [
         "Sleutelnaam"
+      ],
+      "Security key": [
+        "Beveiligingssleutel"
       ]
     },
     "fido2: Title": {
@@ -8199,6 +8232,9 @@
       "Drop to import": [
         "Neerzetten om te importeren"
       ],
+      "Each code can only be used once": [
+        "Elke code kan maar één keer gebruikt worden"
+      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Elk domein kan slechts één SPF- (TXT-)record hebben. Als u de bestaande SPF- (TXT-)record wilt houden, u kunt ${ spf } toevoegen aan uw huidige record (zet het na ${ spfValue })."
       ],
@@ -8301,6 +8337,9 @@
       "Enter new password for user ${ userName }.": [
         "Voer een nieuw wachtwoord in voor gebruiker ${ userName }."
       ],
+      "Enter the code from your authenticator app": [
+        "Voer de code van uw authenticatie app in"
+      ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Voer de code in die naar uw telefoonnummer ${ phone } is gestuurd."
       ],
@@ -8319,11 +8358,17 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Voer verificatiecode in. Cijfer ${ digit }."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Voer uw ${ BRAND_NAME } Accountgegevens in."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Voer het e-mailadres of de gebruikersnaam van uw ${ BRAND_NAME }-account in."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Voer uw herstel-e-mailadres in en wij sturen u uw gebruikersnaam of e-mailadres."
@@ -9767,6 +9812,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Om te bevestigen, voer de naam in van de gebruiker die u wilt verwijderen."
       ],
+      "To continue to ${ product }": [
+        "Om door te gaan naar ${ product }"
+      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Om onze diensten voortdurend te verbeteren, verzamelen wij soms gegevens om de goede werking van onze toepassingen te controleren. Deze informatie wordt niet gedeeld met diensten van derden."
       ],
@@ -10132,6 +10180,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Wanneer u een server uit een Gateway verwijdert, voert deze een deactivatieperiode van 10 dagen in. Deze server kan worden toegevoegd aan een nieuwe gateway, maar zijn land kan niet worden veranderd."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw authenticatie app."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wanneer uw abonnement verlengt, passen we alle beschikbare credits toe voordat we de bovenstaande betaalmethode in rekening brengen."
@@ -11172,6 +11223,9 @@
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
       ],
+      "Authenticator app": [
+        "Authenticatie app"
+      ],
       "Auto show embedded images": [
         "Ingesloten afbeeldingen automatisch weergeven"
       ],
@@ -12153,6 +12207,9 @@
       ],
       "Your calendar URL": [
         "Uw agenda-URL"
+      ],
+      "Your password (admin)": [
+        "Uw wachtwoord (beheerder)"
       ],
       "Your referral link": [
         "Uw doorverwijslink"
@@ -19176,6 +19233,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Vul uw ${ BRAND_NAME }-account gegevens in om deel te nemen aan het ${ app } Bèta programma"
+      ],
+      "Enter your password": [
+        "Voer uw wachtwoord in"
       ],
       "Error": [
         "Fout"
