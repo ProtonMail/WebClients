@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { createBYOEAddress } from '@proton/account/addresses/actions';
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import {
     G_OAUTH_SCOPE_DEFAULT,
@@ -11,17 +12,19 @@ import {
     SYNC_G_OAUTH_SCOPES,
 } from '@proton/activation/src/constants';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { loadSyncList } from '@proton/activation/src/logic/sync/sync.actions';
+import { deleteSyncItem, loadSyncList } from '@proton/activation/src/logic/sync/sync.actions';
 import type { Sync } from '@proton/activation/src/logic/sync/sync.interface';
 import { getAllSync } from '@proton/activation/src/logic/sync/sync.selectors';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { findUserAddress } from '@proton/shared/lib/helpers/address';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/index';
 
 const useSetupGmailBYOEAddress = () => {
     const [user] = useUser();
+    const [addresses] = useAddresses();
     // Only admins can access to BYOE for now, this will change later
     const hasAccessToBYOE = useFlag('InboxBringYourOwnEmail') && isAdmin(user);
     const isInMaintenance = useFlag('MaintenanceImporter');
@@ -30,6 +33,7 @@ const useSetupGmailBYOEAddress = () => {
 
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
+    const dispatchEasySwitch = useEasySwitchDispatch();
 
     const googleOAuthScope = hasAccessToBYOE
         ? [...G_OAUTH_SCOPE_DEFAULT, ...G_OAUTH_SCOPE_MAIL_FULL_SCOPE, ...G_OAUTH_SCOPE_PROFILE].join(' ')
@@ -57,15 +61,29 @@ const useSetupGmailBYOEAddress = () => {
                 Domain: domain,
             };
 
-            const address = await dispatch(
-                createBYOEAddress({
-                    emailAddressParts,
-                    displayName,
-                })
-            );
+            // If the BYOE address is already part of the user addresses, no need to create it
+            const emailAddress = `${emailAddressParts.Local}@${emailAddressParts.Domain}`;
+            if (findUserAddress(emailAddress, addresses)) {
+                createNotification({
+                    type: 'error',
+                    text: c('loc_nightly: BYOE').t`Address is already added to your account`,
+                });
+            } else {
+                try {
+                    const address = await dispatch(
+                        createBYOEAddress({
+                            emailAddressParts,
+                            displayName,
+                        })
+                    );
 
-            if (address) {
-                createNotification({ text: c('Success').t`Address added` });
+                    if (address) {
+                        createNotification({ text: c('Success').t`Address added` });
+                    }
+                } catch {
+                    // If we're not able to add the address, we want to delete the forwarding we just added
+                    void dispatchEasySwitch(deleteSyncItem({ syncId: sync.id, showNotification: false }));
+                }
             }
         }
     };
