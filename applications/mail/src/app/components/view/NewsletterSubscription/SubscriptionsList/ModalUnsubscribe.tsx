@@ -86,6 +86,8 @@ const ModalUnsubscribe = ({ subscription, ...props }: Props) => {
                                 variant="large"
                                 className="rounded relative"
                                 displaySenderImage
+                                initialsStyle={{ '--h-custom': '2.25rem' }}
+                                initialsClassName="bg-strong text-no-bold flex h-custom items-center justify-center rounded w-full"
                             />
                         </div>
                         <div>
