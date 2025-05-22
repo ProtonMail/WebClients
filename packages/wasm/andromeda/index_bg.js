@@ -217,12 +217,6 @@ function _assertClass(instance, klass) {
     }
 }
 
-function takeFromExternrefTable0(idx) {
-    const value = wasm.__wbindgen_export_2.get(idx);
-    wasm.__externref_table_dealloc(idx);
-    return value;
-}
-
 function getArrayJsValueFromWasm0(ptr, len) {
     ptr = ptr >>> 0;
     const mem = getDataViewMemory0();
@@ -243,29 +237,11 @@ function passArrayJsValueToWasm0(array, malloc) {
     WASM_VECTOR_LEN = array.length;
     return ptr;
 }
-/**
- * @param {string} word_start
- * @returns {string[]}
- */
-export function getWordsAutocomplete(word_start) {
-    const ptr0 = passStringToWasm0(word_start, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-    const len0 = WASM_VECTOR_LEN;
-    const ret = wasm.getWordsAutocomplete(ptr0, len0);
-    var v2 = getArrayJsValueFromWasm0(ret[0], ret[1]).slice();
-    wasm.__wbindgen_free(ret[0], ret[1] * 4, 4);
-    return v2;
-}
 
-export function setPanicHook() {
-    wasm.setPanicHook();
-}
-
-/**
- * @returns {number}
- */
-export function getDefaultStopGap() {
-    const ret = wasm.getDefaultStopGap();
-    return ret >>> 0;
+function takeFromExternrefTable0(idx) {
+    const value = wasm.__wbindgen_export_2.get(idx);
+    wasm.__externref_table_dealloc(idx);
+    return value;
 }
 
 function passArray8ToWasm0(arg, malloc) {
@@ -286,20 +262,45 @@ export function createTransactionFromPsbt(psbt, account) {
     return ret;
 }
 
+/**
+ * @returns {number}
+ */
+export function getDefaultStopGap() {
+    const ret = wasm.getDefaultStopGap();
+    return ret >>> 0;
+}
+
+/**
+ * @param {string} word_start
+ * @returns {string[]}
+ */
+export function getWordsAutocomplete(word_start) {
+    const ptr0 = passStringToWasm0(word_start, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    const len0 = WASM_VECTOR_LEN;
+    const ret = wasm.getWordsAutocomplete(ptr0, len0);
+    var v2 = getArrayJsValueFromWasm0(ret[0], ret[1]).slice();
+    wasm.__wbindgen_free(ret[0], ret[1] * 4, 4);
+    return v2;
+}
+
+export function setPanicHook() {
+    wasm.setPanicHook();
+}
+
 function __wbg_adapter_42(arg0, arg1) {
-    wasm._dyn_core__ops__function__FnMut_____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h4643494378b3d270(arg0, arg1);
+    wasm._dyn_core__ops__function__FnMut_____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h98735c72df668e46(arg0, arg1);
 }
 
 function __wbg_adapter_45(arg0, arg1, arg2) {
-    wasm.closure11252_externref_shim(arg0, arg1, arg2);
+    wasm.closure11286_externref_shim(arg0, arg1, arg2);
 }
 
 function __wbg_adapter_48(arg0, arg1) {
-    wasm._dyn_core__ops__function__FnMut_____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h71cde0578b4fe767(arg0, arg1);
+    wasm._dyn_core__ops__function__FnMut_____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__he8d503ad6afbbd6f(arg0, arg1);
 }
 
 function __wbg_adapter_681(arg0, arg1, arg2, arg3) {
-    wasm.closure11374_externref_shim(arg0, arg1, arg2, arg3);
+    wasm.closure11409_externref_shim(arg0, arg1, arg2, arg3);
 }
 
 /**
@@ -752,7 +753,7 @@ export class WasmAccountSyncer {
     constructor(client, account) {
         _assertClass(client, WasmBlockchainClient);
         _assertClass(account, WasmAccount);
-        const ret = wasm.wasmaccountsweeper_new(client.__wbg_ptr, account.__wbg_ptr);
+        const ret = wasm.wasmaccountsyncer_new(client.__wbg_ptr, account.__wbg_ptr);
         this.__wbg_ptr = ret >>> 0;
         WasmAccountSyncerFinalization.register(this, this.__wbg_ptr, this);
         return this;
@@ -4408,7 +4409,7 @@ export class WasmRecipient {
     set 0(arg0) {
         const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         const len0 = WASM_VECTOR_LEN;
-        wasm.__wbg_set_wasmrecipient_0(this.__wbg_ptr, ptr0, len0);
+        wasm.__wbg_set_wasmpsbtrecipient_0(this.__wbg_ptr, ptr0, len0);
     }
     /**
      * @returns {string}
@@ -4437,14 +4438,14 @@ export class WasmRecipient {
      * @returns {bigint}
      */
     get 2() {
-        const ret = wasm.__wbg_get_wasmrecipient_2(this.__wbg_ptr);
+        const ret = wasm.__wbg_get_wasmpsbt_total_fees(this.__wbg_ptr);
         return BigInt.asUintN(64, ret);
     }
     /**
      * @param {bigint} arg0
      */
     set 2(arg0) {
-        wasm.__wbg_set_wasmrecipient_2(this.__wbg_ptr, arg0);
+        wasm.__wbg_set_wasmpsbt_total_fees(this.__wbg_ptr, arg0);
     }
 }
 
@@ -5349,14 +5350,14 @@ export class WasmUtxo {
      * @returns {bigint}
      */
     get value() {
-        const ret = wasm.__wbg_get_wasmapiwalletbitcoinaddressusedindexdata_Data(this.__wbg_ptr);
+        const ret = wasm.__wbg_get_wasmutxo_value(this.__wbg_ptr);
         return BigInt.asUintN(64, ret);
     }
     /**
      * @param {bigint} arg0
      */
     set value(arg0) {
-        wasm.__wbg_set_wasmapiwalletbitcoinaddressusedindexdata_Data(this.__wbg_ptr, arg0);
+        wasm.__wbg_set_wasmutxo_value(this.__wbg_ptr, arg0);
     }
     /**
      * @returns {WasmOutPoint}
@@ -5371,7 +5372,7 @@ export class WasmUtxo {
     set outpoint(arg0) {
         _assertClass(arg0, WasmOutPoint);
         var ptr0 = arg0.__destroy_into_raw();
-        wasm.__wbg_set_wasmtxout_script_pubkey(this.__wbg_ptr, ptr0);
+        wasm.__wbg_set_wasmutxo_outpoint(this.__wbg_ptr, ptr0);
     }
     /**
      * @returns {WasmScript}
@@ -6916,18 +6917,18 @@ export function __wbindgen_cb_drop(arg0) {
     return ret;
 };
 
-export function __wbindgen_closure_wrapper46625(arg0, arg1, arg2) {
-    const ret = makeMutClosure(arg0, arg1, 11239, __wbg_adapter_42);
+export function __wbindgen_closure_wrapper46419(arg0, arg1, arg2) {
+    const ret = makeMutClosure(arg0, arg1, 11243, __wbg_adapter_42);
     return ret;
 };
 
-export function __wbindgen_closure_wrapper46673(arg0, arg1, arg2) {
-    const ret = makeMutClosure(arg0, arg1, 11253, __wbg_adapter_45);
+export function __wbindgen_closure_wrapper46463(arg0, arg1, arg2) {
+    const ret = makeMutClosure(arg0, arg1, 11287, __wbg_adapter_45);
     return ret;
 };
 
-export function __wbindgen_closure_wrapper47265(arg0, arg1, arg2) {
-    const ret = makeMutClosure(arg0, arg1, 11325, __wbg_adapter_48);
+export function __wbindgen_closure_wrapper47054(arg0, arg1, arg2) {
+    const ret = makeMutClosure(arg0, arg1, 11359, __wbg_adapter_48);
     return ret;
 };
 
