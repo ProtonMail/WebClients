@@ -32,7 +32,7 @@ import type {
     SelectedItem,
     UniqueItem,
 } from '../data';
-import type { TelemetryEventWithExtra } from '../data/telemetry';
+import type { TelemetryEventDTO } from '../data/telemetry';
 import type { Maybe, MaybeNull, OptionalProp } from '../utils';
 import type { AutofillIdentityResult, AutofillLoginResult, AutofillOptions } from './autofill';
 import type { AutosaveRequest } from './autosave';
@@ -201,7 +201,7 @@ export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, {
 export type TabsQueryMessage = WithPayload<WorkerMessageType.TABS_QUERY, { current?: boolean }>;
 export type TelemetryEventMessage = WithPayload<
     WorkerMessageType.TELEMETRY_EVENT,
-    OptionalProp<TelemetryEventWithExtra, 'extra'>
+    OptionalProp<TelemetryEventDTO, 'extra'>
 >;
 export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT };
 export type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };
