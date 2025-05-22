@@ -210,3 +210,8 @@ export const getDescriptionBySigningType = (type: WasmSigningType) => {
             return c('Bitcoin Signing Type Description').t`Electrum is a compatibility signature format`;
     }
 };
+
+export enum ExportFormat {
+    PDF = 'PDF',
+    CSV = 'CSV',
+}

@@ -6,6 +6,7 @@ import { Icon, Tooltip } from '@proton/components';
 import { type IWasmApiWalletData } from '@proton/wallet';
 
 import { CoreButton } from '../../../atoms';
+import { ExportStatementButton } from '../../ExportStatementButton';
 import { useTransactionContentHeader } from './useTransactionContentHeader';
 
 interface Props {
@@ -22,6 +23,8 @@ export const TransactionContentHeader = ({ apiWalletData, apiAccount, onSortChan
 
         isNarrow,
         handleClickSync,
+
+        hasTransaction,
     } = useTransactionContentHeader({ walletId: apiWalletData.Wallet.ID, walletAccountId: apiAccount?.ID });
 
     return (
@@ -59,7 +62,7 @@ export const TransactionContentHeader = ({ apiWalletData, apiAccount, onSortChan
                 shape="ghost"
                 color="weak"
                 className="ml-2 rounded-full bg-weak"
-                disabled={isSyncingWalletData}
+                disabled={isSyncingWalletData || !hasTransaction}
                 onClick={() => onSortChange(sortOrder === WasmSortOrder.Asc ? WasmSortOrder.Desc : WasmSortOrder.Asc)}
             >
                 {sortOrder === WasmSortOrder.Asc ? (
@@ -76,6 +79,11 @@ export const TransactionContentHeader = ({ apiWalletData, apiAccount, onSortChan
                     />
                 )}
             </CoreButton>
+            <ExportStatementButton
+                apiWalletData={apiWalletData}
+                apiAccount={apiAccount}
+                disabled={isSyncingWalletData || !hasTransaction}
+            />
         </div>
     );
 };
