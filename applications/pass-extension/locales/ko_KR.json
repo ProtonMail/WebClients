@@ -398,6 +398,9 @@
       "Multiple select": [
         "다중 선택"
       ],
+      "Next month": [
+        "다음 달"
+      ],
       "No expired links": [
         "만료된 링크 없음"
       ],
@@ -427,6 +430,9 @@
       ],
       "Please retry": [
         "다시 시도하세요"
+      ],
+      "Previous month": [
+        "지난 달"
       ],
       "Re-verify": [
         "재인증"
@@ -2242,6 +2248,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "SimpleLogin에 ${ aliasCount }개의 별칭이 존재하지만 ${ PASS_APP_NAME }에는 누락된 별칭이 있음이 발견되었어요. 해당 별명을 불러오시겠어요?"
       ],
+      "Week": [
+        "주"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "${ email }(으)로 인증 코드를 발송해 드렸습니다. 아래에 코드를 입력해 주세요:"
       ],
@@ -2436,6 +2445,9 @@
       "Additional details": [
         "추가 정보"
       ],
+      "Address": [
+        "주소"
+      ],
       "Address details": [
         "주소 상세정보"
       ],
@@ -2580,6 +2592,9 @@
       "Custom text field": [
         "사용자 정의 필드"
       ],
+      "Date": [
+        "날짜"
+      ],
       "Device": [
         "기기"
       ],
@@ -2687,6 +2702,9 @@
       ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "신분증"
@@ -3354,6 +3372,9 @@
       "Coupon": [
         "쿠폰"
       ],
+      "E.g., ": [
+        "예, "
+      ],
       "Email address": [
         "이메일 주소"
       ],
@@ -3383,9 +3404,6 @@
       ],
       "my-domain.com": [
         "my-domain.com"
-      ],
-      "Name to display when sending an email": [
-        "이메일 전송 중 표시되는 이름"
       ],
       "Note from SimpleLogin": [
         "SimpleLogin 메모"
@@ -3781,6 +3799,9 @@
       "Members": [
         "구성원"
       ],
+      "Minicalendar": [
+        "간편 캘린더"
+      ],
       "Modified": [
         "수정됨"
       ],
@@ -3957,6 +3978,11 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "별칭 ${ aliasCount }개를 영구적으로 삭제하게 됩니다."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "오늘"
       ]
     },
     "Validation": {
