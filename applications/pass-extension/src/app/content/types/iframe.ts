@@ -1,3 +1,4 @@
+import type { BridgeResponse } from 'proton-pass-extension/app/content/bridge/types';
 import type { Runtime } from 'webextension-polyfill';
 
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
@@ -14,6 +15,7 @@ import type {
     MaybeNull,
     PortUnauthorizedMessage,
     SettingsUpdateMessage,
+    WorkerMessageType,
     WorkerStateChangeMessage,
 } from '@proton/pass/types';
 import type { Rect } from '@proton/pass/types/utils/dom';
@@ -95,7 +97,12 @@ export enum IFramePortMessageType {
     IFRAME_OPEN = 'IFRAME_OPEN',
     IFRAME_THEME = 'IFRAME_THEME',
     NOTIFICATION_ACTION = 'NOTIFICATION_ACTION',
+    PASSKEY_RELAY = 'PASSKEY_RELAY',
 }
+
+type PasskeyRelayedMessages =
+    | BridgeResponse<WorkerMessageType.PASSKEY_CREATE>
+    | BridgeResponse<WorkerMessageType.PASSKEY_GET>;
 
 /** Supported Worker messages that are broadcasted
  * to iframe app ports that may affect iframe state. */
@@ -127,7 +134,8 @@ export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Ext
     | { type: IFramePortMessageType.IFRAME_INJECT_PORT; payload: { port: string } }
     | { type: IFramePortMessageType.IFRAME_OPEN }
     | { type: IFramePortMessageType.IFRAME_THEME; payload: PassThemeOption.PassLight | PassThemeOption.PassDark }
-    | { type: IFramePortMessageType.NOTIFICATION_ACTION; payload: NotificationActions },
+    | { type: IFramePortMessageType.NOTIFICATION_ACTION; payload: NotificationActions }
+    | { type: IFramePortMessageType.PASSKEY_RELAY; payload: PasskeyRelayedMessages },
     { type: T }
 >;
 
