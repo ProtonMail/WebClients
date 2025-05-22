@@ -1779,6 +1779,9 @@
       "${ name } failed to move to spam list": [
         "${ name } موفق نشد تا به لیست هرزنامه انتقال پیدا کند"
       ],
+      "${ name } moved to allow list": [
+        "${ name } به فهرست مجاز منتقل شد."
+      ],
       "${ name } moved to spam list": [
         "${ name } به لیست هرزنامه نقل مکان داده شد"
       ],
@@ -2234,6 +2237,9 @@
       ],
       "Organization key fingerprint": [
         "اثر انگشت کلید سازمان"
+      ],
+      "Protection": [
+        "حفاظت"
       ],
       "Select your pricing plan": [
         "طرح مورد نظر خود را انتخاب کنید"
@@ -2860,6 +2866,9 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "این کنش شما را از تمامی نشست‌های فعال خارج می‌کند و احراز هویت دو عاملی نیز غیرفعال می‌شود."
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "برای تکمیل پرداخت خود، لطفاً ${ btcAmountBold } را به آدرس زیر ارسال کنید."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "برای تایید، لطفا نام کاربری که مایلید حذف کنید را وارد کنید."
