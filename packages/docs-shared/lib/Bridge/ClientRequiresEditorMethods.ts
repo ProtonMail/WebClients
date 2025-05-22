@@ -17,6 +17,8 @@ export interface ClientRequiresEditorMethods {
   getCurrentEditorState(): Promise<SerializedEditorState | undefined>
   /** Returns all the state in the current Sheet as JSON */
   getSheetsJSON(): Promise<unknown>
+  /** Returns the current Y.Doc as JSON */
+  getYDocAsJSON(): Promise<unknown>
   /**
    * A destructive operation that replaces the current editor state with the given state,
    * used when restoring a document from history
