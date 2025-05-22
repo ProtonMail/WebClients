@@ -24,9 +24,9 @@ const slice = createSlice({
     initialState: defaultApiStatus,
     reducers: {
         update: (state, action: PayloadAction<Partial<ApiStatusState>>) => {
-            state.appVersionBad = action.payload.appVersionBad || defaultApiStatus.appVersionBad;
-            state.apiUnreachable = action.payload.apiUnreachable || defaultApiStatus.apiUnreachable;
-            state.offline = action.payload.offline || defaultApiStatus.offline;
+            state.appVersionBad = action.payload?.appVersionBad || defaultApiStatus.appVersionBad;
+            state.apiUnreachable = action.payload?.apiUnreachable || defaultApiStatus.apiUnreachable;
+            state.offline = action.payload?.offline || defaultApiStatus.offline;
         },
     },
 });
