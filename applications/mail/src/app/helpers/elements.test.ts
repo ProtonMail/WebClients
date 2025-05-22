@@ -281,12 +281,68 @@ describe('elements', () => {
             });
         });
 
-        it('should match partial email address', () => {
+        it('should match partial email address input', () => {
             const addresses = ['sender@', 'sender'];
 
             addresses.forEach((address) => {
                 expect(matchFrom(message, address)).toBeTruthy();
                 expect(matchFrom(conversation, address)).toBeTruthy();
+            });
+        });
+
+        it('should match alias sender address', () => {
+            const addresses = ['sender@', 'sender', 'sender@protonmail.com', 'alias', 'ALIAS'];
+
+            const aliasSenderAddress = 'sender+alias@protonmail.com';
+
+            const messageWithAliasSender = {
+                ...message,
+                Sender: {
+                    Name: 'Sender',
+                    Address: aliasSenderAddress,
+                },
+            } as Message;
+
+            const conversationWithAliasSender = {
+                ...conversation,
+                Senders: [
+                    {
+                        Name: 'Sender',
+                        Address: aliasSenderAddress,
+                    },
+                ],
+            } as Conversation;
+
+            addresses.forEach((address) => {
+                expect(matchFrom(messageWithAliasSender, address)).toBeTruthy();
+                expect(matchFrom(conversationWithAliasSender, address)).toBeTruthy();
+            });
+        });
+
+        it('should match sender name', () => {
+            const addresses = ['test', 'TEST'];
+
+            const messageWithNamedSender = {
+                ...message,
+                Sender: {
+                    Name: 'Test',
+                    Address: senderAddress,
+                },
+            } as Message;
+
+            const conversationWithNamedSender = {
+                ...conversation,
+                Senders: [
+                    {
+                        Name: 'test',
+                        Address: senderAddress,
+                    },
+                ],
+            } as Conversation;
+
+            addresses.forEach((address) => {
+                expect(matchFrom(messageWithNamedSender, address)).toBeTruthy();
+                expect(matchFrom(conversationWithNamedSender, address)).toBeTruthy();
             });
         });
     });
@@ -310,12 +366,72 @@ describe('elements', () => {
             });
         });
 
-        it('should match partial email address', () => {
+        it('should match partial email address input', () => {
             const addresses = ['recipient@', 'recipient'];
 
             addresses.forEach((address) => {
                 expect(matchTo(message, address)).toBeTruthy();
                 expect(matchTo(conversation, address)).toBeTruthy();
+            });
+        });
+
+        it('should match alias recipient address', () => {
+            const addresses = ['recipient@', 'recipient', 'recipient@protonmail.com', 'alias', 'ALIAS'];
+
+            const aliasRecipientAddress = 'recipient+alias@protonmail.com';
+
+            const messageWithAliasRecipient = {
+                ...message,
+                ToList: [
+                    {
+                        Name: 'Recipient',
+                        Address: aliasRecipientAddress,
+                    },
+                ],
+            } as Message;
+
+            const conversationWithAliasRecipient = {
+                ...conversation,
+                Recipients: [
+                    {
+                        Name: 'Recipient',
+                        Address: aliasRecipientAddress,
+                    },
+                ],
+            } as Conversation;
+
+            addresses.forEach((address) => {
+                expect(matchTo(messageWithAliasRecipient, address)).toBeTruthy();
+                expect(matchTo(conversationWithAliasRecipient, address)).toBeTruthy();
+            });
+        });
+
+        it('should match recipient name', () => {
+            const addresses = ['test', 'TEST'];
+
+            const messageWithNamedRecipient = {
+                ...message,
+                ToList: [
+                    {
+                        Name: 'Test',
+                        Address: toAddress,
+                    },
+                ],
+            } as Message;
+
+            const conversationWithNamedRecipient = {
+                ...conversation,
+                Recipients: [
+                    {
+                        Name: 'test',
+                        Address: toAddress,
+                    },
+                ],
+            } as Conversation;
+
+            addresses.forEach((address) => {
+                expect(matchTo(messageWithNamedRecipient, address)).toBeTruthy();
+                expect(matchTo(conversationWithNamedRecipient, address)).toBeTruthy();
             });
         });
     });
