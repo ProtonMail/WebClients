@@ -25,10 +25,11 @@ export const CLASSNAME_SIGNATURE_EMPTY = 'protonmail_signature_block-empty';
 const getProtonSignature = (mailSettings: Partial<MailSettings> = {}, userSettings: Partial<UserSettings> = {}) =>
     mailSettings.PMSignature === PM_SIGNATURE.DISABLED
         ? ''
-        : getProtonMailSignature({
-              isReferralProgramLinkEnabled: !!mailSettings.PMSignatureReferralLink,
-              referralProgramUserLink: userSettings.Referral?.Link,
-          });
+        : getProtonMailSignature(
+              !!mailSettings.PMSignatureReferralLink,
+              userSettings.Referral?.Link,
+              mailSettings.PMSignatureContent
+          );
 
 /**
  * Generate a space tag, it can be hidden from the UX via a className
