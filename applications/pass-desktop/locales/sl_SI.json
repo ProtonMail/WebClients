@@ -379,6 +379,9 @@
       "Next": [
         "Naprej"
       ],
+      "Next month": [
+        "Naslednji mesec"
+      ],
       "Not now": [
         "Ne zdaj"
       ],
@@ -408,6 +411,9 @@
       ],
       "Previous": [
         "Prejšnje"
+      ],
+      "Previous month": [
+        "Prejšnji mesec"
       ],
       "Re-verify": [
         "Ponovno preveri"
@@ -1707,6 +1713,9 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Imamo težave pri sinhronizaciji podatkov z vašo lokalno shrambo. Prepričajte se, da imate dovolj prostora na disku za nemoteno delovanje aplikacije ${ PASS_SHORT_APP_NAME }."
       ],
+      "Week": [
+        "Teden"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Poslali smo potrditveno kodo na ${ email }. Vnesite jo spodaj:"
       ],
@@ -1888,6 +1897,9 @@
       ],
       "Additional details": [
         "Dodatne podrobnosti"
+      ],
+      "Address": [
+        "Naslov"
       ],
       "Address details": [
         "Podrobnosti naslova"
@@ -2131,6 +2143,9 @@
       ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "Osebna izkaznica"
@@ -2763,6 +2778,9 @@
       "Coupon": [
         "Kupon"
       ],
+      "E.g., ": [
+        "Npr. "
+      ],
       "Email address": [
         "E-poštni naslov"
       ],
@@ -2792,9 +2810,6 @@
       ],
       "my-domain.com": [
         "moj-domena.si"
-      ],
-      "Name to display when sending an email": [
-        "Ime za prikaz pri pošiljanju e-pošte"
       ],
       "Password": [
         "Geslo"
@@ -3104,6 +3119,9 @@
       "Members": [
         "Člani"
       ],
+      "Minicalendar": [
+        "Mini koledar"
+      ],
       "Modified": [
         "Spremenjeno"
       ],
@@ -3271,6 +3289,11 @@
       ],
       "Your welcome gift": [
         "Vaš darilo za dobrodošlico"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Danes"
       ]
     },
     "Tooltip": {
