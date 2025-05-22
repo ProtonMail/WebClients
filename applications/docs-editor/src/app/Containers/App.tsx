@@ -449,6 +449,11 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
 
         return sheet.getSheetState()
       },
+
+      async getYDocAsJSON() {
+        const ydoc = docState.getDoc()
+        return ydoc.toJSON()
+      },
     }
 
     application.logger.info('Setting request handler for bridge')
