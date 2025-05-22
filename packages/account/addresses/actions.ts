@@ -464,7 +464,8 @@ export const createBYOEAddress = ({
         const addresses = await dispatch(addressesThunk());
         const api = getSilentApi(extra.api);
 
-        const { Address } = await api<{ Address: Address }>(
+        // Use regular api to display an error if necessary
+        const { Address } = await extra.api<{ Address: Address }>(
             createAddressConfig({
                 Local: emailAddressParts.Local,
                 Domain: emailAddressParts.Domain,
