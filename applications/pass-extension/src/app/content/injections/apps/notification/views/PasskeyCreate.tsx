@@ -3,6 +3,7 @@ import { type FC, useEffect, useMemo } from 'react';
 import type { FormikContextType, FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { createBridgeResponse } from 'proton-pass-extension/app/content/bridge/message';
+import type { BridgeResponse } from 'proton-pass-extension/app/content/bridge/types';
 import { AutosaveVaultPicker } from 'proton-pass-extension/app/content/injections/apps/components/AutosaveVaultPicker';
 import {
     useIFrameAppController,
@@ -13,7 +14,7 @@ import { WithPinUnlock } from 'proton-pass-extension/app/content/injections/apps
 import { ScrollableItemsList } from 'proton-pass-extension/app/content/injections/apps/components/ScrollableItemsList';
 import { NotificationHeader } from 'proton-pass-extension/app/content/injections/apps/notification/components/NotificationHeader';
 import type { NotificationAction } from 'proton-pass-extension/app/content/types';
-import { type NotificationActions } from 'proton-pass-extension/app/content/types';
+import { IFramePortMessageType, type NotificationActions } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -194,7 +195,7 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
 
                 if (result.type !== 'success') throw new Error(result.error);
 
-                const response = await (async () => {
+                const payload = await (async (): Promise<BridgeResponse<WorkerMessageType.PASSKEY_CREATE>> => {
                     if (!result.intercept) {
                         return createBridgeResponse<WorkerMessageType.PASSKEY_CREATE>(
                             { type: 'success', intercept: false },
@@ -228,7 +229,8 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
                     );
                 })();
 
-                controller.postMessage(response);
+                controller.forwardMessage({ type: IFramePortMessageType.PASSKEY_RELAY, payload });
+
                 onTelemetry(TelemetryEventName.PasskeyCreated, {}, {});
                 controller.close();
             } catch (err) {
@@ -264,12 +266,13 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
                             }
                         })()}
                         onClose={() =>
-                            controller.postMessage(
-                                createBridgeResponse<WorkerMessageType.PASSKEY_CREATE>(
+                            controller.forwardMessage({
+                                type: IFramePortMessageType.PASSKEY_RELAY,
+                                payload: createBridgeResponse<WorkerMessageType.PASSKEY_CREATE>(
                                     { type: 'success', intercept: false },
                                     token
-                                )
-                            )
+                                ),
+                            })
                         }
                     />
 
