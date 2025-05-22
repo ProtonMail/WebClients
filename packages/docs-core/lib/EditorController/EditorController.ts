@@ -22,6 +22,7 @@ export interface EditorControllerInterface {
   getDocumentState(): Promise<Uint8Array>
   getEditorJSON(): Promise<SerializedEditorState | undefined>
   getSheetsJSON(): Promise<unknown>
+  getYDocAsJSON(): Promise<unknown>
   printAsPDF(): Promise<void>
   receiveEditor(editorInvoker: ClientRequiresEditorMethods): void
   restoreRevisionByReplacing(lexicalState: SerializedEditorState): Promise<void>
@@ -250,6 +251,15 @@ export class EditorController implements EditorControllerInterface {
     }
 
     const json = await this.editorInvoker.getSheetsJSON()
+    return json
+  }
+
+  async getYDocAsJSON(): Promise<unknown> {
+    if (!this.editorInvoker) {
+      throw new Error('Editor invoker not initialized')
+    }
+
+    const json = await this.editorInvoker.getYDocAsJSON()
     return json
   }
 
