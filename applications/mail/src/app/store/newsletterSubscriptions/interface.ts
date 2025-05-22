@@ -62,5 +62,6 @@ export interface NewsletterSubscriptionsInterface {
         [SubscriptionTabs.Unsubscribe]: NewsletterSubscriptionsTabState;
     };
     selectedTab: SubscriptionTabs;
-    selectedSubscriptionId?: string;
+    selectedSubscriptionId: string | undefined;
+    selectedElementId: string | undefined;
 }

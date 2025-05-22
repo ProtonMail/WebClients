@@ -271,7 +271,7 @@ export const useElements: UseElements = ({
         // problem when opening directly the custom views
         const customRoute = getCustomViewFromRoute(location.pathname);
         const initialRender = !!(labelID === MAILBOX_LABEL_IDS.INBOX && customRoute?.label);
-        if (isValidCustomViewLabel(labelID) || initialRender) {
+        if ((isValidCustomViewLabel(labelID) && !stateParams.newsletterSubscriptionID) || initialRender) {
             return;
         }
 
@@ -304,6 +304,7 @@ export const useElements: UseElements = ({
         pageSize,
         labelID,
         tasksRunning,
+        stateParams.newsletterSubscriptionID,
     ]);
 
     // Move to the last page if the current one becomes empty

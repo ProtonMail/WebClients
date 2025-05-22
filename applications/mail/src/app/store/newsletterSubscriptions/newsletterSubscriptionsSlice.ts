@@ -20,6 +20,7 @@ import {
     filterSubscriptionListFulfilled,
     filterSubscriptionListPending,
     filterSubscriptionListRejected,
+    setSelectedElementIdReducer,
     setSelectedSubscriptionReducer,
     setSelectedTabReducer,
     setSortingOrderReducer,
@@ -79,6 +80,7 @@ const modelThunk = createAsyncModelThunk<
                 },
                 selectedTab: SubscriptionTabs.Active,
                 selectedSubscriptionId: normalizedActive.ids[0],
+                selectedElementId: undefined,
             };
         } catch (error) {
             return {
@@ -101,6 +103,7 @@ const slice = createSlice({
         setSortingOrder: setSortingOrderReducer,
         setSelectedTab: setSelectedTabReducer,
         setSelectedSubscription: setSelectedSubscriptionReducer,
+        setSelectedElementId: setSelectedElementIdReducer,
     },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);

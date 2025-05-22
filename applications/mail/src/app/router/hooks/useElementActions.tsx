@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { useItemsSelection } from '@proton/components';
 import { useFolders } from '@proton/mail';
-import { getFolderName } from '@proton/mail/labels/helpers';
+import { convertCustomViewLabelsToAlmostAllMail, getFolderName } from '@proton/mail/labels/helpers';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { isDraft } from '@proton/shared/lib/mail/messages';
@@ -32,9 +32,11 @@ interface Params {
 }
 
 export const useElementActions = ({ params, navigation, elementsData }: Params) => {
-    const { elementID, conversationMode, messageID, labelID } = params;
+    const { elementID, conversationMode, messageID, labelID: labelIDFromParams } = params;
     const { handleBack } = navigation;
     const { elementIDs } = elementsData;
+
+    const labelID = convertCustomViewLabelsToAlmostAllMail(labelIDFromParams);
 
     const history = useHistory();
     const [isMessageOpening, setIsMessageOpening] = useState(false);

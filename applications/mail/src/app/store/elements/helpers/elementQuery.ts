@@ -1,3 +1,4 @@
+import { convertCustomViewLabelsToAlmostAllMail } from '@proton/mail/labels/helpers';
 import { getConversation, queryConversations } from '@proton/shared/lib/api/conversations';
 import type { MailboxItemsQueryParams } from '@proton/shared/lib/api/mailbox';
 import { getMessage, queryMessageMetadata } from '@proton/shared/lib/api/messages';
@@ -18,28 +19,34 @@ const PAGE_FETCH_COUNT = 2;
 const getQueryElementsParameters = ({
     page,
     pageSize,
-    params: { labelID, sort, search, filter },
-}: Pick<QueryParams, 'page' | 'pageSize'> & { params: ElementsStateParams }): MailboxItemsQueryParams => ({
-    Page: page,
-    PageSize: pageSize,
-    Limit: pageSize,
-    LabelID: labelID,
-    Sort: sort.sort,
-    Desc: sort.desc ? 1 : 0,
-    Begin: search.begin,
-    End: search.end,
-    // BeginID,
-    // EndID,
-    Keyword: search.keyword,
-    To: search.to,
-    From: search.from,
-    // Subject,
-    Attachments: filter.Attachments,
-    Unread: filter.Unread,
-    AddressID: search.address,
-    // ID,
-    AutoWildcard: search.wildcard,
-});
+    params: { labelID, sort, search, filter, newsletterSubscriptionID },
+}: Pick<QueryParams, 'page' | 'pageSize'> & { params: ElementsStateParams }): MailboxItemsQueryParams => {
+    // Use ALMOST_ALL_MAIL as the LabelID when we're viewing a custom view like a newsletter subscription
+    const effectiveLabelID = convertCustomViewLabelsToAlmostAllMail(labelID);
+
+    return {
+        Page: page,
+        PageSize: pageSize,
+        Limit: pageSize,
+        LabelID: effectiveLabelID,
+        Sort: sort.sort,
+        Desc: sort.desc ? 1 : 0,
+        Begin: search.begin,
+        End: search.end,
+        // BeginID,
+        // EndID,
+        Keyword: search.keyword,
+        To: search.to,
+        From: search.from,
+        // Subject,
+        Attachments: filter.Attachments,
+        Unread: filter.Unread,
+        AddressID: search.address,
+        // ID,
+        AutoWildcard: search.wildcard,
+        NewsletterSubscriptionID: newsletterSubscriptionID ?? null,
+    };
+};
 
 /**
  *
@@ -75,7 +82,6 @@ export const queryElementsInBatch = async (
 
     abortController?.abort();
     const newAbortController = new AbortController();
-
     const initialPromise = Promise.resolve({
         abortController: newAbortController,
         More: true,
