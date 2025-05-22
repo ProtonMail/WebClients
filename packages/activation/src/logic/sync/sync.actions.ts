@@ -43,15 +43,18 @@ export const loadSyncList = createAsyncThunk<
 
 export const deleteSyncItem = createAsyncThunk<
     string,
-    { syncId: string },
+    { syncId: string; showNotification?: boolean },
     EasySwitchThunkExtra & { rejectedValue: SubmitError }
->('sync/delete', async ({ syncId }, thunkApi) => {
+>('sync/delete', async ({ syncId, showNotification = true }, thunkApi) => {
     try {
         await thunkApi.extra.api(deleteSync(syncId));
         await thunkApi.extra.eventManager.call();
-        thunkApi.extra.notificationManager.createNotification({
-            text: c('account').t`Mail forward stopped`,
-        });
+
+        if (showNotification) {
+            thunkApi.extra.notificationManager.createNotification({
+                text: c('account').t`Mail forward stopped`,
+            });
+        }
 
         return syncId;
     } catch (error: any) {
