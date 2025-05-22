@@ -1,4 +1,5 @@
 import { isHTMLElement } from '@proton/pass/utils/dom/predicates';
+import { eq } from '@proton/pass/utils/fp/predicates';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import lastItem from '@proton/utils/lastItem';
@@ -33,6 +34,20 @@ export const TopLayerManager = (() => {
 
     return {
         disconnect: () => listeners.removeAll(),
+
+        /** Ensures a given element is the top-most popover element. This should be
+         * used to prevent popover clickjacking attacks where malicious sites could
+         * use `pointer-events: none` to bypass standard detection methods
+         * (`elementsAtPoint` doesn't detect elements with `pointer-events: none`). */
+        ensureTopLevel: (element: HTMLElement): boolean => {
+            if (POPOVER_SUPPORTED) {
+                const popovers = TopLayerManager.elements;
+                const rootIdx = popovers.findIndex(eq<HTMLElement>(element));
+                if (rootIdx !== popovers.length - 1) return false;
+            }
+
+            return true;
+        },
 
         get elements() {
             return Array.from(TOP_LAYER_ELS);
