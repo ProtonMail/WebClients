@@ -147,12 +147,14 @@ type TelemetryEvents =
 
 export type TelemetryEvent<T extends TelemetryEventName = TelemetryEventName> = Extract<TelemetryEvents, { Event: T }>;
 
-export type TelemetryEventWithExtra<T extends TelemetryEventName = TelemetryEventName> = {
+type TelemetryEventExtra = {
+    [TelemetryEventName.ExtensionCopiedFromLogin]: {
+        extensionField: TelemetryFieldType;
+        itemUrls: string[];
+    };
+};
+
+export type TelemetryEventDTO<T extends TelemetryEventName = TelemetryEventName> = {
     event: TelemetryEvent<T>;
-    extra: T extends TelemetryEventName.ExtensionCopiedFromLogin ?
-        {
-            extensionField: TelemetryFieldType;
-            itemUrls: string[];
-        }
-    :   never;
+    extra: T extends keyof TelemetryEventExtra ? TelemetryEventExtra[T] : never;
 };
