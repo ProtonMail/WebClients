@@ -304,14 +304,14 @@
         "Ștergere"
       ],
       "Delete ${ selectedCount } contact": [
-        "Ștergere un contact",
-        "Ștergere ${ selectedCount } contacte",
-        "Ștergere ${ selectedCount } de contacte"
+        "Ștergere contacte: ${ selectedCount }",
+        "Ștergere contacte: ${ selectedCount }",
+        "Ștergere contacte: ${ selectedCount }"
       ],
       "Delete ${ selectedCount } contact group": [
-        "Ștergere grup de contacte",
-        "Ștergere ${ selectedCount } contacte",
-        "Ștergere ${ selectedCount } de contacte"
+        "Ștergere grup de contacte: ${ selectedCount }",
+        "Ștergere grup de contacte: ${ selectedCount }",
+        "Ștergere grup de contacte: ${ selectedCount }"
       ],
       "Delete album": [
         "Ștergere album"
@@ -4331,9 +4331,9 @@
         "Se încarcă ${ activeUploadsCount } (${ uploadProgress }%)"
       ],
       "${ addressCount } email address": [
-        "O adresă de e-mail",
-        "${ addressCount } adrese de e-mail",
-        "${ addressCount } de adrese de e-mail"
+        "Adrese de e-mail: ${ addressCount }",
+        "Adrese de e-mail: ${ addressCount }",
+        "Adrese de e-mail: ${ addressCount }"
       ],
       "${ albumName } has been successfully deleted": [
         "${ albumName } a fost șters."
@@ -4348,14 +4348,14 @@
         "Tehnologia de criptare ${ BRAND_NAME } semnifică faptul că nimeni nu vă poate accesa parola - nici măcar noi."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "Un calendar nou",
-        "${ calendarsToBeCreatedCount } calendare noi",
-        "${ calendarsToBeCreatedCount } de calendare noi"
+        "Calendare noi: ${ calendarsToBeCreatedCount }",
+        "Calendare noi: ${ calendarsToBeCreatedCount }",
+        "Calendare noi: ${ calendarsToBeCreatedCount }"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "Un calendar îmbinat",
-        "${ calendarsToBeMergedCount } calendare îmbinate",
-        "${ calendarsToBeMergedCount } de calendare îmbinate"
+        "Calendare îmbinate: ${ calendarsToBeMergedCount }",
+        "Calendare îmbinate: ${ calendarsToBeMergedCount }",
+        "Calendare îmbinate: ${ calendarsToBeMergedCount }"
       ],
       "${ canceledCount } canceled": [
         "Unul anulat",
@@ -4363,12 +4363,12 @@
         "${ canceledCount } anulate"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "Un contact conține adrese multiple de e-mail.",
-        "${ contactCount } contacte conțin adrese multiple de e-mail.",
-        "${ contactCount } de contacte conțin adrese multiple de e-mail."
+        "Contacte care conțin adrese multiple de e-mail: ${ contactCount }",
+        "Contacte care conțin adrese multiple de e-mail: ${ contactCount }",
+        "Contacte care conțin adrese multiple de e-mail: ${ contactCount }"
       ],
       "${ contactEmailsLength } Member": [
-        "Un membru",
+        "${ contactEmailsLength } membru",
         "${ contactEmailsLength } membri",
         "${ contactEmailsLength } de membri"
       ],
@@ -4376,9 +4376,9 @@
         "${ contactName } conține adrese multiple de e-mail."
       ],
       "${ contactsCount } contact found": [
-        "S-a găsit un contact",
-        "S-au găsit ${ contactsCount } contacte",
-        "S-au găsit ${ contactsCount } de contacte"
+        "Contacte găsite: ${ contactsCount }",
+        "Contacte găsite: ${ contactsCount }",
+        "Contacte găsite: ${ contactsCount }"
       ],
       "${ contactsLength } contact": [
         "${ contactsLength } contact",
@@ -4424,9 +4424,9 @@
         "${ fileName }: pictogramă cu rezoluție mică"
       ],
       "${ groupCounts } group found": [
-        "S-a găsit un grup",
-        "S-au găsit ${ groupCounts } grupuri",
-        "S-au găsit ${ groupCounts } de grupuri"
+        "Grupuri găsite: ${ groupCounts }",
+        "Grupuri găsite: ${ groupCounts }",
+        "Grupuri găsite: ${ groupCounts }"
       ],
       "${ invitations.length } pending invitation": [
         "${ invitations.length } invitație în așteptare",
@@ -4456,14 +4456,14 @@
         "${ PROTON_SENTINEL_NAME } vă protejează contul prin monitorizarea activității suspicioase."
       ],
       "${ providerFoldersNumLocalized } folder found": [
-        "S-a găsit un folder",
-        "S-au găsit ${ providerFoldersNumLocalized } foldere",
-        "S-au găsit ${ providerFoldersNumLocalized } de foldere"
+        "Foldere găsite: ${ providerFoldersNumLocalized }",
+        "Foldere găsite: ${ providerFoldersNumLocalized }",
+        "Foldere găsite: ${ providerFoldersNumLocalized }"
       ],
       "${ providerFoldersNumLocalized } label found in Gmail": [
-        "S-a găsit o etichetă în Gmail",
-        "S-au găsit ${ providerFoldersNumLocalized } etichete în Gmail",
-        "S-au găsit ${ providerFoldersNumLocalized } de etichete în Gmail"
+        "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }",
+        "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }",
+        "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }"
       ],
       "${ scanErrorCount } scan failed": [
         "Scanări eșuate: ${ scanErrorCount }",
@@ -4507,9 +4507,9 @@
         "Stocare ${ storage }"
       ],
       "${ updated } contact updated successfully.": [
-        "S-a actualizat un contact.",
-        "S-au actualizat ${ updated } contacte.",
-        "S-au actualizat ${ updated } de contacte."
+        "Contacte actualizate: ${ updated }",
+        "Contacte actualizate: ${ updated }",
+        "Contacte actualizate: ${ updated }"
       ],
       "${ uploadName } already exists in this location.": [
         "${ uploadName } există deja în acest loc."
@@ -4518,7 +4518,7 @@
         "${ VPN_APP_NAME } vă maschează adresa IP, așa că site-urile web nu vă pot identifica."
       ],
       "(${ memberCount } member)": [
-        "(Un membru)",
+        "(${ memberCount } membru)",
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
       ],
@@ -4591,12 +4591,12 @@
         "Asistent pe bază de IA pentru a vă ajuta să scrieți mesaje mai bune, mai repede și fără efort."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "Toate (Un folder)",
+        "Toate (${ totalFoldersCount } folder)",
         "Toate (${ totalFoldersCount } foldere)",
         "Toate (${ totalFoldersCount } de foldere)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "Toate (o etichetă)",
+        "Toate (${ totalFoldersCount } etichetă)",
         "Toate (${ totalFoldersCount } etichete)",
         "Toate (${ totalFoldersCount } de etichete)"
       ],
@@ -4777,7 +4777,7 @@
         "Cod țară"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Creare un calendar",
+        "Creare ${ calendarsToBeCreatedCount } calendar",
         "Creare ${ calendarsToBeCreatedCount } calendare",
         "Creare ${ calendarsToBeCreatedCount } de calendare"
       ],
@@ -11286,9 +11286,6 @@
       "Location": [
         "Amplasare"
       ],
-      "Mail Subscriptions": [
-        "Abonamente pe e-mail"
-      ],
       "Make a secure connection your default": [
         "Faceți o conexiune sigură ca implicită"
       ],
@@ -11327,6 +11324,9 @@
       ],
       "Network error": [
         "Eroare de rețea"
+      ],
+      "Newsletters view": [
+        "Afișare buletine informative"
       ],
       "Night theme": [
         "Temă noapte"

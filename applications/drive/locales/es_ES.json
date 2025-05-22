@@ -4517,7 +4517,7 @@
         "${ invitations.length } invitaciones pendientes"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "L'oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
+        "La oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }. El precio y la fecha de renovación de tu suscripción ${ planTitle } se mantienen sin cambios."
@@ -11285,9 +11285,6 @@
       "Location": [
         "Ubicación"
       ],
-      "Mail Subscriptions": [
-        "Suscripciones de correo"
-      ],
       "Make a secure connection your default": [
         "Elige una conexión segura como opción predeterminada"
       ],
@@ -11326,6 +11323,9 @@
       ],
       "Network error": [
         "Error de red"
+      ],
+      "Newsletters view": [
+        "Vista de boletines"
       ],
       "Night theme": [
         "Tema de noche"
