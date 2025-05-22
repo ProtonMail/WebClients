@@ -96,6 +96,7 @@ export const loadFulfilled = (
         begin: params.search.begin,
         end: params.search.end,
         keyword: params.search.keyword,
+        newsletterSubscriptionID: params.newsletterSubscriptionID,
     });
 
     Object.assign(state, {
@@ -136,6 +137,7 @@ export const showSerializedElements = (
         begin: params.search.begin,
         end: params.search.end,
         keyword: params.search.keyword,
+        newsletterSubscriptionID: params.newsletterSubscriptionID,
     });
 
     Object.assign(state, {
@@ -210,6 +212,7 @@ export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<
         begin: params.search.begin,
         end: params.search.end,
         keyword: params.search.keyword,
+        newsletterSubscriptionID: params.newsletterSubscriptionID,
     });
 
     // Retry is disabled for encrypted search results, to avoid re-triggering the search several times
@@ -253,6 +256,7 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
         begin: params.search.begin,
         end: params.search.end,
         keyword: params.search.keyword,
+        newsletterSubscriptionID: params.newsletterSubscriptionID,
     });
 
     if (action.payload.isMove) {
@@ -334,6 +338,7 @@ export const optimisticDelete = (state: Draft<ElementsState>, action: PayloadAct
             begin: params.search.begin,
             end: params.search.end,
             keyword: params.search.keyword,
+            newsletterSubscriptionID: params.newsletterSubscriptionID,
         });
 
         state.total[contextFilter] = (state.total[contextFilter] || 0) - action.payload.elementIDs.length;

@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
+import './ResizeHandle.scss';
+
 export enum ResizeHandlePosition {
     LEFT = 'left',
     RIGHT = 'right',

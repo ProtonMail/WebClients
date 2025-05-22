@@ -26,6 +26,7 @@ interface MailboxListProps {
     elementsData: ElementsStructure;
 
     actions: MailboxActions;
+    overrideColumnMode?: boolean;
 
     toolbar?: ReactNode;
     listRef?: RefObject<HTMLDivElement>;
@@ -38,6 +39,7 @@ export default function MailboxList({
     actions,
     listRef: externalListRef,
     noBorder = false,
+    overrideColumnMode = false,
 }: MailboxListProps) {
     const [labels = []] = useLabels();
     const location = useLocation();
@@ -51,8 +53,8 @@ export default function MailboxList({
     const { columnMode, columnLayout, listContainerRef } = useMailboxLayoutProvider();
 
     const elementsLength = loading ? placeholderCount : elementsData.elements.length;
-    const showList = columnMode || !elementID;
-    const showContentPanel = (columnMode && !!elementsLength) || !!elementID;
+    const showList = overrideColumnMode || columnMode || !elementID;
+    const showContentPanel = overrideColumnMode || (columnMode && !!elementsLength) || !!elementID;
 
     const currentPage = pageFromUrl(location);
 
@@ -103,13 +105,13 @@ export default function MailboxList({
                 className="enhanced-list-container"
             >
                 {toolbar && <div className="shrink-0 sticky top-0 z-up">{toolbar}</div>}
-                <MailboxListBannersWrapper columnLayout={columnLayout} />
+                <MailboxListBannersWrapper columnLayout={overrideColumnMode || columnLayout} />
                 <MailboxListItems
                     listRef={listRefToUse}
                     onClick={handleElement}
                     onFocus={handleFocus}
                     onCheckOne={handleCheckOne}
-                    columnLayout={columnLayout}
+                    columnLayout={overrideColumnMode || columnLayout}
                     onBack={navigation.handleBack}
                     labels={labels}
                 />
