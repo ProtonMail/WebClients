@@ -61,19 +61,19 @@ export const getSortParams = (sortOption?: SortSubscriptionsValue) => {
     switch (sortOption) {
         case 'last-read':
             return {
-                UnreadMessageCount: 'ASC',
+                'Sort[UnreadMessageCount]': 'ASC',
             };
         case 'most-read':
             return {
-                UnreadMessageCount: 'DESC',
+                'Sort[UnreadMessageCount]': 'DESC',
             };
         case 'alphabetical':
             return {
-                Name: 'ASC',
+                'Sort[Name]': 'ASC',
             };
         case 'recently-received':
             return {
-                LastReceivedTime: 'DESC',
+                'Sort[LastReceivedTime]': 'DESC',
             };
         default:
             return undefined;
