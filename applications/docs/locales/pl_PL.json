@@ -108,6 +108,9 @@
       "Attention required": [
         "Wymagana uwaga"
       ],
+      "Authenticate": [
+        "Uwierzytelnij"
+      ],
       "Back": [
         "Wstecz"
       ],
@@ -828,8 +831,14 @@
       "Use a different payment method": [
         "Użyj innej metody płatności"
       ],
+      "Use authentication code": [
+        "Użyj kodu uwierzytelniającego"
+      ],
       "Use for sending": [
         "Używaj do wysyłania"
+      ],
+      "Use recovery code": [
+        "Użyj kodu odzyskiwania"
       ],
       "Verify": [
         "Zweryfikuj"
@@ -3645,6 +3654,24 @@
         "Nieograniczona liczba aliasów hide-my-email"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Użyj klucza bezpieczeństwa powiązanego z kontem ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Klucz bezpieczeństwa"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Klucz bezpieczeństwa"
+      ]
+    },
     "file size format": {
       "byte": [
         "bajt",
@@ -4573,6 +4600,9 @@
       "Duplicate key updated": [
         "Zduplikowany klucz został zaktualizowany"
       ],
+      "Each code can only be used once": [
+        "Każdy kod może zostać użyty tylko jeden raz"
+      ],
       "Edit email address": [
         "Edytuj adres e-mail"
       ],
@@ -4600,11 +4630,17 @@
       "Enter password": [
         "Wpisz hasło"
       ],
+      "Enter the code from your authenticator app": [
+        "Wpisz kod z aplikacji uwierzytelniającej"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Wpisz dane logowania do konta e-mail, z którego chcesz zaimportować dane."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Wpisz swoje hasło (jako administrator organizacji)."
@@ -5803,6 +5839,9 @@
       ],
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
+      ],
+      "Authenticator app": [
+        "Aplikacja uwierzytelniająca"
       ],
       "Beta Access": [
         "Dostęp beta"
