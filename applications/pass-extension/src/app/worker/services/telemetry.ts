@@ -58,58 +58,57 @@ export const createTelemetryService = (storage: ExtensionStorage<Record<'telemet
                 return true;
             }
 
-            // FIXME: improve "extra" type definition so we don't need to verify if it's defined
-            if (extra) {
-                switch (event.Event) {
-                    case TelemetryEventName.ExtensionCopiedFromLogin: {
-                        const { itemUrls, extensionField } = extra;
-                        const tab = first(await browser.tabs.query({ active: true }));
-                        const tabUrl = parseUrl(tab?.url);
+            switch (event.Event) {
+                case TelemetryEventName.ExtensionCopiedFromLogin: {
+                    if (!extra) return false;
 
-                        const matchedLoginCount = ctx.service.autofill.getLoginCandidates(tabUrl).length;
-                        const loginAutofillSettingsEnabled = selectAutofillSettings(state).login;
-                        const disallowedDomains = selectDisallowedDomains(state);
+                    const { itemUrls, extensionField } = extra;
+                    const tab = first(await browser.tabs.query({ active: true }));
+                    const tabUrl = parseUrl(tab?.url);
 
-                        const loginFormDetected = await (async () => {
-                            try {
-                                if (isSupportedSenderUrl(tabUrl) && tab?.id) {
-                                    // FIXME when supporting cross frames
-                                    const res = await browser.tabs.sendMessage<
-                                        AutofillCheckFormMessage,
-                                        WorkerMessageResponse<WorkerMessageType.AUTOFILL_CHECK_FORM>
-                                    >(tab.id, backgroundMessage({ type: WorkerMessageType.AUTOFILL_CHECK_FORM }), {
-                                        frameId: 0,
-                                    });
-                                    return res.hasLoginForm;
-                                } else return false;
-                            } catch {
-                                return false;
-                            }
-                        })();
+                    const matchedLoginCount = ctx.service.autofill.getLoginCandidates(tabUrl).length;
+                    const loginAutofillSettingsEnabled = selectAutofillSettings(state).login;
+                    const disallowedDomains = selectDisallowedDomains(state);
 
-                        const dimensions: ExtensionCopiedFromLoginDimensions = {
-                            extensionField,
-                            hasLoginItemForCurrentWebsite: matchedLoginCount > 0 ? 1 : 0,
-                            uniqueMatch: matchedLoginCount === 1 ? 1 : 0,
-                            extensionCopiedFromCurrentPage: itemUrls.some((itemUrl) => {
-                                return parseUrl(itemUrl).domain === tabUrl.domain;
-                            })
-                                ? 1
-                                : 0,
-                            autofillLoginFormDetected: loginFormDetected ? 1 : 0,
-                            loginAutofillEnabled: loginAutofillSettingsEnabled ? 1 : 0,
-                            autofillPaused: hasPauseCriteria({
-                                disallowedDomains: disallowedDomains,
-                                url: tabUrl,
-                            }).Autofill
-                                ? 1
-                                : 0,
-                            modelVersion: MODEL_VERSION,
-                        };
+                    const loginFormDetected = await (async () => {
+                        try {
+                            if (isSupportedSenderUrl(tabUrl) && tab?.id) {
+                                // FIXME when supporting cross frames
+                                const res = await browser.tabs.sendMessage<
+                                    AutofillCheckFormMessage,
+                                    WorkerMessageResponse<WorkerMessageType.AUTOFILL_CHECK_FORM>
+                                >(tab.id, backgroundMessage({ type: WorkerMessageType.AUTOFILL_CHECK_FORM }), {
+                                    frameId: 0,
+                                });
+                                return res.hasLoginForm;
+                            } else return false;
+                        } catch {
+                            return false;
+                        }
+                    })();
 
-                        event.Dimensions = dimensions;
-                        break;
-                    }
+                    const dimensions: ExtensionCopiedFromLoginDimensions = {
+                        extensionField,
+                        hasLoginItemForCurrentWebsite: matchedLoginCount > 0 ? 1 : 0,
+                        uniqueMatch: matchedLoginCount === 1 ? 1 : 0,
+                        extensionCopiedFromCurrentPage: itemUrls.some((itemUrl) => {
+                            return parseUrl(itemUrl).domain === tabUrl.domain;
+                        })
+                            ? 1
+                            : 0,
+                        autofillLoginFormDetected: loginFormDetected ? 1 : 0,
+                        loginAutofillEnabled: loginAutofillSettingsEnabled ? 1 : 0,
+                        autofillPaused: hasPauseCriteria({
+                            disallowedDomains: disallowedDomains,
+                            url: tabUrl,
+                        }).Autofill
+                            ? 1
+                            : 0,
+                        modelVersion: MODEL_VERSION,
+                    };
+
+                    event.Dimensions = dimensions;
+                    break;
                 }
             }
 
