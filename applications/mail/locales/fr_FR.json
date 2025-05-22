@@ -5179,12 +5179,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
+        "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clé de sécurité"
@@ -6732,7 +6732,7 @@
         "Profitez d'une expérience de messagerie plus rapide et focalisée grâce à l'application de bureau."
       ],
       "Enter the code from your authenticator app": [
-        "Entrez le code de votre application d'authentification."
+        "Saisissez le code de votre application d'authentification."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Saisissez les identifiants du compte de messagerie depuis lequel vous voulez importer."
@@ -6741,7 +6741,7 @@
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Enter verification code. Digit ${ digit }."
+        "Saisissez le code de vérification. Entrez ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
@@ -8375,6 +8375,19 @@
       "${ subscription.ReceivedMessages.Last30Days } email last month": [
         "${ subscription.ReceivedMessages.Last30Days } message le mois dernier",
         "${ subscription.ReceivedMessages.Last30Days } messages le mois dernier"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } abonnement à une newsletter",
+        "${ unreadCount } abonnements à une newsletter"
+      ],
+      "Apply to future messages": [
+        "Appliquer aux futurs messages"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "En raison de la configuration de votre destinataire, ce message ne peut pas être envoyé avec une date d’expiration à ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "En raison de la configuration de votre destinataire, ce message ne peut pas être envoyé avec une date d’expiration."
       ]
     },
     "info": {
@@ -9273,6 +9286,28 @@
       ],
       "The filter is disabled. You can enable it ${ settingsLink }": [
         "Le filtre est désactivé. Vous pouvez l'activer ${ settingsLink }"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } message a été marqué comme lu.",
+        "${ count } messages ont été marqués comme lus."
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } message a été déplacé vers ${ selectedFolder.Name }.",
+        "${ count } message ont été déplacés vers ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } message a été déplacé vers les archives.",
+        "${ count } messages ont été déplacés vers les archives."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } message a été déplacé vers la corbeille.",
+        "${ count } messages ont été déplacés vers la corbeille."
+      ],
+      "Newsletters": [
+        "Newsletters"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "L'abonnement à ${ truncatedName }  a été annulé."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9657,6 +9692,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Votre abonnement est terminé. ${ cta } et pour éviter de perdre des données."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Votre espace de stockage est plein. Pour continuer à utiliser les produits ${ BRAND_NAME }, libérez de l’espace ou ${ cta }."
       ]
     },
     "Log preference": {
@@ -13918,7 +13956,7 @@
         "Entrez le code A2F"
       ],
       "Enter your password": [
-        "Saisissez votre mot de passe."
+        "Saisissez votre mot de passe"
       ],
       "Error": [
         "Erreur"
@@ -14531,6 +14569,12 @@
       ],
       "No unsubscribed mail subscriptions": [
         "Aucune inscription à des e-mails dont l'abonnement a été résilié."
+      ],
+      "Newsletters": [
+        "Newsletters"
+      ],
+      "Newsletters view": [
+        "Vue Newsletters"
       ]
     },
     "Today icon tooltip in mini calendar": {

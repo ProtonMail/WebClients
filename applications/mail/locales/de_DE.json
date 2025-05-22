@@ -8375,6 +8375,13 @@
       "${ subscription.ReceivedMessages.Last30Days } email last month": [
         "${ subscription.ReceivedMessages.Last30Days } E-Mail im letzten Monat",
         "${ subscription.ReceivedMessages.Last30Days } E-Mails im letzten Monat"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } Newsletter-Abonnement",
+        "${ unreadCount } Newsletter-Abonnemente"
+      ],
+      "Apply to future messages": [
+        "Auf zukünftige Nachrichten anwenden"
       ]
     },
     "info": {
@@ -9270,6 +9277,28 @@
       ],
       "The filter is disabled. You can enable it ${ settingsLink }": [
         "Der Filter ist deaktiviert. Du kannst ihn ${ settingsLink } aktivieren."
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } Nachricht als gelesen markiert",
+        "${ count } Nachrichten als gelesen markiert"
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } Nachricht nach ${ selectedFolder.Name } verschoben",
+        "${ count } Nachrichten nach ${ selectedFolder.Name } verschoben"
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } Nachricht ins Archiv verschoben",
+        "${ count } Nachrichten ins Archiv verschoben"
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } Nachricht in den Papierkorb verschoben",
+        "${ count } Nachrichten in den Papierkorb verschoben"
+      ],
+      "Newsletters": [
+        "Newsletter"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Von ${ truncatedName } abgemeldet"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14525,6 +14554,12 @@
       ],
       "No unsubscribed mail subscriptions": [
         "Keine abbestellbare E-Mail-Abonnemente"
+      ],
+      "Newsletters": [
+        "Newsletter"
+      ],
+      "Newsletters view": [
+        "Newsletter-Ansicht"
       ]
     },
     "Today icon tooltip in mini calendar": {

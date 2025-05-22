@@ -5255,12 +5255,12 @@
         "Vložte bezpečnostní klíč spojený s vaším účtem ${ BRAND_NAME }."
       ],
       "Security key": [
-        "Klíč zabezpečení"
+        "Bezpečnostní klíč"
       ]
     },
     "fido2: Label": {
       "Security key": [
-        "Klíč zabezpečení"
+        "Bezpečnostní klíč"
       ]
     },
     "file size format": {
@@ -6898,7 +6898,7 @@
         "Upravit odkaz"
       ],
       "email": [
-        "email"
+        "e-mail"
       ],
       "Email address": [
         "E-mailová adresa"
@@ -8657,6 +8657,21 @@
         "${ subscription.ReceivedMessages.Last30Days } e-maily za poslední měsíc",
         "${ subscription.ReceivedMessages.Last30Days } e-mailů za poslední měsíc",
         "${ subscription.ReceivedMessages.Last30Days } e-mailů za poslední měsíc"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } odběr e-mailového zpravodaje",
+        "${ unreadCount } odběry e-mailového zpravodaje",
+        "${ unreadCount } odběrů e-mailového zpravodaje",
+        "${ unreadCount } odběrů e-mailového zpravodaje"
+      ],
+      "Apply to future messages": [
+        "Použít na budoucí zprávy"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Vzhledem k nastavení příjemce, nelze tuto zprávu odeslat s datem vypršení platnosti příjemci ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Vzhledem k nastavení příjemce, nelze tuto zprávu odeslat s datem vypršení platnosti."
       ]
     },
     "info": {
@@ -9518,7 +9533,7 @@
         "Vaše poloha"
       ],
       "Your password (admin)": [
-        "Vaše heslo (admin)"
+        "Vaše heslo (správce)"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Musí mít alespoň ${ MIN_PASSWORD_LENGTH } znaků"
@@ -9564,6 +9579,36 @@
       ],
       "The filter is disabled. You can enable it ${ settingsLink }": [
         "Filtr je deaktivován. Můžete ho povolit v ${ settingsLink }"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } zpráva označena jako přečtená.",
+        "${ count } zprávy označeny jako přečtené.",
+        "${ count } zpráv označeno jako přečtené.",
+        "${ count } zpráv označeno jako přečtené."
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } zpráva přesunuta do ${ selectedFolder.Name }.",
+        "${ count } zprávy přesunuty do ${ selectedFolder.Name }.",
+        "${ count } zpráv přesunuto do ${ selectedFolder.Name }.",
+        "${ count } zpráv přesunuto do ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } zpráva přesunuta do archivu.",
+        "${ count } zprávy přesunuty do archivu.",
+        "${ count } zpráv přesunuto do archivu.",
+        "${ count } zpráv přesunuto do archivu."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } zpráva přesunuta do koše.",
+        "${ count } zprávy přesunuty do koše.",
+        "${ count } zpráv přesunuto do koše.",
+        "${ count } zpráv přesunuto do koše."
+      ],
+      "Newsletters": [
+        "E-mailové zpravodaje"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Odběr odhlášen z ${ truncatedName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14444,7 +14489,7 @@
         "Zadejte kód 2FA"
       ],
       "Enter your password": [
-        "Zadejte Vaše heslo"
+        "Zadejte své heslo"
       ],
       "Error": [
         "Chyba"
@@ -15063,6 +15108,12 @@
       ],
       "No unsubscribed mail subscriptions": [
         "Žádné odhlášené odběry e-mailů"
+      ],
+      "Newsletters": [
+        "E-mailové zpravodaje"
+      ],
+      "Newsletters view": [
+        "Zobrazení e-mailových zpravodajů"
       ]
     },
     "Today icon tooltip in mini calendar": {

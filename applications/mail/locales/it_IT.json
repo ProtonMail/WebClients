@@ -5179,12 +5179,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Qualcosa è andato storto durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
+        "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserisci una chiave di sicurezza collegata al tuo Account ${ BRAND_NAME }."
+        "Inserisci una chiave di sicurezza collegata al tuo account ${ BRAND_NAME }."
       ],
       "Security key": [
         "Chiave di sicurezza"
@@ -6677,7 +6677,7 @@
         "Chiave duplicata aggiornata"
       ],
       "Each code can only be used once": [
-        "Ogni codice può essere usato una sola volta"
+        "Ogni codice può essere usato una sola volta."
       ],
       "Edit email address": [
         "Modifica l'indirizzo email"
@@ -6732,7 +6732,7 @@
         "Goditi un'esperienza di ricezione di email più veloci e mirate con l'app desktop."
       ],
       "Enter the code from your authenticator app": [
-        "Inserisci il codice dalla tua app di autenticazione"
+        "Inserisci il codice dalla tua app di autenticazione."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Inserisci le credenziali dell'account email da cui vuoi importare."
@@ -7994,7 +7994,7 @@
         "Quando hai abilitato le chiavi attendibili per ${ senderName }, le chiavi pubbliche sono state aggiunte ai dettagli del contatto."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando configuri l'autenticazione a due fattori, forniamo dei codici di recupero che puoi usare per accedere se perdi l'accesso alla tua app di autenticazione."
+        "Quando imposti l'autenticazione a due fattori, forniamo codici di ripristino che puoi utilizzare per accedere se perdi l'accesso alla tua app di autenticazione."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Quando ti registri a una newsletter, usa un alias invece del tuo indirizzo email. La tua identità rimane nascosta, e puoi disattivare l'alias in qualsiasi momento."
@@ -8375,6 +8375,19 @@
       "${ subscription.ReceivedMessages.Last30Days } email last month": [
         "${ subscription.ReceivedMessages.Last30Days } email il mese scorso",
         "${ subscription.ReceivedMessages.Last30Days } email il mese scorso"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "Abbonamento a ${ unreadCount } newsletter",
+        "Abbonamento a ${ unreadCount } newsletter"
+      ],
+      "Apply to future messages": [
+        "Applica ai messaggi futuri"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "A causa della configurazione del destinatario, questo messaggio non può essere inviato con una data di scadenza a ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "A causa della configurazione del destinatario, questo messaggio non può essere inviato con una data di scadenza."
       ]
     },
     "info": {
@@ -9273,6 +9286,28 @@
       ],
       "The filter is disabled. You can enable it ${ settingsLink }": [
         "Il filtro è disattivato. Puoi attivarlo ${ settingsLink }"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } messaggio é segnato come letto.",
+        "${ count } messaggi sono segnati come letti."
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } messaggio è spostato a ${ selectedFolder.Name }.",
+        "${ count } messaggi sono spostati a ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } messaggio è spostato nell'archivio.",
+        "${ count } messaggi sono spostati nell'archivio."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } messaggio é spostato nel cestino.",
+        "${ count } messaggi sono spostati nel cestino."
+      ],
+      "Newsletters": [
+        "Newsletter"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "L'abbonamento a ${ truncatedName } è annullato."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14533,6 +14568,12 @@
       ],
       "No unsubscribed mail subscriptions": [
         "Nessun abbonamento email cancellato"
+      ],
+      "Newsletters": [
+        "Newsletter"
+      ],
+      "Newsletters view": [
+        "Vista Newsletters"
       ]
     },
     "Today icon tooltip in mini calendar": {

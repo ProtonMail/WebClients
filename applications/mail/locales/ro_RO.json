@@ -351,14 +351,14 @@
         "Ștergere"
       ],
       "Delete ${ selectedCount } contact": [
-        "Ștergere un contact",
-        "Ștergere ${ selectedCount } contacte",
-        "Ștergere ${ selectedCount } de contacte"
+        "Ștergere contacte: ${ selectedCount }",
+        "Ștergere contacte: ${ selectedCount }",
+        "Ștergere contacte: ${ selectedCount }"
       ],
       "Delete ${ selectedCount } contact group": [
-        "Ștergere grup de contacte",
-        "Ștergere ${ selectedCount } contacte",
-        "Ștergere ${ selectedCount } de contacte"
+        "Ștergere grup de contacte: ${ selectedCount }",
+        "Ștergere grup de contacte: ${ selectedCount }",
+        "Ștergere grup de contacte: ${ selectedCount }"
       ],
       "Delete all": [
         "Ștergere toate"
@@ -688,9 +688,9 @@
         "Inserare"
       ],
       "Insert ${ totalChecked } contact": [
-        "Inserare un contact",
-        "Inserare ${ totalChecked } contacte",
-        "Inserare ${ totalChecked } de contacte"
+        "Inserare contacte: ${ totalChecked }",
+        "Inserare contacte: ${ totalChecked }",
+        "Inserare contacte: ${ totalChecked }"
       ],
       "Insert contact": [
         "Inserare contact"
@@ -6053,9 +6053,9 @@
     },
     "Info": {
       "${ addressCount } email address": [
-        "O adresă de e-mail",
-        "${ addressCount } adrese de e-mail",
-        "${ addressCount } de adrese de e-mail"
+        "Adrese de e-mail: ${ addressCount }",
+        "Adrese de e-mail: ${ addressCount }",
+        "Adrese de e-mail: ${ addressCount }"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
@@ -6073,22 +6073,22 @@
         "Managerul de parole ${ BRAND_NAME } vă permite să creați, să stocați și să autocompletați parolele, astfel încât nu va mai trebui să le resetați."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "Un calendar nou",
-        "${ calendarsToBeCreatedCount } calendare noi",
-        "${ calendarsToBeCreatedCount } de calendare noi"
+        "Calendare noi: ${ calendarsToBeCreatedCount }",
+        "Calendare noi: ${ calendarsToBeCreatedCount }",
+        "Calendare noi: ${ calendarsToBeCreatedCount }"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "Un calendar îmbinat",
-        "${ calendarsToBeMergedCount } calendare îmbinate",
-        "${ calendarsToBeMergedCount } de calendare îmbinate"
+        "Calendare îmbinate: ${ calendarsToBeMergedCount }",
+        "Calendare îmbinate: ${ calendarsToBeMergedCount }",
+        "Calendare îmbinate: ${ calendarsToBeMergedCount }"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "Un contact conține adrese multiple de e-mail.",
-        "${ contactCount } contacte conțin adrese multiple de e-mail.",
-        "${ contactCount } de contacte conțin adrese multiple de e-mail."
+        "Contacte care conțin adrese multiple de e-mail: ${ contactCount }",
+        "Contacte care conțin adrese multiple de e-mail: ${ contactCount }",
+        "Contacte care conțin adrese multiple de e-mail: ${ contactCount }"
       ],
       "${ contactEmailsLength } Member": [
-        "Un membru",
+        "${ contactEmailsLength } membru",
         "${ contactEmailsLength } membri",
         "${ contactEmailsLength } de membri"
       ],
@@ -6101,9 +6101,9 @@
         "${ contactName } conține adrese multiple de e-mail."
       ],
       "${ contactsCount } contact found": [
-        "S-a găsit un contact",
-        "S-au găsit ${ contactsCount } contacte",
-        "S-au găsit ${ contactsCount } de contacte"
+        "Contacte găsite: ${ contactsCount }",
+        "Contacte găsite: ${ contactsCount }",
+        "Contacte găsite: ${ contactsCount }"
       ],
       "${ contactsLength } contact": [
         "${ contactsLength } contact",
@@ -6177,9 +6177,9 @@
         "${ fileName }: pictogramă cu rezoluție mică"
       ],
       "${ groupCounts } group found": [
-        "S-a găsit un grup",
-        "S-au găsit ${ groupCounts } grupuri",
-        "S-au găsit ${ groupCounts } de grupuri"
+        "Grupuri găsite: ${ groupCounts }",
+        "Grupuri găsite: ${ groupCounts }",
+        "Grupuri găsite: ${ groupCounts }"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } vă poate proteja și afacerea."
@@ -6243,14 +6243,14 @@
         "${ PROTON_SENTINEL_NAME } vă protejează contul prin monitorizarea activității suspicioase."
       ],
       "${ providerFoldersNumLocalized } folder found": [
-        "S-a găsit un folder",
-        "S-au găsit ${ providerFoldersNumLocalized } foldere",
-        "S-au găsit ${ providerFoldersNumLocalized } de foldere"
+        "Foldere găsite: ${ providerFoldersNumLocalized }",
+        "Foldere găsite: ${ providerFoldersNumLocalized }",
+        "Foldere găsite: ${ providerFoldersNumLocalized }"
       ],
       "${ providerFoldersNumLocalized } label found in Gmail": [
-        "S-a găsit o etichetă în Gmail",
-        "S-au găsit ${ providerFoldersNumLocalized } etichete în Gmail",
-        "S-au găsit ${ providerFoldersNumLocalized } de etichete în Gmail"
+        "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }",
+        "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }",
+        "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }"
       ],
       "${ pureAttachmentsCount } file attached": [
         "Un fișier atașat.",
@@ -6296,15 +6296,15 @@
         "S-au programat ${ unreadCount } de mesaje."
       ],
       "${ updated } contact updated successfully.": [
-        "S-a actualizat un contact.",
-        "S-au actualizat ${ updated } contacte.",
-        "S-au actualizat ${ updated } de contacte."
+        "Contacte actualizate: ${ updated }",
+        "Contacte actualizate: ${ updated }",
+        "Contacte actualizate: ${ updated }"
       ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } vă maschează adresa IP, așa că site-urile web nu vă pot identifica."
       ],
       "(${ memberCount } member)": [
-        "(Un membru)",
+        "(${ memberCount } membru)",
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
       ],
@@ -6406,12 +6406,12 @@
         "Aliniere la dreapta"
       ],
       "All (${ totalFoldersCount } folder)": [
-        "Toate (Un folder)",
+        "Toate (${ totalFoldersCount } folder)",
         "Toate (${ totalFoldersCount } foldere)",
         "Toate (${ totalFoldersCount } de foldere)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "Toate (o etichetă)",
+        "Toate (${ totalFoldersCount } etichetă)",
         "Toate (${ totalFoldersCount } etichete)",
         "Toate (${ totalFoldersCount } de etichete)"
       ],
@@ -6631,7 +6631,7 @@
         "Cod țară"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Creare un calendar",
+        "Creare ${ calendarsToBeCreatedCount } calendar",
         "Creare ${ calendarsToBeCreatedCount } calendare",
         "Creare ${ calendarsToBeCreatedCount } de calendare"
       ],
@@ -6775,7 +6775,7 @@
         "Cheie duplicat actualizată"
       ],
       "Each code can only be used once": [
-        "Fiecare cod poate fi folosit doar odată."
+        "Fiecare cod poate fi folosit doar o dată."
       ],
       "Edit email address": [
         "Editare adresă de e-mail"
@@ -8107,7 +8107,7 @@
         "Când ați activat cheile de încredere pentru ${ senderName }, cheile publice au fost adăugate la datele de contact."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
+        "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Când vă înscrieți pentru un buletin informativ, utilizați un alias în loc de adresa de e-mail reală. Identitatea vă va rămâne ascunsă și puteți dezactiva oricând aliasul."
@@ -8511,6 +8511,20 @@
         "Mesaje luna trecută: ${ subscription.ReceivedMessages.Last30Days }",
         "Mesaje luna trecută: ${ subscription.ReceivedMessages.Last30Days }",
         "Mesaje luna trecută: ${ subscription.ReceivedMessages.Last30Days }"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "Abonamente buletine de știri: ${ unreadCount }",
+        "Abonamente buletine de știri: ${ unreadCount }",
+        "Abonamente buletine de știri: ${ unreadCount }"
+      ],
+      "Apply to future messages": [
+        "Aplicare la mesajele viitoare"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Din cauza configurării destinatarului, acest mesaj nu poate fi trimis cu o dată de expirare către ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Din cauza configurării destinatarului, acest mesaj nu poate fi trimis cu o dată de expirare."
       ]
     },
     "info": {
@@ -8868,7 +8882,7 @@
         "Atașare capturi de ecran"
       ],
       "Authenticator app": [
-        "Aplicație Authenticator"
+        "Aplicația Authenticator"
       ],
       "BCC": [
         "Ca"
@@ -9412,6 +9426,32 @@
       ],
       "The filter is disabled. You can enable it ${ settingsLink }": [
         "Filtrul este dezactivat. Puteți să-l activați în ${ settingsLink }."
+      ],
+      "Marked ${ count } message as read.": [
+        "Mesaje marcate ca fiind citite: ${ count }",
+        "Mesaje marcate ca fiind citite: ${ count }",
+        "Mesaje marcate ca fiind citite: ${ count }"
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "Mesaje mutate în ${ selectedFolder.Name }: ${ count }",
+        "Mesaje mutate în ${ selectedFolder.Name }: ${ count }",
+        "Mesaje mutate în ${ selectedFolder.Name }: ${ count }"
+      ],
+      "Moved ${ count } message to Archive.": [
+        "Mesaje mutate în arhivă: ${ count }",
+        "Mesaje mutate în arhivă: ${ count }",
+        "Mesaje mutate în arhivă: ${ count }"
+      ],
+      "Moved ${ count } message to Trash.": [
+        "Mesaje mutate în gunoi: ${ count }",
+        "Mesaje mutate în gunoi: ${ count }",
+        "Mesaje mutate în gunoi: ${ count }"
+      ],
+      "Newsletters": [
+        "Buletine informative"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Dezabonat de la ${ truncatedName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14129,7 +14169,7 @@
         "Introduceți codul de A2F"
       ],
       "Enter your password": [
-        "Introduceţi parola"
+        "Introduceți parola"
       ],
       "Error": [
         "Eroare"
@@ -14769,6 +14809,12 @@
       ],
       "No unsubscribed mail subscriptions": [
         "Nu există dezabonări de la abonamente"
+      ],
+      "Newsletters": [
+        "Buletine informative"
+      ],
+      "Newsletters view": [
+        "Afișare buletine informative"
       ]
     },
     "Today icon tooltip in mini calendar": {

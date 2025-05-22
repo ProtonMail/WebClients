@@ -505,7 +505,7 @@
         "Platnosť do"
       ],
       "Explore ${ VPN_APP_NAME }": [
-        "Preskúmajte ${ VPN_APP_NAME }"
+        "Preskúmať ${ VPN_APP_NAME }"
       ],
       "Export": [
         "Exportovať"
@@ -532,7 +532,7 @@
         "Písmo"
       ],
       "Forgot password?": [
-        "Zabudnuté heslo?"
+        "Zabudli ste heslo?"
       ],
       "Formalize": [
         "Formalizovať"
@@ -1351,7 +1351,7 @@
         "Prepnúť nastavenia"
       ],
       "Toggle VPN dashboard": [
-        "Prepnúť nástenku VPN"
+        "Prepnúť VPN nástenku"
       ],
       "Tomorrow": [
         "Zajtra"
@@ -5247,12 +5247,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Prosím skúste znova."
+        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vložte bezpečnostný kľúč prepojený s vaším účtom ${ BRAND_NAME }."
+        "Vložte bezpečnostný kľúč prepojený s vaším ${ BRAND_NAME } účtom."
       ],
       "Security key": [
         "Bezpečnostný kľúč"
@@ -7681,7 +7681,7 @@
         "Nastavte ${ MAIL_APP_NAME } ako vašu predvolenú emailovú aplikáciu. ${ MAIL_APP_NAME } sa otvorí automaticky po kliknutí na emailový odkaz."
       ],
       "Set up your organization": [
-        "Nastaviť svoju organizáciu"
+        "Nastavte svoju organizáciu"
       ],
       "Setting up ${ feature }…": [
         "Nastavovanie ${ feature }…"
@@ -8230,7 +8230,7 @@
         "Hneď ako povolíte dôverné kľúče pre ${ senderName }, verejné kľúče budú doplnené k detailu kontaktu."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
+        "Pri nastavení dvojstupňového overenia poskytujeme kódy na obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k vašej overovacej aplikácii."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Pri registrácii na odber noviniek používajte namiesto svojej emailovej adresy alias. Vaša identita zostane skrytá a alias môžete kedykoľvek vypnúť."
@@ -8587,7 +8587,7 @@
         "${ boldQuicklySpot }, ktoré predplatné už nie sú relevantné."
       ],
       "${ boldUnsubscribe } from them with one click.": [
-        "${ boldUnsubscribe } od nich jedným kliknutím."
+        "${ boldUnsubscribe } len jedným kliknutím."
       ],
       "${ subscription.ReceivedMessageCount } email last month": [
         "${ subscription.ReceivedMessageCount } email za posledný mesiac",
@@ -8614,10 +8614,10 @@
         "${ trackersCount } sledovačov zablokovaných"
       ],
       "All messages from this mailing list will be marked as read.": [
-        "Všetky správy z tohto zosielacieho zoznamu budú označené ako prečítané."
+        "Všetky správy z tohto emailového zoznamu budú označené ako prečítané."
       ],
       "All messages from this mailing list will be moved to Archive.": [
-        "Všetky správy z tohto zasielacieho zoznamu budú presunuté do Archívu."
+        "Všetky správy z tohto emailového zoznamu budú presunuté do Archívu."
       ],
       "All messages from this mailing list will be moved to Trash.": [
         "Všetky správy z tohto adresára budú presunuté do Koša."
@@ -8632,7 +8632,7 @@
         "Hromadné vymazanie"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
-        "Jednoducho spravujte a odhlasujte sa z odberu informačných bulletinov a rozposielacích zoznamov"
+        "Jednoduchá správa a odhlásenie sa z odberu informačných bulletinov a emailových zoznamov."
       ],
       "Mark all as read": [
         "Označiť všetko ako prečítané"
@@ -8641,13 +8641,13 @@
         "Voliteľné"
       ],
       "Quickly spot": [
-        "Rýchlo zistíte"
+        "Rýchlo zistiť"
       ],
       "Trash existing messages": [
         "Presunúť existujúce správy do Koša"
       ],
       "Unsubscribe": [
-        "Odhláste sa z odberu"
+        "Odhlásiť odber"
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
@@ -8657,6 +8657,15 @@
         "${ subscription.ReceivedMessages.Last30Days } emaily za posledný mesiac",
         "${ subscription.ReceivedMessages.Last30Days } emailov za posledný mesiac",
         "${ subscription.ReceivedMessages.Last30Days } emailov za posledný mesiac"
+      ],
+      "Apply to future messages": [
+        "Použiť na budúce správy"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Z dôvodu konfigurácie príjemcu nie je možné túto správu odoslať s dátumom expirácie pre ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Z dôvodu konfigurácie príjemcu nie je možné túto správu odoslať s dátumom expirácie."
       ]
     },
     "info": {
@@ -9020,7 +9029,7 @@
         "Priložiť snímok(ky) obrazovky"
       ],
       "Authenticator app": [
-        "Aplikácia 2FA"
+        "Overovacia aplikácia"
       ],
       "BCC": [
         "Skrytá kópia (BCC)"
@@ -9326,7 +9335,7 @@
         "Notifikácia"
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
-        "Notifikácie sú zakázané. Ak ich chcete povoliť, zmeňte nastavenia prehliadača."
+        "Notifikácie sú deaktivované. Ak ich chcete povoliť, zmeňte nastavenia prehliadača."
       ],
       "Open in a new tab": [
         "Otvoriť na novej karte"
@@ -9518,7 +9527,7 @@
         "Vaša poloha"
       ],
       "Your password (admin)": [
-        "Vaše heslo (admin)"
+        "Vaše heslo (správca)"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
@@ -9564,6 +9573,33 @@
       ],
       "The filter is disabled. You can enable it ${ settingsLink }": [
         "Filter je vypnutý. Môžete ho povoliť v ${ settingsLink }"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } správa označená ako prečítaná",
+        "${ count } správy označené ako prečítané",
+        "${ count } správ označených ako prečítané",
+        "${ count } správ označených ako prečítané"
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } správa presunutá do ${ selectedFolder.Name }",
+        "${ count } správy presunuté do ${ selectedFolder.Name }",
+        "${ count } správ presunutých do ${ selectedFolder.Name }",
+        "${ count } správ presunutých do ${ selectedFolder.Name }"
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } správa presunutá do Archívu",
+        "${ count } správy presunuté do Archívu",
+        "${ count } správ presunutých do Archívu",
+        "${ count } správ presunutých do Archívu"
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } správa presunutá do Koša",
+        "${ count } správy presunuté do Koša",
+        "${ count } správ presunutých do Koša",
+        "${ count } správ presunutých do Koša"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Odber z ${ truncatedName } bol odhlásený."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9950,6 +9986,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Vaše predplatné skončilo. ${ cta } a zabráňte strate údajov."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Vaše úložisko je plné. Ak chcete naďalej používať produkty ${ BRAND_NAME }, uvoľnite miesto alebo ${ cta }."
       ]
     },
     "Log preference": {
@@ -10906,7 +10945,7 @@
         "Náš ${ visionary } plán už nie je k dispozícii pre nových predplatiteľov, pretože ide o špeciálny plán pre pôvodných používateľov ${ BRAND_NAME } so špeciálnymi funkciami a výhodami."
       ],
       "Pay once, secure your passwords and identity forever.": [
-        "Zaplaťte raz a zabezpečte svoje heslá a identity navždy."
+        "Zaplaťte raz a zabezpečte navždy svoje heslá a identity."
       ],
       "Popular": [
         "Populárne"
@@ -11448,7 +11487,7 @@
         "${ protectionFromTrackersTitle } znamená, že už vás nebudú sledovať na internete."
       ],
       "Activate premium features": [
-        "Aktivujte premium funkcie"
+        "Aktivujte prémium funkcie"
       ],
       "Activate selected": [
         "Aktivovať vybrané"
@@ -11490,7 +11529,7 @@
         "Ak chcete mať k emailom prístup kedykoľvek a mať optimalizované mobilné prostredie, stiahnite si našu aplikáciu ${ mobileAppAppStoreLink } alebo ${ mobileAppGooglePlayLink }."
       ],
       "Get notified if your password is compromised.": [
-        "Dostávajte upozornenia, ak dôjde ku kompromitácii vášho hesla."
+        "Dostávejte upozornění, pokud dojde ke kompromitaci vašeho hesla."
       ],
       "Industry-leading spam protection": [
         "Špičková ochrana proti spamu"
@@ -11520,7 +11559,7 @@
         "Začnite používať ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Používajte kratšiu verziu svojej emailovej adresy."
+        "Začnite používať kratšiu verziu vašej emailovej adresy."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Ak chcete začať, vyberte si zobrazované meno. Toto sa zobrazí ľuďom, keď im pošlete email, pozvete ich na udalosť alebo zdieľate súbor."
@@ -13086,10 +13125,10 @@
         "Ak chcete naďalej používať produkty ${ BRAND_NAME }, uvoľnite miesto alebo ${ upgrade }"
       ],
       "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
-        "Vaše úložisko ${ productString } je zaplnené na ${ percentage }%. ${ cta }."
+        "Vaše ${ productString } je zaplnené na ${ percentage }%. ${ cta }."
       ],
       "Your ${ productString } is full. ${ cta }.": [
-        "Vaše úložisko ${ productString } je plné. ${ cta }."
+        "Vaše ${ productString } je plné. ${ cta }."
       ]
     },
     "Subscription": {
@@ -14426,7 +14465,7 @@
         "Zadajte 2FA kód"
       ],
       "Enter your password": [
-        "Zadajte Vaše heslo"
+        "Zadajte svoje heslo"
       ],
       "Error": [
         "Chyba"
@@ -15042,6 +15081,9 @@
       ],
       "Your subscriptions in one place": [
         "Vaše emailové odbery na jednom mieste"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Žiadne odhlásené mailové predplatné"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15771,7 +15813,7 @@
     },
     "Slack": {
       "Join Slack huddle": [
-        "Pripojiť sa k hromadnej konverzácii Slack"
+        "Pripojiť sa k Slack huddle"
       ]
     },
     "Subscription saving": {
@@ -15781,17 +15823,20 @@
     },
     "Teams": {
       "Join Teams meeting": [
-        "Pripojiť sa k stretnutiu cez Teams"
+        "Pripojiť sa k Teams mítingu"
       ]
     },
     "Zoom": {
       "Join Zoom meeting": [
-        "Pripojiť sa k stretnutiu na Zoome"
+        "Pripojiť sa k Zoom mítingu"
       ]
     },
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
-        "Tu si môžete zobraziť a spravovať odber noviniek a odber zo zasielacieho zoznamu."
+        "Tu si môžete zobraziť a spravovať odber noviniek a odber z emailového zoznamu."
+      ],
+      "Newsletters you unsubscribe from will appear here.": [
+        "Tu sa zobrazia newslettery, u ktorých zrušíte odber."
       ]
     }
   }

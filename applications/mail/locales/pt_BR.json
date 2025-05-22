@@ -1355,8 +1355,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1452,13 +1451,13 @@
         "Usar um método de pagamento diferente"
       ],
       "Use authentication code": [
-        "Usar código de autenticação"
+        "Usar um código de autenticação"
       ],
       "Use for sending": [
         "Usar para envio"
       ],
       "Use recovery code": [
-        "Usar código de recuperação"
+        "Usar um código de recuperação"
       ],
       "Use this": [
         "Usar isso"
@@ -1567,7 +1566,7 @@
         "Assinatura cancelada"
       ],
       "Change sorting": [
-        "Mudar o tipo"
+        "Mudar tipo"
       ],
       "Least read": [
         "Menos lido"
@@ -6677,7 +6676,7 @@
         "Chave duplicada atualizada"
       ],
       "Each code can only be used once": [
-        "Cada código só pode ser usado uma única vez"
+        "Cada código só pode ser usado uma única vez."
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
@@ -6732,7 +6731,7 @@
         "Curta uma experiência de e-mail mais rápida e focada com o aplicativo para desktop."
       ],
       "Enter the code from your authenticator app": [
-        "Insira o código do seu aplicativo autenticador"
+        "Insira o código do seu aplicativo de autenticação."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Digite as credenciais da conta de e-mail da qual você deseja importar."
@@ -7994,7 +7993,7 @@
         "Quando você ativou as chaves de confiança para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contato."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
+        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação"
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Ao se inscrever para receber um boletim informativo, use um alias em vez do seu endereço de e-mail. Sua identidade permanece oculta, e você pode desativar o alias a qualquer momento."
@@ -8375,6 +8374,19 @@
       "${ subscription.ReceivedMessages.Last30Days } email last month": [
         "${ subscription.ReceivedMessages.Last30Days } e-mail no mês passado",
         "${ subscription.ReceivedMessages.Last30Days } e-mails no mês passado"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } assinatura de boletim informativo",
+        "${ unreadCount } assinaturas de boletim informativo"
+      ],
+      "Apply to future messages": [
+        "Aplicar para as mensagens futuras"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Devido à configuração do seu destinatário, esta mensagem não pode ser enviada com uma data de expiração para ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Devido à configuração do seu destinatário, esta mensagem não pode ser enviada com uma data de expiração."
       ]
     },
     "info": {
@@ -8729,7 +8741,7 @@
         "Anexar captura(s) de tela"
       ],
       "Authenticator app": [
-        "Aplicativo autenticador"
+        "Aplicativo de autenticação"
       ],
       "BCC": [
         "CCO"
@@ -9273,6 +9285,28 @@
       ],
       "The filter is disabled. You can enable it ${ settingsLink }": [
         "O filtro está desativado. Você pode ativá-lo ${ settingsLink }"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } mensagem foi marcada como lida.",
+        "${ count } mensagens foram marcadas como lidas."
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } mensagem foi movida para ${ selectedFolder.Name }.",
+        "${ count } mensagens foram movidas para ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } mensagem foi movida para o arquivo.",
+        "${ count } mensagens foram movidas para o arquivo."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } mensagem foi movida para a lixeira.",
+        "${ count } mensagens foram movidas para a lixeira."
+      ],
+      "Newsletters": [
+        "Boletins informativos"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "A assinatura de ${ truncatedName } foi cancelada."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12264,7 +12298,7 @@
     },
     "Slack": {
       "Join Slack huddle": [
-        "Participar da reunião do Slack"
+        "Participe da reunião do Slack"
       ]
     },
     "SmartBanner": {
@@ -13521,7 +13555,7 @@
     },
     "Teams": {
       "Join Teams meeting": [
-        "Participar da reunião do Teams"
+        "Participe da reunião do Teams"
       ]
     },
     "Time": {
@@ -14545,6 +14579,12 @@
       ],
       "No unsubscribed mail subscriptions": [
         "Sem assinaturas de e-mail canceladas"
+      ],
+      "Newsletters": [
+        "Boletins informativos"
+      ],
+      "Newsletters view": [
+        "Visão de boletins informativos"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15328,7 +15368,7 @@
         "Visualize e gerencie as assinaturas de newsletter e lista de e-mails aqui."
       ],
       "Newsletters you unsubscribe from will appear here.": [
-        "As newsletters das quais você se desinscreveu aparecerão aqui."
+        "Os boletins das quais você se desinscreveu aparecerão aqui."
       ]
     }
   }

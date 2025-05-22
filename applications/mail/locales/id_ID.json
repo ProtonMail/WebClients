@@ -8226,6 +8226,18 @@
       ],
       "${ subscription.ReceivedMessages.Last30Days } email last month": [
         "${ subscription.ReceivedMessages.Last30Days } email bulan lalu"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } langganan buletin"
+      ],
+      "Apply to future messages": [
+        "Terapkan ke pesan yang akan datang"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Karena konfigurasi penerima Anda, pesan ini tidak dapat dikirim dengan tanggal kedaluwarsa ke ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Karena konfigurasi penerima Anda, pesan ini tidak dapat dikirim dengan tanggal kedaluwarsa."
       ]
     },
     "info": {
@@ -9115,6 +9127,24 @@
       ],
       "The filter is disabled. You can enable it ${ settingsLink }": [
         "Filter dinonaktifkan. Anda dapat mengaktifkannya ${ settingsLink }"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } pesan ditandai sebagai telah dibaca."
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } pesan dipindahkan ke ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } pesan dipindahkan ke Arsip."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } pesan dipindahkan ke Sampah."
+      ],
+      "Newsletters": [
+        "Buletin"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Langganan ${ truncatedName } dihentikan."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14228,6 +14258,12 @@
       ],
       "No unsubscribed mail subscriptions": [
         "Tidak ada langganan email yang berhenti dilanggan"
+      ],
+      "Newsletters": [
+        "Buletin"
+      ],
+      "Newsletters view": [
+        "Tampilan buletin"
       ]
     },
     "Today icon tooltip in mini calendar": {

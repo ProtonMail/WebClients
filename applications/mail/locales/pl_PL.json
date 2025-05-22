@@ -1363,10 +1363,7 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufaj kluczowi",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom"
+        "Zaufaj kluczowi"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -8657,6 +8654,21 @@
         "${ subscription.ReceivedMessages.Last30Days } wiadomości w ostatnim miesiącu",
         "${ subscription.ReceivedMessages.Last30Days } wiadomości w ostatnim miesiącu",
         "${ subscription.ReceivedMessages.Last30Days } wiadomości w ostatnim miesiącu"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } newsletter",
+        "${ unreadCount } newslettery",
+        "${ unreadCount } newsletterów",
+        "${ unreadCount } newsletterów"
+      ],
+      "Apply to future messages": [
+        "Zastosuj do przyszłych wiadomości"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Ze względu na konfigurację odbiorcy wiadomość nie może zostać wysłana z datą wygaśnięcia do następujących kontaktów: ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Ze względu na konfigurację odbiorcy wiadomość nie może zostać wysłana z datą wygaśnięcia."
       ]
     },
     "info": {
@@ -9564,6 +9576,36 @@
       ],
       "The filter is disabled. You can enable it ${ settingsLink }": [
         "Filtr jest wyłączony. Możesz go włączyć w ${ settingsLink }"
+      ],
+      "Marked ${ count } message as read.": [
+        "Oznaczono ${ count } wiadomość jako przeczytaną.",
+        "Oznaczono ${ count } wiadomości jako przeczytane.",
+        "Oznaczono ${ count } wiadomości jako przeczytane.",
+        "Oznaczono ${ count } wiadomości jako przeczytane."
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "Przeniesiono ${ count } wiadomość do folderu ${ selectedFolder.Name }.",
+        "Przeniesiono ${ count } wiadomości do folderu ${ selectedFolder.Name }.",
+        "Przeniesiono ${ count } wiadomości do folderu ${ selectedFolder.Name }.",
+        "Przeniesiono ${ count } wiadomości do folderu ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "Przeniesiono ${ count } wiadomość do archiwum.",
+        "Przeniesiono ${ count } wiadomości do archiwum.",
+        "Przeniesiono ${ count } wiadomości do archiwum.",
+        "Przeniesiono ${ count } wiadomości do archiwum."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "Przeniesiono ${ count } wiadomość do kosza.",
+        "Przeniesiono ${ count } wiadomości do kosza.",
+        "Przeniesiono ${ count } wiadomości do kosza.",
+        "Przeniesiono ${ count } wiadomości do kosza."
+      ],
+      "Newsletters": [
+        "Newslettery"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Anulowano subskrypcję ${ truncatedName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15048,6 +15090,12 @@
       ],
       "No unsubscribed mail subscriptions": [
         "Brak anulowanych subskrypcji"
+      ],
+      "Newsletters": [
+        "Newslettery"
+      ],
+      "Newsletters view": [
+        "Widok newsletterów"
       ]
     },
     "Today icon tooltip in mini calendar": {

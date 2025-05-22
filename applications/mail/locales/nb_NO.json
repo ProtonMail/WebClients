@@ -782,7 +782,7 @@
         "Marker som ulest"
       ],
       "mark emails as": [
-        "markere e-poster som"
+        "merk e-poster som"
       ],
       "Mark for deletion": [
         "Merk for sletting"
@@ -5179,7 +5179,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Noe gikk galt under godkjenning med sikkerhetsnøkkelen din. Prøv på nytt."
+        "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
       ]
     },
     "fido2: Info": {
@@ -6677,7 +6677,7 @@
         "Duplisert nøkkel oppdatert"
       ],
       "Each code can only be used once": [
-        "Hver kode kan kun bli brukt en gang"
+        "Hver kode kan bare brukes én gang"
       ],
       "Edit email address": [
         "Rediger e-postadresse"
@@ -7994,7 +7994,7 @@
         "Når du aktiverte klarerte nøkler for ${ senderName }, ble de offentlige nøklene lagt til i kontaktinformasjonen."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Når du konfigurerer totrinnsverifisering, oppgir vi gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen."
+        "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Når du registrerer deg for et nyhetsbrev, bruk et alias i stedet for e-postadressen din. Identiteten din forblir skjult, og du kan deaktivere aliaset når som helst."
@@ -8375,6 +8375,19 @@
       "${ subscription.ReceivedMessages.Last30Days } email last month": [
         "${ subscription.ReceivedMessages.Last30Days } e-post forrige måned",
         "${ subscription.ReceivedMessages.Last30Days } e-poster forrige måned"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } nyhetsbrevabonnement",
+        "${ unreadCount } nyhetsbrevabonnementer"
+      ],
+      "Apply to future messages": [
+        "Anvend på fremtidige meldinger"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "På grunn av mottakerens konfigurasjon kan ikke denne meldingen sendes med en utløpsdato til ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "På grunn av mottakerens konfigurasjon kan ikke denne meldingen sendes med en utløpsdato."
       ]
     },
     "info": {
@@ -9270,6 +9283,28 @@
       ],
       "The filter is disabled. You can enable it ${ settingsLink }": [
         "Filteret er deaktivert. Du kan aktivere det ${ settingsLink }"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } melding merket som lest.",
+        "${ count } meldinger merket som lest."
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } melding flyttet til ${ selectedFolder.Name }.",
+        "${ count } meldinger flyttet til ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } melding flyttet til arkivet.",
+        "${ count } meldinger flyttet til arkivet."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } melding flyttet til papirkurven.",
+        "${ count } meldinger flyttet til papirkurven."
+      ],
+      "Newsletters": [
+        "Nyhetsbrev"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Avmeldt fra abonnementet på ${ truncatedName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13897,7 +13932,7 @@
         "Angi 2FA-kode"
       ],
       "Enter your password": [
-        "Skriv inn passord"
+        "Skriv inn passordet"
       ],
       "Error": [
         "Feil"
@@ -14510,6 +14545,12 @@
       ],
       "No unsubscribed mail subscriptions": [
         "Ingen avmeldte e-postabonnementer"
+      ],
+      "Newsletters": [
+        "Nyhetsbrev"
+      ],
+      "Newsletters view": [
+        "Nyhetsbrevvisning"
       ]
     },
     "Today icon tooltip in mini calendar": {

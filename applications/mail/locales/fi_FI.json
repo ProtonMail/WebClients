@@ -146,7 +146,7 @@
         "Huomiota vaaditaan"
       ],
       "Authenticate": [
-        "Tunnistaudu"
+        "Todenna"
       ],
       "Auto-delete spam and trash": [
         "Roskapostin ja roskakorin automaattinen tyhjennys"
@@ -1544,6 +1544,36 @@
       ],
       "Unsubscribed": [
         "Tilaus on peruttu"
+      ],
+      "A to Z": [
+        "A - Ö"
+      ],
+      "Change sorting": [
+        "Muuta lajittelua"
+      ],
+      "Least read": [
+        "Vähiten luetut"
+      ],
+      "Manage advanced account protections": [
+        "Hallitse edistynyttä tilisuojausta"
+      ],
+      "Most read": [
+        "Luetuimmat"
+      ],
+      "Remove button": [
+        "Poista-painike"
+      ],
+      "Resize panel": [
+        "Muuta paneelin kokoa"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Käytä ${ PASS_APP_NAME } for Businessia"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Käytä ${ VPN_SHORT_APP_NAME }:ää tietosuojaa varten"
       ]
     },
     "action": {
@@ -5875,6 +5905,15 @@
       ],
       "Import from Outlook": [
         "Tuo Outlookista"
+      ],
+      "Import from Google": [
+        "Tuo Googlesta"
+      ],
+      "Import from other": [
+        "Tuo muualta"
+      ],
+      "Import from Yahoo": [
+        "Tuo Yahoosta"
       ]
     },
     "Import warning": {
@@ -8156,6 +8195,74 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Tilauksesi uudistuu automaattisesti ${ renewalTime }."
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, arkistoi tai siirrä vanhat sähköpostit kansioon."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } tilaukset, jotka eivät ole enää ajankohtaisia."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } yhdellä klikkauksella."
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } sähköposti viime kuussa",
+        "${ subscription.ReceivedMessages.Last30Days } sähköpostia viime kuussa"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } lukematon",
+        "${ subscription.UnreadMessageCount } lukematonta"
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN piilottaa IP-osoitteesi ja salaa selaustoimintasi, joten verkkosivustojen, mainostajien ja Internet-palveluntarjoajien on vaikeampi seurata sinua ajan mittaan."
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Kaikki tämän postituslistan viestit merkitään luetuiksi."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Kaikki tämän postituslistan viestit siirretään arkistoon."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Kaikki tämän postituslistan viestit siirretään roskakoriin."
+      ],
+      "Archive existing messages": [
+        "Arkistoi olemassa olevat viestit"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Tuo viestisi, yhteystietosi ja kalenterisi ${ BRAND_NAME }iin."
+      ],
+      "Bulk delete": [
+        "Massapoista"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Vastaanottajan asetuksista johtuen tätä viestiä ei voida lähettää erääntymisajalla vastaanottajalle ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Vastaanottajan asetuksista johtuen tätä viestiä ei voida lähettää erääntymisajalla"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Hallitse ja peru uutiskirjeitä ja postituslistoja helposti."
+      ],
+      "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
+        "Kutsu kumppanisi, ystäväsi tai kuka tahansa, jonka kanssa jaat ${ protonDuoPlanName } -tilauksesi."
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Lue, mitä tehdä, ${ dataLeakedLink }"
+      ],
+      "Mark all as read": [
+        "Merkitse kaikki luetuiksi"
+      ],
+      "One time import": [
+        "Kertaluontoinen tuonti"
+      ],
+      "Quickly spot": [
+        "Löydä nopeasti"
+      ],
+      "Trash existing messages": [
+        "Poista olemassa olevat viestit"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
       ]
     },
     "info": {
@@ -9027,6 +9134,24 @@
       ],
       "Weak password": [
         "Heikko salasana"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Merkitse kaikki viestit luetuiksi"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Siirrä kaikki veistit kansioon ${ boldFolderName }"
+      ],
+      "Active filter:": [
+        "Aktiivinen suodatin:"
+      ],
+      "Apply to future messages": [
+        "Käytä tuleville viesteille"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Ilmoitukset on poistettu käytöstä. Voit ottaa ne käyttöön selaimen asetuksissa."
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Suodatin ei ole käytössä. Voit ottaa sen käyttöön ${ settingsLink }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9315,6 +9440,30 @@
       ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Miten ${ DARK_WEB_MONITORING_NAME } toimii"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Miten yhteiskäytät ${ DOCS_SHORT_APP_NAME }issa"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Miten otat ${ PROTON_SENTINEL_NAME }in käyttöön"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Miten siirryt ${ BRAND_NAME }iin"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } määrittäminen"
+      ],
+      "How to share via email": [
+        "Miten jaat sähköpostitse"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Miten käytät ${ PASS_APP_NAME } for Businessia"
+      ],
+      "How to use email forwarding": [
+        "Miten sähköpostin edelleenlähetystä käytetään"
+      ],
+      "if your data is leaked": [
+        "jos tietosi vuotavat"
       ]
     },
     "Link to calendar event": {
@@ -9378,6 +9527,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Tilauksesi on päättynyt. ${ cta } välttääksesi tietojen menetyksen."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Tallennustilasi on täynnä. Jatkaaksesi ${ BRAND_NAME } -tuotteiden käyttöä, vapauta tilaa tai ${ cta }."
       ]
     },
     "Log preference": {
@@ -10731,6 +10883,9 @@
       ],
       "Your subscription renews soon": [
         "Tilauksesi uusiutuu pian"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Viimeinen mahdollisuus saada 80 % alennus ${ plan } Plussan ensimmäisestä kuukaudesta."
       ]
     },
     "Offer feature": {
@@ -11157,6 +11312,12 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua milloin tahansa."
+      ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Et voi muuttaa tai peruuttaa tilaustasi tänä aikana. Odota, kunnes maksusi on suoritettu, ennen kuin yrität tehdä muutoksia. Kiitos kärsivällisyydestäsi."
+      ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Uusimishinnoittelu voi muuttua ehtojen ${ termsAndConditionsLink } mukaan."
       ]
     },
     "Payments.Error": {
@@ -12043,6 +12204,9 @@
       ],
       "Your subscription will renew at the same rate every year.": [
         "Tilauksesi uusiutuu samaan hintaan joka vuosi."
+      ],
+      "The special offer is valid for the first 2 years.": [
+        "Erikoistarjous on voimassa kahden ensimmäisen vuoden ajan."
       ]
     },
     "specialoffer: Link": {
@@ -12120,6 +12284,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Normaalihinta 30 kuukaudelta on ${ amount }"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Erikoistarjous on voimassa kahden ensimmäisen vuoden ajan"
       ]
     },
     "specialoffer: Title": {
@@ -13626,7 +13793,7 @@
         "Miten se kaikki toimii?"
       ],
       "How to update your email address": [
-        "Miten vaihdat sähköpostiosoitteesi"
+        "Miten päivität sähköpostiosoitteesi"
       ],
       "Human verification": [
         "Ihmisvahvistus"
@@ -14134,6 +14301,51 @@
       ],
       "Set up email forwarding": [
         "Määritä sähköpostin ohjaus"
+      ],
+      "Archive all messages?": [
+        "Arkistoidaanko kaikki viestit?"
+      ],
+      "Increase security with ${ VPN_APP_NAME }": [
+        "Paranna turvallisuutta ${ VPN_APP_NAME }:llä"
+      ],
+      "Information exposed in breach": [
+        "Tietomurrossa paljastuneet tiedot"
+      ],
+      "Mark all messages as read": [
+        "Merkitse kaikki viestit luetuiksi"
+      ],
+      "No mail subscriptions": [
+        "Ei sähköpostitilauksia"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Ei peruutettuja sähköpostitilauksia"
+      ],
+      "Simplify email distribution": [
+        "Yksinkertaista sähköpostijakelua"
+      ],
+      "Simplify password management": [
+        "Yksinkertaista salasanahallintaa"
+      ],
+      "Trash all messages?": [
+        "Poistetaanko kaikki viestit?"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Perutaanko tilaus ${ subscription.Name }?"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Käytä ${ VPN_SHORT_APP_NAME }:ää tietosuojaa varten"
+      ],
+      "VPN explained": [
+        "VPN selitetty"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Tervetuloa ${ BRAND_NAME } for Businessiin"
+      ],
+      "Your subscriptions in one place": [
+        "Tilauksesi yhdessä paikassa"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14222,6 +14434,12 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lataa julkinen avain mahdollistaaksesi päästä päähän -salattujen viestien lähetyksen tähän osoitteeseen"
+      ],
+      "Not all information listed here was exposed for all users.": [
+        "Kaikkia tässä lueteltuja tietoja ei paljastettu kaikille käyttäjille."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Salatut salasanat pysyvät turvassa, vaikka ne paljastuisivat, ellei niiden salausta pureta."
       ]
     },
     "tooltip": {
@@ -14787,6 +15005,17 @@
       ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceLine } kuukausihintaan. Voit perua milloin tahansa."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Avaa kaikki ${ BRAND_NAME } -premium-tuotteet ja -ominaisuudet hintaan ${ priceLine }. Peruuta milloin tahansa."
+      ]
+    },
+    "Labels": {
+      "Newsletters you unsubscribe from will appear here.": [
+        "Uutiskirjeet, joiden tilauksen peruutat, näkyvät täällä."
+      ],
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "Näytä ja hallitse uutiskirjeiden ja postituslistojen tilauksia täällä."
       ]
     }
   }

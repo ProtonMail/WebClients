@@ -526,7 +526,7 @@
         "Tipo de letra"
       ],
       "Forgot password?": [
-        "¿Contraseña olvidada?"
+        "¿Olvidaste tu contraseña?"
       ],
       "Formalize": [
         "Formal"
@@ -1355,8 +1355,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
+        "Clave de confianza"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1458,7 +1457,7 @@
         "Usar para el envío"
       ],
       "Use recovery code": [
-        "Usar código de recuperación"
+        "Usar un código de recuperación"
       ],
       "Use this": [
         "Usar esto"
@@ -1573,7 +1572,7 @@
         "Recibidos recientemente"
       ],
       "Resize panel": [
-        "Cambiar el tamaño del panel"
+        "Cambia el tamaño del panel"
       ],
       "Resubscribe": [
         "Volver a suscribirme"
@@ -5179,7 +5178,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Hubo un problema al autenticar con la clave de seguridad. Intente de nuevo."
+        "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
       ]
     },
     "fido2: Info": {
@@ -6732,7 +6731,7 @@
         "Disfrute de una experiencia de correo electrónico más rápida y centrada con la aplicación de escritorio."
       ],
       "Enter the code from your authenticator app": [
-        "Ingrese el código de la aplicación de autenticación"
+        "Ingrese el código de la aplicación de autenticación."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Ingrese las credenciales de la cuenta de correo electrónico desde la que quiere importar."
@@ -6741,7 +6740,7 @@
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Ingrese el código de verificación. Digite ${ digit }."
+        "Ingrese el código de verificación. Ingrese ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Ingrese su propia contraseña (como administrador de la organización)."
@@ -8375,6 +8374,19 @@
       "${ subscription.ReceivedMessages.Last30Days } email last month": [
         "${ subscription.ReceivedMessages.Last30Days } correos del mes pasado",
         "${ subscription.ReceivedMessages.Last30Days } correos el mes pasado"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } suscripción de boletín",
+        "${ unreadCount } suscripciones de boletines"
+      ],
+      "Apply to future messages": [
+        "Aplicar a los mensajes futuros"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Debido a la configuración de su destinatario, este mensaje no se puede enviar con una fecha de expiración a ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Debido a la configuración de su destinatario, este mensaje no se puede enviar con una fecha de expiración."
       ]
     },
     "info": {
@@ -8729,7 +8741,7 @@
         "Adjuntar captura(s)"
       ],
       "Authenticator app": [
-        "App autenticadora"
+        "Aplicación de autenticación"
       ],
       "BCC": [
         "CCO"
@@ -9227,7 +9239,7 @@
         "Su ubicación"
       ],
       "Your password (admin)": [
-        "La contraseña (admin)"
+        "Tu contraseña (admin)"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
@@ -9273,6 +9285,28 @@
       ],
       "The filter is disabled. You can enable it ${ settingsLink }": [
         "El filtro está desactivado. Puede activarlo ${ settingsLink }"
+      ],
+      "Marked ${ count } message as read.": [
+        "Se marcó ${ count } mensaje como leído.",
+        "Se marcaron ${ count } mensajes como leídos."
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "Se movió ${ count } mensaje a ${ selectedFolder.Name }.",
+        "Se movieron ${ count } mensajes a ${ selectedFolder.Name }"
+      ],
+      "Moved ${ count } message to Archive.": [
+        "Se movió ${ count } mensaje al Archivo.",
+        "Se movieron ${ count } mensajes al Archivo."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "Se movió ${ count } mensaje a la Papelera.",
+        "Se movieron ${ count } mensajes a la Papelera."
+      ],
+      "Newsletters": [
+        "Boletines informativos"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Se canceló la suscripción de ${ truncatedName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12620,7 +12654,7 @@
         "Para continuar cargando y sincronizando archivos, libere espacio o mejore para obtener más almacenamiento."
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Para enviar o recibir correos, libere espacio o ${ upgrade }"
+        "Para enviar o recibir más correos, libere espacio o ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Para enviar o recibir correos, libere espacio o mejore para obtener más almacenamiento."
@@ -13921,7 +13955,7 @@
         "Ingrese el código 2FA"
       ],
       "Enter your password": [
-        "Ingrese la contraseña"
+        "Introduce tu contraseña"
       ],
       "Error": [
         "Error"
@@ -14534,6 +14568,12 @@
       ],
       "No unsubscribed mail subscriptions": [
         "No hay suscripciones de correo dadas de baja"
+      ],
+      "Newsletters": [
+        "Boletines informativos"
+      ],
+      "Newsletters view": [
+        "Vista de boletines"
       ]
     },
     "Today icon tooltip in mini calendar": {

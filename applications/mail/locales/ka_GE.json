@@ -3917,6 +3917,21 @@
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "მოირგეთ ეს ჯერ, რომ გაააქტიუროთ თქვენი ორგანიზაცია და მოირგოთ თქვენი ელფოსტის მისამართი."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "დაამატეთ საქაღალდეები და ფაილები ${ DRIVE_APP_NAME }-ს და მოიწვიეთ გუნდის წევრები მის სანახავად, ან ჩასასწორებლად."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "ადვილად დაასინქრონიზეთ ფაილები ღრუბლიდან სახლის კომპიუტერამდე და იქონიეთ მათზე წვდომა თქვენი მობილურიდან."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "წაახალისეთ 2FA-ის გამოყენება თქვენს ორგანიზაციაში დამატებითი უსაფრთხოებისთვის."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "დარწმუნდით, რომ გაქვთ უმაღლესი დონის დაცვა ${ PROTON_SENTINEL_NAME } პროგრამით."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "დაეხმარეთ თქვენს გუნდს, უსაფრთხოდ შეინახოს პაროლები კონფიდენციალური ბიზნესისა და კლიენტის ინფორმაციებისთვის."
       ]
     },
     "description": {
@@ -5146,7 +5161,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "თქვენი უსაფრთხოების გასაღების ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
+        "თქვენი უსაფრთხოების გასაღებით ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
       ]
     },
     "fido2: Info": {
@@ -8278,6 +8293,13 @@
       "${ subscription.ReceivedMessages.Last30Days } email last month": [
         "${ subscription.ReceivedMessages.Last30Days } ელფოსტა გასულ თვეში",
         "${ subscription.ReceivedMessages.Last30Days } ელფოსტა გასულ თვეში"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } სიახლის გამოწერა.",
+        "${ unreadCount } სიახლის გამოწერა."
+      ],
+      "Apply to future messages": [
+        "გადატარება მომავალ შეტყობინებებზე"
       ]
     },
     "info": {
@@ -9173,6 +9195,28 @@
       ],
       "The filter is disabled. You can enable it ${ settingsLink }": [
         "ფილტრი გათიშულია. მისი ჩართვა შეგიძლია ბმულზე ${ settingsLink }"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } შეტყობინება მოინიშნა წაკითხულად.",
+        "${ count } შეტყობინება მოინიშნა წაკითხულად."
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } შეტყობინება გადატანა საქაღალდეში ${ selectedFolder.Name }.",
+        "${ count } შეტყობინება გადატანა საქაღალდეში ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } შეტყობინება გადატანილია არქივში.",
+        "${ count } შეტყობინება გადატანილია არქივში."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } შეტყობინება გადატანილია ნაგვის ყუთში.",
+        "${ count } შეტყობინება გადატანილია ნაგვის ყუთში."
+      ],
+      "Newsletters": [
+        "სიახლეები"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "${ truncatedName }-ის გამოწერა გაუქმდა."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14394,6 +14438,12 @@
       ],
       "No unsubscribed mail subscriptions": [
         "გამოწერაგაუქმებული ელფოსტის გამოწერების გარეშე"
+      ],
+      "Newsletters": [
+        "სიახლეები"
+      ],
+      "Newsletters view": [
+        "სიახლეების ხედი"
       ]
     },
     "Today icon tooltip in mini calendar": {
