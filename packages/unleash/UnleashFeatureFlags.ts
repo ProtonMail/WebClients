@@ -167,6 +167,7 @@ enum WalletFlag {
     ImportPaperWallet = 'ImportPaperWallet',
     WalletDarkMode = 'WalletDarkMode',
     WalletMessageSigner = 'WalletMessageSigner',
+    WalletExportTransaction = 'WalletExportTransaction',
 }
 
 export type FeatureFlag =
