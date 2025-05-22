@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -14,10 +15,8 @@ import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updatePMSignature } from '@proton/shared/lib/api/mailSettings';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import signatureImg from '@proton/styles/assets/img/illustrations/new-upsells-img/tools.svg';
 
@@ -42,12 +41,13 @@ const PMSignature = ({ id }: Props) => {
     const [user] = useUser();
     const [mailSettings] = useMailSettings();
     const [userSettings] = useUserSettings();
+    const [organization] = useOrganization();
 
     const [loading, withLoading] = useLoading();
-    const { state, toggle } = useToggle(hasBit(mailSettings?.PMSignature, PM_SIGNATURE.ENABLED));
+    const { state, toggle } = useToggle(!!mailSettings?.PMSignature);
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
-    const pmSignatureEnabled = canUpdateSignature(user, mailSettings);
+    const pmSignatureEnabled = canUpdateSignature(user, organization, mailSettings);
 
     const handleChange = async (checked: number) => {
         const { MailSettings } = await api<{ MailSettings: MailSettings }>(updatePMSignature(checked));

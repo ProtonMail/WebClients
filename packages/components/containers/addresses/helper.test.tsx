@@ -12,8 +12,9 @@ import {
     permissionsSendMap,
     setupIncompletePermissionMap,
 } from '@proton/components/containers/addresses/helper';
+import { PLANS } from '@proton/payments/index';
 import { ADDRESS_PERMISSIONS, ADDRESS_PERMISSION_TYPE } from '@proton/shared/lib/constants';
-import type { MailSettings, UserModel } from '@proton/shared/lib/interfaces';
+import type { MailSettings, OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 
 describe('addresses helper functions', () => {
@@ -358,52 +359,145 @@ describe('addresses helper functions', () => {
     describe('canUpdateSignature', () => {
         const freeUser = {
             hasPaidMail: false,
-        } as unknown as UserModel;
+        } as UserModel;
 
         const paidUser = {
             hasPaidMail: true,
-        } as unknown as UserModel;
+        } as UserModel;
 
-        it('Should return true for free users regardless of signature status', () => {
-            expect(
-                canUpdateSignature(freeUser, {
-                    PMSignature: PM_SIGNATURE.DISABLED,
-                } as unknown as MailSettings)
-            ).toBeTruthy();
+        const memberUser = {
+            hasPaidMail: true,
+            isMember: true,
+        } as UserModel;
 
-            expect(
-                canUpdateSignature(freeUser, {
-                    PMSignature: PM_SIGNATURE.ENABLED,
-                } as unknown as MailSettings)
-            ).toBeTruthy();
+        const defaultOrganization = {} as OrganizationExtended;
 
-            expect(
-                canUpdateSignature(freeUser, {
-                    PMSignature: PM_SIGNATURE.LOCKED,
-                } as unknown as MailSettings)
-            ).toBeTruthy();
+        describe('Free user tests', () => {
+            it('Should return true if the signature is disabled', () => {
+                expect(
+                    canUpdateSignature(freeUser, defaultOrganization, {
+                        PMSignature: PM_SIGNATURE.DISABLED,
+                    } as MailSettings)
+                ).toBeTruthy();
+            });
+
+            it('Should return true if the signature is enabled', () => {
+                expect(
+                    canUpdateSignature(freeUser, defaultOrganization, {
+                        PMSignature: PM_SIGNATURE.ENABLED,
+                    } as MailSettings)
+                ).toBeTruthy();
+            });
+
+            it('Should return true if the signature is locked', () => {
+                expect(
+                    canUpdateSignature(freeUser, defaultOrganization, {
+                        PMSignature: PM_SIGNATURE.LOCKED,
+                    } as MailSettings)
+                ).toBeTruthy();
+            });
         });
 
-        it('Should return false if the address is locked', () => {
-            expect(
-                canUpdateSignature(paidUser, {
-                    PMSignature: PM_SIGNATURE.LOCKED,
-                } as unknown as MailSettings)
-            ).toBeFalsy();
+        describe('Paid user tests', () => {
+            it('Should return true if the address is disabled', () => {
+                expect(
+                    canUpdateSignature(paidUser, defaultOrganization, {
+                        PMSignature: PM_SIGNATURE.DISABLED,
+                    } as MailSettings)
+                ).toBeTruthy();
+            });
+
+            it('Should return true if the address is disabled', () => {
+                expect(
+                    canUpdateSignature(paidUser, defaultOrganization, {
+                        PMSignature: PM_SIGNATURE.ENABLED,
+                    } as MailSettings)
+                ).toBeTruthy();
+            });
+
+            it('Should return false if the address is locked', () => {
+                expect(
+                    canUpdateSignature(paidUser, defaultOrganization, {
+                        PMSignature: PM_SIGNATURE.LOCKED,
+                    } as MailSettings)
+                ).toBeFalsy();
+            });
         });
 
-        it('Should return true if the address is not locked', () => {
-            expect(
-                canUpdateSignature(paidUser, {
-                    PMSignature: PM_SIGNATURE.DISABLED,
-                } as unknown as MailSettings)
-            ).toBeTruthy();
+        describe('Member tests', () => {
+            it('Should return true if the signature is disabled', () => {
+                expect(
+                    canUpdateSignature(memberUser, defaultOrganization, {
+                        PMSignature: PM_SIGNATURE.DISABLED,
+                    } as MailSettings)
+                ).toBeFalsy();
+            });
 
-            expect(
-                canUpdateSignature(paidUser, {
-                    PMSignature: PM_SIGNATURE.ENABLED,
-                } as unknown as MailSettings)
-            ).toBeTruthy();
+            it('Should return true if the signature is enabled', () => {
+                expect(
+                    canUpdateSignature(memberUser, defaultOrganization, {
+                        PMSignature: PM_SIGNATURE.ENABLED,
+                    } as MailSettings)
+                ).toBeFalsy();
+            });
+
+            it('Should return true if the signature is locked', () => {
+                expect(
+                    canUpdateSignature(memberUser, defaultOrganization, {
+                        PMSignature: PM_SIGNATURE.LOCKED,
+                    } as MailSettings)
+                ).toBeFalsy();
+            });
+        });
+
+        describe('Organization tests', () => {
+            it('Should return true if the signature is enabled for duo org', () => {
+                expect(
+                    canUpdateSignature(
+                        memberUser,
+                        { PlanName: PLANS.DUO } as OrganizationExtended,
+                        {
+                            PMSignature: PM_SIGNATURE.ENABLED,
+                        } as MailSettings
+                    )
+                ).toBeTruthy();
+            });
+
+            it('Should return true if the signature is disabled for duo org', () => {
+                expect(
+                    canUpdateSignature(
+                        memberUser,
+                        { PlanName: PLANS.DUO } as OrganizationExtended,
+                        {
+                            PMSignature: PM_SIGNATURE.DISABLED,
+                        } as MailSettings
+                    )
+                ).toBeTruthy();
+            });
+
+            it('Should return true if the signature is enabled for family org', () => {
+                expect(
+                    canUpdateSignature(
+                        memberUser,
+                        { PlanName: PLANS.FAMILY } as OrganizationExtended,
+                        {
+                            PMSignature: PM_SIGNATURE.ENABLED,
+                        } as MailSettings
+                    )
+                ).toBeTruthy();
+            });
+
+            it('Should return false if the signature is enabled for mail essential org', () => {
+                expect(
+                    canUpdateSignature(
+                        memberUser,
+                        { PlanName: PLANS.MAIL_BUSINESS } as OrganizationExtended,
+                        {
+                            PMSignature: PM_SIGNATURE.ENABLED,
+                        } as MailSettings
+                    )
+                ).toBeFalsy();
+            });
         });
     });
 });
