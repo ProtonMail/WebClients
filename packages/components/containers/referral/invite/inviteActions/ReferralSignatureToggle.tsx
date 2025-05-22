@@ -51,10 +51,7 @@ const ReferralSignatureToggle = () => {
             <br />
             <div
                 dangerouslySetInnerHTML={{
-                    __html: getProtonMailSignature({
-                        isReferralProgramLinkEnabled: true,
-                        referralProgramUserLink: userSettings.Referral?.Link,
-                    }),
+                    __html: getProtonMailSignature(true, userSettings.Referral?.Link, mailSettings?.PMSignatureContent),
                 }}
             />
             <br />
