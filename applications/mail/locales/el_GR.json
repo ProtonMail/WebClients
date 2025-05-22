@@ -151,6 +151,9 @@
       "Attention required": [
         "Χρειάζεται προσοχή"
       ],
+      "Authenticate": [
+        "Ταυτοποίηση"
+      ],
       "Auto-delete spam and trash": [
         "Αυτόματη διαγραφή ανεπιθύμητων και διαγεγραμμένων μηνυμάτων"
       ],
@@ -471,6 +474,9 @@
       "Email settings": [
         "Ρυθμίσεις Email"
       ],
+      "Emoji": [
+        "Εικονίδια"
+      ],
       "Enable": [
         "Ενεργοποίηση"
       ],
@@ -536,6 +542,9 @@
       ],
       "Font": [
         "Γραμματοσειρά"
+      ],
+      "Forgot password?": [
+        "Ξεχάσατε τον κωδικό πρόσβασης;"
       ],
       "Formalize": [
         "Επισημοποίηση"
@@ -1471,8 +1480,14 @@
       "Use a different payment method": [
         "Χρησιμοποιήστε διαφορετικό τρόπο πληρωμής"
       ],
+      "Use authentication code": [
+        "Χρησιμοποιήστε έναν κωδικό ελέγχου ταυτότητας"
+      ],
       "Use for sending": [
         "Χρήση για αποστολή"
+      ],
+      "Use recovery code": [
+        "Χρήση κωδικού ανάκτησης"
       ],
       "Use this": [
         "Χρησιμοποιήστε αυτό"
@@ -5107,6 +5122,24 @@
         "Απεριόριστα hide-my-email ψευδώνυμα"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Εισαγάγετε ένα κλειδί ασφαλείας συνδεδεμένο με τον ${ BRAND_NAME } λογαριασμό σας ."
+      ],
+      "Security key": [
+        "Κλειδί ασφαλείας"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Κλειδί ασφαλείας"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -6132,6 +6165,10 @@
         "${ trackersCount } ιχνηλάτης εμποδίστηκε",
         "${ trackersCount } ιχνηλάτες εμποδίστηκαν"
       ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } συνδρομή ενημερωτικού δελτίου",
+        "${ unreadCount } συνδρομές ενημερωτικών δελτίων"
+      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } προγραμματισμένο μήνυμα",
         "${ unreadCount } προγραμματισμένα μηνύματα"
@@ -6308,8 +6345,8 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Τυχόν υποφάκελοι θα διαγραφούν επίσης. Ωστόσο, τα μηνύματα ηλεκτρονικού ταχυδρομείου που είναι αποθηκευμένα σε αυτόν τον φάκελο ${ nameDeleted } δεν θα διαγραφούν και μπορούν να βρεθούν στο φάκελο Όλα τα Mηνύματα."
       ],
-      "Apply to future messages ": [
-        "Εφαρμογή στα μελλοντικά μηνύματα "
+      "Apply to future messages": [
+        "Εφαρμογή στα μελλοντικά μηνύματα"
       ],
       "Applying actions to conversations": [
         "Εφαρμογή ενεργειών σε συνομιλίες"
@@ -6632,6 +6669,9 @@
       "Duplicate key updated": [
         "Το διπλότυπο κλειδί ενημερώθηκε"
       ],
+      "Each code can only be used once": [
+        "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
+      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Διαχειριστείτε εύκολα και καταργήστε την εγγραφή σας από ενημερωτικά δελτία και λίστες αλληλογραφίας."
       ],
@@ -6687,11 +6727,20 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Απολαύστε μια ταχύτερη, εστιασμένη εμπειρία αποστολής μηνυμάτων με την εφαρμογή για υπολογιστές."
       ],
+      "Enter the code from your authenticator app": [
+        "Πληκτρολογήστε τον κωδικό από την εφαρμογή ταυτοποίησης"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Συμπληρώστε τα διαπιστευτήρια του λογαριασμού email από τον οποίο θέλετε να εισάγετε."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Εισάγετε τον κωδικό επαλήθευσης που εστάλη στο ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Εισάγετε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτό",
@@ -7970,6 +8019,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Όταν ενεργοποιήσατε τα αξιόπιστα κλειδιά για ${ senderName }, τα δημόσια κλειδιά προστέθηκαν στα στοιχεία της επαφής."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
+      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Όταν εγγράφεστε σε ένα ενημερωτικό δελτίο, χρησιμοποιήστε ένα ψευδώνυμο αντί για τη διεύθυνση ηλ. ταχυδρομείου σας. Η ταυτότητά σας παραμένει κρυφή και μπορείτε να απενεργοποιήσετε το ψευδώνυμο ανά πάσα στιγμή."
       ],
@@ -8612,6 +8664,9 @@
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
       ],
+      "Authenticator app": [
+        "Εφαρμογή επαλήθευσης"
+      ],
       "BCC": [
         "Κρυφή Κοιν."
       ],
@@ -8870,9 +8925,6 @@
       "Mail Server (IMAP)": [
         "Διακομιστής Αλληλογραφίας (IMAP)"
       ],
-      "Mail subscriptions": [
-        "Συνδρομές Mail"
-      ],
       "Main": [
         "Κύριο"
       ],
@@ -8884,6 +8936,10 @@
       ],
       "Mark as": [
         "Σήμανση ως"
+      ],
+      "Marked ${ count } message as read.": [
+        "Επισημάνθηκε ${ count } μήνυμα ως αναγνωσμένο.",
+        "Επισημάνθηκαν ${ count } μηνύματα ως αναγνωσμένα."
       ],
       "Move ${ sidebarElementName }": [
         "Μετακίνηση ${ sidebarElementName }"
@@ -8900,6 +8956,18 @@
       "Move to Inbox": [
         "Μετακίνηση στα Εισερχόμενα"
       ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "Μετακινήθηκε ${ count } μήνυμα στο ${ selectedFolder.Name }.",
+        "Μετακινήθηκαν ${ count } μηνύματα στο ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "Μετακινήθηκε ${ count } μήνυμα στα Αρχειοθετημένα.",
+        "Μετακινήθηκαν ${ count } μηνύματα στα Αρχειοθετημένα."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "Μετακινήθηκε ${ count } μήνυμα στον Κάδο Απορριμμάτων.",
+        "Μετακινήθηκαν ${ count } μηνύματα στον Κάδο Απορριμμάτων."
+      ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
       ],
@@ -8911,6 +8979,9 @@
       ],
       "New password": [
         "Νέος κωδικός"
+      ],
+      "Newsletters": [
+        "Ενημερωτικά δελτία"
       ],
       "No label found": [
         "Δεν βρέθηκε ετικέτα"
@@ -9092,6 +9163,9 @@
       "Unsafe or problematic": [
         "Μη ασφαλές ή προβληματικό"
       ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Καταργήθηκε η εγγραφή από το ${ truncatedName }."
+      ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
       ],
@@ -9139,6 +9213,9 @@
       ],
       "Your location": [
         "Η τοποθεσία σας"
+      ],
+      "Your password (admin)": [
+        "Ο κωδικός σας (διαχειριστής)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13721,6 +13798,9 @@
       "Enter 2FA code": [
         "Εισαγωγή κωδικού 2FA"
       ],
+      "Enter your password": [
+        "Εισάγετε τον κωδικό πρόσβασης σας"
+      ],
       "Error": [
         "Σφάλμα"
       ],
@@ -13833,12 +13913,6 @@
       "Load remote content": [
         "Φόρτωση απομακρυσμένου περιεχομένου"
       ],
-      "Mail Subscriptions": [
-        "Συνδρομές Mail"
-      ],
-      "Mail subscriptions": [
-        "Συνδρομές Mail"
-      ],
       "Make a secure connection your default": [
         "Ορισμός ασφαλούς σύνδεσης ως προεπιλογής"
       ],
@@ -13943,6 +14017,12 @@
       ],
       "New message": [
         "Νέο μήνυμα"
+      ],
+      "Newsletters": [
+        "Ενημερωτικά δελτία"
+      ],
+      "Newsletters view": [
+        "Προβολή ενημερωτικών δελτίων"
       ],
       "Next conversation": [
         "Επόμενη συνομιλία"

@@ -366,14 +366,14 @@
         "Ștergere"
       ],
       "Delete ${ selectedCount } contact": [
-        "Ștergere un contact",
-        "Ștergere ${ selectedCount } contacte",
-        "Ștergere ${ selectedCount } de contacte"
+        "Ștergere contacte: ${ selectedCount }",
+        "Ștergere contacte: ${ selectedCount }",
+        "Ștergere contacte: ${ selectedCount }"
       ],
       "Delete ${ selectedCount } contact group": [
-        "Ștergere grup de contacte",
-        "Ștergere ${ selectedCount } contacte",
-        "Ștergere ${ selectedCount } de contacte"
+        "Ștergere grup de contacte: ${ selectedCount }",
+        "Ștergere grup de contacte: ${ selectedCount }",
+        "Ștergere grup de contacte: ${ selectedCount }"
       ],
       "Delete all": [
         "Ștergere toate"
@@ -700,9 +700,9 @@
         "Inserare"
       ],
       "Insert ${ totalChecked } contact": [
-        "Inserare un contact",
-        "Inserare ${ totalChecked } contacte",
-        "Inserare ${ totalChecked } de contacte"
+        "Inserare contacte: ${ totalChecked }",
+        "Inserare contacte: ${ totalChecked }",
+        "Inserare contacte: ${ totalChecked }"
       ],
       "Insert contact": [
         "Inserare contact"
@@ -5999,9 +5999,9 @@
     },
     "Info": {
       "${ addressCount } email address": [
-        "O adresă de e-mail",
-        "${ addressCount } adrese de e-mail",
-        "${ addressCount } de adrese de e-mail"
+        "Adrese de e-mail: ${ addressCount }",
+        "Adrese de e-mail: ${ addressCount }",
+        "Adrese de e-mail: ${ addressCount }"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
@@ -6028,22 +6028,22 @@
         "Managerul de parole ${ BRAND_NAME } vă permite să creați, să stocați și să autocompletați parolele, astfel încât nu va mai trebui să le resetați."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "Un calendar nou",
-        "${ calendarsToBeCreatedCount } calendare noi",
-        "${ calendarsToBeCreatedCount } de calendare noi"
+        "Calendare noi: ${ calendarsToBeCreatedCount }",
+        "Calendare noi: ${ calendarsToBeCreatedCount }",
+        "Calendare noi: ${ calendarsToBeCreatedCount }"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "Un calendar îmbinat",
-        "${ calendarsToBeMergedCount } calendare îmbinate",
-        "${ calendarsToBeMergedCount } de calendare îmbinate"
+        "Calendare îmbinate: ${ calendarsToBeMergedCount }",
+        "Calendare îmbinate: ${ calendarsToBeMergedCount }",
+        "Calendare îmbinate: ${ calendarsToBeMergedCount }"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "Un contact conține adrese multiple de e-mail.",
-        "${ contactCount } contacte conțin adrese multiple de e-mail.",
-        "${ contactCount } de contacte conțin adrese multiple de e-mail."
+        "Contacte care conțin adrese multiple de e-mail: ${ contactCount }",
+        "Contacte care conțin adrese multiple de e-mail: ${ contactCount }",
+        "Contacte care conțin adrese multiple de e-mail: ${ contactCount }"
       ],
       "${ contactEmailsLength } Member": [
-        "Un membru",
+        "${ contactEmailsLength } membru",
         "${ contactEmailsLength } membri",
         "${ contactEmailsLength } de membri"
       ],
@@ -6056,9 +6056,9 @@
         "${ contactName } conține adrese multiple de e-mail."
       ],
       "${ contactsCount } contact found": [
-        "S-a găsit un contact",
-        "S-au găsit ${ contactsCount } contacte",
-        "S-au găsit ${ contactsCount } de contacte"
+        "Contacte găsite: ${ contactsCount }",
+        "Contacte găsite: ${ contactsCount }",
+        "Contacte găsite: ${ contactsCount }"
       ],
       "${ contactsLength } contact": [
         "${ contactsLength } contact",
@@ -6132,9 +6132,9 @@
         "${ fileName }: pictogramă cu rezoluție mică"
       ],
       "${ groupCounts } group found": [
-        "S-a găsit un grup",
-        "S-au găsit ${ groupCounts } grupuri",
-        "S-au găsit ${ groupCounts } de grupuri"
+        "Grupuri găsite: ${ groupCounts }",
+        "Grupuri găsite: ${ groupCounts }",
+        "Grupuri găsite: ${ groupCounts }"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } vă poate proteja și afacerea."
@@ -6188,14 +6188,14 @@
         "${ PROTON_SENTINEL_NAME } vă protejează contul prin monitorizarea activității suspicioase."
       ],
       "${ providerFoldersNumLocalized } folder found": [
-        "S-a găsit un folder",
-        "S-au găsit ${ providerFoldersNumLocalized } foldere",
-        "S-au găsit ${ providerFoldersNumLocalized } de foldere"
+        "Foldere găsite: ${ providerFoldersNumLocalized }",
+        "Foldere găsite: ${ providerFoldersNumLocalized }",
+        "Foldere găsite: ${ providerFoldersNumLocalized }"
       ],
       "${ providerFoldersNumLocalized } label found in Gmail": [
-        "S-a găsit o etichetă în Gmail",
-        "S-au găsit ${ providerFoldersNumLocalized } etichete în Gmail",
-        "S-au găsit ${ providerFoldersNumLocalized } de etichete în Gmail"
+        "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }",
+        "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }",
+        "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }"
       ],
       "${ pureAttachmentsCount } file attached": [
         "Un fișier atașat.",
@@ -6255,21 +6255,26 @@
         "Instrumente de urmărire blocate: ${ trackersCount }",
         "Instrumente de urmărire blocate: ${ trackersCount }"
       ],
+      "${ unreadCount } newsletter subscription": [
+        "Abonamente buletine de știri: ${ unreadCount }",
+        "Abonamente buletine de știri: ${ unreadCount }",
+        "Abonamente buletine de știri: ${ unreadCount }"
+      ],
       "${ unreadCount } scheduled message": [
         "S-a programat un mesaj.",
         "S-au programat ${ unreadCount } mesaje.",
         "S-au programat ${ unreadCount } de mesaje."
       ],
       "${ updated } contact updated successfully.": [
-        "S-a actualizat un contact.",
-        "S-au actualizat ${ updated } contacte.",
-        "S-au actualizat ${ updated } de contacte."
+        "Contacte actualizate: ${ updated }",
+        "Contacte actualizate: ${ updated }",
+        "Contacte actualizate: ${ updated }"
       ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } vă maschează adresa IP, așa că site-urile web nu vă pot identifica."
       ],
       "(${ memberCount } member)": [
-        "(Un membru)",
+        "(${ memberCount } membru)",
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
       ],
@@ -6371,12 +6376,12 @@
         "Aliniere la dreapta"
       ],
       "All (${ totalFoldersCount } folder)": [
-        "Toate (Un folder)",
+        "Toate (${ totalFoldersCount } folder)",
         "Toate (${ totalFoldersCount } foldere)",
         "Toate (${ totalFoldersCount } de foldere)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "Toate (o etichetă)",
+        "Toate (${ totalFoldersCount } etichetă)",
         "Toate (${ totalFoldersCount } etichete)",
         "Toate (${ totalFoldersCount } de etichete)"
       ],
@@ -6439,7 +6444,7 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Va fi șters și orice subfolder. Totuși, mesajele stocate în folderul ${ nameDeleted } nu vor fi șterse și pot fi găsite în folderul «Toate mesajele»."
       ],
-      "Apply to future messages ": [
+      "Apply to future messages": [
         "Aplicare la mesajele viitoare"
       ],
       "Applying actions to conversations": [
@@ -6620,7 +6625,7 @@
         "Cod țară"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Creare un calendar",
+        "Creare ${ calendarsToBeCreatedCount } calendar",
         "Creare ${ calendarsToBeCreatedCount } calendare",
         "Creare ${ calendarsToBeCreatedCount } de calendare"
       ],
@@ -9063,9 +9068,6 @@
       "Mail Server (IMAP)": [
         "Server e-mail (IMAP)"
       ],
-      "Mail subscriptions": [
-        "Abonamente Mail"
-      ],
       "Main": [
         "Principală"
       ],
@@ -9077,6 +9079,11 @@
       ],
       "Mark as": [
         "Marcare"
+      ],
+      "Marked ${ count } message as read.": [
+        "Mesaje marcate ca fiind citite: ${ count }",
+        "Mesaje marcate ca fiind citite: ${ count }",
+        "Mesaje marcate ca fiind citite: ${ count }"
       ],
       "Move ${ sidebarElementName }": [
         "Mutare ${ sidebarElementName }"
@@ -9093,6 +9100,21 @@
       "Move to Inbox": [
         "Mutare în «Primite»"
       ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "Mesaje mutate în ${ selectedFolder.Name }: ${ count }",
+        "Mesaje mutate în ${ selectedFolder.Name }: ${ count }",
+        "Mesaje mutate în ${ selectedFolder.Name }: ${ count }"
+      ],
+      "Moved ${ count } message to Archive.": [
+        "Mesaje mutate în arhivă: ${ count }",
+        "Mesaje mutate în arhivă: ${ count }",
+        "Mesaje mutate în arhivă: ${ count }"
+      ],
+      "Moved ${ count } message to Trash.": [
+        "Mesaje mutate în gunoi: ${ count }",
+        "Mesaje mutate în gunoi: ${ count }",
+        "Mesaje mutate în gunoi: ${ count }"
+      ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Trebuie să aibă cel puțin ${ MIN_PASSWORD_LENGTH } caractere"
       ],
@@ -9104,6 +9126,9 @@
       ],
       "New password": [
         "Parola nouă"
+      ],
+      "Newsletters": [
+        "Buletine informative"
       ],
       "No label found": [
         "Nu există etichete"
@@ -9284,6 +9309,9 @@
       ],
       "Unsafe or problematic": [
         "Nesigur sau problematic"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Dezabonat de la ${ truncatedName }."
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -14151,12 +14179,6 @@
       "Load remote content": [
         "Încărcare conținut extern"
       ],
-      "Mail Subscriptions": [
-        "Abonamente pe e-mail"
-      ],
-      "Mail subscriptions": [
-        "Abonamente pe e-mail"
-      ],
       "Make a secure connection your default": [
         "Faceți o conexiune sigură ca implicită"
       ],
@@ -14261,6 +14283,12 @@
       ],
       "New message": [
         "Mesaj nou"
+      ],
+      "Newsletters": [
+        "Buletine informative"
+      ],
+      "Newsletters view": [
+        "Afișare buletine informative"
       ],
       "Next conversation": [
         "Conversația următoare"
