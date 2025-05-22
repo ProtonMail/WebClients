@@ -162,28 +162,28 @@ describe('newsletterSubscriptions helpers', () => {
         it('should return last-read sort parameters', () => {
             const result = getSortParams(SortSubscriptionsValue.LastRead);
             expect(result).toEqual({
-                UnreadMessageCount: 'ASC',
+                'Sort[UnreadMessageCount]': 'ASC',
             });
         });
 
         it('should return most-read sort parameters', () => {
             const result = getSortParams(SortSubscriptionsValue.MostRead);
             expect(result).toEqual({
-                UnreadMessageCount: 'DESC',
+                'Sort[UnreadMessageCount]': 'DESC',
             });
         });
 
         it('should return alphabetical sort parameters', () => {
             const result = getSortParams(SortSubscriptionsValue.Alphabetical);
             expect(result).toEqual({
-                Name: 'ASC',
+                'Sort[Name]': 'ASC',
             });
         });
 
         it('should return recently-received sort parameters', () => {
             const result = getSortParams(SortSubscriptionsValue.RecentlyReceived);
             expect(result).toEqual({
-                LastReceivedTime: 'DESC',
+                'Sort[LastReceivedTime]': 'DESC',
             });
         });
 
