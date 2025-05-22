@@ -6272,6 +6272,10 @@
         "${ trackersCount } Tracker blockiert",
         "${ trackersCount } Tracker blockiert"
       ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } Newsletter-Abonnement",
+        "${ unreadCount } Newsletter-Abonnemente"
+      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } geplante Nachricht",
         "${ unreadCount } geplante Nachrichten"
@@ -6448,8 +6452,8 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Alle Unterordner werden ebenfalls gelöscht. E-Mails, die im Ordner ${ nameDeleted } gespeichert sind, werden jedoch nicht gelöscht und können im Ordner Alle Nachrichten gefunden werden."
       ],
-      "Apply to future messages ": [
-        "Auf zukünftige Nachrichten anwenden "
+      "Apply to future messages": [
+        "Auf zukünftige Nachrichten anwenden"
       ],
       "Applying actions to conversations": [
         "Aktionen werden auf Unterhaltungen angewandt"
@@ -9001,9 +9005,6 @@
       "Mail Server (IMAP)": [
         "Mail-Server (IMAP)"
       ],
-      "Mail subscriptions": [
-        "Mail-Abonnemente"
-      ],
       "Main": [
         "Hauptebene"
       ],
@@ -9015,6 +9016,10 @@
       ],
       "Mark as": [
         "Markieren als"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } Nachricht als gelesen markiert",
+        "${ count } Nachrichten als gelesen markiert"
       ],
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } verschieben"
@@ -9031,6 +9036,18 @@
       "Move to Inbox": [
         "In Posteingang verschieben"
       ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } Nachricht nach ${ selectedFolder.Name } verschoben",
+        "${ count } Nachrichten nach ${ selectedFolder.Name } verschoben"
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } Nachricht ins Archiv verschoben",
+        "${ count } Nachrichten ins Archiv verschoben"
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } Nachricht in den Papierkorb verschoben",
+        "${ count } Nachrichten in den Papierkorb verschoben"
+      ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten"
       ],
@@ -9042,6 +9059,9 @@
       ],
       "New password": [
         "Neues Passwort"
+      ],
+      "Newsletters": [
+        "Newsletter"
       ],
       "No label found": [
         "Keine Kategorie gefunden"
@@ -9222,6 +9242,9 @@
       ],
       "Unsafe or problematic": [
         "Unsicher oder problematisch"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Von ${ truncatedName } abgemeldet"
       ],
       "Upload picture": [
         "Bild hochladen"
@@ -13964,12 +13987,6 @@
       "Load remote content": [
         "Inhalte aus externen Quellen laden"
       ],
-      "Mail Subscriptions": [
-        "Mail-Abonnemente"
-      ],
-      "Mail subscriptions": [
-        "Mail-Abonnemente"
-      ],
       "Make a secure connection your default": [
         "Mach eine sichere Verbindung zum Standard"
       ],
@@ -14074,6 +14091,12 @@
       ],
       "New message": [
         "Neue Nachricht"
+      ],
+      "Newsletters": [
+        "Newsletter"
+      ],
+      "Newsletters view": [
+        "Newsletter-Ansicht"
       ],
       "Next conversation": [
         "Nächste Unterhaltung"

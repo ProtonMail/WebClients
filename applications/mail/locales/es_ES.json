@@ -6239,7 +6239,7 @@
         "${ PASS_APP_NAME } proporciona una forma sencilla de crear inicios de sesión en sitios de terceros no confiables donde no quieres exponer tu dirección de correo electrónico real."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "L'oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
+        "La oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }. El precio y la fecha de renovación de tu suscripción ${ planTitle } se mantienen sin cambios."
@@ -6304,6 +6304,10 @@
       "${ trackersCount } tracker blocked": [
         "${ trackersCount } rastreador bloqueado",
         "${ trackersCount } rastreadores bloqueados"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } suscripción de boletín",
+        "${ unreadCount } suscripciones de boletín"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } mensaje programado",
@@ -6481,8 +6485,8 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Las subcarpetas también se eliminarán. Sin embargo, los correos electrónicos almacenados en la carpeta ${ nameDeleted } no se eliminarán y se pueden encontrar en la carpeta Todos los mensajes."
       ],
-      "Apply to future messages ": [
-        "Aplicar a los mensajes futuros "
+      "Apply to future messages": [
+        "Aplicar a los mensajes futuros"
       ],
       "Applying actions to conversations": [
         "Aplicando las acciones a las conversaciones"
@@ -6797,7 +6801,7 @@
         "Suelta aquí para importar"
       ],
       "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
-        "Debido a la configuración de tus destinatarios, este mensaje no se puede enviar con una fecha de expiración a ${ firstRecipients }."
+        "Debido a la configuración de los destinatarios, este mensaje no se puede enviar con una fecha de expiración a ${ firstRecipients }."
       ],
       "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
         "Debido a la configuración del destinatario, este mensaje no se puede enviar con una fecha de expiración."
@@ -6925,7 +6929,7 @@
         "Carpeta"
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
-        "Para obtener información adicional y eliminar restricciones, inicie sesión en ${ mailLink }."
+        "Para obtener información adicional y eliminar restricciones, inicia sesión en ${ mailLink }."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Para acceder a tu correo electrónico en cualquier momento y disfrutar de una experiencia móvil optimizada, descarga nuestra aplicación desde ${ androidAppLink } o ${ iosAppLink }."
@@ -7005,7 +7009,7 @@
         "Si tu alias es vendido o filtrado, simplemente desactívalo para dejar de recibir spam."
       ],
       "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
-        "Si tu contraseña termina en la red oscura, ${ BRAND_NAME } puedes decirte de cuál servicio fueron filtrados tus datos y cómo detener el daño."
+        "Si tu contraseña termina en la red oscura, ${ BRAND_NAME } puede decirte de cuál servicio fueron filtrados tus datos y cómo detener el daño."
       ],
       "Image description": [
         "Descripción de la imagen"
@@ -7666,7 +7670,7 @@
         "Almacenamiento asignado a este usuario"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
-        "No se puede acceder a las capacidades de almacenamiento de este navegador. Las necesitamos para activar la búsqueda de contenido en los mensajes."
+        "No se puede acceder a las capacidades de almacenamiento en este navegador. Las necesitamos para activar la búsqueda de contenido en los mensajes."
       ],
       "Storage for users": [
         "Almacenamiento para usuarios"
@@ -7767,7 +7771,7 @@
         "El proceso de verificación abrirá una nueva pestaña en el navegador. Desactiva cualquier bloqueador de ventanas emergentes activo."
       ],
       "The writing assistant needs to finish downloading before it can be used.": [
-        "El asistente de escritura necesita terminar descargarse antes de usarse."
+        "El asistente de escritura necesita terminar de descargarse antes de usarse."
       ],
       "Themes can give your inbox a new look.": [
         "Los temas pueden darle un aspecto diferente a tu bandeja de entrada."
@@ -7973,7 +7977,7 @@
         "Actívala para buscar en el contenido de sus mensajes."
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
-        "No se puede acceder a las capacidades de almacenamiento de este navegador. Necesitamos este acceso para activar la búsqueda de contenido en los mensajes."
+        "No se puede acceder a las capacidades de almacenamiento en este navegador. Necesitamos este acceso para activar la búsqueda de contenido en los mensajes."
       ],
       "Unlock message": [
         "Desbloquear mensaje"
@@ -8000,7 +8004,7 @@
         "Pasa a un plan superior ahora para obtener funciones premium, productos y almacenamiento a un precio especial."
       ],
       "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
-        "Mejora para ${ MAIL_APP_NAME } Plus para desbloquear"
+        "Mejora a ${ MAIL_APP_NAME } Plus para desbloquear"
       ],
       "Upgrade to add more addresses to your account.": [
         "Mejora tu plan para añadir más direcciones a tu cuenta."
@@ -8030,7 +8034,7 @@
         "Mejora tu plan superior para apoyar nuestra misión de traer privacidad a todos."
       ],
       "Upgrade to support privacy and get more features.": [
-        "Mejora tu un plan para apoyar la privacidad y obtener más funciones."
+        "Mejora tu plan para apoyar la privacidad y obtener más funciones."
       ],
       "Upgrade to unlock premium features.": [
         "Mejora tu plan para desbloquear funciones premium."
@@ -8054,7 +8058,7 @@
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
       "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
-        "Usa direcciones de correo para propósitos diferentes así puedes separar fácilmente tus correos del trabajo, personales y otros ámbitos."
+        "Usa direcciones de correo para propósitos diferentes. Así puedes separar fácilmente tus correos del trabajo, personales y otros ámbitos."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utiliza los atajos del teclado para administrar tus correos rápidamente."
@@ -8114,7 +8118,7 @@
         "Necesitamos autenticar el pago con tu banco."
       ],
       "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
-        "Hemos eliminado la información de seguimiento de los siguientes enlaces para ayudarle a protegerse de los anunciantes y otros que intenten rastrear tu actividad en Internet."
+        "Hemos eliminado la información de seguimiento de los siguientes enlaces para ayudarte a protegerte de los anunciantes y otros que intenten rastrear tu actividad en Internet."
       ],
       "We use 3-D Secure to protect your payments": [
         "Se utiliza 3-D Secure para proteger tus pagos."
@@ -9064,9 +9068,6 @@
       "Mail Server (IMAP)": [
         "Servidor de correo (IMAP)"
       ],
-      "Mail subscriptions": [
-        "Suscripciones de correo"
-      ],
       "Main": [
         "Principal"
       ],
@@ -9078,6 +9079,10 @@
       ],
       "Mark as": [
         "Marcar como"
+      ],
+      "Marked ${ count } message as read.": [
+        "Se ha marcado ${ count } mensaje como leído.",
+        "Se han marcado ${ count } mensajes como leído."
       ],
       "Move ${ sidebarElementName }": [
         "Mover ${ sidebarElementName }"
@@ -9094,6 +9099,18 @@
       "Move to Inbox": [
         "Mover a la bandeja de entrada"
       ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "Se ha movido ${ count } mensaje a ${ selectedFolder.Name }.",
+        "Se han movido ${ count } mensajes a ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "Se ha movido ${ count } mensaje al archivo.",
+        "Se han movido ${ count } mensajes al archivo."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "Se ha movido ${ count } mensaje a la papelera.",
+        "Se han movido ${ count } mensajes a la papelera."
+      ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
       ],
@@ -9105,6 +9122,9 @@
       ],
       "New password": [
         "Nueva contraseña"
+      ],
+      "Newsletters": [
+        "Boletines"
       ],
       "No label found": [
         "No se ha encontrado ninguna etiqueta."
@@ -9285,6 +9305,9 @@
       ],
       "Unsafe or problematic": [
         "No seguro o problemático"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Se ha cancelado la suscripción de ${ truncatedName }."
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -14039,12 +14062,6 @@
       "Load remote content": [
         "Cargar contenido remoto"
       ],
-      "Mail Subscriptions": [
-        "Suscripciones de correo"
-      ],
-      "Mail subscriptions": [
-        "Suscripciones de correo"
-      ],
       "Make a secure connection your default": [
         "Elige una conexión segura como opción predeterminada"
       ],
@@ -14149,6 +14166,12 @@
       ],
       "New message": [
         "Nuevo mensaje"
+      ],
+      "Newsletters": [
+        "Boletines"
+      ],
+      "Newsletters view": [
+        "Vista de boletines"
       ],
       "Next conversation": [
         "Conversación siguiente"

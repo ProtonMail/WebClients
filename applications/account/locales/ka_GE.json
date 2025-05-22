@@ -3853,6 +3853,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } თქვენი ნაგულისხმევი ელფოსტის აპლიკაციაა."
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "დაამატეთ საქაღალდეები და ფაილები ${ DRIVE_APP_NAME }-ს და მოიწვიეთ გუნდის წევრები მის სანახავად, ან ჩასასწორებლად."
+      ],
       "Also included": [
         "ასევე შეიცავს"
       ],
@@ -3892,6 +3895,9 @@
       "Easily access your email and calendar on desktop and mobile.": [
         "იოლი წვდომა თქვენს ელფოსტასთან და კალენდართან კომპიუტერიდან და მობილურიდან."
       ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "ადვილად დაასინქრონიზეთ ფაილები ღრუბლიდან სახლის კომპიუტერამდე და იქონიეთ მათზე წვდომა თქვენი მობილურიდან."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "ამ ფუნქციებთან წვდომისთვის ჩართეთ ${ PROTON_SENTINEL_NAME }"
       ],
@@ -3901,8 +3907,14 @@
       "Enable detailed events to access these features": [
         "ამ ფუნქციებთან წვდომისთვის ჩართეთ დეტალური მოვლენები"
       ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "წაახალისეთ 2FA-ის გამოყენება თქვენს ორგანიზაციაში დამატებითი უსაფრთხოებისთვის."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების დაშიფვრა და შემოტანა... ამას რამდენიმე წუთი შეიძლება დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "დარწმუნდით, რომ გაქვთ უმაღლესი დონის დაცვა ${ PROTON_SENTINEL_NAME } პროგრამით."
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "თქვენს ორგანიზაციაში ყველას შეუძლია გაზიარებულ სერვერებთან დაკავშირება, ყველა ქვეყანაში."
@@ -3912,6 +3924,9 @@
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "მიიღეთ ${ credits } კრედიტებში, მეგობრების ${ BRAND_NAME }-ში მოწვევით."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "დაეხმარეთ თქვენს გუნდს, უსაფრთხოდ შეინახოს პაროლები კონფიდენციალური ბიზნესისა და კლიენტის ინფორმაციებისთვის."
       ],
       "If disabled, only admins will have access.": [
         "თუ გამორთულია, წვდომა, მხოლოდ, ადმინებს ექნებათ."
@@ -4635,6 +4650,9 @@
       ],
       "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
         "თავსებადობისთვის ახალი დაშიფვრის გასაღები დაგენერირდება ${ boldForwarderEmail }-სთვის"
+      ],
+      "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
+        "თავსებადობისთვის პოსტ-კვანტური დაშიფვრა გაითიშება ${ boldForwarderEmail }-სთვის."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
         "პიროვნება, ვისთანაც გადაგზავნას აპირებთ, მოწვეულია და საჭიროა, რომ მოსაწვევს დაეთანხმოს/უარყოს ის, ან განაახლოს"

@@ -6165,6 +6165,10 @@
         "S'ha bloquejat ${ trackersCount } rastrejador",
         "S'han bloquejat ${ trackersCount } rastrejadors"
       ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } subscripció al butlletí",
+        "${ unreadCount } subscripcions a butlletins"
+      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } missatge programat",
         "${ unreadCount } missatges programats"
@@ -6341,8 +6345,8 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "També s'eliminaran les subcarpetes. Tanmateix, els correus electrònics emmagatzemats en la carpeta ${ nameDeleted } no s'eliminaran i es poden trobar a la carpeta Tot el correu."
       ],
-      "Apply to future messages ": [
-        "Aplica als missatges futurs "
+      "Apply to future messages": [
+        "Aplica als missatges futurs"
       ],
       "Applying actions to conversations": [
         "S'estan aplicant les accions a les converses"
@@ -8924,9 +8928,6 @@
       "Mail Server (IMAP)": [
         "Servidor de correu (IMAP)"
       ],
-      "Mail subscriptions": [
-        "Subscripcions de correu"
-      ],
       "Main": [
         "Principal"
       ],
@@ -8938,6 +8939,10 @@
       ],
       "Mark as": [
         "Marca com a"
+      ],
+      "Marked ${ count } message as read.": [
+        "S'ha marcat ${ count } missatge com a llegit.",
+        "S'han marcat ${ count } missatges com a llegits."
       ],
       "Move ${ sidebarElementName }": [
         "Mou ${ sidebarElementName }"
@@ -8954,6 +8959,18 @@
       "Move to Inbox": [
         "Mou a la safata d'entrada"
       ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "S'ha mogut ${ count } missatge a ${ selectedFolder.Name }.",
+        "S'han mogut ${ count } missatges a ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "S'ha mogut ${ count } missatge a l'arxiu.",
+        "S'han mogut ${ count } missatges a l'arxiu."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "S'ha mogut ${ count } missatge a la paperera.",
+        "S'han mogut ${ count } missatges a la paperera."
+      ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
       ],
@@ -8965,6 +8982,9 @@
       ],
       "New password": [
         "Contrasenya nova"
+      ],
+      "Newsletters": [
+        "Butlletins"
       ],
       "No label found": [
         "No s'ha trobat cap etiqueta"
@@ -9145,6 +9165,9 @@
       ],
       "Unsafe or problematic": [
         "És insegur o problemàtic"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Us heu donat de baixa de ${ truncatedName }."
       ],
       "Upload picture": [
         "Carrega la imatge"
@@ -13899,12 +13922,6 @@
       "Load remote content": [
         "Carrega el contingut remot"
       ],
-      "Mail Subscriptions": [
-        "Subscripcions de correu"
-      ],
-      "Mail subscriptions": [
-        "Subscripcions de correu"
-      ],
       "Make a secure connection your default": [
         "Feu que una connexió segura sigui la vostra predeterminada"
       ],
@@ -14009,6 +14026,12 @@
       ],
       "New message": [
         "Nou missatge"
+      ],
+      "Newsletters": [
+        "Butlletins"
+      ],
+      "Newsletters view": [
+        "Vista de butlletins"
       ],
       "Next conversation": [
         "Conversa següent"

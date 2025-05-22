@@ -398,6 +398,9 @@
       "Multiple select": [
         "多重选择"
       ],
+      "Next month": [
+        "下个月"
+      ],
       "No expired links": [
         "无过期链接"
       ],
@@ -427,6 +430,9 @@
       ],
       "Please retry": [
         "请重试"
+      ],
+      "Previous month": [
+        "上个月"
       ],
       "Re-verify": [
         "重新验证"
@@ -2245,6 +2251,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "我们检测到您有 ${ aliasCount } 个别名存在于 SimpleLogin 中，但在 ${ PASS_APP_NAME } 中丢失了。您想导入它们吗？"
       ],
+      "Week": [
+        "周"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "我们已经向 ${ email }发送了验证码。请在下面输入："
       ],
@@ -2439,6 +2448,9 @@
       "Additional details": [
         "更多详细信息"
       ],
+      "Address": [
+        "地址"
+      ],
       "Address details": [
         "地址详情"
       ],
@@ -2583,6 +2595,9 @@
       "Custom text field": [
         "自定义文本字段"
       ],
+      "Date": [
+        "日期"
+      ],
       "Device": [
         "设备"
       ],
@@ -2687,6 +2702,9 @@
       ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "国际银行账户号码（IBAN）"
       ],
       "ID Card": [
         "身份证"
@@ -3354,6 +3372,9 @@
       "Coupon": [
         "优惠券"
       ],
+      "E.g., ": [
+        "例如："
+      ],
       "Email address": [
         "邮箱地址"
       ],
@@ -3383,9 +3404,6 @@
       ],
       "my-domain.com": [
         "my-domain.com"
-      ],
-      "Name to display when sending an email": [
-        "发送电子邮件时要显示的名称"
       ],
       "Note from SimpleLogin": [
         "来自 SimpleLogin 的笔记"
@@ -3781,6 +3799,9 @@
       "Members": [
         "成员"
       ],
+      "Minicalendar": [
+        "迷你日历"
+      ],
       "Modified": [
         "修改时间"
       ],
@@ -3957,6 +3978,11 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "您将永久删除 ${ aliasCount } 个别名。"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "今天"
       ]
     },
     "Validation": {

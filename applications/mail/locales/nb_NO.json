@@ -800,7 +800,7 @@
         "Marker som ulest"
       ],
       "mark emails as": [
-        "markere e-poster som"
+        "merk e-poster som"
       ],
       "Mark for deletion": [
         "Merk for sletting"
@@ -6165,6 +6165,10 @@
         "${ trackersCount } sporer blokkert",
         "${ trackersCount } sporere blokkert"
       ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } nyhetsbrevabonnement",
+        "${ unreadCount } nyhetsbrevabonnementer"
+      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } planlagt melding",
         "${ unreadCount } planlagte meldinger"
@@ -6341,8 +6345,8 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Eventuelle undermapper vil også bli slettet. E-postmeldinger som er lagret i mappen ${ nameDeleted }, vil imidlertid ikke bli slettet og finnes i All e-post-mappen."
       ],
-      "Apply to future messages ": [
-        "Anvend på fremtidige meldinger "
+      "Apply to future messages": [
+        "Anvend på fremtidige meldinger"
       ],
       "Applying actions to conversations": [
         "Anvender handlinger på samtaler"
@@ -8921,9 +8925,6 @@
       "Mail Server (IMAP)": [
         "E-posttjener (IMAP)"
       ],
-      "Mail subscriptions": [
-        "E-postabonnementer"
-      ],
       "Main": [
         "Hjem"
       ],
@@ -8935,6 +8936,10 @@
       ],
       "Mark as": [
         "Marker som"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } melding merket som lest.",
+        "${ count } meldinger merket som lest."
       ],
       "Move ${ sidebarElementName }": [
         "Flytt ${ sidebarElementName }"
@@ -8951,6 +8956,18 @@
       "Move to Inbox": [
         "Flytt til innboks"
       ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } melding flyttet til ${ selectedFolder.Name }.",
+        "${ count } meldinger flyttet til ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } melding flyttet til arkivet.",
+        "${ count } meldinger flyttet til arkivet."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } melding flyttet til papirkurven.",
+        "${ count } meldinger flyttet til papirkurven."
+      ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Må minst ha ${ MIN_PASSWORD_LENGTH } tegn"
       ],
@@ -8962,6 +8979,9 @@
       ],
       "New password": [
         "Nytt passord"
+      ],
+      "Newsletters": [
+        "Nyhetsbrev"
       ],
       "No label found": [
         "Ingen etikett funnet"
@@ -9142,6 +9162,9 @@
       ],
       "Unsafe or problematic": [
         "Utrygt eller problematisk"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Avmeldt fra abonnementet på ${ truncatedName }."
       ],
       "Upload picture": [
         "Last opp bilde"
@@ -13890,12 +13913,6 @@
       "Load remote content": [
         "Last eksternt innhold"
       ],
-      "Mail Subscriptions": [
-        "E-postabonnementer"
-      ],
-      "Mail subscriptions": [
-        "E-postabonnementer"
-      ],
       "Make a secure connection your default": [
         "Gjør en sikker tilkobling til standard"
       ],
@@ -14000,6 +14017,12 @@
       ],
       "New message": [
         "Ny melding"
+      ],
+      "Newsletters": [
+        "Nyhetsbrev"
+      ],
+      "Newsletters view": [
+        "Nyhetsbrevvisning"
       ],
       "Next conversation": [
         "Neste samtale"

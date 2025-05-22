@@ -105,6 +105,9 @@
       "Attention required": [
         "Aandacht vereist"
       ],
+      "Authenticate": [
+        "Authenticeren"
+      ],
       "Back": [
         "Terug"
       ],
@@ -328,6 +331,9 @@
       ],
       "Export selection as .vcf": [
         "Exporteer selectie als .vcf"
+      ],
+      "Forgot password?": [
+        "Wachtwoord vergeten?"
       ],
       "Forward as attachment": [
         "Doorsturen als bijlage"
@@ -788,6 +794,9 @@
       "Untrust": [
         "Niet meer vertrouwen"
       ],
+      "Update": [
+        "Update"
+      ],
       "Update recovery file": [
         "Herstelbestand bijwerken"
       ],
@@ -824,8 +833,14 @@
       "Use a different payment method": [
         "Gebruik een andere betaalmethode"
       ],
+      "Use authentication code": [
+        "Authenticatiecode gebruiken"
+      ],
       "Use for sending": [
         "Gebruiken om te versturen"
+      ],
+      "Use recovery code": [
+        "Herstelcode gebruiken"
       ],
       "Verify": [
         "Verifiëren"
@@ -4146,6 +4161,24 @@
         "Onbeperkt aantal hide-my-email-aliassen"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Er is iets fout gegaan bij het verifiëren van uw beveiligingssleutel. Probeer het opnieuw."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME } account."
+      ],
+      "Security key": [
+        "Beveiligingssleutel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Beveiligingssleutel"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -5022,6 +5055,9 @@
       "Duplicate key updated": [
         "Dubbele sleutel bijgewerkt"
       ],
+      "Each code can only be used once": [
+        "Elke code kan maar één keer gebruikt worden"
+      ],
       "Edit email address": [
         "Wijzig e-mailadres"
       ],
@@ -5040,11 +5076,20 @@
       "Enabling auto-deletion…": [
         "Activatie automatisch verwijderen"
       ],
+      "Enter the code from your authenticator app": [
+        "Voer de code van uw authenticatie app in"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Voer verificatiecode in. Cijfer ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Geschatte resterende tijd: ${ estimatedMinutes } minuut",
@@ -5676,6 +5721,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Wanneer u verbinding maakt met VPN, gebruikt het versleutelingstechnologie om uw IP-adres te verbergen (een unieke code toegewezen aan uw apparaat)."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw authenticatie app."
+      ],
       "Which event would you like to delete?": [
         "Welke afspraken wilt u verwijderen?"
       ],
@@ -6121,6 +6169,9 @@
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
       ],
+      "Authenticator app": [
+        "Authenticatie app"
+      ],
       "Beta Access": [
         "Bèta toegang"
       ],
@@ -6547,6 +6598,9 @@
       ],
       "Your location": [
         "Uw locatie"
+      ],
+      "Your password (admin)": [
+        "Uw wachtwoord (beheerder)"
       ]
     },
     "Label for contact group color": {
@@ -10522,6 +10576,9 @@
       "Enter 2FA code": [
         "Voer 2FA-code in"
       ],
+      "Enter your password": [
+        "Voer uw wachtwoord in"
+      ],
       "Error": [
         "Fout"
       ],
@@ -10610,9 +10667,6 @@
       "Link confirmation": [
         "Link bevestigen"
       ],
-      "Mail Subscriptions": [
-        "E-mail abonnementen"
-      ],
       "Make a secure connection your default": [
         "Maak een beveiligde verbinding uw standaard"
       ],
@@ -10633,6 +10687,9 @@
       ],
       "Network error": [
         "Netwerkfout"
+      ],
+      "Newsletters view": [
+        "Nieuwsbrievenoverzicht"
       ],
       "Night theme": [
         "Nacht thema"

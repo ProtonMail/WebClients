@@ -388,6 +388,9 @@
       "Next": [
         "Далі"
       ],
+      "Next month": [
+        "Наступний місяць"
+      ],
       "No expired links": [
         "Немає прострочених посилань"
       ],
@@ -420,6 +423,9 @@
       ],
       "Previous": [
         "Попередній"
+      ],
+      "Previous month": [
+        "Минулий місяць"
       ],
       "Re-verify": [
         "Повторно перевірити"
@@ -2192,6 +2198,9 @@
         "Ми виявили, що у вас є псевдонімів ${ aliasCount }, які присутні у SimpleLogin, але відсутній у ${ PASS_APP_NAME }. Бажаєте імпортувати його?",
         "Ми виявили, що у вас є псевдоніми ${ aliasCount }, які присутні у SimpleLogin, але відсутній у ${ PASS_APP_NAME }. Бажаєте імпортувати його?"
       ],
+      "Week": [
+        "Тиждень"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Ми надіслали код підтвердження на ${ email }. Будь ласка, введіть його нижче:"
       ],
@@ -2433,6 +2442,9 @@
       ],
       "Additional details": [
         "Додаткові деталі"
+      ],
+      "Address": [
+        "Адреса"
       ],
       "Address details": [
         "Деталі адреси"
@@ -2721,6 +2733,9 @@
       ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "Ідентифікаційнa карткa"
@@ -3393,6 +3408,9 @@
       "Coupon": [
         "Купон"
       ],
+      "E.g., ": [
+        "Наприклад, "
+      ],
       "Email address": [
         "Адреса е-пошти"
       ],
@@ -3422,9 +3440,6 @@
       ],
       "my-domain.com": [
         "my-domain.com"
-      ],
-      "Name to display when sending an email": [
-        "Ім'я, яке буде показуватися при надсиланні електронного листа"
       ],
       "Note from SimpleLogin": [
         "Примітка від SimpleLogin"
@@ -3830,6 +3845,9 @@
       "Members": [
         "Учасники"
       ],
+      "Minicalendar": [
+        "Мінікалендар"
+      ],
       "Modified": [
         "Змінено"
       ],
@@ -4054,6 +4072,11 @@
         "Ви збираєтеся назавжди видалити псевдоніми ${ aliasCount }.",
         "Ви збираєтеся назавжди видалити псевдонімів ${ aliasCount }.",
         "Ви збираєтеся назавжди видалити псевдоніми ${ aliasCount }."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Сьогодні"
       ]
     },
     "Validation": {
