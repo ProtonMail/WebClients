@@ -406,6 +406,9 @@
       "Multiple select": [
         "Markér flere"
       ],
+      "Next month": [
+        "Næste måned"
+      ],
       "No expired links": [
         "Ingen udløbne links"
       ],
@@ -435,6 +438,9 @@
       ],
       "Please retry": [
         "Prøv igen"
+      ],
+      "Previous month": [
+        "Forrige måned"
       ],
       "Re-verify": [
         "Bekræft igen"
@@ -2254,6 +2260,9 @@
         "Vi har opdaget, at du har ${ aliasCount } alias, som findes i SimpleLogin, men som mangler i ${ PASS_APP_NAME }. Vil du gerne importere det?",
         "Vi har opdaget, at du har ${ aliasCount } aliasser, som findes i SimpleLogin, men som mangler i ${ PASS_APP_NAME }. Vil du gerne importere dem?"
       ],
+      "Week": [
+        "Uge"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Vi har sendt en bekræftelseskode til ${ email }. Indtast den nedenfor:"
       ],
@@ -2469,6 +2478,9 @@
       ],
       "Additional details": [
         "Yderligere detaljer"
+      ],
+      "Address": [
+        "Adresse"
       ],
       "Address details": [
         "Adresseoplysninger"
@@ -2751,6 +2763,9 @@
       ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "ID-kort"
@@ -3435,6 +3450,9 @@
       "Coupon": [
         "Kupon"
       ],
+      "E.g., ": [
+        "F.eks., "
+      ],
       "Email address": [
         "E-mail"
       ],
@@ -3464,9 +3482,6 @@
       ],
       "my-domain.com": [
         "my-domain.com"
-      ],
-      "Name to display when sending an email": [
-        "Navn, der skal vises, når du sender en e-mail"
       ],
       "Note from SimpleLogin": [
         "Note fra SimpleLogin"
@@ -3893,6 +3908,9 @@
       "Members": [
         "Medlemmer"
       ],
+      "Minicalendar": [
+        "Minikalender"
+      ],
       "Modified": [
         "Ændret"
       ],
@@ -4116,6 +4134,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er ved at slette ${ aliasCount } alias permanent.",
         "Du er ved at slette ${ aliasCount } aliasser permanent."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "I dag"
       ]
     },
     "Validation": {

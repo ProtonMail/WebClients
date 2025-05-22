@@ -76,6 +76,9 @@
       "Apply lifetime coupon code": [
         "Εφαρμόστε τον κωδικό κουπονιού διάρκειας ζωής"
       ],
+      "Authenticate": [
+        "Ταυτοποίηση"
+      ],
       "Back": [
         "Πίσω"
       ],
@@ -406,6 +409,9 @@
       "Multiple select": [
         "Πολλαπλή επιλογή"
       ],
+      "Next month": [
+        "Επόμενος μήνας"
+      ],
       "No expired links": [
         "Δεν υπάρχουν σύνδεσμοι που έχουν λήξει"
       ],
@@ -438,6 +444,9 @@
       ],
       "Please retry": [
         "Παρακαλούμε προσπαθήστε ξανά"
+      ],
+      "Previous month": [
+        "Προηγούμενος μήνας"
       ],
       "Re-verify": [
         "Εκ νέου επαλήθευση"
@@ -579,6 +588,9 @@
       ],
       "Sort vault items": [
         "Ταξινόμηση στοιχείων κρύπτης"
+      ],
+      "Start from scratch": [
+        "Ξεκινήστε από την αρχή"
       ],
       "Submit": [
         "Υποβολή"
@@ -1603,6 +1615,9 @@
       "Enter the address you want to email.": [
         "Εισαγάγετε τη διεύθυνση που θέλετε να στείλετε μέσω ηλεκτρονικού ταχυδρομείου."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Εισάγετε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
+      ],
       "Enter your extra password": [
         "Εισαγάγετε τον επιπλέον κωδικό πρόσβασής σας"
       ],
@@ -2308,6 +2323,9 @@
         "Εντοπίσαμε ότι έχετε ${ aliasCount } ψευδώνυμο που υπάρχει στο SimpleLogin αλλά λείπει στο ${ PASS_APP_NAME }. Θέλετε να το εισαγάγετε;",
         "Εντοπίσαμε ότι έχετε ${ aliasCount } ψευδώνυμα που υπάρχουν στο SimpleLogin αλλά λείπουν στο ${ PASS_APP_NAME }. Θέλετε να το εισαγάγετε;"
       ],
+      "Week": [
+        "Εβδομάδα"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Στείλαμε έναν κωδικό επαλήθευσης στη διεύθυνση ${ email }. Παρακαλούμε εισάγετε τον παρακάτω:"
       ],
@@ -2515,6 +2533,12 @@
       "Account": [
         "Λογαριασμός"
       ],
+      "Account Number": [
+        "Αριθμός Λογαριασμού"
+      ],
+      "Account Type": [
+        "Τύπος Λογαριασμού"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Προσθέστε ένα τυχαίο πρόθεμα για αυτόν τον τομέα κατά τη δημιουργία ενός νέου ψευδωνύμου."
       ],
@@ -2523,6 +2547,9 @@
       ],
       "Additional details": [
         "Πρόσθετες Λεπτομέρειες"
+      ],
+      "Address": [
+        "Διεύθυνση"
       ],
       "Address details": [
         "Λεπτομέρειες διεύθυνσης"
@@ -2551,6 +2578,9 @@
       "Always show username field": [
         "Να εμφανίζεται πάντα το πεδίο ονόματος χρήστη"
       ],
+      "API Credential": [
+        "Διαπιστευτήρια API"
+      ],
       "Application logs": [
         "Αρχείο καταγραφών"
       ],
@@ -2559,6 +2589,12 @@
       ],
       "Backup password": [
         "Εφεδρικός κωδικός πρόσβασης"
+      ],
+      "Bank Account": [
+        "Τραπεζικός Λογαριασμός"
+      ],
+      "Bank Name": [
+        "Όνομα Τράπεζας"
       ],
       "Beta Access": [
         "Πρόσβαση Beta"
@@ -2626,11 +2662,17 @@
       "Country or Region": [
         "Χώρα ή Περιοχή"
       ],
+      "Country,": [
+        "Χώρα,"
+      ],
       "County": [
         "Νομός"
       ],
       "Create a credit card": [
         "Δημιουργία πιστωτικής κάρτας"
+      ],
+      "Create a custom item": [
+        "Δημιουργία προσαρμοσμένου στοιχείου"
       ],
       "Create a hide-my-email alias": [
         "Δημιουργία hide-my-email ψευδώνυμου"
@@ -2659,14 +2701,26 @@
       "Credit cards": [
         "Πιστωτικές κάρτες"
       ],
+      "Crypto Wallet": [
+        "Crypto Wallet"
+      ],
       "Custom hidden field": [
         "Προσαρμοσμένο κρυφό πεδίο"
+      ],
+      "Custom Items": [
+        "Προσαρμοσμένα Στοιχεία"
       ],
       "Custom text field": [
         "Προσαρμοσμένο πεδίο κειμένου"
       ],
+      "Database": [
+        "Βάση δεδομένων"
+      ],
       "Date": [
         "Ημερομηνία"
+      ],
+      "Date of Birth": [
+        "Ημερομηνία γέννησης"
       ],
       "Device": [
         "Συσκευή"
@@ -2694,6 +2748,9 @@
       ],
       "Download logs": [
         "Λήψη αρχείων καταγραφής"
+      ],
+      "Driver License": [
+        "Άδεια Οδήγησης"
       ],
       "Email": [
         "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -2725,6 +2782,9 @@
       "Expired": [
         "Έχει λήξει"
       ],
+      "Expiry Date": [
+        "Ημερομηνία Λήξης"
+      ],
       "Export": [
         "Εξαγωγή"
       ],
@@ -2748,6 +2808,9 @@
       ],
       "File format": [
         "Μορφή αρχείου"
+      ],
+      "Finance": [
+        "Οικονομικά"
       ],
       "First name": [
         "Όνομα"
@@ -2809,11 +2872,17 @@
       "Highest": [
         "Ύψιστη"
       ],
+      "Holder Name": [
+        "Όνομα Κατόχου"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Πώς να ξεκλειδώσετε το ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "Δελτίο Ταυτότητας"
@@ -2859,6 +2928,12 @@
       ],
       "Invitations": [
         "Προσκλήσεις"
+      ],
+      "Issuing Authority": [
+        "Εκδούσα Αρχή"
+      ],
+      "Issuing Country": [
+        "Χώρα Έκδοσης"
       ],
       "Item ID": [
         "Αναγνωριστικό στοιχείου"
@@ -2935,14 +3010,26 @@
       "max views reached": [
         "μέγιστος αριθμός προβολών που επιτεύχθηκε"
       ],
+      "Medical Record": [
+        "Ιατρικός Φάκελος"
+      ],
+      "Member ID": [
+        "ID Mέλους"
+      ],
       "Members": [
         "Μέλη"
+      ],
+      "Membership": [
+        "Συνδρομή"
       ],
       "Middle name": [
         "Πατρώνυμο"
       ],
       "Modified": [
         "Τροποποιήθηκε"
+      ],
+      "More": [
+        "Περισσότερα"
       ],
       "More than a month": [
         "Περισσότερο από ένα μήνα"
@@ -2953,11 +3040,17 @@
       "Name": [
         "Όνομα"
       ],
+      "Name (SSID)": [
+        "Όνομα (SSID)"
+      ],
       "Name on card": [
         "Όνομα πάνω στην κάρτα"
       ],
       "Need help?": [
         "Χρειάζεστε βοήθεια;"
+      ],
+      "Network": [
+        "Δίκτυο"
       ],
       "New": [
         "Νέο"
@@ -3022,11 +3115,17 @@
       "Passport number": [
         "Αριθμός διαβατηρίου"
       ],
+      "Passport Number": [
+        "Αριθμός Διαβατηρίου"
+      ],
       "Password": [
         "Κωδικός πρόσβασης"
       ],
       "Password history": [
         "Ιστορικό κωδικών πρόσβασης"
+      ],
+      "Personal": [
+        "Προσωπικό"
       ],
       "Personal details": [
         "Προσωπικές πληροφορίες"
@@ -3052,6 +3151,9 @@
       "Plus": [
         "Plus"
       ],
+      "Points Balance": [
+        "Υπόλοιπο Πόντων"
+      ],
       "Prefix": [
         "Πρόθεμα"
       ],
@@ -3061,11 +3163,23 @@
       "Priority:": [
         "Προτεραιότητα:"
       ],
+      "Private Key": [
+        "Ιδιωτικό Κλειδί"
+      ],
+      "Private key": [
+        "Ιδιωτικό κλειδί"
+      ],
+      "Program Name": [
+        "Όνομα Προγράμματος"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Προστατέψτε το ${ PASS_APP_NAME } με έναν επιπλέον κωδικό πρόσβασης"
       ],
       "Public domain": [
         "Δημόσιος τομέας"
+      ],
+      "Public key": [
+        "Δημόσιο κλειδί"
       ],
       "Rate us": [
         "Βαθμολογήστε μας"
@@ -3088,6 +3202,12 @@
       "Reveal password": [
         "Εμφάνιση κωδικού"
       ],
+      "Reward Program": [
+        "Πρόγραμμα Επιβράβευσης"
+      ],
+      "Routing Number": [
+        "Αριθμός Δρομολόγησης"
+      ],
       "Second password": [
         "Δεύτερος κωδικός πρόσβασης"
       ],
@@ -3105,6 +3225,9 @@
       ],
       "See member and permission overview": [
         "Δείτε την επισκόπηση μελών και δικαιωμάτων"
+      ],
+      "Seed Phrase": [
+        "Φράση Σπόρου"
       ],
       "Select a domain": [
         "Επιλέξτε ένα τομέα"
@@ -3130,6 +3253,9 @@
       "Selected": [
         "Επιλεγμένα"
       ],
+      "Server": [
+        "Διακομιστής"
+      ],
       "Share": [
         "Κοινοποίηση"
       ],
@@ -3148,14 +3274,29 @@
       "Show website favicons": [
         "Εμφάνιση favicons ιστότοπου"
       ],
+      "Social Security": [
+        "Α.Φ.Μ."
+      ],
       "Social security": [
         "Α.Φ.Μ."
       ],
       "Social security number": [
         "Αριθμός κοινωνικής ασφάλισης"
       ],
+      "Software license": [
+        "Άδεια χρήσης λογισμικού"
+      ],
       "Special characters (!&*)": [
         "Ειδικοί χαρακτήρες (!&*)"
+      ],
+      "SSH key": [
+        "Κλειδί SSH"
+      ],
+      "SSH Keys": [
+        "Κλειδιά SSH"
+      ],
+      "SSN": [
+        "Α.Μ.Κ.Α."
       ],
       "State or province": [
         "Νομός ή επαρχία"
@@ -3181,6 +3322,9 @@
       "Support": [
         "Υποστήριξη"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Συγχρονισμός ψευδωνύμων με το SimpleLogin"
       ],
@@ -3189,6 +3333,9 @@
       ],
       "Tax number": [
         "Α.Φ.Μ."
+      ],
+      "Technology": [
+        "Τεχνολογία"
       ],
       "Text": [
         "Κείμενο"
@@ -3204,6 +3351,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Αυτό το στοιχείο είναι προσβάσιμο μέχρι τις ${ date } ή μέχρι να συμπληρωθεί το όριο προβολής."
+      ],
+      "Tier/Status": [
+        "Βαθμίδα/Κατάσταση"
       ],
       "Title": [
         "Τίτλος"
@@ -3244,6 +3394,9 @@
       "Unnamed Credit Card": [
         "Πιστωτική κάρτα χωρίς όνομα"
       ],
+      "Unnamed custom item": [
+        "Ανώνυμο προσαρμοσμένο στοιχείο"
+      ],
       "Unnamed identity": [
         "Ανώνυμη ταυτότητα"
       ],
@@ -3252,6 +3405,15 @@
       ],
       "Unnamed note": [
         "Ανώνυμο σημείωμα"
+      ],
+      "Unnamed SSH key": [
+        "Ανώνυμο κλειδί SSH"
+      ],
+      "Unnamed WiFi item": [
+        "Ανώνυμο WiFi στοιχείο"
+      ],
+      "Unspecified": [
+        "Απροσδιόριστο"
       ],
       "Untitled": [
         "Χωρίς τίτλο"
@@ -3295,6 +3457,9 @@
       "Vulnerable": [
         "Ευάλωτο"
       ],
+      "Wallet Name": [
+        "Όνομα Wallet"
+      ],
       "Weak": [
         "Αδύναμο"
       ],
@@ -3306,6 +3471,12 @@
       ],
       "What's included": [
         "Τι περιλαμβάνεται"
+      ],
+      "WiFi network": [
+        "Δίκτυο WiFi"
+      ],
+      "WiFi Networks": [
+        "Δίκτυα WiFi"
       ],
       "Work details": [
         "Λεπτομέρειες εργασίας"
@@ -3537,6 +3708,9 @@
       "Add 2FA secret key": [
         "Προσθέστε μυστικό κλειδί 2FA"
       ],
+      "Add date": [
+        "Προσθήκη ημερομηνίας"
+      ],
       "Add hidden text": [
         "Προσθήκη κρυφού κειμένου"
       ],
@@ -3551,6 +3725,9 @@
       ],
       "Coupon": [
         "Κουπόνι"
+      ],
+      "E.g., ": [
+        "Για παράδειγμα, "
       ],
       "Email address": [
         "Διεύθυνση email"
@@ -3582,8 +3759,8 @@
       "my-domain.com": [
         "my-domain.com"
       ],
-      "Name to display when sending an email": [
-        "Όνομα που θα εμφανίζεται κατά την αποστολή μηνύματος ηλεκτρονικού ταχυδρομείου"
+      "Name displayed in emails": [
+        "Όνομα που εμφανίζεται σε ηλεκτρονικές διευθύνσεις"
       ],
       "Note from SimpleLogin": [
         "Σημείωση από το SimpleLogin"
@@ -3617,6 +3794,9 @@
       ],
       "Select a suffix": [
         "Επιλογή επιθήματος"
+      ],
+      "Select option": [
+        "Ορίστε επιλογή"
       ],
       "Unknown origin": [
         "Άγνωστη προέλευση"
@@ -4031,6 +4211,9 @@
       "Members": [
         "Μέλη"
       ],
+      "Minicalendar": [
+        "Μίνι ημερολόγιο"
+      ],
       "Modified": [
         "Τροποποιήθηκε"
       ],
@@ -4257,6 +4440,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Σήμερα"
       ]
     },
     "Tooltip": {
