@@ -62,10 +62,11 @@ const PMSignature = ({ id }: Props) => {
                 className="border-container flex-1 pr-4 py-2 mb-4"
                 // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{
-                    __html: getProtonMailSignature({
-                        isReferralProgramLinkEnabled: !!mailSettings?.PMSignatureReferralLink,
-                        referralProgramUserLink: userSettings.Referral?.Link,
-                    }),
+                    __html: getProtonMailSignature(
+                        !!mailSettings?.PMSignatureReferralLink,
+                        userSettings.Referral?.Link,
+                        mailSettings?.PMSignatureContent
+                    ),
                 }}
             />
             <div className="ml-0 md:ml-2 pt-2" data-testid="settings:identity-section:signature-toggle">
