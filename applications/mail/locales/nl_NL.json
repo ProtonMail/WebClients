@@ -151,6 +151,9 @@
       "Attention required": [
         "Aandacht vereist"
       ],
+      "Authenticate": [
+        "Authenticeren"
+      ],
       "Auto-delete spam and trash": [
         "Spam en prullenbak automatisch verwijderen"
       ],
@@ -471,6 +474,9 @@
       "Email settings": [
         "E-mailinstellingen"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable": [
         "Inschakelen"
       ],
@@ -536,6 +542,9 @@
       ],
       "Font": [
         "Lettertype"
+      ],
+      "Forgot password?": [
+        "Wachtwoord vergeten?"
       ],
       "Formalize": [
         "Formaliseren"
@@ -1432,6 +1441,9 @@
       "Untrust": [
         "Niet meer vertrouwen"
       ],
+      "Update": [
+        "Update"
+      ],
       "Update recovery file": [
         "Herstelbestand bijwerken"
       ],
@@ -1471,8 +1483,14 @@
       "Use a different payment method": [
         "Gebruik een andere betaalmethode"
       ],
+      "Use authentication code": [
+        "Authenticatiecode gebruiken"
+      ],
       "Use for sending": [
         "Gebruiken om te versturen"
+      ],
+      "Use recovery code": [
+        "Herstelcode gebruiken"
       ],
       "Use this": [
         "Gebruik dit"
@@ -5247,6 +5265,24 @@
         "Onbeperkt aantal hide-my-email-aliassen"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Er is iets fout gegaan bij het verifiëren van uw beveiligingssleutel. Probeer het opnieuw."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME } account."
+      ],
+      "Security key": [
+        "Beveiligingssleutel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Beveiligingssleutel"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -6272,6 +6308,10 @@
         "${ trackersCount } trackers geblokkeerd",
         "${ trackersCount } trackers geblokkeerd"
       ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } nieuwsbriefabonnement",
+        "${ unreadCount } nieuwsbriefabonnementen"
+      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } ingepland bericht",
         "${ unreadCount } ingeplande berichten"
@@ -6448,8 +6488,8 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Eventuele submappen zullen ook worden verwijderd. Echter, mails die zijn opgeslagen in deze map ${ nameDeleted } zullen niet worden verwijderd en zijn terug te vinden in de map Alle berichten."
       ],
-      "Apply to future messages ": [
-        "Pas toe op toekomstige berichten "
+      "Apply to future messages": [
+        "Pas toe op toekomstige berichten"
       ],
       "Applying actions to conversations": [
         "Acties op gesprekken toepassen"
@@ -6763,8 +6803,17 @@
       "Drop to import": [
         "Neerzetten om te importeren"
       ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Vanwege de configuratie van uw ontvanger kan dit bericht niet met een verloopdatum worden verzonden naar ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Vanwege de configuratie van uw ontvanger kan dit bericht niet met een verloopdatum worden verzonden."
+      ],
       "Duplicate key updated": [
         "Dubbele sleutel bijgewerkt"
+      ],
+      "Each code can only be used once": [
+        "Elke code kan maar één keer gebruikt worden"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Beheer en meld u eenvoudig af voor nieuwsbrieven en adressenlijsten."
@@ -6821,11 +6870,20 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Geniet van een snellere, doelgerichte e-mailervaring met de desktop app."
       ],
+      "Enter the code from your authenticator app": [
+        "Voer de code van uw authenticatie app in"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Voer verificatiecode in. Cijfer ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Geschatte resterende tijd: ${ estimatedMinutes } minuut",
@@ -7103,6 +7161,9 @@
       ],
       "Low Priority": [
         "Lage prioriteit"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Maak ${ MAIL_APP_NAME } uw standaard e-mailapplicatie."
       ],
       "Manage your folders": [
         "Mappen beheren"
@@ -8101,6 +8162,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Toen u vertrouwde sleutels inschakelde voor ${ senderName }, zijn de openbare sleutels meteen toegevoegd aan deze contactpersoon."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw authenticatie app."
+      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Wanneer u zich aanmeldt voor een nieuwsbrief, gebruik dan een alias in plaats van uw e-mailadres. Uw identiteit blijft verborgen, en u kunt de alias op elk moment uitschakelen."
       ],
@@ -8743,6 +8807,9 @@
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
       ],
+      "Authenticator app": [
+        "Authenticatie app"
+      ],
       "BCC": [
         "Bcc"
       ],
@@ -9001,9 +9068,6 @@
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
       ],
-      "Mail subscriptions": [
-        "E-mail abonnementen"
-      ],
       "Main": [
         "Primair"
       ],
@@ -9015,6 +9079,10 @@
       ],
       "Mark as": [
         "Markeren als"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } bericht als gelezen gemarkeerd.",
+        "${ count } berichten als gelezen gemarkeerd."
       ],
       "Move ${ sidebarElementName }": [
         "Verplaats ${ sidebarElementName }"
@@ -9031,6 +9099,18 @@
       "Move to Inbox": [
         "Verplaats naar inbox"
       ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } bericht verplaatst naar ${ selectedFolder.Name }.",
+        "${ count } berichten verplaatst naar ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } bericht verplaatst naar Archief.",
+        "${ count } berichten verplaatst naar Archief."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } bericht verplaatst naar Prullenbak.",
+        "${ count } berichten verplaatst naar Prullenbak."
+      ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten"
       ],
@@ -9042,6 +9122,9 @@
       ],
       "New password": [
         "Nieuw wachtwoord"
+      ],
+      "Newsletters": [
+        "Nieuwsbrieven"
       ],
       "No label found": [
         "Geen label gevonden"
@@ -9223,6 +9306,9 @@
       "Unsafe or problematic": [
         "Onveilig of problematisch"
       ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Afgemeld van ${ truncatedName }."
+      ],
       "Upload picture": [
         "Afbeelding uploaden"
       ],
@@ -9270,6 +9356,9 @@
       ],
       "Your location": [
         "Uw locatie"
+      ],
+      "Your password (admin)": [
+        "Uw wachtwoord (beheerder)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13852,6 +13941,9 @@
       "Enter 2FA code": [
         "Voer 2FA-code in"
       ],
+      "Enter your password": [
+        "Voer uw wachtwoord in"
+      ],
       "Error": [
         "Fout"
       ],
@@ -13964,12 +14056,6 @@
       "Load remote content": [
         "Externe inhoud laden"
       ],
-      "Mail Subscriptions": [
-        "E-mail abonnementen"
-      ],
-      "Mail subscriptions": [
-        "E-mail abonnementen"
-      ],
       "Make a secure connection your default": [
         "Maak een beveiligde verbinding uw standaard"
       ],
@@ -14074,6 +14160,12 @@
       ],
       "New message": [
         "Nieuw bericht"
+      ],
+      "Newsletters": [
+        "Nieuwsbrieven"
+      ],
+      "Newsletters view": [
+        "Nieuwsbrievenoverzicht"
       ],
       "Next conversation": [
         "Volgend gesprek"

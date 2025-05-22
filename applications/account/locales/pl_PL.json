@@ -187,6 +187,9 @@
       "Attention required": [
         "Wymagana uwaga"
       ],
+      "Authenticate": [
+        "Uwierzytelnij"
+      ],
       "Authenticating": [
         "Uwierzytelnianie"
       ],
@@ -195,6 +198,9 @@
       ],
       "Back": [
         "Wstecz"
+      ],
+      "Back to sign in": [
+        "Powrót do logowania"
       ],
       "Block": [
         "Zablokuj"
@@ -562,6 +568,9 @@
       "Edit users": [
         "Edytuj użytkowników"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Włącz ${ darkWebMonitoring }"
       ],
@@ -609,6 +618,9 @@
       ],
       "Font": [
         "Czcionka"
+      ],
+      "Forgot password?": [
+        "Nie pamiętasz hasła?"
       ],
       "Forgot recovery method?": [
         "Nie pamiętasz metody odzyskiwania?"
@@ -1399,8 +1411,14 @@
       "Use a different payment method": [
         "Użyj innej metody płatności"
       ],
+      "Use authentication code": [
+        "Użyj kodu uwierzytelniającego"
+      ],
       "Use group sending permissions": [
         "Użyj uprawnienia grupy"
+      ],
+      "Use recovery code": [
+        "Użyj kodu odzyskiwania"
       ],
       "Use your current email instead": [
         "Użyj swojego obecnego adresu e-mail"
@@ -6382,6 +6400,9 @@
       "Please disable 2FA via security key before disabling TOTP": [
         "Przed wyłączeniem aplikacji uwierzytelniającej, wyłącz uwierzytelnianie dwustopniowe za pomocą klucza bezpieczeństwa"
       ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
+      ],
       "Something went wrong registering your security key. Please try again.": [
         "Coś poszło nie tak z rejestracją klucza bezpieczeństwa. Spróbuj ponownie później."
       ]
@@ -6402,8 +6423,14 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Czy na pewno chcesz usunąć klucz bezpieczeństwa ${ name }?"
       ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Użyj klucza bezpieczeństwa powiązanego z kontem ${ BRAND_NAME }."
+      ],
       "Insert your security key into your device's USB port.": [
         "Włóż klucz bezpieczeństwa do portu USB."
+      ],
+      "Security key": [
+        "Klucz bezpieczeństwa"
       ],
       "Security key removed": [
         "Klucz bezpieczeństwa został usunięty"
@@ -6433,6 +6460,9 @@
     "fido2: Label": {
       "Key name": [
         "Nazwa klucza"
+      ],
+      "Security key": [
+        "Klucz bezpieczeństwa"
       ]
     },
     "fido2: Title": {
@@ -8372,6 +8402,9 @@
       "Drop to import": [
         "Upuść, aby zaimportować"
       ],
+      "Each code can only be used once": [
+        "Każdy kod może zostać użyty tylko jeden raz"
+      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Każda domena może posiadać tylko 1 rekord SPF (TXT). Jeśli chcesz zachować obecny rekord SPF (TXT), możesz dodać ${ spf } do obecnego rekordu (wpisz po ${ spfValue })."
       ],
@@ -8474,6 +8507,9 @@
       "Enter new password for user ${ userName }.": [
         "Wpisz nowe hasło dla użytkownika ${ userName }."
       ],
+      "Enter the code from your authenticator app": [
+        "Wpisz kod z aplikacji uwierzytelniającej"
+      ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Wpisz kod wysłany na numer telefonu ${ phone }."
       ],
@@ -8492,11 +8528,17 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Wpisz szczegóły konta ${ BRAND_NAME }."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Wpisz adres e-mail lub nazwę użytkownika konta ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Wpisz swoje hasło (jako administrator organizacji)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Wpisz adres pomocniczy w celu wysłania Twojej nazwy użytkownika lub adresu e-mail."
@@ -11413,6 +11455,9 @@
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
       ],
+      "Authenticator app": [
+        "Aplikacja uwierzytelniająca"
+      ],
       "Auto show embedded images": [
         "Automatycznie pokazuj osadzone obrazy"
       ],
@@ -12396,6 +12441,9 @@
       ],
       "Your calendar URL": [
         "Twój adres URL kalendarza"
+      ],
+      "Your password (admin)": [
+        "Twoje hasło (administratora)"
       ],
       "Your referral link": [
         "Twój link polecający"
@@ -19643,6 +19691,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Wpisz szczegóły konta ${ BRAND_NAME }, aby dołączyć do ${ app } w wersji beta"
+      ],
+      "Enter your password": [
+        "Wpisz hasło"
       ],
       "Error": [
         "Błąd"

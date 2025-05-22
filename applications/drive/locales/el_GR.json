@@ -114,6 +114,9 @@
       "Attention required": [
         "Χρειάζεται προσοχή"
       ],
+      "Authenticate": [
+        "Ταυτοποίηση"
+      ],
       "Back": [
         "Πίσω"
       ],
@@ -427,6 +430,9 @@
       ],
       "Fit to window": [
         "Προσαρμογή στο παράθυρο"
+      ],
+      "Forgot password?": [
+        "Ξεχάσατε τον κωδικό πρόσβασης;"
       ],
       "Forward as attachment": [
         "Προώθηση ως συνημμένο"
@@ -1070,8 +1076,14 @@
       "Use a different payment method": [
         "Χρησιμοποιήστε διαφορετικό τρόπο πληρωμής"
       ],
+      "Use authentication code": [
+        "Χρησιμοποιήστε έναν κωδικό ελέγχου ταυτότητας"
+      ],
       "Use for sending": [
         "Χρήση για αποστολή"
+      ],
+      "Use recovery code": [
+        "Χρήση κωδικού ανάκτησης"
       ],
       "Verify": [
         "Επαλήθευση"
@@ -3774,6 +3786,24 @@
         "Απεριόριστα hide-my-email ψευδώνυμα"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Εισαγάγετε ένα κλειδί ασφαλείας συνδεδεμένο με τον ${ BRAND_NAME } λογαριασμό σας ."
+      ],
+      "Security key": [
+        "Κλειδί ασφαλείας"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Κλειδί ασφαλείας"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -4792,6 +4822,9 @@
       "Duplicate key updated": [
         "Το διπλότυπο κλειδί ενημερώθηκε"
       ],
+      "Each code can only be used once": [
+        "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
+      ],
       "Edit email address": [
         "Επεξεργασία ηλεκτρονικής διεύθυνσης"
       ],
@@ -4828,11 +4861,20 @@
       "Enter password": [
         "Εισάγετε κωδικό πρόσβασης"
       ],
+      "Enter the code from your authenticator app": [
+        "Πληκτρολογήστε τον κωδικό από την εφαρμογή ταυτοποίησης"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Συμπληρώστε τα διαπιστευτήρια του λογαριασμού email από τον οποίο θέλετε να εισάγετε."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Εισάγετε τον κωδικό επαλήθευσης που εστάλη στο ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Εισάγετε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτό",
@@ -5912,6 +5954,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Όταν συνδέεστε στο VPN, χρησιμοποιεί τεχνολογία κρυπτογράφησης για να κρύψει τη διεύθυνση IP σας (ένας μοναδικός κωδικός που έχει εκχωρηθεί στη συσκευή σας)."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
+      ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "θα γίνει επαναφορά στην έκδοση από ${ formattedRevisionDate }. Όλες οι άλλες εκδόσεις θα εξακολουθούν να αποθηκεύονται."
       ],
@@ -6308,6 +6353,9 @@
       ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
+      ],
+      "Authenticator app": [
+        "Εφαρμογή επαλήθευσης"
       ],
       "Beta Access": [
         "Πρόσβαση Beta"
@@ -6840,6 +6888,9 @@
       ],
       "Your location": [
         "Η τοποθεσία σας"
+      ],
+      "Your password (admin)": [
+        "Ο κωδικός σας (διαχειριστής)"
       ]
     },
     "Label for contact group color": {
@@ -10939,6 +10990,9 @@
       "Enter 2FA code": [
         "Εισαγωγή κωδικού 2FA"
       ],
+      "Enter your password": [
+        "Εισάγετε τον κωδικό πρόσβασης σας"
+      ],
       "Error": [
         "Σφάλμα"
       ],
@@ -11028,9 +11082,6 @@
       "Location": [
         "Τοποθεσία"
       ],
-      "Mail Subscriptions": [
-        "Συνδρομές Mail"
-      ],
       "Make a secure connection your default": [
         "Ορισμός ασφαλούς σύνδεσης ως προεπιλογής"
       ],
@@ -11069,6 +11120,9 @@
       ],
       "Network error": [
         "Σφάλμα δικτύου"
+      ],
+      "Newsletters view": [
+        "Προβολή ενημερωτικών δελτίων"
       ],
       "Night theme": [
         "Σκούρο θέμα"

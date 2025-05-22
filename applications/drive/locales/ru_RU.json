@@ -120,6 +120,9 @@
       "Attention required": [
         "Требуется внимание"
       ],
+      "Authenticate": [
+        "Аутентификация"
+      ],
       "Back": [
         "Назад"
       ],
@@ -437,6 +440,9 @@
       ],
       "Fit to window": [
         "Вписать в окно"
+      ],
+      "Forgot password?": [
+        "Забыли пароль?"
       ],
       "Forward as attachment": [
         "Переслать как вложение"
@@ -1080,8 +1086,14 @@
       "Use a different payment method": [
         "Использовать другой способ оплаты"
       ],
+      "Use authentication code": [
+        "Использовать код аутентификации"
+      ],
       "Use for sending": [
         "Использовать для отправки"
+      ],
+      "Use recovery code": [
+        "Использовать код восстановлени"
       ],
       "Verify": [
         "Подтвердить"
@@ -3964,6 +3976,24 @@
         "Неограниченное количество псевдонимов hide-my-email"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Произошла ошибка при аутентификации с помощью ключа безопасности. Попробуйте снова."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Вставьте ключ безопасности, привязанный к аккаунту ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Ключ безопасности"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ безопасности"
+      ]
+    },
     "file size format": {
       "byte": [
         "байт",
@@ -5133,6 +5163,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
       ],
+      "Enter your own password (as organization admin).": [
+        "Введите свой пароль как администратора организации."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Оставшееся время: ${ estimatedMinutes } минута",
         "Оставшееся время: ${ estimatedMinutes } минуты",
@@ -6224,6 +6257,9 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Когда вы подключаетесь к VPN, используется технология шифрования, чтобы скрыть ваш адрес IP (уникальный код, присвоенный вашему устройству)."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "При настройке двухфакторной аутентификации, мы предоставляем коды восстановления для входа в аккаунт, если вы потеряете доступ к приложению аутентификатора."
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "будет восстановлена версия от ${ formattedRevisionDate }. Все другие версии также будут сохранены."
@@ -11494,6 +11530,9 @@
       "Enter 2FA code": [
         "Введите код двухфакторной аутентификации"
       ],
+      "Enter your password": [
+        "Введите пароль"
+      ],
       "Error": [
         "Ошибка"
       ],
@@ -11586,9 +11625,6 @@
       ],
       "Location": [
         "Местоположение"
-      ],
-      "Mail Subscriptions": [
-        "Подписки"
       ],
       "Make a secure connection your default": [
         "Сделайте защищенное подключение вашим подключением по умолчанию"
