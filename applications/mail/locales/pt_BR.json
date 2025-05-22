@@ -197,7 +197,7 @@
         "Alterar página"
       ],
       "Change sorting": [
-        "Mudar o tipo"
+        "Mudar tipo"
       ],
       "Chat with us": [
         "Converse conosco"
@@ -6308,6 +6308,10 @@
         "${ trackersCount } rastreador bloqueado",
         "${ trackersCount } rastreadores bloqueados"
       ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } assinatura de boletim informativo",
+        "${ unreadCount } assinaturas de boletim informativo"
+      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } mensagem programada",
         "${ unreadCount } mensagens programadas"
@@ -6484,8 +6488,8 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Quaisquer subpastas também serão excluídas. No entanto, os e-mails armazenados na pasta ${ nameDeleted } não serão excluídos e podem ser encontrados na pasta Todos os e-mails."
       ],
-      "Apply to future messages ": [
-        "Aplicar para mensagens faturas "
+      "Apply to future messages": [
+        "Aplicar para as mensagens futuras"
       ],
       "Applying actions to conversations": [
         "Aplicando ações para as conversas"
@@ -9067,9 +9071,6 @@
       "Mail Server (IMAP)": [
         "Servidor de e-mail (IMAP)"
       ],
-      "Mail subscriptions": [
-        "Inscrições do Mail"
-      ],
       "Main": [
         "Principal"
       ],
@@ -9081,6 +9082,10 @@
       ],
       "Mark as": [
         "Marcar como"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } mensagem foi marcada como lida.",
+        "${ count } mensagens foram marcadas como lidas."
       ],
       "Move ${ sidebarElementName }": [
         "Mover ${ sidebarElementName }"
@@ -9097,6 +9102,18 @@
       "Move to Inbox": [
         "Mover para Caixa de Entrada"
       ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } mensagem foi movida para ${ selectedFolder.Name }.",
+        "${ count } mensagens foram movidas para ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } mensagem foi movida para o arquivo.",
+        "${ count } mensagens foram movidas para o arquivo."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } mensagem foi movida para a lixeira.",
+        "${ count } mensagens foram movidas para a lixeira."
+      ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Deve conter ao menos ${ MIN_PASSWORD_LENGTH } caracteres"
       ],
@@ -9108,6 +9125,9 @@
       ],
       "New password": [
         "Nova senha"
+      ],
+      "Newsletters": [
+        "Boletins informativos"
       ],
       "No label found": [
         "Nenhum marcador encontrado"
@@ -9289,6 +9309,9 @@
       "Unsafe or problematic": [
         "Inseguro ou problemático"
       ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "A assinatura de ${ truncatedName } foi cancelada."
+      ],
       "Upload picture": [
         "Carregar imagem"
       ],
@@ -9413,7 +9436,7 @@
     },
     "Labels": {
       "Newsletters you unsubscribe from will appear here.": [
-        "As newsletters das quais você se desinscreveu aparecerão aqui."
+        "Os boletins das quais você se desinscreveu aparecerão aqui."
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Visualize e gerencie as assinaturas de newsletter e lista de e-mails aqui."
@@ -12298,7 +12321,7 @@
     },
     "Slack": {
       "Join Slack huddle": [
-        "Participar da reunião do Slack"
+        "Participe da reunião do Slack"
       ]
     },
     "SmartBanner": {
@@ -13531,7 +13554,7 @@
     },
     "Teams": {
       "Join Teams meeting": [
-        "Participar da reunião do Teams"
+        "Participe da reunião do Teams"
       ]
     },
     "Time": {
@@ -14053,12 +14076,6 @@
       "Load remote content": [
         "Carregar conteúdo remoto"
       ],
-      "Mail Subscriptions": [
-        "Inscrições do Mail"
-      ],
-      "Mail subscriptions": [
-        "Inscrições do Mail"
-      ],
       "Make a secure connection your default": [
         "Defina uma conexão segura como seu padrão"
       ],
@@ -14163,6 +14180,12 @@
       ],
       "New message": [
         "Nova mensagem"
+      ],
+      "Newsletters": [
+        "Boletins informativos"
+      ],
+      "Newsletters view": [
+        "Visão de boletins informativos"
       ],
       "Next conversation": [
         "Próxima conversa"

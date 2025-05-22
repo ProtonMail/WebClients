@@ -6345,6 +6345,12 @@
         "${ trackersCount } sledovacích prvků zablokováno",
         "${ trackersCount } sledovacích prvků zablokováno"
       ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } odběr e-mailového zpravodaje",
+        "${ unreadCount } odběry e-mailového zpravodaje",
+        "${ unreadCount } odběrů e-mailového zpravodaje",
+        "${ unreadCount } odběrů e-mailového zpravodaje"
+      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } naplánovaná zpráva",
         "${ unreadCount } naplánované zprávy",
@@ -6537,8 +6543,8 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Všechny podsložky budou rovněž smazány. E-maily uložené ve složce ${ nameDeleted } však smazány nebudou a lze je nalézt ve složce Všechna pošta."
       ],
-      "Apply to future messages ": [
-        "Použít na budoucí zprávy "
+      "Apply to future messages": [
+        "Použít na budoucí zprávy"
       ],
       "Applying actions to conversations": [
         "Použití akcí na konverzace"
@@ -9205,9 +9211,6 @@
       "Mail Server (IMAP)": [
         "E-mailový server (IMAP)"
       ],
-      "Mail subscriptions": [
-        "E-mailové odběry"
-      ],
       "Main": [
         "Hlavní"
       ],
@@ -9219,6 +9222,12 @@
       ],
       "Mark as": [
         "Označit jako"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } zpráva označena jako přečtená.",
+        "${ count } zprávy označeny jako přečtené.",
+        "${ count } zpráv označeno jako přečtené.",
+        "${ count } zpráv označeno jako přečtené."
       ],
       "Move ${ sidebarElementName }": [
         "Přesunout ${ sidebarElementName }"
@@ -9235,6 +9244,24 @@
       "Move to Inbox": [
         "Přesunout do Doručené pošty"
       ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } zpráva přesunuta do ${ selectedFolder.Name }.",
+        "${ count } zprávy přesunuty do ${ selectedFolder.Name }.",
+        "${ count } zpráv přesunuto do ${ selectedFolder.Name }.",
+        "${ count } zpráv přesunuto do ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } zpráva přesunuta do archivu.",
+        "${ count } zprávy přesunuty do archivu.",
+        "${ count } zpráv přesunuto do archivu.",
+        "${ count } zpráv přesunuto do archivu."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } zpráva přesunuta do koše.",
+        "${ count } zprávy přesunuty do koše.",
+        "${ count } zpráv přesunuto do koše.",
+        "${ count } zpráv přesunuto do koše."
+      ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Musí mít alespoň ${ MIN_PASSWORD_LENGTH } znaků"
       ],
@@ -9246,6 +9273,9 @@
       ],
       "New password": [
         "Nové heslo"
+      ],
+      "Newsletters": [
+        "E-mailové zpravodaje"
       ],
       "No label found": [
         "Nebyl nalezen žádný štítek"
@@ -9426,6 +9456,9 @@
       ],
       "Unsafe or problematic": [
         "Nebezpečný nebo problematický"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Odběr odhlášen z ${ truncatedName }."
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -14412,12 +14445,6 @@
       "Load remote content": [
         "Načíst vzdálený obsah"
       ],
-      "Mail Subscriptions": [
-        "E-mailové odběry"
-      ],
-      "Mail subscriptions": [
-        "E-mailové odběry"
-      ],
       "Make a secure connection your default": [
         "Nastavte zabezpečené připojení jako výchozí"
       ],
@@ -14522,6 +14549,12 @@
       ],
       "New message": [
         "Nová zpráva"
+      ],
+      "Newsletters": [
+        "E-mailové zpravodaje"
+      ],
+      "Newsletters view": [
+        "Zobrazení e-mailových zpravodajů"
       ],
       "Next conversation": [
         "Další konverzace"
