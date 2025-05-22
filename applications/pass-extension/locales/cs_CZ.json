@@ -401,6 +401,9 @@
       "Multiple select": [
         "Vícenásobný výběr"
       ],
+      "Next month": [
+        "Další měsíc"
+      ],
       "No expired links": [
         "Žádné prošlé odkazy"
       ],
@@ -430,6 +433,9 @@
       ],
       "Please retry": [
         "Zkuste to znovu"
+      ],
+      "Previous month": [
+        "Předchozí měsíc"
       ],
       "Re-verify": [
         "Znovu ověřit"
@@ -574,6 +580,9 @@
       ],
       "Sort vault items": [
         "Seřadit položky trezoru"
+      ],
+      "Start from scratch": [
+        "Začít od nuly"
       ],
       "Submit": [
         "Odeslat"
@@ -2338,6 +2347,9 @@
         "Zjistili jsme, že máte ${ aliasCount } aliasů, které jsou přítomné v SimpleLogin, ale chybí v ${ PASS_APP_NAME }. Chcete je importovat?",
         "Zjistili jsme, že máte ${ aliasCount } aliasů, které jsou přítomné v SimpleLogin, ale chybí v ${ PASS_APP_NAME }. Chcete je importovat?"
       ],
+      "Week": [
+        "Týden"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Ověřovací kód jsme poslali na ${ email }. Zadejte jej prosím níže:"
       ],
@@ -2568,6 +2580,12 @@
       "Account": [
         "Účet"
       ],
+      "Account Number": [
+        "Číslo účtu"
+      ],
+      "Account Type": [
+        "Typ účtu"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Přidat náhodnou předponu pro tuto doménu při vytváření nového aliasu."
       ],
@@ -2576,6 +2594,9 @@
       ],
       "Additional details": [
         "Další podrobnosti"
+      ],
+      "Address": [
+        "Adresa"
       ],
       "Address details": [
         "Detaily adresy"
@@ -2604,6 +2625,9 @@
       "Always show username field": [
         "Vždy zobrazovat pole uživatelského jména"
       ],
+      "API Credential": [
+        "API přihlašovací údaj"
+      ],
       "Application logs": [
         "Logy aplikace"
       ],
@@ -2627,6 +2651,12 @@
       ],
       "Backup password": [
         "Záložní heslo"
+      ],
+      "Bank Account": [
+        "Bankovní účet"
+      ],
+      "Bank Name": [
+        "Název banky"
       ],
       "Biometrics": [
         "Biometrie"
@@ -2685,11 +2715,17 @@
       "Country or Region": [
         "Země nebo region"
       ],
+      "Country,": [
+        "Země"
+      ],
       "County": [
         "Kraj"
       ],
       "Create a credit card": [
         "Vytvořit platební kartu"
+      ],
+      "Create a custom item": [
+        "Vytvořit vlastní položku"
       ],
       "Create a hide-my-email alias": [
         "Vytvořit alias hide-my-email"
@@ -2715,11 +2751,26 @@
       "Created at": [
         "Vytvořeno"
       ],
+      "Crypto Wallet": [
+        "Peněženka kryptoměny"
+      ],
       "Custom hidden field": [
         "Vlastní skryté pole"
       ],
+      "Custom Items": [
+        "Vlastní položky"
+      ],
       "Custom text field": [
         "Vlastní textové pole"
+      ],
+      "Database": [
+        "Databáze"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Date of Birth": [
+        "Datum narození"
       ],
       "Device": [
         "Zařízení"
@@ -2748,6 +2799,9 @@
       "Download logs": [
         "Stáhnout logy"
       ],
+      "Driver License": [
+        "Řidičský průkaz"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -2775,6 +2829,9 @@
       "Expired": [
         "Vypršelo"
       ],
+      "Expiry Date": [
+        "Datum vypršení platnosti"
+      ],
       "Export": [
         "Export"
       ],
@@ -2792,6 +2849,9 @@
       ],
       "File format": [
         "Formát souboru"
+      ],
+      "Finance": [
+        "Finance"
       ],
       "First name": [
         "Křestní jméno"
@@ -2826,8 +2886,14 @@
       "Hide password": [
         "Skrýt heslo"
       ],
+      "Holder Name": [
+        "Jméno držitele"
+      ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "Občanský průkaz"
@@ -2870,6 +2936,12 @@
       ],
       "Invitations": [
         "Pozvánky"
+      ],
+      "Issuing Authority": [
+        "Vydávající úřad"
+      ],
+      "Issuing Country": [
+        "Země vydání průkazu"
       ],
       "Item ID": [
         "ID položky"
@@ -2940,14 +3012,26 @@
       "max views reached": [
         "max. zobrazení dosaženo"
       ],
+      "Medical Record": [
+        "Zdravotní záznam"
+      ],
+      "Member ID": [
+        "ID člena"
+      ],
       "Members": [
         "Členové"
+      ],
+      "Membership": [
+        "Členství"
       ],
       "Middle name": [
         "Prostřední jméno"
       ],
       "Modified": [
         "Upraveno"
+      ],
+      "More": [
+        "Více"
       ],
       "More than a month": [
         "Více než měsíc"
@@ -2958,11 +3042,17 @@
       "Name": [
         "Jméno"
       ],
+      "Name (SSID)": [
+        "Název (SSID)"
+      ],
       "Name on card": [
         "Jméno na kartě"
       ],
       "Need help?": [
         "Potřebujete poradit?"
+      ],
+      "Network": [
+        "Síť"
       ],
       "New": [
         "Nové"
@@ -3024,6 +3114,9 @@
       "Passport number": [
         "Číslo cestovního pasu"
       ],
+      "Passport Number": [
+        "Číslo cestovního pasu"
+      ],
       "Password": [
         "Heslo"
       ],
@@ -3035,6 +3128,9 @@
       ],
       "Pause list": [
         "Seznam pozastavených"
+      ],
+      "Personal": [
+        "Osobní"
       ],
       "Personal details": [
         "Osobní údaje"
@@ -3054,6 +3150,9 @@
       "PIN code": [
         "PIN kód"
       ],
+      "Points Balance": [
+        "Zůstatek bodů"
+      ],
       "Prefix": [
         "Předpona"
       ],
@@ -3062,6 +3161,15 @@
       ],
       "Priority:": [
         "Priorita:"
+      ],
+      "Private key": [
+        "Soukromý klíč"
+      ],
+      "Private Key": [
+        "Soukromý klíč"
+      ],
+      "Program Name": [
+        "Název programu"
       ],
       "Prompt for auto-save": [
         "Výzva automatického ukládání"
@@ -3074,6 +3182,9 @@
       ],
       "Public domain": [
         "Veřejná doména"
+      ],
+      "Public key": [
+        "Veřejný klíč"
       ],
       "Rate us": [
         "Ohodnoťte nás"
@@ -3096,6 +3207,12 @@
       "Reveal password": [
         "Zobrazit heslo"
       ],
+      "Reward Program": [
+        "Program odměn"
+      ],
+      "Routing Number": [
+        "Směrový kód banky"
+      ],
       "Save passkeys": [
         "Uložit přístupové klíče"
       ],
@@ -3114,6 +3231,9 @@
       "See member and permission overview": [
         "Podívejte se do přehledu členů a oprávnění"
       ],
+      "Seed Phrase": [
+        "Seed fráze"
+      ],
       "Select a domain": [
         "Vyberte doménu"
       ],
@@ -3131,6 +3251,9 @@
       ],
       "Selected": [
         "Vybráno"
+      ],
+      "Server": [
+        "Server"
       ],
       "Settings": [
         "Nastavení"
@@ -3156,11 +3279,26 @@
       "Social security": [
         "Rodné číslo (číslo sociálního pojištění)"
       ],
+      "Social Security": [
+        "Rodné číslo (číslo sociálního pojištění)"
+      ],
       "Social security number": [
         "Rodné číslo (číslo sociálního pojištění)"
       ],
+      "Software license": [
+        "Softwarová licence"
+      ],
       "Special characters (!&*)": [
         "Speciální znaky (!&*)"
+      ],
+      "SSH key": [
+        "SSH klíč"
+      ],
+      "SSH Keys": [
+        "SSH klíče"
+      ],
+      "SSN": [
+        "ČSZ"
       ],
       "State or province": [
         "Stát nebo provincie"
@@ -3180,6 +3318,9 @@
       "Support": [
         "Podpora"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Synchronizace aliasů se SimpleLogin"
       ],
@@ -3189,6 +3330,9 @@
       "Tax number": [
         "Daňové identifikační číslo"
       ],
+      "Technology": [
+        "Technologie"
+      ],
       "Text": [
         "Text"
       ],
@@ -3197,6 +3341,9 @@
       ],
       "Theme": [
         "Motiv"
+      ],
+      "Tier/Status": [
+        "Úroveň/stav"
       ],
       "Title": [
         "Název"
@@ -3234,6 +3381,9 @@
       "Unnamed Credit Card": [
         "Nepojmenovaná platební karta"
       ],
+      "Unnamed custom item": [
+        "Nepojmenovaná vlastní položka"
+      ],
       "Unnamed identity": [
         "Nepojmenovaná identita"
       ],
@@ -3242,6 +3392,15 @@
       ],
       "Unnamed note": [
         "Nepojmenovaná poznámka"
+      ],
+      "Unnamed SSH key": [
+        "Nepojmenovaný SSH klíč"
+      ],
+      "Unnamed WiFi item": [
+        "Nepojmenovaná Wi-Fi položka"
+      ],
+      "Unspecified": [
+        "Nespecifikováno"
       ],
       "Untitled": [
         "Bez názvu"
@@ -3276,6 +3435,9 @@
       "Vulnerable": [
         "Zranitelné"
       ],
+      "Wallet Name": [
+        "Název peněženky"
+      ],
       "Weak": [
         "Slabé"
       ],
@@ -3284,6 +3446,12 @@
       ],
       "Websites": [
         "Webové stránky"
+      ],
+      "WiFi network": [
+        "Wi-Fi síť"
+      ],
+      "WiFi Networks": [
+        "Wi-Fi sítě"
       ],
       "Work details": [
         "Podrobnosti o práci"
@@ -3489,6 +3657,9 @@
       "Add 2FA secret key": [
         "Přidat klíč 2FA secret"
       ],
+      "Add date": [
+        "Přidat datum"
+      ],
       "Add hidden text": [
         "Přidat skrytý text"
       ],
@@ -3503,6 +3674,9 @@
       ],
       "Coupon": [
         "Kupón"
+      ],
+      "E.g., ": [
+        "Např., "
       ],
       "Email address": [
         "E-mailová adresa"
@@ -3534,8 +3708,8 @@
       "my-domain.com": [
         "moje-domena.cz"
       ],
-      "Name to display when sending an email": [
-        "Jméno, které se zobrazí při odesílání e-mailu"
+      "Name displayed in emails": [
+        "Jméno zobrazené v e-mailech"
       ],
       "Note from SimpleLogin": [
         "Poznámka z SimpleLogin"
@@ -3569,6 +3743,9 @@
       ],
       "Select a suffix": [
         "Vyberte příponu"
+      ],
+      "Select option": [
+        "Vyberte možnost"
       ],
       "Unknown origin": [
         "Neznámý původ"
@@ -3940,6 +4117,9 @@
       "Members": [
         "Členové"
       ],
+      "Minicalendar": [
+        "Minikalendář"
+      ],
       "Modified": [
         "Upraveno"
       ],
@@ -4128,6 +4308,11 @@
         "Chystáte se trvale smazat ${ aliasCount } aliasy.",
         "Chystáte se trvale smazat ${ aliasCount } aliasů.",
         "Chystáte se trvale smazat ${ aliasCount } aliasů."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Dnes"
       ]
     },
     "Validation": {

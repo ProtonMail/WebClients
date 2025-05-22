@@ -401,6 +401,9 @@
       "Multiple select": [
         "Çoklu seçim"
       ],
+      "Next month": [
+        "Sonraki ay"
+      ],
       "No expired links": [
         "Geçerlilik süresi geçmiş bir bağlantı yok"
       ],
@@ -430,6 +433,9 @@
       ],
       "Please retry": [
         "Lütfen yeniden deneyin"
+      ],
+      "Previous month": [
+        "Önceki ay"
       ],
       "Re-verify": [
         "Yeniden doğrula"
@@ -2280,6 +2286,9 @@
         "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınızın olduğunu bulduk. Bunu içe aktarmak ister misiniz?",
         "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınızın olduğunu bulduk. Bunları içe aktarmak ister misiniz?"
       ],
+      "Week": [
+        "Hafta"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "${ email } adresine bir doğrulama kodu gönderdik. Lütfen kodu aşağıya yazın:"
       ],
@@ -2489,6 +2498,9 @@
       "Additional details": [
         "Ek bilgiler"
       ],
+      "Address": [
+        "Adres"
+      ],
       "Address details": [
         "Adres bilgileri"
       ],
@@ -2633,6 +2645,9 @@
       "Custom text field": [
         "Özel metin alanı"
       ],
+      "Date": [
+        "Tarih"
+      ],
       "Device": [
         "Aygıt"
       ],
@@ -2740,6 +2755,9 @@
       ],
       "https://example.com": [
         "https://ornek.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "Kimlik kartı"
@@ -3410,6 +3428,9 @@
       "Coupon": [
         "Kupon"
       ],
+      "E.g., ": [
+        "Örneğin, "
+      ],
       "Email address": [
         "E-posta adresi"
       ],
@@ -3439,9 +3460,6 @@
       ],
       "my-domain.com": [
         "etki-alanim.com"
-      ],
-      "Name to display when sending an email": [
-        "Bir e-posta gönderirken görüntülenecek ad"
       ],
       "Note from SimpleLogin": [
         "SimpleLogin notu"
@@ -3840,6 +3858,9 @@
       "Members": [
         "Üyeler"
       ],
+      "Minicalendar": [
+        "Mini takvim"
+      ],
       "Modified": [
         "Değiştirilme"
       ],
@@ -4020,6 +4041,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz.",
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Bugün"
       ]
     },
     "Validation": {
