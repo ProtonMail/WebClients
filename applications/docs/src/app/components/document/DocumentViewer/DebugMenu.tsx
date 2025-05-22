@@ -74,6 +74,16 @@ export function DebugMenu({ docController, editorController, documentState, docu
     void navigator.clipboard.writeText(stringified)
   }
 
+  const copyYDocAsJSON = async () => {
+    const yDocJSON = await editorController.getYDocAsJSON()
+    if (!yDocJSON) {
+      return
+    }
+
+    const stringified = JSON.stringify(yDocJSON)
+    void navigator.clipboard.writeText(stringified)
+  }
+
   const toggleDebugTreeView = () => {
     void editorController.toggleDebugTreeView()
   }
@@ -134,6 +144,9 @@ export function DebugMenu({ docController, editorController, documentState, docu
         </Button>
         <Button size="small" onClick={closeConnection}>
           Close Connection
+        </Button>
+        <Button size="small" onClick={copyYDocAsJSON}>
+          Copy Y.Doc as JSON
         </Button>
         {isDocument && (
           <>
