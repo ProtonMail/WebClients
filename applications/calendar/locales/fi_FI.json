@@ -106,7 +106,7 @@
         "Huomiota vaaditaan"
       ],
       "Authenticate": [
-        "Tunnistaudu"
+        "Todenna"
       ],
       "Back": [
         "Takaisin"
@@ -863,6 +863,30 @@
       ],
       "Get the writing assistant": [
         "Hanki kirjoitusavustaja"
+      ],
+      "Connect to video conferencing": [
+        "Yhdistä videoneuvotteluun"
+      ],
+      "Manage advanced account protections": [
+        "Hallitse edistynyttä tilisuojausta"
+      ],
+      "Remove button": [
+        "Poista-painike"
+      ],
+      "Reply with a note": [
+        "Vastaa muistiinpanon kanssa"
+      ],
+      "Set up email forwarding": [
+        "Määritä sähköpostin ohjaus"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Käytä ${ PASS_APP_NAME } for Businessia"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Käytä ${ VPN_SHORT_APP_NAME }:ää tietosuojaa varten"
       ]
     },
     "action": {
@@ -2968,6 +2992,9 @@
       ],
       "This event was updated.": [
         "Tapahtuma päivitettiin."
+      ],
+      "Here's what changed:": [
+        "Tehdyt muutokset:"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4416,6 +4443,18 @@
       ],
       "Other": [
         "Muu"
+      ],
+      "Import from Google": [
+        "Tuo Googlesta"
+      ],
+      "Import from other": [
+        "Tuo muualta"
+      ],
+      "Import from Outlook": [
+        "Tuo Outlookista"
+      ],
+      "Import from Yahoo": [
+        "Tuo Yahoosta"
       ]
     },
     "Import warning": {
@@ -5708,6 +5747,24 @@
       ],
       "Uppercase and lowercase letters": [
         "Isot ja pienet kirjaimet"
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN piilottaa IP-osoitteesi ja salaa selaustoimintasi, joten verkkosivustojen, mainostajien ja Internet-palveluntarjoajien on vaikeampi seurata sinua ajan mittaan."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Tuo viestisi, yhteystietosi ja kalenterisi ${ BRAND_NAME }iin."
+      ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Jos pikanäppäimet ovat käytössä, voit käyttää seuraavia näppäimiä pikatoimintoihin tai eri näkymiin siirtymiseen. ${ metaKey } + K on aina käytössä."
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Lue, mitä tehdä, ${ dataLeakedLink }"
+      ],
+      "One time import": [
+        "Kertaluontoinen tuonti"
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Tilauksesi uudistuu automaattisesti ${ renewalTime }."
       ]
     },
     "info": {
@@ -6342,6 +6399,9 @@
       ],
       "Weak password": [
         "Heikko salasana"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Ilmoitukset on poistettu käytöstä. Voit ottaa ne käyttöön selaimen asetuksissa."
       ]
     },
     "Label for contact group color": {
@@ -6489,6 +6549,33 @@
       ],
       "How to set up a custom domain": [
         "Oman verkkotunnuksen määrittäminen"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Miten yhteiskäytät ${ DOCS_SHORT_APP_NAME }issa"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Miten otat ${ PROTON_SENTINEL_NAME }in käyttöön"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Miten siirryt ${ BRAND_NAME }iin"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } määrittäminen"
+      ],
+      "How to share via email": [
+        "Miten jaat sähköpostitse"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Miten ${ DARK_WEB_MONITORING_NAME } toimii"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Miten käytät ${ PASS_APP_NAME } for Businessia"
+      ],
+      "How to use email forwarding": [
+        "Miten sähköpostin edelleenlähetystä käytetään"
+      ],
+      "if your data is leaked": [
+        "jos tietosi vuotavat"
       ]
     },
     "Link label (optional)": {
@@ -6557,6 +6644,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Tilauksesi on päättynyt. ${ cta } välttääksesi tietojen menetyksen."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Tallennustilasi on täynnä. Jatkaaksesi ${ BRAND_NAME } -tuotteiden käyttöä, vapauta tilaa tai ${ cta }."
       ]
     },
     "Log preference": {
@@ -6845,6 +6935,9 @@
       ],
       "on the third Wednesday": [
         "kolmas keskiviikko"
+      ],
+      "on the ${ shortenedDay }": [
+        "${ shortenedDay }"
       ]
     },
     "New Label form": {
@@ -8033,6 +8126,9 @@
       ],
       "Your subscription renews soon": [
         "Tilauksesi uusiutuu pian"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Viimeinen mahdollisuus saada 80 % alennus ${ plan } Plussan ensimmäisestä kuukaudesta."
       ]
     },
     "Offer feature": {
@@ -8353,6 +8449,15 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit peruuttaa tilauksen milloin vain.",
         "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit peruuttaa tilauksen milloin vain."
+      ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Et voi muuttaa tai peruuttaa tilaustasi tänä aikana. Odota, kunnes maksusi on suoritettu, ennen kuin yrität tehdä muutoksia. Kiitos kärsivällisyydestäsi."
+      ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Uusimishinnoittelu voi muuttua ehtojen ${ termsAndConditionsLink } mukaan."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua milloin tahansa."
       ]
     },
     "Payments.Error": {
@@ -9030,6 +9135,9 @@
       ],
       "Your subscription will renew at the same rate every year.": [
         "Tilauksesi uusiutuu samaan hintaan joka vuosi."
+      ],
+      "The special offer is valid for the first 2 years.": [
+        "Erikoistarjous on voimassa kahden ensimmäisen vuoden ajan."
       ]
     },
     "specialoffer: Link": {
@@ -9107,6 +9215,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Normaalihinta 30 kuukaudelta on ${ amount }"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Erikoistarjous on voimassa kahden ensimmäisen vuoden ajan"
       ]
     },
     "specialoffer: Title": {
@@ -9261,6 +9372,12 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Menetät oikeuden käyttää rajattomasti kirjautumistunnuksia ja muistiinpanoja, rajattomasti hide-my-email-aliaksia, 20 holvia sekä ensisijaista tukea."
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "${ productString }stasi on käytössä ${ percentage } %. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "${ productString }si on täynnä. ${ cta }."
       ]
     },
     "Subscribe to calendar modal": {
@@ -10615,6 +10732,39 @@
       ],
       "Share your calendar with your team": [
         "Jaa kalenterisi tiimillesi"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "Arkipäivisin ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+      ],
+      "Information exposed in breach": [
+        "Tietomurrossa paljastuneet tiedot"
+      ],
+      "Reply with a note": [
+        "Vastaa muistiinpanolla"
+      ],
+      "Schedule meetings in one click": [
+        "Ajoita kokouksia yhdellä klikkauksella"
+      ],
+      "Set up email forwarding": [
+        "Määritä sähköpostin ohjaus"
+      ],
+      "Simplify email distribution": [
+        "Yksinkertaista sähköpostijakelua"
+      ],
+      "Simplify password management": [
+        "Yksinkertaista salasanahallintaa"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Käytä ${ VPN_SHORT_APP_NAME }:ää tietosuojaa varten"
+      ],
+      "VPN explained": [
+        "VPN selitetty"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Tervetuloa ${ BRAND_NAME } for Businessiin"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10709,6 +10859,12 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lataa julkinen avain mahdollistaaksesi päästä päähän -salattujen viestien lähetyksen tähän osoitteeseen"
+      ],
+      "Not all information listed here was exposed for all users.": [
+        "Kaikkia tässä lueteltuja tietoja ei paljastettu kaikille käyttäjille."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Salatut salasanat pysyvät turvassa, vaikka ne paljastuisivat, ellei niiden salausta pureta."
       ]
     },
     "tooltip": {
@@ -10800,6 +10956,9 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Tilauksesi uudistuu automaattisesti ${ cycle } kuukauden kuluttua.",
         "Tilauksesi uudistuu automaattisesti ${ cycle } kuukauden kuluttua."
+      ],
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Silloin sinulta laskutetaan ${ renewPriceStr } vuoden välein."
       ]
     },
     "vpn_2step: feature": {
@@ -11243,6 +11402,27 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Liity Zoom-kokoukseen"
+      ]
+    },
+    "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Alkaen ${ priceLine }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceLine } kuukausihintaan. Voit perua milloin tahansa."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Avaa kaikki ${ BRAND_NAME } -premium-tuotteet ja -ominaisuudet hintaan ${ priceLine }. Peruuta milloin tahansa."
+      ]
+    },
+    "Note": {
+      "Note:": [
+        "Muistiinpano:"
+      ]
+    },
+    "RSVP Note": {
+      "Edit note": [
+        "Muokkaa merkintää"
       ]
     }
   }

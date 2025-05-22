@@ -4050,12 +4050,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
+        "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clé de sécurité"
@@ -4961,7 +4961,7 @@
         "Activation de la suppression automatique…"
       ],
       "Enter the code from your authenticator app": [
-        "Entrez le code de votre application d'authentification."
+        "Saisissez le code de votre application d'authentification."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Saisissez les identifiants du compte de messagerie depuis lequel vous voulez importer."
@@ -4970,7 +4970,7 @@
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Enter verification code. Digit ${ digit }."
+        "Saisissez le code de vérification. Entrez ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
@@ -6745,6 +6745,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Votre abonnement est terminé. ${ cta } et pour éviter de perdre des données."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Votre espace de stockage est plein. Pour continuer à utiliser les produits ${ BRAND_NAME }, libérez de l’espace ou ${ cta }."
       ]
     },
     "Log preference": {
@@ -10530,7 +10533,7 @@
         "Entrez le code A2F"
       ],
       "Enter your password": [
-        "Saisissez votre mot de passe."
+        "Saisissez votre mot de passe"
       ],
       "Error": [
         "Erreur"
@@ -10922,6 +10925,9 @@
       ],
       "Mail Subscriptions": [
         "Inscription aux e-mails"
+      ],
+      "Newsletters view": [
+        "Vue Newsletters"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

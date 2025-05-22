@@ -333,7 +333,7 @@
         "Exportovať výber ako .vcf"
       ],
       "Forgot password?": [
-        "Zabudnuté heslo?"
+        "Zabudli ste heslo?"
       ],
       "Forward as attachment": [
         "Preposlať ako prílohu"
@@ -4120,12 +4120,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Prosím skúste znova."
+        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vložte bezpečnostný kľúč prepojený s vaším účtom ${ BRAND_NAME }."
+        "Vložte bezpečnostný kľúč prepojený s vaším ${ BRAND_NAME } účtom."
       ],
       "Security key": [
         "Bezpečnostný kľúč"
@@ -5504,7 +5504,7 @@
         "Relácia vypršala"
       ],
       "Set up your organization": [
-        "Nastaviť svoju organizáciu"
+        "Nastavte svoju organizáciu"
       ],
       "Setting up ${ feature }…": [
         "Nastavovanie ${ feature }…"
@@ -5744,7 +5744,7 @@
         "Pri pripájaní k VPN sa používa šifrovacia technológia na skrytie vašej IP adresy (jedinečný kód pridelený vášmu zariadeniu)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
+        "Pri nastavení dvojstupňového overenia poskytujeme kódy na obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k vašej overovacej aplikácii."
       ],
       "Which event would you like to delete?": [
         "Ktorú udalosť si prajete zmazať?"
@@ -6237,7 +6237,7 @@
         "Priložiť snímok(ky) obrazovky"
       ],
       "Authenticator app": [
-        "Aplikácia 2FA"
+        "Overovacia aplikácia"
       ],
       "Beta Access": [
         "Beta prístup"
@@ -6486,7 +6486,7 @@
         "Notifikácie"
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
-        "Notifikácie sú zakázané. Ak ich chcete povoliť, zmeňte nastavenia prehliadača."
+        "Notifikácie sú deaktivované. Ak ich chcete povoliť, zmeňte nastavenia prehliadača."
       ],
       "On": [
         "Zap."
@@ -6645,7 +6645,7 @@
         "Vaša poloha"
       ],
       "Your password (admin)": [
-        "Vaše heslo (admin)"
+        "Vaše heslo (správca)"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
@@ -6920,6 +6920,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Vaše predplatné skončilo. ${ cta } a zabráňte strate údajov."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Vaše úložisko je plné. Ak chcete naďalej používať produkty ${ BRAND_NAME }, uvoľnite miesto alebo ${ cta }."
       ]
     },
     "Log preference": {
@@ -7881,7 +7884,7 @@
         "Náš ${ visionary } plán už nie je k dispozícii pre nových predplatiteľov, pretože ide o špeciálny plán pre pôvodných používateľov ${ BRAND_NAME } so špeciálnymi funkciami a výhodami."
       ],
       "Pay once, secure your passwords and identity forever.": [
-        "Zaplaťte raz a zabezpečte svoje heslá a identity navždy."
+        "Zaplaťte raz a zabezpečte navždy svoje heslá a identity."
       ],
       "Popular": [
         "Populárne"
@@ -9858,10 +9861,10 @@
         "Ak chcete naďalej používať produkty ${ BRAND_NAME }, uvoľnite miesto alebo ${ upgrade }"
       ],
       "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
-        "Vaše úložisko ${ productString } je zaplnené na ${ percentage }%. ${ cta }."
+        "Vaše ${ productString } je zaplnené na ${ percentage }%. ${ cta }."
       ],
       "Your ${ productString } is full. ${ cta }.": [
-        "Vaše úložisko ${ productString } je plné. ${ cta }."
+        "Vaše ${ productString } je plné. ${ cta }."
       ]
     },
     "Subscribe to calendar modal": {
@@ -10910,7 +10913,7 @@
         "Zadajte 2FA kód"
       ],
       "Enter your password": [
-        "Zadajte Vaše heslo"
+        "Zadajte svoje heslo"
       ],
       "Error": [
         "Chyba"
@@ -12017,7 +12020,7 @@
     },
     "Slack": {
       "Join Slack huddle": [
-        "Pripojiť sa k hromadnej konverzácii Slack"
+        "Pripojiť sa k Slack huddle"
       ]
     },
     "Subscription saving": {
@@ -12027,12 +12030,12 @@
     },
     "Teams": {
       "Join Teams meeting": [
-        "Pripojiť sa k stretnutiu cez Teams"
+        "Pripojiť sa k Teams mítingu"
       ]
     },
     "Zoom": {
       "Join Zoom meeting": [
-        "Pripojiť sa k stretnutiu na Zoome"
+        "Pripojiť sa k Zoom mítingu"
       ]
     }
   }

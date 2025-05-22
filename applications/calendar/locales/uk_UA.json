@@ -811,6 +811,24 @@
       ],
       "Get the writing assistant": [
         "Отримати помічника з написання"
+      ],
+      "Collaborate on documents": [
+        "Сумісна робота на документах"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Отримайте ${ planName } за ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Отримати ${ planOrAppName }"
+      ],
+      "Get the apps": [
+        "Отримати програми"
+      ],
+      "Set up 2FA": [
+        "Налаштувати 2ЕП"
+      ],
+      "Take a tour": [
+        "Показати знайомство"
       ]
     },
     "action": {
@@ -1083,6 +1101,9 @@
       ],
       "Version history": [
         "Історія версій"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1143,6 +1164,9 @@
       ],
       "Two-year": [
         "Два роки"
+      ],
+      "Lifetime": [
+        "Довічно"
       ]
     },
     "Browser": {
@@ -1236,6 +1260,15 @@
       ],
       "Continue your subscription": [
         "Поновіть свою передплату"
+      ],
+      "Close": [
+        "Закрити"
+      ],
+      "Create label": [
+        "Створити мітку"
+      ],
+      "Take a tour": [
+        "Показати знайомство"
       ]
     },
     "Calendar access select label": {
@@ -2830,6 +2863,9 @@
       ],
       "This event was updated.": [
         "Цю подію оновлено."
+      ],
+      "Here's what changed:": [
+        "Ось що змінилося:"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4019,6 +4055,12 @@
       ],
       "No verification method available": [
         "Немає доступних способів перевірки"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -4322,6 +4364,12 @@
       ],
       "Other": [
         "Інший"
+      ],
+      "Import from Google": [
+        "Імпортувати з Google"
+      ],
+      "Import from Outlook": [
+        "Імпортувати з Outlook"
       ]
     },
     "Import warning": {
@@ -5526,6 +5574,21 @@
       ],
       "Password copied to clipboard": [
         "Пароль скопійовано до буфера обміну"
+      ],
+      "Calendar is disabled": [
+        "Календар вимкнено"
+      ],
+      "Not connected": [
+        "Не під’єднано"
+      ],
+      "Set up your organization": [
+        "Налаштуйте свою організацію"
+      ],
+      "VPN IP": [
+        "VPN IP"
+      ],
+      "Your IP": [
+        "Ваш IP"
       ]
     },
     "info": {
@@ -5645,6 +5708,12 @@
     "Keyboard shortcut name": {
       "Open this modal": [
         "Відкрити це вікно"
+      ],
+      "Create new event": [
+        "Створити нову подію"
+      ],
+      "Search events": [
+        "Пошук подій"
       ]
     },
     "Keyboard shortcut section name": {
@@ -6095,6 +6164,18 @@
       ],
       "Weak": [
         "Слабкий"
+      ],
+      "On": [
+        "Ввімк"
+      ],
+      "State": [
+        "Стан"
+      ],
+      "Your IP": [
+        "Ваш IP"
+      ],
+      "Your location": [
+        "Ваше розташування:"
       ]
     },
     "Label for contact group color": {
@@ -6221,6 +6302,12 @@
       ],
       "What’s this?": [
         "Що це?"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Як використовувати ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "settings": [
+        "налаштування"
       ]
     },
     "Link label (optional)": {
@@ -6590,6 +6677,9 @@
       ],
       "on the third Wednesday": [
         "третьої середи"
+      ],
+      "on the ${ shortenedDay }": [
+        "в ${ shortenedDay }"
       ]
     },
     "New Label form": {
@@ -7128,6 +7218,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Ми скануємо \"Темну мережу\", щоб перевірити, чи не було витоку ваших адрес або псевдонімів ${ BRAND_NAME }, і негайно сповіщаємо вас, якщо щось знайдемо."
+      ],
+      "${ size } storage per user": [
+        "${ size } сховища на користувача"
+      ],
+      "Password manager to secure credentials": [
+        "Менеджер паролів для захисту облікових даних"
+      ],
+      "Tor over VPN": [
+        "Tor через VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -8032,6 +8131,15 @@
       ],
       "Timeout exceeded": [
         "Перевищено час очікування"
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Поновлюється за ціною ${ renewPriceStr }, скасувати можна будь-коли."
+      ],
+      "terms & conditions": [
+        "положення та умови"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Спеціальна ціна зі знижкою ${ priceWithDiscount } діє протягом першого місяця. Потім вона буде автоматично поновлюватися за ціною ${ renewPriceStr } щомісяця. Ви можете скасувати її в будь-який момент."
       ]
     },
     "Payments.Error": {
@@ -8176,6 +8284,9 @@
       ],
       "Start typing an email address": [
         "Почніть вводити адресу е-пошти"
+      ],
+      "Organization name": [
+        "Назва організації"
       ]
     },
     "Placeholder for contact group name": {
@@ -10254,6 +10365,24 @@
       ],
       "Your shorter address is now ready": [
         "Ваша коротша адреса готова"
+      ],
+      "Collaborate on documents": [
+        "Сумісна робота на документах"
+      ],
+      "Does not repeat": [
+        "Не повторювати"
+      ],
+      "Every day": [
+        "Щодня"
+      ],
+      "Every year": [
+        "Щороку"
+      ],
+      "Help center": [
+        "Довідковий центр"
+      ],
+      "Set up your organization": [
+        "Налаштуйте свою організацію"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10460,6 +10589,9 @@
         "Ваша передплата автоматично поновиться через ${ cycle } місяці.",
         "Ваша передплата автоматично поновиться через ${ cycle } місяців.",
         "Ваша передплата автоматично поновиться через ${ cycle } місяців."
+      ],
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Потім рахунок виставлятиметься кожні 12 місяців за ціною ${ renewPriceStr }."
       ]
     },
     "vpn_2step: feature": {
@@ -10939,6 +11071,112 @@
       ],
       "Passcode:": [
         "Код доступу"
+      ]
+    },
+    "Commander action": {
+      "New event": [
+        "Нова подія"
+      ],
+      "Search events": [
+        "Пошук подій"
+      ]
+    },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Для всіх сервісів ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "За ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "За ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Для ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Для ${ VPN_APP_NAME }"
+      ]
+    },
+    "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Починаючи з ${ priceLine }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Ціна зі знижкою ${ priceCoupon } дійсна протягом першого місяця. Потім вона буде автоматично поновлена до ${ priceLine }. Ви можете скасувати в будь-який час."
+      ]
+    },
+    "Note": {
+      "Note:": [
+        "Примітка:"
+      ]
+    },
+    "Offer": {
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
+      "Limited-time offer": [
+        "Тимчасова пропозиція"
+      ],
+      "Maybe later": [
+        "Можливо пізніше"
+      ],
+      "Save": [
+        "Зберегти"
+      ],
+      "Special offer": [
+        "Спеціальна пропозиція"
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+Ще 10 преміум функцій"
+      ],
+      "Custom email domain": [
+        "Власний домен електронної пошти"
+      ],
+      "Email addresses": [
+        "Адреси електронної пошти"
+      ],
+      "Free": [
+        "Free"
+      ],
+      "Online document editor": [
+        "Онлайн редактор документів"
+      ],
+      "Recover previous file versions": [
+        "Відновити попередні версії файлів"
+      ],
+      "Storage": [
+        "Сховище"
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
+    "RSVP Note": {
+      "Edit note": [
+        "Редагувати нотатку"
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Заощадьте ${ priceString }"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Приєднатися до зустрічі в Zoom"
       ]
     }
   }

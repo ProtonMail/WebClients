@@ -884,6 +884,9 @@
       ],
       "Use ${ PASS_APP_NAME } for Business": [
         "Brug ${ PASS_APP_NAME } for Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Brug ${ VPN_SHORT_APP_NAME } for at beskytte dine data"
       ]
     },
     "action": {
@@ -1207,6 +1210,9 @@
       ],
       "Two-year": [
         "To-År"
+      ],
+      "Lifetime": [
+        "Livstid"
       ]
     },
     "Browser": {
@@ -6835,6 +6841,9 @@
       ],
       "on the third Wednesday": [
         "på den tredje onsdag"
+      ],
+      "on the ${ shortenedDay }": [
+        "den ${ shortenedDay }"
       ]
     },
     "New Label form": {
@@ -8288,6 +8297,12 @@
       ],
       "Your payment is still being processed": [
         "Din betaling behandles stadig"
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Fornyes til ${ renewPriceStr }, annuller når som helst."
+      ],
+      "terms & conditions": [
+        "vilkår og betingelser"
       ]
     },
     "Payments.Error": {
@@ -10762,6 +10777,9 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Dit abonnement vil automatisk forny i ${ cycle } måned.",
         "Dit abonnement vil automatisk forny i ${ cycle } måneder."
+      ],
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Du vil blive faktureret ${ renewPriceStr } hver 12. måned."
       ]
     },
     "vpn_2step: feature": {

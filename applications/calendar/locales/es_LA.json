@@ -327,7 +327,7 @@
         "Exportar la selección en formato *.vcf"
       ],
       "Forgot password?": [
-        "¿Contraseña olvidada?"
+        "¿Olvidaste tu contraseña?"
       ],
       "Forward as attachment": [
         "Reenviar como adjunto"
@@ -837,7 +837,7 @@
         "Usar para el envío"
       ],
       "Use recovery code": [
-        "Usar código de recuperación"
+        "Usar un código de recuperación"
       ],
       "Verify": [
         "Verificar"
@@ -4050,7 +4050,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Hubo un problema al autenticar con la clave de seguridad. Intente de nuevo."
+        "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
       ]
     },
     "fido2: Info": {
@@ -4961,7 +4961,7 @@
         "Activando la eliminación automática…"
       ],
       "Enter the code from your authenticator app": [
-        "Ingrese el código de la aplicación de autenticación"
+        "Ingrese el código de la aplicación de autenticación."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Ingrese las credenciales de la cuenta de correo electrónico desde la que quiere importar."
@@ -4970,7 +4970,7 @@
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Ingrese el código de verificación. Digite ${ digit }."
+        "Ingrese el código de verificación. Ingrese ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Ingrese su propia contraseña (como administrador de la organización)."
@@ -6066,7 +6066,7 @@
         "Adjuntar captura(s)"
       ],
       "Authenticator app": [
-        "App autenticadora"
+        "Aplicación de autenticación"
       ],
       "Beta Access": [
         "Acceso beta"
@@ -6472,7 +6472,7 @@
         "Su ubicación"
       ],
       "Your password (admin)": [
-        "La contraseña (admin)"
+        "Tu contraseña (admin)"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
@@ -9469,7 +9469,7 @@
         "Para todos los servicios de ${ BRAND_NAME }"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Para enviar o recibir correos, libere espacio o ${ upgrade }"
+        "Para enviar o recibir más correos, libere espacio o ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Para cargar o sincronizar archivos, libere espacio o ${ upgrade }"
@@ -10533,7 +10533,7 @@
         "Ingrese el código 2FA"
       ],
       "Enter your password": [
-        "Ingrese la contraseña"
+        "Introduce tu contraseña"
       ],
       "Error": [
         "Error"
@@ -10925,6 +10925,9 @@
       ],
       "Mail Subscriptions": [
         "Suscripciones de Mail"
+      ],
+      "Newsletters view": [
+        "Vista de boletines"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

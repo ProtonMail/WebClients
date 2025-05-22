@@ -831,7 +831,7 @@
         "Utilitzeu un mètode de pagament diferent"
       ],
       "Use authentication code": [
-        "Utilitzar el codi d'autenticació"
+        "Utilitza el codi d'autenticació"
       ],
       "Use for sending": [
         "Usar per enviar"
@@ -4050,12 +4050,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Alguna cosa no ha anat bé amb l'autenticació amb la vostra clau de seguretat. Proveu-ho de nou."
+        "Quelcom va anar malament autenticant-se amb la vostra clau de seguretat. Torneu-ho a provar."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inseriu una clau de seguretat enllaçada al vostre compte ${ BRAND_NAME }."
+        "Inseriu una clau de seguretat enllaçada al vostre compte de ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clau de seguretat"
@@ -4940,7 +4940,7 @@
         "Clau duplicada actualitzada"
       ],
       "Each code can only be used once": [
-        "Cada codi només es pot utilitzar una vegada."
+        "Cada codi només es pot utilitzar una vegada"
       ],
       "Edit email address": [
         "Edita l'adreça de correu"
@@ -4961,7 +4961,7 @@
         "S'està activant la supressió automàtica…"
       ],
       "Enter the code from your authenticator app": [
-        "Introduïu el codi de la vostra aplicació d'autenticació"
+        "Introduïu el codi de la vostra aplicació d'autenticació."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduïu les credencials del compte de correu electrònic des d'on voleu importar."
@@ -5588,7 +5588,7 @@
         "Quan us connecteu a la VPN, utilitza tecnologia de xifratge per ocultar la vostra adreça IP (un codi únic assignat al vostre dispositiu)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configureu l'autenticació de doble factor, se us proporcionen codis de recuperació que podeu fer servir per a iniciar la sessió en cas que perdeu l'accés a l'aplicació d'autenticació."
+        "Quan configureu l’autenticació de dos factors, proporcionem codis de recuperació que podeu utilitzar per iniciar la sessió si perdeu l’accés a l’aplicació d'autenticació."
       ],
       "Which event would you like to delete?": [
         "Quin esdeveniment voleu eliminar?"
@@ -6472,7 +6472,7 @@
         "La vostra ubicació"
       ],
       "Your password (admin)": [
-        "La seva contrasenya (admin)"
+        "La vostra contrasenya (administrador)"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
@@ -6745,6 +6745,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La vostra subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "El vostre emmagatzematge està ple. Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ cta }."
       ]
     },
     "Log preference": {
@@ -9466,7 +9469,7 @@
         "Per a tots els serveis de ${ BRAND_NAME }"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Per enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
+        "Per enviar o rebre correus, allibereu espai o ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Per a carregar o sincronitzar fitxers, allibereu espai o ${ upgrade }"
@@ -10922,6 +10925,9 @@
       ],
       "Mail Subscriptions": [
         "Subscripcions de correu"
+      ],
+      "Newsletters view": [
+        "Vista de butlletins"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

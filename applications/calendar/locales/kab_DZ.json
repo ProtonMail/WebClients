@@ -667,6 +667,18 @@
       ],
       "Generate password": [
         "Sirew awal uffir"
+      ],
+      "Add account": [
+        "Rnu amiḍan"
+      ],
+      "Get ${ planOrAppName }": [
+        "Awi ${ planOrAppName }"
+      ],
+      "More actions": [
+        "Ugar n tigawin"
+      ],
+      "Take a tour": [
+        "Snirem"
       ]
     },
     "action": {
@@ -901,6 +913,9 @@
       ],
       "Version history": [
         "Azray n lqem"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1032,6 +1047,15 @@
       ],
       "Continue using ${ planTitle }": [
         "Kemmel s useqdec ${ planTitle }"
+      ],
+      "Close": [
+        "Mdel"
+      ],
+      "Create label": [
+        "Rnu tabzimt"
+      ],
+      "Take a tour": [
+        "Snirem"
       ]
     },
     "Calendar access select label": {
@@ -1178,6 +1202,9 @@
       "Total for ${ n } month": [
         "Asemday i ${ n } wayyur",
         "Asemday i ${ n } wayyuren"
+      ],
+      "Total": [
+        "Asemday"
       ]
     },
     "Collapsible tooltip": {
@@ -2695,6 +2722,9 @@
       ],
       "Your import will not be processed.": [
         "Taktert-inek•inem ur tettwasekkar ara."
+      ],
+      "Please select a country": [
+        "Ttxil-k·m fren tamurt"
       ]
     },
     "Error accepting calendar invitation": {
@@ -2999,6 +3029,9 @@
       ],
       "Set up your family account": [
         "Sbadu amiḍan-ik n twacult"
+      ],
+      "Configure your family account and invite users": [
+        "Swel amiḍan-ik n twacult, tnecdeḍ-s iseqdacen"
       ]
     },
     "familyOffer_2023:Title": {
@@ -3101,6 +3134,10 @@
     "Hint": {
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Seqdec tiqeffalin Asawen d Akessar i wakken ad tkecmeḍ ɣer yisumar syen asenqed-nsen seld anekcum. Sit ɣef Enter i wakken ad tesnetmeḍ afran-inek·inem, neɣ Escape i wakken ad tmedleḍ tabewwaḍt n yisumar."
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Af asumer n ${ itemsCount }, seqdec anasiw i tunigin.",
+        "Af isumar ${ itemsCount }, seqdec anasiw i tunigin."
       ]
     },
     "Human verification method": {
@@ -3112,6 +3149,12 @@
       ],
       "No verification method available": [
         "Ulac tarrayt n usenqed"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Import calendar": {
@@ -3309,6 +3352,9 @@
       ],
       "Other": [
         "Ayen-nniḍen"
+      ],
+      "Import from Google": [
+        "Kter seg Google"
       ]
     },
     "Import warning": {
@@ -4099,6 +4145,15 @@
       ],
       "Password copied to clipboard": [
         "Awal uffir yettwanɣel ɣer tecfawt"
+      ],
+      "Address copied to clipboard": [
+        "Tansa tettwanɣel ɣef afus"
+      ],
+      "Calendar is disabled": [
+        "Awitay yettwasens"
+      ],
+      "default email address": [
+        "tansa yimayl n lexṣas"
       ]
     },
     "Info message": {
@@ -4154,6 +4209,15 @@
     "Keyboard shortcut name": {
       "Open this modal": [
         "Ldi modal-agi"
+      ],
+      "Month view": [
+        "Taskant s wayyur"
+      ],
+      "Search events": [
+        "Nadi tidyanin"
+      ],
+      "Today": [
+        "Ass-a"
       ]
     },
     "Keyboard shortcut section name": {
@@ -4558,6 +4622,15 @@
       ],
       "Your password (admin)": [
         "Awal-ik uffir (anedbal)"
+      ],
+      "Integrated 2FA authenticator": [
+        "Yerna usesteb s snat tarrayin 2FA"
+      ],
+      "On": [
+        "Yermed"
+      ],
+      "State": [
+        "Addad"
       ]
     },
     "Label for contact group color": {
@@ -4670,6 +4743,9 @@
       ],
       "What’s this?": [
         "D acu-t wa?"
+      ],
+      "settings": [
+        "iɣewwaren"
       ]
     },
     "Link label (optional)": {
@@ -4954,6 +5030,9 @@
       ],
       "on the third Wednesday": [
         "deg wahad wis kṛad"
+      ],
+      "on the ${ shortenedDay }": [
+        "deg ${ shortenedDay }"
       ]
     },
     "New Label form": {
@@ -5202,6 +5281,30 @@
       ],
       "User session management": [
         "Asefrek n tiɣimiyin n useqdac"
+      ],
+      "${ size } storage per user": [
+        "${ size } uḥraz i aseqdac"
+      ],
+      "10 email addresses/aliases": [
+        "10 n tansiwin n yimayl/mefferismawen"
+      ],
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "Fully refundable for 30 days": [
+        "Tiririt n yidrimen s umelkem ɣef 30 n wussan"
+      ],
+      "Password manager": [
+        "Amsefrak n wawal uffir"
+      ],
+      "Phone support (20+ users)": [
+        "Tallalt s tilifun (ugar n 20 yiseqdacen)"
+      ],
+      "Priority support & live chat": [
+        "Tallalt yezwaren & Asqerdec usrid"
+      ],
+      "Tor over VPN": [
+        "Tor s VPN"
       ]
     },
     "new_plans: feature info": {
@@ -5245,6 +5348,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Tadhelt i yineggafen n beṭṭu n yifuyla am BitTorrent"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Azen timahilin-ik•im n internet s useqdec n uzeṭṭa Tor s yiwen n usiti"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -5569,6 +5675,9 @@
       ],
       "MM/YY": [
         "MM/YY"
+      ],
+      "terms & conditions": [
+        "tiwtilin n useqdec"
       ]
     },
     "Payments.Error": {
@@ -6002,6 +6111,9 @@
       ],
       "Save ${ discount }%": [
         "Sekles ${ discount }%"
+      ],
+      "/month": [
+        "/ayyur"
       ]
     },
     "specialoffer: Title": {
@@ -6091,6 +6203,21 @@
       ],
       "Version history": [
         "Azray n lqem"
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } uwitay i yal aseqdac",
+        "${ planNumberOfCalendars } yiwitayen i yal aseqdac"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } taɣult n yimaylen udmawanen",
+        "${ planNumberOfDomains } tiɣula n yimaylen udmawanen"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } tansa n yimayl i useqdac",
+        "${ planNumberOfEmails } tansiwin n yimayl i useqdac"
+      ],
+      "2 users": [
+        "2 yiseqdacen"
       ]
     },
     "subscription reminder": {
@@ -6816,6 +6943,18 @@
       ],
       "Your calendar link": [
         "Aseɣwen n uwitayen-ik"
+      ],
+      "Does not repeat": [
+        "Ur ttales ara"
+      ],
+      "Every year": [
+        "Yal useggas"
+      ],
+      "Help center": [
+        "Tallalt"
+      ],
+      "Mobile": [
+        "Aziraz"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -6946,6 +7085,18 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } deg ${ numberOfCountries } n tmurt",
         "${ numberOfServers } deg ${ numberOfCountries } n tmura"
+      ],
+      "${ n } device": [
+        "${ n } yibenk",
+        "${ n } yibenkan"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } n tmurt",
+        "${ numberOfCountries } tmura"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Iqeddacen deg wugar ${ numberOfCountries } tmurt",
+        "Iqeddacen deg wugar n ${ numberOfCountries } tmura"
       ]
     },
     "vpn_2step: feature": {
@@ -7295,6 +7446,116 @@
       ],
       "Yearly, ${ untilString }": [
         "S useggas, ${ untilString }"
+      ]
+    },
+    "Cancellation upsell": {
+      "Save ${ upsellSavings }": [
+        "Sekles ${ upsellSavings }"
+      ]
+    },
+    "Commander action": {
+      "Month view": [
+        "Taskant s wayyur"
+      ],
+      "New event": [
+        "Tadyant tamaynut"
+      ],
+      "Search events": [
+        "Nadi tidyanin"
+      ],
+      "Today": [
+        "Ass-a"
+      ]
+    },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "Tuccḍa deg ubeddel n tiririt"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Tuccḍa u nettwarǧa ara"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Izḍi usrid n uwitay ur yettusefrak ara"
+      ],
+      "Edited event not supported": [
+        "Aẓrag n tedyant ur yettusefrak ara"
+      ],
+      "End time out of bounds": [
+        "Akud n taggara akkin i tlisa"
+      ],
+      "Floating times not supported": [
+        "Akuden i d-yuflawen ur ttusefraken ara"
+      ],
+      "Malformed all-day event": [
+        "Tadyant i wass meṛṛa texṣer"
+      ],
+      "Malformed end time": [
+        "Akud n taggara ur yemsil ara akken ilaq"
+      ],
+      "Malformed recurring event": [
+        "Yir talɣa n tedyant d-ittuɣalen"
+      ],
+      "Malformed start time": [
+        "Akud n beddu ur yemsil ara akken ilaq"
+      ],
+      "Recurring rule not supported": [
+        "Alugen i d-yettuɣalen ur yettusefrak ara"
+      ],
+      "Start time out of bounds": [
+        "Akud n beddu akkin i tlisa"
+      ],
+      "Time zone not supported": [
+        "Izḍi usrid ur yettusefrak ara"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ users } user": [
+        "${ users } useqdac",
+        "${ users } yiseqdacen"
+      ]
+    },
+    "Note": {
+      "Note:": [
+        "Tamawt:"
+      ]
+    },
+    "Offer": {
+      "Get the deal": [
+        "Faṛes tagnit"
+      ],
+      "Maybe later": [
+        "Ahat ticki"
+      ],
+      "Save": [
+        "Sekles"
+      ],
+      "Special offer": [
+        "Asefk ufrin"
+      ]
+    },
+    "Offer feature": {
+      "Email addresses": [
+        "Tansiwin imayl"
+      ],
+      "Free": [
+        "Baṭel"
+      ],
+      "Storage": [
+        "Asekles"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Qqen"
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Sekles ${ priceString }"
       ]
     }
   }

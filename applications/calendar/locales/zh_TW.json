@@ -832,6 +832,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "啟用${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Set up email forwarding": [
+        "設定電子郵件轉發"
       ]
     },
     "action": {
@@ -7189,6 +7192,9 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "只要${ priceLine }解鎖全部的${ BRAND_NAME }頂級產品及功能。隨時取消。"
+      ],
+      "Starting from ${ priceLine }": [
+        "從${ priceLine }起"
       ]
     },
     "new_plans: title": {
@@ -10698,6 +10704,31 @@
     "Zoom": {
       "Join Zoom meeting": [
         "加入Zoom會議"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "為期 ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "為期 ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "為期 ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "為期 ${ VPN_APP_NAME }"
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "降價 ${ priceString }"
       ]
     }
   }
