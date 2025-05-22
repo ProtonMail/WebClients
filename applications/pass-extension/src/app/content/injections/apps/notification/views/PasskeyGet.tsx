@@ -1,6 +1,7 @@
 import { type FC, useEffect } from 'react';
 
 import { createBridgeResponse } from 'proton-pass-extension/app/content/bridge/message';
+import type { BridgeResponse } from 'proton-pass-extension/app/content/bridge/types';
 import {
     useIFrameAppController,
     useIFrameAppState,
@@ -10,7 +11,7 @@ import { WithPinUnlock } from 'proton-pass-extension/app/content/injections/apps
 import { ScrollableItemsList } from 'proton-pass-extension/app/content/injections/apps/components/ScrollableItemsList';
 import { NotificationHeader } from 'proton-pass-extension/app/content/injections/apps/notification/components/NotificationHeader';
 import type { NotificationAction } from 'proton-pass-extension/app/content/types';
-import { type NotificationActions } from 'proton-pass-extension/app/content/types';
+import { IFramePortMessageType, type NotificationActions } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
 import { Icon, useNotifications } from '@proton/components';
@@ -41,20 +42,21 @@ const PasskeyGetView: FC<Props> = ({ request, token, passkeys, domain: passkeyDo
                 async (result) => {
                     if (result.type !== 'success') throw new Error(result.error);
 
-                    if (!result.intercept) {
-                        return createBridgeResponse<WorkerMessageType.PASSKEY_GET>(
-                            { type: 'success', intercept: false },
-                            token
-                        );
-                    }
+                    const payload = await (async (): Promise<BridgeResponse<WorkerMessageType.PASSKEY_GET>> => {
+                        if (!result.intercept) {
+                            return createBridgeResponse<WorkerMessageType.PASSKEY_GET>(
+                                { type: 'success', intercept: false },
+                                token
+                            );
+                        }
 
-                    controller.postMessage(
-                        createBridgeResponse<WorkerMessageType.PASSKEY_GET>(
+                        return createBridgeResponse<WorkerMessageType.PASSKEY_GET>(
                             { type: 'success', intercept: true, response: result.response },
                             token
-                        )
-                    );
+                        );
+                    })();
 
+                    controller.forwardMessage({ type: IFramePortMessageType.PASSKEY_RELAY, payload });
                     onTelemetry(TelemetryEventName.PasskeyAuthSuccess, {}, {});
                     controller.close();
                 }
@@ -99,12 +101,13 @@ export const PasskeyGet: FC<Props> = (props) => {
             <NotificationHeader
                 title={c('Info').t`Passkey sign-in`}
                 onClose={() =>
-                    controller.postMessage(
-                        createBridgeResponse<WorkerMessageType.PASSKEY_GET>(
+                    controller.forwardMessage({
+                        type: IFramePortMessageType.PASSKEY_RELAY,
+                        payload: createBridgeResponse<WorkerMessageType.PASSKEY_GET>(
                             { type: 'success', intercept: false },
                             props.token
-                        )
-                    )
+                        ),
+                    })
                 }
             />
 
