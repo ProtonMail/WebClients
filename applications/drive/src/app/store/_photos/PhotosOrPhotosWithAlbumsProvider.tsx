@@ -93,11 +93,10 @@ export const PhotosOrPhotosWithAlbumsProvider = ({ children }: { children: React
         }
     }, [photosEnabled, photosWithAlbumsEnabled]);
 
-    // Photos global FF is enabled
     if (
+        // It is not allowed to create new photo volume until old photo shares
+        // are recovered so they can be migrated.
         !haveLockedOrRestoredOldPhotosShare &&
-        photosEnabled &&
-        // AND
         // Either
         // (1) customer have the DriveAlbums FF enabled
         // OR
@@ -111,17 +110,19 @@ export const PhotosOrPhotosWithAlbumsProvider = ({ children }: { children: React
         return <PhotosWithAlbumsProvider>{children}</PhotosWithAlbumsProvider>;
     }
 
-    // Photos global FF is enabled
-    // Customer is not in DriveAlbums
-    if (
-        photosEnabled &&
-        (customerPhotoState === CustomerPhotoState.HASOLDPHOTOSHARE ||
-            !photosWithAlbumsEnabled ||
-            !photosWithAlbumsForNewVolume)
-    ) {
-        return <PhotosProvider>{children}</PhotosProvider>;
-    }
-
-    // We don't know yet the state of the customer, render childs...
-    return children;
+    // Do not use condition on global photos FF.
+    // Various places in Drive depend on some photo provider, so worst
+    // case we need to load the old one, if user don't have access yet
+    // to the new one, either by FF or the presence of old locked photo
+    // share.
+    // If its just race-condition as albums FF is disabled and the state
+    // is not loaded yet, worst case we start loading photos that can
+    // even fail, but it will be replaced by the new provider once the
+    // state is loaded.
+    // The important part is that we don't let the Drive app to fail
+    // completely in error page without any acccess.
+    // Note that the race condition could happen only during the rollout
+    // and the rollout was already done. We might roll it back during
+    // heavy load but not expected.
+    return <PhotosProvider>{children}</PhotosProvider>;
 };
