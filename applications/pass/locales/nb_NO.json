@@ -409,6 +409,9 @@
       "Multiple select": [
         "Flere valg"
       ],
+      "Next month": [
+        "Neste måned"
+      ],
       "No expired links": [
         "Ingen utløpte koblinger"
       ],
@@ -441,6 +444,9 @@
       ],
       "Please retry": [
         "Prøv igjen"
+      ],
+      "Previous month": [
+        "Forrige måned"
       ],
       "Re-verify": [
         "Verifiser på nytt"
@@ -582,6 +588,9 @@
       ],
       "Sort vault items": [
         "Sorter hvelvelementer"
+      ],
+      "Start from scratch": [
+        "Start fra begynnelsen"
       ],
       "Submit": [
         "Send inn"
@@ -2314,6 +2323,9 @@
         "Vi oppdaget at du har ${ aliasCount } alias som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du importere det?",
         "Vi oppdaget at du har ${ aliasCount } aliaser som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du importere dem?"
       ],
+      "Week": [
+        "Uke"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Vi har sendt en verifiseringskode til ${ email }. Skriv den inn nedenfor:"
       ],
@@ -2521,6 +2533,12 @@
       "Account": [
         "Konto"
       ],
+      "Account Number": [
+        "Kontonummer"
+      ],
+      "Account Type": [
+        "Kontotype"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Legg til et tilfeldig prefiks for dette domenet når du oppretter et nytt alias."
       ],
@@ -2529,6 +2547,9 @@
       ],
       "Additional details": [
         "Ytterligere detaljer"
+      ],
+      "Address": [
+        "Adresse"
       ],
       "Address details": [
         "Adressedetaljer"
@@ -2557,6 +2578,9 @@
       "Always show username field": [
         "Vis alltid brukernavnfeltet"
       ],
+      "API Credential": [
+        "API-identifikator"
+      ],
       "Application logs": [
         "Applikasjonslogger"
       ],
@@ -2565,6 +2589,12 @@
       ],
       "Backup password": [
         "Reservepassord"
+      ],
+      "Bank Account": [
+        "Bankkonto"
+      ],
+      "Bank Name": [
+        "Banknavn"
       ],
       "Beta Access": [
         "Beta-tilgang"
@@ -2632,11 +2662,17 @@
       "Country or Region": [
         "Land eller region"
       ],
+      "Country,": [
+        "Land,"
+      ],
       "County": [
         "Fylke"
       ],
       "Create a credit card": [
         "Opprett et kredittkort"
+      ],
+      "Create a custom item": [
+        "Opprett et tilpasset element"
       ],
       "Create a hide-my-email alias": [
         "Opprett et hide-my-email-alias"
@@ -2665,14 +2701,26 @@
       "Credit cards": [
         "Kredittkort"
       ],
+      "Crypto Wallet": [
+        "Krypto-wallet"
+      ],
       "Custom hidden field": [
         "Tilpasset skjult felt"
+      ],
+      "Custom Items": [
+        "Tilpassede elementer"
       ],
       "Custom text field": [
         "Tilpasset tekstfelt"
       ],
+      "Database": [
+        "Database"
+      ],
       "Date": [
         "Dato"
+      ],
+      "Date of Birth": [
+        "Fødselsdato"
       ],
       "Device": [
         "Enhet"
@@ -2700,6 +2748,9 @@
       ],
       "Download logs": [
         "Last ned logger"
+      ],
+      "Driver License": [
+        "Førerkort"
       ],
       "Email": [
         "E-post"
@@ -2731,6 +2782,9 @@
       "Expired": [
         "Utløpt"
       ],
+      "Expiry Date": [
+        "Utløpsdato"
+      ],
       "Export": [
         "Eksporter"
       ],
@@ -2754,6 +2808,9 @@
       ],
       "File format": [
         "Filformat"
+      ],
+      "Finance": [
+        "Finans"
       ],
       "First name": [
         "Fornavn"
@@ -2815,11 +2872,17 @@
       "Highest": [
         "Høyeste"
       ],
+      "Holder Name": [
+        "Navn på innehaveren"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Hvordan låse opp ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://eksempel.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "ID-kort"
@@ -2865,6 +2928,12 @@
       ],
       "Invitations": [
         "Invitasjoner"
+      ],
+      "Issuing Authority": [
+        "Utstedende myndighet"
+      ],
+      "Issuing Country": [
+        "Utstedende land"
       ],
       "Item ID": [
         "Element ID"
@@ -2941,14 +3010,26 @@
       "max views reached": [
         "maks antall visninger nådd"
       ],
+      "Medical Record": [
+        "Medisinsk journal"
+      ],
+      "Member ID": [
+        "Medlems-ID"
+      ],
       "Members": [
         "Medlemmer"
+      ],
+      "Membership": [
+        "Medlemskap"
       ],
       "Middle name": [
         "Mellomnavn"
       ],
       "Modified": [
         "Endret"
+      ],
+      "More": [
+        "Mer"
       ],
       "More than a month": [
         "Mer enn én måned"
@@ -2959,11 +3040,17 @@
       "Name": [
         "Navn"
       ],
+      "Name (SSID)": [
+        "Navn (SSID)"
+      ],
       "Name on card": [
         "Navn på kortet"
       ],
       "Need help?": [
         "Trenger du hjelp?"
+      ],
+      "Network": [
+        "Nettverk"
       ],
       "New": [
         "Ny"
@@ -3028,11 +3115,17 @@
       "Passport number": [
         "Passnummer"
       ],
+      "Passport Number": [
+        "Passnummer"
+      ],
       "Password": [
         "Passord"
       ],
       "Password history": [
         "Passordhistorikk"
+      ],
+      "Personal": [
+        "Personlig"
       ],
       "Personal details": [
         "Personopplysninger"
@@ -3058,6 +3151,9 @@
       "Plus": [
         "Plus"
       ],
+      "Points Balance": [
+        "Poengsaldo"
+      ],
       "Prefix": [
         "Prefiks"
       ],
@@ -3067,11 +3163,23 @@
       "Priority:": [
         "Prioritet:"
       ],
+      "Private Key": [
+        "Privat nøkkel"
+      ],
+      "Private key": [
+        "Privat nøkkel"
+      ],
+      "Program Name": [
+        "Programnavn"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Beskytt ${ PASS_APP_NAME } med ett ekstra passord"
       ],
       "Public domain": [
         "Offentlig domene"
+      ],
+      "Public key": [
+        "Offentlig nøkkel"
       ],
       "Rate us": [
         "Vurder oss"
@@ -3094,6 +3202,12 @@
       "Reveal password": [
         "Avslør passord"
       ],
+      "Reward Program": [
+        "Belønningsprogram"
+      ],
+      "Routing Number": [
+        "Rutenummer"
+      ],
       "Second password": [
         "Andre passord"
       ],
@@ -3111,6 +3225,9 @@
       ],
       "See member and permission overview": [
         "Se oversikt over medlemmer og tillatelser"
+      ],
+      "Seed Phrase": [
+        "Gjenopprettingsfrase"
       ],
       "Select a domain": [
         "Velg et domene"
@@ -3136,6 +3253,9 @@
       "Selected": [
         "Valgt"
       ],
+      "Server": [
+        "Tjener"
+      ],
       "Share": [
         "Del"
       ],
@@ -3154,14 +3274,29 @@
       "Show website favicons": [
         "Vis favorittikon for nettsteder"
       ],
+      "Social Security": [
+        "Trygd"
+      ],
       "Social security": [
         "Trygd"
       ],
       "Social security number": [
         "Personnummer"
       ],
+      "Software license": [
+        "Programvarelisens"
+      ],
       "Special characters (!&*)": [
         "Spesialtegn (!&*)"
+      ],
+      "SSH key": [
+        "SSH-nøkkel"
+      ],
+      "SSH Keys": [
+        "SSH-nøkler"
+      ],
+      "SSN": [
+        "Fødselsnummer"
       ],
       "State or province": [
         "Delstat eller provins"
@@ -3187,6 +3322,9 @@
       "Support": [
         "Brukerstøtte"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Synkroniser aliaser med SimpleLogin"
       ],
@@ -3195,6 +3333,9 @@
       ],
       "Tax number": [
         "Avgiftsnummer"
+      ],
+      "Technology": [
+        "Teknologi"
       ],
       "Text": [
         "Tekst"
@@ -3210,6 +3351,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Dette elementet er tilgjengelig til ${ date } eller til visningsgrensen er nådd."
+      ],
+      "Tier/Status": [
+        "Nivå/status"
       ],
       "Title": [
         "Tittel"
@@ -3250,6 +3394,9 @@
       "Unnamed Credit Card": [
         "Ikke navngitt kredittkort"
       ],
+      "Unnamed custom item": [
+        "Tilpasset element uten navn"
+      ],
       "Unnamed identity": [
         "Ikke navngitt identitet"
       ],
@@ -3258,6 +3405,15 @@
       ],
       "Unnamed note": [
         "Ikke navngitt notat"
+      ],
+      "Unnamed SSH key": [
+        "SSH-nøkkel uten navn"
+      ],
+      "Unnamed WiFi item": [
+        "Ikke navngitt WiFi-element"
+      ],
+      "Unspecified": [
+        "Uspesifisert"
       ],
       "Untitled": [
         "Uten tittel"
@@ -3301,6 +3457,9 @@
       "Vulnerable": [
         "Sårbar"
       ],
+      "Wallet Name": [
+        "Navn på lommebok"
+      ],
       "Weak": [
         "Svak"
       ],
@@ -3312,6 +3471,12 @@
       ],
       "What's included": [
         "Hva som er inkludert"
+      ],
+      "WiFi network": [
+        "WiFi-nettverk"
+      ],
+      "WiFi Networks": [
+        "WiFi-nettverk"
       ],
       "Work details": [
         "Arbeidsdetaljer"
@@ -3543,6 +3708,9 @@
       "Add 2FA secret key": [
         "Legg til 2FA-hemmelig nøkkel"
       ],
+      "Add date": [
+        "Legg til dato"
+      ],
       "Add hidden text": [
         "Legg til skjult tekst"
       ],
@@ -3557,6 +3725,9 @@
       ],
       "Coupon": [
         "Kupong"
+      ],
+      "E.g., ": [
+        "F.eks. "
       ],
       "Email address": [
         "E-postadresse"
@@ -3588,8 +3759,8 @@
       "my-domain.com": [
         "mitt-domene.no"
       ],
-      "Name to display when sending an email": [
-        "Navn som skal vises når du sender en e-post"
+      "Name displayed in emails": [
+        "Navn vist i meldinger"
       ],
       "Note from SimpleLogin": [
         "Notat fra SimpleLogin"
@@ -3623,6 +3794,9 @@
       ],
       "Select a suffix": [
         "Velg et prefiks"
+      ],
+      "Select option": [
+        "Velg alternativ"
       ],
       "Unknown origin": [
         "Ukjent opprinnelse"
@@ -4037,6 +4211,9 @@
       "Members": [
         "Medlemmer"
       ],
+      "Minicalendar": [
+        "Minikalender"
+      ],
       "Modified": [
         "Endret"
       ],
@@ -4263,6 +4440,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er i ferd med å slette permanent ${ aliasCount } alias.",
         "Du er i ferd med å slette permanent ${ aliasCount } aliaser."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "I dag"
       ]
     },
     "Tooltip": {

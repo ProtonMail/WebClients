@@ -406,6 +406,9 @@
       "Multiple select": [
         "複数選択"
       ],
+      "Next month": [
+        "翌月"
+      ],
       "No expired links": [
         "期限切れのリンクはありません"
       ],
@@ -438,6 +441,9 @@
       ],
       "Please retry": [
         "再度お試しください"
+      ],
+      "Previous month": [
+        "前月"
       ],
       "Re-verify": [
         "再認証"
@@ -2276,6 +2282,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "SimpleLogin に ${ aliasCount } 個のエイリアスが存在しますが、 ${ PASS_APP_NAME }に見つかりませんでした。インポートしますか？"
       ],
+      "Week": [
+        "週"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "確認コードを ${ email } に送信しました。以下に入力してください。"
       ],
@@ -2475,6 +2484,9 @@
       ],
       "Additional details": [
         "その他の詳細"
+      ],
+      "Address": [
+        "メールアドレス"
       ],
       "Address details": [
         "住所の詳細"
@@ -2754,6 +2766,9 @@
       ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "個人番号カード"
@@ -3465,6 +3480,9 @@
       "Coupon": [
         "クーポン"
       ],
+      "E.g., ": [
+        "例: "
+      ],
       "Email address": [
         "メールアドレス"
       ],
@@ -3494,9 +3512,6 @@
       ],
       "my-domain.com": [
         "my-domain.com"
-      ],
-      "Name to display when sending an email": [
-        "メールを送るときに表示される名前"
       ],
       "Note from SimpleLogin": [
         "SimpleLoginからのメモ"
@@ -3935,6 +3950,9 @@
       "Members": [
         "メンバー"
       ],
+      "Minicalendar": [
+        "ミニカレンダー"
+      ],
       "Modified": [
         "更新日時"
       ],
@@ -4153,6 +4171,11 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount }個のエイリアスを完全に削除しようとしています。"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "今日"
       ]
     },
     "Tooltip": {
