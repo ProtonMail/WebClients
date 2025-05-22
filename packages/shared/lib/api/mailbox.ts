@@ -22,4 +22,5 @@ export interface MailboxItemsQueryParams {
     AutoWildcard?: number;
     Anchor?: string;
     AnchorID?: string;
+    NewsletterSubscriptionID?: string | null;
 }

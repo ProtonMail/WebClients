@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 
-import { useActiveBreakpoint, useDrawer, useModalStateObject } from '@proton/components';
+import { useActiveBreakpoint, useModalStateObject } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -10,43 +10,58 @@ import useFlag from '@proton/unleash/useFlag';
 
 import ResizableWrapper from 'proton-mail/components/list/ResizableWrapper';
 import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
+import MessageOnlyView from 'proton-mail/components/message/MessageOnlyView';
 import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
+import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
+import { MailboxToolbar } from 'proton-mail/router/components/MailboxToolbar';
 import type { MailboxActions, RouterNavigation } from 'proton-mail/router/interface';
+import { setParams } from 'proton-mail/store/elements/elementsActions';
 import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import {
     selectAllSubscriptions,
     selectTabLoadingState,
+    selectedElementId,
+    selectedSubscriptionSelector,
 } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
 import MailboxList from '../../list/MailboxList';
 import ModalOnboarding from './SubscriptionsList/ModalOnboarding';
 import { NewsletterSubscriptionListLoader } from './SubscriptionsList/NewsletterSubscriptionCardSkeleton/NewsletterSubscriptionListLoader';
 import { NewsletterSubscriptionList } from './SubscriptionsList/NewsletterSubscriptionList';
 import { NewsletterSubscriptionListPlaceholder } from './SubscriptionsList/NewsletterSubscriptionListPlaceholder';
+import { NewsletterSubscriptionListTitle } from './SubscriptionsList/NewsletterSubscriptionListTitle';
 
 import './NewsletterSubscriptionView.scss';
 
 interface NewsletterSubscriptionViewProps {
-    params?: ElementsStateParams;
-    navigation?: RouterNavigation;
     elementsData: ElementsStructure;
     actions: MailboxActions;
-    toolbar: React.ReactNode;
+    navigation: RouterNavigation;
+    params: ElementsStateParams;
 }
 
-export const NewsletterSubscriptionView = ({ elementsData, actions, toolbar }: NewsletterSubscriptionViewProps) => {
-    const newsletterSubscriptionsView = useFlag('NewsletterSubscriptionView');
+export const NewsletterSubscriptionView = ({
+    elementsData,
+    actions,
+    navigation,
+    params,
+}: NewsletterSubscriptionViewProps) => {
     const mailboxRefactoring = useFlag('MailboxRefactoring');
-
+    const newsletterSubscriptionsView = useFlag('NewsletterSubscriptionView');
     const { feature } = useFeature(FeatureCode.NewsletterSubscriptionViewOnboarding);
-    const { appInView } = useDrawer();
+
     const { resizeAreaRef } = useMailboxLayoutProvider();
     const breakpoints = useActiveBreakpoint();
+    const mailSettings = useMailModel('MailSettings');
+    const dispatch = useMailDispatch();
 
     const subscriptionsObject = useMailSelector(selectAllSubscriptions);
     const loadingSubscriptions = useMailSelector(selectTabLoadingState);
+    const activeSubscription = useMailSelector(selectedSubscriptionSelector);
+    const selectedElement = useMailSelector(selectedElementId);
 
     const onboardingModal = useModalStateObject();
 
@@ -59,6 +74,12 @@ export const NewsletterSubscriptionView = ({ elementsData, actions, toolbar }: N
     }, [feature?.Value, isDomBusy]);
 
     // The view is not availabe on mobile, we want to make sure to avoid showing it to users
+    useEffect(() => {
+        if (activeSubscription && activeSubscription.ID) {
+            dispatch(setParams({ newsletterSubscriptionID: activeSubscription.ID, conversationMode: false }));
+        }
+    }, [activeSubscription?.ID]);
+
     if (!newsletterSubscriptionsView || !mailboxRefactoring || breakpoints.viewportWidth['<=small']) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
@@ -75,14 +96,57 @@ export const NewsletterSubscriptionView = ({ elementsData, actions, toolbar }: N
                     <ResizableWrapper
                         resizeHandlePosition={ResizeHandlePosition.LEFT}
                         minWidth={320}
-                        maxRatio={appInView ? 0.3 : 0.5}
-                        className="relative"
+                        maxRatio={0.5}
+                        className="relative bg-norm"
                         resizeHandleRef={resizeAreaRef}
                         persistKey="mailSubscriptionsMailboxListWidth"
                         drawerKey="mailSubscriptionsMailboxListWidthWithDrawer"
-                        defaultRatio={0.3}
+                        defaultRatio={0.35}
                     >
-                        <MailboxList elementsData={elementsData} actions={actions} toolbar={toolbar} />
+                        {selectedElement ? (
+                            <MessageOnlyView
+                                showBackButton
+                                hidden={!selectedElement}
+                                labelID={MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL}
+                                mailSettings={mailSettings}
+                                messageID={selectedElement as string}
+                                onBack={() => dispatch(newsletterSubscriptionsActions.setSelectedElementId(undefined))}
+                                columnLayout={false}
+                                isComposerOpened={false}
+                                onMessageReady={actions.onMessageReady}
+                            />
+                        ) : (
+                            <MailboxList
+                                overrideColumnMode
+                                elementsData={elementsData}
+                                actions={{
+                                    ...actions,
+                                    handleElement: (id) => {
+                                        dispatch(newsletterSubscriptionsActions.setSelectedElementId(id));
+                                    },
+                                }}
+                                toolbar={
+                                    actions.selectedIDs.length > 0 ? (
+                                        <MailboxToolbar
+                                            params={params}
+                                            navigation={navigation}
+                                            elementsData={elementsData}
+                                            actions={actions}
+                                            /* Force the columnLayout to be false to visually align with single line toolbar*/
+                                            overrideColumnMode={false}
+                                        />
+                                    ) : (
+                                        activeSubscription && (
+                                            <NewsletterSubscriptionListTitle
+                                                activeSubscription={activeSubscription}
+                                                numMessages={elementsData.elementIDs.length}
+                                            />
+                                        )
+                                    )
+                                }
+                                noBorder
+                            />
+                        )}
                     </ResizableWrapper>
                 )}
             </div>

@@ -5,6 +5,7 @@ import { DEFAULT_SORTING } from './constants';
 
 export const selectNewsletterSubscriptions = (state: MailState) => state.newsletterSubscriptions.value;
 export const selectedTab = (state: MailState) => state.newsletterSubscriptions.value?.selectedTab;
+export const selectedElementId = (state: MailState) => selectNewsletterSubscriptions(state)?.selectedElementId;
 const selectedSubscriptionID = (state: MailState) => selectNewsletterSubscriptions(state)?.selectedSubscriptionId;
 
 export const selectAllSubscriptions = createSelector([selectNewsletterSubscriptions], (store) => {
@@ -77,6 +78,14 @@ export const selectSubscriptionsCount = (state: MailState) => {
         unsubscribe: subscriptionStore.tabs.unsubscribe.totalCount,
     };
 };
+
+export const selectedSubscriptionSelector = createSelector([selectNewsletterSubscriptions], (store) => {
+    if (!store || !store.selectedSubscriptionId) {
+        return undefined;
+    }
+
+    return store.byId[store.selectedSubscriptionId];
+});
 
 export const isSubscriptionActiveSelector = (subscriptionId: string) =>
     createSelector([selectedSubscriptionID], (selectedSub) => selectedSub === subscriptionId);

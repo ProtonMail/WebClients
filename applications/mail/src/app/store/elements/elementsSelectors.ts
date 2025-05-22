@@ -6,6 +6,7 @@ import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models
 import { type MailSettingState } from '@proton/mail/mailSettings';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
+import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 import isTruthy from '@proton/utils/isTruthy';
@@ -22,6 +23,7 @@ import {
 } from '../../helpers/elements';
 import { expectedPageLength, isPageConsecutive } from '../../helpers/paging';
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
+import { selectedSubscriptionSelector } from '../newsletterSubscriptions/newsletterSubscriptionsSelector';
 import type { MailState } from '../store';
 import { getTotal } from './helpers/elementTotal';
 
@@ -67,6 +69,7 @@ export const contextPages = createSelector([params, pages], (params, pages) => {
         begin: params.search.begin,
         end: params.search.end,
         keyword: params.search.keyword,
+        newsletterSubscriptionID: params.newsletterSubscriptionID,
     });
 
     return pages[contextFilter] || [];
@@ -84,6 +87,7 @@ export const contextTotal = createSelector([params, total], (params, total) => {
         begin: params.search.begin,
         end: params.search.end,
         keyword: params.search.keyword,
+        newsletterSubscriptionID: params.newsletterSubscriptionID,
     });
 
     return total[contextFilter];
@@ -129,6 +133,7 @@ export const elements = createSelector(
                   filter,
                   conversationMode,
                   search,
+                  newsletterSubscriptionID: params.newsletterSubscriptionID,
               })
             : [];
 
@@ -181,9 +186,10 @@ export const needsMoreElements = createSelector(
         // If there is only one page left of pageSize elements, the modulo won't work (50%50 = 0).
         // Meaning that if we have no element in the cache, the selector will be false, and we won't trigger a load
         // To avoid that, we can return the total (or pageSize, since it will be the same) to trigger a load.
-        const expectedElementsInPage =
-            page + 1 === numberOfPages ? (total % pageSize === 0 ? pageSize : total % pageSize) : pageSize;
-        return elementsLength < expectedElementsInPage;
+        if (page + 1 === numberOfPages) {
+            return elementsLength < (total % pageSize === 0 ? pageSize : total % pageSize);
+        }
+        return elementsLength < pageSize;
     }
 );
 
@@ -291,13 +297,33 @@ export const dynamicTotal = createSelector([params, currentCounts, bypassFilter]
 });
 
 /**
+ * Computed up-to-date number of elements on the current page for custom views
+ * In the future, we can include other custom views like "Attachments" or "Promotions" etc.
+ * Modify this selector to add other custom views only if we have the expected length of elements to load.
+ */
+export const customViewDynamicPageLength = createSelector(
+    [params, selectedSubscriptionSelector],
+    (params, selectedSubscription) => {
+        switch (params.labelID) {
+            case CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS:
+                return selectedSubscription?.ReceivedMessageCount;
+            default:
+                return undefined;
+        }
+    }
+);
+
+/**
  * Computed up-to-date number of elements on the current page
  * Warning: this value has been proved not to be 100% consistent
  * Has to be used only for non-sensitive behaviors
  */
 export const dynamicPageLength = createSelector(
-    [page, pageSize, dynamicTotal, params, bypassFilter],
-    (page, pageSize, dynamicTotal, params, bypassFilter) => {
+    [page, pageSize, dynamicTotal, params, bypassFilter, customViewDynamicPageLength],
+    (page, pageSize, dynamicTotal, params, bypassFilter, customViewLength) => {
+        if (customViewLength !== undefined) {
+            return customViewLength;
+        }
         if (dynamicTotal === undefined) {
             return undefined;
         }

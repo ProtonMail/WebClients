@@ -26,6 +26,8 @@ import { useGetElementParams } from './hooks/useGetElementParams';
 import { useRouterNavigation } from './hooks/useRouterNavigation';
 import { useMailboxContainerSideEffects } from './sideEffects/useMailboxContainerSideEffects';
 
+// Force deployment
+
 export const RouterMailboxContainer = () => {
     // We get most of the data here to avoid unnecessary re-renders
     const params = useMailSelector(paramsSelector);
@@ -105,18 +107,10 @@ export const RouterMailboxContainer = () => {
                         path={CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].route}
                         render={() => (
                             <NewsletterSubscriptionView
-                                params={params}
-                                navigation={navigation}
                                 elementsData={elementsData}
                                 actions={actions}
-                                toolbar={
-                                    <MailboxToolbar
-                                        params={params}
-                                        navigation={navigation}
-                                        elementsData={elementsData}
-                                        actions={actions}
-                                    />
-                                }
+                                navigation={navigation}
+                                params={params}
                             />
                         )}
                     />
