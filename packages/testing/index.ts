@@ -18,5 +18,6 @@ export * from './lib/mockUseActiveBreakpoint';
 export * from './lib/mockUseFlag';
 export * from './lib/mockUseFolders';
 export * from './lib/mockUseLabels';
+export * from './lib/mockUseOrganization';
 export * from './lib/mockUseSpotlightOnFeature';
 export * from './lib/payments';
