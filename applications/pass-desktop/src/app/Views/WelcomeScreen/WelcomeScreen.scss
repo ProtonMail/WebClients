@@ -1,11 +1,4 @@
 #desktop-lobby {
-	/* TODO: Remove after Pass light theme lands.
-		Onboarding was designed with new theme in mind,
-		so we need to override a few colors to make it 
-		look nice on the old theme (< 1.25.0) */
-	--text-norm: white;
-	--text-weak: #bfb9d8;
-
 	color: var(--text-norm);
 	background:
 		linear-gradient(0deg, rgb(31 31 49 / 0.8), rgb(31 31 49 / 0.8)),
