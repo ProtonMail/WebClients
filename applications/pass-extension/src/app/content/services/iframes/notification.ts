@@ -93,6 +93,12 @@ export const createNotification = ({ popover, onDestroy }: NotificationOptions):
         { userAction: true }
     );
 
+    iframe.registerMessageHandler(
+        IFramePortMessageType.PASSKEY_RELAY,
+        ({ payload }) => window.postMessage(payload, '*'),
+        { userAction: true }
+    );
+
     const notification: InjectedNotification = {
         close: pipe(iframe.close, () => notification),
         destroy: iframe.destroy,
