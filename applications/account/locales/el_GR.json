@@ -187,6 +187,9 @@
       "Attention required": [
         "Χρειάζεται προσοχή"
       ],
+      "Authenticate": [
+        "Ταυτοποίηση"
+      ],
       "Authenticating": [
         "Ταυτοποίηση"
       ],
@@ -195,6 +198,9 @@
       ],
       "Back": [
         "Πίσω"
+      ],
+      "Back to sign in": [
+        "Επιστροφή στη σύνδεση"
       ],
       "Block": [
         "Αποκλεισμός"
@@ -562,6 +568,9 @@
       "Edit users": [
         "Επεξεργασία χρηστών"
       ],
+      "Emoji": [
+        "Εικονίδια"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Ενεργοποίηση ${ darkWebMonitoring }"
       ],
@@ -609,6 +618,9 @@
       ],
       "Font": [
         "Γραμματοσειρά"
+      ],
+      "Forgot password?": [
+        "Ξεχάσατε τον κωδικό πρόσβασης;"
       ],
       "Forgot recovery method?": [
         "Ξεχάσατε τη μέθοδο ανάκτησης;"
@@ -1399,8 +1411,14 @@
       "Use a different payment method": [
         "Χρησιμοποιήστε διαφορετικό τρόπο πληρωμής"
       ],
+      "Use authentication code": [
+        "Χρησιμοποιήστε έναν κωδικό ελέγχου ταυτότητας"
+      ],
       "Use group sending permissions": [
         "Χρήση δικαιωμάτων αποστολής σε ομάδα"
+      ],
+      "Use recovery code": [
+        "Χρήση κωδικού ανάκτησης"
       ],
       "Use your current email instead": [
         "Χρησιμοποιήστε την τρέχουσα διεύθυνση email σας"
@@ -6183,6 +6201,9 @@
       "Please disable 2FA via security key before disabling TOTP": [
         "Απενεργοποιήστε το 2FA μέσω κλειδιού ασφαλείας πριν απενεργοποιήσετε το TOTP"
       ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
+      ],
       "Something went wrong registering your security key. Please try again.": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά την καταχώρηση του κλειδιού ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
       ]
@@ -6203,8 +6224,14 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε το κλειδί ασφαλείας ${ name };"
       ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Εισαγάγετε ένα κλειδί ασφαλείας συνδεδεμένο με τον ${ BRAND_NAME } λογαριασμό σας ."
+      ],
       "Insert your security key into your device's USB port.": [
         "Τοποθετήστε το κλειδί ασφαλείας στη θύρα USB της συσκευής σας."
+      ],
+      "Security key": [
+        "Κλειδί ασφαλείας"
       ],
       "Security key removed": [
         "Το κλειδί ασφαλείας καταργήθηκε"
@@ -6232,6 +6259,9 @@
     "fido2: Label": {
       "Key name": [
         "Όνομα κλειδιού"
+      ],
+      "Security key": [
+        "Κλειδί ασφαλείας"
       ]
     },
     "fido2: Title": {
@@ -8065,6 +8095,9 @@
       "Drop to import": [
         "Απόθεση για εισαγωγή"
       ],
+      "Each code can only be used once": [
+        "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
+      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Κάθε τομέας μπορεί να έχει μόνο μία εγγραφή SPF (TXT). Εάν θέλετε να διατηρήσετε την υπάρχουσα εγγραφή SPF (TXT), μπορείτε να προσθέσετε ${ spf } στην τρέχουσα εγγραφή σας (τοποθετήστε τη μετά το ${ spfValue })."
       ],
@@ -8167,6 +8200,9 @@
       "Enter new password for user ${ userName }.": [
         "Εισαγάγετε νέο κωδικό πρόσβασης για το χρήστη ${ userName }."
       ],
+      "Enter the code from your authenticator app": [
+        "Πληκτρολογήστε τον κωδικό από την εφαρμογή ταυτοποίησης"
+      ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Εισάγετε τον κωδικό που στάλθηκε στον αριθμό τηλεφώνου σας ${ phone }."
       ],
@@ -8185,11 +8221,17 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Εισάγετε τον κωδικό επαλήθευσης που εστάλη στο ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Εισάγετε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Εισάγετε τα στοιχεία του Λογαριασμού σας ${ BRAND_NAME }."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Εισάγετε την ηλ. διεύθυνση ή το όνομα χρήστη του λογαριασμού σας ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Εισάγετε τη διεύθυνση email ανάκτησης σας και θα σας στείλουμε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
@@ -9633,6 +9675,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Για επιβεβαίωση, παρακαλώ εισάγετε το όνομα του χρήστη που θέλετε να διαγράψετε."
       ],
+      "To continue to ${ product }": [
+        "Για συνέχιση στο ${ product }"
+      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Για τη συνεχή βελτίωση των υπηρεσιών μας, μερικές φορές συλλέγουμε δεδομένα για την παρακολούθηση της ορθής λειτουργίας των εφαρμογών μας. Αυτές οι πληροφορίες δε μοιράζονται με οποιεσδήποτε υπηρεσίες τρίτων."
       ],
@@ -9998,6 +10043,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Όταν καταργείτε έναν διακομιστή από μια πύλη, εισέρχεται σε περίοδο απενεργοποίησης 10 ημερών. Αυτός ο διακομιστής μπορεί να προστεθεί σε μια νέα πύλη, αλλά η χώρα του δεν μπορεί να αλλάξει."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Κατά την ανανέωση της συνδρομής σας, θα χρησιμοποιηθούν τυχόν διαθέσιμες πιστώσεις πριν σας χρεώσουμε με τον παραπάνω τρόπο πληρωμής."
@@ -11038,6 +11086,9 @@
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
       ],
+      "Authenticator app": [
+        "Εφαρμογή επαλήθευσης"
+      ],
       "Auto show embedded images": [
         "Αυτόματη εμφάνιση ενσωματωμένων εικόνων"
       ],
@@ -12019,6 +12070,9 @@
       ],
       "Your calendar URL": [
         "Η διεύθυνση URL του ημερολογίου σας"
+      ],
+      "Your password (admin)": [
+        "Ο κωδικός σας (διαχειριστής)"
       ],
       "Your referral link": [
         "Ο σύνδεσμος παραπομπής σας"
@@ -19039,6 +19093,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Εισαγάγετε τα στοιχεία του λογαριασμού σας ${ BRAND_NAME } για να συμμετάσχετε στο πρόγραμμα ${ app } Beta"
+      ],
+      "Enter your password": [
+        "Εισάγετε τον κωδικό πρόσβασης σας"
       ],
       "Error": [
         "Σφάλμα"

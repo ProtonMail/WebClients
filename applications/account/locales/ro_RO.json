@@ -1463,7 +1463,7 @@
         "Afișare setări de recuperare"
       ],
       "Void": [
-        "Nulă"
+        "Golire"
       ],
       "Void all recovery files": [
         "Anulare toate fișierele de recuperare"
@@ -7302,14 +7302,14 @@
         "Tehnologia de criptare ${ BRAND_NAME } semnifică faptul că nimeni nu vă poate accesa parola - nici măcar noi."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "Un calendar nou",
-        "${ calendarsToBeCreatedCount } calendare noi",
-        "${ calendarsToBeCreatedCount } de calendare noi"
+        "Calendare noi: ${ calendarsToBeCreatedCount }",
+        "Calendare noi: ${ calendarsToBeCreatedCount }",
+        "Calendare noi: ${ calendarsToBeCreatedCount }"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "Un calendar îmbinat",
-        "${ calendarsToBeMergedCount } calendare îmbinate",
-        "${ calendarsToBeMergedCount } de calendare îmbinate"
+        "Calendare îmbinate: ${ calendarsToBeMergedCount }",
+        "Calendare îmbinate: ${ calendarsToBeMergedCount }",
+        "Calendare îmbinate: ${ calendarsToBeMergedCount }"
       ],
       "${ countriesCount } country enabled": [
         "Țări activate: ${ countriesCount }",
@@ -7416,14 +7416,14 @@
         "${ PROTON_SENTINEL_NAME } vă protejează contul prin monitorizarea activității suspicioase."
       ],
       "${ providerFoldersNumLocalized } folder found": [
-        "S-a găsit un folder",
-        "S-au găsit ${ providerFoldersNumLocalized } foldere",
-        "S-au găsit ${ providerFoldersNumLocalized } de foldere"
+        "Foldere găsite: ${ providerFoldersNumLocalized }",
+        "Foldere găsite: ${ providerFoldersNumLocalized }",
+        "Foldere găsite: ${ providerFoldersNumLocalized }"
       ],
       "${ providerFoldersNumLocalized } label found in Gmail": [
-        "S-a găsit o etichetă în Gmail",
-        "S-au găsit ${ providerFoldersNumLocalized } etichete în Gmail",
-        "S-au găsit ${ providerFoldersNumLocalized } de etichete în Gmail"
+        "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }",
+        "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }",
+        "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } server este încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }.",
@@ -7493,7 +7493,7 @@
         "Trebuie ${ vpnPlus } pentru opțiunea Secure Core."
       ],
       "(${ memberCount } member)": [
-        "(Un membru)",
+        "(${ memberCount } membru)",
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
       ],
@@ -7672,12 +7672,12 @@
         "Aliniere la dreapta"
       ],
       "All (${ totalFoldersCount } folder)": [
-        "Toate (Un folder)",
+        "Toate (${ totalFoldersCount } folder)",
         "Toate (${ totalFoldersCount } foldere)",
         "Toate (${ totalFoldersCount } de foldere)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "Toate (o etichetă)",
+        "Toate (${ totalFoldersCount } etichetă)",
         "Toate (${ totalFoldersCount } etichete)",
         "Toate (${ totalFoldersCount } de etichete)"
       ],
@@ -7972,7 +7972,7 @@
         "Cod țară"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Creare un calendar",
+        "Creare ${ calendarsToBeCreatedCount } calendar",
         "Creare ${ calendarsToBeCreatedCount } calendare",
         "Creare ${ calendarsToBeCreatedCount } de calendare"
       ],
