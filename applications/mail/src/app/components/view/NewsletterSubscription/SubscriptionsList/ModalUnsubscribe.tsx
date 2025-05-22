@@ -108,8 +108,10 @@ const ModalUnsubscribe = ({ subscription, ...props }: Props) => {
             <div className="flex flex-row items-start align-center mb-2">
                 <Checkbox
                     checked={trash}
-                    disabled={archive}
-                    onChange={() => setTrash((val) => !val)}
+                    onChange={() => {
+                        setTrash((val) => !val);
+                        setArchive(false);
+                    }}
                     className="mr-2"
                     id="trash"
                 />
@@ -119,8 +121,10 @@ const ModalUnsubscribe = ({ subscription, ...props }: Props) => {
             <div className="flex flex-row items-start align-center mb-2">
                 <Checkbox
                     checked={archive}
-                    disabled={trash}
-                    onChange={() => setArchive((val) => !val)}
+                    onChange={() => {
+                        setArchive((val) => !val);
+                        setTrash(false);
+                    }}
                     className="mr-2"
                     id="archive"
                 />
