@@ -14,6 +14,17 @@ import type {
 } from './newsletterSubscriptionsActions';
 import type { NewsletterSubscriptionsStateType } from './newsletterSubscriptionsSlice';
 
+export const setSelectedElementIdReducer = (
+    state: NewsletterSubscriptionsStateType,
+    action: PayloadAction<string | undefined>
+) => {
+    if (!state.value) {
+        return;
+    }
+
+    state.value.selectedElementId = action.payload;
+};
+
 export const setSortingOrderReducer = (
     state: NewsletterSubscriptionsStateType,
     action: PayloadAction<SortSubscriptionsValue>
@@ -46,6 +57,7 @@ export const setSelectedSubscriptionReducer = (
     }
 
     state.value.selectedSubscriptionId = action.payload.ID;
+    state.value.selectedElementId = undefined;
 };
 
 export const unsubscribeSubscriptionPending = (
