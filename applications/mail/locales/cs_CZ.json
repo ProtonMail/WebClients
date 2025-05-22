@@ -9510,6 +9510,33 @@
       ],
       "Newsletters": [
         "E-mailové zpravodaje"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } zpráva označena jako přečtená.",
+        "${ count } zprávy označeny jako přečtené.",
+        "${ count } zpráv označeno jako přečtené.",
+        "${ count } zpráv označeno jako přečtené."
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } zpráva přesunuta do ${ selectedFolder.Name }.",
+        "${ count } zprávy přesunuty do ${ selectedFolder.Name }.",
+        "${ count } zpráv přesunuto do ${ selectedFolder.Name }.",
+        "${ count } zpráv přesunuto do ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } zpráva přesunuta do archivu.",
+        "${ count } zprávy přesunuty do archivu.",
+        "${ count } zpráv přesunuto do archivu.",
+        "${ count } zpráv přesunuto do archivu."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } zpráva přesunuta do koše.",
+        "${ count } zprávy přesunuty do koše.",
+        "${ count } zpráv přesunuto do koše.",
+        "${ count } zpráv přesunuto do koše."
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Odběr odhlášen z ${ truncatedName }."
       ]
     },
     "Label (begin date/advanced search)": {

@@ -8316,6 +8316,10 @@
       ],
       "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
         "A causa della configurazione del destinatario, questo messaggio non può essere inviato con una data di scadenza."
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "Abbonamento a ${ unreadCount } newsletter",
+        "Abbonamento a ${ unreadCount } newsletter"
       ]
     },
     "info": {
@@ -9216,7 +9220,26 @@
         "Il filtro è disattivato. Puoi attivarlo ${ settingsLink }"
       ],
       "Newsletters": [
-        "Newsletters"
+        "Newsletter"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } messaggio é segnato come letto.",
+        "${ count } messaggi sono segnati come letti."
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } messaggio è spostato a ${ selectedFolder.Name }.",
+        "${ count } messaggi sono spostati a ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } messaggio è spostato nell'archivio.",
+        "${ count } messaggi sono spostati nell'archivio."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } messaggio é spostato nel cestino.",
+        "${ count } messaggi sono spostati nel cestino."
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "L'abbonamento a ${ truncatedName } è annullato."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14397,7 +14420,10 @@
         "Nessun abbonamento email cancellato"
       ],
       "Newsletters": [
-        "Newsletters"
+        "Newsletter"
+      ],
+      "Newsletters view": [
+        "Vista Newsletters"
       ]
     },
     "Today icon tooltip in mini calendar": {

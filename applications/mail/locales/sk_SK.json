@@ -8591,6 +8591,9 @@
       ],
       "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
         "Z dôvodu konfigurácie príjemcu nie je možné túto správu odoslať s dátumom expirácie."
+      ],
+      "Apply to future messages": [
+        "Použiť na budúce správy"
       ]
     },
     "info": {
@@ -9498,6 +9501,33 @@
       ],
       "The filter is disabled. You can enable it ${ settingsLink }": [
         "Filter je vypnutý. Môžete ho povoliť v ${ settingsLink }"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } správa označená ako prečítaná",
+        "${ count } správy označené ako prečítané",
+        "${ count } správ označených ako prečítané",
+        "${ count } správ označených ako prečítané"
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } správa presunutá do ${ selectedFolder.Name }",
+        "${ count } správy presunuté do ${ selectedFolder.Name }",
+        "${ count } správ presunutých do ${ selectedFolder.Name }",
+        "${ count } správ presunutých do ${ selectedFolder.Name }"
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } správa presunutá do Archívu",
+        "${ count } správy presunuté do Archívu",
+        "${ count } správ presunutých do Archívu",
+        "${ count } správ presunutých do Archívu"
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } správa presunutá do Koša",
+        "${ count } správy presunuté do Koša",
+        "${ count } správ presunutých do Koša",
+        "${ count } správ presunutých do Koša"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Odber z ${ truncatedName } bol odhlásený."
       ]
     },
     "Label (begin date/advanced search)": {

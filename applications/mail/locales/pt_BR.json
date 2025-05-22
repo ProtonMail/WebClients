@@ -8312,6 +8312,13 @@
       ],
       "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
         "Devido à configuração do seu destinatário, esta mensagem não pode ser enviada com uma data de expiração."
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } assinatura de boletim informativo",
+        "${ unreadCount } assinaturas de boletim informativo"
+      ],
+      "Apply to future messages": [
+        "Aplicar para as mensagens futuras"
       ]
     },
     "info": {
@@ -9210,6 +9217,28 @@
       ],
       "Your password (admin)": [
         "Sua senha (admin)"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } mensagem foi marcada como lida.",
+        "${ count } mensagens foram marcadas como lidas."
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } mensagem foi movida para ${ selectedFolder.Name }.",
+        "${ count } mensagens foram movidas para ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } mensagem foi movida para o arquivo.",
+        "${ count } mensagens foram movidas para o arquivo."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } mensagem foi movida para a lixeira.",
+        "${ count } mensagens foram movidas para a lixeira."
+      ],
+      "Newsletters": [
+        "Boletins informativos"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "A assinatura de ${ truncatedName } foi cancelada."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14408,6 +14437,12 @@
       ],
       "No unsubscribed mail subscriptions": [
         "Sem assinaturas de e-mail canceladas"
+      ],
+      "Newsletters": [
+        "Boletins informativos"
+      ],
+      "Newsletters view": [
+        "Visão de boletins informativos"
       ]
     },
     "Today icon tooltip in mini calendar": {

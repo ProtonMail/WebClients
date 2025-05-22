@@ -9217,12 +9217,12 @@
         "Ditt passord (admin)"
       ],
       "Marked ${ count } message as read.": [
-        "Merket ${ count } melding som lest.",
-        "Merket ${ count } meldinger som lest."
+        "${ count } melding merket som lest.",
+        "${ count } meldinger merket som lest."
       ],
       "Moved ${ count } message to ${ selectedFolder.Name }.": [
-        "Flyttet ${ count } melding til ${ selectedFolder.Name }.",
-        "Flyttet ${ count } meldinger til ${ selectedFolder.Name }."
+        "${ count } melding flyttet til ${ selectedFolder.Name }.",
+        "${ count } meldinger flyttet til ${ selectedFolder.Name }."
       ],
       "Moved ${ count } message to Archive.": [
         "${ count } melding flyttet til arkivet.",
