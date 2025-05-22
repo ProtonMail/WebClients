@@ -27,7 +27,7 @@ export const NewsletterSubscriptionList = () => {
     };
 
     return (
-        <NewsletterSubscriptionListWrapper>
+        <NewsletterSubscriptionListWrapper isDisplayingPlaceholder={subscriptionList.length === 0}>
             {subscriptionList.length === 0 ? (
                 <NewsletterSubscriptionListPlaceholder />
             ) : (
