@@ -409,6 +409,9 @@
       "Multiple select": [
         "Выбар некалькіх элементаў"
       ],
+      "Next month": [
+        "Наступны месяц"
+      ],
       "No expired links": [
         "Пратэрмінаваныя спасылкі адсутнічаюць"
       ],
@@ -441,6 +444,9 @@
       ],
       "Please retry": [
         "Паспрабуйце яшчэ раз"
+      ],
+      "Previous month": [
+        "Папярэдні месяц"
       ],
       "Re-verify": [
         "Праверыць паўторна"
@@ -582,6 +588,9 @@
       ],
       "Sort vault items": [
         "Сартаваць элементы сховішча"
+      ],
+      "Start from scratch": [
+        "Пачаць з нуля"
       ],
       "Submit": [
         "Адправіць"
@@ -2372,6 +2381,9 @@
         "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?",
         "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?"
       ],
+      "Week": [
+        "Тыдзень"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Мы адправілі вам праверачны код на ${ email }. Увядзіце яго ніжэй:"
       ],
@@ -2611,6 +2623,12 @@
       "Account": [
         "Уліковы запіс"
       ],
+      "Account Number": [
+        "Нумар рахунка"
+      ],
+      "Account Type": [
+        "Тып рахунка"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Дадайце выпадковы прэфікс для дамена пры стварэнні новага псеўданіма."
       ],
@@ -2619,6 +2637,9 @@
       ],
       "Additional details": [
         "Дадатковыя падрабязнасці"
+      ],
+      "Address": [
+        "Адрас"
       ],
       "Address details": [
         "Звесткі аб адрасе"
@@ -2647,6 +2668,9 @@
       "Always show username field": [
         "Заўсёды паказваць поле імя карыстальніка"
       ],
+      "API Credential": [
+        "Уліковыя даныя API"
+      ],
       "Application logs": [
         "Журналы праграмы"
       ],
@@ -2655,6 +2679,12 @@
       ],
       "Backup password": [
         "Рэзервовы пароль"
+      ],
+      "Bank Account": [
+        "Банкаўскі рахунак"
+      ],
+      "Bank Name": [
+        "Назва банка"
       ],
       "Beta Access": [
         "Бэта-доступ"
@@ -2722,11 +2752,17 @@
       "Country or Region": [
         "Краіна або рэгіён"
       ],
+      "Country,": [
+        "Краіна,"
+      ],
       "County": [
         "Акруга"
       ],
       "Create a credit card": [
         "Стварыць крэдытную картку"
+      ],
+      "Create a custom item": [
+        "Стварыць карыстальніцкі элемент"
       ],
       "Create a hide-my-email alias": [
         "Стварыць псеўданім Hide-my-email"
@@ -2755,14 +2791,26 @@
       "Credit cards": [
         "Крэдытныя карткі"
       ],
+      "Crypto Wallet": [
+        "Крыпта-кашалёк"
+      ],
       "Custom hidden field": [
         "Карыстальніцкія схаваныя палі"
+      ],
+      "Custom Items": [
+        "Карыстальніцкія элементы"
       ],
       "Custom text field": [
         "Карыстальніцкія тэкставыя палі"
       ],
+      "Database": [
+        "База даных"
+      ],
       "Date": [
         "Дата"
+      ],
+      "Date of Birth": [
+        "Дата нараджэння"
       ],
       "Device": [
         "Прылада"
@@ -2790,6 +2838,9 @@
       ],
       "Download logs": [
         "Спампаваць журналы"
+      ],
+      "Driver License": [
+        "Пасведчанне кіроўцы"
       ],
       "Email": [
         "Электронная пошта"
@@ -2821,6 +2872,9 @@
       "Expired": [
         "Пратэрмінавана"
       ],
+      "Expiry Date": [
+        "Тэрмін дзеяння"
+      ],
       "Export": [
         "Экспартаванне"
       ],
@@ -2844,6 +2898,9 @@
       ],
       "File format": [
         "Фармат файла"
+      ],
+      "Finance": [
+        "Фінансы"
       ],
       "First name": [
         "Імя"
@@ -2905,11 +2962,17 @@
       "Highest": [
         "Найвышэйшая"
       ],
+      "Holder Name": [
+        "Імя трымальніка"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Як разблакіраваць ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://pryklad.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "Пасведчанне асобы"
@@ -2955,6 +3018,12 @@
       ],
       "Invitations": [
         "Запрашэнні"
+      ],
+      "Issuing Authority": [
+        "Орган, які выдаў"
+      ],
+      "Issuing Country": [
+        "Краіна, якая выдала"
       ],
       "Item ID": [
         "Ідэнтыфікатар элемента"
@@ -3031,14 +3100,26 @@
       "max views reached": [
         "дасягнута максімальная колькасць праглядаў"
       ],
+      "Medical Record": [
+        "Медыцынская картка"
+      ],
+      "Member ID": [
+        "Ідэнт. удзельніка"
+      ],
       "Members": [
         "Удзельнікі"
+      ],
+      "Membership": [
+        "Членства"
       ],
       "Middle name": [
         "Імя па бацьку"
       ],
       "Modified": [
         "Зменена"
+      ],
+      "More": [
+        "Больш"
       ],
       "More than a month": [
         "Больш за месяц"
@@ -3049,11 +3130,17 @@
       "Name": [
         "Назва"
       ],
+      "Name (SSID)": [
+        "Назва (SSID)"
+      ],
       "Name on card": [
         "Імя на картцы"
       ],
       "Need help?": [
         "Неабходна дапамога?"
+      ],
+      "Network": [
+        "Сетка"
       ],
       "New": [
         "Новае"
@@ -3118,11 +3205,17 @@
       "Passport number": [
         "Нумар пашпарта"
       ],
+      "Passport Number": [
+        "Нумар пашпарта"
+      ],
       "Password": [
         "Пароль"
       ],
       "Password history": [
         "Гісторыя пароляў"
+      ],
+      "Personal": [
+        "Асабісты"
       ],
       "Personal details": [
         "Асабістыя даныя"
@@ -3148,6 +3241,9 @@
       "Plus": [
         "Plus"
       ],
+      "Points Balance": [
+        "Баланс балаў"
+      ],
       "Prefix": [
         "Прэфікс"
       ],
@@ -3157,11 +3253,23 @@
       "Priority:": [
         "Прыярытэт:"
       ],
+      "Private Key": [
+        "Прыватны ключ"
+      ],
+      "Private key": [
+        "Прыватны ключ"
+      ],
+      "Program Name": [
+        "Назва праграмы"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Абарона ${ PASS_APP_NAME } з дапамогай дадатковага пароля"
       ],
       "Public domain": [
-        "Публічны дамен"
+        "публічны дамен"
+      ],
+      "Public key": [
+        "Публічны ключ"
       ],
       "Rate us": [
         "Ацаніце нас"
@@ -3184,6 +3292,12 @@
       "Reveal password": [
         "Паказаць пароль"
       ],
+      "Reward Program": [
+        "Праграма ўзнагароджання"
+      ],
+      "Routing Number": [
+        "Маршрутны нумар"
+      ],
       "Second password": [
         "Другі пароль"
       ],
@@ -3201,6 +3315,9 @@
       ],
       "See member and permission overview": [
         "Паглядзець удзельніка і дазволы"
+      ],
+      "Seed Phrase": [
+        "Seed-фраза"
       ],
       "Select a domain": [
         "Выбраць дамен"
@@ -3226,6 +3343,9 @@
       "Selected": [
         "Выбрана"
       ],
+      "Server": [
+        "Сервер"
+      ],
       "Share": [
         "Абагуліць"
       ],
@@ -3244,14 +3364,29 @@
       "Show website favicons": [
         "Паказваць піктаграмы вэб-сайтаў"
       ],
+      "Social Security": [
+        "Social security"
+      ],
       "Social security": [
         "Сацыяльнае забеспячэнне"
       ],
       "Social security number": [
         "Нумар сацыяльнага страхавання"
       ],
+      "Software license": [
+        "Ліцэнзія ПЗ"
+      ],
       "Special characters (!&*)": [
         "Спецыяльныя сімвалы (!&*)"
+      ],
+      "SSH key": [
+        "Ключ SSH"
+      ],
+      "SSH Keys": [
+        "Ключы SSH"
+      ],
+      "SSN": [
+        "Нумар сацыяльнага страхавання"
       ],
       "State or province": [
         "Вобласць або раён"
@@ -3277,6 +3412,9 @@
       "Support": [
         "Падтрымка"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Сінхранізаваць псеўданімы з SimpleLogin"
       ],
@@ -3285,6 +3423,9 @@
       ],
       "Tax number": [
         "Нумар падаткаплацельшчыка"
+      ],
+      "Technology": [
+        "Тэхналогія"
       ],
       "Text": [
         "Тэкст"
@@ -3300,6 +3441,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Доступ да гэтага элемента можна атрымаць да ${ date } або да дасягнення абмежавання па праглядзе."
+      ],
+      "Tier/Status": [
+        "Узровень/статус"
       ],
       "Title": [
         "Назва"
@@ -3340,6 +3484,9 @@
       "Unnamed Credit Card": [
         "Крэдытная картка без назвы"
       ],
+      "Unnamed custom item": [
+        "Карыстальніцкі элемент без назвы"
+      ],
       "Unnamed identity": [
         "Ідэнтычнасць без назвы"
       ],
@@ -3348,6 +3495,12 @@
       ],
       "Unnamed note": [
         "Нататка без назвы"
+      ],
+      "Unnamed SSH key": [
+        "Ключ SSH без назвы"
+      ],
+      "Unnamed WiFi item": [
+        "Элемент Wi-Fi без назвы"
       ],
       "Untitled": [
         "Без назвы"
@@ -3391,6 +3544,9 @@
       "Vulnerable": [
         "Уразлівы"
       ],
+      "Wallet Name": [
+        "Назва кашалька"
+      ],
       "Weak": [
         "Ненадзейны"
       ],
@@ -3402,6 +3558,12 @@
       ],
       "What's included": [
         "Што вы атрымаеце?"
+      ],
+      "WiFi network": [
+        "Сетка Wi-Fi"
+      ],
+      "WiFi Networks": [
+        "Сеткі Wi-Fi"
       ],
       "Work details": [
         "Звесткі аб працы"
@@ -3639,6 +3801,9 @@
       "Add 2FA secret key": [
         "Дадайце сакрэтны ключ 2ФА"
       ],
+      "Add date": [
+        "Дадаць дату"
+      ],
       "Add hidden text": [
         "Дадаць схаваны тэкст"
       ],
@@ -3653,6 +3818,9 @@
       ],
       "Coupon": [
         "Купон"
+      ],
+      "E.g., ": [
+        "Напрыклад, "
       ],
       "Email address": [
         "Адрас электроннай пошты"
@@ -3684,8 +3852,8 @@
       "my-domain.com": [
         "moi-damen.com"
       ],
-      "Name to display when sending an email": [
-        "Імя для адлюстравання пры адпраўцы ліста"
+      "Name displayed in emails": [
+        "Імя, якое адлюстроўваецца ў лістах"
       ],
       "Note from SimpleLogin": [
         "Нататка з SimpleLogin"
@@ -3719,6 +3887,9 @@
       ],
       "Select a suffix": [
         "Выберыце суфікс"
+      ],
+      "Select option": [
+        "Выбраць параметр"
       ],
       "Unknown origin": [
         "Невядомае паходжанне"
@@ -4139,6 +4310,9 @@
       "Members": [
         "Удзельнікі"
       ],
+      "Minicalendar": [
+        "Мінікаляндар"
+      ],
       "Modified": [
         "Зменена"
       ],
@@ -4375,6 +4549,11 @@
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімы.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Сёння"
       ]
     },
     "Tooltip": {

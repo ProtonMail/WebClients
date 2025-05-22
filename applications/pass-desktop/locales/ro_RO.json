@@ -415,6 +415,9 @@
       "Next": [
         "Înainte"
       ],
+      "Next month": [
+        "Luna viitoare"
+      ],
       "No expired links": [
         "Nu există legături web expirate"
       ],
@@ -450,6 +453,9 @@
       ],
       "Previous": [
         "Anteriorul"
+      ],
+      "Previous month": [
+        "Luna trecută"
       ],
       "Re-verify": [
         "Reverificare"
@@ -588,6 +594,9 @@
       ],
       "Sort vault items": [
         "Sortare articole seif"
+      ],
+      "Start from scratch": [
+        "De la început"
       ],
       "Submit": [
         "Trimitere"
@@ -2389,6 +2398,9 @@
         "Am detectat că aveți ${ aliasCount } aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le importați?",
         "Am detectat că aveți ${ aliasCount } de aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le importați?"
       ],
+      "Week": [
+        "Săptămâna"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Vi s-a trimis un cod de verificare la ${ email }. Introduceți codul primit mai jos:"
       ],
@@ -2618,6 +2630,12 @@
       "Account": [
         "Cont"
       ],
+      "Account Number": [
+        "Număr cont"
+      ],
+      "Account Type": [
+        "Tip cont"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Adăugare prefix aleatoriu pentru acest domeniu atunci când se creează un alias nou."
       ],
@@ -2626,6 +2644,9 @@
       ],
       "Additional details": [
         "Detalii suplimentare"
+      ],
+      "Address": [
+        "Adresa"
       ],
       "Address details": [
         "Detalii adresă"
@@ -2654,6 +2675,9 @@
       "Always show username field": [
         "Afișare permanentă câmp nume utilizator"
       ],
+      "API Credential": [
+        "Acreditare API"
+      ],
       "Application logs": [
         "Jurnale aplicație"
       ],
@@ -2662,6 +2686,12 @@
       ],
       "Backup password": [
         "Parola de rezervă"
+      ],
+      "Bank Account": [
+        "Cont bancar"
+      ],
+      "Bank Name": [
+        "Nume bancă"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Pe lângă stocarea autentificărilor, ${ PASS_APP_NAME } vă protejează identitatea cu o funcție integrată de alias pentru e-mail.\n\nOri de câte ori vă înscrieți pentru un nou cont online, ${ PASS_APP_NAME } poate crea automat un alias pentru a vă păstra adresa de e-mail reală protejată."
@@ -2732,11 +2762,17 @@
       "Country or Region": [
         "Țara"
       ],
+      "Country,": [
+        "Țara"
+      ],
       "County": [
         "Județ"
       ],
       "Create a credit card": [
         "Creare card de credit"
+      ],
+      "Create a custom item": [
+        "Creare articol personal"
       ],
       "Create a hide-my-email alias": [
         "Creare alias hide-my-email"
@@ -2765,14 +2801,26 @@
       "Credit cards": [
         "Carduri de plată"
       ],
+      "Crypto Wallet": [
+        "Portofel cripto"
+      ],
       "Custom hidden field": [
         "Câmp ascuns personal"
+      ],
+      "Custom Items": [
+        "Articole personale"
       ],
       "Custom text field": [
         "Câmp text personal"
       ],
+      "Database": [
+        "Baza de date"
+      ],
       "Date": [
         "Data"
+      ],
+      "Date of Birth": [
+        "Data nașterii"
       ],
       "Device": [
         "Dispozitiv"
@@ -2800,6 +2848,9 @@
       ],
       "Download logs": [
         "Descărcare jurnale"
+      ],
+      "Driver License": [
+        "Permis de conducere"
       ],
       "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
         "Partajați oricui cu ușurință informații confidențiale, chiar dacă nu utilizează ${ PASS_APP_NAME }. Puteți partaja o singură parolă, notiță sau card de plată sau mai multe articole din același folder."
@@ -2834,6 +2885,9 @@
       "Expired": [
         "Expirat"
       ],
+      "Expiry Date": [
+        "Dată expirare"
+      ],
       "Export": [
         "Exportare"
       ],
@@ -2857,6 +2911,9 @@
       ],
       "File format": [
         "Format fișier"
+      ],
+      "Finance": [
+        "Finanțe"
       ],
       "First name": [
         "Prenume"
@@ -2921,11 +2978,17 @@
       "Highest": [
         "Maximă"
       ],
+      "Holder Name": [
+        "Nume titular"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Cum se deblochează ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "Carte de identitate"
@@ -2974,6 +3037,12 @@
       ],
       "Invitations": [
         "Invitații"
+      ],
+      "Issuing Authority": [
+        "Autoritate emitentă"
+      ],
+      "Issuing Country": [
+        "Țara emitentă"
       ],
       "Item ID": [
         "ID articol"
@@ -3050,14 +3119,26 @@
       "max views reached": [
         "vizualizări maxime depășite"
       ],
+      "Medical Record": [
+        "Fișă medicală"
+      ],
+      "Member ID": [
+        "ID membru"
+      ],
       "Members": [
         "Membri"
+      ],
+      "Membership": [
+        "Apartenență"
       ],
       "Middle name": [
         "Nume mijlociu"
       ],
       "Modified": [
         "Modificat"
+      ],
+      "More": [
+        "Detalii"
       ],
       "More than a month": [
         "Mai mult de o lună"
@@ -3068,11 +3149,17 @@
       "Name": [
         "Nume"
       ],
+      "Name (SSID)": [
+        "Nume (SSID)"
+      ],
       "Name on card": [
         "Titular card"
       ],
       "Need help?": [
         "Doriți ajutor?"
+      ],
+      "Network": [
+        "Rețea"
       ],
       "Never": [
         "Niciodată"
@@ -3143,11 +3230,17 @@
       "Passport number": [
         "Număr pașaport"
       ],
+      "Passport Number": [
+        "Număr pașaport"
+      ],
       "Password": [
         "Parola"
       ],
       "Password history": [
         "Istoric parole"
+      ],
+      "Personal": [
+        "Personal"
       ],
       "Personal details": [
         "Detalii personale"
@@ -3173,6 +3266,9 @@
       "Plus": [
         "Plus"
       ],
+      "Points Balance": [
+        "Balanță puncte"
+      ],
       "Prefix": [
         "Prefix"
       ],
@@ -3182,11 +3278,23 @@
       "Priority:": [
         "Prioritate:"
       ],
+      "Private Key": [
+        "Cheie privată"
+      ],
+      "Private key": [
+        "Cheie privată"
+      ],
+      "Program Name": [
+        "Nume program"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Protejați ${ PASS_APP_NAME } cu o parolă suplimentară"
       ],
       "Public domain": [
         "Domeniu public"
+      ],
+      "Public key": [
+        "Cheie publică"
       ],
       "Rate us": [
         "Evaluați-ne"
@@ -3211,6 +3319,12 @@
       ],
       "Reveal password": [
         "Afișare parolă"
+      ],
+      "Reward Program": [
+        "Program de recompense"
+      ],
+      "Routing Number": [
+        "Număr de repartizare"
       ],
       "Second password": [
         "Parola secundară"
@@ -3239,6 +3353,9 @@
       "See member and permission overview": [
         "Afișare prezentare generală membru și permisiuni"
       ],
+      "Seed Phrase": [
+        "Fraza de bază"
+      ],
       "Select a domain": [
         "Selectare domeniu"
       ],
@@ -3262,6 +3379,9 @@
       ],
       "Selected": [
         "Selectat"
+      ],
+      "Server": [
+        "Server"
       ],
       "Share": [
         "Partajare"
@@ -3287,11 +3407,26 @@
       "Social security": [
         "Card de sănătate"
       ],
+      "Social Security": [
+        "Card de sănătate"
+      ],
       "Social security number": [
         "Cod numeric personal"
       ],
+      "Software license": [
+        "Licență program"
+      ],
       "Special characters (!&*)": [
         "Caractere speciale (!&*)"
+      ],
+      "SSH key": [
+        "Cheie SSH"
+      ],
+      "SSH Keys": [
+        "Chei SSH"
+      ],
+      "SSN": [
+        "Număr asigurări de sănătate"
       ],
       "State or province": [
         "Județul"
@@ -3317,6 +3452,9 @@
       "Support": [
         "Asistență"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Sincronizare aliasuri cu SimpleLogin"
       ],
@@ -3325,6 +3463,9 @@
       ],
       "Tax number": [
         "Număr identificare fiscală"
+      ],
+      "Technology": [
+        "Tehnologie"
       ],
       "Text": [
         "Text"
@@ -3340,6 +3481,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Acest articol este disponibil până la ${ date } sau până când este atinsă limita de vizualizări."
+      ],
+      "Tier/Status": [
+        "Rang/Stare"
       ],
       "Title": [
         "Titlu"
@@ -3383,6 +3527,9 @@
       "Unnamed Credit Card": [
         "Card de credit nedenumit"
       ],
+      "Unnamed custom item": [
+        "Articol personal nenumit"
+      ],
       "Unnamed identity": [
         "Identitate nedenumită"
       ],
@@ -3391,6 +3538,15 @@
       ],
       "Unnamed note": [
         "Notiță fără nume"
+      ],
+      "Unnamed SSH key": [
+        "Cheie SSH fără nume"
+      ],
+      "Unnamed WiFi item": [
+        "Articol Wi-Fi fără nume"
+      ],
+      "Unspecified": [
+        "Nespecificat(ă)"
       ],
       "Untitled": [
         "Fără nume"
@@ -3434,6 +3590,9 @@
       "Vulnerable": [
         "Vulnerabilă"
       ],
+      "Wallet Name": [
+        "Nume portofel"
+      ],
       "Weak": [
         "Slabă"
       ],
@@ -3445,6 +3604,12 @@
       ],
       "What's included": [
         "Ce este inclus"
+      ],
+      "WiFi network": [
+        "Rețea Wi-Fi"
+      ],
+      "WiFi Networks": [
+        "Rețele Wi-Fi"
       ],
       "Work details": [
         "Detalii loc de muncă"
@@ -3693,6 +3858,9 @@
       "Add 2FA secret key": [
         "Adăugare cheie secretă A2F"
       ],
+      "Add date": [
+        "Adăugare dată"
+      ],
       "Add hidden text": [
         "Adăugare text ascuns"
       ],
@@ -3707,6 +3875,9 @@
       ],
       "Coupon": [
         "Cupon"
+      ],
+      "E.g., ": [
+        "Ex.: "
       ],
       "Email address": [
         "Adresă e-mail"
@@ -3738,8 +3909,8 @@
       "my-domain.com": [
         "domeniul-meu.com"
       ],
-      "Name to display when sending an email": [
-        "Numele de afișat când se trimite un mesaj"
+      "Name displayed in emails": [
+        "Nume afișat în mesaje"
       ],
       "Note from SimpleLogin": [
         "Notiță din SimpleLogin"
@@ -3773,6 +3944,9 @@
       ],
       "Select a suffix": [
         "Selectați un sufix"
+      ],
+      "Select option": [
+        "Selectare opțiune"
       ],
       "Unknown origin": [
         "Origine necunoscută"
@@ -4190,6 +4364,9 @@
       "Members": [
         "Membri"
       ],
+      "Minicalendar": [
+        "Minicalendar"
+      ],
       "Modified": [
         "Modificat"
       ],
@@ -4421,6 +4598,11 @@
         "Urmează să ștergeți definitiv ${ aliasCount } alias.",
         "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
         "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Astăzi"
       ]
     },
     "Tooltip": {

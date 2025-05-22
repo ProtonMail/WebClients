@@ -398,6 +398,9 @@
       "Multiple select": [
         "Monivalinta"
       ],
+      "Next month": [
+        "Seuraava kuukausi"
+      ],
       "No expired links": [
         "Erääntyneitä linkkejä ei ole"
       ],
@@ -427,6 +430,9 @@
       ],
       "Please retry": [
         "Yritä uudelleen"
+      ],
+      "Previous month": [
+        "Edellinen kuukausi"
       ],
       "Re-verify": [
         "Vahvista uudelleen"
@@ -2220,6 +2226,9 @@
         "Havaitsimme, että sinulla on SimpleLoginissa ${ aliasCount } alias, joka puuttuu ${ PASS_APP_NAME }ista. Haluaisitko tuoda sen?",
         "Havaitsimme, että sinulla on SimpleLoginissa ${ aliasCount } aliasta, jotka puuttuvat ${ PASS_APP_NAME }ista. Haluaisitko tuoda ne?"
       ],
+      "Week": [
+        "Viikko"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Osoitteeseen ${ email } on lähetetty vahvistuskoodi. Syötä se alle:"
       ],
@@ -2426,6 +2435,9 @@
       "Additional details": [
         "Lisätiedot"
       ],
+      "Address": [
+        "Osoite"
+      ],
       "Address details": [
         "Osoitetiedot"
       ],
@@ -2570,6 +2582,9 @@
       "Custom text field": [
         "Mukautettu tekstikenttä"
       ],
+      "Date": [
+        "Päiväys"
+      ],
       "Device": [
         "Laite"
       ],
@@ -2677,6 +2692,9 @@
       ],
       "https://example.com": [
         "https://esimerkki.fi"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "Henkilökortti"
@@ -3338,6 +3356,9 @@
       "Coupon": [
         "Etukoodi"
       ],
+      "E.g., ": [
+        "Esim. "
+      ],
       "Email address": [
         "Sähköpostiosoite"
       ],
@@ -3367,9 +3388,6 @@
       ],
       "my-domain.com": [
         "oma-verkkotunnus.fi"
-      ],
-      "Name to display when sending an email": [
-        "Nimi, joka näytetään sähköpostia lähetettäessä"
       ],
       "Note from SimpleLogin": [
         "Muistiinpano SimpleLogista"
@@ -3765,6 +3783,9 @@
       "Members": [
         "Jäsenet"
       ],
+      "Minicalendar": [
+        "Pienoiskalenteri"
+      ],
       "Modified": [
         "Muokattu"
       ],
@@ -3945,6 +3966,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Olet poistamassa ${ aliasCount } aliaksen pysyvästi.",
         "Olet poistamassa ${ aliasCount } aliasta pysyvästi."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Tänään"
       ]
     },
     "Validation": {

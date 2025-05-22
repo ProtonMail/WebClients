@@ -6075,6 +6075,9 @@
       "${ trackersCount } tracker blocked": [
         "${ trackersCount } pelacak diblokir"
       ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } langganan buletin"
+      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } pesan terjadwal"
       ],
@@ -6243,8 +6246,8 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Seluruh subfolder yang ada juga akan dihapus. Meskipun demikian, seluruh email yang tersimpan pada folder ${ nameDeleted } tidak akan dihapus dan tetap akan dapat ditemukan pada folder Semua Surat."
       ],
-      "Apply to future messages ": [
-        "Terapkan ke pesan yang akan mendatang "
+      "Apply to future messages": [
+        "Terapkan ke pesan yang akan datang"
       ],
       "Applying actions to conversations": [
         "Menerapkan tindakan pada percakapan"
@@ -8779,9 +8782,6 @@
       "Mail Server (IMAP)": [
         "Server Mail (IMAP)"
       ],
-      "Mail subscriptions": [
-        "Langganan email"
-      ],
       "Main": [
         "Utama"
       ],
@@ -8793,6 +8793,9 @@
       ],
       "Mark as": [
         "Tandai sebagai"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } pesan ditandai sebagai telah dibaca."
       ],
       "Move ${ sidebarElementName }": [
         "Pindahkan ${ sidebarElementName }"
@@ -8809,6 +8812,15 @@
       "Move to Inbox": [
         "Pindahkan ke Kotak masuk"
       ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } pesan dipindahkan ke ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } pesan dipindahkan ke Arsip."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } pesan dipindahkan ke Sampah."
+      ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Kata sandi harus mengandung setidaknya ${ MIN_PASSWORD_LENGTH } karakter"
       ],
@@ -8820,6 +8832,9 @@
       ],
       "New password": [
         "Kata sandi baru"
+      ],
+      "Newsletters": [
+        "Buletin"
       ],
       "No label found": [
         "Tidak ada label yang ditemukan"
@@ -9000,6 +9015,9 @@
       ],
       "Unsafe or problematic": [
         "Tidak aman atau bermasalah"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Langganan ${ truncatedName } dihentikan."
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -13629,12 +13647,6 @@
       "Load remote content": [
         "Muat konten eksternal"
       ],
-      "Mail Subscriptions": [
-        "Langganan email"
-      ],
-      "Mail subscriptions": [
-        "Langganan email"
-      ],
       "Make a secure connection your default": [
         "Jadikan koneksi yang aman sebagai koneksi bawaan Anda"
       ],
@@ -13739,6 +13751,12 @@
       ],
       "New message": [
         "Pesan baru"
+      ],
+      "Newsletters": [
+        "Buletin"
+      ],
+      "Newsletters view": [
+        "Tampilan buletin"
       ],
       "Next conversation": [
         "Percakapan selanjutnya"
