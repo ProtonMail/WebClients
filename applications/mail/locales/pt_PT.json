@@ -6165,6 +6165,10 @@
         "${ trackersCount } rastreador bloqueado",
         "${ trackersCount } rastreadores bloqueados"
       ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } subscrição de boletim informativo",
+        "${ unreadCount } subscrições de boletim informativo"
+      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } mensagem agendada",
         "${ unreadCount } mensagens agendadas"
@@ -6341,8 +6345,8 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Quaisquer subpastas também serão eliminadas. No entanto, os e-mails armazenados na pasta ${ nameDeleted } não serão eliminados e poderão ser encontrados na pasta Todo o correio."
       ],
-      "Apply to future messages ": [
-        "Aplicar às futuras mensagens "
+      "Apply to future messages": [
+        "Aplicar às mensagens futuras"
       ],
       "Applying actions to conversations": [
         "A aplicar as ações às conversas"
@@ -8921,9 +8925,6 @@
       "Mail Server (IMAP)": [
         "Servidor de e-mail (IMAP)"
       ],
-      "Mail subscriptions": [
-        "Subscrições de e-mails"
-      ],
       "Main": [
         "Principal"
       ],
@@ -8935,6 +8936,10 @@
       ],
       "Mark as": [
         "Marcar como"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count } mensagem foi marcada como lida.",
+        "${ count } mensagens foram marcadas como lidas."
       ],
       "Move ${ sidebarElementName }": [
         "Mover ${ sidebarElementName }"
@@ -8951,6 +8956,18 @@
       "Move to Inbox": [
         "Mover para Caixa de entrada"
       ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } mensagem foi movida para ${ selectedFolder.Name }.",
+        "${ count } mensagens foram movidas para ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } mensagem foi movida para o arquivo.",
+        "${ count } mensagens foram movidas para o arquivo."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } mensagem foi movida para o lixo.",
+        "${ count } mensagens foram movidas para o lixo."
+      ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Deve conter pelo menos ${ MIN_PASSWORD_LENGTH } carateres"
       ],
@@ -8962,6 +8979,9 @@
       ],
       "New password": [
         "Nova palavra-passe"
+      ],
+      "Newsletters": [
+        "Boletins informativos"
       ],
       "No label found": [
         "Nenhuma etiqueta encontrada"
@@ -9142,6 +9162,9 @@
       ],
       "Unsafe or problematic": [
         "Inseguro ou problemático"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "A subscrição de ${ truncatedName } foi cancelada."
       ],
       "Upload picture": [
         "Enviar imagem"
@@ -13890,12 +13913,6 @@
       "Load remote content": [
         "Carregar o conteúdo remoto"
       ],
-      "Mail Subscriptions": [
-        "Subscrições de e-mails"
-      ],
-      "Mail subscriptions": [
-        "Subscrições de e-mails"
-      ],
       "Make a secure connection your default": [
         "Escolha uma ligação segura como opção predeterminada"
       ],
@@ -14000,6 +14017,12 @@
       ],
       "New message": [
         "Nova mensagem"
+      ],
+      "Newsletters": [
+        "Boletins informativos"
+      ],
+      "Newsletters view": [
+        "Visualização de boletins informativos"
       ],
       "Next conversation": [
         "Conversa seguinte"

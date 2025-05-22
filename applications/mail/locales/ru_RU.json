@@ -153,6 +153,9 @@
       "Attention required": [
         "Требуется внимание"
       ],
+      "Authenticate": [
+        "Аутентификация"
+      ],
       "Auto-delete spam and trash": [
         "Автоматическое удаление спама и сообщений в корзине"
       ],
@@ -477,6 +480,9 @@
       "Email settings": [
         "Настройки электронной почты"
       ],
+      "Emoji": [
+        "Смайлики"
+      ],
       "Enable": [
         "Включить"
       ],
@@ -542,6 +548,9 @@
       ],
       "Font": [
         "Шрифт"
+      ],
+      "Forgot password?": [
+        "Забыли пароль?"
       ],
       "Formalize": [
         "Формализовать"
@@ -1479,8 +1488,14 @@
       "Use a different payment method": [
         "Использовать другой способ оплаты"
       ],
+      "Use authentication code": [
+        "Использовать код аутентификации"
+      ],
       "Use for sending": [
         "Использовать для отправки"
+      ],
+      "Use recovery code": [
+        "Использовать код восстановлени"
       ],
       "Use this": [
         "Использовать"
@@ -5315,6 +5330,24 @@
         "Неограниченное количество псевдонимов hide-my-email"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Произошла ошибка при аутентификации с помощью ключа безопасности. Попробуйте снова."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Вставьте ключ безопасности, привязанный к аккаунту ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Ключ безопасности"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ безопасности"
+      ]
+    },
     "file size format": {
       "byte": [
         "байт",
@@ -6646,9 +6679,6 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Все вложенные папки также будут удалены. Однако письма из папки ${ nameDeleted } не будут удалены и могут быть найдены в папке Всей почты."
       ],
-      "Apply to future messages ": [
-        "Применить к будущим сообщениям "
-      ],
       "Applying actions to conversations": [
         "Применение действий к цепочкам писем"
       ],
@@ -7047,6 +7077,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введите свой пароль как администратора организации."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Оставшееся время: ${ estimatedMinutes } минута",
@@ -8353,6 +8386,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Когда вы сделали активными доверенные ключи для ${ senderName }, эти открытые ключи были добавлены к контактным данным."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "При настройке двухфакторной аутентификации, мы предоставляем коды восстановления для входа в аккаунт, если вы потеряете доступ к приложению аутентификатора."
+      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Когда вы подписываетесь на рассылку, используйте псевдоним вместо своего адреса электронной почты. Ваши личные данные остаются скрытыми, и отключить псевдоним можно в любое время."
       ],
@@ -9301,9 +9337,6 @@
       ],
       "Mail Server (IMAP)": [
         "Почтовый сервер (IMAP)"
-      ],
-      "Mail subscriptions": [
-        "Подписки"
       ],
       "Main": [
         "Главная"
@@ -14392,6 +14425,9 @@
       "Enter 2FA code": [
         "Введите код двухфакторной аутентификации"
       ],
+      "Enter your password": [
+        "Введите пароль"
+      ],
       "Error": [
         "Ошибка"
       ],
@@ -14505,12 +14541,6 @@
       ],
       "Load remote content": [
         "Загрузить внешнее содержимое"
-      ],
-      "Mail Subscriptions": [
-        "Подписки"
-      ],
-      "Mail subscriptions": [
-        "Подписки"
       ],
       "Make a secure connection your default": [
         "Сделайте защищенное подключение вашим подключением по умолчанию"

@@ -1435,10 +1435,10 @@
         "Прыбраць зорачку"
       ],
       "Unsubscribe": [
-        "Скасаваць падпіску"
+        "Адпісацца"
       ],
       "Unsubscribed": [
-        "Падпіска скасавана"
+        "Адпісаны"
       ],
       "Unsubscribing": [
         "Скасаванне падпіскі"
@@ -6345,6 +6345,12 @@
         "Заблакіраваны ${ trackersCount } праграм сачэння",
         "Заблакіраваны ${ trackersCount } праграм сачэння"
       ],
+      "${ unreadCount } newsletter subscription": [
+        "Падпіска на ${ unreadCount } рассылку",
+        "Падпіска на ${ unreadCount } рассылкі",
+        "Падпіска на ${ unreadCount } рассылак",
+        "Падпіска на ${ unreadCount } рассылак"
+      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } запланаванае паведамленне",
         "${ unreadCount } запланаваныя паведамленні",
@@ -6406,7 +6412,7 @@
         "Нумар тэлефона можа быць выкарыстаны для праверкі аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
-        "Запыт на скасаванне падпіскі на гэты спіс рассылкі будзе адпраўлены адпраўніку інфармацыйнай рассылкі і апрацаваны аўтаматычна."
+        "Запыт на скасаванне падпіскі на гэты спіс рассылкі будзе адпраўлены адпраўніку рассылкі і апрацаваны аўтаматычна."
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Бяспечнае падключэнне вельмі важна пры аддаленай працы. VPN абараняе даныя кампаніі ад кіберпагроз і захоўвае прыватнасць вашай працы."
@@ -6537,8 +6543,8 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Любыя падпапкі будуць выдалены таксама. Аднак лісты, якія захаваны ў папцы ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў папцы \"Уся пошта\"."
       ],
-      "Apply to future messages ": [
-        "Ужыць да будучых паведамленняў "
+      "Apply to future messages": [
+        "Ужыць да будучых паведамленняў"
       ],
       "Applying actions to conversations": [
         "Ужыць дзеянні да размоў"
@@ -8026,10 +8032,10 @@
         "Вы можаце перайсці на платны тарыфны план, каб зняць абмежаванне."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "Для таго, каб скасаваць падпіску на гэту рассылку ад ${ boldFrom }, вам будзе накіраваны ліст з наступнымі падрабязнасцямі, якія вызначаюцца адпраўніком інфармацыйнай рассылкі:"
+        "Для таго, каб скасаваць падпіску на гэту рассылку ад ${ boldFrom }, вам будзе накіраваны ліст з наступнымі падрабязнасцямі, якія вызначаюцца адпраўніком рассылкі:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
-        "Для таго, каб скасаваць падпіску на спіс рассылкі, мы перанакіруем вас на наступны URL-адрас, дзе вы атрымаеце інструкцыі ад адпраўніка інфармацыйнай рассылкі:"
+        "Для таго, каб скасаваць падпіску на спіс рассылкі, мы перанакіруем вас на наступны URL-адрас, дзе вы атрымаеце інструкцыі ад адпраўніка рассылкі:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Для таго, каб выкарыстоўваць праверку адраса вы павінны давяраць аднаму або некалькім з даступных публічных ключоў, уключаючы той, які вы хочаце выкарыстоўваць для адпраўкі. Гэта прадухіляе падробку ключоў шыфравання."
@@ -8257,7 +8263,7 @@
         "Вы атрымаеце коды аднаўлення падчас наладжвання двухфактарнай аўтэнтыфікацыі. Імі можна будзе скарыстацца для ўваходу пры страце доступу да праграмы аўтэнтыфікацыі."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
-        "Выкарыстоўвайце псеўданімы замест свайго адраса электроннай пошты пры падпісцы на навіны. Ваша ідэнтычнасць застанецца схаванай, а псеўданім вы можаце адключыць у любы момант."
+        "Выкарыстоўвайце псеўданімы замест свайго адраса электроннай пошты пры падпісцы на рассылку. Ваша ідэнтычнасць застанецца схаванай, а псеўданім вы можаце адключыць у любы момант."
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Падключайцеся да ${ VPN_APP_NAME }, каб прадухіліць адсочванне вашай актыўнасці ў інтэрнэце або крадзеж вашых даных падчас падарожжаў або выкарыстання публічных сетак Wi-Fi. Гэта абсалютна бясплатна."
@@ -9205,9 +9211,6 @@
       "Mail Server (IMAP)": [
         "Паштовы сервер (IMAP)"
       ],
-      "Mail subscriptions": [
-        "Падпіскі пошты"
-      ],
       "Main": [
         "Галоўная"
       ],
@@ -9219,6 +9222,12 @@
       ],
       "Mark as": [
         "Пазначыць як"
+      ],
+      "Marked ${ count } message as read.": [
+        "Пазначана ${ count } паведамленне як прачытанае.",
+        "Пазначаны ${ count } паведамленні як прачытаныя.",
+        "Пазначана ${ count } паведамленняў як прачытаныя.",
+        "Пазначана ${ count } паведамленняў як прачытаныя."
       ],
       "Move ${ sidebarElementName }": [
         "Перамясціць ${ sidebarElementName }"
@@ -9235,6 +9244,24 @@
       "Move to Inbox": [
         "Перамясціць ва Уваходныя"
       ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "Перамешчана ${ count } паведамленне ў папку ${ selectedFolder.Name }.",
+        "Перамешчаны ${ count } паведамленні ў папку ${ selectedFolder.Name }.",
+        "Перамешчаны ${ count } паведамленняў у папку ${ selectedFolder.Name }.",
+        "Перамешчаны ${ count } паведамленняў у папку ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "Перамешчана ${ count } паведамленне ў архіў.",
+        "Перамешчаны ${ count } паведамленні ў архіў.",
+        "Перамешчаны ${ count } паведамленняў у архіў.",
+        "Перамешчаны ${ count } паведамленняў у архіў."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "Перамешчана ${ count } паведамленне ў сметніцу.",
+        "Перамешчаны ${ count } паведамленні ў сметніцу.",
+        "Перамешчаны ${ count } паведамленняў у сметніцу.",
+        "Перамешчаны ${ count } паведамленняў у сметніцу."
+      ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Пароль павінен мець прынамсі ${ MIN_PASSWORD_LENGTH } сімвалы(аў)"
       ],
@@ -9246,6 +9273,9 @@
       ],
       "New password": [
         "Новы пароль"
+      ],
+      "Newsletters": [
+        "Рассылкі"
       ],
       "No label found": [
         "Метка не знойдзена"
@@ -9427,6 +9457,9 @@
       "Unsafe or problematic": [
         "Небяспечны або праблематычны"
       ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Адпісаны ад ${ truncatedName }."
+      ],
       "Upload picture": [
         "Запампаваць малюнак"
       ],
@@ -9551,10 +9584,10 @@
     },
     "Labels": {
       "Newsletters you unsubscribe from will appear here.": [
-        "Скасаваныя вамі інфармацыйныя рассылкі з'явяцца тут."
+        "Скасаваныя вамі рассылкі з'явяцца тут."
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
-        "Праглядайце і кіруйце інфармацыйнай рассылкай і падпіскамі спіса рассылкі ў гэтым месцы."
+        "Праглядайце і кіруйце рассылкай і падпіскамі спіса рассылкі ў гэтым месцы."
       ]
     },
     "Landmarks": {
@@ -14412,12 +14445,6 @@
       "Load remote content": [
         "Загрузіць аддаленае змесціва"
       ],
-      "Mail Subscriptions": [
-        "Падпіскі пошты"
-      ],
-      "Mail subscriptions": [
-        "Падпіскі пошты"
-      ],
       "Make a secure connection your default": [
         "Зрабіце бяспечнае падключэнне сваім прадвызначаным"
       ],
@@ -14522,6 +14549,12 @@
       ],
       "New message": [
         "Новае паведамленне"
+      ],
+      "Newsletters": [
+        "Рассылкі"
+      ],
+      "Newsletters view": [
+        "Прагляд рассылкі"
       ],
       "Next conversation": [
         "Наступная размова"
@@ -14809,7 +14842,7 @@
         "Скасаваць падпіску"
       ],
       "Unsubscribe from ${ subscription.Name }?": [
-        "Скасаваць падпіску на ${ subscription.Name }?"
+        "Адпісацца ад ${ subscription.Name }?"
       ],
       "Unsubscribe request sent": [
         "Запыт на скасаванне падпіскі адпраўлены"

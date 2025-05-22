@@ -544,7 +544,7 @@
         "Tipo de letra"
       ],
       "Forgot password?": [
-        "¿Contraseña olvidada?"
+        "¿Olvidaste tu contraseña?"
       ],
       "Formalize": [
         "Formal"
@@ -1112,7 +1112,7 @@
         "Restablecer valores por defecto"
       ],
       "Resize panel": [
-        "Cambiar el tamaño del panel"
+        "Cambia el tamaño del panel"
       ],
       "Restore": [
         "Restaurar"
@@ -6308,6 +6308,10 @@
         "${ trackersCount } rastreador bloqueado",
         "${ trackersCount } rastreadores bloqueados"
       ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } suscripción de boletín",
+        "${ unreadCount } suscripciones de boletines"
+      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } mensaje programado",
         "${ unreadCount } mensajes programados"
@@ -6484,8 +6488,8 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Las subcarpetas también se eliminarán. Sin embargo, los correos electrónicos almacenados en la carpeta ${ nameDeleted } no se eliminarán y se pueden encontrar en la carpeta Todos los mensajes."
       ],
-      "Apply to future messages ": [
-        "Aplicar a los mensajes futuros "
+      "Apply to future messages": [
+        "Aplicar a los mensajes futuros"
       ],
       "Applying actions to conversations": [
         "Aplicando acciones a las conversaciones"
@@ -9067,9 +9071,6 @@
       "Mail Server (IMAP)": [
         "Servidor de correo (IMAP)"
       ],
-      "Mail subscriptions": [
-        "Suscripciones de Mail"
-      ],
       "Main": [
         "Principal"
       ],
@@ -9081,6 +9082,10 @@
       ],
       "Mark as": [
         "Marcar como"
+      ],
+      "Marked ${ count } message as read.": [
+        "Se marcó ${ count } mensaje como leído.",
+        "Se marcaron ${ count } mensajes como leídos."
       ],
       "Move ${ sidebarElementName }": [
         "Mover ${ sidebarElementName }"
@@ -9097,6 +9102,18 @@
       "Move to Inbox": [
         "Mover al buzón"
       ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "Se movió ${ count } mensaje a ${ selectedFolder.Name }.",
+        "Se movieron ${ count } mensajes a ${ selectedFolder.Name }"
+      ],
+      "Moved ${ count } message to Archive.": [
+        "Se movió ${ count } mensaje al Archivo.",
+        "Se movieron ${ count } mensajes al Archivo."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "Se movió ${ count } mensaje a la Papelera.",
+        "Se movieron ${ count } mensajes a la Papelera."
+      ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
       ],
@@ -9108,6 +9125,9 @@
       ],
       "New password": [
         "Contraseña nueva"
+      ],
+      "Newsletters": [
+        "Boletines informativos"
       ],
       "No label found": [
         "Ninguna etiqueta encontrada"
@@ -9288,6 +9308,9 @@
       ],
       "Unsafe or problematic": [
         "No seguro o problemático"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Se canceló la suscripción de ${ truncatedName }."
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -12654,7 +12677,7 @@
         "Para seguir utilizando los productos de ${ BRAND_NAME }, libere espacio o ${ upgrade }"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Para enviar o recibir correos, libere espacio o ${ upgrade }"
+        "Para enviar o recibir más correos, libere espacio o ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Para enviar o recibir correos, libere espacio o mejore para obtener más almacenamiento."
@@ -14042,12 +14065,6 @@
       "Load remote content": [
         "Cargar contenido remoto"
       ],
-      "Mail Subscriptions": [
-        "Suscripciones de Mail"
-      ],
-      "Mail subscriptions": [
-        "Suscripciones de Mail"
-      ],
       "Make a secure connection your default": [
         "Elija una conexión segura como opción predeterminada"
       ],
@@ -14152,6 +14169,12 @@
       ],
       "New message": [
         "Mensaje nuevo"
+      ],
+      "Newsletters": [
+        "Boletines informativos"
+      ],
+      "Newsletters view": [
+        "Vista de boletines"
       ],
       "Next conversation": [
         "Conversación siguiente"
