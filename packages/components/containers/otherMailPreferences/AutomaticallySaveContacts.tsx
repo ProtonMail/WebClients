@@ -15,8 +15,9 @@ const AutomaticallySaveContacts = () => {
     return (
         <SettingsLayout>
             <SettingsLayoutLeft>
-                <span className="mr-2 text-semibold" role="heading" aria-level={2}>{c('Label')
-                    .t`Automatically save contacts`}</span>
+                <label htmlFor="saveContactToggle">
+                    <span className="mr-2 text-semibold">{c('Label').t`Automatically save contacts`}</span>
+                </label>
                 <Info url={getKnowledgeBaseUrl('/autosave-contact-list')} />
             </SettingsLayoutLeft>
             <SettingsLayoutRight isToggleContainer>
