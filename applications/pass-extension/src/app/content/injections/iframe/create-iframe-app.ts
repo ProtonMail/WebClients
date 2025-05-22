@@ -28,8 +28,7 @@ import { WorkerMessageType } from '@proton/pass/types';
 import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';
 import { pixelEncoder } from '@proton/pass/utils/dom/computed-styles';
 import { createElement } from '@proton/pass/utils/dom/create-element';
-import { POPOVER_SUPPORTED, TopLayerManager } from '@proton/pass/utils/dom/popover';
-import { eq } from '@proton/pass/utils/fp/predicates';
+import { TopLayerManager } from '@proton/pass/utils/dom/popover';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -83,20 +82,6 @@ export const createIFrameApp = <A>({
     const checkStale = withContext<() => boolean>((ctx) => Boolean(ctx?.getState().stale));
     const ensureLoaded = () => waitUntil({ check: () => state.loaded, cancel: checkStale }, 50);
     const ensureReady = () => waitUntil({ check: () => state.ready, cancel: checkStale }, 50);
-
-    /** Ensures the current action is trusted by verifying it's initiated from the
-     * topmost UI layer. This prevents popover clickjacking attacks where malicious
-     * sites could use `pointer-events: none` to bypass standard detection methods
-     * (`elementsAtPoint` doesn't detect elements with `pointer-events: none`). */
-    const ensureTrustedAction = (): boolean => {
-        if (POPOVER_SUPPORTED) {
-            const popovers = TopLayerManager.elements;
-            const rootIdx = popovers.findIndex(eq<HTMLElement>(popover.root.customElement));
-            if (rootIdx !== popovers.length - 1) return false;
-        }
-
-        return true;
-    };
 
     const listeners = createListenerStore();
     const activeListeners = createListenerStore();
@@ -153,8 +138,9 @@ export const createIFrameApp = <A>({
             if (message?.type === type && message.sender === id) {
                 /** If the message handler is a result of an iframe user-action,
                  * validate the action against potential click-jacking attacks */
-                if (!options?.userAction || ensureTrustedAction()) handler(message as IFrameMessageWithSender<M>);
-                else logger.warn(`[IFrame::${id}] Untrusted user action`);
+                if (!options?.userAction || TopLayerManager.ensureTopLevel(popover.root.customElement)) {
+                    handler(message as IFrameMessageWithSender<M>);
+                } else logger.warn(`[IFrame::${id}] Untrusted user action`);
             }
         };
 
