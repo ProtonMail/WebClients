@@ -245,16 +245,34 @@ export const getLocationElementsCount = (
 
 export const matchFrom = (element: Element, fromInput: string) => {
     const senders = getSenders(element);
-    return senders.some((sender) =>
-        canonicalizeEmailByGuess(sender?.Address || '').includes(canonicalizeEmailByGuess(fromInput))
-    );
+    const cleanedInput = fromInput.toLowerCase();
+    return senders.some((sender) => {
+        const senderAddress = (sender?.Address || '').toLowerCase();
+        const senderName = (sender?.Name || '').toLowerCase();
+        // We have to match "sender+alias@protonmail.com" with "sender@alias.com" as search input. So we need to canonicalize the email
+        // However, we also need to match "sender+alias@protonmail.com" with "alias" search input. So we need to check that the search input is included in the sender
+        return (
+            canonicalizeEmailByGuess(senderAddress).includes(canonicalizeEmailByGuess(cleanedInput)) ||
+            senderAddress.includes(cleanedInput) ||
+            senderName.includes(cleanedInput)
+        );
+    });
 };
 
 export const matchTo = (element: Element, toInput: string) => {
     const recipients = getRecipients(element);
-    return recipients.some((recipient) =>
-        canonicalizeEmailByGuess(recipient?.Address || '').includes(canonicalizeEmailByGuess(toInput))
-    );
+    const cleanedInput = toInput.toLowerCase();
+    return recipients.some((recipient) => {
+        const recipientAddress = (recipient?.Address || '').toLowerCase();
+        const recipientName = (recipient?.Name || '').toLowerCase();
+        // We have to match "recipient+alias@protonmail.com" with "recipient@alias.com" as search input. So we need to canonicalize the email
+        // However, we also need to match "recipient+alias@protonmail.com" with "alias" search input. So we need to check that the search input is included in the recipient
+        return (
+            canonicalizeEmailByGuess(recipientAddress).includes(canonicalizeEmailByGuess(cleanedInput)) ||
+            recipientAddress.includes(cleanedInput) ||
+            recipientName.includes(cleanedInput)
+        );
+    });
 };
 
 export const matchBegin = (element: Element, labelID: string, begin: number) => {
