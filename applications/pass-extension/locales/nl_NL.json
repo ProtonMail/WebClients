@@ -56,6 +56,9 @@
       "Apply lifetime coupon code": [
         "Pas de lifetime kortingscode toe"
       ],
+      "Authenticate": [
+        "Authenticeren"
+      ],
       "Back": [
         "Terug"
       ],
@@ -398,6 +401,9 @@
       "Multiple select": [
         "Meervoudige selectie"
       ],
+      "Next month": [
+        "Volgende maand"
+      ],
       "No expired links": [
         "Geen verlopen koppelingen"
       ],
@@ -427,6 +433,9 @@
       ],
       "Please retry": [
         "Probeer het opnieuw"
+      ],
+      "Previous month": [
+        "Vorige maand"
       ],
       "Re-verify": [
         "Opnieuw verifiëren"
@@ -571,6 +580,9 @@
       ],
       "Sort vault items": [
         "Sorteer kluisitems"
+      ],
+      "Start from scratch": [
+        "Begin opnieuw"
       ],
       "Submit": [
         "Versturen"
@@ -1596,6 +1608,9 @@
       "Enter the address you want to email.": [
         "Vul het adres in dat u wilt mailen."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Voer verificatiecode in. Cijfer ${ digit }."
+      ],
       "Enter your extra password": [
         "Voer uw extra wachtwoord in"
       ],
@@ -2274,6 +2289,9 @@
         "We hebben gedetecteerd dat u ${ aliasCount } alias hebt die aanwezig is in SimpleLogin, maar ontbreekt in ${ PASS_APP_NAME }. Wilt u deze importeren?",
         "We hebben gedetecteerd dat u ${ aliasCount } aliassen hebt die aanwezig zijn in SimpleLogin, maar ontbreken in ${ PASS_APP_NAME }. Wilt u deze importeren?"
       ],
+      "Week": [
+        "Week"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "We hebben een verificatiecode gestuurd naar ${ email }. Voer deze hieronder in:"
       ],
@@ -2474,6 +2492,12 @@
       "Account": [
         "Account"
       ],
+      "Account Number": [
+        "Account Nummer"
+      ],
+      "Account Type": [
+        "Accounttype"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Voeg een willekeurige prefix toe voor dit domein bij het maken van een nieuwe alias."
       ],
@@ -2482,6 +2506,9 @@
       ],
       "Additional details": [
         "Aanvullende details"
+      ],
+      "Address": [
+        "Adres"
       ],
       "Address details": [
         "Adresgegevens"
@@ -2510,6 +2537,9 @@
       "Always show username field": [
         "Altijd het veld gebruikersnaam tonen"
       ],
+      "API Credential": [
+        "API-toegangscode"
+      ],
       "Application logs": [
         "Applicatielogboek"
       ],
@@ -2533,6 +2563,12 @@
       ],
       "Backup password": [
         "Back-up wachtwoord"
+      ],
+      "Bank Account": [
+        "Bankrekening"
+      ],
+      "Bank Name": [
+        "Naam bank"
       ],
       "Biometrics": [
         "Biometrie"
@@ -2591,11 +2627,17 @@
       "Country or Region": [
         "Land of regio"
       ],
+      "Country,": [
+        "Land,"
+      ],
       "County": [
         "Provincie"
       ],
       "Create a credit card": [
         "Kredietkaart aanmaken"
+      ],
+      "Create a custom item": [
+        "Maak een aangepast item"
       ],
       "Create a hide-my-email alias": [
         "Maak een Hide-my-email-alias"
@@ -2621,11 +2663,26 @@
       "Created at": [
         "Aangemaakt op"
       ],
+      "Crypto Wallet": [
+        "Crypto Wallet"
+      ],
       "Custom hidden field": [
         "Aangepast verborgen veld"
       ],
+      "Custom Items": [
+        "Aangepaste items"
+      ],
       "Custom text field": [
         "Tekst aangepast veld"
+      ],
+      "Database": [
+        "Database"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Date of Birth": [
+        "Geboortedatum"
       ],
       "Device": [
         "Apparaat"
@@ -2654,6 +2711,9 @@
       "Download logs": [
         "Logboeken downloaden"
       ],
+      "Driver License": [
+        "Rijbewijs"
+      ],
       "Email": [
         "E-mailadres"
       ],
@@ -2681,6 +2741,9 @@
       "Expired": [
         "Verlopen"
       ],
+      "Expiry Date": [
+        "Vervaldatum"
+      ],
       "Export": [
         "Exporteren"
       ],
@@ -2698,6 +2761,9 @@
       ],
       "File format": [
         "Bestandsformaat"
+      ],
+      "Finance": [
+        "Financiën"
       ],
       "First name": [
         "Voornaam"
@@ -2732,8 +2798,14 @@
       "Hide password": [
         "Wachtwoord verbergen"
       ],
+      "Holder Name": [
+        "Naam rekeninghouder"
+      ],
       "https://example.com": [
         "https://voorbeeld.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "ID-kaart"
@@ -2776,6 +2848,12 @@
       ],
       "Invitations": [
         "Uitnodigingen"
+      ],
+      "Issuing Authority": [
+        "Uitgevende autoriteit"
+      ],
+      "Issuing Country": [
+        "Land van uitgifte"
       ],
       "Item ID": [
         "Item ID"
@@ -2846,14 +2924,26 @@
       "max views reached": [
         "max weergaven bereikt"
       ],
+      "Medical Record": [
+        "Medisch Gegeven"
+      ],
+      "Member ID": [
+        "Lid-ID"
+      ],
       "Members": [
         "Leden"
+      ],
+      "Membership": [
+        "Lidmaatschap"
       ],
       "Middle name": [
         "Tussenvoegsel"
       ],
       "Modified": [
         "Gewijzigd"
+      ],
+      "More": [
+        "Meer"
       ],
       "More than a month": [
         "Meer dan een maand"
@@ -2864,11 +2954,17 @@
       "Name": [
         "Naam"
       ],
+      "Name (SSID)": [
+        "Naam (SSID}"
+      ],
       "Name on card": [
         "Naam op de kaart"
       ],
       "Need help?": [
         "Heeft u hulp nodig?"
+      ],
+      "Network": [
+        "Netwerk"
       ],
       "New": [
         "Nieuw"
@@ -2930,6 +3026,9 @@
       "Passport number": [
         "Paspoortnummer"
       ],
+      "Passport Number": [
+        "Paspoortnummer"
+      ],
       "Password": [
         "Wachtwoord"
       ],
@@ -2941,6 +3040,9 @@
       ],
       "Pause list": [
         "Pauze lijst"
+      ],
+      "Personal": [
+        "Persoonlijk"
       ],
       "Personal details": [
         "Persoonlijke gegevens"
@@ -2960,6 +3062,9 @@
       "PIN code": [
         "Pincode"
       ],
+      "Points Balance": [
+        "Puntensaldo"
+      ],
       "Prefix": [
         "Prefix"
       ],
@@ -2968,6 +3073,15 @@
       ],
       "Priority:": [
         "Prioriteit:"
+      ],
+      "Private key": [
+        "Privé sleutel"
+      ],
+      "Private Key": [
+        "Privé sleutel"
+      ],
+      "Program Name": [
+        "Programmanaam"
       ],
       "Prompt for auto-save": [
         "Vragen om automatisch opslaan"
@@ -2980,6 +3094,9 @@
       ],
       "Public domain": [
         "Publiek domein"
+      ],
+      "Public key": [
+        "Publieke sleutel"
       ],
       "Rate us": [
         "Beoordeel ons"
@@ -3002,6 +3119,12 @@
       "Reveal password": [
         "Wachtwoord tonen"
       ],
+      "Reward Program": [
+        "Beloningsprogramma"
+      ],
+      "Routing Number": [
+        "Routeringsnummer"
+      ],
       "Save passkeys": [
         "Passkey opslaan"
       ],
@@ -3020,6 +3143,9 @@
       "See member and permission overview": [
         "Zie leden en overzicht toelatingen"
       ],
+      "Seed Phrase": [
+        "Seed Phrase"
+      ],
       "Select a domain": [
         "Domein selecteren"
       ],
@@ -3037,6 +3163,9 @@
       ],
       "Selected": [
         "Geselecteerd"
+      ],
+      "Server": [
+        "Server"
       ],
       "Settings": [
         "Instellingen"
@@ -3062,11 +3191,26 @@
       "Social security": [
         "Burgerservicenummer (rijksregisternummer)"
       ],
+      "Social Security": [
+        "Burgerservicenummer (rijksregisternummer)"
+      ],
       "Social security number": [
         "Burgerservicenummer (Rijksregisternummer)"
       ],
+      "Software license": [
+        "Software licentie"
+      ],
       "Special characters (!&*)": [
         "Speciale tekens (!&*)"
+      ],
+      "SSH key": [
+        "SSH-sleutel"
+      ],
+      "SSH Keys": [
+        "SSH-sleutels"
+      ],
+      "SSN": [
+        "SSN"
       ],
       "State or province": [
         "Provincie"
@@ -3086,6 +3230,9 @@
       "Support": [
         "Ondersteuning"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Synchroniseer aliassen met SimpleLogin"
       ],
@@ -3095,6 +3242,9 @@
       "Tax number": [
         "BTW-nummer"
       ],
+      "Technology": [
+        "Technologie"
+      ],
       "Text": [
         "Tekst"
       ],
@@ -3103,6 +3253,9 @@
       ],
       "Theme": [
         "Thema"
+      ],
+      "Tier/Status": [
+        "Rang/Status"
       ],
       "Title": [
         "Titel"
@@ -3140,6 +3293,9 @@
       "Unnamed Credit Card": [
         "Naamloze kredietkaart"
       ],
+      "Unnamed custom item": [
+        "Naamloos aangepast item"
+      ],
       "Unnamed identity": [
         "Naamloze identiteit"
       ],
@@ -3148,6 +3304,15 @@
       ],
       "Unnamed note": [
         "Naamloze notitie"
+      ],
+      "Unnamed SSH key": [
+        "Naamloze SSH-sleutel"
+      ],
+      "Unnamed WiFi item": [
+        "Naamloos wifi item"
+      ],
+      "Unspecified": [
+        "Niet gespecificeerd"
       ],
       "Untitled": [
         "Naamloos"
@@ -3182,6 +3347,9 @@
       "Vulnerable": [
         "Kwetsbaar"
       ],
+      "Wallet Name": [
+        "Naam Wallet"
+      ],
       "Weak": [
         "Zwak"
       ],
@@ -3190,6 +3358,12 @@
       ],
       "Websites": [
         "Websites"
+      ],
+      "WiFi network": [
+        "Wifi-netwerk"
+      ],
+      "WiFi Networks": [
+        "Wifi-netwerken"
       ],
       "Work details": [
         "Werk gegevens"
@@ -3389,6 +3563,9 @@
       "Add 2FA secret key": [
         "Voeg een geheime sleutel van 2FA toe"
       ],
+      "Add date": [
+        "Datum toevoegen"
+      ],
       "Add hidden text": [
         "Verborgen tekst toevoegen"
       ],
@@ -3403,6 +3580,9 @@
       ],
       "Coupon": [
         "Kortingscode"
+      ],
+      "E.g., ": [
+        "Bijv., "
       ],
       "Email address": [
         "E-mailadres"
@@ -3434,8 +3614,8 @@
       "my-domain.com": [
         "mijn-domein.com"
       ],
-      "Name to display when sending an email": [
-        "Naam die getoond moet worden bij het verzenden van een e-mail"
+      "Name displayed in emails": [
+        "Naam weergegeven in e-mails"
       ],
       "Note from SimpleLogin": [
         "Notitie van SimpleLogin"
@@ -3469,6 +3649,9 @@
       ],
       "Select a suffix": [
         "Selecteer een achtervoegsel"
+      ],
+      "Select option": [
+        "Selecteer optie"
       ],
       "Unknown origin": [
         "Onbekende oorsprong"
@@ -3834,6 +4017,9 @@
       "Members": [
         "Leden"
       ],
+      "Minicalendar": [
+        "Mini-agenda"
+      ],
       "Modified": [
         "Gewijzigd"
       ],
@@ -4014,6 +4200,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "U staat op het punt ${ aliasCount } alias permanent te verwijderen.",
         "U staat op het punt ${ aliasCount } aliassen permanent te verwijderen."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Vandaag"
       ]
     },
     "Validation": {
