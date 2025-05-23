@@ -33,7 +33,7 @@ import type {
     UniqueItem,
 } from '../data';
 import type { TelemetryEventDTO } from '../data/telemetry';
-import type { Maybe, MaybeNull, OptionalProp } from '../utils';
+import type { Maybe, MaybeNull } from '../utils';
 import type { AutofillIdentityResult, AutofillLoginResult, AutofillOptions } from './autofill';
 import type { AutosaveRequest } from './autosave';
 import type { AutosaveFormEntry, FormCredentials, FormStatusPayload, FormSubmitPayload } from './form';
@@ -199,10 +199,7 @@ export type SpotlightCheckMessage = WithPayload<WorkerMessageType.SPOTLIGHT_CHEC
 export type SpotlightRequestMessage = { type: WorkerMessageType.SPOTLIGHT_REQUEST };
 export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, { action: Action }>;
 export type TabsQueryMessage = WithPayload<WorkerMessageType.TABS_QUERY, { current?: boolean }>;
-export type TelemetryEventMessage = WithPayload<
-    WorkerMessageType.TELEMETRY_EVENT,
-    OptionalProp<TelemetryEventDTO, 'extra'>
->;
+export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVENT, TelemetryEventDTO>;
 export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT };
 export type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };
 export type VaultsQueryMessage = { type: WorkerMessageType.VAULTS_QUERY };
