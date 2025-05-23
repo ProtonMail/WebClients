@@ -26,7 +26,7 @@ import { PASS_PLUS_LIFETIME_PRICE, PASS_PLUS_PRICE, PROTON_UNLIMITED_PRICE, Upse
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { getUserCurrency, supportedCurrencies } from '@proton/pass/lib/user/user.currency';
 import { selectUser } from '@proton/pass/store/selectors';
-import { PLANS } from '@proton/payments/core/constants';
+import { PLANS } from '@proton/payments';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,

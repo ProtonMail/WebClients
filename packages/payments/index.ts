@@ -388,6 +388,7 @@ export {
     type AggregatedPricing,
     type PricingForCycles,
     isCheckForbidden,
+    hasAnniversary2025Coupon,
 } from './core/subscription/helpers';
 export { type Subscription } from './core/subscription/interface';
 export type { FullPlansMap } from './core/subscription/interface';

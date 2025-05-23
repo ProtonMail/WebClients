@@ -18,12 +18,19 @@ import {
     type Pricing,
     type Subscription,
     VPN_PASS_PROMOTION_COUPONS,
+    customCycles,
+    getAddonMultiplier,
     getIsB2BAudienceFromPlan,
+    getMembersFromPlanIDs,
     getPlanNameFromIDs,
     getPricePerCycle,
+    getPricingPerMember,
+    isDomainAddon,
+    isIpAddon,
+    isLumoAddon,
+    isMemberAddon,
+    isScribeAddon,
 } from '@proton/payments';
-import { customCycles, getAddonMultiplier, getMembersFromPlanIDs, getPricingPerMember } from '@proton/payments';
-import { isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from '@proton/payments/core/plan/addons';
 
 import { LUMO_APP_NAME } from '../constants';
 import { type SubscriptionCheckResponse, SubscriptionMode } from '../interfaces';

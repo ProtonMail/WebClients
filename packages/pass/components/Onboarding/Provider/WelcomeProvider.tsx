@@ -18,7 +18,7 @@ import { SpotlightMessage } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
-import { PLANS } from '@proton/payments/core/constants';
+import { PLANS } from '@proton/payments';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
