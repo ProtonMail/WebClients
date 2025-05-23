@@ -7,16 +7,23 @@ import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
 import { SelectionManager } from '@proton/pass/utils/dom/selection';
 import clsx from '@proton/utils/clsx';
 
-export type ClickToCopyProps = { className?: string; value?: string | (() => string) };
+export type ClickToCopyProps = {
+    className?: string;
+    value?: string | (() => string);
+    onCopy?: () => void;
+};
 
-export const ClickToCopy: FC<PropsWithChildren<ClickToCopyProps>> = ({ className, children, value = '' }) => {
+export const ClickToCopy: FC<PropsWithChildren<ClickToCopyProps>> = ({ className, children, onCopy, value = '' }) => {
     const ref = useRef<HTMLDivElement>(null);
     const copyToClipboard = useCopyToClipboard();
     const getValue = () => (value instanceof Function ? value() : value);
 
     const handleClick = (evt: MouseEvent) => {
         if (ref.current && SelectionManager.hasChildOf(ref.current)) evt.preventDefault();
-        else if (value) void copyToClipboard(getValue());
+        else if (value) {
+            void copyToClipboard(getValue());
+            onCopy?.();
+        }
     };
 
     return (
