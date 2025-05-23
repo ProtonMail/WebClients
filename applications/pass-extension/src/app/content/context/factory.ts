@@ -7,12 +7,9 @@ import { createWebAuthNService } from 'proton-pass-extension/app/content/service
 import { IGNORED_TAGS } from 'proton-pass-extension/app/content/utils/nodes';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
-import { FormType } from '@proton/pass/fathom';
-import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
-import browser from '@proton/pass/lib/globals/browser';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
-import { AppStatus, WorkerMessageType } from '@proton/pass/types';
+import { AppStatus } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 
@@ -93,21 +90,6 @@ export const createContentScriptContext = (options: {
         },
         setSettings: (update) => Object.assign(settings, update),
         setState: (update) => Object.assign(state, update),
-    });
-
-    browser.runtime.onMessage.addListener((message, _, sendResponse) => {
-        if (matchExtensionMessage(message, { type: WorkerMessageType.AUTOFILL_CHECK_FORM, sender: 'background' })) {
-            const hasLoginForm = context.service.formManager
-                .getTrackedForms()
-                .some((form) => form.formType === FormType.LOGIN);
-
-            sendResponse({ hasLoginForm });
-            return true;
-        }
-
-        /** Note: The type assertion is necessary because the OnMessageListener type
-         * has constraints that don't properly handle conditional use of `sendResponse`.  */
-        return undefined as any;
     });
 
     return context;
