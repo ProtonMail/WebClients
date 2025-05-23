@@ -44,7 +44,7 @@ import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';

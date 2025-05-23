@@ -4,7 +4,7 @@ import { all, put, takeEvery } from 'redux-saga/effects';
 import { hasAttachments } from '@proton/pass/lib/items/item.predicates';
 import type { ItemRevisionWithAlias } from '@proton/pass/lib/items/item.requests';
 import { createAlias, createItem, createItemWithAlias } from '@proton/pass/lib/items/item.requests';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
 import { filesResolve, itemCreate } from '@proton/pass/store/actions';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { itemLinkPendingFiles } from '@proton/pass/store/sagas/items/item-files.sagas';
