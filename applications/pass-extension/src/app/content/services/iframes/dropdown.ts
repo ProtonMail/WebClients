@@ -10,11 +10,12 @@ import type {
     InjectedDropdown,
 } from 'proton-pass-extension/app/content/types';
 import { DropdownAction, IFramePortMessageType } from 'proton-pass-extension/app/content/types';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { isVisible } from '@proton/pass/fathom';
 import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import { type Maybe, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
+import { type Maybe, type MaybeNull } from '@proton/pass/types';
 import { createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
 import { animatePositionChange } from '@proton/pass/utils/dom/position';
 import { isHTMLElement } from '@proton/pass/utils/dom/predicates';

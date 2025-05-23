@@ -21,8 +21,10 @@ import { createStorageService } from 'proton-pass-extension/app/worker/services/
 import { createStoreService } from 'proton-pass-extension/app/worker/services/store';
 import { createTelemetryService } from 'proton-pass-extension/app/worker/services/telemetry';
 import { createVaultsService } from 'proton-pass-extension/app/worker/services/vaults';
+import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { setPopupIcon } from 'proton-pass-extension/lib/utils/popup';
 import { EXTENSION_BUILD_VERSION } from 'proton-pass-extension/lib/utils/version';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
 import { exposeApi } from '@proton/pass/lib/api/api';
@@ -33,10 +35,9 @@ import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { clientBooted, clientDisabled, clientLocked, clientReady, clientStatusResolved } from '@proton/pass/lib/client';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
-import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import { registerStoreEffect } from '@proton/pass/store/connect/effect';
 import { selectLockSetupRequired } from '@proton/pass/store/selectors';
-import { type AppState, AppStatus, WorkerMessageType } from '@proton/pass/types';
+import { type AppState, AppStatus } from '@proton/pass/types';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
 import createStore from '@proton/shared/lib/helpers/store';

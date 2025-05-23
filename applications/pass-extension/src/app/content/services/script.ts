@@ -5,13 +5,14 @@ import { DOMCleanUp } from 'proton-pass-extension/app/content/injections/cleanup
 import { NotificationAction } from 'proton-pass-extension/app/content/types/notification';
 import type { ExtensionContextType } from 'proton-pass-extension/lib/context/extension-context';
 import { ExtensionContext, setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientNeedsSession, clientSessionLocked } from '@proton/pass/lib/client';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { type AppState, WorkerMessageType } from '@proton/pass/types';
+import { type AppState } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { TopLayerManager } from '@proton/pass/utils/dom/popover';
 import { asyncLock } from '@proton/pass/utils/fp/promises';

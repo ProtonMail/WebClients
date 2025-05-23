@@ -2,14 +2,15 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
+import { popupMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { useSpotlightMessages } from '@proton/pass/hooks/useSpotlightMessages';
-import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import { selectCreatedItemsCount } from '@proton/pass/store/selectors';
-import { SpotlightMessage, WorkerMessageType } from '@proton/pass/types';
+import { SpotlightMessage } from '@proton/pass/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 

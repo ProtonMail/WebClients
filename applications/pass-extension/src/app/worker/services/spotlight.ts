@@ -1,5 +1,6 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Store } from 'redux';
 
 import browser from '@proton/pass/lib/globals/browser';
@@ -21,7 +22,6 @@ import {
 import { createSpotlightService as createCoreSpotlightService } from '@proton/pass/lib/spotlight/service';
 import type { State } from '@proton/pass/store/types';
 import type { ExtensionStorage, TabId } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
 import { withPayloadLens } from '@proton/pass/utils/fp/lens';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';

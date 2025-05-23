@@ -1,11 +1,11 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { onContextReady } from 'proton-pass-extension/app/worker/context/inject';
 import store, { runSagas } from 'proton-pass-extension/app/worker/store';
+import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message/message-broker';
 import { asyncRequestDispatcherFactory } from '@proton/pass/store/request/utils';
 import { selectUser } from '@proton/pass/store/selectors';
-import { WorkerMessageType } from '@proton/pass/types';
 
 export const createStoreService = () => {
     runSagas();
