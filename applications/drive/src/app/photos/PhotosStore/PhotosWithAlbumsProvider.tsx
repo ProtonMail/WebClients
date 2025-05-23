@@ -3,7 +3,7 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState } f
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components/index';
+import { useNotifications } from '@proton/components';
 import {
     queryAddAlbumPhotos,
     queryAlbumPhotos,

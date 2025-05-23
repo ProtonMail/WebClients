@@ -10,12 +10,12 @@ import {
     signInWithAnotherDevicePull,
 } from '@proton/account/signInWithAnotherDevice/signInWithAnotherDevicePull';
 import { Button, ButtonLike } from '@proton/atoms';
+import { useLocalState } from '@proton/components';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useConfig from '@proton/components/hooks/useConfig';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { useLocalState } from '@proton/components/index';
 import metrics from '@proton/metrics/index';
 import observeApiError from '@proton/metrics/lib/observeApiError';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';

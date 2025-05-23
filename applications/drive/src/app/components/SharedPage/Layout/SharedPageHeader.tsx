@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { Header, MainLogo, UnAuthenticatedAppsDropdown, useActiveBreakpoint } from '@proton/components/index';
+import { Header, MainLogo, UnAuthenticatedAppsDropdown, useActiveBreakpoint } from '@proton/components';
 import { getAppHref, getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { DRIVE_PRICING_PAGE } from '@proton/shared/lib/drive/urls';

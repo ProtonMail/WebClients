@@ -5,7 +5,7 @@ import {
     CheckListGmailForward,
     CheckListMobileStores,
     CheckListProtectInbox,
-} from '@proton/components/index';
+} from '@proton/components';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Icon, type IconName } from '@proton/components/index';
+import { Icon, type IconName } from '@proton/components';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import clsx from '@proton/utils/clsx';
 

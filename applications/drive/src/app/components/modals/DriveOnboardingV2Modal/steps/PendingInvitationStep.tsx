@@ -4,7 +4,7 @@ import type { IconName } from 'packages/icons';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components/index';
+import { Icon } from '@proton/components';
 
 import { Container } from '../Container';
 import type { OnboardingProps } from '../interface';
