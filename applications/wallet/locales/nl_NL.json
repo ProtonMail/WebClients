@@ -4,6 +4,23 @@
     "language": "nl_NL"
   },
   "contexts": {
+    "Account statement": {
+      "Account statement successfully generated": [
+        "Account-transactie succesvol gegenereerd"
+      ],
+      "Download": [
+        "Downloaden"
+      ],
+      "Download transactions": [
+        "Transacties downloaden"
+      ],
+      "Export format": [
+        "Exportformaat"
+      ],
+      "Export your transactions for tax reporting or personal record-keeping. Choose your preferred format and download your file instantly.": [
+        "Exporteer uw transacties voor de belastingaangifte of voor persoonlijke archivering. Kies uw gewenste formaat en download meteen uw bestand."
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
@@ -27,7 +44,7 @@
         "Toepassen"
       ],
       "Attach screenshot(s)": [
-        "Schermafbeelding(en) toevoegen"
+        "Schermafdruk(ken) toevoegen"
       ],
       "Authenticate": [
         "Authenticeren"
@@ -53,11 +70,20 @@
       "Close this banner": [
         "Sluit deze banner"
       ],
+      "Collaborate on documents": [
+        "Samenwerken aan documenten"
+      ],
       "Collapse wallets": [
         "Portemonnees inklappen"
       ],
       "Confirm": [
         "Bevestigen"
+      ],
+      "Connect apps and devices": [
+        "Apps en apparaten verbinden"
+      ],
+      "Connect to video conferencing": [
+        "Verbinding maken met videovergadering"
       ],
       "Continue": [
         "Doorgaan"
@@ -92,6 +118,9 @@
       "Downgrade": [
         "Downgraden"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Download ${ DRIVE_APP_NAME } apps"
+      ],
       "Edit": [
         "Bewerken"
       ],
@@ -116,6 +145,9 @@
       "Get in touch": [
         "Neem contact op"
       ],
+      "Get the apps": [
+        "De apps downloaden"
+      ],
       "Get verification code": [
         "Krijg verificatie code"
       ],
@@ -130,6 +162,9 @@
       ],
       "Help and resources": [
         "Hulp en bronnen"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importeer e-mails, agenda's, contacten"
       ],
       "Increase": [
         "Verhogen"
@@ -152,6 +187,15 @@
       "Loading verification": [
         "Verificatie laden"
       ],
+      "Manage advanced account protections": [
+        "Geavanceerde accountbeveiligingen beheren"
+      ],
+      "Manage groups": [
+        "Groepen beheren"
+      ],
+      "Manage users/addresses": [
+        "Gebruikers/adressen beheren"
+      ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
       ],
@@ -166,6 +210,9 @@
       ],
       "Next": [
         "Volgende"
+      ],
+      "Next month": [
+        "Volgende maand"
       ],
       "OK": [
         "OK"
@@ -187,6 +234,9 @@
       ],
       "Previous": [
         "Vorige"
+      ],
+      "Previous month": [
+        "Vorige maand"
       ],
       "Refer a friend": [
         "Verwijs een vriend door"
@@ -236,14 +286,32 @@
       "Select country": [
         "Selecteer land"
       ],
+      "Set recovery methods": [
+        "Herstelmethoden instellen"
+      ],
       "Set recovery phrase": [
         "Herstelzin instellen"
+      ],
+      "Set up 2FA": [
+        "2FA instellen"
+      ],
+      "Set up a custom domain": [
+        "Een eigen domein instellen"
+      ],
+      "Set up email forwarding": [
+        "E-mail doorsturen instellen"
       ],
       "Settings": [
         "Instellingen"
       ],
+      "Share your calendar with your team": [
+        "Deel uw agenda met uw team"
+      ],
       "Show balance": [
         "Toon saldo"
+      ],
+      "Show more": [
+        "Meer weergeven"
       ],
       "Show QRCode": [
         "Toon QR-code"
@@ -272,6 +340,9 @@
       "Try another method": [
         "Andere methode proberen"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } inschakelen"
+      ],
       "Unlock data": [
         "Ontgrendel gegevens"
       ],
@@ -287,8 +358,17 @@
       "Upgrade now": [
         "Nu upgraden"
       ],
+      "Upload and share files": [
+        "Bestanden uploaden en delen"
+      ],
       "Use ${ address.Email }": [
         "Gebruik ${ address.Email }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Gebruik ${ PASS_APP_NAME } voor Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Gebruik ${ VPN_SHORT_APP_NAME } voor gegevensprivacy"
       ],
       "Use a different card": [
         "Gebruik een andere kaart"
@@ -297,7 +377,7 @@
         "Gebruik een andere betaalmethode"
       ],
       "Use authentication code": [
-        "Verificatiecode gebruiken"
+        "Authenticatiecode gebruiken"
       ],
       "Use recovery code": [
         "Herstelcode gebruiken"
@@ -384,6 +464,24 @@
       ],
       "Value": [
         "Waarde"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "12 months": [
+        "12 maanden"
+      ],
+      "15 months": [
+        "15 maanden"
+      ],
+      "24 months": [
+        "24 maanden"
+      ],
+      "30 months": [
+        "30 maanden"
       ]
     },
     "Apps dropdown": {
@@ -563,9 +661,6 @@
       ],
       "Monthly": [
         "Maandelijks"
-      ],
-      "New!": [
-        "Nieuw!"
       ],
       "Two-year": [
         "Tweejaarlijks"
@@ -1009,7 +1104,15 @@
         "Inklappen"
       ],
       "Expand": [
-        "Uitklappen"
+        "Uitvouwen"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } is een privacygerichte AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME } toevoegen"
       ]
     },
     "color": {
@@ -1088,7 +1191,7 @@
         "Algerije"
       ],
       "American Samoa": [
-        "Amerikaans-Samoa"
+        "Amerikaans Samoa"
       ],
       "Andorra": [
         "Andorra"
@@ -1394,7 +1497,7 @@
         "Honduras"
       ],
       "Hong Kong": [
-        "Hongkonger"
+        "Hong Kong"
       ],
       "Hungary": [
         "Hongarije"
@@ -1926,6 +2029,11 @@
         "/gebruiker per maand"
       ]
     },
+    "Date": {
+      "Date": [
+        "Datum"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Onbekend"
@@ -1934,6 +2042,68 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Onbetaalde factuur"
+      ]
+    },
+    "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "Met ${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } kunt u samenwerken met anderen in een veilige, versleutelde omgeving."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Voeg mappen en bestanden toe aan ${ DRIVE_APP_NAME } en nodig teamleden uit om ze te bekijken of te bewerken."
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Inkomende e-mail automatisch doorsturen naar een ander e-mailadres."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Configureer dit eerst om uw organisatie te activeren en uw e-mailadres aan te passen."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Verbind uw CRM, website, printers en meer."
+      ],
+      "Create groups you can email with a single address.": [
+        "Maak groepen aan die u een e-mail kunt sturen met één enkel adres."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Krijg eenvoudig toegang tot uw e-mail en agenda op desktop en mobiel."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Synchroniseer eenvoudig bestanden naar de cloud vanaf uw computer en open ze vanaf uw mobiele apparaat."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Moedig het gebruik van tweestapsverificatie in uw organisatie aan voor extra beveiliging."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Zorg voor veilige toegang tot gegevens van de organisatie, zelfs als uw team op afstand is of openbare wifi gebruikt."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Zorg voor de beveiliging van je account met het ${ PROTON_SENTINEL_NAME } programma."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Zorg ervoor dat u nog steeds toegang hebt tot uw account en gegevens, zelfs als u uw ${ BRAND_NAME } wachtwoord verliest."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Voor een naadloze overgang naar ${ BRAND_NAME } kunt u uw gegevens importeren vanuit Google, Outlook en andere."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Help uw team om wachtwoorden veilig op te slaan voor gevoelige bedrijfs- en klantinformatie."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Hiermee kunt u direct vergader koppelingen toevoegen aan uw afspraak uitnodigingen."
+      ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Stel accounts in voor alle gebruikers en nodig hen uit om lid te worden van ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Vereenvoudig het synchroniseren en plannen met gedeelde agenda's."
+      ],
+      "To start, give your organization a name.": [
+        "Geef uw organisatie een naam om te beginnen."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Gebruik deze handleiding om uw organisatie snel te laten profiteren van ${ BRAND_NAME }'s toonaangevende versleuteling en privacy ecosysteem."
       ]
     },
     "Discover": {
@@ -2139,6 +2309,9 @@
       "Signature verification failed": [
         "Controle van handtekening mislukt"
       ],
+      "Something went wrong. Please try again.": [
+        "Er ging iets mis. Probeer het later nog eens."
+      ],
       "Tab closed": [
         "Tab gesloten"
       ],
@@ -2161,7 +2334,7 @@
         "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
       ],
       "This field is required": [
-        "Dit invullen is verplicht"
+        "Dit veld is vereist"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
@@ -2199,7 +2372,7 @@
         "Ververs de pagina of probeer het later opnieuw."
       ],
       "Something went wrong": [
-        "Er is iets fout gegaan."
+        "Er is iets fout gegaan"
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Om ${ MAIL_APP_NAME } of ${ CALENDAR_APP_NAME } te gebruiken, wissel naar de webversie."
@@ -2288,7 +2461,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME }-account."
+        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME } account."
       ],
       "Security key": [
         "Beveiligingssleutel"
@@ -2412,7 +2585,7 @@
         "Andere categorie"
       ],
       "Services": [
-        "Services"
+        "Diensten"
       ]
     },
     "Human verification method": {
@@ -2480,8 +2653,20 @@
       "Address copied to clipboard": [
         "Adres gekopieerd naar het klembord"
       ],
+      "Admin account allocation": [
+        "Toewijzing beheerdersaccount"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
+      ],
+      "Allocated": [
+        "Toegewezen"
+      ],
+      "Already allocated": [
+        "Reeds toegewezen"
+      ],
+      "Already used": [
+        "Al gebruikt"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
@@ -2575,7 +2760,7 @@
         "Activatie automatisch verwijderen"
       ],
       "Enter the code from your authenticator app": [
-        "Voer de code van uw verificatie-app in"
+        "Voer de code van uw authenticatie app in"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
@@ -2646,9 +2831,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Berichten naar al uw e-mailadressen gaan naar uw inbox."
       ],
-      "MM/YY": [
-        "MM/JJ"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
       ],
@@ -2659,7 +2841,7 @@
         "Er is op dit moment geen betaling vereist."
       ],
       "No results found": [
-        "Geen resultaten"
+        "Geen resultaten gevonden"
       ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
@@ -2681,6 +2863,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Authenticeer uw betaling in het verificatietabblad."
+      ],
+      "Please fill in all required fields.": [
+        "Vul alle verplichte velden in."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credit over.",
@@ -2725,6 +2910,18 @@
       "Start sharing it with contacts and use it for online services.": [
         "Begin het te delen met contacten en gebruik het voor online diensten."
       ],
+      "Storage allocated to other users in this organisation": [
+        "Opslagruimte toegewezen aan andere gebruikers binnen deze organisatie"
+      ],
+      "Storage allocated to this user": [
+        "Opslagruimte toegewezen aan deze gebruiker"
+      ],
+      "Storage for users": [
+        "Opslag voor gebruikers"
+      ],
+      "Storage used by this user": [
+        "Opslagruimte gebruikt door deze gebruiker"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
       ],
@@ -2743,6 +2940,9 @@
       ],
       "This address is for Bitcoin via Email": [
         "Dit adres is voor Bitcoin via e-mail"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Dit is een naam of bijnaam voor uw organisatie die uw gebruikers zullen zien. U kunt dit op elk moment wijzigen."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dit is nu uw ${ defaultEmailAddress } voor het verzenden van nieuwe berichten."
@@ -2804,8 +3004,11 @@
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
+      "Week": [
+        "Week"
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw authenticatie app."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
@@ -2928,6 +3131,9 @@
       "Account holder": [
         "Rekeninghouder"
       ],
+      "Account storage": [
+        "Opslagruimte account"
+      ],
       "Address": [
         "Adres"
       ],
@@ -2938,10 +3144,7 @@
         "Schermafbeelding(en) toevoegen"
       ],
       "Authenticator app": [
-        "Authenticator-app"
-      ],
-      "Billing address": [
-        "Facturatie adres"
+        "Authenticatie app"
       ],
       "Billing cycle": [
         "Facturatieperiode"
@@ -3012,9 +3215,6 @@
       "Email address": [
         "E-mailadres"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Verloopdatum (${ patternExpiration })"
-      ],
       "Expires": [
         "Verloopt"
       ],
@@ -3069,9 +3269,6 @@
       "Phone number": [
         "Telefoonnummer"
       ],
-      "Postal code": [
-        "Postcode"
-      ],
       "Proration": [
         "Verrekening"
       ],
@@ -3080,9 +3277,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
-      ],
-      "Security code (${ codeName })": [
-        "Beveiligingscode (${ codeName })"
       ],
       "Show QRCode": [
         "Toon QR-code"
@@ -3118,7 +3312,7 @@
         "Wat is uw belangrijkste reden om te annuleren of te downgraden?"
       ],
       "Your password (admin)": [
-        "Uw wachtwoord (admin)"
+        "Uw wachtwoord (beheerder)"
       ]
     },
     "Label, credit card": {
@@ -3155,8 +3349,53 @@
       "click here": [
         "klik hier"
       ],
+      "Enforcing 2FA for organizations": [
+        "2FA forceren voor organisaties"
+      ],
+      "How to add users": [
+        "Hoe gebruikers toe te voegen"
+      ],
+      "How to add Zoom links": [
+        "Zoom-koppelingen toevoegen"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Samenwerken in ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Hoe schakelt u ${ PROTON_SENTINEL_NAME } in"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Hoe migreer ik naar ${ BRAND_NAME }?"
+      ],
       "How to pay with Bitcoin?": [
         "Hoe betalen met Bitcoin?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } instellen"
+      ],
+      "How to set up a custom domain": [
+        "Een eigen domein instellen"
+      ],
+      "How to set up SMTP": [
+        "SMTP instellen"
+      ],
+      "How to share a calendar": [
+        "Hoe een agenda te delen"
+      ],
+      "How to share via email": [
+        "Delen via e-mail"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Hoe gebruikt u ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "${ PASS_APP_NAME } voor Business gebruiken"
+      ],
+      "How to use email forwarding": [
+        "E-mail doorsturen instellen"
+      ],
+      "How to use Groups": [
+        "Hoe gebruikt u Groepen"
       ],
       "Learn more": [
         "Meer informatie"
@@ -3166,6 +3405,9 @@
       ],
       "settings": [
         "instellingen"
+      ],
+      "Types of recovery methods": [
+        "Soorten herstelmethoden"
       ],
       "View on blockchain": [
         "Op blockchain bekijken"
@@ -4105,14 +4347,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Niet-privé gebruikers kunnen worden gepromoveerd tot admin wanneer ze de configuratiesleutels hebben"
+      ],
       "Organization key does not exist.": [
         "Organisatiesleutel bestaat niet."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "De organisatiesleutel moet geactiveerd worden om admin rechten te geven"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Toegang geweigerd, beheerdersbevoegdheden zijn beperkt."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Privégebruikers kunnen worden gepromoveerd tot admin wanneer ze voor de eerste keer zijn ingelogd"
+      ],
       "The organization key must be activated first.": [
         "De organisatiesleutel moet eerst geactiveerd worden."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "U moet alle groepen verwijderen voordat u een nieuwe organisatiesleutel kunt genereren"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "U moet eerst alle gebruikers privatiseren voordat u een nieuwe organisatiesleutel genereert"
       ],
       "You need access to the organization key to perform this operation.": [
         "U heeft toegang nodig tot de organisatiesleutel om deze bewerking uit te voeren."
@@ -4255,11 +4512,17 @@
       "Confirm passphrase or leave empty": [
         "Bevestig wachtwoordzin of laat leeg"
       ],
+      "E.g., ": [
+        "Bijv., "
+      ],
       "Enter a passphrase or leave empty": [
         "Voer een wachtwoordzin in of laat leeg"
       ],
       "Gift code": [
         "Geschenkcode"
+      ],
+      "Organization name": [
+        "Organisatienaam"
       ],
       "Password": [
         "Wachtwoord"
@@ -4287,6 +4550,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Deel wat volgens u ${ BRAND_NAME } beter zou kunnen maken"
+      ],
+      "Your organization name": [
+        "Uw organisatienaam"
       ]
     },
     "plan customizer, users": {
@@ -4347,12 +4613,17 @@
         "Inloggen is niet gelukt."
       ]
     },
+    "Section": {
+      "Org setup and account security": [
+        "Org configuratie en accountbeveiliging"
+      ]
+    },
     "Select search results": {
       "Check your spelling or select a country from the list.": [
         "Controleer de spelling of selecteer een land uit de lijst."
       ],
       "No results found": [
-        "Geen resultaten"
+        "Geen resultaten gevonden"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -4383,7 +4654,7 @@
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
-        "Wachtwoordreset"
+        "Wachtwoord reset"
       ]
     },
     "session_recovery:sign_out:title": {
@@ -4538,6 +4809,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standaardprijs ${ amount } voor 30 maanden"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "De speciale aanbieding is geldig voor de eerste 2 jaar"
       ]
     },
     "specialoffer: Tooltip": {
@@ -4657,21 +4931,6 @@
       "Billed every 2 years": [
         "Wordt om de 2 jaar gefactureerd"
       ],
-      "Billed every 6 months": [
-        "Elke 6 maanden gefactureerd"
-      ],
-      "Billed for 15 months": [
-        "U betaalt voor 15 maanden"
-      ],
-      "Billed for 18 months": [
-        "Gefactureerd voor 18 maanden"
-      ],
-      "Billed for 3 months": [
-        "Gefactureerd voor 3 maanden"
-      ],
-      "Billed for 30 months": [
-        "Gefactureerd voor 30 maanden"
-      ],
       "Billed monthly": [
         "Maandelijks gefactureerd"
       ],
@@ -4789,8 +5048,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Bespaar"
+      "Save ${ priceString }": [
+        "Bespaar ${ priceString }"
       ]
     },
     "Success": {
@@ -4911,6 +5170,9 @@
       "Add credit/debit card": [
         "Krediet/debietkaart toevoegen"
       ],
+      "Add user": [
+        "Gebruiker toevoegen"
+      ],
       "Amount due": [
         "Verschuldigd bedrag"
       ],
@@ -4935,11 +5197,23 @@
       "Card verification": [
         "Kaartverificatie"
       ],
+      "Collaborate on documents": [
+        "Samenwerken aan documenten"
+      ],
       "Confirm downgrade": [
         "Downgrade bevestigen"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Bevestig verlies van ${ BRAND_NAME }-bonussen"
+      ],
+      "Connect apps and devices": [
+        "Apps en apparaten verbinden"
+      ],
+      "Connect to video conferencing": [
+        "Verbinding maken met videoconferentie"
+      ],
+      "Connect your custom domain": [
+        "Verbind uw eigen domein"
       ],
       "Coupon": [
         "Kortingscode"
@@ -4956,8 +5230,17 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Downgrade naar ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Download ${ DRIVE_APP_NAME } apps"
+      ],
       "Edit credit/debit card": [
         "Krediet/debietkaart bewerken"
+      ],
+      "Enable advanced account protection": [
+        "Schakel geavanceerde accountbeveiliging in"
+      ],
+      "Enhance security with 2FA": [
+        "Verbeter de beveiliging met 2FA"
       ],
       "Enter 2FA code": [
         "Voer 2FA-code in"
@@ -4967,6 +5250,9 @@
       ],
       "Error": [
         "Fout"
+      ],
+      "Get the apps": [
+        "Verkrijg de apps"
       ],
       "Gift": [
         "Geschenk"
@@ -4983,8 +5269,14 @@
       "Human verification": [
         "Persoonsverificatie"
       ],
+      "Import emails, calendars, contacts": [
+        "Importeer e-mails, agenda's, contacten"
+      ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
+      ],
+      "Minicalendar": [
+        "Mini-agenda"
       ],
       "Network error": [
         "Netwerkfout"
@@ -5013,14 +5305,41 @@
       "Select a plan": [
         "Selecteer een abonnement"
       ],
+      "Set recovery methods": [
+        "Herstelmethoden instellen"
+      ],
+      "Set up email forwarding": [
+        "E-mail doorsturen instellen"
+      ],
+      "Set up your organization": [
+        "Stel uw organisatie in"
+      ],
+      "Share your calendar with your team": [
+        "Deel uw agenda met uw team"
+      ],
       "Sign out": [
         "Uitloggen"
+      ],
+      "Simplify email distribution": [
+        "Vereenvoudig de e-maildistributie"
+      ],
+      "Simplify password management": [
+        "Vereenvoudig wachtwoordbeheer"
       ],
       "Summary": [
         "Overzicht"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } inschakelen"
+      ],
       "Upgrade complete!": [
         "Upgrade voltooid!"
+      ],
+      "Upload and share files": [
+        "Bestanden uploaden en delen"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Gebruik ${ VPN_SHORT_APP_NAME } voor data privacy"
       ],
       "Verification failed": [
         "Verificatie mislukt"
@@ -5034,11 +5353,19 @@
       "Wallet": [
         "Portemonnee"
       ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Welkom bij ${ BRAND_NAME } voor Business"
+      ],
       "You can now create unlimited folders and labels": [
         "U kunt nu onbeperkt mappen en labels maken"
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Vandaag"
       ]
     },
     "tooltip": {
@@ -5093,6 +5420,11 @@
       ],
       "Unknown sender": [
         "Onbekende afzender"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Beheerders hebben geen toegang tot de gegevens van privégebruikers en kunnen hun wachtwoord niet resetten."
       ]
     },
     "Validation": {
