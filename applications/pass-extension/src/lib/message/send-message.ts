@@ -1,14 +1,15 @@
-import browser from '@proton/pass/lib/globals/browser';
 import type {
-    ClientEndpoint,
     MessageFailure,
     MessageSuccess,
     PortFrameForwardingMessage,
     WorkerMessage,
     WorkerMessageWithSender,
     WorkerResponse,
-} from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
+} from 'proton-pass-extension/types/messages';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
+
+import browser from '@proton/pass/lib/globals/browser';
+import type { ClientEndpoint } from '@proton/pass/types';
 
 export class MessageVersionMismatchError extends Error {
     name = 'MessageVersionMismatchError';

@@ -17,16 +17,16 @@ import type {
 } from 'proton-pass-extension/app/content/types';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import { sendContentScriptTelemetry } from 'proton-pass-extension/app/content/utils/telemetry';
-import type { Runtime } from 'webextension-polyfill';
-
-import { MODEL_VERSION } from '@proton/pass/constants';
 import {
     contentScriptMessage,
     portForwardingMessage,
     sendMessage,
-} from '@proton/pass/lib/extension/message/send-message';
+} from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
+import type { Runtime } from 'webextension-polyfill';
+
+import { MODEL_VERSION } from '@proton/pass/constants';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';
 import { pixelEncoder } from '@proton/pass/utils/dom/computed-styles';

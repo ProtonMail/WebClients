@@ -4,7 +4,9 @@ import { useDispatch } from 'react-redux';
 
 import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
 import { useExtensionClientInit } from 'proton-pass-extension/lib/hooks/useExtensionClientInit';
+import { isExtensionMessage } from 'proton-pass-extension/lib/message/utils';
 import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
+import type { WorkerMessageWithSender } from 'proton-pass-extension/types/messages';
 
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
@@ -13,10 +15,9 @@ import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { clientErrored } from '@proton/pass/lib/client';
-import { isExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import { lock, signoutIntent, syncIntent } from '@proton/pass/store/actions';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';
-import type { MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import sentry, { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
