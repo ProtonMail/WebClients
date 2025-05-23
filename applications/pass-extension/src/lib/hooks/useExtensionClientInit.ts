@@ -1,15 +1,16 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
+import { CriticalMessageResponseError, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { CriticalMessageResponseError, sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import { MemoryStorage } from '@proton/pass/lib/file-storage/fs';
 import type { AppState } from '@proton/pass/types';
-import { AppStatus, WorkerMessageType } from '@proton/pass/types';
+import { AppStatus } from '@proton/pass/types';
 import { type Awaiter, awaiter } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';

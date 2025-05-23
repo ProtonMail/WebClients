@@ -5,10 +5,10 @@ import { createIFrameApp } from 'proton-pass-extension/app/content/injections/if
 import type { PopoverController } from 'proton-pass-extension/app/content/services/iframes/popover';
 import type { InjectedNotification, NotificationActions } from 'proton-pass-extension/app/content/types';
 import { IFramePortMessageType, NotificationAction } from 'proton-pass-extension/app/content/types';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { FieldType, flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import { WorkerMessageType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { asyncQueue } from '@proton/pass/utils/fp/promises';
 import noop from '@proton/utils/noop';

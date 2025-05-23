@@ -1,3 +1,5 @@
+import type { Runtime } from 'webextension-polyfill';
+
 import type { FileStorageGarbageCollector } from '@proton/pass/lib/file-storage/fs.gc';
 import type { AnyStorage, Maybe, StorageData } from '@proton/pass/types';
 
@@ -17,3 +19,10 @@ export interface FileStorage {
 
     attachGarbageCollector: (storage?: AnyStorage<StorageData>) => void;
 }
+
+export type FilePortWriter = (
+    fileRef: string,
+    stream: ReadableStream<FileBuffer>,
+    signal: AbortSignal,
+    port: Maybe<Runtime.Port>
+) => Promise<void>;

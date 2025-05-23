@@ -1,6 +1,7 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { createAlarmHandles } from 'proton-pass-extension/app/worker/services/telemetry';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Store } from 'redux';
 
 import { createB2BEventDispatcher } from '@proton/pass/lib/b2b/b2b.dispatcher';
@@ -10,7 +11,6 @@ import { isBusinessPlan } from '@proton/pass/lib/organization/helpers';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { ExtensionStorage } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
 
 export const B2B_EVENTS_ALARM_NAME = 'PassB2BEventsAlarm';
 export const B2B_EVENTS_STORAGE_KEY = 'b2bEvents';

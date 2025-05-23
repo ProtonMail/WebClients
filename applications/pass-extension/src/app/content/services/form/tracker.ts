@@ -9,15 +9,15 @@ import type {
 } from 'proton-pass-extension/app/content/types';
 import { DropdownAction } from 'proton-pass-extension/app/content/types';
 import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
+import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
 import { stage, stash, validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import { FieldType, FormType, kButtonSubmitSelector } from '@proton/pass/fathom';
-import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import browser from '@proton/pass/lib/globals/browser';
 import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
 import type { AutosaveFormEntry, FormCredentials, MaybeNull } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { parseFormAction } from '@proton/pass/utils/dom/form';
 import { asyncQueue } from '@proton/pass/utils/fp/promises';

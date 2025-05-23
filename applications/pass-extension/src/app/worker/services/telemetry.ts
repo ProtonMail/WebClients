@@ -1,6 +1,7 @@
 import { hasPauseCriteria } from 'proton-pass-extension/app/content/context/utils';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { MODEL_VERSION } from '@proton/pass/constants';
 import { clientReady } from '@proton/pass/lib/client';
@@ -15,7 +16,6 @@ import {
     selectUserTier,
 } from '@proton/pass/store/selectors';
 import type { ExtensionStorage } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { first } from '@proton/pass/utils/array/first';
 import type { EventDispatcherAlarm } from '@proton/pass/utils/event/dispatcher';

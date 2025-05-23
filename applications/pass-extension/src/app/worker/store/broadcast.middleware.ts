@@ -1,13 +1,13 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
+import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Action } from 'redux';
 import { type Middleware, isAction } from 'redux';
 
-import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import { actionStream } from '@proton/pass/store/actions';
 import { isBackgroundAction, isStreamableAction } from '@proton/pass/store/actions/enhancers/client';
 import { isActionWithReceiver, withSender } from '@proton/pass/store/actions/enhancers/endpoint';
 import type { State } from '@proton/pass/store/types';
-import { WorkerMessageType } from '@proton/pass/types';
 import { not } from '@proton/pass/utils/fp/predicates';
 import { toChunks } from '@proton/pass/utils/object/chunk';
 

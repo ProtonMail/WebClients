@@ -1,7 +1,7 @@
 import browser, { clearBrowserMocks } from 'proton-pass-extension/__mocks__/webextension-polyfill';
+import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
-import { WorkerMessageType } from '@proton/pass/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import * as client from './client';

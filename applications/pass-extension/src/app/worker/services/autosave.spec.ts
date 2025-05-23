@@ -7,12 +7,13 @@ import {
     mockShareId,
     setMockMessageSender,
 } from 'proton-pass-extension/__mocks__/mocks';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { itemCreate, itemEdit } from '@proton/pass/store/actions';
 import type { FormEntry } from '@proton/pass/types';
-import { AutosaveMode, FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
+import { AutosaveMode, FormEntryStatus } from '@proton/pass/types';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
