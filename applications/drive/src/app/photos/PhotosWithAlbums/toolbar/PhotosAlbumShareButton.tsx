@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components/index';
+import { Icon, ToolbarButton } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 export interface PhotosAlbumShareButtonProps {

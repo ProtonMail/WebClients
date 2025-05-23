@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
-import type { useConfirmActionModal } from '@proton/components/index';
+import type { useConfirmActionModal } from '@proton/components';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 

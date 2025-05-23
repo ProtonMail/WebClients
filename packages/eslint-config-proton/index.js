@@ -122,6 +122,10 @@ module.exports = {
                         group: ['@proton/atoms/*'],
                         message: 'You should import from `@proton/atoms` instead.',
                     },
+                    {
+                        group: ['@proton/components/index'],
+                        message: 'You should import from `@proton/components` instead.',
+                    },
                 ],
             },
         ],

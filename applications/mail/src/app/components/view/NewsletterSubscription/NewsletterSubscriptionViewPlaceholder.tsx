@@ -1,4 +1,4 @@
-import { useTheme } from '@proton/components/index';
+import { useTheme } from '@proton/components';
 import { getInboxEmptyPlaceholder } from '@proton/mail/helpers/getPlaceholderSrc';
 
 export const NewsletterSubscriptionViewPlaceholder = () => {

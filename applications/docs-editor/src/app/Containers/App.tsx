@@ -55,7 +55,7 @@ import { $generateJSONFromSelectedNodes } from '@lexical/clipboard'
 import { getEditorStateFromSerializedNodes } from '../Conversion/get-editor-state-from-nodes'
 import { utf8ArrayToString } from '@proton/crypto/lib/utils'
 import { copyTextToClipboard } from '../Utils/copy-to-clipboard'
-import { useNotifications } from '@proton/components/index'
+import { useNotifications } from '@proton/components'
 
 type AppProps = {
   documentType: DocumentType

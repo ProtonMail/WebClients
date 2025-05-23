@@ -3,9 +3,6 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import { type WasmAccount, WasmSigningType } from '@proton/andromeda';
-import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
-import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import {
     Collapsible,
     CollapsibleContent,
@@ -14,7 +11,10 @@ import {
     Icon,
     TextAreaTwo,
     useNotifications,
-} from '@proton/components/index';
+} from '@proton/components';
+import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useLoading from '@proton/hooks/useLoading';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import walletPenDark from '@proton/styles/assets/img/wallet/wallet-pen-dark.png';

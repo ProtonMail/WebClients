@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms';
+import { useModalTwoStatic } from '@proton/components';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalSize } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -13,7 +14,6 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Price from '@proton/components/components/price/Price';
 import UpsellFeatureList from '@proton/components/components/upsell/UpsellFeatureList';
-import { useModalTwoStatic } from '@proton/components/index';
 import { CYCLE, type Currency, PLANS } from '@proton/payments';
 
 import './DriveUpsellModal.scss';

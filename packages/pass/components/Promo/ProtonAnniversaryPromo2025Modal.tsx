@@ -4,12 +4,12 @@ import { type FC, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { ModalTwoContent } from '@proton/components';
 import Anniversary2025FeatureList from '@proton/components/containers/offers/components/anniversary2025/Anniversary2025FeatureList';
 import Anniversary2025Header from '@proton/components/containers/offers/components/anniversary2025/Anniversary2025Header';
 import OfferCloseButton from '@proton/components/containers/offers/components/shared/OfferCloseButton';
 import { getAnniversary2025Title } from '@proton/components/containers/offers/helpers/anniversary2025';
 import type { OfferId, OfferProps } from '@proton/components/containers/offers/interface';
-import { ModalTwoContent } from '@proton/components/index';
 import type { FeatureCode } from '@proton/features/interface';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
