@@ -1,5 +1,8 @@
 import { useState } from 'react';
 
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/src';
 import { ContactImage, useModalStateObject } from '@proton/components';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 import clsx from '@proton/utils/clsx';
@@ -13,7 +16,6 @@ import ModalNewsletterSubscriptionFilter from './ModalNewsletterSubscriptionFilt
 import { NewsletterSubscriptionCardActiveFilter } from './NewsletterSubscriptionCardActiveFilter';
 import {
     ActiveSubscriptionButtons,
-    InactiveSubscriptionButtons,
     SubscriptionCardStats,
     SubscriptionCardTitle,
 } from './NewsletterSubscriptionCardComponents';
@@ -83,7 +85,12 @@ export const NewsletterSubscriptionCard = ({ subscription }: Props) => {
                         </div>
                         <div className="flex gap-2">
                             {subscription.UnsubscribedTime ? (
-                                <InactiveSubscriptionButtons onMoveToTrash={() => handleFilterClick('MoveToTrash')} />
+                                <Button
+                                    onClick={() => handleFilterClick('MoveToTrash')}
+                                    shape="outline"
+                                    size="small"
+                                    className="color-danger"
+                                >{c('Action').t`Move to trash`}</Button>
                             ) : (
                                 <ActiveSubscriptionButtons subscription={subscription} />
                             )}
