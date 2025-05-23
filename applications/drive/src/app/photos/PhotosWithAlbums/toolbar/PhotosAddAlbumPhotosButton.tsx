@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button, type ButtonLikeSize } from '@proton/atoms';
-import { DropdownMenuButton, Icon, ToolbarButton, useActiveBreakpoint } from '@proton/components/index';
+import { DropdownMenuButton, Icon, ToolbarButton, useActiveBreakpoint } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 export interface PhotosAddAlbumPhotosButtonProps {

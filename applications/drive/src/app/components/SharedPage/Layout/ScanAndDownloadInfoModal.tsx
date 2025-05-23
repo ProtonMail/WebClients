@@ -8,7 +8,7 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     useModalTwoStatic,
-} from '@proton/components/index';
+} from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

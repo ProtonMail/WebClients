@@ -4,10 +4,10 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
+import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '@proton/components';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/lib';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';

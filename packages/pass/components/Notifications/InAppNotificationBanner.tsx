@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components/index';
+import { Icon } from '@proton/components';
 import { InAppNotificationState } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 

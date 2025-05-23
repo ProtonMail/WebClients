@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useActiveBreakpoint } from '@proton/components/index';
+import { useActiveBreakpoint } from '@proton/components';
 import { SOURCE_EVENT } from '@proton/shared/lib/helpers/collapsibleSidebar';
 
 import { useNewsletterSubscriptions } from 'proton-mail/store/newsletterSubscriptions/hook';

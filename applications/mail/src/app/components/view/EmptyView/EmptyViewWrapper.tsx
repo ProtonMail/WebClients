@@ -1,6 +1,6 @@
 import type { ComponentPropsWithRef, PropsWithChildren, ReactNode } from 'react';
 
-import { EmptyViewContainer } from '@proton/components/index';
+import { EmptyViewContainer } from '@proton/components';
 
 interface Props extends PropsWithChildren {
     imgProps?: ComponentPropsWithRef<'img'>;

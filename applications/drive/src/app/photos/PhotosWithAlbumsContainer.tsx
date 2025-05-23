@@ -1,7 +1,7 @@
 import { type FC, useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom-v5-compat';
 
-import { Loader } from '@proton/components/index';
+import { Loader } from '@proton/components';
 
 import { MIGRATION_STATUS, usePhotosWithAlbums } from './PhotosStore/PhotosWithAlbumsProvider';
 import { AlbumsView } from './PhotosWithAlbums/AlbumsView';
