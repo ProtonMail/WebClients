@@ -10,13 +10,13 @@
  * Performance is optimized by freeing resources in inactive tabs through complete client
  * destruction on tab hiding. A continuous activity probe ensures connection health with the
  * service worker through periodic pings for long-running tabs. */
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
 import 'proton-pass-extension/lib/utils/polyfills';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import browser from '@proton/pass/lib/globals/browser';
 import type { MaybeNull } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';

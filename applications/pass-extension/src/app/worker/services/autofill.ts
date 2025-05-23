@@ -1,11 +1,13 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { onContextReady, withContext } from 'proton-pass-extension/app/worker/context/inject';
+import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
+import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup';
 import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
+import type { AutofillCheckFormMessage, WorkerMessageResponse } from 'proton-pass-extension/types/messages';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientReady } from '@proton/pass/lib/client';
-import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message/message-broker';
-import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import { getRulesForURL, parseRules } from '@proton/pass/lib/extension/utils/website-rules';
 import browser from '@proton/pass/lib/globals/browser';
 import { intoIdentityItemPreview, intoLoginItemPreview, intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
@@ -23,17 +25,7 @@ import {
     selectPasswordOptions,
     selectVaultLimits,
 } from '@proton/pass/store/selectors';
-import type {
-    AutofillCheckFormMessage,
-    FormCredentials,
-    ItemContent,
-    ItemRevision,
-    Maybe,
-    SelectedItem,
-    TabId,
-    WorkerMessageResponse,
-} from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
+import type { FormCredentials, ItemContent, ItemRevision, Maybe, SelectedItem, TabId } from '@proton/pass/types';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';

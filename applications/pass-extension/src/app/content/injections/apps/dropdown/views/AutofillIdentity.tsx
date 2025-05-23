@@ -11,6 +11,8 @@ import { ScrollableItemsList } from 'proton-pass-extension/app/content/injection
 import { DropdownHeader } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownHeader';
 import type { DropdownAction, DropdownActions } from 'proton-pass-extension/app/content/types';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
@@ -18,9 +20,7 @@ import { UpsellRef } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import type { MaybeNull } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { AutofillIdentityResult } from '@proton/pass/types/worker/autofill';

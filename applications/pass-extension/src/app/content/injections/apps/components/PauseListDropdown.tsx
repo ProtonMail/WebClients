@@ -4,13 +4,13 @@ import {
     useIFrameAppController,
     useIFrameAppState,
 } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { MODEL_VERSION } from '@proton/pass/constants';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import { WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { type CriteriaMasks } from '@proton/pass/types/worker/settings';
 

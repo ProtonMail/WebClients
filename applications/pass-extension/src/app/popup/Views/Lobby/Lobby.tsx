@@ -3,6 +3,8 @@ import { type FC, useCallback } from 'react';
 import { useExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
 import { PromptForReload } from 'proton-pass-extension/lib/components/Extension/ExtensionError';
 import { useRequestForkWithPermissions } from 'proton-pass-extension/lib/hooks/useRequestFork';
+import { popupMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -10,9 +12,7 @@ import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import { clientErrored } from '@proton/pass/lib/client';
-import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
-import { WorkerMessageType } from '@proton/pass/types';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';

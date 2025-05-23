@@ -2,16 +2,16 @@ import { type FC, useEffect } from 'react';
 import { useStore } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
+import { pageMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { Exporter } from '@proton/pass/components/Export/Exporter';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { useReauthActionHandler } from '@proton/pass/hooks/auth/useReauthActionHandler';
 import { getStateKey, isReauthForkState } from '@proton/pass/lib/auth/fork';
-import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
 import type { State } from '@proton/pass/store/types';
-import { WorkerMessageType } from '@proton/pass/types';
 import { throwError } from '@proton/pass/utils/fp/throw';
 
 const checkLock = async () => {
