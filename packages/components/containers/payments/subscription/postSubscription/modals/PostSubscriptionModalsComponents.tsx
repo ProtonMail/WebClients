@@ -28,8 +28,8 @@ export const PostSubscriptionModalWrapper = ({
 
 export const PostSubscriptionModalHeader = ({ illustration }: { illustration: string }) => (
     <div
-        className="relative flex justify-center items-center fade-in-up h-custom custom-bg"
-        style={{ '--h-custom': '12rem', '--custom-bg': 'var(--optional-background-lowered)' }}
+        className="relative flex justify-center items-center fade-in-up h-custom bg-lowered"
+        style={{ '--h-custom': '12rem' }}
     >
         <ModalHeaderCloseButton
             buttonProps={{

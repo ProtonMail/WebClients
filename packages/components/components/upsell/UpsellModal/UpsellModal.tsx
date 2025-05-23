@@ -60,8 +60,8 @@ const UpsellModal = ({
         <ModalTwo {...modalProps} size="xsmall" data-testid={dataTestid} onClose={handleClose}>
             <ModalTwoContent unstyled>
                 <div
-                    className="relative flex justify-center items-center h-custom custom-bg"
-                    style={{ '--h-custom': '11rem', '--custom-bg': 'var(--optional-background-lowered)' }}
+                    className="relative flex justify-center items-center h-custom bg-lowered"
+                    style={{ '--h-custom': '11rem' }}
                 >
                     <ModalHeaderCloseButton buttonProps={{ className: 'absolute right-0 top-0 mt-3 mr-3' }} />
                     <img src={illustration} alt="" />
