@@ -8,7 +8,7 @@ import type { GetNewsletterSubscriptionsApiResponse } from '@proton/shared/lib/i
 
 import { DEFAULT_PAGINATION_PAGE_SIZE, initialState, initialStateValue } from './constants';
 import { getTabData, normalizeSubscriptions } from './helpers';
-import { type NewsletterSubscriptionsInterface, SubscriptionTabs } from './interface';
+import { type NewsletterSubscriptionsInterface, SortSubscriptionsValue, SubscriptionTabs } from './interface';
 import {
     fetchNextNewsletterSubscriptionsPage,
     filterSubscriptionList,
@@ -54,6 +54,7 @@ const modelThunk = createAsyncModelThunk<
                             PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
                             Active: '1',
                         },
+                        sort: SortSubscriptionsValue.RecentlyReceived,
                     })
                 ),
                 extraArgument.api<GetNewsletterSubscriptionsApiResponse>(
@@ -62,6 +63,7 @@ const modelThunk = createAsyncModelThunk<
                             PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
                             Active: '0',
                         },
+                        sort: SortSubscriptionsValue.RecentlyReceived,
                     })
                 ),
             ]);
