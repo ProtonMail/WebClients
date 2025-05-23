@@ -1,0 +1,9 @@
+.participant-tile-body {
+	overflow: hidden;
+	aspect-ratio: 16 / 9;
+}
+
+.participant-tile-body__video {
+	display: block;
+	object-fit: cover;
+}

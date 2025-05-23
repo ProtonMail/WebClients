@@ -9,3 +9,38 @@
 .modal-two-backdrop {
 	display: none;
 }
+
+.lk-room-container {
+	block-size: 100%;
+	inline-size: 100%;
+}
+
+body {
+	background: var(--interaction-weak-minor-3);
+}
+
+$meet-background-colors:
+	var(--interaction-norm-minor-3), var(--signal-success-minor-2), var(--ui-pink-interaction-norm-minor-2),
+	var(--ui-blue-interaction-norm-minor-2), var(--signal-danger-minor-2), var(--ui-orange-interaction-norm-minor-2);
+
+@for $i from 1 through 6 {
+	.meet-background-#{$i} {
+		background-color: nth($meet-background-colors, $i);
+	}
+}
+
+$profile-colors:
+	var(--interaction-norm), var(--signal-success), var(--ui-pink-interaction-norm), var(--ui-blue-interaction-norm),
+	var(--signal-danger-major-1), var(--ui-orange-interaction-norm);
+
+@for $i from 1 through 6 {
+	.profile-background-#{$i} {
+		background: nth($profile-colors, $i);
+	}
+}
+
+@for $i from 1 through 6 {
+	.tile-border-#{$i} {
+		border: 3px solid nth($profile-colors, $i);
+	}
+}

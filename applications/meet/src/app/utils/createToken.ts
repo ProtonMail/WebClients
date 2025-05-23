@@ -18,8 +18,6 @@ export const createToken = async ({
     room: string;
     displayName: string;
 }) => {
-    console.log('displayName', displayName);
-
     const apiKey = process.env.LIVEKIT_API_KEY;
     const apiSecret = process.env.LIVEKIT_API_SECRET;
 

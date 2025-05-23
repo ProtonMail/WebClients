@@ -40,10 +40,8 @@ const result = (env: any): webpack.Configuration => {
             'process.env.LIVEKIT_API_KEY': JSON.stringify(process.env.LIVEKIT_API_KEY),
             'process.env.LIVEKIT_API_SECRET': JSON.stringify(process.env.LIVEKIT_API_SECRET),
             'process.env.LIVEKIT_ROOM_KEY': JSON.stringify(process.env.LIVEKIT_ROOM_KEY),
+            'process.env.LIVEKIT_DEFAULT_ROOM': JSON.stringify(process.env.LIVEKIT_DEFAULT_ROOM),
             'process.env.EXPERIMENTAL_FACE_CROP': JSON.stringify(process.env.EXPERIMENTAL_FACE_CROP),
-            'process.env.EXPERIMENTAL_DYNAMIC_SUBSCRIPTION': JSON.stringify(
-                process.env.EXPERIMENTAL_DYNAMIC_SUBSCRIPTION
-            ),
             'process.env.EXPERIMENTAL_ACTIVE_SPEAKER_ORDERING': JSON.stringify(
                 process.env.EXPERIMENTAL_ACTIVE_SPEAKER_ORDERING
             ),
