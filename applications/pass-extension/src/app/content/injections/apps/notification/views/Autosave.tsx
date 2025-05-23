@@ -17,6 +17,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 import usePrevious from '@proton/hooks/usePrevious';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { MODEL_VERSION } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
@@ -132,6 +133,13 @@ export const Autosave: FC<Props> = ({ data }) => {
             <Form className="ui-violet flex flex-column flex-nowrap *:shrink-0 justify-space-between h-full anime-fadein gap-2">
                 <NotificationHeader
                     discardOnClose={shouldDiscard}
+                    onClose={() =>
+                        onTelemetry(
+                            TelemetryEventName.AutosaveDismissed,
+                            {},
+                            { dismissReason: 'close', modelVersion: MODEL_VERSION }
+                        )
+                    }
                     title={(() => {
                         switch (form.values.type) {
                             case AutosaveMode.NEW:
