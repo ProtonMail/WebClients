@@ -4,7 +4,7 @@ import type { IconName } from 'packages/icons';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import { FiltersUpsellModal, Icon, useModalStateObject } from '@proton/components';
 import { useFilters } from '@proton/mail/filters/hooks';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
@@ -113,23 +113,6 @@ export const ActiveSubscriptionButtons = ({ subscription }: SubscriptionCardTitl
                     overrideFeature={MAIL_UPSELL_PATHS.UNLIMITED_FILTERS_MAIL_SUBSCRIPTION}
                 />
             )}
-        </>
-    );
-};
-
-interface InactiveSubscriptionButtonsProps {
-    onMoveToTrash: () => void;
-}
-
-export const InactiveSubscriptionButtons = ({ onMoveToTrash }: InactiveSubscriptionButtonsProps) => {
-    return (
-        <>
-            <ButtonLike as="a" href="#" target="_blank" shape="outline" size="small" className="flex items-center">
-                <Icon name="arrow-out-square" className="mr-1" />
-                {c('Action').t`Resubscribe`}
-            </ButtonLike>
-            <Button onClick={onMoveToTrash} shape="outline" size="small" className="color-danger">{c('Action')
-                .t`Move to trash`}</Button>
         </>
     );
 };
