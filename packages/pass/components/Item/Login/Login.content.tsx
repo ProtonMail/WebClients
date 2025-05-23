@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ExtraFieldsControl } from '@proton/pass/components/Form/Field/Control/ExtraFieldsControl';
 import { OTPValueControl } from '@proton/pass/components/Form/Field/Control/OTPValueControl';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
@@ -15,22 +14,20 @@ import { PasskeyContentModal } from '@proton/pass/components/Item/Passkey/Passke
 import { PasswordStrength } from '@proton/pass/components/Password/PasswordStrength';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
-import { MODEL_VERSION, UpsellRef } from '@proton/pass/constants';
+import { UpsellRef } from '@proton/pass/constants';
 import { usePasswordStrength } from '@proton/pass/hooks/monitor/usePasswordStrength';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';
+import { useLoginClipboardTelemetry } from '@proton/pass/hooks/useTelemetryEvent';
 import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
-import type { ExtensionCopiedFromLoginDimensions } from '@proton/pass/types/data/telemetry';
-import { TelemetryEventName, TelemetryFieldType } from '@proton/pass/types/data/telemetry';
+import { TelemetryFieldType } from '@proton/pass/types/data/telemetry';
 import { isValidScheme } from '@proton/pass/utils/url/utils';
-import noop from '@proton/utils/noop';
 
 export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLinkItem = false }) => {
     const { data: item, shareId, itemId } = revision;
     const [passkey, setPasskey] = useState<MaybeNull<SanitizedPasskey>>(null);
-    const { onTelemetry } = usePassCore();
 
     const {
         metadata: { note },
@@ -44,31 +41,11 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
      * was bypassed. Only URLs with approved protocols are rendered as links. */
     const sanitizedUrls = useMemo(() => urls.filter(isValidScheme), [urls]);
     const totpAllowed = useSelector(selectTOTPLimits).totpAllowed(itemId) || secureLinkItem;
-    const passwordStrength = usePasswordStrength(password);
-
     const relatedAlias = useSelector(selectAliasByAliasEmail(itemEmail));
-
-    const handleOnCopy = EXTENSION_BUILD
-        ? (extensionField: TelemetryFieldType) => {
-              /** Default unused values which will all be mutated inside `onTelemetry` */
-              const DEFAULT_TELEMETRY_DIMENSIONS: ExtensionCopiedFromLoginDimensions = {
-                  autofillLoginFormDetected: 0,
-                  autofillPaused: 0,
-                  extensionCopiedFromCurrentPage: 0,
-                  extensionField,
-                  hasLoginItemForCurrentWebsite: 0,
-                  loginAutofillEnabled: 0,
-                  modelVersion: MODEL_VERSION,
-                  uniqueMatch: 0,
-              };
-              onTelemetry(TelemetryEventName.ExtensionCopiedFromLogin, {}, DEFAULT_TELEMETRY_DIMENSIONS, undefined, {
-                  extensionField,
-                  itemUrls: item.content.urls,
-              });
-          }
-        : noop;
-
+    const passwordStrength = usePasswordStrength(password);
     const showEmptyEmailOrUsername = !(itemEmail || itemUsername);
+
+    const sendClipboardTelemetry = useLoginClipboardTelemetry(item);
 
     return (
         <>
@@ -99,7 +76,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                         icon={relatedAlias ? 'alias' : 'envelope'}
                         label={relatedAlias ? c('Label').t`Email (alias)` : c('Label').t`Email`}
                         value={itemEmail}
-                        onClick={() => handleOnCopy(TelemetryFieldType.email)}
+                        onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.email)}
                     />
                 )}
 
@@ -109,7 +86,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                         icon="user"
                         label={c('Label').t`Username`}
                         value={itemUsername}
-                        onClick={() => handleOnCopy(TelemetryFieldType.username)}
+                        onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.username)}
                     />
                 )}
 
@@ -127,7 +104,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                             : undefined
                     }
                     actionsContainerClassName="flex flex-row-reverse"
-                    onClick={() => handleOnCopy(TelemetryFieldType.password)}
+                    onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.password)}
                 >
                     {password.length ? getCharsGroupedByColor(password) : undefined}
                 </ValueControl>
@@ -135,7 +112,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                 {totpUri && totpAllowed && (
                     <OTPValueControl
                         payload={{ totpUri, type: 'uri' }}
-                        onClick={() => handleOnCopy(TelemetryFieldType.totp)}
+                        onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.totp)}
                     />
                 )}
 
@@ -166,7 +143,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                         icon="note"
                         label={c('Label').t`Note`}
                         value={note}
-                        onClick={() => handleOnCopy(TelemetryFieldType.note)}
+                        onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.note)}
                     />
                 </FieldsetCluster>
             )}
@@ -176,7 +153,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                     extraFields={extraFields}
                     itemId={itemId}
                     shareId={shareId}
-                    onClick={() => handleOnCopy(TelemetryFieldType.customField)}
+                    onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.customField)}
                 />
             )}
         </>
