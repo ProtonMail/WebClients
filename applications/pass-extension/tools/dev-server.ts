@@ -106,8 +106,6 @@ const server = new WebpackDevServer(
 );
 
 const main = async () => {
-    let devVersion = 0;
-
     if (REDUX_DEVTOOLS) {
         console.info(`[ReduxDevTools] - Starting redux devtools server..`);
         await createReduxDevServer(REDUX_DEVTOOLS_PORT);
@@ -121,6 +119,8 @@ const main = async () => {
     if (HTTP_DEBUGGER) createDebuggerServer();
 
     if (HOT_MANIFEST_UPDATE) {
+        let devVersion = 0;
+
         compiler.hooks.compilation.tap('ProtonPassUpdateManifest', (compilation) => {
             console.info(`[ProtonPassUpdateManifest] - Updating manifest version..`);
             compilation.hooks.processAssets.tap(
