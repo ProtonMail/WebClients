@@ -80,7 +80,6 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
                 content: {
                     ...creditCardValues,
                     cardType: CardType.Unspecified,
-                    expirationDate: creditCardValues.expirationDate,
                     number: obfuscate(creditCardValues.number),
                     verificationNumber: obfuscate(creditCardValues.verificationNumber),
                     pin: obfuscate(creditCardValues.pin),
