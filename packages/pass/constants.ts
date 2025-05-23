@@ -124,6 +124,7 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassFileAttachments]: false,
     [PassFeature.PassRenameAdminToManager]: false,
     [PassFeature.PassProtonAnniversaryPromo2025]: false,
+    [PassFeature.LoginAutofillTelemetry]: false,
 };
 
 /** NOTE: Timeout mostly used to avoid Safari extension
@@ -146,3 +147,6 @@ export const PASS_PROTON_ANNIVERSARY_END_DATE = new Date('2025-05-28T12:00:00+01
 export const PASS_PLUS_LIFETIME_PRICE = 19900; // €199
 export const PASS_PLUS_PRICE = 299; // €2.99
 export const PROTON_UNLIMITED_PRICE = 999; // €9.99
+
+/** Autofill model version. May be dynamically set in the future */
+export const MODEL_VERSION = '0';

@@ -52,7 +52,7 @@ import {
     isPRFSupported,
 } from '@proton/pass/lib/crypto/utils/prf';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
 import type { Maybe } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';

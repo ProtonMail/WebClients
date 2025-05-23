@@ -5,6 +5,7 @@ import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
 
 import { clientReady } from '@proton/pass/lib/client';
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message/message-broker';
+import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import { getRulesForURL, parseRules } from '@proton/pass/lib/extension/utils/website-rules';
 import browser from '@proton/pass/lib/globals/browser';
 import { intoIdentityItemPreview, intoLoginItemPreview, intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
@@ -22,7 +23,16 @@ import {
     selectPasswordOptions,
     selectVaultLimits,
 } from '@proton/pass/store/selectors';
-import type { FormCredentials, ItemContent, ItemRevision, Maybe, SelectedItem } from '@proton/pass/types';
+import type {
+    AutofillCheckFormMessage,
+    FormCredentials,
+    ItemContent,
+    ItemRevision,
+    Maybe,
+    SelectedItem,
+    TabId,
+    WorkerMessageResponse,
+} from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseUrl } from '@proton/pass/utils/url/parser';
@@ -100,6 +110,19 @@ export const createAutoFillService = () => {
             .catch(noop);
     };
 
+    const queryTabLoginForms = async (tabID: TabId): Promise<boolean> => {
+        try {
+            return (
+                await browser.tabs.sendMessage<
+                    AutofillCheckFormMessage,
+                    WorkerMessageResponse<WorkerMessageType.AUTOFILL_CHECK_FORM>
+                >(tabID, backgroundMessage({ type: WorkerMessageType.AUTOFILL_CHECK_FORM }))
+            ).hasLoginForm;
+        } catch {
+            return false;
+        }
+    };
+
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.AUTOFILL_LOGIN_QUERY,
         onContextReady(async ({ getState }, { payload }, sender) => {
@@ -165,6 +188,16 @@ export const createAutoFillService = () => {
         })
     );
 
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.WEBSITE_RULES_REQUEST,
+        withContext<MessageHandlerCallback<WorkerMessageType.WEBSITE_RULES_REQUEST>>(async (ctx, _, sender) => {
+            const rules = parseRules(await ctx.service.storage.local.getItem('websiteRules'));
+            if (!(rules && sender.url)) return { rules: null };
+
+            return { rules: getRulesForURL(rules, new URL(sender.url)) };
+        })
+    );
+
     /* onUpdated will be triggered every time a tab has been loaded with a new url :
      * update the badge count accordingly. `ensureReady` is used in place instead of
      * leveraging `onContextReady` to properly handle errors.  */
@@ -180,17 +213,12 @@ export const createAutoFillService = () => {
         })
     );
 
-    WorkerMessageBroker.registerMessage(
-        WorkerMessageType.WEBSITE_RULES_REQUEST,
-        withContext<MessageHandlerCallback<WorkerMessageType.WEBSITE_RULES_REQUEST>>(async (ctx, _, sender) => {
-            const rules = parseRules(await ctx.service.storage.local.getItem('websiteRules'));
-            if (!(rules && sender.url)) return { rules: null };
-
-            return { rules: getRulesForURL(rules, new URL(sender.url)) };
-        })
-    );
-
-    return { getLoginCandidates, sync, clear };
+    return {
+        clear,
+        getLoginCandidates,
+        queryTabLoginForms,
+        sync,
+    };
 };
 
 export type AutoFillService = ReturnType<typeof createAutoFillService>;
