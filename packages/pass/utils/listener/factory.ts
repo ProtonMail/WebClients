@@ -1,4 +1,5 @@
 import type { Callback, Maybe } from '@proton/pass/types';
+import type { PubSub, Subscriber } from '@proton/pass/utils/pubsub/factory';
 import noop from '@proton/utils/noop';
 
 /**
@@ -36,6 +37,10 @@ export type Listener<T extends EventSource = any, E extends keyof EventMap<T> = 
     | {
           kind: 'resizeObserver';
           observer: ResizeObserver;
+      }
+    | {
+          kind: 'pubsub';
+          unsubscribe: () => void;
       };
 
 export type ListenerStore = ReturnType<typeof createListenerStore>;
@@ -99,16 +104,22 @@ export const createListenerStore = () => {
         observer.observe(target);
     };
 
+    const addSubscriber = <T>(pubsub: PubSub<T>, subscriber: Subscriber<T>) => {
+        const unsubscribe = pubsub.subscribe(subscriber);
+        listeners.push({ kind: 'pubsub', unsubscribe });
+    };
+
     const removeAll = () => {
         listeners.forEach((listener) => {
             switch (listener.kind) {
                 case 'observer':
                 case 'resizeObserver':
                     return listener.observer.disconnect();
-                case 'listener': {
+                case 'pubsub':
+                    return listener.unsubscribe();
+                case 'listener':
                     cancelDebounce(listener.fn);
                     return listener.element.removeEventListener(listener.type, listener.fn);
-                }
             }
         });
 
@@ -119,6 +130,7 @@ export const createListenerStore = () => {
         addListener,
         addObserver,
         addResizeObserver,
+        addSubscriber,
         removeAll,
     };
 };
