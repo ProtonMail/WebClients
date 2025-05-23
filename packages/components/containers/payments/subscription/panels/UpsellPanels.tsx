@@ -5,7 +5,7 @@ import Price from '@proton/components/components/price/Price';
 import Time from '@proton/components/components/time/Time';
 import { PLANS, PLAN_NAMES, type Subscription } from '@proton/payments';
 import { hasBundle } from '@proton/payments';
-import { OfferPrice } from '@proton/payments/ui/components/OfferPrice';
+import { OfferPrice } from '@proton/payments/ui';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 

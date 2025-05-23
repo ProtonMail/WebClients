@@ -1,6 +1,7 @@
 import type { Subscription } from '@proton/payments';
 import {
     CYCLE,
+    hasAnniversary2025Coupon,
     hasBundle,
     hasDrive,
     hasDuo,
@@ -10,7 +11,6 @@ import {
     hasVPN2024,
     isManagedExternally,
 } from '@proton/payments';
-import { hasAnniversary2025Coupon } from '@proton/payments/core/subscription/helpers';
 
 class OfferSubscription {
     subscription: Subscription;
