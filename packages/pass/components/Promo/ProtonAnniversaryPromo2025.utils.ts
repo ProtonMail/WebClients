@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import type { Feature } from '@proton/components/containers/offers/interface';
 import { UpsellRef } from '@proton/pass/constants';
 import type { MaybeNull } from '@proton/pass/types';
-import { COUPON_CODES, PLANS } from '@proton/payments/core/constants';
+import { COUPON_CODES, PLANS } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 /** Plans eligible to Proton Anniversary 2025 promo */

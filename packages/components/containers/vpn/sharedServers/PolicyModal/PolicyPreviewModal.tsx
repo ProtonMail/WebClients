@@ -16,7 +16,7 @@ import usePopperAnchor from '@proton/components/components/popper/usePopperAncho
 import useSharedServers, {
     type VpnLocationFilterPolicy,
 } from '@proton/components/containers/vpn/sharedServers/useSharedServers';
-import { getCountryOptions } from '@proton/payments/index';
+import { getCountryOptions } from '@proton/payments';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 

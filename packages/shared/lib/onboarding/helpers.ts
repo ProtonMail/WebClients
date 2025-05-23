@@ -1,6 +1,6 @@
 import { fromUnixTime, isBefore } from 'date-fns';
 
-import type { Subscription } from '@proton/payments/core/subscription/interface';
+import type { Subscription } from '@proton/payments';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 
 import { B2B_ONBOARDING_SHOW_BUTTON_INTERVAL } from './constants';

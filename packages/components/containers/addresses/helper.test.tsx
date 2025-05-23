@@ -12,7 +12,7 @@ import {
     permissionsSendMap,
     setupIncompletePermissionMap,
 } from '@proton/components/containers/addresses/helper';
-import { PLANS } from '@proton/payments/index';
+import { PLANS } from '@proton/payments';
 import { ADDRESS_PERMISSIONS, ADDRESS_PERMISSION_TYPE } from '@proton/shared/lib/constants';
 import type { MailSettings, OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';

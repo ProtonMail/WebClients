@@ -1,4 +1,4 @@
-import type { PLANS } from '@proton/payments/index';
+import type { PLANS } from '@proton/payments';
 
 export type SupportedPlans = PLANS.MAIL | PLANS.DRIVE | PLANS.BUNDLE;
 
