@@ -1,0 +1,14 @@
+@import '~@proton/styles/scss/lib';
+
+.stacked-field {
+	&#{&} {
+		--stacked-field-border-radius: var(--border-radius-xl);
+		--stacked-field-background: var(--background-weak);
+		--field-focus-background-color: var(--background-weak);
+		--stacked-field-border-color: var(--border-norm);
+	}
+
+	.field-two-assist {
+		display: none;
+	}
+}

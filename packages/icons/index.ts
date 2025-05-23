@@ -258,6 +258,20 @@ export type IconName =
     | 'map-pin'
     | 'megaphone-filled'
     | 'microphone'
+    | 'meet-camera'
+    | 'meet-camera-off'
+    | 'meet-camera-filled'
+    | 'meet-camera-filled-off'
+    | 'meet-chat'
+    | 'meet-microphone'
+    | 'meet-microphone-off'
+    | 'meet-microphone-filled'
+    | 'meet-microphone-filled-off'
+    | 'meet-screen-share'
+    | 'meet-speaker'
+    | 'meet-speaker-indicator'
+    | 'meet-participants'
+    | 'meet-user'
     | 'minus'
     | 'minus-circle'
     | 'minus-circle-filled'
@@ -671,6 +685,20 @@ export { IcMap } from './icons/IcMap';
 export { IcMapPin } from './icons/IcMapPin';
 export { IcMegaphoneFilled } from './icons/IcMegaphoneFilled';
 export { IcMicrophone } from './icons/IcMicrophone';
+export { IcMeetCamera } from './icons/IcMeetCamera';
+export { IcMeetCameraOff } from './icons/IcMeetCameraOff';
+export { IcMeetCameraFilled } from './icons/IcMeetCameraFilled';
+export { IcMeetCameraFilledOff } from './icons/IcMeetCameraFilledOff';
+export { IcMeetChat } from './icons/IcMeetChat';
+export { IcMeetMicrophone } from './icons/IcMeetMicrophone';
+export { IcMeetMicrophoneOff } from './icons/IcMeetMicrophoneOff';
+export { IcMeetMicrophoneFilled } from './icons/IcMeetMicrophoneFilled';
+export { IcMeetMicrophoneFilledOff } from './icons/IcMeetMicrophoneFilledOff';
+export { IcMeetScreenShare } from './icons/IcMeetScreenShare';
+export { IcMeetSpeaker } from './icons/IcMeetSpeaker';
+export { IcMeetSpeakerIndicator } from './icons/IcMeetSpeakerIndicator';
+export { IcMeetParticipants } from './icons/IcMeetParticipants';
+export { IcMeetUser } from './icons/IcMeetUser';
 export { IcMinus } from './icons/IcMinus';
 export { IcMinusCircle } from './icons/IcMinusCircle';
 export { IcMinusCircleFilled } from './icons/IcMinusCircleFilled';

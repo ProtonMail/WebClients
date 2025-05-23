@@ -2,10 +2,10 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { LiveKitRoom } from '@livekit/components-react';
 import type { LocalVideoTrack, RoomOptions } from 'livekit-client';
-import { VideoQuality } from 'livekit-client';
-import { createLocalTracks } from 'livekit-client';
+import { VideoQuality, createLocalTracks } from 'livekit-client';
 
-import { MeetingBody } from '../components/MeetingBody';
+import { MeetingBody } from '../components/MeetingBody/MeetingBody';
+import { MeetContext } from '../contexts/MeetContext';
 import { getE2EEOptions } from '../setupWorker';
 import type { ParticipantSettings } from '../types';
 import { createToken } from '../utils/createToken';
@@ -24,11 +24,19 @@ export const MeetContainer = ({
         isFaceTrackingEnabled,
         roomName,
     },
+    setAudioDeviceId,
+    setVideoDeviceId,
 }: {
     participantSettings: ParticipantSettings;
+    setAudioDeviceId: (deviceId: string) => void;
+    setVideoDeviceId: (deviceId: string) => void;
 }) => {
     const [token, setToken] = useState<string | null>(null);
     const [quality, setQuality] = useState<VideoQuality>(VideoQuality.HIGH);
+    const [page, setPage] = useState(0);
+    const [isParticipantsOpen, setIsParticipantsOpen] = useState(false);
+    const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+    const [resolution, setResolution] = useState<string | null>(null);
     const optionsRef = useRef<RoomOptions | null>(null);
 
     const [faceTrack, setFaceTrack] = useState<LocalVideoTrack | null>(null);
@@ -46,7 +54,9 @@ export const MeetContainer = ({
         ).FaceTrackingProcessor;
 
         const [videoTrack] = await createLocalTracks({
-            video: { deviceId: { exact: videoDeviceId } },
+            video: {
+                deviceId: { exact: videoDeviceId },
+            },
         });
 
         const processor = new FaceTrackingProcessor();
@@ -79,16 +89,7 @@ export const MeetContainer = ({
     const videoInfo = isVideoEnabled ? { deviceId: { exact: videoDeviceId } } : false;
 
     return (
-        <div
-            style={{
-                width: '100%',
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-            }}
-        >
+        <div className="w-full h-full flex flex-col flex-nowrap items-center justify-center">
             <LiveKitRoom
                 token={token}
                 serverUrl={process.env.LIVEKIT_URL}
@@ -97,12 +98,27 @@ export const MeetContainer = ({
                 video={isFaceTrackingEnabled ? false : videoInfo}
                 options={optionsRef.current as RoomOptions}
             >
-                <MeetingBody
-                    quality={quality}
-                    setQuality={setQuality}
-                    isFaceTrackingEnabled={isFaceTrackingEnabled}
-                    faceTrack={faceTrack}
-                />
+                <MeetContext.Provider
+                    value={{
+                        page,
+                        quality,
+                        setPage,
+                        setQuality,
+                        isParticipantsOpen,
+                        setIsParticipantsOpen,
+                        audioDeviceId,
+                        videoDeviceId,
+                        setAudioDeviceId,
+                        setVideoDeviceId,
+                        roomName,
+                        isSettingsOpen,
+                        setIsSettingsOpen,
+                        resolution,
+                        setResolution,
+                    }}
+                >
+                    <MeetingBody isFaceTrackingEnabled={isFaceTrackingEnabled} faceTrack={faceTrack} />
+                </MeetContext.Provider>
             </LiveKitRoom>
         </div>
     );

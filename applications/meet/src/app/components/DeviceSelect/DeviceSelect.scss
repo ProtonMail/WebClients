@@ -1,0 +1,20 @@
+@use 'sass:math';
+@import '~@proton/styles/scss/lib';
+
+.device-select {
+	&#{&} {
+		padding-inline: 1.5rem;
+	}
+}
+
+.device-select__dropdown-item {
+	background-color: transparent !important;
+	color: var(--color-weak);
+}
+
+.device-select--dropdown {
+	box-shadow: 0 0 rem(17) 0 #00000057 !important;
+	border-radius: rem(24) !important;
+	padding: rem(12) !important;
+	border: none !important;
+}

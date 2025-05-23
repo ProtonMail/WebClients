@@ -1,36 +1,29 @@
-import { useEffect, useState } from 'react';
+import { useMediaDeviceSelect, useMediaDevices } from '@livekit/components-react';
 
 export const useDevices = () => {
-    const [cameras, setCameras] = useState<MediaDeviceInfo[]>([]);
-    const [microphones, setMicrophones] = useState<MediaDeviceInfo[]>([]);
-    const [defaultMicrophone, setDefaultMicrophone] = useState<MediaDeviceInfo | null>(null);
-    const [defaultCamera, setDefaultCamera] = useState<MediaDeviceInfo | null>(null);
+    const cameras = useMediaDevices({ kind: 'videoinput' });
+    const microphones = useMediaDevices({ kind: 'audioinput' });
+    const speakers = useMediaDevices({ kind: 'audiooutput' });
 
-    const getDevices = async () => {
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: true });
+    const { activeDeviceId: activeAudioInputDeviceId } = useMediaDeviceSelect({
+        kind: 'audioinput',
+    });
+    const { activeDeviceId: activeAudioOutputDeviceId } = useMediaDeviceSelect({
+        kind: 'audiooutput',
+    });
+    const { activeDeviceId: activeVideoDeviceId } = useMediaDeviceSelect({
+        kind: 'videoinput',
+    });
 
-        const devices = await navigator.mediaDevices.enumerateDevices();
-
-        const audioTrack = stream.getAudioTracks()[0];
-        const videoTrack = stream.getVideoTracks()[0];
-        const defaultMicId = audioTrack?.getSettings().deviceId;
-        const defaultCamId = videoTrack?.getSettings().deviceId;
-
-        const videoInputs = devices.filter((d) => d.kind === 'videoinput');
-        const audioInputs = devices.filter((d) => d.kind === 'audioinput');
-
-        setCameras(videoInputs);
-        setMicrophones(audioInputs);
-
-        setDefaultMicrophone(audioInputs.find((d) => d.deviceId === defaultMicId) || null);
-        setDefaultCamera(videoInputs.find((d) => d.deviceId === defaultCamId) || null);
-
-        stream.getTracks().forEach((track) => track.stop());
+    return {
+        cameras,
+        microphones,
+        speakers,
+        defaultMicrophone:
+            microphones.find((mic) => mic.deviceId === activeAudioInputDeviceId) ?? (microphones[0] as MediaDeviceInfo),
+        defaultCamera: cameras.find((cam) => cam.deviceId === activeVideoDeviceId) ?? (cameras[0] as MediaDeviceInfo),
+        defaultSpeaker:
+            speakers.find((speaker) => speaker.deviceId === activeAudioOutputDeviceId) ??
+            (speakers[0] as MediaDeviceInfo),
     };
-
-    useEffect(() => {
-        void getDevices();
-    }, []);
-
-    return { cameras, microphones, defaultMicrophone, defaultCamera };
 };
