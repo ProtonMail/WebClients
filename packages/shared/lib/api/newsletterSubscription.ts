@@ -17,6 +17,8 @@ export const getNewsletterSubscription = ({ pagination, sort }: GetNewslettersPr
     params: {
         ...pagination,
         ...getSortParams(sort),
+        // We hardcode this sort because it's used as fallback in case of coliding sorting
+        'Sort[ID]': 'DESC',
         // We hardcode this params for the moment as we don't want to see spam subscription
         Spam: 0,
     },
