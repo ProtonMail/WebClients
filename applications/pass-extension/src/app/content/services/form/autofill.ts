@@ -1,12 +1,12 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { type FieldHandle, type FormHandle, NotificationAction } from 'proton-pass-extension/app/content/types';
 import { sendContentScriptTelemetry } from 'proton-pass-extension/app/content/utils/telemetry';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { FieldType, FormType, isIgnored } from '@proton/pass/fathom';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { passwordSave } from '@proton/pass/store/actions/creators/password';
 import type { FormCredentials, ItemContent, MaybeNull } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { first } from '@proton/pass/utils/array/first';
 import { asyncLock } from '@proton/pass/utils/fp/promises';

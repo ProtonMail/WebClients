@@ -1,11 +1,12 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
+import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { isFormEntryCommitted, setFormEntryStatus } from 'proton-pass-extension/lib/utils/form-entry';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
 import type { FormEntry, FormEntryBase, FormStatusPayload, Maybe, TabId } from '@proton/pass/types';
-import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
+import { FormEntryStatus } from '@proton/pass/types';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';

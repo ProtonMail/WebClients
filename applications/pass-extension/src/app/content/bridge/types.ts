@@ -1,4 +1,6 @@
-import type { MessageFailure, Unpack, WorkerMessage, WorkerResponse } from '@proton/pass/types';
+import type { MessageFailure, WorkerMessage, WorkerResponse } from 'proton-pass-extension/types/messages';
+
+import type { Unpack } from '@proton/pass/types';
 
 import type { ALLOWED_MESSAGES, BRIDGE_REQUEST, BRIDGE_RESPONSE } from './constants';
 

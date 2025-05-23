@@ -1,7 +1,8 @@
-import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/message/send-message';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
+import type { MessageWithSenderFactory } from 'proton-pass-extension/lib/message/send-message';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
+
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
-import { WorkerMessageType } from '@proton/pass/types';
 import type { OnTelemetryEvent } from '@proton/pass/types/data/telemetry';
 import noop from '@proton/utils/noop';
 

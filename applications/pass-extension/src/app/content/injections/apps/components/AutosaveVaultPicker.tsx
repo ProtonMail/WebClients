@@ -1,12 +1,13 @@
 import type { FC, ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
+
 import type { SelectFieldProps } from '@proton/pass/components/Form/Field/SelectField';
 import { VaultPicker } from '@proton/pass/components/Form/Field/VaultPickerField';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import type { ShareItem } from '@proton/pass/store/reducers';
 import type { ShareType } from '@proton/pass/types/data/shares';
-import { WorkerMessageType } from '@proton/pass/types/worker/messages';
 import noop from '@proton/utils/noop';
 
 type Props = Omit<SelectFieldProps, 'children'> & { fallback: ReactNode };
