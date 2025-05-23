@@ -12,7 +12,8 @@ import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatch
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
 import { useSearchShortcut } from '@proton/pass/hooks/useSearchShortcut';
 import { selectShare } from '@proton/pass/store/selectors';
-import type { ShareType } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
+import { type ShareType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
@@ -29,6 +30,9 @@ export const SearchBar = memo(({ disabled, trash }: Props) => {
     const { onTelemetry } = usePassCore();
     const scope = useItemScope();
     const { filters, setFilters } = useNavigationFilters();
+
+    /** Keep reference for telemetry purposes */
+    const initial = useRef<MaybeNull<string>>(filters.search);
 
     const [search, setSearch] = useState<string>(filters.search ?? '');
     const debouncedSearch = useDebouncedValue(search, SEARCH_DEBOUNCE_TIME);
@@ -81,7 +85,10 @@ export const SearchBar = memo(({ disabled, trash }: Props) => {
 
     const handleBlur = () => {
         if (isEmptyString(search)) return;
-        void onTelemetry(TelemetryEventName.SearchTriggered, {}, {});
+        if (search !== initial.current) {
+            initial.current = null;
+            void onTelemetry(TelemetryEventName.SearchTriggered, {}, {});
+        }
     };
 
     useSearchShortcut(handleFocus);
