@@ -4,6 +4,23 @@
     "language": "fr_FR"
   },
   "contexts": {
+    "Account statement": {
+      "Account statement successfully generated": [
+        "Le relevé de compte a été généré."
+      ],
+      "Download": [
+        "Télécharger"
+      ],
+      "Download transactions": [
+        "Télécharger les transactions"
+      ],
+      "Export format": [
+        "Format d'exportation"
+      ],
+      "Export your transactions for tax reporting or personal record-keeping. Choose your preferred format and download your file instantly.": [
+        "Exportez vos transactions pour la déclaration d'impôts ou la tenue de vos comptes personnels. Choisissez votre format préféré et téléchargez votre fichier instantanément."
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
@@ -53,11 +70,20 @@
       "Close this banner": [
         "Fermer cette bannière"
       ],
+      "Collaborate on documents": [
+        "Collaborer sur des documents"
+      ],
       "Collapse wallets": [
         "Réduire les portefeuilles"
       ],
       "Confirm": [
         "Confirmer"
+      ],
+      "Connect apps and devices": [
+        "Connecter les applications et les appareils"
+      ],
+      "Connect to video conferencing": [
+        "Se connecter à la vidéoconférence"
       ],
       "Continue": [
         "Continuer"
@@ -92,6 +118,9 @@
       "Downgrade": [
         "Passer à un abonnement inférieur"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Télécharger les applications ${ DRIVE_APP_NAME }"
+      ],
       "Edit": [
         "Modifier"
       ],
@@ -116,6 +145,9 @@
       "Get in touch": [
         "Nous contacter"
       ],
+      "Get the apps": [
+        "Obtenir les applications"
+      ],
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
@@ -130,6 +162,9 @@
       ],
       "Help and resources": [
         "Aide et ressources"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importer des messages, calendriers et contacts"
       ],
       "Increase": [
         "Augmenter"
@@ -152,6 +187,15 @@
       "Loading verification": [
         "Vérification du transfert"
       ],
+      "Manage advanced account protections": [
+        "Gérer les protections avancées du compte"
+      ],
+      "Manage groups": [
+        "Gérer les groupes"
+      ],
+      "Manage users/addresses": [
+        "Gérer les utilisateurs/adresses"
+      ],
       "More info: ${ safeTitle }": [
         "Plus d'informations : ${ safeTitle }"
       ],
@@ -166,6 +210,9 @@
       ],
       "Next": [
         "Suivant"
+      ],
+      "Next month": [
+        "Mois suivant"
       ],
       "OK": [
         "OK"
@@ -188,6 +235,9 @@
       "Previous": [
         "Précédent"
       ],
+      "Previous month": [
+        "Mois précédent"
+      ],
       "Refer a friend": [
         "Parrainer un ami"
       ],
@@ -201,7 +251,7 @@
         "Retirer le code-cadeau"
       ],
       "Report a problem": [
-        "Signaler un problème"
+        "Signaler un bug"
       ],
       "Request a call": [
         "Demander un appel"
@@ -236,14 +286,32 @@
       "Select country": [
         "Sélectionnez un pays"
       ],
+      "Set recovery methods": [
+        "Définir les méthodes de récupération"
+      ],
       "Set recovery phrase": [
         "Créer une phrase de récupération"
+      ],
+      "Set up 2FA": [
+        "Configurer l'A2F"
+      ],
+      "Set up a custom domain": [
+        "Configurer un domaine personnalisé"
+      ],
+      "Set up email forwarding": [
+        "Configurer le transfert automatique des messages"
       ],
       "Settings": [
         "Paramètres"
       ],
+      "Share your calendar with your team": [
+        "Partagez votre calendrier avec votre équipe"
+      ],
       "Show balance": [
         "Afficher le solde"
+      ],
+      "Show more": [
+        "Afficher plus"
       ],
       "Show QRCode": [
         "Afficher le QR code"
@@ -272,6 +340,9 @@
       "Try another method": [
         "Essayer une autre méthode"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Activer ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unlock data": [
         "Déverrouiller les données"
       ],
@@ -287,8 +358,17 @@
       "Upgrade now": [
         "Changer d'abonnement"
       ],
+      "Upload and share files": [
+        "Importer et partager des fichiers"
+      ],
       "Use ${ address.Email }": [
         "Utiliser ${ address.Email }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Utiliser ${ PASS_APP_NAME } for Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Utilisez ${ VPN_SHORT_APP_NAME } pour la confidentialité des données"
       ],
       "Use a different card": [
         "Utiliser une autre carte"
@@ -386,9 +466,27 @@
         "Valeur"
       ]
     },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } mois",
+        "${ n } mois"
+      ],
+      "12 months": [
+        "12 mois"
+      ],
+      "15 months": [
+        "15 mois"
+      ],
+      "24 months": [
+        "24 mois"
+      ],
+      "30 months": [
+        "30 mois"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
-        "applications ${ BRAND_NAME }"
+        "Applications ${ BRAND_NAME }"
       ]
     },
     "Assistant toggle": {
@@ -563,9 +661,6 @@
       ],
       "Monthly": [
         "Mensuel"
-      ],
-      "New!": [
-        "Nouveau"
       ],
       "Two-year": [
         "Tous les deux ans"
@@ -1010,6 +1105,14 @@
       ],
       "Expand": [
         "Développer"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } est une IA axée sur la confidentialité qui vous aide à accomplir davantage tout en garantissant la sécurité de vos données. Libérez tout son potentiel et profitez d'un accès anticipé aux nouvelles fonctionnalités dès leur introduction."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Ajouter ${ LUMO_APP_NAME }"
       ]
     },
     "color": {
@@ -1535,7 +1638,7 @@
         "Mauritanie"
       ],
       "Mauritius": [
-        "Maurice"
+        "Île Maurice"
       ],
       "Mayotte": [
         "Mayotte"
@@ -1926,6 +2029,11 @@
         "par utilisateur et par mois"
       ]
     },
+    "Date": {
+      "Date": [
+        "Date"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Inconnu"
@@ -1934,6 +2042,68 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Facture impayée"
+      ]
+    },
+    "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } dans ${ DRIVE_APP_NAME } vous permet de travailler avec d'autres personnes dans un environnement chiffré et sécurisé."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Ajoutez des dossiers et des fichiers à ${ DRIVE_APP_NAME } et invitez les membres de l’équipe à les consulter ou à les modifier."
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Transférez automatiquement les messages entrants vers une autre adresse e-mail."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Configurez d'abord cette option pour activer votre organisation et personnaliser votre adresse e-mail."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Connectez votre CRM, votre site internet, vos imprimantes et bien plus encore."
+      ],
+      "Create groups you can email with a single address.": [
+        "Créez des groupes auxquels vous pouvez envoyer des messages avec une seule adresse."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Accédez facilement à votre adresse e-mail et à votre calendrier sur ordinateur et appareil mobile."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Synchronisez facilement les fichiers sur le cloud depuis votre ordinateur et accédez-y depuis votre appareil mobile."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Encouragez l'utilisation de l'authentification à deux facteurs dans votre organisation pour une sécurité accrue."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Assurez un accès sécurisé aux données de l’organisation, même si votre équipe est à distance ou utilise le wifi public."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Assurez une sécurité de premier ordre pour votre compte avec le programme ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Assurez-vous de pouvoir toujours accéder à votre compte et à vos données même si vous perdez votre mot de passe ${ BRAND_NAME }."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pour une transition en douceur vers ${ BRAND_NAME }, importez vos données depuis Google, Outlook et autres plateformes."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Recevez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Aidez votre équipe à stocker en toute sécurité les mots de passe relatifs aux informations sensibles de l’entreprise et des clients."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Vous permet d’ajouter instantanément des liens de réunion aux invitations de vos événements."
+      ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Configurez les comptes pour tous les utilisateurs et invitez-les à rejoindre ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Simplifiez la synchronisation et la planification grâce aux calendriers partagés."
+      ],
+      "To start, give your organization a name.": [
+        "Pour commencer, donnez un nom à votre organisation."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Utilisez ce guide pour que votre organisation bénéficie rapidement du chiffrement et de l’écosystème de respect de la vie privée de pointe de ${ BRAND_NAME }."
       ]
     },
     "Discover": {
@@ -2139,6 +2309,9 @@
       "Signature verification failed": [
         "La signature n'a pas pu être vérifiée."
       ],
+      "Something went wrong. Please try again.": [
+        "Il y a eu un problème. Nous vous invitons à réessayer plus tard."
+      ],
       "Tab closed": [
         "L'onglet est fermé."
       ],
@@ -2283,12 +2456,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
+        "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clé de sécurité"
@@ -2480,8 +2653,20 @@
       "Address copied to clipboard": [
         "L'adresse a été copiée dans le presse-papiers."
       ],
+      "Admin account allocation": [
+        "Attribution de compte administrateur"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "L'assistant qui grâce à l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
+      ],
+      "Allocated": [
+        "Alloué"
+      ],
+      "Already allocated": [
+        "Déjà alloué"
+      ],
+      "Already used": [
+        "Déjà utilisé"
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
@@ -2575,13 +2760,13 @@
         "Activation de la suppression automatique…"
       ],
       "Enter the code from your authenticator app": [
-        "Entrez le code de votre application d'authentification."
+        "Saisissez le code de votre application d'authentification."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Enter verification code. Digit ${ digit }."
+        "Saisissez le code de vérification. Entrez ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
@@ -2635,7 +2820,7 @@
         "Chargement de ${ appName }"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
-        "Nous vous invitons à patienter : le calendrier est en cours de chargement. Vous serez redirigé vers notre plateforme de programmation Calendly dans un nouvel onglet."
+        "Veuillez patienter : le calendrier est en cours de chargement. Vous serez redirigé vers notre plateforme de programmation Calendly dans un nouvel onglet."
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -2645,9 +2830,6 @@
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Les messages adressés à toutes vos adresses e-mail seront envoyés dans votre boîte de réception."
-      ],
-      "MM/YY": [
-        "MM/AA"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez éventuellement un dossier dans lequel vous voulez en faire un sous-dossier. Si vous ne sélectionnez aucun dossier, votre nouveau dossier sera créé comme un dossier de premier niveau."
@@ -2682,6 +2864,9 @@
       "Please authenticate your payment in the verification tab.": [
         "Authentifiez votre paiement dans l'onglet de vérification."
       ],
+      "Please fill in all required fields.": [
+        "Veuillez remplir tous les champs obligatoires."
+      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Veuillez noter qu'en cliquant sur le bouton Confirmer, votre compte disposera de ${ creditsRemaining } crédit restant.",
         "Veuillez noter qu'en cliquant sur le bouton Confirmer, votre compte disposera de ${ creditsRemaining } crédits restants."
@@ -2699,7 +2884,7 @@
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "L'actualisation de la page ou ${ link } résoudront automatiquement la plupart des problèmes."
+        "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
       "Registering your subscription…": [
         "Enregistrement de votre abonnement…"
@@ -2725,6 +2910,18 @@
       "Start sharing it with contacts and use it for online services.": [
         "Commencez à la partager avec vos contacts et utilisez-la pour les services en ligne."
       ],
+      "Storage allocated to other users in this organisation": [
+        "Espace de stockage alloué à d'autres utilisateurs de cette organisation"
+      ],
+      "Storage allocated to this user": [
+        "Espace de stockage alloué à cet utilisateur"
+      ],
+      "Storage for users": [
+        "Espace de stockage pour les utilisateurs"
+      ],
+      "Storage used by this user": [
+        "Espace de stockage utilisé par cet utilisateur"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faites un versement en utilisant l'adresse suivante ou scannez le code QR. Votre versement sera affiché sur votre compte après confirmation."
       ],
@@ -2743,6 +2940,9 @@
       ],
       "This address is for Bitcoin via Email": [
         "Cette adresse est pour les bitcoins via e-mail."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Il s’agit d’un nom ou d’un surnom pour votre organisation que vos utilisateurs verront. Vous pouvez le modifier à tout moment."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Ceci est désormais votre ${ defaultEmailAddress } pour envoyer de nouveaux messages."
@@ -2803,6 +3003,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }."
+      ],
+      "Week": [
+        "Semaine"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
@@ -2928,6 +3131,9 @@
       "Account holder": [
         "Titulaire du compte"
       ],
+      "Account storage": [
+        "Espace de stockage du compte"
+      ],
       "Address": [
         "Adresse"
       ],
@@ -2939,9 +3145,6 @@
       ],
       "Authenticator app": [
         "Application d'authentification"
-      ],
-      "Billing address": [
-        "Adresse de facturation"
       ],
       "Billing cycle": [
         "Cycle de facturation"
@@ -3012,9 +3215,6 @@
       "Email address": [
         "Adresse e-mail"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Expiration (${ patternExpiration })"
-      ],
       "Expires": [
         "Expire le"
       ],
@@ -3037,7 +3237,7 @@
         "Nom"
       ],
       "Main": [
-        "Principal"
+        "Principale"
       ],
       "Navigation": [
         "Navigation"
@@ -3069,9 +3269,6 @@
       "Phone number": [
         "Numéro de téléphone"
       ],
-      "Postal code": [
-        "Code postal"
-      ],
       "Proration": [
         "Au prorata"
       ],
@@ -3080,9 +3277,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
-      ],
-      "Security code (${ codeName })": [
-        "Code de sécurité (${ codeName })"
       ],
       "Show QRCode": [
         "Afficher le QR code"
@@ -3155,8 +3349,53 @@
       "click here": [
         "cliquez ici"
       ],
+      "Enforcing 2FA for organizations": [
+        "Application de l’A2F pour les organisations"
+      ],
+      "How to add users": [
+        "Comment ajouter des utilisateurs ?"
+      ],
+      "How to add Zoom links": [
+        "Comment ajouter des liens Zoom ?"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Comment collaborer dans ${ DOCS_SHORT_APP_NAME } ?"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Comment activer ${ PROTON_SENTINEL_NAME } ?"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Comment migrer vers ${ BRAND_NAME } ?"
+      ],
       "How to pay with Bitcoin?": [
         "Comment payer en bitcoins ?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Comment configurer ${ VPN_APP_NAME } ?"
+      ],
+      "How to set up a custom domain": [
+        "Comment configurer un domaine personnalisé ?"
+      ],
+      "How to set up SMTP": [
+        "Comment configurer le SMTP ?"
+      ],
+      "How to share a calendar": [
+        "Comment partager un calendrier ?"
+      ],
+      "How to share via email": [
+        "Comment partager par adresse e-mail ?"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Comment utiliser ${ DARK_WEB_MONITORING_NAME } ?"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Comment utiliser ${ PASS_APP_NAME } for Business ?"
+      ],
+      "How to use email forwarding": [
+        "Comment utiliser le transfert automatique des messages ?"
+      ],
+      "How to use Groups": [
+        "Comment utiliser les groupes ?"
       ],
       "Learn more": [
         "En savoir plus"
@@ -3166,6 +3405,9 @@
       ],
       "settings": [
         "paramètres"
+      ],
+      "Types of recovery methods": [
+        "Types de méthodes de récupération"
       ],
       "View on blockchain": [
         "Afficher sur la blockchain"
@@ -4105,14 +4347,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Les utilisateurs non privés peuvent être promus administrateur lorsqu'ils disposent de clés de configuration."
+      ],
       "Organization key does not exist.": [
         "La clé de l'organisation n'existe pas."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "La clé de l'organisation doit être activée pour accorder des droits administrateur."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "L'autorisation est refusée. Les droits administrateur ont été restreints."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Les utilisateurs privés peuvent être promus administrateurs lorsqu'ils se connectent pour la première fois."
+      ],
       "The organization key must be activated first.": [
         "La clé de l'organisation doit d'abord être activée."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Vous devez supprimer tous les groupes avant de créer une nouvelle clé d'organisation."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Vous devez rendre tous les utilisateurs privés avant de créer une nouvelle clé d'organisation."
       ],
       "You need access to the organization key to perform this operation.": [
         "Vous devez accéder à la clé de l'organisation pour réaliser cette opération."
@@ -4255,11 +4512,17 @@
       "Confirm passphrase or leave empty": [
         "Confirmez la phrase secrète ou laissez le champ vide."
       ],
+      "E.g., ": [
+        "Par exemple, "
+      ],
       "Enter a passphrase or leave empty": [
         "Saisissez une phrase secrète ou laissez le champ vide."
       ],
       "Gift code": [
         "Code-cadeau"
+      ],
+      "Organization name": [
+        "Nom de l'organisation"
       ],
       "Password": [
         "Mot de passe"
@@ -4287,6 +4550,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Dites-nous ce qui, selon vous, pourrait améliorer ${ BRAND_NAME }."
+      ],
+      "Your organization name": [
+        "Nom de votre organisation"
       ]
     },
     "plan customizer, users": {
@@ -4345,6 +4611,11 @@
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "La connexion n'a pas abouti."
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Configuration de l'organisation et sécurité du compte"
       ]
     },
     "Select search results": {
@@ -4483,7 +4754,7 @@
         "Voir les abonnements"
       ],
       "Upgrade": [
-        "Améliorer votre abonnement"
+        "Passez à Premium"
       ]
     },
     "specialoffer: Offers": {
@@ -4538,6 +4809,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Le prix habituel est de ${ amount } pour 30 mois"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "L’offre spéciale est valable pendant les 2 premières années."
       ]
     },
     "specialoffer: Tooltip": {
@@ -4638,7 +4912,7 @@
         "Votre ${ appStorage } est plein."
       ],
       "Your storage is full": [
-        "Votre espace de stockage est plein"
+        "Votre espace de stockage est plein."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Vous n'aurez plus accès à ${ gb } d'espace de stockage et à l'assistance prioritaire."
@@ -4656,21 +4930,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Facturé tous les 2 ans"
-      ],
-      "Billed every 6 months": [
-        "Facturation tous les 6 mois"
-      ],
-      "Billed for 15 months": [
-        "Facturé pour 15 mois"
-      ],
-      "Billed for 18 months": [
-        "Facturé pour 18 mois"
-      ],
-      "Billed for 3 months": [
-        "Facturé pour 3 mois"
-      ],
-      "Billed for 30 months": [
-        "Facturé pour 30 mois"
       ],
       "Billed monthly": [
         "Facturé mensuellement"
@@ -4789,8 +5048,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Économisez"
+      "Save ${ priceString }": [
+        "Économisez ${ priceString }"
       ]
     },
     "Success": {
@@ -4911,6 +5170,9 @@
       "Add credit/debit card": [
         "Ajouter une carte de paiement"
       ],
+      "Add user": [
+        "Ajouter un utilisateur"
+      ],
       "Amount due": [
         "Montant à payer"
       ],
@@ -4935,11 +5197,23 @@
       "Card verification": [
         "Vérification de la carte"
       ],
+      "Collaborate on documents": [
+        "Collaborer sur des documents"
+      ],
       "Confirm downgrade": [
         "Confirmer le passage à un abonnement inférieur"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmer la perte des bonus ${ BRAND_NAME }"
+      ],
+      "Connect apps and devices": [
+        "Connecter les applications et les appareils"
+      ],
+      "Connect to video conferencing": [
+        "Se connecter à la vidéoconférence"
+      ],
+      "Connect your custom domain": [
+        "Connectez votre domaine personnalisé"
       ],
       "Coupon": [
         "Coupon"
@@ -4956,17 +5230,29 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Souhaitez-vous passer à ${ downgradedPlanName } ?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Télécharger les applications ${ DRIVE_APP_NAME }"
+      ],
       "Edit credit/debit card": [
         "Modifier la carte de paiement"
+      ],
+      "Enable advanced account protection": [
+        "Activer la protection avancée du compte"
+      ],
+      "Enhance security with 2FA": [
+        "Améliorez la sécurité avec l’A2F"
       ],
       "Enter 2FA code": [
         "Entrez le code A2F"
       ],
       "Enter your password": [
-        "Saisissez votre mot de passe."
+        "Saisissez votre mot de passe"
       ],
       "Error": [
         "Erreur"
+      ],
+      "Get the apps": [
+        "Obtenir les applications"
       ],
       "Gift": [
         "Cadeau"
@@ -4983,8 +5269,14 @@
       "Human verification": [
         "Vérification que vous n'êtes pas un robot"
       ],
+      "Import emails, calendars, contacts": [
+        "Importer des messages, calendriers et contacts"
+      ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
+      ],
+      "Minicalendar": [
+        "Mini calendrier"
       ],
       "Network error": [
         "Erreur réseau"
@@ -5005,7 +5297,7 @@
         "Recommandé"
       ],
       "Report a problem": [
-        "Signaler un problème"
+        "Signaler un bug"
       ],
       "Request new code": [
         "Demander un nouveau code"
@@ -5013,14 +5305,41 @@
       "Select a plan": [
         "Choisir un abonnement"
       ],
+      "Set recovery methods": [
+        "Définir les méthodes de récupération"
+      ],
+      "Set up email forwarding": [
+        "Configurer le transfert automatique des messages"
+      ],
+      "Set up your organization": [
+        "Configurez votre organisation"
+      ],
+      "Share your calendar with your team": [
+        "Partagez votre calendrier avec votre équipe"
+      ],
       "Sign out": [
         "Se déconnecter"
+      ],
+      "Simplify email distribution": [
+        "Simplifiez la distribution des messages"
+      ],
+      "Simplify password management": [
+        "Simplifiez la gestion des mots de passe"
       ],
       "Summary": [
         "Résumé"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Activer ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Upgrade complete!": [
         "L'abonnement a été mis à jour."
+      ],
+      "Upload and share files": [
+        "Importer et partager des fichiers"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Utilisez ${ VPN_SHORT_APP_NAME } pour la confidentialité des données"
       ],
       "Verification failed": [
         "La vérification n'a pas abouti."
@@ -5034,11 +5353,19 @@
       "Wallet": [
         "Portefeuille"
       ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Bienvenue dans ${ BRAND_NAME } for Business"
+      ],
       "You can now create unlimited folders and labels": [
         "Vous pouvez maintenant créer un nombre illimité de labels et de dossiers."
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Aujourd'hui"
       ]
     },
     "tooltip": {
@@ -5093,6 +5420,11 @@
       ],
       "Unknown sender": [
         "Expéditeur inconnu"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés et ne peuvent pas réinitialiser leur mot de passe."
       ]
     },
     "Validation": {
@@ -6232,7 +6564,7 @@
         "${ n } portefeuilles"
       ],
       "A safer way to hold your Bitcoin": [
-        "Une manière plus sûre de détenir votre Bitcoin"
+        "Un moyen plus sûr de conserver vos bitcoins"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
