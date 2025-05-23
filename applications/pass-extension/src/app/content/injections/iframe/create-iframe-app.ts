@@ -16,7 +16,7 @@ import type {
     IFrameState,
 } from 'proton-pass-extension/app/content/types';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
-import { sendTelemetryEvent } from 'proton-pass-extension/app/content/utils/telemetry';
+import { sendContentScriptTelemetry } from 'proton-pass-extension/app/content/utils/telemetry';
 import type { Runtime } from 'webextension-polyfill';
 
 import { MODEL_VERSION } from '@proton/pass/constants';
@@ -185,7 +185,7 @@ export const createIFrameApp = <A>({
             state.visible = false;
             state.action = null;
 
-            sendTelemetryEvent(TelemetryEventName.ExtensionUsed, {}, { modelVersion: MODEL_VERSION });
+            sendContentScriptTelemetry(TelemetryEventName.ExtensionUsed, {}, { modelVersion: MODEL_VERSION });
 
             void sendPortMessage({ type: IFramePortMessageType.IFRAME_HIDDEN });
         }
