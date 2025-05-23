@@ -118,7 +118,7 @@ const completeAppBootstrap = async ({
 
     const [userData] = await Promise.all([
         loadUserData(dispatch, config.APP_NAME),
-        bootstrap.loadCrypto({ appName: config.APP_NAME }),
+        bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient }),
         bootstrap.unleashReady({ unleashClient }).catch(noop),
     ]);
 
