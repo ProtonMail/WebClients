@@ -1,15 +1,20 @@
+import type {
+    WorkerMessage,
+    WorkerMessageResponse,
+    WorkerMessageWithSender,
+    WorkerResponse,
+} from 'proton-pass-extension/types/messages';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
-import { isExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import browser from '@proton/pass/lib/globals/browser';
-import type { WorkerMessage, WorkerMessageResponse, WorkerMessageWithSender, WorkerResponse } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { notIn } from '@proton/pass/utils/fp/predicates';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
 
 import { assertMessageVersion, backgroundMessage, errorMessage, successMessage } from './send-message';
+import { isExtensionMessage } from './utils';
 
 export type MessageHandlerCallback<
     T extends WorkerMessageType = WorkerMessageType,

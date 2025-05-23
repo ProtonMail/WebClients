@@ -1,6 +1,7 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
@@ -10,7 +11,7 @@ import { intoLoginItemPreview } from '@proton/pass/lib/items/item.utils';
 import { itemCreate, itemEdit } from '@proton/pass/store/actions';
 import { selectAutosaveCandidate, selectNonOptimisticItem, selectWritableShares } from '@proton/pass/store/selectors';
 import type { AutosavePrompt, FormEntry } from '@proton/pass/types';
-import { AutosaveMode, WorkerMessageType } from '@proton/pass/types';
+import { AutosaveMode } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { and } from '@proton/pass/utils/fp/predicates';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';

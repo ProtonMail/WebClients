@@ -1,6 +1,8 @@
 import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from 'proton-pass-extension/app/content/constants.static';
 import type { CSFeatures } from 'proton-pass-extension/app/content/context/types';
 import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/types';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { FieldType } from '@proton/pass/fathom';
 import {
@@ -15,8 +17,7 @@ import {
     shouldRunClassifier,
 } from '@proton/pass/fathom';
 import type { Fnode } from '@proton/pass/fathom/fathom';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import { type ExclusionRules, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
+import { type ExclusionRules, type MaybeNull } from '@proton/pass/types';
 import { compareDomNodes } from '@proton/pass/utils/dom/sort';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';

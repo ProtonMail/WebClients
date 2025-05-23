@@ -1,11 +1,12 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { onContextReady, withContext } from 'proton-pass-extension/app/worker/context/inject';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { isExtraOTPField } from '@proton/pass/lib/items/item.predicates';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { selectItem, selectOTPCandidate } from '@proton/pass/store/selectors';
 import type { Maybe, OtpRequest } from '@proton/pass/types';
-import { type OtpCode, WorkerMessageType } from '@proton/pass/types';
+import { type OtpCode } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';

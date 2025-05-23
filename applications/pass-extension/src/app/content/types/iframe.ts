@@ -1,23 +1,19 @@
 import type { BridgeResponse } from 'proton-pass-extension/app/content/bridge/types';
+import type {
+    AutofillSyncMessage,
+    FeatureFlagsUpdateMessage,
+    LocaleUpdatedMessage,
+    PortUnauthorizedMessage,
+    SettingsUpdateMessage,
+    WorkerMessageType,
+    WorkerStateChangeMessage,
+} from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type {
-    AppState,
-    AutofillSyncMessage,
-    ClientEndpoint,
-    FeatureFlagsUpdateMessage,
-    FormCredentials,
-    ItemContent,
-    LocaleUpdatedMessage,
-    MaybeNull,
-    PortUnauthorizedMessage,
-    SettingsUpdateMessage,
-    WorkerMessageType,
-    WorkerStateChangeMessage,
-} from '@proton/pass/types';
+import type { AppState, ClientEndpoint, FormCredentials, ItemContent, MaybeNull } from '@proton/pass/types';
 import type { Rect } from '@proton/pass/types/utils/dom';
 
 import type { DropdownActions } from './dropdown';
