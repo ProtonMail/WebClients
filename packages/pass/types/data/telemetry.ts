@@ -156,5 +156,13 @@ type TelemetryEventExtra = {
 
 export type TelemetryEventDTO<T extends TelemetryEventName = TelemetryEventName> = {
     event: TelemetryEvent<T>;
-    extra: T extends keyof TelemetryEventExtra ? TelemetryEventExtra[T] : never;
+    extra?: T extends keyof TelemetryEventExtra ? TelemetryEventExtra[T] : never;
 };
+
+export type OnTelemetryEvent = <T extends TelemetryEventName = TelemetryEventName>(
+    Event: T,
+    Values: TelemetryEvent<T>['Values'],
+    Dimensions: TelemetryEvent<T>['Dimensions'],
+    platform?: TelemetryPlatform,
+    extra?: TelemetryEventDTO<T>['extra']
+) => void;
