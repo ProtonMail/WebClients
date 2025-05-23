@@ -1,9 +1,10 @@
 import { useMemo } from 'react';
 
+import { sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
+
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
-import { sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import { WorkerMessageType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 import { useEndpointMessage } from './useEndpointMessage';

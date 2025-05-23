@@ -1,6 +1,7 @@
 import { API_URL } from 'proton-pass-extension/app/config';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { API_PROXY_IMAGE_ENDPOINT, API_PROXY_URL } from 'proton-pass-extension/app/worker/constants.runtime';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { api } from '@proton/pass/lib/api/api';
 import { cleanCache, clearCache } from '@proton/pass/lib/api/cache';
@@ -8,7 +9,7 @@ import { fetchControllerFactory } from '@proton/pass/lib/api/fetch-controller';
 import { createImageProxyHandler, imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { authStore } from '@proton/pass/lib/auth/store';
 import browser from '@proton/pass/lib/globals/browser';
-import { type Api, WorkerMessageType } from '@proton/pass/types';
+import { type Api } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
 export type APIProxyOptions = {

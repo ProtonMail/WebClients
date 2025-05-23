@@ -1,10 +1,12 @@
+import type { MessageFailure } from 'proton-pass-extension/types/messages';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
+
 import {
     intoAuthenticatorAssertionResponse,
     intoAuthenticatorAttestationResponse,
     intoPublicKeyCredential,
 } from '@proton/pass/lib/passkeys/webauthn';
-import type { MessageFailure } from '@proton/pass/types';
-import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
 import { sanitizeBuffers } from '@proton/pass/utils/buffer/sanitization';
 import { logger } from '@proton/pass/utils/logger';
 

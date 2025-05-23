@@ -1,15 +1,15 @@
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
+import { createMessageBroker } from 'proton-pass-extension/lib/message/message-broker';
+import { MessageVersionMismatchError } from 'proton-pass-extension/lib/message/send-message';
 import { isPagePort, isPopupPort, tabIDFromPortName } from 'proton-pass-extension/lib/utils/port';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { clientReady } from '@proton/pass/lib/client';
-import { createMessageBroker } from '@proton/pass/lib/extension/message/message-broker';
-import { MessageVersionMismatchError } from '@proton/pass/lib/extension/message/send-message';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { cacheRequest } from '@proton/pass/store/actions';
 import { requestCancel } from '@proton/pass/store/request/actions';
 import { selectPendingPopupRequests, selectPendingSettingsRequests } from '@proton/pass/store/selectors/extension';
-import { WorkerMessageType } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { logId, logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';

@@ -1,16 +1,18 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { EXTENSION_KEY } from 'proton-pass-extension/app/worker/constants';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
+import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
+import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { checkExtensionPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
 import { isVivaldiBrowser } from 'proton-pass-extension/lib/utils/vivaldi';
+import type { ClientInitMessage, WorkerMessageWithSender } from 'proton-pass-extension/types/messages';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { type Runtime } from 'webextension-polyfill';
 
 import { MIN_CACHE_VERSION, RUNTIME_RELOAD_THROTTLE } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import { clientCanBoot, clientErrored, clientStale } from '@proton/pass/lib/client';
-import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message/message-broker';
-import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
 import { sanitizeSettings } from '@proton/pass/lib/settings/utils';
 import { bootIntent, clientInit } from '@proton/pass/store/actions';
@@ -21,8 +23,8 @@ import {
     selectItem,
     selectTabState,
 } from '@proton/pass/store/selectors';
-import type { ClientInitMessage, MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
-import { AppStatus, WorkerMessageType } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
+import { AppStatus } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';

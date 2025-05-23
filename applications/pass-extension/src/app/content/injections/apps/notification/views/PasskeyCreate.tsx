@@ -15,6 +15,8 @@ import { ScrollableItemsList } from 'proton-pass-extension/app/content/injection
 import { NotificationHeader } from 'proton-pass-extension/app/content/injections/apps/notification/components/NotificationHeader';
 import type { NotificationAction } from 'proton-pass-extension/app/content/types';
 import { IFramePortMessageType, type NotificationActions } from 'proton-pass-extension/app/content/types';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -28,12 +30,11 @@ import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { ItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import type { SanitizedPublicKeyCreate } from '@proton/pass/lib/passkeys/types';
 import { sanitizePasskey } from '@proton/pass/lib/passkeys/utils';
 import { validateItemName } from '@proton/pass/lib/validation/item';
 import type { LoginItemPreview, MaybeNull, SelectedItem } from '@proton/pass/types';
-import { AutosaveMode, WorkerMessageType } from '@proton/pass/types';
+import { AutosaveMode } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { throwError } from '@proton/pass/utils/fp/throw';
