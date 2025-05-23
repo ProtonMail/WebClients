@@ -18,9 +18,11 @@ import { UpsellRef } from '@proton/pass/constants';
 import { usePasswordStrength } from '@proton/pass/hooks/monitor/usePasswordStrength';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';
+import { useLoginClipboardTelemetry } from '@proton/pass/hooks/useTelemetryEvent';
 import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
+import { TelemetryFieldType } from '@proton/pass/types/data/telemetry';
 import { isValidScheme } from '@proton/pass/utils/url/utils';
 
 export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLinkItem = false }) => {
@@ -39,10 +41,11 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
      * was bypassed. Only URLs with approved protocols are rendered as links. */
     const sanitizedUrls = useMemo(() => urls.filter(isValidScheme), [urls]);
     const totpAllowed = useSelector(selectTOTPLimits).totpAllowed(itemId) || secureLinkItem;
-    const passwordStrength = usePasswordStrength(password);
-
     const relatedAlias = useSelector(selectAliasByAliasEmail(itemEmail));
+    const passwordStrength = usePasswordStrength(password);
     const showEmptyEmailOrUsername = !(itemEmail || itemUsername);
+
+    const sendClipboardTelemetry = useLoginClipboardTelemetry(item);
 
     return (
         <>
@@ -73,11 +76,18 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                         icon={relatedAlias ? 'alias' : 'envelope'}
                         label={relatedAlias ? c('Label').t`Email (alias)` : c('Label').t`Email`}
                         value={itemEmail}
+                        onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.email)}
                     />
                 )}
 
                 {itemUsername && (
-                    <ValueControl clickToCopy icon="user" label={c('Label').t`Username`} value={itemUsername} />
+                    <ValueControl
+                        clickToCopy
+                        icon="user"
+                        label={c('Label').t`Username`}
+                        value={itemUsername}
+                        onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.username)}
+                    />
                 )}
 
                 <ValueControl
@@ -94,11 +104,17 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                             : undefined
                     }
                     actionsContainerClassName="flex flex-row-reverse"
+                    onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.password)}
                 >
                     {password.length ? getCharsGroupedByColor(password) : undefined}
                 </ValueControl>
 
-                {totpUri && totpAllowed && <OTPValueControl payload={{ totpUri, type: 'uri' }} />}
+                {totpUri && totpAllowed && (
+                    <OTPValueControl
+                        payload={{ totpUri, type: 'uri' }}
+                        onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.totp)}
+                    />
+                )}
 
                 {totpUri && !totpAllowed && (
                     <ValueControl icon="lock" label={c('Label').t`2FA secret key (TOTP)`}>
@@ -127,12 +143,18 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                         icon="note"
                         label={c('Label').t`Note`}
                         value={note}
+                        onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.note)}
                     />
                 </FieldsetCluster>
             )}
 
             {Boolean(extraFields.length) && (
-                <ExtraFieldsControl extraFields={extraFields} itemId={itemId} shareId={shareId} />
+                <ExtraFieldsControl
+                    extraFields={extraFields}
+                    itemId={itemId}
+                    shareId={shareId}
+                    onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.customField)}
+                />
             )}
         </>
     );

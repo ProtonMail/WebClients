@@ -11,9 +11,9 @@ import { type OtpRequest } from '@proton/pass/types';
 
 import { ValueControl } from './ValueControl';
 
-type Props = { label?: string; payload: OtpRequest };
+type Props = { label?: string; payload: OtpRequest; onCopy?: () => void };
 
-export const OTPValueControl: FC<Props> = ({ label, payload }) => {
+export const OTPValueControl: FC<Props> = ({ label, payload, onCopy }) => {
     const otpRenderer = useRef<MaybeNull<OTPRendererHandles>>(null);
     const otpToken = useOTPCode(payload, otpRenderer);
 
@@ -24,6 +24,7 @@ export const OTPValueControl: FC<Props> = ({ label, payload }) => {
             value={otpToken ?? ''}
             label={label ?? c('Label').t`2FA token (TOTP)`}
             actions={<OTPDonut ref={otpRenderer} enabled={Boolean(otpToken)} />}
+            onCopy={onCopy}
         >
             <OTPValue code={otpToken} />
         </ValueControl>

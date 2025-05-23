@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { usePopupContext } from 'proton-pass-extension/app/popup/PopupProvider';
 import { MenuUser } from 'proton-pass-extension/app/popup/Views/Header/MenuUser';
 import { useExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
-import { useOpenSettingsTab } from 'proton-pass-extension/lib/hooks/useOpenSettingsTab';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -39,7 +38,7 @@ const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
 };
 
 export const MenuDropdown: FC = () => {
-    const { onLink, popup } = usePassCore();
+    const { onLink, popup, openSettings } = usePassCore();
     const { API_URL } = usePassConfig();
     const { lock, logout } = useExtensionClient();
     const { interactive } = usePopupContext();
@@ -47,8 +46,6 @@ export const MenuDropdown: FC = () => {
 
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const canLock = useSelector(selectLockEnabled);
-
-    const openSettings = useOpenSettingsTab();
 
     const appMenu = usePopperAnchor<HTMLButtonElement>();
     const vaultMenu = usePopperAnchor<HTMLButtonElement>();
@@ -121,7 +118,7 @@ export const MenuDropdown: FC = () => {
                     />
 
                     <DropdownMenuButton
-                        onClick={withAppMenuClose(() => openSettings())}
+                        onClick={withAppMenuClose(() => openSettings?.())}
                         label={c('Label').t`Settings`}
                         icon={'cog-wheel'}
                         className="pt-1.5 pb-1.5"
