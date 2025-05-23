@@ -1,7 +1,7 @@
 import type { FeatureCode } from '@proton/features';
 import { type Subscription, type SubscriptionPlan } from '@proton/payments';
-import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
-import { PLAN_TYPES } from '@proton/payments/core/constants';
+import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments';
+import { PLAN_TYPES } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { type ProtonConfig, type UserModel } from '@proton/shared/lib/interfaces';
 
