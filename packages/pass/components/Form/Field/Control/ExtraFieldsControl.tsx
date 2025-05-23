@@ -58,6 +58,7 @@ export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, i
                             icon={icon}
                             label={fieldName}
                             value={formatDate(new Date(data.timestamp))}
+                            onCopy={onCopy}
                         />
                     );
                 case 'hidden':
