@@ -2,6 +2,7 @@ import type { PropsWithChildren } from 'react';
 import { type FC, useCallback, useRef } from 'react';
 
 import * as config from 'proton-pass-extension/app/config';
+import { sendTelemetryEvent } from 'proton-pass-extension/app/content/utils/telemetry';
 import locales from 'proton-pass-extension/app/locales';
 import { API_PROXY_URL } from 'proton-pass-extension/app/worker/constants.runtime';
 import { createCoreServiceBridge } from 'proton-pass-extension/lib/services/core.bridge';
@@ -17,6 +18,7 @@ import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider'
 import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/ThemeService';
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
+import { MODEL_VERSION } from '@proton/pass/constants';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
@@ -29,9 +31,9 @@ import { getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
 import browser from '@proton/pass/lib/globals/browser';
 import { createI18nService } from '@proton/pass/lib/i18n/service';
 import { createSettingsService } from '@proton/pass/lib/settings/service';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import type { LocalStoreData } from '@proton/pass/types';
 import { type ClientEndpoint, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { prop } from '@proton/pass/utils/fp/lens';
 import createStore from '@proton/shared/lib/helpers/store';
 import noop from '@proton/utils/noop';
@@ -59,6 +61,8 @@ const getPassCoreProviderProps = (
             return JSON.parse(data);
         },
     });
+
+    const onTelemetry = sendTelemetryEvent(messageFactory);
 
     return {
         config,
@@ -150,11 +154,13 @@ const getPassCoreProviderProps = (
             const settingsUrl = browser.runtime.getURL('/settings.html');
             const url = `${settingsUrl}#/${page ?? ''}`;
 
+            onTelemetry(TelemetryEventName.ExtensionUsed, {}, { modelVersion: MODEL_VERSION });
+
             browser.tabs
                 .query({ url: settingsUrl })
                 .then(async (match) => {
                     await (match.length > 0 && match[0].id
-                        ? browser.tabs.update(match[0].id, { highlighted: true, url })
+                        ? browser.tabs.update(match[0].id, { active: true, url })
                         : browser.tabs.create({ url }));
 
                     window.close();
@@ -162,13 +168,7 @@ const getPassCoreProviderProps = (
                 .catch(noop);
         },
 
-        onTelemetry: (Event, Values, Dimensions, platform) =>
-            sendMessage(
-                messageFactory({
-                    type: WorkerMessageType.TELEMETRY_EVENT,
-                    payload: { event: createTelemetryEvent(Event, Values, Dimensions, platform) },
-                })
-            ).catch(noop),
+        onTelemetry,
 
         onB2BEvent: (event) =>
             sendMessage(messageFactory({ type: WorkerMessageType.B2B_EVENT, payload: { event } }))

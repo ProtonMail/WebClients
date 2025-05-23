@@ -17,9 +17,10 @@ type ExtraFieldsControlProps = {
     extraFields: DeobfuscatedItemExtraField[];
     itemId: string;
     shareId: string;
+    onCopy?: () => void;
 };
 
-export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, itemId, shareId }) => {
+export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, itemId, shareId, onCopy }) => {
     const { needsUpgrade } = useSelector(selectExtraFieldLimits);
 
     const getControlByType = useCallback(
@@ -36,9 +37,14 @@ export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, i
             switch (type) {
                 case 'totp':
                     return isEmptyString(data.totpUri) ? (
-                        <ValueControl icon={icon} key={key} label={fieldName} value={undefined} />
+                        <ValueControl icon={icon} key={key} label={fieldName} />
                     ) : (
-                        <OTPValueControl key={key} label={fieldName} payload={{ totpUri: data.totpUri, type: 'uri' }} />
+                        <OTPValueControl
+                            key={key}
+                            label={fieldName}
+                            payload={{ totpUri: data.totpUri, type: 'uri' }}
+                            onCopy={onCopy}
+                        />
                     );
                 case 'hidden':
                 case 'text':
@@ -51,6 +57,7 @@ export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, i
                             icon={icon}
                             label={fieldName}
                             value={data.content}
+                            onCopy={onCopy}
                         />
                     );
             }

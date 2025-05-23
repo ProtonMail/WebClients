@@ -1,13 +1,26 @@
+import { hasPauseCriteria } from 'proton-pass-extension/app/content/context/utils';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 
+import { MODEL_VERSION } from '@proton/pass/constants';
 import { clientReady } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
 import { createCoreTelemetryService } from '@proton/pass/lib/telemetry/service';
-import { selectTelemetryEnabled, selectUserTier } from '@proton/pass/store/selectors';
+import { AUTOFILL_TELEMETRY_EVENTS, telemetryBool } from '@proton/pass/lib/telemetry/utils';
+import {
+    selectAutofillSettings,
+    selectDisallowedDomains,
+    selectFeatureFlags,
+    selectTelemetryEnabled,
+    selectUserTier,
+} from '@proton/pass/store/selectors';
 import type { ExtensionStorage } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { first } from '@proton/pass/utils/array/first';
 import type { EventDispatcherAlarm } from '@proton/pass/utils/event/dispatcher';
+import { parseUrl } from '@proton/pass/utils/url/parser';
+import { isSupportedSenderUrl } from '@proton/pass/utils/url/utils';
 import noop from '@proton/utils/noop';
 
 export const TELEMETRY_ALARM_NAME = 'PassTelemetryAlarm';
@@ -29,10 +42,50 @@ export const createTelemetryService = (storage: ExtensionStorage<Record<'telemet
         getUserTier: withContext((ctx) => selectUserTier(ctx.service.store.getState())),
     });
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.TELEMETRY_EVENT, ({ payload: { event } }) => {
-        void push(event);
-        return true;
-    });
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.TELEMETRY_EVENT,
+        withContext(async (ctx, { payload: { event, extra } }) => {
+            const state = ctx.service.store.getState();
+            const autofillTelemetryEnabled = selectFeatureFlags(state)?.LoginAutofillTelemetry;
+
+            if (!autofillTelemetryEnabled && AUTOFILL_TELEMETRY_EVENTS.includes(event.Event)) return true;
+
+            switch (event.Event) {
+                case TelemetryEventName.ExtensionCopiedFromLogin: {
+                    if (!extra) return false;
+
+                    const tab = first(await browser.tabs.query({ active: true }));
+                    const tabUrl = parseUrl(tab?.url);
+                    const tabId = tab?.id;
+                    const validTab = tabId && isSupportedSenderUrl(tabUrl);
+
+                    const { itemUrls, extensionField } = extra;
+                    const matchedLoginCount = ctx.service.autofill.getLoginCandidates(tabUrl).length;
+                    const loginAutofillSettingsEnabled = selectAutofillSettings(state).login ?? false;
+                    const disallowedDomains = selectDisallowedDomains(state);
+                    const itemUrlsMatchTab = itemUrls.some((itemUrl) => parseUrl(itemUrl).domain === tabUrl.domain);
+                    const autofillPaused = hasPauseCriteria({ disallowedDomains, url: tabUrl }).Autofill;
+                    const loginFormDetected = validTab ? await ctx.service.autofill.queryTabLoginForms(tabId) : false;
+
+                    event.Dimensions = {
+                        autofillLoginFormDetected: telemetryBool(loginFormDetected),
+                        autofillPaused: telemetryBool(autofillPaused),
+                        extensionCopiedFromCurrentPage: telemetryBool(itemUrlsMatchTab),
+                        extensionField,
+                        hasLoginItemForCurrentWebsite: telemetryBool(matchedLoginCount > 0),
+                        loginAutofillEnabled: telemetryBool(loginAutofillSettingsEnabled),
+                        modelVersion: MODEL_VERSION,
+                        uniqueMatch: telemetryBool(matchedLoginCount === 1),
+                    };
+
+                    break;
+                }
+            }
+
+            void push(event);
+            return true;
+        })
+    );
 
     browser.alarms.onAlarm.addListener(
         withContext((ctx, { name }) => {
