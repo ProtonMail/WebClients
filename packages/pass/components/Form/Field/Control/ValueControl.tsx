@@ -32,6 +32,7 @@ export type ValueControlProps<E extends ElementType> = Omit<FieldBoxProps, 'icon
     loading?: boolean;
     value?: string;
     valueClassName?: string;
+    onCopy?: () => void;
     onHide?: (hide: boolean) => void;
 };
 
@@ -74,6 +75,7 @@ export const ValueControl = <E extends ElementType = 'div'>({
     value,
     valueClassName,
     onClick,
+    onCopy,
     onHide,
 }: ValueControlProps<E>) => {
     /* we're leveraging type-safety at the consumer level - we're recasting
@@ -105,6 +107,7 @@ export const ValueControl = <E extends ElementType = 'div'>({
 
     const canCopy = clickToCopy && value;
     const interactive = (canCopy || onClick) && !disabled;
+
     const MaybeClickToCopy: ElementType<ClickToCopyProps> = canCopy ? ClickToCopy : 'div';
 
     return (
@@ -116,8 +119,7 @@ export const ValueControl = <E extends ElementType = 'div'>({
                 disabled && 'opacity-50',
                 className
             )}
-            onClick={disabled ? undefined : onClick}
-            {...(canCopy ? { value: clipboardValue ?? value } : {})}
+            {...(canCopy ? { value: clipboardValue ?? value, onCopy } : { onClick: disabled ? undefined : onClick })}
         >
             <FieldBox
                 actions={
