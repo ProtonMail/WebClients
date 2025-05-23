@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 
-import { useActiveBreakpoint, useModalStateObject } from '@proton/components';
+import { ErrorBoundary, StandardErrorPage, useActiveBreakpoint, useModalStateObject } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -90,66 +90,70 @@ export const NewsletterSubscriptionView = ({
 
     return (
         <>
-            <div className="flex flex-nowrap w-full subscription-container">
-                {loadingSubscriptions ? <NewsletterSubscriptionListLoader /> : <NewsletterSubscriptionList />}
-                {!breakpoints.viewportWidth['<=medium'] && (
-                    <ResizableWrapper
-                        resizeHandlePosition={ResizeHandlePosition.LEFT}
-                        minWidth={320}
-                        maxRatio={0.5}
-                        className="relative bg-norm"
-                        resizeHandleRef={resizeAreaRef}
-                        persistKey="mailSubscriptionsMailboxListWidth"
-                        drawerKey="mailSubscriptionsMailboxListWidthWithDrawer"
-                        defaultRatio={0.35}
-                    >
-                        {selectedElement ? (
-                            <MessageOnlyView
-                                showBackButton
-                                hidden={!selectedElement}
-                                labelID={MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL}
-                                mailSettings={mailSettings}
-                                messageID={selectedElement as string}
-                                onBack={() => dispatch(newsletterSubscriptionsActions.setSelectedElementId(undefined))}
-                                columnLayout={false}
-                                isComposerOpened={false}
-                                onMessageReady={actions.onMessageReady}
-                            />
-                        ) : (
-                            <MailboxList
-                                overrideColumnMode
-                                elementsData={elementsData}
-                                actions={{
-                                    ...actions,
-                                    handleElement: (id) => {
-                                        dispatch(newsletterSubscriptionsActions.setSelectedElementId(id));
-                                    },
-                                }}
-                                toolbar={
-                                    actions.selectedIDs.length > 0 ? (
-                                        <MailboxToolbar
-                                            params={params}
-                                            navigation={navigation}
-                                            elementsData={elementsData}
-                                            actions={actions}
-                                            /* Force the columnLayout to be false to visually align with single line toolbar*/
-                                            overrideColumnMode={false}
-                                        />
-                                    ) : (
-                                        activeSubscription && (
-                                            <NewsletterSubscriptionListTitle
-                                                activeSubscription={activeSubscription}
-                                                numMessages={elementsData.elementIDs.length}
+            <ErrorBoundary component={<StandardErrorPage className="w-full" big />}>
+                <div className="flex flex-nowrap w-full subscription-container">
+                    {loadingSubscriptions ? <NewsletterSubscriptionListLoader /> : <NewsletterSubscriptionList />}
+                    {!breakpoints.viewportWidth['<=medium'] && (
+                        <ResizableWrapper
+                            resizeHandlePosition={ResizeHandlePosition.LEFT}
+                            minWidth={320}
+                            maxRatio={0.5}
+                            className="relative bg-norm"
+                            resizeHandleRef={resizeAreaRef}
+                            persistKey="mailSubscriptionsMailboxListWidth"
+                            drawerKey="mailSubscriptionsMailboxListWidthWithDrawer"
+                            defaultRatio={0.35}
+                        >
+                            {selectedElement ? (
+                                <MessageOnlyView
+                                    showBackButton
+                                    hidden={!selectedElement}
+                                    labelID={MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL}
+                                    mailSettings={mailSettings}
+                                    messageID={selectedElement as string}
+                                    onBack={() =>
+                                        dispatch(newsletterSubscriptionsActions.setSelectedElementId(undefined))
+                                    }
+                                    columnLayout={false}
+                                    isComposerOpened={false}
+                                    onMessageReady={actions.onMessageReady}
+                                />
+                            ) : (
+                                <MailboxList
+                                    overrideColumnMode
+                                    elementsData={elementsData}
+                                    actions={{
+                                        ...actions,
+                                        handleElement: (id) => {
+                                            dispatch(newsletterSubscriptionsActions.setSelectedElementId(id));
+                                        },
+                                    }}
+                                    toolbar={
+                                        actions.selectedIDs.length > 0 ? (
+                                            <MailboxToolbar
+                                                params={params}
+                                                navigation={navigation}
+                                                elementsData={elementsData}
+                                                actions={actions}
+                                                /* Force the columnLayout to be false to visually align with single line toolbar*/
+                                                overrideColumnMode={false}
                                             />
+                                        ) : (
+                                            activeSubscription && (
+                                                <NewsletterSubscriptionListTitle
+                                                    activeSubscription={activeSubscription}
+                                                    numMessages={elementsData.elementIDs.length}
+                                                />
+                                            )
                                         )
-                                    )
-                                }
-                                noBorder
-                            />
-                        )}
-                    </ResizableWrapper>
-                )}
-            </div>
+                                    }
+                                    noBorder
+                                />
+                            )}
+                        </ResizableWrapper>
+                    )}
+                </div>
+            </ErrorBoundary>
 
             {onboardingModal.render && <ModalOnboarding {...onboardingModal.modalProps} />}
         </>

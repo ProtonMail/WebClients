@@ -128,6 +128,7 @@ export const sortSubscriptionFulfilled = (
     const normalizedData = normalizeSubscriptions(action.payload.NewsletterSubscriptions);
 
     state.value.byId = {
+        ...state.value.byId,
         ...normalizedData.byId,
     };
 
