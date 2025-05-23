@@ -15,44 +15,43 @@ import type { PasswordAutosuggestOptions } from '@proton/pass/lib/password/types
 import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
 import type { FeatureFlagState, VaultShareItem } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import type {
+    AliasCreationDTO,
+    AliasOptions,
+    AppState,
+    AutosaveFormEntry,
+    AutosaveRequest,
+    ClientEndpoint,
+    ExclusionRules,
+    FileTransferErrorDTO,
+    FileTransferWriteDTO,
+    FormCredentials,
+    FormStatusPayload,
+    FormSubmitPayload,
+    ItemContent,
+    Maybe,
+    MaybeNull,
+    OtpCode,
+    OtpRequest,
+    PopupInitialState,
+    Result,
+    SelectedItem,
+    SpotlightMessage,
+    TabId,
+    TabInfo,
+    UniqueItem,
+} from '@proton/pass/types';
+import type { ForkPayload } from '@proton/pass/types/api/fork';
 import type { ShareId } from '@proton/pass/types/crypto/pass-types';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
+import type { TelemetryEventDTO } from '@proton/pass/types/data/telemetry';
+import type { AutofillIdentityResult, AutofillLoginResult, AutofillOptions } from '@proton/pass/types/worker/autofill';
 import type { PauseListEntry } from '@proton/pass/types/worker/settings';
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/fork/extension';
 import type { PullForkResponse } from '@proton/shared/lib/authentication/interface';
 import type { User } from '@proton/shared/lib/interfaces';
 
-import type { ForkPayload } from '../api/fork';
-import type {
-    AliasCreationDTO,
-    AliasOptions,
-    FileTransferErrorDTO,
-    FileTransferWriteDTO,
-    ItemContent,
-    SelectedItem,
-    UniqueItem,
-} from '../data';
-import type { TelemetryEventDTO } from '../data/telemetry';
-import type { Maybe, MaybeNull } from '../utils';
-import type { AutofillIdentityResult, AutofillLoginResult, AutofillOptions } from './autofill';
-import type { AutosaveRequest } from './autosave';
-import type { AutosaveFormEntry, FormCredentials, FormStatusPayload, FormSubmitPayload } from './form';
-import type { OtpCode, OtpRequest } from './otp';
-import type { ExclusionRules } from './rules';
-import type { TabId, TabInfo } from './runtime';
-import type { SpotlightMessage } from './spotlight';
-import type { AppState, PopupInitialState } from './state';
-
 export type WithPayload<T extends WorkerMessageType, P extends {}> = { type: T; payload: P };
-export type ClientEndpoint =
-    | 'popup'
-    | 'contentscript'
-    | 'background'
-    | 'page'
-    | 'notification'
-    | 'dropdown'
-    | 'web'
-    | 'desktop';
 
 export type WorkerMessageWithSender<T extends WorkerMessage = WorkerMessage> = T & {
     sender: ClientEndpoint;
@@ -281,7 +280,6 @@ export type WorkerMessage =
 export type MessageFailure = { type: 'error'; error: string; critical?: boolean; payload?: string };
 export type MessageSuccess<T> = T extends { [key: string]: any } ? T & { type: 'success' } : { type: 'success' };
 export type MaybeMessage<T> = MessageSuccess<T> | MessageFailure;
-export type Result<T = {}, F = {}> = ({ ok: true } & T) | ({ ok: false; error?: MaybeNull<string> } & F);
 
 type WorkerMessageResponseMap = {
     [WorkerMessageType.ACCOUNT_FORK]: { payload: ExtensionForkResultPayload };
@@ -324,16 +322,17 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.WEBSITE_RULES_REQUEST]: { rules: MaybeNull<ExclusionRules> };
 };
 
-export type WorkerMessageResponse<MessageType> =
-    MessageType extends keyof WorkerMessageResponseMap ? WorkerMessageResponseMap[MessageType] : boolean;
+export type WorkerMessageResponse<MessageType> = MessageType extends keyof WorkerMessageResponseMap
+    ? WorkerMessageResponseMap[MessageType]
+    : boolean;
 
-export type WorkerResponse<T extends Maybe<WorkerMessage | WorkerMessageWithSender>> =
-    T extends undefined ? MessageFailure
-    : T extends WorkerMessage ?
-        T['type'] extends infer MessageType ?
-            MaybeMessage<WorkerMessageResponse<MessageType>>
-        :   never
-    :   never;
+export type WorkerResponse<T extends Maybe<WorkerMessage | WorkerMessageWithSender>> = T extends undefined
+    ? MessageFailure
+    : T extends WorkerMessage
+      ? T['type'] extends infer MessageType
+          ? MaybeMessage<WorkerMessageResponse<MessageType>>
+          : never
+      : never;
 
 export type WorkerSendResponse<T extends Maybe<WorkerMessage> = Maybe<WorkerMessage>> = (
     response: WorkerResponse<T>

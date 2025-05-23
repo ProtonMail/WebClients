@@ -12,6 +12,8 @@ import { AutosaveForm } from 'proton-pass-extension/app/content/injections/apps/
 import { AutosaveSelect } from 'proton-pass-extension/app/content/injections/apps/notification/components/AutosaveSelect';
 import { NotificationHeader } from 'proton-pass-extension/app/content/injections/apps/notification/components/NotificationHeader';
 import type { NotificationAction, NotificationActions } from 'proton-pass-extension/app/content/types/notification';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
@@ -20,9 +22,8 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { MODEL_VERSION } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { validateItemName } from '@proton/pass/lib/validation/item';
-import { type AutosaveFormValues, AutosaveMode, type AutosavePayload, WorkerMessageType } from '@proton/pass/types';
+import { type AutosaveFormValues, AutosaveMode, type AutosavePayload } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { withMerge } from '@proton/pass/utils/object/merge';
 import noop from '@proton/utils/noop';

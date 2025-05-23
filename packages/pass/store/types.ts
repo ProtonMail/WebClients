@@ -4,6 +4,7 @@ import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
+import type { FilePortWriter } from '@proton/pass/lib/file-storage/types';
 import type {
     AnyStorage,
     AppState,
@@ -44,6 +45,8 @@ export interface RootSagaOptions {
 
     /** Retrieves the port by name in the extension */
     getPort?: (name: string) => Maybe<Runtime.Port>;
+    /** Writes a file via port messaging [fallback] */
+    getPortWriter?: FilePortWriter;
 
     /** Fine-tune the event channel polling interval - this will
      * be called after each polling run to set the next value */

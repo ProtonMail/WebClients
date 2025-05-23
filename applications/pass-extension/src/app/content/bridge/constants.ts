@@ -1,4 +1,4 @@
-import { WorkerMessageType } from '@proton/pass/types';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 export const BRIDGE_REQUEST = 'Pass::MainWorld::Message';
 export const BRIDGE_RESPONSE = 'Pass::MainWorld::Response';

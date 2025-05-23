@@ -4,6 +4,8 @@ import { OnboardingCard } from 'proton-pass-extension/app/pages/onboarding/Card/
 import { OnboardingHeader } from 'proton-pass-extension/app/pages/onboarding/Header/OnboardingHeader';
 import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
 import { useExtensionClientInit } from 'proton-pass-extension/lib/hooks/useExtensionClientInit';
+import { pageMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
@@ -11,8 +13,7 @@ import accountSetupImg from '@proton/pass/assets/protonpass-account.svg';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { PASS_ANDROID_URL, PASS_IOS_URL, PASS_VIDEO_URL } from '@proton/pass/constants';
 import { clientReady } from '@proton/pass/lib/client';
-import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import { SpotlightMessage, WorkerMessageType } from '@proton/pass/types';
+import { SpotlightMessage } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';

@@ -9,6 +9,8 @@ import {
     type DropdownActions,
     IFramePortMessageType,
 } from 'proton-pass-extension/app/content/types';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
@@ -18,10 +20,8 @@ import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import type { AliasState } from '@proton/pass/store/reducers';
-import type { AliasOptions } from '@proton/pass/types';
-import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
+import type { AliasOptions, MaybeNull } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';

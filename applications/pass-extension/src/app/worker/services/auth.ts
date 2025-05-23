@@ -2,7 +2,9 @@
 import { SSO_URL } from 'proton-pass-extension/app/config';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
+import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
 import { safariPullFork, sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { SESSION_RESUME_MAX_RETRIES, SESSION_RESUME_RETRY_TIMEOUT } from '@proton/pass/constants';
 import { AccountForkResponse, getAccountForkResponsePayload, getStateKey } from '@proton/pass/lib/auth/fork';
@@ -18,7 +20,6 @@ import {
     clientSessionLocked,
     clientUnauthorized,
 } from '@proton/pass/lib/client';
-import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message/message-broker';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import browser from '@proton/pass/lib/globals/browser';
 import {
@@ -29,8 +30,7 @@ import {
     stopEventPolling,
     unlock,
 } from '@proton/pass/store/actions';
-import type { Api, MaybeNull } from '@proton/pass/types';
-import { AppStatus, WorkerMessageType } from '@proton/pass/types';
+import { type Api, AppStatus, type MaybeNull } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
