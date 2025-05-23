@@ -1,6 +1,6 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { type FieldHandle, type FormHandle, NotificationAction } from 'proton-pass-extension/app/content/types';
-import { sendTelemetryEvent } from 'proton-pass-extension/app/content/utils/telemetry';
+import { sendContentScriptTelemetry } from 'proton-pass-extension/app/content/utils/telemetry';
 
 import { FieldType, FormType, isIgnored } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
@@ -80,7 +80,7 @@ export const createAutofillService = () => {
         first(form.getFieldsFor(FieldType.EMAIL) ?? [])?.autofill(data.userIdentifier);
         form.getFieldsFor(FieldType.PASSWORD_CURRENT).forEach((field) => field.autofill(data.password));
 
-        sendTelemetryEvent(TelemetryEventName.AutofillTriggered, {}, { location: 'source' });
+        sendContentScriptTelemetry(TelemetryEventName.AutofillTriggered, {}, { location: 'source' });
     };
 
     const autofillPassword = withContext<(form: FormHandle, password: string) => void>((ctx, form, password) => {
@@ -121,7 +121,7 @@ export const createAutofillService = () => {
             });
         }
 
-        sendTelemetryEvent(TelemetryEventName.TwoFAAutofill, {}, {});
+        sendContentScriptTelemetry(TelemetryEventName.TwoFAAutofill, {}, {});
     };
 
     /** Clears previously autofilled identity fields when called with a new identity item */

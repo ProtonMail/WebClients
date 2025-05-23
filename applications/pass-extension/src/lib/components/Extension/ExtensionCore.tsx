@@ -2,6 +2,7 @@ import type { PropsWithChildren } from 'react';
 import { type FC, useCallback, useRef } from 'react';
 
 import * as config from 'proton-pass-extension/app/config';
+import { sendTelemetryEvent } from 'proton-pass-extension/app/content/utils/telemetry';
 import locales from 'proton-pass-extension/app/locales';
 import { API_PROXY_URL } from 'proton-pass-extension/app/worker/constants.runtime';
 import { createCoreServiceBridge } from 'proton-pass-extension/lib/services/core.bridge';
@@ -12,11 +13,7 @@ import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 
 import useInstance from '@proton/hooks/useInstance';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
-import type {
-    ExtensionClientState,
-    OnTelemetryEvent,
-    PassCoreProviderProps,
-} from '@proton/pass/components/Core/PassCoreProvider';
+import type { ExtensionClientState, PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/ThemeService';
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
@@ -34,7 +31,6 @@ import { getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
 import browser from '@proton/pass/lib/globals/browser';
 import { createI18nService } from '@proton/pass/lib/i18n/service';
 import { createSettingsService } from '@proton/pass/lib/settings/service';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import type { LocalStoreData } from '@proton/pass/types';
 import { type ClientEndpoint, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
@@ -66,13 +62,7 @@ const getPassCoreProviderProps = (
         },
     });
 
-    const onTelemetry: OnTelemetryEvent = (Event, Values, Dimensions, platform, extra) =>
-        sendMessage(
-            messageFactory({
-                type: WorkerMessageType.TELEMETRY_EVENT,
-                payload: { event: createTelemetryEvent(Event, Values, Dimensions, platform), extra },
-            })
-        ).catch(noop);
+    const onTelemetry = sendTelemetryEvent(messageFactory);
 
     return {
         config,
