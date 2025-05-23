@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { usePopperAnchor } from '@proton/components/index';
+import { usePopperAnchor } from '@proton/components';
 import { SHARE_EXTERNAL_INVITATION_STATE } from '@proton/shared/lib/drive/constants';
 import { SHARE_MEMBER_PERMISSIONS, SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 

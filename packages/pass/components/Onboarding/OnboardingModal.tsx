@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { Button, Step, Stepper } from '@proton/atoms';
 import { type ModalProps, ModalTwoFooter } from '@proton/components';
+import { ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
-import { ModalTwoContent, ModalTwoHeader } from '@proton/components/index';
 import { PassIconLogo } from '@proton/pass/components/Layout/Logo/PassIconLogo';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { wait } from '@proton/shared/lib/helpers/promise';

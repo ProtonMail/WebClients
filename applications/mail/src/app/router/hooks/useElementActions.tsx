@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { useItemsSelection } from '@proton/components/index';
+import { useItemsSelection } from '@proton/components';
 import { useFolders } from '@proton/mail';
 import { getFolderName } from '@proton/mail/labels/helpers';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

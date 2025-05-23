@@ -7,8 +7,8 @@ import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '@proton/activation/src/c
 import useSetupGmailBYOEAddress from '@proton/activation/src/hooks/useSetupGmailBYOEAddress';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms';
+import { UpsellModal, useModalState } from '@proton/components';
 import useConfig from '@proton/components/hooks/useConfig';
-import { UpsellModal, useModalState } from '@proton/components/index';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { type APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
