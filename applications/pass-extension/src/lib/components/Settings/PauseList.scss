@@ -4,7 +4,9 @@ table {
 	th small {
 		display: block;
 	}
-	@include media('<=medium') {
+
+	// Same width condition as packages/styles/scss/components/_simple-table.scss
+	@container (max-width: 35rem) {
 		tr {
 			position: relative;
 
