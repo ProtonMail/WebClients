@@ -3,7 +3,7 @@ import type { PropsWithChildren } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms/src';
+import { Button } from '@proton/atoms';
 import { FiltersUpsellModal, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { IcCheckmarkCircleFilled } from '@proton/icons';
 import { useFilters } from '@proton/mail/filters/hooks';
