@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useNotifications } from '@proton/components/index';
+import { useNotifications } from '@proton/components';
 
 import { usePublicLinkActions, usePublicLinksActions, usePublicLinksListing } from '../_links';
 import useLinksState from '../_links/useLinksState';

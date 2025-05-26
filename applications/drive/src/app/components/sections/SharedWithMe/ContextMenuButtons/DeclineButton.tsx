@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { useConfirmActionModal } from '@proton/components/index';
+import type { useConfirmActionModal } from '@proton/components';
 
 import { useInvitationsActions } from '../../../../store';
 import { ContextMenuButton } from '../../ContextMenu';

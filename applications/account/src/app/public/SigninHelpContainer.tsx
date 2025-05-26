@@ -3,7 +3,7 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { Icon } from '@proton/components/index';
+import { Icon } from '@proton/components';
 import { type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

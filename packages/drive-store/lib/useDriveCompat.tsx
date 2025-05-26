@@ -1,7 +1,7 @@
 import { type ReactNode, useCallback } from 'react';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
-import { useAuthentication } from '@proton/components/index';
+import { useAuthentication } from '@proton/components';
 import type { PublicKeyReference, SessionKey } from '@proton/crypto/lib';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';

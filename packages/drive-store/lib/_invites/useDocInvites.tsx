@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
 
-import { useConfirmActionModal } from '@proton/components/index';
+import { useConfirmActionModal } from '@proton/components';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { useInvitationsActions } from '../../store/_actions/useInvitationsActions';

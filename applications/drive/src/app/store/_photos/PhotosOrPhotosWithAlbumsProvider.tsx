@@ -2,7 +2,7 @@ import { type ReactNode, useContext, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components/index';
+import { useNotifications } from '@proton/components';
 import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 import useFlag from '@proton/unleash/useFlag';
 
