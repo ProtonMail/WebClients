@@ -1,6 +1,6 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { TableOfContentsPlugin } from '@lexical/react/LexicalTableOfContentsPlugin'
-import { DropdownMenu, DropdownMenuButton } from '@proton/components/index'
+import { DropdownMenu, DropdownMenuButton } from '@proton/components'
 import type { NodeKey } from 'lexical'
 import { $getNodeByKey } from 'lexical'
 import { useCallback } from 'react'

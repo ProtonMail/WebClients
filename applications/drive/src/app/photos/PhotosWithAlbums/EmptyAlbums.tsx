@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { type ModalStateReturnObj } from '@proton/components/index';
+import { type ModalStateReturnObj } from '@proton/components';
 import emptyPhotosSvg from '@proton/styles/assets/img/illustrations/empty-photos.svg';
 
 import { DriveEmptyView } from '../../components/layout/DriveEmptyView';

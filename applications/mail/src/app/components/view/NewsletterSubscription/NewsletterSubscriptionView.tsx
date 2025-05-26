@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 
-import { useActiveBreakpoint, useModalStateObject } from '@proton/components/index';
+import { useActiveBreakpoint, useModalStateObject } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

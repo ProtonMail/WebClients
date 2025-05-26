@@ -1,6 +1,6 @@
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { type ModalOwnProps } from '@proton/components/index';
+import { type ModalOwnProps } from '@proton/components';
 import {
     queryListNodesWithMissingNodeHashKeys,
     queryListShareAutoRestore,

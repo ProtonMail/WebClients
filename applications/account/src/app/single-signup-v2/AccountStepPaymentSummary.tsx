@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
+import { Info, Price } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
-import { Info, Price } from '@proton/components/index';
 import { type Plan, getHas2024OfferCoupon, getIsB2BAudienceFromPlan, isTaxInclusive } from '@proton/payments';
 import { COUPON_CODES } from '@proton/payments';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
