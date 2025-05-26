@@ -15,8 +15,7 @@ import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { getUserCurrency } from '@proton/pass/lib/user/user.currency';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import type { Currency } from '@proton/payments/core/interface';
+import { CYCLE, type Currency, PLANS, PLAN_NAMES } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 

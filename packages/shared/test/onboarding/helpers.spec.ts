@@ -1,6 +1,4 @@
-import { CYCLE } from '@proton/payments/core/constants';
-import { External, Renew } from '@proton/payments/core/subscription/constants';
-import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { CYCLE, External, Renew, type Subscription } from '@proton/payments';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { canShowB2BOnboardingButton } from '@proton/shared/lib/onboarding/helpers';
 

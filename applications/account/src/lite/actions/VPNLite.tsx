@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms';
 import useApi from '@proton/components/hooks/useApi';
-import { COUPON_CODES, PLANS } from '@proton/payments/core/constants';
+import { COUPON_CODES, PLANS } from '@proton/payments';
 import { queryScopes } from '@proton/shared/lib/api/auth';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getExploreText } from '@proton/shared/lib/apps/i18n';
