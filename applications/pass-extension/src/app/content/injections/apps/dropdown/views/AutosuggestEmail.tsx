@@ -1,14 +1,12 @@
 import { type FC, useCallback, useEffect, useState } from 'react';
 
+import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { useIFrameAppController } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
 import { DropdownHeader } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownHeader';
-import {
-    type DropdownAction,
-    type DropdownActions,
-    IFramePortMessageType,
-} from 'proton-pass-extension/app/content/types';
+import type { DropdownActions } from 'proton-pass-extension/app/content/services/iframes/dropdown';
+import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';

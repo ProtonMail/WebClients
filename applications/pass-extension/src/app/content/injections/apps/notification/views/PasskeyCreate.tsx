@@ -4,6 +4,7 @@ import type { FormikContextType, FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { createBridgeResponse } from 'proton-pass-extension/app/content/bridge/message';
 import type { BridgeResponse } from 'proton-pass-extension/app/content/bridge/types';
+import type { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { AutosaveVaultPicker } from 'proton-pass-extension/app/content/injections/apps/components/AutosaveVaultPicker';
 import {
     useIFrameAppController,
@@ -13,8 +14,8 @@ import { ListItem } from 'proton-pass-extension/app/content/injections/apps/comp
 import { WithPinUnlock } from 'proton-pass-extension/app/content/injections/apps/components/PinUnlock';
 import { ScrollableItemsList } from 'proton-pass-extension/app/content/injections/apps/components/ScrollableItemsList';
 import { NotificationHeader } from 'proton-pass-extension/app/content/injections/apps/notification/components/NotificationHeader';
-import type { NotificationAction } from 'proton-pass-extension/app/content/types';
-import { IFramePortMessageType, type NotificationActions } from 'proton-pass-extension/app/content/types';
+import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
+import type { NotificationRequest } from 'proton-pass-extension/app/content/services/iframes/notification';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
@@ -163,7 +164,7 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
     ) : null;
 };
 
-type Props = Extract<NotificationActions, { action: NotificationAction.PASSKEY_CREATE }>;
+type Props = Extract<NotificationRequest, { action: NotificationAction.PASSKEY_CREATE }>;
 
 export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain }) => {
     const [loading, setLoading] = useMountedState(false);

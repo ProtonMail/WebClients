@@ -2,6 +2,7 @@ import { type FC, useEffect } from 'react';
 
 import { createBridgeResponse } from 'proton-pass-extension/app/content/bridge/message';
 import type { BridgeResponse } from 'proton-pass-extension/app/content/bridge/types';
+import type { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import {
     useIFrameAppController,
     useIFrameAppState,
@@ -10,8 +11,8 @@ import { ListItem } from 'proton-pass-extension/app/content/injections/apps/comp
 import { WithPinUnlock } from 'proton-pass-extension/app/content/injections/apps/components/PinUnlock';
 import { ScrollableItemsList } from 'proton-pass-extension/app/content/injections/apps/components/ScrollableItemsList';
 import { NotificationHeader } from 'proton-pass-extension/app/content/injections/apps/notification/components/NotificationHeader';
-import type { NotificationAction } from 'proton-pass-extension/app/content/types';
-import { IFramePortMessageType, type NotificationActions } from 'proton-pass-extension/app/content/types';
+import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
+import type { NotificationRequest } from 'proton-pass-extension/app/content/services/iframes/notification';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
@@ -25,7 +26,7 @@ import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-type Props = Extract<NotificationActions, { action: NotificationAction.PASSKEY_GET }>;
+type Props = Extract<NotificationRequest, { action: NotificationAction.PASSKEY_GET }>;
 
 const PasskeyGetView: FC<Props> = ({ request, token, passkeys, domain: passkeyDomain }) => {
     const { onTelemetry } = usePassCore();

@@ -1,5 +1,4 @@
 import { IFRAME_APP_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
-import { isIFrameMessage } from 'proton-pass-extension/app/content/injections/iframe/utils';
 import type {
     IFrameCloseOptions,
     IFrameEndpoint,
@@ -7,8 +6,9 @@ import type {
     IFrameMessageType,
     IFrameMessageWithSender,
     IFramePortMessageHandler,
-} from 'proton-pass-extension/app/content/types';
-import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
+} from 'proton-pass-extension/app/content/services/iframes/messages';
+import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
+import { isIFrameMessage } from 'proton-pass-extension/app/content/services/iframes/utils';
 import {
     contentScriptMessage,
     portForwardingMessage,

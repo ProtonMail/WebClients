@@ -1,13 +1,15 @@
 import { type FC, useMemo, useRef } from 'react';
 
+import type { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import {
     useIFrameAppController,
     useIFrameAppState,
 } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
-import type { NotificationAction, NotificationActions } from 'proton-pass-extension/app/content/types';
-import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
+import { NotificationHeader } from 'proton-pass-extension/app/content/injections/apps/notification/components/NotificationHeader';
+import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
+import type { NotificationRequest } from 'proton-pass-extension/app/content/services/iframes/notification';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -20,9 +22,7 @@ import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import type { MaybeNull, OtpRequest } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
-import { NotificationHeader } from '../components/NotificationHeader';
-
-type Props = Extract<NotificationActions, { action: NotificationAction.OTP }>;
+type Props = Extract<NotificationRequest, { action: NotificationAction.OTP }>;
 
 export const AutofillOTP: FC<Props> = ({ item }) => {
     const { visible, domain } = useIFrameAppState();
