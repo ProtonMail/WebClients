@@ -1,0 +1,24 @@
+@import '~@proton/styles/scss/lib';
+
+.photos-grid-container {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	block-size: 100vh;
+}
+
+.photos-grid-container-left.photos-grid-container-left.photos-grid-container-left {
+	overflow: hidden visible;
+	position: relative;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.photos-grid-container-left-inner {
+	position: absolute;
+	inset-block-start: 0;
+}
