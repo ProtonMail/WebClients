@@ -7,7 +7,6 @@ import type { AppIntent } from '@proton/components/containers/login/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency';
 import type { Subscription, V5PaymentToken } from '@proton/payments';
 import {
-    COUPON_CODES,
     type PaymentsVersion,
     isTokenPayment,
     isWrappedPaymentsVersion,
@@ -58,7 +57,6 @@ import noop from '@proton/utils/noop';
 
 import type {
     MnemonicData,
-    ReferralData,
     SignupActionDoneResponse,
     SignupActionResponse,
     SignupCacheResult,
@@ -328,7 +326,6 @@ export const getSubscriptionMetricsData = (
 export const handleSubscribeUser = async (
     api: Api,
     subscriptionData: SubscriptionData,
-    referralData: ReferralData | undefined,
     productParam: ProductParam,
     reportPaymentSuccess: () => void,
     reportPaymentFailure: () => void
@@ -341,8 +338,6 @@ export const handleSubscribeUser = async (
         let paymentsVersion: PaymentsVersion;
         if (subscriptionData.payment?.paymentsVersion) {
             paymentsVersion = subscriptionData.payment.paymentsVersion;
-        } else if (referralData) {
-            paymentsVersion = 'v5';
         } else {
             paymentsVersion = 'v4';
         }
@@ -354,15 +349,13 @@ export const handleSubscribeUser = async (
                     Currency: subscriptionData.currency,
                     Cycle: subscriptionData.cycle,
                     BillingAddress: subscriptionData.billingAddress,
-                    ...(referralData
-                        ? { Codes: [COUPON_CODES.REFERRAL], Amount: 0 }
-                        : {
-                              Payment: subscriptionData.payment,
-                              Amount: subscriptionData.checkResult.AmountDue,
-                              ...(subscriptionData.checkResult.Coupon?.Code
-                                  ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
-                                  : undefined),
-                          }),
+                    ...{
+                        Payment: subscriptionData.payment,
+                        Amount: subscriptionData.checkResult.AmountDue,
+                        ...(subscriptionData.checkResult.Coupon?.Code
+                            ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
+                            : undefined),
+                    },
                 },
                 productParam,
                 paymentsVersion
@@ -529,14 +522,19 @@ export const handleSetupUser = async ({
     }).then((response): Promise<AuthResponse> => response.json());
 
     // Perform the subscription first to prevent "locked user" while setting up keys.
-    const subscription = await handleSubscribeUser(
-        api,
-        subscriptionData,
-        referralData,
-        productParam,
-        reportPaymentSuccess,
-        reportPaymentFailure
-    );
+    // Before, we needed to subscribe as a referral
+    // The backend now takes care of this for us,
+    // so we don't need to subscribe anymore on the frontend
+    let subscription: Subscription | undefined;
+    if (!referralData) {
+        subscription = await handleSubscribeUser(
+            api,
+            subscriptionData,
+            productParam,
+            reportPaymentSuccess,
+            reportPaymentFailure
+        );
+    }
 
     api(updateLocale(localeCode)).catch(noop);
 
@@ -678,10 +676,10 @@ export const handleCreateAccount = async ({
     }
 
     if (cache.referralData?.referrer) {
-        return {
+        return handleCreateUser({
             cache,
-            to: SignupSteps.TrialPlan,
-        };
+            api,
+        });
     }
 
     if (cache.subscriptionData.checkResult.Amount > 0 && hasPlanIDs(cache.subscriptionData.planIDs)) {
