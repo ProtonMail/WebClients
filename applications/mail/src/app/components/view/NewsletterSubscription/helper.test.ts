@@ -5,6 +5,7 @@ import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/Newsl
 
 import {
     getFilterData,
+    getFilterDropdownData,
     getNewsletterCopyForFilterAction,
     getSubscriptionMoveToFolderName,
     getUnsubscribeData,
@@ -297,6 +298,110 @@ describe('Newsletter subscriptions helpers', () => {
                     'MoveToTrash'
                 )
             ).toBe('Moved 1 message to Trash.');
+        });
+    });
+
+    describe('getFilterDropdownData', () => {
+        it('Should return true if the mark as read filter is enabled', () => {
+            const result = getFilterDropdownData(
+                {
+                    MarkAsRead: true,
+                    FilterID: 'ID',
+                } as NewsletterSubscription,
+                [{ ID: 'ID', Status: FILTER_STATUS.ENABLED } as Filter]
+            );
+
+            expect(result).toEqual({
+                isFilterEnabled: true,
+                markingAsRead: true,
+                movingToArchive: false,
+                movingToTrash: false,
+                menuItems: [
+                    {
+                        icon: 'envelope-open',
+                        label: 'Stop marking as read',
+                        filter: 'MarkAsRead',
+                    },
+                    {
+                        icon: 'archive-box',
+                        label: 'Move to archive',
+                        filter: 'MoveToArchive',
+                    },
+                    {
+                        icon: 'trash',
+                        label: 'Move to trash',
+                        filter: 'MoveToTrash',
+                    },
+                ],
+            });
+        });
+
+        it('Should return true if the move to archive filter is enabled', () => {
+            const result = getFilterDropdownData(
+                {
+                    MoveToFolder: MAILBOX_LABEL_IDS.ARCHIVE,
+                    FilterID: 'ID',
+                } as NewsletterSubscription,
+                [{ ID: 'ID', Status: FILTER_STATUS.ENABLED } as Filter]
+            );
+
+            expect(result).toEqual({
+                isFilterEnabled: true,
+                markingAsRead: false,
+                movingToArchive: true,
+                movingToTrash: false,
+                menuItems: [
+                    {
+                        icon: 'envelope-open',
+                        label: 'Mark as read',
+                        filter: 'MarkAsRead',
+                    },
+                    {
+                        icon: 'archive-box',
+                        label: 'Stop moving to archive',
+                        filter: 'MoveToArchive',
+                    },
+                    {
+                        icon: 'trash',
+                        label: 'Move to trash',
+                        filter: 'MoveToTrash',
+                    },
+                ],
+            });
+        });
+
+        it('Should return true if the move to trash filter is enabled', () => {
+            const result = getFilterDropdownData(
+                {
+                    MoveToFolder: MAILBOX_LABEL_IDS.TRASH,
+                    FilterID: 'ID',
+                } as NewsletterSubscription,
+                [{ ID: 'ID', Status: FILTER_STATUS.ENABLED } as Filter]
+            );
+
+            expect(result).toEqual({
+                isFilterEnabled: true,
+                markingAsRead: false,
+                movingToArchive: false,
+                movingToTrash: true,
+                menuItems: [
+                    {
+                        icon: 'envelope-open',
+                        label: 'Mark as read',
+                        filter: 'MarkAsRead',
+                    },
+                    {
+                        icon: 'archive-box',
+                        label: 'Move to archive',
+                        filter: 'MoveToArchive',
+                    },
+                    {
+                        icon: 'trash',
+                        label: 'Stop moving to trash',
+                        filter: 'MoveToTrash',
+                    },
+                ],
+            });
         });
     });
 });
