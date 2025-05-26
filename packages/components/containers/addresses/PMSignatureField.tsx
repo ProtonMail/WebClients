@@ -38,10 +38,11 @@ const PMSignature = ({ id }: Props) => {
     const api = useApi();
     const dispatch = useDispatch();
 
-    const [user] = useUser();
-    const [mailSettings] = useMailSettings();
-    const [userSettings] = useUserSettings();
-    const [organization] = useOrganization();
+    const [user, loadingUser] = useUser();
+    const [mailSettings, loadingMailSettings] = useMailSettings();
+    const [userSettings, loadingUserSettings] = useUserSettings();
+    const [organization, loadingOrganization] = useOrganization();
+    const loadingData = loadingMailSettings || loadingUserSettings || loadingUser || loadingOrganization;
 
     const [loading, withLoading] = useLoading();
     const { state, toggle } = useToggle(!!mailSettings?.PMSignature);
@@ -55,6 +56,10 @@ const PMSignature = ({ id }: Props) => {
         toggle();
         createNotification({ text: c('Success').t`Preference saved` });
     };
+
+    if (loadingData) {
+        return null;
+    }
 
     return (
         <div className="flex flex-1 align-items-center">

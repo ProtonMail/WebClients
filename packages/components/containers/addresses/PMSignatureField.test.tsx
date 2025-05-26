@@ -143,4 +143,13 @@ describe('PMSignatureField', () => {
         const toggle = screen.getByRole('checkbox');
         expect(toggle).toBeDisabled();
     });
+
+    it('shows nothing if loading data', () => {
+        mockUseUser([{ hasPaidMail: true }]);
+        mockUseMailSettings([{ PMSignature: PM_SIGNATURE.ENABLED }, true]);
+        mockUseUserSettings([{}, true]);
+        mockUseOrganization([{}, true]);
+        render(<PMSignatureField id={id} />);
+        expect(screen.queryByRole('checkbox')).not.toBeInTheDocument();
+    });
 });
