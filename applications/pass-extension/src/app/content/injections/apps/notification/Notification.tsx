@@ -1,12 +1,13 @@
 import { type FC, useCallback, useEffect, useState } from 'react';
 
+import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import {
     useIFrameAppState,
     useRegisterMessageHandler,
 } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { IFrameAppAutoSizer } from 'proton-pass-extension/app/content/injections/apps/components/IFrameAppAutoSizer';
-import type { NotificationActions } from 'proton-pass-extension/app/content/types';
-import { IFramePortMessageType, NotificationAction } from 'proton-pass-extension/app/content/types';
+import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
+import type { NotificationRequest } from 'proton-pass-extension/app/content/services/iframes/notification';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
@@ -24,14 +25,14 @@ import './Notification.scss';
 
 type Props = {
     /** @internal Only used for debugging component */
-    initial?: NotificationActions;
+    initial?: NotificationRequest;
 };
 
 export const Notification: FC<Props> = ({ initial = null }) => {
     const { visible } = useIFrameAppState();
     const { status } = useAppState();
 
-    const [state, setState] = useState<MaybeNull<NotificationActions>>(initial);
+    const [state, setState] = useState<MaybeNull<NotificationRequest>>(initial);
     const loading = state === null || clientBusy(status);
 
     useRegisterMessageHandler(
@@ -42,7 +43,7 @@ export const Notification: FC<Props> = ({ initial = null }) => {
     useEffect(() => setState((prev) => (visible ? prev : null)), [visible]);
 
     return (
-        <IFrameAppAutoSizer className="min-h-full bg-norm relative" style={{ '--anime-delay': '0s' }}>
+        <IFrameAppAutoSizer className="bg-norm relative" style={{ '--anime-delay': '0s' }}>
             <Localized>
                 <div className="h-full p-4">
                     {(() => {

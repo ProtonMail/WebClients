@@ -4,9 +4,12 @@ import { flushSync } from 'react-dom';
 
 import type { IFrameAppController } from 'proton-pass-extension/app/content/injections/apps/components/IFrameAppController';
 import { createIFrameAppController } from 'proton-pass-extension/app/content/injections/apps/components/IFrameAppController';
-import { isIFrameMessage } from 'proton-pass-extension/app/content/injections/iframe/utils';
-import type { IFrameMessageType, IFramePortMessageHandler } from 'proton-pass-extension/app/content/types';
-import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
+import type {
+    IFrameMessageType,
+    IFramePortMessageHandler,
+} from 'proton-pass-extension/app/content/services/iframes/messages';
+import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
+import { isIFrameMessage } from 'proton-pass-extension/app/content/services/iframes/utils';
 import locales from 'proton-pass-extension/app/locales';
 import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';

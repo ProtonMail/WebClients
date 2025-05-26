@@ -1,7 +1,8 @@
 import { type FC, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { FormikErrors } from 'formik';
-import { Form, FormikProvider, useFormik } from 'formik';
+import { Field, Form, FormikProvider, useFormik } from 'formik';
+import type { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { AutosaveVaultPicker } from 'proton-pass-extension/app/content/injections/apps/components/AutosaveVaultPicker';
 import {
     useIFrameAppController,
@@ -11,7 +12,7 @@ import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/
 import { AutosaveForm } from 'proton-pass-extension/app/content/injections/apps/notification/components/AutosaveForm';
 import { AutosaveSelect } from 'proton-pass-extension/app/content/injections/apps/notification/components/AutosaveSelect';
 import { NotificationHeader } from 'proton-pass-extension/app/content/injections/apps/notification/components/NotificationHeader';
-import type { NotificationAction, NotificationActions } from 'proton-pass-extension/app/content/types/notification';
+import type { NotificationRequest } from 'proton-pass-extension/app/content/services/iframes/notification';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
@@ -19,7 +20,6 @@ import { c } from 'ttag';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import usePrevious from '@proton/hooks/usePrevious';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { Field } from '@proton/pass/components/Form/Field/Field';
 import { MODEL_VERSION } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
@@ -29,7 +29,7 @@ import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { withMerge } from '@proton/pass/utils/object/merge';
 import noop from '@proton/utils/noop';
 
-type Props = Extract<NotificationActions, { action: NotificationAction.AUTOSAVE }>;
+type Props = Extract<NotificationRequest, { action: NotificationAction.AUTOSAVE }>;
 
 const getInitialValues = ({ userIdentifier, password, type }: AutosavePayload, domain: string): AutosaveFormValues =>
     type === AutosaveMode.UPDATE

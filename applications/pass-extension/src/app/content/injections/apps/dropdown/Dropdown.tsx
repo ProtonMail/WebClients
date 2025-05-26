@@ -1,5 +1,6 @@
 import { type FC, useCallback, useEffect, useState } from 'react';
 
+import { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_MIN_HEIGHT } from 'proton-pass-extension/app/content/constants.static';
 import {
     useIFrameAppController,
@@ -10,7 +11,8 @@ import { IFrameAppAutoSizer } from 'proton-pass-extension/app/content/injections
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { ListItemIcon } from 'proton-pass-extension/app/content/injections/apps/components/ListItemIcon';
 import { PinUnlock } from 'proton-pass-extension/app/content/injections/apps/components/PinUnlock';
-import { DropdownAction, type DropdownActions, IFramePortMessageType } from 'proton-pass-extension/app/content/types';
+import type { DropdownActions } from 'proton-pass-extension/app/content/services/iframes/dropdown';
+import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
 import { useRequestFork } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
