@@ -9,6 +9,7 @@ import {
     getNewsletterCopyForFilterAction,
     getSubscriptionMoveToFolderName,
     getUnsubscribeData,
+    getUnsubscribeMethod,
     shouldOpenUpsellOnFilterClick,
 } from './helper';
 
@@ -402,6 +403,64 @@ describe('Newsletter subscriptions helpers', () => {
                     },
                 ],
             });
+        });
+    });
+
+    describe('getUnsubscribeMethod', () => {
+        it('Should return one-click', () => {
+            expect(
+                getUnsubscribeMethod({
+                    UnsubscribeMethods: {
+                        OneClick: 'OneClick',
+                    },
+                } as NewsletterSubscription)
+            ).toBe('one-click');
+        });
+
+        it('Should return http-client', () => {
+            expect(
+                getUnsubscribeMethod({
+                    UnsubscribeMethods: {
+                        HttpClient: 'HttpClient',
+                    },
+                } as NewsletterSubscription)
+            ).toBe('http-client');
+        });
+
+        it('Should return mailto', () => {
+            expect(
+                getUnsubscribeMethod({
+                    UnsubscribeMethods: {
+                        Mailto: {
+                            Subject: 'Subject',
+                            Body: 'Body',
+                        },
+                    },
+                } as NewsletterSubscription)
+            ).toBe('mailto');
+        });
+
+        it('Should return one-click if multiple options', () => {
+            expect(
+                getUnsubscribeMethod({
+                    UnsubscribeMethods: {
+                        Mailto: {
+                            Subject: 'Subject',
+                            Body: 'Body',
+                        },
+                        OneClick: 'OneClick',
+                        HttpClient: 'HttpClient',
+                    },
+                } as NewsletterSubscription)
+            ).toBe('one-click');
+        });
+
+        it('Should return undefined when no unsubscribe methods are available', () => {
+            expect(
+                getUnsubscribeMethod({
+                    UnsubscribeMethods: {},
+                } as NewsletterSubscription)
+            ).toBeUndefined();
         });
     });
 });
