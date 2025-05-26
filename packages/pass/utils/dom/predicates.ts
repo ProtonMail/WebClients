@@ -4,6 +4,9 @@ export const isHTMLElement = (node: Node | EventTarget): node is HTMLElement =>
 export const isInputElement = (node: Node | EventTarget): node is HTMLInputElement =>
     isHTMLElement(node) && node.tagName === 'INPUT';
 
+export const isSelectElement = (node: Node | EventTarget): node is HTMLSelectElement =>
+    isHTMLElement(node) && node.tagName === 'SELECT';
+
 const INPUT_TYPES = ['text', 'email', 'number', 'tel', 'password'];
 
 export const isValidInputElement = (node: Node | EventTarget): node is HTMLInputElement =>
