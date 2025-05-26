@@ -1,4 +1,4 @@
-import { type Subscription } from '@proton/payments/index';
+import { type Subscription } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';

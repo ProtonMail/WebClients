@@ -1,5 +1,6 @@
 import {
     ADDON_NAMES,
+    type AggregatedPricing,
     CYCLE,
     type Currency,
     DEFAULT_CURRENCY,
@@ -8,15 +9,15 @@ import {
     type Plan,
     type PlanIDs,
     type PlansMap,
+    type PricingForCycles,
     SelectedPlan,
     type StrictPlan,
+    allCycles,
+    getMaxValue,
+    getPlanMembers,
     getPlanNameFromIDs,
     getPricePerCycle,
     getPricePerMember,
-} from '@proton/payments';
-import type { AggregatedPricing, PricingForCycles } from '@proton/payments';
-import { allCycles, getMaxValue, getPlanMembers } from '@proton/payments';
-import {
     getSupportedAddons,
     getSupportedB2BAddons,
     isDomainAddon,
@@ -24,7 +25,7 @@ import {
     isLumoAddon,
     isMemberAddon,
     isScribeAddon,
-} from '@proton/payments/core/plan/addons';
+} from '@proton/payments';
 
 import type { Organization, SubscriptionCheckResponse, User } from '../interfaces';
 import { ChargebeeEnabled } from '../interfaces';

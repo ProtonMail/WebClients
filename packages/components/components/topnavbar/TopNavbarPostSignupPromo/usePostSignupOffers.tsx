@@ -1,6 +1,6 @@
 import { type ComponentType } from 'react';
 
-import { PLANS } from '@proton/payments/index';
+import { PLANS } from '@proton/payments';
 import { type APP_NAMES } from '@proton/shared/lib/constants';
 
 import { MailSubscriptionReminder } from './MailSubscriptionReminder/MailSubscriptionReminder';

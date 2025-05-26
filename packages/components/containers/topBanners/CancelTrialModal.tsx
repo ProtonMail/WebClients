@@ -12,7 +12,7 @@ import { type ModalStateProps } from '@proton/components/components/modalTwo/use
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import Time from '@proton/components/components/time/Time';
-import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import { FREE_PLAN } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
