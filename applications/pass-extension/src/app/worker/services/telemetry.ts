@@ -54,7 +54,7 @@ export const createTelemetryService = (storage: ExtensionStorage<Record<'telemet
                 case TelemetryEventName.ExtensionCopiedFromLogin: {
                     if (!extra) return false;
 
-                    const tab = first(await browser.tabs.query({ active: true }));
+                    const tab = first(await browser.tabs.query({ active: true, currentWindow: true }));
                     const tabUrl = parseUrl(tab?.url);
                     const tabId = tab?.id;
                     const validTab = tabId && isSupportedSenderUrl(tabUrl);
