@@ -1,6 +1,6 @@
 import { exec } from 'child_process';
 import { app } from 'electron';
-import { copyFileSync, existsSync, writeFileSync } from 'node:fs';
+import { chmodSync, copyFileSync, existsSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import os from 'os';
 import path from 'path';
@@ -48,10 +48,13 @@ export const installDaemon = () => {
 
         const uninstallScriptPath = resolve(process.resourcesPath, 'cleanup.sh');
         const scriptPath = resolve(appData, 'proton-pass-cleanup.sh');
+
         copyFileSync(uninstallScriptPath, scriptPath);
+        chmodSync(scriptPath, '755'); // Make it executable
         writeFileSync(plistPath, getPlistContent(scriptPath));
 
-        exec(`launchctl unload "${plistPath}" 2>/dev/null || true`);
-        exec(`launchctl load "${plistPath}"`);
+        exec(`launchctl bootout gui/$(id -u)/com.protonpass.cleanup 2>/dev/null || true`, () =>
+            exec(`launchctl bootstrap gui/$(id -u) "${plistPath}"`)
+        );
     } catch {}
 };
