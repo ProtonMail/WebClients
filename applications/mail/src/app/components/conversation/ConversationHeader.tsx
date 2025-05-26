@@ -2,7 +2,8 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components/index';
+import { Button } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -43,15 +44,12 @@ const ConversationHeader = ({ className, loading, element, showBackButton = fals
             data-shortcut-target="message-conversation-summary"
             data-testid="conversation-header"
         >
-            <div className="flex flex-nowrap">
+            <div className="flex items-center flex-nowrap">
                 {showBackButton && (
-                    <div className="flex items-center justify-center cursor-pointer mr-4">
-                        <Icon
-                            name="arrow-left"
-                            alt={c('Action').t`Back`}
-                            onClick={onBack}
-                            data-testid="toolbar:back-button"
-                        />
+                    <div className="flex items-center mr-2">
+                        <Button icon shape="ghost" onClick={onBack} data-testid="toolbar:back-button">
+                            <Icon name="arrow-left" alt={c('Action').t`Back`} />
+                        </Button>
                     </div>
                 )}
                 <h1
