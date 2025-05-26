@@ -24,7 +24,6 @@ import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_signup_backButton_total_v1.schema';
 import {
     type BillingAddress,
-    CYCLE,
     type Currency,
     type Cycle,
     DEFAULT_CYCLE,
@@ -35,7 +34,6 @@ import {
     getPlansMap,
 } from '@proton/payments';
 import { getIsB2BAudienceFromPlan } from '@proton/payments';
-import { getFreeCheckResult } from '@proton/payments';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -70,7 +68,6 @@ import ExploreStep from './ExploreStep';
 import LoadingStep from './LoadingStep';
 import PaymentStep from './PaymentStep';
 import RecoveryStep from './RecoveryStep';
-import ReferralStep from './ReferralStep';
 import SignupSupportDropdown from './SignupSupportDropdown';
 import UpsellStep from './UpsellStep';
 import VerificationStep from './VerificationStep';
@@ -104,7 +101,6 @@ const {
     SaveRecovery,
     Congratulations,
     Upsell,
-    TrialPlan,
     Payment,
     HumanVerification,
     CreatingAccount,
@@ -497,7 +493,6 @@ const SignupContainer = ({
                 [HumanVerification]: 'verification',
                 [Payment]: 'payment',
                 [Upsell]: 'upsell',
-                [TrialPlan]: 'referral',
                 [SaveRecovery]: 'recovery',
             };
 
@@ -534,7 +529,7 @@ const SignupContainer = ({
             };
         }
 
-        if ([Payment, Upsell, TrialPlan, SaveRecovery].includes(step)) {
+        if ([Payment, Upsell, SaveRecovery].includes(step)) {
             return () => {
                 reportBackButtonMetric(step);
                 handleBack();
@@ -786,32 +781,6 @@ const SignupContainer = ({
                             handleError(error);
                             // Important this is thrown so that the human verification form can handle it
                             throw error;
-                        }
-                    }}
-                />
-            )}
-            {step === TrialPlan && (
-                <ReferralStep
-                    onBack={handleBackStep}
-                    onSubscriptionData={async ({ planIDs, billingAddress }) => {
-                        // Referral is always free even if there's a plan, and 1-month cycle
-                        const cycle = CYCLE.MONTHLY;
-                        const checkResult = getFreeCheckResult(model.subscriptionData.currency, cycle);
-
-                        try {
-                            await handlePlanSelectionCallback({ checkResult, planIDs, cycle, billingAddress });
-                            metrics.core_signup_referralStep_planSelection_total.increment({
-                                status: 'success',
-                                application: getSignupApplication(APP_NAME),
-                            });
-                        } catch (error) {
-                            handleError(error);
-                            observeApiError(error, (status) =>
-                                metrics.core_signup_referralStep_planSelection_total.increment({
-                                    status,
-                                    application: getSignupApplication(APP_NAME),
-                                })
-                            );
                         }
                     }}
                 />
