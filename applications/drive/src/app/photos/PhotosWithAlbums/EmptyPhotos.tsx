@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { Icon } from '@proton/components/index';
+import { Icon } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { PHOTOS_ACCEPTED_INPUT } from '@proton/shared/lib/drive/constants';
 import { DRIVE_ANDROID_APP, DRIVE_IOS_APP } from '@proton/shared/lib/drive/urls';

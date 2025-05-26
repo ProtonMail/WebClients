@@ -3,7 +3,7 @@ import type { KeyboardEventHandler } from 'react';
 import { memo, useRef, useState } from 'react';
 
 import { ButtonLike, CircleLoader } from '@proton/atoms';
-import { Icon } from '@proton/components/index';
+import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import type { ListFieldValue } from './ListField';
