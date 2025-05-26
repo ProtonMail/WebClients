@@ -1,7 +1,10 @@
 import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
+import { autofillCCFields } from 'proton-pass-extension/app/content/services/autofill/autofill.cc';
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 import type { FormHandle } from 'proton-pass-extension/app/content/services/form/form';
+import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
 import { sendContentScriptTelemetry } from 'proton-pass-extension/app/content/utils/telemetry';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -14,7 +17,7 @@ import { first } from '@proton/pass/utils/array/first';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { resolveDomain } from '@proton/pass/utils/url/utils';
+import { resolveDomain, resolveSubdomain } from '@proton/pass/utils/url/utils';
 import { omit } from '@proton/shared/lib/helpers/object';
 
 import { autofillIdentityFields } from './autofill.identity';
@@ -25,36 +28,42 @@ type AutofillState = {
     credentialsCount: MaybeNull<number>;
     /** Number of identity items available for autofill */
     identitiesCount: MaybeNull<number>;
+    /** Number of CC items available for autofill */
+    creditCardsCount: MaybeNull<number>;
 };
 
-export const createAutofillService = () => {
-    const state: AutofillState = { credentialsCount: null, identitiesCount: null };
-
-    /** Retrieves and caches the count of login credentials for the
-     * current tab's URL. Uses a cached value if available, otherwise
-     * queries the worker for an updated count */
-    const getCredentialsCount = asyncLock(
-        async () =>
-            (state.credentialsCount =
-                state.credentialsCount ??
+/** Retrieves and caches the count of an autofill's state key.
+ * Uses a cached value if available, otherwise queries the worker. */
+const autofillStateCounter = (key: keyof AutofillState, state: AutofillState) =>
+    asyncLock(
+        async (): Promise<number> =>
+            (state[key] =
+                state[key] ??
                 (await sendMessage.on(
                     contentScriptMessage({
-                        type: WorkerMessageType.AUTOFILL_LOGIN_QUERY,
+                        type: (
+                            {
+                                credentialsCount: WorkerMessageType.AUTOFILL_LOGIN_QUERY,
+                                identitiesCount: WorkerMessageType.AUTOFILL_IDENTITY_QUERY,
+                                creditCardsCount: WorkerMessageType.AUTOFILL_CC_QUERY,
+                            } as const
+                        )[key],
                         payload: {},
                     }),
                     (res) => (res.type === 'success' ? res.items.length : 0)
                 )))
     );
 
-    const getIdentitiesCount = asyncLock(
-        async () =>
-            (state.identitiesCount =
-                state.identitiesCount ??
-                (await sendMessage.on(
-                    contentScriptMessage({ type: WorkerMessageType.AUTOFILL_IDENTITY_QUERY }),
-                    (res) => (res.type === 'success' ? res.items.length : 0)
-                )))
-    );
+export const createAutofillService = ({ controller }: ContentScriptContextFactoryOptions) => {
+    const state: AutofillState = {
+        credentialsCount: null,
+        identitiesCount: null,
+        creditCardsCount: null,
+    };
+
+    const getCredentialsCount = autofillStateCounter('credentialsCount', state);
+    const getIdentitiesCount = autofillStateCounter('identitiesCount', state);
+    const getCreditCardsCount = autofillStateCounter('creditCardsCount', state);
 
     const autofillLogin = async (form: FormHandle, data: FormCredentials) => {
         await first(form.getFieldsFor(FieldType.USERNAME) ?? [])?.autofill(data.userIdentifier);
@@ -78,7 +87,7 @@ export const createAutofillService = () => {
                         action: passwordSave({
                             id: uniqueId(),
                             value: password,
-                            origin: resolveDomain(url),
+                            origin: resolveSubdomain(url),
                             createTime: getEpoch(),
                         }),
                     },
@@ -165,23 +174,48 @@ export const createAutofillService = () => {
         if (options?.forceSync || !authorized) {
             state.credentialsCount = null;
             state.identitiesCount = null;
+            state.creditCardsCount = null;
         }
 
         const trackedForms = ctx.service.formManager.getTrackedForms();
         const loginForms = trackedForms?.filter((form) => form.formType === FormType.LOGIN) ?? [];
         const identityFields = trackedForms?.some((form) => form.getFieldsFor(FieldType.IDENTITY).length > 0);
+        const ccFields = trackedForms?.some((form) => form.getFieldsFor(FieldType.CREDIT_CARD).length > 0);
 
-        const count = loginForms.length && authorized ? await getCredentialsCount() : 0;
+        const credentialsCount = loginForms.length && authorized ? await getCredentialsCount() : 0;
 
         trackedForms.forEach((form) => {
             form.getFields().forEach((field) => {
                 field.icon?.setStatus(ctx.getState().status);
-                if (form.formType === FormType.LOGIN) field.icon?.setCount(count);
+                if (form.formType === FormType.LOGIN) field.icon?.setCount(credentialsCount);
             });
         });
 
         if (identityFields && authorized) await getIdentitiesCount();
+        if (ccFields && authorized) await getCreditCardsCount();
     });
+
+    const onAutofillRequest: FrameMessageHandler<WorkerMessageType.AUTOFILL_REQUEST> = withContext(
+        (ctx, { payload }) => {
+            switch (payload.type) {
+                case 'creditCard':
+                    /** origin check is also enforced service-worker side */
+                    const url = ctx?.getExtensionContext()?.url;
+                    if (!url || resolveDomain(url) !== payload.origin) return;
+
+                    ctx?.service.formManager.getTrackedForms().forEach((form) => {
+                        const ccFields = form.getFieldsFor(FieldType.CREDIT_CARD);
+                        autofillCCFields(ccFields, payload.data);
+                    });
+            }
+        }
+    );
+
+    const destroy = () => {
+        controller.transport.unregister(WorkerMessageType.AUTOFILL_REQUEST, onAutofillRequest);
+    };
+
+    controller.transport.register(WorkerMessageType.AUTOFILL_REQUEST, onAutofillRequest);
 
     return {
         autofillIdentity,
@@ -190,8 +224,10 @@ export const createAutofillService = () => {
         autofillPassword,
         evaluateOTP,
         getCredentialsCount,
+        getCreditCardsCount,
         getIdentitiesCount,
         sync,
+        destroy,
     };
 };
 

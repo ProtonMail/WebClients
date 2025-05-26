@@ -6,11 +6,13 @@ import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup';
 import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
 import type { AutofillCheckFormMessage, WorkerMessageResponse } from 'proton-pass-extension/types/messages';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
+import { webNavigation } from 'webextension-polyfill';
 
 import { clientReady } from '@proton/pass/lib/client';
 import { compileRules, matchRules, parseRules } from '@proton/pass/lib/extension/rules/rules';
 import type { CompiledRules } from '@proton/pass/lib/extension/rules/types';
 import browser from '@proton/pass/lib/globals/browser';
+import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import {
     intoCCItemPreview,
     intoIdentityItemPreview,
@@ -34,6 +36,7 @@ import {
     selectVaultLimits,
 } from '@proton/pass/store/selectors';
 import type {
+    CCItemData,
     FormCredentials,
     ItemContent,
     ItemRevision,
@@ -42,9 +45,11 @@ import type {
     SelectedItem,
     TabId,
 } from '@proton/pass/types';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseUrl } from '@proton/pass/utils/url/parser';
+import { resolveDomain } from '@proton/pass/utils/url/utils';
 import noop from '@proton/utils/noop';
 
 type AutofillServiceState = {
@@ -102,6 +107,16 @@ export const createAutoFillService = () => {
             }
         }
     );
+
+    const getCreditCard = withContext<(item: SelectedItem) => Maybe<CCItemData>>((ctx, { shareId, itemId }) => {
+        const state = ctx.service.store.getState();
+        const item = selectItem<'creditCard'>(shareId, itemId)(state);
+
+        if (item?.data.type === 'creditCard') {
+            ctx.service.store.dispatch(itemAutofilled({ shareId, itemId }));
+            return deobfuscateItem<'creditCard'>(item.data).content;
+        }
+    });
 
     const getAutofillOptions = withContext<
         (writableOnly?: boolean) => { needsUpgrade: boolean; shareIds: Maybe<string[]> }
@@ -240,6 +255,43 @@ export const createAutoFillService = () => {
     WorkerMessageBroker.registerMessage(WorkerMessageType.WEBSITE_RULES_REQUEST, (_, sender) => ({
         rules: state.rules && sender.url ? matchRules(state.rules, new URL(sender.url)) : null,
     }));
+
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.AUTOFILL_CC,
+        onContextReady(async (_, { payload }, sender) => {
+            const tabId = sender.tab?.id;
+            const data = getCreditCard(payload);
+            if (!(data && tabId)) throw new Error('Could not get credit card for autofill request');
+
+            /** security policy: Same-origin autofill only
+             * Query all frames in the tab and filter to only those matching the
+             * request's origin. This prevents cross-frame injection attacks where:
+             * - Malicious iframes could receive credit card data
+             * - XSS-injected frames could steal autofill information */
+            const frames = (await webNavigation.getAllFrames({ tabId })) ?? [];
+            const frameIds = frames
+                .filter((frame) => resolveDomain(parseUrl(frame.url)) === payload.origin)
+                .map(prop('frameId'));
+
+            /** Send autofill data only to frames matching the trigger origin
+             * Each frame will receive the same data and decide locally which
+             * fields to fill based on their DOM content. */
+            frameIds.forEach((frameId) => {
+                browser.tabs
+                    .sendMessage(
+                        tabId,
+                        backgroundMessage({
+                            type: WorkerMessageType.AUTOFILL_REQUEST,
+                            payload: { type: 'creditCard', data, origin: payload.origin },
+                        }),
+                        { frameId }
+                    )
+                    .catch(noop);
+            });
+
+            return true;
+        })
+    );
 
     /* onUpdated will be triggered every time a tab has been loaded with a new url :
      * update the badge count accordingly. `ensureReady` is used in place instead of

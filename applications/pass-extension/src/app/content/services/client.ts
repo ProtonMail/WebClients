@@ -56,6 +56,7 @@ export const createContentScriptClient = ({
 
             context.service.formManager.destroy();
             context.service.inline.destroy();
+            context.service.autofill.destroy();
             context.service.webauthn?.destroy();
             TopLayerManager.disconnect();
 

@@ -204,7 +204,7 @@ export const createFieldHandles = ({
         },
 
         attach(tracker) {
-            if (!field.tracked) {
+            if (!field.tracked && isInputElement(field.element)) {
                 field.tracked = true;
                 field.tracker = createFieldTracker(field, tracker);
             }
