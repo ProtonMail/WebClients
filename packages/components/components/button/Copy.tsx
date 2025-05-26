@@ -41,7 +41,7 @@ const Copy = (
     return (
         <Tooltip title={tooltipText || c('Label').t`Copy`}>
             <Button icon color="weak" shape={shape} ref={ref} {...rest} onClick={handleClick}>
-                {children || <Icon name="squares" alt={c('Label').t`Copy`} />}
+                {children || <Icon name="squares" alt={tooltipText || c('Label').t`Copy`} />}
             </Button>
         </Tooltip>
     );
