@@ -14,6 +14,7 @@ import useApi from '@proton/components/hooks/useApi';
 import { getShareID } from '@proton/shared/lib/api/b2bevents';
 import { APPS, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { getDesciptionText, getDescriptionTextWithLink } from './helpers';
 import type { PassEvent } from './interface';
@@ -28,16 +29,18 @@ interface Props {
 }
 
 interface DescriptionProps {
-    shareId: string | null;
-    itemId: string | null;
     event: string;
     hasInvalidShareId: boolean;
+    shareId?: string;
+    itemId?: string;
 }
 
 interface SortConfig {
     key: keyof PassEvent;
     direction: SORT_DIRECTION;
 }
+
+type IdsMap = Record<string, string | undefined>;
 
 const Description = ({ shareId, itemId, event, hasInvalidShareId }: DescriptionProps) => {
     if (hasInvalidShareId) {
@@ -47,7 +50,7 @@ const Description = ({ shareId, itemId, event, hasInvalidShareId }: DescriptionP
             </Tooltip>
         );
     }
-    if (itemId) {
+    if (shareId && itemId) {
         const vaultLink = (
             <AppLink key="link" toApp={APPS.PROTONPASS} to={`/share/${shareId}/item/${itemId}`}>{c('Link')
                 .t`Vault`}</AppLink>
@@ -69,15 +72,15 @@ const Description = ({ shareId, itemId, event, hasInvalidShareId }: DescriptionP
 
 const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOrIpClick, onToggleSort }: Props) => {
     const api = useApi();
-    const [shareIds, setShareIds] = useState<{ [key: string]: string | null }>({});
+    const [shareIds, setShareIds] = useState<IdsMap>({});
     const [invalidShareIds, setInvalidShareIds] = useState<Set<string>>(new Set());
-    const cache = useRef<{ [key: string]: string | null }>({});
+    const cache = useRef<IdsMap>({});
 
-    const vaultIds = [...new Set(events.map((event) => event.eventData?.vaultId))];
+    const vaultIds = [...new Set(events.map((event) => event.eventData?.vaultId).filter(isTruthy))];
 
     useEffect(() => {
         const fetchShareIds = async () => {
-            const idsMap: { [key: string]: string | null } = {};
+            const idsMap: IdsMap = {};
             const newInvalidIds = new Set(invalidShareIds);
 
             await Promise.all(
@@ -88,8 +91,9 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
                     } else {
                         try {
                             const { Share } = await api(getShareID(vaultId));
-                            idsMap[vaultId] = Share.ShareID;
-                            cache.current[vaultId] = Share.ShareID;
+                            const shareId: string | undefined = Share.ShareID;
+                            idsMap[vaultId] = shareId;
+                            cache.current[vaultId] = shareId;
                             newInvalidIds.delete(vaultId);
                         } catch (e) {
                             newInvalidIds.add(vaultId);
@@ -138,7 +142,7 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
                     const key = index;
 
                     const unixTime = new Date(time).getTime() / 1000;
-                    const shareId = shareIds[vaultId];
+                    const shareId = vaultId ? shareIds[vaultId] : undefined;
                     const hasInvalidShareId = vaultId ? invalidShareIds.has(vaultId) : false;
                     const initials = name ? getInitials(name) : email.charAt(0);
 
