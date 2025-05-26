@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "@proton/colors": "workspace:^",
+        "@proton/hooks": "workspace:^",
         "@proton/i18n": "workspace:^",
         "@proton/icons": "workspace:^",
         "@proton/pack": "workspace:^",
@@ -33,6 +34,7 @@
         "@proton/shared": "workspace:^",
         "@proton/styles": "workspace:^",
         "@proton/testing": "workspace:^",
+        "@proton/utils": "workspace:^",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "tinycolor2": "^1.6.0",
