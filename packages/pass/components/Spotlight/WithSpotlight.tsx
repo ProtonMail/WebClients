@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from 'react';
 import { useEffect, useMemo } from 'react';
 
-import { useModalState } from '@proton/components/index';
+import { useModalState } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { SpotlightMessage } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';

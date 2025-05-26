@@ -12,7 +12,7 @@ module.exports = {
         'import/no-internal-modules': [
             'error',
             {
-                forbid: ['@proton/components', '@proton/components/index'],
+                forbid: ['@proton/components', '@proton/components'],
             },
         ],
         'import/no-cycle': ['error', { maxDepth: 1 }],

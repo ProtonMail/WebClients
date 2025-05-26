@@ -1,4 +1,4 @@
-import { useApi } from '@proton/components/index';
+import { useApi } from '@proton/components';
 import type { TelemetryMailPagingControlsEvents } from '@proton/shared/lib/api/telemetry';
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
