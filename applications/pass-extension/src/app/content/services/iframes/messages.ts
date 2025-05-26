@@ -8,69 +8,15 @@ import type {
     WorkerMessageType,
     WorkerStateChangeMessage,
 } from 'proton-pass-extension/types/messages';
-import type { Runtime } from 'webextension-polyfill';
 
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { AppState, ClientEndpoint, FormCredentials, ItemContent, MaybeNull } from '@proton/pass/types';
+import type { AppState, ClientEndpoint, FormCredentials, ItemContent } from '@proton/pass/types';
 import type { Rect } from '@proton/pass/types/utils/dom';
 
 import type { DropdownActions } from './dropdown';
-import type { NotificationActions } from './notification';
-
-export type IFramePosition = Partial<Rect>;
-export type IFrameEndpoint = 'notification' | 'dropdown';
-export type IFrameCloseOptions = { discard?: boolean; refocus?: boolean };
-
-export type IFrameInitPayload = {
-    domain: string;
-    features: FeatureFlagState;
-    settings: ProxiedSettings;
-    appState: AppState;
-    theme: PassThemeOption.PassDark | PassThemeOption.PassLight;
-};
-
-export type IFrameState<A> = {
-    action: MaybeNull<A>;
-    framePort: MaybeNull<string>;
-    loaded: boolean;
-    port: MaybeNull<Runtime.Port>;
-    position: IFramePosition;
-    positionReq: number;
-    ready: boolean;
-    visible: boolean;
-};
-
-export type IFrameMessageHandlerOptions = { userAction: boolean };
-
-export interface IFrameApp<A = any> {
-    element: HTMLIFrameElement;
-    state: IFrameState<A>;
-    close: (options?: IFrameCloseOptions) => void;
-    destroy: () => void;
-    ensureLoaded: () => Promise<void>;
-    ensureReady: () => Promise<void>;
-    getPosition: () => IFramePosition;
-    init: (port: Runtime.Port, getPayload: () => IFrameInitPayload) => void;
-    open: (action: A, scrollRef?: HTMLElement) => void;
-    registerMessageHandler: <M extends IFrameMessage['type']>(
-        type: M,
-        handler: IFramePortMessageHandler<M>,
-        options?: IFrameMessageHandlerOptions
-    ) => void;
-    sendPortMessage: (message: IFrameMessage) => void;
-    updatePosition: () => void;
-}
-
-export interface IFrameAppService<T extends { action: any }> {
-    close: () => IFrameAppService<T>;
-    destroy: () => void;
-    getState: () => IFrameState<T['action']>;
-    init: (port: Runtime.Port, getPayload: () => IFrameInitPayload) => IFrameAppService<T>;
-    open: (options: T) => IFrameAppService<T>;
-    sendMessage: (message: IFrameMessage) => void;
-}
+import type { NotificationRequest } from './notification';
 
 /** These messages are not exported on the main
  * `WorkerMessages` as they are always forwarded
@@ -100,6 +46,18 @@ export enum IFramePortMessageType {
 type PasskeyRelayedMessages =
     | BridgeResponse<WorkerMessageType.PASSKEY_CREATE>
     | BridgeResponse<WorkerMessageType.PASSKEY_GET>;
+
+export type IFramePosition = Partial<Rect>;
+export type IFrameEndpoint = 'notification' | 'dropdown';
+export type IFrameCloseOptions = { discard?: boolean; refocus?: boolean };
+
+export type IFrameInitPayload = {
+    domain: string;
+    features: FeatureFlagState;
+    settings: ProxiedSettings;
+    appState: AppState;
+    theme: PassThemeOption.PassDark | PassThemeOption.PassLight;
+};
 
 /** Supported Worker messages that are broadcasted
  * to iframe app ports that may affect iframe state. */
@@ -132,7 +90,7 @@ export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Ext
     | { type: IFramePortMessageType.IFRAME_INJECT_PORT; payload: { port: string } }
     | { type: IFramePortMessageType.IFRAME_OPEN }
     | { type: IFramePortMessageType.IFRAME_THEME; payload: PassThemeOption.PassLight | PassThemeOption.PassDark }
-    | { type: IFramePortMessageType.NOTIFICATION_ACTION; payload: NotificationActions }
+    | { type: IFramePortMessageType.NOTIFICATION_ACTION; payload: NotificationRequest }
     | { type: IFramePortMessageType.PASSKEY_RELAY; payload: PasskeyRelayedMessages },
     { type: T }
 >;

@@ -2,14 +2,10 @@ import { PASS_ROOT_REMOVED_EVENT } from 'proton-pass-extension/app/content/const
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { PASS_ELEMENT_THEME } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassElement';
 import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
-import { createIframeRoot } from 'proton-pass-extension/app/content/injections/iframe/create-iframe-root';
+import type { IFrameAppService } from 'proton-pass-extension/app/content/services/iframes/factory';
+import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
 import { createPopoverController } from 'proton-pass-extension/app/content/services/iframes/popover';
-import {
-    type IFrameAppService,
-    IFramePortMessageType,
-    type InjectedDropdown,
-    type InjectedNotification,
-} from 'proton-pass-extension/app/content/types';
+import { createIframeRoot } from 'proton-pass-extension/app/content/services/iframes/utils';
 
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { matchDarkTheme } from '@proton/pass/components/Layout/Theme/utils';
@@ -20,9 +16,11 @@ import type { CustomElementRef } from '@proton/pass/utils/dom/create-element';
 import { POPOVER_SUPPORTED, getActiveModal, getClosestModal } from '@proton/pass/utils/dom/popover';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
-import { resolveDomain } from '@proton/pass/utils/url/utils';
+import { resolveSubdomain } from '@proton/pass/utils/url/utils';
 
+import type { InjectedDropdown } from './dropdown';
 import { createDropdown } from './dropdown';
+import type { InjectedNotification } from './notification';
 import { createNotification } from './notification';
 
 type IFrameServiceState = {
@@ -34,7 +32,7 @@ export interface IFrameService {
     dropdown: MaybeNull<InjectedDropdown>;
     notification: MaybeNull<InjectedNotification>;
     root: CustomElementRef<ProtonPassRoot>;
-    attachDropdown: (anchor: HTMLElement) => MaybeNull<InjectedDropdown>;
+    attachDropdown: (layer?: HTMLElement) => MaybeNull<InjectedDropdown>;
     attachNotification: () => MaybeNull<InjectedNotification>;
     destroy: () => void;
     ensureInteractive: (anchor: MaybeNull<HTMLElement>, killswitch: boolean) => void;
@@ -67,7 +65,7 @@ export const createIFrameService = (elements: PassElementsConfig) => {
 
             app.init(port, () => ({
                 appState: ctx.getState(),
-                domain: resolveDomain(url) ?? '',
+                domain: resolveSubdomain(url) ?? '',
                 features: ctx.getFeatureFlags(),
                 settings: ctx.getSettings(),
                 theme: getIFrameTheme(settings.theme),
@@ -130,9 +128,9 @@ export const createIFrameService = (elements: PassElementsConfig) => {
                 if (settings?.theme === PassThemeOption.OS) service.setTheme(settings.theme);
             });
 
-            listeners.addListener(state.root.customElement, PASS_ROOT_REMOVED_EVENT as any, handleRootRemoval, {
-                once: true,
-            });
+            const customEl = state.root.customElement;
+
+            listeners.addListener(customEl, PASS_ROOT_REMOVED_EVENT as any, handleRootRemoval, { once: true });
             listeners.addListener(matchDarkTheme(), 'change', handleColorSchemeChange);
 
             return state.root;
@@ -145,11 +143,11 @@ export const createIFrameService = (elements: PassElementsConfig) => {
             state.root = null; /* reset in-case we recycle the content-script */
         },
 
-        attachDropdown: withContext((ctx, anchor) => {
+        attachDropdown: withContext((ctx, layer) => {
             if (!ctx) return null;
 
             const usePopover = shouldUsePopover();
-            service.ensureInteractive(anchor, usePopover);
+            if (layer) service.ensureInteractive(layer, usePopover);
 
             if (state.apps.dropdown === null) {
                 logger.debug(`[ContentScript::${ctx.scriptId}] attaching dropdown iframe`);

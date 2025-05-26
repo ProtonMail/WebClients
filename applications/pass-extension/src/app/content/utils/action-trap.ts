@@ -1,6 +1,6 @@
 import type { Callback } from '@proton/pass/types';
 
-export type HTMLElementWithActionTrap = HTMLInputElement & { preventAction?: boolean };
+export type HTMLElementWithActionTrap = HTMLElement & { preventAction?: boolean };
 
 /** Flags an element to block certain autofill/autosave actions triggered
  * on focus in/out events. This is necessary as we cannot directly attach
