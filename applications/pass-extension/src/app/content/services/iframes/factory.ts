@@ -1,21 +1,18 @@
 import { IFRAME_APP_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { isIFrameMessage } from 'proton-pass-extension/app/content/injections/iframe/utils';
-import type { PopoverController } from 'proton-pass-extension/app/content/services/iframes/popover';
 import type {
-    IFrameApp,
     IFrameCloseOptions,
     IFrameEndpoint,
     IFrameInitPayload,
     IFrameMessage,
-    IFrameMessageHandlerOptions,
     IFrameMessageType,
     IFrameMessageWithSender,
     IFramePortMessageHandler,
     IFramePosition,
-    IFrameState,
-} from 'proton-pass-extension/app/content/types';
-import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
+} from 'proton-pass-extension/app/content/services/iframes/messages';
+import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
+import type { PopoverController } from 'proton-pass-extension/app/content/services/iframes/popover';
+import { isIFrameMessage } from 'proton-pass-extension/app/content/services/iframes/utils';
 import { sendContentScriptTelemetry } from 'proton-pass-extension/app/content/utils/telemetry';
 import {
     contentScriptMessage,
@@ -26,7 +23,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import { MODEL_VERSION } from '@proton/pass/constants';
-import type { Maybe, MaybeNull } from '@proton/pass/types';
+import type { Coords, Maybe, MaybeNull } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';
 import { pixelEncoder } from '@proton/pass/utils/dom/computed-styles';
@@ -53,6 +50,48 @@ type CreateIFrameAppOptions<A> = {
     position: (iframeRoot: HTMLElement) => Partial<Rect>;
     dimensions: (state: IFrameState<A>) => Dimensions;
 };
+
+type IFrameMessageHandlerOptions = { userAction: boolean };
+
+export interface IFrameApp<A = any> {
+    element: HTMLIFrameElement;
+    state: IFrameState<A>;
+    close: (options?: IFrameCloseOptions) => void;
+    destroy: () => void;
+    ensureLoaded: () => Promise<void>;
+    ensureReady: () => Promise<void>;
+    getPosition: () => IFramePosition;
+    init: (port: Runtime.Port, getPayload: () => IFrameInitPayload) => void;
+    open: (action: A, scrollRef?: HTMLElement) => void;
+    registerMessageHandler: <M extends IFrameMessage['type']>(
+        type: M,
+        handler: IFramePortMessageHandler<M>,
+        options?: IFrameMessageHandlerOptions
+    ) => void;
+    sendPortMessage: (message: IFrameMessage) => void;
+    updatePosition: () => void;
+    setPosition: (coords: Coords) => void;
+}
+
+export type IFrameState<A> = {
+    action: MaybeNull<A>;
+    framePort: MaybeNull<string>;
+    loaded: boolean;
+    port: MaybeNull<Runtime.Port>;
+    position: IFramePosition;
+    positionReq: number;
+    ready: boolean;
+    visible: boolean;
+};
+
+export interface IFrameAppService<T extends { action: any }> {
+    close: () => IFrameAppService<T>;
+    destroy: () => void;
+    getState: () => IFrameState<T['action']>;
+    init: (port: Runtime.Port, getPayload: () => IFrameInitPayload) => IFrameAppService<T>;
+    open: (options: T) => IFrameAppService<T>;
+    sendMessage: (message: IFrameMessage) => void;
+}
 
 export const createIFrameApp = <A>({
     animation,
@@ -189,15 +228,17 @@ export const createIFrameApp = <A>({
         }
     };
 
-    const open = (action: A, scrollRef?: HTMLElement) => {
+    const open = (action: A, anchor?: HTMLElement) => {
         if (!state.visible) {
             popover.open();
             state.action = action;
             state.visible = true;
 
-            activeListeners.addListener(window, 'resize', updatePosition);
-            activeListeners.addListener(window, 'scroll', updatePosition);
-            activeListeners.addListener(scrollRef, 'scroll', updatePosition);
+            if (anchor) {
+                activeListeners.addListener(window, 'resize', updatePosition);
+                activeListeners.addListener(window, 'scroll', updatePosition);
+                activeListeners.addListener(anchor, 'scroll', updatePosition);
+            }
 
             if (backdropClose) {
                 const onMouseDown = (event: Event) => {
@@ -214,7 +255,7 @@ export const createIFrameApp = <A>({
 
             iframe.classList.add('visible');
             setIframeDimensions(dimensions(state));
-            updatePosition();
+            // updatePosition();
             onOpen?.(state);
         }
     };
@@ -280,6 +321,7 @@ export const createIFrameApp = <A>({
         open,
         registerMessageHandler,
         sendPortMessage,
+        setPosition: setIframePosition,
         updatePosition,
     };
 };

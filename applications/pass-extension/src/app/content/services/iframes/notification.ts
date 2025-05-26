@@ -1,19 +1,41 @@
-import { NOTIFICATION_IFRAME_SRC } from 'proton-pass-extension/app/content/constants.runtime';
+import { NOTIFICATION_IFRAME_SRC, NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { NOTIFICATION_MIN_HEIGHT, NOTIFICATION_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { createIFrameApp } from 'proton-pass-extension/app/content/injections/iframe/create-iframe-app';
+import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
 import type { PopoverController } from 'proton-pass-extension/app/content/services/iframes/popover';
-import type { InjectedNotification, NotificationActions } from 'proton-pass-extension/app/content/types';
-import { IFramePortMessageType, NotificationAction } from 'proton-pass-extension/app/content/types';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { FieldType, flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
+import type { SelectedPasskey } from '@proton/pass/lib/passkeys/types';
+import type { AutosaveFormEntry, AutosavePayload, Item, LoginItemPreview } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { asyncQueue } from '@proton/pass/utils/fp/promises';
 import noop from '@proton/utils/noop';
 
-type NotificationOptions = { popover: PopoverController; onDestroy: () => void };
+import type { IFrameAppService } from './factory';
+import { createIFrameApp } from './factory';
+
+export type NotificationRequest =
+    | { action: NotificationAction.AUTOSAVE; data: AutosavePayload }
+    | { action: NotificationAction.OTP; item: LoginItemPreview }
+    | {
+          action: NotificationAction.PASSKEY_CREATE;
+          domain: string;
+          request: string;
+          token: string;
+      }
+    | {
+          action: NotificationAction.PASSKEY_GET;
+          domain: string;
+          passkeys: SelectedPasskey[];
+          request: string;
+          token: string;
+      };
+
+export type AutosaveRequest = { item: Item<'login'>; submission: AutosaveFormEntry };
+export interface InjectedNotification extends IFrameAppService<NotificationRequest> {}
+export type NotificationOptions = { popover: PopoverController; onDestroy: () => void };
 
 export const createNotification = ({ popover, onDestroy }: NotificationOptions): InjectedNotification => {
     const iframe = createIFrameApp<NotificationAction>({
@@ -64,23 +86,21 @@ export const createNotification = ({ popover, onDestroy }: NotificationOptions):
         }),
     });
 
-    const open = asyncQueue(
-        withContext<(payload: NotificationActions) => Promise<void>>((ctx, payload) =>
-            iframe
-                .ensureReady()
-                .then(() => {
-                    /** Prevent autosave notifications from interrupting visible OTP notifications.
-                     * This ensures OTP entry takes precedence in multi-step forms where
-                     * successful login might trigger autosave prompts. */
-                    const autosave = payload.action === NotificationAction.AUTOSAVE;
-                    const state = ctx?.service.iframe.notification?.getState();
-                    if (autosave && state?.visible && state?.action === NotificationAction.OTP) return;
+    const open = asyncQueue((payload: NotificationRequest) =>
+        iframe
+            .ensureReady()
+            .then(() => {
+                /** if OTP autofill notification is opened - do not process
+                 * any other actions : it should take precedence */
+                const autosave = payload.action === NotificationAction.AUTOSAVE;
+                const { action, visible } = iframe.state;
+                if (autosave && visible && action === NotificationAction.OTP) return;
 
-                    iframe.sendPortMessage({ type: IFramePortMessageType.NOTIFICATION_ACTION, payload });
-                    iframe.open(payload.action);
-                })
-                .catch(noop)
-        )
+                iframe.sendPortMessage({ type: IFramePortMessageType.NOTIFICATION_ACTION, payload });
+                iframe.open(payload.action);
+                iframe.updatePosition();
+            })
+            .catch(noop)
     );
 
     iframe.registerMessageHandler(

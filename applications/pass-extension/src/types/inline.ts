@@ -9,7 +9,7 @@ export type DropdownOpenDTO = FrameRelay<
         /** coordinates of the field relative to the top-frame */
         coords: Coords;
         frameAttributes: FrameAttributes;
-        autofocused?: boolean;
+        autofocused: boolean;
         field: FrameField;
         origin: string;
     },
