@@ -168,7 +168,7 @@ function EmptyState({ variant }: EmptyStateProps) {
               className="flex items-center justify-center gap-2"
             >
               <Icon name="plus" />
-              {c('Action').t`New sheet`}
+              {c('sheets_2025:Action').t`New spreadsheet`}
             </ButtonLike>
           </div>
         ) : null}
