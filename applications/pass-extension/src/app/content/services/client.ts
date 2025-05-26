@@ -1,15 +1,16 @@
+import type { ClientController } from 'proton-pass-extension/app/content/client.controller';
 import { CLIENT_SCRIPT_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
 import { CSContext } from 'proton-pass-extension/app/content/context/context';
 import { createContentScriptContext } from 'proton-pass-extension/app/content/context/factory';
 import { DOMCleanUp } from 'proton-pass-extension/app/content/injections/cleanup';
-import { NotificationAction } from 'proton-pass-extension/app/content/types/notification';
+import { getFrameAttributes, getFrameElement } from 'proton-pass-extension/app/content/utils/frame';
 import type { ExtensionContextType } from 'proton-pass-extension/lib/context/extension-context';
 import { ExtensionContext, setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
+import { getNodePosition } from 'proton-pass-extension/lib/utils/dom';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { clientNeedsSession, clientSessionLocked } from '@proton/pass/lib/client';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { AppState } from '@proton/pass/types';
@@ -24,14 +25,17 @@ type CreateContentScriptOptions = {
     mainFrame: boolean;
     /** Current content-script custom elements unique hashes */
     elements: PassElementsConfig;
-    /** Called when content script fails to start or recycle. Passed
-     * to the `ExtensionContext` to handle invalidation cases where
-     * unload events can't be caught, like during SW termination */
-    onError: (error: unknown) => void;
+    controller: ClientController;
 };
 
-export const createContentScriptClient = ({ scriptId, mainFrame, elements, onError }: CreateContentScriptOptions) => {
+export const createContentScriptClient = ({
+    scriptId,
+    mainFrame,
+    elements,
+    controller,
+}: CreateContentScriptOptions) => {
     const context = createContentScriptContext({
+        controller,
         elements,
         mainFrame,
         scriptId,
@@ -40,36 +44,26 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements, onErr
             context.setState({ stale: true });
 
             context.service.formManager.destroy();
-            context.service.iframe.destroy();
+            context.service.inline.destroy();
             context.service.webauthn?.destroy();
             TopLayerManager.disconnect();
 
             DOMCleanUp(elements);
-
             ExtensionContext.read()?.destroy();
         },
     });
 
     const reconciliate = async () => {
-        const { status } = context.getState();
         context.service.formManager.sync();
-
-        const locked = clientSessionLocked(status);
-        const loggedOut = clientNeedsSession(status);
-
-        if (loggedOut || locked) {
-            const action = context.service.iframe.notification?.getState().action;
-            const unlockable = [NotificationAction.PASSKEY_CREATE, NotificationAction.PASSKEY_GET];
-            const shouldDestroy = !locked || (action && !unlockable.includes(action));
-            if (shouldDestroy) context.service.iframe.notification?.destroy();
-        }
+        context.service.autofill.sync().catch(noop);
+        context.service.inline.sync();
     };
 
     const onFeatureFlagsChange = (features: FeatureFlagState) => context.setFeatureFlags(features);
 
     const onSettingsChange = (settings: ProxiedSettings) => {
         context.setSettings(settings);
-        context.service.iframe.setTheme(settings.theme);
+        context.service.inline.setTheme(settings.theme);
         void reconciliate();
     };
 
@@ -101,7 +95,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements, onErr
              * initialization of the content-script fails. As we are injecting
              * the webauthn interceptors in the main-world on `document_start` we
              * need to avoid missing on events of the `MessageBridge` */
-            context.service.iframe.init();
+            context.service.inline.init();
             context.service.webauthn?.init();
 
             const res = await sendMessage(
@@ -116,7 +110,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements, onErr
             context.setState({ ...res.state, ready: true, stale: false });
             context.setSettings(res.settings);
             context.setFeatureFlags(res.features);
-            context.service.iframe.setTheme(res.settings.theme);
+            context.service.inline.setTheme(res.settings.theme);
 
             /* if the user has disabled every injection setting or added the current
              * domain to the pause list we can safely destroy the content-script context */
@@ -127,7 +121,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements, onErr
 
             /* if we're in an iframe and the initial detection should not
              * be triggered : destroy this content-script service */
-            if (!mainFrame) return context.destroy({ reason: 'subframe discarded' });
+            // if (!mainFrame) return context.destroy({ reason: 'subframe discarded' });
 
             logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${res.state.status}"`);
             window.postMessage({ type: CLIENT_SCRIPT_READY_EVENT });
@@ -142,11 +136,14 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements, onErr
             }
         } catch (err) {
             context.destroy({ reason: 'startup failure' });
-            onError(err);
+            controller.destroy();
         }
     });
 
-    return {
+    const client = {
+        get context() {
+            return context;
+        },
         /** Connects the content-script service to the extension context.
          * Will automatically try to recycle the extension context if the
          * port is disconnected if the service worker is killed */
@@ -158,7 +155,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements, onErr
                         context.destroy({ reason: 'port disconnected' });
                         return { recycle: true };
                     },
-                    onError,
+                    onError: controller.destroy,
                     onRecycle: handleStart,
                 });
 
@@ -166,6 +163,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements, onErr
                 if (!context.getState().stale) await handleStart(extensionContext);
             } catch {}
         },
+
         /** Full destruction of the content-script and extension
          * context. Should only be called if we are unloading */
         destroy: (options: { reason: string }) => {
@@ -173,6 +171,24 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements, onErr
             CSContext.clear();
         },
     };
+
+    controller.frameMessageBroker.register(WorkerMessageType.FRAME_TREE_WALK, ({ payload }, _, sendResponse) => {
+        const target = getFrameElement(payload.frameId, payload.attributes);
+        if (!target) return undefined;
+
+        sendResponse({
+            /** report the top/left coordinates of the target frame relative
+             * to the current document which may be in turn another frame */
+            coords: getNodePosition(target),
+            /** if the current frame is another iframe: report back the frame
+             * attributes to allow identification during tree-walk */
+            attributes: getFrameAttributes(),
+        });
+
+        return true;
+    });
+
+    return client;
 };
 
-export type ContentScriptClientService = ReturnType<typeof createContentScriptClient>;
+export type ContentScriptClient = ReturnType<typeof createContentScriptClient>;

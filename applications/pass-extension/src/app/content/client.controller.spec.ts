@@ -1,11 +1,11 @@
 import browser, { clearBrowserMocks } from 'proton-pass-extension/__mocks__/webextension-polyfill';
+import type { ContentScriptClient } from 'proton-pass-extension/app/content/services/client';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import * as client from './client';
-import { createContentScriptClient } from './services/script';
+import { type ClientController, createClientController } from './client.controller';
 
 const setDocumentVisibility = (state: DocumentVisibilityState) => {
     Object.defineProperty(document, 'visibilityState', {
@@ -15,61 +15,54 @@ const setDocumentVisibility = (state: DocumentVisibilityState) => {
 };
 
 const mockClient = { start: jest.fn(() => Promise.resolve()), destroy: jest.fn() };
-const mockElements = { root: 'test', control: 'test' };
+const mockClientFactory = jest.fn(() => mockClient as unknown as ContentScriptClient);
 
-jest.mock('./services/script', () => ({ createContentScriptClient: jest.fn(() => mockClient) }));
-const registerCustomElementsMock = jest.fn(async () => mockElements);
-const createContentScriptClientMock = createContentScriptClient as jest.Mock;
-
-describe('Client content-script runner', () => {
+describe('Client controller', () => {
+    let ctrl: ClientController;
     beforeEach(() => {
         jest.useFakeTimers();
+
         mockClient.start.mockClear();
         mockClient.destroy.mockClear();
-        createContentScriptClientMock.mockClear();
-        registerCustomElementsMock.mockClear();
+        mockClientFactory.mockClear();
         clearBrowserMocks();
+
+        ctrl = createClientController({ clientFactory: mockClientFactory });
     });
 
     afterEach(() => jest.useRealTimers());
 
     test('should create client when loading on visible page', async () => {
         setDocumentVisibility('visible');
-        const { destroyClient } = await client.run(registerCustomElementsMock);
+        ctrl.init();
 
-        expect(registerCustomElementsMock).toHaveBeenCalled();
-        expect(createContentScriptClient).toHaveBeenCalled();
+        expect(mockClientFactory).toHaveBeenCalled();
         expect(mockClient.start).toHaveBeenCalled();
-
-        destroyClient();
+        ctrl.destroy();
     });
 
     test('should create client when loading on visible page', async () => {
         setDocumentVisibility('hidden');
-        const { destroyClient } = await client.run(registerCustomElementsMock);
+        ctrl.init();
 
-        expect(registerCustomElementsMock).toHaveBeenCalled();
-        expect(createContentScriptClient).not.toHaveBeenCalled();
-
-        destroyClient();
+        expect(mockClientFactory).not.toHaveBeenCalled();
+        expect(mockClient.start).not.toHaveBeenCalled();
+        ctrl.destroy();
     });
 
     test('should handle visibility changes', async () => {
         setDocumentVisibility('visible');
-        const { destroyClient } = await client.run(registerCustomElementsMock);
+        ctrl.init();
 
-        expect(registerCustomElementsMock).toHaveBeenCalled();
-        expect(createContentScriptClient).toHaveBeenCalled();
+        expect(mockClientFactory).toHaveBeenCalled();
         expect(mockClient.start).toHaveBeenCalled();
 
-        registerCustomElementsMock.mockClear();
-        createContentScriptClientMock.mockClear();
+        mockClientFactory.mockClear();
 
         setDocumentVisibility('hidden');
         document.dispatchEvent(new Event('visibilitychange'));
 
-        expect(registerCustomElementsMock).not.toHaveBeenCalled();
-        expect(createContentScriptClient).not.toHaveBeenCalled();
+        expect(mockClientFactory).not.toHaveBeenCalled();
         expect(mockClient.destroy).toHaveBeenCalled();
 
         setDocumentVisibility('visible');
@@ -77,16 +70,15 @@ describe('Client content-script runner', () => {
 
         await jest.advanceTimersByTimeAsync(350);
 
-        expect(registerCustomElementsMock).not.toHaveBeenCalled();
-        expect(createContentScriptClient).toHaveBeenCalled();
-
-        destroyClient();
+        expect(mockClientFactory).toHaveBeenCalled();
+        ctrl.destroy();
     });
 
     test('should debounce quick visibility changes', async () => {
         setDocumentVisibility('visible');
-        const { destroyClient } = await client.run(registerCustomElementsMock);
-        expect(createContentScriptClient).toHaveBeenCalledTimes(1);
+        ctrl.init();
+
+        expect(mockClientFactory).toHaveBeenCalledTimes(1);
 
         for (let i = 0; i < 15; i++) {
             const hide = wait(25).then(() => {
@@ -108,22 +100,17 @@ describe('Client content-script runner', () => {
 
         await jest.advanceTimersByTimeAsync(350);
 
-        expect(registerCustomElementsMock).toHaveBeenCalledTimes(1);
         expect(mockClient.destroy).toHaveBeenCalledTimes(1);
-        expect(createContentScriptClient).toHaveBeenCalledTimes(2);
-
-        destroyClient();
+        expect(mockClientFactory).toHaveBeenCalledTimes(2);
+        ctrl.destroy();
     });
 
     test('should destroy on `UNLOAD_CONTENT_SCRIPT`', async () => {
         setDocumentVisibility('visible');
-        const { destroyClient } = await client.run(registerCustomElementsMock);
+        ctrl.init();
 
-        expect(registerCustomElementsMock).toHaveBeenCalled();
-        expect(createContentScriptClient).toHaveBeenCalled();
+        expect(mockClientFactory).toHaveBeenCalled();
         expect(mockClient.start).toHaveBeenCalled();
-        registerCustomElementsMock.mockClear();
-        createContentScriptClientMock.mockClear();
 
         const unloadListener = browser.runtime.onMessage.addListener.mock.calls[0][0];
         const message = backgroundMessage({ type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT });
@@ -131,7 +118,6 @@ describe('Client content-script runner', () => {
         /** simulate unload event */
         unloadListener(message);
         expect(mockClient.destroy).toHaveBeenCalled();
-
-        destroyClient();
+        ctrl.destroy();
     });
 });
