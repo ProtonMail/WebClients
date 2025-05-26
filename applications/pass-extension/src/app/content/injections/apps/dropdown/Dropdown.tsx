@@ -11,6 +11,7 @@ import { IFrameAppAutoSizer } from 'proton-pass-extension/app/content/injections
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { ListItemIcon } from 'proton-pass-extension/app/content/injections/apps/components/ListItemIcon';
 import { PinUnlock } from 'proton-pass-extension/app/content/injections/apps/components/PinUnlock';
+import { AutofillCC } from 'proton-pass-extension/app/content/injections/apps/dropdown/views/AutofillCC';
 import type { DropdownActions } from 'proton-pass-extension/app/content/services/iframes/dropdown';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
 import { useRequestFork } from 'proton-pass-extension/lib/hooks/useRequestFork';
@@ -141,6 +142,8 @@ export const Dropdown: FC<Props> = ({ initial = null }) => {
                     }
 
                     switch (state.action) {
+                        case DropdownAction.AUTOFILL_CC:
+                            return <AutofillCC {...state} />;
                         case DropdownAction.AUTOFILL_IDENTITY:
                             return <AutofillIdentity {...state} />;
                         case DropdownAction.AUTOFILL_LOGIN:

@@ -11,13 +11,19 @@ import { clientReady } from '@proton/pass/lib/client';
 import { compileRules, matchRules, parseRules } from '@proton/pass/lib/extension/rules/rules';
 import type { CompiledRules } from '@proton/pass/lib/extension/rules/types';
 import browser from '@proton/pass/lib/globals/browser';
-import { intoIdentityItemPreview, intoLoginItemPreview, intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
+import {
+    intoCCItemPreview,
+    intoIdentityItemPreview,
+    intoLoginItemPreview,
+    intoUserIdentifier,
+} from '@proton/pass/lib/items/item.utils';
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
 import type { GetLoginCandidatesOptions } from '@proton/pass/lib/search/types';
 import { itemAutofilled } from '@proton/pass/store/actions';
 import { sagaEvents } from '@proton/pass/store/events';
 import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import {
+    selectAutofillCCCandidates,
     selectAutofillIdentityCandidates,
     selectAutofillLoginCandidates,
     selectAutofillableShareIDs,
@@ -182,6 +188,20 @@ export const createAutoFillService = () => {
             const state = ctx.service.store.getState();
             const { shareIds, needsUpgrade } = getAutofillOptions();
             const items = selectAutofillIdentityCandidates(shareIds)(state).map(intoIdentityItemPreview);
+
+            return { items, needsUpgrade };
+        })
+    );
+
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.AUTOFILL_CC_QUERY,
+        onContextReady(async (ctx, _, sender) => {
+            const tabId = sender.tab?.id;
+            if (!ctx.getState().authorized || tabId === undefined) throw new Error('Invalid autofill query');
+
+            const state = ctx.service.store.getState();
+            const { shareIds, needsUpgrade } = getAutofillOptions();
+            const items = selectAutofillCCCandidates(shareIds)(state).map(intoCCItemPreview);
 
             return { items, needsUpgrade };
         })

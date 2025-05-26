@@ -6,6 +6,7 @@ import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import type { Draft } from '@proton/pass/store/reducers/drafts';
 import type {
     BulkSelectionDTO,
+    CCItemPreview,
     DeobfuscatedItem,
     DeobfuscatedItemExtraField,
     IdentityItemPreview,
@@ -20,7 +21,7 @@ import type {
     UniqueItem,
 } from '@proton/pass/types';
 import { arrayInterpolate } from '@proton/pass/utils/array/interpolate';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+import { deobfuscate, deobfuscateCCField } from '@proton/pass/utils/obfuscate/xor';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
@@ -167,6 +168,15 @@ export const intoIdentityItemPreview = (item: ItemRevision<'identity'>): Identit
     shareId: item.shareId,
     name: item.data.metadata.name,
     fullName: item.data.content.fullName,
+});
+
+export const intoCCItemPreview = (item: ItemRevision<'creditCard'>): CCItemPreview => ({
+    itemId: item.itemId,
+    shareId: item.shareId,
+    name: item.data.metadata.name,
+    obfuscatedNumber: deobfuscateCCField(item.data.content.number, true),
+    expirationDate: item.data.content.expirationDate,
+    cardType: item.data.content.cardType,
 });
 
 export const getSanitizedUserIdentifiers = async ({
