@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/src';
+import { Button } from '@proton/atoms';
 import { ContactImage, useModalStateObject } from '@proton/components';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 import clsx from '@proton/utils/clsx';
