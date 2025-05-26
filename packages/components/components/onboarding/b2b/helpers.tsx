@@ -10,8 +10,7 @@ import type {
     B2BOnboardingFeature,
 } from '@proton/components/components/onboarding/b2b/interface';
 import canUseGroups from '@proton/components/containers/organization/groups/canUseGroups';
-import { getPlan } from '@proton/payments';
-import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { type Subscription, getPlan } from '@proton/payments';
 import {
     APPS,
     type APP_NAMES,

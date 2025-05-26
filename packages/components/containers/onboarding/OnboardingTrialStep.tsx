@@ -6,7 +6,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms';
 import Time from '@proton/components/components/time/Time';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { CYCLE } from '@proton/payments/core/constants';
+import { CYCLE } from '@proton/payments';
 import arrowDownSvg from '@proton/styles/assets/img/onboarding/b2b-trial-tile-arrow-down.svg';
 import crossSvg from '@proton/styles/assets/img/onboarding/b2b-trial-tile-cross.svg';
 import hourGlassSvg from '@proton/styles/assets/img/onboarding/b2b-trial-tile-hourglass.svg';

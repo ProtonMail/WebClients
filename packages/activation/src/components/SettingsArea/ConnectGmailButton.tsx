@@ -9,7 +9,7 @@ import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms';
 import useConfig from '@proton/components/hooks/useConfig';
 import { UpsellModal, useModalState } from '@proton/components/index';
-import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { type APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { isFree, isPaid } from '@proton/shared/lib/user/helpers';

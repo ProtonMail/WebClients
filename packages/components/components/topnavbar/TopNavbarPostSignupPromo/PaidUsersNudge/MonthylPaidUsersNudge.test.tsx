@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
 import useConfig from '@proton/components/hooks/useConfig';
-import { PLANS, PLAN_NAMES } from '@proton/payments/index';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import {
     APPS,
     APP_UPSELL_REF_PATH,
