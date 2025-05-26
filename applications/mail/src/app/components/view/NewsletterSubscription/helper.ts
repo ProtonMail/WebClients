@@ -1,8 +1,9 @@
+import type { IconName } from 'packages/icons';
 import { c, msgid } from 'ttag';
 
 import type { Filter } from '@proton/components/containers/filters/interfaces';
 import { getStandardFolders } from '@proton/mail/labels/helpers';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { FILTER_STATUS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 import type { Folder, UserModel } from '@proton/shared/lib/interfaces';
 import type {
@@ -114,4 +115,47 @@ export const getNewsletterCopyForFilterAction = (subscription: NewsletterSubscri
     }
 
     return c('Label').ngettext(msgid`Moved ${count} message to Trash.`, `Moved ${count} messages to Trash.`, count);
+};
+
+export const getFilterDropdownData = (subscription: NewsletterSubscription, filters: Filter[]) => {
+    const isFilterEnabled =
+        filters.find((filter) => filter.ID === subscription.FilterID)?.Status === FILTER_STATUS.ENABLED;
+
+    const markingAsRead = !!subscription.MarkAsRead;
+    const movingToArchive = !!(subscription.MoveToFolder === MAILBOX_LABEL_IDS.ARCHIVE);
+    const movingToTrash = !!(subscription.MoveToFolder === MAILBOX_LABEL_IDS.TRASH);
+
+    const menuItems: {
+        icon: IconName;
+        label: string;
+        filter: ModalFilterType;
+    }[] = [
+        {
+            icon: 'envelope-open',
+            label: isFilterEnabled && markingAsRead ? c('Action').t`Stop marking as read` : c('Action').t`Mark as read`,
+            filter: 'MarkAsRead',
+        },
+        {
+            icon: 'archive-box',
+            label:
+                isFilterEnabled && movingToArchive
+                    ? c('Action').t`Stop moving to archive`
+                    : c('Action').t`Move to archive`,
+            filter: 'MoveToArchive',
+        },
+        {
+            icon: 'trash',
+            label:
+                isFilterEnabled && movingToTrash ? c('Action').t`Stop moving to trash` : c('Action').t`Move to trash`,
+            filter: 'MoveToTrash',
+        },
+    ];
+
+    return {
+        isFilterEnabled,
+        markingAsRead,
+        movingToArchive,
+        movingToTrash,
+        menuItems,
+    };
 };
