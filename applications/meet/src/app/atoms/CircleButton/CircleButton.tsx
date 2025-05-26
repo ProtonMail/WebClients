@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms/';
+import { Button } from '@proton/atoms';
 import type { IconProps } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 

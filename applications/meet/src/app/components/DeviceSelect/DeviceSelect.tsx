@@ -13,13 +13,15 @@ interface DeviceSelectProps {
         label: string;
     }[];
     icon: IconName;
+    disabled?: boolean;
 }
 
-export const DeviceSelect = ({ value, onValue, options, icon, title }: DeviceSelectProps) => {
+export const DeviceSelect = ({ value, onValue, options, icon, title, disabled }: DeviceSelectProps) => {
     return (
         <SelectTwo
             originalPlacement="top"
             offset={16}
+            disabled={disabled}
             className="device-select w-1/2 rounded-full py-10 border-norm bg-norm"
             value={value}
             onValue={onValue}
