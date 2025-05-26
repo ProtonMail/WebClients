@@ -222,7 +222,10 @@ export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<
         page: action.payload.page,
         elements: { ...state.elements, ...toMap(action.payload.elements, 'ID') },
         retry: { payload: undefined, count: 0, error: undefined },
-        params,
+        params: {
+            ...state.params,
+            ...params,
+        },
     });
     state.total[contextFilter] = total;
     state.pages[contextFilter] = state.pages[contextFilter]
