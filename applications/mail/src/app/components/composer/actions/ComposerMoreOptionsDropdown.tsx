@@ -53,6 +53,7 @@ const ComposerMoreOptionsDropdown = ({
                     isOpen={isOpen}
                     onClick={handleClick}
                     caretClassName="editor-toolbar-icon"
+                    aria-expanded={isOpen}
                     disabled={disabled}
                     className={clsx([
                         'editor-toolbar-button interactive composer-toolbar-fontDropDown max-w-full flex items-center flex-nowrap',
