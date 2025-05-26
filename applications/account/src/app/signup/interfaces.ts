@@ -42,7 +42,6 @@ export enum SignupSteps {
     Payment = 'payment',
     HumanVerification = 'human-verification',
     CreatingAccount = 'creating-account',
-    TrialPlan = 'trial-plan',
     Explore = 'explore',
     Done = 'done',
 }
