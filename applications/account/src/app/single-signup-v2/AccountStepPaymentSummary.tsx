@@ -7,7 +7,7 @@ import { useCouponConfig } from '@proton/components/containers/payments/subscrip
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import { Info, Price } from '@proton/components/index';
 import { type Plan, getHas2024OfferCoupon, getIsB2BAudienceFromPlan, isTaxInclusive } from '@proton/payments';
-import { COUPON_CODES } from '@proton/payments/index';
+import { COUPON_CODES } from '@proton/payments';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

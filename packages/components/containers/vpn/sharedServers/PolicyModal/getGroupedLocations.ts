@@ -1,5 +1,5 @@
-import type { CountryOptions } from '@proton/payments/index';
-import { getLocalizedCountryByAbbr } from '@proton/payments/index';
+import type { CountryOptions } from '@proton/payments';
+import { getLocalizedCountryByAbbr } from '@proton/payments';
 
 import type { SharedServerLocation } from '../useSharedServers';
 

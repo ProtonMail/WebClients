@@ -1,5 +1,5 @@
 import { FeatureCode } from '@proton/features/interface';
-import { PLANS } from '@proton/payments/index';
+import { PLANS } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import {
     APP_UPSELL_REF_PATH,

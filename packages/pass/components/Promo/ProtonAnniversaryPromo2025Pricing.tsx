@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
 import type { OfferProps } from '@proton/components/containers/offers/interface';
-import type { CYCLE } from '@proton/payments/core/constants';
+import type { CYCLE } from '@proton/payments';
 
 const getDealMonthDurationText = (cycle: CYCLE | undefined) => {
     const n = Number(cycle);
