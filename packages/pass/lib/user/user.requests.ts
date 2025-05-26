@@ -14,7 +14,11 @@ import type { Address, User, UserSettings } from '@proton/shared/lib/interfaces'
 
 export const getFeatureFlags = async (): Promise<FeatureFlagState> => {
     logger.info(`[User] syncing feature flags`);
-    const { toggles } = await api<FeatureFlagsResponse>({ url: `feature/v2/frontend`, method: 'get' });
+    const { toggles } = await api<FeatureFlagsResponse>({
+        url: `feature/v2/frontend`,
+        method: 'get',
+        ...(EXTENSION_BUILD ? { params: { browserFamily: BUILD_TARGET } } : {}),
+    });
 
     return PassFeaturesValues.reduce<FeatureFlagState>((features, feat) => {
         features[feat] = toggles.some((toggle) => toggle.name === feat);
