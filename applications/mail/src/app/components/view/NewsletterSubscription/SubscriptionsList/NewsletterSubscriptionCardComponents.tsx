@@ -10,8 +10,8 @@ import { useFilters } from '@proton/mail/filters/hooks';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import { shouldOpenUpsellOnFilterClick } from '../helper';
-import ModalUnsubscribe from './ModalUnsubscribe';
+import { getUnsubscribeMethod, shouldOpenUpsellOnFilterClick } from '../helper';
+import ModalUnsubscribe from './ModalUnsubscribe/ModalUnsubscribe';
 import { ModalMoveToFolder } from './MoveToFolder/ModalMoveToFolder';
 
 interface SubscriptionCardTitleProps {
@@ -78,6 +78,8 @@ export const ActiveSubscriptionButtons = ({ subscription }: SubscriptionCardTitl
     const [filters = []] = useFilters();
     const [user] = useUser();
 
+    const unsubscribeMethod = getUnsubscribeMethod(subscription);
+
     const handleMoveToFolderClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation();
         if (shouldOpenUpsellOnFilterClick(subscription, user, filters)) {
@@ -89,14 +91,16 @@ export const ActiveSubscriptionButtons = ({ subscription }: SubscriptionCardTitl
 
     return (
         <>
-            <Button
-                onClick={(e) => {
-                    e.stopPropagation();
-                    unsubscribeModal.openModal(true);
-                }}
-                shape="outline"
-                size="small"
-            >{c('Action').t`Unsubscribe`}</Button>
+            {unsubscribeMethod && (
+                <Button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        unsubscribeModal.openModal(true);
+                    }}
+                    shape="outline"
+                    size="small"
+                >{c('Action').t`Unsubscribe`}</Button>
+            )}
             <Button onClick={handleMoveToFolderClick} shape="outline" size="small">{c('Action')
                 .t`Move to folder`}</Button>
 
