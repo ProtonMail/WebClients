@@ -1,3 +1,16 @@
+import type { AutofillItem, AutofillRequest } from 'proton-pass-extension/types/autofill';
+import type {
+    FrameAttributes,
+    FrameCheckResult,
+    FrameQueryDTO,
+    FrameQueryResult,
+} from 'proton-pass-extension/types/frames';
+import type {
+    DropdownCloseDTO,
+    DropdownClosedDTO,
+    DropdownOpenDTO,
+    DropdownStateDTO,
+} from 'proton-pass-extension/types/inline';
 import type { Action } from 'redux';
 
 import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
@@ -47,13 +60,18 @@ import type { ForkPayload } from '@proton/pass/types/api/fork';
 import type { ShareId } from '@proton/pass/types/crypto/pass-types';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { TelemetryEventDTO } from '@proton/pass/types/data/telemetry';
-import type { AutofillIdentityResult, AutofillLoginResult, AutofillOptions } from '@proton/pass/types/worker/autofill';
+import type {
+    AutofillCCResult,
+    AutofillIdentityResult,
+    AutofillLoginResult,
+    AutofillOptions,
+} from '@proton/pass/types/worker/autofill';
 import type { PauseListEntry } from '@proton/pass/types/worker/settings';
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/fork/extension';
 import type { PullForkResponse } from '@proton/shared/lib/authentication/interface';
 import type { User } from '@proton/shared/lib/interfaces';
 
-export type WithPayload<T extends WorkerMessageType, P extends {}> = { type: T; payload: P };
+type WithPayload<T extends WorkerMessageType, P extends {}> = { type: T; payload: P };
 
 export type WorkerMessageWithSender<T extends WorkerMessage = WorkerMessage> = T & {
     sender: ClientEndpoint;
@@ -80,6 +98,9 @@ export enum WorkerMessageType {
     AUTH_PULL_FORK = 'AUTH_PULL_FORK',
     AUTH_UNLOCK = 'AUTH_UNLOCK',
     AUTOFILL_CHECK_FORM = 'AUTOFILL_CHECK_FORM',
+    AUTOFILL_CC = 'AUTOFILL_CC',
+    AUTOFILL_CC_QUERY = 'AUTOFILL_CC_QUERY',
+    AUTOFILL_REQUEST = 'AUTOFILL_REQUEST',
     AUTOFILL_IDENTITY = 'AUTOFILL_IDENTITY',
     AUTOFILL_IDENTITY_QUERY = 'AUTOFILL_IDENTITY_QUERY',
     AUTOFILL_LOGIN = 'AUTOFILL_LOGIN',
@@ -104,6 +125,16 @@ export enum WorkerMessageType {
     FORM_STATUS = 'FORM_STATUS',
     FS_WRITE = 'FS_WRITE',
     FS_ERROR = 'FS_ERROR',
+
+    INLINE_DROPDOWN_CLOSE = 'INLINE_DROPDOWN_CLOSE',
+    INLINE_DROPDOWN_CLOSED = 'INLINE_DROPDOWN_CLOSED',
+    INLINE_DROPDOWN_OPEN = 'INLINE_DROPDOWN_OPEN',
+    INLINE_DROPDOWN_STATE = 'INLINE_DROPDOWN_STATE',
+    INLINE_DROPDOWN_ATTACH = 'INLINE_DROPDOWN_ATTACH',
+
+    FRAME_QUERY = 'FRAME_QUERY',
+    FRAME_CHECK = 'FRAME_CHECK',
+
     LOAD_CONTENT_SCRIPT = 'LOAD_CONTENT_SCRIPT',
     LOCALE_UPDATED = 'LOCALE_UPDATED',
     LOG_EVENT = 'LOG_EVENT',
@@ -155,6 +186,9 @@ export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: Auth
 export type AuthPullForkMessage = WithPayload<WorkerMessageType.AUTH_PULL_FORK, { selector: string }>;
 export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, UnlockDTO>;
 export type AutofillCheckFormMessage = { type: WorkerMessageType.AUTOFILL_CHECK_FORM };
+export type AutofillCCMessage = WithPayload<WorkerMessageType.AUTOFILL_CC, AutofillItem>;
+export type AutofillCCQueryMessage = { type: WorkerMessageType.AUTOFILL_CC_QUERY };
+export type AutofillRequestMessage = WithPayload<WorkerMessageType.AUTOFILL_REQUEST, AutofillRequest>;
 export type AutofillIdentityMessage = WithPayload<WorkerMessageType.AUTOFILL_IDENTITY, SelectedItem>;
 export type AutofillIdentityQueryMessage = { type: WorkerMessageType.AUTOFILL_IDENTITY_QUERY };
 export type AutofillLoginMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN, SelectedItem>;
@@ -177,8 +211,19 @@ export type FormEntryRequestMessage = { type: WorkerMessageType.FORM_ENTRY_REQUE
 export type FormEntryStageMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STAGE, FormSubmitPayload>;
 export type FormEntryStashMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STASH, { reason: string }>;
 export type FormStatusMessage = WithPayload<WorkerMessageType.FORM_STATUS, FormStatusPayload>;
+
 export type FileTransferWriteMessage = WithPayload<WorkerMessageType.FS_WRITE, FileTransferWriteDTO>;
 export type FileTransferErrorMessage = WithPayload<WorkerMessageType.FS_ERROR, FileTransferErrorDTO>;
+
+export type FrameQueryMessage = WithPayload<WorkerMessageType.FRAME_QUERY, FrameQueryDTO>;
+export type FrameCheckMessage = WithPayload<WorkerMessageType.FRAME_CHECK, FrameAttributes>;
+
+export type InlineDropdownOpenMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_OPEN, DropdownOpenDTO>;
+export type InlineDropdownCloseMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_CLOSE, DropdownCloseDTO>;
+export type InlineDropdownClosedMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_CLOSED, DropdownClosedDTO>;
+export type InlineDropdownStateMessage = { type: WorkerMessageType.INLINE_DROPDOWN_STATE };
+export type InlineDropdownAttachMessage = { type: WorkerMessageType.INLINE_DROPDOWN_ATTACH };
+
 export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
 export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED, { locale: string }>;
 export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
@@ -228,6 +273,9 @@ export type WorkerMessage =
     | AuthPullForkMessage
     | AuthUnlockMessage
     | AutofillCheckFormMessage
+    | AutofillCCMessage
+    | AutofillCCQueryMessage
+    | AutofillRequestMessage
     | AutofillIdentityMessage
     | AutofillIdentityQueryMessage
     | AutofillLoginMessage
@@ -252,6 +300,13 @@ export type WorkerMessage =
     | FormStatusMessage
     | FileTransferWriteMessage
     | FileTransferErrorMessage
+    | InlineDropdownCloseMessage
+    | InlineDropdownClosedMessage
+    | InlineDropdownOpenMessage
+    | InlineDropdownStateMessage
+    | InlineDropdownAttachMessage
+    | FrameQueryMessage
+    | FrameCheckMessage
     | LoadContentScriptMessage
     | LocaleUpdatedMessage
     | LogEventMessage
@@ -302,6 +357,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTH_INIT]: AppState;
     [WorkerMessageType.AUTH_PULL_FORK]: Result<PullForkResponse>;
     [WorkerMessageType.AUTH_UNLOCK]: Result;
+    [WorkerMessageType.AUTOFILL_CC_QUERY]: AutofillCCResult;
     [WorkerMessageType.AUTOFILL_IDENTITY_QUERY]: AutofillIdentityResult;
     [WorkerMessageType.AUTOFILL_CHECK_FORM]: { hasLoginForm: boolean };
     [WorkerMessageType.AUTOFILL_IDENTITY]: ItemContent<'identity'>;
@@ -312,6 +368,9 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.CLIENT_INIT]: { state: AppState; settings: ProxiedSettings; features: FeatureFlagState };
     [WorkerMessageType.CLIPBOARD_OFFSCREEN_READ]: { content: string };
     [WorkerMessageType.FETCH_DOMAINIMAGE]: { result: Maybe<string> };
+    [WorkerMessageType.FRAME_QUERY]: FrameQueryResult;
+    [WorkerMessageType.FRAME_CHECK]: FrameCheckResult;
+    [WorkerMessageType.INLINE_DROPDOWN_STATE]: DropdownStateDTO;
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FORM_ENTRY_STAGE]: { submission: MaybeNull<AutosaveFormEntry> };
@@ -350,3 +409,5 @@ export type WorkerResponse<T extends Maybe<WorkerMessage | WorkerMessageWithSend
 export type WorkerSendResponse<T extends Maybe<WorkerMessage> = Maybe<WorkerMessage>> = (
     response: WorkerResponse<T>
 ) => void;
+
+export type SendTabResponse<T extends WorkerMessageType = WorkerMessageType> = (res: WorkerMessageResponse<T>) => void;
