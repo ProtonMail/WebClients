@@ -256,7 +256,7 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
             shape="solid"
             className="flex items-center justify-center gap-2 !bg-[--docs-blue-color]"
           >
-            {c('Action').t`New sheet`}
+            {c('sheets_2025:Action').t`New spreadsheet`}
           </ButtonLike>
         </>
       )}
