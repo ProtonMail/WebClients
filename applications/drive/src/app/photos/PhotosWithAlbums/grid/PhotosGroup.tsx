@@ -11,14 +11,27 @@ type Props = {
     onSelect: (isSelected: boolean) => void;
     selected: boolean | 'some';
     isLoading: boolean;
+    year?: number;
+    month?: number;
 };
 
-export const PhotosGroup: FC<Props> = ({ style, text, showSeparatorLine, onSelect, selected, isLoading }) => {
+export const PhotosGroup: FC<Props> = ({
+    style,
+    text,
+    showSeparatorLine,
+    onSelect,
+    selected,
+    isLoading,
+    year,
+    month,
+}) => {
     return (
         <div
             style={style}
             data-testid="month-text"
-            className="text-semibold text-no-wrap text-capitalize py-3 flex items-center flex-nowrap"
+            className="photos-group text-semibold text-no-wrap text-capitalize py-3 flex items-center flex-nowrap"
+            data-year={year || 0}
+            data-month={month || 0}
         >
             <Checkbox
                 className="mr-2"
