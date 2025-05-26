@@ -7,3 +7,8 @@ export interface ParticipantSettings {
     isFaceTrackingEnabled: boolean;
     roomName: string;
 }
+
+export enum LoadingState {
+    JoiningInProgress = 'JoiningInProgress',
+    WaitingRoom = 'WaitingRoom',
+}

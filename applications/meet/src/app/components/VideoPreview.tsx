@@ -51,15 +51,21 @@ export const VideoPreview = ({ isCameraEnabled, hasCameraPermission, selectedCam
     if (!isCameraEnabled) {
         return (
             <div
-                className="w-full h-full flex justify-center items-center"
+                className="w-full h-full flex flex-column justify-center items-center gap-2"
                 style={{ color: 'var(--interaction-weak)' }}
             >
                 {!hasCameraPermission && (
-                    <IcMeetUser
-                        className="w-custom h-custom"
-                        style={{ '--w-custom': '155px', '--h-custom': '155px' }}
-                        viewBox="0 0 146 156"
-                    />
+                    <>
+                        <IcMeetUser
+                            className="w-custom h-custom"
+                            style={{ '--w-custom': '155px', '--h-custom': '155px' }}
+                            viewBox="0 0 146 156"
+                        />
+                        <div
+                            className="color-norm rounded-full px-4 py-2 mb-8 mt-8"
+                            style={{ backgroundColor: 'var(--interaction-weak)' }}
+                        >{c('Meet').t`Allow microphone and camera`}</div>
+                    </>
                 )}
                 <div className="color-weak">{hasCameraPermission && c('Meet').t`Camera is off`}</div>
             </div>

@@ -1,10 +1,12 @@
 import { useMemo } from 'react';
 
-import { IcMeetCamera, IcMeetCameraOff, IcMeetMicrophone, IcMeetMicrophoneOff } from '@proton/icons';
+import type { IconSize } from '@proton/icons';
+import { IcMeetCamera, IcMeetCameraOff, IcMeetMicrophoneOff } from '@proton/icons';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { useMediaPermissionsStatus } from '../../hooks/useMediaPermissionStatus';
 import { DeviceSelect } from '../DeviceSelect/DeviceSelect';
+import { MicrophoneWithVolume } from '../MicrophoneWithVolume';
 import { VideoPreview } from '../VideoPreview';
 
 import './DeviceSettings.scss';
@@ -29,6 +31,13 @@ const devicesToOptions = (devices: MediaDeviceInfo[]) => {
         label: device.label,
     }));
 };
+
+const placeholderOptions = [
+    {
+        value: 'no-permission',
+        label: 'Permissions not given.',
+    },
+];
 
 export const DeviceSettings = ({
     isCameraEnabled,
@@ -76,15 +85,26 @@ export const DeviceSettings = ({
                     style={{ '--bottom-custom': '1.5rem' }}
                 >
                     <CircleButton
-                        onClick={onMicrophoneToggle}
-                        IconComponent={isMicrophoneEnabled ? IcMeetMicrophone : IcMeetMicrophoneOff}
+                        onClick={noMicrophonePermission ? undefined : onMicrophoneToggle}
+                        IconComponent={
+                            isMicrophoneEnabled
+                                ? ({ size, viewBox }) => (
+                                      <MicrophoneWithVolume
+                                          isMicrophoneEnabled={isMicrophoneEnabled}
+                                          size={size as IconSize}
+                                          viewBox={viewBox as string}
+                                      />
+                                  )
+                                : IcMeetMicrophoneOff
+                        }
                         iconViewPort="0 0 19 22"
                         variant={isMicrophoneEnabled ? 'default' : 'danger'}
                         indicatorContent={noMicrophonePermission ? '!' : undefined}
                         indicatorStatus={noMicrophonePermission ? 'warning' : 'default'}
                     />
+
                     <CircleButton
-                        onClick={onCameraToggle}
+                        onClick={noCameraPermission ? undefined : onCameraToggle}
                         IconComponent={isCameraEnabled ? IcMeetCamera : IcMeetCameraOff}
                         iconViewPort="0 0 24 24"
                         variant={isCameraEnabled ? 'default' : 'danger'}
@@ -95,20 +115,22 @@ export const DeviceSettings = ({
             </div>
             <div className="flex flex-nowrap gap-2 mt-2">
                 <DeviceSelect
-                    value={selectedMicrophoneId}
+                    value={noMicrophonePermission ? 'no-permission' : selectedMicrophoneId}
                     onValue={(value) =>
                         onMicrophoneChange(microphones.find((microphone) => microphone.deviceId === value)!)
                     }
-                    options={microphonesOptions}
+                    options={noMicrophonePermission ? placeholderOptions : microphonesOptions}
                     icon="meet-microphone"
                     title="Audio"
+                    disabled={noMicrophonePermission}
                 />
                 <DeviceSelect
-                    value={selectedCameraId}
+                    value={noCameraPermission ? 'no-permission' : selectedCameraId}
                     onValue={(value) => onCameraChange(cameras.find((camera) => camera.deviceId === value)!)}
-                    options={camerasOptions}
+                    options={noCameraPermission ? placeholderOptions : camerasOptions}
                     icon="meet-camera"
                     title="Video"
+                    disabled={noCameraPermission}
                 />
             </div>
         </div>

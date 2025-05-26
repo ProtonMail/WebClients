@@ -64,7 +64,7 @@ export const ParticipantControls = () => {
     const pageCount = Math.ceil(participants.length / PAGE_SIZE);
 
     return (
-        <div className="flex flex-nowrap justify-center items-center gap-2 h-custom" style={{ '--h-custom': '6.5rem' }}>
+        <div className="flex flex-nowrap justify-center items-center gap-2 h-custom" style={{ '--h-custom': '5.5rem' }}>
             <div className="flex flex-1 justify-start h3">{roomName}</div>
             <div className="flex flex-nowrap gap-2">
                 <ToggleButton

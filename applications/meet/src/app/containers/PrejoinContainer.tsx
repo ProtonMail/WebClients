@@ -2,16 +2,20 @@ import React, { useEffect, useState } from 'react';
 
 import logo from '../../assets/meet-logo.svg';
 import { DeviceSettings } from '../components/DeviceSettings/DeviceSettings';
+import { JoiningRoomLoader } from '../components/JoiningRoomLoader';
 import { PreJoinDetails } from '../components/PreJoinDetails/PreJoinDetails';
 import { useDevices } from '../hooks/useDevices';
 import type { ParticipantSettings } from '../types';
+import { LoadingState } from '../types';
 
 const defaultDisplayName = 'WEB TEST';
 interface PrejoinContainerProps {
-    onSettingsChange: (settings: ParticipantSettings) => void;
+    handleJoin: (settings: ParticipantSettings) => void;
+    loadingState: LoadingState | null;
+    isLoading: boolean;
 }
 
-export const PrejoinContainer = ({ onSettingsChange }: PrejoinContainerProps) => {
+export const PrejoinContainer = ({ handleJoin, loadingState, isLoading }: PrejoinContainerProps) => {
     const [selectedCamera, setSelectedCamera] = useState<MediaDeviceInfo | null>(null);
     const [selectedMicrophone, setSelectedMicrophone] = useState<MediaDeviceInfo | null>(null);
 
@@ -30,7 +34,7 @@ export const PrejoinContainer = ({ onSettingsChange }: PrejoinContainerProps) =>
     const handleJoinMeeting = ({ displayName, meetingLink }: { displayName: string; meetingLink: string }) => {
         const roomName = meetingLink.replace(`${process.env.LIVEKIT_URL}/`, '');
 
-        onSettingsChange({
+        handleJoin({
             displayName,
             roomName,
             audioDeviceId: selectedMicrophone?.deviceId as string,
@@ -69,12 +73,16 @@ export const PrejoinContainer = ({ onSettingsChange }: PrejoinContainerProps) =>
                 onMicrophoneChange={setSelectedMicrophone}
                 displayName={displayName}
             />
-            <PreJoinDetails
-                defaultMeetingLink={defaultMeetingLink}
-                displayName={displayName}
-                onDisplayNameChange={setDisplayName}
-                onJoinMeeting={handleJoinMeeting}
-            />
+            {isLoading ? (
+                <>{loadingState === LoadingState.JoiningInProgress && <JoiningRoomLoader />}</>
+            ) : (
+                <PreJoinDetails
+                    defaultMeetingLink={defaultMeetingLink}
+                    displayName={displayName}
+                    onDisplayNameChange={setDisplayName}
+                    onJoinMeeting={handleJoinMeeting}
+                />
+            )}
         </div>
     );
 };
