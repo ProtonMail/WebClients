@@ -11,6 +11,7 @@ import type {
     NewsletterSubscription,
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
+import { UnsubscribeMethod } from './interface';
 import type { ModalFilterType } from './interface';
 
 interface GetUnsubscribeDataParams {
@@ -158,4 +159,20 @@ export const getFilterDropdownData = (subscription: NewsletterSubscription, filt
         movingToTrash,
         menuItems,
     };
+};
+
+/**
+ * Returns the unsuscribe method that will be used to unsubscribe the user from the newsletter
+ * @param subscription subscription to unsubscribe from
+ * @returns
+ */
+export const getUnsubscribeMethod = (subscription: NewsletterSubscription): UnsubscribeMethod | undefined => {
+    if (subscription.UnsubscribeMethods.OneClick) {
+        return UnsubscribeMethod.OneClick;
+    } else if (subscription.UnsubscribeMethods.Mailto) {
+        return UnsubscribeMethod.Mailto;
+    } else if (subscription.UnsubscribeMethods.HttpClient) {
+        return UnsubscribeMethod.HttpClient;
+    }
+    return undefined;
 };

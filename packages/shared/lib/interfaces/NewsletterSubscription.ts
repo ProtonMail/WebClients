@@ -1,3 +1,5 @@
+import type { UnsubscribeMethods } from './mail/Message';
+
 export interface NewsletterSubscription {
     ID: string;
     UserId: string;
@@ -21,6 +23,7 @@ export interface NewsletterSubscription {
         Last30Days: number;
         Last90Days: number;
     };
+    UnsubscribeMethods: UnsubscribeMethods;
 }
 
 export interface FilterSubscriptionAPIResponse {
