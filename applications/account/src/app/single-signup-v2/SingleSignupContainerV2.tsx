@@ -1149,7 +1149,6 @@ const SingleSignupContainerV2 = ({
             await handleSubscribeUser(
                 silentApi,
                 cache.subscriptionData,
-                undefined,
                 productParam,
                 getReportPaymentSuccess(cache.subscriptionData, isAuthenticated),
                 getReportPaymentFailure(cache.subscriptionData, isAuthenticated)
