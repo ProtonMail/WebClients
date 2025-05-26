@@ -58,8 +58,7 @@ export const createInjectionService = () => {
                 tabs.map(async (tab) => {
                     logger.info(`[InjectionService::update] Re-injecting script on tab ${tab.id}`);
                     if (tab.id !== undefined) {
-                        /* FIXME: re-inject in all frames when supporting iframes */
-                        await inject({ tabId: tab.id, allFrames: false, js: ['orchestrator.js'] });
+                        await inject({ tabId: tab.id, allFrames: true, js: ['orchestrator.js'] });
                     }
                 })
             );
@@ -104,13 +103,15 @@ export const createInjectionService = () => {
         return { hash };
     });
 
-    const loadContentScript = withTabEffect((tabId, frameId) => inject({ tabId, frameId, js: ['client.js'] }));
+    const loadContentScript = withTabEffect((tabId, frameId) => {
+        if (frameId === null) throw new Error('Invalid frame');
+        return inject({ tabId, frameId, js: ['client.js'] });
+    });
 
-    const unloadContentScript = withTabEffect((tabId, frameId) =>
-        browser.tabs.sendMessage(tabId, backgroundMessage({ type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT }), {
-            frameId,
-        })
-    );
+    const unloadContentScript = withTabEffect((tabId, frameId) => {
+        const message = backgroundMessage({ type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT });
+        return browser.tabs.sendMessage(tabId, message, { frameId });
+    });
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.LOAD_CONTENT_SCRIPT, loadContentScript);
     WorkerMessageBroker.registerMessage(WorkerMessageType.UNLOAD_CONTENT_SCRIPT, unloadContentScript);
