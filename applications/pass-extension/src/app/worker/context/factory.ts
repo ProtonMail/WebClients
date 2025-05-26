@@ -9,6 +9,7 @@ import { createB2BEventsService } from 'proton-pass-extension/app/worker/service
 import { createClipboardService } from 'proton-pass-extension/app/worker/services/clipboard';
 import { createPassCoreProxyService } from 'proton-pass-extension/app/worker/services/core';
 import { createFormTrackerService } from 'proton-pass-extension/app/worker/services/form.tracker';
+import { createFrameService } from 'proton-pass-extension/app/worker/services/frames';
 import { createI18nService } from 'proton-pass-extension/app/worker/services/i18n';
 import { createInjectionService } from 'proton-pass-extension/app/worker/services/injection';
 import { createLoggerService } from 'proton-pass-extension/app/worker/services/logger';
@@ -81,6 +82,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             clipboard: createClipboardService(),
             core,
             formTracker: createFormTrackerService(),
+            frame: createFrameService(),
             i18n: createI18nService(),
             injection: createInjectionService(),
             logger: createLoggerService(storage.local),
