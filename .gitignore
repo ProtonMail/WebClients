@@ -8,6 +8,7 @@ yarn-debug.log*
 yarn-error.log*
 node_modules
 dist
+!vendor/*/*/dist
 .turbo/*
 !.turbo/config.json
 applications/**/.turbo
