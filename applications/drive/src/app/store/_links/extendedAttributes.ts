@@ -312,7 +312,10 @@ function parseBlockSizes(xattr: MaybeExtendedAttributes): number[] | undefined {
         console.warn(`XAttr block sizes "${blockSizes}" is not valid`);
         return undefined;
     }
-    return blockSizes as number[];
+
+    // *ATTENTION* the sorting is important since Windows client had a bug where the last block was not necessarily at the end
+    // it only works for now because our blocks are constant and not dynamic
+    return blockSizes.sort((a, b) => b - a) as number[];
 }
 
 function parseMedia(xattr: MaybeExtendedAttributes): { Width: number; Height: number; Duration?: number } | undefined {
