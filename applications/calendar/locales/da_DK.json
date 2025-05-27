@@ -195,6 +195,9 @@
       "Copy address": [
         "Kopiér adresse"
       ],
+      "Copy alias “${ name }”": [
+        "Kopier alias \"${ name }\""
+      ],
       "Copy email address": [
         "Kopiér e-mailadresse"
       ],
@@ -601,6 +604,9 @@
       ],
       "Remove bonuses": [
         "Fjern bonusser"
+      ],
+      "Remove button": [
+        "Fjern knap"
       ],
       "Remove gift code": [
         "Fjern gavekode"
@@ -4648,6 +4654,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Styrk din organisations varemærkeidentitet, og skab en mere ensartet onlineoplevelse for dine brugere."
       ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Overfør dine meddelelser, kontakter og kalendere til ${ BRAND_NAME }"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved at nedgradere til et gratis abonnement mister du disse fordele permanent, selvom du senere opgraderer igen."
       ],
@@ -4950,6 +4959,9 @@
       "Learn more": [
         "Få mere at vide"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Se hvad du skal gøre her ${ dataLeakedLink }"
+      ],
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
       ],
@@ -5250,6 +5262,9 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidigt utilgængelig. Tjek igen senere."
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Tak for din tilmelding. Sikker browsing starter nu."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "De eksponerede oplysninger blev lækket fra en tredjepartstjeneste. Din ${ BRAND_NAME }-kontooplysninger er stadig sikre og krypterede. ${ learnMoreLink }"
@@ -6082,6 +6097,9 @@
       "Notifications": [
         "Notifikationer"
       ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Noter er deaktiverede, for at aktivere dem skal browserens indstillinger ændres."
+      ],
       "On": [
         "Til"
       ],
@@ -6379,6 +6397,9 @@
       ],
       "How to use Groups": [
         "Sådan bruger du grupper"
+      ],
+      "if your data is leaked": [
+        "hvis dine data er lækket"
       ],
       "Inbox": [
         "Indbakke"
@@ -9258,47 +9279,6 @@
         "Til ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME } med premium funktioner"
@@ -9554,6 +9534,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -10236,6 +10257,9 @@
       "Import groups": [
         "Importer grupper"
       ],
+      "Information exposed in breach": [
+        "Information afsløret i en datalækage"
+      ],
       "Invalid verification code": [
         "Ugyldig verifikationskode"
       ],
@@ -10259,6 +10283,9 @@
       ],
       "Network error": [
         "Netværksfejl"
+      ],
+      "Newsletters view": [
+        "Visning af nyheder"
       ],
       "Night theme": [
         "Nattetema"
@@ -10596,6 +10623,9 @@
       ],
       "Load image": [
         "Indlæs billede"
+      ],
+      "Not all information listed here was exposed for all users.": [
+        "Ikke alle oplysninger på listen blev afsløret for alle brugere"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk, at PGP/Inline gennemtvinger beskeder i simpel tekst"
