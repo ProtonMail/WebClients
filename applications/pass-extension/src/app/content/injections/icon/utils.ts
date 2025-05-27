@@ -67,7 +67,7 @@ const getOverlayShift = (options: {
         /** Prepass: `document.elementsFromPoint` will exclude elements that are
          * set to `pointer-events: none`. These may be part of the shift we want
          * to resolve. Set them to `auto` temporarily and restore */
-        anchor.querySelectorAll('*').forEach((el) => {
+        (isInputElement(anchor) ? anchor.parentElement! : anchor).querySelectorAll('*').forEach((el) => {
             if (isHTMLElement(el)) {
                 if (window.getComputedStyle(el).pointerEvents === 'none') {
                     const pointerEvents = el.style.pointerEvents;
@@ -79,7 +79,10 @@ const getOverlayShift = (options: {
 
         let maxDx: number = 0;
 
+        const skip = new Set();
+
         for (const el of overlays) {
+            if (skip.has(el)) continue;
             if (el.classList.contains('protonpass-debug')) continue;
             if (el === input || el === anchor) break; /* Stop at target elements */
             if (!isHTMLElement(el)) continue; /* Skip non-HTMLElements */
@@ -92,8 +95,18 @@ const getOverlayShift = (options: {
              * but can end-up flagging elements which lack `innerText` or `offsetWidth` properties */
             if ((el.innerText?.length ?? 0) > 0 && (el.offsetWidth ?? 0) >= maxWidth * 0.8) continue;
 
-            const style = getComputedStyle(el);
-            if (style.display === 'none' || style.visibility === 'hidden') continue; /* Skip hidden elements */
+            /** Skip hidden elements - if we match an invisible element:
+             * heuristically skip all single-child containers wrapping it */
+            const { display, visibility, opacity } = getComputedStyle(el);
+            if (display === 'none' || visibility === 'hidden' || opacity === '0') {
+                let parent = el.parentElement;
+                while (parent && parent.childElementCount <= 1) {
+                    skip.add(parent);
+                    parent = parent.parentElement;
+                }
+
+                continue;
+            }
 
             const { left } = el.getBoundingClientRect();
             const dx = Math.max(0, x - left);
@@ -276,8 +289,13 @@ export const createIcon = ({ anchor, tag, zIndex }: CreateIconConfig): IconEleme
     icon.style.zIndex = zIndex.toString();
     icon.setAttribute('type', 'button');
 
-    if (isInputElement(anchor)) anchor.parentElement!.insertBefore(control.customElement, anchor);
-    else anchor.insertBefore(control.customElement, anchor.firstElementChild);
+    if (isInputElement(anchor)) {
+        const parent = anchor.parentElement!;
+        /** Avoid inserting the control custom element directly into a parent
+         * which has a `grid` display - this can cause jittery overlays */
+        if (getComputedStyle(parent).display === 'grid') parent.parentElement?.appendChild(control.customElement);
+        else parent.insertBefore(control.customElement, anchor);
+    } else anchor.insertBefore(control.customElement, anchor.firstElementChild);
 
     control.shadowRoot.appendChild(icon);
 
