@@ -138,6 +138,9 @@ export const AlbumsCard: FC<Props> = ({
     const isLoaded = !isThumbnailLoading && isDecrypted;
 
     const theme = useTheme();
+    const { sharedBy } = album;
+    const albumSharedLabel = album.sharedBy ? c('Info').t`Shared with you` : c('Info').t`Shared`;
+    const albumSharedTitle = album.sharedBy ? c('Info').t`Shared by ${sharedBy}` : c('Info').t`Shared by you`;
 
     useEffect(() => {
         const hasName = album.name;
@@ -173,7 +176,6 @@ export const AlbumsCard: FC<Props> = ({
 
     // For translation context to be identical
     const photoCount = album.photoCount;
-
     return (
         /* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */
         <ButtonLike
@@ -258,7 +260,11 @@ export const AlbumsCard: FC<Props> = ({
                             </div>
                             <div className="text-left mb-2 text color-weak text-semibold">
                                 {c('Info').ngettext(msgid`${photoCount} item`, `${photoCount} items`, photoCount)}
-                                {album.isShared && <span className="ml-1">⋅ {c('Info').t`Shared`}</span>}
+                                {album.isShared && (
+                                    <span title={albumSharedTitle} className="ml-1">
+                                        ⋅ {albumSharedLabel}
+                                    </span>
+                                )}
                             </div>
                         </div>
                         {album.permissions.isAdmin && (
