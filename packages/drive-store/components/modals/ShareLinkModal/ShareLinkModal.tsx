@@ -1,5 +1,5 @@
 import type { MouseEvent } from 'react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -27,14 +27,20 @@ import ErrorState from './ErrorState';
 import { PublicSharing } from './PublicSharing';
 import { useLinkSharingSettingsModal } from './ShareLinkSettingsModal';
 
-interface Props {
+export type SharingModalProps = {
     modalTitleID?: string;
     shareId: string;
     linkId: string;
     onPublicLinkToggle?: (enabled: boolean) => void;
-}
+    /**
+     * Escape hatch that is necessary for Docs. Please do not use unless you know what you are doing.
+     *
+     * The reason behind this workaround is stale cache issues. See MR for more details.
+     */
+    registerOverriddenNameListener?: (listener: (name: string) => void) => void;
+};
 
-export function SharingModal(props: Props & ModalStateProps) {
+export function SharingModal(props: SharingModalProps & ModalStateProps) {
     const shareMemberList = useShareMemberView(props.shareId, props.linkId);
     return <SharingModalInner {...props} shareMemberList={shareMemberList} />;
 }
@@ -45,12 +51,13 @@ function SharingModalInner({
     onClose,
     shareMemberList,
     onPublicLinkToggle,
+    registerOverriddenNameListener,
     ...modalProps
-}: Props & ModalStateProps & { shareMemberList: ReturnType<typeof useShareMemberView> }) {
+}: SharingModalProps & ModalStateProps & { shareMemberList: ReturnType<typeof useShareMemberView> }) {
     const {
         customPassword,
         initialExpiration,
-        name,
+        name: originalName,
         deleteLink,
         stopSharing,
         sharedLink,
@@ -69,6 +76,13 @@ function SharingModalInner({
         isShareUrlLoading,
         isShareUrlEnabled,
     } = useShareURLView(rootShareId, linkId);
+
+    const [overriddenName, setOverriddenName] = useState<string>();
+    useEffect(() => {
+        registerOverriddenNameListener?.(setOverriddenName);
+    }, [registerOverriddenNameListener]);
+
+    const name = overriddenName ?? originalName;
 
     const {
         volumeId,
