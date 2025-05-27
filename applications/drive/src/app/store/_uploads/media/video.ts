@@ -1,4 +1,4 @@
-import { VIDEO_THUMBNAIL_MAX_TIME_LOCATION } from '@proton/shared/lib/drive/constants';
+import { SupportedMimeTypes, VIDEO_THUMBNAIL_MAX_TIME_LOCATION } from '@proton/shared/lib/drive/constants';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { logError } from '../../../utils/errorHandling';
@@ -106,7 +106,7 @@ export const getVideoInfo = async (file: Blob) => {
                                             await canvasToThumbnail(
                                                 canvas,
                                                 ThumbnailType.PREVIEW,
-                                                isSafari() ? 'image/jpeg' : 'image/webp'
+                                                isSafari() ? SupportedMimeTypes.jpg : SupportedMimeTypes.webp
                                             )
                                         ),
                                         thumbnailType: ThumbnailType.PREVIEW,
