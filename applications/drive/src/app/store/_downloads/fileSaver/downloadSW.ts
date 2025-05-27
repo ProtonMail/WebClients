@@ -102,7 +102,7 @@ class DownloadServiceWorker {
     /**
      * Handle both download links and video range requests
      */
-    onFetch = (event: FetchEvent) => {
+    onFetch = async (event: FetchEvent) => {
         const url = new URL(event.request.url);
 
         // Our service worker is registered on the global scope
@@ -118,9 +118,19 @@ class DownloadServiceWorker {
 
         // Video range requests: /sw/video/{id}
         const videoMatch = url.pathname.startsWith('/sw/video/');
+        // getStream get the video stream from the Map
+        // Consider the ID is sent via postMessage
+        // its technically async so can technically paint the DOM before the message reach the SW (theoritically)
+        // So we're awaiting 5 second maximum if not defined (50 times x 100ms)
+        const getStream = async (id: string, t = 50): Promise<VideoStream | undefined> =>
+            this.videoStreams.get(id) ||
+            (t > 0
+                ? await new Promise<VideoStream | undefined>((r) => setTimeout(() => r(getStream(id, t - 1)), 100))
+                : undefined);
+
         if (event.request.method === 'GET' && videoMatch) {
             const id = url.pathname.split('/sw/video/')[1];
-            const videoStream = this.videoStreams.get(id);
+            const videoStream = await getStream(id);
             const rangeHeader = event.request.headers.get('Range');
 
             if (!rangeHeader || !videoStream) {
