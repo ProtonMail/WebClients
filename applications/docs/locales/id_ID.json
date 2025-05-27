@@ -510,9 +510,6 @@
       "New message": [
         "Pesan baru"
       ],
-      "New sheet": [
-        "Lembar kerja baru"
-      ],
       "Next": [
         "Selanjutnya"
       ],
@@ -5242,7 +5239,7 @@
         "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Tidak ada pembayaran yang diperlukan untuk saat ini. Langganan Anda akan diperbarui secara otomatis pada akhir masa uji coba."
       ],
       "You may be redirected to your bank’s website.": [
-        "Anda akan dapat dialihkan ke situs web milik bank Anda."
+        "Anda mungkin akan dialihkan ke situs web milik bank Anda."
       ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Anda mungkin tidak memiliki izin yang memadai untuk melihat dokumen ini dengan akun yang Anda pilih. Coba gunakan akun yang berbeda atau hubungi pemilik dokumen untuk meminta akses."
@@ -5251,7 +5248,7 @@
         "Anda harus terlebih dahulu menonaktifkan atau menghapus seluruh pengguna, alamat, dan domain khusus tambahan yang terdapat pada ${ MAIL_APP_NAME } sebelum Anda dapat menurunkan jenis akun Anda."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun Paypal Anda. Jika akun Paypal Anda tidak memiliki kartu yang terhubung, silakan klik tombol di bawah ini."
+        "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun Paypal Anda. Apabila akun Paypal Anda tidak memiliki kartu yang terhubung, silakan klik tombol di bawah ini."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Anda akan kehilangan akses ke berbagai fitur ${ planTitle } pada tanggal ini."
@@ -6493,6 +6490,17 @@
         "Kecepatan VPN sedang"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Paket dimulai dari ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Hapus akun"
@@ -6514,17 +6522,6 @@
       ],
       "Switch plan": [
         "Ganti paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Paket dimulai dari ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
       ]
     },
     "new_plans: feature": {
@@ -8863,6 +8860,23 @@
         "Untuk ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Ruang penyimpanan ${ planMaxSpace } per pengguna"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } alamat email khusus"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } alamat email"
+      ],
+      "Folders, labels, and custom filters": [
+        "Folder, label, dan filter khusus"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "Ruang penyimpanan 15 GB"
@@ -8902,23 +8916,6 @@
       ],
       "Your privacy is our mission": [
         "Privasi Anda adalah misi kami"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Ruang penyimpanan ${ planMaxSpace } per pengguna"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } alamat email khusus"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } alamat email"
-      ],
-      "Folders, labels, and custom filters": [
-        "Folder, label, dan filter khusus"
       ]
     },
     "Subscription renewal state": {

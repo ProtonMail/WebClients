@@ -519,9 +519,6 @@
       "New message": [
         "Nová správa"
       ],
-      "New sheet": [
-        "Nový hárok"
-      ],
       "Next": [
         "Ďalej"
       ],
@@ -6661,6 +6658,17 @@
         "Stredná VPN rýchlosť"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Predplatné začína od ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Zmazať účet"
@@ -6682,17 +6690,6 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Predplatné začína od ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
       ]
     },
     "new_plans: feature": {
@@ -9253,6 +9250,29 @@
         "Za ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } úložisko na používateľa"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vám poskytne všetky aplikácie, všetky funkcie, predbežný prístup k novým verziám a všetko, čo potrebujete, aby ste mali svoje dáta a ich zabezpečenie pod kontrolou."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } vlastná emailová doména",
+        "${ planNumberOfDomains } vlastné emailové domény",
+        "${ planNumberOfDomains } vlastných emailových domén",
+        "${ planNumberOfDomains } vlastných emailových domén"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } emailová adresa",
+        "${ planNumberOfEmails } emailové adresy",
+        "${ planNumberOfEmails } emailových adries",
+        "${ planNumberOfEmails } emailových adries"
+      ],
+      "Folders, labels, and custom filters": [
+        "Priečinky, štítky a vlastné filtre"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB úložného priestoru"
@@ -9292,29 +9312,6 @@
       ],
       "Your privacy is our mission": [
         "Vaše súkromie je naším poslaním"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } úložisko na používateľa"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vám poskytne všetky aplikácie, všetky funkcie, predbežný prístup k novým verziám a všetko, čo potrebujete, aby ste mali svoje dáta a ich zabezpečenie pod kontrolou."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } vlastná emailová doména",
-        "${ planNumberOfDomains } vlastné emailové domény",
-        "${ planNumberOfDomains } vlastných emailových domén",
-        "${ planNumberOfDomains } vlastných emailových domén"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } emailová adresa",
-        "${ planNumberOfEmails } emailové adresy",
-        "${ planNumberOfEmails } emailových adries",
-        "${ planNumberOfEmails } emailových adries"
-      ],
-      "Folders, labels, and custom filters": [
-        "Priečinky, štítky a vlastné filtre"
       ]
     },
     "Subscription renewal state": {
