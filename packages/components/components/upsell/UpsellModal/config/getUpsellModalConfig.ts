@@ -6,20 +6,19 @@ import { getUpsellModalFreeUserConfig } from '../configs/getUpsellModalFreeUserC
 import { getUpsellModalProtonSentinelConfig } from '../configs/getUpsellModalProtonSentinelConfig';
 import type { UpsellModalConfigParams, UpsellModalConfigResult } from '../interface';
 
-export const getMailUpsellConfig = async (props: UpsellModalConfigParams): Promise<UpsellModalConfigResult> => {
-    const { upsellRef, user } = props;
+export const getMailUpsellConfig = async (data: UpsellModalConfigParams): Promise<UpsellModalConfigResult> => {
     const isSentinelUpsell = [SHARED_UPSELL_PATHS.SENTINEL, MAIL_UPSELL_PATHS.PROTON_SENTINEL].some((path) =>
-        upsellRef?.includes(path)
+        data.upsellRef?.includes(path)
     );
-    const isComposerAssistantUpsell = upsellRef?.includes(MAIL_UPSELL_PATHS.ASSISTANT_COMPOSER);
+    const isComposerAssistantUpsell = data.upsellRef?.includes(MAIL_UPSELL_PATHS.ASSISTANT_COMPOSER);
 
     if (isComposerAssistantUpsell) {
-        return getUpsellModalComposerAssistantConfig(props);
+        return getUpsellModalComposerAssistantConfig(data);
     } else if (isSentinelUpsell) {
-        return getUpsellModalProtonSentinelConfig(props);
-    } else if (user.isFree) {
-        return getUpsellModalFreeUserConfig(props);
+        return getUpsellModalProtonSentinelConfig(data);
+    } else if (data.user.isFree) {
+        return getUpsellModalFreeUserConfig(data);
     }
 
-    return getUpsellModalDefaultConfig(props);
+    return getUpsellModalDefaultConfig(data);
 };

@@ -24,6 +24,7 @@ let paymentsApiMock: PaymentsApi = {
 };
 
 const NON_MAIN_CURRENCY_MOCK_AMOUNT = 12;
+const NON_MAIN_CURRENCY_MOCK_AMOUNT_WITHOUT_DISCOUNT = 20;
 const MAIN_CURRENCY_MONTHLY_MAIL_PLUS_AMOUNT = 8;
 
 async function setupTest(currency: Currency) {
@@ -31,9 +32,11 @@ async function setupTest(currency: Currency) {
     paymentsApiMock.checkWithAutomaticVersion.mockResolvedValue({
         AmountDue: NON_MAIN_CURRENCY_MOCK_AMOUNT,
     });
+
     // @ts-expect-error - mock of checkout call
     jest.spyOn(checkoutModule, 'getCheckout').mockReturnValue({
         withDiscountPerCycle: NON_MAIN_CURRENCY_MOCK_AMOUNT,
+        withoutDiscountPerCycle: NON_MAIN_CURRENCY_MOCK_AMOUNT_WITHOUT_DISCOUNT,
     });
 
     const config = await getUpsellModalFreeUserConfig({
@@ -123,6 +126,7 @@ describe('getUpsellModalFreeUserConfig', () => {
         expect(footerText[0]).toBe('The discounted price of ');
         expect(footerText[1].props.children).toBe(NON_MAIN_CURRENCY_MOCK_AMOUNT);
         expect(footerText[2]).toBe(' is valid for the first month. Then it will automatically be renewed at ');
-        expect(footerText[3].props.children).toBe(NON_MAIN_CURRENCY_MOCK_AMOUNT);
+        // The second pricing displayed in the footer text is the regular price, not the coupon price
+        expect(footerText[3].props.children).toBe(NON_MAIN_CURRENCY_MOCK_AMOUNT_WITHOUT_DISCOUNT);
     });
 });
