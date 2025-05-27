@@ -461,13 +461,13 @@
         "Адключыць фразу аднаўлення?"
       ],
       "Discard": [
-        "Адхіліць"
-      ],
-      "Discard Changes": [
-        "Адхіліць змены"
+        "Скасаваць"
       ],
       "Discard changes": [
-        "Адхіліць змены"
+        "Скасаваць змены"
+      ],
+      "Discard Changes": [
+        "Скасаваць змены"
       ],
       "Discover ${ planName }": [
         "Знаёмства з ${ planName }"
@@ -781,10 +781,10 @@
       "Keep": [
         "Пакінуць"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Працягнуць рэдагаванне"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Працягнуць рэдагаванне"
       ],
       "Keep logo": [
@@ -970,11 +970,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "Refresh the page": [
-        "Абнавіць старонку"
-      ],
       "refresh the page": [
         "абнавіць старонку"
+      ],
+      "Refresh the page": [
+        "Абнавіць старонку"
       ],
       "Reject": [
         "Адхіліць"
@@ -1507,9 +1507,6 @@
       ]
     },
     "Action in trial plan": {
-      "No, thanks": [
-        "Не, дзякуй"
-      ],
       "Try free for 30 days": [
         "Паспрабуйце бясплатна на працягу 30 дзён"
       ]
@@ -1779,11 +1776,6 @@
         "Бягучы сеанс"
       ]
     },
-    "Baseline in trial plan": {
-      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "${ mailPlus }: пошта і каляндар з акцэнтам на прыватнасць, як рашэнне для штодзённых задач камунікацыі."
-      ]
-    },
     "bf2023: Action": {
       "Become a Visionary": [
         "Атрымаць тарыфны план Visionary"
@@ -1802,9 +1794,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } прасторы ў сховішчы"
-      ],
       "1 user": [
         "1 карыстальнік"
       ],
@@ -3891,7 +3880,7 @@
     },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
-        "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дазваляе вам працаваць разам з іншымі ўдзельнікамі ў бяспечным зашыфраваным асяроддзі."
+        "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дазваляе вам працаваць разам з іншымі ўдзельнікамі ў бяспечным і зашыфраваным асяроддзі."
       ],
       "${ MAIL_APP_NAME } is not your default mail application.": [
         "${ MAIL_APP_NAME } не з'яўляецца вашай прадвызначанай паштовай праграмай."
@@ -6851,11 +6840,6 @@
         "Ёсць падпіска"
       ]
     },
-    "Heading in trial plan": {
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Паспрабуйце лепшы з ${ MAIL_APP_NAME } бясплатна"
-      ]
-    },
     "Headline": {
       "Compare plans": [
         "Параўнанне тарыфных планаў"
@@ -7609,9 +7593,6 @@
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Запрасіце сяброў у ${ BRAND_NAME }"
       ],
-      "10 email addresses": [
-        "10 адрасоў электроннай пошты"
-      ],
       "2. They try ${ planName }": [
         "2. Яны спрабуюць ${ planName }"
       ],
@@ -7669,11 +7650,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Актывуйце прынамсі адзін спосаб аднаўлення даных, каб вы і далей былі перакананы, што маеце доступ да змесціва свайго ўліковага запісу ${ BRAND_NAME } у выпадку страты пароля."
       ],
-      "Active": [
-        "Актыўна"
-      ],
       "active": [
         "актыўна"
+      ],
+      "Active": [
+        "Актыўна"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Дадайце да вашага ўліковага запісу адрас электроннай пошты @pm.me. Гэта просты і кароткі дамен, які азначае \"${ MAIL_APP_NAME } me\" або \"Private Message me.\""
@@ -7856,10 +7837,10 @@
         "Вы сапраўды хочаце выдаліць гэту метку?"
       ],
       "Are you sure you want to discard your changes?": [
-        "Вы сапраўды хочаце адхіліць змены?"
+        "Вы сапраўды хочаце скасаваць змены?"
       ],
       "Are you sure you want to discard your import?": [
-        "Вы сапраўды хочаце адхіліць імпартаванне?"
+        "Вы сапраўды хочаце скасаваць імпартаванне?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Вы сапраўды хочаце даць гэтаму карыстальніку прывілеі адміністратара?"
@@ -8134,11 +8115,11 @@
       "Data recoverable on this device": [
         "Даныя, якія можна аднавіць на гэтай прыладзе"
       ],
-      "dedicated servers": [
-        "вылучаныя серверы"
-      ],
       "Dedicated servers": [
         "Вылучаныя серверы"
+      ],
+      "dedicated servers": [
+        "вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -8977,9 +8958,6 @@
       "No countries enabled": [
         "Няма ўключаных краін"
       ],
-      "No credit card required": [
-        "Крэдытная картка не патрабуецца"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Не зададзены спосаб аднаўлення вашых даных і гэта азначае, што вы можаце страціць доступ да іх"
       ],
@@ -9271,9 +9249,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Кошт уключае ўсе падыходзячыя (не пратэрмінаваныя) купоны, якія захаваны ў вашым уліковым запісе."
       ],
-      "Priority support": [
-        "Прыярытэтная падтрымка"
-      ],
       "Promotion expired": [
         "Рэкламная акцыя пратэрмінавана"
       ],
@@ -9562,9 +9537,6 @@
       "Storage for users": [
         "Сховішча для карыстальнікаў"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
-      ],
       "Storage used by this user": [
         "Сховішча, выкарыстанае гэтым карыстальнікам"
       ],
@@ -9588,9 +9560,6 @@
       ],
       "Summary": [
         "Зводка"
-      ],
-      "Support for 1 custom email domain": [
-        "Падтрымка для 1 карыстальніцкага дамена электроннай пошты"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Неўзабаве з'явіцца падтрымка назірання карыстальніцкіх даменаў і адрасоў электроннай пошты, якія не належаць да ${ BRAND_NAME }."
@@ -9972,12 +9941,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Пакуль вы не выйдзеце са свайго ўліковага запісу або не зменіце свой пароль, ваш сеанс будзе актыўным. Сеансы спыняюцца праз 60 дзён бяздзейнасці."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Неабмежаваная колькасць папак, метак і фільтраў"
-      ],
-      "Unlimited messages": [
-        "Неабмежаваная колькасць паведамленняў"
       ],
       "Unsaved changes": [
         "Незахаваныя змены"
@@ -10892,7 +10855,7 @@
         "Выдаліць незваротна"
       ],
       "Discard draft": [
-        "Адхіліць чарнавік"
+        "Скасаваць чарнавік"
       ],
       "Expand / contract composer": [
         "Разгарнуць / сціснуць рэдактар"
@@ -11286,10 +11249,10 @@
       "Amount due": [
         "Да аплаты"
       ],
-      "AND": [
+      "And": [
         "І"
       ],
-      "And": [
+      "AND": [
         "І"
       ],
       "and": [
@@ -11718,11 +11681,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "КАЛІ"
-      ],
       "If": [
         "Калі"
+      ],
+      "IF": [
+        "КАЛІ"
       ],
       "Import all messages": [
         "Імпартаваць усе паведамленні"
@@ -11931,14 +11894,14 @@
       "Optional": [
         "Неабавязкова"
       ],
-      "OR": [
-        "АБО"
-      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
+      ],
+      "OR": [
+        "АБО"
       ],
       "Organization name": [
         "Назва арганізацыі"
@@ -14722,6 +14685,17 @@
         "Працоўны стол"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Кожнаму"
+      ],
+      "Group members": [
+        "Удзельнікі групы"
+      ],
+      "No one": [
+        "Нікому"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10-ае чысло месяца"
@@ -14958,17 +14932,6 @@
         "Сметніца"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Кожнаму"
-      ],
-      "Group members": [
-        "Удзельнікі групы"
-      ],
-      "No one": [
-        "Нікому"
-      ]
-    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 секунд"
@@ -15148,7 +15111,7 @@
     },
     "pass_signup_2023: Action": {
       "Buy now": [
-        "Купіць зараз"
+        "Купіць"
       ],
       "Continue": [
         "Працягнуць"
@@ -18072,47 +18035,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
@@ -18413,6 +18335,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -19431,7 +19394,7 @@
         "Адключыць двухфактарную аўтэнтыфікацыю?"
       ],
       "Discard changes?": [
-        "Адхіліць змены?"
+        "Скасаваць змены?"
       ],
       "Display name and signature": [
         "Бачнае імя і подпіс"
@@ -19620,7 +19583,7 @@
         "Для Windows"
       ],
       "Forgot password": [
-        "Забылі пароль"
+        "Забыты пароль"
       ],
       "Forgot recovery method": [
         "Забылі спосаб аднаўлення"
