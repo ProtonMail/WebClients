@@ -26,7 +26,7 @@ export const getUpsellModalDefaultConfig: UpsellModalConfigCase = async (props) 
         footerText: getUpsellModalFooterText({
             planIDs,
             currency,
-            monthlyPrice,
+            monthlyPrice: monthlyPrice.regularPrice,
         }),
         submitText: getUpsellModalSubmitText({
             planIDs,

@@ -18,21 +18,23 @@ jest.mock('@proton/account/member');
 jest.mock('../../modals/ComposerAssistantUpsellModal.helpers');
 jest.mock('@proton/shared/lib/organization/helper');
 jest.mock('@proton/components/hooks/assistant/assistantUpsellConfig');
-let fakeDispatch = (result: unknown) => Promise.resolve(result);
+const fakeDispatch = (result: unknown) => Promise.resolve(result);
 
-let organisationThunkMock = jest.fn();
-let memberThunkMock = jest.fn();
-let getIsB2CUserAbleToRunScribeMock = jest.fn();
-let getIsOrganizationUserMock = jest.fn();
-let getIsSuperAdminMock = jest.fn();
+const organisationThunkMock = jest.fn();
+const memberThunkMock = jest.fn();
+const getIsB2CUserAbleToRunScribeMock = jest.fn();
+const getIsOrganizationUserMock = jest.fn();
+const getIsSuperAdminMock = jest.fn();
+
 // @ts-expect-error - mock
-let paymentsApiMock: PaymentsApi = {
+const paymentsApiMock: PaymentsApi = {
     checkWithAutomaticVersion: jest.fn(),
 };
 
-let getAssistantUpsellConfigPlanAndCycleMock = jest.fn();
+const getAssistantUpsellConfigPlanAndCycleMock = jest.fn();
 
-let NON_MAIN_CURRENCY_MOCK_AMOUNT = 20 * 12;
+const NON_MAIN_CURRENCY_MOCK_AMOUNT = 20 * 12;
+const NON_MAIN_CURRENCY_MOCK_AMOUNT_WITHOUT_DISCOUNT = 30 * 12;
 
 const PROTON_DUO_YEARLY_PRICE = 100;
 
@@ -72,6 +74,7 @@ async function setupTest(currency: Currency, userType: 'B2C' | 'B2B', isOrgAdmin
     // @ts-expect-error - mock of checkout call
     jest.spyOn(checkoutModule, 'getCheckout').mockReturnValue({
         withDiscountPerCycle: NON_MAIN_CURRENCY_MOCK_AMOUNT,
+        withoutDiscountPerCycle: NON_MAIN_CURRENCY_MOCK_AMOUNT_WITHOUT_DISCOUNT,
     });
 
     const config = await getUpsellModalComposerAssistantConfig({
@@ -114,7 +117,7 @@ describe('getUpsellModalComposerAssistantConfig', () => {
     });
 
     describe('B2C users', () => {
-        it('When main currency it should return correct config', async () => {
+        it('B2C users - When main currency it should return correct config', async () => {
             const { config } = await setupTest('USD', 'B2C');
 
             // Check that the organization and member thunks are called once
@@ -135,7 +138,7 @@ describe('getUpsellModalComposerAssistantConfig', () => {
             expect(footerText[1].props.children).toBe(PROTON_DUO_YEARLY_PRICE / 12);
         });
 
-        it('When non main currency it should return correct config', async () => {
+        it('B2C users - When non main currency it should return correct config', async () => {
             const { config } = await setupTest('BRL', 'B2C');
 
             // Check that the organization and member thunks are called once
@@ -153,12 +156,13 @@ describe('getUpsellModalComposerAssistantConfig', () => {
             const footerText = config.footerText as any;
             expect(footerText).not.toBeNull();
             expect(footerText[1].props.currency).toBe('BRL');
-            expect(footerText[1].props.children).toBe(NON_MAIN_CURRENCY_MOCK_AMOUNT / 12);
+            // The second pricing displayed in the footer text is the regular price, not the coupon price
+            expect(footerText[1].props.children).toBe(NON_MAIN_CURRENCY_MOCK_AMOUNT_WITHOUT_DISCOUNT / 12);
         });
     });
 
     describe('B2B org users', () => {
-        it('When main currency it should return correct config', async () => {
+        it('B2B org users - When main currency it should return correct config', async () => {
             const { config } = await setupTest('USD', 'B2B');
 
             // Check that the organization and member thunks are called once
@@ -180,7 +184,7 @@ describe('getUpsellModalComposerAssistantConfig', () => {
             expect(config.footerText).toBeNull();
         });
 
-        it('When non main currency it should return correct config', async () => {
+        it('B2B org users - When non main currency it should return correct config', async () => {
             const { config } = await setupTest('BRL', 'B2B');
 
             // Check that the organization and member thunks are called once
@@ -204,7 +208,7 @@ describe('getUpsellModalComposerAssistantConfig', () => {
     });
 
     describe('B2B org admin users', () => {
-        it('When main currency it should return correct config', async () => {
+        it('B2B org admin users - When main currency it should return correct config', async () => {
             const { config } = await setupTest('USD', 'B2B', true);
 
             // Check that the organization and member thunks are called once
@@ -224,7 +228,7 @@ describe('getUpsellModalComposerAssistantConfig', () => {
             expect(config.footerText).toBeNull();
         });
 
-        it('When non main currency it should return correct config', async () => {
+        it('B2B org admin users - When non main currency it should return correct config', async () => {
             const { config } = await setupTest('BRL', 'B2B');
 
             // Check that the organization and member thunks are called once
