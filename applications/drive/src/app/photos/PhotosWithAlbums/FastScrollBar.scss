@@ -35,6 +35,17 @@ $fast-scroll-dot-diameter: 2px;
 	&.is-scrolling {
 		opacity: 1;
 		transition-delay: 0s;
+
+		&:hover {
+			+ .scrollbar-thumb {
+				opacity: 0;
+			}
+		}
+
+		+ .scrollbar-thumb {
+			opacity: 1;
+			transition-delay: 0s;
+		}
 	}
 
 	&:hover {
@@ -67,11 +78,6 @@ $fast-scroll-dot-diameter: 2px;
 			opacity 0.2s ease,
 			inset-block-start 0.2s ease;
 		transition-delay: 2s;
-	}
-
-	&.is-scrolling + .scrollbar-thumb {
-		opacity: 1;
-		transition-delay: 0s;
 	}
 }
 
