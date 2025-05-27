@@ -211,6 +211,9 @@
       "Copy address": [
         "Copiar endereço"
       ],
+      "Copy alias “${ name }”": [
+        "Copiar o alias «${ name }»"
+      ],
       "Copy as markdown": [
         "Copiar como markdown"
       ],
@@ -515,9 +518,6 @@
       ],
       "New message": [
         "Nova mensagem"
-      ],
-      "New sheet": [
-        "Nova planilha"
       ],
       "Next": [
         "Próximo"
@@ -6708,6 +6708,17 @@
         "Velocidade média de VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planos a partir de ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Excluir conta"
@@ -6729,17 +6740,6 @@
       ],
       "Switch plan": [
         "Mudar de plano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planos a partir de ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
       ]
     },
     "new_plans: feature": {
@@ -9163,6 +9163,25 @@
         "Por ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de armazenamento por usuário"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } oferece todos os aplicativos, recursos, acesso antecipado a novos lançamentos, e tudo que você precisa para controlar seus dados e segurança."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domínio de e-mail personalizado",
+        "${ planNumberOfDomains } domínios de e-mail personalizados"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } endereço de e-mail",
+        "${ planNumberOfEmails } endereços de e-mail"
+      ],
+      "Folders, labels, and custom filters": [
+        "Pastas, marcadores e filtros personalizados"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "Armazenamento de 15 GB"
@@ -9202,25 +9221,6 @@
       ],
       "Your privacy is our mission": [
         "Sua privacidade é a nossa missão"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } de armazenamento por usuário"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } oferece todos os aplicativos, recursos, acesso antecipado a novos lançamentos, e tudo que você precisa para controlar seus dados e segurança."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } domínio de e-mail personalizado",
-        "${ planNumberOfDomains } domínios de e-mail personalizados"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } endereço de e-mail",
-        "${ planNumberOfEmails } endereços de e-mail"
-      ],
-      "Folders, labels, and custom filters": [
-        "Pastas, marcadores e filtros personalizados"
       ]
     },
     "Subscription renewal state": {

@@ -213,6 +213,9 @@
       "Copy address": [
         "Капіяваць адрас"
       ],
+      "Copy alias “${ name }”": [
+        "Капіяваць псеўданім “${ name }”"
+      ],
       "Copy as markdown": [
         "Капіяваць як markdown"
       ],
@@ -298,7 +301,7 @@
         "Зняць выбар з усіх"
       ],
       "Discard": [
-        "Адхіліць"
+        "Скасаваць"
       ],
       "Dismiss": [
         "Адхіліць"
@@ -521,9 +524,6 @@
       ],
       "New message": [
         "Новае паведамленне"
-      ],
-      "New sheet": [
-        "Новы аркуш"
       ],
       "Next": [
         "Далей"
@@ -2368,7 +2368,7 @@
     },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
-        "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дазваляе вам працаваць разам з іншымі ўдзельнікамі ў бяспечным зашыфраваным асяроддзі."
+        "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дазваляе вам працаваць разам з іншымі ўдзельнікамі ў бяспечным і зашыфраваным асяроддзі."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс з дапамогай адмысловага кругласутачнага назірання падазроных дзеянняў. Гэты сэрвіс таксама прадугледжвае перадачу спецыялістам па бяспецы."
@@ -4279,7 +4279,7 @@
         "Любы чалавек з гэтай спасылкай зможа атрымаць доступ да вашай папкі."
       ],
       "Are you sure you want to discard your import?": [
-        "Вы сапраўды хочаце адхіліць імпартаванне?"
+        "Вы сапраўды хочаце скасаваць імпартаванне?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Вы сапраўды хочаце ачысціць сметніцу і незваротна выдаліць усе элементы?"
@@ -6715,6 +6715,17 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Тарыфныя планы, якія пачынаюцца з ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -6736,17 +6747,6 @@
       ],
       "Switch plan": [
         "Змяніць тарыфны план"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Тарыфныя планы, якія пачынаюцца з ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
       ]
     },
     "new_plans: feature": {
@@ -9307,6 +9307,29 @@
         "За ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Аб'ём сховішча на карыстальніка: ${ planMaxSpace }"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } дае магчымасць карыстацца ўсімі праграмамі і функцыямі, а таксама атрымаць ранні доступ да нашых новых выпускаў і ўсё неабходнае, каб кантраляваць свае даныя і іх бяспеку."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } карыстальніцкі дамен электроннай пошты",
+        "${ planNumberOfDomains } карыстальніцкія дамены электроннай пошты",
+        "${ planNumberOfDomains } карыстальніцкіх даменаў электроннай пошты",
+        "${ planNumberOfDomains } карыстальніцкіх даменаў электроннай пошты"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } адрас электроннай пошты",
+        "${ planNumberOfEmails } адрасы электроннай пошты",
+        "${ planNumberOfEmails } адрасоў электроннай пошты",
+        "${ planNumberOfEmails } адрасоў электроннай пошты"
+      ],
+      "Folders, labels, and custom filters": [
+        "Папкі, меткі і карыстальніцкія фільтры"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 ГБ сховішча"
@@ -9346,29 +9369,6 @@
       ],
       "Your privacy is our mission": [
         "Ваша прыватнасць з'яўляецца нашай місіяй"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Аб'ём сховішча на карыстальніка: ${ planMaxSpace }"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } дае магчымасць карыстацца ўсімі праграмамі і функцыямі, а таксама атрымаць ранні доступ да нашых новых выпускаў і ўсё неабходнае, каб кантраляваць свае даныя і іх бяспеку."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } карыстальніцкі дамен электроннай пошты",
-        "${ planNumberOfDomains } карыстальніцкія дамены электроннай пошты",
-        "${ planNumberOfDomains } карыстальніцкіх даменаў электроннай пошты",
-        "${ planNumberOfDomains } карыстальніцкіх даменаў электроннай пошты"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } адрас электроннай пошты",
-        "${ planNumberOfEmails } адрасы электроннай пошты",
-        "${ planNumberOfEmails } адрасоў электроннай пошты",
-        "${ planNumberOfEmails } адрасоў электроннай пошты"
-      ],
-      "Folders, labels, and custom filters": [
-        "Папкі, меткі і карыстальніцкія фільтры"
       ]
     },
     "Subscription renewal state": {
@@ -9818,10 +9818,10 @@
         "Для камп'ютара"
       ],
       "Discard": [
-        "Адхіліць"
+        "Скасаваць"
       ],
       "Discard changes?": [
-        "Адхіліць змены?"
+        "Скасаваць змены?"
       ],
       "Docs": [
         "Дакументы"
