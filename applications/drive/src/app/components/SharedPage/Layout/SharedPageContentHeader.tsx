@@ -58,6 +58,7 @@ export function SharedPageContentHeader({
     const hasOnlyDocuments =
         (items.length > 0 && items.every((item) => item.isFile && isProtonDocument(item.mimeType))) ||
         (selectedItems.length > 0 && selectedItems.every((item) => item.isFile && isProtonDocument(item.mimeType)));
+    const sharedBy = rootLink.signatureEmail;
 
     return (
         <div className={clsx('flex w-full justify-space-between gap-4', className)}>
@@ -80,7 +81,7 @@ export function SharedPageContentHeader({
                     {rootLink.signatureEmail && (
                         // translator: Text will be like: Shared by eric.norbert@pm.me
                         <>
-                            <span>{c('Info').t`Shared by ${rootLink.signatureEmail}`}</span>
+                            <span>{c('Info').t`Shared by ${sharedBy}`}</span>
                             <i
                                 className="mx-2 w-custom h-custom rounded-full bg-strong"
                                 aria-hidden="true"
