@@ -27,10 +27,10 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
                 label: c('Label').t`API Credential`,
                 icon: 'code',
                 fields: [
-                    { label: 'API Key', type: 'hidden' },
-                    { label: 'Secret', type: 'hidden' },
-                    { label: 'Expiry Date', type: 'timestamp' },
-                    { label: 'Permissions', type: 'text' },
+                    { label: c('Label').t`API Key`, type: 'hidden' },
+                    { label: c('Label').t`Secret`, type: 'hidden' },
+                    { label: c('Label').t`Expiry Date`, type: 'timestamp' },
+                    { label: c('Label').t`Permissions`, type: 'text' },
                 ],
             },
             {
@@ -38,11 +38,11 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
                 label: c('Label').t`Database`,
                 icon: 'storage',
                 fields: [
-                    { label: 'Host', type: 'text' },
-                    { label: 'Port', type: 'text' },
-                    { label: 'Username', type: 'text' },
-                    { label: 'Password', type: 'hidden' },
-                    { label: 'Database Type', type: 'text' },
+                    { label: c('Label').t`Host`, type: 'text' },
+                    { label: c('Label').t`Port`, type: 'text' },
+                    { label: c('Label').t`Username`, type: 'text' },
+                    { label: c('Label').t`Password`, type: 'hidden' },
+                    { label: c('Label').t`Database Type`, type: 'text' },
                 ],
             },
             {
@@ -50,11 +50,11 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
                 label: c('Label').t`Server`,
                 icon: 'servers',
                 fields: [
-                    { label: 'IP Address', type: 'text' },
-                    { label: 'Hostname', type: 'text' },
-                    { label: 'Operating System', type: 'text' },
-                    { label: 'Username', type: 'text' },
-                    { label: 'Password', type: 'hidden' },
+                    { label: c('Label').t`IP Address`, type: 'text' },
+                    { label: c('Label').t`Hostname`, type: 'text' },
+                    { label: c('Label').t`Operating System`, type: 'text' },
+                    { label: c('Label').t`Username`, type: 'text' },
+                    { label: c('Label').t`Password`, type: 'hidden' },
                 ],
             },
             {
@@ -62,10 +62,10 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
                 label: c('Label').t`Software license`,
                 icon: 'file-lines',
                 fields: [
-                    { label: 'License Key', type: 'hidden' },
-                    { label: 'Product', type: 'text' },
-                    { label: 'Expiry Date', type: 'timestamp' },
-                    { label: 'Owner', type: 'text' },
+                    { label: c('Label').t`License Key`, type: 'hidden' },
+                    { label: c('Label').t`Product`, type: 'text' },
+                    { label: c('Label').t`Expiry Date`, type: 'timestamp' },
+                    { label: c('Label').t`Owner`, type: 'text' },
                 ],
             },
             /**
