@@ -240,6 +240,9 @@
       "Copy address": [
         "Copiere adresă"
       ],
+      "Copy alias “${ name }”": [
+        "Copiază aliasul „${ name }”"
+      ],
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
       ],
@@ -4653,6 +4656,9 @@
       "Anyone with this link can access your folder.": [
         "Oricine are această legătură web vă poate accesa folderul."
       ],
+      "Apr": [
+        "Apr"
+      ],
       "Are you sure you want to discard your changes?": [
         "Sigur doriți să renunțați la modificări?"
       ],
@@ -4679,6 +4685,9 @@
       ],
       "Attention required": [
         "Necesită atenție"
+      ],
+      "Aug": [
+        "Aug"
       ],
       "Automated Recovery ${ formattedDate }": [
         "Recuperare automată ${ formattedDate }"
@@ -4827,6 +4836,9 @@
       ],
       "Custom email domains": [
         "Domenii personale e-mail"
+      ],
+      "Dec": [
+        "Dec"
       ],
       "Decrypting files": [
         "Decriptare fișiere"
@@ -4978,6 +4990,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "A eșuat deschiderea unei legături web securizate. Motivul este: ${ error }"
+      ],
+      "Feb": [
+        "Feb"
       ],
       "File \"${ name }\" was deleted during download": [
         "Fișierul „${ name }” a fost șters în timpul descărcării."
@@ -5149,8 +5164,17 @@
       "It’s easy and secure": [
         "Este ușor și sigur"
       ],
+      "Jan": [
+        "Ian"
+      ],
       "JCB logo": [
         "Logo JCB"
+      ],
+      "Jul": [
+        "Iul"
+      ],
+      "Jun": [
+        "Iun"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Doar confirmați selecția aleasă, restul se va face automat."
@@ -5215,6 +5239,9 @@
       "Makes your account safer": [
         "Vă face contul mai sigur"
       ],
+      "Mar": [
+        "Mar"
+      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
@@ -5222,6 +5249,9 @@
         "Maxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracter",
         "Maxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caractere",
         "Maxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } de caractere"
+      ],
+      "May": [
+        "Mai"
       ],
       "Medium Priority": [
         "Prioritate medie"
@@ -5298,11 +5328,17 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Observație: este posibil ca datele să fie încă disponibile local pe dispozitivele pe care ați instalat ${ DRIVE_APP_NAME }."
       ],
+      "Nov": [
+        "Noi"
+      ],
       "Number of dedicated servers in the organization": [
         "Număr servere dedicate din organizație"
       ],
       "Numbers": [
         "Cifre"
+      ],
+      "Oct": [
+        "Oct"
       ],
       "of": [
         "din"
@@ -5583,6 +5619,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selectați calendarul de importat. Va fi creat un calendar pentru fiecare calendar importat în limita calendarelor disponibile în plan."
+      ],
+      "Sep": [
+        "Sep"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Momentan, plățile prin SEPA nu sunt disponibile. Reîncercați mai târziu."
@@ -10234,47 +10273,6 @@
         "Pentru ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
@@ -10539,6 +10537,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {

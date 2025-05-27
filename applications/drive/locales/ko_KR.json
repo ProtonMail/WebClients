@@ -111,6 +111,9 @@
       "Attention required": [
         "주의 필요"
       ],
+      "Authenticate": [
+        "인증"
+      ],
       "Back": [
         "이전"
       ],
@@ -230,6 +233,9 @@
       ],
       "Copy address": [
         "주소 복사"
+      ],
+      "Copy alias “${ name }”": [
+        "별칭 \"${ name }\" 복사"
       ],
       "Copy email to clipboard": [
         "클립보드에 이메일 복사"
@@ -422,6 +428,9 @@
       ],
       "Fit to window": [
         "창에 맞게"
+      ],
+      "Forgot password?": [
+        "비밀번호를 잊어버리셨나요?"
       ],
       "Forward as attachment": [
         "첨부 파일로 전달"
@@ -972,6 +981,9 @@
       "Take a tour": [
         "둘러보기"
       ],
+      "This album is empty": [
+        "이 앨범은 비어 있습니다"
+      ],
       "Toggle Calendar app": [
         "캘린더 앱 열기/닫기"
       ],
@@ -1062,8 +1074,14 @@
       "Use a different payment method": [
         "다른 결제 수단 사용하기"
       ],
+      "Use authentication code": [
+        "인증 코드 사용"
+      ],
       "Use for sending": [
         "발신에 사용"
+      ],
+      "Use recovery code": [
+        "복구 코드 사용"
       ],
       "Verify": [
         "인증"
@@ -3747,6 +3765,24 @@
         "무제한 hide-my-email 별칭"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "사용자의 보안 키 인증에 문제가 발생했습니다. 나중에 다시 시도하세요."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입해 주세요."
+      ],
+      "Security key": [
+        "보안 키"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "보안 키"
+      ]
+    },
     "file size format": {
       "byte": [
         "바이트"
@@ -4472,6 +4508,9 @@
       "Anyone with this link can access your folder.": [
         "링크를 가지고 있는 모든 사람이 폴더를 볼 수 있습니다."
       ],
+      "Apr": [
+        "4월"
+      ],
       "Are you sure you want to discard your changes?": [
         "사용자의 변경사항을 취소하시겠습니까?"
       ],
@@ -4498,6 +4537,9 @@
       ],
       "Attention required": [
         "주의 필요"
+      ],
+      "Aug": [
+        "8월"
       ],
       "Automated Recovery ${ formattedDate }": [
         "자동 복구 ${ formattedDate }"
@@ -4643,6 +4685,9 @@
       "Custom email domains": [
         "사용자 지정 이메일 도메인"
       ],
+      "Dec": [
+        "12월"
+      ],
       "Decrypting files": [
         "파일 복호화 중"
       ],
@@ -4712,6 +4757,9 @@
       "Duplicate key updated": [
         "중복 키 업데이트됨"
       ],
+      "Each code can only be used once": [
+        "각각의 코드는 한 번만 사용할 수 있습니다."
+      ],
       "Edit email address": [
         "이메일 주소 변경"
       ],
@@ -4748,11 +4796,20 @@
       "Enter password": [
         "비밀번호 입력"
       ],
+      "Enter the code from your authenticator app": [
+        "인증 앱에서 코드를 입력하세요."
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "가져오기를 원하는 이메일 계정의 계정 정보를 입력하세요."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText }(으)로 인증 코드가 전송되었습니다."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "인증 코드를 입력하세요. ${ digit }자리입니다."
+      ],
+      "Enter your own password (as organization admin).": [
+        "사용자의 비밀번호 입력 (조직 관리자와 같음)"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "남은 예상 시간: ${ estimatedMinutes }분"
@@ -4777,6 +4834,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "보안 링크 열기 실패. 사유: ${ error }"
+      ],
+      "Feb": [
+        "2월"
       ],
       "File \"${ name }\" was deleted during download": [
         "파일 \"${ name }\"는 다은로드 도중 삭제되었습니다"
@@ -4946,8 +5006,17 @@
       "It’s easy and secure": [
         "쉽고 안전합니다"
       ],
+      "Jan": [
+        "1월"
+      ],
       "JCB logo": [
         "JCB 로고"
+      ],
+      "Jul": [
+        "7월"
+      ],
+      "Jun": [
+        "6월"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "선택만 확인하시면 나머지는 저희가 하겠습니다."
@@ -5012,11 +5081,17 @@
       "Makes your account safer": [
         "내 계정을 더 안전하게 만드세요"
       ],
+      "Mar": [
+        "3월"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 로고"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "최대 ${ MAX_SHARED_URL_PASSWORD_LENGTH }자"
+      ],
+      "May": [
+        "5월"
       ],
       "Medium Priority": [
         "중요도 보통"
@@ -5093,11 +5168,17 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "참고: ${ DRIVE_APP_NAME }를 설치한 기기에서는 데이터가 로컬에 저장됩니다."
       ],
+      "Nov": [
+        "11월"
+      ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
       ],
       "Numbers": [
         "숫자"
+      ],
+      "Oct": [
+        "10월"
       ],
       "of": [
         "/"
@@ -5375,6 +5456,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "불러올 캘린더를 선택하세요. 새 캘린더가 사용자 플랜의 가능한 한도 내에서 각각 생성됩니다."
       ],
+      "Sep": [
+        "9월"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA 결제 수단이 현재 지원되지 않습니다. 나중에 다시 시도해 주세요."
       ],
@@ -5404,6 +5488,9 @@
       ],
       "Shared": [
         "공유됨"
+      ],
+      "Shared by ": [
+        "다음에 의해 공유됨: "
       ],
       "Shared by ${ rootLink.signatureEmail }": [
         "${ rootLink.signatureEmail }님이 공유함"
@@ -5822,6 +5909,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "VPN에 연결하여 암호화 기술을 사용하여 IP 주소(기기에 할당된 고유 코드)를 숨길 수 있습니다."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "이중 인증을 설정하면, 인증 앱에 접근할 수 없을때 로그인시 사용할 수 없는 복구 코드를 제공해 드립니다."
+      ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "이(가) ${ formattedRevisionDate }의 버전으로 복구됩니다. 타 버전들이 여전히 저장됩니다."
       ],
@@ -6206,6 +6296,9 @@
       ],
       "Attach screenshot(s)": [
         "스크린샷 첨부"
+      ],
+      "Authenticator app": [
+        "인증 앱"
       ],
       "Beta Access": [
         "베타 참여"
@@ -6594,6 +6687,9 @@
       "Set recovery method": [
         "복구 방법 설정"
       ],
+      "Share a file, folder, or album": [
+        "파일, 폴더 및 앨범 공유"
+      ],
       "Shared": [
         "공유됨"
       ],
@@ -6734,6 +6830,9 @@
       ],
       "Your location": [
         "나의 위치"
+      ],
+      "Your password (admin)": [
+        "사용자의 비밀번호 (관리자)"
       ]
     },
     "Label for contact group color": {
@@ -6965,6 +7064,9 @@
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "사용자의 계정이 삭제될 수도 있습니다. 데이터 손실 방지를 위해서, 관리자에게 업그레이드를 문의하십시오. ${ cta }"
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "저장 공간이 가득 찼습니다. ${ BRAND_NAME } 제품을 계속 사용하려면 저장 공간을 비우거나 ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "구독이 종료되었습니다. 데이터 접근 권한 상실 방지를 위해 ${ cta }."
@@ -8242,6 +8344,9 @@
       "Access for the member removed": [
         "이 구성원의 접근이 삭제되었습니다."
       ],
+      "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
+        "잠긴 저장공간에 대한 조치를 취하여 새로운 앨범, 필터 등에 접근하세요. 지금 복원하거나 삭제하여 새로운 기능을 즉시 이용해 보세요."
+      ],
       "Access updated": [
         "접근 권한이 업데이트되었습니다"
       ],
@@ -8368,6 +8473,12 @@
       "Share invitation declined": [
         "캘린더 공유 거부됨"
       ],
+      "Some photo(s) could not be added to \"${ albumName }\"": [
+        "⁠일부 사진을 \"${ albumName }\"에 추가할 수 없습니다."
+      ],
+      "Some photo(s) could not be removed from ${ albumLink.name }": [
+        "${ albumLink.name }(에)서 일부 사진을 제거하지 못했습니다."
+      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "죄송합니다, 폴더가 비어있지 않아 삭제할 수 없습니다."
       ],
@@ -8412,6 +8523,9 @@
       ],
       "Your photo(s) have been added to \"${ albumName }\"": [
         "사진이 \"${ albumName }\"에 추가되었습니다."
+      ],
+      "Your photo(s) have been removed from ${ albumLink.name }": [
+        "사진이 ${ albumLink.name }(에)서 제거되었습니다."
       ],
       "Your settings failed to be saved": [
         "설정을 저장하지 못했습니다"
@@ -9800,47 +9914,6 @@
         "${ totalPrice }용"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "저장공간 15GB"
-      ],
-      "and 15 more premium features": [
-        "그리고 15개의 프리미엄 기능"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "자동 이메일 포워딩 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "데이터 침해 경고 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
-      ],
-      "No ads or tracking": [
-        "광고나 트래킹이 없습니다"
-      ],
-      "Short @pm.me email address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Support our mission": [
-        "저희의 사명을 지원해주세요"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade your productivity": [
-        "생산성을 업그레이드하세요"
-      ],
-      "We don't sell your data": [
-        "당사는 사용자의 데이터를 판매하지 않습니다"
-      ],
-      "Your privacy is our mission": [
-        "당신의 프라이버시는 저희의 사명입니다"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "프리미엄 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ VPN_SHORT_APP_NAME }"
@@ -10093,6 +10166,47 @@
       ],
       "Your own short @pm.me email alias": [
         "사용자의 @pm.me 이메일 별칭"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "당사는 사용자의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription renewal state": {
@@ -10710,6 +10824,9 @@
       "Enter 2FA code": [
         "2단계 인증 코드 입력"
       ],
+      "Enter your password": [
+        "비밀번호를 입력하세요"
+      ],
       "Error": [
         "오류"
       ],
@@ -10835,6 +10952,9 @@
       ],
       "Network error": [
         "네트워크 오류"
+      ],
+      "Newsletters view": [
+        "뉴스레터 보기"
       ],
       "Night theme": [
         "야간 테마"
