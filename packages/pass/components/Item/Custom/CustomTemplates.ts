@@ -78,7 +78,10 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
                 label: c('Label').t`SSH key`,
                 icon: 'filing-cabinet',
                 type: 'sshKey',
-                fields: [],
+                fields: [
+                    { label: c('Label').t`Username`, type: 'text' },
+                    { label: c('Label').t`Host`, type: 'text' },
+                ],
             },
             {
                 label: c('Label').t`WiFi network`,
