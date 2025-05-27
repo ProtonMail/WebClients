@@ -1,4 +1,4 @@
-import { THUMBNAIL_MAX_SIDE } from '@proton/shared/lib/drive/constants';
+import { SupportedMimeTypes, THUMBNAIL_MAX_SIDE } from '@proton/shared/lib/drive/constants';
 import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 
@@ -38,5 +38,5 @@ export async function scaleSvgFile(file: Blob) {
         fileToScale = await setSvgSize(file, THUMBNAIL_MAX_SIDE);
     }
 
-    return scaleImageFile({ file: fileToScale }, isSafari() ? 'image/jpeg' : 'image/webp');
+    return scaleImageFile({ file: fileToScale }, isSafari() ? SupportedMimeTypes.jpg : SupportedMimeTypes.webp);
 }
