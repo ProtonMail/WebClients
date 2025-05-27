@@ -26,7 +26,7 @@ function useFileBrowserItem({
     const selection = useSelection();
 
     // Timer for click and double click detection.
-    const clickTimerIdRef = useRef<NodeJS.Timeout | undefined>(undefined);
+    const clickTimerIdRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
     const touchStarted = useRef(false);
 
     const isSelected = selection?.isSelected(id);
