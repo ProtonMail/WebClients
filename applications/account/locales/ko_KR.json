@@ -187,6 +187,9 @@
       "Attention required": [
         "주의 필요"
       ],
+      "Authenticate": [
+        "인증"
+      ],
       "Authenticating": [
         "인증 중"
       ],
@@ -195,6 +198,9 @@
       ],
       "Back": [
         "이전"
+      ],
+      "Back to sign in": [
+        "로그인으로 이동"
       ],
       "Block": [
         "차단"
@@ -457,11 +463,11 @@
       "Discard": [
         "저장 안함"
       ],
-      "Discard Changes": [
-        "변경 내용 취소"
-      ],
       "Discard changes": [
         "변경사항 취소"
+      ],
+      "Discard Changes": [
+        "변경 내용 취소"
       ],
       "Discover ${ planName }": [
         "${ planName } 알아보기"
@@ -562,6 +568,9 @@
       "Edit users": [
         "사용자 편집"
       ],
+      "Emoji": [
+        "이모티콘"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } 활성화"
       ],
@@ -609,6 +618,9 @@
       ],
       "Font": [
         "글꼴"
+      ],
+      "Forgot password?": [
+        "비밀번호를 잊어버리셨나요?"
       ],
       "Forgot recovery method?": [
         "복구 방법을 잊으셨나요?"
@@ -769,11 +781,11 @@
       "Keep": [
         "보관"
       ],
-      "Keep Editing": [
-        "계속 편집하기"
-      ],
       "Keep editing": [
         "계속 수정하기"
+      ],
+      "Keep Editing": [
+        "계속 편집하기"
       ],
       "Keep logo": [
         "로고 유지"
@@ -958,11 +970,11 @@
       "Refresh status": [
         "상태 새로고침"
       ],
-      "Refresh the page": [
-        "페이지 새로 고침"
-      ],
       "refresh the page": [
         "페이지 새로고침"
+      ],
+      "Refresh the page": [
+        "페이지 새로 고침"
       ],
       "Reject": [
         "거절"
@@ -1399,8 +1411,14 @@
       "Use a different payment method": [
         "다른 결제 수단 사용하기"
       ],
+      "Use authentication code": [
+        "인증 코드 사용"
+      ],
       "Use group sending permissions": [
         "그룹 발송 권한들 사용하기"
+      ],
+      "Use recovery code": [
+        "복구 코드 사용"
       ],
       "Use your current email instead": [
         "대신 현재 이메일 주소 사용하기"
@@ -1489,9 +1507,6 @@
       ]
     },
     "Action in trial plan": {
-      "No, thanks": [
-        "아니요, 괜찮아요"
-      ],
       "Try free for 30 days": [
         "30일간 무료 사용하기"
       ]
@@ -1538,6 +1553,9 @@
       ]
     },
     "Address action": {
+      "Allow unsigned mail": [
+        "서명되지 않은 메일 허용"
+      ],
       "Delete address": [
         "주소 삭제"
       ],
@@ -1746,11 +1764,6 @@
         "현재 세션"
       ]
     },
-    "Baseline in trial plan": {
-      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "${ mailPlus }: 프라이버시가 우선인 메일 그리고 당신의 모든 날의 커뮤니케이션 필요 솔루션에 맞춘 캘린더."
-      ]
-    },
     "bf2023: Action": {
       "Become a Visionary": [
         "Visionary가 되기"
@@ -1769,9 +1782,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "저장공간 ${ storageSize }"
-      ],
       "1 user": [
         "사용자 1명"
       ],
@@ -4364,6 +4374,9 @@
       "Try generating a new QR code.": [
         "새로운 QR 코드를 생성해 보세요."
       ],
+      "Using that device, open the ${ MAIL_APP_NAME } app and select **Settings**": [
+        "해당 기기에서 ${ MAIL_APP_NAME } 앱 중 아무거나 실행한 뒤 **설정**을 선택하세요."
+      ],
       "Works if you have another device that’s signed in to ${ BRAND_NAME }": [
         "${ BRAND_NAME }에 로그인한 다른 기기가 있는 경우 작동합니다."
       ],
@@ -6147,6 +6160,9 @@
       "Please disable 2FA via security key before disabling TOTP": [
         "TOTP를 비활성화 하기 전에 보안 키를 통한 2단계 인증을 먼저 비활성화 해주세요."
       ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "사용자의 보안 키 인증에 문제가 발생했습니다. 나중에 다시 시도하세요."
+      ],
       "Something went wrong registering your security key. Please try again.": [
         "사용자의 보안 키 추가에 문제가 발생했습니다. 나중에 다시 시도하세요."
       ]
@@ -6167,8 +6183,14 @@
       "Are you sure you want to delete security key ${ name }?": [
         "정말 ${ name } 보안 키를 지우시겠어요?"
       ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입해 주세요."
+      ],
       "Insert your security key into your device's USB port.": [
         "기기의 USB 포트에 보안 키를 삽입하세요."
+      ],
+      "Security key": [
+        "보안 키"
       ],
       "Security key removed": [
         "보안 키 삭제됨"
@@ -6195,6 +6217,9 @@
     "fido2: Label": {
       "Key name": [
         "키 이름"
+      ],
+      "Security key": [
+        "보안 키"
       ]
     },
     "fido2: Title": {
@@ -6699,11 +6724,6 @@
       ],
       "Subscribed": [
         "구독 중"
-      ]
-    },
-    "Heading in trial plan": {
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "최고의 ${ MAIL_APP_NAME }을 무료 체험 해보세요"
       ]
     },
     "Headline": {
@@ -7354,9 +7374,6 @@
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. 친구를 ${ BRAND_NAME }에 초대하세요."
       ],
-      "10 email addresses": [
-        "10개 이메일 주소"
-      ],
       "2. They try ${ planName }": [
         "2. 초대를 받은 사람이 ${ planName }(을)를 체험합니다."
       ],
@@ -7414,11 +7431,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "비밀번호를 분실한 경우 ${ BRAND_NAME } 계정의 콘텐츠에 계속 액세스할 수 있도록 적어도 하나의 데이터 복구 방법을 활성화하세요."
       ],
-      "Active": [
-        "활성"
-      ],
       "active": [
         "활성화"
+      ],
+      "Active": [
+        "활성"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "계정에 @pm.me 이메일 주소를 추가해 보세요. 더 간단하고 짧은 이 도메인은 \"${ MAIL_APP_NAME } me\" 또는 \"Private Message me\"를 의미합니다."
@@ -7849,10 +7866,10 @@
       "Data recoverable on this device": [
         "이 장치에서 데이터 복구 가능"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -7972,6 +7989,9 @@
       "Drop to import": [
         "드래그해서 불러오기"
       ],
+      "Each code can only be used once": [
+        "각각의 코드는 한 번만 사용할 수 있습니다."
+      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "각 도메인은 하나의 SPF (TXT) 레코드만 저장할 수 있습니다. 만약 SPF (TXT) 레코드를 계속 저장하고자 한다면, 현재 레코드에 ${ spf }을(를) 추가하실 수 있습니다. (나중에 ${ spfValue } 저장하세요.)"
       ],
@@ -8074,6 +8094,9 @@
       "Enter new password for user ${ userName }.": [
         "${ userName } 사용자의 새 비밀번호 입력"
       ],
+      "Enter the code from your authenticator app": [
+        "인증 앱에서 코드를 입력하세요."
+      ],
       "Enter the code sent to your phone number ${ phone }.": [
         "회원님의 전화번호 ${ phone }(으)로 전송된 코드를 입력해주세요."
       ],
@@ -8092,11 +8115,17 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText }(으)로 인증 코드가 전송되었습니다."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "인증 코드를 입력하세요. ${ digit }자리입니다."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "${ BRAND_NAME } 계정 상세 정보를 입력하세요."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "${ BRAND_NAME } 계정 이메일 주소 및 사용자 이름을 입력하세요."
+      ],
+      "Enter your own password (as organization admin).": [
+        "사용자의 비밀번호 입력 (조직 관리자와 같음)"
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "복구 이메일 주소를 입력하면 사용자 이름 또는 이메일 주소를 보내드립니다."
@@ -8668,9 +8697,6 @@
       "No countries enabled": [
         "활성화된 국가 없음"
       ],
-      "No credit card required": [
-        "신용 카드 필요 없음"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "데이터 복구 방법이 설정되지 않았어요. 데이터에 대한 액세스 권한을 잃을 수 있어요."
       ],
@@ -8946,9 +8972,6 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "가격에는 계정에 저장된 모든 적용 가능한 주기 기반 할인과 만료되지 않은 쿠폰이 포함되어 있습니다."
-      ],
-      "Priority support": [
-        "우선 지원"
       ],
       "Promotion expired": [
         "프로모션이 만료되었습니다"
@@ -9232,9 +9255,6 @@
       "Storage for users": [
         "사용자당 저장공간"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
-      ],
       "Storage used by this user": [
         "이 사용자로 인해 사용된 스토리지"
       ],
@@ -9255,9 +9275,6 @@
       ],
       "Summary": [
         "주문 요약"
-      ],
-      "Support for 1 custom email domain": [
-        "1개 지정 이메일 도메인 지원"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "커스텀 도메인 및 비 ${ BRAND_NAME } 주소에 대한 모니터링 지원도 곧 찾아옵니다."
@@ -9529,6 +9546,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "계속하려면, 데이터 삭제를 원하는 사용자의 이름을 입력하십시오."
       ],
+      "To continue to ${ product }": [
+        "${ product }(으)로 계속하기"
+      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "서비스를 지속적으로 개선하기 위해, 애플리케이션의 적절한 기능을 모니터링하기 위해 데이터를 수집할 수 있습니다. 이 정보는 제3자 서비스와 공유되지 않습니다."
       ],
@@ -9627,12 +9647,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "계정에서 로그아웃하거나 비밀번호를 변경하지 않는 한, 세션은 활성 상태로 유지됩니다. 세션은 60일 동안 활동이 없으면 만료됩니다."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "무제한 폴더, 라벨, 필터"
-      ],
-      "Unlimited messages": [
-        "무제한 메시지"
       ],
       "Unsaved changes": [
         "저장되지 않은 변경 사항"
@@ -9894,6 +9908,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "게이트웨이에서 서버를 제거하면 10일의 비활성화 기간에 돌입합니다. 서버들이 새 게이트웨이에 적용되지만 국가는 변경되지 않습니다."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "이중 인증을 설정하면, 인증 앱에 접근할 수 없을때 로그인시 사용할 수 없는 복구 코드를 제공해 드립니다."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "구독이 갱신될 경우, 비용 청구 전에 가능한 크레딧이 적용됩니다."
@@ -10878,11 +10895,11 @@
       "Amount due": [
         "지불할 금액"
       ],
-      "AND": [
-        "및"
-      ],
       "And": [
         "그리고"
+      ],
+      "AND": [
+        "및"
       ],
       "and": [
         "그리고"
@@ -10913,6 +10930,9 @@
       ],
       "Attach screenshot(s)": [
         "스크린샷 첨부"
+      ],
+      "Authenticator app": [
+        "인증 앱"
       ],
       "Auto show embedded images": [
         "자동으로 삽입된 이미지 로드"
@@ -11307,10 +11327,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "만약"
       ],
-      "If": [
+      "IF": [
         "만약"
       ],
       "Import all messages": [
@@ -11520,13 +11540,13 @@
       "Optional": [
         "선택 사항"
       ],
-      "OR": [
-        "또는"
-      ],
       "or": [
         "또는"
       ],
       "Or": [
+        "또는"
+      ],
+      "OR": [
         "또는"
       ],
       "Organization name": [
@@ -11894,6 +11914,9 @@
       ],
       "Your calendar URL": [
         "내 캘린더 URL"
+      ],
+      "Your password (admin)": [
+        "사용자의 비밀번호 (관리자)"
       ],
       "Your referral link": [
         "리퍼럴 코드"
@@ -12311,6 +12334,9 @@
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "사용자의 계정이 삭제될 수도 있습니다. 데이터 손실 방지를 위해서, 관리자에게 업그레이드를 문의하십시오. ${ cta }"
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "저장 공간이 가득 찼습니다. ${ BRAND_NAME } 제품을 계속 사용하려면 저장 공간을 비우거나 ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "구독이 종료되었습니다. 데이터 접근 권한 상실 방지를 위해 ${ cta }."
@@ -14170,6 +14196,17 @@
         "데스크탑"
       ]
     },
+    "option": {
+      "Everyone": [
+        "모두"
+      ],
+      "Group members": [
+        "그룹 구성원"
+      ],
+      "No one": [
+        "아무도"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "매월 10일"
@@ -14267,6 +14304,9 @@
       "Add to existing group": [
         "병합할 그룹 추가"
       ],
+      "Allowed ${ defaultLabel }": [
+        "허용됨 ${ defaultLabel }"
+      ],
       "Allowed (default)": [
         "허용 (기본값)"
       ],
@@ -14354,6 +14394,9 @@
       "On": [
         "켬"
       ],
+      "Optional ${ defaultLabel }": [
+        "선택 사항 ${ defaultLabel }"
+      ],
       "Organization only": [
         "조직 전용"
       ],
@@ -14419,17 +14462,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "모두"
-      ],
-      "Group members": [
-        "그룹 구성원"
-      ],
-      "No one": [
-        "아무도"
       ]
     },
     "Option delay send seconds": {
@@ -14559,6 +14591,9 @@
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (Debian/Ubuntu)"
+      ],
+      ".dmg (12.0 or later)": [
+        ".dmg (12.0 이상)"
       ],
       ".exe (64-bit)": [
         ".exe (64비트)"
@@ -17364,47 +17399,6 @@
         "${ totalPrice }용"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "저장공간 15GB"
-      ],
-      "and 15 more premium features": [
-        "그리고 15개의 프리미엄 기능"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "자동 이메일 포워딩 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "데이터 침해 경고 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
-      ],
-      "No ads or tracking": [
-        "광고나 트래킹이 없습니다"
-      ],
-      "Short @pm.me email address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Support our mission": [
-        "저희의 사명을 지원해주세요"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade your productivity": [
-        "생산성을 업그레이드하세요"
-      ],
-      "We don't sell your data": [
-        "당사는 사용자의 데이터를 판매하지 않습니다"
-      ],
-      "Your privacy is our mission": [
-        "당신의 프라이버시는 저희의 사명입니다"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "프리미엄 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ VPN_SHORT_APP_NAME }"
@@ -17687,6 +17681,47 @@
       ],
       "Your own short @pm.me email alias": [
         "사용자의 @pm.me 이메일 별칭"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "당사는 사용자의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription renewal state": {
@@ -18802,6 +18837,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } 베타 프로그램에 참여하려면 ${ BRAND_NAME } 계정 상세 사항을 입력하세요."
+      ],
+      "Enter your password": [
+        "비밀번호를 입력하세요"
       ],
       "Error": [
         "오류"

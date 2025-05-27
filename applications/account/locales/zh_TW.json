@@ -439,11 +439,11 @@
       "Discard": [
         "放棄"
       ],
-      "Discard Changes": [
-        "放棄修改"
-      ],
       "Discard changes": [
         "放棄變更"
+      ],
+      "Discard Changes": [
+        "放棄修改"
       ],
       "Dismiss": [
         "忽略"
@@ -730,10 +730,10 @@
       "Keep": [
         "保留"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "繼續編輯"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "繼續編輯"
       ],
       "Keep logo": [
@@ -904,10 +904,10 @@
       "Refresh status": [
         "重新整理狀態"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
       "Reject": [
@@ -1408,9 +1408,6 @@
       ]
     },
     "Action in trial plan": {
-      "No, thanks": [
-        "不用了，謝謝"
-      ],
       "Try free for 30 days": [
         "免費滿意體驗 30 天"
       ]
@@ -1647,11 +1644,6 @@
         "目前工作階段"
       ]
     },
-    "Baseline in trial plan": {
-      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "${ mailPlus }：隱私為首的郵件與行事曆解決方案，滿足您日常通訊所需。"
-      ]
-    },
     "bf2023: Action": {
       "Become a Visionary": [
         "成為 Visionary"
@@ -1670,9 +1662,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } 儲存空間"
-      ],
       "1 user": [
         "1 位使用者"
       ],
@@ -6125,11 +6114,6 @@
         "已訂閱"
       ]
     },
-    "Heading in trial plan": {
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "免費滿意體驗最佳的 ${ MAIL_APP_NAME }"
-      ]
-    },
     "Headline": {
       "Compare plans": [
         "比較方案"
@@ -6722,9 +6706,6 @@
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. 邀請好友加入 ${ BRAND_NAME }"
       ],
-      "10 email addresses": [
-        "10 組電子郵件位址"
-      ],
       "2. They try ${ planName }": [
         "2. 讓他們試試看 ${ planName }"
       ],
@@ -6782,10 +6763,10 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "選擇至少一種帳號復原方法，以確保一旦忘記密碼時，您仍可存取 ${ BRAND_NAME } 帳號。"
       ],
-      "Active": [
+      "active": [
         "啟用"
       ],
-      "active": [
+      "Active": [
         "啟用"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
@@ -7193,10 +7174,10 @@
       "Data locked": [
         "資料已上鎖"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -7946,9 +7927,6 @@
       "No addresses exist": [
         "無任何電郵位址"
       ],
-      "No credit card required": [
-        "毋須信用卡"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "沒有設定任何資料還原方法，您有可能會無法存取您的資料"
       ],
@@ -8191,9 +8169,6 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "價格計入週期之下所有適用的折扣，以及儲存在您的帳號內未逾期的優惠券。"
-      ],
-      "Priority support": [
-        "優先支援"
       ],
       "Promotion expired": [
         "促銷已過期"
@@ -8462,9 +8437,6 @@
       "Storage for users": [
         "使用者的儲存空間"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME }。"
-      ],
       "Storage used by this user": [
         "此位使用者已用的儲存空間"
       ],
@@ -8485,9 +8457,6 @@
       ],
       "Summary": [
         "摘要"
-      ],
-      "Support for 1 custom email domain": [
-        "支援 1 個自訂電子郵件網域"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "即將支援監控自訂網域及非${ BRAND_NAME }電子郵件地址。"
@@ -8821,12 +8790,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "除非您登出您的帳號或更改您的密碼，您的工作階段將保持使用。工作階段閒置 60 天後逾期。"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "資料夾、標籤和篩選器無上限"
-      ],
-      "Unlimited messages": [
-        "郵件無上限"
       ],
       "Unsaved changes": [
         "未儲存的變更"
@@ -9992,10 +9955,10 @@
       "Amount due": [
         "應付金額"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
       "and": [
@@ -10409,10 +10372,10 @@
       "IBAN": [
         "國際銀行帳號"
       ],
-      "IF": [
+      "If": [
         "如"
       ],
-      "If": [
+      "IF": [
         "如"
       ],
       "Import all messages": [
@@ -10610,13 +10573,13 @@
       "Optional": [
         "自由列席"
       ],
-      "OR": [
-        "或"
-      ],
       "or": [
         "或"
       ],
       "Or": [
+        "或"
+      ],
+      "OR": [
         "或"
       ],
       "Organization name": [
@@ -13087,6 +13050,14 @@
         "電腦版應用程式"
       ]
     },
+    "option": {
+      "Group members": [
+        "群組成員"
+      ],
+      "No one": [
+        "沒有人"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "每月10日"
@@ -13312,14 +13283,6 @@
       ],
       "Trash": [
         "垃圾"
-      ]
-    },
-    "option": {
-      "Group members": [
-        "群組成員"
-      ],
-      "No one": [
-        "沒有人"
       ]
     },
     "Option delay send seconds": {
@@ -15746,47 +15709,6 @@
         "${ totalPrice } 版"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "and 15 more premium features": [
-        "還有額外的15個的加值功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動郵件轉寄${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "資料外洩警告 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面應用程式"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
-      ],
-      "No ads or tracking": [
-        "無廣告或追蹤"
-      ],
-      "Short @pm.me email address": [
-        "縮短電子郵件地址@pm.me"
-      ],
-      "Support our mission": [
-        "支援我們的計畫"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade your productivity": [
-        "提升您的生產力"
-      ],
-      "We don't sell your data": [
-        "我們不銷售您的資料"
-      ],
-      "Your privacy is our mission": [
-        "您的隱私是我們責任"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
@@ -16045,6 +15967,47 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "and 15 more premium features": [
+        "還有額外的15個的加值功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
       ]
     },
     "Subscription renewal state": {

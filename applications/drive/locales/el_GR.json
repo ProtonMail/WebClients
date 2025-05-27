@@ -237,6 +237,9 @@
       "Copy address": [
         "Αντιγραφή διεύθυνσης"
       ],
+      "Copy alias “${ name }”": [
+        "Αντιγραφή ψευδώνυμου “${ name }”"
+      ],
       "Copy email to clipboard": [
         "Αντιγραφή μηνύματος στο πρόχειρο"
       ],
@@ -4579,6 +4582,9 @@
       "Anyone with this link can access your folder.": [
         "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να έχει πρόσβαση στον φάκελό σας."
       ],
+      "Apr": [
+        "Απρ"
+      ],
       "Are you sure you want to discard your changes?": [
         "Θέλετε σίγουρα να απορρίψετε τις αλλαγές σας;"
       ],
@@ -4605,6 +4611,9 @@
       ],
       "Attention required": [
         "Απαιτείται προσοχή"
+      ],
+      "Aug": [
+        "Αυγ"
       ],
       "Automated Recovery ${ formattedDate }": [
         "Αυτοματοποιημένη Ανάκτηση ${ formattedDate }"
@@ -4751,6 +4760,9 @@
       ],
       "Custom email domains": [
         "Προσαρμοσμένοι τομείς"
+      ],
+      "Dec": [
+        "Δεκ"
       ],
       "Decrypting files": [
         "Γίνεται αποκρυπτογράφηση αρχείων"
@@ -4900,6 +4912,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Αποτυχία ανοίγματος ασφαλούς συνδέσμου. Η αιτία είναι: ${ error }"
+      ],
+      "Feb": [
+        "Φεβ"
       ],
       "File \"${ name }\" was deleted during download": [
         "Το αρχείο \"${ name }\" διαγράφηκε κατά τη λήψη"
@@ -5070,8 +5085,17 @@
       "It’s easy and secure": [
         "Είναι εύκολο και ασφαλές"
       ],
+      "Jan": [
+        "Ιαν"
+      ],
       "JCB logo": [
         "Λογότυπο JCB"
+      ],
+      "Jul": [
+        "Ιουλ"
+      ],
+      "Jun": [
+        "Ιούν"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
@@ -5136,12 +5160,18 @@
       "Makes your account safer": [
         "Κάνει τον λογαριασμό σας ασφαλέστερο"
       ],
+      "Mar": [
+        "Μαρ"
+      ],
       "Mastercard SecureCode logo": [
         "λογότυπο Mastercard SecureCode"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Μέχρι ${ MAX_SHARED_URL_PASSWORD_LENGTH } χαρακτήρας",
         "Μέχρι ${ MAX_SHARED_URL_PASSWORD_LENGTH } χαρακτήρες"
+      ],
+      "May": [
+        "Μάιος"
       ],
       "Medium Priority": [
         "Μεσαία προτεραιότητα"
@@ -5218,11 +5248,17 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Σημείωση: Σε συσκευές όπου εγκαταστήσατε το ${ DRIVE_APP_NAME }, κάποια δεδομένα ίσως είναι ακόμα διαθέσιμα."
       ],
+      "Nov": [
+        "Νοε"
+      ],
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
       ],
       "Numbers": [
         "Αριθμοί"
+      ],
+      "Oct": [
+        "Οκτ"
       ],
       "of": [
         "από"
@@ -5501,6 +5537,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Επιλέξτε ποια ημερολόγια θέλετε να εισαγάγετε. Θα δημιουργηθεί ένα νέο ημερολόγιο για κάθε εισαγόμενο ημερολόγιο σύμφωνα με τον αριθμό των ημερολογίων που είναι διαθέσιμα στο πλάνο σας."
+      ],
+      "Sep": [
+        "Σεπ"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Οι πληρωμές SEPA δεν είναι διαθέσιμες προς το παρόν. Παρακαλούμε προσπαθήστε ξανά αργότερα."
@@ -10056,47 +10095,6 @@
         "Για ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερες premium δυνατότητες"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium δυνατότητες"
@@ -10355,6 +10353,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερες premium δυνατότητες"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription renewal state": {

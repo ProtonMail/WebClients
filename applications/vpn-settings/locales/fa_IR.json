@@ -8,11 +8,11 @@
       "${ BRAND_NAME } shop": [
         "فروشگاه ${ BRAND_NAME }"
       ],
-      "activate": [
-        "فعال‌سازی"
-      ],
       "Activate": [
         "فعالسازی"
+      ],
+      "activate": [
+        "فعال‌سازی"
       ],
       "Activate organization key": [
         "کلید سازمان را فعال کنید"
@@ -305,10 +305,10 @@
       "Refresh status": [
         "وضعیت بازخوانی"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "بازخوانی صفحه"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "بازخوانی صفحه"
       ],
       "Remove": [
@@ -4942,14 +4942,6 @@
         "فهمیدم"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "۱۵ گیگابایت فضای ذخیره‌سازی"
-      ],
-      "Upgrade": [
-        "ارتقاء"
-      ]
-    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } فضای ذخیره‌سازی برای هر کاربر"
@@ -4987,6 +4979,14 @@
       ],
       "Priority support": [
         "اولویت پشتیبانی"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "۱۵ گیگابایت فضای ذخیره‌سازی"
+      ],
+      "Upgrade": [
+        "ارتقاء"
       ]
     },
     "Subscription renewal state": {

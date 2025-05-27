@@ -400,10 +400,10 @@
       "Move to another vault": [
         "Siirrä toiseen holviin"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Siirrä roskakoriin"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Siirrä roskakoriin"
       ],
       "Multiple select": [
@@ -591,6 +591,9 @@
       ],
       "Sort vault items": [
         "Järjestä holvin kohteet"
+      ],
+      "Start from scratch": [
+        "Aloita alusta"
       ],
       "Submit": [
         "Lähetä"
@@ -1624,6 +1627,9 @@
       "Enter the address you want to email.": [
         "Syötä osoite, johon haluat lähettää sähköpostia."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Syötä vahvistuskoodi. Numero ${ digit }."
+      ],
       "Enter your extra password": [
         "Syötä lisäsalasanasi"
       ],
@@ -2511,6 +2517,12 @@
       "Account": [
         "Tili"
       ],
+      "Account Number": [
+        "Tilinumero"
+      ],
+      "Account Type": [
+        "Tilin tyyppi"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Lisää tähän verkkotunnukseen satunnainen etuliite uutta aliasta luotaessa."
       ],
@@ -2558,6 +2570,12 @@
       ],
       "Backup password": [
         "Varasalasana"
+      ],
+      "Bank Account": [
+        "Pankkitili"
+      ],
+      "Bank Name": [
+        "Pankin nimi"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Kirjautumistietojesi tallentamisen lisäksi ${ PASS_APP_NAME } suojaa identiteettisi sisäänrakennetulla sähköpostialiasominaisuudella. Aina kun luot uuden tilin verkossa, ${ PASS_APP_NAME } voi automaattisesti luoda aliaksen, jotta todellinen sähköpostiosoitteesi pysyy suojattuna. "
@@ -2658,14 +2676,23 @@
       "Credit cards": [
         "Maksukortit"
       ],
+      "Crypto Wallet": [
+        "Kryptolompakko"
+      ],
       "Custom hidden field": [
         "Mukautettu piilotettu kenttä"
       ],
       "Custom text field": [
         "Mukautettu tekstikenttä"
       ],
+      "Database": [
+        "Tietokanta"
+      ],
       "Date": [
         "Päiväys"
+      ],
+      "Date of Birth": [
+        "Syntymäaika"
       ],
       "Device": [
         "Laite"
@@ -2693,6 +2720,9 @@
       ],
       "Download logs": [
         "Lataa lokitiedot"
+      ],
+      "Driver License": [
+        "Ajokortti"
       ],
       "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
         "Jaa arkaluonteisia tietoja helposti kenelle tahansa, vaikka he eivät käyttäisikään ${ PASS_APP_NAME }ia. Voit jakaa yksittäisen salasanan, muistiinpanon tai maksukortin, tai useita samassa kansiossa olevia kohteita."
@@ -2727,6 +2757,9 @@
       "Expired": [
         "Erääntynyt"
       ],
+      "Expiry Date": [
+        "Voimassaoloaika"
+      ],
       "Export": [
         "Vienti"
       ],
@@ -2750,6 +2783,9 @@
       ],
       "File format": [
         "Tiedostomuoto"
+      ],
+      "Finance": [
+        "Talous"
       ],
       "First name": [
         "Etunimi"
@@ -2787,6 +2823,9 @@
       "Generic CSV": [
         "Geneerinen CSV"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Hanki ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "Aloita"
       ],
@@ -2804,6 +2843,12 @@
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliakset"
+      ],
+      "Highest": [
+        "Korkein"
+      ],
+      "Holder Name": [
+        "Haltijan nimi"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Miten ${ PASS_SHORT_APP_NAME }in lukitus avataan"
@@ -2861,6 +2906,12 @@
       ],
       "Invitations": [
         "Kutsut"
+      ],
+      "Issuing Authority": [
+        "Myöntävä viranomainen"
+      ],
+      "Issuing Country": [
+        "Myöntävä maa"
       ],
       "Item ID": [
         "Kohteen ID"
@@ -2934,14 +2985,23 @@
       "max views reached": [
         "avausrajoitus on saavutettu"
       ],
+      "Member ID": [
+        "Jäsentunnus"
+      ],
       "Members": [
         "Jäsenet"
+      ],
+      "Membership": [
+        "Jäsenyys"
       ],
       "Middle name": [
         "Toinen nimi"
       ],
       "Modified": [
         "Muokattu"
+      ],
+      "More": [
+        "Lisää"
       ],
       "More than a month": [
         "Yli kuukausi sitten"
@@ -2952,11 +3012,17 @@
       "Name": [
         "Nimi"
       ],
+      "Name (SSID)": [
+        "Nimi (SSID)"
+      ],
       "Name on card": [
         "Kortissa oleva nimi"
       ],
       "Need help?": [
         "Tarvitsetko apua?"
+      ],
+      "Network": [
+        "Verkko"
       ],
       "Never": [
         "Ei koskaan"
@@ -3027,11 +3093,17 @@
       "Passport number": [
         "Passin numero"
       ],
+      "Passport Number": [
+        "Passin numero"
+      ],
       "Password": [
         "Salasana"
       ],
       "Password history": [
         "Salasanahistoria"
+      ],
+      "Personal": [
+        "Henkilökohtainen"
       ],
       "Personal details": [
         "Henkilötiedot"
@@ -3066,11 +3138,23 @@
       "Priority:": [
         "Prioriteetti:"
       ],
+      "Private key": [
+        "Yksityinen avain"
+      ],
+      "Private Key": [
+        "Yksityinen avain"
+      ],
+      "Program Name": [
+        "Ohjelman nimi"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Suojaa ${ PASS_APP_NAME } lisäsalasanalla"
       ],
       "Public domain": [
         "Julkinen verkkotunnus"
+      ],
+      "Public key": [
+        "Julkinen avain"
       ],
       "Rate us": [
         "Arvostele meidät"
@@ -3095,6 +3179,9 @@
       ],
       "Reveal password": [
         "Näytä salasana"
+      ],
+      "Routing Number": [
+        "Reititysnumero"
       ],
       "Second password": [
         "Toinen salasana"
@@ -3123,6 +3210,9 @@
       "See member and permission overview": [
         "Näytä jäsenten ja käyttöoikeuksien yleiskatsaus"
       ],
+      "Seed Phrase": [
+        "Siemenlauseke"
+      ],
       "Select a domain": [
         "Valitse verkkotunnus"
       ],
@@ -3147,6 +3237,9 @@
       "Selected": [
         "Valittu"
       ],
+      "Server": [
+        "Palvelin"
+      ],
       "Share": [
         "Jaa"
       ],
@@ -3168,14 +3261,29 @@
       "Sign in faster with ${ PASS_APP_NAME }": [
         "Kirjaudu nopeammin ${ PASS_APP_NAME }illa"
       ],
+      "Social Security": [
+        "Sosialliturva"
+      ],
       "Social security": [
         "Sosialliturva"
       ],
       "Social security number": [
         "Henkilötunnus"
       ],
+      "Software license": [
+        "Ohjelmistolisenssi"
+      ],
       "Special characters (!&*)": [
         "Erikoismerkit (!&*)"
+      ],
+      "SSH key": [
+        "SSH-avain"
+      ],
+      "SSH Keys": [
+        "SSH-avaimet"
+      ],
+      "SSN": [
+        "Hetu"
       ],
       "State or province": [
         "Osavaltio tai maakunta"
@@ -3201,6 +3309,9 @@
       "Support": [
         "Tuki"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Synkronoi aliakset SimpleLoginiin"
       ],
@@ -3210,8 +3321,14 @@
       "Tax number": [
         "Veronumero"
       ],
+      "Technology": [
+        "Teknologia"
+      ],
       "Text": [
         "Teksti"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "${ BRAND_NAME }in parhaat yhdellä tilauksella"
       ],
       "The URL has been copied to the clipboard": [
         "URL-osoite kopioitiin leikepöydälle"
@@ -3221,6 +3338,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Tämä kohde on käytettävissä ${ date } asti, tai kunnes katselurajoitus on saavutettu."
+      ],
+      "Tier/Status": [
+        "Taso"
       ],
       "Title": [
         "Nimi"
@@ -3261,6 +3381,9 @@
       "Unnamed Credit Card": [
         "Nimetön maksukortti"
       ],
+      "Unnamed custom item": [
+        "Nimetön mukautettu kohde"
+      ],
       "Unnamed identity": [
         "Nimetön identiteetti"
       ],
@@ -3269,6 +3392,12 @@
       ],
       "Unnamed note": [
         "Nimetön muistiinpano"
+      ],
+      "Unnamed SSH key": [
+        "Nimetön SSH-avain"
+      ],
+      "Unnamed WiFi item": [
+        "Nimetön Wi-Fi-kohde"
       ],
       "Untitled": [
         "Nimetön"
@@ -3309,6 +3438,9 @@
       "Vulnerable": [
         "Haavoittuvainen"
       ],
+      "Wallet Name": [
+        "Lompakon nimi"
+      ],
       "Weak": [
         "Heikko"
       ],
@@ -3317,6 +3449,12 @@
       ],
       "Websites": [
         "Verkkosivustot"
+      ],
+      "WiFi network": [
+        "Wi-Fi-verkko"
+      ],
+      "WiFi Networks": [
+        "Wi-Fi-verkot"
       ],
       "Work details": [
         "Työtiedot"
@@ -3545,6 +3683,9 @@
       ]
     },
     "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus Lifetime hintaan ${ plusLifetimePrice }"
+      ],
       "${ price }/month": [
         "${ price }/kuukausi"
       ]
@@ -3552,6 +3693,9 @@
     "Placeholder": {
       "Add 2FA secret key": [
         "Lisää 2FA-salaisuus"
+      ],
+      "Add date": [
+        "Lisää päivämäärä"
       ],
       "Add hidden text": [
         "Lisää piilotettu teksti"
@@ -3633,6 +3777,9 @@
       ],
       "Select a suffix": [
         "Valitse jälkiliite"
+      ],
+      "Select option": [
+        "Valitse vaihtoehto"
       ],
       "Unknown origin": [
         "Tuntematon alkuperä"
@@ -3956,6 +4103,9 @@
       ],
       "Enter coupon code": [
         "Syötä etukoodi"
+      ],
+      "Enter your ${ BRAND_NAME } password": [
+        "Syötä ${ BRAND_NAME } -salasanasi"
       ],
       "Enter your backup password": [
         "Syötä varasalasanasi"
