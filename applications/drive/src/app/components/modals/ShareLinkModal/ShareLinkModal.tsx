@@ -1,5 +1,5 @@
 import type { MouseEvent } from 'react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -32,6 +32,12 @@ export type SharingModalProps = {
     shareId: string;
     linkId: string;
     onPublicLinkToggle?: (enabled: boolean) => void;
+    /**
+     * Escape hatch that is necessary for Docs. Please do not use unless you know what you are doing.
+     *
+     * The reason behind this workaround is stale cache issues. See MR for more details.
+     */
+    registerOverriddenNameListener?: (listener: (name: string) => void) => void;
 };
 
 export function SharingModal(props: SharingModalProps & ModalStateProps) {
@@ -45,12 +51,13 @@ function SharingModalInner({
     onClose,
     shareMemberList,
     onPublicLinkToggle,
+    registerOverriddenNameListener,
     ...modalProps
 }: SharingModalProps & ModalStateProps & { shareMemberList: ReturnType<typeof useShareMemberView> }) {
     const {
         customPassword,
         initialExpiration,
-        name,
+        name: originalName,
         deleteLink,
         stopSharing,
         sharedLink,
@@ -69,6 +76,13 @@ function SharingModalInner({
         isShareUrlLoading,
         isShareUrlEnabled,
     } = useShareURLView(rootShareId, linkId);
+
+    const [overriddenName, setOverriddenName] = useState<string>();
+    useEffect(() => {
+        registerOverriddenNameListener?.(setOverriddenName);
+    }, [registerOverriddenNameListener]);
+
+    const name = overriddenName ?? originalName;
 
     const {
         volumeId,
