@@ -151,3 +151,12 @@ export const abortableSequence = async (operations: AsyncCallback[], signal: Abo
     const generator = sequence();
     while (!(await generator.next()).done) {}
 };
+
+export const createAsyncQueue = () => {
+    let chain = Promise.resolve() as Promise<unknown>;
+
+    return {
+        push: <T extends any>(job: () => MaybePromise<T>) =>
+            (chain = chain.then(() => Promise.resolve(job())).catch(noop)),
+    };
+};
