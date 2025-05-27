@@ -400,10 +400,10 @@
       "Move to another vault": [
         "移至另一个保险库"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "移至回收站"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "移至回收站"
       ],
       "Multiple select": [
@@ -591,6 +591,9 @@
       ],
       "Sort vault items": [
         "对保险库项目排序"
+      ],
+      "Start from scratch": [
+        "从零开始"
       ],
       "Submit": [
         "提交"
@@ -2530,6 +2533,12 @@
       "Account": [
         "帐户"
       ],
+      "Account Number": [
+        "账户号码"
+      ],
+      "Account Type": [
+        "帐户类型"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "创建新别名时，请为该域添加一个随机前缀。"
       ],
@@ -2569,6 +2578,9 @@
       "Always show username field": [
         "始终显示用户名字段"
       ],
+      "API Credential": [
+        "API 凭证"
+      ],
       "Application logs": [
         "应用程序日志"
       ],
@@ -2577,6 +2589,12 @@
       ],
       "Backup password": [
         "备用密码"
+      ],
+      "Bank Account": [
+        "银行账户"
+      ],
+      "Bank Name": [
+        "银行名称"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "除了储存登录信息外，${ PASS_APP_NAME } 还通过集成的邮箱别名功能保护您的身份。每当你注册一个新的在线账户时，${ PASS_APP_NAME } 都会自动创建一个别名，以保护您的真实邮箱地址。"
@@ -2589,6 +2607,9 @@
       ],
       "Browse faster, smarter": [
         "更快、更智能地浏览"
+      ],
+      "Built-in 2FA": [
+        "内置 2FA"
       ],
       "Capital letters (A-Z)": [
         "大写字母 (A-Z)"
@@ -2644,11 +2665,17 @@
       "Country or Region": [
         "国家或地区"
       ],
+      "Country,": [
+        "国家/地区"
+      ],
       "County": [
         "县市"
       ],
       "Create a credit card": [
         "创建信用卡"
+      ],
+      "Create a custom item": [
+        "创建自定义项目"
       ],
       "Create a hide-my-email alias": [
         "创建一个 hide-my-email 别名"
@@ -2677,14 +2704,26 @@
       "Credit cards": [
         "信用卡"
       ],
+      "Crypto Wallet": [
+        "加密钱包"
+      ],
       "Custom hidden field": [
         "自定义隐藏字段"
+      ],
+      "Custom Items": [
+        "自定义项目"
       ],
       "Custom text field": [
         "自定义文本字段"
       ],
+      "Database": [
+        "数据库"
+      ],
       "Date": [
         "日期"
+      ],
+      "Date of Birth": [
+        "出生日期"
       ],
       "Device": [
         "设备"
@@ -2709,6 +2748,9 @@
       ],
       "Download logs": [
         "下载日志"
+      ],
+      "Driver License": [
+        "驾驶执照"
       ],
       "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
         "轻松与任何人共享敏感信息，即使他们不使用 ${ PASS_APP_NAME } 。您可以共享单个密码、便条或信用卡，也可以共享同一文件夹中的多个项目。"
@@ -2743,6 +2785,9 @@
       "Expired": [
         "已失效"
       ],
+      "Expiry Date": [
+        "截止日期"
+      ],
       "Export": [
         "导出"
       ],
@@ -2763,6 +2808,9 @@
       ],
       "File format": [
         "文件格式"
+      ],
+      "Finance": [
+        "金融"
       ],
       "First name": [
         "名"
@@ -2800,6 +2848,12 @@
       "Generic CSV": [
         "通用 CSV"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "开通 ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "开通 ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "立即体验"
       ],
@@ -2820,6 +2874,9 @@
       ],
       "Highest": [
         "最快"
+      ],
+      "Holder Name": [
+        "持有人姓名"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "如何解锁 ${ PASS_SHORT_APP_NAME }"
@@ -2878,6 +2935,12 @@
       "Invitations": [
         "邀请"
       ],
+      "Issuing Authority": [
+        "签发机关"
+      ],
+      "Issuing Country": [
+        "签发国家/地区"
+      ],
       "Item ID": [
         "项目 ID"
       ],
@@ -2920,6 +2983,9 @@
       "License number": [
         "许可编号"
       ],
+      "Limited time": [
+        "限时"
+      ],
       "LinkedIn account": [
         "LinkedIn 帐户"
       ],
@@ -2950,14 +3016,26 @@
       "max views reached": [
         "达到最大浏览量"
       ],
+      "Medical Record": [
+        "医疗记录"
+      ],
+      "Member ID": [
+        "成员编号"
+      ],
       "Members": [
         "成员"
+      ],
+      "Membership": [
+        "成员资格"
       ],
       "Middle name": [
         "中间名（若有）"
       ],
       "Modified": [
         "修改时间"
+      ],
+      "More": [
+        "更多"
       ],
       "More than a month": [
         "一个多月"
@@ -2968,11 +3046,17 @@
       "Name": [
         "名称"
       ],
+      "Name (SSID)": [
+        "名称 (SSID)"
+      ],
       "Name on card": [
         "持卡人姓名"
       ],
       "Need help?": [
         "需要帮助？"
+      ],
+      "Network": [
+        "网络"
       ],
       "Never": [
         "永不"
@@ -3043,11 +3127,17 @@
       "Passport number": [
         "护照号码"
       ],
+      "Passport Number": [
+        "护照号码"
+      ],
       "Password": [
         "密码"
       ],
       "Password history": [
         "密码历史记录"
+      ],
+      "Personal": [
+        "私人"
       ],
       "Personal details": [
         "个人资料"
@@ -3073,6 +3163,9 @@
       "Plus": [
         "Plus"
       ],
+      "Points Balance": [
+        "积分余额"
+      ],
       "Prefix": [
         "前綴"
       ],
@@ -3082,11 +3175,23 @@
       "Priority:": [
         "优先级："
       ],
+      "Private key": [
+        "私钥"
+      ],
+      "Private Key": [
+        "私钥"
+      ],
+      "Program Name": [
+        "程序名称"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "用额外密码保护 ${ PASS_APP_NAME }"
       ],
       "Public domain": [
         "公共域名"
+      ],
+      "Public key": [
+        "公钥"
       ],
       "Rate us": [
         "去评分"
@@ -3111,6 +3216,12 @@
       ],
       "Reveal password": [
         "显示密码"
+      ],
+      "Reward Program": [
+        "奖励计划"
+      ],
+      "Routing Number": [
+        "路由号码"
       ],
       "Second password": [
         "副密码"
@@ -3139,6 +3250,9 @@
       "See member and permission overview": [
         "查看成员和权限概述。"
       ],
+      "Seed Phrase": [
+        "种子短语"
+      ],
       "Select a domain": [
         "选择域名"
       ],
@@ -3163,6 +3277,9 @@
       "Selected": [
         "已选中"
       ],
+      "Server": [
+        "服务器"
+      ],
       "Share": [
         "分享"
       ],
@@ -3184,14 +3301,29 @@
       "Sign in faster with ${ PASS_APP_NAME }": [
         "使用 ${ PASS_APP_NAME } 更快登录"
       ],
+      "Social Security": [
+        "社会保障"
+      ],
       "Social security": [
         "社会保障"
       ],
       "Social security number": [
         "社会保障号码"
       ],
+      "Software license": [
+        "软件许可证"
+      ],
       "Special characters (!&*)": [
         "特殊字符 (!&*)"
+      ],
+      "SSH key": [
+        "SSH 密钥"
+      ],
+      "SSH Keys": [
+        "SSH 密钥"
+      ],
+      "SSN": [
+        "社会保险号码（SSN）"
       ],
       "State or province": [
         "省、自治区或直辖市"
@@ -3217,6 +3349,9 @@
       "Support": [
         "帮助"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "使用 SimpleLogin 同步别名"
       ],
@@ -3225,6 +3360,9 @@
       ],
       "Tax number": [
         "纳税人识别号"
+      ],
+      "Technology": [
+        "技术"
       ],
       "Text": [
         "文本"
@@ -3237,6 +3375,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "在 ${ date } 或达到查看限制之前，都可以访问此项目。"
+      ],
+      "Tier/Status": [
+        "级别/状态"
       ],
       "Title": [
         "标题"
@@ -3268,6 +3409,9 @@
       "Unlimited": [
         "无限制"
       ],
+      "Unlock premium features": [
+        "解锁高级功能"
+      ],
       "Unlock with": [
         "解锁方式"
       ],
@@ -3277,6 +3421,9 @@
       "Unnamed Credit Card": [
         "未命名信用卡"
       ],
+      "Unnamed custom item": [
+        "未命名自定义项目"
+      ],
       "Unnamed identity": [
         "未命名标识"
       ],
@@ -3285,6 +3432,15 @@
       ],
       "Unnamed note": [
         "未命名笔记"
+      ],
+      "Unnamed SSH key": [
+        "未命名 SSH 密钥"
+      ],
+      "Unnamed WiFi item": [
+        "未命名 WiFi 项目"
+      ],
+      "Unspecified": [
+        "未指定"
       ],
       "Untitled": [
         "未命名"
@@ -3307,6 +3463,9 @@
       "Vault ID": [
         "保险库 ID"
       ],
+      "Vault, item & link sharing": [
+        "保险库、项目和链接共享"
+      ],
       "Vaults": [
         "保险库"
       ],
@@ -3316,8 +3475,17 @@
       "View logs": [
         "查看日志"
       ],
+      "VPN Devices": [
+        "VPN 设备"
+      ],
+      "VPN Speed": [
+        "VPN 速度"
+      ],
       "Vulnerable": [
         "易受攻击"
+      ],
+      "Wallet Name": [
+        "钱包名称"
       ],
       "Weak": [
         "弱"
@@ -3327,6 +3495,15 @@
       ],
       "Websites": [
         "网站"
+      ],
+      "What's included": [
+        "包括哪些内容"
+      ],
+      "WiFi network": [
+        "WiFi 网络"
+      ],
+      "WiFi Networks": [
+        "WLAN 网络"
       ],
       "Work details": [
         "工作详情"
@@ -3566,6 +3743,9 @@
       "Add 2FA secret key": [
         "添加 2FA 密钥"
       ],
+      "Add date": [
+        "添加日期"
+      ],
       "Add hidden text": [
         "添加隐藏文本"
       ],
@@ -3646,6 +3826,9 @@
       ],
       "Select a suffix": [
         "选择一个后缀"
+      ],
+      "Select option": [
+        "选择选项"
       ],
       "Unknown origin": [
         "未知来源"
@@ -3826,8 +4009,14 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } 个地址"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } 监视器"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "账户保护"
@@ -4104,6 +4293,9 @@
       ],
       "Pause monitoring?": [
         "暂停监测?"
+      ],
+      "Pay once, access forever.": [
+        "一次支付，终身使用。"
       ],
       "Pending access confirmation": [
         "正在等待访问确认"
