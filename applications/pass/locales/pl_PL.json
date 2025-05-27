@@ -400,10 +400,10 @@
       "Move to another vault": [
         "Przenieś do innego sejfu"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Przenieś do kosza"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Przenieś do kosza"
       ],
       "Multiple select": [
@@ -588,6 +588,9 @@
       ],
       "Sort vault items": [
         "Sortuj elementy sejfu"
+      ],
+      "Start from scratch": [
+        "Rozpocznij od początku"
       ],
       "Submit": [
         "Wyślij"
@@ -2724,6 +2727,9 @@
       "Account Number": [
         "Numer konta"
       ],
+      "Account Type": [
+        "Typ konta"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Dodaj losowy przedrostek domeny podczas tworzenia nowego aliasu."
       ],
@@ -2847,11 +2853,17 @@
       "Country or Region": [
         "Kraj lub region"
       ],
+      "Country,": [
+        "Kraj"
+      ],
       "County": [
         "Powiat"
       ],
       "Create a credit card": [
         "Utwórz kartę płatniczą"
+      ],
+      "Create a custom item": [
+        "Utwórz niestandardowy element"
       ],
       "Create a hide-my-email alias": [
         "Utwórz alias hide-my-email"
@@ -2880,8 +2892,14 @@
       "Credit cards": [
         "Karty płatnicze"
       ],
+      "Crypto Wallet": [
+        "Portfel kryptowalut"
+      ],
       "Custom hidden field": [
         "Ukryte tekstowe pole niestandardowe"
+      ],
+      "Custom Items": [
+        "Niestandardowe elementy"
       ],
       "Custom text field": [
         "Tekstowe pole niestandardowe"
@@ -3105,6 +3123,9 @@
       "Issuing Authority": [
         "Organ wydający"
       ],
+      "Issuing Country": [
+        "Kraj wydający"
+      ],
       "Item ID": [
         "Identyfikator elementu"
       ],
@@ -3179,6 +3200,12 @@
       ],
       "max views reached": [
         "maksymalna liczba dostępów została osiągnięta"
+      ],
+      "Medical Record": [
+        "Dokumentacja medyczna"
+      ],
+      "Member ID": [
+        "Identyfikator członkostwa"
       ],
       "Members": [
         "Użytkownicy"
@@ -3279,11 +3306,17 @@
       "Passport number": [
         "Numer paszportu"
       ],
+      "Passport Number": [
+        "Numer paszportu"
+      ],
       "Password": [
         "Hasło"
       ],
       "Password history": [
         "Historia hasła"
+      ],
+      "Personal": [
+        "Osobiste"
       ],
       "Personal details": [
         "Szczegóły osobiste"
@@ -3321,10 +3354,10 @@
       "Priority:": [
         "Priorytet:"
       ],
-      "Private Key": [
+      "Private key": [
         "Klucz prywatny"
       ],
-      "Private key": [
+      "Private Key": [
         "Klucz prywatny"
       ],
       "Program Name": [
@@ -3363,6 +3396,9 @@
       "Reward Program": [
         "Program lojalnościowy"
       ],
+      "Routing Number": [
+        "Numer rozliczeniowy"
+      ],
       "Second password": [
         "Drugie hasło"
       ],
@@ -3380,6 +3416,9 @@
       ],
       "See member and permission overview": [
         "Zobacz użytkowników i sprawdź uprawnienia"
+      ],
+      "Seed Phrase": [
+        "Fraza seed"
       ],
       "Select a domain": [
         "Wybierz domenę"
@@ -3429,8 +3468,14 @@
       "Social security": [
         "Numer ubezpieczenia społecznego"
       ],
+      "Social Security": [
+        "Numer ubezpieczenia społecznego"
+      ],
       "Social security number": [
         "Numer ubezpieczenia społecznego"
+      ],
+      "Software license": [
+        "Licencja oprogramowania"
       ],
       "Special characters (!&*)": [
         "Znaki specjalne (!&*)"
@@ -3468,6 +3513,9 @@
       "Support": [
         "Wsparcie"
       ],
+      "SWIFT/BIC": [
+        "SWIFT / BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Synchronizuj aliasy z SimpleLogin"
       ],
@@ -3494,6 +3542,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Element jest dostępny do ${ date } lub do osiągnięcia limitu wyświetleń."
+      ],
+      "Tier/Status": [
+        "Poziom / status"
       ],
       "Title": [
         "Tytuł"
@@ -3548,6 +3599,12 @@
       ],
       "Unnamed SSH key": [
         "Klucz SSH bez nazwy"
+      ],
+      "Unnamed WiFi item": [
+        "Sieć Wi-Fi bez nazwy"
+      ],
+      "Unspecified": [
+        "Nieokreślone"
       ],
       "Untitled": [
         "Bez nazwy"
@@ -3898,6 +3955,9 @@
       ],
       "my-domain.com": [
         "moja-domena.pl"
+      ],
+      "Name displayed in emails": [
+        "Nazwa wyświetlana w wiadomościach"
       ],
       "Note from SimpleLogin": [
         "Notatka z SimpleLogin"
