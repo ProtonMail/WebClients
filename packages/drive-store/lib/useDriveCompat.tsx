@@ -107,6 +107,7 @@ export interface DriveCompat {
         linkId: string;
         volumeId: string;
         onPublicLinkToggle?: (enabled: boolean) => void;
+        registerOverriddenNameListener?: (listener: (name: string) => void) => void;
     }) => void;
 
     /**
@@ -198,9 +199,15 @@ export const useDriveCompat = (): DriveCompat => {
         linkId: string;
         volumeId: string;
         onPublicLinkToggle?: (enabled: boolean) => void;
+        registerOverriddenNameListener?: (listener: (name: string) => void) => void;
     }) => {
         const fnToWrap = ({ shareId, linkId }: { shareId: string; linkId: string }) =>
-            showLinkSharingModal({ shareId, linkId, onPublicLinkToggle: props.onPublicLinkToggle });
+            showLinkSharingModal({
+                shareId,
+                linkId,
+                onPublicLinkToggle: props.onPublicLinkToggle,
+                registerOverriddenNameListener: props.registerOverriddenNameListener,
+            });
 
         const wrappedFn = withResolveShareId(fnToWrap);
 
