@@ -15,6 +15,7 @@ let paymentsApiMock: PaymentsApi = {
 };
 
 const MOCK_YEARLY_PRICE_BRL = 120;
+const MOCK_YEARLY_PRICE_BRL_WITHOUT_DISCOUNT = 200;
 const MOCK_YEARLY_PRICE_USD = 100;
 
 async function setupTest(currency: Currency) {
@@ -25,6 +26,7 @@ async function setupTest(currency: Currency) {
     // @ts-expect-error - mock of checkout call
     jest.spyOn(checkoutModule, 'getCheckout').mockReturnValue({
         withDiscountPerCycle: MOCK_YEARLY_PRICE_BRL,
+        withoutDiscountPerCycle: MOCK_YEARLY_PRICE_BRL_WITHOUT_DISCOUNT,
     });
 
     const config = await getUpsellModalDefaultConfig({
@@ -93,6 +95,7 @@ describe('getUpsellModalDefaultConfig', () => {
         expect(footerText[0]).toBe('Unlock all ');
         expect(footerText[2]).toBe(' premium products and features for just ');
         expect(footerText[3].props.currency).toBe('BRL');
-        expect(footerText[3].props.children).toBe(MOCK_YEARLY_PRICE_BRL / 12);
+        // The second pricing displayed in the footer text is the regular price, not the coupon price
+        expect(footerText[3].props.children).toBe(MOCK_YEARLY_PRICE_BRL_WITHOUT_DISCOUNT / 12);
     });
 });
