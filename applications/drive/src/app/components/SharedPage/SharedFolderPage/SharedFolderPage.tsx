@@ -63,8 +63,8 @@ function SharedPagePreviewContainer({
         contents,
         navigation,
         link: loadedLink,
+        videoStreaming,
     } = usePublicFileView(token, linkId, true, sortParams);
-
     const rootRef = useRef<HTMLDivElement>(null);
     const isDocument = isProtonDocument(loadedLink?.mimeType || '');
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
@@ -83,6 +83,7 @@ function SharedPagePreviewContainer({
                 imgThumbnailUrl={loadedLink?.cachedThumbnailUrl}
                 fileSize={loadedLink?.size}
                 contents={contents}
+                videoStreaming={videoStreaming}
                 ref={rootRef}
                 navigationControls={
                     loadedLink &&
