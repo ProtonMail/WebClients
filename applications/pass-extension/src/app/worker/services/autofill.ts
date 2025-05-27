@@ -1,5 +1,6 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { onContextReady, withContext } from 'proton-pass-extension/app/worker/context/inject';
+import { onAuthRequired } from 'proton-pass-extension/app/worker/services/listeners/auth-required';
 import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup';
@@ -31,11 +32,11 @@ import { parseUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
 
 export const createAutoFillService = () => {
-    const attemptedBasicAuthRequests = new Map<string, number>();
-
     const getLoginCandidates = withContext<(options: SelectAutofillCandidatesOptions) => ItemRevision<'login'>[]>(
         (ctx, options) => selectAutofillLoginCandidates(options)(ctx.service.store.getState())
     );
+
+    const isUserAuthorized = withContext<() => boolean>((ctx) => ctx.getState().authorized);
 
     const getCredentials = withContext<(item: SelectedItem) => Maybe<FormCredentials>>((ctx, { shareId, itemId }) => {
         const state = ctx.service.store.getState();
@@ -211,33 +212,9 @@ export const createAutoFillService = () => {
 
     if (BUILD_TARGET !== 'safari') {
         browser.webRequest.onAuthRequired.addListener(
-            (details) => {
-                // If url already has the credentials embedded, do nothing
-                if (/:\/\/(.)+:(.)+@/.test(details.url)) return { cancel: true };
-
-                const items = getLoginCandidates(parseUrl(details.url));
-
-                // If there are no items, do nothing
-                if (!items.length) return { cancel: true };
-
-                // Mechanism to prevent infinite loop when credentials are incorrect
-                const requestAttempt = attemptedBasicAuthRequests.get(details.requestId) ?? 0;
-                if (requestAttempt >= items.length) return { cancel: true };
-
-                attemptedBasicAuthRequests.set(details.requestId, requestAttempt + 1);
-
-                // Clear the Map after 2 seconds
-                setTimeout(() => attemptedBasicAuthRequests.delete(details.requestId), 2000);
-
-                // If there are more than 1 login credentials, try with each one
-                const item = items[requestAttempt];
-
-                return {
-                    authCredentials: {
-                        username: intoUserIdentifier(item),
-                        password: deobfuscate(item.data.content.password),
-                    },
-                };
+            ({ url, requestId }) => {
+                if (!isUserAuthorized()) return { cancel: true };
+                return onAuthRequired({ items: getLoginCandidates(parseUrl(url)), url, requestId });
             },
             { urls: ['<all_urls>'] },
             ['blocking']
