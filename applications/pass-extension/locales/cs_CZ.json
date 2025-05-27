@@ -152,11 +152,11 @@
       "Create": [
         "Vytvořit"
       ],
-      "Create a ${ BRAND_NAME } account": [
-        "Vytvořit účet ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Vytvořte účet ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Vytvořit účet ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Vytvořit alias"
@@ -1418,7 +1418,7 @@
         "Synchronizace aliasů mezi účty ${ BRAND_NAME } a SimpleLogin je aktivní."
       ],
       "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
-        "Aliasy v koši budou nadále přeposílat e-maily. Pokud chcete přestat dostávat e-maily na tuto adresu, zakažte ji."
+        "Aliasy v koši budou nadále přeposílat e-maily. Pokud chcete přestat dostávat e-maily na tuto adresu, deaktivujte ji."
       ],
       "Aliases out of sync (${ aliasCount })": [
         "Nesynchronizované aliasy (${ aliasCount })"
@@ -1838,10 +1838,7 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -3162,10 +3159,10 @@
       "Priority:": [
         "Priorita:"
       ],
-      "Private key": [
+      "Private Key": [
         "Soukromý klíč"
       ],
-      "Private Key": [
+      "Private key": [
         "Soukromý klíč"
       ],
       "Program Name": [
