@@ -58,7 +58,6 @@ import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash';
 
-import NoAppsAvailable from '../containers/NoAppsAvailable';
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
 import OrganizationSettingsRouter from '../containers/organization/OrganizationSettingsRouter';
 import AccountSidebar from './AccountSidebar';
@@ -366,10 +365,12 @@ const MainContainer = () => {
         isDocsHomepageAvailable,
     });
 
-    if (!availableApps.includes(app) && appFromPathname /* wait for app in pathname to ensure replacement works */) {
-        if (!availableApps.length) {
-            return <NoAppsAvailable />;
-        }
+    // Should never happen that available apps is empty, but just as a safety mechanism anyway
+    if (
+        !availableApps.includes(app) &&
+        appFromPathname /* wait for app in pathname to ensure replacement works */ &&
+        availableApps.length
+    ) {
         const [firstAvailableApp] = availableApps;
         const locationWithNewApp = getPathFromLocation(location).replace(
             pathPrefix,

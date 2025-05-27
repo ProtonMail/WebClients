@@ -76,14 +76,13 @@ const AccessControlItem = ({
 
     const [allowedProducts] = useAllowedProducts();
 
-    const handleChange: ChangeEventHandler<HTMLInputElement> = async (event) => {
-        const isChecked = event.target.checked;
+    const previousSerialisedProducts = serializeAllowedProducts(allowedProducts);
+    const isChecked = targetProducts.every((product) => allowedProducts.has(product));
+    const updatedProducts = getUpdatedProducts({ allowedProducts, targetProducts, isChecked: !isChecked });
+    const serialisedProducts = serializeAllowedProducts(updatedProducts);
+    const atLeastOneApplicationLimit = !serialisedProducts.length;
 
-        const previousSerialisedProducts = serializeAllowedProducts(allowedProducts);
-
-        const updatedProducts = getUpdatedProducts({ allowedProducts, targetProducts, isChecked });
-        const serialisedProducts = serializeAllowedProducts(updatedProducts);
-
+    const handleChange: ChangeEventHandler<HTMLInputElement> = async () => {
         try {
             dispatch(
                 organizationActions.updateOrganizationSettings({ value: { AllowedProducts: serialisedProducts } })
@@ -119,16 +118,24 @@ const AccessControlItem = ({
                         <span className="block text-ellipsis text-bold">{title}</span>
                         {showSSOBadge && <NoSSOBadge />}
                     </div>
-                    <Toggle
-                        id={targetProducts.join(':')}
-                        loading={loading}
-                        checked={targetProducts.every((product) => allowedProducts.has(product))}
-                        onChange={async (e) => {
-                            setLoading(true);
-                            await handleChange(e);
-                            setLoading(false);
-                        }}
-                    />
+                    {atLeastOneApplicationLimit && isChecked ? (
+                        <Tooltip title={c('Info').t`At least one application must be active`} openDelay={0}>
+                            <span className="inline-flex">
+                                <Toggle id={targetProducts.join(':')} disabled={true} checked={true} />
+                            </span>
+                        </Tooltip>
+                    ) : (
+                        <Toggle
+                            id={targetProducts.join(':')}
+                            loading={loading}
+                            checked={isChecked}
+                            onChange={async (e) => {
+                                setLoading(true);
+                                await handleChange(e);
+                                setLoading(false);
+                            }}
+                        />
+                    )}
                 </div>
                 <div className="color-weak">{description}</div>
             </div>
