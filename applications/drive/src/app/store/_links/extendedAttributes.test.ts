@@ -121,12 +121,12 @@ describe('extended attrbiutes', () => {
                 },
             ],
             [
-                '{"Common": {"ModificationTime": "2009-02-13T23:31:30+0000", "Size": 123, "BlockSizes": [1, 2, 3]}}',
+                '{"Common": {"ModificationTime": "2009-02-13T23:31:30+0000", "Size": 123, "BlockSizes": [2,1,2]}}',
                 {
                     Common: {
                         ModificationTime: 1234567890,
                         Size: 123,
-                        BlockSizes: [1, 2, 3],
+                        BlockSizes: [2, 2, 1],
                     },
                 },
             ],
