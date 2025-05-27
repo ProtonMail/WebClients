@@ -4,7 +4,7 @@ import type { DocumentAction } from '@proton/drive-store'
 import { APPS } from '@proton/shared/lib/constants'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
-import type { RedirectAction } from '@proton/drive-store/store/_documents'
+import type { DocumentType, RedirectAction } from '@proton/drive-store/store/_documents'
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
 import { useLocation } from 'react-router-dom-v5-compat'
 import { useIsSheetsEnabled } from './misc'
@@ -31,7 +31,6 @@ export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolea
     const newURL = new URL(location.href)
     newURL.search = ''
     newURL.hash = ''
-    newURL.searchParams.set('type', action.type)
 
     if (action.mode === 'open') {
       newURL.searchParams.set('mode', 'open')
@@ -50,7 +49,7 @@ export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolea
   }, [])
 
   const updateParameters = useCallback(
-    (params: { newVolumeId: string; newLinkId: string; pathname?: 'doc' }) => {
+    (params: { newVolumeId: string; newLinkId: string; pathname?: DocumentType }) => {
       setOpenAction({
         type: openAction?.type ?? 'doc',
         mode: 'open',
@@ -63,7 +62,6 @@ export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolea
         const currentPathName = newUrl.pathname
         newUrl.pathname = replaceLastPathSegment(currentPathName, params.pathname)
       }
-      newUrl.searchParams.set('type', openAction?.type ?? 'doc')
       newUrl.searchParams.set('mode', 'open')
       newUrl.searchParams.set('volumeId', params.newVolumeId)
       newUrl.searchParams.set('linkId', params.newLinkId)
@@ -138,16 +136,17 @@ export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolea
   }
 }
 
+export const SHEET_EDITOR_PATH = '/sheet'
 export const DOCUMENT_EDITOR_PATH = '/doc'
 export const DOCUMENT_NEW_PATH = '/new'
-export const DOCUMENT_CREATION_PATHS = [DOCUMENT_EDITOR_PATH, DOCUMENT_NEW_PATH]
+export const DOCUMENT_CREATION_PATHS = [DOCUMENT_EDITOR_PATH, SHEET_EDITOR_PATH, DOCUMENT_NEW_PATH]
 
 export function parseOpenAction(
   searchParams: URLSearchParams,
   pathname: string,
   isSheetsEnabled = false,
 ): DocumentAction | null {
-  let type = (searchParams.get('type') ?? 'doc') as DocumentAction['type']
+  let type = stripLocalBasenameFromPathname(pathname).slice(1) as DocumentAction['type']
   const mode = (searchParams.get('mode') ?? 'open') as DocumentAction['mode']
   const action = searchParams.get('action') as RedirectAction | undefined
   const parentLinkId = searchParams.get('parentLinkId')
