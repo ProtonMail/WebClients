@@ -249,7 +249,7 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
           <div className="my-2" />
           <ButtonLike
             as="a"
-            href={getAppHref('/doc', APPS.PROTONDOCS, getLocalID()) + '?type=sheet'}
+            href={getAppHref('/sheet', APPS.PROTONDOCS, getLocalID())}
             target="_blank"
             color="norm"
             size="large"
