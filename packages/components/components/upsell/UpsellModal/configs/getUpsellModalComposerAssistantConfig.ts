@@ -41,7 +41,7 @@ export const getUpsellModalComposerAssistantConfig: UpsellModalConfigCase = asyn
             planIDs,
             cycle,
             submitText,
-            footerText: getUpsellModalFooterText({ planIDs, monthlyPrice, currency }),
+            footerText: getUpsellModalFooterText({ planIDs, monthlyPrice: monthlyPrice.regularPrice, currency }),
         };
     }
 

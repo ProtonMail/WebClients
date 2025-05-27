@@ -29,7 +29,9 @@ export const getUpsellModalFreeUserConfig: UpsellModalConfigCase = async (props)
     // In order to avoid fetching coupon price for 1$ promo we hardcode it
     // Alternatively: We could compute discounted price by doing `monthly price - discountedPrice`
     // This way no need to hardcode anything.
-    const couponMonthlyPrice = isMainCurrency(currency) ? ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE : offerMonthlyPrice;
+    const couponMonthlyPrice = isMainCurrency(currency)
+        ? ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE
+        : offerMonthlyPrice.couponPrice;
 
     const footerText = (() => {
         const priceLine = (
@@ -39,7 +41,7 @@ export const getUpsellModalFreeUserConfig: UpsellModalConfigCase = async (props)
                 suffix={c('specialoffer: Offers').t`/month`}
                 isDisplayedInSentence
             >
-                {offerMonthlyPrice}
+                {offerMonthlyPrice.regularPrice}
             </Price>
         );
 
