@@ -304,6 +304,9 @@
       "Copy addresses": [
         "Kopiera adresser"
       ],
+      "Copy alias “${ name }”": [
+        "Kopiera alias “${ name }“"
+      ],
       "Copy email to clipboard": [
         "Kopiera e-post till urklipp"
       ],
@@ -431,9 +434,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Ladda ner ${ DRIVE_APP_NAME } appen"
-      ],
-      "Download now": [
-        "Ladda ner nu"
       ],
       "Download the desktop app": [
         "Ladda ner appen för stationär dator"
@@ -680,9 +680,6 @@
       ],
       "Import from Outlook": [
         "Importera från Outlook"
-      ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "Viktig uppdatering tillgänglig. För att fortsätta använda appen, uppdatera till den senaste versionen. ${ downloadUpdate }"
       ],
       "In the morning": [
         "På morgonen"
@@ -1386,6 +1383,10 @@
       ],
       "Trust": [
         "Lita på"
+      ],
+      "Trust key": [
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -8620,11 +8621,11 @@
       "Always move sender's emails": [
         "Flytta alltid avsändarens e-postmeddelanden"
       ],
-      "AND": [
-        "OCH"
-      ],
       "And": [
         "Och"
+      ],
+      "AND": [
+        "OCH"
       ],
       "and": [
         "och"
@@ -8851,11 +8852,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "OM"
-      ],
       "If": [
         "Om"
+      ],
+      "IF": [
+        "OM"
       ],
       "Import all messages": [
         "Importera alla meddelanden"
@@ -8920,6 +8921,10 @@
       "Mark as": [
         "Markera som"
       ],
+      "Marked ${ count } message as read.": [
+        "Markerade ${ count } meddelande som läst.",
+        "Markerade ${ count } meddelanden som lästa."
+      ],
       "Move ${ sidebarElementName }": [
         "Flytta ${ sidebarElementName }"
       ],
@@ -8934,6 +8939,18 @@
       ],
       "Move to Inbox": [
         "Flytta till Inkorg"
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "Flyttade ${ count } meddelande till ${ selectedFolder.Name }.",
+        "Flyttade ${ count } meddelanden till ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "Flyttade ${ count } meddelande till arkiv.",
+        "Flyttade ${ count } meddelanden till arkiv."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "Flyttade ${ count } meddelande till papperskorg.",
+        "Flyttade ${ count } meddelanden till papperskorg."
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Måste ha minst ${ MIN_PASSWORD_LENGTH } tecken"
@@ -8977,14 +8994,14 @@
       "Optional": [
         "Valfritt"
       ],
-      "OR": [
-        "ELLER"
-      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
+      ],
+      "OR": [
+        "ELLER"
       ],
       "Original link": [
         "Originallänk"
@@ -9130,6 +9147,9 @@
       "Unsafe or problematic": [
         "Osäkert eller problematisk"
       ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Avslutade prenumeration från ${ truncatedName }."
+      ],
       "Upload picture": [
         "Ladda upp bild"
       ],
@@ -9253,6 +9273,9 @@
       ]
     },
     "Labels": {
+      "Newsletters you unsubscribe from will appear here.": [
+        "Nyhetsbrev som du avslutar prenumeration på kommer visas här."
+      ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Visa och hantera prenumerationer för nyhetsbrev och e-postlistor här."
       ]
@@ -9873,14 +9896,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Skaffa ${ planTitle }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -9902,6 +9917,14 @@
       ],
       "Switch plan": [
         "Byt paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Skaffa ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -12613,47 +12636,6 @@
         "För ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -12912,6 +12894,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {
