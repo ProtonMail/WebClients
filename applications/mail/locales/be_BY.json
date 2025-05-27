@@ -306,6 +306,9 @@
       "Copy addresses": [
         "Капіяваць адрасы"
       ],
+      "Copy alias “${ name }”": [
+        "Капіяваць псеўданім “${ name }”"
+      ],
       "Copy email to clipboard": [
         "Капіяваць ліст у буфер абмену"
       ],
@@ -415,7 +418,7 @@
         "Адключэнне псеўданіма"
       ],
       "Discard": [
-        "Адхіліць"
+        "Скасаваць"
       ],
       "Dismiss": [
         "Адхіліць"
@@ -437,9 +440,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Спампаваць праграмы ${ DRIVE_APP_NAME }"
-      ],
-      "Download now": [
-        "Спампаваць"
       ],
       "Download the desktop app": [
         "Спампаваць настольную праграму"
@@ -686,9 +686,6 @@
       ],
       "Import from Outlook": [
         "Імпартаваць з Outlook"
-      ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "Даступны важныя абнаўленні. Для працягу выкарыстання праграмы, вам неабходна абнавіць яе да апошняй версіі. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Раніцай"
@@ -1394,6 +1391,12 @@
       ],
       "Trust": [
         "Давяраць"
+      ],
+      "Trust key": [
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -3750,7 +3753,7 @@
     },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
-        "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дазваляе вам працаваць разам з іншымі ўдзельнікамі ў бяспечным зашыфраваным асяроддзі."
+        "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дазваляе вам працаваць разам з іншымі ўдзельнікамі ў бяспечным і зашыфраваным асяроддзі."
       ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } у наладах."
@@ -6568,10 +6571,10 @@
         "Вы сапраўды хочаце выдаліць гэту метку?"
       ],
       "Are you sure you want to discard your changes?": [
-        "Вы сапраўды хочаце адхіліць змены?"
+        "Вы сапраўды хочаце скасаваць змены?"
       ],
       "Are you sure you want to discard your import?": [
-        "Вы сапраўды хочаце адхіліць імпартаванне?"
+        "Вы сапраўды хочаце скасаваць імпартаванне?"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
         "Вы сапраўды хочаце перамясціць усе паведамленні з гэтага месца ў архіў?"
@@ -6859,7 +6862,7 @@
         "Чарнавік"
       ],
       "Draft discarded": [
-        "Чарнавік адхілены"
+        "Чарнавік скасаваны"
       ],
       "Draft saved.": [
         "Чарнавік захаваны."
@@ -8695,7 +8698,7 @@
         "Выдаліць незваротна"
       ],
       "Discard draft": [
-        "Адхіліць чарнавік"
+        "Скасаваць чарнавік"
       ],
       "Expand / contract composer": [
         "Разгарнуць / сціснуць рэдактар"
@@ -8923,10 +8926,10 @@
       "Always move sender's emails": [
         "Заўсёды перамяшчаць лісты адпраўніка"
       ],
-      "AND": [
+      "And": [
         "І"
       ],
-      "And": [
+      "AND": [
         "І"
       ],
       "and": [
@@ -9154,11 +9157,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "КАЛІ"
-      ],
       "If": [
         "Калі"
+      ],
+      "IF": [
+        "КАЛІ"
       ],
       "Import all messages": [
         "Імпартаваць усе паведамленні"
@@ -9304,14 +9307,14 @@
       "Optional": [
         "Неабавязкова"
       ],
-      "OR": [
-        "АБО"
-      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
+      ],
+      "OR": [
+        "АБО"
       ],
       "Original link": [
         "Арыгінальная спасылка"
@@ -10222,14 +10225,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Атрымаць тарыфны план ${ planTitle }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -10251,6 +10246,14 @@
       ],
       "Switch plan": [
         "Змяніць тарыфны план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Атрымаць тарыфны план ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -13090,47 +13093,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
@@ -13401,6 +13363,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {

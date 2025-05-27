@@ -432,9 +432,6 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-ის აპების გადმოწერა"
       ],
-      "Download now": [
-        "ახლა გადმოწერა"
-      ],
       "Download the desktop app": [
         "გადმოწერეთ კომპიუტერის აპები"
       ],
@@ -680,9 +677,6 @@
       ],
       "Import from Outlook": [
         "Outlook-დან შემოტანა"
-      ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "ხელმისაწვდომია მნიშვნელოვაი განახლება. ამ აპის გამოყენების გასაგრძელებლად განახლდით უკანასკნელ ვერსიამდე. ${ downloadUpdate }"
       ],
       "In the morning": [
         "დილით"
@@ -1386,6 +1380,10 @@
       ],
       "Trust": [
         "ნდობა"
+      ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -8550,10 +8548,10 @@
       "Always move sender's emails": [
         "გამომგზავნის ელფოსტების ყოველთვის გადატანა"
       ],
-      "AND": [
+      "And": [
         "და"
       ],
-      "And": [
+      "AND": [
         "და"
       ],
       "and": [
@@ -8781,10 +8779,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "თუ"
       ],
-      "If": [
+      "IF": [
         "თუ"
       ],
       "Import all messages": [
@@ -8923,13 +8921,13 @@
       "Optional": [
         "არასავალდებულო"
       ],
-      "OR": [
-        "ან"
-      ],
       "or": [
         "ან"
       ],
       "Or": [
+        "ან"
+      ],
+      "OR": [
         "ან"
       ],
       "Original link": [
@@ -9822,14 +9820,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle }-ის მიღება"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -9851,6 +9841,14 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle }-ის მიღება"
       ]
     },
     "new_plans: feature": {
@@ -12549,47 +12547,6 @@
         "${ totalPrice }-თვის"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
@@ -12845,6 +12802,47 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
