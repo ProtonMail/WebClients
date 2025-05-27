@@ -220,7 +220,7 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
     });
 
     const onSelectTemplate = async (template: CustomTemplate) => {
-        const values = extraTypeFieldValues(template, form.values);
+        const values = extraTypeFieldValues(template, initialValues);
         await form.setValues(values);
         form.resetForm({ values });
         setShowForm(true);
