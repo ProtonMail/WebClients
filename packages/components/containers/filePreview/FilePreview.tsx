@@ -38,6 +38,7 @@ import SignatureIssue from './SignatureIssue';
 import TextPreview from './TextPreview';
 import UnsupportedPreview from './UnsupportedPreview';
 import VideoPreview from './VideoPreview';
+import VideoStreamingPreview from './VideoStreamingPreview';
 
 // Lazy Loaded since it includes jszip and it's a rare file type (not common)
 const ComicBookPreview = lazy(() => import(/* webpackChunkName: "comic-book-preview" */ './ComicBookPreview'));
@@ -59,6 +60,12 @@ interface FilePreviewProps {
     isPublic?: boolean;
     /** Feature flag for public Docs */
     isPublicDocsAvailable?: boolean;
+
+    // For Video Streaming
+    videoStreaming?: {
+        url: string;
+        onVideoPlaybackError?: (error?: unknown) => void;
+    };
 
     contents?: Uint8Array[];
     sharedStatus?: SharedStatus;
@@ -92,6 +99,8 @@ export const FilePreviewContent = ({
     isSharedFile,
     isPublicDocsAvailable,
 
+    videoStreaming,
+
     contents,
 
     onDownload,
@@ -112,6 +121,12 @@ export const FilePreviewContent = ({
     isPublic?: boolean;
     isSharedFile?: boolean;
     isPublicDocsAvailable?: boolean;
+
+    // For Video Streaming
+    videoStreaming?: {
+        url: string;
+        onVideoPlaybackError?: (error?: unknown) => void;
+    };
 
     contents?: Uint8Array[];
 
@@ -138,6 +153,18 @@ export const FilePreviewContent = ({
         if (signatureConfirmation && !forcePreview) {
             return (
                 <SignatureIssue signatureConfirmation={signatureConfirmation} onClick={() => setForcePreview(true)} />
+            );
+        }
+
+        if (mimeType && isVideo(mimeType) && videoStreaming) {
+            return (
+                <VideoStreamingPreview
+                    isLoading={isLoading}
+                    isSharedFile={isSharedFile}
+                    onDownload={onDownload}
+                    videoStreaming={videoStreaming}
+                    imgThumbnailUrl={imgThumbnailUrl}
+                />
             );
         }
 
@@ -254,6 +281,8 @@ const FilePreview = (
         imgThumbnailUrl,
         fileSize,
         isPublic,
+
+        videoStreaming,
 
         contents,
         navigationControls,
@@ -374,6 +403,7 @@ const FilePreview = (
                 imgThumbnailUrl={imgThumbnailUrl}
                 fileSize={fileSize}
                 fileName={fileName}
+                videoStreaming={videoStreaming}
                 isPublic={isPublic}
                 isPublicDocsAvailable={isPublicDocsAvailable}
                 onOpenInDocs={onOpenInDocs}

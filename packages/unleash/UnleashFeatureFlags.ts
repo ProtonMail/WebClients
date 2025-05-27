@@ -121,6 +121,9 @@ enum DriveFeatureFlag {
     // One-dollar offer
     DrivePostSignupOneDollarPromo = 'DrivePostSignupOneDollarPromo',
     DriveWebRecoveryASV = 'DriveWebRecoveryASV',
+    // Video Streaming
+    // TODO: Convert to Kill-Switch once launched and tested
+    DriveWebVideoStreaming = 'DriveWebVideoStreaming',
 }
 
 enum DocsFeatureFlag {
