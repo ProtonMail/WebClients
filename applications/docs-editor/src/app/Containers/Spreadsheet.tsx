@@ -2,7 +2,7 @@
 
 import type { ForwardedRef } from 'react'
 import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
-import type { SheetData } from '../../../../../vendor/rowsncolumns/spreadsheet-state'
+import type { SheetData } from '@rowsncolumns/spreadsheet-state'
 import {
   DeleteSheetConfirmation,
   NamedRangeEditor,
@@ -11,7 +11,7 @@ import {
   TableEditor,
   useSearch,
   useSpreadsheetState,
-} from '../../../../../vendor/rowsncolumns/spreadsheet-state'
+} from '@rowsncolumns/spreadsheet-state'
 import type {
   CellData,
   Sheet,
@@ -23,7 +23,7 @@ import type {
   SpreadsheetTheme,
   ColorMode,
   NamedRange,
-} from '../../../../../vendor/rowsncolumns/spreadsheet'
+} from '@rowsncolumns/spreadsheet'
 import {
   ButtonInsertChart,
   CanvasGrid,
@@ -66,17 +66,17 @@ import {
   SheetStatus,
   SheetSwitcher,
   SheetTabs,
-} from '../../../../../vendor/rowsncolumns/spreadsheet'
-import { ChartComponent, useCharts, ChartEditor, ChartEditorDialog } from '../../../../../vendor/rowsncolumns/charts'
-import { IconButton, Separator } from '../../../../../vendor/rowsncolumns/ui'
-import { functionDescriptions, functions } from '../../../../../vendor/rowsncolumns/functions'
-import { MagnifyingGlassIcon } from '../../../../../vendor/rowsncolumns/icons'
+} from '@rowsncolumns/spreadsheet'
+import { ChartComponent, useCharts, ChartEditor, ChartEditorDialog } from '@rowsncolumns/charts'
+import { IconButton, Separator } from '@rowsncolumns/ui'
+import { functionDescriptions, functions } from '@rowsncolumns/functions'
+import { MagnifyingGlassIcon } from '@rowsncolumns/icons'
 import type { EditorInitializationConfig, DocStateInterface } from '@proton/docs-shared'
 import { EditorSystemMode } from '@proton/docs-shared'
 import { DocProvider, TranslatedResult } from '@proton/docs-shared'
-import { useYSpreadsheetV2 } from '../../../../../vendor/rowsncolumns/y-spreadsheet'
+import { useYSpreadsheetV2 } from '@rowsncolumns/y-spreadsheet'
 import { useSyncedState } from '../Hooks/useSyncedState'
-import '../../../../../vendor/rowsncolumns/spreadsheet.min.css'
+import '@rowsncolumns/spreadsheet/dist/spreadsheet.min.css'
 import type { EditorLoadResult } from '../Lib/EditorLoadResult'
 import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
 
