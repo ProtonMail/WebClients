@@ -65,7 +65,7 @@ export const OnboardingLockSetup: FC = () => {
     return (
         <>
             <RadioGroup<LockMode>
-                name="lock-mode"
+                name="onboarding-lock-mode"
                 onChange={setLockMode}
                 value={lock.mode}
                 className={clsx('pass-onboarding-modal--radio w-full', !online && 'opacity-70 pointer-events-none')}
