@@ -3,8 +3,7 @@ import { c } from 'ttag';
 import type { ButtonLikeShape } from '@proton/atoms';
 import Price from '@proton/components/components/price/Price';
 import Time from '@proton/components/components/time/Time';
-import { PLANS, PLAN_NAMES, type Subscription } from '@proton/payments';
-import { hasBundle } from '@proton/payments';
+import { PLANS, PLAN_NAMES, type Subscription, hasBundle } from '@proton/payments';
 import { OfferPrice } from '@proton/payments/ui';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
@@ -41,6 +40,7 @@ const UpsellPanels = ({ upsells, subscription }: Props) => {
                     if (upsell.plan && upsell.cycle) {
                         return (
                             <OfferPrice
+                                key="offer-price"
                                 planToCheck={{
                                     currency,
                                     planIDs: {
