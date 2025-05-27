@@ -253,6 +253,7 @@ export const FastScrollBar: FC<FastScrollBarProps> = ({
                                 elementRefsCache.current.delete(el.dataKey);
                             }
                         }}
+                        aria-hidden="true"
                         className={clsx(
                             'fast-scroll-dot',
                             el.isLast && 'fast-scroll-last-month',
