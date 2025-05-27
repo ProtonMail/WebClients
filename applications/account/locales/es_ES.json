@@ -463,10 +463,10 @@
       "Discard": [
         "Descartar"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Descartar los cambios"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Descartar los cambios"
       ],
       "Discover ${ planName }": [
@@ -781,11 +781,11 @@
       "Keep": [
         "Conservar"
       ],
-      "Keep Editing": [
-        "Seguir editando"
-      ],
       "Keep editing": [
         "Continuar editando"
+      ],
+      "Keep Editing": [
+        "Seguir editando"
       ],
       "Keep logo": [
         "Conservar el logo"
@@ -970,11 +970,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "Refresh the page": [
-        "Actualizar la página"
-      ],
       "refresh the page": [
         "actualizar la página"
+      ],
+      "Refresh the page": [
+        "Actualizar la página"
       ],
       "Reject": [
         "Rechazar"
@@ -1507,9 +1507,6 @@
       ]
     },
     "Action in trial plan": {
-      "No, thanks": [
-        "No, gracias"
-      ],
       "Try free for 30 days": [
         "Pruébalo gratis durante 30 días"
       ]
@@ -1903,11 +1900,6 @@
         "Sesión actual"
       ]
     },
-    "Baseline in trial plan": {
-      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "${ mailPlus }: la solución de correo electrónico y calendario centrada en la privacidad para tus comunicaciones diarias."
-      ]
-    },
     "bf2023: Action": {
       "Become a Visionary": [
         "Elige Visionary"
@@ -1926,9 +1918,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } de almacenamiento"
-      ],
       "1 user": [
         "1 usuario"
       ],
@@ -4412,7 +4401,7 @@
     },
     "drive_signup_2024: Info": {
       "**Collaborative:** online document editor": [
-        "**Colaborativo:** editor de documentos online"
+        "**Colaborativa:** editor de documentos en línea"
       ],
       "**GDPR** and **HIPAA** compliant": [
         "Cumplimiento del **RGPD** y de la **HIPAA**"
@@ -4421,7 +4410,7 @@
         "Certificado **ISO 27001**"
       ],
       "**Secure:** end-to-end encryption": [
-        "**Protegido** con cifrado de extremo a extremo"
+        "**Segura:** cifrado de extremo a extremo"
       ],
       "**Simple and user-friendly:** import your files and setup in minutes": [
         "**Sencillo y fácil de usar:** Importa tus archivos y configúralo en minutos"
@@ -6915,11 +6904,6 @@
         "Suscrito"
       ]
     },
-    "Heading in trial plan": {
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Prueba lo mejor de ${ MAIL_APP_NAME } gratuitamente."
-      ]
-    },
     "Headline": {
       "Compare plans": [
         "Compara los planes"
@@ -7605,9 +7589,6 @@
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Invita amigos a ${ BRAND_NAME }"
       ],
-      "10 email addresses": [
-        "10 direcciones de correo electrónico"
-      ],
       "2. They try ${ planName }": [
         "2. Ellos prueban ${ planName }"
       ],
@@ -7665,11 +7646,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activa como mínimo un método de recuperación de datos para asegurarte de que puedes continuar accediendo a los contenidos de tu cuenta ${ BRAND_NAME } si pierdes tu contraseña."
       ],
-      "Active": [
-        "Activo"
-      ],
       "active": [
         "activa"
+      ],
+      "Active": [
+        "Activo"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Añade una dirección de correo electrónico @pm.me a tu cuenta. Este dominio simple y más corto significa \"${ MAIL_APP_NAME } me\" o \"Mensaje privado\"."
@@ -8110,11 +8091,11 @@
       "Data recoverable on this device": [
         "Datos recuperables en este dispositivo"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
@@ -8945,9 +8926,6 @@
       "No countries enabled": [
         "Sin países activados"
       ],
-      "No credit card required": [
-        "No se requiere tarjeta de crédito"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "No has establecido ningún método de recuperación de datos. Corres el riesgo de perder el acceso a tus datos."
       ],
@@ -9226,9 +9204,6 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
-      ],
-      "Priority support": [
-        "Soporte prioritario"
       ],
       "Promotion expired": [
         "La promoción ha expirado."
@@ -9514,9 +9489,6 @@
       "Storage for users": [
         "Almacenamiento para usuarios"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
-      ],
       "Storage used by this user": [
         "Almacenamiento utilizado por este usuario"
       ],
@@ -9538,9 +9510,6 @@
       ],
       "Summary": [
         "Resumen"
-      ],
-      "Support for 1 custom email domain": [
-        "Soporte para 1 dominio de correo electrónico personalizado"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "El soporte del monitoreo para dominios personalizados y direcciones de correo externas a ${ BRAND_NAME } estará disponible próximamente."
@@ -9917,12 +9886,6 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "A menos que cierres la sesión o cambies tu contraseña, la sesión permanecerá activa. Las sesiones expiran después de 60 días de inactividad."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetas, etiquetas y filtros ilimitados"
-      ],
-      "Unlimited messages": [
-        "Mensajes ilimitados"
-      ],
       "Unsaved changes": [
         "Cambios no guardados"
       ],
@@ -10098,7 +10061,7 @@
         "Necesitamos autenticar el pago con tu banco."
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
-        "Recomendamos tener al menos 2 servidores para proporcionar redundancia."
+        "Recomendamos tener al menos 2 servidores para garantir redundancia."
       ],
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "Recomendamos tener varios servidores en diferentes ubicaciones para garantizar la redundancia."
@@ -11190,10 +11153,10 @@
       "Amount due": [
         "Importe a pagar"
       ],
-      "AND": [
+      "And": [
         "Y"
       ],
-      "And": [
+      "AND": [
         "Y"
       ],
       "and": [
@@ -11622,11 +11585,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "SI"
-      ],
       "If": [
         "Si"
+      ],
+      "IF": [
+        "SI"
       ],
       "Import all messages": [
         "Importar todos los mensajes"
@@ -11835,13 +11798,13 @@
       "Optional": [
         "Opcional"
       ],
-      "OR": [
-        "O"
-      ],
       "or": [
         "o"
       ],
       "Or": [
+        "O"
+      ],
+      "OR": [
         "O"
       ],
       "Organization name": [
@@ -14540,6 +14503,17 @@
         "Escritorio"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Todos"
+      ],
+      "Group members": [
+        "Miembros del grupo"
+      ],
+      "No one": [
+        "Nadie"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10º del mes"
@@ -14774,17 +14748,6 @@
       ],
       "Trash": [
         "Enviar a la papelera"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Todos"
-      ],
-      "Group members": [
-        "Miembros del grupo"
-      ],
-      "No one": [
-        "Nadie"
       ]
     },
     "Option delay send seconds": {
@@ -17783,47 +17746,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicación de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoya nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejora tu productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos tus datos."
-      ],
-      "Your privacy is our mission": [
-        "Tu privacidad es nuestra misión."
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } con características prémium"
@@ -18112,6 +18034,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Tu alias de correo electrónico @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicación de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoya nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejora tu productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos tus datos."
+      ],
+      "Your privacy is our mission": [
+        "Tu privacidad es nuestra misión."
       ]
     },
     "Subscription renewal state": {

@@ -698,11 +698,11 @@
       "Refresh status": [
         "Smiren addaden"
       ],
-      "Refresh the page": [
-        "Smiren asebter"
-      ],
       "refresh the page": [
         "smiren asebter"
+      ],
+      "Refresh the page": [
+        "Smiren asebter"
       ],
       "Reload": [
         "Smiren"
@@ -1093,11 +1093,6 @@
         "Ḥwi"
       ]
     },
-    "Action in trial plan": {
-      "No, thanks": [
-        "Uhu, tanemmirt"
-      ]
-    },
     "Action subscription": {
       "Reactivate": [
         "Rmed tikelt niḍen"
@@ -1292,9 +1287,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } n uḥraz"
-      ],
       "1 user": [
         "1 useqdac"
       ],
@@ -4191,6 +4183,9 @@
       "Block:": [
         "Sewḥel:"
       ],
+      "Search list": [
+        "Nadi tabdart"
+      ],
       "Spam:": [
         "Aspam:"
       ]
@@ -4863,9 +4858,6 @@
         "+${ organization.BonusVPN } tuqqna i ${ VPN_APP_NAME } (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)",
         "+${ organization.BonusVPN } tuqqniwin i ${ VPN_APP_NAME } (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)"
       ],
-      "10 email addresses": [
-        "10 n tansiwin imayl"
-      ],
       "2. They try ${ planName }": [
         "2. Ttaɛraḍen ${ planName }"
       ],
@@ -4893,11 +4885,11 @@
       "Account successfully updated": [
         "Aleqqem n umiḍan yemmed"
       ],
-      "Active": [
-        "Urmid"
-      ],
       "active": [
         "urmid"
+      ],
+      "Active": [
+        "Urmid"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Rnu tansa n yimayl @pm.me ɣer umiḍan-ik·im. Taɣult-a fessusen, meẓẓiyen anamek-is d \"${ MAIL_APP_NAME } me\" neɣ \"Private Message me.\""
@@ -5137,11 +5129,11 @@
       "Data locked": [
         "Isefka sekkṛen"
       ],
-      "dedicated servers": [
-        "iqeddacen yettwagen"
-      ],
       "Dedicated servers": [
         "Iqeddacen yettwagen"
+      ],
+      "dedicated servers": [
+        "iqeddacen yettwagen"
       ],
       "default email address": [
         "tansa yimayl n lexṣas"
@@ -5479,9 +5471,6 @@
       "No addresses exist": [
         "Ulac tansa yellan"
       ],
-      "No credit card required": [
-        "Ulac takarḍa n usmad yettwasran"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Ulac tarayt n tririt n yisefka tettusbadu; tzemreḍ ad tesruḥeḍ adduf ɣer yisefka-inek•inem"
       ],
@@ -5596,9 +5585,6 @@
       "Preview failed to be loaded": [
         "Taskant tegguma ad d-yali"
       ],
-      "Priority support": [
-        "Tallalt yezwaren"
-      ],
       "Protected by Swiss privacy laws": [
         "Yettummesten s isaḍufen n tbaḍnit n Sswis"
       ],
@@ -5711,17 +5697,11 @@
       "Storage for users": [
         "Asekles i yiseqdacen"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Tallunt n uḥraz tettwabḍa gar ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, d ${ DRIVE_APP_NAME }."
-      ],
       "Storage used by this user": [
         "Aḥraz yettwasqedcen sɣur useqdec-a"
       ],
       "Summary": [
         "Agzul"
-      ],
-      "Support for 1 custom email domain": [
-        "Asefrek i 1 taɣult n yimayl udmawan"
       ],
       "support team": [
         "tarbaɛt n tallalt"
@@ -5851,12 +5831,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Ala ma yella teffɣeḍ seg umiḍan-ik·im neɣ tbeddleḍ awal-ik·im uffir, tiɣimiyin-ik·im ad qqiment remdent. Tiɣimiyin ad fakkent seld 6O wussan ma yella ulac armud."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Ikaramen, tibzimin, d yimsizedgen war tilas"
-      ],
-      "Unlimited messages": [
-        "Iznan war talast"
       ],
       "Unsaved changes": [
         "Isenfal ur ttwaskelsen ara"
@@ -6567,11 +6541,11 @@
       "Amount due": [
         "Tallayt ara txelseḍ"
       ],
-      "AND": [
-        "AKKED"
-      ],
       "And": [
         "Akked"
+      ],
+      "AND": [
+        "AKKED"
       ],
       "and": [
         "akked"
@@ -6897,11 +6871,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "MA"
-      ],
       "If": [
         "Ma"
+      ],
+      "IF": [
+        "MA"
       ],
       "Import all messages": [
         "Kter akk iznan"
@@ -7047,14 +7021,14 @@
       "Optional": [
         "Afrayan"
       ],
-      "OR": [
-        "NEƔ"
-      ],
       "or": [
         "neɣ"
       ],
       "Or": [
         "Neɣ"
+      ],
+      "OR": [
+        "NEƔ"
       ],
       "Organization name": [
         "Isem n tuddsa"
@@ -9713,14 +9687,6 @@
         "Imultaɣen"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GAṬ n uḥraz"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Mazal ${ dayDiff } wass",
@@ -9767,6 +9733,14 @@
       ],
       "Version history": [
         "Azray n lqem"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "Upgrade": [
+        "Leqqem"
       ]
     },
     "Subscription renewal state": {

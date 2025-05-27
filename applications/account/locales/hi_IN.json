@@ -898,11 +898,11 @@
       "Refresh status": [
         "रीफ्रेश स्थिति"
       ],
-      "Refresh the page": [
-        "पन्ना रिफ्रेश करें"
-      ],
       "refresh the page": [
         "पृष्ठ रिफ्रेश करें"
+      ],
+      "Refresh the page": [
+        "पन्ना रिफ्रेश करें"
       ],
       "Reject": [
         "अस्वीकार करें"
@@ -1393,9 +1393,6 @@
       ]
     },
     "Action in trial plan": {
-      "No, thanks": [
-        "नहीं, शुक्रिया"
-      ],
       "Try free for 30 days": [
         "30 दिन के लिए मुफ्त में आज़माएं"
       ]
@@ -1654,11 +1651,6 @@
         "वर्तमान सत्र"
       ]
     },
-    "Baseline in trial plan": {
-      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "${ mailPlus }: निजता-सबसे-पहले ईमेल और कैलेंडर आपके रोज़मर्रा के बातचीत जरूरतों के लिए।"
-      ]
-    },
     "bf2023: Action": {
       "Become a Visionary": [
         "Visionary बनें"
@@ -1677,9 +1669,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } स्टोरेज"
-      ],
       "1 user": [
         "1 यूज़र"
       ],
@@ -6378,11 +6367,6 @@
         "सदस्य बन गए"
       ]
     },
-    "Heading in trial plan": {
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "${ MAIL_APP_NAME } के सबसे मस्त चीज़ो का लुत्फ उठाएं मुफ्त में"
-      ]
-    },
     "Headline": {
       "Compare plans": [
         "प्लान की तुलना करें"
@@ -7016,9 +7000,6 @@
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. दोस्तों को ${ BRAND_NAME } पे आने का न्योता दे"
       ],
-      "10 email addresses": [
-        "10 ईमेल पते"
-      ],
       "2. They try ${ planName }": [
         "2. वो ${ planName } आज़माएंगे"
       ],
@@ -7076,10 +7057,10 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "कम-से-कम एक रिक्वरी तरीका सेट करे ताकि आप अपना ${ BRAND_NAME } खाता इस्तेमाल करना जारी रख सके जब भी आपका पासवर्ड खो जाए।"
       ],
-      "Active": [
+      "active": [
         "सक्रिय"
       ],
-      "active": [
+      "Active": [
         "सक्रिय"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
@@ -7512,11 +7493,11 @@
       "Data locked": [
         "डेटा लॉक"
       ],
-      "dedicated servers": [
-        "समर्पित सर्वर"
-      ],
       "Dedicated servers": [
         "विशेष सर्वर"
+      ],
+      "dedicated servers": [
+        "समर्पित सर्वर"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "विशेष IP पते वाले विशेष सर्वर को निजी गेटवे में जोड़ा जा सकता है ताकि बेहतर पहुंच नियंत्रण संभव हो सके।"
@@ -8287,9 +8268,6 @@
       "No addresses exist": [
         "कोई पता मौजूद नहीं है"
       ],
-      "No credit card required": [
-        "कोई क्रेडिट कार्ड नहीं चाहिए"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "कोई डेटा रिकवरी विधि सेट नहीं; आपको अपने डेटा तक पहुंच खोने का खतरा है"
       ],
@@ -8547,9 +8525,6 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "दाम में आपके खाते में सेव किए चक्र वाले छूट और खत्म-नहीं कूपन, जो लागू हो सकते है, शामिल है।"
-      ],
-      "Priority support": [
-        "प्राथमिक सहायता"
       ],
       "Promotion expired": [
         "प्रचार खत्म हो गया"
@@ -8823,9 +8798,6 @@
       "Storage for users": [
         "यूज़र के लिए स्टोरेज"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "स्टोरेज जगह का इस्तेमाल ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, और ${ DRIVE_APP_NAME } करते है।"
-      ],
       "Storage used by this user": [
         "इस यूज़र का स्टोरेज इस्तेमाल"
       ],
@@ -8843,9 +8815,6 @@
       ],
       "Summary": [
         "सार"
-      ],
-      "Support for 1 custom email domain": [
-        "1 कस्टम ईमेल डोमेन के लिए सहायता"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "कस्टम डोमेन और गैर-${ BRAND_NAME } ईमेल पता का पर्यवेक्षण समर्थन जल्द ही उपलब्ध होगा।"
@@ -9197,12 +9166,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "जब तक आप अपने खाते से साइन आउट नहीं करते या अपना पासवर्ड नहीं बदलते, आपका सत्र सक्रिय रहेगा। 60 दिनों की निष्क्रियता के बाद सत्र समाप्त हो जाते हैं।"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "असीमित फ़ोल्डर, लेबल और फ़िल्टर"
-      ],
-      "Unlimited messages": [
-        "असीमित संदेश"
       ],
       "Unsaved changes": [
         "सेव नहीं बदलाव"
@@ -10414,10 +10377,10 @@
       "Amount due": [
         "देय राशि"
       ],
-      "AND": [
+      "And": [
         "और"
       ],
-      "And": [
+      "AND": [
         "और"
       ],
       "and": [
@@ -10831,10 +10794,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "अगर"
       ],
-      "If": [
+      "IF": [
         "अगर"
       ],
       "Import all messages": [
@@ -11038,13 +11001,13 @@
       "Optional": [
         "वैकल्पिक"
       ],
-      "OR": [
-        "या"
-      ],
       "or": [
         "या"
       ],
       "Or": [
+        "या"
+      ],
+      "OR": [
         "या"
       ],
       "Organization name": [
@@ -13650,6 +13613,17 @@
         "डेस्कटॉप"
       ]
     },
+    "option": {
+      "Everyone": [
+        "सभी"
+      ],
+      "Group members": [
+        "ग्रुप सदस्य"
+      ],
+      "No one": [
+        "कोई भी नहीं"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "महीने की 10 तारीख"
@@ -13878,17 +13852,6 @@
       ],
       "Trash": [
         "कचरा"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "सभी"
-      ],
-      "Group members": [
-        "ग्रुप सदस्य"
-      ],
-      "No one": [
-        "कोई भी नहीं"
       ]
     },
     "Option delay send seconds": {
@@ -16791,47 +16754,6 @@
         "के लिए ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 जीबी स्टोरेज"
-      ],
-      "and 15 more premium features": [
-        "और 15 अन्य प्रीमियम सुविधाएँ"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "डाटा लीक अलर्ट ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "डेस्कटॉप ऐप"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
-      ],
-      "No ads or tracking": [
-        "कोई विज्ञापन या ट्रैकिंग नहीं"
-      ],
-      "Short @pm.me email address": [
-        "छोटा @pm.me ईमेल पता"
-      ],
-      "Support our mission": [
-        "हमारे मिशन का समर्थन करें"
-      ],
-      "Upgrade": [
-        "अपग्रेड करें"
-      ],
-      "Upgrade your productivity": [
-        "अपनी उत्पादकता बढ़ाएँ"
-      ],
-      "We don't sell your data": [
-        "हम आपका डाटा नहीं बेचते"
-      ],
-      "Your privacy is our mission": [
-        "आपकी निजता हमारा मिशन है"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, और ${ VPN_SHORT_APP_NAME } प्रीमियम सुविधाओं के साथ"
@@ -17120,6 +17042,47 @@
       ],
       "Your own short @pm.me email alias": [
         "आपका अपना छोटा @pm.me ईमेल नकली-नाम"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "and 15 more premium features": [
+        "और 15 अन्य प्रीमियम सुविधाएँ"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "डाटा लीक अलर्ट ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
+      ],
+      "No ads or tracking": [
+        "कोई विज्ञापन या ट्रैकिंग नहीं"
+      ],
+      "Short @pm.me email address": [
+        "छोटा @pm.me ईमेल पता"
+      ],
+      "Support our mission": [
+        "हमारे मिशन का समर्थन करें"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
+      ],
+      "Upgrade your productivity": [
+        "अपनी उत्पादकता बढ़ाएँ"
+      ],
+      "We don't sell your data": [
+        "हम आपका डाटा नहीं बेचते"
+      ],
+      "Your privacy is our mission": [
+        "आपकी निजता हमारा मिशन है"
       ]
     },
     "Subscription renewal state": {

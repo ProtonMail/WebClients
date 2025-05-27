@@ -568,11 +568,11 @@
       "Refresh status": [
         "Osvježi status"
       ],
-      "Refresh the page": [
-        "Osvježi stranicu"
-      ],
       "refresh the page": [
         "osvježi stranicu"
+      ],
+      "Refresh the page": [
+        "Osvježi stranicu"
       ],
       "Reject": [
         "Odbiti"
@@ -875,11 +875,6 @@
     "Action for user session": {
       "Revoke": [
         "Opozovi"
-      ]
-    },
-    "Action in trial plan": {
-      "No, thanks": [
-        "Ne, hvala"
       ]
     },
     "Action subscription": {
@@ -3992,9 +3987,6 @@
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } dodatnog prostora za pohranu"
       ],
-      "10 email addresses": [
-        "10 adrese e-pošte"
-      ],
       "30-day money-back guarantee": [
         "Povrat novca do 30 dana"
       ],
@@ -4007,11 +3999,11 @@
       "Account successfully updated": [
         "Račun je uspješno ažuriran"
       ],
-      "Active": [
-        "Aktivno"
-      ],
       "active": [
         "aktivno"
+      ],
+      "Active": [
+        "Aktivno"
       ],
       "Add a recovery phone number": [
         "Dodajte telefonski broj za oporavak"
@@ -4491,9 +4483,6 @@
       "Preview": [
         "Pregled"
       ],
-      "Priority support": [
-        "Prioritetna podrška"
-      ],
       "purchase additional storage": [
         "kupite dodatni prostor za pohranu"
       ],
@@ -4636,12 +4625,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Osim ako se ne odjavite s vašeg računa ili promijenite lozinku, vaše sesije ostaju aktivne. Sesije ističu nakon 60 dana neaktivnosti."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Neograničen broj mapa, oznaka i filtara"
-      ],
-      "Unlimited messages": [
-        "Neograničene poruke"
       ],
       "Unsaved changes": [
         "Nespremljene promjene"
@@ -5275,10 +5258,10 @@
       "Amount due": [
         "Dospjeli iznos"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
       "and": [
@@ -5551,11 +5534,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "AKO"
-      ],
       "If": [
         "Ako"
+      ],
+      "IF": [
+        "AKO"
       ],
       "Import all messages": [
         "Uvoz svih poruka"
@@ -5680,14 +5663,14 @@
       "Optional": [
         "Neobavezno"
       ],
-      "OR": [
-        "ILI"
-      ],
       "or": [
         "ili"
       ],
       "Or": [
         "Ili"
+      ],
+      "OR": [
+        "ILI"
       ],
       "Organization name": [
         "Naziv organizacije"
@@ -7830,17 +7813,6 @@
         "Razumijem"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
-      ]
-    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } prostora za pohranu po korisniku"
@@ -7888,6 +7860,17 @@
       ],
       "Version history": [
         "Povijest verzija"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
       ]
     },
     "Subscription renewal state": {

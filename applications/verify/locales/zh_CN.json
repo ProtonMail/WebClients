@@ -26,6 +26,9 @@
       "Edit sign-in details": [
         "更改登录信息"
       ],
+      "Forgot password?": [
+        "忘记密码？"
+      ],
       "Get verification code": [
         "获取验证码"
       ],
@@ -49,6 +52,9 @@
       ],
       "Try another method": [
         "更换验证方式"
+      ],
+      "Use recovery code": [
+        "使用恢复码"
       ],
       "Verify": [
         "验证"
@@ -909,6 +915,16 @@
         "页面加载失败，请刷新或检查网络连接。"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "安全密钥"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "安全密钥"
+      ]
+    },
     "file size format": {
       "byte": [
         "B"
@@ -1001,6 +1017,9 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "我们的 ${ termsLink } 不允许创建多个免费帐户。"
       ],
+      "Each code can only be used once": [
+        "每个恢复码只能使用一次"
+      ],
       "Edit email address": [
         "编辑邮箱地址"
       ],
@@ -1092,6 +1111,9 @@
       ],
       "Verification code": [
         "验证码"
+      ],
+      "Your password (admin)": [
+        "您的密码（管理员）"
       ]
     },
     "Link": {
@@ -1474,6 +1496,9 @@
       ],
       "Enter 2FA code": [
         "输入 2FA 验证码"
+      ],
+      "Enter your password": [
+        "请输入您的密码"
       ],
       "Human verification": [
         "身份验证"

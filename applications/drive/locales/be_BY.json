@@ -243,6 +243,9 @@
       "Copy address": [
         "Капіяваць адрас"
       ],
+      "Copy alias “${ name }”": [
+        "Капіяваць псеўданім “${ name }”"
+      ],
       "Copy email to clipboard": [
         "Капіяваць ліст у буфер абмену"
       ],
@@ -346,7 +349,7 @@
         "Падрабязнасці"
       ],
       "Discard": [
-        "Адхіліць"
+        "Скасаваць"
       ],
       "Dismiss": [
         "Адхіліць"
@@ -2629,7 +2632,7 @@
     },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
-        "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дазваляе вам працаваць разам з іншымі ўдзельнікамі ў бяспечным зашыфраваным асяроддзі."
+        "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дазваляе вам працаваць разам з іншымі ўдзельнікамі ў бяспечным і зашыфраваным асяроддзі."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс з дапамогай адмысловага кругласутачнага назірання падазроных дзеянняў. Гэты сэрвіс таксама прадугледжвае перадачу спецыялістам па бяспецы."
@@ -4727,11 +4730,14 @@
       "Anyone with this link can access your folder.": [
         "Любы чалавек з гэтай спасылкай зможа атрымаць доступ да вашай папкі."
       ],
+      "Apr": [
+        "Кра"
+      ],
       "Are you sure you want to discard your changes?": [
-        "Вы сапраўды хочаце адхіліць змены?"
+        "Вы сапраўды хочаце скасаваць змены?"
       ],
       "Are you sure you want to discard your import?": [
-        "Вы сапраўды хочаце адхіліць імпартаванне?"
+        "Вы сапраўды хочаце скасаваць імпартаванне?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Вы сапраўды хочаце ачысціць сметніцу і незваротна выдаліць усе элементы?"
@@ -4753,6 +4759,9 @@
       ],
       "Attention required": [
         "Патрабуецца ўвага"
+      ],
+      "Aug": [
+        "Жні"
       ],
       "Automated Recovery ${ formattedDate }": [
         "Аўтаматычнае аднаўленне ${ formattedDate }"
@@ -4903,6 +4912,9 @@
       ],
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
+      ],
+      "Dec": [
+        "Сне"
       ],
       "Decrypting files": [
         "Расшыфроўка файлаў"
@@ -5056,6 +5068,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Не ўдалося адкрыць бяспечную спасылку. Прычына: ${ error }"
+      ],
+      "Feb": [
+        "Лют"
       ],
       "File \"${ name }\" was deleted during download": [
         "Файл \"${ name }\" быў выдалены падчас спампоўвання"
@@ -5228,8 +5243,17 @@
       "It’s easy and secure": [
         "Гэта лёгка і бяспечна"
       ],
+      "Jan": [
+        "Сту"
+      ],
       "JCB logo": [
         "Лагатып JCB"
+      ],
+      "Jul": [
+        "Ліп"
+      ],
+      "Jun": [
+        "Чэр"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Проста пацвердзіце свой выбар, а мы зробім усё астатняе."
@@ -5294,6 +5318,9 @@
       "Makes your account safer": [
         "Зрабіце свой уліковы запіс больш бяспечным"
       ],
+      "Mar": [
+        "Сак"
+      ],
       "Mastercard SecureCode logo": [
         "Лагатып Mastercard SecureCode"
       ],
@@ -5302,6 +5329,9 @@
         "Максімум ${ MAX_SHARED_URL_PASSWORD_LENGTH } сімвалы",
         "Максімум ${ MAX_SHARED_URL_PASSWORD_LENGTH } сімвалаў",
         "Максімум ${ MAX_SHARED_URL_PASSWORD_LENGTH } сімвалаў"
+      ],
+      "May": [
+        "Тра"
       ],
       "Medium Priority": [
         "Сярэдні прыярытэт"
@@ -5378,11 +5408,17 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Нататка: даныя ўсё яшчэ могуць заставацца даступнымі лакальна на прыладзе, дзе ўсталяваны ${ DRIVE_APP_NAME }."
       ],
+      "Nov": [
+        "Ліс"
+      ],
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
       ],
       "Numbers": [
         "Лічбы"
+      ],
+      "Oct": [
+        "Кас"
       ],
       "of": [
         "з"
@@ -5665,6 +5701,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
+      ],
+      "Sep": [
+        "Вер"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Плацяжы SEPA у дадзены момант недаступныя. Паспрабуйце яшчэ раз пазней."
@@ -10463,47 +10502,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
@@ -10774,6 +10772,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -11368,10 +11407,10 @@
         "Для камп'ютара"
       ],
       "Discard": [
-        "Адхіліць"
+        "Скасаваць"
       ],
       "Discard changes?": [
-        "Адхіліць змены?"
+        "Скасаваць змены?"
       ],
       "Downgrade account": [
         "Панізіць уліковы запіс"
