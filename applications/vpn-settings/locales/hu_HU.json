@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
-      "activate": [
-        "aktiválás"
-      ],
       "Activate": [
         "Aktiválás"
+      ],
+      "activate": [
+        "aktiválás"
       ],
       "Activate organization key": [
         "Szervezeti kulcs aktiválása"
@@ -264,11 +264,11 @@
       "Discard": [
         "Elvetés"
       ],
-      "Discard Changes": [
-        "Változtatások elvetése"
-      ],
       "Discard changes": [
         "Módosítások elvetése"
+      ],
+      "Discard Changes": [
+        "Változtatások elvetése"
       ],
       "Discover ${ planName }": [
         "${ planName } felfedezése"
@@ -450,10 +450,10 @@
       "Invite user": [
         "Felhasználó meghívása"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Szerkesztés folytatása"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Szerkesztés folytatása"
       ],
       "Keep logo": [
@@ -570,11 +570,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "Refresh the page": [
-        "Oldal frissítése"
-      ],
       "refresh the page": [
         "frissítse az oldalt"
+      ],
+      "Refresh the page": [
+        "Oldal frissítése"
       ],
       "Remove": [
         "Eltávolítás"
@@ -4518,11 +4518,11 @@
       "Data recoverable on this device": [
         "Ezen az eszközön helyreállíthatók az adatok"
       ],
-      "dedicated servers": [
-        "dedikált szerverek"
-      ],
       "Dedicated servers": [
         "Dedikált szerverek"
+      ],
+      "dedicated servers": [
+        "dedikált szerverek"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikált IP-címekkel rendelkező dedikált kiszolgálók adhatók hozzá a privát átjárókhoz a finoman hangolható hozzáférés-szabályozás érdekében."
@@ -8440,6 +8440,17 @@
         "Üdvözli a ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Mindenki"
+      ],
+      "Group members": [
+        "Csoporttagok"
+      ],
+      "No one": [
+        "Senki"
+      ]
+    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Engedélyezve ${ defaultLabel }"
@@ -8509,17 +8520,6 @@
       ],
       "The whole organization": [
         "A teljes szervezet"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Mindenki"
-      ],
-      "Group members": [
-        "Csoporttagok"
-      ],
-      "No one": [
-        "Senki"
       ]
     },
     "Organization capacity error": {
@@ -10374,47 +10374,6 @@
         "${ totalPrice } áron"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatikus e-mail továbbítás ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Short @pm.me email address": [
-        "Rövid @pm.me e-mail cím"
-      ],
-      "Support our mission": [
-        "Támogassa küldetésünket"
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "Upgrade your productivity": [
-        "Növelje a termelékenységét"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
-      ],
-      "Your privacy is our mission": [
-        "Az Ön adatvédelme a mi küldetésünk"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } és ${ VPN_SHORT_APP_NAME } prémium funkciókkal"
@@ -10703,6 +10662,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Az Ön saját rövid @pm.me e-mail álnévcíme"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatikus e-mail továbbítás ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Short @pm.me email address": [
+        "Rövid @pm.me e-mail cím"
+      ],
+      "Support our mission": [
+        "Támogassa küldetésünket"
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "Upgrade your productivity": [
+        "Növelje a termelékenységét"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
+      ],
+      "Your privacy is our mission": [
+        "Az Ön adatvédelme a mi küldetésünk"
       ]
     },
     "Subscription renewal state": {

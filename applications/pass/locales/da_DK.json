@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Flyt til en anden boks"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Flyt til papirkurv"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Flyt til papirkurv"
       ],
       "Multiple select": [
@@ -1740,6 +1740,9 @@
       ],
       "Latest breach on ${ formattedDate }": [
         "Seneste databrud ${ formattedDate }"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Se hvad du skal gøre her ${ dataLeakedLink }"
       ],
       "Leaving item...": [
         "Forlader element..."
@@ -3276,6 +3279,9 @@
       "auto create rules ››": [
         "regler for automatisk oprettelse ››"
       ],
+      "if your data is leaked": [
+        "hvis dine data er lækket"
+      ],
       "Learn more": [
         "Få mere at vide"
       ]
@@ -3872,6 +3878,9 @@
       "Inactive 2FA": [
         "Inaktiv 2FA"
       ],
+      "Information exposed in breach": [
+        "Information afsløret i en datalækage"
+      ],
       "Install extension": [
         "Installér udvidelse"
       ],
@@ -4139,6 +4148,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "I dag"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Ikke alle oplysninger på listen blev afsløret for alle brugere"
       ]
     },
     "Validation": {

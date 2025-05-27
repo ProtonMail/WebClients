@@ -243,6 +243,9 @@
       "Copy address": [
         "Kopírovat adresu"
       ],
+      "Copy alias “${ name }”": [
+        "Kopírovat alias “${ name }”"
+      ],
       "Copy email to clipboard": [
         "Zkopírovat e-mail do schránky"
       ],
@@ -4727,6 +4730,9 @@
       "Anyone with this link can access your folder.": [
         "Kdokoli s tímto odkazem má přístup k vaší složce."
       ],
+      "Apr": [
+        "Dub"
+      ],
       "Are you sure you want to discard your changes?": [
         "Určitě chcete zahodit všechny provedené změny?"
       ],
@@ -4753,6 +4759,9 @@
       ],
       "Attention required": [
         "Vyžadována pozornost"
+      ],
+      "Aug": [
+        "Srp"
       ],
       "Automated Recovery ${ formattedDate }": [
         "Automatizované obnovení ${ formattedDate }"
@@ -4903,6 +4912,9 @@
       ],
       "Custom email domains": [
         "Vlastní e-mailové domény"
+      ],
+      "Dec": [
+        "Pro"
       ],
       "Decrypting files": [
         "Dešifrování souborů"
@@ -5056,6 +5068,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Nepodařilo se otevřít zabezpečený odkaz. Důvod: ${ error }"
+      ],
+      "Feb": [
+        "Úno"
       ],
       "File \"${ name }\" was deleted during download": [
         "Soubor \"${ name }\" byl smazán během stahování"
@@ -5228,8 +5243,17 @@
       "It’s easy and secure": [
         "Je to snadné a bezpečné"
       ],
+      "Jan": [
+        "Led"
+      ],
       "JCB logo": [
         "JCB logo"
+      ],
+      "Jul": [
+        "Čvc"
+      ],
+      "Jun": [
+        "Čer"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Stačí potvrdit výběr a my se postaráme o zbytek."
@@ -5294,6 +5318,9 @@
       "Makes your account safer": [
         "Zajišťuje větší bezpečnost vašeho účtu"
       ],
+      "Mar": [
+        "Bře"
+      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
@@ -5302,6 +5329,9 @@
         "Max. ${ MAX_SHARED_URL_PASSWORD_LENGTH } písmena",
         "Max. ${ MAX_SHARED_URL_PASSWORD_LENGTH } písmen",
         "Max. ${ MAX_SHARED_URL_PASSWORD_LENGTH } písmen"
+      ],
+      "May": [
+        "Kvě"
       ],
       "Medium Priority": [
         "Střední priorita"
@@ -5378,11 +5408,17 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Poznámka: Na zařízeních, kde jste nainstalovali ${ DRIVE_APP_NAME }, mohou být data stále dostupná lokálně."
       ],
+      "Nov": [
+        "Lis"
+      ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
       ],
       "Numbers": [
         "Číslice"
+      ],
+      "Oct": [
+        "Říj"
       ],
       "of": [
         "z"
@@ -5665,6 +5701,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář podle počtu kalendářů dostupných v tarifu."
+      ],
+      "Sep": [
+        "Zář"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Platby přes SEPA nejsou v tuto chvíli k dispozici. Zkuste to znovu později."
@@ -10412,47 +10451,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
@@ -10723,6 +10721,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {

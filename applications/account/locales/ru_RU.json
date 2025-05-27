@@ -460,10 +460,10 @@
       "Discard": [
         "Сбросить"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Сбросить изменения"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Сбросить изменения"
       ],
       "Discover ${ planName }": [
@@ -778,10 +778,10 @@
       "Keep": [
         "Оставить"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Продолжить изменение"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Продолжить изменение"
       ],
       "Keep logo": [
@@ -967,11 +967,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "Refresh the page": [
-        "Обновить страницу"
-      ],
       "refresh the page": [
         "обновить страницу"
+      ],
+      "Refresh the page": [
+        "Обновить страницу"
       ],
       "Reject": [
         "Отказать"
@@ -1504,9 +1504,6 @@
       ]
     },
     "Action in trial plan": {
-      "No, thanks": [
-        "Нет, спасибо"
-      ],
       "Try free for 30 days": [
         "Попробуйте бесплатно в течение 30 дней"
       ]
@@ -1910,11 +1907,6 @@
         "Текущая сессия"
       ]
     },
-    "Baseline in trial plan": {
-      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "${ mailPlus }: почта и календарь с приоритетом конфиденциальности для вашей повседневной коммуникации."
-      ]
-    },
     "bf2023: Action": {
       "Become a Visionary": [
         "Получите тариф Visionary"
@@ -1933,9 +1925,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } хранилища"
-      ],
       "1 user": [
         "1 пользователь"
       ],
@@ -6987,11 +6976,6 @@
         "Подписаны"
       ]
     },
-    "Heading in trial plan": {
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Попробуйте лучшее из ${ MAIL_APP_NAME } бесплатно"
-      ]
-    },
     "Headline": {
       "Compare plans": [
         "Сравнить тарифы"
@@ -7745,9 +7729,6 @@
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Пригласите друзей в ${ BRAND_NAME }"
       ],
-      "10 email addresses": [
-        "10 адресов электронной почты"
-      ],
       "2. They try ${ planName }": [
         "2. Они пробуют ${ planName }"
       ],
@@ -7805,11 +7786,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Активируйте хотя бы один метод восстановления данных, чтобы убедиться, что вы сможете продолжить доступ к содержимому вашего аккаунта ${ BRAND_NAME } в случае утери пароля."
       ],
-      "Active": [
-        "Активно"
-      ],
       "active": [
         "активный"
+      ],
+      "Active": [
+        "Активно"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Добавьте адрес электронной почты @pm.me в ваш аккаунт. Этот простой и короткий домен означает \"Напиши мне в ${ MAIL_APP_NAME }\" или \"Отправь мне личное сообщение\"."
@@ -8270,11 +8251,11 @@
       "Data recoverable on this device": [
         "Данные, которые можно восстановить на этом устройстве"
       ],
-      "dedicated servers": [
-        "выделенные серверы"
-      ],
       "Dedicated servers": [
         "Выделенные серверы"
+      ],
+      "dedicated servers": [
+        "выделенные серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с выделенными IP-адресами могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -9107,9 +9088,6 @@
       "No countries enabled": [
         "Не включено ни одного страны"
       ],
-      "No credit card required": [
-        "Кредитная карта не требуется"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Не установлен метод восстановления данных, вы рискуете потерять доступ к своим данным"
       ],
@@ -9401,9 +9379,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Стоимость указана с учетом всех применимых циклических скидок и не истекших купонов, сохраненных в вашем аккаунте."
       ],
-      "Priority support": [
-        "Приоритетная поддержка"
-      ],
       "Promotion expired": [
         "Срок действия акции истек"
       ],
@@ -9692,9 +9667,6 @@
       "Storage for users": [
         "Хранилище для пользователей"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Объём хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
-      ],
       "Storage used by this user": [
         "Хранилище, используемое этим пользователем"
       ],
@@ -9718,9 +9690,6 @@
       ],
       "Summary": [
         "Сводка"
-      ],
-      "Support for 1 custom email domain": [
-        "Поддержка 1 пользовательского домена электронной почты"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Поддержка контроля пользовательских доменов и адресов электронной почты, не относящихся к ${ BRAND_NAME }, появится в ближайшее время."
@@ -10099,12 +10068,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Пока вы не выйдете из своей учётной записи либо не измените свой пароль, ваша сессия остаётся активной. Срок действия сессий истекает после 60 дней бездействия."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Неограниченное количество папок, ярлыков и фильтров"
-      ],
-      "Unlimited messages": [
-        "Неограниченное количество сообщений"
       ],
       "Unsaved changes": [
         "Несохраненные изменения"
@@ -11413,10 +11376,10 @@
       "Amount due": [
         "К оплате"
       ],
-      "AND": [
+      "And": [
         "И"
       ],
-      "And": [
+      "AND": [
         "И"
       ],
       "and": [
@@ -11845,11 +11808,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ЕСЛИ"
-      ],
       "If": [
         "Если"
+      ],
+      "IF": [
+        "ЕСЛИ"
       ],
       "Import all messages": [
         "Импортировать все сообщения"
@@ -12058,14 +12021,14 @@
       "Optional": [
         "Необязательно"
       ],
-      "OR": [
-        "ИЛИ"
-      ],
       "or": [
         "или"
       ],
       "Or": [
         "Или"
+      ],
+      "OR": [
+        "ИЛИ"
       ],
       "Organization name": [
         "Название организации"
@@ -14849,6 +14812,17 @@
         "Рабочий стол"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Все"
+      ],
+      "Group members": [
+        "Участники группы"
+      ],
+      "No one": [
+        "Никто"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10-ое число месяца"
@@ -15083,17 +15057,6 @@
       ],
       "Trash": [
         "Корзина"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Все"
-      ],
-      "Group members": [
-        "Участники группы"
-      ],
-      "No one": [
-        "Никто"
       ]
     },
     "Option delay send seconds": {
@@ -18199,47 +18162,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
@@ -18540,6 +18462,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {

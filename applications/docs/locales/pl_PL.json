@@ -132,9 +132,6 @@
       "Change sort order": [
         "Zmień kolejność sortowania"
       ],
-      "characters": [
-        "znaki"
-      ],
       "Chat with us": [
         "Czat z nami"
       ],
@@ -209,6 +206,9 @@
       ],
       "Copy address": [
         "Kopiuj adres"
+      ],
+      "Copy as markdown": [
+        "Kopiuj jako format markdown"
       ],
       "Copy email to clipboard": [
         "Kopiuj adres e-mail do schowka"
@@ -512,9 +512,6 @@
       ],
       "New message": [
         "Nowa wiadomość"
-      ],
-      "New sheet": [
-        "Nowy arkusz"
       ],
       "Next": [
         "Dalej"
@@ -4450,9 +4447,6 @@
       "Change your password": [
         "Zmień hasło"
       ],
-      "characters": [
-        "znaki"
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Sprawdzanie kontaktów... (${ progress } z ${ max })"
       ],
@@ -5478,6 +5472,9 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Usługa VPN wykorzystuje szyfrowanie, aby ukryć Twój adres IP (unikalny kod przypisany do Twojego urządzenia)."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Po skonfigurowaniu uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, których możesz użyć do zalogowania się w przypadku utraty dostępu do aplikacji uwierzytelniającej."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Czy chcesz otrzymać nowy kod weryfikacyjny lub użyć innej metody weryfikacji?"
@@ -6839,6 +6836,17 @@
         "Umiarkowana prędkość VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Od ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Usuń konto"
@@ -6860,17 +6868,6 @@
       ],
       "Switch plan": [
         "Zmień plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Od ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
       ]
     },
     "new_plans: feature": {
@@ -9431,6 +9428,29 @@
         "Za ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } przestrzeni dyskowej na użytkownika"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Plan ${ planName } zawiera wszystkie aplikacje, wszystkie funkcje, wcześniejszy dostęp do nowych wersji i wszystko, czego potrzebujesz, aby mieć kontrolę nad swoimi danymi i ich bezpieczeństwem."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } niestandardowa domena",
+        "${ planNumberOfDomains } niestandardowe domeny",
+        "${ planNumberOfDomains } niestandardowych domen",
+        "${ planNumberOfDomains } niestandardowych domen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adres e-mail",
+        "${ planNumberOfEmails } adresy e-mail",
+        "${ planNumberOfEmails } adresów e-mail",
+        "${ planNumberOfEmails } adresów e-mail"
+      ],
+      "Folders, labels, and custom filters": [
+        "Foldery, etykiety i filtry niestandardowe"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB przestrzeni dyskowej"
@@ -9470,29 +9490,6 @@
       ],
       "Your privacy is our mission": [
         "Prywatność to nasza misja"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } przestrzeni dyskowej na użytkownika"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "Plan ${ planName } zawiera wszystkie aplikacje, wszystkie funkcje, wcześniejszy dostęp do nowych wersji i wszystko, czego potrzebujesz, aby mieć kontrolę nad swoimi danymi i ich bezpieczeństwem."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } niestandardowa domena",
-        "${ planNumberOfDomains } niestandardowe domeny",
-        "${ planNumberOfDomains } niestandardowych domen",
-        "${ planNumberOfDomains } niestandardowych domen"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adres e-mail",
-        "${ planNumberOfEmails } adresy e-mail",
-        "${ planNumberOfEmails } adresów e-mail",
-        "${ planNumberOfEmails } adresów e-mail"
-      ],
-      "Folders, labels, and custom filters": [
-        "Foldery, etykiety i filtry niestandardowe"
       ]
     },
     "Subscription renewal state": {

@@ -152,10 +152,10 @@
       "Create": [
         "Utwórz"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -580,6 +580,9 @@
       ],
       "Sort vault items": [
         "Sortuj elementy sejfu"
+      ],
+      "Start from scratch": [
+        "Rozpocznij od początku"
       ],
       "Submit": [
         "Wyślij"
@@ -1835,10 +1838,7 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -2580,6 +2580,9 @@
       "Account Number": [
         "Numer konta"
       ],
+      "Account Type": [
+        "Typ konta"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Dodaj losowy przedrostek domeny podczas tworzenia nowego aliasu."
       ],
@@ -2709,11 +2712,17 @@
       "Country or Region": [
         "Kraj lub region"
       ],
+      "Country,": [
+        "Kraj"
+      ],
       "County": [
         "Powiat"
       ],
       "Create a credit card": [
         "Utwórz kartę płatniczą"
+      ],
+      "Create a custom item": [
+        "Utwórz niestandardowy element"
       ],
       "Create a hide-my-email alias": [
         "Utwórz alias hide-my-email"
@@ -2739,8 +2748,14 @@
       "Created at": [
         "Utworzono na stronie"
       ],
+      "Crypto Wallet": [
+        "Portfel kryptowalut"
+      ],
       "Custom hidden field": [
         "Ukryte tekstowe pole niestandardowe"
+      ],
+      "Custom Items": [
+        "Niestandardowe elementy"
       ],
       "Custom text field": [
         "Tekstowe pole niestandardowe"
@@ -2922,6 +2937,9 @@
       "Issuing Authority": [
         "Organ wydający"
       ],
+      "Issuing Country": [
+        "Kraj wydający"
+      ],
       "Item ID": [
         "Identyfikator elementu"
       ],
@@ -2990,6 +3008,12 @@
       ],
       "max views reached": [
         "maksymalna liczba dostępów została osiągnięta"
+      ],
+      "Medical Record": [
+        "Dokumentacja medyczna"
+      ],
+      "Member ID": [
+        "Identyfikator członkostwa"
       ],
       "Members": [
         "Użytkownicy"
@@ -3087,6 +3111,9 @@
       "Passport number": [
         "Numer paszportu"
       ],
+      "Passport Number": [
+        "Numer paszportu"
+      ],
       "Password": [
         "Hasło"
       ],
@@ -3098,6 +3125,9 @@
       ],
       "Pause list": [
         "Lista wykluczonych"
+      ],
+      "Personal": [
+        "Osobiste"
       ],
       "Personal details": [
         "Szczegóły osobiste"
@@ -3129,10 +3159,10 @@
       "Priority:": [
         "Priorytet:"
       ],
-      "Private key": [
+      "Private Key": [
         "Klucz prywatny"
       ],
-      "Private Key": [
+      "Private key": [
         "Klucz prywatny"
       ],
       "Program Name": [
@@ -3177,6 +3207,9 @@
       "Reward Program": [
         "Program lojalnościowy"
       ],
+      "Routing Number": [
+        "Numer rozliczeniowy"
+      ],
       "Save passkeys": [
         "Zapisz klucze dostępu"
       ],
@@ -3194,6 +3227,9 @@
       ],
       "See member and permission overview": [
         "Zobacz użytkowników i sprawdź uprawnienia"
+      ],
+      "Seed Phrase": [
+        "Fraza seed"
       ],
       "Select a domain": [
         "Wybierz domenę"
@@ -3240,8 +3276,14 @@
       "Social security": [
         "Numer ubezpieczenia społecznego"
       ],
+      "Social Security": [
+        "Numer ubezpieczenia społecznego"
+      ],
       "Social security number": [
         "Numer ubezpieczenia społecznego"
+      ],
+      "Software license": [
+        "Licencja oprogramowania"
       ],
       "Special characters (!&*)": [
         "Znaki specjalne (!&*)"
@@ -3273,6 +3315,9 @@
       "Support": [
         "Wsparcie"
       ],
+      "SWIFT/BIC": [
+        "SWIFT / BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Synchronizuj aliasy z SimpleLogin"
       ],
@@ -3293,6 +3338,9 @@
       ],
       "Theme": [
         "Motyw"
+      ],
+      "Tier/Status": [
+        "Poziom / status"
       ],
       "Title": [
         "Tytuł"
@@ -3344,6 +3392,12 @@
       ],
       "Unnamed SSH key": [
         "Klucz SSH bez nazwy"
+      ],
+      "Unnamed WiFi item": [
+        "Sieć Wi-Fi bez nazwy"
+      ],
+      "Unspecified": [
+        "Nieokreślone"
       ],
       "Untitled": [
         "Bez nazwy"
@@ -3650,6 +3704,9 @@
       ],
       "my-domain.com": [
         "moja-domena.pl"
+      ],
+      "Name displayed in emails": [
+        "Nazwa wyświetlana w wiadomościach"
       ],
       "Note from SimpleLogin": [
         "Notatka z SimpleLogin"

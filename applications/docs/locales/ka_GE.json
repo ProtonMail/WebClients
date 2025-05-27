@@ -513,9 +513,6 @@
       "New message": [
         "ახალი შეტყობინება"
       ],
-      "New sheet": [
-        "ახალი ფურცელი"
-      ],
       "Next": [
         "შემდეგი"
       ],
@@ -6424,6 +6421,17 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "${ priceDrivePlus }-დან დაწყებული სატარიფო გეგმები"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -6445,17 +6453,6 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "${ priceDrivePlus }-დან დაწყებული სატარიფო გეგმები"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
       ]
     },
     "new_plans: feature": {
@@ -8858,6 +8855,25 @@
         "${ totalPrice }-თვის"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace }/მომხმარებელი"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } გაძლევთ ყველა აპს, ყველა ფუნქციას, ადრეულ წვდომას ახალ რელიზებთან და ყველაფერს, რაც გჭირდებათ, რომ მართოთ თქვენი მონაცემები და მისი უსაფრთხოება."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი",
+        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } ელფოსტის მისამართი",
+        "${ planNumberOfEmails } ელფოსტის მისამართი"
+      ],
+      "Folders, labels, and custom filters": [
+        "საქაღალდეები, ჭდეები და მომხმარებლის ფილტრები"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 გბ საცავი"
@@ -8897,25 +8913,6 @@
       ],
       "Your privacy is our mission": [
         "თქვენი კონფიდენციალობა ჩვენი მისიაა"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace }/მომხმარებელი"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } გაძლევთ ყველა აპს, ყველა ფუნქციას, ადრეულ წვდომას ახალ რელიზებთან და ყველაფერს, რაც გჭირდებათ, რომ მართოთ თქვენი მონაცემები და მისი უსაფრთხოება."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი",
-        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } ელფოსტის მისამართი",
-        "${ planNumberOfEmails } ელფოსტის მისამართი"
-      ],
-      "Folders, labels, and custom filters": [
-        "საქაღალდეები, ჭდეები და მომხმარებლის ფილტრები"
       ]
     },
     "Subscription renewal state": {

@@ -149,10 +149,10 @@
       "Create": [
         "创建"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "创建 ${ BRAND_NAME } 账户"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "创建 ${ BRAND_NAME } 账户"
       ],
       "Create alias": [
@@ -577,6 +577,9 @@
       ],
       "Sort vault items": [
         "对保险库项目排序"
+      ],
+      "Start from scratch": [
+        "从零开始"
       ],
       "Submit": [
         "提交"
@@ -1757,7 +1760,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2439,6 +2442,12 @@
       "Account": [
         "帐户"
       ],
+      "Account Number": [
+        "账户号码"
+      ],
+      "Account Type": [
+        "帐户类型"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "创建新别名时，请为该域添加一个随机前缀。"
       ],
@@ -2478,6 +2487,9 @@
       "Always show username field": [
         "始终显示用户名字段"
       ],
+      "API Credential": [
+        "API 凭证"
+      ],
       "Application logs": [
         "应用程序日志"
       ],
@@ -2501,6 +2513,12 @@
       ],
       "Backup password": [
         "备用密码"
+      ],
+      "Bank Account": [
+        "银行账户"
+      ],
+      "Bank Name": [
+        "银行名称"
       ],
       "Biometrics": [
         "生物识别"
@@ -2559,11 +2577,17 @@
       "Country or Region": [
         "国家或地区"
       ],
+      "Country,": [
+        "国家/地区"
+      ],
       "County": [
         "县市"
       ],
       "Create a credit card": [
         "创建信用卡"
+      ],
+      "Create a custom item": [
+        "创建自定义项目"
       ],
       "Create a hide-my-email alias": [
         "创建一个 hide-my-email 别名"
@@ -2589,14 +2613,26 @@
       "Created at": [
         "创建于"
       ],
+      "Crypto Wallet": [
+        "加密钱包"
+      ],
       "Custom hidden field": [
         "自定义隐藏字段"
+      ],
+      "Custom Items": [
+        "自定义项目"
       ],
       "Custom text field": [
         "自定义文本字段"
       ],
+      "Database": [
+        "数据库"
+      ],
       "Date": [
         "日期"
+      ],
+      "Date of Birth": [
+        "出生日期"
       ],
       "Device": [
         "设备"
@@ -2621,6 +2657,9 @@
       ],
       "Download logs": [
         "下载日志"
+      ],
+      "Driver License": [
+        "驾驶执照"
       ],
       "Email": [
         "邮箱"
@@ -2649,6 +2688,9 @@
       "Expired": [
         "已失效"
       ],
+      "Expiry Date": [
+        "截止日期"
+      ],
       "Export": [
         "导出"
       ],
@@ -2666,6 +2708,9 @@
       ],
       "File format": [
         "文件格式"
+      ],
+      "Finance": [
+        "金融"
       ],
       "First name": [
         "名"
@@ -2699,6 +2744,9 @@
       ],
       "Hide password": [
         "隐藏密码"
+      ],
+      "Holder Name": [
+        "持有人姓名"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2747,6 +2795,12 @@
       ],
       "Invitations": [
         "邀请"
+      ],
+      "Issuing Authority": [
+        "签发机关"
+      ],
+      "Issuing Country": [
+        "签发国家/地区"
       ],
       "Item ID": [
         "项目 ID"
@@ -2817,14 +2871,26 @@
       "max views reached": [
         "达到最大浏览量"
       ],
+      "Medical Record": [
+        "医疗记录"
+      ],
+      "Member ID": [
+        "成员编号"
+      ],
       "Members": [
         "成员"
+      ],
+      "Membership": [
+        "成员资格"
       ],
       "Middle name": [
         "中间名（若有）"
       ],
       "Modified": [
         "修改时间"
+      ],
+      "More": [
+        "更多"
       ],
       "More than a month": [
         "一个多月"
@@ -2835,11 +2901,17 @@
       "Name": [
         "名称"
       ],
+      "Name (SSID)": [
+        "名称 (SSID)"
+      ],
       "Name on card": [
         "持卡人姓名"
       ],
       "Need help?": [
         "需要帮助？"
+      ],
+      "Network": [
+        "网络"
       ],
       "New": [
         "新"
@@ -2901,6 +2973,9 @@
       "Passport number": [
         "护照号码"
       ],
+      "Passport Number": [
+        "护照号码"
+      ],
       "Password": [
         "密码"
       ],
@@ -2912,6 +2987,9 @@
       ],
       "Pause list": [
         "暂停列表"
+      ],
+      "Personal": [
+        "私人"
       ],
       "Personal details": [
         "个人资料"
@@ -2931,6 +3009,9 @@
       "PIN code": [
         "PIN 码"
       ],
+      "Points Balance": [
+        "积分余额"
+      ],
       "Prefix": [
         "前綴"
       ],
@@ -2939,6 +3020,15 @@
       ],
       "Priority:": [
         "优先级："
+      ],
+      "Private Key": [
+        "私钥"
+      ],
+      "Private key": [
+        "私钥"
+      ],
+      "Program Name": [
+        "程序名称"
       ],
       "Prompt for auto-save": [
         "提示自动保存"
@@ -2951,6 +3041,9 @@
       ],
       "Public domain": [
         "公共域名"
+      ],
+      "Public key": [
+        "公钥"
       ],
       "Rate us": [
         "去评分"
@@ -2973,6 +3066,12 @@
       "Reveal password": [
         "显示密码"
       ],
+      "Reward Program": [
+        "奖励计划"
+      ],
+      "Routing Number": [
+        "路由号码"
+      ],
       "Save passkeys": [
         "保存通行密钥"
       ],
@@ -2991,6 +3090,9 @@
       "See member and permission overview": [
         "查看成员和权限概述。"
       ],
+      "Seed Phrase": [
+        "种子短语"
+      ],
       "Select a domain": [
         "选择域名"
       ],
@@ -3008,6 +3110,9 @@
       ],
       "Selected": [
         "已选中"
+      ],
+      "Server": [
+        "服务器"
       ],
       "Settings": [
         "设置"
@@ -3033,11 +3138,26 @@
       "Social security": [
         "社会保障"
       ],
+      "Social Security": [
+        "社会保障"
+      ],
       "Social security number": [
         "社会保障号码"
       ],
+      "Software license": [
+        "软件许可证"
+      ],
       "Special characters (!&*)": [
         "特殊字符 (!&*)"
+      ],
+      "SSH key": [
+        "SSH 密钥"
+      ],
+      "SSH Keys": [
+        "SSH 密钥"
+      ],
+      "SSN": [
+        "社会保险号码（SSN）"
       ],
       "State or province": [
         "省、自治区或直辖市"
@@ -3057,6 +3177,9 @@
       "Support": [
         "帮助"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "使用 SimpleLogin 同步别名"
       ],
@@ -3066,6 +3189,9 @@
       "Tax number": [
         "纳税人识别号"
       ],
+      "Technology": [
+        "技术"
+      ],
       "Text": [
         "文本"
       ],
@@ -3074,6 +3200,9 @@
       ],
       "Theme": [
         "主题"
+      ],
+      "Tier/Status": [
+        "级别/状态"
       ],
       "Title": [
         "标题"
@@ -3111,6 +3240,9 @@
       "Unnamed Credit Card": [
         "未命名信用卡"
       ],
+      "Unnamed custom item": [
+        "未命名自定义项目"
+      ],
       "Unnamed identity": [
         "未命名标识"
       ],
@@ -3119,6 +3251,15 @@
       ],
       "Unnamed note": [
         "未命名笔记"
+      ],
+      "Unnamed SSH key": [
+        "未命名 SSH 密钥"
+      ],
+      "Unnamed WiFi item": [
+        "未命名 WiFi 项目"
+      ],
+      "Unspecified": [
+        "未指定"
       ],
       "Untitled": [
         "未命名"
@@ -3153,6 +3294,9 @@
       "Vulnerable": [
         "易受攻击"
       ],
+      "Wallet Name": [
+        "钱包名称"
+      ],
       "Weak": [
         "弱"
       ],
@@ -3161,6 +3305,12 @@
       ],
       "Websites": [
         "网站"
+      ],
+      "WiFi network": [
+        "WiFi 网络"
+      ],
+      "WiFi Networks": [
+        "WLAN 网络"
       ],
       "Work details": [
         "工作详情"
@@ -3357,6 +3507,9 @@
       "Add 2FA secret key": [
         "添加 2FA 密钥"
       ],
+      "Add date": [
+        "添加日期"
+      ],
       "Add hidden text": [
         "添加隐藏文本"
       ],
@@ -3437,6 +3590,9 @@
       ],
       "Select a suffix": [
         "选择一个后缀"
+      ],
+      "Select option": [
+        "选择选项"
       ],
       "Unknown origin": [
         "未知来源"

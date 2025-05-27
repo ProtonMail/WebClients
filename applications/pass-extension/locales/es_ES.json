@@ -72,7 +72,7 @@
         "Mover un grupo de elementos a otra caja fuerte"
       ],
       "Bulk move items to trash": [
-        "Mover un grupo de elementos"
+        "Mover un grupo de elementos a la papelera"
       ],
       "Bulk restore items from trash": [
         "Restaurar un grupo de elementos de la papelera"
@@ -152,10 +152,10 @@
       "Create": [
         "Crear"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Crear una cuenta de ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Crear una cuenta de ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -1790,8 +1790,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
-        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -1845,7 +1844,7 @@
         "La propiedad ha sido transferida. Ya no tienes la propiedad de esta caja fuerte."
       ],
       "Pass Plus trial": [
-        "Prueba Pass Plus"
+        "Prueba de Pass Plus"
       ],
       "Passkey sign-in": [
         "Inicio de sesión con clave de acceso"
@@ -1996,7 +1995,7 @@
         "Rellena rápidamente tus tokens 2FA."
       ],
       "Quickly autofill your identities.": [
-        "Rellena rápidamente tus identidades."
+        "Rellena automaticamente y rápidamente tus identidades."
       ],
       "Quickly autofill your saved credentials.": [
         "Rellena automáticamente y rápidamente tus credenciales guardadas."
@@ -3074,10 +3073,10 @@
       "Priority:": [
         "Prioridad:"
       ],
-      "Private key": [
+      "Private Key": [
         "Clave privada"
       ],
-      "Private Key": [
+      "Private key": [
         "Clave privada"
       ],
       "Program Name": [

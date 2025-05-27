@@ -56,6 +56,9 @@
       "Apply lifetime coupon code": [
         "평생 쿠폰 코드 적용"
       ],
+      "Authenticate": [
+        "인증"
+      ],
       "Back": [
         "이전"
       ],
@@ -149,10 +152,10 @@
       "Create": [
         "생성"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 생성하기"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } 계정 생성하기"
       ],
       "Create alias": [
@@ -577,6 +580,9 @@
       ],
       "Sort vault items": [
         "금고 항목 정렬"
+      ],
+      "Start from scratch": [
+        "처음부터 시작하기"
       ],
       "Submit": [
         "제출"
@@ -1582,6 +1588,9 @@
       "Enter the address you want to email.": [
         "받을 사람의 이메일 주소를 입력하세요."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "인증 코드를 입력하세요. ${ digit }자리입니다."
+      ],
       "Enter your extra password": [
         "추가 비밀번호 입력"
       ],
@@ -1755,9 +1764,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2436,6 +2442,12 @@
       "Account": [
         "계정"
       ],
+      "Account Number": [
+        "계좌 번호"
+      ],
+      "Account Type": [
+        "계좌 유형"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "새로운 별칭을 만들 때 이 도메인에 임의의 접두사를 추가하세요."
       ],
@@ -2475,6 +2487,9 @@
       "Always show username field": [
         "사용자 이름 입력란 항상 표시"
       ],
+      "API Credential": [
+        "API 자격 증명"
+      ],
       "Application logs": [
         "어플리케이션 로그"
       ],
@@ -2498,6 +2513,12 @@
       ],
       "Backup password": [
         "백업 비밀번호"
+      ],
+      "Bank Account": [
+        "은행 번호"
+      ],
+      "Bank Name": [
+        "은행명"
       ],
       "Biometrics": [
         "생체 인식"
@@ -2556,11 +2577,17 @@
       "Country or Region": [
         "국가/지역"
       ],
+      "Country,": [
+        "국가,"
+      ],
       "County": [
         "구/군"
       ],
       "Create a credit card": [
         "신용 카드 생성"
+      ],
+      "Create a custom item": [
+        "사용자 지정 항목 추가"
       ],
       "Create a hide-my-email alias": [
         "Hide-my-email 별칭 생성"
@@ -2586,14 +2613,26 @@
       "Created at": [
         "생성일:"
       ],
+      "Crypto Wallet": [
+        "암호화폐 지갑"
+      ],
       "Custom hidden field": [
         "사용자 지정 숨겨진 필드"
+      ],
+      "Custom Items": [
+        "사용자 지정 항목"
       ],
       "Custom text field": [
         "사용자 정의 필드"
       ],
+      "Database": [
+        "데이터 베이스"
+      ],
       "Date": [
         "날짜"
+      ],
+      "Date of Birth": [
+        "생일"
       ],
       "Device": [
         "기기"
@@ -2622,6 +2661,9 @@
       "Download logs": [
         "로그 다운로드"
       ],
+      "Driver License": [
+        "운전 면허증"
+      ],
       "Email": [
         "이메일"
       ],
@@ -2649,6 +2691,9 @@
       "Expired": [
         "만료됨"
       ],
+      "Expiry Date": [
+        "만료 날짜"
+      ],
       "Export": [
         "내보내기"
       ],
@@ -2666,6 +2711,9 @@
       ],
       "File format": [
         "파일 형식"
+      ],
+      "Finance": [
+        "금융"
       ],
       "First name": [
         "이름"
@@ -2699,6 +2747,9 @@
       ],
       "Hide password": [
         "비밀번호 숨기기"
+      ],
+      "Holder Name": [
+        "소유자명"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2747,6 +2798,12 @@
       ],
       "Invitations": [
         "초대"
+      ],
+      "Issuing Authority": [
+        "발급 기관"
+      ],
+      "Issuing Country": [
+        "발행 지역"
       ],
       "Item ID": [
         "항목 ID"
@@ -2817,14 +2874,26 @@
       "max views reached": [
         "최대 보기 수 도달"
       ],
+      "Medical Record": [
+        "의료 면허증"
+      ],
+      "Member ID": [
+        "회원 ID"
+      ],
       "Members": [
         "구성원"
+      ],
+      "Membership": [
+        "회원권"
       ],
       "Middle name": [
         "중간 이름"
       ],
       "Modified": [
         "수정됨"
+      ],
+      "More": [
+        "더 보기"
       ],
       "More than a month": [
         "1개월 이상"
@@ -2835,11 +2904,17 @@
       "Name": [
         "이름"
       ],
+      "Name (SSID)": [
+        "이름 (SSID)"
+      ],
       "Name on card": [
         "카드 소유자 이름"
       ],
       "Need help?": [
         "도움이 필요한가요?"
+      ],
+      "Network": [
+        "네트워크"
       ],
       "New": [
         "신규"
@@ -2901,6 +2976,9 @@
       "Passport number": [
         "여권 번호"
       ],
+      "Passport Number": [
+        "여권 번호"
+      ],
       "Password": [
         "암호"
       ],
@@ -2912,6 +2990,9 @@
       ],
       "Pause list": [
         "중단 목록"
+      ],
+      "Personal": [
+        "개인"
       ],
       "Personal details": [
         "개인 정보"
@@ -2931,6 +3012,9 @@
       "PIN code": [
         "PIN 코드"
       ],
+      "Points Balance": [
+        "포인트 잔액"
+      ],
       "Prefix": [
         "접두어"
       ],
@@ -2939,6 +3023,15 @@
       ],
       "Priority:": [
         "우선 사항:"
+      ],
+      "Private Key": [
+        "비밀 키"
+      ],
+      "Private key": [
+        "개인 키"
+      ],
+      "Program Name": [
+        "프로그램 이름"
       ],
       "Prompt for auto-save": [
         "자동 저장할 때 묻기"
@@ -2951,6 +3044,9 @@
       ],
       "Public domain": [
         "공개 도메인"
+      ],
+      "Public key": [
+        "공개 키"
       ],
       "Rate us": [
         "평가해 주세요"
@@ -2973,6 +3069,12 @@
       "Reveal password": [
         "비밀번호 표시"
       ],
+      "Reward Program": [
+        "리워드 프로그램"
+      ],
+      "Routing Number": [
+        "라우팅 번호"
+      ],
       "Save passkeys": [
         "패스키 저장"
       ],
@@ -2991,6 +3093,9 @@
       "See member and permission overview": [
         "구성원과 부여된 권한을 확인해보세요"
       ],
+      "Seed Phrase": [
+        "시드 구문"
+      ],
       "Select a domain": [
         "도메인 선택"
       ],
@@ -3008,6 +3113,9 @@
       ],
       "Selected": [
         "선택됨"
+      ],
+      "Server": [
+        "서버"
       ],
       "Settings": [
         "설정"
@@ -3033,11 +3141,26 @@
       "Social security": [
         "사회 보장 번호"
       ],
+      "Social Security": [
+        "주민등록증"
+      ],
       "Social security number": [
         "사회 보장 번호"
       ],
+      "Software license": [
+        "소프트웨어 라이선스"
+      ],
       "Special characters (!&*)": [
         "특수 문자 (!&*)"
+      ],
+      "SSH key": [
+        "SSH 키"
+      ],
+      "SSH Keys": [
+        "SSH 키"
+      ],
+      "SSN": [
+        "주민등록번호"
       ],
       "State or province": [
         "시/도"
@@ -3057,6 +3180,9 @@
       "Support": [
         "지원"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "SimpleLogin으로 별칭 동기화"
       ],
@@ -3066,6 +3192,9 @@
       "Tax number": [
         "세금 번호"
       ],
+      "Technology": [
+        "기술"
+      ],
       "Text": [
         "텍스트"
       ],
@@ -3074,6 +3203,9 @@
       ],
       "Theme": [
         "테마"
+      ],
+      "Tier/Status": [
+        "등급/상태"
       ],
       "Title": [
         "제목"
@@ -3111,6 +3243,9 @@
       "Unnamed Credit Card": [
         "이름 없는 신용카드"
       ],
+      "Unnamed custom item": [
+        "이름 없는 사용자 지정 항목"
+      ],
       "Unnamed identity": [
         "이름이 지정되지 않은 신원"
       ],
@@ -3119,6 +3254,15 @@
       ],
       "Unnamed note": [
         "이름 없는 메모"
+      ],
+      "Unnamed SSH key": [
+        "이름 없는 SSH 키"
+      ],
+      "Unnamed WiFi item": [
+        "이름 없는 WiFi 항목"
+      ],
+      "Unspecified": [
+        "지정되지 않음"
       ],
       "Untitled": [
         "제목 없음"
@@ -3153,6 +3297,9 @@
       "Vulnerable": [
         "취약함"
       ],
+      "Wallet Name": [
+        "지갑 이름"
+      ],
       "Weak": [
         "약함"
       ],
@@ -3161,6 +3308,12 @@
       ],
       "Websites": [
         "웹 사이트"
+      ],
+      "WiFi network": [
+        "WiFi 네트워크"
+      ],
+      "WiFi Networks": [
+        "WiFi 네트워크"
       ],
       "Work details": [
         "작업 세부 정보"
@@ -3357,6 +3510,9 @@
       "Add 2FA secret key": [
         "2단계 인증 비밀 키 추가"
       ],
+      "Add date": [
+        "날짜 추가"
+      ],
       "Add hidden text": [
         "숨겨진 텍스트 추가"
       ],
@@ -3405,6 +3561,9 @@
       "my-domain.com": [
         "my-domain.com"
       ],
+      "Name displayed in emails": [
+        "이메일에 표시된 이름"
+      ],
       "Note from SimpleLogin": [
         "SimpleLogin 메모"
       ],
@@ -3437,6 +3596,9 @@
       ],
       "Select a suffix": [
         "접미사 선택"
+      ],
+      "Select option": [
+        "옵션 선택"
       ],
       "Unknown origin": [
         "알 수 없는 출처"
