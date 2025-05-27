@@ -118,7 +118,7 @@ export const CustomEdit = <T extends ItemCustomType>({ revision, share, onSubmit
             formId={FORM_ID}
             handleCancelClick={onCancel}
             type="custom"
-            valid={form.isValid}
+            valid={form.isValid && form.dirty && !form.status?.isBusy}
         >
             {({ didEnter }) => (
                 <>
