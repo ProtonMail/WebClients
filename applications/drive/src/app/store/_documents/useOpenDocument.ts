@@ -85,10 +85,9 @@ export const useOpenDocument = () => {
     const openDocumentWindow = (action: DocumentAction & { window: Window }) => {
         const { type, mode, window } = action;
 
-        const href = getAppHref(`/doc`, APPS.PROTONDOCS, getLocalID());
+        const href = getAppHref(`/${type}`, APPS.PROTONDOCS, getLocalID());
         const url = new URL(href);
 
-        url.searchParams.append('type', type);
         url.searchParams.append('mode', mode);
 
         if ('volumeId' in action && action.volumeId) {

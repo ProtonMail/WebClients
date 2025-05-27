@@ -159,7 +159,7 @@ function EmptyState({ variant }: EmptyStateProps) {
           <div className="flex justify-center">
             <ButtonLike
               as="a"
-              href={getAppHref('/doc', APPS.PROTONDOCS, getLocalID()) + '?type=sheet'}
+              href={getAppHref('/sheet', APPS.PROTONDOCS, getLocalID())}
               target="_blank"
               color="norm"
               size="large"
