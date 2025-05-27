@@ -1,5 +1,6 @@
 import type { RawProcessorWorkerInterface } from '@proton/raw-images';
 import { createWorker } from '@proton/raw-images';
+import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 import {
     getFileExtension,
@@ -34,7 +35,7 @@ interface CheckerThumbnailCreatorPair {
 // The size will remain the same and no error will be thrown
 // Which means if the image is above a certain size it won't generate thumbnail
 // For safety we fallback to JPEG for Safari
-const thumbnailFormat = isSafari() ? 'image/jpeg' : 'image/webp';
+const thumbnailFormat = isSafari() ? SupportedMimeTypes.jpg : SupportedMimeTypes.webp;
 // This is a standardised (using interface) list of function pairs - for checking mimeType and creating a thumbnail.
 // This way we don't have to write separate 'if' statements for every type we handle.
 // Instead, we look for the first pair where the checker returns true, and then we use the creator to generate the thumbnail.
