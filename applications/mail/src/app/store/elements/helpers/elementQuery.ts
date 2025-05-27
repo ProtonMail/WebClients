@@ -6,6 +6,7 @@ import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import type { Api } from '@proton/shared/lib/interfaces';
 import range from '@proton/utils/range';
+import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 
 import type { Element } from '../../../models/element';
 import type { MailState } from '../../store';
@@ -23,6 +24,9 @@ const getQueryElementsParameters = ({
 }: Pick<QueryParams, 'page' | 'pageSize'> & { params: ElementsStateParams }): MailboxItemsQueryParams => {
     // Use ALMOST_ALL_MAIL as the LabelID when we're viewing a custom view like a newsletter subscription
     const effectiveLabelID = convertCustomViewLabelsToAlmostAllMail(labelID);
+
+    // Only send NewsletterSubscriptionID when we're actually in the newsletter subscriptions view
+    const shouldIncludeNewsletterSubscriptionID = labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS;
 
     return {
         Page: page,
@@ -44,7 +48,7 @@ const getQueryElementsParameters = ({
         AddressID: search.address,
         // ID,
         AutoWildcard: search.wildcard,
-        NewsletterSubscriptionID: newsletterSubscriptionID ?? null,
+        NewsletterSubscriptionID: shouldIncludeNewsletterSubscriptionID ? (newsletterSubscriptionID ?? null) : null,
     };
 };
 
