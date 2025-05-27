@@ -9,7 +9,8 @@
         "packages/wasm/*",
         "tests",
         "tests/packages/*",
-        "utilities/*"
+        "utilities/*",
+        "vendor/*/*"
     ],
     "scripts": {
         "app-versions": "bash utilities/app-versions/app-versions.sh",
