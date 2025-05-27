@@ -4869,6 +4869,9 @@
       "Anyone with this link can access your folder.": [
         "Każdy, kto ma link, ma dostęp do folderu."
       ],
+      "Apr": [
+        "Kwi"
+      ],
       "Are you sure you want to discard your changes?": [
         "Czy na pewno chcesz odrzucić wprowadzone zmiany?"
       ],
@@ -4895,6 +4898,9 @@
       ],
       "Attention required": [
         "Wymagana uwaga"
+      ],
+      "Aug": [
+        "Sie"
       ],
       "Automated Recovery ${ formattedDate }": [
         "Automatyczne odzyskiwanie ${ formattedDate }"
@@ -5045,6 +5051,9 @@
       ],
       "Custom email domains": [
         "Niestandardowe domeny"
+      ],
+      "Dec": [
+        "Gru"
       ],
       "Decrypting files": [
         "Odszyfrowywanie plików"
@@ -5198,6 +5207,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Nie udało się otworzyć linku. ${ error }"
+      ],
+      "Feb": [
+        "Lut"
       ],
       "File \"${ name }\" was deleted during download": [
         "Plik \"${ name }\" został usunięty podczas pobierania"
@@ -5370,8 +5382,17 @@
       "It’s easy and secure": [
         "To łatwe i bezpieczne"
       ],
+      "Jan": [
+        "Sty"
+      ],
       "JCB logo": [
         "Logo JCB"
+      ],
+      "Jul": [
+        "Lip"
+      ],
+      "Jun": [
+        "Cze"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Potwierdź swój wybór, a my zajmiemy się resztą."
@@ -5436,6 +5457,9 @@
       "Makes your account safer": [
         "Zwiększ bezpieczeństwo konta"
       ],
+      "Mar": [
+        "Mar"
+      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
@@ -5444,6 +5468,9 @@
         "Maksymalnie ${ MAX_SHARED_URL_PASSWORD_LENGTH } znaki",
         "Maksymalnie ${ MAX_SHARED_URL_PASSWORD_LENGTH } znaków",
         "Maksymalnie ${ MAX_SHARED_URL_PASSWORD_LENGTH } znaków"
+      ],
+      "May": [
+        "Maj"
       ],
       "Medium Priority": [
         "Średni priorytet"
@@ -5520,11 +5547,17 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Uwaga: Dane mogą być nadal dostępne lokalnie na urządzeniach, na których zainstalowano aplikację ${ DRIVE_APP_NAME }."
       ],
+      "Nov": [
+        "Lis"
+      ],
       "Number of dedicated servers in the organization": [
         "Liczba dedykowanych serwerów organizacji"
       ],
       "Numbers": [
         "Cyfry"
+      ],
+      "Oct": [
+        "Paź"
       ],
       "of": [
         "z"
@@ -5609,6 +5642,9 @@
       ],
       "Photo was copied to stream and marked favorite there.": [
         "Zdjęcie zostało skopiowane do osi czasu i dodane do ulubionych."
+      ],
+      "Photo(s) saved to your Drive": [
+        "Zdjęcie(a) zapisane na Twoim Dysku"
       ],
       "Photos": [
         "Zdjęcia"
@@ -5804,6 +5840,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu kalendarzy dostępnych w Twoim planie."
+      ],
+      "Sep": [
+        "Wrz"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Płatności SEPA nie są obecnie dostępne. Spróbuj ponownie później."
@@ -6260,6 +6299,9 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Usługa VPN wykorzystuje szyfrowanie, aby ukryć Twój adres IP (unikalny kod przypisany do Twojego urządzenia)."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Po skonfigurowaniu uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, których możesz użyć do zalogowania się w przypadku utraty dostępu do aplikacji uwierzytelniającej."
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "zostanie przywrócony do wersji z ${ formattedRevisionDate }. Wszystkie pozostałe wersje zostaną nadal zachowane."
@@ -9059,6 +9101,12 @@
       "Share invitation declined": [
         "Zaproszenie zostało odrzucone"
       ],
+      "Some photo(s) could not be added to \"${ albumName }\"": [
+        "Nie udało się dodać niektórych zdjęć do \"${ albumName }\""
+      ],
+      "Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Nie udało się usunąć niektórych zdjęć z albumu ${ albumLink.name }"
+      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Nie możemy usunąć folderu, ponieważ nie jest pusty.",
         "Nie możemy usunąć folderów, ponieważ nie są puste.",
@@ -9112,6 +9160,9 @@
       ],
       "Your photo(s) have been added to \"${ albumName }\"": [
         "Zdjęcia zostały dodane do albumu \"${ albumName }\""
+      ],
+      "Your photo(s) have been removed from ${ albumLink.name }": [
+        "Zdjęcia zostały usunięte z albumu ${ albumLink.name }"
       ],
       "Your settings failed to be saved": [
         "Zapisywanie ustawień nie powiodło się"
@@ -10596,47 +10647,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "and 15 more premium features": [
-        "i 15 więcej funkcji premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatyczne przekierowanie ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerty wycieków ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikacja desktopowa"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
-      ],
-      "No ads or tracking": [
-        "Brak reklam i śledzenia"
-      ],
-      "Short @pm.me email address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Wesprzyj naszą misję"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
-      "We don't sell your data": [
-        "Nie sprzedajemy Twoich danych"
-      ],
-      "Your privacy is our mission": [
-        "Prywatność to nasza misja"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } z funkcjami premium"
@@ -10907,6 +10917,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Krótki alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {

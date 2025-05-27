@@ -237,6 +237,9 @@
       "Copy address": [
         "Copiar dirección"
       ],
+      "Copy alias “${ name }”": [
+        "Copiar el alias «${ name }»"
+      ],
       "Copy email to clipboard": [
         "Copiar correo al portapapeles"
       ],
@@ -4719,6 +4722,9 @@
       "Anyone with this link can access your folder.": [
         "Cualquier persona con este enlace puede acceder a tu carpeta."
       ],
+      "Apr": [
+        "Abr."
+      ],
       "Are you sure you want to discard your changes?": [
         "¿Estás seguro de que quieres descartar los cambios?"
       ],
@@ -4745,6 +4751,9 @@
       ],
       "Attention required": [
         "Atención requerida"
+      ],
+      "Aug": [
+        "Ago."
       ],
       "Automated Recovery ${ formattedDate }": [
         "Recuperación Automática ${ formattedDate }"
@@ -4891,6 +4900,9 @@
       ],
       "Custom email domains": [
         "Dominios de correo personalizados"
+      ],
+      "Dec": [
+        "Dic."
       ],
       "Decrypting files": [
         "Descifrando archivos"
@@ -5040,6 +5052,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Error al abrir un enlace seguro. Motivo: ${ error }"
+      ],
+      "Feb": [
+        "Feb."
       ],
       "File \"${ name }\" was deleted during download": [
         "El archivo \"${ name }\" se ha eliminado durante la descarga."
@@ -5210,8 +5225,17 @@
       "It’s easy and secure": [
         "Es fácil y seguro"
       ],
+      "Jan": [
+        "Ene."
+      ],
       "JCB logo": [
         "Logo de JCB"
+      ],
+      "Jul": [
+        "Jul."
+      ],
+      "Jun": [
+        "Jun."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Solo tienes que confirmar tu selección y nosotros haremos el resto."
@@ -5276,12 +5300,18 @@
       "Makes your account safer": [
         "Hace que tu cuenta sea más segura"
       ],
+      "Mar": [
+        "Mar."
+      ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } carácter",
         "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracteres"
+      ],
+      "May": [
+        "Mayo"
       ],
       "Medium Priority": [
         "Prioridad media"
@@ -5358,11 +5388,17 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Nota: Los datos pueden seguir estando disponibles localmente en los dispositivos en los que hayas instalado ${ DRIVE_APP_NAME }."
       ],
+      "Nov": [
+        "Nov."
+      ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
       ],
       "Numbers": [
         "Números"
+      ],
+      "Oct": [
+        "Oct."
       ],
       "of": [
         "de"
@@ -5641,6 +5677,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecciona los calendarios que quieres importar. Se creará un calendario para cada calendario importado de acuerdo con el número de calendarios disponibles en tu plan."
+      ],
+      "Sep": [
+        "Sept."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Los pagos SEPA no están disponibles en este momento. Intenta de nuevo más tarde."
@@ -10259,47 +10298,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicación de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoya nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejora tu productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos tus datos."
-      ],
-      "Your privacy is our mission": [
-        "Tu privacidad es nuestra misión."
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } con características prémium"
@@ -10558,6 +10556,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Tu alias de correo electrónico @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicación de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoya nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejora tu productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos tus datos."
+      ],
+      "Your privacy is our mission": [
+        "Tu privacidad es nuestra misión."
       ]
     },
     "Subscription renewal state": {

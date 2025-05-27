@@ -463,11 +463,11 @@
       "Discard": [
         "Sil"
       ],
-      "Discard Changes": [
-        "Değişiklikleri sil"
-      ],
       "Discard changes": [
         "Değişiklileri yok say"
+      ],
+      "Discard Changes": [
+        "Değişiklikleri sil"
       ],
       "Discover ${ planName }": [
         "${ planName } tarifesini keşfedin"
@@ -781,10 +781,10 @@
       "Keep": [
         "Tut"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Düzenlemeyi sürdür"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Düzenlemeyi sürdür"
       ],
       "Keep logo": [
@@ -970,11 +970,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "Refresh the page": [
-        "Sayfayı yenile"
-      ],
       "refresh the page": [
         "sayfayı yenile"
+      ],
+      "Refresh the page": [
+        "Sayfayı yenile"
       ],
       "Reject": [
         "Reddet"
@@ -1507,9 +1507,6 @@
       ]
     },
     "Action in trial plan": {
-      "No, thanks": [
-        "Hayır, teşekkürler"
-      ],
       "Try free for 30 days": [
         "30 gün boyunca ücretsiz olarak deneyin"
       ]
@@ -1903,11 +1900,6 @@
         "Geçerli oturum"
       ]
     },
-    "Baseline in trial plan": {
-      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "${ mailPlus }: günlük iletişim gereksinimleriniz için gizliliğe öncelik veren e-posta ve takvim çözümü."
-      ]
-    },
     "bf2023: Action": {
       "Become a Visionary": [
         "Visionary tarifesine geçin"
@@ -1926,9 +1918,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } depolama alanı"
-      ],
       "1 user": [
         "1 kullanıcı"
       ],
@@ -6912,11 +6901,6 @@
         "Abone olunmuş"
       ]
     },
-    "Heading in trial plan": {
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "En iyi ${ MAIL_APP_NAME } uygulamasını ücretsiz deneyin"
-      ]
-    },
     "Headline": {
       "Compare plans": [
         "Tarifeleri karşılaştır"
@@ -7602,9 +7586,6 @@
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
       ],
-      "10 email addresses": [
-        "10 e-posta adresi"
-      ],
       "2. They try ${ planName }": [
         "2. Onlar da ${ planName } denesinler"
       ],
@@ -7662,11 +7643,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Parolanızı kaybederseniz, ${ BRAND_NAME } hesabınızın içeriğine erişmeyi sürdürebileceğinizden emin olmak için en az bir veri kurtarma yöntemini açın."
       ],
-      "Active": [
-        "Etkin"
-      ],
       "active": [
         "etkin"
+      ],
+      "Active": [
+        "Etkin"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hesabınıza @pm.me e-posta adresini ekler. Bu basit ve kısa etki alanı \"Bana ${ MAIL_APP_NAME } gönder\" (ProtonMail me) veya \"Bana özel ileti gönder\" (Private Message me) şeklinde anlamlandırılabilir"
@@ -8107,11 +8088,11 @@
       "Data recoverable on this device": [
         "Bu aygıttaki veriler kurtarılabilir"
       ],
-      "dedicated servers": [
-        "size ayrılmış sunucular"
-      ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "dedicated servers": [
+        "size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -8942,9 +8923,6 @@
       "No countries enabled": [
         "Herhangi bir ülke kullanıma alınmamış"
       ],
-      "No credit card required": [
-        "Kredi kartı gerekmez"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Herhangi bir veri kurtarma yöntemi ayarlanmamış. Verilerinize erişimi kaybetme riskiniz var"
       ],
@@ -9223,9 +9201,6 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ücrete, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
-      ],
-      "Priority support": [
-        "Öncelikli destek"
       ],
       "Promotion expired": [
         "Fırsatın süresi dolmuş"
@@ -9511,9 +9486,6 @@
       "Storage for users": [
         "Kullanıcıların depolama alanı"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
-      ],
       "Storage used by this user": [
         "Bu kullanıcının kullandığı depolama alanı"
       ],
@@ -9535,9 +9507,6 @@
       ],
       "Summary": [
         "Özet"
-      ],
-      "Support for 1 custom email domain": [
-        "1 özel e-posta etki alanı desteği"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Özel etki alanlarının ve ${ BRAND_NAME } olmayan e-posta adreslerinin izlenmesi desteği yakında sunulacak."
@@ -9913,12 +9882,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Hesap oturumunuzu kapatmadığınız ya da parolanızı değiştirmediğiniz sürece oturumunuz açık kalır. 60 gün boyunca herhangi bir etkinlik görülmeyen oturumlar kapatılır."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Sınırsız sayıda klasör, etiket ve süzgeç"
-      ],
-      "Unlimited messages": [
-        "Sınırsız sayıda ileti"
       ],
       "Unsaved changes": [
         "Kaydedilmemiş değişiklikler"
@@ -11187,11 +11150,11 @@
       "Amount due": [
         "Ödenecek tutar"
       ],
-      "AND": [
-        "VE"
-      ],
       "And": [
         "Ve"
+      ],
+      "AND": [
+        "VE"
       ],
       "and": [
         "ve"
@@ -11619,11 +11582,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "EĞER"
-      ],
       "If": [
         "Eğer"
+      ],
+      "IF": [
+        "EĞER"
       ],
       "Import all messages": [
         "Tüm iletileri içe aktar"
@@ -11832,14 +11795,14 @@
       "Optional": [
         "İsteğe bağlı"
       ],
-      "OR": [
-        "VEYA"
-      ],
       "or": [
         "veya"
       ],
       "Or": [
         "Veya"
+      ],
+      "OR": [
+        "VEYA"
       ],
       "Organization name": [
         "Kuruluş adı"
@@ -14537,6 +14500,17 @@
         "Bilgisayar"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Herkes"
+      ],
+      "Group members": [
+        "Grup üyeleri"
+      ],
+      "No one": [
+        "Hiç kimse"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "Ayın 10. günü"
@@ -14771,17 +14745,6 @@
       ],
       "Trash": [
         "Çöpe at"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Herkes"
-      ],
-      "Group members": [
-        "Grup üyeleri"
-      ],
-      "No one": [
-        "Hiç kimse"
       ]
     },
     "Option delay send seconds": {
@@ -17777,47 +17740,6 @@
         "${ totalPrice } için"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -18106,6 +18028,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {

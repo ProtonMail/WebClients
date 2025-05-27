@@ -4719,6 +4719,9 @@
       "Anyone with this link can access your folder.": [
         "Iedereen met deze link heeft toegang tot deze map."
       ],
+      "Apr": [
+        "Apr"
+      ],
       "Are you sure you want to discard your changes?": [
         "Weet u zeker dat u uw wijzigingen ongedaan wilt maken?"
       ],
@@ -4745,6 +4748,9 @@
       ],
       "Attention required": [
         "Aandacht vereist"
+      ],
+      "Aug": [
+        "Aug"
       ],
       "Automated Recovery ${ formattedDate }": [
         "Automatisch herstel ${ formattedDate }"
@@ -4891,6 +4897,9 @@
       ],
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
+      ],
+      "Dec": [
+        "Dec"
       ],
       "Decrypting files": [
         "Bestanden ontsleutelen"
@@ -5040,6 +5049,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Het is niet gelukt om een beveiligde link te openen. De reden is: ${ error }"
+      ],
+      "Feb": [
+        "Feb"
       ],
       "File \"${ name }\" was deleted during download": [
         "Bestand \"${ name }\" werd verwijderd tijdens downloaden"
@@ -5210,8 +5222,17 @@
       "It’s easy and secure": [
         "Het is eenvoudig en veilig"
       ],
+      "Jan": [
+        "Jan"
+      ],
       "JCB logo": [
         "JCB-logo"
+      ],
+      "Jul": [
+        "Jul"
+      ],
+      "Jun": [
+        "Jun"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
@@ -5276,12 +5297,18 @@
       "Makes your account safer": [
         "Maakt uw account veiliger"
       ],
+      "Mar": [
+        "Mrt"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakters"
+      ],
+      "May": [
+        "Mei"
       ],
       "Medium Priority": [
         "Middelmatige prioriteit"
@@ -5358,11 +5385,17 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Opmerking: gegevens kunnen nog steeds lokaal beschikbaar zijn op apparaten waarop u ${ DRIVE_APP_NAME } hebt geïnstalleerd."
       ],
+      "Nov": [
+        "Nov"
+      ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
       ],
       "Numbers": [
         "Nummers"
+      ],
+      "Oct": [
+        "Okt"
       ],
       "of": [
         "van"
@@ -5641,6 +5674,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt afhankelijk van het aantal beschikbare agenda's binnen uw abonnement."
+      ],
+      "Sep": [
+        "Sep"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-betalingen zijn momenteel niet beschikbaar. Probeer het later nogmaals."
@@ -10196,47 +10232,6 @@
         "Voor ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -10495,6 +10490,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {

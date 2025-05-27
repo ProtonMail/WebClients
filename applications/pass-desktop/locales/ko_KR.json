@@ -76,6 +76,9 @@
       "Apply lifetime coupon code": [
         "평생 쿠폰 코드 적용"
       ],
+      "Authenticate": [
+        "인증"
+      ],
       "Back": [
         "이전"
       ],
@@ -400,10 +403,10 @@
       "Move to another vault": [
         "다른 금고로 이동"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "휴지통으로 이동"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "휴지통으로 이동"
       ],
       "Multiple select": [
@@ -438,6 +441,9 @@
       ],
       "Pause monitoring": [
         "모니터링 일시정지"
+      ],
+      "Pay once": [
+        "일회성 결제"
       ],
       "Pin item": [
         "항목 고정"
@@ -588,6 +594,9 @@
       ],
       "Sort vault items": [
         "금고 항목 정렬"
+      ],
+      "Start from scratch": [
+        "처음부터 시작하기"
       ],
       "Submit": [
         "제출"
@@ -1634,6 +1643,9 @@
       "Enter the address you want to email.": [
         "받을 사람의 이메일 주소를 입력하세요."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "인증 코드를 입력하세요. ${ digit }자리입니다."
+      ],
       "Enter your extra password": [
         "추가 비밀번호 입력"
       ],
@@ -2249,6 +2261,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "불러온 데이터를 검토하려면 브라우저 툴바의 ${ PASS_APP_NAME } 아이콘을 클릭하세요."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "전 세계 50,000명 이상의 비즈니스 사용자와 1억 개의 계정이 신뢰합니다."
+      ],
       "Unable to copy to clipboard": [
         "클립보드에 복사할 수 없습니다."
       ],
@@ -2524,6 +2539,12 @@
       "Account": [
         "계정"
       ],
+      "Account Number": [
+        "계좌 번호"
+      ],
+      "Account Type": [
+        "계좌 유형"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "새로운 별칭을 만들 때 이 도메인에 임의의 접두사를 추가하세요."
       ],
@@ -2563,6 +2584,9 @@
       "Always show username field": [
         "사용자 이름 입력란 항상 표시"
       ],
+      "API Credential": [
+        "API 자격 증명"
+      ],
       "Application logs": [
         "어플리케이션 로그"
       ],
@@ -2571,6 +2595,12 @@
       ],
       "Backup password": [
         "백업 비밀번호"
+      ],
+      "Bank Account": [
+        "은행 번호"
+      ],
+      "Bank Name": [
+        "은행명"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "로그인을 보관하는것 뿐만 아니라 ${ PASS_APP_NAME }이 내장된 별칭 이메일 기능으로 신원을 보호합니다. 어디서든 새 계정을 만들 때, ${ PASS_APP_NAME }이 자동으로 별칭 주소를 만들어 실제 이메일 주소를 보호할 수 있습니다. "
@@ -2583,6 +2613,9 @@
       ],
       "Browse faster, smarter": [
         "빠르고 스마트하게 브라우징"
+      ],
+      "Built-in 2FA": [
+        "내장형 2단계 인증기"
       ],
       "Capital letters (A-Z)": [
         "대문자 알파벳 (A-Z)"
@@ -2638,11 +2671,17 @@
       "Country or Region": [
         "국가/지역"
       ],
+      "Country,": [
+        "국가,"
+      ],
       "County": [
         "구/군"
       ],
       "Create a credit card": [
         "신용 카드 생성"
+      ],
+      "Create a custom item": [
+        "사용자 지정 항목 추가"
       ],
       "Create a hide-my-email alias": [
         "Hide-my-email 별칭 생성"
@@ -2671,14 +2710,26 @@
       "Credit cards": [
         "신용카드"
       ],
+      "Crypto Wallet": [
+        "암호화폐 지갑"
+      ],
       "Custom hidden field": [
         "사용자 지정 숨겨진 필드"
+      ],
+      "Custom Items": [
+        "사용자 지정 항목"
       ],
       "Custom text field": [
         "사용자 정의 필드"
       ],
+      "Database": [
+        "데이터 베이스"
+      ],
       "Date": [
         "날짜"
+      ],
+      "Date of Birth": [
+        "생일"
       ],
       "Device": [
         "기기"
@@ -2706,6 +2757,9 @@
       ],
       "Download logs": [
         "로그 다운로드"
+      ],
+      "Driver License": [
+        "운전 면허증"
       ],
       "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
         "${ PASS_APP_NAME }을 사용하지 않는 사람과도 민감한 정보를 쉽게 공유하세요. 단일 암호, 메모, 신용 카드 또는 같은 폴더에 있는 여러 항목들을 공유할 수 있습니다."
@@ -2740,8 +2794,14 @@
       "Expired": [
         "만료됨"
       ],
+      "Expiry Date": [
+        "만료 날짜"
+      ],
       "Export": [
         "내보내기"
+      ],
+      "Extra email addresses": [
+        "추가 이메일 주소"
       ],
       "Extra password": [
         "추가 비밀번호"
@@ -2760,6 +2820,9 @@
       ],
       "File format": [
         "파일 형식"
+      ],
+      "Finance": [
+        "금융"
       ],
       "First name": [
         "이름"
@@ -2797,6 +2860,12 @@
       "Generic CSV": [
         "일반 CSV"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus 구매"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "${ PASS_SHORT_APP_NAME } Unlimited 구매"
+      ],
       "Get Started": [
         "시작하기"
       ],
@@ -2814,6 +2883,12 @@
       ],
       "Hide-my-email aliases": [
         "Hide-my-email 별칭"
+      ],
+      "Highest": [
+        "가장 빠름"
+      ],
+      "Holder Name": [
+        "소유자명"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "${ PASS_SHORT_APP_NAME }을 잠금 해제하는 방법"
@@ -2871,6 +2946,12 @@
       ],
       "Invitations": [
         "초대"
+      ],
+      "Issuing Authority": [
+        "발급 기관"
+      ],
+      "Issuing Country": [
+        "발행 지역"
       ],
       "Item ID": [
         "항목 ID"
@@ -2947,14 +3028,26 @@
       "max views reached": [
         "최대 보기 수 도달"
       ],
+      "Medical Record": [
+        "의료 면허증"
+      ],
+      "Member ID": [
+        "회원 ID"
+      ],
       "Members": [
         "구성원"
+      ],
+      "Membership": [
+        "회원권"
       ],
       "Middle name": [
         "중간 이름"
       ],
       "Modified": [
         "수정됨"
+      ],
+      "More": [
+        "더 보기"
       ],
       "More than a month": [
         "1개월 이상"
@@ -2965,11 +3058,17 @@
       "Name": [
         "이름"
       ],
+      "Name (SSID)": [
+        "이름 (SSID)"
+      ],
       "Name on card": [
         "카드 소유자 이름"
       ],
       "Need help?": [
         "도움이 필요한가요?"
+      ],
+      "Network": [
+        "네트워크"
       ],
       "Never": [
         "안 함"
@@ -3040,11 +3139,17 @@
       "Passport number": [
         "여권 번호"
       ],
+      "Passport Number": [
+        "여권 번호"
+      ],
       "Password": [
         "암호"
       ],
       "Password history": [
         "비밀번호 변경 기록"
+      ],
+      "Personal": [
+        "개인"
       ],
       "Personal details": [
         "개인 정보"
@@ -3070,6 +3175,9 @@
       "Plus": [
         "Plus"
       ],
+      "Points Balance": [
+        "포인트 잔액"
+      ],
       "Prefix": [
         "접두어"
       ],
@@ -3079,11 +3187,23 @@
       "Priority:": [
         "우선 사항:"
       ],
+      "Private key": [
+        "개인 키"
+      ],
+      "Private Key": [
+        "비밀 키"
+      ],
+      "Program Name": [
+        "프로그램 이름"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "추가 비밀번호로 ${ PASS_APP_NAME } 보호"
       ],
       "Public domain": [
         "공개 도메인"
+      ],
+      "Public key": [
+        "공개 키"
       ],
       "Rate us": [
         "평가해 주세요"
@@ -3108,6 +3228,12 @@
       ],
       "Reveal password": [
         "비밀번호 표시"
+      ],
+      "Reward Program": [
+        "리워드 프로그램"
+      ],
+      "Routing Number": [
+        "라우팅 번호"
       ],
       "Second password": [
         "2차 비밀번호"
@@ -3136,6 +3262,9 @@
       "See member and permission overview": [
         "구성원과 부여된 권한을 확인해보세요"
       ],
+      "Seed Phrase": [
+        "시드 구문"
+      ],
       "Select a domain": [
         "도메인 선택"
       ],
@@ -3160,6 +3289,9 @@
       "Selected": [
         "선택됨"
       ],
+      "Server": [
+        "서버"
+      ],
       "Share": [
         "공유"
       ],
@@ -3181,14 +3313,29 @@
       "Sign in faster with ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }로 더 빠르게 로그인"
       ],
+      "Social Security": [
+        "주민등록증"
+      ],
       "Social security": [
         "사회 보장 번호"
       ],
       "Social security number": [
         "사회 보장 번호"
       ],
+      "Software license": [
+        "소프트웨어 라이선스"
+      ],
       "Special characters (!&*)": [
         "특수 문자 (!&*)"
+      ],
+      "SSH key": [
+        "SSH 키"
+      ],
+      "SSH Keys": [
+        "SSH 키"
+      ],
+      "SSN": [
+        "주민등록번호"
       ],
       "State or province": [
         "시/도"
@@ -3214,6 +3361,9 @@
       "Support": [
         "지원"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "SimpleLogin으로 별칭 동기화"
       ],
@@ -3223,8 +3373,14 @@
       "Tax number": [
         "세금 번호"
       ],
+      "Technology": [
+        "기술"
+      ],
       "Text": [
         "텍스트"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "한 번의 구독으로 누리는 최고의 ${ BRAND_NAME }"
       ],
       "The URL has been copied to the clipboard": [
         "URL이 클립보드로 복사되었습니다."
@@ -3234,6 +3390,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "이 항목은 ${ date }이 되거나 보기 제한에 도달하기 전까지 접근가능합니다."
+      ],
+      "Tier/Status": [
+        "등급/상태"
       ],
       "Title": [
         "제목"
@@ -3265,6 +3424,9 @@
       "Unlimited": [
         "제한 없음"
       ],
+      "Unlock premium features": [
+        "프리미엄 기능 잠금 해제"
+      ],
       "Unlock with": [
         "다음으로 잠금 해제:"
       ],
@@ -3274,6 +3436,9 @@
       "Unnamed Credit Card": [
         "이름 없는 신용카드"
       ],
+      "Unnamed custom item": [
+        "이름 없는 사용자 지정 항목"
+      ],
       "Unnamed identity": [
         "이름이 지정되지 않은 신원"
       ],
@@ -3282,6 +3447,15 @@
       ],
       "Unnamed note": [
         "이름 없는 메모"
+      ],
+      "Unnamed SSH key": [
+        "이름 없는 SSH 키"
+      ],
+      "Unnamed WiFi item": [
+        "이름 없는 WiFi 항목"
+      ],
+      "Unspecified": [
+        "지정되지 않음"
       ],
       "Untitled": [
         "제목 없음"
@@ -3304,6 +3478,9 @@
       "Vault ID": [
         "금고 ID"
       ],
+      "Vault, item & link sharing": [
+        "금고, 항목 및 링크 공유"
+      ],
       "Vaults": [
         "금고"
       ],
@@ -3313,8 +3490,17 @@
       "View logs": [
         "로그 보기"
       ],
+      "VPN Devices": [
+        "VPN 장치"
+      ],
+      "VPN Speed": [
+        "VPN 속도"
+      ],
       "Vulnerable": [
         "취약함"
+      ],
+      "Wallet Name": [
+        "지갑 이름"
       ],
       "Weak": [
         "약함"
@@ -3324,6 +3510,15 @@
       ],
       "Websites": [
         "웹 사이트"
+      ],
+      "What's included": [
+        "포함된 항목"
+      ],
+      "WiFi network": [
+        "WiFi 네트워크"
+      ],
+      "WiFi Networks": [
+        "WiFi 네트워크"
       ],
       "Work details": [
         "작업 세부 정보"
@@ -3555,6 +3750,9 @@
       ]
     },
     "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus 평생 이용권 (${ plusLifetimePrice })"
+      ],
       "${ price }/month": [
         "${ price }/월간"
       ]
@@ -3562,6 +3760,9 @@
     "Placeholder": {
       "Add 2FA secret key": [
         "2단계 인증 비밀 키 추가"
+      ],
+      "Add date": [
+        "날짜 추가"
       ],
       "Add hidden text": [
         "숨겨진 텍스트 추가"
@@ -3611,6 +3812,9 @@
       "my-domain.com": [
         "my-domain.com"
       ],
+      "Name displayed in emails": [
+        "이메일에 표시된 이름"
+      ],
       "Note from SimpleLogin": [
         "SimpleLogin 메모"
       ],
@@ -3643,6 +3847,9 @@
       ],
       "Select a suffix": [
         "접미사 선택"
+      ],
+      "Select option": [
+        "옵션 선택"
       ],
       "Unknown origin": [
         "알 수 없는 출처"
@@ -3823,8 +4030,14 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } 주소"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "계정 보호"
@@ -4101,6 +4314,9 @@
       ],
       "Pause monitoring?": [
         "모니터링을 일시정지합니까?"
+      ],
+      "Pay once, access forever.": [
+        "한 번 결제하여 영원히 이용하실 수 있습니다."
       ],
       "Pending access confirmation": [
         "액세스 확인 대기 중"

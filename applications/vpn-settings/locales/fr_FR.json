@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activer"
-      ],
       "Activate": [
         "Activer"
+      ],
+      "activate": [
+        "activer"
       ],
       "Activate organization key": [
         "Activer la clé de l'organisation"
@@ -267,11 +267,11 @@
       "Discard": [
         "Abandonner"
       ],
-      "Discard Changes": [
-        "Abandonner les changements"
-      ],
       "Discard changes": [
         "Abandonner les modifications"
+      ],
+      "Discard Changes": [
+        "Abandonner les changements"
       ],
       "Discover ${ planName }": [
         "Découvrez ${ planName }"
@@ -456,11 +456,11 @@
       "Invite user": [
         "Inviter un utilisateur"
       ],
-      "Keep Editing": [
-        "Poursuivre les modifications"
-      ],
       "Keep editing": [
         "Continuer les modifications"
+      ],
+      "Keep Editing": [
+        "Poursuivre les modifications"
       ],
       "Keep logo": [
         "Conserver le logo"
@@ -576,11 +576,11 @@
       "Refresh status": [
         "Actualiser le statut"
       ],
-      "Refresh the page": [
-        "Actualiser la page"
-      ],
       "refresh the page": [
         "actualiser la page"
+      ],
+      "Refresh the page": [
+        "Actualiser la page"
       ],
       "Remove": [
         "Retirer"
@@ -4664,11 +4664,11 @@
       "Data recoverable on this device": [
         "Données récupérables sur cet appareil"
       ],
-      "dedicated servers": [
-        "serveurs dédiés"
-      ],
       "Dedicated servers": [
         "Serveurs dédiés"
+      ],
+      "dedicated servers": [
+        "serveurs dédiés"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Vous pouvez ajouter des serveurs dédiés avec des adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
@@ -8614,6 +8614,17 @@
         "Bienvenue dans ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Tout le monde"
+      ],
+      "Group members": [
+        "Membres du groupe"
+      ],
+      "No one": [
+        "Personne"
+      ]
+    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "${ defaultLabel } autorisé"
@@ -8683,17 +8694,6 @@
       ],
       "The whole organization": [
         "Toute l'organisation"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Tout le monde"
-      ],
-      "Group members": [
-        "Membres du groupe"
-      ],
-      "No one": [
-        "Personne"
       ]
     },
     "Organization capacity error": {
@@ -10551,47 +10551,6 @@
         "Pour ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "and 15 more premium features": [
-        "et 15 fonctionnalités premium en plus"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Transfert automatique des messages ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de fuites de données ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Application de bureau"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
-      ],
-      "No ads or tracking": [
-        "Aucune publicité, aucun suivi"
-      ],
-      "Short @pm.me email address": [
-        "Adresses e-mail courtes @pm.me"
-      ],
-      "Support our mission": [
-        "Soutenez notre mission"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade your productivity": [
-        "Améliorez votre productivité"
-      ],
-      "We don't sell your data": [
-        "Nous ne vendons pas vos données"
-      ],
-      "Your privacy is our mission": [
-        "La protection de votre vie privée est notre priorité."
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } avec leurs fonctionnalités premium"
@@ -10880,6 +10839,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail courtes @pm.me"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données"
+      ],
+      "Your privacy is our mission": [
+        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {

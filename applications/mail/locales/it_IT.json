@@ -304,6 +304,9 @@
       "Copy addresses": [
         "Copia indirizzi"
       ],
+      "Copy alias “${ name }”": [
+        "Copia l'alias “${ name }”"
+      ],
       "Copy email to clipboard": [
         "Copia email negli appunti"
       ],
@@ -431,9 +434,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Scarica le app per ${ DRIVE_APP_NAME }"
-      ],
-      "Download now": [
-        "Scarica ora"
       ],
       "Download the desktop app": [
         "Scarica l’app per desktop"
@@ -680,9 +680,6 @@
       ],
       "Import from Outlook": [
         "Importa da Outlook"
-      ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "È disponibile un aggiornamento importante. Per continuare a utilizzare l'app, aggiornala alla versione più recente. ${ downloadUpdate }"
       ],
       "In the morning": [
         "La mattina"
@@ -1386,6 +1383,10 @@
       ],
       "Trust": [
         "Considera attendibile"
+      ],
+      "Trust key": [
+        "Considera attendibile la chiave",
+        "Considera attendibili le chiavi"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -8780,10 +8781,10 @@
       "Always move sender's emails": [
         "Sposta sempre le email del mittente"
       ],
-      "AND": [
+      "And": [
         "E"
       ],
-      "And": [
+      "AND": [
         "E"
       ],
       "and": [
@@ -9011,11 +9012,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "SE"
-      ],
       "If": [
         "Se"
+      ],
+      "IF": [
+        "SE"
       ],
       "Import all messages": [
         "Importa tutti i messaggi"
@@ -9153,13 +9154,13 @@
       "Optional": [
         "Facoltativo"
       ],
-      "OR": [
-        "O"
-      ],
       "or": [
         "o"
       ],
       "Or": [
+        "O"
+      ],
+      "OR": [
         "O"
       ],
       "Original link": [
@@ -10055,14 +10056,6 @@
         "Media velocità della VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Passa a ${ planTitle }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Elimina l'account"
@@ -10084,6 +10077,14 @@
       ],
       "Switch plan": [
         "Cambia piano"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Passa a ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -12800,47 +12801,6 @@
         "Per ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB di spazio di archiviazione"
-      ],
-      "and 15 more premium features": [
-        "e altre 15 funzionalità premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Inoltro automatico delle email ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Avvisi sulle violazioni di dati ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Applicazione desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
-      ],
-      "No ads or tracking": [
-        "Nessun annuncio o tracciamento"
-      ],
-      "Short @pm.me email address": [
-        "Indirizzo email breve @pm.me"
-      ],
-      "Support our mission": [
-        "Sostieni la nostra missione"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade your productivity": [
-        "Migliora la tua produttività"
-      ],
-      "We don't sell your data": [
-        "Non vendiamo i tuoi dati"
-      ],
-      "Your privacy is our mission": [
-        "La tua privacy è la nostra missione"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, e ${ VPN_SHORT_APP_NAME } con funzionalità premium"
@@ -13099,6 +13059,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Il tuo alias email breve @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB di spazio di archiviazione"
+      ],
+      "and 15 more premium features": [
+        "e altre 15 funzionalità premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Inoltro automatico delle email ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Avvisi sulle violazioni di dati ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Applicazione desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
+      ],
+      "No ads or tracking": [
+        "Nessun annuncio o tracciamento"
+      ],
+      "Short @pm.me email address": [
+        "Indirizzo email breve @pm.me"
+      ],
+      "Support our mission": [
+        "Sostieni la nostra missione"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Migliora la tua produttività"
+      ],
+      "We don't sell your data": [
+        "Non vendiamo i tuoi dati"
+      ],
+      "Your privacy is our mission": [
+        "La tua privacy è la nostra missione"
       ]
     },
     "Subscription renewal state": {

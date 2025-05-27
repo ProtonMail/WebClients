@@ -463,10 +463,10 @@
       "Discard": [
         "Zahodiť"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Zahodiť zmeny"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Zahodiť zmeny"
       ],
       "Discover ${ planName }": [
@@ -781,10 +781,10 @@
       "Keep": [
         "Zachovať"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Pokračovať v úpravách"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Pokračovať v úpravách"
       ],
       "Keep logo": [
@@ -970,11 +970,11 @@
       "Refresh status": [
         "Obnoviť stav"
       ],
-      "Refresh the page": [
-        "Obnoviť stránku"
-      ],
       "refresh the page": [
         "obnoviť stránku"
+      ],
+      "Refresh the page": [
+        "Obnoviť stránku"
       ],
       "Reject": [
         "Odmietnuť"
@@ -1507,9 +1507,6 @@
       ]
     },
     "Action in trial plan": {
-      "No, thanks": [
-        "Nie, ďakujem"
-      ],
       "Try free for 30 days": [
         "Vyskúšajte zadarmo na 30 dní"
       ]
@@ -1779,11 +1776,6 @@
         "Aktívna relácia"
       ]
     },
-    "Baseline in trial plan": {
-      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "${ mailPlus }: riešenie pošty a kalendára, ktoré chráni súkromie, pre vaše každodenné komunikačné potreby."
-      ]
-    },
     "bf2023: Action": {
       "Become a Visionary": [
         "Staňte sa Vizionárom"
@@ -1802,9 +1794,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } úložisko"
-      ],
       "1 user": [
         "1 používateľ"
       ],
@@ -6851,11 +6840,6 @@
         "Prihlásené k odberu"
       ]
     },
-    "Heading in trial plan": {
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Vyskúšajte najlepšie z ${ MAIL_APP_NAME } zadarmo"
-      ]
-    },
     "Headline": {
       "Compare plans": [
         "Porovnať plány"
@@ -7609,9 +7593,6 @@
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Pozvite priateľov do ${ BRAND_NAME }"
       ],
-      "10 email addresses": [
-        "10 emailových adries"
-      ],
       "2. They try ${ planName }": [
         "2. Vyskúšajú ${ planName }"
       ],
@@ -7669,11 +7650,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivujte aspoň jeden spôsob obnovy údajov, aby ste mali istotu, že v prípade straty hesla budete mať naďalej prístup k obsahu svojho ${ BRAND_NAME } účtu."
       ],
-      "Active": [
-        "Aktívne"
-      ],
       "active": [
         "aktívne"
+      ],
+      "Active": [
+        "Aktívne"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Pridajte do svojho konta emailovú adresu @pm.me. Táto jednoduchá, kratšia doména znamená \"${ MAIL_APP_NAME } me\" alebo \"Private Message me.\""
@@ -8134,11 +8115,11 @@
       "Data recoverable on this device": [
         "Údaje obnoviteľné v tomto zariadení"
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -8977,9 +8958,6 @@
       "No countries enabled": [
         "Nie sú povolené žiadne krajiny"
       ],
-      "No credit card required": [
-        "Nie je potrebná platobná karta"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Nie je nastavený žiadny spôsob obnovy údajov; ste vystavení riziku straty prístupu k svojim údajom"
       ],
@@ -9271,9 +9249,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena zahŕňa všetky príslušné zľavy na základe cyklu a kupóny, ktorých platnosť nie je ukončená, uložené vo vašom účte."
       ],
-      "Priority support": [
-        "Prioritná podpora"
-      ],
       "Promotion expired": [
         "Akciová ponuka skončila"
       ],
@@ -9562,9 +9537,6 @@
       "Storage for users": [
         "Úložisko pre používateľov"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }."
-      ],
       "Storage used by this user": [
         "Úložisko používané týmto používateľom"
       ],
@@ -9588,9 +9560,6 @@
       ],
       "Summary": [
         "Zhrnutie"
-      ],
-      "Support for 1 custom email domain": [
-        "Podpora pre 1 vlastnú emailovú doménu"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Podpora monitorovania vlastných domén a emailových adries iných ako ${ BRAND_NAME } sa objaví čoskoro."
@@ -9972,12 +9941,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Kým sa neodhlásite z vášho účtu alebo nezmeníte heslo, vaša relácia zostane aktívna. Relácia vyprší po 60 dňoch nečinnosti."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Neobmedzený počet priečinkov, štítkov a filtrov"
-      ],
-      "Unlimited messages": [
-        "Neobmedzený počet správ"
       ],
       "Unsaved changes": [
         "Neuložené zmeny"
@@ -11286,10 +11249,10 @@
       "Amount due": [
         "Čiastka k zaplateniu"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
       "and": [
@@ -11718,11 +11681,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "AK"
-      ],
       "If": [
         "Ak"
+      ],
+      "IF": [
+        "AK"
       ],
       "Import all messages": [
         "Importovať všetky správy"
@@ -11931,14 +11894,14 @@
       "Optional": [
         "Voliteľné"
       ],
-      "OR": [
-        "ALEBO"
-      ],
       "or": [
         "alebo"
       ],
       "Or": [
         "Alebo"
+      ],
+      "OR": [
+        "ALEBO"
       ],
       "Organization name": [
         "Názov organizácie"
@@ -14722,6 +14685,17 @@
         "Počítač"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Všetci"
+      ],
+      "Group members": [
+        "Členovia skupiny"
+      ],
+      "No one": [
+        "Nikto"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10. deň v mesiaci"
@@ -14956,17 +14930,6 @@
       ],
       "Trash": [
         "Kôš"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Všetci"
-      ],
-      "Group members": [
-        "Členovia skupiny"
-      ],
-      "No one": [
-        "Nikto"
       ]
     },
     "Option delay send seconds": {
@@ -18072,47 +18035,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložného priestoru"
-      ],
-      "and 15 more premium features": [
-        "a ďalších 15 prémiových funkcií"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické presmerovanie emailu ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornenia na úniky údajov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikácia"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
-      ],
-      "No ads or tracking": [
-        "Žiadne reklamy alebo sledovanie"
-      ],
-      "Short @pm.me email address": [
-        "Skrátená emailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podporte naše poslanie"
-      ],
-      "Upgrade": [
-        "Prejsť na platený plán"
-      ],
-      "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
-      ],
-      "We don't sell your data": [
-        "Nepredávame vaše údaje"
-      ],
-      "Your privacy is our mission": [
-        "Vaše súkromie je naším poslaním"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkciami"
@@ -18413,6 +18335,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastný skrátený emailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "and 15 more premium features": [
+        "a ďalších 15 prémiových funkcií"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické presmerovanie emailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornenia na úniky údajov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
+      ],
+      "No ads or tracking": [
+        "Žiadne reklamy alebo sledovanie"
+      ],
+      "Short @pm.me email address": [
+        "Skrátená emailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podporte naše poslanie"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšite svoju produktivitu"
+      ],
+      "We don't sell your data": [
+        "Nepredávame vaše údaje"
+      ],
+      "Your privacy is our mission": [
+        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription renewal state": {

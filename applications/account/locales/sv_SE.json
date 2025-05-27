@@ -463,10 +463,10 @@
       "Discard": [
         "Avfärda"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Kasta ändringar"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Kasta ändringar"
       ],
       "Discover ${ planName }": [
@@ -781,10 +781,10 @@
       "Keep": [
         "Behåll"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Fortsätt redigera"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Fortsätt redigera"
       ],
       "Keep logo": [
@@ -970,11 +970,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "Refresh the page": [
-        "Uppdatera sidan"
-      ],
       "refresh the page": [
         "uppdatera sidan"
+      ],
+      "Refresh the page": [
+        "Uppdatera sidan"
       ],
       "Reject": [
         "Avvisa"
@@ -1507,9 +1507,6 @@
       ]
     },
     "Action in trial plan": {
-      "No, thanks": [
-        "Nej tack"
-      ],
       "Try free for 30 days": [
         "Prova gratis i 30 dagar"
       ]
@@ -1771,11 +1768,6 @@
         "Nuvarande session"
       ]
     },
-    "Baseline in trial plan": {
-      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "${ mailPlus }: den integritetsprioriterade e-post och kalenderlösningen för dina vardagliga kommunikationsbehov."
-      ]
-    },
     "bf2023: Action": {
       "Become a Visionary": [
         "Bli en Visionary"
@@ -1794,9 +1786,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } lagringsutrymme"
-      ],
       "1 user": [
         "1 användare"
       ],
@@ -6762,11 +6751,6 @@
         "Prenumererad"
       ]
     },
-    "Heading in trial plan": {
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Prova den bästa av ${ MAIL_APP_NAME } gratis"
-      ]
-    },
     "Headline": {
       "Compare plans": [
         "Jämför paket"
@@ -7449,9 +7433,6 @@
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Bjud in vänner till ${ BRAND_NAME }"
       ],
-      "10 email addresses": [
-        "10 e-postadresser"
-      ],
       "2. They try ${ planName }": [
         "2. De provar ${ planName }"
       ],
@@ -7509,11 +7490,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivera minst en dataåterställningsmetod för att se till att du kan fortsätta komma åt innehållet på ditt ${ BRAND_NAME }-konto om du tappar bort ditt lösenord."
       ],
-      "Active": [
-        "Aktiv"
-      ],
       "active": [
         "aktiv"
+      ],
+      "Active": [
+        "Aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Lägg till en @pm.me-e-postadress till ditt konto. Denna enkla, kortare domän står för \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
@@ -7954,11 +7935,11 @@
       "Data recoverable on this device": [
         "Data återställningsbart på denna enhet"
       ],
-      "dedicated servers": [
-        "dedikerade servrar"
-      ],
       "Dedicated servers": [
         "Dedikerade servrar"
+      ],
+      "dedicated servers": [
+        "dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -8771,9 +8752,6 @@
       "No countries enabled": [
         "Inga länder aktiverade"
       ],
-      "No credit card required": [
-        "Inget kreditkort krävs"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Ingen dataåterställningsmetod inställd, du riskerar att förlora åtkomst till dina data"
       ],
@@ -9052,9 +9030,6 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Pris inkluderar alla tillämpbara återkommande rabatter och icke-utgångna kuponger som finns lagrat på ditt konto."
-      ],
-      "Priority support": [
-        "Prioriterad support"
       ],
       "Promotion expired": [
         "Kampanj löpt ut"
@@ -9340,9 +9315,6 @@
       "Storage for users": [
         "Lagringsutrymme för användare"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lagringsutrymmet delas mellan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } och ${ DRIVE_APP_NAME }."
-      ],
       "Storage used by this user": [
         "Lagringsutrymme som används av denna användare"
       ],
@@ -9364,9 +9336,6 @@
       ],
       "Summary": [
         "Sammanfattning"
-      ],
-      "Support for 1 custom email domain": [
-        "Stöd för 1 anpassad e-postdomän"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Support för övervakning av anpassade domäner och icke ${ BRAND_NAME }-e-postadresser kommer snart."
@@ -9740,12 +9709,6 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Om du inte loggar ut från ditt konto eller ändrar ditt lösenord kommer din session att förbli aktiv. Sessioner löper ut efter 60 dagars inaktivitet."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Obegränsade mappar, etiketter och filter"
-      ],
-      "Unlimited messages": [
-        "Obegränsade meddelanden"
-      ],
       "Unsaved changes": [
         "Osparade ändringar"
       ],
@@ -9979,6 +9942,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "När den är inaktiverad förhindrar detta att bildfiler laddas på din enhet utan din vetskap."
+      ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "När det är aktiverat kommer vi kontrollera om ${ MAIL_APP_NAME } är din standardapplikation för e-post och avisera dig om det inte är det."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Vid aktivering av SAML för ${ appName } hos din identitetsleverantör så kan du bli ombedd att använda callback (ACS) URL och utfärdar-ID. Kopiera och klistra in värdena nedan i fälten hos din identitetsleverantör."
@@ -10994,11 +10960,11 @@
       "Amount due": [
         "Att betala"
       ],
-      "AND": [
-        "OCH"
-      ],
       "And": [
         "Och"
+      ],
+      "AND": [
+        "OCH"
       ],
       "and": [
         "och"
@@ -11426,11 +11392,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "OM"
-      ],
       "If": [
         "Om"
+      ],
+      "IF": [
+        "OM"
       ],
       "Import all messages": [
         "Importera alla meddelanden"
@@ -11639,14 +11605,14 @@
       "Optional": [
         "Valfritt"
       ],
-      "OR": [
-        "ELLER"
-      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
+      ],
+      "OR": [
+        "ELLER"
       ],
       "Organization name": [
         "Organisationsnamn"
@@ -14350,6 +14316,17 @@
         "Stationär dator"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Alla"
+      ],
+      "Group members": [
+        "Gruppmedlemmar"
+      ],
+      "No one": [
+        "Ingen"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10:e dagen i månaden"
@@ -14605,17 +14582,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Alla"
-      ],
-      "Group members": [
-        "Gruppmedlemmar"
-      ],
-      "No one": [
-        "Ingen"
       ]
     },
     "Option delay send seconds": {
@@ -17608,47 +17574,6 @@
         "För ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -17937,6 +17862,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {

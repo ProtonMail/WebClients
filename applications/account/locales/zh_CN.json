@@ -196,6 +196,9 @@
       "Back": [
         "上一步"
       ],
+      "Back to sign in": [
+        "返回登录"
+      ],
       "Block": [
         "屏蔽"
       ],
@@ -457,11 +460,11 @@
       "Discard": [
         "放弃"
       ],
-      "Discard Changes": [
-        "放弃更改"
-      ],
       "Discard changes": [
         "放弃修改"
+      ],
+      "Discard Changes": [
+        "放弃更改"
       ],
       "Discover ${ planName }": [
         "探索 ${ planName }"
@@ -562,6 +565,9 @@
       "Edit users": [
         "编辑用户"
       ],
+      "Emoji": [
+        "表情符号"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "启用 ${ darkWebMonitoring }"
       ],
@@ -609,6 +615,9 @@
       ],
       "Font": [
         "字体"
+      ],
+      "Forgot password?": [
+        "忘记密码？"
       ],
       "Forgot recovery method?": [
         "忘记恢复方法？"
@@ -769,10 +778,10 @@
       "Keep": [
         "保留"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "继续编辑"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "继续编辑"
       ],
       "Keep logo": [
@@ -958,10 +967,10 @@
       "Refresh status": [
         "刷新状态"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "刷新页面"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "刷新页面"
       ],
       "Reject": [
@@ -1402,6 +1411,9 @@
       "Use group sending permissions": [
         "使用群组发送权限"
       ],
+      "Use recovery code": [
+        "使用恢复码"
+      ],
       "Use your current email instead": [
         "使用您已有的邮箱地址"
       ],
@@ -1489,9 +1501,6 @@
       ]
     },
     "Action in trial plan": {
-      "No, thanks": [
-        "不用了，谢谢"
-      ],
       "Try free for 30 days": [
         "免费试用 30 天"
       ]
@@ -1749,11 +1758,6 @@
         "当前登录"
       ]
     },
-    "Baseline in trial plan": {
-      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "${ mailPlus }：隐私至上的邮件和日历解决方案，满足您的日常通信需求。"
-      ]
-    },
     "bf2023: Action": {
       "Become a Visionary": [
         "成为 Visionary"
@@ -1772,9 +1776,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } 存储空间"
-      ],
       "1 user": [
         "1 位用户"
       ],
@@ -6173,6 +6174,9 @@
       "Insert your security key into your device's USB port.": [
         "将您的安全密钥插入设备 USB 接口中。"
       ],
+      "Security key": [
+        "安全密钥"
+      ],
       "Security key removed": [
         "安全密钥已移除"
       ],
@@ -6198,6 +6202,9 @@
     "fido2: Label": {
       "Key name": [
         "密钥名称"
+      ],
+      "Security key": [
+        "安全密钥"
       ]
     },
     "fido2: Title": {
@@ -6702,11 +6709,6 @@
       ],
       "Subscribed": [
         "已订阅"
-      ]
-    },
-    "Heading in trial plan": {
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "免费试用最好的 ${ MAIL_APP_NAME }"
       ]
     },
     "Headline": {
@@ -7360,9 +7362,6 @@
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. 邀请好友注册 ${ BRAND_NAME }"
       ],
-      "10 email addresses": [
-        "10 个邮箱地址"
-      ],
       "2. They try ${ planName }": [
         "2. 体验 ${ planName }"
       ],
@@ -7420,11 +7419,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "建议至少设置一种数据恢复方式，确保即使忘记密码也能找回 ${ BRAND_NAME } 账户中的信息。"
       ],
-      "Active": [
-        "已启用"
-      ],
       "active": [
         "启用"
+      ],
+      "Active": [
+        "已启用"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
@@ -7855,10 +7854,10 @@
       "Data recoverable on this device": [
         "此设备上的数据可能被恢复"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "专用服务器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "专用服务器"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -7977,6 +7976,9 @@
       ],
       "Drop to import": [
         "拖至此处即可导入"
+      ],
+      "Each code can only be used once": [
+        "每个恢复码只能使用一次"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "每个域名只能有一个SPF (TXT) 记录。 如果您想保留现有的 SPF (TXT) 记录， 您可以添加 ${ spf } 到您当前的记录 (放在 ${ spfValue } 之后)。"
@@ -8674,9 +8676,6 @@
       "No countries enabled": [
         "未启用的国家/地区"
       ],
-      "No credit card required": [
-        "无需信用卡"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "数据恢复方式未设置，若重置密码您将无法解密账户内的数据"
       ],
@@ -8949,9 +8948,6 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "价格已经考虑各种能用得上的周期计费优惠，以及账户中未过期的优惠券。"
-      ],
-      "Priority support": [
-        "优先支持"
       ],
       "Promotion expired": [
         "促销已过期"
@@ -9235,9 +9231,6 @@
       "Storage for users": [
         "用户存储"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "存储空间在 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME } 之间共享。"
-      ],
       "Storage used by this user": [
         "该用户的存储空间使用量"
       ],
@@ -9258,9 +9251,6 @@
       ],
       "Summary": [
         "概览"
-      ],
-      "Support for 1 custom email domain": [
-        "支持 1 个自有域名"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "对自有域名和非 ${ BRAND_NAME } 邮箱的监测即将推出。"
@@ -9532,6 +9522,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "如果确定要执行此操作，请再次输入您要删除的用户名称。"
       ],
+      "To continue to ${ product }": [
+        "即可使用 ${ product }"
+      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "为持续改进我们的服务，我们有时会收集数据用于侦测系统运行是否正常。这些数据不会传输至任何第三方平台。"
       ],
@@ -9630,12 +9623,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "除非您手动登出账户或更改密码，账户将保持登录状态，直到 60 天无操作后自动登出。"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "文件夹、标签、筛选规则不限量"
-      ],
-      "Unlimited messages": [
-        "无限量发送邮件"
       ],
       "Unsaved changes": [
         "更改未保存"
@@ -10881,10 +10868,10 @@
       "Amount due": [
         "应付金额"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
       "and": [
@@ -11310,10 +11297,10 @@
       "IBAN": [
         "国际银行账户号码（IBAN）"
       ],
-      "IF": [
+      "If": [
         "如果"
       ],
-      "If": [
+      "IF": [
         "如果"
       ],
       "Import all messages": [
@@ -11523,13 +11510,13 @@
       "Optional": [
         "非必填"
       ],
-      "OR": [
-        "或"
-      ],
       "or": [
         "或"
       ],
       "Or": [
+        "或"
+      ],
+      "OR": [
         "或"
       ],
       "Organization name": [
@@ -11897,6 +11884,9 @@
       ],
       "Your calendar URL": [
         "您的日历链接"
+      ],
+      "Your password (admin)": [
+        "您的密码（管理员）"
       ],
       "Your referral link": [
         "您的邀请链接"
@@ -14179,6 +14169,17 @@
         "电脑版"
       ]
     },
+    "option": {
+      "Everyone": [
+        "所有人"
+      ],
+      "Group members": [
+        "群组成员"
+      ],
+      "No one": [
+        "没有人"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "每月 10 日"
@@ -14415,17 +14416,6 @@
         "回收站"
       ]
     },
-    "option": {
-      "Everyone": [
-        "所有人"
-      ],
-      "Group members": [
-        "群组成员"
-      ],
-      "No one": [
-        "没有人"
-      ]
-    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 秒"
@@ -14553,6 +14543,9 @@
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb（Debian/Ubuntu）"
+      ],
+      ".dmg (12.0 or later)": [
+        ".dmg（12.0 或更高版本）"
       ],
       ".exe (64-bit)": [
         ".exe（64 位）"
@@ -17361,47 +17354,6 @@
         "总计 ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动邮件转发 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "简短的 @pm.me 邮箱地址"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "具有高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 以及 ${ VPN_SHORT_APP_NAME }"
@@ -17684,6 +17636,47 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己的短 @pm.me 邮箱别名"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动邮件转发 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "简短的 @pm.me 邮箱地址"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription renewal state": {
@@ -18799,6 +18792,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "输入您的 ${ BRAND_NAME } 账户详情以加入 ${ app } Beta 计划"
+      ],
+      "Enter your password": [
+        "请输入您的密码"
       ],
       "Error": [
         "失败"

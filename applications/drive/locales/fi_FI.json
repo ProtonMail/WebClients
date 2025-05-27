@@ -467,6 +467,9 @@
       "Go back": [
         "Takaisin"
       ],
+      "Go back to album “${ albumName }“": [
+        "Palaa albumiin \"${ albumName }\""
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Avaa ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -625,6 +628,9 @@
       ],
       "More options": [
         "Lisää asetuksia"
+      ],
+      "More options for accounts": [
+        "Lisää asetuksia tileille"
       ],
       "Move": [
         "Siirrä"
@@ -977,6 +983,9 @@
       "Take a tour": [
         "Katso esittely"
       ],
+      "This album is empty": [
+        "Albumi on tyhjä"
+      ],
       "Toggle Calendar app": [
         "Kalenteri-sovellus päälle/pois"
       ],
@@ -1066,6 +1075,9 @@
       ],
       "Use a different payment method": [
         "Käytä eri maksutapaa"
+      ],
+      "Use authentication code": [
+        "Käytä todennuskoodia"
       ],
       "Use for sending": [
         "Käytä lähetykseen"
@@ -2588,14 +2600,26 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } ${ DRIVE_APP_NAME }ssä antaa sinun työskennellä yhdessä muiden kanssa, turvallisessa ja salatussa ympäristössä."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } suojaa käyttäjätilisi 24/7 epäilyttävän toiminnan tarkkailulla - sisältäen eskaloinnin tietoturva-asiantuntijoille."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lisää ylimääräisen turvakerroksen, joka estää luvattoman pääsyn tilillesi."
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Lisää kansioita ja tiedostoja ${ DRIVE_APP_NAME }en ja kutsu tiimin jäseniä tarkastelemaan tai muokkaamaan."
+      ],
       "Also included": [
         "Sisältää myös:"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Välitä saapuva sähköposti automaattisesti toiseen sähköpostiosoitteeseen."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Määritä tämä ensin aktivoidaksesi organisaatiosi ja mukauttaaksesi sähköpostiosoitettasi."
       ],
       "Connect your CRM, website, printers, and more.": [
         "Yhdistä CRM:si, verkkosivustosi, tulostimesi ja muuta."
@@ -2609,14 +2633,32 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja poistetaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
       ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Synkronoi tiedostot helposti pilveen työpöydältäsi ja käytä niitä mobiililaitteellasi."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Kannusta kaksivaiheisen tunnistautumisen käyttöä organisaatiossasi turvallisuuden parantamiseksi."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja salataan ja tuodaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Varmista ensiluokkainen tietoturva tilillesi ${ PROTON_SENTINEL_NAME } -ohjelmalla."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Varmista, että pääset edelleen käsiksi tiliisi ja tietoihisi, vaikka kadottaisit ${ BRAND_NAME } -salasanasi."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Voit siirtyä ${ BRAND_NAME }iin saumattomasti tuomalla tietosi Googlesta, Outlookista ja muualta."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut kolmannen osapuolen palvelusta."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Yhteystiedot, joita olet tuomassa, näyttävät sisältävän ryhmiä. Määritä miten ryhmät tuodaan."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Voit lisätä kokouslinkkejä tapahtumakutsuihisi välittömästi."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja yhdistetään... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
@@ -2626,6 +2668,12 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Aseta palautustapa, jottet menetä pääsyä tilillesi."
+      ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Määritä tilit kaikille käyttäjille ja kutsu heidät liittymään ${ BRAND_NAME }iin."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Yksinkertaista synkronointia ja ajoitusta jaetuilla kalentereilla."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Varmista tilillesi korkein mahdollinen suojaus asettamalla palautuslauseke."
@@ -2769,6 +2817,11 @@
         "Ensisijainen tuki"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "MUISTIINPANO:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "KUVAUS:\n${ eventDescription }"
@@ -2783,6 +2836,9 @@
       ],
       "Here's what changed:": [
         "Tehdyt muutokset:"
+      ],
+      "NOTE:": [
+        "MUISTIINPANO:"
       ],
       "This event occurrence was canceled.": [
         "Tämä tapahtumakerta peruttiin."
@@ -2989,6 +3045,9 @@
       ],
       "Failed to load the STL preview": [
         "STL-esikatselun lataus epäonnistui"
+      ],
+      "Failed to save some photos to your Drive": [
+        "Joidenkin kuvien tallentaminen Driveesi epäonnistui"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Tiedostoa \"${ item.name }\" ei voida tallentaa virheen \"${ error }\" vuoksi"
@@ -3282,6 +3341,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Kokeile vain kirjaimia, numeroita ja merkkejä _.-"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "VPN-hallintapaneelia ei voi ladata. Tarkista yhteytesi ja yritä uudelleen."
       ],
       "Unable to set photo as cover": [
         "Kuvaa ei voitu asettaa kansikuvaksi"
@@ -3709,6 +3771,16 @@
         "Rajattomasti Hide-my-email-aliaksia"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "Suojausavain"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Suojausavain"
+      ]
+    },
     "file size format": {
       "byte": [
         "tavu",
@@ -3826,6 +3898,10 @@
       ],
       "Recent": [
         "Viimeisin"
+      ],
+      "Share ${ photoCount } photo via": [
+        "Jaa ${ photoCount } kuva käyttäen",
+        "Jaa ${ photoCount } kuvaa käyttäen"
       ]
     },
     "Hint": {
@@ -4384,6 +4460,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Käyttäjä tarkoittaa tiliä, joka on liitetty yksittäiseen käyttäjätunnukseen, postilaatikkoon ja henkilöön."
       ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN salaa yhteytesi ja piilottaa IP-osoitteesi, mikä vaikeuttaa huomattavasti selaamisesi seuraamista tai valvomista."
+      ],
       "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
         "VPN piilottaa IP-osoitteesi ja salaa selaustoimintasi, joten verkkosivustojen, mainostajien ja Internet-palveluntarjoajien on vaikeampi seurata sinua ajan mittaan."
       ],
@@ -4714,6 +4793,9 @@
       "Duplicate key updated": [
         "Avaimen kaksoiskappale päivitettiin"
       ],
+      "Each code can only be used once": [
+        "Koodit ovat kertakäyttöisiä"
+      ],
       "Edit email address": [
         "Muokkaa sähköpostiosoitetta"
       ],
@@ -4750,11 +4832,20 @@
       "Enter password": [
         "Syötä salasana"
       ],
+      "Enter the code from your authenticator app": [
+        "Syötä koodi todennussovelluksestasi"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Syötä tuotavan tilin kirjautumistiedot."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Syötä kohteeseen ${ destinationText } lähetetty vahvistuskoodi."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Syötä vahvistuskoodi. Numero ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Syötä oma salasanasi (organisaation ylläpitäjänä)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Arviolta ${ estimatedMinutes } minuutti jäljellä",
@@ -5036,7 +5127,7 @@
         "Lisää"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
-        "Useimmat julkiset WiFi-verkot ovat turvallisia, mutta joskus puutteellisesti suojattuja, jolloin voit altistua kyberuhkille. VPN salaa tietoliikenteesi ja pitää sinut suojattuna."
+        "Useimmat julkiset Wi-Fi-verkot ovat turvallisia, mutta joskus puutteellisesti suojattuja, jolloin voit altistua kyberuhkille. VPN salaa tietoliikenteesi ja pitää sinut suojattuna."
       ],
       "Moving files": [
         "Tiedostoja siirretään"
@@ -5102,7 +5193,7 @@
         "/"
       ],
       "On public WiFi networks": [
-        "Julkisissa WiFi-verkoissa"
+        "Julkisissa Wi-Fi-verkoissa"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Yksi salatuista levyistäsi on lukittu. Tämä johtuu todennäköisesti taannoisesta salasanan nollauksesta."
@@ -5118,6 +5209,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Kansiota voivat käyttää vain ne, joilla on sen linkki ja salasana."
+      ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Avaa opas ja tutustu suositeltuihin toimenpiteisiin ja hyödyllisiin linkkeihin."
       ],
       "or discover other features:": [
         "tai tutustu muihin ominaisuuksiin:"
@@ -5533,6 +5627,9 @@
       "This folder is empty": [
         "Kansio on tyhjä"
       ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Tämä on nimi tai lempinimi organisaatiollesi, jonka käyttäjäsi näkevät. Voit muuttaa sitä milloin tahansa."
+      ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Tämä on nyt ${ defaultEmailAddress } uusien viestien lähettämistä varten."
       ],
@@ -5547,6 +5644,9 @@
       ],
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Linkki on luotu vanhalla Drive-versiolla, eikä sen muokkaus ole mahdollista. Muuttaaksesi asetuksia, poista linkki ja luo uusi."
+      ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Tämä tarkoittaa, että Internet-palveluntarjoajasi ja vierailemasi verkkosivustot eivät voi yhdistää henkilötietojasi verkkotoimintaasi."
       ],
       "This month": [
         "Tässä kuussa"
@@ -5788,6 +5888,12 @@
       "When working remotely": [
         "Etätyöskennellessä"
       ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Kun yhdistät VPN:ään, se käyttää salaustekniikkaa IP-osoitteesi (laitteellesi annettu yksilöllinen koodi) salaamiseen."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat myös palautuskoodit, joilla voit kirjautua vaikka menettäisit pääsyn todennussovellukseesi."
+      ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "palautetaan ${ formattedRevisionDate } tallennettuun versioon. Kaikki muut versiot säilytetään."
       ],
@@ -5916,6 +6022,15 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }.",
         "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Olet kieltäytymässä albumin ${ invitationName } liittymiskutsusta. Jos jatkat, et voi käyttää sitä, ellei omistaja kutsu sinua uudelleen. Haluatko varmasti jatkaa?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Olet kieltäytymässä kansion ${ invitationName } liittymiskutsusta. Jos jatkat, et voi käyttää sitä, ellei omistaja kutsu sinua uudelleen. Haluatko varmasti jatkaa?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Olet kieltäytymässä kohteen ${ invitationName } liittymiskutsusta. Jos jatkat, et voi käyttää sitä, ellei omistaja kutsu sinua uudelleen. Haluatko varmasti jatkaa?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Olet saavuttanut yhteystietoryhmien osoitteiden enimmäismäärän:"
@@ -6151,6 +6266,9 @@
       ],
       "Anderson": [
         "Andersson"
+      ],
+      "Anyone on the Internet with the link can edit": [
+        "Linkin välityksellä kuka tahansa voi muokata"
       ],
       "Anyone on the Internet with the link can view": [
         "Linkin välityksellä kuka tahansa voi tarkastella"
@@ -6564,6 +6682,9 @@
       "Set recovery method": [
         "Määritä palautustapa"
       ],
+      "Share a file, folder, or album": [
+        "Jaa tiedosto, kansio tai albumi"
+      ],
       "Shared": [
         "Jaettu"
       ],
@@ -6704,6 +6825,9 @@
       ],
       "Your location": [
         "Sinun sijaintisi"
+      ],
+      "Your password (admin)": [
+        "Salasanasi (ylläpitäjä)"
       ]
     },
     "Label for contact group color": {
@@ -6785,6 +6909,9 @@
       ],
       "Drafts": [
         "Luonnokset"
+      ],
+      "Enforcing 2FA for organizations": [
+        "2FA:n vaatiminen organisaatioille"
       ],
       "How to add users": [
         "Miten käyttäjiä lisätään"
@@ -6878,6 +7005,9 @@
       ],
       "Trash": [
         "Roskakori"
+      ],
+      "Types of recovery methods": [
+        "Palautustapojen tyypit"
       ],
       "What’s this?": [
         "Mikä tämä on?"
@@ -8378,6 +8508,12 @@
       "Share invitation declined": [
         "Kieltäydyit jakokutsusta"
       ],
+      "Some photo(s) could not be added to \"${ albumName }\"": [
+        "Joitakin kuvia ei voitu lisätä albumiin \"${ albumName }\""
+      ],
+      "Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Joitakin kuvia ei voitu poistaa albumista ${ albumLink.name }"
+      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Valitettavasti emme voineet poistaa kansiota, koska se ei ole tyhjä.",
         "Valitettavasti emme voineet poistaa kansioita, koska ne eivät ole tyhjiä."
@@ -8387,6 +8523,9 @@
       ],
       "Subfolder failed to be loaded": [
         "Alikansion lataus epäonnistui"
+      ],
+      "The Albums feature is on its way! We're rolling it out gradually — please try again soon": [
+        "Albumit-toiminto on tulossa! Otamme sen käyttöön vähitellen — kokeile pian uudelleen"
       ],
       "The document failed to be created": [
         "Dokumentin luominen epäonnistui"
@@ -8422,6 +8561,9 @@
       ],
       "Your photo(s) have been added to \"${ albumName }\"": [
         "Kuvasi on lisätty albumiin \"${ albumName }\""
+      ],
+      "Your photo(s) have been removed from ${ albumLink.name }": [
+        "Kuvasi on poistettu albumista ${ albumLink.name }"
       ],
       "Your settings failed to be saved": [
         "Asetusten tallennus epäonnistui"
@@ -9046,6 +9188,9 @@
       ],
       "Start typing an email address": [
         "Aloita sähköpostiosoitteen kirjoitus"
+      ],
+      "Your organization name": [
+        "Organisaatiosi nimi"
       ]
     },
     "Placeholder for contact group name": {
@@ -9134,6 +9279,11 @@
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Sisäänkirjautumista ei suoritettu loppuun."
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Organisaation määritys ja tiliturvallisuus"
       ]
     },
     "Security Center": {
@@ -9700,6 +9850,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Jatkaaksesi tiedostojen tallennusta ja synkronointia, vapauta tilaa tai hanki lisää päivittämällä tilauksesi."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Jatkaaksesi ${ BRAND_NAME } -tuotteiden käyttöä, vapauta tilaa tai ${ upgrade }"
+      ],
       "To send or receive emails, free up space or ${ upgrade }": [
         "Jos haluat lähettää tai vastaanottaa sähköposteja, vapauta tilaa tai ${ upgrade }"
       ],
@@ -9826,47 +9979,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Hintaan ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Gt tallennustilaa"
-      ],
-      "and 15 more premium features": [
-        "sekä 15 muuta premium-ominaisuutta"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automaattinen sähköpostiohjaus ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Tietomurtohälytykset ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Työpöytäsovellus"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
-      ],
-      "No ads or tracking": [
-        "Ei mainoksia eikä seurantaa"
-      ],
-      "Short @pm.me email address": [
-        "Lyhyt @pm.me-sähköpostiosoite"
-      ],
-      "Support our mission": [
-        "Tue tehtäväämme"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade your productivity": [
-        "Tehosta tuottavuuttasi"
-      ],
-      "We don't sell your data": [
-        "Emme myy tietojasi"
-      ],
-      "Your privacy is our mission": [
-        "Yksityisyytesi on tehtävämme"
       ]
     },
     "Subscription reminder": {
@@ -10127,6 +10239,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Oma lyhyt @pm.me-sähköpostialiaksesi"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "and 15 more premium features": [
+        "sekä 15 muuta premium-ominaisuutta"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automaattinen sähköpostiohjaus ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Tietomurtohälytykset ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Työpöytäsovellus"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
+      ],
+      "No ads or tracking": [
+        "Ei mainoksia eikä seurantaa"
+      ],
+      "Short @pm.me email address": [
+        "Lyhyt @pm.me-sähköpostiosoite"
+      ],
+      "Support our mission": [
+        "Tue tehtäväämme"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade your productivity": [
+        "Tehosta tuottavuuttasi"
+      ],
+      "We don't sell your data": [
+        "Emme myy tietojasi"
+      ],
+      "Your privacy is our mission": [
+        "Yksityisyytesi on tehtävämme"
       ]
     },
     "Subscription renewal state": {
@@ -10759,6 +10912,9 @@
       "Enter 2FA code": [
         "Syötä vahvistuskoodi"
       ],
+      "Enter your password": [
+        "Syötä salasanasi"
+      ],
       "Error": [
         "Virhe"
       ],
@@ -10883,6 +11039,9 @@
       ],
       "Network error": [
         "Verkkovirhe"
+      ],
+      "Newsletters view": [
+        "Uutiskirjenäkymä"
       ],
       "Night theme": [
         "Yöteema"
