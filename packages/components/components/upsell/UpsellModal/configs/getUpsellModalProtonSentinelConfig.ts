@@ -24,7 +24,7 @@ export const getUpsellModalProtonSentinelConfig: UpsellModalConfigCase = async (
         footerText: getUpsellModalFooterText({
             planIDs,
             currency,
-            monthlyPrice,
+            monthlyPrice: monthlyPrice.regularPrice,
         }),
         submitText: getUpsellModalSubmitText({ planIDs }),
     };
