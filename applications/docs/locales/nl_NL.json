@@ -513,9 +513,6 @@
       "New message": [
         "Nieuw bericht"
       ],
-      "New sheet": [
-        "Nieuw blad"
-      ],
       "Next": [
         "Volgende"
       ],
@@ -6651,6 +6648,17 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Plannen vanaf ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -6672,17 +6680,6 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Plannen vanaf ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Upgraden"
       ]
     },
     "new_plans: feature": {
@@ -9095,6 +9092,25 @@
         "Voor ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } opslagruimte per gebruiker"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigen e-maildomein",
+        "${ planNumberOfDomains } eigen e-maildomeinen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailadres",
+        "${ planNumberOfEmails } e-mailadressen"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mappen, labels en aangepaste filters"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB opslagruimte"
@@ -9134,25 +9150,6 @@
       ],
       "Your privacy is our mission": [
         "Uw privacy is onze missie"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } opslagruimte per gebruiker"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } eigen e-maildomein",
-        "${ planNumberOfDomains } eigen e-maildomeinen"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-mailadres",
-        "${ planNumberOfEmails } e-mailadressen"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mappen, labels en aangepaste filters"
       ]
     },
     "Subscription renewal state": {
