@@ -240,7 +240,7 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
             handleCancelClick={handleCancelClick}
             cancelIcon={showForm ? 'arrow-left' : 'cross'}
             type={form.values.type}
-            valid={form.isValid}
+            valid={form.isValid && !form.status?.isBusy}
             actions={ParentPortal}
             submitButton={SubmitButton}
         >
