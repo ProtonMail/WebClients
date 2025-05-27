@@ -101,7 +101,11 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
       setIsCreatingNewDocument(true)
 
       void createNewDocInRoot().then((result) => {
-        updateParameters({ newVolumeId: result.volumeId, newLinkId: result.linkId, pathname: 'doc' })
+        updateParameters({
+          newVolumeId: result.volumeId,
+          newLinkId: result.linkId,
+          pathname: openAction?.type ?? 'doc',
+        })
 
         setIsCreatingNewDocument(false)
         setDidCreateNewDocument(true)
@@ -224,7 +228,11 @@ function Content({
     return (
       <div className="flex-column flex h-full w-full items-center justify-center gap-4">
         <CircleLoader size="large" />
-        <div className="text-center">{c('Info').t`Creating new document...`}</div>
+        <div className="text-center">
+          {openAction?.type === 'sheet'
+            ? c('sheets_2025:Info').t`Creating new spreadsheet...`
+            : c('Info').t`Creating new document...`}
+        </div>
       </div>
     )
   }
