@@ -260,9 +260,9 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
                                             className="w-full"
                                             onClick={() => onSelectTemplate(template)}
                                         >
-                                            <div className="flex items-center w-full text-left">
+                                            <div className="flex items-center w-full text-left flex-nowrap">
                                                 <Icon name={template.icon} className="mr-2" />
-                                                <span>{template.label}</span>
+                                                <span className="text-ellipsis">{template.label}</span>
                                             </div>
                                         </Button>
                                     ))}
