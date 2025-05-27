@@ -409,16 +409,181 @@ describe('transformEscape', () => {
     });
 
     describe('Escape form inputs', () => {
-        it('Should escape form inputs', () => {
-            const { document } = setup(`<input type="text" value="test" />`);
+        describe('input attributes filtering', () => {
+            it('should only allow permitted attributes on input elements', () => {
+                const inputHtml = `
+      <div>
+        <input
+          id="test-id"
+          class="test-class"
+          style="color: red;"
+          value="test-value"
+          readonly
+          disabled
+          type="text"
+          name="test-name"
+          placeholder="test-placeholder"
+          autocomplete="off"
+          required
+          pattern="[A-Za-z]+"
+          minlength="3"
+          maxlength="10"
+          min="1"
+          max="100"
+          step="10"
+          onclick="alert('XSS')"
+          onmouseover="alert('XSS')"
+          formaction="javascript:alert('XSS')"
+          data-custom="something"
+        />
+      </div>
+    `;
 
-            expect(document.querySelector('input')).toBeNull();
-        });
+                const { document } = setup(inputHtml);
+                const inputElement = document.querySelector('input');
 
-        it('Should escape form textareas', () => {
-            const { document } = setup(`<textarea>hey</textarea>`);
+                // Test that the input element exists
+                expect(inputElement).not.toBeNull();
 
-            expect(document.querySelector('textarea')).toBeNull();
+                // Test allowed attributes are preserved
+                expect(inputElement?.hasAttribute('id')).toBe(true);
+                expect(inputElement?.hasAttribute('class')).toBe(true);
+                expect(inputElement?.hasAttribute('style')).toBe(true);
+                expect(inputElement?.hasAttribute('value')).toBe(true);
+                expect(inputElement?.hasAttribute('readonly')).toBe(true);
+                expect(inputElement?.hasAttribute('disabled')).toBe(true);
+                expect(inputElement?.hasAttribute('type')).toBe(true);
+                expect(inputElement?.hasAttribute('name')).toBe(true);
+
+                // Test disallowed attributes are removed
+                expect(inputElement?.hasAttribute('placeholder')).toBe(false);
+                expect(inputElement?.hasAttribute('autocomplete')).toBe(false);
+                expect(inputElement?.hasAttribute('required')).toBe(false);
+                expect(inputElement?.hasAttribute('pattern')).toBe(false);
+                expect(inputElement?.hasAttribute('minlength')).toBe(false);
+                expect(inputElement?.hasAttribute('maxlength')).toBe(false);
+                expect(inputElement?.hasAttribute('min')).toBe(false);
+                expect(inputElement?.hasAttribute('max')).toBe(false);
+                expect(inputElement?.hasAttribute('step')).toBe(false);
+                expect(inputElement?.hasAttribute('onclick')).toBe(false);
+                expect(inputElement?.hasAttribute('onmouseover')).toBe(false);
+                expect(inputElement?.hasAttribute('formaction')).toBe(false);
+                expect(inputElement?.hasAttribute('data-custom')).toBe(false);
+            });
+
+            it('should handle multiple input elements correctly', () => {
+                const multipleInputsHtml = `
+      <div>
+        <input id="input1" onclick="alert('XSS')" class="test-class" />
+        <input id="input2" onmouseover="alert('XSS')" value="test" />
+        <input id="input3" formaction="javascript:alert('XSS')" disabled />
+      </div>
+    `;
+
+                const { document } = setup(multipleInputsHtml);
+                const inputs = document.querySelectorAll('input');
+
+                expect(inputs.length).toBe(3);
+
+                // Check first input
+                expect(inputs[0].hasAttribute('id')).toBe(true);
+                expect(inputs[0].hasAttribute('class')).toBe(true);
+                expect(inputs[0].hasAttribute('onclick')).toBe(false);
+
+                // Check second input
+                expect(inputs[1].hasAttribute('id')).toBe(true);
+                expect(inputs[1].hasAttribute('value')).toBe(true);
+                expect(inputs[1].hasAttribute('onmouseover')).toBe(false);
+
+                // Check third input
+                expect(inputs[2].hasAttribute('id')).toBe(true);
+                expect(inputs[2].hasAttribute('disabled')).toBe(true);
+                expect(inputs[2].hasAttribute('formaction')).toBe(false);
+            });
+
+            it('should not affect other element types', () => {
+                const mixedElementsHtml = `
+      <div>
+        <input id="test-input" onclick="alert('XSS')" />
+        <button id="test-button" onclick="alert('XSS')">Click me</button>
+        <a id="test-link" onclick="alert('XSS')" href="#">Link</a>
+      </div>
+    `;
+
+                const { document } = setup(mixedElementsHtml);
+
+                // Input should have onclick removed
+                const input = document.querySelector('input');
+                expect(input?.hasAttribute('onclick')).toBe(false);
+
+                // Other elements should not be affected by input attribute filtering
+                const button = document.querySelector('button');
+                const link = document.querySelector('a');
+
+                // Assert button and link exist
+                expect(button).not.toBeNull();
+                expect(link).not.toBeNull();
+            });
+
+            it('should handle inputs with no attributes correctly', () => {
+                const plainInputHtml = `<div><input></div>`;
+
+                const { document } = setup(plainInputHtml);
+                const input = document.querySelector('input');
+
+                expect(input).not.toBeNull();
+                expect(input?.tagName).toBe('INPUT');
+            });
+
+            it('should only allow permitted attributes on textarea elements', () => {
+                const textareaHtml = `
+                  <div>
+                    <textarea
+                      id="test-id"
+                      class="test-class"
+                      style="color: red;"
+                      value="test-value"
+                      readonly
+                      disabled
+                      name="test-name"
+                      placeholder="test-placeholder"
+                      autocomplete="off"
+                      required
+                      minlength="3"
+                      maxlength="10"
+                      onclick="alert('XSS')"
+                      onmouseover="alert('XSS')"
+                      data-custom="something"
+                    >Initial content</textarea>
+                  </div>
+                `;
+
+                const { document } = setup(textareaHtml);
+                const textareaElement = document.querySelector('textarea');
+
+                expect(textareaElement).not.toBeNull();
+
+                // Test allowed attributes are preserved
+                expect(textareaElement?.hasAttribute('id')).toBe(true);
+                expect(textareaElement?.hasAttribute('class')).toBe(true);
+                expect(textareaElement?.hasAttribute('style')).toBe(true);
+                expect(textareaElement?.hasAttribute('readonly')).toBe(true);
+                expect(textareaElement?.hasAttribute('disabled')).toBe(true);
+                expect(textareaElement?.hasAttribute('name')).toBe(true);
+
+                // Test disallowed attributes are removed
+                expect(textareaElement?.hasAttribute('placeholder')).toBe(false);
+                expect(textareaElement?.hasAttribute('autocomplete')).toBe(false);
+                expect(textareaElement?.hasAttribute('required')).toBe(false);
+                expect(textareaElement?.hasAttribute('minlength')).toBe(false);
+                expect(textareaElement?.hasAttribute('maxlength')).toBe(false);
+                expect(textareaElement?.hasAttribute('onclick')).toBe(false);
+                expect(textareaElement?.hasAttribute('onmouseover')).toBe(false);
+                expect(textareaElement?.hasAttribute('data-custom')).toBe(false);
+
+                // Test content is preserved
+                expect(textareaElement?.textContent).toBe('Initial content');
+            });
         });
     });
 });
