@@ -14,6 +14,7 @@ import {
 
 import { getMimeTypeDescription } from '../../components/sections/helpers';
 import { type DecryptedLink, isDecryptedLink } from '../../store';
+import { useAlbumProgressStore } from '../../zustand/photos/addToAlbumProgress.store';
 import type { DecryptedAlbum } from '../PhotosStore/PhotosWithAlbumsProvider';
 import { CreateAlbumModal } from './CreateAlbumModal';
 
@@ -35,8 +36,16 @@ const AlbumSquare = ({
 }) => {
     const isDecrypted = isDecryptedLink(album);
     const isCoverDecrypted = isDecryptedLink(album.cover);
+    const albumProgress = useAlbumProgressStore();
+
     const thumbUrl =
         (isCoverDecrypted && album.cover?.cachedThumbnailUrl) || (isDecrypted && album.cachedThumbnailUrl) || undefined;
+
+    let addPhotosProgressText = '';
+    if (albumProgress.status === 'in-progress') {
+        addPhotosProgressText = c('Label').t`${albumProgress.added} of ${albumProgress.total}`;
+    }
+    const shouldShowLoading = loading && albumProgress.status !== 'done';
 
     return (
         <li key={album.linkId}>
@@ -44,7 +53,7 @@ const AlbumSquare = ({
                 className="relative flex flex-nowrap items-center justify-start gap-2 album-photo-selection"
                 onClick={() => onClick(album.rootShareId, album.linkId)}
                 disabled={disabled}
-                loading={loading}
+                loading={shouldShowLoading}
                 shape="ghost"
                 title={c('Action').ngettext(
                     msgid`Add to "${album.name}" (${album.photoCount} photo)`,
@@ -80,6 +89,9 @@ const AlbumSquare = ({
                     </div>
                 )}
                 <span className="grow-2 text-left text-ellipsis">{album.name}</span>
+                {shouldShowLoading && addPhotosProgressText && (
+                    <span className="grow-2 text-right">{addPhotosProgressText}</span>
+                )}
                 {!loading && <span className="color-weak text-tabular-nums">{album.photoCount}</span>}
             </Button>
         </li>
