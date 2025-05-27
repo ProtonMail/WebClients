@@ -74,7 +74,7 @@
         "Options avancées"
       ],
       "Apply lifetime coupon code": [
-        "Appliquer le code promo pour compte Lifetime"
+        "Appliquer le code promo pour un accès à vie"
       ],
       "Authenticate": [
         "S'authentifier"
@@ -403,11 +403,11 @@
       "Move to another vault": [
         "Déplacer vers un autre coffre-fort"
       ],
-      "Move to Trash": [
-        "Déplacer dans la corbeille"
-      ],
       "Move to trash": [
         "Déplacer dans le dossier Corbeille"
+      ],
+      "Move to Trash": [
+        "Déplacer dans la corbeille"
       ],
       "Multiple select": [
         "Sélection multiple"
@@ -696,11 +696,6 @@
         "Je profite de l'offre"
       ]
     },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Offre spéciale anniversaire"
-      ]
-    },
     "anniversary_2025: Offer": {
       "500 GB encrypted storage": [
         "500 Go de stockage chiffré"
@@ -764,6 +759,11 @@
       ],
       "years": [
         "années"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Offre spéciale anniversaire"
       ]
     },
     "anniversary_2025: Offers": {
@@ -3333,10 +3333,10 @@
       "Priority:": [
         "Priorité :"
       ],
-      "Private Key": [
+      "Private key": [
         "Clé privée"
       ],
-      "Private key": [
+      "Private Key": [
         "Clé privée"
       ],
       "Program Name": [
@@ -3376,7 +3376,7 @@
         "Afficher le mot de passe"
       ],
       "Reward Program": [
-        "Programme de récompense"
+        "Programme de récompenses"
       ],
       "Routing Number": [
         "Numéro d’acheminement"
@@ -3459,10 +3459,10 @@
       "Sign in faster with ${ PASS_APP_NAME }": [
         "Connectez-vous plus rapidement avec ${ PASS_APP_NAME }"
       ],
-      "Social security": [
+      "Social Security": [
         "Sécurité sociale"
       ],
-      "Social Security": [
+      "Social security": [
         "Sécurité sociale"
       ],
       "Social security number": [
