@@ -36,6 +36,7 @@ import { SHOULD_MIGRATE_PHOTOS_STATUS } from '../../store/_shares/useShareAction
 import { useBatchHelper } from '../../store/_utils/useBatchHelper';
 import { VolumeTypeForEvents, useVolumesState } from '../../store/_volumes';
 import { sendErrorReport } from '../../utils/errorHandling';
+import { useAlbumProgressStore } from '../../zustand/photos/addToAlbumProgress.store';
 import { useCreatePhotosWithAlbums } from './useCreatePhotosWithAlbums';
 
 export interface Album {
@@ -149,6 +150,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const { setVolumeShareIds } = useVolumesState();
     const { shouldMigratePhotos, migratePhotos } = useShareActions();
     const eventAbortController = useRef<AbortController | undefined>(undefined);
+    const albumProgress = useAlbumProgressStore();
 
     const { createNotification } = useNotifications();
 
@@ -615,8 +617,10 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     await runInQueue(relatedPhotosQueue, MAX_THREADS_PER_REQUEST);
                 }
             };
-
+            albumProgress.setStatus('in-progress');
+            albumProgress.setTotal(linkIDs.length);
             const queue = linkIDs.map((linkId) => async () => {
+                albumProgress.incrementAdded();
                 if (abortSignal.aborted) {
                     return;
                 }
@@ -684,7 +688,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     }
                 },
             });
-
+            albumProgress.setStatus('done');
             return {
                 successes: result.successes,
                 failures: result.failures,
