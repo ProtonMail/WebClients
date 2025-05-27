@@ -31,10 +31,11 @@ export default function SharedFilePage({
     isPartialView,
     openInDocs,
 }: Props) {
-    const { isLinkLoading, isContentLoading, error, contents, downloadFile } = usePublicFileView(
+    const { isLinkLoading, isContentLoading, error, contents, downloadFile, videoStreaming } = usePublicFileView(
         token,
         rootLink.linkId
     );
+
     const { viewportWidth } = useActiveBreakpoint();
     const isDocument = isProtonDocument(rootLink?.mimeType || '');
     const [reportAbuseModal, showReportAbuseModal] = useReportAbuseModal();
@@ -79,6 +80,7 @@ export default function SharedFilePage({
                     fileName={rootLink?.name}
                     mimeType={rootLink?.mimeType}
                     fileSize={rootLink?.size}
+                    videoStreaming={videoStreaming}
                     imgThumbnailUrl={rootLink?.cachedThumbnailUrl}
                     isPublic
                     isSharedFile={true}

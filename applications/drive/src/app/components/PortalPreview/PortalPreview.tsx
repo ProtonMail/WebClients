@@ -45,12 +45,9 @@ const PortalPreview = (
     }: PortalPreviewProps & ModalStateProps,
     ref: Ref<HTMLDivElement>
 ) => {
-    const { contents, contentsMimeType, link, error, isLinkLoading, isContentLoading, downloadFile } = useFileView(
-        shareId,
-        linkId,
-        false,
-        revisionId
-    );
+    const { contents, contentsMimeType, link, error, isLinkLoading, isContentLoading, downloadFile, videoStreaming } =
+        useFileView(shareId, linkId, false, revisionId);
+
     const signatureStatus = useMemo(() => {
         if (!link) {
             return;
@@ -102,6 +99,7 @@ const PortalPreview = (
                     sharedStatus={getSharedStatus(link)}
                     fileSize={link?.size}
                     contents={contents}
+                    videoStreaming={videoStreaming}
                     onClose={() => {
                         modalProps.onClose();
                         modalProps.onExit();
