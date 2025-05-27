@@ -21,29 +21,40 @@ interface UpsellPlanMonthlyPriceParams {
     coupon?: COUPON_CODES;
 }
 
-export const getUpsellPlanMonthlyPrice = async (props: UpsellPlanMonthlyPriceParams) => {
-    const { currency, cycle, planIDs, plans, coupon, paymentsApi } = props;
+export const getUpsellPlanMonthlyPrice = async (
+    data: UpsellPlanMonthlyPriceParams
+): Promise<{
+    couponPrice: number;
+    regularPrice: number;
+}> => {
     let price = 0;
-    if (isMainCurrency(currency)) {
-        price = getPricePerCycle(getPlanByName(plans, planIDs, currency), cycle) || 0;
+    let regularPrice = 0;
+
+    if (isMainCurrency(data.currency)) {
+        price = getPricePerCycle(getPlanByName(data.plans, data.planIDs, data.currency), data.cycle) || 0;
+        regularPrice = price;
     } else {
-        const checkResult = await paymentsApi.checkWithAutomaticVersion({
-            Plans: planIDs,
-            Currency: currency,
-            Cycle: cycle,
-            CouponCode: coupon,
+        const checkResult = await data.paymentsApi.checkWithAutomaticVersion({
+            Plans: data.planIDs,
+            Currency: data.currency,
+            Cycle: data.cycle,
+            CouponCode: data.coupon,
         });
 
-        const plansMap = getPlansMap(plans, currency, false);
+        const plansMap = getPlansMap(data.plans, data.currency, false);
 
         const checkout = getCheckout({
-            planIDs,
+            planIDs: data.planIDs,
             checkResult,
             plansMap,
         });
 
         price = checkout.withDiscountPerCycle;
+        regularPrice = checkout.withoutDiscountPerCycle;
     }
 
-    return cycle === CYCLE.MONTHLY ? price : price / 12;
+    return {
+        couponPrice: data.cycle === CYCLE.MONTHLY ? price : price / 12,
+        regularPrice: data.cycle === CYCLE.MONTHLY ? regularPrice : regularPrice / 12,
+    };
 };
