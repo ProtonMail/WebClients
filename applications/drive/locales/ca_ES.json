@@ -237,6 +237,9 @@
       "Copy address": [
         "Copiar l'adreça"
       ],
+      "Copy alias “${ name }”": [
+        "Copia l'àlies «${ name }»"
+      ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
       ],
@@ -4579,6 +4582,9 @@
       "Anyone with this link can access your folder.": [
         "Qualsevol que tingui aquest enllaç pot accedir a la carpeta."
       ],
+      "Apr": [
+        "Abr."
+      ],
       "Are you sure you want to discard your changes?": [
         "N'estás segur que desitges descartar els teus canvis?"
       ],
@@ -4605,6 +4611,9 @@
       ],
       "Attention required": [
         "Es requereix la vostra atenció"
+      ],
+      "Aug": [
+        "Ago."
       ],
       "Automated Recovery ${ formattedDate }": [
         "Recuperació automàtica ${ formattedDate }"
@@ -4751,6 +4760,9 @@
       ],
       "Custom email domains": [
         "Dominis de correu personalitzats"
+      ],
+      "Dec": [
+        "Des."
       ],
       "Decrypting files": [
         "S'estan desxifrant els fitxers"
@@ -4900,6 +4912,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Error obrint un enllaç segur. La raó és: ${ error }"
+      ],
+      "Feb": [
+        "Febr."
       ],
       "File \"${ name }\" was deleted during download": [
         "El fitxer «${ name }» s'ha eliminat durant la descarregada"
@@ -5070,8 +5085,17 @@
       "It’s easy and secure": [
         "És fàcil i segur"
       ],
+      "Jan": [
+        "Gen."
+      ],
       "JCB logo": [
         "Logotip de JCB"
+      ],
+      "Jul": [
+        "Jul."
+      ],
+      "Jun": [
+        "Jun."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Només confirmeu la vostra selecció i nosaltres farem la resta."
@@ -5136,12 +5160,18 @@
       "Makes your account safer": [
         "Fa el vostre compte més segur"
       ],
+      "Mar": [
+        "Mar."
+      ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Màxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caràcter",
         "Màxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caràcters"
+      ],
+      "May": [
+        "Maig"
       ],
       "Medium Priority": [
         "Prioritat mitjana"
@@ -5218,11 +5248,17 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Nota: les dades encara poden estar disponibles localment en dispositius on hàgiu instal·lat ${ DRIVE_APP_NAME }."
       ],
+      "Nov": [
+        "Nov."
+      ],
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
       ],
       "Numbers": [
         "Números"
+      ],
+      "Oct": [
+        "Oct."
       ],
       "of": [
         "de"
@@ -5501,6 +5537,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleccioneu quins calendaris importar. Es crearà un calendari per cada calendari importat segons el nombre de calendaris disponibles al vostre pla."
+      ],
+      "Sep": [
+        "Set."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Els pagaments SEPA no estan disponibles en aquest moment. Torneu-ho a provar més tard."
@@ -10119,47 +10158,6 @@
         "Per ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "and 15 more premium features": [
-        "i 15 característiques prèmium més"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenviament automàtic de correu electrònic ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de filtracions de dades ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
-      ],
-      "No ads or tracking": [
-        "Sense anuncis ni rastreig"
-      ],
-      "Short @pm.me email address": [
-        "Adreça electrònica curta de @pm.me"
-      ],
-      "Support our mission": [
-        "Doneu suport a la nostra missió"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade your productivity": [
-        "Milloreu la vostra productivitat"
-      ],
-      "We don't sell your data": [
-        "No venem les vostres dades"
-      ],
-      "Your privacy is our mission": [
-        "La vostra privacitat és la nostra missió"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
@@ -10418,6 +10416,47 @@
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenviament automàtic de correu electrònic ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de filtracions de dades ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
+      ],
+      "Support our mission": [
+        "Doneu suport a la nostra missió"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription renewal state": {

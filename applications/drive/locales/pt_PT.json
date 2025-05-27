@@ -237,6 +237,9 @@
       "Copy address": [
         "Copiar endereço"
       ],
+      "Copy alias “${ name }”": [
+        "Copiar o alias «${ name }»"
+      ],
       "Copy email to clipboard": [
         "Copiar mensagem para a área de transferência"
       ],
@@ -4579,6 +4582,9 @@
       "Anyone with this link can access your folder.": [
         "Qualquer pessoa com esta ligação terá acesso ao ficheiro."
       ],
+      "Apr": [
+        "Abr."
+      ],
       "Are you sure you want to discard your changes?": [
         "Tem a certeza de que deseja descartar as alterações?"
       ],
@@ -4605,6 +4611,9 @@
       ],
       "Attention required": [
         "Atenção Requerida"
+      ],
+      "Aug": [
+        "Ago."
       ],
       "Automated Recovery ${ formattedDate }": [
         "Recuperação automática ${ formattedDate }"
@@ -4751,6 +4760,9 @@
       ],
       "Custom email domains": [
         "Domínios de e-mail personalizados"
+      ],
+      "Dec": [
+        "Dez."
       ],
       "Decrypting files": [
         "Desencriptação de ficheiros"
@@ -4900,6 +4912,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Erro ao abrir uma ligação segura. O motivo é: ${ error }"
+      ],
+      "Feb": [
+        "Fev."
       ],
       "File \"${ name }\" was deleted during download": [
         "O ficheiro \"${ name }\" foi eliminado durante a transferência."
@@ -5070,8 +5085,17 @@
       "It’s easy and secure": [
         "É fácil e seguro"
       ],
+      "Jan": [
+        "Jan."
+      ],
       "JCB logo": [
         "Logótipo JCB"
+      ],
+      "Jul": [
+        "Jul."
+      ],
+      "Jun": [
+        "Jun."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirme apenas a sua seleção e faremos o resto."
@@ -5136,12 +5160,18 @@
       "Makes your account safer": [
         "Protege a sua conta"
       ],
+      "Mar": [
+        "Mar."
+      ],
       "Mastercard SecureCode logo": [
         "Logotipo do MasterCard SecureCode"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Máximo de ${ MAX_SHARED_URL_PASSWORD_LENGTH } caráter",
         "Máximo de ${ MAX_SHARED_URL_PASSWORD_LENGTH } carateres"
+      ],
+      "May": [
+        "Maio"
       ],
       "Medium Priority": [
         "Prioridade média"
@@ -5218,11 +5248,17 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Nota: os dados podem ainda estar disponíveis localmente em dispositivos onde tenha instalado ${ DRIVE_APP_NAME }."
       ],
+      "Nov": [
+        "Nov."
+      ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
       ],
       "Numbers": [
         "Números"
+      ],
+      "Oct": [
+        "Oct."
       ],
       "of": [
         "de"
@@ -5501,6 +5537,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecione os calendários a importar. Um novo calendário será criado por cada calendário importado, de acordo com o número de calendários disponível no seu plano."
+      ],
+      "Sep": [
+        "Sept."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Os pagamentos SEPA não estão disponíveis no momento. Tente novamente mais tarde."
@@ -10056,47 +10095,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento automático de e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de violação de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com funcionalidades premium"
@@ -10355,6 +10353,47 @@
       ],
       "Your own short @pm.me email alias": [
         "O seu próprio alias de e-mail curto @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento automático de e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violação de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {
