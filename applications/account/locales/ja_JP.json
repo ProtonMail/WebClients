@@ -457,10 +457,10 @@
       "Discard": [
         "破棄"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "変更を破棄"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "変更を破棄"
       ],
       "Discover ${ planName }": [
@@ -769,10 +769,10 @@
       "Keep": [
         "保持"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "編集を続ける"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "編集を続ける"
       ],
       "Keep logo": [
@@ -958,10 +958,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
       "Reject": [
@@ -1489,9 +1489,6 @@
       ]
     },
     "Action in trial plan": {
-      "No, thanks": [
-        "いいえ"
-      ],
       "Try free for 30 days": [
         "30日間無料のお試し"
       ]
@@ -1749,11 +1746,6 @@
         "現在のセッション"
       ]
     },
-    "Baseline in trial plan": {
-      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "${ mailPlus }: 日常のコミュニケーション ニーズに応えるプライバシー最優先のメールおよびカレンダー ソリューション。"
-      ]
-    },
     "bf2023: Action": {
       "Become a Visionary": [
         "ビジョナリーになる"
@@ -1772,9 +1764,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } ストレージ"
-      ],
       "1 user": [
         "1 ユーザー"
       ],
@@ -6704,11 +6693,6 @@
         "登録"
       ]
     },
-    "Heading in trial plan": {
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "${ MAIL_APP_NAME } の最高の機能を無料でお試しください"
-      ]
-    },
     "Headline": {
       "Compare plans": [
         "プランを比較"
@@ -7360,9 +7344,6 @@
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. 友達を ${ BRAND_NAME } に招待"
       ],
-      "10 email addresses": [
-        "10 件のメールアドレス"
-      ],
       "2. They try ${ planName }": [
         "2. 友達は ${ planName } を試すことができます"
       ],
@@ -7420,11 +7401,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "パスワードがわからなくなっても、${ BRAND_NAME } アカウントのコンテンツにアクセスできるように、少なくとも一つのデータ回復方法を有効にしてください。"
       ],
-      "Active": [
-        "有効"
-      ],
       "active": [
         "アクティブ"
+      ],
+      "Active": [
+        "有効"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "@pm.me メール アドレスをアカウントに追加します。 このシンプルで短いドメインは、「${ MAIL_APP_NAME } me」または「Private Message me」を表します。"
@@ -7855,10 +7836,10 @@
       "Data recoverable on this device": [
         "このデバイスでデータを復元できます"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -8674,9 +8655,6 @@
       "No countries enabled": [
         "有効な国がありません"
       ],
-      "No credit card required": [
-        "クレジットカード不要"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "データの回復手段が設定されていません。データにアクセスできなくなる危険性があります"
       ],
@@ -8949,9 +8927,6 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "価格には、適用されるすべてのサイクルベースの割引と、お客様のアカウントに保存されている有効期限内のクーポンが含まれています。"
-      ],
-      "Priority support": [
-        "優先的なサポート"
       ],
       "Promotion expired": [
         "プロモーションの有効期限が切れました"
@@ -9235,9 +9210,6 @@
       "Storage for users": [
         "ユーザーのストレージ"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます."
-      ],
       "Storage used by this user": [
         "ストレージはこのユーザーによって使われています"
       ],
@@ -9258,9 +9230,6 @@
       ],
       "Summary": [
         "概要"
-      ],
-      "Support for 1 custom email domain": [
-        "1 つの独自メールドメインをサポート"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "カスタムドメインと非 ${ BRAND_NAME } メールアドレスのモニタリング対応は、近日公開予定です。"
@@ -9630,12 +9599,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "アカウントからサインアウトするか、パスワードを変更しない限り、セッションはアクティブなままです。セッションは非アクティブになってから 60 日後に期限切れになります。"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "制限なしのフォルダー、ラベル、フィルター"
-      ],
-      "Unlimited messages": [
-        "送信数制限なし"
       ],
       "Unsaved changes": [
         "未保存の変更"
@@ -10881,11 +10844,11 @@
       "Amount due": [
         "支払い総額"
       ],
-      "AND": [
-        "かつ"
-      ],
       "And": [
         "と"
+      ],
+      "AND": [
+        "かつ"
       ],
       "and": [
         "と"
@@ -11310,10 +11273,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "条件"
       ],
-      "If": [
+      "IF": [
         "条件"
       ],
       "Import all messages": [
@@ -11523,13 +11486,13 @@
       "Optional": [
         "任意"
       ],
-      "OR": [
-        "または"
-      ],
       "or": [
         "または"
       ],
       "Or": [
+        "または"
+      ],
+      "OR": [
         "または"
       ],
       "Organization name": [
@@ -14179,6 +14142,17 @@
         "デスクトップ"
       ]
     },
+    "option": {
+      "Everyone": [
+        "みんな"
+      ],
+      "Group members": [
+        "グループメンバー"
+      ],
+      "No one": [
+        "誰も"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "毎月 10 日"
@@ -14413,17 +14387,6 @@
       ],
       "Trash": [
         "ごみ箱"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "みんな"
-      ],
-      "Group members": [
-        "グループメンバー"
-      ],
-      "No one": [
-        "誰も"
       ]
     },
     "Option delay send seconds": {
@@ -17361,47 +17324,6 @@
         "${ totalPrice } の場合"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
@@ -17684,6 +17606,47 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
