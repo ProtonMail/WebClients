@@ -636,8 +636,10 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const addPhotosToAlbumInBatches = useCallback(
         async (
             abortSignal: AbortSignal,
-            volumeId: string,
+            albumShareId: string,
             albumLinkId: string,
+            shareId: string,
+            volumeId: string,
             linksInfoForAlbum: Map<
                 string,
                 {
@@ -646,47 +648,92 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 }
             >
         ) => {
-            let addedLinkIds: string[] = [];
+            const addedLinkIds = new Set<string>();
+            let linksPayloads: PhotoDataForAddToAlbumPayload[] = [];
+
+            const batchQuery = async (batchLinkIds: string[], retry: boolean = false) => {
+                if (!retry) {
+                    // reset array if not a retry
+                    linksPayloads.splice(0, linksPayloads.length);
+                }
+                for (const linkId of batchLinkIds) {
+                    if (addedLinkIds.has(linkId)) {
+                        continue;
+                    }
+                    const linkInfo = linksInfoForAlbum.get(linkId);
+                    if (linkInfo) {
+                        linksPayloads.push(linkInfo.payload);
+                        addedLinkIds.add(linkId);
+
+                        // All the related photos must be together with the main
+                        // photo in one batch request.
+                        // Backend has high limit of batch size, so we can simply
+                        // include all related photos in the payload.
+                        // It would be good to improve this in the future to avoid
+                        // creating huge payloads by sending just one photo with
+                        // all related photos in one request if its more than the
+                        // batch size.
+                        linkInfo.albumPhoto?.relatedPhotos.forEach((relatedPhoto) => {
+                            const relatedLinkInfo = linksInfoForAlbum.get(relatedPhoto.linkId);
+                            if (relatedLinkInfo) {
+                                linksPayloads.push(relatedLinkInfo.payload);
+                                addedLinkIds.add(relatedPhoto.linkId);
+                            }
+                        });
+                    }
+                }
+
+                if (linksPayloads.length) {
+                    return queryAddAlbumPhotos(volumeId, albumLinkId, {
+                        AlbumData: linksPayloads,
+                    });
+                }
+            };
+
+            // Upon failure, we explicitly refetch the missing linkIDs with getPayloadDataAndPreloadPhotoLinks() and add them to the batch
+            const retryQuery = async (
+                batchLinkIds: string[],
+                failures: { [linkId: string]: Error | string | undefined }
+            ) => {
+                if (failures) {
+                    const linkIds = batchLinkIds;
+                    const missingLinkIds: string[] = [];
+                    for (const failure of Object.values(failures)) {
+                        if (failure instanceof Error) {
+                            // TODO: better typing for response data from the batch helper
+                            // Complex TS to eventually fix
+                            const data = (failure as any).data as unknown as any;
+                            for (const missing of data?.Details?.Missing) {
+                                if (!linkIds.includes(missing)) {
+                                    missingLinkIds.push(missing);
+                                    linkIds.push(missing);
+                                }
+                            }
+                        }
+                    }
+                    // Retry only once with the missing IDs added to the batch and redo the flow with the new list of linkIds
+                    // This is in the scenario where a missing related photo was not added in the call but the BE requires it in the batch
+                    // We get payload only of new links as preview links of the batch are already done
+                    const newLinksInfoForAlbum = await getPayloadDataAndPreloadPhotoLinks(
+                        abortSignal,
+                        albumShareId,
+                        albumLinkId,
+                        shareId,
+                        missingLinkIds
+                    );
+                    for (const [key, value] of newLinksInfoForAlbum) {
+                        linksInfoForAlbum.set(key, value);
+                    }
+                    return batchQuery(linkIds, true);
+                }
+            };
 
             const result = await batchAPIHelper(abortSignal, {
                 linkIds: [...linksInfoForAlbum.keys()],
                 batchRequestSize: MAX_ADD_ALBUM_PHOTOS_BATCH,
                 ignoredCodes: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
-                query: async (batchLinkIds) => {
-                    let linksPayloads = [];
-                    for (const linkId of batchLinkIds) {
-                        if (addedLinkIds.includes(linkId)) {
-                            continue;
-                        }
-                        const linkInfo = linksInfoForAlbum.get(linkId);
-                        if (linkInfo) {
-                            linksPayloads.push(linkInfo.payload);
-                            addedLinkIds.push(linkId);
-
-                            // All the related photos must be together with the main
-                            // photo in one batch request.
-                            // Backend has high limit of batch size, so we can simply
-                            // include all related photos in the payload.
-                            // It would be good to improve this in the future to avoid
-                            // creating huge payloads by sending just one photo with
-                            // all related photos in one request if its more than the
-                            // batch size.
-                            linkInfo.albumPhoto?.relatedPhotos.forEach((relatedPhoto) => {
-                                const relatedLinkInfo = linksInfoForAlbum.get(relatedPhoto.linkId);
-                                if (relatedLinkInfo) {
-                                    linksPayloads.push(relatedLinkInfo.payload);
-                                    addedLinkIds.push(relatedPhoto.linkId);
-                                }
-                            });
-                        }
-                    }
-
-                    if (linksPayloads.length) {
-                        return queryAddAlbumPhotos(volumeId, albumLinkId, {
-                            AlbumData: linksPayloads,
-                        });
-                    }
-                },
+                query: batchQuery,
+                retry: retryQuery,
             });
             albumProgress.setStatus('done');
             return {
@@ -694,7 +741,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 failures: result.failures,
             };
         },
-        [batchAPIHelper]
+        [batchAPIHelper, getPayloadDataAndPreloadPhotoLinks]
     );
 
     const showNotifications = useCallback(
@@ -785,7 +832,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 throw new Error('Photo share not found');
             }
 
-            let result: { successes: string[]; failures: { [linkId: string]: string | undefined } } = {
+            let result: { successes: string[]; failures: { [linkId: string]: Error | string | undefined } } = {
                 successes: [],
                 failures: {},
             };
@@ -802,7 +849,14 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             } else {
                 // TODO: Move this an action too, like copyLinksToVolume
                 // This action add photos from same volume to an album using add-multiple endpoint
-                result = await addPhotosToAlbumInBatches(abortSignal, link.volumeId, albumLinkId, linksInfoForAlbum);
+                result = await addPhotosToAlbumInBatches(
+                    abortSignal,
+                    albumShareId,
+                    albumLinkId,
+                    shareId,
+                    link.volumeId,
+                    linksInfoForAlbum
+                );
             }
 
             allNewAlbumPhotos.push(
