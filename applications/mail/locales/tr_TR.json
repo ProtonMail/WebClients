@@ -8308,6 +8308,9 @@
       ],
       "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
         "Alıcının yapılandırması nedeniyle, bu mesaj son kullanma tarihi ile gönderilemez."
+      ],
+      "Apply to future messages": [
+        "Gelecekteki iletilere uygula"
       ]
     },
     "info": {
@@ -9203,6 +9206,12 @@
       ],
       "The filter is disabled. You can enable it ${ settingsLink }": [
         "Süzgeç etkisizleştirilmiş. ${ settingsLink } bölümünden etkinleştirebilirsiniz."
+      ],
+      "Newsletters": [
+        "Bülten abonelikleri"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "${ truncatedName } aboneliğinden çıkıldı."
       ]
     },
     "Label (begin date/advanced search)": {

@@ -146,7 +146,7 @@
         "Figyelem szükséges"
       ],
       "Authenticate": [
-        "Azonosítás"
+        "Hitelesítés"
       ],
       "Auto-delete spam and trash": [
         "Levélszemét és Lomtár automatikus törlése"
@@ -532,7 +532,7 @@
         "Betűtípus"
       ],
       "Forgot password?": [
-        "Elfelejtette a jelszavát?"
+        "Elfelejtett jelszó?"
       ],
       "Formalize": [
         "Hivatalos"
@@ -1355,8 +1355,7 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs",
-        "Kulcsok megjelölése megbízhatóként"
+        "Megbízható kulcs"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -5131,7 +5130,7 @@
         "Csatlakoztassa a ${ BRAND_NAME } fiókjához rendelt hitelesítési kulcsot."
       ],
       "Security key": [
-        "Hitelesítési kulcsok"
+        "Hitelesítési kulcs"
       ]
     },
     "fido2: Label": {
@@ -6668,7 +6667,7 @@
         "Élvezze a gyorsabb, koncentráltabb e-mailezés élményét az asztali alkalmazással."
       ],
       "Enter the code from your authenticator app": [
-        "Adja meg a hitelesítő alkalmazása által generált kódot"
+        "Írja be a kódot a hitelesítő alkalmazásból"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Adja meg az e-mail fiók belépési adatait, amelyről importálni szeretne."
@@ -8292,6 +8291,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Már csak néhány kattintás választja el a rendetlenség-mentes postaládától"
+      ],
+      "Apply to future messages": [
+        "Alkalmazás a jövőbeli üzenetekre"
       ]
     },
     "info": {
@@ -9187,6 +9189,12 @@
       ],
       "The filter is disabled. You can enable it ${ settingsLink }": [
         "A szűrő le van tiltva. Engedélyezheti ${ settingsLink }"
+      ],
+      "Newsletters": [
+        "Hírlevelek"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Leiratkozott erről: ${ truncatedName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14340,6 +14348,12 @@
       ],
       "Your subscriptions in one place": [
         "Az előfizetései egy helyen"
+      ],
+      "Newsletters": [
+        "Hírlevelek"
+      ],
+      "Newsletters view": [
+        "Hírlevelek nézet"
       ]
     },
     "Today icon tooltip in mini calendar": {

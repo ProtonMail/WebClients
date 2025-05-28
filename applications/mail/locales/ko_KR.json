@@ -463,7 +463,7 @@
         "이메일 설정"
       ],
       "Emoji": [
-        "이모지"
+        "이모티콘"
       ],
       "Enable": [
         "활성화"
@@ -529,7 +529,7 @@
         "글꼴"
       ],
       "Forgot password?": [
-        "비밀번호를 잊으셨나요?"
+        "비밀번호를 잊어버리셨나요?"
       ],
       "Formalize": [
         "형식화"
@@ -1444,13 +1444,13 @@
         "다른 결제 수단 사용하기"
       ],
       "Use authentication code": [
-        "인증 코드를 사용"
+        "인증 코드 사용"
       ],
       "Use for sending": [
         "발신에 사용"
       ],
       "Use recovery code": [
-        "복구코드 사용"
+        "복구 코드 사용"
       ],
       "Use this": [
         "사용하기"
@@ -1544,6 +1544,30 @@
       ],
       "Unsubscribed": [
         "구독 해지됨"
+      ],
+      "A to Z": [
+        "오름차순"
+      ],
+      "Change sorting": [
+        "정렬 바꾸기"
+      ],
+      "Copy alias “${ name }”": [
+        "별칭 \"${ name }\" 복사"
+      ],
+      "Expand navigation bar to see custom views": [
+        "네비게이션 바를 펼쳐서 커스텀 보기"
+      ],
+      "Least read": [
+        "가장 적게 읽음"
+      ],
+      "Most read": [
+        "가장 많이 읽음"
+      ],
+      "Recently received": [
+        "최근 받은 항목"
+      ],
+      "Resize panel": [
+        "패널 크기 조정"
       ]
     },
     "action": {
@@ -5078,7 +5102,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입하십시오."
+        "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입해 주세요."
       ],
       "Security key": [
         "보안 키"
@@ -5712,10 +5736,10 @@
         "${ BRAND_NAME } 이(가) Yahoo 계정에 연결할 수 없습니다. 확인해 주세요:"
       ],
       "2-step verification is enabled in your external account.": [
-        "이중 인증이 사용자의 외부 계정에 활성화되어 있습니다."
+        "2단계 인증이 사용자의 외부 계정에 활성화되어 있습니다."
       ],
       "2-step verification is enabled in your external email account.": [
-        "이중 인증이 사용자의 외부 이메일 계정에 활성화 되어있습니다."
+        "2단계 인증이 사용자의 외부 이메일 계정에 활성화 되어있습니다."
       ],
       "IMAP access is enabled in your external account.": [
         "사용자의 외부 계정의 IMAP 접근이 활성화되었습니다."
@@ -5893,7 +5917,7 @@
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
-        "${ BRAND_NAME }의 암호화 기술은 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다 - 심지어 우리도요."
+        "${ BRAND_NAME }의 암호화 기술은 당사를 포함한 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다."
       ],
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "${ BRAND_NAME }의 비밀번호 관리자를 사용하면 암호가 생성, 저장 및 자동 완성되기 때문에 재설정할 필요가 없습니다."
@@ -6499,7 +6523,7 @@
         "중복 키 업데이트됨"
       ],
       "Each code can only be used once": [
-        "각각의 코드는 한 번만 사용 가능합니다"
+        "각각의 코드는 한 번만 사용할 수 있습니다."
       ],
       "Edit email address": [
         "이메일 주소 변경"
@@ -6553,7 +6577,7 @@
         "데스크탑 앱으로 더 빠르고 집중된 이메일 경험을 즐기세요."
       ],
       "Enter the code from your authenticator app": [
-        "인증 앱의 코드를 입력하세요"
+        "인증 앱에서 코드를 입력하세요."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "가져오기를 원하는 이메일 계정의 계정 정보를 입력하세요."
@@ -6562,10 +6586,10 @@
         "${ destinationText }(으)로 인증 코드가 전송되었습니다."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "인증 코드를 입력하세요. ${ digit } 자리."
+        "인증 코드를 입력하세요. ${ digit }자리입니다."
       ],
       "Enter your own password (as organization admin).": [
-        "자신의 비밀번호 입력 (조직 관리자와 같음)"
+        "사용자의 비밀번호 입력 (조직 관리자와 같음)"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "남은 예상 시간: ${ estimatedMinutes }분"
@@ -6838,7 +6862,7 @@
         "중요도 낮음"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }을 기본 메일 어플리케이션으로 설정하세요."
+        "${ MAIL_APP_NAME }을 기본 이메일 어플리케이션으로 설정하세요."
       ],
       "Manage your folders": [
         "폴더 관리"
@@ -7153,7 +7177,7 @@
         "받는사람: "
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
-        "복구 정보는 삭제하도록 설정하지 않는 한 이 장치에 남아있어요."
+        "복구 정보는 삭제하도록 설정하지 않는 한 이 기기에 유지됩니다."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "페이지를 새로고침하거나 ${ link } 대부분의 문제가 자동으로 해결됩니다."
@@ -7813,7 +7837,7 @@
         "${ senderName }에 인증 키를 활성화하면, 공개 키가 연락처 상세 정보에 생성됩니다."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "이중 인증을 설정하면, 인증 앱에 접근할 수 없을 때 로그인 시 사용할 수 없는 복구 코드를 제공해드립니다."
+        "2단계 인증을 설정하면, 인증 앱에 접근할 수 없을때 로그인시 사용할 수 있는 복구 코드를 제공해 드립니다."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "뉴스래터를 신청할 때, 내 실제 이메일 주소 대신 별칭을 사용해 보세요. 별칭을 언제든 비활성화하고 신원은 비공개로 유지할 수 있답니다."
@@ -8105,6 +8129,54 @@
       ],
       "and more.": [
         "기타 등등."
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "오래된 이메일을 ${ boldBulkDelete }, 보관, 또는 폴더로 이동하세요."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "더 이상 필요 없는 구독을 ${ boldQuicklySpot }하세요."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "클릭 한 번으로 ${ boldUnsubscribe }하세요."
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "지난달 이메일 ${ subscription.ReceivedMessages.Last30Days }개"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount }개 읽지 않음"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount }개 뉴스레터 구독"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "해당 메일링 리스트의 모든 메시지가 읽음 표시됩니다."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "이 메일링 리스트의 모든 메시지가 보관함으로 이동됩니다."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "이 메일링 리스트의 모든 메시지가 휴지통으로 이동됩니다."
+      ],
+      "Apply to future messages": [
+        "추후 메시지에 적용"
+      ],
+      "Bulk delete": [
+        "일괄 삭제"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "수신자의 구성으로 인해 이 메시지를 만료일과 함께 ${ firstRecipients }(으)로 보낼 수 없습니다."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "수신자의 구성으로 인해 이 메시지는 만료일과 함께 보낼 수 없습니다."
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "간편하게 뉴스레터 및 메일링 리스트를 관리 및 구독 해지할 수 있어요."
+      ],
+      "Quickly spot": [
+        "빠르게 파악하기"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "몇 번의 클릭만으로 정리된 받은 편지함을 만들어 보세요"
       ]
     },
     "info": {
@@ -8973,6 +9045,42 @@
       ],
       "Your password (admin)": [
         "사용자의 비밀번호 (관리자)"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } 모든 메시지 읽음으로 표시"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } ${ boldFolderName }(으)로 모든 메시지 이동"
+      ],
+      "Active filter:": [
+        "활성 필터:"
+      ],
+      "Apply to future messages": [
+        "추후 메시지에 적용"
+      ],
+      "Marked ${ count } message as read.": [
+        "${ count }개 메시지를 읽음으로 표시했습니다."
+      ],
+      "Move messages to": [
+        "다음 위치로 메시지 이동:"
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ selectedFolder.Name }(으)로 ${ count }개 메시지가 이동되었습니다."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count }개의 메시지를 보관함으로 이동했습니다."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "휴지통으로 ${ count }개 메시지가 이동되었습니다."
+      ],
+      "Newsletters": [
+        "뉴스레터"
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "필터가 비활성화 상태입니다. ${ settingsLink }에서 활성화할 수 있습니다."
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "${ truncatedName }(으)로부터 구독 취소되었습니다."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9291,6 +9399,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "업데이트된 초대장을 보려면 키를 다시 활성화하셔야 합니다"
+      ],
+      "Views": [
+        "보기"
       ]
     },
     "Link to calendar event": {
@@ -9353,6 +9464,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "구독이 종료되었습니다. 데이터 접근 권한 상실 방지를 위해 ${ cta }."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "저장 공간이 가득 찼습니다. ${ BRAND_NAME } 제품을 계속 사용하려면 저장 공간을 비우거나 ${ cta }."
       ]
     },
     "Log preference": {
@@ -9383,6 +9497,9 @@
       ],
       "for ${ price }": [
         "${ price }"
+      ],
+      "Add-on with free trial": [
+        "무료 체험 애드온"
       ]
     },
     "Mailbox": {
@@ -10180,7 +10297,7 @@
         "만약 다른 플랜으로 변경하면, 모든 ${ visionary } 플랜 혜택을 잃게 되며, 다시 ${ visionary } 로 변경할 수 없습니다."
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "${ visionary } 플랜은 특별한 기능과 혜택이 있는 기존 ${ BRAND_NAME } 사용자를 위한 플랜입니다. 따라서, 새로운 사용자가 구독할 수 업습니다."
+        "${ visionary } 플랜은 특별한 기능과 혜택이 있는 기존 ${ BRAND_NAME } 사용자를 위한 플랜입니다. 따라서, 새로운 사용자가 구독할 수 없습니다."
       ],
       "Pay once, secure your passwords and identity forever.": [
         "한 번만 결제하여 평생 비밀번호와 신원 정보를 보호하세요."
@@ -13992,6 +14109,30 @@
       ],
       "Your subscriptions in one place": [
         "뉴스레터 구독을 모아보기"
+      ],
+      "Archive all messages?": [
+        "모든 메시지를 보관하시겠어요?"
+      ],
+      "Mark all messages as read": [
+        "모든 메시지를 읽음으로 표시"
+      ],
+      "Newsletters": [
+        "뉴스레터"
+      ],
+      "Newsletters view": [
+        "뉴스레터 보기"
+      ],
+      "No mail subscriptions": [
+        "메일 구독 없음"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "메일 구독을 구독 해지한 항목이 없습니다."
+      ],
+      "Trash all messages?": [
+        "모든 메시지를 휴지통으로 이동하시겠어요?"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "${ subscription.Name }(을)를 구독 취소하시겠어요?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14530,6 +14671,14 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Labels": {
+      "Newsletters you unsubscribe from will appear here.": [
+        "구독 해지한 뉴스레터가 여기에 표시됩니다."
+      ],
+      "View and manage newsletter and mailing list subscriptions here.": [
+        "여기서 뉴스레터와 메일링 리스트 구독들을 확인 및 관리하세요."
       ]
     }
   }

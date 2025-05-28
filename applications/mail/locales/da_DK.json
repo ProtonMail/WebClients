@@ -1556,6 +1556,24 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Brug ${ VPN_SHORT_APP_NAME } for at beskytte dine data"
+      ],
+      "Copy alias “${ name }”": [
+        "Kopier alias \"${ name }\""
+      ],
+      "Expand navigation bar to see custom views": [
+        "Udvid navigationsbjælken for se tilpassede visninger"
+      ],
+      "Least read": [
+        "Mindst læst"
+      ],
+      "Recently received": [
+        "nyligt modtaget"
+      ],
+      "Remove button": [
+        "Fjern knap"
+      ],
+      "Resize panel": [
+        "Ændr panelets størrelse"
       ]
     },
     "action": {
@@ -6845,7 +6863,7 @@
         "Lav prioritet"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Gør ${ MAIL_APP_NAME } til din standard e-mail-applikation."
+        "Gør ${ MAIL_APP_NAME } til dit standard e-mail program"
       ],
       "Manage your folders": [
         "Administrer dine mapper"
@@ -8097,6 +8115,61 @@
       ],
       "Trash existing messages": [
         "Flyt eksisterende beskeder til Papirkurv"
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, arkiv eller flyt gamle e-mails til en mappe."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } hvilke abonnementer, der ikke skal bruges mere."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } fra dem med et klik."
+      ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } e-mail sidste måned",
+        "${ subscription.ReceivedMessages.Last30Days } e-mails sidste måned"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Alle meddelelser for denne kontaktliste vil blive markeret som læst."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Alle meddelelser for denne kontaktliste vil blive flyttet til arkiv."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Alle meddelelser for denne kontaktliste vil blive flyttet til papirkurven."
+      ],
+      "Apply to future messages": [
+        "Anvendes for fremtidige meddelelser"
+      ],
+      "Archive existing messages": [
+        "Arkiver eksisterende meddelelser"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Overfør dine meddelelser, kontakter og kalendere til ${ BRAND_NAME }"
+      ],
+      "Browse privately and access blocked content.": [
+        "Surf privat med adgang til beskyttet indhold."
+      ],
+      "Bulk delete": [
+        "multisletning"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "På grund af din modtagers konfiguration, kan denne meddelelse ikke sendes til ${ firstRecipients } med en udløbsdato."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "På grund af din modtagers konfiguration, kan denne meddelelse ikke sendes med en udløbsdato."
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Se hvad du skal gøre her ${ dataLeakedLink }"
+      ],
+      "Quickly spot": [
+        "Find hurtigt"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Tak for din tilmelding. Sikker browsing starter nu."
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Du er få klik fra en ryddelig indbakke."
       ]
     },
     "info": {
@@ -8969,6 +9042,24 @@
       ],
       "Vulnerable password": [
         "Sårbar adgangskode"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Marker alle meddelelser som læst"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Flyt alle meddelelser til ${ boldFolderName }"
+      ],
+      "Newsletters": [
+        "Nyheder"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Noter er deaktiverede, for at aktivere dem skal browserens indstillinger ændres."
+      ],
+      "The filter is disabled. You can enable it ${ settingsLink }": [
+        "Filteret er deaktiveret. Du kan aktivere det her ${ settingsLink }"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Afregistrer fra ${ truncatedName }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9281,6 +9372,9 @@
       ],
       "Views": [
         "Visninger"
+      ],
+      "if your data is leaked": [
+        "hvis dine data er lækket"
       ]
     },
     "Link to calendar event": {
@@ -14020,6 +14114,21 @@
       ],
       "Your subscriptions in one place": [
         "Dine abonnementer ét sted"
+      ],
+      "Distraction-free emailing": [
+        "Uforstyrret e-mail"
+      ],
+      "Information exposed in breach": [
+        "Information afsløret i en datalækage"
+      ],
+      "Newsletters": [
+        "Nyheder"
+      ],
+      "Newsletters view": [
+        "Visning af nyheder"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "ingen afmeldte e-mail abonnementer"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14105,6 +14214,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
+      ],
+      "Not all information listed here was exposed for all users.": [
+        "Ikke alle oplysninger på listen blev afsløret for alle brugere"
       ]
     },
     "tooltip": {

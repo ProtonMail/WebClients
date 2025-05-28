@@ -1571,6 +1571,9 @@
       ],
       "Remove from favorites": [
         "Ta bort från favoriter"
+      ],
+      "Copy alias “${ name }”": [
+        "Kopiera alias “${ name }“"
       ]
     },
     "action": {
@@ -9193,6 +9196,25 @@
       ],
       "Newsletters": [
         "Nyhetsbrev"
+      ],
+      "Marked ${ count } message as read.": [
+        "Markerade ${ count } meddelande som läst.",
+        "Markerade ${ count } meddelanden som lästa."
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "Flyttade ${ count } meddelande till ${ selectedFolder.Name }.",
+        "Flyttade ${ count } meddelanden till ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "Flyttade ${ count } meddelande till arkiv.",
+        "Flyttade ${ count } meddelanden till arkiv."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "Flyttade ${ count } meddelande till papperskorg.",
+        "Flyttade ${ count } meddelanden till papperskorg."
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Avslutade prenumeration från ${ truncatedName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9268,6 +9290,9 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "Visa och hantera prenumerationer för nyhetsbrev och e-postlistor här."
+      ],
+      "Newsletters you unsubscribe from will appear here.": [
+        "Nyhetsbrev som du avslutar prenumeration på kommer visas här."
       ]
     },
     "Landmarks": {
