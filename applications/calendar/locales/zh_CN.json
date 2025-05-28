@@ -865,6 +865,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
+      ],
+      "Forgot password?": [
+        "忘记密码？"
+      ],
+      "Use recovery code": [
+        "使用恢复码"
       ]
     },
     "action": {
@@ -5694,6 +5700,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "您的系统时区似乎已更改为 ${ timezone }。您想要更新您的时区偏好吗？"
+      ],
+      "Each code can only be used once": [
+        "每个恢复码只能使用一次"
       ]
     },
     "info": {
@@ -6322,6 +6331,9 @@
       ],
       "Your location": [
         "您的位置"
+      ],
+      "Your password (admin)": [
+        "您的密码（管理员）"
       ]
     },
     "Label for contact group color": {
@@ -10560,6 +10572,9 @@
       ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"
+      ],
+      "Enter your password": [
+        "请输入您的密码"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11106,6 +11121,16 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "安全密钥"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "安全密钥"
       ]
     }
   }

@@ -866,6 +866,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
+      ],
+      "Copy alias “${ name }”": [
+        "Kopier alias \"${ name }\""
+      ],
+      "Remove button": [
+        "Fjern knap"
       ]
     },
     "action": {
@@ -5636,6 +5642,15 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Din systemtidszone ser ud til at være ændret til ${ timezone }. Vil du opdatere din tidszone præferencer?"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Overfør dine meddelelser, kontakter og kalendere til ${ BRAND_NAME }"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Se hvad du skal gøre her ${ dataLeakedLink }"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Tak for din tilmelding. Sikker browsing starter nu."
       ]
     },
     "info": {
@@ -6256,6 +6271,9 @@
       ],
       "Your location": [
         "Din placering"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Noter er deaktiverede, for at aktivere dem skal browserens indstillinger ændres."
       ]
     },
     "Label for contact group color": {
@@ -6427,6 +6445,9 @@
       ],
       "What’s this?": [
         "Hvad er dette?"
+      ],
+      "if your data is leaked": [
+        "hvis dine data er lækket"
       ]
     },
     "Link label (optional)": {
@@ -10526,6 +10547,12 @@
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
+      ],
+      "Information exposed in breach": [
+        "Information afsløret i en datalækage"
+      ],
+      "Newsletters view": [
+        "Visning af nyheder"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10620,6 +10647,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
+      ],
+      "Not all information listed here was exposed for all users.": [
+        "Ikke alle oplysninger på listen blev afsløret for alle brugere"
       ]
     },
     "tooltip": {
