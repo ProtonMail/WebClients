@@ -1552,6 +1552,24 @@
       ],
       "Zoom out": [
         "Távolítás"
+      ],
+      "Authenticate": [
+        "Hitelesítés"
+      ],
+      "Emoji": [
+        "Hangulatjel"
+      ],
+      "Forgot password?": [
+        "Elfelejtett jelszó?"
+      ],
+      "Trust key": [
+        "Megbízható kulcs"
+      ],
+      "Use authentication code": [
+        "Hitelesítő kód használata"
+      ],
+      "Use recovery code": [
+        "Helyreállító kód használata"
       ]
     },
     "action": {
@@ -8235,6 +8253,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Már csak néhány kattintás választja el a rendetlenség-mentes postaládától"
+      ],
+      "Apply to future messages": [
+        "Alkalmazás a jövőbeli üzenetekre"
+      ],
+      "Each code can only be used once": [
+        "Minden kódot csak egyszer lehet felhasználni"
+      ],
+      "Enter the code from your authenticator app": [
+        "Írja be a kódot a hitelesítő alkalmazásból"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Írja be az ellenőrző kódot. ${ digit } számjegy."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
       ]
     },
     "info": {
@@ -9121,6 +9157,18 @@
       ],
       "Your location": [
         "Az ön tartózkodási helye"
+      ],
+      "Authenticator app": [
+        "Hitelesítő alkalmazás"
+      ],
+      "Newsletters": [
+        "Hírlevelek"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Leiratkozott erről: ${ truncatedName }."
+      ],
+      "Your password (admin)": [
+        "Jelszó (adminisztrátor)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14282,6 +14330,15 @@
       ],
       "Your subscriptions in one place": [
         "Az előfizetései egy helyen"
+      ],
+      "Enter your password": [
+        "Adja meg a jelszavát"
+      ],
+      "Newsletters": [
+        "Hírlevelek"
+      ],
+      "Newsletters view": [
+        "Hírlevelek nézet"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14867,6 +14924,24 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Hiba történt a hitelesítési kulccsal való azonosítás közben. Próbálja meg újra."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Csatlakoztassa a ${ BRAND_NAME } fiókjához rendelt hitelesítési kulcsot."
+      ],
+      "Security key": [
+        "Hitelesítési kulcs"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Hitelesítési kulcs"
       ]
     }
   }

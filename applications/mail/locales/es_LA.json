@@ -544,7 +544,7 @@
         "Tipo de letra"
       ],
       "Forgot password?": [
-        "¿Olvidaste tu contraseña?"
+        "¿Olvidó su contraseña?"
       ],
       "Formalize": [
         "Formal"
@@ -1570,6 +1570,9 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Copy alias “${ name }”": [
+        "Copiar el alias «${ name }»"
       ]
     },
     "action": {
@@ -6285,7 +6288,7 @@
         "${ storage } de almacenamiento"
       ],
       "${ subscription.ReceivedMessages.Last30Days } email last month": [
-        "${ subscription.ReceivedMessages.Last30Days } correos del mes pasado",
+        "${ subscription.ReceivedMessages.Last30Days } correo el mes pasado",
         "${ subscription.ReceivedMessages.Last30Days } correos el mes pasado"
       ],
       "${ subscription.UnreadMessageCount } unread": [
@@ -9361,7 +9364,7 @@
         "Su ubicación"
       ],
       "Your password (admin)": [
-        "Tu contraseña (admin)"
+        "Su contraseña (admin)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13951,7 +13954,7 @@
         "Ingrese el código 2FA"
       ],
       "Enter your password": [
-        "Introduce tu contraseña"
+        "Ingrese su contraseña"
       ],
       "Error": [
         "Error"

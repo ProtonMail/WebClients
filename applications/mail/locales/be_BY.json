@@ -415,7 +415,7 @@
         "Адключэнне псеўданіма"
       ],
       "Discard": [
-        "Адхіліць"
+        "Скасаваць"
       ],
       "Dismiss": [
         "Адхіліць"
@@ -1577,6 +1577,9 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Copy alias “${ name }”": [
+        "Капіяваць псеўданім “${ name }”"
       ]
     },
     "action": {
@@ -3750,7 +3753,7 @@
     },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
-        "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дазваляе вам працаваць разам з іншымі ўдзельнікамі ў бяспечным зашыфраваным асяроддзі."
+        "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дазваляе вам працаваць разам з іншымі ўдзельнікамі ў бяспечным і зашыфраваным асяроддзі."
       ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } у наладах."
@@ -6568,10 +6571,10 @@
         "Вы сапраўды хочаце выдаліць гэту метку?"
       ],
       "Are you sure you want to discard your changes?": [
-        "Вы сапраўды хочаце адхіліць змены?"
+        "Вы сапраўды хочаце скасаваць змены?"
       ],
       "Are you sure you want to discard your import?": [
-        "Вы сапраўды хочаце адхіліць імпартаванне?"
+        "Вы сапраўды хочаце скасаваць імпартаванне?"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
         "Вы сапраўды хочаце перамясціць усе паведамленні з гэтага месца ў архіў?"
@@ -6859,7 +6862,7 @@
         "Чарнавік"
       ],
       "Draft discarded": [
-        "Чарнавік адхілены"
+        "Чарнавік скасаваны"
       ],
       "Draft saved.": [
         "Чарнавік захаваны."
@@ -8695,7 +8698,7 @@
         "Выдаліць незваротна"
       ],
       "Discard draft": [
-        "Адхіліць чарнавік"
+        "Скасаваць чарнавік"
       ],
       "Expand / contract composer": [
         "Разгарнуць / сціснуць рэдактар"

@@ -1552,6 +1552,9 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Copy alias “${ name }”": [
+        "Alias “${ name }” kopieren"
       ]
     },
     "action": {
@@ -1843,10 +1846,10 @@
         "Auf dem Gerät ausführen"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
-        "Sicher auf ${ BRAND_NAME } Servern laufen"
+        "Sicher auf ${ BRAND_NAME } Servern ausführen"
       ],
       "Securely run on device": [
-        "Sicher auf dem Gerät laufen"
+        "Sicher auf dem Gerät ausführen"
       ]
     },
     "Assistant toggle": {
@@ -14114,7 +14117,7 @@
         "Keine Datenlecks entdeckt"
       ],
       "No mail subscriptions": [
-        "Keine Mail-Abonnemente"
+        "Keine Mail-Abonnements"
       ],
       "No need to empty the trash": [
         "Kein Ausleeren des Papierkorbs notwendig"
@@ -14123,7 +14126,7 @@
         "Keine E-Mail-Tracker gefunden"
       ],
       "No unsubscribed mail subscriptions": [
-        "Keine abbestellbare E-Mail-Abonnemente"
+        "Keine abbestellbare E-Mail-Abonnements"
       ],
       "No-reply address detected": [
         "No-Reply-Adresse erkannt"
@@ -14363,7 +14366,7 @@
         "Papierkorb"
       ],
       "Trash all messages?": [
-        "Alle Nachrichten löschen!"
+        "Alle Nachrichten löschen?"
       ],
       "Trust new key?": [
         "Neuem Schlüssel vertrauen?",
