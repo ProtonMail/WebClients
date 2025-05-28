@@ -73,7 +73,7 @@ export const getSignupUrl = (
 
         let params: { [key: string]: string | null } = {};
 
-        for (const key of ['plan', 'cycle', 'currency']) {
+        for (const key of ['plan', 'cycle', 'currency', 'mode']) {
             params[key] = searchParams.get(key);
         }
 
