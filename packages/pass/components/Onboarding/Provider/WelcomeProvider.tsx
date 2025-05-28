@@ -13,7 +13,7 @@ import type { AvailablePlans } from '@proton/pass/components/Onboarding/Onboardi
 import { PASS_DOWNLOAD_URL, UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { usePassExtensionInstalled } from '@proton/pass/hooks/usePassExtensionInstalled';
-import { selectAllItems, selectPassPlan } from '@proton/pass/store/selectors';
+import { selectAllItems, selectPassPlan, selectUserPlan } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -38,7 +38,8 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
     const [isActive, setIsActive] = useState(false);
     const [completed, setCompleted] = useState<string[]>([]);
     const hasItems = useSelector(selectAllItems).length > 0;
-    const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
+    const userPlan = useSelector(selectUserPlan);
+    const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE && userPlan?.InternalName === 'free';
     const message = DESKTOP_BUILD ? SpotlightMessage.WELCOME : SpotlightMessage.WEB_ONBOARDING;
     const navigateToUpgrade = useNavigateToUpgrade({
         upsellRef: selected === PLANS.PASS ? UpsellRef.PLUS_PLAN_ONBOARDING : UpsellRef.UNLIMITED_PLAN_ONBOARDING,
@@ -94,7 +95,7 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
                     title: c('Label').t`Unlock premium features`,
                     withHeader: true,
                 },
-                !hasExtension && {
+                (!hasExtension || DESKTOP_BUILD) && {
                     key: 'extension',
                     shortTitle: c('Label').t`Install extension`,
                     action: () => window.open(PASS_DOWNLOAD_URL, '_blank'),
