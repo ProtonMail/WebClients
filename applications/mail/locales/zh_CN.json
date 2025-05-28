@@ -541,7 +541,7 @@
         "字体"
       ],
       "Forgot password?": [
-        "忘记密码?"
+        "忘记密码？"
       ],
       "Formalize": [
         "正式化"
@@ -6553,7 +6553,7 @@
         "重复的密钥已更新"
       ],
       "Each code can only be used once": [
-        "每条恢复码只能使用一次"
+        "每个恢复码只能使用一次"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "轻松管理和取消订阅新闻通讯和邮件列表。"
@@ -8168,6 +8168,9 @@
       ],
       "${ subscription.ReceivedMessages.Last30Days } email last month": [
         "上个月已收到 ${ subscription.ReceivedMessages.Last30Days } 封邮件"
+      ],
+      "Apply to future messages": [
+        "应用于今后的消息"
       ]
     },
     "info": {
@@ -13522,7 +13525,7 @@
         "输入 2FA 验证码"
       ],
       "Enter your password": [
-        "输入密码"
+        "请输入您的密码"
       ],
       "Error": [
         "失败"
@@ -14108,6 +14111,9 @@
       ],
       "Your subscriptions in one place": [
         "一站式订阅服务"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "无退订邮件订阅"
       ]
     },
     "Today icon tooltip in mini calendar": {

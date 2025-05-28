@@ -544,7 +544,7 @@
         "Tipo de letra"
       ],
       "Forgot password?": [
-        "¿Olvidaste tu contraseña?"
+        "¿Olvidó su contraseña?"
       ],
       "Formalize": [
         "Formal"
@@ -1570,6 +1570,9 @@
       ],
       "Remove from favorites": [
         "Eliminar de favoritos"
+      ],
+      "Copy alias “${ name }”": [
+        "Copiar el alias «${ name }»"
       ]
     },
     "action": {
@@ -8304,7 +8307,7 @@
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
       ],
       "${ subscription.ReceivedMessages.Last30Days } email last month": [
-        "${ subscription.ReceivedMessages.Last30Days } correos del mes pasado",
+        "${ subscription.ReceivedMessages.Last30Days } correo el mes pasado",
         "${ subscription.ReceivedMessages.Last30Days } correos el mes pasado"
       ],
       "${ unreadCount } newsletter subscription": [
@@ -9216,7 +9219,7 @@
         "Su ubicación"
       ],
       "Your password (admin)": [
-        "Tu contraseña (admin)"
+        "Su contraseña (admin)"
       ],
       "Marked ${ count } message as read.": [
         "Se marcó ${ count } mensaje como leído.",
@@ -13834,7 +13837,7 @@
         "Ingrese el código 2FA"
       ],
       "Enter your password": [
-        "Introduce tu contraseña"
+        "Ingrese su contraseña"
       ],
       "Error": [
         "Error"
