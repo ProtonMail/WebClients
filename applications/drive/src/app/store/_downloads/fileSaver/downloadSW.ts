@@ -102,7 +102,7 @@ class DownloadServiceWorker {
     /**
      * Handle both download links and video range requests
      */
-    onFetch = async (event: FetchEvent) => {
+    onFetch = (event: FetchEvent) => {
         const url = new URL(event.request.url);
 
         // Our service worker is registered on the global scope
@@ -129,42 +129,36 @@ class DownloadServiceWorker {
                 : undefined);
 
         if (event.request.method === 'GET' && videoMatch) {
-            const id = url.pathname.split('/sw/video/')[1];
-            const videoStream = await getStream(id);
-            const rangeHeader = event.request.headers.get('Range');
-
-            if (!rangeHeader || !videoStream) {
-                event.respondWith(
-                    new Response(null, {
-                        status: 400,
-                        statusText: 'Bad Request - Missing range header or video stream',
-                        headers: new Headers(SECURITY_HEADERS),
-                    })
-                );
-                return;
-            }
-
-            const range = parseRange(rangeHeader, videoStream);
-            if (!range) {
-                event.respondWith(
-                    new Response(null, {
-                        status: 416,
-                        statusText: 'Range Not Satisfiable',
-                        headers: new Headers({
-                            'Content-Range': `bytes */${videoStream.totalSize}`,
-                            ...SECURITY_HEADERS,
-                        }),
-                    })
-                );
-                return;
-            }
-
-            const { start, end } = range;
-            const indices = getBlockIndices(start, end, videoStream);
-
             event.respondWith(
                 (async () => {
                     try {
+                        const id = url.pathname.split('/sw/video/')[1];
+                        const videoStream = await getStream(id);
+                        const rangeHeader = event.request.headers.get('Range');
+
+                        if (!rangeHeader || !videoStream) {
+                            return new Response(null, {
+                                status: 400,
+                                statusText: 'Bad Request - Missing range header or video stream',
+                                headers: new Headers(SECURITY_HEADERS),
+                            });
+                        }
+
+                        const range = parseRange(rangeHeader, videoStream);
+                        if (!range) {
+                            return new Response(null, {
+                                status: 416,
+                                statusText: 'Range Not Satisfiable',
+                                headers: new Headers({
+                                    'Content-Range': `bytes */${videoStream.totalSize}`,
+                                    ...SECURITY_HEADERS,
+                                }),
+                            });
+                        }
+
+                        const { start, end } = range;
+                        const indices = getBlockIndices(start, end, videoStream);
+
                         const client = await self.clients.get(event.clientId!);
                         if (!client) {
                             return new Response(null, {
