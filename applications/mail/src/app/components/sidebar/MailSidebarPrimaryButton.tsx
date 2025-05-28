@@ -2,8 +2,8 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Kbd } from '@proton/atoms';
-import { Icon, SidebarPrimaryButton, Tooltip } from '@proton/components';
+import { Kbd, Tooltip } from '@proton/atoms';
+import { Icon, SidebarPrimaryButton } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';

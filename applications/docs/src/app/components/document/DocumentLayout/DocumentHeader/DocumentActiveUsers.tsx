@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
-import { DropdownMenu, DropdownMenuButton, SimpleDropdown, Tooltip } from '@proton/components'
+import { DropdownMenu, DropdownMenuButton, SimpleDropdown } from '@proton/components'
 import clsx from '@proton/utils/clsx'
 import { useApplication } from '~/utils/application-context'
 import type { DocsAwarenessStateChangeData, SafeDocsUserState } from '@proton/docs-shared'
 import { DocAwarenessEvent } from '@proton/docs-shared'
-import { Button, UserAvatar, UserAvatarSizeEnum } from '@proton/atoms'
+import { Button, Tooltip, UserAvatar, UserAvatarSizeEnum } from '@proton/atoms'
 
 export type DocumentActiveUsersProps = { className?: string }
 

@@ -3,8 +3,8 @@ import React, { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { FileIcon, Icon, TableRowBusy, Tooltip } from '@proton/components';
+import { Button, Tooltip } from '@proton/atoms';
+import { FileIcon, Icon, TableRowBusy } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import type { DecryptedLink } from '../../store';

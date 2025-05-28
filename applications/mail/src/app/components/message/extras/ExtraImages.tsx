@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Kbd } from '@proton/atoms';
-import { Icon, Tooltip } from '@proton/components';
+import { Button, Kbd, Tooltip } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import LoadRemoteImageBanner from '@proton/components/containers/banner/LoadRemoteImageBanner';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import type { MailSettings } from '@proton/shared/lib/interfaces';

@@ -4,8 +4,8 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Donut, Slider } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms';
 import { ThemeColor, getVariableFromThemeColor } from '@proton/colors';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useElementRect from '@proton/components/hooks/useElementRect';
 import { PLANS } from '@proton/payments';
 import humanSize, { getLongSizeFormat, getSizeFormat, getUnit } from '@proton/shared/lib/helpers/humanSize';

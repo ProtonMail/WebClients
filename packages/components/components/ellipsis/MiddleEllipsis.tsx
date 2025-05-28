@@ -1,7 +1,7 @@
 import type { HTMLProps } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import { Tooltip } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 interface Props extends HTMLProps<HTMLSpanElement> {

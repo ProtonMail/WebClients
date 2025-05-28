@@ -4,7 +4,7 @@ import { useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
 import {
     AppVersion,
@@ -25,7 +25,6 @@ import {
     SimpleDropdown,
     SimpleSidebarListItemHeader,
     SubscribedCalendarModal,
-    Tooltip,
     useActiveBreakpoint,
     useApi,
     useLocalState,
