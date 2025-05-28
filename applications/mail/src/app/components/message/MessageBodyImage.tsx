@@ -4,7 +4,8 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { Icon, Tooltip, useApi } from '@proton/components';
+import { Icon, useApi } from '@proton/components'
+import { Tooltip } from '@proton/atoms';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 

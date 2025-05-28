@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { Button, ButtonLike } from '@proton/atoms'
+import { Button, ButtonLike, Tooltip } from '@proton/atoms'
 import { c } from 'ttag'
 import { useDocsContext } from '../context'
 import { useDocsBookmarks } from '@proton/drive-store/lib/_views/useDocsBookmarks'
@@ -11,7 +11,6 @@ import type { EditorControllerInterface } from '@proton/docs-core'
 import type { PublicDocumentState } from '@proton/docs-core'
 import {
   Spotlight,
-  Tooltip,
   Icon,
   DropdownButton,
   usePopperAnchor,

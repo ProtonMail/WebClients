@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
-import { CircularProgress, FileIcon, FileNameDisplay, Icon, Tooltip } from '@proton/components';
+import { CircleLoader, Tooltip } from '@proton/atoms';
+import { CircularProgress, FileIcon, FileNameDisplay, Icon } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import humanSize from '@proton/shared/lib/helpers/humanSize';

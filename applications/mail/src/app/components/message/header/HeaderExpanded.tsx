@@ -3,8 +3,8 @@ import type { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { Button, Kbd } from '@proton/atoms';
-import { ButtonGroup, Icon, Tooltip, useActiveBreakpoint, useContactModals, useToggle } from '@proton/components';
+import { Button, Kbd, Tooltip } from '@proton/atoms';
+import { ButtonGroup, Icon, useActiveBreakpoint, useContactModals, useToggle } from '@proton/components';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import type { MailSettings } from '@proton/shared/lib/interfaces';

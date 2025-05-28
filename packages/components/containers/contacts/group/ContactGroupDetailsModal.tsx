@@ -2,10 +2,10 @@ import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useContactGroups } from '@proton/mail';
 import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import type { Recipient } from '@proton/shared/lib/interfaces';

@@ -2,8 +2,8 @@ import { useHistory } from 'react-router';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon, Loader, Tooltip } from '@proton/components';
+import { Button, Tooltip } from '@proton/atoms';
+import { Icon, Loader } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { EO_MAX_REPLIES_NUMBER, EO_REPLY_REDIRECT_PATH } from '../../../constants';

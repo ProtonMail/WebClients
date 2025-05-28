@@ -2,11 +2,10 @@ import { type ComponentPropsWithoutRef, type ReactNode, useEffect, useRef, useSt
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 import Icon from '../icon/Icon';
-import Tooltip from '../tooltip/Tooltip';
 
 import './UncontainedWrapper.scss';
 

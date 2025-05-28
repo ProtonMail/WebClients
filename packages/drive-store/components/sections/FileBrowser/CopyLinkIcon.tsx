@@ -3,8 +3,8 @@ import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon, Tooltip } from '@proton/components';
+import { Button, Tooltip } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import noop from '@proton/utils/noop';
 
 import { useActions } from '../../../store';
