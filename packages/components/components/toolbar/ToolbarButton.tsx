@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes, ReactElement, ReactNode, Ref } from 'react';
 import { cloneElement, forwardRef } from 'react';
 
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import { Tooltip } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

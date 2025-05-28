@@ -3,8 +3,7 @@ import { useHistory } from 'react-router';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Tooltip } from '@proton/components';
+import { Button, Tooltip } from '@proton/atoms';
 import type { PublicKeyReference } from '@proton/crypto';
 import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';
 

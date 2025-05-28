@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { Button } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { getInviteLimit } from '@proton/components/containers/members/UsersAndAddressesSection/helper';
 import { PLAN_NAMES } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

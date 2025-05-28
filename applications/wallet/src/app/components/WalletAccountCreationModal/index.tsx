@@ -2,13 +2,13 @@ import { c } from 'ttag';
 
 import type { WasmScriptType } from '@proton/andromeda';
 import { Href } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms';
 import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
 import Icon from '@proton/components/components/icon/Icon';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useLoading from '@proton/hooks/useLoading';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { IWasmApiWalletData } from '@proton/wallet';

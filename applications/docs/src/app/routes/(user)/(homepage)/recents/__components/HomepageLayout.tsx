@@ -17,7 +17,6 @@ import {
   SidebarListItemDiv,
   SidebarListItemLink,
   SidebarNav,
-  Tooltip,
   TopBanners,
   useActiveBreakpoint,
   useAppTitle,
@@ -32,7 +31,7 @@ import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { DocsQuickSettings } from '~/components/DocsQuickSettings'
 import type { DocumentAction } from '@proton/drive-store'
 import { c } from 'ttag'
-import { Button, ButtonLike, Input } from '@proton/atoms'
+import { Button, ButtonLike, Input, Tooltip } from '@proton/atoms'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import './HomepageLayout.css'
 import type { HomepageViewState } from '../__utils/homepage-view'

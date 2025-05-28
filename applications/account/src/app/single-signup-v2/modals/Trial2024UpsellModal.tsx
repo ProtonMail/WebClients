@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
-import { Icon, ModalTwo, ModalTwoContent, Tooltip } from '@proton/components';
+import { Icon, ModalTwo, ModalTwoContent } from '@proton/components';
 import { type IconName } from '@proton/components/components/icon/Icon';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components/containers/payments/RenewalNotice';

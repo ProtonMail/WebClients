@@ -2,11 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon, Tooltip } from '@proton/components';
+import { Button, Tooltip } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
 import { useHasScroll } from 'proton-mail/hooks/useHasScroll';
@@ -18,7 +19,6 @@ import type { MessageStateWithData, OutsideKey } from '../../store/messages/mess
 import AttachmentItem from './AttachmentItem';
 import type { AttachmentPreviewControls } from './AttachmentPreview';
 import AttachmentPreview from './AttachmentPreview';
-import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 export enum AttachmentAction {
     Download,

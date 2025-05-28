@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Button, Href, Tooltip } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
-import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Tooltip } from '@proton/components';
+import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import cleanLinkImg from '@proton/styles/assets/img/illustrations/clean-utm-trackers.svg';
 
@@ -60,7 +60,10 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                                                 size="small"
                                                 onClick={() => handleOpenLink(tracker.originalURL)}
                                             >
-                                                <Icon name="arrow-within-square" alt={c('Label').t`Open in a new tab`} />
+                                                <Icon
+                                                    name="arrow-within-square"
+                                                    alt={c('Label').t`Open in a new tab`}
+                                                />
                                             </Button>
                                         </Tooltip>
                                     </div>
@@ -84,7 +87,10 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                                                 size="small"
                                                 onClick={() => handleOpenLink(tracker.cleanedURL)}
                                             >
-                                                <Icon name="arrow-within-square" alt={c('Label').t`Open in a new tab`} />
+                                                <Icon
+                                                    name="arrow-within-square"
+                                                    alt={c('Label').t`Open in a new tab`}
+                                                />
                                             </Button>
                                         </Tooltip>
                                     </div>

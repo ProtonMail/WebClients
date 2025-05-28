@@ -9,8 +9,8 @@ import {
 } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Button, ButtonLike, Href } from '@proton/atoms';
-import { Icon, Prompt, Tooltip, useModalState } from '@proton/components';
+import { Button, ButtonLike, Href, Tooltip } from '@proton/atoms';
+import { Icon, Prompt, useModalState } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { getMessageExpirationDate } from '../../../helpers/message/messageExpirationTime';

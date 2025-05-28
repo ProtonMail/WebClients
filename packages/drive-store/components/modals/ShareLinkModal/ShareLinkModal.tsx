@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components';
 import {
     ContactEmailsProvider,
@@ -12,7 +12,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    Tooltip,
     useModalTwoStatic,
     useToggle,
 } from '@proton/components';

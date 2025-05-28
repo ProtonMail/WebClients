@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Tooltip } from '@proton/atoms';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
