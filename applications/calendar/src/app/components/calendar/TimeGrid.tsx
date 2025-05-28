@@ -4,8 +4,8 @@ import { useCallback, useEffect, useImperativeHandle, useLayoutEffect, useMemo, 
 import { compareAsc } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { ButtonGroup, Icon, Tooltip, useActiveBreakpoint, useElementRect } from '@proton/components';
+import { Button, Tooltip } from '@proton/atoms';
+import { ButtonGroup, Icon, useActiveBreakpoint, useElementRect } from '@proton/components';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { addDays, eachDayOfInterval, format, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import formatUTC from '@proton/shared/lib/date-fns-utc/format';

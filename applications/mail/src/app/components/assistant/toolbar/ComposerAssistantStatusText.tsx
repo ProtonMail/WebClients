@@ -3,8 +3,8 @@ import { useEffect, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href, InlineLinkButton } from '@proton/atoms';
-import { ErrorZone, Icon, Tooltip, useModalStateObject } from '@proton/components';
+import { Button, Href, InlineLinkButton, Tooltip } from '@proton/atoms';
+import { ErrorZone, Icon, useModalStateObject } from '@proton/components';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { useAssistant } from '@proton/llm/lib';
 import { ERROR_TYPE } from '@proton/shared/lib/assistant';

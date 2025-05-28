@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
 import type { IconName } from '@proton/components';
-import { Icon, Tooltip } from '@proton/components';
+import { Icon } from '@proton/components'
+import { Tooltip } from '@proton/atoms';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import { COMPUTE_BITCOIN_UNIT, MIN_FEE_RATE, PriorityTargetBlock } from '@proton/wallet';
 import { useUserWalletSettings } from '@proton/wallet/store';

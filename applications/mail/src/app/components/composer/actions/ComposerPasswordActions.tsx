@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Kbd } from '@proton/atoms';
-import { DropdownMenuButton, Icon, Tooltip } from '@proton/components';
+import { Button, Kbd, Tooltip } from '@proton/atoms';
+import { DropdownMenuButton, Icon } from '@proton/components';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 

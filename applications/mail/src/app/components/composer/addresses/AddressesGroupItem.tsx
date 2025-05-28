@@ -3,12 +3,12 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Tooltip } from '@proton/atoms';
 import {
     ContextMenu,
     DropdownMenu,
     DropdownMenuButton,
     Icon,
-    Tooltip,
     useDragOver,
     useModalState,
     useNotifications,

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Kbd } from '@proton/atoms';
-import { Icon, Tooltip } from '@proton/components';
+import { Button, Kbd, Tooltip } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import { ItemFeatureDiscovery } from '@proton/pass/components/Layout/Panel/ItemFeatureDiscovery/ItemFeatureDiscovery';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { useSaveShortcut } from '@proton/pass/hooks/useSaveShortcut';

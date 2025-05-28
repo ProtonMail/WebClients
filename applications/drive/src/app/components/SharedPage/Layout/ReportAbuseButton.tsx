@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon, Tooltip } from '@proton/components';
+import { Button, Tooltip } from '@proton/atoms';
+import { Icon } from '@proton/components';
 
 import { usePublicShare } from '../../../store';
 import { useReportAbuseModal } from '../../modals/ReportAbuseModal/ReportAbuseModal';

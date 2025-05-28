@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import {
     Checkbox,
     EditLabelModal,
@@ -13,7 +13,6 @@ import {
     Mark,
     PrimaryButton,
     SearchInput,
-    Tooltip,
     useActiveBreakpoint,
     useModalState,
 } from '@proton/components';
