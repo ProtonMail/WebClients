@@ -2,16 +2,14 @@ import type { FC } from 'react';
 
 import type { FieldArrayRenderProps } from 'formik';
 import { FieldArray, type FormikContextType } from 'formik';
-import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
+import { AddExtraFieldDropdown } from '@proton/pass/components/Form/Field/ExtraFieldGroup/AddExtraFieldDropdown';
 import { DeleteButton, ExtraFieldComponent } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
 import { createExtraField } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { IdentityAddNewSection } from '@proton/pass/components/Item/Identity/Identity.modal';
 import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/CollapsibleSection';
-import { DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
 import type { ExtraSectionsError } from '@proton/pass/lib/validation/identity';
 import type { CustomItemFormValues, DeobfuscatedItemExtraField, ExtraFieldType, Maybe } from '@proton/pass/types';
 import { autofocusInput } from '@proton/pass/utils/dom/input';
@@ -30,16 +28,11 @@ const getSectionFieldProps = (
 };
 
 export const CustomFormSections: FC<Props> = ({ form }) => {
-    const getDropdownOptions = (helpers: FieldArrayRenderProps, focusIndex: number) => {
-        const createCustomField = (type: ExtraFieldType) => {
+    const createCustomField = (helpers: FieldArrayRenderProps, focusIndex: number) => {
+        return (type: ExtraFieldType) => {
             helpers.push<DeobfuscatedItemExtraField>(createExtraField(type));
             autofocusInput(`${helpers.name}[${focusIndex}]`);
         };
-
-        return [
-            { value: 'text', label: c('Label').t`Custom text field`, onClick: () => createCustomField('text') },
-            { value: 'hidden', label: c('Label').t`Custom hidden field`, onClick: () => createCustomField('hidden') },
-        ];
     };
 
     return (
@@ -78,15 +71,10 @@ export const CustomFormSections: FC<Props> = ({ form }) => {
                                                     />
                                                 ))}
                                             </FieldsetCluster>
-                                            <DropdownMenuBase
-                                                className="mb-2"
-                                                dropdownOptions={getDropdownOptions(helpers, sectionFields.length)}
-                                            >
-                                                <div className="flex items-center">
-                                                    <Icon name="plus" />
-                                                    <div className="ml-2 text-semibold">{c('Action').t`Add more`}</div>
-                                                </div>
-                                            </DropdownMenuBase>
+
+                                            <AddExtraFieldDropdown
+                                                onAdd={createCustomField(helpers, sectionFields.length)}
+                                            />
                                         </>
                                     )}
                                 />
