@@ -23,8 +23,7 @@ import { getInitials } from '@proton/shared/lib/helpers/string';
 import { CountryFlagAndName } from '../../gateways/CountryFlagAndName';
 import EditPolicyDropdownMenu from '../EditPolicyDropdownMenu';
 import { buildSelectedCitiesFromLocations } from '../buildSelectedCitiesFromLocations';
-import type { GroupedLocations } from './getGroupedLocations';
-import { getGroupedLocations } from './getGroupedLocations';
+import { type GroupedLocation, getGroupedLocations } from './getGroupedLocations';
 
 interface SharedServersModalProps extends ModalProps {
     policy: VpnLocationFilterPolicy;
@@ -66,13 +65,16 @@ const PolicyPreviewModal = ({
     const [policyName, setPolicyName] = useState('');
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [selectedCities, setSelectedCities] = useState<Record<string, string[]>>({});
-    const { locations } = useSharedServers(10 * MINUTE);
+    const { locations, translations } = useSharedServers(10 * MINUTE);
     const [userSettings] = useUserSettings();
     const countryOptions = getCountryOptions(userSettings);
 
     const isGroupBasedPolicy = policy.Groups.length > 0;
 
-    const groupedLocations = useMemo(() => getGroupedLocations(locations, countryOptions), [locations, countryOptions]);
+    const groupedLocations = useMemo(
+        () => getGroupedLocations(locations, countryOptions, translations.result?.Cities!),
+        [locations, countryOptions]
+    );
 
     useEffect(() => {
         if (!policy) {
@@ -84,11 +86,11 @@ const PolicyPreviewModal = ({
         setSelectedCities(map);
     }, [policy]);
 
-    const selectedGroupedLocations = groupedLocations.filter((gl: GroupedLocations) =>
+    const selectedGroupedLocations = groupedLocations.filter((gl: GroupedLocation) =>
         Object.keys(selectedCities).includes(gl.country)
     );
     const notSelectedGroupedLocations = groupedLocations.filter(
-        (gl: GroupedLocations) => !Object.keys(selectedCities).includes(gl.country)
+        (gl: GroupedLocation) => !Object.keys(selectedCities).includes(gl.country)
     );
 
     return (
