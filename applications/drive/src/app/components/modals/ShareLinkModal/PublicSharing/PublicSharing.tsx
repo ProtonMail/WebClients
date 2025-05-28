@@ -3,12 +3,11 @@ import { useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Avatar, Button, Input } from '@proton/atoms';
+import { Avatar, Button, Input, Tooltip } from '@proton/atoms';
 import {
     Icon,
     SUBSCRIPTION_STEPS,
     Toggle,
-    Tooltip,
     useConfig,
     useNotifications,
     useSettingsLink,

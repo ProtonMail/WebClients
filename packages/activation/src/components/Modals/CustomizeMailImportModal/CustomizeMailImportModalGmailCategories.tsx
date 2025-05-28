@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { MailImportDestinationFolder } from '@proton/activation/src/interface';
-import { Field, Icon, Label, Option, Row, SelectTwo, Tooltip } from '@proton/components';
+import { Field, Icon, Label, Option, Row, SelectTwo } from '@proton/components'
+import { Tooltip } from '@proton/atoms';
 
 interface Props {
     hasCategories: boolean;

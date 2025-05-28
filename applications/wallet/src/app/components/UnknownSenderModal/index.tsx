@@ -3,7 +3,8 @@ import type { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import type { ModalOwnProps } from '@proton/components';
-import { Checkbox, Tooltip } from '@proton/components';
+import { Checkbox } from '@proton/components'
+import { Tooltip } from '@proton/atoms';
 import useLoading from '@proton/hooks/useLoading';
 import walletNotFoundImg from '@proton/styles/assets/img/illustrations/wallet_not_found.svg';
 import clsx from '@proton/utils/clsx';

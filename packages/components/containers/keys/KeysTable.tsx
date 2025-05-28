@@ -1,11 +1,11 @@
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
+import { Tooltip } from '@proton/atoms';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { dateLocale } from '@proton/shared/lib/i18n';
 

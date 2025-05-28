@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Checkbox, DropdownMenu, DropdownMenuButton, Icon, Tooltip } from '@proton/components';
+import { Checkbox, DropdownMenu, DropdownMenuButton, Icon } from '@proton/components'
+import { Tooltip } from '@proton/atoms';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 

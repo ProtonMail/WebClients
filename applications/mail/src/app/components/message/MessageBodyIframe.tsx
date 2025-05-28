@@ -4,7 +4,8 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { Icon, Tooltip, useSyncIframeStyles, useTheme } from '@proton/components';
+import { Icon, useSyncIframeStyles, useTheme } from '@proton/components'
+import { Tooltip } from '@proton/atoms';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { hasAttachments, isAutoFlaggedPhishing, isSuspicious } from '@proton/shared/lib/mail/messages';

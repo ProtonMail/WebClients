@@ -3,6 +3,7 @@ import { memo, useCallback, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { Tooltip } from '@proton/atoms';
 import {
     AppVersion,
     AppsDropdown,
@@ -11,7 +12,6 @@ import {
     SidebarDrawerItems,
     SidebarLogo,
     SidebarNav,
-    Tooltip,
     useActiveBreakpoint,
     useApi,
     useLocalState,

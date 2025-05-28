@@ -1,4 +1,4 @@
-import { Tooltip } from '@proton/components';
+import { Tooltip } from '@proton/atoms';
 import { useFolders } from '@proton/mail';
 import { getStandardFolders } from '@proton/mail/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

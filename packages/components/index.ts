@@ -322,7 +322,6 @@ export { default as TimeZoneSelector } from './components/timezoneSelector/TimeZ
 export { default as Toggle } from './components/toggle/Toggle';
 export { default as Toolbar } from './components/toolbar/Toolbar';
 export { default as ToolbarButton } from './components/toolbar/ToolbarButton';
-export { default as Tooltip } from './components/tooltip/Tooltip';
 export { default as TopNavbar } from './components/topnavbar/TopNavbar';
 export { default as TopNavbarList } from './components/topnavbar/TopNavbarList';
 export { default as TopNavbarListItem } from './components/topnavbar/TopNavbarListItem';

@@ -5,7 +5,7 @@ import { addDays } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button, Kbd } from '@proton/atoms';
+import { Button, Kbd, Tooltip } from '@proton/atoms';
 import type { ContactEditProps } from '@proton/components';
 import {
     ButtonGroup,
@@ -13,7 +13,6 @@ import {
     DropdownMenuButton,
     DropdownSizeUnit,
     Icon,
-    Tooltip,
     useActiveBreakpoint,
     useApi,
     useModalState,
