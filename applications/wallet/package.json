@@ -33,7 +33,7 @@
         "@proton/testing": "workspace:packages/testing",
         "@proton/wallet": "workspace:packages/wallet",
         "@ramp-network/ramp-instant-sdk": "^4.0.8",
-        "@types/react": "^18.3.21",
+        "@types/react": "^18.3.23",
         "@types/react-dom": "^18.3.7",
         "@types/react-router-dom": "^5.3.3",
         "chart.js": "^4.4.9",
@@ -47,7 +47,7 @@
         "react-redux": "^9.2.0",
         "react-router-dom": "^5.3.4",
         "ttag": "^1.8.7",
-        "webpack": "^5.99.8"
+        "webpack": "^5.99.9"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
@@ -55,7 +55,7 @@
         "@testing-library/jest-dom": "^6.6.3",
         "@testing-library/react": "^14.3.1",
         "@testing-library/react-hooks": "^8.0.1",
-        "@vitejs/plugin-react-swc": "^3.9.0",
+        "@vitejs/plugin-react-swc": "^3.10.0",
         "eslint": "^8.57.1",
         "happy-dom": "^15.11.7",
         "prettier": "^3.5.3",
