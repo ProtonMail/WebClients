@@ -79,11 +79,17 @@ html,
 	min-inline-size: rem(340);
 
 	&--adaptWidth {
-		inline-size: clamp(
-			340px,
-			calc(var(--width-conversation-column, calc(100vw * #{math.div($conversations-column-width, 100%)})) - #{rem(20)}),
-			#{rem(520)}
-		);
+		inline-size: rem(340);
+		@supports (inline-size: clamp(1px, calc(1vw), 100%)) {
+			inline-size: clamp(
+				#{rem(340)},
+				calc(
+					var(--width-conversation-column, calc(100vw * #{math.div($conversations-column-width, 100%)})) - #{rem(20)}
+				),
+				#{rem(520)}
+			);
+		}
+
 		max-inline-size: calc(
 			100vw - #{rem(450)} - #{$width-sidebar}px - #{rem(20)} - var(--drawer-width)
 		); // Same max width as list
