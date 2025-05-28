@@ -13,6 +13,7 @@ import type { AvailablePlans } from '@proton/pass/components/Onboarding/Onboardi
 import { PASS_DOWNLOAD_URL, UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { usePassExtensionInstalled } from '@proton/pass/hooks/usePassExtensionInstalled';
+import { getExtensionSupportedBrowser } from '@proton/pass/lib/extension/utils/browser';
 import { selectAllItems, selectPassPlan, selectUserPlan } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -20,6 +21,8 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { PLANS } from '@proton/payments/core/constants';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { isDesktop } from '@proton/shared/lib/helpers/browser';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import noop from '@proton/utils/noop';
 
 import * as OnboardingUpgrade from '../OnboardingUpgrade';
@@ -30,9 +33,11 @@ import {
     OnboardingType,
 } from './OnboardingContext';
 
+const supportedBrowser = isDesktop() ? getExtensionSupportedBrowser() : null;
+
 export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
     const { spotlight } = usePassCore();
-    const hasExtension = usePassExtensionInstalled(!DESKTOP_BUILD);
+    const hasExtension = usePassExtensionInstalled(supportedBrowser !== null && !isElectronApp);
     const [selected, setSelected] = useState<AvailablePlans>(PLANS.PASS);
     const [enabled, setEnabled] = useState(false);
     const [isActive, setIsActive] = useState(false);
@@ -95,7 +100,7 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
                     title: c('Label').t`Unlock premium features`,
                     withHeader: true,
                 },
-                !hasExtension && {
+                (!hasExtension || DESKTOP_BUILD) && {
                     key: 'extension',
                     shortTitle: c('Label').t`Install extension`,
                     action: () => window.open(PASS_DOWNLOAD_URL, '_blank'),
