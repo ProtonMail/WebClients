@@ -63,14 +63,19 @@ export const getSignupUrl = (
     localePath: string,
     forkState: ProduceForkData | undefined | null,
     app: APP_NAMES | undefined,
-    productParam: ProductParam
+    productParam: ProductParam,
+    searchParams: URLSearchParams
 ) => {
     const { path, params } = (() => {
         if (forkState?.type === SSOType.OAuth) {
             return { path: SSO_PATHS.SIGNUP, params: {} };
         }
 
-        let params = {};
+        let params: { [key: string]: string | null } = {};
+
+        for (const key of ['plan', 'cycle', 'currency']) {
+            params[key] = searchParams.get(key);
+        }
 
         if (forkState?.type === SSOType.Proton) {
             params = forkState.payload.forkParameters.plan ? { plan: forkState.payload.forkParameters.plan } : {};
@@ -123,11 +128,13 @@ export const getPaths = ({
     productParam,
     app,
     forkState,
+    searchParams,
 }: {
     maybeLocalePrefix: string;
     forkState: ProduceForkData | undefined | null;
     app: APP_NAMES | undefined;
     productParam: ProductParam;
+    searchParams: URLSearchParams;
 }): Paths => {
     const localePrefix = maybeLocalePrefix || getLocaleMapping(localeCode);
     const prefix = getLocalePathPrefix(localePrefix);
@@ -135,7 +142,7 @@ export const getPaths = ({
         login: getLoginUrl(prefix, app),
         reauth: getReauthUrl(prefix),
         appSwitcher: getAppSwitcherUrl(prefix),
-        signup: getSignupUrl(prefix, forkState, app, productParam),
+        signup: getSignupUrl(prefix, forkState, app, productParam, searchParams),
         forgotUsername: `${prefix}${SSO_PATHS.FORGOT_USERNAME}`,
         reset: `${prefix}${SSO_PATHS.RESET_PASSWORD}`,
         signinHelp: `${prefix}${SSO_PATHS.SIGNIN_HELP}`,

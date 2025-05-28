@@ -68,13 +68,13 @@ const getSearchFromHash = (search: string) => {
 };
 
 export const stringifySearchParams = (
-    params: { [key: string]: string | string[] | undefined },
+    params: { [key: string]: string | string[] | undefined | null },
     prefix?: string | undefined
 ) => {
     const urlSearchParams = new URLSearchParams();
 
     Object.entries(params)
-        .filter(([, value]) => value !== undefined && value !== '')
+        .filter(([, value]) => value !== undefined && value !== null && value !== '')
         .forEach(([key, value]) => {
             /*
              * typescript is not able to determine that stringifiedValue
