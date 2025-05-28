@@ -24,8 +24,14 @@ import type { Optional } from '@proton/shared/lib/interfaces';
 import { type Unwrap } from '@proton/shared/lib/interfaces/utils';
 import noop from '@proton/utils/noop';
 
-import type { AccountData, SignupType } from '../../signup/interfaces';
+import type { SignupType } from '../../signup/interfaces';
+import { type AccountData } from '../../signup/interfaces';
 import { handleSetupOrg } from '../../signup/signupActions';
+import {
+    sendSignupAccountCreationTelemetry,
+    sendSignupLoadTelemetry,
+    sendSignupSubscriptionTelemetryEvent,
+} from '../../signup/signupTelemetry';
 import { useGetAccountKTActivation } from '../../useGetAccountKTActivation';
 import { AccountFormDataContextProvider, useAccountFormDataContext } from './accountData/AccountFormDataContext';
 import { useSignupDomains } from './accountData/useSignupDomains';
@@ -34,6 +40,10 @@ import { handleCreateUser } from './helpers/handleCreateUser';
 import { type SubscriptionData2, handleSetupUser } from './helpers/handleSetupUser';
 
 interface AccountFormDataConfig {
+    /**
+     * Set of available signup types.
+     * Initial signup type will be the first signup type added to the set
+     */
     availableSignupTypes: Set<SignupType>;
     /**
      * Optional default email to pre-populate the email input.
@@ -100,7 +110,7 @@ interface SignupContextProviderProps extends BaseSignupContextProps {
     app: APP_NAMES;
 
     /**
-     * Flow id. Unique to each flow.
+     * Unique id for each flow.
      * Can be used to run different variants of a signup.
      * Used for telemetry and to debug issues when things go wrong
      */
@@ -178,7 +188,6 @@ export const InnerSignupContextProvider = ({
     paymentsDataConfig,
     accountFormDataConfig,
     loginUrl,
-    productParam,
 }: SignupContextProviderProps) => {
     const clientType = getClientType(app);
     const [loading, setLoading] = useState({ init: true, submitting: false });
@@ -235,6 +244,20 @@ export const InnerSignupContextProvider = ({
             });
     }, []);
 
+    useEffect(() => {
+        if (!paymentsContext.initialized) {
+            return;
+        }
+
+        sendSignupLoadTelemetry({
+            flowId,
+            planIDs: paymentsContext.selectedPlan.planIDs,
+            productIntent: app,
+            currency: paymentsContext.selectedPlan.currency,
+            cycle: paymentsContext.selectedPlan.cycle,
+        });
+    }, [paymentsContext.initialized]);
+
     /**
      * Creates the user
      * To be called only when username and password has been submitted
@@ -268,7 +291,7 @@ export const InnerSignupContextProvider = ({
                 paymentToken,
                 api,
                 clientType,
-                productParam,
+                productParam: app,
                 humanVerificationResult: undefined,
                 inviteData: undefined,
                 referralData: undefined,
@@ -319,7 +342,7 @@ export const InnerSignupContextProvider = ({
                 keyTransparencyActivation: await getKtActivation(),
 
                 subscriptionData: paymentData?.subscriptionData,
-                productParam,
+                productParam: app,
                 referralData: undefined,
             });
 
@@ -329,6 +352,30 @@ export const InnerSignupContextProvider = ({
              * Batch process can now resume since the auth cookie will have been set
              */
             metrics.startBatchingProcess();
+
+            sendSignupAccountCreationTelemetry({
+                flowId,
+                productIntent: app,
+                planIDs: paymentData?.subscriptionData.planIDs || {},
+                currency: paymentData?.subscriptionData.currency,
+                cycle: paymentData?.subscriptionData.cycle,
+                signupType: accountData.signupType,
+                amount: paymentData?.subscriptionData.checkResult.Amount,
+            });
+
+            const {user, subscription} = setupUserResponse
+            if (paymentData?.subscriptionData && subscription) {
+                sendSignupSubscriptionTelemetryEvent({
+                    flowId,
+                    planIDs: paymentData.subscriptionData.planIDs,
+                    currency: subscription.Currency,
+                    cycle: subscription.Cycle,
+                    userCreateTime: user.CreateTime,
+                    invoiceID: subscription.InvoiceID,
+                    coupon: subscription.CouponCode,
+                    amount: subscription.Amount,
+                });
+            }
         } catch (error: any) {
             handleError(error);
             if (error?.config?.url?.endsWith?.('keys/setup')) {
