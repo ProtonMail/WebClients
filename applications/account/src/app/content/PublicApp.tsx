@@ -248,6 +248,7 @@ const BasePublicApp = () => {
         forkState,
         app: maybePreAppIntent,
         productParam,
+        searchParams: initialSearchParams,
     });
 
     const handleLoginResult = async (result: LoginResult) => {
@@ -310,6 +311,7 @@ const BasePublicApp = () => {
             forkState: newForkState,
             app: maybePreAppIntent,
             productParam,
+            searchParams: initialSearchParams,
         });
         const result = await getActiveSessionLoginResult({
             api: silentApi,
