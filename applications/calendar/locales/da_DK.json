@@ -878,6 +878,12 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Brug ${ VPN_SHORT_APP_NAME } for at beskytte dine data"
+      ],
+      "Copy alias “${ name }”": [
+        "Kopier alias \"${ name }\""
+      ],
+      "Remove button": [
+        "Fjern knap"
       ]
     },
     "action": {
@@ -5681,6 +5687,15 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Hold forbindelsen ubesværet ved at aktivere følgende VPN-indstillinger:"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Overfør dine meddelelser, kontakter og kalendere til ${ BRAND_NAME }"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Se hvad du skal gøre her ${ dataLeakedLink }"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Tak for din tilmelding. Sikker browsing starter nu."
       ]
     },
     "info": {
@@ -6307,6 +6322,9 @@
       ],
       "Vulnerable password": [
         "Sårbar adgangskode"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Noter er deaktiverede, for at aktivere dem skal browserens indstillinger ændres."
       ]
     },
     "Label for contact group color": {
@@ -6478,6 +6496,9 @@
       ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Sådan bruges ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "if your data is leaked": [
+        "hvis dine data er lækket"
       ]
     },
     "Link label (optional)": {
@@ -10586,6 +10607,12 @@
       ],
       "VPN explained": [
         "VPN forklaret"
+      ],
+      "Information exposed in breach": [
+        "Information afsløret i en datalækage"
+      ],
+      "Newsletters view": [
+        "Visning af nyheder"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10680,6 +10707,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
+      ],
+      "Not all information listed here was exposed for all users.": [
+        "Ikke alle oplysninger på listen blev afsløret for alle brugere"
       ]
     },
     "tooltip": {
