@@ -18,6 +18,7 @@
     ],
     "ignorePaths": [
         "**/node_modules/**",
+        "vendor/**",
         "applications/pass-extension/safari/**",
         "applications/pass-desktop/native/**"
     ],
