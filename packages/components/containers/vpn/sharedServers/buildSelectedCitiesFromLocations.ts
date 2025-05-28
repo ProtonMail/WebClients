@@ -1,4 +1,4 @@
-import type { SharedServerLocation } from '@proton/components/containers/vpn/sharedServers/useSharedServers';
+import type { SharedServerLocation } from '@proton/components/containers/vpn/sharedServers/api';
 
 export function buildSelectedCitiesFromLocations(locations: SharedServerLocation[] = []): Record<string, string[]> {
     const citiesMap: Record<string, string[]> = {};

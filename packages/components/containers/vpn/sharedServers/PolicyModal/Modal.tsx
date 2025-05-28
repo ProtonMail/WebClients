@@ -40,7 +40,7 @@ interface SharedServersModalProps extends ModalProps {
 
 const SharedServersModal = ({ policy, isEditing = false, soloStep, onSuccess, ...rest }: SharedServersModalProps) => {
     const { createNotification } = useNotifications();
-    const { locations, users, groups } = useSharedServers(10 * MINUTE);
+    const { locations, users, groups, translations } = useSharedServers(10 * MINUTE);
     const [userSettings] = useUserSettings();
     const countryOptions = getCountryOptions(userSettings);
     const [discardModal, showDiscardModal] = useModalTwoStatic(DiscardModal);
@@ -68,7 +68,10 @@ const SharedServersModal = ({ policy, isEditing = false, soloStep, onSuccess, ..
         setSelectedCities(map);
     }, [isEditing, policy]);
 
-    const groupedLocations = useMemo(() => getGroupedLocations(locations, countryOptions), [locations, countryOptions]);
+    const groupedLocations = useMemo(
+        () => getGroupedLocations(locations, countryOptions, translations.result?.Cities!),
+        [locations, countryOptions]
+    );
 
     const allCitiesSelected = useMemo(() => {
         const allCitiesCount = groupedLocations.reduce((prev, cur) => prev + cur.cities.length, 0);
