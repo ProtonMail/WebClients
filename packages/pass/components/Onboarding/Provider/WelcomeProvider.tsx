@@ -95,7 +95,7 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
                     title: c('Label').t`Unlock premium features`,
                     withHeader: true,
                 },
-                !hasExtension && {
+                (!hasExtension || DESKTOP_BUILD) && {
                     key: 'extension',
                     shortTitle: c('Label').t`Install extension`,
                     action: () => window.open(PASS_DOWNLOAD_URL, '_blank'),
