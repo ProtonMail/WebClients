@@ -26,6 +26,7 @@ import SignatureIcon from '../../../components/SignatureIcon';
 import { getMimeTypeDescription } from '../../../components/sections/helpers';
 import { type DecryptedLink, isDecryptedLink } from '../../../store';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
+import { SharedAlbumDropdownButton } from './SharedAlbumDropdownButton';
 import { formatVideoDuration } from './formatVideoDuration';
 
 import './AlbumsCard.scss';
@@ -270,6 +271,11 @@ export const AlbumsCard: FC<Props> = ({
                         {album.permissions.isAdmin && (
                             <div className="shrink-0 mb-2">
                                 <AlbumDropdownButton onShare={onShare} onRename={onRename} onDelete={onDelete} />
+                            </div>
+                        )}
+                        {album.sharedBy && album.shareId && (
+                            <div className="shrink-0 mb-2">
+                                <SharedAlbumDropdownButton shareId={album.shareId} linkId={album.linkId} />
                             </div>
                         )}
                     </div>
