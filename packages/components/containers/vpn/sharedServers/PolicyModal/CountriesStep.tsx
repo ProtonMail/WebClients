@@ -12,16 +12,12 @@ import TableRow from '@proton/components/components/table/TableRow';
 import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import clsx from '@proton/utils/clsx';
 
-interface CountriesGroup {
-    country: string;
-    localizedCountryName: string;
-    cities: string[];
-}
+import type { GroupedLocation } from './getGroupedLocations';
 
 interface SharedServersCountriesStepProps {
     isEditing: boolean;
     policyName: string;
-    groupedLocations: CountriesGroup[];
+    groupedLocations: GroupedLocation[];
     selectedCities: Record<string, string[]>;
     onSelectCountry: (countryCode: string, cities: string[]) => void;
     onSelectCity: (countryCode: string, city: string) => void;
@@ -112,7 +108,7 @@ const CountriesStep = ({
                             </div>
                         </TableCell>
                     </TableRow>
-                    {filteredGroups.map(({ country, localizedCountryName, cities }) => {
+                    {filteredGroups.map(({ country, localizedCountryName, cities, localizedCities }) => {
                         const selectedCount = selectedCities[country]?.length ?? 0;
                         const isAllCitiesSelected = selectedCount === cities.length;
                         const isPartiallySelected = selectedCount > 0 && selectedCount < cities.length;
@@ -176,7 +172,7 @@ const CountriesStep = ({
                                                             onClick={() => onSelectCity(country, city)}
                                                             className="text-nowrap flex grow cursor-pointer"
                                                         >
-                                                            {city}
+                                                            {localizedCities[city]}
                                                         </span>
                                                     </div>
                                                 </TableCell>
