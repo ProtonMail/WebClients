@@ -130,7 +130,7 @@ export const ValueControl = <E extends ElementType = 'div'>({
                 actionsContainerClassName={actionsContainerClassName}
                 icon={icon}
             >
-                <div className="color-weak text-sm">{label}</div>
+                <div className="color-weak text-sm text-ellipsis">{label}</div>
 
                 <ValueContainer
                     key={`${hide ? 'hidden' : 'visible'}-container`}
