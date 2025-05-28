@@ -1,7 +1,12 @@
 import useApi from '@proton/components/hooks/useApi';
 import { useFetchData } from '@proton/components/hooks/useFetchData';
 
-import { queryLocationFilter } from './api';
+import {
+    type CitiesTranslationsApiResponse,
+    type SharedServerLocation,
+    queryCitiesTranslations,
+    queryLocationFilter,
+} from './api';
 
 // Reuse your existing types or adapt them as needed
 export interface VpnLocationFilterPolicy {
@@ -14,11 +19,6 @@ export interface VpnLocationFilterPolicy {
     State: number;
     Type: number;
     Users: SharedServerUser[];
-}
-
-export interface SharedServerLocation {
-    Country: string;
-    City: string;
 }
 
 export interface SharedServerUser {
@@ -58,11 +58,18 @@ export const useSharedServers = (maxAge: number) => {
         maxAge,
     });
 
+    // Fetch cities translations
+    const translations = useFetchData<CitiesTranslationsApiResponse>({
+        fetcher: () => api<CitiesTranslationsApiResponse>(queryCitiesTranslations()),
+        maxAge: Number.MAX_SAFE_INTEGER,
+    });
+
     // Now you can define convenience return values from the result
     return {
         loading,
         policies: result?.FilterPolicies || [],
         locations: result?.Locations || [],
+        translations,
         users: result?.Users || [],
         groups: result?.Groups || [],
         refresh,
