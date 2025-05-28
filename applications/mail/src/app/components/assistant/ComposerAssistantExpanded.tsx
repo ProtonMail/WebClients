@@ -3,8 +3,8 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href, Scroll } from '@proton/atoms';
-import { Icon, Tooltip, useNotifications } from '@proton/components';
+import { Button, Href, Scroll, Tooltip } from '@proton/atoms';
+import { Icon, useNotifications } from '@proton/components';
 import Copy from '@proton/components/components/button/Copy';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, useAssistant } from '@proton/llm/lib';

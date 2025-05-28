@@ -5,9 +5,9 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { Tooltip } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { getMeterColor } from '@proton/components/components/progress/Meter';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
 import { type Subscription } from '@proton/payments';

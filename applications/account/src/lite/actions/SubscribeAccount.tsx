@@ -7,7 +7,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import {
     CalendarLogo,
     DriveLogo,
@@ -17,7 +17,6 @@ import {
     PassLogo,
     ProtonLogo,
     SUBSCRIPTION_STEPS,
-    Tooltip,
     VpnLogo,
 } from '@proton/components';
 import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';

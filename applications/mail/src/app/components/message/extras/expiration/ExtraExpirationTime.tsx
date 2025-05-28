@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
-import { Icon, Tooltip, useNotifications } from '@proton/components';
+import { Button, Tooltip } from '@proton/atoms';
+import { Icon, useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import clsx from '@proton/utils/clsx';
 

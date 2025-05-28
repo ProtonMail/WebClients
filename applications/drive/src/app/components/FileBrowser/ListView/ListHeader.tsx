@@ -2,7 +2,8 @@ import * as React from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Checkbox, Icon, Loader, TableHeaderCell, TableRowSticky, Tooltip } from '@proton/components';
+import { Checkbox, Icon, Loader, TableHeaderCell, TableRowSticky } from '@proton/components'
+import { Tooltip } from '@proton/atoms';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNumAccessesTooltipMessage } from '@proton/shared/lib/drive/translations';
 import clsx from '@proton/utils/clsx';

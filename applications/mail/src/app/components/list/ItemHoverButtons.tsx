@@ -2,8 +2,7 @@ import type { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Tooltip } from '@proton/components';
+import { Button, Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail';

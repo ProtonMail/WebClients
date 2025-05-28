@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { Tooltip } from '@proton/atoms';
 import type { IconName } from '@proton/components';
 import {
     DefaultQuickSettings,
@@ -23,7 +24,6 @@ import {
     ShortcutsToggle,
     ToggleAssistant,
     ToggleAssistantEnvironment,
-    Tooltip,
     useApi,
     useElectronDefaultApp,
     useKeyTransparencyContext,
