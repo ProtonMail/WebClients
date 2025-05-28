@@ -869,6 +869,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Az asztali alkalmazás ingyenes kipróbálásának vége: ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Authenticate": [
+        "Hitelesítés"
+      ],
+      "Forgot password?": [
+        "Elfelejtett jelszó?"
+      ],
+      "Use authentication code": [
+        "Hitelesítő kód használata"
+      ],
+      "Use recovery code": [
+        "Helyreállító kód használata"
       ]
     },
     "action": {
@@ -5776,6 +5788,21 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Úgy tűnik, hogy a rendszer időzónája ${ timezone } -re változott. Szeretne erre az időzónára frissíteni?"
+      ],
+      "Each code can only be used once": [
+        "Minden kódot csak egyszer lehet felhasználni"
+      ],
+      "Enter the code from your authenticator app": [
+        "Írja be a kódot a hitelesítő alkalmazásból"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Írja be az ellenőrző kódot. ${ digit } számjegy."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
       ]
     },
     "info": {
@@ -6410,6 +6437,12 @@
       ],
       "Your location": [
         "Az ön tartózkodási helye"
+      ],
+      "Authenticator app": [
+        "Hitelesítő alkalmazás"
+      ],
+      "Your password (admin)": [
+        "Jelszó (adminisztrátor)"
       ]
     },
     "Label for contact group color": {
@@ -10755,6 +10788,15 @@
       ],
       "Your shorter address is now ready": [
         "A rövidebb címe elkészült"
+      ],
+      "Enter your password": [
+        "Adja meg a jelszavát"
+      ],
+      "Newsletters view": [
+        "Hírlevelek nézet"
+      ],
+      "Schedule meetings in one click": [
+        "Ütemezz megbeszéléseket egy kattintással"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11347,6 +11389,24 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Hiba történt a hitelesítési kulccsal való azonosítás közben. Próbálja meg újra."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Csatlakoztassa a ${ BRAND_NAME } fiókjához rendelt hitelesítési kulcsot."
+      ],
+      "Security key": [
+        "Hitelesítési kulcs"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Hitelesítési kulcs"
       ]
     }
   }
