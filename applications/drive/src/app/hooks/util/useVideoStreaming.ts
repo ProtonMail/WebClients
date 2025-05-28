@@ -133,8 +133,10 @@ export const useVideoStreaming = ({ mimeType, videoData, downloadSlice }: UseVid
         };
     }, [handleBrokenVideo, videoData, streamId, mimeType, downloadSlice]);
 
-    return {
-        url: `/sw/video/${streamId}`,
-        onVideoPlaybackError: handleBrokenVideo,
-    };
+    return videoData
+        ? {
+              url: `/sw/video/${streamId}`,
+              onVideoPlaybackError: handleBrokenVideo,
+          }
+        : undefined;
 };
