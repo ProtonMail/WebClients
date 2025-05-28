@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon, Tooltip, useApi } from '@proton/components';
+import { Button, Tooltip } from '@proton/atoms';
+import { Icon, useApi } from '@proton/components';
 import { METRICS_LOG } from '@proton/shared/lib/constants';
 import { sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
 

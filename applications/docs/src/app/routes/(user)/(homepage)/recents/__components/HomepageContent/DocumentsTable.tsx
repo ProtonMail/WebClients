@@ -11,12 +11,11 @@ import {
   DropdownMenu,
   DropdownMenuButton,
   Icon,
-  Tooltip,
   useAuthentication,
   usePopperAnchor,
 } from '@proton/components'
 import { c } from 'ttag'
-import { Avatar, Button, Input } from '@proton/atoms'
+import { Avatar, Button, Input, Tooltip } from '@proton/atoms'
 import { getInitials } from '@proton/shared/lib/helpers/string'
 import clsx from '@proton/utils/clsx'
 import { useContactEmails } from '@proton/mail/contactEmails/hooks'

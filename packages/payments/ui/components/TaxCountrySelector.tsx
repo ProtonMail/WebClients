@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import { Tooltip } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS, getBillingAddressStatus } from '../../core/billing-address';

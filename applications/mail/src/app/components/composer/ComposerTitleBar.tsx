@@ -3,8 +3,8 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Kbd } from '@proton/atoms';
-import { Icon, Tooltip } from '@proton/components';
+import { Kbd, Tooltip } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import { isSafari as checkIsSafari, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 

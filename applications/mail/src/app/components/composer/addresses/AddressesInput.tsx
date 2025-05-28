@@ -3,8 +3,8 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { AddressesAutocomplete, Icon, Tooltip, useNotifications } from '@proton/components';
+import { Button, Tooltip } from '@proton/atoms';
+import { AddressesAutocomplete, Icon, useNotifications } from '@proton/components';
 import { useContactGroups } from '@proton/mail';
 import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import { rootFontSize, scrollIntoView } from '@proton/shared/lib/helpers/dom';

@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { Tooltip } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Editor from '@proton/components/components/editor/Editor';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import type { EditorActions } from '@proton/components/components/editor/interface';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/constants';
 import noop from '@proton/utils/noop';

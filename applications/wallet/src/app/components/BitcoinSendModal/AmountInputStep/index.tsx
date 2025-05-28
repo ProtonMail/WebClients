@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromeda';
-import { CircleLoader } from '@proton/atoms';
-import { Icon, Tooltip } from '@proton/components';
+import { CircleLoader, Tooltip } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button, CoreButton } from '../../../atoms';

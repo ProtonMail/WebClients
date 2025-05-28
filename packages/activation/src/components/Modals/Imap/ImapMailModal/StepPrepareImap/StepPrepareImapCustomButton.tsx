@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
-import { Button, InlineLinkButton } from '@proton/atoms';
-import { Icon, Tooltip } from '@proton/components';
+import { Button, InlineLinkButton, Tooltip } from '@proton/atoms';
+import { Icon } from '@proton/components';
 
 interface Props {
     isLabelMapping: boolean;

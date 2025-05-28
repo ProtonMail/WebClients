@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
+import { Tooltip } from '@proton/atoms';
 import Info from '@proton/components/components/link/Info';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';

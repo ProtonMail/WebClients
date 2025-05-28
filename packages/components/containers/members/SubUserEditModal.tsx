@@ -14,6 +14,7 @@ import {
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { Button, Card } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -23,7 +24,6 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState, { type ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AssistantUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/assistant/AssistantUpdateSubscriptionButton';

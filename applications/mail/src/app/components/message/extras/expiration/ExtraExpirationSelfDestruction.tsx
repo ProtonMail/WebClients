@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Banner, Button } from '@proton/atoms';
-import { Icon, Tooltip, useNotifications } from '@proton/components';
+import { Banner, Button, Tooltip } from '@proton/atoms';
+import { Icon, useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';

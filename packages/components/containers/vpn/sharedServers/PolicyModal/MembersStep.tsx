@@ -3,13 +3,13 @@ import React, { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Input } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 
 import ApplyPolicyButton from '../ApplyPolicyButton';
