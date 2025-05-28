@@ -1,6 +1,7 @@
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 
 import { FieldType, IdentityFieldType, getIdentityFieldType } from '@proton/pass/fathom';
+import { isInputElement } from '@proton/pass/utils/dom/predicates';
 
 type IdentitySection = { types: Set<IdentityFieldType>; fields: { field: FieldHandle; type: IdentityFieldType }[] };
 
@@ -20,6 +21,7 @@ export const resolveIdentitySections = (fields: FieldHandle[]): IdentitySection[
         const emailField = fieldType === FieldType.EMAIL;
 
         if (!(identityField || emailField)) return sections;
+        if (!isInputElement(field.element)) return sections;
 
         const type = emailField ? IdentityFieldType.EMAIL : (field.identityType ?? getIdentityFieldType(field.element));
         if (type === undefined) return sections;
