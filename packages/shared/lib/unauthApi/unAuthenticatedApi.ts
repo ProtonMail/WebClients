@@ -187,11 +187,18 @@ export const createUnauthenticatedApi = (api: Api) => {
             clearTabPersistedUID();
         }
 
-        const abortController = context.abortController;
+        const requestAbortController = new AbortController();
+        const contextAbortController = context.abortController;
+        // This is basically a merged abort signal for:
+        //  1) the context's global abort controller
+        //  2) the request's own abort controller
+        // The idea is that if the global abort controller is canceled, this request should get canceled too,
+        // maintaining the behavior that if the request's own abort controller is canceled, this request gets canceled.
         const otherAbortCb = () => {
-            abortController.abort();
+            requestAbortController.abort();
         };
         config.signal?.addEventListener('abort', otherAbortCb);
+        contextAbortController.signal.addEventListener('abort', otherAbortCb);
         const id = {}; // Unique symbol for this run
 
         try {
@@ -210,7 +217,7 @@ export const createUnauthenticatedApi = (api: Api) => {
             const result = await context.api(
                 withUIDHeaders(UID, {
                     ...config,
-                    signal: abortController.signal,
+                    signal: requestAbortController.signal,
                     ignoreHandler: [
                         HTTP_ERROR_CODES.UNAUTHORIZED,
                         ...(Array.isArray(config.ignoreHandler) ? config.ignoreHandler : []),
@@ -244,6 +251,7 @@ export const createUnauthenticatedApi = (api: Api) => {
             throw e;
         } finally {
             config.signal?.removeEventListener('abort', otherAbortCb);
+            contextAbortController.signal.removeEventListener('abort', otherAbortCb);
         }
     };
 
