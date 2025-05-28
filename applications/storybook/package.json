@@ -24,7 +24,7 @@
         "@proton/pack": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/styles": "workspace:^",
-        "@types/react": "^18.3.21",
+        "@types/react": "^18.3.23",
         "@types/react-dom": "^18.3.7",
         "@types/react-router-dom": "^5.3.3",
         "cross-env": "^7.0.3",
@@ -37,10 +37,10 @@
         "react-router-dom": "^5.3.4",
         "ts-loader": "^9.5.2",
         "typescript": "^5.8.3",
-        "webpack": "^5.99.8"
+        "webpack": "^5.99.9"
     },
     "devDependencies": {
-        "@babel/core": "^7.27.1",
+        "@babel/core": "^7.27.3",
         "@proton/icons": "workspace:^",
         "@storybook/addon-actions": "^6.5.16",
         "@storybook/addon-essentials": "^6.5.16",
