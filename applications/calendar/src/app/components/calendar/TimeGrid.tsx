@@ -368,7 +368,9 @@ const TimeGrid = ({
                                 </Tooltip>
                             </ButtonGroup>
                             <Tooltip title={format(now, 'PP', { locale: dateLocale })}>
-                                <Button onClick={onClickToday} size="small">{c('Action').t`Today`}</Button>
+                                <Button onClick={onClickToday} size="small" aria-pressed={isSameDay(date, now)}>{c(
+                                    'Action'
+                                ).t`Today`}</Button>
                             </Tooltip>
                         </div>
                     ) : (
