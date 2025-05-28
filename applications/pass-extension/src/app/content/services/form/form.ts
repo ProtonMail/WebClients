@@ -27,7 +27,7 @@ import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import debounce from '@proton/utils/debounce';
 
-import type { FieldHandle } from './field';
+import type { FieldElement, FieldHandle } from './field';
 import { createFieldHandles } from './field';
 
 export type FormHandlesProps = { zIndex: number };
@@ -37,12 +37,12 @@ export interface FormHandle {
     canAutosave: boolean;
     detached: boolean;
     element: HTMLElement;
-    fields: Map<HTMLInputElement, FieldHandle>;
+    fields: Map<FieldElement, FieldHandle>;
     formType: FormType;
     formId: string;
     tracker?: FormTracker;
     detach: () => void;
-    detachField: (field: HTMLInputElement) => void;
+    detachField: (field: FieldElement) => void;
     getFieldById: (fieldId: string) => Maybe<FieldHandle>;
     getFields: (predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
     getFieldsFor: (type: FieldType, predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
@@ -145,7 +145,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             /* Attach new incoming fields, if not already tracked
              * while maintaining the detected fields order */
             const currentFields = formHandle.fields;
-            const nextFields = new Map<HTMLInputElement, FieldHandle>();
+            const nextFields = new Map<FieldElement, FieldHandle>();
 
             fields.forEach(({ field, fieldType }) => {
                 const currField = formHandle.fields.get(field);

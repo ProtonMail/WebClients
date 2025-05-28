@@ -16,6 +16,7 @@ import { type FieldType, type FormType, type IdentityFieldType, isVisible } from
 import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { findBoundingInputElement } from '@proton/pass/utils/dom/input';
+import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import noop from '@proton/utils/noop';
 
@@ -28,6 +29,7 @@ type CreateFieldHandlesOptions = {
 };
 
 export type FieldAction = { type: DropdownAction; filterable?: boolean };
+export type FieldElement = HTMLInputElement | HTMLSelectElement;
 
 export interface FieldHandle {
     /** Random uuid fro cross-frame identification */
@@ -41,7 +43,7 @@ export interface FieldHandle {
     /** bounding element of input field */
     boxElement: HTMLElement;
     /** underlying input element */
-    element: HTMLInputElement;
+    element: FieldElement;
     /** predicted field type */
     fieldType: FieldType;
     /** optional `IconHandle` if attached */
@@ -157,7 +159,7 @@ export const createFieldHandles = ({
 
         /* if an icon is already attached recycle it */
         attachIcon: withContext((ctx) => {
-            if (!ctx) return;
+            if (!ctx || !isInputElement(field.element)) return;
 
             field.icon =
                 field.icon ??
