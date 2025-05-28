@@ -1,3 +1,4 @@
+import { CompatibleChangeSource } from 'roosterjs';
 import type { Alignment, FormatState, IEditor } from 'roosterjs-editor-types';
 
 import { getRoosterDirection } from '@proton/components/components/editor/rooster/helpers/initRoosterEditor';
@@ -214,7 +215,9 @@ export const getToolbarConfig = async (editorInstance: IEditor | undefined, opti
         },
         emoji: {
             insert: (emoji) => {
-                editorInstance.insertContent(emoji.native);
+                editorInstance.addUndoSnapshot(() => {
+                    editorInstance.insertContent(emoji.native);
+                }, CompatibleChangeSource.SetContent);
             },
         },
     };
