@@ -13,6 +13,7 @@ import StorageLimitTopBanner from './StorageLimitTopBanner';
 import SubUserTopBanner from './SubUserTopBanner';
 import SubscriptionEndsBanner from './SubscriptionEndsBanner';
 import TimeOutOfSyncTopBanner from './TimeOutOfSyncTopBanner';
+import TrialTopBanner from './TrialTopBanner';
 
 interface Props {
     app: APP_NAMES;
@@ -23,6 +24,7 @@ const TopBanners = ({ children, app }: Props) => {
     return (
         <>
             <DelinquentTopBanner />
+            <TrialTopBanner />
             <OnlineTopBanner />
             <TimeOutOfSyncTopBanner />
             <StorageLimitTopBanner app={app} />

@@ -173,6 +173,10 @@ enum WalletFlag {
     WalletExportTransaction = 'WalletExportTransaction',
 }
 
+enum PaymentsFeatureFlag {
+    ManualTrialsFE = 'ManualTrialsFE',
+}
+
 export type FeatureFlag =
     | `${CommonFeatureFlag}`
     | `${AccountFlag}`
@@ -182,4 +186,5 @@ export type FeatureFlag =
     | `${DocsFeatureFlag}`
     | `${MailFeatureFlag}`
     | `${AdminFeatureFlag}`
-    | `${WalletFlag}`;
+    | `${WalletFlag}`
+    | `${PaymentsFeatureFlag}`;

@@ -381,6 +381,7 @@ export {
     isTaxInclusive,
     isTrial,
     isTrialExpired,
+    useIsB2BTrial,
     planSupportsSSO,
     regularCycles,
     upsellPlanSSO,
