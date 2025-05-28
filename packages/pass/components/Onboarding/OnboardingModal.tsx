@@ -1,4 +1,4 @@
-import { type FC, useState } from 'react';
+import { type FC, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,6 +10,7 @@ import { PassIconLogo } from '@proton/pass/components/Layout/Logo/PassIconLogo';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 import { useOnboarding } from './OnboardingProvider';
 
@@ -20,7 +21,7 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
     const [loading, setLoading] = useState(false);
     const [step, setStep] = useState(Math.min(completed.length, steps.length - 1));
 
-    const { component: Component, description: Description, ...currentStep } = steps[step];
+    const { component: Component = noop, description: Description = noop, ...currentStep } = steps[step] ?? {};
 
     const onComplete = () => {
         setLoading(true);
@@ -47,6 +48,10 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
                 <Icon name="arrow-left" />
             </Button>
         ) : undefined;
+
+    useEffect(() => {
+        setStep((curr) => (curr > steps.length - 1 ? steps.length - 1 : curr));
+    }, [steps]);
 
     return (
         <PassModal
