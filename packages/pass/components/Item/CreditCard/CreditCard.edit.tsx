@@ -17,6 +17,7 @@ import {
     cardNumberMask,
     expDateMask,
 } from '@proton/pass/components/Form/Field/masks/credit-card';
+import { getCreditCardType } from '@proton/pass/components/Item/CreditCard/CreditCard.utils';
 import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
@@ -28,7 +29,6 @@ import { bindOTPSanitizer, sanitizeExtraField } from '@proton/pass/lib/items/ite
 import { validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
 import type { CreditCardItemFormValues } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
-import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { formatExpirationDateMMYY } from '@proton/pass/utils/time/expiration-date';
 
@@ -50,15 +50,14 @@ export const CreditCardEdit: FC<ItemEditViewProps<'creditCard'>> = ({ share, rev
             shareId,
             extraFields,
         },
-        onSubmit: ({ name, note, files, extraFields, ...creditCardValues }) => {
+        onSubmit: async ({ name, note, files, extraFields, ...creditCardValues }) => {
             const sanitizeOTP = bindOTPSanitizer(name);
-
             onSubmit({
                 ...uneditable,
                 files,
                 content: {
                     ...creditCardValues,
-                    cardType: CardType.Unspecified,
+                    cardType: await getCreditCardType(creditCardValues.number),
                     expirationDate: creditCardValues.expirationDate,
                     number: obfuscate(creditCardValues.number),
                     pin: obfuscate(creditCardValues.pin),

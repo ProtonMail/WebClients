@@ -19,6 +19,7 @@ import {
     cardNumberMask,
     expDateMask,
 } from '@proton/pass/components/Form/Field/masks/credit-card';
+import { getCreditCardType } from '@proton/pass/components/Item/CreditCard/CreditCard.utils';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
@@ -36,7 +37,6 @@ import { selectPassPlan, selectVaultLimits } from '@proton/pass/store/selectors'
 import type { CreditCardItemFormValues } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
-import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { formatExpirationDateMMYY } from '@proton/pass/utils/time/expiration-date';
@@ -67,7 +67,7 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
     const form = useFormik<CreditCardItemFormValues>({
         initialValues,
         initialErrors: validateCreditCardForm(initialValues),
-        onSubmit: ({ shareId, name, note, files, extraFields, ...creditCardValues }) => {
+        onSubmit: async ({ shareId, name, note, files, extraFields, ...creditCardValues }) => {
             const id = uniqueId();
             const sanitizeOTP = bindOTPSanitizer(name);
 
@@ -79,7 +79,7 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
                 files,
                 content: {
                     ...creditCardValues,
-                    cardType: CardType.Unspecified,
+                    cardType: await getCreditCardType(creditCardValues.number),
                     number: obfuscate(creditCardValues.number),
                     verificationNumber: obfuscate(creditCardValues.verificationNumber),
                     pin: obfuscate(creditCardValues.pin),
