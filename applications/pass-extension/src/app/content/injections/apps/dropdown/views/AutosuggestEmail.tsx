@@ -146,7 +146,7 @@ export const AutosuggestEmail: FC<Props> = ({ domain, prefix }) => {
                             </span>
                         )
                     }
-                    icon="envelope"
+                    icon={{ type: 'icon', icon: 'envelope' }}
                     onClick={() => {
                         controller.forwardMessage({
                             type: IFramePortMessageType.AUTOFILL_EMAIL,
@@ -201,7 +201,7 @@ export const AutosuggestEmail: FC<Props> = ({ domain, prefix }) => {
                         );
                     }
                 })()}
-                icon={needsUpgrade ? 'arrow-within-square' : 'alias'}
+                icon={{ type: 'icon', icon: needsUpgrade ? 'arrow-within-square' : 'alias' }}
                 subTheme={SubTheme.TEAL}
                 disabled={loadingText !== null}
                 onClick={(() => {

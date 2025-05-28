@@ -68,7 +68,7 @@ export const Dropdown: FC<Props> = ({ initial = null }) => {
                             <PinUnlock
                                 header={
                                     <div className="flex items-center gap-3 mb-3">
-                                        <ListItemIcon icon={PassIconStatus.LOCKED_DROPDOWN} />
+                                        <ListItemIcon type="status" icon={PassIconStatus.LOCKED_DROPDOWN} />
                                         <div className="flex-1">
                                             <span className="block text-ellipsis">{c('Label')
                                                 .t`Unlock ${PASS_APP_NAME}`}</span>
@@ -101,7 +101,7 @@ export const Dropdown: FC<Props> = ({ initial = null }) => {
                                     <span className="color-danger">{c('Warning')
                                         .t`Your session could not be resumed.`}</span>
                                 }
-                                icon={PassIconStatus.DISABLED}
+                                icon={{ type: 'status', icon: PassIconStatus.DISABLED }}
                                 autogrow
                             />
                         );
@@ -113,7 +113,7 @@ export const Dropdown: FC<Props> = ({ initial = null }) => {
                                 onClick={controller.close}
                                 subTitle={c('Info')
                                     .t`Please enter your extra password to start using ${PASS_SHORT_APP_NAME}.`}
-                                icon={PassIconStatus.LOCKED}
+                                icon={{ type: 'status', icon: PassIconStatus.LOCKED }}
                                 autogrow
                             />
                         );
@@ -132,7 +132,7 @@ export const Dropdown: FC<Props> = ({ initial = null }) => {
                                               .t`Your organization requires you to secure your access to ${PASS_APP_NAME}`
                                         : c('Info').t`Enable ${PASS_APP_NAME} by connecting your ${BRAND_NAME} account`
                                 }
-                                icon={PassIconStatus.DISABLED}
+                                icon={{ type: 'status', icon: PassIconStatus.DISABLED }}
                                 autogrow
                             />
                         );

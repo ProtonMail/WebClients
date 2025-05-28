@@ -82,10 +82,9 @@ const PasskeyGetView: FC<Props> = ({ request, token, passkeys, domain: passkeyDo
                 <ListItem
                     key={`${passkey.credentialId}-${idx}`}
                     className="rounded-none"
-                    icon="pass-passkey"
+                    icon={{ type: 'icon', icon: 'pass-passkey', url: domain }}
                     title={passkey.name}
                     subTitle={passkey.username}
-                    url={domain}
                     onClick={() => authenticate(passkey)}
                 />
             ))}

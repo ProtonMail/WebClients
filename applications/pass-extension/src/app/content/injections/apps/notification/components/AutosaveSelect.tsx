@@ -36,11 +36,10 @@ export const AutosaveSelect: FC<Props> = ({ data, busy, form }) => {
                     <ListItem
                         key={getItemKey(candidate)}
                         className="rounded-none"
-                        icon="user"
                         title={candidate.name}
                         subTitle={candidate.userIdentifier}
                         onClick={() => onSelect(candidate)}
-                        url={candidate.url}
+                        icon={{ type: 'icon', icon: 'user', url: candidate.url }}
                         action={
                             data?.candidates.length > 1 && (
                                 <ButtonLike

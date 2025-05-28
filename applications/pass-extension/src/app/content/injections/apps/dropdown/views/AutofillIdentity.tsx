@@ -66,8 +66,8 @@ export const AutofillIdentity: FC<Props> = ({ domain }) => {
                 ? [
                       state.needsUpgrade && (
                           <ListItem
-                              key={'upgrade-autofill'}
-                              icon="arrow-within-square"
+                              key="upgrade-autofill"
+                              icon={{ type: 'icon', icon: 'arrow-within-square' }}
                               title={c('Info').t`Upgrade ${PASS_APP_NAME}`}
                               subTitle={c('Warning')
                                   .t`Your plan only allows you to autofill from your first two vaults`}
@@ -80,7 +80,7 @@ export const AutofillIdentity: FC<Props> = ({ domain }) => {
                               key={itemId}
                               title={name}
                               subTitle={fullName || c('Title').t`Identity`}
-                              icon="card-identity"
+                              icon={{ type: 'icon', icon: 'card-identity' }}
                               onClick={() =>
                                   sendMessage.onSuccess(
                                       contentScriptMessage({
@@ -122,7 +122,7 @@ export const AutofillIdentity: FC<Props> = ({ domain }) => {
                 <ScrollableItemsList>{dropdownItems}</ScrollableItemsList>
             ) : (
                 <ListItem
-                    icon={PassIconStatus.ACTIVE}
+                    icon={{ type: 'status', icon: PassIconStatus.ACTIVE }}
                     onClick={controller.close}
                     title={PASS_APP_NAME}
                     subTitle={c('Info').t`No identity item found`}

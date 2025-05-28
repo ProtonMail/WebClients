@@ -18,24 +18,24 @@ type Props = {
     className?: string;
     disabled?: boolean;
     fakeButton?: boolean;
+    icon: ListItemIconProps;
     subTheme?: SubTheme;
     subTitle: ReactNode;
     title?: ReactNode;
     onClick?: () => void;
-} & ListItemIconProps;
+};
 
 export const ListItem: FC<Props> = ({
     action,
-    onClick,
+    autogrow,
     className,
-    title,
-    subTitle,
-    icon,
-    url,
     disabled,
     fakeButton,
-    autogrow,
+    icon,
     subTheme = SubTheme.VIOLET,
+    subTitle,
+    title,
+    onClick,
 }) => (
     <DropdownMenuButton
         className={clsx(
@@ -50,7 +50,7 @@ export const ListItem: FC<Props> = ({
         disabled={disabled}
     >
         <div className="flex items-center gap-3">
-            <ListItemIcon {...(url ? { url, icon } : { icon })} />
+            <ListItemIcon {...icon} />
             <div className="flex-1">
                 {title && <span className="block text-ellipsis">{title}</span>}
                 <span
