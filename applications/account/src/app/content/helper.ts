@@ -102,6 +102,9 @@ export const getSignupUrl = (
         if (getIsWalletApp(app)) {
             return { path: SSO_PATHS.WALLET_SIGNUP, params };
         }
+        if (getIsLumoApp(app)) {
+            return { path: SSO_PATHS.LUMO_SIGNUP, params };
+        }
 
         if (productParam === 'business') {
             return { path: SSO_PATHS.BUSINESS_SIGNUP, params };
