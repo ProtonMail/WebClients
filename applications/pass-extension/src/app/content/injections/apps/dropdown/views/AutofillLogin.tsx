@@ -79,8 +79,8 @@ export const AutofillLogin: FC<Props> = ({ domain, startsWith }) => {
                 ? [
                       state.needsUpgrade && (
                           <ListItem
-                              key={'upgrade-autofill'}
-                              icon="arrow-within-square"
+                              key="upgrade-autofill"
+                              icon={{ type: 'icon', icon: 'arrow-within-square' }}
                               title={c('Info').t`Upgrade ${PASS_APP_NAME}`}
                               subTitle={c('Warning')
                                   .t`Your plan only allows you to autofill from your first two vaults`}
@@ -100,8 +100,11 @@ export const AutofillLogin: FC<Props> = ({ domain, startsWith }) => {
                                   key={itemId}
                                   title={<Marks chunks={nameChunks}>{name}</Marks>}
                                   subTitle={<Marks chunks={userChunks}>{userIdentifier}</Marks>}
-                                  url={settings.loadDomainImages ? url : undefined}
-                                  icon="user"
+                                  icon={{
+                                      type: 'icon',
+                                      icon: 'user',
+                                      url: settings.loadDomainImages ? url : undefined,
+                                  }}
                                   onClick={() =>
                                       sendMessage.onSuccess(
                                           contentScriptMessage({
@@ -144,7 +147,7 @@ export const AutofillLogin: FC<Props> = ({ domain, startsWith }) => {
                 <ScrollableItemsList>{dropdownItems}</ScrollableItemsList>
             ) : (
                 <ListItem
-                    icon={PassIconStatus.ACTIVE}
+                    icon={{ type: 'status', icon: PassIconStatus.ACTIVE }}
                     onClick={controller.close}
                     title={PASS_APP_NAME}
                     subTitle={c('Info').t`No login found`}

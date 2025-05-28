@@ -90,10 +90,9 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
                             <ListItem
                                 key={`${shareId}-${itemId}`}
                                 className="rounded-none"
-                                icon="pass-passkey"
                                 title={name}
                                 subTitle={userIdentifier}
-                                url={url}
+                                icon={{ type: 'icon', url, icon: 'pass-passkey' }}
                                 onClick={() =>
                                     form
                                         .setValues({ selectedItem: { itemId, shareId }, step: 'select', name })

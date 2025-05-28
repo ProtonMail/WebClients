@@ -52,8 +52,7 @@ export const AutofillOTP: FC<Props> = ({ item }) => {
                     key={getItemKey(item)}
                     title={item.name}
                     subTitle={item.userIdentifier}
-                    icon="user"
-                    url={item.url}
+                    icon={{ type: 'icon', icon: 'user', url: item.url }}
                     fakeButton
                 />
 

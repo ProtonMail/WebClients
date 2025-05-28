@@ -100,12 +100,12 @@ export const AutosuggestPassword: FC<Props> = ({ domain, config, copy, policy })
                 subTheme={SubTheme.RED}
                 {...(copied
                     ? {
-                          icon: 'checkmark',
+                          icon: { type: 'icon', icon: 'checkmark' },
                           subTitle: c('Info').t`Password copied`,
                           onClick: controller.close,
                       }
                     : {
-                          icon: 'key',
+                          icon: { type: 'icon', icon: 'key' },
                           title: label,
                           subTitle: (
                               <span className="text-monospace">{getCharsGroupedByColor(generator.password)}</span>

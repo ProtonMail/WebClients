@@ -10,4 +10,10 @@
 		background: none;
 		border: 1px solid var(--interaction-norm-minor-1);
 	}
+
+	&--custom {
+		img {
+			inline-size: 100%;
+		}
+	}
 }
