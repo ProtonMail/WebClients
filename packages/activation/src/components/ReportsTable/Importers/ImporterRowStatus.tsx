@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { ApiImporterError, ApiImporterState } from '@proton/activation/src/api/api.interface';
-import { Badge, Icon, Tooltip } from '@proton/components';
+import { Badge, Icon } from '@proton/components'
+import { Tooltip } from '@proton/atoms';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 interface Props {

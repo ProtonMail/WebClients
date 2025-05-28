@@ -2,8 +2,8 @@ import { memo, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Kbd } from '@proton/atoms';
-import { Icon, Tooltip } from '@proton/components';
+import { Button, Kbd, Tooltip } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import { useBulkActions } from '@proton/pass/components/Bulk/BulkSelectionActions';
 import { useBulkEnabled } from '@proton/pass/components/Bulk/BulkSelectionState';
 import { metaKey } from '@proton/shared/lib/helpers/browser';

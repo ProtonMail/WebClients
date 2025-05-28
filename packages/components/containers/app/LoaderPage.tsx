@@ -3,9 +3,9 @@ import type { SyntheticEvent } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader, ProtonLoader } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import TextLoader from '@proton/components/components/loader/TextLoader';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useConfig from '@proton/components/hooks/useConfig';
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
 import { getAppName } from '@proton/shared/lib/apps/helper';

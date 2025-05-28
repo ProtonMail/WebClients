@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { CalendarInviteButtons, Spotlight, Tooltip, useActiveBreakpoint } from '@proton/components';
+import { Button, Tooltip } from '@proton/atoms';
+import { CalendarInviteButtons, Spotlight, useActiveBreakpoint } from '@proton/components';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaWithCounter from '@proton/components/components/v2/input/TextAreaWithCounter';
 import {

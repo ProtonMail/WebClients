@@ -7,7 +7,7 @@ import last from 'lodash/last';
 import { c } from 'ttag';
 
 import type { WasmApiWalletAccount, WasmPriceGraph } from '@proton/andromeda';
-import { Tooltip } from '@proton/components';
+import { Tooltip } from '@proton/atoms';
 import btcDarkSvg from '@proton/styles/assets/img/illustrations/btc-dark.svg';
 import btcSvg from '@proton/styles/assets/img/illustrations/btc.svg';
 import clsx from '@proton/utils/clsx';

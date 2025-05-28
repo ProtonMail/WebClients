@@ -5,7 +5,7 @@ import { differenceInCalendarDays, format, isToday } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button, ButtonLike, CircleLoader } from '@proton/atoms';
+import { Button, ButtonLike, CircleLoader, Tooltip } from '@proton/atoms';
 import {
     AppLink,
     ContactDrawerAppButton,
@@ -28,7 +28,6 @@ import {
     QuickSettingsAppButton,
     SmartBanner,
     ToolbarButton,
-    Tooltip,
     TopBanners,
     UserDropdown,
     useActiveBreakpoint,

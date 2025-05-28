@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components';
 import {
     Alert,
@@ -14,7 +14,6 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     Row,
-    Tooltip,
     useModalTwoStatic,
 } from '@proton/components';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
