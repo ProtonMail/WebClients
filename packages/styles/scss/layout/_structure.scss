@@ -80,6 +80,10 @@ html,
 
 	&--adaptWidth {
 		inline-size: rem(340);
+		max-inline-size: calc(
+			100vw - #{rem(450)} - #{$width-sidebar}px - #{rem(20)} - var(--drawer-width)
+		); // Same max width as list
+
 		@supports (inline-size: clamp(1px, calc(1vw), 100%)) {
 			inline-size: clamp(
 				#{rem(340)},
@@ -89,10 +93,6 @@ html,
 				#{rem(520)}
 			);
 		}
-
-		max-inline-size: calc(
-			100vw - #{rem(450)} - #{$width-sidebar}px - #{rem(20)} - var(--drawer-width)
-		); // Same max width as list
 	}
 
 	.input {
