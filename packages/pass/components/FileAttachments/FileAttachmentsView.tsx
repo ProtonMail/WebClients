@@ -28,7 +28,7 @@ export const FileAttachmentsView: FC<FileAttachmentsViewProps> = ({ children, fi
     </FieldsetCluster>
 );
 
-export const FileAttachmentsContentView: FC<{ revision: ItemRevision & Partial<ItemOptimisticState> }> =
+export const FileAttachmentsContentView: FC<{ revision: ItemRevision<any> & Partial<ItemOptimisticState> }> =
     WithFeatureFlag(({ revision }) => {
         const { shareId, itemId, optimistic, failed } = revision;
         const files = useMemoSelector(selectItemFilesForRevision, [shareId, itemId, revision.revision]);

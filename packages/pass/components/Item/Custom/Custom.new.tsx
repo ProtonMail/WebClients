@@ -220,7 +220,7 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
     });
 
     const onSelectTemplate = async (template: CustomTemplate) => {
-        const values = extraTypeFieldValues(template, form.values);
+        const values = extraTypeFieldValues(template, initialValues);
         await form.setValues(values);
         form.resetForm({ values });
         setShowForm(true);
@@ -240,7 +240,7 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
             handleCancelClick={handleCancelClick}
             cancelIcon={showForm ? 'arrow-left' : 'cross'}
             type={form.values.type}
-            valid={form.isValid}
+            valid={form.isValid && !form.status?.isBusy}
             actions={ParentPortal}
             submitButton={SubmitButton}
         >
@@ -260,9 +260,9 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
                                             className="w-full"
                                             onClick={() => onSelectTemplate(template)}
                                         >
-                                            <div className="flex items-center w-full text-left">
+                                            <div className="flex items-center w-full text-left flex-nowrap">
                                                 <Icon name={template.icon} className="mr-2" />
-                                                <span>{template.label}</span>
+                                                <span className="text-ellipsis">{template.label}</span>
                                             </div>
                                         </Button>
                                     ))}
