@@ -20,7 +20,17 @@ const shouldPrefix = (tagName: string, attributeName: string) => {
     return !MAP_PROTON_ATTR_TAG_WHITELIST[tagName] && MAP_PROTON_ATTR[attributeName];
 };
 
-const CONFIG: { [key: string]: any } = {
+export enum PurifyConfig {
+    DEFAULT = 'default',
+    RAW = 'raw',
+    HTML = 'html',
+    /** used for proton-mail messages */
+    PROTONIZER = 'protonizer',
+    CONTENT = 'content',
+    CONTENT_WITHOUT_IMG = 'contentWithoutImg',
+}
+
+const CONFIG: { [key in PurifyConfig]: any } = {
     default: {
         ALLOWED_URI_REGEXP:
             /^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|blob|xmpp|data):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i, // eslint-disable-line no-useless-escape
@@ -56,7 +66,7 @@ const CONFIG: { [key: string]: any } = {
     },
 };
 
-const getConfig = (type: string): Config => ({ ...CONFIG.default, ...(CONFIG[type] || {}) });
+const getConfig = (type: PurifyConfig): Config => ({ ...CONFIG.default, ...(CONFIG[type] || {}) });
 
 /**
  * Rename some attributes adding the "proton-" prefix configured in LIST_PROTON_ATTR
@@ -117,15 +127,15 @@ const purifyHTMLHooks = (active: boolean) => {
     DOMPurify.removeHook('beforeSanitizeElements');
 };
 
-const clean = (mode: string) => {
-    const config = getConfig(mode);
+const clean = (mode: PurifyConfig | 'str') => {
+    const config = getConfig(mode === 'str' ? PurifyConfig.DEFAULT : mode);
 
     return (input: string | Node): string | Element => {
         DOMPurify.clearConfig();
         const value = DOMPurify.sanitize(input, config) as string | Element;
         purifyHTMLHooks(false); // Always remove the hooks
         if (mode === 'str') {
-            // When trusted types is available, DOMPurify returns a trustedHTML object and not a string, force cast it.
+            // When a trusted type is available, DOMPurify returns a trustedHTML object and not a string, force cast it.
             return `${value}`;
         }
         return value;
@@ -140,13 +150,13 @@ export const message = clean('str') as (input: string) => string;
 /**
  * Sanitize input with a config similar than Squire + ours
  */
-export const html = clean('raw') as (input: Node) => Element;
+export const html = clean(PurifyConfig.RAW) as (input: Node) => Element;
 
 /**
  * Sanitize input with a config similar than Squire + ours
  */
 export const protonizer = (input: string, attachHooks: boolean): Element => {
-    const process = clean('protonizer');
+    const process = clean(PurifyConfig.PROTONIZER);
     purifyHTMLHooks(attachHooks);
     return process(input) as Element;
 };
@@ -155,13 +165,13 @@ export const protonizer = (input: string, attachHooks: boolean): Element => {
  * Sanitize input and returns the whole document
 
  */
-export const content = clean('content') as (input: string) => Node;
+export const content = clean(PurifyConfig.CONTENT) as (input: string) => Node;
 
 /**
  * Sanitize input without images and returns the whole document
 
  */
-export const contentWithoutImage = clean('contentWithoutImg') as (input: string) => Node;
+export const contentWithoutImage = clean(PurifyConfig.CONTENT_WITHOUT_IMG) as (input: string) => Node;
 
 /**
  * Default config we don't want any custom behaviour
@@ -187,6 +197,6 @@ export const removeImagesFromContent = (message: string) => {
 };
 
 export const sanitizeSignature = (input: string) => {
-    const process = clean('default');
+    const process = clean(PurifyConfig.DEFAULT);
     return process(input.replace(/<a\s.*href="(.+?)".*>(.+?)<\/a>/, '[URL: $1] $2'));
 };
