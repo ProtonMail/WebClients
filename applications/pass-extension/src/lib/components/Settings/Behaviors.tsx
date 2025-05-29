@@ -62,6 +62,13 @@ const getSettings =
                         disabled: !settings.autofill.login,
                         onChange: (checked) => onSettingsUpdate({ autofill: { twofa: checked } }),
                     },
+                    {
+                        label: c('Label').t`Basic Authentication autofill`,
+                        description: c('Info')
+                            .t`Automatically fill in browser pop-up login prompts using your saved credentials.`,
+                        checked: settings.autofill.basicAuth,
+                        onChange: (checked) => onSettingsUpdate({ autofill: { basicAuth: checked } }),
+                    },
                 ],
             },
             {
