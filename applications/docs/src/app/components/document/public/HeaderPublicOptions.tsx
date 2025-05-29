@@ -199,7 +199,7 @@ export function HeaderPublicOptions({ editorController, documentState }: HeaderP
       linkId,
       email: '',
       urlPassword,
-      openInNewTab: false,
+      openInNewTab: true,
     })
   }, [linkId, token, urlPassword])
 
