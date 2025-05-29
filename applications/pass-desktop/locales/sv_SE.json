@@ -403,10 +403,10 @@
       "Move to another vault": [
         "Flytta till annat valv"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Flytta till papperskorg"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Flytta till papperskorg"
       ],
       "Multiple select": [
@@ -1514,7 +1514,7 @@
         "Ta med dina befintliga lösenord till ${ BRAND_NAME }."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
-        "Ta med din egen domän och du slipper att köpa ännu en hostinglösning för e-post."
+        "Skaffa en egen domän så slipper du köpa ännu en värdlösning för din e-post."
       ],
       "Built in 2FA authenticator": [
         "Inbyggd 2FA-autentisering"
@@ -1867,6 +1867,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -2631,6 +2635,9 @@
       "Always show username field": [
         "Visa alltid fält för användarnamn"
       ],
+      "API Key": [
+        "API-nyckel"
+      ],
       "Application logs": [
         "Applikationsloggar"
       ],
@@ -2754,6 +2761,9 @@
       "Credit cards": [
         "Kreditkort"
       ],
+      "Crypto Wallet": [
+        "Kryptoplånbok"
+      ],
       "Custom hidden field": [
         "Anpassat dolt fält"
       ],
@@ -2765,6 +2775,9 @@
       ],
       "Database": [
         "Databas"
+      ],
+      "Database Type": [
+        "Databastyp"
       ],
       "Date": [
         "Datum"
@@ -2931,6 +2944,12 @@
       "Holder Name": [
         "Innehavarens namn"
       ],
+      "Host": [
+        "Värd"
+      ],
+      "Hostname": [
+        "Värdnamn"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Hur man låser upp ${ PASS_SHORT_APP_NAME }"
       ],
@@ -2988,6 +3007,9 @@
       "Invitations": [
         "Inbjudningar"
       ],
+      "IP Address": [
+        "IP-adress"
+      ],
       "Issuing Authority": [
         "Utfärdande myndighet"
       ],
@@ -3032,6 +3054,9 @@
       ],
       "License": [
         "Licens"
+      ],
+      "License Key": [
+        "Licensnyckel"
       ],
       "License number": [
         "Körkortsnummer"
@@ -3162,8 +3187,14 @@
       "Open-source password manager for effortless protection.": [
         "Lösenordshanterare med öppen källkod för enkelt skydd."
       ],
+      "Operating System": [
+        "Operativsystem"
+      ],
       "Organization": [
         "Organisation"
+      ],
+      "Owner": [
+        "Ägare"
       ],
       "Passkey": [
         "Passkey"
@@ -3188,6 +3219,12 @@
       ],
       "Password history": [
         "Lösenordshistorik"
+      ],
+      "Permissions": [
+        "Behörigheter"
+      ],
+      "Personal": [
+        "Privat"
       ],
       "Personal details": [
         "Personuppgifter"
@@ -3216,6 +3253,9 @@
       "Points Balance": [
         "Poängsaldo"
       ],
+      "Port": [
+        "Port"
+      ],
       "Prefix": [
         "Prefix"
       ],
@@ -3230,6 +3270,9 @@
       ],
       "Private Key": [
         "Privat nyckel"
+      ],
+      "Product": [
+        "Produkt"
       ],
       "Program Name": [
         "Programnamn"
@@ -3270,8 +3313,14 @@
       "Reward Program": [
         "Belöningsprogram"
       ],
+      "Routing Number": [
+        "Clearingnummer"
+      ],
       "Second password": [
         "Andra lösenord"
+      ],
+      "Secret": [
+        "Hemlighet"
       ],
       "Secure links": [
         "Säkra länkar"
@@ -3348,10 +3397,10 @@
       "Sign in faster with ${ PASS_APP_NAME }": [
         "Logga in snabbare med ${ PASS_APP_NAME }"
       ],
-      "Social Security": [
+      "Social security": [
         "Social säkerhet"
       ],
-      "Social security": [
+      "Social Security": [
         "Social säkerhet"
       ],
       "Social security number": [

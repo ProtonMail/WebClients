@@ -403,10 +403,10 @@
       "Move to another vault": [
         "Přesunout do jiného trezoru"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Přesunout do koše"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Přesunout do koše"
       ],
       "Multiple select": [
@@ -1917,7 +1917,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -3316,6 +3319,9 @@
       "Points Balance": [
         "Zůstatek bodů"
       ],
+      "Port": [
+        "Port"
+      ],
       "Prefix": [
         "Předpona"
       ],
@@ -3451,10 +3457,10 @@
       "Sign in faster with ${ PASS_APP_NAME }": [
         "Rychlejší přihlášení pomocí ${ PASS_APP_NAME }"
       ],
-      "Social Security": [
+      "Social security": [
         "Rodné číslo (číslo sociálního pojištění)"
       ],
-      "Social security": [
+      "Social Security": [
         "Rodné číslo (číslo sociálního pojištění)"
       ],
       "Social security number": [
