@@ -24,8 +24,7 @@ import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal'
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
-import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
-import { getSanitizedUserIdentifiers } from '@proton/pass/lib/items/item.utils';
+import { getSanitizedUserIdentifiers, obfuscateLabeledExtraFields } from '@proton/pass/lib/items/item.utils';
 import { getSecretOrUri, parseOTPValue } from '@proton/pass/lib/otp/otp';
 import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
@@ -144,21 +143,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                     itemUsername: obfuscate(username),
                 },
                 files,
-                extraFields: obfuscateExtraFields(
-                    extraFields.map((field) =>
-                        field.type === 'totp'
-                            ? {
-                                  ...field,
-                                  data: {
-                                      totpUri: parseOTPValue(field.data.totpUri, {
-                                          label: itemEmail || undefined,
-                                          issuer: name || undefined,
-                                      }),
-                                  },
-                              }
-                            : field
-                    )
-                ),
+                extraFields: obfuscateLabeledExtraFields({ extraFields, label: itemEmail, issuer: name }),
                 itemId,
                 lastRevision,
                 metadata: { ...metadata, name, note: obfuscate(note) },
