@@ -576,11 +576,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Remove": [
         "Αφαίρεση"
@@ -699,11 +699,11 @@
       "Select country ${ country }": [
         "Επιλογή χώρας ${ country }"
       ],
-      "Select file": [
-        "Επιλέξτε αρχείο"
-      ],
       "select file": [
         "επιλέξτε αρχείο"
+      ],
+      "Select file": [
+        "Επιλέξτε αρχείο"
       ],
       "Send code": [
         "Αποστολή κωδικού"
@@ -3011,8 +3011,8 @@
       "Error connecting to the Bitcoin API.": [
         "Πρόβλημα σύνδεσης με το Bitcoin API."
       ],
-      "Error publishing changes.": [
-        "Σφάλμα κατά τη δημοσίευση αλλαγών."
+      "Error publishing changes": [
+        "Σφάλμα κατά τη δημοσίευση αλλαγών"
       ],
       "Failed to load the STL preview": [
         "Αποτυχία φόρτωσης της προεπισκόπησης STL"
@@ -4381,6 +4381,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Τουλάχιστον ${ BETTER_PASSWORD_LENGTH } χαρακτήρες"
       ],
+      "At least one application must be active": [
+        "Τουλάχιστον μία εφαρμογή πρέπει να είναι ενεργή"
+      ],
       "Attention required": [
         "Απαιτείται προσοχή"
       ],
@@ -5701,11 +5704,11 @@
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
       ],
-      "username": [
-        "όνομα χρήστη"
-      ],
       "Username": [
         "Όνομα Χρήστη"
+      ],
+      "username": [
+        "όνομα χρήστη"
       ],
       "Users": [
         "Χρήστες"
@@ -7308,6 +7311,20 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Από ${ price }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Διαγραφή λογαριασμού"
@@ -7329,20 +7346,6 @@
       ],
       "Switch plan": [
         "Αλλαγή προγράμματος"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Από ${ price }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
       ]
     },
     "new_plans: feature": {
@@ -7933,14 +7936,6 @@
         "Ξεκλειδώστε όλα τα ${ BRAND_NAME } premium προϊόντα και δυνατότητες με μόλις ${ priceLine }. Ακυρώστε ανά πάσα στιγμή."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Δοκιμή ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Η κατανάλωση του λογαριασμού σας"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -7953,6 +7948,14 @@
       ],
       "Switch plans?": [
         "Αλλαγή προγράμματος;"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Δοκιμή ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Η κατανάλωση του λογαριασμού σας"
       ]
     },
     "new_plans: tooltip": {
@@ -8467,17 +8470,6 @@
         "Καλώς ήρθατε στο ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Όλοι"
-      ],
-      "Group members": [
-        "Μέλη ομάδας"
-      ],
-      "No one": [
-        "Κανένας"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Επιτρέπεται ${ defaultLabel }"
@@ -8547,6 +8539,17 @@
       ],
       "The whole organization": [
         "Ολόκληρος ο οργανισμός"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Όλοι"
+      ],
+      "Group members": [
+        "Μέλη ομάδας"
+      ],
+      "No one": [
+        "Κανένας"
       ]
     },
     "Organization capacity error": {
@@ -10855,6 +10858,9 @@
       "Locale updated": [
         "Η εντοπιότητα ενημερώθηκε"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Δημιουργήθηκε νέα πολιτική. Θα ισχύσει μόνο αφότου δημοσιεύσετε τις αλλαγές."
+      ],
       "Organization activated": [
         "Ο οργανισμός ενεργοποιήθηκε"
       ],
@@ -10884,6 +10890,12 @@
       ],
       "Phone number updated": [
         "Ο αριθμός τηλεφώνου ενημερώθηκε"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "Η πολιτική άλλαξε. Θα τεθεί σε ισχύ μόνο αφότου δημοσιεύσετε τις αλλαγές."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "Η πολιτική διαγράφτηκε. Θα τεθεί σε ισχύ μόνο αφότου δημοσιεύσετε τις αλλαγές."
       ],
       "Preference saved": [
         "Η προτίμηση αποθηκεύτηκε"
@@ -11245,10 +11257,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [

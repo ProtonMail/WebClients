@@ -573,11 +573,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Refresh the page": [
         "Обновить страницу"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Remove": [
         "Удалить"
@@ -696,11 +696,11 @@
       "Select country ${ country }": [
         "Выбрать страну ${ country }"
       ],
-      "Select file": [
-        "Выбрать файл"
-      ],
       "select file": [
         "выбрать файл"
+      ],
+      "Select file": [
+        "Выбрать файл"
       ],
       "Send code": [
         "Отправить код"
@@ -3173,9 +3173,6 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к API Биткоин."
-      ],
-      "Error publishing changes.": [
-        "Ошибка при публикации изменений."
       ],
       "Failed to load the STL preview": [
         "Не удалось загрузить предварительный просмотр STL"
@@ -5965,11 +5962,11 @@
       "User activated": [
         "Пользователь активирован"
       ],
-      "username": [
-        "имя пользователя"
-      ],
       "Username": [
         "Имя пользователя"
+      ],
+      "username": [
+        "имя пользователя"
       ],
       "Users": [
         "Пользователи"
@@ -7604,6 +7601,20 @@
         "Средняя скорость VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -7625,20 +7636,6 @@
       ],
       "Switch plan": [
         "Сменить тариф"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "Upgrade": [
-        "Улучшить"
       ]
     },
     "new_plans: feature": {
@@ -8271,14 +8268,6 @@
         "Разблокируйте все премиум продукты и возможности ${ BRAND_NAME } всего за ${ priceLine }. Отменить можно в любое время."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробная версия ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -8291,6 +8280,14 @@
       ],
       "Switch plans?": [
         "Сменить тариф?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробная версия ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -8809,17 +8806,6 @@
         "Добро пожаловать в ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Все"
-      ],
-      "Group members": [
-        "Участники группы"
-      ],
-      "No one": [
-        "Никто"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Разрешено ${ defaultLabel }"
@@ -8889,6 +8875,17 @@
       ],
       "The whole organization": [
         "Вся организация"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Все"
+      ],
+      "Group members": [
+        "Участники группы"
+      ],
+      "No one": [
+        "Никто"
       ]
     },
     "Organization capacity error": {
@@ -11700,10 +11697,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
