@@ -41,3 +41,25 @@ export default function observeApiError(
 
     return metricObserver('failure');
 }
+
+/**
+ * Acts the same as the observeApiError function,
+ * but also reports non api errors as failures
+ */
+export function observeError(
+    error: any,
+    metricObserver: (status: MetricsApiStatusTypes) => void,
+    ignoreCodes?: number[]
+) {
+    if (!error) {
+        return;
+    }
+
+    const { status } = getApiError(error);
+
+    if (!status) {
+        return metricObserver('failure');
+    }
+
+    return observeApiError(error, metricObserver, ignoreCodes);
+}
