@@ -1150,11 +1150,11 @@
       "Select country ${ country }": [
         "Selecione o país ${ country }"
       ],
-      "Select file": [
-        "Selecionar um ficheiro"
-      ],
       "select file": [
         "selecionar ficheiro"
+      ],
+      "Select file": [
+        "Selecionar um ficheiro"
       ],
       "Select files": [
         "Selecionar ficheiros"
@@ -4746,11 +4746,11 @@
       "Forward to": [
         "Reencaminhar para"
       ],
-      "or": [
-        "ou"
-      ],
       "Or": [
         "Ou"
+      ],
+      "or": [
+        "ou"
       ],
       "With attachment": [
         "Com anexo"
@@ -5001,8 +5001,8 @@
       "Error in one of the conditions": [
         "Erro numa das condições"
       ],
-      "Error publishing changes.": [
-        "Erro ao publicar as alterações."
+      "Error publishing changes": [
+        "Erro ao publicar as alterações"
       ],
       "Expired": [
         "Expirado"
@@ -7708,6 +7708,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Pelo menos ${ BETTER_PASSWORD_LENGTH } carateres"
       ],
+      "At least one application must be active": [
+        "Pelo menos uma aplicação deve estar ativa."
+      ],
       "Attention required": [
         "Atenção Requerida"
       ],
@@ -9821,11 +9824,11 @@
       "User activated": [
         "O utilizador foi ativado."
       ],
-      "username": [
-        "nome de utilizador"
-      ],
       "Username": [
         "Nome de utilizador"
+      ],
+      "username": [
+        "nome de utilizador"
       ],
       "Users": [
         "Utilizadores"
@@ -12355,11 +12358,11 @@
       "perform a password reset from your active session": [
         "redefinir a palavra-passe da sua sessão ativa"
       ],
-      "Privacy policy": [
-        "Política de privacidade"
-      ],
       "privacy policy": [
         "política de privacidade"
+      ],
+      "Privacy policy": [
+        "Política de privacidade"
       ],
       "Reactivate now": [
         "Reativar"
@@ -13700,14 +13703,6 @@
         "Desbloqueie todos os produtos e funcionalidades do ${ BRAND_NAME } premium para apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilização da sua conta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Apagar a conta?"
@@ -13726,6 +13721,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Aceda a funcionalidades premium alterando a sua subscrição."
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilização da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -14366,17 +14369,6 @@
         "Área de trabalho"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Todos"
-      ],
-      "Group members": [
-        "Membros do grupo"
-      ],
-      "No one": [
-        "Ninguém"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10º do mês"
@@ -14620,6 +14612,17 @@
       ],
       "UDP": [
         "UDP"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Todos"
+      ],
+      "Group members": [
+        "Membros do grupo"
+      ],
+      "No one": [
+        "Ninguém"
       ]
     },
     "Option delay send seconds": {
@@ -18108,6 +18111,9 @@
       "Locale updated": [
         "Idioma atualizado"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Una política foi criada. Só terá efeito após publicar as alterações."
+      ],
       "Organization activated": [
         "Organização ativada"
       ],
@@ -18137,6 +18143,12 @@
       ],
       "Phone number updated": [
         "Número de telefone atualizado"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "A política foi alterada. Só terá efeito após publicar as alterações."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "A política foi eliminada. Só terá efeito após publicar as alterações."
       ],
       "Port copied to clipboard": [
         "A porta foi copiada para a área de transferência."
@@ -18680,11 +18692,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço captura-tudo"
-      ],
       "Catch-all address": [
         "Endereço Catch-All"
+      ],
+      "Catch-All address": [
+        "Endereço captura-tudo"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"
