@@ -620,7 +620,7 @@
         "Yazı tipi"
       ],
       "Forgot password?": [
-        "Parolanızı mı unuttunuz?"
+        "Parolamı unuttum"
       ],
       "Forgot recovery method?": [
         "Kurtarma yöntemi unutulsun mu?"
@@ -1150,11 +1150,11 @@
       "Select country ${ country }": [
         "${ country } ülkesini seç"
       ],
-      "Select file": [
-        "Dosya seçin"
-      ],
       "select file": [
         "dosya seçin"
+      ],
+      "Select file": [
+        "Dosya seçin"
       ],
       "Select files": [
         "Dosyaları seçin"
@@ -1412,7 +1412,7 @@
         "Başka bir ödeme yöntemi kullanın"
       ],
       "Use authentication code": [
-        "Kimlik doğrulama kodu kullan"
+        "Kimlik doğrulama kodunu kullanın"
       ],
       "Use group sending permissions": [
         "Grup gönderim izinleri kullanılsın"
@@ -4529,7 +4529,7 @@
         "Yeni bir kare kod oluşturmayı deneyin."
       ],
       "Using that device, open the ${ MAIL_APP_NAME } app and select **Settings**": [
-        "Bu cihazı kullanarak, ${ MAIL_APP_NAME } uygulamasını açın ve **Ayarlar**'ı seçin."
+        "Bu aygıtı kullanarak ${ MAIL_APP_NAME } uygulamasını açın ve **Ayarlar** bölümüne gidin"
       ],
       "Works if you have another device that’s signed in to ${ BRAND_NAME }": [
         "Başka bir aygıtınızda ${ BRAND_NAME } oturumu açtıysanız çalışır"
@@ -4883,11 +4883,11 @@
       "Forward to": [
         "Şuraya ilet"
       ],
-      "or": [
-        "veya"
-      ],
       "Or": [
         "Veya"
+      ],
+      "or": [
+        "veya"
       ],
       "With attachment": [
         "Ek dosyası olan"
@@ -5138,8 +5138,8 @@
       "Error in one of the conditions": [
         "Koşullardan biri hatalı"
       ],
-      "Error publishing changes.": [
-        "Değişiklikler yayınlanırken sorun çıktı."
+      "Error publishing changes": [
+        "Değişiklikler yayınlanırken sorun çıktı"
       ],
       "Expired": [
         "Geçerlilik süresi dolmuş"
@@ -6351,7 +6351,7 @@
         "${ name } güvenlik anahtarını silmek istediğinize emin misiniz?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } Hesabınıza bağlı bir güvenlik anahtarı girin."
+        "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
       ],
       "Insert your security key into your device's USB port.": [
         "Güvenlik anahtarınızı aygıtınızın USB bağlantı noktasına takın."
@@ -7845,6 +7845,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "En az ${ BETTER_PASSWORD_LENGTH } karakter"
       ],
+      "At least one application must be active": [
+        "En az bir uygulama etkin olmalıdır"
+      ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
@@ -8340,7 +8343,7 @@
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu girin. Rakam ${ digit }."
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "${ BRAND_NAME } hesabınızın kimlik doğrulama bilgilerini yazın."
@@ -9782,7 +9785,7 @@
         "Onaylamak için lütfen silmek istediğiniz kullanıcının adını yazın."
       ],
       "To continue to ${ product }": [
-        "${ product }'e devam etmek için"
+        "${ product } ile ilerlemek için"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Hizmetlerimizi sürekli olarak geliştirmek için bazen uygulamalarımızın düzgün çalışıp çalışmadığını izlemek amacıyla veri topluyoruz. Bu bilgiler herhangi bir üçüncü taraf ile paylaşılmıyor."
@@ -9955,11 +9958,11 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "username": [
-        "kullanıcı adı"
-      ],
       "Username": [
         "Kullanıcı adı"
+      ],
+      "username": [
+        "kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -12489,11 +12492,11 @@
       "perform a password reset from your active session": [
         "etkin oturumunuzdan parola sıfırlama isteğinde bulunun"
       ],
-      "Privacy policy": [
-        "Gizlilik ilkesi"
-      ],
       "privacy policy": [
         "gizlilik ilkesi"
+      ],
+      "Privacy policy": [
+        "Gizlilik ilkesi"
       ],
       "Reactivate now": [
         "Yeniden etkinleştir"
@@ -13834,14 +13837,6 @@
         "Yalnızca ${ priceLine } ile tüm ${ BRAND_NAME } ücretli ürünlerine ve özelliklerine erişin. İstediğiniz zaman iptal edebilirsiniz."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } deneme"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -13860,6 +13855,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Tarifenizi yükselterek ücretli özelliklere erişin"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -14500,17 +14503,6 @@
         "Bilgisayar"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Herkes"
-      ],
-      "Group members": [
-        "Grup üyeleri"
-      ],
-      "No one": [
-        "Hiç kimse"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "Ayın 10. günü"
@@ -14745,6 +14737,17 @@
       ],
       "Trash": [
         "Çöpe at"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Herkes"
+      ],
+      "Group members": [
+        "Grup üyeleri"
+      ],
+      "No one": [
+        "Hiç kimse"
       ]
     },
     "Option delay send seconds": {
@@ -18233,6 +18236,9 @@
       "Locale updated": [
         "Yerel ayarlar güncellendi"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Yeni ilke oluşturuldu. Değişiklikler yalnızca yayınlandıktan sonra geçerli olacaktır."
+      ],
       "Organization activated": [
         "Kuruluş kullanıma alındı"
       ],
@@ -18262,6 +18268,12 @@
       ],
       "Phone number updated": [
         "Telefon numarası güncellendi"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "İlke değiştirildi. Değişiklikler yalnızca yayınlandıktan sonra geçerli olacaktır."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "İlke silindi. Değişiklikler yalnızca yayınlandıktan sonra geçerli olacaktır."
       ],
       "Port copied to clipboard": [
         "Bağlantı noktası panoya kopyalandı"
@@ -18808,10 +18820,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [

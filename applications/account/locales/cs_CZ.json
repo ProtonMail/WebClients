@@ -1150,11 +1150,11 @@
       "Select country ${ country }": [
         "Vybrat zemi ${ country }"
       ],
-      "Select file": [
-        "Vybrat soubor"
-      ],
       "select file": [
         "vybrat soubor"
+      ],
+      "Select file": [
+        "Vybrat soubor"
       ],
       "Select files": [
         "Vybrat soubory"
@@ -4780,11 +4780,11 @@
       "Forward to": [
         "Přeposlat na"
       ],
-      "or": [
-        "nebo"
-      ],
       "Or": [
         "Nebo"
+      ],
+      "or": [
+        "nebo"
       ],
       "With attachment": [
         "S přílohou"
@@ -5039,8 +5039,8 @@
       "Error in one of the conditions": [
         "Chyba v jedné z podmínek"
       ],
-      "Error publishing changes.": [
-        "Chyba zveřejňování změn."
+      "Error publishing changes": [
+        "Chyba zveřejňování změn"
       ],
       "Expired": [
         "Platnost vypršela"
@@ -7866,6 +7866,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Alespoň ${ BETTER_PASSWORD_LENGTH } znaků"
       ],
+      "At least one application must be active": [
+        "Alespoň jedna aplikace musí být aktivní"
+      ],
       "Attention required": [
         "Vyžadována pozornost"
       ],
@@ -10017,11 +10020,11 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "username": [
-        "uživatelské jméno"
-      ],
       "Username": [
         "Uživatelské jméno"
+      ],
+      "username": [
+        "uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -12596,11 +12599,11 @@
       "perform a password reset from your active session": [
         "resetujte heslo z vaší aktuální relace"
       ],
-      "Privacy policy": [
-        "Zásady ochrany osobních údajů"
-      ],
       "privacy policy": [
         "zásadami ochrany osobních údajů"
+      ],
+      "Privacy policy": [
+        "Zásady ochrany osobních údajů"
       ],
       "Reactivate now": [
         "Opětovně nyní aktivovat"
@@ -14011,14 +14014,6 @@
         "Odemkněte všechny prémiové produkty a funkce ${ BRAND_NAME } jen za ${ priceLine }. Zrušit můžete kdykoli."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -14037,6 +14032,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Odemknout prémiové funkce navýšením účtu"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -14691,17 +14694,6 @@
         "Desktop"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Všichni"
-      ],
-      "Group members": [
-        "Členové skupiny"
-      ],
-      "No one": [
-        "Nikdo"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10. den v měsíci"
@@ -14957,6 +14949,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Všichni"
+      ],
+      "Group members": [
+        "Členové skupiny"
+      ],
+      "No one": [
+        "Nikdo"
       ]
     },
     "Option delay send seconds": {
@@ -18567,6 +18570,9 @@
       "Locale updated": [
         "Jazykové prostředí aktualizováno"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Nová zásada vytvořena. V platnost vstoupí až po zveřejnění změn."
+      ],
       "Organization activated": [
         "Organizace byla aktivována"
       ],
@@ -18596,6 +18602,12 @@
       ],
       "Phone number updated": [
         "Telefonní číslo bylo aktualizováno"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "Zásada změněna. V platnost vstoupí až po zveřejnění změn."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "Zásada smazána. V platnost vstoupí až po zveřejnění změn."
       ],
       "Port copied to clipboard": [
         "Port zkopírován do schránky"
@@ -19156,10 +19168,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
