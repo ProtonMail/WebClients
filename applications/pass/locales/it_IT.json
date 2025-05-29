@@ -690,6 +690,11 @@
         "Ottieni"
       ]
     },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Offerta per l'anniversario"
+      ]
+    },
     "anniversary_2025: Offer": {
       "500 GB encrypted storage": [
         "500 GB di archiviazione crittografata"
@@ -753,11 +758,6 @@
       ],
       "years": [
         "anni"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Offerta per l'anniversario"
       ]
     },
     "anniversary_2025: Offers": {
@@ -1918,10 +1918,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -3253,6 +3249,9 @@
       "Points Balance": [
         "Saldo punti"
       ],
+      "Port": [
+        "Porta"
+      ],
       "Prefix": [
         "Prefisso"
       ],
@@ -3262,11 +3261,11 @@
       "Priority:": [
         "Priorità:"
       ],
-      "Private key": [
-        "Chiave privata"
-      ],
       "Private Key": [
         "Chiave Privata"
+      ],
+      "Private key": [
+        "Chiave privata"
       ],
       "Program Name": [
         "Nome del programma"

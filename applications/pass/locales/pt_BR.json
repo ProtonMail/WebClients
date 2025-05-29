@@ -690,6 +690,11 @@
         "Aproveitar a oferta"
       ]
     },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Oferta de aniversário"
+      ]
+    },
     "anniversary_2025: Offer": {
       "500 GB encrypted storage": [
         "500 GB de armazenamento criptografado"
@@ -753,11 +758,6 @@
       ],
       "years": [
         "anos"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Oferta de aniversário"
       ]
     },
     "anniversary_2025: Offers": {
@@ -1920,8 +1920,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outra pasta apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2680,6 +2679,9 @@
       "API Credential": [
         "Credencial de API"
       ],
+      "API Key": [
+        "Chave API"
+      ],
       "Application logs": [
         "Registros do aplicativo"
       ],
@@ -2814,6 +2816,9 @@
       ],
       "Database": [
         "Base de dados"
+      ],
+      "Database Type": [
+        "Tipo do banco de dados"
       ],
       "Date": [
         "Data"
@@ -2974,6 +2979,12 @@
       "Holder Name": [
         "Nome do titular"
       ],
+      "Host": [
+        "Host"
+      ],
+      "Hostname": [
+        "Hostname"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Como desbloquear o ${ PASS_SHORT_APP_NAME }"
       ],
@@ -3028,6 +3039,9 @@
       "Invitations": [
         "Convites"
       ],
+      "IP Address": [
+        "Endereço IP"
+      ],
       "Issuing Authority": [
         "Autoridade emissora"
       ],
@@ -3072,6 +3086,9 @@
       ],
       "License": [
         "Licença"
+      ],
+      "License Key": [
+        "Chave de licença"
       ],
       "License number": [
         "Número da licença"
@@ -3199,8 +3216,14 @@
       "Open-source password manager for effortless protection.": [
         "Gerenciador de senhas de código aberto para proteção sem esforço."
       ],
+      "Operating System": [
+        "Sistema operacional"
+      ],
       "Organization": [
         "Organização"
+      ],
+      "Owner": [
+        "Proprietário"
       ],
       "Passkey": [
         "Chave de acesso"
@@ -3222,6 +3245,9 @@
       ],
       "Password history": [
         "Histórico de senhas"
+      ],
+      "Permissions": [
+        "Permissões"
       ],
       "Personal": [
         "Pessoal"
@@ -3253,6 +3279,9 @@
       "Points Balance": [
         "Saldo de pontos"
       ],
+      "Port": [
+        "Porta"
+      ],
       "Prefix": [
         "Prefixo"
       ],
@@ -3262,11 +3291,14 @@
       "Priority:": [
         "Prioridade:"
       ],
+      "Private Key": [
+        "Chave privada"
+      ],
       "Private key": [
         "Chave privada"
       ],
-      "Private Key": [
-        "Chave privada"
+      "Product": [
+        "Produto"
       ],
       "Program Name": [
         "Nome do programa"
@@ -3309,6 +3341,9 @@
       ],
       "Second password": [
         "Segunda senha"
+      ],
+      "Secret": [
+        "Segredo"
       ],
       "Secure links": [
         "Links seguros"
