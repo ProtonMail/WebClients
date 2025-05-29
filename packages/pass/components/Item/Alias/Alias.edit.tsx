@@ -7,6 +7,7 @@ import { c } from 'ttag';
 import { Icon, Option } from '@proton/components';
 import { FileAttachmentsFieldEdit } from '@proton/pass/components/FileAttachments/FileAttachmentsFieldEdit';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
+import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { SelectField } from '@proton/pass/components/Form/Field/SelectField';
@@ -21,7 +22,8 @@ import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
-import { formatDisplayNameWithEmail } from '@proton/pass/lib/items/item.utils';
+import { deobfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import { formatDisplayNameWithEmail, obfuscateLabeledExtraFields } from '@proton/pass/lib/items/item.utils';
 import { createEditAliasFormValidator } from '@proton/pass/lib/validation/alias';
 import { selectAliasDetails } from '@proton/pass/store/selectors';
 import type { AliasMailbox, EditAliasFormValues } from '@proton/pass/types';
@@ -63,11 +65,12 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
             note,
             files: filesFormInitializer(),
             mailboxes: [],
+            extraFields: deobfuscateExtraFields(item.extraFields),
             shareId,
             displayName: aliasDetails?.name ?? '',
             slNote: aliasDetails?.slNote ?? '',
         },
-        onSubmit: ({ name, note, mailboxes, shareId, displayName, slNote, files }) => {
+        onSubmit: ({ name, note, mailboxes, shareId, displayName, slNote, files, extraFields }) => {
             onSubmit({
                 ...uneditable,
                 extraData: { aliasOwner, mailboxes, aliasEmail, displayName, slNote },
@@ -76,6 +79,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
                 files,
                 metadata: { ...metadata, name, note: obfuscate(note) },
                 shareId,
+                extraFields: obfuscateLabeledExtraFields({ extraFields, label: aliasEmail, issuer: name }),
             });
         },
         validate: validateEditAliasForm,
@@ -253,6 +257,8 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
                                     <span className="color-weak mt-2">{c('Info')
                                         .jt`When sending an email from this alias, the email will display ${emailSender} as sender.`}</span>
                                 )}
+
+                                <ExtraFieldGroup form={form} />
                             </>
                         )}
                     </Form>
