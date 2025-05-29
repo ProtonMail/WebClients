@@ -84,7 +84,7 @@ export interface PublicDriveCompat {
     /**
      * Redirects to the authed document.
      */
-    redirectToAuthedDocument: (meta: NodeMeta) => void;
+    redirectToAuthedDocument: (meta: NodeMeta, type?: DocumentType) => void;
 
     /**
      * Gets the keys for a given document node.
