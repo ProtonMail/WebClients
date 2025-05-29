@@ -576,11 +576,11 @@
       "Refresh status": [
         "Obnoviť stav"
       ],
-      "refresh the page": [
-        "obnoviť stránku"
-      ],
       "Refresh the page": [
         "Obnoviť stránku"
+      ],
+      "refresh the page": [
+        "obnoviť stránku"
       ],
       "Remove": [
         "Vymazať"
@@ -699,11 +699,11 @@
       "Select country ${ country }": [
         "Vyberte krajinu ${ country }"
       ],
-      "Select file": [
-        "Vyberte súbor"
-      ],
       "select file": [
         "vybrať súbor"
+      ],
+      "Select file": [
+        "Vyberte súbor"
       ],
       "Send code": [
         "Odoslať kód"
@@ -3035,9 +3035,6 @@
       "Error connecting to the Bitcoin API.": [
         "Chyba pri pripojovaní k Bitcoin API."
       ],
-      "Error publishing changes.": [
-        "Chyba pri publikovaní zmien."
-      ],
       "Failed to load the STL preview": [
         "Načítanie STL náhľadu zlyhalo"
       ],
@@ -4479,6 +4476,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Najmenej ${ BETTER_PASSWORD_LENGTH } znakov"
       ],
+      "At least one application must be active": [
+        "Aspoň jedna aplikácia musí byť aktívna"
+      ],
       "Attention required": [
         "Vyžaduje sa pozornosť"
       ],
@@ -5829,11 +5829,11 @@
       "User activated": [
         "Používateľ aktivovaný"
       ],
-      "username": [
-        "používateľské meno"
-      ],
       "Username": [
         "Používateľské meno"
+      ],
+      "username": [
+        "používateľské meno"
       ],
       "Users": [
         "Používatelia"
@@ -7468,6 +7468,20 @@
         "Stredná VPN rýchlosť"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Preskúmajte všetky plány ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Odstrániť účet"
@@ -7489,20 +7503,6 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Preskúmajte všetky plány ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
       ]
     },
     "new_plans: feature": {
@@ -8129,14 +8129,6 @@
         "Odomknite všetky prémiové produkty a funkcie ${ BRAND_NAME } len za ${ priceLine }. Zrušiť môžete kedykoľvek."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Skúšobná verzia ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využitie vášho účtu"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vymazať účet?"
@@ -8149,6 +8141,14 @@
       ],
       "Switch plans?": [
         "Zmeniť plán?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Skúšobná verzia ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využitie vášho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -8661,17 +8661,6 @@
         "Víta vás ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Všetci"
-      ],
-      "Group members": [
-        "Členovia skupiny"
-      ],
-      "No one": [
-        "Nikto"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Povolené ${ defaultLabel }"
@@ -8741,6 +8730,17 @@
       ],
       "The whole organization": [
         "Celá organizácia"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Všetci"
+      ],
+      "Group members": [
+        "Členovia skupiny"
+      ],
+      "No one": [
+        "Nikto"
       ]
     },
     "Organization capacity error": {
@@ -11561,10 +11561,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
       "Change login password": [

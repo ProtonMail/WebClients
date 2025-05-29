@@ -5411,9 +5411,6 @@
       "Shared by ": [
         "共有元 "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "${ rootLink.signatureEmail }が共有しました"
-      ],
       "Shared link not found": [
         "共有リンクが見つかりません"
       ],
@@ -7283,6 +7280,17 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "プランは${ priceDrivePlus }から始まります"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "アカウントを削除"
@@ -7304,17 +7312,6 @@
       ],
       "Switch plan": [
         "プランを変更"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "プランは${ priceDrivePlus }から始まります"
-      ],
-      "Upgrade": [
-        "アップグレード"
       ]
     },
     "new_plans: feature": {
@@ -8567,10 +8564,10 @@
       "Invite members": [
         "メンバーを招待"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "たぶんあとで"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "たぶんあとで"
       ],
       "Select theme": [

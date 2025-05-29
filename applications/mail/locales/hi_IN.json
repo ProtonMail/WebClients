@@ -408,6 +408,9 @@
       "Download ${ attachmentName }": [
         "डाउनलोड ${ attachmentName }"
       ],
+      "Download now": [
+        "अभी डाउनलोड करें"
+      ],
       "Download the desktop app": [
         "डेस्कटॉप ऐप डाउनलोड करें"
       ],
@@ -632,6 +635,9 @@
       ],
       "Import from Outlook": [
         "Outlook से आयात करे"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "महत्वपूर्ण अपडेट उपलब्ध है। ऐप का उपयोग जारी रखने के लिए, कृपया नवीनतम संस्करण में अपडेट करें। ${ downloadUpdate }"
       ],
       "In the morning": [
         "सुबह में"
@@ -1093,10 +1099,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } चुनें"
       ],
-      "Select all": [
+      "Select All": [
         "सब चुनें"
       ],
-      "Select All": [
+      "Select all": [
         "सब चुनें"
       ],
       "Select all messages": [
@@ -1295,8 +1301,7 @@
         "भरोसा करें"
       ],
       "Trust key": [
-        "ट्रस्ट कुंजी",
-        "ट्रस्ट कुंजी"
+        "विश्वसनीय चाबी"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -1358,10 +1363,10 @@
       "Upgrade": [
         "अपग्रेड करें"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "अभी अपग्रेड करें"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "अभी अपग्रेड करें"
       ],
       "Upload picture": [
@@ -6567,7 +6572,8 @@
         "शुरू किया जा रहा है…"
       ],
       "Insert image": [
-        "तस्वीर डालें"
+        "तस्वीर डालें",
+        "तस्वीरें डालें"
       ],
       "Insert link": [
         "लिंक डालें"

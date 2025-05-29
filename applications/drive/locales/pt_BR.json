@@ -5714,14 +5714,20 @@
       "Shared by ": [
         "Compartilhado por "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Compartilhado por ${ rootLink.signatureEmail }"
+      "Shared by ${ sharedBy }": [
+        "Compartilhado por ${ sharedBy }"
+      ],
+      "Shared by you": [
+        "Compartilhado por você"
       ],
       "Shared link not found": [
         "Link compartilhado não encontrado"
       ],
       "Shared with me": [
         "Compartilhado comigo"
+      ],
+      "Shared with you": [
+        "Compartilhado com você"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Não é possível validar a assinatura devido a um erro de rede. Tente novamente mais tarde.."
@@ -6466,6 +6472,9 @@
     "Label": {
       "# of downloads": [
         "# de downloads"
+      ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } de ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
         "Nome de usuário da ${ BRAND_NAME }"
@@ -7678,6 +7687,17 @@
         "Velocidade média de VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planos a partir de ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Excluir conta"
@@ -7699,17 +7719,6 @@
       ],
       "Switch plan": [
         "Mudar de plano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planos a partir de ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
       ]
     },
     "new_plans: feature": {
@@ -8291,11 +8300,6 @@
         "Desbloqueie todos os produtos e recursos premium da ${ BRAND_NAME } por apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -8308,6 +8312,11 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -9020,10 +9029,10 @@
       "Invite members": [
         "Convidar membros"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Talvez mais tarde"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Talvez mais tarde"
       ],
       "Select theme": [

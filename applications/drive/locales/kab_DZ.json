@@ -3864,9 +3864,6 @@
       "Shared": [
         "Yettwabḍa"
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Yebḍa-t ${ rootLink.signatureEmail }"
-      ],
       "Shared link not found": [
         "Aseɣwen yettwabḍan ulac-it"
       ],
@@ -4914,6 +4911,14 @@
         "Arured alemmas VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -4932,14 +4937,6 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
       ]
     },
     "new_plans: feature": {
@@ -5462,10 +5459,10 @@
       "Get started": [
         "Bdu"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Ahat ticki"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Ahat ticki"
       ],
       "Skip": [

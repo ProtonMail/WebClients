@@ -576,11 +576,11 @@
       "Refresh status": [
         "Actualiser le statut"
       ],
-      "refresh the page": [
-        "actualiser la page"
-      ],
       "Refresh the page": [
         "Actualiser la page"
+      ],
+      "refresh the page": [
+        "actualiser la page"
       ],
       "Remove": [
         "Retirer"
@@ -699,11 +699,11 @@
       "Select country ${ country }": [
         "Sélectionnez le pays ${ country }"
       ],
-      "Select file": [
-        "Sélectionner un fichier"
-      ],
       "select file": [
         "sélectionnez un fichier."
+      ],
+      "Select file": [
+        "Sélectionner un fichier"
       ],
       "Send code": [
         "Envoyer le code"
@@ -3151,7 +3151,7 @@
       "Error connecting to the Bitcoin API.": [
         "Une erreur s'est produite lors de la connexion à l'API Bitcoin."
       ],
-      "Error publishing changes.": [
+      "Error publishing changes": [
         "Une erreur est survenue lors de la publication des modifications."
       ],
       "Failed to load the STL preview": [
@@ -4521,6 +4521,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Au moins ${ BETTER_PASSWORD_LENGTH } caractères"
       ],
+      "At least one application must be active": [
+        "Au moins une application doit être active."
+      ],
       "Attention required": [
         "Attention requise"
       ],
@@ -5841,11 +5844,11 @@
       "User activated": [
         "L'utilisateur a été activé."
       ],
-      "username": [
-        "nom d'utilisateur"
-      ],
       "Username": [
         "Nom d'utilisateur"
+      ],
+      "username": [
+        "nom d'utilisateur"
       ],
       "Users": [
         "Utilisateurs"
@@ -7448,6 +7451,20 @@
         "Vitesse VPN moyenne"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Souhaitez-vous passer à ${ downgradedPlanName } "
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Découvrir tous les abonnements ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "À partir de ${ price }"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Supprimer le compte"
@@ -7468,20 +7485,6 @@
         "Conserver le compte"
       ],
       "Switch plan": [
-        "Changer d'abonnement"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Souhaitez-vous passer à ${ downgradedPlanName } "
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Découvrir tous les abonnements ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "À partir de ${ price }"
-      ],
-      "Upgrade": [
         "Changer d'abonnement"
       ]
     },
@@ -8077,17 +8080,6 @@
         "Accédez à tous les produits et toutes les fonctions premium de ${ BRAND_NAME } pour seulement ${ priceLine } avec possibilité de résiliation à tout moment."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Essai de ${ shortPlan.title }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Utilisation de votre compte"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -8100,6 +8092,17 @@
       ],
       "Switch plans?": [
         "Changer d'abonnement ?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Essai de ${ shortPlan.title }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Utilisation de votre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -8614,17 +8617,6 @@
         "Bienvenue dans ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Tout le monde"
-      ],
-      "Group members": [
-        "Membres du groupe"
-      ],
-      "No one": [
-        "Personne"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "${ defaultLabel } autorisé"
@@ -8694,6 +8686,17 @@
       ],
       "The whole organization": [
         "Toute l'organisation"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tout le monde"
+      ],
+      "Group members": [
+        "Membres du groupe"
+      ],
+      "No one": [
+        "Personne"
       ]
     },
     "Organization capacity error": {
@@ -11005,6 +11008,9 @@
       "Locale updated": [
         "La langue a été mise à jour."
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Une politique a été créée. Ceci ne prendra effet qu'une fois les modifications publiées."
+      ],
       "Organization activated": [
         "L'organisation a été activée."
       ],
@@ -11034,6 +11040,12 @@
       ],
       "Phone number updated": [
         "Le numéro de téléphone a été mis à jour."
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "La politique a été modifiée. Ceci ne prendra effet qu'une fois les modifications publiées."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "La politique a été supprimée. Ceci ne prendra effet qu'une fois les modifications publiées."
       ],
       "Preference saved": [
         "La préférence a été enregistrée."
@@ -11395,10 +11407,10 @@
       "Card verification": [
         "Vérification de la carte"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresse catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresse catch-all"
       ],
       "Change login password": [

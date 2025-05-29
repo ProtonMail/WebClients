@@ -403,10 +403,10 @@
       "Move to another vault": [
         "Przenieś do innego sejfu"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Przenieś do kosza"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Przenieś do kosza"
       ],
       "Multiple select": [
@@ -2018,7 +2018,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -3079,7 +3082,7 @@
         "Przekaż do"
       ],
       "Free": [
-        "Free"
+        "Za darmo"
       ],
       "Free forever": [
         "Darmowy na zawsze"
@@ -3417,6 +3420,9 @@
       "Points Balance": [
         "Saldo punktów"
       ],
+      "Port": [
+        "Port"
+      ],
       "Prefix": [
         "Przedrostek"
       ],
@@ -3552,10 +3558,10 @@
       "Sign in faster with ${ PASS_APP_NAME }": [
         "Szybsze logowanie z ${ PASS_APP_NAME }"
       ],
-      "Social Security": [
+      "Social security": [
         "Numer ubezpieczenia społecznego"
       ],
-      "Social security": [
+      "Social Security": [
         "Numer ubezpieczenia społecznego"
       ],
       "Social security number": [

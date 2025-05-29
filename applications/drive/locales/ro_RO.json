@@ -5656,13 +5656,19 @@
       "Shared by ": [
         "Partajat de "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Partajat de ${ rootLink.signatureEmail }"
+      "Shared by ${ sharedBy }": [
+        "Partajat de ${ sharedBy }"
+      ],
+      "Shared by you": [
+        "Partajate de mine"
       ],
       "Shared link not found": [
         "legătură web partajată negăsită"
       ],
       "Shared with me": [
+        "Partajate cu mine"
+      ],
+      "Shared with you": [
         "Partajate cu mine"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
@@ -7583,6 +7589,17 @@
         "Viteză VPN medie"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planuri începând de la ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ștergere cont"
@@ -7604,17 +7621,6 @@
       ],
       "Switch plan": [
         "Schimbare plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planuri începând de la ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Modificare"
       ]
     },
     "new_plans: feature": {
@@ -8964,10 +8970,10 @@
       "Invite members": [
         "Invitați membri"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Poate mai târziu"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Poate mai târziu"
       ],
       "Select theme": [

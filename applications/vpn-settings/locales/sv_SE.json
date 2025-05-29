@@ -576,11 +576,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "refresh the page": [
-        "uppdatera sidan"
-      ],
       "Refresh the page": [
         "Uppdatera sidan"
+      ],
+      "refresh the page": [
+        "uppdatera sidan"
       ],
       "Remove": [
         "Ta bort"
@@ -699,11 +699,11 @@
       "Select country ${ country }": [
         "Välj land ${ country }"
       ],
-      "Select file": [
-        "Välj fil"
-      ],
       "select file": [
         "välj fil"
+      ],
+      "Select file": [
+        "Välj fil"
       ],
       "Send code": [
         "Skicka kod"
@@ -1627,6 +1627,10 @@
       ]
     },
     "CountriesStep:Info": {
+      "${ selectedCitiesCount } cities selected": [
+        "${ selectedCitiesCount } stad vald",
+        "${ selectedCitiesCount } städer valda"
+      ],
       "${ selectedCountriesCount } selected": [
         "${ selectedCountriesCount } valt",
         "${ selectedCountriesCount } valda"
@@ -3007,8 +3011,8 @@
       "Error connecting to the Bitcoin API.": [
         "Fel vid anslutning till Bitcoin API."
       ],
-      "Error publishing changes.": [
-        "Fel vid publicering av ändringar."
+      "Error publishing changes": [
+        "Fel vid publicering av ändringar"
       ],
       "Failed to load the STL preview": [
         "Misslyckades att ladda STL-förhandsgranskningen"
@@ -4374,6 +4378,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Minst ${ BETTER_PASSWORD_LENGTH } tecken"
       ],
+      "At least one application must be active": [
+        "Minst en applikation måste vara aktiv"
+      ],
       "Attention required": [
         "Uppmärksamhet krävs"
       ],
@@ -5068,6 +5075,9 @@
       "No results found": [
         "Inga resultat hittades"
       ],
+      "No single sign-on": [
+        "Ingen enkel inloggning"
+      ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
       ],
@@ -5520,6 +5530,9 @@
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Detta meddelande når inte supportteamet, om du har ett problem med vår tjänst eller behöver ytterligare åtgärder från vår sida ${ supportLink }."
       ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Denna tjänst är inte tillgänglig för användare som loggar in med enkel inloggning."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denna användare ansvarar för närvarande för betalningar för din organisation. Genom att degradera denna medlem, kommer du bli ansvarig för betalningar för din organisation."
       ],
@@ -5691,11 +5704,11 @@
       "User activated": [
         "Användare aktiverad"
       ],
-      "username": [
-        "användarnamn"
-      ],
       "Username": [
         "Användarnamn"
+      ],
+      "username": [
+        "användarnamn"
       ],
       "Users": [
         "Användare"
@@ -5780,6 +5793,9 @@
       ],
       "We recommend using your recovery phrase instead.": [
         "Vi rekommenderar att du använder en återställningsfras istället."
+      ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "Vi lagrade en säkerhetskopia i den här webbläsaren eftersom du har tillåtit dataåterställning på den här ${ deviceLink }. Om säkerhetskopiera filen är giltig, kommer du omedelbart att återfå fullständig eller partiell åtkomst till dina krypterade data."
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi använder 3-D Secure för att skydda dina betalningar"
@@ -5886,6 +5902,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigera detta en gång för att säkerställa korrekt e-postadress för verifiering."
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "Du kan tillämpa lösenordsreglerna som medlemmar i din organisation använder när de skapar eller återställer lösenordet till sitt ${ BRAND_NAME }-konto."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalender. Ta bort delade kalenderlänkar och alla ${ BRAND_NAME }-användare som du delade dina kalendrar med innan du avslutar din ${ MAIL_SHORT_APP_NAME }-prenumeration.",
@@ -7288,6 +7307,20 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -7309,20 +7342,6 @@
       ],
       "Switch plan": [
         "Byt paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
       ]
     },
     "new_plans: feature": {
@@ -7913,17 +7932,6 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -7936,6 +7944,17 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
       ]
     },
     "new_plans: tooltip": {
@@ -8450,17 +8469,6 @@
         "Välkommen till ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Alla"
-      ],
-      "Group members": [
-        "Gruppmedlemmar"
-      ],
-      "No one": [
-        "Ingen"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Tillåtet ${ defaultLabel }"
@@ -8551,6 +8559,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Alla"
+      ],
+      "Group members": [
+        "Gruppmedlemmar"
+      ],
+      "No one": [
+        "Ingen"
       ]
     },
     "Organization capacity error": {
@@ -9830,6 +9849,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Specialerbjudandet gäller de första 2 åren."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Din prenumeration kommer att förnyas med samma pris varje år."
       ]
@@ -9909,6 +9931,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Ordinarie pris ${ amount } för 30 månader"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Specialerbjudandet gäller de första 2 åren"
       ]
     },
     "specialoffer: Title": {
@@ -10856,6 +10881,9 @@
       "Locale updated": [
         "Språk uppdaterat"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "En ny policy har skapats. Den träder i kraft först när du publicerar ändringarna."
+      ],
       "Organization activated": [
         "Organisation aktiverad"
       ],
@@ -11246,10 +11274,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
       "Change login password": [

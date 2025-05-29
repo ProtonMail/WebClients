@@ -576,11 +576,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Refresh the page": [
         "Muat ulang halaman"
+      ],
+      "refresh the page": [
+        "muat ulang halaman"
       ],
       "Remove": [
         "Hapus"
@@ -699,11 +699,11 @@
       "Select country ${ country }": [
         "Pilih negara ${ country }"
       ],
-      "Select file": [
-        "Pilih berkas"
-      ],
       "select file": [
         "pilih berkas"
+      ],
+      "Select file": [
+        "Pilih berkas"
       ],
       "Send code": [
         "Kirim kode"
@@ -2998,9 +2998,6 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Terdapat kesalahan dalam menghubungkan ke API Bitcoin."
-      ],
-      "Error publishing changes.": [
-        "Terdapat kesalahan dalam menerbitkan perubahan."
       ],
       "Failed to load the STL preview": [
         "Pratinjau STL gagal dimuat"
@@ -5637,11 +5634,11 @@
       "User activated": [
         "Pengguna diaktifkan"
       ],
-      "username": [
-        "nama pengguna"
-      ],
       "Username": [
         "Nama pengguna"
+      ],
+      "username": [
+        "nama pengguna"
       ],
       "Users": [
         "Pengguna"
@@ -7225,6 +7222,20 @@
         "Kecepatan VPN sedang"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Hapus akun"
@@ -7246,20 +7257,6 @@
       ],
       "Switch plan": [
         "Ganti paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
       ]
     },
     "new_plans: feature": {
@@ -7829,17 +7826,6 @@
         "Dapatkan seluruh produk dan fitur premium ${ BRAND_NAME } seharga hanya ${ priceLine }. Batalkan kapan saja."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -7852,6 +7838,17 @@
       ],
       "Switch plans?": [
         "Ubah paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -8364,17 +8361,6 @@
         "Selamat datang di ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Semua orang"
-      ],
-      "Group members": [
-        "Anggota grup"
-      ],
-      "No one": [
-        "Tidak seorang pun"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Diizinkan ${ defaultLabel }"
@@ -8444,6 +8430,17 @@
       ],
       "The whole organization": [
         "Seluruh organisasi"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Semua orang"
+      ],
+      "Group members": [
+        "Anggota grup"
+      ],
+      "No one": [
+        "Tidak seorang pun"
       ]
     },
     "Organization capacity error": {
@@ -11084,11 +11081,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-All address": [
-        "Alamat Catch-All"
-      ],
       "Catch-all address": [
         "Alamat catch-all"
+      ],
+      "Catch-All address": [
+        "Alamat Catch-All"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"

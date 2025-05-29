@@ -576,11 +576,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "refresh the page": [
-        "refresca la pàgina"
-      ],
       "Refresh the page": [
         "Refresca la pàgina"
+      ],
+      "refresh the page": [
+        "refresca la pàgina"
       ],
       "Remove": [
         "Esborra"
@@ -699,11 +699,11 @@
       "Select country ${ country }": [
         "Seleccioneu el país ${ country }"
       ],
-      "Select file": [
-        "Selecciona un fitxer"
-      ],
       "select file": [
         "selecciona un fitxer"
+      ],
+      "Select file": [
+        "Selecciona un fitxer"
       ],
       "Send code": [
         "Enviar codi"
@@ -3011,7 +3011,7 @@
       "Error connecting to the Bitcoin API.": [
         "Error al connectar a l'API de Bitcoin."
       ],
-      "Error publishing changes.": [
+      "Error publishing changes": [
         "S'ha produït un error en publicar els canvis."
       ],
       "Failed to load the STL preview": [
@@ -4381,6 +4381,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Almenys ${ BETTER_PASSWORD_LENGTH } caràcters"
       ],
+      "At least one application must be active": [
+        "Almenys una aplicació ha d'estar activa."
+      ],
       "Attention required": [
         "Es requereix la vostra atenció"
       ],
@@ -5701,11 +5704,11 @@
       "User activated": [
         "S'ha activat l'usuari."
       ],
-      "username": [
-        "nom d'usuari"
-      ],
       "Username": [
         "Nom d'usuari"
+      ],
+      "username": [
+        "nom d'usuari"
       ],
       "Users": [
         "Usuaris"
@@ -7308,6 +7311,20 @@
         "Velocitat VPN mitjana"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Pasar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora tots els plans de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Suprimeix el compte"
@@ -7329,20 +7346,6 @@
       ],
       "Switch plan": [
         "Canvia de pla"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Pasar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora tots els plans de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "Upgrade": [
-        "Millora"
       ]
     },
     "new_plans: feature": {
@@ -7937,17 +7940,6 @@
         "Desbloquegeu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceLine }. Cancel·leu-ho en qualsevol moment."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -7960,6 +7952,17 @@
       ],
       "Switch plans?": [
         "Voleu canviar de pla?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -8474,17 +8477,6 @@
         "Us donem la benvinguda a ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Tothom"
-      ],
-      "Group members": [
-        "Membres del grup"
-      ],
-      "No one": [
-        "Ningú"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "${ defaultLabel } permès"
@@ -8554,6 +8546,17 @@
       ],
       "The whole organization": [
         "Tota l'organització"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tothom"
+      ],
+      "Group members": [
+        "Membres del grup"
+      ],
+      "No one": [
+        "Ningú"
       ]
     },
     "Organization capacity error": {
@@ -10865,6 +10868,9 @@
       "Locale updated": [
         "S'ha actualitzat l'idioma"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "S'ha creat una política. Només tindrà efecte després de publicar els canvis."
+      ],
       "Organization activated": [
         "Organització activada"
       ],
@@ -10894,6 +10900,12 @@
       ],
       "Phone number updated": [
         "Número de telèfon s'ha actualitzat"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "S'ha canviat la política. Només tindrà efecte després de publicar els canvis."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "S'ha eliminat la política. Només tindrà efecte després de publicar els canvis."
       ],
       "Preference saved": [
         "S'ha desat la preferència."
@@ -11255,10 +11267,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [

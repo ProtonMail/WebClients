@@ -438,6 +438,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
       ],
+      "Download now": [
+        "Descărcare"
+      ],
       "Download the desktop app": [
         "Descărcați aplicația pentru desktop"
       ],
@@ -683,6 +686,9 @@
       ],
       "Import from Outlook": [
         "Importare din Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Actualizare importantă disponibilă. Pentru a continua să utilizați aplicația trebuie s-o actualizați. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Dimineața"
@@ -1172,10 +1178,10 @@
       "Select ${ planTitle }": [
         "Selectare ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Selectare toate"
       ],
-      "Select All": [
+      "Select all": [
         "Selectare toate"
       ],
       "Select all messages": [
@@ -1388,11 +1394,6 @@
       "Trust": [
         "Aprobare"
       ],
-      "Trust key": [
-        "Cheie de încredere",
-        "Chei de încredere",
-        "Chei de încredere"
-      ],
       "Trust public key": [
         "Aprobare cheie publică"
       ],
@@ -1456,10 +1457,10 @@
       "Upgrade": [
         "Modificare"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Modificare"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Modificare"
       ],
       "Upload and share files": [
@@ -7039,7 +7040,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"

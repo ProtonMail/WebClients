@@ -5430,9 +5430,6 @@
       "Shared by ": [
         "分享者 "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "由 ${ rootLink.signatureEmail } 共享"
-      ],
       "Shared link not found": [
         "找不到共享链接"
       ],
@@ -7308,6 +7305,17 @@
         "VPN 速度一般"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "以 ${ priceDrivePlus } 价格开始计划"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "删除账户"
@@ -7329,17 +7337,6 @@
       ],
       "Switch plan": [
         "切换计划"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "以 ${ priceDrivePlus } 价格开始计划"
-      ],
-      "Upgrade": [
-        "升级账户"
       ]
     },
     "new_plans: feature": {
@@ -8589,10 +8586,10 @@
       "Invite members": [
         "邀请成员"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "以后再说"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "以后再说"
       ],
       "Select theme": [

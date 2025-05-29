@@ -1150,11 +1150,11 @@
       "Select country ${ country }": [
         "Vyberte krajinu ${ country }"
       ],
-      "Select file": [
-        "Vyberte súbor"
-      ],
       "select file": [
         "vybrať súbor"
+      ],
+      "Select file": [
+        "Vyberte súbor"
       ],
       "Select files": [
         "Vybrať súbory"
@@ -4780,11 +4780,11 @@
       "Forward to": [
         "Preposlať na"
       ],
-      "or": [
-        "alebo"
-      ],
       "Or": [
         "Alebo"
+      ],
+      "or": [
+        "alebo"
       ],
       "With attachment": [
         "S prílohou"
@@ -5038,9 +5038,6 @@
       ],
       "Error in one of the conditions": [
         "Chyba v jednej z podmienok"
-      ],
-      "Error publishing changes.": [
-        "Chyba pri publikovaní zmien."
       ],
       "Expired": [
         "Platnosť vypršala"
@@ -7866,6 +7863,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Najmenej ${ BETTER_PASSWORD_LENGTH } znakov"
       ],
+      "At least one application must be active": [
+        "Aspoň jedna aplikácia musí byť aktívna"
+      ],
       "Attention required": [
         "Vyžaduje sa pozornosť"
       ],
@@ -10014,11 +10014,11 @@
       "User activated": [
         "Používateľ aktivovaný"
       ],
-      "username": [
-        "používateľské meno"
-      ],
       "Username": [
         "Používateľské meno"
+      ],
+      "username": [
+        "používateľské meno"
       ],
       "Users": [
         "Používatelia"
@@ -12590,11 +12590,11 @@
       "perform a password reset from your active session": [
         "resetovať heslo z Vášho aktuálneho prihlásenia"
       ],
-      "Privacy policy": [
-        "Ochrana osobných údajov"
-      ],
       "privacy policy": [
         "zásadami ochrany osobných údajov"
+      ],
+      "Privacy policy": [
+        "Ochrana osobných údajov"
       ],
       "Reactivate now": [
         "Znovu aktivovať teraz"
@@ -14005,14 +14005,6 @@
         "Odomknite všetky prémiové produkty a funkcie ${ BRAND_NAME } len za ${ priceLine }. Zrušiť môžete kedykoľvek."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Skúšobná verzia ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využitie vášho účtu"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vymazať účet?"
@@ -14031,6 +14023,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Odomknite prémiové funkcie navýšením účtu"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Skúšobná verzia ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využitie vášho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -14685,17 +14685,6 @@
         "Počítač"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Všetci"
-      ],
-      "Group members": [
-        "Členovia skupiny"
-      ],
-      "No one": [
-        "Nikto"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10. deň v mesiaci"
@@ -14930,6 +14919,17 @@
       ],
       "Trash": [
         "Kôš"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Všetci"
+      ],
+      "Group members": [
+        "Členovia skupiny"
+      ],
+      "No one": [
+        "Nikto"
       ]
     },
     "Option delay send seconds": {
@@ -19129,10 +19129,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
       "Change login password": [

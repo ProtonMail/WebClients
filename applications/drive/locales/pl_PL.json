@@ -5877,9 +5877,6 @@
       "Shared by ": [
         "Udostępnione przez "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Udostępnione przez ${ rootLink.signatureEmail }"
-      ],
       "Shared link not found": [
         "Udostępniony link nie został znaleziony"
       ],
@@ -7881,6 +7878,17 @@
         "Umiarkowana prędkość VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Od ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Usuń konto"
@@ -7902,17 +7910,6 @@
       ],
       "Switch plan": [
         "Zmień plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Od ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
       ]
     },
     "new_plans: feature": {
@@ -9306,10 +9303,10 @@
       "Invite members": [
         "Zaproś użytkowników"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Może później"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Może później"
       ],
       "Select theme": [

@@ -403,11 +403,11 @@
       "Move to another vault": [
         "Mover para outro cofre"
       ],
-      "Move to trash": [
-        "Mover para a lixeira"
-      ],
       "Move to Trash": [
         "Mover para a Lixeira"
+      ],
+      "Move to trash": [
+        "Mover para a lixeira"
       ],
       "Multiple select": [
         "Seleção múltipla"
@@ -1967,6 +1967,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
+      ],
       "Moving items": [
         "Movendo itens"
       ],
@@ -2733,6 +2737,9 @@
       "API Credential": [
         "Credencial de API"
       ],
+      "API Key": [
+        "Chave API"
+      ],
       "Application logs": [
         "Registros do aplicativo"
       ],
@@ -2870,6 +2877,9 @@
       ],
       "Database": [
         "Base de dados"
+      ],
+      "Database Type": [
+        "Tipo do banco de dados"
       ],
       "Date": [
         "Data"
@@ -3036,6 +3046,12 @@
       "Holder Name": [
         "Nome do titular"
       ],
+      "Host": [
+        "Host"
+      ],
+      "Hostname": [
+        "Hostname"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Como desbloquear o ${ PASS_SHORT_APP_NAME }"
       ],
@@ -3093,6 +3109,9 @@
       "Invitations": [
         "Convites"
       ],
+      "IP Address": [
+        "Endereço IP"
+      ],
       "Issuing Authority": [
         "Autoridade emissora"
       ],
@@ -3137,6 +3156,9 @@
       ],
       "License": [
         "Licença"
+      ],
+      "License Key": [
+        "Chave de licença"
       ],
       "License number": [
         "Número da licença"
@@ -3267,8 +3289,14 @@
       "Open-source password manager for effortless protection.": [
         "Gerenciador de senhas de código aberto para proteção sem esforço."
       ],
+      "Operating System": [
+        "Sistema operacional"
+      ],
       "Organization": [
         "Organização"
+      ],
+      "Owner": [
+        "Proprietário"
       ],
       "Passkey": [
         "Chave de acesso"
@@ -3293,6 +3321,9 @@
       ],
       "Password history": [
         "Histórico de senhas"
+      ],
+      "Permissions": [
+        "Permissões"
       ],
       "Personal": [
         "Pessoal"
@@ -3324,6 +3355,9 @@
       "Points Balance": [
         "Saldo de pontos"
       ],
+      "Port": [
+        "Porta"
+      ],
       "Prefix": [
         "Prefixo"
       ],
@@ -3338,6 +3372,9 @@
       ],
       "Private Key": [
         "Chave privada"
+      ],
+      "Product": [
+        "Produto"
       ],
       "Program Name": [
         "Nome do programa"
@@ -3383,6 +3420,9 @@
       ],
       "Second password": [
         "Segunda senha"
+      ],
+      "Secret": [
+        "Segredo"
       ],
       "Secure links": [
         "Links seguros"
@@ -3459,11 +3499,11 @@
       "Sign in faster with ${ PASS_APP_NAME }": [
         "Faça login mais rápido com ${ PASS_APP_NAME }"
       ],
-      "Social Security": [
-        "Previdência social"
-      ],
       "Social security": [
         "Número de Segurança Social"
+      ],
+      "Social Security": [
+        "Previdência social"
       ],
       "Social security number": [
         "CPF"
