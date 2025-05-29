@@ -36,12 +36,12 @@ export type DomainFormValues = { domain: string };
 
 export type AliasContactValues = { name: string };
 export type AliasCreateContactValues = { email: string };
-export type NewAliasFormValues = BaseItemValues & AliasFormValues;
+export type NewAliasFormValues = BaseItemValues & AliasFormValues & ExtraFieldGroupValues;
 export type EditAliasFormValues = BaseItemValues &
     Pick<AliasFormValues, 'mailboxes'> & {
         displayName: string;
         slNote: string;
-    };
+    } & ExtraFieldGroupValues;
 
 export type IdentityValues = ItemContent<'identity'>;
 export type IdentityItemFormValues = { shareId: string } & BaseItemValues & IdentityValues;
