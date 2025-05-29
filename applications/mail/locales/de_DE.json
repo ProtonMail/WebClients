@@ -151,6 +151,9 @@
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
+      "Authenticate": [
+        "Authentifizieren"
+      ],
       "Auto-delete spam and trash": [
         "Spam und Papierkorb automatisch löschen"
       ],
@@ -432,6 +435,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-Apps herunterladen"
       ],
+      "Download now": [
+        "Jetzt herunterladen"
+      ],
       "Download the desktop app": [
         "Desktop-App herunterladen"
       ],
@@ -470,6 +476,9 @@
       ],
       "Email settings": [
         "E-Mail-Einstellungen"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Enable": [
         "Aktivieren"
@@ -536,6 +545,9 @@
       ],
       "Font": [
         "Schriftart"
+      ],
+      "Forgot password?": [
+        "Passwort vergessen?"
       ],
       "Formalize": [
         "Formalisieren"
@@ -671,6 +683,9 @@
       ],
       "Import from Outlook": [
         "Von Outlook importieren"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Ein wichtiges Update ist verfügbar. Um die App weiterhin zu nutzen, aktualisiere sie bitte auf die neuste Version. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Morgens"
@@ -1159,10 +1174,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } auswählen"
       ],
-      "Select all": [
+      "Select All": [
         "Alle auswählen"
       ],
-      "Select All": [
+      "Select all": [
         "Alle auswählen"
       ],
       "Select all messages": [
@@ -1375,10 +1390,6 @@
       "Trust": [
         "Vertrauen"
       ],
-      "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüssel vertrauen"
-      ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
       ],
@@ -1442,10 +1453,10 @@
       "Upgrade": [
         "Wechseln"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Jetzt upgraden"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Jetzt upgraden"
       ],
       "Upload and share files": [
@@ -1472,8 +1483,14 @@
       "Use a different payment method": [
         "Eine andere Zahlungsmethode verwenden"
       ],
+      "Use authentication code": [
+        "Authentifizierungscode verwenden"
+      ],
       "Use for sending": [
         "Für den Versand verwenden"
+      ],
+      "Use recovery code": [
+        "Wiederherstellungsschlüssel verwenden"
       ],
       "Use this": [
         "Dies verwenden"
@@ -5248,6 +5265,24 @@
         "Unbegrenzte hide-my-email-Aliasse"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Bei der Authentifizierung mit Ihrem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte erneut versuchen."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Stecke einen Sicherheitsschlüssel ein, der mit deinem ${ BRAND_NAME }-Konto verknüpft ist."
+      ],
+      "Security key": [
+        "Sicherheitsschlüssel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sicherheitsschlüssel"
+      ]
+    },
     "file size format": {
       "byte": [
         "Byte",
@@ -6768,8 +6803,17 @@
       "Drop to import": [
         "Ablegen zum Importieren"
       ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Aufgrund der Konfiguration des Empfängers kann diese Nachricht nicht mit einem Ablaufdatum an ${ firstRecipients } gesendet werden."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Aufgrund der Konfiguration des Empfängers kann diese Nachricht nicht mit einem Ablaufdatum versendet werden."
+      ],
       "Duplicate key updated": [
         "Zweitschlüssel aktualisiert"
+      ],
+      "Each code can only be used once": [
+        "Jeder Code kann nur einmal verwendet werden"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Verwalte Newsletter und Verteilerlisten und kündige Abonnements ganz einfach."
@@ -6826,11 +6870,20 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Genieße ein schnelleres, konzentriertes E-Mail-Erlebnis mit der Desktop-App."
       ],
+      "Enter the code from your authenticator app": [
+        "Code aus deiner Authentifizierungs-App ein eingeben"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Bestätigungscode eingeben. Ziffer ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Eigenes Passwort (als Organisationsadministrator) eingeben."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Geschätzte verbleibende Zeit: ${ estimatedMinutes } Minute",
@@ -7014,7 +7067,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -7108,6 +7162,9 @@
       ],
       "Low Priority": [
         "Niedrige Priorität"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME } als Standard-E-Mail-Anwendung festlegen."
       ],
       "Manage your folders": [
         "Ordner verwalten"
@@ -7342,7 +7399,7 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleibt.",
-        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleiben."
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleibt."
       ],
       "Please open the document to view it.": [
         "Bitte öffne das Dokument, um es anzusehen."
@@ -8106,6 +8163,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Wenn du für ${ senderName } vertrauenswürdige Schlüssel aktiviert hast, wurden die öffentlichen Schlüssel zu den Kontaktdaten hinzugefügt."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
+      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Wenn du dich für einen Newsletter anmeldest, verwende einen Alias anstelle deiner E-Mail-Adresse. Deine Identität bleibt verborgen, und du kannst den Alias jederzeit deaktivieren."
       ],
@@ -8748,6 +8808,9 @@
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
       ],
+      "Authenticator app": [
+        "Authentifizierungs-App"
+      ],
       "BCC": [
         "BCC"
       ],
@@ -9294,6 +9357,9 @@
       ],
       "Your location": [
         "Dein Standort"
+      ],
+      "Your password (admin)": [
+        "Dein Passwort (Admin)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13875,6 +13941,9 @@
       ],
       "Enter 2FA code": [
         "2FA Code eingeben"
+      ],
+      "Enter your password": [
+        "Passwort eingeben"
       ],
       "Error": [
         "Fehler"

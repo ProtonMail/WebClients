@@ -307,7 +307,7 @@
         "Kopírovat adresy"
       ],
       "Copy alias “${ name }”": [
-        "Kopírovat alias “${ name }”"
+        "Kopírovat alias \"${ name }\""
       ],
       "Copy email to clipboard": [
         "Zkopírovat e-mail do schránky"
@@ -440,6 +440,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Stáhnout aplikace ${ DRIVE_APP_NAME }"
+      ],
+      "Download now": [
+        "Stáhnout nyní"
       ],
       "Download the desktop app": [
         "Stáhnout desktopovou aplikaci"
@@ -686,6 +689,9 @@
       ],
       "Import from Outlook": [
         "Importovat z Outlooku"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "K dispozici je důležitá aktualizace. Chcete-li aplikaci nadále používat, aktualizujte ji na nejnovější verzi. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Ráno"
@@ -1176,10 +1182,10 @@
       "Select ${ planTitle }": [
         "Vybrat ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Vybrat vše"
       ],
-      "Select All": [
+      "Select all": [
         "Vybrat vše"
       ],
       "Select all messages": [
@@ -1392,12 +1398,6 @@
       "Trust": [
         "Důvěřovat"
       ],
-      "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
-      ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
       ],
@@ -1461,10 +1461,10 @@
       "Upgrade": [
         "Přejít na placený tarif"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Navýšit nyní"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Navýšit nyní"
       ],
       "Upload and share files": [
@@ -7153,7 +7153,10 @@
         "Inicializuji..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"

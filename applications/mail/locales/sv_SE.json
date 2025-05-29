@@ -435,6 +435,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Ladda ner ${ DRIVE_APP_NAME } appen"
       ],
+      "Download now": [
+        "Ladda ner nu"
+      ],
       "Download the desktop app": [
         "Ladda ner appen för stationär dator"
       ],
@@ -680,6 +683,9 @@
       ],
       "Import from Outlook": [
         "Importera från Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Viktig uppdatering tillgänglig. För att fortsätta använda appen, uppdatera till den senaste versionen. ${ downloadUpdate }"
       ],
       "In the morning": [
         "På morgonen"
@@ -1168,11 +1174,11 @@
       "Select ${ planTitle }": [
         "Välj ${ planTitle }"
       ],
-      "Select all": [
-        "Markera alla"
-      ],
       "Select All": [
         "Välj alla"
+      ],
+      "Select all": [
+        "Markera alla"
       ],
       "Select all messages": [
         "Markera alla meddelanden"
@@ -1384,10 +1390,6 @@
       "Trust": [
         "Lita på"
       ],
-      "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
-      ],
       "Trust public key": [
         "Lita på offentlig nyckel"
       ],
@@ -1451,10 +1453,10 @@
       "Upgrade": [
         "Uppgradera"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Uppgradera nu"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Uppgradera nu"
       ],
       "Upload and share files": [
@@ -6142,6 +6144,10 @@
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
       ],
+      "${ subscription.ReceivedMessages.Last30Days } email last month": [
+        "${ subscription.ReceivedMessages.Last30Days } e-postmeddelande förra månaden",
+        "${ subscription.ReceivedMessages.Last30Days } e-postmeddelanden förra månaden"
+      ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } oläst",
         "${ subscription.UnreadMessageCount } olästa"
@@ -6161,6 +6167,10 @@
       "${ trackersCount } tracker blocked": [
         "${ trackersCount } spårare blockerad",
         "${ trackersCount } spårare blockerade"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } nyhetsbrevsprenumeration",
+        "${ unreadCount } nyhetsbrevsprenumerationer"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } schemalagt meddelande",
@@ -6653,11 +6663,20 @@
       "Drop to import": [
         "Släpp för att importera"
       ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "På grund av mottagarens konfiguration kan det här meddelandet inte skickas med ett utgångsdatum till ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "På grund av mottagarens konfiguration kan det här meddelandet inte skickas med ett utgångsdatum."
+      ],
       "Duplicate key updated": [
         "Duplicerad nyckel uppdaterad"
       ],
       "Each code can only be used once": [
         "Varje kod kan endast användas en gång"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Smidigt hantera och avsluta prenumerationer på nyhetsbrev och e-postlistor."
       ],
       "Edit email address": [
         "Redigera e-postadress"
@@ -6908,7 +6927,8 @@
         "Initierar…"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8283,6 +8303,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Din prenumeration kommer förnyas automatiskt den ${ renewalTime }."
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Du är bara några klick bort från en skräpfri inkorg"
       ]
     },
     "info": {
@@ -10506,11 +10529,6 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -10523,6 +10541,11 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -12263,6 +12286,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Specialerbjudandet gäller de första 2 åren."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Din prenumeration kommer att förnyas med samma pris varje år."
       ]
@@ -12342,6 +12368,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Ordinarie pris ${ amount } för 30 månader"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Specialerbjudandet gäller de första 2 åren"
       ]
     },
     "specialoffer: Title": {
@@ -14005,6 +14034,9 @@
       "Newsletters": [
         "Nyhetsbrev"
       ],
+      "Newsletters view": [
+        "Nyhetsbrevsvy"
+      ],
       "Next conversation": [
         "Nästa konversation"
       ],
@@ -14028,6 +14060,9 @@
       ],
       "No trackers found": [
         "Inga spårare hittades"
+      ],
+      "No unsubscribed mail subscriptions": [
+        "Inga avslutade e-postprenumerationer"
       ],
       "No-reply address detected": [
         "Ingen svarsadress upptäcktes"

@@ -408,6 +408,9 @@
       "Download ${ attachmentName }": [
         "下載 ${ attachmentName }"
       ],
+      "Download now": [
+        "现在下载"
+      ],
       "Download the desktop app": [
         "下載桌面應用程式"
       ],
@@ -632,6 +635,9 @@
       ],
       "Import from Outlook": [
         "從 Outlook 匯入"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "重大更新可供下載。如要繼續使用應用程式，請更新至最新版本。 ${ downloadUpdate }"
       ],
       "In the morning": [
         "早上"
@@ -1095,11 +1101,11 @@
       "Select ${ planTitle }": [
         "選擇方案 ${ planTitle }"
       ],
-      "Select all": [
-        "全選"
-      ],
       "Select All": [
         "選擇全部"
+      ],
+      "Select all": [
+        "全選"
       ],
       "Select all messages": [
         "選取所有郵件"
@@ -1302,9 +1308,6 @@
       "Trust": [
         "信任"
       ],
-      "Trust key": [
-        "信任金鑰"
-      ],
       "Trust public key": [
         "信任公開金鑰"
       ],
@@ -1368,11 +1371,11 @@
       "Upgrade": [
         "升級"
       ],
-      "Upgrade now": [
-        "立即升級"
-      ],
       "Upgrade Now": [
         "請升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
       ],
       "Upload picture": [
         "上載圖像"
@@ -6495,7 +6498,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖像"
+        "插入圖片"
       ],
       "Insert link": [
         "插入連結"
