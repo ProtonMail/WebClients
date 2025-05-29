@@ -809,10 +809,10 @@
       "Upgrade": [
         "Uppgradera"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Uppgradera nu"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Uppgradera nu"
       ],
       "Upload and share files": [
@@ -7634,11 +7634,6 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -7651,6 +7646,11 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -9214,6 +9214,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Specialerbjudandet gäller de första 2 åren."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Din prenumeration kommer att förnyas med samma pris varje år."
       ]
@@ -9293,6 +9296,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Ordinarie pris ${ amount } för 30 månader"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Specialerbjudandet gäller de första 2 åren"
       ]
     },
     "specialoffer: Title": {
@@ -10553,6 +10559,9 @@
       ],
       "Network error": [
         "Nätverksfel"
+      ],
+      "Newsletters view": [
+        "Nyhetsbrevsvy"
       ],
       "Night theme": [
         "Nattema"
