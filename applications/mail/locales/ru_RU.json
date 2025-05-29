@@ -438,6 +438,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Скачать приложения ${ DRIVE_APP_NAME }"
       ],
+      "Download now": [
+        "Загрузить"
+      ],
       "Download the desktop app": [
         "Скачать приложение для компьютера"
       ],
@@ -683,6 +686,9 @@
       ],
       "Import from Outlook": [
         "Импортировать из Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Доступно важное обновление. Для продолжения использования приложения, пожалуйста, обновите его до последней версии. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Утром"
@@ -1173,11 +1179,11 @@
       "Select ${ planTitle }": [
         "Выбрать ${ planTitle }"
       ],
-      "Select all": [
-        "Выделить все"
-      ],
       "Select All": [
         "Выбрать все"
+      ],
+      "Select all": [
+        "Выделить все"
       ],
       "Select all messages": [
         "Выбрать все сообщения"
@@ -1389,12 +1395,6 @@
       "Trust": [
         "Доверять"
       ],
-      "Trust key": [
-        "Доверять ключу",
-        "Доверять ключам",
-        "Доверять ключам",
-        "Доверять ключам"
-      ],
       "Trust public key": [
         "Доверять открытым ключам"
       ],
@@ -1458,10 +1458,10 @@
       "Upgrade": [
         "Улучшить"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Улучшить сейчас"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Улучшить сейчас"
       ],
       "Upload and share files": [
@@ -7277,7 +7277,10 @@
         "Инициализация…"
       ],
       "Insert image": [
-        "Вставить изображение"
+        "Вставить изображение",
+        "Вставить изображения",
+        "Вставить изображения",
+        "Вставить изображения"
       ],
       "Insert link": [
         "Вставить ссылку"

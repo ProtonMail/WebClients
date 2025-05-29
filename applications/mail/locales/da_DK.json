@@ -432,6 +432,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Download ${ DRIVE_APP_NAME }-apps"
       ],
+      "Download now": [
+        "Download nu"
+      ],
       "Download the desktop app": [
         "Download desktop-appen"
       ],
@@ -671,6 +674,9 @@
       ],
       "Import from Outlook": [
         "Importér fra Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Vigtig opdatering tilgængelig. For fortsat at kunne bruge appen, bedes du opdatere til den nyeste version. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Om morgenen"
@@ -1159,10 +1165,10 @@
       "Select ${ planTitle }": [
         "Vælg ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Vælg alle"
       ],
-      "Select All": [
+      "Select all": [
         "Vælg alle"
       ],
       "Select all messages": [
@@ -1375,10 +1381,6 @@
       "Trust": [
         "Hav tillid til"
       ],
-      "Trust key": [
-        "Stol på nøgle",
-        "Stol på nøgler"
-      ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
       ],
@@ -1442,11 +1444,11 @@
       "Upgrade": [
         "Opgradér"
       ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ],
       "Upgrade Now": [
         "Opgradere nu"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
       ],
       "Upload and share files": [
         "Upload og del filer"
@@ -6773,7 +6775,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
