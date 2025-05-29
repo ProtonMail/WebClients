@@ -5574,9 +5574,6 @@
       "Shared by ": [
         "Delt av "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Delt av ${ rootLink.signatureEmail }"
-      ],
       "Shared link not found": [
         "Delt kobling ikke funnet"
       ],
@@ -7538,6 +7535,17 @@
         "Middels VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planer starter fra ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -7559,17 +7567,6 @@
       ],
       "Switch plan": [
         "Bytt plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planer starter fra ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
       ]
     },
     "new_plans: feature": {
@@ -8875,10 +8872,10 @@
       "Invite members": [
         "Inviter medlemmer"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Kanskje senere"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Kanskje senere"
       ],
       "Select theme": [

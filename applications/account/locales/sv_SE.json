@@ -1150,11 +1150,11 @@
       "Select country ${ country }": [
         "Välj land ${ country }"
       ],
-      "Select file": [
-        "Välj fil"
-      ],
       "select file": [
         "välj fil"
+      ],
+      "Select file": [
+        "Välj fil"
       ],
       "Select files": [
         "Välj filer"
@@ -2822,6 +2822,10 @@
       ]
     },
     "CountriesStep:Info": {
+      "${ selectedCitiesCount } cities selected": [
+        "${ selectedCitiesCount } stad vald",
+        "${ selectedCitiesCount } städer valda"
+      ],
       "${ selectedCountriesCount } selected": [
         "${ selectedCountriesCount } valt",
         "${ selectedCountriesCount } valda"
@@ -4730,11 +4734,11 @@
       "Forward to": [
         "Vidarebefordra till"
       ],
-      "or": [
-        "eller"
-      ],
       "Or": [
         "Eller"
+      ],
+      "or": [
+        "eller"
       ],
       "With attachment": [
         "Med bilaga"
@@ -4985,8 +4989,8 @@
       "Error in one of the conditions": [
         "Fel i ett av villkoren"
       ],
-      "Error publishing changes.": [
-        "Fel vid publicering av ändringar."
+      "Error publishing changes": [
+        "Fel vid publicering av ändringar"
       ],
       "Expired": [
         "Löpt ut"
@@ -7449,7 +7453,7 @@
         "30 dagars pengarna-tillbaka-garanti."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
-        "En ${ protonSubdomain } hostas av ${ BRAND_NAME } vilket låter dig snabbt konfigurera en underdomän. ${ learnMoreLink }"
+        "${ BRAND_NAME } är värd för en ${ protonSubdomain }, vilket låter dig snabbt konfigurera en underdomän. ${ learnMoreLink }"
       ],
       "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
         "En anpassad domän är obligatoriskt för att skapa grupper. Om du inte har ställt in en anpassad domän, gör det först under ${ linkToDomainPage }."
@@ -7691,6 +7695,9 @@
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Minst ${ BETTER_PASSWORD_LENGTH } tecken"
+      ],
+      "At least one application must be active": [
+        "Minst en applikation måste vara aktiv"
       ],
       "Attention required": [
         "Uppmärksamhet krävs"
@@ -8321,6 +8328,9 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Om en annan administratör har ändrat detta lösenord måste du be dem om det nya organisationslösenordet."
       ],
+      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
+        "Om detta alternativ är inaktiverat kräver nya organisationsmedlemmar att en admin manuellt skapar det första valvet åt dem (via delning) så att de kan börja skapa objekt."
+      ],
       "If disabled, only administrators will be able to export data.": [
         "Om det är inaktiverat kommer endast administratörer att kunna exportera data."
       ],
@@ -8778,6 +8788,9 @@
       ],
       "No results found": [
         "Inga resultat hittades"
+      ],
+      "No single sign-on": [
+        "Ingen enkel inloggning"
       ],
       "Not a valid URL": [
         "Ogiltig URL"
@@ -9517,6 +9530,9 @@
       "This promotion link has expired.": [
         "Denna kampanjlänk har löpt ut."
       ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Denna tjänst är inte tillgänglig för användare som loggar in med enkel inloggning."
+      ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Denna token kommer inte vara tillgänglig efter att du stänger detta fönster och du bör inte dela den med någon."
       ],
@@ -9781,11 +9797,11 @@
       "User activated": [
         "Användare aktiverad"
       ],
-      "username": [
-        "användarnamn"
-      ],
       "Username": [
         "Användarnamn"
+      ],
+      "username": [
+        "användarnamn"
       ],
       "Users": [
         "Användare"
@@ -9900,6 +9916,9 @@
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Vi lagrar säkert återställningsinformation på din betrodda enhet för att förhindra att du förlorar din data"
+      ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "Vi lagrade en säkerhetskopia i den här webbläsaren eftersom du har tillåtit dataåterställning på den här ${ deviceLink }. Om säkerhetskopiera filen är giltig, kommer du omedelbart att återfå fullständig eller partiell åtkomst till dina krypterade data."
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi använder 3-D Secure för att skydda dina betalningar"
@@ -10069,6 +10088,9 @@
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Du kan aktivera fotosektionen från användargränssnittet med växlaren nedan."
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "Du kan tillämpa lösenordsreglerna som medlemmar i din organisation använder när de skapar eller återställer lösenordet till sitt ${ BRAND_NAME }-konto."
       ],
       "You can import one data type at a time.": [
         "Du kan importera en datatyp åt gången."
@@ -10258,6 +10280,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
+      ],
+      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
+        "Dina befintliga end-to-end-krypterade vidarebefordringar till andra användare kommer att pausas. Du kan manuellt återaktivera dem under '${ autoReplySettingsTitle }'-inställningarna."
       ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
@@ -12302,11 +12327,11 @@
       "perform a password reset from your active session": [
         "utför en lösenordsåterställning från din aktiva session"
       ],
-      "Privacy policy": [
-        "Integritetspolicy"
-      ],
       "privacy policy": [
         "integritetspolicy"
+      ],
+      "Privacy policy": [
+        "Integritetspolicy"
       ],
       "Reactivate now": [
         "Återaktivera nu"
@@ -13224,6 +13249,9 @@
       "Group management (coming soon)": [
         "Grupphantering (kommer snart)"
       ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "Schweizisk höghastighets-VPN som skyddar din integritet"
+      ],
       "High-speed VPN on ${ n } device": [
         "Höghastighets-VPN på ${ n } enhet",
         "Höghastighets-VPN på ${ n } enheter"
@@ -13647,17 +13675,6 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -13676,6 +13693,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås upp premiumfunktioner genom att uppgradera"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
       ]
     },
     "new_plans: tooltip": {
@@ -14316,17 +14344,6 @@
         "Stationär dator"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Alla"
-      ],
-      "Group members": [
-        "Gruppmedlemmar"
-      ],
-      "No one": [
-        "Ingen"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10:e dagen i månaden"
@@ -14582,6 +14599,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Alla"
+      ],
+      "Group members": [
+        "Gruppmedlemmar"
+      ],
+      "No one": [
+        "Ingen"
       ]
     },
     "Option delay send seconds": {
@@ -16907,6 +16935,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Specialerbjudandet gäller de första 2 åren."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Din prenumeration kommer att förnyas med samma pris varje år."
       ]
@@ -16986,6 +17017,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Ordinarie pris ${ amount } för 30 månader"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Specialerbjudandet gäller de första 2 åren"
       ]
     },
     "specialoffer: Title": {
@@ -18067,6 +18101,9 @@
       "Locale updated": [
         "Språk uppdaterat"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "En ny policy har skapats. Den träder i kraft först när du publicerar ändringarna."
+      ],
       "Organization activated": [
         "Organisation aktiverad"
       ],
@@ -18645,10 +18682,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -20886,6 +20923,9 @@
       ],
       "Securely hold and transact Bitcoin for free.": [
         "Håll Bitcoin säkert och utför transaktioner utan kostnad."
+      ],
+      "Self-custodial wallet": [
+        "Självförvaltande plånbok"
       ],
       "Take control of all your data with premium ${ BRAND_NAME } services.": [
         "Ta kontroll över alla dina data med premium ${ BRAND_NAME } tjänster."

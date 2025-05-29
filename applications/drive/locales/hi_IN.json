@@ -5162,9 +5162,6 @@
       "Shared": [
         "साझा किए गए"
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "${ rootLink.signatureEmail } द्वारा साझा किया गया"
-      ],
       "Shared link not found": [
         "शेयर किया लिंक नहीं मिला"
       ],
@@ -6907,6 +6904,17 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "प्लैन ${ priceDrivePlus } से शुरू"
+      ],
+      "Upgrade": [
+        "अपग्रेड"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "खाता हटा दो"
@@ -6928,17 +6936,6 @@
       ],
       "Switch plan": [
         "प्लान बदले"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "प्लैन ${ priceDrivePlus } से शुरू"
-      ],
-      "Upgrade": [
-        "अपग्रेड"
       ]
     },
     "new_plans: feature": {
@@ -8205,11 +8202,11 @@
       "Invite members": [
         "सदस्यों को आमंत्रित करें"
       ],
-      "Maybe later": [
-        "शायद बाद में"
-      ],
       "Maybe Later": [
         "शायद बाद में कभी"
+      ],
+      "Maybe later": [
+        "शायद बाद में"
       ],
       "Select theme": [
         "थीम चुनें"

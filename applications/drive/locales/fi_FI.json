@@ -5488,9 +5488,6 @@
       "Shared by ": [
         "Jakanut "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Jakanut ${ rootLink.signatureEmail }"
-      ],
       "Shared link not found": [
         "Jakolinkkiä ei löytynyt"
       ],
@@ -5700,7 +5697,7 @@
         "Vahvista olevasi ihminen roskapostin ja väärinkäytösten torjumiseksi."
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
-        "Suojellakseen sinua ${ DRIVE_APP_NAME } voi skannata tiedostojasi yksityisyyttä suojaavalla tavalla, ja estää haitallisia tiedostoja. On silti parasta ladata tiedostoja vain luotettavista lähteistä."
+        "Suojellakseen sinua ${ DRIVE_APP_NAME } voi skannata tiedostojasi yksityisyyttä suojaavalla tavalla, ja estää haitallisia tiedostoja. On silti parasta ladata tiedostoja vain luotettavista lähteistä. "
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Tuodaksesi tapahtumia, luo ensin ${ CALENDAR_APP_NAME }iin kalenteri, johon tapahtumat lisätään."
@@ -7379,6 +7376,17 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Tilaukset alkaen hintaan ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Poista tili"
@@ -7400,17 +7408,6 @@
       ],
       "Switch plan": [
         "Vaihda tilausta"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Tilaukset alkaen hintaan ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
       ]
     },
     "new_plans: feature": {
@@ -8707,10 +8704,10 @@
       "Invite members": [
         "Kutsu jäseniä"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Ehkä myöhemmin"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Ehkä myöhemmin"
       ],
       "Select theme": [

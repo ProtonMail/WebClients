@@ -3198,9 +3198,6 @@
       "Shared": [
         "Dijeljeno"
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Dijeli ${ rootLink.signatureEmail }"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
       ],
@@ -3985,6 +3982,11 @@
         "Najviša VPN brzina"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -3994,11 +3996,6 @@
       ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
-      ]
-    },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
       ]
     },
     "new_plans: feature": {

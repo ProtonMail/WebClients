@@ -5453,9 +5453,6 @@
       "Shared by ": [
         "Dibagikan oleh "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Dibagikan oleh ${ rootLink.signatureEmail }"
-      ],
       "Shared link not found": [
         "Tautan yang dibagikan tidak ditemukan"
       ],
@@ -7397,6 +7394,17 @@
         "Kecepatan VPN sedang"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Paket dimulai dari ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Hapus akun"
@@ -7418,17 +7426,6 @@
       ],
       "Switch plan": [
         "Ganti paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Paket dimulai dari ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
       ]
     },
     "new_plans: feature": {
@@ -8690,11 +8687,11 @@
       "Invite members": [
         "Undang anggota"
       ],
-      "Maybe later": [
-        "Mungkin nanti"
-      ],
       "Maybe Later": [
         "Nanti Saja"
+      ],
+      "Maybe later": [
+        "Mungkin nanti"
       ],
       "Select theme": [
         "Pilih tema"

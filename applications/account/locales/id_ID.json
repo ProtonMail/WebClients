@@ -1150,11 +1150,11 @@
       "Select country ${ country }": [
         "Pilih negara ${ country }"
       ],
-      "Select file": [
-        "Pilih berkas"
-      ],
       "select file": [
         "pilih berkas"
+      ],
+      "Select file": [
+        "Pilih berkas"
       ],
       "Select files": [
         "Pilih berkas"
@@ -4729,11 +4729,11 @@
       "Forward to": [
         "Teruskan ke"
       ],
-      "or": [
-        "atau"
-      ],
       "Or": [
         "Atau"
+      ],
+      "or": [
+        "atau"
       ],
       "With attachment": [
         "Dengan lampiran"
@@ -4981,9 +4981,6 @@
       ],
       "Error in one of the conditions": [
         "Kesalahan pada salah satu kondisi"
-      ],
-      "Error publishing changes.": [
-        "Terdapat kesalahan dalam menerbitkan perubahan."
       ],
       "Expired": [
         "Kedaluwarsa"
@@ -9720,11 +9717,11 @@
       "User activated": [
         "Pengguna diaktifkan"
       ],
-      "username": [
-        "nama pengguna"
-      ],
       "Username": [
         "Nama pengguna"
+      ],
+      "username": [
+        "nama pengguna"
       ],
       "Users": [
         "Pengguna"
@@ -12230,11 +12227,11 @@
       "perform a password reset from your active session": [
         "melangsungkan pengaturan ulang kata sandi dari sesi Anda yang sedang aktif"
       ],
-      "Privacy policy": [
-        "Kebijakan privasi"
-      ],
       "privacy policy": [
         "kebijakan privasi"
+      ],
+      "Privacy policy": [
+        "Kebijakan privasi"
       ],
       "Reactivate now": [
         "Aktifkan kembali"
@@ -13540,14 +13537,6 @@
         "Dapatkan seluruh produk dan fitur premium ${ BRAND_NAME } seharga hanya ${ priceLine }. Batalkan kapan saja."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -13566,6 +13555,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -14199,17 +14196,6 @@
         "Desktop"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Semua orang"
-      ],
-      "Group members": [
-        "Anggota grup"
-      ],
-      "No one": [
-        "Tidak seorang pun"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "Tanggal 10"
@@ -14444,6 +14430,17 @@
       ],
       "Trash": [
         "Buang ke Sampah"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Semua orang"
+      ],
+      "Group members": [
+        "Anggota grup"
+      ],
+      "No one": [
+        "Tidak seorang pun"
       ]
     },
     "Option delay send seconds": {
@@ -18439,11 +18436,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-All address": [
-        "Alamat Catch-All"
-      ],
       "Catch-all address": [
         "Alamat catch-all"
+      ],
+      "Catch-All address": [
+        "Alamat Catch-All"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"

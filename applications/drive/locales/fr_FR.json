@@ -5714,14 +5714,20 @@
       "Shared by ": [
         "Partagé par "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Partagé par ${ rootLink.signatureEmail }"
+      "Shared by ${ sharedBy }": [
+        "Partagé par ${ sharedBy }"
+      ],
+      "Shared by you": [
+        "Partagé par vous"
       ],
       "Shared link not found": [
         "Le lien partagé n'a pas été trouvé."
       ],
       "Shared with me": [
         "Partagé avec moi"
+      ],
+      "Shared with you": [
+        "Partagé avec vous"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "La signature ne peut pas être certifiée en raison d'une erreur de réseau, nous vous invitons à réessayer plus tard."
@@ -6466,6 +6472,9 @@
     "Label": {
       "# of downloads": [
         "Nombre de téléchargements"
+      ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } sur ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
@@ -7684,6 +7693,17 @@
         "Vitesse VPN moyenne"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Abonnements à partir de ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Supprimer le compte"
@@ -7704,17 +7724,6 @@
         "Conserver le compte"
       ],
       "Switch plan": [
-        "Changer d'abonnement"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Abonnements à partir de ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
         "Changer d'abonnement"
       ]
     },
@@ -9021,10 +9030,10 @@
       "Invite members": [
         "Invitez des membres"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Peut-être plus tard"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Peut-être plus tard"
       ],
       "Select theme": [

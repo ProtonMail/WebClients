@@ -5714,14 +5714,20 @@
       "Shared by ": [
         "Condiviso da "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Condiviso da ${ rootLink.signatureEmail }"
+      "Shared by ${ sharedBy }": [
+        "Condiviso da ${ sharedBy }"
+      ],
+      "Shared by you": [
+        "Condivise da te"
       ],
       "Shared link not found": [
         "Link condiviso non trovato"
       ],
       "Shared with me": [
         "Condiviso con me"
+      ],
+      "Shared with you": [
+        "Condiviso con te"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "La firma non può essere convalidata a causa di un errore di rete, riprova più tardi."
@@ -6466,6 +6472,9 @@
     "Label": {
       "# of downloads": [
         "# di download"
+      ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } di ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
         "Nome utente ${ BRAND_NAME }"
@@ -7672,6 +7681,17 @@
         "Media velocità della VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Piani a partire da ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Elimina l'account"
@@ -7693,17 +7713,6 @@
       ],
       "Switch plan": [
         "Cambia piano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Piani a partire da ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
       ]
     },
     "new_plans: feature": {
@@ -8285,11 +8294,6 @@
         "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -8302,6 +8306,11 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -9014,10 +9023,10 @@
       "Invite members": [
         "Invita membri"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Forse più tardi"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Forse più tardi"
       ],
       "Select theme": [
