@@ -306,6 +306,9 @@
       "Copy addresses": [
         "Skopírovať adresu"
       ],
+      "Copy alias “${ name }”": [
+        "Kopírovať alias \"${ name }\""
+      ],
       "Copy email to clipboard": [
         "Skopírovať email do schránky"
       ],
@@ -437,6 +440,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Stiahnuť aplikácie ${ DRIVE_APP_NAME }"
+      ],
+      "Download now": [
+        "Stiahnuť teraz"
       ],
       "Download the desktop app": [
         "Stiahnite si desktopovú aplikáciu"
@@ -683,6 +689,9 @@
       ],
       "Import from Outlook": [
         "Importovať z Outlooku"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "K dispozícii je dôležitá aktualizácia. Ak chcete aplikáciu naďalej používať, aktualizujte ju na najnovšiu verziu. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Ráno"
@@ -1173,10 +1182,10 @@
       "Select ${ planTitle }": [
         "Vybrať ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Vybrať všetko"
       ],
-      "Select All": [
+      "Select all": [
         "Vybrať všetko"
       ],
       "Select all messages": [
@@ -1389,12 +1398,6 @@
       "Trust": [
         "Dôverovať"
       ],
-      "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodný kľúč",
-        "Dôverovať kľúčom",
-        "Dôverovať novým kľúčom"
-      ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
       ],
@@ -1458,11 +1461,11 @@
       "Upgrade": [
         "Prejsť na platený plán"
       ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ],
       "Upgrade Now": [
         "Inovovať teraz"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
       ],
       "Upload and share files": [
         "Nahrávanie a zdieľanie súborov"
@@ -7144,7 +7147,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"

@@ -151,6 +151,9 @@
       "Attention required": [
         "Figyelem szükséges"
       ],
+      "Authenticate": [
+        "Hitelesítés"
+      ],
       "Auto-delete spam and trash": [
         "Levélszemét és Lomtár automatikus törlése"
       ],
@@ -429,6 +432,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } alkalmazások letöltése"
       ],
+      "Download now": [
+        "Letöltés most"
+      ],
       "Download the desktop app": [
         "Asztali alkalmazás letöltése"
       ],
@@ -467,6 +473,9 @@
       ],
       "Email settings": [
         "E-mail beállítások"
+      ],
+      "Emoji": [
+        "Hangulatjel"
       ],
       "Enable": [
         "Engedélyezés"
@@ -533,6 +542,9 @@
       ],
       "Font": [
         "Betűtípus"
+      ],
+      "Forgot password?": [
+        "Elfelejtett jelszó?"
       ],
       "Formalize": [
         "Hivatalos"
@@ -668,6 +680,9 @@
       ],
       "Import from Outlook": [
         "Importálás az Outlookból"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Fontos frissítés érhető el. Az alkalmazás használatának folytatásához, kérjük frissítsen a legfrissebb verzióra. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Reggel"
@@ -1156,10 +1171,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } választása"
       ],
-      "Select all": [
+      "Select All": [
         "Összes kijelölése"
       ],
-      "Select All": [
+      "Select all": [
         "Összes kijelölése"
       ],
       "Select all messages": [
@@ -1373,8 +1388,7 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs",
-        "Kulcsok megjelölése megbízhatóként"
+        "Megbízható kulcs"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -1439,10 +1453,10 @@
       "Upgrade": [
         "Csomagváltás"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Váltás nagyobb csomagra"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Váltás nagyobb csomagra"
       ],
       "Upload and share files": [
@@ -1469,8 +1483,14 @@
       "Use a different payment method": [
         "Más fizetési mód választása"
       ],
+      "Use authentication code": [
+        "Hitelesítő kód használata"
+      ],
       "Use for sending": [
         "Küldéshez használható"
+      ],
+      "Use recovery code": [
+        "Helyreállító kód használata"
       ],
       "Use this": [
         "Ennek használata"
@@ -5105,6 +5125,24 @@
         "Korlátlan számú hide-my-email álnév"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Hiba történt a hitelesítési kulccsal való azonosítás közben. Próbálja meg újra."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Csatlakoztassa a ${ BRAND_NAME } fiókjához rendelt hitelesítési kulcsot."
+      ],
+      "Security key": [
+        "Hitelesítési kulcs"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Hitelesítési kulcs"
+      ]
+    },
     "file size format": {
       "byte": [
         "bájt",
@@ -6303,6 +6341,9 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Minden almappa is ki lesz törölve.De az e-mailek a ${ nameDeleted } mappába nem lesznek törölve és megtalálhatók lesznek a minden levél mappában."
       ],
+      "Apply to future messages": [
+        "Alkalmazás a jövőbeli üzenetekre"
+      ],
       "Applying actions to conversations": [
         "Műveletek alkalmazása beszélgetésekre"
       ],
@@ -6618,6 +6659,9 @@
       "Duplicate key updated": [
         "Duplikált kulcs frissítve"
       ],
+      "Each code can only be used once": [
+        "Minden kódot csak egyszer lehet felhasználni"
+      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Könnyedén kezelheti és leiratkozhat hírlevelekről és levelezőlistákról."
       ],
@@ -6673,11 +6717,20 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Élvezze a gyorsabb, koncentráltabb e-mailezés élményét az asztali alkalmazással."
       ],
+      "Enter the code from your authenticator app": [
+        "Írja be a kódot a hitelesítő alkalmazásból"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Adja meg az e-mail fiók belépési adatait, amelyről importálni szeretne."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Írja be az ellenőrző kódot. ${ digit } számjegy."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Becsült hátralévő idő: ${ estimatedMinutes } perc",
@@ -6861,6 +6914,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -7953,6 +8007,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Amikor engedélyezte a megbízható kulcsok kezelését \"${ senderName }\" címzetthez, a nyilvános kulcsok bekerültek a névjegyébe."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
+      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Amikor feliratkozik egy hírlevélre, használjon e-mail álnevet, így az adatai rejtve maradnak. Az álnév bármikor kikapcsolható."
       ],
@@ -8595,6 +8652,9 @@
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
       ],
+      "Authenticator app": [
+        "Hitelesítő alkalmazás"
+      ],
       "BCC": [
         "Titkos másolat"
       ],
@@ -8892,6 +8952,9 @@
       "New password": [
         "Új jelszó"
       ],
+      "Newsletters": [
+        "Hírlevelek"
+      ],
       "No label found": [
         "Nem található címke"
       ],
@@ -9072,6 +9135,9 @@
       "Unsafe or problematic": [
         "Nem biztonságos vagy problémás"
       ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Leiratkozott erről: ${ truncatedName }."
+      ],
       "Upload picture": [
         "Kép feltöltése"
       ],
@@ -9119,6 +9185,9 @@
       ],
       "Your location": [
         "Az ön tartózkodási helye"
+      ],
+      "Your password (admin)": [
+        "Jelszó (adminisztrátor)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13696,6 +13765,9 @@
       "Enter 2FA code": [
         "Írja be a kétlépcsős hitelesítési kódot"
       ],
+      "Enter your password": [
+        "Adja meg a jelszavát"
+      ],
       "Error": [
         "Hiba"
       ],
@@ -13912,6 +13984,12 @@
       ],
       "New message": [
         "Új üzenet"
+      ],
+      "Newsletters": [
+        "Hírlevelek"
+      ],
+      "Newsletters view": [
+        "Hírlevelek nézet"
       ],
       "Next conversation": [
         "Következő beszélgetés"

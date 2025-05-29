@@ -432,6 +432,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } 앱 다운로드"
       ],
+      "Download now": [
+        "지금 다운로드"
+      ],
       "Download the desktop app": [
         "데스크톱 앱 다운로드"
       ],
@@ -677,6 +680,9 @@
       ],
       "Import from Outlook": [
         "Outlook에서 가져오기"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "중요한 업데이트 사용이 가능합니다. 앱을 계속 사용하려면, 최신 버전으로 업데이트 하세요. ${ downloadUpdate }"
       ],
       "In the morning": [
         "아침"
@@ -1164,11 +1170,11 @@
       "Select ${ planTitle }": [
         "${ planTitle } 선택"
       ],
-      "Select all": [
-        "전체 선택"
-      ],
       "Select All": [
         "모두 선택"
+      ],
+      "Select all": [
+        "전체 선택"
       ],
       "Select all messages": [
         "모든 메시지 선택"
@@ -1380,9 +1386,6 @@
       "Trust": [
         "신뢰"
       ],
-      "Trust key": [
-        "키 신뢰하기"
-      ],
       "Trust public key": [
         "공개 키 신뢰하기"
       ],
@@ -1446,10 +1449,10 @@
       "Upgrade": [
         "업그레이드"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "지금 업그레이드"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "지금 업그레이드"
       ],
       "Upload and share files": [
@@ -5730,10 +5733,10 @@
         "${ BRAND_NAME } 이(가) Yahoo 계정에 연결할 수 없습니다. 확인해 주세요:"
       ],
       "2-step verification is enabled in your external account.": [
-        "이중 인증이 사용자의 외부 계정에 활성화되어 있습니다."
+        "2단계 인증이 사용자의 외부 계정에 활성화되어 있습니다."
       ],
       "2-step verification is enabled in your external email account.": [
-        "이중 인증이 사용자의 외부 이메일 계정에 활성화 되어있습니다."
+        "2단계 인증이 사용자의 외부 이메일 계정에 활성화 되어있습니다."
       ],
       "IMAP access is enabled in your external account.": [
         "사용자의 외부 계정의 IMAP 접근이 활성화되었습니다."
@@ -5904,6 +5907,15 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
       ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "오래된 이메일을 ${ boldBulkDelete }, 보관, 또는 폴더로 이동하세요."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "더 이상 필요 없는 구독을 ${ boldQuicklySpot }하세요."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "클릭 한 번으로 ${ boldUnsubscribe }하세요."
+      ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "${ BRAND_NAME } Scribe가 이메일을 신속하고 수월하게 작성할 수 있도록 도와줍니다."
       ],
@@ -5911,7 +5923,7 @@
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
-        "${ BRAND_NAME }의 암호화 기술은 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다 - 심지어 우리도요."
+        "${ BRAND_NAME }의 암호화 기술은 당사를 포함한 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다."
       ],
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "${ BRAND_NAME }의 비밀번호 관리자를 사용하면 암호가 생성, 저장 및 자동 완성되기 때문에 재설정할 필요가 없습니다."
@@ -7225,7 +7237,7 @@
         "받는사람: "
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
-        "복구 정보는 삭제하도록 설정하지 않는 한 이 장치에 남아있어요."
+        "복구 정보는 삭제하도록 설정하지 않는 한 이 기기에 유지됩니다."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "페이지를 새로고침하거나 ${ link } 대부분의 문제가 자동으로 해결됩니다."
@@ -7891,7 +7903,7 @@
         "${ senderName }에 인증 키를 활성화하면, 공개 키가 연락처 상세 정보에 생성됩니다."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "이중 인증을 설정하면, 인증 앱에 접근할 수 없을때 로그인시 사용할 수 없는 복구 코드를 제공해 드립니다."
+        "2단계 인증을 설정하면, 인증 앱에 접근할 수 없을때 로그인시 사용할 수 있는 복구 코드를 제공해 드립니다."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "뉴스래터를 신청할 때, 내 실제 이메일 주소 대신 별칭을 사용해 보세요. 별칭을 언제든 비활성화하고 신원은 비공개로 유지할 수 있답니다."
@@ -9476,6 +9488,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미 추가"
       ],
+      "Add-on with free trial": [
+        "무료 체험 애드온"
+      ],
       "for ${ price }": [
         "${ price }"
       ]
@@ -10275,7 +10290,7 @@
         "만약 다른 플랜으로 변경하면, 모든 ${ visionary } 플랜 혜택을 잃게 되며, 다시 ${ visionary } 로 변경할 수 없습니다."
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "${ visionary } 플랜은 특별한 기능과 혜택이 있는 기존 ${ BRAND_NAME } 사용자를 위한 플랜입니다. 따라서, 새로운 사용자가 구독할 수 업습니다."
+        "${ visionary } 플랜은 특별한 기능과 혜택이 있는 기존 ${ BRAND_NAME } 사용자를 위한 플랜입니다. 따라서, 새로운 사용자가 구독할 수 없습니다."
       ],
       "Pay once, secure your passwords and identity forever.": [
         "한 번만 결제하여 평생 비밀번호와 신원 정보를 보호하세요."
