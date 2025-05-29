@@ -403,10 +403,10 @@
       "Move to another vault": [
         "Sposta in un'altra cassaforte"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Sposta nel cestino"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Sposta nel cestino"
       ],
       "Multiple select": [
@@ -1967,6 +1967,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
+      ],
       "Moving items": [
         "Spostamento degli elementi"
       ],
@@ -3324,6 +3328,9 @@
       "Points Balance": [
         "Saldo punti"
       ],
+      "Port": [
+        "Porta"
+      ],
       "Prefix": [
         "Prefisso"
       ],
@@ -3459,11 +3466,11 @@
       "Sign in faster with ${ PASS_APP_NAME }": [
         "Accedi più velocemente con ${ PASS_APP_NAME }"
       ],
-      "Social Security": [
-        "Previdenza sociale"
-      ],
       "Social security": [
         "Codice fiscale"
+      ],
+      "Social Security": [
+        "Previdenza sociale"
       ],
       "Social security number": [
         "Numero di previdenza sociale"

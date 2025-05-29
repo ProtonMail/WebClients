@@ -403,10 +403,10 @@
       "Move to another vault": [
         "Mou a una altra caixa forta"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Mou a la paperera"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Mou a la paperera"
       ],
       "Multiple select": [
@@ -1868,6 +1868,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+      ],
       "Moving items": [
         "S'estan movent elements"
       ],
@@ -2634,6 +2638,9 @@
       "API Credential": [
         "Credencial de l'API"
       ],
+      "API Key": [
+        "Clau API"
+      ],
       "Application logs": [
         "Registres de l'aplicació"
       ],
@@ -2772,6 +2779,9 @@
       "Database": [
         "Base de dades"
       ],
+      "Database Type": [
+        "Tipus de base de dades"
+      ],
       "Date": [
         "Data"
       ],
@@ -2878,7 +2888,7 @@
         "Planta, apartament, edifici"
       ],
       "For a one-off sharing": [
-        "Per a un ús únic"
+        "Per a un sol ús"
       ],
       "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
         "Per motius de seguretat, ${ PASS_SHORT_APP_NAME } es bloqueja automàticament després de 10 minuts d'inactivitat."
@@ -2937,6 +2947,12 @@
       "Holder Name": [
         "Nom del titular"
       ],
+      "Host": [
+        "Amfitrió"
+      ],
+      "Hostname": [
+        "Nom de l'amfitrió"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Com desbloquejar ${ PASS_SHORT_APP_NAME }?"
       ],
@@ -2994,6 +3010,9 @@
       "Invitations": [
         "Invitacions"
       ],
+      "IP Address": [
+        "Adreça IP"
+      ],
       "Issuing Authority": [
         "Autoritat emissora"
       ],
@@ -3038,6 +3057,9 @@
       ],
       "License": [
         "Permís de conduir"
+      ],
+      "License Key": [
+        "Clau de llicència"
       ],
       "License number": [
         "Número de llicència"
@@ -3168,8 +3190,14 @@
       "Open-source password manager for effortless protection.": [
         "Gestor de contrasenyes de codi obert per a una protecció sense complicacions."
       ],
+      "Operating System": [
+        "Sistema operatiu"
+      ],
       "Organization": [
         "Organització"
+      ],
+      "Owner": [
+        "Propietari"
       ],
       "Passkey": [
         "Clau d'accés"
@@ -3194,6 +3222,9 @@
       ],
       "Password history": [
         "Historial de les contrasenyes"
+      ],
+      "Permissions": [
+        "Permisos"
       ],
       "Personal": [
         "Personal"
@@ -3225,6 +3256,9 @@
       "Points Balance": [
         "Saldo de punts"
       ],
+      "Port": [
+        "Port"
+      ],
       "Prefix": [
         "Prefix"
       ],
@@ -3239,6 +3273,9 @@
       ],
       "Private Key": [
         "Clau privada"
+      ],
+      "Product": [
+        "Producte"
       ],
       "Program Name": [
         "Nom del programa"
@@ -3284,6 +3321,9 @@
       ],
       "Second password": [
         "Segona contrasenya"
+      ],
+      "Secret": [
+        "Secret"
       ],
       "Secure links": [
         "Enllaços segurs"
@@ -3360,11 +3400,11 @@
       "Sign in faster with ${ PASS_APP_NAME }": [
         "Inicieu la sessió de forma més ràpida amb ${ PASS_APP_NAME }"
       ],
-      "Social Security": [
-        "Seguretat Social"
-      ],
       "Social security": [
         "Seguretat social"
+      ],
+      "Social Security": [
+        "Seguretat Social"
       ],
       "Social security number": [
         "Número de la Seguretat Social"

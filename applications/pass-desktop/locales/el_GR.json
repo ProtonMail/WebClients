@@ -403,10 +403,10 @@
       "Move to another vault": [
         "Μετακίνηση σε άλλη κρύπτη"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Μετακίνηση στα Διαγραμμένα"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Μετακίνηση στα Διαγραμμένα"
       ],
       "Multiple select": [
@@ -1868,6 +1868,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
+      ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
       ],
@@ -2634,6 +2638,9 @@
       "API Credential": [
         "Διαπιστευτήρια API"
       ],
+      "API Key": [
+        "Κλειδί API"
+      ],
       "Application logs": [
         "Αρχείο καταγραφών"
       ],
@@ -2771,6 +2778,9 @@
       ],
       "Database": [
         "Βάση δεδομένων"
+      ],
+      "Database Type": [
+        "Τύπος βάσης δεδομένων"
       ],
       "Date": [
         "Ημερομηνία"
@@ -2937,6 +2947,12 @@
       "Holder Name": [
         "Όνομα Κατόχου"
       ],
+      "Host": [
+        "Διακομιστής"
+      ],
+      "Hostname": [
+        "Όνομα κεντρικού υπολογιστή"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Πώς να ξεκλειδώσετε το ${ PASS_SHORT_APP_NAME }"
       ],
@@ -2994,6 +3010,9 @@
       "Invitations": [
         "Προσκλήσεις"
       ],
+      "IP Address": [
+        "Διεύθυνση IP"
+      ],
       "Issuing Authority": [
         "Εκδούσα Αρχή"
       ],
@@ -3038,6 +3057,9 @@
       ],
       "License": [
         "Άδεια"
+      ],
+      "License Key": [
+        "Κλειδί άδειας"
       ],
       "License number": [
         "Αριθμός άδειας"
@@ -3168,8 +3190,14 @@
       "Open-source password manager for effortless protection.": [
         "Διαχειριστής κωδικών πρόσβασης ανοιχτού κώδικα για εύκολη προστασία."
       ],
+      "Operating System": [
+        "Λειτουργικό Σύστημα"
+      ],
       "Organization": [
         "Οργανισμός"
+      ],
+      "Owner": [
+        "Ιδιοκτήτης"
       ],
       "Passkey": [
         "Κλειδί πρόσβασης"
@@ -3194,6 +3222,9 @@
       ],
       "Password history": [
         "Ιστορικό κωδικών πρόσβασης"
+      ],
+      "Permissions": [
+        "Άδειες"
       ],
       "Personal": [
         "Προσωπικό"
@@ -3225,6 +3256,9 @@
       "Points Balance": [
         "Υπόλοιπο Πόντων"
       ],
+      "Port": [
+        "Θύρα"
+      ],
       "Prefix": [
         "Πρόθεμα"
       ],
@@ -3239,6 +3273,9 @@
       ],
       "Private Key": [
         "Ιδιωτικό Κλειδί"
+      ],
+      "Product": [
+        "Προϊόν"
       ],
       "Program Name": [
         "Όνομα Προγράμματος"
@@ -3284,6 +3321,9 @@
       ],
       "Second password": [
         "Δεύτερος κωδικός πρόσβασης"
+      ],
+      "Secret": [
+        "Μυστικό"
       ],
       "Secure links": [
         "Ασφαλείς σύνδεσμοι"
@@ -3360,10 +3400,10 @@
       "Sign in faster with ${ PASS_APP_NAME }": [
         "Συνδεθείτε πιο γρήγορα με το ${ PASS_APP_NAME }"
       ],
-      "Social Security": [
+      "Social security": [
         "Α.Φ.Μ."
       ],
-      "Social security": [
+      "Social Security": [
         "Α.Φ.Μ."
       ],
       "Social security number": [
