@@ -5,6 +5,7 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { FileAttachmentsField } from '@proton/pass/components/FileAttachments/FileAttachmentsField';
+import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { MaskedTextField } from '@proton/pass/components/Form/Field/MaskedTextField';
@@ -25,6 +26,7 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/p
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
+import { obfuscateLabeledExtraFields } from '@proton/pass/lib/items/item.utils';
 import { validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
 import { selectPassPlan, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { CreditCardItemFormValues } from '@proton/pass/types';
@@ -50,13 +52,14 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
             pin: '',
             note: '',
             files: filesFormInitializer(),
+            extraFields: [],
         };
     }, []);
 
     const form = useFormik<CreditCardItemFormValues>({
         initialValues,
         initialErrors: validateCreditCardForm(initialValues),
-        onSubmit: ({ shareId, name, note, files, ...creditCardValues }) => {
+        onSubmit: ({ shareId, name, note, files, extraFields, ...creditCardValues }) => {
             const id = uniqueId();
             onSubmit({
                 type: 'creditCard',
@@ -72,7 +75,7 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
                     verificationNumber: obfuscate(creditCardValues.verificationNumber),
                     pin: obfuscate(creditCardValues.pin),
                 },
-                extraFields: [],
+                extraFields: obfuscateLabeledExtraFields({ extraFields, label: name, issuer: name }),
             });
         },
         validate: validateCreditCardForm,
@@ -179,6 +182,8 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
                         <FieldsetCluster>
                             <Field name="files" component={FileAttachmentsField} shareId={form.values.shareId} />
                         </FieldsetCluster>
+
+                        <ExtraFieldGroup form={form} />
                     </Form>
                 </FormikProvider>
             )}
