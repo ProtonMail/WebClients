@@ -1150,11 +1150,11 @@
       "Select country ${ country }": [
         "Wybierz kraj ${ country }"
       ],
-      "Select file": [
-        "Wybierz plik"
-      ],
       "select file": [
         "wybierz plik"
+      ],
+      "Select file": [
+        "Wybierz plik"
       ],
       "Select files": [
         "Wybierz pliki"
@@ -4919,10 +4919,10 @@
       "Forward to": [
         "Przekieruj do"
       ],
-      "or": [
+      "Or": [
         "lub"
       ],
-      "Or": [
+      "or": [
         "lub"
       ],
       "With attachment": [
@@ -5177,9 +5177,6 @@
       ],
       "Error in one of the conditions": [
         "Wystąpił błąd w co najmniej jednym warunku"
-      ],
-      "Error publishing changes.": [
-        "Wystąpił błąd podczas publikowania zmian."
       ],
       "Expired": [
         "Wygasł"
@@ -10153,11 +10150,11 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
-      "username": [
-        "nazwa użytkownika"
-      ],
       "Username": [
         "Nazwa użytkownika"
+      ],
+      "username": [
+        "nazwa użytkownika"
       ],
       "Users": [
         "Użytkownicy"
@@ -12729,11 +12726,11 @@
       "perform a password reset from your active session": [
         "zresetować hasło z aktywnej sesji"
       ],
-      "Privacy policy": [
-        "Polityka prywatności"
-      ],
       "privacy policy": [
         "politykę prywatności"
+      ],
+      "Privacy policy": [
+        "Polityka prywatności"
       ],
       "Reactivate now": [
         "Reaktywuj"
@@ -14144,14 +14141,6 @@
         "Odblokuj wszystkie usługi i funkcje premium ${ BRAND_NAME } za ${ priceLine }. Anuluj w dowolnym momencie."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -14170,6 +14159,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Odblokuj funkcje premium poprzez ulepszenie"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -14824,17 +14821,6 @@
         "komputerach stacjonarnych"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Wszyscy"
-      ],
-      "Group members": [
-        "Użytkownicy grupy"
-      ],
-      "No one": [
-        "Nikt"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10. dnia miesiąca"
@@ -15069,6 +15055,17 @@
       ],
       "Trash": [
         "Przenieś do kosza"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Wszyscy"
+      ],
+      "Group members": [
+        "Użytkownicy grupy"
+      ],
+      "No one": [
+        "Nikt"
       ]
     },
     "Option delay send seconds": {
@@ -19268,10 +19265,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
       "Change login password": [

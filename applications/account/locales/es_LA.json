@@ -1150,11 +1150,11 @@
       "Select country ${ country }": [
         "Seleccione el país ${ country }"
       ],
-      "Select file": [
-        "Seleccionar archivo"
-      ],
       "select file": [
         "seleccionar archivo"
+      ],
+      "Select file": [
+        "Seleccionar archivo"
       ],
       "Select files": [
         "Seleccionar archivos"
@@ -4883,11 +4883,11 @@
       "Forward to": [
         "Reenviar a"
       ],
-      "or": [
-        "o"
-      ],
       "Or": [
         "O"
+      ],
+      "or": [
+        "o"
       ],
       "With attachment": [
         "Con archivo adjunto"
@@ -5138,8 +5138,8 @@
       "Error in one of the conditions": [
         "Error en una de las condiciones"
       ],
-      "Error publishing changes.": [
-        "Error al publicar los cambios."
+      "Error publishing changes": [
+        "Error al publicar los cambios"
       ],
       "Expired": [
         "Expirado"
@@ -7701,7 +7701,7 @@
         "Se copió la dirección al portapapeles."
       ],
       "Admin account allocation": [
-        "Cuenta administrador de asignación"
+        "Asignación de la cuenta de administrador"
       ],
       "Affected user is on row": [
         "El usuario afectado está en la fila",
@@ -7847,6 +7847,9 @@
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Al menos ${ BETTER_PASSWORD_LENGTH } caracteres"
+      ],
+      "At least one application must be active": [
+        "Al menos una aplicación debe estar activa."
       ],
       "Attention required": [
         "Atención requerida"
@@ -9845,7 +9848,7 @@
         "Almacenamiento total"
       ],
       "Total supported domains": [
-        "Dominios compatibles totales"
+        "Total de dominios compatibles"
       ],
       "Total VPN connections": [
         "Conexiones VPN totales"
@@ -9958,11 +9961,11 @@
       "User activated": [
         "El usuario fue activado."
       ],
-      "username": [
-        "nombre de usuario"
-      ],
       "Username": [
         "Nombre de usuario"
+      ],
+      "username": [
+        "nombre de usuario"
       ],
       "Users": [
         "Usuarios"
@@ -12492,11 +12495,11 @@
       "perform a password reset from your active session": [
         "restablecer la contraseña desde una sesión activa"
       ],
-      "Privacy policy": [
-        "Política de privacidad"
-      ],
       "privacy policy": [
         "política de privacidad"
+      ],
+      "Privacy policy": [
+        "Política de privacidad"
       ],
       "Reactivate now": [
         "Reactivar ahora"
@@ -12748,7 +12751,7 @@
         "Cambiar contraseña"
       ],
       "Convert to SSO": [
-        "Pasar al SSO"
+        "Pasar a la autenticación única (SSO)"
       ],
       "Delete": [
         "Eliminar"
@@ -13837,14 +13840,6 @@
         "Desbloquee todos los productos y funciones premium de ${ BRAND_NAME } por solo ${ priceLine }. Cancele en cualquier momento."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prueba de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -13863,6 +13858,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Desbloquee funciones premium al actualizar"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prueba de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {
@@ -14503,17 +14506,6 @@
         "Escritorio"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Todos"
-      ],
-      "Group members": [
-        "Miembros del grupo"
-      ],
-      "No one": [
-        "Nadie"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10º del mes"
@@ -14748,6 +14740,17 @@
       ],
       "Trash": [
         "Enviar a papelera"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Todos"
+      ],
+      "Group members": [
+        "Miembros del grupo"
+      ],
+      "No one": [
+        "Nadie"
       ]
     },
     "Option delay send seconds": {
@@ -18236,6 +18239,9 @@
       "Locale updated": [
         "Idioma actualizado"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Se creó una política.Surtirá efecto solo después de que publique los cambios."
+      ],
       "Organization activated": [
         "Organización activada"
       ],
@@ -18265,6 +18271,12 @@
       ],
       "Phone number updated": [
         "Número de teléfono actualizado"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "Se cambió la política. Solo surtirá efecto después de que publique los cambios."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "Se eliminó la política. Solo surtirá efecto después de que publique los cambios."
       ],
       "Port copied to clipboard": [
         "Puerto copiado al portapapeles"
@@ -18811,10 +18823,10 @@
       "Card verification": [
         "Verificación de tarjeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
       "Change login password": [
@@ -19933,7 +19945,7 @@
         "Usuario"
       ],
       "User converted to SSO": [
-        "Se pasó al usuario a la autenticación única (SSO)."
+        "El usuario pasó a la autenticación única (SSO)."
       ],
       "Users": [
         "Usuarios"
@@ -20400,7 +20412,7 @@
         "Dirección externa - desactiva el cifrado de correo electrónico de extremo a extremo para este grupo y no se compartirá ningún recurso cifrado con este usuario."
       ],
       "Group membership paused": [
-        "Se pausó la membresía del grupo."
+        "Se suspendió la suscripción al grupo."
       ],
       "Sending member invitation": [
         "Enviando invitación al miembro"

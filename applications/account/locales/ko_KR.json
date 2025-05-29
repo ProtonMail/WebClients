@@ -1150,10 +1150,10 @@
       "Select country ${ country }": [
         "선택된 국가 ${ country }"
       ],
-      "Select file": [
+      "select file": [
         "파일 선택"
       ],
-      "select file": [
+      "Select file": [
         "파일 선택"
       ],
       "Select files": [
@@ -4729,10 +4729,10 @@
       "Forward to": [
         "다음으로 전달:"
       ],
-      "or": [
+      "Or": [
         "또는"
       ],
-      "Or": [
+      "or": [
         "또는"
       ],
       "With attachment": [
@@ -4981,9 +4981,6 @@
       ],
       "Error in one of the conditions": [
         "하나의 조건 오류"
-      ],
-      "Error publishing changes.": [
-        "변경 사항을 게시하는데 오류가 발생했습니다."
       ],
       "Expired": [
         "만료됨"
@@ -6932,10 +6929,10 @@
         "${ BRAND_NAME } 이(가) Yahoo 계정에 연결할 수 없습니다. 확인해 주세요:"
       ],
       "2-step verification is enabled in your external account.": [
-        "이중 인증이 사용자의 외부 계정에 활성화되어 있습니다."
+        "2단계 인증이 사용자의 외부 계정에 활성화되어 있습니다."
       ],
       "2-step verification is enabled in your external email account.": [
-        "이중 인증이 사용자의 외부 이메일 계정에 활성화 되어있습니다."
+        "2단계 인증이 사용자의 외부 이메일 계정에 활성화 되어있습니다."
       ],
       "IMAP access is enabled in your external account.": [
         "사용자의 외부 계정의 IMAP 접근이 활성화되었습니다."
@@ -7174,7 +7171,7 @@
         "${ BRAND_NAME }은 당신이 신뢰할 수 있는 프라이버시 보호, 강력한 암호화 보장, 오픈 소스 코드, 스위스 법률로 보호됩니다. 우리는 아무도 당신의 데이터를 악용해서는 안 된다고 믿습니다. 우리 기술과 사업은 근본적으로 더 강력한 프라이버시 보호에 기초를 두고 있죠."
       ],
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
-        "${ BRAND_NAME }은 서드 파티와 절대 사용자의 정보를 공유하지 않습니다. ${ BRAND_NAME }의 자체 분석 및 Constella Intelligence사로 부터 데이터가 수집됩니다."
+        "${ BRAND_NAME }은 제3자와 절대 사용자의 정보를 공유하지 않습니다. ${ BRAND_NAME }의 자체 분석 및 Constella Intelligence사로 부터 데이터가 수집됩니다."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } 다른 이메일 공급자와의 접속이 끊겨 가져오기 작업이 잠시 중지되었습니다. 다시 연결해 주세요."
@@ -7189,7 +7186,7 @@
         "${ BRAND_NAME }이(가) 이메일 공급자가 계정의 ${ bandwidthLimitLink }를 재설정하자마자 가져오기를 재개하려고 시도합니다. 수행할 작업이 없습니다. 불러오기를 취소하면, 재개할 수 없으며 다시 시작해야 합니다."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
-        "${ BRAND_NAME }의 암호화 기술은 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다 - 심지어 우리도요."
+        "${ BRAND_NAME }의 암호화 기술은 당사를 포함한 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount }개 새 달력"
@@ -7364,6 +7361,9 @@
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "${ MAIL_SHORT_APP_NAME } 과 ${ CALENDAR_SHORT_APP_NAME } 를 포함하는 모든 ${ BRAND_NAME_TWO } 서비스를 사용하려면** ${ BRAND_NAME } 주소를 받으세요.**"
+      ],
+      "+ ${ invisibleCount } More": [
+        "외 ${ invisibleCount }명"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 추가 저장공간"
@@ -7625,6 +7625,9 @@
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "최소 ${ BETTER_PASSWORD_LENGTH }글자"
+      ],
+      "At least one application must be active": [
+        "최소 하나의 어플리케이션이 활성 상태여야 합니다"
       ],
       "Attention required": [
         "주의 필요"
@@ -8311,7 +8314,7 @@
         "기프트 코드가 있을 경우 아래에 입력해 할인을 적용하세요."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "만약 이중인증을 사용하지 않았다면, ${ guideButton } 사용하는 것을 강력하게 권장합니다."
+        "만약 2단계 인증을 사용한 적이 없다면, ${ guideButton } 사용을 강력히 권장합니다."
       ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "로그인 비밀번호를 잃어버리거나 계정 초기화가 필요할시, ${ boldImperative } ${ boldAccountRecovery } 가 있습니다."
@@ -8614,7 +8617,7 @@
         "주요 이메일 서비스는 SPF/DKIM/DMARC가 누락되었거나 제대로 설정되지 않은 경우 스팸으로 이메일을 거부하거나 필터링할 수 있습니다."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
-        "계정의 비밀번호를 잊어버렸을 때 다시 계정에 로그인 할 수 있도록 ${ addARecoveryMethod }를 하시기 바랍니다."
+        "계정의 비밀번호를 잊어버렸을 때 다시 계정에 로그인할 수 있도록 ${ addARecoveryMethod }를 권장합니다."
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "조직 구성원이 접근할 수 있는 ${ BRAND_NAME } 응용 프로그램을 관리합니다. 비활성화된 경우 관리자만 접근할 수 있습니다."
@@ -8995,7 +8998,7 @@
         "${ BRAND_NAME }에 대한 도움이 필요하면 저희에게 연락하세요."
       ],
       "read our two-factor authentication guide first": [
-        "이중 인증에 대한 가이드를 먼저 읽은 뒤에"
+        "2단계 인증에 대한 가이드를 먼저 읽은 뒤에"
       ],
       "Recently used servers:": [
         "최근 사용된 서버:"
@@ -9010,7 +9013,7 @@
         "복구 파일이 버려졌습니다"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
-        "복구 정보는 삭제하도록 설정하지 않는 한 이 장치에 남아있어요."
+        "복구 정보는 삭제하도록 설정하지 않는 한 이 기기에 유지됩니다."
       ],
       "Recovery kit copied to clipboard": [
         "복구 키트가 클립보드에 복사되었습니다"
@@ -9355,7 +9358,7 @@
         "다음 주소는 생성되지 않았습니다."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
-        "다음 회원들이 가능한 한 빨리 이중 인증을 활성화하라는 이메일을 받게 됩니다."
+        "다음 구성원들이 빠른 시일내로 2단계 인증을 활성화하도록 요구하는 이메일을 받게 됩니다."
       ],
       "The format of your CSV file is incorrect.": [
         "CSV 파일의 포맷이 올바르지 않습니다."
@@ -9628,7 +9631,7 @@
         "2차 비밀번호 모드는 두 개의 비밀번호를 필요로 합니다. 하나는 계정에 로그인하기 위한 것이고, 하나는 데이터의 복호화를 위한 것입니다. (고급 사용자용)"
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
-        "2차 비밀번호 모드는 로그인과 데이터 복호화에 다른 비밀번호를 사용합니다. 이 기능으로 일부 상황에서 사소한 보안 이점을 얻을 수 있으나, 대부분의 사용자에게는 1차 비밀번호 모드를 권장합니다. 2차 비밀번호 모드로 변경하려면 먼저 로그인 비밀번호를 설정한 다음 두 번째 비밀번호를 설정하십시오."
+        "2차 비밀번호 모드는 로그인과 데이터 복호화에 다른 비밀번호를 사용합니다. 이 기능으로 일부 상황에서 사소한 보안 이점을 얻을 수 있으나, 대부분의 사용자에게는 1차 비밀번호 모드가 권장됩니다. 2차 비밀번호 모드로 변경하려면 먼저 로그인에 사용할 비밀번호를 설정한 다음 2차 비밀번호를 설정하십시오."
       ],
       "Unable to check gateways monitoring current status.": [
         "현재 게이트웨이 모니터링 상태 확인 불가."
@@ -9720,10 +9723,10 @@
       "User activated": [
         "사용자 활성화됨"
       ],
-      "username": [
+      "Username": [
         "사용자 이름"
       ],
-      "Username": [
+      "username": [
         "사용자 이름"
       ],
       "Users": [
@@ -9910,7 +9913,7 @@
         "게이트웨이에서 서버를 제거하면 10일의 비활성화 기간에 돌입합니다. 서버들이 새 게이트웨이에 적용되지만 국가는 변경되지 않습니다."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "이중 인증을 설정하면, 인증 앱에 접근할 수 없을때 로그인시 사용할 수 없는 복구 코드를 제공해 드립니다."
+        "2단계 인증을 설정하면, 인증 앱에 접근할 수 없을때 로그인시 사용할 수 있는 복구 코드를 제공해 드립니다."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "구독이 갱신될 경우, 비용 청구 전에 가능한 크레딧이 적용됩니다."
@@ -11690,6 +11693,9 @@
       "Send in": [
         "다음 언어로 전송:"
       ],
+      "Sequences": [
+        "시퀀스"
+      ],
       "Show ${ n } administrator": [
         "${ n }명 관리자 보기"
       ],
@@ -12233,11 +12239,11 @@
       "perform a password reset from your active session": [
         "활성 상태의 세션에서 비밀번호를 재설정하시기 바랍니다."
       ],
-      "Privacy policy": [
-        "개인 정보 정책"
-      ],
       "privacy policy": [
         "개인정보 취급방침"
+      ],
+      "Privacy policy": [
+        "개인 정보 정책"
       ],
       "Reactivate now": [
         "지금 재활성화"
@@ -12381,6 +12387,9 @@
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미 추가"
+      ],
+      "Add-on with free trial": [
+        "무료 체험 애드온"
       ],
       "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business": [
         "모든 ${ BRAND_NAME } 비즈니스 앱 및 프리미엄 기능이 전체 비즈니스를 보호합니다"
@@ -13005,6 +13014,9 @@
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "모든 프리미엄 ${ BRAND_NAME } 서비스. 쉬운 구독"
       ],
+      "Apps for": [
+        "전용 앱"
+      ],
       "Auto-delete Spam and Trash": [
         "스팸 및 휴지통 자동 삭제"
       ],
@@ -13425,7 +13437,7 @@
         "가장 인기"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "${ visionary } 플랜은 특별한 기능과 혜택이 있는 기존 ${ BRAND_NAME } 사용자를 위한 플랜입니다. 따라서, 새로운 사용자가 구독할 수 업습니다."
+        "${ visionary } 플랜은 특별한 기능과 혜택이 있는 기존 ${ BRAND_NAME } 사용자를 위한 플랜입니다. 따라서, 새로운 사용자가 구독할 수 없습니다."
       ],
       "Pay once, secure your passwords and identity forever.": [
         "한 번만 결제하여 평생 비밀번호와 신원 정보를 보호하세요."
@@ -13537,14 +13549,6 @@
         "모든 ${ BRAND_NAME } 프리미엄 제품 및 기능을 단돈 ${ priceLine }에 누리세요. 언제든지 취소하세요."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } 체험"
-      ],
-      "Your account's usage": [
-        "계정 사용량"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -13563,6 +13567,14 @@
       ],
       "Unlock premium features by upgrading": [
         "업그레이드로 프리미엄 기능 해제"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } 체험"
+      ],
+      "Your account's usage": [
+        "계정 사용량"
       ]
     },
     "new_plans: tooltip": {
@@ -13989,13 +14001,13 @@
         "체험기간이 시작되었습니다"
       ],
       "Two-factor authentication has been enforced for administrators": [
-        "이중 인증이 관리자로 부터 활성화 되었습니다."
+        "2단계 인증이 관리자로 부터 활성화 되었습니다."
       ],
       "Two-factor authentication has been enforced for all members": [
-        "이중 인증이 모든 회원으로 활성화 되었습니다."
+        "2단계 인증이 모든 구성원에게 활성화 되었습니다."
       ],
       "Two-factor authentication is not required anymore": [
-        "이중 인증이 모두에게 필요하지 않습니다."
+        "2단계 인증이 모든 구성원에게 요구되지 않습니다."
       ],
       "Video conferencing settings have been updated": [
         "화상 회의 설정이 변경되었습니다."
@@ -14194,17 +14206,6 @@
       ],
       "Desktop": [
         "데스크탑"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "모두"
-      ],
-      "Group members": [
-        "그룹 구성원"
-      ],
-      "No one": [
-        "아무도"
       ]
     },
     "Option": {
@@ -14462,6 +14463,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "모두"
+      ],
+      "Group members": [
+        "그룹 구성원"
+      ],
+      "No one": [
+        "아무도"
       ]
     },
     "Option delay send seconds": {
@@ -18451,11 +18463,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-All address": [
-        "Catch-All 주소"
-      ],
       "Catch-all address": [
         "Catch-all 주소"
+      ],
+      "Catch-All address": [
+        "Catch-All 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -18704,10 +18716,10 @@
         "장치명"
       ],
       "Disable two-factor authentication": [
-        "이중 인증 비활성화"
+        "2단계 인증 비활성화"
       ],
       "Disable two-factor authentication?": [
-        "이중 인증을 비활성화하시겠습니까?"
+        "2단계 인증을 비활성화하시겠습니까?"
       ],
       "Discard changes?": [
         "변경 사항을 취소할까요?"

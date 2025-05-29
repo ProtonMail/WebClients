@@ -187,6 +187,9 @@
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
+      "Authenticate": [
+        "Authentifizieren"
+      ],
       "Authenticating": [
         "Authentifiziere"
       ],
@@ -195,6 +198,9 @@
       ],
       "Back": [
         "Zurück"
+      ],
+      "Back to sign in": [
+        "Zurück zur Anmeldung"
       ],
       "Block": [
         "Sperren"
@@ -562,6 +568,9 @@
       "Edit users": [
         "Benutzer bearbeiten"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } aktivieren"
       ],
@@ -609,6 +618,9 @@
       ],
       "Font": [
         "Schriftart"
+      ],
+      "Forgot password?": [
+        "Passwort vergessen?"
       ],
       "Forgot recovery method?": [
         "Wiederherstellungsmethode vergessen?"
@@ -1138,10 +1150,10 @@
       "Select country ${ country }": [
         "Land ${ country } auswählen"
       ],
-      "Select file": [
+      "select file": [
         "Datei auswählen"
       ],
-      "select file": [
+      "Select file": [
         "Datei auswählen"
       ],
       "Select files": [
@@ -1399,8 +1411,14 @@
       "Use a different payment method": [
         "Eine andere Zahlungsmethode verwenden"
       ],
+      "Use authentication code": [
+        "Authentifizierungscode verwenden"
+      ],
       "Use group sending permissions": [
         "Verwende Gruppensenderechte"
+      ],
+      "Use recovery code": [
+        "Wiederherstellungsschlüssel verwenden"
       ],
       "Use your current email instead": [
         "Verwende stattdessen deine aktuelle E-Mail-Adresse"
@@ -4865,11 +4883,11 @@
       "Forward to": [
         "Weiterleiten an"
       ],
-      "or": [
-        "oder"
-      ],
       "Or": [
         "Oder"
+      ],
+      "or": [
+        "oder"
       ],
       "With attachment": [
         "Mit Anhang"
@@ -5120,8 +5138,8 @@
       "Error in one of the conditions": [
         "Fehler in einer der Bedingungen"
       ],
-      "Error publishing changes.": [
-        "Fehler bei der Veröffentlichung von Änderungen."
+      "Error publishing changes": [
+        "Fehler bei der Veröffentlichung von Änderungen"
       ],
       "Expired": [
         "Abgelaufen"
@@ -6309,6 +6327,9 @@
       "Please disable 2FA via security key before disabling TOTP": [
         "Bitte deaktiviere 2FA über Sicherheitsschlüssel, bevor du TOTP deaktivierst."
       ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Bei der Authentifizierung mit Ihrem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte erneut versuchen."
+      ],
       "Something went wrong registering your security key. Please try again.": [
         "Etwas ist beim Registrieren deines Sicherheitsschlüssels schief gelaufen. Bitte versuche es erneut."
       ]
@@ -6329,8 +6350,14 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Bist du dir sicher, dass du den Sicherheitsschlüssel ${ name } löschen möchtest?"
       ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Stecke einen Sicherheitsschlüssel ein, der mit deinem ${ BRAND_NAME }-Konto verknüpft ist."
+      ],
       "Insert your security key into your device's USB port.": [
         "Stecke deinen Sicherheitsschlüssel in den USB-Anschluss deines Geräts."
+      ],
+      "Security key": [
+        "Sicherheitsschlüssel"
       ],
       "Security key removed": [
         "Sicherheitsschlüssel entfernt"
@@ -6358,6 +6385,9 @@
     "fido2: Label": {
       "Key name": [
         "Schlüsselname"
+      ],
+      "Security key": [
+        "Sicherheitsschlüssel"
       ]
     },
     "fido2: Title": {
@@ -7815,6 +7845,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Mindestens ${ BETTER_PASSWORD_LENGTH } Zeichen"
       ],
+      "At least one application must be active": [
+        "Mindestens eine Anwendung muss aktiv sein"
+      ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
@@ -8183,6 +8216,9 @@
       "Drop to import": [
         "Ablegen zum Importieren"
       ],
+      "Each code can only be used once": [
+        "Jeder Code kann nur einmal verwendet werden"
+      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Jede Domain kann nur einen SPF (TXT)-Eintrag haben. Wenn du den bestehenden SPF (TXT)-Eintrag behalten möchtest, kannst du ${ spf } zu deinem aktuellen Eintrag hinzufügen (platziere es nach ${ spfValue })."
       ],
@@ -8285,6 +8321,9 @@
       "Enter new password for user ${ userName }.": [
         "Gib ein neues Passwort für den Benutzer ${ userName } ein."
       ],
+      "Enter the code from your authenticator app": [
+        "Code aus deiner Authentifizierungs-App ein eingeben"
+      ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Gib den an deine Telefonnummer „${ phone }“ gesendeten Code ein."
       ],
@@ -8303,11 +8342,17 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Bestätigungscode eingeben. Ziffer ${ digit }."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Gib deine ${ BRAND_NAME }-Details zum Konto ein."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Gib die E-Mail-Adresse oder den Benutzernamen deines ${ BRAND_NAME }-Kontos ein."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Eigenes Passwort (als Organisationsadministrator) eingeben."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Gib deine E-Mail-Adresse für die Wiederherstellung ein und es wird dir dein Benutzername oder deine E-Mail-Adresse zugeschickt."
@@ -9104,7 +9149,7 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleibt.",
-        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleiben."
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleibt."
       ],
       "please open a support ticket": [
         "öffne bitte ein Support-Ticket"
@@ -9739,6 +9784,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Gib zur Bestätigung bitte den Namen des zu löschenden Benutzers ein."
       ],
+      "To continue to ${ product }": [
+        "Weiter zu ${ product }"
+      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Um unsere Dienste kontinuierlich zu verbessern, sammeln wir manchmal Daten, um das ordnungsgemäße Funktionieren unserer Anwendungen zu überwachen. Diese Informationen werden nicht an Dienste von Drittanbietern weitergegeben."
       ],
@@ -9910,10 +9958,10 @@
       "User activated": [
         "Benutzer aktiviert"
       ],
-      "username": [
+      "Username": [
         "Benutzername"
       ],
-      "Username": [
+      "username": [
         "Benutzername"
       ],
       "Users": [
@@ -10098,6 +10146,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Wenn du einen Server von einem Gateway entfernst, wird er für 10 Tage deaktiviert. Dieser Server kann zu einem neuen Gateway hinzugefügt werden, aber sein Land kann nicht geändert werden."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wenn dein Abonnement verlängert wird, werden wir das verfügbare Guthaben anrechnen, bevor wir die oben genannte Zahlungsmethode belasten."
@@ -11138,6 +11189,9 @@
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
       ],
+      "Authenticator app": [
+        "Authentifizierungs-App"
+      ],
       "Auto show embedded images": [
         "Eingebettete Bilder automatisch anzeigen"
       ],
@@ -12120,6 +12174,9 @@
       "Your calendar URL": [
         "Deine Kalender-URL"
       ],
+      "Your password (admin)": [
+        "Dein Passwort (Admin)"
+      ],
       "Your referral link": [
         "Dein Empfehlungslink"
       ],
@@ -12435,10 +12492,10 @@
       "perform a password reset from your active session": [
         "dein Passwort in deiner aktiven Sitzung zurücksetzen"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "Datenschutzerklärung"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "Datenschutzerklärung"
       ],
       "Reactivate now": [
@@ -13780,14 +13837,6 @@
         "Schalte alle Premium-Produkte und -Funktionen von ${ BRAND_NAME } für nur ${ priceLine } frei. Jederzeit kündbar."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-Testversion"
-      ],
-      "Your account's usage": [
-        "Verbrauch deines Kontos"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
@@ -13806,6 +13855,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Schalte die Premium-Funktionen durch ein Upgrade frei"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-Testversion"
+      ],
+      "Your account's usage": [
+        "Verbrauch deines Kontos"
       ]
     },
     "new_plans: tooltip": {
@@ -14446,17 +14503,6 @@
         "Desktop"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Jeder"
-      ],
-      "Group members": [
-        "Gruppenmitglieder"
-      ],
-      "No one": [
-        "Keiner"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10. des Monats"
@@ -14691,6 +14737,17 @@
       ],
       "Trash": [
         "In Papierkorb verschieben"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Jeder"
+      ],
+      "Group members": [
+        "Gruppenmitglieder"
+      ],
+      "No one": [
+        "Keiner"
       ]
     },
     "Option delay send seconds": {
@@ -18179,6 +18236,9 @@
       "Locale updated": [
         "Gebietsschema aktualisiert"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Neue Richtlinie erstellt. Sie wird erst wirksam, nachdem du die Änderungen veröffentlicht hast."
+      ],
       "Organization activated": [
         "Organisation aktiviert"
       ],
@@ -18208,6 +18268,12 @@
       ],
       "Phone number updated": [
         "Telefonnummer aktualisiert"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "Richtlinie geändert. Sie wird erst wirksam, nachdem du die Änderungen veröffentlicht hast."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "Richtlinie gelöscht. Sie wird erst wirksam, nachdem du die Änderungen veröffentlicht hast."
       ],
       "Port copied to clipboard": [
         "Port in Zwischenablage kopiert"
@@ -18754,11 +18820,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-All address": [
-        "Catch-all-Adresse"
-      ],
       "Catch-all address": [
         "Catch-all-Weiterleitungsadresse"
+      ],
+      "Catch-All address": [
+        "Catch-all-Adresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -19142,6 +19208,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Gib deine ${ BRAND_NAME }-Kontodaten ein, um am ${ app } Beta-Programm teilzunehmen."
+      ],
+      "Enter your password": [
+        "Passwort eingeben"
       ],
       "Error": [
         "Fehler"

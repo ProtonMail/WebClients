@@ -821,11 +821,11 @@
       "Select country": [
         "Fren tamurt"
       ],
-      "Select file": [
-        "Fren afaylu"
-      ],
       "select file": [
         "fren afaylu"
+      ],
+      "Select file": [
+        "Fren afaylu"
       ],
       "Select files": [
         "Fren ifuyla"
@@ -3137,11 +3137,11 @@
       "Forward to": [
         "Welleh ɣer"
       ],
-      "or": [
-        "neɣ"
-      ],
       "Or": [
         "Neɣ"
+      ],
+      "or": [
+        "neɣ"
       ],
       "With attachment": [
         "S ufaylu yeddan"
@@ -8201,14 +8201,6 @@
         "Tferneḍ aɣawas-a: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Aneɛruḍ n ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Aseqdac-ik n umiḍan"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Kkes amiḍan?"
@@ -8218,6 +8210,14 @@
       ],
       "Switch plans?": [
         "Beddel iɣawasen?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Aneɛruḍ n ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Aseqdac-ik n umiḍan"
       ]
     },
     "new_plans: tooltip": {
@@ -10257,10 +10257,10 @@
       "Card verification": [
         "Takerḍa n usenqed"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
       "Change login password": [

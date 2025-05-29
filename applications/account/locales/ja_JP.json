@@ -1138,10 +1138,10 @@
       "Select country ${ country }": [
         "国 ${ country }を選択"
       ],
-      "Select file": [
+      "select file": [
         "ファイルを選択"
       ],
-      "select file": [
+      "Select file": [
         "ファイルを選択"
       ],
       "Select files": [
@@ -4708,10 +4708,10 @@
       "Forward to": [
         "転送先"
       ],
-      "or": [
+      "Or": [
         "または"
       ],
-      "Or": [
+      "or": [
         "または"
       ],
       "With attachment": [
@@ -4960,9 +4960,6 @@
       ],
       "Error in one of the conditions": [
         "いずれかの条件にエラーがあります"
-      ],
-      "Error publishing changes.": [
-        "変更の公開中にエラーが発生しました。"
       ],
       "Expired": [
         "有効期限切れ"
@@ -9672,11 +9669,11 @@
       "User activated": [
         "ユーザーがアクティブ化"
       ],
-      "username": [
-        "ユーザー名"
-      ],
       "Username": [
         "ユーザーネーム"
+      ],
+      "username": [
+        "ユーザー名"
       ],
       "Users": [
         "ユーザー"
@@ -12176,10 +12173,10 @@
       "perform a password reset from your active session": [
         "アクティブなセッションからパスワードリセットを実行する"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "プライバシーポリシー"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "プライバシーポリシー"
       ],
       "Reactivate now": [
@@ -13483,14 +13480,6 @@
         "全ての ${ BRAND_NAME } プレミアム製品と機能を ${ priceLine }だけでアンロックできます。いつでもキャンセルできます。"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }トライアル"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -13509,6 +13498,14 @@
       ],
       "Unlock premium features by upgrading": [
         "アップグレードしてプレミアム機能の制限を解除"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -14142,17 +14139,6 @@
         "デスクトップ"
       ]
     },
-    "option": {
-      "Everyone": [
-        "みんな"
-      ],
-      "Group members": [
-        "グループメンバー"
-      ],
-      "No one": [
-        "誰も"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "毎月 10 日"
@@ -14387,6 +14373,17 @@
       ],
       "Trash": [
         "ごみ箱"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "みんな"
+      ],
+      "Group members": [
+        "グループメンバー"
+      ],
+      "No one": [
+        "誰も"
       ]
     },
     "Option delay send seconds": {
@@ -18379,10 +18376,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
       "Change login password": [

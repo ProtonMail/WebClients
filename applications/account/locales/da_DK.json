@@ -1123,11 +1123,11 @@
       "Select country": [
         "Vælg land"
       ],
-      "Select file": [
-        "Vælg fil"
-      ],
       "select file": [
         "vælg fil"
+      ],
+      "Select file": [
+        "Vælg fil"
       ],
       "Select files": [
         "Vælg filer"
@@ -4511,11 +4511,11 @@
       "Forward to": [
         "Videresend til"
       ],
-      "or": [
-        "eller"
-      ],
       "Or": [
         "Eller"
+      ],
+      "or": [
+        "eller"
       ],
       "With attachment": [
         "Med vedhæftning"
@@ -9283,11 +9283,11 @@
       "User activated": [
         "Bruger aktiveret"
       ],
-      "username": [
-        "brugernavn"
-      ],
       "Username": [
         "Brugernavn"
+      ],
+      "username": [
+        "brugernavn"
       ],
       "Users": [
         "Brugere"
@@ -11706,11 +11706,11 @@
       "perform a password reset from your active session": [
         "udføre en nulstilling af adgangskoden fra din aktive session"
       ],
-      "Privacy policy": [
-        "Privatlivspolitik"
-      ],
       "privacy policy": [
         "privatlivspolitik"
+      ],
+      "Privacy policy": [
+        "Privatlivspolitik"
       ],
       "Reactivate now": [
         "Genaktiver nu"
@@ -13036,14 +13036,6 @@
         "Den rabatpris på ${ priceCoupon } er gyldig i den første måned. Derefter fornys den automatisk til ${ priceLine }. Du kan annullere når som helst."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prøveversion"
-      ],
-      "Your account's usage": [
-        "Din kontos forbrug"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -13062,6 +13054,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås op for premium-funktioner ved at opgradere"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prøveversion"
+      ],
+      "Your account's usage": [
+        "Din kontos forbrug"
       ]
     },
     "new_plans: tooltip": {
@@ -13675,17 +13675,6 @@
         "Desktop"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Alle"
-      ],
-      "Group members": [
-        "Gruppemedlemmer"
-      ],
-      "No one": [
-        "Ingen"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "Månedligt d. 10."
@@ -13911,6 +13900,17 @@
       ],
       "Trash": [
         "Papirkurv"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Alle"
+      ],
+      "Group members": [
+        "Gruppemedlemmer"
+      ],
+      "No one": [
+        "Ingen"
       ]
     },
     "Option delay send seconds": {
@@ -17785,11 +17785,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-All address": [
-        "Catch-All-adresse"
-      ],
       "Catch-all address": [
         "Catch-all-adresse"
+      ],
+      "Catch-All address": [
+        "Catch-All-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"

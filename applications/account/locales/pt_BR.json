@@ -1150,11 +1150,11 @@
       "Select country ${ country }": [
         "Selecione o país ${ country }"
       ],
-      "Select file": [
-        "Selecionar arquivo"
-      ],
       "select file": [
         "selecionar arquivo"
+      ],
+      "Select file": [
+        "Selecionar arquivo"
       ],
       "Select files": [
         "Selecionar arquivos"
@@ -4883,11 +4883,11 @@
       "Forward to": [
         "Encaminhar para"
       ],
-      "or": [
-        "ou"
-      ],
       "Or": [
         "Ou"
+      ],
+      "or": [
+        "ou"
       ],
       "With attachment": [
         "Com anexo"
@@ -5138,8 +5138,8 @@
       "Error in one of the conditions": [
         "Ocorreu um erro em uma das condições"
       ],
-      "Error publishing changes.": [
-        "Erro ao publicar alterações."
+      "Error publishing changes": [
+        "Erro ao publicar as alterações"
       ],
       "Expired": [
         "Expirado"
@@ -7848,6 +7848,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Pelo menos ${ BETTER_PASSWORD_LENGTH } caracteres"
       ],
+      "At least one application must be active": [
+        "Pelo menos um aplicativo deve estar ativo."
+      ],
       "Attention required": [
         "Atenção necessária"
       ],
@@ -9961,10 +9964,10 @@
       "User activated": [
         "Usuário ativado"
       ],
-      "username": [
+      "Username": [
         "Nome de usuário"
       ],
-      "Username": [
+      "username": [
         "Nome de usuário"
       ],
       "Users": [
@@ -12498,11 +12501,11 @@
       "perform a password reset from your active session": [
         "execute uma redefinição de senha da sua sessão ativa"
       ],
-      "Privacy policy": [
-        "Política de privacidade"
-      ],
       "privacy policy": [
         "política de privacidade"
+      ],
+      "Privacy policy": [
+        "Política de privacidade"
       ],
       "Reactivate now": [
         "Reativar agora"
@@ -13846,17 +13849,6 @@
         "Desbloqueie todos os produtos e recursos premium da ${ BRAND_NAME } por apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Uso da sua conta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -13875,6 +13867,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Faça o upgrade para desbloquear recursos premium"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Uso da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -14515,17 +14518,6 @@
         "Área de trabalho"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Todos"
-      ],
-      "Group members": [
-        "Membros do grupo"
-      ],
-      "No one": [
-        "Ninguém"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10º dia do mês"
@@ -14769,6 +14761,17 @@
       ],
       "UDP": [
         "UDP"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Todos"
+      ],
+      "Group members": [
+        "Membros do grupo"
+      ],
+      "No one": [
+        "Ninguém"
       ]
     },
     "Option delay send seconds": {
@@ -18263,6 +18266,9 @@
       "Locale updated": [
         "Idioma atualizado"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Una política foi criada. Isso só entrará em vigor depois que você publicar as mudanças."
+      ],
       "Organization activated": [
         "Organização ativada"
       ],
@@ -18292,6 +18298,12 @@
       ],
       "Phone number updated": [
         "Número de telefone atualizado"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "A política foi alterada. Isso só entrará em vigor depois que você publicar as mudanças."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "A política foi excluída. Isso só entrará em vigor depois que você publicar as mudanças."
       ],
       "Port copied to clipboard": [
         "Porta copiada para a área de transferência"
@@ -18841,11 +18853,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço Catch-All (captura tudo)"
-      ],
       "Catch-all address": [
         "Endereço catch-all"
+      ],
+      "Catch-All address": [
+        "Endereço Catch-All (captura tudo)"
       ],
       "Change login password": [
         "Alterar a senha de login"

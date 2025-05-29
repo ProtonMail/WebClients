@@ -1150,11 +1150,11 @@
       "Select country ${ country }": [
         "Selecciona el país ${ country }"
       ],
-      "Select file": [
-        "Seleccionar un archivo"
-      ],
       "select file": [
         "seleccionar un archivo"
+      ],
+      "Select file": [
+        "Seleccionar un archivo"
       ],
       "Select files": [
         "Seleccionar archivos"
@@ -1567,7 +1567,7 @@
         "Desactivar"
       ],
       "Disable E2EE mail": [
-        "Deshabiliar correo E2EE"
+        "Desactivar correo E2EE"
       ],
       "Disallow unsigned mail": [
         "No permitir correos sin firma"
@@ -4883,11 +4883,11 @@
       "Forward to": [
         "Reenviar a"
       ],
-      "or": [
-        "o"
-      ],
       "Or": [
         "O"
+      ],
+      "or": [
+        "o"
       ],
       "With attachment": [
         "Con archivo adjunto"
@@ -5138,8 +5138,8 @@
       "Error in one of the conditions": [
         "Error en una de las condiciones"
       ],
-      "Error publishing changes.": [
-        "Error al publicar los cambios."
+      "Error publishing changes": [
+        "Error al publicar los cambios"
       ],
       "Expired": [
         "Expirado"
@@ -7701,7 +7701,7 @@
         "Se ha copiado la dirección al portapapeles."
       ],
       "Admin account allocation": [
-        "Asignación de cuenta de administrador"
+        "Asignación de la cuenta de administrador"
       ],
       "Affected user is on row": [
         "El usuario afectado está en la fila.",
@@ -7847,6 +7847,9 @@
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Al menos ${ BETTER_PASSWORD_LENGTH } caracteres"
+      ],
+      "At least one application must be active": [
+        "Al menos una aplicación debe estar activa"
       ],
       "Attention required": [
         "Atención requerida"
@@ -9958,11 +9961,11 @@
       "User activated": [
         "Se ha activado el usuario."
       ],
-      "username": [
-        "nombre de usuario"
-      ],
       "Username": [
         "Nombre de usuario"
+      ],
+      "username": [
+        "nombre de usuario"
       ],
       "Users": [
         "Usuarios"
@@ -12492,11 +12495,11 @@
       "perform a password reset from your active session": [
         "restablecer la contraseña desde una sesión activa"
       ],
-      "Privacy policy": [
-        "Política de privacidad"
-      ],
       "privacy policy": [
         "política de privacidad"
+      ],
+      "Privacy policy": [
+        "Política de privacidad"
       ],
       "Reactivate now": [
         "Reactivar"
@@ -12748,7 +12751,7 @@
         "Cambiar contraseña"
       ],
       "Convert to SSO": [
-        "Pasar al SSO"
+        "Pasar a la autenticación única (SSO)"
       ],
       "Delete": [
         "Eliminar"
@@ -13837,14 +13840,6 @@
         "Desbloquea todos los productos y funciones premium de ${ BRAND_NAME } por solo ${ priceLine }. Cancela en cualquier momento."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prueba de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -13863,6 +13858,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Desbloquea funciones premium al actualizar"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prueba de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {
@@ -14503,17 +14506,6 @@
         "Escritorio"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Todos"
-      ],
-      "Group members": [
-        "Miembros del grupo"
-      ],
-      "No one": [
-        "Nadie"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10º del mes"
@@ -14748,6 +14740,17 @@
       ],
       "Trash": [
         "Enviar a la papelera"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Todos"
+      ],
+      "Group members": [
+        "Miembros del grupo"
+      ],
+      "No one": [
+        "Nadie"
       ]
     },
     "Option delay send seconds": {
@@ -18239,6 +18242,9 @@
       "Locale updated": [
         "Idioma actualizado"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Se ha creado una política. Surtirá efecto solo después de que publiques los cambios."
+      ],
       "Organization activated": [
         "Organización activada"
       ],
@@ -18268,6 +18274,12 @@
       ],
       "Phone number updated": [
         "Número de teléfono actualizado"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "Se ha cambiado la política. Solo surtirá efecto después de que publiques los cambios."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "Se ha eliminado la política. Solo surtirá efecto después de que publiques los cambios."
       ],
       "Port copied to clipboard": [
         "Se ha copiado el puerto al portapapeles."
@@ -18814,10 +18826,10 @@
       "Card verification": [
         "Verificación de la tarjeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
       "Change login password": [
@@ -20403,7 +20415,7 @@
         "Dirección externa - desactiva el cifrado de correo electrónico de extremo a extremo para este grupo y no se compartirá ningún recurso cifrado con este usuario."
       ],
       "Group membership paused": [
-        "Se ha pausado la membresía del grupo."
+        "Se ha suspendido la suscripción al grupo."
       ],
       "Sending member invitation": [
         "Enviando una invitación al miembro"
