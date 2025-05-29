@@ -1,10 +1,13 @@
 import { c, msgid } from 'ttag';
 
 import PassUI from '@proton/pass/lib/core/ui.proxy';
+import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import type { Draft } from '@proton/pass/store/reducers';
 import type {
     BulkSelectionDTO,
     DeobfuscatedItem,
+    DeobfuscatedItemExtraField,
     IdentityItemPreview,
     ItemRevision,
     ItemSortFilter,
@@ -197,3 +200,22 @@ export const getBulkSelectionCount = (selected: BulkSelectionDTO) =>
 export const formatDisplayNameWithEmail = (name: string, email: string) => `${name} <${email}>`;
 
 export const formatItemsCount = (n: number) => c('Info').ngettext(msgid`${n} item`, `${n} items`, n);
+
+type ObfuscateLabeledExtraFields = { extraFields: DeobfuscatedItemExtraField[]; label?: string; issuer?: string };
+
+export const obfuscateLabeledExtraFields = ({ extraFields, label, issuer }: ObfuscateLabeledExtraFields) =>
+    obfuscateExtraFields(
+        extraFields.map((field) =>
+            field.type === 'totp'
+                ? {
+                      ...field,
+                      data: {
+                          totpUri: parseOTPValue(field.data.totpUri, {
+                              label: label || undefined,
+                              issuer: issuer || undefined,
+                          }),
+                      },
+                  }
+                : field
+        )
+    );
