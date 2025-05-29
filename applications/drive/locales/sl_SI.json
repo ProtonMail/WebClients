@@ -5463,9 +5463,6 @@
       "Shared by ": [
         "Deljeno s strani "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Delil z ${ rootLink.signatureEmail }"
-      ],
       "Shared link not found": [
         "Povezave v skupni rabi ni bilo mogoče najti"
       ],
@@ -7305,6 +7302,14 @@
         "Srednja hitrost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Izbriši račun"
@@ -7326,14 +7331,6 @@
       ],
       "Switch plan": [
         "Zamenjaj paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Upgrade": [
-        "Nadgradnja"
       ]
     },
     "new_plans: feature": {
@@ -8649,10 +8646,10 @@
       "Invite members": [
         "Povabi člane"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Morda kasneje"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Morda kasneje"
       ],
       "Select theme": [

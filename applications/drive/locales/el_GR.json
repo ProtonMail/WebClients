@@ -5574,14 +5574,20 @@
       "Shared by ": [
         "Κοινοποιήθηκε από "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Κοινοποιήθηκε από τον/την ${ rootLink.signatureEmail }"
+      "Shared by ${ sharedBy }": [
+        "Κοινοποιήθηκε από τον/την ${ sharedBy }"
+      ],
+      "Shared by you": [
+        "Κοινοποιημένο από εσάς"
       ],
       "Shared link not found": [
         "Ο κοινόχρηστος σύνδεσμος δεν βρέθηκε"
       ],
       "Shared with me": [
         "Κοινοποιημένο με εμένα"
+      ],
+      "Shared with you": [
+        "Κοινοποιημένα με εσάς"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Η υπογραφή δεν μπορεί να επικυρωθεί λόγω σφάλματος δικτύου, δοκιμάστε ξανά αργότερα."
@@ -6323,6 +6329,9 @@
     "Label": {
       "# of downloads": [
         "# λήψεων"
+      ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } από ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
         "όνομα χρήστη ${ BRAND_NAME }"
@@ -7481,6 +7490,17 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Πλάνα που ξεκινούν από ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Διαγραφή λογαριασμού"
@@ -7502,17 +7522,6 @@
       ],
       "Switch plan": [
         "Αλλαγή προγράμματος"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Πλάνα που ξεκινούν από ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
       ]
     },
     "new_plans: feature": {
@@ -8818,11 +8827,11 @@
       "Invite members": [
         "Προσκαλέστε μέλη"
       ],
-      "Maybe later": [
-        "Ίσως αργότερα"
-      ],
       "Maybe Later": [
         "Ίσως Αργότερα"
+      ],
+      "Maybe later": [
+        "Ίσως αργότερα"
       ],
       "Select theme": [
         "Επιλογή θέματος"

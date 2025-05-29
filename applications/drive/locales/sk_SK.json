@@ -243,6 +243,9 @@
       "Copy address": [
         "Kopírovať adresu"
       ],
+      "Copy alias “${ name }”": [
+        "Kopírovať alias \"${ name }\""
+      ],
       "Copy email to clipboard": [
         "Skopírovať email do schránky"
       ],
@@ -4727,6 +4730,9 @@
       "Anyone with this link can access your folder.": [
         "Ktokoľvek s týmto odkazom má prístup k vášmu priečinku."
       ],
+      "Apr": [
+        "Apr"
+      ],
       "Are you sure you want to discard your changes?": [
         "Naozaj chcete zahodiť všetky zmeny?"
       ],
@@ -4753,6 +4759,9 @@
       ],
       "Attention required": [
         "Vyžaduje sa pozornosť"
+      ],
+      "Aug": [
+        "Aug"
       ],
       "Automated Recovery ${ formattedDate }": [
         "Automatická obnova ${ formattedDate }"
@@ -4903,6 +4912,9 @@
       ],
       "Custom email domains": [
         "Vlastné emailové domény"
+      ],
+      "Dec": [
+        "Dec"
       ],
       "Decrypting files": [
         "Dešifrovanie súborov"
@@ -5056,6 +5068,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Nepodarilo sa otvoriť bezpečný odkaz. Dôvod: ${ error }"
+      ],
+      "Feb": [
+        "Feb"
       ],
       "File \"${ name }\" was deleted during download": [
         "Súbor „${ name }“ bol vymazaný počas sťahovania"
@@ -5228,8 +5243,17 @@
       "It’s easy and secure": [
         "Je to jednoduché a bezpečné"
       ],
+      "Jan": [
+        "Jan"
+      ],
       "JCB logo": [
         "JCB logo"
+      ],
+      "Jul": [
+        "Júl"
+      ],
+      "Jun": [
+        "Jún"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Už len potvrďte váš výber a my urobíme zbytok."
@@ -5294,6 +5318,9 @@
       "Makes your account safer": [
         "Robí váš účet bezpečnejším"
       ],
+      "Mar": [
+        "Mar"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
@@ -5302,6 +5329,9 @@
         "Maximálne ${ MAX_SHARED_URL_PASSWORD_LENGTH } znaky",
         "Maximálne ${ MAX_SHARED_URL_PASSWORD_LENGTH } znakov",
         "Maximálne ${ MAX_SHARED_URL_PASSWORD_LENGTH } znakov"
+      ],
+      "May": [
+        "Máj"
       ],
       "Medium Priority": [
         "Stredná priorita"
@@ -5378,11 +5408,17 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Poznámka: dáta môžu byť stále dostupné lokálne na zariadeniach, kde ste nainštalovali ${ DRIVE_APP_NAME }."
       ],
+      "Nov": [
+        "Nov"
+      ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
       ],
       "Numbers": [
         "Čísla"
+      ],
+      "Oct": [
+        "Okt"
       ],
       "of": [
         "z"
@@ -5666,6 +5702,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vyberte, ktoré kalendáre chcete importovať. Pre každý importovaný kalendár sa vytvorí nový kalendár podľa počtu kalendárov dostupných vo vašom pláne."
       ],
+      "Sep": [
+        "Sep"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA platby sú momentálne nedostupné. Skúste to znova neskôr."
       ],
@@ -5699,14 +5738,20 @@
       "Shared by ": [
         "Zdieľané používateľom "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Zdieľané vlastníkom ${ rootLink.signatureEmail }"
+      "Shared by ${ sharedBy }": [
+        "Zdieľa ${ sharedBy }"
+      ],
+      "Shared by you": [
+        "Vami zdieľané"
       ],
       "Shared link not found": [
         "Zdieľaný odkaz sa nenašiel"
       ],
       "Shared with me": [
         "Zdieľané so mnou"
+      ],
+      "Shared with you": [
+        "Zdieľané s vami"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nemožno overiť kvôli chybe siete, skúste znovu neskôr, prosím."
@@ -6470,6 +6515,9 @@
     "Label": {
       "# of downloads": [
         "počet stiahnutí"
+      ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } z ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
         "Používateľské meno ${ BRAND_NAME }"
@@ -7646,6 +7694,17 @@
         "Stredná VPN rýchlosť"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Predplatné začína od ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Zmazať účet"
@@ -7667,17 +7726,6 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Predplatné začína od ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
       ]
     },
     "new_plans: feature": {
@@ -9071,10 +9119,10 @@
       "Invite members": [
         "Pozvať členov"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Možno neskôr"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Možno neskôr"
       ],
       "Select theme": [

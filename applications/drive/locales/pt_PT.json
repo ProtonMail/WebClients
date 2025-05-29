@@ -5574,14 +5574,20 @@
       "Shared by ": [
         "Partilhado por "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Partilhado por ${ rootLink.signatureEmail }"
+      "Shared by ${ sharedBy }": [
+        "Partilhado por ${ sharedBy }"
+      ],
+      "Shared by you": [
+        "Partilhado por si"
       ],
       "Shared link not found": [
         "A ligação partilhada não foi encontrada."
       ],
       "Shared with me": [
         "Partilhado comigo"
+      ],
+      "Shared with you": [
+        "Partilhado consigo"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "A assinatura não pode ser validada devido a um erro de rede. Tente novamente mais tarde."
@@ -6323,6 +6329,9 @@
     "Label": {
       "# of downloads": [
         "Número de transferências"
+      ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } de ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
         "Nome de utilizador do ${ BRAND_NAME }"
@@ -7481,6 +7490,17 @@
         "Velocidade VPN média"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planos a partir de ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Apagar conta"
@@ -7502,17 +7522,6 @@
       ],
       "Switch plan": [
         "Alterar o plano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planos a partir de ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
       ]
     },
     "new_plans: feature": {
@@ -8818,10 +8827,10 @@
       "Invite members": [
         "Convidar membros"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Talvez mais tarde"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Talvez mais tarde"
       ],
       "Select theme": [

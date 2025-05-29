@@ -5574,14 +5574,20 @@
       "Shared by ": [
         "Compartit per "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Compartit per ${ rootLink.signatureEmail }"
+      "Shared by ${ sharedBy }": [
+        "Compartit per ${ sharedBy }"
+      ],
+      "Shared by you": [
+        "Compartit per vós"
       ],
       "Shared link not found": [
         "No s'ha trobat l'enllaç compartit."
       ],
       "Shared with me": [
         "Compartit amb mi"
+      ],
+      "Shared with you": [
+        "Compartit amb vós"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "No es pot validar la signatura a causa d'un error de xarxa. Torneu-ho a provar més tard."
@@ -6326,6 +6332,9 @@
     "Label": {
       "# of downloads": [
         "Nombre de descàrregues"
+      ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } de ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
@@ -7544,6 +7553,17 @@
         "Velocitat VPN mitjana"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Plans a partir de ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Elimina el compte"
@@ -7565,17 +7585,6 @@
       ],
       "Switch plan": [
         "Canvia de pla"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Plans a partir de ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Millora"
       ]
     },
     "new_plans: feature": {
@@ -8881,11 +8890,11 @@
       "Invite members": [
         "Convideu els membres."
       ],
-      "Maybe later": [
-        "Potser després"
-      ],
       "Maybe Later": [
         "Potser més tard"
+      ],
+      "Maybe later": [
+        "Potser després"
       ],
       "Select theme": [
         "Selecciona el tema"
