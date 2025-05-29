@@ -17,7 +17,7 @@ const MailboxListContainer = (
     { className, show = true, showContentPanel = false, children, noBorder = false }: MailboxListContainerProps,
     ref: Ref<HTMLDivElement>
 ) => {
-    const { contextMenu, blockSenderModal } = useMailboxListContext();
+    const { contextMenu, blockSenderModal, mailboxListLoading } = useMailboxListContext();
     return (
         <div
             className={clsx([
@@ -33,6 +33,7 @@ const MailboxListContainer = (
                     'overflow-auto flex flex-nowrap flex-column relative h-full w-full',
                     noBorder ? '' : 'items-column-list-inner'
                 )}
+                data-testid={mailboxListLoading ? 'message-list-loading' : 'message-list-loaded'}
             >
                 {children}
             </div>
