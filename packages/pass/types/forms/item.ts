@@ -58,7 +58,7 @@ export type CreditCardItemFormValues = BaseItemValues & {
     verificationNumber: string;
     pin: string;
     note: string;
-};
+} & ExtraFieldGroupValues;
 
 export type CustomItemFormValues<T extends ItemCustomType = ItemCustomType> = Extract<
     BaseItemValues &
