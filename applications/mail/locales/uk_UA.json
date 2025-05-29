@@ -411,6 +411,9 @@
       "Download ${ attachmentName }": [
         "Завантажити ${ attachmentName }"
       ],
+      "Download now": [
+        "Завантажити"
+      ],
       "Download the desktop app": [
         "Завантажити настільний додаток"
       ],
@@ -629,6 +632,9 @@
       ],
       "Import from Outlook": [
         "Імпортувати з Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Доступне важливе оновлення. Щоб і надалі користуватися програмою, оновіть її до останньої версії. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Зранку"
@@ -1086,10 +1092,10 @@
       "Select ${ planTitle }": [
         "Оберіть ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Вибрати все"
       ],
-      "Select All": [
+      "Select all": [
         "Вибрати все"
       ],
       "Select all messages": [
@@ -1284,12 +1290,6 @@
       "Trust": [
         "Довіряти"
       ],
-      "Trust key": [
-        "Довіряти ключу",
-        "Довіряти ключам",
-        "Довіряти ключам",
-        "Довіряти ключам"
-      ],
       "Trust public key": [
         "Довіряти відкритому ключу"
       ],
@@ -1347,11 +1347,11 @@
       "Upgrade": [
         "Покращити"
       ],
-      "Upgrade now": [
-        "Покращити"
-      ],
       "Upgrade Now": [
         "Передплатити"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ],
       "Upload picture": [
         "Вивантажити зображення"
@@ -6736,6 +6736,9 @@
         "Ініціалізація…"
       ],
       "Insert image": [
+        "Вставити зображення",
+        "Вставити зображення",
+        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
