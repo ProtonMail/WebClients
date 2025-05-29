@@ -555,11 +555,11 @@
       "Refresh status": [
         "Osveži stanje"
       ],
-      "refresh the page": [
-        "Osvežite stran"
-      ],
       "Refresh the page": [
         "Osveži stran"
+      ],
+      "refresh the page": [
+        "Osvežite stran"
       ],
       "Remove": [
         "Odstrani"
@@ -675,11 +675,11 @@
       "Select country": [
         "Izberite državo"
       ],
-      "Select file": [
-        "Izberite datoteko"
-      ],
       "select file": [
         "izberite datoteko"
+      ],
+      "Select file": [
+        "Izberite datoteko"
       ],
       "Send code": [
         "Pošlji kodo"
@@ -5194,11 +5194,11 @@
       "User activated": [
         "Uporabnik je aktiviran."
       ],
-      "username": [
-        "uporabniško ime"
-      ],
       "Username": [
         "Uporabniško ime"
+      ],
+      "username": [
+        "uporabniško ime"
       ],
       "Users": [
         "Uporabniki"
@@ -6670,6 +6670,20 @@
         "Srednja hitrost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšaj na paket ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Raziščite vse pakete ${ BRAND_NAME }."
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Izbrišite račun"
@@ -6691,20 +6705,6 @@
       ],
       "Switch plan": [
         "Zamenjaj paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšaj na paket ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Raziščite vse pakete ${ BRAND_NAME }."
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
       ]
     },
     "new_plans: feature": {
@@ -7280,14 +7280,6 @@
         "Znižana cena ${ priceCoupon } velja za prvi mesec. Nato se bo samodejno obnovila po ceni ${ priceLine }. Naročnino lahko kadar koli prekličete."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Preizkus ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uporaba vašega računa"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Izbrišite račun?"
@@ -7300,6 +7292,14 @@
       ],
       "Switch plans?": [
         "Zamenjaj paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Preizkus ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uporaba vašega računa"
       ]
     },
     "new_plans: tooltip": {
@@ -7791,17 +7791,6 @@
         "Dobrodošli v ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Vsi"
-      ],
-      "Group members": [
-        "Člani skupine"
-      ],
-      "No one": [
-        "Nihče"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Dovoljeno ${ defaultLabel }"
@@ -7865,6 +7854,17 @@
       ],
       "The whole organization": [
         "Celotna organizacija"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Vsi"
+      ],
+      "Group members": [
+        "Člani skupine"
+      ],
+      "No one": [
+        "Nihče"
       ]
     },
     "Organization capacity error": {
@@ -10325,10 +10325,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [

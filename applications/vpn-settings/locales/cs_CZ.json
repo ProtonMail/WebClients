@@ -576,11 +576,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "refresh the page": [
-        "obnovit stránku"
-      ],
       "Refresh the page": [
         "Obnovit stránku"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Remove": [
         "Odstranit"
@@ -699,11 +699,11 @@
       "Select country ${ country }": [
         "Vybrat zemi ${ country }"
       ],
-      "Select file": [
-        "Vybrat soubor"
-      ],
       "select file": [
         "vybrat soubor"
+      ],
+      "Select file": [
+        "Vybrat soubor"
       ],
       "Send code": [
         "Odeslat kód"
@@ -3035,8 +3035,8 @@
       "Error connecting to the Bitcoin API.": [
         "Chyba při připojování k Bitcoin API."
       ],
-      "Error publishing changes.": [
-        "Chyba zveřejňování změn."
+      "Error publishing changes": [
+        "Chyba zveřejňování změn"
       ],
       "Failed to load the STL preview": [
         "Načtení náhledu STL selhalo"
@@ -4479,6 +4479,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Alespoň ${ BETTER_PASSWORD_LENGTH } znaků"
       ],
+      "At least one application must be active": [
+        "Alespoň jedna aplikace musí být aktivní"
+      ],
       "Attention required": [
         "Vyžadována pozornost"
       ],
@@ -5832,11 +5835,11 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "username": [
-        "uživatelské jméno"
-      ],
       "Username": [
         "Uživatelské jméno"
+      ],
+      "username": [
+        "uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -7474,6 +7477,20 @@
         "Střední rychlost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Smazat účet"
@@ -7495,20 +7512,6 @@
       ],
       "Switch plan": [
         "Změnit tarif"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Navýšit"
       ]
     },
     "new_plans: feature": {
@@ -8129,14 +8132,6 @@
         "Odemkněte všechny prémiové produkty a funkce ${ BRAND_NAME } jen za ${ priceLine }. Zrušit můžete kdykoli."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -8149,6 +8144,14 @@
       ],
       "Switch plans?": [
         "Změnit tarif?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -8661,17 +8664,6 @@
         "Vítejte v ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Všichni"
-      ],
-      "Group members": [
-        "Členové skupiny"
-      ],
-      "No one": [
-        "Nikdo"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Povoleno ${ defaultLabel }"
@@ -8762,6 +8754,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Všichni"
+      ],
+      "Group members": [
+        "Členové skupiny"
+      ],
+      "No one": [
+        "Nikdo"
       ]
     },
     "Organization capacity error": {
@@ -11187,6 +11190,9 @@
       "Locale updated": [
         "Jazykové prostředí aktualizováno"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Nová zásada vytvořena. V platnost vstoupí až po zveřejnění změn."
+      ],
       "Organization activated": [
         "Organizace byla aktivována"
       ],
@@ -11216,6 +11222,12 @@
       ],
       "Phone number updated": [
         "Telefonní číslo bylo aktualizováno"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "Zásada změněna. V platnost vstoupí až po zveřejnění změn."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "Zásada smazána. V platnost vstoupí až po zveřejnění změn."
       ],
       "Preference saved": [
         "Nastavení uloženo"
@@ -11579,10 +11591,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
       "Change login password": [

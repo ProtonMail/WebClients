@@ -576,11 +576,11 @@
       "Refresh status": [
         "Status vernieuwen"
       ],
-      "refresh the page": [
-        "pagina vernieuwen"
-      ],
       "Refresh the page": [
         "Pagina vernieuwen"
+      ],
+      "refresh the page": [
+        "pagina vernieuwen"
       ],
       "Remove": [
         "Verwijderen"
@@ -699,11 +699,11 @@
       "Select country ${ country }": [
         "Selecteer land ${ country }"
       ],
-      "Select file": [
-        "Selecteer bestand"
-      ],
       "select file": [
         "selecteer bestand"
+      ],
+      "Select file": [
+        "Selecteer bestand"
       ],
       "Send code": [
         "Code versturen"
@@ -3151,8 +3151,8 @@
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin API."
       ],
-      "Error publishing changes.": [
-        "Fout bij publiceren wijzigingen."
+      "Error publishing changes": [
+        "Fout bij publiceren wijzigingen"
       ],
       "Failed to load the STL preview": [
         "Fout bij het laden van de STL-preview"
@@ -4521,6 +4521,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Voer minstens ${ BETTER_PASSWORD_LENGTH } tekens in"
       ],
+      "At least one application must be active": [
+        "Minstens één applicatie moet actief zijn"
+      ],
       "Attention required": [
         "Aandacht vereist"
       ],
@@ -5841,11 +5844,11 @@
       "User activated": [
         "Gebruiker geactiveerd"
       ],
-      "username": [
-        "gebruikersnaam"
-      ],
       "Username": [
         "Gebruikersnaam"
+      ],
+      "username": [
+        "gebruikersnaam"
       ],
       "Users": [
         "Gebruikers"
@@ -7448,6 +7451,20 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Bekijk alle ${ BRAND_NAME }-abonnementen"
+      ],
+      "From ${ price }": [
+        "Vanaf ${ price }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -7469,20 +7486,6 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Bekijk alle ${ BRAND_NAME }-abonnementen"
-      ],
-      "From ${ price }": [
-        "Vanaf ${ price }"
-      ],
-      "Upgrade": [
-        "Upgraden"
       ]
     },
     "new_plans: feature": {
@@ -8057,14 +8060,6 @@
         "Ontgrendel alle ${ BRAND_NAME } premium producten en functies voor ${ priceLine }. U kunt op ieder moment annuleren."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Proefversie"
-      ],
-      "Your account's usage": [
-        "Verbruik van uw account"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -8077,6 +8072,14 @@
       ],
       "Switch plans?": [
         "Van abonnement wisselen?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Proefversie"
+      ],
+      "Your account's usage": [
+        "Verbruik van uw account"
       ]
     },
     "new_plans: tooltip": {
@@ -8591,17 +8594,6 @@
         "Welkom bij ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Iedereen"
-      ],
-      "Group members": [
-        "Groepsleden"
-      ],
-      "No one": [
-        "Niemand"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Toegestaan ${ defaultLabel }"
@@ -8671,6 +8663,17 @@
       ],
       "The whole organization": [
         "De hele organisatie"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Iedereen"
+      ],
+      "Group members": [
+        "Groepsleden"
+      ],
+      "No one": [
+        "Niemand"
       ]
     },
     "Organization capacity error": {
@@ -10967,6 +10970,9 @@
       "Locale updated": [
         "Landinstelling bijgewerkt"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Nieuw beleid aangemaakt. Dit gaat pas van kracht nadat u de wijzigingen publiceert."
+      ],
       "Organization activated": [
         "Organisatie geactiveerd"
       ],
@@ -10996,6 +11002,12 @@
       ],
       "Phone number updated": [
         "Telefoonnummer bijgewerkt"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "Beleid gewijzigd. Het gaat pas van kracht nadat u de wijzigingen publiceert."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "Beleid verwijderd. Het gaat pas van kracht nadat u de wijzigingen publiceert."
       ],
       "Preference saved": [
         "Voorkeur opgeslagen"
@@ -11357,11 +11369,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-All address": [
-        "Catch-All adres"
-      ],
       "Catch-all address": [
         "Catch-all adres"
+      ],
+      "Catch-All address": [
+        "Catch-All adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"

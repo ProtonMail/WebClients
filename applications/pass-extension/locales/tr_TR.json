@@ -581,6 +581,9 @@
       "Sort vault items": [
         "Kasa ögelerini sırala"
       ],
+      "Start from scratch": [
+        "Sıfırdan başla"
+      ],
       "Submit": [
         "Gönder"
       ],
@@ -1606,7 +1609,7 @@
         "E-posta göndermek istediğiniz adresi yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu girin. Rakam ${ digit }."
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
       ],
       "Enter your extra password": [
         "Ek parolanızı yazın"
@@ -2485,6 +2488,12 @@
       "Account": [
         "Hesap"
       ],
+      "Account Number": [
+        "Hesap numarası"
+      ],
+      "Account Type": [
+        "Hesap türü"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Bu etki alanı için yeni bir takma ad oluşturulurken rastgele bir ön ek ekler."
       ],
@@ -2524,6 +2533,12 @@
       "Always show username field": [
         "Kullanıcı adı alanı her zaman görüntülensin"
       ],
+      "API Credential": [
+        "API kimlik doğrulama bilgisi"
+      ],
+      "API Key": [
+        "API anahtarı"
+      ],
       "Application logs": [
         "Uygulama günlüğü"
       ],
@@ -2547,6 +2562,12 @@
       ],
       "Backup password": [
         "Yedek parola"
+      ],
+      "Bank Account": [
+        "Banka hesabı"
+      ],
+      "Bank Name": [
+        "Banka adı"
       ],
       "Biometrics": [
         "Biyometri"
@@ -2605,11 +2626,17 @@
       "Country or Region": [
         "Ülke ya da bölge"
       ],
+      "Country,": [
+        "Ülke,"
+      ],
       "County": [
         "İlçe"
       ],
       "Create a credit card": [
         "Kredi kartı ekle"
+      ],
+      "Create a custom item": [
+        "Özel öge oluştur"
       ],
       "Create a hide-my-email alias": [
         "Bir hide-my-email takma adı oluştur"
@@ -2635,14 +2662,29 @@
       "Created at": [
         "Oluşturulma tarihi"
       ],
+      "Crypto Wallet": [
+        "Kripto cüzdan"
+      ],
       "Custom hidden field": [
         "Özel gizli alan"
+      ],
+      "Custom Items": [
+        "Özel ögeler"
       ],
       "Custom text field": [
         "Özel metin alanı"
       ],
+      "Database": [
+        "Veri tabanı"
+      ],
+      "Database Type": [
+        "Veri tabanı türü"
+      ],
       "Date": [
         "Tarih"
+      ],
+      "Date of Birth": [
+        "Doğum tarihi"
       ],
       "Device": [
         "Aygıt"
@@ -2671,6 +2713,9 @@
       "Download logs": [
         "Günlüğü indir"
       ],
+      "Driver License": [
+        "Sürücü belgesi"
+      ],
       "Email": [
         "E-posta"
       ],
@@ -2698,6 +2743,9 @@
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
+      "Expiry Date": [
+        "Son geçerlilik tarihi"
+      ],
       "Export": [
         "Dışa aktar"
       ],
@@ -2715,6 +2763,9 @@
       ],
       "File format": [
         "Dosya biçimi"
+      ],
+      "Finance": [
+        "Finans"
       ],
       "First name": [
         "Ad"
@@ -2748,6 +2799,15 @@
       ],
       "Hide password": [
         "Parolayı gizle"
+      ],
+      "Holder Name": [
+        "Kart üzerindeki ad"
+      ],
+      "Host": [
+        "Sunucu"
+      ],
+      "Hostname": [
+        "Sunucu adı"
       ],
       "https://example.com": [
         "https://ornek.com"
@@ -2797,6 +2857,15 @@
       "Invitations": [
         "Davetler"
       ],
+      "IP Address": [
+        "IP adresi"
+      ],
+      "Issuing Authority": [
+        "Veren makam"
+      ],
+      "Issuing Country": [
+        "Veren ülke"
+      ],
       "Item ID": [
         "Öge kimliği"
       ],
@@ -2833,6 +2902,9 @@
       "License": [
         "Ehliyet"
       ],
+      "License Key": [
+        "Lisans anahtarı"
+      ],
       "License number": [
         "Ehliyet numarası"
       ],
@@ -2866,14 +2938,26 @@
       "max views reached": [
         "en fazla görüntülenme sayısına ulaşılmış"
       ],
+      "Medical Record": [
+        "Sağlık kaydı"
+      ],
+      "Member ID": [
+        "Üye kimliği"
+      ],
       "Members": [
         "Üyeler"
+      ],
+      "Membership": [
+        "Üyelik"
       ],
       "Middle name": [
         "İkinci ad"
       ],
       "Modified": [
         "Değiştirilme"
+      ],
+      "More": [
+        "Diğer"
       ],
       "More than a month": [
         "Bir aydan fazla"
@@ -2884,11 +2968,17 @@
       "Name": [
         "Ad"
       ],
+      "Name (SSID)": [
+        "Ağ adı (SSID)"
+      ],
       "Name on card": [
         "Kart üzerindeki isim"
       ],
       "Need help?": [
         "Yardım mı gerekiyor?"
+      ],
+      "Network": [
+        "Ağ"
       ],
       "New": [
         "Yeni"
@@ -2932,8 +3022,14 @@
       "Oldest to newest": [
         "Eskiden yeniye"
       ],
+      "Operating System": [
+        "İşletim sistemi"
+      ],
       "Organization": [
         "Kuruluş"
+      ],
+      "Owner": [
+        "Sahibi"
       ],
       "Passkey": [
         "Geçiş anahtarı"
@@ -2950,6 +3046,9 @@
       "Passport number": [
         "Pasaport numarası"
       ],
+      "Passport Number": [
+        "Pasaport numarası"
+      ],
       "Password": [
         "Parola"
       ],
@@ -2961,6 +3060,12 @@
       ],
       "Pause list": [
         "Duraklatma listesi"
+      ],
+      "Permissions": [
+        "İzinler"
+      ],
+      "Personal": [
+        "Kişisel"
       ],
       "Personal details": [
         "Kişisel bilgiler"
@@ -2980,6 +3085,12 @@
       "PIN code": [
         "PIN kodu"
       ],
+      "Points Balance": [
+        "Puan bakiyesi"
+      ],
+      "Port": [
+        "Bağlantı noktası"
+      ],
       "Prefix": [
         "Ön ek"
       ],
@@ -2988,6 +3099,18 @@
       ],
       "Priority:": [
         "Öncelik:"
+      ],
+      "Private Key": [
+        "Kişisel anahtar"
+      ],
+      "Private key": [
+        "Kişisel anahtar"
+      ],
+      "Product": [
+        "Ürün"
+      ],
+      "Program Name": [
+        "Program adı"
       ],
       "Prompt for auto-save": [
         "Otomatik kaydetme uyarısı"
@@ -3000,6 +3123,9 @@
       ],
       "Public domain": [
         "Herkese açık etki alanı"
+      ],
+      "Public key": [
+        "Herkese açık anahtar"
       ],
       "Rate us": [
         "Bizi değerlendirin"
@@ -3022,11 +3148,20 @@
       "Reveal password": [
         "Parolayı görüntüle"
       ],
+      "Reward Program": [
+        "Ödül programı"
+      ],
+      "Routing Number": [
+        "Şube kodu"
+      ],
       "Save passkeys": [
         "Geçiş anahtarlarını kaydet"
       ],
       "Second password": [
         "İkinci parola"
+      ],
+      "Secret": [
+        "Parola"
       ],
       "Secure links": [
         "Güvenli bağlantılar"
@@ -3039,6 +3174,9 @@
       ],
       "See member and permission overview": [
         "Üye ve izin özetini görüntüleyin"
+      ],
+      "Seed Phrase": [
+        "Tohum ifadesi"
       ],
       "Select a domain": [
         "Bir etki alanı seçin"
@@ -3057,6 +3195,9 @@
       ],
       "Selected": [
         "Seçilmiş"
+      ],
+      "Server": [
+        "Sunucu"
       ],
       "Settings": [
         "Ayarlar"
@@ -3082,11 +3223,26 @@
       "Social security": [
         "Sosyal güvenlik"
       ],
+      "Social Security": [
+        "Sosyal güvenlik"
+      ],
       "Social security number": [
         "Sosyal güvenlik numarası"
       ],
+      "Software license": [
+        "Yazılım lisansı"
+      ],
       "Special characters (!&*)": [
         "Özel karakterler (!&*)"
+      ],
+      "SSH key": [
+        "SSH anahtarı"
+      ],
+      "SSH Keys": [
+        "SSH anahtarları"
+      ],
+      "SSN": [
+        "SGN"
       ],
       "State or province": [
         "İl ya da bölge"
@@ -3106,6 +3262,9 @@
       "Support": [
         "Destek"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Takma adları SimpleLogin ile eşitle"
       ],
@@ -3115,6 +3274,9 @@
       "Tax number": [
         "Vergi numarası"
       ],
+      "Technology": [
+        "Teknoloji"
+      ],
       "Text": [
         "Metin"
       ],
@@ -3123,6 +3285,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Tier/Status": [
+        "Kademe/Durum"
       ],
       "Title": [
         "Başlık"
@@ -3160,6 +3325,9 @@
       "Unnamed Credit Card": [
         "Adsız kredi kartı"
       ],
+      "Unnamed custom item": [
+        "Adlandırılmamış özel öge"
+      ],
       "Unnamed identity": [
         "Adsız kimlik"
       ],
@@ -3168,6 +3336,15 @@
       ],
       "Unnamed note": [
         "Adsız not"
+      ],
+      "Unnamed SSH key": [
+        "Adlandırılmamış SSH anahtarı"
+      ],
+      "Unnamed WiFi item": [
+        "Adlandırılmamış kablosuz ağ ögesi"
+      ],
+      "Unspecified": [
+        "Belirtilmemiş"
       ],
       "Untitled": [
         "Adsız"
@@ -3202,6 +3379,9 @@
       "Vulnerable": [
         "Çok zayıf"
       ],
+      "Wallet Name": [
+        "Cüzdan adı"
+      ],
       "Weak": [
         "Zayıf"
       ],
@@ -3210,6 +3390,12 @@
       ],
       "Websites": [
         "Siteler"
+      ],
+      "WiFi network": [
+        "Kablosuz ağ"
+      ],
+      "WiFi Networks": [
+        "Kablosuz ağlar"
       ],
       "Work details": [
         "İş bilgileri"
@@ -3409,6 +3595,9 @@
       "Add 2FA secret key": [
         "İki adımlı doğrulama gizli anahtarı ekle"
       ],
+      "Add date": [
+        "Tarih ekle"
+      ],
       "Add hidden text": [
         "Gizli metin ekle"
       ],
@@ -3457,6 +3646,9 @@
       "my-domain.com": [
         "etki-alanim.com"
       ],
+      "Name displayed in emails": [
+        "E-postalarda görüntülecek ad"
+      ],
       "Note from SimpleLogin": [
         "SimpleLogin notu"
       ],
@@ -3489,6 +3681,9 @@
       ],
       "Select a suffix": [
         "Bir son ek yazın"
+      ],
+      "Select option": [
+        "Seçenek seçin"
       ],
       "Unknown origin": [
         "Kaynak bilinmiyor"

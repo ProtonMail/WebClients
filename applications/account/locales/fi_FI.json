@@ -1147,11 +1147,11 @@
       "Select country ${ country }": [
         "Valitse maa ${ country }"
       ],
-      "Select file": [
-        "Valitse tiedosto"
-      ],
       "select file": [
         "valitse tiedosto"
+      ],
+      "Select file": [
+        "Valitse tiedosto"
       ],
       "Select files": [
         "Valitse tiedostot"
@@ -4645,11 +4645,11 @@
       "Forward to": [
         "Ohjaa osoitteeseen"
       ],
-      "or": [
-        "tai"
-      ],
       "Or": [
         "Tai"
+      ],
+      "or": [
+        "tai"
       ],
       "With attachment": [
         "Sisällytä liitteet"
@@ -4870,6 +4870,9 @@
       "Domain not available, try again later": [
         "Verkkotunnusta ei tavoiteta. Yritä myöhemmin uudelleen"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Laskutusosoitteen muokkaus ei ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen."
+      ],
       "Email address disabled": [
         "Sähköpostiosoite ei ole käytössä"
       ],
@@ -4896,9 +4899,6 @@
       ],
       "Error in one of the conditions": [
         "Jossakin ehdossa on virhe"
-      ],
-      "Error publishing changes.": [
-        "Virhe julkaistaessa muutoksia."
       ],
       "Expired": [
         "Vanhentunut"
@@ -5892,7 +5892,7 @@
         "Kun tämä käyttäjä jättää tilauksesi, hänet siirretään ${ BRAND_NAME } Free -tilaukseen."
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Poistuttaan tilauksestasi, tämä käyttäjä siirretään ${ BRAND_NAME }  Unlimited -tilaukseen 30 päivän maksuttomalla kokeilujaksolla.*"
+        "Poistuttaan tilauksestasi, tämä käyttäjä siirretään ${ BRAND_NAME } Unlimited -tilaukseen 30 päivän maksuttomalla kokeilujaksolla.*"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Oletusarvoisesti ylläpitotilille määriteteään ${ formattedStorage } tallennustilaa. Voit myöhemmin muuttaa tallennustilan jakautumista muille käyttäjille."
@@ -7354,6 +7354,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Käyttäjä tarkoittaa tiliä, joka on liitetty yksittäiseen käyttäjätunnukseen, postilaatikkoon ja henkilöön."
       ],
+      "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
+        "Käytä yli 6 500 nopeaa palvelinta jopa 10 laitteella ja pidä selaustietosi turvassa. Saatavilla seuraavilla alustoilla: ${ ios }, ${ android }, ${ appleTV } ja ${ desktop }."
+      ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Käytä salasanojasi ja suojaa verkkoidentiteettisi saumattomasti kaikilla laitteillasi. Lataa ja asenna tarvitsemasi ${ PASS_APP_NAME } -sovellukset ja laajennukset."
       ],
@@ -7574,6 +7577,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Ainakin ${ BETTER_PASSWORD_LENGTH } merkkiä"
       ],
+      "At least one application must be active": [
+        "Ainakin yhden sovelluksen tulee olla aktiivisena"
+      ],
       "Attention required": [
         "Huomiota vaaditaan"
       ],
@@ -7699,6 +7705,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "Yhteystiedot ovat saatavilla noin tunnin kuluttua."
+      ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "Jatka organisaation **${ organizationValue.Name }** jäsenen **${ affiliationsText }** liittymisen sallimista ${ BRAND_NAME }-organisaatioosi."
       ],
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "Jatka **${ organizationValue.Name }**:n yhdistämistä ${ BRAND_NAME }-organisaatioosi."
@@ -7962,6 +7971,9 @@
       ],
       "Email address": [
         "Sähköpostiosoite"
+      ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "Sähköposti ja kalenteri ovat integroitu ${ CONTACTS_APP_NAME } kanssa"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Sähköpostin isännöinti on saatavilla vain jo entuudestaan omistamillesi verkkotunnuksille. ${ BRAND_NAME }in kautta ei tällä hetkellä ole mahdollista rekisteröidä verkkotunnuksia. Voit käyttää miltä tahansa verkkotunnustoimittajalta hankkimaasi verkkotunnusta."
@@ -8552,6 +8564,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Varmista, että ${ addARecoveryMethod }, jotta pääset tilillesi takaisin, mikäli unohdat salasanasi."
+      ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "Hallitse, mitä ${ BRAND_NAME } -sovelluksia organisaatiosi jäsenet voivat käyttää. Jos tämä on poistettu käytöstä, vain järjestelmänvalvojilla on pääsy."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Hallitse ${ DOCS_APP_NAME }in sähköposti-ilmoitusvalintoja."
@@ -9378,6 +9393,9 @@
       "This promotion link has expired.": [
         "Tämä kampanjalinkki on vanhentunut."
       ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Tämä palvelu ei ole saatavilla kertakirjautumisen käyttäjille."
+      ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Tunniste ei ole ikkunan sulkeuduttua käytettävissä, eikä sitä tulisi jakaa kenellekään."
       ],
@@ -9636,11 +9654,11 @@
       "User activated": [
         "Käyttäjä aktivoitiin"
       ],
-      "username": [
-        "käyttäjätunnus"
-      ],
       "Username": [
         "Käyttäjätunnus"
+      ],
+      "username": [
+        "käyttäjätunnus"
       ],
       "Users": [
         "Käyttäjät"
@@ -9704,6 +9722,9 @@
       ],
       "Visa Secure logo": [
         "Visa Secure -logo"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN omilla palvelimillaan ja IP-osoitteillaan"
       ],
       "Want to learn more?": [
         "Haluatko lisätietoja?"
@@ -12146,11 +12167,11 @@
       "perform a password reset from your active session": [
         "salasanan uudelleenasetus onnistua aktiivisen istunnon kautta"
       ],
-      "Privacy policy": [
-        "Tietosuojakäytäntö"
-      ],
       "privacy policy": [
         "tietosuojakäytäntömme"
+      ],
+      "Privacy policy": [
+        "Tietosuojakäytäntö"
       ],
       "Reactivate now": [
         "Uudelleenaktivoi nyt"
@@ -13488,14 +13509,6 @@
         "Avaa kaikki ${ BRAND_NAME } -premium-tuotteet ja -ominaisuudet hintaan ${ priceLine }. Peruuta milloin tahansa."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-kokeilu"
-      ],
-      "Your account's usage": [
-        "Tilisi käyttö"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -13514,6 +13527,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Avaa premium-ominaisuudet päivittämällä tilauksesi"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-kokeilu"
+      ],
+      "Your account's usage": [
+        "Tilisi käyttö"
       ]
     },
     "new_plans: tooltip": {
@@ -14151,17 +14172,6 @@
         "Työpöytä"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Kaikki"
-      ],
-      "Group members": [
-        "Ryhmän jäsenet"
-      ],
-      "No one": [
-        "Ei ketään"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "Kuukauden 10. päivä"
@@ -14396,6 +14406,17 @@
       ],
       "Trash": [
         "Poista"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Kaikki"
+      ],
+      "Group members": [
+        "Ryhmän jäsenet"
+      ],
+      "No one": [
+        "Ei ketään"
       ]
     },
     "Option delay send seconds": {
@@ -18438,10 +18459,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -19838,6 +19859,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Identiteetintarjoajan (esim. https://idp.esimerkki.fi/sso/saml) päätepisteen URL-osoite."
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "Pois lukien kertakirjautumisen käyttäjät, joiden 2FA:n hoitaa tunnistautumisen palveluntarjoajasi"
+      ],
       "Feature in early access": [
         "Ominaisuus on varhaisessa käytössä"
       ],
@@ -19864,6 +19888,9 @@
       ],
       "IP address (Internet Service Provider)": [
         "IP-osoite (Internet-palveluntarjoaja)"
+      ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "Jäsenet, jotka eivät käytä 2FA:ta, saavat sähköpostin, jossa heitä pyydetään ottamaan se käyttöön mahdollisimman pian. Kertakirjautumisen käyttäjät eivät saa sähköpostimuistutusta."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Lähetetyt- ja Luonnokset-kansioiden viestit näytetään niissä edelleen, vaikka ne siirrettäisiin eri kansioihin."
@@ -19942,6 +19969,12 @@
       ],
       "This feature is only available on Beta": [
         "Tämä ominaisuus on käytettävissä vain beetaversiossa"
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
+        "Tämä on oletusavain, jota muut, vanhempia mobiilisovelluksia käyttävät ${ MAIL_APP_NAME }-käyttäjät, käyttävät salatakseen sinulle lähettämänsä datan"
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
+        "Tämä on oletusavain, jota muut ${ MAIL_APP_NAME }-käyttäjät käyttävät salatakseen sinulle lähettämänsä datan"
       ],
       "This key cannot be used for encryption": [
         "Tätä avainta ei voi käyttää salaukseen"

@@ -1147,10 +1147,10 @@
       "Select country ${ country }": [
         "选择国家/地区 ${ country }"
       ],
-      "Select file": [
+      "select file": [
         "选择文件"
       ],
-      "select file": [
+      "Select file": [
         "选择文件"
       ],
       "Select files": [
@@ -4720,10 +4720,10 @@
       "Forward to": [
         "转发到"
       ],
-      "or": [
+      "Or": [
         "或"
       ],
-      "Or": [
+      "or": [
         "或"
       ],
       "With attachment": [
@@ -4972,9 +4972,6 @@
       ],
       "Error in one of the conditions": [
         "条件存在错误"
-      ],
-      "Error publishing changes.": [
-        "发布更改时出错。"
       ],
       "Expired": [
         "已失效"
@@ -9696,10 +9693,10 @@
       "User activated": [
         "用户已激活"
       ],
-      "username": [
+      "Username": [
         "用户名"
       ],
-      "Username": [
+      "username": [
         "用户名"
       ],
       "Users": [
@@ -12203,10 +12200,10 @@
       "perform a password reset from your active session": [
         "从您的活动会话中执行密码重置"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "隐私政策"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "隐私政策"
       ],
       "Reactivate now": [
@@ -13510,14 +13507,6 @@
         "只需 ${ priceLine } 即可解锁所有 ${ BRAND_NAME } 高级产品和功能。随时取消。"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } $ 试用"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
@@ -13536,6 +13525,14 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户即可解锁更多高级功能"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } $ 试用"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -14169,17 +14166,6 @@
         "电脑版"
       ]
     },
-    "option": {
-      "Everyone": [
-        "所有人"
-      ],
-      "Group members": [
-        "群组成员"
-      ],
-      "No one": [
-        "没有人"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "每月 10 日"
@@ -14414,6 +14400,17 @@
       ],
       "Trash": [
         "回收站"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "所有人"
+      ],
+      "Group members": [
+        "群组成员"
+      ],
+      "No one": [
+        "没有人"
       ]
     },
     "Option delay send seconds": {
@@ -18406,10 +18403,10 @@
       "Card verification": [
         "银行卡验证"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "通配邮箱"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "通配邮箱"
       ],
       "Change login password": [

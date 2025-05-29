@@ -1150,11 +1150,11 @@
       "Select country ${ country }": [
         "Seleccioneu el país ${ country }"
       ],
-      "Select file": [
-        "Selecciona un fitxer"
-      ],
       "select file": [
         "selecciona un fitxer"
+      ],
+      "Select file": [
+        "Selecciona un fitxer"
       ],
       "Select files": [
         "Selecciona els fitxers"
@@ -4746,11 +4746,11 @@
       "Forward to": [
         "Reenvia a"
       ],
-      "or": [
-        "o"
-      ],
       "Or": [
         "O"
+      ],
+      "or": [
+        "o"
       ],
       "With attachment": [
         "Amb adjunt"
@@ -5001,7 +5001,7 @@
       "Error in one of the conditions": [
         "Errada en una de les condicions"
       ],
-      "Error publishing changes.": [
+      "Error publishing changes": [
         "S'ha produït un error en publicar els canvis."
       ],
       "Expired": [
@@ -7708,6 +7708,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Almenys ${ BETTER_PASSWORD_LENGTH } caràcters"
       ],
+      "At least one application must be active": [
+        "Almenys una aplicació ha d'estar activa."
+      ],
       "Attention required": [
         "Es requereix la vostra atenció"
       ],
@@ -9818,11 +9821,11 @@
       "User activated": [
         "S'ha activat l'usuari."
       ],
-      "username": [
-        "nom d'usuari"
-      ],
       "Username": [
         "Nom d'usuari"
+      ],
+      "username": [
+        "nom d'usuari"
       ],
       "Users": [
         "Usuaris"
@@ -12352,11 +12355,11 @@
       "perform a password reset from your active session": [
         "realitzar un restabliment de contrasenya des de la vostra sessió activa"
       ],
-      "Privacy policy": [
-        "Política de privacitat"
-      ],
       "privacy policy": [
         "política de privacitat"
+      ],
+      "Privacy policy": [
+        "Política de privacitat"
       ],
       "Reactivate now": [
         "Reactiva ara"
@@ -13697,14 +13700,6 @@
         "Desbloquegeu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceLine }. Cancel·leu-ho en qualsevol moment."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -13723,6 +13718,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Milloreu el pla i desbloquegeu funcions prèmium"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -14363,17 +14366,6 @@
         "Escriptori"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Tothom"
-      ],
-      "Group members": [
-        "Membres del grup"
-      ],
-      "No one": [
-        "Ningú"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10 del mes"
@@ -14608,6 +14600,17 @@
       ],
       "Trash": [
         "Paperera"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tothom"
+      ],
+      "Group members": [
+        "Membres del grup"
+      ],
+      "No one": [
+        "Ningú"
       ]
     },
     "Option delay send seconds": {
@@ -18099,6 +18102,9 @@
       "Locale updated": [
         "S'ha actualitzat l'idioma"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "S'ha creat una política. Només tindrà efecte després de publicar els canvis."
+      ],
       "Organization activated": [
         "Organització activada"
       ],
@@ -18128,6 +18134,12 @@
       ],
       "Phone number updated": [
         "Número de telèfon s'ha actualitzat"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "S'ha canviat la política. Només tindrà efecte després de publicar els canvis."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "S'ha eliminat la política. Només tindrà efecte després de publicar els canvis."
       ],
       "Port copied to clipboard": [
         "S'ha copiat el port al porta-retalls."
@@ -18674,10 +18686,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [

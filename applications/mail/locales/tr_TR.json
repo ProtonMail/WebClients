@@ -304,6 +304,9 @@
       "Copy addresses": [
         "Adresi kopyala"
       ],
+      "Copy alias “${ name }”": [
+        "“${ name }” takma adını kopyala"
+      ],
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
       ],
@@ -432,6 +435,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } uygulamalarını indirin"
       ],
+      "Download now": [
+        "Şimdi indir"
+      ],
       "Download the desktop app": [
         "Bilgisayar uygulamasını indirin"
       ],
@@ -541,7 +547,7 @@
         "Yazı tipi"
       ],
       "Forgot password?": [
-        "Parolanızı mı unuttunuz?"
+        "Parolamı unuttum"
       ],
       "Formalize": [
         "Resmileştir"
@@ -677,6 +683,9 @@
       ],
       "Import from Outlook": [
         "Outlook üzerinden içe aktar"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Önemli bir güncelleme yayınlanmış. Uygulamayı kullanmayı sürdürmek için son sürüme güncelleyin. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Sabahları"
@@ -1165,10 +1174,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } tarifesini seçin"
       ],
-      "Select all": [
+      "Select All": [
         "Tümünü seç"
       ],
-      "Select All": [
+      "Select all": [
         "Tümünü seç"
       ],
       "Select all messages": [
@@ -1382,8 +1391,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven",
-        "Anahtarlara güven"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1448,10 +1456,10 @@
       "Upgrade": [
         "Yükselt"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Şimdi yükselt"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Şimdi yükselt"
       ],
       "Upload and share files": [
@@ -1479,7 +1487,7 @@
         "Başka bir ödeme yöntemi kullanın"
       ],
       "Use authentication code": [
-        "Kimlik doğrulama kodu kullan"
+        "Kimlik doğrulama kodunu kullanın"
       ],
       "Use for sending": [
         "Gönderim için kullan"
@@ -5267,7 +5275,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } Hesabınıza bağlı bir güvenlik anahtarı girin."
+        "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
       ],
       "Security key": [
         "Güvenlik anahtarı"
@@ -6303,6 +6311,10 @@
         "${ trackersCount } izleyici engellendi",
         "${ trackersCount } izleyici engellendi"
       ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } duyuru aboneliği",
+        "${ unreadCount } duyuru aboneliği"
+      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } zamanlanmış ileti",
         "${ unreadCount } zamanlanmış ileti"
@@ -6478,6 +6490,9 @@
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Alt klasörler de silinecek. Ancak ${ nameDeleted } klasöründeki e-postalar silinmeyecek ve Tüm e-postalar klasöründe bulunabilecek."
+      ],
+      "Apply to future messages": [
+        "Gelecekteki iletilere uygulansın"
       ],
       "Applying actions to conversations": [
         "İşlemler yazışmalara uygulanıyor"
@@ -6792,10 +6807,10 @@
         "İçe aktarmak için bırakın"
       ],
       "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
-        "Alıcının yapılandırması nedeniyle, bu mesaj ${ firstRecipients }'e son kullanma tarihi ile gönderilemez."
+        "Alıcının yapılandırması nedeniyle, bu ileti ${ firstRecipients } alıcılarına geçerlilik süresi ile gönderilemez."
       ],
       "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
-        "Alıcının yapılandırması nedeniyle, bu mesaj son kullanma tarihi ile gönderilemez."
+        "Alıcınızın yapılandırması nedeniyle, bu ileti geçerlilik süresi ile gönderilemez."
       ],
       "Duplicate key updated": [
         "Çift anahtar güncellendi"
@@ -6868,7 +6883,7 @@
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu girin. Rakam ${ digit }."
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
@@ -7055,7 +7070,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7151,7 +7167,7 @@
         "Düşük öncelikli"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }'i varsayılan e-posta uygulamanız yapın."
+        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız olsun."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -9068,6 +9084,10 @@
       "Mark as": [
         "Şöyle işaretlensin"
       ],
+      "Marked ${ count } message as read.": [
+        "${ count } ileti okunmuş olarak işaretlendi.",
+        "${ count } ileti okunmuş olarak işaretlendi."
+      ],
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } ögesini taşı"
       ],
@@ -9083,6 +9103,18 @@
       "Move to Inbox": [
         "Gelen kutusuna taşı"
       ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "${ count } ileti ${ selectedFolder.Name } içine taşındı.",
+        "${ count } ileti ${ selectedFolder.Name } içine taşındı."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "${ count } ileti arşivlendi.",
+        "${ count } ileti arşivlendi."
+      ],
+      "Moved ${ count } message to Trash.": [
+        "${ count } ileti çöpe atıldı.",
+        "${ count } ileti çöpe atıldı."
+      ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "En az ${ MIN_PASSWORD_LENGTH } karakterden oluşmalıdır"
       ],
@@ -9094,6 +9126,9 @@
       ],
       "New password": [
         "Yeni parola"
+      ],
+      "Newsletters": [
+        "Duyuru abonelikleri"
       ],
       "No label found": [
         "Herhangi bir etiket bulunamadı"
@@ -9274,6 +9309,9 @@
       ],
       "Unsafe or problematic": [
         "Güvenli değil ya da sorunlu"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "${ truncatedName } aboneliğinden çıkıldı."
       ],
       "Upload picture": [
         "Görsel yükle"
@@ -14126,6 +14164,12 @@
       ],
       "New message": [
         "Yeni ileti"
+      ],
+      "Newsletters": [
+        "Duyurular"
+      ],
+      "Newsletters view": [
+        "Duyurular görünümü"
       ],
       "Next conversation": [
         "Sonraki yazışma"

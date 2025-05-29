@@ -1150,11 +1150,11 @@
       "Select country ${ country }": [
         "Selectare țara ${ country }"
       ],
-      "Select file": [
-        "Selectare fișier"
-      ],
       "select file": [
         "selectați fișierul"
+      ],
+      "Select file": [
+        "Selectare fișier"
       ],
       "Select files": [
         "Selectare fișiere"
@@ -4763,10 +4763,10 @@
       "Forward to": [
         "Redirecționare către"
       ],
-      "or": [
+      "Or": [
         "SAU"
       ],
-      "Or": [
+      "or": [
         "SAU"
       ],
       "With attachment": [
@@ -5019,9 +5019,6 @@
       ],
       "Error in one of the conditions": [
         "Eroare în una dintre condiții"
-      ],
-      "Error publishing changes.": [
-        "Eroare publicare modificări."
       ],
       "Expired": [
         "Expirat."
@@ -7787,6 +7784,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Cel puțin ${ BETTER_PASSWORD_LENGTH } caractere"
       ],
+      "At least one application must be active": [
+        "Trebuie să fie activă cel puțin o aplicație"
+      ],
       "Attention required": [
         "Necesită atenție"
       ],
@@ -9919,11 +9919,11 @@
       "User activated": [
         "Utilizator activat"
       ],
-      "username": [
-        "utilizator"
-      ],
       "Username": [
         "Nume de utilizator"
+      ],
+      "username": [
+        "utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -12477,11 +12477,11 @@
       "perform a password reset from your active session": [
         "efectuați o resetare a parolei din sesiunea activă"
       ],
-      "Privacy policy": [
-        "Politica de confidențialitate"
-      ],
       "privacy policy": [
         "politica de confidențialitate"
+      ],
+      "Privacy policy": [
+        "Politica de confidențialitate"
       ],
       "Reactivate now": [
         "Reactivare"
@@ -13857,14 +13857,6 @@
         "Deblocați toate produsele și funcțiile premium din ${ BRAND_NAME } cu doar ${ priceLine }. Anulați oricând."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -13883,6 +13875,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -14530,17 +14530,6 @@
         "Desktop"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Tuturor"
-      ],
-      "Group members": [
-        "Membrii grup"
-      ],
-      "No one": [
-        "Nimeni"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "Ziua 10 a lunii"
@@ -14796,6 +14785,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tuturor"
+      ],
+      "Group members": [
+        "Membrii grup"
+      ],
+      "No one": [
+        "Nimeni"
       ]
     },
     "Option delay send seconds": {
@@ -18927,10 +18927,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
       "Change login password": [

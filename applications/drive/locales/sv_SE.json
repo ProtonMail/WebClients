@@ -4582,6 +4582,9 @@
       "Anyone with this link can access your folder.": [
         "Alla med denna länk kan komma åt din mapp."
       ],
+      "Apr": [
+        "Apr"
+      ],
       "Are you sure you want to discard your changes?": [
         "Är du säker på att du vill ignorera dina ändringar?"
       ],
@@ -4608,6 +4611,9 @@
       ],
       "Attention required": [
         "Uppmärksamhet krävs"
+      ],
+      "Aug": [
+        "Aug"
       ],
       "Automated Recovery ${ formattedDate }": [
         "Automatiserad återställning ${ formattedDate }"
@@ -4754,6 +4760,9 @@
       ],
       "Custom email domains": [
         "Anpassade e-domäner"
+      ],
+      "Dec": [
+        "Dec"
       ],
       "Decrypting files": [
         "Dekrypterar filer"
@@ -4903,6 +4912,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Misslyckades att öppna en säker länk. Orsaken är: ${ error }"
+      ],
+      "Feb": [
+        "Feb"
       ],
       "File \"${ name }\" was deleted during download": [
         "Fil “${ name }“ togs bort under nedladdningen"
@@ -5073,8 +5085,17 @@
       "It’s easy and secure": [
         "Det är enkelt och säkert"
       ],
+      "Jan": [
+        "Jan"
+      ],
       "JCB logo": [
         "JCB-logga"
+      ],
+      "Jul": [
+        "Juli"
+      ],
+      "Jun": [
+        "Jun"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bekräfta bara ditt val och vi gör resten."
@@ -5139,12 +5160,18 @@
       "Makes your account safer": [
         "Gör ditt konto säkrare"
       ],
+      "Mar": [
+        "Mar"
+      ],
       "Mastercard SecureCode logo": [
         "Logga för Mastercard SecureCode"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maximalt ${ MAX_SHARED_URL_PASSWORD_LENGTH } tecken",
         "Maximalt ${ MAX_SHARED_URL_PASSWORD_LENGTH } tecken"
+      ],
+      "May": [
+        "Maj"
       ],
       "Medium Priority": [
         "Medium prioritet"
@@ -5221,11 +5248,17 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Obs! Data kan fortfarande vara tillgänglig lokalt på enheter där du har installerat ${ DRIVE_APP_NAME }."
       ],
+      "Nov": [
+        "Nov"
+      ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
       ],
       "Numbers": [
         "Siffror"
+      ],
+      "Oct": [
+        "Okt"
       ],
       "of": [
         "av"
@@ -5502,6 +5535,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Välj vilka kalendrar som ska importeras. En ny kalender skapas för varje importerad kalender enligt antalet tillgängliga kalendrar i ditt paket."
       ],
+      "Sep": [
+        "Sep"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-betalningar är inte tillgängliga för tillfället. Försök igen senare."
       ],
@@ -5535,14 +5571,20 @@
       "Shared by ": [
         "Delat av "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Delad av ${ rootLink.signatureEmail }"
+      "Shared by ${ sharedBy }": [
+        "Delat av ${ sharedBy }"
+      ],
+      "Shared by you": [
+        "Delat av dig"
       ],
       "Shared link not found": [
         "Delad länk hittades inte"
       ],
       "Shared with me": [
         "Delat med mig"
+      ],
+      "Shared with you": [
+        "Delat med dig"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Signatur kan inte valideras på grund av nätverksfel, försök igen senare."
@@ -6287,6 +6329,9 @@
     "Label": {
       "# of downloads": [
         "# nedladdningar"
+      ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } av ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
@@ -7502,6 +7547,17 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Paket startar från ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -7523,17 +7579,6 @@
       ],
       "Switch plan": [
         "Byt paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Paket startar från ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
       ]
     },
     "new_plans: feature": {
@@ -8115,11 +8160,6 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -8132,6 +8172,11 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -8658,6 +8703,9 @@
       "Subfolder failed to be loaded": [
         "Undermapp kunde inte laddas"
       ],
+      "The Albums feature is on its way! We're rolling it out gradually — please try again soon": [
+        "Albumfunktionen är på väg! Vi lanserar den gradvis – testa igen senare"
+      ],
       "The document failed to be created": [
         "Dokumentet misslyckades att skapas"
       ],
@@ -8838,10 +8886,10 @@
       "Invite members": [
         "Bjud in medlemmar"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Kanske senare"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Kanske senare"
       ],
       "Select theme": [
@@ -9788,6 +9836,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Specialerbjudandet gäller de första 2 åren."
+      ],
       "Your subscription will renew at the same rate every year.": [
         "Din prenumeration kommer att förnyas med samma pris varje år."
       ]
@@ -9867,6 +9918,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Ordinarie pris ${ amount } för 30 månader"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Specialerbjudandet gäller de första 2 åren"
       ]
     },
     "specialoffer: Title": {
@@ -11179,6 +11233,9 @@
       ],
       "Network error": [
         "Nätverksfel"
+      ],
+      "Newsletters view": [
+        "Nyhetsbrevsvy"
       ],
       "Night theme": [
         "Nattema"

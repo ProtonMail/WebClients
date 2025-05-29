@@ -106,6 +106,9 @@
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
+      "Authenticate": [
+        "Authentifizieren"
+      ],
       "Back": [
         "Zurück"
       ],
@@ -210,6 +213,9 @@
       ],
       "Copy alias “${ name }”": [
         "Alias “${ name }” kopieren"
+      ],
+      "Copy as markdown": [
+        "Als Markdown kopieren"
       ],
       "Copy email to clipboard": [
         "E-Mail in Zwischenablage kopieren"
@@ -645,6 +651,9 @@
       "Restore this version?": [
         "Diese Version wiederherstellen?"
       ],
+      "Restoring...": [
+        "Wird wiederhergestellt ..."
+      ],
       "Retry": [
         "Erneut versuchen"
       ],
@@ -822,8 +831,14 @@
       "Use a different payment method": [
         "Eine andere Zahlungsmethode verwenden"
       ],
+      "Use authentication code": [
+        "Authentifizierungscode verwenden"
+      ],
       "Use for sending": [
         "Für den Versand verwenden"
+      ],
+      "Use recovery code": [
+        "Wiederherstellungsschlüssel verwenden"
       ],
       "Verify": [
         "Verifizieren"
@@ -3607,6 +3622,24 @@
         "Unbegrenzte hide-my-email-Aliasse"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Bei der Authentifizierung mit Ihrem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte erneut versuchen."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Stecke einen Sicherheitsschlüssel ein, der mit deinem ${ BRAND_NAME }-Konto verknüpft ist."
+      ],
+      "Security key": [
+        "Sicherheitsschlüssel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sicherheitsschlüssel"
+      ]
+    },
     "file size format": {
       "byte": [
         "Byte",
@@ -4371,6 +4404,9 @@
         "Erstelle eine sichere Cloud für ${ value } Mitglied",
         "Erstelle eine sichere Cloud für ${ value } Mitglieder"
       ],
+      "Create an end-to-end encrypted document.": [
+        "Erstelle ein Ende-zu-Ende-verschlüsseltes Dokument."
+      ],
       "Create in": [
         "Erstellen in"
       ],
@@ -4461,6 +4497,9 @@
       "Duplicate key updated": [
         "Zweitschlüssel aktualisiert"
       ],
+      "Each code can only be used once": [
+        "Jeder Code kann nur einmal verwendet werden"
+      ],
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
       ],
@@ -4488,11 +4527,17 @@
       "Enter password": [
         "Passwort eingeben"
       ],
+      "Enter the code from your authenticator app": [
+        "Code aus deiner Authentifizierungs-App ein eingeben"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Bestätigungscode eingeben. Ziffer ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Gib dein eigenes Passwort ein (als Organisationsadministrator)."
@@ -4879,7 +4924,7 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleibt.",
-        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleiben."
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleibt."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Bitte gib einen Namen und eine E-Mail-Adresse an, um eine Gruppe zu erstellen."
@@ -5321,6 +5366,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Wenn du eine Verbindung zu VPN herstellst, wird deine IP-Adresse (ein eindeutiger Code, der deinem Gerät zugewiesen ist) mithilfe von Verschlüsselungstechnologie verborgen."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
+      ],
       "words": [
         "Wörter"
       ],
@@ -5670,6 +5718,9 @@
       ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
+      ],
+      "Authenticator app": [
+        "Authentifizierungs-App"
       ],
       "Beta Access": [
         "Beta-Zugang"

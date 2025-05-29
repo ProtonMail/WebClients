@@ -304,6 +304,9 @@
       "Copy addresses": [
         "Adressen kopiëren"
       ],
+      "Copy alias “${ name }”": [
+        "Kopieer alias \"${ name }\""
+      ],
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
       ],
@@ -431,6 +434,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Download ${ DRIVE_APP_NAME } apps"
+      ],
+      "Download now": [
+        "Nu downloaden"
       ],
       "Download the desktop app": [
         "Download de desktop-app"
@@ -677,6 +683,9 @@
       ],
       "Import from Outlook": [
         "Importeren uit Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Belangrijke update beschikbaar. Update naar de nieuwste versie om het programma te blijven gebruiken. ${ downloadUpdate }"
       ],
       "In the morning": [
         "'s Ochtends"
@@ -1165,10 +1174,10 @@
       "Select ${ planTitle }": [
         "Selecteer ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Alles selecteren"
       ],
-      "Select All": [
+      "Select all": [
         "Alles selecteren"
       ],
       "Select all messages": [
@@ -1382,8 +1391,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Vertrouwde sleutels"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1448,11 +1456,11 @@
       "Upgrade": [
         "Upgraden"
       ],
-      "Upgrade now": [
-        "Nu upgraden"
-      ],
       "Upgrade Now": [
         "Upgrade Nu"
+      ],
+      "Upgrade now": [
+        "Nu upgraden"
       ],
       "Upload and share files": [
         "Bestanden uploaden en delen"
@@ -7062,7 +7070,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Link invoegen"

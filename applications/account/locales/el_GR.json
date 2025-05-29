@@ -1150,11 +1150,11 @@
       "Select country ${ country }": [
         "Επιλογή χώρας ${ country }"
       ],
-      "Select file": [
-        "Επιλέξτε αρχείο"
-      ],
       "select file": [
         "επιλέξτε αρχείο"
+      ],
+      "Select file": [
+        "Επιλέξτε αρχείο"
       ],
       "Select files": [
         "Επιλέξτε αρχεία"
@@ -4746,11 +4746,11 @@
       "Forward to": [
         "Προώθηση σε"
       ],
-      "or": [
-        "ή"
-      ],
       "Or": [
         "Ή"
+      ],
+      "or": [
+        "ή"
       ],
       "With attachment": [
         "Με συνημμένα"
@@ -5001,8 +5001,8 @@
       "Error in one of the conditions": [
         "Σφάλμα σε μια από τις συνθήκες"
       ],
-      "Error publishing changes.": [
-        "Σφάλμα κατά τη δημοσίευση αλλαγών."
+      "Error publishing changes": [
+        "Σφάλμα κατά τη δημοσίευση αλλαγών"
       ],
       "Expired": [
         "Ληγμένο"
@@ -7708,6 +7708,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Τουλάχιστον ${ BETTER_PASSWORD_LENGTH } χαρακτήρες"
       ],
+      "At least one application must be active": [
+        "Τουλάχιστον μία εφαρμογή πρέπει να είναι ενεργή"
+      ],
       "Attention required": [
         "Απαιτείται προσοχή"
       ],
@@ -9818,11 +9821,11 @@
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
       ],
-      "username": [
-        "όνομα χρήστη"
-      ],
       "Username": [
         "Όνομα Χρήστη"
+      ],
+      "username": [
+        "όνομα χρήστη"
       ],
       "Users": [
         "Χρήστες"
@@ -12352,11 +12355,11 @@
       "perform a password reset from your active session": [
         "εκτελέστε επαναφορά κωδικού πρόσβασης από την ενεργή περίοδο λειτουργίας σας"
       ],
-      "Privacy policy": [
-        "Πολιτική απορρήτου"
-      ],
       "privacy policy": [
         "πολιτική απορρήτου"
+      ],
+      "Privacy policy": [
+        "Πολιτική απορρήτου"
       ],
       "Reactivate now": [
         "Επανενεργοποίηση τώρα"
@@ -13697,14 +13700,6 @@
         "Ξεκλειδώστε όλα τα ${ BRAND_NAME } premium προϊόντα και δυνατότητες με μόλις ${ priceLine }. Ακυρώστε ανά πάσα στιγμή."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Δοκιμή ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Η κατανάλωση του λογαριασμού σας"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -13723,6 +13718,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Ξεκλειδώστε premium δυνατότητες με αναβάθμιση"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Δοκιμή ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Η κατανάλωση του λογαριασμού σας"
       ]
     },
     "new_plans: tooltip": {
@@ -14363,17 +14366,6 @@
         "Υπολογιστής"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Όλοι"
-      ],
-      "Group members": [
-        "Μέλη ομάδας"
-      ],
-      "No one": [
-        "Κανένας"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10η του μήνα"
@@ -14608,6 +14600,17 @@
       ],
       "Trash": [
         "Διαγραμμένα"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Όλοι"
+      ],
+      "Group members": [
+        "Μέλη ομάδας"
+      ],
+      "No one": [
+        "Κανένας"
       ]
     },
     "Option delay send seconds": {
@@ -18096,6 +18099,9 @@
       "Locale updated": [
         "Η εντοπιότητα ενημερώθηκε"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Δημιουργήθηκε νέα πολιτική. Θα ισχύσει μόνο αφότου δημοσιεύσετε τις αλλαγές."
+      ],
       "Organization activated": [
         "Ο οργανισμός ενεργοποιήθηκε"
       ],
@@ -18125,6 +18131,12 @@
       ],
       "Phone number updated": [
         "Ο αριθμός τηλεφώνου ενημερώθηκε"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "Η πολιτική άλλαξε. Θα τεθεί σε ισχύ μόνο αφότου δημοσιεύσετε τις αλλαγές."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "Η πολιτική διαγράφτηκε. Θα τεθεί σε ισχύ μόνο αφότου δημοσιεύσετε τις αλλαγές."
       ],
       "Port copied to clipboard": [
         "Η θύρα αντιγράφηκε στο πρόχειρο"
@@ -18668,10 +18680,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [

@@ -589,6 +589,9 @@
       "Sort vault items": [
         "Kasa ögelerini sırala"
       ],
+      "Start from scratch": [
+        "Sıfırdan başla"
+      ],
       "Submit": [
         "Gönder"
       ],
@@ -687,6 +690,11 @@
         "Tekliften yararlanın"
       ]
     },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Yıldönümü teklifi"
+      ]
+    },
     "anniversary_2025: Offer": {
       "500 GB encrypted storage": [
         "500 GB şifreli depolama alanı"
@@ -750,11 +758,6 @@
       ],
       "years": [
         "yıllık"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Yıldönümü teklifi"
       ]
     },
     "anniversary_2025: Offers": {
@@ -1712,7 +1715,7 @@
         "E-posta göndermek istediğiniz adresi yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu girin. Rakam ${ digit }."
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
       ],
       "Enter your extra password": [
         "Ek parolanızı yazın"
@@ -1915,10 +1918,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2337,7 +2336,7 @@
         "İçe aktarılan verilerinizi gözden geçirmek için tarayıcınızın araç çubuğundaki ${ PASS_APP_NAME } simgesine tıklayın."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
-        "Dünya çapında 50.000'den fazla iş kullanıcısı ve 100 milyon hesap tarafından güvenilmektedir."
+        "Dünya çapında 50.000 üzerinde kurumsal kullanıcı ve 100 milyon hesap tarafından güveniliyor."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Herkese açık olarak sunulmadan önce yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini deneyin. Uygulama yeniden yüklenir"
@@ -2629,6 +2628,12 @@
       "Account": [
         "Hesap"
       ],
+      "Account Number": [
+        "Hesap numarası"
+      ],
+      "Account Type": [
+        "Hesap türü"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Bu etki alanı için yeni bir takma ad oluşturulurken rastgele bir ön ek ekler."
       ],
@@ -2668,6 +2673,12 @@
       "Always show username field": [
         "Kullanıcı adı alanı her zaman görüntülensin"
       ],
+      "API Credential": [
+        "API kimlik doğrulama bilgisi"
+      ],
+      "API Key": [
+        "API anahtarı"
+      ],
       "Application logs": [
         "Uygulama günlüğü"
       ],
@@ -2676,6 +2687,12 @@
       ],
       "Backup password": [
         "Yedek parola"
+      ],
+      "Bank Account": [
+        "Banka hesabı"
+      ],
+      "Bank Name": [
+        "Banka adı"
       ],
       "Beta Access": [
         "Beta erişimi"
@@ -2743,11 +2760,17 @@
       "Country or Region": [
         "Ülke ya da bölge"
       ],
+      "Country,": [
+        "Ülke,"
+      ],
       "County": [
         "İlçe"
       ],
       "Create a credit card": [
         "Kredi kartı ekle"
+      ],
+      "Create a custom item": [
+        "Özel öge oluştur"
       ],
       "Create a hide-my-email alias": [
         "Bir hide-my-email takma adı oluştur"
@@ -2776,14 +2799,29 @@
       "Credit cards": [
         "Kredi kartları"
       ],
+      "Crypto Wallet": [
+        "Kripto cüzdan"
+      ],
       "Custom hidden field": [
         "Özel gizli alan"
+      ],
+      "Custom Items": [
+        "Özel ögeler"
       ],
       "Custom text field": [
         "Özel metin alanı"
       ],
+      "Database": [
+        "Veri tabanı"
+      ],
+      "Database Type": [
+        "Veri tabanı türü"
+      ],
       "Date": [
         "Tarih"
+      ],
+      "Date of Birth": [
+        "Doğum tarihi"
       ],
       "Device": [
         "Aygıt"
@@ -2811,6 +2849,9 @@
       ],
       "Download logs": [
         "Günlüğü indir"
+      ],
+      "Driver License": [
+        "Sürücü belgesi"
       ],
       "Email": [
         "E-posta"
@@ -2842,11 +2883,14 @@
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
+      "Expiry Date": [
+        "Son geçerlilik tarihi"
+      ],
       "Export": [
         "Dışa aktar"
       ],
       "Extra email addresses": [
-        "Ek e-posta adresi"
+        "Ek e-posta adresleri"
       ],
       "Extra password": [
         "Ek parola"
@@ -2865,6 +2909,9 @@
       ],
       "File format": [
         "Dosya biçimi"
+      ],
+      "Finance": [
+        "Finans"
       ],
       "First name": [
         "Ad"
@@ -2900,7 +2947,7 @@
         "CSV dosyası"
       ],
       "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "${ PASS_SHORT_APP_NAME } Plus'ı edinin"
+        "${ PASS_SHORT_APP_NAME } Plus edinin"
       ],
       "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
         "${ PASS_SHORT_APP_NAME } Unlimited edinin"
@@ -2925,6 +2972,15 @@
       ],
       "Highest": [
         "En yüksek"
+      ],
+      "Holder Name": [
+        "Kart üzerindeki ad"
+      ],
+      "Host": [
+        "Sunucu"
+      ],
+      "Hostname": [
+        "Sunucu adı"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "${ PASS_SHORT_APP_NAME } kilidi nasıl açılır"
@@ -2980,6 +3036,15 @@
       "Invitations": [
         "Davetler"
       ],
+      "IP Address": [
+        "IP adresi"
+      ],
+      "Issuing Authority": [
+        "Veren makam"
+      ],
+      "Issuing Country": [
+        "Veren ülke"
+      ],
       "Item ID": [
         "Öge kimliği"
       ],
@@ -3019,11 +3084,14 @@
       "License": [
         "Ehliyet"
       ],
+      "License Key": [
+        "Lisans anahtarı"
+      ],
       "License number": [
         "Ehliyet numarası"
       ],
       "Limited time": [
-        "Sınırlı süreyle"
+        "Sınırlı süreli"
       ],
       "LinkedIn account": [
         "LinkedIn hesabı"
@@ -3055,14 +3123,26 @@
       "max views reached": [
         "en fazla görüntülenme sayısına ulaşılmış"
       ],
+      "Medical Record": [
+        "Sağlık kaydı"
+      ],
+      "Member ID": [
+        "Üye kimliği"
+      ],
       "Members": [
         "Üyeler"
+      ],
+      "Membership": [
+        "Üyelik"
       ],
       "Middle name": [
         "İkinci ad"
       ],
       "Modified": [
         "Değiştirilme"
+      ],
+      "More": [
+        "Diğer"
       ],
       "More than a month": [
         "Bir aydan fazla"
@@ -3073,11 +3153,17 @@
       "Name": [
         "Ad"
       ],
+      "Name (SSID)": [
+        "Ağ adı (SSID)"
+      ],
       "Name on card": [
         "Kart üzerindeki isim"
       ],
       "Need help?": [
         "Yardım mı gerekiyor?"
+      ],
+      "Network": [
+        "Ağ"
       ],
       "New": [
         "Yeni"
@@ -3127,8 +3213,14 @@
       "Open-source password manager for effortless protection.": [
         "Kolay koruma için açık kaynaklı parola yöneticisi."
       ],
+      "Operating System": [
+        "İşletim sistemi"
+      ],
       "Organization": [
         "Kuruluş"
+      ],
+      "Owner": [
+        "Sahibi"
       ],
       "Passkey": [
         "Geçiş anahtarı"
@@ -3142,11 +3234,20 @@
       "Passport number": [
         "Pasaport numarası"
       ],
+      "Passport Number": [
+        "Pasaport numarası"
+      ],
       "Password": [
         "Parola"
       ],
       "Password history": [
         "Parola geçmişi"
+      ],
+      "Permissions": [
+        "İzinler"
+      ],
+      "Personal": [
+        "Kişisel"
       ],
       "Personal details": [
         "Kişisel bilgiler"
@@ -3172,6 +3273,12 @@
       "Plus": [
         "Plus"
       ],
+      "Points Balance": [
+        "Puan bakiyesi"
+      ],
+      "Port": [
+        "Bağlantı noktası"
+      ],
       "Prefix": [
         "Ön ek"
       ],
@@ -3181,11 +3288,26 @@
       "Priority:": [
         "Öncelik:"
       ],
+      "Private Key": [
+        "Kişisel anahtar"
+      ],
+      "Private key": [
+        "Kişisel anahtar"
+      ],
+      "Product": [
+        "Ürün"
+      ],
+      "Program Name": [
+        "Program adı"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "${ PASS_APP_NAME } uygulamasını ek parola ile koruyun"
       ],
       "Public domain": [
         "Herkese açık etki alanı"
+      ],
+      "Public key": [
+        "Herkese açık anahtar"
       ],
       "Rate us": [
         "Bizi değerlendirin"
@@ -3208,8 +3330,17 @@
       "Reveal password": [
         "Parolayı görüntüle"
       ],
+      "Reward Program": [
+        "Ödül programı"
+      ],
+      "Routing Number": [
+        "Şube kodu"
+      ],
       "Second password": [
         "İkinci parola"
+      ],
+      "Secret": [
+        "Parola"
       ],
       "Secure links": [
         "Güvenli bağlantılar"
@@ -3225,6 +3356,9 @@
       ],
       "See member and permission overview": [
         "Üye ve izin özetini görüntüleyin"
+      ],
+      "Seed Phrase": [
+        "Tohum ifadesi"
       ],
       "Select a domain": [
         "Bir etki alanı seçin"
@@ -3250,6 +3384,9 @@
       "Selected": [
         "Seçilmiş"
       ],
+      "Server": [
+        "Sunucu"
+      ],
       "Share": [
         "Paylaş"
       ],
@@ -3271,11 +3408,26 @@
       "Social security": [
         "Sosyal güvenlik"
       ],
+      "Social Security": [
+        "Sosyal güvenlik"
+      ],
       "Social security number": [
         "Sosyal güvenlik numarası"
       ],
+      "Software license": [
+        "Yazılım lisansı"
+      ],
       "Special characters (!&*)": [
         "Özel karakterler (!&*)"
+      ],
+      "SSH key": [
+        "SSH anahtarı"
+      ],
+      "SSH Keys": [
+        "SSH anahtarları"
+      ],
+      "SSN": [
+        "SGN"
       ],
       "State or province": [
         "İl ya da bölge"
@@ -3284,7 +3436,7 @@
         "Durum"
       ],
       "Storage": [
-        "Depolama"
+        "Depolama alanı"
       ],
       "Street address": [
         "Sokak adresi"
@@ -3301,6 +3453,9 @@
       "Support": [
         "Destek"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Takma adları SimpleLogin ile eşitle"
       ],
@@ -3310,11 +3465,14 @@
       "Tax number": [
         "Vergi numarası"
       ],
+      "Technology": [
+        "Teknoloji"
+      ],
       "Text": [
         "Metin"
       ],
       "The best of ${ BRAND_NAME } with one subscription": [
-        "Tek bir abonelikle ${ BRAND_NAME }'in en iyileri"
+        "Tek bir abonelikle en iyi ${ BRAND_NAME } hizmetleri"
       ],
       "The URL has been copied to the clipboard": [
         "Adres panoya kopyalandı"
@@ -3324,6 +3482,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Bu ögeye ${ date } tarihine kadar veya görüntüleme sayısı sınırına ulaşılana kadar erişilebilir."
+      ],
+      "Tier/Status": [
+        "Kademe/Durum"
       ],
       "Title": [
         "Başlık"
@@ -3353,7 +3514,7 @@
         "Sınırsız"
       ],
       "Unlock premium features": [
-        "Ayrıcalıklı özelliklerin kilidini açın"
+        "Ücretli özelliklere erişin"
       ],
       "Unlock with": [
         "Kilit şununla açılsın:"
@@ -3364,6 +3525,9 @@
       "Unnamed Credit Card": [
         "Adsız kredi kartı"
       ],
+      "Unnamed custom item": [
+        "Adlandırılmamış özel öge"
+      ],
       "Unnamed identity": [
         "Adsız kimlik"
       ],
@@ -3372,6 +3536,15 @@
       ],
       "Unnamed note": [
         "Adsız not"
+      ],
+      "Unnamed SSH key": [
+        "Adlandırılmamış SSH anahtarı"
+      ],
+      "Unnamed WiFi item": [
+        "Adlandırılmamış kablosuz ağ ögesi"
+      ],
+      "Unspecified": [
+        "Belirtilmemiş"
       ],
       "Untitled": [
         "Adsız"
@@ -3395,7 +3568,7 @@
         "Kasa kimliği"
       ],
       "Vault, item & link sharing": [
-        "Kasa, öğe ve bağlantı paylaşımı"
+        "Kasa, öge ve bağlantı paylaşımı"
       ],
       "Vaults": [
         "Kasalar"
@@ -3407,13 +3580,16 @@
         "Günlüğü görüntüle"
       ],
       "VPN Devices": [
-        "VPN Cihazları"
+        "VPN aygıtları"
       ],
       "VPN Speed": [
         "VPN hızı"
       ],
       "Vulnerable": [
         "Çok zayıf"
+      ],
+      "Wallet Name": [
+        "Cüzdan adı"
       ],
       "Weak": [
         "Zayıf"
@@ -3425,7 +3601,13 @@
         "Siteler"
       ],
       "What's included": [
-        "Neler dahil"
+        "Neler bulunuyor"
+      ],
+      "WiFi network": [
+        "Kablosuz ağ"
+      ],
+      "WiFi Networks": [
+        "Kablosuz ağlar"
       ],
       "Work details": [
         "İş bilgileri"
@@ -3647,7 +3829,7 @@
     },
     "PassOnboardingOffer": {
       "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
-        "${ PASS_SHORT_APP_NAME } Plus Ömür Boyu Kullanım ${ plusLifetimePrice }"
+        "${ PASS_SHORT_APP_NAME } Plus Lifetime ${ plusLifetimePrice } ile"
       ],
       "${ price }/month": [
         "${ price }/ay"
@@ -3656,6 +3838,9 @@
     "Placeholder": {
       "Add 2FA secret key": [
         "İki adımlı doğrulama gizli anahtarı ekle"
+      ],
+      "Add date": [
+        "Tarih ekle"
       ],
       "Add hidden text": [
         "Gizli metin ekle"
@@ -3705,6 +3890,9 @@
       "my-domain.com": [
         "etki-alanim.com"
       ],
+      "Name displayed in emails": [
+        "E-postalarda görüntülecek ad"
+      ],
       "Note from SimpleLogin": [
         "SimpleLogin notu"
       ],
@@ -3737,6 +3925,9 @@
       ],
       "Select a suffix": [
         "Bir son ek yazın"
+      ],
+      "Select option": [
+        "Seçenek seçin"
       ],
       "Unknown origin": [
         "Kaynak bilinmiyor"
@@ -4208,7 +4399,7 @@
         "İzleme durdurulsun mu?"
       ],
       "Pay once, access forever.": [
-        "Bir kere ödeyin, ömür boyu erişin."
+        "Bir kere ödeyin, ömür boyu kullanın."
       ],
       "Pending access confirmation": [
         "Bekleyen erişme izni onayı"

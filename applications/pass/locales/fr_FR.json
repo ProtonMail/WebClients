@@ -690,6 +690,11 @@
         "Je profite de l'offre"
       ]
     },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Offre spéciale anniversaire"
+      ]
+    },
     "anniversary_2025: Offer": {
       "500 GB encrypted storage": [
         "500 Go de stockage chiffré"
@@ -753,11 +758,6 @@
       ],
       "years": [
         "années"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Offre spéciale anniversaire"
       ]
     },
     "anniversary_2025: Offers": {
@@ -1919,10 +1919,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
-      ],
       "Moving items": [
         "Déplacement des éléments"
       ],
@@ -2680,6 +2676,9 @@
       "API Credential": [
         "Identifiant API"
       ],
+      "API Key": [
+        "Clé API"
+      ],
       "Application logs": [
         "Journaux de l'application"
       ],
@@ -2815,6 +2814,9 @@
       "Database": [
         "Base de données"
       ],
+      "Database Type": [
+        "Type de base de données"
+      ],
       "Date": [
         "Date"
       ],
@@ -2927,7 +2929,7 @@
         "Transfert vers"
       ],
       "Free": [
-        "Free"
+        "Gratuit"
       ],
       "Free forever": [
         "Gratuit pour toujours"
@@ -2973,6 +2975,12 @@
       ],
       "Holder Name": [
         "Nom du titulaire"
+      ],
+      "Host": [
+        "Hôte"
+      ],
+      "Hostname": [
+        "Nom de l’hôte"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Comment déverrouiller ${ PASS_SHORT_APP_NAME } ?"
@@ -3028,6 +3036,9 @@
       "Invitations": [
         "Invitations"
       ],
+      "IP Address": [
+        "Adresse IP"
+      ],
       "Issuing Authority": [
         "Autorité de délivrance"
       ],
@@ -3072,6 +3083,9 @@
       ],
       "License": [
         "Permis de conduire"
+      ],
+      "License Key": [
+        "Clé de licence"
       ],
       "License number": [
         "Numéro de permis"
@@ -3199,8 +3213,14 @@
       "Open-source password manager for effortless protection.": [
         "Gestionnaire de mot de passe open-source pour une protection facile."
       ],
+      "Operating System": [
+        "Système d'exploitation"
+      ],
       "Organization": [
         "Organisation"
+      ],
+      "Owner": [
+        "Propriétaire"
       ],
       "Passkey": [
         "Clé d'accès"
@@ -3222,6 +3242,9 @@
       ],
       "Password history": [
         "Historique des mots de passe"
+      ],
+      "Permissions": [
+        "Autorisations"
       ],
       "Personal": [
         "Personnel"
@@ -3253,6 +3276,9 @@
       "Points Balance": [
         "Solde de points"
       ],
+      "Port": [
+        "Port"
+      ],
       "Prefix": [
         "Préfixe"
       ],
@@ -3262,11 +3288,14 @@
       "Priority:": [
         "Priorité :"
       ],
+      "Private Key": [
+        "Clé privée"
+      ],
       "Private key": [
         "Clé privée"
       ],
-      "Private Key": [
-        "Clé privée"
+      "Product": [
+        "Produit"
       ],
       "Program Name": [
         "Nom du programme"
@@ -3309,6 +3338,9 @@
       ],
       "Second password": [
         "Second mot de passe"
+      ],
+      "Secret": [
+        "Clé secrète"
       ],
       "Secure links": [
         "Liens sécurisés"

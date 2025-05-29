@@ -76,6 +76,9 @@
       "Apply lifetime coupon code": [
         "Lifetime-Gutscheincode anwenden"
       ],
+      "Authenticate": [
+        "Authentifizieren"
+      ],
       "Back": [
         "Zurück"
       ],
@@ -400,11 +403,11 @@
       "Move to another vault": [
         "In einen anderen Tresor verschieben"
       ],
-      "Move to trash": [
-        "In den Papierkorb verschieben"
-      ],
       "Move to Trash": [
         "In Papierkorb verschieben"
+      ],
+      "Move to trash": [
+        "In den Papierkorb verschieben"
       ],
       "Multiple select": [
         "Mehrfachauswahl"
@@ -1759,6 +1762,9 @@
       "Enter the address you want to email.": [
         "Gib die Adresse ein, an die du eine E-Mail senden möchtest."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Bestätigungscode eingeben. Ziffer ${ digit }."
+      ],
       "Enter your extra password": [
         "Gib dein zusätzliches Passwort ein."
       ],
@@ -1960,6 +1966,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -2727,6 +2737,9 @@
       "API Credential": [
         "API-Anmeldeinformation"
       ],
+      "API Key": [
+        "API-Schlüssel"
+      ],
       "Application logs": [
         "Anwendungsprotokolle"
       ],
@@ -2864,6 +2877,9 @@
       ],
       "Database": [
         "Datenbank"
+      ],
+      "Database Type": [
+        "Datenbanktyp"
       ],
       "Date": [
         "Datum"
@@ -3030,6 +3046,12 @@
       "Holder Name": [
         "Name des Kontoinhabers"
       ],
+      "Host": [
+        "Host"
+      ],
+      "Hostname": [
+        "Hostname"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Wie du ${ PASS_SHORT_APP_NAME } entsperrst"
       ],
@@ -3087,6 +3109,9 @@
       "Invitations": [
         "Einladungen"
       ],
+      "IP Address": [
+        "IP-Adresse"
+      ],
       "Issuing Authority": [
         "Ausstellende Behörde"
       ],
@@ -3131,6 +3156,9 @@
       ],
       "License": [
         "Lizenz"
+      ],
+      "License Key": [
+        "Lizenzschlüssel"
       ],
       "License number": [
         "Autokennzeichen"
@@ -3261,8 +3289,14 @@
       "Open-source password manager for effortless protection.": [
         "Open-Source Passwort-Manager für problemlosen Schutz."
       ],
+      "Operating System": [
+        "Betriebssystem"
+      ],
       "Organization": [
         "Organisation"
+      ],
+      "Owner": [
+        "Besitzer"
       ],
       "Passkey": [
         "Passkey"
@@ -3287,6 +3321,9 @@
       ],
       "Password history": [
         "Passwortverlauf"
+      ],
+      "Permissions": [
+        "Berechtigungen"
       ],
       "Personal": [
         "Privat"
@@ -3318,6 +3355,9 @@
       "Points Balance": [
         "Punktestand"
       ],
+      "Port": [
+        "Port"
+      ],
       "Prefix": [
         "Präfix"
       ],
@@ -3332,6 +3372,9 @@
       ],
       "Private Key": [
         "Privater Schlüssel"
+      ],
+      "Product": [
+        "Produkt"
       ],
       "Program Name": [
         "Programmname"
@@ -3377,6 +3420,9 @@
       ],
       "Second password": [
         "Zusätzliches Passwort"
+      ],
+      "Secret": [
+        "Geheimnis"
       ],
       "Secure links": [
         "Sichere Links"
@@ -3453,10 +3499,10 @@
       "Sign in faster with ${ PASS_APP_NAME }": [
         "Schneller anmelden mit ${ PASS_APP_NAME }"
       ],
-      "Social Security": [
+      "Social security": [
         "Sozialversicherung"
       ],
-      "Social security": [
+      "Social Security": [
         "Sozialversicherung"
       ],
       "Social security number": [

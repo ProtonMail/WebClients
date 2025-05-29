@@ -403,10 +403,10 @@
       "Move to another vault": [
         "Mover a otra bóveda"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Mover a la papelera"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Mover a la papelera"
       ],
       "Multiple select": [
@@ -1967,6 +1967,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+      ],
       "Moving items": [
         "Moviendo los elementos"
       ],
@@ -2733,6 +2737,9 @@
       "API Credential": [
         "Credenciales de API"
       ],
+      "API Key": [
+        "Clave API"
+      ],
       "Application logs": [
         "Registros de la aplicación"
       ],
@@ -2871,6 +2878,9 @@
       "Database": [
         "Base de datos"
       ],
+      "Database Type": [
+        "Tipo de base de datos"
+      ],
       "Date": [
         "Fecha"
       ],
@@ -2986,7 +2996,7 @@
         "Reenvía a"
       ],
       "Free": [
-        "Free"
+        "Gratuito"
       ],
       "Free forever": [
         "Gratis para siempre"
@@ -3035,6 +3045,12 @@
       ],
       "Holder Name": [
         "Nombre del titular"
+      ],
+      "Host": [
+        "Host"
+      ],
+      "Hostname": [
+        "Hostname"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Cómo desbloquear ${ PASS_SHORT_APP_NAME }"
@@ -3093,6 +3109,9 @@
       "Invitations": [
         "Invitaciones"
       ],
+      "IP Address": [
+        "Dirección IP"
+      ],
       "Issuing Authority": [
         "Autoridad emisora"
       ],
@@ -3137,6 +3156,9 @@
       ],
       "License": [
         "Licencia de conducir"
+      ],
+      "License Key": [
+        "Clave de licencia"
       ],
       "License number": [
         "Número de licencia"
@@ -3267,8 +3289,14 @@
       "Open-source password manager for effortless protection.": [
         "Gestor de contraseñas de código abierto para una protección sencilla."
       ],
+      "Operating System": [
+        "Sistema operativo"
+      ],
       "Organization": [
         "Organización"
+      ],
+      "Owner": [
+        "Propietario"
       ],
       "Passkey": [
         "Clave de acceso"
@@ -3293,6 +3321,9 @@
       ],
       "Password history": [
         "Historial de contraseña"
+      ],
+      "Permissions": [
+        "Permisos"
       ],
       "Personal": [
         "Personal"
@@ -3324,6 +3355,9 @@
       "Points Balance": [
         "Balance de puntos"
       ],
+      "Port": [
+        "Puerto"
+      ],
       "Prefix": [
         "Prefijo"
       ],
@@ -3338,6 +3372,9 @@
       ],
       "Private Key": [
         "Clave privada"
+      ],
+      "Product": [
+        "Product"
       ],
       "Program Name": [
         "Nombre del programa"
@@ -3383,6 +3420,9 @@
       ],
       "Second password": [
         "Segunda contraseña"
+      ],
+      "Secret": [
+        "Secreto"
       ],
       "Secure links": [
         "Enlaces seguros"
@@ -3459,11 +3499,11 @@
       "Sign in faster with ${ PASS_APP_NAME }": [
         "Inicie sesión rápidamente con ${ PASS_APP_NAME }"
       ],
-      "Social Security": [
-        "Seguridad Social"
-      ],
       "Social security": [
         "Seguridad social"
+      ],
+      "Social Security": [
+        "Seguridad Social"
       ],
       "Social security number": [
         "Número de seguro social"

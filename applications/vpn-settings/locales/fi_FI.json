@@ -576,10 +576,10 @@
       "Refresh status": [
         "Päivitä tila"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Päivitä sivu"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Päivitä sivu"
       ],
       "Remove": [
@@ -699,11 +699,11 @@
       "Select country ${ country }": [
         "Valitse maa ${ country }"
       ],
-      "Select file": [
-        "Valitse tiedosto"
-      ],
       "select file": [
         "valitse tiedosto"
+      ],
+      "Select file": [
+        "Valitse tiedosto"
       ],
       "Send code": [
         "Lähetä koodi"
@@ -2928,6 +2928,9 @@
       "Domain not available, try again later": [
         "Verkkotunnusta ei tavoiteta. Yritä myöhemmin uudelleen"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Laskutusosoitteen muokkaus ei ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen."
+      ],
       "Email address is invalid": [
         "Sähköpostiosoite on virheellinen"
       ],
@@ -2942,9 +2945,6 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Virhe yhdistettäessä Bitcoin API:in."
-      ],
-      "Error publishing changes.": [
-        "Virhe julkaistaessa muutoksia."
       ],
       "Failed to load the STL preview": [
         "STL-esikatselun lataus epäonnistui"
@@ -4310,6 +4310,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Ainakin ${ BETTER_PASSWORD_LENGTH } merkkiä"
       ],
+      "At least one application must be active": [
+        "Ainakin yhden sovelluksen tulee olla aktiivisena"
+      ],
       "Attention required": [
         "Huomiota vaaditaan"
       ],
@@ -4378,6 +4381,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "Yhteystiedot ovat saatavilla noin tunnin kuluttua."
+      ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "Jatka organisaation **${ organizationValue.Name }** jäsenen **${ affiliationsText }** liittymisen sallimista ${ BRAND_NAME }-organisaatioosi."
       ],
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "Jatka **${ organizationValue.Name }**:n yhdistämistä ${ BRAND_NAME }-organisaatioosi."
@@ -4559,6 +4565,9 @@
       ],
       "email": [
         "sähköpostiosoite"
+      ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "Sähköposti ja kalenteri ovat integroitu ${ CONTACTS_APP_NAME } kanssa"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Sähköpostin isännöinti on saatavilla vain jo entuudestaan omistamillesi verkkotunnuksille. ${ BRAND_NAME }in kautta ei tällä hetkellä ole mahdollista rekisteröidä verkkotunnuksia. Voit käyttää miltä tahansa verkkotunnustoimittajalta hankkimaasi verkkotunnusta."
@@ -4928,6 +4937,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Varmista, että ${ addARecoveryMethod }, jotta pääset tilillesi takaisin, mikäli unohdat salasanasi."
+      ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "Hallitse, mitä ${ BRAND_NAME } -sovelluksia organisaatiosi jäsenet voivat käyttää. Jos tämä on poistettu käytöstä, vain järjestelmänvalvojilla on pääsy."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Määritä tilisi syöttämällä nämä tiedot todennuslaitteellesi. ${ switchButton }."
@@ -5435,6 +5447,9 @@
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Tämä viesti ei mene tukitiimille, jos sinulla on ongelmia palvelumme kanssa tai tarvitset lisätoimenpiteitä meiltä ${ supportLink }."
       ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Tämä palvelu ei ole saatavilla kertakirjautumisen käyttäjille."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tämä käyttäjä vastaa tällä hetkellä organisaatiosi maksuista. Jos alennat käyttäjän, jäävät organisaatiosi maksut sinun vastuullesi."
       ],
@@ -5600,11 +5615,11 @@
       "User activated": [
         "Käyttäjä aktivoitiin"
       ],
-      "username": [
-        "käyttäjätunnus"
-      ],
       "Username": [
         "Käyttäjätunnus"
+      ],
+      "username": [
+        "käyttäjätunnus"
       ],
       "Users": [
         "Käyttäjät"
@@ -5650,6 +5665,9 @@
       ],
       "Visa Secure logo": [
         "Visa Secure -logo"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN omilla palvelimillaan ja IP-osoitteillaan"
       ],
       "Warning:": [
         "Varoitus:"
@@ -7189,6 +7207,20 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alennetaanko tilaukseen ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
+      ],
+      "From ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Poista tili"
@@ -7210,20 +7242,6 @@
       ],
       "Switch plan": [
         "Vaihda tilausta"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alennetaanko tilaukseen ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
-      ],
-      "From ${ price }": [
-        "Alkaen ${ price }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
       ]
     },
     "new_plans: feature": {
@@ -7807,14 +7825,6 @@
         "Avaa kaikki ${ BRAND_NAME } -premium-tuotteet ja -ominaisuudet hintaan ${ priceLine }. Peruuta milloin tahansa."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-kokeilu"
-      ],
-      "Your account's usage": [
-        "Tilisi käyttö"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -7827,6 +7837,14 @@
       ],
       "Switch plans?": [
         "Vaihdetaanko tilaus?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-kokeilu"
+      ],
+      "Your account's usage": [
+        "Tilisi käyttö"
       ]
     },
     "new_plans: tooltip": {
@@ -8338,17 +8356,6 @@
         "Tervetuloa ${ appName } -sovellukseen"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Kaikki"
-      ],
-      "Group members": [
-        "Ryhmän jäsenet"
-      ],
-      "No one": [
-        "Ei ketään"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Sallittu ${ defaultLabel }"
@@ -8418,6 +8425,17 @@
       ],
       "The whole organization": [
         "Koko organisaatio"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Kaikki"
+      ],
+      "Group members": [
+        "Ryhmän jäsenet"
+      ],
+      "No one": [
+        "Ei ketään"
       ]
     },
     "Organization capacity error": {
@@ -11100,10 +11118,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -11865,6 +11883,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Identiteetintarjoajan (esim. https://idp.esimerkki.fi/sso/saml) päätepisteen URL-osoite."
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "Pois lukien kertakirjautumisen käyttäjät, joiden 2FA:n hoitaa tunnistautumisen palveluntarjoajasi"
+      ],
       "Feature in early access": [
         "Ominaisuus on varhaisessa käytössä"
       ],
@@ -11882,6 +11903,9 @@
       ],
       "IP address (Internet Service Provider)": [
         "IP-osoite (Internet-palveluntarjoaja)"
+      ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "Jäsenet, jotka eivät käytä 2FA:ta, saavat sähköpostin, jossa heitä pyydetään ottamaan se käyttöön mahdollisimman pian. Kertakirjautumisen käyttäjät eivät saa sähköpostimuistutusta."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Jaettujen palvelimien käytäntöjä voidaan soveltaa yksittäisiin käyttäjiin tai ryhmiin"

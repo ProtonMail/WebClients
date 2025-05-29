@@ -108,6 +108,9 @@
       "Back": [
         "Vissza"
       ],
+      "Back to sign in": [
+        "Vissza a bejelentkezéshez"
+      ],
       "Block": [
         "Tiltás"
       ],
@@ -372,6 +375,9 @@
       "Fit to window": [
         "Ablakhoz illesztés"
       ],
+      "Forgot password?": [
+        "Elfelejtett jelszó?"
+      ],
       "Forgot recovery method?": [
         "Elfelejtette a helyreállítási módszert?"
       ],
@@ -570,11 +576,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "refresh the page": [
-        "frissítse az oldalt"
-      ],
       "Refresh the page": [
         "Oldal frissítése"
+      ],
+      "refresh the page": [
+        "frissítse az oldalt"
       ],
       "Remove": [
         "Eltávolítás"
@@ -693,11 +699,11 @@
       "Select country ${ country }": [
         "Ország kiválasztása: ${ country }"
       ],
-      "Select file": [
-        "Fájl kiválasztása"
-      ],
       "select file": [
         "fájl kiválasztása"
+      ],
+      "Select file": [
+        "Fájl kiválasztása"
       ],
       "Send code": [
         "Kód küldése"
@@ -3005,9 +3011,6 @@
       "Error connecting to the Bitcoin API.": [
         "Hiba a Bitcoin API-ra csatlakozás közben."
       ],
-      "Error publishing changes.": [
-        "A változások közzététele során hiba keletkezett."
-      ],
       "Failed to load the STL preview": [
         "Nem sikerült betölteni az STL előnézetet"
       ],
@@ -4375,6 +4378,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Legalább ${ BETTER_PASSWORD_LENGTH } karakter"
       ],
+      "At least one application must be active": [
+        "Legalább egy alkalmazásnak aktívnak kell lennie"
+      ],
       "Attention required": [
         "Figyelem szükséges"
       ],
@@ -4711,6 +4717,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Adja meg a ${ BRAND_NAME } fiókja e-mail címét vagy felhasználónevét."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Írja be a helyreállítási e-mail címét és elküldjük a felhasználónevét vagy e-mail címét."
@@ -5584,6 +5593,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "A jóváhagyáshoz írja be a törölni kívánt felhasználó nevét."
       ],
+      "To continue to ${ product }": [
+        "Folytatás itt ${ product }"
+      ],
       "To create your first user group, go to": [
         "Az első felhasználói csoport létrehozásához lépjen a következőre:"
       ],
@@ -5689,11 +5701,11 @@
       "User activated": [
         "Felhasználó aktiválva"
       ],
-      "username": [
-        "felhasználónév"
-      ],
       "Username": [
         "Felhasználónév"
+      ],
+      "username": [
+        "felhasználónév"
       ],
       "Users": [
         "Felhasználók"
@@ -5985,6 +5997,10 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel.",
         "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Engedélyezte a továbbítást a következő ${ MAX_SYNC_PAID_USER } Gmail címen. Ha újat szeretne hozzáadni, először tiltsa le az egyiket.",
+        "Engedélyezte a továbbítást a következő ${ MAX_SYNC_PAID_USER } Gmail címeken. Ha újat szeretne hozzáadni, először tiltsa le az egyiket."
       ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "A(z) ${ boldDiscountPercent } kedvezményt alkalmaztuk a(z) ${ boldPlanTitle } termékre"
@@ -6828,6 +6844,9 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Igen, törölni szeretném a fiókomat és az összes adatát."
       ],
+      "Your password (admin)": [
+        "Jelszó (adminisztrátor)"
+      ],
       "ZIP code": [
         "Irányítószám"
       ]
@@ -7289,6 +7308,20 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -7310,20 +7343,6 @@
       ],
       "Switch plan": [
         "Csomag váltása"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -7906,14 +7925,6 @@
         "Oldja fel az összes ${ BRAND_NAME } prémium terméket és funkciót mindössze ${ priceLine }-ért. Bármikor lemondható."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } próbaváltozat"
-      ],
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -7926,6 +7937,14 @@
       ],
       "Switch plans?": [
         "Csomag váltása?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } próbaváltozat"
+      ],
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
@@ -8440,17 +8459,6 @@
         "Üdvözli a ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Mindenki"
-      ],
-      "Group members": [
-        "Csoporttagok"
-      ],
-      "No one": [
-        "Senki"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Engedélyezve ${ defaultLabel }"
@@ -8520,6 +8528,17 @@
       ],
       "The whole organization": [
         "A teljes szervezet"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Mindenki"
+      ],
+      "Group members": [
+        "Csoporttagok"
+      ],
+      "No one": [
+        "Senki"
       ]
     },
     "Organization capacity error": {
@@ -11215,10 +11234,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
@@ -11471,6 +11490,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Adja meg a ${ BRAND_NAME } fiókja adatait a ${ app } Béta programhoz való csatlakozáshoz"
+      ],
+      "Enter your password": [
+        "Adja meg a jelszavát"
       ],
       "Error": [
         "Hiba"
