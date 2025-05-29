@@ -26,6 +26,7 @@ import type { PublicDriveCompat, PublicNodeMeta } from '@proton/drive-store'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 import { PublicRenameController } from '../../RenameController/RenameController'
 import type { GetNode } from '../../UseCase/GetNode'
+import { isProtonSheet } from '@proton/shared/lib/helpers/mimetype'
 
 export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> {
   private editorController?: EditorControllerInterface
@@ -127,10 +128,15 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
 
     if (documentState.getProperty('userRole').isPublicUserWithAccess()) {
       this.logger.info('Redirecting to authed document')
-      this.driveCompat.redirectToAuthedDocument({
-        volumeId: documentState.getProperty('documentMeta').volumeId,
-        linkId: nodeMeta.linkId,
-      })
+      const node = documentState.getProperty('decryptedNode')
+      const mimeType = node.mimeType
+      this.driveCompat.redirectToAuthedDocument(
+        {
+          volumeId: documentState.getProperty('documentMeta').volumeId,
+          linkId: nodeMeta.linkId,
+        },
+        isProtonSheet(mimeType) ? 'sheet' : 'doc',
+      )
       return
     }
 
