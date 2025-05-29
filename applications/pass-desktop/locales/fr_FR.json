@@ -403,11 +403,11 @@
       "Move to another vault": [
         "Déplacer vers un autre coffre-fort"
       ],
-      "Move to trash": [
-        "Déplacer dans le dossier Corbeille"
-      ],
       "Move to Trash": [
         "Déplacer dans la corbeille"
+      ],
+      "Move to trash": [
+        "Déplacer dans le dossier Corbeille"
       ],
       "Multiple select": [
         "Sélection multiple"
@@ -1967,6 +1967,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+      ],
       "Moving items": [
         "Déplacement des éléments"
       ],
@@ -2733,6 +2737,9 @@
       "API Credential": [
         "Identifiant API"
       ],
+      "API Key": [
+        "Clé API"
+      ],
       "Application logs": [
         "Journaux de l'application"
       ],
@@ -2871,6 +2878,9 @@
       "Database": [
         "Base de données"
       ],
+      "Database Type": [
+        "Type de base de données"
+      ],
       "Date": [
         "Date"
       ],
@@ -2986,7 +2996,7 @@
         "Transfert vers"
       ],
       "Free": [
-        "Free"
+        "Gratuit"
       ],
       "Free forever": [
         "Gratuit pour toujours"
@@ -3035,6 +3045,12 @@
       ],
       "Holder Name": [
         "Nom du titulaire"
+      ],
+      "Host": [
+        "Hôte"
+      ],
+      "Hostname": [
+        "Nom de l’hôte"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Comment déverrouiller ${ PASS_SHORT_APP_NAME } ?"
@@ -3093,6 +3109,9 @@
       "Invitations": [
         "Invitations"
       ],
+      "IP Address": [
+        "Adresse IP"
+      ],
       "Issuing Authority": [
         "Autorité de délivrance"
       ],
@@ -3137,6 +3156,9 @@
       ],
       "License": [
         "Permis de conduire"
+      ],
+      "License Key": [
+        "Clé de licence"
       ],
       "License number": [
         "Numéro de permis"
@@ -3267,8 +3289,14 @@
       "Open-source password manager for effortless protection.": [
         "Gestionnaire de mot de passe open-source pour une protection facile."
       ],
+      "Operating System": [
+        "Système d'exploitation"
+      ],
       "Organization": [
         "Organisation"
+      ],
+      "Owner": [
+        "Propriétaire"
       ],
       "Passkey": [
         "Clé d'accès"
@@ -3293,6 +3321,9 @@
       ],
       "Password history": [
         "Historique des mots de passe"
+      ],
+      "Permissions": [
+        "Autorisations"
       ],
       "Personal": [
         "Personnel"
@@ -3324,6 +3355,9 @@
       "Points Balance": [
         "Solde de points"
       ],
+      "Port": [
+        "Port"
+      ],
       "Prefix": [
         "Préfixe"
       ],
@@ -3338,6 +3372,9 @@
       ],
       "Private Key": [
         "Clé privée"
+      ],
+      "Product": [
+        "Produit"
       ],
       "Program Name": [
         "Nom du programme"
@@ -3383,6 +3420,9 @@
       ],
       "Second password": [
         "Second mot de passe"
+      ],
+      "Secret": [
+        "Clé secrète"
       ],
       "Secure links": [
         "Liens sécurisés"
@@ -3459,10 +3499,10 @@
       "Sign in faster with ${ PASS_APP_NAME }": [
         "Connectez-vous plus rapidement avec ${ PASS_APP_NAME }"
       ],
-      "Social Security": [
+      "Social security": [
         "Sécurité sociale"
       ],
-      "Social security": [
+      "Social Security": [
         "Sécurité sociale"
       ],
       "Social security number": [
