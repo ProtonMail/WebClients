@@ -237,6 +237,9 @@
       "Copy address": [
         "Adres kopiëren"
       ],
+      "Copy alias “${ name }”": [
+        "Kopieer alias \"${ name }\""
+      ],
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
       ],
@@ -5711,14 +5714,20 @@
       "Shared by ": [
         "Gedeeld door "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Gedeeld door ${ rootLink.signatureEmail }"
+      "Shared by ${ sharedBy }": [
+        "Gedeeld door ${ sharedBy }"
+      ],
+      "Shared by you": [
+        "Gedeeld door u"
       ],
       "Shared link not found": [
         "Gedeelde link niet gevonden"
       ],
       "Shared with me": [
         "Gedeeld met mij"
+      ],
+      "Shared with you": [
+        "Gedeeld met u"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Handtekening kan niet gecontroleerd worden door een netwerkfout, probeer het later opnieuw."
@@ -6460,6 +6469,9 @@
     "Label": {
       "# of downloads": [
         "# downloads"
+      ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } van ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
@@ -7618,6 +7630,17 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Plannen vanaf ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -7639,17 +7662,6 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Plannen vanaf ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Upgraden"
       ]
     },
     "new_plans: feature": {
@@ -8955,10 +8967,10 @@
       "Invite members": [
         "Nodig leden uit"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Misschien later"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Misschien later"
       ],
       "Select theme": [

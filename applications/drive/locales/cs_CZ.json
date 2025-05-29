@@ -244,7 +244,7 @@
         "Kopírovat adresu"
       ],
       "Copy alias “${ name }”": [
-        "Kopírovat alias “${ name }”"
+        "Kopírovat alias \"${ name }\""
       ],
       "Copy email to clipboard": [
         "Zkopírovat e-mail do schránky"
@@ -5738,13 +5738,19 @@
       "Shared by ": [
         "Sdílel(a) "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Sdílel/a ${ rootLink.signatureEmail }"
+      "Shared by ${ sharedBy }": [
+        "Sdílel/a ${ sharedBy }"
+      ],
+      "Shared by you": [
+        "Sdíleno vámi"
       ],
       "Shared link not found": [
         "Sdílený odkaz nebyl nalezen"
       ],
       "Shared with me": [
+        "Sdíleno se mnou"
+      ],
+      "Shared with you": [
         "Sdíleno se mnou"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
@@ -6509,6 +6515,9 @@
     "Label": {
       "# of downloads": [
         "počet stažení"
+      ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } z(e) ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
         "Uživatelské jméno ${ BRAND_NAME }"
@@ -7685,6 +7694,17 @@
         "Střední rychlost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Tarify začínají od ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Smazat účet"
@@ -7706,17 +7726,6 @@
       ],
       "Switch plan": [
         "Změnit tarif"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Tarify začínají od ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Navýšit"
       ]
     },
     "new_plans: feature": {
@@ -9110,10 +9119,10 @@
       "Invite members": [
         "Pozvat členy"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Možná později"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Možná později"
       ],
       "Select theme": [
