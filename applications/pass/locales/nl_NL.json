@@ -690,6 +690,11 @@
         "Pak deze deal"
       ]
     },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubileumaanbieding"
+      ]
+    },
     "anniversary_2025: Offer": {
       "500 GB encrypted storage": [
         "500 GB versleutelde opslag"
@@ -753,11 +758,6 @@
       ],
       "years": [
         "jaar"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Jubileumaanbieding"
       ]
     },
     "anniversary_2025: Offers": {
@@ -1919,10 +1919,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
-      ],
       "Moving items": [
         "Items verplaatsen"
       ],
@@ -2680,6 +2676,9 @@
       "API Credential": [
         "API-toegangscode"
       ],
+      "API Key": [
+        "API-sleutel"
+      ],
       "Application logs": [
         "Applicatielogboek"
       ],
@@ -2814,6 +2813,9 @@
       ],
       "Database": [
         "Database"
+      ],
+      "Database Type": [
+        "Databasetype"
       ],
       "Date": [
         "Datum"
@@ -2974,6 +2976,12 @@
       "Holder Name": [
         "Naam rekeninghouder"
       ],
+      "Host": [
+        "Host"
+      ],
+      "Hostname": [
+        "Hostnaam"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Hoe ontgrendelt u ${ PASS_SHORT_APP_NAME }"
       ],
@@ -3028,6 +3036,9 @@
       "Invitations": [
         "Uitnodigingen"
       ],
+      "IP Address": [
+        "IP-adres"
+      ],
       "Issuing Authority": [
         "Uitgevende autoriteit"
       ],
@@ -3072,6 +3083,9 @@
       ],
       "License": [
         "Licentie"
+      ],
+      "License Key": [
+        "Licentiesleutel"
       ],
       "License number": [
         "Licentienummer"
@@ -3199,8 +3213,14 @@
       "Open-source password manager for effortless protection.": [
         "Open source wachtwoordbeheerder voor moeiteloze bescherming."
       ],
+      "Operating System": [
+        "Besturingssysteem"
+      ],
       "Organization": [
         "Organisatie"
+      ],
+      "Owner": [
+        "Eigenaar"
       ],
       "Passkey": [
         "Toegangssleutel"
@@ -3222,6 +3242,9 @@
       ],
       "Password history": [
         "Wachtwoordgeschiedenis"
+      ],
+      "Permissions": [
+        "Machtigingen"
       ],
       "Personal": [
         "Persoonlijk"
@@ -3253,6 +3276,9 @@
       "Points Balance": [
         "Puntensaldo"
       ],
+      "Port": [
+        "Poort"
+      ],
       "Prefix": [
         "Prefix"
       ],
@@ -3262,11 +3288,14 @@
       "Priority:": [
         "Prioriteit:"
       ],
+      "Private Key": [
+        "Privé sleutel"
+      ],
       "Private key": [
         "Privé sleutel"
       ],
-      "Private Key": [
-        "Privé sleutel"
+      "Product": [
+        "Product"
       ],
       "Program Name": [
         "Programmanaam"
@@ -3309,6 +3338,9 @@
       ],
       "Second password": [
         "Tweede wachtwoord"
+      ],
+      "Secret": [
+        "Geheim"
       ],
       "Secure links": [
         "Beveiligde links"
