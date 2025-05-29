@@ -4,6 +4,7 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { FileAttachmentsFieldEdit } from '@proton/pass/components/FileAttachments/FileAttachmentsFieldEdit';
+import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { MaskedTextField } from '@proton/pass/components/Form/Field/MaskedTextField';
@@ -21,6 +22,7 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constan
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
+import { obfuscateLabeledExtraFields } from '@proton/pass/lib/items/item.utils';
 import { formatExpirationDateMMYY, validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
 import type { CreditCardItemFormValues } from '@proton/pass/types';
 import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
@@ -32,7 +34,7 @@ export const CreditCardEdit: FC<ItemEditViewProps<'creditCard'>> = ({ share, rev
     const { shareId } = share;
     const { data: item, itemId, revision: lastRevision } = revision;
 
-    const { metadata, content, ...uneditable } = useDeobfuscatedItem(item);
+    const { metadata, content, extraFields, ...uneditable } = useDeobfuscatedItem(item);
 
     const form = useFormik<CreditCardItemFormValues>({
         initialValues: {
@@ -42,8 +44,9 @@ export const CreditCardEdit: FC<ItemEditViewProps<'creditCard'>> = ({ share, rev
             note: metadata.note,
             files: filesFormInitializer(),
             shareId,
+            extraFields,
         },
-        onSubmit: ({ name, note, files, ...creditCardValues }) => {
+        onSubmit: ({ name, note, files, extraFields, ...creditCardValues }) => {
             onSubmit({
                 ...uneditable,
                 files,
@@ -55,7 +58,7 @@ export const CreditCardEdit: FC<ItemEditViewProps<'creditCard'>> = ({ share, rev
                     pin: obfuscate(creditCardValues.pin),
                     verificationNumber: obfuscate(creditCardValues.verificationNumber),
                 },
-                extraFields: [],
+                extraFields: obfuscateLabeledExtraFields({ extraFields, label: name, issuer: name }),
                 itemId,
                 lastRevision,
                 metadata: { ...metadata, name, note: obfuscate(note) },
@@ -163,6 +166,8 @@ export const CreditCardEdit: FC<ItemEditViewProps<'creditCard'>> = ({ share, rev
                                 revision={lastRevision}
                             />
                         </FieldsetCluster>
+
+                        <ExtraFieldGroup form={form} />
                     </Form>
                 </FormikProvider>
             )}
