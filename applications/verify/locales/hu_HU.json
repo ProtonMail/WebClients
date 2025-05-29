@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Hitelesítés"
+      ],
       "Cancel": [
         "Mégsem"
       ],
@@ -25,6 +28,9 @@
       ],
       "Edit sign-in details": [
         "Bejelentkezési adatok szerkesztése"
+      ],
+      "Forgot password?": [
+        "Elfelejtett jelszó?"
       ],
       "Get verification code": [
         "Ellenőrző kód küldése"
@@ -49,6 +55,12 @@
       ],
       "Try another method": [
         "Másik módszer"
+      ],
+      "Use authentication code": [
+        "Hitelesítő kód használata"
+      ],
+      "Use recovery code": [
+        "Helyreállító kód használata"
       ],
       "Verify": [
         "Ellenőrzés"
@@ -909,6 +921,24 @@
         "Nem sikerült az oldal betöltése. Frissítse az oldalt vagy ellenőrizze az internetkapcsolatát."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Hiba történt a hitelesítési kulccsal való azonosítás közben. Próbálja meg újra."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Csatlakoztassa a ${ BRAND_NAME } fiókjához rendelt hitelesítési kulcsot."
+      ],
+      "Security key": [
+        "Hitelesítési kulcs"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Hitelesítési kulcs"
+      ]
+    },
     "file size format": {
       "byte": [
         "bájt",
@@ -1007,11 +1037,23 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Több ingyenes fiók létrehozása nem megengedett a ${ termsLink } oldalunkon."
       ],
+      "Each code can only be used once": [
+        "Minden kódot csak egyszer lehet felhasználni"
+      ],
       "Edit email address": [
         "E-mail cím szerkesztése"
       ],
+      "Enter the code from your authenticator app": [
+        "Írja be a kódot a hitelesítő alkalmazásból"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Írja be az ellenőrző kódot. ${ digit } számjegy."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "További információkért és a korlátozások eltávolításához jelentkezzen be a ${ mailLink } címen."
@@ -1055,6 +1097,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
       ],
@@ -1078,6 +1123,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Hitelesítő alkalmazás"
+      ],
       "Code is 6 digits without spaces": [
         "A kód hatjegyű, szóközök nélkül"
       ],
@@ -1098,6 +1146,9 @@
       ],
       "Verification code": [
         "Ellenőrző kód"
+      ],
+      "Your password (admin)": [
+        "Jelszó (adminisztrátor)"
       ]
     },
     "Link": {
@@ -1489,6 +1540,9 @@
       ],
       "Enter 2FA code": [
         "Írja be a kétlépcsős hitelesítési kódot"
+      ],
+      "Enter your password": [
+        "Adja meg a jelszavát"
       ],
       "Human verification": [
         "Robot ellenőrzés"
