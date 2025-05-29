@@ -4,6 +4,7 @@ import type { Draft } from 'immer';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import diff from '@proton/utils/diff';
 import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
@@ -239,27 +240,28 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
             state.elements[element.ID] = element;
         }
     });
+
+    const params = state.params;
+
+    const contextFilter = getElementContextIdentifier({
+        labelID: params.labelID,
+        conversationMode: params.conversationMode,
+        filter: params.filter,
+        sort: params.sort,
+        from: params.search.from,
+        to: params.search.to,
+        address: params.search.address,
+        begin: params.search.begin,
+        end: params.search.end,
+        keyword: params.search.keyword,
+    });
+
     if (action.payload.isMove) {
         const elementIDs = action.payload.elements.map(({ ID }) => ID || '');
         state.bypassFilter = diff(state.bypassFilter, elementIDs);
 
         // Can update total only if move and is removing item from the current location (not all sent/all drafts/all mail)
         if (action.payload.elementTotalAdjustment && state.total) {
-            const params = state.params;
-
-            const contextFilter = getElementContextIdentifier({
-                labelID: params.labelID,
-                conversationMode: params.conversationMode,
-                filter: params.filter,
-                sort: params.sort,
-                from: params.search.from,
-                to: params.search.to,
-                address: params.search.address,
-                begin: params.search.begin,
-                end: params.search.end,
-                keyword: params.search.keyword,
-            });
-
             state.total[contextFilter] = (state.total[contextFilter] || 0) + action.payload.elementTotalAdjustment;
         }
     }
@@ -277,13 +279,22 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
         );
 
         // Add elements in the bypass array if they are not already present
+        const totalAdjustment = action.payload.markAsStatus === MARK_AS_STATUS.READ ? 1 : -1;
+        let elementsAddedToBypass = 0;
+
         elementsToBypass.forEach((element) => {
             const isMessage = testIsMessage(element);
             const id = (isMessage && conversationMode ? (element as Message).ConversationID : element.ID) || '';
             if (!state.bypassFilter.includes(id)) {
                 state.bypassFilter.push(id);
+                elementsAddedToBypass++;
             }
         });
+
+        // Update total based on the number of elements actually added to bypass
+        if (elementsAddedToBypass > 0) {
+            state.total[contextFilter] = (state.total[contextFilter] || 0) + totalAdjustment * elementsAddedToBypass;
+        }
 
         // If we are not in a case where we need to bypass filter,
         // we need to remove elements if they are already in the array
