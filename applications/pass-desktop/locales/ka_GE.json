@@ -403,10 +403,10 @@
       "Move to another vault": [
         "სხვა საცავში გადატანა"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "ნაგვის ყუთში გადატანა"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "ნაგვის ყუთში გადატანა"
       ],
       "Multiple select": [
@@ -1844,6 +1844,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
+      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
@@ -3180,6 +3184,9 @@
       "Points Balance": [
         "ქულების ბალანსი"
       ],
+      "Port": [
+        "პორტი"
+      ],
       "Prefix": [
         "პრეფიქსი"
       ],
@@ -3312,10 +3319,10 @@
       "Sign in faster with ${ PASS_APP_NAME }": [
         "შედით უფრო სწრაფად ${ PASS_APP_NAME }-სთან ერთად"
       ],
-      "Social Security": [
+      "Social security": [
         "სოციალური უსაფრთხოება"
       ],
-      "Social security": [
+      "Social Security": [
         "სოციალური უსაფრთხოება"
       ],
       "Social security number": [
