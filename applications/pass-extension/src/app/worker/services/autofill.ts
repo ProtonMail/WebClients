@@ -19,6 +19,7 @@ import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import {
     selectAutofillIdentityCandidates,
     selectAutofillLoginCandidates,
+    selectAutofillSettings,
     selectAutofillableShareIDs,
     selectAutosuggestCopyToClipboard,
     selectItem,
@@ -27,6 +28,7 @@ import {
     selectVaultLimits,
 } from '@proton/pass/store/selectors';
 import type { FormCredentials, ItemContent, ItemRevision, Maybe, SelectedItem, TabId } from '@proton/pass/types';
+import { AutoFillSettings } from '@proton/pass/types/worker/settings';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
@@ -37,6 +39,10 @@ export const createAutoFillService = () => {
     );
 
     const isUserAuthorized = withContext<() => boolean>((ctx) => ctx.getState().authorized);
+
+    const isSettingEnabled = withContext<(setting: keyof AutoFillSettings) => boolean>(
+        (ctx, setting) => selectAutofillSettings(ctx.service.store.getState())[setting] ?? false
+    );
 
     const getCredentials = withContext<(item: SelectedItem) => Maybe<FormCredentials>>((ctx, { shareId, itemId }) => {
         const state = ctx.service.store.getState();
@@ -213,7 +219,7 @@ export const createAutoFillService = () => {
     if (BUILD_TARGET !== 'safari') {
         browser.webRequest.onAuthRequired.addListener(
             ({ url, requestId }) => {
-                if (!isUserAuthorized()) return { cancel: true };
+                if (!isUserAuthorized() || !isSettingEnabled('basicAuth')) return { cancel: false };
                 return onAuthRequired({ items: getLoginCandidates(parseUrl(url)), url, requestId });
             },
             { urls: ['<all_urls>'] },
