@@ -5835,9 +5835,6 @@
       "Shared by ": [
         "Общий доступ предоставлен "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "${ rootLink.signatureEmail } поделился с вами."
-      ],
       "Shared link not found": [
         "Ссылка общего доступа не найдена"
       ],
@@ -7782,6 +7779,17 @@
         "Средняя скорость VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Тарифы начиная с ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -7803,17 +7811,6 @@
       ],
       "Switch plan": [
         "Сменить тариф"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Тарифы начиная с ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Улучшить"
       ]
     },
     "new_plans: feature": {
@@ -9207,11 +9204,11 @@
       "Invite members": [
         "Пригласить участников"
       ],
-      "Maybe later": [
-        "Может быть позже"
-      ],
       "Maybe Later": [
         "Может, позже"
+      ],
+      "Maybe later": [
+        "Может быть позже"
       ],
       "Select theme": [
         "Выберите тему"

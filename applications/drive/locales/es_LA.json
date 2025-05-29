@@ -4654,7 +4654,7 @@
         "La verificación de dirección con claves de confianza está activada para esta dirección. Para poder enviar a esta dirección, primero confíe en las claves públicas que se pueden usar para enviar."
       ],
       "Admin account allocation": [
-        "Cuenta administrador de asignación"
+        "Asignación de la cuenta de administrador"
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Los anunciantes rastrean su navegación para mostrar anuncios específicos. ${ VPN_APP_NAME } bloquea rastreadores y anuncios, lo que hace que su conexión sea más rápida y mejora su experiencia en línea."
@@ -5714,14 +5714,20 @@
       "Shared by ": [
         "Compartido por "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Compartido por ${ rootLink.signatureEmail }"
+      "Shared by ${ sharedBy }": [
+        "Compartido por ${ sharedBy }"
+      ],
+      "Shared by you": [
+        "Compartido por usted"
       ],
       "Shared link not found": [
         "No se encontró el enlace compartido"
       ],
       "Shared with me": [
         "Compartido conmigo"
+      ],
+      "Shared with you": [
+        "Compartido con usted"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "No se pudo validar la firma por problemas de red. Intente de nuevo más tarde."
@@ -5960,7 +5966,7 @@
         "Almacenamiento total"
       ],
       "Total supported domains": [
-        "Dominios compatibles totales"
+        "Total de dominios compatibles"
       ],
       "Total VPN connections": [
         "Conexiones VPN totales"
@@ -6466,6 +6472,9 @@
     "Label": {
       "# of downloads": [
         "# de descargas"
+      ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } de ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
@@ -7684,6 +7693,17 @@
         "Velocidad VPN media"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Bajar a ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planes desde ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Eliminar cuenta"
@@ -7705,17 +7725,6 @@
       ],
       "Switch plan": [
         "Cambiar plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Bajar a ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planes desde ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Mejorar"
       ]
     },
     "new_plans: feature": {
@@ -9021,10 +9030,10 @@
       "Invite members": [
         "Invitar a miembros"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Quizás más tarde"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Quizás más tarde"
       ],
       "Select theme": [

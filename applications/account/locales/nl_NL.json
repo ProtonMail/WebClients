@@ -1150,11 +1150,11 @@
       "Select country ${ country }": [
         "Selecteer land ${ country }"
       ],
-      "Select file": [
-        "Selecteer bestand"
-      ],
       "select file": [
         "selecteer bestand"
+      ],
+      "Select file": [
+        "Selecteer bestand"
       ],
       "Select files": [
         "Selecteer bestanden"
@@ -4883,11 +4883,11 @@
       "Forward to": [
         "Doorsturen naar"
       ],
-      "or": [
-        "of"
-      ],
       "Or": [
         "Of"
+      ],
+      "or": [
+        "of"
       ],
       "With attachment": [
         "Met bijlage"
@@ -5138,8 +5138,8 @@
       "Error in one of the conditions": [
         "Fout in de volgende voorwaarden"
       ],
-      "Error publishing changes.": [
-        "Fout bij publiceren wijzigingen."
+      "Error publishing changes": [
+        "Fout bij publiceren wijzigingen"
       ],
       "Expired": [
         "Verlopen"
@@ -7845,6 +7845,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Voer minstens ${ BETTER_PASSWORD_LENGTH } tekens in"
       ],
+      "At least one application must be active": [
+        "Minstens één applicatie moet actief zijn"
+      ],
       "Attention required": [
         "Aandacht vereist"
       ],
@@ -9955,11 +9958,11 @@
       "User activated": [
         "Gebruiker geactiveerd"
       ],
-      "username": [
-        "gebruikersnaam"
-      ],
       "Username": [
         "Gebruikersnaam"
+      ],
+      "username": [
+        "gebruikersnaam"
       ],
       "Users": [
         "Gebruikers"
@@ -12489,11 +12492,11 @@
       "perform a password reset from your active session": [
         "mogelijk een wachtwoord reset vanuit uw actieve sessie uitvoeren"
       ],
-      "Privacy policy": [
-        "Privacybeleid"
-      ],
       "privacy policy": [
         "privacybeleid"
+      ],
+      "Privacy policy": [
+        "Privacybeleid"
       ],
       "Reactivate now": [
         "Nu heractiveren"
@@ -13834,14 +13837,6 @@
         "Ontgrendel alle ${ BRAND_NAME } premium producten en functies voor ${ priceLine }. U kunt op ieder moment annuleren."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Proefversie"
-      ],
-      "Your account's usage": [
-        "Verbruik van uw account"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -13860,6 +13855,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Ontgrendel premium functies door te upgraden"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Proefversie"
+      ],
+      "Your account's usage": [
+        "Verbruik van uw account"
       ]
     },
     "new_plans: tooltip": {
@@ -14500,17 +14503,6 @@
         "Desktop"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Iedereen"
-      ],
-      "Group members": [
-        "Groepsleden"
-      ],
-      "No one": [
-        "Niemand"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10e dag van de maand"
@@ -14745,6 +14737,17 @@
       ],
       "Trash": [
         "Prullenbak"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Iedereen"
+      ],
+      "Group members": [
+        "Groepsleden"
+      ],
+      "No one": [
+        "Niemand"
       ]
     },
     "Option delay send seconds": {
@@ -18233,6 +18236,9 @@
       "Locale updated": [
         "Landinstelling bijgewerkt"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Nieuw beleid aangemaakt. Dit gaat pas van kracht nadat u de wijzigingen publiceert."
+      ],
       "Organization activated": [
         "Organisatie geactiveerd"
       ],
@@ -18262,6 +18268,12 @@
       ],
       "Phone number updated": [
         "Telefoonnummer bijgewerkt"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "Beleid gewijzigd. Het gaat pas van kracht nadat u de wijzigingen publiceert."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "Beleid verwijderd. Het gaat pas van kracht nadat u de wijzigingen publiceert."
       ],
       "Port copied to clipboard": [
         "Poort gekopieerd naar klembord"
@@ -18808,11 +18820,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-All address": [
-        "Catch-All adres"
-      ],
       "Catch-all address": [
         "Catch-all adres"
+      ],
+      "Catch-All address": [
+        "Catch-All adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"

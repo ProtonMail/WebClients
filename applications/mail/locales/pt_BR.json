@@ -435,6 +435,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Baixar os aplicativos do ${ DRIVE_APP_NAME }"
       ],
+      "Download now": [
+        "Baixar agora"
+      ],
       "Download the desktop app": [
         "Baixe o aplicativo para computador"
       ],
@@ -680,6 +683,9 @@
       ],
       "Import from Outlook": [
         "Importar do Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Atualização importante disponível. Para continuar a usar o aplicativo, atualize para a versão mais recente. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Pela manhã"
@@ -1168,11 +1174,11 @@
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
       ],
-      "Select all": [
-        "Selecionar tudo"
-      ],
       "Select All": [
         "Selecionar todos"
+      ],
+      "Select all": [
+        "Selecionar tudo"
       ],
       "Select all messages": [
         "Selecionar todas as mensagens"
@@ -1385,8 +1391,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1451,11 +1456,11 @@
       "Upgrade": [
         "Fazer upgrade"
       ],
-      "Upgrade now": [
-        "Atualizar agora"
-      ],
       "Upgrade Now": [
         "Fazer upgrade agora"
+      ],
+      "Upgrade now": [
+        "Atualizar agora"
       ],
       "Upload and share files": [
         "Enviar e compartilhar arquivo"
@@ -7065,7 +7070,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -10666,11 +10672,6 @@
         "Desbloqueie todos os produtos e recursos premium da ${ BRAND_NAME } por apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -10683,6 +10684,11 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {

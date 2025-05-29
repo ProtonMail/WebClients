@@ -198,6 +198,9 @@
       "Copy address": [
         "Adresi kopyala"
       ],
+      "Copy alias “${ name }”": [
+        "“${ name }” takma adını kopyala"
+      ],
       "Copy email address": [
         "E-posta adresini kopyala"
       ],
@@ -333,7 +336,7 @@
         "Seçimi .vcf olarak dışa aktar"
       ],
       "Forgot password?": [
-        "Parolanızı mı unuttunuz?"
+        "Parolamı unuttum"
       ],
       "Forward as attachment": [
         "Ek dosya olarak ilet"
@@ -806,10 +809,10 @@
       "Upgrade": [
         "Yükselt"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Şimdi yükselt"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Şimdi yükselt"
       ],
       "Upload and share files": [
@@ -834,7 +837,7 @@
         "Başka bir ödeme yöntemi kullanın"
       ],
       "Use authentication code": [
-        "Kimlik doğrulama kodu kullan"
+        "Kimlik doğrulama kodunu kullanın"
       ],
       "Use for sending": [
         "Gönderim için kullan"
@@ -4168,7 +4171,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } Hesabınıza bağlı bir güvenlik anahtarı girin."
+        "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
       ],
       "Security key": [
         "Güvenlik anahtarı"
@@ -5086,7 +5089,7 @@
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu girin. Rakam ${ digit }."
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
@@ -10687,6 +10690,9 @@
       ],
       "Network error": [
         "Ağ sorunu"
+      ],
+      "Newsletters view": [
+        "Duyurular görünümü"
       ],
       "Night theme": [
         "Gece teması"

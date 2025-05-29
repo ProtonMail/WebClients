@@ -441,6 +441,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Спампаваць праграмы ${ DRIVE_APP_NAME }"
       ],
+      "Download now": [
+        "Спампаваць"
+      ],
       "Download the desktop app": [
         "Спампаваць настольную праграму"
       ],
@@ -686,6 +689,9 @@
       ],
       "Import from Outlook": [
         "Імпартаваць з Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Даступны важныя абнаўленні. Для працягу выкарыстання праграмы, вам неабходна абнавіць яе да апошняй версіі. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Раніцай"
@@ -1176,10 +1182,10 @@
       "Select ${ planTitle }": [
         "Выбраць ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Выбраць усе"
       ],
-      "Select All": [
+      "Select all": [
         "Выбраць усе"
       ],
       "Select all messages": [
@@ -1392,12 +1398,6 @@
       "Trust": [
         "Давяраць"
       ],
-      "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
-      ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
       ],
@@ -1461,11 +1461,11 @@
       "Upgrade": [
         "Палепшыць"
       ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
       "Upgrade Now": [
         "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
       ],
       "Upload and share files": [
         "Запампаваць і абагуліць файлы"
@@ -7153,7 +7153,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"

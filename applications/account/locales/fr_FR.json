@@ -1150,11 +1150,11 @@
       "Select country ${ country }": [
         "Sélectionnez le pays ${ country }"
       ],
-      "Select file": [
-        "Sélectionner un fichier"
-      ],
       "select file": [
         "sélectionnez un fichier."
+      ],
+      "Select file": [
+        "Sélectionner un fichier"
       ],
       "Select files": [
         "Sélectionner les fichiers"
@@ -4883,11 +4883,11 @@
       "Forward to": [
         "Transférer vers"
       ],
-      "or": [
-        "ou"
-      ],
       "Or": [
         "Ou"
+      ],
+      "or": [
+        "ou"
       ],
       "With attachment": [
         "Avec pièce jointe"
@@ -5138,7 +5138,7 @@
       "Error in one of the conditions": [
         "Il y a une erreur dans l'une des conditions."
       ],
-      "Error publishing changes.": [
+      "Error publishing changes": [
         "Une erreur est survenue lors de la publication des modifications."
       ],
       "Expired": [
@@ -7848,6 +7848,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Au moins ${ BETTER_PASSWORD_LENGTH } caractères"
       ],
+      "At least one application must be active": [
+        "Au moins une application doit être active."
+      ],
       "Attention required": [
         "Attention requise"
       ],
@@ -9958,11 +9961,11 @@
       "User activated": [
         "L'utilisateur a été activé."
       ],
-      "username": [
-        "nom d'utilisateur"
-      ],
       "Username": [
         "Nom d'utilisateur"
+      ],
+      "username": [
+        "nom d'utilisateur"
       ],
       "Users": [
         "Utilisateurs"
@@ -12492,11 +12495,11 @@
       "perform a password reset from your active session": [
         "réinitialiser le mot de passe depuis votre session active"
       ],
-      "Privacy policy": [
-        "Politique de confidentialité"
-      ],
       "privacy policy": [
         "politique de confidentialité"
+      ],
+      "Privacy policy": [
+        "Politique de confidentialité"
       ],
       "Reactivate now": [
         "Réactiver maintenant"
@@ -13837,14 +13840,6 @@
         "Accédez à tous les produits et toutes les fonctions premium de ${ BRAND_NAME } pour seulement ${ priceLine } avec possibilité de résiliation à tout moment."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Essai de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilisation de votre compte"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -13863,6 +13858,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Accédez à des fonctionnalités premium en changeant d'abonnement."
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Essai de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilisation de votre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -14503,17 +14506,6 @@
         "Bureau"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Tout le monde"
-      ],
-      "Group members": [
-        "Membres du groupe"
-      ],
-      "No one": [
-        "Personne"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10 du mois"
@@ -14748,6 +14740,17 @@
       ],
       "Trash": [
         "Déplacer dans le dossier Corbeille"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tout le monde"
+      ],
+      "Group members": [
+        "Membres du groupe"
+      ],
+      "No one": [
+        "Personne"
       ]
     },
     "Option delay send seconds": {
@@ -18239,6 +18242,9 @@
       "Locale updated": [
         "La langue a été mise à jour."
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Une politique a été créée. Ceci ne prendra effet qu'une fois les modifications publiées."
+      ],
       "Organization activated": [
         "L'organisation a été activée."
       ],
@@ -18268,6 +18274,12 @@
       ],
       "Phone number updated": [
         "Le numéro de téléphone a été mis à jour."
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "La politique a été modifiée. Ceci ne prendra effet qu'une fois les modifications publiées."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "La politique a été supprimée. Ceci ne prendra effet qu'une fois les modifications publiées."
       ],
       "Port copied to clipboard": [
         "Le port a été copié dans le presse-papiers."
@@ -18814,10 +18826,10 @@
       "Card verification": [
         "Vérification de la carte"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresse catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresse catch-all"
       ],
       "Change login password": [

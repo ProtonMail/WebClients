@@ -435,6 +435,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Télécharger les applications ${ DRIVE_APP_NAME }"
       ],
+      "Download now": [
+        "Télécharger"
+      ],
       "Download the desktop app": [
         "Téléchargez l'application de bureau"
       ],
@@ -680,6 +683,9 @@
       ],
       "Import from Outlook": [
         "Importer depuis Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Une mise à jour importante est disponible. Pour continuer à utiliser l'application, veuillez installer la dernière version. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Dans la matinée"
@@ -1168,10 +1174,10 @@
       "Select ${ planTitle }": [
         "Sélectionner ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Tout sélectionner"
       ],
-      "Select All": [
+      "Select all": [
         "Tout sélectionner"
       ],
       "Select all messages": [
@@ -1384,10 +1390,6 @@
       "Trust": [
         "Faire confiance"
       ],
-      "Trust key": [
-        "Approuver la clé",
-        "Approuver les clés"
-      ],
       "Trust public key": [
         "Approuver la clé publique"
       ],
@@ -1451,11 +1453,11 @@
       "Upgrade": [
         "Changer d'abonnement"
       ],
-      "Upgrade now": [
-        "Changer d'abonnement"
-      ],
       "Upgrade Now": [
         "Passer à l'abonnement supérieur"
+      ],
+      "Upgrade now": [
+        "Changer d'abonnement"
       ],
       "Upload and share files": [
         "Importer et partager des fichiers"
@@ -7065,7 +7067,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"

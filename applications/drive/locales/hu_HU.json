@@ -114,6 +114,9 @@
       "Attention required": [
         "Figyelem szükséges"
       ],
+      "Authenticate": [
+        "Hitelesítés"
+      ],
       "Back": [
         "Vissza"
       ],
@@ -427,6 +430,9 @@
       ],
       "Fit to window": [
         "Ablakhoz illesztés"
+      ],
+      "Forgot password?": [
+        "Elfelejtett jelszó?"
       ],
       "Forward as attachment": [
         "Továbbítás mellékletként"
@@ -1070,8 +1076,14 @@
       "Use a different payment method": [
         "Más fizetési mód választása"
       ],
+      "Use authentication code": [
+        "Hitelesítő kód használata"
+      ],
       "Use for sending": [
         "Küldéshez használható"
+      ],
+      "Use recovery code": [
+        "Helyreállító kód használata"
       ],
       "Verify": [
         "Ellenőrzés"
@@ -3774,6 +3786,24 @@
         "Korlátlan számú hide-my-email álnév"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Hiba történt a hitelesítési kulccsal való azonosítás közben. Próbálja meg újra."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Csatlakoztassa a ${ BRAND_NAME } fiókjához rendelt hitelesítési kulcsot."
+      ],
+      "Security key": [
+        "Hitelesítési kulcs"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Hitelesítési kulcs"
+      ]
+    },
     "file size format": {
       "byte": [
         "bájt",
@@ -4792,6 +4822,9 @@
       "Duplicate key updated": [
         "Duplikált kulcs frissítve"
       ],
+      "Each code can only be used once": [
+        "Minden kódot csak egyszer lehet felhasználni"
+      ],
       "Edit email address": [
         "E-mail cím szerkesztése"
       ],
@@ -4828,11 +4861,20 @@
       "Enter password": [
         "Jelszó megadása"
       ],
+      "Enter the code from your authenticator app": [
+        "Írja be a kódot a hitelesítő alkalmazásból"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Adja meg az e-mail fiók belépési adatait, amelyről importálni szeretne."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Írja be az ellenőrző kódot. ${ digit } számjegy."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Becsült hátralévő idő: ${ estimatedMinutes } perc",
@@ -5490,9 +5532,6 @@
       "Shared": [
         "Megosztva"
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Megosztotta: ${ rootLink.signatureEmail }"
-      ],
       "Shared link not found": [
         "A megosztott hivatkozás nem található"
       ],
@@ -5909,6 +5948,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Amikor VPN-hez kapcsolódik, az titkosítási technológiát használ az IP-cím (az eszközhöz rendelt egyedi kód) elrejtéséhez."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
+      ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "visszaállításra kerül, a(z) ${ formattedRevisionDate } dátumú változatból. Minden további változat továbbra is elérhető marad."
       ],
@@ -6305,6 +6347,9 @@
       ],
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
+      ],
+      "Authenticator app": [
+        "Hitelesítő alkalmazás"
       ],
       "Beta Access": [
         "Béta hozzáférés"
@@ -6834,6 +6879,9 @@
       ],
       "Your location": [
         "Az ön tartózkodási helye"
+      ],
+      "Your password (admin)": [
+        "Jelszó (adminisztrátor)"
       ]
     },
     "Label for contact group color": {
@@ -7385,6 +7433,17 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Csomagok ${ priceDrivePlus } ártól"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -7406,17 +7465,6 @@
       ],
       "Switch plan": [
         "Csomag váltása"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Csomagok ${ priceDrivePlus } ártól"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -8710,10 +8758,10 @@
       "Invite members": [
         "Tagok meghívása"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Talán később"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Talán később"
       ],
       "Select theme": [
@@ -10921,6 +10969,9 @@
       "Enter 2FA code": [
         "Írja be a kétlépcsős hitelesítési kódot"
       ],
+      "Enter your password": [
+        "Adja meg a jelszavát"
+      ],
       "Error": [
         "Hiba"
       ],
@@ -11048,6 +11099,9 @@
       ],
       "Network error": [
         "Hálózati hiba"
+      ],
+      "Newsletters view": [
+        "Hírlevelek nézet"
       ],
       "Night theme": [
         "Éjszakai téma"

@@ -1150,11 +1150,11 @@
       "Select country ${ country }": [
         "Выбраць краіну ${ country }"
       ],
-      "Select file": [
-        "Выбраць файл"
-      ],
       "select file": [
         "выбраць файл"
+      ],
+      "Select file": [
+        "Выбраць файл"
       ],
       "Select files": [
         "Выбраць файлы"
@@ -4780,11 +4780,11 @@
       "Forward to": [
         "Перасылаць на"
       ],
-      "or": [
-        "або"
-      ],
       "Or": [
         "Або"
+      ],
+      "or": [
+        "або"
       ],
       "With attachment": [
         "З далучэннем"
@@ -5039,7 +5039,7 @@
       "Error in one of the conditions": [
         "Памылка ў адной з умоў"
       ],
-      "Error publishing changes.": [
+      "Error publishing changes": [
         "Памылка пры апублікаванні змен"
       ],
       "Expired": [
@@ -7866,6 +7866,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Прынамсі ${ BETTER_PASSWORD_LENGTH } сімвалаў"
       ],
+      "At least one application must be active": [
+        "Прынамсі адна праграма можа быць актыўнай"
+      ],
       "Attention required": [
         "Патрабуецца ўвага"
       ],
@@ -10014,11 +10017,11 @@
       "User activated": [
         "Карыстальнік актываваны"
       ],
-      "username": [
-        "імя карыстальніка"
-      ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "username": [
+        "імя карыстальніка"
       ],
       "Users": [
         "Карыстальнікі"
@@ -12590,11 +12593,11 @@
       "perform a password reset from your active session": [
         "ажыццявіць скіданне пароля з вашага актыўнага сеанса"
       ],
-      "Privacy policy": [
-        "Палітыка прыватнасці"
-      ],
       "privacy policy": [
         "палітыкай прыватнасці"
+      ],
+      "Privacy policy": [
+        "Палітыка прыватнасці"
       ],
       "Reactivate now": [
         "Актываваць паўторна"
@@ -14005,14 +14008,6 @@
         "Разблакіраваць усе прэміяльныя прадукты ${ BRAND_NAME } і функцыі ўсяго за ${ priceLine }. Скасаваць можна ў любы момант."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Выпрабавальны перыяд ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -14031,6 +14026,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Палепшыце свой тарыфны план і разблакіруйце прэміяльныя функцыі"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {
@@ -14685,17 +14688,6 @@
         "Працоўны стол"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Кожнаму"
-      ],
-      "Group members": [
-        "Удзельнікі групы"
-      ],
-      "No one": [
-        "Нікому"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10-ае чысло месяца"
@@ -14930,6 +14922,17 @@
       ],
       "Trash": [
         "Сметніца"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Кожнаму"
+      ],
+      "Group members": [
+        "Удзельнікі групы"
+      ],
+      "No one": [
+        "Нікому"
       ]
     },
     "Option delay send seconds": {
@@ -18540,6 +18543,9 @@
       "Locale updated": [
         "Лакаль абноўлена"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Новая палітыка створана. Яна ўступіць у сілу толькі пасля таго, як вы апублікуеце змены."
+      ],
       "Organization activated": [
         "Арганізацыя актывавана"
       ],
@@ -18569,6 +18575,12 @@
       ],
       "Phone number updated": [
         "Нумар тэлефона абноўлены"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "Палітыка зменена. Яна ўступіць у сілу толькі пасля таго, як вы апублікуеце змены."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "Палітыка выдалена. Яна ўступіць у сілу толькі пасля таго, як вы апублікуеце змены."
       ],
       "Port copied to clipboard": [
         "Порт скапіяваны ў буфер абмену"
@@ -19129,10 +19141,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [

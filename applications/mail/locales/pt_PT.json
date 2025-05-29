@@ -435,6 +435,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Transferir as aplicações do ${ DRIVE_APP_NAME }"
       ],
+      "Download now": [
+        "Transferir agora"
+      ],
       "Download the desktop app": [
         "Transfira a aplicação para computador"
       ],
@@ -680,6 +683,9 @@
       ],
       "Import from Outlook": [
         "Importar do Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Atualização importante disponível. Para continuar a utilizar a aplicação, atualize para a versão mais recente. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Pela manhã"
@@ -1168,11 +1174,11 @@
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
       ],
-      "Select all": [
-        "Seleccionar tudo"
-      ],
       "Select All": [
         "Selecionar tudo"
+      ],
+      "Select all": [
+        "Seleccionar tudo"
       ],
       "Select all messages": [
         "Selecionar todas as mensagens"
@@ -1384,10 +1390,6 @@
       "Trust": [
         "Confiar"
       ],
-      "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
-      ],
       "Trust public key": [
         "Confiar na chave pública"
       ],
@@ -1451,11 +1453,11 @@
       "Upgrade": [
         "Actualizar"
       ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ],
       "Upgrade Now": [
         "Atualizar agora"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
       ],
       "Upload and share files": [
         "Enviar e partilhar ficheiros"
@@ -6925,7 +6927,8 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir uma imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir uma ligação"

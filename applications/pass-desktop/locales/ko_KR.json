@@ -403,10 +403,10 @@
       "Move to another vault": [
         "다른 금고로 이동"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "휴지통으로 이동"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "휴지통으로 이동"
       ],
       "Multiple select": [
@@ -1844,6 +1844,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+      ],
       "Moving items": [
         "항목 이동 중"
       ],
@@ -2221,6 +2224,9 @@
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "이 항목은 모두에게 공유되지 않습니다. 다른 사람과 공유하려면 사람을 초대하세요."
+      ],
+      "This mailbox will use your previous email.": [
+        "이 메일함은 귀하의 이전 이메일을 사용할 것입니다."
       ],
       "This operation is irreversible.": [
         "이 작업은 되돌릴 수 없습니다."
@@ -3178,6 +3184,9 @@
       "Points Balance": [
         "포인트 잔액"
       ],
+      "Port": [
+        "포트"
+      ],
       "Prefix": [
         "접두어"
       ],
@@ -3313,11 +3322,11 @@
       "Sign in faster with ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }로 더 빠르게 로그인"
       ],
-      "Social Security": [
-        "주민등록증"
-      ],
       "Social security": [
         "사회 보장 번호"
+      ],
+      "Social Security": [
+        "주민등록증"
       ],
       "Social security number": [
         "사회 보장 번호"

@@ -305,10 +305,10 @@
       "Refresh status": [
         "وضعیت بازخوانی"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "بازخوانی صفحه"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "بازخوانی صفحه"
       ],
       "Remove": [
@@ -383,10 +383,10 @@
       "Select country": [
         "انتخاب کشور"
       ],
-      "Select file": [
+      "select file": [
         "انتخاب فایل"
       ],
-      "select file": [
+      "Select file": [
         "انتخاب فایل"
       ],
       "Send code": [
@@ -2915,10 +2915,10 @@
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "از اطلاعات ذیل برای اتصال به سرورهای ${ VPN_APP_NAME } بدون برنامه استفاده کنید. مثال های موارد استفاده: Tunnelblick در macOS، OpenVPN در لینوکس/GNU."
       ],
-      "username": [
+      "Username": [
         "نام‌کاربری"
       ],
-      "Username": [
+      "username": [
         "نام‌کاربری"
       ],
       "Users": [
@@ -3792,6 +3792,20 @@
         "سرعت متوسط VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "تنزل به ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "همه طرح های ${ BRAND_NAME } را بررسی کنید"
+      ],
+      "From ${ price }": [
+        "از ${ price }"
+      ],
+      "Upgrade": [
+        "ارتقاء"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "حذف حساب کاربری"
@@ -3813,20 +3827,6 @@
       ],
       "Switch plan": [
         "تغییر دادن طرح"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "تنزل به ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "همه طرح های ${ BRAND_NAME } را بررسی کنید"
-      ],
-      "From ${ price }": [
-        "از ${ price }"
-      ],
-      "Upgrade": [
-        "ارتقاء"
       ]
     },
     "new_plans: feature": {
@@ -4123,14 +4123,6 @@
         "شرایط و ضوابط"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "دوره آزمایشی رایگان ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "رکورد استفاده حساب شما"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "حذف کردن حساب؟"
@@ -4143,6 +4135,14 @@
       ],
       "Switch plans?": [
         "تغییر دادن طرح؟"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "دوره آزمایشی رایگان ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "رکورد استفاده حساب شما"
       ]
     },
     "new_plans: tooltip": {
@@ -5296,11 +5296,11 @@
       "Card verification": [
         "تایید کارت"
       ],
-      "Catch-All address": [
-        "نشانی همه‌گیر"
-      ],
       "Catch-all address": [
         "نشانی دریافت-همه"
+      ],
+      "Catch-All address": [
+        "نشانی همه‌گیر"
       ],
       "Change login password": [
         "گذرواژه ورود را تغییر دهید"

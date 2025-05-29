@@ -435,6 +435,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descarrega les aplicacions del ${ DRIVE_APP_NAME }"
       ],
+      "Download now": [
+        "Descarrega"
+      ],
       "Download the desktop app": [
         "Descarregueu l'aplicació d'escriptori"
       ],
@@ -680,6 +683,9 @@
       ],
       "Import from Outlook": [
         "Importa des d'Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Hi ha disponible una actualització important. Per a continuar utilitzant l'aplicació, actualitzeu a la versió més recent. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Al matí"
@@ -1168,10 +1174,10 @@
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar-ho tot"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar-ho tot"
       ],
       "Select all messages": [
@@ -1384,10 +1390,6 @@
       "Trust": [
         "De confiança"
       ],
-      "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
-      ],
       "Trust public key": [
         "Confia en la clau pública"
       ],
@@ -1451,10 +1453,10 @@
       "Upgrade": [
         "Millora"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Millora ara"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Millora ara"
       ],
       "Upload and share files": [
@@ -6925,7 +6927,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"

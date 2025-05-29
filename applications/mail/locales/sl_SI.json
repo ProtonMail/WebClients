@@ -429,6 +429,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Prenesite aplikacije ${ DRIVE_APP_NAME }"
       ],
+      "Download now": [
+        "Prenesi zdaj"
+      ],
       "Download the desktop app": [
         "Prenesi namizno aplikacijo"
       ],
@@ -662,6 +665,9 @@
       ],
       "Import from Outlook": [
         "Uvoz iz Outlooka"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Na voljo je pomembna posodobitev. Pred nadaljnjo uporabo aplikacije jo posodobite na najnovejšo različico. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Zjutraj"
@@ -1140,11 +1146,11 @@
       "Select ${ planTitle }": [
         "Izberite ${ planTitle }"
       ],
-      "Select all": [
-        "Označi vse"
-      ],
       "Select All": [
         "Izberi vse"
+      ],
+      "Select all": [
+        "Označi vse"
       ],
       "Select all messages": [
         "Izberi vsa sporočila"
@@ -1353,12 +1359,6 @@
       "Trust": [
         "Zaupaj"
       ],
-      "Trust key": [
-        "Zaupaj ključu",
-        "Zaupaj ključema",
-        "Zaupaj ključem",
-        "Zaupaj ključem"
-      ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
       ],
@@ -1422,10 +1422,10 @@
       "Upgrade": [
         "Nadgradi"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Nadgradi zdaj"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Nadgradi zdaj"
       ],
       "Upload and share files": [
@@ -6870,9 +6870,6 @@
       ],
       "Initializing…": [
         "Zagon …"
-      ],
-      "Insert image": [
-        "Vstavi sliko"
       ],
       "Insert link": [
         "Vstavi povezavo"

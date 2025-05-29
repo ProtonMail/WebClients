@@ -237,6 +237,9 @@
       "Copy address": [
         "Adresi kopyala"
       ],
+      "Copy alias “${ name }”": [
+        "“${ name }” takma adını kopyala"
+      ],
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
       ],
@@ -432,7 +435,7 @@
         "Pencereye sığdır"
       ],
       "Forgot password?": [
-        "Parolanızı mı unuttunuz?"
+        "Parolamı unuttum"
       ],
       "Forward as attachment": [
         "Ek dosya olarak ilet"
@@ -1077,7 +1080,7 @@
         "Başka bir ödeme yöntemi kullanın"
       ],
       "Use authentication code": [
-        "Kimlik doğrulama kodu kullan"
+        "Kimlik doğrulama kodunu kullanın"
       ],
       "Use for sending": [
         "Gönderim için kullan"
@@ -3933,7 +3936,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } Hesabınıza bağlı bir güvenlik anahtarı girin."
+        "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
       ],
       "Security key": [
         "Güvenlik anahtarı"
@@ -4719,6 +4722,9 @@
       "Anyone with this link can access your folder.": [
         "Bu bağlantıya sahip olan herkes klasörünüze erişebilir."
       ],
+      "Apr": [
+        "Nis"
+      ],
       "Are you sure you want to discard your changes?": [
         "Değişiklikleri silmek istediğinize emin misiniz?"
       ],
@@ -4745,6 +4751,9 @@
       ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
+      ],
+      "Aug": [
+        "Ağu"
       ],
       "Automated Recovery ${ formattedDate }": [
         "Otomatik kurtarma ${ formattedDate }"
@@ -4892,6 +4901,9 @@
       "Custom email domains": [
         "Özel e-posta etki alanları"
       ],
+      "Dec": [
+        "Ara"
+      ],
       "Decrypting files": [
         "Dosyaların şifresi çözülüyor"
       ],
@@ -5011,7 +5023,7 @@
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu girin. Rakam ${ digit }."
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
@@ -5040,6 +5052,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Güvenli bağlantı açılamadı. Nedeni: ${ error }"
+      ],
+      "Feb": [
+        "Şub"
       ],
       "File \"${ name }\" was deleted during download": [
         "\"${ name }\" dosyası indirme sırasında silindi"
@@ -5210,8 +5225,17 @@
       "It’s easy and secure": [
         "Kolay ve güvenli"
       ],
+      "Jan": [
+        "Oca"
+      ],
       "JCB logo": [
         "JCB logosu"
+      ],
+      "Jul": [
+        "Tem"
+      ],
+      "Jun": [
+        "Haz"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Yalnızca seçiminizi onaylayın, gerisini biz halledeceğiz."
@@ -5276,12 +5300,18 @@
       "Makes your account safer": [
         "Hesabınızı daha güvenli kılar"
       ],
+      "Mar": [
+        "Mar"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "En fazla ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
         "En fazla ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter"
+      ],
+      "May": [
+        "May"
       ],
       "Medium Priority": [
         "Orta öncelik"
@@ -5358,11 +5388,17 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Not: Veriler, ${ DRIVE_APP_NAME } kurulu aygıtlarda yerel olarak bulunmayı sürdürebilir."
       ],
+      "Nov": [
+        "Kas"
+      ],
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
       ],
       "Numbers": [
         "Rakamlar"
+      ],
+      "Oct": [
+        "Eki"
       ],
       "of": [
         "/"
@@ -5642,6 +5678,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Hangi takvimlerin içe aktarılacağını seçin. İçe aktarılan her takvim için tarifenizde bulunan takvim sayısına göre yeni bir takvim oluşturulur."
       ],
+      "Sep": [
+        "Eyl"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Şu anda SEPA ödemeleri yapılamıyor. Lütfen bir süre sonra yeniden deneyin."
       ],
@@ -5675,14 +5714,20 @@
       "Shared by ": [
         "Paylaşan "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "${ rootLink.signatureEmail } tarafından paylaşıldı"
+      "Shared by ${ sharedBy }": [
+        "${ sharedBy } tarafından paylaşıldı"
+      ],
+      "Shared by you": [
+        "Paylaştıklarınız"
       ],
       "Shared link not found": [
         "Paylaşılan bağlantı bulunamadı"
       ],
       "Shared with me": [
         "Benimle paylaşılan"
+      ],
+      "Shared with you": [
+        "Sizinle paylaşılan"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Ağ sorunu nedeniyle imza doğrulanamadı. Lütfen bir süre sonra yeniden deneyin."
@@ -6424,6 +6469,9 @@
     "Label": {
       "# of downloads": [
         "indirme sayısı"
+      ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } / ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
@@ -7582,6 +7630,17 @@
         "Orta VPN hızı"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "${ priceDrivePlus } tutarından başlayan tarifeler"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -7603,17 +7662,6 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "${ priceDrivePlus } tutarından başlayan tarifeler"
-      ],
-      "Upgrade": [
-        "Yükselt"
       ]
     },
     "new_plans: feature": {
@@ -8588,7 +8636,7 @@
         "Üyenin erişimi kaldırıldı"
       ],
       "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
-        "Kilitli birime işlem uygulayarak yeni Albümler, Filtreler ve daha fazlasına erişin. Bu yeni özelliklerden hemen yararlanmak için şimdi geri yükleyin veya silin."
+        "Kilitli biriminizde işlem yaparak yeni albüm, süzgeç ve diğer özelliklere erişin. Bu yeni özellikleri hemen kullanmak için şimdi geri yükleyin ya da silin."
       ],
       "Access updated": [
         "Erişim güncellendi"
@@ -8721,10 +8769,10 @@
         "Paylaşma daveti reddedildi"
       ],
       "Some photo(s) could not be added to \"${ albumName }\"": [
-        "Bazı fotoğraflar “${ albumName }” albümüne eklenemedi."
+        "Bazı fotoğraflar \"${ albumName }\" albümüne eklenemedi"
       ],
       "Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Bazı fotoğraflar ${ albumLink.name } albümünden silinemedi."
+        "Bazı fotoğraflar ${ albumLink.name } albümünden kaldırılamadı"
       ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Üzgünüz, boş olmadığı için klasörü silemedik.",
@@ -8775,7 +8823,7 @@
         "Fotoğraflarınız \"${ albumName }\" albümüne eklendi."
       ],
       "Your photo(s) have been removed from ${ albumLink.name }": [
-        "Fotoğraflarınız ${ albumLink.name } albümünden kaldırıldı."
+        "Fotoğraflarınız ${ albumLink.name } albümünden kaldırıldı"
       ],
       "Your settings failed to be saved": [
         "Ayarlarınız kaydedilemedi"
@@ -8919,10 +8967,10 @@
       "Invite members": [
         "Üyeleri davet et"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Belki daha sonra"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Belki daha sonra"
       ],
       "Select theme": [
@@ -11260,6 +11308,9 @@
       ],
       "Network error": [
         "Ağ sorunu"
+      ],
+      "Newsletters view": [
+        "Duyurular görünümü"
       ],
       "Night theme": [
         "Gece teması"

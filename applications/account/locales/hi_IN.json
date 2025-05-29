@@ -1072,11 +1072,11 @@
       "Select country ${ country }": [
         "देश चुनें ${ country }"
       ],
-      "Select file": [
-        "फाइल चुनें"
-      ],
       "select file": [
         "फ़ाइल चुनें"
+      ],
+      "Select file": [
+        "फाइल चुनें"
       ],
       "Select files": [
         "फ़ाइल चुनें"
@@ -4398,10 +4398,10 @@
       "Forward to": [
         "इन्हें फॉरवर्ड करें"
       ],
-      "or": [
+      "Or": [
         "या"
       ],
-      "Or": [
+      "or": [
         "या"
       ],
       "With attachment": [
@@ -9239,10 +9239,10 @@
       "User activated": [
         "उपयोगकर्ता सक्रिय किया गया"
       ],
-      "username": [
+      "Username": [
         "यूज़रनेम"
       ],
-      "Username": [
+      "username": [
         "यूज़रनेम"
       ],
       "Users": [
@@ -11632,11 +11632,11 @@
       "perform a password reset from your active session": [
         "अपने सक्रिय सत्र से पासवर्ड रीसेट करें"
       ],
-      "Privacy policy": [
-        "गोपनीयता नीति"
-      ],
       "privacy policy": [
         "निजता नीति"
+      ],
+      "Privacy policy": [
+        "गोपनीयता नीति"
       ],
       "Reactivate now": [
         "अब पुनः सक्रिय करें"
@@ -12956,14 +12956,6 @@
         "सिर्फ ${ priceLine } में सभी ${ BRAND_NAME } प्रीमियम उत्पाद और खासियतें अनलॉक करें। किसी भी समय रद्द करें।"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } ट्रायल"
-      ],
-      "Your account's usage": [
-        "आपका खाते का इस्तेमाल"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "खाता मिटाएं?"
@@ -12982,6 +12974,14 @@
       ],
       "Unlock premium features by upgrading": [
         "अपग्रेड करके प्रीमियम सुविधाओं का लाभ उठाएँ"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } ट्रायल"
+      ],
+      "Your account's usage": [
+        "आपका खाते का इस्तेमाल"
       ]
     },
     "new_plans: tooltip": {
@@ -13613,17 +13613,6 @@
         "डेस्कटॉप"
       ]
     },
-    "option": {
-      "Everyone": [
-        "सभी"
-      ],
-      "Group members": [
-        "ग्रुप सदस्य"
-      ],
-      "No one": [
-        "कोई भी नहीं"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "महीने की 10 तारीख"
@@ -13852,6 +13841,17 @@
       ],
       "Trash": [
         "कचरा"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "सभी"
+      ],
+      "Group members": [
+        "ग्रुप सदस्य"
+      ],
+      "No one": [
+        "कोई भी नहीं"
       ]
     },
     "Option delay send seconds": {
@@ -17804,10 +17804,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [

@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Authentifizieren"
+      ],
       "Cancel": [
         "Abbrechen"
       ],
@@ -25,6 +28,9 @@
       ],
       "Edit sign-in details": [
         "Anmeldeinformationen bearbeiten"
+      ],
+      "Forgot password?": [
+        "Passwort vergessen?"
       ],
       "Get verification code": [
         "Verifizierungscode anfordern"
@@ -49,6 +55,12 @@
       ],
       "Try another method": [
         "Eine andere Methode ausprobieren"
+      ],
+      "Use authentication code": [
+        "Authentifizierungscode verwenden"
+      ],
+      "Use recovery code": [
+        "Wiederherstellungsschlüssel verwenden"
       ],
       "Verify": [
         "Verifizieren"
@@ -909,6 +921,24 @@
         "Diese Seite konnte nicht geladen werden. Bitte aktualisiere die Seite oder überprüfe deine Internetverbindung."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Bei der Authentifizierung mit Ihrem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte erneut versuchen."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Stecke einen Sicherheitsschlüssel ein, der mit deinem ${ BRAND_NAME }-Konto verknüpft ist."
+      ],
+      "Security key": [
+        "Sicherheitsschlüssel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sicherheitsschlüssel"
+      ]
+    },
     "file size format": {
       "byte": [
         "Byte",
@@ -1007,11 +1037,23 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Mehrere kostenlose Konten zu erstellen ist gemäß unseren ${ termsLink } nicht erlaubt."
       ],
+      "Each code can only be used once": [
+        "Jeder Code kann nur einmal verwendet werden"
+      ],
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
       ],
+      "Enter the code from your authenticator app": [
+        "Code aus deiner Authentifizierungs-App ein eingeben"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Bestätigungscode eingeben. Ziffer ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Eigenes Passwort (als Organisationsadministrator) eingeben."
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "Für weitere Informationen und zur Aufhebung von Einschränkungen melde dich bitte unter ${ mailLink } an."
@@ -1055,6 +1097,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
       ],
@@ -1078,6 +1123,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Authentifizierungs-App"
+      ],
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
       ],
@@ -1098,6 +1146,9 @@
       ],
       "Verification code": [
         "Verifizierungscode"
+      ],
+      "Your password (admin)": [
+        "Dein Passwort (Admin)"
       ]
     },
     "Link": {
@@ -1489,6 +1540,9 @@
       ],
       "Enter 2FA code": [
         "2FA Code eingeben"
+      ],
+      "Enter your password": [
+        "Passwort eingeben"
       ],
       "Human verification": [
         "Captcha"

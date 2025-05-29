@@ -198,6 +198,9 @@
       "Copy address": [
         "Adres kopiëren"
       ],
+      "Copy alias “${ name }”": [
+        "Kopieer alias \"${ name }\""
+      ],
       "Copy email address": [
         "Kopieer e-mailadres"
       ],
@@ -806,11 +809,11 @@
       "Upgrade": [
         "Upgraden"
       ],
-      "Upgrade now": [
-        "Nu upgraden"
-      ],
       "Upgrade Now": [
         "Upgrade Nu"
+      ],
+      "Upgrade now": [
+        "Nu upgraden"
       ],
       "Upload and share files": [
         "Bestanden uploaden en delen"
@@ -1792,10 +1795,10 @@
     },
     "Commander action": {
       "Day view": [
-        "Dagweergave"
+        "Dagoverzicht"
       ],
       "Month view": [
-        "Maandweergave"
+        "Maandoverzicht"
       ],
       "New event": [
         "Nieuw event"
@@ -1807,13 +1810,13 @@
         "Vorige periode"
       ],
       "Search events": [
-        "Zoek events"
+        "Afspraken zoeken"
       ],
       "Today": [
         "Vandaag"
       ],
       "Week view": [
-        "Weekweergave"
+        "Weekoverzicht"
       ]
     },
     "Confirm modal title": {

@@ -576,10 +576,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
       "Remove": [
@@ -699,11 +699,11 @@
       "Select country ${ country }": [
         "Wybierz kraj ${ country }"
       ],
-      "Select file": [
-        "Wybierz plik"
-      ],
       "select file": [
         "wybierz plik"
+      ],
+      "Select file": [
+        "Wybierz plik"
       ],
       "Send code": [
         "Wyślij kod"
@@ -3176,9 +3176,6 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Wystąpił błąd podczas łączenia z interfejsem API Bitcoina."
-      ],
-      "Error publishing changes.": [
-        "Wystąpił błąd podczas publikowania zmian."
       ],
       "Failed to load the STL preview": [
         "Nie udało się załadować podglądu STL"
@@ -5971,11 +5968,11 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
-      "username": [
-        "nazwa użytkownika"
-      ],
       "Username": [
         "Nazwa użytkownika"
+      ],
+      "username": [
+        "nazwa użytkownika"
       ],
       "Users": [
         "Użytkownicy"
@@ -7610,6 +7607,20 @@
         "Umiarkowana prędkość VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniżyć plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Usuń konto"
@@ -7631,20 +7642,6 @@
       ],
       "Switch plan": [
         "Zmień plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniżyć plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
       ]
     },
     "new_plans: feature": {
@@ -8247,14 +8244,6 @@
         "Odblokuj wszystkie usługi i funkcje premium ${ BRAND_NAME } za ${ priceLine }. Anuluj w dowolnym momencie."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -8267,6 +8256,14 @@
       ],
       "Switch plans?": [
         "Zmienić plany?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -8785,17 +8782,6 @@
         "Witaj w ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Wszyscy"
-      ],
-      "Group members": [
-        "Użytkownicy grupy"
-      ],
-      "No one": [
-        "Nikt"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Dozwolono ${ defaultLabel }"
@@ -8865,6 +8851,17 @@
       ],
       "The whole organization": [
         "Cała organizacja"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Wszyscy"
+      ],
+      "Group members": [
+        "Użytkownicy grupy"
+      ],
+      "No one": [
+        "Nikt"
       ]
     },
     "Organization capacity error": {
@@ -11685,10 +11682,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
       "Change login password": [
