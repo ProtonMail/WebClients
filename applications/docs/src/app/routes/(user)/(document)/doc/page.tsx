@@ -263,7 +263,7 @@ function Content({
     if (isURLTruncatedBySlack) {
       return (
         <div className="m-auto max-w-prose text-center" data-testid="invalid-openaction-error">{c('Info')
-          .t`The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose "Copy link" rather than copy the truncated URL text directly.`}</div>
+          .t`The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose "Copy link" rather than copying the truncated URL text directly.`}</div>
       )
     }
 
