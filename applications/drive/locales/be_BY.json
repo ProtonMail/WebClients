@@ -5738,14 +5738,20 @@
       "Shared by ": [
         "Абагулена "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Абагулена ${ rootLink.signatureEmail }"
+      "Shared by ${ sharedBy }": [
+        "Абагулена ${ sharedBy }"
+      ],
+      "Shared by you": [
+        "Абагулена вамі"
       ],
       "Shared link not found": [
         "Абагуленая спасылка не знойдзена"
       ],
       "Shared with me": [
         "Абагулена са мной"
+      ],
+      "Shared with you": [
+        "Абагулена з вамі"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Немагчыма выканаць праверку подпісу па прычыне памылкі сеткі. Паспрабуйце яшчэ раз пазней."
@@ -6509,6 +6515,9 @@
     "Label": {
       "# of downloads": [
         "Колькасць спампоўванняў"
+      ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } з ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
         "Імя карыстальніка ${ BRAND_NAME }"
@@ -7736,6 +7745,17 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Тарыфныя планы, якія пачынаюцца з ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -7757,17 +7777,6 @@
       ],
       "Switch plan": [
         "Змяніць тарыфны план"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Тарыфныя планы, якія пачынаюцца з ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
       ]
     },
     "new_plans: feature": {
@@ -9161,10 +9170,10 @@
       "Invite members": [
         "Запрасіць удзельнікаў"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Магчыма пазней"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Магчыма пазней"
       ],
       "Select theme": [

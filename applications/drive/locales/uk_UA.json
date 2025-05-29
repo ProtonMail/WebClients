@@ -5194,9 +5194,6 @@
       "Shared by ": [
         "Поширено користувачем "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Надано спільний доступ від ${ rootLink.signatureEmail }"
-      ],
       "Shared link not found": [
         "Спільне посилання не знайдено"
       ],
@@ -6899,6 +6896,14 @@
         "Середня швидкість VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Видалити обліковий запис"
@@ -6920,14 +6925,6 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Покращити"
       ]
     },
     "new_plans: feature": {
@@ -8210,10 +8207,10 @@
       "Invite members": [
         "Запросити учасників"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Можливо пізніше"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Можливо пізніше"
       ],
       "Select theme": [

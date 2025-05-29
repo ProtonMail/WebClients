@@ -5119,9 +5119,6 @@
       "Shared by ": [
         "分享自 "
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "由 ${ rootLink.signatureEmail } 分享"
-      ],
       "Shared link not found": [
         "找不到分享的連結"
       ],
@@ -6856,6 +6853,17 @@
         "一般 VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "方案從${ priceDrivePlus }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -6877,17 +6885,6 @@
       ],
       "Switch plan": [
         "切換方案"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "方案從${ priceDrivePlus }起"
-      ],
-      "Upgrade": [
-        "升級"
       ]
     },
     "new_plans: feature": {
@@ -8089,11 +8086,11 @@
       "Invite members": [
         "邀請成員"
       ],
-      "Maybe later": [
-        "稍後再說"
-      ],
       "Maybe Later": [
         "稍後再試"
+      ],
+      "Maybe later": [
+        "稍後再說"
       ],
       "Select theme": [
         "選擇主題"
