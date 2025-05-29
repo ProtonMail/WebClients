@@ -108,6 +108,9 @@
       "Back": [
         "Zurück"
       ],
+      "Back to sign in": [
+        "Zurück zur Anmeldung"
+      ],
       "Block": [
         "Sperren"
       ],
@@ -372,6 +375,9 @@
       "Fit to window": [
         "An das Fenster anpassen"
       ],
+      "Forgot password?": [
+        "Passwort vergessen?"
+      ],
       "Forgot recovery method?": [
         "Wiederherstellungsmethode vergessen?"
       ],
@@ -570,11 +576,11 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "refresh the page": [
-        "aktualisiere die Seite"
-      ],
       "Refresh the page": [
         "Seite aktualisieren"
+      ],
+      "refresh the page": [
+        "aktualisiere die Seite"
       ],
       "Remove": [
         "Entfernen"
@@ -693,10 +699,10 @@
       "Select country ${ country }": [
         "Land ${ country } auswählen"
       ],
-      "Select file": [
+      "select file": [
         "Datei auswählen"
       ],
-      "select file": [
+      "Select file": [
         "Datei auswählen"
       ],
       "Send code": [
@@ -3145,8 +3151,8 @@
       "Error connecting to the Bitcoin API.": [
         "Fehler beim Verbinden mit der Bitcoin-API."
       ],
-      "Error publishing changes.": [
-        "Fehler bei der Veröffentlichung von Änderungen."
+      "Error publishing changes": [
+        "Fehler bei der Veröffentlichung von Änderungen"
       ],
       "Failed to load the STL preview": [
         "Das Laden der STL-Vorschau ist fehlgeschlagen"
@@ -4515,6 +4521,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Mindestens ${ BETTER_PASSWORD_LENGTH } Zeichen"
       ],
+      "At least one application must be active": [
+        "Mindestens eine Anwendung muss aktiv sein"
+      ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
@@ -4851,6 +4860,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Gib die E-Mail-Adresse oder den Benutzernamen deines ${ BRAND_NAME }-Kontos ein."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Eigenes Passwort (als Organisationsadministrator) eingeben."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Gib deine E-Mail-Adresse für die Wiederherstellung ein und es wird dir dein Benutzername oder deine E-Mail-Adresse zugeschickt."
@@ -5332,7 +5344,7 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleibt.",
-        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleiben."
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleibt."
       ],
       "please open a support ticket": [
         "öffne bitte ein Support-Ticket"
@@ -5724,6 +5736,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Gib zur Bestätigung bitte den Namen des zu löschenden Benutzers ein."
       ],
+      "To continue to ${ product }": [
+        "Weiter zu ${ product }"
+      ],
       "To create your first user group, go to": [
         "Um deine erste Benutzergruppe zu erstellen, gehe zu"
       ],
@@ -5829,10 +5844,10 @@
       "User activated": [
         "Benutzer aktiviert"
       ],
-      "username": [
+      "Username": [
         "Benutzername"
       ],
-      "Username": [
+      "username": [
         "Benutzername"
       ],
       "Users": [
@@ -6972,6 +6987,9 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, ich möchte dieses Konto und alle enthaltenen Daten endgültig und unwiderruflich löschen."
       ],
+      "Your password (admin)": [
+        "Dein Passwort (Admin)"
+      ],
       "ZIP code": [
         "Postleitzahl"
       ]
@@ -7433,6 +7451,20 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Auf ${ downgradedPlanName } downgraden"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Konto löschen"
@@ -7454,20 +7486,6 @@
       ],
       "Switch plan": [
         "Abonnement wechseln"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Auf ${ downgradedPlanName } downgraden"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Upgrade": [
-        "Upgraden"
       ]
     },
     "new_plans: feature": {
@@ -8050,14 +8068,6 @@
         "Schalte alle Premium-Produkte und -Funktionen von ${ BRAND_NAME } für nur ${ priceLine } frei. Jederzeit kündbar."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-Testversion"
-      ],
-      "Your account's usage": [
-        "Verbrauch deines Kontos"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
@@ -8070,6 +8080,14 @@
       ],
       "Switch plans?": [
         "Tarife wechseln?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-Testversion"
+      ],
+      "Your account's usage": [
+        "Verbrauch deines Kontos"
       ]
     },
     "new_plans: tooltip": {
@@ -8584,17 +8602,6 @@
         "Willkommen bei ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Jeder"
-      ],
-      "Group members": [
-        "Gruppenmitglieder"
-      ],
-      "No one": [
-        "Keiner"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Zugelassen ${ defaultLabel }"
@@ -8664,6 +8671,17 @@
       ],
       "The whole organization": [
         "Die gesamte Organisation"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Jeder"
+      ],
+      "Group members": [
+        "Gruppenmitglieder"
+      ],
+      "No one": [
+        "Keiner"
       ]
     },
     "Organization capacity error": {
@@ -10968,6 +10986,9 @@
       "Locale updated": [
         "Gebietsschema aktualisiert"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Neue Richtlinie erstellt. Sie wird erst wirksam, nachdem du die Änderungen veröffentlicht hast."
+      ],
       "Organization activated": [
         "Organisation aktiviert"
       ],
@@ -10997,6 +11018,12 @@
       ],
       "Phone number updated": [
         "Telefonnummer aktualisiert"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "Richtlinie geändert. Sie wird erst wirksam, nachdem du die Änderungen veröffentlicht hast."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "Richtlinie gelöscht. Sie wird erst wirksam, nachdem du die Änderungen veröffentlicht hast."
       ],
       "Preference saved": [
         "Einstellung gespeichert"
@@ -11358,11 +11385,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-All address": [
-        "Catch-all-Adresse"
-      ],
       "Catch-all address": [
         "Catch-all-Weiterleitungsadresse"
+      ],
+      "Catch-All address": [
+        "Catch-all-Adresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -11614,6 +11641,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Gib deine ${ BRAND_NAME }-Kontodaten ein, um am ${ app } Beta-Programm teilzunehmen."
+      ],
+      "Enter your password": [
+        "Passwort eingeben"
       ],
       "Error": [
         "Fehler"
