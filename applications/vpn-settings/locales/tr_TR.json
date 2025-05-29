@@ -376,7 +376,7 @@
         "Pencereye sığdır"
       ],
       "Forgot password?": [
-        "Parolanızı mı unuttunuz?"
+        "Parolamı unuttum"
       ],
       "Forgot recovery method?": [
         "Kurtarma yöntemi unutulsun mu?"
@@ -576,11 +576,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Remove": [
         "Kaldır"
@@ -699,11 +699,11 @@
       "Select country ${ country }": [
         "${ country } ülkesini seç"
       ],
-      "Select file": [
-        "Dosya seçin"
-      ],
       "select file": [
         "dosya seçin"
+      ],
+      "Select file": [
+        "Dosya seçin"
       ],
       "Send code": [
         "Kodu gönder"
@@ -3151,8 +3151,8 @@
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
       ],
-      "Error publishing changes.": [
-        "Değişiklikler yayınlanırken sorun çıktı."
+      "Error publishing changes": [
+        "Değişiklikler yayınlanırken sorun çıktı"
       ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
@@ -4521,6 +4521,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "En az ${ BETTER_PASSWORD_LENGTH } karakter"
       ],
+      "At least one application must be active": [
+        "En az bir uygulama etkin olmalıdır"
+      ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
@@ -5734,7 +5737,7 @@
         "Onaylamak için lütfen silmek istediğiniz kullanıcının adını yazın."
       ],
       "To continue to ${ product }": [
-        "${ product }'e devam etmek için"
+        "${ product } ile ilerlemek için"
       ],
       "To create your first user group, go to": [
         "İlk kullanıcı grubunuzu oluşturmak için şuraya gidin"
@@ -5841,11 +5844,11 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "username": [
-        "kullanıcı adı"
-      ],
       "Username": [
         "Kullanıcı adı"
+      ],
+      "username": [
+        "kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -7444,6 +7447,20 @@
         "Orta VPN hızı"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşürülsün mü"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -7465,20 +7482,6 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşürülsün mü"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Upgrade": [
-        "Yükselt"
       ]
     },
     "new_plans: feature": {
@@ -8057,14 +8060,6 @@
         "Yalnızca ${ priceLine } ile tüm ${ BRAND_NAME } ücretli ürünlerine ve özelliklerine erişin. İstediğiniz zaman iptal edebilirsiniz."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } deneme"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -8077,6 +8072,14 @@
       ],
       "Switch plans?": [
         "Tarifeleri değiştir?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -8591,17 +8594,6 @@
         "${ appName } hoş geldiniz"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Herkes"
-      ],
-      "Group members": [
-        "Grup üyeleri"
-      ],
-      "No one": [
-        "Hiç kimse"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "İzin verilen ${ defaultLabel }"
@@ -8671,6 +8663,17 @@
       ],
       "The whole organization": [
         "Tüm kuruluş"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Herkes"
+      ],
+      "Group members": [
+        "Grup üyeleri"
+      ],
+      "No one": [
+        "Hiç kimse"
       ]
     },
     "Organization capacity error": {
@@ -10967,6 +10970,9 @@
       "Locale updated": [
         "Yerel ayarlar güncellendi"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Yeni ilke oluşturuldu. Değişiklikler yalnızca yayınlandıktan sonra geçerli olacaktır."
+      ],
       "Organization activated": [
         "Kuruluş kullanıma alındı"
       ],
@@ -10996,6 +11002,12 @@
       ],
       "Phone number updated": [
         "Telefon numarası güncellendi"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "İlke değiştirildi. Değişiklikler yalnızca yayınlandıktan sonra geçerli olacaktır."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "İlke silindi. Değişiklikler yalnızca yayınlandıktan sonra geçerli olacaktır."
       ],
       "Preference saved": [
         "Ayar kaydedildi"
@@ -11357,10 +11369,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [

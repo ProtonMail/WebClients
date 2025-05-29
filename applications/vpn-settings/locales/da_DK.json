@@ -567,11 +567,11 @@
       "Refresh status": [
         "Opdater status"
       ],
-      "refresh the page": [
-        "opdater siden"
-      ],
       "Refresh the page": [
         "Opdater siden"
+      ],
+      "refresh the page": [
+        "opdater siden"
       ],
       "Remove": [
         "Fjern"
@@ -684,11 +684,11 @@
       "Select country": [
         "Vælg land"
       ],
-      "Select file": [
-        "Vælg fil"
-      ],
       "select file": [
         "vælg fil"
+      ],
+      "Select file": [
+        "Vælg fil"
       ],
       "Send code": [
         "Send kode"
@@ -5382,11 +5382,11 @@
       "User activated": [
         "Bruger aktiveret"
       ],
-      "username": [
-        "brugernavn"
-      ],
       "Username": [
         "Brugernavn"
+      ],
+      "username": [
+        "brugernavn"
       ],
       "Users": [
         "Brugere"
@@ -6890,6 +6890,20 @@
         "Mellem VPN-hastighed"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Slet konto"
@@ -6911,20 +6925,6 @@
       ],
       "Switch plan": [
         "Skift abonnement"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Upgrade": [
-        "Opgradér"
       ]
     },
     "new_plans: feature": {
@@ -7505,14 +7505,6 @@
         "Den rabatpris på ${ priceCoupon } er gyldig i den første måned. Derefter fornys den automatisk til ${ priceLine }. Du kan annullere når som helst."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prøveversion"
-      ],
-      "Your account's usage": [
-        "Din kontos forbrug"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -7525,6 +7517,14 @@
       ],
       "Switch plans?": [
         "Skift abonnement?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prøveversion"
+      ],
+      "Your account's usage": [
+        "Din kontos forbrug"
       ]
     },
     "new_plans: tooltip": {
@@ -8015,17 +8015,6 @@
         "Velkommen til ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Alle"
-      ],
-      "Group members": [
-        "Gruppemedlemmer"
-      ],
-      "No one": [
-        "Ingen"
-      ]
-    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Tilladt ${ defaultLabel }"
@@ -8089,6 +8078,17 @@
       ],
       "The whole organization": [
         "Hele organisationen"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Alle"
+      ],
+      "Group members": [
+        "Gruppemedlemmer"
+      ],
+      "No one": [
+        "Ingen"
       ]
     },
     "Organization capacity error": {
@@ -10643,11 +10643,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-All address": [
-        "Catch-All-adresse"
-      ],
       "Catch-all address": [
         "Catch-all-adresse"
+      ],
+      "Catch-All address": [
+        "Catch-All-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"

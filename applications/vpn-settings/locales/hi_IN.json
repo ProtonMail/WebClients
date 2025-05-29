@@ -525,11 +525,11 @@
       "Refresh status": [
         "रीफ्रेश स्थिति"
       ],
-      "refresh the page": [
-        "पृष्ठ रिफ्रेश करें"
-      ],
       "Refresh the page": [
         "पन्ना रिफ्रेश करें"
+      ],
+      "refresh the page": [
+        "पृष्ठ रिफ्रेश करें"
       ],
       "Remove": [
         "हटाएं"
@@ -645,11 +645,11 @@
       "Select country ${ country }": [
         "देश चुनें ${ country }"
       ],
-      "Select file": [
-        "फाइल चुनें"
-      ],
       "select file": [
         "फ़ाइल चुनें"
+      ],
+      "Select file": [
+        "फाइल चुनें"
       ],
       "Send code": [
         "कोड भेजें"
@@ -5382,10 +5382,10 @@
       "User activated": [
         "उपयोगकर्ता सक्रिय किया गया"
       ],
-      "username": [
+      "Username": [
         "यूज़रनेम"
       ],
-      "Username": [
+      "username": [
         "यूज़रनेम"
       ],
       "Users": [
@@ -6880,6 +6880,20 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "सारे ${ BRAND_NAME } प्लान देखे"
+      ],
+      "From ${ price }": [
+        "${ price } से"
+      ],
+      "Upgrade": [
+        "अपग्रेड"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "खाता मिटाएं"
@@ -6901,20 +6915,6 @@
       ],
       "Switch plan": [
         "प्लान बदले"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "सारे ${ BRAND_NAME } प्लान देखे"
-      ],
-      "From ${ price }": [
-        "${ price } से"
-      ],
-      "Upgrade": [
-        "अपग्रेड"
       ]
     },
     "new_plans: feature": {
@@ -7497,14 +7497,6 @@
         "सिर्फ ${ priceLine } में सभी ${ BRAND_NAME } प्रीमियम उत्पाद और खासियतें अनलॉक करें। किसी भी समय रद्द करें।"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } ट्रायल"
-      ],
-      "Your account's usage": [
-        "आपका खाते का इस्तेमाल"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "खाता मिटाएं?"
@@ -7517,6 +7509,14 @@
       ],
       "Switch plans?": [
         "प्लान बदले?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } ट्रायल"
+      ],
+      "Your account's usage": [
+        "आपका खाते का इस्तेमाल"
       ]
     },
     "new_plans: tooltip": {
@@ -8025,17 +8025,6 @@
         "${ appName } में आपका स्वागत है"
       ]
     },
-    "option": {
-      "Everyone": [
-        "सभी"
-      ],
-      "Group members": [
-        "ग्रुप सदस्य"
-      ],
-      "No one": [
-        "कोई भी नहीं"
-      ]
-    },
     "Option": {
       "Country configs": [
         "देश विन्यास"
@@ -8099,6 +8088,17 @@
       ],
       "The whole organization": [
         "संपूर्ण संगठन"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "सभी"
+      ],
+      "Group members": [
+        "ग्रुप सदस्य"
+      ],
+      "No one": [
+        "कोई भी नहीं"
       ]
     },
     "Organization capacity error": {
@@ -10715,10 +10715,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [
