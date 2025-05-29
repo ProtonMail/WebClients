@@ -1,8 +1,9 @@
 import { type ReactNode, createContext, useContext, useEffect, useRef, useState } from 'react';
 
-import { useApi, useErrorHandler } from '@proton/components';
+import { StandardErrorPage, useApi } from '@proton/components';
+import { shouldTraceError, useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import type { OnChargeable } from '@proton/components/payments/client-extensions';
-import metrics from '@proton/metrics/index';
+import metrics, { observeError } from '@proton/metrics/index';
 import {
     type Cycle,
     type ExtendedTokenPayment,
@@ -19,7 +20,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { type ProductParam } from '@proton/shared/lib/apps/product';
 import { type ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { type APP_NAMES } from '@proton/shared/lib/constants';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import type { Optional } from '@proton/shared/lib/interfaces';
 import { type Unwrap } from '@proton/shared/lib/interfaces/utils';
 import noop from '@proton/utils/noop';
@@ -178,6 +179,10 @@ const persistent = true;
  */
 const trusted = false;
 
+const getSignupSentryTags = ({ flowId }: { flowId: string }) => ({
+    signupFlowId: flowId,
+});
+
 export const InnerSignupContextProvider = ({
     app,
     children,
@@ -202,16 +207,33 @@ export const InnerSignupContextProvider = ({
         signupDataRef.current = { ...signupDataRef.current, ...partial };
     };
 
-    const getErrorMessage = (message: string) => `SignupContext flowId:${flowId} - ${message}`;
+    /**
+     * Poor mans state machine to track at which point in the flow we are at
+     */
+    const stageRef = useRef<'initial' | 'userCreated' | 'userSetup'>('initial');
 
-    const handleError = useErrorHandler();
+    const [error, setError] = useState(false);
+
     const api = useApi();
     const silentApi = getSilentApi(api);
 
     const getKtActivation = useGetAccountKTActivation();
 
+    const sentryTags = getSignupSentryTags({ flowId });
+
+    const captureSentryMessage = (message: string) => captureMessage(`SignupContext: ${message}`, { tags: sentryTags });
+
+    const traceSentryError = (error: any) => {
+        if (!shouldTraceError(error)) {
+            return;
+        }
+        traceError(error, { tags: sentryTags });
+    };
+
+    const notifyError = useNotifyErrorHandler();
+
     useEffect(() => {
-        const initialise = async () => {
+        const initialize = async () => {
             const silentApi = getSilentApi(api);
 
             /**
@@ -237,8 +259,23 @@ export const InnerSignupContextProvider = ({
             await Promise.all([initAccountData(), initPayments()]);
         };
 
-        initialise()
-            .catch(noop)
+        initialize()
+            .then(() => {
+                metrics.core_signup_ctx_initialization_total.increment({
+                    status: 'success',
+                });
+            })
+            .catch((error) => {
+                notifyError(error);
+
+                observeError(error, (status) =>
+                    metrics.core_signup_ctx_initialization_total.increment({
+                        status,
+                    })
+                );
+
+                traceSentryError(error);
+            })
             .finally(() => {
                 setLoadingDiff({ init: false });
             });
@@ -269,11 +306,28 @@ export const InnerSignupContextProvider = ({
          * Then we can show loaders/animations for each step and avoid having mega long loaders.
          */
         const { accountData, paymentData } = signupDataRef.current || {};
+
+        if (stageRef.current !== 'initial') {
+            captureSentryMessage(`Invalid stage: ${stageRef.current}`);
+
+            metrics.core_signup_ctx_createUser_total.increment({
+                status: 'failure',
+            });
+
+            setError(true);
+            return;
+        }
+
         if (!accountData) {
-            captureMessage(getErrorMessage('Missing accountData'));
+            captureSentryMessage('Missing accountData');
+
+            metrics.core_signup_ctx_createUser_total.increment({
+                status: 'failure',
+            });
 
             return;
         }
+
         const paymentToken =
             paymentData &&
             isTokenPayment(paymentData.subscriptionData.paymentToken) &&
@@ -297,8 +351,20 @@ export const InnerSignupContextProvider = ({
                 referralData: undefined,
                 invite: undefined,
             });
+
+            stageRef.current = 'userCreated';
+
+            metrics.core_signup_ctx_createUser_total.increment({
+                status: 'success',
+            });
         } catch (error: any) {
-            handleError(error);
+            observeError(error, (status) =>
+                metrics.core_signup_ctx_createUser_total.increment({
+                    status,
+                })
+            );
+
+            traceSentryError(error);
 
             /**
              * Error needs to be thrown to handle human verification modal close
@@ -311,19 +377,36 @@ export const InnerSignupContextProvider = ({
         if (loading.init) {
             return;
         }
-        try {
-            setLoadingDiff({ submitting: true });
-            return await innerCreateUser(...args);
-        } finally {
-            setLoadingDiff({ submitting: false });
-        }
+        setLoadingDiff({ submitting: true });
+
+        await innerCreateUser(...args);
+
+        setLoadingDiff({ submitting: false });
     };
 
     const setupUser = async () => {
         const { accountData, paymentData } = signupDataRef.current || {};
 
+        if (stageRef.current !== 'userCreated') {
+            captureSentryMessage(
+                `Invalid stage: ${stageRef.current}. Expected createUser to have been completed successfully.`
+            );
+
+            metrics.core_signup_ctx_setupUser_total.increment({
+                status: 'failure',
+            });
+
+            setError(true);
+            return;
+        }
+
         if (!accountData) {
-            captureMessage(getErrorMessage('Missing accountData'));
+            captureSentryMessage('Missing accountData');
+
+            metrics.core_signup_ctx_setupUser_total.increment({
+                status: 'failure',
+            });
+
             return;
         }
 
@@ -348,6 +431,8 @@ export const InnerSignupContextProvider = ({
 
             setupUserResponseRef.current = setupUserResponse;
 
+            stageRef.current = 'userSetup';
+
             /**
              * Batch process can now resume since the auth cookie will have been set
              */
@@ -363,7 +448,7 @@ export const InnerSignupContextProvider = ({
                 amount: paymentData?.subscriptionData.checkResult.Amount,
             });
 
-            const {user, subscription} = setupUserResponse
+            const { user, subscription } = setupUserResponse;
             if (paymentData?.subscriptionData && subscription) {
                 sendSignupSubscriptionTelemetryEvent({
                     flowId,
@@ -376,58 +461,170 @@ export const InnerSignupContextProvider = ({
                     amount: subscription.Amount,
                 });
             }
+
+            metrics.core_signup_ctx_setupUser_total.increment({
+                status: 'success',
+            });
         } catch (error: any) {
-            handleError(error);
             if (error?.config?.url?.endsWith?.('keys/setup')) {
-                captureMessage(`Signup setup failure`);
+                captureSentryMessage(`Signup setup failure`);
+            } else {
+                traceSentryError(error);
             }
+
             metrics.startBatchingProcess();
+
+            observeError(error, (status) =>
+                metrics.core_signup_ctx_setupUser_total.increment({
+                    status,
+                })
+            );
+
+            throw error;
         }
     };
 
     const setOrgName = async (orgName: string) => {
+        if (stageRef.current !== 'userSetup') {
+            captureSentryMessage(
+                `Invalid stage: ${stageRef.current}. Expected setupUser to have been completed successfully.`
+            );
+
+            metrics.core_signup_ctx_setOrgName_total.increment({
+                status: 'failure',
+            });
+
+            setError(true);
+            return;
+        }
+
         const { accountData } = signupDataRef.current || {};
         const setupUserResponse = setupUserResponseRef.current;
+
         if (!accountData || !setupUserResponse) {
-            captureMessage(getErrorMessage('Missing accountData or setup user data'));
+            captureSentryMessage('Missing accountData or setup user data');
+
+            metrics.core_signup_ctx_setOrgName_total.increment({
+                status: 'failure',
+            });
+
             return;
         }
 
         const { password } = accountData;
         const { user, keyPassword } = setupUserResponse;
 
-        await handleSetupOrg({
-            api,
-            user,
-            password,
-            keyPassword,
-            orgName,
-        });
+        try {
+            await handleSetupOrg({
+                api,
+                user,
+                password,
+                keyPassword,
+                orgName,
+            });
+
+            metrics.core_signup_ctx_setOrgName_total.increment({
+                status: 'success',
+            });
+        } catch (error) {
+            observeError(error, (status) =>
+                metrics.core_signup_ctx_setOrgName_total.increment({
+                    status,
+                })
+            );
+
+            traceSentryError(error);
+
+            throw error;
+        }
     };
 
     const setDisplayName = async (displayName: string) => {
+        if (stageRef.current !== 'userSetup') {
+            captureSentryMessage(
+                `Invalid stage: ${stageRef.current}. Expected setupUser to have been completed successfully.`
+            );
+
+            metrics.core_signup_ctx_setDisplayName_total.increment({
+                status: 'failure',
+            });
+
+            setError(true);
+            return;
+        }
+
         const setupUserResponse = setupUserResponseRef.current;
         if (!setupUserResponse) {
-            captureMessage(getErrorMessage('Missing setup user data'));
+            captureSentryMessage('Missing setup user data');
+
+            metrics.core_signup_ctx_setDisplayName_total.increment({
+                status: 'failure',
+            });
+
             return;
         }
 
         const addresses = await getAllAddresses(api);
         const firstAddress = addresses[0];
         if (!firstAddress) {
-            captureMessage(getErrorMessage('Missing first address'));
-        }
-        await api(updateAddress(firstAddress.ID, { DisplayName: displayName, Signature: firstAddress.Signature }));
-    };
-
-    const login = async () => {
-        if (!setupUserResponseRef.current?.session) {
-            captureMessage(getErrorMessage('Missing session'));
+            captureSentryMessage('Missing first address');
+            metrics.core_signup_ctx_setDisplayName_total.increment({
+                status: 'failure',
+            });
             return;
         }
 
-        await onLogin(setupUserResponseRef.current.session);
+        try {
+            await api(updateAddress(firstAddress.ID, { DisplayName: displayName, Signature: firstAddress.Signature }));
+        } catch (error) {
+            observeError(error, (status) =>
+                metrics.core_signup_ctx_setDisplayName_total.increment({
+                    status,
+                })
+            );
+
+            traceSentryError(error);
+
+            throw error;
+        }
     };
+
+    const login = async () => {
+        if (stageRef.current !== 'userSetup') {
+            captureSentryMessage(
+                `Invalid stage: ${stageRef.current}. Expected setupUser to have been completed successfully.`
+            );
+            setError(true);
+            return;
+        }
+
+        if (!setupUserResponseRef.current?.session) {
+            captureSentryMessage('Missing session');
+            return;
+        }
+
+        try {
+            await onLogin(setupUserResponseRef.current.session);
+            metrics.core_signup_ctx_login_total.increment({
+                status: 'success',
+            });
+        } catch (error) {
+            traceSentryError(error);
+
+            observeError(error, (status) =>
+                metrics.core_signup_ctx_login_total.increment({
+                    status,
+                })
+            );
+
+            throw error;
+        }
+    };
+
+    if (error) {
+        metrics.core_signup_ctx_errorPage_total.increment({});
+        return <StandardErrorPage />;
+    }
 
     const value: SignupContextType = {
         domains: domainsData.domains,

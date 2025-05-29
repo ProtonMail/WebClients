@@ -90,6 +90,13 @@ import type { WebCoreSessionRecoverySettingsUpdateTotal } from './types/web_core
 import type { WebCoreSignupAccountStepAccountCreationTotal } from './types/web_core_signup_accountStep_accountCreation_total_v2.schema';
 import type { WebCoreSignupBackButtonTotal } from './types/web_core_signup_backButton_total_v1.schema';
 import type { WebCoreSignupCongratulationsStepDisplayNameChoiceTotal } from './types/web_core_signup_congratulationsStep_displayNameChoice_total_v2.schema';
+import type { WebCoreSignupCtxCreateUserTotal } from './types/web_core_signup_ctx_createUser_total_v1.schema';
+import type { WebCoreSignupCtxErrorPageTotal } from './types/web_core_signup_ctx_errorPage_total_v1.schema';
+import type { WebCoreSignupCtxInitializationTotal } from './types/web_core_signup_ctx_initialization_total_v1.schema';
+import type { WebCoreSignupCtxLoginTotal } from './types/web_core_signup_ctx_login_total_v1.schema';
+import type { WebCoreSignupCtxSetDisplayNameTotal } from './types/web_core_signup_ctx_setDisplayName_total_v1.schema';
+import type { WebCoreSignupCtxSetOrgNameTotal } from './types/web_core_signup_ctx_setOrgName_total_v1.schema';
+import type { WebCoreSignupCtxSetupUserTotal } from './types/web_core_signup_ctx_setupUser_total_v1.schema';
 import type { WebCoreSignupExploreStepLoginTotal } from './types/web_core_signup_exploreStep_login_total_v2.schema';
 import type { WebCoreSignupLoadingStepAccountSetupTotal } from './types/web_core_signup_loadingStep_accountSetup_total_v2.schema';
 import type { WebCoreSignupPageLoadTotal } from './types/web_core_signup_pageLoad_total_v1.schema';
@@ -319,6 +326,20 @@ class Metrics extends MetricsBase {
     public core_signup_backButton_total: Counter<WebCoreSignupBackButtonTotal>;
 
     public core_signup_congratulationsStep_displayNameChoice_total: Counter<WebCoreSignupCongratulationsStepDisplayNameChoiceTotal>;
+
+    public core_signup_ctx_createUser_total: Counter<WebCoreSignupCtxCreateUserTotal>;
+
+    public core_signup_ctx_errorPage_total: Counter<WebCoreSignupCtxErrorPageTotal>;
+
+    public core_signup_ctx_initialization_total: Counter<WebCoreSignupCtxInitializationTotal>;
+
+    public core_signup_ctx_login_total: Counter<WebCoreSignupCtxLoginTotal>;
+
+    public core_signup_ctx_setDisplayName_total: Counter<WebCoreSignupCtxSetDisplayNameTotal>;
+
+    public core_signup_ctx_setOrgName_total: Counter<WebCoreSignupCtxSetOrgNameTotal>;
+
+    public core_signup_ctx_setupUser_total: Counter<WebCoreSignupCtxSetupUserTotal>;
 
     public core_signup_exploreStep_login_total: Counter<WebCoreSignupExploreStepLoginTotal>;
 
@@ -884,6 +905,41 @@ class Metrics extends MetricsBase {
                 { name: 'web_core_signup_congratulationsStep_displayNameChoice_total', version: 2 },
                 this.requestService
             );
+
+        this.core_signup_ctx_createUser_total = new Counter<WebCoreSignupCtxCreateUserTotal>(
+            { name: 'web_core_signup_ctx_createUser_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_signup_ctx_errorPage_total = new Counter<WebCoreSignupCtxErrorPageTotal>(
+            { name: 'web_core_signup_ctx_errorPage_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_signup_ctx_initialization_total = new Counter<WebCoreSignupCtxInitializationTotal>(
+            { name: 'web_core_signup_ctx_initialization_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_signup_ctx_login_total = new Counter<WebCoreSignupCtxLoginTotal>(
+            { name: 'web_core_signup_ctx_login_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_signup_ctx_setDisplayName_total = new Counter<WebCoreSignupCtxSetDisplayNameTotal>(
+            { name: 'web_core_signup_ctx_setDisplayName_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_signup_ctx_setOrgName_total = new Counter<WebCoreSignupCtxSetOrgNameTotal>(
+            { name: 'web_core_signup_ctx_setOrgName_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_signup_ctx_setupUser_total = new Counter<WebCoreSignupCtxSetupUserTotal>(
+            { name: 'web_core_signup_ctx_setupUser_total', version: 1 },
+            this.requestService
+        );
 
         this.core_signup_exploreStep_login_total = new Counter<WebCoreSignupExploreStepLoginTotal>(
             { name: 'web_core_signup_exploreStep_login_total', version: 2 },
