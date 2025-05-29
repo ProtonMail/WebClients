@@ -1108,11 +1108,11 @@
       "Select country": [
         "Izberite državo"
       ],
-      "Select file": [
-        "Izberite datoteko"
-      ],
       "select file": [
         "izberite datoteko"
+      ],
+      "Select file": [
+        "Izberite datoteko"
       ],
       "Select files": [
         "Izberi datoteke"
@@ -4411,11 +4411,11 @@
       "Forward to": [
         "Posreduj na"
       ],
-      "or": [
-        "ali"
-      ],
       "Or": [
         "Ali"
+      ],
+      "or": [
+        "ali"
       ],
       "With attachment": [
         "S priponko"
@@ -8984,11 +8984,11 @@
       "User activated": [
         "Uporabnik je aktiviran."
       ],
-      "username": [
-        "uporabniško ime"
-      ],
       "Username": [
         "Uporabniško ime"
+      ],
+      "username": [
+        "uporabniško ime"
       ],
       "Users": [
         "Uporabniki"
@@ -11355,11 +11355,11 @@
       "perform a password reset from your active session": [
         "ponastavitev gesla iz aktivne seje"
       ],
-      "Privacy policy": [
-        "Pravilnik o zasebnosti"
-      ],
       "privacy policy": [
         "pravilnik o zasebnosti"
+      ],
+      "Privacy policy": [
+        "Pravilnik o zasebnosti"
       ],
       "Reactivate now": [
         "Ponovno aktivirajte zdaj"
@@ -12698,14 +12698,6 @@
         "Znižana cena ${ priceCoupon } velja za prvi mesec. Nato se bo samodejno obnovila po ceni ${ priceLine }. Naročnino lahko kadar koli prekličete."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Preizkus ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uporaba vašega računa"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -12724,6 +12716,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Omogočite premijske funkcije z nadgradnjo računa"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Preizkus ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uporaba vašega računa"
       ]
     },
     "new_plans: tooltip": {
@@ -13348,17 +13348,6 @@
         "Namizje"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Vsi"
-      ],
-      "Group members": [
-        "Člani skupine"
-      ],
-      "No one": [
-        "Nihče"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10. dan v mesecu"
@@ -13587,6 +13576,17 @@
       ],
       "Trash": [
         "Smetnjak"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Vsi"
+      ],
+      "Group members": [
+        "Člani skupine"
+      ],
+      "No one": [
+        "Nihče"
       ]
     },
     "Option delay send seconds": {
@@ -17204,10 +17204,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [

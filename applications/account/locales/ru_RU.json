@@ -1147,11 +1147,11 @@
       "Select country ${ country }": [
         "Выбрать страну ${ country }"
       ],
-      "Select file": [
-        "Выбрать файл"
-      ],
       "select file": [
         "выбрать файл"
+      ],
+      "Select file": [
+        "Выбрать файл"
       ],
       "Select files": [
         "Выбрать файлы"
@@ -4916,11 +4916,11 @@
       "Forward to": [
         "Переслать на"
       ],
-      "or": [
-        "или"
-      ],
       "Or": [
         "Или"
+      ],
+      "or": [
+        "или"
       ],
       "With attachment": [
         "С вложением"
@@ -5174,9 +5174,6 @@
       ],
       "Error in one of the conditions": [
         "Ошибка в одном из условий"
-      ],
-      "Error publishing changes.": [
-        "Ошибка при публикации изменений."
       ],
       "Expired": [
         "Срок действия истёк"
@@ -10141,11 +10138,11 @@
       "User activated": [
         "Пользователь активирован"
       ],
-      "username": [
-        "имя пользователя"
-      ],
       "Username": [
         "Имя пользователя"
+      ],
+      "username": [
+        "имя пользователя"
       ],
       "Users": [
         "Пользователи"
@@ -12717,11 +12714,11 @@
       "perform a password reset from your active session": [
         "выполнить сброс пароля из вашего активного сеанса"
       ],
-      "Privacy policy": [
-        "Политика конфиденциальности"
-      ],
       "privacy policy": [
         "политика конфиденциальности"
+      ],
+      "Privacy policy": [
+        "Политика конфиденциальности"
       ],
       "Reactivate now": [
         "Восстановить подписку"
@@ -14132,14 +14129,6 @@
         "Разблокируйте все премиум продукты и возможности ${ BRAND_NAME } всего за ${ priceLine }. Отменить можно в любое время."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробная версия ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -14158,6 +14147,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Улучшите тариф и разблокируйте платные функции"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробная версия ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -14812,17 +14809,6 @@
         "Рабочий стол"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Все"
-      ],
-      "Group members": [
-        "Участники группы"
-      ],
-      "No one": [
-        "Никто"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10-ое число месяца"
@@ -15057,6 +15043,17 @@
       ],
       "Trash": [
         "Корзина"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Все"
+      ],
+      "Group members": [
+        "Участники группы"
+      ],
+      "No one": [
+        "Никто"
       ]
     },
     "Option delay send seconds": {
@@ -19253,10 +19250,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [

@@ -187,6 +187,9 @@
       "Attention required": [
         "Figyelem szükséges"
       ],
+      "Authenticate": [
+        "Hitelesítés"
+      ],
       "Authenticating": [
         "Hitelesítés"
       ],
@@ -195,6 +198,9 @@
       ],
       "Back": [
         "Vissza"
+      ],
+      "Back to sign in": [
+        "Vissza a bejelentkezéshez"
       ],
       "Block": [
         "Tiltás"
@@ -562,6 +568,9 @@
       "Edit users": [
         "Felhasználók szerkesztése"
       ],
+      "Emoji": [
+        "Hangulatjel"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } engedélyezése"
       ],
@@ -609,6 +618,9 @@
       ],
       "Font": [
         "Betűtípus"
+      ],
+      "Forgot password?": [
+        "Elfelejtett jelszó?"
       ],
       "Forgot recovery method?": [
         "Elfelejtette a helyreállítási módszert?"
@@ -1138,11 +1150,11 @@
       "Select country ${ country }": [
         "Ország kiválasztása: ${ country }"
       ],
-      "Select file": [
-        "Fájl kiválasztása"
-      ],
       "select file": [
         "fájl kiválasztása"
+      ],
+      "Select file": [
+        "Fájl kiválasztása"
       ],
       "Select files": [
         "Fájlok kiválasztása"
@@ -1399,8 +1411,14 @@
       "Use a different payment method": [
         "Más fizetési mód választása"
       ],
+      "Use authentication code": [
+        "Hitelesítő kód használata"
+      ],
       "Use group sending permissions": [
         "Használjon csoport küldési jogosultságokat"
+      ],
+      "Use recovery code": [
+        "Helyreállító kód használata"
       ],
       "Use your current email instead": [
         "Inkább a jelenlegi e-mail cím használata"
@@ -4373,6 +4391,9 @@
       "Try generating a new QR code.": [
         "Próbáljon meg új QR-kódot generálni."
       ],
+      "Using that device, open the ${ MAIL_APP_NAME } app and select **Settings**": [
+        "Az adott eszközön nyisson meg a ${ MAIL_APP_NAME } alkalmazást, és válassza a **Beállítások** lehetőséget."
+      ],
       "Works if you have another device that’s signed in to ${ BRAND_NAME }": [
         "Akkor működik, ha van egy másik eszköze, amellyel be van jelentkezve a ${ BRAND_NAME } szolgáltatásba."
       ],
@@ -4725,11 +4746,11 @@
       "Forward to": [
         "Továbbítási cím"
       ],
-      "or": [
-        "vagy"
-      ],
       "Or": [
         "Vagy"
+      ],
+      "or": [
+        "vagy"
       ],
       "With attachment": [
         "Mellékletet tartalmaz"
@@ -4979,9 +5000,6 @@
       ],
       "Error in one of the conditions": [
         "Hiba az egyik feltételben"
-      ],
-      "Error publishing changes.": [
-        "A változások közzététele során hiba keletkezett."
       ],
       "Expired": [
         "Lejárt"
@@ -6169,6 +6187,9 @@
       "Please disable 2FA via security key before disabling TOTP": [
         "Kapcsolja ki a hitelesítési kulccsal való kétlépcsős hitelesítést a TOTP kikapcsolása előtt"
       ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Hiba történt a hitelesítési kulccsal való azonosítás közben. Próbálja meg újra."
+      ],
       "Something went wrong registering your security key. Please try again.": [
         "Hiba történt a hitelesítési kulcs regisztrálásakor. Próbálja meg újra."
       ]
@@ -6189,8 +6210,14 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Biztos, hogy törli a hitelesítési kulcsot: ${ name }?"
       ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Csatlakoztassa a ${ BRAND_NAME } fiókjához rendelt hitelesítési kulcsot."
+      ],
       "Insert your security key into your device's USB port.": [
         "Csatlakoztassa a hitelesítési kulcsát az eszköz USB portjához."
+      ],
+      "Security key": [
+        "Hitelesítési kulcs"
       ],
       "Security key removed": [
         "Hitelesítési kulcs eltávolítva"
@@ -6218,6 +6245,9 @@
     "fido2: Label": {
       "Key name": [
         "Kulcs neve"
+      ],
+      "Security key": [
+        "Hitelesítési kulcs"
       ]
     },
     "fido2: Title": {
@@ -7675,6 +7705,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Legalább ${ BETTER_PASSWORD_LENGTH } karakter"
       ],
+      "At least one application must be active": [
+        "Legalább egy alkalmazásnak aktívnak kell lennie"
+      ],
       "Attention required": [
         "Figyelem szükséges"
       ],
@@ -8043,6 +8076,9 @@
       "Drop to import": [
         "Húzza ide az importáláshoz"
       ],
+      "Each code can only be used once": [
+        "Minden kódot csak egyszer lehet felhasználni"
+      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Minden domain név csak egy SPF (TXT) rekorddal rendelkezhet. Ha meg akarja tartani a meglévő SPF (TXT) rekordot, akkor a jelenlegi rekordhoz hozzáadhatja a ${ spf } értéket (a ${ spfValue } után)."
       ],
@@ -8145,6 +8181,9 @@
       "Enter new password for user ${ userName }.": [
         "Adja meg az új jelszót a következő felhasználónak: ${ userName }."
       ],
+      "Enter the code from your authenticator app": [
+        "Írja be a kódot a hitelesítő alkalmazásból"
+      ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Adja meg a telefonszámára (${ phone }) küldött kódot."
       ],
@@ -8163,11 +8202,17 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Írja be az ellenőrző kódot. ${ digit } számjegy."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Adja meg a ${ BRAND_NAME } fiókja adatait."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Adja meg a ${ BRAND_NAME } fiókja e-mail címét vagy felhasználónevét."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Írja be a helyreállítási e-mail címét és elküldjük a felhasználónevét vagy e-mail címét."
@@ -9599,6 +9644,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "A jóváhagyáshoz írja be a törölni kívánt felhasználó nevét."
       ],
+      "To continue to ${ product }": [
+        "Folytatás itt ${ product }"
+      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "A szolgáltatásaink javítása érdekében, néha adatokat gyűjtünk, hogy az alkalmazásaink megfelelő működését ellenőrizhessük. Ez az információ nem kerül megosztásra harmadik féllel."
       ],
@@ -9770,11 +9818,11 @@
       "User activated": [
         "Felhasználó aktiválva"
       ],
-      "username": [
-        "felhasználónév"
-      ],
       "Username": [
         "Felhasználónév"
+      ],
+      "username": [
+        "felhasználónév"
       ],
       "Users": [
         "Felhasználók"
@@ -9958,6 +10006,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Amikor eltávolít egy szervert az átjáróból, az egy 10 napos deaktiválási időszakba lép. Ez a szerver hozzáadható egy új átjáróhoz, de az országa nem változtatható meg."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Az előfizetés megújításakor a meglévő krediktjeiből egyenlítjük ki a számlát, mielőtt a megadott fizetési módokat terhelnénk."
@@ -10205,6 +10256,10 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel.",
         "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Engedélyezte a továbbítást a következő ${ MAX_SYNC_PAID_USER } Gmail címen. Ha újat szeretne hozzáadni, először tiltsa le az egyiket.",
+        "Engedélyezte a továbbítást a következő ${ MAX_SYNC_PAID_USER } Gmail címeken. Ha újat szeretne hozzáadni, először tiltsa le az egyiket."
       ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "A(z) ${ boldDiscountPercent } kedvezményt alkalmaztuk a(z) ${ boldPlanTitle } termékre"
@@ -10990,6 +11045,9 @@
       ],
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
+      ],
+      "Authenticator app": [
+        "Hitelesítő alkalmazás"
       ],
       "Auto show embedded images": [
         "Beágyazott képek automatikus megjelenítése"
@@ -11973,6 +12031,9 @@
       "Your calendar URL": [
         "Az ön naptárának URL-je"
       ],
+      "Your password (admin)": [
+        "Jelszó (adminisztrátor)"
+      ],
       "Your referral link": [
         "Ajánló hivatkozása"
       ],
@@ -12288,11 +12349,11 @@
       "perform a password reset from your active session": [
         "visszaállítani a jelszavát az aktív munkafolyamatból."
       ],
-      "Privacy policy": [
-        "Adatvédelmi irányelvek"
-      ],
       "privacy policy": [
         "adatvédelmi irányelvek"
+      ],
+      "Privacy policy": [
+        "Adatvédelmi irányelvek"
       ],
       "Reactivate now": [
         "Újraaktiválás most"
@@ -13633,14 +13694,6 @@
         "Oldja fel az összes ${ BRAND_NAME } prémium terméket és funkciót mindössze ${ priceLine }-ért. Bármikor lemondható."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } próbaváltozat"
-      ],
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -13659,6 +13712,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Váltson nagyobb csomagra a prémium funkciók eléréshez"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } próbaváltozat"
+      ],
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
@@ -14299,17 +14360,6 @@
         "Asztali számítógép"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Mindenki"
-      ],
-      "Group members": [
-        "Csoporttagok"
-      ],
-      "No one": [
-        "Senki"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "a hónap 10-ik napja"
@@ -14546,6 +14596,17 @@
         "Lomtár"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Mindenki"
+      ],
+      "Group members": [
+        "Csoporttagok"
+      ],
+      "No one": [
+        "Senki"
+      ]
+    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 másodperc"
@@ -14676,6 +14737,9 @@
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (Debian/Ubuntu)"
+      ],
+      ".dmg (12.0 or later)": [
+        ".dmg (12.0 vagy újabb)"
       ],
       ".exe (64-bit)": [
         ".exe (64 bit)"
@@ -18601,10 +18665,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
@@ -18989,6 +19053,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Adja meg a ${ BRAND_NAME } fiókja adatait a ${ app } Béta programhoz való csatlakozáshoz"
+      ],
+      "Enter your password": [
+        "Adja meg a jelszavát"
       ],
       "Error": [
         "Hiba"
@@ -19465,6 +19532,9 @@
       ],
       "SAML authentication": [
         "SAML hitelesítés"
+      ],
+      "Schedule meetings in one click": [
+        "Ütemezz megbeszéléseket egy kattintással"
       ],
       "Schedule send:": [
         "Küldés ütemezése:"
