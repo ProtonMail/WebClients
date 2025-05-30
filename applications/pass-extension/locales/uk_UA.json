@@ -643,6 +643,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Немає вашого менеджера паролів? Попросіть його."
+      ],
+      "Next month": [
+        "Наступний місяць"
+      ],
+      "Previous month": [
+        "Минулий місяць"
       ]
     },
     "Browser": {
@@ -2223,6 +2229,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша організація вимагає, щоб ви захистили свій доступ до ${ PASS_APP_NAME }"
+      ],
+      "Week": [
+        "Тиждень"
       ]
     },
     "Label": {
@@ -3095,6 +3104,18 @@
       ],
       "ZIP or Postal code": [
         "Поштовий індекс"
+      ],
+      "Address": [
+        "Адреса"
+      ],
+      "Date": [
+        "Дата"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Port": [
+        "Порт"
       ]
     },
     "Link": {
@@ -3287,6 +3308,9 @@
       ],
       "Write your note": [
         "Напишіть свою нотатку"
+      ],
+      "E.g., ": [
+        "Наприклад, "
       ]
     },
     "sso": {
@@ -3786,6 +3810,9 @@
         "Ви збираєтеся назавжди видалити псевдоніми ${ aliasCount }.",
         "Ви збираєтеся назавжди видалити псевдонімів ${ aliasCount }.",
         "Ви збираєтеся назавжди видалити псевдоніми ${ aliasCount }."
+      ],
+      "Minicalendar": [
+        "Мінікалендар"
       ]
     },
     "Validation": {
@@ -4045,6 +4072,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша передплата не дозволяє створювати кілька сховищ. Всі елементи будуть імпортовані до вашого першого сховища. Щоб імпортувати дані до кількох сховищ, передплатіть тарифний план вищого рівня."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Сьогодні"
       ]
     }
   }

@@ -664,6 +664,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "あなたのパスワードマネージャーがここにはありませんか？リクエストしてください。"
+      ],
+      "Next month": [
+        "翌月"
+      ],
+      "Previous month": [
+        "前月"
       ]
     },
     "Browser": {
@@ -2328,6 +2334,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "あなたの組織では、 ${ PASS_APP_NAME }へのアクセスの安全性を要求しています"
+      ],
+      "Week": [
+        "週"
       ]
     },
     "Label": {
@@ -3176,6 +3185,18 @@
       ],
       "ZIP or Postal code": [
         "郵便番号"
+      ],
+      "Address": [
+        "メールアドレス"
+      ],
+      "Date": [
+        "日付"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Port": [
+        "ポート"
       ]
     },
     "Link": {
@@ -3434,6 +3455,9 @@
       ],
       "Write your note": [
         "メモを書く"
+      ],
+      "E.g., ": [
+        "例: "
       ]
     },
     "sso": {
@@ -3960,6 +3984,9 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount }個のエイリアスを完全に削除しようとしています。"
+      ],
+      "Minicalendar": [
+        "ミニカレンダー"
       ]
     },
     "Validation": {
@@ -4264,6 +4291,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "あなたのサブスクリプションでは、複数の保管庫を作成することはできません。すべてのアイテムは最初の保管庫にインポートされます。複数の保管庫にインポートするには、サブスクリプションをアップグレードしてください。"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "今日"
       ]
     }
   }
