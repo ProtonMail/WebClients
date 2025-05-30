@@ -88,7 +88,6 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
             )}
 
             <ModalTwoContent>
-                {/* height accommodates largest content without layout shifts */}
                 <div className="h-auto flex flex-nowrap items-start md:items-center text-left w-full flex-column md:flex-row gap-2 md:gap-6">
                     <div className="md:flex-1 w-full md:w-auto">
                         {currentStep.group && (

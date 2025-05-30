@@ -15,7 +15,6 @@ import {
     createSecurityRule,
     createTrialRule,
     createUserRenewalRule,
-    createWebOnboardingRule,
     createWelcomeRule,
 } from '@proton/pass/lib/spotlight/rules';
 import type { SpotlightProxy } from '@proton/pass/lib/spotlight/service';
@@ -54,7 +53,6 @@ export const spotlight = createSpotlightService({
         /* "Invisible" rules not displayed as spotlight should be defined at the bottom */
         createWelcomeRule(),
         createB2BRule(store),
-        createWebOnboardingRule(),
         createMonitorLearnMoreRule(),
         createSSOChangeLockRule(),
         createItemSharingRule(),
