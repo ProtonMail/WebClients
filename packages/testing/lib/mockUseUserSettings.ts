@@ -12,7 +12,7 @@ const defaultUserSettings: UserSettings = {
     Density: 0,
     EarlyAccess: 0,
     Email: { Value: '', Status: 0, Notify: 0, Reset: 0 },
-    Flags: { Welcomed: 0, SupportPgpV6Keys: 0, EdmOptOut: 0 },
+    Flags: { Welcomed: 0, SupportPgpV6Keys: 0, EdmOptOut: 0, DisplayTrialEndModal: 0 },
     HideSidePanel: 0,
     InvoiceText: '',
     Locale: 'en',
