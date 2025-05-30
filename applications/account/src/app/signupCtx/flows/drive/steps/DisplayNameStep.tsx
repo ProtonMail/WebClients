@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { InputFieldTwo, useErrorHandler, useFormErrors } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import { IcShield2CheckFilled } from '@proton/icons';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import Header from '../components/Layout/Header';
@@ -74,13 +73,6 @@ const DisplayNameStep = ({ onSubmit }: { onSubmit: (displayName: string) => Prom
                                 >
                                     {c('Action').t`Continue`}
                                 </Button>
-
-                                <div className="text-center mt-2">
-                                    <span className="color-success">
-                                        <IcShield2CheckFilled className="align-text-bottom mr-1" />
-                                        <span>{c('Info').t`End-to-end encrypted`}</span>
-                                    </span>
-                                </div>
                             </form>
                         </div>
                     </div>
