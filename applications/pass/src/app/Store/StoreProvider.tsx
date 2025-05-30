@@ -108,16 +108,15 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         telemetry.start().catch(noop);
                         B2BEvents.start().catch(noop);
 
+                        if (res.version && semver(res.version) < semver(DESKTOP_BUILD ? '1.24.2' : '1.31.5')) {
+                            /** Auto-acknowledge the `WELCOME` message to prevent showing the
+                             * spotlight modal to existing users after they update */
+                            spotlight.acknowledge(SpotlightMessage.WELCOME);
+                        }
+
                         /** Wait for i18n/spotlight init to avoid re-render
                          * if i18n locale has to change on boot */
                         AppStateManager.setBooted(true);
-
-                        /** For desktop builds using cached versions older than 1.24.2:
-                         * Auto-acknowledge the `WELCOME` message to prevent showing the
-                         * spotlight modal to existing users after they update.  */
-                        if (DESKTOP_BUILD && res.version && semver(res.version) < semver('1.24.2')) {
-                            spotlight.acknowledge(SpotlightMessage.WELCOME);
-                        }
 
                         if (isDocumentVisible() && !res.offline) store.dispatch(startEventPolling());
 
