@@ -288,6 +288,7 @@ export {
     useCancellationReminderModal,
     useLightLabellingFeatureModal,
     useReferralModal,
+    useTrialEndedModal,
 } from './components/startupModals/startupModalHooks';
 export { default as SpotlightProvider } from './components/spotlight/Provider';
 export { default as Spotlight } from './components/spotlight/Spotlight';
@@ -940,3 +941,4 @@ export { default as useSubscribedCalendars } from './hooks/useSubscribedCalendar
 export { default as useToggle } from './hooks/useToggle';
 export { default as useVPNServersCount } from './hooks/useVPNServersCount';
 export { default as useWindowSize } from './hooks/useWindowSize';
+export { default as TrialEndedModal } from './containers/subscription/TrialEndedModal';
