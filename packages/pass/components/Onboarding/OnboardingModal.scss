@@ -8,10 +8,10 @@
 	}
 
 	&-header-background {
-		background: linear-gradient(160deg, #f08fa4 0, #4B3379 25%, #1F1F31 45%), var(--interaction-weak);
+		background: linear-gradient(160deg, #f08fa4 0, #4b3379 25%, #1f1f31 45%), var(--interaction-weak);
 
 		@at-root .pass-light & {
-			background: linear-gradient(160deg, #CF8287 0%, #E7DAFF 25%, #F7F3FF 45%), #FBF9FE;
+			background: linear-gradient(160deg, #cf8287 0%, #e7daff 25%, #f7f3ff 45%), #fbf9fe;
 		}
 	}
 
@@ -50,9 +50,7 @@
 		.pass-onboarding-modal--option:hover {
 			background-color: var(--interaction-norm-minor-2);
 		}
-	}
 
-	&--radio {
 		.pass-onboarding-modal--option-dense {
 			background-color: var(--interaction-norm-minor-2);
 
