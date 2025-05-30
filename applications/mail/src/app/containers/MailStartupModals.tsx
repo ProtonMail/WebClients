@@ -7,6 +7,7 @@ import {
     useCancellationReminderModal,
     useLightLabellingFeatureModal,
     useModalState,
+    useTrialEndedModal,
 } from '@proton/components';
 import type { StartupModal } from '@proton/components';
 import useInboxFreeTrial from '@proton/components/containers/desktop/freeTrial/useInboxFreeTrial';
@@ -53,11 +54,18 @@ const useInboxDesktopFreeTrialOnboardingModal: () => StartupModal = () => {
 };
 
 const useStartupModals: () => StartupModal[] = () => {
+    const trialEndedModal = useTrialEndedModal();
     const reminderModal = useCancellationReminderModal();
     const onboardingModal = useMailOnboardingModal();
     const inboxDesktopFreeTrialOnboardingModal = useInboxDesktopFreeTrialOnboardingModal();
     const lightLabellingFeatureModal = useLightLabellingFeatureModal();
-    return [reminderModal, inboxDesktopFreeTrialOnboardingModal, onboardingModal, lightLabellingFeatureModal];
+    return [
+        trialEndedModal,
+        reminderModal,
+        inboxDesktopFreeTrialOnboardingModal,
+        onboardingModal,
+        lightLabellingFeatureModal,
+    ];
 };
 
 const MailStartupModals = () => {
