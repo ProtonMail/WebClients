@@ -678,6 +678,15 @@
       ],
       "Your password manager is not here? Request it.": [
         "Chýba tu váš správca hesiel? Požiadajte oň."
+      ],
+      "Next month": [
+        "Budúci mesiac"
+      ],
+      "Previous month": [
+        "Predchádzajúci mesiac"
+      ],
+      "Start from scratch": [
+        "Začať úplne od začiatku"
       ]
     },
     "Browser": {
@@ -2470,6 +2479,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaša organizácia vyžaduje, aby ste zabezpečili svoj prístup k ${ PASS_APP_NAME }"
+      ],
+      "Week": [
+        "Týždeň"
       ]
     },
     "Label": {
@@ -3435,6 +3447,162 @@
       ],
       "ZIP or Postal code": [
         "PSČ"
+      ],
+      "Account Number": [
+        "Číslo účtu"
+      ],
+      "Account Type": [
+        "Typ účtu"
+      ],
+      "Address": [
+        "Adresa"
+      ],
+      "API Credential": [
+        "API poverenie"
+      ],
+      "Bank Account": [
+        "Bankový účet"
+      ],
+      "Bank Name": [
+        "Názov banky"
+      ],
+      "Country,": [
+        "Krajina"
+      ],
+      "Create a custom item": [
+        "Vytvoriť vlastnú položku"
+      ],
+      "Crypto Wallet": [
+        "Krypto peňaženka"
+      ],
+      "Custom Items": [
+        "Vlastné položky"
+      ],
+      "Database": [
+        "Databáza"
+      ],
+      "Date of Birth": [
+        "Dátum narodenia"
+      ],
+      "Driver License": [
+        "Vodičský preukaz"
+      ],
+      "Expiry Date": [
+        "Dátum exspirácie"
+      ],
+      "Finance": [
+        "Financie"
+      ],
+      "Holder Name": [
+        "Meno vlastníka"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Issuing Authority": [
+        "Vydal"
+      ],
+      "Issuing Country": [
+        "Vydávajúca krajina"
+      ],
+      "Medical Record": [
+        "Zdravotný záznam"
+      ],
+      "Member ID": [
+        "ID člena"
+      ],
+      "Membership": [
+        "Členstvo"
+      ],
+      "More": [
+        "Viac"
+      ],
+      "Name (SSID)": [
+        "Názov (SSID)"
+      ],
+      "Network": [
+        "Sieť"
+      ],
+      "Passport Number": [
+        "Číslo pasu"
+      ],
+      "Personal": [
+        "Osobné"
+      ],
+      "Points Balance": [
+        "Stav bodov"
+      ],
+      "Port": [
+        "Port"
+      ],
+      "Private Key": [
+        "Súkromný kľúč"
+      ],
+      "Private key": [
+        "Súkromný kľúč"
+      ],
+      "Program Name": [
+        "Názov programu"
+      ],
+      "Public key": [
+        "Verejný kľúč"
+      ],
+      "Reward Program": [
+        "Vernostný program"
+      ],
+      "Routing Number": [
+        "Smerový kód banky"
+      ],
+      "Seed Phrase": [
+        "Seed fráza"
+      ],
+      "Server": [
+        "Server"
+      ],
+      "Social Security": [
+        "Rodné číslo (číslo sociálneho poistenia)"
+      ],
+      "Software license": [
+        "Softvérová licencia"
+      ],
+      "SSH key": [
+        "SSH kľúč"
+      ],
+      "SSH Keys": [
+        "SSH kľúče"
+      ],
+      "SSN": [
+        "SSN"
+      ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
+      "Technology": [
+        "Technológie"
+      ],
+      "Tier/Status": [
+        "Úroveň/Stav"
+      ],
+      "Unnamed custom item": [
+        "Nepomenovaná vlastná položka"
+      ],
+      "Unnamed SSH key": [
+        "Nepomenovaný SSH kľúč"
+      ],
+      "Unnamed WiFi item": [
+        "Nepomenovaná WiFi položka"
+      ],
+      "Unspecified": [
+        "Nešpecifikované"
+      ],
+      "Wallet Name": [
+        "Názov peňaženky"
+      ],
+      "WiFi network": [
+        "WiFi sieť"
+      ],
+      "WiFi Networks": [
+        "WiFi siete"
       ]
     },
     "Link": {
@@ -3731,6 +3899,18 @@
       ],
       "Write your note": [
         "Napíšte si poznámku"
+      ],
+      "Add date": [
+        "Pridať dátum"
+      ],
+      "E.g., ": [
+        "Napr., "
+      ],
+      "Name displayed in emails": [
+        "Meno zobrazené v emailoch"
+      ],
+      "Select option": [
+        "Vyberte možnosť"
       ]
     },
     "Security Center - Info": {
@@ -4375,6 +4555,9 @@
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasy.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov."
+      ],
+      "Minicalendar": [
+        "Minikalendár"
       ]
     },
     "Tooltip": {
@@ -4708,6 +4891,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše predplatné vám neumožňuje vytvoriť viacero trezorov. Všetky položky budú importované do vášho prvého trezoru. Pre importovanie do viacerých trezorov si navýšte vaše predplatné."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Dnes"
       ]
     }
   }

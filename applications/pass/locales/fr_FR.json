@@ -74,7 +74,7 @@
         "Options avancées"
       ],
       "Apply lifetime coupon code": [
-        "Appliquer le code promo pour compte Lifetime"
+        "Appliquer le code promo pour un accès à vie"
       ],
       "Authenticate": [
         "S'authentifier"
@@ -674,6 +674,15 @@
       ],
       "Your password manager is not here? Request it.": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
+      ],
+      "Next month": [
+        "Mois suivant"
+      ],
+      "Previous month": [
+        "Mois précédent"
+      ],
+      "Start from scratch": [
+        "Démarrer sans données existantes"
       ]
     },
     "anniversary_2025": {
@@ -2507,6 +2516,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Votre organisation vous demande de sécuriser votre accès à ${ PASS_APP_NAME }."
+      ],
+      "Week": [
+        "Semaine"
       ]
     },
     "Label": {
@@ -2870,7 +2882,7 @@
         "Transfert vers"
       ],
       "Free": [
-        "Free"
+        "Gratuit"
       ],
       "Free forever": [
         "Gratuit pour toujours"
@@ -3444,6 +3456,195 @@
       ],
       "ZIP or Postal code": [
         "Code postal"
+      ],
+      "Account Number": [
+        "Numéro de compte"
+      ],
+      "Account Type": [
+        "Type de compte"
+      ],
+      "Address": [
+        "Adresse"
+      ],
+      "API Credential": [
+        "Identifiant API"
+      ],
+      "API Key": [
+        "Clé API"
+      ],
+      "Bank Account": [
+        "Compte bancaire"
+      ],
+      "Bank Name": [
+        "Nom de la banque"
+      ],
+      "Country,": [
+        "Pays,"
+      ],
+      "Create a custom item": [
+        "Créer un élément personnalisé"
+      ],
+      "Crypto Wallet": [
+        "Portefeuille de cryptomonnaies"
+      ],
+      "Custom Items": [
+        "Éléments personnalisés"
+      ],
+      "Database": [
+        "Base de données"
+      ],
+      "Database Type": [
+        "Type de base de données"
+      ],
+      "Date of Birth": [
+        "Date de naissance"
+      ],
+      "Driver License": [
+        "Permis de conduire"
+      ],
+      "Expiry Date": [
+        "Date d'expiration"
+      ],
+      "Finance": [
+        "Finance"
+      ],
+      "Holder Name": [
+        "Nom du titulaire"
+      ],
+      "Host": [
+        "Hôte"
+      ],
+      "Hostname": [
+        "Nom de l’hôte"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "IP Address": [
+        "Adresse IP"
+      ],
+      "Issuing Authority": [
+        "Autorité de délivrance"
+      ],
+      "Issuing Country": [
+        "Pays émetteur"
+      ],
+      "License Key": [
+        "Clé de licence"
+      ],
+      "Medical Record": [
+        "Dossier médical"
+      ],
+      "Member ID": [
+        "ID de membre"
+      ],
+      "Membership": [
+        "Abonnement"
+      ],
+      "More": [
+        "Plus"
+      ],
+      "Name (SSID)": [
+        "Nom (SSID)"
+      ],
+      "Network": [
+        "Réseau"
+      ],
+      "Operating System": [
+        "Système d'exploitation"
+      ],
+      "Owner": [
+        "Propriétaire"
+      ],
+      "Passport Number": [
+        "Numéro de passeport"
+      ],
+      "Permissions": [
+        "Autorisations"
+      ],
+      "Personal": [
+        "Personnel"
+      ],
+      "Points Balance": [
+        "Solde de points"
+      ],
+      "Port": [
+        "Port"
+      ],
+      "Private Key": [
+        "Clé privée"
+      ],
+      "Private key": [
+        "Clé privée"
+      ],
+      "Product": [
+        "Produit"
+      ],
+      "Program Name": [
+        "Nom du programme"
+      ],
+      "Public key": [
+        "Clé publique"
+      ],
+      "Reward Program": [
+        "Programme de récompenses"
+      ],
+      "Routing Number": [
+        "Numéro d’acheminement"
+      ],
+      "Secret": [
+        "Clé secrète"
+      ],
+      "Seed Phrase": [
+        "Phrase de récupération"
+      ],
+      "Server": [
+        "Serveur"
+      ],
+      "Social Security": [
+        "Sécurité sociale"
+      ],
+      "Software license": [
+        "Licence de logiciel"
+      ],
+      "SSH key": [
+        "Clé SSH"
+      ],
+      "SSH Keys": [
+        "Clés SSH"
+      ],
+      "SSN": [
+        "Numéro de sécurité sociale"
+      ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
+      "Technology": [
+        "Technologie"
+      ],
+      "Tier/Status": [
+        "Niveau/Statut"
+      ],
+      "Unnamed custom item": [
+        "Élément personnalisé sans nom"
+      ],
+      "Unnamed SSH key": [
+        "Clé SSH sans nom"
+      ],
+      "Unnamed WiFi item": [
+        "Élément wifi sans nom"
+      ],
+      "Unspecified": [
+        "Non spécifié"
+      ],
+      "Wallet Name": [
+        "Nom du portefeuille"
+      ],
+      "WiFi network": [
+        "Réseau wifi"
+      ],
+      "WiFi Networks": [
+        "Réseaux wifi"
       ]
     },
     "Link": {
@@ -3734,6 +3935,18 @@
       ],
       "Write your note": [
         "Rédigez votre note."
+      ],
+      "Add date": [
+        "Ajouter une date"
+      ],
+      "E.g., ": [
+        "Par exemple, "
+      ],
+      "Name displayed in emails": [
+        "Nom affiché dans les messages"
+      ],
+      "Select option": [
+        "Sélectionnez une option"
       ]
     },
     "Security Center - Info": {
@@ -4362,6 +4575,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias.",
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias."
+      ],
+      "Minicalendar": [
+        "Mini calendrier"
       ]
     },
     "Tooltip": {
@@ -4689,6 +4905,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Votre abonnement ne vous permet pas de créer plusieurs coffres-forts. Tous les éléments seront importés dans votre premier coffre-fort. Changez d'abonnement pour pouvoir importer dans plusieurs coffres-forts."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Aujourd'hui"
       ]
     }
   }

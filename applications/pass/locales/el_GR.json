@@ -671,6 +671,18 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
+      ],
+      "Authenticate": [
+        "Ταυτοποίηση"
+      ],
+      "Next month": [
+        "Επόμενος μήνας"
+      ],
+      "Previous month": [
+        "Προηγούμενος μήνας"
+      ],
+      "Start from scratch": [
+        "Ξεκινήστε από την αρχή"
       ]
     },
     "Browser": {
@@ -2402,6 +2414,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Εισάγετε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
+      ],
+      "Week": [
+        "Εβδομάδα"
       ]
     },
     "Label": {
@@ -3339,6 +3357,195 @@
       ],
       "ZIP or Postal code": [
         "Τ.Κ. / Ταχυδρομικός κώδικας"
+      ],
+      "Account Number": [
+        "Αριθμός Λογαριασμού"
+      ],
+      "Account Type": [
+        "Τύπος Λογαριασμού"
+      ],
+      "Address": [
+        "Διεύθυνση"
+      ],
+      "API Credential": [
+        "Διαπιστευτήρια API"
+      ],
+      "API Key": [
+        "Κλειδί API"
+      ],
+      "Bank Account": [
+        "Τραπεζικός Λογαριασμός"
+      ],
+      "Bank Name": [
+        "Όνομα Τράπεζας"
+      ],
+      "Country,": [
+        "Χώρα,"
+      ],
+      "Create a custom item": [
+        "Δημιουργία προσαρμοσμένου στοιχείου"
+      ],
+      "Crypto Wallet": [
+        "Crypto Wallet"
+      ],
+      "Custom Items": [
+        "Προσαρμοσμένα Στοιχεία"
+      ],
+      "Database": [
+        "Βάση δεδομένων"
+      ],
+      "Database Type": [
+        "Τύπος βάσης δεδομένων"
+      ],
+      "Date of Birth": [
+        "Ημερομηνία γέννησης"
+      ],
+      "Driver License": [
+        "Άδεια Οδήγησης"
+      ],
+      "Expiry Date": [
+        "Ημερομηνία Λήξης"
+      ],
+      "Finance": [
+        "Οικονομικά"
+      ],
+      "Holder Name": [
+        "Όνομα Κατόχου"
+      ],
+      "Host": [
+        "Διακομιστής"
+      ],
+      "Hostname": [
+        "Όνομα κεντρικού υπολογιστή"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "IP Address": [
+        "Διεύθυνση IP"
+      ],
+      "Issuing Authority": [
+        "Εκδούσα Αρχή"
+      ],
+      "Issuing Country": [
+        "Χώρα Έκδοσης"
+      ],
+      "License Key": [
+        "Κλειδί άδειας"
+      ],
+      "Medical Record": [
+        "Ιατρικός Φάκελος"
+      ],
+      "Member ID": [
+        "ID Mέλους"
+      ],
+      "Membership": [
+        "Συνδρομή"
+      ],
+      "More": [
+        "Περισσότερα"
+      ],
+      "Name (SSID)": [
+        "Όνομα (SSID)"
+      ],
+      "Network": [
+        "Δίκτυο"
+      ],
+      "Operating System": [
+        "Λειτουργικό Σύστημα"
+      ],
+      "Owner": [
+        "Ιδιοκτήτης"
+      ],
+      "Passport Number": [
+        "Αριθμός Διαβατηρίου"
+      ],
+      "Permissions": [
+        "Άδειες"
+      ],
+      "Personal": [
+        "Προσωπικό"
+      ],
+      "Points Balance": [
+        "Υπόλοιπο Πόντων"
+      ],
+      "Port": [
+        "Θύρα"
+      ],
+      "Private Key": [
+        "Ιδιωτικό Κλειδί"
+      ],
+      "Private key": [
+        "Ιδιωτικό κλειδί"
+      ],
+      "Product": [
+        "Προϊόν"
+      ],
+      "Program Name": [
+        "Όνομα Προγράμματος"
+      ],
+      "Public key": [
+        "Δημόσιο κλειδί"
+      ],
+      "Reward Program": [
+        "Πρόγραμμα Επιβράβευσης"
+      ],
+      "Routing Number": [
+        "Αριθμός Δρομολόγησης"
+      ],
+      "Secret": [
+        "Μυστικό"
+      ],
+      "Seed Phrase": [
+        "Φράση Σπόρου"
+      ],
+      "Server": [
+        "Διακομιστής"
+      ],
+      "Social Security": [
+        "Α.Φ.Μ."
+      ],
+      "Software license": [
+        "Άδεια χρήσης λογισμικού"
+      ],
+      "SSH key": [
+        "Κλειδί SSH"
+      ],
+      "SSH Keys": [
+        "Κλειδιά SSH"
+      ],
+      "SSN": [
+        "Α.Μ.Κ.Α."
+      ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
+      "Technology": [
+        "Τεχνολογία"
+      ],
+      "Tier/Status": [
+        "Βαθμίδα/Κατάσταση"
+      ],
+      "Unnamed custom item": [
+        "Ανώνυμο προσαρμοσμένο στοιχείο"
+      ],
+      "Unnamed SSH key": [
+        "Ανώνυμο κλειδί SSH"
+      ],
+      "Unnamed WiFi item": [
+        "Ανώνυμο WiFi στοιχείο"
+      ],
+      "Unspecified": [
+        "Απροσδιόριστο"
+      ],
+      "Wallet Name": [
+        "Όνομα Wallet"
+      ],
+      "WiFi network": [
+        "Δίκτυο WiFi"
+      ],
+      "WiFi Networks": [
+        "Δίκτυα WiFi"
       ]
     },
     "Link": {
@@ -3629,6 +3836,18 @@
       ],
       "Write your note": [
         "Γράψτε τη σημείωσή σας"
+      ],
+      "Add date": [
+        "Προσθήκη ημερομηνίας"
+      ],
+      "E.g., ": [
+        "Για παράδειγμα, "
+      ],
+      "Name displayed in emails": [
+        "Όνομα που εμφανίζεται σε ηλεκτρονικές διευθύνσεις"
+      ],
+      "Select option": [
+        "Ορίστε επιλογή"
       ]
     },
     "Security Center - Info": {
@@ -4257,6 +4476,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
+      ],
+      "Minicalendar": [
+        "Μίνι ημερολόγιο"
       ]
     },
     "Tooltip": {
@@ -4584,6 +4806,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Η συνδρομή σας δε σας επιτρέπει να δημιουργήσετε πολλαπλές κρύπτες. Όλα τα στοιχεία θα εισαχθούν στην πρώτη κρύπτη σας. Για να κάνετε εισαγωγή σε πολλαπλές κρύπτες, αναβαθμίστε τη συνδρομή σας."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Σήμερα"
       ]
     }
   }

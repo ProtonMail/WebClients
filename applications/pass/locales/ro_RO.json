@@ -676,6 +676,15 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ],
+      "Next month": [
+        "Luna viitoare"
+      ],
+      "Previous month": [
+        "Luna trecută"
+      ],
+      "Start from scratch": [
+        "De la început"
       ]
     },
     "Browser": {
@@ -2439,6 +2448,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizația vă solicită să vă securizați accesul la ${ PASS_APP_NAME }"
+      ],
+      "Week": [
+        "Săptămâna"
       ]
     },
     "Label": {
@@ -3390,6 +3402,162 @@
       ],
       "ZIP or Postal code": [
         "Cod poștal"
+      ],
+      "Account Number": [
+        "Număr cont"
+      ],
+      "Account Type": [
+        "Tip cont"
+      ],
+      "Address": [
+        "Adresa"
+      ],
+      "API Credential": [
+        "Acreditare API"
+      ],
+      "Bank Account": [
+        "Cont bancar"
+      ],
+      "Bank Name": [
+        "Nume bancă"
+      ],
+      "Country,": [
+        "Țara"
+      ],
+      "Create a custom item": [
+        "Creare articol personal"
+      ],
+      "Crypto Wallet": [
+        "Portofel cripto"
+      ],
+      "Custom Items": [
+        "Articole personale"
+      ],
+      "Database": [
+        "Baza de date"
+      ],
+      "Date of Birth": [
+        "Data nașterii"
+      ],
+      "Driver License": [
+        "Permis de conducere"
+      ],
+      "Expiry Date": [
+        "Dată expirare"
+      ],
+      "Finance": [
+        "Finanțe"
+      ],
+      "Holder Name": [
+        "Nume titular"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Issuing Authority": [
+        "Autoritate emitentă"
+      ],
+      "Issuing Country": [
+        "Țara emitentă"
+      ],
+      "Medical Record": [
+        "Fișă medicală"
+      ],
+      "Member ID": [
+        "ID membru"
+      ],
+      "Membership": [
+        "Apartenență"
+      ],
+      "More": [
+        "Detalii"
+      ],
+      "Name (SSID)": [
+        "Nume (SSID)"
+      ],
+      "Network": [
+        "Rețea"
+      ],
+      "Passport Number": [
+        "Număr pașaport"
+      ],
+      "Personal": [
+        "Personal"
+      ],
+      "Points Balance": [
+        "Balanță puncte"
+      ],
+      "Port": [
+        "Port"
+      ],
+      "Private Key": [
+        "Cheie privată"
+      ],
+      "Private key": [
+        "Cheie privată"
+      ],
+      "Program Name": [
+        "Nume program"
+      ],
+      "Public key": [
+        "Cheie publică"
+      ],
+      "Reward Program": [
+        "Program de recompense"
+      ],
+      "Routing Number": [
+        "Număr de repartizare"
+      ],
+      "Seed Phrase": [
+        "Fraza de bază"
+      ],
+      "Server": [
+        "Server"
+      ],
+      "Social Security": [
+        "Card de sănătate"
+      ],
+      "Software license": [
+        "Licență program"
+      ],
+      "SSH key": [
+        "Cheie SSH"
+      ],
+      "SSH Keys": [
+        "Chei SSH"
+      ],
+      "SSN": [
+        "Număr asigurări de sănătate"
+      ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
+      "Technology": [
+        "Tehnologie"
+      ],
+      "Tier/Status": [
+        "Rang/Stare"
+      ],
+      "Unnamed custom item": [
+        "Articol personal nenumit"
+      ],
+      "Unnamed SSH key": [
+        "Cheie SSH fără nume"
+      ],
+      "Unnamed WiFi item": [
+        "Articol Wi-Fi fără nume"
+      ],
+      "Unspecified": [
+        "Nespecificat(ă)"
+      ],
+      "Wallet Name": [
+        "Nume portofel"
+      ],
+      "WiFi network": [
+        "Rețea Wi-Fi"
+      ],
+      "WiFi Networks": [
+        "Rețele Wi-Fi"
       ]
     },
     "Link": {
@@ -3683,6 +3851,18 @@
       ],
       "Write your note": [
         "Scrieți-vă notița"
+      ],
+      "Add date": [
+        "Adăugare dată"
+      ],
+      "E.g., ": [
+        "Ex.: "
+      ],
+      "Name displayed in emails": [
+        "Nume afișat în mesaje"
+      ],
+      "Select option": [
+        "Selectare opțiune"
       ]
     },
     "Security Center - Info": {
@@ -4319,6 +4499,9 @@
         "Urmează să ștergeți definitiv ${ aliasCount } alias.",
         "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
         "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
+      ],
+      "Minicalendar": [
+        "Minicalendar"
       ]
     },
     "Tooltip": {
@@ -4649,6 +4832,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonamentul nu vă permite să creați mai multe seifuri. Toate articolele vor fi importate în primul seif. Pentru a importa în mai multe seifuri, modificați-vă abonamentul."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Astăzi"
       ]
     }
   }
