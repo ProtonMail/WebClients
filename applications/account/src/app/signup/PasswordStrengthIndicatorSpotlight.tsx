@@ -2,11 +2,11 @@ import { type MutableRefObject, type ReactNode, useState } from 'react';
 
 import { Spotlight, useActiveBreakpoint } from '@proton/components';
 import PasswordStrengthIndicator, {
-    usePasswordStrengthIndicator,
+    useLoadPasswordStrengthIndicatorWasm,
 } from '@proton/components/components/passwordStrengthIndicator/PasswordStrengthIndicator';
 
 export const usePasswordStrengthIndicatorSpotlight = () => {
-    const passwordStrengthIndicator = usePasswordStrengthIndicator();
+    const passwordStrengthIndicator = useLoadPasswordStrengthIndicatorWasm();
     const { viewportWidth } = useActiveBreakpoint();
     const [inputFocused, setInputFocus] = useState(false);
     return {
