@@ -9,6 +9,7 @@ import { InlineLinkButton } from '@proton/atoms';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Time from '@proton/components/components/time/Time';
 import TimeRemaining from '@proton/components/components/timeRemaining/TimeRemaining';
+import { useIsB2BTrial } from '@proton/payments';
 
 import CancelTrialModal from './CancelTrialModal';
 import TopBanner from './TopBanner';
@@ -18,6 +19,7 @@ const TrialTopBanner = () => {
     const [modalProps, setModal, renderModal] = useModalState();
     const location = useLocation();
     const [subscription] = useSubscription();
+    const isB2BTrial = useIsB2BTrial(subscription);
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
@@ -28,7 +30,7 @@ const TrialTopBanner = () => {
 
     const trialEndsOn = subscription?.PeriodEnd;
 
-    if (!subscription?.IsTrial || !trialEndsOn || closed) {
+    if (!isB2BTrial || !trialEndsOn || closed) {
         return null;
     }
 
