@@ -44,7 +44,8 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE && userPlan?.InternalName === 'free';
     const hasItems = useSelectorOnce(selectAllItems).length > 0;
 
-    const message = DESKTOP_BUILD ? SpotlightMessage.WELCOME : SpotlightMessage.WEB_ONBOARDING;
+    const message = SpotlightMessage.WELCOME;
+
     const navigateToUpgrade = useNavigateToUpgrade({
         upsellRef: selected === PLANS.PASS ? UpsellRef.PLUS_PLAN_ONBOARDING : UpsellRef.UNLIMITED_PLAN_ONBOARDING,
     });
@@ -117,16 +118,6 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
         ].filter(truthy);
     }, [enabled, isFreePlan, hasExtension, selected]);
 
-    useEffect(() => {
-        (async () => (await spotlight.check(message)) ?? false)()
-            .then((enabled) => {
-                /* Auto-lauch on provider mount */
-                setEnabled(enabled);
-                setIsActive(enabled);
-            })
-            .catch(noop);
-    }, []);
-
     const context = useMemo<OnboardingContextValue>(
         () => ({
             acknowledge: () => {
@@ -142,12 +133,22 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
             isActive,
             steps,
             completed,
-            type: DESKTOP_BUILD ? OnboardingType.WELCOME : OnboardingType.WEB_ONBOARDING,
+            type: OnboardingType.WELCOME,
             selected,
             setSelected,
         }),
         [enabled, isActive, steps, completed, selected]
     );
+
+    useEffect(() => {
+        (async () => (await spotlight.check(message)) ?? false)()
+            .then((enabled) => {
+                /* Auto-lauch on provider mount */
+                setEnabled(enabled);
+                setIsActive(enabled);
+            })
+            .catch(noop);
+    }, []);
 
     useEffect(() => {
         const stepKeys = steps.map(prop('key'));
