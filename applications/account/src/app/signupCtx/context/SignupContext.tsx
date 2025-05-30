@@ -186,7 +186,6 @@ export const InnerSignupContextProvider = ({
     const domainsData = useSignupDomains();
 
     const paymentsContext = usePaymentOptimistic();
-    // const [humanVerificationData, setHumanVerificationData] = useState<HumanVerificationData | null>(null);
     const setupUserResponseRef = useRef<Unwrap<ReturnType<typeof handleSetupUser>>>();
     const signupDataRef = useRef<SignupData>();
 
