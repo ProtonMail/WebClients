@@ -98,6 +98,7 @@ export const useFileDrop = ({
                                     type: 'warning',
                                     // translator: here is an example of full sentence: File ".abc" cannot be uploaded due to "browser specific error such as hidden files are not allowed" error
                                     text: c('Error').t`File "${item.name}" cannot be uploaded due to "${error}" error`,
+                                    preWrap: true,
                                 });
                                 reject(new Error(`Unable to get File ${item}: ${error}`));
                             }
