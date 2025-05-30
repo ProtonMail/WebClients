@@ -14,12 +14,14 @@ import {
 } from '@proton/payments';
 import { type PaymentsContextOptimisticType, type PlanToCheck } from '@proton/payments/ui';
 import { usePaymentOptimistic } from '@proton/payments/ui';
+import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { type ProductParam } from '@proton/shared/lib/apps/product';
 import { type ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { type APP_NAMES } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Optional } from '@proton/shared/lib/interfaces';
+import { type Unwrap } from '@proton/shared/lib/interfaces/utils';
 import noop from '@proton/utils/noop';
 
 import type { AccountData, SignupType } from '../../signup/interfaces';
@@ -53,13 +55,6 @@ export interface AvailablePlan {
     cycle: Cycle;
 }
 
-interface SetupUserOptions {
-    /**
-     * Will setup the organization if provided
-     */
-    orgName?: string;
-}
-
 interface SignupContextType {
     domains: string[];
     /**
@@ -81,7 +76,9 @@ interface SignupContextType {
     /**
      * Sets up the newly created user account
      */
-    setupUser: (options?: SetupUserOptions) => Promise<void>;
+    setupUser: () => Promise<void>;
+    setOrgName: (orgName: string) => Promise<void>;
+    setDisplayName: (displayName: string) => Promise<void>;
     login: () => Promise<void>;
     flowId: string;
     loading: { init: boolean; submitting: boolean };
@@ -190,7 +187,7 @@ export const InnerSignupContextProvider = ({
 
     const paymentsContext = usePaymentOptimistic();
     // const [humanVerificationData, setHumanVerificationData] = useState<HumanVerificationData | null>(null);
-    const session = useRef<ResumedSessionResult>();
+    const setupUserResponseRef = useRef<Unwrap<ReturnType<typeof handleSetupUser>>>();
     const signupDataRef = useRef<SignupData>();
 
     const updateSignupData = (partial: Partial<SignupData>) => {
@@ -300,7 +297,7 @@ export const InnerSignupContextProvider = ({
         }
     };
 
-    const setupUser = async ({ orgName }: SetupUserOptions = {}) => {
+    const setupUser = async () => {
         const { accountData, paymentData } = signupDataRef.current || {};
 
         if (!accountData) {
@@ -315,7 +312,7 @@ export const InnerSignupContextProvider = ({
              */
             metrics.stopBatchingProcess();
 
-            const signupActionResponse = await handleSetupUser({
+            const setupUserResponse = await handleSetupUser({
                 accountData,
                 persistent,
                 trusted,
@@ -327,22 +324,7 @@ export const InnerSignupContextProvider = ({
                 referralData: undefined,
             });
 
-            session.current = signupActionResponse.session;
-
-            {
-                const maybeSetupOrg = async () => {
-                    if (orgName) {
-                        await handleSetupOrg({
-                            api,
-                            user: signupActionResponse.user,
-                            password: accountData.password,
-                            keyPassword: signupActionResponse.keyPassword,
-                            orgName,
-                        });
-                    }
-                };
-                await maybeSetupOrg().catch(noop);
-            }
+            setupUserResponseRef.current = setupUserResponse;
 
             /**
              * Batch process can now resume since the auth cookie will have been set
@@ -357,13 +339,48 @@ export const InnerSignupContextProvider = ({
         }
     };
 
+    const setOrgName = async (orgName: string) => {
+        const { accountData } = signupDataRef.current || {};
+        const setupUserResponse = setupUserResponseRef.current;
+        if (!accountData || !setupUserResponse) {
+            captureMessage(getErrorMessage('Missing accountData or setup user data'));
+            return;
+        }
+
+        const { password } = accountData;
+        const { user, keyPassword } = setupUserResponse;
+
+        await handleSetupOrg({
+            api,
+            user,
+            password,
+            keyPassword,
+            orgName,
+        });
+    };
+
+    const setDisplayName = async (displayName: string) => {
+        const setupUserResponse = setupUserResponseRef.current;
+        if (!setupUserResponse) {
+            captureMessage(getErrorMessage('Missing setup user data'));
+            return;
+        }
+
+        const addresses = await getAllAddresses(api);
+        const firstAddress = addresses[0];
+        if (!firstAddress) {
+            captureMessage(getErrorMessage('Missing first address'));
+        }
+        await api(updateAddress(firstAddress.ID, { DisplayName: displayName, Signature: firstAddress.Signature }));
+    };
+
     const login = async () => {
-        if (!session.current) {
+        if (!setupUserResponseRef.current?.session) {
             captureMessage(getErrorMessage('Missing session'));
             return;
         }
 
-        await onLogin(session.current);
+        await onLogin(setupUserResponseRef.current.session);
     };
 
     const value: SignupContextType = {
@@ -376,6 +393,8 @@ export const InnerSignupContextProvider = ({
         },
         createUser,
         setupUser,
+        setOrgName,
+        setDisplayName,
         flowId,
         loading,
         loginUrl,
