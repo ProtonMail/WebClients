@@ -88,7 +88,7 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
             )}
 
             <ModalTwoContent>
-                <div className="h-auto flex flex-nowrap items-start md:items-center text-left w-full flex-column md:flex-row gap-2 md:gap-6">
+                <div className="pass-onboarding-modal--content flex flex-nowrap items-start md:items-center text-left w-full flex-column md:flex-row gap-2 md:gap-6">
                     <div className="md:flex-1 w-full md:w-auto">
                         {currentStep.group && (
                             <p className="text-uppercase text-sm text-bold m-0 mb-3 pass-onboarding-modal--group">
