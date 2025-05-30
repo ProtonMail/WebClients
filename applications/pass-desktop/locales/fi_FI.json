@@ -677,6 +677,15 @@
       ],
       "Your password manager is not here? Request it.": [
         "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
+      ],
+      "Next month": [
+        "Seuraava kuukausi"
+      ],
+      "Previous month": [
+        "Edellinen kuukausi"
+      ],
+      "Start from scratch": [
+        "Aloita alusta"
       ]
     },
     "App menu": {
@@ -2383,6 +2392,16 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisaatiosi vaatii, että suojaat pääsysi ${ PASS_APP_NAME }:iin"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Syötä vahvistuskoodi. Numero ${ digit }."
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+      ],
+      "Week": [
+        "Viikko"
       ]
     },
     "Label": {
@@ -3335,6 +3354,147 @@
       ],
       "ZIP or Postal code": [
         "Postinumero"
+      ],
+      "Account Number": [
+        "Tilinumero"
+      ],
+      "Account Type": [
+        "Tilin tyyppi"
+      ],
+      "Address": [
+        "Osoite"
+      ],
+      "Bank Account": [
+        "Pankkitili"
+      ],
+      "Bank Name": [
+        "Pankin nimi"
+      ],
+      "Crypto Wallet": [
+        "Kryptolompakko"
+      ],
+      "Database": [
+        "Tietokanta"
+      ],
+      "Date of Birth": [
+        "Syntymäaika"
+      ],
+      "Driver License": [
+        "Ajokortti"
+      ],
+      "Expiry Date": [
+        "Voimassaoloaika"
+      ],
+      "Finance": [
+        "Talous"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Hanki ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
+      "Highest": [
+        "Korkein"
+      ],
+      "Holder Name": [
+        "Haltijan nimi"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Issuing Authority": [
+        "Myöntävä viranomainen"
+      ],
+      "Issuing Country": [
+        "Myöntävä maa"
+      ],
+      "Member ID": [
+        "Jäsentunnus"
+      ],
+      "Membership": [
+        "Jäsenyys"
+      ],
+      "More": [
+        "Lisää"
+      ],
+      "Name (SSID)": [
+        "Nimi (SSID)"
+      ],
+      "Network": [
+        "Verkko"
+      ],
+      "Passport Number": [
+        "Passin numero"
+      ],
+      "Personal": [
+        "Henkilökohtainen"
+      ],
+      "Port": [
+        "Portti"
+      ],
+      "Private key": [
+        "Yksityinen avain"
+      ],
+      "Private Key": [
+        "Yksityinen avain"
+      ],
+      "Program Name": [
+        "Ohjelman nimi"
+      ],
+      "Public key": [
+        "Julkinen avain"
+      ],
+      "Routing Number": [
+        "Reititysnumero"
+      ],
+      "Seed Phrase": [
+        "Siemenlauseke"
+      ],
+      "Server": [
+        "Palvelin"
+      ],
+      "Social Security": [
+        "Sosialliturva"
+      ],
+      "Software license": [
+        "Ohjelmistolisenssi"
+      ],
+      "SSH key": [
+        "SSH-avain"
+      ],
+      "SSH Keys": [
+        "SSH-avaimet"
+      ],
+      "SSN": [
+        "Hetu"
+      ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
+      "Technology": [
+        "Teknologia"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "${ BRAND_NAME }in parhaat yhdellä tilauksella"
+      ],
+      "Tier/Status": [
+        "Taso"
+      ],
+      "Unnamed custom item": [
+        "Nimetön mukautettu kohde"
+      ],
+      "Unnamed SSH key": [
+        "Nimetön SSH-avain"
+      ],
+      "Unnamed WiFi item": [
+        "Nimetön Wi-Fi-kohde"
+      ],
+      "Wallet Name": [
+        "Lompakon nimi"
+      ],
+      "WiFi network": [
+        "Wi-Fi-verkko"
+      ],
+      "WiFi Networks": [
+        "Wi-Fi-verkot"
       ]
     },
     "Link": {
@@ -3532,6 +3692,9 @@
     "PassOnboardingOffer": {
       "${ price }/month": [
         "${ price }/kuukausi"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus Lifetime hintaan ${ plusLifetimePrice }"
       ]
     },
     "Placeholder": {
@@ -3630,6 +3793,15 @@
       ],
       "Write your note": [
         "Kirjoita muistiinpanosi"
+      ],
+      "Add date": [
+        "Lisää päivämäärä"
+      ],
+      "E.g., ": [
+        "Esim. "
+      ],
+      "Select option": [
+        "Valitse vaihtoehto"
       ]
     },
     "Security Center - Info": {
@@ -4246,6 +4418,12 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Olet poistamassa ${ aliasCount } aliaksen pysyvästi.",
         "Olet poistamassa ${ aliasCount } aliasta pysyvästi."
+      ],
+      "Enter your ${ BRAND_NAME } password": [
+        "Syötä ${ BRAND_NAME } -salasanasi"
+      ],
+      "Minicalendar": [
+        "Pienoiskalenteri"
       ]
     },
     "Tooltip": {
@@ -4570,6 +4748,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Tilauksesi ei salli useiden holvien luontia, joten kaikki kohteet tuodaan ensimmäiseen holviisi. Tuo useisiin holveihin päivittämällä tilauksesi."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Tänään"
       ]
     }
   }
