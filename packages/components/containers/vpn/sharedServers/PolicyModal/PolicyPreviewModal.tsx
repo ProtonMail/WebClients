@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button } from '@proton/atoms';
+import { Button, CircleLoader } from '@proton/atoms';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
@@ -65,14 +65,14 @@ const PolicyPreviewModal = ({
     const [policyName, setPolicyName] = useState('');
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [selectedCities, setSelectedCities] = useState<Record<string, string[]>>({});
-    const { locations, translations } = useSharedServers(10 * MINUTE);
+    const { locations, translations, loading } = useSharedServers(10 * MINUTE);
     const [userSettings] = useUserSettings();
     const countryOptions = getCountryOptions(userSettings);
 
     const isGroupBasedPolicy = policy.Groups.length > 0;
 
     const groupedLocations = useMemo(
-        () => getGroupedLocations(locations, countryOptions, translations.result?.Cities!),
+        () => getGroupedLocations(locations, countryOptions, translations.cities),
         [locations, countryOptions]
     );
 
@@ -154,6 +154,11 @@ const PolicyPreviewModal = ({
                             {c('Info').t`Enabled countries`} ({selectedGroupedLocations.length})
                         </p>
 
+                        {loading && (
+                            <div className="flex flex-nowrap">
+                                <CircleLoader />
+                            </div>
+                        )}
                         {selectedGroupedLocations.map((gl) => (
                             <div className="mb-4">
                                 <CountryFlagAndName countryCode={gl.country} countryName={gl.localizedCountryName} />
@@ -169,6 +174,11 @@ const PolicyPreviewModal = ({
                             {c('Info').t`Disabled countries`} ({notSelectedGroupedLocations.length})
                         </p>
 
+                        {loading && (
+                            <div className="flex flex-nowrap">
+                                <CircleLoader />
+                            </div>
+                        )}
                         {notSelectedGroupedLocations.map((gl) => (
                             <div className="mb-4 opacity-50">
                                 <CountryFlagAndName countryCode={gl.country} countryName={gl.localizedCountryName} />

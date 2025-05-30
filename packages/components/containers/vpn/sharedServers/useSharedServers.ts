@@ -64,16 +64,35 @@ export const useSharedServers = (maxAge: number) => {
         maxAge: Number.MAX_SAFE_INTEGER,
     });
 
+    if (loading || translations.loading || !result || !translations.result) {
+        return {
+            loading: true,
+            policies: [],
+            locations: [],
+            translations: {
+                refresh: translations.refresh,
+                cities: {},
+            },
+            users: [],
+            groups: [],
+            refresh,
+            countUsersNotInAnyPolicy: 0,
+        };
+    }
+
     // Now you can define convenience return values from the result
     return {
-        loading,
-        policies: result?.FilterPolicies || [],
-        locations: result?.Locations || [],
-        translations,
-        users: result?.Users || [],
-        groups: result?.Groups || [],
+        loading: false,
+        policies: result.FilterPolicies,
+        locations: result.Locations,
+        translations: {
+            refresh: translations.refresh,
+            cities: translations.result.Cities,
+        },
+        users: result.Users,
+        groups: result.Groups,
         refresh,
-        countUsersNotInAnyPolicy: result?.EmailsOfUsersNotInAnyPolicy?.length ?? 0,
+        countUsersNotInAnyPolicy: result.EmailsOfUsersNotInAnyPolicy.length,
     };
 };
 
