@@ -680,6 +680,15 @@
       ],
       "Your password manager is not here? Request it.": [
         "Seu gerenciador de senhas não está aqui? Solicite."
+      ],
+      "Next month": [
+        "Próximo mês"
+      ],
+      "Previous month": [
+        "Mês anterior"
+      ],
+      "Start from scratch": [
+        "Começar do zero"
       ]
     },
     "anniversary_2025": {
@@ -2554,6 +2563,13 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Sua organização exige que você proteja seu acesso ao ${ PASS_APP_NAME }"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
+      ],
+      "Week": [
+        "Semana"
       ]
     },
     "Label": {
@@ -3533,6 +3549,195 @@
       ],
       "ZIP or Postal code": [
         "CEP ou código postal"
+      ],
+      "Account Number": [
+        "Número da conta"
+      ],
+      "Account Type": [
+        "Tipo de conta"
+      ],
+      "Address": [
+        "Endereço"
+      ],
+      "API Credential": [
+        "Credencial de API"
+      ],
+      "API Key": [
+        "Chave API"
+      ],
+      "Bank Account": [
+        "Conta bancária"
+      ],
+      "Bank Name": [
+        "Nome do banco"
+      ],
+      "Country,": [
+        "País,"
+      ],
+      "Create a custom item": [
+        "Criar um item personalizado"
+      ],
+      "Crypto Wallet": [
+        "Carteira de criptomoedas"
+      ],
+      "Custom Items": [
+        "Itens personalizados"
+      ],
+      "Database": [
+        "Base de dados"
+      ],
+      "Database Type": [
+        "Tipo do banco de dados"
+      ],
+      "Date of Birth": [
+        "Data de nascimento"
+      ],
+      "Driver License": [
+        "Carteira de motorista"
+      ],
+      "Expiry Date": [
+        "Data de validade"
+      ],
+      "Finance": [
+        "Finanças"
+      ],
+      "Holder Name": [
+        "Nome do titular"
+      ],
+      "Host": [
+        "Anfitrião"
+      ],
+      "Hostname": [
+        "Nome do anfitrião"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "IP Address": [
+        "Endereço IP"
+      ],
+      "Issuing Authority": [
+        "Autoridade emissora"
+      ],
+      "Issuing Country": [
+        "País emissor"
+      ],
+      "License Key": [
+        "Chave de licença"
+      ],
+      "Medical Record": [
+        "Registro médico"
+      ],
+      "Member ID": [
+        "ID de membro"
+      ],
+      "Membership": [
+        "Subscrição"
+      ],
+      "More": [
+        "Mais"
+      ],
+      "Name (SSID)": [
+        "Nome (SSID)"
+      ],
+      "Network": [
+        "Rede"
+      ],
+      "Operating System": [
+        "Sistema operacional"
+      ],
+      "Owner": [
+        "Proprietário"
+      ],
+      "Passport Number": [
+        "Número de passaporte"
+      ],
+      "Permissions": [
+        "Permissões"
+      ],
+      "Personal": [
+        "Pessoal"
+      ],
+      "Points Balance": [
+        "Saldo de pontos"
+      ],
+      "Port": [
+        "Porta"
+      ],
+      "Private key": [
+        "Chave privada"
+      ],
+      "Private Key": [
+        "Chave privada"
+      ],
+      "Product": [
+        "Produto"
+      ],
+      "Program Name": [
+        "Nome do programa"
+      ],
+      "Public key": [
+        "Chave pública"
+      ],
+      "Reward Program": [
+        "Programa de recompensas"
+      ],
+      "Routing Number": [
+        "Número de roteamento"
+      ],
+      "Secret": [
+        "Segredo"
+      ],
+      "Seed Phrase": [
+        "Frase de recuperação"
+      ],
+      "Server": [
+        "Servidor"
+      ],
+      "Social Security": [
+        "Previdência social"
+      ],
+      "Software license": [
+        "Licença de software"
+      ],
+      "SSH key": [
+        "Chave SSH"
+      ],
+      "SSH Keys": [
+        "Chaves SSH"
+      ],
+      "SSN": [
+        "SSN"
+      ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
+      "Technology": [
+        "Tecnologia"
+      ],
+      "Tier/Status": [
+        "Nível"
+      ],
+      "Unnamed custom item": [
+        "Item personalizado sem nome"
+      ],
+      "Unnamed SSH key": [
+        "Chave SSH sem nome"
+      ],
+      "Unnamed WiFi item": [
+        "Item Wi-Fi sem nome"
+      ],
+      "Unspecified": [
+        "Não especificado"
+      ],
+      "Wallet Name": [
+        "Nome da carteira"
+      ],
+      "WiFi network": [
+        "Rede Wi-Fi"
+      ],
+      "WiFi Networks": [
+        "Rede Wi-Fi"
       ]
     },
     "Link": {
@@ -3837,6 +4042,18 @@
       ],
       "Write your note": [
         "Escreva sua nota"
+      ],
+      "Add date": [
+        "Adicionar data"
+      ],
+      "E.g., ": [
+        "Ex., "
+      ],
+      "Name displayed in emails": [
+        "Nome exibido nos e-mails"
+      ],
+      "Select option": [
+        "Selecionar opção"
       ]
     },
     "Security Center - Info": {
@@ -4465,6 +4682,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Você está prestes a excluir permanentemente ${ aliasCount } alias.",
         "Você está prestes a excluir permanentemente ${ aliasCount } aliases."
+      ],
+      "Minicalendar": [
+        "Mini calendário"
       ]
     },
     "Tooltip": {
@@ -4792,6 +5012,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "A sua assinatura não permite que você crie múltiplos cofres. Todos os itens serão importados para o seu primeiro cofre. Para importar em múltiplos cofres, atualize a sua assinatura."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Hoje"
       ]
     }
   }

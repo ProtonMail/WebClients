@@ -92,7 +92,7 @@
         "Mover un grupo de elementos a otra caja fuerte"
       ],
       "Bulk move items to trash": [
-        "Mover un grupo de elementos"
+        "Mover un grupo de elementos a la papelera"
       ],
       "Bulk restore items from trash": [
         "Restaurar un grupo de elementos de la papelera"
@@ -680,6 +680,15 @@
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece tu gestor de contraseñas? Solicítalo."
+      ],
+      "Next month": [
+        "Mes siguiente"
+      ],
+      "Previous month": [
+        "Mes anterior"
+      ],
+      "Start from scratch": [
+        "Empezar desde cero"
       ]
     },
     "anniversary_2025": {
@@ -1959,7 +1968,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte borrará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
+        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2019,7 +2029,7 @@
         "La propiedad ha sido transferida. Ya no tienes la propiedad de esta caja fuerte."
       ],
       "Pass Plus trial": [
-        "Prueba Pass Plus"
+        "Prueba de Pass Plus"
       ],
       "password": [
         "contraseña"
@@ -2557,6 +2567,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Tu organización requiere que asegures tu acceso a ${ PASS_APP_NAME }"
+      ],
+      "Week": [
+        "Semana"
       ]
     },
     "Label": {
@@ -3536,6 +3549,195 @@
       ],
       "ZIP or Postal code": [
         "Código postal"
+      ],
+      "Account Number": [
+        "Número de cuenta"
+      ],
+      "Account Type": [
+        "Tipo de cuenta"
+      ],
+      "Address": [
+        "Dirección"
+      ],
+      "API Credential": [
+        "Credenciales de API"
+      ],
+      "API Key": [
+        "Clave API"
+      ],
+      "Bank Account": [
+        "Cuenta bancaria"
+      ],
+      "Bank Name": [
+        "Nombre del banco"
+      ],
+      "Country,": [
+        "País,"
+      ],
+      "Create a custom item": [
+        "Crear un elemento personalizado"
+      ],
+      "Crypto Wallet": [
+        "Cartera de criptomonedas"
+      ],
+      "Custom Items": [
+        "Elementos personalizados"
+      ],
+      "Database": [
+        "Base de datos"
+      ],
+      "Database Type": [
+        "Tipo de base de datos"
+      ],
+      "Date of Birth": [
+        "Fecha de nacimiento"
+      ],
+      "Driver License": [
+        "Permiso de conducir"
+      ],
+      "Expiry Date": [
+        "Fecha de expiración"
+      ],
+      "Finance": [
+        "Finanzas"
+      ],
+      "Holder Name": [
+        "Nombre del titular"
+      ],
+      "Host": [
+        "Anfitrión"
+      ],
+      "Hostname": [
+        "Nombre del anfitrión"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "IP Address": [
+        "Dirección IP"
+      ],
+      "Issuing Authority": [
+        "Autoridad emisora"
+      ],
+      "Issuing Country": [
+        "País emisor"
+      ],
+      "License Key": [
+        "Clave de licencia"
+      ],
+      "Medical Record": [
+        "Registro médico"
+      ],
+      "Member ID": [
+        "ID del miembro"
+      ],
+      "Membership": [
+        "Suscripción"
+      ],
+      "More": [
+        "Más"
+      ],
+      "Name (SSID)": [
+        "Nombre (SSID)"
+      ],
+      "Network": [
+        "Red"
+      ],
+      "Operating System": [
+        "Sistema operativo"
+      ],
+      "Owner": [
+        "Propietario"
+      ],
+      "Passport Number": [
+        "Número de pasaporte"
+      ],
+      "Permissions": [
+        "Permisos"
+      ],
+      "Personal": [
+        "Personal"
+      ],
+      "Points Balance": [
+        "Balance de puntos"
+      ],
+      "Port": [
+        "Puerto"
+      ],
+      "Private key": [
+        "Clave privada"
+      ],
+      "Private Key": [
+        "Clave privada"
+      ],
+      "Product": [
+        "Producto"
+      ],
+      "Program Name": [
+        "Nombre del programa"
+      ],
+      "Public key": [
+        "Clave pública"
+      ],
+      "Reward Program": [
+        "Programa de recompensas"
+      ],
+      "Routing Number": [
+        "Número de enrutamiento"
+      ],
+      "Secret": [
+        "Secreto"
+      ],
+      "Seed Phrase": [
+        "Frase de recuperación"
+      ],
+      "Server": [
+        "Servidor"
+      ],
+      "Social Security": [
+        "Seguridad Social"
+      ],
+      "Software license": [
+        "Licencia de software"
+      ],
+      "SSH key": [
+        "Clave SSH"
+      ],
+      "SSH Keys": [
+        "Claves SSH"
+      ],
+      "SSN": [
+        "Número de la Seguridad Social"
+      ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
+      "Technology": [
+        "Tecnología"
+      ],
+      "Tier/Status": [
+        "Nivel/Estado"
+      ],
+      "Unnamed custom item": [
+        "Crear un elemento personalizado"
+      ],
+      "Unnamed SSH key": [
+        "Clave SSH sin nombre"
+      ],
+      "Unnamed WiFi item": [
+        "Elemento WiFi sin nombre"
+      ],
+      "Unspecified": [
+        "Sin especificar"
+      ],
+      "Wallet Name": [
+        "Nombre de la cartera"
+      ],
+      "WiFi network": [
+        "Red wifi"
+      ],
+      "WiFi Networks": [
+        "Redes WiFi"
       ]
     },
     "Link": {
@@ -3840,6 +4042,18 @@
       ],
       "Write your note": [
         "Escribe tu nota"
+      ],
+      "Add date": [
+        "Agregar fecha"
+      ],
+      "E.g., ": [
+        "P. ej., "
+      ],
+      "Name displayed in emails": [
+        "Nombre que se muestra en los correos electrónicos"
+      ],
+      "Select option": [
+        "Selecciona una opción"
       ]
     },
     "Security Center - Info": {
@@ -4290,7 +4504,7 @@
         "Clave de acceso"
       ],
       "Password Health": [
-        "Estado de la contraseña"
+        "Estado de las contraseñas"
       ],
       "Pause monitoring?": [
         "¿Pausar el monitoreo?"
@@ -4468,6 +4682,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Estás a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Estás a punto de eliminar definitivamente ${ aliasCount } alias."
+      ],
+      "Minicalendar": [
+        "Minicalendario"
       ]
     },
     "Tooltip": {
@@ -4795,6 +5012,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Tu suscripción no te permite crear varias cajas fuertes. Todos los elementos serán importados atsu primera caja fuerte. Para importar a varias cajas fuertes mejora tu suscripción."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Hoy"
       ]
     }
   }

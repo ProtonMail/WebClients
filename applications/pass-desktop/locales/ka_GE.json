@@ -680,6 +680,15 @@
       ],
       "Your password manager is not here? Request it.": [
         "თქვენი პაროლების მმართველი აქ არაა? მოითხოვეთ ის."
+      ],
+      "Next month": [
+        "შემდეგი თვე"
+      ],
+      "Previous month": [
+        "წინა თვე"
+      ],
+      "Start from scratch": [
+        "ნულიდან დაწყება"
       ]
     },
     "App menu": {
@@ -2422,6 +2431,13 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "თქვენი ორგანიზაცია ითხოვთ, დაიცვათ თქვენი წვდომა ${ PASS_APP_NAME }-ზე"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
+      ],
+      "Week": [
+        "კვირა"
       ]
     },
     "Label": {
@@ -3383,6 +3399,162 @@
       ],
       "ZIP or Postal code": [
         "Zip ან საფოსტო კოდი"
+      ],
+      "Account Number": [
+        "ანგარიშის ნომერი"
+      ],
+      "Account Type": [
+        "ანგარიშის ტიპი"
+      ],
+      "Address": [
+        "მისამართი"
+      ],
+      "API Credential": [
+        "API-ის ავტორიზაციის დეტალები"
+      ],
+      "Bank Account": [
+        "საბანკო ანგარიში"
+      ],
+      "Bank Name": [
+        "ბანკის სახელი"
+      ],
+      "Country,": [
+        "ქვეყანა,"
+      ],
+      "Create a custom item": [
+        "მორგებული ელემენტის შექმნა"
+      ],
+      "Crypto Wallet": [
+        "კრიპტო საფულე"
+      ],
+      "Custom Items": [
+        "მომხმარებლის ელემენტები"
+      ],
+      "Database": [
+        "მონაცემთა ბაზა"
+      ],
+      "Date of Birth": [
+        "დაბადების თარიღი"
+      ],
+      "Driver License": [
+        "მართვის მოწმობა"
+      ],
+      "Expiry Date": [
+        "ვადის ამოწურვის თარიღი"
+      ],
+      "Finance": [
+        "ფინანსები"
+      ],
+      "Holder Name": [
+        "მფლობელის სახელი"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Issuing Authority": [
+        "გამცემი ორგანო"
+      ],
+      "Issuing Country": [
+        "გამომცემელი ქვეყანა"
+      ],
+      "Medical Record": [
+        "სამედიცინო ჩანაწერი"
+      ],
+      "Member ID": [
+        "წევრის ID"
+      ],
+      "Membership": [
+        "წევრობა"
+      ],
+      "More": [
+        "მეტი"
+      ],
+      "Name (SSID)": [
+        "სახელი (SSID)"
+      ],
+      "Network": [
+        "ქსელი"
+      ],
+      "Passport Number": [
+        "პასპორტის ნომერი"
+      ],
+      "Personal": [
+        "პირადი"
+      ],
+      "Points Balance": [
+        "ქულების ბალანსი"
+      ],
+      "Port": [
+        "პორტი"
+      ],
+      "Private key": [
+        "პირადი გასაღები"
+      ],
+      "Private Key": [
+        "პირადი გასაღები"
+      ],
+      "Program Name": [
+        "პროგრამის სახელი"
+      ],
+      "Public key": [
+        "საჯარო გასაღები"
+      ],
+      "Reward Program": [
+        "დაჯილდოების პროგრამა"
+      ],
+      "Routing Number": [
+        "რაუტინგის ნომერი"
+      ],
+      "Seed Phrase": [
+        "Seed-ფრაზა"
+      ],
+      "Server": [
+        "სერვერი"
+      ],
+      "Social Security": [
+        "სოციალური უსაფრთხოება"
+      ],
+      "Software license": [
+        "პროგრამული უზრუნველყოფის ლიცენზია"
+      ],
+      "SSH key": [
+        "SSH გასაღები"
+      ],
+      "SSH Keys": [
+        "SSH გასაღებები"
+      ],
+      "SSN": [
+        "SSN"
+      ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
+      "Technology": [
+        "ტექნოლოგია"
+      ],
+      "Tier/Status": [
+        "დონე/სტატუსი"
+      ],
+      "Unnamed custom item": [
+        "უსახელო მორგებული ელემენტი"
+      ],
+      "Unnamed SSH key": [
+        "უსახელო SSH გასაღები"
+      ],
+      "Unnamed WiFi item": [
+        "უსახელო WiFi ელემენტი"
+      ],
+      "Unspecified": [
+        "მითითებული არაა"
+      ],
+      "Wallet Name": [
+        "საფულის სახელი"
+      ],
+      "WiFi network": [
+        "Wi-Fi ქსელი"
+      ],
+      "WiFi Networks": [
+        "Wi-Fi ქსელები"
       ]
     },
     "Link": {
@@ -3687,6 +3859,18 @@
       ],
       "Write your note": [
         "დაწერეთ თქვენი შენიშვნა"
+      ],
+      "Add date": [
+        "თარიღის დამატება"
+      ],
+      "E.g., ": [
+        "მაგ. "
+      ],
+      "Name displayed in emails": [
+        "ელფოსტებში ნაჩვენები სახელი"
+      ],
+      "Select option": [
+        "აირჩიეთ პარამეტრი"
       ]
     },
     "Security Center - Info": {
@@ -4315,6 +4499,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი.",
         "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი."
+      ],
+      "Minicalendar": [
+        "მინიკალენდარი"
       ]
     },
     "Tooltip": {
@@ -4642,6 +4829,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "თქვენი სატარიფო გეგმა ერთზე მეტი საცავის შექმნის უფლებას არ გაძლევთ. ყველა ელემენტი პირველ საცავში იქნება შემოტანილი. ერთზე მეტი საცავში შემოსატანად ასწიეთ თქვენი სატარიფო გეგმა."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "დღეს"
       ]
     }
   }

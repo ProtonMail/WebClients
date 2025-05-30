@@ -681,6 +681,15 @@
       ],
       "Your password manager is not here? Request it.": [
         "Вашего менеджера паролей здесь нет? Запросите его."
+      ],
+      "Authenticate": [
+        "Аутентификация"
+      ],
+      "Next month": [
+        "Следующий месяц"
+      ],
+      "Previous month": [
+        "Предыдущий месяц"
       ]
     },
     "anniversary_2025": {
@@ -2610,6 +2619,15 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша организация требует, чтобы вы обеспечили защищенный доступ к ${ PASS_APP_NAME }"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
+      ],
+      "Week": [
+        "Неделя"
       ]
     },
     "Label": {
@@ -3617,6 +3635,15 @@
       ],
       "ZIP or Postal code": [
         "ZIP-код или почтовый индекс"
+      ],
+      "Address": [
+        "Адрес"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Port": [
+        "Порт"
       ]
     },
     "Link": {
@@ -3927,6 +3954,12 @@
       ],
       "Write your note": [
         "Напишите свою заметку"
+      ],
+      "Add date": [
+        "Добавить дату"
+      ],
+      "E.g., ": [
+        "Например, "
       ]
     },
     "Security Center - Info": {
@@ -4571,6 +4604,9 @@
         "Вы собираетесь навсегда удалить ${ aliasCount } псевдонима.",
         "Вы собираетесь навсегда удалить ${ aliasCount } псевдонимов.",
         "Вы собираетесь навсегда удалить ${ aliasCount } псевдонимов."
+      ],
+      "Minicalendar": [
+        "Миникалендарь"
       ]
     },
     "Tooltip": {
@@ -4904,6 +4940,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша подписка не позволяет создавать несколько хранилищ. Все элементы будут импортированы в ваше первое хранилище. Для импорта в несколько хранилищ обновите подписку."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Сегодня"
       ]
     }
   }

@@ -242,7 +242,7 @@
         "Адключыць гэты псеўданім і спыніць атрыманне лістоў, якія адпраўляюцца на яго"
       ],
       "Discard": [
-        "Адхіліць"
+        "Скасаваць"
       ],
       "Dismiss": [
         "Адхіліць"
@@ -684,6 +684,15 @@
       ],
       "Your password manager is not here? Request it.": [
         "Адсутнічае ваш менеджар пароляў? Запытайце яго."
+      ],
+      "Next month": [
+        "Наступны месяц"
+      ],
+      "Previous month": [
+        "Папярэдні месяц"
+      ],
+      "Start from scratch": [
+        "Пачаць з нуля"
       ]
     },
     "App menu": {
@@ -2515,6 +2524,15 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
+      ],
+      "Week": [
+        "Тыдзень"
       ]
     },
     "Label": {
@@ -3230,7 +3248,7 @@
         "Абарона ${ PASS_APP_NAME } з дапамогай дадатковага пароля"
       ],
       "Public domain": [
-        "Публічны дамен"
+        "публічны дамен"
       ],
       "Rate us": [
         "Ацаніце нас"
@@ -3522,6 +3540,195 @@
       ],
       "ZIP or Postal code": [
         "Паштовы індэкс"
+      ],
+      "Account Number": [
+        "Нумар рахунка"
+      ],
+      "Account Type": [
+        "Тып рахунка"
+      ],
+      "Address": [
+        "Адрас"
+      ],
+      "API Credential": [
+        "Уліковыя даныя API"
+      ],
+      "API Key": [
+        "Ключ API"
+      ],
+      "Bank Account": [
+        "Банкаўскі рахунак"
+      ],
+      "Bank Name": [
+        "Назва банка"
+      ],
+      "Country,": [
+        "Краіна,"
+      ],
+      "Create a custom item": [
+        "Стварыць карыстальніцкі элемент"
+      ],
+      "Crypto Wallet": [
+        "Крыпта-кашалёк"
+      ],
+      "Custom Items": [
+        "Карыстальніцкія элементы"
+      ],
+      "Database": [
+        "База даных"
+      ],
+      "Database Type": [
+        "Тып базы даных"
+      ],
+      "Date of Birth": [
+        "Дата нараджэння"
+      ],
+      "Driver License": [
+        "Пасведчанне кіроўцы"
+      ],
+      "Expiry Date": [
+        "Тэрмін дзеяння"
+      ],
+      "Finance": [
+        "Фінансы"
+      ],
+      "Holder Name": [
+        "Імя трымальніка"
+      ],
+      "Host": [
+        "Вузел"
+      ],
+      "Hostname": [
+        "Імя вузла"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "IP Address": [
+        "IP-адрас"
+      ],
+      "Issuing Authority": [
+        "Орган, які выдаў"
+      ],
+      "Issuing Country": [
+        "Краіна, якая выдала"
+      ],
+      "License Key": [
+        "Ліцэнзійны ключ"
+      ],
+      "Medical Record": [
+        "Медыцынская картка"
+      ],
+      "Member ID": [
+        "Ідэнт. удзельніка"
+      ],
+      "Membership": [
+        "Членства"
+      ],
+      "More": [
+        "Больш"
+      ],
+      "Name (SSID)": [
+        "Назва (SSID)"
+      ],
+      "Network": [
+        "Сетка"
+      ],
+      "Operating System": [
+        "Аперацыйная сістэма"
+      ],
+      "Owner": [
+        "Уладальнік"
+      ],
+      "Passport Number": [
+        "Нумар пашпарта"
+      ],
+      "Permissions": [
+        "Дазволы"
+      ],
+      "Personal": [
+        "Асабісты"
+      ],
+      "Points Balance": [
+        "Баланс балаў"
+      ],
+      "Port": [
+        "Порт"
+      ],
+      "Private key": [
+        "Прыватны ключ"
+      ],
+      "Private Key": [
+        "Прыватны ключ"
+      ],
+      "Product": [
+        "Прадукт"
+      ],
+      "Program Name": [
+        "Назва праграмы"
+      ],
+      "Public key": [
+        "Публічны ключ"
+      ],
+      "Reward Program": [
+        "Праграма ўзнагароджання"
+      ],
+      "Routing Number": [
+        "Ідэнтыфікацыйны нумар банка"
+      ],
+      "Secret": [
+        "Сакрэт"
+      ],
+      "Seed Phrase": [
+        "Seed-фраза"
+      ],
+      "Server": [
+        "Сервер"
+      ],
+      "Social Security": [
+        "Social security"
+      ],
+      "Software license": [
+        "Ліцэнзія ПЗ"
+      ],
+      "SSH key": [
+        "Ключ SSH"
+      ],
+      "SSH Keys": [
+        "Ключы SSH"
+      ],
+      "SSN": [
+        "Нумар сацыяльнага страхавання"
+      ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
+      "Technology": [
+        "Тэхналогія"
+      ],
+      "Tier/Status": [
+        "Узровень/статус"
+      ],
+      "Unnamed custom item": [
+        "Карыстальніцкі элемент без назвы"
+      ],
+      "Unnamed SSH key": [
+        "Ключ SSH без назвы"
+      ],
+      "Unnamed WiFi item": [
+        "Элемент Wi-Fi без назвы"
+      ],
+      "Unspecified": [
+        "Не вызначана"
+      ],
+      "Wallet Name": [
+        "Назва кашалька"
+      ],
+      "WiFi network": [
+        "Сетка Wi-Fi"
+      ],
+      "WiFi Networks": [
+        "Сеткі Wi-Fi"
       ]
     },
     "Link": {
@@ -3832,6 +4039,18 @@
       ],
       "Write your note": [
         "Напішыце сваю нататку"
+      ],
+      "Add date": [
+        "Дадаць дату"
+      ],
+      "E.g., ": [
+        "Напрыклад, "
+      ],
+      "Name displayed in emails": [
+        "Імя, якое адлюстроўваецца ў лістах"
+      ],
+      "Select option": [
+        "Выбраць параметр"
       ]
     },
     "Security Center - Info": {
@@ -4133,7 +4352,7 @@
         "Ці ведалі вы што?"
       ],
       "Discard changes?": [
-        "Адхіліць змены?"
+        "Скасаваць змены?"
       ],
       "DKIM (Optional)": [
         "DKIM (неабавязкова)"
@@ -4476,6 +4695,9 @@
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімы.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў."
+      ],
+      "Minicalendar": [
+        "Мінікаляндар"
       ]
     },
     "Tooltip": {
@@ -4809,6 +5031,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша падпіска не дазваляе ствараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша першае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Сёння"
       ]
     }
   }
