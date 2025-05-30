@@ -23,15 +23,16 @@ import {
     CURRENCIES,
     CYCLE,
     type Currency,
+    FREE_PLAN,
     PLANS,
     type Plan,
     getPlanIDs,
+    getHas2024OfferCoupon,
+    getIsVpnB2BPlan,
     getPlanNameFromIDs,
     getPlansMap,
     isMainCurrency,
 } from '@proton/payments';
-import { getHas2024OfferCoupon, getIsVpnB2BPlan } from '@proton/payments';
-import { FREE_PLAN } from '@proton/payments';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -49,9 +50,9 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 
+import { cachedPlans, cachedPlansMap } from '../defaultPlans';
 import { getOptimisticDomains } from '../signup/helper';
-import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
-import { SignupType } from '../signup/interfaces';
+import { type SignupCacheResult, SignupType, type SubscriptionData } from '../signup/interfaces';
 import { getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
 import {
     getSubscriptionMetricsData,
@@ -67,7 +68,6 @@ import {
     sendSignupSubscriptionTelemetryEvent,
 } from '../signup/signupTelemetry';
 import { defaultSignupModel } from '../single-signup-v2/constants';
-import { cachedPlans, cachedPlansMap } from '../single-signup-v2/defaultPlans';
 import type { SubscriptionDataCycleMapping } from '../single-signup-v2/helper';
 import {
     getOptimisticPlanCardSubscriptionData,

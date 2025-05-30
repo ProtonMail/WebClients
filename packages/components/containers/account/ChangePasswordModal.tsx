@@ -48,7 +48,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import PasswordStrengthIndicator, {
-    usePasswordStrengthIndicator,
+    useLoadPasswordStrengthIndicatorWasm,
 } from '../../components/passwordStrengthIndicator/PasswordStrengthIndicator';
 import GenericError from '../error/GenericError';
 import { handleChangeLoginPassword } from './changePasswordHelper';
@@ -120,7 +120,7 @@ const ChangePasswordModal = ({
     const getUserKeys = useGetUserKeys();
     const getAddressKeys = useGetAddressKeys();
     const getAddresses = useGetAddresses();
-    const passwordStrengthIndicator = usePasswordStrengthIndicator();
+    const passwordStrengthIndicator = useLoadPasswordStrengthIndicatorWasm();
     const { validator, onFormSubmit, reset } = useFormErrors();
 
     const disable2FA = signedInRecoveryFlow;
