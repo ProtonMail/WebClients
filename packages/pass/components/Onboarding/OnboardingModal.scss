@@ -1,3 +1,5 @@
+@import '~@proton/styles/scss/lib';
+
 .pass-onboarding-modal {
 	/* Hide elements we don't need */
 	.stepper-labels,
@@ -12,6 +14,13 @@
 
 		@at-root .pass-light & {
 			background: linear-gradient(160deg, #cf8287 0%, #e7daff 25%, #f7f3ff 45%), #fbf9fe;
+		}
+	}
+
+	&--content {
+		block-size: auto;
+		@include media('>medium') {
+			min-block-size: 28em;
 		}
 	}
 
@@ -42,6 +51,14 @@
 	.modal-two-header-actions {
 		inline-size: 100%;
 		justify-content: end;
+	}
+
+	.modal-two-header-title {
+		margin-block-start: 0 !important;
+
+		+ .modal-two-header-actions {
+			margin-block-start: em(-9.5);
+		}
 	}
 
 	/* Customize radio selectors */
