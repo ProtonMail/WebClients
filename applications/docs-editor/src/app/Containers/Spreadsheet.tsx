@@ -350,7 +350,10 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       const file = new File([editorInitializationConfig.data], 'import.xlsx', {
         type: SupportedProtonDocsMimeTypes.xlsx,
       })
-      onInsertFile(file, true, 1000, 100).catch(console.error)
+      onInsertFile(file, undefined, undefined, {
+        minRowCount: 1000,
+        minColumnCount: 100,
+      }).catch(console.error)
     }
   }, [calculateNow, editorInitializationConfig, onChange, onInsertFile])
 
