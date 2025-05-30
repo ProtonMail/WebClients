@@ -19,6 +19,7 @@ import {
 } from '@proton/components'
 import type { AuthenticatedDocControllerInterface, DocumentState, PublicDocumentState } from '@proton/docs-core'
 import { isDocumentState, PostApplicationError } from '@proton/docs-core'
+import type { SheetImportData } from '@proton/docs-shared'
 import { type DocTrashState, isWordCountSupported } from '@proton/docs-shared'
 import { isPrivateNodeMeta, type DocumentAction } from '@proton/drive-store'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
@@ -36,6 +37,7 @@ import type { RenameControllerInterface } from '@proton/docs-core'
 import { useDocsContext } from '../../../context'
 import { WordCountIcon } from '../icons'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
+import { useSheetImportModal } from './SheetImportModal'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -68,6 +70,7 @@ export function DocumentTitleDropdown({
   const [isMakingNewDocument, setIsMakingNewDocument] = useState<boolean>(false)
   const [pdfModal, openPdfModal] = useExportToPDFModal()
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
+  const [sheetImportModal, openSheetImportModal] = useSheetImportModal()
   const [showVersionNumber, setShowVersionNumber] = useState(false)
 
   const [isRenaming, setIsRenaming] = useState(false)
@@ -233,6 +236,15 @@ export function DocumentTitleDropdown({
     openProtonDrive(to)
   }, [documentState, openProtonDrive, privateContext])
 
+  const isSpreadsheet = documentType === 'sheet'
+
+  const handleSheetImportData = useCallback(
+    (data: SheetImportData) => {
+      void editorController.importDataIntoSheet(data)
+    },
+    [editorController],
+  )
+
   if (isRenaming) {
     return (
       <div className="flex items-center px-1.5 pl-1">
@@ -312,6 +324,21 @@ export function DocumentTitleDropdown({
             </DropdownMenuButton>
           )}
 
+          {isSpreadsheet && (
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              data-testid="sheet-import"
+              onClick={() => {
+                openSheetImportModal({
+                  handleImport: handleSheetImportData,
+                })
+              }}
+            >
+              <Icon name="file-arrow-in-up" className="color-weak mr-2" />
+              {c('Action').t`Import`}
+            </DropdownMenuButton>
+          )}
+
           {!isPublicMode && (
             <DropdownMenuButton
               disabled={isDuplicating}
@@ -358,7 +385,7 @@ export function DocumentTitleDropdown({
             </DropdownMenuButton>
           )}
 
-          {isWordCountSupported && (
+          {isWordCountSupported && !isSpreadsheet && (
             <SimpleDropdown
               as={DropdownMenuButton}
               className="flex items-center text-left"
@@ -586,6 +613,7 @@ export function DocumentTitleDropdown({
 
       {historyModal}
       {pdfModal}
+      {sheetImportModal}
       {authenticatedController && isDocumentState(documentState) && (
         <TrashedDocumentModal
           documentTitle={title}

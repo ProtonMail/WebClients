@@ -11,6 +11,7 @@ import type {
   YjsState,
   SyncedEditorStateValues,
   SyncedEditorEvent,
+  SheetImportData,
 } from '@proton/docs-shared'
 import { EditorBridgeMessageType, BridgeOriginProvider } from '@proton/docs-shared'
 import type { LoggerInterface } from '@proton/utils/logs'
@@ -132,6 +133,10 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
 
   async getYDocAsJSON(): Promise<unknown> {
     return this.invokeEditorMethod('getYDocAsJSON', [])
+  }
+
+  async importDataIntoSheet(data: SheetImportData): Promise<void> {
+    return this.invokeEditorMethod('importDataIntoSheet', [data])
   }
 
   async initializeEditor(
