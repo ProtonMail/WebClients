@@ -122,7 +122,11 @@ const EditAddressesSection = ({ address }: Props) => {
             <SettingsLayout stackEarlier className="max-w-custom" style={{ '--max-w-custom': '49em' }}>
                 <SettingsLayoutLeft>
                     {/* eslint-disable-next-line */}
-                    <label htmlFor="editor" className="text-semibold" onClick={() => editorRef.current?.focus()}>
+                    <label
+                        htmlFor="rooster-editor"
+                        className="text-semibold"
+                        onClick={() => editorRef.current?.focus()}
+                    >
                         <span className="mr-2">{c('Label').t`Signature`}</span>
                         <Info
                             url={getKnowledgeBaseUrl('/display-name-email-signature')}
@@ -146,6 +150,7 @@ const EditAddressesSection = ({ address }: Props) => {
                             modalDefaultFont={modalDefaultFont}
                             isSmallViewportForToolbar={viewportWidth['<=medium']}
                             mailSettings={mailSettings}
+                            title={c('Label').t`Signature`}
                         />
                     </div>
 
