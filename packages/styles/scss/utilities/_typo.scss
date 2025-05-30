@@ -217,6 +217,10 @@
 	text-decoration: underline;
 }
 
+.text-underline-dashed {
+	text-decoration: underline dashed;
+}
+
 .hover\:text-underline {
 	&:hover,
 	&:focus {

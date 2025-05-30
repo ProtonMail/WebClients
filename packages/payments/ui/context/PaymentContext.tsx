@@ -1,13 +1,18 @@
-import { type ReactNode, createContext, useContext, useEffect, useState } from 'react';
+import { type ReactNode, createContext, useContext, useEffect, useRef, useState } from 'react';
 
 import { useGetPaymentStatus, usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useGetPlans, usePlans } from '@proton/account/plans/hooks';
 import { selectSubscription } from '@proton/account/subscription';
 import { useGetSubscription } from '@proton/account/subscription/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import useApi from '@proton/components/hooks/useApi';
-import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import { type OnChargeable, useAutomaticCurrency, useCurrencies } from '@proton/components/payments/client-extensions';
+import { getPreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
+import {
+    type GetPreferredCurrencyParamsHook,
+    type OnChargeable,
+    useCurrencies,
+} from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import {
@@ -17,6 +22,8 @@ import {
     getCheckout,
     getOptimisticCheckResult as innerGetOptimisticCheckResult,
 } from '@proton/shared/lib/helpers/checkout';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { getPlanFromPlanIDs, hasFreePlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import type { Api, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -24,6 +31,7 @@ import noop from '@proton/utils/noop';
 import { type CheckSubscriptionData } from '../../core/api';
 import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS } from '../../core/billing-address';
 import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '../../core/constants';
+import { type getAvailableCurrencies, type getPreferredCurrency, mainCurrencies } from '../../core/helpers';
 import type {
     Currency,
     Cycle,
@@ -64,6 +72,7 @@ export interface InitializeProps {
     paymentFlow: PaymentMethodFlows;
     planToCheck?: Omit<PlanToCheck, 'currency'>;
     onChargeable: OnChargeable;
+    availablePlans?: { planIDs: PlanIDs; cycle: Cycle }[];
 }
 
 export interface PricesResult {
@@ -75,7 +84,85 @@ type PaymentUiData = {
     checkout: PaymentsCheckout;
 };
 
-interface PaymentsContextTypeInner {
+const getSubscriptionDataFromPlanToCheck = (
+    {
+        planIDs,
+        cycle,
+        currency,
+        coupon,
+        billingAddress: newBillingAddress,
+    }: PlanToCheck & {
+        billingAddress?: BillingAddress;
+    },
+    billingAddress: BillingAddress
+): CheckSubscriptionData => ({
+    Plans: planIDs,
+    Currency: currency,
+    Cycle: cycle,
+    Codes: coupon ? [coupon] : [],
+    BillingAddress: newBillingAddress ?? billingAddress,
+});
+
+/**
+ * This is used only for non-critical checks. For example, loading the prices for multiple plans on page loading.
+ * Example: there is a coupon and it needs to be checked with different cycles/plans/currencies, etc.
+ */
+const checkMultiplePlans = async ({
+    plansToCheck,
+    subscription,
+    paymentsApi,
+    multiCheckGroups,
+    getLocalizedPlansMap,
+    billingAddress,
+}: {
+    plansToCheck: PlanToCheck[];
+    subscription: Subscription | FreeSubscription;
+    paymentsApi: PaymentsApi;
+    multiCheckGroups: ReturnType<typeof useMultiCheckGroups>;
+    getLocalizedPlansMap: (overrides?: {
+        paramCurrency?: GetPreferredCurrencyParamsHook['paramCurrency'];
+    }) => FullPlansMap;
+    billingAddress: BillingAddress;
+}) => {
+    const checkSubscriptionData = plansToCheck
+        .map((planToCheck) => getSubscriptionDataFromPlanToCheck(planToCheck, billingAddress))
+        .map((datum) => (isCheckForbidden(subscription, datum.Plans, datum.Cycle) ? null : datum));
+
+    const indexesToExcludeFromCheck: number[] = [];
+    const truthySubscriptionData = checkSubscriptionData.filter((data, index) => {
+        if (data === null) {
+            indexesToExcludeFromCheck.push(index);
+        }
+
+        return data !== null;
+    });
+
+    const resultsPromise = paymentsApi.multiCheck(truthySubscriptionData, { cached: true, silence: true });
+
+    plansToCheck
+        .map((planToCheck) => planToCheck.groupId)
+        .filter(isTruthy)
+        .forEach((groupId) => multiCheckGroups.addPromiseToGroup(groupId, resultsPromise));
+
+    const results = await resultsPromise;
+    const normalizedResults: EnrichedCheckResponse[] = [];
+
+    let checkedIndex = 0;
+    for (let index = 0; index < plansToCheck.length; index++) {
+        if (indexesToExcludeFromCheck.includes(index)) {
+            const planToCheck = plansToCheck[index];
+            const plansMap = getLocalizedPlansMap({ paramCurrency: planToCheck.currency });
+            normalizedResults.push(innerGetOptimisticCheckResult({ plansMap, ...planToCheck }));
+        } else {
+            normalizedResults.push(results[checkedIndex]);
+            checkedIndex++;
+        }
+    }
+
+    return normalizedResults;
+};
+
+export interface PaymentsContextTypeInner {
     createSubscription: () => Promise<void>;
     initialize: (props: InitializeProps) => Promise<void>;
     initialized: boolean;
@@ -96,6 +183,10 @@ interface PaymentsContextTypeInner {
      * Same as `getPrice`, but returns the fallback version of the price if cache is missing.
      */
     getPriceOrFallback: (planToCheck: PlanToCheck) => PricesResult;
+    /**
+     * Get a valid coupon by checking it against the cached multi check results
+     */
+    getCoupon: (planToCheck: PlanToCheck) => string | undefined;
     plans: Plan[];
     plansMap: PlansMap;
 
@@ -111,6 +202,21 @@ interface PaymentsContextTypeInner {
     isGroupLoading: MultiCheckGroupsResult['isGroupLoading'];
     isGroupChecked: MultiCheckGroupsResult['isGroupChecked'];
     subscription: Subscription | FreeSubscription | undefined;
+
+    // Newly added
+    freePlan: FreePlanDefault;
+    selectNewPlan: (
+        newPlanToCheck: PlanToCheck & { billingAddress?: BillingAddress },
+        {}: { subscription: Subscription | FreeSubscription }
+    ) => Promise<EnrichedCheckResponse>;
+    selectedPlan: SelectedPlan;
+    getOptimisticCheckResult: (planToCheck: PlanToCheck) => ReturnType<typeof innerGetOptimisticCheckResult>;
+    availableCurrencies: readonly Currency[];
+    /**
+     * Returns available currencies for the given plan
+     */
+    getAvailableCurrencies: (selectedPlanName: PLANS) => ReturnType<typeof getAvailableCurrencies>;
+    getPreferredCurrency: (selectedPlanName: PLANS) => ReturnType<typeof getPreferredCurrency>;
 }
 
 export type PaymentsContextType = Pick<
@@ -120,6 +226,9 @@ export type PaymentsContextType = Pick<
     | 'initialized'
     | 'selectPlanIDs'
     | 'selectCycle'
+    | 'availableCurrencies'
+    | 'getAvailableCurrencies'
+    | 'getPreferredCurrency'
     | 'currency'
     | 'selectCurrency'
     | 'selectBillingAddress'
@@ -127,8 +236,10 @@ export type PaymentsContextType = Pick<
     | 'getPrice'
     | 'getFallbackPrice'
     | 'getPriceOrFallback'
+    | 'getCoupon'
     | 'plans'
     | 'plansMap'
+    | 'freePlan'
     | 'checkResult'
     | 'paymentsStatus'
     | 'paymentsApi'
@@ -144,17 +255,20 @@ interface PaymentsContextProviderProps {
     children: ReactNode;
     preload?: boolean;
     authenticated?: boolean;
+    cachedPlans?: Plan[];
 }
 
 export const PaymentsContextProvider = ({
     children,
     preload = true,
     authenticated = true,
+    cachedPlans,
 }: PaymentsContextProviderProps) => {
     const store = useStore();
 
     const defaultApi = useApi();
 
+    const [user] = useUser();
     const [plansDataInitial] = usePlans();
     const [paymentStatusInitial] = usePaymentStatus();
 
@@ -162,17 +276,17 @@ export const PaymentsContextProvider = ({
     const getPaymentStatus = useGetPaymentStatus();
     const getSubscription = useGetSubscription();
     const [plansData, setPlansData] = useState<{ plans: Plan[]; freePlan: FreePlanDefault }>(
-        plansDataInitial ?? { plans: [], freePlan: FREE_PLAN }
+        plansDataInitial ?? { plans: cachedPlans ?? [], freePlan: FREE_PLAN }
     );
     const [paymentsStatus, setPaymentsStatus] = useState<PaymentMethodStatusExtended | undefined>(paymentStatusInitial);
-    const [subscription, setSubscription] = useState<Subscription | FreeSubscription | undefined>(
-        selectSubscription(store.getState()).value
+    const [subscription, setSubscription] = useState<Subscription | FreeSubscription>(
+        selectSubscription(store.getState())?.value || FREE_SUBSCRIPTION
     );
 
     const [billingAddress, setBillingAddress] = useState<BillingAddress>(DEFAULT_TAX_BILLING_ADDRESS);
     const plans = plansData.plans;
     const { getPaymentsApi, paymentsApi: initialPaymentsApi } = usePaymentsApi();
-    const [paymentsApi, setPaymentsApi] = useState<PaymentsApi>(initialPaymentsApi);
+    const paymentsApiRef = useRef<PaymentsApi>(initialPaymentsApi);
     // const [onChargeableCallback, setOnChargeableCallback] = useState<OnChargeable>(() => Promise.resolve());
 
     const [initialized, setInitialized] = useState(false);
@@ -180,30 +294,54 @@ export const PaymentsContextProvider = ({
 
     const initialPlanIDs = { [PLANS.MAIL]: 1 };
 
-    const [autoCurrency] = useAutomaticCurrency();
+    const { getPreferredCurrency, getAvailableCurrencies } = useCurrencies();
 
-    const [planToCheck, setPlanToCheck] = useState<PlanToCheck>({
-        cycle: CYCLE.MONTHLY,
-        currency: autoCurrency,
-        planIDs: initialPlanIDs,
-        coupon: undefined,
-    });
-    const selectedPlan = new SelectedPlan(planToCheck.planIDs, plans, planToCheck.cycle, planToCheck.currency);
+    //const plansMapCache = useRef<any>({});
 
-    const { getPreferredCurrency } = useCurrencies();
-    // todo: implement currency selector
-    // const [availableCurrencies, setAvailableCurrencies] = useState<readonly Currency[]>(mainCurrencies);
+    const getLocalizedPlansMap = (overrides?: { paramCurrency?: GetPreferredCurrencyParamsHook['paramCurrency'] }) => {
+        const result = getPreferredPlansMap({
+            currencyFallback: false,
+            getPreferredCurrency,
+            currencyOverrides: overrides ? { paramCurrency: overrides.paramCurrency } : undefined,
+            user,
+            status: paymentsStatus,
+            subscription,
+            plans,
+        }).plansMap;
 
-    const { plansMap: defaultPlansMap, getPlansMap } = usePreferredPlansMap(false);
+        return result;
+    };
 
-    const [checkResult, setCheckResult] = useState<EnrichedCheckResponse>(
-        innerGetOptimisticCheckResult({
+    const [{ planToCheck, checkResult }, setPlanToCheck] = useState<{
+        planToCheck: PlanToCheck;
+        checkResult: EnrichedCheckResponse;
+    }>(() => {
+        const autoCurrency = getPreferredCurrency({
+            user,
+            plans,
+            status: paymentsStatus,
+            subscription,
+        });
+        const plansMap = getLocalizedPlansMap({ paramCurrency: autoCurrency });
+        const planToCheck = {
+            cycle: CYCLE.MONTHLY,
+            currency: autoCurrency,
+            planIDs: initialPlanIDs,
+            coupon: undefined,
+        };
+        const checkResult = innerGetOptimisticCheckResult({
             cycle: planToCheck.cycle,
             planIDs: planToCheck.planIDs,
-            plansMap: defaultPlansMap,
+            plansMap: plansMap,
             currency: planToCheck.currency,
-        })
-    );
+        });
+        return {
+            planToCheck,
+            checkResult,
+        };
+    });
+
+    const [availableCurrencies, setAvailableCurrencies] = useState<readonly Currency[]>(mainCurrencies);
 
     // const [facadeParams, setFacadeParams] = useState<{
     //     flow: PaymentMethodFlows;
@@ -223,33 +361,33 @@ export const PaymentsContextProvider = ({
 
     const multiCheckGroups = useMultiCheckGroups();
 
-    const getSubscriptionDataFromPlanToCheck = ({
-        planIDs,
-        cycle,
-        currency,
-        coupon,
-        billingAddress: newBillingAddress,
-    }: PlanToCheck & { billingAddress?: BillingAddress }): CheckSubscriptionData => ({
-        Plans: planIDs,
-        Currency: currency,
-        Cycle: cycle,
-        Codes: coupon ? [coupon] : [],
-        BillingAddress: newBillingAddress ?? billingAddress,
-    });
-
     const selectNewPlan = async (
         newPlanToCheck: PlanToCheck & { billingAddress?: BillingAddress },
         {}: { subscription: Subscription | FreeSubscription } = {}
     ) => {
-        const subscriptionData = getSubscriptionDataFromPlanToCheck(newPlanToCheck);
+        const isFree = hasFreePlanIDs(newPlanToCheck.planIDs);
+        if (isFree) {
+            const plansMap = getLocalizedPlansMap({ paramCurrency: newPlanToCheck.currency });
+            const newCheckResult = innerGetOptimisticCheckResult({
+                plansMap,
+                cycle: newPlanToCheck.cycle,
+                planIDs: newPlanToCheck.planIDs,
+                currency: newPlanToCheck.currency,
+            });
+            setPlanToCheck({ planToCheck: newPlanToCheck, checkResult: newCheckResult });
+            return newCheckResult;
+        }
 
-        const checkResult = await paymentsApi.checkWithAutomaticVersion(subscriptionData);
+        const subscriptionData = getSubscriptionDataFromPlanToCheck(newPlanToCheck, billingAddress);
+        const newBillingAddress = newPlanToCheck.billingAddress;
+        if (newBillingAddress) {
+            setBillingAddress((old) => (isDeepEqual(old, newBillingAddress) ? old : newBillingAddress));
+        }
+        const newCheckResult = await paymentsApiRef.current.checkWithAutomaticVersion(subscriptionData);
+        setPlanToCheck({ planToCheck: newPlanToCheck, checkResult: newCheckResult });
+        paymentsApiRef.current.cacheMultiCheck(subscriptionData, undefined, newCheckResult);
 
-        setPlanToCheck(newPlanToCheck);
-        setCheckResult(checkResult);
-        paymentsApi.cacheMultiCheck(subscriptionData, undefined, checkResult);
-
-        return checkResult;
+        return newCheckResult;
     };
 
     const preloadPaymentsData = async ({ api: apiOverride }: { api?: Api } = {}) => {
@@ -269,7 +407,7 @@ export const PaymentsContextProvider = ({
                       setSubscription(data);
                       return data;
                   })
-                : Promise.resolve(FREE_SUBSCRIPTION),
+                : Promise.resolve(FREE_SUBSCRIPTION as FreeSubscription),
         ]);
 
         return { plansData, status, subscription };
@@ -279,31 +417,109 @@ export const PaymentsContextProvider = ({
         api,
         paramCurrency,
         planToCheck: planToCheckParam,
+        availablePlans,
         // paymentFlow,
         // onChargeable,
     }: InitializeProps) => {
         const { plansData, status, subscription } = await preloadPaymentsData({ api });
         const plans = plansData.plans;
 
-        const preferredCurrency = getPreferredCurrency({
+        let preferredCurrency = getPreferredCurrency({
             paramCurrency,
             status,
             plans,
         });
 
+        const availableCurrencies = getAvailableCurrencies({
+            paramCurrency,
+            status,
+            plans,
+        });
+        setAvailableCurrencies(availableCurrencies);
+
+        const billingAddress: BillingAddress = {
+            CountryCode: status.CountryCode,
+            State: status.State,
+        };
+        setBillingAddress(billingAddress);
+
         const paymentsApi = getPaymentsApi(api);
-        setPaymentsApi(paymentsApi);
+        paymentsApiRef.current = paymentsApi;
         // setFacadeParams({ flow: paymentFlow });
         // setOnChargeableCallback(onChargeable);
 
+        const localizedPlansMap = getPreferredPlansMap({
+            currencyFallback: false,
+            getPreferredCurrency,
+            currencyOverrides: { paramCurrency: preferredCurrency },
+            user,
+            status: paymentsStatus,
+            subscription,
+            plans,
+        }).plansMap;
+
         if (planToCheckParam) {
-            await selectNewPlan(
-                {
-                    ...planToCheckParam,
+            try {
+                await selectNewPlan(
+                    {
+                        ...getPlanToCheck({
+                            ...planToCheckParam,
+                            currency: preferredCurrency,
+                        }),
+                        billingAddress,
+                    },
+                    { subscription }
+                );
+            } catch (error) {
+                /**
+                 * Check call can fail if the plan is not available in the preferred currency
+                 * This will fallback to an available currency for the plan
+                 */
+                const plan = getPlanFromPlanIDs(localizedPlansMap, planToCheckParam?.planIDs);
+
+                if (plan) {
+                    preferredCurrency = plan.Currency;
+                    await selectNewPlan(
+                        {
+                            ...getPlanToCheck({
+                                ...planToCheckParam,
+                                currency: preferredCurrency,
+                            }),
+                            billingAddress,
+                        },
+                        { subscription }
+                    );
+                }
+            }
+        }
+
+        const availablePlansWithCurrencyAndAutomaticCoupon = availablePlans
+            ?.map((plan) => ({
+                ...getPlanToCheck({
+                    ...plan,
                     currency: preferredCurrency,
-                },
-                { subscription }
-            );
+                    coupon: planToCheckParam?.coupon,
+                }),
+                billingAddress,
+            }))
+            .filter((plan) => {
+                // There needs to be a coupon for it to be worth to ask the API.
+                const hasCoupon = !!plan.coupon;
+                // With regional currencies, the currency might not exist for that plan. So ignore asking the API in that case.
+                const strictPlan = getPlanFromPlanIDs(localizedPlansMap, plan.planIDs);
+                const hasCurrency = plan.currency === strictPlan?.Currency;
+                return hasCoupon && hasCurrency;
+            });
+
+        if (availablePlansWithCurrencyAndAutomaticCoupon?.length) {
+            await checkMultiplePlans({
+                getLocalizedPlansMap,
+                multiCheckGroups,
+                paymentsApi,
+                subscription,
+                plansToCheck: availablePlansWithCurrencyAndAutomaticCoupon,
+                billingAddress,
+            }).catch(noop);
         }
 
         setInitialized(true);
@@ -340,69 +556,15 @@ export const PaymentsContextProvider = ({
     };
 
     const selectBillingAddress = async (billingAddress: BillingAddress) => {
-        setBillingAddress(billingAddress);
         await selectNewPlan({
             ...planToCheck,
             billingAddress,
         });
     };
 
-    const getLocalizedPlansMap = (planToCheck: PlanToCheck) => {
-        return getPlansMap({
-            paramCurrency: planToCheck.currency,
-        }).plansMap;
-    };
-
-    const getOptimisticCheckResult = (planToCheck: PlanToCheck) => {
-        const plansMap = getLocalizedPlansMap(planToCheck);
-        return innerGetOptimisticCheckResult({ plansMap, ...planToCheck });
-    };
-
-    /**
-     * This is used only for non-critical checks. For example, loading the prices for multiple plans on page loading.
-     * Example: there is a coupon and it needs to be checked with different cycles/plans/currencies, etc.
-     */
-    const checkMultiplePlans = async (plansToCheck: PlanToCheck[]) => {
-        const checkSubscriptionData = plansToCheck
-            .map((planToCheck) => getSubscriptionDataFromPlanToCheck(planToCheck))
-            .map((datum) => (isCheckForbidden(subscription, datum.Plans, datum.Cycle) ? null : datum));
-
-        const indexesToExcludeFromCheck: number[] = [];
-        const truthySubscriptionData = checkSubscriptionData.filter((data, index) => {
-            if (data === null) {
-                indexesToExcludeFromCheck.push(index);
-            }
-
-            return data !== null;
-        });
-
-        const resultsPromise = paymentsApi.multiCheck(truthySubscriptionData, { cached: true, silence: true });
-
-        plansToCheck
-            .map((planToCheck) => planToCheck.groupId)
-            .filter(isTruthy)
-            .forEach((groupId) => multiCheckGroups.addPromiseToGroup(groupId, resultsPromise));
-
-        const results = await resultsPromise;
-        const normalizedResults: EnrichedCheckResponse[] = [];
-
-        let checkedIndex = 0;
-        for (let index = 0; index < plansToCheck.length; index++) {
-            if (indexesToExcludeFromCheck.includes(index)) {
-                const planToCheck = plansToCheck[index];
-                normalizedResults.push(getOptimisticCheckResult(planToCheck));
-            } else {
-                normalizedResults.push(results[checkedIndex]);
-                checkedIndex++;
-            }
-        }
-
-        return normalizedResults;
-    };
-
-    const getFallbackPrice = (planToCheck: PlanToCheck): PricesResult => {
-        const localizedPlansMap = getLocalizedPlansMap(planToCheck);
-        const checkResult = getOptimisticCheckResult(planToCheck);
+    const getFallbackPrice: PaymentsContextTypeInner['getFallbackPrice'] = (planToCheck): PricesResult => {
+        const localizedPlansMap = getLocalizedPlansMap({ paramCurrency: planToCheck.currency });
+        const checkResult = innerGetOptimisticCheckResult({ plansMap: localizedPlansMap, ...planToCheck });
 
         return {
             checkResult,
@@ -410,27 +572,27 @@ export const PaymentsContextProvider = ({
         };
     };
 
-    const getPrice = (planToCheck: PlanToCheck) => {
+    const getPrice: PaymentsContextTypeInner['getPrice'] = (planToCheck) => {
         if (!planToCheck.coupon) {
             return getFallbackPrice(planToCheck);
         }
 
-        const subscriptionData = getSubscriptionDataFromPlanToCheck(planToCheck);
-        const result = paymentsApi.getCachedCheck(subscriptionData);
+        const subscriptionData = getSubscriptionDataFromPlanToCheck(planToCheck, billingAddress);
+        const result = paymentsApiRef.current.getCachedCheck(subscriptionData);
 
         // Cache is missing
         if (!result) {
             return null;
         }
 
-        const localizedPlansMap = getLocalizedPlansMap(planToCheck);
+        const localizedPlansMap = getLocalizedPlansMap({ paramCurrency: planToCheck.currency });
         return {
             checkResult: result,
             uiData: getCheckout({ planIDs: planToCheck.planIDs, plansMap: localizedPlansMap, checkResult: result }),
         };
     };
 
-    const getPriceOrFallback = (planToCheck: PlanToCheck) => {
+    const getPriceOrFallback: PaymentsContextTypeInner['getPriceOrFallback'] = (planToCheck) => {
         const price = getPrice(planToCheck);
         if (!price) {
             return getFallbackPrice(planToCheck);
@@ -439,8 +601,28 @@ export const PaymentsContextProvider = ({
         return price;
     };
 
+    const getCoupon: PaymentsContextTypeInner['getCoupon'] = (planToCheck) => {
+        const result = paymentsApiRef.current.getCachedCheckByPlans(planToCheck.planIDs);
+        return result.find((value) => {
+            return (
+                Boolean(value.Coupon?.Code) &&
+                value.Currency === planToCheck.currency &&
+                value.Cycle === planToCheck.cycle
+            );
+        })?.Coupon?.Code;
+    };
+
     const isGroupLoading = multiCheckGroups.isGroupLoading;
     const isGroupChecked = multiCheckGroups.isGroupChecked;
+
+    const plansMap = getLocalizedPlansMap({ paramCurrency: planToCheck.currency });
+
+    const selectedPlan = new SelectedPlan(planToCheck.planIDs, plansMap, planToCheck.cycle, planToCheck.currency);
+
+    const getOptimisticCheckResult: PaymentsContextTypeInner['getOptimisticCheckResult'] = (planToCheck) => {
+        const plansMap = getLocalizedPlansMap({ paramCurrency: planToCheck.currency });
+        return innerGetOptimisticCheckResult({ plansMap, ...planToCheck });
+    };
 
     const value: PaymentsContextTypeInner = {
         createSubscription: async () => {},
@@ -448,23 +630,56 @@ export const PaymentsContextProvider = ({
         initialized,
         selectPlanIDs,
         selectCycle,
+        selectedPlan,
+        availableCurrencies,
+        getAvailableCurrencies: (selectedPlanName: PLANS) =>
+            getAvailableCurrencies({
+                selectedPlanName,
+                status: paymentsStatus,
+                user,
+                subscription,
+                plans,
+                paramCurrency: selectedPlan.currency,
+            }),
+
+        getPreferredCurrency: (selectedPlanName: PLANS) =>
+            getPreferredCurrency({
+                paramPlanName: selectedPlanName,
+                status: paymentsStatus,
+                user,
+                subscription,
+                plans,
+            }),
         currency: selectedPlan.currency,
+        selectNewPlan,
         selectCurrency,
         selectBillingAddress,
-        checkMultiplePlans,
+        checkMultiplePlans: (plansToCheck) => {
+            return checkMultiplePlans({
+                getLocalizedPlansMap,
+                multiCheckGroups,
+                paymentsApi: paymentsApiRef.current,
+                subscription,
+                plansToCheck,
+                billingAddress,
+            });
+        },
         plans,
-        plansMap: defaultPlansMap,
+        freePlan: plansData.freePlan,
+        plansMap,
         getPrice,
         getFallbackPrice,
         getPriceOrFallback,
+        getOptimisticCheckResult,
+        getCoupon,
         checkResult,
         // paymentFacade,
         billingAddress,
         uiData: {
-            checkout: getCheckout({ planIDs: checkResult.requestData.Plans, plansMap: defaultPlansMap, checkResult }),
+            checkout: getCheckout({ planIDs: checkResult.requestData.Plans, plansMap, checkResult }),
         },
         paymentsStatus,
-        paymentsApi,
+        paymentsApi: paymentsApiRef.current,
         hasEssentialData,
         isGroupLoading,
         isGroupChecked,
