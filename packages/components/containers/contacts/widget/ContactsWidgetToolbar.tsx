@@ -3,8 +3,7 @@ import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
@@ -157,6 +156,7 @@ const ContactsWidgetToolbar = ({
                             title={c('Action').t`More actions`}
                             data-testid="contacts:more-actions"
                             ref={anchorRef}
+                            aria-expanded={isOpen}
                         >
                             <Icon name="three-dots-horizontal" alt={c('Action').t`More actions`} />
                         </DropdownButton>
