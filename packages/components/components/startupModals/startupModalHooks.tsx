@@ -1,4 +1,5 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import LightLabellingFeatureModal from '@proton/components/containers/organization/logoUpload/LightLabellingFeatureModal';
 import { useShowLightLabellingFeatureModal } from '@proton/components/containers/organization/logoUpload/useShowLightLabellingFeatureModal';
@@ -6,8 +7,10 @@ import CancellationReminderModal from '@proton/components/containers/payments/su
 import type { ReminderFlag } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
 import { shouldOpenReminderModal } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
 import { getShouldOpenReferralModal } from '@proton/components/containers/referral/modals/helper';
+import TrialEndedModal from '@proton/components/containers/subscription/TrialEndedModal';
 import { FeatureCode, useFeature } from '@proton/features';
 import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/index';
 
 import type { StartupModal } from './types';
 
@@ -52,5 +55,22 @@ export const useCancellationReminderModal: () => StartupModal = () => {
         showModal: showReminderModal,
         activateModal: () => setModal(true),
         component: renderModal ? <CancellationReminderModal {...modal} /> : null,
+    };
+};
+
+export const useTrialEndedModal: () => StartupModal = () => {
+    const [modal, setModal, renderModal] = useModalState();
+
+    const [userSettings] = useUserSettings();
+
+    const isEnabled = useFlag('ManualTrialsFE');
+    const displayTrialEndModal = !!userSettings?.Flags?.DisplayTrialEndModal;
+
+    const showModal = isEnabled && displayTrialEndModal;
+
+    return {
+        showModal,
+        activateModal: () => setModal(true),
+        component: renderModal ? <TrialEndedModal {...modal} /> : null,
     };
 };
