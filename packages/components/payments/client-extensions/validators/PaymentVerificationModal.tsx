@@ -28,7 +28,7 @@ export interface PromiseWithController {
 export interface Props {
     onSubmit: () => void;
     onClose: () => void;
-    payment?: CardPayment | {};
+    payment?: CardPayment;
     isAddCard?: boolean;
     type?: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT | PAYMENT_METHOD_TYPES.CARD;
     onProcess: () => PromiseWithController;
@@ -38,7 +38,7 @@ export interface Props {
 
 const PaymentVerificationModal = ({
     onSubmit,
-    payment = {},
+    payment,
     isAddCard,
     type = PAYMENT_METHOD_TYPES.CARD,
     onProcess,

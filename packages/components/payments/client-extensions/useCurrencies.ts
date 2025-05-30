@@ -1,3 +1,5 @@
+import { useCallback } from 'react';
+
 import { getAvailableCurrencies, getPreferredCurrency } from '@proton/payments';
 import { NEW_BATCH_CURRENCIES_FEATURE_FLAG } from '@proton/payments';
 import { useGetFlag } from '@proton/unleash';
@@ -20,16 +22,22 @@ export const useCurrencies = () => {
     const getFlag = useGetFlag();
 
     return {
-        getPreferredCurrency: (params: GetPreferredCurrencyParamsHook) =>
-            getPreferredCurrency({
-                ...params,
-                enableNewBatchCurrencies: getIsNewBatchCurrenciesEnabled(getFlag),
-            }),
+        getPreferredCurrency: useCallback(
+            (params: GetPreferredCurrencyParamsHook) =>
+                getPreferredCurrency({
+                    ...params,
+                    enableNewBatchCurrencies: getIsNewBatchCurrenciesEnabled(getFlag),
+                }),
+            []
+        ),
 
-        getAvailableCurrencies: (params: GetAvailableCurrenciesParamsHook) =>
-            getAvailableCurrencies({
-                ...params,
-                enableNewBatchCurrencies: getIsNewBatchCurrenciesEnabled(getFlag),
-            }),
+        getAvailableCurrencies: useCallback(
+            (params: GetAvailableCurrenciesParamsHook) =>
+                getAvailableCurrencies({
+                    ...params,
+                    enableNewBatchCurrencies: getIsNewBatchCurrenciesEnabled(getFlag),
+                }),
+            []
+        ),
     };
 };
