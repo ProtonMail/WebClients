@@ -1,7 +1,7 @@
-import { ForkOptions, fork } from 'child_process';
+import { type ForkOptions, fork } from 'child_process';
 import path from 'path';
 
-import { HrefLang, LocalizedPage } from './interface';
+import type { HrefLang, LocalizedPage } from './interface';
 
 export const getPages = async (): Promise<{ hreflangs: HrefLang[]; pages: LocalizedPage[] }> => {
     const program = path.resolve(

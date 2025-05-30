@@ -185,6 +185,12 @@ export interface UserCacheResult {
     session: SessionData;
 }
 
+export interface HumanVerificationResult {
+    tokenType: HumanVerificationMethodType;
+    token: string;
+    verificationModel?: VerificationModel;
+}
+
 export interface SignupCacheResult {
     type: 'signup';
     appIntent?: AppIntent;
@@ -205,11 +211,7 @@ export interface SignupCacheResult {
     ignoreExplore: boolean;
     humanVerificationInline?: boolean;
     humanVerificationData?: HumanVerificationData;
-    humanVerificationResult?: {
-        tokenType: HumanVerificationMethodType;
-        token: string;
-        verificationModel?: VerificationModel;
-    };
+    humanVerificationResult?: HumanVerificationResult;
 }
 
 export interface SignupActionContinueResponse {

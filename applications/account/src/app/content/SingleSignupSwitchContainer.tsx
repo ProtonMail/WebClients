@@ -9,6 +9,7 @@ import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import SignupContainer from '../signup/SignupContainer';
 import { isMailReferAFriendSignup } from '../signup/helper';
 import { getSignupMeta } from '../signup/signupPagesJson';
+import SignupCtxRouter from '../signupCtx/SignupCtxRouter';
 import SingleSignupContainerV2 from '../single-signup-v2/SingleSignupContainerV2';
 import type { MetaTags } from '../useMetaTags';
 import type { Paths } from './helper';
@@ -41,6 +42,7 @@ const SingleSignupSwitchContainer = ({
     productParam,
     toAppName,
     clientType,
+    searchParams,
     activeSessions,
     onGetActiveSessions,
     fork,
@@ -55,6 +57,22 @@ const SingleSignupSwitchContainer = ({
     const isMailRefer = isMailReferAFriendSignup(location);
 
     // Ignore mail refer until we're sure it's been tested on sps
+
+    const renderContextSignup = searchParams.get('mode') === 'ctx';
+
+    if (renderContextSignup) {
+        return (
+            <UnAuthenticated>
+                <SignupCtxRouter
+                    onPreSubmit={onPreSubmit}
+                    onStartAuth={onStartAuth}
+                    loginUrl={paths.login}
+                    productParam={productParam}
+                />
+            </UnAuthenticated>
+        );
+    }
+
     if (isMailRefer) {
         return (
             <UnAuthenticated>
