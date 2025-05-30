@@ -231,7 +231,7 @@ const AttachmentList = ({
                 </TagButton>
                 {canShowDownloadAll && (
                     <div className="shrink-0">
-                        <Tooltip title={c('Download attachments').t`Download all`} originalPlacement="top">
+                        <Tooltip title={c('Action').t`Download all attachments`} originalPlacement="top">
                             <Button
                                 icon
                                 color="weak"
@@ -243,7 +243,7 @@ const AttachmentList = ({
                                 size="small"
                                 data-testid="attachment-list:download-all"
                             >
-                                <Icon name="arrow-down-line" alt={c('Download attachments').t`Download all`} />
+                                <Icon name="arrow-down-line" alt={c('Action').t`Download all attachments`} />
                             </Button>
                         </Tooltip>
                     </div>
