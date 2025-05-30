@@ -40,7 +40,8 @@ interface SharedServersModalProps extends ModalProps {
 
 const SharedServersModal = ({ policy, isEditing = false, soloStep, onSuccess, ...rest }: SharedServersModalProps) => {
     const { createNotification } = useNotifications();
-    const { locations, users, groups, translations } = useSharedServers(10 * MINUTE);
+    const { locations, users, groups, translations, loading } = useSharedServers(10 * MINUTE);
+
     const [userSettings] = useUserSettings();
     const countryOptions = getCountryOptions(userSettings);
     const [discardModal, showDiscardModal] = useModalTwoStatic(DiscardModal);
@@ -69,7 +70,7 @@ const SharedServersModal = ({ policy, isEditing = false, soloStep, onSuccess, ..
     }, [isEditing, policy]);
 
     const groupedLocations = useMemo(
-        () => getGroupedLocations(locations, countryOptions, translations.result?.Cities!),
+        () => getGroupedLocations(locations, countryOptions, translations.cities),
         [locations, countryOptions]
     );
 
@@ -200,6 +201,7 @@ const SharedServersModal = ({ policy, isEditing = false, soloStep, onSuccess, ..
 
                 {step === POLICY_STEP.MEMBERS && (
                     <MembersStep
+                        loading={loading}
                         isEditing={isEditing as boolean}
                         policyName={policyName}
                         users={users}
@@ -239,6 +241,7 @@ const SharedServersModal = ({ policy, isEditing = false, soloStep, onSuccess, ..
 
                 {step === POLICY_STEP.COUNTRIES && (
                     <CountriesStep
+                        loading={loading}
                         isEditing={isEditing as boolean}
                         policyName={policyName}
                         groupedLocations={groupedLocations}

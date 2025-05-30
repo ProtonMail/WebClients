@@ -4,7 +4,7 @@ export const queryLocationFilter = () => ({
 });
 
 export interface SharedServerLocation {
-    /** Country code */
+    /** ISO 3166-1 alpha-2 Country Code, e.g. US, FR */
     Country: string;
     City: string;
 }
@@ -30,7 +30,12 @@ export const createLocationFilter = (payload: CreateLocationFilterPayload) => ({
 });
 
 export interface CountryCitiesTranslations {
-    [/** english */ city: /** translation */ string]: string | null;
+    [/** english */ city: string]: /** translation */ string | null;
+}
+
+/** When a translation is missing, the value defaults to english. */
+export interface CountryCitiesTranslationsNonNull {
+    [/** english */ city: string]: /** translation */ string;
 }
 
 export interface CitiesTranslations {
@@ -40,6 +45,7 @@ export interface CitiesTranslations {
 export interface CitiesTranslationsApiResponse {
     Cities: CitiesTranslations;
     Code: number;
+    /** ISO 639-1:2002 Language Code, e.g. en, fr */
     Language: string;
 }
 

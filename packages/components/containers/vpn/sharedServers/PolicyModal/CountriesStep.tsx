@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Input } from '@proton/atoms';
+import { CircleLoader, Input } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Table from '@proton/components/components/table/Table';
@@ -15,6 +15,7 @@ import clsx from '@proton/utils/clsx';
 import type { GroupedLocation } from './getGroupedLocations';
 
 interface SharedServersCountriesStepProps {
+    loading?: boolean;
     isEditing: boolean;
     policyName: string;
     groupedLocations: GroupedLocation[];
@@ -25,6 +26,7 @@ interface SharedServersCountriesStepProps {
 }
 
 const CountriesStep = ({
+    loading,
     isEditing,
     policyName,
     groupedLocations,
@@ -108,6 +110,11 @@ const CountriesStep = ({
                             </div>
                         </TableCell>
                     </TableRow>
+                    {loading && (
+                        <div className="flex flex-nowrap">
+                            <CircleLoader />
+                        </div>
+                    )}
                     {filteredGroups.map(({ country, localizedCountryName, cities, localizedCities }) => {
                         const selectedCount = selectedCities[country]?.length ?? 0;
                         const isAllCitiesSelected = selectedCount === cities.length;
