@@ -35,6 +35,7 @@ interface Props {
     openEmojiPicker: () => void;
     dropzone?: DropzoneContentProps;
     onAddAttachments?: (files: File[]) => void;
+    title?: string;
 }
 
 const RoosterEditor = ({
@@ -53,6 +54,7 @@ const RoosterEditor = ({
     openEmojiPicker,
     dropzone,
     onAddAttachments,
+    title = c('Title').t`Email composer`,
 }: Props) => {
     const iframeRef = useRef<HTMLIFrameElement>(null);
 
@@ -94,9 +96,8 @@ const RoosterEditor = ({
             >
                 <iframe
                     ref={iframeRef}
-                    title={c('Title').t`Email composer`}
-                    frameBorder="0"
-                    className="w-full h-full flex-1"
+                    title={title}
+                    className="w-full h-full flex-1 border-none"
                     data-testid="rooster-iframe"
                 />
             </div>
