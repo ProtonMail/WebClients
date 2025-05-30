@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Href } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
@@ -24,12 +24,14 @@ import { useLoading } from '@proton/hooks';
 import { getBreaches, updateBreachEmailNotificationsState, updateBreachState } from '@proton/shared/lib/api/breaches';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { disableBreachAlert, enableBreachAlert } from '@proton/shared/lib/api/settings';
+import { TelemetryDWMUpsellModal, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
     DARK_WEB_MONITORING_NAME,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import {
     DARK_WEB_MONITORING_ELIGIBILITY_STATE,
@@ -100,12 +102,22 @@ const CredentialLeakSection = () => {
         BreachAlerts.EmailNotifications === DARK_WEB_MONITORING_EMAILS_STATE.ENABLED
     );
     const isPaidUser = user.isPaid || user.hasPassLifetime;
+    const DWMCampaign = useFlag('DwmTrialFree2025');
+    const isCampaignUser = !isPaidUser && DWMCampaign && (total ?? 0) > 0;
+
+    const sendDWMUpsellTelemetry = (event: TelemetryDWMUpsellModal) => {
+        void sendTelemetryReport({
+            api,
+            measurementGroup: TelemetryMeasurementGroups.securityCenter,
+            event,
+            delay: false,
+        }).catch(noop);
+    };
 
     useEffect(() => {
         const fetchLeakData = async () => {
             try {
                 const { Breaches, Samples, IsEligible, Count } = await api(getBreaches());
-
                 if (IsEligible) {
                     const breaches = toCamelCase(Breaches);
                     actions.load(breaches);
@@ -273,8 +285,7 @@ const CredentialLeakSection = () => {
                     if (loading) {
                         return <Loader size="medium" />;
                     }
-
-                    if (!isPaidUser) {
+                    if (!isPaidUser && !isCampaignUser) {
                         return (
                             <div className="flex flex-nowrap">
                                 <div className="flex-1">
@@ -314,7 +325,10 @@ const CredentialLeakSection = () => {
                                                 id="data-breach-toggle"
                                                 disabled={false}
                                                 checked={false}
-                                                onClick={() => dwmUpsellModal.openModal(true)}
+                                                onClick={() => {
+                                                    sendDWMUpsellTelemetry(TelemetryDWMUpsellModal.openModal);
+                                                    dwmUpsellModal.openModal(true);
+                                                }}
                                             />
                                         </SettingsLayoutRight>
                                     </SettingsLayout>
@@ -336,19 +350,39 @@ const CredentialLeakSection = () => {
                         <>
                             {breachAlertIntroText}
                             {breachAlertInfoSharing}
-                            <BreachMonitoringToggle
-                                enabled={hasAlertsEnabled}
-                                loading={toggleLoading}
-                                onToggle={handleEnableBreachAlertToggle}
-                            />
-                            {canDisplayDWMEmailToggle && (
+                            {!isCampaignUser && (
+                                <BreachMonitoringToggle
+                                    enabled={hasAlertsEnabled}
+                                    loading={toggleLoading}
+                                    onToggle={handleEnableBreachAlertToggle}
+                                />
+                            )}
+                            {canDisplayDWMEmailToggle && !isCampaignUser && (
                                 <BreachEmailToggle
                                     enabled={hasEmailsEnabled}
                                     loading={emailToggleLoading}
                                     onToggle={handleEmailNotificationsToggle}
                                 />
                             )}
-                            {hasAlertsEnabled &&
+                            {isCampaignUser && (
+                                <div className="flex items-center border border-solid border-weak rounded py-1 mb-4 max-w-custom color-weak">
+                                    <Icon name="info-circle" className="ml-2 mr-2 color-primary " />
+                                    <span className="flex-1">
+                                        {c('Info')
+                                            .t`Your trial ends on June 19. Upgrade to receive future breach reports.`}
+                                    </span>
+                                    <Button
+                                        className="ml-0 mr-2 py-1"
+                                        onClick={() => {
+                                            sendDWMUpsellTelemetry(TelemetryDWMUpsellModal.openModalCampaign);
+                                            dwmUpsellModal.openModal(true);
+                                        }}
+                                    >
+                                        {c('Action').t`Upgrade`}
+                                    </Button>
+                                </div>
+                            )}
+                            {(hasAlertsEnabled || isCampaignUser) &&
                                 (total === 0 ? (
                                     <NoBreachesView />
                                 ) : (
@@ -366,7 +400,7 @@ const CredentialLeakSection = () => {
                                                     setHasBeenInteractedWith(true);
                                                 }
                                             }}
-                                            isPaidUser={isPaidUser}
+                                            isPaidUser={isPaidUser || isCampaignUser}
                                             total={total}
                                             type={listType}
                                             onViewTypeChange={setListType}
@@ -424,7 +458,10 @@ const CredentialLeakSection = () => {
                     modalProps={dwmUpsellModal.modalProps}
                     upsellApp={APP_UPSELL_REF_PATH.ACCOUNT_UPSELL_REF_PATH}
                     upsellComponent={UPSELL_COMPONENT.TOGGLE}
-                    onSubscribed={() => handleEnableBreachAlertToggle(true)}
+                    onSubscribed={() => {
+                        sendDWMUpsellTelemetry(TelemetryDWMUpsellModal.upsell);
+                    }}
+                    onClose={() => sendDWMUpsellTelemetry(TelemetryDWMUpsellModal.closeModal)}
                 />
             )}
         </>
