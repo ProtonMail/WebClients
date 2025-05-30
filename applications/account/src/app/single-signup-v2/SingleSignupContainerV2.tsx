@@ -65,6 +65,7 @@ import noop from '@proton/utils/noop';
 import mailReferPage from '../../pages/refer-a-friend';
 import { PublicThemeProvider, getPublicTheme } from '../containers/PublicThemeProvider';
 import type { Paths } from '../content/helper';
+import { cachedPlans, cachedPlansMap } from '../defaultPlans';
 import { getOptimisticDomains, isMailReferAFriendSignup, isPorkbunSignup } from '../signup/helper';
 import type {
     InviteData,
@@ -94,7 +95,6 @@ import Step1 from './Step1';
 import Step2 from './Step2';
 import SwitchModal from './SwitchModal';
 import { defaultSignupModel } from './constants';
-import { cachedPlans, cachedPlansMap } from './defaultPlans';
 import { getSessionsData } from './getSessionsData';
 import {
     getAccessiblePlans,
@@ -1597,4 +1597,5 @@ const SingleSignupContainerV2 = ({
         </PublicThemeProvider>
     );
 };
+
 export default SingleSignupContainerV2;

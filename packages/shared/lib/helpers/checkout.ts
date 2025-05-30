@@ -282,6 +282,7 @@ export const getCheckout = ({
         currency: checkResult.Currency,
         withDiscountMembersPerMonth,
         withDiscountOneMemberPerMonth,
+        cycle,
     };
 };
 

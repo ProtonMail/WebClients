@@ -140,6 +140,7 @@ describe('should get checkout result', () => {
             currency: 'USD',
             withDiscountMembersPerMonth: 999,
             withDiscountOneMemberPerMonth: 999,
+            cycle: CYCLE.MONTHLY,
         });
     });
 
@@ -201,6 +202,7 @@ describe('should get checkout result', () => {
             currency: 'USD',
             withDiscountMembersPerMonth: 1199,
             withDiscountOneMemberPerMonth: 1199,
+            cycle: CYCLE.MONTHLY,
         });
     });
 
@@ -260,6 +262,7 @@ describe('should get checkout result', () => {
             currency: 'USD',
             withDiscountMembersPerMonth: 799,
             withDiscountOneMemberPerMonth: 799,
+            cycle: CYCLE.MONTHLY,
         });
     });
 
@@ -306,6 +309,7 @@ describe('should get checkout result', () => {
             currency: 'USD',
             withDiscountMembersPerMonth: 1800,
             withDiscountOneMemberPerMonth: 1800,
+            cycle: CYCLE.TWO_YEARS,
         });
     });
 
@@ -353,6 +357,7 @@ describe('should get checkout result', () => {
             currency: 'USD',
             withDiscountMembersPerMonth: 399.2,
             withDiscountOneMemberPerMonth: 399.2,
+            cycle: CYCLE.THIRTY,
         };
 
         // Use toBeCloseTo for the floating point value
@@ -429,6 +434,7 @@ describe('should get checkout result', () => {
             currency: 'USD',
             withDiscountMembersPerMonth: 2997,
             withDiscountOneMemberPerMonth: 999,
+            cycle: CYCLE.TWO_YEARS,
         });
     });
 
@@ -482,6 +488,7 @@ describe('should get checkout result', () => {
             currency: 'USD',
             withDiscountMembersPerMonth: twoYearPrice3Members / 24,
             withDiscountOneMemberPerMonth: 599,
+            cycle: CYCLE.TWO_YEARS,
         });
     });
 
@@ -543,6 +550,7 @@ describe('should get checkout result', () => {
             currency: 'USD',
             withDiscountMembersPerMonth: 3596,
             withDiscountOneMemberPerMonth: 899,
+            cycle: CYCLE.TWO_YEARS,
         });
     });
 
@@ -591,6 +599,7 @@ describe('should get checkout result', () => {
             currency: 'USD',
             withDiscountMembersPerMonth: 0,
             withDiscountOneMemberPerMonth: 0,
+            cycle: CYCLE.TWO_YEARS,
         });
     });
 });

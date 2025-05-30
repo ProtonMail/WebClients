@@ -101,7 +101,7 @@ export const isValid = (card: CardModel) => !Object.keys(getErrors(card)).length
 /**
  * Check if card is expired at the end of current month
  */
-export function isExpired(cardDetails: CreateCardDetailsBackend | unknown): boolean {
+export function isExpired(cardDetails: Parameters<typeof isSavedCardDetails>[0]): boolean {
     if (!isSavedCardDetails(cardDetails)) {
         return false;
     }

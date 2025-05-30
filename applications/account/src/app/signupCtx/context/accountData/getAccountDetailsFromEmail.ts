@@ -1,6 +1,6 @@
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 
-import { SignupType } from '../signup/interfaces';
+import { SignupType } from '../../../signup/interfaces';
 
 export const getAccountDetailsFromEmail = ({
     email,
