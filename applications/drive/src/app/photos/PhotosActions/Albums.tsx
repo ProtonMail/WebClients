@@ -25,6 +25,7 @@ import { useErrorHandler } from '../../store/_utils';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
+import { safeWrap } from '../../utils/safeWrap';
 import type { PhotosLayoutOutletContext } from '../PhotosWithAlbums/layout/PhotosLayout';
 
 function useAlbumsActions() {
@@ -247,14 +248,12 @@ export const useCreateAlbum = () => {
             try {
                 const id = await createAlbum(abortSignal, volumeId, shareId, linkId, name);
                 createNotification({
-                    text: <span className="text-pre-wrap">{c('Notification').t`"${name}" created successfully`}</span>,
+                    text: c('Notification').t`"${name}" created successfully`,
+                    preWrap: true,
                 });
                 return id;
             } catch (e) {
-                showErrorNotification(
-                    e,
-                    <span className="text-pre-wrap">{c('Notification').t`"${name}" failed to be created`}</span>
-                );
+                showErrorNotification(e, safeWrap(c('Notification').t`"${name}" failed to be created`));
                 throw e;
             }
         },

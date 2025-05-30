@@ -145,6 +145,7 @@ export const AlbumsView: FC = () => {
                 const albumName = album.name;
                 createNotification({
                     text: c('Info').t`${albumName} has been successfully deleted`,
+                    preWrap: true,
                 });
             } catch (e) {
                 const error = e as {
