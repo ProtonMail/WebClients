@@ -62,6 +62,7 @@ function createNotificationManager(
         expiration = NOTIFICATION_DEFAULT_EXPIRATION_TIME,
         type = 'success',
         text,
+        preWrap,
         showCloseButton = true,
         icon = type === 'warning' || type === 'error' ? 'exclamation-triangle-filled' : undefined,
         deduplicate = true,
@@ -98,7 +99,11 @@ function createNotificationManager(
                     }
                 });
                 expiration = Math.max(NOTIFICATION_DEFAULT_EXPIRATION_TIME, expiration);
-                text = <div dangerouslySetInnerHTML={{ __html: sanitizedElement.innerHTML }} />;
+                if (preWrap) {
+                    text = <span className="text-pre-wrap">{sanitizedElement.innerHTML}</span>;
+                } else {
+                    text = <div dangerouslySetInnerHTML={{ __html: sanitizedElement.innerHTML }} />;
+                }
             }
         }
 
