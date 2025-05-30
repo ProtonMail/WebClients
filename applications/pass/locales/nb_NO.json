@@ -674,6 +674,15 @@
       ],
       "Your password manager is not here? Request it.": [
         "Passordbehandleren din er ikke her? Be om den."
+      ],
+      "Next month": [
+        "Neste måned"
+      ],
+      "Previous month": [
+        "Forrige måned"
+      ],
+      "Start from scratch": [
+        "Start fra begynnelsen"
       ]
     },
     "Browser": {
@@ -2408,6 +2417,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisasjonen krever at du sikrer tilgangen til ${ PASS_APP_NAME }"
+      ],
+      "Week": [
+        "Uke"
       ]
     },
     "Label": {
@@ -3345,6 +3357,195 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "Account Number": [
+        "Kontonummer"
+      ],
+      "Account Type": [
+        "Kontotype"
+      ],
+      "Address": [
+        "Adresse"
+      ],
+      "API Credential": [
+        "API-identifikator"
+      ],
+      "API Key": [
+        "API-nøkkel"
+      ],
+      "Bank Account": [
+        "Bankkonto"
+      ],
+      "Bank Name": [
+        "Banknavn"
+      ],
+      "Country,": [
+        "Land,"
+      ],
+      "Create a custom item": [
+        "Opprett et tilpasset element"
+      ],
+      "Crypto Wallet": [
+        "Krypto-wallet"
+      ],
+      "Custom Items": [
+        "Tilpassede elementer"
+      ],
+      "Database": [
+        "Database"
+      ],
+      "Database Type": [
+        "Databasetype"
+      ],
+      "Date of Birth": [
+        "Fødselsdato"
+      ],
+      "Driver License": [
+        "Førerkort"
+      ],
+      "Expiry Date": [
+        "Utløpsdato"
+      ],
+      "Finance": [
+        "Finans"
+      ],
+      "Holder Name": [
+        "Navn på innehaveren"
+      ],
+      "Host": [
+        "Vert"
+      ],
+      "Hostname": [
+        "Vertsnavn"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "IP Address": [
+        "IP-adresse"
+      ],
+      "Issuing Authority": [
+        "Utstedende myndighet"
+      ],
+      "Issuing Country": [
+        "Utstedende land"
+      ],
+      "License Key": [
+        "Lisensnøkkel"
+      ],
+      "Medical Record": [
+        "Medisinsk journal"
+      ],
+      "Member ID": [
+        "Medlems-ID"
+      ],
+      "Membership": [
+        "Medlemskap"
+      ],
+      "More": [
+        "Mer"
+      ],
+      "Name (SSID)": [
+        "Navn (SSID)"
+      ],
+      "Network": [
+        "Nettverk"
+      ],
+      "Operating System": [
+        "Operativsystem"
+      ],
+      "Owner": [
+        "Eier"
+      ],
+      "Passport Number": [
+        "Passnummer"
+      ],
+      "Permissions": [
+        "Tillatelser"
+      ],
+      "Personal": [
+        "Personlig"
+      ],
+      "Points Balance": [
+        "Poengsaldo"
+      ],
+      "Port": [
+        "Port"
+      ],
+      "Private Key": [
+        "Privat nøkkel"
+      ],
+      "Private key": [
+        "Privat nøkkel"
+      ],
+      "Product": [
+        "Produkt"
+      ],
+      "Program Name": [
+        "Programnavn"
+      ],
+      "Public key": [
+        "Offentlig nøkkel"
+      ],
+      "Reward Program": [
+        "Belønningsprogram"
+      ],
+      "Routing Number": [
+        "Rutenummer"
+      ],
+      "Secret": [
+        "Hemmelighet"
+      ],
+      "Seed Phrase": [
+        "Gjenopprettingsfrase"
+      ],
+      "Server": [
+        "Tjener"
+      ],
+      "Social Security": [
+        "Trygd"
+      ],
+      "Software license": [
+        "Programvarelisens"
+      ],
+      "SSH key": [
+        "SSH-nøkkel"
+      ],
+      "SSH Keys": [
+        "SSH-nøkler"
+      ],
+      "SSN": [
+        "Fødselsnummer"
+      ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
+      "Technology": [
+        "Teknologi"
+      ],
+      "Tier/Status": [
+        "Nivå/status"
+      ],
+      "Unnamed custom item": [
+        "Tilpasset element uten navn"
+      ],
+      "Unnamed SSH key": [
+        "SSH-nøkkel uten navn"
+      ],
+      "Unnamed WiFi item": [
+        "Ikke navngitt WiFi-element"
+      ],
+      "Unspecified": [
+        "Uspesifisert"
+      ],
+      "Wallet Name": [
+        "Navn på lommebok"
+      ],
+      "WiFi network": [
+        "WiFi-nettverk"
+      ],
+      "WiFi Networks": [
+        "WiFi-nettverk"
       ]
     },
     "Link": {
@@ -3635,6 +3836,18 @@
       ],
       "Write your note": [
         "Skriv notatet ditt"
+      ],
+      "Add date": [
+        "Legg til dato"
+      ],
+      "E.g., ": [
+        "F.eks. "
+      ],
+      "Name displayed in emails": [
+        "Navn vist i meldinger"
+      ],
+      "Select option": [
+        "Velg alternativ"
       ]
     },
     "Security Center - Info": {
@@ -4263,6 +4476,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er i ferd med å slette permanent ${ aliasCount } alias.",
         "Du er i ferd med å slette permanent ${ aliasCount } aliaser."
+      ],
+      "Minicalendar": [
+        "Minikalender"
       ]
     },
     "Tooltip": {
@@ -4590,6 +4806,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonnementet ditt lar deg ikke opprette flere hvelv. Alle elementer vil bli importert til ditt første hvelv. Hvis du vil importere til flere hvelv, oppgraderer du abonnementet."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "I dag"
       ]
     }
   }

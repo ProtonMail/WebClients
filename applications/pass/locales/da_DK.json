@@ -668,6 +668,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Er din adgangskodeadministrator her ikke? Anmod om den."
+      ],
+      "Next month": [
+        "Næste måned"
+      ],
+      "Previous month": [
+        "Forrige måned"
       ]
     },
     "Browser": {
@@ -2348,6 +2354,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kræver, at du sikrer din adgang til ${ PASS_APP_NAME }"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Se hvad du skal gøre her ${ dataLeakedLink }"
+      ],
+      "Week": [
+        "Uge"
       ]
     },
     "Label": {
@@ -3255,6 +3267,15 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "Address": [
+        "Adresse"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Port": [
+        "Port"
       ]
     },
     "Link": {
@@ -3263,6 +3284,9 @@
       ],
       "Learn more": [
         "Få mere at vide"
+      ],
+      "if your data is leaked": [
+        "hvis dine data er lækket"
       ]
     },
     "Log preference": {
@@ -3512,6 +3536,9 @@
       ],
       "Write your note": [
         "Skriv din note"
+      ],
+      "E.g., ": [
+        "F.eks., "
       ]
     },
     "Security Center - Info": {
@@ -4116,6 +4143,12 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er ved at slette ${ aliasCount } alias permanent.",
         "Du er ved at slette ${ aliasCount } aliasser permanent."
+      ],
+      "Information exposed in breach": [
+        "Information afsløret i en datalækage"
+      ],
+      "Minicalendar": [
+        "Minikalender"
       ]
     },
     "Validation": {
@@ -4426,6 +4459,16 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din første boks. For at importere til flere bokse skal du opgradere dit abonnement."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "I dag"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Ikke alle oplysninger på listen blev afsløret for alle brugere"
       ]
     }
   }

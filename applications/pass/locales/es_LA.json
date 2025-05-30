@@ -664,7 +664,7 @@
         "Mostrar el historial del elemento"
       ],
       "View older history": [
-        "Mostrar historial más antiguo"
+        "Mostrar el historial más antiguo"
       ],
       "With other ${ BRAND_NAME } users": [
         "Con otros usuarios de ${ BRAND_NAME }"
@@ -674,6 +674,15 @@
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece su gestor de contraseñas? Solicítelo."
+      ],
+      "Next month": [
+        "Mes siguiente"
+      ],
+      "Previous month": [
+        "Mes anterior"
+      ],
+      "Start from scratch": [
+        "Empezar desde cero"
       ]
     },
     "anniversary_2025": {
@@ -2331,7 +2340,7 @@
         "Para verificar los datos importados, pulse el ícono de ${ PASS_APP_NAME } en la barra de herramientas del navegador."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
-        "De confianza para más de 50,000 usuarios empresariales y 100 millones de cuentas en todo el mundo."
+        "Con la confianza de más de 50,000 empresas y 100 millones de cuentas en todo el mundo."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Pruebe las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
@@ -2507,6 +2516,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Su organización requiere que asegure su acceso a ${ PASS_APP_NAME }"
+      ],
+      "Week": [
+        "Semana"
       ]
     },
     "Label": {
@@ -2834,7 +2846,7 @@
         "Exportar"
       ],
       "Extra email addresses": [
-        " Direcciones de correo adicionales"
+        "Direcciones de correo adicionales"
       ],
       "Extra password": [
         "Contraseña adicional"
@@ -2870,7 +2882,7 @@
         "Reenvía a"
       ],
       "Free": [
-        "Free"
+        "Gratuito"
       ],
       "Free forever": [
         "Gratis para siempre"
@@ -3338,7 +3350,7 @@
         "Unlimited"
       ],
       "Unlock premium features": [
-        "Desbloquear funciones prémium"
+        "Desbloquear funciones premium"
       ],
       "Unlock with": [
         "Desbloquear con"
@@ -3380,7 +3392,7 @@
         "ID de bóveda"
       ],
       "Vault, item & link sharing": [
-        "Compartir bóveda, elemento y enlace"
+        "Uso compartido de bóveda, elemento y enlace"
       ],
       "Vaults": [
         "Bóvedas"
@@ -3444,6 +3456,195 @@
       ],
       "ZIP or Postal code": [
         "Código postal"
+      ],
+      "Account Number": [
+        "Número de cuenta"
+      ],
+      "Account Type": [
+        "Tipo de cuenta"
+      ],
+      "Address": [
+        "Dirección"
+      ],
+      "API Credential": [
+        "Credenciales de API"
+      ],
+      "API Key": [
+        "Clave API"
+      ],
+      "Bank Account": [
+        "Cuenta bancaria"
+      ],
+      "Bank Name": [
+        "Nombre del banco"
+      ],
+      "Country,": [
+        "País,"
+      ],
+      "Create a custom item": [
+        "Crear un elemento personalizado"
+      ],
+      "Crypto Wallet": [
+        "Cartera de criptomonedas"
+      ],
+      "Custom Items": [
+        "Elementos personalizados"
+      ],
+      "Database": [
+        "Base de datos"
+      ],
+      "Database Type": [
+        "Tipo de base de datos"
+      ],
+      "Date of Birth": [
+        "Fecha de nacimiento"
+      ],
+      "Driver License": [
+        "Licencia de conducir"
+      ],
+      "Expiry Date": [
+        "Fecha de expiración"
+      ],
+      "Finance": [
+        "Finanzas"
+      ],
+      "Holder Name": [
+        "Nombre del titular"
+      ],
+      "Host": [
+        "Anfitrión"
+      ],
+      "Hostname": [
+        "Nombre del anfitrión"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "IP Address": [
+        "Dirección IP"
+      ],
+      "Issuing Authority": [
+        "Autoridad emisora"
+      ],
+      "Issuing Country": [
+        "País emisor"
+      ],
+      "License Key": [
+        "Clave de licencia"
+      ],
+      "Medical Record": [
+        "Registro médico"
+      ],
+      "Member ID": [
+        "ID de miembro"
+      ],
+      "Membership": [
+        "Suscripción"
+      ],
+      "More": [
+        "Más"
+      ],
+      "Name (SSID)": [
+        "Nombre (SSID)"
+      ],
+      "Network": [
+        "Red"
+      ],
+      "Operating System": [
+        "Sistema operativo"
+      ],
+      "Owner": [
+        "Propietario"
+      ],
+      "Passport Number": [
+        "Número de pasaporte"
+      ],
+      "Permissions": [
+        "Permisos"
+      ],
+      "Personal": [
+        "Personal"
+      ],
+      "Points Balance": [
+        "Balance de puntos"
+      ],
+      "Port": [
+        "Puerto"
+      ],
+      "Private Key": [
+        "Clave privada"
+      ],
+      "Private key": [
+        "Clave privada"
+      ],
+      "Product": [
+        "Product"
+      ],
+      "Program Name": [
+        "Nombre del programa"
+      ],
+      "Public key": [
+        "Clave pública"
+      ],
+      "Reward Program": [
+        "Programa de recompensas"
+      ],
+      "Routing Number": [
+        "Número de enrutamiento"
+      ],
+      "Secret": [
+        "Secreto"
+      ],
+      "Seed Phrase": [
+        "Frase de recuperación"
+      ],
+      "Server": [
+        "Servidor"
+      ],
+      "Social Security": [
+        "Seguridad Social"
+      ],
+      "Software license": [
+        "Licencia de software"
+      ],
+      "SSH key": [
+        "Clave SSH"
+      ],
+      "SSH Keys": [
+        "Claves SSH"
+      ],
+      "SSN": [
+        "Número de la Seguridad Social"
+      ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
+      "Technology": [
+        "Tecnología"
+      ],
+      "Tier/Status": [
+        "Nivel/Estado"
+      ],
+      "Unnamed custom item": [
+        "Elemento personalizado sin nombre"
+      ],
+      "Unnamed SSH key": [
+        "Clave SSH sin nombre"
+      ],
+      "Unnamed WiFi item": [
+        "Elemento Wi-Fi sin nombre"
+      ],
+      "Unspecified": [
+        "Sin especificar"
+      ],
+      "Wallet Name": [
+        "Nombre de la cartera"
+      ],
+      "WiFi network": [
+        "Red Wi-Fi"
+      ],
+      "WiFi Networks": [
+        "Redes Wi-Fi"
       ]
     },
     "Link": {
@@ -3632,7 +3833,7 @@
     },
     "PassOnboardingOffer": {
       "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
-        "${ PASS_SHORT_APP_NAME } Plus vitalicio por ${ plusLifetimePrice }"
+        "${ PASS_SHORT_APP_NAME } Plus Lifetime por ${ plusLifetimePrice }"
       ],
       "${ price }/month": [
         "${ price }/mes"
@@ -3734,6 +3935,18 @@
       ],
       "Write your note": [
         "Escriba su nota"
+      ],
+      "Add date": [
+        "Agregar fecha"
+      ],
+      "E.g., ": [
+        "Ej., "
+      ],
+      "Name displayed in emails": [
+        "Nombre que se muestra en los correos electrónicos"
+      ],
+      "Select option": [
+        "Seleccione una opción"
       ]
     },
     "Security Center - Info": {
@@ -4184,7 +4397,7 @@
         "Clave de acceso"
       ],
       "Password Health": [
-        "Estado de la contraseña"
+        "Estado de las contraseñas"
       ],
       "Pause monitoring?": [
         "¿Pausar el monitoreo?"
@@ -4362,6 +4575,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Está a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Está a punto de eliminar definitivamente ${ aliasCount } alias."
+      ],
+      "Minicalendar": [
+        "Minicalendario"
       ]
     },
     "Tooltip": {
@@ -4689,6 +4905,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La suscripción no le permite crear varias bóvedas. Todos los elementos serán importados a la primera bóveda. Para importar a varias bóvedas mejore la suscripción."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Hoy"
       ]
     }
   }
