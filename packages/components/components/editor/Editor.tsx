@@ -67,6 +67,7 @@ export interface EditorProps {
      * Leave undefined to use the default behavior
      */
     isSmallViewportForToolbar?: boolean;
+    title?: string;
 }
 
 const DROPZONE_COMPOSER_SETTINGS: DropzoneContentProps = {
@@ -103,6 +104,7 @@ const Editor = ({
     toolbarCustomRender = (component, display) => (display ? component : null),
     hasDropzone = true,
     isSmallViewportForToolbar = undefined,
+    title,
 }: EditorProps) => {
     /**
      * Set to true when editor setContent is called by parent components
@@ -170,6 +172,7 @@ const Editor = ({
                             onAddAttachments={onAddAttachments}
                             onMouseUp={onMouseUp}
                             onKeyUp={onKeyUp}
+                            title={title}
                         />
                     )}
                 </div>
