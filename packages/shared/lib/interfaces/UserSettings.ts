@@ -79,6 +79,7 @@ export interface Flags {
     Welcomed: number;
     SupportPgpV6Keys: 0 | 1;
     EdmOptOut: 0 | 1;
+    DisplayTrialEndModal: 0 | 1;
 }
 
 export enum AI_ASSISTANT_ACCESS {
