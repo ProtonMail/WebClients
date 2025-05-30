@@ -17,6 +17,7 @@ import {
     useSignup,
 } from '../../context/SignupContext';
 import * as signupSearchParams from '../../helpers/signupSearchParams';
+import DisplayNameStep from './steps/DisplayNameStep';
 import OrgNameStep from './steps/OrgNameStep';
 import PaymentStep from './steps/PaymentStep';
 import AccountDetailsStep from './steps/accountDetails/AccountDetailsStep';
@@ -73,7 +74,7 @@ const getAvailablePlansWithCycles = (plans: { planIDs: PlanIDs }[], cycles: Cycl
     return availablePlans;
 };
 
-type Step = 'account-details' | 'payment' | 'org-name' | 'creating-account';
+type Step = 'account-details' | 'payment' | 'org-name' | 'display-name' | 'creating-account';
 
 const DriveSignupInner = () => {
     const [step, setStep] = useState<Step>('account-details');
@@ -93,7 +94,8 @@ const DriveSignupInner = () => {
                             setStep('creating-account');
 
                             await signup.setupUser();
-                            await signup.login();
+
+                            setStep('display-name');
                         } else {
                             setStep('payment');
                         }
@@ -107,15 +109,26 @@ const DriveSignupInner = () => {
                         setStep('account-details');
                     }}
                     onPaymentTokenProcessed={async () => {
+                        await signup.createUser();
+
+                        setStep('creating-account');
+
+                        await signup.setupUser();
+
+                        setStep('display-name');
+                    }}
+                />
+            )}
+            {step === 'display-name' && (
+                <DisplayNameStep
+                    onSubmit={async (displayName) => {
+                        await signup.setDisplayName(displayName);
+
                         if (getIsB2BAudienceFromPlan(getPlanNameFromIDs(options.planIDs))) {
                             setStep('org-name');
                             return;
                         }
 
-                        await signup.createUser();
-                        setStep('creating-account');
-
-                        await signup.setupUser();
                         await signup.login();
                     }}
                 />
@@ -123,10 +136,7 @@ const DriveSignupInner = () => {
             {step === 'org-name' && (
                 <OrgNameStep
                     onSubmit={async (orgName) => {
-                        await signup.createUser();
-                        setStep('creating-account');
-
-                        await signup.setupUser({ orgName });
+                        await signup.setOrgName(orgName);
                         await signup.login();
                     }}
                 />

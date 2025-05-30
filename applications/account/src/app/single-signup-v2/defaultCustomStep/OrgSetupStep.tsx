@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { MAX_CHARS_API } from '@proton/account';
 import { Button } from '@proton/atoms';
-import { InputFieldTwo, useFormErrors } from '@proton/components';
+import { InputFieldTwo, useErrorHandler, useFormErrors } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
@@ -23,6 +23,8 @@ const OrgSetupStep = ({ defaultOrgName = '', onSubmit }: Props) => {
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
 
+    const handleError = useErrorHandler();
+
     return (
         <Main>
             <Header title={c('Title').t`Set organization name`} />
@@ -38,7 +40,7 @@ const OrgSetupStep = ({ defaultOrgName = '', onSubmit }: Props) => {
                         if (!onFormSubmit()) {
                             return;
                         }
-                        return withLoading(onSubmit({ orgName }));
+                        return withLoading(onSubmit({ orgName }).catch(handleError));
                     }}
                     method="post"
                     autoComplete="off"
