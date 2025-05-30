@@ -27,6 +27,7 @@ import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceIn
 import { PublicRenameController } from '../../RenameController/RenameController'
 import type { GetNode } from '../../UseCase/GetNode'
 import { isProtonSheet } from '@proton/shared/lib/helpers/mimetype'
+import { redirectToCorrectDocTypeIfNeeded } from '../../Util/redirect-to-correct-doc-type'
 
 export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> {
   private editorController?: EditorControllerInterface
@@ -87,6 +88,24 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
       `Loaded document meta with last commit id ${documentState.getProperty('documentMeta').latestCommitId()}`,
     )
 
+    const node = documentState.getProperty('decryptedNode')
+    const mimeType = node.mimeType
+
+    if (documentState.getProperty('userRole').isPublicUserWithAccess()) {
+      this.logger.info('Redirecting to authed document')
+      this.docsApi.resetInflightCount()
+      this.driveCompat.redirectToAuthedDocument(
+        {
+          volumeId: documentState.getProperty('documentMeta').volumeId,
+          linkId: nodeMeta.linkId,
+        },
+        isProtonSheet(mimeType) ? 'sheet' : 'doc',
+      )
+      return
+    }
+
+    redirectToCorrectDocTypeIfNeeded(mimeType, this.docsApi)
+
     this.syncedEditorState.setProperty(
       'userName',
       documentState.getProperty('entitlements').keys.userOwnAddress || AnonymousUserDisplayName,
@@ -124,20 +143,6 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
       )
 
       this.commentsController.fetchAllComments()
-    }
-
-    if (documentState.getProperty('userRole').isPublicUserWithAccess()) {
-      this.logger.info('Redirecting to authed document')
-      const node = documentState.getProperty('decryptedNode')
-      const mimeType = node.mimeType
-      this.driveCompat.redirectToAuthedDocument(
-        {
-          volumeId: documentState.getProperty('documentMeta').volumeId,
-          linkId: nodeMeta.linkId,
-        },
-        isProtonSheet(mimeType) ? 'sheet' : 'doc',
-      )
-      return
     }
 
     this.orchestrator = new EditorOrchestrator(
