@@ -32,6 +32,7 @@ import type { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
 import type { SquashDocument } from '../../UseCase/SquashDocument'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 import { PrivateRenameController, type RenameControllerInterface } from '../../RenameController/RenameController'
+import { redirectToCorrectDocTypeIfNeeded } from '../../Util/redirect-to-correct-doc-type'
 
 export class DocLoader implements DocLoaderInterface<DocumentState> {
   private docController?: AuthenticatedDocControllerInterface
@@ -89,6 +90,11 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
     this.logger.info(
       `Loaded document meta with last commit id ${documentState.getProperty('documentMeta').latestCommitId()}`,
     )
+
+    const node = documentState.getProperty('decryptedNode')
+    const mimeType = node.mimeType
+
+    redirectToCorrectDocTypeIfNeeded(mimeType, this.docsApi)
 
     this.documentState = documentState
 
