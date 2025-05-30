@@ -4,12 +4,14 @@ import type {
   RtsMessagePayload,
   DocumentRoleType,
   TranslatedResult,
+  SheetImportData,
 } from '@proton/docs-shared'
 import {
   BridgeOriginProvider,
   CommentsEvent,
   EDITOR_READY_POST_MESSAGE_EVENT,
   LiveCommentsEvent,
+  SheetImportEvent,
 } from '@proton/docs-shared'
 
 import { bootstrapEditorApp } from '../Lib/Bootstrap'
@@ -453,6 +455,13 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
       async getYDocAsJSON() {
         const ydoc = docState.getDoc()
         return ydoc.toJSON()
+      },
+
+      async importDataIntoSheet(data) {
+        application.eventBus.publish<SheetImportData>({
+          type: SheetImportEvent,
+          payload: data,
+        })
       },
     }
 
