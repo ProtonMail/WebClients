@@ -32,6 +32,7 @@ const ContactsTabImportDropdown = ({ onImport }: Props) => {
                 hasCaret
                 loading={loadingUser || easySwitchFeature.loading}
                 data-testid="contacts:import-dropdown"
+                aria-expanded={isOpen}
             >
                 {c('Action').t`Import contacts`}
             </DropdownButton>
