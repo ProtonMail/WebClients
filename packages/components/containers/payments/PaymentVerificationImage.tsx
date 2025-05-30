@@ -21,7 +21,7 @@ const getImage = (type: string): string => {
 };
 
 export interface Props {
-    payment: PaypalPayment | CardPayment | {};
+    payment: PaypalPayment | CardPayment | undefined;
     type: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT | PAYMENT_METHOD_TYPES.CARD;
 }
 

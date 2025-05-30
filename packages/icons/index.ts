@@ -51,6 +51,7 @@ export type IconName =
     | 'backspace'
     | 'percent'
     | 'bag-percent'
+    | 'bag-percent-filled'
     | 'bank'
     | 'bell'
     | 'bolt'
@@ -450,6 +451,7 @@ export { IcAt } from './icons/IcAt';
 export { IcBackspace } from './icons/IcBackspace';
 export { IcPercent } from './icons/IcPercent';
 export { IcBagPercent } from './icons/IcBagPercent';
+export { IcBagPercentFilled } from './icons/IcBagPercentFilled';
 export { IcBank } from './icons/IcBank';
 export { IcBell } from './icons/IcBell';
 export { IcBolt } from './icons/IcBolt';

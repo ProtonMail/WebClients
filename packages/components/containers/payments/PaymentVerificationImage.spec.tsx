@@ -20,7 +20,9 @@ describe('PaymentVerificationImage', () => {
     );
 
     it('should render Paypal if payment object is empty but the type is defined', () => {
-        const { getByAltText } = render(<PaymentVerificationImage payment={{}} type={PAYMENT_METHOD_TYPES.PAYPAL} />);
+        const { getByAltText } = render(
+            <PaymentVerificationImage payment={undefined} type={PAYMENT_METHOD_TYPES.PAYPAL} />
+        );
 
         expect(getByAltText('PayPal')).toBeDefined();
     });
@@ -41,7 +43,7 @@ describe('PaymentVerificationImage', () => {
     });
 
     it('should render nothing if payment is empty and type is card', () => {
-        const { container } = render(<PaymentVerificationImage payment={{}} type={PAYMENT_METHOD_TYPES.CARD} />);
+        const { container } = render(<PaymentVerificationImage payment={undefined} type={PAYMENT_METHOD_TYPES.CARD} />);
 
         expect(container).toBeEmptyDOMElement();
     });

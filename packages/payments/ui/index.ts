@@ -12,5 +12,11 @@ export {
     type PaymentsContextType,
     type PlanToCheck,
     type PreloadedPaymentsContextType,
+    type InitializeProps,
 } from './context/PaymentContext';
 export { getBankSvg, type CreditCardType } from './helpers/credit-card-icons';
+export {
+    PaymentsContextOptimisticProvider,
+    usePaymentOptimistic,
+    type PaymentsContextOptimisticType,
+} from './context/PaymentContextOptimistic';

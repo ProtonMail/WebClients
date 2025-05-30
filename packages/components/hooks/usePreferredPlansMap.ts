@@ -2,7 +2,15 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { type Currency, type FullPlansMap, getPlansMap as getPlansMapInner } from '@proton/payments';
+import {
+    type Currency,
+    type FreeSubscription,
+    type FullPlansMap,
+    type Plan,
+    type Subscription,
+    getPlansMap as getPlansMapInner,
+} from '@proton/payments';
+import { type UserModel } from '@proton/shared/lib/interfaces';
 
 import { type GetPreferredCurrencyParamsHook, useCurrencies } from '../payments/client-extensions/useCurrencies';
 
@@ -16,26 +24,54 @@ type PreferredPlansMapHook = {
     preferredCurrency: Currency;
 };
 
+export const getPreferredPlansMap = ({
+    currencyOverrides,
+    currencyFallback,
+    getPreferredCurrency,
+    user,
+    subscription,
+    plans,
+    status,
+}: {
+    currencyFallback?: boolean;
+    currencyOverrides?: GetPreferredCurrencyParamsHook;
+    getPreferredCurrency: ReturnType<typeof useCurrencies>['getPreferredCurrency'];
+    user: UserModel;
+    subscription?: Subscription | FreeSubscription;
+    plans: Plan[];
+    status: ReturnType<typeof usePaymentStatus>[0];
+}) => {
+    const preferredCurrency = getPreferredCurrency({
+        ...currencyOverrides,
+        user,
+        subscription,
+        plans,
+        status,
+    });
+
+    return {
+        preferredCurrency,
+        plansMap: getPlansMapInner(plans, preferredCurrency, currencyFallback),
+    };
+};
+
 export const usePreferredPlansMap = (currencyFallback?: boolean): PreferredPlansMapHook => {
-    const [plans, plansLoading] = usePlans();
+    const [plansData, plansLoading] = usePlans();
     const [status, statusLoading] = usePaymentStatus();
     const [subscription, subscriptionLoading] = useSubscription();
     const [user] = useUser();
     const { getPreferredCurrency } = useCurrencies();
 
     const getPlansMap = (overrides: GetPreferredCurrencyParamsHook = {}) => {
-        const preferredCurrency = getPreferredCurrency({
-            ...overrides,
+        return getPreferredPlansMap({
+            currencyFallback,
+            currencyOverrides: overrides,
+            getPreferredCurrency,
             user,
             subscription,
-            plans: plans?.plans,
+            plans: plansData?.plans ?? [],
             status,
         });
-
-        return {
-            preferredCurrency,
-            plansMap: getPlansMapInner(plans?.plans ?? [], preferredCurrency, currencyFallback),
-        };
     };
 
     return {

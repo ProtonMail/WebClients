@@ -3,7 +3,7 @@ import {
     CYCLE,
     type Currency,
     DEFAULT_CURRENCY,
-    type PLANS,
+    PLANS,
     PLAN_TYPES,
     type Plan,
     type PlanIDs,
@@ -30,6 +30,7 @@ import type { Organization, SubscriptionCheckResponse, User } from '../interface
 import { ChargebeeEnabled } from '../interfaces';
 
 export const hasPlanIDs = (planIDs: PlanIDs) => Object.values(planIDs).some((quantity) => quantity > 0);
+export const hasFreePlanIDs = (planIDs: PlanIDs) => !hasPlanIDs(planIDs) || Boolean(planIDs[PLANS.FREE]);
 
 const getLumoWithEnoughSeats = ({
     planIDs,

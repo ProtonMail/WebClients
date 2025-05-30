@@ -49,11 +49,12 @@ import {
     type PlanIDs,
     type StrictPlan,
     getBillingAddressStatus,
+    getHas2024OfferCoupon,
+    getIsVpnPlan,
     getPaymentsVersion,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
-import { getHas2024OfferCoupon, getIsVpnPlan } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
@@ -81,6 +82,7 @@ import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';
 import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import { SignupType } from '../signup/interfaces';
+import { AccountFormDataContextProvider } from '../signupCtx/context/accountData/AccountFormDataContext';
 import type { AccountStepDetailsRef } from '../single-signup-v2/AccountStepDetails';
 import AccountStepDetails from '../single-signup-v2/AccountStepDetails';
 import DiscountBanner from '../single-signup-v2/DiscountBanner';
@@ -792,34 +794,34 @@ const Step1B = ({
     );
 
     const process = (processor: PaymentProcessorHook | undefined) => {
-        const isFormValid = validatePayment() && accountDetailsRef.current?.validate();
-        if (!isFormValid) {
-            return;
-        }
-
-        const telemetryType = (() => {
-            const isFreeSignup = paymentFacade.amount <= 0;
-
-            if (isFreeSignup) {
-                return 'free';
-            }
-
-            if (processor?.meta.type === 'paypal') {
-                return 'pay_pp';
-            }
-
-            if (processor?.meta.type === 'paypal-credit') {
-                return 'pay_pp_no_cc';
-            }
-
-            return 'pay_cc';
-        })();
-        measurePaySubmit(telemetryType);
-
         async function run() {
             if (!processor) {
                 return;
             }
+
+            const isFormValid = validatePayment() && (await accountDetailsRef.current?.validate());
+            if (!isFormValid) {
+                return;
+            }
+
+            const telemetryType = (() => {
+                const isFreeSignup = paymentFacade.amount <= 0;
+
+                if (isFreeSignup) {
+                    return 'free';
+                }
+
+                if (processor?.meta.type === 'paypal') {
+                    return 'pay_pp';
+                }
+
+                if (processor?.meta.type === 'paypal-credit') {
+                    return 'pay_pp_no_cc';
+                }
+
+                return 'pay_cc';
+            })();
+            measurePaySubmit(telemetryType);
 
             try {
                 await processor.processPaymentToken();
@@ -1264,55 +1266,57 @@ const Step1B = ({
                             <BoxHeader title={c('Header').t`Enter your email address`} />
                             <BoxContent>
                                 <div className="relative">
-                                    <AccountStepDetails
+                                    <AccountFormDataContextProvider
+                                        availableSignupTypes={new Set([SignupType.External])}
                                         domains={model.domains}
-                                        signupTypes={[SignupType.External]}
                                         defaultEmail={defaultEmail}
-                                        passwordFields={false}
-                                        model={model}
-                                        measure={measure}
-                                        api={silentApi}
-                                        accountStepDetailsRef={accountDetailsRef}
-                                        disableChange={loadingSignup}
-                                        hideEmailLabel
-                                        onSubmit={
-                                            hasSelectedFree
-                                                ? () => {
-                                                      withLoadingSignup(
-                                                          handleCompletion(
-                                                              getFreeSubscriptionData(model.subscriptionData)
-                                                          )
-                                                      ).catch(noop);
-                                                  }
-                                                : undefined
-                                        }
-                                        footer={() => {
-                                            return (
-                                                <>
-                                                    {hasSelectedFree && (
-                                                        <div className="mb-4">
-                                                            <Button
-                                                                type="submit"
-                                                                size="large"
-                                                                loading={loadingSignup}
-                                                                color="norm"
-                                                                fullWidth
-                                                            >
-                                                                {c('pass_signup_2023: Action')
-                                                                    .t`Start using ${appName}`}
-                                                            </Button>
-                                                        </div>
-                                                    )}
-                                                    {!isB2bPlan && (
-                                                        <div className="mt-4 color-weak text-sm">
-                                                            {c('Info')
-                                                                .t`Your information is safe with us. We'll only contact you when it's required to provide our services.`}
-                                                        </div>
-                                                    )}
-                                                </>
-                                            );
-                                        }}
-                                    />
+                                    >
+                                        <AccountStepDetails
+                                            passwordFields={false}
+                                            model={model}
+                                            measure={measure}
+                                            accountStepDetailsRef={accountDetailsRef}
+                                            disableChange={loadingSignup}
+                                            hideEmailLabel
+                                            onSubmit={
+                                                hasSelectedFree
+                                                    ? () => {
+                                                          withLoadingSignup(
+                                                              handleCompletion(
+                                                                  getFreeSubscriptionData(model.subscriptionData)
+                                                              )
+                                                          ).catch(noop);
+                                                      }
+                                                    : undefined
+                                            }
+                                            footer={() => {
+                                                return (
+                                                    <>
+                                                        {hasSelectedFree && (
+                                                            <div className="mb-4">
+                                                                <Button
+                                                                    type="submit"
+                                                                    size="large"
+                                                                    loading={loadingSignup}
+                                                                    color="norm"
+                                                                    fullWidth
+                                                                >
+                                                                    {c('pass_signup_2023: Action')
+                                                                        .t`Start using ${appName}`}
+                                                                </Button>
+                                                            </div>
+                                                        )}
+                                                        {!isB2bPlan && (
+                                                            <div className="mt-4 color-weak text-sm">
+                                                                {c('Info')
+                                                                    .t`Your information is safe with us. We'll only contact you when it's required to provide our services.`}
+                                                            </div>
+                                                        )}
+                                                    </>
+                                                );
+                                            }}
+                                        />
+                                    </AccountFormDataContextProvider>
                                 </div>
                             </BoxContent>
                         </div>

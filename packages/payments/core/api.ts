@@ -139,11 +139,11 @@ function isCommonSubscribeData(data: any): data is CommonSubscribeData {
 }
 
 function isSubscribeDataV4(data: any): data is SubscribeDataV4 {
-    return isCommonSubscribeData(data) && isTokenPaymentMethod(data);
+    return isCommonSubscribeData(data) && isTokenPaymentMethod(data as any);
 }
 
 function isSubscribeDataV5(data: any): data is SubscribeDataV5 {
-    return isCommonSubscribeData(data) && isV5PaymentToken(data);
+    return isCommonSubscribeData(data) && isV5PaymentToken(data as any);
 }
 
 function isSubscribeDataNoPayment(data: any): data is SubscribeDataNoPayment {

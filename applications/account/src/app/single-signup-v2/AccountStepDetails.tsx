@@ -1,208 +1,38 @@
 import type { KeyboardEvent, MutableRefObject, ReactNode } from 'react';
-import { useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
-import { flushSync } from 'react-dom';
+import { useImperativeHandle, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { CircleLoader, InlineLinkButton } from '@proton/atoms';
-import type { ChallengeRef } from '@proton/components';
 import { Challenge, DropdownSizeUnit, Icon, Info, InputFieldTwo, Option, PasswordInputTwo } from '@proton/components';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { PLANS } from '@proton/payments';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import {
-    confirmPasswordValidator,
-    emailValidator,
-    getMinPasswordLengthMessage,
-    passwordLengthValidator,
-    requiredValidator,
-    usernameCharacterValidator,
-    usernameEndCharacterValidator,
-    usernameLengthValidator,
-    usernameStartCharacterValidator,
-} from '@proton/shared/lib/helpers/formValidators';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import type { Api } from '@proton/shared/lib/interfaces';
+import { getMinPasswordLengthMessage } from '@proton/shared/lib/helpers/formValidators';
 import clsx from '@proton/utils/clsx';
-import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { usePublicTheme } from '../containers/PublicThemeProvider';
-import PasswordStrengthIndicatorSpotlight, {
-    usePasswordStrengthIndicatorSpotlight,
-} from '../signup/PasswordStrengthIndicatorSpotlight';
+import PasswordStrengthIndicatorSpotlight from '../signup/PasswordStrengthIndicatorSpotlight';
 import challengeIconsSvg from '../signup/challenge-icons.source.svg';
 import { getThemeData } from '../signup/challenge-theme';
-import type { AccountData } from '../signup/interfaces';
-import { SignupType } from '../signup/interfaces';
-import { getAccountDetailsFromEmail } from './accountDetails';
-import { runAfterScroll } from './helper';
+import { type AccountData, SignupType } from '../signup/interfaces';
+import { useAccountFormDataContext } from '../signupCtx/context/accountData/AccountFormDataContext';
+import { AsyncValidationStateValue } from '../signupCtx/context/accountData/asyncValidator/createAsyncValidator';
 import type { BaseMeasure, SignupModelV2 } from './interface';
-import type { AvailableExternalEvents, InteractCreateEvents, InteractFields, UserCheckoutEvents } from './measure';
-import type { AsyncValidationState } from './validateEmail';
-import {
-    AsyncValidationStateValue,
-    createAsyncValidator,
-    defaultAsyncValidationState,
-    validateEmailAvailability,
-    validateUsernameAvailability,
-} from './validateEmail';
+import type { AvailableExternalEvents, InteractCreateEvents, UserCheckoutEvents } from './measure';
 
 import '../signup/AccountStep.scss';
 
-const first = <T,>(errors: T[]) => {
-    return errors.find((x) => !!x);
-};
-
-const usernameAsyncValidator = createAsyncValidator();
-
-interface InputState {
-    interactive: boolean;
-    focus: boolean;
-}
-
-interface AccountDetailsInputState {
-    username: Partial<InputState>;
-    email: Partial<InputState>;
-    password: Partial<InputState>;
-    passwordConfirm: Partial<InputState>;
-}
-
-interface AccountDetails {
-    username: string;
-    email: string;
-    password: string;
-    passwordConfirm: string;
-}
-
-export interface ErrorDetails {
-    username: string | undefined;
-    email: string | undefined;
-    password: string | undefined;
-    passwordConfirm: string | undefined;
-}
-
-const getDefaultInputs = ({
-    defaultUsername = '',
-    defaultEmail = '',
-}: {
-    defaultUsername?: string;
-    defaultEmail?: string;
-} = {}) => ({
-    username: defaultUsername,
-    email: defaultEmail,
-    password: '',
-    passwordConfirm: '',
-});
-
-const getDefaultInputStates = ({ username, email, password, passwordConfirm }: AccountDetails) => ({
-    username: !!username ? { interactive: true, focus: true } : {},
-    email: !!email ? { interactive: true, focus: true } : {},
-    password: !!password ? { interactive: true, focus: true } : {},
-    passwordConfirm: !!passwordConfirm ? { interactive: true, focus: true } : {},
-});
-
 export interface AccountStepDetailsRef {
-    validate: () => boolean;
+    validate: () => Promise<boolean>;
     data: () => Promise<AccountData>;
     scrollInto: (target: 'email' | 'password' | 'passwordConfirm') => void;
 }
 
-const getMeasurement = (diff: Partial<AccountDetailsInputState>) => {
-    return Object.entries(diff)
-        .map(([_key, value]) => {
-            const key = _key as keyof typeof diff;
-            const field: InteractFields | undefined = (() => {
-                if (key === 'username') {
-                    return 'username';
-                }
-                if (key === 'email') {
-                    return 'email';
-                }
-                if (key === 'password') {
-                    return 'pwd';
-                }
-                if (key === 'passwordConfirm') {
-                    return 'pwd_confirm';
-                }
-            })();
-            if (field && value?.focus) {
-                return {
-                    event: TelemetryAccountSignupEvents.interactAccountCreate,
-                    dimensions: { field },
-                } as const;
-            }
-        })
-        .filter(isTruthy);
-};
-
-const resetValueForChallenge = (setValue: (value: string) => void, value: string) => {
-    // If sanitisation happens, force re-render the input with a new value so that the values get removed in the iframe
-    flushSync(() => {
-        setValue(value + ' ');
-    });
-    setValue(value);
-};
-
 const joinUsernameDomain = (username: string, domain: string) => {
     return [username, '@', domain].join('');
-};
-
-const getUsernameError = ({
-    username,
-    domain,
-    usernameValidationState,
-}: {
-    domain: string;
-    username: string;
-    usernameValidationState?: AsyncValidationState;
-}): ErrorDetails['username'] => {
-    const trimmedUsername = username.trim();
-    return first([
-        joinUsernameDomain(trimmedUsername, domain) === usernameValidationState?.value
-            ? usernameValidationState?.message
-            : '',
-        requiredValidator(trimmedUsername),
-        usernameLengthValidator(trimmedUsername),
-        usernameStartCharacterValidator(trimmedUsername),
-        usernameEndCharacterValidator(trimmedUsername),
-        usernameCharacterValidator(trimmedUsername),
-    ]);
-};
-
-const getEmailError = ({
-    email,
-    emailValidationState,
-}: {
-    email: string;
-    emailValidationState?: AsyncValidationState;
-}): ErrorDetails['email'] => {
-    const trimmedEmail = email.trim();
-    return first([
-        trimmedEmail === emailValidationState?.value ? emailValidationState?.message : '',
-        requiredValidator(trimmedEmail),
-        emailValidator(trimmedEmail),
-    ]);
-};
-
-const getPasswordError = ({
-    passwords,
-    password = '',
-    passwordConfirm = '',
-}: {
-    passwords?: boolean;
-    password?: string;
-    passwordConfirm?: string;
-}): Pick<ErrorDetails, 'password' | 'passwordConfirm'> => {
-    return {
-        password: passwords ? first([requiredValidator(password), passwordLengthValidator(password)]) : undefined,
-        passwordConfirm: passwords
-            ? first([requiredValidator(passwordConfirm), confirmPasswordValidator(passwordConfirm, password)])
-            : undefined,
-    };
 };
 
 interface Props {
@@ -211,427 +41,96 @@ interface Props {
     emailDisabled?: boolean;
     emailReadOnly?: boolean;
     onSubmit?: () => void;
-    api: Api;
     model: SignupModelV2;
     measure: BaseMeasure<InteractCreateEvents | UserCheckoutEvents | AvailableExternalEvents>;
     passwordFields: boolean;
-    footer: (data: { emailAlreadyUsed: boolean; details: AccountDetails; email: string }) => ReactNode;
-    defaultEmail?: string;
-    signupTypes: SignupType[];
-    domains: string[];
+    footer: (data: { emailAlreadyUsed: boolean; email: string }) => ReactNode;
     emailDescription?: ReactNode;
     hideEmailLabel?: boolean;
 }
 
 const AccountStepDetails = ({
-    signupTypes,
-    domains,
     accountStepDetailsRef,
     disableChange,
     emailDisabled,
     emailReadOnly,
     footer,
-    api,
     model,
     onSubmit,
     measure,
     passwordFields,
-    defaultEmail,
     emailDescription,
     hideEmailLabel = false,
 }: Props) => {
-    const [, setRerender] = useState<any>();
-    const [signupType, setSignupType] = useState(signupTypes[0]);
+    const {
+        state,
+        onValue,
+        asyncStates,
+        getAssistVisible,
+        hasSwitchSignupType,
+        passwordStrengthIndicatorSpotlight,
+        hasConfirmPasswordLabel,
+        refs,
+        errors,
+        inputStates,
+        getIsValid,
+        getValidAccountData,
+        scrollInto,
+    } = useAccountFormDataContext();
+
     const anchorRef = useRef<HTMLButtonElement | null>(null);
-    const challengeRefEmail = useRef<ChallengeRef>();
-    const [loadingChallenge, setLoadingChallenge] = useState(true);
-    const formInputRef = useRef<HTMLFormElement>(null);
-    const inputValuesRef = useRef({ email: false, username: false });
-    const domainOptions = domains.map((DomainName) => ({ text: DomainName, value: DomainName }));
-    const [maybeDomain, setDomain] = useState('');
+    const passwordContainerRef = useRef<HTMLInputElement>(null);
     const theme = usePublicTheme();
-    const passwordStrengthIndicatorSpotlight = usePasswordStrengthIndicatorSpotlight();
-
-    const safeDomain = domains?.includes(maybeDomain) ? maybeDomain : '';
-    const domain = safeDomain || domains?.[0];
-
-    const [details, setDetails] = useState<AccountDetails>(getDefaultInputs({}));
-    const [states, setStates] = useState<AccountDetailsInputState>(getDefaultInputStates(details));
-
-    const trimmedEmail = details.email.trim();
-    const trimmedUsername = details.username.trim();
-
-    const [emailAsyncValidationState, setEmailAsyncValidationState] =
-        useState<AsyncValidationState>(defaultAsyncValidationState);
-    const [usernameAsyncValidationState, setUsernameAsyncValidationState] =
-        useState<AsyncValidationState>(defaultAsyncValidationState);
-
-    const emailRef = useRef<HTMLInputElement>(null);
-    const usernameRef = useRef<HTMLInputElement>(null);
-    const passwordRef = useRef<HTMLInputElement>(null);
-    const passwordContainerRef = useRef<HTMLDivElement>(null);
-    const passwordConfirmRef = useRef<HTMLInputElement>(null);
-
-    const showConfirmPasswordLabel =
-        passwordStrengthIndicatorSpotlight.supported && !passwordStrengthIndicatorSpotlight.spotlight;
-
-    const setInputsStateDiff = useCallback((diff: Partial<AccountDetailsInputState>) => {
-        setStates((old) => {
-            const result = {
-                ...old,
-                ...Object.keys(diff).reduce<Partial<AccountDetailsInputState>>((acc, _key) => {
-                    const key = _key as keyof AccountDetailsInputState;
-                    acc[key] = {
-                        ...old[key],
-                        ...diff[key],
-                    };
-                    return acc;
-                }, {}),
-            };
-            if (isDeepEqual(result, old)) {
-                return old;
-            }
-
-            setTimeout(() => {
-                getMeasurement(diff).forEach(measure);
-            }, 1);
-            return result;
-        });
-    }, []);
-
-    const setInputsDiff = useCallback((diff: Partial<AccountDetails>) => {
-        setDetails((old) => {
-            const result = {
-                ...old,
-                ...Object.keys(diff).reduce<Partial<AccountDetails>>((acc, _key) => {
-                    const key = _key as keyof AccountDetails;
-                    acc[key] = diff[key];
-                    return acc;
-                }, {}),
-            };
-            if (isDeepEqual(result, old)) {
-                return old;
-            }
-            return result;
-        });
-    }, []);
-
-    const focusChallenge = (id: '#email' | '#username') => {
-        // This is a hack prevent scroll since we'd need to add support for that in challenge
-        // TODO: Add support for preventScroll
-        const scrollEl = document.body.querySelector('.overflow-auto');
-        if (!scrollEl) {
-            return;
-        }
-        runAfterScroll(scrollEl, () => {
-            challengeRefEmail.current?.focus(id);
-        });
-    };
-
-    const scrollInto = (target: 'username' | 'email' | 'password' | 'passwordConfirm') => {
-        if (target === 'email' || target === 'username') {
-            formInputRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-            if (target === 'email') {
-                focusChallenge('#email');
-            }
-            if (target === 'username') {
-                focusChallenge('#username');
-            }
-            return;
-        }
-        const el = (() => {
-            if (target === 'password') {
-                return passwordRef.current;
-            }
-            if (target === 'passwordConfirm') {
-                return passwordConfirmRef.current;
-            }
-            return emailRef.current;
-        })();
-        if (!el) {
-            return;
-        }
-        el.focus({ preventScroll: true });
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    };
-
-    const errorDetails = (() => {
-        let emailError: ErrorDetails['email'] = undefined;
-        let usernameError: ErrorDetails['username'] = undefined;
-
-        if (signupType === SignupType.External) {
-            const accountDetails = getAccountDetailsFromEmail({
-                email: details.email,
-                domains,
-                defaultDomain: undefined,
-            });
-
-            if (accountDetails.signupType === SignupType.Proton) {
-                emailError = getUsernameError({
-                    username: accountDetails.local,
-                    domain: accountDetails.domain,
-                    usernameValidationState: emailAsyncValidationState,
-                });
-            } else {
-                emailError = getEmailError({ email: trimmedEmail, emailValidationState: emailAsyncValidationState });
-            }
-        } else {
-            usernameError = getUsernameError({
-                username: trimmedUsername,
-                domain,
-                usernameValidationState: usernameAsyncValidationState,
-            });
-        }
-
-        return {
-            username: usernameError,
-            email: emailError,
-            ...getPasswordError({
-                passwords: passwordFields,
-                password: details.password,
-                passwordConfirm: details.passwordConfirm,
-            }),
-        };
-    })();
-
-    const validateAccountDetails = () => {
-        const fields = ((): (keyof AccountDetailsInputState)[] => {
-            const hasValidAsyncEmailState =
-                emailAsyncValidationState.value === trimmedEmail &&
-                emailAsyncValidationState.state === AsyncValidationStateValue.Success;
-            const hasValidAsyncUsernameState =
-                usernameAsyncValidationState.value === joinUsernameDomain(trimmedUsername, domain) &&
-                usernameAsyncValidationState.state === AsyncValidationStateValue.Success;
-
-            return (
-                [
-                    signupType === SignupType.External && !hasValidAsyncEmailState ? 'email' : undefined,
-                    signupType === SignupType.Proton && !hasValidAsyncUsernameState ? 'username' : undefined,
-                    errorDetails.username ? 'username' : undefined,
-                    errorDetails.email ? 'email' : undefined,
-                    errorDetails.password ? 'password' : undefined,
-                    errorDetails.passwordConfirm ? 'passwordConfirm' : undefined,
-                ] as const
-            ).filter(isTruthy);
-        })();
-
-        const field = fields[0];
-        if (field) {
-            const value = { interactive: true, focus: true };
-            const reset = fields.reduce<{ [key in keyof AccountDetailsInputState]?: InputState }>((acc, key) => {
-                acc[key] = value;
-                return acc;
-            }, {});
-            setInputsStateDiff(reset);
-            scrollInto(field);
-            return false;
-        }
-        return true;
-    };
-
-    const addAvailabilityMonitoring = (result: AsyncValidationState) => {
-        if (result.state === AsyncValidationStateValue.Success || result.state === AsyncValidationStateValue.Fatal) {
-            const available = result.state === AsyncValidationStateValue.Fatal ? 'no' : 'yes';
-            measure({
-                event: TelemetryAccountSignupEvents.beAvailableExternal,
-                dimensions: { available },
-            });
-        }
-    };
-
-    const handleEmailError = (email: string, asyncSet = setEmailAsyncValidationState) => {
-        const emailError = getEmailError({
-            email,
-        });
-        usernameAsyncValidator.trigger({
-            validate: async (value, abortController) => {
-                const result = await validateEmailAvailability(value, api, abortController);
-                addAvailabilityMonitoring(result);
-                return result;
-            },
-            error: !!emailError,
-            value: email,
-            set: asyncSet,
-        });
-    };
-
-    const handleUsernameError = (username: string, domain: string, asyncSet = setUsernameAsyncValidationState) => {
-        const usernameError = getUsernameError({
-            username,
-            domain,
-        });
-        usernameAsyncValidator.trigger({
-            validate: async (value, abortController) => {
-                const result = await validateUsernameAvailability(value, api, abortController);
-                addAvailabilityMonitoring(result);
-                return result;
-            },
-            error: !!usernameError,
-            value: joinUsernameDomain(username, domain),
-            set: asyncSet,
-        });
-    };
-
-    const onEmailValue = (value: string) => {
-        inputValuesRef.current.email = true;
-        setInputsStateDiff({ email: { interactive: true } });
-        setInputsDiff({ email: value });
-        const email = value.trim();
-        const accountDetails = getAccountDetailsFromEmail({
-            email,
-            domains,
-            defaultDomain: undefined,
-        });
-        if (accountDetails.signupType === SignupType.Proton) {
-            handleUsernameError(accountDetails.local, accountDetails.domain, setEmailAsyncValidationState);
-        } else {
-            handleEmailError(email);
-        }
-    };
-
-    const onUsernameValue = (value: string, domain: string) => {
-        const sanitizedValue = value.replaceAll('@', '');
-
-        inputValuesRef.current.username = true;
-        setInputsStateDiff({ username: { interactive: true } });
-        setInputsDiff({ username: sanitizedValue });
-        setDomain(domain);
-
-        // If sanitisation happens, force re-render the input with a new value so that the values get removed in the iframe
-        if (sanitizedValue !== value) {
-            resetValueForChallenge((username) => setInputsDiff({ username }), sanitizedValue);
-        }
-
-        handleUsernameError(sanitizedValue.trim(), domain, setUsernameAsyncValidationState);
-    };
+    const [, setRerender] = useState<any>();
+    const [loadingChallenge, setLoadingChallenge] = useState(true);
 
     useImperativeHandle(accountStepDetailsRef, () => ({
         validate: () => {
-            return validateAccountDetails();
+            return getIsValid({ passwords: passwordFields });
         },
         data: async (): Promise<AccountData> => {
-            const payload = await challengeRefEmail.current?.getChallenge().catch(noop);
-
-            if (signupType === SignupType.External) {
-                const emailAccountDetails = getAccountDetailsFromEmail({
-                    email: trimmedEmail,
-                    domains,
-                    defaultDomain: undefined,
-                });
-
-                if (signupType === SignupType.External && emailAccountDetails.signupType === SignupType.Proton) {
-                    return {
-                        email: trimmedEmail,
-                        username: emailAccountDetails.local,
-                        domain: emailAccountDetails.domain,
-                        signupType: emailAccountDetails.signupType,
-                        password: details.password,
-                        payload,
-                    };
-                }
-            }
-
-            return {
-                email: trimmedEmail,
-                username: trimmedUsername,
-                domain,
-                signupType,
-                password: details.password,
-                payload,
-            };
+            return getValidAccountData({ passwords: true });
         },
         scrollInto,
     }));
 
-    useEffect(() => {
-        const handleFocus = () => {
-            // This a hack to get the email input state to be true since onBlur event isn't triggered.
-            // Basically any time something else gets focus on the page and the email input has gotten values.
-            const keys = ['email', 'username'] as const;
-            keys.forEach((key) => {
-                if (inputValuesRef.current[key]) {
-                    setInputsStateDiff({ [key]: { focus: true } });
-                }
-            });
-
-            // Done, can remove listener
-            if (keys.every((key) => inputValuesRef.current[key])) {
-                window.removeEventListener('focus', handleFocus, true);
-            }
-        };
-        window.addEventListener('focus', handleFocus, true);
-        return () => {
-            window.removeEventListener('focus', handleFocus, true);
-        };
-    }, []);
-
-    useEffect(() => {
-        if (!domains.length || !defaultEmail) {
-            return;
-        }
-        const accountDetails = getAccountDetailsFromEmail({
-            email: defaultEmail,
-            domains,
-            defaultDomain: domain,
-        });
-        if (accountDetails.signupType === SignupType.Proton) {
-            setSignupType(accountDetails.signupType);
-            onUsernameValue(accountDetails.local, accountDetails.domain);
-            // Ensures the error is displayed
-            setInputsStateDiff({ username: { focus: true } });
-        } else if (signupTypes.includes(SignupType.External)) {
-            setSignupType(SignupType.External);
-            onEmailValue(defaultEmail);
-            // Ensures the error is displayed
-            setInputsStateDiff({ email: { focus: true } });
-        }
-    }, [defaultEmail, domains]);
-
-    const getAssistVisible = (state: Partial<InputState>) => state.interactive && state.focus;
-    const usernameError = getAssistVisible(states.username) ? errorDetails.username : undefined;
-    const emailError = getAssistVisible(states.email) ? errorDetails.email : undefined;
-    const passwordError = getAssistVisible(states.password) ? errorDetails.password : undefined;
-    const passwordConfirmError = getAssistVisible(states.passwordConfirm) ? errorDetails.passwordConfirm : undefined;
-
     const inputsWrapper = 'flex flex-column';
-    const hasSwitchSignupType = signupTypes.includes(SignupType.External) && signupTypes.length > 1;
-    const dense = !passwordFields && signupTypes.length <= 1;
+    const dense = !passwordFields && state.signupTypes.size <= 1;
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         // Not valid
         if (!onSubmit) {
             return;
         }
-        measure({
-            event: TelemetryAccountSignupEvents.userCheckout,
-            dimensions: {
-                type: 'free',
-                plan: PLANS.FREE,
-                cycle: `${model.subscriptionData.cycle}`,
-                currency: model.subscriptionData.currency,
-            },
-        });
-        if (validateAccountDetails()) {
-            onSubmit();
+        try {
+            measure({
+                event: TelemetryAccountSignupEvents.userCheckout,
+                dimensions: {
+                    type: 'free',
+                    plan: PLANS.FREE,
+                    cycle: `${model.subscriptionData.cycle}`,
+                    currency: model.subscriptionData.currency,
+                },
+            });
+            if (await getIsValid({ passwords: passwordFields })) {
+                onSubmit();
+            }
+        } catch {
+            // ignore error
         }
     };
 
-    const emailAlreadyUsed =
-        emailError &&
-        emailAsyncValidationState.error &&
-        getApiError(emailAsyncValidationState.error)?.code === API_CUSTOM_ERROR_CODES.ALREADY_USED;
-
     const disableChangeForChallenge = disableChange || loadingChallenge;
+    const domainOptions = state.domains.map((DomainName) => ({ text: DomainName, value: DomainName }));
 
     return (
         <>
             <form
-                ref={formInputRef}
+                ref={refs.form}
                 name="account-form"
                 onSubmit={async (event) => {
                     event.preventDefault();
-                    handleSubmit();
+                    handleSubmit().catch(noop);
                 }}
             >
                 {/*This is attempting to position at the same place as the select since it's in the challenge iframe*/}
@@ -651,7 +150,7 @@ const AccountStepDetails = ({
                         getIconsData={() => challengeIconsSvg}
                         bodyClassName="color-norm bg-transparent px-2"
                         iframeClassName="challenge-width-increase"
-                        challengeRef={challengeRefEmail}
+                        challengeRef={refs.challenge}
                         type={0}
                         hasSizeObserver
                         title={c('Signup label').t`Email address`}
@@ -664,18 +163,18 @@ const AccountStepDetails = ({
                         }}
                     >
                         <div className={clsx(inputsWrapper, theme.dark && 'ui-prominent', 'bg-transparent')}>
-                            {signupType === SignupType.External && (
+                            {state.signupType === SignupType.External && (
                                 <InputFieldTwo
-                                    ref={emailRef}
+                                    ref={refs.email}
                                     id="email"
                                     label={hideEmailLabel ? undefined : c('Signup label').t`Email address`}
                                     inputClassName="email-input-field"
-                                    error={emailError}
+                                    error={errors.email}
                                     suffix={(() => {
-                                        if (emailError) {
+                                        if (errors.email) {
                                             return undefined;
                                         }
-                                        if (emailAsyncValidationState.state === AsyncValidationStateValue.Success) {
+                                        if (asyncStates.email.state === AsyncValidationStateValue.Success) {
                                             return (
                                                 <Icon
                                                     name="checkmark-circle"
@@ -686,27 +185,27 @@ const AccountStepDetails = ({
                                             );
                                         }
                                         if (
-                                            emailAsyncValidationState.state === AsyncValidationStateValue.Loading &&
-                                            getAssistVisible(states.email)
+                                            asyncStates.email.state === AsyncValidationStateValue.Loading &&
+                                            getAssistVisible('email')
                                         ) {
                                             return <CircleLoader size="small" />;
                                         }
                                     })()}
                                     disabled={emailDisabled}
-                                    dense={dense ? !emailError : undefined}
-                                    rootClassName={dense ? (!emailError ? 'pb-2' : undefined) : undefined}
-                                    value={details.email}
-                                    onValue={onEmailValue}
+                                    dense={dense ? !errors.email : undefined}
+                                    rootClassName={dense ? (!errors.email ? 'pb-2' : undefined) : undefined}
+                                    value={state.email}
+                                    onValue={(value) => onValue.onEmailValue(value, state.domains)}
                                     onBlur={() => {
                                         // Doesn't work because it's in the challenge
-                                        setInputsStateDiff({ email: { focus: true } });
+                                        onValue.onInputsStateDiff({ email: { focus: true } });
                                     }}
                                     onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
                                         if (event.key === 'Enter') {
                                             handleSubmit();
                                         }
                                         if (event.key === 'Tab') {
-                                            setInputsStateDiff({ email: { focus: true } });
+                                            onValue.onInputsStateDiff({ email: { focus: true } });
                                         }
                                     }}
                                     {...(() => {
@@ -720,12 +219,12 @@ const AccountStepDetails = ({
                                 />
                             )}
 
-                            {signupType === SignupType.Proton && (
+                            {state.signupType === SignupType.Proton && (
                                 <InputFieldTwo
-                                    ref={usernameRef}
+                                    ref={refs.username}
                                     id="username"
                                     label={c('Signup label').t`Username`}
-                                    error={usernameError}
+                                    error={errors.username}
                                     inputClassName="email-input-field"
                                     suffix={(() => {
                                         const asyncState = (() => {
@@ -741,9 +240,7 @@ const AccountStepDetails = ({
                                                     </div>
                                                 );
                                             };
-                                            if (
-                                                usernameAsyncValidationState.state === AsyncValidationStateValue.Success
-                                            ) {
+                                            if (asyncStates.username.state === AsyncValidationStateValue.Success) {
                                                 return wrap(
                                                     <Icon
                                                         name="checkmark-circle"
@@ -754,16 +251,15 @@ const AccountStepDetails = ({
                                                 );
                                             }
                                             if (
-                                                usernameAsyncValidationState.state ===
-                                                    AsyncValidationStateValue.Loading &&
-                                                getAssistVisible(states.username)
+                                                asyncStates.username.state === AsyncValidationStateValue.Loading &&
+                                                getAssistVisible('username')
                                             ) {
                                                 return wrap(<CircleLoader size="small" />);
                                             }
                                         })();
 
-                                        if (domains.length === 1) {
-                                            const value = `@${domain}`;
+                                        if (domainOptions.length === 1) {
+                                            const value = `@${state.domain}`;
                                             return (
                                                 <>
                                                     <span className="text-ellipsis" title={value}>
@@ -783,9 +279,9 @@ const AccountStepDetails = ({
                                                     unstyled
                                                     onOpen={() => setRerender({})}
                                                     onClose={() => setRerender({})}
-                                                    value={domain}
+                                                    value={state.domain}
                                                     onChange={({ value }) => {
-                                                        onUsernameValue(trimmedUsername, value);
+                                                        onValue.onUsernameValue(state.username, value);
                                                     }}
                                                 >
                                                     {domainOptions.map((option) => (
@@ -802,22 +298,22 @@ const AccountStepDetails = ({
                                             </>
                                         );
                                     })()}
-                                    dense={dense ? !usernameError : undefined}
-                                    rootClassName={dense ? (!usernameError ? 'pb-2' : undefined) : undefined}
-                                    value={details.username}
+                                    dense={dense ? !errors.username : undefined}
+                                    rootClassName={dense ? (!errors.username ? 'pb-2' : undefined) : undefined}
+                                    value={state.username}
                                     onValue={(value: string) => {
-                                        onUsernameValue(value, domain);
+                                        onValue.onUsernameValue(value, state.domain);
                                     }}
                                     onBlur={() => {
                                         // Doesn't work because it's in the challenge
-                                        setInputsStateDiff({ username: { focus: true } });
+                                        onValue.onInputsStateDiff({ username: { focus: true } });
                                     }}
                                     onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
                                         if (event.key === 'Enter') {
                                             handleSubmit();
                                         }
                                         if (event.key === 'Tab') {
-                                            setInputsStateDiff({ username: { focus: true } });
+                                            onValue.onInputsStateDiff({ username: { focus: true } });
                                         }
                                     }}
                                     readOnly={disableChangeForChallenge}
@@ -834,18 +330,14 @@ const AccountStepDetails = ({
                             <InlineLinkButton
                                 id="existing-email-button"
                                 onClick={() => {
-                                    setSignupType(
-                                        (() => {
-                                            if (signupType === SignupType.Proton) {
-                                                return SignupType.External;
-                                            }
-                                            return signupTypes.find((type) => type !== signupType) || signupType;
-                                        })()
-                                    );
-                                    setInputsDiff({ email: '', username: '' });
+                                    const signupType =
+                                        state.signupType === SignupType.Proton
+                                            ? SignupType.External
+                                            : SignupType.Proton;
+                                    onValue.onDetailsDiff({ signupType, email: '', username: '' });
                                 }}
                             >
-                                {signupType === SignupType.External
+                                {state.signupType === SignupType.External
                                     ? c('Action').t`Get a new encrypted email address`
                                     : c('Action').t`Use your current email instead`}
                             </InlineLinkButton>
@@ -853,7 +345,7 @@ const AccountStepDetails = ({
                                 buttonTabIndex={-1}
                                 className="ml-2"
                                 title={
-                                    signupType === SignupType.External
+                                    state.signupType === SignupType.External
                                         ? c('Info')
                                               .t`With an encrypted ${BRAND_NAME} address, you can use all ${BRAND_NAME} services`
                                         : c('Info')
@@ -867,62 +359,62 @@ const AccountStepDetails = ({
                         <>
                             <PasswordStrengthIndicatorSpotlight
                                 wrapper={passwordStrengthIndicatorSpotlight}
-                                password={details.password}
+                                password={state.password}
                                 anchorRef={passwordContainerRef}
                             >
                                 <InputFieldTwo
-                                    ref={passwordRef}
+                                    ref={refs.password}
                                     containerRef={passwordContainerRef}
                                     id="password"
                                     as={PasswordInputTwo}
                                     assistiveText={
                                         !passwordStrengthIndicatorSpotlight.supported &&
-                                        states.password.focus &&
+                                        inputStates.password.focus &&
                                         getMinPasswordLengthMessage()
                                     }
                                     label={c('Signup label').t`Password`}
-                                    error={passwordError}
-                                    dense={!passwordError}
+                                    error={errors.password}
+                                    dense={!errors.password}
                                     rootClassName={clsx(
                                         hasSwitchSignupType ? 'mt-4' : 'mt-2',
-                                        !passwordError && 'pb-2'
+                                        !errors.password && 'pb-2'
                                     )}
                                     disableChange={disableChange}
-                                    value={details.password}
+                                    value={state.password}
                                     autoComplete="new-password"
                                     onValue={(value: string) => {
-                                        setInputsDiff({ password: value });
-                                        setInputsStateDiff({ password: { interactive: true } });
+                                        onValue.onDetailsDiff({ password: value });
+                                        onValue.onInputsStateDiff({ password: { interactive: true } });
                                     }}
                                     onBlur={() => {
-                                        setInputsStateDiff({ password: { focus: true } });
+                                        onValue.onInputsStateDiff({ password: { focus: true } });
                                         passwordStrengthIndicatorSpotlight.onInputBlur();
                                     }}
                                     onFocus={passwordStrengthIndicatorSpotlight.onInputFocus}
                                 />
                             </PasswordStrengthIndicatorSpotlight>
 
-                            {states.password.interactive && (
+                            {inputStates.password.interactive && (
                                 <InputFieldTwo
-                                    ref={passwordConfirmRef}
+                                    ref={refs.passwordConfirm}
                                     id="password-confirm"
                                     as={PasswordInputTwo}
                                     placeholder={
-                                        !showConfirmPasswordLabel ? c('Signup label').t`Confirm password` : undefined
+                                        !hasConfirmPasswordLabel ? c('Signup label').t`Confirm password` : undefined
                                     }
-                                    label={showConfirmPasswordLabel && c('Signup label').t`Confirm password`}
-                                    error={passwordConfirmError}
-                                    dense={!passwordConfirmError}
-                                    rootClassName={clsx(passwordError && 'pt-2')}
+                                    label={hasConfirmPasswordLabel && c('Signup label').t`Confirm password`}
+                                    error={errors.passwordConfirm}
+                                    dense={!errors.passwordConfirm}
+                                    rootClassName={clsx(errors.password && 'pt-2')}
                                     disableChange={disableChange}
-                                    value={details.passwordConfirm}
+                                    value={state.passwordConfirm}
                                     autoComplete="new-password"
                                     onValue={(value: string) => {
-                                        setInputsDiff({ passwordConfirm: value });
-                                        setInputsStateDiff({ passwordConfirm: { interactive: true } });
+                                        onValue.onDetailsDiff({ passwordConfirm: value });
+                                        onValue.onInputsStateDiff({ passwordConfirm: { interactive: true } });
                                     }}
                                     onBlur={() => {
-                                        setInputsStateDiff({ passwordConfirm: { focus: true } });
+                                        onValue.onInputsStateDiff({ passwordConfirm: { focus: true } });
                                     }}
                                 />
                             )}
@@ -930,16 +422,15 @@ const AccountStepDetails = ({
                     )}
                 </div>
                 {footer({
-                    emailAlreadyUsed,
-                    details,
+                    emailAlreadyUsed: errors.emailAlreadyUsed,
                     email: (() => {
-                        if (signupType === SignupType.Proton) {
-                            if (details.username.trim()) {
-                                return joinUsernameDomain(details.username, domain);
+                        if (state.signupType === SignupType.Proton) {
+                            if (state.username.trim()) {
+                                return joinUsernameDomain(state.username, state.domain);
                             }
                             return '';
                         }
-                        return details.email;
+                        return state.email;
                     })(),
                 })}
             </form>

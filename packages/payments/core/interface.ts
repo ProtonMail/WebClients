@@ -345,6 +345,7 @@ export interface PaymentsApi {
     updateInvoiceBillingAddress: (invoiceId: string, fullBillingAddress: FullBillingAddress) => Promise<void>;
     getInvoiceBillingAddress: (invoiceId: string) => Promise<FullBillingAddress>;
     getCachedCheck: (data: CheckSubscriptionData) => EnrichedCheckResponse | undefined;
+    getCachedCheckByPlans: (plans: CheckSubscriptionData['Plans']) => EnrichedCheckResponse[];
 }
 
 export type ChargebeeKillSwitchData = {

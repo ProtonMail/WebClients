@@ -4,7 +4,7 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { type PasswordPolicies, PasswordPolicyState } from '@proton/shared/lib/interfaces';
 import useFlag from '@proton/unleash/useFlag';
 
-import { usePasswordStrengthIndicator } from '../passwordStrengthIndicator/PasswordStrengthIndicator';
+import { useLoadPasswordStrengthIndicatorWasm } from '../passwordStrengthIndicator/PasswordStrengthIndicator';
 import type { PasswordPolicyValidationResult } from './interface';
 
 const getIsPasswordPoliciesActive = (passwordPolicies: PasswordPolicies | undefined) => {
@@ -81,7 +81,7 @@ export interface PasswordPolicyValidationHookResult {
         onInputBlur: () => void;
     };
     inputFocused: boolean;
-    passwordStrengthIndicator: ReturnType<typeof usePasswordStrengthIndicator>;
+    passwordStrengthIndicator: ReturnType<typeof useLoadPasswordStrengthIndicatorWasm>;
 }
 
 export const usePasswordPolicyValidation = (
@@ -89,7 +89,7 @@ export const usePasswordPolicyValidation = (
     passwordPolicies: PasswordPolicies | undefined
 ): PasswordPolicyValidationHookResult => {
     const featureEnabled = useFlag('PasswordPolicy');
-    const passwordStrengthIndicator = usePasswordStrengthIndicator();
+    const passwordStrengthIndicator = useLoadPasswordStrengthIndicatorWasm();
     const { viewportWidth } = useActiveBreakpoint();
     const [inputFocused, setInputFocus] = useState(false);
 

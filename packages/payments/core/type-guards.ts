@@ -1,12 +1,15 @@
 import { MethodStorage, PAYMENT_METHOD_TYPES, PLANS } from './constants';
 import type {
     CardPayment,
+    ChargeablePaymentParameters,
     CheckWithAutomaticOptions,
+    CreateCardDetailsBackend,
     ExistingPaymentMethod,
     ExtendedTokenPayment,
     FreeSubscription,
     PayPalDetails,
     PaymentMethodSepa,
+    PaymentMethodStatus,
     PaymentMethodStatusExtended,
     PaymentMethodType,
     PaypalPayment,
@@ -22,50 +25,55 @@ import type {
     V5PaymentToken,
     V5Payments,
     WrappedPaymentsVersion,
-    WrappedProcessorType,
 } from './interface';
 
-export function isCardPayment(payment: any): payment is CardPayment {
+export function isCardPayment(payment: CardPayment | undefined): payment is CardPayment {
     return payment?.Type === PAYMENT_METHOD_TYPES.CARD && !!payment?.Details;
 }
-export function isTokenPayment(payment: any): payment is TokenPayment {
-    return payment?.Type === PAYMENT_METHOD_TYPES.TOKEN || !!(payment as any)?.Details?.Token;
+
+export function isTokenPayment(
+    payment: Omit<ExtendedTokenPayment, 'paymentProcessorType' | 'paymentsVersion'> | undefined
+): payment is TokenPayment {
+    return payment?.Type === PAYMENT_METHOD_TYPES.TOKEN || !!payment?.Details?.Token;
 }
-export function isWrappedPaymentsVersion(data: any): data is WrappedPaymentsVersion {
+
+export function isWrappedPaymentsVersion(data: WrappedPaymentsVersion | undefined): data is WrappedPaymentsVersion {
     return !!data && !!data.paymentsVersion;
 }
-export function isWrappedProcessorType(data: any): data is WrappedProcessorType {
-    return !!data && !!data.paymentProcessorType;
-}
-export function isExtendedTokenPayment(data: any): data is ExtendedTokenPayment {
-    return isWrappedProcessorType(data) && isWrappedPaymentsVersion(data);
-}
-export function isPaypalPayment(payment: any): payment is PaypalPayment {
-    return (
+
+export function isPaypalPayment(payment: PaypalPayment | CardPayment | undefined): payment is PaypalPayment {
+    return Boolean(
         payment && (payment.Type === PAYMENT_METHOD_TYPES.PAYPAL || payment.Type === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT)
     );
 }
-export function isTokenPaymentMethod(data: any): data is TokenPaymentMethod {
+
+export function isTokenPaymentMethod(data: TokenPaymentMethod | undefined): data is TokenPaymentMethod {
     return !!data && isTokenPayment(data.Payment);
 }
-export function isPaymentMethodStatusExtended(obj: any): obj is PaymentMethodStatusExtended {
+
+export function isPaymentMethodStatusExtended(
+    obj: PaymentMethodStatus | PaymentMethodStatusExtended | undefined
+): obj is PaymentMethodStatusExtended {
     if (!obj) {
         return false;
     }
 
-    return !!obj.VendorStates;
+    return 'VendorStates' in obj && !!obj.VendorStates;
 }
 
-export function isPaypalDetails(obj: any): obj is PayPalDetails {
+export function isPaypalDetails(obj: SavedCardDetails | PayPalDetails | SepaDetails | undefined): obj is PayPalDetails {
     if (!obj) {
         return false;
     }
 
     const props: (keyof PayPalDetails)[] = ['BillingAgreementID', 'PayerID'];
 
-    return props.every((prop) => typeof obj[prop] === 'string');
+    return props.every((prop) => typeof obj[prop as keyof typeof obj] === 'string');
 }
-export function isSavedCardDetails(obj: any): obj is SavedCardDetails {
+
+export function isSavedCardDetails(
+    obj: SavedCardDetails | PayPalDetails | SepaDetails | CreateCardDetailsBackend | undefined
+): obj is SavedCardDetails {
     if (!obj) {
         return false;
     }
@@ -73,11 +81,11 @@ export function isSavedCardDetails(obj: any): obj is SavedCardDetails {
     // Name is optional property, so we don't need to check it here
     const props: (keyof SavedCardDetails)[] = ['ExpMonth', 'ExpYear', 'Country', 'Last4', 'Brand'];
 
-    return props.every((prop) => typeof obj[prop] === 'string');
+    return props.every((prop) => typeof obj[prop as keyof typeof obj] === 'string');
 }
 
-export function isSavedPaymentMethodSepa(obj: any): obj is PaymentMethodSepa {
-    return obj.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT && !!obj.Details;
+export function isSavedPaymentMethodSepa(obj: SavedPaymentMethod | undefined): obj is PaymentMethodSepa {
+    return Boolean(obj && obj.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT && !!obj.Details);
 }
 
 export function isSavedPaymentMethodInternal(
@@ -87,11 +95,13 @@ export function isSavedPaymentMethodInternal(
         paymentMethod?.External === MethodStorage.INTERNAL || (!!paymentMethod && paymentMethod.External === undefined)
     );
 }
+
 export function isSavedPaymentMethodExternal(
     paymentMethod?: SavedPaymentMethod
 ): paymentMethod is SavedPaymentMethodExternal {
     return paymentMethod?.External === MethodStorage.EXTERNAL;
 }
+
 export function methodMatches(
     method: PaymentMethodType | undefined,
     methods: PlainPaymentMethodType[]
@@ -102,6 +112,7 @@ export function methodMatches(
 
     return (methods as string[]).includes(method);
 }
+
 export function isExistingPaymentMethod(paymentMethod?: PaymentMethodType): paymentMethod is ExistingPaymentMethod {
     return (
         paymentMethod !== undefined &&
@@ -110,12 +121,14 @@ export function isExistingPaymentMethod(paymentMethod?: PaymentMethodType): paym
     );
 }
 
-export function isV5Payments(data: any): data is V5Payments {
+export function isV5Payments(data: { v?: number } | undefined): data is V5Payments {
     return !!data && data.v === 5;
 }
 
-export function isV5PaymentToken(data: any): data is V5PaymentToken {
-    return data.PaymentToken && isV5Payments(data);
+export function isV5PaymentToken(
+    data: Omit<ChargeablePaymentParameters, 'Amount' | 'Currency' | 'type' | 'chargeable'>
+): data is V5PaymentToken {
+    return Boolean(data.PaymentToken && isV5Payments(data));
 }
 
 export function isCheckWithAutomaticOptions(data: any): data is CheckWithAutomaticOptions {

@@ -86,6 +86,9 @@ export const useTaxCountry = (props: HookProps): HookResult => {
 
 export type TaxCountrySelectorProps = HookResult & {
     className?: string;
+    labelClassName?: string;
+    buttonClassName?: string;
+    spacingClassName?: string;
     forceExpand?: boolean;
 };
 
@@ -95,6 +98,9 @@ export const TaxCountrySelector = ({
     setFederalStateCode,
     federalStateCode,
     className,
+    labelClassName,
+    buttonClassName,
+    spacingClassName = 'pt-1 mb-1',
 }: TaxCountrySelectorProps) => {
     const showStateCode = countriesWithStates.includes(selectedCountryCode);
 
@@ -157,19 +163,20 @@ export const TaxCountrySelector = ({
 
     return (
         <div className={clsx('field-two-container', className)}>
-            <div className="pt-1 mb-1" data-testid="billing-country">
+            <div className={spacingClassName} data-testid="billing-country">
                 <Tooltip title={tooltipText} isOpen={showTooltip && !!tooltipText}>
-                    <span className="text-bold">{c('Payments').t`Billing Country`}</span>
+                    <span className={clsx('text-bold', labelClassName)}>{c('Payments').t`Billing Country`}</span>
                 </Tooltip>
                 {collapsed && (
                     <>
-                        <span className="text-bold mr-2">:</span>
+                        <span className={clsx('text-bold mr-2', labelClassName)}>:</span>
                         <InlineLinkButton
                             onClick={() => {
                                 setCollapsed(false);
                                 setIsDropdownOpen(true);
                             }}
                             data-testid="billing-country-collapsed"
+                            className={buttonClassName}
                         >
                             {collapsedText}
                         </InlineLinkButton>
@@ -191,10 +198,16 @@ export const TaxCountrySelector = ({
 
 export const WrappedTaxCountrySelector = ({
     className,
+    labelClassName,
+    buttonClassName,
+    spacingClassName,
     onBillingAddressChange,
     statusExtended,
 }: {
     className?: string;
+    labelClassName?: string;
+    buttonClassName?: string;
+    spacingClassName?: string;
     onBillingAddressChange?: OnBillingAddressChange;
     statusExtended?: Pick<PaymentMethodStatusExtended, 'CountryCode' | 'State'>;
 }) => {
@@ -203,5 +216,13 @@ export const WrappedTaxCountrySelector = ({
         statusExtended,
     });
 
-    return <TaxCountrySelector {...taxCountryHook} className={className} />;
+    return (
+        <TaxCountrySelector
+            {...taxCountryHook}
+            className={className}
+            labelClassName={labelClassName}
+            buttonClassName={buttonClassName}
+            spacingClassName={spacingClassName}
+        />
+    );
 };

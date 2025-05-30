@@ -56,7 +56,7 @@ interface Props {
     loadingPaymentDetails: boolean;
     loadingSignup: boolean;
     onPay: (payment: 'signup-token' | ExtendedTokenPayment, type: 'pp' | 'btc' | 'cc' | undefined) => Promise<void>;
-    onValidate: () => boolean;
+    onValidate: () => Promise<boolean>;
     isDarkBg?: boolean;
     withLoadingSignup: WithLoading;
     measure: Measure;
@@ -207,37 +207,38 @@ const AccountStepPayment = ({
     });
 
     const process = (processor: PaymentProcessorHook | undefined) => {
-        if (!onValidate() || !validatePayment()) {
-            return;
-        }
-
-        const telemetryType = (() => {
-            const isFreeSignup = paymentFacade.amount <= 0;
-
-            if (isFreeSignup) {
-                return 'free';
-            }
-
-            if (processor?.meta.type === 'paypal') {
-                return 'pay_pp';
-            }
-
-            if (processor?.meta.type === 'paypal-credit') {
-                return 'pay_pp_no_cc';
-            }
-
-            if (processor?.meta.type === 'bitcoin') {
-                return 'pay_btc';
-            }
-
-            return 'pay_cc';
-        })();
-        measurePaySubmit(telemetryType);
-
         async function run() {
             if (!processor) {
                 return;
             }
+
+            if (!(await onValidate()) || !validatePayment()) {
+                return;
+            }
+
+            const telemetryType = (() => {
+                const isFreeSignup = paymentFacade.amount <= 0;
+
+                if (isFreeSignup) {
+                    return 'free';
+                }
+
+                if (processor?.meta.type === 'paypal') {
+                    return 'pay_pp';
+                }
+
+                if (processor?.meta.type === 'paypal-credit') {
+                    return 'pay_pp_no_cc';
+                }
+
+                if (processor?.meta.type === 'bitcoin') {
+                    return 'pay_btc';
+                }
+
+                return 'pay_cc';
+            })();
+            measurePaySubmit(telemetryType);
+
             try {
                 await processor.processPaymentToken();
             } catch (error) {
@@ -427,13 +428,16 @@ const AccountStepPayment = ({
                                 color="norm"
                                 pill
                                 className="block mx-auto"
-                                onClick={() => {
+                                onClick={async () => {
                                     measurePaySubmit('pay_btc');
-                                    if (onValidate() && validatePayment()) {
-                                        withLoadingSignup(onPay('signup-token', undefined)).catch(() => {
-                                            measurePayError('pay_btc');
-                                        });
-                                    }
+                                    const run = async () => {
+                                        if ((await onValidate()) && validatePayment()) {
+                                            return onPay('signup-token', undefined).catch(() => {
+                                                measurePayError('pay_btc');
+                                            });
+                                        }
+                                    };
+                                    withLoadingSignup(run()).catch(noop);
                                 }}
                             >
                                 {c('pass_signup_2023: Action').t`Continue with Bitcoin`}

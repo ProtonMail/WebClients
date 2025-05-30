@@ -16,16 +16,16 @@ const useErrorHandler = () => {
         if (!error) {
             return;
         }
-
+        
         const apiErrorMessage = getApiErrorMessage(error);
         const errorMessage = error.message || c('Error').t`Unknown error`;
-
+        
         // Bad app version and unreachable errors are handled in a top banner
         const shouldNotify = notify && !error.cancel && !ignoreErrors.includes(error.name);
         if (shouldNotify) {
             createNotification({ type: 'error', text: apiErrorMessage || errorMessage });
         }
-
+        
         const shouldTrace = trace && error.trace !== false && !apiErrorMessage;
         if (shouldTrace) {
             traceError(error);

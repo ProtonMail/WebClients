@@ -7,6 +7,7 @@ import FormModal from '@proton/components/components/modal/FormModal';
 import useModals from '@proton/components/hooks/useModals';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import {
+    type CardPayment,
     type ChargebeePaypalModalHandles,
     PAYMENT_METHOD_TYPES,
     type PaymentVerificator,
@@ -47,7 +48,7 @@ export const getDefaultVerifyPayment = (createModal: (modal: JSX.Element) => voi
             createModal(
                 <PaymentVerificationModal
                     isAddCard={addCardMode}
-                    payment={Payment}
+                    payment={Payment as CardPayment}
                     onSubmit={() => resolve(toV5PaymentToken(Token))}
                     onClose={reject}
                     onProcess={() => {
