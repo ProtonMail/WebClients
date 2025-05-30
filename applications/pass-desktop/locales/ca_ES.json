@@ -680,6 +680,15 @@
       ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
+      ],
+      "Next month": [
+        "Mes següent"
+      ],
+      "Previous month": [
+        "Mes anterior"
+      ],
+      "Start from scratch": [
+        "Comença des de zero"
       ]
     },
     "App menu": {
@@ -2455,6 +2464,13 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+      ],
+      "Week": [
+        "Setmana"
       ]
     },
     "Label": {
@@ -2821,7 +2837,7 @@
         "Planta, apartament, edifici"
       ],
       "For a one-off sharing": [
-        "Per a un ús únic"
+        "Per a un sol ús"
       ],
       "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
         "Per motius de seguretat, ${ PASS_SHORT_APP_NAME } es bloqueja automàticament després de 10 minuts d'inactivitat."
@@ -3434,6 +3450,195 @@
       ],
       "ZIP or Postal code": [
         "Codi postal"
+      ],
+      "Account Number": [
+        "Número de compte"
+      ],
+      "Account Type": [
+        "Tipus de compte"
+      ],
+      "Address": [
+        "Adreça"
+      ],
+      "API Credential": [
+        "Credencial de l'API"
+      ],
+      "API Key": [
+        "Clau API"
+      ],
+      "Bank Account": [
+        "Compte bancari"
+      ],
+      "Bank Name": [
+        "Nom del banc"
+      ],
+      "Country,": [
+        "País,"
+      ],
+      "Create a custom item": [
+        "Crea un element personalitzat"
+      ],
+      "Crypto Wallet": [
+        "Cartera de criptomonedes"
+      ],
+      "Custom Items": [
+        "Elements personalitzats"
+      ],
+      "Database": [
+        "Base de dades"
+      ],
+      "Database Type": [
+        "Tipus de base de dades"
+      ],
+      "Date of Birth": [
+        "Data de naixement"
+      ],
+      "Driver License": [
+        "Permís de conduir"
+      ],
+      "Expiry Date": [
+        "Data d'expiració"
+      ],
+      "Finance": [
+        "Finances"
+      ],
+      "Holder Name": [
+        "Nom del titular"
+      ],
+      "Host": [
+        "Amfitrió"
+      ],
+      "Hostname": [
+        "Nom de l'amfitrió"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "IP Address": [
+        "Adreça IP"
+      ],
+      "Issuing Authority": [
+        "Autoritat emissora"
+      ],
+      "Issuing Country": [
+        "País emissor"
+      ],
+      "License Key": [
+        "Clau de llicència"
+      ],
+      "Medical Record": [
+        "Registre mèdic"
+      ],
+      "Member ID": [
+        "ID del membre"
+      ],
+      "Membership": [
+        "Subscripció"
+      ],
+      "More": [
+        "Més"
+      ],
+      "Name (SSID)": [
+        "Nom (SSID)"
+      ],
+      "Network": [
+        "Xarxa"
+      ],
+      "Operating System": [
+        "Sistema operatiu"
+      ],
+      "Owner": [
+        "Propietari"
+      ],
+      "Passport Number": [
+        "Número de passaport"
+      ],
+      "Permissions": [
+        "Permisos"
+      ],
+      "Personal": [
+        "Personal"
+      ],
+      "Points Balance": [
+        "Saldo de punts"
+      ],
+      "Port": [
+        "Port"
+      ],
+      "Private key": [
+        "Clau privada"
+      ],
+      "Private Key": [
+        "Clau privada"
+      ],
+      "Product": [
+        "Producte"
+      ],
+      "Program Name": [
+        "Nom del programa"
+      ],
+      "Public key": [
+        "Clau pública"
+      ],
+      "Reward Program": [
+        "Programa de recompenses"
+      ],
+      "Routing Number": [
+        "Número d'encaminament"
+      ],
+      "Secret": [
+        "Secret"
+      ],
+      "Seed Phrase": [
+        "Frase de recuperació"
+      ],
+      "Server": [
+        "Servidor"
+      ],
+      "Social Security": [
+        "Seguretat Social"
+      ],
+      "Software license": [
+        "Llicència de programari"
+      ],
+      "SSH key": [
+        "Clau SSH"
+      ],
+      "SSH Keys": [
+        "Claus SSH"
+      ],
+      "SSN": [
+        "Número de la seguretat social"
+      ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
+      "Technology": [
+        "Tecnologia"
+      ],
+      "Tier/Status": [
+        "Nivell/Estat"
+      ],
+      "Unnamed custom item": [
+        "Element personalitzat sense nom"
+      ],
+      "Unnamed SSH key": [
+        "Clau SSH sense nom"
+      ],
+      "Unnamed WiFi item": [
+        "Element wifi sense nom"
+      ],
+      "Unspecified": [
+        "Sense especificar"
+      ],
+      "Wallet Name": [
+        "Nom de la cartera"
+      ],
+      "WiFi network": [
+        "Xarxa wifi"
+      ],
+      "WiFi Networks": [
+        "Xarxes wifi"
       ]
     },
     "Link": {
@@ -3738,6 +3943,18 @@
       ],
       "Write your note": [
         "Escriviu la vostra nota"
+      ],
+      "Add date": [
+        "Afegeix una data"
+      ],
+      "E.g., ": [
+        "Ex., "
+      ],
+      "Name displayed in emails": [
+        "Nom mostrat als correus electrònics"
+      ],
+      "Select option": [
+        "Seleccioneu una opció"
       ]
     },
     "Security Center - Info": {
@@ -4366,6 +4583,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
+      ],
+      "Minicalendar": [
+        "Minicalendari"
       ]
     },
     "Tooltip": {
@@ -4693,6 +4913,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La vostra subscripció no us permet crear diverses caixes fortes. Tots els elements s'importaran a la vostra primera caixa forta. Per a importar a diverses caixes fortes milloreu la vostra subscripció."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Avui"
       ]
     }
   }
