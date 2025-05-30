@@ -3,6 +3,7 @@ import { Icon, useLocalState } from '@proton/components'
 import { DOCS_DEBUG_KEY } from '@proton/docs-shared'
 import { useEffect, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
+import { downloadLogsAsJSON } from '~/utils/downloadLogs'
 import type { EditorControllerInterface } from '@proton/docs-core'
 import type { AuthenticatedDocControllerInterface, DocumentState, PublicDocumentState } from '@proton/docs-core'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
@@ -148,6 +149,11 @@ export function DebugMenu({ docController, editorController, documentState, docu
         <Button size="small" onClick={copyYDocAsJSON}>
           Copy Y.Doc as JSON
         </Button>
+        {isSheet && (
+          <Button size="small" onClick={() => downloadLogsAsJSON(editorController, documentType)}>
+            Download Logs as JSON
+          </Button>
+        )}
         {isDocument && (
           <>
             <Button size="small" onClick={copyEditorJSON}>

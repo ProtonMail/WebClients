@@ -68,9 +68,9 @@ import {
   SheetTabs,
 } from '@rowsncolumns/spreadsheet'
 import { ChartComponent, useCharts, ChartEditor, ChartEditorDialog } from '@rowsncolumns/charts'
-import { IconButton, Separator } from '@rowsncolumns/ui'
+import { IconButton, Separator, SimpleTooltip } from '@rowsncolumns/ui'
 import { functionDescriptions, functions } from '@rowsncolumns/functions'
-import { MagnifyingGlassIcon } from '@rowsncolumns/icons'
+import { MagnifyingGlassIcon, DownloadIcon } from '@rowsncolumns/icons'
 import type { EditorInitializationConfig, DocStateInterface, SheetImportData } from '@proton/docs-shared'
 import { EditorSystemMode, SheetImportEvent } from '@proton/docs-shared'
 import { DocProvider, TranslatedResult } from '@proton/docs-shared'
@@ -80,6 +80,9 @@ import '@rowsncolumns/spreadsheet/dist/spreadsheet.min.css'
 import type { EditorLoadResult } from '../Lib/EditorLoadResult'
 import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
 import { useApplication } from './ApplicationProvider'
+import { downloadLogsAsJSON } from '../../../../docs/src/app/utils/downloadLogs'
+import type { EditorToClientBridge } from '../Bridge/EditorToClientBridge'
+import type { EditorControllerInterface } from '@proton/docs-core'
 
 export type SheetRef = {
   getSheetState: () => {
@@ -96,12 +99,14 @@ export type SheetRef = {
 
 export const Spreadsheet = forwardRef(function Spreadsheet(
   {
+    bridge,
     docState,
     hidden,
     onEditorLoadResult,
     editorInitializationConfig,
     systemMode,
   }: {
+    bridge: EditorToClientBridge
     docState: DocStateInterface
     hidden: boolean
     onEditorLoadResult: EditorLoadResult
@@ -261,19 +266,21 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     },
   })
 
+  const getSheetState = () => ({
+    activeCell,
+    activeSheetId,
+    sheets,
+    sheetData,
+    conditionalFormats,
+    protectedRanges,
+    charts,
+    embeds,
+    tables,
+    namedRanges,
+  })
+
   useImperativeHandle(ref, () => ({
-    getSheetState: () => ({
-      activeCell,
-      activeSheetId,
-      sheets,
-      sheetData,
-      conditionalFormats,
-      protectedRanges,
-      charts,
-      embeds,
-      tables,
-      namedRanges,
-    }),
+    getSheetState,
   }))
 
   const provider = useMemo(() => {
@@ -394,6 +401,19 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       createdInitialSheetRef.current = true
     }
   }, [editorInitializationConfig, onCreateNewSheet])
+
+  const handleDownloadLogs = () => {
+    const editorAdapter = {
+      async getYDocAsJSON() {
+        return docState.getDoc().toJSON()
+      },
+      async getSheetsJSON() {
+        return getSheetState()
+      },
+    } as Pick<EditorControllerInterface, 'getYDocAsJSON' | 'getSheetsJSON'>
+
+    downloadLogsAsJSON(editorAdapter as EditorControllerInterface, 'sheet')
+  }
 
   return (
     <>
@@ -567,6 +587,11 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
             <IconButton onClick={onRequestSearch}>
               <MagnifyingGlassIcon />
             </IconButton>
+            <SimpleTooltip tooltip="Download debugging logs as ZIP file">
+              <IconButton onClick={handleDownloadLogs}>
+                <DownloadIcon />
+              </IconButton>
+            </SimpleTooltip>
           </Toolbar>
         )}
         <FormulaBar>
