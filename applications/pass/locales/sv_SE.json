@@ -674,6 +674,15 @@
       ],
       "Your password manager is not here? Request it.": [
         "Är din lösenordshanterare inte här? Begär den."
+      ],
+      "Next month": [
+        "Nästa månad"
+      ],
+      "Previous month": [
+        "Föregående månad"
+      ],
+      "Start from scratch": [
+        "Börja från början"
       ]
     },
     "Browser": {
@@ -1451,7 +1460,7 @@
         "Ta med dina befintliga lösenord till ${ BRAND_NAME }."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
-        "Ta med din egen domän och du slipper att köpa ännu en hostinglösning för e-post."
+        "Skaffa en egen domän så slipper du köpa ännu en värdlösning för din e-post."
       ],
       "Built in 2FA authenticator": [
         "Inbyggd 2FA-autentisering"
@@ -2405,6 +2414,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
+      ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Betrodd av över 50 000 företagsanvändare och 100 miljoner konton runt om i världen."
+      ],
+      "Week": [
+        "Vecka"
       ]
     },
     "Label": {
@@ -3342,6 +3357,192 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "Account Number": [
+        "Kontonummer"
+      ],
+      "Account Type": [
+        "Kontotyp"
+      ],
+      "Address": [
+        "Adress"
+      ],
+      "API Key": [
+        "API-nyckel"
+      ],
+      "Bank Account": [
+        "Bankkonto"
+      ],
+      "Bank Name": [
+        "Banknamn"
+      ],
+      "Country,": [
+        "Land,"
+      ],
+      "Create a custom item": [
+        "Skapa ett anpassat objekt"
+      ],
+      "Crypto Wallet": [
+        "Kryptoplånbok"
+      ],
+      "Custom Items": [
+        "Anpassade objekt"
+      ],
+      "Database": [
+        "Databas"
+      ],
+      "Database Type": [
+        "Databastyp"
+      ],
+      "Date of Birth": [
+        "Födelsedatum"
+      ],
+      "Driver License": [
+        "Körkort"
+      ],
+      "Expiry Date": [
+        "Utgångsdatum"
+      ],
+      "Finance": [
+        "Ekonomi"
+      ],
+      "Holder Name": [
+        "Innehavarens namn"
+      ],
+      "Host": [
+        "Värd"
+      ],
+      "Hostname": [
+        "Värdnamn"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "IP Address": [
+        "IP-adress"
+      ],
+      "Issuing Authority": [
+        "Utfärdande myndighet"
+      ],
+      "Issuing Country": [
+        "Utfärdande land"
+      ],
+      "License Key": [
+        "Licensnyckel"
+      ],
+      "Medical Record": [
+        "Medicinsk journal"
+      ],
+      "Member ID": [
+        "Medlems-ID"
+      ],
+      "Membership": [
+        "Medlemskap"
+      ],
+      "More": [
+        "Mer"
+      ],
+      "Name (SSID)": [
+        "Namn (SSID)"
+      ],
+      "Network": [
+        "Nätverk"
+      ],
+      "Operating System": [
+        "Operativsystem"
+      ],
+      "Owner": [
+        "Ägare"
+      ],
+      "Passport Number": [
+        "Passnummer"
+      ],
+      "Permissions": [
+        "Behörigheter"
+      ],
+      "Personal": [
+        "Privat"
+      ],
+      "Points Balance": [
+        "Poängsaldo"
+      ],
+      "Port": [
+        "Port"
+      ],
+      "Private Key": [
+        "Privat nyckel"
+      ],
+      "Private key": [
+        "Privat nyckel"
+      ],
+      "Product": [
+        "Produkt"
+      ],
+      "Program Name": [
+        "Programnamn"
+      ],
+      "Public key": [
+        "Offentlig nyckel"
+      ],
+      "Reward Program": [
+        "Belöningsprogram"
+      ],
+      "Routing Number": [
+        "Clearingnummer"
+      ],
+      "Secret": [
+        "Hemlighet"
+      ],
+      "Seed Phrase": [
+        "Säkerhetsfras"
+      ],
+      "Server": [
+        "Server"
+      ],
+      "Social Security": [
+        "Social säkerhet"
+      ],
+      "Software license": [
+        "Programvarulicens"
+      ],
+      "SSH key": [
+        "SSH-nyckel"
+      ],
+      "SSH Keys": [
+        "SSH-nycklar"
+      ],
+      "SSN": [
+        "SSN"
+      ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
+      "Technology": [
+        "Teknologi"
+      ],
+      "Tier/Status": [
+        "Nivå/status"
+      ],
+      "Unnamed custom item": [
+        "Namnlöst anpassat objekt"
+      ],
+      "Unnamed SSH key": [
+        "Namnlös SSH-nyckel"
+      ],
+      "Unnamed WiFi item": [
+        "Namnlöst WiFi-objekt"
+      ],
+      "Unspecified": [
+        "Ospecificerad"
+      ],
+      "Wallet Name": [
+        "Plånboksnamn"
+      ],
+      "WiFi network": [
+        "WiFi-nätverk"
+      ],
+      "WiFi Networks": [
+        "WiFi-nätverk"
       ]
     },
     "Link": {
@@ -3629,6 +3830,18 @@
       ],
       "Write your note": [
         "Skriv din anteckning"
+      ],
+      "Add date": [
+        "Lägg till datum"
+      ],
+      "E.g., ": [
+        "T.ex., "
+      ],
+      "Name displayed in emails": [
+        "Namn visad i e-post"
+      ],
+      "Select option": [
+        "Välj alternativ"
       ]
     },
     "Security Center - Info": {
@@ -4257,6 +4470,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du håller på att ta bort ${ aliasCount } alias permanent.",
         "Du håller på att ta bort ${ aliasCount } alias permanent."
+      ],
+      "Minicalendar": [
+        "Minikalender"
       ]
     },
     "Tooltip": {
@@ -4584,6 +4800,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Din prenumeration tillåter inte att du skapar flera valv. Alla objekt kommer att importeras till ditt första valv. För att importera till flera valv, uppgradera din prenumeration."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Idag"
       ]
     }
   }
