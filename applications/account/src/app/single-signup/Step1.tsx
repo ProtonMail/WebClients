@@ -80,8 +80,8 @@ import noop from '@proton/utils/noop';
 import { getLocaleTermsURL } from '../content/helper';
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';
-import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
-import { SignupType } from '../signup/interfaces';
+import { type SignupCacheResult, SignupType, type SubscriptionData } from '../signup/interfaces';
+import { AccountFormDataContextProvider } from '../signupCtx/context/accountData/AccountFormDataContext';
 import type { AccountStepDetailsRef } from '../single-signup-v2/AccountStepDetails';
 import AccountStepDetails from '../single-signup-v2/AccountStepDetails';
 import DiscountBanner from '../single-signup-v2/DiscountBanner';
@@ -802,34 +802,34 @@ const Step1 = ({
     );
 
     const process = (processor: PaymentProcessorHook | undefined) => {
-        const isFormValid = validatePayment() && accountDetailsRef.current?.validate();
-        if (!isFormValid) {
-            return;
-        }
-
-        const telemetryType = (() => {
-            const isFreeSignup = paymentFacade.amount <= 0;
-
-            if (isFreeSignup) {
-                return 'free';
-            }
-
-            if (processor?.meta.type === 'paypal') {
-                return 'pay_pp';
-            }
-
-            if (processor?.meta.type === 'paypal-credit') {
-                return 'pay_pp_no_cc';
-            }
-
-            return 'pay_cc';
-        })();
-        measurePaySubmit(telemetryType);
-
         async function run() {
             if (!processor) {
                 return;
             }
+
+            const isFormValid = validatePayment() && (await accountDetailsRef.current?.validate());
+            if (!isFormValid) {
+                return;
+            }
+
+            const telemetryType = (() => {
+                const isFreeSignup = paymentFacade.amount <= 0;
+
+                if (isFreeSignup) {
+                    return 'free';
+                }
+
+                if (processor?.meta.type === 'paypal') {
+                    return 'pay_pp';
+                }
+
+                if (processor?.meta.type === 'paypal-credit') {
+                    return 'pay_pp_no_cc';
+                }
+
+                return 'pay_cc';
+            })();
+            measurePaySubmit(telemetryType);
 
             try {
                 await processor.processPaymentToken();
@@ -1163,94 +1163,97 @@ const Step1 = ({
                             />
                             <BoxContent>
                                 <div className="relative">
-                                    <AccountStepDetails
+                                    <AccountFormDataContextProvider
+                                        availableSignupTypes={new Set([SignupType.External])}
                                         domains={model.domains}
-                                        signupTypes={[SignupType.External]}
                                         defaultEmail={defaultEmail}
-                                        passwordFields={false}
-                                        model={model}
-                                        measure={measure}
-                                        api={silentApi}
-                                        accountStepDetailsRef={accountDetailsRef}
-                                        disableChange={loadingSignup}
-                                        onSubmit={
-                                            hasSelectedFree
-                                                ? () => {
-                                                      withLoadingSignup(
-                                                          handleCompletion(
-                                                              getFreeSubscriptionData(model.subscriptionData)
-                                                          )
-                                                      ).catch(noop);
-                                                  }
-                                                : undefined
-                                        }
-                                        footer={(details) => {
-                                            const signInTo = {
-                                                pathname: `/dashboard${stringifySearchParams(
-                                                    {
-                                                        plan: options.plan.Name,
-                                                        cycle: `${options.cycle}`,
-                                                        currency: options.currency,
-                                                        coupon: options.checkResult.Coupon?.Code,
-                                                        type: 'offer',
-                                                        ref: 'signup',
-                                                    },
-                                                    '?'
-                                                )}`,
-                                                state: {
-                                                    username: details.email,
-                                                },
-                                            } as const;
-                                            const signIn = (
-                                                <Link
-                                                    key="signin"
-                                                    className="link link-focus text-nowrap"
-                                                    to={signInTo}
-                                                    onClick={() =>
-                                                        measure({
-                                                            event: TelemetryAccountSignupEvents.userSignIn,
-                                                            dimensions: {
-                                                                location: 'step2',
-                                                            },
-                                                        })
-                                                    }
-                                                >
-                                                    {c('Link').t`Sign in`}
-                                                </Link>
-                                            );
-
-                                            return (
-                                                <>
-                                                    {hasSelectedFree && (
-                                                        <div className="mb-4">
-                                                            <Button
-                                                                type="submit"
-                                                                size="large"
-                                                                loading={loadingSignup}
-                                                                color="norm"
-                                                                fullWidth
-                                                            >
-                                                                {c('pass_signup_2023: Action')
-                                                                    .t`Start using ${appName}`}
-                                                            </Button>
-                                                        </div>
-                                                    )}
-                                                    <span>
+                                    >
+                                        <AccountStepDetails
+                                            passwordFields={false}
+                                            model={model}
+                                            measure={measure}
+                                            accountStepDetailsRef={accountDetailsRef}
+                                            disableChange={loadingSignup}
+                                            onSubmit={
+                                                hasSelectedFree
+                                                    ? () => {
+                                                          withLoadingSignup(
+                                                              handleCompletion(
+                                                                  getFreeSubscriptionData(model.subscriptionData)
+                                                              )
+                                                          ).catch(noop);
+                                                      }
+                                                    : undefined
+                                            }
+                                            footer={(details) => {
+                                                const signInTo = {
+                                                    pathname: `/dashboard${stringifySearchParams(
                                                         {
-                                                            // translator: Full sentence "Already have an account? Sign in"
-                                                            c('Go to sign in').jt`Already have an account? ${signIn}`
+                                                            plan: options.plan.Name,
+                                                            cycle: `${options.cycle}`,
+                                                            currency: options.currency,
+                                                            coupon: options.checkResult.Coupon?.Code,
+                                                            type: 'offer',
+                                                            ref: 'signup',
+                                                        },
+                                                        '?'
+                                                    )}`,
+                                                    state: {
+                                                        username: details.email,
+                                                    },
+                                                } as const;
+                                                const signIn = (
+                                                    <Link
+                                                        key="signin"
+                                                        className="link link-focus text-nowrap"
+                                                        to={signInTo}
+                                                        onClick={() =>
+                                                            measure({
+                                                                event: TelemetryAccountSignupEvents.userSignIn,
+                                                                dimensions: {
+                                                                    location: 'step2',
+                                                                },
+                                                            })
                                                         }
-                                                    </span>
-                                                    {!isB2bPlan && (
-                                                        <div className="mt-4 color-weak text-sm">
-                                                            {c('Info')
-                                                                .t`Your information is safe with us. We'll only contact you when it's required to provide our services.`}
-                                                        </div>
-                                                    )}
-                                                </>
-                                            );
-                                        }}
-                                    />
+                                                    >
+                                                        {c('Link').t`Sign in`}
+                                                    </Link>
+                                                );
+
+                                                return (
+                                                    <>
+                                                        {hasSelectedFree && (
+                                                            <div className="mb-4">
+                                                                <Button
+                                                                    type="submit"
+                                                                    size="large"
+                                                                    loading={loadingSignup}
+                                                                    color="norm"
+                                                                    fullWidth
+                                                                >
+                                                                    {c('pass_signup_2023: Action')
+                                                                        .t`Start using ${appName}`}
+                                                                </Button>
+                                                            </div>
+                                                        )}
+                                                        <span>
+                                                            {
+                                                                // translator: Full sentence "Already have an account? Sign in"
+                                                                c('Go to sign in')
+                                                                    .jt`Already have an account? ${signIn}`
+                                                            }
+                                                        </span>
+                                                        {!isB2bPlan && (
+                                                            <div className="mt-4 color-weak text-sm">
+                                                                {c('Info')
+                                                                    .t`Your information is safe with us. We'll only contact you when it's required to provide our services.`}
+                                                            </div>
+                                                        )}
+                                                    </>
+                                                );
+                                            }}
+                                        />
+                                    </AccountFormDataContextProvider>
                                 </div>
                             </BoxContent>
                         </div>

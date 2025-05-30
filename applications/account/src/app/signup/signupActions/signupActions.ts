@@ -82,7 +82,7 @@ export const handleDone = ({
     }
     const { session } = setupData;
 
-    // Users that creates an account after a logout don't have appIntent, foring forcing it here
+    // Users that creates an account after a logout don't have appIntent, forcing it here
     if (isElectronMail) {
         appIntent = {
             app: APPS.PROTONMAIL,

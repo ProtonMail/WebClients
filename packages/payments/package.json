@@ -12,6 +12,7 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@proton/account": "workspace:^",
         "@proton/atoms": "workspace:^",
         "@proton/shared": "workspace:^",
         "@reduxjs/toolkit": "^2.6.1",
