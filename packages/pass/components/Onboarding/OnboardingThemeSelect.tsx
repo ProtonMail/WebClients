@@ -58,7 +58,7 @@ export const OnboardingThemeSelect: FC = () => {
                     value: theme,
                     label: (
                         <div className="pass-onboarding-modal--option rounded-xl flex items-center w-full py-3 px-4">
-                            <img src={src} alt="" />
+                            <img src={src} alt="" width={134} height={91} />
                             <div
                                 className={clsx(
                                     'flex-1 px-4 flex items-center flex-nowrap gap-1',
