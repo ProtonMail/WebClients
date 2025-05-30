@@ -6,6 +6,7 @@ import type { SerializedEditorState } from 'lexical'
 import type { UserSettings } from '@proton/shared/lib/interfaces'
 import type { YjsState } from '../YjsState'
 import type { SyncedEditorEvent, SyncedEditorStateValues } from '../State/SyncedEditorState'
+import type { SheetImportData } from '../SheetImportData'
 
 export interface ClientRequiresEditorMethods {
   receiveMessage(message: RtsMessagePayload): Promise<void>
@@ -46,6 +47,7 @@ export interface ClientRequiresEditorMethods {
   printAsPDF(): Promise<void>
   loadUserSettings(settings: UserSettings): Promise<void>
   toggleDebugTreeView(): Promise<void>
+  importDataIntoSheet(data: SheetImportData): Promise<void>
 
   syncProperty(
     property: keyof SyncedEditorStateValues,

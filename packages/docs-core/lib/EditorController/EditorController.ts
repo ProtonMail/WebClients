@@ -1,5 +1,5 @@
 import type { LoggerInterface } from '@proton/utils/logs'
-import type { EditorInitializationConfig } from '@proton/docs-shared'
+import type { EditorInitializationConfig, SheetImportData } from '@proton/docs-shared'
 import {
   DocUpdateOrigin,
   type ClientRequiresEditorMethods,
@@ -29,6 +29,7 @@ export interface EditorControllerInterface {
   showCommentsPanel(): void
   toggleDebugTreeView(): Promise<void>
   initializeEditor(editorInitializationConfig: EditorInitializationConfig | undefined, userAddress: string): void
+  importDataIntoSheet(data: SheetImportData): Promise<void>
 }
 
 /** Allows the UI to invoke methods on the editor. */
@@ -373,5 +374,13 @@ export class EditorController implements EditorControllerInterface {
     metrics.docs_readonly_mode_documents_total.increment({
       reason: reason,
     })
+  }
+
+  async importDataIntoSheet(data: SheetImportData): Promise<void> {
+    if (!this.editorInvoker) {
+      throw new Error('Attempting to import data into sheet before editor invoker is initialized')
+    }
+
+    await this.editorInvoker.importDataIntoSheet(data)
   }
 }
