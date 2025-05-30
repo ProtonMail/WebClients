@@ -10,6 +10,7 @@ import { OnboardingLockSetup } from '@proton/pass/components/Onboarding/Onboardi
 import { OnboardingModal } from '@proton/pass/components/Onboarding/OnboardingModal';
 import { OnboardingThemeSelect } from '@proton/pass/components/Onboarding/OnboardingThemeSelect';
 import type { AvailablePlans } from '@proton/pass/components/Onboarding/OnboardingUpgrade';
+import { AspectRatioBox } from '@proton/pass/components/Utils/AspectRatioBox';
 import { PASS_DOWNLOAD_URL, UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { usePassExtensionInstalled } from '@proton/pass/hooks/usePassExtensionInstalled';
@@ -104,7 +105,11 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
                 shortTitle: c('Label').t`Install extension`,
                 action: () => window.open(PASS_DOWNLOAD_URL, '_blank'),
                 actionText: c('Label').t`Install and continue`,
-                component: () => <img src={onboardingExtension} className="w-full" alt="" />,
+                component: () => (
+                    <AspectRatioBox width={300} height={190}>
+                        <img src={onboardingExtension} className="w-full" alt="" />
+                    </AspectRatioBox>
+                ),
                 description: () => c('Label').t`Get the extension for your browser.`,
                 group: c('Label').t`Browse faster, smarter`,
                 title: c('Label').t`Your passwords. Everywhere.`,
