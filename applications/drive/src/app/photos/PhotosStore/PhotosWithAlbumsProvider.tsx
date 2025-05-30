@@ -123,6 +123,7 @@ export enum MIGRATION_STATUS {
     MIGRATING = 'migrating',
     MIGRATED = 'migrated',
 }
+
 export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children }) => {
     const [photosShare, setPhotosShare] = useState<ShareWithKey>();
     const shareId = photosShare?.shareId;
@@ -758,6 +759,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 createNotification({
                     type: 'error',
                     text: c('Notification').t`Some photo(s) could not be added to "${albumName}"`,
+                    preWrap: true,
                 });
             }
 
@@ -765,6 +767,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 createNotification({
                     type: 'success',
                     text: c('Notification').t`Your photo(s) have been added to "${albumName}"`,
+                    preWrap: true,
                 });
             }
 
@@ -772,6 +775,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 createNotification({
                     type: 'info',
                     text: c('Notification').t`Selected photo(s) already in "${albumName}"`,
+                    preWrap: true,
                 });
             }
         },
@@ -1097,12 +1101,14 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 createNotification({
                     type: 'error',
                     text: c('Notification').t`Some photo(s) could not be removed from ${albumLink.name}`,
+                    preWrap: true,
                 });
             }
             if (nbSuccesses) {
                 createNotification({
                     type: 'success',
                     text: c('Notification').t`Your photo(s) have been removed from ${albumLink.name}`,
+                    preWrap: true,
                 });
             }
 
