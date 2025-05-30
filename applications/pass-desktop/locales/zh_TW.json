@@ -525,6 +525,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "找不到您使用的密碼管理器？歡迎告訴我們"
+      ],
+      "Next month": [
+        "下個月"
+      ],
+      "Previous month": [
+        "上個月"
       ]
     },
     "App menu": {
@@ -1385,6 +1391,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "您的資料在 ${ displayedDate } 被發現。"
+      ],
+      "Week": [
+        "週"
       ]
     },
     "Label": {
@@ -2122,6 +2131,18 @@
       ],
       "ZIP": [
         "ZIP檔案"
+      ],
+      "Address": [
+        "電郵位址"
+      ],
+      "IBAN": [
+        "國際銀行帳號"
+      ],
+      "Port": [
+        "連接埠"
+      ],
+      "SSN": [
+        "社會保險號碼（SSN）"
       ]
     },
     "Link": {
@@ -2321,6 +2342,9 @@
       ],
       "Write your note": [
         "新增備註"
+      ],
+      "E.g., ": [
+        "例如： "
       ]
     },
     "Security Center - Info": {
@@ -2726,6 +2750,9 @@
       ],
       "Your welcome gift": [
         "您的歡迎禮物"
+      ],
+      "Minicalendar": [
+        "小型行事曆"
       ]
     },
     "Validation": {
@@ -2901,6 +2928,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "您的訂閱不允許新增多重保管庫。預設會把所有項目匯入第一個保管庫。若要匯入多重保管庫，需升級訂閱。"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "今天"
       ]
     }
   }

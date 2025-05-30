@@ -672,6 +672,21 @@
       ],
       "Your password manager is not here? Request it.": [
         "사용중이신 비밀번호 관리자가 여기 없나요? 추가하도록 요청하세요."
+      ],
+      "Authenticate": [
+        "인증"
+      ],
+      "Next month": [
+        "다음 달"
+      ],
+      "Pay once": [
+        "일회성 결제"
+      ],
+      "Previous month": [
+        "지난 달"
+      ],
+      "Start from scratch": [
+        "처음부터 시작하기"
       ]
     },
     "App menu": {
@@ -2410,6 +2425,21 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "조직에서 ${ PASS_APP_NAME }에 대한 액세스 권한을 보호해야 합니다"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "인증 코드를 입력하세요. ${ digit }자리입니다."
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+      ],
+      "This mailbox will use your previous email.": [
+        "이 메일함은 귀하의 이전 이메일을 사용할 것입니다."
+      ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "전 세계 50,000명 이상의 비즈니스 사용자와 1억 개의 계정이 신뢰합니다."
+      ],
+      "Week": [
+        "주"
       ]
     },
     "Label": {
@@ -3342,6 +3372,195 @@
       ],
       "ZIP or Postal code": [
         "우편번호"
+      ],
+      "Account Number": [
+        "계좌 번호"
+      ],
+      "Account Type": [
+        "계좌 유형"
+      ],
+      "Address": [
+        "주소"
+      ],
+      "API Credential": [
+        "API 자격 증명"
+      ],
+      "Bank Account": [
+        "은행 번호"
+      ],
+      "Bank Name": [
+        "은행명"
+      ],
+      "Built-in 2FA": [
+        "내장형 2단계 인증기"
+      ],
+      "Country,": [
+        "국가,"
+      ],
+      "Create a custom item": [
+        "사용자 지정 항목 추가"
+      ],
+      "Crypto Wallet": [
+        "암호화폐 지갑"
+      ],
+      "Custom Items": [
+        "사용자 지정 항목"
+      ],
+      "Database": [
+        "데이터 베이스"
+      ],
+      "Date of Birth": [
+        "생일"
+      ],
+      "Driver License": [
+        "운전 면허증"
+      ],
+      "Expiry Date": [
+        "만료 날짜"
+      ],
+      "Extra email addresses": [
+        "추가 이메일 주소"
+      ],
+      "Finance": [
+        "금융"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus 구매"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "${ PASS_SHORT_APP_NAME } Unlimited 구매"
+      ],
+      "Highest": [
+        "가장 빠름"
+      ],
+      "Holder Name": [
+        "소유자명"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Issuing Authority": [
+        "발급 기관"
+      ],
+      "Issuing Country": [
+        "발행 지역"
+      ],
+      "Medical Record": [
+        "의료 면허증"
+      ],
+      "Member ID": [
+        "회원 ID"
+      ],
+      "Membership": [
+        "회원권"
+      ],
+      "More": [
+        "더 보기"
+      ],
+      "Name (SSID)": [
+        "이름 (SSID)"
+      ],
+      "Network": [
+        "네트워크"
+      ],
+      "Passport Number": [
+        "여권 번호"
+      ],
+      "Personal": [
+        "개인"
+      ],
+      "Points Balance": [
+        "포인트 잔액"
+      ],
+      "Port": [
+        "포트"
+      ],
+      "Private key": [
+        "개인 키"
+      ],
+      "Private Key": [
+        "비밀 키"
+      ],
+      "Program Name": [
+        "프로그램 이름"
+      ],
+      "Public key": [
+        "공개 키"
+      ],
+      "Reward Program": [
+        "리워드 프로그램"
+      ],
+      "Routing Number": [
+        "라우팅 번호"
+      ],
+      "Seed Phrase": [
+        "시드 구문"
+      ],
+      "Server": [
+        "서버"
+      ],
+      "Social Security": [
+        "주민등록증"
+      ],
+      "Software license": [
+        "소프트웨어 라이선스"
+      ],
+      "SSH key": [
+        "SSH 키"
+      ],
+      "SSH Keys": [
+        "SSH 키"
+      ],
+      "SSN": [
+        "주민등록번호"
+      ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
+      "Technology": [
+        "기술"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "한 번의 구독으로 누리는 최고의 ${ BRAND_NAME }"
+      ],
+      "Tier/Status": [
+        "등급/상태"
+      ],
+      "Unlock premium features": [
+        "프리미엄 기능 잠금 해제"
+      ],
+      "Unnamed custom item": [
+        "이름 없는 사용자 지정 항목"
+      ],
+      "Unnamed SSH key": [
+        "이름 없는 SSH 키"
+      ],
+      "Unnamed WiFi item": [
+        "이름 없는 WiFi 항목"
+      ],
+      "Unspecified": [
+        "지정되지 않음"
+      ],
+      "Vault, item & link sharing": [
+        "금고, 항목 및 링크 공유"
+      ],
+      "VPN Devices": [
+        "VPN 장치"
+      ],
+      "VPN Speed": [
+        "VPN 속도"
+      ],
+      "Wallet Name": [
+        "지갑 이름"
+      ],
+      "What's included": [
+        "포함된 항목"
+      ],
+      "WiFi network": [
+        "WiFi 네트워크"
+      ],
+      "WiFi Networks": [
+        "WiFi 네트워크"
       ]
     },
     "Link": {
@@ -3542,6 +3761,9 @@
     "PassOnboardingOffer": {
       "${ price }/month": [
         "${ price }/월간"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus 평생 이용권 (${ plusLifetimePrice })"
       ]
     },
     "Placeholder": {
@@ -3640,6 +3862,18 @@
       ],
       "Write your note": [
         "메모를 작성하세요"
+      ],
+      "Add date": [
+        "날짜 추가"
+      ],
+      "E.g., ": [
+        "예, "
+      ],
+      "Name displayed in emails": [
+        "이메일에 표시된 이름"
+      ],
+      "Select option": [
+        "옵션 선택"
       ]
     },
     "Security Center - Info": {
@@ -4251,6 +4485,18 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "별칭 ${ aliasCount }개를 영구적으로 삭제하게 됩니다."
+      ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Minicalendar": [
+        "간편 캘린더"
+      ],
+      "Pay once, access forever.": [
+        "한 번 결제하여 영원히 이용하실 수 있습니다."
       ]
     },
     "Tooltip": {
@@ -4575,6 +4821,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "현재 구독에서 다중 금고 생성을 지원하지 않습니다. 모든 항목이 처음 금고에 저장됩니다. 여러 개의 금고를 생성하려면 구독을 업그레이드 하세요."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "오늘"
       ]
     }
   }
