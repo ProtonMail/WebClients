@@ -1,14 +1,14 @@
 import type { CountryOptions } from '@proton/payments';
 import { getLocalizedCountryByAbbr } from '@proton/payments';
 
-import type { CitiesTranslations, CountryCitiesTranslations, SharedServerLocation } from '../api';
+import type { CitiesTranslations, CountryCitiesTranslationsNonNull, SharedServerLocation } from '../api';
 
 export interface GroupedLocation {
-    /** Country code */
+    /** ISO 3166-1 alpha-2 Country Code, e.g. US, FR */
     country: string;
     localizedCountryName: string;
     cities: string[];
-    localizedCities: CountryCitiesTranslations;
+    localizedCities: CountryCitiesTranslationsNonNull;
 }
 
 export function getGroupedLocations(
