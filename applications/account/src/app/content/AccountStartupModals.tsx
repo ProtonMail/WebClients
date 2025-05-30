@@ -1,9 +1,10 @@
-import { StartupModals, useLightLabellingFeatureModal } from '@proton/components';
+import { StartupModals, useLightLabellingFeatureModal, useTrialEndedModal } from '@proton/components';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 const useStartupModals = () => {
+    const trialEndedModal = useTrialEndedModal();
     const lightLabellingFeatureModal = useLightLabellingFeatureModal();
-    return [lightLabellingFeatureModal];
+    return [trialEndedModal, lightLabellingFeatureModal];
 };
 
 const AccountStartupModals = () => {
