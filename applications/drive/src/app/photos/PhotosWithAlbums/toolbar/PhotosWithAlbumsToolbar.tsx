@@ -559,7 +559,11 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         )}
                         <SelectionDropdownButton>
                             {canSavePhotos && (
-                                <PhotosSavePhotoButton showIconOnly={showIconOnly} onSavePhotos={onSavePhotos!} />
+                                <PhotosSavePhotoButton
+                                    dropDownMenuButton={true}
+                                    showIconOnly={false}
+                                    onSavePhotos={onSavePhotos!}
+                                />
                             )}
                             {canSelectCover && (
                                 <PhotosMakeCoverButton
