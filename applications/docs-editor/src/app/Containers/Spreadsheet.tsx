@@ -71,14 +71,15 @@ import { ChartComponent, useCharts, ChartEditor, ChartEditorDialog } from '@rows
 import { IconButton, Separator } from '@rowsncolumns/ui'
 import { functionDescriptions, functions } from '@rowsncolumns/functions'
 import { MagnifyingGlassIcon } from '@rowsncolumns/icons'
-import type { EditorInitializationConfig, DocStateInterface } from '@proton/docs-shared'
-import { EditorSystemMode } from '@proton/docs-shared'
+import type { EditorInitializationConfig, DocStateInterface, SheetImportData } from '@proton/docs-shared'
+import { EditorSystemMode, SheetImportEvent } from '@proton/docs-shared'
 import { DocProvider, TranslatedResult } from '@proton/docs-shared'
 import { useYSpreadsheetV2 } from '@rowsncolumns/y-spreadsheet'
 import { useSyncedState } from '../Hooks/useSyncedState'
 import '@rowsncolumns/spreadsheet/dist/spreadsheet.min.css'
 import type { EditorLoadResult } from '../Lib/EditorLoadResult'
 import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
+import { useApplication } from './ApplicationProvider'
 
 export type SheetRef = {
   getSheetState: () => {
@@ -109,6 +110,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   },
   ref: ForwardedRef<SheetRef>,
 ) {
+  const { application } = useApplication()
   const { userName } = useSyncedState()
 
   const didImportFromExcelFile = useRef(false)
@@ -126,19 +128,6 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const locale = 'en-GB'
   const currency = 'USD'
   const yDoc = useMemo(() => docState.getDoc(), [docState])
-
-  useImperativeHandle(ref, () => ({
-    getSheetState: () => ({
-      sheets,
-      sheetData,
-      conditionalFormats,
-      protectedRanges,
-      charts,
-      embeds,
-      tables,
-      namedRanges,
-    }),
-  }))
 
   const isRevisionMode = systemMode === EditorSystemMode.Revision
 
@@ -272,6 +261,21 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     },
   })
 
+  useImperativeHandle(ref, () => ({
+    getSheetState: () => ({
+      activeCell,
+      activeSheetId,
+      sheets,
+      sheetData,
+      conditionalFormats,
+      protectedRanges,
+      charts,
+      embeds,
+      tables,
+      namedRanges,
+    }),
+  }))
+
   const provider = useMemo(() => {
     const provider = new DocProvider(docState)
     // useYSpreadsheet checks for either a "synced" event from the provider
@@ -356,6 +360,28 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       }).catch(console.error)
     }
   }, [calculateNow, editorInitializationConfig, onChange, onInsertFile])
+
+  useEffect(
+    () =>
+      application.eventBus.addEventCallback((data: SheetImportData) => {
+        const newSheet = onCreateNewSheet()
+        if (newSheet) {
+          onInsertFile(
+            data.file,
+            newSheet.sheetId,
+            { rowIndex: 1, columnIndex: 1 },
+            { preserveFormatting: data.shouldConvertCellContents },
+          )
+            .then(() => {
+              calculateNow({
+                shouldResetCellDependencyGraph: true,
+              })
+            })
+            .catch(console.error)
+        }
+      }, SheetImportEvent),
+    [application.eventBus, calculateNow, onCreateNewSheet, onInsertFile],
+  )
 
   const createdInitialSheetRef = useRef(false)
   useEffect(() => {
