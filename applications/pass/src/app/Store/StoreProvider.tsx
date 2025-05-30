@@ -98,16 +98,19 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 },
 
                 onBoot: async (res) => {
-                    AppStateManager.setBooted(res.ok);
                     const userID = authStore.getUserID();
                     const state = store.getState();
 
                     if (res.ok) {
                         await spotlight.init().catch(noop);
+                        await core.i18n.setLocale(selectLocale(state)).catch(noop);
 
                         telemetry.start().catch(noop);
                         B2BEvents.start().catch(noop);
-                        core.i18n.setLocale(selectLocale(state)).catch(noop);
+
+                        /** Wait for i18n/spotlight init to avoid re-render
+                         * if i18n locale has to change on boot */
+                        AppStateManager.setBooted(true);
 
                         /** For desktop builds using cached versions older than 1.24.2:
                          * Auto-acknowledge the `WELCOME` message to prevent showing the
@@ -142,7 +145,10 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         history.replace({ ...history.location, search });
 
                         if (res.reauth) void handleReauthAction(res.reauth);
-                    } else if (res.clearCache) void deletePassDB(userID);
+                    } else {
+                        AppStateManager.setBooted(false);
+                        if (res.clearCache) void deletePassDB(userID);
+                    }
                 },
 
                 onLocaleUpdated: core.i18n.setLocale,
