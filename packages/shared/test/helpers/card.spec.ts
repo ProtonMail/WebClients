@@ -56,6 +56,6 @@ describe('card helpers', () => {
     });
 
     it('should return false if there is no card details', () => {
-        expect(isExpired({})).toEqual(false);
+        expect(isExpired({} as any)).toEqual(false);
     });
 });

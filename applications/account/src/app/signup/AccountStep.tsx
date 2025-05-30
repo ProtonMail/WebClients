@@ -39,7 +39,7 @@ import noop from '@proton/utils/noop';
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
-import { getAccountDetailsFromEmail } from '../single-signup-v2/accountDetails';
+import { getAccountDetailsFromEmail } from '../signupCtx/context/accountData/getAccountDetailsFromEmail';
 import PasswordStrengthIndicatorSpotlight, {
     usePasswordStrengthIndicatorSpotlight,
 } from './PasswordStrengthIndicatorSpotlight';
@@ -103,6 +103,7 @@ const AccountStep = ({
     const { APP_NAME } = useConfig();
     const challengeRefLogin = useRef<ChallengeRef>();
     const anchorRef = useRef<HTMLButtonElement | null>(null);
+
     const passwordContainerRef = useRef<HTMLDivElement | null>(null);
     const [loading, withLoading] = useLoading();
     const [, setRerender] = useState<any>();
