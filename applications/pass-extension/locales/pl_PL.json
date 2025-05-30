@@ -670,6 +670,18 @@
       ],
       "Your password manager is not here? Request it.": [
         "Nie ma Twojego menadżera haseł? Zgłoś to."
+      ],
+      "Authenticate": [
+        "Uwierzytelnij"
+      ],
+      "Next month": [
+        "Następny miesiąc"
+      ],
+      "Previous month": [
+        "Poprzedni miesiąc"
+      ],
+      "Start from scratch": [
+        "Rozpocznij od początku"
       ]
     },
     "Browser": {
@@ -1823,10 +1835,7 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -2421,6 +2430,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizacja wymaga zabezpieczenia dostępu do ${ PASS_APP_NAME }"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
+      ],
+      "Week": [
+        "Tydzień"
       ]
     },
     "Label": {
@@ -3308,6 +3323,165 @@
       ],
       "ZIP or Postal code": [
         "Kod pocztowy"
+      ],
+      "Account Number": [
+        "Numer konta"
+      ],
+      "Account Type": [
+        "Typ konta"
+      ],
+      "Address": [
+        "Adres"
+      ],
+      "API Credential": [
+        "Poświadczenia API"
+      ],
+      "Bank Account": [
+        "Konto bankowe"
+      ],
+      "Bank Name": [
+        "Nazwa banku"
+      ],
+      "Country,": [
+        "Kraj"
+      ],
+      "Create a custom item": [
+        "Utwórz niestandardowy element"
+      ],
+      "Crypto Wallet": [
+        "Portfel kryptowalut"
+      ],
+      "Custom Items": [
+        "Niestandardowe elementy"
+      ],
+      "Database": [
+        "Baza danych"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Date of Birth": [
+        "Data urodzenia"
+      ],
+      "Driver License": [
+        "Prawo jazdy"
+      ],
+      "Expiry Date": [
+        "Data wygaśnięcia"
+      ],
+      "Finance": [
+        "Finanse"
+      ],
+      "Holder Name": [
+        "Nazwa właściciela"
+      ],
+      "IBAN": [
+        "Numer IBAN"
+      ],
+      "Issuing Authority": [
+        "Organ wydający"
+      ],
+      "Issuing Country": [
+        "Kraj wydający"
+      ],
+      "Medical Record": [
+        "Dokumentacja medyczna"
+      ],
+      "Member ID": [
+        "Identyfikator członkostwa"
+      ],
+      "Membership": [
+        "Członkostwo"
+      ],
+      "More": [
+        "Więcej"
+      ],
+      "Name (SSID)": [
+        "Nazwa (SSID)"
+      ],
+      "Network": [
+        "Sieć"
+      ],
+      "Passport Number": [
+        "Numer paszportu"
+      ],
+      "Personal": [
+        "Osobiste"
+      ],
+      "Points Balance": [
+        "Saldo punktów"
+      ],
+      "Port": [
+        "Port"
+      ],
+      "Private key": [
+        "Klucz prywatny"
+      ],
+      "Private Key": [
+        "Klucz prywatny"
+      ],
+      "Program Name": [
+        "Nazwa programu"
+      ],
+      "Public key": [
+        "Klucz publiczny"
+      ],
+      "Reward Program": [
+        "Program lojalnościowy"
+      ],
+      "Routing Number": [
+        "Numer rozliczeniowy"
+      ],
+      "Seed Phrase": [
+        "Fraza seed"
+      ],
+      "Server": [
+        "Serwer"
+      ],
+      "Social Security": [
+        "Numer ubezpieczenia społecznego"
+      ],
+      "Software license": [
+        "Licencja oprogramowania"
+      ],
+      "SSH key": [
+        "Klucz SSH"
+      ],
+      "SSH Keys": [
+        "Klucze SSH"
+      ],
+      "SSN": [
+        "SSN"
+      ],
+      "SWIFT/BIC": [
+        "SWIFT / BIC"
+      ],
+      "Technology": [
+        "Technologia"
+      ],
+      "Tier/Status": [
+        "Poziom / status"
+      ],
+      "Unnamed custom item": [
+        "Niestandardowy element bez nazwy"
+      ],
+      "Unnamed SSH key": [
+        "Klucz SSH bez nazwy"
+      ],
+      "Unnamed WiFi item": [
+        "Sieć Wi-Fi bez nazwy"
+      ],
+      "Unspecified": [
+        "Nieokreślone"
+      ],
+      "Wallet Name": [
+        "Nazwa portfela"
+      ],
+      "WiFi network": [
+        "Sieć Wi-Fi"
+      ],
+      "WiFi Networks": [
+        "Sieci Wi-Fi"
       ]
     },
     "Link": {
@@ -3575,6 +3749,18 @@
       ],
       "Write your note": [
         "Napisz notatkę"
+      ],
+      "Add date": [
+        "Dodaj datę"
+      ],
+      "E.g., ": [
+        "Np. "
+      ],
+      "Name displayed in emails": [
+        "Nazwa wyświetlana w wiadomościach"
+      ],
+      "Select option": [
+        "Wybierz opcję"
       ]
     },
     "sso": {
@@ -4122,6 +4308,9 @@
         "Zamierzasz trwale usunąć ${ aliasCount } aliasy.",
         "Zamierzasz trwale usunąć ${ aliasCount } aliasów.",
         "Zamierzasz trwale usunąć ${ aliasCount } aliasów."
+      ],
+      "Minicalendar": [
+        "Minikalendarz"
       ]
     },
     "Validation": {
@@ -4435,6 +4624,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Subskrypcja nie pozwala na tworzenie wielu sejfów. Wszystkie elementy zostaną zaimportowane do pierwszego sejfu. Ulepsz plan, aby importować do wielu sejfów."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Dzisiaj"
       ]
     }
   }

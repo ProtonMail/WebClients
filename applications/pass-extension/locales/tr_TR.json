@@ -669,6 +669,15 @@
       ],
       "Your password manager is not here? Request it.": [
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
+      ],
+      "Next month": [
+        "Sonraki ay"
+      ],
+      "Previous month": [
+        "Önceki ay"
+      ],
+      "Start from scratch": [
+        "Sıfırdan başla"
       ]
     },
     "Browser": {
@@ -1600,7 +1609,7 @@
         "E-posta göndermek istediğiniz adresi yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu girin. Rakam ${ digit }."
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
       ],
       "Enter your extra password": [
         "Ek parolanızı yazın"
@@ -2365,6 +2374,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
+      ],
+      "Week": [
+        "Hafta"
       ]
     },
     "Label": {
@@ -3226,6 +3238,198 @@
       ],
       "ZIP or Postal code": [
         "Posta kodu"
+      ],
+      "Account Number": [
+        "Hesap numarası"
+      ],
+      "Account Type": [
+        "Hesap türü"
+      ],
+      "Address": [
+        "Adres"
+      ],
+      "API Credential": [
+        "API kimlik doğrulama bilgisi"
+      ],
+      "API Key": [
+        "API anahtarı"
+      ],
+      "Bank Account": [
+        "Banka hesabı"
+      ],
+      "Bank Name": [
+        "Banka adı"
+      ],
+      "Country,": [
+        "Ülke,"
+      ],
+      "Create a custom item": [
+        "Özel öge oluştur"
+      ],
+      "Crypto Wallet": [
+        "Kripto cüzdan"
+      ],
+      "Custom Items": [
+        "Özel ögeler"
+      ],
+      "Database": [
+        "Veri tabanı"
+      ],
+      "Database Type": [
+        "Veri tabanı türü"
+      ],
+      "Date": [
+        "Tarih"
+      ],
+      "Date of Birth": [
+        "Doğum tarihi"
+      ],
+      "Driver License": [
+        "Sürücü belgesi"
+      ],
+      "Expiry Date": [
+        "Son geçerlilik tarihi"
+      ],
+      "Finance": [
+        "Finans"
+      ],
+      "Holder Name": [
+        "Kart üzerindeki ad"
+      ],
+      "Host": [
+        "Sunucu"
+      ],
+      "Hostname": [
+        "Sunucu adı"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "IP Address": [
+        "IP adresi"
+      ],
+      "Issuing Authority": [
+        "Veren makam"
+      ],
+      "Issuing Country": [
+        "Veren ülke"
+      ],
+      "License Key": [
+        "Lisans anahtarı"
+      ],
+      "Medical Record": [
+        "Sağlık kaydı"
+      ],
+      "Member ID": [
+        "Üye kimliği"
+      ],
+      "Membership": [
+        "Üyelik"
+      ],
+      "More": [
+        "Diğer"
+      ],
+      "Name (SSID)": [
+        "Ağ adı (SSID)"
+      ],
+      "Network": [
+        "Ağ"
+      ],
+      "Operating System": [
+        "İşletim sistemi"
+      ],
+      "Owner": [
+        "Sahibi"
+      ],
+      "Passport Number": [
+        "Pasaport numarası"
+      ],
+      "Permissions": [
+        "İzinler"
+      ],
+      "Personal": [
+        "Kişisel"
+      ],
+      "Points Balance": [
+        "Puan bakiyesi"
+      ],
+      "Port": [
+        "Bağlantı noktası"
+      ],
+      "Private key": [
+        "Kişisel anahtar"
+      ],
+      "Private Key": [
+        "Kişisel anahtar"
+      ],
+      "Product": [
+        "Ürün"
+      ],
+      "Program Name": [
+        "Program adı"
+      ],
+      "Public key": [
+        "Herkese açık anahtar"
+      ],
+      "Reward Program": [
+        "Ödül programı"
+      ],
+      "Routing Number": [
+        "Şube kodu"
+      ],
+      "Secret": [
+        "Parola"
+      ],
+      "Seed Phrase": [
+        "Tohum ifadesi"
+      ],
+      "Server": [
+        "Sunucu"
+      ],
+      "Social Security": [
+        "Sosyal güvenlik"
+      ],
+      "Software license": [
+        "Yazılım lisansı"
+      ],
+      "SSH key": [
+        "SSH anahtarı"
+      ],
+      "SSH Keys": [
+        "SSH anahtarları"
+      ],
+      "SSN": [
+        "SGN"
+      ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
+      "Technology": [
+        "Teknoloji"
+      ],
+      "Tier/Status": [
+        "Kademe/Durum"
+      ],
+      "Unnamed custom item": [
+        "Adlandırılmamış özel öge"
+      ],
+      "Unnamed SSH key": [
+        "Adlandırılmamış SSH anahtarı"
+      ],
+      "Unnamed WiFi item": [
+        "Adlandırılmamış kablosuz ağ ögesi"
+      ],
+      "Unspecified": [
+        "Belirtilmemiş"
+      ],
+      "Wallet Name": [
+        "Cüzdan adı"
+      ],
+      "WiFi network": [
+        "Kablosuz ağ"
+      ],
+      "WiFi Networks": [
+        "Kablosuz ağlar"
       ]
     },
     "Link": {
@@ -3487,6 +3691,18 @@
       ],
       "Write your note": [
         "Notunuzu yazın"
+      ],
+      "Add date": [
+        "Tarih ekle"
+      ],
+      "E.g., ": [
+        "Örneğin, "
+      ],
+      "Name displayed in emails": [
+        "E-postalarda görüntülecek ad"
+      ],
+      "Select option": [
+        "Seçenek seçin"
       ]
     },
     "sso": {
@@ -4020,6 +4236,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz.",
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
+      ],
+      "Minicalendar": [
+        "Mini takvim"
       ]
     },
     "Validation": {
@@ -4327,6 +4546,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Tüm ögeler ilk kasanıza aktarılacak. İçe aktarımda birden fazla kasa kullanabilmek için abonelik tarifenizi yükseltin."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Bugün"
       ]
     }
   }

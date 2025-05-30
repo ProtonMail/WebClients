@@ -666,6 +666,18 @@
       ],
       "Your password manager is not here? Request it.": [
         "Uw wachtwoordbeheerder staat hier niet tussen? Vraag het aan."
+      ],
+      "Authenticate": [
+        "Authenticeren"
+      ],
+      "Next month": [
+        "Volgende maand"
+      ],
+      "Previous month": [
+        "Vorige maand"
+      ],
+      "Start from scratch": [
+        "Begin opnieuw"
       ]
     },
     "Browser": {
@@ -1775,8 +1787,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2359,6 +2370,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Uw organisatie vereist dat u uw toegang tot ${ PASS_APP_NAME } beveiligen"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Voer verificatiecode in. Cijfer ${ digit }."
+      ],
+      "Week": [
+        "Week"
       ]
     },
     "Label": {
@@ -3220,6 +3237,198 @@
       ],
       "ZIP or Postal code": [
         "Postcode"
+      ],
+      "Account Number": [
+        "Account Nummer"
+      ],
+      "Account Type": [
+        "Accounttype"
+      ],
+      "Address": [
+        "Adres"
+      ],
+      "API Credential": [
+        "API-toegangscode"
+      ],
+      "API Key": [
+        "API-sleutel"
+      ],
+      "Bank Account": [
+        "Bankrekening"
+      ],
+      "Bank Name": [
+        "Naam bank"
+      ],
+      "Country,": [
+        "Land,"
+      ],
+      "Create a custom item": [
+        "Maak een aangepast item"
+      ],
+      "Crypto Wallet": [
+        "Crypto Wallet"
+      ],
+      "Custom Items": [
+        "Aangepaste items"
+      ],
+      "Database": [
+        "Database"
+      ],
+      "Database Type": [
+        "Databasetype"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Date of Birth": [
+        "Geboortedatum"
+      ],
+      "Driver License": [
+        "Rijbewijs"
+      ],
+      "Expiry Date": [
+        "Vervaldatum"
+      ],
+      "Finance": [
+        "Financiën"
+      ],
+      "Holder Name": [
+        "Naam rekeninghouder"
+      ],
+      "Host": [
+        "Host"
+      ],
+      "Hostname": [
+        "Hostnaam"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "IP Address": [
+        "IP-adres"
+      ],
+      "Issuing Authority": [
+        "Uitgevende autoriteit"
+      ],
+      "Issuing Country": [
+        "Land van uitgifte"
+      ],
+      "License Key": [
+        "Licentiesleutel"
+      ],
+      "Medical Record": [
+        "Medisch Gegeven"
+      ],
+      "Member ID": [
+        "Lid-ID"
+      ],
+      "Membership": [
+        "Lidmaatschap"
+      ],
+      "More": [
+        "Meer"
+      ],
+      "Name (SSID)": [
+        "Naam (SSID}"
+      ],
+      "Network": [
+        "Netwerk"
+      ],
+      "Operating System": [
+        "Besturingssysteem"
+      ],
+      "Owner": [
+        "Eigenaar"
+      ],
+      "Passport Number": [
+        "Paspoortnummer"
+      ],
+      "Permissions": [
+        "Machtigingen"
+      ],
+      "Personal": [
+        "Persoonlijk"
+      ],
+      "Points Balance": [
+        "Puntensaldo"
+      ],
+      "Port": [
+        "Poort"
+      ],
+      "Private key": [
+        "Privé sleutel"
+      ],
+      "Private Key": [
+        "Privé sleutel"
+      ],
+      "Product": [
+        "Product"
+      ],
+      "Program Name": [
+        "Programmanaam"
+      ],
+      "Public key": [
+        "Publieke sleutel"
+      ],
+      "Reward Program": [
+        "Beloningsprogramma"
+      ],
+      "Routing Number": [
+        "Routeringsnummer"
+      ],
+      "Secret": [
+        "Geheim"
+      ],
+      "Seed Phrase": [
+        "Seed Phrase"
+      ],
+      "Server": [
+        "Server"
+      ],
+      "Social Security": [
+        "Burgerservicenummer (rijksregisternummer)"
+      ],
+      "Software license": [
+        "Software licentie"
+      ],
+      "SSH key": [
+        "SSH-sleutel"
+      ],
+      "SSH Keys": [
+        "SSH-sleutels"
+      ],
+      "SSN": [
+        "SSN"
+      ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
+      "Technology": [
+        "Technologie"
+      ],
+      "Tier/Status": [
+        "Rang/Status"
+      ],
+      "Unnamed custom item": [
+        "Naamloos aangepast item"
+      ],
+      "Unnamed SSH key": [
+        "Naamloze SSH-sleutel"
+      ],
+      "Unnamed WiFi item": [
+        "Naamloos wifi item"
+      ],
+      "Unspecified": [
+        "Niet gespecificeerd"
+      ],
+      "Wallet Name": [
+        "Naam Wallet"
+      ],
+      "WiFi network": [
+        "Wifi-netwerk"
+      ],
+      "WiFi Networks": [
+        "Wifi-netwerken"
       ]
     },
     "Link": {
@@ -3481,6 +3690,18 @@
       ],
       "Write your note": [
         "Schrijf uw notitie"
+      ],
+      "Add date": [
+        "Datum toevoegen"
+      ],
+      "E.g., ": [
+        "Bijv., "
+      ],
+      "Name displayed in emails": [
+        "Naam weergegeven in e-mails"
+      ],
+      "Select option": [
+        "Selecteer optie"
       ]
     },
     "sso": {
@@ -4014,6 +4235,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "U staat op het punt ${ aliasCount } alias permanent te verwijderen.",
         "U staat op het punt ${ aliasCount } aliassen permanent te verwijderen."
+      ],
+      "Minicalendar": [
+        "Mini-agenda"
       ]
     },
     "Validation": {
@@ -4321,6 +4545,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Met uw abonnement kunt u niet meerdere kluizen maken. Alle items worden geïmporteerd in uw eerste kluis. Upgrade uw abonnement om in meerdere kluizen te importeren."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Vandaag"
       ]
     }
   }

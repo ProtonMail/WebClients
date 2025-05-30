@@ -666,6 +666,18 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ist dein Passwort-Manager nicht dabei? Fordere ihn an."
+      ],
+      "Authenticate": [
+        "Authentifizieren"
+      ],
+      "Next month": [
+        "Nächster Monat"
+      ],
+      "Previous month": [
+        "Vorheriger Monat"
+      ],
+      "Start from scratch": [
+        "Ganz von vorne anfangen"
       ]
     },
     "Browser": {
@@ -2359,6 +2371,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Deine Organisation verlangt, dass du deinen Zugang zu ${ PASS_APP_NAME } absicherst."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Bestätigungscode eingeben. Ziffer ${ digit }."
+      ],
+      "Week": [
+        "Woche"
       ]
     },
     "Label": {
@@ -3220,6 +3238,198 @@
       ],
       "ZIP or Postal code": [
         "Postleitzahl oder ZIP-Code"
+      ],
+      "Account Number": [
+        "Kontonummer"
+      ],
+      "Account Type": [
+        "Kontotyp"
+      ],
+      "Address": [
+        "Anschrift"
+      ],
+      "API Credential": [
+        "API-Anmeldeinformation"
+      ],
+      "API Key": [
+        "API-Schlüssel"
+      ],
+      "Bank Account": [
+        "Bankkonto"
+      ],
+      "Bank Name": [
+        "Bankname"
+      ],
+      "Country,": [
+        "Land,"
+      ],
+      "Create a custom item": [
+        "Benutzerdefinierten Eintrag erstellen"
+      ],
+      "Crypto Wallet": [
+        "Krypto-Wallet"
+      ],
+      "Custom Items": [
+        "Benutzerdefinierte Einträge"
+      ],
+      "Database": [
+        "Datenbank"
+      ],
+      "Database Type": [
+        "Datenbanktyp"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Date of Birth": [
+        "Geburtsdatum"
+      ],
+      "Driver License": [
+        "Führerschein"
+      ],
+      "Expiry Date": [
+        "Ablaufdatum"
+      ],
+      "Finance": [
+        "Finanzen"
+      ],
+      "Holder Name": [
+        "Name des Kontoinhabers"
+      ],
+      "Host": [
+        "Host"
+      ],
+      "Hostname": [
+        "Hostname"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "IP Address": [
+        "IP-Adresse"
+      ],
+      "Issuing Authority": [
+        "Ausstellende Behörde"
+      ],
+      "Issuing Country": [
+        "Ausstellendes Land"
+      ],
+      "License Key": [
+        "Lizenzschlüssel"
+      ],
+      "Medical Record": [
+        "Patientenakte"
+      ],
+      "Member ID": [
+        "Mitgliedsnummer"
+      ],
+      "Membership": [
+        "Mitgliedschaft"
+      ],
+      "More": [
+        "Mehr"
+      ],
+      "Name (SSID)": [
+        "Name (SSID)"
+      ],
+      "Network": [
+        "Netzwerk"
+      ],
+      "Operating System": [
+        "Betriebssystem"
+      ],
+      "Owner": [
+        "Besitzer"
+      ],
+      "Passport Number": [
+        "Passnummer"
+      ],
+      "Permissions": [
+        "Berechtigungen"
+      ],
+      "Personal": [
+        "Privat"
+      ],
+      "Points Balance": [
+        "Punktestand"
+      ],
+      "Port": [
+        "Port"
+      ],
+      "Private key": [
+        "Privater Schlüssel"
+      ],
+      "Private Key": [
+        "Privater Schlüssel"
+      ],
+      "Product": [
+        "Produkt"
+      ],
+      "Program Name": [
+        "Programmname"
+      ],
+      "Public key": [
+        "Öffentlicher Schlüssel"
+      ],
+      "Reward Program": [
+        "Treueprogramm"
+      ],
+      "Routing Number": [
+        "Bankleitzahl"
+      ],
+      "Secret": [
+        "Geheimnis"
+      ],
+      "Seed Phrase": [
+        "Wiederherstellungsphrase"
+      ],
+      "Server": [
+        "Server"
+      ],
+      "Social Security": [
+        "Sozialversicherung"
+      ],
+      "Software license": [
+        "Softwarelizenz"
+      ],
+      "SSH key": [
+        "SSH-Schlüssel"
+      ],
+      "SSH Keys": [
+        "SSH Schlüssel"
+      ],
+      "SSN": [
+        "Sozialversicherungsnummer"
+      ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
+      "Technology": [
+        "Technologie"
+      ],
+      "Tier/Status": [
+        "Stufe/Status"
+      ],
+      "Unnamed custom item": [
+        "Unbenannter benutzerdefinierter Eintrag"
+      ],
+      "Unnamed SSH key": [
+        "Unbenannter SSH-Schlüssel"
+      ],
+      "Unnamed WiFi item": [
+        "Unbenannter WLAN-Eintrag"
+      ],
+      "Unspecified": [
+        "Keine Angabe"
+      ],
+      "Wallet Name": [
+        "Name der Wallet"
+      ],
+      "WiFi network": [
+        "WLAN-Netzwerk"
+      ],
+      "WiFi Networks": [
+        "WLAN-Netzwerke"
       ]
     },
     "Link": {
@@ -3481,6 +3691,18 @@
       ],
       "Write your note": [
         "Schreibe deine Notiz"
+      ],
+      "Add date": [
+        "Datum hinzufügen"
+      ],
+      "E.g., ": [
+        "Z. B. "
+      ],
+      "Name displayed in emails": [
+        "In E-Mails angezeigter Name"
+      ],
+      "Select option": [
+        "Option wählen"
       ]
     },
     "sso": {
@@ -4014,6 +4236,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du bist dabei, ${ aliasCount } Alias dauerhaft zu löschen.",
         "Du bist dabei, ${ aliasCount } Aliasse dauerhaft zu löschen."
+      ],
+      "Minicalendar": [
+        "Minikalender"
       ]
     },
     "Validation": {
@@ -4321,6 +4546,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dein Abonnement erlaubt es dir nicht, mehrere Tresore zu erstellen. Alle Einträge werden in deinen ersten Tresor importiert. Um in mehrere Tresore zu importieren, musst du dein Abonnement upgraden."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Heute"
       ]
     }
   }
