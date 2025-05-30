@@ -69,3 +69,16 @@ body {
 .rnc-scrollbar-shim {
 	border-color: hsl(var(--rnc-border));
 }
+
+/* rnc uses tailwind's `invisible` class to set the visibility
+of the resizer handler to hidden, however there is an existing
+`invisible` class in the proton design system that is more like
+a `sr-only` class which sets the width & height both to 1px and
+clips the element to a 0-sized rect. This causes the resizer
+button to not be hoverable. We reset those properties here to
+allow the button to be properly sized and hoverable. */
+.rnc-canvas-wrapper [aria-label='Resize'] {
+	width: auto;
+	height: auto;
+	clip: unset;
+}
