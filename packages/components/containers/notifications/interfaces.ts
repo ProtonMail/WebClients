@@ -30,6 +30,7 @@ export interface CreateNotificationOptions
     isClosing?: boolean;
     expiration?: number;
     dataTestId?: string;
+    preWrap?: boolean;
 }
 
 export interface CustomNotificationProps {
