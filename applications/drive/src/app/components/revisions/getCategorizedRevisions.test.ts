@@ -1,4 +1,5 @@
-import type { DriveFileRevision } from '../../store';
+import type { Revision } from '@proton/drive';
+
 import { getCategorizedRevisions } from './getCategorizedRevisions';
 
 describe('getCategorizedRevisions', () => {
@@ -12,21 +13,21 @@ describe('getCategorizedRevisions', () => {
 
     it('categorizes revisions correctly', () => {
         const revisions = [
-            { createTime: 1679058000 }, // March 17, 2023 at 2:00 PM
-            { createTime: 1679036400 }, // March 17, 2023 at 7:00 AM
-            { createTime: 1678968000 }, // March 16, 2023 at 12:00 PM
-            { createTime: 1678986000 }, // March 16, 2023 at 5:00 PM
-            { createTime: 1678950000 }, // March 16, 2023 at 7:00 AM
-            { createTime: 1678777200 }, // March 14, 2023 at 7:00 AM
-            { createTime: 1678431600 }, // March 10, 2023 at 7:00 AM
-            { createTime: 1678172400 }, // March 7, 2023 at 7:00 AM
-            { createTime: 1675753200 }, // February 7, 2023 at 7:00 AM
-            { createTime: 1675234800 }, // February 1, 2023 at 7:00 AM
-            { createTime: 1640415600 }, // December 25, 2021 at 7:00 AM
-            { createTime: 1621926000 }, // May 25, 2021 at 7:00 AM
-            { createTime: 1593500400 }, // June 30, 2020 at 7:00 AM
-            { createTime: 1559372400 }, // June 1, 2019 at 7:00 AM
-        ] as DriveFileRevision[];
+            { creationTime: new Date(1679058000 * 1000) }, // March 17, 2023 at 2:00 PM
+            { creationTime: new Date(1679036400 * 1000) }, // March 17, 2023 at 7:00 AM
+            { creationTime: new Date(1678968000 * 1000) }, // March 16, 2023 at 12:00 PM
+            { creationTime: new Date(1678986000 * 1000) }, // March 16, 2023 at 5:00 PM
+            { creationTime: new Date(1678950000 * 1000) }, // March 16, 2023 at 7:00 AM
+            { creationTime: new Date(1678777200 * 1000) }, // March 14, 2023 at 7:00 AM
+            { creationTime: new Date(1678431600 * 1000) }, // March 10, 2023 at 7:00 AM
+            { creationTime: new Date(1678172400 * 1000) }, // March 7, 2023 at 7:00 AM
+            { creationTime: new Date(1675753200 * 1000) }, // February 7, 2023 at 7:00 AM
+            { creationTime: new Date(1675234800 * 1000) }, // February 1, 2023 at 7:00 AM
+            { creationTime: new Date(1640415600 * 1000) }, // December 25, 2021 at 7:00 AM
+            { creationTime: new Date(1621926000 * 1000) }, // May 25, 2021 at 7:00 AM
+            { creationTime: new Date(1593500400 * 1000) }, // June 30, 2020 at 7:00 AM
+            { creationTime: new Date(1559372400 * 1000) }, // June 1, 2019 at 7:00 AM
+        ] as Revision[];
 
         const result = getCategorizedRevisions(revisions, 'en-US');
 
