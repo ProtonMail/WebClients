@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
-import { isProtonDocument, isProtonSheet } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import type { LinkDownload } from '../../../store';
 import { useDownload } from '../../../store';
@@ -27,14 +27,14 @@ const DownloadButton = ({ selectedBrowserItems, disabledFolders }: Props) => {
         //  2. multiple files are ignored, using `handleContainsDocument` in the queue
         if (selectedBrowserItems.length === 1) {
             const item = selectedBrowserItems[0];
-            if (isProtonDocument(item.mimeType)) {
+            if (isProtonDocsDocument(item.mimeType)) {
                 void downloadDocument({
                     type: 'doc',
                     shareId: item.rootShareId,
                     linkId: item.linkId,
                 });
                 return;
-            } else if (isProtonSheet(item.mimeType)) {
+            } else if (isProtonDocsSpreadsheet(item.mimeType)) {
                 void downloadDocument({
                     type: 'sheet',
                     shareId: item.rootShareId,

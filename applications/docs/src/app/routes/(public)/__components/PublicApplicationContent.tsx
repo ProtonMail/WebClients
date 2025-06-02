@@ -20,6 +20,7 @@ import { useUnleashClient } from '@proton/unleash'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import { Route, Routes } from 'react-router-dom-v5-compat'
 import type { ProviderType } from '../../../provider-type'
+import { tmpConvertNewDocTypeToOld } from '@proton/drive-store/store/_documents'
 
 export function PublicApplicationContent({
   publicDriveCompat,
@@ -85,7 +86,7 @@ export function PublicApplicationContent({
             <Route
               path="*"
               element={
-                <DocumentLayout documentType={openAction.type}>
+                <DocumentLayout documentType={tmpConvertNewDocTypeToOld(openAction.type)}>
                   <Content providerType={providerType} openAction={openAction} />
                 </DocumentLayout>
               }

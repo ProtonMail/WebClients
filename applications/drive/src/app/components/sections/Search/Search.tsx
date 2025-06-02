@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useActiveBreakpoint } from '@proton/components';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
-import { isProtonDocument, isProtonSheet } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
@@ -129,7 +129,7 @@ export const Search = ({ shareId, searchView }: Props) => {
                 return;
             }
 
-            if (isProtonDocument(item.mimeType)) {
+            if (isProtonDocsDocument(item.mimeType)) {
                 if (isDocsEnabled) {
                     return openDocument({
                         type: 'doc',
@@ -139,7 +139,7 @@ export const Search = ({ shareId, searchView }: Props) => {
                     });
                 }
                 return;
-            } else if (isProtonSheet(item.mimeType)) {
+            } else if (isProtonDocsSpreadsheet(item.mimeType)) {
                 if (isDocsEnabled) {
                     return openDocument({
                         type: 'sheet',

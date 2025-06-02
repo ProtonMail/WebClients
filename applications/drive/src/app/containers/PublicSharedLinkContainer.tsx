@@ -9,7 +9,7 @@ import metrics from '@proton/metrics';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CODES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { handleDocsCustomPassword } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
-import { isProtonDocument, isProtonSheet } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import useFlag from '@proton/unleash/useFlag';
@@ -105,8 +105,8 @@ function PublicShareLinkInitContainer() {
         isDocsPublicSharingEnabled &&
         link &&
         link.isFile &&
-        (isProtonDocument(link.mimeType) || isProtonSheet(link.mimeType));
-    const isSheet = link && link.isFile && isProtonSheet(link.mimeType);
+        (isProtonDocsDocument(link.mimeType) || isProtonDocsSpreadsheet(link.mimeType));
+    const isSheet = link && link.isFile && isProtonDocsSpreadsheet(link.mimeType);
 
     const getDocsWindow = useCallback((redirect: boolean, customPassword: string) => {
         if (redirect) {

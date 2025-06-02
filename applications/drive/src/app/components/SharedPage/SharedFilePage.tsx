@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { FilePreviewContent, useActiveBreakpoint } from '@proton/components';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import type { DecryptedLink } from '../../store';
 import { type useBookmarksPublicView, useDownload, usePublicShare } from '../../store';
@@ -37,7 +37,7 @@ export default function SharedFilePage({
     );
 
     const { viewportWidth } = useActiveBreakpoint();
-    const isDocument = isProtonDocument(rootLink?.mimeType || '');
+    const isDocument = isProtonDocsDocument(rootLink?.mimeType || '');
     const [reportAbuseModal, showReportAbuseModal] = useReportAbuseModal();
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
     const { submitAbuseReport, getVirusReportInfo } = usePublicShare();
