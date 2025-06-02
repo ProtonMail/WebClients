@@ -71,7 +71,13 @@ import { ChartComponent, useCharts, ChartEditor, ChartEditorDialog } from '@rows
 import { IconButton, Separator, SimpleTooltip } from '@rowsncolumns/ui'
 import { functionDescriptions, functions } from '@rowsncolumns/functions'
 import { MagnifyingGlassIcon, DownloadIcon } from '@rowsncolumns/icons'
-import type { EditorInitializationConfig, DocStateInterface, SheetImportData } from '@proton/docs-shared'
+import { createCSVFromSheetData, createExcelFile } from '@rowsncolumns/toolkit'
+import type {
+  EditorInitializationConfig,
+  DocStateInterface,
+  SheetImportData,
+  DataTypesThatDocumentCanBeExportedAs,
+} from '@proton/docs-shared'
 import { EditorSystemMode, SheetImportEvent } from '@proton/docs-shared'
 import { DocProvider, TranslatedResult } from '@proton/docs-shared'
 import { useYSpreadsheetV2 } from '@rowsncolumns/y-spreadsheet'
@@ -83,6 +89,7 @@ import { useApplication } from './ApplicationProvider'
 import { downloadLogsAsJSON } from '../../../../docs/src/app/utils/downloadLogs'
 import type { EditorToClientBridge } from '../Bridge/EditorToClientBridge'
 import type { EditorControllerInterface } from '@proton/docs-core'
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 
 export type SheetRef = {
   getSheetState: () => {
@@ -95,6 +102,7 @@ export type SheetRef = {
     tables: TableView[]
     namedRanges: NamedRange[]
   }
+  exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array>
 }
 
 export const Spreadsheet = forwardRef(function Spreadsheet(
@@ -279,8 +287,27 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     namedRanges,
   })
 
+  const exportData = async (format: DataTypesThatDocumentCanBeExportedAs) => {
+    if (format === 'yjs') {
+      return docState.getDocState()
+    } else if (format === 'xlsx') {
+      const buffer = await createExcelFile({
+        sheets,
+        sheetData,
+        tables,
+        conditionalFormats,
+      })
+      return new Uint8Array(buffer)
+    } else if (format === 'csv') {
+      const csv = createCSVFromSheetData(sheetData[activeSheetId])
+      return stringToUint8Array(csv)
+    }
+    throw new Error(`Spreadsheet cannot be export to format ${format}`)
+  }
+
   useImperativeHandle(ref, () => ({
     getSheetState,
+    exportData,
   }))
 
   const provider = useMemo(() => {
@@ -412,7 +439,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       },
     } as Pick<EditorControllerInterface, 'getYDocAsJSON' | 'getSheetsJSON'>
 
-    downloadLogsAsJSON(editorAdapter as EditorControllerInterface, 'sheet')
+    downloadLogsAsJSON(editorAdapter as EditorControllerInterface, 'sheet').catch(console.error)
   }
 
   return (
