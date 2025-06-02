@@ -47,8 +47,9 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   const [currentlyRestoringId, setCurrentlyRestoringId] = useState<string | undefined>(undefined)
   const { getLocalID } = useAuthentication()
 
-  const open = useEvent(({ volumeId, linkId }: RecentDocumentsItem) => {
-    const to = `/doc?mode=open&volumeId=${volumeId}&linkId=${linkId}`
+  const open = useEvent(({ type, volumeId, linkId }: RecentDocumentsItem) => {
+    const pathname = type === 'spreadsheet' ? 'sheet' : 'doc'
+    const to = `/${pathname}?mode=open&volumeId=${volumeId}&linkId=${linkId}`
     window.open(getAppHref(to, APPS.PROTONDOCS, getLocalID()))
     application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_opened)
   })

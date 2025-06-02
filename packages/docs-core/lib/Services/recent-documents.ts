@@ -6,12 +6,13 @@ import type { RecentDocumentAPIItem } from './../Api/Types/GetRecentsResponse'
 import type { CacheService } from './CacheService'
 import { nodeMetaUniqueId } from '@proton/drive-store/lib'
 import { BasePropertiesState } from '@proton/docs-shared'
+import { isProtonDocsDocument, type ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 
 // Please remember to bump this number if you make changes to the format of
 // serialized data stored in cache (either directly or indirectly) in a way
 // that could potentially break the app. The cache will be automatically
 // invalidated if the version differs.
-const CACHE_VERSION = 0
+const CACHE_VERSION = 1
 const CACHE_VERSION_KEY = 'recent-documents-cache-version'
 
 // store
@@ -205,7 +206,9 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
       ])
 
       const { linkId, shareId } = nodeIds
-      const { name, parentNodeId: parentLinkId, volumeId, signatureAddress: createdBy } = node
+      const { name, parentNodeId: parentLinkId, volumeId, signatureAddress: createdBy, mimeType } = node
+
+      const type = isProtonDocsDocument(mimeType) ? 'document' : 'spreadsheet'
 
       if (node.trashed) {
         return
@@ -223,6 +226,7 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
       }
 
       const record = RecentDocumentsItem.create({
+        type,
         name,
         linkId,
         parentLinkId,
@@ -293,6 +297,7 @@ export type RecentDocumentsItemLocation =
   | { type: 'shared-with-me' }
 
 export type RecentDocumentsItemValue = {
+  type: ProtonDocumentType
   name: string
   linkId: string
   parentLinkId: string | undefined
@@ -340,6 +345,9 @@ export class RecentDocumentsItem implements RecentDocumentsItemValue {
     return nodeMetaUniqueId({ linkId: this.linkId, volumeId: this.volumeId })
   }
 
+  get type() {
+    return this.#value.type
+  }
   get name() {
     return this.#value.name
   }

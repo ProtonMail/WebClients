@@ -7,9 +7,10 @@ import { useDocInvites } from '@proton/drive-store'
 import * as Table from './table'
 import { useState, type ComponentPropsWithoutRef } from 'react'
 import { getInitials } from '@proton/shared/lib/helpers/string'
-import { ContentSheet } from './shared'
+import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import clsx from '@proton/utils/clsx'
 import { useHomepageView } from '../../__utils/homepage-view'
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype'
 
 const WAIT_AFTER_ACCEPT_INVITE = 5000 // ms
 const MAX_INVITES_WHEN_COLLAPSED = 3
@@ -115,6 +116,8 @@ export function InvitesTable(props: InvitesTableProps) {
               </div>
             )
 
+            const type = isProtonDocsDocument(invite.link.mimeType) ? 'document' : 'spreadsheet'
+
             return (
               <Table.Row key={invite.invitation.invitationId} data-testid="invite-row">
                 <Table.DataCell>
@@ -123,7 +126,12 @@ export function InvitesTable(props: InvitesTableProps) {
                     title={invite.decryptedLinkName}
                   >
                     <span className="flex flex-nowrap items-center gap-3">
-                      <Icon name="brand-proton-docs" size={5} className="shrink-0 text-[#34B8EE]" />
+                      <Icon
+                        name={ICON_BY_TYPE[type]}
+                        size={5}
+                        className="shrink-0 text-[--icon-color]"
+                        style={{ '--icon-color': COLOR_BY_TYPE[type] }}
+                      />
                       <span className="text-pre text-ellipsis" data-testid="invite-document-name">
                         {invite.decryptedLinkName}
                       </span>
@@ -142,7 +150,7 @@ export function InvitesTable(props: InvitesTableProps) {
                   </div>
                 </Table.DataCell>
                 <Table.DataCell target="medium">
-                  <span className="flex flex-nowrap items-center gap-2">
+                  <span className="flex flex-nowrap items-center gap-2 overflow-hidden">
                     <Avatar
                       color="weak"
                       className="min-w-custom max-w-custom max-h-custom bg-[--interaction-default-hover]"
