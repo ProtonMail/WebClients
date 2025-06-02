@@ -15,6 +15,7 @@ import { LockProbeProvider } from '@proton/pass/components/Core/LockProbeProvide
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsProvider';
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
+import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
 import { ThemeOnboardingModal } from '@proton/pass/components/Layout/Theme/ThemeOnboardingModal';
 import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
 import type { OnReauthFn } from '@proton/pass/components/Lock/PasswordUnlockProvider';
@@ -158,6 +159,7 @@ export const PrivateApp: FC = () => {
                                                 <SpotlightProvider>
                                                     <InAppNotificationProvider>
                                                         <OnboardingProvider>
+                                                            <ThemeConnect />
                                                             {lockSetup ? (
                                                                 <LockOnboarding onCancel={logout} />
                                                             ) : (

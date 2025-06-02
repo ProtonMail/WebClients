@@ -59,6 +59,7 @@ export function* hydrate(
 
         const cachedUser = cachedState?.user;
         const snapshot = cache?.snapshot;
+        const fromCache = cache?.state !== undefined && cache?.snapshot !== undefined;
 
         const userState: HydratedUserState = userStateHydrated(cachedUser) ? cachedUser : yield getUserData();
 
@@ -117,7 +118,8 @@ export function* hydrate(
         const state: State = (onBeforeHydrate ?? identity)(
             cachedState
                 ? config.merge(currentState, partialMerge(cachedState, incoming))
-                : partialMerge(currentState, incoming)
+                : partialMerge(currentState, incoming),
+            fromCache
         );
 
         /** If `keyPassword` is not defined then we may be dealing with an offline
@@ -128,7 +130,7 @@ export function* hydrate(
         yield put(stateHydrate(state));
 
         return {
-            fromCache: cache?.state !== undefined && cache?.snapshot !== undefined,
+            fromCache,
             version: encryptedCache?.version,
         };
     } catch (err) {

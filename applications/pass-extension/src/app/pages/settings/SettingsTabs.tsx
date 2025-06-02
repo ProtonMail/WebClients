@@ -11,6 +11,7 @@ import { c } from 'ttag';
 
 import { Icon, Tabs } from '@proton/components';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
+import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
 import type { OnReauthFn } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PinUnlockProvider } from '@proton/pass/components/Lock/PinUnlockProvider';
@@ -100,6 +101,7 @@ export const SettingsTabs: FC<Props> = ({ pathname }) => {
                 <PasswordUnlockProvider onReauth={onReauth}>
                     <PinUnlockProvider>
                         <UpsellingProvider>
+                            <ThemeConnect />
                             <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
                             <SettingsHeader />
                             <Tabs

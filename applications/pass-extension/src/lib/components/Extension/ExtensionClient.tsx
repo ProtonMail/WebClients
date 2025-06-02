@@ -8,7 +8,6 @@ import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
@@ -108,10 +107,5 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
         []
     );
 
-    return (
-        <ExtensionClientContext.Provider value={context}>
-            <ThemeConnect />
-            {children(ready)}
-        </ExtensionClientContext.Provider>
-    );
+    return <ExtensionClientContext.Provider value={context}>{children(ready)}</ExtensionClientContext.Provider>;
 };

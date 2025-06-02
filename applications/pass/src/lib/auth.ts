@@ -20,7 +20,7 @@ import {
     getLocalPath,
     getRouteError,
 } from '@proton/pass/components/Navigation/routing';
-import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
+import { DEFAULT_LOCK_TTL, PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { api } from '@proton/pass/lib/api/api';
 import { extractOfflineComponents, getStateKey } from '@proton/pass/lib/auth/fork';
@@ -281,6 +281,17 @@ export const createAuthService = ({
                 app.setStatus(AppStatus.UNAUTHORIZED);
                 app.setAuthorized(false);
             });
+
+            core.theme
+                .getInitialTheme()
+                .then((initialTheme) => {
+                    /** Force sync theme on logout : if active sessions are still
+                     * available, switch to `lastUsedAt` session theme, else fallback
+                     * to the system theme via `PASS_DEFAULT_THEME` */
+                    const theme = initialTheme ?? PASS_DEFAULT_THEME;
+                    core.theme.setState(theme);
+                })
+                .catch(noop);
 
             store.dispatch(stateDestroy());
             history.replace('/');

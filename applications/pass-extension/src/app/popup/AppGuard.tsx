@@ -2,6 +2,7 @@ import { type FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
+import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
 import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PinUnlockProvider } from '@proton/pass/components/Lock/PinUnlockProvider';
 import { selectLockSetupRequired } from '@proton/pass/store/selectors';
@@ -23,6 +24,7 @@ export const AppGuard: FC = () => {
     return ready ? (
         <PasswordUnlockProvider>
             <PinUnlockProvider>
+                <ThemeConnect />
                 <Main />
             </PinUnlockProvider>
         </PasswordUnlockProvider>
