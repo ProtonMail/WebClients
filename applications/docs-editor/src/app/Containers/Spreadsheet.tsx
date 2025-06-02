@@ -301,6 +301,11 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     } else if (format === 'csv') {
       const csv = createCSVFromSheetData(sheetData[activeSheetId])
       return stringToUint8Array(csv)
+    } else if (format === 'tsv') {
+      const tsv = createCSVFromSheetData(sheetData[activeSheetId], {
+        delimiter: '\t',
+      })
+      return stringToUint8Array(tsv)
     }
     throw new Error(`Spreadsheet cannot be export to format ${format}`)
   }
