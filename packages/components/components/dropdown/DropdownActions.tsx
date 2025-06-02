@@ -33,6 +33,7 @@ export interface DropdownActionProps extends DropdownMenuButtonProps {
     key?: string;
     text: string | ReactNode;
     tooltip?: string;
+    label?: string;
     onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
@@ -59,7 +60,7 @@ const DropdownActions = ({
         return null;
     }
 
-    const [{ text, tooltip, ...restProps }, ...restList] = list;
+    const [{ text, tooltip, label, id, ...restProps }, ...restList] = list;
 
     if (list.length === 1) {
         return (
@@ -68,6 +69,7 @@ const DropdownActions = ({
                 loading={loading}
                 disabled={disabled}
                 className={className}
+                aria-label={label}
                 {...restProps}
                 {...restButtonProps}
             >
@@ -94,9 +96,9 @@ const DropdownActions = ({
                 {...restButtonProps}
             >
                 <DropdownMenu>
-                    {list.map(({ text, tooltip, ...restProps }, index) => {
+                    {list.map(({ text, tooltip, label, key, ...restProps }) => {
                         return (
-                            <DropdownMenuButton className="text-left" key={index} {...restProps}>
+                            <DropdownMenuButton className="text-left" aria-label={label} key={key} {...restProps}>
                                 {wrapTooltip(text, tooltip)}
                             </DropdownMenuButton>
                         );
@@ -108,7 +110,13 @@ const DropdownActions = ({
 
     return (
         <ButtonGroup size={size}>
-            <Button disabled={disabled || loading} className={className} {...restProps} {...restButtonProps}>
+            <Button
+                disabled={disabled || loading}
+                className={className}
+                aria-label={label}
+                {...restProps}
+                {...restButtonProps}
+            >
                 {wrapTooltip(text, tooltip)}
             </Button>
             <SimpleDropdown
@@ -123,7 +131,7 @@ const DropdownActions = ({
                 data-testid="dropdownActions:dropdown"
             >
                 <DropdownMenu>
-                    {restList.map(({ text, tooltip, disabled, ...restProps }, index) => {
+                    {restList.map(({ text, tooltip, disabled, label, key, ...restProps }) => {
                         // Fake disabled is used to have enabled tooltipe while the buttom is supposed to be disabled
                         const fakeDisabled = !!(disabled && tooltip);
                         const rest = fakeDisabled ? {} : restProps;
@@ -131,9 +139,10 @@ const DropdownActions = ({
                         return (
                             <DropdownMenuButton
                                 className="text-left"
-                                key={index}
+                                key={key}
                                 fakeDisabled={fakeDisabled}
                                 disabled={fakeDisabled ? false : disabled}
+                                aria-label={label}
                                 {...rest}
                             >
                                 {wrapTooltip(text, tooltip, fakeDisabled)}
