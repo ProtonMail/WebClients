@@ -92,7 +92,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                         alt=""
                     />
                 </div>
-                <h3>{user.DisplayName ? c('Title').jt`Welcome ${userName}` : c('Title').t`Welcome`}</h3>
+                <h1 className="h3">{user.DisplayName ? c('Title').jt`Welcome ${userName}` : c('Title').t`Welcome`}</h1>
                 <p className="my-2 p-0 text-keep-space">{labelCount ? counterMessage : null}</p>
             </Container>
         </>
