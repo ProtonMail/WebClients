@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
-import type { DriveFileRevision } from '../../../store';
+import type { Revision } from '@proton/drive';
+
 import { ContextMenuButton } from '../../sections/ContextMenu';
 import type { RevisionsProviderState } from '../RevisionsProvider';
 
 interface Props {
-    revision: DriveFileRevision;
+    revision: Revision;
     openRevisionPreview: RevisionsProviderState['openRevisionPreview'];
     close: () => void;
 }
