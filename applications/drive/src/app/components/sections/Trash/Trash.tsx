@@ -3,7 +3,7 @@ import { useCallback, useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { isProtonDocument, isProtonSheet } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
@@ -106,7 +106,7 @@ function Trash({ trashView, shareId }: Props) {
             }
             document.getSelection()?.removeAllRanges();
 
-            if (isProtonDocument(item.mimeType)) {
+            if (isProtonDocsDocument(item.mimeType)) {
                 if (isDocsEnabled) {
                     return openDocument({
                         type: 'doc',
@@ -116,7 +116,7 @@ function Trash({ trashView, shareId }: Props) {
                     });
                 }
                 return;
-            } else if (isProtonSheet(item.mimeType)) {
+            } else if (isProtonDocsSpreadsheet(item.mimeType)) {
                 if (isDocsEnabled) {
                     return openDocument({
                         type: 'sheet',

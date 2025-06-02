@@ -52,7 +52,7 @@ export const ProtonDocsPreview: FC<Props> = ({ isPublic, isPublicDocsAvailable, 
                     className="text-bold mt-8"
                     onClick={onOpenInDocs}
                 >
-                    {getOpenInDocsString()}
+                    {getOpenInDocsString({ type: 'document', isNative: false })}
                 </PrimaryButton>
             )}
         </div>

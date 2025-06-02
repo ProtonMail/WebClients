@@ -1,6 +1,6 @@
 import { VERIFICATION_STATUS } from '@proton/crypto/lib/constants';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
-import { PROTON_DOC_MIMETYPE } from '@proton/shared/lib/helpers/mimetype';
+import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype';
 
 import type { SignatureIssues } from '../store';
 import { hasValidAnonymousSignature } from './hasValidAnonymousSignature';
@@ -77,7 +77,7 @@ describe('hasValidAnonymousSignature', () => {
     it('should return true for Proton document without signature issues', () => {
         expect(
             hasValidAnonymousSignature(undefined, {
-                mimeType: PROTON_DOC_MIMETYPE,
+                mimeType: PROTON_DOCS_DOCUMENT_MIMETYPE,
                 isFile: true,
                 haveParentAccess: true,
             })

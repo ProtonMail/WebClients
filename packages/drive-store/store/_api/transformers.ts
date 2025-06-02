@@ -1,7 +1,7 @@
 import { getUnixTime } from 'date-fns';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import type { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 import type { DriveFileRevisionPayload } from '@proton/shared/lib/interfaces/drive/file';
@@ -22,7 +22,7 @@ import type { DriveEvents } from '../_events';
 import type { EncryptedLink } from '../_links';
 import type { Photo } from '../_photos';
 import type { DriveFileRevision } from '../_revisions';
-import { hasCustomPassword, hasGeneratedPasswordIncluded, ShareType } from '../_shares';
+import { ShareType, hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
 import type {
     Share,
     ShareExternalInvitation,
@@ -46,7 +46,7 @@ type LinkMetaWithShareURL = LinkMeta & {
 };
 
 export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: string): EncryptedLink {
-    const isDocument = link.Type === LinkType.FILE && isProtonDocument(link.MIMEType);
+    const isDocument = link.Type === LinkType.FILE && isProtonDocsDocument(link.MIMEType);
 
     const currentUnixTime = getUnixTime(Date.now());
     return {

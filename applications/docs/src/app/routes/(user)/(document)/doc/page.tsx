@@ -24,6 +24,7 @@ import { PrivateHookChangesToEvents } from './__components/PrivateHookChangesToE
 import { useFlag } from '@proton/unleash'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { useLocation } from 'react-router-dom-v5-compat'
+import { tmpConvertNewDocTypeToOld } from '@proton/drive-store/store/_documents'
 
 export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCompat }) {
   const application = useApplication()
@@ -65,7 +66,11 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
             linkId: openAction.parentLinkId,
           }
         : await driveCompat.getMyFilesNodeMeta()
-    const result = await driveCompat.createDocumentNode(root, name, openAction?.type ?? 'doc')
+    const result = await driveCompat.createDocumentNode(
+      root,
+      name,
+      tmpConvertNewDocTypeToOld(openAction?.type ?? 'doc'),
+    )
 
     return result
   }, [application.logger, driveCompat, openAction])
@@ -104,7 +109,7 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
         updateParameters({
           newVolumeId: result.volumeId,
           newLinkId: result.linkId,
-          pathname: openAction?.type ?? 'doc',
+          pathname: tmpConvertNewDocTypeToOld(openAction?.type ?? 'doc'),
         })
 
         setIsCreatingNewDocument(false)
@@ -159,7 +164,7 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
   return (
     <WordCountProvider>
       <DocsProvider publicContext={undefined} privateContext={{ user, compat: driveCompat }}>
-        <DocumentLayout documentType={openAction?.type ?? 'doc'} action={actionMode}>
+        <DocumentLayout documentType={tmpConvertNewDocTypeToOld(openAction?.type ?? 'doc')} action={actionMode}>
           <PrivateHookChangesToEvents />
           <Content
             onConversionSuccess={onConversionSuccess}

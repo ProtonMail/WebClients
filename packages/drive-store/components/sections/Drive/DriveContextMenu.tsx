@@ -62,7 +62,7 @@ export function DriveItemContextMenu({
 
     const [revisionsModal, showRevisionsModal] = useRevisionsModal();
 
-    const { showOpenInDocs } = useOpenInDocs(selectedLink);
+    const openInDocs = useOpenInDocs(selectedLink);
 
     return (
         <>
@@ -70,10 +70,8 @@ export function DriveItemContextMenu({
                 {hasPreviewAvailable && (
                     <PreviewButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />
                 )}
-                {isOnlyOneFileItem && showOpenInDocs && (
-                    <OpenInDocsButton selectedBrowserItem={selectedLink} close={close} />
-                )}
-                {(hasPreviewAvailable || (isOnlyOneFileItem && showOpenInDocs)) && <ContextSeparator />}
+                {isOnlyOneFileItem && openInDocs.canOpen && <OpenInDocsButton {...openInDocs} close={close} />}
+                {(hasPreviewAvailable || (isOnlyOneFileItem && openInDocs.canOpen)) && <ContextSeparator />}
                 <DownloadButton selectedBrowserItems={selectedLinks} close={close} />
                 {isAdmin && hasLink && (
                     <CopyLinkButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />

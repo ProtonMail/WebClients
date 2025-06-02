@@ -58,7 +58,7 @@ import { useDocsUrlBar } from '~/utils/docs-url-bar'
 import { AppendPublicShareKeyMaterialToTitle } from './append-public-share-key-material-to-title'
 import useFlag from '@proton/unleash/useFlag'
 import type { ProviderType } from '../../../provider-type'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
+import { tmpConvertNewDocTypeToOld, type DocumentType } from '@proton/drive-store/store/_documents'
 
 export function useSuggestionsFeatureFlag() {
   const isDisabled = useFlag('DocsSuggestionsDisabled')
@@ -447,7 +447,7 @@ export function DocumentViewer({
           docController={docController}
           editorController={editorController}
           documentState={documentState}
-          documentType={openAction.type}
+          documentType={tmpConvertNewDocTypeToOld(openAction.type)}
         />
       )}
 
@@ -468,7 +468,7 @@ export function DocumentViewer({
           onFrameReady={onFrameReady}
           systemMode={isPublicViewer ? EditorSystemMode.PublicView : EditorSystemMode.Edit}
           logger={application.logger}
-          documentType={openAction.type}
+          documentType={tmpConvertNewDocTypeToOld(openAction.type)}
         />
       )}
 
