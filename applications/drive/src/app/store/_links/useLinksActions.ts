@@ -854,7 +854,7 @@ export function useLinksActions({
                 if (!Response.Error) {
                     successes.push(linkId);
                 } else if (INVALID_REQUEST_ERROR_CODES.includes(Response.Code)) {
-                    failures[linkId] = new ValidationError(Response.Error.toString());
+                    failures[linkId] = new ValidationError(Response.Error);
                 } else {
                     failures[linkId] = Response.Error;
                 }
