@@ -101,26 +101,24 @@
         <g id="mime-sm-proton-sheet" clip-path="url(#mime-sm-proton-sheet-clip-path)">
             <path
                 fill="url(#mime-sm-proton-sheet-gradient)"
-                d="M.062 2.676A2.652 2.652 0 0 1 2.708.019h10.584a2.652 2.652 0 0 1 2.646 2.657v10.629a2.652 2.652 0 0 1-2.646 2.657H2.708a2.652 2.652 0 0 1-2.646-2.657V2.675Z"
+                d="M0 2.667A2.667 2.667 0 0 1 2.667 0h10.666A2.667 2.667 0 0 1 16 2.667v10.666A2.667 2.667 0 0 1 13.333 16H2.667A2.667 2.667 0 0 1 0 13.333V2.667Z"
             />
             <path
                 fill="#fff"
-                fill-rule="evenodd"
-                d="M5.698 7.326c.366 0 .662.297.662.664v4.65a.663.663 0 0 1-.662.665.663.663 0 0 1-.661-.665V7.99c0-.367.296-.664.661-.664ZM3.37 9.319c.365 0 .662.297.662.664v2.657a.663.663 0 0 1-.662.665.663.663 0 0 1-.661-.665V9.983c0-.367.296-.664.661-.664Zm4.658 1.39c.365 0 .661.297.661.664v1.267a.663.663 0 0 1-.661.665.663.663 0 0 1-.662-.665v-1.267c0-.367.297-.664.662-.664Z"
-                clip-rule="evenodd"
+                d="M5.216 6.272c.371 0 .672.301.672.672v3.04h3.424a.673.673 0 1 1 0 1.344H5.888v1.312a.672.672 0 1 1-1.344 0v-1.312H2.976a.672.672 0 0 1 0-1.344h1.568v-3.04c0-.37.3-.671.672-.672Z"
             />
-            <path fill="#fff" fill-opacity=".5" d="M8 .019h3.969v3.985H8V.02Z" />
-            <path fill="#fff" fill-opacity=".8" d="M11.969.019h1.323a2.652 2.652 0 0 1 2.646 2.657v1.328h-3.97V.02Z" />
-            <path fill="#fff" fill-opacity=".5" d="M11.969 4.004h3.969V7.99h-3.97V4.004Z" />
+            <path fill="#fff" d="M8 0h4v4H8V0Z" fill-opacity=".5" />
+            <path fill="#fff" fill-opacity=".8" d="M12 0h1.333A2.667 2.667 0 0 1 16 2.667V4h-4V0Z" />
+            <path fill="#fff" fill-opacity=".5" d="M12 4h4v4h-4V4Z" />
             <radialGradient
                 id="mime-sm-proton-sheet-gradient"
                 cx="0"
                 cy="0"
                 r="1"
-                gradientTransform="rotate(-53.266 18.57 10.605) scale(18.7847 18.7623)"
+                gradientTransform="rotate(-53.15 18.634 10.704) scale(18.8804)"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop stop-color="#21BD69" />
+                <stop stop-color="#1B854C" />
                 <stop offset="1" stop-color="#26DA79" />
             </radialGradient>
             <clipPath id="mime-sm-proton-sheet-clip-path">
@@ -428,30 +426,24 @@
         <g id="mime-md-proton-sheet" clip-path="url(#mime-md-proton-sheet-clip-path)">
             <path
                 fill="url(#mime-md-proton-sheet-gradient)"
-                d="M.093 4.014A3.977 3.977 0 0 1 4.063.028h15.875a3.977 3.977 0 0 1 3.969 3.986v15.943a3.977 3.977 0 0 1-3.97 3.986H4.063a3.977 3.977 0 0 1-3.969-3.986V4.014Z"
+                d="M0 4a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4Z"
             />
             <path
                 fill="#fff"
-                fill-rule="evenodd"
-                d="M8.547 10.989c.548 0 .993.446.993.996v6.975c0 .55-.445.997-.993.997a.994.994 0 0 1-.992-.997v-6.975c0-.55.444-.996.992-.996Zm-3.493 2.99c.548 0 .992.445.992.996v3.985c0 .55-.444.997-.992.997a.994.994 0 0 1-.993-.997v-3.986c0-.55.445-.996.993-.996Zm6.986 2.084c.549 0 .993.447.993.997v1.9c0 .55-.444.997-.993.997a.994.994 0 0 1-.992-.997v-1.9c0-.55.444-.997.992-.997Z"
-                clip-rule="evenodd"
+                d="M7.824 9.408c.557 0 1.008.451 1.008 1.008v4.56h5.136a1.009 1.009 0 0 1 0 2.016H8.832v1.968a1.008 1.008 0 0 1-2.016 0v-1.968H4.464a1.008 1.008 0 0 1 0-2.016h2.352v-4.56c0-.557.452-1.008 1.008-1.008Z"
             />
-            <path fill="#fff" fill-opacity=".5" d="M12 .028h5.953v5.979H12V.028Z" />
-            <path
-                fill="#fff"
-                fill-opacity=".8"
-                d="M17.953.028h1.985a3.977 3.977 0 0 1 3.968 3.986v1.993h-5.953V.028Z"
-            />
-            <path fill="#fff" fill-opacity=".5" d="M17.953 6.007h5.953v5.978h-5.953V6.007Z" />
+            <path fill="#fff" fill-opacity=".5" d="M12 0h6v6h-6V0Z" />
+            <path fill="#fff" fill-opacity=".8" d="M18 0h2a4 4 0 0 1 4 4v2h-6V0Z" />
+            <path fill="#fff" fill-opacity=".5" d="M18 6h6v6h-6V6Z" />
             <radialGradient
                 id="mime-md-proton-sheet-gradient"
                 cx="0"
                 cy="0"
                 r="1"
-                gradientTransform="matrix(16.85267 -22.58177 22.55477 16.83251 -1.554 28.718)"
+                gradientTransform="rotate(-53.15 27.95 16.055) scale(28.3206)"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop stop-color="#21BD69" />
+                <stop stop-color="#1B854C" />
                 <stop offset="1" stop-color="#26DA79" />
             </radialGradient>
             <clipPath id="mime-md-proton-sheet-clip-path">
@@ -815,28 +807,29 @@
         <g id="mime-lg-proton-sheet" clip-path="url(#mime-lg-proton-sheet-clip-path)">
             <path
                 fill="url(#mime-lg-proton-sheet-gradient)"
-                d="M37 16.559c0-3.86-2.634-8.853-6.5-8.853V0H11C7.134 0 4 3.128 4 6.987v34.026C4 44.872 7.134 48 11 48h26c3.866 0 7-3.128 7-6.987V21.167l-7-4.608Z"
+                d="M0 8a8 8 0 0 1 8-8h32a8 8 0 0 1 8 8v32a8 8 0 0 1-8 8H8a8 8 0 0 1-8-8V8Z"
             />
-            <path fill="#93EDBC" d="M32 0H20v11.977h12V0Z" />
-            <path fill="#D4F8E4" d="M37 0h-5v11.977h12v-4.99C44 3.128 40.866 0 37 0Z" />
-            <path fill="#92ECBC" d="M44 11.979H32v11.977h12V11.98Z" />
             <path
                 fill="#fff"
-                fill-rule="evenodd"
-                d="M18.782 22.51c1.073 0 1.944.87 1.944 1.943V38.06a1.944 1.944 0 0 1-3.888 0V24.453c0-1.073.87-1.943 1.944-1.943ZM11.938 28.341c1.073 0 1.944.87 1.944 1.944v7.775a1.944 1.944 0 1 1-3.888 0v-7.775c0-1.074.87-1.944 1.944-1.944ZM25.625 32.409c1.074 0 1.944.87 1.944 1.944v3.707a1.944 1.944 0 1 1-3.887 0v-3.707c0-1.074.87-1.944 1.943-1.944Z"
-                clip-rule="evenodd"
+                d="M15.648 18.816c1.114 0 2.016.903 2.016 2.016v9.12h10.271a2.016 2.016 0 1 1 0 4.032h-10.27v3.936a2.016 2.016 0 0 1-4.033 0v-3.936H8.928a2.016 2.016 0 0 1 0-4.032h4.704v-9.12c0-1.113.903-2.016 2.016-2.016Z"
             />
+            <path fill="#fff" fill-opacity=".5" d="M24 0h12v12H24V0Z" />
+            <path fill="#fff" fill-opacity=".8" d="M36 0h4a8 8 0 0 1 8 8v4H36V0Z" />
+            <path fill="#fff" fill-opacity=".5" d="M36 12h12v12H36V12Z" />
             <radialGradient
                 id="mime-lg-proton-sheet-gradient"
                 cx="0"
                 cy="0"
                 r="1"
-                gradientTransform="rotate(-58.014 52.546 27.68) scale(53.4383 50.03)"
+                gradientTransform="rotate(-53.15 55.901 32.11) scale(56.6412)"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop stop-color="#21BD69" />
+                <stop stop-color="#1B854C" />
                 <stop offset="1" stop-color="#26DA79" />
             </radialGradient>
+            <clipPath id="mime-lg-proton-sheet-clip-path">
+                <path fill="#fff" d="M0 0h48v48H0z" />
+            </clipPath>
         </g>
 
         <g id="mime-lg-folder">
