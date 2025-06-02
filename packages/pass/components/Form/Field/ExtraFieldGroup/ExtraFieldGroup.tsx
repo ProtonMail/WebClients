@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import type { FormikErrors, FormikProps } from 'formik';
 import { FieldArray } from 'formik';
 
+import type { ButtonLikeShape } from '@proton/atoms/src';
+import type { ThemeColorUnion } from '@proton/colors/types';
 import { selectExtraFieldLimits } from '@proton/pass/store/selectors';
 import type { DeobfuscatedItemExtraField, ExtraFieldGroupValues, ExtraFieldType } from '@proton/pass/types';
 import { autofocusInput } from '@proton/pass/utils/dom/input';
@@ -12,7 +14,11 @@ import { FieldsetCluster } from '../Layout/FieldsetCluster';
 import { AddExtraFieldDropdown } from './AddExtraFieldDropdown';
 import { ExtraFieldComponent } from './ExtraField';
 
-export type ExtraFieldGroupProps<V extends ExtraFieldGroupValues> = { form: FormikProps<V> };
+export type ExtraFieldGroupProps<V extends ExtraFieldGroupValues> = {
+    form: FormikProps<V>;
+    buttonShape?: ButtonLikeShape;
+    buttonColor?: ThemeColorUnion;
+};
 
 export const createExtraField = <T extends ExtraFieldType>(type: T): DeobfuscatedItemExtraField => {
     switch (type) {
@@ -28,7 +34,11 @@ export const createExtraField = <T extends ExtraFieldType>(type: T): Deobfuscate
     }
 };
 
-export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({ form }: ExtraFieldGroupProps<T>) => {
+export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({
+    form,
+    buttonShape,
+    buttonColor,
+}: ExtraFieldGroupProps<T>) => {
     const { needsUpgrade } = useSelector(selectExtraFieldLimits);
 
     return (
@@ -61,7 +71,9 @@ export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({ form }: Extra
                             </FieldsetCluster>
                         )}
 
-                        {!needsUpgrade && <AddExtraFieldDropdown onAdd={addCustomField} />}
+                        {!needsUpgrade && (
+                            <AddExtraFieldDropdown onAdd={addCustomField} shape={buttonShape} color={buttonColor} />
+                        )}
                     </>
                 );
             }}
