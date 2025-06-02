@@ -78,6 +78,7 @@ export type IconName =
     | 'brand-proton-calendar'
     | 'brand-proton-calendar-filled'
     | 'brand-proton-docs'
+    | 'brand-proton-sheets'
     | 'brand-proton-drive'
     | 'brand-proton-drive-filled'
     | 'brand-proton-mail'
@@ -478,6 +479,7 @@ export { IcBrandProton } from './icons/IcBrandProton';
 export { IcBrandProtonCalendar } from './icons/IcBrandProtonCalendar';
 export { IcBrandProtonCalendarFilled } from './icons/IcBrandProtonCalendarFilled';
 export { IcBrandProtonDocs } from './icons/IcBrandProtonDocs';
+export { IcBrandProtonSheets } from './icons/IcBrandProtonSheets';
 export { IcBrandProtonDrive } from './icons/IcBrandProtonDrive';
 export { IcBrandProtonDriveFilled } from './icons/IcBrandProtonDriveFilled';
 export { IcBrandProtonMail } from './icons/IcBrandProtonMail';
