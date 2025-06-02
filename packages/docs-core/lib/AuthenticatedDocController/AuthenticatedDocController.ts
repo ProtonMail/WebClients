@@ -22,7 +22,7 @@ import { isDocumentState, type DocumentState } from '../State/DocumentState'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { getErrorString } from '../Util/GetErrorString'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
-import { isProtonSheet } from '@proton/shared/lib/helpers/mimetype'
+import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 
 // This is part of a hack to make sure the name in the document sharing modal is updated when the document name changes.
 // While having these module-scoped variable here looks a bit stinky, it's completely fine because the purpose is to prevent a
@@ -255,7 +255,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
 
     const shell = result.getValue()
 
-    void this.driveCompat.openDocument(shell, isProtonSheet(node.mimeType) ? 'sheet' : 'doc')
+    void this.driveCompat.openDocument(shell, isProtonDocsSpreadsheet(node.mimeType) ? 'sheet' : 'doc')
   }
 
   public async restoreRevisionAsCopy(yjsContent: YjsState): Promise<void> {
@@ -278,7 +278,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
 
     const shell = result.getValue()
 
-    void this.driveCompat.openDocument(shell, isProtonSheet(node.mimeType) ? 'sheet' : 'doc')
+    void this.driveCompat.openDocument(shell, isProtonDocsSpreadsheet(node.mimeType) ? 'sheet' : 'doc')
   }
 
   public async createNewDocument(documentType: DocumentType): Promise<void> {
