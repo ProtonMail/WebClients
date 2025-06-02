@@ -11,7 +11,7 @@ import {
     Icon,
     usePopperAnchor,
 } from '@proton/components';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
 import type { DecryptedLink } from '../../../store';
@@ -51,7 +51,8 @@ export function DownloadButton({ items, rootLink, openInDocs, disabled }: Downlo
         // Document downloads are handled in two ways:
         //  1. single files are redirected to the Docs app using `downloadDocument`
         //  2. multiple files are ignored, using `handleContainsDocument` in the queue
-        const documentLink = count === 1 && isProtonDocument(selectedItems[0].mimeType) ? selectedItems[0] : undefined;
+        const documentLink =
+            count === 1 && isProtonDocsDocument(selectedItems[0].mimeType) ? selectedItems[0] : undefined;
 
         if (documentLink) {
             // Should never happen to have openInDocs false as the button will be disabled in that case

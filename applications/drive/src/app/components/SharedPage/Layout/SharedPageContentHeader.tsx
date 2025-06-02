@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { CircleLoader } from '@proton/atoms';
 import { FileNameDisplay } from '@proton/components';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 
 import { type useBookmarksPublicView } from '../../../store';
@@ -56,8 +56,8 @@ export function SharedPageContentHeader({
     const selectedItems = getSelectedItems(items || [], selectionControls?.selectedItemIds || []);
 
     const hasOnlyDocuments =
-        (items.length > 0 && items.every((item) => item.isFile && isProtonDocument(item.mimeType))) ||
-        (selectedItems.length > 0 && selectedItems.every((item) => item.isFile && isProtonDocument(item.mimeType)));
+        (items.length > 0 && items.every((item) => item.isFile && isProtonDocsDocument(item.mimeType))) ||
+        (selectedItems.length > 0 && selectedItems.every((item) => item.isFile && isProtonDocsDocument(item.mimeType)));
     const sharedBy = rootLink.signatureEmail;
 
     return (

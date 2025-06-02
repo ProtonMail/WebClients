@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components';
 import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
-import { isProtonDocument, isProtonSheet } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import type { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
@@ -157,7 +157,7 @@ function Drive({ activeFolder, folderView }: Props) {
             }
             document.getSelection()?.removeAllRanges();
 
-            if (isProtonDocument(item.mimeType)) {
+            if (isProtonDocsDocument(item.mimeType)) {
                 if (isDocsEnabled) {
                     return openDocument({
                         type: 'doc',
@@ -167,7 +167,7 @@ function Drive({ activeFolder, folderView }: Props) {
                     });
                 }
                 return;
-            } else if (isProtonSheet(item.mimeType)) {
+            } else if (isProtonDocsSpreadsheet(item.mimeType)) {
                 if (isDocsEnabled) {
                     return openDocument({
                         type: 'sheet',

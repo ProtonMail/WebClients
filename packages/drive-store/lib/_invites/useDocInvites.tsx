@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 
 import { useConfirmActionModal } from '@proton/components';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { useInvitationsActions } from '../../store/_actions/useInvitationsActions';
 import type { ExtendedInvitationDetails } from '../../store/_invitations/interface';
@@ -16,7 +16,7 @@ export const useDocInvites = () => {
     const driveCompat = useDriveCompat();
 
     const docsInvites = useMemo(
-        () => invitations.filter((invite) => isProtonDocument(invite.link.mimeType)),
+        () => invitations.filter((invite) => isProtonDocsDocument(invite.link.mimeType)),
         [invitations]
     );
 
