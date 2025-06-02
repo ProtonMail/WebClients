@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
 import { ContextSeparator } from '@proton/components';
+import type { Revision } from '@proton/drive';
 import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
 
-import type { DriveFileRevision } from '../../store';
 import type { ContextMenuProps } from '../FileBrowser';
 import { ItemContextMenu } from '../sections/ContextMenu/ItemContextMenu';
 import {
@@ -24,7 +24,7 @@ export function RevisionsItemContextMenu({
     revision,
     isCurrent,
 }: ContextMenuProps & {
-    revision: DriveFileRevision;
+    revision: Revision;
     isCurrent: boolean;
 }) {
     const {
