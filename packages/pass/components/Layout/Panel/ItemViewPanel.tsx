@@ -90,7 +90,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const isOwnerOrManager = owner || shareRoleId === ShareRole.MANAGER;
 
     const hasMultipleVaults = vaults.length > 1;
-    const canMove = (!shared || owner) && hasMultipleVaults;
+    const canMove = (!shared || !readOnly) && hasMultipleVaults;
 
     const pinInFlight = useSelector(selectRequestInFlight(itemPinRequest(shareId, itemId)));
     const unpinInFlight = useSelector(selectRequestInFlight(itemUnpinRequest(shareId, itemId)));
@@ -299,7 +299,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         onClick={handleMoveToVaultClick}
                                         label={c('Action').t`Move to another vault`}
                                         icon="folder-arrow-in"
-                                        disabled={readOnly}
                                     />
                                 )}
 
