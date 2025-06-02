@@ -10,6 +10,7 @@ describe('getOwnerName', () => {
   // TODO: not sure how this test is supposed to work?
   test('Will return the user email if name is not populated and the document is owned by the user', () => {
     const recentDocument = RecentDocumentsItem.create({
+      type: 'document',
       name: 'doc 2',
       linkId: 'link 1',
       parentLinkId: undefined,
@@ -27,6 +28,7 @@ describe('getOwnerName', () => {
   // TODO: not sure how this test is supposed to work?
   test('Will return the user if name is populated and the document is owned by the user', () => {
     const recentDocument = RecentDocumentsItem.create({
+      type: 'document',
       name: 'doc 2',
       linkId: 'link 1',
       parentLinkId: undefined,
@@ -43,6 +45,7 @@ describe('getOwnerName', () => {
 
   test('Will return the contact display name if it is present and the document is shared with the user', () => {
     const recentDocument = RecentDocumentsItem.create({
+      type: 'document',
       name: 'doc 2',
       linkId: 'link 1',
       parentLinkId: undefined,
@@ -60,6 +63,7 @@ describe('getOwnerName', () => {
 
   test('Will return the contact email if there is no name and the document is shared with the user', () => {
     const recentDocument = RecentDocumentsItem.create({
+      type: 'document',
       name: 'doc 2',
       linkId: 'link 1',
       parentLinkId: undefined,
@@ -77,6 +81,7 @@ describe('getOwnerName', () => {
 
   test('Will return the createdBy email if no contact matches the createdBy field due to incorrect filtering', () => {
     const recentDocument = RecentDocumentsItem.create({
+      type: 'document',
       name: 'doc 2',
       linkId: 'link 1',
       parentLinkId: undefined,
@@ -98,6 +103,7 @@ describe('getOwnerName', () => {
 
   test('Will return the contact name if the contact matches the createdBy field', () => {
     const recentDocument = RecentDocumentsItem.create({
+      type: 'document',
       name: 'doc 2',
       linkId: 'link 1',
       parentLinkId: undefined,

@@ -35,6 +35,7 @@ jest.mock('@proton/components/hooks/useAuthentication', () => ({
 
 function createMockRecentDocument(data: Partial<RecentDocumentsItemValue> = {}): RecentDocumentsItem {
   return RecentDocumentsItem.create({
+    type: 'document',
     name: 'Untitled',
     linkId: 'link1',
     parentLinkId: undefined,
