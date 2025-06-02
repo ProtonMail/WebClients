@@ -7,8 +7,8 @@ import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import {
     getFileExtension,
     isIWAD,
-    isProtonDocument,
-    isProtonSheet,
+    isProtonDocsDocument,
+    isProtonDocsSpreadsheet,
     isRAWThumbnailExtractionSupported,
     isVideo,
 } from '@proton/shared/lib/helpers/mimetype';
@@ -69,14 +69,14 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
         downloadFile: async () => {
             const mimeType = contentsMimeType || link?.mimeType || '';
 
-            if (isProtonDocument(mimeType)) {
+            if (isProtonDocsDocument(mimeType)) {
                 await downloadDocument({
                     type: 'doc',
                     shareId,
                     linkId,
                 });
                 return;
-            } else if (isProtonSheet(mimeType)) {
+            } else if (isProtonDocsSpreadsheet(mimeType)) {
                 await downloadDocument({
                     type: 'sheet',
                     shareId,

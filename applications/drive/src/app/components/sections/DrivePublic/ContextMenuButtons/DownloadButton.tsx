@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import usePublicToken from '../../../../hooks/drive/usePublicToken';
 import type { LinkDownload } from '../../../../store';
@@ -21,7 +21,7 @@ export const DownloadButton = ({ selectedBrowserItems, close, openInDocs, virusS
     const { download } = useDownload();
     const { token } = usePublicToken();
     const count = selectedBrowserItems.length;
-    const isDoc = isProtonDocument(selectedBrowserItems[0]?.mimeType);
+    const isDoc = isProtonDocsDocument(selectedBrowserItems[0]?.mimeType);
 
     const onClick = async () => {
         // Document downloads are handled in two ways:

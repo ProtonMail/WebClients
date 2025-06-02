@@ -1,5 +1,5 @@
 import { ContextSeparator, useConfirmActionModal } from '@proton/components';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { type DecryptedLink, useDownloadScanFlag } from '../../../store';
@@ -46,7 +46,7 @@ export function DrivePublicContextMenu({
     const [publicRenameModal, showPublicRenameModal] = useRenameModal();
     const [publicDetailsModal, showPublicDetailsModal] = usePublicDetailsModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
-    const isDocument = isProtonDocument(selectedLink?.mimeType || '');
+    const isDocument = isProtonDocsDocument(selectedLink?.mimeType || '');
     const isDownloadScanEnabled = useDownloadScanFlag();
 
     const showPreviewButton = hasPreviewAvailable;

@@ -6,7 +6,7 @@ import { useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
 import { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import type { SharedURLSessionKeyPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { sendErrorReport } from '../../utils/errorHandling';
@@ -328,7 +328,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
         isDeleting,
         isSaving,
         name: link?.name || '', // If the link is not loaded we will return an error message anyway
-        isShareUrlEnabled: !!link?.mimeType && isProtonDocument(link.mimeType) ? isDocsPublicSharingEnabled : true,
+        isShareUrlEnabled: !!link?.mimeType && isProtonDocsDocument(link.mimeType) ? isDocsPublicSharingEnabled : true,
         initialExpiration,
         customPassword,
         sharedLink,
