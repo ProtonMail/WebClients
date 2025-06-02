@@ -89,7 +89,7 @@ const AccountStepDetails = ({
             return getIsValid({ passwords: passwordFields });
         },
         data: async (): Promise<AccountData> => {
-            return getValidAccountData({ passwords: true });
+            return getValidAccountData({ passwords: passwordFields });
         },
         scrollInto,
     }));
