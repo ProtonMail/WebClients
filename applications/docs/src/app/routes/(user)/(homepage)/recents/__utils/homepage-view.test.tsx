@@ -8,6 +8,7 @@ jest.mock('@proton/shared/lib/i18n', () => ({ dateLocale: { code: 'us' } }))
 function createMockItems({ firstNameOverride }: { firstNameOverride?: string } = {}) {
   return [
     RecentDocumentsItem.create({
+      type: 'document',
       name: firstNameOverride ?? 'name 1',
       linkId: 'link 1',
       parentLinkId: undefined,
@@ -20,6 +21,7 @@ function createMockItems({ firstNameOverride }: { firstNameOverride?: string } =
       shareId: 'share1',
     }),
     RecentDocumentsItem.create({
+      type: 'document',
       name: 'name 2',
       linkId: 'link 2',
       parentLinkId: undefined,
@@ -32,6 +34,7 @@ function createMockItems({ firstNameOverride }: { firstNameOverride?: string } =
       shareId: 'share2',
     }),
     RecentDocumentsItem.create({
+      type: 'document',
       name: 'name 3',
       linkId: 'link 3',
       parentLinkId: undefined,
@@ -56,6 +59,7 @@ function createRecentDocumentsItem({
   lastModified: Date
 }) {
   return RecentDocumentsItem.create({
+    type: 'document',
     name,
     linkId: '',
     parentLinkId: '',

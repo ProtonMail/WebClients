@@ -157,6 +157,7 @@ describe('RecentDocumentsService', () => {
   describe('trashDocument', () => {
     test('should throw error if document has no parent link ID', async () => {
       const mockItem = RecentDocumentsItem.create({
+        type: 'document',
         name: 'test',
         linkId: 'link1',
         parentLinkId: '', // empty parentLinkId
@@ -174,6 +175,7 @@ describe('RecentDocumentsService', () => {
 
     test('should successfully trash document', async () => {
       const mockItem = RecentDocumentsItem.create({
+        type: 'document',
         name: 'test',
         linkId: 'link1',
         parentLinkId: 'parent1',
@@ -196,6 +198,7 @@ describe('RecentDocumentsService', () => {
   describe('cacheSnapshot', () => {
     test('should successfully cache snapshot', async () => {
       const mockItem = RecentDocumentsItem.create({
+        type: 'document',
         name: 'test',
         linkId: 'link1',
         parentLinkId: 'parent1',

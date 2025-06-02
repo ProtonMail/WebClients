@@ -13,6 +13,7 @@ import { VolumeType } from '@proton/drive-store/store/_volumes'
 import { useContactEmails } from '@proton/mail/contactEmails/hooks'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
 import { getOwnerName } from './get-owner-name'
+import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 
 // constants
 // ---------
@@ -365,7 +366,7 @@ function useRecentDocuments({ search }: { search?: string }) {
 // -----------------
 
 function isTrashedDocument(item: DecryptedLink): item is DecryptedLink & { trashed: number } {
-  return Boolean(item.trashed) && item.mimeType === 'application/vnd.proton.doc'
+  return Boolean(item.trashed) && (isProtonDocsDocument(item.mimeType) || isProtonDocsSpreadsheet(item.mimeType))
 }
 
 /**
@@ -380,6 +381,7 @@ function useTrashedDocuments() {
   const { items, isLoading } = useTrashView()
   const trashedDocuments = items.filter(isTrashedDocument).map((item) =>
     RecentDocumentsItem.create({
+      type: isProtonDocsDocument(item.mimeType) ? 'document' : 'spreadsheet',
       createdBy: item.nameSignatureEmail,
       name: item.name,
       isSharedWithMe: Boolean(item.sharedBy),
