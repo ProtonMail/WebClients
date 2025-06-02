@@ -7,7 +7,7 @@ import type { GetDocumentMeta } from './GetDocumentMeta'
 import { getErrorString } from '../Util/GetErrorString'
 import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
-import { isProtonSheet } from '@proton/shared/lib/helpers/mimetype'
+import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 
 export class DuplicateDocument {
   constructor(
@@ -31,7 +31,12 @@ export class DuplicateDocument {
       const date = getPlatformFriendlyDateForFileName()
       const newName = `${node.name} (copy ${date})`
 
-      return await this.genericDuplicate(newName, parentMeta, state, isProtonSheet(node.mimeType) ? 'sheet' : 'doc')
+      return await this.genericDuplicate(
+        newName,
+        parentMeta,
+        state,
+        isProtonDocsSpreadsheet(node.mimeType) ? 'sheet' : 'doc',
+      )
     } catch (error) {
       return Result.fail(getErrorString(error) ?? 'Failed to duplicate document')
     }

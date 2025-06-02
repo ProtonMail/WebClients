@@ -15,7 +15,7 @@ import {
     isCompatibleSTL,
     isIWAD,
     isPDF,
-    isProtonDocument,
+    isProtonDocsDocument,
     isSupportedImage,
     isSupportedText,
     isVideo,
@@ -168,7 +168,7 @@ export const FilePreviewContent = ({
             );
         }
 
-        if (mimeType && isProtonDocument(mimeType)) {
+        if (mimeType && isProtonDocsDocument(mimeType)) {
             return (
                 <div className="file-preview-container">
                     <ProtonDocsPreview

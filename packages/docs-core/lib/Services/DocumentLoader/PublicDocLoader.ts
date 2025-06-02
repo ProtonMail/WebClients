@@ -26,7 +26,7 @@ import type { PublicDriveCompat, PublicNodeMeta } from '@proton/drive-store'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 import { PublicRenameController } from '../../RenameController/RenameController'
 import type { GetNode } from '../../UseCase/GetNode'
-import { isProtonSheet } from '@proton/shared/lib/helpers/mimetype'
+import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import { redirectToCorrectDocTypeIfNeeded } from '../../Util/redirect-to-correct-doc-type'
 
 export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> {
@@ -99,7 +99,7 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
           volumeId: documentState.getProperty('documentMeta').volumeId,
           linkId: nodeMeta.linkId,
         },
-        isProtonSheet(mimeType) ? 'sheet' : 'doc',
+        isProtonDocsSpreadsheet(mimeType) ? 'sheet' : 'doc',
       )
       return
     }
