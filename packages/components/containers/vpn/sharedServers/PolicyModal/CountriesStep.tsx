@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Input } from '@proton/atoms';
+import { CircleLoader, Input } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Table from '@proton/components/components/table/Table';
@@ -12,16 +12,13 @@ import TableRow from '@proton/components/components/table/TableRow';
 import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import clsx from '@proton/utils/clsx';
 
-interface CountriesGroup {
-    country: string;
-    localizedCountryName: string;
-    cities: string[];
-}
+import type { GroupedLocation } from './getGroupedLocations';
 
 interface SharedServersCountriesStepProps {
+    loading?: boolean;
     isEditing: boolean;
     policyName: string;
-    groupedLocations: CountriesGroup[];
+    groupedLocations: GroupedLocation[];
     selectedCities: Record<string, string[]>;
     onSelectCountry: (countryCode: string, cities: string[]) => void;
     onSelectCity: (countryCode: string, city: string) => void;
@@ -29,6 +26,7 @@ interface SharedServersCountriesStepProps {
 }
 
 const CountriesStep = ({
+    loading,
     isEditing,
     policyName,
     groupedLocations,
@@ -112,7 +110,12 @@ const CountriesStep = ({
                             </div>
                         </TableCell>
                     </TableRow>
-                    {filteredGroups.map(({ country, localizedCountryName, cities }) => {
+                    {loading && (
+                        <div className="flex flex-nowrap">
+                            <CircleLoader />
+                        </div>
+                    )}
+                    {filteredGroups.map(({ country, localizedCountryName, cities, localizedCities }) => {
                         const selectedCount = selectedCities[country]?.length ?? 0;
                         const isAllCitiesSelected = selectedCount === cities.length;
                         const isPartiallySelected = selectedCount > 0 && selectedCount < cities.length;
@@ -176,7 +179,7 @@ const CountriesStep = ({
                                                             onClick={() => onSelectCity(country, city)}
                                                             className="text-nowrap flex grow cursor-pointer"
                                                         >
-                                                            {city}
+                                                            {localizedCities[city]}
                                                         </span>
                                                     </div>
                                                 </TableCell>

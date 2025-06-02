@@ -1,18 +1,21 @@
 import type { CountryOptions } from '@proton/payments';
 import { getLocalizedCountryByAbbr } from '@proton/payments';
 
-import type { SharedServerLocation } from '../useSharedServers';
+import type { CitiesTranslations, CountryCitiesTranslationsNonNull, SharedServerLocation } from '../api';
 
-export interface GroupedLocations {
+export interface GroupedLocation {
+    /** ISO 3166-1 alpha-2 Country Code, e.g. US, FR */
     country: string;
     localizedCountryName: string;
     cities: string[];
+    localizedCities: CountryCitiesTranslationsNonNull;
 }
 
 export function getGroupedLocations(
     locations: SharedServerLocation[],
-    countryOptions: CountryOptions
-): GroupedLocations[] {
+    countryOptions: CountryOptions,
+    citiesTranslations: CitiesTranslations
+): GroupedLocation[] {
     const locationsWithLocalized = locations.map((location) => {
         const localized = getLocalizedCountryByAbbr(location.Country, countryOptions) || location.Country;
         return {
@@ -26,23 +29,26 @@ export function getGroupedLocations(
     });
 
     // Group them
-    const groups: Record<string, { country: string; cities: string[] }> = {};
-    sortedLocations.forEach((loc) => {
-        if (!groups[loc.Country]) {
-            groups[loc.Country] = {
-                country: loc.localizedCountryName,
+    const groups = sortedLocations.reduce(
+        (groups_, loc) => {
+            groups_[loc.Country] ??= {
+                country: loc.Country,
+                localizedCountryName: loc.localizedCountryName,
                 cities: [],
+                localizedCities: {},
             };
-        }
-        groups[loc.Country].cities.push(loc.City);
-    });
+            groups_[loc.Country].cities.push(loc.City);
+            groups_[loc.Country].localizedCities[loc.City] = citiesTranslations[loc.Country][loc.City] || loc.City;
+            return groups_;
+        },
+        {} as Record</** country code */ string, GroupedLocation>
+    );
 
-    // Convert to array and sort cities
-    return Object.entries(groups)
-        .map(([country, { country: cName, cities }]) => ({
-            country,
-            localizedCountryName: cName,
-            cities: cities.sort((a, b) => a.localeCompare(b)),
+    // Convert to array, sort cities and sort countries; by localized names
+    return Object.values(groups)
+        .map(({ cities, ...loc }) => ({
+            ...loc,
+            cities: cities.sort((a, b) => loc.localizedCities[a]!.localeCompare(loc.localizedCities[b]!)),
         }))
         .sort((a, b) => a.localizedCountryName.localeCompare(b.localizedCountryName));
 }

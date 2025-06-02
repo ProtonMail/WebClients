@@ -1,7 +1,12 @@
 import useApi from '@proton/components/hooks/useApi';
 import { useFetchData } from '@proton/components/hooks/useFetchData';
 
-import { queryLocationFilter } from './api';
+import {
+    type CitiesTranslationsApiResponse,
+    type SharedServerLocation,
+    queryCitiesTranslations,
+    queryLocationFilter,
+} from './api';
 
 // Reuse your existing types or adapt them as needed
 export interface VpnLocationFilterPolicy {
@@ -14,11 +19,6 @@ export interface VpnLocationFilterPolicy {
     State: number;
     Type: number;
     Users: SharedServerUser[];
-}
-
-export interface SharedServerLocation {
-    Country: string;
-    City: string;
 }
 
 export interface SharedServerUser {
@@ -58,15 +58,41 @@ export const useSharedServers = (maxAge: number) => {
         maxAge,
     });
 
+    // Fetch cities translations
+    const translations = useFetchData<CitiesTranslationsApiResponse>({
+        fetcher: () => api<CitiesTranslationsApiResponse>(queryCitiesTranslations()),
+        maxAge: Number.MAX_SAFE_INTEGER,
+    });
+
+    if (loading || translations.loading || !result || !translations.result) {
+        return {
+            loading: true,
+            policies: [],
+            locations: [],
+            translations: {
+                refresh: translations.refresh,
+                cities: {},
+            },
+            users: [],
+            groups: [],
+            refresh,
+            countUsersNotInAnyPolicy: 0,
+        };
+    }
+
     // Now you can define convenience return values from the result
     return {
-        loading,
-        policies: result?.FilterPolicies || [],
-        locations: result?.Locations || [],
-        users: result?.Users || [],
-        groups: result?.Groups || [],
+        loading: false,
+        policies: result.FilterPolicies,
+        locations: result.Locations,
+        translations: {
+            refresh: translations.refresh,
+            cities: translations.result.Cities,
+        },
+        users: result.Users,
+        groups: result.Groups,
         refresh,
-        countUsersNotInAnyPolicy: result?.EmailsOfUsersNotInAnyPolicy?.length ?? 0,
+        countUsersNotInAnyPolicy: result.EmailsOfUsersNotInAnyPolicy.length,
     };
 };
 
