@@ -173,6 +173,7 @@ export enum SupportedProtonDocsMimeTypes {
     html = 'text/html',
     xlsx = SupportedMimeTypes.xlsx,
     csv = 'text/csv',
+    tsv = 'text/tab-separated-values',
 }
 
 // RAWMimeTypes keys must be the usual extension of the file. It is used in validation, see `isRAWExtension`.
