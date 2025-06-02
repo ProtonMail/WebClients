@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype';
 import { getCurrentTab, getNewWindow } from '@proton/shared/lib/helpers/window';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -53,7 +54,8 @@ export const useDocumentActions = () => {
         shareId: string;
         linkId: string;
         openBehavior: 'tab' | 'redirect';
-        type: DocumentType;
+        // TODO: see note in `tmpConvertNewTypeToOld` in `useOpenDocument.ts`.
+        type: DocumentType | ProtonDocumentType;
     }) => {
         const w = openBehavior === 'tab' ? getNewWindow() : getCurrentTab();
 
@@ -103,7 +105,8 @@ export const useDocumentActions = () => {
     }: {
         shareId: string;
         linkId: string;
-        type: DocumentType;
+        // TODO: see note in `tmpConvertNewTypeToOld` in `useOpenDocument.ts`.
+        type: DocumentType | ProtonDocumentType;
     }) => {
         const w = getNewWindow();
 

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Avatar, Button, UserAvatar, UserAvatarSizeEnum } from '@proton/atoms';
 import { FileIcon, Icon, TableCell } from '@proton/components';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
@@ -140,7 +140,7 @@ function DownloadCell({ item }: { item: PublicLink }) {
         'mouse:group-hover:opacity-100',
     ]);
 
-    const hideDownload = isProtonDocument(item.mimeType);
+    const hideDownload = isProtonDocsDocument(item.mimeType);
 
     return (
         <TableCell

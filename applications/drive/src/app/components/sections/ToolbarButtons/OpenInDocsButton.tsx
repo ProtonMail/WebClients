@@ -1,5 +1,5 @@
 import { MimeIcon, ToolbarButton } from '@proton/components';
-import { getOpenInDocsString } from '@proton/shared/lib/drive/translations';
+import { getOpenInDocsMimeIconName, getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 
 import { useOpenInDocs } from '../../../store/_documents';
 import { hasFoldersSelected, isMultiSelect } from './utils';
@@ -16,24 +16,17 @@ interface Props {
 
 const OpenInDocsButton = ({ selectedBrowserItems }: Props) => {
     const selectedBrowserItem = selectedBrowserItems.length > 0 ? selectedBrowserItems[0] : undefined;
-    const { openInDocsAction, showOpenInDocs } = useOpenInDocs(selectedBrowserItem);
+    const openInDocs = useOpenInDocs(selectedBrowserItem);
 
-    if (!showOpenInDocs || isMultiSelect(selectedBrowserItems) || hasFoldersSelected(selectedBrowserItems)) {
+    if (!openInDocs.canOpen || isMultiSelect(selectedBrowserItems) || hasFoldersSelected(selectedBrowserItems)) {
         return null;
     }
 
     return (
         <ToolbarButton
-            title={getOpenInDocsString(selectedBrowserItem?.mimeType)}
-            icon={<MimeIcon name="proton-doc" className="mr-2" />}
-            onClick={() => {
-                if (selectedBrowserItem) {
-                    void openInDocsAction({
-                        shareId: selectedBrowserItem.rootShareId,
-                        linkId: selectedBrowserItem.linkId,
-                    });
-                }
-            }}
+            title={getOpenInDocsString(openInDocs)}
+            icon={<MimeIcon name={getOpenInDocsMimeIconName(openInDocs)} className="mr-2" />}
+            onClick={() => openInDocs.openDocument()}
             data-testid="toolbar-open-in-docs"
         />
     );
