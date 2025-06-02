@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom-v5-compat';
 
 import { Loader } from '@proton/components';
-import { isProtonDocument, isProtonSheet } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import useDriveNavigation from '../hooks/drive/useNavigate';
@@ -32,14 +32,14 @@ export const VolumeLinkContainer: FC = () => {
             linkId,
         })
             .then((linkInfo) => {
-                if (linkInfo && isProtonDocument(linkInfo.mimeType)) {
+                if (linkInfo && isProtonDocsDocument(linkInfo.mimeType)) {
                     return openDocument({
                         type: 'doc',
                         shareId: linkInfo.shareId,
                         linkId: linkInfo.linkId,
                         openBehavior: 'redirect',
                     });
-                } else if (linkInfo && isProtonSheet(linkInfo.mimeType)) {
+                } else if (linkInfo && isProtonDocsSpreadsheet(linkInfo.mimeType)) {
                     return openDocument({
                         type: 'sheet',
                         shareId: linkInfo.shareId,

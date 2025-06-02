@@ -11,9 +11,10 @@ import MimeIcon from '@proton/components/components/icon/MimeIcon';
 import TimeIntl from '@proton/components/components/time/TimeIntl';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useLoading } from '@proton/hooks';
-import { getOpenInDocsString } from '@proton/shared/lib/drive/translations';
+import { getOpenInDocsMimeIconName, getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
+import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 
 const SHARED_STATUS_TO_COLOR = {
@@ -92,6 +93,8 @@ const Header = ({
         );
     };
 
+    const openInDocsType = mimeTypeToOpenInDocsType(mimeType);
+
     return (
         <div className={clsx('file-preview-header flex justify-space-between items-center relative', headerSpacing)}>
             <div className="flex-1">
@@ -119,17 +122,17 @@ const Header = ({
 
             {children}
             <div className="flex items-center">
-                {isLargeViewport && onOpenInDocs && (
+                {isLargeViewport && onOpenInDocs && openInDocsType && (
                     <Button
-                        title={getOpenInDocsString(mimeType)}
+                        title={getOpenInDocsString(openInDocsType)}
                         onClick={onOpenInDocs}
                         shape="outline"
                         className="mr-4 flex items-center"
                         color="weak"
                         data-testid="file-preview:actions:open-in-docs"
                     >
-                        <MimeIcon name="proton-doc" className="mr-2" />
-                        {getOpenInDocsString(mimeType)}
+                        <MimeIcon name={getOpenInDocsMimeIconName(openInDocsType)} className="mr-2" />
+                        {getOpenInDocsString(openInDocsType)}
                     </Button>
                 )}
                 {onRestore && (

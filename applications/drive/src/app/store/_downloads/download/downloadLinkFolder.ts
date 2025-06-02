@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Api } from '@proton/shared/lib/interfaces';
 
@@ -155,10 +155,10 @@ export class FolderTreeLoader {
             `Folder ${link.linkId} has ${children.length} items including ${children.filter(({ isFile }) => !isFile).length} folders, parent: ${parentLinkIds.at(-2) || 'none'}`
         );
 
-        if (children.find((link) => isProtonDocument(link.mimeType))) {
+        if (children.find((link) => isProtonDocsDocument(link.mimeType))) {
             await onContainsDocument?.(this.abortController.signal);
 
-            children = children.filter((link) => !isProtonDocument(link.mimeType));
+            children = children.filter((link) => !isProtonDocsDocument(link.mimeType));
         }
 
         this.links = [

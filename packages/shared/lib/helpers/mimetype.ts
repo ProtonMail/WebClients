@@ -142,17 +142,18 @@ export const isCompatibleCBZ = (mimeType: string, filename: string) =>
     isComicBook(mimeType) && filename.endsWith('cbz'); // browser mime type detection is not great for CBZ (sometimes flagged as 'application/x-cbr') so we need to also check end of file name
 
 /**
- * A helper function to determine if a mimetype can be converted by Proton Docs.
+ * Whether a given mimetype can be converted to a Proton Docs document.
  */
-export const isProtonDocsConvertible = (mimeType: string) =>
+export const isConvertibleToProtonDocsDocument = (mimeType: string) =>
     mimeType === SupportedProtonDocsMimeTypes.docx ||
     mimeType === SupportedProtonDocsMimeTypes.txt ||
     mimeType === SupportedProtonDocsMimeTypes.md ||
     mimeType === SupportedProtonDocsMimeTypes.html;
 /**
- * Whether a given mimetype can be converted to a Proton Sheet.
+ * Whether a given mimetype can be converted to a Proton Sheets spreadsheet.
  */
-export const isConvertibleToProtonSheet = (mimeType: string) => mimeType === SupportedProtonDocsMimeTypes.xlsx;
+export const isConvertibleToProtonDocsSpreadsheet = (mimeType: string) =>
+    mimeType === SupportedProtonDocsMimeTypes.xlsx;
 
 export const getDocsConversionType = (mimeType: string): DocsConversionType => {
     switch (mimeType) {
@@ -169,10 +170,35 @@ export const getDocsConversionType = (mimeType: string): DocsConversionType => {
     }
 };
 
-export const PROTON_DOC_MIMETYPE = 'application/vnd.proton.doc';
-export const isProtonDocument = (mimeType: string) => mimeType === PROTON_DOC_MIMETYPE;
-export const PROTON_SHEET_MIMETYPE = 'application/vnd.proton.sheet';
-export const isProtonSheet = (mimeType: string) => mimeType === PROTON_SHEET_MIMETYPE;
+export const PROTON_DOCS_DOCUMENT_MIMETYPE = 'application/vnd.proton.doc';
+export const isProtonDocsDocument = (mimeType: string) => mimeType === PROTON_DOCS_DOCUMENT_MIMETYPE;
+export const PROTON_DOCS_SPREADSHEET_MIMETYPE = 'application/vnd.proton.sheet';
+export const isProtonDocsSpreadsheet = (mimeType: string) => mimeType === PROTON_DOCS_SPREADSHEET_MIMETYPE;
+
+export type ProtonDocumentType = 'document' | 'spreadsheet';
+
+export type OpenInDocsType = { type: ProtonDocumentType; isNative: boolean };
+
+export function mimeTypeToOpenInDocsType(mimeType?: string): OpenInDocsType | undefined {
+    if (!mimeType) {
+        return undefined;
+    }
+
+    const isDocument = isProtonDocsDocument(mimeType);
+    const isSheet = isProtonDocsSpreadsheet(mimeType);
+    const isConvertibleToSpreadsheet = isConvertibleToProtonDocsSpreadsheet(mimeType);
+    const isConvertibleToDocument = isConvertibleToProtonDocsDocument(mimeType);
+
+    const isNative = isDocument || isSheet;
+
+    if (isDocument || isConvertibleToDocument) {
+        return { type: 'document', isNative };
+    }
+    if (isSheet || isConvertibleToSpreadsheet) {
+        return { type: 'spreadsheet', isNative };
+    }
+    return undefined;
+}
 
 export const isSTLFile = (mimeType: string) => mimeType === 'model/stl';
 export const isCompatibleSTL = (mimeType: string, filename: string) => isSTLFile(mimeType) && filename.endsWith('stl'); // browser mime type detection is not great for STL so we need to also check end of file name

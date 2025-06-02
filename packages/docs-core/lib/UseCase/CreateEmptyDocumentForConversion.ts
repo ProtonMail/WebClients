@@ -5,7 +5,7 @@ import { getErrorString } from '../Util/GetErrorString'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '@proton/docs-shared'
 import { getNodeNameWithoutExtension } from '@proton/docs-shared'
-import { getDocsConversionType, isConvertibleToProtonSheet } from '@proton/shared/lib/helpers/mimetype'
+import { getDocsConversionType, isConvertibleToProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 
 /**
  * Creates a new empty document shell file. This file will then be opened, and the contents will be converted by the editor.
@@ -35,7 +35,7 @@ export class CreateEmptyDocumentForConversion implements UseCaseInterface<FileTo
       const newDocName = await this.driveCompat.findAvailableNodeName(parentMeta, nodeNameWithoutExtension)
 
       const mimeType = node.mimeType
-      const documentType = isConvertibleToProtonSheet(mimeType) ? 'sheet' : 'doc'
+      const documentType = isConvertibleToProtonDocsSpreadsheet(mimeType) ? 'sheet' : 'doc'
 
       const shellResult = await this.driveCompat.createDocumentNode(parentMeta, newDocName, documentType)
 

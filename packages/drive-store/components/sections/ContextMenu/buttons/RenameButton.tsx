@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { type DecryptedLink, useActions } from '../../../../store';
 import type { useRenameModal } from '../../../modals/RenameModal';
@@ -22,7 +22,7 @@ const RenameButton = ({ link, showRenameModal, close }: Props) => {
             action={() =>
                 showRenameModal({
                     isFile: link.isFile,
-                    isDoc: isProtonDocument(link.mimeType),
+                    isDoc: isProtonDocsDocument(link.mimeType),
                     name: link.name,
                     onSubmit: (formattedName) =>
                         renameLink(new AbortController().signal, link.rootShareId, link.linkId, formattedName),

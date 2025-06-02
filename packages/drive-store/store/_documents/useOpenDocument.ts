@@ -1,6 +1,7 @@
 import { useAuthentication } from '@proton/components';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
+import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype';
 
 /**
  * When coming back from the account sign up or sign in, we are usually coming back after the user initiated the auth
@@ -16,11 +17,25 @@ export enum RedirectAction {
 
 export type DocumentType = 'doc' | 'sheet';
 
+// TODO: we will rename the values in `DocumentType` to 'document' and 'spreadsheet' soon, but for now
+// we just convert the new names to the old ones to support both naming patterns to keep changes small.
+export function tmpConvertNewDocTypeToOld(type: DocumentType | ProtonDocumentType): DocumentType {
+    switch (type) {
+        case 'document':
+            return 'doc';
+        case 'spreadsheet':
+            return 'sheet';
+        default:
+            return type;
+    }
+}
+
 /**
  * DRIVE-DEVS: Do not remove export. Used by drive-store.
  */
 export type DocumentAction = {
-    type: DocumentType;
+    // TODO: see note in `tmpConvertNewTypeToOld`.
+    type: DocumentType | ProtonDocumentType;
 } & (
     | {
           mode: 'open' | 'convert' | 'download' | 'history';
@@ -83,7 +98,8 @@ export const useOpenDocument = () => {
      * In the Drive application, this should not be used directly, prefer `useDocumentActions`.
      */
     const openDocumentWindow = (action: DocumentAction & { window: Window }) => {
-        const { type, mode, window } = action;
+        const { type: originalType, mode, window } = action;
+        const type = tmpConvertNewDocTypeToOld(originalType);
 
         const href = getAppHref(`/${type}`, APPS.PROTONDOCS, getLocalID());
         const url = new URL(href);

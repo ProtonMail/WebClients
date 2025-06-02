@@ -1,10 +1,10 @@
 import { replaceUrl } from '@proton/shared/lib/helpers/browser'
-import { PROTON_DOC_MIMETYPE, PROTON_SHEET_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
+import { PROTON_DOCS_DOCUMENT_MIMETYPE, PROTON_DOCS_SPREADSHEET_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
 import type { DocsApi } from '../Api/DocsApi'
 
 const MIME_TYPE_TO_PATHNAME_MAP: Record<string, string> = {
-  [PROTON_DOC_MIMETYPE]: '/doc',
-  [PROTON_SHEET_MIMETYPE]: '/sheet',
+  [PROTON_DOCS_DOCUMENT_MIMETYPE]: '/doc',
+  [PROTON_DOCS_SPREADSHEET_MIMETYPE]: '/sheet',
 }
 
 /**

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import type { DecryptedLink } from '../../../../store';
 import { useDocumentActions } from '../../../../store/_documents';
@@ -22,7 +22,7 @@ const RevisionsButton = ({ selectedLink, showRevisionsModal, close }: Props) => 
             icon="clock-rotate-left"
             testId="context-menu-revisions"
             action={() => {
-                if (isProtonDocument(selectedLink.mimeType)) {
+                if (isProtonDocsDocument(selectedLink.mimeType)) {
                     void openDocumentHistory({
                         type: 'doc',
                         shareId: selectedLink.rootShareId,
