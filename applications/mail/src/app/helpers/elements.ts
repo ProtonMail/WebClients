@@ -1,6 +1,7 @@
 import { formatRelative, fromUnixTime } from 'date-fns';
 import type { Location } from 'history';
 
+import { isCustomLabel } from '@proton/mail/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { omit, toMap } from '@proton/shared/lib/helpers/object';
@@ -367,4 +368,20 @@ export const getElementContextIdentifier = (contextFilter: {
     keyword?: string;
 }) => {
     return JSON.stringify(contextFilter);
+};
+
+export const isElementOutsideFolders = (element: Element, labels: Label[]): boolean => {
+    const elementLabelIDs = Object.keys(getLabelIDs(element, undefined));
+
+    // Filter out labels that are NOT considered folders (custom or system)
+    const folderLabelIDs = elementLabelIDs.filter((labelID) => {
+        const isStarred = labelID === MAILBOX_LABEL_IDS.STARRED;
+        const isAllMail = labelID === MAILBOX_LABEL_IDS.ALL_MAIL;
+        const isAlmostAllMail = labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL;
+
+        return !isCustomLabel(labelID, labels) && !isStarred && !isAllMail && !isAlmostAllMail;
+    });
+
+    // If no folder-related labels remain, the element is outside of folders
+    return folderLabelIDs.length === 0;
 };
