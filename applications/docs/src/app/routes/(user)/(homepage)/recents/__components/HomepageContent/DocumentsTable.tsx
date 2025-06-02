@@ -23,7 +23,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import type { RecentsSort } from '../../__utils/homepage-view'
 import { useHomepageView, type ItemsSection, type ItemsSectionId } from '../../__utils/homepage-view'
-import { ContentSheet } from './shared'
+import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import { useApplication } from '~/utils/application-context'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { getOwnerName } from '../../__utils/get-owner-name'
@@ -337,7 +337,12 @@ function Row({ document, variant }: RowProps) {
     >
       <Table.DataCell>
         <span title={document.name} className="flex flex-nowrap items-center gap-3">
-          <Icon name="brand-proton-docs" size={5} className="shrink-0 text-[#34B8EE]" />
+          <Icon
+            name={ICON_BY_TYPE[document.type]}
+            size={5}
+            className="shrink-0 text-[--icon-color]"
+            style={{ '--icon-color': COLOR_BY_TYPE[document.type] }}
+          />
           {isRenaming ? (
             <Input
               ref={(element) => {
@@ -383,11 +388,13 @@ function Row({ document, variant }: RowProps) {
       </Table.DataCell>
 
       <Table.DataCell target="large">
-        <span title={getRelativeDate(document)}>{getRelativeDate(document)}</span>
+        <span title={getRelativeDate(document)} className="truncate">
+          {getRelativeDate(document)}
+        </span>
       </Table.DataCell>
 
       <Table.DataCell target="medium">
-        <span className="flex flex-nowrap items-center gap-2" title={displayName}>
+        <span className="flex flex-nowrap items-center gap-2 overflow-hidden" title={displayName}>
           <Avatar
             color="weak"
             className="min-w-custom max-w-custom max-h-custom bg-[--interaction-default-hover]"
