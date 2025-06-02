@@ -38,7 +38,7 @@ export const useBatchHelper = () => {
      *   @returns {Promise<{responses: Array, successes: string[], failures: Object}>}
      */
     const batchAPIHelper = useCallback(
-        async <T extends { Responses: { LinkID: string; Response: { Code: number; Error?: Error | string } }[] }>(
+        async <T extends { Responses: { LinkID: string; Response: { Code: number; Error?: string } }[] }>(
             abortSignal: AbortSignal,
             {
                 linkIds,
@@ -48,7 +48,6 @@ export const useBatchHelper = () => {
                 request = debouncedRequest,
                 allowedCodes = [],
                 ignoredCodes = [],
-                retry,
             }: {
                 linkIds: string[];
                 query: (batchLinkIds: string[]) => Promise<object> | object | undefined;
@@ -57,21 +56,16 @@ export const useBatchHelper = () => {
                 request?: <T>(args: object, abortSignal?: AbortSignal) => Promise<T>;
                 allowedCodes?: number[];
                 ignoredCodes?: number[];
-                retry?: (
-                    batchLinkIds: string[],
-                    failures: { [linkId: string]: Error | string | undefined }
-                ) => Promise<object> | object | undefined;
             }
         ) => {
             const responses: { batchLinkIds: string[]; response: T }[] = [];
             const successes: string[] = [];
-            const failures: { [linkId: string]: Error | string | undefined } = {};
+            const failures: { [linkId: string]: string | undefined } = {};
 
             const batches = chunk(linkIds, batchRequestSize);
 
             const queue = await Promise.all(
                 batches.map((batchLinkIds) => async () => {
-                    const batchFailures: { [linkId: string]: Error | string | undefined } = {};
                     const q = await query(batchLinkIds);
                     if (!q) {
                         return;
@@ -91,48 +85,14 @@ export const useBatchHelper = () => {
                                     successes.push(LinkID);
                                 } else {
                                     failures[LinkID] = Response.Error;
-                                    batchFailures[LinkID] = Response.Error;
                                 }
                             });
                         })
                         .catch((error) => {
-                            batchLinkIds.forEach((linkId) => {
-                                failures[linkId] = error;
-                                batchFailures[linkId] = error;
-                            });
+                            batchLinkIds.forEach((linkId) => (failures[linkId] = error));
                         });
-
-                    if (retry && Object.keys(batchFailures).length > 0) {
-                        const retryQ = await retry(batchLinkIds, batchFailures);
-                        if (!retryQ) {
-                            return;
-                        }
-                        await request<T>(retryQ, abortSignal)
-                            .then((response) => {
-                                responses.push({ batchLinkIds, response });
-                                response.Responses.forEach(({ LinkID, Response }) => {
-                                    if (ignoredCodes.includes(Response.Code)) {
-                                        return;
-                                    }
-                                    if (
-                                        Response.Code === API_CODES.SINGLE_SUCCESS ||
-                                        allowedCodes.includes(Response.Code)
-                                    ) {
-                                        if (!successes.includes(LinkID)) {
-                                            successes.push(LinkID);
-                                        }
-                                    } else {
-                                        failures[LinkID] = Response.Error;
-                                    }
-                                });
-                            })
-                            .catch((error) => {
-                                batchLinkIds.forEach((linkId) => (failures[linkId] = error));
-                            });
-                    }
                 })
             );
-
             await preventLeave(runInQueue(queue, maxParallelRequests));
 
             return {
