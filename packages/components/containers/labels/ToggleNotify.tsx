@@ -21,6 +21,8 @@ const ToggleNotify = ({ label }: Props) => {
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 
+    const labelName = label.Name;
+
     const handleChange = async ({ target }: ChangeEvent<HTMLInputElement>) => {
         const newLabel = {
             ...label,
@@ -29,12 +31,15 @@ const ToggleNotify = ({ label }: Props) => {
         await api(updateLabel(label.ID, newLabel));
         await call();
         createNotification({
-            text: c('label/folder notification').t`${label.Name} updated`,
+            text: c('label/folder notification').t`${labelName} updated`,
         });
     };
+
     return (
-        <Tooltip title={c('Tooltip').t`Enable/disable desktop and mobile notifications`}>
+        <Tooltip title={c('Tooltip').t`Enable/disable desktop and mobile notifications for “${labelName}”`}>
             <span className="inline-flex">
+                <label htmlFor={`item-${label.ID}`} className="sr-only">{c('Tooltip')
+                    .t`Enable/disable desktop and mobile notifications for “${labelName}”`}</label>
                 <Toggle
                     id={`item-${label.ID}`}
                     checked={label.Notify === 1}
