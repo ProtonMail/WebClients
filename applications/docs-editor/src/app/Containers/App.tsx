@@ -351,8 +351,8 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
             void bridge.getClientInvoker().showGenericAlertModal(c('Error').t`Failed to export document.`)
             throw error
           }
-        } else if (spreadsheetRef.current && format === 'yjs') {
-          return docState.getDocState()
+        } else if (spreadsheetRef.current) {
+          return spreadsheetRef.current.exportData(format)
         }
 
         throw new Error('Could not export data for current doc/sheet')
