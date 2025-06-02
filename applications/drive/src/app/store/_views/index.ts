@@ -7,7 +7,6 @@ export { default as useLegacyShareURLView } from './useLegacyShareURLView';
 export { default as useShareURLView } from './useShareURLView';
 export { default as useShareMemberView } from './useShareMemberView';
 export { default as usePublicFolderView } from './usePublicFolderView';
-export { default as useRevisionsView } from './useRevisionsView';
 export { default as useSearchControl } from './useSearchControl';
 export { default as useSearchView } from './useSearchView';
 export { default as useSharedLinksView } from './useSharedLinksView';
