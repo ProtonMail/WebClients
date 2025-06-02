@@ -26,8 +26,8 @@ const OutgoingForwardTable = ({ addresses, loading, outgoingAddressForwardings, 
         <Table responsive="cards" hasActions={outgoingAddressForwardings.length > 0}>
             <TableHeader>
                 <TableRow>
-                    <TableHeaderCell>{c('email_forwarding_2023: Header').t`From`}</TableHeaderCell>
-                    <TableHeaderCell>{c('email_forwarding_2023: Header').t`To`}</TableHeaderCell>
+                    <TableHeaderCell>{c('email_forwarding_2023: Header').t`Forward from`}</TableHeaderCell>
+                    <TableHeaderCell>{c('email_forwarding_2023: Header').t`Forward to`}</TableHeaderCell>
                     <TableHeaderCell className="w-custom" style={{ '--w-custom': '11em' }}>{c(
                         'email_forwarding_2023: Header'
                     ).t`Status`}</TableHeaderCell>
