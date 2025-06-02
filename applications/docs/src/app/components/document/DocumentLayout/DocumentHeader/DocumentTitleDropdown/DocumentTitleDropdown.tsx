@@ -527,6 +527,15 @@ export function DocumentTitleDropdown({
                 >
                   {c('sheets_2025:Action').t`Comma Separated Values (.csv)`}
                 </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={() => {
+                    void editorController.exportAndDownload('tsv')
+                  }}
+                  data-testid="download-tsv"
+                >
+                  {c('sheets_2025:Action').t`Tab Separated Values (.tsv)`}
+                </DropdownMenuButton>
               </DropdownMenu>
             )}
             {!isSpreadsheet && (
