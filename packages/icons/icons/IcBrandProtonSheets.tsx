@@ -18,7 +18,7 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
     size?: IconSize;
 }
 
-export const IcBrandProtonDocs = ({
+export const IcBrandProtonSheets = ({
     alt,
     title,
     size = 4,
@@ -43,7 +43,12 @@ export const IcBrandProtonDocs = ({
                 <path d="M15 4.5h-3.5V8H15V4.5Z"></path>
                 <path
                     fillRule="evenodd"
-                    d="M8.583 12.083a.583.583 0 0 1-.583.584H3.917a.583.583 0 0 1 0-1.167H8c.322 0 .583.261.583.583ZM6.833 9.75a.583.583 0 0 1-.583.583H3.917a.583.583 0 0 1 0-1.166H6.25c.322 0 .583.26.583.583Z"
+                    d="M5.91 6.488c.324 0 .587.263.587.588v4.984a.588.588 0 1 1-1.176 0V7.076c0-.325.264-.588.588-.588Z"
+                    clipRule="evenodd"
+                ></path>
+                <path
+                    fillRule="evenodd"
+                    d="M3.361 10.324c0-.324.264-.588.588-.588h5.544a.588.588 0 1 1 0 1.176H3.95a.588.588 0 0 1-.588-.588Z"
                     clipRule="evenodd"
                 ></path>
             </svg>
