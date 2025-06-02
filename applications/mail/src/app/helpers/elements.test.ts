@@ -1,5 +1,5 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { LabelCount, MailSettings } from '@proton/shared/lib/interfaces';
+import type { Label, LabelCount, MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
@@ -13,6 +13,7 @@ import {
     getDate,
     getLocationElementsCount,
     isConversation,
+    isElementOutsideFolders,
     isMessage,
     isUnread,
     matchAddressID,
@@ -639,6 +640,98 @@ describe('elements', () => {
                     } as SearchParameters,
                 })
             ).toEqual(expectedFilteredList);
+        });
+    });
+
+    describe('isElementOutsideFolders', () => {
+        const labels = [
+            { ID: 'custom-label-1', Name: 'Custom1' } as Label,
+            { ID: 'custom-label-2', Name: 'Custom2' } as Label,
+        ];
+
+        it('should be true when element is in all mail only', () => {
+            const message = {
+                ConversationID: 'conversationID',
+                LabelIDs: [MAILBOX_LABEL_IDS.ALL_MAIL],
+            } as Message;
+
+            const conversation = {
+                Labels: [{ ID: MAILBOX_LABEL_IDS.ALL_MAIL } as ConversationLabel],
+            } as Conversation;
+
+            expect(isElementOutsideFolders(message, labels)).toBeTruthy();
+            expect(isElementOutsideFolders(conversation, labels)).toBeTruthy();
+        });
+
+        it('should be true when element is in all mail and almost all mail', () => {
+            const message = {
+                ConversationID: 'conversationID',
+                LabelIDs: [MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
+            } as Message;
+
+            const conversation = {
+                Labels: [
+                    { ID: MAILBOX_LABEL_IDS.ALL_MAIL } as ConversationLabel,
+                    { ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL } as ConversationLabel,
+                ],
+            } as Conversation;
+
+            expect(isElementOutsideFolders(message, labels)).toBeTruthy();
+            expect(isElementOutsideFolders(conversation, labels)).toBeTruthy();
+        });
+
+        it('should be true when element is in ll mail, almost all mail and a custom label', () => {
+            const message = {
+                ConversationID: 'conversationID',
+                LabelIDs: [MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL, 'custom-label-1'],
+            } as Message;
+
+            const conversation = {
+                Labels: [
+                    { ID: MAILBOX_LABEL_IDS.ALL_MAIL } as ConversationLabel,
+                    { ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL } as ConversationLabel,
+                    { ID: 'custom-label-1' } as ConversationLabel,
+                ],
+            } as Conversation;
+
+            expect(isElementOutsideFolders(message, labels)).toBeTruthy();
+            expect(isElementOutsideFolders(conversation, labels)).toBeTruthy();
+        });
+
+        it('should be true when element is in ll mail, almost all mail and a Starred', () => {
+            const message = {
+                ConversationID: 'conversationID',
+                LabelIDs: [MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL, MAILBOX_LABEL_IDS.STARRED],
+            } as Message;
+
+            const conversation = {
+                Labels: [
+                    { ID: MAILBOX_LABEL_IDS.ALL_MAIL } as ConversationLabel,
+                    { ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL } as ConversationLabel,
+                    { ID: MAILBOX_LABEL_IDS.STARRED } as ConversationLabel,
+                ],
+            } as Conversation;
+
+            expect(isElementOutsideFolders(message, labels)).toBeTruthy();
+            expect(isElementOutsideFolders(conversation, labels)).toBeTruthy();
+        });
+
+        it('should be false when element is not only in all mail and almost all mail', () => {
+            const message = {
+                ConversationID: 'conversationID',
+                LabelIDs: [MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL, MAILBOX_LABEL_IDS.INBOX],
+            } as Message;
+
+            const conversation = {
+                Labels: [
+                    { ID: MAILBOX_LABEL_IDS.ALL_MAIL } as ConversationLabel,
+                    { ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL } as ConversationLabel,
+                    { ID: MAILBOX_LABEL_IDS.INBOX } as ConversationLabel,
+                ],
+            } as Conversation;
+
+            expect(isElementOutsideFolders(message, labels)).toBeFalsy();
+            expect(isElementOutsideFolders(conversation, labels)).toBeFalsy();
         });
     });
 });
