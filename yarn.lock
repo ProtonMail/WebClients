@@ -8103,6 +8103,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/mail-renderer@workspace:packages/mail-renderer":
+  version: 0.0.0-use.local
+  resolution: "@proton/mail-renderer@workspace:packages/mail-renderer"
+  dependencies:
+    "@proton/styles": "workspace:^"
+    "@testing-library/jest-dom": "npm:^6.6.3"
+    "@testing-library/react": "npm:^15.0.7"
+    eslint: "npm:^8.57.1"
+    jest: "npm:^29.7.0"
+    jest-environment-jsdom: "npm:^29.7.0"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+    react-redux: "npm:^9.2.0"
+    ts-jest: "npm:^29.3.4"
+    typescript: "npm:^5.8.3"
+  languageName: unknown
+  linkType: soft
+
 "@proton/mail@workspace:^, @proton/mail@workspace:packages/mail":
   version: 0.0.0-use.local
   resolution: "@proton/mail@workspace:packages/mail"
