@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Input } from '@proton/atoms';
+import { CircleLoader, Input } from '@proton/atoms';
 import { Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
@@ -72,6 +72,7 @@ const EntityTableRow = ({ id, checked, onSelectEntity, entity, avatar, descripti
 );
 
 interface SharedServersMembersStepProps {
+    loading?: boolean;
     isEditing: boolean;
     policyName: string;
     users: SharedServerUser[];
@@ -87,6 +88,7 @@ interface SharedServersMembersStepProps {
 }
 
 const MembersStep = ({
+    loading,
     isEditing,
     policyName,
     users,
@@ -159,6 +161,11 @@ const MembersStep = ({
                             selectedEntities={selectedUsers}
                             onSelectAllEntities={onSelectAllUsers}
                         />
+                        {loading && (
+                            <div className="flex flex-nowrap">
+                                <CircleLoader />
+                            </div>
+                        )}
                         {filteredUsers.map((user) => {
                             const checked = selectedUsers.some((selectedUser) => selectedUser.UserID === user.UserID);
                             const initials = getInitials(user.Name || '');
@@ -196,6 +203,11 @@ const MembersStep = ({
                             selectedEntities={selectedGroups}
                             onSelectAllEntities={onSelectAllGroups}
                         />
+                        {loading && (
+                            <div className="flex flex-nowrap">
+                                <CircleLoader />
+                            </div>
+                        )}
                         {filteredGroups.map((group) => {
                             const checked = selectedGroups.some(
                                 (selectedGroup) => selectedGroup.GroupID === group.GroupID
