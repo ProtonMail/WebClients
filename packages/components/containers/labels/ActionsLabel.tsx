@@ -20,12 +20,14 @@ function ActionsLabel({ label }: Props) {
             text: c('Action').t`Edit`,
             onClick: () => setEditLabelModalOpen(true),
             'data-testid': 'folders/labels:item-edit',
+            label: c('Action').t`Edit “${label.Name}”`,
         },
         {
             text: c('Action').t`Delete`,
             actionType: 'delete' as const,
             onClick: () => setDeleteLabelModalOpen(true),
             'data-testid': 'folders/labels:item-delete',
+            label: c('Action').t`Delete “${label.Name}”`,
         },
     ];
 
