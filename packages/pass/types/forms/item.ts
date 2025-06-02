@@ -12,7 +12,7 @@ import type { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
 import type { CustomSectionGroupValues, ExtraFieldGroupValues, UrlGroupValues } from './fields';
 
 export type BaseItemValues = { name: string; note: string; shareId: string } & FileAttachmentValues;
-export type NoteFormValues = BaseItemValues;
+export type NoteFormValues = BaseItemValues & ExtraFieldGroupValues;
 
 export type LoginItemFormValues = BaseItemValues & {
     itemEmail: string;
