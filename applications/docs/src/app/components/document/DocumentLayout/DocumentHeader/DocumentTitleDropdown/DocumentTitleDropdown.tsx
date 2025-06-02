@@ -307,7 +307,7 @@ export function DocumentTitleDropdown({
               data-testid="dropdown-rename"
             >
               <Icon name="pencil" className="color-weak mr-2" />
-              {c('Action').t`Rename document`}
+              {isSpreadsheet ? c('sheets_2025:Action').t`Rename spreadsheet` : c('Action').t`Rename document`}
             </DropdownMenuButton>
           )}
 
@@ -319,7 +319,7 @@ export function DocumentTitleDropdown({
               data-testid="dropdown-new-document"
             >
               <Icon name="file" className="color-weak mr-2" />
-              {c('Action').t`New document`}
+              {isSpreadsheet ? c('sheets_2025:Action').t`New spreadsheet` : c('Action').t`New document`}
               {isMakingNewDocument && <CircleLoader size="small" className="ml-auto" />}
             </DropdownMenuButton>
           )}
@@ -507,63 +507,89 @@ export function DocumentTitleDropdown({
               offset: 0,
             }}
           >
-            <DropdownMenu>
-              <DropdownMenuButton
-                className="flex items-center text-left"
-                onClick={() => {
-                  void editorController.exportAndDownload('docx')
-                }}
-                data-testid="download-docx"
-              >
-                {c('Action').t`Microsoft Word (.docx)`}
-              </DropdownMenuButton>
-              <DropdownMenuButton
-                className="flex items-center text-left"
-                onClick={() => {
-                  void editorController.exportAndDownload('html')
-                }}
-                data-testid="download-html"
-              >
-                {c('Action').t`Web page (.html)`}
-              </DropdownMenuButton>
-              <DropdownMenuButton
-                className="flex items-center text-left"
-                onClick={() => {
-                  void editorController.exportAndDownload('txt')
-                }}
-                data-testid="download-txt"
-              >
-                {c('Action').t`Plain Text (.txt)`}
-              </DropdownMenuButton>
-              <DropdownMenuButton
-                className="flex items-center text-left"
-                onClick={() => {
-                  void editorController.exportAndDownload('md')
-                }}
-                data-testid="download-md"
-              >
-                {c('Action').t`Markdown (.md)`}
-              </DropdownMenuButton>
-              <DropdownMenuButton
-                className="flex items-center text-left"
-                onClick={onExportPDF}
-                data-testid="download-pdf"
-              >
-                {c('Action').t`PDF (.pdf)`}
-              </DropdownMenuButton>
-            </DropdownMenu>
+            {isSpreadsheet && (
+              <DropdownMenu>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={() => {
+                    void editorController.exportAndDownload('xlsx')
+                  }}
+                  data-testid="download-xlsx"
+                >
+                  {c('sheets_2025:Action').t`Microsoft Excel (.xlsx)`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={() => {
+                    void editorController.exportAndDownload('csv')
+                  }}
+                  data-testid="download-csv"
+                >
+                  {c('sheets_2025:Action').t`Comma Separated Values (.csv)`}
+                </DropdownMenuButton>
+              </DropdownMenu>
+            )}
+            {!isSpreadsheet && (
+              <DropdownMenu>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={() => {
+                    void editorController.exportAndDownload('docx')
+                  }}
+                  data-testid="download-docx"
+                >
+                  {c('Action').t`Microsoft Word (.docx)`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={() => {
+                    void editorController.exportAndDownload('html')
+                  }}
+                  data-testid="download-html"
+                >
+                  {c('Action').t`Web page (.html)`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={() => {
+                    void editorController.exportAndDownload('txt')
+                  }}
+                  data-testid="download-txt"
+                >
+                  {c('Action').t`Plain Text (.txt)`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={() => {
+                    void editorController.exportAndDownload('md')
+                  }}
+                  data-testid="download-md"
+                >
+                  {c('Action').t`Markdown (.md)`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={onExportPDF}
+                  data-testid="download-pdf"
+                >
+                  {c('Action').t`PDF (.pdf)`}
+                </DropdownMenuButton>
+              </DropdownMenu>
+            )}
           </SimpleDropdown>
 
-          <DropdownMenuButton
-            className="flex items-center text-left"
-            onClick={() => {
-              void editorController.copyCurrentSelection('md')
-            }}
-            data-testid="dropdown-copy-as-md"
-          >
-            <Icon name="squares" className="color-weak mr-2" />
-            {c('Action').t`Copy as markdown`}
-          </DropdownMenuButton>
+          {!isSpreadsheet && (
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              onClick={() => {
+                void editorController.copyCurrentSelection('md')
+              }}
+              data-testid="dropdown-copy-as-md"
+            >
+              <Icon name="squares" className="color-weak mr-2" />
+              {c('Action').t`Copy as markdown`}
+            </DropdownMenuButton>
+          )}
 
           <hr className="my-1 min-h-px" />
 
