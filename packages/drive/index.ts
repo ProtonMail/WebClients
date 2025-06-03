@@ -1,8 +1,9 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import { useLocalState } from '@proton/components';
 import { MemoryCache, ProtonDriveClient, generateNodeUid } from '@proton/drive-sdk';
 import { splitNodeRevisionUid } from '@proton/drive-sdk/dist/internal/uids';
+import type { MemoryLogHandler } from '@proton/drive-sdk/dist/telemetry';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
@@ -27,6 +28,7 @@ export type {
 export { DeviceType, NodeType, MemberRole, RevisionState, MetricContext, ThumbnailType } from '@proton/drive-sdk';
 
 let driveSingleton: ProtonDriveClient;
+let memoryLogHandlerSingleton: MemoryLogHandler | undefined;
 
 /**
  * Provides access to Drive SDK connected to the clients monorepo.
@@ -41,7 +43,6 @@ export function useDrive() {
     const httpClient = useHttpClient(appVersionHeaders);
     const account = useAccount();
     const openPGPCryptoModule = initOpenPGPCryptoModule();
-    const getLogsRef = useRef<() => string[]>(() => []);
 
     /**
      * Configure the Drive SDK with the application.
@@ -63,8 +64,7 @@ export function useDrive() {
 
         setAppVersionHeaders(Object.entries(getAppVersionHeaders(getClientID(options.appName), options.appVersion)));
 
-        const { telemetry, getLogs } = initTelemetry(options.userPlan, debug);
-        getLogsRef.current = getLogs;
+        const { telemetry, memoryLogHandler } = initTelemetry(options.userPlan, debug);
 
         driveSingleton = new ProtonDriveClient({
             httpClient,
@@ -77,6 +77,8 @@ export function useDrive() {
             },
             telemetry,
         });
+
+        memoryLogHandlerSingleton = memoryLogHandler;
     };
 
     return {
@@ -94,7 +96,9 @@ export function useDrive() {
          *
          * Set `proton-drive-debug` local state to `true` to enable debug logs.
          */
-        getLogs: getLogsRef.current,
+        getLogs: () => {
+            return memoryLogHandlerSingleton?.getLogs() || [];
+        },
         /**
          * Internal methods that can be changed or removed anytime.
          */

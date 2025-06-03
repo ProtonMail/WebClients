@@ -30,9 +30,7 @@ export function initTelemetry(userPlan: UserPlan = 'unknown', debug = false) {
 
     return {
         telemetry,
-        getLogs: () => {
-            return memoryLogHandler.getLogs();
-        },
+        memoryLogHandler,
     };
 }
 
