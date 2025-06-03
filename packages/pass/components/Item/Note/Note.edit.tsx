@@ -86,13 +86,15 @@ export const NoteEdit: FC<ItemEditViewProps<'note'>> = ({ share, revision, onSub
                                 component={TextAreaField}
                                 name="note"
                                 placeholder={c('Label').t`Note`}
-                                labelContainerClassName="sr-only"
                                 maxLength={MAX_ITEM_NOTE_LENGTH}
                                 rows={25}
                                 minRows={2}
                             />
                         </FieldsetCluster>
-                        <ExtraFieldGroup form={form} buttonShape="solid" buttonColor="weak" />
+                        <ExtraFieldGroup
+                            form={form}
+                            customButton={{ shape: 'solid', color: 'weak', label: c('Action').t`Add field` }}
+                        />
                         <FieldsetCluster className="bg-weak mt-4" mode="read">
                             <Field
                                 name="files"
