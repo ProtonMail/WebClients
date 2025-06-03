@@ -5,7 +5,8 @@
     "main": "index.ts",
     "scripts": {
         "check-types": "tsc",
-        "lint": "eslint . --ext ts --quiet --cache"
+        "lint": "eslint . --ext ts --quiet --cache",
+        "test": "jest"
     },
     "dependencies": {
         "@proton/drive-sdk": "^0.0.4",
