@@ -5,11 +5,12 @@ import { ErrorBoundary, StandardErrorPage, useActiveBreakpoint, useModalStateObj
 import { FeatureCode, useFeature } from '@proton/features';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
+import { LABEL_IDS_TO_HUMAN, type MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import useFlag from '@proton/unleash/useFlag';
 
 import ResizableWrapper from 'proton-mail/components/list/ResizableWrapper';
 import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
+import type { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
 import MessageOnlyView from 'proton-mail/components/message/MessageOnlyView';
 import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -67,6 +68,13 @@ export const NewsletterSubscriptionView = ({
 
     const isDomBusy = domIsBusy();
 
+    const overrideActions = {
+        ...actions,
+        // We override the handleMarkAs to prevent from moving back to the inbox when marking an email as unread
+        handleMarkAs: (status: MARK_AS_STATUS, sourceAction: SOURCE_ACTION) =>
+            actions.handleMarkAs(status, sourceAction, { preventBack: true }),
+    };
+
     useEffect(() => {
         if (feature && !feature?.Value && !isDomBusy) {
             onboardingModal.openModal(true);
@@ -116,25 +124,20 @@ export const NewsletterSubscriptionView = ({
                                     }
                                     columnLayout={false}
                                     isComposerOpened={false}
-                                    onMessageReady={actions.onMessageReady}
+                                    onMessageReady={overrideActions.onMessageReady}
                                 />
                             ) : (
                                 <MailboxList
                                     overrideColumnMode
                                     elementsData={elementsData}
-                                    actions={{
-                                        ...actions,
-                                        handleElement: (id) => {
-                                            dispatch(newsletterSubscriptionsActions.setSelectedElementId(id));
-                                        },
-                                    }}
+                                    actions={overrideActions}
                                     toolbar={
-                                        actions.selectedIDs.length > 0 ? (
+                                        overrideActions.selectedIDs.length > 0 ? (
                                             <MailboxToolbar
                                                 params={params}
                                                 navigation={navigation}
                                                 elementsData={elementsData}
-                                                actions={actions}
+                                                actions={overrideActions}
                                                 /* Force the columnLayout to be false to visually align with single line toolbar*/
                                                 overrideColumnMode={false}
                                             />
