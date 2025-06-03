@@ -23,7 +23,7 @@ import type { SheetImportData } from '@proton/docs-shared'
 import { type DocTrashState, isWordCountSupported } from '@proton/docs-shared'
 import { isPrivateNodeMeta, type DocumentAction } from '@proton/drive-store'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
-import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
+import { APPS, APPS_CONFIGURATION, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { getStaticURL } from '@proton/shared/lib/helpers/url'
 import { useApplication } from '~/utils/application-context'
 import { AutoGrowingInput } from './AutoGrowingInput'
@@ -79,7 +79,9 @@ export function DocumentTitleDropdown({
     setRenameInputValue(title)
   }, [title])
 
-  useAppTitle(title)
+  const isSpreadsheet = documentType === 'sheet'
+
+  useAppTitle(title, isSpreadsheet ? APPS_CONFIGURATION[APPS.PROTONSHEETS].name : undefined)
 
   useEffect(() => {
     // When the user holds down the shift key, show the version number. When they release, hide it.
@@ -235,8 +237,6 @@ export function DocumentTitleDropdown({
     }
     openProtonDrive(to)
   }, [documentState, openProtonDrive, privateContext])
-
-  const isSpreadsheet = documentType === 'sheet'
 
   const handleSheetImportData = useCallback(
     (data: SheetImportData) => {
