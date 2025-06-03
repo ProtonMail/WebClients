@@ -2,7 +2,7 @@ import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useContext, useEffect, useLayoutEffect, useState } from 'react';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
+import { PassThemeOption, themeOptionToDesktop } from '@proton/pass/components/Layout/Theme/types';
 import { matchDarkTheme } from '@proton/pass/components/Layout/Theme/utils';
 import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import noop from '@proton/utils/noop';
@@ -31,22 +31,20 @@ export const PassThemeContext = createContext<PassThemeOption>(PASS_DEFAULT_THEM
 
 export const PassThemeProvider: FC<PropsWithChildren> = ({ children }) => {
     const core = usePassCore();
-    const [theme, setTheme] = useState<PassThemeOption>(core.theme.getState());
+    const [theme, setTheme] = useState<PassThemeOption>(() => core.theme.getState());
     const [config, setConfig] = useState<ThemeConfig>(getThemeConfig(theme));
 
     useEffect(() => {
         const unsubscribe = core.theme.subscribe(setTheme);
-
-        core.theme
-            .getInitialTheme?.()
-            .then((initial) => core.theme.setState(initial ?? PASS_DEFAULT_THEME))
-            .catch(noop);
-
+        core.theme.sync();
         return unsubscribe;
     }, []);
 
     useLayoutEffect(() => {
         setConfig(getThemeConfig(theme));
+
+        /** Sync the electron store theme value */
+        if (DESKTOP_BUILD) window.ctxBridge?.setTheme(themeOptionToDesktop[theme]).catch(noop);
 
         /** Match media events don't propagate well to iframes */
         if (theme === PassThemeOption.OS && window.self === window.top) {
