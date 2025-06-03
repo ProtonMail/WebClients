@@ -8154,7 +8154,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/mail-renderer@workspace:packages/mail-renderer":
+"@proton/mail-renderer@workspace:^, @proton/mail-renderer@workspace:packages/mail-renderer":
   version: 0.0.0-use.local
   resolution: "@proton/mail-renderer@workspace:packages/mail-renderer"
   dependencies:
@@ -38977,6 +38977,7 @@ __metadata:
     "@proton/jest-env": "workspace:^"
     "@proton/llm": "workspace:^"
     "@proton/mail": "workspace:^"
+    "@proton/mail-renderer": "workspace:^"
     "@proton/metrics": "workspace:^"
     "@proton/pack": "workspace:^"
     "@proton/polyfill": "workspace:^"

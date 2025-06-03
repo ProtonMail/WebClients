@@ -3,9 +3,13 @@ import { useEffect, useRef, useState } from 'react';
 
 import { useTheme } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import {
+    MESSAGE_IFRAME_BLOCKQUOTE_ID,
+    MESSAGE_IFRAME_ROOT_ID,
+    MESSAGE_IFRAME_TOGGLE_ID,
+} from '@proton/mail-renderer/constants';
 
 import type { MessageState } from '../../../store/messages/messagesTypes';
-import { MESSAGE_IFRAME_BLOCKQUOTE_ID, MESSAGE_IFRAME_ROOT_ID, MESSAGE_IFRAME_TOGGLE_ID } from '../constants';
 import getIframeHtml from '../helpers/getIframeHtml';
 
 interface Props {
