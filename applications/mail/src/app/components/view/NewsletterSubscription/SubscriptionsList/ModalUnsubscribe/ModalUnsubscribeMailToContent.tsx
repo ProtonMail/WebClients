@@ -7,16 +7,11 @@ import {
     CollapsibleHeaderIconButton,
     Icon,
 } from '@proton/components';
-import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { getUnsubscribeMethod } from '../../helper';
-import { UnsubscribeMethod } from '../../interface';
+import { type PropsWithNewsletterSubscription, UnsubscribeMethod } from '../../interface';
 
-interface Props {
-    subscription: NewsletterSubscription;
-}
-
-export const ModalUnsubscribeMailToContent = ({ subscription }: Props) => {
+export const ModalUnsubscribeMailToContent = ({ subscription }: PropsWithNewsletterSubscription) => {
     const unsubscribeMethod = getUnsubscribeMethod(subscription);
     if (unsubscribeMethod !== UnsubscribeMethod.Mailto) {
         return null;
