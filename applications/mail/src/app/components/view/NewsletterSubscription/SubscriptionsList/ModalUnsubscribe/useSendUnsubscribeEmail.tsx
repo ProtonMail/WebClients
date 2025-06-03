@@ -1,6 +1,5 @@
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 import { AUTO_SAVE_CONTACTS } from '@proton/shared/lib/mail/mailSettings';
 import generateUID from '@proton/utils/generateUID';
 
@@ -12,11 +11,9 @@ import { useGetMessage } from 'proton-mail/hooks/message/useMessage';
 import { useSaveDraft } from 'proton-mail/hooks/message/useSaveDraft';
 import type { MessageStateWithData, PartialMessageState } from 'proton-mail/store/messages/messagesTypes';
 
-interface Props {
-    subscription: NewsletterSubscription;
-}
+import type { PropsWithNewsletterSubscription } from '../../interface';
 
-export const useSendUnsubscribeEmail = ({ subscription }: Props) => {
+export const useSendUnsubscribeEmail = ({ subscription }: PropsWithNewsletterSubscription) => {
     const [addresses] = useAddresses();
     const onCompose = useOnCompose();
     const saveDraft = useSaveDraft();
