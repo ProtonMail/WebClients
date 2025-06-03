@@ -4,9 +4,10 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { Icon, useSyncIframeStyles, useTheme } from '@proton/components'
 import { Tooltip } from '@proton/atoms';
+import { Icon, useSyncIframeStyles, useTheme } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
+import { MESSAGE_IFRAME_PRINT_FOOTER_ID, MESSAGE_IFRAME_PRINT_HEADER_ID } from '@proton/mail-renderer/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { hasAttachments, isAutoFlaggedPhishing, isSuspicious } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
@@ -16,7 +17,6 @@ import type { MessageState } from '../../store/messages/messagesTypes';
 import MessageBodyImages from './MessageBodyImages';
 import MessagePrintFooter from './MessagePrintFooter';
 import MessagePrintHeader from './MessagePrintHeader';
-import { MESSAGE_IFRAME_PRINT_FOOTER_ID, MESSAGE_IFRAME_PRINT_HEADER_ID } from './constants';
 import getIframeSandboxAttributes from './helpers/getIframeSandboxAttributes';
 import useIframeDispatchEvents from './hooks/useIframeDispatchEvents';
 import useIframeShowBlockquote from './hooks/useIframeShowBlockquote';
