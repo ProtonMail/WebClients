@@ -6,6 +6,7 @@ import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
+import MessageBodyPlaceholder from 'proton-mail/components/message/MessageBodyPlaceholder';
 import MessageBodyPrint from 'proton-mail/components/message/MessageBodyPrint';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
@@ -126,34 +127,7 @@ const MessageBody = ({
         >
             {encryptedMode && <pre className="m-0 p-4">{message.data?.Body}</pre>}
             {sourceMode && <pre className="m-0 p-4">{message.decryption?.decryptedBody}</pre>}
-            {placeholderMode && !encryptedMode && (
-                <div className="bg-norm color-norm p-4">
-                    <div
-                        className="message-content-loading-placeholder mx-4 mb-4 max-w-custom"
-                        style={{ '--max-w-custom': '8em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder mx-4 mb-4 max-w-custom"
-                        style={{ '--max-w-custom': '50em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder mx-4 mb-4 max-w-custom"
-                        style={{ '--max-w-custom': '40em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder mx-4 mb-4 max-w-custom"
-                        style={{ '--max-w-custom': '50em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder mx-4 mb-4 max-w-custom"
-                        style={{ '--max-w-custom': '15em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder mx-4 mb-4 max-w-custom"
-                        style={{ '--max-w-custom': '8em' }}
-                    />
-                </div>
-            )}
+            {placeholderMode && !encryptedMode && <MessageBodyPlaceholder margin="normal" />}
             {contentMode && (
                 <div
                     className={clsx([
