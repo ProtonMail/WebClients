@@ -141,7 +141,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                         <InputFieldStacked hasError={!!errors?.note} isBigger classname="mb-2">
                             <InputField<typeof Input>
                                 type="text"
-                                label={c('Label').t`Title`}
+                                label={c('Label').t`Alias title`}
                                 value={formValues.name}
                                 className="text-bold rounded-none"
                                 placeholder={c('Label').t`e.g., Amazon, eBay, Etsy`}
