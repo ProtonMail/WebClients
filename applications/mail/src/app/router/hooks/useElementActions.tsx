@@ -32,11 +32,11 @@ interface Params {
 }
 
 export const useElementActions = ({ params, navigation, elementsData }: Params) => {
-    const { elementID, conversationMode, messageID, labelID: labelIDFromParams } = params;
+    const { elementID, conversationMode, messageID, labelID: originalLabelID } = params;
     const { handleBack } = navigation;
     const { elementIDs } = elementsData;
 
-    const labelID = convertCustomViewLabelsToAlmostAllMail(labelIDFromParams);
+    const labelID = convertCustomViewLabelsToAlmostAllMail(originalLabelID);
 
     const history = useHistory();
     const [isMessageOpening, setIsMessageOpening] = useState(false);
@@ -128,10 +128,15 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
     );
 
     const handleMarkAs = useCallback(
-        async (status: MARK_AS_STATUS, sourceAction: SOURCE_ACTION): Promise<void> => {
+        async (
+            status: MARK_AS_STATUS,
+            sourceAction: SOURCE_ACTION,
+            options?: { preventBack?: boolean }
+        ): Promise<void> => {
             const isUnread = status === MARK_AS_STATUS.UNREAD;
             const elements = getElementsFromIDs(selectedIDs);
-            if (isUnread) {
+
+            if (isUnread && !options?.preventBack) {
                 handleBack();
             }
 
