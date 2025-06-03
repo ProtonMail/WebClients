@@ -56,7 +56,7 @@ export type ExcludedProxiedSettingsKeys = Unpack<typeof EXCLUDED_SETTINGS_KEYS>;
  * sequence  (ie: if the user has been logged out) */
 export type ProxiedSettings = Omit<SettingsState, ExcludedProxiedSettingsKeys>;
 
-export const getInitialSettings = (): ProxiedSettings => ({
+export const getInitialSettings = (activeTheme?: PassThemeOption): ProxiedSettings => ({
     autofill: { identity: true, twofa: true },
     autosave: { prompt: true, passwordSuggest: true },
     autosuggest: { password: true, email: true, passwordCopy: false },
@@ -65,17 +65,19 @@ export const getInitialSettings = (): ProxiedSettings => ({
     passkeys: { get: true, create: true },
     passwordOptions: null,
     showUsernameField: false,
-    theme: PASS_DEFAULT_THEME,
+    theme: activeTheme ?? PASS_DEFAULT_THEME,
 });
 
-const getInitialState = (): SettingsState => ({
+const getInitialState = (activeTheme?: PassThemeOption): SettingsState => ({
     createdItemsCount: 0,
     lockMode: LockMode.NONE,
     lockTTL: undefined,
-    ...getInitialSettings(),
+    ...getInitialSettings(activeTheme),
 });
 
-const reducer: Reducer<SettingsState> = (state = getInitialState(), action) => {
+const activeTheme: { value?: PassThemeOption } = {};
+
+const reducer: Reducer<SettingsState> = (state = getInitialState(activeTheme.value), action) => {
     if (passwordOptionsEdit.match(action)) return { ...state, passwordOptions: action.payload };
 
     if (itemCreate.success.match(action)) {
@@ -88,7 +90,6 @@ const reducer: Reducer<SettingsState> = (state = getInitialState(), action) => {
 
     if (settingsEditSuccess.match(action)) {
         const update = { ...state };
-
         /* `disallowedDomains` update should act as a setter */
         if ('disallowedDomains' in action.payload) update.disallowedDomains = {};
         return partialMerge<SettingsState>(update, action.payload);
@@ -121,4 +122,8 @@ const reducer: Reducer<SettingsState> = (state = getInitialState(), action) => {
     return state;
 };
 
-export default reducer;
+export default ((state, action) => {
+    const next = reducer(state, action);
+    activeTheme.value = next.theme;
+    return next;
+}) as Reducer<SettingsState>;
