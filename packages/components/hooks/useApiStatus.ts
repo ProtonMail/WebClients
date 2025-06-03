@@ -1,9 +1,7 @@
-import { useContext } from 'react';
-
-import ContextApi from '../containers/api/apiStatusContext';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
 const useApiStatus = () => {
-    return useContext(ContextApi);
+    return useSelector((state) => state.apiStatus);
 };
 
 export default useApiStatus;
