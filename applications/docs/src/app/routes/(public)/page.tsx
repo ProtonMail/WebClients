@@ -26,6 +26,7 @@ import { extraThunkArguments } from '~/redux-store/thunk'
 import { bootstrapPublicApp } from './__utils/bootstrap'
 import { PublicAppRootContainer } from './__components/PublicAppRootContainer'
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper'
+import { useSheetsFavicon } from '../../hooks/useSheetsFavicon'
 
 const defaultState: {
   store?: DocsStore
@@ -69,27 +70,38 @@ export default function PublicApp() {
           <ProtonStoreProvider store={state.store}>
             <Router history={extraThunkArguments.history}>
               <CompatRouter>
-                <AuthenticationProvider store={extraThunkArguments.authentication}>
-                  <FlagProvider unleashClient={extraThunkArguments.unleashClient}>
-                    <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
-                      <ApiProvider api={extraThunkArguments.api}>
-                        <ErrorBoundary big component={<StandardErrorPage big />}>
-                          <NotificationsChildren />
-                          <ModalsChildren />
-                          <PublicAppRootContainer
-                            session={state.session}
-                            hasReadySession={state.hasReadySession ?? false}
-                          />
-                        </ErrorBoundary>
-                      </ApiProvider>
-                    </EventManagerProvider>
-                  </FlagProvider>
-                </AuthenticationProvider>
+                <PublicAppContainer session={state.session} hasReadySession={state.hasReadySession ?? false} />
               </CompatRouter>
             </Router>
           </ProtonStoreProvider>
         )
       })()}
     </ProtonApp>
+  )
+}
+
+function PublicAppContainer({
+  session,
+  hasReadySession,
+}: {
+  session?: ResumedSessionResult
+  hasReadySession: boolean
+}) {
+  useSheetsFavicon()
+
+  return (
+    <AuthenticationProvider store={extraThunkArguments.authentication}>
+      <FlagProvider unleashClient={extraThunkArguments.unleashClient}>
+        <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+          <ApiProvider api={extraThunkArguments.api}>
+            <ErrorBoundary big component={<StandardErrorPage big />}>
+              <NotificationsChildren />
+              <ModalsChildren />
+              <PublicAppRootContainer session={session} hasReadySession={hasReadySession} />
+            </ErrorBoundary>
+          </ApiProvider>
+        </EventManagerProvider>
+      </FlagProvider>
+    </AuthenticationProvider>
   )
 }
