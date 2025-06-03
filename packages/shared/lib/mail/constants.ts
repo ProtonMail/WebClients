@@ -19,6 +19,7 @@ export const MESSAGE_FLAGS = {
     FLAG_UNSUBSCRIBED: Math.pow(2, 19), // Unsubscribed from newsletter
     FLAG_SCHEDULED_SEND: Math.pow(2, 20), // Messages that have been delayed send
     FLAG_UNSUBSCRIBABLE: Math.pow(2, 21), // Messages that are unsubscribable
+    FLAG_SYNCED: Math.pow(2, 22), // Messages that are imported from Gmail
     FLAG_DMARC_FAIL: Math.pow(2, 26), // Incoming mail failed dmarc authentication.
     FLAG_HAM_MANUAL: Math.pow(2, 27), // The message is in spam and the user moves it to a new location that is not spam or trash (e.g. inbox or archive).
     FLAG_PHISHING_AUTO: Math.pow(2, 30), // Incoming mail is marked as phishing by anti-spam filters.
