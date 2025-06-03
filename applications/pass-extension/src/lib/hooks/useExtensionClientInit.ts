@@ -9,6 +9,7 @@ import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { MemoryStorage } from '@proton/pass/lib/file-storage/fs';
+import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { AppState } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
 import { type Awaiter, awaiter } from '@proton/pass/utils/fp/promises';
@@ -18,7 +19,10 @@ import noop from '@proton/utils/noop';
 
 import { useEndpointMessage } from './useEndpointMessage';
 
-export const useExtensionClientInit = (onStateChange: (state: AppState) => void) => {
+export const useExtensionClientInit = (options: {
+    onStateChange: (state: AppState) => void;
+    onSettingsChange?: (settings: ProxiedSettings) => void;
+}) => {
     const { endpoint } = usePassCore();
     const { port, tabId } = useExtensionContext();
     const authStore = useAuthStore();
@@ -31,7 +35,7 @@ export const useExtensionClientInit = (onStateChange: (state: AppState) => void)
         AppStateManager.setState(state);
         authStore?.setLocalID(state.localID);
         authStore?.setUID(state.UID);
-        onStateChange(state);
+        options.onStateChange(state);
     }, []);
 
     useEffect(() => {
@@ -39,6 +43,10 @@ export const useExtensionClientInit = (onStateChange: (state: AppState) => void)
             if (matchExtensionMessage(message, { type: WorkerMessageType.WORKER_STATE_CHANGE })) {
                 ready.current.then(() => onChange(message.payload.state)).catch(noop);
                 return;
+            }
+
+            if (matchExtensionMessage(message, { type: WorkerMessageType.SETTINGS_UPDATE })) {
+                return options.onSettingsChange?.(message.payload);
             }
 
             if (matchExtensionMessage(message, { type: WorkerMessageType.FS_WRITE })) {
