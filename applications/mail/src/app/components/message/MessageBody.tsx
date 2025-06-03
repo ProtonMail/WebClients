@@ -6,6 +6,7 @@ import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
+import MessageBodyPrint from 'proton-mail/components/message/MessageBodyPrint';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useOnMailTo } from '../../containers/ComposeProvider';
@@ -173,12 +174,12 @@ const MessageBody = ({
                         hasDarkStyles={hasDarkStyles}
                         isPrint={isPrint}
                         message={message}
-                        labelID={labelID}
                         onReady={onIframeReady}
                         onMailTo={onMailTo}
                         mailSettings={mailSettings}
                         onFocus={onFocusIframe}
                     />
+                    <MessageBodyPrint isPrint={isPrint} iframeRef={iframeRef} message={message} labelID={labelID} />
                 </div>
             )}
         </div>

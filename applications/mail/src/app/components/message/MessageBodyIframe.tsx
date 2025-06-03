@@ -7,16 +7,13 @@ import { c } from 'ttag';
 import { Tooltip } from '@proton/atoms';
 import { Icon, useSyncIframeStyles, useTheme } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
-import { MESSAGE_IFRAME_PRINT_FOOTER_ID, MESSAGE_IFRAME_PRINT_HEADER_ID } from '@proton/mail-renderer/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import { hasAttachments, isAutoFlaggedPhishing, isSuspicious } from '@proton/shared/lib/mail/messages';
+import { isAutoFlaggedPhishing, isSuspicious } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
 import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
 import type { MessageState } from '../../store/messages/messagesTypes';
 import MessageBodyImages from './MessageBodyImages';
-import MessagePrintFooter from './MessagePrintFooter';
-import MessagePrintHeader from './MessagePrintHeader';
 import getIframeSandboxAttributes from './helpers/getIframeSandboxAttributes';
 import useIframeDispatchEvents from './hooks/useIframeDispatchEvents';
 import useIframeShowBlockquote from './hooks/useIframeShowBlockquote';
@@ -35,7 +32,6 @@ interface Props {
     isPrint?: boolean;
     hasDarkStyles?: boolean;
     message: MessageState;
-    labelID: string;
     onReady?: (iframeRef: RefObject<HTMLIFrameElement>) => void;
     onMailTo?: (src: string) => void;
     isOutside?: boolean;
@@ -55,7 +51,6 @@ const MessageBodyIframe = ({
     hasDarkStyles,
     isPrint = false,
     message,
-    labelID,
     onReady,
     onMailTo,
     isOutside,
@@ -63,7 +58,6 @@ const MessageBodyIframe = ({
     onFocus,
 }: Props) => {
     const theme = useTheme();
-    const hasAttachment = hasAttachments(message.data);
 
     useSyncIframeStyles(iframeRef.current?.contentWindow?.document.documentElement, document.documentElement);
 
@@ -88,8 +82,6 @@ const MessageBodyIframe = ({
         showBlockquoteToggle,
         onBlockquoteToggle,
     });
-    const iframePrintHeaderDiv = iframeRef.current?.contentDocument?.getElementById(MESSAGE_IFRAME_PRINT_HEADER_ID);
-    const iframePrintFooterDiv = iframeRef.current?.contentDocument?.getElementById(MESSAGE_IFRAME_PRINT_FOOTER_ID);
 
     const { modal: linkModal } = useLinkHandler(iframeRootDivRef, mailSettings, {
         onMailTo,
@@ -162,13 +154,6 @@ const MessageBodyIframe = ({
                     </Tooltip>,
                     iframeToggleDiv
                 )}
-            {isPrint &&
-                iframePrintHeaderDiv &&
-                createPortal(<MessagePrintHeader message={message} labelID={labelID} />, iframePrintHeaderDiv)}
-            {hasAttachment &&
-                isPrint &&
-                iframePrintFooterDiv &&
-                createPortal(<MessagePrintFooter message={message} />, iframePrintFooterDiv)}
             {linkModal}
         </>
     );
