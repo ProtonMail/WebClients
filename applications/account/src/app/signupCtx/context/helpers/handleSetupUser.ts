@@ -7,6 +7,7 @@ import {
     type ExtendedTokenPayment,
     type PaymentsVersion,
     type PlanIDs,
+    type Subscription,
     type V5PaymentToken,
     isTokenPayment,
     isWrappedPaymentsVersion,
@@ -63,7 +64,7 @@ const handleSubscribeUser = async (
             paymentsVersion = 'v4';
         }
 
-        await api(
+        const { Subscription } = await api<{ Subscription: Subscription }>(
             subscribe(
                 {
                     Plans: subscriptionData.planIDs,
@@ -102,6 +103,8 @@ const handleSubscribeUser = async (
                 await api(setPaymentMethodV4(subscriptionData.paymentToken));
             }
         }
+
+        return Subscription;
     } catch (error: any) {
         onPaymentFailure?.();
         throw error;
@@ -190,9 +193,10 @@ export const handleSetupUser = async ({
         config: auth({ Username: userEmail }, persistent),
     }).then((response): Promise<AuthResponse> => response.json());
 
+    let subscription: Subscription | undefined;
     if (subscriptionData) {
         // Perform the subscription first to prevent "locked user" while setting up keys.
-        await handleSubscribeUser(api, subscriptionData, referralData, productParam);
+        subscription = await handleSubscribeUser(api, subscriptionData, referralData, productParam);
     }
 
     void api(updateLocale(localeCode)).catch(noop);
@@ -221,5 +225,6 @@ export const handleSetupUser = async ({
         keyPassword: keySetupData.keyPassword,
         addresses,
         authResponse,
+        subscription,
     };
 };
