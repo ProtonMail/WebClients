@@ -8,9 +8,8 @@ import { c } from 'ttag';
 import { Checkbox } from '@proton/components';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { settingsEditIntent } from '@proton/pass/store/actions';
-import { settingsEditRequest } from '@proton/pass/store/actions/requests';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { selectProxiedSettings, selectRequestInFlight } from '@proton/pass/store/selectors';
+import { selectProxiedSettings } from '@proton/pass/store/selectors';
 import type { RecursivePartial } from '@proton/pass/types';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -160,7 +159,6 @@ const getSettings =
 export const Behaviors: FC = () => {
     const dispatch = useDispatch();
     const settings = useSelector(selectProxiedSettings);
-    const loading = useSelector(selectRequestInFlight(settingsEditRequest('behaviors')));
 
     return (
         <>
@@ -176,8 +174,7 @@ export const Behaviors: FC = () => {
                                 key={`setting-${i}-${j}`}
                                 className={clsx(j !== section.settings.length - 1 && 'mb-4')}
                                 checked={setting.checked}
-                                disabled={setting.disabled || loading}
-                                loading={loading}
+                                disabled={setting.disabled}
                                 onChange={() => setting.onChange(!setting.checked)}
                             >
                                 <span>

@@ -5,12 +5,7 @@ import { c } from 'ttag';
 
 import { Checkbox } from '@proton/components';
 import { settingsEditIntent } from '@proton/pass/store/actions';
-import { settingsEditRequest } from '@proton/pass/store/actions/requests';
-import {
-    selectCanLoadDomainImages,
-    selectRequestInFlight,
-    selectShowUsernameField,
-} from '@proton/pass/store/selectors';
+import { selectCanLoadDomainImages, selectShowUsernameField } from '@proton/pass/store/selectors';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SettingsPanel } from './SettingsPanel';
@@ -19,14 +14,11 @@ export const Display: FC = () => {
     const dispatch = useDispatch();
     const canLoadDomainImages = useSelector(selectCanLoadDomainImages);
     const showUsernameField = useSelector(selectShowUsernameField);
-    const loading = useSelector(selectRequestInFlight(settingsEditRequest('behaviors')));
 
     return (
         <SettingsPanel title={c('Label').t`Display`}>
             <Checkbox
                 checked={canLoadDomainImages}
-                disabled={loading}
-                loading={loading}
                 onChange={() => dispatch(settingsEditIntent('behaviors', { loadDomainImages: !canLoadDomainImages }))}
             >
                 <span>
@@ -40,8 +32,6 @@ export const Display: FC = () => {
             <Checkbox
                 className="mt-2"
                 checked={showUsernameField}
-                disabled={loading}
-                loading={loading}
                 onChange={() =>
                     dispatch(
                         settingsEditIntent('behaviors', {
