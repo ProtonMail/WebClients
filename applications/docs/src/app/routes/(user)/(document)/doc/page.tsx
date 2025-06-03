@@ -57,7 +57,9 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
     application.logger.info('Creating new document in root')
 
     const date = getPlatformFriendlyDateForFileName()
-    const name = c('Title').t`Untitled document ${date}`
+    const docType = openAction?.type ?? 'doc'
+    const name =
+      docType === 'sheet' ? c('Title').t`Untitled spreadsheet ${date}` : c('Title').t`Untitled document ${date}`
 
     const root =
       openAction && openAction.mode === 'create'
