@@ -13,7 +13,7 @@ import { logger } from '@proton/pass/utils/logger';
 export const createSettingsService = () => {
     const service = createCoreSettingsService({
         clear: withContext(({ service }) => service.storage.local.removeItem('settings')),
-        resolve: withContext(async ({ service }) => {
+        read: withContext(async ({ service }) => {
             const settings = await service.storage.local.getItem('settings');
             if (!settings) throw new Error('settings not found');
 
