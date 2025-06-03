@@ -4,6 +4,8 @@ import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
+import MessageBodyPrint from 'proton-mail/components/message/MessageBodyPrint';
+
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
 import type { MessageState } from '../../../store/messages/messagesTypes';
@@ -96,10 +98,10 @@ const EOMessageBody = ({
                         onContentLoaded={() => {}}
                         isPlainText={plain}
                         message={message}
-                        labelID=""
                         isOutside
                         mailSettings={EO_DEFAULT_MAILSETTINGS}
                     />
+                    <MessageBodyPrint isPrint={false} iframeRef={iframeRef} message={message} labelID="" />
                 </MailboxContainerContextProvider>
             )}
         </div>
