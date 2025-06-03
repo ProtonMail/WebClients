@@ -37,13 +37,13 @@ import type { AvailabilityReport } from '@proton/utils/availability'
 import { Availability, AvailabilityTypes } from '@proton/utils/availability'
 import type { APP_NAMES } from '@proton/shared/lib/constants'
 import { UserSettingsProvider } from '@proton/drive-store/store'
+import { useSheetsFavicon } from '../../hooks/useSheetsFavicon'
 
 /**
  * The entry point for the user (authenticated) application.
  */
 export default function UserApp() {
   const appState = useAppState()
-
   return (
     <ProtonApp config={config} ThemeProvider={DocsThemeProvider}>
       {(() => {
@@ -146,41 +146,59 @@ function OuterContainer({ store, showDrawerSidebar, initialUser, children }: Out
           <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
             <Router history={extraThunkArguments.history}>
               <CompatRouter>
-                <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
-                  <ApiProvider api={extraThunkArguments.api}>
-                    {/* TODO: fix typo globally */}
-                    <DrawerProvider defaultShowDrawerSidear={showDrawerSidebar}>
-                      <ErrorBoundary big component={<StandardErrorPage big />}>
-                        {/* TODO: remove this once the temporary "Trash" homepage view implementation is cleaned up */}
-                        <UserSettingsProvider
-                          initialUser={initialUser}
-                          initialDriveUserSettings={{
-                            Defaults: {
-                              RevisionRetentionDays: 0,
-                              B2BPhotosEnabled: false,
-                              PhotoTags: [],
-                            },
-                            UserSettings: {
-                              Sort: null,
-                              Layout: null,
-                              RevisionRetentionDays: null,
-                              B2BPhotosEnabled: null,
-                              PhotoTags: null,
-                            },
-                          }}
-                        >
-                          <StandardPrivateApp>{children}</StandardPrivateApp>
-                        </UserSettingsProvider>
-                      </ErrorBoundary>
-                    </DrawerProvider>
-                  </ApiProvider>
-                </EventManagerProvider>
+                <RouterDependentContainer showDrawerSidebar={showDrawerSidebar} initialUser={initialUser}>
+                  {children}
+                </RouterDependentContainer>
               </CompatRouter>
             </Router>
           </FlagProvider>
         </AuthenticationProvider>
       </CustomNotificationsHijack>
     </ProtonStoreProvider>
+  )
+}
+
+function RouterDependentContainer({
+  showDrawerSidebar,
+  initialUser,
+  children,
+}: {
+  showDrawerSidebar?: boolean
+  initialUser: UserModel
+  children: ReactNode
+}) {
+  useSheetsFavicon()
+
+  return (
+    <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+      <ApiProvider api={extraThunkArguments.api}>
+        {/* TODO: fix typo globally */}
+        <DrawerProvider defaultShowDrawerSidear={showDrawerSidebar}>
+          <ErrorBoundary big component={<StandardErrorPage big />}>
+            {/* TODO: remove this once the temporary "Trash" homepage view implementation is cleaned up */}
+            <UserSettingsProvider
+              initialUser={initialUser}
+              initialDriveUserSettings={{
+                Defaults: {
+                  RevisionRetentionDays: 0,
+                  B2BPhotosEnabled: false,
+                  PhotoTags: [],
+                },
+                UserSettings: {
+                  Sort: null,
+                  Layout: null,
+                  RevisionRetentionDays: null,
+                  B2BPhotosEnabled: null,
+                  PhotoTags: null,
+                },
+              }}
+            >
+              <StandardPrivateApp>{children}</StandardPrivateApp>
+            </UserSettingsProvider>
+          </ErrorBoundary>
+        </DrawerProvider>
+      </ApiProvider>
+    </EventManagerProvider>
   )
 }
 
