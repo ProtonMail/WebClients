@@ -8,26 +8,28 @@ import { Button } from '@proton/atoms';
 import { FiltersUpsellModal, Icon, useModalStateObject } from '@proton/components';
 import { useFilters } from '@proton/mail/filters/hooks';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { getUnsubscribeMethod, shouldOpenUpsellOnFilterClick } from '../helper';
+import type { ModalFilterType, PropsWithNewsletterSubscription } from '../interface';
 import ModalUnsubscribe from './ModalUnsubscribe/ModalUnsubscribe';
 import { ModalMoveToFolder } from './MoveToFolder/ModalMoveToFolder';
 
-interface SubscriptionCardTitleProps {
-    subscription: NewsletterSubscription;
-}
-
-export const SubscriptionCardTitle = ({ subscription }: SubscriptionCardTitleProps) => {
+export const SubscriptionCardTitle = ({ subscription }: PropsWithNewsletterSubscription) => {
     return (
-        <>
+        <div
+            className="min-w-custom max-w-custom text-ellipsis mb-2"
+            style={{
+                '--min-w-custom': '12.5rem',
+                '--max-w-custom': '12.5rem',
+            }}
+        >
             <h3 className="text-rg text-bold mb-1 text-ellipsis" title={subscription.Name}>
                 {subscription.Name}
             </h3>
             <p className="m-0 color-weak text-sm text-ellipsis" title={subscription.SenderAddress}>
                 {subscription.SenderAddress}
             </p>
-        </>
+        </div>
     );
 };
 
@@ -44,9 +46,9 @@ const SubscriptionStat = ({ iconName, children }: SubscriptionStatProps) => {
     );
 };
 
-export const SubscriptionCardStats = ({ subscription }: SubscriptionCardTitleProps) => {
+export const SubscriptionCardStats = ({ subscription }: PropsWithNewsletterSubscription) => {
     return (
-        <>
+        <div className="flex flex-column gap-2 text-sm color-weak">
             {subscription.UnreadMessageCount !== undefined ? (
                 <SubscriptionStat iconName="envelope-dot">
                     {c('Info').ngettext(
@@ -66,11 +68,11 @@ export const SubscriptionCardStats = ({ subscription }: SubscriptionCardTitlePro
                     )}
                 </SubscriptionStat>
             ) : null}
-        </>
+        </div>
     );
 };
 
-export const ActiveSubscriptionButtons = ({ subscription }: SubscriptionCardTitleProps) => {
+const ActiveSubscriptionButtons = ({ subscription }: PropsWithNewsletterSubscription) => {
     const unsubscribeModal = useModalStateObject();
     const moveToFolderModal = useModalStateObject();
     const upsellModal = useModalStateObject();
@@ -118,5 +120,31 @@ export const ActiveSubscriptionButtons = ({ subscription }: SubscriptionCardTitl
                 />
             )}
         </>
+    );
+};
+
+const InactiveSubscriptionButtons = ({ handleFilterClick }: { handleFilterClick: (type: ModalFilterType) => void }) => {
+    return (
+        <Button
+            onClick={() => handleFilterClick('MoveToTrash')}
+            shape="outline"
+            size="small"
+            className="color-danger"
+        >{c('Action').t`Move to trash`}</Button>
+    );
+};
+
+export const SubscriptionCardButtons = ({
+    subscription,
+    handleFilterClick,
+}: PropsWithNewsletterSubscription & { handleFilterClick: (type: ModalFilterType) => void }) => {
+    return (
+        <div className="flex gap-2">
+            {subscription.UnsubscribedTime ? (
+                <InactiveSubscriptionButtons handleFilterClick={handleFilterClick} />
+            ) : (
+                <ActiveSubscriptionButtons subscription={subscription} />
+            )}
+        </div>
     );
 };

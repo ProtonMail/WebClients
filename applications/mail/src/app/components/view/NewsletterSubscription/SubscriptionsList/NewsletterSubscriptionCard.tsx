@@ -1,8 +1,5 @@
 import { useState } from 'react';
 
-import { c } from 'ttag';
-
-import { Button } from '@proton/atoms';
 import { ContactImage, useModalStateObject } from '@proton/components';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 import clsx from '@proton/utils/clsx';
@@ -11,21 +8,17 @@ import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { isSubscriptionActiveSelector } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
-import type { ModalFilterType } from '../interface';
+import type { ModalFilterType, PropsWithNewsletterSubscription } from '../interface';
 import ModalNewsletterSubscriptionFilter from './ModalNewsletterSubscriptionFilter';
 import { NewsletterSubscriptionCardActiveFilter } from './NewsletterSubscriptionCardActiveFilter';
 import {
-    ActiveSubscriptionButtons,
+    SubscriptionCardButtons,
     SubscriptionCardStats,
     SubscriptionCardTitle,
 } from './NewsletterSubscriptionCardComponents';
 import { NewsletterSubscriptionCardFilterDropdown } from './NewsletterSubscriptionCardFilterDropdown';
 
-interface Props {
-    subscription: NewsletterSubscription;
-}
-
-export const NewsletterSubscriptionCard = ({ subscription }: Props) => {
+export const NewsletterSubscriptionCard = ({ subscription }: PropsWithNewsletterSubscription) => {
     const filterModal = useModalStateObject();
     const [filterType, setFilterType] = useState<ModalFilterType | null>(null);
 
@@ -65,35 +58,19 @@ export const NewsletterSubscriptionCard = ({ subscription }: Props) => {
                     <div className="flex-1">
                         <div className="flex mb-3">
                             <div className="flex-1 flex gap-3 md:gap-4">
-                                <div
-                                    className="min-w-custom max-w-custom text-ellipsis"
-                                    style={{
-                                        '--min-w-custom': '12.5rem',
-                                        '--max-w-custom': '12.5rem',
-                                    }}
-                                >
+                                <div>
                                     <SubscriptionCardTitle subscription={subscription} />
+                                    <SubscriptionCardButtons
+                                        subscription={subscription}
+                                        handleFilterClick={handleFilterClick}
+                                    />
                                 </div>
-                                <div className="flex flex-column gap-2 text-sm color-weak">
-                                    <SubscriptionCardStats subscription={subscription} />
-                                </div>
+                                <SubscriptionCardStats subscription={subscription} />
                             </div>
                             <NewsletterSubscriptionCardFilterDropdown
                                 subscription={subscription}
                                 handleSubscriptionFilter={(filter) => handleFilterClick(filter)}
                             />
-                        </div>
-                        <div className="flex gap-2">
-                            {subscription.UnsubscribedTime ? (
-                                <Button
-                                    onClick={() => handleFilterClick('MoveToTrash')}
-                                    shape="outline"
-                                    size="small"
-                                    className="color-danger"
-                                >{c('Action').t`Move to trash`}</Button>
-                            ) : (
-                                <ActiveSubscriptionButtons subscription={subscription} />
-                            )}
                         </div>
                         <NewsletterSubscriptionCardActiveFilter subscription={subscription} />
                     </div>

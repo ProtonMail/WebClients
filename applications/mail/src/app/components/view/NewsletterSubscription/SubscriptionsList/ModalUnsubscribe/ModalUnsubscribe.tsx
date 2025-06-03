@@ -13,7 +13,6 @@ import {
     useNotifications,
 } from '@proton/components';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
-import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 import truncate from '@proton/utils/truncate';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
@@ -26,17 +25,13 @@ import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscr
 import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
 import { getUnsubscribeData, getUnsubscribeMethod } from '../../helper';
-import { MAX_LENGTH_SUB_NAME, UnsubscribeMethod } from '../../interface';
+import { MAX_LENGTH_SUB_NAME, type PropsWithNewsletterSubscription, UnsubscribeMethod } from '../../interface';
 import { ModalUnsubscribeMailToContent } from './ModalUnsubscribeMailToContent';
 import { useSendUnsubscribeEmail } from './useSendUnsubscribeEmail';
 
 import './ModalUnsubscribe.scss';
 
-interface Props extends ModalProps {
-    subscription: NewsletterSubscription;
-}
-
-const ModalUnsubscribe = ({ subscription, ...props }: Props) => {
+const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscription & ModalProps) => {
     const dispatch = useMailDispatch();
     const subscriptionIndex = useMailSelector(getFilteredSubscriptionIndex(subscription.ID));
 

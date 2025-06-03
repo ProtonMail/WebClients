@@ -11,13 +11,9 @@ import { useFolders } from '@proton/mail/index';
 import { toggleEnable } from '@proton/shared/lib/api/filters';
 import { FILTER_STATUS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
-import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { getSubscriptionMoveToFolderName } from '../helper';
-
-interface Props {
-    subscription: NewsletterSubscription;
-}
+import type { PropsWithNewsletterSubscription } from '../interface';
 
 interface WrapperProps extends PropsWithChildren {
     iconClassName: string;
@@ -36,11 +32,7 @@ const ActiveFilter = ({ children }: PropsWithChildren) => {
     return <FilterWrapper iconClassName="color-success shrink-0">{children}</FilterWrapper>;
 };
 
-interface DisabledFilterProps {
-    subscription: NewsletterSubscription;
-}
-
-const DisabledFilter = ({ subscription }: DisabledFilterProps) => {
+const DisabledFilter = ({ subscription }: PropsWithNewsletterSubscription) => {
     const [user] = useUser();
     const [filters = []] = useFilters();
 
@@ -85,7 +77,7 @@ const DisabledFilter = ({ subscription }: DisabledFilterProps) => {
     );
 };
 
-export const NewsletterSubscriptionCardActiveFilter = ({ subscription }: Props) => {
+export const NewsletterSubscriptionCardActiveFilter = ({ subscription }: PropsWithNewsletterSubscription) => {
     const [filters] = useFilters();
     const [folders = []] = useFolders();
 
