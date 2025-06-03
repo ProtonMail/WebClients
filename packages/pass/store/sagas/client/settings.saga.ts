@@ -7,24 +7,28 @@ import { isSettingsAction } from '@proton/pass/store/actions/enhancers/settings'
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { selectProxiedSettings } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
+import { merge } from '@proton/pass/utils/object/merge';
 import { updateLocale } from '@proton/shared/lib/api/settings';
 
 function* settingsEditWorker(
-    { onLocaleUpdated, onBetaUpdated }: RootSagaOptions,
+    { onLocaleUpdated, onBetaUpdated, onSettingsUpdated }: RootSagaOptions,
     { meta, payload }: WithSenderAction<ReturnType<typeof settingsEditIntent>>
 ) {
     try {
-        const settings: ProxiedSettings = yield select(selectProxiedSettings);
-        /* `disallowedDomains` update should act as a setter */
-        if ('disallowedDomains' in payload) settings.disallowedDomains = {};
+        const prev: ProxiedSettings = yield select(selectProxiedSettings);
+        if ('disallowedDomains' in payload) prev.disallowedDomains = {};
+        const next = merge(prev, payload);
+
+        yield onSettingsUpdated?.(next);
 
         if (payload.locale) {
             yield api(updateLocale(payload.locale));
             onLocaleUpdated?.(payload.locale);
         }
 
-        yield put(settingsEditSuccess(meta.request.id, payload, meta.silent, meta.sender?.endpoint));
         if ('beta' in payload) yield onBetaUpdated?.(payload.beta ?? false);
+
+        yield put(settingsEditSuccess(meta.request.id, next, meta.silent, meta.sender?.endpoint));
     } catch (e) {
         yield put(settingsEditFailure(meta.request.id, e, meta.sender?.endpoint));
     }

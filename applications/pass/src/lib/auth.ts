@@ -283,6 +283,8 @@ export const createAuthService = ({
             });
 
             store.dispatch(stateDestroy());
+            core.theme.sync();
+
             history.replace('/');
         },
 

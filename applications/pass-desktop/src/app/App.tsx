@@ -13,7 +13,7 @@ import { monitor } from 'proton-pass-web/lib/monitor';
 import { settings } from 'proton-pass-web/lib/settings';
 import { spotlightProxy as spotlight } from 'proton-pass-web/lib/spotlight';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
-import { getInitialTheme } from 'proton-pass-web/lib/theme';
+import { getTheme } from 'proton-pass-web/lib/theme';
 
 import {
     ErrorBoundary,
@@ -75,7 +75,7 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     monitor,
     settings,
     spotlight,
-    theme: createPassThemeManager({ getInitialTheme }),
+    theme: createPassThemeManager({ getTheme }),
 
     generateOTP: (payload) => (payload.type === 'uri' ? generateTOTPCode(payload.totpUri) : null),
 
