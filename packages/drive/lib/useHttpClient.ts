@@ -59,7 +59,7 @@ export function useHttpClient(defaultHeaders: [string, string][] = []): ProtonDr
             signal: options.signal,
             credentials: 'omit',
         });
-        return callWithTimeout(fetch(request)) as Promise<Response>;
+        return callWithTimeout(fetch(request));
     };
 
     // Ensure the reference is stable across renders. Never update the whole object.
