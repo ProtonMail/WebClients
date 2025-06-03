@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { LoaderPage } from '@proton/components';
+import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { CYCLE, type Cycle, PLANS, type PlanIDs, getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -83,6 +84,8 @@ const DriveSignupInner = () => {
 
     const { options } = usePaymentOptimistic();
 
+    const notifyError = useNotifyErrorHandler();
+
     return (
         <>
             {step === 'account-details' && (
@@ -90,12 +93,16 @@ const DriveSignupInner = () => {
                     onSuccess={async () => {
                         const isFree = hasFreePlanIDs(options.planIDs);
                         if (isFree) {
-                            await signup.createUser();
-                            setStep('creating-account');
+                            try {
+                                await signup.createUser();
+                                setStep('creating-account');
 
-                            await signup.setupUser();
+                                await signup.setupUser();
 
-                            setStep('display-name');
+                                setStep('display-name');
+                            } catch (error) {
+                                notifyError(error);
+                            }
                         } else {
                             setStep('payment');
                         }
@@ -109,13 +116,16 @@ const DriveSignupInner = () => {
                         setStep('account-details');
                     }}
                     onPaymentTokenProcessed={async () => {
-                        await signup.createUser();
+                        try {
+                            await signup.createUser();
+                            setStep('creating-account');
 
-                        setStep('creating-account');
+                            await signup.setupUser();
 
-                        await signup.setupUser();
-
-                        setStep('display-name');
+                            setStep('display-name');
+                        } catch (error) {
+                            notifyError(error);
+                        }
                     }}
                 />
             )}
