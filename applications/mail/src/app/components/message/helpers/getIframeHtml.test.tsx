@@ -1,9 +1,10 @@
-import { createDocument } from '../../../helpers/test/message';
 import {
     MESSAGE_IFRAME_PRINT_CLASS,
     MESSAGE_IFRAME_PRINT_FOOTER_ID,
     MESSAGE_IFRAME_PRINT_HEADER_ID,
-} from '../constants';
+} from '@proton/mail-renderer/constants';
+
+import { createDocument } from '../../../helpers/test/message';
 import getIframeHtml from './getIframeHtml';
 
 describe('getIframeHTML', () => {
