@@ -6,7 +6,6 @@ import { type CacheMeta, withCache, withCacheOptions } from '@proton/pass/store/
 import { withStreamableAction } from '@proton/pass/store/actions/enhancers/client';
 import { type EndpointOptions, withReceiver } from '@proton/pass/store/actions/enhancers/endpoint';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
 import { bootRequest, syncRequest } from '@proton/pass/store/actions/requests';
 import { withRequest } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
@@ -65,14 +64,7 @@ export const bootFailure = createAction('boot::failure', (error?: unknown) =>
 );
 
 export const bootSuccess = createAction('boot::success', (payload?: SynchronizationResult) =>
-    pipe(
-        withRequest({
-            id: bootRequest(),
-            status: 'success',
-        }),
-        withStreamableAction,
-        withSettings
-    )({ payload })
+    pipe(withRequest({ id: bootRequest(), status: 'success' }), withStreamableAction)({ payload })
 );
 
 export const syncIntent = createAction('sync::intent', (type: SyncType) =>

@@ -4,17 +4,17 @@ import { createSettingsService } from './service';
 
 describe('createSettingsService', () => {
     const clear = jest.fn();
-    const resolve = jest.fn();
+    const read = jest.fn();
     const sync = jest.fn();
 
     beforeEach(() => {
         clear.mockClear();
-        resolve.mockClear();
+        read.mockClear();
         sync.mockClear();
     });
 
     test('clear method should proxy `options.clear`', async () => {
-        const service = createSettingsService({ clear, resolve, sync });
+        const service = createSettingsService({ clear, read, sync });
         await service.clear();
 
         expect(clear).toHaveBeenCalledTimes(1);
@@ -22,7 +22,7 @@ describe('createSettingsService', () => {
 
     test('sync method should proxy `options.sync`', async () => {
         const update = getInitialSettings();
-        const service = createSettingsService({ clear, resolve, sync });
+        const service = createSettingsService({ clear, read, sync });
         await service.sync(update);
 
         expect(sync).toHaveBeenCalledTimes(1);
@@ -31,21 +31,21 @@ describe('createSettingsService', () => {
 
     test('resolve method should merge initial settings with resolved settings', async () => {
         const settings = { test_setting: true };
-        resolve.mockResolvedValue(settings);
+        read.mockResolvedValue(settings);
 
-        const service = createSettingsService({ clear, resolve, sync });
+        const service = createSettingsService({ clear, read, sync });
         const result = await service.resolve();
 
-        expect(resolve).toHaveBeenCalledTimes(1);
+        expect(read).toHaveBeenCalledTimes(1);
         expect(result).toEqual({ ...getInitialSettings(), ...settings });
     });
 
     test('resolve should return initial settings when `options.resolve` fails', async () => {
-        resolve.mockRejectedValue(new Error());
-        const service = createSettingsService({ clear, resolve, sync });
+        read.mockRejectedValue(new Error());
+        const service = createSettingsService({ clear, read, sync });
         const result = await service.resolve();
 
-        expect(resolve).toHaveBeenCalledTimes(1);
+        expect(read).toHaveBeenCalledTimes(1);
         expect(result).toEqual(getInitialSettings());
     });
 });
