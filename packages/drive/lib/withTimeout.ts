@@ -19,7 +19,7 @@ export function withTimeout(timeoutMs: number, originalSignal?: AbortSignal) {
         originalSignal?.removeEventListener('abort', originalSignalAborted);
     };
 
-    const callWithTimeout = async (promise: Promise<Response | void>): Promise<Response | void> => {
+    const callWithTimeout = async <T>(promise: Promise<T>): Promise<T> => {
         try {
             const result = await promise;
             cleanListeners();
