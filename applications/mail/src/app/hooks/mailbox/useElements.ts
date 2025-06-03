@@ -192,12 +192,16 @@ export const useElements: UseElements = ({
         const isSearching = isSearch(search);
         const conversationMode = isConversationMode(labelID, mailSettings, location);
 
+        const isNavigatingToNewsletterView =
+            stateParams.newsletterSubscriptionID !== undefined && labelID !== undefined;
+
         const shouldResetElementsState =
-            search.keyword !== stateParams.search.keyword || // Reset the cache since we do not support client search (filtering)
-            (esEnabled !== stateParams.esEnabled && isSearch(search)) ||
-            !pageIsConsecutive ||
-            // Reset the cache when sort changes to ensure correct ordering
-            !isDeepEqual(sort, stateParams.sort);
+            !isNavigatingToNewsletterView &&
+            (search.keyword !== stateParams.search.keyword || // Reset the cache since we do not support client search (filtering)
+                (esEnabled !== stateParams.esEnabled && isSearch(search)) ||
+                !pageIsConsecutive ||
+                // Reset the cache when sort changes to ensure correct ordering
+                !isDeepEqual(sort, stateParams.sort));
 
         if (shouldResetElementsState) {
             dispatch(
