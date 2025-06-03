@@ -331,7 +331,7 @@ export function RevisionDetailsModal({
                 isFile
                 isAnonymous={revision.contentAuthor.ok && revision.contentAuthor.value === null}
                 createTime={getUnixTime(revision.creationTime)}
-                size={revision.claimedSize || 0} // TODO: encrypted size
+                size={revision.storageSize}
                 fileModifyTime={revision.claimedModificationTime && getUnixTime(revision.claimedModificationTime)}
                 originalSize={revision.claimedSize}
                 ownerEmail={signatureEmail}
