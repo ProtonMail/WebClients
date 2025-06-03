@@ -9,6 +9,7 @@ import { selectProxiedSettings } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import { merge } from '@proton/pass/utils/object/merge';
 import { updateLocale } from '@proton/shared/lib/api/settings';
+import noop from '@proton/utils/noop';
 
 function* settingsEditWorker(
     { onLocaleUpdated, onBetaUpdated, onSettingsUpdated }: RootSagaOptions,
@@ -22,12 +23,11 @@ function* settingsEditWorker(
         yield onSettingsUpdated?.(next);
 
         if (payload.locale) {
-            yield api(updateLocale(payload.locale));
+            api(updateLocale(payload.locale)).catch(noop);
             onLocaleUpdated?.(payload.locale);
         }
 
         if ('beta' in payload) yield onBetaUpdated?.(payload.beta ?? false);
-
         yield put(settingsEditSuccess(meta.request.id, next, meta.silent, meta.sender?.endpoint));
     } catch (e) {
         yield put(settingsEditFailure(meta.request.id, e, meta.sender?.endpoint));
