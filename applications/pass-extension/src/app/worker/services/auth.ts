@@ -29,6 +29,7 @@ import {
     stopEventPolling,
     unlock,
 } from '@proton/pass/store/actions';
+import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import type { Api, MaybeNull } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp/predicates';
@@ -119,14 +120,14 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             ctx.service.telemetry?.stop();
             ctx.service.autofill.clear();
             ctx.service.apiProxy.clear?.().catch(noop);
+            ctx.service.settings.broadcast(getInitialSettings());
 
             void ctx.service.storage.session.clear();
             void ctx.service.storage.local.clear();
             void fileStorage.clearAll();
 
             browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
-
-            if (BUILD_TARGET === 'safari') void sendSafariMessage({ credentials: null });
+            if (BUILD_TARGET === 'safari') sendSafariMessage({ credentials: null }).catch(noop);
         }),
 
         onForkConsumeStart: async () => {
