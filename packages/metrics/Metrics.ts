@@ -9,10 +9,13 @@ import Counter from './lib/Counter';
 import Histogram from './lib/Histogram';
 import MetricsBase from './lib/MetricsBase';
 import type IMetricsRequestService from './lib/types/IMetricsRequestService';
+import type { MeProtonCoreObservabilityDomainMetricsAccountRecoveryScreenViewTotal } from './types/core_accountRecovery_screenView_total_v1.schema';
+import type { MeProtonCoreObservabilityDomainMetricsLoginScreenViewTotal } from './types/core_login_screenView_total_v1.schema';
 import type { MeProtonCoreObservabilityDomainMetricsAuthV4RequestMetric } from './types/core_signin_auth_total_v1.schema';
 import type { MeProtonCoreObservabilityDomainMetricsSigninSubmitFidoTotal } from './types/core_signin_submit_fido_total_v1.schema';
 import type { MeProtonCoreObservabilityDomainMetricsSigninSubmitMailboxPasswordTotal } from './types/core_signin_submit_mbp_total_v1.schema';
 import type { MeProtonCoreObservabilityDomainMetricsSigninSubmitTotpTotal } from './types/core_signin_submit_totp_total_v1.schema';
+import type { MeProtonCoreObservabilityDomainMetricsSignupScreenViewTotalV1 } from './types/core_signup_screenView_total_v1.schema';
 import type { HttpsProtonMeCoreUiBlockingErrorPageTotalV1SchemaJson } from './types/core_ui_blocking_error_page_total_v1.schema';
 import type { HttpsProtonMeDesktopInboxHeartbeatTotalV1SchemaJson } from './types/desktop_inbox_heartbeat_total_v1.schema';
 import type { HttpsProtonMeDocsAbortedSquashesTotalV1SchemaJson } from './types/docs_aborted_squashes_total_v1.schema';
@@ -28,6 +31,7 @@ import type { HttpsProtonMeDocsDocumentUpdatesLoadErrorTotalV1SchemaJson } from 
 import type { HttpsProtonMeDocsDocumentUpdatesSaveErrorTotalV1SchemaJson } from './types/docs_document_updates_save_error_total_v1.schema';
 import type { HttpsProtonMeDocsDocumentUpdatesTotalV1SchemaJson } from './types/docs_document_updates_total_v1.schema';
 import type { HttpsProtonMeDocsFailedWebsocketConnectionsTotalV1SchemaJson } from './types/docs_failed_websocket_connections_total_v1.schema';
+import type { HttpsProtonMeDocsHomepageInteractionTotalV1SchemaJson } from './types/docs_homepage_interaction_total_v1.schema';
 import type { HttpsProtonMeDocsOpenDocumentsHeartbeatTotalV2SchemaJson } from './types/docs_open_documents_heartbeat_total_v2.schema';
 import type { HttpsProtonMeDocsPublicSharingCustomPasswordSuccessRateTotalV1SchemaJson } from './types/docs_public_sharing_custom_password_success_rate_total_v1.schema';
 import type { HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson } from './types/docs_readonly_mode_documents_total_v1.schema';
@@ -86,6 +90,13 @@ import type { WebCoreSessionRecoverySettingsUpdateTotal } from './types/web_core
 import type { WebCoreSignupAccountStepAccountCreationTotal } from './types/web_core_signup_accountStep_accountCreation_total_v2.schema';
 import type { WebCoreSignupBackButtonTotal } from './types/web_core_signup_backButton_total_v1.schema';
 import type { WebCoreSignupCongratulationsStepDisplayNameChoiceTotal } from './types/web_core_signup_congratulationsStep_displayNameChoice_total_v2.schema';
+import type { WebCoreSignupCtxCreateUserTotal } from './types/web_core_signup_ctx_createUser_total_v1.schema';
+import type { WebCoreSignupCtxErrorPageTotal } from './types/web_core_signup_ctx_errorPage_total_v1.schema';
+import type { WebCoreSignupCtxInitializationTotal } from './types/web_core_signup_ctx_initialization_total_v1.schema';
+import type { WebCoreSignupCtxLoginTotal } from './types/web_core_signup_ctx_login_total_v1.schema';
+import type { WebCoreSignupCtxSetDisplayNameTotal } from './types/web_core_signup_ctx_setDisplayName_total_v1.schema';
+import type { WebCoreSignupCtxSetOrgNameTotal } from './types/web_core_signup_ctx_setOrgName_total_v1.schema';
+import type { WebCoreSignupCtxSetupUserTotal } from './types/web_core_signup_ctx_setupUser_total_v1.schema';
 import type { WebCoreSignupExploreStepLoginTotal } from './types/web_core_signup_exploreStep_login_total_v2.schema';
 import type { WebCoreSignupLoadingStepAccountSetupTotal } from './types/web_core_signup_loadingStep_accountSetup_total_v2.schema';
 import type { WebCoreSignupPageLoadTotal } from './types/web_core_signup_pageLoad_total_v1.schema';
@@ -154,6 +165,10 @@ import type { WebPaymentsSubscriptionStepsTotal } from './types/web_payments_sub
 import type { WebPaymentsSubscriptionTotal } from './types/web_payments_subscription_total_v1.schema';
 
 class Metrics extends MetricsBase {
+    public core_accountRecovery_screenView_total: Counter<MeProtonCoreObservabilityDomainMetricsAccountRecoveryScreenViewTotal>;
+
+    public core_login_screenView_total: Counter<MeProtonCoreObservabilityDomainMetricsLoginScreenViewTotal>;
+
     public core_signin_auth_total: Counter<MeProtonCoreObservabilityDomainMetricsAuthV4RequestMetric>;
 
     public core_signin_submit_fido_total: Counter<MeProtonCoreObservabilityDomainMetricsSigninSubmitFidoTotal>;
@@ -161,6 +176,8 @@ class Metrics extends MetricsBase {
     public core_signin_submit_mbp_total: Counter<MeProtonCoreObservabilityDomainMetricsSigninSubmitMailboxPasswordTotal>;
 
     public core_signin_submit_totp_total: Counter<MeProtonCoreObservabilityDomainMetricsSigninSubmitTotpTotal>;
+
+    public core_signup_screenView_total: Counter<MeProtonCoreObservabilityDomainMetricsSignupScreenViewTotalV1>;
 
     public core_ui_blocking_error_page_total: Counter<HttpsProtonMeCoreUiBlockingErrorPageTotalV1SchemaJson>;
 
@@ -191,6 +208,8 @@ class Metrics extends MetricsBase {
     public docs_document_updates_total: Counter<HttpsProtonMeDocsDocumentUpdatesTotalV1SchemaJson>;
 
     public docs_failed_websocket_connections_total: Counter<HttpsProtonMeDocsFailedWebsocketConnectionsTotalV1SchemaJson>;
+
+    public docs_homepage_interaction_total: Counter<HttpsProtonMeDocsHomepageInteractionTotalV1SchemaJson>;
 
     public docs_open_documents_heartbeat_total: Counter<HttpsProtonMeDocsOpenDocumentsHeartbeatTotalV2SchemaJson>;
 
@@ -307,6 +326,20 @@ class Metrics extends MetricsBase {
     public core_signup_backButton_total: Counter<WebCoreSignupBackButtonTotal>;
 
     public core_signup_congratulationsStep_displayNameChoice_total: Counter<WebCoreSignupCongratulationsStepDisplayNameChoiceTotal>;
+
+    public core_signup_ctx_createUser_total: Counter<WebCoreSignupCtxCreateUserTotal>;
+
+    public core_signup_ctx_errorPage_total: Counter<WebCoreSignupCtxErrorPageTotal>;
+
+    public core_signup_ctx_initialization_total: Counter<WebCoreSignupCtxInitializationTotal>;
+
+    public core_signup_ctx_login_total: Counter<WebCoreSignupCtxLoginTotal>;
+
+    public core_signup_ctx_setDisplayName_total: Counter<WebCoreSignupCtxSetDisplayNameTotal>;
+
+    public core_signup_ctx_setOrgName_total: Counter<WebCoreSignupCtxSetOrgNameTotal>;
+
+    public core_signup_ctx_setupUser_total: Counter<WebCoreSignupCtxSetupUserTotal>;
 
     public core_signup_exploreStep_login_total: Counter<WebCoreSignupExploreStepLoginTotal>;
 
@@ -443,6 +476,17 @@ class Metrics extends MetricsBase {
     constructor(requestService: IMetricsRequestService) {
         super(requestService);
 
+        this.core_accountRecovery_screenView_total =
+            new Counter<MeProtonCoreObservabilityDomainMetricsAccountRecoveryScreenViewTotal>(
+                { name: 'core_accountRecovery_screenView_total', version: 1 },
+                this.requestService
+            );
+
+        this.core_login_screenView_total = new Counter<MeProtonCoreObservabilityDomainMetricsLoginScreenViewTotal>(
+            { name: 'core_login_screenView_total', version: 1 },
+            this.requestService
+        );
+
         this.core_signin_auth_total = new Counter<MeProtonCoreObservabilityDomainMetricsAuthV4RequestMetric>(
             { name: 'core_signin_auth_total', version: 1 },
             this.requestService
@@ -461,6 +505,11 @@ class Metrics extends MetricsBase {
 
         this.core_signin_submit_totp_total = new Counter<MeProtonCoreObservabilityDomainMetricsSigninSubmitTotpTotal>(
             { name: 'core_signin_submit_totp_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_signup_screenView_total = new Counter<MeProtonCoreObservabilityDomainMetricsSignupScreenViewTotalV1>(
+            { name: 'core_signup_screenView_total', version: 1 },
             this.requestService
         );
 
@@ -543,6 +592,11 @@ class Metrics extends MetricsBase {
                 { name: 'docs_failed_websocket_connections_total', version: 1 },
                 this.requestService
             );
+
+        this.docs_homepage_interaction_total = new Counter<HttpsProtonMeDocsHomepageInteractionTotalV1SchemaJson>(
+            { name: 'docs_homepage_interaction_total', version: 1 },
+            this.requestService
+        );
 
         this.docs_open_documents_heartbeat_total =
             new Counter<HttpsProtonMeDocsOpenDocumentsHeartbeatTotalV2SchemaJson>(
@@ -851,6 +905,41 @@ class Metrics extends MetricsBase {
                 { name: 'web_core_signup_congratulationsStep_displayNameChoice_total', version: 2 },
                 this.requestService
             );
+
+        this.core_signup_ctx_createUser_total = new Counter<WebCoreSignupCtxCreateUserTotal>(
+            { name: 'web_core_signup_ctx_createUser_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_signup_ctx_errorPage_total = new Counter<WebCoreSignupCtxErrorPageTotal>(
+            { name: 'web_core_signup_ctx_errorPage_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_signup_ctx_initialization_total = new Counter<WebCoreSignupCtxInitializationTotal>(
+            { name: 'web_core_signup_ctx_initialization_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_signup_ctx_login_total = new Counter<WebCoreSignupCtxLoginTotal>(
+            { name: 'web_core_signup_ctx_login_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_signup_ctx_setDisplayName_total = new Counter<WebCoreSignupCtxSetDisplayNameTotal>(
+            { name: 'web_core_signup_ctx_setDisplayName_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_signup_ctx_setOrgName_total = new Counter<WebCoreSignupCtxSetOrgNameTotal>(
+            { name: 'web_core_signup_ctx_setOrgName_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_signup_ctx_setupUser_total = new Counter<WebCoreSignupCtxSetupUserTotal>(
+            { name: 'web_core_signup_ctx_setupUser_total', version: 1 },
+            this.requestService
+        );
 
         this.core_signup_exploreStep_login_total = new Counter<WebCoreSignupExploreStepLoginTotal>(
             { name: 'web_core_signup_exploreStep_login_total', version: 2 },
