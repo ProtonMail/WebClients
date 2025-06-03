@@ -153,8 +153,12 @@ export const isValidCustomViewLabel = (label: string): boolean => {
     return Object.keys(CUSTOM_VIEWS).includes(label);
 };
 
+export const isLabelIDNewsletterSubscription = (labelID: string): boolean => {
+    return labelID === CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].label;
+};
+
 export const convertCustomViewLabelsToAlmostAllMail = (labelID: string) => {
-    if (labelID === CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].label) {
+    if (isLabelIDNewsletterSubscription(labelID)) {
         return MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL;
     }
 
