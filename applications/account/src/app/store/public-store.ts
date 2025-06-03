@@ -1,13 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { paymentStatusReducer, plansReducer } from '@proton/account';
+import { apiStatusReducer, paymentStatusReducer, plansReducer } from '@proton/account';
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
 import { type AccountThunkPublicArguments, extraThunkArguments } from './public-thunk';
 
 export const setupStore = () => {
     return configureStore({
-        reducer: { ...paymentStatusReducer, ...plansReducer },
+        reducer: { ...paymentStatusReducer, ...plansReducer, ...apiStatusReducer },
         devTools: process.env.NODE_ENV !== 'production',
         middleware: (getDefaultMiddleware) =>
             getDefaultMiddleware({
