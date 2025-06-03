@@ -4,6 +4,8 @@ import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
+import MessageBodyPlaceholder from 'proton-mail/components/message/MessageBodyPlaceholder';
+
 import MessageBodyPrint from 'proton-mail/components/message/MessageBodyPrint';
 
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
@@ -58,34 +60,7 @@ const EOMessageBody = ({
         >
             {encryptedMode && <pre>{message.data?.Body}</pre>}
             {sourceMode && <pre>{message.decryption?.decryptedBody}</pre>}
-            {(loadingMode || decryptingMode) && (
-                <>
-                    <div
-                        className="message-content-loading-placeholder mb-1 max-w-custom"
-                        style={{ '--max-w-custom': '8em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder mb-1 max-w-custom"
-                        style={{ '--max-w-custom': '50em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder mb-1 max-w-custom"
-                        style={{ '--max-w-custom': '40em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder mb-1 max-w-custom"
-                        style={{ '--max-w-custom': '50em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder mb-1 max-w-custom"
-                        style={{ '--max-w-custom': '15em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder max-w-custom"
-                        style={{ '--max-w-custom': '8em' }}
-                    />
-                </>
-            )}
+            {(loadingMode || decryptingMode) && <MessageBodyPlaceholder margin="small" />}
             {contentMode && (
                 <MailboxContainerContextProvider containerRef={null} elementID={undefined} isResizing={false}>
                     <MessageBodyIframe
