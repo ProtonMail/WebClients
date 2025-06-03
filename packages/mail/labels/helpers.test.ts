@@ -9,6 +9,7 @@ import {
     isCustomFolder,
     isCustomLabel,
     isCustomLabelOrFolder,
+    isLabelIDNewsletterSubscription,
     isStringHumanLabelID,
     isValidCustomViewLabel,
 } from '@proton/mail/labels/helpers';
@@ -135,6 +136,13 @@ describe('label', () => {
         it('should return the original label for non-custom view labels', () => {
             expect(convertCustomViewLabelsToAlmostAllMail('customlabel1')).toEqual('customlabel1');
             expect(convertCustomViewLabelsToAlmostAllMail(MAILBOX_LABEL_IDS.INBOX)).toEqual(MAILBOX_LABEL_IDS.INBOX);
+        });
+    });
+
+    describe('isNewsletterSubscriptionView', () => {
+        it('should detect newsletter subscription view', () => {
+            expect(isLabelIDNewsletterSubscription(CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS)).toBeTruthy();
+            expect(isLabelIDNewsletterSubscription('not-existing')).toBeFalsy();
         });
     });
 
