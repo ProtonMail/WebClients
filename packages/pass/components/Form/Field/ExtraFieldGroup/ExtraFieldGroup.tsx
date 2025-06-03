@@ -3,21 +3,18 @@ import { useSelector } from 'react-redux';
 import type { FormikErrors, FormikProps } from 'formik';
 import { FieldArray } from 'formik';
 
-import type { ButtonLikeShape } from '@proton/atoms/src';
-import type { ThemeColorUnion } from '@proton/colors/types';
 import { selectExtraFieldLimits } from '@proton/pass/store/selectors';
 import type { DeobfuscatedItemExtraField, ExtraFieldGroupValues, ExtraFieldType } from '@proton/pass/types';
 import { autofocusInput } from '@proton/pass/utils/dom/input';
 
 import { Field } from '../Field';
 import { FieldsetCluster } from '../Layout/FieldsetCluster';
-import { AddExtraFieldDropdown } from './AddExtraFieldDropdown';
+import { AddExtraFieldDropdown, CustomButtonProps } from './AddExtraFieldDropdown';
 import { ExtraFieldComponent } from './ExtraField';
 
 export type ExtraFieldGroupProps<V extends ExtraFieldGroupValues> = {
     form: FormikProps<V>;
-    buttonShape?: ButtonLikeShape;
-    buttonColor?: ThemeColorUnion;
+    customButton?: CustomButtonProps;
 };
 
 export const createExtraField = <T extends ExtraFieldType>(type: T): DeobfuscatedItemExtraField => {
@@ -34,11 +31,7 @@ export const createExtraField = <T extends ExtraFieldType>(type: T): Deobfuscate
     }
 };
 
-export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({
-    form,
-    buttonShape,
-    buttonColor,
-}: ExtraFieldGroupProps<T>) => {
+export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({ form, customButton }: ExtraFieldGroupProps<T>) => {
     const { needsUpgrade } = useSelector(selectExtraFieldLimits);
 
     return (
@@ -71,9 +64,7 @@ export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({
                             </FieldsetCluster>
                         )}
 
-                        {!needsUpgrade && (
-                            <AddExtraFieldDropdown onAdd={addCustomField} shape={buttonShape} color={buttonColor} />
-                        )}
+                        {!needsUpgrade && <AddExtraFieldDropdown onAdd={addCustomField} {...customButton} />}
                     </>
                 );
             }}

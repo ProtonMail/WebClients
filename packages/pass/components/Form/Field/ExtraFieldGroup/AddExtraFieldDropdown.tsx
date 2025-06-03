@@ -9,9 +9,15 @@ import type { ExtraFieldType } from '@proton/pass/types';
 
 import { getExtraFieldOptions } from './ExtraField';
 
-type CustomFieldsDropdownProps = { onAdd: (type: ExtraFieldType) => void } & ButtonLikeOwnProps;
+export type CustomButtonProps = ButtonLikeOwnProps & { label?: string };
+type CustomFieldsDropdownProps = { onAdd: (type: ExtraFieldType) => void } & CustomButtonProps;
 
-export const AddExtraFieldDropdown: FC<CustomFieldsDropdownProps> = ({ onAdd, shape = 'ghost', color = 'norm' }) => {
+export const AddExtraFieldDropdown: FC<CustomFieldsDropdownProps> = ({
+    onAdd,
+    shape = 'ghost',
+    color = 'norm',
+    label,
+}) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
 
     const handleAddClick = (type: ExtraFieldType) => {
@@ -30,7 +36,7 @@ export const AddExtraFieldDropdown: FC<CustomFieldsDropdownProps> = ({ onAdd, sh
                 shape={shape}
             >
                 <Icon className="mr-2" name="plus" />
-                <span className="line-height-1">{c('Action').t`Add more`}</span>
+                <span className="line-height-1">{label ?? c('Action').t`Add more`}</span>
             </Button>
             <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={close} originalPlacement="top-start">
                 <DropdownMenu>
