@@ -71,6 +71,8 @@ export const APPS = {
     PROTONPASSBROWSEREXTENSION: 'proton-pass-extension',
     PROTONDOCS: 'proton-docs',
     PROTONDOCSEDITOR: 'proton-docs-editor',
+    PROTONSHEETS: 'proton-sheets',
+    PROTONSHEETSEDITOR: 'proton-sheets-editor',
     PROTONLUMO: 'proton-lumo',
 } as const;
 
@@ -259,6 +261,26 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-docs-editor',
         icon: 'brand-proton', // TODO: brand icon for Docs
         settingsSlug: 'docs-editor',
+        product: Product.Docs,
+    },
+    [APPS.PROTONSHEETS]: {
+        publicPath: '',
+        subdomain: 'sheets',
+        name: SHEETS_APP_NAME,
+        bareName: SHEETS_SHORT_APP_NAME,
+        clientID: 'web-sheets',
+        icon: 'brand-proton', // TODO: brand icon for Sheets
+        settingsSlug: 'sheets',
+        product: Product.Docs,
+    },
+    [APPS.PROTONSHEETSEDITOR]: {
+        publicPath: '',
+        subdomain: 'sheets-editor',
+        name: SHEETS_EDITOR_APP_NAME,
+        bareName: SHEETS_EDITOR_SHORT_APP_NAME,
+        clientID: 'web-sheets-editor',
+        icon: 'brand-proton', // TODO: brand icon for Sheets
+        settingsSlug: 'sheets-editor',
         product: Product.Docs,
     },
     [APPS.PROTONLUMO]: {
