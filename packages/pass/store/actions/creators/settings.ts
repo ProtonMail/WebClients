@@ -31,10 +31,9 @@ export const settingsEditFailure = createAction(
 
 export const settingsEditSuccess = createAction(
     'settings::edit::success',
-    withRequestSuccess((payload: RecursivePartial<ProxiedSettings>, silent?: boolean, endpoint?: ClientEndpoint) =>
+    withRequestSuccess((payload: ProxiedSettings, silent?: boolean, endpoint?: ClientEndpoint) =>
         pipe(
             withCache,
-            withSettings,
             silent
                 ? identity
                 : withNotification({

@@ -56,7 +56,7 @@ const getPassCoreProviderProps = (
     const settings = createSettingsService({
         clear: noop,
         sync: noop,
-        resolve: async () => {
+        read: async () => {
             const data = await getExtensionLocalStorage<LocalStoreData>().getItem('settings');
             if (!data) throw new Error('Missing settings');
             return JSON.parse(data);
@@ -87,7 +87,7 @@ const getPassCoreProviderProps = (
                     .catch(() => false),
         },
         theme: createPassThemeManager({
-            getInitialTheme: async () => theme ?? (await settings.resolve().catch(noop))?.theme,
+            getTheme: async () => theme ?? (await settings.resolve().catch(noop))?.theme,
         }),
 
         generateOTP: (payload) =>

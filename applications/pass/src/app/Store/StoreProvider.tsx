@@ -45,7 +45,6 @@ import {
     selectFeatureFlag,
     selectFilters,
     selectLocale,
-    selectTheme,
 } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -85,12 +84,13 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 getTelemetry: () => telemetry,
                 getDesktopBridge: DESKTOP_BUILD ? () => window.ctxBridge! : undefined,
 
-                onBeforeHydrate: (state) => {
-                    if (selectTheme(state) === undefined && getPersistedSessions().length > 1) {
+                onBeforeHydrate: (state, fromCache) => {
+                    if (!fromCache && getPersistedSessions().length > 1) {
                         /* If the user switched to a new account for the first time, initialize
                          * their settings theme to be the current theme which should have been
-                         * set to the last used account's theme (see `getInitialTheme`). This
-                         * avoids prompting for theme onboarding on account switch. */
+                         * set to the last used account's theme (see `getTheme`). This
+                         * avoids prompting for theme onboarding on account switch. `fromCache`
+                         * will always be false on first app boot. */
                         state.settings.theme = core.theme.getState();
                     }
 
@@ -181,12 +181,13 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                     }
                 },
                 onSettingsUpdated: async (update) => {
-                    void settings.sync(update, authStore.getLocalID());
+                    await settings.sync(update, authStore.getLocalID());
+                    if (update.theme) core.theme.setState(update.theme);
+
                     if (DESKTOP_BUILD) {
                         /** Electron might need to apply or store certain settings, forward them */
                         const desktopBridge = window.ctxBridge;
                         const { clipboard, theme } = update;
-
                         if (theme) desktopBridge?.setTheme(themeOptionToDesktop[theme]).catch(noop);
                         if (clipboard?.timeoutMs) desktopBridge?.setClipboardConfig(clipboard).catch(noop);
                     }
