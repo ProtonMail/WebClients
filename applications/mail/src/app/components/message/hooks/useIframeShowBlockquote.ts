@@ -1,7 +1,7 @@
 import type { RefObject } from 'react';
 import { useEffect, useState } from 'react';
 
-import { MESSAGE_IFRAME_BLOCKQUOTE_ID, MESSAGE_IFRAME_TOGGLE_ID } from '../constants';
+import { MESSAGE_IFRAME_BLOCKQUOTE_ID, MESSAGE_IFRAME_TOGGLE_ID } from '@proton/mail-renderer/constants';
 
 interface Props {
     iframeRef: RefObject<HTMLIFrameElement>;
