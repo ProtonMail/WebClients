@@ -95,7 +95,10 @@ export const NoteNew: FC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCan
                                 minRows={2}
                             />
                         </FieldsetCluster>
-                        <ExtraFieldGroup form={form} buttonShape="solid" buttonColor="weak" />
+                        <ExtraFieldGroup
+                            form={form}
+                            customButton={{ shape: 'solid', color: 'weak', label: c('Action').t`Add field` }}
+                        />
                         <FieldsetCluster className="mt-4">
                             <Field name="files" component={FileAttachmentsField} shareId={form.values.shareId} />
                         </FieldsetCluster>
