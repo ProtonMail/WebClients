@@ -2,6 +2,7 @@ import {
     accountSessionsSlice,
     addressKeysReducer,
     addressesReducer,
+    apiStatusReducer,
     domainsReducer,
     featureTourReducer,
     groupMembersReducer,
@@ -39,6 +40,7 @@ import {
 import { selectPersistModel } from '@proton/redux-utilities';
 
 export const sharedReducers = {
+    ...apiStatusReducer,
     ...userReducer,
     ...userKeysReducer,
     ...plansReducer,
