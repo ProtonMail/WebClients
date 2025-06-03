@@ -180,8 +180,8 @@ const ComposerActions = ({
         }
 
         return isAssistantOpened
-            ? c('Action').t`Show ${BRAND_NAME} Scribe writing assistant`
-            : c('Action').t`Hide ${BRAND_NAME} Scribe writing assistant`;
+            ? c('Action').t`Hide ${BRAND_NAME} Scribe writing assistant`
+            : c('Action').t`Show ${BRAND_NAME} Scribe writing assistant`;
     })();
 
     return (
