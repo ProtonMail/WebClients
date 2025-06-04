@@ -21,7 +21,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { useLoading } from '@proton/hooks';
-import { PLANS, Renew, changeRenewState, onSessionMigrationPaymentsVersion } from '@proton/payments';
+import { PLANS, Renew, changeRenewState, onSessionMigrationPaymentsVersion, useIsB2BTrial } from '@proton/payments';
 import {
     getHas2023OfferCoupon,
     getIsUpcomingSubscriptionUnpaid,
@@ -56,6 +56,9 @@ const SubscriptionsSection = () => {
     const reactivationSource = searchParams.get('source');
 
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
+
+    // Check if we're in a B2B trial
+    const isB2BTrial = useIsB2BTrial(subscription);
 
     if (!subscription || !plans || loadingSubscription || loadingPlans || plansMapLoading) {
         return <Loader />;
@@ -164,12 +167,17 @@ const SubscriptionsSection = () => {
 
     const renewalTextElement = <span data-testid="renewalNotice">{renewalText}</span>;
 
-    const status = subscriptionExpiresSoon
+    const status = isB2BTrial
         ? {
-              type: 'error' as BadgeType,
-              label: c('Subscription status').t`Expiring`,
+              type: 'success' as BadgeType,
+              label: c('Subscription status').t`Free Trial`,
           }
-        : { type: 'success' as BadgeType, label: c('Subscription status').t`Active` };
+        : subscriptionExpiresSoon
+          ? {
+                type: 'error' as BadgeType,
+                label: c('Subscription status').t`Expiring`,
+            }
+          : { type: 'success' as BadgeType, label: c('Subscription status').t`Active` };
 
     return (
         <SettingsSectionWide>
