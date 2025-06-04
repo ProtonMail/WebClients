@@ -1,7 +1,8 @@
 import { Button } from '@proton/atoms'
 import type { ModalStateProps } from '@proton/components'
-import { Checkbox, Icon, ModalTwo, ModalTwoContent, useModalTwoStatic } from '@proton/components'
+import { Checkbox, Icon, ModalTwo, ModalTwoContent, SelectTwo, Option, useModalTwoStatic } from '@proton/components'
 import { SheetImportDestination, SheetImportSeparatorType, type SheetImportData } from '@proton/docs-shared'
+import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
 import clsx from '@proton/utils/clsx'
 import { useRef, useState } from 'react'
 import { c } from 'ttag'
@@ -10,11 +11,14 @@ export interface SheetImportModalProps extends ModalStateProps {
   handleImport: (data: SheetImportData) => void
 }
 
+const MIMETYPES_TO_ACCEPT = [SupportedProtonDocsMimeTypes.csv, SupportedProtonDocsMimeTypes.tsv].join(', ')
+
 function SheetImportModal({ handleImport, onClose, open, ...modalProps }: SheetImportModalProps) {
   const [isOpen, setIsOpen] = useState(open)
 
   const [file, setFile] = useState<File>()
   const [shouldConvertCells, setShouldConvertCells] = useState(true)
+  const [destination, setDestination] = useState<SheetImportDestination>(SheetImportDestination.InsertAsNewSheet)
   const inputRef = useRef<HTMLInputElement>(null)
 
   const closeModal = () => {
@@ -36,7 +40,7 @@ function SheetImportModal({ handleImport, onClose, open, ...modalProps }: SheetI
       <ModalTwoContent className="mx-0 py-4">
         <div className="px-8">
           <h1 className="mb-1.5 text-2xl font-bold">{c('sheets_2025:Title').t`Import data`}</h1>
-          <div className="mb-2 text-[--text-hint]">{c('sheets_2025:Info').t`Select a CSV file to import`}</div>
+          <div className="mb-2 text-[--text-hint]">{c('sheets_2025:Info').t`Select a CSV or TSV file to import`}</div>
           <div className={clsx('flex items-center', file ? 'mb-2' : 'mb-4')}>
             <span className="mr-2 text-[--text-hint]">{c('Label').t`File`}</span>
             {file ? (
@@ -56,7 +60,7 @@ function SheetImportModal({ handleImport, onClose, open, ...modalProps }: SheetI
                   <input
                     ref={inputRef}
                     type="file"
-                    accept="text/csv"
+                    accept={MIMETYPES_TO_ACCEPT}
                     onChange={(event) => {
                       if (!event.target.files || event.target.files.length !== 1) {
                         return
@@ -74,15 +78,25 @@ function SheetImportModal({ handleImport, onClose, open, ...modalProps }: SheetI
           </div>
         </div>
         <div className="border-weak border-y px-8 pb-5 pt-4">
-          <div className="flex gap-2">
-            <div className="flex flex-grow flex-col gap-2">
-              <div className="text-[--text-hint]">{c('sheets_2025:Label').t`Destination`}</div>
-              <div>{c('sheets_2025:Info').t`Insert as new sheet`}</div>
-            </div>
-            <div className="flex flex-grow flex-col gap-2">
-              <div className="text-[--text-hint]">{c('sheets_2025:Label').t`Separator type`}</div>
-              <div>{c('sheets_2025:Info').t`Detect automatically`}</div>
-            </div>
+          <div className="grid grid-cols-2 grid-rows-[auto,1fr] gap-x-4 gap-y-2">
+            <div className="text-[--text-hint] [grid-column:1]">{c('sheets_2025:Label').t`Destination`}</div>
+            <SelectTwo value={destination} onValue={setDestination} className="[grid-column:1]">
+              <Option
+                title={c('sheets_2025:Info').t`Insert as new sheet`}
+                value={SheetImportDestination.InsertAsNewSheet}
+              />
+              <Option
+                title={c('sheets_2025:Info').t`Replace data at selected cell`}
+                value={SheetImportDestination.ReplaceAtSelectedCell}
+              />
+              <Option
+                title={c('sheets_2025:Info').t`Replace current sheet`}
+                value={SheetImportDestination.ReplaceCurrentSheet}
+              />
+            </SelectTwo>
+            <div className="text-[--text-hint] [grid-column:2] [grid-row:1]">{c('sheets_2025:Label')
+              .t`Separator type`}</div>
+            <div className="self-center [grid-column:2]">{c('sheets_2025:Info').t`Detect automatically`}</div>
           </div>
           <div className="h-4" />
           <div className="flex flex-col gap-2">
@@ -109,7 +123,7 @@ function SheetImportModal({ handleImport, onClose, open, ...modalProps }: SheetI
               handleImport({
                 file,
                 shouldConvertCellContents: shouldConvertCells,
-                destination: SheetImportDestination.InsertAsNewSheet,
+                destination,
                 separatorType: SheetImportSeparatorType.DetectAutomatically,
               })
               closeModal()
