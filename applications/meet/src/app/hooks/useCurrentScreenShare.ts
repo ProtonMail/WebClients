@@ -1,11 +1,16 @@
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 
 import { useLocalParticipant, useParticipants } from '@livekit/components-react';
 import { type Track as LiveKitTrack, LocalVideoTrack, Track } from 'livekit-client';
 
+import { useScreenshareResolution } from './useScreenshareResolution';
+
+const increasedVideoQuality = process.env.LIVEKIT_INCREASED_VIDEO_QUALITY === 'true';
+
 export function useCurrentScreenShare() {
     const participants = useParticipants();
     const { localParticipant } = useLocalParticipant();
+    const screenshareResolution = useScreenshareResolution();
 
     const result = useMemo(() => {
         for (const participant of participants) {
@@ -26,7 +31,7 @@ export function useCurrentScreenShare() {
         };
     }, [participants, localParticipant]);
 
-    const stopScreenShare = () => {
+    const stopScreenShare = useCallback(() => {
         const localScreenSharePub = Array.from(localParticipant.trackPublications.values()).find(
             (pub) =>
                 pub.kind === Track.Kind.Video && pub.source === Track.Source.ScreenShare && pub.track && !pub.isMuted
@@ -34,15 +39,15 @@ export function useCurrentScreenShare() {
         if (localScreenSharePub) {
             void localParticipant.unpublishTrack(localScreenSharePub.track!);
         }
-    };
+    }, [localParticipant]);
 
     const startScreenShare = async () => {
         try {
             const stream = await navigator.mediaDevices.getDisplayMedia({
                 video: {
-                    width: { max: 1280 },
-                    height: { max: 720 },
-                    frameRate: 15,
+                    width: { max: screenshareResolution.resolution.width },
+                    height: { max: screenshareResolution.resolution.height },
+                    frameRate: screenshareResolution.encoding.maxFramerate,
                 },
             });
             const [mediaStreamTrack] = stream.getVideoTracks();
@@ -51,6 +56,11 @@ export function useCurrentScreenShare() {
 
             await localParticipant.publishTrack(localTrack, {
                 source: Track.Source.ScreenShare,
+                videoEncoding: {
+                    maxBitrate: screenshareResolution.encoding.maxBitrate,
+                    maxFramerate: screenshareResolution.encoding.maxFramerate,
+                },
+                simulcast: increasedVideoQuality,
             });
 
             mediaStreamTrack.onended = () => {

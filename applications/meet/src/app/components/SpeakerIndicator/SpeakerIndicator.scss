@@ -1,0 +1,97 @@
+.sound-wave .bar {
+	fill: currentcolor;
+	transform-origin: 50% 50%;
+}
+
+.bar1 {
+	animation: wave-short 0.7s infinite ease-in-out 0.07s;
+}
+
+.bar2 {
+	animation: wave-medium 0.7s infinite ease-in-out 0.13s;
+}
+
+.bar3 {
+	animation: wave-center 0.7s infinite ease-in-out 0.19s;
+}
+
+.bar4 {
+	animation: wave-medium 0.7s infinite ease-in-out 0.09s;
+}
+
+.bar5 {
+	animation: wave-short 0.7s infinite ease-in-out 0.15s;
+}
+
+@keyframes wave-short {
+	0%,
+	100% {
+		transform: scaleY(0.7);
+	}
+
+	20% {
+		transform: scaleY(1.1);
+	}
+
+	40% {
+		transform: scaleY(0.8);
+	}
+
+	60% {
+		transform: scaleY(1.2);
+	}
+
+	80% {
+		transform: scaleY(0.9);
+	}
+}
+
+@keyframes wave-medium {
+	0%,
+	100% {
+		transform: scaleY(0.8);
+	}
+
+	15% {
+		transform: scaleY(1.2);
+	}
+
+	35% {
+		transform: scaleY(1);
+	}
+
+	55% {
+		transform: scaleY(1.4);
+	}
+
+	75% {
+		transform: scaleY(1.1);
+	}
+}
+
+@keyframes wave-center {
+	0%,
+	100% {
+		transform: scaleY(1);
+	}
+
+	10% {
+		transform: scaleY(1.5);
+	}
+
+	25% {
+		transform: scaleY(1.2);
+	}
+
+	45% {
+		transform: scaleY(1.8);
+	}
+
+	60% {
+		transform: scaleY(1.3);
+	}
+
+	80% {
+		transform: scaleY(1.6);
+	}
+}

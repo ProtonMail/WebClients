@@ -64,7 +64,7 @@
     --interaction-norm-minor-2: #4e4c8c;
     --interaction-norm-minor-1: #454554;
     --interaction-norm-minor-2: #4e4c8c;
-    --interaction-norm-minor-1: #2c2c4d;
+
     --interaction-norm: #9494ff;
     --interaction-norm-major-1: #9f9fff;
     --interaction-norm-major-2: #a9a9ff;
@@ -113,6 +113,7 @@
     --button-lighter-hover-background-color: #31334a;
     --button-lighter-active-background-color: #4e4c8c;
     --shadow-default-color: 255 255 255;
+
     --stacked-field-border-color: var(--border-norm);
     --ui-pink-interaction-norm-minor-2: #581049;
     --ui-blue-interaction-norm-minor-2: #094a62;

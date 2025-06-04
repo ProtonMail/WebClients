@@ -27,6 +27,7 @@ export const DeviceSelect = ({ value, onValue, options, icon, title, disabled }:
             onValue={onValue}
             size={{ width: DropdownSizeUnit.Anchor, maxWidth: '331px' }}
             caretIconName="chevron-down"
+            caretClassName="color-weak mr-4 caret-icon"
             availablePlacements={['bottom-end']}
             dropdownClassName="device-select--dropdown"
             renderSelected={(selectedValue) => {
@@ -37,7 +38,9 @@ export const DeviceSelect = ({ value, onValue, options, icon, title, disabled }:
                         </div>
                         <div className="flex flex-nowrap flex-column">
                             <div className="color-weak text-sm">{title}</div>
-                            <div>{options.find((option) => option.value === selectedValue)?.label}</div>
+                            <div className={clsx('overflow-hidden text-ellipsis', 'selected-label')}>
+                                {options.find((option) => option.value === selectedValue)?.label}
+                            </div>
                         </div>
                     </div>
                 );

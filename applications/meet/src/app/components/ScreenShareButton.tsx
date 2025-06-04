@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { IcMeetScreenShare } from '@proton/icons';
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';

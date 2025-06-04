@@ -1,11 +1,9 @@
-import React from 'react';
-
 import { PAGE_DIMENSION } from '../constants';
 import { useSortedParticipants } from '../hooks/useSortedParticipants';
 import { ParticipantTile } from './ParticipantTile/ParticipantTile';
 
 export const ParticipantGrid = () => {
-    const { sortedParticipants, pagedParticipants } = useSortedParticipants();
+    const { pagedParticipants, sortedParticipants } = useSortedParticipants();
 
     const gridTemplateColumns = (participantCount: number) => {
         if (participantCount < 4) {
@@ -44,11 +42,11 @@ export const ParticipantGrid = () => {
                     display: 'grid',
                     gridTemplateColumns: gridTemplateColumns(sortedParticipants.length),
                     gridTemplateRows: gridTemplateRows(sortedParticipants.length),
-                    gap: '10px',
+                    gap: '0.3125rem',
                 }}
             >
-                {pagedParticipants.map((participant, index) => {
-                    return <ParticipantTile key={participant.identity} participant={participant} index={index} />;
+                {pagedParticipants.map((participant) => {
+                    return <ParticipantTile key={participant.identity} participant={participant} />;
                 })}
             </div>
         </div>

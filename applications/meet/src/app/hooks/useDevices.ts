@@ -1,6 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
-
-import { useMediaDeviceSelect } from '@livekit/components-react';
+import { useEffect, useState } from 'react';
 
 const getDevices = async (kind: MediaDeviceKind) => {
     const devices = await navigator.mediaDevices.enumerateDevices();
@@ -12,22 +10,42 @@ export const useDevices = () => {
     const [microphones, setMicrophones] = useState<MediaDeviceInfo[]>([]);
     const [speakers, setSpeakers] = useState<MediaDeviceInfo[]>([]);
 
-    // For default device selection
-    const { activeDeviceId: activeAudioInputDeviceId } = useMediaDeviceSelect({
-        kind: 'audioinput',
-    });
-    const { activeDeviceId: activeAudioOutputDeviceId } = useMediaDeviceSelect({
-        kind: 'audiooutput',
-    });
-    const { activeDeviceId: activeVideoDeviceId } = useMediaDeviceSelect({
-        kind: 'videoinput',
-    });
-
     const updateAllDevices = async () => {
         setCameras(await getDevices('videoinput'));
         setMicrophones(await getDevices('audioinput'));
         setSpeakers(await getDevices('audiooutput'));
     };
+
+    const requestPermissions = async () => {
+        // Helper to check permission state
+        const checkPermission = async (name: PermissionName) => {
+            if (navigator.permissions) {
+                try {
+                    const status = await navigator.permissions.query({ name });
+                    return status.state;
+                } catch {
+                    return 'prompt';
+                }
+            }
+            return 'prompt';
+        };
+
+        const cameraState = await checkPermission('camera' as PermissionName);
+        if (cameraState !== 'granted') {
+            const videoStream = await navigator.mediaDevices.getUserMedia({ video: true });
+            videoStream.getTracks().forEach((track) => track.stop());
+        }
+
+        const micState = await checkPermission('microphone' as PermissionName);
+        if (micState !== 'granted') {
+            const audioStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            audioStream.getTracks().forEach((track) => track.stop());
+        }
+    };
+
+    useEffect(() => {
+        void requestPermissions();
+    }, []);
 
     useEffect(() => {
         void updateAllDevices();
@@ -55,7 +73,10 @@ export const useDevices = () => {
         void setupPermissions();
 
         return () => {
-            navigator.mediaDevices.removeEventListener('devicechange', updateAllDevices);
+            if (navigator.mediaDevices && navigator.mediaDevices.removeEventListener) {
+                navigator.mediaDevices.removeEventListener('devicechange', updateAllDevices);
+            }
+
             if (cameraPerm) {
                 cameraPerm.onchange = null;
             }
@@ -65,21 +86,9 @@ export const useDevices = () => {
         };
     }, []);
 
-    const defaultMicrophone = useMemo(
-        () =>
-            microphones.find((mic) => mic.deviceId === activeAudioInputDeviceId) ?? (microphones[0] as MediaDeviceInfo),
-        [microphones, activeAudioInputDeviceId]
-    );
-    const defaultCamera = useMemo(
-        () => cameras.find((cam) => cam.deviceId === activeVideoDeviceId) ?? (cameras[0] as MediaDeviceInfo),
-        [cameras, activeVideoDeviceId]
-    );
-    const defaultSpeaker = useMemo(
-        () =>
-            speakers.find((speaker) => speaker.deviceId === activeAudioOutputDeviceId) ??
-            (speakers[0] as MediaDeviceInfo),
-        [speakers, activeAudioOutputDeviceId]
-    );
+    const defaultMicrophone = microphones[0];
+    const defaultCamera = cameras[0];
+    const defaultSpeaker = speakers[0];
 
     return {
         cameras,

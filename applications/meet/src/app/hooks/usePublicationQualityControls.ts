@@ -1,19 +1,24 @@
 import { useEffect, useRef } from 'react';
 
 import { useLocalParticipant } from '@livekit/components-react';
-import type { LocalVideoTrack, RemoteTrackPublication } from 'livekit-client';
-import { RemoteParticipant, Track, VideoQuality } from 'livekit-client';
+import type { RemoteParticipant, RemoteTrackPublication } from 'livekit-client';
+import { Track, VideoQuality } from 'livekit-client';
 
 import { useMeetContext } from '../contexts/MeetContext';
 import { useSortedParticipants } from './useSortedParticipants';
+import { useVideoToggle } from './useVideoToggle';
+
+const increasedVideoQuality = process.env.LIVEKIT_INCREASED_VIDEO_QUALITY === 'true';
 
 export const usePublicationQualityControls = () => {
     const { sortedParticipants, pagedParticipants } = useSortedParticipants();
-    const { quality, videoDeviceId, resolution } = useMeetContext();
+    const { quality, videoDeviceId, isVideoEnabled } = useMeetContext();
     const { localParticipant } = useLocalParticipant();
 
     const prevSortedParticipants = useRef(sortedParticipants);
     const prevPagedParticipants = useRef(pagedParticipants);
+
+    const toggleVideo = useVideoToggle();
 
     const compareParticipants = () => {
         let hasChanged = false;
@@ -52,46 +57,45 @@ export const usePublicationQualityControls = () => {
 
     useEffect(() => {
         sortedParticipants.forEach((participant) => {
-            if (!(participant instanceof RemoteParticipant)) {
+            if (participant.identity === localParticipant.identity) {
                 return;
             }
 
-            Array.from(participant.trackPublications.values()).forEach((publication) => {
-                if (
-                    publication.kind === Track.Kind.Video &&
-                    typeof (publication as any).setVideoQuality === 'function'
-                ) {
-                    const isPaged = pagedParticipants.includes(participant);
+            Array.from((participant as RemoteParticipant).trackPublications.values()).forEach(
+                (publication: RemoteTrackPublication) => {
+                    if (
+                        publication.kind === Track.Kind.Video &&
+                        publication.source !== Track.Source.ScreenShare &&
+                        typeof publication.setVideoQuality === 'function'
+                    ) {
+                        const isPaged = pagedParticipants.includes(participant);
 
-                    if (isPaged) {
-                        (publication as RemoteTrackPublication).setVideoQuality(quality);
+                        if (isPaged) {
+                            if (increasedVideoQuality) {
+                                publication.setVideoQuality(quality);
+                            }
 
-                        if (!publication.isSubscribed) {
-                            (publication as RemoteTrackPublication).setSubscribed(true);
-                        }
-                    } else {
-                        (publication as RemoteTrackPublication).setVideoQuality(VideoQuality.LOW);
+                            if (!publication.isSubscribed) {
+                                publication.setSubscribed(true);
+                            }
+                        } else {
+                            if (increasedVideoQuality) {
+                                publication.setVideoQuality(VideoQuality.LOW);
+                            }
 
-                        if (publication.isSubscribed) {
-                            (publication as RemoteTrackPublication).setSubscribed(false);
+                            if (publication.isSubscribed) {
+                                publication.setSubscribed(false);
+                            }
                         }
                     }
                 }
-            });
+            );
         });
     }, [hasParticipantsChanged, quality]);
 
     useEffect(() => {
-        localParticipant.trackPublications.forEach((publication) => {
-            if (publication.kind === Track.Kind.Video) {
-                void (publication?.videoTrack as LocalVideoTrack)?.restartTrack({
-                    deviceId: videoDeviceId,
-                    resolution: {
-                        width: Number(resolution?.split('x')[0]),
-                        height: Number(resolution?.split('x')[1]),
-                    },
-                });
-            }
-        });
-    }, [resolution, videoDeviceId]);
+        if (isVideoEnabled) {
+            void toggleVideo({ isEnabled: true, videoDeviceId, forceUpdate: true });
+        }
+    }, [videoDeviceId, toggleVideo]);
 };

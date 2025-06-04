@@ -4,6 +4,17 @@
 .device-select {
 	&#{&} {
 		padding-inline: 1.5rem;
+		border-color: var(--border-norm) !important;
+		outline: none;
+		box-shadow: none !important;
+	}
+
+	.caret-icon {
+		margin-inline-start: 1rem !important;
+	}
+
+	.selected-label {
+		white-space: nowrap;
 	}
 }
 

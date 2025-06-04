@@ -1,15 +1,15 @@
 import { useMemo } from 'react';
 
 import { useLocalParticipant, useParticipants } from '@livekit/components-react';
+import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 
-import { PAGE_SIZE } from '../constants';
 import { useMeetContext } from '../contexts/MeetContext';
 import { useDebouncedActiveSpeakers } from './useDebouncedActiveSpeakers';
 
 const shouldAllowExperimentalActiveSpeakerOrdering = process.env.EXPERIMENTAL_ACTIVE_SPEAKER_ORDERING === 'true';
 
 export const useSortedParticipants = () => {
-    const { page } = useMeetContext();
+    const { page, pageSize, selfView } = useMeetContext();
 
     const participants = useParticipants();
 
@@ -18,12 +18,25 @@ export const useSortedParticipants = () => {
     const localIdentity = localParticipant?.identity;
     const activeIdentities = new Set(activeSpeakers.map((p) => p.identity));
 
-    const sortedParticipants = useMemo(() => {
+    const sortedParticipants: (RemoteParticipant | LocalParticipant)[] = useMemo(() => {
+        const participantsWithDisplayColors = participants.map(
+            (participant, index) =>
+                ({
+                    ...participant,
+                    metadata: JSON.stringify({
+                        ...JSON.parse(participant.metadata || '{}'),
+                        profileColor: `profile-background-${(index % 6) + 1}`,
+                        backgroundColor: `meet-background-${(index % 6) + 1}`,
+                        borderColor: `tile-border-${(index % 6) + 1}`,
+                    }),
+                }) as RemoteParticipant | LocalParticipant
+        );
+
         if (!shouldAllowExperimentalActiveSpeakerOrdering) {
-            return participants;
+            return participantsWithDisplayColors;
         }
 
-        return [...participants].sort((a, b) => {
+        return [...participantsWithDisplayColors].sort((a, b) => {
             const aActive = activeIdentities.has(a.identity);
             const bActive = activeIdentities.has(b.identity);
             if (aActive && !bActive) {
@@ -42,10 +55,18 @@ export const useSortedParticipants = () => {
         });
     }, [participants, activeSpeakers, localIdentity]);
 
-    const pagedParticipants = useMemo(() => {
-        const start = page * PAGE_SIZE;
-        return sortedParticipants.slice(start, start + PAGE_SIZE);
-    }, [sortedParticipants, page]);
+    const filteredParticipants = useMemo(
+        () =>
+            sortedParticipants.filter((participant) =>
+                selfView ? true : participants.length === 1 || participant.identity !== localParticipant.identity
+            ),
+        [participants, selfView, localParticipant]
+    );
 
-    return { sortedParticipants, pagedParticipants, pageCount: Math.ceil(sortedParticipants.length / PAGE_SIZE) };
+    const pagedParticipants = useMemo(() => {
+        const start = page * pageSize;
+        return filteredParticipants.slice(start, start + pageSize);
+    }, [filteredParticipants, page, pageSize]);
+
+    return { sortedParticipants, pagedParticipants, pageCount: Math.ceil(sortedParticipants.length / pageSize) };
 };

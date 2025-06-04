@@ -29,11 +29,15 @@ const getApis = (config: ProtonConfig) => {
 };
 
 const getSession = async ({ authentication, api }: Pick<ProtonThunkArguments, 'authentication' | 'api'>) => {
+    const guestUrl =
+        window.location.pathname.replace(/\/$/, '') + '/guest' + window.location.search + window.location.hash;
+
     const sessionResult = await bootstrap.loadSession({
         authentication,
         api,
         pathname: window.location.pathname,
         searchParams: new URLSearchParams(window.location.search),
+        unauthenticatedReturnUrl: guestUrl,
     });
 
     return sessionResult as SessionPayloadData;

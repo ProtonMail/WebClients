@@ -263,13 +263,14 @@ export type IconName =
     | 'meet-camera-filled'
     | 'meet-camera-filled-off'
     | 'meet-chat'
+    | 'meet-connection-indicator'
+    | 'meet-copy'
     | 'meet-microphone'
     | 'meet-microphone-off'
     | 'meet-microphone-filled'
     | 'meet-microphone-filled-off'
     | 'meet-screen-share'
     | 'meet-speaker'
-    | 'meet-speaker-indicator'
     | 'meet-participants'
     | 'meet-user'
     | 'minus'
@@ -690,13 +691,14 @@ export { IcMeetCameraOff } from './icons/IcMeetCameraOff';
 export { IcMeetCameraFilled } from './icons/IcMeetCameraFilled';
 export { IcMeetCameraFilledOff } from './icons/IcMeetCameraFilledOff';
 export { IcMeetChat } from './icons/IcMeetChat';
+export { IcMeetConnectionIndicator } from './icons/IcMeetConnectionIndicator';
+export { IcMeetCopy } from './icons/IcMeetCopy';
 export { IcMeetMicrophone } from './icons/IcMeetMicrophone';
 export { IcMeetMicrophoneOff } from './icons/IcMeetMicrophoneOff';
 export { IcMeetMicrophoneFilled } from './icons/IcMeetMicrophoneFilled';
 export { IcMeetMicrophoneFilledOff } from './icons/IcMeetMicrophoneFilledOff';
 export { IcMeetScreenShare } from './icons/IcMeetScreenShare';
 export { IcMeetSpeaker } from './icons/IcMeetSpeaker';
-export { IcMeetSpeakerIndicator } from './icons/IcMeetSpeakerIndicator';
 export { IcMeetParticipants } from './icons/IcMeetParticipants';
 export { IcMeetUser } from './icons/IcMeetUser';
 export { IcMinus } from './icons/IcMinus';

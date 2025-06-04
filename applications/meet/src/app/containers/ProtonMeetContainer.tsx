@@ -3,21 +3,31 @@ import { useCallback, useRef, useState } from 'react';
 import { RoomContext } from '@livekit/components-react';
 import { Room } from 'livekit-client';
 
-import { getE2EEOptions } from '../setupWorker';
-import { LoadingState, type ParticipantSettings } from '../types';
+import { useQualityLevel } from '../hooks/useQualityLevel';
+import { qualityConstants } from '../qualityConstants';
+import { LoadingState, type ParticipantSettings, QualityScenarios } from '../types';
 import { createToken } from '../utils/createToken';
+import { getE2EEOptions } from '../utils/getE2EEOptions';
 import { MeetContainer } from './MeetContainer';
 import { PrejoinContainer } from './PrejoinContainer';
 
 const ROOM_KEY = process.env.LIVEKIT_ROOM_KEY as string;
 
-export const ProtonMeetContainer = () => {
+interface ProtonMeetContainerProps {
+    guestMode?: boolean;
+}
+
+export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerProps) => {
     const roomRef = useRef<Room | null>(null);
 
     const [participantSettings, setParticipantSettings] = useState<ParticipantSettings | null>(null);
 
     const [joiningInProgress, setJoiningInProgress] = useState(false);
     const [joinedRoom, setJoinedRoom] = useState(false);
+
+    const defaultQuality = useQualityLevel();
+
+    const defaultResolution = qualityConstants[QualityScenarios.Default][defaultQuality];
 
     const handleJoin = useCallback(
         async (participantSettings: ParticipantSettings) => {
@@ -31,9 +41,15 @@ export const ProtonMeetContainer = () => {
             try {
                 const e2eeOptions = await getE2EEOptions(ROOM_KEY);
 
-                console.log(participantSettings?.isFaceTrackingEnabled);
-
-                const room = new Room(e2eeOptions);
+                const room = new Room({
+                    ...e2eeOptions,
+                    videoCaptureDefaults: {
+                        resolution: defaultResolution.resolution,
+                    },
+                    publishDefaults: {
+                        videoEncoding: defaultResolution.encoding,
+                    },
+                });
 
                 const token = await createToken({
                     identity: crypto.randomUUID(),
@@ -56,6 +72,11 @@ export const ProtonMeetContainer = () => {
         [joiningInProgress, setJoiningInProgress, participantSettings]
     );
 
+    const handleLeave = useCallback(() => {
+        void roomRef.current?.disconnect();
+        setJoinedRoom(false);
+    }, []);
+
     return (
         <div className="h-full w-full">
             {joinedRoom && roomRef.current && participantSettings ? (
@@ -68,6 +89,7 @@ export const ProtonMeetContainer = () => {
                         setVideoDeviceId={(deviceId) =>
                             setParticipantSettings({ ...participantSettings, videoDeviceId: deviceId })
                         }
+                        handleLeave={handleLeave}
                     />
                 </RoomContext.Provider>
             ) : (
@@ -75,6 +97,7 @@ export const ProtonMeetContainer = () => {
                     handleJoin={handleJoin}
                     loadingState={LoadingState.JoiningInProgress}
                     isLoading={joiningInProgress}
+                    guestMode={guestMode}
                 />
             )}
         </div>

@@ -5,7 +5,6 @@
 	inline-size: rem(56);
 	block-size: rem(56);
 	background-color: var(--circle-button-bg, var(--interaction-weak-minor-1)) !important;
-	color: var(--circle-button-color, var(--text-norm));
 
 	&:hover {
 		background-color: var(--circle-button-bg, var(--interaction-weak-minor-1)) !important;
@@ -14,6 +13,8 @@
 
 .circle-button-active {
 	--circle-button-bg: var(--primary);
+
+	color: var(--text-invert) !important;
 }
 
 .circle-button-default {

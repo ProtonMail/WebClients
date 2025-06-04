@@ -1,0 +1,17 @@
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+.animate-fade-out {
+	animation: fadeOut 0.4s forwards;
+}
+
+.border-strong {
+	border-color: var(--border-strong) !important;
+}
