@@ -11,3 +11,8 @@ export declare namespace clipboard {
     export function writeText(text: string, sensitive: boolean): Promise<void>;
     export function read(): Promise<string>;
 }
+export declare namespace autotype {
+    export function text(text: string): Promise<void>;
+    export function tab(): Promise<void>;
+    export function enter(): Promise<void>;
+}
