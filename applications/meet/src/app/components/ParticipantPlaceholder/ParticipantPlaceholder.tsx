@@ -2,28 +2,31 @@ import type { Participant } from 'livekit-client';
 
 import clsx from '@proton/utils/clsx';
 
+import { getParticipantDisplayColors } from '../../utils/getParticipantDisplayColors';
+
 import './ParticipantPlaceholder.scss';
 
 interface ParticipantPlaceholderProps {
     participant: Participant;
-    index: number;
 }
 
-export const ParticipantPlaceholder = ({ participant, index }: ParticipantPlaceholderProps) => {
+export const ParticipantPlaceholder = ({ participant }: ParticipantPlaceholderProps) => {
     const nameParts = participant.name?.split(' ');
+
+    const { backgroundColor, profileColor } = getParticipantDisplayColors(participant);
 
     return (
         <div
             className={clsx(
                 'flex items-center justify-center w-full h-full rounded-xl',
-                `meet-background-${(index % 6) + 1}`,
+                backgroundColor,
                 'participant-placeholder'
             )}
         >
             <div
                 className={clsx(
                     'text-center align-middle rounded-50 flex items-center justify-center color-invert text-semibold text-3xl w-custom h-custom',
-                    `profile-background-${(index % 6) + 1}`
+                    profileColor
                 )}
                 style={{
                     '--w-custom': '5rem',

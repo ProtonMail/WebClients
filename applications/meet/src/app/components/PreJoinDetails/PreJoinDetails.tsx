@@ -23,7 +23,7 @@ export const PreJoinDetails = ({
     return (
         <div className="flex flex-nowrap flex-column gap-4 w-custom" style={{ '--w-custom': '22.625rem' }}>
             <h1 className="h2 text-center">Join Meeting</h1>
-            <p className="text-center text-weak">
+            <p className="text-center color-weak">
                 Our end‑to‑end encrypted meeting app gives communication privacy and freedom to all.
             </p>
             <InputFieldStackedGroup classname="mb-4 w-full">
@@ -54,6 +54,7 @@ export const PreJoinDetails = ({
                 size="large"
                 fullWidth
                 onClick={() => onJoinMeeting({ meetingLink, displayName })}
+                disabled={!meetingLink || !displayName}
             >
                 Ask to join
             </Button>

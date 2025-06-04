@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import { useRoomContext } from '@livekit/components-react';
+import { useRoomContext, useSpeakingParticipants } from '@livekit/components-react';
 import { type Participant } from 'livekit-client';
 
 export function useDebouncedActiveSpeakers(delayMs = 1000) {
     const room = useRoomContext();
+    const currentActiveSpeakers = useSpeakingParticipants();
     const [activeSpeakers, setActiveSpeakers] = useState<Participant[]>([]);
     const activeSpeakersRef = useRef<Participant[]>(activeSpeakers);
     const removalTimeouts = useRef<Map<string, ReturnType<typeof setTimeout>>>(new Map());
@@ -14,11 +15,13 @@ export function useDebouncedActiveSpeakers(delayMs = 1000) {
     }, [activeSpeakers]);
 
     const updateActiveSpeakers = useCallback(() => {
-        const current = room.activeSpeakers;
         const prev = activeSpeakersRef.current;
 
         prev.forEach((p) => {
-            if (!current.some((cp) => cp.identity === p.identity) && !removalTimeouts.current.has(p.identity)) {
+            if (
+                !currentActiveSpeakers.some((cp) => cp.identity === p.identity) &&
+                !removalTimeouts.current.has(p.identity)
+            ) {
                 const timeout = setTimeout(() => {
                     setActiveSpeakers((latest) => latest.filter((ap) => ap.identity !== p.identity));
                     removalTimeouts.current.delete(p.identity);
@@ -27,7 +30,7 @@ export function useDebouncedActiveSpeakers(delayMs = 1000) {
             }
         });
 
-        current.forEach((p) => {
+        currentActiveSpeakers.forEach((p) => {
             const timeout = removalTimeouts.current.get(p.identity);
             if (timeout) {
                 clearTimeout(timeout);
@@ -35,8 +38,8 @@ export function useDebouncedActiveSpeakers(delayMs = 1000) {
             }
         });
 
-        const prevInGrace = prev.filter((p) => !current.some((cp) => cp.identity === p.identity));
-        const union = [...current, ...prevInGrace];
+        const prevInGrace = prev.filter((p) => !currentActiveSpeakers.some((cp) => cp.identity === p.identity));
+        const union = [...currentActiveSpeakers, ...prevInGrace];
         const seen = new Set<string>();
         const next = union.filter((p) => {
             if (seen.has(p.identity)) {
@@ -48,7 +51,7 @@ export function useDebouncedActiveSpeakers(delayMs = 1000) {
 
         setActiveSpeakers(next);
         activeSpeakersRef.current = next;
-    }, [room, delayMs]);
+    }, [currentActiveSpeakers, delayMs]);
 
     useEffect(() => {
         if (!room) {

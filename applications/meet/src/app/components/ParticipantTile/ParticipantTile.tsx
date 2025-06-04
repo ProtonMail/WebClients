@@ -1,17 +1,21 @@
+import { useLocalParticipant } from '@livekit/components-react';
 import { type Participant, Track } from 'livekit-client';
 
 import { IcMeetMicrophone, IcMeetMicrophoneOff } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
 import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
+import { useMeetContext } from '../../contexts/MeetContext';
 import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStatus';
+import { getParticipantDisplayColors } from '../../utils/getParticipantDisplayColors';
+import { ConnectionIndicator } from '../ConnectionIndicator/ConnectionIndicator';
 import { ParticipantPlaceholder } from '../ParticipantPlaceholder/ParticipantPlaceholder';
 
 import './ParticipantTile.scss';
 
 interface ParticipantTileProps {
     participant: Participant;
-    index: number;
+    smallView?: boolean;
 }
 
 const getCameraVideoPublication = (participant: Participant) => {
@@ -20,7 +24,9 @@ const getCameraVideoPublication = (participant: Participant) => {
     );
 };
 
-export const ParticipantTile = ({ participant, index }: ParticipantTileProps) => {
+export const ParticipantTile = ({ participant, smallView = false }: ParticipantTileProps) => {
+    const { localParticipant } = useLocalParticipant();
+    const { shouldShowConnectionIndicator } = useMeetContext();
     const cameraVideoPublication = getCameraVideoPublication(participant);
     const audioPublication = Array.from(participant.trackPublications.values()).find(
         (pub) => pub.kind === Track.Kind.Audio && pub.track
@@ -32,30 +38,68 @@ export const ParticipantTile = ({ participant, index }: ParticipantTileProps) =>
 
     const isSpeaking = useDebouncedSpeakingStatus(participant);
 
-    const speakingIndicatorClassName = shouldShowVideo ? 'tile-border-1' : `tile-border-${(index % 6) + 1}`;
+    const { borderColor } = getParticipantDisplayColors(participant);
+
+    const speakingIndicatorClassName = shouldShowVideo ? getParticipantDisplayColors({}).borderColor : borderColor;
+
+    const isLocalParticipant = participant.identity === localParticipant.identity;
+
+    // @ts-ignore
+    const connectionQuality = participant._connectionQuality;
 
     return (
         <div
             className={clsx(
                 'participant-tile-body',
-                'relative rounded-xl w-full h-full flex flex-nowrap items-center justify-center',
-                isSpeaking && speakingIndicatorClassName
+                'relative rounded-xl w-full h-full flex flex-nowrap items-center justify-center'
             )}
         >
+            <div
+                className="absolute top-custom right-custom flex items-center justify-center gap-2"
+                style={{
+                    '--top-custom': smallView ? '0.5rem' : '1.25rem',
+                    '--right-custom': smallView ? '0.5rem' : '1.25rem',
+                }}
+            >
+                {isSpeaking && <SpeakingIndicator size={32} iconSize={5} />}
+                {shouldShowConnectionIndicator && <ConnectionIndicator connectionQuality={connectionQuality} />}
+            </div>
+
             {isSpeaking && (
-                <div
-                    style={{
-                        position: 'absolute',
-                        top: 20,
-                        right: 20,
-                    }}
-                >
-                    <SpeakingIndicator size={32} iconSize={5} />
-                </div>
+                <>
+                    <div
+                        className={clsx(
+                            'absolute top-0 left-0 w-full h-full z-up rounded-xl',
+                            isSpeaking && speakingIndicatorClassName
+                        )}
+                    />
+                </>
+            )}
+
+            {shouldShowVideo ? (
+                <>
+                    <div className="gradient-overlay absolute top-0 left-0 w-full h-full" />
+                    <video
+                        className="participant-tile-body__video bg-strong w-full h-full rounded-xl"
+                        ref={(el) => {
+                            if (el && cameraVideoPublication?.track) {
+                                cameraVideoPublication.track.attach(el);
+                            }
+                        }}
+                        muted={participant.isLocal}
+                        style={{ transform: isLocalParticipant ? 'scaleX(-1)' : undefined }}
+                    />
+                </>
+            ) : (
+                <ParticipantPlaceholder participant={participant} />
             )}
             <div
-                className="color-norm flex flex-nowrap items-center absolute left-custom bottom-custom"
-                style={{ '--left-custom': '20px', '--bottom-custom': '20px', gap: '0.625rem' }}
+                className="color-norm flex flex-nowrap items-center absolute left-custom bottom-custom z-up"
+                style={{
+                    '--left-custom': smallView ? '0.75rem' : '1.25rem',
+                    '--bottom-custom': smallView ? '0.5rem' : '1.25rem',
+                    gap: '0.625rem',
+                }}
             >
                 {audioIsOn ? (
                     <IcMeetMicrophone size={4} viewBox="0 0 24 24" />
@@ -64,19 +108,6 @@ export const ParticipantTile = ({ participant, index }: ParticipantTileProps) =>
                 )}
                 {participant.name}
             </div>
-            {shouldShowVideo ? (
-                <video
-                    className="participant-tile-body__video bg-strong w-full h-full rounded-xl"
-                    ref={(el) => {
-                        if (el && cameraVideoPublication?.track) {
-                            cameraVideoPublication.track.attach(el);
-                        }
-                    }}
-                    muted={participant.isLocal}
-                />
-            ) : (
-                <ParticipantPlaceholder participant={participant} index={index} />
-            )}
         </div>
     );
 };

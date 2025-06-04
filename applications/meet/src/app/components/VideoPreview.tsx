@@ -78,7 +78,7 @@ export const VideoPreview = ({ isCameraEnabled, hasCameraPermission, selectedCam
             ref={videoRef}
             autoPlay
             playsInline
-            style={{ objectFit: 'contain', background: '#000' }}
+            style={{ objectFit: 'contain', background: '#000', transform: 'scaleX(-1)' }}
         />
     );
 };

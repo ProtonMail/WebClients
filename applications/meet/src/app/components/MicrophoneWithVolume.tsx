@@ -3,8 +3,8 @@ import { IcMeetMicrophone } from '@proton/icons';
 
 import { useMicrophoneVolume } from '../hooks/useMicrophoneVolume';
 
-const normalSpeakingMinThreshold = 0.03;
-const normalSpeakingThreshold = 0.2; // For normal speaking the volume is usually between 0 and 0.2
+const normalSpeakingMinThreshold = 0.01;
+const normalSpeakingThreshold = 0.08;
 const volumeUpdateThrottleMs = 100;
 
 interface MicrophoneWithVolumeProps {

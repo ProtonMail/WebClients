@@ -1,13 +1,16 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { useLocalParticipant } from '@livekit/components-react';
 import type { LocalVideoTrack } from 'livekit-client';
 import { VideoQuality } from 'livekit-client';
 import { createLocalTracks } from 'livekit-client';
 
 import { MeetingBody } from '../components/MeetingBody/MeetingBody';
+import { PAGE_SIZE } from '../constants';
 import { MeetContext } from '../contexts/MeetContext';
-import type { ParticipantSettings } from '../types';
+import { useAudioToggle } from '../hooks/useAudioToggle';
+import { useVideoToggle } from '../hooks/useVideoToggle';
+import type { MeetChatMessage, ParticipantEventRecord } from '../types';
+import { MeetingSideBars, type ParticipantSettings, PopUpControls } from '../types';
 
 const shouldAllowExperimentalFaceCrop = process.env.EXPERIMENTAL_FACE_CROP === 'true';
 
@@ -19,23 +22,63 @@ export const MeetContainer = ({
         roomName,
         isAudioEnabled,
         isVideoEnabled,
+        meetingLink,
     },
     setAudioDeviceId,
     setVideoDeviceId,
+    handleLeave,
 }: {
     participantSettings: ParticipantSettings;
     setAudioDeviceId: (deviceId: string) => void;
     setVideoDeviceId: (deviceId: string) => void;
+    handleLeave: () => void;
 }) => {
     const [quality, setQuality] = useState<VideoQuality>(VideoQuality.HIGH);
     const [page, setPage] = useState(0);
-    const [isParticipantsOpen, setIsParticipantsOpen] = useState(false);
-    const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+    const [pageSize, setPageSize] = useState(PAGE_SIZE);
     const [resolution, setResolution] = useState<string | null>(null);
-
     const [faceTrack, setFaceTrack] = useState<LocalVideoTrack | null>(null);
 
-    const { localParticipant } = useLocalParticipant();
+    const [chatMessages, setChatMessages] = useState<MeetChatMessage[]>([]);
+    const [participantEvents, setParticipantEvents] = useState<ParticipantEventRecord[]>([]);
+
+    const [sideBarState, setSideBarState] = useState({
+        [MeetingSideBars.Participants]: false,
+        [MeetingSideBars.Settings]: false,
+        [MeetingSideBars.Chat]: false,
+        [MeetingSideBars.MeetingDetails]: false,
+    });
+
+    const [popupState, setPopupState] = useState({
+        [PopUpControls.Microphone]: false,
+        [PopUpControls.Camera]: false,
+    });
+
+    const [selfView, setSelfView] = useState(true);
+    const [shouldShowConnectionIndicator, setShouldShowConnectionIndicator] = useState(false);
+
+    const toggleVideo = useVideoToggle();
+    const toggleAudio = useAudioToggle();
+
+    const toggleSideBarState = (sidebar: MeetingSideBars) => {
+        setSideBarState((prev) => {
+            const newSidebards = Object.fromEntries(
+                Object.entries(prev).map(([key, value]) => [key, key === sidebar ? !value : false])
+            ) as Record<MeetingSideBars, boolean>;
+
+            return newSidebards;
+        });
+    };
+
+    const togglePopupState = (popup: PopUpControls) => {
+        setPopupState((prev) => {
+            const newPopupState = Object.fromEntries(
+                Object.entries(prev).map(([key, value]) => [key, key === popup ? !value : false])
+            ) as Record<PopUpControls, boolean>;
+
+            return newPopupState;
+        });
+    };
 
     const setupFaceTracking = useCallback(async () => {
         if (!isFaceTrackingEnabled || !shouldAllowExperimentalFaceCrop) {
@@ -63,12 +106,8 @@ export const MeetContainer = ({
     }, [isFaceTrackingEnabled, videoDeviceId]);
 
     const setupMediaDevices = useCallback(async () => {
-        const videoInfo = isVideoEnabled ? { deviceId: { exact: videoDeviceId as string } } : false;
-        const video = isFaceTrackingEnabled ? false : videoInfo;
-
-        const audio = isAudioEnabled ? { deviceId: { exact: audioDeviceId as string } } : false;
-        await localParticipant.setMicrophoneEnabled(!!audio, typeof audio !== 'boolean' ? audio : undefined);
-        await localParticipant.setCameraEnabled(!!video, typeof video !== 'boolean' ? video : undefined);
+        void toggleVideo({ isEnabled: isVideoEnabled, videoDeviceId, isFaceTrackingEnabled });
+        void toggleAudio({ isEnabled: isAudioEnabled, audioDeviceId });
     }, []);
 
     useEffect(() => {
@@ -87,17 +126,30 @@ export const MeetContainer = ({
                     quality,
                     setPage,
                     setQuality,
-                    isParticipantsOpen,
-                    setIsParticipantsOpen,
                     audioDeviceId,
                     videoDeviceId,
                     setAudioDeviceId,
                     setVideoDeviceId,
                     roomName,
-                    isSettingsOpen,
-                    setIsSettingsOpen,
                     resolution,
                     setResolution,
+                    meetingLink,
+                    sideBarState,
+                    toggleSideBarState,
+                    popupState,
+                    togglePopupState,
+                    chatMessages,
+                    setChatMessages,
+                    participantEvents,
+                    setParticipantEvents,
+                    selfView,
+                    setSelfView,
+                    shouldShowConnectionIndicator,
+                    setShouldShowConnectionIndicator,
+                    pageSize,
+                    setPageSize,
+                    handleLeave,
+                    isVideoEnabled,
                 }}
             >
                 <MeetingBody isFaceTrackingEnabled={isFaceTrackingEnabled} faceTrack={faceTrack} />

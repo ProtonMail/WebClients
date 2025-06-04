@@ -5857,13 +5857,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@livekit/components-styles@npm:^1.1.5":
-  version: 1.1.5
-  resolution: "@livekit/components-styles@npm:1.1.5"
-  checksum: 10c0/43a9aeea0bf61316a5383bff8125cd2d3657b077fc9aa49cc478d05d7dd7ccad0edd1fe18310ea9dbaf507bbb47007d15b12dcfc080e26159a1aebf1bde6ce9f
-  languageName: node
-  linkType: hard
-
 "@livekit/mutex@npm:1.1.1":
   version: 1.1.1
   resolution: "@livekit/mutex@npm:1.1.1"
@@ -37626,7 +37619,6 @@ __metadata:
   resolution: "proton-meet@workspace:applications/meet"
   dependencies:
     "@livekit/components-react": "npm:^2.9.3"
-    "@livekit/components-styles": "npm:^1.1.5"
     "@proton/components": "workspace:packages/components"
     "@proton/cross-storage": "workspace:packages/cross-storage"
     "@proton/crypto": "workspace:packages/crypto"

@@ -62,7 +62,7 @@ export const DeviceSettings = ({
     const microphonesOptions = useMemo(() => devicesToOptions(microphones), [microphones]);
 
     return (
-        <div className="flex flex-nowrap flex-column w-custom gap-2" style={{ '--w-custom': '41.6875rem' }}>
+        <div className="flex flex-nowrap flex-column w-custom gap-2 mr-auto" style={{ '--w-custom': '41.6875rem' }}>
             <div
                 className="device-settings w-custom h-custom relative rounded-xl overflow-hidden"
                 style={{ '--w-custom': '41.6875rem', '--h-custom': '23.25rem' }}

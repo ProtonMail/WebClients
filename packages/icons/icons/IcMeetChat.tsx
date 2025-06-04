@@ -41,14 +41,14 @@ export const IcMeetChat = ({ alt, title, size = 4, className = '', viewBox = '0 
                 ></path>
                 <path
                     d="M7.25 6.25H17.25"
-                    stroke="white"
+                    stroke="currentColor"
                     strokeWidth="1.5"
                     strokeMiterlimit="10"
                     strokeLinecap="square"
                 ></path>
                 <path
                     d="M7.25 11.25H13.25"
-                    stroke="white"
+                    stroke="currentColor"
                     strokeWidth="1.5"
                     strokeMiterlimit="10"
                     strokeLinecap="square"

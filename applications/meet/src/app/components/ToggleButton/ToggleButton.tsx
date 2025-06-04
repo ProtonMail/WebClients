@@ -1,8 +1,11 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 import type { IconProps } from '@proton/components';
 import { IcChevronDown, IcChevronUp } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
+
+import { useMeetContext } from '../../contexts/MeetContext';
+import { type PopUpControls } from '../../types';
 
 import './ToggleButton.scss';
 
@@ -12,11 +15,22 @@ interface ToggleButtonProps {
     isOn: boolean;
     onClick: () => void;
     Content?: () => JSX.Element;
+    popUp: PopUpControls;
 }
 
-export const ToggleButton = ({ OnIconComponent, OffIconComponent, isOn, onClick, Content }: ToggleButtonProps) => {
-    const [isOpen, setIsOpen] = useState(false);
+export const ToggleButton = ({
+    OnIconComponent,
+    OffIconComponent,
+    isOn,
+    onClick,
+    Content,
+    popUp,
+}: ToggleButtonProps) => {
     const toggleButtonCircleRef = useRef<HTMLButtonElement>(null);
+
+    const { popupState, togglePopupState } = useMeetContext();
+
+    const isOpen = popupState[popUp];
 
     return (
         <button
@@ -62,9 +76,9 @@ export const ToggleButton = ({ OnIconComponent, OffIconComponent, isOn, onClick,
                     )}
                     onClick={(e) => {
                         e.stopPropagation();
-                        setIsOpen(!isOpen);
+                        togglePopupState(popUp);
                     }}
-                    style={{ '--w-custom': '48px', '--h-custom': '48px' }}
+                    style={{ '--w-custom': '3rem', '--h-custom': '3rem' }}
                 >
                     {isOpen ? <IcChevronUp /> : <IcChevronDown />}
                 </div>

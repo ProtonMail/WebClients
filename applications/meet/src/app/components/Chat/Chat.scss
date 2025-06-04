@@ -1,0 +1,8 @@
+.message-list {
+	padding-block-start: 5rem;
+	scrollbar-color: var(--interaction-weak) transparent !important;
+
+	&::-webkit-scrollbar-thumb {
+		background: var(--interaction-weak) !important;
+	}
+}

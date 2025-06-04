@@ -1,12 +1,8 @@
-.border-strong {
-	border: 1px solid var(--border-strong);
-}
+.participants-list {
+	padding-block-start: 3.5rem;
+	scrollbar-color: var(--interaction-weak) transparent !important;
 
-.hide-scrollbar {
-	scrollbar-width: none !important; /* Firefox */
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-	display: none; /* Chrome, Safari, Opera */
-	scrollbar-width: none !important;
+	&::-webkit-scrollbar-thumb {
+		background: var(--interaction-weak) !important;
+	}
 }

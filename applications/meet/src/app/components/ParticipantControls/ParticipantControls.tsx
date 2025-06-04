@@ -1,14 +1,10 @@
 import { useLocalParticipant, useParticipants } from '@livekit/components-react';
-import { Track } from 'livekit-client';
-import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
 import {
     IcCogWheel,
     IcInfoCircle,
     IcMeetCamera,
     IcMeetCameraOff,
-    IcMeetChat,
     IcMeetMicrophone,
     IcMeetMicrophoneOff,
     IcMeetParticipants,
@@ -16,52 +12,29 @@ import {
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { Pagination } from '../../atoms/Pagination';
-import { PAGE_SIZE } from '../../constants';
 import { useMeetContext } from '../../contexts/MeetContext';
+import { useAudioToggle } from '../../hooks/useAudioToggle';
+import { useVideoToggle } from '../../hooks/useVideoToggle';
+import { MeetingSideBars, PopUpControls } from '../../types';
 import { AudioSettings } from '../AudioSettings';
+import { ChatButton } from '../ChatButton';
+import { LeaveModal } from '../LeaveModal/LeaveModal';
 import { ScreenShareButton } from '../ScreenShareButton';
 import { ToggleButton } from '../ToggleButton/ToggleButton';
 import { VideoSettings } from '../VideoSettings';
 
-import './ParticipantControls.scss';
-
 export const ParticipantControls = () => {
-    const { localParticipant, isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
-    const {
-        isParticipantsOpen,
-        setIsParticipantsOpen,
-        isSettingsOpen,
-        setIsSettingsOpen,
-        audioDeviceId,
-        videoDeviceId,
-        resolution,
-    } = useMeetContext();
+    const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
+    const { audioDeviceId, videoDeviceId, sideBarState, toggleSideBarState } = useMeetContext();
 
     const participants = useParticipants();
 
-    const { roomName, page, setPage } = useMeetContext();
+    const { roomName, page, setPage, pageSize } = useMeetContext();
 
-    const handleMicrophoneClick = () => {
-        void localParticipant?.setMicrophoneEnabled(
-            !isMicrophoneEnabled,
-            !isMicrophoneEnabled
-                ? {
-                      deviceId: { exact: audioDeviceId },
-                  }
-                : undefined
-        );
+    const toggleVideo = useVideoToggle();
+    const toggleAudio = useAudioToggle();
 
-        if (isMicrophoneEnabled) {
-            const audioTrack = Array.from(localParticipant.trackPublications.values()).find(
-                (pub) => pub.kind === Track.Kind.Audio && pub.track
-            )?.track;
-            if (audioTrack && audioTrack.mediaStreamTrack) {
-                audioTrack.mediaStreamTrack.stop();
-            }
-        }
-    };
-
-    const pageCount = Math.ceil(participants.length / PAGE_SIZE);
+    const pageCount = Math.ceil(participants.length / pageSize);
 
     return (
         <div className="flex flex-nowrap justify-center items-center gap-2 h-custom" style={{ '--h-custom': '5.5rem' }}>
@@ -71,52 +44,47 @@ export const ParticipantControls = () => {
                     OnIconComponent={IcMeetMicrophone}
                     OffIconComponent={IcMeetMicrophoneOff}
                     isOn={isMicrophoneEnabled}
-                    onClick={handleMicrophoneClick}
+                    onClick={() => {
+                        void toggleAudio({ isEnabled: !isMicrophoneEnabled, audioDeviceId });
+                    }}
                     Content={AudioSettings}
+                    popUp={PopUpControls.Microphone}
                 />
                 <ToggleButton
                     OnIconComponent={IcMeetCamera}
                     OffIconComponent={IcMeetCameraOff}
                     isOn={isCameraEnabled}
-                    onClick={() =>
-                        localParticipant?.setCameraEnabled(
-                            !isCameraEnabled,
-                            !isCameraEnabled
-                                ? {
-                                      deviceId: { exact: videoDeviceId },
-                                      resolution: {
-                                          width: Number(resolution?.split('x')[0]),
-                                          height: Number(resolution?.split('x')[1]),
-                                      },
-                                  }
-                                : undefined
-                        )
-                    }
+                    onClick={() => {
+                        void toggleVideo({ isEnabled: !isCameraEnabled, videoDeviceId });
+                    }}
                     Content={() => <VideoSettings />}
+                    popUp={PopUpControls.Camera}
                 />
                 <ScreenShareButton />
                 <CircleButton
                     IconComponent={IcMeetParticipants}
-                    variant={isParticipantsOpen ? 'active' : 'default'}
+                    variant={sideBarState[MeetingSideBars.Participants] ? 'active' : 'default'}
                     onClick={() => {
-                        setIsParticipantsOpen(!isParticipantsOpen);
-                        setIsSettingsOpen(false);
+                        toggleSideBarState(MeetingSideBars.Participants);
                     }}
                     indicatorContent={participants.length.toString()}
-                    indicatorStatus={isParticipantsOpen ? 'success' : 'default'}
+                    indicatorStatus={'success'}
                     iconViewPort="0 0 24 24"
                 />
-                <CircleButton IconComponent={IcMeetChat} iconViewPort="0 0 24 24" />
+                <ChatButton />
                 <CircleButton
                     IconComponent={IcCogWheel}
-                    variant={isSettingsOpen ? 'active' : 'default'}
+                    variant={sideBarState[MeetingSideBars.Settings] ? 'active' : 'default'}
                     onClick={() => {
-                        setIsSettingsOpen(!isSettingsOpen);
-                        setIsParticipantsOpen(false);
+                        toggleSideBarState(MeetingSideBars.Settings);
                     }}
                 />
-                <CircleButton IconComponent={IcInfoCircle} />
-                <Button className="px-8 py-4 leave-button" pill={true} size="large">{c('Meet').t`Leave`}</Button>
+                <CircleButton
+                    IconComponent={IcInfoCircle}
+                    onClick={() => toggleSideBarState(MeetingSideBars.MeetingDetails)}
+                    variant={sideBarState[MeetingSideBars.MeetingDetails] ? 'active' : 'default'}
+                />
+                <LeaveModal />
             </div>
             <div className="flex flex-1 justify-end">
                 {pageCount > 1 && <Pagination totalPages={pageCount} currentPage={page} onPageChange={setPage} />}

@@ -10,6 +10,8 @@ interface UseFaceTrackingPublisherParameters {
     isFaceTrackingEnabled: boolean;
 }
 
+const increasedVideoQuality = process.env.LIVEKIT_INCREASED_VIDEO_QUALITY === 'true';
+
 export const useFaceTrackingPublisher = ({ faceTrack, isFaceTrackingEnabled }: UseFaceTrackingPublisherParameters) => {
     const room = useRoomContext();
 
@@ -26,7 +28,7 @@ export const useFaceTrackingPublisher = ({ faceTrack, isFaceTrackingEnabled }: U
                 await room.localParticipant.publishTrack(faceTrack, {
                     name: 'face-tracking',
                     source: Track.Source.Camera,
-                    simulcast: true,
+                    simulcast: increasedVideoQuality,
                 });
             }
 
@@ -37,7 +39,7 @@ export const useFaceTrackingPublisher = ({ faceTrack, isFaceTrackingEnabled }: U
             await room.localParticipant.publishTrack(faceTrack, {
                 name: 'face-tracking',
                 source: Track.Source.Camera,
-                simulcast: true,
+                simulcast: increasedVideoQuality,
             });
         };
         room.on('connected', handleConnected);

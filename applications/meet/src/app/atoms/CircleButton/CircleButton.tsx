@@ -40,10 +40,15 @@ export const CircleButton = ({
             {indicatorContent && (
                 <div
                     className={clsx(
-                        'indicator rounded-full flex justify-center items-center absolute top-0 right-0 w-custom h-custom',
+                        'indicator rounded-full flex justify-center items-center absolute top-custom right-custom w-custom h-custom',
                         `indicator-${indicatorStatus}`
                     )}
-                    style={{ '--w-custom': '1.25rem', '--h-custom': '1.25rem' }}
+                    style={{
+                        '--w-custom': '1.25rem',
+                        '--h-custom': '1.25rem',
+                        '--top-custom': '-0.15rem',
+                        '--right-custom': '-0.15rem',
+                    }}
                 >
                     {indicatorContent}
                 </div>
