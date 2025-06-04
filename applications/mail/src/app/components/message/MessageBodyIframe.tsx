@@ -6,9 +6,7 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
 import { Icon, useSyncIframeStyles, useTheme } from '@proton/components';
-import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import { isAutoFlaggedPhishing, isSuspicious } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
 import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
@@ -28,13 +26,11 @@ interface Props {
     blockquoteContent: string;
     isPlainText: boolean;
     onBlockquoteToggle?: () => void;
-    onContentLoaded: (iframeRootElement: HTMLDivElement) => void;
+    onContentLoaded: (iframeRootDivRef: HTMLDivElement) => void;
     isPrint?: boolean;
     hasDarkStyles?: boolean;
     message: MessageState;
     onReady?: (iframeRef: RefObject<HTMLIFrameElement>) => void;
-    onMailTo?: (src: string) => void;
-    isOutside?: boolean;
     mailSettings: MailSettings;
     onFocus?: () => void;
 }
@@ -52,8 +48,6 @@ const MessageBodyIframe = ({
     isPrint = false,
     message,
     onReady,
-    onMailTo,
-    isOutside,
     mailSettings,
     onFocus,
 }: Props) => {
@@ -81,13 +75,6 @@ const MessageBodyIframe = ({
         showBlockquoteProp,
         showBlockquoteToggle,
         onBlockquoteToggle,
-    });
-
-    const { modal: linkModal } = useLinkHandler(iframeRootDivRef, mailSettings, {
-        onMailTo,
-        startListening: initStatus === 'done' && iframeRootDivRef.current !== undefined,
-        isOutside,
-        isPhishingAttempt: isAutoFlaggedPhishing(message.data) || isSuspicious(message.data),
     });
 
     useIframeDispatchEvents(initStatus === 'done', iframeRef, onFocus, isPlainText);
@@ -154,7 +141,6 @@ const MessageBodyIframe = ({
                     </Tooltip>,
                     iframeToggleDiv
                 )}
-            {linkModal}
         </>
     );
 };
