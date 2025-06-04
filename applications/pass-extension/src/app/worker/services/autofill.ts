@@ -105,12 +105,14 @@ export const createAutoFillService = () => {
     const queryTabLoginForms = async (tabID: TabId): Promise<boolean> => {
         try {
             return (
-                await browser.tabs.sendMessage<
-                    AutofillCheckFormMessage,
-                    WorkerMessageResponse<WorkerMessageType.AUTOFILL_CHECK_FORM>
-                >(tabID, backgroundMessage({ type: WorkerMessageType.AUTOFILL_CHECK_FORM }))
-            ).hasLoginForm;
-        } catch {
+                (
+                    await browser.tabs.sendMessage<
+                        AutofillCheckFormMessage,
+                        WorkerMessageResponse<WorkerMessageType.AUTOFILL_CHECK_FORM>
+                    >(tabID, backgroundMessage({ type: WorkerMessageType.AUTOFILL_CHECK_FORM }))
+                )?.hasLoginForm ?? false
+            );
+        } catch (err) {
             return false;
         }
     };
