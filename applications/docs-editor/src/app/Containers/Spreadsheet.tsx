@@ -78,7 +78,7 @@ import type {
   SheetImportData,
   DataTypesThatDocumentCanBeExportedAs,
 } from '@proton/docs-shared'
-import { EditorSystemMode, SheetImportEvent } from '@proton/docs-shared'
+import { EditorSystemMode, SheetImportDestination, SheetImportEvent } from '@proton/docs-shared'
 import { DocProvider, TranslatedResult } from '@proton/docs-shared'
 import { useYSpreadsheetV2 } from '@rowsncolumns/y-spreadsheet'
 import { useSyncedState } from '../Hooks/useSyncedState'
@@ -89,6 +89,7 @@ import { useApplication } from './ApplicationProvider'
 import { downloadLogsAsJSON } from '../../../../docs/src/app/utils/downloadLogs'
 import type { EditorControllerInterface } from '@proton/docs-core'
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
+import { splitExtension } from '@proton/shared/lib/helpers/file'
 
 export type SheetRef = {
   getSheetState: () => {
@@ -403,23 +404,30 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   useEffect(
     () =>
       application.eventBus.addEventCallback((data: SheetImportData) => {
-        const newSheet = onCreateNewSheet()
-        if (newSheet) {
-          onInsertFile(
-            data.file,
-            newSheet.sheetId,
-            { rowIndex: 1, columnIndex: 1 },
-            { preserveFormatting: data.shouldConvertCellContents },
-          )
-            .then(() => {
-              calculateNow({
-                shouldResetCellDependencyGraph: true,
-              })
-            })
-            .catch(console.error)
+        let sheetId = undefined
+        let cellCoords = undefined
+        if (data.destination === SheetImportDestination.InsertAsNewSheet) {
+          const newSheet = onCreateNewSheet()
+          if (!newSheet) {
+            return
+          }
+          const [name] = splitExtension(data.file.name)
+          onRenameSheet(newSheet.sheetId, name, newSheet.title)
+          sheetId = newSheet.sheetId
+          cellCoords = { rowIndex: 1, columnIndex: 1 }
         }
+        onInsertFile(data.file, sheetId, cellCoords, {
+          preserveFormatting: data.shouldConvertCellContents,
+          replaceSheetData: data.destination === SheetImportDestination.ReplaceCurrentSheet,
+        })
+          .then(() => {
+            calculateNow({
+              shouldResetCellDependencyGraph: true,
+            })
+          })
+          .catch(console.error)
       }, SheetImportEvent),
-    [application.eventBus, calculateNow, onCreateNewSheet, onInsertFile],
+    [application.eventBus, calculateNow, onCreateNewSheet, onInsertFile, onRenameSheet],
   )
 
   const createdInitialSheetRef = useRef(false)
