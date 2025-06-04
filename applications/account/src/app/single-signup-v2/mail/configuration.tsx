@@ -176,6 +176,7 @@ export const getMailConfiguration = ({
     isLargeViewport,
     plansMap,
     signupParameters: { mode, hideFreePlan, invite },
+    canUseBYOE,
 }: {
     freePlan: FreePlanDefault;
     audience: Audience.B2B | Audience.B2C;
@@ -185,6 +186,7 @@ export const getMailConfiguration = ({
     vpnServersCountData: VPNServersCountData;
     planParameters: PlanParameters | undefined;
     plansMap?: PlansMap;
+    canUseBYOE: boolean;
 }): SignupConfiguration => {
     const logo = <MailLogo />;
 
@@ -439,7 +441,7 @@ export const getMailConfiguration = ({
         features,
         benefits,
         planCards,
-        signupTypes: [SignupType.Proton],
+        signupTypes: canUseBYOE ? [SignupType.Proton, SignupType.BringYourOwnEmail] : [SignupType.Proton],
         onboarding:
             invite?.type === 'porkbun'
                 ? {
