@@ -66,9 +66,13 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
             <ModalTwoHeader
                 actions={backButton}
                 closeButtonProps={{ pill: true, icon: true }}
+                className="flex-column"
                 title={
                     currentStep.withHeader && (
-                        <div className="absolute top-0 left-custom" style={{ '--left-custom': '100px' }}>
+                        <div
+                            className="hidden md:block absolute top-0 left-custom"
+                            style={{ '--left-custom': '100px' }}
+                        >
                             <PassIconLogo />
                         </div>
                     )
@@ -76,7 +80,7 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
             />
 
             {steps.length > 1 && (
-                <Stepper activeStep={step} className="z-1">
+                <Stepper activeStep={step} className="z-1 hidden md:block">
                     {steps.map((step) => (
                         <Step key={step.key} />
                     ))}
@@ -84,9 +88,8 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
             )}
 
             <ModalTwoContent>
-                {/* height accommodates largest content without layout shifts */}
-                <div className="h-custom flex items-center gap-6 text-left w-full" style={{ '--h-custom': '23rem' }}>
-                    <div className="flex-1">
+                <div className="pass-onboarding-modal--content flex flex-nowrap items-start md:items-center text-left w-full flex-column md:flex-row gap-2 md:gap-6">
+                    <div className="md:flex-1 w-full md:w-auto">
                         {currentStep.group && (
                             <p className="text-uppercase text-sm text-bold m-0 mb-3 pass-onboarding-modal--group">
                                 {currentStep.group}
@@ -98,13 +101,13 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
                         </div>
                     </div>
 
-                    <div className="flex-1">
+                    <div className="md:flex-1 w-full md:w-auto">
                         <Component />
                     </div>
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter className="mt-0">
-                <div className="flex justify-end w-full">
+                <div className="flex justify-end w-full pt-2">
                     {steps.length > 1 && (
                         <Button
                             className="mr-auto pass-onboarding-modal--skip"

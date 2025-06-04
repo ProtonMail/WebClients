@@ -74,7 +74,7 @@ export interface RootSagaOptions {
     onBoot?: (result: PassBootResult) => void;
 
     /** Optional callback to mutate state before initial hydration */
-    onBeforeHydrate?: (state: State) => State;
+    onBeforeHydrate?: (state: State, fromCache: boolean) => State;
 
     /** Callback used when account locale is updated */
     onLocaleUpdated?: (locale: string) => void;

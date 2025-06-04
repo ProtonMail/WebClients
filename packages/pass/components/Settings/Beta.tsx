@@ -5,8 +5,7 @@ import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { settingsEditIntent } from '@proton/pass/store/actions';
-import { settingsEditRequest } from '@proton/pass/store/actions/requests';
-import { selectBetaEnabled, selectRequestInFlight } from '@proton/pass/store/selectors';
+import { selectBetaEnabled } from '@proton/pass/store/selectors';
 import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SettingsPanel } from './SettingsPanel';
@@ -14,15 +13,12 @@ import { SettingsPanel } from './SettingsPanel';
 export const Beta: FC = () => {
     const dispatch = useDispatch();
     const betaEnabled = useSelector(selectBetaEnabled);
-    const loading = useSelector(selectRequestInFlight(settingsEditRequest('behaviors')));
 
     return (
         <SettingsPanel title={c('Label').t`Beta Access`}>
             <div className="pt-2">
                 <Toggle
                     checked={betaEnabled}
-                    disabled={loading}
-                    loading={loading}
                     onChange={() => dispatch(settingsEditIntent('behaviors', { beta: !betaEnabled }))}
                 >
                     <span className="pl-2">

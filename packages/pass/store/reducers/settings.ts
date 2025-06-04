@@ -1,6 +1,7 @@
 import type { Reducer } from 'redux';
 
-import { type PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
+import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
+import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
 import { toggleCriteria } from '@proton/pass/lib/settings/criteria';
@@ -64,10 +65,7 @@ export const getInitialSettings = (): ProxiedSettings => ({
     passkeys: { get: true, create: true },
     passwordOptions: null,
     showUsernameField: false,
-    /* Theme is set to undefined so we can prompt <ThemeOnboardingModal> for discovery.
-     * Once we decide to no longer display that modal (e.g theme feature is not considered new anymore)
-     * then change value to PassThemeOption.OS */
-    theme: undefined,
+    theme: EXTENSION_BUILD ? undefined : PASS_DEFAULT_THEME,
 });
 
 const getInitialState = (): SettingsState => ({
@@ -88,13 +86,7 @@ const reducer: Reducer<SettingsState> = (state = getInitialState(), action) => {
         return partialMerge(state, { lockMode: action.payload.lock.mode, lockTTL: action.payload.lock.ttl });
     }
 
-    if (settingsEditSuccess.match(action)) {
-        const update = { ...state };
-
-        /* `disallowedDomains` update should act as a setter */
-        if ('disallowedDomains' in action.payload) update.disallowedDomains = {};
-        return partialMerge<SettingsState>(update, action.payload);
-    }
+    if (settingsEditSuccess.match(action)) return { ...state, ...action.payload };
 
     if (userEvent.match(action)) {
         const locale = action.payload.UserSettings?.Locale;

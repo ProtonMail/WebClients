@@ -4,7 +4,6 @@ import noop from '@proton/utils/noop';
 
 export enum OnboardingType {
     WELCOME = 'WELCOME',
-    WEB_ONBOARDING = 'WEB_ONBOARDING',
     B2B = 'B2B',
 }
 
