@@ -58,6 +58,7 @@ export const getSignupConfiguration = ({
             isLargeViewport: viewportWidth['>=large'],
             vpnServersCountData,
             freePlan: model.freePlan,
+            canUseBYOE: toApp === APPS.PROTONMAIL,
         });
     }
     if (getIsPassApp(toApp)) {
