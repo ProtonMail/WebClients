@@ -10,9 +10,11 @@ import { OnboardingLockSetup } from '@proton/pass/components/Onboarding/Onboardi
 import { OnboardingModal } from '@proton/pass/components/Onboarding/OnboardingModal';
 import { OnboardingThemeSelect } from '@proton/pass/components/Onboarding/OnboardingThemeSelect';
 import type { AvailablePlans } from '@proton/pass/components/Onboarding/OnboardingUpgrade';
+import { AspectRatioBox } from '@proton/pass/components/Utils/AspectRatioBox';
 import { PASS_DOWNLOAD_URL, UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { usePassExtensionInstalled } from '@proton/pass/hooks/usePassExtensionInstalled';
+import { useSelectorOnce } from '@proton/pass/hooks/useSelectorOnce';
 import { selectAllItems, selectPassPlan, selectUserPlan } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -37,87 +39,84 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
     const [enabled, setEnabled] = useState(false);
     const [isActive, setIsActive] = useState(false);
     const [completed, setCompleted] = useState<string[]>([]);
-    const hasItems = useSelector(selectAllItems).length > 0;
+
     const userPlan = useSelector(selectUserPlan);
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE && userPlan?.InternalName === 'free';
-    const message = DESKTOP_BUILD ? SpotlightMessage.WELCOME : SpotlightMessage.WEB_ONBOARDING;
+    const hasItems = useSelectorOnce(selectAllItems).length > 0;
+
+    const message = SpotlightMessage.WELCOME;
+
     const navigateToUpgrade = useNavigateToUpgrade({
         upsellRef: selected === PLANS.PASS ? UpsellRef.PLUS_PLAN_ONBOARDING : UpsellRef.UNLIMITED_PLAN_ONBOARDING,
     });
 
-    const steps = useMemo<OnboardingStep[]>(
-        () =>
-            [
-                {
-                    key: 'look-and-feel',
-                    shortTitle: c('Label').t`Select your theme`,
-                    actionText: c('Label').t`Select theme`,
-                    description: () => c('Label').t`Choose your preferred look and feel.`,
-                    group: c('Label').t`Personalize`,
-                    title: c('Label').t`Make it your own.`,
-                    component: OnboardingThemeSelect,
-                },
-                hasItems && {
-                    key: 'unlock',
-                    shortTitle: c('Label').t`Choose unlock method`,
-                    component: () => (
-                        <div className="pass-onboarding-modal--lock">
-                            <p className="text-bold mt-0">{c('Label').t`Unlock with:`}</p>
-                            <OnboardingLockSetup />
-                        </div>
-                    ),
-                    description: () => (
-                        <>
-                            {c('Label')
-                                .t`For security reasons, ${PASS_SHORT_APP_NAME} automatically locks itself after 10 minutes of inactivity.`}
-                            {DESKTOP_BUILD && (
-                                <div className="mt-4">
-                                    {c('Label')
-                                        .t`You can choose between PIN code, biometrics, or your account password to unlock.`}
-                                </div>
-                            )}
-                        </>
-                    ),
-                    group: c('Label').t`Security`,
-                    title: c('Label').t`How to unlock ${PASS_SHORT_APP_NAME}`,
-                },
-                isFreePlan && {
-                    key: 'upgrade',
-                    shortTitle: c('Label').t`Unlock premium features`,
-                    component: OnboardingUpgrade.Content,
-                    description: OnboardingUpgrade.Description,
-                    action: navigateToUpgrade,
-                    actionClassName: 'button-invert',
-                    actionText:
-                        selected === PLANS.PASS
-                            ? c('Label').t`Get ${PASS_SHORT_APP_NAME} Plus`
-                            : c('Label').t`Get ${PASS_SHORT_APP_NAME} Unlimited`,
-                    title: c('Label').t`Unlock premium features`,
-                    withHeader: true,
-                },
-                (!hasExtension || DESKTOP_BUILD) && {
-                    key: 'extension',
-                    shortTitle: c('Label').t`Install extension`,
-                    action: () => window.open(PASS_DOWNLOAD_URL, '_blank'),
-                    actionText: c('Label').t`Install and continue`,
-                    component: () => <img src={onboardingExtension} className="w-full" alt="" />,
-                    description: () => c('Label').t`Get the extension for your browser.`,
-                    group: c('Label').t`Browse faster, smarter`,
-                    title: c('Label').t`Your passwords. Everywhere.`,
-                },
-            ].filter(truthy),
-        [hasItems, isFreePlan, hasExtension, selected]
-    );
+    const steps = useMemo<OnboardingStep[]>(() => {
+        if (!enabled) return [];
 
-    useEffect(() => {
-        (async () => (await spotlight.check(message)) ?? false)()
-            .then((enabled) => {
-                /* Auto-lauch on provider mount */
-                setEnabled(enabled);
-                setIsActive(enabled);
-            })
-            .catch(noop);
-    }, []);
+        return [
+            {
+                key: 'look-and-feel',
+                shortTitle: c('Label').t`Select your theme`,
+                actionText: c('Label').t`Select theme`,
+                description: () => c('Label').t`Choose your preferred look and feel.`,
+                group: c('Label').t`Personalize`,
+                title: c('Label').t`Make it your own.`,
+                component: OnboardingThemeSelect,
+            },
+            hasItems && {
+                key: 'unlock',
+                shortTitle: c('Label').t`Choose unlock method`,
+                component: () => (
+                    <div className="pass-onboarding-modal--lock">
+                        <p className="text-bold mt-0">{c('Label').t`Unlock with:`}</p>
+                        <OnboardingLockSetup />
+                    </div>
+                ),
+                description: () => (
+                    <>
+                        {c('Label')
+                            .t`For security reasons, ${PASS_SHORT_APP_NAME} automatically locks itself after 10 minutes of inactivity.`}
+                        {DESKTOP_BUILD && (
+                            <div className="mt-4">
+                                {c('Label')
+                                    .t`You can choose between PIN code, biometrics, or your account password to unlock.`}
+                            </div>
+                        )}
+                    </>
+                ),
+                group: c('Label').t`Security`,
+                title: c('Label').t`How to unlock ${PASS_SHORT_APP_NAME}`,
+            },
+            isFreePlan && {
+                key: 'upgrade',
+                shortTitle: c('Label').t`Unlock premium features`,
+                component: OnboardingUpgrade.Content,
+                description: OnboardingUpgrade.Description,
+                action: navigateToUpgrade,
+                actionClassName: 'button-invert',
+                actionText:
+                    selected === PLANS.PASS
+                        ? c('Label').t`Get ${PASS_SHORT_APP_NAME} Plus`
+                        : c('Label').t`Get ${PASS_SHORT_APP_NAME} Unlimited`,
+                title: c('Label').t`Unlock premium features`,
+                withHeader: true,
+            },
+            (!hasExtension || DESKTOP_BUILD) && {
+                key: 'extension',
+                shortTitle: c('Label').t`Install extension`,
+                action: () => window.open(PASS_DOWNLOAD_URL, '_blank'),
+                actionText: c('Label').t`Install and continue`,
+                component: () => (
+                    <AspectRatioBox width={300} height={190}>
+                        <img src={onboardingExtension} className="w-full" alt="" />
+                    </AspectRatioBox>
+                ),
+                description: () => c('Label').t`Get the extension for your browser.`,
+                group: c('Label').t`Browse faster, smarter`,
+                title: c('Label').t`Your passwords. Everywhere.`,
+            },
+        ].filter(truthy);
+    }, [enabled, isFreePlan, hasExtension, selected]);
 
     const context = useMemo<OnboardingContextValue>(
         () => ({
@@ -134,12 +133,22 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
             isActive,
             steps,
             completed,
-            type: DESKTOP_BUILD ? OnboardingType.WELCOME : OnboardingType.WEB_ONBOARDING,
+            type: OnboardingType.WELCOME,
             selected,
             setSelected,
         }),
         [enabled, isActive, steps, completed, selected]
     );
+
+    useEffect(() => {
+        (async () => (await spotlight.check(message)) ?? false)()
+            .then((enabled) => {
+                /* Auto-lauch on provider mount */
+                setEnabled(enabled);
+                setIsActive(enabled);
+            })
+            .catch(noop);
+    }, []);
 
     useEffect(() => {
         const stepKeys = steps.map(prop('key'));

@@ -1,5 +1,5 @@
 import type { FC, ReactNode } from 'react';
-import { createContext, useCallback, useEffect, useMemo } from 'react';
+import { createContext, useEffect, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
@@ -10,7 +10,7 @@ import type { WorkerMessageWithSender } from 'proton-pass-extension/types/messag
 
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
+import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
@@ -40,7 +40,7 @@ type Props = {
 };
 
 export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
-    const { endpoint, setExtensionClientState, onTelemetry } = usePassCore();
+    const { endpoint, setExtensionClientState, onTelemetry, theme } = usePassCore();
     const config = usePassConfig();
 
     const dispatch = useDispatch();
@@ -49,22 +49,28 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
     const activityProbe = useExtensionActivityProbe();
 
     const ready = useExtensionClientInit(
-        useCallback((state) => {
-            if (state.criticalRuntimeError) reloadManager.runtimeReload().catch(noop);
+        useMemo(
+            () => ({
+                onStateChange: (state) => {
+                    if (state.criticalRuntimeError) reloadManager.runtimeReload().catch(noop);
 
-            if (clientErrored(state.status) || state.criticalRuntimeError) {
-                onTelemetry(
-                    TelemetryEventName.ErrorResumingSession,
-                    {},
-                    {
-                        extensionBrowser: BUILD_TARGET,
-                        extensionReloadRequired: state.criticalRuntimeError ? 1 : 0,
+                    if (clientErrored(state.status) || state.criticalRuntimeError) {
+                        onTelemetry(
+                            TelemetryEventName.ErrorResumingSession,
+                            {},
+                            {
+                                extensionBrowser: BUILD_TARGET,
+                                extensionReloadRequired: state.criticalRuntimeError ? 1 : 0,
+                            }
+                        );
                     }
-                );
-            }
 
-            setSentryUID(state.UID);
-        }, [])
+                    setSentryUID(state.UID);
+                },
+                onSettingsChange: (settings) => theme.setState(settings.theme ?? PASS_DEFAULT_THEME),
+            }),
+            []
+        )
     );
 
     useEffect(() => {
@@ -109,10 +115,5 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
         []
     );
 
-    return (
-        <ExtensionClientContext.Provider value={context}>
-            <ThemeConnect />
-            {children(ready)}
-        </ExtensionClientContext.Provider>
-    );
+    return <ExtensionClientContext.Provider value={context}>{children(ready)}</ExtensionClientContext.Provider>;
 };
