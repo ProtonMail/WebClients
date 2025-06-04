@@ -54,6 +54,10 @@ export enum SpotlightMessage {
     FILE_ATTACHMENTS_DISCOVERY = 25,
     /** Proton anniversary 2025 promo for web/desktop only */
     PROTON_ANNIVERSARY_2025_PROMO = 26,
+    /** Autotype discovery on desktop */
+    AUTOTYPE_DISCOVERY = 27,
+    /** Autotype confirmation on desktop */
+    AUTOTYPE_CONFIRM = 28,
 }
 
 export type SpotlightAcknowledgment = {
