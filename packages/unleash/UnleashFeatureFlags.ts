@@ -39,6 +39,7 @@ enum CommonFeatureFlag {
     SubscriberNudgeDriveMonthly = 'SubscriberNudgeDriveMonthly',
     B2BOnboarding = 'B2BOnboarding',
     InboxBringYourOwnEmail = 'InboxBringYourOwnEmail',
+    InboxBringYourOwnEmailSignup = 'InboxBringYourOwnEmailSignup',
     LumoPlusFrontend = 'LumoPlusFrontend',
     CryptoEnforceOpenpgpGrammar = 'CryptoEnforceOpenpgpGrammar',
 }

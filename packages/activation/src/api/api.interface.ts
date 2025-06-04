@@ -245,3 +245,10 @@ export interface ApiSync {
 export interface APIImportSyncListResponse extends ApiResponse {
     Syncs: ApiSync[];
 }
+
+export interface CreateSignupOAuthTokenResponse {
+    ValidatedOAuthTokenOutput: {
+        Account: string;
+        Provider: ApiImportProvider;
+    };
+}
