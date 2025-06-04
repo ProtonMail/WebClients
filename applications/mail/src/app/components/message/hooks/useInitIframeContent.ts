@@ -18,7 +18,7 @@ interface Props {
     message: MessageState;
     iframeRef: RefObject<HTMLIFrameElement>;
     isPlainText: boolean;
-    onContentLoaded: (iframeRootElement: HTMLDivElement) => void;
+    onContentLoaded: (iframeRootDiv: HTMLDivElement) => void;
     onReady?: (iframe: RefObject<HTMLIFrameElement>) => void;
     isPrint: boolean;
 }
@@ -71,14 +71,11 @@ const useInitIframeContent = ({
         }
 
         if (initStatus === 'done' && onContentLoaded && hasBeenDone.current === false) {
-            const doc = iframeRef.current?.contentDocument;
-            const iframeRootDivElement = doc?.getElementById(MESSAGE_IFRAME_ROOT_ID) as HTMLDivElement;
-
             onReady?.(iframeRef);
             hasBeenDone.current = true;
 
-            if (isMounted()) {
-                onContentLoaded(iframeRootDivElement);
+            if (isMounted() && iframeRootDivRef.current) {
+                onContentLoaded(iframeRootDivRef.current);
             }
         }
     }, [initStatus]);
