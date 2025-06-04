@@ -13,7 +13,7 @@ export const OnboardingActions = memo(() => {
     return (
         <>
             {type === OnboardingType.B2B && <OnboardingButton />}
-            {[OnboardingType.WELCOME, OnboardingType.WEB_ONBOARDING].includes(type) && <OnboardingState />}
+            {type === OnboardingType.WELCOME && <OnboardingState />}
             <hr className="my-2 mx-4" aria-hidden="true" />
         </>
     );

@@ -1,4 +1,4 @@
-import { type FC, useCallback, useState } from 'react';
+import { type FC, useMemo, useState } from 'react';
 
 import { OnboardingCard } from 'proton-pass-extension/app/pages/onboarding/Card/OnboardingCard';
 import { OnboardingHeader } from 'proton-pass-extension/app/pages/onboarding/Header/OnboardingHeader';
@@ -25,14 +25,19 @@ export const Welcome: FC = () => {
     const [pendingAccess, setPendingAccess] = useState(false);
 
     useExtensionClientInit(
-        useCallback(({ status }) => {
-            if (clientReady(status)) {
-                void sendMessage.onSuccess(
-                    pageMessage({ type: WorkerMessageType.SPOTLIGHT_REQUEST }),
-                    async ({ message }) => setPendingAccess(message === SpotlightMessage.PENDING_SHARE_ACCESS)
-                );
-            }
-        }, [])
+        useMemo(
+            () => ({
+                onStateChange: ({ status }) => {
+                    if (clientReady(status)) {
+                        void sendMessage.onSuccess(
+                            pageMessage({ type: WorkerMessageType.SPOTLIGHT_REQUEST }),
+                            async ({ message }) => setPendingAccess(message === SpotlightMessage.PENDING_SHARE_ACCESS)
+                        );
+                    }
+                },
+            }),
+            []
+        )
     );
 
     return (

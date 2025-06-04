@@ -11,9 +11,21 @@ import { selectCanCreateItems, selectProxiedSettings } from '@proton/pass/store/
 import { logger } from '@proton/pass/utils/logger';
 
 export const createSettingsService = () => {
+    const broadcast = withContext<(settings: ProxiedSettings) => void>(({ service }, settings) => {
+        const state = service.store.getState();
+        const canCreateItems = selectCanCreateItems(state);
+
+        WorkerMessageBroker.ports.broadcast(
+            backgroundMessage({
+                type: WorkerMessageType.SETTINGS_UPDATE,
+                payload: sanitizeSettings(settings, { canCreateItems }),
+            })
+        );
+    });
+
     const service = createCoreSettingsService({
         clear: withContext(({ service }) => service.storage.local.removeItem('settings')),
-        resolve: withContext(async ({ service }) => {
+        read: withContext(async ({ service }) => {
             const settings = await service.storage.local.getItem('settings');
             if (!settings) throw new Error('settings not found');
 
@@ -25,16 +37,7 @@ export const createSettingsService = () => {
         sync: withContext<(settings: ProxiedSettings) => Promise<void>>(async ({ service }, settings) => {
             logger.info('[Worker::Settings] synced settings');
             await service.storage.local.setItem('settings', JSON.stringify(settings));
-
-            const state = service.store.getState();
-            const canCreateItems = selectCanCreateItems(state);
-
-            WorkerMessageBroker.ports.broadcast(
-                backgroundMessage({
-                    type: WorkerMessageType.SETTINGS_UPDATE,
-                    payload: sanitizeSettings(settings, { canCreateItems }),
-                })
-            );
+            broadcast(settings);
         }),
     });
 
@@ -53,7 +56,7 @@ export const createSettingsService = () => {
         })
     );
 
-    return { onInstall, ...service };
+    return { onInstall, broadcast, ...service };
 };
 
 export type SettingsService = ReturnType<typeof createSettingsService>;
