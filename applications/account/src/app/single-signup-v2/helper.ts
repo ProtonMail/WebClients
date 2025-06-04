@@ -91,7 +91,7 @@ export const getIsBundleB2BPlan = (plan: PLANS | ADDON_NAMES | undefined) => {
 };
 
 export const getHasAnyPlusPlan = (subscribedPlan: PLANS | ADDON_NAMES | undefined) => {
-    return [PLANS.MAIL, PLANS.DRIVE, PLANS.VPN, PLANS.VPN2024, PLANS.PASS, PLANS.VPN_PASS_BUNDLE].some(
+    return [PLANS.MAIL, PLANS.DRIVE, PLANS.DRIVE_1TB, PLANS.VPN, PLANS.VPN2024, PLANS.PASS, PLANS.VPN_PASS_BUNDLE].some(
         (plan) => plan === subscribedPlan
     );
 };
