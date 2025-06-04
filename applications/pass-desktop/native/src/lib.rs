@@ -1,3 +1,4 @@
+mod autotypes;
 mod biometrics;
 mod clipboards;
 
@@ -49,5 +50,25 @@ pub mod clipboard {
     #[napi]
     pub async fn read() -> napi::Result<String> {
         Clipboard::read().map_err(|e| napi::Error::from_reason(e.to_string()))
+    }
+}
+
+#[napi]
+pub mod autotype {
+    use super::autotypes::*;
+
+    #[napi]
+    pub async fn text(text: String) -> napi::Result<()> {
+        Autotype::text(&text).map_err(|e| napi::Error::from_reason(e.to_string()))
+    }
+
+    #[napi]
+    pub async fn tab() -> napi::Result<()> {
+        Autotype::tab().map_err(|e| napi::Error::from_reason(e.to_string()))
+    }
+
+    #[napi]
+    pub async fn enter() -> napi::Result<()> {
+        Autotype::enter().map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 }
