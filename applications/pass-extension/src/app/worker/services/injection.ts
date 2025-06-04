@@ -1,11 +1,14 @@
 import { captureMessage as sentryCaptureMessage } from '@sentry/browser';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
+import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime, Scripting } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
+import { selectFeatureFlag } from '@proton/pass/store/selectors';
 import type { Maybe, TabId } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -103,10 +106,19 @@ export const createInjectionService = () => {
         return { hash };
     });
 
-    const loadContentScript = withTabEffect((tabId, frameId) => {
-        if (frameId === null) throw new Error('Invalid frame');
-        return inject({ tabId, frameId, js: ['client.js'] });
-    });
+    const loadContentScript = withTabEffect(
+        withContext((ctx, tabId, frameId) => {
+            if (frameId === undefined) throw new Error('Invalid frame');
+
+            if (frameId > 0) {
+                const state = ctx.service.store.getState();
+                const killswitch = selectFeatureFlag(PassFeature.PassIFrameKillswitch)(state);
+                if (killswitch) throw new Error('Not allowed');
+            }
+
+            return inject({ tabId, frameId, js: ['client.js'] });
+        })
+    );
 
     const unloadContentScript = withTabEffect((tabId, frameId) => {
         const message = backgroundMessage({ type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT });

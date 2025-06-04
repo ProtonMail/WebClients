@@ -88,7 +88,7 @@ const canProcessAction = withContext<(action: DropdownAction) => boolean>((ctx, 
         case DropdownAction.AUTOSUGGEST_PASSWORD:
             return features?.AutosuggestPassword ?? false;
         case DropdownAction.AUTOFILL_CC:
-            return true;
+            return Boolean(features?.CreditCard);
     }
 });
 

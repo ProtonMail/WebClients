@@ -123,8 +123,8 @@ export const createContentScriptClient = ({
              * domain to the pause list we can safely destroy the content-script context */
             const features = context.getFeatures();
             const enableDetector = context.service.detector.isEnabled(features);
-            const enable = enableDetector || features.Passkeys;
-            if (!enable) return context.destroy({ reason: 'injection settings' });
+            const killswitch = !(enableDetector || features.Passkeys);
+            if (killswitch) return context.destroy({ reason: 'injection settings' });
 
             context.setState({ ...res.state, ready: true, stale: false });
             context.setSettings(res.settings);

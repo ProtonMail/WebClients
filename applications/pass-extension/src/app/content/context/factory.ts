@@ -101,9 +101,10 @@ export const createContentScriptContext = (options: ContentScriptContextFactoryO
                 /** autofill can only be active if user has `autofill.login` or `autofill.identity` */
                 Autofill: (autofill.login || autofill.identity) && !hasPause.Autofill,
                 Autofill2FA: autofill.twofa && !hasPause.Autofill2FA,
-                AutosuggestPassword: autosuggest.password && !hasPause.Autosuggest,
-                AutosuggestAlias: autosuggest.email && !hasPause.Autosuggest,
                 Autosave: autosave.prompt && !hasPause.Autosave,
+                AutosuggestAlias: autosuggest.email && !hasPause.Autosuggest,
+                AutosuggestPassword: autosuggest.password && !hasPause.Autosuggest,
+                CreditCard: Boolean(autofill.cc) && !hasPause.Autofill,
                 Passkeys: (passkeys.create || passkeys.get) && !hasPause.Passkey,
             };
         },
