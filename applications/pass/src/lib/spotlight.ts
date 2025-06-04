@@ -5,6 +5,7 @@ import { authStore } from '@proton/pass/lib/auth/store';
 import {
     createAliasDiscoveryRules,
     createAliasSyncEnableRule,
+    createAutotypeRules,
     createB2BRule,
     createFileAttachmentsDiscoveryRule,
     createItemSharingRule,
@@ -59,6 +60,7 @@ export const spotlight = createSpotlightService({
         ...createAliasDiscoveryRules(store),
         createFileAttachmentsDiscoveryRule(store),
         createProtonAnniversary2025Rule(),
+        ...createAutotypeRules(),
     ],
 });
 

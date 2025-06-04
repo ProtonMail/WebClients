@@ -13,6 +13,7 @@ import { DropdownMenuLabel } from '@proton/pass/components/Layout/Dropdown/Dropd
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
+import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
@@ -116,6 +117,9 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const signalItemSharing = signal && !itemShared && canItemShare;
     const disabledSharing = !(canItemShare || canLinkShare || canManageAccess);
     const showSharing = (owner || shared) && !readOnly;
+
+    const autotypeDiscoverySpotlight = useSpotlightFor(SpotlightMessage.AUTOTYPE_DISCOVERY);
+    const signalQuickActions = autotypeDiscoverySpotlight.open && type === 'login';
 
     useEffect(() => {
         (async () => {
@@ -299,6 +303,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                 color="norm"
                                 disabled={actionsDisabled}
                                 shape="ghost"
+                                signaled={signalQuickActions}
                             >
                                 {canMove && (
                                     <DropdownMenuButton

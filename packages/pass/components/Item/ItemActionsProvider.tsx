@@ -15,6 +15,7 @@ import {
     ConfirmLeaveItem,
     ConfirmMoveItem,
 } from '@proton/pass/components/Item/Actions/ConfirmItemActions';
+import { ConfirmAutotype } from '@proton/pass/components/Item/Autotype/ConfirmAutotype';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
@@ -43,7 +44,7 @@ import {
     selectShareOrThrow,
 } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
-import type { ItemMoveIntent } from '@proton/pass/types';
+import type { AutotypeProperties, ItemMoveIntent } from '@proton/pass/types';
 import { type BulkSelectionDTO, type ItemRevision, type MaybeNull, ShareType } from '@proton/pass/types';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 
@@ -60,6 +61,7 @@ interface ItemActionsContextType {
     restoreMany: (items: BulkSelectionDTO) => void;
     trash: (item: ItemRevision) => void;
     trashMany: (items: BulkSelectionDTO) => void;
+    autotype: (props: AutotypeProperties) => void;
 }
 
 const ItemActionsContext = createContext<MaybeNull<ItemActionsContextType>>(null);
@@ -124,6 +126,15 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const moveTitle = (numberOfItems: number) =>
         c('Vault Select').ngettext(msgid`Move item to`, `Move items to`, numberOfItems);
+
+    const autotype = useConfirm(
+        useCallback(({ fields, enterAtTheEnd }: AutotypeProperties) => {
+            void window.ctxBridge?.autotype({
+                fields,
+                enterAtTheEnd,
+            });
+        }, [])
+    );
 
     const context = useMemo<ItemActionsContextType>(() => {
         return {
@@ -201,6 +212,8 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                     },
                 });
             },
+
+            autotype: autotype.prompt,
         };
     }, []);
 
@@ -257,6 +270,8 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
             {leaveItem.pending && (
                 <ConfirmLeaveItem onCancel={leaveItem.cancel} onConfirm={leaveItem.confirm} item={leaveItem.param} />
             )}
+
+            {autotype.pending && <ConfirmAutotype onClose={autotype.cancel} onConfirm={autotype.confirm} />}
         </ItemActionsContext.Provider>
     );
 };
