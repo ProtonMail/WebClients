@@ -249,7 +249,7 @@ const getErrorDetails = (
     const trimmedEmail = state.email.trim();
     const trimmedUsername = state.username.trim();
 
-    if (state.signupType === SignupType.External) {
+    if (state.signupType === SignupType.External || state.signupType === SignupType.BringYourOwnEmail) {
         const accountDetails = getAccountDetailsFromEmail({
             email: state.email,
             domains: state.domains,
@@ -304,7 +304,10 @@ const getValidationResult = (
 
     const fields: (keyof AccountFormDataInputState)[] = (
         [
-            state.signupType === SignupType.External && !hasValidAsyncEmailState ? 'email' : undefined,
+            (state.signupType === SignupType.External || state.signupType === SignupType.BringYourOwnEmail) &&
+            !hasValidAsyncEmailState
+                ? 'email'
+                : undefined,
             state.signupType === SignupType.Proton && !hasValidAsyncUsernameState ? 'username' : undefined,
             errorDetails.username ? 'username' : undefined,
             errorDetails.email ? 'email' : undefined,

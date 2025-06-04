@@ -60,6 +60,7 @@ export const buildUser = (value?: Partial<UserModel>): UserModel => {
             'pass-lifetime': false,
             'pass-from-sl': false,
             sso: false,
+            'has-a-byoe-address': false,
         },
         isAdmin: true,
         isMember: false,

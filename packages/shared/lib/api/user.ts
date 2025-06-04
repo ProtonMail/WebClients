@@ -44,7 +44,7 @@ export const getRecoveryMethods = (Username: string): FetchConfig => ({
 
 export const queryCreateUserExternal = (
     data: {
-        Email: string;
+        Email?: string;
         Token?: string;
         TokenType?: HumanVerificationMethodType;
         Type: CLIENT_TYPES; // 1 = mail, 2 = VPN
