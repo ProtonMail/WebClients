@@ -155,6 +155,15 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
 
     const { createNotification } = useNotifications();
 
+    // we will need the photosShare for loadAlbum and loadPhotos
+    // the only other way to populate it would be with startPhotosMigration
+    // but we don't want to call it outside of the photos section
+    useEffect(() => {
+        void getDefaultPhotosShare().then((defaultPhotosShare) => {
+            setPhotosShare(defaultPhotosShare);
+        });
+    }, []);
+
     const startPhotosMigration = useCallback(async () => {
         const signal = new AbortController().signal;
         const status = await shouldMigratePhotos();
