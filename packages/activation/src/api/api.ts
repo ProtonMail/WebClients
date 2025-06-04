@@ -1,4 +1,10 @@
-import type { CreateImportPayload, EASY_SWITCH_SOURCES, LaunchImportPayload, OAuthProps } from '../interface';
+import type {
+    CreateImportPayload,
+    EASY_SWITCH_FEATURES,
+    EASY_SWITCH_SOURCES,
+    LaunchImportPayload,
+    OAuthProps,
+} from '../interface';
 import { ImportType } from '../interface';
 
 export const getTokens = () => ({
@@ -127,4 +133,15 @@ export const rollbackImport = (reportID: string, Products: ImportType[]) => ({
     url: `importer/v1/reports/${reportID}/undo`,
     method: 'POST',
     data: { Products },
+});
+
+export const createSignupOAuthToken = (
+    data: OAuthProps & {
+        Features: EASY_SWITCH_FEATURES[];
+        Source: EASY_SWITCH_SOURCES;
+    }
+) => ({
+    url: 'oauth-token/v1/tokens/external',
+    method: 'POST',
+    data,
 });

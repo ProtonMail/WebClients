@@ -91,6 +91,7 @@ export interface ReferralData {
 export enum SignupType {
     External = 1,
     Proton = 2,
+    BringYourOwnEmail = 3,
 }
 
 export interface SignupModel {
