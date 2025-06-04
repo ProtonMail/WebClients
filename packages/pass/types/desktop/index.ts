@@ -14,6 +14,7 @@ export type ContextBridgeApi = {
     getClipboardConfig: () => Promise<Maybe<ClipboardStoreProperties>>;
     getTheme: () => Promise<Maybe<DesktopTheme>>;
     setTheme: (theme: DesktopTheme) => Promise<void>;
+    autotype: ({ fields, enterAtTheEnd }: AutotypeProperties) => Promise<void>;
 };
 
 export type DesktopTheme = 'dark' | 'light' | 'system';
@@ -21,3 +22,5 @@ export type DesktopTheme = 'dark' | 'light' | 'system';
 export type ClipboardStoreProperties = {
     timeoutMs: number;
 };
+
+export type AutotypeProperties = { fields: string[]; enterAtTheEnd?: boolean };

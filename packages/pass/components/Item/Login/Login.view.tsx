@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
 import { FileAttachmentsContentView } from '@proton/pass/components/FileAttachments/FileAttachmentsView';
+import { AutotypeDropdownLogin } from '@proton/pass/components/Item/Autotype/AutotypeDropdownLogin';
 import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
 import { LoginContent } from '@proton/pass/components/Item/Login/Login.content';
 import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
@@ -12,10 +13,14 @@ import { isMonitored } from '@proton/pass/lib/items/item.predicates';
 
 export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
     const { revision, handleHistoryClick, share } = itemViewProps;
-    const { createTime, lastUseTime, modifyTime, revision: revisionNumber, shareId, itemId } = revision;
+    const { createTime, lastUseTime, modifyTime, revision: revisionNumber, shareId, itemId, data } = revision;
 
     return (
-        <ItemViewPanel type="login" {...itemViewProps}>
+        <ItemViewPanel
+            type="login"
+            quickActions={DESKTOP_BUILD ? [<AutotypeDropdownLogin data={data} key="autotype-dropdown" />] : undefined}
+            {...itemViewProps}
+        >
             {isMonitored(revision) && <ItemReport shareId={shareId} itemId={itemId} />}
             <SecureLinkCardList shareId={shareId} itemId={itemId} />
             <LoginContent revision={revision} />
