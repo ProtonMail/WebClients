@@ -72,12 +72,13 @@ export const createFormManager = (options: FormManagerOptions) => {
     const runDetection = throttle(
         withContext<(reason: string) => Promise<boolean>>(async (ctx, reason: string) => {
             const settings = ctx?.getSettings();
-            const features = ctx?.getFeatures();
-            const detectIdentity = Boolean(features?.Autofill && settings?.autofill.identity);
+            const { Autofill, Autofill2FA, CreditCard } = ctx?.getFeatures() ?? {};
+            const detectIdentity = Boolean(Autofill && settings?.autofill.identity);
             const excludedFieldTypes: FieldType[] = [];
 
             if (!detectIdentity) excludedFieldTypes.push(FieldType.IDENTITY);
-            if (!features?.Autofill2FA) excludedFieldTypes.push(FieldType.OTP);
+            if (!Autofill2FA) excludedFieldTypes.push(FieldType.OTP);
+            if (!CreditCard) excludedFieldTypes.push(FieldType.CREDIT_CARD);
 
             /* if there is an on-going detection, early return */
             if (state.detectionRequest !== -1) return false;

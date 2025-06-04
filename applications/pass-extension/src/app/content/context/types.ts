@@ -20,6 +20,7 @@ export type CSFeatures =
     | 'Autosave'
     | 'AutosuggestAlias'
     | 'AutosuggestPassword'
+    | 'CreditCard'
     | 'Passkeys';
 
 export interface ContentScriptContext {

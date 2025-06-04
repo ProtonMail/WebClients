@@ -129,7 +129,8 @@ const isEnabled = (features: Record<CSFeatures, boolean>): boolean =>
     features.Autofill2FA ||
     features.Autosave ||
     features.AutosuggestAlias ||
-    features.AutosuggestPassword;
+    features.AutosuggestPassword ||
+    features.CreditCard;
 
 export const createDetectorService = (config: DetectorConfig) => {
     const state: DetectorState = { rules: null };
