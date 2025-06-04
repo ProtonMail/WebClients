@@ -39189,6 +39189,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-verify@workspace:applications/verify"
   dependencies:
+    "@proton/account": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/hooks": "workspace:^"
@@ -39197,6 +39198,7 @@ __metadata:
     "@proton/jest-env": "workspace:^"
     "@proton/pack": "workspace:^"
     "@proton/polyfill": "workspace:^"
+    "@proton/redux-shared-store": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
