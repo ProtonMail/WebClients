@@ -35,14 +35,14 @@ export const useTelemetryEvent = <T extends TelemetryEventName>(
 const getExtensionCopiedFromLoginBaseDimensions = (
     extensionField: TelemetryFieldType
 ): ExtensionCopiedFromLoginDimensions => ({
-    autofillLoginFormDetected: 0,
-    autofillPaused: 0,
-    extensionCopiedFromCurrentPage: 0,
+    autofillLoginFormDetected: '0',
+    autofillPaused: '0',
+    extensionCopiedFromCurrentPage: '0',
     extensionField,
-    hasLoginItemForCurrentWebsite: 0,
-    loginAutofillEnabled: 0,
+    hasLoginItemForCurrentWebsite: '0',
+    loginAutofillEnabled: '0',
     modelVersion: MODEL_VERSION,
-    uniqueMatch: 0,
+    uniqueMatch: '0',
 });
 
 export const useLoginClipboardTelemetry = EXTENSION_BUILD

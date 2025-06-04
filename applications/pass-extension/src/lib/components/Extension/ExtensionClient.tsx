@@ -14,6 +14,7 @@ import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { clientErrored } from '@proton/pass/lib/client';
 import { isExtensionMessage } from '@proton/pass/lib/extension/message/utils';
+import { telemetryBool } from '@proton/pass/lib/telemetry/utils';
 import { lock, signoutIntent, syncIntent } from '@proton/pass/store/actions';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import type { MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
@@ -59,7 +60,7 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
                             {},
                             {
                                 extensionBrowser: BUILD_TARGET,
-                                extensionReloadRequired: state.criticalRuntimeError ? 1 : 0,
+                                extensionReloadRequired: telemetryBool(state.criticalRuntimeError ?? false),
                             }
                         );
                     }
