@@ -12,7 +12,7 @@ import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap'
 import { stage, stash, validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
 import type { Runtime } from 'webextension-polyfill';
 
-import { FieldType, FormType, kButtonSubmitSelector } from '@proton/pass/fathom';
+import { FieldType, kButtonSubmitSelector } from '@proton/pass/fathom';
 import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import browser from '@proton/pass/lib/globals/browser';
 import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
@@ -228,7 +228,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
             ?.focus();
     });
 
-    const onTabMessage: Runtime.OnMessageListenerCallback = (message, _, sendResponse) => {
+    const onTabMessage: Runtime.OnMessageListenerNoResponse = (message) => {
         if (matchExtensionMessage(message, { sender: 'background', type: WorkerMessageType.FORM_STATUS })) {
             const { formId, status } = message.payload;
 
@@ -260,17 +260,6 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
                 }
             }
         }
-
-        if (matchExtensionMessage(message, { type: WorkerMessageType.AUTOFILL_CHECK_FORM, sender: 'background' })) {
-            try {
-                if (form.formType === FormType.LOGIN) sendResponse({ hasLoginForm: true });
-                return true;
-            } catch {
-                /** response may have been already sent by another login form */
-            }
-        }
-
-        return undefined as any;
     };
 
     /** When detaching the form tracker: remove every listener
