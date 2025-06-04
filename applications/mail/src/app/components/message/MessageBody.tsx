@@ -2,8 +2,9 @@ import type { RefObject } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { useTheme } from '@proton/components';
+import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
-import { isPlainText } from '@proton/shared/lib/mail/messages';
+import { isAutoFlaggedPhishing, isPlainText, isSuspicious } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
 import MessageBodyPlaceholder from 'proton-mail/components/message/MessageBodyPlaceholder';
@@ -54,6 +55,7 @@ const MessageBody = ({
     const [isIframeContentSet, setIsIframeContentSet] = useState(false);
     const bodyRef = useRef<HTMLDivElement>(null);
     const iframeRef = useRef<HTMLIFrameElement>(null);
+    const iframeRootDivRef = useRef<HTMLDivElement>();
     const theme = useTheme();
     const { highlightString, shouldHighlight } = useEncryptedSearchContext();
     const onMailTo = useOnMailTo();
@@ -96,14 +98,22 @@ const MessageBody = ({
     );
     const showBlockquoteResults = highlightedBlockquote !== blockquote;
 
+    const { modal: linkModal } = useLinkHandler(iframeRootDivRef, mailSettings, {
+        onMailTo,
+        startListening: isIframeContentSet && iframeRootDivRef.current !== undefined,
+        isOutside: false,
+        isPhishingAttempt: isAutoFlaggedPhishing(message.data) || isSuspicious(message.data),
+    });
+
     useEffect(() => {
         if (!loadingMode && !decryptingMode && onMessageReady) {
             setTimeout(onMessageReady);
         }
     }, [loadingMode, decryptingMode, message.data?.ID]);
 
-    const handleContentLoaded = () => {
+    const handleContentLoaded = (iframeRootDivElement: HTMLDivElement) => {
         setIsIframeContentSet(true);
+        iframeRootDivRef.current = iframeRootDivElement;
     };
 
     useEffect(() => {
@@ -149,11 +159,11 @@ const MessageBody = ({
                         isPrint={isPrint}
                         message={message}
                         onReady={onIframeReady}
-                        onMailTo={onMailTo}
                         mailSettings={mailSettings}
                         onFocus={onFocusIframe}
                     />
                     <MessageBodyPrint isPrint={isPrint} iframeRef={iframeRef} message={message} labelID={labelID} />
+                    {linkModal}
                 </div>
             )}
         </div>
