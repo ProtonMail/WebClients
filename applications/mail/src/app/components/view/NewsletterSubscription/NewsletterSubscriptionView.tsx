@@ -17,6 +17,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
 import { MailboxToolbar } from 'proton-mail/router/components/MailboxToolbar';
 import type { MailboxActions, RouterNavigation } from 'proton-mail/router/interface';
+import { setParams } from 'proton-mail/store/elements/elementsActions';
 import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import {
@@ -79,6 +80,13 @@ export const NewsletterSubscriptionView = ({
             onboardingModal.openModal(true);
         }
     }, [feature?.Value, isDomBusy]);
+
+    // The view is not availabe on mobile, we want to make sure to avoid showing it to users
+    useEffect(() => {
+        if (activeSubscription && activeSubscription.ID) {
+            dispatch(setParams({ newsletterSubscriptionID: activeSubscription.ID, conversationMode: false }));
+        }
+    }, [activeSubscription?.ID]);
 
     if (!newsletterSubscriptionsView || !mailboxRefactoring || breakpoints.viewportWidth['<=small']) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
