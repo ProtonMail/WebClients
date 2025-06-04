@@ -185,8 +185,6 @@ export const createIFrameApp = <A>({
             state.visible = false;
             state.action = null;
 
-            sendContentScriptTelemetry(TelemetryEventName.ExtensionUsed, {}, { modelVersion: MODEL_VERSION });
-
             void sendPortMessage({ type: IFramePortMessageType.IFRAME_HIDDEN });
         }
     };
@@ -259,7 +257,10 @@ export const createIFrameApp = <A>({
         state.framePort = framePort;
     });
 
-    registerMessageHandler(IFramePortMessageType.IFRAME_CLOSE, (message) => close(message.payload));
+    registerMessageHandler(IFramePortMessageType.IFRAME_CLOSE, (message) => {
+        close(message.payload);
+        sendContentScriptTelemetry(TelemetryEventName.ExtensionUsed, {}, { modelVersion: MODEL_VERSION });
+    });
 
     registerMessageHandler(IFramePortMessageType.IFRAME_DIMENSIONS, (message) => {
         const { width, height } = merge(dimensions(state), { height: message.payload.height });
