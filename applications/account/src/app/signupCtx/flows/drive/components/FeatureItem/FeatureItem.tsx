@@ -32,7 +32,7 @@ const FeatureItem = ({
             <span className={clsx('shrink-0', iconClassName, highlighted ? 'color-success' : 'color-weak')}>
                 {icon}
             </span>
-            <Tooltip title={tooltip}>
+            <Tooltip title={tooltip} openDelay={200}>
                 <span
                     className={clsx(
                         textClassName,
