@@ -45,7 +45,6 @@ import {
     selectFeatureFlag,
     selectFilters,
     selectLocale,
-    selectTheme,
 } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -85,12 +84,13 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 getTelemetry: () => telemetry,
                 getDesktopBridge: DESKTOP_BUILD ? () => window.ctxBridge! : undefined,
 
-                onBeforeHydrate: (state) => {
-                    if (selectTheme(state) === undefined && getPersistedSessions().length > 1) {
+                onBeforeHydrate: (state, fromCache) => {
+                    if (!fromCache && getPersistedSessions().length > 1) {
                         /* If the user switched to a new account for the first time, initialize
                          * their settings theme to be the current theme which should have been
-                         * set to the last used account's theme (see `getInitialTheme`). This
-                         * avoids prompting for theme onboarding on account switch. */
+                         * set to the last used account's theme (see `getTheme`). This
+                         * avoids prompting for theme onboarding on account switch. `fromCache`
+                         * will always be false on first app boot. */
                         state.settings.theme = core.theme.getState();
                     }
 
@@ -98,23 +98,25 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 },
 
                 onBoot: async (res) => {
-                    AppStateManager.setBooted(res.ok);
                     const userID = authStore.getUserID();
                     const state = store.getState();
 
                     if (res.ok) {
                         await spotlight.init().catch(noop);
+                        await core.i18n.setLocale(selectLocale(state)).catch(noop);
 
                         telemetry.start().catch(noop);
                         B2BEvents.start().catch(noop);
-                        core.i18n.setLocale(selectLocale(state)).catch(noop);
 
-                        /** For desktop builds using cached versions older than 1.24.2:
-                         * Auto-acknowledge the `WELCOME` message to prevent showing the
-                         * spotlight modal to existing users after they update.  */
-                        if (DESKTOP_BUILD && res.version && semver(res.version) < semver('1.24.2')) {
+                        if (res.version && semver(res.version) < semver(DESKTOP_BUILD ? '1.24.2' : '1.31.5')) {
+                            /** Auto-acknowledge the `WELCOME` message to prevent showing the
+                             * spotlight modal to existing users after they update */
                             spotlight.acknowledge(SpotlightMessage.WELCOME);
                         }
+
+                        /** Wait for i18n/spotlight init to avoid re-render
+                         * if i18n locale has to change on boot */
+                        AppStateManager.setBooted(true);
 
                         if (isDocumentVisible() && !res.offline) store.dispatch(startEventPolling());
 
@@ -142,7 +144,10 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         history.replace({ ...history.location, search });
 
                         if (res.reauth) void handleReauthAction(res.reauth);
-                    } else if (res.clearCache) void deletePassDB(userID);
+                    } else {
+                        AppStateManager.setBooted(false);
+                        if (res.clearCache) void deletePassDB(userID);
+                    }
                 },
 
                 onLocaleUpdated: core.i18n.setLocale,
@@ -176,12 +181,13 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                     }
                 },
                 onSettingsUpdated: async (update) => {
-                    void settings.sync(update, authStore.getLocalID());
+                    await settings.sync(update, authStore.getLocalID());
+                    if (update.theme) core.theme.setState(update.theme);
+
                     if (DESKTOP_BUILD) {
                         /** Electron might need to apply or store certain settings, forward them */
                         const desktopBridge = window.ctxBridge;
                         const { clipboard, theme } = update;
-
                         if (theme) desktopBridge?.setTheme(themeOptionToDesktop[theme]).catch(noop);
                         if (clipboard?.timeoutMs) desktopBridge?.setClipboardConfig(clipboard).catch(noop);
                     }

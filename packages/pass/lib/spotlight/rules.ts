@@ -37,10 +37,7 @@ export const createPendingShareAccessRule = (store: Store<State>) =>
 export const createWelcomeRule = () =>
     createSpotlightRule({
         message: SpotlightMessage.WELCOME,
-        when: (previous) => {
-            if (!DESKTOP_BUILD) return false;
-            return !previous;
-        },
+        when: (previous) => !previous,
     });
 
 export const createPermissionsRule = (checkPermissionsGranted: () => boolean) =>
@@ -86,12 +83,6 @@ export const createB2BRule = (store: Store<State>) =>
             const passPlan = selectPassPlan(store.getState());
             return !previous && passPlan === UserPassPlan.BUSINESS;
         },
-    });
-
-export const createWebOnboardingRule = () =>
-    createSpotlightRule({
-        message: SpotlightMessage.WEB_ONBOARDING,
-        when: (previous) => !DESKTOP_BUILD && !previous,
     });
 
 export const createSecurityRule = (store: Store<State>) =>
