@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -55,11 +55,13 @@ const CustomStep = ({
     const plan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs);
     const planName = plan?.Title;
     const isB2BAudienceFromPlan = Boolean(plan && getIsB2BAudienceFromPlan(plan.Name));
+    const isBYOEAccount =
+        model.cache?.type === 'signup' && model.cache.accountData.signupType === SignupType.BringYourOwnEmail;
 
     const steps: Step[] = [
         !!mnemonicData && Step.MnemonicRecovery,
-        Step.Congratulations,
-        !mnemonicData && Step.SaveRecovery,
+        !isBYOEAccount && Step.Congratulations,
+        !isBYOEAccount && !mnemonicData && Step.SaveRecovery,
         isB2BAudienceFromPlan && Step.OrgSetup,
         isB2BAudienceFromPlan && Step.RedirectAdmin,
         !!hasExploreStep && Step.Explore,
@@ -112,6 +114,17 @@ const CustomStep = ({
 
         return '';
     })();
+
+    // BYOE accounts might not have custom steps by default
+    useEffect(() => {
+        if (step === undefined) {
+            const signupActionResponse = handleDone({
+                cache,
+                appIntent: { app: product, ref: hasExploreStep ? 'product-switch' : undefined },
+            });
+            void onSetup({ type: 'signup', payload: signupActionResponse });
+        }
+    }, [step]);
 
     return (
         <Layout logo={logo} hasDecoration={false}>

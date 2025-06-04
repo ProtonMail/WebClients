@@ -3,6 +3,7 @@ import { useImperativeHandle, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import BYOESignupButton from '@proton/activation/src/components/Signup/BYOESignupButton';
 import { CircleLoader, InlineLinkButton } from '@proton/atoms';
 import { Challenge, DropdownSizeUnit, Icon, Info, InputFieldTwo, Option, PasswordInputTwo } from '@proton/components';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
@@ -10,6 +11,7 @@ import { PLANS } from '@proton/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getMinPasswordLengthMessage } from '@proton/shared/lib/helpers/formValidators';
+import { useFlag, useVariant } from '@proton/unleash/index';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -83,6 +85,12 @@ const AccountStepDetails = ({
     const theme = usePublicTheme();
     const [, setRerender] = useState<any>();
     const [loadingChallenge, setLoadingChallenge] = useState(true);
+
+    const variant = useVariant('InboxBringYourOwnEmailSignup');
+    const hasAccessToBYOE =
+        useFlag('InboxBringYourOwnEmail') &&
+        variant.name !== 'Control' &&
+        state.signupTypes.has(SignupType.BringYourOwnEmail);
 
     useImperativeHandle(accountStepDetailsRef, () => ({
         validate: () => {
@@ -163,7 +171,8 @@ const AccountStepDetails = ({
                         }}
                     >
                         <div className={clsx(inputsWrapper, theme.dark && 'ui-prominent', 'bg-transparent')}>
-                            {state.signupType === SignupType.External && (
+                            {(state.signupType === SignupType.External ||
+                                state.signupType === SignupType.BringYourOwnEmail) && (
                                 <InputFieldTwo
                                     ref={refs.email}
                                     id="email"
@@ -354,6 +363,18 @@ const AccountStepDetails = ({
                             />
                         </div>
                     ) : null}
+
+                    {hasAccessToBYOE && (
+                        <BYOESignupButton
+                            onEmailValue={(value) => onValue.onEmailValue(value, state.domains)}
+                            signupType={state.signupType}
+                            setSignupType={(signupType) => onValue.onDetailsDiff({ signupType })}
+                            onUseInternalAddress={() =>
+                                onValue.onDetailsDiff({ signupType: SignupType.Proton, email: '', username: '' })
+                            }
+                            passwordInputRef={refs.password}
+                        />
+                    )}
 
                     {passwordFields && (
                         <>

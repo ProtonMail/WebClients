@@ -40,6 +40,7 @@ export const getGenericConfiguration = ({
         vpnServersCountData,
         signupParameters,
         freePlan,
+        canUseBYOE: false,
     });
 
     return {

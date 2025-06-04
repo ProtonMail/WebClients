@@ -147,7 +147,7 @@ export const handleCreateUser = async ({
         }
     }
 
-    if (signupType === SignupType.External) {
+    if (signupType === SignupType.External || signupType === SignupType.BringYourOwnEmail) {
         const { User } = await srpVerify<{ User: User }>({
             api,
             credentials: { password },
@@ -158,7 +158,8 @@ export const handleCreateUser = async ({
                     queryCreateUserExternal(
                         {
                             Type: clientType,
-                            Email: email,
+                            // To create a BYOE user, we shouldn't pass an email
+                            Email: signupType !== SignupType.BringYourOwnEmail ? email : undefined,
                             Payload: payload,
                             ...(() => {
                                 if (

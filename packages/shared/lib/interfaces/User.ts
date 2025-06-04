@@ -102,6 +102,7 @@ export interface User {
         'pass-lifetime': boolean;
         'pass-from-sl': boolean;
         sso: boolean;
+        'has-a-byoe-address': boolean;
     };
     AccountRecovery: {
         State: SessionRecoveryState;

@@ -4,13 +4,8 @@ import { c } from 'ttag';
 
 import { createBYOEAddress } from '@proton/account/addresses/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { getBYOEScope, getForwardingScope } from '@proton/activation/src/helpers/scope';
 import { useUser } from '@proton/account/user/hooks';
-import {
-    G_OAUTH_SCOPE_DEFAULT,
-    G_OAUTH_SCOPE_MAIL_FULL_SCOPE,
-    G_OAUTH_SCOPE_PROFILE,
-    SYNC_G_OAUTH_SCOPES,
-} from '@proton/activation/src/constants';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { deleteSyncItem, loadSyncList } from '@proton/activation/src/logic/sync/sync.actions';
 import type { Sync } from '@proton/activation/src/logic/sync/sync.interface';
@@ -35,9 +30,7 @@ const useSetupGmailBYOEAddress = () => {
     const dispatch = useDispatch();
     const dispatchEasySwitch = useEasySwitchDispatch();
 
-    const googleOAuthScope = hasAccessToBYOE
-        ? [...G_OAUTH_SCOPE_DEFAULT, ...G_OAUTH_SCOPE_MAIL_FULL_SCOPE, ...G_OAUTH_SCOPE_PROFILE].join(' ')
-        : SYNC_G_OAUTH_SCOPES.join(' ');
+    const googleOAuthScope = hasAccessToBYOE ? getBYOEScope() : getForwardingScope();
 
     // Fetch syncs
     useEffect(() => {

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ApiSyncState } from '@proton/activation/src/api/api.interface';
-import { SYNC_G_OAUTH_SCOPES } from '@proton/activation/src/constants';
+import { getForwardingScope } from '@proton/activation/src/helpers/scope';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
 import type { EasySwitchFeatureFlag, OAuthProps } from '@proton/activation/src/interface';
 import { EASY_SWITCH_SOURCES, ImportProvider } from '@proton/activation/src/interface';
@@ -35,7 +35,7 @@ const SyncRowActions = ({ syncId }: Props) => {
     const handleReconnectClick = () => {
         void triggerOAuthPopup({
             provider: ImportProvider.GOOGLE,
-            scope: SYNC_G_OAUTH_SCOPES.join(' '),
+            scope: getForwardingScope(),
             callback: async (oAuthProps: OAuthProps) => {
                 const { Code, Provider, RedirectUri } = oAuthProps;
 

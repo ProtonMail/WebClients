@@ -7,7 +7,7 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getRequiresAddress, getRequiresProtonAddress } from '@proton/shared/lib/authentication/apps';
 import { getClientKey } from '@proton/shared/lib/authentication/clientKey';
 import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { ADDRESS_TYPE, KEYGEN_CONFIGS, KEYGEN_TYPES, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getEmailParts, removePlusAliasLocalPart } from '@proton/shared/lib/helpers/email';
@@ -322,6 +322,13 @@ export const getIsExternalAccount = (user: tsUser) => {
     return user.Type === UserType.EXTERNAL || user.Flags['no-proton-address'];
 };
 
+export const getIsBYOEAccount = (user: tsUser) => {
+    if (!user) {
+        return false;
+    }
+    return user.Flags['has-a-byoe-address'];
+};
+
 export const getRequiresPasswordSetup = (user: tsUser, setupVPN: boolean) => {
     if (!user || user.Keys.length > 0 || !isPrivate(user)) {
         return false;
@@ -331,6 +338,11 @@ export const getRequiresPasswordSetup = (user: tsUser, setupVPN: boolean) => {
 
 export const getRequiresAddressSetup = (toApp: APP_NAMES, user: tsUser) => {
     if (!user || !isPrivate(user)) {
+        return false;
+    }
+
+    // BYOE users should be able to open Mail without facing the "claim Proton address" step
+    if (toApp === APPS.PROTONMAIL && getIsBYOEAccount(user)) {
         return false;
     }
 
