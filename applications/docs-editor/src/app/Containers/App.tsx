@@ -662,12 +662,12 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         <SpreadsheetProvider>
           <Spreadsheet
             ref={spreadsheetRef}
-            bridge={bridge}
             docState={docState}
             hidden={editorHidden}
             onEditorLoadResult={onEditorLoadResult}
             editorInitializationConfig={editorConfig.current.editorInitializationConfig}
             systemMode={systemMode}
+            editingLocked={editingLocked || userMode === EditorUserMode.Preview}
           />
         </SpreadsheetProvider>
       )}
