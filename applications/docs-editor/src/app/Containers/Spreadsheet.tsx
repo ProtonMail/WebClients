@@ -87,7 +87,6 @@ import type { EditorLoadResult } from '../Lib/EditorLoadResult'
 import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
 import { useApplication } from './ApplicationProvider'
 import { downloadLogsAsJSON } from '../../../../docs/src/app/utils/downloadLogs'
-import type { EditorToClientBridge } from '../Bridge/EditorToClientBridge'
 import type { EditorControllerInterface } from '@proton/docs-core'
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 
@@ -107,19 +106,19 @@ export type SheetRef = {
 
 export const Spreadsheet = forwardRef(function Spreadsheet(
   {
-    bridge,
     docState,
     hidden,
     onEditorLoadResult,
     editorInitializationConfig,
     systemMode,
+    editingLocked,
   }: {
-    bridge: EditorToClientBridge
     docState: DocStateInterface
     hidden: boolean
     onEditorLoadResult: EditorLoadResult
     editorInitializationConfig: EditorInitializationConfig | undefined
     systemMode: EditorSystemMode
+    editingLocked: boolean
   },
   ref: ForwardedRef<SheetRef>,
 ) {
@@ -143,6 +142,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const yDoc = useMemo(() => docState.getDoc(), [docState])
 
   const isRevisionMode = systemMode === EditorSystemMode.Revision
+  const isReadonly = editingLocked || isRevisionMode
 
   const {
     activeCell,
@@ -650,7 +650,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
             sheetId={activeSheetId}
             activeCell={activeCell}
             functionDescriptions={functionDescriptions}
-            readOnly={isRevisionMode}
+            readOnly={isReadonly}
           />
         </FormulaBar>
         <CanvasGrid
@@ -746,18 +746,18 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
               {...props}
               getSeriesValuesFromRange={getSeriesValuesFromRange}
               getDomainValuesFromRange={getDomainValuesFromRange}
-              onRequestEdit={!isRevisionMode ? onRequestEditChart : undefined}
+              onRequestEdit={!isReadonly ? onRequestEditChart : undefined}
               onRequestCalculate={onRequestCalculate}
-              readonly={isRevisionMode}
+              readonly={isReadonly}
             />
           )}
-          readonly={isRevisionMode}
+          readonly={isReadonly}
         />
         <ChartEditorDialog>
           <ChartEditor sheetId={activeSheetId} chart={selectedChart} onSubmit={onUpdateChart} />
         </ChartEditorDialog>
         <BottomBar>
-          {!isRevisionMode && <NewSheetButton onClick={onCreateNewSheet} />}
+          {!isRevisionMode && <NewSheetButton onClick={onCreateNewSheet} disabled={isReadonly} />}
           <SheetSwitcher
             sheets={sheets}
             activeSheetId={activeSheetId}
@@ -778,7 +778,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
             onProtectSheet={onProtectSheet}
             onUnProtectSheet={onUnProtectSheet}
             onDuplicateSheet={onDuplicateSheet}
-            readonly={isRevisionMode}
+            readonly={isReadonly}
           />
           <SheetStatus
             sheetId={activeSheetId}
