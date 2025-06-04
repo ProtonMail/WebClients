@@ -506,7 +506,7 @@ export const handleSetupUser = async ({
         if (signupType === SignupType.Proton) {
             return `${username}@${domain}`;
         }
-        if (signupType === SignupType.External) {
+        if (signupType === SignupType.External || signupType === SignupType.BringYourOwnEmail) {
             return email;
         }
         throw new Error('Unknown type');
