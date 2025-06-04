@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+import { apiStatusReducer } from '@proton/account/apiStatus';
 import { featuresReducer } from '@proton/features';
 
 import { elementsReducer } from '../elements/elementsSlice';
@@ -11,6 +12,7 @@ export const setupStore = () => {
         reducer: {
             eo,
             ...elementsReducer,
+            ...apiStatusReducer,
             features: featuresReducer.reducer,
         },
         middleware: (getDefaultMiddleware) =>
