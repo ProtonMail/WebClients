@@ -435,6 +435,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Transferir as aplicações do ${ DRIVE_APP_NAME }"
       ],
+      "Download all attachments": [
+        "Transferir todos os anexos"
+      ],
       "Download now": [
         "Transferir agora"
       ],
@@ -724,6 +727,9 @@
       "Keep my subscription": [
         "Manter a minha assinatura"
       ],
+      "Keep subscription": [
+        "Manter a subscrição"
+      ],
       "Label as": [
         "Etiquetar como"
       ],
@@ -957,9 +963,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir definições do ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Abrir no ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Abrir navegação"
@@ -1453,11 +1456,11 @@
       "Upgrade": [
         "Actualizar"
       ],
-      "Upgrade Now": [
-        "Atualizar agora"
-      ],
       "Upgrade now": [
         "Actualizar agora"
+      ],
+      "Upgrade Now": [
+        "Atualizar agora"
       ],
       "Upload and share files": [
         "Enviar e partilhar ficheiros"
@@ -3984,11 +3987,6 @@
         "A sua subscrição do ${ PLAN_NAMES[PLANS.PASS] } está a um preço especial de ${ price } por ano. Ao optar por um plano gratuito, perderá permanentemente o desconto, mesmo que melhore o plano novamente no futuro."
       ]
     },
-    "Download attachments": {
-      "Download all": [
-        "Transferir tudo"
-      ]
-    },
     "Drawer tab, Action": {
       "Download for Linux": [
         "Transferir para Linux"
@@ -5564,6 +5562,9 @@
       "Contacts": [
         "Contactos"
       ],
+      "Drawer": [
+        "Painel lateral"
+      ],
       "Hardware not compatible": [
         "O equipamento não é compatível."
       ],
@@ -6853,6 +6854,9 @@
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Se acredita que cometemos um erro, ${ contactLink }."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Se cancelar, perderá o acesso a ${ boldPlanTitle } imediatamente, e será revertido para o plano ${ boldProtonFree }. Se a sua utilização exceder os limites do plano Free, poderá ter acesso restrito a funcionalidades do produto e aos seus dados."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Se cancelar, a sua subscrição ${ planTitle } não será renovada quando expirar em ${ expiryDate }."
       ],
@@ -7780,6 +7784,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar o seu pagamento, envie ${ btcAmountBold } para o endereço abaixo."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Para continuar a desfrutar de ${ boldPlanTitle } gratuitamente até ${ boldCancelDate }, não cancele."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e abusos, confirme que é um ser humano."
       ],
@@ -8005,6 +8012,9 @@
       "Week": [
         "Semana"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "O que perde ao cancelar o ${ boldPlanTitle }:"
+      ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Quando deseja que a sua mensagem seja excluída automaticamente da caixa de entrada do destinatário e da pasta de envio?"
       ],
@@ -8099,6 +8109,9 @@
       ],
       "You can now return to the application to continue": [
         "Pode agora voltar à aplicação e continuar."
+      ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Ainda pode aceder a todos os dados da sua conta. Pode subscrever novamente a qualquer momento para continuar a desfrutar de todas as nossas funcionalidades."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Pode ativar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
@@ -8196,6 +8209,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Será brevemente redirecionado para o PayPal para verificar o pagamento."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Não lhe será cobrado se cancelar antes de ${ trialEndsOnFormatted }."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Escreveu \"${ attachmentsFoundKeyword }\", mas não adicionou nenhum anexo. Ainda quer enviar esta mensagem?"
       ],
@@ -8217,6 +8233,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "A sua subscrição do ${ PASS_SHORT_APP_NAME } Plus será substituída pela do ${ PASS_SHORT_APP_NAME } Lifetime. O saldo restante da sua subscrição será adicionado à sua conta. A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, sendo um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "O seu plano ${ planName } é agora uma subscrição paga que se renova automaticamente a cada 12 meses. A sua próxima data de faturação é ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma fatura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
@@ -8244,6 +8263,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Os seus ficheiros serão encriptados e depois guardados."
+      ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "A sua avaliação gratuita de ${ boldPlanTitle } foi cancelada e a sua conta ${ boldUserEmail } foi revertida para ${ boldProtonFree }."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "O seu hardware não suporta a execução do assistente de escrita localmente. Tente executá-lo em servidores."
@@ -8282,6 +8304,9 @@
       "Your online activity is protected": [
         "A sua atividade online está protegida."
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "A sua organização ${ boldOrganizationName } está desativada e todas as suas licenças de utilizador foram removidas."
+      ],
       "Your password was leaked:": [
         "A sua palavra-passe foi divulgada:"
       ],
@@ -8303,6 +8328,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "A sua subscrição será renovada automaticamente em ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "A sua avaliação terminará em ${ timeRemaining }."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a alguns cliques de ter uma caixa de entrada organizada"
@@ -8626,6 +8654,9 @@
       "Address": [
         "Endereço"
       ],
+      "Alias title": [
+        "Título do alias"
+      ],
       "ALL": [
         "TUDO"
       ],
@@ -8641,10 +8672,10 @@
       "Always move sender's emails": [
         "Mover sempre os e-mails do remetente"
       ],
-      "And": [
+      "AND": [
         "E"
       ],
-      "AND": [
+      "And": [
         "E"
       ],
       "and": [
@@ -8872,11 +8903,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Se"
-      ],
       "IF": [
         "SE"
+      ],
+      "If": [
+        "Se"
       ],
       "Import all messages": [
         "Importar todas as mensagens"
@@ -9014,14 +9045,14 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "OU"
+      ],
       "or": [
         "ou"
       ],
       "Or": [
         "Ou"
-      ],
-      "OR": [
-        "OU"
       ],
       "Original link": [
         "Ligação original"
@@ -9148,9 +9179,6 @@
       ],
       "Time": [
         "Tempo"
-      ],
-      "Title": [
-        "Título"
       ],
       "To:": [
         "Para:"
@@ -9916,6 +9944,14 @@
         "Velocidade VPN média"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Obtenha o ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Apagar conta"
@@ -9937,14 +9973,6 @@
       ],
       "Switch plan": [
         "Alterar o plano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Obtenha o ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -10489,9 +10517,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Aceder à internet com segurança a partir de qualquer sítio com monitorização essencial de rede"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Armazenamento em nuvem seguro que permite armazenar, sincronizar e compartilhar ficheiros com facilidade e segurança."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "E-mail seguro com caraterísticas avançadas para as suas comunicações diárias."
@@ -13403,6 +13428,24 @@
         "Ontem"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dia",
+        "${ ceilDays } dias"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } hora",
+        "${ ceilHours } horas"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuto",
+        "${ ceilMinutes } minutos"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segundo",
+        "${ seconds } segundos"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } h",
@@ -14277,6 +14320,9 @@
       "Subject missing": [
         "O assunto está em falta"
       ],
+      "Subscription canceled": [
+        "A subscrição foi cancelada."
+      ],
       "Summary": [
         "Resumo"
       ],
@@ -14377,6 +14423,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "A sua avaliação gratuita ${ planName } finaliza em ${ textDate }."
+      ],
+      "Your ${ planName } subscription started": [
+        "A sua subscrição do ${ planName } começou."
       ],
       "Your account is protected": [
         "A sua conta está protegida"

@@ -755,11 +755,11 @@
       "Upgrade": [
         "升級"
       ],
-      "Upgrade Now": [
-        "請升級"
-      ],
       "Upgrade now": [
         "立即升級"
+      ],
+      "Upgrade Now": [
+        "請升級"
       ],
       "Upload picture": [
         "上載圖像"
@@ -5957,9 +5957,6 @@
       "Time zone": [
         "時區"
       ],
-      "Title": [
-        "標題"
-      ],
       "To: ${ toEmail }": [
         "收件者：${ toEmail }"
       ],
@@ -6508,6 +6505,11 @@
         "一般 VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -6529,11 +6531,6 @@
       ],
       "Switch plan": [
         "切換方案"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7042,9 +7039,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "透過必要的網路監控，您可以從任何地方安全地上網"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "安全的雲端儲存空間，讓您輕鬆安全地貯存、同步和分享檔案。"
       ],
       "Secure email with advanced features for your everyday communications.": [
         "為您的日常通訊提供進階功能的安全電子郵件。"

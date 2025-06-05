@@ -1,0 +1,4603 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "hu_HU"
+  },
+  "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } és ${ remainingCount } más lehetséges adatszivárgást észleltünk. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } a részletek megtekintéséhez és intézkedjen. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } és egy másik más lehetséges adatszivárgást észleltünk. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } a részletek megtekintéséhez és intézkedjen. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Egy lehetséges adatszivárgást észleltünk ettől: ${ name }. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } a részletek megtekintéséhez és intézkedjen. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Egy lehetséges adatszivárgást észleltünk ettől: ${ name }. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } a részletek megtekintéséhez és intézkedjen. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Egy lehetséges adatszivárgást észleltünk ettől: ${ name }. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } a részletek megtekintéséhez. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Az ön információja legalább egy adatszivárgásban megtalálható. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } a részletek megtekintéséhez és intézkedjen. ${ link }"
+      ]
+    },
+    "Action": {
+      "Accept": [
+        "Elfogadás"
+      ],
+      "Accept and view the item": [
+        "Elfogadás és az elem megtekintése"
+      ],
+      "Add": [
+        "Hozzáadás"
+      ],
+      "Add account": [
+        "Fiók hozzáadása"
+      ],
+      "Add current URL": [
+        "Jelenlegi URL hozzáadása"
+      ],
+      "Add custom domain": [
+        "Saját domain név hozzáadása"
+      ],
+      "Add domain": [
+        "Domain hozzáadása"
+      ],
+      "Add forwarding mailbox": [
+        "Továbbító postafiók hozzáadása"
+      ],
+      "Add mailbox": [
+        "Postafiók létrehozása"
+      ],
+      "Add more": [
+        "Továbbiak hozzáadása"
+      ],
+      "Add new item": [
+        "Új elem hozzáadása"
+      ],
+      "Add section": [
+        "Szakasz hozzáadása"
+      ],
+      "Add username field": [
+        "Felhasználónév mező hozzáadása"
+      ],
+      "Admin panel": [
+        "Adminisztrációs felület"
+      ],
+      "Advanced": [
+        "Speciális"
+      ],
+      "Advanced options": [
+        "Speciális lehetőségek"
+      ],
+      "Apply lifetime coupon code": [
+        "Érvényesítsen egy élethosszig tartó kupon kódot"
+      ],
+      "Authenticate": [
+        "Hitelesítés"
+      ],
+      "Back": [
+        "Vissza"
+      ],
+      "Block contact": [
+        "Névjegy letiltása"
+      ],
+      "Bulk delete items from trash": [
+        "Több elem törlése a lomtárból"
+      ],
+      "Bulk move items to another vault": [
+        "Több elem áthelyezése másik tárolóba"
+      ],
+      "Bulk move items to trash": [
+        "Több elem áthelyezése a lomtárba"
+      ],
+      "Bulk restore items from trash": [
+        "Több elem visszaállítása a lomtárból"
+      ],
+      "Bulk select items": [
+        "Több elem kiválasztása"
+      ],
+      "Cancel": [
+        "Mégsem"
+      ],
+      "Cancel email change": [
+        "E-mail-változtatás visszavonása"
+      ],
+      "Change": [
+        "Módosítás"
+      ],
+      "Change email": [
+        "E-mail cím módosítása"
+      ],
+      "Check DNS": [
+        "DNS ellenőrzése"
+      ],
+      "Check settings": [
+        "Beállítások ellenőrzése"
+      ],
+      "Choose a file or drag it here": [
+        "Válasszon fájlt vagy ejtse ide"
+      ],
+      "Clear": [
+        "Törlés"
+      ],
+      "Clear search": [
+        "Keresés törlése"
+      ],
+      "Close": [
+        "Bezárás"
+      ],
+      "Close advanced options": [
+        "Speciális beállítások bezárása"
+      ],
+      "Close navigation": [
+        "Navigáció bezárása"
+      ],
+      "Confirm": [
+        "Jóváhagyás"
+      ],
+      "Confirm access": [
+        "Hozzáférés megerősítése"
+      ],
+      "Confirm all": [
+        "Összes megerősítése"
+      ],
+      "Continue": [
+        "Tovább"
+      ],
+      "Continue offline": [
+        "Folytatás offline módban"
+      ],
+      "Copy and close": [
+        "Másolás és bezárás"
+      ],
+      "Copy forwarding address": [
+        "Továbbító cím másolása"
+      ],
+      "Copy link": [
+        "Hivatkozás másolása"
+      ],
+      "Copy to clipboard": [
+        "Másolás a vágólapra"
+      ],
+      "Create": [
+        "Létrehozás"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } fiók létrehozása"
+      ],
+      "Create a new vault": [
+        "Új tároló létrehozása"
+      ],
+      "Create alias": [
+        "E-mail álnév létrehozása"
+      ],
+      "Create card": [
+        "Bankkártya létrehozása"
+      ],
+      "Create contact": [
+        "Névjegy létrehozása"
+      ],
+      "Create identity": [
+        "Személyazonosság létrehozása"
+      ],
+      "Create item": [
+        "Elem létrehozása"
+      ],
+      "Create login": [
+        "Bejelentkezés létrehozása"
+      ],
+      "Create new items": [
+        "Új elemek létrehozása"
+      ],
+      "Create note": [
+        "Jegyzet létrehozása"
+      ],
+      "Create vault": [
+        "Tároló létrehozása"
+      ],
+      "Creating vault": [
+        "Tároló létrehozása"
+      ],
+      "Custom section": [
+        "Egyéni szakasz"
+      ],
+      "Delete": [
+        "Törlés"
+      ],
+      "Delete alias": [
+        "E-mail álnév törlése"
+      ],
+      "Delete all": [
+        "Összes törlése"
+      ],
+      "Delete it, I will never need it": [
+        "Törlés, soha nem lesz rá szükségem"
+      ],
+      "Delete mailbox": [
+        "Postafiók törlése"
+      ],
+      "Delete password": [
+        "Jelszó törlése"
+      ],
+      "Delete permanently": [
+        "Végleges törlés"
+      ],
+      "Delete vault": [
+        "Tároló törlése"
+      ],
+      "Deselect": [
+        "Kijelölés megszüntetése"
+      ],
+      "Disable alias": [
+        "E-mail álnév letiltása"
+      ],
+      "Disable instead": [
+        "Inkább letiltom"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Az álnév letiltása, hogy ne kapja meg az erre az álnévre küldött e-maileket."
+      ],
+      "Discard": [
+        "Elvetés"
+      ],
+      "Dismiss": [
+        "Elvetés"
+      ],
+      "Download this CSV template": [
+        "Töltse le ezt a CSV sablont"
+      ],
+      "Edit": [
+        "Szerkesztés"
+      ],
+      "Edit vault": [
+        "Tároló szerkesztése"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Engedélyezi: ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Engedélyezem ezt az álnevet az erre az álnévre küldött e-mailek fogadására."
+      ],
+      "Exclude from monitoring": [
+        "Kizárás a megfigyelésből"
+      ],
+      "Export": [
+        "Exportálás"
+      ],
+      "Fill password": [
+        "Jelszó kitöltése"
+      ],
+      "Filter vault items": [
+        "Tároló elemeinek szűrése"
+      ],
+      "Generate alias": [
+        "E-mail álnév létrehozása"
+      ],
+      "Generate password": [
+        "Jelszó létrehozása"
+      ],
+      "Generate secure link": [
+        "Biztonságos hivatkozás létrehozása"
+      ],
+      "Generated passwords": [
+        "Létrehozott jelszavak"
+      ],
+      "Generating secure link...": [
+        "Biztonságos hivatkozás létrehozása..."
+      ],
+      "Get ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } beszerzése"
+      ],
+      "Get mobile apps": [
+        "Mobilalkalmazások beszerzése"
+      ],
+      "Get Pass Business": [
+        "Pass Business választása"
+      ],
+      "Get Pass Plus": [
+        "Pass Plus megszerzése"
+      ],
+      "Get Started": [
+        "Kezdés"
+      ],
+      "Hide": [
+        "Elrejtés"
+      ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "Hogy exportálhatom az adataimat a(z) ${ PROVIDER_INFO_MAP[form.values.provider].title } jelszókezelőből?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "A ${ PASS_APP_NAME } használata"
+      ],
+      "Import": [
+        "Importálás"
+      ],
+      "Importing": [
+        "Importálás"
+      ],
+      "Include in monitoring": [
+        "Bevonás a megfigyelésbe"
+      ],
+      "Install extension": [
+        "Telepítse a bővítményt"
+      ],
+      "Invite more...": [
+        "Több meghívása..."
+      ],
+      "Invite others": [
+        "Mások meghívása"
+      ],
+      "Join our Reddit": [
+        "Csatlakozzon Redditen"
+      ],
+      "Join shared vault": [
+        "Csatlakozás megosztott tárolóhoz"
+      ],
+      "Learn more": [
+        "További információk"
+      ],
+      "Leave": [
+        "Kilépés"
+      ],
+      "Leave vault": [
+        "Tároló elhagyása"
+      ],
+      "Link copied to clipboard": [
+        "Hivatkozás a vágólapra másolva"
+      ],
+      "Link expires after": [
+        "A hivatkozás lejárata"
+      ],
+      "Lock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } zárolása"
+      ],
+      "Make admin": [
+        "Átállítás adminisztrátornak"
+      ],
+      "Make default": [
+        "Beállítás alapértelmezettként"
+      ],
+      "Make editor": [
+        "Átállítás szerkesztőnek"
+      ],
+      "Make viewer": [
+        "Átállítás megtekintésre jogosultra"
+      ],
+      "Manage access": [
+        "Hozzáférés kezelése"
+      ],
+      "Manually sync your data": [
+        "Adatok manuális szinkronizálása"
+      ],
+      "Mark as resolved": [
+        "Megjelölés megoldottként"
+      ],
+      "Maximum views": [
+        "Maximális megtekintések"
+      ],
+      "More info": [
+        "További információk"
+      ],
+      "More info: ${ safeTitle }": [
+        "További információk: ${ safeTitle }"
+      ],
+      "More options": [
+        "További lehetőségek"
+      ],
+      "Move": [
+        "Áthelyezés"
+      ],
+      "Move all items": [
+        "Minden elem áthelyezése"
+      ],
+      "Move to another vault": [
+        "Áthelyezés másik tárolóba"
+      ],
+      "Move to trash": [
+        "Áthelyezés a lomtárba"
+      ],
+      "Move to Trash": [
+        "Áthelyezés a lomtárba"
+      ],
+      "Multiple select": [
+        "Többszörös kiválasztás"
+      ],
+      "Next month": [
+        "Következő hónap"
+      ],
+      "No expired links": [
+        "Nincsenek lejárt hivatkozások"
+      ],
+      "Not now": [
+        "Most nem"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Open navigation": [
+        "Navigáció megnyitása"
+      ],
+      "Pass for Android": [
+        "Pass Androidra"
+      ],
+      "Pass for iOS": [
+        "Pass iOS-re"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Figyelés szüneteltetése"
+      ],
+      "Pay once": [
+        "Egyszeri fizetés"
+      ],
+      "Pin item": [
+        "Elem rögzítése"
+      ],
+      "Please retry": [
+        "Próbálja újra"
+      ],
+      "Previous month": [
+        "Előző hónap"
+      ],
+      "Re-verify": [
+        "Újraellenőrzés"
+      ],
+      "Reactivate now": [
+        "Újraaktiválás most"
+      ],
+      "Refresh the page": [
+        "Oldal frissítése"
+      ],
+      "Regenerate": [
+        "Létrehozás ismét"
+      ],
+      "Reject": [
+        "Elutasítás"
+      ],
+      "Reject invitation": [
+        "Meghívó elutasítása"
+      ],
+      "Reload": [
+        "Újratöltés"
+      ],
+      "Remove": [
+        "Eltávolítás"
+      ],
+      "Remove access": [
+        "Hozzáférés eltávolítása"
+      ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Minden lejárt hivatkozás eltávolítása (${ inactiveLinkCount })"
+      ],
+      "Remove link": [
+        "Link eltávolítása"
+      ],
+      "Remove member": [
+        "Tag eltávolítása"
+      ],
+      "Request a feature": [
+        "Funkció ajánlása"
+      ],
+      "Resend code": [
+        "Kód újraküldése"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Kód újraküldése (még ${ remaining } mp)"
+      ],
+      "Resend invitation": [
+        "Meghívó újraküldése"
+      ],
+      "Reset": [
+        "Alaphelyzet"
+      ],
+      "Reset history": [
+        "Előzmények visszaállítása"
+      ],
+      "Restore": [
+        "Helyreállítás"
+      ],
+      "Restore item": [
+        "Elem helyreállítása"
+      ],
+      "Restrict number of views": [
+        "Korlátozott számú megtekintés"
+      ],
+      "Resume monitoring": [
+        "Megfigyelés folytatása"
+      ],
+      "Retry": [
+        "Újra"
+      ],
+      "Right click and download this CSV": [
+        "Kattintson a jobb gombbal és töltse le ezt a CSV-t"
+      ],
+      "Save": [
+        "Mentés"
+      ],
+      "Saving": [
+        "Mentés"
+      ],
+      "Section name": [
+        "Szakasz neve"
+      ],
+      "Secure links": [
+        "Biztonságos hivatkozások"
+      ],
+      "See all": [
+        "Összes megjelenítése"
+      ],
+      "See members": [
+        "Tagok megjelenítése"
+      ],
+      "Send email": [
+        "E-mail küldése"
+      ],
+      "Send invite": [
+        "Meghívó küldése"
+      ],
+      "Set access level": [
+        "Elérési szint megadása"
+      ],
+      "Set extra password": [
+        "Extra jelszó beállítása"
+      ],
+      "Setup 2FA": [
+        "Kétlépcsős hitelesítés beállítása"
+      ],
+      "Share": [
+        "Megosztás"
+      ],
+      "Share item": [
+        "Elem megosztása"
+      ],
+      "Share secure link": [
+        "Biztonságos hivatkozás megosztása"
+      ],
+      "Share vault": [
+        "Tároló megosztása"
+      ],
+      "Show": [
+        "Megjelenítés"
+      ],
+      "Show advanced options": [
+        "Speciális beállítások megjelenítése"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "Bejelentkezés ${ BRAND_NAME }nal"
+      ],
+      "Sign out": [
+        "Kijelentkezés"
+      ],
+      "Skip": [
+        "Kihagyás"
+      ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Valaki megosztott Önnel egy elemet a(z) ${ PASS_APP_NAME } szolgáltatásban."
+      ],
+      "Sort vault items": [
+        "Tároló elemeinek rendezése"
+      ],
+      "Submit": [
+        "Küldés"
+      ],
+      "Submitting report...": [
+        "Bejelentés elküldése..."
+      ],
+      "Sync alias": [
+        "E-mail álnév szinkronizálása",
+        "E-mail álnevek szinkronizálása"
+      ],
+      "Sync aliases": [
+        "E-mail álnevek szinkronizálása"
+      ],
+      "To mailbox": [
+        "Postafiókba"
+      ],
+      "Transfer aliases": [
+        "Álnevek áthelyezése"
+      ],
+      "Transfer and delete mailbox": [
+        "Postafiók áthelyezése és törlése"
+      ],
+      "Transfer ownership": [
+        "Tulajdonjog átadása"
+      ],
+      "Trash": [
+        "Lomtár"
+      ],
+      "Try again.": [
+        "Próbálja újra."
+      ],
+      "Try for free": [
+        "Próbálja ki díjmentesen"
+      ],
+      "Unblock contact": [
+        "Névjegy feloldása"
+      ],
+      "Understood, I will never need it": [
+        "Értettem, soha nem lesz rá szükségem",
+        "Értettem, soha nem lesz rájuk szükségem"
+      ],
+      "Unlock": [
+        "Feloldás"
+      ],
+      "Unlock offline with password": [
+        "Offline feloldása jelszóval"
+      ],
+      "Unpin item": [
+        "Elem rögzítésének megszüntetése"
+      ],
+      "Update": [
+        "Frissítés"
+      ],
+      "Upgrade": [
+        "Csomagváltás"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade now to share with more people": [
+        "Több emberrel való megosztáshoz, váltson nagyobb csomagra"
+      ],
+      "Use ${ label } theme": [
+        "${ label } téma használata"
+      ],
+      "Verify": [
+        "Ellenőrzés"
+      ],
+      "Via secure link": [
+        "Biztonságos hivatkozáson keresztül"
+      ],
+      "View details": [
+        "Részletek megtekintése"
+      ],
+      "View history": [
+        "Előzmények megtekintése"
+      ],
+      "View item history": [
+        "Előzmények megtekintése"
+      ],
+      "View older history": [
+        "Régebbiek megtekintése"
+      ],
+      "With other ${ BRAND_NAME } users": [
+        "További ${ BRAND_NAME } felhasználóval"
+      ],
+      "Write us on X/Twitter": [
+        "Írjon nekünk X/Twitteren"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Az Ön jelszómenedzsere nem látható? Kérje."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } asztali alkalmazás"
+      ]
+    },
+    "Button": {
+      "More info": [
+        "További információk"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Összecsukás"
+      ],
+      "Expand": [
+        "Kibontás"
+      ]
+    },
+    "Description": {
+      "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
+        "${ DARK_WEB_MONITORING_NAME } fizetős csomaggal érhető el. Az azonnali hozzáféréshez frissítsen."
+      ],
+      "${ total } other login uses the same password": [
+        "${ total } másik bejelentkezés ugyanazt a jelszót használja",
+        "${ total } másik bejelentkezés ugyanazt a jelszót használja"
+      ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "A kétlépcsős hitelesítés (2FA) egy újabb biztonsági réteget ad a bejelentkezéshez. A ${ PASS_APP_NAME } megkönnyíti a kétlépcsős hitelesítést azáltal, hogy tárolja és automatikusan kitölti a kétlépcsős hitelesítés kódjait."
+      ],
+      "Add the following CNAME DNS records to your domain.": [
+        "Adja hozzá a következő CNAME DNS rekordokat az Ön domain nevéhez."
+      ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "Adja hozzá a következő MX DNS rekordot a domain-hoz. Vegye figyelembe, hogy a cél címek végén pont (.) van. Ha a domain regisztrátora nem engedélyezi ezt a zárópontot, kérjük, távolítsa el a DNS rekord hozzáadásakor."
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "Adja hozzá a következő TXT DNS rekordot a domain nevéhez."
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Az e-mail álnév ugyanúgy működik, mint egy e-mail cím, de csökkenti a levélszemét mennyiségét, és elrejti a tényleges e-mail címet és személyazonosságot."
+      ],
+      "Change your passwords": [
+        "Változtassa meg a jelszavait"
+      ],
+      "Create unique passwords": [
+        "Hozzon létre egyedi jelszavakat"
+      ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "A DKIM ${ WIKIPEDIA_LINK_DKIM } egy e-mail hitelesítési módszer, amelyet az e-mail címek hamisításának elkerülésére terveztek. A DKIM beállítása erősen ajánlott annak csökkentése érdekében, hogy az e-mailjei a címzett levélszemét mappájába kerüljenek."
+      ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "A DMARC ${ WIKIPEDIA_LINK_DMARC } célja, hogy megvédje a domain nevet a jogosulatlan használattól, közismert nevén az e-mail-címekkel való visszaélésektől (spoofing). Az SPF-re és a DKIM-re építve a DMARC-szabályzat megmondja a fogadó levelezőszervernek, hogy mit tegyen, ha egyik hitelesítési módszer sem megy át."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Értesüljön arról, ha e-mail címe, jelszava vagy más személyes adatai kiszivárogtak."
+      ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "Ha aldomaint használ, pl. ${ subdomainExample }, akkor a ${ dmarcExampleSubdomain } címet kell használnia domain helyett."
+      ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "Ha aldomaint használ, pl. aldomain.domain.com, akkor a domain helyett a következőt kell használnia: ${ domainKeyExampleSubdomain }. Ez azt jelenti, hogy ha a domain neve mail.domain.com, akkor domainként a következőt adja meg: ${ domainKeyExampleMail }."
+      ],
+      "If you are using Cloudflare, please make sure to not select the Proxy option.": [
+        "Ha Cloudflare-et használ, kérjük, ne jelölje be a proxy opciót."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Tartsa adatait biztonságban és kezelje bizalmasan ezekkel az útmutatókkal és tippekkel."
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Élvonalbeli, mesterséges intelligencia által vezérelt biztonsági megoldásunk, amelyet olyan felhasználók számára terveztünk, akik fokozott védelmet keresnek a fiókjaikhoz. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Kapcsolja be a kétlépcsős hitelesítést nagyobb biztonságért"
+      ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "Egyes DNS regisztrárok teljes rekord útvonalat igényelhetnek, ebben az esetben kérjük, használja a ${ domain } domain nevet értékként."
+      ],
+      "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
+        "Egyes domain regisztrátorok (Namecheap, Cloudflare stb.) a @ szimbólumot is használhatják a root domainhez."
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "Az SPF ${ WIKIPEDIA_LINK_SPF } egy e-mail hitelesítési módszer, melyet az e-mail kézbesítése során lehetséges feladói címek hamisításának észlelésére terveztek. Az SPF beállítása erősen ajánlott, hogy csökkentse annak az esélyét, hogy e-mailjei a címzett levélszemét mappájába kerüljenek."
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Indítsa el az e-mail címekkel és a hide-my-email álnevekkel létrehozott fiókokhoz kapcsolódó adatvédelmi incidensek figyelését."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "A dark web az internet egy rejtett része, ahol lopott személyes adatokat, például személyazonosságokat lehet vásárolni és eladni."
+      ],
+      "These items remain at risk": [
+        "Ezek az elemek veszélynek vannak kitéve."
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Ez a fiók sérülékeny. Keresse fel a szolgáltatást, és változtassa meg a jelszavát."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Ez a szolgáltatás kétlépcsős hitelesítést tesz lehetővé. Engedélyezze a biztonság növelése érdekében."
+      ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
+        "A domain név tulajdonjogának igazolásához adja hozzá a következő TXT rekordot. Egyes domain regisztrátorok (Namecheap, Cloudflare stb.) @ jelet használhatnak a root domainhez."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Fejlett biztonsági funkciók és részletes naplók feloldása az Ön online jelenlétének védelme érdekében."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "A ${ PASS_SHORT_APP_NAME } figyelővel mindig egy lépéssel a fenyegetések előtt járhat, mivel azonnali értesítéseket kap, ha a hitelesítő adatai kompromittálódtak. Oldja fel a speciális biztonsági funkciókat és a részletes naplókat az online jelenlétének védelme érdekében."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Az Ön e-mail címei legalább 1 adatvédelmi incidensben kiszivárogtak."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Egy harmadik fél szolgáltatásának adatvédelmi incidensében kiszivárogtak az Ön személyes adatai."
+      ]
+    },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "bármi@${ domainDisplay }"
+      ]
+    },
+    "Error": {
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "A(z) ${ provider } fájl értelmezése nem sikerült. ${ errorDetail }"
+      ],
+      "A domain ownership must be verified first.": [
+        "A domain név tulajdonjogát először ellenőrizni kell."
+      ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "Az e-mail álnév jelenleg nem frissíthető. Kérjük, próbálja meg később újra"
+      ],
+      "Alias options could not be resolved": [
+        "Az e-mail álnév adatainak betöltése nem sikerült"
+      ],
+      "An error occured during the import process": [
+        "Hiba történt az importálás során"
+      ],
+      "An error occurred while resuming your session": [
+        "Hiba történt a munkamenet folytatásakor."
+      ],
+      "Authentication error": [
+        "Hitelesítési hiba"
+      ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "Sikertelen hitelesítés. Erősítse meg a ${ BRAND_NAME } jelszavát az exportálás folytatásához"
+      ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "A hitelesítés sikertelen. Az exportálás folytatásához erősítse meg a biztonsági mentés jelszavát."
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "A hitelesítés sikertelen. A folytatáshoz adja meg az extra jelszavát az exportáláshoz"
+      ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "A hitelesítés sikertelen. Az exportálás folytatásához erősítse meg a második jelszavát"
+      ],
+      "Cannot send invitation at the moment": [
+        "Jelenleg nem küldhető meghívó",
+        "Jelenleg nem küldhetők meghívók"
+      ],
+      "Cannot send invitations at the moment": [
+        "Jelenleg nem küldhetők meghívók"
+      ],
+      "Could not confirm this invite at the moment": [
+        "Jelenleg nem sikerült a meghívó jóváhagyása"
+      ],
+      "Could not leave item.": [
+        "Nem sikerült elhagyni az elemet."
+      ],
+      "Could not leave vault.": [
+        "A tároló elhagyása nem sikerült."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Jelenleg nem sikerült betölteni az ajánlásokat."
+      ],
+      "Could not open created vault": [
+        "A létrehozott tároló megnyitása nem sikerült"
+      ],
+      "Could not open invited vault": [
+        "Nem sikerült megnyitni a tárolót, amelyre meghívást kapott"
+      ],
+      "Could not open updated vault": [
+        "A frissített tároló megnyitása nem sikerült"
+      ],
+      "Could not resolve share members": [
+        "Nem sikerült meghatározni a megosztás tagjait"
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "Nem sikerült lekérni a felhasználói meghívókat a „${ vaultName }” tárolóhoz"
+      ],
+      "Could not validate addresses at the moment.": [
+        "Nem sikerült a címek ellenőrzése."
+      ],
+      "CSV file is missing expected headers: ${ missingHeaders }": [
+        "A CSV fájlból szükséges fejlécek hiányoznak: ${ missingHeaders }"
+      ],
+      "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
+        "A ${ PASS_APP_NAME } export fájl visszafejtése nem sikerült. ${ errorDetail }"
+      ],
+      "Deleting item failed": [
+        "Az elem törlése nem sikerült"
+      ],
+      "Deleting item history failed": [
+        "Az elem előzményeinek törlése nem sikerült"
+      ],
+      "Deleting vault \"${ payload.content.name }\" failed": [
+        "A(z) \"${ payload.content.name }\" tároló törlése nem sikerült"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "${ errors.length } hibás sor van a CSV-ben",
+        "${ errors.length } hibás sor van a CSV-ben"
+      ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "A domain név nem ellenőrizhető. Nézze meg, helyesen adta-e meg a DNS rekordokat"
+      ],
+      "Domain not available, try again later": [
+        "A domain név nem érhető el, próbálja meg később"
+      ],
+      "Editing item failed": [
+        "Az elem szerkesztése nem sikerült"
+      ],
+      "Empty CSV file": [
+        "Üres CSV fájl"
+      ],
+      "Emptying trash failed": [
+        "A lomtár ürítése nem sikerült"
+      ],
+      "Encrypted JSON not supported": [
+        "Titkosított JSON nem támogatott"
+      ],
+      "Error reporting problem": [
+        "A probléma bejelentése nem sikerült"
+      ],
+      "Failed removing the invite.": [
+        "A meghívó eltávolítása nem sikerült"
+      ],
+      "Failed resending invite.": [
+        "A meghívó újraküldése nem sikerült"
+      ],
+      "Failed to add email address": [
+        "Nem sikerült hozzáadni az e-mail címet"
+      ],
+      "Failed to block the contact": [
+        "Nem sikerült blokkolni a névjegyet"
+      ],
+      "Failed to cancel mailbox change": [
+        "A postafiók-változás visszavonása sikertelen"
+      ],
+      "Failed to change mailbox": [
+        "Nem sikerült megváltoztatni a postafiókot"
+      ],
+      "Failed to create domain": [
+        "Nem sikerült létrehozni a domain nevet"
+      ],
+      "Failed to create new mailbox": [
+        "Nem sikerült új postafiókot létrehozni"
+      ],
+      "Failed to create the contact": [
+        "Nem sikerült létrehozni a névjegyet"
+      ],
+      "Failed to delete domain": [
+        "Nem sikerült törölni a domaint"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Nem sikerült törölni az e-mail címet a figyelésből"
+      ],
+      "Failed to delete selected items": [
+        "A kijelölt elemek törlése nem sikerült"
+      ],
+      "Failed to delete the contact": [
+        "Nem sikerült törölni a névjegyet"
+      ],
+      "Failed to delete the mailbox": [
+        "Nem sikerült törölni a postafiókot"
+      ],
+      "Failed to edit user's access.": [
+        "A felhasználó jogosultságának szerkesztése nem sikerült."
+      ],
+      "Failed to load breaches for this address": [
+        "Nem sikerült betölteni adatvédelmi incidenst ehhez a címhez"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Nem sikerült betölteni adatvédelmi incidenst ehhez az e-mail álnévhez"
+      ],
+      "Failed to load domain settings.": [
+        "Nem sikerült betölteni a domain név beállításait."
+      ],
+      "Failed to load item history": [
+        "Az elem előzményeinek betöltése nem sikerült"
+      ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Nem sikerült az összes elem áthelyezése innen: \"${ payload.content.name }\""
+      ],
+      "Failed to move items": [
+        "Az elemek áthelyezése nem sikerült"
+      ],
+      "Failed to move items to trash": [
+        "Az elemek áthelyezése a lomtárba nem sikerült"
+      ],
+      "Failed to pin item": [
+        "Nem sikerült az elem kitűzése"
+      ],
+      "Failed to remove user's access.": [
+        "A felhasználó jogosultságának megvonása nem sikerült."
+      ],
+      "Failed to resend verification code": [
+        "Nem sikerült újra elküldeni az ellenőrző kódot"
+      ],
+      "Failed to resend verification for custom email": [
+        "Sikertelen az egyéni e-mail címhez tartozó megerősítés újraküldése"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Nem sikerült feloldani az adatvédelmi incidenseket ehhez a címhez"
+      ],
+      "Failed to restore items from trash": [
+        "Az elemek visszaállítása a lomtárból nem sikerült"
+      ],
+      "Failed to set default mailbox": [
+        "Nem sikerült beállítani az alapértelmezett postafiókot"
+      ],
+      "Failed to sync aliases": [
+        "Nem sikerült az e-mail álnevek szinkronizálása"
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "Nem sikerült a tároló tulajdonjogának átadása."
+      ],
+      "Failed to unpin item": [
+        "Az elem rögzítésének feloldása nem sikerült"
+      ],
+      "Failed to update catch-all setting.": [
+        "Nem sikerült frissíteni a gyűjtő e-mail beállításait."
+      ],
+      "Failed to update default domain": [
+        "Nem sikerült frissíteni az alapértelmezett domain nevet"
+      ],
+      "Failed to update domain mailboxes.": [
+        "Nem sikerült frissíteni a domain névhez tartozó postafiókokat."
+      ],
+      "Failed to update domain name.": [
+        "Nem sikerült frissíteni a domain nevet."
+      ],
+      "Failed to update monitoring settings": [
+        "Nem sikerült frissíteni a figyelés beállításait"
+      ],
+      "Failed to update random prefix generation setting.": [
+        "Nem sikerült frissíteni a véletlenszerű előtag-generálási beállítást."
+      ],
+      "Failed to verify domain": [
+        "Sikertelen a domain név ellenőrzése"
+      ],
+      "Failed to verify email address": [
+        "E-mail cím ellenőrzése sikertelen"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Nem sikerült frissíteni a ${ PROTON_SENTINEL_NAME } beállítást"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Nem sikerült frissíteni az elem figyelőjelzőjét"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Nem sikerült frissíteni a figyelés állapotát ehhez az e-mail címhez"
+      ],
+      "File could not be parsed": [
+        "A fájl nem értelmezhető"
+      ],
+      "File does not match expected format": [
+        "A fájl nem a szükséges formátumú"
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "A(z) \"${ vaultData.name }\" tárolóba való importálás nem sikerült: ${ errorMessage }"
+      ],
+      "Importing items failed": [
+        "Elemek importálása nem sikerült"
+      ],
+      "Inactive secure links could not be removed.": [
+        "Nem sikerült eltávolítani a nem aktív biztonságos hivatkozásokat."
+      ],
+      "Invalid password manager": [
+        "Érvénytelen jelszókezelő"
+      ],
+      "Invitation could not be accepted": [
+        "A meghívó elfogadása nem sikerült"
+      ],
+      "Invitation could not be rejected": [
+        "A meghívó visszautasítása nem sikerült"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Az elem tartalma nem lehet több 40KB-nál"
+      ],
+      "Item creation failed": [
+        "Az elem létrehozása nem sikerült"
+      ],
+      "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
+        "A LastPass által exportált CSV fájl hibás lesz, ha bármelyik elem mező váratlan vesszőt, idézőjelent vagy több sort tartalmaz"
+      ],
+      "Moving item failed": [
+        "Az elem áthelyezése nem sikerült"
+      ],
+      "Network error": [
+        "Hálózati hiba"
+      ],
+      "Offline mode is currently not available for two password mode.": [
+        "Az offline mód jelenleg nem érhető el két jelszavas módban."
+      ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Az offline üzemmód jelenleg nem érhető el a csomaghoz, és nem kompatibilis a két jelszavas üzemmóddal."
+      ],
+      "Passphrase is incorrect": [
+        "A jelmondat hibás"
+      ],
+      "PIN codes do not match": [
+        "A PIN-kódok nem egyeznek"
+      ],
+      "Request timed out": [
+        "A kérés túllépte az időkorlátot"
+      ],
+      "Requesting alias options failed": [
+        "A jelszó álnév beállításainak betöltése nem sikerült"
+      ],
+      "Restoring item failed": [
+        "Az elem helyreállítása nem sikerült"
+      ],
+      "Restoring trashed items failed": [
+        "Az elemek helyreállítása a lomtárból nem sikerült"
+      ],
+      "Secure link could not be created.": [
+        "Nem sikerült biztonságos hivatkozást létrehozni."
+      ],
+      "Secure link could not be opened.": [
+        "Nem sikerült megnyitni a biztonságos hivatkozást."
+      ],
+      "Settings update failed": [
+        "Beállítások módosítása sikertelen"
+      ],
+      "Signature verification failed": [
+        "Aláírás ellenőrzése sikertelen"
+      ],
+      "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
+        "Bizonyos tárolók, jelszó visszaállítás miatt, nem érhetőek el. Aktiválja újra a fiókja kulcsait az elérés visszaszerzéséhez. ${ reactivateLink }"
+      ],
+      "Something went wrong": [
+        "Hiba történt"
+      ],
+      "Something went wrong. Please sign in again.": [
+        "Valami félrement. Kérjük jelentkezzen be újból."
+      ],
+      "The session has expired. Please sign in again.": [
+        "Ez a munkamenet lejárt. Lépjen be újra."
+      ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Hiba történt a biztonságos hivatkozás eltávolítása közben. Próbálja meg újra néhány perc múlva."
+      ],
+      "Too many failed attempts. Please sign in again.": [
+        "Túl sok sikertelen kísérlet. Próbáljon meg újra bejelentkezni."
+      ],
+      "Trashing item failed": [
+        "Az elem lomtárba helyezése nem sikerült"
+      ],
+      "Try reaching out to the link owner.": [
+        "Próbáljon meg kapcsolatba lépni a hivatkozás tulajdonosával."
+      ],
+      "Unable to generate an OTP code for this item": [
+        "Ebből az elemből nem sikerült OTP kódot generálni"
+      ],
+      "Unable to sync": [
+        "A szinkronizálás nem sikerült"
+      ],
+      "Unknown error": [
+        "Ismeretlen hiba"
+      ],
+      "Unknown invite": [
+        "Ismeretlen meghívó"
+      ],
+      "Unknown item": [
+        "Ismeretlen elem"
+      ],
+      "Unlock failure": [
+        "Feloldási hiba"
+      ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Nem támogatott ${ PASS_APP_NAME } fájl formátum"
+      ],
+      "Unsupported 1Password file format": [
+        "Nem támogatott 1Password fájlformátum"
+      ],
+      "Updating vault \"${ payload.content.name }\" failed": [
+        "A(z) \"${ payload.content.name }\" tároló frissítése nem sikerült"
+      ],
+      "Vault \"${ payload.content.name }\" creation failed": [
+        "A(z) \"${ payload.content.name }\" tároló létrehozása nem sikerült"
+      ],
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "A(z) \"${ vaultData.name }\" tároló létrehozása nem sikerült"
+      ],
+      "Vault name does not match": [
+        "A tároló neve nem egyezik"
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Hiba lépett fel a(z) ${ PASS_SHORT_APP_NAME } indításakor. Ha a probléma továbbra is fennáll, kérjük, forduljon az ügyfélszolgálatunkhoz segítségért."
+      ],
+      "Wrong backup password": [
+        "Hibás visszaállító jelszó"
+      ],
+      "Wrong extra password": [
+        "Helytelen extra jelszó"
+      ],
+      "Wrong password": [
+        "Hibás jelszó"
+      ],
+      "Wrong PIN code. Try again.": [
+        "Hibás PIN-kód. Próbálja meg újra."
+      ],
+      "Wrong second password": [
+        "Rossz második jelszó"
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Ön jelenleg offline. A ${ PASS_SHORT_APP_NAME } feloldásához kérjük, kapcsolódjon újra."
+      ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "A DNS nincs helyesen beállítva. Az MX rekord, amit megkapunk, a következő:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "A DNS nincs helyesen beállítva. Az TXT rekord, amit megkapunk, a következő:"
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Egy másik ${ PASS_APP_NAME } kliens eltávolította az Ön PIN kódját."
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "Hoppá, valami hiba történt"
+      ],
+      "Please refresh the page or try again later.": [
+        "Frissítse az oldalt vagy próbálja újra később."
+      ],
+      "Something went wrong": [
+        "Hiba történt"
+      ]
+    },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "Beépített kétlépcsős hitelesítés"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Korlátlan számú hide-my-email álnév"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Archívum megosztás (${ MAX_VAULT_MEMBERS } személyig)."
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "bájt",
+        "bájt"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bájt",
+        "Bájt"
+      ],
+      "Gigabyte": [
+        "Gigabájt",
+        "Gigabájt"
+      ],
+      "Kilobyte": [
+        "Kilobájt",
+        "Kilobájt"
+      ],
+      "Megabyte": [
+        "Megabájt",
+        "Megabájt"
+      ],
+      "Terabyte": [
+        "Terabájt",
+        "Terabájt"
+      ]
+    },
+    "Info": {
+      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
+        "\"${ payload.item.data.metadata.name }\" elem elvetve"
+      ],
+      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
+        "\"${ payload.item.data.metadata.name }\" frissítése elvetve"
+      ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } blokkolva",
+        "${ blockedEmailsCount } blokkolva"
+      ],
+      "${ count } time": [
+        "${ count } alkalommal",
+        "${ count } alkalommal"
+      ],
+      "${ count } view": [
+        "${ count } megtekintés",
+        "${ count } megtekintés"
+      ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } megtekintés"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } továbbítva",
+        "${ forwardedEmailsCount } továbbítva"
+      ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } szeretne megosztani önnel egy elemet."
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } tag",
+        "${ memberCount } tag"
+      ],
+      "${ n } item": [
+        "${ n } elem",
+        "${ n } elemek"
+      ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "A ${ PASS_APP_NAME } mindig elérhető lesz"
+      ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "A ${ PASS_APP_NAME } az elem ikonját a ${ BRAND_NAME } anonimizált proxyn keresztül jeleníti meg."
+      ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "A ${ PASS_APP_NAME } követni fogja a rendszer témáját."
+      ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } létrehoz egy továbbítási címet (fordított e-mail álnevet), amelyet a vágólapra másolhat."
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } csak belépési adatokat, jegyzeteket, hitelkártyákat és személyazonosságokat fog importálni."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "A ${ PASS_APP_NAME } a ${ BRAND_NAME } jelszavát fogja kérni az adatok offline eléréséhez."
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } meghívó sikeresen elküldve",
+        "${ payload.count } meghívó sikeresen elküldve"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } letiltva"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } engedélyezve"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } küldés",
+        "${ repliedEmailsCount } küldés"
+      ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } adatszivárgás észlelve",
+        "${ row.breachCount } adatszivárgások észlelve"
+      ],
+      "(Empty)": [
+        "(Üres)"
+      ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "7 napig ingyen kipróbálhatja a prémium funkciókat. Csak a ${ BRAND_NAME } használatának első hetében."
+      ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "Minden olyan e-mail címhez létrejön egy névjegy, amely erre a címre küld vagy innen kap e-mailt: ${ aliasEmail }."
+      ],
+      "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
+        "A ${ PASS_APP_NAME } egy új verziója érhető el. Frissítsen a legújabb funkciók és hibajavítások eléréséhez."
+      ],
+      "Access successfully confirmed": [
+        "Hozzáférés jóváhagyva"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "A ${ PASS_APP_NAME } alkalmazáshoz való hozzáféréshez mindig az Ön ${ BRAND_NAME } jelszava szükséges."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "A ${ PASS_APP_NAME } eléréséhez mindig szüksége lesz a biztonsági mentés jelszavára."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "A ${ PASS_APP_NAME } alkalmazáshoz való hozzáférés mindig meg fogja követelni az extra jelszavát."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "A ${ PASS_APP_NAME } alkalmazáshoz való hozzáférés mindig meg fogja követelni a második jelszavát."
+      ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "A ${ PASS_APP_NAME } alkalmazáshoz való hozzáféréshez az ujjlenyomatra vagy az eszköz PIN kódjára lesz szükség."
+      ],
+      "Add your custom email address to monitor:": [
+        "Adjon hozzá egyéni e-mail címet a felügyelethez:"
+      ],
+      "Admin": [
+        "Adminisztrátor"
+      ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Sikeres feltöltés után letörölheti a jelszavait tartalmazó CSV fájlt, az adatai biztonsága érdekében."
+      ],
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Az e-mail álnév le lett tiltva. Többé nem fog e-maileket kapni a következő e-mail címre: ${ item.aliasEmail }"
+      ],
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Az e-mail álnév engedélyezve. Mostantól fogadhat e-maileket a következő címre: ${ item.aliasEmail }"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "Az e-mail álnév szinkronizálás a ${ BRAND_NAME } és a SimpleLogin fiókjai között aktív."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "A Lomtárban lévő e-mail álnevek továbbra is továbbítják az e-maileket. Ha nem szeretne e-maileket kapni azon a álneven, inkább tiltsa le."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Az álnevek szinkronizálása sikertelen (${ aliasCount })"
+      ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Az saját domain névvel létrehozott e-mail álnevek nincsenek figyelve, ezeket egyéni e-mail figyelésként adhatja hozzá."
+      ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "A ${ emailJSX } postafiókot használó összes e-mail álnév szintén törölve lesz."
+      ],
+      "All breaches for this address were resolved": [
+        "Az ehhez a címhez tartozó összes adatvédelmi incidens megoldva"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Minden jelenlegi adatvédelmi incidens megoldottnak lesz jelölve. A jövőbeni adatvédelmi incidensek esetén értesítjük."
+      ],
+      "All inactive secure links were removed": [
+        "Az összes inaktív biztonságos hivatkozás el lett távolítva"
+      ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Az összes elem áthelyezve innen: \"${ payload.content.name }\""
+      ],
+      "All items successfully moved": [
+        "Minden elem sikeresen áthelyezve"
+      ],
+      "All trashed items permanently deleted": [
+        "A lomtár tartalma véglegesen törölve"
+      ],
+      "All trashed items successfully restored": [
+        "A lomtár teljes tartalma visszaállítva"
+      ],
+      "An item previously shared with you was removed": [
+        "Az önnel korábban megosztott elemet törölték"
+      ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "Biztosan el szeretné távolítani a következőt: ${ emailJSX } a postafiókjaiból?"
+      ],
+      "Are you sure you want to remove the link?": [
+        "Biztos, hogy el akarja távolítani a hivatkozást?"
+      ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "Az automatikusan létrehozott e-mail álnevek automatikusan a következő postafiókok tulajdonában vannak:"
+      ],
+      "Auto-lock successfully disabled.": [
+        "Automatikus lezárás kikapcsolva."
+      ],
+      "automatically": [
+        "automatikusan"
+      ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Mielőtt exportálná az adatait ezzel a formátummal, nyissa meg a Safari beállításait -> „Általános” fül -> tiltsa le a „Biztonságos fájlok megnyitása letöltés után” opciót. Ezzel megakadályozza, hogy a Safari helytelenül kibontsa az exportált fájlt."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "A biometrikus zár sikeresen regisztrálva. Használja a ${ PASS_APP_NAME } feloldásához."
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "A biometrikus azonosítás le lesz tiltva, és újra engedélyezni kell."
+      ],
+      "Breaches detected": [
+        "Adatszivárgásokat észleltünk"
+      ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "Importálja a meglévő jelszavait a ${ BRAND_NAME } szolgáltatásba."
+      ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "Hozza a saját domain nevét, és nem kell újabb e-mail tárhelyszolgáltatást vásárolnia."
+      ],
+      "Built in 2FA authenticator": [
+        "Beépített kétlépcsős hitelesítés"
+      ],
+      "By adding your domain, you can create aliases like hi@my-domain.com.": [
+        "Ha hozzáadja a domain nevét, létrehozhat olyan e-mail álneveket, mint a szia@sajat-domain.com."
+      ],
+      "Can be viewed": [
+        "Megtekinthető"
+      ],
+      "Can create, edit, and delete items in this vault.": [
+        "Létrehozhatja, szerkesztheti és törölheti az elemeket ebben a tárolóban."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Létrehozhatja, szerkesztheti és törölheti ezt az elemet."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Megadhat és visszavonhat hozzáférést ehhez az elemhez, és törölheti azt."
+      ],
+      "Can grant and revoke access to this item.": [
+        "Megadhatja és visszavonhatja az elemhez való hozzáférést."
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Megadhat és megvonhat elérést ehhez a tárolóhoz, és törölhet is."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Megadhat és megvonhat elérést ehhez a tárolóhoz."
+      ],
+      "Can view items in this vault.": [
+        "Megtekintheti a tárolóban lévő elemeket."
+      ],
+      "Can view this item.": [
+        "Megtekintheti ezt az elemet."
+      ],
+      "Change your password": [
+        "Jelszó megváltoztatása"
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Be kell írnia az extra jelszót, hogy folytatni tudja annak törlését."
+      ],
+      "Congratulations, your access has been confirmed": [
+        "A hozzáférése jóváhagyva"
+      ],
+      "Copied to clipboard": [
+        "Vágólapra másolva"
+      ],
+      "Coupon successfully applied!": [
+        "A kupon sikeresen alkalmazva!"
+      ],
+      "Create contact illustration": [
+        "Kapcsolat létrehozás illusztrációja"
+      ],
+      "Created ${ time }.": [
+        "Létrehozva ${ time }."
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
+        "A CSV egy kényelmes formátum az adatok megtekintésére. Egyszerűsége miatt azonban egyes adatok nem lesznek benne (egyéni mezők, hozzáférési kulcsok...). A teljes exportáláshoz javasoljuk, hogy más formátumot használjon."
+      ],
+      "Current version": [
+        "Jelenlegi változat"
+      ],
+      "Decrypting your data": [
+        "Adatok visszafejtése"
+      ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "A ${ domainDisplay } használatával létrehozott e-mail álnév alapértelmezett megjelenített neve, hacsak az e-mail álnév megjelenített neve nem írja felül."
+      ],
+      "Deleted items will be moved here first": [
+        "A törölt elemek először ide kerülnek"
+      ],
+      "Deleting \"${ payload.content.name }\"": [
+        "\"${ payload.content.name }\" törlése"
+      ],
+      "Didn't receive the code?": [
+        "Nem kapta meg a kódot?"
+      ],
+      "Disabling auto-lock": [
+        "Az automatikus lezárás letiltása"
+      ],
+      "Disabling auto-lock failed": [
+        "Az automatikus zárolás letiltása sikertelen"
+      ],
+      "Disabling offline mode...": [
+        "Offline üzemmód letiltása..."
+      ],
+      "DNS changes could take up to 24 hours to update.": [
+        "A DNS-változások frissítéséhez az átfutási idő akár 24 óra is lehet."
+      ],
+      "Domain: ${ domainPath } or @": [
+        "Domain: ${ domainPath } vagy @"
+      ],
+      "Drop file here to upload": [
+        "Húzza ide a fájlokat a feltöltéshez"
+      ],
+      "Drop to import": [
+        "Húzza ide az importáláshoz"
+      ],
+      "Editor": [
+        "Szerkesztő"
+      ],
+      "email": [
+        "e-mail cím"
+      ],
+      "Email address successfully deleted from monitoring": [
+        "Az e-mail cím sikeresen törölve a figyelésből"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "Az e-mail cím sikeresen kikerült a figyelésből"
+      ],
+      "Email address successfully included in monitoring": [
+        "Az e-mail cím sikeresen hozzáadva a figyeléshez"
+      ],
+      "Email headers illustration": [
+        "Email fejlécek illusztrációja"
+      ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "Küldje el e-mailben ezt a címet, és úgy fog tűnni, mintha például ${ exampleEmail } címről küldték volna."
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "Az e-mail álnevére küldött üzeneteket az Ön postafiókjába továbbítja a rendszer. Egy álnévhez egynél több postafiók is tartozhat, ez hasznos, ha egy e-mail álnevet szeretne megosztani a barátaival."
+      ],
+      "Emptying trash...": [
+        "Lomtár kiürítése..."
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "${ PASS_SHORT_APP_NAME } béta verzió engedélyezése"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Az adatok védelme érdekében engedélyezze az automatikus zárolást"
+      ],
+      "Enabling biometrics auto-lock": [
+        "A biometrikus azonosítás automatikus lezárásának engedélyezése"
+      ],
+      "Enabling biometrics lock failed": [
+        "A biometrikus azonosító zárolásának engedélyezése nem sikerült"
+      ],
+      "Enabling offline mode...": [
+        "Offline üzemmód engedélyezése..."
+      ],
+      "Enabling password auto-lock": [
+        "Automatikus jelszavas zárolás engedélyezése"
+      ],
+      "Enabling password lock failed": [
+        "A jelszavas zárolás engedélyezése sikertelen"
+      ],
+      "Enabling PIN auto-lock": [
+        "Automatikus PIN-zár engedélyezése"
+      ],
+      "Enter the address you want to email.": [
+        "Adja meg a címzett e-mail címét."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Írja be az ellenőrző kódot. ${ digit } számjegy."
+      ],
+      "Enter your extra password": [
+        "Írja be az extra jelszót"
+      ],
+      "Enter your PIN code": [
+        "Adja meg a PIN-kódját"
+      ],
+      "Every time your alias receives an email from someone, a new contact is automatically created.": [
+        "Minden alkalommal, amikor az álneve e-mailt kap valakitől, automatikusan új kapcsolat jön létre."
+      ],
+      "Expires in": [
+        "Lejár"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Lejár: ${ remainingTime }"
+      ],
+      "Exporting your data...": [
+        "Adatok exportálása..."
+      ],
+      "Extra password successfully created": [
+        "Extra jelszó létrehozva"
+      ],
+      "Extra password successfully removed": [
+        "Extra jelszó eltávolítva"
+      ],
+      "Fill in the CSV with your data": [
+        "Töltse ki a CSV fájlt az adataival"
+      ],
+      "finance": [
+        "pénzügyi"
+      ],
+      "Follow those steps to import your data with a generic CSV:": [
+        "A következő lépésekkel importálhat adatokat általános CSV fájlból:"
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "Biztonsági okokból ez a művelet személyazonossági ellenőrzést igényel."
+      ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Biztonsági okokból meg kell erősítenie a hozzáférést ehhez a megosztott tárolóhoz.",
+        "Biztonsági okokból meg kell erősítenie a hozzáférést ehhez a megosztott tárolóhoz."
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Biztonsági okokból a jogosultságát ellenőrizni szükséges"
+      ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "A továbbító cím a vágólapra lett másolva. Küldjön e-mailt erre a címre, és ${ Email } fogja megkapni."
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "A generált jelszavakat ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hétig tároljuk.",
+        "A generált jelszavakat ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hétig tároljuk."
+      ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Hozza ki a legtöbbet a Pass használatából, minden csapat vagy projekt számára létrehozva egy-egy tárolót."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Használjon tetszőleges számú e-mail álnevet, prémium funkciókat és támogassa a munkánkat a Pass Plusra való előfizetéssel."
+      ],
+      "Here's how it works:": [
+        "Így működik:"
+      ],
+      "High Priority": [
+        "Magas prioritású"
+      ],
+      "How does monitoring work?": [
+        "Hogyan működik a figyelés?"
+      ],
+      "Identity confirmed": [
+        "Személyazonosság megerősítve"
+      ],
+      "Import the CSV file below.": [
+        "Importálja a CSV fájlt lentebb."
+      ],
+      "Imported on ${ date }": [
+        "Importálva: ${ date }"
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "A ${ PASS_SHORT_APP_NAME } alkalmazásban egy elemhez tartozó jegyzet az elem titkosítási kulcsával van titkosítva, és csak azok a felhasználók tekinthetik meg a jegyzetet, akiknek hozzáférése van az adott elemhez. Még a ${ BRAND_NAME } vagy a SimpleLogin sem láthatja azt."
+      ],
+      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
+        "A ${ PASS_APP_NAME } legjobb működése érdekében, kérjük, adja meg a bővítménynek a szükséges jogosultságokat."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Telepítse a ${ PASS_APP_NAME } alkalmazást a ${ browser.title } böngészőhöz, a bejelentkezések gyors, automatikus kitöltése céljából."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "Telepítse a ${ PASS_APP_NAME } alkalmazást a ${ browser.title } böngészőhöz, a bejelentkezések gyors, automatikus kitöltése céljából. "
+      ],
+      "Internet connection lost": [
+        "Az internetkapcsolat megszakadt"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Az internet kapcsolat megszakadt. Ellenőrizze az eszköz csatlakoztathatóságát."
+      ],
+      "Invitation sent": [
+        "Meghívó elküldve"
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Hívjon meg konkrét személyeket, és állítsa be a megfelelő engedélyeket."
+      ],
+      "Invite successfully removed": [
+        "Meghívó eltávolítva"
+      ],
+      "Invite successfully resent": [
+        "Meghívó újra elküldve"
+      ],
+      "invites you to access items in": [
+        "meghívta a tároló elérésére:"
+      ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "Úgy tűnik, már be van jelentkezve a ${ PASS_APP_NAME } fiókba. Ha egy másik fiókkal próbál bejelentkezni, először jelentkezzen ki a bővítményben."
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" created": [
+        "\"${ payload.item.data.metadata.name }\" elem létrehozva"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" updated": [
+        "\"${ payload.item.data.metadata.name }\" frissítve"
+      ],
+      "Item history permanently deleted": [
+        "Az elem előzményei véglegesen törölve"
+      ],
+      "Item moved to trash": [
+        "Elem a lomtárba helyezve"
+      ],
+      "Item permanently deleted": [
+        "Elem véglegesen törölve"
+      ],
+      "Item restored": [
+        "Elem helyreállítva"
+      ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Elemmegosztás: ${ itemAccessCount } felhasználó",
+        "Elemmegosztás: ${ itemAccessCount } felhasználó"
+      ],
+      "Item successfully excluded from monitoring": [
+        "Az elem sikeresen kikerült a figyelésből"
+      ],
+      "Item successfully included in monitoring": [
+        "Az elem sikeresen hozzáadva a figyeléshez"
+      ],
+      "Item successfully moved": [
+        "Elem áthelyezve"
+      ],
+      "Item successfully pinned": [
+        "Elem rögzítve"
+      ],
+      "Item successfully unpinned": [
+        "Elem feloldva"
+      ],
+      "Latest breach on ${ formattedDate }": [
+        "Legutolsó adatszivárgás: ${ formattedDate }"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Tudja meg, mit kell tennie ${ dataLeakedLink }"
+      ],
+      "Leaving item...": [
+        "Elem elhagyása..."
+      ],
+      "Leaving vault...": [
+        "Tároló elhagyása..."
+      ],
+      "Let's get you started by creating your first item": [
+        "Kezdjen hozzá az első elem létrehozásával"
+      ],
+      "Loading": [
+        "Betöltés"
+      ],
+      "Loading ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } betöltése"
+      ],
+      "Logging you out...": [
+        "Kijelentkezés..."
+      ],
+      "Low Priority": [
+        "Alacsony prioritású"
+      ],
+      "me": [
+        "én"
+      ],
+      "Medium Priority": [
+        "Közepes prioritású"
+      ],
+      "Monitor accounts": [
+        "Fiókok megfigyelése"
+      ],
+      "Monitoring settings successfully updated": [
+        "A megfigyelési beállítások frissítve"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Több mint egy jelszókezelő, a ${ PASS_APP_NAME } védi a jelszavát és a személyes e-mail címét az e-mail álnevekkel. A ${ MAIL_APP_NAME } mögött álló technológiával az adatai végpontok közt titkosítottak, és csak Ön férhet hozzájuk."
+      ],
+      "Move ${ count } item": [
+        "${ count } elem áthelyezése",
+        "${ count } elem áthelyezése"
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Az összes elem áthelyezése innen: \"${ payload.content.name }\""
+      ],
+      "Moving items": [
+        "Elemek áthelyezése"
+      ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Az elemek másik tárolóba történő áthelyezése törli az előzményeiket és az összes biztonságos hivatkozást."
+      ],
+      "Moving items to another vault will erase their history.": [
+        "Elemek áthelyezése egy másik tárolóba, törli a módosítási előzményeiket."
+      ],
+      "Moving items to trash": [
+        "Elemek áthelyezése a lomtárba"
+      ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "Szeretne e-mailt küldeni valakinek, de nem szeretné, hogy lássa az e-mail címét? Állítson be egy kapcsolati e-mail álnevet."
+      ],
+      "Never": [
+        "Soha"
+      ],
+      "No breaches detected": [
+        "Nem észleltünk adatszivárgást"
+      ],
+      "No network connection": [
+        "Nincs internetkapcsolat"
+      ],
+      "None": [
+        "Nincs"
+      ],
+      "Not recommended": [
+        "Nem ajánlott"
+      ],
+      "Offline mode": [
+        "Kapcsolat nélküli mód"
+      ],
+      "Offline mode could not be disabled at the moment": [
+        "Az offline mód jelenleg nem kapcsolható ki"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Az offline mód jelenleg nem kapcsolható be"
+      ],
+      "Offline support successfully disabled": [
+        "Offline támogatás kikapcsolva"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "A ${ PASS_APP_NAME } alkalmazáshoz való online hozzáféréshez PIN kód szükséges. 3 sikertelen próbálkozás után ki lesz jelentkeztetve."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Figyelmeztetéseink a biztonságot helyezik előtérbe.Ha nem ismeri fel ezeket a feltört információkat nyugodtan figyelmen kívül hagyhatja ezt."
+      ],
+      "Owner": [
+        "Tulajdonos"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "Tulajdonjog sikeresen átadva. Ön már nem tulajdonosa a tárolónak."
+      ],
+      "Pass Plus trial": [
+        "Pass Plus próbaverzió"
+      ],
+      "password": [
+        "jelszó"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Jelszózár sikeresen regisztrálva. Használja a ${ PASS_APP_NAME } feloldásához"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hétnél régebbi jelszavak automatikusan törlődnek az előzményekből.",
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hétnél régebbi jelszavak automatikusan törlődnek az előzményekből."
+      ],
+      "Paused": [
+        "Felfüggesztve"
+      ],
+      "Permanently deleting selected items": [
+        "A kiválasztott elemek végleges törlése"
+      ],
+      "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "PIN-kód regisztrálva. Mostantól ezt használhatja a ${ PASS_APP_NAME } feloldására."
+      ],
+      "Pinning item...": [
+        "Elem rögzítése..."
+      ],
+      "Please check your spam folder or try resending the code.": [
+        "Kérjük, ellenőrizze a levélszemét mappát, vagy próbálja meg újra elküldeni a kódot."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
+        "Erősítse meg a(z) ${ BRAND_NAME } jelszavát az offline mód letiltásához."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Erősítse meg a(z) ${ BRAND_NAME } jelszavát az offline mód engedélyezéséhez"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Kérjük, erősítse meg a ${ BRAND_NAME } jelszavát, hogy exportálni tudja a ${ PASS_APP_NAME } adatokat."
+      ],
+      "Please confirm your backup password": [
+        "Kérjük, erősítse meg a biztonsági mentés jelszavát"
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Kérjük, erősítse meg a biztonsági mentés jelszavát az automatikus biometrikus lezáráshoz."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Kérjük, erősítse meg a biztonsági mentés jelszavát a jelszóval történő automatikus lezáráshoz."
+      ],
+      "Please confirm your backup password in order to disable offline mode": [
+        "A biztonsági mentési jelszava megadásával tiltsa le az offline módot"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "A biztonsági mentési jelszava megadásával engedélyezheti az offline módot"
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "A biztonsági mentési jelszava megadásával exportálhatja a(z) ${ PASS_APP_NAME } adatait"
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Kérjük, erősítse meg a biztonsági mentés jelszavát a jelenlegi zárolás regisztrációjának megszüntetéséhez."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Adja meg a biztonsági mentés jelszavát az automatikus lezárási idő frissítéséhez."
+      ],
+      "Please confirm your extra password": [
+        "Kérjük, erősítse meg extra jelszavát"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Kérjük, erősítse meg az extra jelszavát az automatikus biometrikus lezáráshoz."
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Kérjük, erősítse meg az extra jelszavát az extra jelszavával történő automatikus lezáráshoz."
+      ],
+      "Please confirm your extra password in order to disable offline mode": [
+        "Erősítse meg az extra jelszót az offline mód letiltásához"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Erősítse meg az extra jelszót az offline mód engedélyezéséhez"
+      ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "Az extra jelszava megadásával exportálhatja az Ön ${ PASS_APP_NAME } adatait"
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Kérjük, erősítse meg az extra jelszavát a jelenlegi zárolás regisztrációjának megszüntetéséhez."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Erősítse meg az extra jelszavát az automatikus lezárási idő frissítéséhez."
+      ],
+      "Please confirm your password": [
+        "Kérjük, erősítse meg jelszavát"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Kérjük, erősítse meg jelszavát az automatikus biometrikus záráshoz."
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Adja meg a jelszavát a jelszóval történő automatikus zároláshoz."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Adja meg a jelszavát a zárolás regisztrációjának megszüntetéséhez."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Adja meg a jelszavát az automatikus zárolási idő frissítéséhez."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Kérjük, erősítse meg PIN-kódját, hogy törölni tudja a jelenlegi zárat."
+      ],
+      "Please confirm your PIN code to edit this setting.": [
+        "Adja meg a PIN-kódját a beállítás megváltoztatásához."
+      ],
+      "Please confirm your second password": [
+        "Kérjük, erősítse meg a második jelszavát"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "Kérjük, erősítse meg a második jelszavát az automatikus biometrikus lezáráshoz."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "Kérjük, erősítse meg a második jelszavát a jelszóval történő automatikus lezáráshoz."
+      ],
+      "Please confirm your second password in order to disable offline mode": [
+        "A második jelszava megadásával tiltsa le az offline módot"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "A második jelszava megadásával engedélyezheti az offline módot"
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "A második jelszava megadásával exportálhatja az Ön ${ PASS_APP_NAME } adatait"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "Kérjük, erősítse meg a második jelszavát a jelenlegi zárolás regisztrációjának megszüntetéséhez."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "A automatikus lezárási idő frissítéséhez erősítse meg a második jelszavát."
+      ],
+      "Please consider leaving a review.": [
+        "Kérjük, írjon véleményt."
+      ],
+      "Please contact your administrator": [
+        "Kérjük, forduljon rendszergazdájához"
+      ],
+      "Please do not close this window": [
+        "Kérjük, ne zárja be ezt az ablakot"
+      ],
+      "Please enter your current PIN code to continue": [
+        "Adja meg a PIN-kódját a folytatáshoz"
+      ],
+      "Please follow the steps below to set up your domain.": [
+        "Kövesse az alábbi lépéseket a domain név beállításához."
+      ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Kérjük, hagyja nyitva ezt az ablakot az adatok importálása közben. Ez a folyamat néhány percet vehet igénybe."
+      ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Vegye figyelembe, hogy a törlés után az e-mail álnév nem állítható vissza. Lehet, hogy inkább az álnév letiltását szeretné?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Kérjük, vegye figyelembe, hogy a törlés után az álnév nem állítható vissza. Az álnév már le van tiltva, és nem továbbítja az e-maileket a postafiókjába"
+      ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "Kérjük, használjon teljes útvonal domain nevet, például my-domain.com vagy my-subdomain.my-domain.com, ha aldomaint használ."
+      ],
+      "Press Enter to copy": [
+        "Enter billentyűvel másolhatja"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, a fejlett fiókvédelmi programunk által védve"
+      ],
+      "Reconnect": [
+        "Újrakapcsolódás"
+      ],
+      "Reconnecting": [
+        "Újracsatlakozás"
+      ],
+      "Record: CNAME": [
+        "Rekord: CNAME"
+      ],
+      "Record: MX": [
+        "Rekord: MX"
+      ],
+      "Record: TXT": [
+        "Rekord: TXT"
+      ],
+      "Registering extra password...": [
+        "Extra jelszó regisztrálása..."
+      ],
+      "Registering PIN lock failed": [
+        "A PIN-zár regisztrálása sikertelen"
+      ],
+      "Removing all inactive secure links...": [
+        "Minden inaktív biztonságos hivatkozás eltávolítása..."
+      ],
+      "Removing extra password...": [
+        "Extra jelszó eltávolítása..."
+      ],
+      "Removing secure link...": [
+        "Biztonságos hivatkozás eltávolítása..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "Az előzmények visszaállítása véglegesen törli az összes korábbi elemverziót, és a művelet nem vonható vissza."
+      ],
+      "Restoring items from trash": [
+        "Elemek visszaállítása a Lomtárból"
+      ],
+      "Restoring trashed items...": [
+        "Elemek visszaállítása a lomtárból..."
+      ],
+      "Secure links": [
+        "Biztonságos hivatkozások"
+      ],
+      "See more info": [
+        "További információ"
+      ],
+      "Select destination vault": [
+        "Céltároló kiválasztása"
+      ],
+      "Select vault to share": [
+        "Válassza ki a megosztandó tárolót"
+      ],
+      "Select where you want your imported vaults to be saved.": [
+        "Válassza ki, hova legyenek mentve az importált tárolók."
+      ],
+      "Selected items permanently deleted": [
+        "A kijelölt elemek véglegesen törölve"
+      ],
+      "Selected items successfully moved to trash": [
+        "A kijelölt elemek a lomtárba áthelyezve"
+      ],
+      "Selected items successfully restored from trash": [
+        "A kiválasztott elemek sikeresen visszaállítva a Lomtárból"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "A szerverek nem érhetők el. Próbálja meg egy pár perc múlva"
+      ],
+      "Session timed out": [
+        "A munkamenet lejárt"
+      ],
+      "Set by your organization": [
+        "A szervezet állította be"
+      ],
+      "Settings successfully updated": [
+        "Beállítások frissítve"
+      ],
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Ossza meg másokkal az e-mail álneveket úgy, hogy a postafiókjukat továbbító fiókként adja hozzá."
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Megoszthatja bejelentkezési adatait és biztonságos jegyzeteit akár 10 emberrel is."
+      ],
+      "Shared item invitation": [
+        "Megosztott elem meghívás"
+      ],
+      "Sign in to your account": [
+        "Jelentkezzen be a fiókjába"
+      ],
+      "Signing you in": [
+        "Bejelentkezés"
+      ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "A SimpleLogin jegyzetet az e-mail álnév címmel együtt ugyanazon a helyen tárolják, és bár titkosítással védett, nem E2E titkosított, ami azt jelenti, hogy bárki, aki hozzáfér a SimpleLogin adatbázishoz, elolvashatja azt."
+      ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "Legközelebb használja a ${ emailBold } nevet, amikor e-mail álnévre van szüksége: az ${ automaticallyBold } név akkor jön létre, amikor először kap egy e-mailt. A finomabb irányítás érdekében ${ rulesHyperLink } is megadható."
+      ],
+      "Successfully exported all your items": [
+        "Minden elem sikeresen exportálva"
+      ],
+      "Successfully left the item": [
+        "Az elem el lett hagyva"
+      ],
+      "Successfully left the vault": [
+        "Tároló elhagyva"
+      ],
+      "Successfully synced all vaults": [
+        "Minden tároló szinkronizálva"
+      ],
+      "Suggested": [
+        "Javasolt"
+      ],
+      "Switch to another vault or create an item in this vault": [
+        "Váltson másik tárolóra vagy hozzon létre elemet ebben a tárolóban"
+      ],
+      "Syncing your vaults…": [
+        "Tárolók szinkronizálása…"
+      ],
+      "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
+        "Érintse meg a fogaskerék ikont ${ gearIcon }, hogy az e-mail álnevet testre szabhassa."
+      ],
+      "Thank you, the problem has been reported": [
+        "Köszönjük, a problémajelentést fogadtuk"
+      ],
+      "The display name when sending an email from this alias.": [
+        "A megjelenített név, amikor e-mailt küld erről az álnévről."
+      ],
+      "The export will only contain vaults that you own.": [
+        "Az exportálás csak azokat a tárolókat fogja tartalmazni, amelyek az Ön tulajdonában vannak."
+      ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Az exportált fájl PGP-vel titkosított és egy erős jelszó szükséges hozzá."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "A kiszivárgott információ egy harmadik féltől származó szolgáltatás volt. Az ön ${ BRAND_NAME } fiókja biztonságban van. ${ learnMoreLink }"
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "A ${ PASS_APP_NAME } használatához szüksége lesz az extra jelszóra. Ez kiegészítő jelszóként működik a ${ BRAND_NAME } jelszava mellett."
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "A következő ${ totalIgnored } elem importálása nem sikerült:",
+        "A következő ${ totalIgnored } elem importálása nem sikerült:"
+      ],
+      "The secure link has been removed": [
+        "A biztonságos hivatkozás el lett távolítva"
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "A beilleszteni próbált szöveg hosszabb a lehetséges maximum ${ maxLength } karakternél."
+      ],
+      "The user did not accept the invitation yet.": [
+        "A felhasználó még nem fogadta el a meghívót."
+      ],
+      "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
+        "Az exportált adatok nem kerülnek titkosításra és bárki, aki a fájlhoz hozzáfér, látni fogja a jelszavait. Biztonsági okokból törölje, mihelyst végzett a felhasználásával."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "Ez az elem jelenleg nincs megosztva senkivel. Hívjon meg embereket a másokkal való megosztáshoz."
+      ],
+      "This mailbox will use your previous email.": [
+        "Ez a postafiók a korábbi e-mail címét fogja használni."
+      ],
+      "This operation is irreversible.": [
+        "Ezt a műveletet nem lehet visszavonni."
+      ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "Ez a művelet nem vonható vissza. A ${ domainTextBold } domain nevet használó összes e-mail álnév törlésre kerül. Felhívjuk a figyelmét, hogy a törölt e-mail álnevek nem állíthatók helyre."
+      ],
+      "This option is currently not available on your browser.": [
+        "Ez az opció jelenleg nem érhető el az Ön böngészőjében."
+      ],
+      "This option is currently not available on your device.": [
+        "Ez az opció jelenleg nem elérhető ezen az eszközön"
+      ],
+      "This setting is disabled on the organization level": [
+        "Ez a beállítás a szervezet szintjén le van tiltva"
+      ],
+      "This setting is enforced by your organization": [
+        "Ezt a beállítást a szervezet kényszeríti ki"
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Ez a tároló jelenleg nincs megosztva senkivel. Hívjon meg embereket a másokkal való megosztáshoz."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Ez a változat kerül be az előzményekbe, mint a legfrissebb verzió."
+      ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Ez elutasítja azt a(z) **${ name }** eszközt, amelyik **${ date }** napján megpróbált bejelentkezni a ${ BRAND_NAME } fiókjába."
+      ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "Ha továbbra is szeretne e-maileket kapni, helyezze át ezeket az e-mail álneveket egy másik postafiókba:"
+      ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "Személyes e-mail címének elrejtése érdekében létrehozhat egy e-mail álnév névjegyet, amely elrejti a címét."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "Adatok áthozatalához egy másik jelszókezelőből, nyissa meg a másik jelszókezelőt, exportálja az adatait, majd ezt töltse fel a ${ PASS_APP_NAME }-ba. Az importálás után törölje az exportált fájlt."
+      ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Az importált adatok áttekintéséhez kattintson a ${ PASS_APP_NAME } ikonra a böngésző eszköztárán."
+      ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Világszerte több mint 50 000 üzleti felhasználó és 100 millió fiók bízik benne."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Próbálja ki a ${ BRAND_NAME } új funkcióit, frissítéseit és termékeit mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez újra fogja tölteni az alkalmazást"
+      ],
+      "Unable to copy to clipboard": [
+        "Vágólapra másolás sikertelen"
+      ],
+      "Unconfigured": [
+        "Nincs beállítva"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "Korlátlan hide-my-email e-mail álnév és speciális álnévkezelés"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "${ PASS_SHORT_APP_NAME } feloldása biometriával"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "${ PASS_SHORT_APP_NAME } feloldása ${ BRAND_NAME } jelszóval"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "Oldja fel a ${ PASS_SHORT_APP_NAME } zárolását a biztonsági mentés jelszavával"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Oldja fel a ${ PASS_SHORT_APP_NAME } zárolását extra jelszavával"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "Oldja fel a ${ PASS_SHORT_APP_NAME } zárolását a második jelszavával"
+      ],
+      "Unlock with biometrics": [
+        "Feloldás biometrikus adatokkal"
+      ],
+      "Unpinning item...": [
+        "Elem rögzítésének megszüntetése..."
+      ],
+      "Unverified": [
+        "Nem ellenőrzött"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Váltson nagyobb csomagra a prémium lehetőségekért"
+      ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Váltson nagyobb csomagra további tárolók létrehozásához."
+      ],
+      "User's access removed": [
+        "A hozzáférés törölve"
+      ],
+      "User's access successfully updated": [
+        "A felhasználói hozzáférés frissítve"
+      ],
+      "username": [
+        "felhasználónév"
+      ],
+      "Vault \"${ payload.content.name }\" successfully deleted": [
+        "Tároló törölve: \"${ payload.content.name }\""
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully created": [
+        "Tároló létrehozva: \"${ payload.share.content.name }\""
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully updated": [
+        "Tároló frissítve: \"${ payload.share.content.name }\""
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "Tároló eltávolítva: \"${ share.content.name }\""
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Tároló megosztás: ${ vaultMembersCount } tag",
+        "Tároló megosztás: ${ vaultMembersCount } tag"
+      ],
+      "Verification code sent.": [
+        "Ellenőrző kód kiküldve"
+      ],
+      "Viewer": [
+        "Megtekintésre jogosult"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Problémák merültek fel a helyi tárolóba való szinkronizáláskor. Ellenőrizze, hogy van-e elegendő üres hely a ${ PASS_SHORT_APP_NAME } zökkenőmentes működéséhez."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Azt észleltük, hogy van olyan ${ aliasCount } e-mail álneve, amely jelen van a SimpleLoginban, de hiányzik a ${ PASS_APP_NAME } fájlból. Szeretné importálni?",
+        "Azt észleltük, hogy van olyan ${ aliasCount } e-mail álneve, amely jelen van a SimpleLoginban, de hiányzik a ${ PASS_APP_NAME } fájlból. Szeretné importálni?"
+      ],
+      "Week": [
+        "Hét"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Küldtünk egy ellenőrző kódot ${ email } címre. Kérjük, írja be a kódot:"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "Amikor egy bejelentkezést hoz létre/szerkeszt a ${ PASS_APP_NAME } alkalmazásban, a „felhasználónév” bemenet mindig látható lesz."
+      ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "Amikor e-mailt küld erről az e-mail álnévről, az e-mail feladójaként ${ emailSender } fog megjelenni."
+      ],
+      "You are about to create:": [
+        "Ezt fogja létrehozni:"
+      ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "Megadhat PIN-kódot is a ${ PASS_APP_NAME } feloldásához."
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "A ${ BRAND_NAME } jelszavával most már offline is elérheti a ${ PASS_SHORT_APP_NAME } tartalmát"
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "Ehhez az e-mail álnévhez nem változtathat az e-mail fiókon."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Van ${ aliasCount } olyan e-mail álneve a SimpleLoginban, amely hiányzik a ${ PASS_APP_NAME }-ból. Szeretné szinkronizálni?",
+        "Van ${ aliasCount } olyan e-mail álneve a SimpleLoginban, amely hiányzik a ${ PASS_APP_NAME }-ból. Szeretné szinkronizálni?"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "${ daysRemaining } nap maradt az ilyen és további prémium funkciók kipróbálásából.",
+        "${ daysRemaining } nap maradt az ilyen és további prémium funkciók kipróbálásából."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Túllépte a csomagjában rendelkezésre álló tárolók számát. Az elemek csak az első két tárolójába helyezhetők. Váltson nagyobb csomagra, hogy minden tárolója között helyezhessen át elemeket."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Túllépte a csomagjában rendelkezésre álló tárolók számát. Új elemek csak az első két tárolójában hozhatók létre. Váltson nagyobb csomagra, hogy minden tárolójában hozhasson létre elemeket."
+      ],
+      "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
+        "Elérte a maximálisan létrehozható e-mail álnevek számát. Váltson nagyobb csomagra, korlátlan számú álnév használatához."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Elérte a létrehozható hitelkártyák felső korlátját. Korlátlan számú hitelkártyát hozhat létre, ha frissíti előfizetését."
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "Elérte a létrehozható tárolók maximális számát."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "Elérte a lehetséges maximum ${ maxLength } karaktert."
+      ],
+      "You may close this tab.": [
+        "Bezárhatja ezt a fület."
+      ],
+      "You need a vault with edit permission before you can import items.": [
+        "Az elemek importálásához szerkesztési engedéllyel rendelkező tárolóra van szüksége."
+      ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "A domain ellenőrzése után lehetősége lesz testre szabni a domain beállításait (gyűjtő e-mail álnevek, az álnév alapértelmezett megjelenített neve stb.)."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Ki kell majd lépnie és újra belépni az összes eszközén."
+      ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Értesítést fog kapni ezeknek az e-mail címeknek az adatvédelmi incidenseiről."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "Ennek az e-mail címnek az adatvédelmi incidenséről értesítést fog kapni."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "A továbbiakban nem kap értesítést ezekhez az e-mail címekhez tartozó adatvédelmi incidensekről."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "A továbbiakban nem kap értesítést ennek az e-mail címnek az adatvédelmi incidenséről."
+      ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "Nem fog hozzáférni a megosztáshoz, a kétlépcsős hitelesítéshez, a bankkártyához és egyéb speciális funkciókhoz a következőben: ${ PASS_APP_NAME }"
+      ],
+      "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
+        "Ezzel a PIN-kóddal oldhatja fel a ${ PASS_APP_NAME } alkalmazást, ha az automatikusan lezár egy idő után."
+      ],
+      "You're invited to a vault.": [
+        "Meghívták egy tároló használatára."
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "A fiókja korlátozva van, mert a szervezete kötelezővé tette a kétlépcsős hitelesítést. Engedélyezze a kétlépcsős hitelesítést a Fiók beállítások részben, vagy lépjen kapcsolatba a rendszergazdával."
+      ],
+      "your domain": [
+        "saját domain név"
+      ],
+      "Your files will be encrypted and then saved": [
+        "A fájlok titkosításra majd pedig mentésre kerülnek"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Az ön információja meg lett találva ezen a napon: ${ displayedDate }"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Szervezete megköveteli, hogy biztosítsa a ${ PASS_APP_NAME } alkalmazáshoz való hozzáférését"
+      ]
+    },
+    "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } e-mail álnév",
+        "${ aliasCount } e-mail álnév"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } tiltás",
+        "${ blockedCount } tiltás"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } karakter",
+        "${ config.options.length } karakter"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } szó",
+        "${ config.options.wordCount } szó"
+      ],
+      "${ count } item": [
+        "${ count } elem",
+        "${ count } elem"
+      ],
+      "${ days } day": [
+        "${ days } nap",
+        "${ days } nap"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } továbbítás",
+        "${ forwardCount } továbbítás"
+      ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, az elmúlt 14 napban."
+      ],
+      "${ hours } hour": [
+        "${ hours } óra",
+        "${ hours } óra"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } perc",
+        "${ minutes } perc"
+      ],
+      "${ months } month": [
+        "${ months } hónap",
+        "${ months } hónap"
+      ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "${ PASS_SHORT_APP_NAME } verzió"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } válasz",
+        "${ repliedCount } válasz"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } biztonságos hivatkozás",
+        "${ secureLinksCount } biztonságos hivatkozás"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } belépés",
+        "${ usageCount } belépés"
+      ],
+      "${ years } year": [
+        "${ years } év",
+        "${ years } év"
+      ],
+      "1 hour": [
+        "1 óra"
+      ],
+      "1 minute": [
+        "1 perc"
+      ],
+      "10 minutes": [
+        "10 perc"
+      ],
+      "14 days": [
+        "14 nap"
+      ],
+      "15 minutes": [
+        "15 perc"
+      ],
+      "2 minutes": [
+        "2 perc"
+      ],
+      "24 hours": [
+        "24 óra"
+      ],
+      "2FA secret key (TOTP)": [
+        "Kétlépcsős hitelesítési titok (TOTP)"
+      ],
+      "2FA token (TOTP)": [
+        "Kétlépcsős token (TOTP)"
+      ],
+      "30 days": [
+        "30 nap"
+      ],
+      "30 minutes": [
+        "30 perc"
+      ],
+      "30 seconds": [
+        "30 másodperc"
+      ],
+      "5 minutes": [
+        "5 perc"
+      ],
+      "7 days": [
+        "7 nap"
+      ],
+      "A-Z": [
+        "A-Z"
+      ],
+      "Account": [
+        "Fiók"
+      ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "Új e-mail álnév létrehozásakor adjon hozzá egy véletlenszerű előtagot ehhez a domain névhez."
+      ],
+      "Add section": [
+        "Szakasz hozzáadása"
+      ],
+      "Additional details": [
+        "További részletek"
+      ],
+      "Address": [
+        "Cím"
+      ],
+      "Address details": [
+        "Cím részletei"
+      ],
+      "Alias": [
+        "Álnév"
+      ],
+      "Alias address": [
+        "E-mail álnév cím"
+      ],
+      "Alias address (disabled)": [
+        "E-mail álnév (letiltva)"
+      ],
+      "Aliases": [
+        "E-mail álnevek"
+      ],
+      "All": [
+        "Mind"
+      ],
+      "All items": [
+        "Minden elem"
+      ],
+      "Alphabetical": [
+        "Betűrendben"
+      ],
+      "Always show username field": [
+        "Mindig megjeleníti a felhasználónév mezőt"
+      ],
+      "Application logs": [
+        "Alkalmazás napló"
+      ],
+      "Auto-lock after": [
+        "Automatikus lezárás:"
+      ],
+      "Backup password": [
+        "Biztonsági jelszó"
+      ],
+      "Beta Access": [
+        "Béta hozzáférés"
+      ],
+      "Biometrics": [
+        "Biometrikus"
+      ],
+      "Birthdate": [
+        "Születésnap"
+      ],
+      "Browse faster, smarter": [
+        "Böngésszen gyorsabban, okosabban"
+      ],
+      "Built-in 2FA": [
+        "Beépített kétlépcsős hitelesítés"
+      ],
+      "Capital letters (A-Z)": [
+        "Nagybetűk (A-Z)"
+      ],
+      "Capitalize": [
+        "Nagy kezdőbetű"
+      ],
+      "Card": [
+        "Kártya"
+      ],
+      "Card number": [
+        "Kártyaszám"
+      ],
+      "Cards": [
+        "Kártyák"
+      ],
+      "Catch-All": [
+        "Gyűjtő e-mail"
+      ],
+      "Choose unlock method": [
+        "Válassza ki a feloldási módot"
+      ],
+      "Choose your preferred look and feel.": [
+        "Válassza ki az Önnek tetsző megjelenést."
+      ],
+      "City": [
+        "Település"
+      ],
+      "Code": [
+        "Kód"
+      ],
+      "Company": [
+        "Cég"
+      ],
+      "Confirm vault name": [
+        "Tároló nevének jóváhagyása"
+      ],
+      "Contact created ${ time } ago.": [
+        "A névjegy ${ time } idővel ezelőtt lett létrehozva."
+      ],
+      "Contact details": [
+        "Névjegy részletei"
+      ],
+      "Contacts": [
+        "Névjegyek"
+      ],
+      "Copy": [
+        "Másolás"
+      ],
+      "Country or Region": [
+        "Ország vagy régió"
+      ],
+      "County": [
+        "Ország"
+      ],
+      "Create a credit card": [
+        "Bankkártya létrehozása"
+      ],
+      "Create a hide-my-email alias": [
+        "Hide-my-email e-mail álnév létrehozása"
+      ],
+      "Create a login": [
+        "Bejelentkezés létrehozása"
+      ],
+      "Create an encrypted note": [
+        "Titkosított jegyzet létrehozása"
+      ],
+      "Create an Identity": [
+        "Személyazonosság létrehozása"
+      ],
+      "Create lock": [
+        "Zárolás létrehozása"
+      ],
+      "Create new vault": [
+        "Új tároló létrehozása"
+      ],
+      "Created": [
+        "Létrehozva"
+      ],
+      "Created at": [
+        "Létrehozva"
+      ],
+      "Credit cards": [
+        "Bankkártyák"
+      ],
+      "Custom hidden field": [
+        "Egyéni rejtett mező"
+      ],
+      "Custom text field": [
+        "Egyéni szövegmező"
+      ],
+      "Date": [
+        "Dátum"
+      ],
+      "Device": [
+        "Eszköz"
+      ],
+      "Display": [
+        "Megjelenítés"
+      ],
+      "Display name": [
+        "Megjelenített név"
+      ],
+      "DNS": [
+        "DNS"
+      ],
+      "Domain": [
+        "Domain név"
+      ],
+      "Domain:": [
+        "Domain név:"
+      ],
+      "Domains": [
+        "Domain nevek"
+      ],
+      "Don't remind me again": [
+        "Ne emlékeztessen többet!"
+      ],
+      "Download logs": [
+        "Naplók letöltése"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Email (alias)": [
+        "E-mail (álnév)"
+      ],
+      "Email (new alias)": [
+        "E-mail (új álnév)"
+      ],
+      "Email address": [
+        "E-mail cím"
+      ],
+      "Email or username": [
+        "Email cím, vagy felhasználónév"
+      ],
+      "Empty trash": [
+        "Lomtár kiürítése"
+      ],
+      "Enable offline access": [
+        "Offline hozzáférés engedélyezése"
+      ],
+      "Enter email or username": [
+        "E-mail cím vagy felhasználónév"
+      ],
+      "Expiration date": [
+        "Lejárati dátum"
+      ],
+      "Expired": [
+        "Lejárt"
+      ],
+      "Export": [
+        "Exportálás"
+      ],
+      "Extra email addresses": [
+        "Extra email címet"
+      ],
+      "Extra password": [
+        "Extra jelszó"
+      ],
+      "Facebook account": [
+        "Facebook fiók"
+      ],
+      "Feedback": [
+        "Visszajelzés"
+      ],
+      "Field name": [
+        "Mezőnév"
+      ],
+      "File attachments": [
+        "Fájl mellékletek"
+      ],
+      "File format": [
+        "Fájlformátum"
+      ],
+      "First name": [
+        "Keresztnév"
+      ],
+      "Floor, apartment, building": [
+        "Emelet, lakás, épület"
+      ],
+      "For a one-off sharing": [
+        "Egyszeri megosztás esetén"
+      ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Biztonsági okokból a ${ PASS_SHORT_APP_NAME } automatikusan lezárja önmagát 10 perc inaktivitás után."
+      ],
+      "Forwards to": [
+        "Továbbít:"
+      ],
+      "Free": [
+        "Ingyenes"
+      ],
+      "Free forever": [
+        "Örökre ingyenes"
+      ],
+      "Full Name": [
+        "Teljes név"
+      ],
+      "Gender": [
+        "Neme"
+      ],
+      "General": [
+        "Általános"
+      ],
+      "Generic CSV": [
+        "Általános CSV"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Előfizetés ${ PASS_SHORT_APP_NAME } Pluszra"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Előfizetés ${ PASS_SHORT_APP_NAME } Unlimitedre"
+      ],
+      "Get Started": [
+        "Kezdje el"
+      ],
+      "Get the extension for your browser.": [
+        "Töltse le a bővítményt a böngészőjéhez."
+      ],
+      "Grant": [
+        "Engedélyezés"
+      ],
+      "Hidden": [
+        "Rejtett"
+      ],
+      "Hide password": [
+        "Jelszó elrejtése"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email álnevek"
+      ],
+      "Highest": [
+        "Leggyorsabb"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME } feloldása"
+      ],
+      "https://example.com": [
+        "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN szám"
+      ],
+      "ID Card": [
+        "Személyi igazolvány"
+      ],
+      "ID Card number": [
+        "Személyi igazolvány száma"
+      ],
+      "Identities": [
+        "Személyazonosságok"
+      ],
+      "Identity": [
+        "Személyazonosság"
+      ],
+      "Import": [
+        "Importálás"
+      ],
+      "Import passwords": [
+        "Jelszavak importálása"
+      ],
+      "Imported from: ": [
+        "Importálva innen: "
+      ],
+      "Imported on : ": [
+        "Importálva ekkor: "
+      ],
+      "Include numbers": [
+        "Tartalmazzon számokat"
+      ],
+      "Include numbers (0-9)": [
+        "Tartalmazzon számokat (0-9)"
+      ],
+      "Info": [
+        "Információk"
+      ],
+      "Instagram handle": [
+        "Instagram felhasználónév"
+      ],
+      "Install and continue": [
+        "Telepítés és tovább"
+      ],
+      "Install extension": [
+        "Telepítse a bővítményt"
+      ],
+      "Invitations": [
+        "Meghívók"
+      ],
+      "Item ID": [
+        "Elem azonosító"
+      ],
+      "Job title": [
+        "Beosztás"
+      ],
+      "Key": [
+        "Kulcs"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Gyorsbillentyű: ${ shortcut }"
+      ],
+      "Language": [
+        "Nyelv"
+      ],
+      "Last 2 weeks": [
+        "Az elmúlt 2 hét"
+      ],
+      "Last month": [
+        "Az elmúlt 4 hét"
+      ],
+      "Last name": [
+        "Vezetéknév"
+      ],
+      "Last updated": [
+        "Utolsó frissítés"
+      ],
+      "Last week": [
+        "Múlt hét"
+      ],
+      "Latest import": [
+        "Legutóbbi importálás"
+      ],
+      "Learn more": [
+        "További információk"
+      ],
+      "License": [
+        "Licenc"
+      ],
+      "License number": [
+        "Engedélyszám"
+      ],
+      "Limited time": [
+        "Korlátozott ideig"
+      ],
+      "LinkedIn account": [
+        "LinkedIn fiók"
+      ],
+      "Login": [
+        "Bejelentkezés"
+      ],
+      "Logins": [
+        "Bejelentkezések"
+      ],
+      "Mailboxes": [
+        "Postafiókok"
+      ],
+      "Make all admins": [
+        "Mindenkit admin jogosulttá tesz"
+      ],
+      "Make all editors": [
+        "Mindenkit szerkesztésre jogosulttá tesz"
+      ],
+      "Make all viewers": [
+        "Mindenkit megtekintésre jogosulttá tesz"
+      ],
+      "Make it your own.": [
+        "Legyen a sajátja."
+      ],
+      "max views reached": [
+        "elérte a maximális megtekintésszámot"
+      ],
+      "Members": [
+        "Tagok"
+      ],
+      "Middle name": [
+        "Középső név"
+      ],
+      "Modified": [
+        "Módosítva"
+      ],
+      "More than a month": [
+        "Több mint egy hónapja"
+      ],
+      "Most recent": [
+        "Legújabb"
+      ],
+      "Name": [
+        "Név"
+      ],
+      "Name on card": [
+        "A kártyán szereplő név"
+      ],
+      "Need help?": [
+        "Segítségre van szüksége?"
+      ],
+      "New": [
+        "Új"
+      ],
+      "New email": [
+        "Új e-mail"
+      ],
+      "New vault": [
+        "Új tároló"
+      ],
+      "New-Old": [
+        "Újak elől"
+      ],
+      "Newest to oldest": [
+        "Legújabbtól a legrégebbiig"
+      ],
+      "No Activity in the last 14 days.": [
+        "Nem volt aktivitás az elmúlt 14 napban."
+      ],
+      "No history": [
+        "Nincsenek előzmények"
+      ],
+      "None": [
+        "Nincs"
+      ],
+      "Not selected": [
+        "Nincs kijelölve"
+      ],
+      "Note": [
+        "Megjegyzés"
+      ],
+      "Note • SimpleLogin": [
+        "Megjegyzés • SimpleLogin"
+      ],
+      "Notes": [
+        "Jegyzetek"
+      ],
+      "Offline mode": [
+        "Kapcsolat nélküli mód"
+      ],
+      "Old-New": [
+        "Régiek elől"
+      ],
+      "Oldest to newest": [
+        "Legrégebbitől a legújabbig"
+      ],
+      "Open-source password manager for effortless protection.": [
+        "Nyílt forráskódú jelszókezelő a gondtalan védelemért."
+      ],
+      "Organization": [
+        "Szervezet"
+      ],
+      "Passkey": [
+        "Hozzáférési kulcs"
+      ],
+      "Passphrase": [
+        "Jelszó"
+      ],
+      "Passport": [
+        "Útlevél"
+      ],
+      "Passport number": [
+        "Útlevélszám"
+      ],
+      "Password": [
+        "Jelszó"
+      ],
+      "Password history": [
+        "Jelszó előzmények"
+      ],
+      "Personal details": [
+        "Személyes adatok"
+      ],
+      "Personal website": [
+        "Saját weboldal"
+      ],
+      "Personalize": [
+        "Személyre szabás"
+      ],
+      "PGP-encrypted (recommended)": [
+        "PGP titkosítás (ajánlott)"
+      ],
+      "Phone number": [
+        "Telefonszám"
+      ],
+      "PIN": [
+        "PIN-kód"
+      ],
+      "PIN code": [
+        "PIN-kód"
+      ],
+      "Plus": [
+        "Plusz"
+      ],
+      "Port": [
+        "Port"
+      ],
+      "Prefix": [
+        "Előtag"
+      ],
+      "Premium domain": [
+        "Prémium domain név"
+      ],
+      "Priority:": [
+        "Prioritás:"
+      ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Védje a ${ PASS_APP_NAME } alkalmazást egy extra jelszóval"
+      ],
+      "Public domain": [
+        "Nyilvános domain név"
+      ],
+      "Rate us": [
+        "Küldjön értékelést"
+      ],
+      "Recent": [
+        "Friss"
+      ],
+      "Reddit handle": [
+        "Reddit név"
+      ],
+      "Remove link": [
+        "Hivatkozás eltávolítása"
+      ],
+      "Report a problem": [
+        "Probléma jelentése"
+      ],
+      "Restore all items": [
+        "Minden elem helyreállítása"
+      ],
+      "Reveal password": [
+        "Jelszó felfedése"
+      ],
+      "Second password": [
+        "Második jelszó"
+      ],
+      "Secure links": [
+        "Biztonságos hivatkozások"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
+        "Biztonságosan tárolhatja, megoszthatja és automatikusan bejelentkezhet a fiókjaiba a ${ PASS_APP_NAME } használatával, a milliók által megbízhatónak tartott végpontok közti titkosítással."
+      ],
+      "Security": [
+        "Biztonság"
+      ],
+      "Security code": [
+        "Biztonsági kód"
+      ],
+      "See member and permission overview": [
+        "Tagok és engedélyek áttekintése"
+      ],
+      "Select a domain": [
+        "Válasszon egy domain nevet"
+      ],
+      "Select an email address": [
+        "Válasszon ki egy e-mail címet"
+      ],
+      "Select preferred language": [
+        "Válassza ki a kívánt nyelvet"
+      ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Válassza ki a tárolót, ahová a SimpleLogin álneveket importálni fogja."
+      ],
+      "Select theme": [
+        "Téma kiválasztása"
+      ],
+      "Select your password manager": [
+        "Válassza ki a jelszókezelőjét"
+      ],
+      "Select your theme": [
+        "Válassza ki a témát"
+      ],
+      "Selected": [
+        "Kiválasztva"
+      ],
+      "Share": [
+        "Megosztás"
+      ],
+      "Shared": [
+        "Megosztva"
+      ],
+      "Shared by me": [
+        "Általam megosztva"
+      ],
+      "Shared link": [
+        "Megosztott hivatkozás"
+      ],
+      "Shared with me": [
+        "Velem megosztva"
+      ],
+      "Show website favicons": [
+        "Weboldal ikonok megjelenítése"
+      ],
+      "Social security": [
+        "Társadalombiztosítás"
+      ],
+      "Social security number": [
+        "Társadalombiztosítási szám"
+      ],
+      "Special characters (!&*)": [
+        "Speciális karakterek (!&*)"
+      ],
+      "State or province": [
+        "Állam vagy tartomány"
+      ],
+      "Status": [
+        "Állapot"
+      ],
+      "Storage": [
+        "Tároló"
+      ],
+      "Street address": [
+        "Utca, házszám"
+      ],
+      "Street address, P.O. box": [
+        "Utca, házszám, postafiók"
+      ],
+      "Strong": [
+        "Erős"
+      ],
+      "Suffix": [
+        "Végződés"
+      ],
+      "Support": [
+        "Támogatás"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "E-mail álnevek szinkronizálása a SimpleLoginnal"
+      ],
+      "Target:": [
+        "Cél:"
+      ],
+      "Tax number": [
+        "Adószám"
+      ],
+      "Text": [
+        "Szöveg"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "A ${ BRAND_NAME } legjobbja egy előfizetéssel"
+      ],
+      "The URL has been copied to the clipboard": [
+        "Az URL a vágólapra lett másolva"
+      ],
+      "Theme": [
+        "Téma"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Ez az elem ${ date } napjáig vagy a megtekintési korlát eléréséig érhető el."
+      ],
+      "Title": [
+        "Cím"
+      ],
+      "Today": [
+        "Ma"
+      ],
+      "Total imported items: ": [
+        "Összes importált elem: "
+      ],
+      "Total items: ": [
+        "Összes elem: "
+      ],
+      "TOTP": [
+        "TOTP-kód"
+      ],
+      "Trash": [
+        "Lomtár"
+      ],
+      "Type": [
+        "Típus"
+      ],
+      "Unknown": [
+        "Ismeretlen"
+      ],
+      "Unlimited": [
+        "Korlátlan"
+      ],
+      "Unlock premium features": [
+        "Prémium funkciók feloldása"
+      ],
+      "Unlock with": [
+        "Feloldás módja"
+      ],
+      "Unlock with:": [
+        "Feloldás módja:"
+      ],
+      "Unnamed Credit Card": [
+        "Névtelen bankkártya"
+      ],
+      "Unnamed identity": [
+        "Névtelen személyazonosság"
+      ],
+      "Unnamed item": [
+        "Névtelen elem"
+      ],
+      "Unnamed note": [
+        "Névtelen jegyzet"
+      ],
+      "Unspecified": [
+        "Nincs megadva"
+      ],
+      "Untitled": [
+        "Névtelen"
+      ],
+      "Update": [
+        "Frissítés"
+      ],
+      "Used in": [
+        "Használva"
+      ],
+      "Useful for permanent sharing": [
+        "Hasznos folyamatos megosztáshoz"
+      ],
+      "Username": [
+        "Felhasználónév"
+      ],
+      "Value:": [
+        "Érték:"
+      ],
+      "Vault ID": [
+        "Tároló azonosító"
+      ],
+      "Vault, item & link sharing": [
+        "Tároló-, elem- és hivatkozásmegosztás"
+      ],
+      "Vaults": [
+        "Tárolók"
+      ],
+      "View details": [
+        "Részletek megtekintése"
+      ],
+      "View logs": [
+        "Naplók megtekintése"
+      ],
+      "VPN Devices": [
+        "VPN eszközök"
+      ],
+      "VPN Speed": [
+        "VPN sebesség"
+      ],
+      "Vulnerable": [
+        "Sebezhető"
+      ],
+      "Weak": [
+        "Gyenge"
+      ],
+      "Website": [
+        "Weboldal"
+      ],
+      "Websites": [
+        "Weboldalak"
+      ],
+      "What's included": [
+        "Mit tartalmaz?"
+      ],
+      "Work details": [
+        "Munka adatai"
+      ],
+      "Work email": [
+        "Munkahelyi e-mail"
+      ],
+      "Work phone number": [
+        "Munkahelyi telefonszám"
+      ],
+      "X handle": [
+        "X kezelő"
+      ],
+      "Yahoo account": [
+        "Yahoo fiók"
+      ],
+      "You are about to create": [
+        "Ezt fogja létrehozni:"
+      ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "A feloldáshoz választhat a PIN-kód, a biometrikus adatok vagy a fiókjelszó között."
+      ],
+      "Your domain": [
+        "Az Ön domain neve"
+      ],
+      "Your passwords. Everywhere.": [
+        "Az Ön jelszavai. Mindenhol."
+      ],
+      "ZIP": [
+        "Irányítószám"
+      ],
+      "ZIP or Postal code": [
+        "Irányítószám"
+      ]
+    },
+    "Link": {
+      "auto create rules ››": [
+        "szabályok automatikus létrehozása ››"
+      ],
+      "if your data is leaked": [
+        "ha az adatai kiszivárogtak"
+      ],
+      "Learn more": [
+        "További információk"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } engedélyezése"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plusz"
+      ]
+    },
+    "Message": {
+      "${ count } item": [
+        "${ count } elemet",
+        "${ count } elemet"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "A kiválasztott elemet áthúzhatja egy másik tárolóba.",
+        "A kiválasztott elemet áthúzhatja egy másik tárolóba."
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "${ semiboldText } jelölt ki ebben a tárolóban."
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Kétlépcsős hitelesítés megkövetelése a szervezetben"
+      ],
+      "SSO integration": [
+        "SSO integráció"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } letiltva"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } engedélyezésre került"
+      ]
+    },
+    "Option": {
+      "Commas": [
+        "Vesszők"
+      ],
+      "Hyphens": [
+        "Kötőjelek"
+      ],
+      "Memorable Password": [
+        "Megjegyezhető jelszó"
+      ],
+      "Numbers": [
+        "Számok"
+      ],
+      "Numbers and Symbols": [
+        "Számok és szimbólumok"
+      ],
+      "Periods": [
+        "Pontok"
+      ],
+      "Random Password": [
+        "Véletlenszerű jelszó"
+      ],
+      "Spaces": [
+        "Szóközök"
+      ],
+      "Underscores": [
+        "Aláhúzások"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "„${ file.name }” feltöltése nem sikerült."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "„${ filename }” importálása nem sikerült."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "„${ filename }” túl nagy a feltöltéshez. A maximálisan megengedett méret (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } fájl",
+        "${ filesCount } fájl"
+      ],
+      "Attachments": [
+        "Mellékletek"
+      ],
+      "Choose a file or drag it here": [
+        "Válasszon fájlt, vagy húzza ide"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "${ deleteFile.state.name } törlése"
+      ],
+      "Delete all files": [
+        "Az összes fájl törlése"
+      ],
+      "Do you want to remove all the files?": [
+        "Eltávolítja az összes fájlt?"
+      ],
+      "Download": [
+        "Letöltés"
+      ],
+      "Download file": [
+        "Fájl letöltése"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "A Firefox korlátozása miatt a(z) ${ PASS_APP_NAME } alkalmazást egy új ablakban újra meg kell nyitni a fájlok feltöltése előtt."
+      ],
+      "Exporting files": [
+        "Fájlok exportálása"
+      ],
+      "Failed linking files to item": [
+        "Nem sikerült a fájlok hozzárendelése az elemhez"
+      ],
+      "File": [
+        "Fájl"
+      ],
+      "File attachments": [
+        "Fájl mellékletek"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Ha engedélyezve van, az összes fájl le lesz töltve az exportáláskor. Ez az internetkapcsolat függvényében eltarthat egy ideig."
+      ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Ha az adatai fájlmellékleteket tartalmaznak, azok nem lesznek importálva."
+      ],
+      "Include file attachments": [
+        "Fájlmellékletek csatolása"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Nincs elég tárhely a kiválasztott fájlok számára."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "A törlést követően ez a fájl továbbra is helyreállítható az elem előzményeiből."
+      ],
+      "Open new window to upload files": [
+        "Új ablak megnyitása a fájlok feltöltéséhez"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Kérjük, legyen türelemmel, amíg a fájlok letöltésre kerülnek."
+      ],
+      "Remove all files": [
+        "Az összes fájl eltávolítása"
+      ],
+      "Rename": [
+        "Átnevezés"
+      ],
+      "Restore": [
+        "Visszaállítás"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Néhány fájl túl nagy a feltöltéshez. A maximálisan megengedett méret (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "Az exportált fájlmellékletek nem lesznek titkosítva."
+      ],
+      "The file you are trying to import is empty": [
+        "Az importálni próbált fájl üres"
+      ],
+      "Total files: ": [
+        "Összes fájl: "
+      ],
+      "Total imported files: ": [
+        "Összesen importált fájlok: "
+      ],
+      "Upgrade to support file attachments": [
+        "Frissítsen a fájlmellékletek támogatásához"
+      ],
+      "Upload files from your device.": [
+        "Fájlok feltöltése az eszközről."
+      ],
+      "You can attach files to items for a better organization": [
+        "A jobb szervezettség érdekében fájlokat csatolhat az elemekhez"
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus élettartam ${ plusLifetimePrice } áron"
+      ],
+      "${ price }/month": [
+        "${ price }/hónap"
+      ]
+    },
+    "Placeholder": {
+      "Add 2FA secret key": [
+        "Kétlépcsős hitelesítési titok hozzáadása"
+      ],
+      "Add hidden text": [
+        "Rejtett szöveg hozzáadása"
+      ],
+      "Add note": [
+        "Jegyzet hozzáadása"
+      ],
+      "Add text": [
+        "Szöveg hozzáadása"
+      ],
+      "Alias Display Name": [
+        "Az e-mail álnév megjelenített neve"
+      ],
+      "Coupon": [
+        "Kupon"
+      ],
+      "E.g., ": [
+        "Pl., "
+      ],
+      "Email address": [
+        "E-mail cím"
+      ],
+      "Enter a note...": [
+        "Jegyzet beírása..."
+      ],
+      "Enter a prefix": [
+        "Előtag beírása"
+      ],
+      "Enter email": [
+        "E-mail cím megadása"
+      ],
+      "Enter password": [
+        "Jelszó megadása"
+      ],
+      "Enter username": [
+        "Felhasználónév megadása"
+      ],
+      "Full Name": [
+        "Teljes név"
+      ],
+      "me@example.com": [
+        "Én@példa.com"
+      ],
+      "MM/YY": [
+        "HH/ÉÉ"
+      ],
+      "my-domain.com": [
+        "my-domain.com"
+      ],
+      "Note from SimpleLogin": [
+        "Megjegyzés SimpleLogin-tól"
+      ],
+      "Password": [
+        "Jelszó"
+      ],
+      "Pick a vault": [
+        "Válasszon egy tárolót"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
+      ],
+      "Retype \"${ vaultName }\" to confirm deletion": [
+        "A törlés jóváhagyásához, írja be, hogy \"${ vaultName }\""
+      ],
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "${ pluralItemType } keresése itt: ${ vaultName }"
+      ],
+      "Search ${ pluralItemType } in all items": [
+        "${ pluralItemType } keresése minden elemben"
+      ],
+      "Search in ${ vaultName }": [
+        "Keresés itt: ${ vaultName }"
+      ],
+      "Search in all items": [
+        "Keresés minden elemben"
+      ],
+      "Search in Trash": [
+        "Keresés a lomtárban"
+      ],
+      "Select a suffix": [
+        "Végződés kiválasztása"
+      ],
+      "Unknown origin": [
+        "Ismeretlen eredetű"
+      ],
+      "Untitled": [
+        "Névtelen"
+      ],
+      "Used on ${ url }": [
+        "Használva: ${ url }"
+      ],
+      "Write your note": [
+        "Jegyzet megadása"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } és ${ remainingCount } lehetséges adatszivárgást észleltünk. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } szolgáltatást a részletek megtekintéséhez. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } és 1 másik lehetséges adatszivárgást észleltünk. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } szolgáltatást a részletek megtekintéséhez. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Lehetséges ${ name } adatszivárgást észleltünk. A részletek megtekintéséhez kapcsolja be a ${ DARK_WEB_MONITORING_NAME } funkciót. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Az Ön információja legalább egy adatszivárgásban megtalálható. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } szolgáltatást a részletek megtekintéséhez. ${ link }"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Bezárás"
+      ],
+      "Don't show this offer again": [
+        "Ne jelenjen meg többet ez az ajánlat"
+      ]
+    },
+    "sso": {
+      "Approve or deny it now": [
+        "Most hagyja jóvá vagy utasítsa el"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Adja meg a másik eszközére küldött megerősítő kódot."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Ha nem ön kérte ezt, azonnal vonja vissza."
+      ],
+      "Invalid confirmation code": [
+        "Érvénytelen ellenőrző kód"
+      ],
+      "No, it wasn’t me": [
+        "Nem, nem én voltam"
+      ],
+      "Sign-in confirmed": [
+        "Bejelentkezés megerősítve"
+      ],
+      "Sign-in failed": [
+        "Bejelentkezés sikertelen"
+      ],
+      "Sign-in rejected": [
+        "Bejelentkezés elutasítva"
+      ],
+      "Sign-in rejection failure": [
+        "Bejelentkezés visszautasítási hiba"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Bejelentkezési kérelmet küldtek egy másik eszközről. Ön volt az?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Bejelentkezési kérelmet küldtek egy másik eszközről. Ön volt az? "
+      ],
+      "Yes, it was me": [
+        "Igen, én voltam"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Aktív"
+      ],
+      "Inactive": [
+        "Inaktív"
+      ],
+      "Pending activation": [
+        "Aktiválás függőben"
+      ],
+      "Pending admin activation": [
+        "Függőben lévő adminisztrátori aktiválás"
+      ],
+      "Rejected": [
+        "Elutasítva"
+      ],
+      "Signed out": [
+        "Kijelentkezve"
+      ],
+      "Unknown": [
+        "Ismeretlen"
+      ]
+    },
+    "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "Az e-mail álnevek szinkronizálása sikeresen engedélyezve. A SimpleLogin álnevek szinkronizálása eltarthat egy ideig."
+      ],
+      "Catch-all setting successfully disabled": [
+        "A gyűjtő e-mail beállítás letiltva"
+      ],
+      "Catch-all setting successfully enabled": [
+        "A gyűjtő e-mail beállítás engedélyezve"
+      ],
+      "Contact successfully blocked": [
+        "A névjegy blokkolva lett"
+      ],
+      "Contact successfully created": [
+        "A névjegy sikeresen létrehozva"
+      ],
+      "Contact successfully deleted": [
+        "A névjegy sikeresen törölve"
+      ],
+      "Contact successfully unblocked": [
+        "A névjegy fel lett oldva"
+      ],
+      "Default domain successfully updated": [
+        "Az alapértelmezett domain név frissítve"
+      ],
+      "Default mailbox successfully updated": [
+        "Az alapértelmezett postafiók frissítve"
+      ],
+      "Display name successfully updated": [
+        "A megjelenített név frissítve"
+      ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "A domain név tulajdonjoga igazolva. Most már beállíthatja az MX rekordot."
+      ],
+      "Domain successfully deleted": [
+        "A domain név sikeresen törölve"
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "A domain sikeresen ellenőrizve. A domain e-maileket fogadhat és e-mail álneveket hozhat létre"
+      ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Az elemek nem tartalmazhatnak többet, mint ${ share.targetMaxMembers } felhasználó.",
+        "Az elemek nem tartalmazhatnak többet, mint ${ share.targetMaxMembers } felhasználó."
+      ],
+      "Mailbox change successfully cancelled": [
+        "A postafiók változtatásának visszavonása megtörtént"
+      ],
+      "Mailbox successfully deleted": [
+        "A postafiók sikeresen törölve"
+      ],
+      "Mailbox successfully verified": [
+        "Postafiók sikeresen ellenőrizve"
+      ],
+      "Mailboxes successfully updated": [
+        "A postafiókok frissítése sikeresen megtörtént"
+      ],
+      "Random prefix generation successfully disabled": [
+        "A véletlenszerű előtag generálása le lett tiltva"
+      ],
+      "Random prefix generation successfully enabled": [
+        "A véletlenszerű előtag generálása engedélyezve"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "A tárolóban nem lehet több mint ${ targetMaxMembers } felhasználó.",
+        "A tárolóban nem lehet több mint ${ targetMaxMembers } felhasználó."
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "Ellenőrző e-mailt küldtünk. Kérjük, ellenőrizze a beérkezett üzenetek mappáját a postafiókja megerősítéséhez."
+      ]
+    },
+    "Theme": {
+      "Automatic": [
+        "Automatikus"
+      ],
+      "Dark": [
+        "Sötét"
+      ],
+      "Light": [
+        "Világos"
+      ]
+    },
+    "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } cím"
+      ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Figyelő"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plusz"
+      ],
+      "Account protection": [
+        "Fiókvédelem"
+      ],
+      "Actions": [
+        "Műveletek"
+      ],
+      "Activity": [
+        "Tevékenység"
+      ],
+      "Add custom domain": [
+        "Saját domain név hozzáadása"
+      ],
+      "Add mailbox": [
+        "E-mail fiók hozzáadása"
+      ],
+      "Alias contacts": [
+        "E-mail álnév névjegyek"
+      ],
+      "Aliases": [
+        "E-mail álnevek"
+      ],
+      "Auto create/on the fly alias": [
+        "Automatikus létrehozás/e-mail álnév menet közben"
+      ],
+      "Auto-lock update": [
+        "Automatikus zárolás módosítása"
+      ],
+      "Blocked addresses": [
+        "Letiltott címek"
+      ],
+      "Breach detected": [
+        "Adatszivárgást észleltünk"
+      ],
+      "Breaches": [
+        "Adatszivárgások"
+      ],
+      "Breaches detected for": [
+        "Adatvédelmi incidens észlelve:"
+      ],
+      "Cancel changing your email?": [
+        "Mégsem módosítja az e-mail címét?"
+      ],
+      "Change mailbox email": [
+        "Postafiók e-mail módosítása"
+      ],
+      "Change your lock method": [
+        "A zárolási mód módosítása"
+      ],
+      "Confirm extra password": [
+        "Extra jelszó megerősítése"
+      ],
+      "Confirm identity": [
+        "Személyazonosság megerősítése"
+      ],
+      "Confirm PIN code": [
+        "PIN-kód megerősítése"
+      ],
+      "Confirm your email": [
+        "E-mail cím megerősítése"
+      ],
+      "Contacts": [
+        "Névjegyek"
+      ],
+      "Create a vault": [
+        "Tároló létrehozása"
+      ],
+      "Create contact": [
+        "Névjegy létrehozása"
+      ],
+      "Create PIN code": [
+        "PIN-kód létrehozása"
+      ],
+      "Created": [
+        "Létrehozva"
+      ],
+      "Current version": [
+        "Jelenlegi változat"
+      ],
+      "Custom addresses": [
+        "Egyéni címek"
+      ],
+      "Custom domains": [
+        "Saját domain név"
+      ],
+      "Custom email monitoring": [
+        "Egyéni e-mail cím figyelés"
+      ],
+      "Custom emails": [
+        "Egyéni e-mailek"
+      ],
+      "Default": [
+        "Alapértelmezett"
+      ],
+      "Default Display Name": [
+        "Alapértelmezett megjelenített név"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "${ deletedItemsCount } elem törlése?",
+        "${ deletedItemsCount } elem törlése?"
+      ],
+      "Delete domain": [
+        "Domain név törlése"
+      ],
+      "Delete mailbox": [
+        "E-mail fiók törlése"
+      ],
+      "Delete this item?": [
+        "Elem törlése?"
+      ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Tároló törlése: \"${ vaultName }\"?"
+      ],
+      "Did you know?": [
+        "Tudta?"
+      ],
+      "Discard changes?": [
+        "Módosítások elvetése?"
+      ],
+      "DKIM (Optional)": [
+        "DKIM (választható)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (választható)"
+      ],
+      "Domain": [
+        "Domain név"
+      ],
+      "Domain ownership verification": [
+        "Domain név tulajdonjogának ellenőrzése"
+      ],
+      "Encrypted import": [
+        "Titkosított importálás"
+      ],
+      "Enjoying ${ PASS_APP_NAME }?": [
+        "Kedveli a ${ PASS_APP_NAME } alkalmazást?"
+      ],
+      "Enter coupon code": [
+        "Kuponkód megadása"
+      ],
+      "Enter your ${ BRAND_NAME } password": [
+        "Adja meg a ${ BRAND_NAME } jelszavát"
+      ],
+      "Enter your backup password": [
+        "Írja be a biztonsági jelszót"
+      ],
+      "Enter your extra password": [
+        "Írja be az extra jelszavát"
+      ],
+      "Enter your PIN": [
+        "Írja be a PIN-kódját"
+      ],
+      "Enter your second password": [
+        "Írja be a második jelszavát"
+      ],
+      "Excluded items": [
+        "Kizárt elemek"
+      ],
+      "Get Started": [
+        "Kezdés"
+      ],
+      "Grant permissions": [
+        "Engedélyek megadása"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email álnevek"
+      ],
+      "History": [
+        "Előzmények"
+      ],
+      "Import - ${ date }": [
+        "Importálva - ${ date }"
+      ],
+      "Import to vault(s)": [
+        "Importálás a tárolókba"
+      ],
+      "Import your data": [
+        "Importálja az adatait"
+      ],
+      "Importing your data": [
+        "Az adatok importálása"
+      ],
+      "Inactive 2FA": [
+        "Kétlépcsős hitelesítés kikapcsolva"
+      ],
+      "Information exposed in breach": [
+        "Adatvédelmi incidens során kiszivárgott információk"
+      ],
+      "Install extension": [
+        "Telepítse a bővítményt"
+      ],
+      "Item": [
+        "Elem"
+      ],
+      "Last autofill": [
+        "Legutóbbi automatikus kitöltés"
+      ],
+      "Last modified": [
+        "Utoljára módosítva"
+      ],
+      "Leave this item?": [
+        "Elhagyja ezt az elemet?"
+      ],
+      "Leave vault?": [
+        "Tároló elhagyása?"
+      ],
+      "Loading breaches...": [
+        "Adatvédelmi incidensek betöltése..."
+      ],
+      "Low disk space": [
+        "Kevés a lemezterület"
+      ],
+      "Mailbox": [
+        "Postafiók"
+      ],
+      "Mark as resolved?": [
+        "Megjelölés megoldottként?"
+      ],
+      "Member limit": [
+        "Tagság korlát"
+      ],
+      "Members": [
+        "Tagok"
+      ],
+      "Minicalendar": [
+        "Mini naptár"
+      ],
+      "Modified": [
+        "Módosítva"
+      ],
+      "Move ${ count } item to ${ vaultName }": [
+        "${ count } elem mozgatása ${ vaultName } tárolóba",
+        "${ count } elem mozgatása ${ vaultName } tárolóba"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "${ trashedItemsCount } elem áthelyezése a Lomtárba?",
+        "${ trashedItemsCount } elem áthelyezése a Lomtárba?"
+      ],
+      "Move all items to \"${ vaultName }\"?": [
+        "Az összes elem áthelyezése ide: „${ vaultName }”?"
+      ],
+      "Move item to \"${ vaultName }\"": [
+        "Elem mozgatása a következőbe: „${ vaultName }”"
+      ],
+      "MX record": [
+        "MX rekord"
+      ],
+      "No excluded items": [
+        "Nincsenek kizárt elemek"
+      ],
+      "No inactive 2FAs": [
+        "Nincs inaktív 2FA"
+      ],
+      "No insecure passwords": [
+        "Nincsenek nem biztonságos jelszavak"
+      ],
+      "No items selected": [
+        "Nincs elem kiválasztva"
+      ],
+      "No reused passwords": [
+        "Nincsenek újrahasznált jelszavak"
+      ],
+      "No shared items": [
+        "Nincsenek megosztott elemek"
+      ],
+      "No shared secure links": [
+        "Nincsenek megosztott biztonságos hivatkozások"
+      ],
+      "Our welcome gift to you": [
+        "Üdvözlő ajándékunk önnek"
+      ],
+      "Passkey": [
+        "Hozzáférési kulcs"
+      ],
+      "Password Health": [
+        "Jelszó-egészség"
+      ],
+      "Pause monitoring?": [
+        "Figyelés szüneteltetése?"
+      ],
+      "Pay once, access forever.": [
+        "Fizessen egyszer, használja örökre."
+      ],
+      "Pending access confirmation": [
+        "Függőben lévő hozzáférés-jóváhagyás"
+      ],
+      "Pending access to the shared data": [
+        "A megosztott adatok elérése függőben van"
+      ],
+      "Permanently remove all items?": [
+        "Véglegesen töröl minden elemet?"
+      ],
+      "Pinned (${ items.length })": [
+        "Kitűzve (${ items.length })"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Vegye figyelembe, hogy törlés után az e-mail álnév nem állítható vissza.",
+        "Vegye figyelembe, hogy törlés után az e-mail álnevek nem állíthatók vissza."
+      ],
+      "Random Prefix Generation": [
+        "Véletlenszerű előtag létrehozása"
+      ],
+      "Recommended actions": [
+        "Javasolt műveletek"
+      ],
+      "Reject device?": [
+        "Eszköz elutasítása?"
+      ],
+      "Remove email address?": [
+        "E-mail cím eltávolítása?"
+      ],
+      "Remove extra password": [
+        "Extra jelszó eltávolítása"
+      ],
+      "Remove secure link?": [
+        "Biztonságos hivatkozás eltávolítása?"
+      ],
+      "Reset history for this item?": [
+        "Törli az elem előzményeit?"
+      ],
+      "Resolved breaches": [
+        "Megoldott adatszivárgások"
+      ],
+      "Restore this version?": [
+        "Visszatérés ehhez a változathoz?"
+      ],
+      "Resume monitoring?": [
+        "Figyelés folytatása?"
+      ],
+      "Reused ${ count } time": [
+        "Újrafelhasználva ${ count } alkalommal",
+        "Újrafelhasználva ${ count } alkalommal"
+      ],
+      "Reused passwords": [
+        "Újrahasznált jelszavak"
+      ],
+      "Review and share": [
+        "Áttekintés és megosztás"
+      ],
+      "Secure your data": [
+        "Tartsa biztonságban az adatait"
+      ],
+      "Select the default domain for aliases": [
+        "Válassza ki az e-mail álnevek alapértelmezett domain nevét"
+      ],
+      "Set access level": [
+        "Elérési szint megadása"
+      ],
+      "Set extra password": [
+        "Extra jelszó beállítása"
+      ],
+      "Set up 2FA for better security": [
+        "Állítson be kétlépcsős hitelesítést a nagyobb biztonság érdekében"
+      ],
+      "Set up 2FA for more security": [
+        "Kapcsolja be a kétlépcsős hitelesítést nagyobb biztonságért"
+      ],
+      "Settings": [
+        "Beállítások"
+      ],
+      "Share vaults with your team": [
+        "Tárolók megosztása a csapatával"
+      ],
+      "Share with": [
+        "Megosztás:"
+      ],
+      "Shared item invitation": [
+        "Megosztott elem meghívás"
+      ],
+      "Shared via": [
+        "Megosztva"
+      ],
+      "SPF (Optional)": [
+        "SPF (választható)"
+      ],
+      "Status": [
+        "Állapot"
+      ],
+      "Stay safer online": [
+        "Legyen biztonságosabb online"
+      ],
+      "Suggestions": [
+        "Javaslatok"
+      ],
+      "Switch to": [
+        "Váltás:"
+      ],
+      "Sync alias": [
+        "E-mail álnév szinkronizálása"
+      ],
+      "Sync your aliases from SimpleLogin": [
+        "E-mail álnevek szinkronizálása a SimpleLoginból"
+      ],
+      "Transfer ownership": [
+        "Tulajdonjog átadása"
+      ],
+      "Trash empty": [
+        "A lomtár üres"
+      ],
+      "Unlock ${ brandNameJSX }": [
+        "A ${ brandNameJSX } feloldása"
+      ],
+      "Unverified": [
+        "Nem ellenőrzött"
+      ],
+      "Update available": [
+        "Frissítés érhető el"
+      ],
+      "Vault": [
+        "Tároló"
+      ],
+      "Vault shared with you": [
+        "Önnel megosztott tárolók"
+      ],
+      "Want to learn more?": [
+        "Szeretne többet megtudni?"
+      ],
+      "Weak password": [
+        "Gyenge jelszó"
+      ],
+      "Weak passwords": [
+        "Gyenge jelszavak"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Üdvözli a ${ brandNameJSX }"
+      ],
+      "What is an alias?": [
+        "Mi az az e-mail álnév?"
+      ],
+      "What is the dark web?": [
+        "Mi az a dark web?"
+      ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "Mi a különbség a ${ PASS_SHORT_APP_NAME } jegyzet és a SimpleLogin jegyzet között?"
+      ],
+      "You don't have any vaults": [
+        "Nincs tárolója."
+      ],
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "Az Ön ${ planName } előfizetése lejár ekkor: ${ endDate }"
+      ],
+      "Your exposed information": [
+        "Az ön kiszivárgott információi"
+      ],
+      "Your vault is empty": [
+        "A tároló üres"
+      ],
+      "Your welcome gift": [
+        "Üdvözlő ajándék"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "${ aliasCount } e-mail álnév végleges törlésére készül.",
+        "${ aliasCount } e-mail álnév végleges törlésére készül."
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Ma"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Nem minden itt felsorolt információt tettek közzé minden felhasználó esetén."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Hacsak nem fejtik meg őket, a titkosított jelszavak akkor is biztonságban maradnak, ha nyilvánosságra kerülnek."
+      ]
+    },
+    "Validation": {
+      "Domain URL is invalid": [
+        "A domain név URL érvénytelen"
+      ],
+      "Duplicated URL": [
+        "Duplikált URL"
+      ],
+      "Field name is required": [
+        "A mezőnév megadása kötelező"
+      ],
+      "OTP secret or URI is invalid": [
+        "OTP titok vagy URL megadása kötelező"
+      ],
+      "OTP secret or URI required": [
+        "OTP titok vagy URL megadása kötelező"
+      ],
+      "Section name cannot be empty": [
+        "A szakasznév nem lehet üres"
+      ],
+      "URL already exists": [
+        "Az URL már létezik"
+      ],
+      "URL cannot be empty": [
+        "Az URL nem lehet üres"
+      ],
+      "URL is invalid": [
+        "Az URL érvénytelen"
+      ]
+    },
+    "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "${ BRAND_NAME } jelszóra van szükség"
+      ],
+      "2 consecutive dots are not allowed": [
+        "2 egymás utáni pont nem megengedett"
+      ],
+      "A description of the problem is required": [
+        "A probléma leírása szükséges"
+      ],
+      "Addresses already invited.": [
+        "A címek már meghívást kaptak."
+      ],
+      "Aliases in trash will continue forwarding emails.": [
+        "A lomtárban lévő álnevek továbbra is továbbítják az e-maileket."
+      ],
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "A lomtárban lévő összes elem véglegesen törlésre kerül. Ez nem vonható vissza."
+      ],
+      "An error occurred while exporting your data": [
+        "Hiba történt az adatok exportálása közben"
+      ],
+      "An error occurred while importing your data.": [
+        "Hiba történt az adatok importálása közben."
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Biztos, hogy ${ trashedItemsCount } elemet a lomtárba akar helyezni?",
+        "Biztos, hogy ${ trashedItemsCount } elemet a lomtárba akar helyezni?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Biztos, hogy véglegesen töröl ${ deletedItemsCount } elemet?",
+        "Biztos, hogy véglegesen töröl ${ deletedItemsCount } elemet?"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "Biztosan véglegesen törli ezt az elemet?"
+      ],
+      "At least one email address is required": [
+        "Legalább egy e-mail cím szükséges"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Nem lehet pont az elején"
+      ],
+      "Cannot contain a dot at the end": [
+        "Nem lehet pont a végén"
+      ],
+      "Cannot retrieve mailboxes for this alias right now": [
+        "Jelenleg nem tölthetőek be az e-mail álnévhez tartozó fiókok"
+      ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Figyelem: Ha elveszíti ezt a jelszót, nem fog tudni hozzáférni a ${ PASS_APP_NAME } fiókjához."
+      ],
+      "Could not create vault \"${ vaultName }\"": [
+        "A tároló létrehozása nem sikerült: \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses:": [
+        "Nem sikerült elküldeni a meghívókat a következő címekre:"
+      ],
+      "Coupon cannot be empty": [
+        "A kupon nem lehet üres"
+      ],
+      "Coupon could not be applied.": [
+        "A kupont nem sikerült alkalmazni."
+      ],
+      "Delete alias": [
+        "E-mail álnév törlése"
+      ],
+      "Domain cannot be empty": [
+        "A domain név nem lehet üres"
+      ],
+      "Duplicate email addresses.": [
+        "Duplikált e-mail címek."
+      ],
+      "Email cannot be empty": [
+        "Az email nem lehet üres"
+      ],
+      "Email is required": [
+        "E-mail cím szükséges"
+      ],
+      "Empty note": [
+        "Üres jegyzet"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "A lejárati dátum nem HH/ÉÉ formátumban van"
+      ],
+      "Extra password cannot be empty": [
+        "Az extra jelszó mező nem lehet üres"
+      ],
+      "Extra password is required": [
+        "Extra jelszóra van szükség"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Az extra jelszónak legalább 8 karakterből kell állnia"
+      ],
+      "Failed to load breaches.": [
+        "Nem sikerült betölteni az adatvédelmi incidenseket."
+      ],
+      "Identity could not be confirmed": [
+        "A személyazonosságot nem lehetett megerősíteni"
+      ],
+      "Invalid alias prefix": [
+        "Érvénytelen e-mail álnév előtag"
+      ],
+      "Invalid code": [
+        "Érvénytelen kód"
+      ],
+      "Invalid email": [
+        "Érvénytelen e-mail"
+      ],
+      "Invalid email addresses.": [
+        "Érvénytelen email címek."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Külső szervezetből származó e-mail címek meghívása nem engedélyezett."
+      ],
+      "item was imported without custom fields": [
+        "az elem importálása egyéni mezők nélkül történt"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Maximálisan ${ maxLength } karakter lehetséges",
+        "Maximálisan ${ maxLength } karakter lehetséges"
+      ],
+      "Missing alias prefix": [
+        "Hiányzó e-mail álnév előtag"
+      ],
+      "Missing alias suffix": [
+        "Hiányzó e-mail álnév végződés"
+      ],
+      "Move to trash": [
+        "Áthelyezés a Lomtárba"
+      ],
+      "Name is required": [
+        "Név megadása kötelező"
+      ],
+      "No items": [
+        "Nincsenek elemek"
+      ],
+      "No items in trash matching": [
+        "Nem egyezik elem a lomtárban:"
+      ],
+      "No items matching": [
+        "Nincs egyező elem"
+      ],
+      "No password manager selected": [
+        "Nincs jelszókezelő kiválasztva"
+      ],
+      "No results": [
+        "Nincs eredmény"
+      ],
+      "No secure links matching": [
+        "Nincsenek biztonságos hivatkozások, amelyek egyeznek"
+      ],
+      "No shared items matching": [
+        "Nincs egyező megosztott elem"
+      ],
+      "Offline": [
+        "Nincs internetkapcsolat"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "A szinkronizálást követően, ha e-mail álneveket töröl a ${ PASS_SHORT_APP_NAME } alkalmazásban, azok a SimpleLogin alkalmazásban is törlődnek."
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Csak alfanumerikus kisbetűk, pontok, kötőjelek és aláhúzások használhatók"
+      ],
+      "Passphrase is required": [
+        "Jelszó megadása kötelező"
+      ],
+      "Passwords do not match": [
+        "A jelszavak nem egyeznek"
+      ],
+      "Please check that the extension is properly installed and enabled": [
+        "Kérjük, ellenőrizze, hogy a bővítmény megfelelően van-e telepítve és engedélyezve"
+      ],
+      "Please contact us to investigate the issue": [
+        "Kérjük vegye fel velünk a kapcsolatot, hogy megvizsgálhassuk az esetet"
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "Vegye figyelembe, hogy a törlés után az álneveket nem lehet visszaállítani"
+      ],
+      "Please update the extension to its latest version": [
+        "Kérjük, frissítse a bővítményt a legújabb verzióra"
+      ],
+      "Please verify your email address in order to use email aliases": [
+        "Erősítse meg az e-mail címét az e-mail álnevek használatához"
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Az extra jelszó törlésével minden eszközről kijelentkezik, és leállítja az összes aktív munkamenetet."
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "A hibajelentések nem titkosítottak a végpontok közt, kérjük ne küldjön semmilyen érzékeny információt."
+      ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Néhány elem jelenleg meg van osztva. Törlésükkel minden más felhasználó számára megszűnik a hozzáférés."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Néhány elem jelenleg meg van osztva. Ha áthelyezi őket egy másik tárolóba, a többi felhasználó számára megszűnik a hozzáférés."
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Hiba történt a ${ PASS_APP_NAME } indítása közben. Próbálja meg frissíteni vagy újratölteni a bővítményt"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Az e-mail előtag nem lehet hosszabb mint 40 karakter"
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "„${ aliasEmail }” e-mail álnév jelenleg „${ relatedLoginName }” bejelentkezésben használatos."
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Ezt az e-mail címet a továbbiakban nem figyeljük az adatvédelmi incidensek szempontjából."
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "Ez az elem jelenleg meg van osztva. Törlésével minden más felhasználó számára is megszűnik a hozzáférés."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "Ez a elem jelenleg meg van osztva. Ha áthelyezi egy másik tárolóba, az összes többi felhasználó számára megszűnik a hozzáférés."
+      ],
+      "Title is required": [
+        "A cím megadása kötelező"
+      ],
+      "Too many attempts": [
+        "Túl sok próbálkozás"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Átadja a tároló tulajdonjogát a következőnek: ${ email }?"
+      ],
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "A ${ PASS_APP_NAME } bejelentkezés nem sikerült. ${ additionalMessage }"
+      ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "A(z) \"${ vaultName }\" tároló és a teljes tartalma véglegesen törlésre kerül. Ez nem vonható vissza."
+      ],
+      "Vault name is required": [
+        "A tárolónév megadása kötelező"
+      ],
+      "Verification code is required": [
+        "Ellenőrző kód szükséges"
+      ],
+      "You have reached the limit of members who can access this item.": [
+        "Elérte az elemhez hozzáférő tagok maximális számát."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Elérte a tárolóhoz hozzáférő tagok maximális számát."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "Elérte a felhasználók számának felső határát ennél az elemnél. ${ upgradeLink }"
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Nem oszthatja meg több felhasználóval ez a tárolót. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Elérte a csomagjában használható tárolók maximális számát."
+      ],
+      "You have unsaved changes.": [
+        "Nem mentett módosításai vannak."
+      ],
+      "You must select at least one mailbox": [
+        "Legalább egy e-mail fiókot ki kell választania"
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Elveszti a hozzáférést ehhez az elemhez és annak adataihoz. Szeretné folytatni?"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "A továbbiakban nem fogja elérni ezt a tárolót. Az újbóli eléréshez egy új meghívóra lesz szüksége."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "A rendszergazdának létre kell hoznia egy tárolót, mielőtt Ön elemeket adhat hozzá."
+      ],
+      "Your organization does not allow creating a vault": [
+        "Az ön szervezete nem engedélyezi a tároló létrehozását"
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Az ön szervezete nem engedélyezi az egyes elemek megosztását"
+      ],
+      "Your session could not be authorized.": [
+        "A munkamenet hitelesítése nem sikerült."
+      ],
+      "Your session could not be resumed.": [
+        "A munkamenet folytatása nem sikerült."
+      ],
+      "Your session is inactive.": [
+        "A munkamenet inaktív."
+      ],
+      "Your session was locked.": [
+        "A munkamenet zárolva."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Az előfizetése nem teszi lehetővé további tárolók létrehozását."
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Az előfizetése nem teszi lehetővé több tároló létrehozását. Az összes elem az első tárolóba kerül importálásra. Több tárolóba való importáláshoz váltson nagyobb csomagra."
+      ]
+    }
+  }
+}

@@ -456,10 +456,10 @@
       "Invite user": [
         "Benutzer einladen"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Bearbeitung fortsetzen"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Bearbeitung fortsetzen"
       ],
       "Keep logo": [
@@ -467,6 +467,9 @@
       ],
       "Keep my subscription": [
         "Behalte mein Abonnement"
+      ],
+      "Keep subscription": [
+        "Abonnement behalten"
       ],
       "Let's talk": [
         "Lass uns reden"
@@ -533,9 +536,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "In ${ DOCS_SHORT_APP_NAME } öffnen"
       ],
       "Open navigation": [
         "Navigation öffnen"
@@ -1058,138 +1058,6 @@
       ],
       "New email": [
         "Neue E-Mail"
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Jetzt zugreifen"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB Speicher"
-      ],
-      "200 GB storage": [
-        "200 GB Speicherplatz"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB verschlüsselter Speicher"
-      ],
-      "Add unlimited credit cards": [
-        "Füge unbegrenzt Kreditkarten hinzu"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Alle Premium-Funktionen von ${ BRAND_NAME } Mail, Pass, VPN, Drive und Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blockiere Werbung, Tracker und Malware"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Rabatte basieren auf den Standardpreisen für Monatsabonnements. Am Ende des Abrechnungszeitraums verlängert sich dein Abonnement zum regulären Jahrespreis."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Verdopple deinen verschlüsselten Speicher – erhalte 1 TB für all deine Daten"
-      ],
-      "Encrypted password manager": [
-        "Verschlüsselter Passwortmanager"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Hier ist ein exklusives Geschenk, um unsere gemeinsame Reise zu feiern."
-      ],
-      "High speed streaming with VPN": [
-        "Hochgeschwindigkeits-Streaming mit VPN"
-      ],
-      "of privacy": [
-        "Privatsphäre"
-      ],
-      "Online document editor": [
-        "Editor für Onlinedokumente"
-      ],
-      "Online privacy for up to 2 people": [
-        "Online-Privatsphäre für bis zu 2 Personen"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Online-Privatsphäre für deine ganze Familie (bis zu 6 Benutzer*innen)"
-      ],
-      "Protect up to 10 devices": [
-        "Schütze bis zu 10 Geräte"
-      ],
-      "Recover previous file versions": [
-        "Vorherige Dateiversionen wiederherstellen"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Sichere dir Premium-Drive-Funktionen mit einem zeitlich begrenzten Rabatt."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Sichere dir Premium-Mail-Funktionen mit einen zeitlich begrenzten Rabatt."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Sichere dir Premium-Pass-Funktionen mit einem zeitlich begrenzten Rabatt."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Sichere dir Premium-VPN-Funktionen mit einen zeitlich begrenzten Rabatt."
-      ],
-      "Save time with built-in 2FA": [
-        "Spare Zeit mit integrierter 2FA"
-      ],
-      "Secure email with unlimited aliases": [
-        "Sichere E-Mail mit unbegrenzt vielen Aliassen"
-      ],
-      "Select any server": [
-        "Freie Serverwahl"
-      ],
-      "Share passwords easily": [
-        "Teile Passwörter ganz einfach"
-      ],
-      "Short @pm.me address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Stream your favorite content": [
-        "Streame deine Lieblingsinhalte"
-      ],
-      "thanks to you": [
-        "dank dir"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Verdreifache deinen verschlüsselten Speicher – erhalte 3 TB für all deine Daten"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
-      ],
-      "Use your own email domain": [
-        "Nutze deine eigene E-Mail-Domain"
-      ],
-      "years": [
-        "Jahre"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Jubiläumsangebot"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } Monat",
-        "${ n } Monate"
-      ],
-      "/ month": [
-        "/ Monat"
-      ],
-      "12 months": [
-        "12 Monate"
-      ],
-      "15 months": [
-        "15 Monate"
-      ],
-      "24 months": [
-        "24 Monate"
-      ],
-      "30 months": [
-        "30 Monate"
-      ],
-      "for ${ durationDeal }": [
-        "für ${ durationDeal }"
       ]
     },
     "Assistant toggle": {
@@ -4945,6 +4813,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Wenn du glaubst, dass dies ungerechtfertigt ist, kontaktiere uns bitte ${ contactLink }."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Wenn du kündigst, verlierst du sofort den Zugang zu ${ boldPlanTitle } und wirst auf das ${ boldProtonFree }-Abonnement zurückgestuft. Wenn deine Nutzung die Grenzen des kostenlosen Abonnements überschreitet, kann der Zugang zu den Produktfunktionen und deinen Daten eingeschränkt sein."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Wenn du kündigst, wird dein ${ planTitle }-Abonnement nach Ablauf am ${ expiryDate } nicht verlängert."
       ],
@@ -5736,6 +5607,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Gib zur Bestätigung bitte den Namen des zu löschenden Benutzers ein."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Damit du ${ boldPlanTitle } bis zum ${ boldCancelDate } weiterhin kostenlos genießen kannst, kündige nicht."
+      ],
       "To continue to ${ product }": [
         "Weiter zu ${ product }"
       ],
@@ -5964,6 +5838,9 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Du erhältst dann einen Rücksetzungscode an die Telefonnummer, die du für die Wiederherstellung deines Kontos angegeben hast."
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Bei der Kündigung von ${ boldPlanTitle } verlierst du folgende Vorteile:"
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Beim Aktivieren von SAML für ${ appName } in deinem Identitätsanbieter wirst du vielleicht aufgefordert, die Callback (ACS) URL und die Aussteller-ID zu nutzen. Kopiere einfach die Daten unten in die Felder deines Identitätsanbieters."
       ],
@@ -6066,6 +5943,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Du kannst jeweils nur eine Chat-Instanz offen haben. Bitte schließe vorherige Unterhaltungen, bevor du eine neue beginnst."
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Du kannst weiterhin auf all deine Kontodaten zugreifen. Du kannst jederzeit wieder abonnieren, um weiterhin all unsere Funktionen zu nutzen."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kannst Mitteilungen aktivieren, um Benachrichtigungen zu erhalten, sobald neue E-Mail-Nachrichten in diesem Ordner eingehen."
       ],
@@ -6134,6 +6014,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Dir wird nichts berechnet, wenn du vor ${ trialEndsOnFormatted } kündigst."
+      ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Du kannst diese Server 10 Tage lang nicht in ein anderes Land zuweisen."
       ],
@@ -6181,6 +6064,9 @@
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Deine kostenlose Testversion von ${ boldPlanTitle } wurde gekündigt und dein Konto ${ boldUserEmail } wurde auf ${ boldProtonFree } zurückgestuft."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Deine Informationen sind bei uns sicher. Wir kontaktieren dich nur, wenn es für die Erbringung unserer Dienstleistungen erforderlich ist."
       ],
@@ -6189,6 +6075,9 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Dein nächstes Abrechnungsdatum ist ${ renewalTime }. Bitte wende dich an den Support, wenn du eine sofortige Abonnementsänderung benötigst."
+      ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Deine Organisation ${ boldOrganizationName } wurde deaktiviert und alle ihre Benutzerlizenzen wurden entfernt."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Deine Organisation verwendet Single Sign-on (SSO). Klicke auf \"Anmelden\", um mit deinem SSO-Anbieter fortzufahren."
@@ -6211,6 +6100,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Dein Abonnement wird am ${ renewalTime } automatisch verlängert."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Deine Testversion endet in ${ timeRemaining }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Du kannst diese Server sofort zu einem anderen Gateway hinzufügen."
@@ -6404,10 +6296,10 @@
       "Allow recovery by phone": [
         "Wiederherstellung per Telefon zulassen"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Erlaubte Domain"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Erlaubte Domain"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -7943,6 +7835,12 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "Mit ${ BRAND_NAME } kannst du E-Mail-Adressen erstellen und Konten für Unterbenutzer verwalten – das ist ideal für Familien und Organisationen."
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB Cloud-Speicher, mit dem sich Dateien einfach speichern, synchronisieren und teilen lassen. Gesichert durch eine Ende-zu-Ende-Verschlüsselung."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB Cloud-Speicher, mit dem sich Dateien einfach speichern, synchronisieren und teilen lassen. Gesichert durch eine Ende-zu-Ende-Verschlüsselung."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Erweiterte Netzwerksicherheit und Zugangsverwaltung mit dedizierten sicheren Gateways"
       ],
@@ -8002,9 +7900,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Sicherer Internetzugang von überall aus mit grundlegender Netzwerküberwachung"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Sicherer Cloud-Speicher, mit dem du Dateien einfach und sicher speichern, synchronisieren und gemeinsam nutzen kannst."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sichere E-Mails mit erweiterten Funktionen für deine tägliche Kommunikation."
@@ -8068,6 +7963,14 @@
         "Schalte alle Premium-Produkte und -Funktionen von ${ BRAND_NAME } für nur ${ priceLine } frei. Jederzeit kündbar."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-Testversion"
+      ],
+      "Your account's usage": [
+        "Verbrauch deines Kontos"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
@@ -8080,14 +7983,6 @@
       ],
       "Switch plans?": [
         "Tarife wechseln?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-Testversion"
-      ],
-      "Your account's usage": [
-        "Verbrauch deines Kontos"
       ]
     },
     "new_plans: tooltip": {
@@ -8504,6 +8399,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Einige Bilder wurden wegen doppelter Dateinamen in der aktuellen Auswahl nicht hochgeladen."
+      ]
+    },
+    "oc_nightly: BYOE": {
+      "Something went wrong while loging into your Gmail account": [
+        "Beim Anmelden bei deinem Gmail-Konto ist ein Fehler aufgetreten."
       ]
     },
     "Offer": {
@@ -9862,6 +9762,11 @@
         "Geteilt von ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "In ${ appName } öffnen"
+      ]
+    },
     "Signup label": {
       "Confirm password": [
         "Passwort bestätigen"
@@ -10900,6 +10805,9 @@
       ],
       "Expiring": [
         "Verfallend"
+      ],
+      "Free Trial": [
+        "Kostenlose Testversion"
       ]
     },
     "Subtitle": {
@@ -11219,6 +11127,24 @@
     "Themes": {
       "Themes": [
         "Farbschemas"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } Tag",
+        "${ ceilDays } Tage"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } Stunde",
+        "${ ceilHours } Stunden"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } Minute",
+        "${ ceilMinutes } Minuten"
+      ],
+      "${ seconds } second": [
+        "${ seconds } Sekunde",
+        "${ seconds } Sekunden"
       ]
     },
     "Title": {
@@ -11939,6 +11865,9 @@
       ],
       "Subscription": [
         "Abonnement"
+      ],
+      "Subscription canceled": [
+        "Abonnement beendet"
       ],
       "Successfully created ${ n } user account": [
         "${ n } Benutzerkonto erfolgreich erstellt",

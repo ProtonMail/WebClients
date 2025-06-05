@@ -432,6 +432,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } 앱 다운로드"
       ],
+      "Download all attachments": [
+        "모든 첨부파일 다운로드"
+      ],
       "Download now": [
         "지금 다운로드"
       ],
@@ -720,6 +723,9 @@
       "Keep my subscription": [
         "내 구독 유지하기"
       ],
+      "Keep subscription": [
+        "구독 유지"
+      ],
       "Label as": [
         "라벨 추가"
       ],
@@ -953,9 +959,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } 설정 열기"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "${ DOCS_SHORT_APP_NAME }에서 열기"
       ],
       "Open navigation": [
         "탐색 열기"
@@ -1449,10 +1452,10 @@
       "Upgrade": [
         "업그레이드"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "지금 업그레이드"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "지금 업그레이드"
       ],
       "Upload and share files": [
@@ -3965,11 +3968,6 @@
         "${ PLAN_NAMES[PLANS.PASS] } 구독이 연간 ${ price }의 특별 가격으로 제공됩니다. Free 플랜으로 다운그레이드함으로서 할인을 잃게되며 추후에도 할인된 가격으로 구독할 수 없습니다."
       ]
     },
-    "Download attachments": {
-      "Download all": [
-        "모두 다운로드"
-      ]
-    },
     "Drawer tab, Action": {
       "Download for Linux": [
         "Linux용 다운로드"
@@ -5998,7 +5996,7 @@
         "${ groupCounts } 그룹 찾음"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
-        "${ MAIL_APP_NAME }이 회원님의 비즈니스를 잘 보호해줍니다."
+        "${ MAIL_APP_NAME }이 회원님의 비즈니스를 더욱 완벽히 보호합니다."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } 메시지가 이동되지 않을 수 있습니다."
@@ -6445,7 +6443,7 @@
         "만들기"
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
-        "여러개의 무료 계정을 만드는 것은 저희의 ${ termsLink } 에 따라 허용되지 않습니다."
+        "여러개의 무료 계정을 만드는 것은 당사의 ${ termsLink }에 따라 허용되지 않습니다."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "이전 플랜 구독으로 사용하지 않은 부분에 대한 크레딧"
@@ -6740,6 +6738,9 @@
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
         "오류라고 생각되신다면, ${ contactLink }해주세요."
+      ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "취소시 ${ boldPlanTitle }에 즉시 접근할 수 없게 되며 ${ boldProtonFree } 플랜으로 자동 다운그레이드됩니다. 사용량이 무료 플랜의 한도를 초과하는 경우 제품 기능 및 데이터에 대한 접근이 제한될 수 있습니다."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "취소하면 ${ planTitle } 구독이 만료일인 ${ expiryDate }에 갱신되지 않습니다."
@@ -7659,6 +7660,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "결제를 완료하기 위해서, 아래 주소로 ${ btcAmountBold } 를 송금해 주시기 바랍니다."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "${ boldCancelDate }까지 ${ boldPlanTitle }(을)를 무료로 계속 경험하시려면 지금 취소하지 마세요."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
       ],
@@ -7884,6 +7888,9 @@
       "Week": [
         "주"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "${ boldPlanTitle }를 취소하면 포기하게 되는 것:"
+      ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "언제 메시지가 보낸 편지함과 수신자의 받은 편지함에서 자동으로 삭제되기 원하시나요?"
       ],
@@ -7977,6 +7984,9 @@
       "You can now return to the application to continue": [
         "계속하기 위해 다시 애플리케이션으로 돌아갈 수 있습니다."
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "여전히 회원님의 모든 계정 데이터에 접근할 수 있습니다. 언제든지 다시 구독하여 모든 기능을 계속해서 누릴 수 있습니다."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "만약 이 폴더에 새로운 이메일 메시지가 도착한다면 알림을 켜서 알 수 있습니다."
       ],
@@ -8061,6 +8071,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "결제를 인증하기 위해 곧 PayPal로 이동됩니다."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "${ trialEndsOnFormatted } 전까지 취소하는 경우 결제되지 않습니다."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "\"${ attachmentsFoundKeyword }\" 으로 작성하였지만, 추가된 첨부 파일이 없습니다. 이 메시지를 그대로 전송하시겠습니까?"
       ],
@@ -8081,6 +8094,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } Plus 구독이 ${ PASS_SHORT_APP_NAME } 평생 플랜으로 대체됩니다. 구독의 잔여분이 계정 크레딧에 추가됩니다. ${ PASS_SHORT_APP_NAME } 평생 딜은 갱신가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }에 평생 접근할 수 있는 일회성 결제입니다."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "${ planName } 플랜은 매 12개월마다 자동 갱신되는 유로 구독입니다. 다음 청구일은 ${ nextBillingDate }입니다."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "계정에 기한이 지난 청구서가 하나 이상 있습니다. 회원님의 계정 접근이 곧 제한됩니다. ${ payInvoiceLink }"
@@ -8108,6 +8124,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
+      ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "${ boldPlanTitle }의 무료 체험이 취소되었으며 계정 ${ boldUserEmail }이(가) ${ boldProtonFree }로 다운그레이드되었습니다."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "하드웨어가 글쓰기 도우미를 로컬에서 실행하는 것을 지원하지 않습니다. 서버에서 실행해 보세요."
@@ -8145,6 +8164,9 @@
       "Your online activity is protected": [
         "온라인 활동이 보호됩니다"
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "조직 ${ boldOrganizationName }이(가) 비활성화되었으며 모든 사용자 등록열이 제거되었습니다."
+      ],
       "Your password was leaked:": [
         "사용자의 비밀번호가 유출되었습니다:"
       ],
@@ -8165,6 +8187,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "사용자의 구독이 ${ renewalTime }에 자동으로 갱신됩니다."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "무료 체험이 ${ timeRemaining }에 종료됩니다."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "몇 번의 클릭만으로 정리된 받은 편지함을 만들어 보세요"
@@ -8497,11 +8522,11 @@
       "Always move sender's emails": [
         "항상 보낸 사람 이메일 이동"
       ],
-      "And": [
-        "그리고"
-      ],
       "AND": [
         "및"
+      ],
+      "And": [
+        "그리고"
       ],
       "and": [
         "그리고"
@@ -8728,10 +8753,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "만약"
       ],
-      "IF": [
+      "If": [
         "만약"
       ],
       "Import all messages": [
@@ -8866,13 +8891,13 @@
       "Optional": [
         "선택 사항"
       ],
+      "OR": [
+        "또는"
+      ],
       "or": [
         "또는"
       ],
       "Or": [
-        "또는"
-      ],
-      "OR": [
         "또는"
       ],
       "Original link": [
@@ -9000,9 +9025,6 @@
       ],
       "Time": [
         "시간"
-      ],
-      "Title": [
-        "제목"
       ],
       "To:": [
         "받는 사람:"
@@ -9760,6 +9782,14 @@
         "중간 VPN 속도"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle }로 계속하기"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "계정 삭제"
@@ -9781,14 +9811,6 @@
       ],
       "Switch plan": [
         "플랜 변경"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle }로 계속하기"
       ]
     },
     "new_plans: feature": {
@@ -10201,7 +10223,7 @@
         "최대 ${ totalStorageSize } 스토리지"
       ],
       "Use on up to ${ n } device at once": [
-        "동시에 ${ n }개 기기에서 사용하세요"
+        "동시에 ${ n }개 기기에서 사용"
       ],
       "User credential management": [
         "사용자 자격 증명 관리"
@@ -10309,9 +10331,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "어디에서나 기본 네트워크 모니터링으로 안전하게 인터넷에 접속하세요."
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "쉽고 안전하게 저장, 동기화 및 공유하기 위한 안전한 클라우드 스토리지."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "일상적인 커뮤니케이션을 위한 고급 기능을 갖춘 안전한 이메일"
@@ -13151,6 +13170,20 @@
         "어제"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays }일"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours }시간"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes }분"
+      ],
+      "${ seconds } second": [
+        "${ seconds }초"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours }시간"
@@ -14010,6 +14043,9 @@
       "Subject missing": [
         "제목을 찾을 수 없습니다."
       ],
+      "Subscription canceled": [
+        "구독이 취소되었습니다"
+      ],
       "Summary": [
         "요약"
       ],
@@ -14108,6 +14144,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "사용자의 ${ planName } 무료 체험이 ${ textDate }에 종료됩니다."
+      ],
+      "Your ${ planName } subscription started": [
+        "${ planName } 구독이 시작되었습니다"
       ],
       "Your account is protected": [
         "계정이 보호됩니다."
@@ -14337,7 +14376,7 @@
         "이메일을 통한 Bitcoin"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "암호화되어 안전한 ${ MAIL_APP_NAME } 이메일 주소. 누구나 ${ BRAND_NAME } 이름만으로 손쉽게 Bitcoin을 송금하 수 있습니다．"
+        "암호화되어 안전한 ${ MAIL_APP_NAME } 이메일 주소. 누구나 ${ BRAND_NAME } 이름만으로 손쉽게 Bitcoin을 송금할 수 있습니다."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "착오가 발생하기 쉬운 복잡한 26자 Bitcoin 주소 대신 이메일을 통해 Bitcoin을 안전하게 거래하세요"

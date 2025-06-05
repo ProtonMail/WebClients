@@ -2312,6 +2312,11 @@
         "Zapadel račun"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "uporabite pomočnika za uvoz Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vam omogočata varno in šifrirano sodelovanje z drugimi."
@@ -2411,11 +2416,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ustvarili ste že 10 vzdevkov. Zagotovite si neomejeno število vzdevkov in 500 GB shrambe s paketom ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "uporabite pomočnika za uvoz Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4950,9 +4950,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Lastnik tega naslova je onemogočil šifriranje od konca do konca. Šifrirana sporočila boste na ta naslov lahko pošiljali, če bo lastnik znova omogočil šifriranje od konca do konca."
       ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
-        "Videti je, da je bila URL, ki ste jo vnesli, nepravilno kopirana iz Slacka. Ko kopirate dolge povezave iz Slacka, z desno tipko miške kliknite na povezavo in izberite »Kopiraj povezavo« namesto, da bi neposredno kopirali skrajšano besedilo URL."
-      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Postopek preverjanja bo odprl nov zavihek brskalnika. Pred tem onemogočite prepoved pojavnih oken."
       ],
@@ -5626,6 +5623,9 @@
       "Extended address": [
         "Razširjeni naslov"
       ],
+      "File": [
+        "Datoteka"
+      ],
       "First name": [
         "Ime"
       ],
@@ -5856,9 +5856,6 @@
       ],
       "Thomas": [
         "Janez"
-      ],
-      "Title": [
-        "Naslov"
       ],
       "To: ${ toEmail }": [
         "Za: ${ toEmail }"
@@ -6537,6 +6534,12 @@
         "${ numberOfUsers } uporabniki",
         "${ numberOfUsers } uporabnikov"
       ],
+      "${ options }-day file version history": [
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin za doživljenjsko uporabo"
       ],
@@ -7012,9 +7015,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Varno uporabljajte splet od kjerkoli z osnovnim nadzorom omrežja"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Varna shramba v oblaku, s katero lahko preprosto shranjujete, sinhronizirate in delite datoteke."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Varna e-pošta z naprednimi funkcijami za vsakodnevno komunikacijo."

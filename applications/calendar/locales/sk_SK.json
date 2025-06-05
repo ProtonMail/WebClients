@@ -452,6 +452,9 @@
       "Keep my subscription": [
         "Ponechať moje predplatné"
       ],
+      "Keep subscription": [
+        "Ponechať predplatné"
+      ],
       "Later": [
         "Neskôr"
       ],
@@ -815,11 +818,11 @@
       "Upgrade": [
         "Prejsť na platený plán"
       ],
-      "Upgrade Now": [
-        "Inovovať teraz"
-      ],
       "Upgrade now": [
         "Aktualizovať teraz"
+      ],
+      "Upgrade Now": [
+        "Inovovať teraz"
       ],
       "Upload and share files": [
         "Nahrávanie a zdieľanie súborov"
@@ -1681,6 +1684,32 @@
       ],
       "strawberry": [
         "jahoda"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Denný prehľad"
+      ],
+      "Month view": [
+        "Mesačný prehľad"
+      ],
+      "New event": [
+        "Nová udalosť"
+      ],
+      "Next period": [
+        "Ďalšie obdobie"
+      ],
+      "Previous period": [
+        "Predchádzajúce obdobie"
+      ],
+      "Search events": [
+        "Vyhľadať udalosti"
+      ],
+      "Today": [
+        "Dnes"
+      ],
+      "Week view": [
+        "Týždenný prehľad"
       ]
     },
     "Confirm modal title": {
@@ -5120,6 +5149,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ak máte problémy s vytvorením účtu, požiadajte prosím o pozvánku a my odpovieme do jedného pracovného dňa."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Ak zrušíte, okamžite stratíte prístup k ${ boldPlanTitle }, a budete znížený na plán ${ boldProtonFree }. Ak vaše používanie prekročí limity bezplatného plánu, môže dôjsť k obmedzeniu prístupu k funkciám produktu a k vašim údajom."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Zrušením nebude vaše predplatné ${ planTitle } obnovené, keď uplynie dňa ${ expiryDate } jeho platnosť."
       ],
@@ -5612,6 +5644,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Na dokončenie platby pošlite ${ btcAmountBold } na nižšie uvedenú adresu."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Ak si prajete naďalej bezplatne využívať ${ boldPlanTitle } až do ${ boldCancelDate }, nezrušte ho."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Aby ste zamedzili spamu a obťažovaniu, potvrďte, že ste človek."
       ],
@@ -5707,6 +5742,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "Zobrazenie týždňa a mesiaca platí iba pre stolné počítače."
+      ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "O čo prídete, keď zrušíte ${ boldPlanTitle }:"
       ],
       "When working remotely": [
         "Pri práci na diaľku"
@@ -5804,6 +5842,9 @@
       "You can now return to the application to continue": [
         "Teraz sa môžete vrátiť do aplikácie a pokračovať"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Stále máte prístup ku všetkým údajom svojho účtu. Kedykoľvek sa môžete znovu prihlásiť a naďalej využívať všetky naše funkcie."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Môžete zapnúť notifikácie, aby ste dostali upozornenie, keď vám do tohto priečinka prídu nové správy."
       ],
@@ -5861,6 +5902,9 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Aktualizujete všetky udalosti v tejto sérii. Odobraní účastníci budú oboznámení."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Nebude sa vám účtovať, ak zrušíte pred ${ trialEndsOnFormatted }."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Potom vám bude každý ${ renewCycle } mesiac fakturovaná suma ${ renewAmountStr }.",
         "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }.",
@@ -5881,6 +5925,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Vaše predplatné ${ PASS_SHORT_APP_NAME } Plus bude nahradené predplatným ${ PASS_SHORT_APP_NAME } Lifetime. Zostávajúci zostatok vášho predplatného bude pripísaný na vaše konto. Dohoda o ${ PASS_SHORT_APP_NAME } doživotnom predplatnom nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "Váš plán ${ planName } je teraz platené predplatné, ktoré sa automaticky obnovuje každých 12 mesiacov. Dátum Vašej ďalšej fakturácie je ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má aspoň jednu faktúru po splatnosti. Váš prístup bude čoskoro obmedzený. ${ payInvoiceLink }"
@@ -5915,6 +5962,9 @@
       "Your files will be encrypted and then saved": [
         "Vaše súbory budú zašifrované a potom uložené"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Vaša bezplatná skúšobná verzia služby ${ boldPlanTitle } bola zrušená a váš účet ${ boldUserEmail } bol znížený na ${ boldProtonFree }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Vaše informácie boli nájdené dňa ${ displayedDate }"
       ],
@@ -5939,6 +5989,9 @@
       "Your online activity is protected": [
         "Vaša online aktivita je chránená"
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Vaša organizácia ${ boldOrganizationName } je zakázaná a všetky jej používateľské miesta boli odstránené."
+      ],
       "Your password was leaked:": [
         "Vaše heslo bolo prezradené:"
       ],
@@ -5962,6 +6015,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Zdá sa, že vaše systémové časové pásmo sa zmenilo na ${ timezone }. Chcete aktualizovať nastavenia časového pásma?"
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Vaše skúšobné obdobie končí ${ timeRemaining }."
       ]
     },
     "info": {
@@ -6554,9 +6610,6 @@
       ],
       "Time zone": [
         "Časové pásmo"
-      ],
-      "Title": [
-        "Názov"
       ],
       "To: ${ toEmail }": [
         "Komu: ${ toEmail }"
@@ -7190,6 +7243,11 @@
         "Stredná VPN rýchlosť"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Zmazať účet"
@@ -7211,11 +7269,6 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7808,9 +7861,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Bezpečný prístup k internetu odkiaľkoľvek so základným monitorovaním siete"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Bezpečné cloudové úložisko, ktoré vám umožní ukladať, synchronizovať a zdieľať súbory jednoducho a bezpečne."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Bezpečný email s pokročilými funkciami pre vašu každodennú komunikáciu."
@@ -10507,6 +10557,32 @@
         "Pripojiť sa k Teams mítingu"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } deň",
+        "${ ceilDays } dni",
+        "${ ceilDays } dní",
+        "${ ceilDays } dní"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } hodina",
+        "${ ceilHours } hodiny",
+        "${ ceilHours } hodín",
+        "${ ceilHours } hodín"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minúta",
+        "${ ceilMinutes } minúty",
+        "${ ceilMinutes } minút",
+        "${ ceilMinutes } minút"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunda",
+        "${ seconds } sekundy",
+        "${ seconds } sekúnd",
+        "${ seconds } sekúnd"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } h",
@@ -11111,6 +11187,9 @@
       "Start import process": [
         "Zahájiť proces importu"
       ],
+      "Subscription canceled": [
+        "Predplatné bolo zrušené"
+      ],
       "Summary": [
         "Zhrnutie"
       ],
@@ -11182,6 +11261,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaša bezplatná skúšobná verzia služby ${ planName } končí ${ textDate }"
+      ],
+      "Your ${ planName } subscription started": [
+        "Vaše predplatné ${ planName } začalo"
       ],
       "Your account is protected": [
         "Váš účet je chránený"

@@ -456,10 +456,10 @@
       "Invite user": [
         "Kutsu käyttäjä"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Jatka muokkaamista"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Jatka muokkaamista"
       ],
       "Keep logo": [
@@ -533,9 +533,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Avaa ${ CALENDAR_APP_NAME }in asetukset"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Avaa ${ DOCS_SHORT_APP_NAME }issa"
       ],
       "Open navigation": [
         "Avaa navigaatio"
@@ -6160,10 +6157,10 @@
       "Allow recovery by phone": [
         "Salli palautus puhelimitse"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Sallittu verkkotunnus"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Sallittu verkkotunnus"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -7760,9 +7757,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Käytä Internetiä mistä tahansa välttämättömällä verkon valvonnalla"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Suojattu pilvitallennustila tiedostojen turvalliseen säilytykseen, synkronointiin ja helppoon jakamiseen."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "Turvallinen sähköposti edistyneillä ominaisuuksilla jokapäiväiseen viestintään."
       ],
@@ -7825,6 +7819,14 @@
         "Avaa kaikki ${ BRAND_NAME } -premium-tuotteet ja -ominaisuudet hintaan ${ priceLine }. Peruuta milloin tahansa."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-kokeilu"
+      ],
+      "Your account's usage": [
+        "Tilisi käyttö"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -7837,14 +7839,6 @@
       ],
       "Switch plans?": [
         "Vaihdetaanko tilaus?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-kokeilu"
-      ],
-      "Your account's usage": [
-        "Tilisi käyttö"
       ]
     },
     "new_plans: tooltip": {
@@ -10955,6 +10949,24 @@
     "Themes": {
       "Themes": [
         "Teemat"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } vuorokausi",
+        "${ ceilDays } vuorokautta"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } tunti",
+        "${ ceilHours }. tuntia"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuutti",
+        "${ ceilMinutes } minuuttia"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunti",
+        "${ seconds } sekuntia"
       ]
     },
     "Title": {

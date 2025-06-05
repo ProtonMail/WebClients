@@ -446,6 +446,9 @@
       "Keep my subscription": [
         "Behold mitt abonnement"
       ],
+      "Keep subscription": [
+        "Behold abonnementet"
+      ],
       "Later": [
         "Senere"
       ],
@@ -809,10 +812,10 @@
       "Upgrade": [
         "Oppgrader"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Oppgrader nå"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Oppgrader nå"
       ],
       "Upload and share files": [
@@ -1651,6 +1654,32 @@
       ],
       "strawberry": [
         "jordbær"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Dagsvisning"
+      ],
+      "Month view": [
+        "Månedsvisning"
+      ],
+      "New event": [
+        "Ny hendelse"
+      ],
+      "Next period": [
+        "Neste periode"
+      ],
+      "Previous period": [
+        "Forrige periode"
+      ],
+      "Search events": [
+        "Søk etter hendelser"
+      ],
+      "Today": [
+        "I dag"
+      ],
+      "Week view": [
+        "Ukesvisning"
       ]
     },
     "Confirm modal title": {
@@ -4974,6 +5003,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Hvis du avbryter, mister du tilgang til ${ boldPlanTitle } med én gang, og du blir nedgradert til ${ boldProtonFree }-planen. Dersom forbruket overskrider grensene for gratisplanen, kan du oppleve begrenset tilgang til produktfunksjoner og data."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du avbryter, vil ditt ${ planTitle }-abonnement ikke bli fornyet når det utløper den ${ expiryDate }."
       ],
@@ -5456,6 +5488,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "For å fullføre betalingen, send ${ btcAmountBold } til adressen nedenfor."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "For å fortsette å nyte ${ boldPlanTitle } gratis til ${ boldCancelDate }, ikke avbryt."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "For å bekjempe søppelpost og misbruk må du bekrefte at du er et menneske."
       ],
@@ -5552,6 +5587,9 @@
       "Week and month views only apply to desktop.": [
         "Uke- og månedsvisninger gjelder bare for skrivebordet."
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Dette gir du avkall på når du avbestiller ${ boldPlanTitle }:"
+      ],
       "When working remotely": [
         "Når du jobber eksternt"
       ],
@@ -5644,6 +5682,9 @@
       "You can now return to the application to continue": [
         "Du kan nå gå tilbake til programmet for å fortsette"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Du kan fortsatt få tilgang til alle dataene på kontoen din. Du kan abonnere på nytt når som helst for å fortsette å nyte alle funksjonene våre."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere varsler for å få varsler når det kommer nye e-postmeldinger i denne mappen."
       ],
@@ -5701,6 +5742,9 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Du vil oppdatere alle hendelsene i denne serien. Fjernede deltakere vil bli varslet."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Du blir ikke belastet hvis du avbryter før ${ trialEndsOnFormatted }."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }",
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }."
@@ -5719,6 +5763,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ditt ${ PASS_SHORT_APP_NAME } Plus-abonnement vil bli erstattet med livsvarig avtale for ${ PASS_SHORT_APP_NAME }. Den gjenværende saldoen på abonnementet ditt vil bli lagt til kontoen din. ${ PASS_SHORT_APP_NAME } livstidsavtale har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "${ planName }-planen din er nå et betalt abonnement som automatisk fornyes hver 12. måned. Neste faktureringsdato er ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Kontoen din har minst en forfalt faktura. Din tilgang vil snart bli begrenset. ${ payInvoiceLink }"
@@ -5753,6 +5800,9 @@
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Din gratis prøveversjon av ${ boldPlanTitle } er avbrutt, og kontoen din ${ boldUserEmail } er nedgradert til ${ boldProtonFree }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Informasjonen din ble funnet den ${ displayedDate }."
       ],
@@ -5777,6 +5827,9 @@
       "Your online activity is protected": [
         "Nettaktiviteten din er beskyttet"
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Din organisasjon ${ boldOrganizationName } er deaktivert og alle brukerlisensene har blitt fjernet."
+      ],
       "Your password was leaked:": [
         "Passordet ditt ble lekket:"
       ],
@@ -5798,6 +5851,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Systemets tidssone ser ut til å ha endret seg til ${ timezone }. Vil du oppdatere preferansen for tidssone?"
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Prøveversjonen avsluttes om ${ timeRemaining }."
       ]
     },
     "info": {
@@ -6378,9 +6434,6 @@
       ],
       "Time zone": [
         "Tidssone"
-      ],
-      "Title": [
-        "Tittel"
       ],
       "To: ${ toEmail }": [
         "Til: ${ toEmail }"
@@ -6998,6 +7051,11 @@
         "Middels VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -7019,11 +7077,6 @@
       ],
       "Switch plan": [
         "Bytt plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7568,9 +7621,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Få sikker tilgang til internett fra hvor som helst med viktig nettverksovervåking"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Sikker skylagring som lar deg lagre, synkronisere og dele filer lett og trygt."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-post med avanserte funksjoner for daglig kommunikasjon."
@@ -10129,6 +10179,24 @@
         "Bli med på Teams-møte"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dag",
+        "${ ceilDays } dager"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } time",
+        "${ ceilHours } timer"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minutt",
+        "${ ceilMinutes } minutter"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekund",
+        "${ seconds } sekunder"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } t",
@@ -10714,6 +10782,9 @@
       "Start import process": [
         "Start importprosessen"
       ],
+      "Subscription canceled": [
+        "Abonnement kansellert"
+      ],
       "Summary": [
         "Sammendrag"
       ],
@@ -10785,6 +10856,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveversjon av ${ planName } slutter den ${ textDate }."
+      ],
+      "Your ${ planName } subscription started": [
+        "${ planName }-abonnementet startet"
       ],
       "Your account is protected": [
         "Kontoen din er beskyttet"

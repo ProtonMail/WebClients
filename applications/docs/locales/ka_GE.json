@@ -420,6 +420,9 @@
       "Import contacts": [
         "კონტაქტების შემოტანა"
       ],
+      "Import data": [
+        "მონაცემების შემოტანა"
+      ],
       "Import emails": [
         "ელფოსტის შემოტანა"
       ],
@@ -602,6 +605,9 @@
       ],
       "Remove button": [
         "ღილაკის მოცილება"
+      ],
+      "Remove file": [
+        "ფაილის წაშლა"
       ],
       "Remove gift code": [
         "სასაჩუქრე კოდის წაშლა"
@@ -2336,6 +2342,11 @@
         "ინვოისი გადაცილებულია"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } თქვენს ანგარიშს საეჭვო აქტივობებზე 24/7 მონიტორინგით იცავს - საჭიროების შემთხვევაში უსაფრთხოების სპეციალისტების ჩართვით."
@@ -2444,11 +2455,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4935,9 +4941,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "ამ მისამართის მფლობელმა გამჭოლი დაშიფვრა გამორთო. იმისათვის, რომ შეგეძლოთ, ამ მისამართზე დაშიფრული შეტყობინებები გააგზავნოთ, მფლობელმა გამჭოლი დაშიფვრა თავიდან უნდა ჩართოს."
       ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
-        "URL, რომელიც შეიყვანეთ, როგორც ჩანს, Slack-დან არასწორად დააკოპირეთ, როცა ბმულებს Slack-დან აკოპირებთ, დააწკაპუნეთ ზედ მარჯვენა ღილაკით და აირჩიეთ \"ბმულის კოპირება\". წინააღმდეგ შემთხვევაში ბმულის ტექსტი წაკვეთილ ვერსიას დააკოპირებთ."
-      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "გადამოწმების პროცესი ბრაუზერის ახალ ჩანართს გახსნის. გთხოვთ, გამორთოთ მხტუნარა ფანჯრებს მბლოკავები."
       ],
@@ -5633,6 +5636,9 @@
       "Extended address": [
         "გაფართოებული მისამართი"
       ],
+      "File": [
+        "ფაილი"
+      ],
       "First name": [
         "სახელი"
       ],
@@ -5866,9 +5872,6 @@
       ],
       "Thomas": [
         "თომასი"
-      ],
-      "Title": [
-        "სათაური"
       ],
       "To: ${ toEmail }": [
         "მიმღები: ${ toEmail }"
@@ -6997,9 +7000,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "იმუშავეთ ინტერნეტში უსაფრთხოდ ნებისმიერი ადგილიდან ქსელის მონიტორინგის საშუალებებით"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "დაცული ღრუბლოვანი საცავი, რომელიც საშუალებას გაძლევთ, ადვილად და დაცულად შეინახოთ, დასინქოთ და გააზიაროთ ფაილები."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "დაცული ელფოსტა დამატებითი ფუნქციებით, თქვენი ყოველდღიური მიმოწერისთვის."

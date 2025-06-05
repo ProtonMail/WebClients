@@ -949,9 +949,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åbn ${ CALENDAR_APP_NAME } indstillinger"
       ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Åbn i ${ DOCS_SHORT_APP_NAME }"
-      ],
       "Open navigation": [
         "Åbn navigation"
       ],
@@ -1444,11 +1441,11 @@
       "Upgrade": [
         "Opgradér"
       ],
-      "Upgrade Now": [
-        "Opgradere nu"
-      ],
       "Upgrade now": [
         "Opgradér nu"
+      ],
+      "Upgrade Now": [
+        "Opgradere nu"
       ],
       "Upload and share files": [
         "Upload og del filer"
@@ -3913,11 +3910,6 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Dit ${ PLAN_NAMES[PLANS.PASS] }-abonnement er til en særpris på ${ price } pr. år. Hvis du nedgraderer til et gratis abonnement, mister du rabatten permanent, selv hvis du opgraderer igen engang i fremtiden."
-      ]
-    },
-    "Download attachments": {
-      "Download all": [
-        "Download alle"
       ]
     },
     "Drawer tab, Action": {
@@ -8440,11 +8432,11 @@
       "Always move sender's emails": [
         "Flyt altid afsenders e-mails"
       ],
-      "And": [
-        "Og"
-      ],
       "AND": [
         "OG"
+      ],
+      "And": [
+        "Og"
       ],
       "and": [
         "og"
@@ -8668,11 +8660,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Hvis"
-      ],
       "IF": [
         "HVIS"
+      ],
+      "If": [
+        "Hvis"
       ],
       "Import all messages": [
         "Importer alle beskeder"
@@ -8794,14 +8786,14 @@
       "Optional": [
         "Valgfrit"
       ],
+      "OR": [
+        "ELLER"
+      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
-      ],
-      "OR": [
-        "ELLER"
       ],
       "Original link": [
         "Oprindeligt link"
@@ -8928,9 +8920,6 @@
       ],
       "Time": [
         "Tid"
-      ],
-      "Title": [
-        "Titel"
       ],
       "To:": [
         "Til:"
@@ -9676,6 +9665,14 @@
         "Mellem VPN-hastighed"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Få ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Slet konto"
@@ -9697,14 +9694,6 @@
       ],
       "Switch plan": [
         "Skift abonnement"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Få ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -10246,9 +10235,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Sikker adgang til internettet overalt med vigtig netværksovervågning"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Sikker lagring i skyen der lader dig gemme, synkronisere og dele dine filer nemt og sikkert."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-mail med avancerede funktioner til din daglige kommunikation."

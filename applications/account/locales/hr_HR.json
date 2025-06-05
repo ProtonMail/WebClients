@@ -364,6 +364,9 @@
       "Get more": [
         "Nabavi više"
       ],
+      "Get started": [
+        "Započnite"
+      ],
       "Get the apps": [
         "Preuzmite aplikacije"
       ],
@@ -510,9 +513,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvori ${ CALENDAR_APP_NAME } postavke"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Otvori u ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Otvori navigaciju"
@@ -2697,11 +2697,11 @@
       "And": [
         "I"
       ],
-      "Or": [
-        "Ili"
-      ],
       "or": [
         "ili"
+      ],
+      "Or": [
+        "Ili"
       ],
       "With attachment": [
         "S privitkom"
@@ -4214,6 +4214,9 @@
       "Encryption setting updated": [
         "Postavke šifriranje su ažurirane"
       ],
+      "End-to-end encrypted": [
+        "End-to-End šifriranje"
+      ],
       "Enter key manually instead": [
         "Ručno unesite ključ"
       ],
@@ -5258,10 +5261,10 @@
       "Amount due": [
         "Dospjeli iznos"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
       "and": [
@@ -5534,11 +5537,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Ako"
-      ],
       "IF": [
         "AKO"
+      ],
+      "If": [
+        "Ako"
       ],
       "Import all messages": [
         "Uvoz svih poruka"
@@ -5663,14 +5666,14 @@
       "Optional": [
         "Neobavezno"
       ],
+      "OR": [
+        "ILI"
+      ],
       "or": [
         "ili"
       ],
       "Or": [
         "Ili"
-      ],
-      "OR": [
-        "ILI"
       ],
       "Organization name": [
         "Naziv organizacije"
@@ -5971,9 +5974,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } stvoreno"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } ažurirano"
       ],
       "Preference saved": [
         "Postavke su spremljene"
@@ -6720,6 +6720,9 @@
     "Onboarding modal": {
       "browser": [
         "preglednik"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Za početak odaberite ime za prikaz. To je ono što će ljudi vidjeti kada pošaljete e-poštu, pozovete ih na događaj ili podijelite datoteku."
       ]
     },
     "Option": {

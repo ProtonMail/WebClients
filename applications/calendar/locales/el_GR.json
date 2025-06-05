@@ -446,6 +446,9 @@
       "Keep my subscription": [
         "Διατηρήστε την συνδρομή μου"
       ],
+      "Keep subscription": [
+        "Διατήρηση συνδρομής"
+      ],
       "Later": [
         "Αργότερα"
       ],
@@ -809,11 +812,11 @@
       "Upgrade": [
         "Αναβάθμιση"
       ],
-      "Upgrade Now": [
-        "Αναβαθμίστε Τώρα"
-      ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
+      ],
+      "Upgrade Now": [
+        "Αναβαθμίστε Τώρα"
       ],
       "Upload and share files": [
         "Μεταφορτώστε και μοιραστείτε αρχεία"
@@ -4153,6 +4156,9 @@
       "Contacts": [
         "Επαφές"
       ],
+      "Drawer": [
+        "Πλαϊνό πλαίσιο"
+      ],
       "Name": [
         "Όνομα"
       ],
@@ -5000,6 +5006,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Εάν ακυρώσετε, θα χάσετε την πρόσβαση στο ${ boldPlanTitle } άμεσα και θα υποβαθμιστείτε στο πλάνο ${ boldProtonFree }. Εάν η χρήση σας ξεπεράσει τα όρια του δωρεάν πλάνου, ίσως να αντιμετωπίσετε περιορισμένη πρόσβαση σε δυνατότητες του προϊόντος και τα δεδομένα σας."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Εάν ακυρώσετε, η συνδρομή σας ${ planTitle } δε θα ανανεωθεί όταν λήξει στις ${ expiryDate }."
       ],
@@ -5482,6 +5491,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Για να ολοκληρώσετε την πληρωμή σας, στείλτε ${ btcAmountBold } στην παρακάτω διεύθυνση."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Για να συνεχίσετε να απολαμβάνετε το ${ boldPlanTitle } δωρεάν έως το ${ boldCancelDate }, μην ακυρώσετε."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
       ],
@@ -5578,6 +5590,9 @@
       "Week and month views only apply to desktop.": [
         "Οι προβολές εβδομάδας και μήνα ισχύουν μόνο για την επιφάνεια εργασίας."
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Τι εγκαταλείπετε όταν ακυρώσετε το ${ boldPlanTitle }:"
+      ],
       "When working remotely": [
         "Όταν εργάζεστε εξ αποστάσεως"
       ],
@@ -5670,6 +5685,9 @@
       "You can now return to the application to continue": [
         "Τώρα μπορείτε να επιστρέψετε στην εφαρμογή για να συνεχίσετε"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Μπορείτε ακόμα να αποκτήσετε πρόσβαση σε όλα τα δεδομένα του λογαριασμού σας. Μπορείτε να εγγραφείτε ξανά ανά πάσα στιγμή για να συνεχίσετε να απολαμβάνετε όλες τις δυνατότητες μας."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις, για να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν το φάκελο."
       ],
@@ -5727,6 +5745,9 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Θα ενημερώσετε όλες τις εκδηλώσεις αυτής της σειράς. Θα ειδοποιηθούν οι συμμετέχοντες που αφαιρέθηκαν."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ trialEndsOnFormatted }."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνα στα ${ renewAmountStr }.",
         "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνες στα ${ renewAmountStr }."
@@ -5745,6 +5766,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Η συνδρομή σας ${ PASS_SHORT_APP_NAME } Plus θα αντικατασταθεί με ${ PASS_SHORT_APP_NAME } εφ' όρου ζωής. Το υπόλοιπο της συνδρομής σας θα προστεθεί στον λογαριασμό σας. Η προσφορά ${ PASS_SHORT_APP_NAME } εφ' όρου ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "Το πλάνο σας ${ planName } είναι πλέον μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε 12 μήνες. Η επόμενη ημερομηνία χρέωσής σας είναι ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
@@ -5779,6 +5803,9 @@
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Η δωρεάν δοκιμή σας του ${ boldPlanTitle } έχει ακυρωθεί, και ο λογαριασμός σας ${ boldUserEmail } έχει υποβαθμιστεί σε ${ boldProtonFree }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Οι πληροφορίες σας βρέθηκαν στις ${ displayedDate }"
       ],
@@ -5803,6 +5830,9 @@
       "Your online activity is protected": [
         "Η δραστηριότητά σας στο διαδίκτυο προστατεύεται"
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Η οργανισμός σας ${ boldOrganizationName } είναι απενεργοποιημένος και όλες οι θέσεις χρηστών της έχουν αφαιρεθεί."
+      ],
       "Your password was leaked:": [
         "Ο κωδικός πρόσβασής σας διέρρευσε:"
       ],
@@ -5824,6 +5854,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Η ζώνη ώρας του συστήματός σας φαίνεται ότι έχει αλλάξει σε ${ timezone }. Θέλετε να ενημερώσετε τις προτιμήσεις ζώνης ώρας;"
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Η δοκιμή σας θα τελειώσει σε ${ timeRemaining }."
       ]
     },
     "info": {
@@ -6016,6 +6049,9 @@
       ],
       "Address": [
         "Διεύθυνση"
+      ],
+      "Alias title": [
+        "Τίτλος ψευδωνύμου"
       ],
       "All day": [
         "Ολοήμερο"
@@ -6404,9 +6440,6 @@
       ],
       "Time zone": [
         "Ζώνη ώρας"
-      ],
-      "Title": [
-        "Τίτλος"
       ],
       "To: ${ toEmail }": [
         "Προς: ${ toEmail }"
@@ -7024,6 +7057,11 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Διαγραφή λογαριασμού"
@@ -7045,11 +7083,6 @@
       ],
       "Switch plan": [
         "Αλλαγή προγράμματος"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7535,6 +7568,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB αποθηκευτικού χώρου στο cloud που σας επιτρέπει να αποθηκεύετε, συγχρονίζετε και μοιράζεστε αρχεία εύκολα. Προστατεύεται από διατερματική κρυπτογράφηση."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB αποθηκευτικού χώρου στο cloud που σας επιτρέπει να αποθηκεύετε, συγχρονίζετε και μοιράζεστε αρχεία εύκολα. Προστατεύεται από διατερματική κρυπτογράφηση."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Προηγμένη ασφάλεια δικτύου και διαχείριση πρόσβασης με αποκλειστικές ασφαλείς Πύλες"
       ],
@@ -7594,9 +7633,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Ασφαλής πρόσβαση στο διαδίκτυο από οπουδήποτε με απαραίτητη παρακολούθηση δικτύου"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Ασφαλής αποθηκευτικός χώρος νέφους που επιτρέπει αποθήκευση, συγχρονισμό και κοινοποίηση αρχείων, εύκολα και διασφαλισμένα."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Ασφαλές ηλεκτρονικό ταχυδρομείο με προηγμένες δυνατότητες για τις καθημερινές σας επικοινωνίες."
@@ -10155,6 +10191,24 @@
         "Συνδεθείτε στη σύσκεψη Teams"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } ημέρα",
+        "${ ceilDays } ημέρες"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } ώρα",
+        "${ ceilHours } ώρες"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } λεπτό",
+        "${ ceilMinutes } λεπτά"
+      ],
+      "${ seconds } second": [
+        "${ seconds } δευτερόλεπτο",
+        "${ seconds } δευτερόλεπτα"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } ώ",
@@ -10740,6 +10794,9 @@
       "Start import process": [
         "Έναρξη διαδικασίας εισαγωγής"
       ],
+      "Subscription canceled": [
+        "Η συνδρομή ακυρώθηκε"
+      ],
       "Summary": [
         "Περίληψη"
       ],
@@ -10811,6 +10868,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του ${ planName } λήγει στις ${ textDate }"
+      ],
+      "Your ${ planName } subscription started": [
+        "Η ${ planName } συνδρομή σας ξεκίνησε"
       ],
       "Your account is protected": [
         "Ο λογαριασμός σας προστατεύεται"
