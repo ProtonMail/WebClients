@@ -6,12 +6,11 @@ import {
     getDocumentEditor,
     getEndToEndEncryption,
     getFreeDriveStorageFeature,
-    getPremiumFeatures,
     getStorageFeature,
     getStorageFeatureB2B,
     getVersionHistory,
 } from '@proton/components/containers/payments/features/drive';
-import { getSupport } from '@proton/components/containers/payments/features/highlights';
+import { getAllPremiumServices, getSupport } from '@proton/components/containers/payments/features/highlights';
 import { getCustomSecureMailB2B, getNAddressesFeature } from '@proton/components/containers/payments/features/mail';
 import { getPasswordManager } from '@proton/components/containers/payments/features/pass';
 import { getUpToNUsers } from '@proton/components/containers/payments/features/plan';
@@ -23,7 +22,7 @@ import { PlanCardFeatureList } from '@proton/components/containers/payments/subs
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { CYCLE, type FreePlanDefault, PLANS, type Plan, type PlansMap } from '@proton/payments';
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
-import type { APPS } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { BRAND_NAME, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -35,6 +34,7 @@ import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
 import LetsTalkGenericSubSection from '../LetsTalkGenericSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
 import SignupHeaderV2 from '../SignupHeaderV2';
+import AppsLogos from '../components/AppsLogos';
 import {
     getBenefits,
     getBuiltInEncryptionBenefit,
@@ -174,7 +174,14 @@ export const getDrivePlusFeatures = ({ plan, freePlan }: { plan: Plan | undefine
     if (!plan) {
         return [];
     }
-    return [getStorageFeature(plan.MaxSpace, { freePlan }), getDocumentEditor(), getVersionHistory()];
+    return [getStorageFeature(plan.MaxSpace, { freePlan }), getVersionHistory('10y'), getDocumentEditor()];
+};
+
+export const getDrivePlusKeyFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
+    if (!plan) {
+        return [];
+    }
+    return [getStorageFeature(plan.MaxSpace, { freePlan }), getVersionHistory('10y')];
 };
 
 export const getBundleFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
@@ -183,10 +190,17 @@ export const getBundleFeatures = ({ plan, freePlan }: { plan: Plan | undefined; 
     }
     return [
         getStorageFeature(plan.MaxSpace, { freePlan }),
+        getAllPremiumServices(),
         getDocumentEditor(),
         getVersionHistory(),
-        getPremiumFeatures(),
     ];
+};
+
+export const getBundleKeyFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
+    if (!plan) {
+        return [];
+    }
+    return [getStorageFeature(plan.MaxSpace, { freePlan }), getAllPremiumServices()];
 };
 
 export const getFamilyFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
@@ -196,10 +210,17 @@ export const getFamilyFeatures = ({ plan, freePlan }: { plan: Plan | undefined; 
     return [
         getStorageFeature(plan.MaxSpace, { freePlan, family: true }),
         getUpToNUsers(6),
+        getAllPremiumServices(),
         getDocumentEditor(),
         getVersionHistory(),
-        getPremiumFeatures(),
     ];
+};
+
+export const getFamilyKeyFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
+    if (!plan) {
+        return [];
+    }
+    return [getStorageFeature(plan.MaxSpace, { freePlan, family: true }), getUpToNUsers(6), getAllPremiumServices()];
 };
 
 export const getDriveBusinessFeatures = ({ plan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
@@ -307,10 +328,14 @@ export const getDriveConfiguration = ({
             {
                 plan: PLANS.DRIVE,
                 subsection: (
-                    <PlanCardFeatureList
-                        {...planCardFeatureProps}
-                        features={getDrivePlusFeatures({ plan: plansMap?.[PLANS.DRIVE], freePlan })}
-                    />
+                    <>
+                        <AppsLogos className="mb-1 md:mb-3" apps={[APPS.PROTONDRIVE]} />
+                        <PlanCardFeatureList
+                            {...planCardFeatureProps}
+                            features={getDrivePlusFeatures({ plan: plansMap?.[PLANS.DRIVE], freePlan })}
+                            keyFeatures={getDrivePlusKeyFeatures({ plan: plansMap?.[PLANS.DRIVE], freePlan })}
+                        />
+                    </>
                 ),
                 type: 'standard' as const,
                 guarantee: true,
@@ -318,10 +343,14 @@ export const getDriveConfiguration = ({
             {
                 plan: PLANS.BUNDLE,
                 subsection: (
-                    <PlanCardFeatureList
-                        {...planCardFeatureProps}
-                        features={getBundleFeatures({ plan: plansMap?.[PLANS.BUNDLE], freePlan })}
-                    />
+                    <>
+                        <AppsLogos className="mb-1 md:mb-3" />
+                        <PlanCardFeatureList
+                            {...planCardFeatureProps}
+                            features={getBundleFeatures({ plan: plansMap?.[PLANS.BUNDLE], freePlan })}
+                            keyFeatures={getBundleKeyFeatures({ plan: plansMap?.[PLANS.BUNDLE], freePlan })}
+                        />
+                    </>
                 ),
                 type: 'best' as const,
                 guarantee: true,
@@ -329,10 +358,14 @@ export const getDriveConfiguration = ({
             {
                 plan: PLANS.FAMILY,
                 subsection: (
-                    <PlanCardFeatureList
-                        {...planCardFeatureProps}
-                        features={getFamilyFeatures({ plan: plansMap?.[PLANS.FAMILY], freePlan })}
-                    />
+                    <>
+                        <AppsLogos className="mb-1 md:mb-3" />
+                        <PlanCardFeatureList
+                            {...planCardFeatureProps}
+                            features={getFamilyFeatures({ plan: plansMap?.[PLANS.FAMILY], freePlan })}
+                            keyFeatures={getFamilyKeyFeatures({ plan: plansMap?.[PLANS.FAMILY], freePlan })}
+                        />
+                    </>
                 ),
                 type: 'standard' as const,
                 guarantee: true,
