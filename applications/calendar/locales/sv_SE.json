@@ -446,6 +446,9 @@
       "Keep my subscription": [
         "Behåll min prenumeration"
       ],
+      "Keep subscription": [
+        "Behåll prenumeration"
+      ],
       "Later": [
         "Senare"
       ],
@@ -809,10 +812,10 @@
       "Upgrade": [
         "Uppgradera"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Uppgradera nu"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Uppgradera nu"
       ],
       "Upload and share files": [
@@ -5482,6 +5485,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "För att slutföra din betalning, skicka ${ btcAmountBold } till adressen nedan."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "För att fortsätta njuta av ${ boldPlanTitle } gratis fram till ${ boldCancelDate }, avbryt inte."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
       ],
@@ -5578,6 +5584,9 @@
       "Week and month views only apply to desktop.": [
         "Vecko- och månadsvyer tillämpas endast för stationära datorer."
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Vad du förlorar när du avbryter ${ boldPlanTitle }:"
+      ],
       "When working remotely": [
         "När du arbetar på distans"
       ],
@@ -5670,6 +5679,9 @@
       "You can now return to the application to continue": [
         "Du kan nu gå tillbaka till applikationen för att fortsätta"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Du kan fortfarande komma åt all din kontodata. Du kan prenumerera igen när som helst för att fortsätta att njuta av alla våra funktioner."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan slå på aviseringar för att bli uppmärksammad när nya e-postmeddelanden kommer till denna mapp."
       ],
@@ -5727,6 +5739,9 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Du kommer att uppdatera alla händelser i denna serie. Borttagna deltagare kommer att aviseras."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }.",
         "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }."
@@ -5745,6 +5760,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Din ${ PASS_SHORT_APP_NAME } Plus-prenumeration kommer att ersättas med ${ PASS_SHORT_APP_NAME } Lifetime. Den kvarvarande balansen för din prenumeration kommer att läggas till i ditt konto.${ PASS_SHORT_APP_NAME } livstidserbjudandet har inget förnyelsepris, det är en engångsbetalning för livstids åtkomst till ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "Ditt ${ planName }-paket är nu en betald prenumeration som förnyas automatiskt var 12:e månad. Ditt nästa faktureringsdatum är ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ditt konto har minst en försenad faktura. Din åtkomst kommer snart att begränsas. ${ payInvoiceLink }"
@@ -5779,6 +5797,9 @@
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Din gratis provperiod för ${ boldPlanTitle } har avbrutits, och ditt konto ${ boldUserEmail } har nedgraderats till ${ boldProtonFree }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Din information hittades den ${ displayedDate }"
       ],
@@ -5803,6 +5824,9 @@
       "Your online activity is protected": [
         "Din aktivitet online är skyddad"
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Din organisation ${ boldOrganizationName } är inaktiverad och alla dess användarplatser har tagits bort."
+      ],
       "Your password was leaked:": [
         "Ditt lösenord läcktes:"
       ],
@@ -5824,6 +5848,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Din systemtidszon verkar ha ändrats till ${ timezone }. Vill du uppdatera din tidszons preferens?"
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Din provperiod slutar om ${ timeRemaining }."
       ]
     },
     "info": {
@@ -6019,6 +6046,9 @@
       ],
       "Address": [
         "Adress"
+      ],
+      "Alias title": [
+        "Alias-rubrik"
       ],
       "All day": [
         "Heldag"
@@ -6407,9 +6437,6 @@
       ],
       "Time zone": [
         "Tidszon"
-      ],
-      "Title": [
-        "Rubrik"
       ],
       "To: ${ toEmail }": [
         "Till: ${ toEmail }"
@@ -7027,6 +7054,11 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -7048,11 +7080,6 @@
       ],
       "Switch plan": [
         "Byt paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7538,6 +7565,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Avancerad nätverkssäkerhet och åtkomsthantering med dedikerade säkra gateways"
       ],
@@ -7597,9 +7630,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Säker åtkomst till Internet var som helst med väsentlig nätverksövervakning"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Säker molnlagring som låter dig lagra, synkronisera och dela filer enkelt och säkert."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Säker e-post med avancerade funktioner för din dagliga kommunikation."
@@ -10164,6 +10194,24 @@
         "Gå med i Teams-möte"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dag",
+        "${ ceilDays } dagar"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } timme",
+        "${ ceilHours } timmar"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minuter"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekund",
+        "${ seconds } sekunder"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } timme",
@@ -10749,6 +10797,9 @@
       "Start import process": [
         "Starta importprocessen"
       ],
+      "Subscription canceled": [
+        "Prenumeration avslutad"
+      ],
       "Summary": [
         "Sammanfattning"
       ],
@@ -10820,6 +10871,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis provperiod för ${ planName } slutar den ${ textDate }"
+      ],
+      "Your ${ planName } subscription started": [
+        "Din ${ planName }-prenumeration startade"
       ],
       "Your account is protected": [
         "Ditt konto är skyddat"
