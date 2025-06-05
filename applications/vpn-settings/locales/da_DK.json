@@ -447,10 +447,10 @@
       "Invite user": [
         "Invitér bruger"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Fortsæt redigering"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Fortsæt redigering"
       ],
       "Keep logo": [
@@ -524,9 +524,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åbn ${ CALENDAR_APP_NAME } indstillinger"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Åbn i ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Åbn navigation"
@@ -5888,10 +5885,10 @@
       "Allow recovery by phone": [
         "Tillad gendannelse via telefon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tilladt domæne"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tilladt domæne"
       ],
       "Amount": [
@@ -7443,9 +7440,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Sikker adgang til internettet overalt med vigtig netværksovervågning"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Sikker lagring i skyen der lader dig gemme, synkronisere og dele dine filer nemt og sikkert."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-mail med avancerede funktioner til din daglige kommunikation."
       ],
@@ -7505,6 +7499,14 @@
         "Den rabatpris på ${ priceCoupon } er gyldig i den første måned. Derefter fornys den automatisk til ${ priceLine }. Du kan annullere når som helst."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prøveversion"
+      ],
+      "Your account's usage": [
+        "Din kontos forbrug"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -7517,14 +7519,6 @@
       ],
       "Switch plans?": [
         "Skift abonnement?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prøveversion"
-      ],
-      "Your account's usage": [
-        "Din kontos forbrug"
       ]
     },
     "new_plans: tooltip": {

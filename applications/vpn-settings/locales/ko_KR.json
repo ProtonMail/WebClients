@@ -456,17 +456,20 @@
       "Invite user": [
         "사용자 초대"
       ],
-      "Keep editing": [
-        "계속 수정하기"
-      ],
       "Keep Editing": [
         "계속 편집하기"
+      ],
+      "Keep editing": [
+        "계속 수정하기"
       ],
       "Keep logo": [
         "로고 유지"
       ],
       "Keep my subscription": [
         "내 구독 유지하기"
+      ],
+      "Keep subscription": [
+        "구독 유지"
       ],
       "Let's talk": [
         "상담 및 계약 필요"
@@ -533,9 +536,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } 설정 열기"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "${ DOCS_SHORT_APP_NAME }에서 열기"
       ],
       "Open navigation": [
         "탐색 열기"
@@ -2999,6 +2999,9 @@
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API와 통신하던 중 오류가 발생했습니다."
       ],
+      "Error publishing changes": [
+        "변경 사항 게시 오류"
+      ],
       "Failed to load the STL preview": [
         "STL 미리보기 불러오기 실패"
       ],
@@ -4603,7 +4606,7 @@
         "Plus 서버와 기능에 계속 접근하기 위해 자동 갱신을 활성화하세요"
       ],
       "Enable single sign-on to keep your organization safe": [
-        "회원님의 조직이 안전하도록 통합 인증을 활성화하세요"
+        "회원님의 조직을 보호하기 위해 통합 인증을 활성화하세요"
       ],
       "Enabled countries": [
         "활성화된 국가"
@@ -4748,6 +4751,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "만약 이것이 오류라고 생각되시면, ${ contactLink } 로 연락해 주세요."
+      ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "취소시 ${ boldPlanTitle }에 즉시 접근할 수 없게 되며 ${ boldProtonFree } 플랜으로 자동 다운그레이드됩니다. 사용량이 무료 플랜의 한도를 초과하는 경우 제품 기능 및 데이터에 대한 접근이 제한될 수 있습니다."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "취소하면 ${ planTitle } 구독이 만료일인 ${ expiryDate }에 갱신되지 않습니다."
@@ -5532,6 +5538,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "계속하려면, 데이터 삭제를 원하는 사용자의 이름을 입력하십시오."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "${ boldCancelDate }까지 ${ boldPlanTitle }(을)를 무료로 계속 경험하시려면 지금 취소하지 마세요."
+      ],
       "To continue to ${ product }": [
         "${ product }(으)로 계속하기"
       ],
@@ -5760,6 +5769,9 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "계정 복구를 위해 제공하신 휴대폰 번호로 재설정 코드를 보내드립니다."
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "${ boldPlanTitle }를 취소하면 포기하게 되는 것:"
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "사용자의 제공자로 부터 ${ appName }을 위한 SAML 활성화 시,  콜백 URL (callback, ACS라고 함) 및 issuer ID를 사용하라는 안내창이 표시될 수 있습니다. 아래의 데이터를 제공자 입력란에 복사 후 붙여넣기를 하면 됩니다."
       ],
@@ -5856,6 +5868,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "한 번에 하나의 채팅 인스턴스만 열 수 있습니다. 새 대화를 시작하기 전에 이전 대화를 닫으십시오."
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "여전히 회원님의 모든 계정 데이터에 접근할 수 있습니다. 언제든지 다시 구독하여 모든 기능을 계속해서 누릴 수 있습니다."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "만약 이 폴더에 새로운 이메일 메시지가 도착한다면 알림을 켜서 알 수 있습니다."
       ],
@@ -5922,6 +5937,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "결제를 인증하기 위해 곧 PayPal로 이동됩니다."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "${ trialEndsOnFormatted } 전까지 취소하는 경우 결제되지 않습니다."
+      ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "10일간 해당 서버를 다른 국가로 재할당할 수 없습니다."
       ],
@@ -5967,6 +5985,9 @@
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "${ boldPlanTitle }의 무료 체험이 취소되었으며 계정 ${ boldUserEmail }이(가) ${ boldProtonFree }로 다운그레이드되었습니다."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "회원님의 정보는 Proton에서 안전하게 보호되고 있습니다. 서비스 제공에 필요한 상황에만 연락해 드립니다."
       ],
@@ -5975,6 +5996,9 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "다음 청구일은 ${ renewalTime }입니다. 즉시 플랜 변경이 필요한 경우 지원 팀에 연락해 주세요."
+      ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "조직 ${ boldOrganizationName }이(가) 비활성화되었으며 모든 사용자 등록열이 제거되었습니다."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "사용자의 조직이 싱글 사인 온 (SSO)를 사용합니다. SSO 제공자로 로그인을 탭하세요."
@@ -5996,6 +6020,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "사용자의 구독이 ${ renewalTime }에 자동으로 갱신됩니다."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "무료 체험이 ${ timeRemaining }에 종료됩니다."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "해당 서버들을 다른 게이트웨이로 즉시 추가할 수 있게 됩니다."
@@ -6185,10 +6212,10 @@
       "Allow recovery by phone": [
         "스마트폰을 통한 복구 허용"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "허용된 도메인"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "허용된 도메인"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -7672,7 +7699,7 @@
         "최대 10 Gbps"
       ],
       "Use on up to ${ n } device at once": [
-        "동시에 ${ n }개 기기에서 사용하세요"
+        "동시에 ${ n }개 기기에서 사용"
       ],
       "User credential management": [
         "사용자 자격 증명 관리"
@@ -7773,9 +7800,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "어디에서나 기본 네트워크 모니터링으로 안전하게 인터넷에 접속하세요."
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "쉽고 안전하게 저장, 동기화 및 공유하기 위한 안전한 클라우드 스토리지."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "일상적인 커뮤니케이션을 위한 고급 기능을 갖춘 안전한 이메일"
       ],
@@ -7838,6 +7862,14 @@
         "모든 ${ BRAND_NAME } 프리미엄 제품 및 기능을 단돈 ${ priceLine }에 누리세요. 언제든지 취소하세요."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } 체험"
+      ],
+      "Your account's usage": [
+        "계정 사용량"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -7850,14 +7882,6 @@
       ],
       "Switch plans?": [
         "요금제 변경?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } 체험"
-      ],
-      "Your account's usage": [
-        "계정 사용량"
       ]
     },
     "new_plans: tooltip": {
@@ -10719,6 +10743,9 @@
       "Locale updated": [
         "언어를 변경했습니다."
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "새로운 정책이 생성되었습니다. 변경 사항을 게시한 후에만 적용됩니다."
+      ],
       "Organization activated": [
         "조직 활성화됨"
       ],
@@ -10748,6 +10775,12 @@
       ],
       "Phone number updated": [
         "전화번호가 업데이트됨"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "정책이 변경되었습니다. 변경 사항을 게시해야만 적용됩니다."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "정책이 제거되었습니다. 변경 사항을 게시한 후에만 적용됩니다."
       ],
       "Preference saved": [
         "설정이 저장되었습니다."
@@ -10943,6 +10976,20 @@
     "Themes": {
       "Themes": [
         "테마"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays }일"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours }시간"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes }분"
+      ],
+      "${ seconds } second": [
+        "${ seconds }초"
       ]
     },
     "Title": {
@@ -11656,6 +11703,9 @@
       ],
       "Subscription": [
         "구독"
+      ],
+      "Subscription canceled": [
+        "구독이 취소되었습니다"
       ],
       "Successfully created ${ n } user account": [
         "성공적으로 ${ n } 사용자 계정을 생성했습니다."
@@ -12453,7 +12503,7 @@
         "이메일을 통한 Bitcoin"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "암호화되어 안전한 ${ MAIL_APP_NAME } 이메일 주소. 누구나 ${ BRAND_NAME } 이름만으로 손쉽게 Bitcoin을 송금하 수 있습니다．"
+        "암호화되어 안전한 ${ MAIL_APP_NAME } 이메일 주소. 누구나 ${ BRAND_NAME } 이름만으로 손쉽게 Bitcoin을 송금할 수 있습니다."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "착오가 발생하기 쉬운 복잡한 26자 Bitcoin 주소 대신 이메일을 통해 Bitcoin을 안전하게 거래하세요"
