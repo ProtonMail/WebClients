@@ -626,11 +626,11 @@
       "Upgrade": [
         "Lqem"
       ],
-      "Upgrade Now": [
-        "Sgerrzet amiḍan tura"
-      ],
       "Upgrade now": [
         "Sali aswir tura"
+      ],
+      "Upgrade Now": [
+        "Sgerrzet amiḍan tura"
       ],
       "Upload picture": [
         "Sali-d tugna"
@@ -4272,11 +4272,17 @@
       "Address": [
         "Tansa"
       ],
+      "Alias title": [
+        "Mefferisem azwel"
+      ],
       "All day": [
         "Ass meṛṛa"
       ],
       "All-day event notifications": [
         "Ilɣa n tedyanin ɣef teɣzi n wass"
+      ],
+      "Anderson": [
+        "Anderson"
       ],
       "App password": [
         "Awal uffir n usnas"
@@ -4334,6 +4340,9 @@
       ],
       "Colors": [
         "Initen"
+      ],
+      "Company name": [
+        "Isem n tekubannit"
       ],
       "Confirm password": [
         "Sentem awal uffir"
@@ -4400,6 +4409,9 @@
       ],
       "Emails (last month)": [
         "Imaylen ( ayyur aneggar)"
+      ],
+      "Enable desktop notifications": [
+        "Rmed talɣutin n tnarit"
       ],
       "Encrypt emails": [
         "Wgelhen imaylen"
@@ -4540,6 +4552,9 @@
       "Password": [
         "Awal uffir"
       ],
+      "Password strength": [
+        "Tizmert n wawal uffir"
+      ],
       "Payer": [
         "Amxellaṣ"
       ],
@@ -4612,11 +4627,11 @@
       "Theme": [
         "Asentel"
       ],
+      "Thomas": [
+        "Thomas"
+      ],
       "Time zone": [
         "Izḍi usrig"
-      ],
-      "Title": [
-        "Azwel"
       ],
       "To: ${ toEmail }": [
         "I: ${ toEmail }"
@@ -5067,6 +5082,11 @@
         "Arured alemmas VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -5085,11 +5105,6 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
