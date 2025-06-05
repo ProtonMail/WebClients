@@ -607,6 +607,9 @@
       "Get more servers": [
         "Отримати більше серверів"
       ],
+      "Get started": [
+        "Розпочнімо"
+      ],
       "Get the app": [
         "Отримати програму"
       ],
@@ -621,6 +624,9 @@
       ],
       "Get verification code": [
         "Отримати код підтвердження"
+      ],
+      "Go back": [
+        "Назад"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Відкрийте ${ DRIVE_APP_NAME }"
@@ -801,9 +807,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Відкрити налаштування ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Відкрити в ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Відкрити панель навігації"
@@ -4232,11 +4235,11 @@
       "Forward to": [
         "Переслати"
       ],
-      "Or": [
-        "Або"
-      ],
       "or": [
         "або"
+      ],
+      "Or": [
+        "Або"
       ],
       "With attachment": [
         "Має вкладення"
@@ -7501,6 +7504,9 @@
       "End-to-end email encryption is enabled for this group.": [
         "Наскрізне шифрування електронної пошти увімкнено для цієї групи."
       ],
+      "End-to-end encrypted": [
+        "Наскрізно зашифровано"
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL-адреса кінцевої точки, отримана від вашого провайдера ідентифікації (наприклад, https://idp.example.com/sso/saml)."
       ],
@@ -10065,10 +10071,10 @@
       "Allow sharing outside the organization": [
         "Дозволити спільний доступ за межами організації"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дозволений домен"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дозволений домен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10080,11 +10086,11 @@
       "Amount due": [
         "До сплати"
       ],
-      "And": [
-        "Та"
-      ],
       "AND": [
         "ТА"
+      ],
+      "And": [
+        "Та"
       ],
       "and": [
         "та"
@@ -10482,11 +10488,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Якщо"
-      ],
       "IF": [
         "ЯКЩО"
+      ],
+      "If": [
+        "Якщо"
       ],
       "Import all messages": [
         "Імпортувати всі повідомлення"
@@ -10683,14 +10689,14 @@
       "Optional": [
         "Необов'язково"
       ],
+      "OR": [
+        "АБО"
+      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
-      ],
-      "OR": [
-        "АБО"
       ],
       "Organization name": [
         "Назва організації"
@@ -11157,9 +11163,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } створено"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } оновлено"
       ],
       "Preference saved": [
         "Налаштування збережено"
@@ -12570,9 +12573,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Безпечний доступ до інтернету де завгодно з обов'язковим моніторингом мережі"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Безпечне хмарне сховище, яке дає змогу легко та безпечно зберігати, синхронізувати та ділитися файлами."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "Захищена електронна пошта з розширеними можливостями для щоденного спілкування."
       ],
@@ -13277,6 +13277,9 @@
     "Onboarding modal": {
       "browser": [
         "браузер"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Щоб розпочати роботу, вкажіть ім'я. Його бачитимуть люди, яким ви надсилаєте лист, запрошуєте на подію, чи ділитесь файлом."
       ]
     },
     "Option": {

@@ -892,9 +892,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } सेटिंग खोलें"
       ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "${ DOCS_SHORT_APP_NAME } में खोलें"
-      ],
       "Open navigation": [
         "नेविगेशन खोलें"
       ],
@@ -1363,10 +1360,10 @@
       "Upgrade": [
         "अपग्रेड करें"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "अभी अपग्रेड करें"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "अभी अपग्रेड करें"
       ],
       "Upload picture": [
@@ -3791,11 +3788,6 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "आपकी ${ PLAN_NAMES[PLANS.PASS] } सदस्यता प्रति वर्ष ${ price } की विशेष कीमत पर है। Free प्लैन में डाउनग्रेड करने पर, भविष्य में पुनः अपग्रेड करने पर भी, आप हमेशा के लिए छूट खो देंगे।"
-      ]
-    },
-    "Download attachments": {
-      "Download all": [
-        "सब डाउनलोड करें"
       ]
     },
     "driveplus2024: Deal details": {
@@ -8154,10 +8146,10 @@
       "Always move sender's emails": [
         "भेजनेवाले के ईमेल हमेशा ले जाएं"
       ],
-      "And": [
+      "AND": [
         "और"
       ],
-      "AND": [
+      "And": [
         "और"
       ],
       "and": [
@@ -8376,10 +8368,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "अगर"
       ],
-      "IF": [
+      "If": [
         "अगर"
       ],
       "Import all messages": [
@@ -8493,13 +8485,13 @@
       "Optional": [
         "वैकल्पिक"
       ],
+      "OR": [
+        "या"
+      ],
       "or": [
         "या"
       ],
       "Or": [
-        "या"
-      ],
-      "OR": [
         "या"
       ],
       "Original link": [
@@ -8621,9 +8613,6 @@
       ],
       "Time": [
         "समय"
-      ],
-      "Title": [
-        "टाइटल"
       ],
       "To:": [
         "को:"
@@ -9306,6 +9295,14 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle } लें"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "खाता हटा दो"
@@ -9327,14 +9324,6 @@
       ],
       "Switch plan": [
         "प्लान बदले"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } लें"
       ]
     },
     "new_plans: feature": {
@@ -9870,9 +9859,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "आवश्यक नेटवर्क मॉनिटरिंग के साथ कहीं से भी सुरक्षित रूप से इंटरनेट एक्सेस करें"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "सुरक्षित क्लाउड स्टोरेज जो करने दे आपको फाइल स्टोर, सिंक, और शेयर आसान और सुरक्षित तरीके से।"
       ],
       "Secure email with advanced features for your everyday communications.": [
         "आपके रोज़मर्रा के बातचीत के लिए एडवांस सुविधाओं के साथ सुरक्षित ईमेल।"

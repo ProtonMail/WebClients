@@ -936,9 +936,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Odprite nastavitve za ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Odpri v ${ DOCS_SHORT_APP_NAME }"
-      ],
       "Open navigation": [
         "Odpri krmarjenje"
       ],
@@ -1422,10 +1419,10 @@
       "Upgrade": [
         "Nadgradi"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Nadgradi zdaj"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Nadgradi zdaj"
       ],
       "Upload and share files": [
@@ -3892,11 +3889,6 @@
     "Downgrade warning": {
       "Remove discount": [
         "Odstrani popust"
-      ]
-    },
-    "Download attachments": {
-      "Download all": [
-        "Prenesi vse"
       ]
     },
     "Drawer tab, Action": {
@@ -6871,6 +6863,12 @@
       "Initializing…": [
         "Zagon …"
       ],
+      "Insert image": [
+        "Vstavi sliko",
+        "Vstavi sliki",
+        "Vstavi slike",
+        "Vstavi slik"
+      ],
       "Insert link": [
         "Vstavi povezavo"
       ],
@@ -8546,11 +8544,11 @@
       "Always move sender's emails": [
         "Vedno premakni pošiljateljeva sporočila"
       ],
-      "And": [
-        "In"
-      ],
       "AND": [
         "IN"
+      ],
+      "And": [
+        "In"
       ],
       "and": [
         "in"
@@ -8771,11 +8769,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Če"
-      ],
       "IF": [
         "ČE"
+      ],
+      "If": [
+        "Če"
       ],
       "Import all messages": [
         "Uvozi vsa sporočila"
@@ -8888,14 +8886,14 @@
       "Optional": [
         "Neobvezno"
       ],
+      "OR": [
+        "ALI"
+      ],
       "or": [
         "ali"
       ],
       "Or": [
         "Ali"
-      ],
-      "OR": [
-        "ALI"
       ],
       "Original link": [
         "Izvorna povezava"
@@ -9019,9 +9017,6 @@
       ],
       "Time": [
         "Čas"
-      ],
-      "Title": [
-        "Naslov"
       ],
       "To:": [
         "Za:"
@@ -9777,6 +9772,14 @@
         "Srednja hitrost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Get ${ planTitle }": [
+        "Pridobite ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Izbriši račun"
@@ -9798,14 +9801,6 @@
       ],
       "Switch plan": [
         "Zamenjaj paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Get ${ planTitle }": [
-        "Pridobite ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -9898,6 +9893,12 @@
         "${ numberOfUsers } uporabnika",
         "${ numberOfUsers } uporabniki",
         "${ numberOfUsers } uporabnikov"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin za doživljenjsko uporabo"
@@ -10374,9 +10375,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Varno uporabljajte splet od kjerkoli z osnovnim nadzorom omrežja"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Varna shramba v oblaku, s katero lahko preprosto shranjujete, sinhronizirate in delite datoteke."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Varna e-pošta z naprednimi funkcijami za vsakodnevno komunikacijo."

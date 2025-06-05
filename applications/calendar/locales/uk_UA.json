@@ -746,11 +746,11 @@
       "Upgrade": [
         "Покращити"
       ],
-      "Upgrade Now": [
-        "Передплатити"
-      ],
       "Upgrade now": [
         "Покращити"
+      ],
+      "Upgrade Now": [
+        "Передплатити"
       ],
       "Upload picture": [
         "Вивантажити зображення"
@@ -6073,9 +6073,6 @@
       "Time zone": [
         "Часовий пояс"
       ],
-      "Title": [
-        "Назва"
-      ],
       "To: ${ toEmail }": [
         "Кому: ${ toEmail }"
       ],
@@ -6642,6 +6639,11 @@
         "Середня швидкість VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Видалити обліковий запис"
@@ -6663,11 +6665,6 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7239,9 +7236,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Безпечний доступ до інтернету де завгодно з обов'язковим моніторингом мережі"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Безпечне хмарне сховище, яке дає змогу легко та безпечно зберігати, синхронізувати та ділитися файлами."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Захищена електронна пошта з розширеними можливостями для щоденного спілкування."

@@ -400,11 +400,11 @@
       "Move to another vault": [
         "Перамясціць у іншае сховішча"
       ],
-      "Move to Trash": [
-        "Перамясціць у Сметніцу"
-      ],
       "Move to trash": [
         "Перамясціць у сметніцу"
+      ],
+      "Move to Trash": [
+        "Перамясціць у Сметніцу"
       ],
       "Multiple select": [
         "Выбар некалькіх элементаў"
@@ -537,9 +537,6 @@
       ],
       "See members": [
         "Паглядзець удзельнікаў"
-      ],
-      "Select": [
-        "Выбраць"
       ],
       "Send email": [
         "Адправіць ліст"
@@ -796,7 +793,7 @@
         "Разблакіруйце дадатковыя функцыі бяспекі і падрабязныя журналы для абароны сваёй прысутнасці ў інтэрнэце."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "З дапамогай ${ PASS_SHORT_APP_NAME } Monitor вы будзеце заўсёды надзейна абаронены ад пагроз. Сістэма неадкладна апавясціць вас, калі адбудзецца кампраметацыя вашых уліковых даных. Разблакіруйце пашыраныя функцыі бяспекі і падрабязны журнал бяспекі, каб абараніць сябе ў інтэрнэце."
+        "З дапамогай ${ PASS_SHORT_APP_NAME } Monitor вы будзеце заўсёды надзейна абаронены ад пагроз. Сістэма неадкладна апавясціць вас, калі адбудзецца кампраметацыя вашых уліковых даных. Разблакіруйце пашыраныя функцыі бяспекі і падрабязныя журналы бяспекі, каб абараніць сябе ў інтэрнэце."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Ваш адрас электроннай пошты выяўлены прынамсі ў 1 уцечцы даных."
@@ -1538,9 +1535,6 @@
       "Change your password": [
         "Змяніць свой пароль"
       ],
-      "Choose your preferred look and feel.": [
-        "Выберыце пажаданы выгляд."
-      ],
       "Confirm your extra password to proceed with its removal.": [
         "Пацвердзіце свой дадатковы пароль, каб працягнуць яго выдаленне."
       ],
@@ -1837,9 +1831,6 @@
       ],
       "Low Priority": [
         "Нізкі прыярытэт"
-      ],
-      "Make it your own": [
-        "Персаналізуйце выгляд"
       ],
       "Manager": [
         "Менеджар"
@@ -2665,6 +2656,9 @@
       "API Credential": [
         "Уліковыя даныя API"
       ],
+      "API Key": [
+        "Ключ API"
+      ],
       "Application logs": [
         "Журналы праграмы"
       ],
@@ -2799,6 +2793,9 @@
       ],
       "Database": [
         "База даных"
+      ],
+      "Database Type": [
+        "Тып базы даных"
       ],
       "Date": [
         "Дата"
@@ -2959,6 +2956,12 @@
       "Holder Name": [
         "Імя трымальніка"
       ],
+      "Host": [
+        "Вузел"
+      ],
+      "Hostname": [
+        "Імя вузла"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Як разблакіраваць ${ PASS_SHORT_APP_NAME }"
       ],
@@ -3013,6 +3016,9 @@
       "Invitations": [
         "Запрашэнні"
       ],
+      "IP Address": [
+        "IP-адрас"
+      ],
       "Issuing Authority": [
         "Орган, які выдаў"
       ],
@@ -3057,6 +3063,9 @@
       ],
       "License": [
         "Ліцэнзія"
+      ],
+      "License Key": [
+        "Ліцэнзійны ключ"
       ],
       "License number": [
         "Пасведчанне кіроўцы"
@@ -3184,8 +3193,14 @@
       "Open-source password manager for effortless protection.": [
         "Менеджар пароляў з адкрытым зыходным кодам для абароны без намаганняў."
       ],
+      "Operating System": [
+        "Аперацыйная сістэма"
+      ],
       "Organization": [
         "Арганізацыя"
+      ],
+      "Owner": [
+        "Уладальнік"
       ],
       "Passkey": [
         "Ключ доступу"
@@ -3207,6 +3222,9 @@
       ],
       "Password history": [
         "Гісторыя пароляў"
+      ],
+      "Permissions": [
+        "Дазволы"
       ],
       "Personal": [
         "Асабісты"
@@ -3250,11 +3268,14 @@
       "Priority:": [
         "Прыярытэт:"
       ],
+      "Private key": [
+        "Прыватны ключ"
+      ],
       "Private Key": [
         "Прыватны ключ"
       ],
-      "Private key": [
-        "Прыватны ключ"
+      "Product": [
+        "Прадукт"
       ],
       "Program Name": [
         "Назва праграмы"
@@ -3297,6 +3318,9 @@
       ],
       "Second password": [
         "Другі пароль"
+      ],
+      "Secret": [
+        "Сакрэт"
       ],
       "Secure links": [
         "Бяспечныя спасылкі"
@@ -3361,11 +3385,11 @@
       "Show website favicons": [
         "Паказваць піктаграмы вэб-сайтаў"
       ],
-      "Social security": [
-        "Сацыяльнае забеспячэнне"
-      ],
       "Social Security": [
         "Social security"
+      ],
+      "Social security": [
+        "Сацыяльнае забеспячэнне"
       ],
       "Social security number": [
         "Нумар сацыяльнага страхавання"
@@ -3533,7 +3557,7 @@
         "Паглядзець падрабязнасці"
       ],
       "View logs": [
-        "Паглядзець журнал"
+        "Паглядзець журналы"
       ],
       "VPN Devices": [
         "Прылады VPN"

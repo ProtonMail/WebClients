@@ -76,6 +76,9 @@
       "Apply lifetime coupon code": [
         "使用终身优惠券代码"
       ],
+      "Authenticate": [
+        "身份验证"
+      ],
       "Back": [
         "上一步"
       ],
@@ -400,10 +403,10 @@
       "Move to another vault": [
         "移至另一个保险库"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "移至回收站"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "移至回收站"
       ],
       "Multiple select": [
@@ -1640,6 +1643,9 @@
       "Enter the address you want to email.": [
         "输入您要发送电子邮件的地址。"
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "请输入 ${ digit } 位数字的验证码。"
+      ],
       "Enter your extra password": [
         "输入您的额外密码"
       ],
@@ -2261,6 +2267,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "要查看您导入到数据，请点击浏览器工具栏中的 ${ PASS_APP_NAME } 图标。"
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "深受全球 50,000 多家企业用户和 1 亿账户的信赖。"
+      ],
       "Unable to copy to clipboard": [
         "无法复制到剪贴板"
       ],
@@ -2584,6 +2593,9 @@
       "API Credential": [
         "API 凭证"
       ],
+      "API Key": [
+        "API 密钥"
+      ],
       "Application logs": [
         "应用程序日志"
       ],
@@ -2722,6 +2734,9 @@
       "Database": [
         "数据库"
       ],
+      "Database Type": [
+        "数据库类型"
+      ],
       "Date": [
         "日期"
       ],
@@ -2793,6 +2808,9 @@
       ],
       "Export": [
         "导出"
+      ],
+      "Extra email addresses": [
+        "额外的邮箱地址"
       ],
       "Extra password": [
         "额外密码"
@@ -2881,6 +2899,12 @@
       "Holder Name": [
         "持有人姓名"
       ],
+      "Host": [
+        "主机"
+      ],
+      "Hostname": [
+        "主机名"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "如何解锁 ${ PASS_SHORT_APP_NAME }"
       ],
@@ -2938,6 +2962,9 @@
       "Invitations": [
         "邀请"
       ],
+      "IP Address": [
+        "IP 地址"
+      ],
       "Issuing Authority": [
         "签发机关"
       ],
@@ -2982,6 +3009,9 @@
       ],
       "License": [
         "许可协议"
+      ],
+      "License Key": [
+        "许可证密钥"
       ],
       "License number": [
         "许可编号"
@@ -3112,8 +3142,14 @@
       "Open-source password manager for effortless protection.": [
         "开源密码管理器，轻松提供保护。"
       ],
+      "Operating System": [
+        "操作系统"
+      ],
       "Organization": [
         "机构"
+      ],
+      "Owner": [
+        "所有者"
       ],
       "Passkey": [
         "通行密钥"
@@ -3138,6 +3174,9 @@
       ],
       "Password history": [
         "密码历史记录"
+      ],
+      "Permissions": [
+        "权限"
       ],
       "Personal": [
         "私人"
@@ -3181,11 +3220,14 @@
       "Priority:": [
         "优先级："
       ],
+      "Private Key": [
+        "私钥"
+      ],
       "Private key": [
         "私钥"
       ],
-      "Private Key": [
-        "私钥"
+      "Product": [
+        "产品"
       ],
       "Program Name": [
         "程序名称"
@@ -3231,6 +3273,9 @@
       ],
       "Second password": [
         "副密码"
+      ],
+      "Secret": [
+        "密钥"
       ],
       "Secure links": [
         "安全链接"
@@ -3307,10 +3352,10 @@
       "Sign in faster with ${ PASS_APP_NAME }": [
         "使用 ${ PASS_APP_NAME } 更快登录"
       ],
-      "Social security": [
+      "Social Security": [
         "社会保障"
       ],
-      "Social Security": [
+      "Social security": [
         "社会保障"
       ],
       "Social security number": [
@@ -3372,6 +3417,9 @@
       ],
       "Text": [
         "文本"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "仅需一次订阅即可享受最棒的 ${ BRAND_NAME } 体验"
       ],
       "The URL has been copied to the clipboard": [
         "URL 已复制到剪贴板"
@@ -3741,6 +3789,9 @@
       ]
     },
     "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus 终身版仅需 ${ plusLifetimePrice }"
+      ],
       "${ price }/month": [
         "${ price }/月"
       ]
@@ -3799,6 +3850,9 @@
       ],
       "my-domain.com": [
         "my-domain.com"
+      ],
+      "Name displayed in emails": [
+        "显示在邮件中的名称"
       ],
       "Note from SimpleLogin": [
         "来自 SimpleLogin 的笔记"

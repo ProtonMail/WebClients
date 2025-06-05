@@ -683,9 +683,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Avaa ${ CALENDAR_APP_NAME }in asetukset"
       ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Avaa ${ DOCS_SHORT_APP_NAME }issa"
-      ],
       "Open navigation": [
         "Avaa navigaatio"
       ],
@@ -4550,6 +4547,9 @@
       "Anyone with this link can access your folder.": [
         "Linkin välityksellä kuka tahansa voi avata kansion."
       ],
+      "Apr": [
+        "huhti"
+      ],
       "Are you sure you want to discard your changes?": [
         "Haluatko varmasti hylätä muutokset?"
       ],
@@ -4576,6 +4576,9 @@
       ],
       "Attention required": [
         "Huomiota vaaditaan"
+      ],
+      "Aug": [
+        "elo"
       ],
       "Automated Recovery ${ formattedDate }": [
         "Automaattinen palautus ${ formattedDate }"
@@ -4872,6 +4875,9 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Suojatun linkin avaus epäonnistui, koska: ${ error }"
       ],
+      "Feb": [
+        "helmi"
+      ],
       "File \"${ name }\" was deleted during download": [
         "\"${ name }\" poistettiin latauksen aikana"
       ],
@@ -5035,8 +5041,17 @@
       "It’s easy and secure": [
         "Se on helppoa ja turvallista"
       ],
+      "Jan": [
+        "tammi"
+      ],
       "JCB logo": [
         "JCB-logo"
+      ],
+      "Jul": [
+        "heinä"
+      ],
+      "Jun": [
+        "kesä"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Vahvista vain valintasi niin me teemme loput."
@@ -5101,12 +5116,18 @@
       "Makes your account safer": [
         "Tekee tilistäsi turvallisemman"
       ],
+      "Mar": [
+        "maalis"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode -logo"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Enintään ${ MAX_SHARED_URL_PASSWORD_LENGTH } merkki",
         "Enintään ${ MAX_SHARED_URL_PASSWORD_LENGTH } merkkiä"
+      ],
+      "May": [
+        "tuoko"
       ],
       "Medium Priority": [
         "Keskitason tärkeys"
@@ -5188,6 +5209,9 @@
       ],
       "Numbers": [
         "Numerot"
+      ],
+      "Oct": [
+        "loka"
       ],
       "of": [
         "/"
@@ -5407,9 +5431,6 @@
       "Restore": [
         "Palauta"
       ],
-      "Restore is in progress. This can take a few seconds.": [
-        "Palautus on käynnissä. Tämä voi kestää muutamia sekunteja."
-      ],
       "Restore Photos": [
         "Palauta kuvia"
       ],
@@ -5454,6 +5475,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Valitse tuotavat kalenterit. Jokaista tuotua kalenteria kohden luodaan uusi kalenteri tilaukseesi sisältyvän kalentereimäärän puitteissa."
+      ],
+      "Sep": [
+        "syys"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-maksut eivät ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen."
@@ -6751,9 +6775,6 @@
       "Thomas": [
         "Tuomas"
       ],
-      "Title": [
-        "Nimi"
-      ],
       "To: ${ toEmail }": [
         "Vastaanottaja: ${ toEmail }"
       ],
@@ -7953,9 +7974,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Käytä Internetiä mistä tahansa välttämättömällä verkon valvonnalla"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Suojattu pilvitallennustila tiedostojen turvalliseen säilytykseen, synkronointiin ja helppoon jakamiseen."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "Turvallinen sähköposti edistyneillä ominaisuuksilla jokapäiväiseen viestintään."
       ],
@@ -8704,10 +8722,10 @@
       "Invite members": [
         "Kutsu jäseniä"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Ehkä myöhemmin"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Ehkä myöhemmin"
       ],
       "Select theme": [
@@ -10564,6 +10582,24 @@
       ],
       "Videos": [
         "Videot"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } vuorokausi",
+        "${ ceilDays } vuorokautta"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } tunti",
+        "${ ceilHours }. tuntia"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuutti",
+        "${ ceilMinutes } minuuttia"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunti",
+        "${ seconds } sekuntia"
       ]
     },
     "Time unit for duration; displayed in the time picker": {

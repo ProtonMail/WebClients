@@ -280,6 +280,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Konfirmasi untuk membuka tautan ${ linkToShow }"
       ],
+      "Confirm purchase": [
+        "Konfirmasi pembelian"
+      ],
       "Connect": [
         "Hubungkan"
       ],
@@ -679,6 +682,9 @@
       "Get more servers": [
         "Dapatkan lebih banyak server"
       ],
+      "Get started": [
+        "Mulai"
+      ],
       "Get the app": [
         "Dapatkan aplikasinya"
       ],
@@ -696,6 +702,9 @@
       ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
+      ],
+      "Go back": [
+        "Kembali"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Tuju ${ DRIVE_APP_NAME }"
@@ -781,17 +790,20 @@
       "Keep": [
         "Simpan"
       ],
-      "Keep editing": [
-        "Lanjut menyunting"
-      ],
       "Keep Editing": [
         "Lanjut Menyunting"
+      ],
+      "Keep editing": [
+        "Lanjut menyunting"
       ],
       "Keep logo": [
         "Pertahankan logo"
       ],
       "Keep my subscription": [
         "Pertahankan langganan saya"
+      ],
+      "Keep subscription": [
+        "Pertahankan langganan"
       ],
       "label emails as": [
         "labeli email sebagai"
@@ -909,9 +921,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Buka pengaturan ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Buka di ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Buka navigasi"
@@ -2013,6 +2022,9 @@
       ],
       "Two-year": [
         "Dua tahun"
+      ],
+      "Yearly": [
+        "Tahunan"
       ]
     },
     "Blog": {
@@ -4639,6 +4651,12 @@
       "Actions": [
         "Tindakan"
       ],
+      "Forward from": [
+        "Teruskan dari"
+      ],
+      "Forward to": [
+        "Teruskan kepada"
+      ],
       "From": [
         "Dari"
       ],
@@ -4729,11 +4747,11 @@
       "Forward to": [
         "Teruskan ke"
       ],
-      "Or": [
-        "Atau"
-      ],
       "or": [
         "atau"
+      ],
+      "Or": [
+        "Atau"
       ],
       "With attachment": [
         "Dengan lampiran"
@@ -4981,6 +4999,9 @@
       ],
       "Error in one of the conditions": [
         "Kesalahan pada salah satu kondisi"
+      ],
+      "Error publishing changes": [
+        "Terdapat kesalahan dalam menerbitkan perubahan"
       ],
       "Expired": [
         "Kedaluwarsa"
@@ -7626,6 +7647,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Setidaknya ${ BETTER_PASSWORD_LENGTH } karakter"
       ],
+      "At least one application must be active": [
+        "Setidaknya satu aplikasi harus aktif"
+      ],
       "Attention required": [
         "Diperlukan perhatian"
       ],
@@ -8076,6 +8100,9 @@
       "End-to-end email encryption is enabled for this group.": [
         "Enkripsi email end-to-end diaktifkan untuk grup ini."
       ],
+      "End-to-end encrypted": [
+        "Terenkripsi secara end-to-end"
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL endpoint yang diperoleh dari penyedia identitas Anda (mis. https://idp.contoh.com/sso/saml)."
       ],
@@ -8297,6 +8324,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Apabila Anda merasa ini adalah sebuah kesalahan, silakan hubungi kami ${ contactLink }."
+      ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Apabila Anda membatalkan, Anda akan kehilangan akses ke ${ boldPlanTitle } dengan segera, dan Anda akan diturunkan ke paket ${ boldProtonFree }. Apabila pemakaian Anda melebihi batas pemakaian paket gratis, akses Anda ke fitur produk dan data Anda akan dapat dibatasi."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Apabila Anda membatalkan langganan, paket ${ planTitle } Anda tidak akan diperbarui ketika paket ini berakhir pada ${ expiryDate }."
@@ -9543,6 +9573,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Untuk mengonfirmasi, harap masukkan nama pengguna yang ingin Anda hapus."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Untuk terus menggunakan ${ boldPlanTitle } secara gratis hingga ${ boldCancelDate }, jangan batalkan paket Anda."
+      ],
       "To continue to ${ product }": [
         "Untuk melanjutkan ke ${ product }"
       ],
@@ -9879,6 +9912,9 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Kami akan mengirimkan kode untuk mengatur ulang akun ke nomor telpon yang telah Anda tentukan sebelumnya."
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Apa yang Anda korbankan pada saat Anda membatalkan ${ boldPlanTitle }:"
+      ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Pada saat dinonaktifkan, opsi ini akan mencegah berkas gambar untuk dimuat pada perangkat Anda tanpa Anda ketahui."
       ],
@@ -10032,6 +10068,9 @@
       "You can now return to the application to continue": [
         "Anda kini dapat kembali ke aplikasi untuk melanjutkan"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Anda akan tetap dapat mengakses seluruh data akun Anda. Anda dapat berlangganan kembali kapan saja untuk terus menikmati seluruh fitur kami."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat email baru yang masuk ke folder ini."
       ],
@@ -10134,6 +10173,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ trialEndsOnFormatted }."
+      ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Anda tidak akan dapat menetapkan ulang server ini ke negara lain selama 10 hari."
       ],
@@ -10166,6 +10208,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Langganan ${ PASS_SHORT_APP_NAME } Plus Anda akan digantikan dengan ${ PASS_SHORT_APP_NAME } Lifetime. Saldo sisa langganan Anda akan ditambahkan ke akun Anda. Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "Paket ${ planName } Anda kini merupakan paket berbayar yang diperbarui secara otomatis setiap 12 bulan. Tanggal penagihan Anda selanjutnya adalah ${ nextBillingDate }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Akun ${ VPN_APP_NAME } dan ${ MAIL_APP_NAME } Anda saling terhubung antar satu sama lain. Untuk menghapus keduanya, silakan masuk ke ${ loginLink } dan hapus akun Anda di sana."
@@ -10203,6 +10248,9 @@
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Masa uji coba gratis ${ boldPlanTitle } Anda telah dibatalkan, dan akun ${ boldUserEmail } milik Anda telah diturunkan ke ${ boldProtonFree }."
+      ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Impor Anda dari ${ accounts } ditunda sementara."
       ],
@@ -10220,6 +10268,9 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Tanggal penagihan Anda selanjutnya adalah ${ renewalTime }. Silakan hubungi layanan dukungan apabila Anda perlu untuk mengubah paket dengan segera."
+      ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Organisasi ${ boldOrganizationName } milik Anda telah dinonaktifkan, dan seluruh kuota pengguna yang dimiliki oleh organisasi ini telah dihapus."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisasi Anda menggunakan single sign-on (SSO). Tekan Masuk untuk melanjutkan dengan penyedia SSO Anda."
@@ -10253,6 +10304,12 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Tiket layanan dukungan Anda telah ditutup. Terima kasih telah menghubungi layanan dukungan ${ BRAND_NAME }."
+      ],
+      "Your trial ends on June 19. Upgrade to receive future breach reports.": [
+        "Masa uji coba Anda akan berakhir pada tanggal 19 Juni. Tingkatkan untuk terus menerima laporan kebocoran ke depannya."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Masa uji coba Anda akan berakhir dalam ${ timeRemaining }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Anda akan dapat menambahkan server berikut ke Gateway lain dengan segera."
@@ -10877,11 +10934,11 @@
       "Allow sharing outside the organization": [
         "Izinkan pembagian di luar organisasi"
       ],
-      "Allowed Domain": [
-        "Domain yang Diizinkan"
-      ],
       "Allowed domain": [
         "Domain yang diizinkan"
+      ],
+      "Allowed Domain": [
+        "Domain yang Diizinkan"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Memungkinkan semua orang dalam organisasi Anda untuk menambahkan tautan konferensi video dalam undangan kalender secara terpadu."
@@ -10892,11 +10949,11 @@
       "Amount due": [
         "Jumlah tagihan"
       ],
-      "And": [
-        "Dan"
-      ],
       "AND": [
         "DAN"
+      ],
+      "And": [
+        "Dan"
       ],
       "and": [
         "dan"
@@ -11324,11 +11381,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Jika"
-      ],
       "IF": [
         "JIKA"
+      ],
+      "If": [
+        "Jika"
       ],
       "Import all messages": [
         "Impor seluruh pesan"
@@ -11537,14 +11594,14 @@
       "Optional": [
         "Opsional"
       ],
+      "OR": [
+        "ATAU"
+      ],
       "or": [
         "atau"
       ],
       "Or": [
         "Atau"
-      ],
-      "OR": [
-        "ATAU"
       ],
       "Organization name": [
         "Nama organisasi"
@@ -12044,9 +12101,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } dibuat"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } diperbarui"
       ],
       "Preference saved": [
         "Preferensi disimpan"
@@ -13445,9 +13499,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Akses internet secara aman dari mana pun dengan pemantauan jaringan yang esensial"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Layanan penyimpanan aman berbasis cloud yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan berkas secara mudah dan aman."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
       ],
@@ -14194,6 +14245,9 @@
       ],
       "Desktop": [
         "Desktop"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Untuk memulai, tentukan nama tampilan Anda. Nama ini merupakan nama yang akan dilihat oleh orang lain pada saat Anda mengirim email, mengirim undangan, atau membagikan berkas kepada mereka."
       ]
     },
     "Option": {
@@ -15461,6 +15515,26 @@
         "hubungi"
       ]
     },
+    "Plan description": {
+      "All ${ BRAND_NAME } premium products included in Duo.": [
+        "Seluruh produk premium ${ BRAND_NAME } terliput dalam Duo."
+      ],
+      "Best if you need ${ maxSpace } of storage and for couples.": [
+        "Paket terbaik bagi Anda yang memerlukan ruang penyimpanan ${ maxSpace } dan yang berpasangan."
+      ],
+      "Great for everyday use and photo backups.": [
+        "Paket yang sesuai untuk penggunaan sehari-hari dan pencadangan foto."
+      ],
+      "Perfect for getting started with secure cloud storage.": [
+        "Paket yang sempurna untuk memulai dengan ruang penyimpanan cloud yang aman."
+      ],
+      "Secure cloud storage and collaboration for teams.": [
+        "Ruang penyimpanan cloud dan kolaborasi yang aman untuk tim."
+      ],
+      "The ideal plan for privacy-conscious power users.": [
+        "Paket yang ideal bagi pengguna lanjutan yang sadar akan privasi."
+      ]
+    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } bulan"
@@ -16019,7 +16093,7 @@
         "URL dasar dan token SCIM akan dihapus."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
-        "Untuk mengaktifkan kembali penyinkronan dengan penyedia identitas yang Anda gunakan, Anda perlu untuk menyelesaikan ulang proses integrasi SCIM."
+        "Untuk mengaktifkan kembali sinkronisasi dengan penyedia identitas yang Anda gunakan, Anda perlu untuk menyelesaikan ulang proses integrasi SCIM."
       ]
     },
     "scim: Label": {
@@ -16528,6 +16602,143 @@
       ],
       "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
         "Anda telah mengaktifkan verifikasi alamat untuk ${ boldSenderEmail }. Kami tidak dapat memverifikasi keaslian undangan kalender ini. Hal ini mungkin disebabkan oleh perubahan kunci enkripsi kontak. Silakan tinjau ulang pengaturan PGP kontak yang bersangkutan, atau Anda dapat meminta undangan baru kepada ${ boldSenderEmail }."
+      ]
+    },
+    "Signup": {
+      "${ DRIVE_APP_NAME } for Business": [
+        "${ DRIVE_APP_NAME } for Business"
+      ],
+      "${ value } of secure storage": [
+        "Ruang penyimpanan aman ${ value }"
+      ],
+      "${ value } of secure storage per user": [
+        "Ruang penyimpanan aman ${ value } per pengguna"
+      ],
+      "/user": [
+        "/pengguna"
+      ],
+      "30 custom email addresses": [
+        "30 alamat email khusus"
+      ],
+      "Advanced account protection": [
+        "Perlindungan akun tingkat lanjut"
+      ],
+      "Billing Cycle": [
+        "Siklus Tagihan"
+      ],
+      "Compare plans": [
+        "Bandingkan paket"
+      ],
+      "Confirm payment, access your Drive": [
+        "Konfirmasi penbayaran Anda, akses Drive Anda"
+      ],
+      "Connect all your devices": [
+        "Hubungkan seluruh perangkat Anda"
+      ],
+      "Continue with ${ PLAN_NAMES[plan] }": [
+        "Lanjut dengan ${ PLAN_NAMES[plan] }"
+      ],
+      "Encrypted password manager": [
+        "Pengelola kata sandi terenkripsi"
+      ],
+      "End-to-end encryption": [
+        "Enkripsi end-to-end"
+      ],
+      "Free": [
+        "Gratis"
+      ],
+      "get a secure ${ MAIL_APP_NAME } address": [
+        "dapatkan alamat ${ MAIL_APP_NAME } yang aman"
+      ],
+      "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }.": [
+        "Dapatkan alamat ${ MAIL_APP_NAME } yang aman, atau ${ internalButton }."
+      ],
+      "Manage user access": [
+        "Kelola akses pengguna"
+      ],
+      "Monthly": [
+        "Bulanan"
+      ],
+      "Most popular": [
+        "Terpopuler"
+      ],
+      "Need more space?": [
+        "Butuh lebih banyak ruang penyimpanan?"
+      ],
+      "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
+        "Butuh lebih banyak ruang penyimpanan? Anda dapat meningkatkan akun Anda kapan saja dengan paket yang berkisar mulai dari 200 GB hingga 3 TB. Sebagai perbandingan, ruang 5 GB sudah cukup untuk menampung hingga 2500 foto dari ponsel modern (dengan ~2MB per fotonya)."
+      ],
+      "Online documents": [
+        "Dokumen online"
+      ],
+      "Pick your perfect plan": [
+        "Pilih paket yang sempurna untuk Anda"
+      ],
+      "Promo applied – ${ checkout.discountPercent }% off": [
+        "Promo diterapkan – hemat ${ checkout.discountPercent }%"
+      ],
+      "Recover previous file versions": [
+        "Pulihkan versi berkas sebelumnya"
+      ],
+      "Save ${ percentage }%": [
+        "Hemat ${ percentage }%"
+      ],
+      "Save ${ priceDifferenceString }": [
+        "Hemat ${ priceDifferenceString }"
+      ],
+      "Secure file sharing": [
+        "Pembagian berkas yang aman"
+      ],
+      "Selected": [
+        "Terpilih"
+      ],
+      "Set display name": [
+        "Tentukan nama tampilan"
+      ],
+      "Set organization name": [
+        "Tentukan nama organisasi"
+      ],
+      "Set your password": [
+        "Atur kata sandi Anda"
+      ],
+      "Share and collaborate of files": [
+        "Bagikan dan kolaborasikan berkas"
+      ],
+      "Sign up, protect your files": [
+        "Daftarkan diri Anda, lindungi berkas Anda"
+      ],
+      "Sync files across devices and users": [
+        "Sinkronkan berkas antar perangkat dan pengguna"
+      ],
+      "The organization name will be visible to your users while they are signed in.": [
+        "Nama organisasi ini akan dapat dilihat oleh pengguna Anda pada saat mereka terhubung masuk."
+      ],
+      "Total": [
+        "Total"
+      ],
+      "Ultra fast and private VPN": [
+        "VPN ultra cepat dan privat"
+      ],
+      "Up to 2 users": [
+        "Hingga 2 pengguna"
+      ],
+      "Up to 6 users": [
+        "Hingga 6 pengguna"
+      ],
+      "Upload files of any size": [
+        "Unggah berkas sebesar apa pun"
+      ],
+      "Use your email, or ${ externalButton }.": [
+        "gunakan alamat email Anda, atau ${ externalButton }."
+      ],
+      "use your own email": [
+        "gunakan alamat email Anda sendiri"
+      ],
+      "Yearly": [
+        "Tahunan"
+      ],
+      "Your plan": [
+        "Paket Anda"
       ]
     },
     "Signup label": {
@@ -17868,6 +18079,9 @@
       "Locale updated": [
         "Bahasa diperbarui"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Kebijakan baru dibuat. Ini akan berlaku hanya setelah Anda memublikasikan perubahan."
+      ],
       "Organization activated": [
         "Organisasi berhasil diaktifkan"
       ],
@@ -17897,6 +18111,12 @@
       ],
       "Phone number updated": [
         "Nomor telepon telah diperbarui"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "Kebijakan telah diubah. Ini hanya akan berlaku setelah Anda memublikasikan perubahan."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "Kebijakan dihapus. Ini akan berlaku hanya setelah Anda memublikasikan perubahan."
       ],
       "Port copied to clipboard": [
         "Port disalin ke papan klip"
@@ -18166,6 +18386,20 @@
     "TableRow": {
       "No SMTP tokens found": [
         "Tidak ada token SMTP yang ditemukan"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } hari"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } jam"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } menit"
+      ],
+      "${ seconds } second": [
+        "${ seconds } detik"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -19456,6 +19690,9 @@
       "Subscription": [
         "Langganan"
       ],
+      "Subscription canceled": [
+        "Langganan dibatalkan"
+      ],
       "Success": [
         "Sukses"
       ],
@@ -19629,6 +19866,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Masa uji coba gratis ${ planName } Anda akan berakhir pada ${ textDate }"
+      ],
+      "Your ${ planName } subscription started": [
+        "Langganan ${ planName } Anda dimulai pada"
       ],
       "Your calendar link": [
         "Tautan kalender Anda"

@@ -234,6 +234,9 @@
       "Copy address": [
         "Salin alamat"
       ],
+      "Copy alias “${ name }”": [
+        "Salin alias “${ name }”"
+      ],
       "Copy email to clipboard": [
         "Salin email ke papan klip"
       ],
@@ -540,6 +543,9 @@
       "Keep my subscription": [
         "Pertahankan langganan saya"
       ],
+      "Keep subscription": [
+        "Pertahankan langganan"
+      ],
       "Later": [
         "Nanti"
       ],
@@ -677,9 +683,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Buka pengaturan ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Buka di ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Buka navigasi"
@@ -4505,6 +4508,9 @@
       "Anyone with this link can access your folder.": [
         "Siapa pun yang memiliki tautan ini akan dapat mengakses folder Anda."
       ],
+      "Apr": [
+        "Apr"
+      ],
       "Are you sure you want to discard your changes?": [
         "Apakah Anda yakin untuk membatalkan perubahan Anda?"
       ],
@@ -4531,6 +4537,9 @@
       ],
       "Attention required": [
         "Diperlukan perhatian"
+      ],
+      "Aug": [
+        "Agu"
       ],
       "Automated Recovery ${ formattedDate }": [
         "Pemulihan Otomatis ${ formattedDate }"
@@ -4675,6 +4684,9 @@
       ],
       "Custom email domains": [
         "Domain email khusus"
+      ],
+      "Dec": [
+        "Des"
       ],
       "Decrypting files": [
         "Mendekripsi berkas"
@@ -4823,6 +4835,9 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Gagal membuka tautan terenkripsi. Sebab: ${ error }"
       ],
+      "Feb": [
+        "Feb"
+      ],
       "File \"${ name }\" was deleted during download": [
         "Berkas \"${ name }\" telah dihapus pada saat pengunduhan sedang berlangsung"
       ],
@@ -4900,6 +4915,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
+      ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Apabila Anda membatalkan, Anda akan kehilangan akses ke ${ boldPlanTitle } dengan segera, dan Anda akan diturunkan ke paket ${ boldProtonFree }. Apabila pemakaian Anda melebihi batas pemakaian paket gratis, akses Anda ke fitur produk dan data Anda akan dapat dibatasi."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Apabila Anda membatalkan langganan, paket ${ planTitle } Anda tidak akan diperbarui ketika paket ini berakhir pada ${ expiryDate }."
@@ -4991,8 +5009,17 @@
       "It’s easy and secure": [
         "Mudah dan aman"
       ],
+      "Jan": [
+        "Jan"
+      ],
       "JCB logo": [
         "Logo JCB"
+      ],
+      "Jul": [
+        "Jul"
+      ],
+      "Jun": [
+        "Jun"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
@@ -5057,11 +5084,17 @@
       "Makes your account safer": [
         "Membuat akun Anda lebih aman"
       ],
+      "Mar": [
+        "Mar"
+      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maksimal ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter"
+      ],
+      "May": [
+        "Mei"
       ],
       "Medium Priority": [
         "Prioritas Menengah"
@@ -5138,11 +5171,17 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Catatan: data mungkin masih akan tersedia secara lokal pada perangkat yang Anda pasangi ${ DRIVE_APP_NAME }."
       ],
+      "Nov": [
+        "Nov"
+      ],
       "Number of dedicated servers in the organization": [
         "Jumlah server khusus pada organisasi"
       ],
       "Numbers": [
         "Angka"
+      ],
+      "Oct": [
+        "Okt"
       ],
       "of": [
         "dari"
@@ -5372,9 +5411,6 @@
       "Restore": [
         "Pulihkan"
       ],
-      "Restore is in progress. This can take a few seconds.": [
-        "Proses pemulihan sedang berlangsung. Hal ini dapat memakan waktu sejenak."
-      ],
       "Restore Photos": [
         "Pulihkan Foto"
       ],
@@ -5420,6 +5456,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Pilih kalender mana saja yang akan diimpor. Untuk setiap kalender yang diimpor, sistem kami akan membuat kalender baru hingga batas jumlah kalender maksimum yang diperkenankan oleh paket Anda."
       ],
+      "Sep": [
+        "Sep"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Pembayaran SEPA tidak tersedia saat ini. Silakan coba lagi nanti."
       ],
@@ -5453,11 +5492,20 @@
       "Shared by ": [
         "Dibagikan oleh "
       ],
+      "Shared by ${ sharedBy }": [
+        "Dibagikan oleh ${ sharedBy }"
+      ],
+      "Shared by you": [
+        "Dibagikan oleh kamu"
+      ],
       "Shared link not found": [
         "Tautan yang dibagikan tidak ditemukan"
       ],
       "Shared with me": [
         "Dibagikan dengan saya"
+      ],
+      "Shared with you": [
+        "Dibagikan dengan Anda"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Tanda tangan tidak dapat divalidasi karena kesalahan jaringan. Silakan coba lagi nanti."
@@ -5637,7 +5685,7 @@
         "Tindakan ini akan menghapus item terpilih yang telah Anda unggah secara permanen."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
-        "Ini akan menghapus perangkat ${ deviceName } tersinkron dari ${ DRIVE_APP_NAME } dan semua datanya dari ${ DRIVE_APP_NAME }. Folder yang Anda tambahkan ke Komputer Saya akan berhenti menyinkron."
+        "Tindakan ini akan menghapus perangkat ${ deviceName } yang tersinkron dari ${ DRIVE_APP_NAME } beserta dengan seluruh datanya dari ${ DRIVE_APP_NAME }. Folder yang Anda tambahkan ke Komputer Saya akan berhenti menyinkronkan data."
       ],
       "This will replace the existing file with the folder": [
         "Dengan ini, berkas yang telah ada akan diganti dengan folder"
@@ -5656,6 +5704,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Untuk menyelesaikan pembayaran Anda, silakan kirim ${ btcAmountBold } ke alamat di bawah ini."
+      ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Untuk terus menggunakan ${ boldPlanTitle } secara gratis hingga ${ boldCancelDate }, jangan batalkan paket Anda."
       ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "Untuk mengunduh berkas ${ DOCS_APP_NAME }, buka berkas ini di ${ DOCS_APP_NAME } dan ekspor."
@@ -5861,6 +5912,9 @@
       "What would you like to do?": [
         "Apa yang ingin Anda lakukan?"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Apa yang Anda korbankan pada saat Anda membatalkan ${ boldPlanTitle }:"
+      ],
       "When working remotely": [
         "Pada saat bekerja secara remote"
       ],
@@ -5948,6 +6002,9 @@
       "You can now return to the application to continue": [
         "Anda kini dapat kembali ke aplikasi untuk melanjutkan"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Anda akan tetap dapat mengakses seluruh data akun Anda. Anda dapat berlangganan kembali kapan saja untuk terus menikmati seluruh fitur kami."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat email baru yang masuk ke folder ini."
       ],
@@ -5990,6 +6047,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ trialEndsOnFormatted }."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Anda kemudian akan ditagih setiap ${ renewCycle } bulan pada harga ${ renewAmountStr }."
       ],
@@ -6016,6 +6076,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Langganan ${ PASS_SHORT_APP_NAME } Plus Anda akan digantikan dengan ${ PASS_SHORT_APP_NAME } Lifetime. Saldo sisa langganan Anda akan ditambahkan ke akun Anda. Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "Paket ${ planName } Anda kini merupakan paket berbayar yang diperbarui secara otomatis setiap 12 bulan. Tanggal penagihan Anda selanjutnya adalah ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akses ke akun Anda akan segera dibatasi. ${ payInvoiceLink }"
@@ -6053,6 +6116,9 @@
       "Your files will be encrypted and then saved.": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan."
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Masa uji coba gratis ${ boldPlanTitle } Anda telah dibatalkan, dan akun ${ boldUserEmail } milik Anda telah diturunkan ke ${ boldProtonFree }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Informasi Anda ditemukan pada tanggal ${ displayedDate }"
       ],
@@ -6076,6 +6142,9 @@
       ],
       "Your online activity is protected": [
         "Aktivitas online Anda terlindung"
+      ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Organisasi ${ boldOrganizationName } milik Anda telah dinonaktifkan, dan seluruh kuota pengguna yang dimiliki oleh organisasi ini telah dihapus."
       ],
       "Your password was leaked:": [
         "Kata sandi Anda telah bocor:"
@@ -6103,6 +6172,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Langganan Anda akan diperbarui secara otomatis pada ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Masa uji coba Anda akan berakhir dalam ${ timeRemaining }."
       ]
     },
     "info": {
@@ -6188,6 +6260,9 @@
     "Label": {
       "# of downloads": [
         "# unduhan"
+      ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } dari ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
         "Nama pengguna ${ BRAND_NAME }"
@@ -6716,9 +6791,6 @@
       ],
       "Thomas": [
         "Thomas"
-      ],
-      "Title": [
-        "Judul"
       ],
       "To: ${ toEmail }": [
         "Kepada: ${ toEmail }"
@@ -7947,9 +8019,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Akses internet secara aman dari mana pun dengan pemantauan jaringan yang esensial"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Layanan penyimpanan aman berbasis cloud yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan berkas secara mudah dan aman."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
       ],
@@ -8687,11 +8756,11 @@
       "Invite members": [
         "Undang anggota"
       ],
-      "Maybe Later": [
-        "Nanti Saja"
-      ],
       "Maybe later": [
         "Mungkin nanti"
+      ],
+      "Maybe Later": [
+        "Nanti Saja"
       ],
       "Select theme": [
         "Pilih tema"
@@ -9806,7 +9875,7 @@
         "Untuk seluruh layanan ${ BRAND_NAME }"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Untuk dapat lanjut mengunggah dan menyinkronkan berkas, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
+        "Untuk terus mengunggah dan menyinkronkan berkas, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Untuk terus menggunakan produk ${ BRAND_NAME }, kosongkan ruang yang ada atau ${ upgrade }"
@@ -10513,6 +10582,20 @@
         "Video"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } hari"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } jam"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } menit"
+      ],
+      "${ seconds } second": [
+        "${ seconds } detik"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } j"
@@ -11211,6 +11294,9 @@
       "Stop transfers?": [
         "Hentikan transfer?"
       ],
+      "Subscription canceled": [
+        "Langganan dibatalkan"
+      ],
       "Summary": [
         "Ikhtisar"
       ],
@@ -11315,6 +11401,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Masa uji coba gratis ${ planName } Anda akan berakhir pada ${ textDate }"
+      ],
+      "Your ${ planName } subscription started": [
+        "Langganan ${ planName } Anda dimulai pada"
       ],
       "Your 3 GB bonus": [
         "Bonus 3 GB Anda"

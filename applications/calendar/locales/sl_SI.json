@@ -806,10 +806,10 @@
       "Upgrade": [
         "Nadgradi"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Nadgradi zdaj"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Nadgradi zdaj"
       ],
       "Upload and share files": [
@@ -6351,9 +6351,6 @@
       "Time zone": [
         "Časovni pas"
       ],
-      "Title": [
-        "Naslov"
-      ],
       "To: ${ toEmail }": [
         "Za: ${ toEmail }"
       ],
@@ -6974,6 +6971,11 @@
         "Srednja hitrost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Izbriši račun"
@@ -6995,11 +6997,6 @@
       ],
       "Switch plan": [
         "Zamenjaj paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
       ]
     },
     "new_plans: feature": {
@@ -7092,6 +7089,12 @@
         "${ numberOfUsers } uporabnika",
         "${ numberOfUsers } uporabniki",
         "${ numberOfUsers } uporabnikov"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin za doživljenjsko uporabo"
@@ -7568,9 +7571,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Varno uporabljajte splet od kjerkoli z osnovnim nadzorom omrežja"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Varna shramba v oblaku, s katero lahko preprosto shranjujete, sinhronizirate in delite datoteke."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Varna e-pošta z naprednimi funkcijami za vsakodnevno komunikacijo."

@@ -431,6 +431,9 @@
       "Export selection as .vcf": [
         "Auswahl im .vcf-Format exportieren"
       ],
+      "Export system log": [
+        "Systemprotokoll exportieren"
+      ],
       "Fit to window": [
         "An das Fenster anpassen"
       ],
@@ -454,6 +457,9 @@
       ],
       "Get link": [
         "Link abrufen"
+      ],
+      "Get secure storage for ${ simplePriceString }": [
+        "Hole dir sicheren Speicher für ${ simplePriceString }"
       ],
       "Get Started": [
         "Erste Schritte"
@@ -547,6 +553,9 @@
       ],
       "Keep my subscription": [
         "Behalte mein Abonnement"
+      ],
+      "Keep subscription": [
+        "Abonnement behalten"
       ],
       "Later": [
         "Später"
@@ -685,9 +694,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "In ${ DOCS_SHORT_APP_NAME } öffnen"
       ],
       "Open navigation": [
         "Navigation öffnen"
@@ -1007,6 +1013,9 @@
       "Try another method": [
         "Eine andere Methode ausprobieren"
       ],
+      "Try it now": [
+        "Probiere es jetzt aus"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Versuche erneut zu speichern. Das Speichern ist fehlgeschlagen aufgrund von: ${ saveError }"
       ],
@@ -1178,138 +1187,6 @@
       ],
       "By leaving now, some events may not be imported": [
         "Wenn du jetzt beendest, werden einige Termine eventuell nicht importiert."
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Jetzt zugreifen"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB Speicher"
-      ],
-      "200 GB storage": [
-        "200 GB Speicherplatz"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB verschlüsselter Speicher"
-      ],
-      "Add unlimited credit cards": [
-        "Füge unbegrenzt Kreditkarten hinzu"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Alle Premium-Funktionen von ${ BRAND_NAME } Mail, Pass, VPN, Drive und Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blockiere Werbung, Tracker und Malware"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Rabatte basieren auf den Standardpreisen für Monatsabonnements. Am Ende des Abrechnungszeitraums verlängert sich dein Abonnement zum regulären Jahrespreis."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Verdopple deinen verschlüsselten Speicher – erhalte 1 TB für all deine Daten"
-      ],
-      "Encrypted password manager": [
-        "Verschlüsselter Passwortmanager"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Hier ist ein exklusives Geschenk, um unsere gemeinsame Reise zu feiern."
-      ],
-      "High speed streaming with VPN": [
-        "Hochgeschwindigkeits-Streaming mit VPN"
-      ],
-      "of privacy": [
-        "Privatsphäre"
-      ],
-      "Online document editor": [
-        "Editor für Onlinedokumente"
-      ],
-      "Online privacy for up to 2 people": [
-        "Online-Privatsphäre für bis zu 2 Personen"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Online-Privatsphäre für deine ganze Familie (bis zu 6 Benutzer*innen)"
-      ],
-      "Protect up to 10 devices": [
-        "Schütze bis zu 10 Geräte"
-      ],
-      "Recover previous file versions": [
-        "Vorherige Dateiversionen wiederherstellen"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Sichere dir Premium-Drive-Funktionen mit einem zeitlich begrenzten Rabatt."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Sichere dir Premium-Mail-Funktionen mit einen zeitlich begrenzten Rabatt."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Sichere dir Premium-Pass-Funktionen mit einem zeitlich begrenzten Rabatt."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Sichere dir Premium-VPN-Funktionen mit einen zeitlich begrenzten Rabatt."
-      ],
-      "Save time with built-in 2FA": [
-        "Spare Zeit mit integrierter 2FA"
-      ],
-      "Secure email with unlimited aliases": [
-        "Sichere E-Mail mit unbegrenzt vielen Aliassen"
-      ],
-      "Select any server": [
-        "Freie Serverwahl"
-      ],
-      "Share passwords easily": [
-        "Teile Passwörter ganz einfach"
-      ],
-      "Short @pm.me address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Stream your favorite content": [
-        "Streame deine Lieblingsinhalte"
-      ],
-      "thanks to you": [
-        "dank dir"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Verdreifache deinen verschlüsselten Speicher – erhalte 3 TB für all deine Daten"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
-      ],
-      "Use your own email domain": [
-        "Nutze deine eigene E-Mail-Domain"
-      ],
-      "years": [
-        "Jahre"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Jubiläumsangebot"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } Monat",
-        "${ n } Monate"
-      ],
-      "/ month": [
-        "/ Monat"
-      ],
-      "12 months": [
-        "12 Monate"
-      ],
-      "15 months": [
-        "15 Monate"
-      ],
-      "24 months": [
-        "24 Monate"
-      ],
-      "30 months": [
-        "30 Monate"
-      ],
-      "for ${ durationDeal }": [
-        "für ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -4044,6 +3921,9 @@
       "Create new shared album": [
         "Neues geteiltes Album erstellen"
       ],
+      "Drawer": [
+        "Seitenleiste"
+      ],
       "Rename album": [
         "Album umbenennen"
       ],
@@ -5041,6 +4921,9 @@
       "Expired": [
         "Abgelaufen"
       ],
+      "Export diagnostic logs for technical support and troubleshooting": [
+        "Exportiere Diagnoseprotokolle für den technischen Support und die Fehlerbehebung"
+      ],
       "Failed": [
         "Fehlgeschlagen"
       ],
@@ -5133,6 +5016,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
+      ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Wenn du kündigst, verlierst du sofort den Zugang zu ${ boldPlanTitle } und wirst auf das ${ boldProtonFree }-Abonnement zurückgestuft. Wenn deine Nutzung die Grenzen des kostenlosen Abonnements überschreitet, kann der Zugang zu den Produktfunktionen und deinen Daten eingeschränkt sein."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Wenn du kündigst, wird dein ${ planTitle }-Abonnement nach Ablauf am ${ expiryDate } nicht verlängert."
@@ -5630,9 +5516,6 @@
       "Restore": [
         "Wiederherstellen"
       ],
-      "Restore is in progress. This can take a few seconds.": [
-        "Die Wiederherstellung läuft gerade. Dies kann einige Sekunden dauern."
-      ],
       "Restore Photos": [
         "Fotos wiederherstellen"
       ],
@@ -5929,6 +5812,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Um die Zahlung abzuschließen, sende bitte ${ btcAmountBold } an die untenstehende Adresse."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Damit du ${ boldPlanTitle } bis zum ${ boldCancelDate } weiterhin kostenlos genießen kannst, kündige nicht."
+      ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "Um ${ DOCS_APP_NAME }-Dateien herunterladen zu können, öffne sie in ${ DOCS_APP_NAME } und exportiere sie."
       ],
@@ -6133,6 +6019,9 @@
       "What would you like to do?": [
         "Was möchtest du tun?"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Bei der Kündigung von ${ boldPlanTitle } verlierst du folgende Vorteile:"
+      ],
       "When working remotely": [
         "Wenn von auswärts gearbeitet wird"
       ],
@@ -6223,6 +6112,9 @@
       "You can now return to the application to continue": [
         "Du kannst jetzt zur Anwendung zurückkehren, um fortzufahren."
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Du kannst weiterhin auf all deine Kontodaten zugreifen. Du kannst jederzeit wieder abonnieren, um weiterhin all unsere Funktionen zu nutzen."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kannst Mitteilungen aktivieren, um Benachrichtigungen zu erhalten, sobald neue E-Mail-Nachrichten in diesem Ordner eingehen."
       ],
@@ -6267,6 +6159,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Dir wird nichts berechnet, wenn du vor ${ trialEndsOnFormatted } kündigst."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du wirst dann alle ${ renewCycle } Monate mit ${ renewAmountStr } belastet.",
         "Dir werden dann alle ${ renewCycle } Monate ${ renewAmountStr } in Rechnung gestellt."
@@ -6294,6 +6189,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Dein ${ PASS_SHORT_APP_NAME } Plus Abonnement wird durch ${ PASS_SHORT_APP_NAME } Lifetime ersetzt. Das übrige Guthaben deines Abonnements wird deinem Konto gutgeschrieben. Der ${ PASS_SHORT_APP_NAME } Lifetime Deal hat keine Verlängerungskosten, es handelt sich um eine einmal Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "Dein ${ planName }-Abonnement ist jetzt ein kostenpflichtiges Abonnement, das sich alle 12 Monate automatisch verlängert. Dein nächstes Abrechnungsdatum ist der ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
@@ -6331,6 +6229,9 @@
       "Your files will be encrypted and then saved.": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert."
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Deine kostenlose Testversion von ${ boldPlanTitle } wurde gekündigt und dein Konto ${ boldUserEmail } wurde auf ${ boldProtonFree } zurückgestuft."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Deine Informationen wurden am ${ displayedDate } gefunden."
       ],
@@ -6354,6 +6255,9 @@
       ],
       "Your online activity is protected": [
         "Deine Online-Aktivitäten sind geschützt."
+      ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Deine Organisation ${ boldOrganizationName } wurde deaktiviert und alle ihre Benutzerlizenzen wurden entfernt."
       ],
       "Your password was leaked:": [
         "Dein Passwort wurde offengelegt"
@@ -6382,6 +6286,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Dein Abonnement wird am ${ renewalTime } automatisch verlängert."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Deine Testversion endet in ${ timeRemaining }."
       ]
     },
     "info": {
@@ -6511,6 +6418,9 @@
       ],
       "Address": [
         "Anschrift"
+      ],
+      "Alias title": [
+        "Aliasbezeichnung"
       ],
       "All": [
         "Alle"
@@ -7004,9 +6914,6 @@
       ],
       "Thomas": [
         "Max"
-      ],
-      "Title": [
-        "Titel"
       ],
       "To: ${ toEmail }": [
         "An: ${ toEmail }"
@@ -8204,6 +8111,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB Cloud-Speicher, mit dem sich Dateien einfach speichern, synchronisieren und teilen lassen. Gesichert durch eine Ende-zu-Ende-Verschlüsselung."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB Cloud-Speicher, mit dem sich Dateien einfach speichern, synchronisieren und teilen lassen. Gesichert durch eine Ende-zu-Ende-Verschlüsselung."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Erweiterte Netzwerksicherheit und Zugangsverwaltung mit dedizierten sicheren Gateways"
       ],
@@ -8263,9 +8176,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Sicherer Internetzugang von überall aus mit grundlegender Netzwerküberwachung"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Sicherer Cloud-Speicher, mit dem du Dateien einfach und sicher speichern, synchronisieren und gemeinsam nutzen kannst."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sichere E-Mails mit erweiterten Funktionen für deine tägliche Kommunikation."
@@ -9024,10 +8934,10 @@
       "Invite members": [
         "Mitglieder einladen"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Vielleicht später"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Vielleicht später"
       ],
       "Select theme": [
@@ -9878,6 +9788,14 @@
         "Geteilt von ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "Neue Tabellenkalkulation"
+      ],
+      "Open in ${ appName }": [
+        "In ${ appName } öffnen"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "Nicht signieren"
@@ -10640,6 +10558,9 @@
       "Albums you've shared will appear here": [
         "Alben, die du geteilt hast, werden hier angezeigt"
       ],
+      "Securely share your favorite moments with friends and family using Albums.": [
+        "Mit Alben kannst du deine schönsten Momente sicher mit Freunden und Familie teilen."
+      ],
       "Your favorited photos will appear here": [
         "Deine Favoriten werden hier angezeigt"
       ],
@@ -10890,6 +10811,24 @@
       ],
       "Videos": [
         "Videos"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } Tag",
+        "${ ceilDays } Tage"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } Stunde",
+        "${ ceilHours } Stunden"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } Minute",
+        "${ ceilMinutes } Minuten"
+      ],
+      "${ seconds } second": [
+        "${ seconds } Sekunde",
+        "${ seconds } Sekunden"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -11456,6 +11395,9 @@
       "Phone numbers": [
         "Telefonnummern"
       ],
+      "Photo albums are here!": [
+        "Fotoalben sind da."
+      ],
       "Photos": [
         "Fotos"
       ],
@@ -11607,6 +11549,9 @@
       "Stop transfers?": [
         "Übertragung abbrechen?"
       ],
+      "Subscription canceled": [
+        "Abonnement beendet"
+      ],
       "Summary": [
         "Zusammenfassung"
       ],
@@ -11711,6 +11656,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."
+      ],
+      "Your ${ planName } subscription started": [
+        "Dein ${ planName }-Abonnement hat begonnen"
       ],
       "Your 3 GB bonus": [
         "Dein 3 GB-Bonus"

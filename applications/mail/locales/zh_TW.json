@@ -894,9 +894,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
       ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "於 ${ DOCS_SHORT_APP_NAME } 開啟"
-      ],
       "Open navigation": [
         "開啟導覽"
       ],
@@ -1371,11 +1368,11 @@
       "Upgrade": [
         "升級"
       ],
-      "Upgrade Now": [
-        "請升級"
-      ],
       "Upgrade now": [
         "立即升級"
+      ],
+      "Upgrade Now": [
+        "請升級"
       ],
       "Upload picture": [
         "上載圖像"
@@ -3807,11 +3804,6 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "您的${ PLAN_NAMES[PLANS.PASS] }訂閱為特殊價格${ price }每年。若降級為免費方案，您將永久失去此折扣，就算未來再次升級。"
-      ]
-    },
-    "Download attachments": {
-      "Download all": [
-        "下載全部"
       ]
     },
     "driveplus2024: Deal details": {
@@ -8073,10 +8065,10 @@
       "Always move sender's emails": [
         "總是移動寄件者的電子郵件"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
       "and": [
@@ -8295,10 +8287,10 @@
       "IBAN": [
         "國際銀行帳號"
       ],
-      "If": [
+      "IF": [
         "如"
       ],
-      "IF": [
+      "If": [
         "如"
       ],
       "Import all messages": [
@@ -8409,13 +8401,13 @@
       "Optional": [
         "自由列席"
       ],
+      "OR": [
+        "或"
+      ],
       "or": [
         "或"
       ],
       "Or": [
-        "或"
-      ],
-      "OR": [
         "或"
       ],
       "Original link": [
@@ -8537,9 +8529,6 @@
       ],
       "Time": [
         "時間"
-      ],
-      "Title": [
-        "標題"
       ],
       "To:": [
         "收件者："
@@ -9223,6 +9212,14 @@
         "一般 VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "選用 ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -9244,14 +9241,6 @@
       ],
       "Switch plan": [
         "切換方案"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "選用 ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -9760,9 +9749,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "透過必要的網路監控，您可以從任何地方安全地上網"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "安全的雲端儲存空間，讓您輕鬆安全地貯存、同步和分享檔案。"
       ],
       "Secure email with advanced features for your everyday communications.": [
         "為您的日常通訊提供進階功能的安全電子郵件。"

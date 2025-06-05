@@ -456,10 +456,10 @@
       "Invite user": [
         "Pozvat uživatele"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Pokračovat v úpravách"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Pokračovat v úpravách"
       ],
       "Keep logo": [
@@ -467,6 +467,9 @@
       ],
       "Keep my subscription": [
         "Zachovat mé předplatné"
+      ],
+      "Keep subscription": [
+        "Zachovat předplatné"
       ],
       "Let's talk": [
         "Promluvme si"
@@ -533,9 +536,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Otevřít v ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Otevřít menu"
@@ -4911,6 +4911,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Pokud si myslíte, že jde o chybu, kontaktujte nás ${ contactLink }."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Pokud službu zrušíte, okamžitě ztratíte přístup k ${ boldPlanTitle } a váš tarif bude snížen na ${ boldProtonFree }. Pokud vaše používání překročí limity bezplatného tarifu, může dojít k omezení přístupu k funkcím produktu a k vašim datům."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Pokud zrušíte vaše předplatné ${ planTitle }, nebude už obnoveno po vypršení jeho platnosti ${ expiryDate }."
       ],
@@ -5727,6 +5730,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Chcete-li potvrdit, zadejte jméno uživatele, kterého chcete odstranit."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Chcete-li si i nadále užívat ${ boldPlanTitle } zdarma až do ${ boldCancelDate }, službu nerušte."
+      ],
       "To continue to ${ product }": [
         "Pro pokračování na ${ product }"
       ],
@@ -5955,6 +5961,9 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Na zadané telefonní číslo zašleme kód pro obnovení účtu."
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Čeho se vzdáváte zrušením ${ boldPlanTitle }:"
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Při povolování SAML pro ${ appName } u poskytovatele identit můžete být vyzváni k použití zpětné adresy URL (ACS) a ID vydavatele. Níže uvedené údaje stačí zkopírovat a vložit do polí poskytovatele identit."
       ],
@@ -6069,6 +6078,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Můžete mít otevřen pouze jeden chat. Prosíme, zavřete předchozí konverzace před zahájením nové."
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Ke všem datům svého účtu máte stále přístup. Kdykoli si můžete tarif znovu předplatit a nadále využívat všechny naše funkce."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
       ],
@@ -6141,6 +6153,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelem ověření platby budete přesměrováni na PayPal."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Pokud službu zrušíte před ${ trialEndsOnFormatted }, nebudou vám účtovány žádné poplatky."
+      ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Po dobu 10 dnů nebudete moci tyto servery přeřadit do jiné země."
       ],
@@ -6192,6 +6207,9 @@
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Vaše bezplatná zkušební verze ${ boldPlanTitle } byla zrušena a váš účet ${ boldUserEmail } byl snížen na ${ boldProtonFree }."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vaše informace jsou u nás v bezpečí. Budeme vás kontaktovat pouze v případě, že to bude nutné pro poskytování našich služeb."
       ],
@@ -6200,6 +6218,9 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Datum příští fakturace je ${ renewalTime }. Pokud požadujete okamžitou změnu tarifu, kontaktujte prosím podporu."
+      ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Vaše organizace ${ boldOrganizationName } je deaktivována a všechny její uživatelské licence byly odebrány."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Vaše organizace používá jednotné přihlášení (SSO). Stiskněte tlačítko Přihlásit se a pokračujte s poskytovatelem SSO."
@@ -6224,6 +6245,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Vaše předplatné se automaticky obnoví ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Vaše zkušební verze skončí za ${ timeRemaining }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Tyto servery budete moci okamžitě přidat do jiné brány."
@@ -6425,10 +6449,10 @@
       "Allow recovery by phone": [
         "Povolit obnovení telefonem"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -8067,9 +8091,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Bezpečný přístup k internetu odkudkoli, včetně důležitého monitorování sítě"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Bezpečné kloudové úložiště, které vám umožňuje uchovávat, synchronizovat a sdílet soubory jednoduše a bezpečně."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "Zabezpečený e-mail s pokročilými funkcemi pro každodenní komunikaci."
       ],
@@ -8132,6 +8153,14 @@
         "Odemkněte všechny prémiové produkty a funkce ${ BRAND_NAME } jen za ${ priceLine }. Zrušit můžete kdykoli."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -8144,14 +8173,6 @@
       ],
       "Switch plans?": [
         "Změnit tarif?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -11191,7 +11212,7 @@
         "Jazykové prostředí aktualizováno"
       ],
       "New policy created. It will take effect only after you publish the changes.": [
-        "Nová zásada vytvořena. V platnost vstoupí až po zveřejnění změn."
+        "Nové zásady byly vytvořeny. Změny se projeví až po jejich publikování."
       ],
       "Organization activated": [
         "Organizace byla aktivována"
@@ -11224,10 +11245,10 @@
         "Telefonní číslo bylo aktualizováno"
       ],
       "Policy changed. It will take effect only after you publish the changes.": [
-        "Zásada změněna. V platnost vstoupí až po zveřejnění změn."
+        "Zásady byly změněny. Změny se projeví až po jejich publikování."
       ],
       "Policy deleted. It will take effect only after you publish the changes.": [
-        "Zásada smazána. V platnost vstoupí až po zveřejnění změn."
+        "Zásady byly smazány. Změny se projeví až po jejich publikování."
       ],
       "Preference saved": [
         "Nastavení uloženo"
@@ -11423,6 +11444,32 @@
     "Themes": {
       "Themes": [
         "Motivy"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } den",
+        "${ ceilDays } dny",
+        "${ ceilDays } dnů",
+        "${ ceilDays } dnů"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } hodinu",
+        "${ ceilHours } hodiny",
+        "${ ceilHours } hodin",
+        "${ ceilHours } hodin"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minutu",
+        "${ ceilMinutes } minuty",
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minut"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekundu",
+        "${ seconds } sekundy",
+        "${ seconds } sekund",
+        "${ seconds } sekund"
       ]
     },
     "Title": {
@@ -12151,6 +12198,9 @@
       ],
       "Subscription": [
         "Předplatné"
+      ],
+      "Subscription canceled": [
+        "Předplatné zrušeno"
       ],
       "Successfully created ${ n } user account": [
         "Úspěšně vytvořen ${ n } uživatelský účet",

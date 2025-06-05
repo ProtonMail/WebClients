@@ -423,6 +423,9 @@
       "Import contacts": [
         "Importera kontakter"
       ],
+      "Import data": [
+        "Importera data"
+      ],
       "Import emails": [
         "Importera e-post"
       ],
@@ -443,6 +446,9 @@
       ],
       "Keep my subscription": [
         "Behåll min prenumeration"
+      ],
+      "Keep subscription": [
+        "Behåll prenumeration"
       ],
       "Learn more": [
         "Lär dig mer"
@@ -605,6 +611,9 @@
       ],
       "Remove button": [
         "Ta bort knapp"
+      ],
+      "Remove file": [
+        "Ta bort fil"
       ],
       "Remove gift code": [
         "Ta bort presentkod"
@@ -2339,6 +2348,11 @@
         "Försenad faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } låter dig arbeta tillsammans med andra i en säker, krypterad miljö."
@@ -2462,11 +2476,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4998,9 +5007,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ägaren till denna adress har inaktiverat end-to-end-kryptering. För att kunna skicka krypterad e-post till denna adress måste ägaren återaktivera end-to-end-kryptering."
       ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
-        "Webbadressen du angav verkar ha kopierats felaktigt från Slack. När du kopierar långa länkar från Slack, högerklicka på länken och välj \"Kopiera länk\" istället för att kopiera den trunkerade URL-texten direkt."
-      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifieringsprocessen öppnar en ny webbläsarflik. Inaktivera alla aktiva popup-blockerare."
       ],
@@ -5075,6 +5081,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "För att slutföra din betalning, skicka ${ btcAmountBold } till adressen nedan."
+      ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "För att fortsätta njuta av ${ boldPlanTitle } gratis fram till ${ boldCancelDate }, avbryt inte."
       ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "För att ladda ner ${ DOCS_APP_NAME }-filerna, öppna dem i ${ DOCS_APP_NAME } och exportera dem."
@@ -5211,6 +5220,9 @@
       "What do you want to do?": [
         "Vad vill du göra?"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Vad du förlorar när du avbryter ${ boldPlanTitle }:"
+      ],
       "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
         "När dialogen öppnas, andra \"Destination\" till \"Spara som PDF\" och tryck på Spara."
       ],
@@ -5288,6 +5300,9 @@
       "You can now return to the application to continue": [
         "Du kan nu gå tillbaka till applikationen för att fortsätta"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Du kan fortfarande komma åt all din kontodata. Du kan prenumerera igen när som helst för att fortsätta att njuta av alla våra funktioner."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan slå på aviseringar för att bli uppmärksammad när nya e-postmeddelanden kommer till denna mapp."
       ],
@@ -5326,6 +5341,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
+      ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }.",
@@ -5397,6 +5415,9 @@
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Din gratis provperiod för ${ boldPlanTitle } har avbrutits, och ditt konto ${ boldUserEmail } har nedgraderats till ${ boldProtonFree }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Din information hittades den ${ displayedDate }"
       ],
@@ -5421,6 +5442,9 @@
       "Your online activity is protected": [
         "Din aktivitet online är skyddad"
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Din organisation ${ boldOrganizationName } är inaktiverad och alla dess användarplatser har tagits bort."
+      ],
       "Your password was leaked:": [
         "Ditt lösenord läcktes:"
       ],
@@ -5439,6 +5463,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Din prenumeration kommer förnyas automatiskt den ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Din provperiod slutar om ${ timeRemaining }."
       ]
     },
     "info": {
@@ -5554,6 +5581,9 @@
       ],
       "Address": [
         "Adress"
+      ],
+      "Alias title": [
+        "Alias-rubrik"
       ],
       "Anderson": [
         "Anderson"
@@ -5722,6 +5752,9 @@
       ],
       "Extended address": [
         "Utökad adress"
+      ],
+      "File": [
+        "Fil"
       ],
       "First name": [
         "Förnamn"
@@ -5956,9 +5989,6 @@
       ],
       "Thomas": [
         "Thomas"
-      ],
-      "Title": [
-        "Rubrik"
       ],
       "To: ${ toEmail }": [
         "Till: ${ toEmail }"
@@ -7088,6 +7118,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Avancerad nätverkssäkerhet och åtkomsthantering med dedikerade säkra gateways"
       ],
@@ -7147,9 +7183,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Säker åtkomst till Internet var som helst med väsentlig nätverksövervakning"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Säker molnlagring som låter dig lagra, synkronisera och dela filer enkelt och säkert."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Säker e-post med avancerade funktioner för din dagliga kommunikation."
@@ -9302,6 +9335,24 @@
         "vCard-fält"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dag",
+        "${ ceilDays } dagar"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } timme",
+        "${ ceilHours } timmar"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minuter"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekund",
+        "${ seconds } sekunder"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } timme",
@@ -9833,6 +9884,9 @@
       ],
       "Stop sharing?": [
         "Sluta dela?"
+      ],
+      "Subscription canceled": [
+        "Prenumeration avslutad"
       ],
       "Summary": [
         "Sammanfattning"

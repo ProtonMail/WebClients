@@ -269,9 +269,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "بازگشایی تنظیمات ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "باز کردن در ${ DOCS_SHORT_APP_NAME }"
-      ],
       "Open navigation": [
         "بازگشایی پیمایش"
       ],
@@ -4075,9 +4072,6 @@
       "Popular": [
         "محبوب"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "فضای ابری امن که به شما اجازه می دهد تا به راحتی و ایمن فایلهای خود را ذخیره، همگام‌سازی و به اشتراک بگذارید."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "ایمیل امن با قابلیت‌های پیشرفته برای ارتباطات روزانهٔ شما."
       ],
@@ -4123,6 +4117,14 @@
         "شرایط و ضوابط"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "دوره آزمایشی رایگان ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "رکورد استفاده حساب شما"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "حذف کردن حساب؟"
@@ -4135,14 +4137,6 @@
       ],
       "Switch plans?": [
         "تغییر دادن طرح؟"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "دوره آزمایشی رایگان ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "رکورد استفاده حساب شما"
       ]
     },
     "new_plans: tooltip": {
