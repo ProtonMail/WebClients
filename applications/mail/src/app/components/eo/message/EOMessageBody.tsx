@@ -8,6 +8,7 @@ import noop from '@proton/utils/noop';
 
 import MessageBodyPlaceholder from 'proton-mail/components/message/MessageBodyPlaceholder';
 import MessageBodyPrint from 'proton-mail/components/message/MessageBodyPrint';
+import useMessageImagesLoadError from 'proton-mail/components/message/hooks/useMessageImagesLoadError';
 
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
@@ -53,6 +54,11 @@ const EOMessageBody = ({
         isPhishingAttempt: isAutoFlaggedPhishing(message.data) || isSuspicious(message.data),
     });
 
+    const handleMessageImageLoadError = useMessageImagesLoadError({
+        localID: message.localID,
+        useProxy: !!EO_DEFAULT_MAILSETTINGS.ImageProxy,
+    });
+
     const encryptedMode = messageLoaded && !!message.errors?.decryption?.length;
     const sourceMode = !encryptedMode && inputSourceMode;
     const decryptingMode = !encryptedMode && !sourceMode && !bodyLoaded && messageLoaded;
@@ -87,7 +93,7 @@ const EOMessageBody = ({
                         }}
                         isPlainText={plain}
                         message={message}
-                        mailSettings={EO_DEFAULT_MAILSETTINGS}
+                        onMessageImageLoadError={handleMessageImageLoadError}
                     />
                     {linkModal}
                     <MessageBodyPrint isPrint={false} iframeRef={iframeRef} message={message} labelID="" />

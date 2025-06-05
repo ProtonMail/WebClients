@@ -1,6 +1,8 @@
 import type { RefObject } from 'react';
 import { useEffect, useRef } from 'react';
 
+import type { OnMessageImageLoadError } from 'proton-mail/components/message/interface';
+
 import type { MessageImages } from '../../store/messages/messagesTypes';
 import MessageBodyImage from './MessageBodyImage';
 
@@ -9,11 +11,10 @@ interface Props {
     iframeRef: RefObject<HTMLIFrameElement>;
     isPrint: boolean;
     onImagesLoaded?: () => void;
-    localID: string;
-    useProxy: boolean;
+    onMessageImageLoadError: OnMessageImageLoadError;
 }
 
-const MessageBodyImages = ({ messageImages, iframeRef, isPrint, onImagesLoaded, localID, useProxy }: Props) => {
+const MessageBodyImages = ({ messageImages, iframeRef, isPrint, onImagesLoaded, onMessageImageLoadError }: Props) => {
     const hasTriggeredLoaded = useRef<boolean>(false);
 
     useEffect(() => {
@@ -34,8 +35,7 @@ const MessageBodyImages = ({ messageImages, iframeRef, isPrint, onImagesLoaded, 
                           showEmbeddedImages={messageImages?.showEmbeddedImages || false}
                           image={image}
                           isPrint={isPrint}
-                          localID={localID}
-                          useProxy={useProxy}
+                          onMessageImageLoadError={onMessageImageLoadError}
                       />
                   ))
                 : null}
