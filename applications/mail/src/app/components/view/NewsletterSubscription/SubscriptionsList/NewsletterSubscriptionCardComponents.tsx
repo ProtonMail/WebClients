@@ -102,10 +102,10 @@ const ActiveSubscriptionButtons = ({ subscription }: PropsWithNewsletterSubscrip
                         unsubscribeModal.openModal(true);
                     }}
                     shape="outline"
-                    size="small"
+                    size="tiny"
                 >{c('Action').t`Unsubscribe`}</Button>
             )}
-            <Button onClick={handleMoveToFolderClick} shape="outline" size="small">{c('Action')
+            <Button onClick={handleMoveToFolderClick} shape="outline" size="tiny">{c('Action')
                 .t`Move to folder`}</Button>
 
             {subscription && unsubscribeModal.render && (
@@ -130,9 +130,9 @@ const InactiveSubscriptionButtons = ({ handleFilterClick }: { handleFilterClick:
         <Button
             onClick={() => handleFilterClick('MoveToTrash')}
             shape="outline"
-            size="small"
+            size="tiny"
             className="color-danger"
-        >{c('Action').t`Move to trash`}</Button>
+        >{c('Action').t`Move to Trash`}</Button>
     );
 };
 

@@ -344,12 +344,12 @@ describe('Newsletter subscriptions helpers', () => {
                     },
                     {
                         icon: 'archive-box',
-                        label: 'Move to archive',
+                        label: 'Move to Archive',
                         filter: 'MoveToArchive',
                     },
                     {
                         icon: 'trash',
-                        label: 'Move to trash',
+                        label: 'Move to Trash',
                         filter: 'MoveToTrash',
                     },
                 ],
@@ -378,12 +378,12 @@ describe('Newsletter subscriptions helpers', () => {
                     },
                     {
                         icon: 'archive-box',
-                        label: 'Stop moving to archive',
+                        label: 'Stop moving to Archive',
                         filter: 'MoveToArchive',
                     },
                     {
                         icon: 'trash',
-                        label: 'Move to trash',
+                        label: 'Move to Trash',
                         filter: 'MoveToTrash',
                     },
                 ],
@@ -412,12 +412,12 @@ describe('Newsletter subscriptions helpers', () => {
                     },
                     {
                         icon: 'archive-box',
-                        label: 'Move to archive',
+                        label: 'Move to Archive',
                         filter: 'MoveToArchive',
                     },
                     {
                         icon: 'trash',
-                        label: 'Stop moving to trash',
+                        label: 'Stop moving to Trash',
                         filter: 'MoveToTrash',
                     },
                 ],
