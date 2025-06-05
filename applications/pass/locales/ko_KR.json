@@ -400,10 +400,10 @@
       "Move to another vault": [
         "다른 금고로 이동"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "휴지통으로 이동"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "휴지통으로 이동"
       ],
       "Multiple select": [
@@ -537,9 +537,6 @@
       ],
       "See members": [
         "회원 보기"
-      ],
-      "Select": [
-        "선택"
       ],
       "Send email": [
         "이메일 전송"
@@ -1478,9 +1475,6 @@
       "Change your password": [
         "비밀번호를 변경하십시오"
       ],
-      "Choose your preferred look and feel.": [
-        "마음에 드는 모양과 느낌을 골라주세요."
-      ],
       "Confirm your extra password to proceed with its removal.": [
         "삭제를 하려면 추가 비밀번호를 확인하십시오."
       ],
@@ -1768,9 +1762,6 @@
       ],
       "Low Priority": [
         "중요도 낮음"
-      ],
-      "Make it your own": [
-        "나만의 것으로 만들기"
       ],
       "Manager": [
         "중간 관리자"
@@ -2533,6 +2524,9 @@
       "API Credential": [
         "API 자격 증명"
       ],
+      "API Key": [
+        "API 키"
+      ],
       "Application logs": [
         "어플리케이션 로그"
       ],
@@ -2667,6 +2661,9 @@
       ],
       "Database": [
         "데이터 베이스"
+      ],
+      "Database Type": [
+        "데이터베이스 유형"
       ],
       "Date": [
         "날짜"
@@ -2827,6 +2824,12 @@
       "Holder Name": [
         "소유자명"
       ],
+      "Host": [
+        "호스트"
+      ],
+      "Hostname": [
+        "호스트 이름"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "${ PASS_SHORT_APP_NAME }을 잠금 해제하는 방법"
       ],
@@ -2881,6 +2884,9 @@
       "Invitations": [
         "초대"
       ],
+      "IP Address": [
+        "IP 주소"
+      ],
       "Issuing Authority": [
         "발급 기관"
       ],
@@ -2925,6 +2931,9 @@
       ],
       "License": [
         "라이선스"
+      ],
+      "License Key": [
+        "인증키"
       ],
       "License number": [
         "라이선스 번호"
@@ -3052,8 +3061,14 @@
       "Open-source password manager for effortless protection.": [
         "손쉬운 보호를 위한 오픈 소스 비밀번호 관리자."
       ],
+      "Operating System": [
+        "운영 체제"
+      ],
       "Organization": [
         "조직"
+      ],
+      "Owner": [
+        "소유자"
       ],
       "Passkey": [
         "패스키"
@@ -3075,6 +3090,9 @@
       ],
       "Password history": [
         "비밀번호 변경 기록"
+      ],
+      "Permissions": [
+        "권한"
       ],
       "Personal": [
         "개인"
@@ -3118,11 +3136,14 @@
       "Priority:": [
         "우선 사항:"
       ],
+      "Private key": [
+        "개인 키"
+      ],
       "Private Key": [
         "비밀 키"
       ],
-      "Private key": [
-        "개인 키"
+      "Product": [
+        "제품"
       ],
       "Program Name": [
         "프로그램 이름"
@@ -3165,6 +3186,9 @@
       ],
       "Second password": [
         "2차 비밀번호"
+      ],
+      "Secret": [
+        "시크릿 키"
       ],
       "Secure links": [
         "안전한 링크"
@@ -3229,11 +3253,11 @@
       "Show website favicons": [
         "웹사이트 아이콘 표시"
       ],
-      "Social security": [
-        "사회 보장 번호"
-      ],
       "Social Security": [
         "주민등록증"
+      ],
+      "Social security": [
+        "사회 보장 번호"
       ],
       "Social security number": [
         "사회 보장 번호"
