@@ -10,11 +10,14 @@
  * Performance is optimized by freeing resources in inactive tabs through complete client
  * destruction on tab hiding. A continuous activity probe ensures connection health with the
  * service worker through periodic pings for long-running tabs. */
+import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
 import 'proton-pass-extension/lib/utils/polyfills';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
+import type { Runtime } from 'webextension-polyfill';
 
+import { FormType } from '@proton/pass/fathom';
 import browser from '@proton/pass/lib/globals/browser';
 import type { MaybeNull } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
@@ -117,10 +120,10 @@ const createClientController = (elements: PassElementsConfig) => {
             const reason = err instanceof Error ? err.message : err;
             controller.stopClient(String(reason ?? 'destroyed'));
             controller.listeners.removeAll();
-            browser.runtime.onMessage.removeListener(controller.onUnload);
+            browser.runtime.onMessage.removeListener(controller.onMessage);
         },
 
-        onUnload: (message: unknown) => {
+        onMessage: withContext<Runtime.OnMessageListener>((ctx, message, _, sendResponse) => {
             if (matchExtensionMessage(message, { sender: 'background' })) {
                 switch (message.type) {
                     case WorkerMessageType.UNLOAD_CONTENT_SCRIPT:
@@ -129,11 +132,19 @@ const createClientController = (elements: PassElementsConfig) => {
                 }
             }
 
-            return undefined; /* non-blocking handler */
-        },
+            if (matchExtensionMessage(message, { type: WorkerMessageType.AUTOFILL_CHECK_FORM, sender: 'background' })) {
+                const trackedForms = ctx?.service.formManager.getTrackedForms();
+                const hasLoginForm = trackedForms?.some(({ formType }) => formType === FormType.LOGIN);
+
+                sendResponse({ hasLoginForm });
+                return true;
+            }
+
+            return undefined as any; /* non-blocking handler */
+        }),
     };
 
-    browser.runtime.onMessage.addListener(controller.onUnload);
+    browser.runtime.onMessage.addListener(controller.onMessage);
 
     controller.listeners.addListener(document, 'visibilitychange', () => {
         switch (document.visibilityState) {
