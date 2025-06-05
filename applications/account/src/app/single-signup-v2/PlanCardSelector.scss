@@ -6,8 +6,9 @@
 	--card-box-shadow-color3: rgb(246 198 146 / 0.3);
 	--card-box-shadow-color4: rgb(172 154 246 / 0.3);
 	--card-background: var(--background-norm); // can't use opacity because some issues with card borders
-	--card-transition: background-color 0.2s ease, border 0.2s ease, opacity 0.2s ease, color 0.2s ease,
-		box-shadow 0.4s ease, transform 0.4s ease;
+	--card-transition:
+		background-color 0.2s ease, border 0.2s ease, opacity 0.2s ease, color 0.2s ease, box-shadow 0.4s ease,
+		transform 0.4s ease;
 
 	background-color: var(--card-background);
 	transition: var(--card-transition);
@@ -31,7 +32,11 @@
 	}
 
 	&-price {
-		font-size: rem(32);
+		font-size: rem(28);
+
+		@include media('>=medium') {
+			font-size: rem(32);
+		}
 	}
 
 	&-selected-indicator {
@@ -105,7 +110,11 @@
 	display: grid;
 	justify-content: center;
 	grid-template-columns: 1fr;
-	gap: var(--space-4);
+	gap: var(--space-2);
+
+	@include media('>=medium') {
+		gap: var(--space-4);
+	}
 
 	&[data-plan-count='2'] {
 		@include media('<=medium') {

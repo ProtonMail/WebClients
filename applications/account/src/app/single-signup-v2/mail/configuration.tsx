@@ -12,8 +12,10 @@ import {
 } from '@proton/components/containers/payments/features/drive';
 import {
     getAdvancedAccountProtectionFeature,
+    getAllPremiumServices,
     getScribeFeature,
     getSupport,
+    getUsersFeature,
 } from '@proton/components/containers/payments/features/highlights';
 import {
     getFoldersAndLabelsFeature,
@@ -25,7 +27,14 @@ import { getPasswordManagerToSecureCredentialsFeature } from '@proton/components
 import { getB2BVPNConnectionsPerUserFeature } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { CYCLE, type FreePlanDefault, PLANS, type Plan, type PlansMap } from '@proton/payments';
-import { APPS, BRAND_NAME, MAIL_APP_NAME, MAIL_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    BRAND_NAME,
+    FAMILY_MAX_USERS,
+    MAIL_APP_NAME,
+    MAIL_SHORT_APP_NAME,
+    SSO_PATHS,
+} from '@proton/shared/lib/constants';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -37,6 +46,7 @@ import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
 import LetsTalkGenericSubSection from '../LetsTalkGenericSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
 import SignupHeaderV2 from '../SignupHeaderV2';
+import AppsLogos from '../components/AppsLogos';
 import {
     getAdvancedSecurityBenefit,
     getAppsIncludedBenefit,
@@ -112,12 +122,7 @@ export const getMailBenefits = (plan: PLANS | undefined, audience: Audience | un
 };
 
 export const getFreeMailFeatures = (freePlan: FreePlanDefault) => {
-    return [
-        getFreeMailStorageFeature(freePlan),
-        getNAddressesFeature({ n: 1 }),
-        getFoldersAndLabelsFeature(3),
-        getNMessagesFeature(150),
-    ];
+    return [getFreeMailStorageFeature(freePlan), getNAddressesFeature({ n: 1 })];
 };
 
 export const getCustomMailFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
@@ -130,12 +135,52 @@ export const getCustomMailFeatures = (plan: Plan | undefined, freePlan: FreePlan
             family: plan.Name === PLANS.FAMILY,
             duo: plan.Name === PLANS.DUO,
         }),
+        plan.Name === PLANS.FAMILY && getUsersFeature(FAMILY_MAX_USERS),
+        (plan.Name === PLANS.BUNDLE || plan.Name === PLANS.FAMILY) && getAllPremiumServices(),
         getNAddressesFeature({ n: plan.MaxAddresses }),
         getFoldersAndLabelsFeature('unlimited'),
         getNMessagesFeature('unlimited'),
         getNDomainsFeature({ n: plan.MaxDomains }),
         getSupport('priority'),
-        getCalendarAppFeature(),
+        plan.Name === PLANS.MAIL && getCalendarAppFeature(),
+    ].filter(isTruthy);
+};
+
+export const getCustomMailPlusKeyFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
+    if (!plan) {
+        return [];
+    }
+    return [
+        getStorageFeature(plan.MaxSpace, {
+            freePlan,
+        }),
+        getNAddressesFeature({ n: plan.MaxAddresses }),
+    ];
+};
+
+export const getCustomBundleKeyFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
+    if (!plan) {
+        return [];
+    }
+    return [
+        getStorageFeature(plan.MaxSpace, {
+            freePlan,
+        }),
+        getAllPremiumServices(),
+    ];
+};
+
+export const getCustomFamilyKeyFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
+    if (!plan) {
+        return [];
+    }
+    return [
+        getStorageFeature(plan.MaxSpace, {
+            freePlan,
+            family: plan.Name === PLANS.FAMILY,
+        }),
+        getUsersFeature(FAMILY_MAX_USERS),
+        getAllPremiumServices(),
     ];
 };
 
@@ -275,10 +320,14 @@ export const getMailConfiguration = ({
             {
                 plan: PLANS.MAIL,
                 subsection: (
-                    <PlanCardFeatureList
-                        {...planCardFeatureProps}
-                        features={getCustomMailFeatures(plansMap?.[PLANS.MAIL], freePlan)}
-                    />
+                    <>
+                        <AppsLogos className="mb-1 md:mb-3" apps={[APPS.PROTONMAIL, APPS.PROTONCALENDAR]} />
+                        <PlanCardFeatureList
+                            {...planCardFeatureProps}
+                            features={getCustomMailFeatures(plansMap?.[PLANS.MAIL], freePlan)}
+                            keyFeatures={getCustomMailPlusKeyFeatures(plansMap?.[PLANS.MAIL], freePlan)}
+                        />
+                    </>
                 ),
                 type: 'standard' as const,
                 guarantee: true,
@@ -286,10 +335,14 @@ export const getMailConfiguration = ({
             {
                 plan: PLANS.BUNDLE,
                 subsection: (
-                    <PlanCardFeatureList
-                        {...planCardFeatureProps}
-                        features={getCustomMailFeatures(plansMap?.[PLANS.BUNDLE], freePlan)}
-                    />
+                    <>
+                        <AppsLogos className="mb-1 md:mb-3" />
+                        <PlanCardFeatureList
+                            {...planCardFeatureProps}
+                            features={getCustomMailFeatures(plansMap?.[PLANS.BUNDLE], freePlan)}
+                            keyFeatures={getCustomBundleKeyFeatures(plansMap?.[PLANS.BUNDLE], freePlan)}
+                        />
+                    </>
                 ),
                 type: 'best' as const,
                 guarantee: true,
@@ -297,10 +350,14 @@ export const getMailConfiguration = ({
             {
                 plan: PLANS.FAMILY,
                 subsection: (
-                    <PlanCardFeatureList
-                        {...planCardFeatureProps}
-                        features={getCustomMailFeatures(plansMap?.[PLANS.FAMILY], freePlan)}
-                    />
+                    <>
+                        <AppsLogos className="mb-1 md:mb-3" />
+                        <PlanCardFeatureList
+                            {...planCardFeatureProps}
+                            features={getCustomMailFeatures(plansMap?.[PLANS.FAMILY], freePlan)}
+                            keyFeatures={getCustomFamilyKeyFeatures(plansMap?.[PLANS.FAMILY], freePlan)}
+                        />
+                    </>
                 ),
                 type: 'standard' as const,
                 guarantee: true,
@@ -462,6 +519,9 @@ export const getMailConfiguration = ({
                 }
                 if (audience === Audience.B2B) {
                     return PLANS.BUNDLE_PRO_2024;
+                }
+                if (audience === Audience.B2C) {
+                    return PLANS.BUNDLE;
                 }
                 return PLANS.FREE;
             })(),

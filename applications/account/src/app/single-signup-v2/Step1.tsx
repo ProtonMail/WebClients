@@ -12,6 +12,7 @@ import {
     Icon,
     SkeletonLoader,
     getCheckoutRenewNoticeTextFromCheckResult,
+    useActiveBreakpoint,
     useErrorHandler,
     useHandler,
     useModalState,
@@ -192,6 +193,8 @@ const Step1 = ({
     const theme = usePublicTheme();
     const { getAvailableCurrencies } = useCurrencies();
     const [changingCurrency, withChangingCurrency] = useLoading();
+
+    const { viewportWidth } = useActiveBreakpoint();
 
     useEffect(() => {
         metrics.core_single_signup_pageLoad_total.increment({});
@@ -928,7 +931,9 @@ const Step1 = ({
                                             planCards={planCards[audience]}
                                             onSelect={handleChangePlan}
                                             onSelectedClick={() => {
-                                                accountDetailsRef.current?.scrollInto('email');
+                                                if (!viewportWidth['<=medium']) {
+                                                    accountDetailsRef.current?.scrollInto('email');
+                                                }
                                             }}
                                             loading={model.loadingDependencies}
                                         />
