@@ -200,3 +200,19 @@ export const sanitizeSignature = (input: string) => {
     const process = clean(PurifyConfig.DEFAULT);
     return process(input.replace(/<a\s.*href="(.+?)".*>(.+?)<\/a>/, '[URL: $1] $2'));
 };
+
+/**
+ * Cleanup performed for the message displayed in blockquote when replying
+ * @param input
+ * @warning this function alters the input element
+ */
+export const sanitizeComposerReply = (input: Element) => {
+    if (!input || !('querySelectorAll' in input)) {
+        return input;
+    }
+
+    // Remove all style tags
+    input.querySelectorAll('style').forEach((style) => style.remove());
+
+    return input;
+};
