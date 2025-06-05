@@ -187,42 +187,40 @@ const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onD
                         <ColorPicker id="contactGroupColor" color={model.color} onChange={handleChangeColor} />
                     </Field>
                 </Row>
-                {contactsAutocompleteItems.length ? (
-                    <div className="flex flex-nowrap mb-4 flex-column md:flex-row">
-                        <Label htmlFor="contactGroupEmail">{c('Label').t`Add email address`}</Label>
-                        <div>
-                            <div className="flex flex-column md:flex-row">
-                                <Field className="md:flex-1">
-                                    <Autocomplete
-                                        id="contactGroupEmail"
-                                        options={contactsAutocompleteItems}
-                                        limit={6}
-                                        value={value}
-                                        onChange={setValue}
-                                        getData={(value) => value.label}
-                                        type="search"
-                                        placeholder={c('Placeholder').t`Start typing an email address`}
-                                        onSelect={handleSelect}
-                                        autoComplete="off"
-                                    />
-                                </Field>
-                                <Button
-                                    className="ml-0 md:ml-4 mt-2 md:mt-0"
-                                    onClick={handleAddContact}
-                                    disabled={!isValidEmail}
-                                    data-testid="create-group:add-email"
-                                >
-                                    {c('Action').t`Add`}
-                                </Button>
-                            </div>
-                            {!canAddMoreContacts && error && (
-                                <Alert className="mb-4 mt-2" type="error">
-                                    {cannotAddMoreContactText}
-                                </Alert>
-                            )}
+                <div className="flex flex-nowrap mb-4 flex-column md:flex-row">
+                    <Label htmlFor="contactGroupEmail">{c('Label').t`Add email address`}</Label>
+                    <div>
+                        <div className="flex flex-column md:flex-row">
+                            <Field className="md:flex-1">
+                                <Autocomplete
+                                    id="contactGroupEmail"
+                                    options={contactsAutocompleteItems}
+                                    limit={6}
+                                    value={value}
+                                    onChange={setValue}
+                                    getData={(value) => value.label}
+                                    type="search"
+                                    placeholder={c('Placeholder').t`Start typing an email address`}
+                                    onSelect={handleSelect}
+                                    autoComplete="off"
+                                />
+                            </Field>
+                            <Button
+                                className="ml-0 md:ml-4 mt-2 md:mt-0"
+                                onClick={handleAddContact}
+                                disabled={!isValidEmail}
+                                data-testid="create-group:add-email"
+                            >
+                                {c('Action').t`Add`}
+                            </Button>
                         </div>
+                        {!canAddMoreContacts && error && (
+                            <Alert className="mb-4 mt-2" type="error">
+                                {cannotAddMoreContactText}
+                            </Alert>
+                        )}
                     </div>
-                ) : null}
+                </div>
 
                 <ContactGroupTable contactEmails={model.contactEmails} onDelete={handleDeleteEmail} />
 
