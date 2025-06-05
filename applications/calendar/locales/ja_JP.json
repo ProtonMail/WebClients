@@ -104,6 +104,9 @@
       "Attention required": [
         "注意が必要です"
       ],
+      "Authenticate": [
+        "認証"
+      ],
       "Back": [
         "戻る"
       ],
@@ -193,6 +196,9 @@
       ],
       "Copy address": [
         "アドレスをコピー"
+      ],
+      "Copy alias “${ name }”": [
+        "エイリアス「${ name }」をコピー"
       ],
       "Copy email address": [
         "メールアドレスをコピー"
@@ -326,6 +332,9 @@
       "Export selection as .vcf": [
         "選択項目を .vcf としてエクスポート"
       ],
+      "Forgot password?": [
+        "パスワードを忘れましたか？"
+      ],
       "Forward as attachment": [
         "添付ファイルとして転送"
       ],
@@ -433,6 +442,9 @@
       ],
       "Keep my subscription": [
         "サブスクリプションを継続する"
+      ],
+      "Keep subscription": [
+        "サブスクリプションを継続"
       ],
       "Later": [
         "後で"
@@ -797,10 +809,10 @@
       "Upgrade": [
         "アップグレード"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "今すぐアップグレード"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "今すぐアップグレード"
       ],
       "Upload and share files": [
@@ -824,8 +836,14 @@
       "Use a different payment method": [
         "別の支払い方法を使用"
       ],
+      "Use authentication code": [
+        "認証コードを使用"
+      ],
       "Use for sending": [
         "送信に使用"
+      ],
+      "Use recovery code": [
+        "回復用コードを使用"
       ],
       "Verify": [
         "検証"
@@ -1621,6 +1639,32 @@
       ],
       "strawberry": [
         "ストロベリー"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "日表示"
+      ],
+      "Month view": [
+        "月表示"
+      ],
+      "New event": [
+        "新しい予定"
+      ],
+      "Next period": [
+        "次の期間"
+      ],
+      "Previous period": [
+        "前の期間"
+      ],
+      "Search events": [
+        "予定を検索"
+      ],
+      "Today": [
+        "今日"
+      ],
+      "Week view": [
+        "週表示"
       ]
     },
     "Confirm modal title": {
@@ -3948,6 +3992,24 @@
         "無制限の Hide-my-email エイリアス"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "セキュリティキーの認証に失敗しました。もう一度お試しください。"
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } アカウントに紐づけられたセキュリティキーを挿入してください。"
+      ],
+      "Security key": [
+        "セキュリティキー"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "セキュリティキー"
+      ]
+    },
     "file size format": {
       "byte": [
         "バイト"
@@ -4052,6 +4114,9 @@
     "Header": {
       "Contacts": [
         "連絡先"
+      ],
+      "Drawer": [
+        "サイドパネル"
       ],
       "Name": [
         "名前"
@@ -4787,6 +4852,9 @@
       "Duplicate key updated": [
         "重複した鍵がアップデートされました"
       ],
+      "Each code can only be used once": [
+        "各コードは1度のみ使用可能です"
+      ],
       "Edit email address": [
         "メールアドレスを編集"
       ],
@@ -4805,11 +4873,20 @@
       "Enabling auto-deletion…": [
         "自動消去を有効にしています…"
       ],
+      "Enter the code from your authenticator app": [
+        "認証アプリからのコードを入力してください"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "インポートするメールアカウントの認証情報を入力します。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "認証コードを入力してください。${ digit }桁です。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "(組織管理者としての)パスワードを入力してください。"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "推定残り時間: ${ estimatedMinutes } 分"
@@ -4855,6 +4932,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
+      ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "キャンセルすると、すぐに${ boldPlanTitle }へのアクセスを失い、${ boldProtonFree }プランにダウングレードされます。もし使用容量が無料プランの制限を超えている場合、製品機能やデータへのアクセスが制限される場合があります。"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "キャンセルすると、${ planTitle } サブスクリプションは ${ expiryDate } に期限切れになっても更新されません。"
@@ -5333,6 +5413,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "お支払い手続きを完了するために、下のアドレスに ${ btcAmountBold } を送信してください。"
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "${ boldPlanTitle }を無料で${ boldCancelDate }までお楽しみいただくためには、キャンセルしないでください。"
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたが人間であることを確認します。"
       ],
@@ -5429,11 +5512,17 @@
       "Week and month views only apply to desktop.": [
         "週と月のビューはデスクトップにのみ適用されます。"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "${ boldPlanTitle }をキャンセルすると失うもの："
+      ],
       "When working remotely": [
         "リモートワークの時"
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "VPNに接続すると、暗号化技術を使用してIPアドレス(デバイスに割り当てられた固有のコード)を非表示にします。"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2要素認証を設定した時、認証アプリにアクセスできなくなってしまった場合にサインインに使用できる回復用コードを提供します。"
       ],
       "Which event would you like to delete?": [
         "どの予定を削除しますか？"
@@ -5516,6 +5605,9 @@
       "You can now return to the application to continue": [
         "アプリケーションに戻って続けましょう"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "すべてのアカウントのデータに引き続きアクセスすることができます。いつでも再登録して、すべての機能をまたお楽しみいただけます。"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "この機能を有効にすると、このフォルダーに新しいメッセージが届いた際に通知されます。"
       ],
@@ -5573,6 +5665,9 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "一連の予定はすべて更新されます。削除した参加者にも通知されます。"
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "${ trialEndsOnFormatted }より前にキャンセルした場合、請求はされません。"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "その後、 ${ renewCycle } ヶ月ごとに ${ renewAmountStr }に請求されます。"
       ],
@@ -5590,6 +5685,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } Plus サブスクリプションは ${ PASS_SHORT_APP_NAME } Lifetime に置き換えられます。サブスクリプションの残高はあなたのアカウントに追加されます。${ PASS_SHORT_APP_NAME } Lifetime ディールには更新価格はなく、一度の支払いで ${ PASS_SHORT_APP_NAME } への生涯アクセスが得られます。"
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "あなたの${ planName }プランは12ヶ月ごとに自動で更新される有料のサブスクリプションです。次回請求日は${ nextBillingDate }です。"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
@@ -5624,6 +5722,9 @@
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "${ boldPlanTitle }のフリートライアルがキャンセルされ、あなたのアカウント${ boldUserEmail }は${ boldProtonFree }にダウングレードされました。"
+      ],
       "Your information was found on ${ displayedDate }": [
         "あなたの情報は ${ displayedDate }で見つかりました。"
       ],
@@ -5648,6 +5749,9 @@
       "Your online activity is protected": [
         "オンラインアクティビティは保護されています"
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "あなたの組織${ boldOrganizationName }は無効化され、すべてのユーザーのシートが削除されました。"
+      ],
       "Your password was leaked:": [
         "パスワードが漏洩しました:"
       ],
@@ -5668,6 +5772,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "システムのタイムゾーンが${ timezone }に変更されたようです。タイムゾーンの設定を更新しますか？"
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "トライアルは${ timeRemaining }に終了します。"
       ]
     },
     "info": {
@@ -5870,6 +5977,9 @@
       ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
+      ],
+      "Authenticator app": [
+        "認証アプリ"
       ],
       "Beta Access": [
         "ベータ版アクセス"
@@ -6240,9 +6350,6 @@
       "Time zone": [
         "タイムゾーン"
       ],
-      "Title": [
-        "タイトル"
-      ],
       "To: ${ toEmail }": [
         "宛先: ${ toEmail }"
       ],
@@ -6296,6 +6403,9 @@
       ],
       "Your location": [
         "あなたの現在地"
+      ],
+      "Your password (admin)": [
+        "あなたのパスワード (管理者)"
       ]
     },
     "Label for contact group color": {
@@ -6534,6 +6644,9 @@
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "アカウントは削除のリスクに晒されています。データ損失を避けるには、管理者にアップグレードを要求してください。${ cta }"
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "容量がいっぱいです。${ BRAND_NAME }製品を引き続き使用するためには、容量を空けるか${ cta }してください。"
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "サブスクリプションが終了しました。${ cta }そしてデータの喪失を防ぎましょう。"
@@ -6845,6 +6958,11 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "アカウントを削除"
@@ -6866,11 +6984,6 @@
       ],
       "Switch plan": [
         "プランを変更"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
       ]
     },
     "new_plans: feature": {
@@ -7391,9 +7504,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "必要不可欠なネットワーク監視で、どこからでも安全にインターネットにアクセス"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "ファイルを簡単かつ安全に保存、同期、共有できる、安全なクラウドストレージ。"
       ],
       "Secure email with advanced features for your everyday communications.": [
         "毎日の会話のための、高度な機能を備えた安全なメールのプランです。"
@@ -9883,6 +9993,20 @@
         "Teamsに参加する"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays }日"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours }時間"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes }分"
+      ],
+      "${ seconds } second": [
+        "${ seconds }秒"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } 時間"
@@ -10157,6 +10281,9 @@
       "Enter 2FA code": [
         "2要素認証コードを入力"
       ],
+      "Enter your password": [
+        "パスワードを入力してください"
+      ],
       "Error": [
         "エラー"
       ],
@@ -10264,6 +10391,9 @@
       ],
       "Network error": [
         "ネットワークエラー"
+      ],
+      "Newsletters view": [
+        "ニュースレタービュー"
       ],
       "Night theme": [
         "夜間のテーマ"
@@ -10451,6 +10581,9 @@
       "Start import process": [
         "インポートを開始"
       ],
+      "Subscription canceled": [
+        "サブスクリプションがキャンセルされました"
+      ],
       "Summary": [
         "概要"
       ],
@@ -10522,6 +10655,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName }の無料トライアルは${ textDate }に終了します"
+      ],
+      "Your ${ planName } subscription started": [
+        "${ planName }サブスクリプションが開始されました"
       ],
       "Your account is protected": [
         "あなたのアカウントは保護されています"

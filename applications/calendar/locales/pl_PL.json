@@ -200,6 +200,9 @@
       "Copy address": [
         "Kopiuj adres"
       ],
+      "Copy alias “${ name }”": [
+        "Kopiuj alias “${ name }”"
+      ],
       "Copy email address": [
         "Kopiuj adres e-mail"
       ],
@@ -447,6 +450,9 @@
         "Zachowaj obecną strefę czasową"
       ],
       "Keep my subscription": [
+        "Zachowaj subskrypcję"
+      ],
+      "Keep subscription": [
         "Zachowaj subskrypcję"
       ],
       "Later": [
@@ -812,10 +818,10 @@
       "Upgrade": [
         "Ulepsz"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Ulepsz teraz"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Ulepsz teraz"
       ],
       "Upload and share files": [
@@ -1017,140 +1023,6 @@
       ],
       "Please do not close this tab. Some requests are still being processed in the background.": [
         "Nie zamykaj karty. Niektóre żądania są nadal przetwarzane w tle."
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Skorzystaj z oferty"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "200 GB storage": [
-        "200 GB przestrzeni dyskowej"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB zaszyfrowanej przestrzeni dyskowej"
-      ],
-      "Add unlimited credit cards": [
-        "Możliwość dodania nieograniczonej liczby kart płatniczych"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Wszystkie funkcje premium ${ BRAND_NAME } Mail, Pass, VPN, Drive i Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokuj reklamy, elementy śledzące i złośliwe oprogramowanie"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Zniżki oparte są na standardowych cenach miesięcznych. Po zakończeniu cyklu rozliczeniowego Twoja subskrypcja zostanie odnowiona według standardowej rocznej stawki."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Podwój zaszyfrowaną przestrzeń dyskową – zyskaj 1 TB i chroń wszystkie swoje dane"
-      ],
-      "Encrypted password manager": [
-        "Szyfrowany menedżer haseł"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Oto ekskluzywny prezent, którym chcemy uczcić naszą wspólną podróż."
-      ],
-      "High speed streaming with VPN": [
-        "Szybki streaming z VPN"
-      ],
-      "of privacy": [
-        "prywatności"
-      ],
-      "Online document editor": [
-        "Edytor dokumentów online"
-      ],
-      "Online privacy for up to 2 people": [
-        "Prywatność online dla maksymalnie 2 osób"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Prywatność online dla całej Twojej rodziny (do 6 osób)"
-      ],
-      "Protect up to 10 devices": [
-        "Chroń nawet 10 urządzeń"
-      ],
-      "Recover previous file versions": [
-        "Odzyskiwanie poprzednich wersji plików"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Dużo zaoszczędź na funkcjach premium usługi Drive dzięki ograniczonej czasowo zniżce."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Dużo zaoszczędź na funkcjach premium usługi Mail dzięki ograniczonej czasowo zniżce."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Dużo zaoszczędź na funkcjach premium usługi Pass dzięki ograniczonej czasowo zniżce."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Dużo zaoszczędź na funkcjach premium usługi VPN dzięki ograniczonej czasowo zniżce."
-      ],
-      "Save time with built-in 2FA": [
-        "Zaoszczędź czas dzięki wbudowanemu uwierzytelnianiu dwustopniowemu"
-      ],
-      "Secure email with unlimited aliases": [
-        "Bezpieczna poczta e-mail z nieograniczoną liczbą aliasów"
-      ],
-      "Select any server": [
-        "Wybierz dowolny serwer"
-      ],
-      "Share passwords easily": [
-        "Łatwe udostępnianie haseł"
-      ],
-      "Short @pm.me address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Streamuj ulubione treści"
-      ],
-      "thanks to you": [
-        "dzięki Tobie"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Potrój zaszyfrowaną przestrzeń dyskową – zyskaj 3 TB i chroń wszystkie swoje dane"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Nieograniczona liczba folderów, etykiet i filtrów"
-      ],
-      "Use your own email domain": [
-        "Możliwość użycia własnej domeny e-mail"
-      ],
-      "years": [
-        "lata"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Oferta jubileuszowa"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } miesiąc",
-        "${ n } miesiące",
-        "${ n } miesięcy",
-        "${ n } miesiąca"
-      ],
-      "/ month": [
-        "/ miesiąc"
-      ],
-      "12 months": [
-        "12 miesięcy"
-      ],
-      "15 months": [
-        "15 miesięcy"
-      ],
-      "24 months": [
-        "24 miesiące"
-      ],
-      "30 months": [
-        "30 miesięcy"
-      ],
-      "for ${ durationDeal }": [
-        "na ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -1820,6 +1692,32 @@
       ],
       "strawberry": [
         "truskawkowy"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Widok dnia"
+      ],
+      "Month view": [
+        "Widok miesiąca"
+      ],
+      "New event": [
+        "Nowe wydarzenie"
+      ],
+      "Next period": [
+        "Następny okres"
+      ],
+      "Previous period": [
+        "Poprzedni okres"
+      ],
+      "Search events": [
+        "Szukaj wydarzeń"
+      ],
+      "Today": [
+        "Dzisiaj"
+      ],
+      "Week view": [
+        "Widok tygodnia"
       ]
     },
     "Confirm modal title": {
@@ -4348,6 +4246,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Drawer": [
+        "Panel boczny"
+      ],
       "Name": [
         "Nazwa"
       ],
@@ -6304,6 +6205,9 @@
       "Address": [
         "Adres"
       ],
+      "Alias title": [
+        "Tytuł aliasu"
+      ],
       "All day": [
         "Cały dzień"
       ],
@@ -6690,9 +6594,6 @@
       ],
       "Time zone": [
         "Strefa czasowa"
-      ],
-      "Title": [
-        "Tytuł"
       ],
       "To: ${ toEmail }": [
         "Do: ${ toEmail }"
@@ -7326,6 +7227,11 @@
         "Umiarkowana prędkość VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Usuń konto"
@@ -7347,11 +7253,6 @@
       ],
       "Switch plan": [
         "Zmień plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7885,6 +7786,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } kończąca się na ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB przestrzeni dyskowej w chmurze, która umożliwia łatwe przechowywanie, synchronizowanie i udostępnianie plików. Zabezpieczone za pomocą szyfrowania end-to-end."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB przestrzeni dyskowej w chmurze, która umożliwia łatwe przechowywanie, synchronizowanie i udostępnianie plików. Zabezpieczone za pomocą szyfrowania end-to-end."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Zaawansowane bezpieczeństwo sieci i zarządzanie dostępem za pomocą dedykowanych bram"
       ],
@@ -7944,9 +7851,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Bezpieczny dostęp do Internetu, gdziekolwiek jesteś dzięki monitoringowi sieci"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Bezpieczna przestrzeń dyskowa w chmurze, w której możesz przechowywać, synchronizować i udostępniać pliki w łatwy sposób."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Bezpieczna poczta e-mail z zaawansowanymi funkcjami do codziennej komunikacji."
@@ -11250,6 +11154,9 @@
       "Start import process": [
         "Rozpocznij proces importowania"
       ],
+      "Subscription canceled": [
+        "Subskrypcja została anulowana"
+      ],
       "Summary": [
         "Podsumowanie"
       ],
@@ -11321,6 +11228,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Darmowa wersja próbna planu ${ planName } zakończy się ${ textDate }"
+      ],
+      "Your ${ planName } subscription started": [
+        "Subskrypcja ${ planName } została rozpoczęta"
       ],
       "Your account is protected": [
         "Konto jest chronione"
@@ -11501,12 +11411,6 @@
         "${ n } połączenia VPN",
         "${ n } połączeń VPN",
         "${ n } połączeń VPN"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } kraju",
-        "${ numberOfCountries } krajach",
-        "${ numberOfCountries } krajach",
-        "${ numberOfCountries } krajach"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } w ${ numberOfCountries } kraju",
