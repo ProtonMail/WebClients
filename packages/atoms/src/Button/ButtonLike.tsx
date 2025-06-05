@@ -1,8 +1,8 @@
 import type { ElementType, ForwardedRef } from 'react';
 import { forwardRef } from 'react';
 
-import { ThemeColor } from '@proton/colors';
 import type { ThemeColorUnion } from '@proton/colors';
+import { ThemeColor } from '@proton/colors';
 import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
@@ -20,6 +20,7 @@ export enum ButtonLikeShapeEnum {
 export type ButtonLikeShape = `${ButtonLikeShapeEnum}`;
 
 export enum ButtonLikeSizeEnum {
+    Tiny = 'tiny',
     Small = 'small',
     Medium = 'medium',
     Large = 'large',

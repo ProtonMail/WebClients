@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import type { Shape } from '@proton/components/components/button/ButtonGroup';
+import { Button, type ButtonLikeShape } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 import type { ThemeSvgColors, ThemeSvgSize } from './ThemeSvg';
@@ -20,7 +19,7 @@ interface Props {
     as?: React.ElementType;
     className?: string;
     borderRadius?: 'sm' | 'md';
-    shapeButton?: Shape;
+    shapeButton?: ButtonLikeShape;
     'data-testid'?: string;
 }
 
