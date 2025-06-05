@@ -23,4 +23,4 @@ export const createTelemetryEvent = <T extends TelemetryEventName>(
 /** Telemetry booleans should always be integers.
  * FIXME: we could post-process all boolean values
  * inside the telemetry service when pushing events */
-export const telemetryBool = (val: boolean) => (val ? 1 : 0);
+export const telemetryBool = (val: boolean) => (val ? '1' : '0');
