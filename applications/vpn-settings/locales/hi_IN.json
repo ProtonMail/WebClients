@@ -420,11 +420,11 @@
       "Invite user": [
         "यूज़र को न्योता भेजें"
       ],
-      "Keep editing": [
-        "संपादन जारी रखें"
-      ],
       "Keep Editing": [
         "लिखना जारी रखें"
+      ],
+      "Keep editing": [
+        "संपादन जारी रखें"
       ],
       "Keep logo": [
         "चिन्ह रखें"
@@ -485,9 +485,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } सेटिंग खोलें"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "${ DOCS_SHORT_APP_NAME } में खोलें"
       ],
       "Open navigation": [
         "नेविगेशन खोलें"
@@ -5911,10 +5908,10 @@
       "Allow recovery by phone": [
         "फ़ोन द्वारा पुनर्प्राप्ति की अनुमति दें"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "अनुमत डोमेन"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "अनुमत डोमेन"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -7435,9 +7432,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "आवश्यक नेटवर्क मॉनिटरिंग के साथ कहीं से भी सुरक्षित रूप से इंटरनेट एक्सेस करें"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "सुरक्षित क्लाउड स्टोरेज जो करने दे आपको फाइल स्टोर, सिंक, और शेयर आसान और सुरक्षित तरीके से।"
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "अपने रोजमर्रा के कामों के लिए सुरक्षित ईमेल, जिसमें कई आधुनिक सुविधाएँ हैं।"
       ],
@@ -7497,6 +7491,14 @@
         "सिर्फ ${ priceLine } में सभी ${ BRAND_NAME } प्रीमियम उत्पाद और खासियतें अनलॉक करें। किसी भी समय रद्द करें।"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } ट्रायल"
+      ],
+      "Your account's usage": [
+        "आपका खाते का इस्तेमाल"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "खाता मिटाएं?"
@@ -7509,14 +7511,6 @@
       ],
       "Switch plans?": [
         "प्लान बदले?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } ट्रायल"
-      ],
-      "Your account's usage": [
-        "आपका खाते का इस्तेमाल"
       ]
     },
     "new_plans: tooltip": {
