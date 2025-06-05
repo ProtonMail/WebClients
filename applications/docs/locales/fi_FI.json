@@ -2333,6 +2333,11 @@
         "Erääntynyt lasku"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch -tuontiapurilla"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } ${ DRIVE_APP_NAME }ssä antaa sinun työskennellä yhdessä muiden kanssa, turvallisessa ja salatussa ympäristössä."
@@ -2441,11 +2446,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch -tuontiapurilla"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5661,6 +5661,9 @@
       "Extended address": [
         "Laajennettu osoite"
       ],
+      "File": [
+        "Tiedosto"
+      ],
       "First name": [
         "Etunimi"
       ],
@@ -5894,9 +5897,6 @@
       ],
       "Thomas": [
         "Tuomas"
-      ],
-      "Title": [
-        "Nimi"
       ],
       "To: ${ toEmail }": [
         "Vastaanottaja: ${ toEmail }"
@@ -7028,9 +7028,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Käytä Internetiä mistä tahansa välttämättömällä verkon valvonnalla"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Suojattu pilvitallennustila tiedostojen turvalliseen säilytykseen, synkronointiin ja helppoon jakamiseen."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Turvallinen sähköposti edistyneillä ominaisuuksilla jokapäiväiseen viestintään."
@@ -9152,6 +9149,24 @@
       ],
       "vCard field": [
         "vCard-kenttä"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } vuorokausi",
+        "${ ceilDays } vuorokautta"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } tunti",
+        "${ ceilHours }. tuntia"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuutti",
+        "${ ceilMinutes } minuuttia"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunti",
+        "${ seconds } sekuntia"
       ]
     },
     "Time unit for duration; displayed in the time picker": {

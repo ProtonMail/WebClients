@@ -210,6 +210,9 @@
       "Copy address": [
         "Salin alamat"
       ],
+      "Copy alias “${ name }”": [
+        "Salin alias “${ name }”"
+      ],
       "Copy as markdown": [
         "Salin sebagai markdown"
       ],
@@ -417,6 +420,9 @@
       "Import contacts": [
         "Impor kontak"
       ],
+      "Import data": [
+        "Impor data"
+      ],
       "Import emails": [
         "Impor email"
       ],
@@ -437,6 +443,9 @@
       ],
       "Keep my subscription": [
         "Pertahankan langganan saya"
+      ],
+      "Keep subscription": [
+        "Pertahankan langganan"
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
@@ -599,6 +608,9 @@
       ],
       "Remove button": [
         "Hapus tombol"
+      ],
+      "Remove file": [
+        "Hapus berkas"
       ],
       "Remove gift code": [
         "Hapus kode hadiah"
@@ -2324,6 +2336,11 @@
         "Faktur yang tertunggak"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gunakan alat bantu impor Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } di ${ DRIVE_APP_NAME } memungkinkan Anda untuk saling bekerja sama dalam lingkungan yang aman dan terenkripsi."
@@ -2447,11 +2464,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gunakan alat bantu impor Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2681,19 +2693,19 @@
         "Nominal di bawah nilai minimum (${ minimumAmount })."
       ],
       "An error occurred while attempting to convert the document. Please try again.": [
-        "Terdapat kesalahan pada saat mencoba untuk mengonversi dokumen. Silakan coba lagi."
+        "Terjadi kesalahan pada saat mencoba untuk mengonversi dokumen. Silakan coba lagi."
       ],
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Terdapat kesalahan pada saat mencoba untuk menggandakan dokumen. Silakan coba lagi."
       ],
       "An error occurred while attempting to restore the document. Please try again.": [
-        "Terjadi kesalahan saat mencoba memulihkan dokumen. Silakan coba lagi."
+        "Terjadi kesalahan pada saat mencoba untuk memulihkan dokumen. Silakan coba lagi."
       ],
       "An error occurred while attempting to trash the document. Please try again.": [
-        "Terjadi kesalahan saat mencoba membuang dokumen. Silakan coba lagi."
+        "Terjadi kesalahan pada saat mencoba untuk membuang dokumen. Silakan coba lagi."
       ],
       "An error occurred while creating a new document. Please try again.": [
-        "Terdapat kesalahan saat membuat dokumen baru. Silakan coba lagi."
+        "Terjadi kesalahan pada saat membuat dokumen baru. Silakan coba lagi."
       ],
       "An error occurred while loading alias options": [
         "Terdapat kesalahan pada saat memuat daftar opsi alias"
@@ -2975,7 +2987,7 @@
         "Biaya yang tertagih telah berubah. Silakan coba lagi."
       ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
-        "Dokumen yang Anda coba konversi terlalu besar. Hal ini dapat terjadi apabila dokumen yang bersangkutan mengandung gambar atatu media lainnya dalam jumlah yang besar. Silakan coba lagi dengan dokumen yang berbeda."
+        "Dokumen yang Anda coba konversi terlalu besar. Hal ini dapat terjadi apabila dokumen ini mengandung gambar atau media lainnya dalam jumlah yang besar. Silakan coba lagi dengan dokumen yang lebih kecil."
       ],
       "The email addresses do not match": [
         "Alamat email tidak sesuai"
@@ -4345,7 +4357,7 @@
         "Terjadi kesalahan dalam mengonversi dokumen: ${ errorMessage }"
       ],
       "Error loading document${ errorDetail }": [
-        "Terjadi kesalahan memuat dokumen: ${ errorDetail }"
+        "Terjadi kesalahan dalam memuat dokumen: ${ errorDetail }"
       ],
       "Error Syncing": [
         "Terjadi Kesalahan Menyinkronkan"
@@ -4427,6 +4439,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
+      ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Apabila Anda membatalkan, Anda akan kehilangan akses ke ${ boldPlanTitle } dengan segera, dan Anda akan diturunkan ke paket ${ boldProtonFree }. Apabila pemakaian Anda melebihi batas pemakaian paket gratis, akses Anda ke fitur produk dan data Anda akan dapat dibatasi."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Apabila Anda membatalkan langganan, paket ${ planTitle } Anda tidak akan diperbarui ketika paket ini berakhir pada ${ expiryDate }."
@@ -4864,7 +4879,7 @@
         "Situs web dan layanan streaming tertentu dapat memblokir konten berdasarkan wilayah. VPN memungkinkan Anda untuk melewati pembatasan ini dan mengakses internet secara bebas."
       ],
       "Something went wrong": [
-        "Terdapat suatu kesalahan"
+        "Terjadi kesalahan"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Mulai membagikan dengan kontak Anda dan gunakan untuk layanan daring."
@@ -4932,7 +4947,7 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Pemilik alamat ini telah menonaktifkan enkripsi ujung ke ujung. Untuk dapat mengirim email terenkripsi kealamat ini, pemiliknya harus mengaktifkan ulang enkripsi ujung ke ujung."
       ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "URL yang Anda masukkan sepertinya tidak disalin dari Slack dengan benar. Pada saat menyalin tautan yang panjang dari Slack, klik kanan tautan tersebut, lalu pilih \"Salin tautan\" daripada menyalin teks URL yang terpotong secara langsung."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
@@ -5009,6 +5024,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Untuk menyelesaikan pembayaran Anda, silakan kirim ${ btcAmountBold } ke alamat di bawah ini."
+      ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Untuk terus menggunakan ${ boldPlanTitle } secara gratis hingga ${ boldCancelDate }, jangan batalkan paket Anda."
       ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "Untuk mengunduh berkas ${ DOCS_APP_NAME }, buka berkas ini di ${ DOCS_APP_NAME } dan ekspor."
@@ -5145,6 +5163,9 @@
       "What do you want to do?": [
         "Apa yang ingin Anda lakukan?"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Apa yang Anda korbankan pada saat Anda membatalkan ${ boldPlanTitle }:"
+      ],
       "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
         "Pada saat dialog ini terbuka, ubah \"Tujuan\" menjadi \"Simpan Sebagai PDF\", lalu tekan Simpan."
       ],
@@ -5220,6 +5241,9 @@
       "You can now return to the application to continue": [
         "Anda kini dapat kembali ke aplikasi untuk melanjutkan"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Anda akan tetap dapat mengakses seluruh data akun Anda. Anda dapat berlangganan kembali kapan saja untuk terus menikmati seluruh fitur kami."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat email baru yang masuk ke folder ini."
       ],
@@ -5258,6 +5282,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
+      ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ trialEndsOnFormatted }."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Anda kemudian akan ditagih setiap ${ renewCycle } bulan pada harga ${ renewAmountStr }."
@@ -5328,6 +5355,9 @@
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Masa uji coba gratis ${ boldPlanTitle } Anda telah dibatalkan, dan akun ${ boldUserEmail } milik Anda telah diturunkan ke ${ boldProtonFree }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Informasi Anda ditemukan pada tanggal ${ displayedDate }"
       ],
@@ -5352,6 +5382,9 @@
       "Your online activity is protected": [
         "Aktivitas online Anda terlindung"
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Organisasi ${ boldOrganizationName } milik Anda telah dinonaktifkan, dan seluruh kuota pengguna yang dimiliki oleh organisasi ini telah dihapus."
+      ],
       "Your password was leaked:": [
         "Kata sandi Anda telah bocor:"
       ],
@@ -5369,6 +5402,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Langganan Anda akan diperbarui secara otomatis pada ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Masa uji coba Anda akan berakhir dalam ${ timeRemaining }."
       ]
     },
     "info": {
@@ -5647,6 +5683,9 @@
       "Extended address": [
         "Alamat lengkap"
       ],
+      "File": [
+        "Berkas"
+      ],
       "First name": [
         "Nama depan"
       ],
@@ -5880,9 +5919,6 @@
       ],
       "Thomas": [
         "Thomas"
-      ],
-      "Title": [
-        "Judul"
       ],
       "To: ${ toEmail }": [
         "Kepada: ${ toEmail }"
@@ -7042,9 +7078,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Akses internet secara aman dari mana pun dengan pemantauan jaringan yang esensial"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Layanan penyimpanan aman berbasis cloud yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan berkas secara mudah dan aman."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
@@ -9131,6 +9164,20 @@
         "Kolom vCard"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } hari"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } jam"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } menit"
+      ],
+      "${ seconds } second": [
+        "${ seconds } detik"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } j"
@@ -9638,7 +9685,7 @@
         "Sederhanakan pengelolaan kata sandi"
       ],
       "Something went wrong": [
-        "Terdapat suatu kesalahan"
+        "Terjadi kesalahan"
       ],
       "Start a new import": [
         "Mulai impor baru"
@@ -9651,6 +9698,9 @@
       ],
       "Stop sharing?": [
         "Berhenti bagikan?"
+      ],
+      "Subscription canceled": [
+        "Langganan dibatalkan"
       ],
       "Summary": [
         "Ikhtisar"
