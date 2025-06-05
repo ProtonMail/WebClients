@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "身份验证"
+      ],
       "Cancel": [
         "取消"
       ],
@@ -52,6 +55,9 @@
       ],
       "Try another method": [
         "更换验证方式"
+      ],
+      "Use authentication code": [
+        "使用验证码"
       ],
       "Use recovery code": [
         "使用恢复码"
@@ -915,7 +921,15 @@
         "页面加载失败，请刷新或检查网络连接。"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用安全密钥进行身份验证时出错，请重试。"
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "请插入与 ${ BRAND_NAME } 账户相关联的安全密钥。"
+      ],
       "Security key": [
         "安全密钥"
       ]
@@ -1023,8 +1037,17 @@
       "Edit email address": [
         "编辑邮箱地址"
       ],
+      "Enter the code from your authenticator app": [
+        "请输入身份验证应用中的验证码"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "请输入 ${ digit } 位数字的验证码。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "请输入您自己的密码（作为组织管理员）。"
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "欲了解更多信息和删除限制，请在 ${ mailLink } 登录。"
@@ -1068,6 +1091,9 @@
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "当您设置双因素身份验证时，我们会提供恢复代码，当您无法访问身份验证应用时，可以使用这些代码登录。"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
       ],
@@ -1091,6 +1117,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "身份验证应用"
+      ],
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
       ],
