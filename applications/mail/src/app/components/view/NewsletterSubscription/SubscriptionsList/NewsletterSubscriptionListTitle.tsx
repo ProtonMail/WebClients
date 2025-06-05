@@ -1,17 +1,18 @@
 import { c, msgid } from 'ttag';
 
-import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
+import type { PropsWithNewsletterSubscription } from '../interface';
 
-interface Props {
-    activeSubscription: NewsletterSubscription;
+interface Props extends PropsWithNewsletterSubscription {
     numMessages: number;
 }
 
-export const NewsletterSubscriptionListTitle = ({ activeSubscription, numMessages }: Props) => {
+export const NewsletterSubscriptionListTitle = ({ subscription, numMessages }: Props) => {
     return (
-        <div className="flex flex-row items-end p-2 px-5 bg-weak shadow-norm">
-            <h3 className="m-0 text-bold">{activeSubscription?.Name}</h3>
-            <p className="m-0 mb-1 ml-3 text-sm">{c('Title').ngettext(msgid`Message`, `Messages`, numMessages)}</p>
+        <div className="p-2 px-5 bg-weak shadow-norm">
+            <h3 className="inline m-0 text-bold mr-2">{subscription.Name}</h3>
+            <span className="text-sm color-weak">
+                {c('Title').ngettext(msgid`${numMessages} message`, `${numMessages} messages`, numMessages)}
+            </span>
         </div>
     );
 };
