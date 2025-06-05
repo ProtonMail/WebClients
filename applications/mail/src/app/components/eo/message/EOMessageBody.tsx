@@ -1,11 +1,12 @@
-import { useMemo, useRef } from 'react';
+import { useMemo, useRef, useState } from 'react';
 
+import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
-import { isPlainText } from '@proton/shared/lib/mail/messages';
+import { isAutoFlaggedPhishing, isPlainText, isSuspicious } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 import MessageBodyPlaceholder from 'proton-mail/components/message/MessageBodyPlaceholder';
-
 import MessageBodyPrint from 'proton-mail/components/message/MessageBodyPrint';
 
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
@@ -31,7 +32,10 @@ const EOMessageBody = ({
     onBlockquoteToggle,
 }: Props) => {
     const bodyRef = useRef<HTMLDivElement>(null);
+    const [isIframeContentSet, setIsIframeContentSet] = useState(false);
     const iframeRef = useRef<HTMLIFrameElement>(null);
+    const iframeRootDivRef = useRef<HTMLDivElement>();
+
     const plain = isPlainText(message.data);
 
     const [content, blockquote] = useMemo(
@@ -41,6 +45,13 @@ const EOMessageBody = ({
                 : locateBlockquote(message.messageDocument?.document),
         [message.messageDocument?.document?.innerHTML, message.messageDocument?.plainText, plain]
     );
+
+    const { modal: linkModal } = useLinkHandler(iframeRootDivRef, EO_DEFAULT_MAILSETTINGS, {
+        onMailTo: noop,
+        startListening: isIframeContentSet && iframeRootDivRef.current !== undefined,
+        isOutside: false,
+        isPhishingAttempt: isAutoFlaggedPhishing(message.data) || isSuspicious(message.data),
+    });
 
     const encryptedMode = messageLoaded && !!message.errors?.decryption?.length;
     const sourceMode = !encryptedMode && inputSourceMode;
@@ -70,12 +81,15 @@ const EOMessageBody = ({
                         showBlockquote={originalMessageMode}
                         showBlockquoteToggle={isBlockquote}
                         onBlockquoteToggle={onBlockquoteToggle}
-                        onContentLoaded={() => {}}
+                        onContentLoaded={(iframeRootDiv) => {
+                            setIsIframeContentSet(true);
+                            iframeRootDivRef.current = iframeRootDiv;
+                        }}
                         isPlainText={plain}
                         message={message}
-                        isOutside
                         mailSettings={EO_DEFAULT_MAILSETTINGS}
                     />
+                    {linkModal}
                     <MessageBodyPrint isPrint={false} iframeRef={iframeRef} message={message} labelID="" />
                 </MailboxContainerContextProvider>
             )}
