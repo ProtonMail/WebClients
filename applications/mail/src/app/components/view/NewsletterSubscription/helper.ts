@@ -144,14 +144,14 @@ export const getFilterDropdownData = (subscription: NewsletterSubscription, filt
             icon: 'archive-box',
             label:
                 isFilterEnabled && movingToArchive
-                    ? c('Action').t`Stop moving to archive`
-                    : c('Action').t`Move to archive`,
+                    ? c('Action').t`Stop moving to Archive`
+                    : c('Action').t`Move to Archive`,
             filter: 'MoveToArchive',
         },
         {
             icon: 'trash',
             label:
-                isFilterEnabled && movingToTrash ? c('Action').t`Stop moving to trash` : c('Action').t`Move to trash`,
+                isFilterEnabled && movingToTrash ? c('Action').t`Stop moving to Trash` : c('Action').t`Move to Trash`,
             filter: 'MoveToTrash',
         },
     ];
