@@ -12,10 +12,13 @@ import type { MetricRecord } from '@proton/drive-sdk/dist/telemetry';
 import { ConsoleLogHandler, LogFilter, LogLevel, MemoryLogHandler, Telemetry } from '@proton/drive-sdk/dist/telemetry';
 import metrics from '@proton/metrics';
 
+import { SentryLogHandler } from './logHandlers/sentryLogHandler';
+
 export type UserPlan = 'free' | 'paid' | 'anonymous' | 'unknown';
 
 export function initTelemetry(userPlan: UserPlan = 'unknown', debug = false) {
     const memoryLogHandler = new MemoryLogHandler();
+    const sentryLogHandler = new SentryLogHandler();
 
     const telemetry = new Telemetry({
         logFilter: new LogFilter({
@@ -24,7 +27,7 @@ export function initTelemetry(userPlan: UserPlan = 'unknown', debug = false) {
                 api: debug ? LogLevel.DEBUG : LogLevel.WARNING,
             },
         }),
-        logHandlers: [new ConsoleLogHandler(), memoryLogHandler],
+        logHandlers: [new ConsoleLogHandler(), memoryLogHandler, sentryLogHandler],
         metricHandlers: [new MetricHandler(userPlan)],
     });
 

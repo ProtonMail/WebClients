@@ -65,3 +65,11 @@ Use only imports from `@proton/drive` in your app. Do not import anything else f
 - `drive`: Drive SDK instance - for more info, follow the Drive SDK documentation
 - `getLogs`: Function to get Drive logs - you can use it to include in bug reports
 - `internal`: Internal functions intended for Drive web client only to help with backward compatibility - it will be removed once Drive web fully migrates to Drive SDK
+
+## Metrics, Logs & Error Reporting
+
+### Sentry integration
+
+The Drive SDK includes automatic Sentry integration for error monitoring through the [`SentryLogHandler`](./lib/logHandlers/sentryLogHandler.ts) initialized inside the [`initTelemetry()`](./lib/telemetry.ts) function.
+
+The Sentry integration is automatically enabled when you initialize the Drive SDK and requires no additional configuration. So you don't need to catch any errors coming from the Drive SDK.
