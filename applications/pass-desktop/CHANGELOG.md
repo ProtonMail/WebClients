@@ -1,3 +1,12 @@
+### Version 1.31.5
+
+- Set default pass theme to system preference
+- Improved in-app onboarding on first login
+- Improved i18n/theme hydration on boot
+- Fix managers/admins not able to move items to another vault
+- Fix electron/os/pass theme conflicts
+- Fixed minor UI/UX issues
+
 ### Version 1.31.4
 
 - Add support for OpenPGP grammar check
