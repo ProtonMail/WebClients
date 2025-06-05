@@ -5,7 +5,12 @@ import { ErrorBoundary, StandardErrorPage, useActiveBreakpoint, useModalStateObj
 import { FeatureCode, useFeature } from '@proton/features';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { LABEL_IDS_TO_HUMAN, type MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+import {
+    CUSTOM_VIEWS,
+    CUSTOM_VIEWS_LABELS,
+    LABEL_IDS_TO_HUMAN,
+    type MARK_AS_STATUS,
+} from '@proton/shared/lib/mail/constants';
 import useFlag from '@proton/unleash/useFlag';
 
 import ResizableWrapper from 'proton-mail/components/list/ResizableWrapper';
@@ -23,6 +28,7 @@ import {
     selectAllSubscriptions,
     selectTabLoadingState,
     selectedElementId,
+    selectedSubscriptionIdSelector,
     selectedSubscriptionSelector,
 } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
@@ -46,6 +52,16 @@ interface NewsletterSubscriptionViewProps {
     params: ElementsStateParams;
 }
 
+// This is used to avoid showing the list of items when no subscription is selected
+const emptyElementsData: ElementsStructure = {
+    elementIDs: [],
+    elements: [],
+    total: 0,
+    loading: false,
+    placeholderCount: 0,
+    labelID: CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].label,
+};
+
 export const NewsletterSubscriptionView = ({
     elementsData,
     actions,
@@ -65,6 +81,7 @@ export const NewsletterSubscriptionView = ({
     const loadingSubscriptions = useMailSelector(selectTabLoadingState);
     const activeSubscription = useMailSelector(selectedSubscriptionSelector);
     const selectedElement = useMailSelector(selectedElementId);
+    const selectedSubscriptionId = useMailSelector(selectedSubscriptionIdSelector);
 
     const onboardingModal = useModalStateObject();
 
@@ -139,7 +156,7 @@ export const NewsletterSubscriptionView = ({
                             ) : (
                                 <MailboxList
                                     overrideColumnMode
-                                    elementsData={elementsData}
+                                    elementsData={selectedSubscriptionId ? elementsData : emptyElementsData}
                                     actions={overrideActions}
                                     toolbar={
                                         overrideActions.selectedIDs.length > 0 ? (
