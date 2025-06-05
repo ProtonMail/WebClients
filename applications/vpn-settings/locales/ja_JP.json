@@ -108,6 +108,9 @@
       "Back": [
         "戻る"
       ],
+      "Back to sign in": [
+        "サインインに戻る"
+      ],
       "Block": [
         "ブロック"
       ],
@@ -372,6 +375,9 @@
       "Fit to window": [
         "ウィンドウに合わせる"
       ],
+      "Forgot password?": [
+        "パスワードを忘れましたか？"
+      ],
       "Forgot recovery method?": [
         "回復手順を忘れましたか？"
       ],
@@ -450,10 +456,10 @@
       "Invite user": [
         "ユーザーを招待"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "編集を続ける"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "編集を続ける"
       ],
       "Keep logo": [
@@ -461,6 +467,9 @@
       ],
       "Keep my subscription": [
         "サブスクリプションを継続する"
+      ],
+      "Keep subscription": [
+        "サブスクリプションを継続"
       ],
       "Let's talk": [
         "話しましょう"
@@ -527,9 +536,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "${ DOCS_SHORT_APP_NAME } で開く"
       ],
       "Open navigation": [
         "ナビゲーションを開く"
@@ -2993,6 +2999,9 @@
       "Error connecting to the Bitcoin API.": [
         "Bitcoin APIへの接続中にエラーが発生しました。"
       ],
+      "Error publishing changes": [
+        "変更の公開中にエラー"
+      ],
       "Failed to load the STL preview": [
         "STLプレビューの読み込みに失敗しました"
       ],
@@ -4323,6 +4332,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "少なくとも ${ BETTER_PASSWORD_LENGTH } 文字以上"
       ],
+      "At least one application must be active": [
+        "少なくとも1つのアプリがアクティブである必要があります"
+      ],
       "Attention required": [
         "注意が必要です"
       ],
@@ -4656,6 +4668,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "${ BRAND_NAME } アカウントのメールアドレスまたはユーザー名を入力してください。"
       ],
+      "Enter your own password (as organization admin).": [
+        "(組織管理者としての)パスワードを入力してください。"
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "回復用メールアドレスを入力してください。ユーザー名またはメールアドレスを送信します。"
       ],
@@ -4736,6 +4751,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "エラーだと思われる場合は ${ contactLink } までご連絡ください。"
+      ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "キャンセルすると、すぐに${ boldPlanTitle }へのアクセスを失い、${ boldProtonFree }プランにダウングレードされます。もし使用容量が無料プランの制限を超えている場合、製品機能やデータへのアクセスが制限される場合があります。"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "キャンセルすると、${ planTitle } サブスクリプションは ${ expiryDate } に期限切れになっても更新されません。"
@@ -5517,6 +5535,12 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "確認のため、削除するユーザー名を入力してください。"
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "${ boldPlanTitle }を無料で${ boldCancelDate }までお楽しみいただくためには、キャンセルしないでください。"
+      ],
+      "To continue to ${ product }": [
+        "${ product }を続ける"
+      ],
       "To create your first user group, go to": [
         "最初のユーザーグループを作成するには、"
       ],
@@ -5742,6 +5766,9 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "リセットコードをアカウント回復に設定した電話番号に送信しました。"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "${ boldPlanTitle }をキャンセルすると失うもの："
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "ID プロバイダーで ${ appName } の SAML を有効にすると、コールバック (ACS) URL と発行者 ID を使用するように求められる場合があります。以下のデータをコピーして ID プロバイダーのフィールドに貼り付けるだけです。"
       ],
@@ -5838,6 +5865,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "チャットインスタンスは同時に 1 つだけ開くことができます。新しく開く前に古い会話を閉じてください。"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "すべてのアカウントのデータに引き続きアクセスすることができます。いつでも再登録して、すべての機能をまたお楽しみいただけます。"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "この機能を有効にすると、このフォルダーに新しいメッセージが届いた際に通知されます。"
       ],
@@ -5904,6 +5934,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "${ trialEndsOnFormatted }より前にキャンセルした場合、請求はされません。"
+      ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "これらのサーバーを 10 日間他の国に再割り当てすることはできません。"
       ],
@@ -5949,6 +5982,9 @@
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "${ boldPlanTitle }のフリートライアルがキャンセルされ、あなたのアカウント${ boldUserEmail }は${ boldProtonFree }にダウングレードされました。"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "あなたの情報は安全です。 サービスの提供に必要な場合にのみ、お客様に連絡します。"
       ],
@@ -5957,6 +5993,9 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "次回の請求日は ${ renewalTime }です。すぐにプランの変更が必要な場合は、サポートにお問い合わせください。"
+      ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "あなたの組織${ boldOrganizationName }は無効化され、すべてのユーザーのシートが削除されました。"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "あなたの組織ではシングル サインオン (SSO) を使用しています。 SSO プロバイダーを続行するには、「サインイン」を押します。"
@@ -5978,6 +6017,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "あなたのサブスクリプションは${ renewalTime }に自動的に更新されます。"
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "トライアルは${ timeRemaining }に終了します。"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "これらのサーバーはすぐに別のゲートウェイに追加できます。"
@@ -6167,10 +6209,10 @@
       "Allow recovery by phone": [
         "電話番号での回復を許可"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "許可されたドメイン"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "許可されたドメイン"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6749,6 +6791,9 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "このアカウントとすべてのデータを完全に削除することに同意します。"
       ],
+      "Your password (admin)": [
+        "あなたのパスワード (管理者)"
+      ],
       "ZIP code": [
         "郵便番号"
       ]
@@ -7018,6 +7063,9 @@
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "アカウントは削除のリスクに晒されています。データ損失を避けるには、管理者にアップグレードを要求してください。${ cta }"
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "容量がいっぱいです。${ BRAND_NAME }製品を引き続き使用するためには、容量を空けるか${ cta }してください。"
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "サブスクリプションが終了しました。${ cta }そしてデータの喪失を防ぎましょう。"
@@ -7746,9 +7794,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "必要不可欠なネットワーク監視で、どこからでも安全にインターネットにアクセス"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "ファイルを簡単かつ安全に保存、同期、共有できる、安全なクラウドストレージ。"
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "毎日の会話のための、高度な機能を備えた安全なメール"
       ],
@@ -7811,6 +7856,14 @@
         "全ての ${ BRAND_NAME } プレミアム製品と機能を ${ priceLine }だけでアンロックできます。いつでもキャンセルできます。"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -7823,14 +7876,6 @@
       ],
       "Switch plans?": [
         "プランを変更?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }トライアル"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -10671,6 +10716,9 @@
       "Locale updated": [
         "言語設定が更新されました"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "新しいポリシーが作成されました。変更を公開した後にのみ影響を受けます。"
+      ],
       "Organization activated": [
         "組織が有効になりました"
       ],
@@ -10700,6 +10748,12 @@
       ],
       "Phone number updated": [
         "電話番号が更新されました"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "ポリシーが変更されました。変更を公開した後にのみ影響を受けます。"
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "ポリシーが削除されました。変更を公開した後にのみ影響を受けます。"
       ],
       "Preference saved": [
         "設定が保存されました"
@@ -10895,6 +10949,20 @@
     "Themes": {
       "Themes": [
         "テーマ"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays }日"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours }時間"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes }分"
+      ],
+      "${ seconds } second": [
+        "${ seconds }秒"
       ]
     },
     "Title": {
@@ -11315,6 +11383,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ BRAND_NAME } アカウントの詳細を入力して ${ app } ベータ プログラムに参加してください"
       ],
+      "Enter your password": [
+        "パスワードを入力してください"
+      ],
       "Error": [
         "エラー"
       ],
@@ -11608,6 +11679,9 @@
       ],
       "Subscription": [
         "サブスクリプション"
+      ],
+      "Subscription canceled": [
+        "サブスクリプションがキャンセルされました"
       ],
       "Successfully created ${ n } user account": [
         "${ n }個のユーザーアカウントが正常に作成されました"

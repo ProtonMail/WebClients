@@ -456,17 +456,20 @@
       "Invite user": [
         "Πρόσκληση χρήστη"
       ],
-      "Keep editing": [
-        "Συνέχιση επεξεργασίας"
-      ],
       "Keep Editing": [
         "Συνεχίστε την Επεξεργασία"
+      ],
+      "Keep editing": [
+        "Συνέχιση επεξεργασίας"
       ],
       "Keep logo": [
         "Διατηρήστε το λογότυπο"
       ],
       "Keep my subscription": [
         "Διατηρήστε την συνδρομή μου"
+      ],
+      "Keep subscription": [
+        "Διατήρηση συνδρομής"
       ],
       "Let's talk": [
         "Ας μιλήσουμε"
@@ -533,9 +536,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Άνοιγμα σε ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
@@ -4805,6 +4805,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Εάν ακυρώσετε, θα χάσετε την πρόσβαση στο ${ boldPlanTitle } άμεσα και θα υποβαθμιστείτε στο πλάνο ${ boldProtonFree }. Εάν η χρήση σας ξεπεράσει τα όρια του δωρεάν πλάνου, ίσως να αντιμετωπίσετε περιορισμένη πρόσβαση σε δυνατότητες του προϊόντος και τα δεδομένα σας."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Εάν ακυρώσετε, η συνδρομή σας ${ planTitle } δε θα ανανεωθεί όταν λήξει στις ${ expiryDate }."
       ],
@@ -5596,6 +5599,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Για επιβεβαίωση, παρακαλώ εισάγετε το όνομα του χρήστη που θέλετε να διαγράψετε."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Για να συνεχίσετε να απολαμβάνετε το ${ boldPlanTitle } δωρεάν έως το ${ boldCancelDate }, μην ακυρώσετε."
+      ],
       "To continue to ${ product }": [
         "Για συνέχιση στο ${ product }"
       ],
@@ -5824,6 +5830,9 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Θα στείλουμε έναν κωδικό επαναφοράς στον αριθμό τηλεφώνου που καθορίσατε για ανακτήσεις λογαριασμού."
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Τι εγκαταλείπετε όταν ακυρώσετε το ${ boldPlanTitle }:"
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Όταν ενεργοποιείτε το SAML για ${ appName } στην υπηρεσία παροχής ταυτότητας, ενδέχεται να σας ζητηθεί να χρησιμοποιήσετε τη διεύθυνση URL επιστροφής κλήσης (ACS) και το αναγνωριστικό εκδότη. Απλώς αντιγράψτε-επικολλήστε τα παρακάτω δεδομένα στα πεδία της υπηρεσίας παροχής ταυτότητάς σας."
       ],
@@ -5926,6 +5935,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Μπορείτε να έχετε μόνο μία παρουσία συνομιλίας ανοιχτή κάθε φορά. Κλείστε τις προηγούμενες συνομιλίες πριν ξεκινήσετε μια νέα."
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Μπορείτε ακόμα να αποκτήσετε πρόσβαση σε όλα τα δεδομένα του λογαριασμού σας. Μπορείτε να εγγραφείτε ξανά ανά πάσα στιγμή για να συνεχίσετε να απολαμβάνετε όλες τις δυνατότητες μας."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις, για να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν το φάκελο."
       ],
@@ -5994,6 +6006,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ trialEndsOnFormatted }."
+      ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Δε θα μπορείτε να αντιστοιχίσετε εκ νέου αυτούς τους διακομιστές σε άλλη χώρα για 10 ημέρες."
       ],
@@ -6041,6 +6056,9 @@
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Η δωρεάν δοκιμή σας του ${ boldPlanTitle } έχει ακυρωθεί, και ο λογαριασμός σας ${ boldUserEmail } έχει υποβαθμιστεί σε ${ boldProtonFree }."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Οι πληροφορίες σας είναι ασφαλείς μαζί μας. Θα επικοινωνήσουμε μαζί σας μόνο όταν απαιτείται για την παροχή των υπηρεσιών μας."
       ],
@@ -6049,6 +6067,9 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }. Παρακαλούμε επικοινωνήστε με την υποστήριξη εάν χρειάζεστε άμεση αλλαγή πλάνου."
+      ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Η οργανισμός σας ${ boldOrganizationName } είναι απενεργοποιημένος και όλες οι θέσεις χρηστών της έχουν αφαιρεθεί."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Ο οργανισμός σας χρησιμοποιεί ενιαία πρόσβαση (SSO). Πατήστε Σύνδεση για να συνεχίσετε με τον πάροχο SSO σας."
@@ -6071,6 +6092,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Η συνδρομή σας θα ανανεωθεί αυτόματα στις ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Η δοκιμή σας θα τελειώσει σε ${ timeRemaining }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Θα μπορείτε να προσθέσετε αυτούς τους διακομιστές σε άλλη πύλη αμέσως."
@@ -6264,11 +6288,11 @@
       "Allow recovery by phone": [
         "Άδεια ανάκτησης μέσω τηλεφώνου"
       ],
-      "Allowed Domain": [
-        "Επιτρεπόμενος Τομέας"
-      ],
       "Allowed domain": [
         "Επιτρεπόμενος τομέας"
+      ],
+      "Allowed Domain": [
+        "Επιτρεπόμενος Τομέας"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Επιτρέπει σε όλους στον οργανισμό σας να προσθέτουν απρόσκοπτα συνδέσεις τηλεδιάσκεψης στις προσκλήσεις ημερολογίου τους."
@@ -7811,6 +7835,12 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "Το ${ BRAND_NAME } σας επιτρέπει τη δημιουργία διευθύνσεων και τη διαχείριση λογαριασμών για άλλους χρήστες. Ιδανικό για οικογένειες και οργανισμούς."
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB αποθηκευτικού χώρου στο cloud που σας επιτρέπει να αποθηκεύετε, συγχρονίζετε και μοιράζεστε αρχεία εύκολα. Προστατεύεται από διατερματική κρυπτογράφηση."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB αποθηκευτικού χώρου στο cloud που σας επιτρέπει να αποθηκεύετε, συγχρονίζετε και μοιράζεστε αρχεία εύκολα. Προστατεύεται από διατερματική κρυπτογράφηση."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Προηγμένη ασφάλεια δικτύου και διαχείριση πρόσβασης με αποκλειστικές ασφαλείς Πύλες"
       ],
@@ -7870,9 +7900,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Ασφαλής πρόσβαση στο διαδίκτυο από οπουδήποτε με απαραίτητη παρακολούθηση δικτύου"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Ασφαλής αποθηκευτικός χώρος νέφους που επιτρέπει αποθήκευση, συγχρονισμό και κοινοποίηση αρχείων, εύκολα και διασφαλισμένα."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Ασφαλές ηλεκτρονικό ταχυδρομείο με προηγμένες δυνατότητες για τις καθημερινές σας επικοινωνίες."
@@ -7936,6 +7963,14 @@
         "Ξεκλειδώστε όλα τα ${ BRAND_NAME } premium προϊόντα και δυνατότητες με μόλις ${ priceLine }. Ακυρώστε ανά πάσα στιγμή."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Δοκιμή ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Η κατανάλωση του λογαριασμού σας"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -7948,14 +7983,6 @@
       ],
       "Switch plans?": [
         "Αλλαγή προγράμματος;"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Δοκιμή ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Η κατανάλωση του λογαριασμού σας"
       ]
     },
     "new_plans: tooltip": {
@@ -8372,6 +8399,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Ορισμένες εικόνες δε μεταφορτώθηκαν λόγω διπλότυπων ονομάτων αρχείων στην τρέχουσα επιλογή."
+      ]
+    },
+    "oc_nightly: BYOE": {
+      "Something went wrong while loging into your Gmail account": [
+        "Κάτι πήγε στραβά κατά τη σύνδεση στον λογαριασμό σας Gmail"
       ]
     },
     "Offer": {
@@ -10772,6 +10804,9 @@
       ],
       "Expiring": [
         "Λήγει"
+      ],
+      "Free Trial": [
+        "Δωρεάν δοκιμαστική έκδοση"
       ]
     },
     "Subtitle": {
@@ -11091,6 +11126,24 @@
     "Themes": {
       "Themes": [
         "Θέματα"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } ημέρα",
+        "${ ceilDays } ημέρες"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } ώρα",
+        "${ ceilHours } ώρες"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } λεπτό",
+        "${ ceilMinutes } λεπτά"
+      ],
+      "${ seconds } second": [
+        "${ seconds } δευτερόλεπτο",
+        "${ seconds } δευτερόλεπτα"
       ]
     },
     "Title": {
@@ -11811,6 +11864,9 @@
       ],
       "Subscription": [
         "Συνδρομή"
+      ],
+      "Subscription canceled": [
+        "Η συνδρομή ακυρώθηκε"
       ],
       "Successfully created ${ n } user account": [
         "Επιτυχής δημιουργία ${ n } λογαριασμού χρήστη",

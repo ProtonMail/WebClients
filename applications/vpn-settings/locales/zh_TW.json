@@ -417,10 +417,10 @@
       "Invite user": [
         "邀請使用者"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "繼續編輯"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "繼續編輯"
       ],
       "Keep logo": [
@@ -485,9 +485,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "於 ${ DOCS_SHORT_APP_NAME } 開啟"
       ],
       "Open navigation": [
         "開啟導覽"
@@ -5663,11 +5660,11 @@
       "Allow recovery by phone": [
         "允許透過電話復原"
       ],
-      "Allowed Domain": [
-        "網域白名單"
-      ],
       "Allowed domain": [
         "已允許網域"
+      ],
+      "Allowed Domain": [
+        "網域白名單"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "允許您組織內任何人無痕地添加會議連結至它們的行事曆邀請函。"
@@ -7114,9 +7111,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "透過必要的網路監控，您可以從任何地方安全地上網"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "安全的雲端儲存空間，讓您輕鬆安全地貯存、同步和分享檔案。"
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "為您的日常通訊提供進階功能的安全電子郵件。"
       ],
@@ -7179,6 +7173,14 @@
         "只要${ priceLine }解鎖全部的${ BRAND_NAME }頂級產品及功能。隨時取消。"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }滿意體驗"
+      ],
+      "Your account's usage": [
+        "您帳號的使用情況"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "要刪除帳號？"
@@ -7191,14 +7193,6 @@
       ],
       "Switch plans?": [
         "切換方案?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }滿意體驗"
-      ],
-      "Your account's usage": [
-        "您帳號的使用情況"
       ]
     },
     "new_plans: tooltip": {

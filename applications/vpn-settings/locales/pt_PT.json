@@ -456,10 +456,10 @@
       "Invite user": [
         "Convidar um utilizador"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Continuar a editar"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Continuar a editar"
       ],
       "Keep logo": [
@@ -467,6 +467,9 @@
       ],
       "Keep my subscription": [
         "Manter a minha assinatura"
+      ],
+      "Keep subscription": [
+        "Manter a subscrição"
       ],
       "Let's talk": [
         "Vamos conversar"
@@ -533,9 +536,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir definições do ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Abrir no ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Abrir navegação"
@@ -4805,6 +4805,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Se acredita que houve um erro, contacte-nos em ${ contactLink }."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Se cancelar, perderá o acesso a ${ boldPlanTitle } imediatamente, e será revertido para o plano ${ boldProtonFree }. Se a sua utilização exceder os limites do plano Free, poderá ter acesso restrito a funcionalidades do produto e aos seus dados."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Se cancelar, a sua subscrição ${ planTitle } não será renovada quando expirar em ${ expiryDate }."
       ],
@@ -5599,6 +5602,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Para confirmar, introduza o nome do utilizador que deseja eliminar."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Para continuar a desfrutar de ${ boldPlanTitle } gratuitamente até ${ boldCancelDate }, não cancele."
+      ],
       "To continue to ${ product }": [
         "Para continuar para o ${ product }"
       ],
@@ -5827,6 +5833,9 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Enviaremos um código de reposição para o número de telefone que forneceu para a recuperação da conta."
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "O que perde ao cancelar o ${ boldPlanTitle }:"
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Ao ativar o SAML para o ${ appName } no seu fornecedor de identidade, poderá ser solicitado a utilizar o URL de callback (ACS) e o ID do emissor. Basta copiar e colar os dados abaixo nos campos do seu fornecedor de identidade."
       ],
@@ -5929,6 +5938,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Só pode ter uma instância de chat aberta por vez. Feche as conversas anteriores antes de iniciar uma nova."
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Ainda pode aceder a todos os dados da sua conta. Pode subscrever novamente a qualquer momento para continuar a desfrutar de todas as nossas funcionalidades."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Pode ativar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
       ],
@@ -5997,6 +6009,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Será brevemente redirecionado para o PayPal para verificar o pagamento."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Não lhe será cobrado se cancelar antes de ${ trialEndsOnFormatted }."
+      ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Não poderá reatribuir estes servidores a outro país por 10 dias."
       ],
@@ -6044,6 +6059,9 @@
       "Your files will be encrypted and then saved": [
         "Os seus ficheiros serão encriptados e depois guardados."
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "A sua avaliação gratuita de ${ boldPlanTitle } foi cancelada e a sua conta ${ boldUserEmail } foi revertida para ${ boldProtonFree }."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "As suas informações estão seguras connosco. Só entraremos em contacto quando tal for necessário para fornecer os nossos serviços."
       ],
@@ -6052,6 +6070,9 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "A sua próxima data de faturação é ${ renewalTime }. Contacte o suporte se precisar de uma alteração imediata no plano."
+      ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "A sua organização ${ boldOrganizationName } está desativada e todas as suas licenças de utilizador foram removidas."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "A sua organização usa a autenticação única (SSO). Pressione Iniciar sessão para continuar com o seu fornecedor de SSO."
@@ -6074,6 +6095,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "A sua subscrição será renovada automaticamente em ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "A sua avaliação terminará em ${ timeRemaining }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Poderá adicionar imediatamente estes servidores a outra porta de entrada."
@@ -6267,10 +6291,10 @@
       "Allow recovery by phone": [
         "Permitir recuperação por telefone"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domínio permitido"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domínio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -7878,9 +7902,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Aceder à internet com segurança a partir de qualquer sítio com monitorização essencial de rede"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Armazenamento em nuvem seguro que permite armazenar, sincronizar e compartilhar ficheiros com facilidade e segurança."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "E-mail seguro com funcionalidades avançadas para as suas comunicações diárias."
       ],
@@ -7943,6 +7964,17 @@
         "Desbloqueie todos os produtos e funcionalidades do ${ BRAND_NAME } premium para apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Utilização da sua conta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Apagar a conta?"
@@ -7955,17 +7987,6 @@
       ],
       "Switch plans?": [
         "Alterar o plano?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Utilização da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -8382,6 +8403,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Algumas imagens não foram enviadas devido a nomes de ficheiros duplicados na seleção atual."
+      ]
+    },
+    "oc_nightly: BYOE": {
+      "Something went wrong while loging into your Gmail account": [
+        "Ocorreu um erro ao iniciar sessão na sua conta Gmail."
       ]
     },
     "Offer": {
@@ -11115,6 +11141,24 @@
         "Temas"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dia",
+        "${ ceilDays } dias"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } hora",
+        "${ ceilHours } horas"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuto",
+        "${ ceilMinutes } minutos"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segundo",
+        "${ seconds } segundos"
+      ]
+    },
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
@@ -11833,6 +11877,9 @@
       ],
       "Subscription": [
         "Subscrição"
+      ],
+      "Subscription canceled": [
+        "A subscrição foi cancelada."
       ],
       "Successfully created ${ n } user account": [
         "${ n } conta de utilizador criada",

@@ -456,10 +456,10 @@
       "Invite user": [
         "Convida l'usuari"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Continua editant"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Continua editant"
       ],
       "Keep logo": [
@@ -467,6 +467,9 @@
       ],
       "Keep my subscription": [
         "Mantén la subscripció"
+      ],
+      "Keep subscription": [
+        "Mantingueu la subscripció"
       ],
       "Let's talk": [
         "Parlem-ne"
@@ -533,9 +536,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Obre a ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Obre la navegació"
@@ -4805,6 +4805,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si creieu que es tracta d'un error, poseu-vos en contacte amb nosaltres ${ contactLink }."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Si cancel·leu, perdreu l'accés al ${ boldPlanTitle } immediatament i passareu al pla ${ boldProtonFree }. Si el vostre ús supera els límits del pla gratuït, és possible que experimenteu una restricció en l'accés a les funcions del producte i a les vostres dades."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si ho cancel·leu, la subscripció ${ planTitle } no es renovarà en caducar el ${ expiryDate }."
       ],
@@ -5357,7 +5360,7 @@
         "S'ha esgotat el temps de sessió"
       ],
       "Set up your organization": [
-        "Configura la vostra organització"
+        "Configureu la vostra organització"
       ],
       "Setting up ${ feature }…": [
         "S'està configurant ${ feature }…"
@@ -5522,7 +5525,7 @@
         "Aquest fitxer és massa gran per a previsualitzar-lo."
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
-        "Aquest és un nom o un sobrenom per a la vostra organització que els usuaris veuran. Podeu canviar-ho en qualsevol moment."
+        "Aquest és un nom o un sobrenom per a la vostra organització que els usuaris veuran. Podeu canviar-lo en qualsevol moment."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aquesta és ara la vostra ${ defaultEmailAddress } per enviar missatges nous."
@@ -5595,6 +5598,9 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Per confirmar-ho, introduïu el nom de l'usuari que vulgueu suprimir."
+      ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Per continuar gaudint de ${ boldPlanTitle } gratuïtament fins al ${ boldCancelDate }, no cancel·leu."
       ],
       "To continue to ${ product }": [
         "Per continuar a ${ product }"
@@ -5824,6 +5830,9 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Enviarem un codi de restabliment al número de telèfon que heu proporcionat per a la recuperació del compte."
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "A què renuncieu en cancel·lar ${ boldPlanTitle }:"
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quan activeu SAML per a ${ appName } al vostre proveïdor d'identitat, és possible que se us demani que utilitzeu l'URL de la crida de retorn (ACS) i l'identificador de l'emissor. Només cal copiar i enganxar les dades de sota als camps del proveïdor d'identitat."
       ],
@@ -5926,6 +5935,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Només podeu tenir una instància de xat oberta a la vegada. Tanqueu les converses anteriors abans d'iniciar-ne una de nova."
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Encara podeu accedir a totes les dades del vostre compte. Us podeu tornar a subscriure en qualsevol moment per continuar gaudint de totes les nostres funcions."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous en aquesta carpeta."
       ],
@@ -5994,6 +6006,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "No se us cobrarà res si cancel·leu abans del ${ trialEndsOnFormatted }."
+      ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "No podreu reassignar aquests servidors a un altre país durant 10 dies."
       ],
@@ -6041,6 +6056,9 @@
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "La prova gratuïta del ${ boldPlanTitle } s'ha cancel·lat i el vostre compte de ${ boldUserEmail } s'ha baixat de categoria al ${ boldProtonFree }."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "La vostra informació està segura amb nosaltres. Només ens posarem en contacte quan sigui necessari per oferir els nostres serveis."
       ],
@@ -6049,6 +6067,9 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "La pròxima data de facturació és el ${ renewalTime }. Poseu-vos en contacte amb el servei d'assistència si necessiteu un canvi de pla immediat."
+      ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "La vostra organització ${ boldOrganizationName } està desactivada i s'han eliminat totes les llicències d'usuaris."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "La vostra organització utilitza un inici de sessió únic (SSO). Premeu Inicia la sessió per a continuar amb el vostre proveïdor SSO."
@@ -6071,6 +6092,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "La vostra subscripció es renovarà automàticament el ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "El període de prova finalitzarà en ${ timeRemaining }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Podreu afegir aquests servidors a una altra passarel·la immediatament."
@@ -6264,10 +6288,10 @@
       "Allow recovery by phone": [
         "Permet la recuperació per telèfon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domini permès"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domini permès"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6646,7 +6670,7 @@
         "Contrasenya"
       ],
       "Password strength": [
-        "Solidesa de la contrasenya"
+        "Nivell de seguretat de la contrasenya"
       ],
       "Payer": [
         "Pagador"
@@ -7815,6 +7839,12 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } us permet crear adreces de correu electrònic i gestionar comptes per als subusuaris. Ideal per a famílies i organitzacions."
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB d'emmagatzematge al núvol que us permeten emmagatzemar, sincronitzar i compartir fitxers fàcilment. Protegit amb xifratge d'extrem a extrem."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB d'emmagatzematge al núvol que us permeten emmagatzemar, sincronitzar i compartir fitxers fàcilment. Protegit amb xifratge d'extrem a extrem."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Seguretat avançada de la xarxa i gestió d'accessos amb passarel·les segures dedicades"
       ],
@@ -7874,9 +7904,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Accediu a internet de manera segura des de qualsevol lloc amb un monitoratge essencial de la xarxa"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Emmagatzematge al núvol segur que us permet emmagatzemar, sincronitzar i compartir fitxers de manera fàcil i segura."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Correu electrònic segur amb característiques avançades per a les vostres comunicacions diàries."
@@ -7940,6 +7967,17 @@
         "Desbloquegeu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceLine }. Cancel·leu-ho en qualsevol moment."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -7952,17 +7990,6 @@
       ],
       "Switch plans?": [
         "Voleu canviar de pla?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -8379,6 +8406,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Algunes imatges no s'han carregat a causa dels noms de fitxer duplicats a la selecció actual."
+      ]
+    },
+    "oc_nightly: BYOE": {
+      "Something went wrong while loging into your Gmail account": [
+        "S'ha produït un error en iniciar sessió al vostre compte del Gmail."
       ]
     },
     "Offer": {
@@ -10264,7 +10296,7 @@
         "El vostre ${ productString } està ple al ${ percentage }%. ${ cta }."
       ],
       "Your ${ productString } is full. ${ cta }.": [
-        "El vostre ${ productString } és ple. ${ cta }."
+        "El vostre ${ productString } està ple. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "El vostre emmagatzematge és ple al ${ percentage }%. ${ cta }."
@@ -10782,6 +10814,9 @@
       ],
       "Expiring": [
         "Caducat"
+      ],
+      "Free Trial": [
+        "Prova gratuïta"
       ]
     },
     "Subtitle": {
@@ -11103,6 +11138,24 @@
         "Temes"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dia",
+        "${ ceilDays } dies"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } hora",
+        "${ ceilHours } hores"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minuts"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segon",
+        "${ seconds } segons"
+      ]
+    },
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
@@ -11208,7 +11261,7 @@
         "Afegeix a la llista de correu brossa"
       ],
       "Add user": [
-        "Addició un usuari"
+        "Afegeix un usuari"
       ],
       "Add user accounts": [
         "Afegeix comptes d'usuari"
@@ -11301,7 +11354,7 @@
         "Tanca"
       ],
       "Collaborate on documents": [
-        "Col·laboració en documents"
+        "Col·laboreu en documents"
       ],
       "Confirm": [
         "Confirma"
@@ -11319,7 +11372,7 @@
         "Confirmeu el número de telèfon"
       ],
       "Connect apps and devices": [
-        "Connexió d'aplicacions i dispositius"
+        "Connecteu aplicacions i dispositius"
       ],
       "Connect organization": [
         "Connecta l'organització"
@@ -11328,10 +11381,10 @@
         "Connecteu fins a ${ VPN_CONNECTIONS } dispositius al mateix temps amb ${ vpnPlus }. ${ upgradeButton }"
       ],
       "Connect to video conferencing": [
-        "Connexió a la videoconferència"
+        "Connecteu-vos a una videoconferència"
       ],
       "Connect your custom domain": [
-        "Connexió del vostre domini personalitzat"
+        "Connecteu el vostre domini personalitzat"
       ],
       "Contact us": [
         "Contacteu amb nosaltres"
@@ -11447,7 +11500,7 @@
         "Pasar a ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Baixa les aplicacions del ${ DRIVE_APP_NAME }"
+        "Descarregueu aplicacions de ${ DRIVE_APP_NAME }"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Baixa ${ VPN_APP_NAME }"
@@ -11504,13 +11557,13 @@
         "Subscripcions per correu electrònic"
       ],
       "Enable advanced account protection": [
-        "Activació de la protecció avançada del compte"
+        "Activeu la protecció avançada del compte"
       ],
       "Enable for all users": [
         "Activa per a tots els usuaris"
       ],
       "Enhance security with 2FA": [
-        "Millora la seguretat amb 2FA"
+        "Milloreu la seguretat amb 2FA"
       ],
       "Enter 2FA code": [
         "Introduïu el codi 2FA"
@@ -11601,7 +11654,7 @@
         "Verificació humana"
       ],
       "Import emails, calendars, contacts": [
-        "Importació de correus, calendaris i contactes"
+        "Importeu correus, calendaris i contactes"
       ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
@@ -11766,16 +11819,16 @@
         "Estableix el nom de l’organització"
       ],
       "Set recovery methods": [
-        "Configuració dels mètodes de recuperació"
+        "Configureu els mètodes de recuperació"
       ],
       "Set up email forwarding": [
-        "Configuració del reenviament de correu"
+        "Configureu el reenviament de correu"
       ],
       "Set up two-factor authentication": [
         "Configura l'autenticació de doble factor"
       ],
       "Set up your organization": [
-        "Configuració de la vostra organització"
+        "Configureu la vostra organització"
       ],
       "Set your password": [
         "Establiu la vostra contrasenya"
@@ -11787,7 +11840,7 @@
         "Configureu els servidors dedicats millorant el pla a Business"
       ],
       "Share your calendar with your team": [
-        "Compartició del calendari amb el vostre equip"
+        "Compartiu el calendari amb el vostre equip"
       ],
       "Shared servers": [
         "Servidors compartits"
@@ -11805,10 +11858,10 @@
         "S'ha iniciat la sessió al compte de membre"
       ],
       "Simplify email distribution": [
-        "Simplificació de la distribució de correu"
+        "Simplifiqueu la distribució de correu"
       ],
       "Simplify password management": [
-        "Simplificació de la gestió de contrasenyes"
+        "Simplifiqueu la gestió de contrasenyes"
       ],
       "Single sign-on": [
         "Inici de sessió únic"
@@ -11821,6 +11874,9 @@
       ],
       "Subscription": [
         "Subscripció"
+      ],
+      "Subscription canceled": [
+        "La subscripció s'ha cancel·lat"
       ],
       "Successfully created ${ n } user account": [
         "S'ha creat ${ n } compte d'usuari.",
@@ -11842,7 +11898,7 @@
         "No hi ha grups."
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
-        "Activació ${ DARK_WEB_MONITORING_NAME }"
+        "Activeu ${ DARK_WEB_MONITORING_NAME }"
       ],
       "TV sign in": [
         "Inici de sessió al TV"
@@ -11881,7 +11937,7 @@
         "Carregueu el logo de la vostra organització"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
-        "Utilitza ${ VPN_SHORT_APP_NAME } per a la privacitat de dades"
+        "Utilitzeu ${ VPN_SHORT_APP_NAME } per a la privacitat de les dades"
       ],
       "User": [
         "Usuari"
@@ -11914,7 +11970,7 @@
         "Enviarem un correu electrònic a la vostra nova adreça amb instruccions per completar el canvi."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
-        "Us donem la benvinguda a ${ BRAND_NAME } per al Business"
+        "Us donem la benvinguda a ${ BRAND_NAME } for Business"
       ],
       "WireGuard configuration": [
         "Configuració del WireGuard"

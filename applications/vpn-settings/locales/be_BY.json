@@ -456,16 +456,19 @@
       "Invite user": [
         "Запрасіць карыстальніка"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Працягнуць рэдагаванне"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Працягнуць рэдагаванне"
       ],
       "Keep logo": [
         "Пакінуць лагатып"
       ],
       "Keep my subscription": [
+        "Пакінуць падпіску"
+      ],
+      "Keep subscription": [
         "Пакінуць падпіску"
       ],
       "Let's talk": [
@@ -533,9 +536,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Адкрыць налады ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Адкрыць у ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Адкрыць панэль навігацыі"
@@ -4911,6 +4911,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Калі вы ўпэўнены, што гэта памылка, напішыце нам на адрас ${ contactLink }."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Вы неадкладна згубіце доступ да ${ boldPlanTitle } і ваш тарыфны план будзе паніжаны да ${ boldProtonFree }, калі вы скасуеце бягучы. Ваш доступ да функцый прадукту і даных можа быць абмежаваны, калі будуць перавышаны абмежаванні бясплатнага тарыфнага плана."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Калі вы скасуеце, ваша падпіска ${ planTitle } не будзе падоўжана пасля завяршэння тэрміну яе дзеяння ${ expiryDate }."
       ],
@@ -5724,6 +5727,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Для пацвярджэння ўвядзіце імя карыстальніка, якое вы хочаце выдаліць."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Не скасоўвайце бягучы тарыфны план да ${ boldCancelDate }, каб працягваць бясплатна атрымліваць асолоду ад ${ boldPlanTitle }"
+      ],
       "To continue to ${ product }": [
         "Для працягу ў ${ product }"
       ],
@@ -5952,6 +5958,9 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Мы адправім код скідання для аднаўлення ўліковага запісу на пазначаны вамі нумар тэлефона."
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Што вы страціце, калі скасуеце ${ boldPlanTitle }:"
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Пры ўключэнні SAML для ${ appName } у вашым пастаўшчыку пасведчанняў, вам магчыма будзе прапанавана скарыстацца зваротным выклікам URL (ACS) і ідэнтыфікатарам эмітэнта. Проста скапіюйце даныя знізу, а потым устаўце іх у палі вашага пастаўшчыка пасведчанняў."
       ],
@@ -6060,6 +6069,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Толькі адзін экзэмпляр чата можа быць адкрыты адначасова. Закрыйце папярэднюю размову перад тым, як пачаць новую."
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "У вас усё яшчэ ёсць доступ да ўсіх даных вашага ўліковага запісу. Вы ў любы час можаце вярнуць падпіску, каб працягваць атрымліваць асалоду ад ўсіх функцый нашага сэрвісу."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можаце ўключыць апавяшчэнні, каб атрымліваць абвесткі пра новыя паведамленні электроннай пошты ў гэтай папцы."
       ],
@@ -6132,6 +6144,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для праверкі плацяжу."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "З вас не будзе спаганяцца плата, калі вы скасуеце да ${ trialEndsOnFormatted }."
+      ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "У вас не будзе магчымасці паўторна прызначыць гэтыя серверы іншай краіне на працягу 10 дзён."
       ],
@@ -6183,6 +6198,9 @@
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Ваш бясплатны пробны перыяд ${ boldPlanTitle } быў скасаваны, а ваш уліковы запіс ${ boldUserEmail } быў паніжаны да ${ boldProtonFree }."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "З намі ваша інфармацыя ў бяспецы. Мы будзем звязвацца з вамі, толькі па меры неабходнасці, каб забяспечыць нашымі сэрвісамі."
       ],
@@ -6191,6 +6209,9 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Наступная дата спагнання адбудзецца ${ renewalTime }. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
+      ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Ваша арганізацыя ${ boldOrganizationName } адключана, а ўсе ліцэнзіі яе карыстальнікаў былі выдалены."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Ваша арганізацыя выкарыстоўвае адзіны ўваход (SSO). Націсніце кнопку \"Увайсці\", каб працягнуць уваход з вашым пастаўшчыком SSO."
@@ -6215,6 +6236,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Ваша падпіска будзе аўтаматычна падоўжана ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Ваш пробны перыяд завершыцца праз ${ timeRemaining }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "У вас будзе магчымасць неадкладна дадаць гэтыя серверы ў іншы шлюз."
@@ -6416,10 +6440,10 @@
       "Allow recovery by phone": [
         "Дазволіць аднаўленне доступу па нумары тэлефона"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дазволены дамен"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дазволены дамен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -8007,6 +8031,12 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } дазваляе стварыць адрас электроннай пошты і кіраваць падпарадкаванымі карыстальнікамі. Ідэальна для сямей і арганізацый."
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 ТБ воблачнага сховішча, якое дазваляе вам лёгка захоўваць, сінхранізаваць і абагульваць файлы. Абаронена скразным шыфраваннем."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 ГБ воблачнага сховішча, якое дазваляе вам лёгка захоўваць, сінхранізаваць і абагульваць файлы. Абаронена скразным шыфраваннем."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Пашыраная бяспека сеткі і кіраванне доступам з дапамогай вылучаных шлюзоў"
       ],
@@ -8066,9 +8096,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Бяспечны доступ у інтэрнэт з любой краіны ў свеце, дзякуючы назіранню за сеткай"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Бяспечнае воблачнае сховішча, якое дазваляе вам лёгка і бяспечна захоўваць, сінхранізаваць і абагульваць файлы."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Бяспечная электронная пошта з дадатковымі функцыямі для штодзённых камунікацый."
@@ -8132,6 +8159,14 @@
         "Разблакіраваць усе прэміяльныя прадукты ${ BRAND_NAME } і функцыі ўсяго за ${ priceLine }. Скасаваць можна ў любы момант."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -8144,14 +8179,6 @@
       ],
       "Switch plans?": [
         "Змяніць тарыфны план?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Выпрабавальны перыяд ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {
@@ -8572,6 +8599,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Некаторыя відарысы не былі запампаваны па прычыне дубліравання імён файлаў у бягучым выбары."
+      ]
+    },
+    "oc_nightly: BYOE": {
+      "Something went wrong while loging into your Gmail account": [
+        "Нешта пайшло не так падчас уваходу ў ваш уліковы запіс Gmail"
       ]
     },
     "Offer": {
@@ -11089,6 +11121,9 @@
       ],
       "Expiring": [
         "Тэрмін дзеяння"
+      ],
+      "Free Trial": [
+        "Бясплатная пробная версія"
       ]
     },
     "Subtitle": {
@@ -11408,6 +11443,32 @@
     "Themes": {
       "Themes": [
         "Тэмы"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } дзень",
+        "${ ceilDays } дні",
+        "${ ceilDays } дзён",
+        "${ ceilDays } дзён"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } гадзіна",
+        "${ ceilHours } гадзіны",
+        "${ ceilHours } гадзін",
+        "${ ceilHours } гадзін"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } хвіліна",
+        "${ ceilMinutes } хвіліны",
+        "${ ceilMinutes } хвілін",
+        "${ ceilMinutes } хвілін"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунд"
       ]
     },
     "Title": {
@@ -12136,6 +12197,9 @@
       ],
       "Subscription": [
         "Падпіска"
+      ],
+      "Subscription canceled": [
+        "Падпіска скасавана"
       ],
       "Successfully created ${ n } user account": [
         "Паспяхова створаны ${ n } уліковы запіс карыстальніка",
