@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { cloneElement, isValidElement } from 'react';
+import { cloneElement, isValidElement, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,6 +11,8 @@ import MailLogo from '@proton/components/components/logo/MailLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import WalletLogo from '@proton/components/components/logo/WalletLogo';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { IcChevronRight } from '@proton/icons';
 import { PLANS } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
@@ -21,8 +23,110 @@ import type { AllFeatures } from '../features';
 import { getFeatureDefinitions } from '../features';
 import type { PlanCardFeatureDefinition, ShortPlan } from '../features/interface';
 
-interface FeatureListProps {
+interface FeatureListProps extends Omit<PlanCardFeatureListProps, 'features' | 'keyFeatures'> {
+    featureArray: PlanCardFeatureDefinition[];
+}
+
+const FeatureList = ({
+    featureArray,
+    className,
+    odd,
+    margin,
+    iconSize = 5,
+    icon,
+    highlight,
+    iconColor,
+    tooltip,
+    itemClassName,
+}: FeatureListProps) => (
+    <ul
+        className={clsx(
+            'unstyled flex flex-column',
+            className,
+            odd && 'odd:bg-weak',
+            margin ? 'mt-4 mb-0 md:mb-6' : 'm-0'
+        )}
+    >
+        {featureArray.map((feature, i) => {
+            const iconToDisplay = (() => {
+                if (
+                    icon !== true &&
+                    icon !== false &&
+                    icon !== undefined &&
+                    icon !== null &&
+                    isValidElement<{
+                        size: IconSize;
+                    }>(icon)
+                ) {
+                    return cloneElement(icon, { size: iconSize });
+                }
+
+                if (feature.highlight && highlight) {
+                    return <Icon size={iconSize} name="fire" className="color-warning" />;
+                }
+
+                if (feature.included) {
+                    return (
+                        <span className={iconColor}>
+                            {icon && feature.icon ? (
+                                <Icon size={iconSize} name={feature.icon} />
+                            ) : (
+                                <Icon size={iconSize} name="checkmark" />
+                            )}
+                        </span>
+                    );
+                }
+
+                return <Icon size={iconSize} name="cross" className="mt-0.5" />;
+            })();
+
+            return (
+                <li
+                    key={
+                        // Key by index so that we can skeleton load certain features - eg the vpn countries
+                        i
+                    }
+                    className={clsx(odd && 'px-3 py-2 rounded', itemClassName, 'flex')}
+                >
+                    <div
+                        className={clsx(
+                            'flex *:min-size-auto flex-nowrap',
+                            !feature.included && 'color-hint',
+                            feature.included && feature.status === 'coming-soon' && 'color-weak'
+                        )}
+                    >
+                        <span className={clsx('flex shrink-0', iconSize < 5 ? 'mr-1' : 'mr-3')}>{iconToDisplay}</span>
+                        <span className="flex-1 text-left text-wrap-balance">
+                            <span className="align-middle">
+                                <span>
+                                    {feature.text}
+                                    {tooltip && feature.tooltip ? (
+                                        <Info
+                                            url={feature.iconUrl}
+                                            className="align-middle ml-1"
+                                            title={feature.tooltip}
+                                            colorPrimary={feature.included}
+                                        />
+                                    ) : null}
+                                </span>
+                                {feature.subtext && (
+                                    <>
+                                        <br />
+                                        <span className="text-sm">{feature.subtext}</span>
+                                    </>
+                                )}
+                            </span>
+                        </span>
+                    </div>
+                </li>
+            );
+        })}
+    </ul>
+);
+
+interface PlanCardFeatureListProps {
     features: PlanCardFeatureDefinition[];
+    keyFeatures?: PlanCardFeatureDefinition[];
     icon?: boolean | ReactNode;
     highlight?: boolean;
     margin?: boolean;
@@ -35,106 +139,72 @@ interface FeatureListProps {
 }
 
 export const PlanCardFeatureList = ({
-    odd = true,
     features,
+    keyFeatures,
     icon,
+    odd = true,
     highlight = false,
     margin = true,
     tooltip = true,
-    iconSize = 5,
+    iconSize,
     iconColor = 'color-success',
     className,
     itemClassName,
-}: FeatureListProps) => {
+}: PlanCardFeatureListProps) => {
+    const { viewportWidth } = useActiveBreakpoint();
+    const [showAllFeatures, setShowAllFeatures] = useState(false);
+
     if (!features.length) {
         return null;
     }
+
+    // Show toggle on smaller viewports when key features exist
+    if (viewportWidth['<=medium'] && keyFeatures?.length) {
+        return (
+            <>
+                <FeatureList
+                    featureArray={showAllFeatures ? features : keyFeatures}
+                    className={className}
+                    odd={odd}
+                    margin={margin}
+                    iconSize={iconSize}
+                    icon={icon}
+                    highlight={highlight}
+                    iconColor={iconColor}
+                    tooltip={tooltip}
+                    itemClassName={itemClassName}
+                />
+                <button
+                    type="button"
+                    className="color-primary text-sm relative interactive-pseudo-protrude"
+                    aria-label={showAllFeatures ? c('Action').t`Hide more benefits` : c('Action').t`Show more benefits`}
+                    onClick={() => setShowAllFeatures(!showAllFeatures)}
+                >
+                    <span className="flex items-center gap-1">
+                        <IcChevronRight
+                            size={4}
+                            className={clsx('shrink-0 transition-transform', showAllFeatures && 'rotateZ-270')}
+                        />
+                        <span>{showAllFeatures ? c('Action').t`Hide` : c('Action').t`More benefits`}</span>
+                    </span>
+                </button>
+            </>
+        );
+    }
+
     return (
-        <ul
-            className={clsx(
-                'unstyled flex flex-column',
-                className,
-                odd && 'odd:bg-weak',
-                margin ? 'mt-4 mb-0 md:mb-6' : 'm-0'
-            )}
-        >
-            {features.map((feature, i) => {
-                const iconToDisplay = (() => {
-                    if (
-                        icon !== true &&
-                        icon !== false &&
-                        icon !== undefined &&
-                        icon !== null &&
-                        isValidElement<{
-                            size: IconSize;
-                        }>(icon)
-                    ) {
-                        return cloneElement(icon, { size: iconSize });
-                    }
-
-                    if (feature.highlight && highlight) {
-                        return <Icon size={iconSize} name="fire" className="color-warning" />;
-                    }
-
-                    if (feature.included) {
-                        return (
-                            <span className={iconColor}>
-                                {icon && feature.icon ? (
-                                    <Icon size={iconSize} name={feature.icon} />
-                                ) : (
-                                    <Icon size={iconSize} name="checkmark" />
-                                )}
-                            </span>
-                        );
-                    }
-
-                    return <Icon size={iconSize} name="cross" className="mt-0.5" />;
-                })();
-
-                return (
-                    <li
-                        key={
-                            // Key by index so that we can skeleton load certain features - eg the vpn countries
-                            i
-                        }
-                        className={clsx(odd && 'px-3 py-2 rounded', itemClassName, 'flex')}
-                    >
-                        <div
-                            className={clsx(
-                                'flex *:min-size-auto flex-nowrap',
-                                !feature.included && 'color-hint',
-                                feature.included && feature.status === 'coming-soon' && 'color-weak'
-                            )}
-                        >
-                            <span className={clsx('flex shrink-0', iconSize < 5 ? 'mr-1' : 'mr-3')}>
-                                {iconToDisplay}
-                            </span>
-                            <span className="flex-1 text-left text-wrap-balance">
-                                <span className="align-middle">
-                                    <span>
-                                        {feature.text}
-                                        {tooltip && feature.tooltip ? (
-                                            <Info
-                                                url={feature.iconUrl}
-                                                className="align-middle ml-1"
-                                                title={feature.tooltip}
-                                                colorPrimary={feature.included}
-                                            />
-                                        ) : null}
-                                    </span>
-                                    {feature.subtext && (
-                                        <>
-                                            <br />
-                                            <span className="text-sm">{feature.subtext}</span>
-                                        </>
-                                    )}
-                                </span>
-                            </span>
-                        </div>
-                    </li>
-                );
-            })}
-        </ul>
+        <FeatureList
+            featureArray={features}
+            className={className}
+            odd={odd}
+            margin={margin}
+            iconSize={iconSize}
+            icon={icon}
+            highlight={highlight}
+            iconColor={iconColor}
+            tooltip={tooltip}
+            itemClassName={itemClassName}
+        />
     );
 };
 
