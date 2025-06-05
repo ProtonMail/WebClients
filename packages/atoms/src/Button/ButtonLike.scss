@@ -144,6 +144,7 @@
 		}
 	}
 
+	&.button-tiny,
 	&.button-small,
 	&.button-medium,
 	&.button-large {
@@ -251,6 +252,14 @@
  * Modifiers
  */
 
+.button-tiny {
+	--padding-block: #{em(5, 12)}; // 28px height
+	--padding-inline: #{em(5, 12)};
+
+	font-size: em(12);
+	line-height: #{math.div(16, 12)};
+}
+
 .button-small {
 	--padding-block: #{em(3)}; // 28px height
 	--padding-inline: #{em(11)};
@@ -270,6 +279,11 @@
 }
 
 .button-for-icon {
+	&.button-tiny {
+		--padding-block: #{em(5, 12)};
+		--padding-inline: #{em(5, 12)};
+	}
+
 	&.button-small {
 		--padding-block: #{em(5)};
 		--padding-inline: #{em(5)};
@@ -296,6 +310,10 @@
 	position: relative;
 
 	&:not(.button-for-icon) {
+		&.button-tiny {
+			padding-inline-end: em(24);
+		}
+
 		&.button-small {
 			padding-inline-end: em(32);
 		}
@@ -334,6 +352,10 @@
 			@include media('<=large') {
 				padding-inline-end: var(--padding-inline);
 			}
+		}
+
+		&.button-tiny .button-loader-container {
+			inset-inline-end: em(6);
 		}
 
 		&.button-small .button-loader-container {
