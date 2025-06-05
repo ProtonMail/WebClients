@@ -136,6 +136,11 @@ export const get24x7Support = (): PlanCardFeatureDefinition => ({
     text: c('new_plans: feature').t`24/7 account management support`,
 });
 
+export const getAllPremiumServices = (): PlanCardFeatureDefinition => ({
+    included: true,
+    text: c('pass_signup_2023: Info').t`Access to all ${BRAND_NAME} apps and premium features`,
+});
+
 export const getSentinel = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`${PROTON_SENTINEL_NAME} program`,

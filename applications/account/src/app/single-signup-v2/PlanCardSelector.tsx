@@ -162,7 +162,7 @@ const PlanCardViewSlot = ({
 }) => {
     const wrapper = (children: ReactNode) => {
         const className = clsx(
-            'card-plan overflow-hidden rounded-4xl border relative w-full h-full flex flex-column justify-start align-items-start',
+            'card-plan overflow-hidden rounded-xl md:rounded-4xl border relative w-full h-full flex flex-column justify-start align-items-start',
             selected && 'border-primary',
             !interactive && 'bg-weak'
         );
@@ -203,21 +203,21 @@ const PlanCardViewSlot = ({
                     {headerText ? (
                         <div
                             className={clsx(
-                                'flex justify-center items-center text-center card-plan-highlight text-sm text-semibold px-4 w-full h-custom',
+                                'flex justify-center items-center text-center card-plan-highlight text-sm text-semibold px-4 w-full md:h-custom',
                                 selected && 'card-plan-highlight--selected'
                             )}
-                            style={{ '--h-custom': '1.56rem' }}
+                            style={{ '--md-h-custom': '1.56rem' }}
                         >
                             {headerText}
                         </div>
                     ) : (
-                        <div className="w-full h-custom" style={{ '--h-custom': '1.56rem' }} />
+                        <div className="w-full md:h-custom" style={{ '--md-h-custom': '1.56rem' }} />
                     )}
 
-                    <div className="px-6 pb-6 pt-4 w-full">
+                    <div className="p-3 md:px-6 md:pb-6 md:pt-4 w-full">
                         <div className="flex items-start flex-column w-full">
-                            <div className="w-full flex *:min-size-auto flex-row flex-nowrap gap-3 items-center text-ellipsis">
-                                <strong className="text-2xl text-ellipsis text-left" id={`${id}-text`}>
+                            <div className="w-full flex *:min-size-auto flex-row flex-nowrap gap-2 md:gap-3 items-center text-ellipsis">
+                                <strong className="text-xl md:text-2xl text-ellipsis text-left" id={`${id}-text`}>
                                     {text}
                                 </strong>
                                 {interactive && selectable && (
@@ -237,7 +237,7 @@ const PlanCardViewSlot = ({
 
                             {subline && <div className="mt-4 text-left color-weak text-xs">{subline}</div>}
 
-                            <div className="mt-4 mb-6 text-left w-full">
+                            <div className="my-2 md:my-4 text-left w-full">
                                 <div
                                     id={`${id}-price`}
                                     className={clsx(
@@ -271,7 +271,7 @@ const PlanCardViewSlot = ({
                                 </div>
                             </div>
 
-                            {subsection}
+                            <div className="flex flex-column gap-1 w-full">{subsection}</div>
 
                             {cta && <div className="mt-4">{cta}</div>}
                         </div>
