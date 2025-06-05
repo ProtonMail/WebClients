@@ -280,6 +280,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "დაადასტურეთ ბმულის გახსნა ${ linkToShow }"
       ],
+      "Confirm purchase": [
+        "შეძენის დადასტურება"
+      ],
       "Connect": [
         "დაკავშირება"
       ],
@@ -679,6 +682,9 @@
       "Get more servers": [
         "მეტი სერვერის მიღება"
       ],
+      "Get started": [
+        "დაიწყეთ"
+      ],
       "Get the app": [
         "გადმოიწერეთ აპი"
       ],
@@ -696,6 +702,9 @@
       ],
       "Get verification code": [
         "შემოწმების კოდის მიღება"
+      ],
+      "Go back": [
+        "უკან დაბრუნება"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME }-ზე გადასვლა"
@@ -781,10 +790,10 @@
       "Keep": [
         "დატოვება"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "ჩასწორების გაგრძელება"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "ჩასწორების გაგრძელება"
       ],
       "Keep logo": [
@@ -909,9 +918,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "${ DOCS_SHORT_APP_NAME }-ში გახსნა"
       ],
       "Open navigation": [
         "ნავიგაციის გახსნა"
@@ -2021,6 +2027,9 @@
       ],
       "Two-year": [
         "ორი წლით"
+      ],
+      "Yearly": [
+        "წლიურად"
       ]
     },
     "Blog": {
@@ -4612,6 +4621,12 @@
       "Actions": [
         "ქმედებები"
       ],
+      "Forward from": [
+        "გადამისამართება ვისგან"
+      ],
+      "Forward to": [
+        "გადაგზავნა"
+      ],
       "From": [
         "ვისგან"
       ],
@@ -4687,10 +4702,10 @@
       "Forward to": [
         "გადაგზავნა"
       ],
-      "Or": [
+      "or": [
         "ან"
       ],
-      "or": [
+      "Or": [
         "ან"
       ],
       "With attachment": [
@@ -8078,6 +8093,9 @@
       "End-to-end email encryption is enabled for this group.": [
         "გამჭოლი ელფოსტოს დაშიფვრა ჩართულია ამ ჯგუფისთვის."
       ],
+      "End-to-end encrypted": [
+        "გამჭოლი შიფრაცია"
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "ბოლოწერტილის ბმული, რომელიც თქვენი იდენტიფიკატორის მომწოდებლისგან მივიღეთ (მაგ: https://idp.example.com/sso/saml)."
       ],
@@ -10862,10 +10880,10 @@
       "Allow sharing outside the organization": [
         "ორგანიზაციის გარეთ გაზიარების დაშვება"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "დაშვებული დომენი"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "დაშვებული დომენი"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10877,10 +10895,10 @@
       "Amount due": [
         "გადასახდელი თანხა"
       ],
-      "And": [
+      "AND": [
         "და"
       ],
-      "AND": [
+      "And": [
         "და"
       ],
       "and": [
@@ -11306,10 +11324,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "თუ"
       ],
-      "IF": [
+      "If": [
         "თუ"
       ],
       "Import all messages": [
@@ -11519,13 +11537,13 @@
       "Optional": [
         "არასავალდებულო"
       ],
+      "OR": [
+        "ან"
+      ],
       "or": [
         "ან"
       ],
       "Or": [
-        "ან"
-      ],
-      "OR": [
         "ან"
       ],
       "Organization name": [
@@ -12027,9 +12045,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } შეიქმნა"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } განახლდა"
       ],
       "Preference saved": [
         "პარამეტრები შენახულია"
@@ -13463,9 +13478,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "იმუშავეთ ინტერნეტში უსაფრთხოდ ნებისმიერი ადგილიდან ქსელის მონიტორინგის საშუალებებით"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "დაცული ღრუბლოვანი საცავი, რომელიც საშუალებას გაძლევთ, ადვილად და დაცულად შეინახოთ, დასინქოთ და გააზიაროთ ფაილები."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "დაცული ელფოსტა დამატებითი ფუნქციებით, თქვენი ყოველდღიური მიმოწერისთვის."
       ],
@@ -14219,6 +14231,9 @@
       ],
       "Desktop": [
         "სამუშაო მაგიდა"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "დასაწყისისთვის შეიყვანეთ საჩვენებელი სახელი. ეს ის სახელია, რომელსც ხალხი დაინახავს, როცა ელფოსტას გაუგზავნით, მოიწვევთ მოვლენაზე ან ფაილს გაუზიარებთ."
       ]
     },
     "Option": {
@@ -16565,6 +16580,47 @@
       ],
       "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
         "თქვენ ჩართეთ მისამართის გადმოწმება ${ boldSenderEmail }-ისთვის. ჩვენ ამ კალენდრის მოსაწვევის სინამდვილე ვერ დავადასტურეთ. ეს შეიძლება, ამ კონტაქტის დაშიფვრის გასაღებების ცვლილების გამოა. გადახედეთ GPG-ის დამატებით პარამეტრებს ან შეგიძლიათ, ${ boldSenderEmail }-ს ახალი მოსაწვევის გამოგზავნა სთხოვოთ."
+      ]
+    },
+    "Signup": {
+      "/user": [
+        "/მომხმარებელი"
+      ],
+      "Billing Cycle": [
+        "ბილინგის ციკლი"
+      ],
+      "Compare plans": [
+        "სატარიფო გეგმების შედარება"
+      ],
+      "Free": [
+        "Free"
+      ],
+      "Monthly": [
+        "თვეში ერთხელ"
+      ],
+      "Most popular": [
+        "ყველაზე პოპულარული"
+      ],
+      "Selected": [
+        "მონიშნულია"
+      ],
+      "Set display name": [
+        "საჩვენებელი სახელის დაყენება"
+      ],
+      "Total": [
+        "ჯამი"
+      ],
+      "Up to 2 users": [
+        "2-მდე მომხმარებელი"
+      ],
+      "Up to 6 users": [
+        "6-მდე მომხმარებელი"
+      ],
+      "Yearly": [
+        "წლიურად"
+      ],
+      "Your plan": [
+        "თქვენი გეგმა"
       ]
     },
     "Signup label": {
