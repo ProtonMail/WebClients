@@ -22,7 +22,6 @@ import {
     hasBundle,
     hasDeprecatedVPN,
     hasDrive,
-    hasDrive1TB,
     hasDriveBusiness,
     hasDuo,
     hasMail,
@@ -329,27 +328,6 @@ const getDriveUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPl
             openSubscriptionModal({
                 cycle: defaultUpsellCycleB2C,
                 plan: PLANS.DRIVE,
-                step: SUBSCRIPTION_STEPS.CHECKOUT,
-                disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
-                telemetryFlow: rest.telemetryFlow,
-            }),
-        ...rest,
-    });
-};
-
-const getDrive1TBUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
-    return getUpsell({
-        plan: PLANS.DRIVE_1TB,
-        plansMap,
-        app,
-        upsellPath: DASHBOARD_UPSELL_PATHS.DRIVE,
-        onUpgrade: () =>
-            openSubscriptionModal({
-                cycle: defaultUpsellCycleB2C,
-                plan: PLANS.DRIVE_1TB,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
                 metrics: {
@@ -816,7 +794,7 @@ export const resolveUpsellsToDisplay = ({
                     getBundleUpsell({ ...upsellsPayload, isRecommended: true }),
                 ];
             case Boolean(hasDriveFree):
-                return [getDriveUpsell(upsellsPayload), getDrive1TBUpsell({ ...upsellsPayload, isRecommended: true })];
+                return [getDriveUpsell(upsellsPayload)];
             case Boolean(hasPassFree):
                 return [getPassUpsell(upsellsPayload), getPassFamilyUpsell(upsellsPayload)];
             case Boolean(hasVPNFree):
@@ -827,16 +805,6 @@ export const resolveUpsellsToDisplay = ({
                 return [
                     getPassFamilyUpsell({ ...upsellsPayload, isRecommended: true }),
                     getBundleUpsell({ ...upsellsPayload }),
-                ];
-            case hasDrive(subscription):
-                return [
-                    getDrive1TBUpsell({ ...upsellsPayload, isRecommended: true }),
-                    canAccessDuoPlan ? getDuoUpsell(upsellsPayload) : getFamilyUpsell(upsellsPayload),
-                ];
-            case hasDrive1TB(subscription):
-                return [
-                    canAccessDuoPlan ? getDuoUpsell(upsellsPayload) : getFamilyUpsell(upsellsPayload),
-                    getFamilyUpsell(upsellsPayload),
                 ];
             case Boolean(isFree || hasOnePlusSubscription(subscription)):
                 return [
