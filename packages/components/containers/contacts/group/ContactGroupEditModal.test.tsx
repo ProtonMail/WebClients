@@ -1,4 +1,4 @@
-import { fireEvent, getByDisplayValue, waitFor } from '@testing-library/react';
+import { fireEvent, getByDisplayValue, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { CryptoProxy } from '@proton/crypto';
@@ -93,21 +93,18 @@ describe('ContactGroupEditModal', () => {
             return {};
         });
 
-        const { getByTestId, getByText, getAllByText } = renderWithProviders(
-            <ContactGroupEditModal open={true} {...props} />,
-            {
-                preloadedState: {
-                    mailSettings: getModelState({ RecipientLimit: MAX_RECIPIENTS } as MailSettings),
-                    contactEmails: getModelState([contactEmail1, contactEmail2, contactEmail3]),
-                    categories: getModelState([group]),
-                },
-            }
-        );
+        renderWithProviders(<ContactGroupEditModal open={true} {...props} />, {
+            preloadedState: {
+                mailSettings: getModelState({ RecipientLimit: MAX_RECIPIENTS } as MailSettings),
+                contactEmails: getModelState([contactEmail1, contactEmail2, contactEmail3]),
+                categories: getModelState([group]),
+            },
+        });
 
         const name = document.getElementById('contactGroupName') as HTMLElement;
         fireEvent.change(name, { target: { value: 'NewName' } });
 
-        const colorDropdown = getByTestId('dropdown-button');
+        const colorDropdown = screen.getByTestId('dropdown-button');
         fireEvent.click(colorDropdown);
 
         const colorButton = document.getElementById('contactGroupColor') as HTMLElement;
@@ -115,16 +112,16 @@ describe('ContactGroupEditModal', () => {
         const colorRadio = getByDisplayValue(document.body, ACCENT_COLORS[0]);
         fireEvent.click(colorRadio);
 
-        const removeButtons = getAllByText('Remove');
+        const removeButtons = screen.getAllByText('Remove');
         fireEvent.click(removeButtons[2]);
 
         const email = document.getElementById('contactGroupEmail') as HTMLElement;
         fireEvent.change(email, { target: { value: 'email4@test.com' } });
 
-        const addButton = getByText('Add');
+        const addButton = screen.getByText('Add');
         fireEvent.click(addButton);
 
-        const saveButton = getByText('Save');
+        const saveButton = screen.getByText('Save');
         fireEvent.click(saveButton);
 
         await waitFor(() => {
@@ -154,5 +151,38 @@ describe('ContactGroupEditModal', () => {
 
         const unlabelData = unlabelSpy.mock.calls[0][0];
         expect(unlabelData.ContactEmailIDs).toEqual([contactEmail3.ID]);
+    });
+
+    it('should be able to add all contacts and manually adding an email address', async () => {
+        minimalCache();
+
+        const contacts = [contactEmail1, contactEmail2, contactEmail3];
+
+        renderWithProviders(<ContactGroupEditModal open={true} {...props} />, {
+            preloadedState: {
+                mailSettings: getModelState({ RecipientLimit: MAX_RECIPIENTS } as MailSettings),
+                contactEmails: getModelState(contacts),
+                categories: getModelState([group]),
+            },
+        });
+
+        const name = document.getElementById('contactGroupName') as HTMLElement;
+        fireEvent.change(name, { target: { value: 'NewName' } });
+
+        // Add all contacts
+        contacts.forEach((contact) => {
+            const email = document.getElementById('contactGroupEmail') as HTMLElement;
+            fireEvent.change(email, { target: { value: contact.Email } });
+
+            const addButton = screen.getByText('Add');
+            fireEvent.click(addButton);
+        });
+
+        // Add manually an email address in the group
+        const email = document.getElementById('contactGroupEmail') as HTMLElement;
+        fireEvent.change(email, { target: { value: 'email4@test.com' } });
+
+        const addButton = screen.getByText('Add');
+        fireEvent.click(addButton);
     });
 });
