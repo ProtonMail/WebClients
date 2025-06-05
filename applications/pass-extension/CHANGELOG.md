@@ -1,3 +1,29 @@
+### Version 1.31.6
+
+- Fix tab messaging race-condition
+- Fix invalid telemetry beacons
+
+### Version 1.31.5
+
+- Set default pass theme to system preference
+- Secure injected elements into closed shadow DOM
+- Improved in-app onboarding on first login
+- Improved i18n/theme hydration on boot
+- Improve autofill failure monitoring
+- Fix managers/admins not able to move items to another vault
+- Fix unstable sorting for autofill candidates
+- Fix item draft loss edge-case
+- Fixed minor UI/UX issues
+
+### Version 1.31.4
+
+- Add support for OpenPGP grammar check
+
+### Version 1.31.3
+
+- Add Proton Anniversary 2025 offer
+- Fix extra-password authentication edge-case
+
 ### Version 1.31.2
 
 - Improve invite members modal UX
