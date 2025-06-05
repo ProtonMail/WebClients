@@ -4,8 +4,12 @@
 	--border-radius-4xl: calc(4 * var(--border-radius) * var(--1px));
 }
 
-.rounded-4xl {
-	border-radius: var(--border-radius-4xl);
+.md\:rounded-4xl {
+	@include media('>=medium') {
+		&#{&} {
+			border-radius: var(--border-radius-4xl);
+		}
+	}
 }
 
 .signup-v2 {
@@ -15,7 +19,8 @@
 
 	&-bg {
 		@include media('>xsmall') {
-			background: radial-gradient(38.47% 29.48% at 50% -3.24%, var(--background-norm) 0%, transparent 100%),
+			background:
+				radial-gradient(38.47% 29.48% at 50% -3.24%, var(--background-norm) 0%, transparent 100%),
 				linear-gradient(180deg, #f7f5ff 0%, transparent 100%), var(--background-norm);
 		}
 	}
@@ -49,11 +54,8 @@
 		}
 
 		@include media('>xsmall') {
-			background: radial-gradient(
-					37.39% 37.39% at 50.8% 0%,
-					var(--bf-highlight, rgb(109 74 255 / 0.35)) 0%,
-					rgb(0 0 0 / 0) 100%
-				),
+			background:
+				radial-gradient(37.39% 37.39% at 50.8% 0%, var(--bf-highlight, rgb(109 74 255 / 0.35)) 0%, rgb(0 0 0 / 0) 100%),
 				#191927;
 		}
 	}
@@ -108,7 +110,8 @@
 	}
 
 	&-offer-banner {
-		background: linear-gradient(81.4deg, var(--promotion-background-start) 0%, var(--promotion-background-end) 100%),
+		background:
+			linear-gradient(81.4deg, var(--promotion-background-start) 0%, var(--promotion-background-end) 100%),
 			var(--background-norm);
 		color: var(--primary);
 
@@ -139,7 +142,8 @@
 	}
 
 	&--wallet {
-		background: radial-gradient(24% 36% at 20% 5.5%, rgb(232 213 255 / 0.5) 0%, rgb(232 213 255 / 0) 100%),
+		background:
+			radial-gradient(24% 36% at 20% 5.5%, rgb(232 213 255 / 0.5) 0%, rgb(232 213 255 / 0) 100%),
 			radial-gradient(26% 46% at 7% 85%, rgb(232 213 255 / 0.3) 0%, rgb(232 213 255 / 0) 100%),
 			radial-gradient(23% 42% at 15% 39%, rgb(213 233 255 / 0.3) 0%, rgb(213 233 255 / 0) 100%),
 			radial-gradient(25% 45% at 90% 14%, rgb(232 213 255 / 0.3) 0%, rgb(232 213 255 / 0) 100%),
