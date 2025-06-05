@@ -9,7 +9,7 @@ import { FiltersUpsellModal, Icon, useModalStateObject } from '@proton/component
 import { useFilters } from '@proton/mail/filters/hooks';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
-import { getUnsubscribeMethod, shouldOpenUpsellOnFilterClick } from '../helper';
+import { getReceivedMessagesCount, getUnsubscribeMethod, shouldOpenUpsellOnFilterClick } from '../helper';
 import type { ModalFilterType, PropsWithNewsletterSubscription } from '../interface';
 import ModalUnsubscribe from './ModalUnsubscribe/ModalUnsubscribe';
 import { ModalMoveToFolder } from './MoveToFolder/ModalMoveToFolder';
@@ -47,6 +47,8 @@ const SubscriptionStat = ({ iconName, children }: SubscriptionStatProps) => {
 };
 
 export const SubscriptionCardStats = ({ subscription }: PropsWithNewsletterSubscription) => {
+    const receivedMessagesCount = getReceivedMessagesCount(subscription);
+
     return (
         <div className="flex flex-column gap-2 text-sm color-weak">
             {subscription.UnreadMessageCount !== undefined ? (
@@ -59,12 +61,12 @@ export const SubscriptionCardStats = ({ subscription }: PropsWithNewsletterSubsc
                 </SubscriptionStat>
             ) : null}
 
-            {subscription.ReceivedMessages.Last30Days !== undefined ? (
+            {receivedMessagesCount !== undefined ? (
                 <SubscriptionStat iconName="inbox">
                     {c('Info').ngettext(
-                        msgid`${subscription.ReceivedMessages.Last30Days} email last month`,
-                        `${subscription.ReceivedMessages.Last30Days} emails last month`,
-                        subscription.ReceivedMessages.Last30Days
+                        msgid`${receivedMessagesCount} email last month`,
+                        `${receivedMessagesCount} emails last month`,
+                        receivedMessagesCount
                     )}
                 </SubscriptionStat>
             ) : null}
