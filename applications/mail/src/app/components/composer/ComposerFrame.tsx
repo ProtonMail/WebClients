@@ -1,6 +1,5 @@
 import type { DragEvent, MouseEventHandler } from 'react';
-import { useCallback, useMemo } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { ErrorBoundary, useActiveBreakpoint, useHandler, useWindowSize } from '@proton/components';
 import { getHasAssistantStatus } from '@proton/llm/lib';
@@ -125,7 +124,8 @@ const ComposerFrame = ({ index, count, focus, onFocus, onClose: inputOnClose, co
     };
 
     return (
-        <div
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-element-interactions
+        <section
             ref={composerFrameRef}
             className={clsx([
                 `composer rounded flex flex-nowrap flex-column outline-none ${customClasses}`,
@@ -139,6 +139,7 @@ const ComposerFrame = ({ index, count, focus, onFocus, onClose: inputOnClose, co
             onDragEnter={handleDragEnter}
             tabIndex={-1}
             data-testid={composerID}
+            aria-labelledby={`composer-title-${composerID}`}
         >
             {!isAssistantExpanded && (
                 <ComposerTitleBar
@@ -150,6 +151,7 @@ const ComposerFrame = ({ index, count, focus, onFocus, onClose: inputOnClose, co
                     onClose={handleClose}
                     handleStartDragging={handleStartDragging}
                     minimizeButtonRef={minimizeButtonRef}
+                    composerID={composerID}
                 />
             )}
             <ErrorBoundary initiative="composer">
@@ -166,7 +168,7 @@ const ComposerFrame = ({ index, count, focus, onFocus, onClose: inputOnClose, co
                     minimizeButtonRef={minimizeButtonRef}
                 />
             </ErrorBoundary>
-        </div>
+        </section>
     );
 };
 
