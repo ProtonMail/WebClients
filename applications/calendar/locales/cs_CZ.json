@@ -452,6 +452,9 @@
       "Keep my subscription": [
         "Zachovat mé předplatné"
       ],
+      "Keep subscription": [
+        "Zachovat předplatné"
+      ],
       "Later": [
         "Později"
       ],
@@ -815,10 +818,10 @@
       "Upgrade": [
         "Přejít na placený tarif"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Navýšit nyní"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Navýšit nyní"
       ],
       "Upload and share files": [
@@ -1681,6 +1684,32 @@
       ],
       "strawberry": [
         "jahoda"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Denní přehled"
+      ],
+      "Month view": [
+        "Měsíční přehled"
+      ],
+      "New event": [
+        "Nová událost"
+      ],
+      "Next period": [
+        "Další období"
+      ],
+      "Previous period": [
+        "Předchozí období"
+      ],
+      "Search events": [
+        "Hledat události"
+      ],
+      "Today": [
+        "Dnes"
+      ],
+      "Week view": [
+        "Týdenní přehled"
       ]
     },
     "Confirm modal title": {
@@ -4209,6 +4238,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Drawer": [
+        "Boční panel"
+      ],
       "Name": [
         "Jméno"
       ],
@@ -5120,6 +5152,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Pokud službu zrušíte, okamžitě ztratíte přístup k ${ boldPlanTitle } a váš tarif bude snížen na ${ boldProtonFree }. Pokud vaše používání překročí limity bezplatného tarifu, může dojít k omezení přístupu k funkcím produktu a k vašim datům."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Pokud zrušíte vaše předplatné ${ planTitle }, nebude už obnoveno po vypršení jeho platnosti ${ expiryDate }."
       ],
@@ -5612,6 +5647,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pro dokončení platby zašlete ${ btcAmountBold } na níže uvedenou adresu."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Chcete-li si i nadále užívat ${ boldPlanTitle } zdarma až do ${ boldCancelDate }, službu nerušte."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
       ],
@@ -5707,6 +5745,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "Zobrazení týdne a měsíce platí pouze pro desktop."
+      ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Čeho se vzdáváte zrušením ${ boldPlanTitle }:"
       ],
       "When working remotely": [
         "Při práci na dálku"
@@ -5804,6 +5845,9 @@
       "You can now return to the application to continue": [
         "Nyní se můžete vrátit do aplikace a pokračovat"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Ke všem datům svého účtu máte stále přístup. Kdykoli si můžete tarif znovu předplatit a nadále využívat všechny naše funkce."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
       ],
@@ -5861,6 +5905,9 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Aktualizujete všechny události v této sérii. Odebraní účastníci budou informováni."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Pokud službu zrušíte před ${ trialEndsOnFormatted }, nebudou vám účtovány žádné poplatky."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }.",
         "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }.",
@@ -5881,6 +5928,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Vaše ${ PASS_SHORT_APP_NAME } Plus bude nahrazeno doživotním předplatným ${ PASS_SHORT_APP_NAME }. Zbývající část předplatného bude připsána na váš účet. Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "Váš tarif ${ planName } je nyní placeným předplatným, které se automaticky obnovuje každých 12 měsíců. Vaše příští datum fakturace je ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup bude brzy omezen. ${ payInvoiceLink }"
@@ -5915,6 +5965,9 @@
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Vaše bezplatná zkušební verze ${ boldPlanTitle } byla zrušena a váš účet ${ boldUserEmail } byl snížen na ${ boldProtonFree }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Vaše informace byly nalezeny ${ displayedDate }"
       ],
@@ -5939,6 +5992,9 @@
       "Your online activity is protected": [
         "Vaše online aktivita je chráněna"
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Vaše organizace ${ boldOrganizationName } je deaktivována a všechny její uživatelské licence byly odebrány."
+      ],
       "Your password was leaked:": [
         "Došlo k úniku vašeho hesla:"
       ],
@@ -5962,6 +6018,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Zdá se, že se vaše systémové časové pásmo změnilo na ${ timezone }. Chcete aktualizovat nastavení časového pásma?"
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Vaše zkušební verze skončí za ${ timeRemaining }."
       ]
     },
     "info": {
@@ -6164,6 +6223,9 @@
       ],
       "Address": [
         "Adresa"
+      ],
+      "Alias title": [
+        "Název aliasu"
       ],
       "All day": [
         "Celý den"
@@ -6554,9 +6616,6 @@
       ],
       "Time zone": [
         "Časové pásmo"
-      ],
-      "Title": [
-        "Název"
       ],
       "To: ${ toEmail }": [
         "Komu: ${ toEmail }"
@@ -7190,6 +7249,11 @@
         "Střední rychlost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Smazat účet"
@@ -7211,11 +7275,6 @@
       ],
       "Switch plan": [
         "Změnit tarif"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7808,9 +7867,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Bezpečný přístup k internetu odkudkoli, včetně důležitého monitorování sítě"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Bezpečné kloudové úložiště, které vám umožňuje uchovávat, synchronizovat a sdílet soubory jednoduše a bezpečně."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Zabezpečený e-mail s pokročilými funkcemi pro každodenní komunikaci."
@@ -10507,6 +10563,32 @@
         "Připojit se ke schůzce v Teams"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } den",
+        "${ ceilDays } dny",
+        "${ ceilDays } dnů",
+        "${ ceilDays } dnů"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } hodinu",
+        "${ ceilHours } hodiny",
+        "${ ceilHours } hodin",
+        "${ ceilHours } hodin"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minutu",
+        "${ ceilMinutes } minuty",
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minut"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekundu",
+        "${ seconds } sekundy",
+        "${ seconds } sekund",
+        "${ seconds } sekund"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } h",
@@ -11114,6 +11196,9 @@
       "Start import process": [
         "Zahájit proces importu"
       ],
+      "Subscription canceled": [
+        "Předplatné zrušeno"
+      ],
       "Summary": [
         "Shrnutí"
       ],
@@ -11185,6 +11270,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaše bezplatná zkušební verze ${ planName } skončí ${ textDate }"
+      ],
+      "Your ${ planName } subscription started": [
+        "Vaše předplatné ${ planName } bylo zahájeno"
       ],
       "Your account is protected": [
         "Váš účet je chráněn"
