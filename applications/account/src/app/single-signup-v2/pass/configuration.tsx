@@ -56,11 +56,11 @@ import noop from '@proton/utils/noop';
 import { SignupType } from '../../signup/interfaces';
 import type { BenefitItem } from '../Benefits';
 import Benefits from '../Benefits';
-import BundlePlanSubSection from '../BundlePlanSubSection';
 import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
 import LetsTalkSubsection from '../LetsTalkSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
 import SignupHeaderV2 from '../SignupHeaderV2';
+import AppsLogos from '../components/AppsLogos';
 import {
     getAliasesEmailProtectionBenefit,
     getBasedInSwitzerlandGDPRBenefit,
@@ -400,7 +400,7 @@ export const getPassBenefits = (
 };
 
 export const getFreePassFeatures = () => {
-    return [getPassUsers(1), getLoginsAndNotes('free'), getDevices(), getPassKeys(true), getSecureVaultSharing()];
+    return [getPassUsers(1), getLoginsAndNotes('free'), getDevices(), getPassKeys(true)];
 };
 
 export const getCustomPassFeatures = ({ isLifetime }: { isLifetime?: boolean } = {}) => {
@@ -413,26 +413,51 @@ export const getCustomPassFeatures = ({ isLifetime }: { isLifetime?: boolean } =
               }
             : null,
         isLifetime ? null : getPassUsers(1),
-        getLoginsAndNotes('paid'),
-        get2FAAuthenticator(true),
         getDevicesAndAliases(),
+        get2FAAuthenticator(true),
+        getSecureVaultSharing(true),
+        getLoginsAndNotes('paid'),
         getAdvancedAliasFeatures(true),
         getPassKeys(true),
-        getSecureVaultSharing(true),
         getPassMonitor(true),
+    ].filter(isTruthy);
+};
+
+export const getCustomPassKeyFeatures = ({ isLifetime }: { isLifetime?: boolean } = {}) => {
+    return [
+        isLifetime
+            ? {
+                  key: 'pass-lifetime-one-time-payment',
+                  text: c('pass_signup_2024: Info').t`One-time payment, lifetime deal`,
+                  included: true,
+              }
+            : null,
+        isLifetime ? null : getPassUsers(1),
+        getDevicesAndAliases(),
+        get2FAAuthenticator(true),
+        getSecureVaultSharing(true),
     ].filter(isTruthy);
 };
 
 export const getCustomPassFamilyFeatures = () => {
     return [
         getPassUsers(FAMILY_MAX_USERS),
-        getLoginsAndNotes('paid'),
         getDevicesAndAliases(),
+        get2FAAuthenticator(true),
+        getSecureVaultSharing(true),
+        getLoginsAndNotes('paid'),
         getAdvancedAliasFeatures(true),
         getPassKeys(true),
-        getSecureVaultSharing(true),
         getPassMonitor(true),
+    ];
+};
+
+export const getCustomPassFamilyKeyFeatures = () => {
+    return [
+        getPassUsers(FAMILY_MAX_USERS),
+        getDevicesAndAliases(),
         get2FAAuthenticator(true),
+        getSecureVaultSharing(true),
     ];
 };
 
@@ -534,19 +559,40 @@ export const getPassConfiguration = ({
             },
             {
                 plan: PLANS.PASS,
-                subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getCustomPassFeatures()} />,
+                subsection: (
+                    <PlanCardFeatureList
+                        {...planCardFeatureProps}
+                        features={getCustomPassFeatures()}
+                        keyFeatures={getCustomPassKeyFeatures()}
+                    />
+                ),
                 type: 'best' as const,
                 guarantee: true,
             },
             showPassFamily && {
                 plan: PLANS.PASS_FAMILY,
-                subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getCustomPassFamilyFeatures()} />,
+                subsection: (
+                    <PlanCardFeatureList
+                        {...planCardFeatureProps}
+                        features={getCustomPassFamilyFeatures()}
+                        keyFeatures={getCustomPassFamilyKeyFeatures()}
+                    />
+                ),
                 type: 'standard' as const,
                 guarantee: true,
             },
             {
                 plan: PLANS.BUNDLE,
-                subsection: <BundlePlanSubSection vpnServersCountData={vpnServersCountData} />,
+                subsection: (
+                    <>
+                        <div className="color-weak text-left text-sm mb-1">
+                            {c('pass_signup_2023: Info').t`All premium ${BRAND_NAME} services.`}
+                            <br />
+                            {c('pass_signup_2023: Info').t`One easy subscription.`}
+                        </div>
+                        <AppsLogos />
+                    </>
+                ),
                 type: 'standard' as const,
                 guarantee: true,
             },
