@@ -435,6 +435,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Ladda ner ${ DRIVE_APP_NAME } appen"
       ],
+      "Download all attachments": [
+        "Ladda ner alla bilagor"
+      ],
       "Download now": [
         "Ladda ner nu"
       ],
@@ -724,6 +727,9 @@
       "Keep my subscription": [
         "Behåll min prenumeration"
       ],
+      "Keep subscription": [
+        "Behåll prenumeration"
+      ],
       "Label as": [
         "Märk som"
       ],
@@ -957,9 +963,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Öppna i ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Öppna navigering"
@@ -1453,10 +1456,10 @@
       "Upgrade": [
         "Uppgradera"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Uppgradera nu"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Uppgradera nu"
       ],
       "Upload and share files": [
@@ -3982,11 +3985,6 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Din ${ PLAN_NAMES[PLANS.PASS] }-prenumeration är till ett specialpris på ${ price } per år. Genom att nedgradera till ett Free-paket kommer du förlora rabatten permanent, även om du uppgraderar igen i framtiden."
-      ]
-    },
-    "Download attachments": {
-      "Download all": [
-        "Ladda ner alla"
       ]
     },
     "Drawer tab, Action": {
@@ -7780,6 +7778,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "För att slutföra din betalning, skicka ${ btcAmountBold } till adressen nedan."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "För att fortsätta njuta av ${ boldPlanTitle } gratis fram till ${ boldCancelDate }, avbryt inte."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
       ],
@@ -8005,6 +8006,9 @@
       "Week": [
         "Vecka"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Vad du förlorar när du avbryter ${ boldPlanTitle }:"
+      ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "När vill du att ditt meddelande ska tas bort automatiskt från mottagarens inkorg och din mapp “Skickat“?"
       ],
@@ -8099,6 +8103,9 @@
       ],
       "You can now return to the application to continue": [
         "Du kan nu gå tillbaka till applikationen för att fortsätta"
+      ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Du kan fortfarande komma åt all din kontodata. Du kan prenumerera igen när som helst för att fortsätta att njuta av alla våra funktioner."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan slå på aviseringar för att bli uppmärksammad när nya e-postmeddelanden kommer till denna mapp."
@@ -8196,6 +8203,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Du skrev “${ attachmentsFoundKeyword }”, men ingen bilaga har lagts till. Vill du skicka ditt meddelande i alla fall?"
       ],
@@ -8217,6 +8227,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Din ${ PASS_SHORT_APP_NAME } Plus-prenumeration kommer att ersättas med ${ PASS_SHORT_APP_NAME } Lifetime. Den kvarvarande balansen för din prenumeration kommer att läggas till i ditt konto.${ PASS_SHORT_APP_NAME } livstidserbjudandet har inget förnyelsepris, det är en engångsbetalning för livstids åtkomst till ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "Ditt ${ planName }-paket är nu en betald prenumeration som förnyas automatiskt var 12:e månad. Ditt nästa faktureringsdatum är ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ditt konto har minst en försenad faktura. Din åtkomst kommer snart att begränsas. ${ payInvoiceLink }"
@@ -8244,6 +8257,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
+      ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Din gratis provperiod för ${ boldPlanTitle } har avbrutits, och ditt konto ${ boldUserEmail } har nedgraderats till ${ boldProtonFree }."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Din hårdvara stöder inte att köra skrivassistenten lokalt. Prova köra den på servrar."
@@ -8282,6 +8298,9 @@
       "Your online activity is protected": [
         "Din aktivitet online är skyddad"
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Din organisation ${ boldOrganizationName } är inaktiverad och alla dess användarplatser har tagits bort."
+      ],
       "Your password was leaked:": [
         "Ditt lösenord läcktes:"
       ],
@@ -8303,6 +8322,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Din prenumeration kommer förnyas automatiskt den ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Din provperiod slutar om ${ timeRemaining }."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
@@ -8629,6 +8651,9 @@
       "Address": [
         "Adress"
       ],
+      "Alias title": [
+        "Alias-rubrik"
+      ],
       "ALL": [
         "ALLA"
       ],
@@ -8644,11 +8669,11 @@
       "Always move sender's emails": [
         "Flytta alltid avsändarens e-postmeddelanden"
       ],
-      "And": [
-        "Och"
-      ],
       "AND": [
         "OCH"
+      ],
+      "And": [
+        "Och"
       ],
       "and": [
         "och"
@@ -8875,11 +8900,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Om"
-      ],
       "IF": [
         "OM"
+      ],
+      "If": [
+        "Om"
       ],
       "Import all messages": [
         "Importera alla meddelanden"
@@ -9017,14 +9042,14 @@
       "Optional": [
         "Valfritt"
       ],
+      "OR": [
+        "ELLER"
+      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
-      ],
-      "OR": [
-        "ELLER"
       ],
       "Original link": [
         "Originallänk"
@@ -9151,9 +9176,6 @@
       ],
       "Time": [
         "Tid"
-      ],
-      "Title": [
-        "Rubrik"
       ],
       "To:": [
         "Till:"
@@ -9919,6 +9941,14 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Skaffa ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -9940,14 +9970,6 @@
       ],
       "Switch plan": [
         "Byt paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Skaffa ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -10433,6 +10455,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Avancerad nätverkssäkerhet och åtkomsthantering med dedikerade säkra gateways"
       ],
@@ -10492,9 +10520,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Säker åtkomst till Internet var som helst med väsentlig nätverksövervakning"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Säker molnlagring som låter dig lagra, synkronisera och dela filer enkelt och säkert."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Säker e-post med avancerade funktioner för din dagliga kommunikation."
@@ -13412,6 +13437,24 @@
         "Igår"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dag",
+        "${ ceilDays } dagar"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } timme",
+        "${ ceilHours } timmar"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minuter"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekund",
+        "${ seconds } sekunder"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } timme",
@@ -14286,6 +14329,9 @@
       "Subject missing": [
         "Ämne saknas"
       ],
+      "Subscription canceled": [
+        "Prenumeration avslutad"
+      ],
       "Summary": [
         "Sammanfattning"
       ],
@@ -14386,6 +14432,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis provperiod för ${ planName } slutar den ${ textDate }"
+      ],
+      "Your ${ planName } subscription started": [
+        "Din ${ planName }-prenumeration startade"
       ],
       "Your account is protected": [
         "Ditt konto är skyddat"

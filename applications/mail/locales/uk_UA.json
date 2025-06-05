@@ -888,9 +888,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Відкрити налаштування ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Відкрити в ${ DOCS_SHORT_APP_NAME }"
-      ],
       "Open navigation": [
         "Відкрити панель навігації"
       ],
@@ -1347,11 +1344,11 @@
       "Upgrade": [
         "Покращити"
       ],
-      "Upgrade Now": [
-        "Передплатити"
-      ],
       "Upgrade now": [
         "Покращити"
+      ],
+      "Upgrade Now": [
+        "Передплатити"
       ],
       "Upload picture": [
         "Вивантажити зображення"
@@ -3819,11 +3816,6 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Ваша підписка ${ PLAN_NAMES[PLANS.PASS] } має спеціальну ціну ${ price } на рік. Перейшовши на тарифний план Безплатний, ви назавжди втратите знижку, навіть якщо в майбутньому знову перейдете на нього."
-      ]
-    },
-    "Download attachments": {
-      "Download all": [
-        "Завантажити все"
       ]
     },
     "driveplus2024: Deal details": {
@@ -8321,11 +8313,11 @@
       "Always move sender's emails": [
         "Завжди переміщувати е-пошту відправника"
       ],
-      "And": [
-        "Та"
-      ],
       "AND": [
         "ТА"
+      ],
+      "And": [
+        "Та"
       ],
       "and": [
         "та"
@@ -8540,11 +8532,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Якщо"
-      ],
       "IF": [
         "ЯКЩО"
+      ],
+      "If": [
+        "Якщо"
       ],
       "Import all messages": [
         "Імпортувати всі повідомлення"
@@ -8654,14 +8646,14 @@
       "Optional": [
         "Необов'язково"
       ],
+      "OR": [
+        "АБО"
+      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
-      ],
-      "OR": [
-        "АБО"
       ],
       "Original link": [
         "Оригінальне посилання"
@@ -8779,9 +8771,6 @@
       ],
       "Time": [
         "Час"
-      ],
-      "Title": [
-        "Назва"
       ],
       "To:": [
         "Кому:"
@@ -9483,6 +9472,14 @@
         "Середня швидкість VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Отримати ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Видалити обліковий запис"
@@ -9504,14 +9501,6 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Отримати ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -10083,9 +10072,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Безпечний доступ до інтернету де завгодно з обов'язковим моніторингом мережі"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Безпечне хмарне сховище, яке дає змогу легко та безпечно зберігати, синхронізувати та ділитися файлами."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Захищена електронна пошта з розширеними можливостями для щоденного спілкування."

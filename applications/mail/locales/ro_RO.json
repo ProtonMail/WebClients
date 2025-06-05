@@ -438,6 +438,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
       ],
+      "Download all attachments": [
+        "Descărcare toate atașamentele"
+      ],
       "Download now": [
         "Descărcare"
       ],
@@ -728,6 +731,9 @@
       "Keep my subscription": [
         "Îmi păstrez abonamentul"
       ],
+      "Keep subscription": [
+        "Păstrare abonament"
+      ],
       "Label as": [
         "Etichetare ca"
       ],
@@ -961,9 +967,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Deschidere în ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Deschidere navigare"
@@ -1457,10 +1460,10 @@
       "Upgrade": [
         "Modificare"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Modificare"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Modificare"
       ],
       "Upload and share files": [
@@ -4003,11 +4006,6 @@
         "Abonamentul pentru ${ PLAN_NAMES[PLANS.PASS] } este la un preț special de ${ price } pe an. Dacă treceți la un plan gratuit, veți pierde definitiv reducerea, chiar dacă reveniți la acest tip de plan în viitor."
       ]
     },
-    "Download attachments": {
-      "Download all": [
-        "Descărcare toate"
-      ]
-    },
     "Drawer tab, Action": {
       "Download for Linux": [
         "Descărcare pentru Linux"
@@ -5605,6 +5603,9 @@
       "Contacts": [
         "Contacte"
       ],
+      "Drawer": [
+        "Panou lateral"
+      ],
       "Hardware not compatible": [
         "Dispozitiv necompatibil"
       ],
@@ -6965,6 +6966,9 @@
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Dacă considerați că este o greșeală, vă rugăm ${ contactLink }."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Dacă anulați, veți pierde imediat accesul la ${ boldPlanTitle } și planul va fi retrogradat ${ boldProtonFree }. Dacă utilizarea actuală depășește limitele planului gratuit, este posibil să aveți acces restricționat la funcțiile produsului și la datele personale."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Dacă anulați, abonamentul la ${ planTitle } nu va fi reînnoit când va expira la ${ expiryDate }."
       ],
@@ -7901,6 +7905,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pentru a finaliza plata, trimiteți ${ btcAmountBold } la adresa de mai jos."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Pentru a continua să vă bucurați de ${ boldPlanTitle } gratuit până la ${ boldCancelDate }, nu anulați."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
       ],
@@ -8126,6 +8133,9 @@
       "Week": [
         "Săptămâna"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "La ce renunțați când anulați ${ boldPlanTitle }:"
+      ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Când doriți să fie șters automat mesajul de la destinatar și din mesajele trimise?"
       ],
@@ -8222,6 +8232,9 @@
       ],
       "You can now return to the application to continue": [
         "Puteți reveni la aplicație pentru a continua"
+      ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Încă vă puteți accesa toate datele contului. Vă puteți abona din nou oricând pentru a continua să vă bucurați de toate funcțiile noastre."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puteți activa notificările pentru a primi alerte atunci când apar mesaje noi în acest folder."
@@ -8331,6 +8344,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Nu se va aplica taxa dacă anulați înainte de ${ trialEndsOnFormatted }."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Ați scris „${ attachmentsFoundKeyword }”, dar nu a fost adăugat niciun atașament. Doriți să trimiteți totuși mesajul?"
       ],
@@ -8353,6 +8369,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Abonamentul ${ PASS_SHORT_APP_NAME } Plus va fi înlocuit cu ${ PASS_SHORT_APP_NAME } pe viață. Soldul rămas din abonament va fi restituit în cont. Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "Planul ${ planName } este acum un abonament cu plată care se reînnoiește automat la fiecare 12 luni. Următoarea dată de facturare este ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
@@ -8380,6 +8399,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
+      ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Perioada gratuită de probare a ${ boldPlanTitle } a fost anulată și contul ${ boldUserEmail } a fost retrogradat la ${ boldProtonFree }."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Dispozitivul actual nu acceptă rularea asistentului de scriere la nivel local. Încercați să îl rulați pe servere."
@@ -8419,6 +8441,9 @@
       "Your online activity is protected": [
         "Activitatea online vă este protejată"
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Organizația ${ boldOrganizationName } este dezactivată și toate licențele sale de utilizatori au fost eliminate."
+      ],
       "Your password was leaked:": [
         "Parola a fost divulgată:"
       ],
@@ -8441,6 +8466,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Abonamentul se va reînnoi automat la ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Perioada de probare se termină ${ timeRemaining }."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate"
@@ -8770,6 +8798,9 @@
       "Address": [
         "Adresa"
       ],
+      "Alias title": [
+        "Titlu alias"
+      ],
       "ALL": [
         "TOATE"
       ],
@@ -8785,11 +8816,11 @@
       "Always move sender's emails": [
         "Mutare întotdeauna mesajele expeditorului"
       ],
-      "And": [
-        "Şi"
-      ],
       "AND": [
         "ȘI"
+      ],
+      "And": [
+        "Şi"
       ],
       "and": [
         "și"
@@ -9016,11 +9047,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Dacă"
-      ],
       "IF": [
         "DACĂ"
+      ],
+      "If": [
+        "Dacă"
       ],
       "Import all messages": [
         "Importare toate mesajele"
@@ -9162,14 +9193,14 @@
       "Optional": [
         "Opțional"
       ],
+      "OR": [
+        "SAU"
+      ],
       "or": [
         "sau"
       ],
       "Or": [
         "Sau"
-      ],
-      "OR": [
-        "SAU"
       ],
       "Original link": [
         "Legătura originală"
@@ -9296,9 +9327,6 @@
       ],
       "Time": [
         "Ora"
-      ],
-      "Title": [
-        "Titlu"
       ],
       "To:": [
         "Către:"
@@ -10072,6 +10100,14 @@
         "Viteză VPN medie"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Luați ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ștergere cont"
@@ -10093,14 +10129,6 @@
       ],
       "Switch plan": [
         "Schimbare plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Luați ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -10669,9 +10697,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Accesați în siguranță internetul de oriunde cu monitorizarea esențială a rețelei"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Stocare sigură în cloud care permite stocarea, sincronizarea și partajarea ușoară și sigură a fișierelor."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "E-mail securizat cu funcții avansate pentru comunicațiile personale zilnice."
@@ -13655,6 +13680,28 @@
         "Ieri"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } zi",
+        "${ ceilDays } zile",
+        "${ ceilDays } de zile"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } oră",
+        "${ ceilHours } ore",
+        "${ ceilHours } de ore"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minute",
+        "${ ceilMinutes } de minute"
+      ],
+      "${ seconds } second": [
+        "${ seconds } secundă",
+        "${ seconds } secunde",
+        "${ seconds } de secunde"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } h",
@@ -14544,6 +14591,9 @@
       "Subject missing": [
         "Subiect lipsă"
       ],
+      "Subscription canceled": [
+        "Abonament anulat"
+      ],
       "Summary": [
         "Sumar"
       ],
@@ -14646,6 +14696,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Probarea gratuită pentru ${ planName } se încheie ${ textDate }"
+      ],
+      "Your ${ planName } subscription started": [
+        "Abonamentul pentru ${ planName } a început"
       ],
       "Your account is protected": [
         "Contul este protejat"
