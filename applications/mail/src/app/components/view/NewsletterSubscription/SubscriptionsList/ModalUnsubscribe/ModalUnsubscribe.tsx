@@ -101,6 +101,7 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
                                 displaySenderImage
                                 initialsStyle={{ '--h-custom': '2.25rem' }}
                                 initialsClassName="bg-strong text-no-bold flex h-custom items-center justify-center rounded w-full"
+                                overrideSize={36}
                             />
                         </div>
                         <div>
