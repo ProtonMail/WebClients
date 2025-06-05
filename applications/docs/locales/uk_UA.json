@@ -2228,6 +2228,11 @@
         "Протермінований рахунок"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "скористайтеся помічником з імпортування Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } захищає ваш обліковий запис із виділеним цілодобовим моніторингом підозрілої діяльності, включно з ескалацією до фахівців з безпеки."
@@ -2291,11 +2296,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ви вже створили 10 псевдонімів. Отримайте необмежені псевдоніми та 500 ГБ сховища з ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "скористайтеся помічником з імпортування Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5341,6 +5341,9 @@
       "Extended address": [
         "Додаткова адреса"
       ],
+      "File": [
+        "Файл"
+      ],
       "First name": [
         "Ім'я"
       ],
@@ -5565,9 +5568,6 @@
       ],
       "Thomas": [
         "Томас"
-      ],
-      "Title": [
-        "Назва"
       ],
       "To: ${ toEmail }": [
         "Кому: ${ toEmail }"
@@ -6670,9 +6670,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Безпечний доступ до інтернету де завгодно з обов'язковим моніторингом мережі"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Безпечне хмарне сховище, яке дає змогу легко та безпечно зберігати, синхронізувати та ділитися файлами."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Захищена електронна пошта з розширеними можливостями для щоденного спілкування."

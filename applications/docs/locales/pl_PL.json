@@ -207,6 +207,9 @@
       "Copy address": [
         "Kopiuj adres"
       ],
+      "Copy alias “${ name }”": [
+        "Kopiuj alias “${ name }”"
+      ],
       "Copy as markdown": [
         "Kopiuj jako format markdown"
       ],
@@ -439,6 +442,9 @@
         "Zwiększ"
       ],
       "Keep my subscription": [
+        "Zachowaj subskrypcję"
+      ],
+      "Keep subscription": [
         "Zachowaj subskrypcję"
       ],
       "Learn more": [
@@ -932,140 +938,6 @@
       ],
       "By leaving now, some events may not be imported": [
         "Jeśli wyjdziesz teraz, niektóre wydarzenia nie zostaną zaimportowane"
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Skorzystaj z oferty"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "200 GB storage": [
-        "200 GB przestrzeni dyskowej"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB zaszyfrowanej przestrzeni dyskowej"
-      ],
-      "Add unlimited credit cards": [
-        "Możliwość dodania nieograniczonej liczby kart płatniczych"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Wszystkie funkcje premium ${ BRAND_NAME } Mail, Pass, VPN, Drive i Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokuj reklamy, elementy śledzące i złośliwe oprogramowanie"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Zniżki oparte są na standardowych cenach miesięcznych. Po zakończeniu cyklu rozliczeniowego Twoja subskrypcja zostanie odnowiona według standardowej rocznej stawki."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Podwój zaszyfrowaną przestrzeń dyskową – zyskaj 1 TB i chroń wszystkie swoje dane"
-      ],
-      "Encrypted password manager": [
-        "Szyfrowany menedżer haseł"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Oto ekskluzywny prezent, którym chcemy uczcić naszą wspólną podróż."
-      ],
-      "High speed streaming with VPN": [
-        "Szybki streaming z VPN"
-      ],
-      "of privacy": [
-        "prywatności"
-      ],
-      "Online document editor": [
-        "Edytor dokumentów online"
-      ],
-      "Online privacy for up to 2 people": [
-        "Prywatność online dla maksymalnie 2 osób"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Prywatność online dla całej Twojej rodziny (do 6 osób)"
-      ],
-      "Protect up to 10 devices": [
-        "Chroń nawet 10 urządzeń"
-      ],
-      "Recover previous file versions": [
-        "Odzyskiwanie poprzednich wersji plików"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Dużo zaoszczędź na funkcjach premium usługi Drive dzięki ograniczonej czasowo zniżce."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Dużo zaoszczędź na funkcjach premium usługi Mail dzięki ograniczonej czasowo zniżce."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Dużo zaoszczędź na funkcjach premium usługi Pass dzięki ograniczonej czasowo zniżce."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Dużo zaoszczędź na funkcjach premium usługi VPN dzięki ograniczonej czasowo zniżce."
-      ],
-      "Save time with built-in 2FA": [
-        "Zaoszczędź czas dzięki wbudowanemu uwierzytelnianiu dwustopniowemu"
-      ],
-      "Secure email with unlimited aliases": [
-        "Bezpieczna poczta e-mail z nieograniczoną liczbą aliasów"
-      ],
-      "Select any server": [
-        "Wybierz dowolny serwer"
-      ],
-      "Share passwords easily": [
-        "Łatwe udostępnianie haseł"
-      ],
-      "Short @pm.me address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Streamuj ulubione treści"
-      ],
-      "thanks to you": [
-        "dzięki Tobie"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Potrój zaszyfrowaną przestrzeń dyskową – zyskaj 3 TB i chroń wszystkie swoje dane"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Nieograniczona liczba folderów, etykiet i filtrów"
-      ],
-      "Use your own email domain": [
-        "Możliwość użycia własnej domeny e-mail"
-      ],
-      "years": [
-        "lata"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Oferta jubileuszowa"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } miesiąc",
-        "${ n } miesiące",
-        "${ n } miesięcy",
-        "${ n } miesiąca"
-      ],
-      "/ month": [
-        "/ miesiąc"
-      ],
-      "12 months": [
-        "12 miesięcy"
-      ],
-      "15 months": [
-        "15 miesięcy"
-      ],
-      "24 months": [
-        "24 miesiące"
-      ],
-      "30 months": [
-        "30 miesięcy"
-      ],
-      "for ${ durationDeal }": [
-        "na ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -2490,6 +2362,11 @@
         "Zaległa faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } w ${ DRIVE_APP_NAME } umożliwia współpracę z innymi w bezpiecznym i szyfrowanym środowisku."
@@ -2613,11 +2490,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3766,6 +3638,11 @@
       ],
       "Services": [
         "Usługi"
+      ]
+    },
+    "Header": {
+      "Drawer": [
+        "Panel boczny"
       ]
     },
     "Hint": {
@@ -5245,9 +5122,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Właściciel adresu wyłączył szyfrowanie end-to-end. Aby móc wysyłać wiadomości zaszyfrowane na ten adres, właściciel musi ponownie włączyć szyfrowanie end-to-end."
       ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
-        "Adres URL został nieprawidłowo skopiowany ze Slacka. Zamiast bezpośrednio kopiować skrócony adresu URL, kliknij link prawym przyciskiem, a następnie wybierz opcję \"Kopiuj adres linku\"."
-      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Otworzy się nowa karta w celu potwierdzenia płatności. Wyłącz blokadę wyskakujących okien."
       ],
@@ -5810,6 +5684,9 @@
       "Address": [
         "Adres"
       ],
+      "Alias title": [
+        "Tytuł aliasu"
+      ],
       "Anderson": [
         "Nowak"
       ],
@@ -5977,6 +5854,9 @@
       ],
       "Extended address": [
         "Rozszerzony adres"
+      ],
+      "File": [
+        "Plik"
       ],
       "First name": [
         "Imię"
@@ -6211,9 +6091,6 @@
       ],
       "Thomas": [
         "Jan"
-      ],
-      "Title": [
-        "Tytuł"
       ],
       "To: ${ toEmail }": [
         "Do: ${ toEmail }"
@@ -7401,6 +7278,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } kończąca się na ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB przestrzeni dyskowej w chmurze, która umożliwia łatwe przechowywanie, synchronizowanie i udostępnianie plików. Zabezpieczone za pomocą szyfrowania end-to-end."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB przestrzeni dyskowej w chmurze, która umożliwia łatwe przechowywanie, synchronizowanie i udostępnianie plików. Zabezpieczone za pomocą szyfrowania end-to-end."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Zaawansowane bezpieczeństwo sieci i zarządzanie dostępem za pomocą dedykowanych bram"
       ],
@@ -7460,9 +7343,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Bezpieczny dostęp do Internetu, gdziekolwiek jesteś dzięki monitoringowi sieci"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Bezpieczna przestrzeń dyskowa w chmurze, w której możesz przechowywać, synchronizować i udostępniać pliki w łatwy sposób."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Bezpieczna poczta e-mail z zaawansowanymi funkcjami do codziennej komunikacji."
@@ -8977,6 +8857,41 @@
         "Udostępniony przez ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "Nowy arkusz kalkulacyjny"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Tworzenie nowego arkusza kalkulacyjnego..."
+      ],
+      "Detect automatically": [
+        "Wykryj automatycznie"
+      ],
+      "Insert as new sheet": [
+        "Wstaw jako nowy arkusz"
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "Konwertuj tekst na liczby, daty i formuły"
+      ],
+      "Destination": [
+        "Miejsce docelowe"
+      ],
+      "Format": [
+        "Format"
+      ],
+      "Separator type": [
+        "Typ separatora"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "Importuj dane"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "Nie podpisuj"
@@ -10268,6 +10183,9 @@
       "Stop sharing?": [
         "Zatrzymać udostępnianie?"
       ],
+      "Subscription canceled": [
+        "Subskrypcja została anulowana"
+      ],
       "Summary": [
         "Podsumowanie"
       ],
@@ -10505,12 +10423,6 @@
         "${ n } połączenia VPN",
         "${ n } połączeń VPN",
         "${ n } połączeń VPN"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } kraju",
-        "${ numberOfCountries } krajach",
-        "${ numberOfCountries } krajach",
-        "${ numberOfCountries } krajach"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } w ${ numberOfCountries } kraju",
