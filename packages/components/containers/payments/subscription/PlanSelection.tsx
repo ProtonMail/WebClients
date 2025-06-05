@@ -190,11 +190,6 @@ export function useAccessiblePlans({
     const passLifetimeFeatureFlag = useFlag('PassLifetimeFrontend');
     const lumoPlusEnabled = useFlag('LumoPlusFrontend');
 
-    const isVpnSettingsApp = app === APPS.PROTONVPN_SETTINGS;
-    const isPassSettingsApp = app === APPS.PROTONPASS;
-    const isDriveSettingsApp = app === APPS.PROTONDRIVE;
-    const isWalletSettingsApp = app === APPS.PROTONWALLET;
-
     const plansMap = getPlansMap(plans, currency, false);
 
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
@@ -223,35 +218,19 @@ export function useAccessiblePlans({
             .filter(excludingTheOnlyFreePlan);
     }
 
-    let IndividualPlans: (Plan | ShortPlanLike)[] = [];
-
-    const driveIndividualPlans = filterPlans([
+    let IndividualPlans = filterPlans([
         hasFreePlan ? FREE_PLAN : null,
-        plansMap[PLANS.DRIVE],
-        plansMap[PLANS.DRIVE_1TB],
+        // Special condition to temporarily hide Wallet plus in the individual tab if we are in Proton Wallet
+        app !== APPS.PROTONWALLET
+            ? (enabledProductB2CPlans.find((plan) => plan.Name === selectedProductPlans[Audience.B2C]) ??
+              enabledProductB2CPlans[0] ??
+              plansMap[PLANS.MAIL])
+            : null,
         plansMap[PLANS.BUNDLE],
+        // Special condition to hide Pass plus in the individual tab if it's the current plan
+        canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
+        app === APPS.PROTONWALLET ? plansMap[PLANS.VISIONARY] : null,
     ]);
-
-    const walletIndividualPlans = filterPlans([hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.VISIONARY]]);
-
-    const isDriveIndividualPlans = isDriveSettingsApp && driveIndividualPlans.length !== 0;
-    const isWalletIndividualPlans = isWalletSettingsApp && walletIndividualPlans.length !== 0;
-
-    // Update IndividualPlans to use Drive-specific plans when in Drive settings app
-    if (isDriveIndividualPlans) {
-        IndividualPlans = driveIndividualPlans;
-    } else if (isWalletIndividualPlans) {
-        IndividualPlans = walletIndividualPlans;
-    } else {
-        IndividualPlans = filterPlans([
-            hasFreePlan ? FREE_PLAN : null,
-            enabledProductB2CPlans.find((plan) => plan.Name === selectedProductPlans[Audience.B2C]) ??
-                enabledProductB2CPlans[0] ??
-                plansMap[PLANS.MAIL],
-            plansMap[PLANS.BUNDLE],
-            canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
-        ]);
-    }
 
     const canAccessPassFamilyPlan =
         (isFree(user) && app === APPS.PROTONPASS) || hasPass(subscription) || hasPassFamily(subscription);
@@ -281,6 +260,11 @@ export function useAccessiblePlans({
     const driveB2BPlans = filterPlans([plansMap[PLANS.DRIVE_BUSINESS], plansMap[bundleProPlan]]);
 
     const walletB2BPlans = filterPlans([plansMap[bundleProPlan]]);
+
+    const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
+    const isPassSettingsApp = app == APPS.PROTONPASS;
+    const isDriveSettingsApp = app == APPS.PROTONDRIVE;
+    const isWalletSettingsApp = app == APPS.PROTONWALLET;
 
     /**
      * The VPN B2B plans should be displayed only in the ProtonVPN Settings app (protonvpn.com).
@@ -460,7 +444,6 @@ const PlanSelection = (props: Props) => {
 
     const b2cRecommendedPlans = [
         hasSomeAddonOrPlan(subscription, [PLANS.BUNDLE, PLANS.VISIONARY, PLANS.FAMILY]) ? undefined : PLANS.BUNDLE,
-        PLANS.DRIVE_1TB,
         PLANS.DUO,
         PLANS.FAMILY,
     ].filter(isTruthy);
@@ -655,12 +638,7 @@ const PlanSelection = (props: Props) => {
                             style={{ '--plan-selection-number': 3 }}
                             data-testid="lifetime-plan-cycle"
                         >
-                            {renderPlanCard(
-                                passLifetimePlan,
-                                Audience.B2C,
-                                [],
-                                IndividualPlans.filter((plan): plan is Plan => !isShortPlanLike(plan))
-                            )}
+                            {renderPlanCard(passLifetimePlan, Audience.B2C, [], IndividualPlans)}
                         </div>
                     ) : (
                         <div
@@ -672,12 +650,7 @@ const PlanSelection = (props: Props) => {
                             data-testid="b2c-plan"
                         >
                             {IndividualPlans.map((plan) =>
-                                renderPlanCard(
-                                    plan as Plan,
-                                    Audience.B2C,
-                                    b2cRecommendedPlans,
-                                    IndividualPlans.filter((plan): plan is Plan => !isShortPlanLike(plan))
-                                )
+                                renderPlanCard(plan, Audience.B2C, b2cRecommendedPlans, IndividualPlans)
                             )}
                         </div>
                     )}
