@@ -1,21 +1,17 @@
 import type { ComponentPropsWithoutRef, ReactElement, ReactNode } from 'react';
 import { Children, Fragment, cloneElement, forwardRef, isValidElement } from 'react';
 
-import { type ButtonProps, Vr } from '@proton/atoms';
+import { type ButtonLikeShape, type ButtonLikeSize, type ButtonProps, Vr } from '@proton/atoms';
 import type { ThemeColor } from '@proton/colors';
 import clsx from '@proton/utils/clsx';
 
 export type Color = `${ThemeColor.Norm | ThemeColor.Weak}`;
 
-export type Shape = 'solid' | 'outline' | 'ghost';
-
-export type Size = 'small' | 'medium' | 'large';
-
 export interface Props extends Omit<ComponentPropsWithoutRef<'div'>, 'color'> {
     children: ReactNode;
     color?: Color;
-    shape?: Shape;
-    size?: Size;
+    shape?: ButtonLikeShape;
+    size?: ButtonLikeSize;
     /* If true, allows setting the color of individual buttons inside the button group */
     individualButtonColor?: boolean;
     separators?: boolean;

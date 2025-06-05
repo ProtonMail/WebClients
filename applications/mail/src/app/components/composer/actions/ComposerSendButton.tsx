@@ -1,12 +1,13 @@
 import type { ReactNode, Ref } from 'react';
 import { forwardRef } from 'react';
 
-import type { Color, Shape } from '@proton/components/components/button/ButtonGroup';
+import { type ButtonLikeShape } from '@proton/atoms';
+import type { Color } from '@proton/components/components/button/ButtonGroup';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 
 interface Props {
     color: Color;
-    shape: Shape;
+    shape: ButtonLikeShape;
     primaryAction: ReactNode;
     secondaryAction?: ReactNode;
 }
