@@ -15,6 +15,8 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { DIRECTION, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 import { getRecipients, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
+import { sanitizeComposerReply } from '@proton/shared/lib/sanitize/purify';
+import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import type { ComposerReturnType } from 'proton-mail/helpers/composer/contentFromComposerMessage';
@@ -84,6 +86,7 @@ export type EditorArgs = {
 export const useComposerContent = (args: EditorArgs) => {
     const [addresses = []] = useAddresses();
     const mailSettings = useMailModel('MailSettings');
+    const isRemoveReplyStyleEnabled = useFlag('RemoveReplyStyles');
     const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
     const getMessage = useGetMessage();
@@ -290,6 +293,12 @@ export const useComposerContent = (args: EditorArgs) => {
                   { Password: undefined, PasswordHint: undefined };
 
             const documentCloned = syncedMessage.messageDocument?.document?.cloneNode(true) as Element;
+            // Sanitize the document to remove unwanted tags (like <style>) from blockquote sections.
+            // This prevents potential styling issues and security vulnerabilities when rendering quoted content.
+            if (isRemoveReplyStyleEnabled) {
+                sanitizeComposerReply(documentCloned);
+            }
+
             const newModelMessage = {
                 ...syncedMessage,
                 ...modelMessage,
