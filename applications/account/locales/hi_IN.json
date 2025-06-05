@@ -640,6 +640,9 @@
       "Get more servers": [
         "और सर्वर प्राप्त करें"
       ],
+      "Get started": [
+        "शुरू करें"
+      ],
       "Get the app": [
         "ऐप प्राप्त करें"
       ],
@@ -657,6 +660,9 @@
       ],
       "Get verification code": [
         "सत्यापन कोड लें"
+      ],
+      "Go back": [
+        "वापस जाएं"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } पे जाएं"
@@ -840,9 +846,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } सेटिंग खोलें"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "${ DOCS_SHORT_APP_NAME } में खोलें"
       ],
       "Open navigation": [
         "नेविगेशन खोलें"
@@ -4398,10 +4401,10 @@
       "Forward to": [
         "इन्हें फॉरवर्ड करें"
       ],
-      "Or": [
+      "or": [
         "या"
       ],
-      "or": [
+      "Or": [
         "या"
       ],
       "With attachment": [
@@ -7693,6 +7696,9 @@
       "End-to-end email encryption is enabled for this group.": [
         "इस समूह के लिए शुरू-से-अंत तक ईमेल एन्क्रिप्शन सक्षम है।"
       ],
+      "End-to-end encrypted": [
+        "शुरु-से-अंत तक एन्क्रिप्ट किया"
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "पहचान प्रदाता से प्राप्त एंडपॉइंट यूआरएल (उदा. https://idp.udaaharan.in/sso/saml)।"
       ],
@@ -10362,10 +10368,10 @@
       "Allow sharing outside the organization": [
         "संगठन के बाहर शेयर करने की अनुमति दें"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "अनुमत डोमेन"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "अनुमत डोमेन"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10377,10 +10383,10 @@
       "Amount due": [
         "देय राशि"
       ],
-      "And": [
+      "AND": [
         "और"
       ],
-      "AND": [
+      "And": [
         "और"
       ],
       "and": [
@@ -10794,10 +10800,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "अगर"
       ],
-      "IF": [
+      "If": [
         "अगर"
       ],
       "Import all messages": [
@@ -11001,13 +11007,13 @@
       "Optional": [
         "वैकल्पिक"
       ],
+      "OR": [
+        "या"
+      ],
       "or": [
         "या"
       ],
       "Or": [
-        "या"
-      ],
-      "OR": [
         "या"
       ],
       "Organization name": [
@@ -11497,9 +11503,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } बनाया गया"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } अपडेट किया गया"
       ],
       "Preference saved": [
         "पसंद सेव किया गया"
@@ -12867,9 +12870,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "आवश्यक नेटवर्क मॉनिटरिंग के साथ कहीं से भी सुरक्षित रूप से इंटरनेट एक्सेस करें"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "सुरक्षित क्लाउड स्टोरेज जो करने दे आपको फाइल स्टोर, सिंक, और शेयर आसान और सुरक्षित तरीके से।"
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "आपके रोज़मर्रा के बातचीत के लिए एडवांस सुविधाओं के साथ सुरक्षित ईमेल।"
       ],
@@ -13611,6 +13611,9 @@
       ],
       "Desktop": [
         "डेस्कटॉप"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "शुरू करने के लिए, एक डिस्प्ले नाम चुने। दूसरे लोग ये नाम देखेंगे जब आप उन्हें ईमेल भेजेंगे, न्योता भेजेंगे, या फाइल शेयर करेंगे।"
       ]
     },
     "Option": {

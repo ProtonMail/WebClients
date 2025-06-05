@@ -646,6 +646,9 @@
       "Get more servers": [
         "Pridobite več strežnikov"
       ],
+      "Get started": [
+        "Začnite"
+      ],
       "Get the app": [
         "Pridobi aplikacijo"
       ],
@@ -663,6 +666,9 @@
       ],
       "Get verification code": [
         "Pridobi kodo za preverjanje"
+      ],
+      "Go back": [
+        "Pojdi nazaj"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Pojdi na ${ DRIVE_APP_NAME }"
@@ -748,10 +754,10 @@
       "Keep": [
         "Obdrži"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Nadaljuj z urejanjem"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Nadaljuj z urejanjem"
       ],
       "Keep logo": [
@@ -870,9 +876,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Odprite nastavitve za ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Odpri v ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Odpri krmarjenje"
@@ -4411,11 +4414,11 @@
       "Forward to": [
         "Posreduj na"
       ],
-      "Or": [
-        "Ali"
-      ],
       "or": [
         "ali"
+      ],
+      "Or": [
+        "Ali"
       ],
       "With attachment": [
         "S priponko"
@@ -7625,6 +7628,9 @@
       "End date": [
         "Končni datum"
       ],
+      "End-to-end encrypted": [
+        "Popolnoma šifrirano"
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL končne točke, prejet od vašega ponudnika identitete (npr. https://idp.example.com/sso/saml)."
       ],
@@ -10047,10 +10053,10 @@
       "Allow recovery using a trusted device": [
         "Dovoli obnovitev z uporabo zaupanja vredne naprave."
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dovoljena domena"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dovoljena domena"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10062,11 +10068,11 @@
       "Amount due": [
         "Zapadli znesek"
       ],
-      "And": [
-        "In"
-      ],
       "AND": [
         "IN"
+      ],
+      "And": [
+        "In"
       ],
       "and": [
         "in"
@@ -10482,11 +10488,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Če"
-      ],
       "IF": [
         "ČE"
+      ],
+      "If": [
+        "Če"
       ],
       "Import all messages": [
         "Uvozi vsa sporočila"
@@ -10689,14 +10695,14 @@
       "Optional": [
         "Neobvezno"
       ],
+      "OR": [
+        "ALI"
+      ],
       "or": [
         "ali"
       ],
       "Or": [
         "Ali"
-      ],
-      "OR": [
-        "ALI"
       ],
       "Organization name": [
         "Ime organizacije"
@@ -11184,9 +11190,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } ustvarjeno"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } je posodobljen"
       ],
       "Preference saved": [
         "Nastavitve so shranjene"
@@ -12079,6 +12082,12 @@
         "${ numberOfUsers } uporabniki",
         "${ numberOfUsers } uporabnikov"
       ],
+      "${ options }-day file version history": [
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin za doživljenjsko uporabo"
       ],
@@ -12608,9 +12617,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Varno uporabljajte splet od kjerkoli z osnovnim nadzorom omrežja"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Varna shramba v oblaku, s katero lahko preprosto shranjujete, sinhronizirate in delite datoteke."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Varna e-pošta z naprednimi funkcijami za vsakodnevno komunikacijo."
@@ -13346,6 +13352,9 @@
       ],
       "Desktop": [
         "Namizje"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Za začetek izberite prikazno ime. To je ime, ki ga bodo uporabniki videli, ko jim pošljete sporočilo, jih povabite na dogodek ali z njimi delite datoteko."
       ]
     },
     "Option": {
