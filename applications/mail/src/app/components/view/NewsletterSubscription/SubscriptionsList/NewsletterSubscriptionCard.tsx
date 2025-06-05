@@ -51,6 +51,7 @@ export const NewsletterSubscriptionCard = ({ subscription }: PropsWithNewsletter
                             variant="large"
                             className="rounded relative"
                             displaySenderImage
+                            overrideSize={36}
                             initialsStyle={{ '--h-custom': '2.25rem' }}
                             initialsClassName="bg-strong flex h-custom items-center justify-center rounded w-full"
                         />
