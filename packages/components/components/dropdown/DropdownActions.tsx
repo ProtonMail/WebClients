@@ -60,7 +60,7 @@ const DropdownActions = ({
         return null;
     }
 
-    const [{ text, tooltip, label, id, ...restProps }, ...restList] = list;
+    const [{ text, tooltip, label, id, key, ...restProps }, ...restList] = list;
 
     if (list.length === 1) {
         return (
@@ -70,6 +70,7 @@ const DropdownActions = ({
                 disabled={disabled}
                 className={className}
                 aria-label={label}
+                key={key}
                 {...restProps}
                 {...restButtonProps}
             >
@@ -132,7 +133,7 @@ const DropdownActions = ({
             >
                 <DropdownMenu>
                     {restList.map(({ text, tooltip, disabled, label, key, ...restProps }) => {
-                        // Fake disabled is used to have enabled tooltipe while the buttom is supposed to be disabled
+                        // Fake disabled is used to have enabled tooltip while the bottom is supposed to be disabled
                         const fakeDisabled = !!(disabled && tooltip);
                         const rest = fakeDisabled ? {} : restProps;
 
