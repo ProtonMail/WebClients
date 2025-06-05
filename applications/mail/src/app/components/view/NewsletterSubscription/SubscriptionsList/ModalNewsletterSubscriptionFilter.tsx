@@ -34,9 +34,9 @@ const ctaCopy = (filterType: ModalFilterType) => {
         case 'MarkAsRead':
             return c('Action').t`Mark as read`;
         case 'MoveToArchive':
-            return c('Action').t`Move to archive`;
+            return c('Action').t`Move to Archive`;
         case 'MoveToTrash':
-            return c('Action').t`Move to trash`;
+            return c('Action').t`Move to Trash`;
     }
 };
 

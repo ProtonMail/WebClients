@@ -144,7 +144,7 @@ export const NewsletterSubscriptionView = ({
                                         ) : (
                                             activeSubscription && (
                                                 <NewsletterSubscriptionListTitle
-                                                    activeSubscription={activeSubscription}
+                                                    subscription={activeSubscription}
                                                     numMessages={elementsData.elementIDs.length}
                                                 />
                                             )

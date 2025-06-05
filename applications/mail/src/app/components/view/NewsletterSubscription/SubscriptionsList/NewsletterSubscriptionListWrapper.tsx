@@ -21,7 +21,7 @@ export const NewsletterSubscriptionListWrapper = ({ isDisplayingPlaceholder = fa
                     </section>
                 ) : (
                     <Scroll className="h-custom" style={{ '--h-custom': customHeight }}>
-                        <section className="flex px-6 flex-column flex-nowrap gap-4 pb-4 px-1">{children}</section>
+                        <section className="flex pl-6 pr-3 flex-column flex-nowrap gap-4 pb-4">{children}</section>
                     </Scroll>
                 )}
             </div>

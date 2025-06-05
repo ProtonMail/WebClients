@@ -21,9 +21,9 @@ interface WrapperProps extends PropsWithChildren {
 
 const FilterWrapper = ({ children, iconClassName }: WrapperProps) => {
     return (
-        <div className="flex flex-nowrap gap-2 bg-weak color-weak px-3 py-1 rounded-xl mt-3 text-sm">
+        <div className="flex flex-nowrap items-center gap-2 bg-weak color-weak px-3 py-1 rounded-xl mt-3 text-sm">
             <IcCheckmarkCircleFilled className={iconClassName} />
-            <span>{children}</span>
+            <span className="flex gap-0.5">{children}</span>
         </div>
     );
 };
