@@ -303,6 +303,9 @@
       "Copy addresses": [
         "Salin alamat"
       ],
+      "Copy alias “${ name }”": [
+        "Salin alias “${ name }”"
+      ],
       "Copy email to clipboard": [
         "Salin email ke papan klip"
       ],
@@ -428,6 +431,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Unduh aplikasi ${ DRIVE_APP_NAME }"
+      ],
+      "Download all attachments": [
+        "Unduh seluruh lampiran"
       ],
       "Download now": [
         "Unduh sekarang"
@@ -717,6 +723,9 @@
       "Keep my subscription": [
         "Pertahankan langganan saya"
       ],
+      "Keep subscription": [
+        "Pertahankan langganan"
+      ],
       "Label as": [
         "Labeli sebagai"
       ],
@@ -950,9 +959,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Buka pengaturan ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Buka di ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Buka navigasi"
@@ -1446,11 +1452,11 @@
       "Upgrade": [
         "Tingkatkan"
       ],
-      "Upgrade Now": [
-        "Tingkatkan Sekarang"
-      ],
       "Upgrade now": [
         "Tingkatkan sekarang"
+      ],
+      "Upgrade Now": [
+        "Tingkatkan Sekarang"
       ],
       "Upload and share files": [
         "Unggah dan bagikan berkas"
@@ -3960,11 +3966,6 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Langganan ${ PLAN_NAMES[PLANS.PASS] } Anda saat ini berlaku dengan harga khusus ${ price } per tahun. Dengan menurunkan ke paket Free, Anda akan kehilangan diskon ini secara permanen, bahkan apabila Anda meningkatkan kembali akun Anda di masa yang akan datang."
-      ]
-    },
-    "Download attachments": {
-      "Download all": [
-        "Unduh semua"
       ]
     },
     "Drawer tab, Action": {
@@ -6738,6 +6739,9 @@
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Apabila Anda merasa kami telah membuat kesalahan, silakan ${ contactLink }."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Apabila Anda membatalkan, Anda akan kehilangan akses ke ${ boldPlanTitle } dengan segera, dan Anda akan diturunkan ke paket ${ boldProtonFree }. Apabila pemakaian Anda melebihi batas pemakaian paket gratis, akses Anda ke fitur produk dan data Anda akan dapat dibatasi."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Apabila Anda membatalkan langganan, paket ${ planTitle } Anda tidak akan diperbarui ketika paket ini berakhir pada ${ expiryDate }."
       ],
@@ -7656,6 +7660,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Untuk menyelesaikan pembayaran Anda, silakan kirim ${ btcAmountBold } ke alamat di bawah ini."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Untuk terus menggunakan ${ boldPlanTitle } secara gratis hingga ${ boldCancelDate }, jangan batalkan paket Anda."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda manusia."
       ],
@@ -7881,6 +7888,9 @@
       "Week": [
         "Pekan"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Apa yang Anda korbankan pada saat Anda membatalkan ${ boldPlanTitle }:"
+      ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Kapankah Anda ingin pesan Anda untuk terhapus secara otomatis dari kotak masuk penerima dan folder terkirim Anda?"
       ],
@@ -7974,6 +7984,9 @@
       "You can now return to the application to continue": [
         "Anda kini dapat kembali ke aplikasi untuk melanjutkan"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Anda akan tetap dapat mengakses seluruh data akun Anda. Anda dapat berlangganan kembali kapan saja untuk terus menikmati seluruh fitur kami."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat email baru yang masuk ke folder ini."
       ],
@@ -8058,6 +8071,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ trialEndsOnFormatted }."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Anda menulis “${ attachmentsFoundKeyword }”, namun Anda tidak melampirkan berkas apa pun. Apakah Anda yakin untuk tetap mengirim pesan ini?"
       ],
@@ -8078,6 +8094,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Langganan ${ PASS_SHORT_APP_NAME } Plus Anda akan digantikan dengan ${ PASS_SHORT_APP_NAME } Lifetime. Saldo sisa langganan Anda akan ditambahkan ke akun Anda. Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "Paket ${ planName } Anda kini merupakan paket berbayar yang diperbarui secara otomatis setiap 12 bulan. Tanggal penagihan Anda selanjutnya adalah ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akses ke akun Anda akan segera dibatasi. ${ payInvoiceLink }"
@@ -8105,6 +8124,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan"
+      ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Masa uji coba gratis ${ boldPlanTitle } Anda telah dibatalkan, dan akun ${ boldUserEmail } milik Anda telah diturunkan ke ${ boldProtonFree }."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Perangkat keras Anda tidak mendukung penggunaan asisten penulisan secara lokal. Cobalah untuk menjalankan fitur ini pada server."
@@ -8142,6 +8164,9 @@
       "Your online activity is protected": [
         "Aktivitas online Anda terlindung"
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Organisasi ${ boldOrganizationName } milik Anda telah dinonaktifkan, dan seluruh kuota pengguna yang dimiliki oleh organisasi ini telah dihapus."
+      ],
       "Your password was leaked:": [
         "Kata sandi Anda telah bocor:"
       ],
@@ -8162,6 +8187,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Langganan Anda akan diperbarui secara otomatis pada ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Masa uji coba Anda akan berakhir dalam ${ timeRemaining }."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Anda hanya tinggal beberapa klik lagi untuk memiliki kotak masuk yang rapi"
@@ -8494,11 +8522,11 @@
       "Always move sender's emails": [
         "Selalu pindahkan email pengirim"
       ],
-      "And": [
-        "Dan"
-      ],
       "AND": [
         "DAN"
+      ],
+      "And": [
+        "Dan"
       ],
       "and": [
         "dan"
@@ -8725,11 +8753,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Jika"
-      ],
       "IF": [
         "JIKA"
+      ],
+      "If": [
+        "Jika"
       ],
       "Import all messages": [
         "Impor seluruh pesan"
@@ -8863,14 +8891,14 @@
       "Optional": [
         "Opsional"
       ],
+      "OR": [
+        "ATAU"
+      ],
       "or": [
         "atau"
       ],
       "Or": [
         "Atau"
-      ],
-      "OR": [
-        "ATAU"
       ],
       "Original link": [
         "Tautan asli"
@@ -8997,9 +9025,6 @@
       ],
       "Time": [
         "Waktu"
-      ],
-      "Title": [
-        "Judul"
       ],
       "To:": [
         "Kepada:"
@@ -9757,6 +9782,14 @@
         "Kecepatan VPN sedang"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Dapatkan ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Hapus akun"
@@ -9778,14 +9811,6 @@
       ],
       "Switch plan": [
         "Ganti paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Dapatkan ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -10306,9 +10331,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Akses internet secara aman dari mana pun dengan pemantauan jaringan yang esensial"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Layanan penyimpanan aman berbasis cloud yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan berkas secara mudah dan aman."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
@@ -12307,7 +12329,7 @@
         "Untuk seluruh layanan ${ BRAND_NAME }"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Untuk dapat lanjut mengunggah dan menyinkronkan berkas, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
+        "Untuk terus mengunggah dan menyinkronkan berkas, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Untuk terus menggunakan produk ${ BRAND_NAME }, kosongkan ruang yang ada atau ${ upgrade }"
@@ -13146,6 +13168,20 @@
     "Time": {
       "Yesterday": [
         "Kemarin"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } hari"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } jam"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } menit"
+      ],
+      "${ seconds } second": [
+        "${ seconds } detik"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -14007,6 +14043,9 @@
       "Subject missing": [
         "Subjek hilang"
       ],
+      "Subscription canceled": [
+        "Langganan dibatalkan"
+      ],
       "Summary": [
         "Ikhtisar"
       ],
@@ -14105,6 +14144,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Masa uji coba gratis ${ planName } Anda akan berakhir pada ${ textDate }"
+      ],
+      "Your ${ planName } subscription started": [
+        "Langganan ${ planName } Anda dimulai pada"
       ],
       "Your account is protected": [
         "Akun Anda terlindung"

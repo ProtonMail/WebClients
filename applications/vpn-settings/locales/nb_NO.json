@@ -456,10 +456,10 @@
       "Invite user": [
         "Inviter bruker"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Fortsett å redigere"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Fortsett å redigere"
       ],
       "Keep logo": [
@@ -467,6 +467,9 @@
       ],
       "Keep my subscription": [
         "Behold mitt abonnement"
+      ],
+      "Keep subscription": [
+        "Behold abonnementet"
       ],
       "Let's talk": [
         "La oss snakke"
@@ -533,9 +536,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åpne innstillingene for ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Åpne i ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Åpne navigasjonsmeny"
@@ -3011,6 +3011,9 @@
       "Error connecting to the Bitcoin API.": [
         "Feil ved tilkobling til Bitcoin API."
       ],
+      "Error publishing changes": [
+        "Feil ved publisering av endringer"
+      ],
       "Failed to load the STL preview": [
         "Kan ikke laste inn STL-forhåndsvisningen"
       ],
@@ -4378,6 +4381,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Minst ${ BETTER_PASSWORD_LENGTH } tegn"
       ],
+      "At least one application must be active": [
+        "Minst én applikasjon må være aktiv"
+      ],
       "Attention required": [
         "Oppmerksomhet kreves"
       ],
@@ -4798,6 +4804,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Hvis du mener det er en feil, kontakt oss ${ contactLink }."
+      ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Hvis du avbryter, mister du tilgang til ${ boldPlanTitle } med én gang, og du blir nedgradert til ${ boldProtonFree }-planen. Dersom forbruket overskrider grensene for gratisplanen, kan du oppleve begrenset tilgang til produktfunksjoner og data."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du avbryter, vil ditt ${ planTitle }-abonnement ikke bli fornyet når det utløper den ${ expiryDate }."
@@ -5593,6 +5602,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "For å bekrefte, angi navnet på brukeren du ønsker å slette."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "For å fortsette å nyte ${ boldPlanTitle } gratis til ${ boldCancelDate }, ikke avbryt."
+      ],
       "To continue to ${ product }": [
         "for å fortsette til ${ product }"
       ],
@@ -5821,6 +5833,9 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Vi vil sende en tilbakestillingskode til telefonnummeret du oppga for kontogjenoppretting."
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Dette gir du avkall på når du avbestiller ${ boldPlanTitle }:"
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Når du aktiverer SAML for ${ appName } i identitetsleverandøren, kan du bli bedt om å bruke URL-adressen for tilbakeringing (ACS) og utsteder-ID. Bare kopier og lim inn dataene nedenfor i identitetsleverandørfeltene dine."
       ],
@@ -5923,6 +5938,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Du kan kun ha én chat-instans åpen om gangen. Lukk tidligere samtaler før du starter en ny."
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Du kan fortsatt få tilgang til alle dataene på kontoen din. Du kan abonnere på nytt når som helst for å fortsette å nyte alle funksjonene våre."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere varsler for å få varsler når det kommer nye e-postmeldinger i denne mappen."
       ],
@@ -5991,6 +6009,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du vil snart bli omdirigert til PayPal for å bekrefte betalingen."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Du blir ikke belastet hvis du avbryter før ${ trialEndsOnFormatted }."
+      ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Du vil ikke kunne tilordne disse tjenerne til et annet land på 10 dager."
       ],
@@ -6038,6 +6059,9 @@
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Din gratis prøveversjon av ${ boldPlanTitle } er avbrutt, og kontoen din ${ boldUserEmail } er nedgradert til ${ boldProtonFree }."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din informasjon er trygg hos oss. Vi kontakter deg kun når det kreves for å tilby våre tjenester."
       ],
@@ -6046,6 +6070,9 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Neste faktureringsdato er ${ renewalTime }. Ta kontakt med kundestøtte hvis du trenger en umiddelbar planendring."
+      ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Din organisasjon ${ boldOrganizationName } er deaktivert og alle brukerlisensene har blitt fjernet."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisasjonen bruker enkel pålogging (SSO). Trykk på 'logg på' for å fortsette med SSO-leverandøren."
@@ -6068,6 +6095,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Abonnementet ditt fornyes automatisk ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Prøveversjonen avsluttes om ${ timeRemaining }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Du vil kunne legge til disse tjenerne i en annen porttjener umiddelbart."
@@ -6261,10 +6291,10 @@
       "Allow recovery by phone": [
         "Tillat gjenoppretting ved telefon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillatt domene"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillatt domene"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -7863,9 +7893,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Få sikker tilgang til internett fra hvor som helst med viktig nettverksovervåking"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Sikker skylagring som lar deg lagre, synkronisere og dele filer lett og trygt."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-post med avanserte funksjoner for daglig kommunikasjon."
       ],
@@ -7928,6 +7955,14 @@
         "Lås opp alle ${ BRAND_NAME }-premiumprodukter og funksjoner for bare ${ priceLine }. Avslutt når som helst."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } prøveversjon"
+      ],
+      "Your account's usage": [
+        "Kontoens forbruk"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -7940,14 +7975,6 @@
       ],
       "Switch plans?": [
         "Bytte plan?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } prøveversjon"
-      ],
-      "Your account's usage": [
-        "Kontoens forbruk"
       ]
     },
     "new_plans: tooltip": {
@@ -10867,6 +10894,9 @@
       "Locale updated": [
         "Nasjonal innstilling oppdatert"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Ny retningslinje opprettet. Den trer i kraft først etter at du publiserer endringene."
+      ],
       "Organization activated": [
         "Organisasjon aktivert"
       ],
@@ -10896,6 +10926,12 @@
       ],
       "Phone number updated": [
         "Telefonnummer oppdatert"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "Retningslinjen er endret. Den trer i kraft først etter at du publiserer endringene."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "Retningslinje slettet. Det vil tre i kraft først etter at du publiserer endringene."
       ],
       "Preference saved": [
         "Preferanse lagret"
@@ -11091,6 +11127,24 @@
     "Themes": {
       "Themes": [
         "Temaer"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dag",
+        "${ ceilDays } dager"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } time",
+        "${ ceilHours } timer"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minutt",
+        "${ ceilMinutes } minutter"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekund",
+        "${ seconds } sekunder"
       ]
     },
     "Title": {
@@ -11808,6 +11862,9 @@
       ],
       "Subscription": [
         "Abonnement"
+      ],
+      "Subscription canceled": [
+        "Abonnement kansellert"
       ],
       "Successfully created ${ n } user account": [
         "Opprettet ${ n } brukerkonto",

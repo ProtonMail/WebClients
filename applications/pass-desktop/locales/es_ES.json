@@ -403,10 +403,10 @@
       "Move to another vault": [
         "Mover a otra caja fuerte"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Mover a la papelera"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Mover a la papelera"
       ],
       "Multiple select": [
@@ -689,105 +689,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece tu gestor de contraseñas? Solicítalo."
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Aprovecha la oferta"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "500 GB encrypted storage": [
-        "500 GB de almacenamiento cifrado"
-      ],
-      "Add unlimited credit cards": [
-        "Añade tarjetas de crédito ilimitadas"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Todas las funciones prémium de ${ BRAND_NAME } Mail, Pass, VPN, Drive y Calendar"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Los descuentos se basan en el precio mensual estándar. Al final del ciclo de facturación, tu suscripción se renovará a la tarifa anual estándar."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Duplica tu almacenamiento cifrado: obtén 1 TB para todos tus datos"
-      ],
-      "Encrypted password manager": [
-        "Gestor de contraseñas cifrado"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Aquí tienes un regalo exclusivo para celebrar nuestro viaje juntos."
-      ],
-      "High speed streaming with VPN": [
-        "Streaming de alta velocidad con VPN"
-      ],
-      "of privacy": [
-        "de privacidad"
-      ],
-      "Online privacy for up to 2 people": [
-        "Privacidad online para hasta 2 personas"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Privacidad online para toda tu familia (hasta 6 usuarios)"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Ahorra mucho en funciones prémium de Drive con un descuento por tiempo limitado."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Ahorra mucho en funciones prémium de Mail con un descuento por tiempo limitado."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Ahorra mucho en funciones prémium de Pass con un descuento por tiempo limitado."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Ahorra mucho en funciones prémium de VPN con un descuento por tiempo limitado"
-      ],
-      "Save time with built-in 2FA": [
-        "Ahorra tiempo con 2FA integrado"
-      ],
-      "Secure email with unlimited aliases": [
-        "Correo seguro con alias ilimitados"
-      ],
-      "Share passwords easily": [
-        "Comparte contraseñas fácilmente"
-      ],
-      "thanks to you": [
-        "gracias a ti"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Triplica tu almacenamiento cifrado: obtén 3 TB para todos tus datos"
-      ],
-      "years": [
-        "años"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Oferta de aniversario"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mes",
-        "${ n } meses"
-      ],
-      "/ month": [
-        "/ mes"
-      ],
-      "12 months": [
-        "12 meses"
-      ],
-      "15 months": [
-        "15 meses"
-      ],
-      "24 months": [
-        "24 meses"
-      ],
-      "30 months": [
-        "30 meses"
-      ],
-      "for ${ durationDeal }": [
-        "durante ${ durationDeal }"
       ]
     },
     "App menu": {
@@ -2737,6 +2638,9 @@
       "API Credential": [
         "Credenciales de API"
       ],
+      "API Key": [
+        "Clave API"
+      ],
       "Application logs": [
         "Registros de la aplicación"
       ],
@@ -2874,6 +2778,9 @@
       ],
       "Database": [
         "Base de datos"
+      ],
+      "Database Type": [
+        "Tipo de base de datos"
       ],
       "Date": [
         "Fecha"
@@ -3040,6 +2947,12 @@
       "Holder Name": [
         "Nombre del titular"
       ],
+      "Host": [
+        "Anfitrión"
+      ],
+      "Hostname": [
+        "Nombre del anfitrión"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Cómo desbloquear ${ PASS_SHORT_APP_NAME }"
       ],
@@ -3097,6 +3010,9 @@
       "Invitations": [
         "Invitaciones"
       ],
+      "IP Address": [
+        "Dirección IP"
+      ],
       "Issuing Authority": [
         "Autoridad emisora"
       ],
@@ -3141,6 +3057,9 @@
       ],
       "License": [
         "Permiso de conducir"
+      ],
+      "License Key": [
+        "Clave de licencia"
       ],
       "License number": [
         "Número de licencia"
@@ -3271,8 +3190,14 @@
       "Open-source password manager for effortless protection.": [
         "Gestor de contraseñas de código abierto para una protección sencilla."
       ],
+      "Operating System": [
+        "Sistema operativo"
+      ],
       "Organization": [
         "Organización"
+      ],
+      "Owner": [
+        "Propietario"
       ],
       "Passkey": [
         "Clave de acceso"
@@ -3297,6 +3222,9 @@
       ],
       "Password history": [
         "Historial de contraseñas"
+      ],
+      "Permissions": [
+        "Permisos"
       ],
       "Personal": [
         "Personal"
@@ -3340,11 +3268,14 @@
       "Priority:": [
         "Prioridad:"
       ],
+      "Private Key": [
+        "Clave privada"
+      ],
       "Private key": [
         "Clave privada"
       ],
-      "Private Key": [
-        "Clave privada"
+      "Product": [
+        "Producto"
       ],
       "Program Name": [
         "Nombre del programa"
@@ -3390,6 +3321,9 @@
       ],
       "Second password": [
         "Segunda contraseña"
+      ],
+      "Secret": [
+        "Secreto"
       ],
       "Secure links": [
         "Enlaces seguros"
@@ -3466,11 +3400,11 @@
       "Sign in faster with ${ PASS_APP_NAME }": [
         "Inicia sesión rápidamente con ${ PASS_APP_NAME }"
       ],
-      "Social security": [
-        "Seguridad social"
-      ],
       "Social Security": [
         "Seguridad Social"
+      ],
+      "Social security": [
+        "Seguridad social"
       ],
       "Social security number": [
         "Número de seguridad social"

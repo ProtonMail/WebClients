@@ -423,6 +423,9 @@
       "Import contacts": [
         "Importa contatti"
       ],
+      "Import data": [
+        "Importa dati"
+      ],
       "Import emails": [
         "Importa le email"
       ],
@@ -443,6 +446,9 @@
       ],
       "Keep my subscription": [
         "Mantieni il mio abbonamento"
+      ],
+      "Keep subscription": [
+        "Mantieni l'abbonamento"
       ],
       "Learn more": [
         "Scopri di più"
@@ -605,6 +611,9 @@
       ],
       "Remove button": [
         "Rimuovi pulsante"
+      ],
+      "Remove file": [
+        "Rimuovi file"
       ],
       "Remove gift code": [
         "Rimuovi codice regalo"
@@ -931,138 +940,6 @@
       ],
       "By leaving now, some events may not be imported": [
         "Uscendo ora, alcuni eventi potrebbero non essere importati"
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Ottieni"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB di archiviazione"
-      ],
-      "200 GB storage": [
-        "200 GB di spazio di archiviazione"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB di archiviazione crittografata"
-      ],
-      "Add unlimited credit cards": [
-        "Aggiungi carte di credito illimitate"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Tutte le funzionalità premium di ${ BRAND_NAME } Mail, Pass, VPN, Drive e Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blocca annunci, tracker e malware"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Gli sconti si basano sul prezzo mensile standard. Al termine del ciclo di fatturazione, il tuo abbonamento si rinnoverà al costo annuale standard."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Raddoppia l'archiviazione crittografata: ottieni 1 TB per tutti i tuoi dati"
-      ],
-      "Encrypted password manager": [
-        "Gestore di password crittografato"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Ecco un regalo esclusivo per celebrare il nostro percorso insieme."
-      ],
-      "High speed streaming with VPN": [
-        "Streaming ad alta velocità con VPN"
-      ],
-      "of privacy": [
-        "di privacy"
-      ],
-      "Online document editor": [
-        "Editor di documenti online"
-      ],
-      "Online privacy for up to 2 people": [
-        "Privacy online per un massimo di 2 persone"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Privacy online per tutta la famiglia (fino a 6 utenti)"
-      ],
-      "Protect up to 10 devices": [
-        "Proteggi fino a 10 dispositivi"
-      ],
-      "Recover previous file versions": [
-        "Recupero di versioni precedenti dei file"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Risparmia sulle funzionalità premium di Drive con uno sconto a tempo limitato."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Risparmia sulle funzionalità premium di Mail con uno sconto a tempo limitato."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Risparmia sulle funzionalità premium di Pass con uno sconto a tempo limitato."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Risparmia sulle funzionalità VPN premium con uno sconto a tempo limitato."
-      ],
-      "Save time with built-in 2FA": [
-        "Risparmia tempo con la 2FA integrata"
-      ],
-      "Secure email with unlimited aliases": [
-        "Email sicura con alias illimitati"
-      ],
-      "Select any server": [
-        "Seleziona qualsiasi server"
-      ],
-      "Share passwords easily": [
-        "Condividi le password facilmente"
-      ],
-      "Short @pm.me address": [
-        "Indirizzo email breve @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Guarda in streaming i tuoi contenuti preferiti"
-      ],
-      "thanks to you": [
-        "grazie a te"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Triplica l'archiviazione crittografata: ottieni 3 TB per tutti i tuoi dati"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Cartelle, etichette e filtri illimitati"
-      ],
-      "Use your own email domain": [
-        "Utilizzo del tuo dominio email personalizzato"
-      ],
-      "years": [
-        "anni"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Offerta per l'anniversario"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mese",
-        "${ n } mesi"
-      ],
-      "/ month": [
-        "/mese"
-      ],
-      "12 months": [
-        "12 mesi"
-      ],
-      "15 months": [
-        "15 mesi"
-      ],
-      "24 months": [
-        "24 mesi"
-      ],
-      "30 months": [
-        "30 mesi"
-      ],
-      "for ${ durationDeal }": [
-        "per ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -2479,6 +2356,11 @@
         "Fattura scaduta"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "usa l'assistente di importazione Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } ti consente di lavorare insieme ad altri in un ambiente sicuro e crittografato."
@@ -2602,11 +2484,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "usa l'assistente di importazione Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3727,6 +3604,11 @@
         "Servizi"
       ]
     },
+    "Header": {
+      "Drawer": [
+        "Pannello laterale"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Trovato ${ itemsCount } suggerimento, usa la tastiera per navigare.",
@@ -4629,6 +4511,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se stai avendo problemi con la creazione del tuo account, chiedi un invito e ti risponderemo entro un giorno lavorativo."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Se annulli, perderai immediatamente l'accesso a ${ boldPlanTitle } e verrai declassato al piano ${ boldProtonFree }. Se il tuo utilizzo supera i limiti del piano gratuito, potresti riscontrare un accesso limitato alle funzionalità del prodotto e ai tuoi dati."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Se annulli, il tuo abbonamento ${ planTitle } non verrà rinnovato alla scadenza del ${ expiryDate }."
       ],
@@ -5138,7 +5023,7 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Il proprietario di questo indirizzo ha disabilitato la crittografia end-to-end. Per poter inviare email crittografate a questo indirizzo, il proprietario deve abilitare nuovamente la crittografia end-to-end."
       ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "L'URL che hai inserito sembra essere stato copiato da Slack in modo errato. Quando copi collegamenti lunghi da Slack, fai clic con il pulsante destro del mouse sul collegamento, quindi scegli \"Copia collegamento\" anziché copiare direttamente il testo dell'URL tagliato."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
@@ -5215,6 +5100,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Per completare il pagamento, per favore invia ${ btcAmountBold } all'indirizzo sottostante."
+      ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Per continuare a usufruire di ${ boldPlanTitle } gratuitamente fino al ${ boldCancelDate }, non annullare."
       ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "Per scaricare i file ${ DOCS_APP_NAME }, aprili in ${ DOCS_APP_NAME } ed esportali."
@@ -5351,6 +5239,9 @@
       "What do you want to do?": [
         "Cosa vuoi fare?"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "A cosa rinunci quando annulli ${ boldPlanTitle }:"
+      ],
       "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
         "Quando si apre la finestra di dialogo, modifica la \"Destinazione\" in \"Salva come PDF\", quindi premi Salva."
       ],
@@ -5428,6 +5319,9 @@
       "You can now return to the application to continue": [
         "Ora puoi tornare all'applicazione per continuare"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Puoi ancora accedere a tutti i dati del tuo account. Puoi abbonarti di nuovo in qualsiasi momento per continuare a usufruire di tutte le nostre funzionalità."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puoi attivare le notifiche per ricevere avvisi quando arrivano nuovi messaggi email in questa cartella."
       ],
@@ -5466,6 +5360,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
+      ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Non ti verrà addebitato nulla se annulli prima del ${ trialEndsOnFormatted }."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese.",
@@ -5537,6 +5434,9 @@
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "La tua prova gratuita di ${ boldPlanTitle } è stata annullata, e al tuo account ${ boldUserEmail } è stato eseguito il downgrade a ${ boldProtonFree }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Le tue informazioni sono state trovate il ${ displayedDate }"
       ],
@@ -5561,6 +5461,9 @@
       "Your online activity is protected": [
         "La tua attività online è protetta"
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "La tua organizzazione ${ boldOrganizationName } è disabilitata e tutte le sue licenze utente sono state rimosse."
+      ],
       "Your password was leaked:": [
         "La tua password è stata resa pubblica:"
       ],
@@ -5579,6 +5482,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Il tuo abbonamento si rinnoverà automaticamente il ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "La tua prova terminerà tra ${ timeRemaining }."
       ]
     },
     "info": {
@@ -5694,6 +5600,9 @@
       ],
       "Address": [
         "Indirizzo"
+      ],
+      "Alias title": [
+        "Titolo dell'alias"
       ],
       "Anderson": [
         "Anderson"
@@ -5862,6 +5771,9 @@
       ],
       "Extended address": [
         "Indirizzo completo"
+      ],
+      "File": [
+        "File"
       ],
       "First name": [
         "Nome"
@@ -6096,9 +6008,6 @@
       ],
       "Thomas": [
         "Thomas"
-      ],
-      "Title": [
-        "Titolo"
       ],
       "To: ${ toEmail }": [
         "A: ${ toEmail }"
@@ -7278,9 +7187,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Accedi in sicurezza a Internet da qualsiasi luogo con il monitoraggio essenziale della rete"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Archiviazione cloud sicura che ti consente di archiviare, sincronizzare e condividere file in modo semplice e sicuro."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Email sicura con funzioni avanzate per le tue comunicazioni quotidiane."
@@ -8726,6 +8632,41 @@
         "Condiviso da ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "Nuovo foglio di calcolo"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Creazione nuovo foglio di calcolo..."
+      ],
+      "Detect automatically": [
+        "Rileva automaticamente"
+      ],
+      "Insert as new sheet": [
+        "Inserisci come nuovo foglio"
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "Converti testo in numeri, date e formule"
+      ],
+      "Destination": [
+        "Destinazione"
+      ],
+      "Format": [
+        "Formato"
+      ],
+      "Separator type": [
+        "Tipo di separatore"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "Importa dati"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "Non firmare"
@@ -9427,6 +9368,24 @@
         "Campo vCard"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } giorno",
+        "${ ceilDays } giorni"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } ora",
+        "${ ceilHours } ore"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuto",
+        "${ ceilMinutes } minuti"
+      ],
+      "${ seconds } second": [
+        "${ seconds } secondo",
+        "${ seconds } secondi"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } o",
@@ -9959,6 +9918,9 @@
       "Stop sharing?": [
         "Vuoi interrompere la condivisione?"
       ],
+      "Subscription canceled": [
+        "Abbonamento annullato"
+      ],
       "Summary": [
         "Riepilogo"
       ],
@@ -9976,6 +9938,9 @@
       ],
       "Untitled document ${ date }": [
         "Documento senza titolo ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Foglio di calcolo senza titolo ${ date }"
       ],
       "Upgrade complete!": [
         "Aggiornamento completato!"

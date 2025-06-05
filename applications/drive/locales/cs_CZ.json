@@ -441,6 +441,9 @@
       "Export selection as .vcf": [
         "Exportovat výběr jako .vcf"
       ],
+      "Export system log": [
+        "Exportovat systémový log"
+      ],
       "Fit to window": [
         "Přizpůsobit oknu"
       ],
@@ -464,6 +467,9 @@
       ],
       "Get link": [
         "Získat odkaz"
+      ],
+      "Get secure storage for ${ simplePriceString }": [
+        "Získat zabezpečené úložiště za ${ simplePriceString }"
       ],
       "Get Started": [
         "Začínáme"
@@ -557,6 +563,9 @@
       ],
       "Keep my subscription": [
         "Zachovat mé předplatné"
+      ],
+      "Keep subscription": [
+        "Zachovat předplatné"
       ],
       "Later": [
         "Později"
@@ -695,9 +704,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Otevřít v ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Otevřít menu"
@@ -1016,6 +1022,9 @@
       ],
       "Try another method": [
         "Zkuste jinou metodu"
+      ],
+      "Try it now": [
+        "Vyzkoušet nyní"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokuste se znovu uložit. Uložení se nezdařilo z důvodu: ${ saveError }"
@@ -3964,6 +3973,9 @@
       "Create new shared album": [
         "Vytvořte nové sdílené album"
       ],
+      "Drawer": [
+        "Boční panel"
+      ],
       "Rename album": [
         "Přejmenovat album"
       ],
@@ -5057,6 +5069,9 @@
       "Expired": [
         "Platnost vypršela"
       ],
+      "Export diagnostic logs for technical support and troubleshooting": [
+        "Export diagnostických logů pro technickou podporu a řešení problémů"
+      ],
       "Failed": [
         "Selhalo"
       ],
@@ -5149,6 +5164,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
+      ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Pokud službu zrušíte, okamžitě ztratíte přístup k ${ boldPlanTitle } a váš tarif bude snížen na ${ boldProtonFree }. Pokud vaše používání překročí limity bezplatného tarifu, může dojít k omezení přístupu k funkcím produktu a k vašim datům."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Pokud zrušíte vaše předplatné ${ planTitle }, nebude už obnoveno po vypršení jeho platnosti ${ expiryDate }."
@@ -5654,9 +5672,6 @@
       "Restore": [
         "Obnovit"
       ],
-      "Restore is in progress. This can take a few seconds.": [
-        "Probíhá obnova. Toto může trvat několik sekund."
-      ],
       "Restore Photos": [
         "Obnovit fotografie"
       ],
@@ -5739,7 +5754,7 @@
         "Sdílel(a) "
       ],
       "Shared by ${ sharedBy }": [
-        "Sdílel/a ${ sharedBy }"
+        "Sdílel(a) ${ sharedBy }"
       ],
       "Shared by you": [
         "Sdíleno vámi"
@@ -5751,7 +5766,7 @@
         "Sdíleno se mnou"
       ],
       "Shared with you": [
-        "Sdíleno se mnou"
+        "Sdíleno s vámi"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nelze ověřit z důvodu chyby sítě, zkuste to prosím později."
@@ -5957,6 +5972,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pro dokončení platby zašlete ${ btcAmountBold } na níže uvedenou adresu."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Chcete-li si i nadále užívat ${ boldPlanTitle } zdarma až do ${ boldCancelDate }, službu nerušte."
+      ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "Chcete-li stáhnout soubory ${ DOCS_APP_NAME }, otevřete je v aplikaci ${ DOCS_APP_NAME } a exportujte je."
       ],
@@ -6161,6 +6179,9 @@
       "What would you like to do?": [
         "Co chcete udělat?"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Čeho se vzdáváte zrušením ${ boldPlanTitle }:"
+      ],
       "When working remotely": [
         "Při práci na dálku"
       ],
@@ -6257,6 +6278,9 @@
       "You can now return to the application to continue": [
         "Nyní se můžete vrátit do aplikace a pokračovat"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Ke všem datům svého účtu máte stále přístup. Kdykoli si můžete tarif znovu předplatit a nadále využívat všechny naše funkce."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
       ],
@@ -6305,6 +6329,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelem ověření platby budete přesměrováni na PayPal."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Pokud službu zrušíte před ${ trialEndsOnFormatted }, nebudou vám účtovány žádné poplatky."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }.",
         "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }.",
@@ -6334,6 +6361,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Vaše ${ PASS_SHORT_APP_NAME } Plus bude nahrazeno doživotním předplatným ${ PASS_SHORT_APP_NAME }. Zbývající část předplatného bude připsána na váš účet. Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "Váš tarif ${ planName } je nyní placeným předplatným, které se automaticky obnovuje každých 12 měsíců. Vaše příští datum fakturace je ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup bude brzy omezen. ${ payInvoiceLink }"
@@ -6371,6 +6401,9 @@
       "Your files will be encrypted and then saved.": [
         "Vaše soubory budou zašifrovány a uloženy."
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Vaše bezplatná zkušební verze ${ boldPlanTitle } byla zrušena a váš účet ${ boldUserEmail } byl snížen na ${ boldProtonFree }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Vaše informace byly nalezeny ${ displayedDate }"
       ],
@@ -6394,6 +6427,9 @@
       ],
       "Your online activity is protected": [
         "Vaše online aktivita je chráněna"
+      ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Vaše organizace ${ boldOrganizationName } je deaktivována a všechny její uživatelské licence byly odebrány."
       ],
       "Your password was leaked:": [
         "Došlo k úniku vašeho hesla:"
@@ -6424,6 +6460,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Vaše předplatné se automaticky obnoví ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Vaše zkušební verze skončí za ${ timeRemaining }."
       ]
     },
     "info": {
@@ -6563,6 +6602,9 @@
       ],
       "Address": [
         "Adresa"
+      ],
+      "Alias title": [
+        "Název aliasu"
       ],
       "All": [
         "Vše"
@@ -7058,9 +7100,6 @@
       ],
       "Thomas": [
         "Thomas"
-      ],
-      "Title": [
-        "Název"
       ],
       "To: ${ toEmail }": [
         "Komu: ${ toEmail }"
@@ -8319,9 +8358,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Bezpečný přístup k internetu odkudkoli, včetně důležitého monitorování sítě"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Bezpečné kloudové úložiště, které vám umožňuje uchovávat, synchronizovat a sdílet soubory jednoduše a bezpečně."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "Zabezpečený e-mail s pokročilými funkcemi pro každodenní komunikaci."
       ],
@@ -9119,10 +9155,10 @@
       "Invite members": [
         "Pozvat členy"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Možná později"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Možná později"
       ],
       "Select theme": [
@@ -10811,6 +10847,9 @@
       "Albums you've shared will appear here": [
         "Zde se zobrazí vámi sdílená alba"
       ],
+      "Securely share your favorite moments with friends and family using Albums.": [
+        "Pomocí alb můžete bezpečně sdílet své oblíbené okamžiky s přáteli a rodinou."
+      ],
       "Your favorited photos will appear here": [
         "Zde se zobrazí vaše oblíbené fotky"
       ],
@@ -11069,6 +11108,32 @@
       ],
       "Videos": [
         "Videa"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } den",
+        "${ ceilDays } dny",
+        "${ ceilDays } dnů",
+        "${ ceilDays } dnů"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } hodinu",
+        "${ ceilHours } hodiny",
+        "${ ceilHours } hodin",
+        "${ ceilHours } hodin"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minutu",
+        "${ ceilMinutes } minuty",
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minut"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekundu",
+        "${ seconds } sekundy",
+        "${ seconds } sekund",
+        "${ seconds } sekund"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -11667,6 +11732,9 @@
       "Phone numbers": [
         "Telefonní čísla"
       ],
+      "Photo albums are here!": [
+        "Fotoalba jsou zde!"
+      ],
       "Photos": [
         "Fotografie"
       ],
@@ -11820,6 +11888,9 @@
       "Stop transfers?": [
         "Zastavit přenosy?"
       ],
+      "Subscription canceled": [
+        "Předplatné zrušeno"
+      ],
       "Summary": [
         "Shrnutí"
       ],
@@ -11924,6 +11995,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaše bezplatná zkušební verze ${ planName } skončí ${ textDate }"
+      ],
+      "Your ${ planName } subscription started": [
+        "Vaše předplatné ${ planName } bylo zahájeno"
       ],
       "Your 3 GB bonus": [
         "Váš 3 GB bonus"

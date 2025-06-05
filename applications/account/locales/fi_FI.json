@@ -676,6 +676,9 @@
       "Get more servers": [
         "Hanki lisää palvelimia"
       ],
+      "Get started": [
+        "Aloita"
+      ],
       "Get the app": [
         "Hanki sovellus"
       ],
@@ -693,6 +696,9 @@
       ],
       "Get verification code": [
         "Hanki vahvistuskoodi"
+      ],
+      "Go back": [
+        "Takaisin"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Avaa ${ DRIVE_APP_NAME }"
@@ -778,10 +784,10 @@
       "Keep": [
         "Säilytä"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Jatka muokkaamista"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Jatka muokkaamista"
       ],
       "Keep logo": [
@@ -906,9 +912,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Avaa ${ CALENDAR_APP_NAME }in asetukset"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Avaa ${ DOCS_SHORT_APP_NAME }issa"
       ],
       "Open navigation": [
         "Avaa navigaatio"
@@ -4645,11 +4648,11 @@
       "Forward to": [
         "Ohjaa osoitteeseen"
       ],
-      "Or": [
-        "Tai"
-      ],
       "or": [
         "tai"
+      ],
+      "Or": [
+        "Tai"
       ],
       "With attachment": [
         "Sisällytä liitteet"
@@ -8032,6 +8035,9 @@
       "End-to-end email encryption is enabled for this group.": [
         "Sähköpostien päästä päähän -salaus on käytössä tällä ryhmällä."
       ],
+      "End-to-end encrypted": [
+        "Päästä päähän -salattu"
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Identiteetintarjoajaltasi (esim. https://idp.esimerkki.fi/sso/saml) saatu päätepisteen URL-osoite."
       ],
@@ -10813,10 +10819,10 @@
       "Allow sharing outside the organization": [
         "Salli organisaation ulkopuolinen jakaminen"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Sallittu verkkotunnus"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Sallittu verkkotunnus"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10828,11 +10834,11 @@
       "Amount due": [
         "Erääntyvä summa"
       ],
-      "And": [
-        "Ja"
-      ],
       "AND": [
         "JA"
+      ],
+      "And": [
+        "Ja"
       ],
       "and": [
         "ja"
@@ -11260,11 +11266,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Jos"
-      ],
       "IF": [
         "JOS"
+      ],
+      "If": [
+        "Jos"
       ],
       "Import all messages": [
         "Tuo kaikki viestit"
@@ -11473,14 +11479,14 @@
       "Optional": [
         "Valinnainen"
       ],
+      "OR": [
+        "TAI"
+      ],
       "or": [
         "tai"
       ],
       "Or": [
         "Tai"
-      ],
-      "OR": [
-        "TAI"
       ],
       "Organization name": [
         "Organisaation nimi"
@@ -11981,9 +11987,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } luotiin"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } päivitettiin"
       ],
       "Preference saved": [
         "Asetus tallennettiin"
@@ -13417,9 +13420,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Käytä Internetiä mistä tahansa välttämättömällä verkon valvonnalla"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Suojattu pilvitallennustila tiedostojen turvalliseen säilytykseen, synkronointiin ja helppoon jakamiseen."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "Turvallinen sähköposti edistyneillä ominaisuuksilla jokapäiväiseen viestintään."
       ],
@@ -14170,6 +14170,9 @@
       ],
       "Desktop": [
         "Työpöytä"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Aloita valitsemalla näyttönimi. Tämä näkyy sähköpostiviestien, tapahtumakutsujen ja tiedostojakojen vastaanottajille."
       ]
     },
     "Option": {
@@ -18188,6 +18191,24 @@
     "TableRow": {
       "No SMTP tokens found": [
         "SMTP avaimia ei löytynyt"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } vuorokausi",
+        "${ ceilDays } vuorokautta"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } tunti",
+        "${ ceilHours }. tuntia"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuutti",
+        "${ ceilMinutes } minuuttia"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunti",
+        "${ seconds } sekuntia"
       ]
     },
     "Time unit for duration; displayed in the time picker": {

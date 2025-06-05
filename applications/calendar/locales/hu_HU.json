@@ -806,10 +806,10 @@
       "Upgrade": [
         "Csomagváltás"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Váltás nagyobb csomagra"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Váltás nagyobb csomagra"
       ],
       "Upload and share files": [
@@ -6376,9 +6376,6 @@
       "Time zone": [
         "Időzóna"
       ],
-      "Title": [
-        "Cím"
-      ],
       "To: ${ toEmail }": [
         "Címzett: ${ toEmail }"
       ],
@@ -6995,6 +6992,11 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -7016,11 +7018,6 @@
       ],
       "Switch plan": [
         "Csomag váltása"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7565,9 +7562,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Biztonságos internetelérés bárhonnan az alapvető hálózati felügyelet segítségével"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Biztonságos felhőtárolás, mely lehetővé teszi, hogy könnyedén és biztonságosan tároljon, szinkronizáljon és osszon meg fájlokat."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Biztonságos e-mail, fejlett lehetőségekkel a mindennapi kommunikációjához."
