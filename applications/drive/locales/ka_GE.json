@@ -683,9 +683,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
       ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "${ DOCS_SHORT_APP_NAME }-ში გახსნა"
-      ],
       "Open navigation": [
         "ნავიგაციის გახსნა"
       ],
@@ -4540,6 +4537,9 @@
       "Anyone with this link can access your folder.": [
         "საქაღალდესთან წვდომა ექნება ამ ბმულის ყველა მქონეს."
       ],
+      "Apr": [
+        "აპრ"
+      ],
       "Are you sure you want to discard your changes?": [
         "გნებავთ თქვენი ცვლილებების გაუქმება?"
       ],
@@ -4566,6 +4566,9 @@
       ],
       "Attention required": [
         "საჭიროა ყურადღება"
+      ],
+      "Aug": [
+        "აგვ"
       ],
       "Automated Recovery ${ formattedDate }": [
         "ავტომატური აღდგენა ${ formattedDate }"
@@ -4712,6 +4715,9 @@
       ],
       "Custom email domains": [
         "ელფოსტის თქვენი დომენები"
+      ],
+      "Dec": [
+        "დეკ"
       ],
       "Decrypting files": [
         "ფაილების დაშიფვრა"
@@ -4861,6 +4867,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "დაცული ბმულის გახსნის შეცდომა. მიზეზი: ${ error }"
+      ],
+      "Feb": [
+        "თებ"
       ],
       "File \"${ name }\" was deleted during download": [
         "ფაილი \"${ name }\" წაიშალა გადმოწერის დროს"
@@ -5028,8 +5037,17 @@
       "It’s easy and secure": [
         "ეს ადვილია და დაცულია"
       ],
+      "Jan": [
+        "იან"
+      ],
       "JCB logo": [
         "JCB ლოგო"
+      ],
+      "Jul": [
+        "ივლ"
+      ],
+      "Jun": [
+        "ივნ"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "დაადასტურეთ თქვენი არჩევანი. დანარჩენს ჩვენ გავაკეთებთ."
@@ -5094,12 +5112,18 @@
       "Makes your account safer": [
         "თქვენს ანგარიშს უფრო უსაფრთხოს გახდის"
       ],
+      "Mar": [
+        "მარ"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode-ის ლოგო"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო",
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო"
+      ],
+      "May": [
+        "მაისს"
       ],
       "Medium Priority": [
         "საშუალო პრიორიტეტი"
@@ -5173,11 +5197,17 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "გაფრთხილება: მონაცემები ჯერ კიდევ შეიძლება ხელმისაწვდომი იყო იმ მოწყობილობებზე, სადაც ${ DRIVE_APP_NAME } დააყენეთ."
       ],
+      "Nov": [
+        "ნოე"
+      ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
       ],
       "Numbers": [
         "რიცხვები"
+      ],
+      "Oct": [
+        "ოქტ"
       ],
       "of": [
         "-დან"
@@ -5400,9 +5430,6 @@
       "Restore": [
         "აღდგენა"
       ],
-      "Restore is in progress. This can take a few seconds.": [
-        "მიმდინარეობს აღდგენა. ამას რამდენიმე წამი შეიძლება, დასჭირდეს."
-      ],
       "Restore Photos": [
         "ფოტოების აღდგენა"
       ],
@@ -5448,6 +5475,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "აირჩიეთ რომელი კალენდრები შემოტანა. ყოველი შემოტანილი კალენდრისთვის შეიქმნება ახალი კალენდარი თქვენს გეგმაში არსებული კალენდრების რაოდენობის მიხედვით."
       ],
+      "Sep": [
+        "სექ"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA გადახდები ამჟამად ხელმისაწვდომი არაა. მოგვიანებით სცადეთ."
       ],
@@ -5481,11 +5511,17 @@
       "Shared by ": [
         "გამზიარებელი "
       ],
+      "Shared by you": [
+        "გაზიარებული თქვენს მიერ"
+      ],
       "Shared link not found": [
         "გაზიარებული ბმული ვერ ვიპოვე"
       ],
       "Shared with me": [
         "ჩემთვის გაზიარებული"
+      ],
+      "Shared with you": [
+        "თქვენთან გაზიარებული"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "ხელმოწერა ვერ დადასტურდება ქსელის შეცდომის გამო, გთხოვთ, სცადეთ მოგვიანებით."
@@ -6711,9 +6747,6 @@
       "Thomas": [
         "თომასი"
       ],
-      "Title": [
-        "სათაური"
-      ],
       "To: ${ toEmail }": [
         "მიმღები: ${ toEmail }"
       ],
@@ -7910,9 +7943,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "იმუშავეთ ინტერნეტში უსაფრთხოდ ნებისმიერი ადგილიდან ქსელის მონიტორინგის საშუალებებით"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "დაცული ღრუბლოვანი საცავი, რომელიც საშუალებას გაძლევთ, ადვილად და დაცულად შეინახოთ, დასინქოთ და გააზიაროთ ფაილები."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "დაცული ელფოსტა დამატებითი ფუნქციებით, თქვენი ყოველდღიური მიმოწერისთვის."
       ],
@@ -8667,10 +8697,10 @@
       "Invite members": [
         "წევრების მოწვევა"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "მოგვიანებით"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "მოგვიანებით"
       ],
       "Select theme": [
