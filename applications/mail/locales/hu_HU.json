@@ -955,9 +955,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } beállításainak megnyitása"
       ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Megnyitás ebben: ${ DOCS_SHORT_APP_NAME }"
-      ],
       "Open navigation": [
         "Navigáció megnyitása"
       ],
@@ -1453,10 +1450,10 @@
       "Upgrade": [
         "Csomagváltás"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Váltás nagyobb csomagra"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Váltás nagyobb csomagra"
       ],
       "Upload and share files": [
@@ -3982,11 +3979,6 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Az Ön ${ PLAN_NAMES[PLANS.PASS] } előfizetése évi ${ price } kedvezményes áron vásárolható meg. Ha visszaminősít egy ingyenes csomagra, akkor végleg elveszíti a kedvezményt, még akkor is, ha a jövőben újra frissít."
-      ]
-    },
-    "Download attachments": {
-      "Download all": [
-        "Összes letöltése"
       ]
     },
     "Drawer tab, Action": {
@@ -8625,11 +8617,11 @@
       "Always move sender's emails": [
         "A feladó leveleit mindig helyezze mappába"
       ],
-      "And": [
-        "És"
-      ],
       "AND": [
         "ÉS"
+      ],
+      "And": [
+        "És"
       ],
       "and": [
         "és"
@@ -8856,11 +8848,11 @@
       "IBAN": [
         "IBAN szám"
       ],
-      "If": [
-        "Ha"
-      ],
       "IF": [
         "HA"
+      ],
+      "If": [
+        "Ha"
       ],
       "Import all messages": [
         "Összes üzenet importálása"
@@ -8982,14 +8974,14 @@
       "Optional": [
         "Választható"
       ],
+      "OR": [
+        "VAGY"
+      ],
       "or": [
         "vagy"
       ],
       "Or": [
         "Vagy"
-      ],
-      "OR": [
-        "VAGY"
       ],
       "Original link": [
         "Eredeti hivatkozás"
@@ -9116,9 +9108,6 @@
       ],
       "Time": [
         "Időpont"
-      ],
-      "Title": [
-        "Cím"
       ],
       "To:": [
         "Címzett:"
@@ -9884,6 +9873,14 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle } beszerzése"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -9905,14 +9902,6 @@
       ],
       "Switch plan": [
         "Csomag váltása"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } beszerzése"
       ]
     },
     "new_plans: feature": {
@@ -10457,9 +10446,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Biztonságos internetelérés bárhonnan az alapvető hálózati felügyelet segítségével"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Biztonságos felhőtárolás, mely lehetővé teszi, hogy könnyedén és biztonságosan tároljon, szinkronizáljon és osszon meg fájlokat."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Biztonságos e-mail, fejlett lehetőségekkel a mindennapi kommunikációjához."

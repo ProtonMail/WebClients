@@ -441,6 +441,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Спампаваць праграмы ${ DRIVE_APP_NAME }"
       ],
+      "Download all attachments": [
+        "Спампаваць усе далучэнні"
+      ],
       "Download now": [
         "Спампаваць"
       ],
@@ -732,6 +735,9 @@
       "Keep my subscription": [
         "Пакінуць падпіску"
       ],
+      "Keep subscription": [
+        "Пакінуць падпіску"
+      ],
       "Label as": [
         "Пазначыць як"
       ],
@@ -965,9 +971,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Адкрыць налады ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Адкрыць у ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Адкрыць панэль навігацыі"
@@ -1461,11 +1464,11 @@
       "Upgrade": [
         "Палепшыць"
       ],
-      "Upgrade Now": [
-        "Палепшыць"
-      ],
       "Upgrade now": [
         "Палепшыць зараз"
+      ],
+      "Upgrade Now": [
+        "Палепшыць"
       ],
       "Upload and share files": [
         "Запампаваць і абагуліць файлы"
@@ -2100,7 +2103,7 @@
         "${ participantName } прыняў(-ла) запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі."
       ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
-        "${ participantName } прыняў(-ла) запрашэнне на адно паўтарэнне гэтай падзеі."
+        "${ participantName } прыняў(-ла) запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } accepted an invitation to this event.": [
         "${ participantName } прыняў(-ла) запрашэнне на гэту падзею."
@@ -2112,22 +2115,22 @@
         "${ participantName } прыняў(-ла) ваша запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі."
       ],
       "${ participantName } accepted your invitation to one occurrence of the event.": [
-        "${ participantName } прыняў(-ла) ваша запрашэнне на адно паўтарэнне гэтай падзеі."
+        "${ participantName } прыняў(-ла) ваша запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } accepted your invitation.": [
         "${ participantName } прыняў(-ла) ваша запрашэнне."
       ],
       "${ participantName } asked for the latest event updates.": [
-        "${ participantName } спытаў(-ла) пра апошнія абнаўленні для гэтай падзеі."
+        "${ participantName } спытаў(-ла) аб апошніх абнаўленнях для гэтай падзеі."
       ],
       "${ participantName } asked for the latest updates to an event which does not exist anymore. You have no calendars.": [
         "${ participantName } спытаў(-ла) пра апошнія абнаўленні для падзеі, якой больш не існуе. У вас няма календароў."
       ],
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
-        "${ participantName } спытаў(-ла) пра апошнія абнаўленні для падзеі, якой больш не існуе ў вашым календары."
+        "${ participantName } спытаў(-ла) аб апошніх абнаўленнях для падзеі, якой больш не існуе ў вашым календары."
       ],
       "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "${ participantName } спытаў(-ла) пра апошнія абнаўленні для падзеі, якая не супадае з дэталямі вашага запрашэння. Праверце дэталі запрашэння ў вашым календары."
+        "${ participantName } спытаў(-ла) аб апошніх абнаўленнях для падзеі, якая не супадае з падрабязнасцямі вашага запрашэння. Праверце падрабязнасці запрашэння ў вашым календары."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } адхіліў(-ла) запрашэнне і прапанаваў(-ла) новы час для аднаго паўтарэння гэтай падзеі."
@@ -2136,7 +2139,7 @@
         "${ participantName } адхіліў(-ла) запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі."
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        "${ participantName } адхіліў(-ла) запрашэнне на адно паўтарэнне гэтай падзеі."
+        "${ participantName } адхіліў(-ла) запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } declined an invitation to this event.": [
         "${ participantName } адхіліў(-ла) запрашэнне на гэту падзею."
@@ -2148,7 +2151,7 @@
         "${ participantName } адхіліў(-ла) ваша запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі."
       ],
       "${ participantName } declined your invitation to one occurrence of the event.": [
-        "${ participantName } адхіліў(-ла) ваша запрашэнне на адно паўтарэнне гэтай падзеі."
+        "${ participantName } адхіліў(-ла) ваша запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } declined your invitation.": [
         "${ participantName } адхіліў(-ла) ваша запрашэнне."
@@ -2160,7 +2163,7 @@
         "${ participantName } ужо прымаў(-ла) запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі. Адказ і прапанова састарэлі."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        "${ participantName } ужо прымаў(-ла) запрашэнне на адно паўтарэнне гэтай падзеі."
+        "${ participantName } ужо прымаў(-ла) запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } had accepted an invitation to this event.": [
         "${ participantName } ужо прымаў(-ла) запрашэнне на гэту падзею."
@@ -2178,7 +2181,7 @@
         "${ participantName } ужо адхіляў(-ла) запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі. Адказ і прапанова састарэлі."
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        "${ participantName } ужо адхіляў(-ла) запрашэнне на адно паўтарэнне гэтай падзеі."
+        "${ participantName } ужо адхіляў(-ла) запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } had declined an invitation to this event.": [
         "${ participantName } ужо адхіляў(-ла) запрашэнне на гэту падзею."
@@ -2190,19 +2193,19 @@
         "${ participantName } ужо адхіляў(-ла) ваша запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі. Адказ і прапанова састарэлі."
       ],
       "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
-        "${ participantName } ужо прымаў(-ла) раней ваша запрашэнне на адно паўтарэнне гэтай падзеі."
+        "${ participantName } ужо прымаў(-ла) раней ваша запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } had previously accepted your invitation.": [
         "${ participantName } ужо прымаў(-ла) раней ваша запрашэнне."
       ],
       "${ participantName } had previously declined your invitation to one occurrence of the event.": [
-        "${ participantName } ужо адхіляў(-ла) раней ваша запрашэнне на адно паўтарэнне гэтай падзеі."
+        "${ participantName } ужо адхіляў(-ла) раней ваша запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } had previously declined your invitation.": [
         "${ participantName } ужо адхіляў(-ла) раней ваша запрашэнне."
       ],
       "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName } умоўна ўжо прымаў(-ла) раней ваша запрашэнне на адно паўтарэнне гэтай падзеі."
+        "${ participantName } умоўна ўжо прымаў(-ла) раней ваша запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } had previously tentatively accepted your invitation.": [
         "${ participantName } умоўна ўжо прымаў(-ла) раней ваша запрашэнне."
@@ -2220,7 +2223,7 @@
         "${ participantName } ужо прапаноўваў(-ла) новы час для гэтай падзеі. Гэта прапанова састарэла."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
-        "${ participantName } ужо прапанаваў(-ла) новы час для гэтай падзеі. Гэта прапанова састарэла, а падзеі больш не існуе ў вашым календары."
+        "${ participantName } ужо прапанаваў(-ла) новы час для гэтай падзеі. Гэта прапанова састарэла, а падзея больш не існуе ў вашым календары."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } ужо прапаноўваў(-ла) новы час для гэтай падзеі. Гэта прапанова састарэла. У вас няма календароў."
@@ -2232,7 +2235,7 @@
         "${ participantName } ужо ўмоўна прымаў(-ла) запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі. Адказ і прапанова састарэлі."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        "${ participantName } умоўна ўжо прымаў(-ла) запрашэнне на адно паўтарэнне гэтай падзеі."
+        "${ participantName } умоўна ўжо прымаў(-ла) запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
         "${ participantName } умоўна ўжо прымаў(-ла) запрашэнне на гэту падзею."
@@ -2259,7 +2262,7 @@
         "${ participantName } умоўна прыняў(-ла) запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі."
       ],
       "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        "${ participantName } умоўна прыняў(-ла) запрашэнне на адно паўтарэнне гэтай падзеі."
+        "${ participantName } умоўна прыняў(-ла) запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
         "${ participantName } умоўна прыняў(-ла) запрашэнне на гэту падзею."
@@ -2271,7 +2274,7 @@
         "${ participantName } умоўна прыняў(-ла) ваша запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі."
       ],
       "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName } умоўна прыняў(-ла) ваша запрашэнне на адно паўтарэнне гэтай падзеі."
+        "${ participantName } умоўна прыняў(-ла) ваша запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } tentatively accepted your invitation.": [
         "${ participantName } умоўна прыняў(-ла) ваша запрашэнне."
@@ -2307,10 +2310,10 @@
         "Запрашэнне састарэла. Падзея была абноўлена."
       ],
       "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "Гэта прапанова новага часу не супадае з дэталямі вашага запрашэння. Праверце дэталі запрашэння ў вашым календары."
+        "Гэта прапанова новага часу не супадае з падрабязнасцямі вашага запрашэння. Праверце падрабязнасці запрашэння ў вашым календары."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "Гэты адказ не супадае з дэталямі вашага запрашэння. Праверце дэталі запрашэння ў вашым календары."
+        "Гэты адказ не супадае з падрабязнасцямі вашага запрашэння. Праверце падрабязнасці запрашэння ў вашым календары."
       ],
       "This response is out of date.": [
         "Гэты адказ састарэў."
@@ -4022,11 +4025,6 @@
         "Ваша падпіска ${ PLAN_NAMES[PLANS.PASS] } па спецыяльнай цане ${ price } у год. Перайшоўшы на бясплатны тарыфны план, вы назаўсёды страціце скідку, нават калі ў будучыні зноў палепшыце сваю падпіску."
       ]
     },
-    "Download attachments": {
-      "Download all": [
-        "Спампаваць усё"
-      ]
-    },
     "Drawer tab, Action": {
       "Download for Linux": [
         "Спампаваць для Linux"
@@ -5646,6 +5644,9 @@
       "Contacts": [
         "Кантакты"
       ],
+      "Drawer": [
+        "Высоўнае меню"
+      ],
       "Hardware not compatible": [
         "Несумяшчальнае абсталяванне"
       ],
@@ -5868,13 +5869,13 @@
         "${ BRAND_NAME } не можа падключыцца да вашага ўліковага запісу. Пераканайцеся, што:"
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } не можа падключыцца да вашага знешняга ўліковага запісу. Пераканайцеся, што вы правільна пазначылі паштовы сервер і нумар парта."
+        "${ BRAND_NAME } не можа падключыцца да вашага знешняга ўліковага запісу. Пераканайцеся, што вы правільна пазначылі адрас паштовага сервера і нумар парта."
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } не можа падключыцца да вашага знешняга ўліковага запісу. Пераканайцеся, што:"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } не можа падключыцца да вашага ўліковага запісу Yahoo. Пераканайцеся, што вы правільна пазначылі паштовы сервер і нумар парта."
+        "${ BRAND_NAME } не можа падключыцца да вашага ўліковага запісу Yahoo. Пераканайцеся, што вы правільна пазначылі адрас паштовага сервера і нумар парта."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } не можа падключыцца да вашага ўліковага запісу Yahoo. Пераканайцеся, што:"
@@ -7077,6 +7078,9 @@
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Калі вы ўпэўнены, што гэта памылка, звяжыцеся з намі ${ contactLink }."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Вы неадкладна згубіце доступ да ${ boldPlanTitle } і ваш тарыфны план будзе паніжаны да ${ boldProtonFree }, калі вы скасуеце бягучы. Ваш доступ да функцый прадукту і даных можа быць абмежаваны, калі будуць перавышаны абмежаванні бясплатнага тарыфнага плана."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Калі вы скасуеце, ваша падпіска ${ planTitle } не будзе падоўжана пасля завяршэння тэрміну яе дзеяння ${ expiryDate }."
       ],
@@ -8022,6 +8026,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Не скасоўвайце бягучы тарыфны план да ${ boldCancelDate }, каб працягваць бясплатна атрымліваць асолоду ад ${ boldPlanTitle }"
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
       ],
@@ -8247,6 +8254,9 @@
       "Week": [
         "Тыдзень"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Што вы страціце, калі скасуеце ${ boldPlanTitle }:"
+      ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Калі вы хочаце, каб ваша паведамленне аўтаматычна выдалялася з паштовай скрыні атрымальніка і папкі з адпраўленымі лістамі ў вашай паштовай скрыні?"
       ],
@@ -8345,6 +8355,9 @@
       ],
       "You can now return to the application to continue": [
         "Цяпер вы можаце вярнуцца да праграмы, каб працягнуць"
+      ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "У вас усё яшчэ ёсць доступ да ўсіх даных вашага ўліковага запісу. Вы ў любы час можаце вярнуць падпіску, каб працягваць атрымліваць асалоду ад ўсіх функцый нашага сэрвісу."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можаце ўключыць апавяшчэнні, каб атрымліваць абвесткі пра новыя паведамленні электроннай пошты ў гэтай папцы."
@@ -8466,6 +8479,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для праверкі плацяжу."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "З вас не будзе спаганяцца плата, калі вы скасуеце да ${ trialEndsOnFormatted }."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Вы напісалі “${ attachmentsFoundKeyword }\", але не дадалі далучэнне. Вы сапраўды хочаце ўсё роўна адправіць паведамленне?"
       ],
@@ -8489,6 +8505,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ваша падпіска ${ PASS_SHORT_APP_NAME } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Астатак балансу вашай падпіскі будзе дададзены на ваш рахунак. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "Ваш тарыфын план ${ planName } цяпер з'яўляецца платнай падпіскай, якая аўтаматычна падаўжаецца кожныя 12 месяцаў. Наступная дата спагнання грашовых сродкаў адбудзецца ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
@@ -8516,6 +8535,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
+      ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Ваш бясплатны пробны перыяд ${ boldPlanTitle } быў скасаваны, а ваш уліковы запіс ${ boldUserEmail } быў паніжаны да ${ boldProtonFree }."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Ваша абсталяванне не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы."
@@ -8556,6 +8578,9 @@
       "Your online activity is protected": [
         "Ваша актыўнасць у інтэрнэце абаронена"
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Ваша арганізацыя ${ boldOrganizationName } адключана, а ўсе ліцэнзіі яе карыстальнікаў былі выдалены."
+      ],
       "Your password was leaked:": [
         "Адбылася ўцечка вашага пароля:"
       ],
@@ -8579,6 +8604,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Ваша падпіска будзе аўтаматычна падоўжана ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Ваш пробны перыяд завершыцца праз ${ timeRemaining }."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
@@ -8914,6 +8942,9 @@
       "Address": [
         "Адрас"
       ],
+      "Alias title": [
+        "Загаловак псеўданіма"
+      ],
       "ALL": [
         "УСЕ"
       ],
@@ -8929,10 +8960,10 @@
       "Always move sender's emails": [
         "Заўсёды перамяшчаць лісты адпраўніка"
       ],
-      "And": [
+      "AND": [
         "І"
       ],
-      "AND": [
+      "And": [
         "І"
       ],
       "and": [
@@ -9160,11 +9191,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Калі"
-      ],
       "IF": [
         "КАЛІ"
+      ],
+      "If": [
+        "Калі"
       ],
       "Import all messages": [
         "Імпартаваць усе паведамленні"
@@ -9310,14 +9341,14 @@
       "Optional": [
         "Неабавязкова"
       ],
+      "OR": [
+        "АБО"
+      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
-      ],
-      "OR": [
-        "АБО"
       ],
       "Original link": [
         "Арыгінальная спасылка"
@@ -9444,9 +9475,6 @@
       ],
       "Time": [
         "Час"
-      ],
-      "Title": [
-        "Назва"
       ],
       "To:": [
         "Каму:"
@@ -10228,6 +10256,14 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Атрымаць тарыфны план ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -10249,14 +10285,6 @@
       ],
       "Switch plan": [
         "Змяніць тарыфны план"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Атрымаць тарыфны план ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -10790,6 +10818,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand }, якая заканчваецца на ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 ТБ воблачнага сховішча, якое дазваляе вам лёгка захоўваць, сінхранізаваць і абагульваць файлы. Абаронена скразным шыфраваннем."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 ГБ воблачнага сховішча, якое дазваляе вам лёгка захоўваць, сінхранізаваць і абагульваць файлы. Абаронена скразным шыфраваннем."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Пашыраная бяспека сеткі і кіраванне доступам з дапамогай вылучаных шлюзоў"
       ],
@@ -10849,9 +10883,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Бяспечны доступ у інтэрнэт з любой краіны ў свеце, дзякуючы назіранню за сеткай"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Бяспечнае воблачнае сховішча, якое дазваляе вам лёгка і бяспечна захоўваць, сінхранізаваць і абагульваць файлы."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Бяспечная электронная пошта з пашыранымі функцыямі для штодзённых зносін."
@@ -11987,9 +12018,9 @@
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
         "${ contactsExported.length } кантакт з ${ countContacts } паспяхова экспартаваны.",
-        "${ contactsExported.length } кантакты ${ countContacts } паспяхова экспартаваны.",
-        "${ contactsExported.length } кантактаў ${ countContacts } паспяхова экспартаваны.",
-        "${ contactsExported.length } кантактаў ${ countContacts } паспяхова экспартаваны."
+        "${ contactsExported.length } кантакты з ${ countContacts } паспяхова экспартаваны.",
+        "${ contactsExported.length } кантактаў з ${ countContacts } паспяхова экспартаваны.",
+        "${ contactsExported.length } кантактаў з ${ countContacts } паспяхова экспартаваны."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } кантакт з ${ totalBeDeleted } паспяхова выдалены.",
@@ -13907,6 +13938,32 @@
         "Учора"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } дзень",
+        "${ ceilDays } дні",
+        "${ ceilDays } дзён",
+        "${ ceilDays } дзён"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } гадзіна",
+        "${ ceilHours } гадзіны",
+        "${ ceilHours } гадзін",
+        "${ ceilHours } гадзін"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } хвіліна",
+        "${ ceilMinutes } хвіліны",
+        "${ ceilMinutes } хвілін",
+        "${ ceilMinutes } хвілін"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунд"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } гадз",
@@ -14811,6 +14868,9 @@
       "Subject missing": [
         "Няма тэмы"
       ],
+      "Subscription canceled": [
+        "Падпіска скасавана"
+      ],
       "Summary": [
         "Зводка"
       ],
@@ -14915,6 +14975,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш бясплатны выпрабавальны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"
+      ],
+      "Your ${ planName } subscription started": [
+        "Ваша падпіска ${ planName } пачнецца"
       ],
       "Your account is protected": [
         "Ваш уліковы запіс абаронены"
@@ -15207,7 +15270,7 @@
     },
     "Warning": {
       "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
-        "${ BRAND_NAME } аб'яднае ўсе папкі з аднолькавай назвай. Каб пазбегнуць гэтага, змяніце назвы перад імпартаваннем."
+        "${ BRAND_NAME } аб'яднае ўсе папкі з аднолькавай назвай. Змяніце назвы перад імпартаваннем, каб пазбегнуць гэтага."
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перанясе столькі даных, колькі будзе магчыма, пачынаючы з самых новых паведамленняў."

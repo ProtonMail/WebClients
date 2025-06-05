@@ -739,9 +739,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ldi iɣewwaren n ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Ldi deg ${ DOCS_SHORT_APP_NAME }"
-      ],
       "Open navigation": [
         "Ldi tunigin"
       ],
@@ -1129,11 +1126,11 @@
       "Upgrade": [
         "Lqem"
       ],
-      "Upgrade Now": [
-        "Sgerrzet amiḍan tura"
-      ],
       "Upgrade now": [
         "Sali aswir tura"
+      ],
+      "Upgrade Now": [
+        "Sgerrzet amiḍan tura"
       ],
       "Upload picture": [
         "Sali-d tugna"
@@ -3114,11 +3111,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Ɛawen-aɣ ad nennarni"
-      ]
-    },
-    "Download attachments": {
-      "Download all": [
-        "Sider kullec"
       ]
     },
     "driveplus2024: Deal details": {
@@ -6011,6 +6003,9 @@
       "Actions": [
         "Tigawin"
       ],
+      "Active filter:": [
+        "Imsizdeg isehḥan:"
+      ],
       "Add email address": [
         "Rnu tansa n yimayl"
       ],
@@ -6022,6 +6017,9 @@
       ],
       "Address": [
         "Tansa"
+      ],
+      "Alias title": [
+        "Mefferisem azwel"
       ],
       "ALL": [
         "AKK"
@@ -6038,14 +6036,17 @@
       "Always move sender's emails": [
         "Asenkez yal tikkelt imaylen n yimazanen"
       ],
-      "And": [
-        "Akked"
-      ],
       "AND": [
         "AKKED"
       ],
+      "And": [
+        "Akked"
+      ],
       "and": [
         "akked"
+      ],
+      "Anderson": [
+        "Anderson"
       ],
       "ANY": [
         "Ayen yellan"
@@ -6122,6 +6123,9 @@
       "Colors": [
         "Initen"
       ],
+      "Company name": [
+        "Isem n tekubannit"
+      ],
       "Composer": [
         "Amaẓrag"
       ],
@@ -6197,6 +6201,9 @@
       "Emails (last month)": [
         "Imaylen ( ayyur aneggar)"
       ],
+      "Enable desktop notifications": [
+        "Rmed talɣutin n tnarit"
+      ],
       "Encrypt emails": [
         "Wgelhen imaylen"
       ],
@@ -6239,11 +6246,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Ma"
-      ],
       "IF": [
         "MA"
+      ],
+      "If": [
+        "Ma"
       ],
       "Import all messages": [
         "Kter akk iznan"
@@ -6350,14 +6357,14 @@
       "Optional": [
         "Afrayan"
       ],
+      "OR": [
+        "NEƔ"
+      ],
       "or": [
         "neɣ"
       ],
       "Or": [
         "Neɣ"
-      ],
-      "OR": [
-        "NEƔ"
       ],
       "Original link": [
         "Aseɣwen agejdan"
@@ -6370,6 +6377,9 @@
       ],
       "Password hint": [
         "Amatar n wawal uffir"
+      ],
+      "Password strength": [
+        "Tizmert n wawal uffir"
       ],
       "Payer": [
         "Amxellaṣ"
@@ -6461,11 +6471,11 @@
       "Then": [
         "Sakin"
       ],
+      "Thomas": [
+        "Thomas"
+      ],
       "Time": [
         "Akud"
-      ],
-      "Title": [
-        "Azwel"
       ],
       "To:": [
         "Ɣer:"
@@ -6478,6 +6488,9 @@
       ],
       "Undisclosed Recipients": [
         "Iɣerwaḍen ur ttwaskanen ara"
+      ],
+      "Unsafe or problematic": [
+        "Meḥsud neɣ d ugur"
       ],
       "Upload picture": [
         "Sali-d tugna"
@@ -7043,6 +7056,14 @@
         "Arured alemmas VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Awi ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -7061,14 +7082,6 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Awi ${ planTitle }"
       ]
     },
     "new_plans: feature": {
