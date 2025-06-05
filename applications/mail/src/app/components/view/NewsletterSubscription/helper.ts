@@ -11,8 +11,8 @@ import type {
     NewsletterSubscription,
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import { UnsubscribeMethod } from './interface';
 import type { ModalFilterType } from './interface';
+import { UnsubscribeMethod } from './interface';
 
 interface GetUnsubscribeDataParams {
     trash: boolean;
@@ -102,8 +102,12 @@ export const shouldOpenUpsellOnFilterClick = (
     return !filters.some((filter) => filter.ID === subscription.FilterID);
 };
 
+export const getReceivedMessagesCount = (subscription: NewsletterSubscription): number => {
+    return subscription.ReceivedMessages?.Last30Days ?? 0;
+};
+
 export const getNewsletterCopyForFilterAction = (subscription: NewsletterSubscription, filterType: ModalFilterType) => {
-    const count = subscription.ReceivedMessages.Total;
+    const count = getReceivedMessagesCount(subscription);
 
     if (filterType === 'MarkAsRead') {
         return c('Label').ngettext(msgid`Marked ${count} message as read.`, `Marked ${count} messages as read.`, count);
