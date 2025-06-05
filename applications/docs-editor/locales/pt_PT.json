@@ -1,7 +1,7 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n > 1);",
-    "language": "pt_BR"
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "pt_PT"
   },
   "contexts": {
     "Action": {
@@ -18,22 +18,22 @@
         "a. b. c. d."
       ],
       "Accept suggestion": [
-        "Aceitar sugestão"
+        "Aceitar a sugestão"
       ],
       "Add comment": [
-        "Adicionar comentários"
+        "Adicionar um comentário"
       ],
       "Add new table column": [
-        "Adicionar uma linha na coluna"
+        "Adicionar uma coluna na tabela"
       ],
       "Add new table row": [
-        "Adicionar uma linha na tabela"
+        "Adicionar uma nova linha na tabela"
       ],
       "Add suggestion": [
-        "Adicionar sugestão"
+        "Adicionar uma sugestão"
       ],
       "Adjust font size": [
-        "Ajustar tamanho da fonte"
+        "Ajustar o tamanho da letra"
       ],
       "Alphabetical": [
         "Em ordem alfabética"
@@ -60,16 +60,16 @@
         "Lista de verificação"
       ],
       "Clear contents": [
-        "Limpar conteúdos"
+        "Limpar os conteúdos"
       ],
       "Clear formatting": [
-        "Limpar formatação"
+        "Limpar a formatação"
       ],
       "Click to open column menu": [
         "Clique para abrir o menu de colunas"
       ],
       "Click to open row menu": [
-        "Clique para abrir o menu de linha"
+        "Clique para abrir o menu de linhas"
       ],
       "Close": [
         "Fechar"
@@ -84,25 +84,25 @@
         "Cor"
       ],
       "Copy link": [
-        "Copiar link"
+        "Copiar ligação"
       ],
       "Decline suggestion": [
-        "Recusar sugestão"
+        "Recusar a sugestão"
       ],
       "Delete": [
-        "Excluir"
+        "Eliminar"
       ],
       "Delete column": [
-        "Excluir coluna"
+        "Eliminar a coluna"
       ],
       "Delete comment": [
-        "Excluir comentário"
+        "Eliminar o comentário"
       ],
       "Delete row": [
-        "Excluir linha"
+        "Excluir a linha"
       ],
       "Delete thread": [
-        "Excluir tópico"
+        "Eliminar a conversa"
       ],
       "Divider": [
         "Divisor"
@@ -114,13 +114,13 @@
         "Editar"
       ],
       "Edit link": [
-        "Editar link"
+        "Editar a ligação"
       ],
       "Fit table to page width": [
         "Ajustar a tabela na largura da página"
       ],
       "Indent": [
-        "Aumentar recuo"
+        "Aumentar o recuo"
       ],
       "Insert above": [
         "Inserir acima"
@@ -129,22 +129,22 @@
         "Inserir abaixo"
       ],
       "Insert comment": [
-        "Inserir comentário"
+        "Inserir um comentário"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir uma imagem"
       ],
       "Insert left": [
         "Inserir à esquerda"
       ],
       "Insert link": [
-        "Inserir link"
+        "Inserir uma ligação"
       ],
       "Insert right": [
-        "Inserir à direita"
+        "Iserir à direita"
       ],
       "Insert table": [
-        "Inserir tabela"
+        "Inserir uma tabela"
       ],
       "Italic": [
         "Itálico"
@@ -162,31 +162,31 @@
         "Lista numerada"
       ],
       "OK": [
-        "OK"
+        "Aceitar"
       ],
       "Options": [
         "Opções"
       ],
       "Outdent": [
-        "Diminuir recuo"
+        "Diminuir o recuo"
       ],
       "Quote": [
-        "Citar"
+        "Citação"
       ],
       "Re-open": [
-        "Reabrir"
+        "Re-abrir"
       ],
       "Re-open thread": [
-        "Reabrir tópico"
+        "Reabrir a conversa"
       ],
       "Redo": [
         "Refazer"
       ],
       "Refresh the page": [
-        "Atualizar a página"
+        "Actualizar a página"
       ],
       "Remove link": [
-        "Remover link"
+        "Remover a ligação"
       ],
       "Reply": [
         "Responder"
@@ -201,10 +201,10 @@
         "Números romanos"
       ],
       "Save": [
-        "Salvar"
+        "Guardar"
       ],
       "Show thread": [
-        "Mostrar tópico"
+        "Mostrar a conversa"
       ],
       "Signature could not be verified": [
         "Não foi possível verificar a assinatura."
@@ -213,7 +213,7 @@
         "Riscado"
       ],
       "Submit": [
-        "Enviar"
+        "Submeter"
       ],
       "Table of contents": [
         "Tabela de conteúdos"
@@ -272,19 +272,19 @@
         "cerúleo escuro"
       ],
       "dark midnight blue": [
-        "azul escuro da meia-noite"
+        "azul-escuro da meia-noite"
       ],
       "dim gray": [
         "cinza escuro"
       ],
       "enzian": [
-        "enzian"
+        "genciana"
       ],
       "fern": [
         "samambaia"
       ],
       "field drab": [
-        "campo monótono"
+        "castanho"
       ],
       "forest": [
         "floresta"
@@ -293,7 +293,7 @@
         "cinza médio"
       ],
       "gray": [
-        "cinza"
+        "cinzento"
       ],
       "japanese laurel": [
         "louro japonês"
@@ -353,7 +353,7 @@
         "prata filipina"
       ],
       "pickle": [
-        "pepininhos"
+        "pickle"
       ],
       "pine": [
         "pinho"
@@ -362,7 +362,7 @@
         "rosa"
       ],
       "pistachio": [
-        "pistache"
+        "pistácio"
       ],
       "plum": [
         "ameixa"
@@ -380,13 +380,13 @@
         "rosa avermelhado"
       ],
       "sahara": [
-        "saara"
+        "saará"
       ],
       "satin sheen gold": [
-        "ouro de cetim"
+        "ouro acetinado"
       ],
       "slateblue": [
-        "azul ardósia"
+        "azul-ardósia"
       ],
       "soil": [
         "terra"
@@ -403,7 +403,7 @@
     },
     "Confirm": {
       "Discard comment?": [
-        "Descartar comentário?"
+        "Descartar o comentário?"
       ]
     },
     "Description": {
@@ -417,36 +417,36 @@
         "Ler ou imprimir o documento final"
       ],
       "Use the dropdown above to switch and start making suggestions.": [
-        "Use o menu suspenso acima para mudar e começar a fazer sugestões."
+        "Utilize o menu suspenso acima para alternar e começar a fazer sugestões."
       ]
     },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
-        "Um erro ocorreu enquanto o documento carregava. Para prevenir corrupção do documento, o editor foi bloqueado. Recarregue a página e tente novamente. Se o erro persistir, abra o histórico de versões e tente restaurar uma versão anterior do documento."
+        "Ocorreu um erro ao carregar o documento. Para evitar a corrupção do documento, o editor foi bloqueado. Recarregue a página e tente novamente. Se o erro continuar, aceda ao histórico de versões no menu para tentar recuperar uma versão anterior do documento."
       ],
       "Failed to export document.": [
-        "Falha ao exportar o documento."
+        "Não foi possível exportar o documento."
       ],
       "Failed to import HTML due to unknown error.": [
-        "Falha ao importar HTML devido a um erro desconhecido."
+        "Ocorreu um erro ao importar o HTML devido a um erro desconhecido."
       ],
       "Failed to import Markdown due to unknown error.": [
-        "Falha ao importar Markdown devido a um erro desconhecido."
+        "Erro ao importar a formatação markdown devido a um erro desconhecido."
       ],
       "Failed to import Word document due to unknown error.": [
-        "Falha ao importar documento do Word devido a um erro desconhecido."
+        "Erro ao importar o documento Word devido a um erro desconhecido."
       ],
       "Failed to initialize editor due to unknown error.": [
-        "Falha ao inicializar o editor devido a um erro desconhecido."
+        "Erro ao inicializar o editor devido a um erro desconhecido."
       ],
       "Request timed out": [
-        "A solicitação expirou"
+        "O pedido expirou"
       ],
       "Tried to import Sheet data into Lexical": [
-        "Tentou importar dados da planilha para o Lexical"
+        "Tentativa de importação de dados da folha para o Lexical"
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
-        "Não é possível converter o documento do Word. Ele é protegido por senha? Se sim, remova a senha e tente novamente."
+        "Não é possível converter o documento do Word. Ele é protegido por palavra-passe? Se sim, remova a palavra-passe e tente novamente."
       ]
     },
     "Error message": {
@@ -454,15 +454,15 @@
         "Atualize a página ou tente novamente mais tarde."
       ],
       "Something went wrong": [
-        "Algo deu errado"
+        "Ocorreu um erro"
       ]
     },
     "Font face option": {
       "System default": [
-        "Padrão do sistema"
+        "Predefinição do sistema"
       ],
       "Theme font": [
-        "Fonte do tema"
+        "Letra de tema"
       ]
     },
     "Font size option": {
@@ -487,17 +487,17 @@
         "${ allTypersExceptLast } e ${ lastTyper }"
       ],
       "${ usersTranslation } is typing...": [
-        "${ usersTranslation } está digitando...",
-        "${ usersTranslation } estão digitando..."
+        "${ usersTranslation } está a digitar...",
+        "${ usersTranslation } estão a digitar..."
       ],
       "Alpha only experimental feature": [
-        "Funcionalidade experimental apenas para Alphas"
+        "Funcionalidade experimental apenas alfa"
       ],
       "Are you sure you want to delete this comment?": [
-        "Tem certeza que deseja excluir este comentário?"
+        "Tem a certeza que deseja eliminar este comentário?"
       ],
       "Are you sure you want to delete this thread?": [
-        "Tem a certeza de que quer apagar este tópico?"
+        "Tem a certeza de que deseja eliminar este tópico?"
       ],
       "Comments": [
         "Comentários"
@@ -509,144 +509,144 @@
         "Editar"
       ],
       "Font": [
-        "Fonte"
+        "Letra"
       ],
       "Font size": [
-        "Tamanho da fonte"
+        "Tamanho das letras"
       ],
       "Headings you add to the document will appear here.": [
-        "Os títulos que você adicionar ao documento aparecerão aqui."
+        "Cabeçalhos que adicionar ao documento aparecerão aqui."
       ],
       "Highlight": [
         "Destacar"
       ],
       "Internet connection lost": [
-        "Perda de conexão com a internet"
+        "Ligação à Internet perdida"
       ],
       "Just now": [
         "Agora mesmo"
       ],
       "Loading": [
-        "Carregando"
+        "A carregar"
       ],
       "No comments": [
         "Nenhum comentário"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
+        "Os servidores estão inacessíveis.Tente novamente dentro de alguns minutos."
       ],
       "Session timed out": [
-        "Sessão expirada"
+        "A sessão expirou."
       ],
       "Something went wrong:": [
-        "Algo deu errado:"
+        "Ocorreu um erro:"
       ],
       "Suggesting": [
-        "Sugerindo"
+        "A sugerir"
       ],
       "Text color": [
         "Cor do texto"
       ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
-        "O conteúdo que você está tentando colar é muito grande para ser colado de uma só vez. Tente novamente colando partes menores de cada vez."
+        "O conteúdo que tente colar é muito grande para ser colado de uma só vez. Tente novamente colando partes menores de cada vez."
       ],
       "The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.": [
-        "O idioma que você está usando não é suportado no modo de sugestão. Altere para o modo de edição ou altere o idioma."
+        "O idioma que usa não é suportado no momento no modo de sugestões. Altere para o modo de edição ou altere o idioma."
       ],
       "Viewing": [
-        "Visualizar"
+        "Ver"
       ],
       "You cannot undo this action.": [
-        "Você não pode desfazer está ação."
+        "Esta ação não pode ser desfeita."
       ]
     },
     "Label": {
       "${ name } background color and white text color": [
-        "Cor de fundo de ${ name } e cor do texto branca."
+        "Cor de fundo em ${ name } e cor de texto branco"
       ],
       "${ name } text color and highlight": [
-        "Cor do texto e destaque de ${ name }"
+        "Cor de texto e de destaque em${ name }"
       ],
       "${ name } text color with no background": [
-        "Cor do texto de ${ name } sem fundo."
+        "Cor do texto em ${ name } sem fundo"
       ],
       "Add link": [
-        "Adicionar link"
+        "Adicionar uma ligação"
       ],
       "Align": [
         "Alinhar"
       ],
       "Change image size": [
-        "Alterar tamanho da imagem"
+        "Alterar o tamanho da imagem"
       ],
       "Change indent level": [
-        "Modificar o nível de indentação"
+        "Alterar o nível de indentação"
       ],
       "Clear formatting": [
-        "Limpar formatação"
+        "Limpar a formatação"
       ],
       "Delete": [
-        "Excluir"
+        "Eliminar"
       ],
       "Delete divider": [
-        "Excluir divisor"
+        "Eliminar o divisor"
       ],
       "Delete image": [
-        "Excluir imagem"
+        "Eliminar a imagem"
       ],
       "Delete link": [
-        "Excluir link"
+        "Eliminar a ligação"
       ],
       "Delete paragraph": [
-        "Excluir parágrafo"
+        "Eliminar um parágrafo"
       ],
       "Delete table": [
-        "Excluir tabela"
+        "Eliminar uma tabela"
       ],
       "Delete table column": [
-        "Excluir coluna na tabela"
+        "Eliminar a coluna da tabela"
       ],
       "Delete table row": [
-        "Excluir linha na tabela"
+        "Eliminar uma linha da tabela"
       ],
       "Duplicate table column": [
-        "Duplicar coluna na tabela"
+        "Duplicar a coluna na tabela"
       ],
       "Duplicate table row": [
-        "Duplicar linha na tabela"
+        "Duplicar a linha na tabela"
       ],
       "Format": [
-        "Formatar"
+        "Formato"
       ],
       "Insert": [
         "Inserir"
       ],
       "Insert divider": [
-        "Inserir divisor"
+        "Inserir um divisor"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir uma imagem"
       ],
       "Insert paragraph": [
-        "Inserir parágrafo"
+        "Inserir um parágrafo"
       ],
       "Insert table": [
-        "Inserir tabela"
+        "Inserir uma tabela"
       ],
       "Insert table column": [
-        "Inserir coluna na tabela"
+        "Inserir uma coluna na tabela"
       ],
       "Insert table row": [
-        "Inserir linha na tabela"
+        "Inserir uma linha na tabela"
       ],
       "Keyboard shortcut: ${ shortcut }": [
-        "Atalho de teclado: ${ shortcut }"
+        "Atalhos de teclado: ${ shortcut }"
       ],
       "Link text": [
-        "Texto do link"
+        "Texto da ligação"
       ],
       "Link URL": [
-        "URL do link"
+        "URL da ligação"
       ],
       "More options": [
         "Mais opções"
@@ -655,13 +655,13 @@
         "Substituir"
       ],
       "Replace link": [
-        "Substituir link"
+        "Substituir a ligação"
       ],
       "Text and highlight color": [
-        "Cor do texto e cor de destaque"
+        "Cor do texto e de destaque"
       ],
       "with \"${ replaceWith }\"": [
-        "por \"${ replaceWith }\""
+        "por «${ replaceWith }»"
       ]
     },
     "Placeholder": {
@@ -669,10 +669,10 @@
         "Adicionar um comentário..."
       ],
       "Edit comment...": [
-        "Editar comentário..."
+        "Editar o comentário..."
       ],
       "Paste link": [
-        "Colar link"
+        "Colar a ligação"
       ],
       "Reply...": [
         "Responder..."
@@ -683,21 +683,21 @@
     },
     "Title": {
       "Delete comment": [
-        "Excluir comentário"
+        "Eliminar o comentário"
       ],
       "Delete thread": [
-        "Excluir tópico"
+        "Eliminar a conversa"
       ],
       "Explore the New Suggestion Mode": [
         "Explore o novo modo de sugestão"
       ],
       "Language not supported": [
-        "Idioma não suportado"
+        "O idioma não é suportado."
       ]
     },
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
-        "Não há suporte para fazer sugestões dentro de blocos de código"
+        "Não é possível fazer sugestões nos blocos de código."
       ]
     }
   }
