@@ -69,7 +69,6 @@ const ModalNewsletterSubscriptionFilter = ({ subscription, filterType, ...props 
         );
 
         createNotification({
-            // TODO add undo actions once the API returns a undo token
             text: getNewsletterCopyForFilterAction(subscription, filterType),
         });
 
