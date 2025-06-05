@@ -400,11 +400,11 @@
       "Move to another vault": [
         "Pindahkan ke brankas lainnya"
       ],
-      "Move to Trash": [
-        "Pindahkan ke Sampah"
-      ],
       "Move to trash": [
         "Pindahkan ke sampah"
+      ],
+      "Move to Trash": [
+        "Pindahkan ke Sampah"
       ],
       "Multiple select": [
         "Pilih banyak berkas"
@@ -537,9 +537,6 @@
       ],
       "See members": [
         "Lihat anggota"
-      ],
-      "Select": [
-        "Pilih"
       ],
       "Send email": [
         "Kirim email"
@@ -1371,7 +1368,7 @@
         "Alias berhasil diaktifkan. Anda kini dapat menerima email yang terkirim ke ${ item.aliasEmail }"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
-        "Penyinkronan alias antara akun ${ BRAND_NAME } dan SimpleLogin Anda sedang aktif."
+        "Sinkronisasi alias antar akun ${ BRAND_NAME } dan SimpleLogin Anda sedang aktif."
       ],
       "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
         "Alias di sampah akan terus meneruskan email. Jika anda mau berhenti menerima email di alamat ini, nonaktifkan saja."
@@ -1477,9 +1474,6 @@
       ],
       "Change your password": [
         "Ubah kata sandi Anda"
-      ],
-      "Choose your preferred look and feel.": [
-        "Pilih tampilan dan nuansa yang Anda inginkan."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Konfirmasi kata sandi tambahan Anda untuk melanjutkan penghapusan kata sandi ini."
@@ -1768,9 +1762,6 @@
       ],
       "Low Priority": [
         "Prioritas Rendah"
-      ],
-      "Make it your own": [
-        "Jadikan aplikasi ini milik Anda"
       ],
       "Manager": [
         "Pengelola"
@@ -2533,6 +2524,9 @@
       "API Credential": [
         "Kredensial API"
       ],
+      "API Key": [
+        "Kunci API"
+      ],
       "Application logs": [
         "Log aplikasi"
       ],
@@ -2667,6 +2661,9 @@
       ],
       "Database": [
         "Database"
+      ],
+      "Database Type": [
+        "Tipe Database"
       ],
       "Date": [
         "Tanggal"
@@ -2827,6 +2824,12 @@
       "Holder Name": [
         "Nama Pemegang Akun"
       ],
+      "Host": [
+        "Host"
+      ],
+      "Hostname": [
+        "Nama Host"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Cara membuka ${ PASS_SHORT_APP_NAME }"
       ],
@@ -2881,6 +2884,9 @@
       "Invitations": [
         "Undangan"
       ],
+      "IP Address": [
+        "Alamat IP"
+      ],
       "Issuing Authority": [
         "Otoritas Penerbit"
       ],
@@ -2925,6 +2931,9 @@
       ],
       "License": [
         "Lisensi"
+      ],
+      "License Key": [
+        "Kunci Lisensi"
       ],
       "License number": [
         "Nomor lisensi"
@@ -3052,8 +3061,14 @@
       "Open-source password manager for effortless protection.": [
         "Pengelola kata sandi open-source untuk perlindungan yang mudah."
       ],
+      "Operating System": [
+        "Sistem Operasi"
+      ],
       "Organization": [
         "Organisasi"
+      ],
+      "Owner": [
+        "Pemilik"
       ],
       "Passkey": [
         "Passkey"
@@ -3075,6 +3090,9 @@
       ],
       "Password history": [
         "Riwayat kata sandi"
+      ],
+      "Permissions": [
+        "Perizinan"
       ],
       "Personal": [
         "Pribadi"
@@ -3118,11 +3136,14 @@
       "Priority:": [
         "Prioritas:"
       ],
+      "Private key": [
+        "Kunci pribadi"
+      ],
       "Private Key": [
         "Kunci Pribadi"
       ],
-      "Private key": [
-        "Kunci pribadi"
+      "Product": [
+        "Produk"
       ],
       "Program Name": [
         "Nama Program"
@@ -3165,6 +3186,9 @@
       ],
       "Second password": [
         "Kata sandi kedua"
+      ],
+      "Secret": [
+        "Secret"
       ],
       "Secure links": [
         "Tautan aman"
@@ -3229,11 +3253,11 @@
       "Show website favicons": [
         "Tampilkan favicon situs web"
       ],
-      "Social security": [
-        "Jaminan sosial"
-      ],
       "Social Security": [
         "BPJS"
+      ],
+      "Social security": [
+        "Jaminan sosial"
       ],
       "Social security number": [
         "Nomor jaminan sosial"

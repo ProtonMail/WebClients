@@ -280,6 +280,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Potvrďte otvorenie odkazu ${ linkToShow }"
       ],
+      "Confirm purchase": [
+        "Potvrdiť nákup"
+      ],
       "Connect": [
         "Pripojiť"
       ],
@@ -679,6 +682,9 @@
       "Get more servers": [
         "Získať viac serverov"
       ],
+      "Get started": [
+        "Začíname"
+      ],
       "Get the app": [
         "Získať aplikáciu"
       ],
@@ -696,6 +702,9 @@
       ],
       "Get verification code": [
         "Odoslať overovací kód"
+      ],
+      "Go back": [
+        "Späť"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Prejsť do ${ DRIVE_APP_NAME }"
@@ -781,10 +790,10 @@
       "Keep": [
         "Zachovať"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Pokračovať v úpravách"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Pokračovať v úpravách"
       ],
       "Keep logo": [
@@ -792,6 +801,9 @@
       ],
       "Keep my subscription": [
         "Ponechať moje predplatné"
+      ],
+      "Keep subscription": [
+        "Ponechať predplatné"
       ],
       "label emails as": [
         "označiť emaily ako"
@@ -909,9 +921,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvoriť nastavenia ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Otvoriť v ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Otvoriť menu"
@@ -2037,6 +2046,9 @@
       ],
       "Two-year": [
         "Dva roky"
+      ],
+      "Yearly": [
+        "Ročne"
       ]
     },
     "Blog": {
@@ -4690,6 +4702,12 @@
       "Actions": [
         "Akcie"
       ],
+      "Forward from": [
+        "Preposlať z"
+      ],
+      "Forward to": [
+        "Preposlať na"
+      ],
       "From": [
         "Od"
       ],
@@ -4780,11 +4798,11 @@
       "Forward to": [
         "Preposlať na"
       ],
-      "Or": [
-        "Alebo"
-      ],
       "or": [
         "alebo"
+      ],
+      "Or": [
+        "Alebo"
       ],
       "With attachment": [
         "S prílohou"
@@ -5038,6 +5056,9 @@
       ],
       "Error in one of the conditions": [
         "Chyba v jednej z podmienok"
+      ],
+      "Error publishing changes": [
+        "Chyba pri publikovaní zmien"
       ],
       "Expired": [
         "Platnosť vypršala"
@@ -8331,6 +8352,9 @@
       "End-to-end email encryption is enabled for this group.": [
         "Pre túto skupinu je end-to-end šifrovanie emailov povolené."
       ],
+      "End-to-end encrypted": [
+        "End-to-end šifrované"
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL adresa koncového bodu získaná od poskytovateľa identity (napr. https://idp.example.com/sso/saml)."
       ],
@@ -8552,6 +8576,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Pokiaľ si myslíte, že ide o chybu, kontaktujte nás ${ contactLink }."
+      ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Ak zrušíte, okamžite stratíte prístup k ${ boldPlanTitle }, a budete znížený na plán ${ boldProtonFree }. Ak vaše používanie prekročí limity bezplatného plánu, môže dôjsť k obmedzeniu prístupu k funkciám produktu a k vašim údajom."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Zrušením nebude vaše predplatné ${ planTitle } obnovené, keď uplynie dňa ${ expiryDate } jeho platnosť."
@@ -9840,6 +9867,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Ak chcete potvrdiť, zadajte meno používateľa, ktorého chcete odstrániť."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Ak si prajete naďalej bezplatne využívať ${ boldPlanTitle } až do ${ boldCancelDate }, nezrušte ho."
+      ],
       "To continue to ${ product }": [
         "Pre pokračovanie do ${ product }"
       ],
@@ -10176,6 +10206,9 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Na telefónne číslo, ktoré ste uviedli v prípade obnovenia účtu odošleme kód pre obnovenie."
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "O čo prídete, keď zrušíte ${ boldPlanTitle }:"
+      ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Pokiaľ je vypnuté, zabraňuje sa načítaniu obrázkov na tomto zariadení bez vašeho vedomia."
       ],
@@ -10347,6 +10380,9 @@
       "You can now return to the application to continue": [
         "Teraz sa môžete vrátiť do aplikácie a pokračovať"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Stále máte prístup ku všetkým údajom svojho účtu. Kedykoľvek sa môžete znovu prihlásiť a naďalej využívať všetky naše funkcie."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Môžete zapnúť notifikácie, aby ste dostali upozornenie, keď vám do tohto priečinka prídu nové správy."
       ],
@@ -10458,6 +10494,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelom overenia platby budete presmerovaný na PayPal."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Nebude sa vám účtovať, ak zrušíte pred ${ trialEndsOnFormatted }."
+      ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Počas 10 dní nebude možné tieto servery preradiť do inej krajiny."
       ],
@@ -10497,6 +10536,9 @@
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Vaše predplatné ${ PASS_SHORT_APP_NAME } Plus bude nahradené predplatným ${ PASS_SHORT_APP_NAME } Lifetime. Zostávajúci zostatok vášho predplatného bude pripísaný na vaše konto. Dohoda o ${ PASS_SHORT_APP_NAME } doživotnom predplatnom nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }."
       ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "Váš plán ${ planName } je teraz platené predplatné, ktoré sa automaticky obnovuje každých 12 mesiacov. Dátum Vašej ďalšej fakturácie je ${ nextBillingDate }."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Vaše účty ${ VPN_APP_NAME } a ${ MAIL_APP_NAME } sú prepojené. Ak chcete obidva odstrániť, prihláste sa na ${ loginLink } a odstráňte tam svoj účet."
       ],
@@ -10533,6 +10575,9 @@
       "Your files will be encrypted and then saved": [
         "Vaše súbory budú zašifrované a potom uložené"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Vaša bezplatná skúšobná verzia služby ${ boldPlanTitle } bola zrušená a váš účet ${ boldUserEmail } bol znížený na ${ boldProtonFree }."
+      ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Váš import z ${ accounts } je dočasne oneskorený.",
         "Váš import z ${ accounts } je dočasne oneskorený.",
@@ -10553,6 +10598,9 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Váš ďalší dátum fakturácie je ${ renewalTime }. Ak potrebujete okamžitú zmenu plánu, kontaktujte podporu, prosím."
+      ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Vaša organizácia ${ boldOrganizationName } je zakázaná a všetky jej používateľské miesta boli odstránené."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Vaša organizácia používa jednotné prihlásenie (SSO). Stlačte tlačidlo Prihlásiť sa a pokračujte prostredníctvom vášho poskytovateľa SSO."
@@ -10589,6 +10637,12 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Vaša požiadavka na podporu bola uzavretá. Ďakujeme, že ste kontaktovali ${ BRAND_NAME } podporu."
+      ],
+      "Your trial ends on June 19. Upgrade to receive future breach reports.": [
+        "Vaše skúšobné obdobie sa končí 19. júna. Zvýšte úroveň, aby ste dostávali budúce hlásenia o únikoch."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Vaše skúšobné obdobie končí ${ timeRemaining }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Tieto servery budete môcť okamžite pridať do inej brány."
@@ -11234,10 +11288,10 @@
       "Allow sharing outside the organization": [
         "Umožniť zdieľanie mimo organizácie"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11249,10 +11303,10 @@
       "Amount due": [
         "Čiastka k zaplateniu"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
       "and": [
@@ -11681,11 +11735,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Ak"
-      ],
       "IF": [
         "AK"
+      ],
+      "If": [
+        "Ak"
       ],
       "Import all messages": [
         "Importovať všetky správy"
@@ -11894,14 +11948,14 @@
       "Optional": [
         "Voliteľné"
       ],
+      "OR": [
+        "ALEBO"
+      ],
       "or": [
         "alebo"
       ],
       "Or": [
         "Alebo"
-      ],
-      "OR": [
-        "ALEBO"
       ],
       "Organization name": [
         "Názov organizácie"
@@ -12404,9 +12458,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "Štítok ${ Label.Name } bol vytvorený"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } bol aktualizovaný"
       ],
       "Preference saved": [
         "Nastavenie uložené"
@@ -13913,9 +13964,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Bezpečný prístup k internetu odkiaľkoľvek so základným monitorovaním siete"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Bezpečné cloudové úložisko, ktoré vám umožní ukladať, synchronizovať a zdieľať súbory jednoducho a bezpečne."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "Bezpečný email s pokročilými funkciami pre vašu každodennú komunikáciu."
       ],
@@ -14683,6 +14731,9 @@
       ],
       "Desktop": [
         "Počítač"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Ak chcete začať, vyberte si zobrazované meno. Toto sa zobrazí ľuďom, keď im pošlete email, pozvete ich na udalosť alebo zdieľate súbor."
       ]
     },
     "Option": {
@@ -15974,6 +16025,26 @@
         "kontaktujte"
       ]
     },
+    "Plan description": {
+      "All ${ BRAND_NAME } premium products included in Duo.": [
+        "Všetky ${ BRAND_NAME } prémiové produkty zahrnuté v Duo."
+      ],
+      "Best if you need ${ maxSpace } of storage and for couples.": [
+        "Najlepšie, ak potrebujete ${ maxSpace } úložiska a pre páry."
+      ],
+      "Great for everyday use and photo backups.": [
+        "Skvelé na každodenné použitie a zálohy fotografií."
+      ],
+      "Perfect for getting started with secure cloud storage.": [
+        "Ideálne na začiatok s bezpečným cloud úložiskom."
+      ],
+      "Secure cloud storage and collaboration for teams.": [
+        "Bezpečné cloud úložisko a spolupráca pre tímy."
+      ],
+      "The ideal plan for privacy-conscious power users.": [
+        "Ideálny plán pre náročných používateľov dbajúcich na súkromie."
+      ]
+    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } mesiac",
@@ -17092,6 +17163,143 @@
       ],
       "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
         "Povolili ste overenie adresy pre ${ boldSenderEmail }. Nepodarilo sa nám overiť pravosť tejto pozvánky do kalendára. Môže to byť spôsobené zmenami v šifrovacích kľúčoch tohto kontaktu. Skontrolujte si jeho rozšírené nastavenia PGP, alebo môžete požiadať ${ boldSenderEmail } o novú pozvánku."
+      ]
+    },
+    "Signup": {
+      "${ DRIVE_APP_NAME } for Business": [
+        "${ DRIVE_APP_NAME } for Business"
+      ],
+      "${ value } of secure storage": [
+        "${ value } bezpečného úložiska"
+      ],
+      "${ value } of secure storage per user": [
+        "${ value } bezpečného úložiska na používateľa"
+      ],
+      "/user": [
+        "/používateľ"
+      ],
+      "30 custom email addresses": [
+        "30 vlastných emailových adries"
+      ],
+      "Advanced account protection": [
+        "Pokročilá ochrana účtu"
+      ],
+      "Billing Cycle": [
+        "Fakturačné obdobie"
+      ],
+      "Compare plans": [
+        "Porovnať plány"
+      ],
+      "Confirm payment, access your Drive": [
+        "Potvrďte platbu, získajte prístup k vášmu Drive"
+      ],
+      "Connect all your devices": [
+        "Pripojte všetky vaše zariadenia"
+      ],
+      "Continue with ${ PLAN_NAMES[plan] }": [
+        "Pokračujte s ${ PLAN_NAMES[plan] }"
+      ],
+      "Encrypted password manager": [
+        "Šifrovaný správca hesiel"
+      ],
+      "End-to-end encryption": [
+        "End-to-end šifrovanie"
+      ],
+      "Free": [
+        "Free"
+      ],
+      "get a secure ${ MAIL_APP_NAME } address": [
+        "získajte bezpečnú ${ MAIL_APP_NAME } adresu"
+      ],
+      "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }.": [
+        "Získajte bezpečnú ${ MAIL_APP_NAME } adresu, alebo ${ internalButton }."
+      ],
+      "Manage user access": [
+        "Správa prístupov používateľov"
+      ],
+      "Monthly": [
+        "Mesačne"
+      ],
+      "Most popular": [
+        "Najpopulárnejšie"
+      ],
+      "Need more space?": [
+        "Potrebujete viac miesta?"
+      ],
+      "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
+        "Potrebujete viac úložiska? Úroveň môžete kedykoľvek zvýšiť pomocou plánov od 200 GB do 3 TB. 5 GB stačí na 2 500 fotografií z moderného telefónu (približne 2 MB každá)."
+      ],
+      "Online documents": [
+        "Online dokumenty"
+      ],
+      "Pick your perfect plan": [
+        "Vyberte si svoj perfektný plán"
+      ],
+      "Promo applied – ${ checkout.discountPercent }% off": [
+        "Propagačný kód využitý - zľava ${ checkout.discountPercent }%"
+      ],
+      "Recover previous file versions": [
+        "Obnova predchádzajúcich verzií súborov"
+      ],
+      "Save ${ percentage }%": [
+        "Ušetrite ${ percentage }%"
+      ],
+      "Save ${ priceDifferenceString }": [
+        "Ušetríte ${ priceDifferenceString }"
+      ],
+      "Secure file sharing": [
+        "Bezpečné zdieľanie súborov"
+      ],
+      "Selected": [
+        "Vybrané"
+      ],
+      "Set display name": [
+        "Nastavte zobrazované meno"
+      ],
+      "Set organization name": [
+        "Nastavte názov organizácie"
+      ],
+      "Set your password": [
+        "Nastavte si heslo"
+      ],
+      "Share and collaborate of files": [
+        "Zdieľajte a spolupracujte na súboroch"
+      ],
+      "Sign up, protect your files": [
+        "Zaregistrujte sa, chráňte si svoje súbory"
+      ],
+      "Sync files across devices and users": [
+        "Synchronizácia súborov medzi zariadeniami a používateľmi"
+      ],
+      "The organization name will be visible to your users while they are signed in.": [
+        "Názov organizácie bude viditeľný pre vašich používateľov, kým sú prihlásení."
+      ],
+      "Total": [
+        "Celkom"
+      ],
+      "Ultra fast and private VPN": [
+        "Ultra rýchla a súkromná VPN"
+      ],
+      "Up to 2 users": [
+        "Až 2 používatelia"
+      ],
+      "Up to 6 users": [
+        "Až 6 používateľov"
+      ],
+      "Upload files of any size": [
+        "Nahrajte súbory ľubovoľnej veľkosti"
+      ],
+      "Use your email, or ${ externalButton }.": [
+        "Použite svoju emailovú adresu, alebo ${ externalButton }."
+      ],
+      "use your own email": [
+        "používajte svoj vlastný email"
+      ],
+      "Yearly": [
+        "Ročne"
+      ],
+      "Your plan": [
+        "Váš plán"
       ]
     },
     "Signup label": {
@@ -18540,6 +18748,9 @@
       "Locale updated": [
         "Jazyk aktualizovaný"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Bolo vytvorené nové pravidlo. Začne platiť, až keď zverejníte zmeny."
+      ],
       "Organization activated": [
         "Organizácia bola aktivovaná"
       ],
@@ -18569,6 +18780,12 @@
       ],
       "Phone number updated": [
         "Telefónne číslo aktualizované"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "Pravidlá sa zmenili. Prejavia sa až po zverejnení zmien."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "Pravidlo vymazané. Zmeny sa prejavia až po ich zverejnení."
       ],
       "Port copied to clipboard": [
         "Port skopírovaný do schránky"
@@ -18838,6 +19055,32 @@
     "TableRow": {
       "No SMTP tokens found": [
         "Neboli nájdené žiadne SMTP tokeny"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } deň",
+        "${ ceilDays } dni",
+        "${ ceilDays } dní",
+        "${ ceilDays } dní"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } hodina",
+        "${ ceilHours } hodiny",
+        "${ ceilHours } hodín",
+        "${ ceilHours } hodín"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minúta",
+        "${ ceilMinutes } minúty",
+        "${ ceilMinutes } minút",
+        "${ ceilMinutes } minút"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunda",
+        "${ seconds } sekundy",
+        "${ seconds } sekúnd",
+        "${ seconds } sekúnd"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -20161,6 +20404,9 @@
       "Subscription": [
         "Predplatné"
       ],
+      "Subscription canceled": [
+        "Predplatné bolo zrušené"
+      ],
       "Success": [
         "Úspešné"
       ],
@@ -20337,6 +20583,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaša bezplatná skúšobná verzia služby ${ planName } končí ${ textDate }"
+      ],
+      "Your ${ planName } subscription started": [
+        "Vaše predplatné ${ planName } začalo"
       ],
       "Your calendar link": [
         "Váš odkaz na kalendár"

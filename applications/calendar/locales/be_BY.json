@@ -452,6 +452,9 @@
       "Keep my subscription": [
         "Пакінуць падпіску"
       ],
+      "Keep subscription": [
+        "Пакінуць падпіску"
+      ],
       "Later": [
         "Пазней"
       ],
@@ -815,11 +818,11 @@
       "Upgrade": [
         "Палепшыць"
       ],
-      "Upgrade Now": [
-        "Палепшыць"
-      ],
       "Upgrade now": [
         "Палепшыць зараз"
+      ],
+      "Upgrade Now": [
+        "Палепшыць"
       ],
       "Upload and share files": [
         "Запампаваць і абагуліць файлы"
@@ -4235,6 +4238,9 @@
       "Contacts": [
         "Кантакты"
       ],
+      "Drawer": [
+        "Высоўнае меню"
+      ],
       "Name": [
         "Назва"
       ],
@@ -4437,13 +4443,13 @@
         "${ BRAND_NAME } не можа падключыцца да вашага ўліковага запісу. Пераканайцеся, што:"
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } не можа падключыцца да вашага знешняга ўліковага запісу. Пераканайцеся, што вы правільна пазначылі паштовы сервер і нумар парта."
+        "${ BRAND_NAME } не можа падключыцца да вашага знешняга ўліковага запісу. Пераканайцеся, што вы правільна пазначылі адрас паштовага сервера і нумар парта."
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } не можа падключыцца да вашага знешняга ўліковага запісу. Пераканайцеся, што:"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } не можа падключыцца да вашага ўліковага запісу Yahoo. Пераканайцеся, што вы правільна пазначылі паштовы сервер і нумар парта."
+        "${ BRAND_NAME } не можа падключыцца да вашага ўліковага запісу Yahoo. Пераканайцеся, што вы правільна пазначылі адрас паштовага сервера і нумар парта."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } не можа падключыцца да вашага ўліковага запісу Yahoo. Пераканайцеся, што:"
@@ -5146,6 +5152,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Вы неадкладна згубіце доступ да ${ boldPlanTitle } і ваш тарыфны план будзе паніжаны да ${ boldProtonFree }, калі вы скасуеце бягучы. Ваш доступ да функцый прадукту і даных можа быць абмежаваны, калі будуць перавышаны абмежаванні бясплатнага тарыфнага плана."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Калі вы скасуеце, ваша падпіска ${ planTitle } не будзе падоўжана пасля завяршэння тэрміну яе дзеяння ${ expiryDate }."
       ],
@@ -5638,6 +5647,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Не скасоўвайце бягучы тарыфны план да ${ boldCancelDate }, каб працягваць бясплатна атрымліваць асолоду ад ${ boldPlanTitle }"
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
       ],
@@ -5733,6 +5745,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "Адлюстраванне тыдня і месяца ўжываюцца толькі для камп'ютара."
+      ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Што вы страціце, калі скасуеце ${ boldPlanTitle }:"
       ],
       "When working remotely": [
         "Пры аддаленай працы"
@@ -5830,6 +5845,9 @@
       "You can now return to the application to continue": [
         "Цяпер вы можаце вярнуцца да праграмы, каб працягнуць"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "У вас усё яшчэ ёсць доступ да ўсіх даных вашага ўліковага запісу. Вы ў любы час можаце вярнуць падпіску, каб працягваць атрымліваць асалоду ад ўсіх функцый нашага сэрвісу."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можаце ўключыць апавяшчэнні, каб атрымліваць абвесткі пра новыя паведамленні электроннай пошты ў гэтай папцы."
       ],
@@ -5887,6 +5905,9 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Вы абновіце ўсе падзеі ў гэтай серыі. Выдаленыя ўдзельнікі атрымаюць апавяшчэнне."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "З вас не будзе спаганяцца плата, калі вы скасуеце да ${ trialEndsOnFormatted }."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяц у памеры ${ renewAmountStr }.",
         "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцы ў памеры ${ renewAmountStr }.",
@@ -5907,6 +5928,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ваша падпіска ${ PASS_SHORT_APP_NAME } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Астатак балансу вашай падпіскі будзе дададзены на ваш рахунак. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "Ваш тарыфын план ${ planName } цяпер з'яўляецца платнай падпіскай, якая аўтаматычна падаўжаецца кожныя 12 месяцаў. Наступная дата спагнання грашовых сродкаў адбудзецца ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
@@ -5941,6 +5965,9 @@
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Ваш бясплатны пробны перыяд ${ boldPlanTitle } быў скасаваны, а ваш уліковы запіс ${ boldUserEmail } быў паніжаны да ${ boldProtonFree }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Вашы звесткі былі знойдзены ${ displayedDate }"
       ],
@@ -5965,6 +5992,9 @@
       "Your online activity is protected": [
         "Ваша актыўнасць у інтэрнэце абаронена"
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Ваша арганізацыя ${ boldOrganizationName } адключана, а ўсе ліцэнзіі яе карыстальнікаў былі выдалены."
+      ],
       "Your password was leaked:": [
         "Адбылася ўцечка вашага пароля:"
       ],
@@ -5988,6 +6018,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Падобна, што ваш часавы пояс змяніўся на ${ timezone }. Вы сапраўды хочаце абнавіць налады вашага часавога пояса?"
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Ваш пробны перыяд завершыцца праз ${ timeRemaining }."
       ]
     },
     "info": {
@@ -6190,6 +6223,9 @@
       ],
       "Address": [
         "Адрас"
+      ],
+      "Alias title": [
+        "Загаловак псеўданіма"
       ],
       "All day": [
         "Увесь дзень"
@@ -6580,9 +6616,6 @@
       ],
       "Time zone": [
         "Часавы пояс"
-      ],
-      "Title": [
-        "Назва"
       ],
       "To: ${ toEmail }": [
         "Каму: ${ toEmail }"
@@ -7216,6 +7249,11 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -7237,11 +7275,6 @@
       ],
       "Switch plan": [
         "Змяніць тарыфны план"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7775,6 +7808,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand }, якая заканчваецца на ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 ТБ воблачнага сховішча, якое дазваляе вам лёгка захоўваць, сінхранізаваць і абагульваць файлы. Абаронена скразным шыфраваннем."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 ГБ воблачнага сховішча, якое дазваляе вам лёгка захоўваць, сінхранізаваць і абагульваць файлы. Абаронена скразным шыфраваннем."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Пашыраная бяспека сеткі і кіраванне доступам з дапамогай вылучаных шлюзоў"
       ],
@@ -7834,9 +7873,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Бяспечны доступ у інтэрнэт з любой краіны ў свеце, дзякуючы назіранню за сеткай"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Бяспечнае воблачнае сховішча, якое дазваляе вам лёгка і бяспечна захоўваць, сінхранізаваць і абагульваць файлы."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Бяспечная электронная пошта з пашыранымі функцыямі для штодзённых зносін."
@@ -8999,9 +9035,9 @@
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
         "${ contactsExported.length } кантакт з ${ countContacts } паспяхова экспартаваны.",
-        "${ contactsExported.length } кантакты ${ countContacts } паспяхова экспартаваны.",
-        "${ contactsExported.length } кантактаў ${ countContacts } паспяхова экспартаваны.",
-        "${ contactsExported.length } кантактаў ${ countContacts } паспяхова экспартаваны."
+        "${ contactsExported.length } кантакты з ${ countContacts } паспяхова экспартаваны.",
+        "${ contactsExported.length } кантактаў з ${ countContacts } паспяхова экспартаваны.",
+        "${ contactsExported.length } кантактаў з ${ countContacts } паспяхова экспартаваны."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } кантакт з ${ totalBeDeleted } паспяхова выдалены.",
@@ -10533,6 +10569,32 @@
         "Далучыцца да сустрэчы ў Teams"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } дзень",
+        "${ ceilDays } дні",
+        "${ ceilDays } дзён",
+        "${ ceilDays } дзён"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } гадзіна",
+        "${ ceilHours } гадзіны",
+        "${ ceilHours } гадзін",
+        "${ ceilHours } гадзін"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } хвіліна",
+        "${ ceilMinutes } хвіліны",
+        "${ ceilMinutes } хвілін",
+        "${ ceilMinutes } хвілін"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунд"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } гадз",
@@ -11140,6 +11202,9 @@
       "Start import process": [
         "Пачаць працэс імпартавання"
       ],
+      "Subscription canceled": [
+        "Падпіска скасавана"
+      ],
       "Summary": [
         "Зводка"
       ],
@@ -11211,6 +11276,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш бясплатны выпрабавальны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"
+      ],
+      "Your ${ planName } subscription started": [
+        "Ваша падпіска ${ planName } пачнецца"
       ],
       "Your account is protected": [
         "Ваш уліковы запіс абаронены"
@@ -11500,7 +11568,7 @@
     },
     "Warning": {
       "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
-        "${ BRAND_NAME } аб'яднае ўсе папкі з аднолькавай назвай. Каб пазбегнуць гэтага, змяніце назвы перад імпартаваннем."
+        "${ BRAND_NAME } аб'яднае ўсе папкі з аднолькавай назвай. Змяніце назвы перад імпартаваннем, каб пазбегнуць гэтага."
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перанясе столькі даных, колькі будзе магчыма, пачынаючы з самых новых паведамленняў."

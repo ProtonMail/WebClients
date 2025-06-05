@@ -609,6 +609,9 @@
       "Remove button": [
         "Удалить кнопку"
       ],
+      "Remove file": [
+        "Удалить файл"
+      ],
       "Remove gift code": [
         "Удалить подарочный код"
       ],
@@ -944,140 +947,6 @@
       ],
       "By leaving now, some events may not be imported": [
         "Если выйти сейчас, импорт некоторых событий не завершится"
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Воспользоваться предложением"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "Хранилище 15 ГБ"
-      ],
-      "200 GB storage": [
-        "200 ГБ хранилища"
-      ],
-      "500 GB encrypted storage": [
-        "500 ГБ зашифрованного хранилища"
-      ],
-      "Add unlimited credit cards": [
-        "Добавьте неограниченное количество кредитных карт"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Все платные функции ${ BRAND_NAME } Mail, Pass, VPN, Drive и Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Блокируйте рекламу, трекеры и вредоносные программы"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Скидки рассчитаны исходя из стандартных ежемесячных тарифов. По окончании расчётного периода ваша подписка будет продлена по стандартной годовой ставке."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Удвойте объём зашифрованного хранилища — получите 1 ТБ и защитите все ваши данные"
-      ],
-      "Encrypted password manager": [
-        "Зашифрованный менеджер паролей"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Вот эксклюзивный подарок, чтобы отпраздновать наше совместное путешествие."
-      ],
-      "High speed streaming with VPN": [
-        "Высокоскоростной стриминг с VPN"
-      ],
-      "of privacy": [
-        "конфиденциальности"
-      ],
-      "Online document editor": [
-        "Онлайн-редактор документов"
-      ],
-      "Online privacy for up to 2 people": [
-        "Онлайн-конфиденциальность для 2 человек"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Онлайн-конфиденциальность для всей вашей семьи (до 6 человек)"
-      ],
-      "Protect up to 10 devices": [
-        "Защита до 10 устройств"
-      ],
-      "Recover previous file versions": [
-        "Восстановление предыдущих версий файлов"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Сэкономьте на платных функциях Drive благодаря ограниченной по времени скидке."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Сэкономьте на платных функциях Mail благодаря ограниченной по времени скидке."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Сэкономьте на платных функциях Pass благодаря ограниченной по времени скидке."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Сэкономьте на платных функциях VPN благодаря ограниченной по времени скидке."
-      ],
-      "Save time with built-in 2FA": [
-        "Экономьте время с помощью встроенной 2FA"
-      ],
-      "Secure email with unlimited aliases": [
-        "Защищенная электронная почта с неограниченным количеством псевдонимов"
-      ],
-      "Select any server": [
-        "Доступен любой сервер"
-      ],
-      "Share passwords easily": [
-        "Легко делитесь паролями"
-      ],
-      "Short @pm.me address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Смотрите любимый контент"
-      ],
-      "thanks to you": [
-        "благодаря вам"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Утройте объём зашифрованного хранилища — получите 3 ТБ и защитите все ваши данные"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Неограниченное количество папок, ярлыков и фильтров"
-      ],
-      "Use your own email domain": [
-        "Используйте собственный домен электронной почты"
-      ],
-      "years": [
-        "лет"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Предложение в честь годовщины"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяца",
-        "${ n } месяцев",
-        "${ n } месяцев"
-      ],
-      "/ month": [
-        "/ месяц"
-      ],
-      "12 months": [
-        "12 месяцев"
-      ],
-      "15 months": [
-        "15 месяцев"
-      ],
-      "24 months": [
-        "24 месяца"
-      ],
-      "30 months": [
-        "30 месяцев"
-      ],
-      "for ${ durationDeal }": [
-        "за ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -2502,6 +2371,11 @@
         "Просроченный счёт"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } в ${ DRIVE_APP_NAME } позволяет вам работать вместе с другими людьми в защищенной и зашифрованной среде."
@@ -2625,11 +2499,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5257,9 +5126,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Владелец этого адреса отключил сквозное шифрование. Чтобы иметь возможность отправлять зашифрованные письма на этот адрес, владелец должен повторно включить сквозное шифрование."
       ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
-        "Похоже, что введенный вами URL был скопирован из Slack неправильно. При копировании длинных ссылок из Slack нажмите на ссылке правой кнопкой мыши, затем выберите «Копировать ссылку», а не копируйте усеченный текст URL напрямую."
-      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Процесс проверки откроется в новой вкладке. Пожалуйста, отключите блокировку всплывающих окон."
       ],
@@ -5993,6 +5859,9 @@
       "Extended address": [
         "Расширенный адрес"
       ],
+      "File": [
+        "Файл"
+      ],
       "First name": [
         "Имя"
       ],
@@ -6226,9 +6095,6 @@
       ],
       "Thomas": [
         "Томас"
-      ],
-      "Title": [
-        "Заголовок"
       ],
       "To: ${ toEmail }": [
         "Кому: ${ toEmail }"
@@ -7418,9 +7284,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Получите безопасный доступ в Интернет из любой точки мира, проводя необходимый мониторинг сети"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Защищенное облачное хранилище, позволяющее легко и безопасно хранить, синхронизировать и обмениваться файлами."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Защищенная электронная почта с дополнительными возможностями для повседневного общения."
@@ -8935,6 +8798,41 @@
         "Доступ предоставил ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "Новая таблица"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Создание новой таблицы..."
+      ],
+      "Detect automatically": [
+        "Определить автоматически"
+      ],
+      "Insert as new sheet": [
+        "Вставить как новый лист"
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "Преобразовать текст в числа, даты и формулы"
+      ],
+      "Destination": [
+        "Место назначения"
+      ],
+      "Format": [
+        "Форматировать"
+      ],
+      "Separator type": [
+        "Тип разделителя"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "Импортировать данные"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "Не подписывать"
@@ -9879,7 +9777,7 @@
         "Удаление ${ count } группы контактов"
       ],
       "Delete ${ links.length } items?": [
-        "Удалить ${ links.length } объектов?"
+        "Удалить ${ links.length } элементов?"
       ],
       "Delete ${ name }?": [
         "Удалить ${ name }?"

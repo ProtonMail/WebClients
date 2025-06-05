@@ -56,6 +56,9 @@
       "Apply lifetime coupon code": [
         "生涯クーポンコードを適用"
       ],
+      "Authenticate": [
+        "認証"
+      ],
       "Back": [
         "戻る"
       ],
@@ -577,6 +580,9 @@
       ],
       "Sort vault items": [
         "保管庫のアイテムを並び替え"
+      ],
+      "Start from scratch": [
+        "ゼロから始める"
       ],
       "Submit": [
         "送信"
@@ -1582,6 +1588,9 @@
       "Enter the address you want to email.": [
         "メールを送りたいアドレスを入力してください。"
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "認証コードを入力してください。${ digit }桁です。"
+      ],
       "Enter your extra password": [
         "追加パスワードを入力してください"
       ],
@@ -2436,6 +2445,12 @@
       "Account": [
         "アカウント"
       ],
+      "Account Number": [
+        "口座番号"
+      ],
+      "Account Type": [
+        "口座種別"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "新しいエイリアスを作成する際に、このドメインにランダムなプレフィックスを追加します。"
       ],
@@ -2475,6 +2490,12 @@
       "Always show username field": [
         "ユーザー名フィールドを常に表示"
       ],
+      "API Credential": [
+        "API認証情報"
+      ],
+      "API Key": [
+        "APIキー"
+      ],
       "Application logs": [
         "アプリケーションのログ"
       ],
@@ -2498,6 +2519,12 @@
       ],
       "Backup password": [
         "バックアップパスワード"
+      ],
+      "Bank Account": [
+        "銀行口座"
+      ],
+      "Bank Name": [
+        "銀行名"
       ],
       "Biometrics": [
         "生体認証"
@@ -2556,11 +2583,17 @@
       "Country or Region": [
         "国または地域"
       ],
+      "Country,": [
+        "国名"
+      ],
       "County": [
         "国"
       ],
       "Create a credit card": [
         "クレジットカード情報を作成"
+      ],
+      "Create a custom item": [
+        "カスタムアイテムを作成"
       ],
       "Create a hide-my-email alias": [
         "Hide-my-emailエイリアスを作成"
@@ -2586,14 +2619,29 @@
       "Created at": [
         "作成日時"
       ],
+      "Crypto Wallet": [
+        "暗号通貨ウォレット"
+      ],
       "Custom hidden field": [
         "カスタム非表示フィールド"
+      ],
+      "Custom Items": [
+        "カスタムアイテム"
       ],
       "Custom text field": [
         "カスタムテキストフィールド"
       ],
+      "Database": [
+        "データベース"
+      ],
+      "Database Type": [
+        "データベース種類"
+      ],
       "Date": [
         "日付"
+      ],
+      "Date of Birth": [
+        "生年月日"
       ],
       "Device": [
         "デバイス"
@@ -2622,6 +2670,9 @@
       "Download logs": [
         "過去ログのダウンロード"
       ],
+      "Driver License": [
+        "運転免許証"
+      ],
       "Email": [
         "メールアドレス"
       ],
@@ -2649,6 +2700,9 @@
       "Expired": [
         "有効期限切れ"
       ],
+      "Expiry Date": [
+        "有効期限"
+      ],
       "Export": [
         "エクスポート"
       ],
@@ -2666,6 +2720,9 @@
       ],
       "File format": [
         "ファイル形式"
+      ],
+      "Finance": [
+        "ファイナンス"
       ],
       "First name": [
         "名"
@@ -2699,6 +2756,15 @@
       ],
       "Hide password": [
         "パスワードを隠す"
+      ],
+      "Holder Name": [
+        "所有者名"
+      ],
+      "Host": [
+        "ホスト"
+      ],
+      "Hostname": [
+        "ホスト名"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2748,6 +2814,15 @@
       "Invitations": [
         "招待"
       ],
+      "IP Address": [
+        "IPアドレス"
+      ],
+      "Issuing Authority": [
+        "発行機関"
+      ],
+      "Issuing Country": [
+        "発行国"
+      ],
       "Item ID": [
         "アイテム ID"
       ],
@@ -2784,6 +2859,9 @@
       "License": [
         "免許証"
       ],
+      "License Key": [
+        "ライセンスキー"
+      ],
       "License number": [
         "免許証番号"
       ],
@@ -2817,14 +2895,26 @@
       "max views reached": [
         "閲覧回数の上限に達しました"
       ],
+      "Medical Record": [
+        "医療記録"
+      ],
+      "Member ID": [
+        "メンバーID"
+      ],
       "Members": [
         "メンバー"
+      ],
+      "Membership": [
+        "メンバーシップ"
       ],
       "Middle name": [
         "ミドルネーム"
       ],
       "Modified": [
         "更新日時"
+      ],
+      "More": [
+        "もっと見る"
       ],
       "More than a month": [
         "1ヶ月以上"
@@ -2835,11 +2925,17 @@
       "Name": [
         "名前"
       ],
+      "Name (SSID)": [
+        "名前 (SSID)"
+      ],
       "Name on card": [
         "カード名義人"
       ],
       "Need help?": [
         "お困りですか？"
+      ],
+      "Network": [
+        "ネットワーク"
       ],
       "New": [
         "新しい"
@@ -2883,8 +2979,14 @@
       "Oldest to newest": [
         "古い順"
       ],
+      "Operating System": [
+        "オペレーティングシステム"
+      ],
       "Organization": [
         "組織"
+      ],
+      "Owner": [
+        "所有者"
       ],
       "Passkey": [
         "パスキー"
@@ -2901,6 +3003,9 @@
       "Passport number": [
         "パスポート番号"
       ],
+      "Passport Number": [
+        "パスポート番号"
+      ],
       "Password": [
         "パスワード"
       ],
@@ -2912,6 +3017,12 @@
       ],
       "Pause list": [
         "一時停止リスト"
+      ],
+      "Permissions": [
+        "許可"
+      ],
+      "Personal": [
+        "個人"
       ],
       "Personal details": [
         "個人情報の詳細"
@@ -2931,6 +3042,9 @@
       "PIN code": [
         "PIN コード"
       ],
+      "Points Balance": [
+        "ポイント残高"
+      ],
       "Port": [
         "ポート"
       ],
@@ -2943,6 +3057,18 @@
       "Priority:": [
         "優先度:"
       ],
+      "Private Key": [
+        "秘密鍵"
+      ],
+      "Private key": [
+        "秘密鍵"
+      ],
+      "Product": [
+        "製品"
+      ],
+      "Program Name": [
+        "プログラム名"
+      ],
       "Prompt for auto-save": [
         "自動保存のプロンプト"
       ],
@@ -2954,6 +3080,9 @@
       ],
       "Public domain": [
         "公開ドメイン"
+      ],
+      "Public key": [
+        "公開鍵"
       ],
       "Rate us": [
         "評価"
@@ -2976,11 +3105,20 @@
       "Reveal password": [
         "パスワードを表示する"
       ],
+      "Reward Program": [
+        "報酬プログラム"
+      ],
+      "Routing Number": [
+        "支店番号"
+      ],
       "Save passkeys": [
         "パスキーを保存する"
       ],
       "Second password": [
         "セカンドパスワード"
+      ],
+      "Secret": [
+        "秘密"
       ],
       "Secure links": [
         "安全なリンク"
@@ -2993,6 +3131,9 @@
       ],
       "See member and permission overview": [
         "メンバーと権限の概要を表示"
+      ],
+      "Seed Phrase": [
+        "シードフレーズ"
       ],
       "Select a domain": [
         "ドメイン選択"
@@ -3011,6 +3152,9 @@
       ],
       "Selected": [
         "選択済み"
+      ],
+      "Server": [
+        "サーバー"
       ],
       "Settings": [
         "設定"
@@ -3036,11 +3180,26 @@
       "Social security": [
         "社会保障"
       ],
+      "Social Security": [
+        "社会保障"
+      ],
       "Social security number": [
         "社会保障番号"
       ],
+      "Software license": [
+        "ソフトウェアライセンス"
+      ],
       "Special characters (!&*)": [
         "特殊文字 (!&*)"
+      ],
+      "SSH key": [
+        "SSHキー"
+      ],
+      "SSH Keys": [
+        "SSHキー"
+      ],
+      "SSN": [
+        "SSN"
       ],
       "State or province": [
         "都道府県"
@@ -3060,6 +3219,9 @@
       "Support": [
         "サポート"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "SimpleLoginとエイリアスを同期"
       ],
@@ -3069,6 +3231,9 @@
       "Tax number": [
         "納税者番号"
       ],
+      "Technology": [
+        "テクノロジー"
+      ],
       "Text": [
         "テキスト"
       ],
@@ -3077,6 +3242,9 @@
       ],
       "Theme": [
         "テーマ"
+      ],
+      "Tier/Status": [
+        "階級/ステータス"
       ],
       "Title": [
         "タイトル"
@@ -3114,6 +3282,9 @@
       "Unnamed Credit Card": [
         "無名のクレジットカード"
       ],
+      "Unnamed custom item": [
+        "無題のカスタムアイテム"
+      ],
       "Unnamed identity": [
         "名前のないユーザー情報"
       ],
@@ -3122,6 +3293,15 @@
       ],
       "Unnamed note": [
         "名前のないメモ"
+      ],
+      "Unnamed SSH key": [
+        "無題のSSHキー"
+      ],
+      "Unnamed WiFi item": [
+        "無題のWiFiアイテム"
+      ],
+      "Unspecified": [
+        "未設定"
       ],
       "Untitled": [
         "タイトルなし"
@@ -3156,6 +3336,9 @@
       "Vulnerable": [
         "脆弱"
       ],
+      "Wallet Name": [
+        "ウォレット名"
+      ],
       "Weak": [
         "弱い"
       ],
@@ -3164,6 +3347,12 @@
       ],
       "Websites": [
         "ウェブサイト"
+      ],
+      "WiFi network": [
+        "WiFiネットワーク"
+      ],
+      "WiFi Networks": [
+        "WiFiネットワーク"
       ],
       "Work details": [
         "仕事の詳細"
@@ -3360,6 +3549,9 @@
       "Add 2FA secret key": [
         "2FA 秘密キーを追加する"
       ],
+      "Add date": [
+        "日付を追加"
+      ],
       "Add hidden text": [
         "非表示テキストを追加"
       ],
@@ -3408,6 +3600,9 @@
       "my-domain.com": [
         "my-domain.com"
       ],
+      "Name displayed in emails": [
+        "メールに表示される名前"
+      ],
       "Note from SimpleLogin": [
         "SimpleLoginからのメモ"
       ],
@@ -3440,6 +3635,9 @@
       ],
       "Select a suffix": [
         "サフィックスを選択"
+      ],
+      "Select option": [
+        "オプションを選択"
       ],
       "Unknown origin": [
         "オリジナル不明"

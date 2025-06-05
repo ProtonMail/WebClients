@@ -423,6 +423,9 @@
       "Import contacts": [
         "Contactpersonen importeren"
       ],
+      "Import data": [
+        "Importeer gegevens"
+      ],
       "Import emails": [
         "E-mails importeren"
       ],
@@ -443,6 +446,9 @@
       ],
       "Keep my subscription": [
         "Mijn abonnement behouden"
+      ],
+      "Keep subscription": [
+        "Abonnement behouden"
       ],
       "Learn more": [
         "Meer informatie"
@@ -605,6 +611,9 @@
       ],
       "Remove button": [
         "Knop verwijderen"
+      ],
+      "Remove file": [
+        "Verwijder bestand"
       ],
       "Remove gift code": [
         "Verwijder geschenkcode"
@@ -931,138 +940,6 @@
       ],
       "By leaving now, some events may not be imported": [
         "Door nu te verlaten, worden sommige afspraken mogelijk niet geïmporteerd"
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Pak deze deal"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "200 GB storage": [
-        "200 GB opslagruimte"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB versleutelde opslag"
-      ],
-      "Add unlimited credit cards": [
-        "Voeg een onbeperkt aantal creditcards toe"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Alle premium-functies van ${ BRAND_NAME } Mail, Pass, VPN, Drive en Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokkeer advertenties, trackers en malware"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Aan het einde van de factureringscyclus wordt uw abonnement verlengd tegen het standaard jaarlijkse tarief."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Verdubbel uw versleutelde opslag – krijg 1 TB voor al uw data"
-      ],
-      "Encrypted password manager": [
-        "Versleutelde wachtwoordmanager"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Hier is een exclusief cadeau om onze gezamenlijke reis te vieren."
-      ],
-      "High speed streaming with VPN": [
-        "Streamen met hoge snelheid met VPN"
-      ],
-      "of privacy": [
-        "privacy"
-      ],
-      "Online document editor": [
-        "Online documenteditor"
-      ],
-      "Online privacy for up to 2 people": [
-        "Online privacy voor maximaal 2 personen"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Online privacy voor uw hele gezin (maximaal 6 gebruikers)"
-      ],
-      "Protect up to 10 devices": [
-        "Bescherm tot 10 apparaten"
-      ],
-      "Recover previous file versions": [
-        "Herstel vorige bestandsversies"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Bespaar fors op premium Drive-functies met een tijdelijke korting."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Bespaar fors op premium Mail-functies met een tijdelijke korting."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Bespaar fors op premium Pass-functies met een tijdelijke korting."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Bespaar fors op premium VPN-functies met een tijdelijke korting."
-      ],
-      "Save time with built-in 2FA": [
-        "Bespaar tijd met ingebouwde 2FA"
-      ],
-      "Secure email with unlimited aliases": [
-        "Beveiligde e-mail met onbeperkte aliassen"
-      ],
-      "Select any server": [
-        "Selecteer een server"
-      ],
-      "Share passwords easily": [
-        "Deel wachtwoorden eenvoudig"
-      ],
-      "Short @pm.me address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Stream your favorite content": [
-        "Stream uw favoriete inhoud"
-      ],
-      "thanks to you": [
-        "dankzij u"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Verdriedubbel uw versleutelde opslag – krijg 3 TB voor al uw data"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Onbeperkt aantal mappen, labels en filters"
-      ],
-      "Use your own email domain": [
-        "Gebruik uw eigen e-maildomein"
-      ],
-      "years": [
-        "jaar"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Jubileumaanbieding"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } maand",
-        "${ n } maanden"
-      ],
-      "/ month": [
-        "/ maand"
-      ],
-      "12 months": [
-        "12 maanden"
-      ],
-      "15 months": [
-        "15 maanden"
-      ],
-      "24 months": [
-        "24 maanden"
-      ],
-      "30 months": [
-        "30 maanden"
-      ],
-      "for ${ durationDeal }": [
-        "voor ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -2479,6 +2356,11 @@
         "Onbetaalde factuur"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Met ${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } kunt u samenwerken met anderen in een veilige, versleutelde omgeving."
@@ -2602,11 +2484,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gebruik de Easy Switch-importhulp"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3727,6 +3604,11 @@
         "Diensten"
       ]
     },
+    "Header": {
+      "Drawer": [
+        "Zijpaneel"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "${ itemsCount } suggestie gevonden, gebruik het toetsenbord om te navigeren.",
@@ -4629,6 +4511,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Als u annuleert, verliest u direct toegang tot ${ boldPlanTitle }, en wordt u gedowngraded naar het ${ boldProtonFree } abonnement. Indien uw gebruik de limieten van het gratis abonnement overschrijdt, kunt u beperkte toegang tot productfuncties en uw data ervaren."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Als u opzegt, zal uw ${ planTitle }-abonnement niet verlengen wanneer het verloopt op ${ expiryDate }."
       ],
@@ -5138,8 +5023,8 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "De eigenaar van dit adres heeft end-to-end versleuteling uitgeschakeld. Om versleutelde berichten naar dit adres te sturen moet de eigenaar end-to-end versleuteling weer inschakelen."
       ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
-        "De URL die u hebt ingevoegd, lijkt verkeerd te zijn gekopieerd uit Slack. Wanneer u lange koppelingen van Slack kopieert, klik met de rechtermuisknop op de link en kies dan \"Link kopiëren\" in plaats van de ingekorte URL-tekst direct te kopiëren."
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "De URL die u hebt ingevoegd, likt verkeerd te zijn gekopieerd uit Slack. Wanneer u lange koppelingen van Slack kopieert, klik met de rechtermuisknop op de link en kies dan \"Link kopiëren\" in plaats van de ingekorte URL-tekst direct te kopiëren."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
@@ -5215,6 +5100,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Stuur ${ btcAmountBold } naar het onderstaande adres om uw betaling te voltooien."
+      ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Om te blijven genieten van ${ boldPlanTitle } tot ${ boldCancelDate }, annuleer niet."
       ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "Om de ${ DOCS_APP_NAME } bestanden te downloaden, open ze in ${ DOCS_APP_NAME } en exporteer ze."
@@ -5351,6 +5239,9 @@
       "What do you want to do?": [
         "Wat wilt u doen?"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Wat u opgeeft wanneer u ${ boldPlanTitle } annuleert:"
+      ],
       "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
         "Wanneer het dialoogvenster wordt geopend, verander de \"bestemming\" in \"Opslaan als PDF\" en druk dan op Opslaan."
       ],
@@ -5428,6 +5319,9 @@
       "You can now return to the application to continue": [
         "U kunt nu teruggaan naar het programma om door te gaan"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "U hebt nog steeds toegang tot al uw accountgegevens. U kunt op elk moment weer abonneren om te blijven genieten van al onze functies."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
       ],
@@ -5466,6 +5360,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
+      ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "U wordt niets in rekening gebracht als u annuleert voor ${ trialEndsOnFormatted }."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
@@ -5537,6 +5434,9 @@
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Uw gratis proefperiode van ${ boldPlanTitle } is geannuleerd, en uw account ${ boldUserEmail } is gedowngraded naar ${ boldProtonFree }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Uw informatie is gevonden op ${ displayedDate }"
       ],
@@ -5561,6 +5461,9 @@
       "Your online activity is protected": [
         "Uw online activiteiten zijn beschermd"
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Uw organisatie ${ boldOrganizationName } is uitgeschakeld en al haar gebruikerslicenties zijn verwijderd."
+      ],
       "Your password was leaked:": [
         "Uw wachtwoord werd gelekt:"
       ],
@@ -5579,6 +5482,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Uw abonnement wordt automatisch verlengd op ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Uw proefperiode eindigt over ${ timeRemaining }."
       ]
     },
     "info": {
@@ -5691,6 +5597,9 @@
       ],
       "Address": [
         "Adres"
+      ],
+      "Alias title": [
+        "Alias titel"
       ],
       "Anderson": [
         "Anderson"
@@ -5859,6 +5768,9 @@
       ],
       "Extended address": [
         "Adrestoevoeging"
+      ],
+      "File": [
+        "Bestand"
       ],
       "First name": [
         "Voornaam"
@@ -6093,9 +6005,6 @@
       ],
       "Thomas": [
         "Thomas"
-      ],
-      "Title": [
-        "Titel"
       ],
       "To: ${ toEmail }": [
         "Naar: ${ toEmail }"
@@ -7168,6 +7077,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd met end-to-end versleuteling."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd door end-to-end versleuteling."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Geavanceerde netwerkbeveiliging en toegangsbeheer met toegewijde beveiligde gateways"
       ],
@@ -7227,9 +7142,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Veilig toegang krijgen tot internet vanaf elke locatie met essentiële netwerkmonitoring."
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Veilige cloudopslag die u alles laat opslaan, synchroniseren, en u makkelijk en veilig bestanden laat delen."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Veilige e-mail met geavanceerde functies voor uw dagelijkse communicatie."
@@ -8670,6 +8582,41 @@
         "Gedeeld door ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "Nieuw werkblad"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Nieuw werkblad aan het maken..."
+      ],
+      "Detect automatically": [
+        "Automatisch detecteren"
+      ],
+      "Insert as new sheet": [
+        "Invoegen als nieuw blad"
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "Tekst converteren naar getallen, datums en formules"
+      ],
+      "Destination": [
+        "Bestemming"
+      ],
+      "Format": [
+        "Formaat"
+      ],
+      "Separator type": [
+        "Type scheidingsteken"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "Importeer gegevens"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "Niet ondertekenen"
@@ -9371,6 +9318,24 @@
         "vCard-veld"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dag",
+        "${ ceilDays } dagen"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } uur",
+        "${ ceilHours } uren"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuut",
+        "${ ceilMinutes } minuten"
+      ],
+      "${ seconds } second": [
+        "${ seconds } seconde",
+        "${ seconds } seconden"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } u",
@@ -9903,6 +9868,9 @@
       "Stop sharing?": [
         "Delen stoppen?"
       ],
+      "Subscription canceled": [
+        "Abonnement opgezegd"
+      ],
       "Summary": [
         "Overzicht"
       ],
@@ -9920,6 +9888,9 @@
       ],
       "Untitled document ${ date }": [
         "Naamloos document ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Naamloos spreadsheet ${ date }"
       ],
       "Upgrade complete!": [
         "Upgrade voltooid!"

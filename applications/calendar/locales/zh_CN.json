@@ -104,6 +104,9 @@
       "Attention required": [
         "需要关注"
       ],
+      "Authenticate": [
+        "身份验证"
+      ],
       "Back": [
         "上一步"
       ],
@@ -193,6 +196,9 @@
       ],
       "Copy address": [
         "复制地址"
+      ],
+      "Copy alias “${ name }”": [
+        "复制别名“${ name }”"
       ],
       "Copy email address": [
         "复制邮箱地址"
@@ -436,6 +442,9 @@
       ],
       "Keep my subscription": [
         "保留订阅"
+      ],
+      "Keep subscription": [
+        "继续订阅"
       ],
       "Later": [
         "稍后"
@@ -800,10 +809,10 @@
       "Upgrade": [
         "升级账户"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "立即升级账户"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "立即升级账户"
       ],
       "Upload and share files": [
@@ -826,6 +835,9 @@
       ],
       "Use a different payment method": [
         "使用其他方式支付"
+      ],
+      "Use authentication code": [
+        "使用验证码"
       ],
       "Use for sending": [
         "用于发送邮件"
@@ -1627,6 +1639,32 @@
       ],
       "strawberry": [
         "草莓红"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "日视图"
+      ],
+      "Month view": [
+        "月视图"
+      ],
+      "New event": [
+        "新事件"
+      ],
+      "Next period": [
+        "下个周期"
+      ],
+      "Previous period": [
+        "上个周期"
+      ],
+      "Search events": [
+        "搜索事件"
+      ],
+      "Today": [
+        "今天"
+      ],
+      "Week view": [
+        "周视图"
       ]
     },
     "Confirm modal title": {
@@ -3954,7 +3992,15 @@
         "无限制地 hide-my-email"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用安全密钥进行身份验证时出错，请重试。"
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "请插入与 ${ BRAND_NAME } 账户相关联的安全密钥。"
+      ],
       "Security key": [
         "安全密钥"
       ]
@@ -4824,11 +4870,20 @@
       "Enabling auto-deletion…": [
         "正在启用自动删除…"
       ],
+      "Enter the code from your authenticator app": [
+        "请输入身份验证应用中的验证码"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "输入您要导入的邮箱账号和密码。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "请输入 ${ digit } 位数字的验证码。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "请输入您自己的密码（作为组织管理员）。"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "预计剩余时间：${ estimatedMinutes } 分钟"
@@ -4874,6 +4929,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
+      ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "如果取消，您将立即失去对 ${ boldPlanTitle } 的访问，并将降级到 ${ boldProtonFree } 套餐。如果您的使用量超过免费套餐限制，那么您对产品功能和数据的访问可能会受到限制。"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "如果您取消，您的 ${ planTitle } 订阅在 ${ expiryDate } 到期后将不会续订。"
@@ -5352,6 +5410,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "要完成付款，请发送 ${ btcAmountBold } 至以下地址。"
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "若要在 ${ boldCancelDate } 之前继续免费使用 ${ boldPlanTitle }，请不要取消。"
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
       ],
@@ -5448,11 +5509,17 @@
       "Week and month views only apply to desktop.": [
         "只有桌面版能查看周视图和月视图。"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "当您取消 ${ boldPlanTitle } 即视为您自动放弃以下权利："
+      ],
       "When working remotely": [
         "当您远程办公时"
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "当您连接 VPN 时，它会通过加密技术隐藏您的 IP 地址（即分配给您设备的唯一识别代码）。"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "当您设置双因素身份验证时，我们会提供恢复代码，当您无法访问身份验证应用时，可以使用这些代码登录。"
       ],
       "Which event would you like to delete?": [
         "您要删除哪些日程？"
@@ -5535,6 +5602,9 @@
       "You can now return to the application to continue": [
         "您现在可以返回到应用程序以继续"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "您仍然可以访问您账户的所有数据。您也可以随时再次订阅，继续享受我们的所有功能。"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
       ],
@@ -5592,6 +5662,9 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "您将更新该系列活动中的所有活动，移除的参与者将收到通知"
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "如果您在 ${ trialEndsOnFormatted } 之前取消，将不会被收取费用。"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "之后我们将每隔 ${ renewCycle }个月向您收取${ renewAmountStr }的订阅费用。"
       ],
@@ -5609,6 +5682,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "您的 ${ PASS_SHORT_APP_NAME } Plus 订阅将被替换为 ${ PASS_SHORT_APP_NAME } Lifetime。订阅的差价将计入您的账户。${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "您的 ${ planName } 套餐现在是付费订阅，每 12 个月自动续订。您的下一个账单日期是 ${ nextBillingDate }。"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
@@ -5643,6 +5719,9 @@
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "您的 ${ boldPlanTitle } 免费试用已取消，您的账户 ${ boldUserEmail } 已降级到 ${ boldProtonFree }。"
+      ],
       "Your information was found on ${ displayedDate }": [
         "您的信息在 ${ displayedDate } 找到"
       ],
@@ -5667,6 +5746,9 @@
       "Your online activity is protected": [
         "您的在线活动受到保护"
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "您的组织 ${ boldOrganizationName } 已被禁用，其所有用户席位已被删除。"
+      ],
       "Your password was leaked:": [
         "您的密码已泄露："
       ],
@@ -5687,6 +5769,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "您的系统时区似乎已更改为 ${ timezone }。您想要更新您的时区偏好吗？"
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "您的试用将于 ${ timeRemaining } 结束。"
       ]
     },
     "info": {
@@ -5889,6 +5974,9 @@
       ],
       "Attach screenshot(s)": [
         "截图"
+      ],
+      "Authenticator app": [
+        "身份验证应用"
       ],
       "Beta Access": [
         "测试版功能"
@@ -6259,9 +6347,6 @@
       "Time zone": [
         "时区"
       ],
-      "Title": [
-        "标题"
-      ],
       "To: ${ toEmail }": [
         "收件人：${ toEmail }"
       ],
@@ -6556,6 +6641,9 @@
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "您的帐户有可能被删除。为了避免数据丢失，请要求您的管理员升级计划。 ${ cta }"
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "您的存储空间已满。若要继续使用 ${ BRAND_NAME } 产品，请释放空间或 ${ cta }。"
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "您的订阅已经结束。 ${ cta } 以避免数据丢失。"
@@ -6867,6 +6955,11 @@
         "VPN 速度一般"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "删除账户"
@@ -6888,11 +6981,6 @@
       ],
       "Switch plan": [
         "切换计划"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7413,9 +7501,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "通过必要的网络监控，随时随地安全上网"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "安全的云存储，让您轻松安全地存储、同步和共享文件。"
       ],
       "Secure email with advanced features for your everyday communications.": [
         "包含多种高级功能的安全邮箱，充分满足您的日常通讯需求。"
@@ -9905,6 +9990,20 @@
         "加入 Teams 会议"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } 天"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } 小时"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } 分"
+      ],
+      "${ seconds } second": [
+        "${ seconds } 秒"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } 小时"
@@ -10290,6 +10389,9 @@
       "Network error": [
         "网络错误"
       ],
+      "Newsletters view": [
+        "时事通讯视图"
+      ],
       "Night theme": [
         "夜间模式"
       ],
@@ -10476,6 +10578,9 @@
       "Start import process": [
         "开始导入过程"
       ],
+      "Subscription canceled": [
+        "订阅已取消"
+      ],
       "Summary": [
         "概览"
       ],
@@ -10547,6 +10652,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "您的 ${ planName } 免费试用期将于 ${ textDate } 结束"
+      ],
+      "Your ${ planName } subscription started": [
+        "您的 ${ planName } 订阅已启用"
       ],
       "Your account is protected": [
         "您的账户已受保护"

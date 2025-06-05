@@ -446,6 +446,9 @@
       "Keep my subscription": [
         "Manter a minha assinatura"
       ],
+      "Keep subscription": [
+        "Manter a subscrição"
+      ],
       "Later": [
         "Mais tarde"
       ],
@@ -809,11 +812,11 @@
       "Upgrade": [
         "Actualizar"
       ],
-      "Upgrade Now": [
-        "Atualizar agora"
-      ],
       "Upgrade now": [
         "Actualizar agora"
+      ],
+      "Upgrade Now": [
+        "Atualizar agora"
       ],
       "Upload and share files": [
         "Enviar e partilhar ficheiros"
@@ -1651,6 +1654,32 @@
       ],
       "strawberry": [
         "morango"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Vista do dia"
+      ],
+      "Month view": [
+        "Vista do mês"
+      ],
+      "New event": [
+        "Novo evento"
+      ],
+      "Next period": [
+        "Próximo período"
+      ],
+      "Previous period": [
+        "Período anterior"
+      ],
+      "Search events": [
+        "Procurar eventos"
+      ],
+      "Today": [
+        "Hoje"
+      ],
+      "Week view": [
+        "Vista da semana"
       ]
     },
     "Confirm modal title": {
@@ -4127,6 +4156,9 @@
       "Contacts": [
         "Contactos"
       ],
+      "Drawer": [
+        "Painel lateral"
+      ],
       "Name": [
         "Nome"
       ],
@@ -4974,6 +5006,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Se cancelar, perderá o acesso a ${ boldPlanTitle } imediatamente, e será revertido para o plano ${ boldProtonFree }. Se a sua utilização exceder os limites do plano Free, poderá ter acesso restrito a funcionalidades do produto e aos seus dados."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Se cancelar, a sua subscrição ${ planTitle } não será renovada quando expirar em ${ expiryDate }."
       ],
@@ -5456,6 +5491,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar o seu pagamento, envie ${ btcAmountBold } para o endereço abaixo."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Para continuar a desfrutar de ${ boldPlanTitle } gratuitamente até ${ boldCancelDate }, não cancele."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e abusos, confirme que é um ser humano."
       ],
@@ -5552,6 +5590,9 @@
       "Week and month views only apply to desktop.": [
         "As vistas semanal e mensal só se aplicam à área de trabalho."
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "O que perde ao cancelar o ${ boldPlanTitle }:"
+      ],
       "When working remotely": [
         "Ao trabalhar remotamente"
       ],
@@ -5644,6 +5685,9 @@
       "You can now return to the application to continue": [
         "Pode agora voltar à aplicação e continuar."
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Ainda pode aceder a todos os dados da sua conta. Pode subscrever novamente a qualquer momento para continuar a desfrutar de todas as nossas funcionalidades."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Pode ativar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
       ],
@@ -5701,6 +5745,9 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Atualizará todos os eventos desta série. Os participantes removidos serão notificados."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Não lhe será cobrado se cancelar antes de ${ trialEndsOnFormatted }."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Será então cobrado a cada ${ renewCycle } mês no valor de ${ renewAmountStr }.",
         "Será então cobrado a cada ${ renewCycle } meses no valor de ${ renewAmountStr }."
@@ -5719,6 +5766,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "A sua subscrição do ${ PASS_SHORT_APP_NAME } Plus será substituída pela do ${ PASS_SHORT_APP_NAME } Lifetime. O saldo restante da sua subscrição será adicionado à sua conta. A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, sendo um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "O seu plano ${ planName } é agora uma subscrição paga que se renova automaticamente a cada 12 meses. A sua próxima data de faturação é ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma fatura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
@@ -5753,6 +5803,9 @@
       "Your files will be encrypted and then saved": [
         "Os seus ficheiros serão encriptados e depois guardados."
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "A sua avaliação gratuita de ${ boldPlanTitle } foi cancelada e a sua conta ${ boldUserEmail } foi revertida para ${ boldProtonFree }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "As suas informações foram encontradas em ${ displayedDate }"
       ],
@@ -5777,6 +5830,9 @@
       "Your online activity is protected": [
         "A sua atividade online está protegida."
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "A sua organização ${ boldOrganizationName } está desativada e todas as suas licenças de utilizador foram removidas."
+      ],
       "Your password was leaked:": [
         "A sua palavra-passe foi divulgada:"
       ],
@@ -5798,6 +5854,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Parece que o fuso horário do seu sistema mudou para ${ timezone }. Deseja atualizar a sua preferência de fuso horário?"
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "A sua avaliação terminará em ${ timeRemaining }."
       ]
     },
     "info": {
@@ -5990,6 +6049,9 @@
       ],
       "Address": [
         "Endereço"
+      ],
+      "Alias title": [
+        "Título do alias"
       ],
       "All day": [
         "Dia inteiro"
@@ -6378,9 +6440,6 @@
       ],
       "Time zone": [
         "Fuso horário"
-      ],
-      "Title": [
-        "Título"
       ],
       "To: ${ toEmail }": [
         "Para: ${ toEmail }"
@@ -6998,6 +7057,11 @@
         "Velocidade VPN média"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Apagar conta"
@@ -7019,11 +7083,6 @@
       ],
       "Switch plan": [
         "Alterar o plano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7568,9 +7627,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Aceder à internet com segurança a partir de qualquer sítio com monitorização essencial de rede"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Armazenamento em nuvem seguro que permite armazenar, sincronizar e compartilhar ficheiros com facilidade e segurança."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "E-mail seguro com caraterísticas avançadas para as suas comunicações diárias."
@@ -10129,6 +10185,24 @@
         "Participar na reunião do Teams"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dia",
+        "${ ceilDays } dias"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } hora",
+        "${ ceilHours } horas"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuto",
+        "${ ceilMinutes } minutos"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segundo",
+        "${ seconds } segundos"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } h",
@@ -10714,6 +10788,9 @@
       "Start import process": [
         "Iniciar o processo de importação"
       ],
+      "Subscription canceled": [
+        "A subscrição foi cancelada."
+      ],
       "Summary": [
         "Resumo"
       ],
@@ -10785,6 +10862,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "A sua avaliação gratuita ${ planName } finaliza em ${ textDate }."
+      ],
+      "Your ${ planName } subscription started": [
+        "A sua subscrição do ${ planName } começou."
       ],
       "Your account is protected": [
         "A sua conta está protegida"

@@ -456,17 +456,20 @@
       "Invite user": [
         "Inviter un utilisateur"
       ],
-      "Keep editing": [
-        "Continuer les modifications"
-      ],
       "Keep Editing": [
         "Poursuivre les modifications"
+      ],
+      "Keep editing": [
+        "Continuer les modifications"
       ],
       "Keep logo": [
         "Conserver le logo"
       ],
       "Keep my subscription": [
         "Conserver mon abonnement"
+      ],
+      "Keep subscription": [
+        "Conserver l'abonnement"
       ],
       "Let's talk": [
         "Parlons-nous"
@@ -533,9 +536,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ouvrir les paramètres de ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Ouvrir dans ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Ouvrir la navigation"
@@ -1058,138 +1058,6 @@
       ],
       "New email": [
         "Nouveau message"
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Je profite de l'offre"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "200 GB storage": [
-        "200 Go d'espace de stockage"
-      ],
-      "500 GB encrypted storage": [
-        "500 Go de stockage chiffré"
-      ],
-      "Add unlimited credit cards": [
-        "Ajoutez un nombre illimité de cartes de paiement."
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Toutes les fonctionnalités premium de ${ BRAND_NAME } Mail, Pass, VPN, Drive et Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloquez la publicité, les traqueurs, les logiciels malveillants"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Les réductions sont basées sur les tarifs mensuels standard. À la fin du cycle de facturation, votre abonnement sera renouvelé au tarif annuel standard."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Doublez votre stockage chiffré – obtenez 1 To pour toutes vos données"
-      ],
-      "Encrypted password manager": [
-        "Gestionnaire de mots de passe chiffré"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Voici un cadeau exclusif pour célébrer notre parcours ensemble."
-      ],
-      "High speed streaming with VPN": [
-        "Streaming ultra rapide avec VPN"
-      ],
-      "of privacy": [
-        "de vie privée"
-      ],
-      "Online document editor": [
-        "Éditeur de documents en ligne"
-      ],
-      "Online privacy for up to 2 people": [
-        "La protection de la vie privée en ligne pour jusqu'à 2 personnes"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "La protection de la vie privée en ligne pour toute votre famille (jusqu'à 6 utilisateurs)"
-      ],
-      "Protect up to 10 devices": [
-        "Protégez jusqu'à 10 appareils"
-      ],
-      "Recover previous file versions": [
-        "Récupérer les versions précédentes des fichiers"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Bénéficiez d'une réduction importante sur les fonctionnalités premium de Drive grâce à une offre à durée limitée."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Bénéficiez d'une réduction importante sur les fonctionnalités premium de Mail grâce à une offre à durée limitée."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Bénéficiez d'une réduction importante sur les fonctionnalités premium de Pass grâce à une offre à durée limitée."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Bénéficiez d'une réduction importante sur les fonctionnalités VPN premium grâce à une offre à durée limitée."
-      ],
-      "Save time with built-in 2FA": [
-        "Gagnez du temps grâce à l'authentification à deux facteurs intégrée."
-      ],
-      "Secure email with unlimited aliases": [
-        "E-mail sécurisé avec alias illimités"
-      ],
-      "Select any server": [
-        "Choisissez n'importe quel serveur"
-      ],
-      "Share passwords easily": [
-        "Partagez facilement vos mots de passe."
-      ],
-      "Short @pm.me address": [
-        "Adresses e-mail courtes @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Visionnez vos contenus préférés"
-      ],
-      "thanks to you": [
-        "grâce à vous"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Triplez votre stockage chiffré – obtenez 3 To pour toutes vos données"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Nombre illimité de dossiers, labels et filtres"
-      ],
-      "Use your own email domain": [
-        "Utilisez vos propres domaines de messagerie"
-      ],
-      "years": [
-        "années"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Offre spéciale anniversaire"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mois",
-        "${ n } mois"
-      ],
-      "/ month": [
-        "/mois"
-      ],
-      "12 months": [
-        "12 mois"
-      ],
-      "15 months": [
-        "15 mois"
-      ],
-      "24 months": [
-        "24 mois"
-      ],
-      "30 months": [
-        "30 mois"
-      ],
-      "for ${ durationDeal }": [
-        "pour ${ durationDeal }"
       ]
     },
     "Assistant toggle": {
@@ -4945,6 +4813,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si vous pensez qu'il s'agit d'une erreur, nous vous invitons à nous contacter ${ contactLink }."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Si vous annulez, vous n'aurez immédiatement plus accès à ${ boldPlanTitle } et vous passerez à l'abonnement ${ boldProtonFree }. Si votre utilisation dépasse les limites de l'abonnement Free, l'accès aux fonctionnalités du produit et à vos données pourrait être restreint."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si vous annulez, votre abonnement ${ planTitle } ne sera pas renouvelé quand il arrivera à sa date de fin de validité le ${ expiryDate }."
       ],
@@ -5736,6 +5607,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Pour confirmer, saisissez le nom de l'utilisateur que vous voulez supprimer."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Pour continuer à profiter de ${ boldPlanTitle } gratuitement jusqu'au ${ boldCancelDate }, n'annulez pas."
+      ],
       "To continue to ${ product }": [
         "Pour continuer vers ${ product },"
       ],
@@ -5964,6 +5838,9 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Nous enverrons un code de réinitialisation au numéro de téléphone que vous avez indiqué pour la récupération du compte."
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "En annulant ${ boldPlanTitle }, vous ne bénéficierez plus des avantages suivants :"
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quand vous activez SAML pour ${ appName } dans votre fournisseur d'identité, vous pouvez être invité à utiliser l'URL de rappel (ACS) et l'ID de l'émetteur. Il vous suffit de copier-coller les données ci-dessous dans les champs de votre fournisseur d'identité."
       ],
@@ -6066,6 +5943,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Vous ne pouvez avoir qu'une seule session de chat ouverte à la fois. Nous vous invitons à fermer les conversations précédentes avant d'en entamer une nouvelle."
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Vous pouvez toujours accéder à toutes les données de votre compte. Vous pouvez vous réabonner à tout moment pour continuer à profiter de toutes nos fonctionnalités."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vous pouvez activer les notifications pour recevoir des alertes quand de nouveaux messages arrivent dans ce dossier."
       ],
@@ -6134,6 +6014,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Vous ne serez pas facturé si vous annulez avant le ${ trialEndsOnFormatted }."
+      ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Vous ne pourrez pas réassigner ces serveurs à un autre pays pendant 10 jours."
       ],
@@ -6181,6 +6064,9 @@
       "Your files will be encrypted and then saved": [
         "Vos fichiers seront chiffrés puis sauvegardés."
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Votre essai gratuit de ${ boldPlanTitle } a été annulé et votre compte ${ boldUserEmail } a été passé à un abonnement inférieur : ${ boldProtonFree }."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vos informations sont en sécurité avec nous. Nous ne vous contacterons que si cela est nécessaire pour fournir nos services."
       ],
@@ -6189,6 +6075,9 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Votre prochaine date de facturation est le ${ renewalTime }. Veuillez contacter l'assistance si vous avez besoin de changer d'abonnement tout de suite."
+      ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Votre organisation ${ boldOrganizationName } est désactivée et tous ses accès utilisateur ont été retirés."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Votre organisation utilise une authentification unique (SSO). Appuyez sur Se connecter pour continuer avec votre fournisseur d'authentification unique (SSO)."
@@ -6211,6 +6100,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Votre abonnement sera automatiquement renouvelé le ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Votre version d'essai se terminera dans ${ timeRemaining }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Vous pourrez ajouter immédiatement ces serveurs à une autre passerelle."
@@ -6404,10 +6296,10 @@
       "Allow recovery by phone": [
         "Autoriser la récupération par téléphone"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domaine autorisé"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domaine autorisé"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -8015,9 +7907,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Accédez à internet en toute sécurité, où que vous soyez, avec les fonctionnalités essentielles de surveillance du réseau."
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Un stockage cloud sécurisé qui vous permet de stocker, synchroniser et partager des fichiers facilement et en toute sécurité."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "La messagerie sécurisée avec des fonctionnalités avancées pour vos communications quotidiennes."
       ],
@@ -8080,6 +7969,17 @@
         "Accédez à tous les produits et toutes les fonctions premium de ${ BRAND_NAME } pour seulement ${ priceLine } avec possibilité de résiliation à tout moment."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Essai de ${ shortPlan.title }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Utilisation de votre compte"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -8092,17 +7992,6 @@
       ],
       "Switch plans?": [
         "Changer d'abonnement ?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Essai de ${ shortPlan.title }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Utilisation de votre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -8519,6 +8408,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Certaines images n'ont pas été importées car la sélection en cours contient des noms de fichier dupliqués."
+      ]
+    },
+    "oc_nightly: BYOE": {
+      "Something went wrong while loging into your Gmail account": [
+        "Une erreur s'est produite lors de la connexion à votre compte Gmail."
       ]
     },
     "Offer": {
@@ -9880,6 +9774,11 @@
         "Partagé par ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Ouvrir dans ${ appName }"
+      ]
+    },
     "Signup label": {
       "Confirm password": [
         "Confirmer le mot de passe"
@@ -10922,6 +10821,9 @@
       ],
       "Expiring": [
         "Expiré"
+      ],
+      "Free Trial": [
+        "Essai gratuit"
       ]
     },
     "Subtitle": {
@@ -11241,6 +11143,24 @@
     "Themes": {
       "Themes": [
         "Thèmes"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } jour",
+        "${ ceilDays } jours"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } heure",
+        "${ ceilHours } heures"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minute",
+        "${ ceilMinutes } minutes"
+      ],
+      "${ seconds } second": [
+        "${ seconds } seconde",
+        "${ seconds } secondes"
       ]
     },
     "Title": {
@@ -11961,6 +11881,9 @@
       ],
       "Subscription": [
         "Abonnement"
+      ],
+      "Subscription canceled": [
+        "L'abonnement a été annulé."
       ],
       "Successfully created ${ n } user account": [
         "${ n } compte utilisateur a été créé.",

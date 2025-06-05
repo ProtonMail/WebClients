@@ -456,10 +456,10 @@
       "Invite user": [
         "Invitare utilizator"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Continuare editare"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Continuare editare"
       ],
       "Keep logo": [
@@ -467,6 +467,9 @@
       ],
       "Keep my subscription": [
         "Îmi păstrez abonamentul"
+      ],
+      "Keep subscription": [
+        "Păstrare abonament"
       ],
       "Let's talk": [
         "Să discutăm"
@@ -533,9 +536,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Deschidere în ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Deschidere navigare"
@@ -3023,6 +3023,9 @@
       "Error connecting to the Bitcoin API.": [
         "Eroare de conectare la Bitcoin API."
       ],
+      "Error publishing changes": [
+        "Eroare la publicarea modificărilor."
+      ],
       "Failed to load the STL preview": [
         "Nu s-a putut încărca examinarea STL."
       ],
@@ -4855,6 +4858,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Dacă credeți că acest lucru este o eroare, vă rugăm să ne contactați la ${ contactLink }."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Dacă anulați, veți pierde imediat accesul la ${ boldPlanTitle } și planul va fi retrogradat ${ boldProtonFree }. Dacă utilizarea actuală depășește limitele planului gratuit, este posibil să aveți acces restricționat la funcțiile produsului și la datele personale."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Dacă anulați, abonamentul la ${ planTitle } nu va fi reînnoit când va expira la ${ expiryDate }."
       ],
@@ -5660,6 +5666,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Pentru a confirma, introduceţi numele utilizatorului pe care doriţi să-l ştergeţi."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Pentru a continua să vă bucurați de ${ boldPlanTitle } gratuit până la ${ boldCancelDate }, nu anulați."
+      ],
       "To continue to ${ product }": [
         "Pentru a continua cu ${ product }"
       ],
@@ -5888,6 +5897,9 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Veți primi un cod de resetare la numărul de telefon pe care l-ați furnizat pentru recuperarea contului."
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "La ce renunțați când anulați ${ boldPlanTitle }:"
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Când activați SAML pentru ${ appName } în furnizorul de identitate, vi se poate solicita să utilizați adresa URL de apel invers (ACS) și ID-ul emitentului. Doar copiați și lipiți datele de mai jos în câmpurile furnizorului de identitate."
       ],
@@ -5996,6 +6008,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Puteți avea o singură fereastră de conversații deschisă. Închideți conversațiile anterioare înainte de a deschide alta nouă."
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Încă vă puteți accesa toate datele contului. Vă puteți abona din nou oricând pentru a continua să vă bucurați de toate funcțiile noastre."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puteți activa notificările pentru a primi alerte atunci când apar mesaje noi în acest folder."
       ],
@@ -6066,6 +6081,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Nu se va aplica taxa dacă anulați înainte de ${ trialEndsOnFormatted }."
+      ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Nu veți putea realoca aceste servere altei țări timp de 10 zile."
       ],
@@ -6115,6 +6133,9 @@
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Perioada gratuită de probare a ${ boldPlanTitle } a fost anulată și contul ${ boldUserEmail } a fost retrogradat la ${ boldProtonFree }."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informațiile vă sunt în siguranță la noi. Vă vom contacta doar atunci când este necesar să vă furnizăm serviciile."
       ],
@@ -6123,6 +6144,9 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Următoarea dată de facturare este ${ renewalTime }. Contactați asistența dacă aveți nevoie de o schimbare imediată a planului."
+      ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Organizația ${ boldOrganizationName } este dezactivată și toate licențele sale de utilizatori au fost eliminate."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organizația dvs. utilizează conectarea unică (SSO). Apăsați pe Conectare pentru a continua cu furnizorul propriu de conectare unică (SSO)."
@@ -6146,6 +6170,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Abonamentul se va reînnoi automat la ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Perioada de probare se termină ${ timeRemaining }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Veți putea adăuga aceste servere la o altă poartă de acces imediat."
@@ -6343,10 +6370,10 @@
       "Allow recovery by phone": [
         "Permitere recuperare prin telefon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domeniu permis"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domeniu permis"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -7958,9 +7985,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Accesați în siguranță internetul de oriunde cu monitorizarea esențială a rețelei"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Stocare sigură în cloud care permite stocarea, sincronizarea și partajarea ușoară și sigură a fișierelor."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "E-mail securizat cu funcții avansate pentru comunicațiile personale zilnice."
       ],
@@ -8023,6 +8047,14 @@
         "Deblocați toate produsele și funcțiile premium din ${ BRAND_NAME } cu doar ${ priceLine }. Anulați oricând."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -8035,14 +8067,6 @@
       ],
       "Switch plans?": [
         "Schimbare plan?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -11018,6 +11042,9 @@
       "Locale updated": [
         "Limbă actualizată"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "S-a creat o politică nouă. Va intra în vigoare numai după ce publicați modificările."
+      ],
       "Organization activated": [
         "Organizație activată"
       ],
@@ -11047,6 +11074,12 @@
       ],
       "Phone number updated": [
         "Număr de telefon actualizat"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "Politica s-a schimbat. Va intra în vigoare numai după ce publicați modificările."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "Politică ștearsă. Va intra în vigoare numai după ce publicați modificările."
       ],
       "Preference saved": [
         "Preferințe salvate"
@@ -11242,6 +11275,28 @@
     "Themes": {
       "Themes": [
         "Teme"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } zi",
+        "${ ceilDays } zile",
+        "${ ceilDays } de zile"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } oră",
+        "${ ceilHours } ore",
+        "${ ceilHours } de ore"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minute",
+        "${ ceilMinutes } de minute"
+      ],
+      "${ seconds } second": [
+        "${ seconds } secundă",
+        "${ seconds } secunde",
+        "${ seconds } de secunde"
       ]
     },
     "Title": {
@@ -11966,6 +12021,9 @@
       ],
       "Subscription": [
         "Abonament"
+      ],
+      "Subscription canceled": [
+        "Abonament anulat"
       ],
       "Successfully created ${ n } user account": [
         "S-a creat ${ n } cont.",

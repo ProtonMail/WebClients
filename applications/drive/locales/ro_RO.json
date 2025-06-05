@@ -436,6 +436,9 @@
       "Export selection as .vcf": [
         "Exportare selecție ca .vcf"
       ],
+      "Export system log": [
+        "Exportare jurnal sistem"
+      ],
       "Fit to window": [
         "Potrivire la fereastră"
       ],
@@ -459,6 +462,9 @@
       ],
       "Get link": [
         "Obținere legătură web"
+      ],
+      "Get secure storage for ${ simplePriceString }": [
+        "Obțineți stocare securizată cu ${ simplePriceString }"
       ],
       "Get Started": [
         "Începeți"
@@ -552,6 +558,9 @@
       ],
       "Keep my subscription": [
         "Îmi păstrez abonamentul"
+      ],
+      "Keep subscription": [
+        "Păstrare abonament"
       ],
       "Later": [
         "Mai târziu"
@@ -690,9 +699,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Deschidere în ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Deschidere navigare"
@@ -3934,6 +3940,9 @@
       "Create new shared album": [
         "Creare album partajat"
       ],
+      "Drawer": [
+        "Panou lateral"
+      ],
       "Rename album": [
         "Redenumire album"
       ],
@@ -4979,6 +4988,9 @@
       "Expired": [
         "Expirat"
       ],
+      "Export diagnostic logs for technical support and troubleshooting": [
+        "Exportare jurnale de diagnosticare pentru asistență tehnică și depanare"
+      ],
       "Failed": [
         "Eșuat"
       ],
@@ -5071,6 +5083,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
+      ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Dacă anulați, veți pierde imediat accesul la ${ boldPlanTitle } și planul va fi retrogradat ${ boldProtonFree }. Dacă utilizarea actuală depășește limitele planului gratuit, este posibil să aveți acces restricționat la funcțiile produsului și la datele personale."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Dacă anulați, abonamentul la ${ planTitle } nu va fi reînnoit când va expira la ${ expiryDate }."
@@ -5572,9 +5587,6 @@
       "Restore": [
         "Restaurare"
       ],
-      "Restore is in progress. This can take a few seconds.": [
-        "Restaurarea este în curs. Acest lucru poate dura câteva secunde."
-      ],
       "Restore Photos": [
         "Restaurare fotografii"
       ],
@@ -5873,6 +5885,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pentru a finaliza plata, trimiteți ${ btcAmountBold } la adresa de mai jos."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Pentru a continua să vă bucurați de ${ boldPlanTitle } gratuit până la ${ boldCancelDate }, nu anulați."
+      ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "Pentru a descărca fișierele ${ DOCS_APP_NAME }, deschideți-le în ${ DOCS_APP_NAME } și exportați-le."
       ],
@@ -6077,6 +6092,9 @@
       "What would you like to do?": [
         "Ce v-ar plăcea să faceți?"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "La ce renunțați când anulați ${ boldPlanTitle }:"
+      ],
       "When working remotely": [
         "Când lucrați la distanță"
       ],
@@ -6170,6 +6188,9 @@
       "You can now return to the application to continue": [
         "Puteți reveni la aplicație pentru a continua"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Încă vă puteți accesa toate datele contului. Vă puteți abona din nou oricând pentru a continua să vă bucurați de toate funcțiile noastre."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puteți activa notificările pentru a primi alerte atunci când apar mesaje noi în acest folder."
       ],
@@ -6216,6 +6237,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Nu se va aplica taxa dacă anulați înainte de ${ trialEndsOnFormatted }."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Plata va fi apoi la ${ renewCycle } lună cu ${ renewAmountStr }.",
         "Plata va fi apoi la ${ renewCycle } luni cu ${ renewAmountStr }.",
@@ -6244,6 +6268,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Abonamentul ${ PASS_SHORT_APP_NAME } Plus va fi înlocuit cu ${ PASS_SHORT_APP_NAME } pe viață. Soldul rămas din abonament va fi restituit în cont. Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "Planul ${ planName } este acum un abonament cu plată care se reînnoiește automat la fiecare 12 luni. Următoarea dată de facturare este ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
@@ -6281,6 +6308,9 @@
       "Your files will be encrypted and then saved.": [
         "Fișierele vor fi criptate și apoi salvate."
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Perioada gratuită de probare a ${ boldPlanTitle } a fost anulată și contul ${ boldUserEmail } a fost retrogradat la ${ boldProtonFree }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Informațiile v-au fost găsite la ${ displayedDate }"
       ],
@@ -6304,6 +6334,9 @@
       ],
       "Your online activity is protected": [
         "Activitatea online vă este protejată"
+      ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Organizația ${ boldOrganizationName } este dezactivată și toate licențele sale de utilizatori au fost eliminate."
       ],
       "Your password was leaked:": [
         "Parola a fost divulgată:"
@@ -6333,6 +6366,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Abonamentul se va reînnoi automat la ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Perioada de probare se termină ${ timeRemaining }."
       ]
     },
     "info": {
@@ -6423,6 +6459,9 @@
       "# of downloads": [
         "Descărcări"
       ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } din ${ albumProgress.total }"
+      ],
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
       ],
@@ -6464,6 +6503,9 @@
       ],
       "Address": [
         "Adresa"
+      ],
+      "Alias title": [
+        "Titlu alias"
       ],
       "All": [
         "Toate"
@@ -6958,9 +7000,6 @@
       ],
       "Thomas": [
         "Thomas"
-      ],
-      "Title": [
-        "Titlu"
       ],
       "To: ${ toEmail }": [
         "Către: ${ toEmail }"
@@ -8190,9 +8229,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Accesați în siguranță internetul de oriunde cu monitorizarea esențială a rețelei"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Stocare sigură în cloud care permite stocarea, sincronizarea și partajarea ușoară și sigură a fișierelor."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "E-mail securizat cu funcții avansate pentru comunicațiile personale zilnice."
       ],
@@ -8970,10 +9006,10 @@
       "Invite members": [
         "Invitați membri"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Poate mai târziu"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Poate mai târziu"
       ],
       "Select theme": [
@@ -10880,6 +10916,28 @@
         "Videoclipuri"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } zi",
+        "${ ceilDays } zile",
+        "${ ceilDays } de zile"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } oră",
+        "${ ceilHours } ore",
+        "${ ceilHours } de ore"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minute",
+        "${ ceilMinutes } de minute"
+      ],
+      "${ seconds } second": [
+        "${ seconds } secundă",
+        "${ seconds } secunde",
+        "${ seconds } de secunde"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } h",
@@ -11612,6 +11670,9 @@
       "Stop transfers?": [
         "Opriți transferurile?"
       ],
+      "Subscription canceled": [
+        "Abonament anulat"
+      ],
       "Summary": [
         "Sumar"
       ],
@@ -11716,6 +11777,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Probarea gratuită pentru ${ planName } se încheie ${ textDate }"
+      ],
+      "Your ${ planName } subscription started": [
+        "Abonamentul pentru ${ planName } a început"
       ],
       "Your 3 GB bonus": [
         "Bonusul de 3 GiB"
