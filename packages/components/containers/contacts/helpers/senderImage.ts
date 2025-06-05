@@ -6,12 +6,12 @@ import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 export const getImageSize = (size: number = 32) => {
     let ratio = 1;
 
-    if (window.devicePixelRatio >= 4) {
-        ratio = 4;
-    }
-
     if (window.devicePixelRatio > 1) {
         ratio = 2;
+    }
+
+    if (window.devicePixelRatio >= 4) {
+        ratio = 4;
     }
 
     /*
