@@ -15,7 +15,6 @@ import MessageOnlyView from 'proton-mail/components/message/MessageOnlyView';
 import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
-import { MailboxToolbar } from 'proton-mail/router/components/MailboxToolbar';
 import type { MailboxActions, RouterNavigation } from 'proton-mail/router/interface';
 import { setParams } from 'proton-mail/store/elements/elementsActions';
 import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
@@ -33,7 +32,10 @@ import ModalOnboarding from './SubscriptionsList/ModalOnboarding';
 import { NewsletterSubscriptionListLoader } from './SubscriptionsList/NewsletterSubscriptionCardSkeleton/NewsletterSubscriptionListLoader';
 import { NewsletterSubscriptionList } from './SubscriptionsList/NewsletterSubscriptionList';
 import { NewsletterSubscriptionListPlaceholder } from './SubscriptionsList/NewsletterSubscriptionListPlaceholder';
-import { NewsletterSubscriptionListTitle } from './SubscriptionsList/NewsletterSubscriptionListTitle';
+import {
+    NewsletterSubscriptionMailListHeader,
+    NewsletterSubscriptionMailListToolbar,
+} from './SubscriptionsList/NewsletterSubscriptionMailComponents';
 
 import './NewsletterSubscriptionView.scss';
 
@@ -133,17 +135,15 @@ export const NewsletterSubscriptionView = ({
                                     actions={overrideActions}
                                     toolbar={
                                         overrideActions.selectedIDs.length > 0 ? (
-                                            <MailboxToolbar
+                                            <NewsletterSubscriptionMailListToolbar
                                                 params={params}
                                                 navigation={navigation}
                                                 elementsData={elementsData}
                                                 actions={overrideActions}
-                                                /* Force the columnLayout to be false to visually align with single line toolbar*/
-                                                overrideColumnMode={false}
                                             />
                                         ) : (
                                             activeSubscription && (
-                                                <NewsletterSubscriptionListTitle
+                                                <NewsletterSubscriptionMailListHeader
                                                     subscription={activeSubscription}
                                                     numMessages={elementsData.elementIDs.length}
                                                 />
