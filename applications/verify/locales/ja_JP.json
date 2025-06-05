@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "認証"
+      ],
       "Cancel": [
         "キャンセル"
       ],
@@ -25,6 +28,9 @@
       ],
       "Edit sign-in details": [
         "サインイン詳細を編集"
+      ],
+      "Forgot password?": [
+        "パスワードを忘れましたか？"
       ],
       "Get verification code": [
         "認証コードを取得"
@@ -49,6 +55,12 @@
       ],
       "Try another method": [
         "別の方法を試してください"
+      ],
+      "Use authentication code": [
+        "認証コードを使用"
+      ],
+      "Use recovery code": [
+        "回復用コードを使用"
       ],
       "Verify": [
         "検証"
@@ -909,6 +921,24 @@
         "このページを読み込めませんでした。ページを更新するか、インターネット接続を確認してください。"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "セキュリティキーの認証に失敗しました。もう一度お試しください。"
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } アカウントに紐づけられたセキュリティキーを挿入してください。"
+      ],
+      "Security key": [
+        "セキュリティキー"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "セキュリティキー"
+      ]
+    },
     "file size format": {
       "byte": [
         "バイト"
@@ -1001,11 +1031,23 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "複数の無料アカウントの作成は、${ termsLink } で禁止されています。"
       ],
+      "Each code can only be used once": [
+        "各コードは1度のみ使用可能です"
+      ],
       "Edit email address": [
         "メールアドレスを編集"
       ],
+      "Enter the code from your authenticator app": [
+        "認証アプリからのコードを入力してください"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "認証コードを入力してください。${ digit }桁です。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "(組織管理者としての)パスワードを入力してください。"
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "追加情報や制限を解除するには、 ${ mailLink } にログインしてください。"
@@ -1049,6 +1091,9 @@
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2要素認証を設定した時、認証アプリにアクセスできなくなってしまった場合にサインインに使用できる回復用コードを提供します。"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "新しい認証コードを受け取るか、他の検証方法を使用しますか？"
       ],
@@ -1072,6 +1117,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "認証アプリ"
+      ],
       "Code is 6 digits without spaces": [
         "コードは空白なしの 6 桁の数字です"
       ],
@@ -1092,6 +1140,9 @@
       ],
       "Verification code": [
         "認証コード"
+      ],
+      "Your password (admin)": [
+        "あなたのパスワード (管理者)"
       ]
     },
     "Link": {
@@ -1474,6 +1525,9 @@
       ],
       "Enter 2FA code": [
         "2要素認証コードを入力"
+      ],
+      "Enter your password": [
+        "パスワードを入力してください"
       ],
       "Human verification": [
         "人間であることの検証"
