@@ -435,6 +435,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Download ${ DRIVE_APP_NAME } apps"
       ],
+      "Download all attachments": [
+        "Alle bijlagen downloaden"
+      ],
       "Download now": [
         "Nu downloaden"
       ],
@@ -724,6 +727,9 @@
       "Keep my subscription": [
         "Mijn abonnement behouden"
       ],
+      "Keep subscription": [
+        "Abonnement behouden"
+      ],
       "Label as": [
         "Labellen als"
       ],
@@ -957,9 +963,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Openen in ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Navigatie openen"
@@ -1456,11 +1459,11 @@
       "Upgrade": [
         "Upgraden"
       ],
-      "Upgrade Now": [
-        "Upgrade Nu"
-      ],
       "Upgrade now": [
         "Nu upgraden"
+      ],
+      "Upgrade Now": [
+        "Upgrade Nu"
       ],
       "Upload and share files": [
         "Bestanden uploaden en delen"
@@ -1700,138 +1703,6 @@
       ],
       "New email": [
         "Nieuwe e-mail"
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Pak deze deal"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "200 GB storage": [
-        "200 GB opslagruimte"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB versleutelde opslag"
-      ],
-      "Add unlimited credit cards": [
-        "Voeg een onbeperkt aantal creditcards toe"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Alle premium-functies van ${ BRAND_NAME } Mail, Pass, VPN, Drive en Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokkeer advertenties, trackers en malware"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Aan het einde van de factureringscyclus wordt uw abonnement verlengd tegen het standaard jaarlijkse tarief."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Verdubbel uw versleutelde opslag – krijg 1 TB voor al uw data"
-      ],
-      "Encrypted password manager": [
-        "Versleutelde wachtwoordmanager"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Hier is een exclusief cadeau om onze gezamenlijke reis te vieren."
-      ],
-      "High speed streaming with VPN": [
-        "Streamen met hoge snelheid met VPN"
-      ],
-      "of privacy": [
-        "privacy"
-      ],
-      "Online document editor": [
-        "Online documenteditor"
-      ],
-      "Online privacy for up to 2 people": [
-        "Online privacy voor maximaal 2 personen"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Online privacy voor uw hele gezin (maximaal 6 gebruikers)"
-      ],
-      "Protect up to 10 devices": [
-        "Bescherm tot 10 apparaten"
-      ],
-      "Recover previous file versions": [
-        "Herstel vorige bestandsversies"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Bespaar fors op premium Drive-functies met een tijdelijke korting."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Bespaar fors op premium Mail-functies met een tijdelijke korting."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Bespaar fors op premium Pass-functies met een tijdelijke korting."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Bespaar fors op premium VPN-functies met een tijdelijke korting."
-      ],
-      "Save time with built-in 2FA": [
-        "Bespaar tijd met ingebouwde 2FA"
-      ],
-      "Secure email with unlimited aliases": [
-        "Beveiligde e-mail met onbeperkte aliassen"
-      ],
-      "Select any server": [
-        "Selecteer een server"
-      ],
-      "Share passwords easily": [
-        "Deel wachtwoorden eenvoudig"
-      ],
-      "Short @pm.me address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Stream your favorite content": [
-        "Stream uw favoriete inhoud"
-      ],
-      "thanks to you": [
-        "dankzij u"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Verdriedubbel uw versleutelde opslag – krijg 3 TB voor al uw data"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Onbeperkt aantal mappen, labels en filters"
-      ],
-      "Use your own email domain": [
-        "Gebruik uw eigen e-maildomein"
-      ],
-      "years": [
-        "jaar"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Jubileumaanbieding"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } maand",
-        "${ n } maanden"
-      ],
-      "/ month": [
-        "/ maand"
-      ],
-      "12 months": [
-        "12 maanden"
-      ],
-      "15 months": [
-        "15 maanden"
-      ],
-      "24 months": [
-        "24 maanden"
-      ],
-      "30 months": [
-        "30 maanden"
-      ],
-      "for ${ durationDeal }": [
-        "voor ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -4127,11 +3998,6 @@
         "Uw ${ PLAN_NAMES[PLANS.PASS] }-abonnement heeft een speciale prijs van ${ price } per jaar. Als u downgrade naar een Free abonnement, zult u permanent uw korting verliezen, zelfs als u in de toekomst opnieuw upgrade."
       ]
     },
-    "Download attachments": {
-      "Download all": [
-        "Alles downloaden"
-      ]
-    },
     "Drawer tab, Action": {
       "Download for Linux": [
         "Downloaden voor Linux"
@@ -5707,6 +5573,9 @@
       "Contacts": [
         "Contacten"
       ],
+      "Drawer": [
+        "Zijpaneel"
+      ],
       "Hardware not compatible": [
         "Hardware niet compatibel"
       ],
@@ -6996,6 +6865,9 @@
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Als u denkt dat we een fout hebben gemaakt, gelieve ${ contactLink }."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Als u annuleert, verliest u direct toegang tot ${ boldPlanTitle }, en wordt u gedowngraded naar het ${ boldProtonFree } abonnement. Indien uw gebruik de limieten van het gratis abonnement overschrijdt, kunt u beperkte toegang tot productfuncties en uw data ervaren."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Als u opzegt, zal uw ${ planTitle }-abonnement niet verlengen wanneer het verloopt op ${ expiryDate }."
       ],
@@ -7923,6 +7795,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Stuur ${ btcAmountBold } naar het onderstaande adres om uw betaling te voltooien."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Om te blijven genieten van ${ boldPlanTitle } tot ${ boldCancelDate }, annuleer niet."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
@@ -8148,6 +8023,9 @@
       "Week": [
         "Week"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Wat u opgeeft wanneer u ${ boldPlanTitle } annuleert:"
+      ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Wanneer wilt u dat uw bericht automatisch wordt verwijderd uit de inbox van de ontvanger en uit uw map met Verzonden berichten?"
       ],
@@ -8242,6 +8120,9 @@
       ],
       "You can now return to the application to continue": [
         "U kunt nu teruggaan naar het programma om door te gaan"
+      ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "U hebt nog steeds toegang tot al uw accountgegevens. U kunt op elk moment weer abonneren om te blijven genieten van al onze functies."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
@@ -8339,6 +8220,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "U wordt niets in rekening gebracht als u annuleert voor ${ trialEndsOnFormatted }."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "U schreef \"${ attachmentsFoundKeyword }\", maar er is geen bijlage toegevoegd. Wilt u uw bericht toch verzenden?"
       ],
@@ -8360,6 +8244,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Uw ${ PASS_SHORT_APP_NAME } Plus-abonnement zal worden vervangen door ${ PASS_SHORT_APP_NAME } Lifetime. Het resterende saldo van uw abonnement zal aan uw account worden toegevoegd. ${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "Uw ${ planName } abonnement is nu een betaald abonnement dat automatisch elke 12 maanden wordt verlegd. Uw volgende factureringsdatum is ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
@@ -8387,6 +8274,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
+      ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Uw gratis proefperiode van ${ boldPlanTitle } is geannuleerd, en uw account ${ boldUserEmail } is gedowngraded naar ${ boldProtonFree }."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Uw hardware biedt geen ondersteuning voor het uitvoeren van de schrijfassistent. Probeer het uit te voeren op servers."
@@ -8425,6 +8315,9 @@
       "Your online activity is protected": [
         "Uw online activiteiten zijn beschermd"
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Uw organisatie ${ boldOrganizationName } is uitgeschakeld en al haar gebruikerslicenties zijn verwijderd."
+      ],
       "Your password was leaked:": [
         "Uw wachtwoord werd gelekt:"
       ],
@@ -8446,6 +8339,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Uw abonnement wordt automatisch verlengd op ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Uw proefperiode eindigt over ${ timeRemaining }."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
@@ -8769,6 +8665,9 @@
       "Address": [
         "Adres"
       ],
+      "Alias title": [
+        "Alias titel"
+      ],
       "ALL": [
         "ALLES"
       ],
@@ -8784,11 +8683,11 @@
       "Always move sender's emails": [
         "Verplaats altijd mails van afzenders"
       ],
-      "And": [
-        "En"
-      ],
       "AND": [
         "EN"
+      ],
+      "And": [
+        "En"
       ],
       "and": [
         "en"
@@ -9015,11 +8914,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Als"
-      ],
       "IF": [
         "ALS"
+      ],
+      "If": [
+        "Als"
       ],
       "Import all messages": [
         "Alle berichten importeren"
@@ -9157,14 +9056,14 @@
       "Optional": [
         "Optioneel"
       ],
+      "OR": [
+        "OF"
+      ],
       "or": [
         "of"
       ],
       "Or": [
         "Of"
-      ],
-      "OR": [
-        "OF"
       ],
       "Original link": [
         "Originele link"
@@ -9291,9 +9190,6 @@
       ],
       "Time": [
         "Tijd"
-      ],
-      "Title": [
-        "Titel"
       ],
       "To:": [
         "Aan:"
@@ -10059,6 +9955,14 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Neem ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -10080,14 +9984,6 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Neem ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -10573,6 +10469,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd met end-to-end versleuteling."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd door end-to-end versleuteling."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Geavanceerde netwerkbeveiliging en toegangsbeheer met toegewijde beveiligde gateways"
       ],
@@ -10632,9 +10534,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Veilig toegang krijgen tot internet vanaf elke locatie met essentiële netwerkmonitoring."
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Veilige cloudopslag die u alles laat opslaan, synchroniseren, en u makkelijk en veilig bestanden laat delen."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Veilige e-mail met geavanceerde functies voor uw dagelijkse communicatie."
@@ -12270,6 +12169,11 @@
         "Gedeeld door ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Openen in ${ appName }"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "PGP-versleuteld bericht. Verificatie van afzender is mislukt: ${ verificationErrorsMessage }"
@@ -13546,6 +13450,24 @@
         "Gisteren"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dag",
+        "${ ceilDays } dagen"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } uur",
+        "${ ceilHours } uren"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuut",
+        "${ ceilMinutes } minuten"
+      ],
+      "${ seconds } second": [
+        "${ seconds } seconde",
+        "${ seconds } seconden"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } u",
@@ -14420,6 +14342,9 @@
       "Subject missing": [
         "Onderwerp ontbreekt"
       ],
+      "Subscription canceled": [
+        "Abonnement opgezegd"
+      ],
       "Summary": [
         "Overzicht"
       ],
@@ -14520,6 +14445,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"
+      ],
+      "Your ${ planName } subscription started": [
+        "Uw ${ planName } abonnement is ingegaan"
       ],
       "Your account is protected": [
         "Uw account is beschermd"

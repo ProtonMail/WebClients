@@ -435,6 +435,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descarrega les aplicacions del ${ DRIVE_APP_NAME }"
       ],
+      "Download all attachments": [
+        "Descarregueu tots els adjunts"
+      ],
       "Download now": [
         "Descarrega"
       ],
@@ -724,6 +727,9 @@
       "Keep my subscription": [
         "Mantén la subscripció"
       ],
+      "Keep subscription": [
+        "Mantingueu la subscripció"
+      ],
       "Label as": [
         "Etiqueta com a"
       ],
@@ -743,7 +749,7 @@
         "Més informació"
       ],
       "Least read": [
-        "Menys llegit"
+        "El menys llegit"
       ],
       "Let's talk": [
         "Parlem-ne"
@@ -957,9 +963,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Obre a ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Obre la navegació"
@@ -1453,10 +1456,10 @@
       "Upgrade": [
         "Millora"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Millora ara"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Millora ara"
       ],
       "Upload and share files": [
@@ -3984,11 +3987,6 @@
         "La vostra subscripció de ${ PLAN_NAMES[PLANS.PASS] } té un preu especial de ${ price } per any. En passar a un pla gratuït, perdreu el descompte permanentment, fins i tot si torneu a millorar el pla en el futur."
       ]
     },
-    "Download attachments": {
-      "Download all": [
-        "Desa tot"
-      ]
-    },
     "Drawer tab, Action": {
       "Download for Linux": [
         "Descarrega per a Linux"
@@ -5564,6 +5562,9 @@
       "Contacts": [
         "Contactes"
       ],
+      "Drawer": [
+        "Panell lateral"
+      ],
       "Hardware not compatible": [
         "El maquinari no és compatible."
       ],
@@ -6169,7 +6170,7 @@
         "S'han bloquejat ${ trackersCount } rastrejadors"
       ],
       "${ unreadCount } newsletter subscription": [
-        "${ unreadCount } subscripció al butlletí",
+        "${ unreadCount } subscripció a butlletins",
         "${ unreadCount } subscripcions a butlletins"
       ],
       "${ unreadCount } scheduled message": [
@@ -6232,7 +6233,7 @@
         "Un usuari és un compte associat amb un sol nom d'usuari, una bústia de correu i una persona"
       ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "Una VPN xifra la vostra connexió i amaga la vostra adreça IP, cosa que fa que sigui molt més difícil per a qualsevol rastrejar o supervisar la vostra navegació."
+        "Una VPN xifra la vostra connexió i amaga la vostra adreça IP, cosa que fa molt més difícil per a qualsevol rastrejar o supervisar la vostra navegació."
       ],
       "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
         "Una VPN amaga la vostra adreça IP i xifra la vostra activitat de navegació, cosa que dificulta que els llocs web, els anunciants i els ISP us facin un seguiment al llarg del temps."
@@ -6271,7 +6272,7 @@
         "Assignació del compte d'administrador"
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
-        "Els anunciants fan un seguiment de la vostra navegació per mostrar anuncis orientats. ${ VPN_APP_NAME } bloqueja els rastrejadors i els anuncis, fent que la vostra connexió sigui més ràpida i millorant la vostra experiència en línia."
+        "Els anunciants fan un seguiment de la vostra navegació per mostrar anuncis orientats. ${ VPN_APP_NAME } bloqueja els rastrejadors i els anuncis, cosa que fa la connexió més ràpida i millora l'experiència en línia."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Assistent amb intel·ligència artificial per ajudar-vos a crear millors correus electrònics, de manera ràpida i sense esforç."
@@ -6852,6 +6853,9 @@
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Si creieu que hem comès un error, ${ contactLink }."
+      ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Si cancel·leu, perdreu l'accés al ${ boldPlanTitle } immediatament i passareu al pla ${ boldProtonFree }. Si el vostre ús supera els límits del pla gratuït, és possible que experimenteu una restricció en l'accés a les funcions del producte i a les vostres dades."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si ho cancel·leu, la subscripció ${ planTitle } no es renovarà en caducar el ${ expiryDate }."
@@ -7471,7 +7475,7 @@
         "Establiu ${ MAIL_APP_NAME } com a aplicació de correu electrònic per defecte. ${ MAIL_APP_NAME } s'obrirà automàticament quan cliqueu un enllaç de correu electrònic."
       ],
       "Set up your organization": [
-        "Configura la vostra organització"
+        "Configureu la vostra organització"
       ],
       "Setting up ${ feature }…": [
         "S'està configurant ${ feature }…"
@@ -7678,7 +7682,7 @@
         "Aquesta invitació es desa en un calendari desactivat."
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
-        "Aquest és un nom o un sobrenom per a la vostra organització que els usuaris veuran. Podeu canviar-ho en qualsevol moment."
+        "Aquest és un nom o un sobrenom per a la vostra organització que els usuaris veuran. Podeu canviar-lo en qualsevol moment."
       ],
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "Això pretén ser una ajuda per a l'escriptura. Comproveu la precisió del text suggerit. ${ learnMoreResult }"
@@ -7779,6 +7783,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Per a completar el pagament, envieu ${ btcAmountBold } a l'adreça següent."
+      ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "Per continuar gaudint de ${ boldPlanTitle } gratuïtament fins al ${ boldCancelDate }, no cancel·leu."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
@@ -8005,6 +8012,9 @@
       "Week": [
         "Setmana"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "A què renuncieu en cancel·lar ${ boldPlanTitle }:"
+      ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Quan voleu que el vostre missatge s'elimini automàticament de la safata d'entrada del destinatari i de la carpeta de missatges enviats?"
       ],
@@ -8018,7 +8028,7 @@
         "Quan es treballa a distància"
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
-        "Quan us connecteu a la VPN, utilitza tecnologia de xifratge per ocultar la vostra adreça IP (un codi únic assignat al vostre dispositiu)."
+        "Quan us connecteu a la VPN, aquesta utilitza tecnologia de xifratge per ocultar la vostra adreça IP (un codi únic assignat al vostre dispositiu)."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quan actives les claus de confiança per ${ senderName }, les claus públiques s'afegeixen a les dades de contacte."
@@ -8099,6 +8109,9 @@
       ],
       "You can now return to the application to continue": [
         "Ara podeu tornar a l'aplicació per continuar."
+      ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Encara podeu accedir a totes les dades del vostre compte. Us podeu tornar a subscriure en qualsevol moment per continuar gaudint de totes les nostres funcions."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous en aquesta carpeta."
@@ -8196,6 +8209,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "No se us cobrarà res si cancel·leu abans del ${ trialEndsOnFormatted }."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Heu escrit \"${ attachmentsFoundKeyword }\", però no s'ha afegit cap adjunt. Voleu enviar el missatge de totes maneres?"
       ],
@@ -8217,6 +8233,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "La vostra subscripció ${ PASS_SHORT_APP_NAME } Plus se substituirà per ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restant de la vostra subscripció s'afegirà al vostre compte. L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a accedir de per vida a ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "El vostre pla de ${ planName } ara és una subscripció de pagament que es renova automàticament cada 12 mesos. La pròxima data de facturació és el ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
@@ -8244,6 +8263,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
+      ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "La prova gratuïta del ${ boldPlanTitle } s'ha cancel·lat i el vostre compte de ${ boldUserEmail } s'ha baixat de categoria al ${ boldProtonFree }."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "El vostre maquinari no permet executar l'assistent d'escriptura localment. Proveu d'executar-lo en servidors."
@@ -8282,6 +8304,9 @@
       "Your online activity is protected": [
         "La vostra activitat en línia està protegida."
       ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "La vostra organització ${ boldOrganizationName } està desactivada i s'han eliminat totes les llicències d'usuaris."
+      ],
       "Your password was leaked:": [
         "S'ha filtrat la vostra contrasenya:"
       ],
@@ -8303,6 +8328,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "La vostra subscripció es renovarà automàticament el ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "El període de prova finalitzarà en ${ timeRemaining }."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Només sou a uns quants clics d'una safata d'entrada ordenada"
@@ -8629,6 +8657,9 @@
       "Address": [
         "Adreça"
       ],
+      "Alias title": [
+        "Nom de l'àlies"
+      ],
       "ALL": [
         "TOT"
       ],
@@ -8644,10 +8675,10 @@
       "Always move sender's emails": [
         "Mou sempre els correus electrònics del remitent"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
       "and": [
@@ -8875,11 +8906,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Si"
-      ],
       "IF": [
         "SI"
+      ],
+      "If": [
+        "Si"
       ],
       "Import all messages": [
         "Importar tots els missatges"
@@ -9017,13 +9048,13 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "O"
+      ],
       "or": [
         "o"
       ],
       "Or": [
-        "O"
-      ],
-      "OR": [
         "O"
       ],
       "Original link": [
@@ -9039,7 +9070,7 @@
         "Pista de contrasenya"
       ],
       "Password strength": [
-        "Solidesa de la contrasenya"
+        "Nivell de seguretat de la contrasenya"
       ],
       "Payer": [
         "Pagador"
@@ -9151,9 +9182,6 @@
       ],
       "Time": [
         "Hora"
-      ],
-      "Title": [
-        "Títol"
       ],
       "To:": [
         "Per a:"
@@ -9919,6 +9947,14 @@
         "Velocitat VPN mitjana"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Obtingueu ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Elimina el compte"
@@ -9940,14 +9976,6 @@
       ],
       "Switch plan": [
         "Canvia de pla"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Obtingueu ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -10433,6 +10461,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } que acaba amb ${ last4 }."
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB d'emmagatzematge al núvol que us permeten emmagatzemar, sincronitzar i compartir fitxers fàcilment. Protegit amb xifratge d'extrem a extrem."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB d'emmagatzematge al núvol que us permeten emmagatzemar, sincronitzar i compartir fitxers fàcilment. Protegit amb xifratge d'extrem a extrem."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Seguretat avançada de la xarxa i gestió d'accessos amb passarel·les segures dedicades"
       ],
@@ -10492,9 +10526,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Accediu a internet de manera segura des de qualsevol lloc amb un monitoratge essencial de la xarxa"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Emmagatzematge al núvol segur que us permet emmagatzemar, sincronitzar i compartir fitxers de manera fàcil i segura."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Correu electrònic segur amb funcions avançades per a les vostres comunicacions diàries."
@@ -12171,7 +12202,7 @@
     },
     "Slack": {
       "Join Slack huddle": [
-        "Uniu-vos a la reunió ràpida de Slack"
+        "Uniu-vos a la trobada de Slack."
       ]
     },
     "SmartBanner": {
@@ -12566,7 +12597,7 @@
         "El vostre ${ productString } està ple al ${ percentage }%. ${ cta }."
       ],
       "Your ${ productString } is full. ${ cta }.": [
-        "El vostre ${ productString } és ple. ${ cta }."
+        "El vostre ${ productString } està ple. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "El vostre emmagatzematge és ple al ${ percentage }%. ${ cta }."
@@ -13412,6 +13443,24 @@
         "Ahir"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dia",
+        "${ ceilDays } dies"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } hora",
+        "${ ceilHours } hores"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minuts"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segon",
+        "${ seconds } segons"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } h",
@@ -13534,7 +13583,7 @@
         "Afegeix a ${ groupName }"
       ],
       "Add user": [
-        "Addició un usuari"
+        "Afegeix un usuari"
       ],
       "Addresses": [
         "Adreces"
@@ -13618,7 +13667,7 @@
         "Netejant dades"
       ],
       "Collaborate on documents": [
-        "Col·laboració en documents"
+        "Col·laboreu en documents"
       ],
       "Confirm downgrade": [
         "Confirma el pas a un pla inferior"
@@ -13630,13 +13679,13 @@
         "Confirma adreça de destinatari?"
       ],
       "Connect apps and devices": [
-        "Connexió d'aplicacions i dispositius"
+        "Connecteu aplicacions i dispositius"
       ],
       "Connect to video conferencing": [
-        "Connexió a la videoconferència"
+        "Connecteu-vos a una videoconferència"
       ],
       "Connect your custom domain": [
-        "Connexió del vostre domini personalitzat"
+        "Connecteu el vostre domini personalitzat"
       ],
       "Contact Details": [
         "Detalls del contacte"
@@ -13761,7 +13810,7 @@
         "Passar a ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Baixa les aplicacions del ${ DRIVE_APP_NAME }"
+        "Descarregueu aplicacions de ${ DRIVE_APP_NAME }"
       ],
       "Download the app": [
         "Descarrega l'aplicació"
@@ -13800,13 +13849,13 @@
         "Activa l'autenticació 2FA"
       ],
       "Enable advanced account protection": [
-        "Activació de la protecció avançada del compte"
+        "Activeu la protecció avançada del compte"
       ],
       "Enable message content search": [
         "Activar la cerca de contingut dels missatges"
       ],
       "Enhance security with 2FA": [
-        "Millora la seguretat amb 2FA"
+        "Milloreu la seguretat amb 2FA"
       ],
       "Enter 2FA code": [
         "Introduïu el codi 2FA"
@@ -13885,7 +13934,7 @@
         "Importar contactes"
       ],
       "Import emails, calendars, contacts": [
-        "Importació de correus, calendaris i contactes"
+        "Importeu correus, calendaris i contactes"
       ],
       "Import events": [
         "Importar esdeveniments"
@@ -13927,7 +13976,7 @@
         "Carrega el contingut remot"
       ],
       "Make a secure connection your default": [
-        "Feu que una connexió segura sigui la vostra predeterminada"
+        "Feu d'una connexió segura l'opció predeterminada"
       ],
       "Mark all messages as read": [
         "Marca tots els missatges com a llegits"
@@ -14224,7 +14273,7 @@
         "Enviant missatge original"
       ],
       "Set recovery methods": [
-        "Configuració dels mètodes de recuperació"
+        "Configureu els mètodes de recuperació"
       ],
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
@@ -14233,19 +14282,19 @@
         "Configureu ${ protonDuoPlanName }"
       ],
       "Set up email forwarding": [
-        "Configuració del reenviament de correu"
+        "Configureu el reenviament de correu"
       ],
       "Set up your family account": [
         "Configureu el vostre compte familiar"
       ],
       "Set up your organization": [
-        "Configuració de la vostra organització"
+        "Configureu la vostra organització"
       ],
       "Settings": [
         "Preferències"
       ],
       "Share your calendar with your team": [
-        "Compartició del calendari amb el vostre equip"
+        "Compartiu el calendari amb el vostre equip"
       ],
       "Sign in and grant access": [
         "Iniciar sessió i concedir accés"
@@ -14254,10 +14303,10 @@
         "Tanca la sessió"
       ],
       "Simplify email distribution": [
-        "Simplificació de la distribució de correu"
+        "Simplifiqueu la distribució de correu"
       ],
       "Simplify password management": [
-        "Simplificació de la gestió de contrasenyes"
+        "Simplifiqueu la gestió de contrasenyes"
       ],
       "Snooze": [
         "Ajorna"
@@ -14285,6 +14334,9 @@
       ],
       "Subject missing": [
         "Falta l'assumpte"
+      ],
+      "Subscription canceled": [
+        "La subscripció s'ha cancel·lat"
       ],
       "Summary": [
         "Resum"
@@ -14315,7 +14367,7 @@
         "Confiar en les claus públiques?"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
-        "Activació ${ DARK_WEB_MONITORING_NAME }"
+        "Activeu ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Unsubscribe": [
         "Cancel·lar la subscripció"
@@ -14333,7 +14385,7 @@
         "Carregueu i compartiu fitxers"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
-        "Utilitza ${ VPN_SHORT_APP_NAME } per a la privacitat de dades"
+        "Utilitzeu ${ VPN_SHORT_APP_NAME } per a la privacitat de les dades"
       ],
       "Verification error": [
         "Error de verificació"
@@ -14367,7 +14419,7 @@
         "Us donem la benvinguda ${ userName }"
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
-        "Us donem la benvinguda a ${ BRAND_NAME } per al Business"
+        "Us donem la benvinguda a ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "De què us pot protegir una VPN?"
@@ -14386,6 +14438,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La vostra prova gratuïta de ${ planName } acaba el ${ textDate }"
+      ],
+      "Your ${ planName } subscription started": [
+        "La vostra subscripció a ${ planName } ja està activa."
       ],
       "Your account is protected": [
         "El compte està protegit"
