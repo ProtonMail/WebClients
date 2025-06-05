@@ -81,6 +81,11 @@ export const unsubscribeSubscriptionPending = (
         state.value.tabs.active.totalCount = Math.max(0, state.value.tabs.active.totalCount - 1);
     }
 
+    // We unselect the subscription if it's the one currently selected
+    if (state.value.selectedSubscriptionId === subscriptionId) {
+        state.value.selectedSubscriptionId = undefined;
+    }
+
     state.value.tabs.unsubscribe.ids.unshift(subscriptionId);
     state.value.tabs.unsubscribe.totalCount += 1;
 };
@@ -102,6 +107,11 @@ export const unsubscribeSubscriptionRejected = (
     if (unsubscribedId !== -1) {
         state.value.tabs.unsubscribe.ids.splice(unsubscribedId, 1);
         state.value.tabs.unsubscribe.totalCount = Math.max(0, state.value.tabs.unsubscribe.totalCount - 1);
+    }
+
+    // We select the previous subscription if we had an error
+    if (!state.value.selectedSubscriptionId) {
+        state.value.selectedSubscriptionId = subscriptionId;
     }
 
     state.value.tabs.active.ids.splice(originalIndex, 0, subscriptionId);

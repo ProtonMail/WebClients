@@ -87,5 +87,13 @@ export const selectedSubscriptionSelector = createSelector([selectNewsletterSubs
     return store.byId[store.selectedSubscriptionId];
 });
 
+export const selectedSubscriptionIdSelector = createSelector([selectNewsletterSubscriptions], (store) => {
+    if (!store) {
+        return undefined;
+    }
+
+    return store.selectedSubscriptionId;
+});
+
 export const isSubscriptionActiveSelector = (subscriptionId: string) =>
     createSelector([selectedSubscriptionID], (selectedSub) => selectedSub === subscriptionId);
