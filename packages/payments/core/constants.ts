@@ -149,7 +149,6 @@ export enum ADDON_NAMES {
 export enum PLANS {
     FREE = 'free',
     DRIVE = 'drive2022',
-    DRIVE_1TB = 'drive1tb2025',
     DRIVE_PRO = 'drivepro2022',
     DRIVE_BUSINESS = 'drivebiz2024',
     DRIVE_LITE = 'drivelite2024',
@@ -292,8 +291,7 @@ export const AddonLimit: { [key in ADDON_NAMES]: number } = {
 export const PLAN_NAMES: { [key in PLANS]: string } = {
     [PLANS.FREE]: 'Free',
     [PLANS.VPN2024]: 'VPN Plus',
-    [PLANS.DRIVE]: 'Drive Plus 200 GB',
-    [PLANS.DRIVE_1TB]: 'Drive Plus 1 TB',
+    [PLANS.DRIVE]: 'Drive Plus',
     [PLANS.DRIVE_PRO]: 'Drive Essentials',
     [PLANS.DRIVE_BUSINESS]: 'Drive Professional',
     [PLANS.DRIVE_LITE]: 'Drive Lite',
