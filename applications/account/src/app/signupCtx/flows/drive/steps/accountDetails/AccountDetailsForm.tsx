@@ -40,7 +40,7 @@ const SwitchSignupType = () => {
             onClick={() => handleSwitchType(SignupType.Proton)}
             className="color-norm"
         >
-            {c('Signup').t`get a secure ${MAIL_APP_NAME} address`}
+            {c('Signup').t`get a secure ${MAIL_APP_NAME} address.`}
         </InlineLinkButton>
     );
 
@@ -50,7 +50,7 @@ const SwitchSignupType = () => {
             onClick={() => handleSwitchType(SignupType.External)}
             className="color-norm"
         >
-            {c('Signup').t`use your own email`}
+            {c('Signup').t`use your own email.`}
         </InlineLinkButton>
     );
 
@@ -58,9 +58,9 @@ const SwitchSignupType = () => {
         <p className="mt-4 mb-6 mr-auto">
             {selectedSignupType === SignupType.External
                 ? // translator: "Use your email, or get a secure Proton Mail address."
-                  c('Signup').jt`Use your email, or ${externalButton}.`
+                  c('Signup').jt`Use your email, or ${externalButton}`
                 : // translator: "Get a secure Proton Mail address, or use your own email."
-                  c('Signup').jt`Get a secure ${MAIL_APP_NAME} address, or ${internalButton}.`}
+                  c('Signup').jt`Get a secure ${MAIL_APP_NAME} address, or ${internalButton}`}
         </p>
     );
 };
