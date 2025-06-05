@@ -679,6 +679,9 @@
       "Get more servers": [
         "Több szerver beszerzése"
       ],
+      "Get started": [
+        "Kezdés"
+      ],
       "Get the app": [
         "Töltse le az alkalmazást"
       ],
@@ -696,6 +699,9 @@
       ],
       "Get verification code": [
         "Ellenőrző kód küldése"
+      ],
+      "Go back": [
+        "Vissza"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Nyissa meg a ${ DRIVE_APP_NAME } alkalmazást"
@@ -781,10 +787,10 @@
       "Keep": [
         "Megtartás"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Szerkesztés folytatása"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Szerkesztés folytatása"
       ],
       "Keep logo": [
@@ -909,9 +915,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } beállításainak megnyitása"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Megnyitás ebben: ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Navigáció megnyitása"
@@ -4746,11 +4749,11 @@
       "Forward to": [
         "Továbbítási cím"
       ],
-      "Or": [
-        "Vagy"
-      ],
       "or": [
         "vagy"
+      ],
+      "Or": [
+        "Vagy"
       ],
       "With attachment": [
         "Mellékletet tartalmaz"
@@ -8163,6 +8166,9 @@
       "End-to-end email encryption is enabled for this group.": [
         "A végponttól végpontig tartó e-mail titkosítás engedélyezve van ebben a csoportban."
       ],
+      "End-to-end encrypted": [
+        "Végpontok közt titkosított"
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "A személyazonosság-szolgáltatótól kapott végpont URL-je (pl. https://idp.pelda.com/sso/saml)."
       ],
@@ -10995,10 +11001,10 @@
       "Allow sharing outside the organization": [
         "A szervezeten kívüli megosztás engedélyezése"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Engedélyezett domain"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Engedélyezett domain"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11010,11 +11016,11 @@
       "Amount due": [
         "Esedékes összeg"
       ],
-      "And": [
-        "És"
-      ],
       "AND": [
         "ÉS"
+      ],
+      "And": [
+        "És"
       ],
       "and": [
         "és"
@@ -11442,11 +11448,11 @@
       "IBAN": [
         "IBAN szám"
       ],
-      "If": [
-        "Ha"
-      ],
       "IF": [
         "HA"
+      ],
+      "If": [
+        "Ha"
       ],
       "Import all messages": [
         "Összes üzenet importálása"
@@ -11655,14 +11661,14 @@
       "Optional": [
         "Választható"
       ],
+      "OR": [
+        "VAGY"
+      ],
       "or": [
         "vagy"
       ],
       "Or": [
         "Vagy"
-      ],
-      "OR": [
-        "VAGY"
       ],
       "Organization name": [
         "Szervezet neve"
@@ -12163,9 +12169,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } létrehozva"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } frissítve"
       ],
       "Preference saved": [
         "Beállítások mentve"
@@ -13602,9 +13605,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Biztonságos internetelérés bárhonnan az alapvető hálózati felügyelet segítségével"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Biztonságos felhőtárolás, mely lehetővé teszi, hogy könnyedén és biztonságosan tároljon, szinkronizáljon és osszon meg fájlokat."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "Biztonságos e-mail, fejlett lehetőségekkel a mindennapi kommunikációjához."
       ],
@@ -14358,6 +14358,9 @@
       ],
       "Desktop": [
         "Asztali számítógép"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "A kezdéshez válasszon egy megjelenített nevet. Ezt fogják látni az emberek, ha e-mailt küld nekik, ha meghívja őket egy eseményre vagy megoszt velük egy fájlt."
       ]
     },
     "Option": {
