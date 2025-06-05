@@ -431,6 +431,9 @@
       "Export selection as .vcf": [
         "Exportera val som .vcf"
       ],
+      "Export system log": [
+        "Exportera systemlogg"
+      ],
       "Fit to window": [
         "Passa till fönster"
       ],
@@ -454,6 +457,9 @@
       ],
       "Get link": [
         "Få länk"
+      ],
+      "Get secure storage for ${ simplePriceString }": [
+        "Skaffa säkert lagringsutrymme för ${ simplePriceString }"
       ],
       "Get Started": [
         "Kom igång"
@@ -547,6 +553,9 @@
       ],
       "Keep my subscription": [
         "Behåll min prenumeration"
+      ],
+      "Keep subscription": [
+        "Behåll prenumeration"
       ],
       "Later": [
         "Senare"
@@ -685,9 +694,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Öppna i ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Öppna navigering"
@@ -1006,6 +1012,9 @@
       ],
       "Try another method": [
         "Prova annan metod"
+      ],
+      "Try it now": [
+        "Prova det nu"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Försök att spara igen. Det gick inte att spara på grund av: ${ saveError }"
@@ -4901,6 +4910,9 @@
       "Expired": [
         "Löpt ut"
       ],
+      "Export diagnostic logs for technical support and troubleshooting": [
+        "Exportera diagnostikloggar för teknisk support och felsökning"
+      ],
       "Failed": [
         "Misslyckades"
       ],
@@ -5487,9 +5499,6 @@
       "Restore": [
         "Återställ"
       ],
-      "Restore is in progress. This can take a few seconds.": [
-        "Återställning pågår. Detta kan ta några sekunder."
-      ],
       "Restore Photos": [
         "Återställ foton"
       ],
@@ -5786,6 +5795,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "För att slutföra din betalning, skicka ${ btcAmountBold } till adressen nedan."
       ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "För att fortsätta njuta av ${ boldPlanTitle } gratis fram till ${ boldCancelDate }, avbryt inte."
+      ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "För att ladda ner ${ DOCS_APP_NAME }-filerna, öppna dem i ${ DOCS_APP_NAME } och exportera dem."
       ],
@@ -5990,6 +6002,9 @@
       "What would you like to do?": [
         "Vad vill du göra?"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Vad du förlorar när du avbryter ${ boldPlanTitle }:"
+      ],
       "When working remotely": [
         "När du arbetar på distans"
       ],
@@ -6080,6 +6095,9 @@
       "You can now return to the application to continue": [
         "Du kan nu gå tillbaka till applikationen för att fortsätta"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Du kan fortfarande komma åt all din kontodata. Du kan prenumerera igen när som helst för att fortsätta att njuta av alla våra funktioner."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan slå på aviseringar för att bli uppmärksammad när nya e-postmeddelanden kommer till denna mapp."
       ],
@@ -6124,6 +6142,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }.",
         "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }."
@@ -6151,6 +6172,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Din ${ PASS_SHORT_APP_NAME } Plus-prenumeration kommer att ersättas med ${ PASS_SHORT_APP_NAME } Lifetime. Den kvarvarande balansen för din prenumeration kommer att läggas till i ditt konto.${ PASS_SHORT_APP_NAME } livstidserbjudandet har inget förnyelsepris, det är en engångsbetalning för livstids åtkomst till ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "Ditt ${ planName }-paket är nu en betald prenumeration som förnyas automatiskt var 12:e månad. Ditt nästa faktureringsdatum är ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ditt konto har minst en försenad faktura. Din åtkomst kommer snart att begränsas. ${ payInvoiceLink }"
@@ -6188,6 +6212,9 @@
       "Your files will be encrypted and then saved.": [
         "Dina filer kommer krypteras och sedan sparas."
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Din gratis provperiod för ${ boldPlanTitle } har avbrutits, och ditt konto ${ boldUserEmail } har nedgraderats till ${ boldProtonFree }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Din information hittades den ${ displayedDate }"
       ],
@@ -6211,6 +6238,9 @@
       ],
       "Your online activity is protected": [
         "Din aktivitet online är skyddad"
+      ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Din organisation ${ boldOrganizationName } är inaktiverad och alla dess användarplatser har tagits bort."
       ],
       "Your password was leaked:": [
         "Ditt lösenord läcktes:"
@@ -6239,6 +6269,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Din prenumeration kommer förnyas automatiskt den ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Din provperiod slutar om ${ timeRemaining }."
       ]
     },
     "info": {
@@ -6371,6 +6404,9 @@
       ],
       "Address": [
         "Adress"
+      ],
+      "Alias title": [
+        "Alias-rubrik"
       ],
       "All": [
         "Alla"
@@ -6864,9 +6900,6 @@
       ],
       "Thomas": [
         "Thomas"
-      ],
-      "Title": [
-        "Rubrik"
       ],
       "To: ${ toEmail }": [
         "Till: ${ toEmail }"
@@ -8064,6 +8097,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Avancerad nätverkssäkerhet och åtkomsthantering med dedikerade säkra gateways"
       ],
@@ -8123,9 +8162,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Säker åtkomst till Internet var som helst med väsentlig nätverksövervakning"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Säker molnlagring som låter dig lagra, synkronisera och dela filer enkelt och säkert."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Säker e-post med avancerade funktioner för din dagliga kommunikation."
@@ -8886,10 +8922,10 @@
       "Invite members": [
         "Bjud in medlemmar"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Kanske senare"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Kanske senare"
       ],
       "Select theme": [
@@ -10760,6 +10796,24 @@
         "Videoklipp"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dag",
+        "${ ceilDays } dagar"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } timme",
+        "${ ceilHours } timmar"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minuter"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekund",
+        "${ seconds } sekunder"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } timme",
@@ -11324,6 +11378,9 @@
       "Phone numbers": [
         "Telefonnummer"
       ],
+      "Photo albums are here!": [
+        "Fotoalbum är här!"
+      ],
       "Photos": [
         "Foton"
       ],
@@ -11475,6 +11532,9 @@
       "Stop transfers?": [
         "Stoppa överföringar?"
       ],
+      "Subscription canceled": [
+        "Prenumeration avslutad"
+      ],
       "Summary": [
         "Sammanfattning"
       ],
@@ -11579,6 +11639,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis provperiod för ${ planName } slutar den ${ textDate }"
+      ],
+      "Your ${ planName } subscription started": [
+        "Din ${ planName }-prenumeration startade"
       ],
       "Your 3 GB bonus": [
         "Dina 3 GB bonus"

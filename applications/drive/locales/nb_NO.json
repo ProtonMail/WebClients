@@ -548,6 +548,9 @@
       "Keep my subscription": [
         "Behold mitt abonnement"
       ],
+      "Keep subscription": [
+        "Behold abonnementet"
+      ],
       "Later": [
         "Senere"
       ],
@@ -685,9 +688,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åpne innstillingene for ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Åpne i ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Åpne navigasjonsmeny"
@@ -4994,6 +4994,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
       ],
+      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Hvis du avbryter, mister du tilgang til ${ boldPlanTitle } med én gang, og du blir nedgradert til ${ boldProtonFree }-planen. Dersom forbruket overskrider grensene for gratisplanen, kan du oppleve begrenset tilgang til produktfunksjoner og data."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du avbryter, vil ditt ${ planTitle }-abonnement ikke bli fornyet når det utløper den ${ expiryDate }."
       ],
@@ -5092,10 +5095,10 @@
         "JCB-logo"
       ],
       "Jul": [
-        "Juli"
+        "Jul"
       ],
       "Jun": [
-        "Juni"
+        "Jun"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bare bekreft valget ditt og vi vil gjøre resten."
@@ -5161,7 +5164,7 @@
         "Gjør kontoen din sikrere"
       ],
       "Mar": [
-        "Mars"
+        "Mar"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -5490,9 +5493,6 @@
       "Restore": [
         "Gjenopprett"
       ],
-      "Restore is in progress. This can take a few seconds.": [
-        "Gjenoppretting pågår. Dette kan ta noen sekunder."
-      ],
       "Restore Photos": [
         "Gjenopprett bilder"
       ],
@@ -5574,11 +5574,20 @@
       "Shared by ": [
         "Delt av "
       ],
+      "Shared by ${ sharedBy }": [
+        "Delt av ${ sharedBy }"
+      ],
+      "Shared by you": [
+        "Delt av deg"
+      ],
       "Shared link not found": [
         "Delt kobling ikke funnet"
       ],
       "Shared with me": [
         "Delt med meg"
+      ],
+      "Shared with you": [
+        "Delt med deg"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Signaturen kan ikke valideres på grunn av nettverksfeil, prøv igjen senere."
@@ -5779,6 +5788,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "For å fullføre betalingen, send ${ btcAmountBold } til adressen nedenfor."
+      ],
+      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
+        "For å fortsette å nyte ${ boldPlanTitle } gratis til ${ boldCancelDate }, ikke avbryt."
       ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "For å laste ned ${ DOCS_APP_NAME }-filene, åpne de i ${ DOCS_APP_NAME } og eksporter dem."
@@ -5984,6 +5996,9 @@
       "What would you like to do?": [
         "Hva ønsker du å gjøre?"
       ],
+      "What you give up when you cancel ${ boldPlanTitle }:": [
+        "Dette gir du avkall på når du avbestiller ${ boldPlanTitle }:"
+      ],
       "When working remotely": [
         "Når du jobber eksternt"
       ],
@@ -6074,6 +6089,9 @@
       "You can now return to the application to continue": [
         "Du kan nå gå tilbake til programmet for å fortsette"
       ],
+      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
+        "Du kan fortsatt få tilgang til alle dataene på kontoen din. Du kan abonnere på nytt når som helst for å fortsette å nyte alle funksjonene våre."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere varsler for å få varsler når det kommer nye e-postmeldinger i denne mappen."
       ],
@@ -6118,6 +6136,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du vil snart bli omdirigert til PayPal for å bekrefte betalingen."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Du blir ikke belastet hvis du avbryter før ${ trialEndsOnFormatted }."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }",
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }."
@@ -6145,6 +6166,9 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ditt ${ PASS_SHORT_APP_NAME } Plus-abonnement vil bli erstattet med livsvarig avtale for ${ PASS_SHORT_APP_NAME }. Den gjenværende saldoen på abonnementet ditt vil bli lagt til kontoen din. ${ PASS_SHORT_APP_NAME } livstidsavtale har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
+        "${ planName }-planen din er nå et betalt abonnement som automatisk fornyes hver 12. måned. Neste faktureringsdato er ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Kontoen din har minst en forfalt faktura. Din tilgang vil snart bli begrenset. ${ payInvoiceLink }"
@@ -6182,6 +6206,9 @@
       "Your files will be encrypted and then saved.": [
         "Filene dine vil bli kryptert og deretter lagret."
       ],
+      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
+        "Din gratis prøveversjon av ${ boldPlanTitle } er avbrutt, og kontoen din ${ boldUserEmail } er nedgradert til ${ boldProtonFree }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Informasjonen din ble funnet den ${ displayedDate }."
       ],
@@ -6205,6 +6232,9 @@
       ],
       "Your online activity is protected": [
         "Nettaktiviteten din er beskyttet"
+      ],
+      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
+        "Din organisasjon ${ boldOrganizationName } er deaktivert og alle brukerlisensene har blitt fjernet."
       ],
       "Your password was leaked:": [
         "Passordet ditt ble lekket:"
@@ -6233,6 +6263,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Abonnementet ditt fornyes automatisk ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Prøveversjonen avsluttes om ${ timeRemaining }."
       ]
     },
     "info": {
@@ -6320,6 +6353,9 @@
     "Label": {
       "# of downloads": [
         "# nedlastinger"
+      ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } av ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-brukernavn"
@@ -6852,9 +6888,6 @@
       ],
       "Thomas": [
         "Thomas"
-      ],
-      "Title": [
-        "Tittel"
       ],
       "To: ${ toEmail }": [
         "Til: ${ toEmail }"
@@ -8112,9 +8145,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Få sikker tilgang til internett fra hvor som helst med viktig nettverksovervåking"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Sikker skylagring som lar deg lagre, synkronisere og dele filer lett og trygt."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-post med avanserte funksjoner for daglig kommunikasjon."
       ],
@@ -8872,10 +8902,10 @@
       "Invite members": [
         "Inviter medlemmer"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Kanskje senere"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Kanskje senere"
       ],
       "Select theme": [
@@ -10740,6 +10770,24 @@
         "Videoer"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dag",
+        "${ ceilDays } dager"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } time",
+        "${ ceilHours } timer"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minutt",
+        "${ ceilMinutes } minutter"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekund",
+        "${ seconds } sekunder"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } t",
@@ -11455,6 +11503,9 @@
       "Stop transfers?": [
         "Stanse overføringer?"
       ],
+      "Subscription canceled": [
+        "Abonnement kansellert"
+      ],
       "Summary": [
         "Sammendrag"
       ],
@@ -11559,6 +11610,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveversjon av ${ planName } slutter den ${ textDate }."
+      ],
+      "Your ${ planName } subscription started": [
+        "${ planName }-abonnementet startet"
       ],
       "Your 3 GB bonus": [
         "Dine bonus 3 GB"
