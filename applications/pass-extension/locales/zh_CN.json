@@ -56,6 +56,9 @@
       "Apply lifetime coupon code": [
         "使用终身优惠券代码"
       ],
+      "Authenticate": [
+        "身份验证"
+      ],
       "Back": [
         "上一步"
       ],
@@ -1585,6 +1588,9 @@
       "Enter the address you want to email.": [
         "输入您要发送电子邮件的地址。"
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "请输入 ${ digit } 位数字的验证码。"
+      ],
       "Enter your extra password": [
         "输入您的额外密码"
       ],
@@ -2490,6 +2496,9 @@
       "API Credential": [
         "API 凭证"
       ],
+      "API Key": [
+        "API 密钥"
+      ],
       "Application logs": [
         "应用程序日志"
       ],
@@ -2628,6 +2637,9 @@
       "Database": [
         "数据库"
       ],
+      "Database Type": [
+        "数据库类型"
+      ],
       "Date": [
         "日期"
       ],
@@ -2748,6 +2760,12 @@
       "Holder Name": [
         "持有人姓名"
       ],
+      "Host": [
+        "主机"
+      ],
+      "Hostname": [
+        "主机名"
+      ],
       "https://example.com": [
         "https://example.com"
       ],
@@ -2796,6 +2814,9 @@
       "Invitations": [
         "邀请"
       ],
+      "IP Address": [
+        "IP 地址"
+      ],
       "Issuing Authority": [
         "签发机关"
       ],
@@ -2837,6 +2858,9 @@
       ],
       "License": [
         "许可协议"
+      ],
+      "License Key": [
+        "许可证密钥"
       ],
       "License number": [
         "许可编号"
@@ -2955,8 +2979,14 @@
       "Oldest to newest": [
         "从旧到新"
       ],
+      "Operating System": [
+        "操作系统"
+      ],
       "Organization": [
         "机构"
+      ],
+      "Owner": [
+        "所有者"
       ],
       "Passkey": [
         "通行密钥"
@@ -2987,6 +3017,9 @@
       ],
       "Pause list": [
         "暂停列表"
+      ],
+      "Permissions": [
+        "权限"
       ],
       "Personal": [
         "私人"
@@ -3029,6 +3062,9 @@
       ],
       "Private key": [
         "私钥"
+      ],
+      "Product": [
+        "产品"
       ],
       "Program Name": [
         "程序名称"
@@ -3080,6 +3116,9 @@
       ],
       "Second password": [
         "副密码"
+      ],
+      "Secret": [
+        "密钥"
       ],
       "Secure links": [
         "安全链接"
@@ -3560,6 +3599,9 @@
       ],
       "my-domain.com": [
         "my-domain.com"
+      ],
+      "Name displayed in emails": [
+        "显示在邮件中的名称"
       ],
       "Note from SimpleLogin": [
         "来自 SimpleLogin 的笔记"
