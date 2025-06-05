@@ -55,6 +55,7 @@ interface Props {
     onClose: MouseEventHandler<HTMLButtonElement>;
     handleStartDragging: React.MouseEventHandler<HTMLElement>;
     minimizeButtonRef: RefObject<HTMLButtonElement>;
+    composerID: string;
 }
 
 const ComposerTitleBar = ({
@@ -66,6 +67,7 @@ const ComposerTitleBar = ({
     handleStartDragging,
     onClose,
     minimizeButtonRef,
+    composerID,
 }: Props) => {
     const isSafari = checkIsSafari();
 
@@ -121,15 +123,25 @@ const ComposerTitleBar = ({
             data-testid="composer:header"
             onDoubleClick={handleDoubleClick}
         >
-            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+            {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/prefer-tag-over-role */}
             <span
                 className={clsx([
                     'flex-1 flex flex-row flex-nowrap items-center py-3 pr-4 ml-2',
                     (!maximized || minimized) && 'cursor-move',
                 ])}
                 onMouseDown={handleStartDragging}
+                role="heading"
+                aria-level={1}
+                id={`composer-title-${composerID}`}
             >
-                <Icon name="dots" className="my-auto mr-2 shrink-0" />
+                <Icon
+                    name="dots"
+                    className="my-auto mr-2 shrink-0"
+                    alt={
+                        // translator: this string is for blind user: it will be vocalized in blind navigation context: "Composer: " <title of the message>
+                        c('Info').t`Composer:`
+                    }
+                />
                 <span className="text-ellipsis user-select-none">{title}</span>
             </span>
             <TitleBarButton
