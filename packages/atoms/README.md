@@ -19,12 +19,13 @@ Ideally functional, controlled (only props in events out) & stateful only to the
 
 ## Visual Testing
 
-The current solution relies on `Playwright` to run visual tests against the `Storybook` `--doc` stories, which captures all the stories defined for a given component inside one single page.
+The current solution relies on `Playwright` to run visual tests against the `Storybook` stories, which captures all the stories defined for a given component inside one single page.
 
 ### Locally
 
 **Prerequisite**: Docker installed and running.
 
+- `yarn storybook:build`
 - `yarn docker:build`
 - `yarn docker:run`
 - `yarn storybook:test:visual` (From inside the container)
@@ -40,3 +41,7 @@ NOTE: to stop the container just run `docker rm storybook-atoms`
 ### CI
 
 It runs as `storybook:atoms:test:visual` job defined [here](https://gitlab.protontech.ch/web/clients/-/blob/main/ci/jobs/storybook.gitlab-ci.yml?ref_type=heads).
+
+## Gotchas
+
+Whenever you make some changes to the atoms, in order to visual test them, you will have to update the Storybook build by running `yarn storybook:build`. The `storybook-static` folder will be automatically updated inside the Docker container.
