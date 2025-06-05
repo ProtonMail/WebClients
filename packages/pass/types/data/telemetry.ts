@@ -68,12 +68,13 @@ export enum TelemetryFieldType {
 }
 
 /** Telemetry payloads support only ints and strings */
-type TelemetryPayload = Record<string, number | string>;
+type TelemetryDimensions = Record<string, string>;
+type TelemetryValues = Record<string, number>;
 
 export type BaseTelemetryEvent<
     T extends TelemetryEventName,
-    V extends TelemetryPayload = {},
-    D extends TelemetryPayload = {},
+    V extends TelemetryValues = {},
+    D extends TelemetryDimensions = {},
 > = {
     MeasurementGroup: `pass.${TelemetryPlatform}.user_actions`;
     Event: T;
@@ -83,16 +84,17 @@ export type BaseTelemetryEvent<
 
 export type ExtensionCopiedFromLoginDimensions = {
     extensionField: TelemetryFieldType;
-    hasLoginItemForCurrentWebsite: number;
-    extensionCopiedFromCurrentPage: number;
-    autofillLoginFormDetected: number;
-    loginAutofillEnabled: number;
-    uniqueMatch: number;
-    autofillPaused: number;
+    hasLoginItemForCurrentWebsite: string;
+    extensionCopiedFromCurrentPage: string;
+    autofillLoginFormDetected: string;
+    loginAutofillEnabled: string;
+    uniqueMatch: string;
+    autofillPaused: string;
     modelVersion: string;
 };
 
 type ImportValues = { item_count: number; vaults: number };
+
 type ImportDimensions = { source: ImportProvider };
 type ItemDimensions = { type: TelemetryItemType };
 type ExtensionUsedDimensions = { modelVersion: string };
@@ -101,7 +103,7 @@ type NotificationDimensions = { notificationKey: InAppNotification['Notification
 type NotificationChangeDimensions = NotificationDimensions & { notificationStatus: TelemetryInAppNotificationStatus };
 type AutofillDimensions = { location: 'source' | 'app' };
 type AutosaveDismissedDimensions = { dismissReason: 'not_now' | 'close' | 'disable'; modelVersion: string };
-type ErrorResumingSessionDimensions = { extensionBrowser: string; extensionReloadRequired: number };
+type ErrorResumingSessionDimensions = { extensionBrowser: string; extensionReloadRequired: string };
 
 type TelemetryEvents =
     | BaseTelemetryEvent<TelemetryEventName.AutofillDisplay, {}, AutofillDimensions>
