@@ -4,7 +4,7 @@ import type { IconName } from 'packages/icons';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import { FiltersUpsellModal, Icon, useModalStateObject } from '@proton/components';
 import { useFilters } from '@proton/mail/filters/hooks';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
@@ -95,16 +95,29 @@ const ActiveSubscriptionButtons = ({ subscription }: PropsWithNewsletterSubscrip
 
     return (
         <>
-            {unsubscribeMethod && (
-                <Button
-                    onClick={(e) => {
-                        e.stopPropagation();
-                        unsubscribeModal.openModal(true);
-                    }}
-                    shape="outline"
-                    size="tiny"
-                >{c('Action').t`Unsubscribe`}</Button>
+            <Button
+                disabled={!unsubscribeMethod}
+                onClick={(e) => {
+                    e.stopPropagation();
+                    unsubscribeModal.openModal(true);
+                }}
+                shape="outline"
+                size="tiny"
+            >{c('Action').t`Unsubscribe`}</Button>
+
+            {!unsubscribeMethod && (
+                <Tooltip
+                    title={
+                        unsubscribeMethod
+                            ? null
+                            : c('Info')
+                                  .t`We couldn't find an unsubscribe option for this newsletter. You may be able to unsubscribe using a link in their email or from their website.`
+                    }
+                >
+                    <Icon name="info-circle" className="color-weak" />
+                </Tooltip>
             )}
+
             <Button onClick={handleMoveToFolderClick} shape="outline" size="tiny">{c('Action')
                 .t`Move to folder`}</Button>
 
@@ -141,7 +154,7 @@ export const SubscriptionCardButtons = ({
     handleFilterClick,
 }: PropsWithNewsletterSubscription & { handleFilterClick: (type: ModalFilterType) => void }) => {
     return (
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2">
             {subscription.UnsubscribedTime ? (
                 <InactiveSubscriptionButtons handleFilterClick={handleFilterClick} />
             ) : (
