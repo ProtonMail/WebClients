@@ -34,6 +34,7 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload, onEdit 
         invoice.State === INVOICE_STATE.UNPAID && {
             text: c('Action').t`Pay`,
             'data-testid': 'payInvoice',
+            key: 'payInvoice',
             async onClick() {
                 if (redirectToAccountApp()) {
                     return;
@@ -56,6 +57,7 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload, onEdit 
         {
             text: c('Action').t`View`,
             'data-testid': 'viewInvoice',
+            key: 'viewInvoice',
             onClick: async () => {
                 const handler = async () => {
                     onPreview?.(invoice);
@@ -67,6 +69,7 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload, onEdit 
         {
             text: c('Action').t`Download`,
             'data-testid': 'downloadInvoice',
+            key: 'downloadInvoice',
             onClick: async () => {
                 const handler = async () => {
                     onDownload(invoice);
@@ -80,6 +83,7 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload, onEdit 
             isRegularInvoice(invoice) && {
                 text: c('Action').t`Edit billing address`,
                 'data-testid': 'editBillingAddress',
+                key: 'editBillingAddress',
                 onClick: () => withEditLoading(onEdit(invoice)),
                 loading: editLoading,
             },
