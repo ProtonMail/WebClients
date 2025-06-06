@@ -195,13 +195,18 @@ export const useElements: UseElements = ({
         const isNavigatingToNewsletterView =
             stateParams.newsletterSubscriptionID !== undefined && labelID !== undefined;
 
+        // Define the core reset conditions
+        const hasSearchKeywordChange = search.keyword !== stateParams.search.keyword;
+        const hasESEnabledChange = esEnabled !== stateParams.esEnabled && isSearch(search);
+        const hasPageJump = !pageIsConsecutive;
+        const hasSortChange = !isDeepEqual(sort, stateParams.sort);
+
+        // Reset logic:
+        // - Always reset for search keyword changes (even in newsletter view)
+        // - For other changes, only reset if not in newsletter view
         const shouldResetElementsState =
-            !isNavigatingToNewsletterView &&
-            (search.keyword !== stateParams.search.keyword || // Reset the cache since we do not support client search (filtering)
-                (esEnabled !== stateParams.esEnabled && isSearch(search)) ||
-                !pageIsConsecutive ||
-                // Reset the cache when sort changes to ensure correct ordering
-                !isDeepEqual(sort, stateParams.sort));
+            hasSearchKeywordChange ||
+            (!isNavigatingToNewsletterView && (hasESEnabledChange || hasPageJump || hasSortChange));
 
         if (shouldResetElementsState) {
             dispatch(

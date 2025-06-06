@@ -99,6 +99,7 @@ export const elements = createSelector(
         // Getting all params from the cache and not from scoped params
         // To prevent any de-synchronization between cache and the output of the memo
         const { labelID, sort, filter, conversationMode, search } = params;
+
         let finalSort = { ...sort };
         // The default sorting needs to be overridden when in inbox or snooze to display snoozed emails on top
         const isInSnoozeOrInbox = labelID === MAILBOX_LABEL_IDS.INBOX || labelID === MAILBOX_LABEL_IDS.SNOOZED;

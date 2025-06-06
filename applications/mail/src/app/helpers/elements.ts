@@ -381,7 +381,21 @@ export const getElementContextIdentifier = (contextFilter: {
     keyword?: string;
     newsletterSubscriptionID?: string;
 }) => {
-    return JSON.stringify(contextFilter);
+    // For search queries, exclude newsletterSubscriptionID from the context to avoid
+    // creating separate contexts for the same search across different newsletter subscriptions
+    const isSearchQuery =
+        !!contextFilter.keyword ||
+        !!contextFilter.from ||
+        !!contextFilter.to ||
+        !!contextFilter.address ||
+        !!contextFilter.begin ||
+        !!contextFilter.end;
+
+    const contextForIdentifier = isSearchQuery
+        ? { ...contextFilter, newsletterSubscriptionID: undefined }
+        : contextFilter;
+
+    return JSON.stringify(contextForIdentifier);
 };
 
 export const isElementOutsideFolders = (element: Element, labels: Label[]): boolean => {
