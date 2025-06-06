@@ -1,6 +1,6 @@
 import type { Item, MaybeNull } from '@proton/pass/types';
 import { parseUrl } from '@proton/pass/utils/url/parser';
-import { resolveDomain } from '@proton/pass/utils/url/utils';
+import { resolveSubdomain } from '@proton/pass/utils/url/utils';
 
 export enum ItemUrlMatch {
     TOP_MATCH = 1,
@@ -30,7 +30,7 @@ export const getItemPriorityForUrl =
             /** In strict mode :
              * - If `match` is a top-level domain: only matches URLs without a subdomain
              * - If `match` is a sub-domain: only matches on exact URL match */
-            const itemDomain = resolveDomain(parsedUrl);
+            const itemDomain = resolveSubdomain(parsedUrl);
             if (options.strict && itemDomain !== match) return priority;
 
             /* Check for strict domain match - this leverages

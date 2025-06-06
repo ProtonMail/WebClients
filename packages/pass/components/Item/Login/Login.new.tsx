@@ -37,7 +37,7 @@ import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { sanitizeURL } from '@proton/pass/utils/url/sanitize';
-import { intoDomainWithPort, resolveDomain } from '@proton/pass/utils/url/utils';
+import { intoDomainWithPort, resolveSubdomain } from '@proton/pass/utils/url/utils';
 
 const FORM_ID = 'new-login';
 
@@ -53,7 +53,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
 
     const initialValues = useInitialValues<LoginItemFormValues>((options) => {
         const clone = options?.clone.type === 'login' ? options.clone : null;
-        const domain = currentUrl ? resolveDomain(currentUrl) : '';
+        const domain = currentUrl ? resolveSubdomain(currentUrl) : '';
         const domainWithPort = currentUrl ? (intoDomainWithPort({ ...currentUrl, domain }) ?? '') : '';
         const { url, valid } = sanitizeURL(domainWithPort);
 
