@@ -92,7 +92,7 @@ export const NoteNew: FC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCan
                                 placeholder={c('Label').t`Note`}
                                 maxLength={MAX_ITEM_NOTE_LENGTH}
                                 rows={25}
-                                minRows={2}
+                                minRows={10}
                             />
                         </FieldsetCluster>
                         <ExtraFieldGroup
