@@ -63,7 +63,7 @@ export const ChatMessage = ({ message, onMessageChange, onMessageSend }: ChatMes
                     ref={textareaRef}
                     value={message}
                     onChange={(e) => onMessageChange(e.target.value)}
-                    placeholder={c('Meet').t`Type a message...`}
+                    placeholder={c('l10n_nightly Placeholder').t`Type a message...`}
                     unstyled={true}
                     className={clsx('border-none resize-none relative top-custom px-0', 'hide-scrollbar')}
                     style={{
@@ -88,8 +88,9 @@ export const ChatMessage = ({ message, onMessageChange, onMessageSend }: ChatMes
                         '--w-custom': '2.25rem',
                         '--h-custom': '2.25rem',
                     }}
+                    aria-label={c('l10n_nightly Alt').t`Send message`}
                 >
-                    <IcArrowUp color="norm" size={5} />
+                    <IcArrowUp size={5} className="color-invert" />
                 </Button>
             </div>
         </div>

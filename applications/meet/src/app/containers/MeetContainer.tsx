@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import type { LocalVideoTrack } from 'livekit-client';
 import { VideoQuality } from 'livekit-client';
@@ -11,10 +11,12 @@ import { useAudioToggle } from '../hooks/useAudioToggle';
 import { useVideoToggle } from '../hooks/useVideoToggle';
 import type { MeetChatMessage, ParticipantEventRecord } from '../types';
 import { MeetingSideBars, type ParticipantSettings, PopUpControls } from '../types';
+import { getMeetingLink } from '../utils/getMeetingLink';
 
 const shouldAllowExperimentalFaceCrop = process.env.EXPERIMENTAL_FACE_CROP === 'true';
 
 export const MeetContainer = ({
+    setParticipantSettings,
     participantSettings: {
         audioDeviceId,
         videoDeviceId,
@@ -22,12 +24,12 @@ export const MeetContainer = ({
         roomName,
         isAudioEnabled,
         isVideoEnabled,
-        meetingLink,
     },
     setAudioDeviceId,
     setVideoDeviceId,
     handleLeave,
 }: {
+    setParticipantSettings: React.Dispatch<React.SetStateAction<ParticipantSettings | null>>;
     participantSettings: ParticipantSettings;
     setAudioDeviceId: (deviceId: string) => void;
     setVideoDeviceId: (deviceId: string) => void;
@@ -41,6 +43,8 @@ export const MeetContainer = ({
 
     const [chatMessages, setChatMessages] = useState<MeetChatMessage[]>([]);
     const [participantEvents, setParticipantEvents] = useState<ParticipantEventRecord[]>([]);
+
+    const meetingLink = useMemo(() => getMeetingLink(roomName), [roomName]);
 
     const [sideBarState, setSideBarState] = useState({
         [MeetingSideBars.Participants]: false,
@@ -150,6 +154,11 @@ export const MeetContainer = ({
                     setPageSize,
                     handleLeave,
                     isVideoEnabled,
+                    setIsVideoEnabled: (isEnabled) =>
+                        setParticipantSettings(
+                            (prevParticipantSettings) =>
+                                ({ ...prevParticipantSettings, isVideoEnabled: isEnabled }) as ParticipantSettings
+                        ),
                 }}
             >
                 <MeetingBody isFaceTrackingEnabled={isFaceTrackingEnabled} faceTrack={faceTrack} />

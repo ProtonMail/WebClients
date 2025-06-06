@@ -1,5 +1,7 @@
 import { useMemo } from 'react';
 
+import { c } from 'ttag';
+
 import type { IconSize } from '@proton/icons';
 import { IcMeetCamera, IcMeetCameraOff, IcMeetMicrophoneOff } from '@proton/icons';
 
@@ -7,7 +9,7 @@ import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { useMediaPermissionsStatus } from '../../hooks/useMediaPermissionStatus';
 import { DeviceSelect } from '../DeviceSelect/DeviceSelect';
 import { MicrophoneWithVolume } from '../MicrophoneWithVolume';
-import { VideoPreview } from '../VideoPreview';
+import { VideoPreview } from '../VideoPreview/VideoPreview';
 
 import './DeviceSettings.scss';
 
@@ -35,7 +37,7 @@ const devicesToOptions = (devices: MediaDeviceInfo[]) => {
 const placeholderOptions = [
     {
         value: 'no-permission',
-        label: 'Permissions not given.',
+        label: c('l10n_nightly Info').t`Permissions not given.`,
     },
 ];
 
@@ -64,7 +66,7 @@ export const DeviceSettings = ({
     return (
         <div className="flex flex-nowrap flex-column w-custom gap-2 mr-auto" style={{ '--w-custom': '41.6875rem' }}>
             <div
-                className="device-settings w-custom h-custom relative rounded-xl overflow-hidden"
+                className="device-settings w-custom h-custom relative overflow-hidden"
                 style={{ '--w-custom': '41.6875rem', '--h-custom': '23.25rem' }}
             >
                 {displayName && (
@@ -88,17 +90,15 @@ export const DeviceSettings = ({
                         onClick={noMicrophonePermission ? undefined : onMicrophoneToggle}
                         IconComponent={
                             isMicrophoneEnabled
-                                ? ({ size, viewBox }) => (
+                                ? ({ size }) => (
                                       <MicrophoneWithVolume
                                           isMicrophoneEnabled={isMicrophoneEnabled}
                                           size={size as IconSize}
-                                          viewBox={viewBox as string}
                                       />
                                   )
                                 : IcMeetMicrophoneOff
                         }
-                        iconViewPort="0 0 19 22"
-                        variant={isMicrophoneEnabled ? 'default' : 'danger'}
+                        variant={isMicrophoneEnabled ? 'lighter-default' : 'danger'}
                         indicatorContent={noMicrophonePermission ? '!' : undefined}
                         indicatorStatus={noMicrophonePermission ? 'warning' : 'default'}
                     />
@@ -106,8 +106,7 @@ export const DeviceSettings = ({
                     <CircleButton
                         onClick={noCameraPermission ? undefined : onCameraToggle}
                         IconComponent={isCameraEnabled ? IcMeetCamera : IcMeetCameraOff}
-                        iconViewPort="0 0 24 24"
-                        variant={isCameraEnabled ? 'default' : 'danger'}
+                        variant={isCameraEnabled ? 'lighter-default' : 'danger'}
                         indicatorContent={noCameraPermission ? '!' : undefined}
                         indicatorStatus={noCameraPermission ? 'warning' : 'default'}
                     />
@@ -121,7 +120,7 @@ export const DeviceSettings = ({
                     }
                     options={noMicrophonePermission ? placeholderOptions : microphonesOptions}
                     icon="meet-microphone"
-                    title="Audio"
+                    title={c('l10n_nightly Label').t`Audio`}
                     disabled={noMicrophonePermission}
                 />
                 <DeviceSelect
@@ -129,7 +128,7 @@ export const DeviceSettings = ({
                     onValue={(value) => onCameraChange(cameras.find((camera) => camera.deviceId === value)!)}
                     options={noCameraPermission ? placeholderOptions : camerasOptions}
                     icon="meet-camera"
-                    title="Video"
+                    title={c('l10n_nightly Label').t`Video`}
                     disabled={noCameraPermission}
                 />
             </div>

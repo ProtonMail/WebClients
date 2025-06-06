@@ -8,9 +8,10 @@ import './ParticipantPlaceholder.scss';
 
 interface ParticipantPlaceholderProps {
     participant: Participant;
+    smallView?: boolean;
 }
 
-export const ParticipantPlaceholder = ({ participant }: ParticipantPlaceholderProps) => {
+export const ParticipantPlaceholder = ({ participant, smallView = false }: ParticipantPlaceholderProps) => {
     const nameParts = participant.name?.split(' ');
 
     const { backgroundColor, profileColor } = getParticipantDisplayColors(participant);
@@ -25,12 +26,14 @@ export const ParticipantPlaceholder = ({ participant }: ParticipantPlaceholderPr
         >
             <div
                 className={clsx(
-                    'text-center align-middle rounded-50 flex items-center justify-center color-invert text-semibold text-3xl w-custom h-custom',
-                    profileColor
+                    'text-center align-middle rounded-50 flex items-center justify-center color-invert text-semibold w-custom h-custom',
+                    profileColor,
+                    smallView ? 'text-lg' : 'text-3xl',
+                    smallView ? 'radius-small' : 'radius-normal'
                 )}
                 style={{
-                    '--w-custom': '5rem',
-                    '--h-custom': '5rem',
+                    '--w-custom': smallView ? '4rem' : '5rem',
+                    '--h-custom': smallView ? '4rem' : '5rem',
                 }}
             >
                 {nameParts?.[0]?.charAt(0)}

@@ -16,10 +16,10 @@ export const MeetingDetails = () => {
 
     return (
         <SideBar>
-            <h3 className="h4 mb-8">{c('Meet').t`Meeting details`}</h3>
+            <h3 className="h4 mb-8 text-semibold">{c('l10n_nightly Title').t`Meeting details`}</h3>
             <h2 className="h3 mb-4">{roomName}</h2>
             <div className="flex flex-column">
-                <div className="bold mb-2">{c('Meet').t`Joining info`}</div>
+                <div className="bold mb-2">{c('l10n_nightly Title').t`Joining info`}</div>
                 <div className="color-weak text-sm items-center text-break-all">
                     {meetingLink}
                     <Button
@@ -27,6 +27,7 @@ export const MeetingDetails = () => {
                         size="small"
                         shape="ghost"
                         onClick={() => navigator.clipboard.writeText(meetingLink)}
+                        aria-label={c('l10n_nightly Alt').t`Copy meeting link`}
                     >
                         <IcMeetCopy size={3} />
                     </Button>

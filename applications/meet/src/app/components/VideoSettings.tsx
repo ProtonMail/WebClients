@@ -39,10 +39,10 @@ export function VideoSettings() {
                     value={videoDeviceId}
                     onValue={handleCameraChange}
                     icon="meet-camera"
-                    title="Video"
+                    title={c('l10n_nightly Info').t`Video`}
                     options={cameras.map((camera) => ({
                         value: camera.deviceId,
-                        label: camera.label || c('Meet').t`Camera`,
+                        label: camera.label || c('l10n_nightly Info').t`Camera`,
                     }))}
                 />
             </div>

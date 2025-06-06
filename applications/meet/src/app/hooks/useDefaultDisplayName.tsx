@@ -12,3 +12,17 @@ export function useDefaultDisplayName() {
 
     return displayName || process.env.DEFAULT_NAME || '';
 }
+
+const useDefaultDisplayNameAuthenticated = () => {
+    const [user] = useUser();
+    return user?.Name || process.env.DEFAULT_NAME || '';
+};
+
+const useDefaultDisplayNameUnauthenticated = () => {
+    return process.env.DEFAULT_NAME || '';
+};
+
+export const defaultDisplayNameHooks = {
+    authenticated: useDefaultDisplayNameAuthenticated,
+    unauthenticated: useDefaultDisplayNameUnauthenticated,
+};

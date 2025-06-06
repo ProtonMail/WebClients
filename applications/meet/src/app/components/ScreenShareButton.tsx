@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { IcMeetScreenShare } from '@proton/icons';
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
@@ -20,7 +22,7 @@ export function ScreenShareButton() {
             IconComponent={IcMeetScreenShare}
             onClick={handleClick}
             variant={isSharing ? 'active' : 'default'}
-            iconViewPort="0 0 24 24"
+            ariaLabel={c('l10n_nightly Alt').t`Toggle screen share`}
         />
     );
 }

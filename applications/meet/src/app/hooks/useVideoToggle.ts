@@ -1,11 +1,10 @@
 import { useCallback, useRef } from 'react';
 
 import { useLocalParticipant } from '@livekit/components-react';
-import type { LocalTrack, TrackPublishOptions, VideoCaptureOptions } from 'livekit-client';
+import type { LocalTrack } from 'livekit-client';
 import { Track } from 'livekit-client';
 
-import isEqual from '@proton/shared/lib/helpers/isDeepEqual';
-
+import { useMeetContext } from '../contexts/MeetContext';
 import { useParticipantResolution } from './useParticipantResolution';
 
 const increasedVideoQuality = process.env.LIVEKIT_INCREASED_VIDEO_QUALITY === 'true';
@@ -14,10 +13,9 @@ export const useVideoToggle = () => {
     const { localParticipant } = useLocalParticipant();
     const participantResolution = useParticipantResolution();
 
-    const toggleQueue = useRef(Promise.resolve());
+    const { setIsVideoEnabled } = useMeetContext();
 
-    const prevArguments =
-        useRef<[enabled: boolean, options?: VideoCaptureOptions, publishOptions?: TrackPublishOptions]>(null);
+    const toggleQueue = useRef(Promise.resolve());
 
     const toggleVideo = useCallback(
         async ({
@@ -47,16 +45,6 @@ export const useVideoToggle = () => {
                     (item) => item.kind === Track.Kind.Video && item.source !== Track.Source.ScreenShare
                 )?.track;
 
-                const setCameraEnabledArguments = [
-                    !!video,
-                    typeof video !== 'boolean' ? video : undefined,
-                    isEnabled ? videoPublishInfo : undefined,
-                ];
-
-                if (isEqual(setCameraEnabledArguments, prevArguments.current)) {
-                    return;
-                }
-
                 if (forceUpdate && isEnabled) {
                     await localParticipant.unpublishTrack(videoTrack as LocalTrack);
 
@@ -77,8 +65,7 @@ export const useVideoToggle = () => {
                     }
                 }
 
-                // @ts-ignore
-                prevArguments.current = setCameraEnabledArguments;
+                setIsVideoEnabled(isEnabled);
             });
             return toggleQueue.current;
         },

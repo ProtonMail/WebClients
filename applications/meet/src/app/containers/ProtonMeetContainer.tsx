@@ -90,6 +90,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                             setParticipantSettings({ ...participantSettings, videoDeviceId: deviceId })
                         }
                         handleLeave={handleLeave}
+                        setParticipantSettings={setParticipantSettings}
                     />
                 </RoomContext.Provider>
             ) : (

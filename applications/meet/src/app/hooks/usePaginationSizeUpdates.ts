@@ -6,22 +6,34 @@ import { useCurrentScreenShare } from './useCurrentScreenShare';
 import { useSortedParticipants } from './useSortedParticipants';
 
 export const usePaginationSizeUpdates = () => {
-    const { setPage, pageSize, setPageSize } = useMeetContext();
+    const { page, setPage, pageSize, setPageSize, sideBarState } = useMeetContext();
     const { videoTrack } = useCurrentScreenShare();
 
     const { sortedParticipants } = useSortedParticipants();
 
     const hasScreenShare = !!videoTrack;
 
+    const isSideBarOpen = Object.values(sideBarState).some((state) => state);
+
     const previousHasScreenShareRef = useRef(hasScreenShare);
     const previousPageSizeRef = useRef(pageSize);
+    const previousIsSideBarOpenRef = useRef(isSideBarOpen);
+
+    const pageCount = Math.ceil(sortedParticipants.length / pageSize);
 
     useEffect(() => {
-        const screenShareSize = sortedParticipants.length > 5 ? screenShareDoublePageSize : screenSharePageSize;
+        if (pageCount - 1 < page) {
+            setPage(() => pageCount - 1);
+        }
+    }, [pageCount, page, setPage]);
+
+    useEffect(() => {
+        const screenShareSize =
+            sortedParticipants.length > 5 && !isSideBarOpen ? screenShareDoublePageSize : screenSharePageSize;
 
         const newPageSize = hasScreenShare ? screenShareSize : PAGE_SIZE;
 
-        if (previousHasScreenShareRef.current !== hasScreenShare) {
+        if (previousPageSizeRef.current !== newPageSize) {
             setPageSize(newPageSize);
         }
 
@@ -31,5 +43,6 @@ export const usePaginationSizeUpdates = () => {
 
         previousPageSizeRef.current = newPageSize;
         previousHasScreenShareRef.current = hasScreenShare;
-    }, [hasScreenShare, setPageSize, setPage]);
+        previousIsSideBarOpenRef.current = isSideBarOpen;
+    }, [hasScreenShare, isSideBarOpen, setPageSize, setPage]);
 };

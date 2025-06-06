@@ -2,7 +2,10 @@ import { useCallback, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { IcMeetUser } from '@proton/icons';
+import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
+
+import './VideoPreview.scss';
 
 interface VideoPreviewProps {
     isCameraEnabled: boolean;
@@ -55,19 +58,14 @@ export const VideoPreview = ({ isCameraEnabled, hasCameraPermission, selectedCam
                 style={{ color: 'var(--interaction-weak)' }}
             >
                 {!hasCameraPermission && (
-                    <>
-                        <IcMeetUser
-                            className="w-custom h-custom"
-                            style={{ '--w-custom': '155px', '--h-custom': '155px' }}
-                            viewBox="0 0 146 156"
-                        />
-                        <div
-                            className="color-norm rounded-full px-4 py-2 mb-8 mt-8"
-                            style={{ backgroundColor: 'var(--interaction-weak)' }}
-                        >{c('Meet').t`Allow microphone and camera`}</div>
-                    </>
+                    <div
+                        className={clsx('color-norm rounded-full px-4 py-2 mb-8 mt-8 border-none', 'allow-button')}
+                        onClick={noop}
+                    >
+                        {c('l10n_nightly Action').t`Allow microphone and camera`}
+                    </div>
                 )}
-                <div className="color-weak">{hasCameraPermission && c('Meet').t`Camera is off`}</div>
+                <div className="color-weak">{hasCameraPermission && c('l10n_nightly Info').t`Camera is off`}</div>
             </div>
         );
     }

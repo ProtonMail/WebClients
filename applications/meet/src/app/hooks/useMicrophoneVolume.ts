@@ -53,7 +53,7 @@ function startMicVolumeAnalysis(
 
                 const now = Date.now();
                 if (now - lastUpdateRef.current > throttleMs) {
-                    setVolume(rms);
+                    setVolume(Math.pow(rms, 0.5));
                     lastUpdateRef.current = now;
                 }
                 raf = requestAnimationFrame(updateVolume);

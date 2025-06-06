@@ -1,4 +1,3 @@
-import { PAGE_DIMENSION } from '../constants';
 import { useSortedParticipants } from '../hooks/useSortedParticipants';
 import { ParticipantTile } from './ParticipantTile/ParticipantTile';
 
@@ -13,25 +12,16 @@ export const ParticipantGrid = () => {
         if (participantCount === 4) {
             return 'repeat(2, 1fr)';
         }
-        if (participantCount > 4) {
-            return 'repeat(3, 1fr)';
-        }
 
-        return `repeat(${PAGE_DIMENSION}, 1fr)`;
+        return 'repeat(3, 1fr)';
     };
 
     const gridTemplateRows = (participantCount: number) => {
-        if (participantCount === 1 || participantCount === 2 || participantCount === 3) {
+        if (participantCount < 4) {
             return '1fr';
         }
-        if (participantCount > 3 && participantCount < 7) {
-            return 'repeat(2, 1fr)';
-        }
-        if (participantCount >= 7) {
-            return 'repeat(3, 1fr)';
-        }
 
-        return '1fr';
+        return 'repeat(2, 1fr)';
     };
 
     return (
@@ -42,7 +32,7 @@ export const ParticipantGrid = () => {
                     display: 'grid',
                     gridTemplateColumns: gridTemplateColumns(sortedParticipants.length),
                     gridTemplateRows: gridTemplateRows(sortedParticipants.length),
-                    gap: '0.3125rem',
+                    gap: '0.6875rem',
                 }}
             >
                 {pagedParticipants.map((participant) => {

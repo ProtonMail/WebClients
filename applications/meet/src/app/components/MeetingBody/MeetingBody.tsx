@@ -10,6 +10,7 @@ import { useChat } from '../../hooks/useChat';
 import { useCurrentScreenShare } from '../../hooks/useCurrentScreenShare';
 import { useE2EE } from '../../hooks/useE2EE';
 import { useFaceTrackingPublisher } from '../../hooks/useFaceTrackingPublisher';
+import { useLocalParticipantQualityControl } from '../../hooks/useLocalParticipantQualityControl';
 import { usePaginationSizeUpdates } from '../../hooks/usePaginationSizeUpdates';
 import { useParticipantEvents } from '../../hooks/useParticipantEvents';
 import { usePublicationQualityControls } from '../../hooks/usePublicationQualityControls';
@@ -41,6 +42,7 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
     useChat();
     usePaginationSizeUpdates();
     useScreenShareUpdates();
+    useLocalParticipantQualityControl();
 
     const participants = useParticipants();
 

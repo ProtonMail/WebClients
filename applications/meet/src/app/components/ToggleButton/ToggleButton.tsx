@@ -16,6 +16,8 @@ interface ToggleButtonProps {
     onClick: () => void;
     Content?: () => JSX.Element;
     popUp: PopUpControls;
+    ariaLabel?: string;
+    secondaryAriaLabel?: string;
 }
 
 export const ToggleButton = ({
@@ -25,6 +27,8 @@ export const ToggleButton = ({
     onClick,
     Content,
     popUp,
+    ariaLabel,
+    secondaryAriaLabel,
 }: ToggleButtonProps) => {
     const toggleButtonCircleRef = useRef<HTMLButtonElement>(null);
 
@@ -41,16 +45,13 @@ export const ToggleButton = ({
             )}
             style={{ '--w-custom': '7rem', '--h-custom': '3.5rem' }}
             onClick={onClick}
+            aria-label={ariaLabel}
         >
-            {isOn ? (
-                <OnIconComponent viewBox="0 0 24 24" size={6} />
-            ) : (
-                <OffIconComponent viewBox="0 0 24 24" size={6} />
-            )}
+            {isOn ? <OnIconComponent size={6} /> : <OffIconComponent size={6} />}
             <div className="relative flex flex-nowrap items-center flex-column">
                 {Content && (
                     <button
-                        className="toggle-button-hover-content rounded-full bg-weak p-2 z-up absolute left-custom bottom-custom mb-2 cursor-default"
+                        className="toggle-button-hover-content rounded-full p-2 z-up absolute left-custom bottom-custom mb-2 cursor-default"
                         onClick={(e) => {
                             e.stopPropagation();
                             e.preventDefault();
@@ -79,6 +80,7 @@ export const ToggleButton = ({
                         togglePopupState(popUp);
                     }}
                     style={{ '--w-custom': '3rem', '--h-custom': '3rem' }}
+                    aria-label={secondaryAriaLabel}
                 >
                     {isOpen ? <IcChevronUp /> : <IcChevronDown />}
                 </div>

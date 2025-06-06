@@ -4,12 +4,12 @@ import { c } from 'ttag';
 export function getConnectionQualityText(quality: ConnectionQuality): string {
     switch (quality) {
         case ConnectionQuality.Excellent:
-            return c('Meet').t`Excellent`;
+            return c('l10n_nightly Info').t`Excellent`;
         case ConnectionQuality.Good:
-            return c('Meet').t`Good`;
+            return c('l10n_nightly Info').t`Good`;
         case ConnectionQuality.Poor:
-            return c('Meet').t`Poor`;
+            return c('l10n_nightly Info').t`Poor`;
         default:
-            return c('Meet').t`Unknown`;
+            return c('l10n_nightly Info').t`Unknown`;
     }
 }
