@@ -87,6 +87,8 @@ export type CCItem = ItemRevision<'creditCard'>;
 export type IdentiyItem = ItemRevision<'identity'>;
 export type LoginItem = ItemRevision<'login'>;
 export type NoteItem = ItemRevision<'note'>;
+export type IdentityItem = ItemRevision<'identity'>;
+export type CreditCardItem = ItemRevision<'creditCard'>;
 
 export type ItemRevisionID = ItemIDRevision;
 export type ItemOptimisticState = { optimistic: boolean; failed: boolean };
