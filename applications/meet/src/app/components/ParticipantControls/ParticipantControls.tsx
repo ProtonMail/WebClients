@@ -1,7 +1,6 @@
 import { useLocalParticipant, useParticipants } from '@livekit/components-react';
 import { c } from 'ttag';
 
-import type { IconSize } from '@proton/icons';
 import {
     IcInfoCircle,
     IcMeetCamera,
@@ -20,7 +19,7 @@ import { MeetingSideBars, PopUpControls } from '../../types';
 import { AudioSettings } from '../AudioSettings';
 import { ChatButton } from '../ChatButton';
 import { LeaveModal } from '../LeaveModal/LeaveModal';
-import { MicrophoneWithVolume } from '../MicrophoneWithVolume';
+import { MicrophoneWithVolumeWithMicrophoneState } from '../MicrophoneWithVolume';
 import { ScreenShareButton } from '../ScreenShareButton';
 import { ToggleButton } from '../ToggleButton/ToggleButton';
 import { VideoSettings } from '../VideoSettings';
@@ -43,9 +42,7 @@ export const ParticipantControls = () => {
             <div className="flex flex-1 justify-start h3">{roomName}</div>
             <div className="flex flex-nowrap gap-2">
                 <ToggleButton
-                    OnIconComponent={({ size }) => (
-                        <MicrophoneWithVolume isMicrophoneEnabled={isMicrophoneEnabled} size={size as IconSize} />
-                    )}
+                    OnIconComponent={MicrophoneWithVolumeWithMicrophoneState}
                     OffIconComponent={IcMeetMicrophoneOff}
                     isOn={isMicrophoneEnabled}
                     onClick={() => {

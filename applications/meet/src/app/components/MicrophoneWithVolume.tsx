@@ -1,3 +1,6 @@
+import { useLocalParticipant } from '@livekit/components-react';
+
+import type { IconProps } from '@proton/components/components/icon/Icon';
 import type { IconSize } from '@proton/icons';
 import { IcMeetMicrophone } from '@proton/icons';
 
@@ -45,4 +48,10 @@ export const MicrophoneWithVolume = ({ isMicrophoneEnabled, size }: MicrophoneWi
             </g>
         </svg>
     );
+};
+
+export const MicrophoneWithVolumeWithMicrophoneState = ({ size }: Pick<IconProps, 'size'>) => {
+    const { isMicrophoneEnabled } = useLocalParticipant();
+
+    return <MicrophoneWithVolume isMicrophoneEnabled={isMicrophoneEnabled} size={size as IconSize} />;
 };

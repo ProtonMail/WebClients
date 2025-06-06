@@ -10,8 +10,8 @@ import { type PopUpControls } from '../../types';
 import './ToggleButton.scss';
 
 interface ToggleButtonProps {
-    OnIconComponent: (props: Pick<IconProps, 'viewBox' | 'size'>) => JSX.Element;
-    OffIconComponent: (props: Pick<IconProps, 'viewBox' | 'size'>) => JSX.Element;
+    OnIconComponent: (props: Pick<IconProps, 'size'>) => JSX.Element;
+    OffIconComponent: (props: Pick<IconProps, 'size'>) => JSX.Element;
     isOn: boolean;
     onClick: () => void;
     Content?: () => JSX.Element;
