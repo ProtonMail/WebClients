@@ -48,6 +48,8 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
         const req = requestAnimationFrame(async () => {
             try {
                 field.attachIcon();
+                ctx.service.inline.dropdown.close();
+
                 await waitUntil(() => clientStatusResolved(ctx.getState().status), 50);
                 if (req !== state.focusRequest) return;
 
@@ -59,7 +61,9 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
                 field.icon?.setStatus(status);
                 field.icon?.setCount(count);
 
-                if (authorized) {
+                /** NOTE: auto-open dropdown if field was not
+                 * previously autofilled [to be determined] */
+                if (authorized && !field.autofilled) {
                     ctx.service.inline.dropdown.open({
                         type: 'field',
                         action: action.type,

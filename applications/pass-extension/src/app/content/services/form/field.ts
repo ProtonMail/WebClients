@@ -152,7 +152,7 @@ export const createFieldHandles = ({
                 .then(async (visible) => {
                     if (visible) {
                         await withActionTrap(element, createAutofill(element))(value, options);
-                        field.autofilled = options?.type ?? field.fieldType;
+                        if (value) field.autofilled = options?.type ?? field.fieldType;
                     }
                 })
                 .catch(noop),
