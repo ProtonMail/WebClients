@@ -11,7 +11,7 @@ import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
 import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickActions';
 import { UpsellButton } from '@proton/pass/components/Menu/Upsell/UpsellButton';
 import { Spotlight } from '@proton/pass/components/Spotlight/Spotlight';
-import { resolveDomain } from '@proton/pass/utils/url/utils';
+import { resolveSubdomain } from '@proton/pass/utils/url/utils';
 
 import { MenuDropdown } from './MenuDropdown';
 
@@ -28,7 +28,7 @@ export const Header: FC = () => {
                     <MenuDropdown />
                     <SearchBar disabled={!interactive} />
                     <UpsellButton />
-                    <ItemQuickActions origin={url ? resolveDomain(url) : null} />
+                    <ItemQuickActions origin={url ? resolveSubdomain(url) : null} />
                     <Spotlight />
                 </div>
             </CoreHeader>

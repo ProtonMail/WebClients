@@ -38,7 +38,7 @@ import { awaiter } from '@proton/pass/utils/fp/promises';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { resolveDomain } from '@proton/pass/utils/url/utils';
+import { resolveSubdomain } from '@proton/pass/utils/url/utils';
 
 const FORM_ID = 'new-alias';
 
@@ -63,7 +63,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
     const { vaultTotalCount } = useSelector(selectVaultLimits);
 
     const { aliasPrefix: defaultAliasPrefix, ...defaults } = useMemo(() => {
-        const domain = url ? resolveDomain(url) : null;
+        const domain = url ? resolveSubdomain(url) : null;
 
         return domain
             ? { name: domain, note: getPlaceholderNote(domain), aliasPrefix: deriveAliasPrefix(domain) }
