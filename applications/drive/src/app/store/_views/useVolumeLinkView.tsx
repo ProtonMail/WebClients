@@ -154,7 +154,7 @@ export const useVolumeLinkView = () => {
             });
         }
         return convertExternalInvitation(abortSignal, {
-            contextShareId: link.shareId,
+            contextShareId: link.rootShareId,
             volumeId,
             externalInvitationId,
             linkId,
