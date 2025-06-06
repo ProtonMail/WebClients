@@ -22,8 +22,8 @@ import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
-import { deobfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
-import { formatDisplayNameWithEmail, obfuscateLabeledExtraFields } from '@proton/pass/lib/items/item.utils';
+import { deobfuscateExtraFields, obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import { bindOTPSanitizer, formatDisplayNameWithEmail, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
 import { createEditAliasFormValidator } from '@proton/pass/lib/validation/alias';
 import { selectAliasDetails } from '@proton/pass/store/selectors';
 import type { AliasMailbox, EditAliasFormValues } from '@proton/pass/types';
@@ -71,6 +71,8 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
             slNote: aliasDetails?.slNote ?? '',
         },
         onSubmit: ({ name, note, mailboxes, shareId, displayName, slNote, files, extraFields }) => {
+            const sanitizeOTP = bindOTPSanitizer(aliasEmail, name);
+
             onSubmit({
                 ...uneditable,
                 extraData: { aliasOwner, mailboxes, aliasEmail, displayName, slNote },
@@ -79,7 +81,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
                 files,
                 metadata: { ...metadata, name, note: obfuscate(note) },
                 shareId,
-                extraFields: obfuscateLabeledExtraFields({ extraFields, label: aliasEmail, issuer: name }),
+                extraFields: obfuscateExtraFields(extraFields.map(sanitizeExtraField(sanitizeOTP))),
             });
         },
         validate: validateEditAliasForm,

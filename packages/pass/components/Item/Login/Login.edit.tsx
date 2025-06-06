@@ -24,8 +24,9 @@ import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal'
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
-import { getSanitizedUserIdentifiers, obfuscateLabeledExtraFields } from '@proton/pass/lib/items/item.utils';
-import { getSecretOrUri, parseOTPValue } from '@proton/pass/lib/otp/otp';
+import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import { bindOTPSanitizer, getSanitizedUserIdentifiers, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
+import { getSecretOrUri } from '@proton/pass/lib/otp/otp';
 import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
 import { itemCreate } from '@proton/pass/store/actions';
@@ -33,6 +34,7 @@ import { selectShowUsernameField, selectTOTPLimits } from '@proton/pass/store/se
 import type { LoginItemFormValues } from '@proton/pass/types';
 import { arrayRemove } from '@proton/pass/utils/array/remove';
 import { prop } from '@proton/pass/utils/fp/lens';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -101,11 +103,6 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                 !isEmptyString(values.aliasPrefix) &&
                 values.mailboxes.length > 0;
 
-            const normalizedOtpUri = parseOTPValue(totpUri, {
-                label: itemEmail || undefined,
-                issuer: name || undefined,
-            });
-
             if (withAlias) {
                 const aliasOptimisticId = uniqueId();
 
@@ -130,6 +127,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
             }
 
             const { email, username } = await getSanitizedUserIdentifiers({ itemEmail, itemUsername });
+            const sanitizeOTP = bindOTPSanitizer(itemEmail, name);
 
             onSubmit({
                 ...uneditable,
@@ -137,13 +135,13 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                     ...content,
                     passkeys,
                     password: obfuscate(password),
-                    totpUri: obfuscate(normalizedOtpUri),
+                    totpUri: pipe(sanitizeOTP, obfuscate)(totpUri),
                     urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
                     itemEmail: obfuscate(email),
                     itemUsername: obfuscate(username),
                 },
                 files,
-                extraFields: obfuscateLabeledExtraFields({ extraFields, label: itemEmail, issuer: name }),
+                extraFields: obfuscateExtraFields(extraFields.map(sanitizeExtraField(sanitizeOTP))),
                 itemId,
                 lastRevision,
                 metadata: { ...metadata, name, note: obfuscate(note) },
