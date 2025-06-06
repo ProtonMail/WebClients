@@ -1,6 +1,7 @@
 import type {
     ApplyNewsletterSubscriptionsFilter,
     NewsletterSubscription,
+    UpdateNewsletterSubscription,
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 export enum SubscriptionTabs {
@@ -30,17 +31,6 @@ export interface SubscriptionPagination {
     Active?: ActiveValues;
 }
 
-export interface FilterSubscriptionPayload {
-    subscription: NewsletterSubscription;
-    subscriptionIndex?: number;
-    data: ApplyNewsletterSubscriptionsFilter;
-}
-
-export interface UnsubscribePayload {
-    subscription: NewsletterSubscription;
-    subscriptionIndex?: number;
-}
-
 export interface UpdateSubscriptionParams {
     idToUpdate: string;
     subscription: NewsletterSubscription;
@@ -64,4 +54,19 @@ export interface NewsletterSubscriptionsInterface {
     selectedTab: SubscriptionTabs;
     selectedSubscriptionId: string | undefined;
     selectedElementId: string | undefined;
+}
+
+interface ActionsWithRollback {
+    subscription: NewsletterSubscription;
+    subscriptionIndex?: number;
+}
+
+export interface FilterSubscriptionPayload extends ActionsWithRollback {
+    data: ApplyNewsletterSubscriptionsFilter;
+}
+
+export interface UnsubscribePayload extends ActionsWithRollback {}
+
+export interface UpdateSubscriptionPayload extends ActionsWithRollback {
+    data: UpdateNewsletterSubscription;
 }

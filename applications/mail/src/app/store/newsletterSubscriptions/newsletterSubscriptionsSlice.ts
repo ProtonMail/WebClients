@@ -15,6 +15,7 @@ import {
     filterSubscriptionList,
     sortSubscriptionList,
     unsubscribeSubscription,
+    updateSubscription,
 } from './newsletterSubscriptionsActions';
 import {
     fetchNextNewsletterSubscriptionsPageFulfilled,
@@ -30,6 +31,9 @@ import {
     sortSubscriptionRejected,
     unsubscribeSubscriptionPending,
     unsubscribeSubscriptionRejected,
+    updateSubscriptionFulfilled,
+    updateSubscriptionPending,
+    updateSubscriptionRejected,
 } from './newsletterSubscriptionsReducers';
 
 export const newsletterSubscriptionName = 'newsletterSubscriptions' as const;
@@ -123,6 +127,10 @@ const slice = createSlice({
         builder.addCase(filterSubscriptionList.pending, filterSubscriptionListPending);
         builder.addCase(filterSubscriptionList.fulfilled, filterSubscriptionListFulfilled);
         builder.addCase(filterSubscriptionList.rejected, filterSubscriptionListRejected);
+
+        builder.addCase(updateSubscription.pending, updateSubscriptionPending);
+        builder.addCase(updateSubscription.rejected, updateSubscriptionRejected);
+        builder.addCase(updateSubscription.fulfilled, updateSubscriptionFulfilled);
 
         builder.addCase(fetchNextNewsletterSubscriptionsPage.fulfilled, fetchNextNewsletterSubscriptionsPageFulfilled);
     },
