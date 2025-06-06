@@ -17,7 +17,8 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constan
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
-import { obfuscateLabeledExtraFields } from '@proton/pass/lib/items/item.utils';
+import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import { bindOTPSanitizer, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
 import { validateNoteForm } from '@proton/pass/lib/validation/note';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
 import type { NoteFormValues } from '@proton/pass/types';
@@ -42,6 +43,7 @@ export const NoteNew: FC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCan
         initialErrors: validateNoteForm(initialValues),
         onSubmit: ({ shareId, name, note, files, extraFields }) => {
             const optimisticId = uniqueId();
+            const sanitizeOTP = bindOTPSanitizer(name);
 
             onSubmit({
                 type: 'note',
@@ -50,7 +52,7 @@ export const NoteNew: FC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCan
                 metadata: { name, note: obfuscate(note), itemUuid: optimisticId },
                 files,
                 content: {},
-                extraFields: obfuscateLabeledExtraFields({ extraFields, label: name, issuer: name }),
+                extraFields: obfuscateExtraFields(extraFields.map(sanitizeExtraField(sanitizeOTP))),
             });
         },
         validate: validateNoteForm,
