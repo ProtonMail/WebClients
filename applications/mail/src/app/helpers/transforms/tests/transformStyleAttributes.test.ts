@@ -122,4 +122,33 @@ describe('transformStyleAttributes', () => {
             });
         });
     });
+
+    describe('replaceWhiteSpacePre', () => {
+        it('Should replace white-space: pre with white-space: pre-wrap', () => {
+            const document = setup();
+            document.body.innerHTML = `
+                <div id="a" style="white-space: pre;">
+                </div>
+            `;
+            transformStyleAttributes(document.body as unknown as Element);
+
+            let a = document.getElementById('a');
+            expect(a?.style.whiteSpace).toBe('pre-wrap');
+        });
+
+        // Just in case, we should not modify other white-space values
+        it('Should not modify other white-space values than pre', () => {
+            const document = setup();
+            document.body.innerHTML = `
+                <div id="a" style="white-space: normal;"></div>
+                <div id="b" style="white-space: nowrap;"></div>
+                <div id="c" style="white-space: pre-line;"></div>
+            `;
+            transformStyleAttributes(document.body as unknown as Element);
+
+            expect(document.getElementById('a')?.style.whiteSpace).toBe('normal');
+            expect(document.getElementById('b')?.style.whiteSpace).toBe('nowrap');
+            expect(document.getElementById('c')?.style.whiteSpace).toBe('pre-line');
+        });
+    });
 });
