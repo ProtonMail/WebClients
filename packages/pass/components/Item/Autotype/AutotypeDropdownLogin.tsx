@@ -7,7 +7,9 @@ import type { AutotypeDropdownAction } from '@proton/pass/components/Item/Autoty
 import { AutotypeDropdown } from '@proton/pass/components/Item/Autotype/AutotypeDropdown';
 import { AutotypeKeyboardShortcut } from '@proton/pass/components/Item/Autotype/AutotypeKeyboardShortcut';
 import { useAutotypeActions } from '@proton/pass/hooks/autotype/useAutotypeActions';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import type { Item } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { AutotypeKey } from '@proton/pass/types/desktop/autotype';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -16,9 +18,10 @@ type AutotypeDropdownLoginProps = {
 };
 
 export const AutotypeDropdownLogin: FC<AutotypeDropdownLoginProps> = ({ data }) => {
+    const autotypeEnabled = useFeatureFlag(PassFeature.PassDesktopAutotype);
     const { actions } = useAutotypeActions(data);
 
-    if (actions.length === 0) return null;
+    if (!autotypeEnabled || actions.length === 0) return null;
 
     const tabKey = <Kbd shortcut={c('Keyboard key').t`TAB`} />;
     const enterKey = <Kbd shortcut={c('Keyboard key').t`ENTER`} />;
