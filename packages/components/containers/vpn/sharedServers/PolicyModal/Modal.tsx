@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
@@ -43,6 +44,7 @@ const SharedServersModal = ({ policy, isEditing = false, soloStep, onSuccess, ..
     const { locations, users, groups, translations, loading } = useSharedServers(10 * MINUTE);
 
     const [userSettings] = useUserSettings();
+    const [organization] = useOrganization();
     const countryOptions = getCountryOptions(userSettings);
     const [discardModal, showDiscardModal] = useModalTwoStatic(DiscardModal);
 
@@ -201,6 +203,7 @@ const SharedServersModal = ({ policy, isEditing = false, soloStep, onSuccess, ..
 
                 {step === POLICY_STEP.MEMBERS && (
                     <MembersStep
+                        organization={organization}
                         loading={loading}
                         isEditing={isEditing as boolean}
                         policyName={policyName}
