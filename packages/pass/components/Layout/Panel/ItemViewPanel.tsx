@@ -118,8 +118,9 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const disabledSharing = !(canItemShare || canLinkShare || canManageAccess);
     const showSharing = (owner || shared) && !readOnly;
 
+    const autotypeEnabled = useFeatureFlag(PassFeature.PassDesktopAutotype);
     const autotypeDiscoverySpotlight = useSpotlightFor(SpotlightMessage.AUTOTYPE_DISCOVERY);
-    const signalQuickActions = autotypeDiscoverySpotlight.open && type === 'login';
+    const signalQuickActions = autotypeEnabled && autotypeDiscoverySpotlight.open && type === 'login';
 
     useEffect(() => {
         (async () => {
