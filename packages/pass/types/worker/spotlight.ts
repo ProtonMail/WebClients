@@ -58,6 +58,8 @@ export enum SpotlightMessage {
     AUTOTYPE_DISCOVERY = 27,
     /** Autotype confirmation on desktop */
     AUTOTYPE_CONFIRM = 28,
+    /** Autotype confirmation on desktop when using keyboard shortcut */
+    AUTOTYPE_CONFIRM_SHORTCUT = 29,
 }
 
 export type SpotlightAcknowledgment = {

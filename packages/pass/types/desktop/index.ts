@@ -1,4 +1,7 @@
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
+import type { AutotypeProperties } from './autotype';
+
+export * from './autotype';
 
 export type ContextBridgeApi = {
     writeToClipboard: (text: string) => Promise<void>;
@@ -22,5 +25,3 @@ export type DesktopTheme = 'dark' | 'light' | 'system';
 export type ClipboardStoreProperties = {
     timeoutMs: number;
 };
-
-export type AutotypeProperties = { fields: string[]; enterAtTheEnd?: boolean };

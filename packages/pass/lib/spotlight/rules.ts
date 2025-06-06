@@ -202,7 +202,11 @@ export const createProtonAnniversary2025Rule = () =>
     });
 
 export const createAutotypeRules = (): SpotlightRule[] =>
-    [SpotlightMessage.AUTOTYPE_DISCOVERY, SpotlightMessage.AUTOTYPE_CONFIRM].map((message) =>
+    [
+        SpotlightMessage.AUTOTYPE_DISCOVERY,
+        SpotlightMessage.AUTOTYPE_CONFIRM,
+        SpotlightMessage.AUTOTYPE_CONFIRM_SHORTCUT,
+    ].map((message) =>
         createSpotlightRule({
             message,
             when: (previous) => !previous,

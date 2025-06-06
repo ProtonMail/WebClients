@@ -9,11 +9,14 @@ import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPane
 import { ItemReport } from '@proton/pass/components/Monitor/Item/ItemReport';
 import { SecureLinkCardList } from '@proton/pass/components/SecureLink/SecureLinkCardList';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
+import { useAutotypeShortcut } from '@proton/pass/hooks/autotype/useAutotypeShortcut';
 import { isMonitored } from '@proton/pass/lib/items/item.predicates';
 
 export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
     const { revision, handleHistoryClick, share } = itemViewProps;
     const { createTime, lastUseTime, modifyTime, revision: revisionNumber, shareId, itemId, data } = revision;
+
+    useAutotypeShortcut(data);
 
     return (
         <ItemViewPanel
