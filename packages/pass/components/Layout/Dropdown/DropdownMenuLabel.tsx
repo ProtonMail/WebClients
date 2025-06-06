@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from 'react';
 
-type Props = { title: ReactNode; subtitle?: string };
+type Props = { title: ReactNode; subtitle?: ReactNode };
 
 export const DropdownMenuLabel: FC<Props> = ({ title, subtitle }) => (
     <div className="pl-2 lh120">

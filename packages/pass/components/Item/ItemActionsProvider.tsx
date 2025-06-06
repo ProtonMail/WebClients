@@ -15,7 +15,7 @@ import {
     ConfirmLeaveItem,
     ConfirmMoveItem,
 } from '@proton/pass/components/Item/Actions/ConfirmItemActions';
-import { ConfirmAutotype } from '@proton/pass/components/Item/Autotype/ConfirmAutotype';
+import { ConfirmAutotype, ConfirmAutotypeShortcut } from '@proton/pass/components/Item/Autotype/ConfirmAutotype';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
@@ -44,8 +44,9 @@ import {
     selectShareOrThrow,
 } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
-import type { AutotypeProperties, ItemMoveIntent } from '@proton/pass/types';
+import type { ItemMoveIntent } from '@proton/pass/types';
 import { type BulkSelectionDTO, type ItemRevision, type MaybeNull, ShareType } from '@proton/pass/types';
+import type { AutotypeConfirmFromShortcutProps, AutotypeProperties } from '@proton/pass/types/desktop/autotype';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 
 /** Ongoing: move every item action definition to this
@@ -61,7 +62,8 @@ interface ItemActionsContextType {
     restoreMany: (items: BulkSelectionDTO) => void;
     trash: (item: ItemRevision) => void;
     trashMany: (items: BulkSelectionDTO) => void;
-    autotype: (props: AutotypeProperties) => void;
+    autotypeConfirm: (autotypeProps: AutotypeProperties) => void;
+    autotypeConfirmShortcut: (autotypeProps: AutotypeConfirmFromShortcutProps) => void;
 }
 
 const ItemActionsContext = createContext<MaybeNull<ItemActionsContextType>>(null);
@@ -127,8 +129,18 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     const moveTitle = (numberOfItems: number) =>
         c('Vault Select').ngettext(msgid`Move item to`, `Move items to`, numberOfItems);
 
-    const autotype = useConfirm(
+    const autotypeConfirm = useConfirm(
         useCallback(({ fields, enterAtTheEnd }: AutotypeProperties) => {
+            void window.ctxBridge?.autotype({
+                fields,
+                enterAtTheEnd,
+            });
+        }, [])
+    );
+
+    const autotypeConfirmFromShortcut = useConfirm(
+        useCallback(({ autotypeProps: { fields, enterAtTheEnd }, onConfirm }: AutotypeConfirmFromShortcutProps) => {
+            onConfirm?.();
             void window.ctxBridge?.autotype({
                 fields,
                 enterAtTheEnd,
@@ -213,7 +225,9 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                 });
             },
 
-            autotype: autotype.prompt,
+            autotypeConfirm: autotypeConfirm.prompt,
+
+            autotypeConfirmShortcut: autotypeConfirmFromShortcut.prompt,
         };
     }, []);
 
@@ -271,7 +285,16 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                 <ConfirmLeaveItem onCancel={leaveItem.cancel} onConfirm={leaveItem.confirm} item={leaveItem.param} />
             )}
 
-            {autotype.pending && <ConfirmAutotype onClose={autotype.cancel} onConfirm={autotype.confirm} />}
+            {autotypeConfirm.pending && (
+                <ConfirmAutotype onClose={autotypeConfirm.cancel} onConfirm={autotypeConfirm.confirm} />
+            )}
+
+            {autotypeConfirmFromShortcut.pending && (
+                <ConfirmAutotypeShortcut
+                    onClose={autotypeConfirmFromShortcut.cancel}
+                    onConfirm={autotypeConfirmFromShortcut.confirm}
+                />
+            )}
         </ItemActionsContext.Provider>
     );
 };

@@ -6,27 +6,34 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Checkbox, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import type { ConfirmationModalProps } from '@proton/pass/components/Confirmation/ConfirmationModal';
+import { AutotypeKeyboardShortcut } from '@proton/pass/components/Item/Autotype/AutotypeKeyboardShortcut';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight';
 import { SpotlightMessage } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 type ConfirmAutotypeValues = { dontShowAgain: boolean };
-type Props = { onConfirm: () => void } & Pick<ConfirmationModalProps, 'onClose'>;
+type ConfirmAutotypeProps = { onConfirm: () => void } & Pick<ConfirmationModalProps, 'onClose'>;
+type ConfirmAutotypePropsCore = ConfirmAutotypeProps & { isFromKeyboardShortcut?: boolean };
 
-const FORM_ID = 'autotype-confirm-click';
-const initialValues: ConfirmAutotypeValues = { dontShowAgain: true };
-
-export const ConfirmAutotype: FC<Props> = ({ onConfirm, onClose }) => {
+const ConfirmAutotypeCore: FC<ConfirmAutotypePropsCore> = ({ onConfirm, onClose, isFromKeyboardShortcut }) => {
     const autotypeConfirmSpotlight = useSpotlightFor(SpotlightMessage.AUTOTYPE_CONFIRM);
+    const autotypeShortcutConfirmSpotlight = useSpotlightFor(SpotlightMessage.AUTOTYPE_CONFIRM_SHORTCUT);
+
+    const FORM_ID = isFromKeyboardShortcut ? 'autotype-confirm-shortcut' : 'autotype-confirm-click';
 
     const form = useFormik<ConfirmAutotypeValues>({
-        initialValues,
+        initialValues: { dontShowAgain: !isFromKeyboardShortcut },
         onSubmit: ({ dontShowAgain }) => {
-            if (dontShowAgain) autotypeConfirmSpotlight.acknowledge();
+            if (dontShowAgain) {
+                const spotlight = isFromKeyboardShortcut ? autotypeShortcutConfirmSpotlight : autotypeConfirmSpotlight;
+                spotlight.close();
+            }
             void onConfirm();
         },
     });
+
+    const keyboardShortcut = <AutotypeKeyboardShortcut key="autotype-keyboard-shortcut-keys" />;
 
     return (
         <PassModal onClose={onClose} open size="medium">
@@ -43,7 +50,17 @@ export const ConfirmAutotype: FC<Props> = ({ onConfirm, onClose }) => {
                             checked={form.values.dontShowAgain}
                             onChange={({ target }) => form.setFieldValue('dontShowAgain', target.checked)}
                         >
-                            {c('Action').t`Do not show again`}
+                            {isFromKeyboardShortcut ? (
+                                <span className="flex gap-1">
+                                    {
+                                        // translator: full sentence is "Do not show again when I press Ctrl Shift V"
+                                        c('Action').t`Do not show again when I press`
+                                    }
+                                    {keyboardShortcut}
+                                </span>
+                            ) : (
+                                c('Action').t`Do not show again`
+                            )}
                         </Checkbox>
                     </Form>
                 </FormikProvider>
@@ -59,3 +76,10 @@ export const ConfirmAutotype: FC<Props> = ({ onConfirm, onClose }) => {
         </PassModal>
     );
 };
+
+export const ConfirmAutotype: FC<ConfirmAutotypeProps> = ({ onConfirm, onClose }) => (
+    <ConfirmAutotypeCore onConfirm={onConfirm} onClose={onClose} />
+);
+export const ConfirmAutotypeShortcut: FC<ConfirmAutotypeProps> = ({ onConfirm, onClose }) => (
+    <ConfirmAutotypeCore onConfirm={onConfirm} onClose={onClose} isFromKeyboardShortcut />
+);
