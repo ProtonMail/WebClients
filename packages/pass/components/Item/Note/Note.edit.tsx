@@ -15,8 +15,8 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constan
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
-import { deobfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
-import { obfuscateLabeledExtraFields } from '@proton/pass/lib/items/item.utils';
+import { deobfuscateExtraFields, obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import { bindOTPSanitizer, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
 import { validateNoteForm } from '@proton/pass/lib/validation/note';
 import type { NoteFormValues } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -38,11 +38,13 @@ export const NoteEdit: FC<ItemEditViewProps<'note'>> = ({ share, revision, onSub
             shareId,
         },
         onSubmit: ({ name, note, files, extraFields }) => {
+            const sanitizeOTP = bindOTPSanitizer(name);
+
             onSubmit({
                 ...uneditable,
                 itemId,
                 lastRevision,
-                extraFields: obfuscateLabeledExtraFields({ extraFields, label: name, issuer: name }),
+                extraFields: obfuscateExtraFields(extraFields.map(sanitizeExtraField(sanitizeOTP))),
                 files,
                 metadata: { ...metadata, name, note: obfuscate(note) },
                 shareId,

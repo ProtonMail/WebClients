@@ -9,7 +9,7 @@ import { autofocusInput } from '@proton/pass/utils/dom/input';
 
 import { Field } from '../Field';
 import { FieldsetCluster } from '../Layout/FieldsetCluster';
-import { AddExtraFieldDropdown, CustomButtonProps } from './AddExtraFieldDropdown';
+import { AddExtraFieldDropdown, type CustomButtonProps } from './AddExtraFieldDropdown';
 import { ExtraFieldComponent } from './ExtraField';
 
 export type ExtraFieldGroupProps<V extends ExtraFieldGroupValues> = {

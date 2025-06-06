@@ -22,7 +22,8 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constan
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
-import { obfuscateLabeledExtraFields } from '@proton/pass/lib/items/item.utils';
+import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import { bindOTPSanitizer, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
 import { formatExpirationDateMMYY, validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
 import type { CreditCardItemFormValues } from '@proton/pass/types';
 import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
@@ -47,6 +48,8 @@ export const CreditCardEdit: FC<ItemEditViewProps<'creditCard'>> = ({ share, rev
             extraFields,
         },
         onSubmit: ({ name, note, files, extraFields, ...creditCardValues }) => {
+            const sanitizeOTP = bindOTPSanitizer(name);
+
             onSubmit({
                 ...uneditable,
                 files,
@@ -58,7 +61,7 @@ export const CreditCardEdit: FC<ItemEditViewProps<'creditCard'>> = ({ share, rev
                     pin: obfuscate(creditCardValues.pin),
                     verificationNumber: obfuscate(creditCardValues.verificationNumber),
                 },
-                extraFields: obfuscateLabeledExtraFields({ extraFields, label: name, issuer: name }),
+                extraFields: obfuscateExtraFields(extraFields.map(sanitizeExtraField(sanitizeOTP))),
                 itemId,
                 lastRevision,
                 metadata: { ...metadata, name, note: obfuscate(note) },
