@@ -1,13 +1,11 @@
 import type { FC, PropsWithChildren, ReactElement } from 'react';
-import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Badge, DropdownSizeUnit, Icon } from '@proton/components';
+import { DropdownSizeUnit, Icon } from '@proton/components';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { DropdownMenuLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuLabel';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
@@ -31,7 +29,6 @@ import { BitField, type ItemType, ShareRole, SpotlightMessage } from '@proton/pa
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import noop from '@proton/utils/noop';
 
 import { Panel } from './Panel';
 import { PanelHeader } from './PanelHeader';
@@ -68,7 +65,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     handleToggleFlagsClick,
 }) => {
     const upsell = useUpselling();
-    const { spotlight } = usePassCore();
 
     const { shareId, itemId, data, optimistic, failed } = revision;
     const { name } = data.metadata;
@@ -94,7 +90,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
     const free = plan === UserPassPlan.FREE;
     const readOnly = shareRoleId === ShareRole.READ;
-    const isOwnerOrManager = owner || shareRoleId === ShareRole.MANAGER;
 
     const hasMultipleVaults = vaults.length > 1;
     const canMove = (!shared || !readOnly) && hasMultipleVaults;
@@ -113,21 +108,12 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const canMonitor = !EXTENSION_BUILD && !trashed && data.type === 'login' && !readOnly;
     const canClone = useFeatureFlag(PassFeature.PassItemCloning) && canManage && isClonableItem(free)(revision);
 
-    const [signal, setSignalItemSharing] = useState(false);
-    const signalItemSharing = signal && !itemShared && canItemShare;
     const disabledSharing = !(canItemShare || canLinkShare || canManageAccess);
     const showSharing = (owner || shared) && !readOnly;
 
     const autotypeEnabled = useFeatureFlag(PassFeature.PassDesktopAutotype);
     const autotypeDiscoverySpotlight = useSpotlightFor(SpotlightMessage.AUTOTYPE_DISCOVERY);
     const signalQuickActions = autotypeEnabled && autotypeDiscoverySpotlight.open && type === 'login';
-
-    useEffect(() => {
-        (async () => {
-            const showSignal = await spotlight.check(SpotlightMessage.ITEM_SHARING);
-            setSignalItemSharing(showSignal);
-        })().catch(noop);
-    }, []);
 
     const monitorActions = canMonitor && (
         <DropdownMenuButton
@@ -151,11 +137,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
     const onItemShare = free
         ? () => upsell({ type: 'pass-plus', upsellRef: UpsellRef.ITEM_SHARING })
-        : () => {
-              void spotlight.acknowledge(SpotlightMessage.ITEM_SHARING);
-              setSignalItemSharing(false);
-              handleShareItemClick();
-          };
+        : () => handleShareItemClick();
 
     return (
         <Panel
@@ -244,7 +226,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     dropdownHeader={c('Label').t`Share`}
                                     disabled={!online || actionsDisabled || disabledSharing}
                                     badge={accessCount > 1 ? accessCount : undefined}
-                                    signaled={isOwnerOrManager && signalItemSharing}
                                     dropdownSize={{
                                         height: DropdownSizeUnit.Dynamic,
                                         width: DropdownSizeUnit.Dynamic,
@@ -262,10 +243,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                                 />
                                             }
                                             icon="user-plus"
-                                            extra={
-                                                (free && <PassPlusPromotionButton className="ml-2" />) ||
-                                                (signalItemSharing && <Badge type="info">{c('Label').t`New`}</Badge>)
-                                            }
+                                            extra={free && <PassPlusPromotionButton className="ml-2" />}
                                         />
                                     )}
 
