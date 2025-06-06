@@ -83,13 +83,17 @@ export const NewsletterSubscriptionView = ({
         }
     }, [feature?.Value, isDomBusy]);
 
-    // The view is not availabe on mobile, we want to make sure to avoid showing it to users
     useEffect(() => {
         if (activeSubscription && activeSubscription.ID) {
-            dispatch(setParams({ newsletterSubscriptionID: activeSubscription.ID, conversationMode: false }));
+            // Temporary workaround: Set newsletterSubscriptionID as a microtask to avoid race condition
+            // with the elements state reset on initial load
+            queueMicrotask(() => {
+                dispatch(setParams({ newsletterSubscriptionID: activeSubscription.ID, conversationMode: false }));
+            });
         }
-    }, [activeSubscription?.ID]);
+    }, [activeSubscription?.ID, params.newsletterSubscriptionID]);
 
+    // The view is not availabe on mobile, we want to make sure to avoid showing it to users
     if (!newsletterSubscriptionsView || !mailboxRefactoring || breakpoints.viewportWidth['<=small']) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
