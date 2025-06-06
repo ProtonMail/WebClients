@@ -2,15 +2,18 @@ import React, { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { CircleLoader, Input } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { CircleLoader, Href, Input, Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import canUseGroups from '@proton/components/containers/organization/groups/canUseGroups';
+import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials } from '@proton/shared/lib/helpers/string';
+import type { Organization } from '@proton/shared/lib/interfaces';
 
 import ApplyPolicyButton from '../ApplyPolicyButton';
 import type { SharedServerGroup, SharedServerUser } from '../useSharedServers';
@@ -72,6 +75,7 @@ const EntityTableRow = ({ id, checked, onSelectEntity, entity, avatar, descripti
 );
 
 interface SharedServersMembersStepProps {
+    organization?: Organization;
     loading?: boolean;
     isEditing: boolean;
     policyName: string;
@@ -88,6 +92,7 @@ interface SharedServersMembersStepProps {
 }
 
 const MembersStep = ({
+    organization,
     loading,
     isEditing,
     policyName,
@@ -102,6 +107,14 @@ const MembersStep = ({
     applyPolicyTo,
     onChangeApplyPolicyTo,
 }: SharedServersMembersStepProps) => {
+    const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
+    const isOrgActive = organization?.State === ORGANIZATION_STATE.ACTIVE;
+    const hasActiveOrganizationKey = isOrgActive && hasOrganizationKey;
+
+    const canCreateGroupsPolicy =
+        !!organization &&
+        ((hasActiveOrganizationKey && canUseGroups(organization?.PlanName)) || (groups?.length ?? 0) > 0);
+
     const [searchQuery, setSearchQuery] = useState('');
 
     const filteredUsers = useMemo(() => {
@@ -117,28 +130,34 @@ const MembersStep = ({
 
     return (
         <div>
-            <div className="flex flex-column gap-2">
-                <span>
-                    {!isEditing ? c('Label').t`Apply policy to` : policyName}
-                    {!isEditing && (
-                        <Tooltip title={applyPolicyTooltipMessage} className="ml-2 mb-1" originalPlacement="right">
-                            <Icon name="info-circle" color="var(--interaction-norm)" alt={applyPolicyTooltipMessage} />
-                        </Tooltip>
-                    )}
-                </span>
-                <div className="flex flex-column md:flex-row flex-nowrap gap-4 w-full">
-                    <ApplyPolicyButton
-                        onClick={() => onChangeApplyPolicyTo('users')}
-                        label={c('Label').t`Users`}
-                        isSelected={applyPolicyTo === 'users'}
-                    />
-                    <ApplyPolicyButton
-                        onClick={() => onChangeApplyPolicyTo('groups')}
-                        label={c('Label').t`Groups`}
-                        isSelected={applyPolicyTo === 'groups'}
-                    />
+            {canCreateGroupsPolicy && (
+                <div className="flex flex-column gap-2">
+                    <span>
+                        {!isEditing ? c('Label').t`Apply policy to` : policyName}
+                        {!isEditing && (
+                            <Tooltip title={applyPolicyTooltipMessage} className="ml-2 mb-1" originalPlacement="right">
+                                <Icon
+                                    name="info-circle"
+                                    color="var(--interaction-norm)"
+                                    alt={applyPolicyTooltipMessage}
+                                />
+                            </Tooltip>
+                        )}
+                    </span>
+                    <div className="flex flex-column md:flex-row flex-nowrap gap-4 w-full">
+                        <ApplyPolicyButton
+                            onClick={() => onChangeApplyPolicyTo('users')}
+                            label={c('Label').t`Users`}
+                            isSelected={applyPolicyTo === 'users'}
+                        />
+                        <ApplyPolicyButton
+                            onClick={() => onChangeApplyPolicyTo('groups')}
+                            label={c('Label').t`Groups`}
+                            isSelected={applyPolicyTo === 'groups'}
+                        />
+                    </div>
                 </div>
-            </div>
+            )}
 
             {(applyPolicyTo === 'users' || (applyPolicyTo === 'groups' && groups.length > 0)) && (
                 <div className="my-4 w-full">
@@ -188,8 +207,10 @@ const MembersStep = ({
             {applyPolicyTo === 'groups' && groups.length === 0 && (
                 <div className="flex flex-column md:flex-row flex-nowrap gap-4 w-full">
                     <span className="mt-4 text-sm inline-block relative flex shrink-0 color-weak" aria-hidden="true">
-                        {c('Info').t`To create your first user group, go to`}&nbsp;
-                        <strong>{c('Info').t`Organization --> Groups`}</strong>
+                        {c('Info').t`To create your first user group, go to`}
+                        <Href href={'/user-groups'} className="ml-1" target="_self">
+                            {c('Link').t`Groups`}
+                        </Href>
                     </span>
                 </div>
             )}
