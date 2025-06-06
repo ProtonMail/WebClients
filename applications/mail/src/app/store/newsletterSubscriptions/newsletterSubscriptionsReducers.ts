@@ -11,6 +11,7 @@ import type {
     fetchNextNewsletterSubscriptionsPage,
     filterSubscriptionList,
     unsubscribeSubscription,
+    updateSubscription,
 } from './newsletterSubscriptionsActions';
 import type { NewsletterSubscriptionsStateType } from './newsletterSubscriptionsSlice';
 
@@ -234,4 +235,71 @@ export const fetchNextNewsletterSubscriptionsPageFulfilled = (
         tab === SubscriptionTabs.Active ? '1' : '0',
         action.payload.PageInfo.NextPage
     );
+};
+
+export const updateSubscriptionPending = (
+    state: NewsletterSubscriptionsStateType,
+    action: ReturnType<typeof updateSubscription.pending>
+) => {
+    if (!state.value) {
+        return;
+    }
+
+    const subscriptionId = action.meta.arg.subscription.ID;
+    const originalIndex = state.value.tabs.active.ids.indexOf(subscriptionId);
+
+    state.value.byId[subscriptionId] = {
+        ...state.value.byId[subscriptionId],
+        UnsubscribedTime: Date.now(),
+    };
+
+    if (originalIndex !== -1) {
+        state.value.tabs.active.ids.splice(originalIndex, 1);
+        state.value.tabs.active.totalCount = Math.max(0, state.value.tabs.active.totalCount - 1);
+    }
+
+    state.value.tabs.unsubscribe.ids.unshift(subscriptionId);
+    state.value.tabs.unsubscribe.totalCount += 1;
+};
+
+export const updateSubscriptionRejected = (
+    state: NewsletterSubscriptionsStateType,
+    action: ReturnType<typeof updateSubscription.rejected>
+) => {
+    const { previousState, originalIndex } = action.payload || {};
+    if (!state.value || !previousState || originalIndex === undefined || originalIndex < 0) {
+        return;
+    }
+
+    const subscriptionId = previousState.ID;
+
+    state.value.byId[subscriptionId] = previousState;
+
+    const unsubscribedId = state.value.tabs.unsubscribe.ids.indexOf(subscriptionId);
+    if (unsubscribedId !== -1) {
+        state.value.tabs.unsubscribe.ids.splice(unsubscribedId, 1);
+        state.value.tabs.unsubscribe.totalCount = Math.max(0, state.value.tabs.unsubscribe.totalCount - 1);
+    }
+
+    // We select the previous subscription if we had an error
+    if (!state.value.selectedSubscriptionId) {
+        state.value.selectedSubscriptionId = subscriptionId;
+    }
+
+    state.value.tabs.active.ids.splice(originalIndex, 0, subscriptionId);
+    state.value.tabs.active.totalCount += 1;
+};
+
+export const updateSubscriptionFulfilled = (
+    state: NewsletterSubscriptionsStateType,
+    action: ReturnType<typeof updateSubscription.fulfilled>
+) => {
+    if (!state.value) {
+        return;
+    }
+
+    const subscriptionId = action.meta.arg.subscription.ID;
+    state.value.byId[subscriptionId] = {
+        ...action.payload.NewsletterSubscription,
+    };
 };

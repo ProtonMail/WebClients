@@ -4,11 +4,12 @@ import {
     applyNewsletterSubscriptionFilter,
     getNewsletterSubscription,
     unsubscribeNewsletterSubscription,
+    updateNewsletterSubscription,
 } from '@proton/shared/lib/api/newsletterSubscription';
 import type {
-    FilterSubscriptionAPIResponse,
     GetNewsletterSubscriptionsApiResponse,
     NewsletterSubscription,
+    POSTSubscriptionAPIResponse,
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { type MailThunkExtra } from '../store';
@@ -17,6 +18,7 @@ import {
     type SortSubscriptionsValue,
     SubscriptionTabs,
     type UnsubscribePayload,
+    type UpdateSubscriptionPayload,
 } from './interface';
 import { newsletterSubscriptionName } from './newsletterSubscriptionsSlice';
 
@@ -61,12 +63,12 @@ export const unsubscribeSubscription = createAsyncThunk<
 });
 
 export const filterSubscriptionList = createAsyncThunk<
-    FilterSubscriptionAPIResponse,
+    POSTSubscriptionAPIResponse,
     FilterSubscriptionPayload,
     MailThunkExtra & { rejectValue: { previousState: NewsletterSubscription; originalIndex: number } }
 >('newsletterSubscriptions/filterList', async (payload, thunkExtra) => {
     try {
-        return await thunkExtra.extra.api<FilterSubscriptionAPIResponse>(
+        return await thunkExtra.extra.api<POSTSubscriptionAPIResponse>(
             applyNewsletterSubscriptionFilter(payload.subscription.ID, payload.data)
         );
     } catch (error) {
@@ -97,5 +99,22 @@ export const fetchNextNewsletterSubscriptionsPage = createAsyncThunk<
         );
     } catch (error) {
         throw error;
+    }
+});
+
+export const updateSubscription = createAsyncThunk<
+    POSTSubscriptionAPIResponse,
+    UpdateSubscriptionPayload,
+    MailThunkExtra & { rejectValue: { previousState: NewsletterSubscription; originalIndex: number } }
+>('newsletterSubscriptions/update', async (payload, thunkExtra) => {
+    try {
+        return await thunkExtra.extra.api<POSTSubscriptionAPIResponse>(
+            updateNewsletterSubscription(payload.subscription.ID, payload.data)
+        );
+    } catch (error) {
+        return thunkExtra.rejectWithValue({
+            previousState: payload.subscription,
+            originalIndex: payload.subscriptionIndex ?? -1,
+        });
     }
 });

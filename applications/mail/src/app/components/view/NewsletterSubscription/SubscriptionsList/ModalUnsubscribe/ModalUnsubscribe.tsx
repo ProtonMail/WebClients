@@ -20,6 +20,7 @@ import { SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/inte
 import {
     filterSubscriptionList,
     unsubscribeSubscription,
+    updateSubscription,
 } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
 import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
@@ -71,7 +72,7 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
                 void sendUnsubscribeEmail();
             }
 
-            // TODO dispatch update action once the API is ready
+            void dispatch(updateSubscription({ subscription, subscriptionIndex, data: { Unsubscribed: true } }));
         }
 
         if (trash || archive || read) {
