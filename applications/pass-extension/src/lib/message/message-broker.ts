@@ -101,6 +101,7 @@ export const createMessageBroker = (options: MessageBrokerOptions) => {
 
             return successMessage(res);
         } catch (error: any) {
+            void browser.runtime.lastError;
             logger.debug(`[MessageBroker::Message] Error "${message.type}"`, error);
             options.onError(error);
             return error instanceof Error ? errorMessage(error?.message) : { ...error, type: 'error' };
