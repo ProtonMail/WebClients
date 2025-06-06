@@ -75,6 +75,10 @@ export const NewsletterSubscriptionView = ({
         // We override the handleMarkAs to prevent from moving back to the inbox when marking an email as unread
         handleMarkAs: (status: MARK_AS_STATUS, sourceAction: SOURCE_ACTION) =>
             actions.handleMarkAs(status, sourceAction, { preventBack: true }),
+        // We override the handleElement to prevent away navigation when clicking on an email
+        handleElement: (elementID: string | undefined) => {
+            dispatch(newsletterSubscriptionsActions.setSelectedElementId(elementID));
+        },
     };
 
     useEffect(() => {
