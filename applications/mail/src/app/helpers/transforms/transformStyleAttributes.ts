@@ -130,6 +130,14 @@ export const removeNegativeMargins = (element: HTMLElement) => {
     });
 };
 
+// some emails are using white-space: pre in text contents, we replace it with pre-wrap so text is not overflowing (same as gmail does)
+const replaceWhiteSpacePre = (element: HTMLElement) => {
+    const whiteSpace = element.style.whiteSpace;
+    if (whiteSpace === 'pre') {
+        element.style.whiteSpace = 'pre-wrap';
+    }
+};
+
 export const transformStyleAttributes = (document: Element) => {
     const nodesWithStyleAttribute = document.querySelectorAll('[style]');
 
@@ -143,5 +151,7 @@ export const transformStyleAttributes = (document: Element) => {
         replaceLeftTopProperties(element);
 
         removeNegativeMargins(element);
+
+        replaceWhiteSpacePre(element);
     }
 };
