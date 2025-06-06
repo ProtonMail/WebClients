@@ -369,7 +369,7 @@ const CredentialLeakSection = () => {
                                     <Icon name="info-circle" className="ml-2 mr-2 color-primary " />
                                     <span className="flex-1">
                                         {c('Info')
-                                            .t`Your trial ends on June 19. Upgrade to receive future breach reports.`}
+                                            .t`Your trial ends on June 25. Upgrade to receive future breach reports.`}
                                     </span>
                                     <Button
                                         className="ml-0 mr-2 py-1"
