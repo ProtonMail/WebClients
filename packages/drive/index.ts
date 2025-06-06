@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { useLocalState } from '@proton/components';
 import { MemoryCache, ProtonDriveClient, generateNodeUid } from '@proton/drive-sdk';
@@ -54,32 +54,37 @@ export function useDrive() {
      * @param options.appVersion Pass from your app config. Example "5.0.0".
      * @param options.userPlan Should be "paid" for any paid user, "free" for not paid, and "anonymous" for public access. Keep "unknown" or unset if not known.
      */
-    const init = (options: { appName: APP_NAMES; appVersion: string; userPlan?: UserPlan }) => {
-        // eslint-disable-next-line no-console
-        console.debug('[drive] Configuring ProtonDriveClient', options);
+    const init = useCallback(
+        (options: { appName: APP_NAMES; appVersion: string; userPlan?: UserPlan }) => {
+            // eslint-disable-next-line no-console
+            console.debug('[drive] Configuring ProtonDriveClient', options);
 
-        if (driveSingleton) {
-            throw new Error('ProtonDriveClient is already configured. You can only configure it once.');
-        }
+            if (driveSingleton) {
+                throw new Error('ProtonDriveClient is already configured. You can only configure it once.');
+            }
 
-        setAppVersionHeaders(Object.entries(getAppVersionHeaders(getClientID(options.appName), options.appVersion)));
+            setAppVersionHeaders(
+                Object.entries(getAppVersionHeaders(getClientID(options.appName), options.appVersion))
+            );
 
-        const { telemetry, memoryLogHandler } = initTelemetry(options.userPlan, debug);
+            const { telemetry, memoryLogHandler } = initTelemetry(options.userPlan, debug);
 
-        driveSingleton = new ProtonDriveClient({
-            httpClient,
-            entitiesCache: new MemoryCache(),
-            cryptoCache: new MemoryCache(),
-            account,
-            openPGPCryptoModule,
-            config: {
-                baseUrl: `${window.location.host}/api`,
-            },
-            telemetry,
-        });
+            driveSingleton = new ProtonDriveClient({
+                httpClient,
+                entitiesCache: new MemoryCache(),
+                cryptoCache: new MemoryCache(),
+                account,
+                openPGPCryptoModule,
+                config: {
+                    baseUrl: `${window.location.host}/api`,
+                },
+                telemetry,
+            });
 
-        memoryLogHandlerSingleton = memoryLogHandler;
-    };
+            memoryLogHandlerSingleton = memoryLogHandler;
+        },
+        [setAppVersionHeaders, debug, httpClient, account, openPGPCryptoModule]
+    );
 
     return {
         init,
@@ -96,15 +101,18 @@ export function useDrive() {
          *
          * Set `proton-drive-debug` local state to `true` to enable debug logs.
          */
-        getLogs: () => {
+        getLogs: useCallback(() => {
             return memoryLogHandlerSingleton?.getLogs() || [];
-        },
+        }, []),
         /**
          * Internal methods that can be changed or removed anytime.
          */
-        internal: {
-            generateNodeUid,
-            splitNodeRevisionUid,
-        },
+        internal: useMemo(
+            () => ({
+                generateNodeUid,
+                splitNodeRevisionUid,
+            }),
+            []
+        ),
     };
 }
