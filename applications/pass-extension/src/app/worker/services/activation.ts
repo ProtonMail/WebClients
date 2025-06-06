@@ -9,6 +9,7 @@ import { isVivaldiBrowser } from 'proton-pass-extension/lib/utils/vivaldi';
 import type { ClientInitMessage, WorkerMessageWithSender } from 'proton-pass-extension/types/messages';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
+import { webNavigation } from 'webextension-polyfill';
 
 import { MIN_CACHE_VERSION, RUNTIME_RELOAD_THROTTLE } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
@@ -318,15 +319,27 @@ export const createActivationService = () => {
     /** If the `current` flag is passed : resolve the active tab for the
      * current window (ie when requesting the active tab for the popup).
      * Else parse the sender data (ie: content-script) */
-    const handleResolveTab: MessageHandlerCallback<WorkerMessageType.TABS_QUERY> = async ({ payload }, sender) => {
+    const handleTabQuery: MessageHandlerCallback<WorkerMessageType.TAB_QUERY> = async (
+        { payload },
+        { tab, frameId }
+    ) => {
         if (payload.current) {
-            const tab = first(await browser.tabs.query({ active: true, currentWindow: true }));
-            if (!(tab && tab?.id)) throw new Error('No active tabs');
-            return { tabId: tab.id, url: parseUrl(tab.url), senderTabId: sender.tab?.id };
+            const current = first(await browser.tabs.query({ active: true, currentWindow: true }));
+            if (!(current && current?.id)) throw new Error('No active tabs');
+            return { tabId: current.id, url: parseUrl(current.url), senderTabId: tab?.id };
         }
 
-        if (!sender.tab?.id) throw new Error('Invalid sender tab');
-        return { tabId: sender.tab.id, url: parseUrl(sender.tab.url), senderTabId: sender.tab.id };
+        if (!tab?.id) throw new Error('Invalid sender tab');
+        const { id: tabId } = tab;
+
+        if (frameId !== undefined && frameId > 0) {
+            /** For sub-frames : resolve the iframe's document origin as the url  */
+            const result = await webNavigation.getFrame({ frameId, tabId });
+            if (!result) throw new Error('Invalid sender frame');
+            return { tabId, url: parseUrl(result.url), senderTabId: tabId };
+        }
+
+        return { tabId, url: parseUrl(tab.url), senderTabId: tabId };
     };
 
     browser.permissions.onAdded.addListener(checkPermissionsUpdate);
@@ -335,7 +348,7 @@ export const createActivationService = () => {
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.CLIENT_INIT, handleClientInit);
     WorkerMessageBroker.registerMessage(WorkerMessageType.POPUP_INIT, handlePopupInit);
-    WorkerMessageBroker.registerMessage(WorkerMessageType.TABS_QUERY, handleResolveTab);
+    WorkerMessageBroker.registerMessage(WorkerMessageType.TAB_QUERY, handleTabQuery);
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_RELOAD, reload);
     WorkerMessageBroker.registerMessage(WorkerMessageType.PING, () => Promise.resolve(true));
     WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_EXTENSION_KEY, () => ({ key: EXTENSION_KEY }));

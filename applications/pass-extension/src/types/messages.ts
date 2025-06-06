@@ -163,7 +163,7 @@ export enum WorkerMessageType {
     SPOTLIGHT_CHECK = 'SPOTLIGHT_CHECK',
     SPOTLIGHT_REQUEST = 'SPOTLIGHT_REQUEST',
     STORE_DISPATCH = 'STORE_DISPATCH',
-    TABS_QUERY = 'TABS_QUERY',
+    TAB_QUERY = 'TAB_QUERY',
     TELEMETRY_EVENT = 'TELEMETRY_EVENT',
     UNLOAD_CONTENT_SCRIPT = 'UNLOAD_CONTENT_SCRIPT',
     UPDATE_AVAILABLE = 'UPDATE_AVAILABLE',
@@ -251,7 +251,7 @@ export type SpotlightAckMessage = WithPayload<WorkerMessageType.SPOTLIGHT_ACK, {
 export type SpotlightCheckMessage = WithPayload<WorkerMessageType.SPOTLIGHT_CHECK, { message: SpotlightMessage }>;
 export type SpotlightRequestMessage = { type: WorkerMessageType.SPOTLIGHT_REQUEST };
 export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, { action: Action }>;
-export type TabsQueryMessage = WithPayload<WorkerMessageType.TABS_QUERY, { current?: boolean }>;
+export type TabQueryMessage = WithPayload<WorkerMessageType.TAB_QUERY, { current?: boolean }>;
 export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVENT, TelemetryEventDTO>;
 export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT };
 export type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };
@@ -335,7 +335,7 @@ export type WorkerMessage =
     | SpotlightCheckMessage
     | SpotlightRequestMessage
     | StoreActionMessage
-    | TabsQueryMessage
+    | TabQueryMessage
     | TelemetryEventMessage
     | UnloadContentScriptMessage
     | UpdateAvailableMessage
@@ -389,7 +389,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.RESOLVE_USER]: { user: MaybeNull<User> };
     [WorkerMessageType.SPOTLIGHT_CHECK]: { enabled: boolean };
     [WorkerMessageType.SPOTLIGHT_REQUEST]: { message: MaybeNull<SpotlightMessage> };
-    [WorkerMessageType.TABS_QUERY]: TabInfo;
+    [WorkerMessageType.TAB_QUERY]: TabInfo;
     [WorkerMessageType.VAULTS_QUERY]: { vaults: VaultShareItem[]; defaultShareId: ShareId };
     [WorkerMessageType.WEBSITE_RULES_REQUEST]: { rules: MaybeNull<DetectionRulesMatch> };
 };

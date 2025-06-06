@@ -53,7 +53,7 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
             url = null,
         } = await sendMessage.on(
             message({
-                type: WorkerMessageType.TABS_QUERY,
+                type: WorkerMessageType.TAB_QUERY,
                 payload: { current: options.endpoint === 'popup' },
             }),
             (res) => {
