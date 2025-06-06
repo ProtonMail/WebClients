@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
+import { c } from 'ttag';
 
 import { useMeetContext } from '../contexts/MeetContext';
 import { useDevices } from '../hooks/useDevices';
@@ -62,7 +63,7 @@ export const AudioSettings = () => {
                     value={audioDeviceId}
                     onValue={(value) => handleInputDeviceChange(value)}
                     icon="meet-microphone"
-                    title="Audio"
+                    title={c('l10n_nightly Info').t`Audio`}
                     options={microphones.map((mic) => ({
                         value: mic.deviceId,
                         label: mic.label,
@@ -75,7 +76,7 @@ export const AudioSettings = () => {
                     value={activeOutputDeviceId}
                     onValue={(value) => handleOutputDeviceChange(value)}
                     icon="meet-speaker"
-                    title="Speaker"
+                    title={c('l10n_nightly Info').t`Speaker`}
                     options={speakers.map((speaker) => ({
                         value: speaker.deviceId,
                         label: speaker.label,

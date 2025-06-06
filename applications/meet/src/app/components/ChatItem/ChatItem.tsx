@@ -50,7 +50,7 @@ export const ChatItem = ({ roomName, item, colorClassName, displayDate = true, s
             </div>
 
             <div className="flex flex-column flex-nowrap gap-1 justify-start">
-                <div className="flex items-start">
+                <div className="flex items-start text-semibold">
                     {name}
                     {displayDate && (
                         <div className="ml-1 color-weak">
@@ -63,14 +63,16 @@ export const ChatItem = ({ roomName, item, colorClassName, displayDate = true, s
                     )}
                 </div>
                 {isMeetChatMessage(item) && (
-                    <div className={clsx('flex justify-start items-start color-weak', 'chat-message')}>
+                    <div className={clsx('flex justify-start items-start color-weak text-semibold', 'chat-message')}>
                         {item.message}
                     </div>
                 )}
                 {isParticipantEventRecord(item) && (
-                    <div className="flex justify-start items-start">
+                    <div className="flex justify-start items-start text-semibold">
                         <span className="color-weak">
-                            {item.eventType === ParticipantEvent.Join ? c('Meet').t`Joined` : c('Meet').t`Left`}
+                            {item.eventType === ParticipantEvent.Join
+                                ? c('l10n_nightly Info').t`Joined`
+                                : c('l10n_nightly Info').t`Left`}
                         </span>
 
                         <span className="ml-1" style={{ color: 'var(--interaction-norm)' }}>

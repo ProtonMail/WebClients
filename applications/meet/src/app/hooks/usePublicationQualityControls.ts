@@ -6,19 +6,16 @@ import { Track, VideoQuality } from 'livekit-client';
 
 import { useMeetContext } from '../contexts/MeetContext';
 import { useSortedParticipants } from './useSortedParticipants';
-import { useVideoToggle } from './useVideoToggle';
 
 const increasedVideoQuality = process.env.LIVEKIT_INCREASED_VIDEO_QUALITY === 'true';
 
 export const usePublicationQualityControls = () => {
     const { sortedParticipants, pagedParticipants } = useSortedParticipants();
-    const { quality, videoDeviceId, isVideoEnabled } = useMeetContext();
+    const { quality } = useMeetContext();
     const { localParticipant } = useLocalParticipant();
 
     const prevSortedParticipants = useRef(sortedParticipants);
     const prevPagedParticipants = useRef(pagedParticipants);
-
-    const toggleVideo = useVideoToggle();
 
     const compareParticipants = () => {
         let hasChanged = false;
@@ -92,10 +89,4 @@ export const usePublicationQualityControls = () => {
             );
         });
     }, [hasParticipantsChanged, quality]);
-
-    useEffect(() => {
-        if (isVideoEnabled) {
-            void toggleVideo({ isEnabled: true, videoDeviceId, forceUpdate: true });
-        }
-    }, [videoDeviceId, toggleVideo]);
 };

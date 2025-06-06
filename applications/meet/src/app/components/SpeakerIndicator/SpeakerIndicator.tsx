@@ -1,25 +1,50 @@
 import React from 'react';
 
+import type { Participant } from 'livekit-client';
+
+import { useParticipantAudioLevel } from '../../hooks/useParticipantAudioLevel';
+
 import './SpeakerIndicator.scss';
 
-interface SpeakerIndicatorProps {
-    size: number;
-}
+type SpeakerIndicatorProps = {
+    size?: number;
+    participant: Participant;
+};
 
-export const SpeakerIndicator = ({ size = 6 }: SpeakerIndicatorProps) => (
-    <svg
-        width={size}
-        height={size}
-        viewBox="0 0 16 16"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className={`sound-wave icon-size-${size}`}
-        style={{ color: 'currentColor' }}
-    >
-        <rect x="1" y="6" width="2" height="4" rx="1" className="bar bar1" />
-        <rect x="4" y="4" width="2" height="8" rx="1" className="bar bar2" />
-        <rect x="7" y="3.5" width="2" height="9" rx="1" className="bar bar3" />
-        <rect x="10" y="4" width="2" height="8" rx="1" className="bar bar4" />
-        <rect x="13" y="6" width="2" height="4" rx="1" className="bar bar5" />
-    </svg>
-);
+const BAR_CONFIG = [
+    { x: 1, minH: 1, maxH: 3 },
+    { x: 4, minH: 2, maxH: 7 },
+    { x: 7, minH: 2.5, maxH: 8 },
+    { x: 10, minH: 2, maxH: 7 },
+    { x: 13, minH: 1, maxH: 3 },
+];
+
+export const SpeakerIndicator = ({ size = 16, participant }: SpeakerIndicatorProps) => {
+    const audioLevel = useParticipantAudioLevel(participant);
+    const centerY = 8;
+
+    return (
+        <svg width={size} height={size} viewBox="0 0 16 16" fill="none" className="sound-wave color-inherit">
+            {BAR_CONFIG.map((bar, i) => {
+                const scaledAudioLevel = Math.pow(audioLevel, 0.7);
+                const height = bar.minH + (bar.maxH - bar.minH) * scaledAudioLevel;
+                const y = centerY - height / 2;
+
+                return (
+                    <rect
+                        key={i}
+                        x={bar.x}
+                        y={y}
+                        width={2}
+                        height={height}
+                        rx={1}
+                        className="bar"
+                        style={{
+                            transition: 'height 50ms ease-out, y 50ms ease-out',
+                        }}
+                    />
+                );
+            })}
+        </svg>
+    );
+};

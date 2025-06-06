@@ -1,9 +1,12 @@
+import { useMemo, useState } from 'react';
+
 import { useParticipants } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 import { Track } from 'livekit-client';
 import { c } from 'ttag';
 
-import { IcMeetCamera, IcMeetCameraOff, IcMeetMicrophone, IcMeetMicrophoneOff } from '@proton/icons';
+import { Button } from '@proton/atoms';
+import { IcMagnifier, IcMeetCamera, IcMeetCameraOff, IcMeetMicrophone, IcMeetMicrophoneOff } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
@@ -11,15 +14,29 @@ import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useDebouncedActiveSpeakers } from '../../hooks/useDebouncedActiveSpeakers';
 import { MeetingSideBars } from '../../types';
+import { SideBarSearch } from '../SideBarSearch';
 
 import './Participants.scss';
 
 export const Participants = () => {
+    const [isSearchOn, setIsSearchOn] = useState(false);
+    const [searchExpression, setSearchExpression] = useState('');
+
     const participants = useParticipants();
 
     const activeSpeakers = useDebouncedActiveSpeakers();
 
     const { sideBarState } = useMeetContext();
+
+    const filteredParticipants = useMemo(() => {
+        if (!isSearchOn || !searchExpression) {
+            return participants;
+        }
+
+        return participants.filter((participant) => {
+            return participant.name?.toLowerCase().includes(searchExpression.toLowerCase());
+        });
+    }, [isSearchOn, searchExpression, participants]);
 
     if (!sideBarState[MeetingSideBars.Participants]) {
         return null;
@@ -28,13 +45,31 @@ export const Participants = () => {
     return (
         <SideBar>
             <div className="absolute top-0 left-0 w-full px-4 pt-4 pb-0 bg-norm rounded-xl" style={{ opacity: 0.9 }}>
-                <div className="mb-4 h3">
-                    {c('Meet').t`Participants`} ({participants.length})
-                </div>
+                {isSearchOn ? (
+                    <SideBarSearch
+                        searchExpression={searchExpression}
+                        setSearchExpression={setSearchExpression}
+                        setIsSearchOn={setIsSearchOn}
+                        placeholder={c('l10n_nightly Placeholder').t`Search participants`}
+                    />
+                ) : (
+                    <div className="mb-4 h3 text-semibold flex items-center">
+                        {c('l10n_nightly Title').t`Participants`} ({participants.length})
+                        <Button
+                            className="p-0 ml-2 flex items-center justify-center"
+                            shape="ghost"
+                            size="small"
+                            onClick={() => setIsSearchOn(!isSearchOn)}
+                            aria-label={c('l10n_nightly Alt').t`Open participants search`}
+                        >
+                            <IcMagnifier size={6} />
+                        </Button>
+                    </div>
+                )}
             </div>
 
             <div className="flex-1 overflow-y-auto w-full flex flex-column flex-nowrap gap-4 h-full participants-list">
-                {participants.map((participant: Participant, index) => {
+                {filteredParticipants.map((participant: Participant, index) => {
                     const videoPub = Array.from(participant.trackPublications.values()).find(
                         (pub) => pub.kind === Track.Kind.Video && pub.source === Track.Source.Camera && pub.track
                     );
@@ -62,22 +97,12 @@ export const Participants = () => {
                             <div className="flex items-center">{participant.name}</div>
                             <div className="flex flex-nowrap items-center ml-auto gap-4 pr-4">
                                 {!!activeSpeakers.find((p) => p.identity === participant.identity) ? (
-                                    <SpeakingIndicator size={32} iconSize={5} />
+                                    <SpeakingIndicator participant={participant} size={32} />
                                 ) : (
-                                    <>
-                                        {isMuted ? (
-                                            <IcMeetMicrophoneOff viewBox="0 0 24 24" />
-                                        ) : (
-                                            <IcMeetMicrophone viewBox="0 0 24 24" />
-                                        )}
-                                    </>
+                                    <>{isMuted ? <IcMeetMicrophoneOff /> : <IcMeetMicrophone />}</>
                                 )}
 
-                                {!!videoPub && !videoPub.isMuted ? (
-                                    <IcMeetCamera viewBox="0 0 24 24" />
-                                ) : (
-                                    <IcMeetCameraOff viewBox="0 0 24 24" />
-                                )}
+                                {!!videoPub && !videoPub.isMuted ? <IcMeetCamera /> : <IcMeetCameraOff />}
                             </div>
                         </div>
                     );

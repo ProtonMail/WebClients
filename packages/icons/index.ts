@@ -269,9 +269,13 @@ export type IconName =
     | 'meet-microphone-off'
     | 'meet-microphone-filled'
     | 'meet-microphone-filled-off'
+    | 'meet-more'
     | 'meet-screen-share'
+    | 'meet-settings'
+    | 'meet-shield'
     | 'meet-speaker'
     | 'meet-participants'
+    | 'meet-record'
     | 'meet-user'
     | 'minus'
     | 'minus-circle'
@@ -697,9 +701,13 @@ export { IcMeetMicrophone } from './icons/IcMeetMicrophone';
 export { IcMeetMicrophoneOff } from './icons/IcMeetMicrophoneOff';
 export { IcMeetMicrophoneFilled } from './icons/IcMeetMicrophoneFilled';
 export { IcMeetMicrophoneFilledOff } from './icons/IcMeetMicrophoneFilledOff';
+export { IcMeetMore } from './icons/IcMeetMore';
 export { IcMeetScreenShare } from './icons/IcMeetScreenShare';
+export { IcMeetSettings } from './icons/IcMeetSettings';
+export { IcMeetShield } from './icons/IcMeetShield';
 export { IcMeetSpeaker } from './icons/IcMeetSpeaker';
 export { IcMeetParticipants } from './icons/IcMeetParticipants';
+export { IcMeetRecord } from './icons/IcMeetRecord';
 export { IcMeetUser } from './icons/IcMeetUser';
 export { IcMinus } from './icons/IcMinus';
 export { IcMinusCircle } from './icons/IcMinusCircle';

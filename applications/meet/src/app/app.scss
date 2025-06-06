@@ -24,11 +24,28 @@ body {
 	position: relative;
 	z-index: 1;
 	background: var(--interaction-weak-minor-3);
+
+	--font-weight-bold: 700;
+
+	.h1,
+	.h2,
+	.h3,
+	.h4,
+	.h5,
+	.h6 {
+		font-weight: var(--font-weight-bold) !important;
+	}
+
+	.button {
+		font-weight: 600 !important;
+	}
+
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
 }
 
 $meet-background-colors:
-	var(--interaction-norm-minor-3), var(--signal-success-minor-2), var(--ui-pink-interaction-norm-minor-2),
-	var(--ui-blue-interaction-norm-minor-2), var(--signal-danger-minor-2), var(--ui-orange-interaction-norm-minor-2);
+	var(--ui-purple-interaction-minor-3), var(--ui-green-interaction-minor-3), var(--interaction-norm-minor-3),
+	var(--ui-blue-interaction-minor-3), var(--ui-red-interaction-norm-minor-2), var(--ui-orange-interaction-minor-3);
 
 @for $i from 1 through 6 {
 	.meet-background-#{$i} {
@@ -37,8 +54,8 @@ $meet-background-colors:
 }
 
 $profile-colors:
-	var(--interaction-norm), var(--signal-success), var(--ui-pink-interaction-norm), var(--ui-blue-interaction-norm),
-	var(--signal-danger-major-1), var(--ui-orange-interaction-norm);
+	var(--ui-purple-interaction-minor-1), var(--ui-green-interaction-minor-1), var(--interaction-norm),
+	var(--ui-blue-interaction-minor-1), var(--ui-red-interaction-norm-major-1), var(--ui-orange-interaction-minor-1);
 
 @for $i from 1 through 6 {
 	.profile-background-#{$i} {
@@ -55,5 +72,9 @@ $profile-colors:
 @for $i from 1 through 6 {
 	.tile-border-#{$i} {
 		border: 3px solid nth($profile-colors, $i);
+	}
+
+	.tile-border-#{$i}-small {
+		border: 2px solid nth($profile-colors, $i);
 	}
 }

@@ -7,7 +7,7 @@ import { DeviceSettings } from '../components/DeviceSettings/DeviceSettings';
 import { JoiningRoomLoader } from '../components/JoiningRoomLoader';
 import { PreJoinDetails } from '../components/PreJoinDetails/PreJoinDetails';
 import { UserInfo } from '../components/UserInfo';
-import { useDefaultDisplayName } from '../hooks/useDefaultDisplayName';
+import { defaultDisplayNameHooks } from '../hooks/useDefaultDisplayName';
 import { useDevices } from '../hooks/useDevices';
 import type { ParticipantSettings } from '../types';
 import { LoadingState } from '../types';
@@ -31,35 +31,34 @@ export const PrejoinContainer = ({ handleJoin, loadingState, isLoading, guestMod
     const [isCameraEnabled, setIsCameraEnabled] = useState(false);
     const [isMicrophoneEnabled, setIsMicrophoneEnabled] = useState(false);
 
+    const useDefaultDisplayName = guestMode
+        ? defaultDisplayNameHooks.unauthenticated
+        : defaultDisplayNameHooks.authenticated;
+
     const defaultDisplayName = useDefaultDisplayName();
 
     const [displayName, setDisplayName] = useState(defaultDisplayName);
+
+    const searchParams = new URLSearchParams(window.location.search);
+
+    const roomId = getRoomNameFromSearchParams(searchParams);
 
     useEffect(() => {
         setSelectedCamera(defaultCamera);
         setSelectedMicrophone(defaultMicrophone);
     }, [defaultCamera, defaultMicrophone]);
 
-    const handleJoinMeeting = ({ displayName, meetingLink }: { displayName: string; meetingLink: string }) => {
-        const url = new URL(meetingLink);
-        const searchParams = new URLSearchParams(url.search);
-        const roomName = getRoomNameFromSearchParams(searchParams);
-
+    const handleJoinMeeting = ({ displayName }: { displayName: string }) => {
         handleJoin({
             displayName,
-            roomName,
+            roomName: roomId,
             audioDeviceId: selectedMicrophone?.deviceId as string,
             videoDeviceId: selectedCamera?.deviceId as string,
             isAudioEnabled: isMicrophoneEnabled,
             isVideoEnabled: isCameraEnabled,
             isFaceTrackingEnabled: false,
-            meetingLink,
         });
     };
-
-    const searchParams = new URLSearchParams(window.location.search);
-
-    const defaultMeetingLink = `${window.location.origin}?room_id=${getRoomNameFromSearchParams(searchParams)}`;
 
     return (
         <div className="flex flex-nowrap w-full h-full items-center justify-center">
@@ -79,6 +78,7 @@ export const PrejoinContainer = ({ handleJoin, loadingState, isLoading, guestMod
                         onClick={() =>
                             window.location.assign(window.location.origin.replace('meet', 'account') + '/login')
                         }
+                        className="rounded-full"
                     >
                         Sign in
                     </Button>
@@ -104,7 +104,7 @@ export const PrejoinContainer = ({ handleJoin, loadingState, isLoading, guestMod
                     <>{loadingState === LoadingState.JoiningInProgress && <JoiningRoomLoader />}</>
                 ) : (
                     <PreJoinDetails
-                        defaultMeetingLink={defaultMeetingLink}
+                        roomId={roomId}
                         displayName={displayName}
                         onDisplayNameChange={setDisplayName}
                         onJoinMeeting={handleJoinMeeting}

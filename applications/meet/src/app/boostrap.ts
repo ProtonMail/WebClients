@@ -1,5 +1,7 @@
+import { createBrowserHistory } from 'history';
 import type { ProtonThunkArguments } from 'packages/redux-shared-store-types';
 
+import { registerSessionListener } from '@proton/account/accountSessions/registerSessionListener';
 import { addressesThunk } from '@proton/account/addresses';
 import * as bootstrap from '@proton/account/bootstrap';
 import { type SessionPayloadData } from '@proton/account/bootstrap';
@@ -8,12 +10,15 @@ import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActio
 import { type NotificationsManager } from '@proton/components/containers/notifications/manager';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import { FeatureCode, fetchFeatures } from '@proton/features/index';
+import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { handleLogoutFromURL } from '@proton/shared/lib/authentication/handleLogoutFromURL';
 import { registerSessionRemovalListener } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { type APP_NAMES } from '@proton/shared/lib/constants';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { type ProtonConfig } from '@proton/shared/lib/interfaces';
+import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
 import { clearSettings } from '@proton/wallet';
@@ -191,4 +196,42 @@ export const bootstrapApp = async (parameters: BootstrapParameters) => {
         { appName: parameters.config.APP_NAME, authentication },
         executeBootstrapSteps({ ...parameters, authentication })
     );
+};
+
+export const bootstrapGuestApp = async (config: ProtonConfig) => {
+    const api = createApi({ config, sendLocaleHeaders: true });
+
+    registerSessionListener({ type: 'all' });
+    handleLogoutFromURL({ api });
+
+    const authentication = bootstrap.createAuthentication({ initialAuth: false });
+    bootstrap.init({ config, authentication, locales });
+
+    const unauthenticatedApi = createUnauthenticatedApi(api);
+    const unleashClient = bootstrap.createUnleash({ api: unauthenticatedApi.apiCallback });
+
+    await bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient });
+
+    const history = createBrowserHistory({ basename: '/meet' });
+
+    await unleashClient.start();
+
+    await unauthenticatedApi.startUnAuthFlow();
+
+    // @ts-ignore
+    const store = setupStore({
+        api: unauthenticatedApi.apiCallback as ApiWithListener,
+        authentication,
+        unleashClient,
+        config,
+        history,
+    });
+
+    return {
+        authentication,
+        store,
+        unauthenticatedApi,
+        history,
+        unleashClient,
+    };
 };

@@ -8,7 +8,7 @@ import { start } from './listeners';
 import { rootReducer } from './rootReducer';
 
 interface MeetExtraThunkArguments extends ProtonThunkArguments {
-    notificationsManager: NotificationsManager;
+    notificationsManager?: NotificationsManager;
 }
 
 export const setupStore = (extraThunkArguments: MeetExtraThunkArguments) => {

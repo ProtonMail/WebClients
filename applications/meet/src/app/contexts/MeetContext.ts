@@ -36,6 +36,7 @@ interface MeetContextValues {
     setPageSize: (pageSize: number) => void;
     handleLeave: () => void;
     isVideoEnabled: boolean;
+    setIsVideoEnabled: (isVideoEnabled: boolean) => void;
 }
 
 export const MeetContext = createContext<MeetContextValues>({
@@ -75,6 +76,7 @@ export const MeetContext = createContext<MeetContextValues>({
     setPageSize: () => {},
     handleLeave: () => {},
     isVideoEnabled: false,
+    setIsVideoEnabled: () => {},
 });
 
 export const useMeetContext = () => {

@@ -1,13 +1,14 @@
 import { useLocalParticipant, useParticipants } from '@livekit/components-react';
+import { c } from 'ttag';
 
+import type { IconSize } from '@proton/icons';
 import {
-    IcCogWheel,
     IcInfoCircle,
     IcMeetCamera,
     IcMeetCameraOff,
-    IcMeetMicrophone,
     IcMeetMicrophoneOff,
     IcMeetParticipants,
+    IcMeetSettings,
 } from '@proton/icons';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
@@ -19,6 +20,7 @@ import { MeetingSideBars, PopUpControls } from '../../types';
 import { AudioSettings } from '../AudioSettings';
 import { ChatButton } from '../ChatButton';
 import { LeaveModal } from '../LeaveModal/LeaveModal';
+import { MicrophoneWithVolume } from '../MicrophoneWithVolume';
 import { ScreenShareButton } from '../ScreenShareButton';
 import { ToggleButton } from '../ToggleButton/ToggleButton';
 import { VideoSettings } from '../VideoSettings';
@@ -41,7 +43,9 @@ export const ParticipantControls = () => {
             <div className="flex flex-1 justify-start h3">{roomName}</div>
             <div className="flex flex-nowrap gap-2">
                 <ToggleButton
-                    OnIconComponent={IcMeetMicrophone}
+                    OnIconComponent={({ size }) => (
+                        <MicrophoneWithVolume isMicrophoneEnabled={isMicrophoneEnabled} size={size as IconSize} />
+                    )}
                     OffIconComponent={IcMeetMicrophoneOff}
                     isOn={isMicrophoneEnabled}
                     onClick={() => {
@@ -49,6 +53,8 @@ export const ParticipantControls = () => {
                     }}
                     Content={AudioSettings}
                     popUp={PopUpControls.Microphone}
+                    ariaLabel={c('l10n_nightly Alt').t`Toggle microphone`}
+                    secondaryAriaLabel={c('l10n_nightly Alt').t`Audio settings`}
                 />
                 <ToggleButton
                     OnIconComponent={IcMeetCamera}
@@ -59,6 +65,8 @@ export const ParticipantControls = () => {
                     }}
                     Content={() => <VideoSettings />}
                     popUp={PopUpControls.Camera}
+                    ariaLabel={c('l10n_nightly Alt').t`Toggle camera`}
+                    secondaryAriaLabel={c('l10n_nightly Alt').t`Video settings`}
                 />
                 <ScreenShareButton />
                 <CircleButton
@@ -69,20 +77,22 @@ export const ParticipantControls = () => {
                     }}
                     indicatorContent={participants.length.toString()}
                     indicatorStatus={'success'}
-                    iconViewPort="0 0 24 24"
+                    ariaLabel={c('l10n_nightly Alt').t`Toggle participants`}
                 />
                 <ChatButton />
                 <CircleButton
-                    IconComponent={IcCogWheel}
+                    IconComponent={IcMeetSettings}
                     variant={sideBarState[MeetingSideBars.Settings] ? 'active' : 'default'}
                     onClick={() => {
                         toggleSideBarState(MeetingSideBars.Settings);
                     }}
+                    ariaLabel={c('l10n_nightly Alt').t`Toggle settings`}
                 />
                 <CircleButton
                     IconComponent={IcInfoCircle}
                     onClick={() => toggleSideBarState(MeetingSideBars.MeetingDetails)}
                     variant={sideBarState[MeetingSideBars.MeetingDetails] ? 'active' : 'default'}
+                    ariaLabel={c('l10n_nightly Alt').t`Toggle meeting details`}
                 />
                 <LeaveModal />
             </div>

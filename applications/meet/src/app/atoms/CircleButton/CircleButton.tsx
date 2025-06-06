@@ -4,7 +4,7 @@ import clsx from '@proton/utils/clsx';
 
 import './CircleButton.scss';
 
-type CircleButtonVariant = 'default' | 'active' | 'danger';
+type CircleButtonVariant = 'default' | 'active' | 'danger' | 'lighter-default';
 type IndicatorStatus = 'warning' | 'default' | 'success';
 
 interface CircleButtonProps {
@@ -15,6 +15,7 @@ interface CircleButtonProps {
     indicatorStatus?: IndicatorStatus;
     iconViewPort?: string;
     variant?: CircleButtonVariant;
+    ariaLabel?: string;
 }
 
 export const CircleButton = ({
@@ -25,6 +26,7 @@ export const CircleButton = ({
     indicatorStatus = 'default',
     iconViewPort,
     variant = 'default',
+    ariaLabel,
 }: CircleButtonProps) => {
     return (
         <Button
@@ -35,13 +37,15 @@ export const CircleButton = ({
                 className
             )}
             onClick={onClick}
+            aria-label={ariaLabel}
         >
             <IconComponent viewBox={iconViewPort} size={6} />
             {indicatorContent && (
                 <div
                     className={clsx(
                         'indicator rounded-full flex justify-center items-center absolute top-custom right-custom w-custom h-custom',
-                        `indicator-${indicatorStatus}`
+                        `indicator-${indicatorStatus}`,
+                        Number(indicatorContent) > 9 && 'text-xs'
                     )}
                     style={{
                         '--w-custom': '1.25rem',

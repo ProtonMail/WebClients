@@ -1,7 +1,7 @@
 import { useLocalParticipant } from '@livekit/components-react';
 import { type Participant, Track } from 'livekit-client';
 
-import { IcMeetMicrophone, IcMeetMicrophoneOff } from '@proton/icons';
+import { IcMeetMicrophoneOff } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
 import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
@@ -40,7 +40,8 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
 
     const { borderColor } = getParticipantDisplayColors(participant);
 
-    const speakingIndicatorClassName = shouldShowVideo ? getParticipantDisplayColors({}).borderColor : borderColor;
+    const speakingIndicatorClassName =
+        (shouldShowVideo ? getParticipantDisplayColors({}).borderColor : borderColor) + (smallView ? '-small' : '');
 
     const isLocalParticipant = participant.identity === localParticipant.identity;
 
@@ -51,7 +52,8 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
         <div
             className={clsx(
                 'participant-tile-body',
-                'relative rounded-xl w-full h-full flex flex-nowrap items-center justify-center'
+                'relative w-full h-full flex flex-nowrap items-center justify-center',
+                smallView ? 'radius-small' : 'radius-normal'
             )}
         >
             <div
@@ -61,19 +63,30 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
                     '--right-custom': smallView ? '0.5rem' : '1.25rem',
                 }}
             >
-                {isSpeaking && <SpeakingIndicator size={32} iconSize={5} />}
+                {isSpeaking && audioIsOn && <SpeakingIndicator size={32} participant={participant} />}
+                {!audioIsOn && (
+                    <div
+                        className="flex items-center justify-center w-custom h-custom bg-weak rounded-full"
+                        style={{
+                            '--w-custom': '2rem',
+                            '--h-custom': '2rem',
+                            opacity: 0.8,
+                        }}
+                    >
+                        <IcMeetMicrophoneOff size={4} />
+                    </div>
+                )}
                 {shouldShowConnectionIndicator && <ConnectionIndicator connectionQuality={connectionQuality} />}
             </div>
 
             {isSpeaking && (
-                <>
-                    <div
-                        className={clsx(
-                            'absolute top-0 left-0 w-full h-full z-up rounded-xl',
-                            isSpeaking && speakingIndicatorClassName
-                        )}
-                    />
-                </>
+                <div
+                    className={clsx(
+                        'absolute top-0 left-0 w-full h-full z-up',
+                        isSpeaking && speakingIndicatorClassName,
+                        smallView ? 'radius-small' : 'radius-normal'
+                    )}
+                />
             )}
 
             {shouldShowVideo ? (
@@ -91,7 +104,7 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
                     />
                 </>
             ) : (
-                <ParticipantPlaceholder participant={participant} />
+                <ParticipantPlaceholder participant={participant} smallView={smallView} />
             )}
             <div
                 className="color-norm flex flex-nowrap items-center absolute left-custom bottom-custom z-up"
@@ -101,11 +114,6 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
                     gap: '0.625rem',
                 }}
             >
-                {audioIsOn ? (
-                    <IcMeetMicrophone size={4} viewBox="0 0 24 24" />
-                ) : (
-                    <IcMeetMicrophoneOff size={4} viewBox="0 0 24 24" />
-                )}
                 {participant.name}
             </div>
         </div>

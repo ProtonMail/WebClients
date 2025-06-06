@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { IcMeetChat } from '@proton/icons';
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
@@ -15,13 +17,13 @@ export const ChatButton = () => {
             <ChatPreview />
             <CircleButton
                 IconComponent={IcMeetChat}
-                iconViewPort="0 0 24 24"
                 variant={sideBarState[MeetingSideBars.Chat] ? 'active' : 'default'}
                 onClick={() => {
                     toggleSideBarState(MeetingSideBars.Chat);
                 }}
                 indicatorContent={unreadMessages > 0 ? unreadMessages.toString() : undefined}
                 indicatorStatus="success"
+                ariaLabel={c('l10n_nightly Alt').t`Toggle chat`}
             />
         </div>
     );

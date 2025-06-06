@@ -12,9 +12,13 @@
 }
 
 .circle-button-active {
-	--circle-button-bg: var(--primary);
+	--circle-button-bg: var(--interaction-norm-major-1);
 
 	color: var(--text-invert) !important;
+}
+
+.circle-button-lighter-default {
+	--circle-button-bg: var(--interaction-weak);
 }
 
 .circle-button-default {

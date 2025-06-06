@@ -11,4 +11,8 @@
 	.field-two-assist {
 		display: none;
 	}
+
+	&:focus-within::after {
+		box-shadow: 0 0 0 0.065rem var(--interaction-norm) !important;
+	}
 }

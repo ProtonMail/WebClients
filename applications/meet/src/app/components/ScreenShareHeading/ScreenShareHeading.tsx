@@ -18,17 +18,19 @@ export const ScreenShareHeading = ({ name, isLocalUser, onStopScreenShare }: Scr
             style={{ '--h-custom': '3.875rem' }}
         >
             <div className="flex flex-nowrap items-center gap-2">
-                <IcMeetScreenShare size={6} viewBox="0 0 24 24" />
+                <IcMeetScreenShare size={6} />
                 {!isLocalUser && (
                     <div>
-                        {name} {c('Meet').t`is presenting`}
+                        {name} {c('l10n_nightly Info').t`is presenting`}
                     </div>
                 )}
-                {isLocalUser && <div>{c('Meet').t`You presenting`}</div>}
+                {isLocalUser && <div>{c('l10n_nightly Info').t`You presenting`}</div>}
             </div>
             {isLocalUser && (
                 <div>
-                    <Button onClick={onStopScreenShare} color="norm">{c('Meet').t`Stop presenting`}</Button>
+                    <Button className="color-invert rounded-full" onClick={onStopScreenShare} color="norm">
+                        {c('l10n_nightly Action').t`Stop presenting`}
+                    </Button>
                 </div>
             )}
         </div>

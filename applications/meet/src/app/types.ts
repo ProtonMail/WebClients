@@ -8,7 +8,6 @@ export interface ParticipantSettings {
     isVideoEnabled: boolean;
     isFaceTrackingEnabled: boolean;
     roomName: string;
-    meetingLink: string;
 }
 
 export enum LoadingState {

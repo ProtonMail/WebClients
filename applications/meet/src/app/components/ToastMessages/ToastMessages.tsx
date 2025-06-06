@@ -26,8 +26,8 @@ export const ToastMessages = () => {
                             <div>{message.name}</div>
                             <div>
                                 {(message as ParticipantEventRecord).eventType === ParticipantEvent.Join
-                                    ? c('Meet').t`Joined`
-                                    : c('Meet').t`Left`}{' '}
+                                    ? c('l10n_nightly Info').t`Joined`
+                                    : c('l10n_nightly Info').t`Left`}{' '}
                                 <span className="ml-1" style={{ color: 'var(--interaction-norm)' }}>
                                     {roomName}
                                 </span>

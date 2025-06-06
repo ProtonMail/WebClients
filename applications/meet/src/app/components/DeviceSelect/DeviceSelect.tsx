@@ -34,7 +34,7 @@ export const DeviceSelect = ({ value, onValue, options, icon, title, disabled }:
                 return (
                     <div className="flex flex-nowrap items-center">
                         <div className="flex items-center h-full mr-4 w-custom" style={{ '--w-custom': '1.75rem' }}>
-                            <Icon name={icon} size={7} className="color-weak" viewBox="0 0 24 24" />
+                            <Icon name={icon} size={6} className="color-weak" />
                         </div>
                         <div className="flex flex-nowrap flex-column">
                             <div className="color-weak text-sm">{title}</div>
