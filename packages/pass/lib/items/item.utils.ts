@@ -1,7 +1,6 @@
 import { c, msgid } from 'ttag';
 
 import PassUI from '@proton/pass/lib/core/ui.proxy';
-import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import type { Draft } from '@proton/pass/store/reducers';
 import type {
@@ -187,6 +186,21 @@ export const getSanitizedUserIdentifiers = async ({
     return validEmail ? { email: itemEmail, username: '' } : { email: '', username: itemEmail };
 };
 
+export const bindOTPSanitizer =
+    (label?: string, issuer?: string) =>
+    (totpUri: string): string =>
+        parseOTPValue(totpUri, {
+            label: label || undefined,
+            issuer: issuer || undefined,
+        });
+
+export const sanitizeExtraField =
+    (otpSanitizer: (totpUri: string) => string) =>
+    (extraField: DeobfuscatedItemExtraField): DeobfuscatedItemExtraField =>
+        extraField.type === 'totp'
+            ? { ...extraField, data: { totpUri: otpSanitizer(extraField.data.totpUri) } }
+            : extraField;
+
 export const intoBulkSelection = (items: UniqueItem[]): BulkSelectionDTO =>
     items.reduce<BulkSelectionDTO>((dto, { shareId, itemId }) => {
         dto[shareId] = dto[shareId] ?? {};
@@ -200,22 +214,3 @@ export const getBulkSelectionCount = (selected: BulkSelectionDTO) =>
 export const formatDisplayNameWithEmail = (name: string, email: string) => `${name} <${email}>`;
 
 export const formatItemsCount = (n: number) => c('Info').ngettext(msgid`${n} item`, `${n} items`, n);
-
-type ObfuscateLabeledExtraFields = { extraFields: DeobfuscatedItemExtraField[]; label?: string; issuer?: string };
-
-export const obfuscateLabeledExtraFields = ({ extraFields, label, issuer }: ObfuscateLabeledExtraFields) =>
-    obfuscateExtraFields(
-        extraFields.map((field) =>
-            field.type === 'totp'
-                ? {
-                      ...field,
-                      data: {
-                          totpUri: parseOTPValue(field.data.totpUri, {
-                              label: label || undefined,
-                              issuer: issuer || undefined,
-                          }),
-                      },
-                  }
-                : field
-        )
-    );
