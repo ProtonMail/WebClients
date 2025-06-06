@@ -26,7 +26,7 @@ export interface NewsletterSubscription {
     UnsubscribeMethods: UnsubscribeMethods;
 }
 
-export interface FilterSubscriptionAPIResponse {
+export interface POSTSubscriptionAPIResponse {
     NewsletterSubscription: NewsletterSubscription;
 }
 
@@ -51,4 +51,8 @@ export interface ApplyNewsletterSubscriptionsFilter {
     ApplyTo: 'All' | 'Existing' | 'New';
     DestinationFolder?: string;
     MarkAsRead?: boolean;
+}
+
+export interface UpdateNewsletterSubscription {
+    Unsubscribed?: boolean;
 }

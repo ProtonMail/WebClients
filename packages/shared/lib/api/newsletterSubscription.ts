@@ -4,7 +4,10 @@ import type {
     SubscriptionPagination,
 } from 'proton-mail/store/newsletterSubscriptions/interface';
 
-import type { ApplyNewsletterSubscriptionsFilter } from '../interfaces/NewsletterSubscription';
+import type {
+    ApplyNewsletterSubscriptionsFilter,
+    UpdateNewsletterSubscription,
+} from '../interfaces/NewsletterSubscription';
 
 interface GetNewslettersProps {
     sort?: SortSubscriptionsValue;
@@ -36,4 +39,10 @@ export const applyNewsletterSubscriptionFilter = (
 export const unsubscribeNewsletterSubscription = (subscriptionID: string) => ({
     url: `mail/v4/newsletter-subscriptions/${subscriptionID}/unsubscribe`,
     method: 'POST',
+});
+
+export const updateNewsletterSubscription = (subscriptionID: string, data: UpdateNewsletterSubscription) => ({
+    url: `mail/v4/newsletter-subscriptions/${subscriptionID}`,
+    method: 'POST',
+    data,
 });
