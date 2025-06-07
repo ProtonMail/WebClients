@@ -29,6 +29,8 @@ import { sortOn } from '@proton/pass/utils/fp/sort';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { UNIX_DAY, UNIX_MINUTE } from '@proton/pass/utils/time/constants';
+import { epochToMs } from '@proton/pass/utils/time/epoch';
 import type { Api } from '@proton/shared/lib/interfaces';
 import unary from '@proton/utils/unary';
 
@@ -51,27 +53,33 @@ export const createPassBridge = (api: Api): PassBridge => {
                     return isReady;
                 },
                 user: {
-                    getUserAccess: maxAgeMemoize(async () => {
-                        const result = await getUserAccess();
-                        return result;
-                    }),
+                    getUserAccess: maxAgeMemoize(
+                        async () => {
+                            const result = await getUserAccess();
+                            return result;
+                        },
+                        { maxAge: epochToMs(UNIX_MINUTE * 5) }
+                    ),
                 },
                 vault: {
-                    getDefault: maxAgeMemoize(async () => {
-                        const encryptedShares = await requestShares();
-                        const shares = (await Promise.all(encryptedShares.map(unary(parseShareResponse)))).filter(
-                            truthy
-                        );
+                    getDefault: maxAgeMemoize(
+                        async () => {
+                            const encryptedShares = await requestShares();
+                            const shares = (await Promise.all(encryptedShares.map(unary(parseShareResponse)))).filter(
+                                truthy
+                            );
 
-                        const candidates = shares
-                            .filter(and(isActiveVault, isWritableVault, isOwnVault))
-                            .sort(sortOn('createTime', 'ASC'));
+                            const candidates = shares
+                                .filter(and(isActiveVault, isWritableVault, isOwnVault))
+                                .sort(sortOn('createTime', 'ASC'));
 
-                        return first(candidates);
-                    }),
+                            return first(candidates);
+                        },
+                        { maxAge: epochToMs(UNIX_DAY * 1) }
+                    ),
                     async createDefaultVault() {
                         // In case a default vault has been created in the meantime
-                        const defaultVault = await this.getDefault({ maxAge: 0 });
+                        const defaultVault = await this.getDefault.flush();
                         if (defaultVault) {
                             return defaultVault;
                         }
@@ -104,15 +112,18 @@ export const createPassBridge = (api: Api): PassBridge => {
                         return { item: { ...item, aliasEmail } };
                     },
                     getAliasOptions,
-                    getAllByShareId: maxAgeMemoize(async (shareId) => {
-                        const aliases = (await Promise.all(
-                            (await requestAllItemsForShareId({ shareId, OnlyAlias: true }))
-                                .filter(pipe(prop('AliasEmail'), truthy))
-                                .map((item) => parseItemRevision(shareId, item))
-                        )) as ItemRevision<'alias'>[];
+                    getAllByShareId: maxAgeMemoize(
+                        async (shareId) => {
+                            const aliases = (await Promise.all(
+                                (await requestAllItemsForShareId({ shareId, OnlyAlias: true }))
+                                    .filter(pipe(prop('AliasEmail'), truthy))
+                                    .map((item) => parseItemRevision(shareId, item))
+                            )) as ItemRevision<'alias'>[];
 
-                        return aliases.map((item): PassBridgeAliasItem => ({ item }));
-                    }),
+                            return aliases.map((item): PassBridgeAliasItem => ({ item }));
+                        },
+                        { maxAge: epochToMs(UNIX_MINUTE * 5) }
+                    ),
                 },
                 organization: {
                     settings: {
