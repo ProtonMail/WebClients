@@ -14,7 +14,6 @@ import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
 import type { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
-import { UNIX_DAY } from '@proton/pass/utils/time/constants';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
@@ -90,9 +89,7 @@ export const usePassAliasesSetup = (): PassAliasesProviderReturnedValues => {
             });
 
             // Refetch aliases and set new state
-            const nextAliases = await PassBridge.alias.getAllByShareId(passAliasVault.shareId, {
-                maxAge: 0,
-            });
+            const nextAliases = await PassBridge.alias.getAllByShareId.flush(passAliasVault.shareId);
             const filteredAliases = filterPassAliases(nextAliases);
 
             if (isMounted()) {
@@ -166,9 +163,7 @@ export const usePassAliasesSetup = (): PassAliasesProviderReturnedValues => {
     const initPassBridge = async () => {
         dispatch({ loading: true });
         await PassBridge.init({ user, addresses: addresses || [], authStore });
-        const defaultVault = await PassBridge.vault.getDefault({
-            maxAge: UNIX_DAY * 1,
-        });
+        const defaultVault = await PassBridge.vault.getDefault();
 
         // Return early if user has no vault, we don't need to fetch aliases.
         if (!defaultVault) {

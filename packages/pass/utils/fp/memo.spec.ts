@@ -1,4 +1,4 @@
-import { dynMemo, maxAgeMemoize } from './memo';
+import { createWeakRefCache, dynMemo, maxAgeMemoize } from './memo';
 
 const asyncFn = jest.fn((value: number) => Promise.resolve(value * Math.random()));
 
@@ -11,75 +11,113 @@ describe('`maxAgeMemoize`', () => {
     afterEach(() => jest.clearAllTimers());
 
     test('should cache the result for the specified maximum age', async () => {
-        const memoizedFunction = maxAgeMemoize(asyncFn);
+        const memoizedFunction = maxAgeMemoize(asyncFn, { maxAge: 10_000 });
 
-        const result1 = await memoizedFunction(1, { maxAge: 10 }); /* 10 seconds */
+        const result1 = await memoizedFunction(1);
         expect(asyncFn).toHaveBeenCalledTimes(1);
 
-        jest.advanceTimersByTime(5_000); /* advance timer below maxAge */
-        const result2 = await memoizedFunction(1, { maxAge: 10 });
+        /* advance timer below maxAge */
+        jest.advanceTimersByTime(5_000);
+
+        const result2 = await memoizedFunction(1);
         expect(asyncFn).toHaveBeenCalledTimes(1);
         expect(result2).toBe(result1);
 
-        jest.advanceTimersByTime(5_001); /* advance timer over maxAge */
-        const result3 = await memoizedFunction(1, { maxAge: 10 });
+        /* advance timer over maxAge */
+        jest.advanceTimersByTime(5_001);
+
+        const result3 = await memoizedFunction(1);
         expect(result3).not.toBe(result1);
         expect(asyncFn).toHaveBeenCalledTimes(2);
     });
 
     test('should cache results separately for different arguments', async () => {
-        const memoizedFunction = maxAgeMemoize(asyncFn);
+        const memoizedFunction = maxAgeMemoize(asyncFn, { maxAge: 10_000 });
 
-        await memoizedFunction(1, { maxAge: 10 });
-        expect(asyncFn).toHaveBeenCalledTimes(1);
-
-        await memoizedFunction(2, { maxAge: 10 });
+        await memoizedFunction(1);
+        await memoizedFunction(2);
         expect(asyncFn).toHaveBeenCalledTimes(2);
 
-        jest.advanceTimersByTime(5_000); /* advance timer below maxAge */
-        await memoizedFunction(1, { maxAge: 10 });
-        await memoizedFunction(2, { maxAge: 10 });
+        /* advance timer below maxAge */
+        jest.advanceTimersByTime(5_000);
+
+        await memoizedFunction(1);
+        await memoizedFunction(2);
         expect(asyncFn).toHaveBeenCalledTimes(2);
 
-        jest.advanceTimersByTime(5_001); /* advance timer over maxAge */
-        await memoizedFunction(1, { maxAge: 10 });
-        await memoizedFunction(2, { maxAge: 10 });
+        /* advance timer over maxAge */
+        jest.advanceTimersByTime(5_001);
+
+        await memoizedFunction(1);
+        await memoizedFunction(2);
         expect(asyncFn).toHaveBeenCalledTimes(4);
     });
 
-    test('should handle multiple calls with different maxAge options', async () => {
-        const memoizedFunction = maxAgeMemoize(asyncFn);
+    test('should handle by-passing `maxAge` via `flush`', async () => {
+        const memoizedFunction = maxAgeMemoize(asyncFn, { maxAge: 10_000 });
 
-        await memoizedFunction(1, { maxAge: 10 });
+        await memoizedFunction(1);
         expect(asyncFn).toHaveBeenCalledTimes(1);
 
-        jest.advanceTimersByTime(6_000); /* advance timer below maxAge */
-        await memoizedFunction(1, { maxAge: 10 });
+        /* advance timer below maxAge */
+        jest.advanceTimersByTime(6_000);
+
+        await memoizedFunction(1);
         expect(asyncFn).toHaveBeenCalledTimes(1);
 
-        await memoizedFunction(1, { maxAge: 5 }); /* request new maxAge */
+        /* flush */
+        await memoizedFunction.flush(1);
         expect(asyncFn).toHaveBeenCalledTimes(2);
     });
 
     test('should not cache a result who throwed error', async () => {
         const asyncFn = jest.fn((value: number) => Promise.resolve(value * Math.random()));
-        const memoizedFunction = maxAgeMemoize(asyncFn);
+        const memoizedFunction = maxAgeMemoize(asyncFn, { maxAge: 10_000 });
 
         asyncFn.mockImplementationOnce(async () => {
             throw new Error('asyncFn error');
         });
 
-        // eslint-disable-next-line @typescript-eslint/no-floating-promises
-        expect(async () => {
-            await memoizedFunction(1, { maxAge: 10 });
-        }).rejects.toThrow('asyncFn error');
+        await expect(() => memoizedFunction(1)).rejects.toThrow('asyncFn error');
         expect(asyncFn).toHaveBeenCalledTimes(1);
 
-        await memoizedFunction(1, { maxAge: 10 });
+        await memoizedFunction(1);
         expect(asyncFn).toHaveBeenCalledTimes(2);
-        jest.advanceTimersByTime(6_000); /* advance timer below maxAge */
-        await memoizedFunction(1, { maxAge: 10 });
+
+        /* advance timer below maxAge */
+        jest.advanceTimersByTime(6_000);
+
+        await memoizedFunction(1);
         expect(asyncFn).toHaveBeenCalledTimes(2);
+    });
+
+    test('should handle `createWeakRefCache` factory', async () => {
+        const elementFn = jest.fn(async (element: HTMLElement, data: string) => `${element.tagName}-${data}`);
+
+        const memoizedFunction = maxAgeMemoize(elementFn, {
+            maxAge: 10_000,
+            cache: createWeakRefCache((element) => element),
+        });
+
+        const element1 = document.createElement('div');
+        const element2 = document.createElement('span');
+        const element3 = document.createElement('div');
+
+        const result1 = await memoizedFunction(element1, 'test');
+        const result2 = await memoizedFunction(element2, 'test');
+
+        expect(elementFn).toHaveBeenCalledTimes(2);
+        expect(result1).toBe('DIV-test');
+        expect(result2).toBe('SPAN-test');
+
+        jest.advanceTimersByTime(5_000);
+
+        expect(await memoizedFunction(element1, 'test')).toEqual(result1);
+        expect(await memoizedFunction(element2, 'test')).toEqual(result2);
+        expect(elementFn).toHaveBeenCalledTimes(2);
+
+        await memoizedFunction(element3, 'test');
+        expect(elementFn).toHaveBeenCalledTimes(3);
     });
 });
 

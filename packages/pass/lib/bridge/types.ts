@@ -3,6 +3,7 @@ import type {
     AliasMailbox,
     AliasOptions,
     ItemRevision,
+    Maybe,
     MemberMonitorReportList,
     OrganizationGetResponse,
     OrganizationUpdatePasswordPolicyRequest,
@@ -44,7 +45,7 @@ export interface PassBridge {
          * @param options
          * @param options.maxAge the time it should be cached in SECONDS
          */
-        getDefault: MaxAgeMemoizedFn<() => Promise<Share<ShareType.Vault> | undefined>>;
+        getDefault: MaxAgeMemoizedFn<() => Promise<Maybe<Share<ShareType.Vault>>>>;
         /**
          * Create default vault
          */

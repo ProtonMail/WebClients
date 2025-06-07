@@ -1,32 +1,82 @@
-import type { AsyncCallback } from '@proton/pass/types';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-import lastItem from '@proton/utils/lastItem';
+import type { Callback, Maybe } from '@proton/pass/types';
 
-type MaxAgeMemoizeOptions = { maxAge: number };
+export type MaxAgeMemoCacheEntry<F extends Callback> = { validUntil: number; result: ReturnType<F> };
+export type MaxAgeMemoizedFn<F extends Callback> = F & { flush: F };
 
-export type MaxAgeMemoizedFn<F extends AsyncCallback> = (
-    ...args: [...Parameters<F>, options: MaxAgeMemoizeOptions]
-) => ReturnType<F>;
+export interface MaxAgeMemoCache<K, F extends Callback> {
+    key: (...args: Parameters<F>) => K;
+    get: (key: K) => Maybe<MaxAgeMemoCacheEntry<F>>;
+    set: (key: K, value: MaxAgeMemoCacheEntry<F>) => void;
+    delete: (key: K) => void;
+}
+
+export type MaxAgeMemoizeOptions<F extends Callback, K> = {
+    /** maxAge in milliseconds */
+    maxAge: number;
+    /** custom implementation for the underlying cache. If
+     * omitted will use an args cache which will serialize
+     * arguments passed to the wrapped function */
+    cache?: MaxAgeMemoCache<K, F>;
+};
+
+/** Creates a cache that serializes function arguments to JSON strings.
+ * Use this when function arguments are serializable primitives/objects */
+export const createSerializedArgsCache = <F extends Callback>(): MaxAgeMemoCache<string, F> => {
+    const cache: Map<string, MaxAgeMemoCacheEntry<F>> = new Map();
+
+    return {
+        key: (...args) => JSON.stringify(args),
+        get: cache.get.bind(cache),
+        set: cache.set.bind(cache),
+        delete: cache.delete.bind(cache),
+    };
+};
+
+/** Creates a cache that uses object references as WeakMap keys.
+ * Use this when you can derive a WeakKey from function arguments. */
+export const createWeakRefCache = <F extends Callback, K extends WeakKey>(
+    key: (...args: Parameters<F>) => K
+): MaxAgeMemoCache<K, F> => {
+    const cache: WeakMap<K, MaxAgeMemoCacheEntry<F>> = new WeakMap();
+
+    return {
+        key,
+        get: cache.get.bind(cache),
+        set: cache.set.bind(cache),
+        delete: cache.delete.bind(cache),
+    };
+};
 
 /** Memoizes the result of an asynchronous function with a specified maximum age.
  * Returns a wrapped function that accepts a trailing `maxAge` parameter in seconds */
-export const maxAgeMemoize = <F extends AsyncCallback>(fn: F) => {
-    const cache: Map<string, { calledAt: number; result: ReturnType<F> }> = new Map();
+export const maxAgeMemoize = <F extends Callback, K>(fn: F, options: MaxAgeMemoizeOptions<F, K>) => {
+    const cache = (options.cache ?? createSerializedArgsCache()) as MaxAgeMemoCache<K, F>;
 
-    return (async (...args: [...Parameters<F>, options: MaxAgeMemoizeOptions]) => {
-        const calledAt = getEpoch();
-        const { maxAge } = lastItem(args) as MaxAgeMemoizeOptions;
+    const withMaxAge = (immediate?: boolean) =>
+        ((...args: Parameters<F>) => {
+            const now = new Date().getTime();
+            const key = cache.key(...args);
 
-        const memoArgs = JSON.stringify(args.slice(0, -1));
-        const cached = cache.get(memoArgs);
+            let cached = cache.get(key);
 
-        if (cached && calledAt - cached.calledAt < maxAge) return cached.result;
-        else {
-            const result = await fn(...args);
-            cache.set(memoArgs, { calledAt, result });
-            return result;
-        }
-    }) as MaxAgeMemoizedFn<F>;
+            if (cached?.validUntil && now >= cached.validUntil) {
+                cache.delete(key);
+                cached = undefined;
+            }
+
+            if (!immediate && cached) return cached.result;
+            else {
+                const result = fn(...args);
+                if (result instanceof Promise) result.catch(() => cache.delete(key));
+                cache.set(key, { validUntil: now + options.maxAge, result });
+                return result;
+            }
+        }) as F;
+
+    const memoized = withMaxAge() as MaxAgeMemoizedFn<F>;
+    memoized.flush = withMaxAge(true);
+
+    return memoized;
 };
 
 type DynamicMemo<T> = T & {
