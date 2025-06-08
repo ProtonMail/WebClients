@@ -100,6 +100,24 @@ const config: ThemeConfig[] = [
         ],
     },
     {
+        output: './themes/dist/authenticator-dark.theme.css',
+        files: [
+            {
+                path: './themes/src/authenticator-dark/standard-base.css',
+                type: 'dark',
+            },
+        ],
+    },
+    {
+        output: './themes/dist/authenticator-light.theme.css',
+        files: [
+            {
+                path: './themes/src/authenticator-light/standard-base.css',
+                type: 'light',
+            },
+        ],
+    },
+    {
         output: './themes/dist/pass-dark.theme.css',
         files: [
             {
