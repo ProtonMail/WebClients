@@ -6,6 +6,8 @@ import type { SheetData } from '@rowsncolumns/spreadsheet-state'
 import {
   ConditionalFormatDialog,
   ConditionalFormatEditor,
+  DataValidationEditor,
+  DataValidationEditorDialog,
   DeleteSheetConfirmation,
   NamedRangeEditor,
   pattern_currency_decimal,
@@ -24,6 +26,7 @@ import type {
   ProtectedRange,
   SpreadsheetTheme,
   NamedRange,
+  DataValidationRuleRecord,
 } from '@rowsncolumns/spreadsheet'
 import {
   ButtonInsertChart,
@@ -146,6 +149,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const [embeds, onChangeEmbeds] = useState<EmbeddedObject[]>([])
   const [tables, onChangeTables] = useState<TableView[]>([])
   const [namedRanges, onChangeNamedRanges] = useState<NamedRange[]>([])
+  const [dataValidations, onChangeDataValidations] = useState<DataValidationRuleRecord[]>([])
   const locale = 'en-GB'
   const currency = 'USD'
   const yDoc = useMemo(() => docState.getDoc(), [docState])
@@ -256,6 +260,12 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     // Create a history stack
     createHistory,
 
+    onRequestDataValidation,
+    onCreateDataValidationRule,
+    onUpdateDataValidationRule,
+    onDeleteDataValidationRule,
+    onDeleteDataValidationRules,
+
     // Enqueue any calculation manually
     enqueueCalculation,
     getNonEmptyColumnCount,
@@ -273,6 +283,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     conditionalFormats,
     theme,
     locale,
+    dataValidations,
     onChangeSheets,
     onChangeSheetData,
     onChangeEmbeds,
@@ -282,6 +293,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     onChangeTheme,
     onChangeConditionalFormats,
     onChangeProtectedRanges,
+    onChangeDataValidations,
     onChangeHistory(patches) {
       // eslint-disable-next-line @typescript-eslint/no-use-before-define
       onBroadcastPatch(patches)
@@ -349,6 +361,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     onChangeConditionalFormats,
     onChangeNamedRanges,
     onChangeProtectedRanges,
+    onChangeDataValidations,
     enqueueCalculation,
     calculateNow,
     sheetId: activeSheetId,
@@ -757,6 +770,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
           namedRanges={namedRanges}
           licenseKey={process.env.DOCS_SHEETS_KEY}
           onRequestSearch={onRequestSearch}
+          onRequestDataValidation={onRequestDataValidation}
           users={users}
           userId={userName}
           getChartComponent={(props) => (
@@ -839,6 +853,17 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
           totalResults={totalResults}
           searchQuery={searchQuery}
         />
+        <DataValidationEditorDialog>
+          <DataValidationEditor
+            dataValidations={dataValidations}
+            sheetId={activeSheetId}
+            functionDescriptions={functionDescriptions}
+            onDeleteRules={onDeleteDataValidationRules}
+            onDeleteRule={onDeleteDataValidationRule}
+            onCreateRule={onCreateDataValidationRule}
+            onUpdateRule={onUpdateDataValidationRule}
+          />
+        </DataValidationEditorDialog>
       </div>
     </>
   )
