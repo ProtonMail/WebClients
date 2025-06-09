@@ -38,6 +38,8 @@ import { useDocsContext } from '../../../context'
 import { WordCountIcon } from '../icons'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { useSheetImportModal } from './SheetImportModal'
+import { downloadLogsAsJSON } from '~/utils/downloadLogs'
+import { useIsSheetsEnabled } from '~/utils/misc'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -72,6 +74,7 @@ export function DocumentTitleDropdown({
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
   const [sheetImportModal, openSheetImportModal] = useSheetImportModal()
   const [showVersionNumber, setShowVersionNumber] = useState(false)
+  const isSheetsEnabled = useIsSheetsEnabled()
 
   const [isRenaming, setIsRenaming] = useState(false)
   const [renameInputValue, setRenameInputValue] = useState(title)
@@ -244,6 +247,10 @@ export function DocumentTitleDropdown({
     },
     [editorController],
   )
+
+  const handleDownloadLogs = useCallback(() => {
+    void downloadLogsAsJSON(editorController, documentType)
+  }, [editorController, documentType])
 
   if (isRenaming) {
     return (
@@ -622,6 +629,17 @@ export function DocumentTitleDropdown({
             <Icon name="brand-proton-drive" className="color-weak mr-2" />
             {c('Action').t`Open ${DRIVE_APP_NAME}`}
           </DropdownMenuButton>
+
+          {isSpreadsheet && isSheetsEnabled && (
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              onClick={handleDownloadLogs}
+              data-testid="dropdown-download-logs"
+            >
+              <Icon name="arrow-down-to-square" className="color-weak mr-2" />
+              {c('Action').t`Download logs`}
+            </DropdownMenuButton>
+          )}
 
           <hr className="mb-0 mt-1 min-h-px" />
 
