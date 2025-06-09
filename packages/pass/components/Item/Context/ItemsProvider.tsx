@@ -1,22 +1,23 @@
 import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useContext, useEffect, useMemo } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, useStore } from 'react-redux';
 
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { itemEq } from '@proton/pass/lib/items/item.predicates';
+import { itemAny } from '@proton/pass/lib/items/item.predicates';
 import { secureLinksGet } from '@proton/pass/store/actions';
 import {
     createMatchItemsSelector,
     createMatchSecureLinksSelector,
     createMatchSharedByMeSelector,
     createMatchSharedWithMeSelector,
+    selectOptimisticIds,
 } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
-import type { ItemRevision } from '@proton/pass/types';
+import type { ItemRevision, UniqueItem } from '@proton/pass/types';
 
 type ItemsContextValue = {
     filtered: ItemRevision[];
@@ -28,6 +29,7 @@ const ItemsContext = createContext<ItemsContextValue>({ filtered: [], searched: 
 
 export const ItemsProvider: FC<PropsWithChildren> = ({ children }) => {
     const dispatch = useDispatch();
+    const store = useStore<State>();
 
     const selectedItem = useSelectedItem();
     const shareId = selectedItem?.shareId;
@@ -63,12 +65,25 @@ export const ItemsProvider: FC<PropsWithChildren> = ({ children }) => {
     );
 
     useEffect(() => {
-        /* Check if the currently selected item is not present in the current
-         * filtered item list. In such cases, unselect it and re-trigger the
-         * autoselect. This scenario can occur during search operations or when
-         * items are moved/restored. */
-        const conflict = itemId && shareId && !items.filtered.some(itemEq({ itemId, shareId }));
-        if (conflict) navigate(getLocalPath(scope), { mode: 'replace' });
+        /** Check if selected item exists in filtered list - if not, unselect and re-trigger
+         * autoselect. Occurs during search/move/restore operations. Debounced to avoid race
+         * conditions where `selectedItem` references `optimisticId` while filtered items have
+         * real item, causing false conflict detection. */
+        const timeoutId = setTimeout(() => {
+            if (!(itemId && shareId)) return;
+
+            const state = store.getState();
+            const optimisticIds = selectOptimisticIds(state);
+            const match: UniqueItem[] = [{ itemId, shareId }];
+            if (itemId in optimisticIds) match.push(optimisticIds[itemId]);
+
+            /** Check against both real and optimistic IDs since selectedItem might reference
+             * `optimisticId` while filtered items contain real item (or vice versa) */
+            const conflict = itemId && shareId && !items.filtered.some(itemAny(match));
+            if (conflict) navigate(getLocalPath(scope), { mode: 'replace' });
+        }, 50);
+
+        return () => clearTimeout(timeoutId);
     }, [items, shareId, itemId, scope]);
 
     useEffect(() => {
