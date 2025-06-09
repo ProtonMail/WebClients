@@ -20,24 +20,30 @@ import { ResizeHandle, ResizeHandlePosition } from './ResizeHandle';
  * - Configurable resize handles (left/right/both)
  * - Width constraints (min/max)
  * - Width persistence across sessions
- * - Drawer-aware storage (different widths when drawer is open/closed)
- * - Responsive behavior based on viewport size
+ * - Container-based ratio calculations
+ * - Responsive behavior based on container size
+ * - Smooth initialization without visual jumps
  *
  * @example
  * ```tsx
  * // Basic usage
- * <ResizableWrapper
- *   minWidth={280}
- *   maxRatio={0.6}
- *   resizeHandlePosition={ResizeHandlePosition.RIGHT}
- * >
- *   <YourContent />
- * </ResizableWrapper>
+ * const containerRef = useRef<HTMLDivElement>(null);
+ *
+ * <div ref={containerRef}>
+ *   <ResizableWrapper
+ *     containerRef={containerRef}
+ *     minWidth={280}
+ *     maxRatio={0.6}
+ *     resizeHandlePosition={ResizeHandlePosition.RIGHT}
+ *   >
+ *     <YourContent />
+ *   </ResizableWrapper>
+ * </div>
  *
  * // With persistence
  * <ResizableWrapper
+ *   containerRef={containerRef}
  *   persistKey="myPanelWidth"
- *   drawerKey="myPanelWidthWithDrawer"
  *   defaultRatio={0.35}
  * >
  *   <YourContent />
@@ -76,10 +82,11 @@ interface ResizableWrapperProps extends ResizableOptions {
  * - Mouse event handling for resize operations
  * - Width constraints enforcement
  * - Width persistence with localStorage
- * - Drawer-aware width settings (different widths when drawer is open/closed)
- * - Responsive behavior for different viewport sizes
+ * - Container-based ratio calculations for precise control
+ * - Responsive behavior based on container size changes
+ * - Smooth initialization to prevent visual jumps
  *
- * @param props - Component props
+ * @param props - Component props (containerRef is required)
  * @returns A resizable container with the specified behavior and constraints
  */
 export const ResizableWrapper = ({
@@ -91,12 +98,12 @@ export const ResizableWrapper = ({
     onWidthChange,
     resizeHandleRef,
     persistKey,
-    drawerKey,
     defaultRatio = DEFAULT_RATIO_OF_MAILBOX_LIST,
     resizingDisabled = false,
+    containerRef,
 }: ResizableWrapperProps) => {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const contentRef = useRef<HTMLDivElement>(null);
+    const resizableWrapperRef = useRef<HTMLDivElement>(null);
+    const innerContentRef = useRef<HTMLDivElement>(null);
 
     const internalResizeHandleRef = useRef<HTMLButtonElement>(null);
     const finalResizeHandleRef = resizeHandleRef || internalResizeHandleRef;
@@ -110,20 +117,19 @@ export const ResizableWrapper = ({
         resetWidth: handleResetWidth,
         scrollBarWidth,
     } = useResizableUtils({
-        containerRef,
-        contentRef,
+        resizableWrapperRef,
+        innerContentRef,
         minWidth,
         maxRatio,
         position,
         persistKey,
-        drawerKey,
         defaultRatio,
+        containerRef,
     });
 
     const resetWidth = () => {
         handleResetWidth();
-        const defaultWidth = window.innerWidth * defaultRatio;
-        onWidthChange?.(defaultWidth);
+        onWidthChange?.(width);
     };
 
     useEffect(() => {
@@ -136,7 +142,7 @@ export const ResizableWrapper = ({
 
     return (
         <div
-            ref={containerRef}
+            ref={resizableWrapperRef}
             className={clsx(
                 'resizable-wrapper flex flex-column overflow-hidden relative',
                 isResizing ? 'user-select-none' : '',
@@ -147,7 +153,7 @@ export const ResizableWrapper = ({
             }}
             data-testid="resizable-wrapper"
         >
-            <div ref={contentRef} className="w-full h-full flex-1 overflow-hidden">
+            <div ref={innerContentRef} className="w-full h-full flex-1 overflow-hidden">
                 {children}
             </div>
             <ResizeHandle
