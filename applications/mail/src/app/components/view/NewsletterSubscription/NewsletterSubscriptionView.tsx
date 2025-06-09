@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Redirect } from 'react-router-dom';
 
 import { ErrorBoundary, StandardErrorPage, useActiveBreakpoint, useModalStateObject } from '@proton/components';
@@ -84,6 +84,7 @@ export const NewsletterSubscriptionView = ({
     const selectedSubscriptionId = useMailSelector(selectedSubscriptionIdSelector);
 
     const onboardingModal = useModalStateObject();
+    const subscriptionContainerRef = useRef<HTMLDivElement>(null);
 
     const isDomBusy = domIsBusy();
 
@@ -126,19 +127,21 @@ export const NewsletterSubscriptionView = ({
     return (
         <>
             <ErrorBoundary component={<StandardErrorPage className="w-full" big />}>
-                <div className="flex flex-nowrap w-full subscription-container">
-                    {loadingSubscriptions ? <NewsletterSubscriptionListLoader /> : <NewsletterSubscriptionList />}
+                <div ref={subscriptionContainerRef} className="flex flex-nowrap w-full subscription-container">
+                    <ResizableWrapper
+                        resizeHandlePosition={ResizeHandlePosition.RIGHT}
+                        minWidth={320}
+                        maxRatio={0.5}
+                        containerRef={subscriptionContainerRef}
+                        className="relative bg-norm"
+                        resizeHandleRef={resizeAreaRef}
+                        persistKey="messageListRatio"
+                        defaultRatio={0.4}
+                    >
+                        {loadingSubscriptions ? <NewsletterSubscriptionListLoader /> : <NewsletterSubscriptionList />}
+                    </ResizableWrapper>
                     {!breakpoints.viewportWidth['<=medium'] && (
-                        <ResizableWrapper
-                            resizeHandlePosition={ResizeHandlePosition.LEFT}
-                            minWidth={320}
-                            maxRatio={0.5}
-                            className="relative bg-norm"
-                            resizeHandleRef={resizeAreaRef}
-                            persistKey="mailSubscriptionsMailboxListWidth"
-                            drawerKey="mailSubscriptionsMailboxListWidthWithDrawer"
-                            defaultRatio={0.35}
-                        >
+                        <div className="flex-1 flex flex-column">
                             {selectedElement ? (
                                 <MessageOnlyView
                                     showBackButton
@@ -178,7 +181,7 @@ export const NewsletterSubscriptionView = ({
                                     noBorder
                                 />
                             )}
-                        </ResizableWrapper>
+                        </div>
                     )}
                 </div>
             </ErrorBoundary>

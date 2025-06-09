@@ -1,7 +1,7 @@
 import { useCallback, useRef } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 
-import { Commander, useActiveBreakpoint, useDrawer, useModalState } from '@proton/components';
+import { Commander, useActiveBreakpoint, useModalState } from '@proton/components';
 import { useFolders } from '@proton/mail/index';
 import { getFolderName } from '@proton/mail/labels/helpers';
 import clsx from '@proton/utils/clsx';
@@ -66,7 +66,6 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
 
     const [commanderModalProps, showCommander, commanderRender] = useModalState();
     const welcomeFlag = useWelcomeFlag([labelID, selectedIDs.length]);
-    const { appInView: isDrawerOpen } = useDrawer();
 
     const [folders] = useFolders();
     const getElementsFromIDs = useGetElementsFromIDs();
@@ -164,12 +163,13 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
         >
             <ResizableWrapper
                 resizeHandlePosition={ResizeHandlePosition.RIGHT}
-                minWidth={360}
-                maxRatio={isDrawerOpen ? 0.3 : 0.5}
+                containerRef={elementRef}
+                maxRatio={0.5}
+                minWidth={320}
+                defaultRatio={0.4}
                 className="view-column-detail"
                 resizeHandleRef={resizeAreaRef}
                 persistKey="messageListRatio"
-                drawerKey="messageListRatioWithDrawer"
                 resizingDisabled={hasRowMode || !showContentPanel}
             >
                 <MailboxList
