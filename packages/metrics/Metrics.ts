@@ -96,6 +96,7 @@ import type { WebCoreEdmPushTotal } from './types/web_core_edm_push_total_v1.sch
 import type { WebCoreLightLabellingImageProcessingTotal } from './types/web_core_lightLabelling_imageProcessing_total_v1.schema';
 import type { WebCoreLightLabellingLogoRemovalTotal } from './types/web_core_lightLabelling_logoRemoval_total_v1.schema';
 import type { WebCoreLightLabellingLogoUploadTotal } from './types/web_core_lightLabelling_logoUpload_total_v1.schema';
+import type { WebCoreReferralIdentifierInitializationTotal } from './types/web_core_referral_identifier_initialization_total_v1.schema';
 import type { WebCoreSessionRecoveryAbortTotal } from './types/web_core_session_recovery_abort_total_v1.schema';
 import type { WebCoreSessionRecoveryCancellationModalLoadTotal } from './types/web_core_session_recovery_cancellation_modal_load_total_v1.schema';
 import type { WebCoreSessionRecoveryConsumeTotal } from './types/web_core_session_recovery_consume_total_v1.schema';
@@ -354,6 +355,8 @@ class Metrics extends MetricsBase {
     public core_lightLabelling_logoRemoval_total: Counter<WebCoreLightLabellingLogoRemovalTotal>;
 
     public core_lightLabelling_logoUpload_total: Counter<WebCoreLightLabellingLogoUploadTotal>;
+
+    public core_referral_identifier_initialization_total: Counter<WebCoreReferralIdentifierInitializationTotal>;
 
     public core_session_recovery_abort_total: Counter<WebCoreSessionRecoveryAbortTotal>;
 
@@ -989,6 +992,11 @@ class Metrics extends MetricsBase {
 
         this.core_lightLabelling_logoUpload_total = new Counter<WebCoreLightLabellingLogoUploadTotal>(
             { name: 'web_core_lightLabelling_logoUpload_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_referral_identifier_initialization_total = new Counter<WebCoreReferralIdentifierInitializationTotal>(
+            { name: 'web_core_referral_identifier_initialization_total', version: 1 },
             this.requestService
         );
 
