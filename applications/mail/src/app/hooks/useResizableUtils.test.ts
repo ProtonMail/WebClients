@@ -4,9 +4,8 @@ import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
 
 import { resetMemoryCacheForTesting, useResizableUtils } from './useResizableUtils';
 
-// Mock useDrawer and useHandler implementations for easier testing
+// Mock useHandler and useWindowSize implementations for easier testing
 jest.mock('@proton/components', () => ({
-    useDrawer: jest.fn(() => ({ appInView: false })),
     useHandler: jest.fn((fn) => {
         const handler = (...args: any[]) => fn(...args);
         handler.cancel = jest.fn();
@@ -36,21 +35,30 @@ beforeEach(() => {
 });
 
 describe('useResizable', () => {
+    const createMockContainerRef = () => {
+        const mockElement = {
+            getBoundingClientRect: jest.fn().mockReturnValue({ width: 1000 }),
+        };
+        return { current: mockElement as unknown as HTMLElement };
+    };
+
     it('should initialize with default values', () => {
         const containerRef = { current: document.createElement('div') };
         const contentRef = { current: document.createElement('div') };
+        const containerRef2 = createMockContainerRef();
 
         const { result } = renderHook(() =>
             useResizableUtils({
-                containerRef: containerRef as React.RefObject<HTMLDivElement>,
-                contentRef: contentRef as React.RefObject<HTMLDivElement>,
+                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement>,
+                innerContentRef: contentRef as React.RefObject<HTMLDivElement>,
                 minWidth: 280,
                 maxRatio: 0.6,
                 position: ResizeHandlePosition.RIGHT,
+                containerRef: containerRef2,
             })
         );
 
-        expect(result.current.width).toBe(350); // Default is defaultRatio (0.35) * windowWidth (1000)
+        expect(result.current.width).toBe(350); // Default is defaultRatio (0.35) * containerWidth (1000)
         expect(result.current.isResizing).toBe(false);
         expect(typeof result.current.enableResize).toBe('function');
         expect(typeof result.current.resetWidth).toBe('function');
@@ -60,18 +68,20 @@ describe('useResizable', () => {
     it('should load saved width from localStorage if persistKey is provided', () => {
         const containerRef = { current: document.createElement('div') };
         const contentRef = { current: document.createElement('div') };
+        const containerRef2 = createMockContainerRef();
 
         // Setup mock implementation for this test
         window.localStorage.getItem = jest.fn().mockReturnValue('0.4'); // Testing with ratio
 
         const { result } = renderHook(() =>
             useResizableUtils({
-                containerRef: containerRef as React.RefObject<HTMLDivElement>,
-                contentRef: contentRef as React.RefObject<HTMLDivElement>,
+                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement>,
+                innerContentRef: contentRef as React.RefObject<HTMLDivElement>,
                 minWidth: 280,
                 maxRatio: 0.6,
                 position: ResizeHandlePosition.RIGHT,
                 persistKey: 'testKey',
+                containerRef: containerRef2,
             })
         );
 
@@ -82,60 +92,66 @@ describe('useResizable', () => {
     it('should apply default ratio if no saved width and defaultRatio is provided', () => {
         const containerRef = { current: document.createElement('div') };
         const contentRef = { current: document.createElement('div') };
+        const containerRef2 = createMockContainerRef();
 
         // Return null for localStorage.getItem
         window.localStorage.getItem = jest.fn().mockReturnValue(null);
 
         const { result } = renderHook(() =>
             useResizableUtils({
-                containerRef: containerRef as React.RefObject<HTMLDivElement>,
-                contentRef: contentRef as React.RefObject<HTMLDivElement>,
+                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement>,
+                innerContentRef: contentRef as React.RefObject<HTMLDivElement>,
                 minWidth: 280,
                 maxRatio: 0.6,
                 position: ResizeHandlePosition.RIGHT,
                 persistKey: 'testKey',
                 defaultRatio: 0.4,
+                containerRef: containerRef2,
             })
         );
 
-        expect(result.current.width).toBe(400); // 0.4 * window.innerWidth (1000)
+        expect(result.current.width).toBe(400); // 0.4 * containerWidth (1000)
     });
 
-    it('should cap width at maxRatio * window.innerWidth', () => {
+    it('should cap width at maxRatio * containerWidth', () => {
         const containerRef = { current: document.createElement('div') };
         const contentRef = { current: document.createElement('div') };
+        const containerRef2 = createMockContainerRef();
 
         // Mock localStorage to return a large value
         window.localStorage.getItem = jest.fn().mockReturnValue('0.7');
 
         const { result } = renderHook(() =>
             useResizableUtils({
-                containerRef: containerRef as React.RefObject<HTMLDivElement>,
-                contentRef: contentRef as React.RefObject<HTMLDivElement>,
+                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement>,
+                innerContentRef: contentRef as React.RefObject<HTMLDivElement>,
                 minWidth: 280,
                 maxRatio: 0.6, // Max allowed width is 600px (0.6 * 1000)
                 position: ResizeHandlePosition.RIGHT,
                 persistKey: 'testKey',
+                containerRef: containerRef2,
             })
         );
 
-        expect(result.current.width).toBe(600); // Should max out at maxRatio (0.6) * window.innerWidth (1000)
+        expect(result.current.width).toBe(600); // Should max out at maxRatio (0.6) * containerWidth (1000)
     });
 
     it('should ensure width is not less than minWidth', () => {
         const containerRef = { current: document.createElement('div') };
         const contentRef = { current: document.createElement('div') };
+        const containerRef2 = createMockContainerRef();
 
         window.localStorage.getItem = jest.fn().mockReturnValue('0.1'); // 0.1 * 1000 = 100 < minWidth
 
         const { result } = renderHook(() =>
             useResizableUtils({
-                containerRef: containerRef as React.RefObject<HTMLDivElement>,
-                contentRef: contentRef as React.RefObject<HTMLDivElement>,
+                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement>,
+                innerContentRef: contentRef as React.RefObject<HTMLDivElement>,
                 minWidth: 280,
                 maxRatio: 0.6,
                 position: ResizeHandlePosition.RIGHT,
                 persistKey: 'testKey',
+                containerRef: containerRef2,
             })
         );
 
@@ -155,6 +171,7 @@ describe('useResizable', () => {
         };
         const containerRef = { current: mockDiv as unknown as HTMLDivElement };
         const contentRef = { current: mockDiv as unknown as HTMLDivElement };
+        const containerRef2 = createMockContainerRef();
 
         const mockEvent = {
             preventDefault: jest.fn(),
@@ -163,11 +180,12 @@ describe('useResizable', () => {
 
         const { result } = renderHook(() =>
             useResizableUtils({
-                containerRef: containerRef as React.RefObject<HTMLDivElement>,
-                contentRef: contentRef as React.RefObject<HTMLDivElement>,
+                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement>,
+                innerContentRef: contentRef as React.RefObject<HTMLDivElement>,
                 minWidth: 280,
                 maxRatio: 0.6,
                 position: ResizeHandlePosition.RIGHT,
+                containerRef: containerRef2,
             })
         );
 
@@ -192,18 +210,20 @@ describe('useResizable', () => {
         };
         const containerRef = { current: mockDiv as unknown as HTMLDivElement };
         const contentRef = { current: mockDiv as unknown as HTMLDivElement };
+        const containerRef2 = createMockContainerRef();
 
         const { result } = renderHook(() =>
             useResizableUtils({
-                containerRef: containerRef as React.RefObject<HTMLDivElement>,
-                contentRef: contentRef as React.RefObject<HTMLDivElement>,
+                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement>,
+                innerContentRef: contentRef as React.RefObject<HTMLDivElement>,
                 minWidth: 280,
                 maxRatio: 0.6,
                 position: ResizeHandlePosition.LEFT,
+                containerRef: containerRef2,
             })
         );
 
-        // Starting width is defaultRatio * windowWidth
+        // Starting width is defaultRatio * containerWidth
         expect(result.current.width).toBe(350);
 
         const mockEvent = {
@@ -218,21 +238,23 @@ describe('useResizable', () => {
         expect(result.current.isResizing).toBe(true);
     });
 
-    it('should reset width to defaultRatio * window.innerWidth when resetWidth is called', () => {
+    it('should reset width to defaultRatio * containerWidth when resetWidth is called', () => {
         const containerRef = { current: document.createElement('div') };
         const contentRef = { current: document.createElement('div') };
+        const containerRef2 = createMockContainerRef();
 
         // Start with a 0.6 ratio
         window.localStorage.getItem = jest.fn().mockReturnValue('0.6');
 
         const { result, rerender } = renderHook(() =>
             useResizableUtils({
-                containerRef: containerRef as React.RefObject<HTMLDivElement>,
-                contentRef: contentRef as React.RefObject<HTMLDivElement>,
+                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement>,
+                innerContentRef: contentRef as React.RefObject<HTMLDivElement>,
                 minWidth: 280,
                 maxRatio: 0.6,
                 position: ResizeHandlePosition.RIGHT,
                 persistKey: 'testKey',
+                containerRef: containerRef2,
                 defaultRatio: 0.35,
             })
         );
@@ -255,33 +277,5 @@ describe('useResizable', () => {
 
         // Should save to localStorage if persistKey is provided
         expect(window.localStorage.setItem).toHaveBeenCalledWith(expect.any(String), expect.any(String));
-    });
-
-    it('should use drawerKey instead of persistKey when provided', () => {
-        const containerRef = { current: document.createElement('div') };
-        const contentRef = { current: document.createElement('div') };
-
-        // Update drawer mock to return true for appInView
-        const { useDrawer } = require('@proton/components');
-        useDrawer.mockReturnValueOnce({ appInView: true });
-
-        // Mock localStorage to return a value
-        window.localStorage.getItem = jest.fn().mockReturnValue('450');
-
-        renderHook(() =>
-            useResizableUtils({
-                containerRef: containerRef as React.RefObject<HTMLDivElement>,
-                contentRef: contentRef as React.RefObject<HTMLDivElement>,
-                minWidth: 280,
-                maxRatio: 0.6,
-                position: ResizeHandlePosition.RIGHT,
-                persistKey: 'testKey',
-                drawerKey: 'drawerTestKey',
-                defaultRatio: 0.4,
-            })
-        );
-
-        // Should try to use drawerKey when in drawer mode
-        expect(window.localStorage.getItem).toHaveBeenCalledWith('drawerTestKey');
     });
 });

@@ -17,6 +17,13 @@ jest.mock('../../hooks/useResizableUtils', () => ({
 describe('ResizableWrapper', () => {
     const TestComponent = () => <div data-testid="test-content">Test Content</div>;
 
+    const createMockContainerRef = () => {
+        const mockElement = {
+            getBoundingClientRect: jest.fn().mockReturnValue({ width: 1000 }),
+        };
+        return { current: mockElement as unknown as HTMLElement };
+    };
+
     beforeEach(() => {
         jest.clearAllMocks();
 
@@ -42,8 +49,10 @@ describe('ResizableWrapper', () => {
     });
 
     it('renders children correctly', () => {
+        const containerRef = createMockContainerRef();
+
         render(
-            <ResizableWrapper>
+            <ResizableWrapper containerRef={containerRef}>
                 <TestComponent />
             </ResizableWrapper>
         );
@@ -53,8 +62,10 @@ describe('ResizableWrapper', () => {
     });
 
     it('bypasses resizable behavior when resizingDisabled is true', () => {
+        const containerRef = createMockContainerRef();
+
         render(
-            <ResizableWrapper resizingDisabled>
+            <ResizableWrapper containerRef={containerRef} resizingDisabled>
                 <TestComponent />
             </ResizableWrapper>
         );
@@ -64,6 +75,7 @@ describe('ResizableWrapper', () => {
     });
 
     it('applies correct className and style to wrapper', () => {
+        const containerRef = createMockContainerRef();
         const { useResizableUtils } = require('../../hooks/useResizableUtils');
         useResizableUtils.mockReturnValue({
             width: 500,
@@ -74,7 +86,7 @@ describe('ResizableWrapper', () => {
         });
 
         render(
-            <ResizableWrapper className="custom-class">
+            <ResizableWrapper containerRef={containerRef} className="custom-class">
                 <TestComponent />
             </ResizableWrapper>
         );
@@ -86,8 +98,10 @@ describe('ResizableWrapper', () => {
     });
 
     it('renders resize handle with correct position (right by default)', () => {
+        const containerRef = createMockContainerRef();
+
         render(
-            <ResizableWrapper>
+            <ResizableWrapper containerRef={containerRef}>
                 <TestComponent />
             </ResizableWrapper>
         );
@@ -97,8 +111,10 @@ describe('ResizableWrapper', () => {
     });
 
     it('renders resize handle with left position when specified', () => {
+        const containerRef = createMockContainerRef();
+
         render(
-            <ResizableWrapper resizeHandlePosition={ResizeHandlePosition.LEFT}>
+            <ResizableWrapper containerRef={containerRef} resizeHandlePosition={ResizeHandlePosition.LEFT}>
                 <TestComponent />
             </ResizableWrapper>
         );
@@ -108,6 +124,7 @@ describe('ResizableWrapper', () => {
     });
 
     it('calls enableResize when resize handle is clicked', () => {
+        const containerRef = createMockContainerRef();
         const mockEnableResize = jest.fn();
         const { useResizableUtils } = require('../../hooks/useResizableUtils');
         useResizableUtils.mockReturnValue({
@@ -119,7 +136,7 @@ describe('ResizableWrapper', () => {
         });
 
         render(
-            <ResizableWrapper>
+            <ResizableWrapper containerRef={containerRef}>
                 <TestComponent />
             </ResizableWrapper>
         );
@@ -131,6 +148,7 @@ describe('ResizableWrapper', () => {
     });
 
     it('calls resetWidth when resize handle is double-clicked', () => {
+        const containerRef = createMockContainerRef();
         const mockResetWidth = jest.fn();
         const { useResizableUtils } = require('../../hooks/useResizableUtils');
         useResizableUtils.mockReturnValue({
@@ -142,7 +160,7 @@ describe('ResizableWrapper', () => {
         });
 
         render(
-            <ResizableWrapper defaultRatio={0.4}>
+            <ResizableWrapper containerRef={containerRef} defaultRatio={0.4}>
                 <TestComponent />
             </ResizableWrapper>
         );
@@ -154,10 +172,11 @@ describe('ResizableWrapper', () => {
     });
 
     it('calls onWidthChange when width changes', () => {
+        const containerRef = createMockContainerRef();
         const mockOnWidthChange = jest.fn();
 
         const { rerender } = render(
-            <ResizableWrapper onWidthChange={mockOnWidthChange}>
+            <ResizableWrapper containerRef={containerRef} onWidthChange={mockOnWidthChange}>
                 <TestComponent />
             </ResizableWrapper>
         );
@@ -174,7 +193,7 @@ describe('ResizableWrapper', () => {
         });
 
         rerender(
-            <ResizableWrapper onWidthChange={mockOnWidthChange}>
+            <ResizableWrapper containerRef={containerRef} onWidthChange={mockOnWidthChange}>
                 <TestComponent />
             </ResizableWrapper>
         );
@@ -183,14 +202,15 @@ describe('ResizableWrapper', () => {
     });
 
     it('integrates with useResizable hook with correct parameters', () => {
+        const containerRef = createMockContainerRef();
         const { useResizableUtils } = require('../../hooks/useResizableUtils');
 
         render(
             <ResizableWrapper
+                containerRef={containerRef}
                 minWidth={300}
                 maxRatio={0.5}
                 persistKey="testKey"
-                drawerKey="testDrawerKey"
                 defaultRatio={0.45}
                 resizeHandlePosition={ResizeHandlePosition.LEFT}
             >
@@ -203,8 +223,8 @@ describe('ResizableWrapper', () => {
                 minWidth: 300,
                 maxRatio: 0.5,
                 persistKey: 'testKey',
-                drawerKey: 'testDrawerKey',
                 defaultRatio: 0.45,
+                containerRef,
             })
         );
     });
