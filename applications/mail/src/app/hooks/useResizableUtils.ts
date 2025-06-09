@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import type { RefObject } from 'react';
 import type React from 'react';
 
-import { useDrawer, useHandler, useWindowSize } from '@proton/components';
+import { useHandler } from '@proton/components';
+import useElementRect from '@proton/components/hooks/useElementRect';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
+import clamp from '@proton/utils/clamp';
 import throttle from '@proton/utils/throttle';
 
 import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
@@ -19,7 +21,7 @@ export interface ResizableOptions {
     minWidth?: number;
 
     /**
-     * Maximum ratio of the container width to window width
+     * Maximum ratio of the resizable area to the container width
      * @default 0.6
      */
     maxRatio?: number;
@@ -31,29 +33,44 @@ export interface ResizableOptions {
     persistKey?: string;
 
     /**
-     * Alternative key for localStorage when drawer is open
-     * Only used if both persistKey and drawerKey are provided
-     */
-    drawerKey?: string;
-
-    /**
-     * Default ratio of container width to window width
+     * Default ratio of the resizable area to the container width
      * Used when persistKey is provided for ratio-based persistence
      * @default 0.35
      */
     defaultRatio?: number;
+
+    /**
+     * Reference to the container element used for size observation and ratio calculations.
+     * maxRatio and defaultRatio will be calculated relative to this container's width.
+     * This provides precise control and prevents visual jumps.
+     *
+     * @example
+     * ```tsx
+     * const containerRef = useRef<HTMLDivElement>(null);
+     *
+     * <div ref={containerRef} className="my-container">
+     *   <ResizableWrapper
+     *     containerRef={containerRef}
+     *     maxRatio={0.5} // 50% of container width
+     *   >
+     *     <MyContent />
+     *   </ResizableWrapper>
+     * </div>
+     * ```
+     */
+    containerRef: React.RefObject<HTMLElement>;
 }
 
 interface UseResizableOptions extends ResizableOptions {
     /**
-     * Reference to the container element
+     * Reference to the resizable wrapper element
      */
-    containerRef: RefObject<HTMLDivElement>;
+    resizableWrapperRef: RefObject<HTMLDivElement>;
 
     /**
-     * Optional reference to measure for scrollbar width
+     * Optional reference to inner content element for scrollbar width measurement
      */
-    contentRef?: RefObject<HTMLDivElement>;
+    innerContentRef?: RefObject<HTMLDivElement>;
 
     /**
      * Direction of resize
@@ -89,62 +106,116 @@ export const calculateScrollBarWidth = (container: HTMLElement, content: HTMLEle
     return scrollbarWidth > 0 ? scrollbarWidth : 0;
 };
 
-const getActiveKey = (persistKey: string, drawerKey?: string, isDrawerOpen?: boolean): string =>
-    isDrawerOpen && drawerKey ? drawerKey : persistKey;
-
 /**
- * Get a value from localStorage based on drawer state
- * @param persistKey - Primary localStorage key
- * @param drawerKey - Alternative key for when drawer is open
- * @param isDrawerOpen - Whether drawer is in view
+ * Get a value from localStorage
+ * @param persistKey - localStorage key
  * @returns Stored value or null if not found
  */
-export const getPersistedValue = (persistKey: string, drawerKey?: string, isDrawerOpen?: boolean): string | null => {
+export const getPersistedValue = (persistKey: string): string | null => {
     if (!persistKey) {
         return null;
     }
 
-    const activeKey = getActiveKey(persistKey, drawerKey, isDrawerOpen);
-
-    if (memoryCache[activeKey] !== undefined) {
-        return memoryCache[activeKey];
+    if (memoryCache[persistKey] !== undefined) {
+        return memoryCache[persistKey];
     }
 
-    const value = getItem(activeKey);
+    const value = getItem(persistKey);
 
     if (value !== undefined && value !== null) {
-        memoryCache[activeKey] = value;
+        memoryCache[persistKey] = value;
     }
 
     return value ?? null;
 };
 
 /**
- * Save a value to localStorage based on drawer state
+ * Save a value to localStorage
  * @param value - Value to store
- * @param persistKey - Primary localStorage key
- * @param drawerKey - Alternative key for when drawer is open
- * @param isDrawerOpen - Whether drawer is in view
+ * @param persistKey - localStorage key
  */
-export const setPersistedValue = (
-    value: string,
-    persistKey: string,
-    drawerKey?: string,
-    isDrawerOpen?: boolean
-): void => {
+export const setPersistedValue = (value: string, persistKey: string): void => {
     if (!persistKey) {
         return;
     }
 
-    const activeKey = getActiveKey(persistKey, drawerKey, isDrawerOpen);
+    memoryCache[persistKey] = value;
+    setItem(persistKey, value);
+};
 
-    memoryCache[activeKey] = value;
-
-    if (isDrawerOpen && drawerKey) {
-        setItem(drawerKey, value);
-    } else {
-        setItem(persistKey, value);
+/**
+ * Calculate width from a saved ratio if available and valid
+ * @param persistKey - localStorage key to check for saved ratio
+ * @param containerWidth - Current container width
+ * @returns Width calculated from saved ratio, or null if no valid saved ratio
+ */
+const calculateWidthFromSavedRatio = (persistKey: string | undefined, containerWidth: number): number | null => {
+    if (!persistKey || containerWidth <= 0) {
+        return null;
     }
+
+    const savedRatio = getPersistedValue(persistKey);
+    if (!savedRatio) {
+        return null;
+    }
+
+    const ratio = parseFloat(savedRatio);
+    if (isNaN(ratio)) {
+        return null;
+    }
+
+    return containerWidth * ratio;
+};
+
+/**
+ * Apply width constraints (min width and max ratio)
+ * @param width - Width to constrain
+ * @param containerWidth - Container width for ratio calculation
+ * @param minWidth - Minimum allowed width
+ * @param maxRatio - Maximum ratio of container width
+ * @returns Constrained width
+ */
+const constrainWidth = (width: number, containerWidth: number, minWidth: number, maxRatio: number): number => {
+    const maxWidthFromRatio = containerWidth * maxRatio;
+    return clamp(width, minWidth, maxWidthFromRatio);
+};
+
+/**
+ * Save width as a ratio in localStorage
+ * @param width - Width to save as ratio
+ * @param containerWidth - Container width for ratio calculation
+ * @param persistKey - localStorage key
+ */
+const saveWidthAsRatio = (width: number, containerWidth: number, persistKey: string | undefined): void => {
+    if (!persistKey || containerWidth <= 0) {
+        return;
+    }
+
+    const ratio = width / containerWidth;
+    setPersistedValue(ratio.toString(), persistKey);
+};
+
+/**
+ * Calculate the target width considering saved ratio, default ratio, and constraints
+ * @param persistKey - localStorage key for saved ratio
+ * @param containerWidth - Current container width
+ * @param defaultRatio - Default ratio to use if no saved ratio
+ * @param minWidth - Minimum allowed width
+ * @param maxRatio - Maximum ratio of container width
+ * @returns Calculated and constrained target width
+ */
+const getTargetWidth = (
+    persistKey: string | undefined,
+    containerWidth: number,
+    defaultRatio: number,
+    minWidth: number,
+    maxRatio: number
+): number => {
+    // Try to get width from saved ratio first
+    const savedWidth = calculateWidthFromSavedRatio(persistKey, containerWidth);
+    const targetWidth = savedWidth ?? containerWidth * defaultRatio;
+
+    return constrainWidth(targetWidth, containerWidth, minWidth, maxRatio);
 };
 
 /**
@@ -154,13 +225,13 @@ export const setPersistedValue = (
 export const DEFAULT_MIN_WIDTH_OF_MAILBOX_LIST = 360;
 
 /**
- * This value is for the resizable area of the list of emails. The maximum ratio of the resizable area to the window width.
+ * Default maximum ratio of the resizable area to the container width.
  * @default 0.6
  */
 export const DEFAULT_MAX_RATIO_OF_MAILBOX_LIST_AREA = 0.6;
 
 /**
- * The main use case of this value is for list of emails that can be resized. Approximately 35% of the window width is the default.
+ * Default ratio of the resizable area to the container width.
  * @default 0.35
  */
 export const DEFAULT_RATIO_OF_MAILBOX_LIST = 0.35;
@@ -168,78 +239,69 @@ export const DEFAULT_RATIO_OF_MAILBOX_LIST = 0.35;
 /**
  * A hook that provides resizing functionality with persistence and constraints.
  *
- * @param options - Configuration options for the resizable component
+ * Features:
+ * - Container-based ratio calculations
+ * - Smooth initialization without visual jumps
+ * - Width persistence across sessions
+ * - Responsive behavior based on container changes
  *
+ * @param options - Configuration options for the resizable component
+ * @returns Object containing width, resize state, and control functions
  */
 export const useResizableUtils = ({
-    containerRef,
-    contentRef,
+    resizableWrapperRef,
+    innerContentRef,
     minWidth = DEFAULT_MIN_WIDTH_OF_MAILBOX_LIST,
     maxRatio = DEFAULT_MAX_RATIO_OF_MAILBOX_LIST_AREA,
     position = ResizeHandlePosition.RIGHT,
     persistKey,
-    drawerKey,
     defaultRatio = DEFAULT_RATIO_OF_MAILBOX_LIST,
+    containerRef,
 }: UseResizableOptions) => {
-    const { appInView } = useDrawer();
-    const isDrawerOpen = Boolean(appInView);
     const [isResizing, setIsResizing] = useState(false);
     const [scrollBarWidth, setScrollBarWidth] = useState(0);
 
-    const [windowWidth] = useWindowSize();
+    // Use useElementRect to observe container size changes
+    const containerRect = useElementRect(containerRef);
+    const containerWidth = containerRect?.width || 0;
+    const [hasCalculatedInitialWidth, setHasCalculatedInitialWidth] = useState(false);
 
-    const [width, setWidth] = useState(() => {
-        if (persistKey) {
-            try {
-                const key = drawerKey && isDrawerOpen ? drawerKey : persistKey;
-                const savedValue = getPersistedValue(key);
-
-                if (savedValue) {
-                    const parsedWidth = parseFloat(savedValue);
-                    if (!isNaN(parsedWidth)) {
-                        // Convert ratio to absolute width
-                        return Math.min(windowWidth * parsedWidth, windowWidth * maxRatio);
-                    }
-                }
-            } catch (e) {
-                console.warn('Error reading from localStorage during initialization:', e);
-            }
-        }
-        return windowWidth * defaultRatio;
+    const [width, setWidthInternal] = useState(() => {
+        return calculateWidthFromSavedRatio(persistKey, containerWidth) ?? minWidth;
     });
 
     const [startX, setStartX] = useState(0);
     const [startWidth, setStartWidth] = useState(0);
 
-    useEffect(() => {
-        if (persistKey) {
-            const savedRatio = getPersistedValue(persistKey, drawerKey, isDrawerOpen);
-            if (savedRatio) {
-                const ratio = parseFloat(savedRatio);
-                if (!isNaN(ratio)) {
-                    const newWidth = windowWidth * ratio;
-                    const maxWidthFromRatio = windowWidth * maxRatio;
-                    setWidth(Math.max(minWidth, Math.min(maxWidthFromRatio, newWidth)));
-                }
-            } else if (defaultRatio) {
-                setWidth(windowWidth * defaultRatio);
+    const setWidth = (newWidth: number) => {
+        setWidthInternal(newWidth);
+    };
+
+    useLayoutEffect(() => {
+        if (containerWidth <= 0) {
+            return;
+        }
+
+        const targetWidth = getTargetWidth(persistKey, containerWidth, defaultRatio, minWidth, maxRatio);
+        const shouldUpdate = !hasCalculatedInitialWidth || Math.abs(width - targetWidth) > 5;
+
+        if (shouldUpdate) {
+            setWidth(targetWidth);
+            if (!hasCalculatedInitialWidth) {
+                setHasCalculatedInitialWidth(true);
             }
         }
-    }, [windowWidth, isDrawerOpen]);
+    }, [containerWidth, hasCalculatedInitialWidth]);
 
     const safeSaveRatio = useHandler(
         (newWidth: number) => {
-            if (persistKey) {
-                const newRatio = newWidth / windowWidth;
-                setPersistedValue(newRatio.toString(), persistKey, drawerKey, isDrawerOpen);
-            }
+            saveWidthAsRatio(newWidth, containerWidth, persistKey);
         },
         { debounce: 1000 }
     );
 
     const updateWidth = (newWidth: number) => {
-        const maxWidthFromRatio = windowWidth * maxRatio;
-        const constrainedWidth = Math.max(minWidth, Math.min(maxWidthFromRatio, newWidth));
+        const constrainedWidth = constrainWidth(newWidth, containerWidth, minWidth, maxRatio);
         setWidth(constrainedWidth);
 
         safeSaveRatio(constrainedWidth);
@@ -247,7 +309,7 @@ export const useResizableUtils = ({
     };
 
     const handleResizeWithMouse = (e: MouseEvent) => {
-        if (!isResizing || !containerRef.current) {
+        if (!isResizing || !resizableWrapperRef.current) {
             return;
         }
 
@@ -262,23 +324,14 @@ export const useResizableUtils = ({
                 newWidth = startWidth + (e.clientX - startX);
         }
 
-        const maxWidthFromRatio = windowWidth * maxRatio;
-        const constrainedWidth = Math.max(minWidth, Math.min(maxWidthFromRatio, newWidth));
+        const constrainedWidth = constrainWidth(newWidth, containerWidth, minWidth, maxRatio);
         setWidth(constrainedWidth);
 
         safeSaveRatio(constrainedWidth);
     };
 
-    /**
-     * Enable resize on mousedown
-     * @param e - Mouse event
-     * @returns void
-     *
-     * @description
-     * When resizing, we add certain styles to the area and change the cursor style to let the user know.
-     */
     const enableResize = (e: React.MouseEvent) => {
-        if (!containerRef.current) {
+        if (!resizableWrapperRef.current) {
             return;
         }
 
@@ -289,22 +342,22 @@ export const useResizableUtils = ({
 
         document.body.classList.add('cursor-col-resize');
 
-        containerRef.current.classList.add('user-select-none');
+        resizableWrapperRef.current.classList.add('user-select-none');
     };
 
     const disableResize = () => {
-        if (!isResizing || !containerRef.current) {
+        if (!isResizing || !resizableWrapperRef.current) {
             return;
         }
 
         setIsResizing(false);
         document.body.style.cursor = '';
         document.body.classList.remove('cursor-col-resize');
-        containerRef.current.classList.remove('user-select-none');
+        resizableWrapperRef.current.classList.remove('user-select-none');
     };
 
     const resetWidth = () => {
-        const defaultWidth = windowWidth * defaultRatio;
+        const defaultWidth = constrainWidth(containerWidth * defaultRatio, containerWidth, minWidth, maxRatio);
         updateWidth(defaultWidth);
     };
 
@@ -326,8 +379,8 @@ export const useResizableUtils = ({
 
     const debouncedCalculateScrollBarWidth = useHandler(
         () => {
-            if (containerRef.current && contentRef?.current) {
-                const calculatedWidth = calculateScrollBarWidth(containerRef.current, contentRef.current);
+            if (resizableWrapperRef.current && innerContentRef?.current) {
+                const calculatedWidth = calculateScrollBarWidth(resizableWrapperRef.current, innerContentRef.current);
                 setScrollBarWidth(calculatedWidth);
             }
         },
@@ -340,7 +393,16 @@ export const useResizableUtils = ({
         return () => {
             debouncedCalculateScrollBarWidth.cancel?.();
         };
-    }, [debouncedCalculateScrollBarWidth, width, windowWidth]);
+    }, [debouncedCalculateScrollBarWidth, width]);
+
+    // Handle container size changes - useElementRect already observes the container
+    useEffect(() => {
+        const savedWidth = calculateWidthFromSavedRatio(persistKey, containerWidth);
+        if (savedWidth !== null) {
+            const constrainedWidth = constrainWidth(savedWidth, containerWidth, minWidth, maxRatio);
+            setWidth(constrainedWidth);
+        }
+    }, [containerWidth, persistKey, maxRatio, minWidth]);
 
     return {
         width,
