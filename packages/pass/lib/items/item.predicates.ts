@@ -25,6 +25,11 @@ export const itemEq =
     <T extends UniqueItem>(b: T): boolean =>
         a.shareId === b.shareId && a.itemId === b.itemId;
 
+export const itemAny =
+    <T extends UniqueItem>(a: T[]) =>
+    <T extends UniqueItem>(b: T): boolean =>
+        a.some(itemEq(b));
+
 export const belongsToShare =
     (shareId: string) =>
     <T extends UniqueItem>(item: T): boolean =>
