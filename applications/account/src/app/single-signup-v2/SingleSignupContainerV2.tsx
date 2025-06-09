@@ -345,7 +345,7 @@ const SingleSignupContainerV2 = ({
 
     useEffect(() => {
         if (toApp === APPS.PROTONLUMO && flagsReady && !lumoSignupEnabled) {
-            redirectTo(SSO_PATHS.SIGNUP);
+            redirectTo(`${SSO_PATHS.SIGNUP}${location.search}`);
         }
     }, [toApp, flagsReady, lumoSignupEnabled]);
 
