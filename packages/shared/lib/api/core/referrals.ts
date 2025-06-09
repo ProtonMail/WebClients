@@ -1,3 +1,7 @@
+import type { CYCLE, PLANS } from '@proton/payments';
+
+import type { ReferralData } from '../../interfaces';
+
 interface GetReferralsProps {
     Offset?: number;
     Limit?: number;
@@ -46,4 +50,30 @@ export const deleteInvitation = ({ id }: DeleteInvitationURLParams) => ({
 export const checkReferrer = (identifier: string) => ({
     method: 'get',
     url: `core/v4/referrals/identifiers/${identifier}`,
+});
+
+interface Plan {
+    name: PLANS;
+    cycle: CYCLE;
+}
+
+const getPlanData = (plan: Plan | undefined) => {
+    if (!plan) {
+        return {};
+    }
+
+    return {
+        Plan: plan.name,
+        Cycle: plan.cycle,
+    };
+};
+
+export const postReferralRegistration = ({ plan, referralData }: { plan?: Plan; referralData: ReferralData }) => ({
+    method: 'post',
+    url: `core/v4/referrals/register`,
+    data: {
+        ...getPlanData(plan),
+        ReferralIdentifier: referralData.referralIdentifier,
+        ReferralID: referralData.referralID,
+    },
 });
