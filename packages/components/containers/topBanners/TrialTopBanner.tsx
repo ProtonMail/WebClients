@@ -51,7 +51,7 @@ const TrialTopBanner = () => {
                 <span className="mr-1">{c('Info')
                     .jt`You won't be charged if you cancel before ${trialEndsOnFormatted}.`}</span>
                 <InlineLinkButton key="cancel-trial" onClick={() => setModal(true)}>
-                    {c('Action').t`Cancel`}
+                    {c('Action').t`Learn more`}
                 </InlineLinkButton>
             </TopBanner>
         </>
