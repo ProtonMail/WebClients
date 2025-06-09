@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -49,6 +49,7 @@ import { appendReturnUrlParams } from '@proton/shared/lib/authentication/returnU
 import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { redirectTo } from '@proton/shared/lib/helpers/browser';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -341,6 +342,12 @@ const SingleSignupContainerV2 = ({
         generateMnemonic,
         CustomStep,
     } = signupConfiguration;
+
+    useEffect(() => {
+        if (toApp === APPS.PROTONLUMO && flagsReady && !lumoSignupEnabled) {
+            redirectTo(SSO_PATHS.SIGNUP);
+        }
+    }, [toApp, flagsReady, lumoSignupEnabled]);
 
     useEffect(() => {
         const run = async () => {
@@ -1211,7 +1218,7 @@ const SingleSignupContainerV2 = ({
     };
 
     if (toApp === APPS.PROTONLUMO && flagsReady && !lumoSignupEnabled) {
-        return <Redirect to={SSO_PATHS.LOGIN} />;
+        return null;
     }
 
     if (toApp === APPS.PROTONLUMO && !flagsReady) {
