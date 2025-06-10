@@ -59,6 +59,7 @@ import { AppendPublicShareKeyMaterialToTitle } from './append-public-share-key-m
 import useFlag from '@proton/unleash/useFlag'
 import type { ProviderType } from '../../../provider-type'
 import { tmpConvertNewDocTypeToOld, type DocumentType } from '@proton/drive-store/store/_documents'
+import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 
 export function useSuggestionsFeatureFlag() {
   const isDisabled = useFlag('DocsSuggestionsDisabled')
@@ -70,14 +71,17 @@ export type DocumentViewerProps = {
   editorInitializationConfig?: EditorInitializationConfig
   providerType: ProviderType
   openAction: DocumentAction
-  documentType?: DocumentType
+  actionMode: DocumentAction['mode'] | undefined
+  documentType: DocumentType | ProtonDocumentType
 }
 
 export function DocumentViewer({
   nodeMeta,
   editorInitializationConfig,
   openAction,
+  actionMode,
   providerType,
+  documentType,
 }: DocumentViewerProps) {
   const application = useApplication()
   const { getLocalID } = useAuthentication()
@@ -119,12 +123,12 @@ export function DocumentViewer({
     application.syncedEditorState.setProperty('suggestionsEnabled', isSuggestionsEnabled || isLocalEnvironment())
   }, [application.syncedEditorState, isSuggestionsEnabled])
 
-  const isDownloadAction = openAction.mode === 'download' || openAction.mode === 'open-url-download'
+  const isDownloadAction = actionMode === 'download' || openAction.mode === 'open-url-download'
   useEffect(() => {
     if (isDownloadAction && didLoadTitle && didLoadEditorContent && docOrchestrator) {
-      void docOrchestrator.exportAndDownload('docx')
+      void docOrchestrator.exportAndDownload(tmpConvertNewDocTypeToOld(documentType) === 'doc' ? 'docx' : 'xlsx')
     }
-  }, [docOrchestrator, didLoadTitle, didLoadEditorContent, isDownloadAction])
+  }, [docOrchestrator, didLoadTitle, didLoadEditorContent, isDownloadAction, documentType])
 
   useEffect(() => {
     if (!bridge) {
@@ -171,10 +175,10 @@ export function DocumentViewer({
   useEffect(() => {
     return application.eventBus.addEventCallback(() => {
       if (isPublicViewer && editorController && documentState) {
-        openPublicSplashModal({ editorController, documentState: documentState as PublicDocumentState })
+        openPublicSplashModal({ editorController, documentState: documentState as PublicDocumentState, documentType })
       }
     }, EditorEvent.ToolbarClicked)
-  }, [application.eventBus, isPublicViewer, openPublicSplashModal, editorController, documentState])
+  }, [application.eventBus, isPublicViewer, openPublicSplashModal, editorController, documentState, documentType])
 
   useEffect(() => {
     return application.eventBus.addEventCallback(() => {
