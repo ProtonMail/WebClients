@@ -128,7 +128,7 @@ export function* hydrate(
             ? config.merge(currentState, partialMerge(cachedState, incoming))
             : partialMerge(currentState, incoming);
 
-        const next: State = (onBeforeHydrate ?? identity)(prev, fromCache);
+        const next: State = yield (onBeforeHydrate ?? identity)(prev, fromCache);
 
         /** Sync the local settings */
         yield onSettingsUpdated?.(selectProxiedSettings(next));
