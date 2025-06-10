@@ -383,6 +383,9 @@
       "Help and resources": [
         "Hulp en bronnen"
       ],
+      "Hide": [
+        "Verbergen"
+      ],
       "Hide advanced PGP settings": [
         "Geavanceerde PGP-instellingen verbergen"
       ],
@@ -391,6 +394,9 @@
       ],
       "Hide busy times": [
         "Verberg drukke tijden"
+      ],
+      "Hide more benefits": [
+        "Toon minder voordelen"
       ],
       "Hide time zones": [
         "Tijdzones verbergen"
@@ -452,6 +458,9 @@
       "Later": [
         "Later"
       ],
+      "Learn more": [
+        "Meer informatie"
+      ],
       "Let's talk": [
         "Laten we praten!"
       ],
@@ -508,6 +517,9 @@
       ],
       "More actions": [
         "Meer acties"
+      ],
+      "More benefits": [
+        "Meer voordelen"
       ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
@@ -730,6 +742,9 @@
       ],
       "Show more": [
         "Meer weergeven"
+      ],
+      "Show more benefits": [
+        "Toon meer voordelen"
       ],
       "Show navigation bar": [
         "Navigatiebalk tonen"
@@ -4758,6 +4773,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Voer minstens ${ BETTER_PASSWORD_LENGTH } tekens in"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Aan het einde van uw proefversie ${ boldCancelDate } wordt u gedowngraded naar ${ boldProtonFree }. Alle gebruikersaccounts worden verwijderd uit uw organisatie."
+      ],
       "Attention required": [
         "Aandacht vereist"
       ],
@@ -5014,11 +5032,11 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
       ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Als u annuleert, verliest u direct toegang tot ${ boldPlanTitle }, en wordt u gedowngraded naar het ${ boldProtonFree } abonnement. Indien uw gebruik de limieten van het gratis abonnement overschrijdt, kunt u beperkte toegang tot productfuncties en uw data ervaren."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Als u opzegt, zal uw ${ planTitle }-abonnement niet verlengen wanneer het verloopt op ${ expiryDate }."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Als u van gedachten verandert, kunt u op elk moment opnieuw abonneren. Jammer dat u vertrekt!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
@@ -5421,6 +5439,9 @@
       "Temporarily unavailable. Please check back later.": [
         "Tijdelijk onbeschikbaar. Probeer later opnieuw."
       ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "Bedankt om te kiezen voor ${ BRAND_NAME } om uw organisatie te beschermen."
+      ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Bedankt voor uw abonnement. Veilig browsen begint nu."
       ],
@@ -5498,9 +5519,6 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Stuur ${ btcAmountBold } naar het onderstaande adres om uw betaling te voltooien."
-      ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "Om te blijven genieten van ${ boldPlanTitle } tot ${ boldCancelDate }, annuleer niet."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
@@ -5598,9 +5616,6 @@
       "Week and month views only apply to desktop.": [
         "Week en maand weergaven zijn alleen van toepassing op bureaublad."
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "Wat u opgeeft wanneer u ${ boldPlanTitle } annuleert:"
-      ],
       "When working remotely": [
         "Bij werken op afstand"
       ],
@@ -5693,9 +5708,6 @@
       "You can now return to the application to continue": [
         "U kunt nu teruggaan naar het programma om door te gaan"
       ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "U hebt nog steeds toegang tot al uw accountgegevens. U kunt op elk moment weer abonneren om te blijven genieten van al onze functies."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
       ],
@@ -5756,6 +5768,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "U wordt niets in rekening gebracht als u annuleert voor ${ trialEndsOnFormatted }."
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "U verliest ook toegang tot ${ boldPlanTitle } functies:"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
         "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd."
@@ -5774,9 +5789,6 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Uw ${ PASS_SHORT_APP_NAME } Plus-abonnement zal worden vervangen door ${ PASS_SHORT_APP_NAME } Lifetime. Het resterende saldo van uw abonnement zal aan uw account worden toegevoegd. ${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }."
-      ],
-      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
-        "Uw ${ planName } abonnement is nu een betaald abonnement dat automatisch elke 12 maanden wordt verlegd. Uw volgende factureringsdatum is ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
@@ -5811,8 +5823,11 @@
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "Uw gratis proefperiode van ${ boldPlanTitle } is geannuleerd, en uw account ${ boldUserEmail } is gedowngraded naar ${ boldProtonFree }."
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Uw gratis proefversie werd succesvol omgezet naar een ${ cycle }-maands abonnement. Uw verlengingsdatum is ${ nextBillingDate }."
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Uw gratis proefversie werd succesvol omgezet naar een maandelijks abonnement. Uw verlengingsdatum is ${ nextBillingDate }."
       ],
       "Your information was found on ${ displayedDate }": [
         "Uw informatie is gevonden op ${ displayedDate }"
@@ -5838,9 +5853,6 @@
       "Your online activity is protected": [
         "Uw online activiteiten zijn beschermd"
       ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "Uw organisatie ${ boldOrganizationName } is uitgeschakeld en al haar gebruikerslicenties zijn verwijderd."
-      ],
       "Your password was leaked:": [
         "Uw wachtwoord werd gelekt:"
       ],
@@ -5865,6 +5877,12 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Uw proefperiode eindigt over ${ timeRemaining }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "U verliest toegang tot ${ boldPlanTitle } op ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "U kunt nog steeds uw eigen accountgegevens bekijken, maar alle gebruikersaccounts worden verwijderd uit uw organisatie."
       ]
     },
     "info": {
@@ -7065,11 +7083,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -7091,6 +7104,11 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -7576,12 +7594,6 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
       ],
-      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "1 TB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd met end-to-end versleuteling."
-      ],
-      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "200 GB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd door end-to-end versleuteling."
-      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Geavanceerde netwerkbeveiliging en toegangsbeheer met toegewijde beveiligde gateways"
       ],
@@ -7641,6 +7653,9 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Veilig toegang krijgen tot internet vanaf elke locatie met essentiële netwerkmonitoring."
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Veilige cloudopslag die u alles laat opslaan, synchroniseren, en u makkelijk en veilig bestanden laat delen."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Veilige e-mail met geavanceerde functies voor uw dagelijkse communicatie."
@@ -8285,6 +8300,23 @@
         "U kunt uw thema altijd wijzigen in uw instellingen."
       ]
     },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "U kunt op elk moment ervoor annuleren."
+      ],
+      "Once your full subscription starts...": [
+        "Zodra uw volledige abonnement ingaat..."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "U kunt nog steeds annuleren binnen 30 dagen en een pro-rata restitutie krijgen."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Uw volledige ${ planTitle } abonnement begint op ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "U kunt kosteloos gebruikmaken van ${ planTitle } totdat de proefversie eindigt."
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "Toevoegen aan bestaande groep"
@@ -8378,6 +8410,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Toegang tot alle ${ BRAND_NAME }-apps en premium functies"
+      ],
       "Secure vault sharing": [
         "Veilig delen van kluis"
       ],
@@ -9581,6 +9616,47 @@
         "Voor ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -9839,47 +9915,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
@@ -10877,7 +10912,7 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"
       ],
-      "Your ${ planName } subscription started": [
+      "Your ${ planName } subscription has started": [
         "Uw ${ planName } abonnement is ingegaan"
       ],
       "Your account is protected": [
@@ -10888,6 +10923,9 @@
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } days": [
+        "Uw gratis proefversie eindigt op ${ trialDurationFormatted }."
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
