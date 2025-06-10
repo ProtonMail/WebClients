@@ -445,6 +445,9 @@
       "Delete your account": [
         "删除您的账户"
       ],
+      "Delete “${ label.Name }”": [
+        "删除 \"${ label.Name }\""
+      ],
       "Deny access": [
         "拒绝访问"
       ],
@@ -466,11 +469,11 @@
       "Discard": [
         "放弃"
       ],
-      "Discard changes": [
-        "放弃修改"
-      ],
       "Discard Changes": [
         "放弃更改"
+      ],
+      "Discard changes": [
+        "放弃修改"
       ],
       "Discover ${ planName }": [
         "探索 ${ planName }"
@@ -570,6 +573,9 @@
       ],
       "Edit users": [
         "编辑用户"
+      ],
+      "Edit “${ label.Name }”": [
+        "编辑 \"${ label.Name }\""
       ],
       "Emoji": [
         "表情符号"
@@ -811,6 +817,9 @@
       "Later": [
         "稍后"
       ],
+      "Learn more": [
+        "了解详情"
+      ],
       "Leave": [
         "离开"
       ],
@@ -979,10 +988,10 @@
       "Refresh status": [
         "刷新状态"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "刷新页面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "刷新页面"
       ],
       "Reject": [
@@ -1159,10 +1168,10 @@
       "Select country ${ country }": [
         "选择国家/地区 ${ country }"
       ],
-      "select file": [
+      "Select file": [
         "选择文件"
       ],
-      "Select file": [
+      "select file": [
         "选择文件"
       ],
       "Select files": [
@@ -4651,6 +4660,12 @@
       "Actions": [
         "操作"
       ],
+      "Forward from": [
+        "转发自"
+      ],
+      "Forward to": [
+        "转发至"
+      ],
       "From": [
         "从"
       ],
@@ -7446,11 +7461,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "建议至少设置一种数据恢复方式，确保即使忘记密码也能找回 ${ BRAND_NAME } 账户中的信息。"
       ],
-      "active": [
-        "启用"
-      ],
       "Active": [
         "已启用"
+      ],
+      "active": [
+        "启用"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
@@ -7884,10 +7899,10 @@
       "Data recoverable on this device": [
         "此设备上的数据可能被恢复"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "专用服务器"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "专用服务器"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -8318,9 +8333,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "如有异议，请点击${ contactLink }联系我们。"
-      ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "如果取消，您将立即失去对 ${ boldPlanTitle } 的访问，并将降级到 ${ boldProtonFree } 套餐。如果您的使用量超过免费套餐限制，那么您对产品功能和数据的访问可能会受到限制。"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "如果您取消，您的 ${ planTitle } 订阅在 ${ expiryDate } 到期后将不会续订。"
@@ -8813,9 +8825,6 @@
       ],
       "Or select a particular server:": [
         "或指定服务器："
-      ],
-      "Organization --> Groups": [
-        "组织 --> 群组"
       ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "组织成员需要用密码或 PIN 码等解锁 ${ PASS_APP_NAME }。"
@@ -9567,9 +9576,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "如果确定要执行此操作，请再次输入您要删除的用户名称。"
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "若要在 ${ boldCancelDate } 之前继续免费使用 ${ boldPlanTitle }，请不要取消。"
-      ],
       "To continue to ${ product }": [
         "即可使用 ${ product }"
       ],
@@ -9744,10 +9750,10 @@
       "User activated": [
         "用户已激活"
       ],
-      "Username": [
+      "username": [
         "用户名"
       ],
-      "username": [
+      "Username": [
         "用户名"
       ],
       "Users": [
@@ -9906,9 +9912,6 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "我们会将重置代码发送到您先前提供的密保手机。"
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "当您取消 ${ boldPlanTitle } 即视为您自动放弃以下权利："
-      ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "关闭后可防止在您不知情的情况下加载图像。"
       ],
@@ -10062,9 +10065,6 @@
       "You can now return to the application to continue": [
         "您现在可以返回到应用程序以继续"
       ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "您仍然可以访问您账户的所有数据。您也可以随时再次订阅，继续享受我们的所有功能。"
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
       ],
@@ -10203,9 +10203,6 @@
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "您的 ${ PASS_SHORT_APP_NAME } Plus 订阅将被替换为 ${ PASS_SHORT_APP_NAME } Lifetime。订阅的差价将计入您的账户。${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
       ],
-      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
-        "您的 ${ planName } 套餐现在是付费订阅，每 12 个月自动续订。您的下一个账单日期是 ${ nextBillingDate }。"
-      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "您的 ${ VPN_APP_NAME } 和 ${ MAIL_APP_NAME } 账户已关联。要删除它们，请登录 ${ loginLink } 并在那里删除您的账户。"
       ],
@@ -10242,9 +10239,6 @@
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "您的 ${ boldPlanTitle } 免费试用已取消，您的账户 ${ boldUserEmail } 已降级到 ${ boldProtonFree }。"
-      ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "您从 ${ accounts } 的导入被暂时推迟。"
       ],
@@ -10262,9 +10256,6 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "您的下一个账单日期是 ${ renewalTime }。如果您需要立即更改套餐，请联系支持部门。"
-      ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "您的组织 ${ boldOrganizationName } 已被禁用，其所有用户席位已被删除。"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "您的组织使用单点登录 (SSO)。按下登录以使用 SSO 登录。"
@@ -10299,8 +10290,8 @@
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "您的支持工单已关闭。感谢您联系 ${ BRAND_NAME } 支持。"
       ],
-      "Your trial ends on June 19. Upgrade to receive future breach reports.": [
-        "试用期将于 6 月 19 日结束，升级以继续获取泄露报告。"
+      "Your trial ends on June 25. Upgrade to receive future breach reports.": [
+        "您的试用期将于6月25日结束。升级套餐以便继续获取泄露报告"
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "您的试用将于 ${ timeRemaining } 结束。"
@@ -10928,10 +10919,10 @@
       "Allow sharing outside the organization": [
         "允许组织外部共享"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "允许的域"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "允许的域"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -12096,6 +12087,9 @@
       "${ Label.Name } created": [
         "${ Label.Name } 已创建"
       ],
+      "${ labelName } updated": [
+        "${ labelName } 已更新"
+      ],
       "Preference saved": [
         "设置已保存"
       ]
@@ -12190,6 +12184,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "开通 ${ VPN_APP_NAME }"
+      ],
+      "Groups": [
+        "群组"
       ],
       "Help": [
         "帮助"
@@ -13585,6 +13582,14 @@
         "只需 ${ priceLine } 即可解锁所有 ${ BRAND_NAME } 高级产品和功能。随时取消。"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } $ 试用"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
@@ -13603,14 +13608,6 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户即可解锁更多高级功能"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } $ 试用"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -14138,6 +14135,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "选择 ${ BRAND_NAME } 可以访问的内容：查看电子邮件信息和设置、查看和下载联系人信息、查看和下载从 Google 日历访问的所有日程。"
+      ]
+    },
+    "oc_nightly: BYOE": {
+      "Something went wrong while loging into your Gmail account": [
+        "在登录您的 Gmail 账户时出现了一些问题。"
       ]
     },
     "Offer": {
@@ -16644,11 +16646,11 @@
       "Free": [
         "Free"
       ],
-      "get a secure ${ MAIL_APP_NAME } address": [
-        "获取一个安全的 ${ MAIL_APP_NAME } 邮箱地址"
+      "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
+        "获取一个安全的 ${ MAIL_APP_NAME } 邮箱地址，或点击 ${ internalButton }"
       ],
-      "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }.": [
-        "获取一个安全的 ${ MAIL_APP_NAME } 地址，或 ${ internalButton }。"
+      "get a secure ${ MAIL_APP_NAME } address.": [
+        "获取一个安全的 ${ MAIL_APP_NAME } 电子邮件地址。"
       ],
       "Manage user access": [
         "管理用户访问"
@@ -16725,11 +16727,11 @@
       "Upload files of any size": [
         "上传任意大小的文件"
       ],
-      "Use your email, or ${ externalButton }.": [
-        "使用您的邮箱，或 ${ externalButton }。"
+      "Use your email, or ${ externalButton }": [
+        "使用您的电子邮箱，或 ${ externalButton }"
       ],
-      "use your own email": [
-        "使用您自己的邮箱"
+      "use your own email.": [
+        "使用您的电子邮箱。"
       ],
       "Yearly": [
         "每年"
@@ -17589,6 +17591,47 @@
         "总计 ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动邮件转发 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "简短的 @pm.me 邮箱地址"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "具有高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 以及 ${ VPN_SHORT_APP_NAME }"
@@ -17873,47 +17916,6 @@
         "您自己的短 @pm.me 邮箱别名"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动邮件转发 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "简短的 @pm.me 邮箱地址"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
-      ]
-    },
     "Subscription renewal state": {
       "Are you sure?": [
         "确定要这样做吗?"
@@ -17951,6 +17953,9 @@
       ],
       "Expiring": [
         "即将到期"
+      ],
+      "Free Trial": [
+        "免费试用"
       ]
     },
     "Subtitle": {
@@ -18664,10 +18669,10 @@
       "Card verification": [
         "银行卡验证"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "通配邮箱"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "通配邮箱"
       ],
       "Change login password": [
@@ -19861,9 +19866,6 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "您的 ${ planName } 免费试用期将于 ${ textDate } 结束"
       ],
-      "Your ${ planName } subscription started": [
-        "您的 ${ planName } 订阅已启用"
-      ],
       "Your calendar link": [
         "您的日历链接"
       ],
@@ -20064,6 +20066,9 @@
       ],
       "Enable/disable desktop and mobile notifications": [
         "开启或关闭推送通知"
+      ],
+      "Enable/disable desktop and mobile notifications for “${ labelName }”": [
+        "启用/禁用“${ labelName }”的桌面和移动通知"
       ],
       "Enabling detailed events records the IP address for each event.": [
         "启用详细事件会记录每个事件的 IP 地址。"
