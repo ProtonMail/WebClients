@@ -469,11 +469,11 @@
       "Discard": [
         "Verwijderen"
       ],
-      "Discard changes": [
-        "Wijzigingen weggooien"
-      ],
       "Discard Changes": [
         "Wijzigingen annuleren"
+      ],
+      "Discard changes": [
+        "Wijzigingen weggooien"
       ],
       "Discover ${ planName }": [
         "Ontdek ${ planName }"
@@ -736,6 +736,9 @@
       "Hide": [
         "Verbergen"
       ],
+      "Hide more benefits": [
+        "Toon minder voordelen"
+      ],
       "Hide plan features": [
         "Verberg abonnementsfuncties"
       ],
@@ -817,6 +820,9 @@
       "Later": [
         "Later"
       ],
+      "Learn more": [
+        "Meer informatie"
+      ],
       "Leave": [
         "Verlaat"
       ],
@@ -882,6 +888,9 @@
       ],
       "More": [
         "Meer"
+      ],
+      "More benefits": [
+        "Meer voordelen"
       ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
@@ -985,11 +994,11 @@
       "Refresh status": [
         "Status vernieuwen"
       ],
-      "refresh the page": [
-        "pagina vernieuwen"
-      ],
       "Refresh the page": [
         "Pagina vernieuwen"
+      ],
+      "refresh the page": [
+        "pagina vernieuwen"
       ],
       "Reject": [
         "Afwijzen"
@@ -1165,11 +1174,11 @@
       "Select country ${ country }": [
         "Selecteer land ${ country }"
       ],
-      "select file": [
-        "selecteer bestand"
-      ],
       "Select file": [
         "Selecteer bestand"
+      ],
+      "select file": [
+        "selecteer bestand"
       ],
       "Select files": [
         "Selecteer bestanden"
@@ -1260,6 +1269,9 @@
       ],
       "Show more": [
         "Meer weergeven"
+      ],
+      "Show more benefits": [
+        "Toon meer voordelen"
       ],
       "Show preview": [
         "Voorbeeld tonen"
@@ -7535,11 +7547,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activeer ten minste één methode voor gegevensherstel om ervoor te zorgen dat u toegang kunt blijven krijgen tot de inhoud van uw ${ BRAND_NAME } Account als u uw wachtwoord verliest."
       ],
-      "active": [
-        "actief"
-      ],
       "Active": [
         "Actief"
+      ],
+      "active": [
+        "actief"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Voeg een @pm.me-e-mailadres toe aan uw account. Dit eenvoudige, kortere domein staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me.\""
@@ -7739,6 +7751,9 @@
       ],
       "At least one application must be active": [
         "Minstens één applicatie moet actief zijn"
+      ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Aan het einde van uw proefversie ${ boldCancelDate } wordt u gedowngraded naar ${ boldProtonFree }. Alle gebruikersaccounts worden verwijderd uit uw organisatie."
       ],
       "Attention required": [
         "Aandacht vereist"
@@ -7983,11 +7998,11 @@
       "Data recoverable on this device": [
         "Gegevens herstelbaar op dit apparaat"
       ],
-      "Dedicated servers": [
-        "Dedicated servers"
-      ],
       "dedicated servers": [
         "toegewijde servers"
+      ],
+      "Dedicated servers": [
+        "Dedicated servers"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
@@ -8420,11 +8435,11 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
       ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Als u annuleert, verliest u direct toegang tot ${ boldPlanTitle }, en wordt u gedowngraded naar het ${ boldProtonFree } abonnement. Indien uw gebruik de limieten van het gratis abonnement overschrijdt, kunt u beperkte toegang tot productfuncties en uw data ervaren."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Als u opzegt, zal uw ${ planTitle }-abonnement niet verlengen wanneer het verloopt op ${ expiryDate }."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Als u van gedachten verandert, kunt u op elk moment opnieuw abonneren. Jammer dat u vertrekt!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
@@ -8918,9 +8933,6 @@
       ],
       "Or select a particular server:": [
         "Of selecteer een specifieke server:"
-      ],
-      "Organization --> Groups": [
-        "Organisatie --> Groepen"
       ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Organisatieleden moeten ${ PASS_APP_NAME } ontgrendelen met hun wachtwoord of pincode etc."
@@ -9442,6 +9454,9 @@
       "Thank you": [
         "Bedankt"
       ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "Bedankt om te kiezen voor ${ BRAND_NAME } om uw organisatie te beschermen."
+      ],
       "Thank you for choosing ${ BRAND_NAME }.": [
         "Bedankt voor het kiezen van ${ BRAND_NAME }."
       ],
@@ -9682,9 +9697,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Om te bevestigen, voer de naam in van de gebruiker die u wilt verwijderen."
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "Om te blijven genieten van ${ boldPlanTitle } tot ${ boldCancelDate }, annuleer niet."
-      ],
       "To continue to ${ product }": [
         "Om door te gaan naar ${ product }"
       ],
@@ -9859,11 +9871,11 @@
       "User activated": [
         "Gebruiker geactiveerd"
       ],
-      "Username": [
-        "Gebruikersnaam"
-      ],
       "username": [
         "gebruikersnaam"
+      ],
+      "Username": [
+        "Gebruikersnaam"
       ],
       "Users": [
         "Gebruikers"
@@ -10020,9 +10032,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "We sturen een resetcode naar het telefoonnummer dat u hebt opgegeven voor het herstel van uw account."
-      ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "Wat u opgeeft wanneer u ${ boldPlanTitle } annuleert:"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Indien uitgeschakeld, voorkomt dit dat afbeeldingsbestanden op uw apparaat laden zonder dat u het weet."
@@ -10183,9 +10192,6 @@
       "You can now return to the application to continue": [
         "U kunt nu teruggaan naar het programma om door te gaan"
       ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "U hebt nog steeds toegang tot al uw accountgegevens. U kunt op elk moment weer abonneren om te blijven genieten van al onze functies."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
       ],
@@ -10303,6 +10309,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "U zult niet in staat zijn om vergrendelde gegevens te herstellen met behulp van uw gedownloade herstelbestanden. Hiermee schakelt u ook de op toestel-gebaseerde herstelfunctie uit."
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "U verliest ook toegang tot ${ boldPlanTitle } functies:"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
         "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd."
@@ -10328,9 +10337,6 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Uw ${ PASS_SHORT_APP_NAME } Plus-abonnement zal worden vervangen door ${ PASS_SHORT_APP_NAME } Lifetime. Het resterende saldo van uw abonnement zal aan uw account worden toegevoegd. ${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }."
-      ],
-      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
-        "Uw ${ planName } abonnement is nu een betaald abonnement dat automatisch elke 12 maanden wordt verlegd. Uw volgende factureringsdatum is ${ nextBillingDate }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Uw ${ VPN_APP_NAME } en ${ MAIL_APP_NAME } accounts zijn gekoppeld. Om ze allebei te verwijderen, log in op ${ loginLink } en verwijder daar uw account."
@@ -10368,8 +10374,11 @@
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "Uw gratis proefperiode van ${ boldPlanTitle } is geannuleerd, en uw account ${ boldUserEmail } is gedowngraded naar ${ boldProtonFree }."
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Uw gratis proefversie werd succesvol omgezet naar een ${ cycle }-maands abonnement. Uw verlengingsdatum is ${ nextBillingDate }."
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Uw gratis proefversie werd succesvol omgezet naar een maandelijks abonnement. Uw verlengingsdatum is ${ nextBillingDate }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Uw import van ${ accounts } is tijdelijk vertraagd.",
@@ -10389,9 +10398,6 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Uw volgende factuurdatum is ${ renewalTime }. Neem contact op met support als u een onmiddellijke abonnementswijziging nodig heeft."
-      ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "Uw organisatie ${ boldOrganizationName } is uitgeschakeld en al haar gebruikerslicenties zijn verwijderd."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Uw organisatie maakt gebruik van een enkele aanmelding (SSO). Druk op aanmelden om door te gaan met uw SSO-provider."
@@ -10427,14 +10433,20 @@
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Uw supportticket werd afgesloten. Bedankt om contact op te nemen met ${ BRAND_NAME }-ondersteuning."
       ],
-      "Your trial ends on June 19. Upgrade to receive future breach reports.": [
-        "Uw proefversie eindigt op 19 juni. Upgrade om toekomstige inbreuk rapporten te ontvangen."
+      "Your trial ends on June 25. Upgrade to receive future breach reports.": [
+        "Uw proefversie eindigt op 25 juni. Upgrade om toekomstige inbreuk rapporten te ontvangen."
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Uw proefperiode eindigt over ${ timeRemaining }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "U kunt deze servers onmiddellijk aan een andere Gateway toevoegen."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "U verliest toegang tot ${ boldPlanTitle } op ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "U kunt nog steeds uw eigen accountgegevens bekijken, maar alle gebruikersaccounts worden verwijderd uit uw organisatie."
       ],
       "You’re all set": [
         "U bent helemaal klaar"
@@ -11063,11 +11075,11 @@
       "Allow sharing outside the organization": [
         "Delen toestaan buiten de organisatie"
       ],
-      "Allowed domain": [
-        "Domein toegestaan"
-      ],
       "Allowed Domain": [
         "Toegestaan domein"
+      ],
+      "Allowed domain": [
+        "Domein toegestaan"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Laat iedereen in uw organisatie toe om naadloos koppelingen aan hun agenda-uitnodigingen toe te voegen."
@@ -12329,6 +12341,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Kies ${ VPN_APP_NAME }"
+      ],
+      "Groups": [
+        "Groepen"
       ],
       "Help": [
         "Hulp"
@@ -13607,12 +13622,6 @@
       "* With 30-month subscription. Other subscription options available at checkout.": [
         "* Bij een abonnement van 30 maanden. Andere abonnementsopties beschikbaar bij afrekenen."
       ],
-      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "1 TB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd met end-to-end versleuteling."
-      ],
-      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "200 GB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd door end-to-end versleuteling."
-      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Geavanceerde netwerkbeveiliging en toegangsbeheer met toegewijde beveiligde gateways"
       ],
@@ -13675,6 +13684,9 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Veilig toegang krijgen tot internet vanaf elke locatie met essentiële netwerkmonitoring."
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Veilige cloudopslag die u alles laat opslaan, synchroniseren, en u makkelijk en veilig bestanden laat delen."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Veilige e-mail met geavanceerde functies voor uw dagelijkse communicatie."
@@ -13765,6 +13777,14 @@
         "Ontgrendel alle ${ BRAND_NAME } premium producten en functies voor ${ priceLine }. U kunt op ieder moment annuleren."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Proefversie"
+      ],
+      "Your account's usage": [
+        "Verbruik van uw account"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -13783,14 +13803,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Ontgrendel premium functies door te upgraden"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Proefversie"
-      ],
-      "Your account's usage": [
-        "Verbruik van uw account"
       ]
     },
     "new_plans: tooltip": {
@@ -14439,6 +14451,23 @@
         "Kies een weergavenaam om te beginnende. Dit is de naam die mensen zien als u een e-mail verzendt, ze uitnodigt voor een gebeurtenis of een bestand deelt."
       ]
     },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "U kunt op elk moment ervoor annuleren."
+      ],
+      "Once your full subscription starts...": [
+        "Zodra uw volledige abonnement ingaat..."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "U kunt nog steeds annuleren binnen 30 dagen en een pro-rata restitutie krijgen."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Uw volledige ${ planTitle } abonnement begint op ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "U kunt kosteloos gebruikmaken van ${ planTitle } totdat de proefversie eindigt."
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10e dag van de maand"
@@ -14965,6 +14994,9 @@
       ],
       "/month /user, billed biennially": [
         "/maand /gebruiker, tweejaarlijks gefactureerd"
+      ],
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Toegang tot alle ${ BRAND_NAME }-apps en premium functies"
       ],
       "Advanced protection that goes beyond industry standards": [
         "Geavanceerde bescherming die verder gaat dan de industriestandaard"
@@ -16866,11 +16898,11 @@
       "Free": [
         "Free"
       ],
-      "get a secure ${ MAIL_APP_NAME } address": [
-        "krijg een veilig ${ MAIL_APP_NAME }-adres"
+      "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
+        "Krijg een veilig ${ MAIL_APP_NAME }-adres, of ${ internalButton }"
       ],
-      "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }.": [
-        "Krijg een veilig ${ MAIL_APP_NAME }-adres, of ${ internalButton }."
+      "get a secure ${ MAIL_APP_NAME } address.": [
+        "krijg een veilig ${ MAIL_APP_NAME }-adres"
       ],
       "Manage user access": [
         "Beheer gebruikerstoegang"
@@ -16947,11 +16979,11 @@
       "Upload files of any size": [
         "Bestanden van elke grootte uploaden"
       ],
-      "Use your email, or ${ externalButton }.": [
-        "Gebruik uw e-mailadres, of ${ externalButton }."
+      "Use your email, or ${ externalButton }": [
+        "Gebruik uw e-mailadres, of ${ externalButton }"
       ],
-      "use your own email": [
-        "gebruik uw eigen e-mailadres"
+      "use your own email.": [
+        "gebruik uw eigen e-mailadres."
       ],
       "Yearly": [
         "Jaarlijks"
@@ -17841,6 +17873,47 @@
         "Voor ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -18131,47 +18204,6 @@
         "Uw eigen korte @pm.me e-mailalias"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
-      ]
-    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Weet u het zeker?"
@@ -18209,6 +18241,9 @@
       ],
       "Expiring": [
         "Verlopen"
+      ],
+      "Free Trial": [
+        "Gratis proefversie"
       ]
     },
     "Subtitle": {
@@ -18936,11 +18971,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-all address": [
-        "Catch-all adres"
-      ],
       "Catch-All address": [
         "Catch-All adres"
+      ],
+      "Catch-all address": [
+        "Catch-all adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"
@@ -20138,7 +20173,7 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"
       ],
-      "Your ${ planName } subscription started": [
+      "Your ${ planName } subscription has started": [
         "Uw ${ planName } abonnement is ingegaan"
       ],
       "Your calendar link": [
@@ -20149,6 +20184,9 @@
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } days": [
+        "Uw gratis proefversie eindigt op ${ trialDurationFormatted }."
       ],
       "Your plan": [
         "Uw abonnement"

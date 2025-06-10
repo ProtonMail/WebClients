@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "有効にする"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate organization key": [
         "組織の鍵を有効化する"
@@ -267,10 +267,10 @@
       "Discard": [
         "破棄"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "変更を破棄"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "変更を破棄"
       ],
       "Discover ${ planName }": [
@@ -438,6 +438,9 @@
       "Hide": [
         "非表示"
       ],
+      "Hide more benefits": [
+        "その他のメリットを隠す"
+      ],
       "Hide plan features": [
         "プランの機能を隠す"
       ],
@@ -471,6 +474,9 @@
       "Keep subscription": [
         "サブスクリプションを継続"
       ],
+      "Learn more": [
+        "詳細"
+      ],
       "Let's talk": [
         "話しましょう"
       ],
@@ -503,6 +509,9 @@
       ],
       "Mark as favorite": [
         "お気に入りに追加"
+      ],
+      "More benefits": [
+        "その他のメリット"
       ],
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
@@ -699,10 +708,10 @@
       "Select country ${ country }": [
         "国 ${ country }を選択"
       ],
-      "select file": [
+      "Select file": [
         "ファイルを選択"
       ],
-      "Select file": [
+      "select file": [
         "ファイルを選択"
       ],
       "Send code": [
@@ -767,6 +776,9 @@
       ],
       "Show more": [
         "さらに表示"
+      ],
+      "Show more benefits": [
+        "その他のメリットを表示"
       ],
       "Show preview": [
         "プレビューを表示"
@@ -4476,10 +4488,10 @@
       "Data recoverable on this device": [
         "このデバイスでデータを復元できます"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -4751,9 +4763,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "エラーだと思われる場合は ${ contactLink } までご連絡ください。"
-      ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "キャンセルすると、すぐに${ boldPlanTitle }へのアクセスを失い、${ boldProtonFree }プランにダウングレードされます。もし使用容量が無料プランの制限を超えている場合、製品機能やデータへのアクセスが制限される場合があります。"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "キャンセルすると、${ planTitle } サブスクリプションは ${ expiryDate } に期限切れになっても更新されません。"
@@ -5069,9 +5078,6 @@
       ],
       "Or select a particular server:": [
         "または特定のサーバーを選択:"
-      ],
-      "Organization --> Groups": [
-        "組織 --> グループ"
       ],
       "Organization size": [
         "組織規模"
@@ -5535,9 +5541,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "確認のため、削除するユーザー名を入力してください。"
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "${ boldPlanTitle }を無料で${ boldCancelDate }までお楽しみいただくためには、キャンセルしないでください。"
-      ],
       "To continue to ${ product }": [
         "${ product }を続ける"
       ],
@@ -5646,11 +5649,11 @@
       "User activated": [
         "ユーザーがアクティブ化"
       ],
-      "Username": [
-        "ユーザーネーム"
-      ],
       "username": [
         "ユーザー名"
+      ],
+      "Username": [
+        "ユーザーネーム"
       ],
       "Users": [
         "ユーザー"
@@ -5766,9 +5769,6 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "リセットコードをアカウント回復に設定した電話番号に送信しました。"
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "${ boldPlanTitle }をキャンセルすると失うもの："
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "ID プロバイダーで ${ appName } の SAML を有効にすると、コールバック (ACS) URL と発行者 ID を使用するように求められる場合があります。以下のデータをコピーして ID プロバイダーのフィールドに貼り付けるだけです。"
       ],
@@ -5864,9 +5864,6 @@
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "チャットインスタンスは同時に 1 つだけ開くことができます。新しく開く前に古い会話を閉じてください。"
-      ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "すべてのアカウントのデータに引き続きアクセスすることができます。いつでも再登録して、すべての機能をまたお楽しみいただけます。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "この機能を有効にすると、このフォルダーに新しいメッセージが届いた際に通知されます。"
@@ -5982,9 +5979,6 @@
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "${ boldPlanTitle }のフリートライアルがキャンセルされ、あなたのアカウント${ boldUserEmail }は${ boldProtonFree }にダウングレードされました。"
-      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "あなたの情報は安全です。 サービスの提供に必要な場合にのみ、お客様に連絡します。"
       ],
@@ -5993,9 +5987,6 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "次回の請求日は ${ renewalTime }です。すぐにプランの変更が必要な場合は、サポートにお問い合わせください。"
-      ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "あなたの組織${ boldOrganizationName }は無効化され、すべてのユーザーのシートが削除されました。"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "あなたの組織ではシングル サインオン (SSO) を使用しています。 SSO プロバイダーを続行するには、「サインイン」を押します。"
@@ -6209,10 +6200,10 @@
       "Allow recovery by phone": [
         "電話番号での回復を許可"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "許可されたドメイン"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "許可されたドメイン"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -7255,20 +7246,6 @@
         "中程度の VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "すべての ${ BRAND_NAME } プランを表示"
-      ],
-      "From ${ price }": [
-        "${ price } から"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "アカウントを削除する"
@@ -7290,6 +7267,20 @@
       ],
       "Switch plan": [
         "プランを変更"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "すべての ${ BRAND_NAME } プランを表示"
+      ],
+      "From ${ price }": [
+        "${ price } から"
+      ],
+      "Upgrade": [
+        "アップグレード"
       ]
     },
     "new_plans: feature": {
@@ -7794,6 +7785,9 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "必要不可欠なネットワーク監視で、どこからでも安全にインターネットにアクセス"
       ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "ファイルを簡単かつ安全に保存、同期、共有できる安全なクラウドストレージ。"
+      ],
       "Secure email with advanced features for your everyday communications.": [
         "毎日の会話のための、高度な機能を備えた安全なメール"
       ],
@@ -8292,6 +8286,11 @@
         "現在選択されているファイル名が重複しているため、一部の画像はアップロードされませんでした。"
       ]
     },
+    "oc_nightly: BYOE": {
+      "Something went wrong while loging into your Gmail account": [
+        "Gmailアカウントへのログイン中に問題が発生しました。"
+      ]
+    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "12 ヶ月間の${ BRAND_NAME } Unlimited"
@@ -8573,6 +8572,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "すべての${ BRAND_NAME }アプリとプレミアム機能にアクセス"
+      ],
       "Secure vault sharing": [
         "安全な保管庫共有"
       ],
@@ -10268,6 +10270,47 @@
         "${ totalPrice } の場合"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
@@ -10552,47 +10595,6 @@
         "独自の短い @pm.me メール エイリアス"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
-      ]
-    },
     "Subscription renewal state": {
       "Are you sure?": [
         "本当によろしいですか？"
@@ -10630,6 +10632,9 @@
       ],
       "Expiring": [
         "期限切れ"
+      ],
+      "Free Trial": [
+        "無料トライアル"
       ]
     },
     "Subtitle": {
@@ -11128,10 +11133,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
       "Change login password": [

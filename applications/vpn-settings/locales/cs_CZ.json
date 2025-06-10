@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktivovat"
-      ],
       "activate": [
         "aktivovat"
+      ],
+      "Activate": [
+        "Aktivovat"
       ],
       "Activate organization key": [
         "Aktivovat klíč organizace"
@@ -267,10 +267,10 @@
       "Discard": [
         "Zahodit"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Zahodit změny"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Zahodit změny"
       ],
       "Discover ${ planName }": [
@@ -438,6 +438,9 @@
       "Hide": [
         "Skrýt"
       ],
+      "Hide more benefits": [
+        "Skrýt další výhody"
+      ],
       "Hide plan features": [
         "Skrýt funkce tarifu"
       ],
@@ -471,6 +474,9 @@
       "Keep subscription": [
         "Zachovat předplatné"
       ],
+      "Learn more": [
+        "Více informací"
+      ],
       "Let's talk": [
         "Promluvme si"
       ],
@@ -503,6 +509,9 @@
       ],
       "Mark as favorite": [
         "Označit jako oblíbené"
+      ],
+      "More benefits": [
+        "Další výhody"
       ],
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
@@ -699,11 +708,11 @@
       "Select country ${ country }": [
         "Vybrat zemi ${ country }"
       ],
-      "select file": [
-        "vybrat soubor"
-      ],
       "Select file": [
         "Vybrat soubor"
+      ],
+      "select file": [
+        "vybrat soubor"
       ],
       "Send code": [
         "Odeslat kód"
@@ -767,6 +776,9 @@
       ],
       "Show more": [
         "Zobrazit více"
+      ],
+      "Show more benefits": [
+        "Zobrazit další výhody"
       ],
       "Show preview": [
         "Zobrazit náhled"
@@ -4482,6 +4494,9 @@
       "At least one application must be active": [
         "Alespoň jedna aplikace musí být aktivní"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Po skončení zkušební verze ${ boldCancelDate } bude tarif snížen na ${ boldProtonFree }. Všechny uživatelské účty budou z vaší organizace odebrány."
+      ],
       "Attention required": [
         "Vyžadována pozornost"
       ],
@@ -4629,11 +4644,11 @@
       "Data recoverable on this device": [
         "Data obnovitelná v tomto zařízení"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -4911,11 +4926,11 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Pokud si myslíte, že jde o chybu, kontaktujte nás ${ contactLink }."
       ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Pokud službu zrušíte, okamžitě ztratíte přístup k ${ boldPlanTitle } a váš tarif bude snížen na ${ boldProtonFree }. Pokud vaše používání překročí limity bezplatného tarifu, může dojít k omezení přístupu k funkcím produktu a k vašim datům."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Pokud zrušíte vaše předplatné ${ planTitle }, nebude už obnoveno po vypršení jeho platnosti ${ expiryDate }."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Pokud si to rozmyslíte, můžete si tarif kdykoliv znovu předplatit. Je nám líto, že odcházíte!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
@@ -5234,9 +5249,6 @@
       ],
       "Or select a particular server:": [
         "Nebo vyberte konkrétní server:"
-      ],
-      "Organization --> Groups": [
-        "Organizace --> Skupiny"
       ],
       "Organization size": [
         "Velikost organizace"
@@ -5730,9 +5742,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Chcete-li potvrdit, zadejte jméno uživatele, kterého chcete odstranit."
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "Chcete-li si i nadále užívat ${ boldPlanTitle } zdarma až do ${ boldCancelDate }, službu nerušte."
-      ],
       "To continue to ${ product }": [
         "Pro pokračování na ${ product }"
       ],
@@ -5841,11 +5850,11 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "Username": [
-        "Uživatelské jméno"
-      ],
       "username": [
         "uživatelské jméno"
+      ],
+      "Username": [
+        "Uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -5961,9 +5970,6 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Na zadané telefonní číslo zašleme kód pro obnovení účtu."
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "Čeho se vzdáváte zrušením ${ boldPlanTitle }:"
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Při povolování SAML pro ${ appName } u poskytovatele identit můžete být vyzváni k použití zpětné adresy URL (ACS) a ID vydavatele. Níže uvedené údaje stačí zkopírovat a vložit do polí poskytovatele identit."
       ],
@@ -6078,9 +6084,6 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Můžete mít otevřen pouze jeden chat. Prosíme, zavřete předchozí konverzace před zahájením nové."
       ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "Ke všem datům svého účtu máte stále přístup. Kdykoli si můžete tarif znovu předplatit a nadále využívat všechny naše funkce."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
       ],
@@ -6159,6 +6162,9 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Po dobu 10 dnů nebudete moci tyto servery přeřadit do jiné země."
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "Ztratíte také přístup k funkcím ${ boldPlanTitle }:"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }.",
         "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }.",
@@ -6207,9 +6213,6 @@
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "Vaše bezplatná zkušební verze ${ boldPlanTitle } byla zrušena a váš účet ${ boldUserEmail } byl snížen na ${ boldProtonFree }."
-      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vaše informace jsou u nás v bezpečí. Budeme vás kontaktovat pouze v případě, že to bude nutné pro poskytování našich služeb."
       ],
@@ -6218,9 +6221,6 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Datum příští fakturace je ${ renewalTime }. Pokud požadujete okamžitou změnu tarifu, kontaktujte prosím podporu."
-      ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "Vaše organizace ${ boldOrganizationName } je deaktivována a všechny její uživatelské licence byly odebrány."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Vaše organizace používá jednotné přihlášení (SSO). Stiskněte tlačítko Přihlásit se a pokračujte s poskytovatelem SSO."
@@ -6251,6 +6251,12 @@
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Tyto servery budete moci okamžitě přidat do jiné brány."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Přístup k ${ boldPlanTitle } ztratíte ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Stále budete moci prohlížet data vlastního účtu, ale všechny uživatelské účty budou z vaší organizace odebrány."
       ],
       "Zoom meeting": [
         "schůzku na Zoomu"
@@ -6449,10 +6455,10 @@
       "Allow recovery by phone": [
         "Povolit obnovení telefonem"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -7165,6 +7171,9 @@
       "Forgot username?": [
         "Zapomněli jste uživatelské jméno?"
       ],
+      "Groups": [
+        "Skupiny"
+      ],
       "Help": [
         "Nápověda"
       ],
@@ -7501,20 +7510,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Smazat účet"
@@ -7536,6 +7531,20 @@
       ],
       "Switch plan": [
         "Změnit tarif"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Navýšit"
       ]
     },
     "new_plans: feature": {
@@ -8091,6 +8100,9 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Bezpečný přístup k internetu odkudkoli, včetně důležitého monitorování sítě"
       ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Bezpečné cloudové úložiště, které vám umožňuje snadno a bezpečně ukládat, synchronizovat a sdílet soubory."
+      ],
       "Secure email with advanced features for your everyday communications.": [
         "Zabezpečený e-mail s pokročilými funkcemi pro každodenní komunikaci."
       ],
@@ -8589,6 +8601,11 @@
         "Některé obrázky nebyly nahrány kvůli duplicitním názvům souborů v aktuálním výběru."
       ]
     },
+    "oc_nightly: BYOE": {
+      "Something went wrong while loging into your Gmail account": [
+        "Něco se pokazilo při přihlašování k účtu Gmail"
+      ]
+    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Unlimited na 12 měsíců"
@@ -8683,6 +8700,23 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Vítejte v ${ appName }"
+      ]
+    },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "Zrušit můžete kdykoli před uplynutím této doby."
+      ],
+      "Once your full subscription starts...": [
+        "Po zahájení plného předplatného..."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Do 30 dnů můžete předplatné zrušit a získat poměrnou část peněz zpět."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Vaše plné předplatné ${ planTitle } začíná ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "${ planTitle } budete moci bezplatně používat až do vypršení zkušební verze."
       ]
     },
     "Option": {
@@ -8900,6 +8934,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Přístup ke všem aplikacím ${ BRAND_NAME } a prémiovým funkcím"
+      ],
       "Secure vault sharing": [
         "Zabezpečené sdílení trezorů"
       ],
@@ -10745,6 +10782,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
@@ -11047,47 +11125,6 @@
         "Váš vlastní krátký e-mailový alias @pm.me"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
-      ]
-    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Jste si jisti?"
@@ -11125,6 +11162,9 @@
       ],
       "Expiring": [
         "Vypršení platnosti"
+      ],
+      "Free Trial": [
+        "Bezplatná zkušební verze"
       ]
     },
     "Subtitle": {
@@ -11638,10 +11678,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -12312,6 +12352,9 @@
       ],
       "Your current plan": [
         "Váš aktuální tarif"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } days": [
+        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dny."
       ],
       "Your plan": [
         "Váš tarif"
