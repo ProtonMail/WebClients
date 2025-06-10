@@ -1,5 +1,6 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { onContextReady, withContext } from 'proton-pass-extension/app/worker/context/inject';
+import { createBasicAuthListener } from 'proton-pass-extension/app/worker/listeners/auth-required';
 import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup';
@@ -206,6 +207,8 @@ export const createAutoFillService = () => {
             } catch {}
         })
     );
+
+    if (BUILD_TARGET !== 'safari' && browser.webRequest.onAuthRequired) createBasicAuthListener();
 
     return {
         clear,

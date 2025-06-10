@@ -51,7 +51,7 @@
         "webRequest",
         "webRequestBlocking"
     ],
-    "optional_permissions": ["privacy"],
+    "optional_permissions": ["privacy", "webRequestAuthProvider"],
     "host_permissions": ["https://*/*", "http://*/*"],
     "action": {
         "default_popup": "popup.html",
