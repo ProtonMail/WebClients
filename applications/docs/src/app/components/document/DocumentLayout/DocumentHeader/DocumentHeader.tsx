@@ -29,9 +29,9 @@ function getWindowLocationExcludingDomain() {
   return stripLocalBasenameFromPathname(window.location.pathname) + window.location.search + window.location.hash
 }
 
-export type DocsHeaderProps = { action?: DocumentAction['mode']; documentType: DocumentType }
+export type DocsHeaderProps = { actionMode?: DocumentAction['mode']; documentType: DocumentType }
 
-export function DocumentHeader({ action, documentType }: DocsHeaderProps) {
+export function DocumentHeader({ actionMode, documentType }: DocsHeaderProps) {
   const application = useApplication()
 
   const [isReady, setIsReady] = useState(false)
@@ -73,7 +73,7 @@ export function DocumentHeader({ action, documentType }: DocsHeaderProps) {
     return (
       <DocsHeaderForDocument
         documentType={documentType}
-        action={action}
+        actionMode={actionMode}
         editorController={editorController}
         documentState={documentState}
         authenticatedController={authenticatedController}
@@ -119,7 +119,7 @@ function DocsHeaderNoDocument() {
 }
 
 type DocsHeaderForDocumentProps = {
-  action?: DocumentAction['mode']
+  actionMode?: DocumentAction['mode']
   editorController: EditorControllerInterface
   documentState: DocumentState | PublicDocumentState
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -131,7 +131,7 @@ type DocsHeaderForDocumentProps = {
  * Header shown while a document is present.
  */
 function DocsHeaderForDocument({
-  action,
+  actionMode,
   editorController,
   documentState,
   authenticatedController,
@@ -157,7 +157,7 @@ function DocsHeaderForDocument({
 
         <DocumentTitleDropdown
           documentType={documentType}
-          action={action}
+          actionMode={actionMode}
           authenticatedController={authenticatedController}
           editorController={editorController}
           documentState={documentState}
@@ -177,6 +177,7 @@ function DocsHeaderForDocument({
           <HeaderPublicOptions
             editorController={editorController}
             documentState={documentState as PublicDocumentState}
+            documentType={documentType}
           />
         ) : (
           <>

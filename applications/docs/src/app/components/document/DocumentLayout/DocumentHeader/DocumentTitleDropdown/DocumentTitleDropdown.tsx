@@ -46,7 +46,7 @@ export type DocumentTitleDropdownProps = {
   renameController: RenameControllerInterface | undefined
   editorController: EditorControllerInterface
   documentState: DocumentState | PublicDocumentState
-  action?: DocumentAction['mode']
+  actionMode?: DocumentAction['mode']
   documentType: DocumentType
 }
 
@@ -55,7 +55,7 @@ export function DocumentTitleDropdown({
   renameController,
   editorController,
   documentState,
-  action,
+  actionMode,
   documentType,
 }: DocumentTitleDropdownProps) {
   const application = useApplication()
@@ -197,7 +197,7 @@ export function DocumentTitleDropdown({
   )
 
   useEffect(() => {
-    if (action === 'history') {
+    if (actionMode === 'history') {
       if (!authenticatedController) {
         throw new Error('Attempting to view version history in a public context')
       }
@@ -209,7 +209,7 @@ export function DocumentTitleDropdown({
         documentType,
       })
     }
-  }, [authenticatedController, action, showHistoryModal, editorController, documentType])
+  }, [authenticatedController, actionMode, showHistoryModal, editorController, documentType])
 
   const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
   const focusInputOnMount = useCallback((input: HTMLInputElement | null) => {
