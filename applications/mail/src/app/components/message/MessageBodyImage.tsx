@@ -4,15 +4,14 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { Icon, useApi } from '@proton/components'
 import { Tooltip } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import type { OnMessageImageLoadError } from 'proton-mail/components/message/interface';
 
 import { getAnchor } from '../../helpers/message/messageImages';
-import { failedRemoteDirectLoading, loadRemoteProxy } from '../../store/messages/images/messagesImagesActions';
 import type { MessageImage } from '../../store/messages/messagesTypes';
 
 const sizeProps: ['width', 'height'] = ['width', 'height'];
@@ -71,8 +70,7 @@ interface Props {
     anchor: HTMLElement;
     isPrint?: boolean;
     iframeRef: RefObject<HTMLIFrameElement>;
-    localID: string;
-    useProxy: boolean;
+    onMessageImageLoadError: OnMessageImageLoadError;
 }
 
 const MessageBodyImage = ({
@@ -82,14 +80,10 @@ const MessageBodyImage = ({
     anchor,
     isPrint,
     iframeRef,
-    localID,
-    useProxy,
+    onMessageImageLoadError,
 }: Props) => {
-    const dispatch = useMailDispatch();
-    const api = useApi();
     const imageRef = useRef<HTMLImageElement>(null);
     // Ref used to trigger an action after a onError while trying to load the image
-    const hasLoadedAfterError = useRef({ hasLoadedProxy: false, hasLoadedDirect: false });
     const { type, error, url, status, original } = image;
     const showPlaceholder =
         error || status !== 'loaded' || (type === 'remote' ? !showRemoteImages : !showEmbeddedImages);
@@ -118,28 +112,10 @@ const MessageBodyImage = ({
         }
     }, [showImage]);
 
-    const handleError = async () => {
-        // If the image fails to load from the URL, we have no way to know why it has failed
-        // But depending on the error, we want to handle it differently
-        // In that case, we try to load the image "the old way", we will have more control on the error
-        // Only make this call when user is using proxy.
-        // - Without proxy we are already trying to load direct
-        // - With EO, we are also already trying to load direct
-        // However, if we are trying to load the image without the proxy, we don't want to trigger the load remote onError
-        if (type === 'remote' && useProxy && !hasLoadedAfterError.current.hasLoadedProxy) {
-            hasLoadedAfterError.current.hasLoadedProxy = true;
-            await dispatch(loadRemoteProxy({ ID: localID, imageToLoad: image, api }));
-        } else if (type === 'remote' && !hasLoadedAfterError.current.hasLoadedDirect) {
-            // Instead, we want to add an error to the image in the state to display a placeholder
-            hasLoadedAfterError.current.hasLoadedDirect = true;
-            await dispatch(failedRemoteDirectLoading({ ID: localID, image }));
-        }
-    };
-
     if (showImage) {
-        // attributes are the provided by the code just above, coming from original message source
+        // attributes are provided by the code just above, coming from an original message source
         // eslint-disable-next-line jsx-a11y/alt-text
-        return <img ref={imageRef} src={url} loading="lazy" onError={handleError} />;
+        return <img ref={imageRef} src={url} loading="lazy" onError={() => onMessageImageLoadError(image)} />;
     }
 
     const showLoader = status === 'loading';

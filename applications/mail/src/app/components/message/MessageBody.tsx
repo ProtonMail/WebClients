@@ -9,6 +9,7 @@ import clsx from '@proton/utils/clsx';
 
 import MessageBodyPlaceholder from 'proton-mail/components/message/MessageBodyPlaceholder';
 import MessageBodyPrint from 'proton-mail/components/message/MessageBodyPrint';
+import useMessageImagesLoadError from 'proton-mail/components/message/hooks/useMessageImagesLoadError';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useOnMailTo } from '../../containers/ComposeProvider';
@@ -62,6 +63,10 @@ const MessageBody = ({
     const mailSettings = useMailModel('MailSettings');
     const highlightBody = shouldHighlight();
     const plain = isPlainText(message.data);
+    const handleMessageImageLoadError = useMessageImagesLoadError({
+        localID: message.localID,
+        useProxy: !!mailSettings.ImageProxy,
+    });
     const { support: hasDarkStyles, loading: hasDarkStylesLoading } = useMessageDarkStyles(
         message,
         isIframeContentSet,
@@ -159,8 +164,8 @@ const MessageBody = ({
                         isPrint={isPrint}
                         message={message}
                         onReady={onIframeReady}
-                        mailSettings={mailSettings}
                         onFocus={onFocusIframe}
+                        onMessageImageLoadError={handleMessageImageLoadError}
                     />
                     <MessageBodyPrint isPrint={isPrint} iframeRef={iframeRef} message={message} labelID={labelID} />
                     {linkModal}
