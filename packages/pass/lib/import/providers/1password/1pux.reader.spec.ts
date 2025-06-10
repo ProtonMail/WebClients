@@ -47,7 +47,7 @@ describe('Import 1password 1pux', () => {
         );
         expect(noteItem.content).toEqual({});
         expect(noteItem.trashed).toEqual(false);
-        expect(noteItem.extraFields).toEqual([]);
+        expect(noteItem.extraFields.length).toEqual(14);
 
         /* Login item with multiple TOTP and text extra fields */
         const loginItemMultiTOTPName = 'Login item with two TOTP and one text extra fields';

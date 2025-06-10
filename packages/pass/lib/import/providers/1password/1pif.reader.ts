@@ -49,6 +49,7 @@ export const processNoteItem = (item: OnePassLegacyItem): ItemImportIntent<'note
         note: extract1PasswordLegacyNote(item),
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
+        extraFields: extract1PasswordLegacyExtraFields(item),
     });
 
 export const processPasswordItem = (item: OnePassLegacyItem): ItemImportIntent<'login'> =>
@@ -76,6 +77,7 @@ export const processCreditCardItem = (item: OnePassLegacyItem): ItemImportIntent
         verificationNumber: item.secureContents.cvv,
         expirationDate,
         pin: item.secureContents.pin,
+        extraFields: extract1PasswordLegacyExtraFields(item),
     });
 };
 
