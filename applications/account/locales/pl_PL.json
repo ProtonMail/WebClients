@@ -469,10 +469,10 @@
       "Discard": [
         "Odrzuć"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Odrzuć zmiany"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Odrzuć zmiany"
       ],
       "Discover ${ planName }": [
@@ -736,6 +736,9 @@
       "Hide": [
         "Ukryj"
       ],
+      "Hide more benefits": [
+        "Ukryj więcej bonusów"
+      ],
       "Hide plan features": [
         "Ukryj funkcje planu"
       ],
@@ -817,6 +820,9 @@
       "Later": [
         "Później"
       ],
+      "Learn more": [
+        "Dowiedz się więcej"
+      ],
       "Leave": [
         "Opuść"
       ],
@@ -882,6 +888,9 @@
       ],
       "More": [
         "Więcej"
+      ],
+      "More benefits": [
+        "Więcej bonusów"
       ],
       "More info: ${ safeTitle }": [
         "Więcej informacji: ${ safeTitle }"
@@ -985,10 +994,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
       "Reject": [
@@ -1165,11 +1174,11 @@
       "Select country ${ country }": [
         "Wybierz kraj ${ country }"
       ],
-      "select file": [
-        "wybierz plik"
-      ],
       "Select file": [
         "Wybierz plik"
+      ],
+      "select file": [
+        "wybierz plik"
       ],
       "Select files": [
         "Wybierz pliki"
@@ -1260,6 +1269,9 @@
       ],
       "Show more": [
         "Pokaż więcej"
+      ],
+      "Show more benefits": [
+        "Pokaż więcej bonusów"
       ],
       "Show preview": [
         "Pokaż podgląd"
@@ -2052,6 +2064,9 @@
       ],
       "Two-year": [
         "Co dwa lata"
+      ],
+      "Yearly": [
+        "Rocznie"
       ]
     },
     "Blog": {
@@ -4709,6 +4724,12 @@
     "email_forwarding_2023: Header": {
       "Actions": [
         "Akcje"
+      ],
+      "Forward from": [
+        "Przekieruj z"
+      ],
+      "Forward to": [
+        "Przekieruj do"
       ],
       "From": [
         "Od"
@@ -7670,11 +7691,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktywuj co najmniej jedną metodę odzyskiwania danych, aby uniknąć utraty dostępu do konta ${ BRAND_NAME }."
       ],
-      "active": [
-        "aktywna"
-      ],
       "Active": [
         "Aktywne"
+      ],
+      "active": [
+        "aktywna"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Dodaj adres @pm.me do swojego konta. To prostsza i krótsza domena dla skrótu \"${ MAIL_APP_NAME } me\" lub \"Private Message me.\""
@@ -8138,11 +8159,11 @@
       "Data recoverable on this device": [
         "Dane możliwe do odzyskania na tym urządzeniu"
       ],
-      "Dedicated servers": [
-        "Dedykowane serwery"
-      ],
       "dedicated servers": [
         "dedykowane serwery"
+      ],
+      "Dedicated servers": [
+        "Dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP mogą zostać dodane do prywatnych bram, aby umożliwić precyzyjną kontrolę nad nimi."
@@ -9082,9 +9103,6 @@
       ],
       "Or select a particular server:": [
         "Lub wybierz serwer:"
-      ],
-      "Organization --> Groups": [
-        "Organizacja --> Grupy"
       ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Użytkownicy organizacji będą musieli odblokować ${ PASS_APP_NAME } za pomocą hasła lub kodu PIN itp."
@@ -10040,11 +10058,11 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
-      "Username": [
-        "Nazwa użytkownika"
-      ],
       "username": [
         "nazwa użytkownika"
+      ],
+      "Username": [
+        "Nazwa użytkownika"
       ],
       "Users": [
         "Użytkownicy"
@@ -10484,6 +10502,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "W celu zweryfikowania płatności wkrótce zostaniesz przekierowany na stronę firmy PayPal."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Nie zostaniesz obciążony opłatą, jeśli anulujesz przed ${ trialEndsOnFormatted }."
+      ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Nie będziesz mógł ponownie przypisać tych serwerów do innego kraju przez 10 dni."
       ],
@@ -10616,8 +10637,8 @@
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Zgłoszenie zostało zamknięte. Dziękujemy za kontakt ze wsparciem technicznym ${ BRAND_NAME }."
       ],
-      "Your trial ends on June 19. Upgrade to receive future breach reports.": [
-        "Twoja wersja próbna kończy się 19 czerwca. Ulepsz konto, aby otrzymywać przyszłe raporty o naruszeniach."
+      "Your trial will end in ${ timeRemaining }.": [
+        "Wersja próbna zakończy się za ${ timeRemaining }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Możliwość dodania serwerów do innej bramy będzie możliwa natychmiast."
@@ -11263,10 +11284,10 @@
       "Allow sharing outside the organization": [
         "Zezwalaj na udostępnianie poza organizacją"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dozwolona domena"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dozwolona domena"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -12433,6 +12454,9 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "Utworzono \"${ Label.Name }\""
+      ],
+      "${ labelName } updated": [
+        "Zaktualizowano ${ labelName }"
       ],
       "Preference saved": [
         "Ustawienia zostały zapisane"
@@ -13876,12 +13900,6 @@
       "* With 30-month subscription. Other subscription options available at checkout.": [
         "* Cena przy subskrypcji 30-miesięcznej. Inne plany dostępne są przy płatności."
       ],
-      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "1 TB przestrzeni dyskowej w chmurze, która umożliwia łatwe przechowywanie, synchronizowanie i udostępnianie plików. Zabezpieczone za pomocą szyfrowania end-to-end."
-      ],
-      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "200 GB przestrzeni dyskowej w chmurze, która umożliwia łatwe przechowywanie, synchronizowanie i udostępnianie plików. Zabezpieczone za pomocą szyfrowania end-to-end."
-      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Zaawansowane bezpieczeństwo sieci i zarządzanie dostępem za pomocą dedykowanych bram"
       ],
@@ -13944,6 +13962,9 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Bezpieczny dostęp do Internetu, gdziekolwiek jesteś dzięki monitoringowi sieci"
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Bezpieczna przestrzeń dyskowa w chmurze, w której możesz przechowywać, synchronizować i udostępniać pliki w łatwy sposób."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Bezpieczna poczta e-mail z zaawansowanymi funkcjami do codziennej komunikacji."
@@ -14034,6 +14055,14 @@
         "Odblokuj wszystkie usługi i funkcje premium ${ BRAND_NAME } za ${ priceLine }. Anuluj w dowolnym momencie."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -14052,14 +14081,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odblokuj funkcje premium poprzez ulepszenie"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -14608,6 +14629,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "Wybierz, do czego ${ BRAND_NAME } może uzyskać dostęp: odczytywać wiadomości i ustawienia, odczytywać i pobierać kontakty, odczytywać i pobierać wszystkie harmonogramy, do których masz dostęp w Kalendarzu Google."
+      ]
+    },
+    "oc_nightly: BYOE": {
+      "Something went wrong while loging into your Gmail account": [
+        "Coś poszło nie tak podczas logowania do konta Gmail"
       ]
     },
     "Offer": {
@@ -15249,6 +15275,9 @@
       ],
       "/month /user, billed biennially": [
         "/ użytkownika miesięcznie, płatne co 2 lata"
+      ],
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Dostęp do wszystkich aplikacji ${ BRAND_NAME } i funkcji premium"
       ],
       "Advanced protection that goes beyond industry standards": [
         "Zaawansowana ochrona, która wykracza poza standardy"
@@ -16004,6 +16033,26 @@
     "plan customizer, users": {
       "contact": [
         "skontaktuj się"
+      ]
+    },
+    "Plan description": {
+      "All ${ BRAND_NAME } premium products included in Duo.": [
+        "Wszystkie usługi ${ BRAND_NAME } w wersji premium zawarte w planie Duo."
+      ],
+      "Best if you need ${ maxSpace } of storage and for couples.": [
+        "Najlepszy, jeśli potrzebujesz ${ maxSpace } przestrzeni dyskowej i dla par."
+      ],
+      "Great for everyday use and photo backups.": [
+        "Świetny do codziennego użytku i tworzenia kopii zapasowych zdjęć."
+      ],
+      "Perfect for getting started with secure cloud storage.": [
+        "Idealna chmura na początek."
+      ],
+      "Secure cloud storage and collaboration for teams.": [
+        "Bezpieczne chmura i współpraca dla zespołów."
+      ],
+      "The ideal plan for privacy-conscious power users.": [
+        "Idealny plan dla zaawansowanych użytkowników dbających o prywatność."
       ]
     },
     "Plans": {
@@ -17144,6 +17193,12 @@
       "/user": [
         "/ użytkownika"
       ],
+      "30 custom email addresses": [
+        "30 niestandardowych adresów e-mail"
+      ],
+      "Advanced account protection": [
+        "Zaawansowana ochrona konta"
+      ],
       "Billing Cycle": [
         "Cykl rozliczeniowy"
       ],
@@ -17152,6 +17207,9 @@
       ],
       "Confirm payment, access your Drive": [
         "Potwierdź płatność, uzyskaj dostęp do dysku"
+      ],
+      "Connect all your devices": [
+        "Połącz wszystkie swoje urządzenia"
       ],
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Kontynuuj z planem ${ PLAN_NAMES[plan] }"
@@ -17165,11 +17223,26 @@
       "Free": [
         "Za darmo"
       ],
+      "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
+        "Uzyskaj bezpieczny adres ${ MAIL_APP_NAME } lub ${ internalButton }"
+      ],
+      "get a secure ${ MAIL_APP_NAME } address.": [
+        "uzyskaj bezpieczny adres ${ MAIL_APP_NAME }."
+      ],
+      "Manage user access": [
+        "Zarządzanie dostępem użytkownika"
+      ],
+      "Monthly": [
+        "Miesięcznie"
+      ],
       "Most popular": [
         "Najpopularniejszy"
       ],
       "Need more space?": [
         "Potrzebujesz więcej miejsca?"
+      ],
+      "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
+        "Potrzebujesz więcej przestrzeni dyskowej? Możesz ulepszyć plan od 200 GB do 3 TB. 5 GB wystarcza na 2500 zdjęć z nowoczesnego telefonu (~2 MB każde zdjęcie)."
       ],
       "Online documents": [
         "Dokumenty online"
@@ -17180,6 +17253,9 @@
       "Promo applied – ${ checkout.discountPercent }% off": [
         "Promocja została zastosowana – ${ checkout.discountPercent }% zniżki"
       ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
+      ],
       "Save ${ percentage }%": [
         "Zaoszczędź ${ percentage }%"
       ],
@@ -17188,6 +17264,9 @@
       ],
       "Secure file sharing": [
         "Bezpieczne udostępnianie pliku"
+      ],
+      "Selected": [
+        "Wybrano"
       ],
       "Set display name": [
         "Ustaw nazwę wyświetlaną"
@@ -17198,8 +17277,20 @@
       "Set your password": [
         "Ustaw hasło"
       ],
+      "Share and collaborate of files": [
+        "Udostępnianie i współpraca nad plikami"
+      ],
+      "Sign up, protect your files": [
+        "Zarejestruj się. Chroń swoje pliki"
+      ],
+      "Sync files across devices and users": [
+        "Synchronizacja plików między urządzeniami i użytkownikami"
+      ],
       "The organization name will be visible to your users while they are signed in.": [
         "Nazwa organizacji będzie widoczna dla użytkowników po zalogowaniu."
+      ],
+      "Total": [
+        "Razem"
       ],
       "Ultra fast and private VPN": [
         "Bardzo szybka i prywatna usługa VPN"
@@ -17209,6 +17300,18 @@
       ],
       "Up to 6 users": [
         "Do 6 użytkowników"
+      ],
+      "Upload files of any size": [
+        "Prześlij pliki w dowolnym rozmiarze"
+      ],
+      "Use your email, or ${ externalButton }": [
+        "Użyj własnego adresu lub ${ externalButton }"
+      ],
+      "use your own email.": [
+        "użyj własnego adresu."
+      ],
+      "Yearly": [
+        "Rocznie"
       ],
       "Your plan": [
         "Twój plan"
@@ -18155,6 +18258,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } z funkcjami premium"
@@ -18457,47 +18601,6 @@
         "Krótki alias @pm.me"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "and 15 more premium features": [
-        "i 15 więcej funkcji premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatyczne przekierowanie ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerty wycieków ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikacja desktopowa"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
-      ],
-      "No ads or tracking": [
-        "Brak reklam i śledzenia"
-      ],
-      "Short @pm.me email address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Wesprzyj naszą misję"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
-      "We don't sell your data": [
-        "Nie sprzedajemy Twoich danych"
-      ],
-      "Your privacy is our mission": [
-        "Prywatność to nasza misja"
-      ]
-    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Czy na pewno?"
@@ -18663,6 +18766,9 @@
       "Locale updated": [
         "Ustawienia językowe zostały zaktualizowane"
       ],
+      "New policy created. It will take effect only after you publish the changes.": [
+        "Zasada została utworzona. Wejdzie ona w życie dopiero po opublikowaniu zmian."
+      ],
       "Organization activated": [
         "Organizacja została aktywowana"
       ],
@@ -18692,6 +18798,12 @@
       ],
       "Phone number updated": [
         "Numer telefonu został zaktualizowany"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "Zasada została zmieniona. Wejdzie ona w życie dopiero po opublikowaniu zmian."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "Zasada została usunięta. Wejdzie ona w życie dopiero po opublikowaniu zmian."
       ],
       "Port copied to clipboard": [
         "Port został skopiowany do schowka"
@@ -18961,6 +19073,32 @@
     "TableRow": {
       "No SMTP tokens found": [
         "Nie znaleziono tokenów SMTP"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dzień",
+        "${ ceilDays } dni",
+        "${ ceilDays } dni",
+        "${ ceilDays } dnia"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } godzina",
+        "${ ceilHours } godziny",
+        "${ ceilHours } godzin",
+        "${ ceilHours } godziny"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuta",
+        "${ ceilMinutes } minuty",
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minuty"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunda",
+        "${ seconds } sekundy",
+        "${ seconds } sekund",
+        "${ seconds } sekundy"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -19252,10 +19390,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -20464,9 +20602,6 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Darmowa wersja próbna planu ${ planName } zakończy się ${ textDate }"
       ],
-      "Your ${ planName } subscription started": [
-        "Subskrypcja ${ planName } została rozpoczęta"
-      ],
       "Your calendar link": [
         "Twój link kalendarza"
       ],
@@ -20667,6 +20802,9 @@
       ],
       "Enable/disable desktop and mobile notifications": [
         "Włącz lub wyłącz powiadomienia na pulpicie i urządzeniach mobilnych"
+      ],
+      "Enable/disable desktop and mobile notifications for “${ labelName }”": [
+        "Włącz lub wyłącz powiadomienia “${ labelName }”"
       ],
       "Enabling detailed events records the IP address for each event.": [
         "Włączenie szczegółowych logów zapisze adres IP każdego zdarzenia."

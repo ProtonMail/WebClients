@@ -407,6 +407,9 @@
       "Edit users": [
         "Ẓreg iseqdacen"
       ],
+      "Emoji": [
+        "Imujit"
+      ],
       "enable desktop notifications": [
         "rmed talɣutin n tnarit"
       ],
@@ -566,6 +569,9 @@
       "Later": [
         "Ticki"
       ],
+      "Learn more": [
+        "Issin ugar"
+      ],
       "Leave": [
         "Eǧǧ"
       ],
@@ -698,11 +704,11 @@
       "Refresh status": [
         "Smiren addaden"
       ],
-      "refresh the page": [
-        "smiren asebter"
-      ],
       "Refresh the page": [
         "Smiren asebter"
+      ],
+      "refresh the page": [
+        "smiren asebter"
       ],
       "Reload": [
         "Smiren"
@@ -821,11 +827,11 @@
       "Select country": [
         "Fren tamurt"
       ],
-      "select file": [
-        "fren afaylu"
-      ],
       "Select file": [
         "Fren afaylu"
+      ],
+      "select file": [
+        "fren afaylu"
       ],
       "Select files": [
         "Fren ifuyla"
@@ -1983,6 +1989,9 @@
       ],
       "Work": [
         "Amahil"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2965,6 +2974,29 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Ɛawen-aɣ ad nennarni"
+      ]
+    },
+    "Download": {
+      "Android": [
+        "Android"
+      ],
+      "Apple TV": [
+        "Apple TV"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Fire TV": [
+        "Fire TV"
+      ],
+      "Firefox": [
+        "Firefox"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
       ]
     },
     "drive_signup_2024: Info": {
@@ -4088,6 +4120,9 @@
       ],
       "MB": [
         "KAṬ"
+      ],
+      "TB": [
+        "TAṬ"
       ]
     },
     "file size format, long": {
@@ -4885,11 +4920,11 @@
       "Account successfully updated": [
         "Aleqqem n umiḍan yemmed"
       ],
-      "active": [
-        "urmid"
-      ],
       "Active": [
         "Urmid"
+      ],
+      "active": [
+        "urmid"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Rnu tansa n yimayl @pm.me ɣer umiḍan-ik·im. Taɣult-a fessusen, meẓẓiyen anamek-is d \"${ MAIL_APP_NAME } me\" neɣ \"Private Message me.\""
@@ -5129,11 +5164,11 @@
       "Data locked": [
         "Isefka sekkṛen"
       ],
-      "Dedicated servers": [
-        "Iqeddacen yettwagen"
-      ],
       "dedicated servers": [
         "iqeddacen yettwagen"
+      ],
+      "Dedicated servers": [
+        "Iqeddacen yettwagen"
       ],
       "default email address": [
         "tansa yimayl n lexṣas"
@@ -5506,6 +5541,9 @@
       ],
       "of": [
         "si"
+      ],
+      "On": [
+        "Yermed"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Beddel iɣewwaren-agi ma yella tesseqdaceḍ PGP akked iɣerwaḍen ur isseqdac ara ${ BRAND_NAME }."
@@ -6832,6 +6870,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Sekcem awal uffir i tsarut s udlis umḍin: ${ fingerprintCode }"
       ],
+      "Event": [
+        "Amaynut"
+      ],
       "Event duration": [
         "Tanzagt n tedyant"
       ],
@@ -7257,6 +7298,12 @@
       ],
       "Username": [
         "Isem n useqdac"
+      ],
+      "Users": [
+        "Iseqdacen"
+      ],
+      "Value": [
+        "Azal"
       ],
       "Verification code": [
         "Tangalt n usenqed"
@@ -8213,6 +8260,14 @@
         "Tferneḍ aɣawas-a: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Aneɛruḍ n ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Aseqdac-ik n umiḍan"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Kkes amiḍan?"
@@ -8222,14 +8277,6 @@
       ],
       "Switch plans?": [
         "Beddel iɣawasen?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Aneɛruḍ n ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Aseqdac-ik n umiḍan"
       ]
     },
     "new_plans: tooltip": {
@@ -8414,6 +8461,9 @@
       ],
       "Free": [
         "Baṭel"
+      ],
+      "Plus": [
+        "Plus"
       ],
       "Storage": [
         "Asekles"
@@ -9381,6 +9431,14 @@
         "Tuccḍa deg usenqed n uzmul"
       ]
     },
+    "Signup": {
+      "/user": [
+        "/useqdac"
+      ],
+      "Total": [
+        "Asemday"
+      ]
+    },
     "Signup label": {
       "Confirm password": [
         "Sentem awal uffir"
@@ -9582,8 +9640,16 @@
       "Deny": [
         "Agi"
       ],
+      "Grant": [
+        "Sireg"
+      ],
       "Sign in": [
         "Qqen"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Urmid"
       ]
     },
     "Step in filter modal": {
@@ -9699,6 +9765,14 @@
         "Imultaɣen"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Mazal ${ dayDiff } wass",
@@ -9745,14 +9819,6 @@
       ],
       "Version history": [
         "Azray n lqem"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GAṬ n uḥraz"
-      ],
-      "Upgrade": [
-        "Leqqem"
       ]
     },
     "Subscription renewal state": {
@@ -10057,6 +10123,9 @@
       "Email addresses": [
         "Tansiwin imayl"
       ],
+      "Event": [
+        "Amaynut"
+      ],
       "Import": [
         "Kter"
       ],
@@ -10269,10 +10338,10 @@
       "Card verification": [
         "Takerḍa n usenqed"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
       "Change login password": [
@@ -10904,6 +10973,9 @@
       ],
       "Start import process": [
         "Bdu akala n uktar"
+      ],
+      "State": [
+        "Addad"
       ],
       "Status": [
         "Aẓayer"
