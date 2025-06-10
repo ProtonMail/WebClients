@@ -12,18 +12,15 @@ import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPane
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
-import { getOccurrenceString } from '@proton/pass/lib/i18n/helpers';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
-import { epochToDateTime } from '@proton/pass/utils/time/format';
 
 export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
     const navigate = useNavigate();
     const { revision, share, handleHistoryClick } = itemViewProps;
-    const { createTime, modifyTime, revision: revisionNumber, optimistic } = revision;
+    const { createTime, modifyTime, revision: revisionNumber, optimistic, itemId } = revision;
     const { shareId } = share;
     const aliasEmail = revision.aliasEmail!;
     const trashed = isTrashed(revision);
-    const modifiedCount = revisionNumber - 1;
 
     const createLoginFromAlias = (evt: MouseEvent) => {
         evt.stopPropagation();
@@ -66,13 +63,7 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
 
             <FileAttachmentsContentView revision={revision} />
             <ItemHistoryStats createTime={createTime} modifyTime={modifyTime} handleHistoryClick={handleHistoryClick} />
-
-            <MoreInfoDropdown
-                info={[
-                    { label: c('Label').t`Modified`, values: [getOccurrenceString(modifiedCount)] },
-                    { label: c('Label').t`Created`, values: [epochToDateTime(createTime)] },
-                ]}
-            />
+            <MoreInfoDropdown shareId={shareId} itemId={itemId} revision={revisionNumber} vaultId={share.vaultId} />
         </ItemViewPanel>
     );
 };
