@@ -27,7 +27,8 @@ export enum SortSubscriptionsValue {
 export interface SubscriptionPagination {
     PageSize?: number;
     AnchorID?: string;
-    AnchorLastReceivedTime?: string;
+    AnchorLastReceivedTime?: string | null;
+    AnchorUnreadMessageCount?: number | null;
     Active?: ActiveValues;
 }
 
