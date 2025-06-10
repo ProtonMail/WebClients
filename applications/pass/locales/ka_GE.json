@@ -1787,6 +1787,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
+      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
@@ -3072,6 +3076,9 @@
       "Open-source password manager for effortless protection.": [
         "ღია კოდის მქონე პაროლების მმართველი თავის შეუწუხებლად დაცვისთვის."
       ],
+      "Operating System": [
+        "ოპერაციული სისტემა"
+      ],
       "Organization": [
         "ორგანიზაცია"
       ],
@@ -3144,10 +3151,10 @@
       "Priority:": [
         "პრიორიტეტი:"
       ],
-      "Private key": [
+      "Private Key": [
         "პირადი გასაღები"
       ],
-      "Private Key": [
+      "Private key": [
         "პირადი გასაღები"
       ],
       "Product": [
