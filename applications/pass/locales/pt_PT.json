@@ -1811,6 +1811,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover um item para outro cofre apagará as suas ligações seguras.",
+        "Mover itens para outro cofre apagará as suas ligações seguras."
+      ],
       "Moving items": [
         "A mover itens"
       ],
@@ -3177,10 +3181,10 @@
       "Priority:": [
         "Prioridade:"
       ],
-      "Private key": [
+      "Private Key": [
         "Chave privada"
       ],
-      "Private Key": [
+      "Private key": [
         "Chave privada"
       ],
       "Product": [

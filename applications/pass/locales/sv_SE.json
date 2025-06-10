@@ -1811,6 +1811,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -3177,10 +3181,10 @@
       "Priority:": [
         "Prioritet:"
       ],
-      "Private key": [
+      "Private Key": [
         "Privat nyckel"
       ],
-      "Private Key": [
+      "Private key": [
         "Privat nyckel"
       ],
       "Product": [
