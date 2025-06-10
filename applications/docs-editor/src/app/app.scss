@@ -82,3 +82,14 @@ allow the button to be properly sized and hoverable. */
 	height: auto;
 	clip: unset;
 }
+
+/* the flex and inline-flex util classes from the proton design
+system also add `flex-wrap: wrap` :/ the `@media all` here is
+required because those classes from the design system are also
+declared inside a `@media all` */
+@media all {
+	.flex,
+	.inline-flex {
+		flex-wrap: unset;
+	}
+}
