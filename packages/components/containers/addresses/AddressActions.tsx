@@ -127,6 +127,7 @@ const AddressActions = ({
     const addressFlagsActionsList = useAddressFlagsActionsList(address, user, member);
     const dispatch = useDispatch();
     const [organizationKey] = useOrganizationKey();
+    const emailAddress = address.Email;
 
     const [missingKeysProps, setMissingKeysAddressModalOpen, renderMissingKeysModal] = useModalState();
     const [deleteAddressPromptProps, setDeleteAddressPromptOpen, renderDeleteAddressPrompt] = useModalState();
@@ -170,10 +171,12 @@ const AddressActions = ({
                   permissions.canGenerate && {
                       text: c('Address action').t`Generate missing keys`,
                       onClick: () => setMissingKeysAddressModalOpen(true),
+                      'aria-label': c('Address action').t`Generate missing keys for address “${emailAddress}”`,
                   },
                   permissions.canEditInternalAddress && {
                       text: c('Address action').t`Edit`,
                       onClick: () => setEditInternalAddressOpen(true),
+                      'aria-label': c('Address action').t`Edit address “${emailAddress}”`,
                   },
                   permissions.canEditExternalAddress && {
                       text: c('Address action').t`Edit address`,
@@ -183,26 +186,31 @@ const AddressActions = ({
                       onSetDefault && {
                           text: c('Address action').t`Set as default`,
                           onClick: () => onSetDefault(),
+                          'aria-label': c('Address action').t`Set “${emailAddress}” as default address`,
                       },
                   permissions.canEnable && {
                       text: c('Address action').t`Enable`,
                       onClick: () => withLoading(handleEnable()),
+                      'aria-label': c('Address action').t`Enable address “${emailAddress}”`,
                   },
                   permissions.canDisable && {
                       text: c('Address action').t`Disable`,
                       onClick: () => setDisableAddressModalOpen(true),
+                      'aria-label': c('Address action').t`Disable address “${emailAddress}”`,
                   },
                   permissions.canDeleteAddress &&
                       ({
                           text: c('Address action').t`Delete address`,
                           actionType: 'delete',
                           onClick: () => setDeleteAddressModalOpen(true),
+                          'aria-label': c('Address action').t`Delete address “${emailAddress}”`,
                       } as const),
                   permissions.canDeleteAddressOncePerYear &&
                       !mustActivateOrganizationKey &&
                       ({
                           text: c('Address action').t`Delete address`,
                           actionType: 'delete',
+                          'aria-label': c('Address action').t`Delete address “${emailAddress}”`,
                           onClick: () => setDeleteAddressPromptOpen(true),
                           tooltip: allowAddressDeletion
                               ? c('Delete address tooltip').t`You can only delete 1 address per year`
