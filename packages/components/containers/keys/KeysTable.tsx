@@ -93,6 +93,7 @@ const KeysTable = ({
                                         value={fingerprint}
                                         className="shrink-0 ml-1 mr-2"
                                         shape="ghost"
+                                        tooltipText={c('Label').t`Copy fingerprint`}
                                         onCopy={() => {
                                             createNotification({
                                                 text: c('Success').t`Fingerprint copied to clipboard`,
