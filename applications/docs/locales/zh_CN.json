@@ -312,6 +312,9 @@
       "Download anyway": [
         "仍要下载"
       ],
+      "Download logs": [
+        "下载日志"
+      ],
       "Edit": [
         "更改"
       ],
@@ -398,6 +401,9 @@
       ],
       "Help and resources": [
         "帮助和资源"
+      ],
+      "Hide": [
+        "隐藏"
       ],
       "Hide advanced PGP settings": [
         "隐藏高级 PGP 设置"
@@ -2336,11 +2342,6 @@
         "逾期账单"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "使用 Easy Switch 导入助手"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DRIVE_APP_NAME } 中的 ${ DOCS_SHORT_APP_NAME } 允许您在安全、加密的环境中与他人协同办公。"
@@ -2464,6 +2465,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 导入助手"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4440,9 +4446,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
       ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "如果取消，您将立即失去对 ${ boldPlanTitle } 的访问，并将降级到 ${ boldProtonFree } 套餐。如果您的使用量超过免费套餐限制，那么您对产品功能和数据的访问可能会受到限制。"
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "如果您取消，您的 ${ planTitle } 订阅在 ${ expiryDate } 到期后将不会续订。"
       ],
@@ -5025,9 +5028,6 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "要完成付款，请发送 ${ btcAmountBold } 至以下地址。"
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "若要在 ${ boldCancelDate } 之前继续免费使用 ${ boldPlanTitle }，请不要取消。"
-      ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "要下载 ${ DOCS_APP_NAME } 文件，请在 ${ DOCS_APP_NAME } 中打开并导出它们。"
       ],
@@ -5163,9 +5163,6 @@
       "What do you want to do?": [
         "您希望如何处理？"
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "当您取消 ${ boldPlanTitle } 即视为您自动放弃以下权利："
-      ],
       "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
         "对话框打开后，将“目标”更改为“另存为 PDF”，然后按保存。"
       ],
@@ -5240,9 +5237,6 @@
       ],
       "You can now return to the application to continue": [
         "您现在可以返回到应用程序以继续"
-      ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "您仍然可以访问您账户的所有数据。您也可以随时再次订阅，继续享受我们的所有功能。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
@@ -5355,9 +5349,6 @@
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "您的 ${ boldPlanTitle } 免费试用已取消，您的账户 ${ boldUserEmail } 已降级到 ${ boldProtonFree }。"
-      ],
       "Your information was found on ${ displayedDate }": [
         "您的信息在 ${ displayedDate } 找到"
       ],
@@ -5381,9 +5372,6 @@
       ],
       "Your online activity is protected": [
         "您的在线活动受到保护"
-      ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "您的组织 ${ boldOrganizationName } 已被禁用，其所有用户席位已被删除。"
       ],
       "Your password was leaked:": [
         "您的密码已泄露："
@@ -6469,17 +6457,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "以 ${ priceDrivePlus } 价格开始计划"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "删除账户"
@@ -6501,6 +6478,17 @@
       ],
       "Switch plan": [
         "切换计划"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "以 ${ priceDrivePlus } 价格开始计划"
+      ],
+      "Upgrade": [
+        "升级账户"
       ]
     },
     "new_plans: feature": {
@@ -8836,23 +8824,6 @@
         "总计 ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "每位用户 ${ planMaxSpace } 存储空间"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } 为您提供所有应用程序、所有功能、新版本的早期访问权限，以及控制数据及其安全性所需的一切。"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } 个自定义邮箱域名"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } 个邮箱地址"
-      ],
-      "Folders, labels, and custom filters": [
-        "文件夹、标签和自定义过滤器"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB 存储空间"
@@ -8892,6 +8863,23 @@
       ],
       "Your privacy is our mission": [
         "保护您的隐私就是我们的使命"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "每位用户 ${ planMaxSpace } 存储空间"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } 为您提供所有应用程序、所有功能、新版本的早期访问权限，以及控制数据及其安全性所需的一切。"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } 个自定义邮箱域名"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } 个邮箱地址"
+      ],
+      "Folders, labels, and custom filters": [
+        "文件夹、标签和自定义过滤器"
       ]
     },
     "Subscription renewal state": {
