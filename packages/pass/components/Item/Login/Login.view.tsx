@@ -8,13 +8,11 @@ import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPane
 import { ItemReport } from '@proton/pass/components/Monitor/Item/ItemReport';
 import { SecureLinkCardList } from '@proton/pass/components/SecureLink/SecureLinkCardList';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
-import { useItemViewInfo } from '@proton/pass/hooks/items/useItemViewInfo';
 import { isMonitored } from '@proton/pass/lib/items/item.predicates';
 
 export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
-    const { revision, handleHistoryClick } = itemViewProps;
+    const { revision, handleHistoryClick, share } = itemViewProps;
     const { createTime, lastUseTime, modifyTime, revision: revisionNumber, shareId, itemId } = revision;
-    const { getMoreInfoList } = useItemViewInfo({ shareId, itemId });
 
     return (
         <ItemViewPanel type="login" {...itemViewProps}>
@@ -28,7 +26,7 @@ export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
                 modifyTime={modifyTime}
                 handleHistoryClick={handleHistoryClick}
             />
-            <MoreInfoDropdown info={getMoreInfoList(revisionNumber - 1)} />
+            <MoreInfoDropdown shareId={shareId} itemId={itemId} revision={revisionNumber} vaultId={share.vaultId} />
         </ItemViewPanel>
     );
 };

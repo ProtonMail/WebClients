@@ -7,12 +7,10 @@ import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreIn
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
 import { SecureLinkCardList } from '@proton/pass/components/SecureLink/SecureLinkCardList';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
-import { useItemViewInfo } from '@proton/pass/hooks/items/useItemViewInfo';
 
 export const CreditCardView: FC<ItemViewProps<'creditCard'>> = (itemViewProps) => {
-    const { revision, handleHistoryClick } = itemViewProps;
+    const { revision, handleHistoryClick, share } = itemViewProps;
     const { createTime, modifyTime, revision: revisionNumber, shareId, itemId } = revision;
-    const { getMoreInfoList } = useItemViewInfo({ shareId, itemId });
 
     return (
         <ItemViewPanel type="creditCard" {...itemViewProps}>
@@ -20,7 +18,7 @@ export const CreditCardView: FC<ItemViewProps<'creditCard'>> = (itemViewProps) =
             <CreditCardContent revision={revision} />
             <FileAttachmentsContentView revision={revision} />
             <ItemHistoryStats createTime={createTime} modifyTime={modifyTime} handleHistoryClick={handleHistoryClick} />
-            <MoreInfoDropdown info={getMoreInfoList(revisionNumber - 1)} />
+            <MoreInfoDropdown shareId={shareId} itemId={itemId} revision={revisionNumber} vaultId={share.vaultId} />
         </ItemViewPanel>
     );
 };
