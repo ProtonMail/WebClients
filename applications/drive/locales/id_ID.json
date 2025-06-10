@@ -426,6 +426,9 @@
       "Export selection as .vcf": [
         "Ekspor pilihan sebagai .vcf"
       ],
+      "Export system log": [
+        "Ekspor log sistem"
+      ],
       "Fit to window": [
         "Sesuaikan dengan jendela"
       ],
@@ -449,6 +452,9 @@
       ],
       "Get link": [
         "Dapatkan tautan"
+      ],
+      "Get secure storage for ${ simplePriceString }": [
+        "Dapatkan penyimpanan aman untuk ${ simplePriceString }"
       ],
       "Get Started": [
         "Mulai"
@@ -495,11 +501,17 @@
       "Help and resources": [
         "Bantuan dan sumber daya"
       ],
+      "Hide": [
+        "Sembunyikan"
+      ],
       "Hide advanced PGP settings": [
         "Sembunyikan pengaturan PGP lanjutan"
       ],
       "Hide download options": [
         "Sembunyikan pilihan unduhan"
+      ],
+      "Hide more benefits": [
+        "Sembunyikan manfaat lainnya"
       ],
       "Image could not be loaded with tracker protection.": [
         "Gambar tidak dapat dimuat dengan perlindungan pelacak yang aktif."
@@ -623,6 +635,9 @@
       ],
       "More actions": [
         "Tindakan lainnya"
+      ],
+      "More benefits": [
+        "Lebih banyak manfaat"
       ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
@@ -930,6 +945,9 @@
       "Show more": [
         "Tampilkan lebih banyak"
       ],
+      "Show more benefits": [
+        "Tampilkan lebih banyak manfaat"
+      ],
       "Show more download options": [
         "Tampilkan lebih banyak pilihan unduhan"
       ],
@@ -1001,6 +1019,9 @@
       ],
       "Try another method": [
         "Coba metode lain"
+      ],
+      "Try it now": [
+        "Coba sekarang"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Cobalah untuk menyimpan kembali. Penyimpanan gagal karena: ${ saveError }"
@@ -3874,6 +3895,9 @@
       "Create new shared album": [
         "Buat album bersama baru"
       ],
+      "Drawer": [
+        "Panel Samping"
+      ],
       "Rename album": [
         "Ubah nama album"
       ],
@@ -4535,6 +4559,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Setidaknya ${ BETTER_PASSWORD_LENGTH } karakter"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Pada akhir masa uji coba ${ boldCancelDate } Anda, Anda akan diturunkan ke ${ boldProtonFree }. Seluruh akun pengguna akan dihapus dari organisasi Anda."
+      ],
       "Attention required": [
         "Diperlukan perhatian"
       ],
@@ -4823,6 +4850,9 @@
       "Expired": [
         "Kedaluwarsa"
       ],
+      "Export diagnostic logs for technical support and troubleshooting": [
+        "Ekspor log diagnostik untuk layanan dukungan teknis dan penyelesaian masalah"
+      ],
       "Failed": [
         "Gagal"
       ],
@@ -4916,11 +4946,11 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
       ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Apabila Anda membatalkan, Anda akan kehilangan akses ke ${ boldPlanTitle } dengan segera, dan Anda akan diturunkan ke paket ${ boldProtonFree }. Apabila pemakaian Anda melebihi batas pemakaian paket gratis, akses Anda ke fitur produk dan data Anda akan dapat dibatasi."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Apabila Anda membatalkan langganan, paket ${ planTitle } Anda tidak akan diperbarui ketika paket ini berakhir pada ${ expiryDate }."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Apabila Anda berubah pikiran, Anda dapat berlangganan kembali kapan saja. Kami sungguh menyayangkan kepergian Anda!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
@@ -5705,9 +5735,6 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Untuk menyelesaikan pembayaran Anda, silakan kirim ${ btcAmountBold } ke alamat di bawah ini."
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "Untuk terus menggunakan ${ boldPlanTitle } secara gratis hingga ${ boldCancelDate }, jangan batalkan paket Anda."
-      ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "Untuk mengunduh berkas ${ DOCS_APP_NAME }, buka berkas ini di ${ DOCS_APP_NAME } dan ekspor."
       ],
@@ -5912,9 +5939,6 @@
       "What would you like to do?": [
         "Apa yang ingin Anda lakukan?"
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "Apa yang Anda korbankan pada saat Anda membatalkan ${ boldPlanTitle }:"
-      ],
       "When working remotely": [
         "Pada saat bekerja secara remote"
       ],
@@ -6002,9 +6026,6 @@
       "You can now return to the application to continue": [
         "Anda kini dapat kembali ke aplikasi untuk melanjutkan"
       ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "Anda akan tetap dapat mengakses seluruh data akun Anda. Anda dapat berlangganan kembali kapan saja untuk terus menikmati seluruh fitur kami."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat email baru yang masuk ke folder ini."
       ],
@@ -6050,6 +6071,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ trialEndsOnFormatted }."
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "Anda juga akan kehilangan akses ke berbagai fitur ${ boldPlanTitle } berikut:"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Anda kemudian akan ditagih setiap ${ renewCycle } bulan pada harga ${ renewAmountStr }."
       ],
@@ -6076,9 +6100,6 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Langganan ${ PASS_SHORT_APP_NAME } Plus Anda akan digantikan dengan ${ PASS_SHORT_APP_NAME } Lifetime. Saldo sisa langganan Anda akan ditambahkan ke akun Anda. Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
-      ],
-      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
-        "Paket ${ planName } Anda kini merupakan paket berbayar yang diperbarui secara otomatis setiap 12 bulan. Tanggal penagihan Anda selanjutnya adalah ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akses ke akun Anda akan segera dibatasi. ${ payInvoiceLink }"
@@ -6116,9 +6137,6 @@
       "Your files will be encrypted and then saved.": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan."
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "Masa uji coba gratis ${ boldPlanTitle } Anda telah dibatalkan, dan akun ${ boldUserEmail } milik Anda telah diturunkan ke ${ boldProtonFree }."
-      ],
       "Your information was found on ${ displayedDate }": [
         "Informasi Anda ditemukan pada tanggal ${ displayedDate }"
       ],
@@ -6142,9 +6160,6 @@
       ],
       "Your online activity is protected": [
         "Aktivitas online Anda terlindung"
-      ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "Organisasi ${ boldOrganizationName } milik Anda telah dinonaktifkan, dan seluruh kuota pengguna yang dimiliki oleh organisasi ini telah dihapus."
       ],
       "Your password was leaked:": [
         "Kata sandi Anda telah bocor:"
@@ -6175,6 +6190,12 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Masa uji coba Anda akan berakhir dalam ${ timeRemaining }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Anda akan kehilangan akses ke ${ boldPlanTitle } pada ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Anda akan tetap dapat melihat data milik akun Anda, namun seluruh akun pengguna akan dihapus dari organisasi Anda."
       ]
     },
     "info": {
@@ -6299,6 +6320,9 @@
       ],
       "Address": [
         "Alamat"
+      ],
+      "Alias title": [
+        "Judul alias"
       ],
       "All": [
         "Semua"
@@ -7466,17 +7490,6 @@
         "Kecepatan VPN sedang"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Paket dimulai dari ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hapus akun"
@@ -7498,6 +7511,17 @@
       ],
       "Switch plan": [
         "Ganti paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Paket dimulai dari ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
       ]
     },
     "new_plans: feature": {
@@ -8018,6 +8042,9 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Akses internet secara aman dari mana pun dengan pemantauan jaringan yang esensial"
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Layanan penyimpanan aman berbasis cloud yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan berkas secara mudah dan aman."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
@@ -8882,6 +8909,23 @@
         "Bekerja bersama"
       ]
     },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "Batalkan kapan saja sebelum tenggat waktu ini."
+      ],
+      "Once your full subscription starts...": [
+        "Setelah langganan penuh Anda dimulai..."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Anda masih akan dapat membatalkan langganan dalam 30 hari dan memperoleh uang kembali secara proratif."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Langganan penuh ${ planTitle } Anda akan dimulai pada ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Anda akan dapat menggunakan ${ planTitle } secara cuma-cuma hingga masa uji coba Anda berakhir."
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "Tambah ke grup yang sudah ada"
@@ -8913,6 +8957,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Akses ke Seluruh aplikasi dan fitur premium ${ BRAND_NAME }"
+      ],
       "Secure vault sharing": [
         "Pembagian brankas yang aman"
       ],
@@ -10001,6 +10048,47 @@
         "Untuk ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
@@ -10255,47 +10343,6 @@
         "Alias email pendek @pm.me milik Anda"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
-      ]
-    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Apakah Anda yakin?"
@@ -10333,6 +10380,9 @@
       ],
       "Albums you've shared will appear here": [
         "Album yang Anda bagikan akan muncul di sini"
+      ],
+      "Securely share your favorite moments with friends and family using Albums.": [
+        "Berbagi momen favorit Anda dengan teman dan keluarga secara aman menggunakan Album."
       ],
       "Your favorited photos will appear here": [
         "Foto favorit Anda akan muncul di sini"
@@ -11144,6 +11194,9 @@
       "Phone numbers": [
         "Nomor telepon"
       ],
+      "Photo albums are here!": [
+        "Album foto sudah tersedia!"
+      ],
       "Photos": [
         "Foto"
       ],
@@ -11402,9 +11455,6 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Masa uji coba gratis ${ planName } Anda akan berakhir pada ${ textDate }"
       ],
-      "Your ${ planName } subscription started": [
-        "Langganan ${ planName } Anda dimulai pada"
-      ],
       "Your 3 GB bonus": [
         "Bonus 3 GB Anda"
       ],
@@ -11419,6 +11469,9 @@
       ],
       "Your exposed information": [
         "Informasi Anda yang terpapar"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } days": [
+        "Masa uji coba gratis Anda akan berakhir dalam ${ trialDurationFormatted } hari"
       ],
       "Your shorter address is now ready": [
         "Alamat lebih pendek Anda sudah siap"
