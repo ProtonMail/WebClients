@@ -7,7 +7,11 @@ import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 import useFlag from '@proton/unleash/useFlag';
 
 import { PhotosContainer } from '../../containers/PhotosContainer';
-import { PhotosWithAlbumsContext, PhotosWithAlbumsProvider } from '../../photos/PhotosStore/PhotosWithAlbumsProvider';
+import {
+    type DecryptedAlbum,
+    PhotosWithAlbumsContext,
+    PhotosWithAlbumsProvider,
+} from '../../photos/PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosWithAlbumsContainer } from '../../photos/PhotosWithAlbumsContainer';
 import { useSharesStore } from '../../zustand/share/shares.store';
 import { useUserSettings } from '../_settings';
@@ -21,6 +25,8 @@ interface CommonProviderPhotosMethods {
     volumeId?: string;
     volumeType: VolumeType;
     deletePhotosShare: (volumeId: string, shareId: string) => Promise<void>;
+    loadAlbums?: (abortSignal: AbortSignal) => Promise<void>;
+    albums?: Map<string, DecryptedAlbum>;
 }
 
 export function usePhotosOrPhotosWithAlbums(): CommonProviderPhotosMethods {
