@@ -11,10 +11,12 @@ import {
   drivePublicRedirectionReasonKey,
 } from '@proton/drive-store/hooks/util/useRedirectToPublicPage'
 import { saveUrlPasswordForRedirection } from '@proton/drive-store/utils/url/password'
+import type { DocumentType } from '@proton/drive-store/store/_documents/useOpenDocument'
 import { useOpenDocument, type RedirectAction } from '@proton/drive-store/store/_documents/useOpenDocument'
 import type { PublicContextValue } from '../context'
 import type { EditorControllerInterface, PublicDocumentState } from '@proton/docs-core'
 import { useCallback } from 'react'
+import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 
 function openUrl(url: string, openInNewTab: boolean) {
   const tab = openInNewTab ? getNewWindow() : getCurrentTab()
@@ -163,9 +165,15 @@ export type PublicDocumentCopyingOptions = {
   context: PublicContextValue
   editorController: EditorControllerInterface
   documentState: PublicDocumentState
+  documentType: DocumentType | ProtonDocumentType
 }
 
-export function usePublicDocumentCopying({ context, editorController, documentState }: PublicDocumentCopyingOptions) {
+export function usePublicDocumentCopying({
+  context,
+  editorController,
+  documentState,
+  documentType,
+}: PublicDocumentCopyingOptions) {
   const { openDocumentWindow } = useOpenDocument()
   const { user } = context
 
@@ -207,7 +215,7 @@ export function usePublicDocumentCopying({ context, editorController, documentSt
     window.addEventListener('message', handleCopierMessage)
 
     openDocumentWindow({
-      type: 'doc',
+      type: documentType,
       mode: 'copy-public',
       window: w.handle,
     })
