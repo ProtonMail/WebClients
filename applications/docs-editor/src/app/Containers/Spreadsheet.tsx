@@ -4,6 +4,8 @@ import type { ForwardedRef } from 'react'
 import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import type { SheetData } from '@rowsncolumns/spreadsheet-state'
 import {
+  ConditionalFormatDialog,
+  ConditionalFormatEditor,
   DeleteSheetConfirmation,
   NamedRangeEditor,
   pattern_currency_decimal,
@@ -248,6 +250,11 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     onCreateNamedRange,
     onUpdateNamedRange,
     onDeleteNamedRange,
+    onRequestConditionalFormat,
+    onCreateConditionalFormattingRule,
+    onUpdateConditionalFormattingRule,
+    onDeleteConditionalFormattingRule,
+    onPreviewConditionalFormattingRule,
 
     // Create a history stack
     createHistory,
@@ -266,6 +273,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     tables,
     functions,
     namedRanges,
+    conditionalFormats,
     theme,
     colorMode,
     locale,
@@ -753,6 +761,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
           onSortRange={onSortRange}
           onProtectRange={onProtectRange}
           onUnProtectRange={onUnProtectRange}
+          onRequestConditionalFormat={onRequestConditionalFormat}
           namedRanges={namedRanges}
           licenseKey={process.env.DOCS_SHEETS_KEY}
           onRequestSearch={onRequestSearch}
@@ -807,6 +816,18 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
             merges={merges}
           />
         </BottomBar>
+        <ConditionalFormatDialog>
+          <ConditionalFormatEditor
+            sheetId={activeSheetId}
+            theme={theme}
+            conditionalFormats={conditionalFormats}
+            functionDescriptions={functionDescriptions}
+            onCreateRule={onCreateConditionalFormattingRule}
+            onDeleteRule={onDeleteConditionalFormattingRule}
+            onUpdateRule={onUpdateConditionalFormattingRule}
+            onPreviewRule={onPreviewConditionalFormattingRule}
+          />
+        </ConditionalFormatDialog>
         <TableEditor sheetId={activeSheetId} onSubmit={onUpdateTable} theme={theme} />
         <DeleteSheetConfirmation sheetId={activeSheetId} onDeleteSheet={onDeleteSheet} />
         <NamedRangeEditor
