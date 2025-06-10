@@ -639,6 +639,9 @@
       "Hide messages": [
         "Nachrichten ausblenden"
       ],
+      "Hide more benefits": [
+        "Mehr Vorteile ausblenden"
+      ],
       "Hide my email": [
         "Meine E-Mail-Adresse verstecken"
       ],
@@ -855,6 +858,9 @@
       ],
       "More actions": [
         "Weitere Aktionen"
+      ],
+      "More benefits": [
+        "Weitere Vorteile"
       ],
       "More details about ${ ariaLabelTitle }": [
         "Mehr Details zu ${ ariaLabelTitle }"
@@ -1177,10 +1183,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } auswählen"
       ],
-      "Select All": [
+      "Select all": [
         "Alle auswählen"
       ],
-      "Select all": [
+      "Select All": [
         "Alle auswählen"
       ],
       "Select all messages": [
@@ -1293,6 +1299,9 @@
       ],
       "Show more": [
         "Mehr anzeigen"
+      ],
+      "Show more benefits": [
+        "Mehr Vorteile anzeigen"
       ],
       "Show more search options": [
         "Mehr Suchoptionen anzeigen"
@@ -6417,6 +6426,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Mindestens ${ BETTER_PASSWORD_LENGTH } Zeichen"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Beim Auslaufen deiner Testversion ${ boldCancelDate } wirst du auf ${ boldProtonFree } zurückgestuft. Alle Benutzerkonten werden aus deiner Organisation entfernt."
+      ],
       "Attach public key": [
         "Öffentlichen Schlüssel anhängen"
       ],
@@ -6509,6 +6521,9 @@
       ],
       "Close this screen to exit.": [
         "Schließe zum Beenden das Fenster."
+      ],
+      "Composer:": [
+        "Verfasser:"
       ],
       "Confirm phishing report": [
         "Phishing-Bericht bestätigen"
@@ -6862,11 +6877,11 @@
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Wenn du glaubst, dass wir einen Fehler gemacht haben, wende dich bitte an ${ contactLink }."
       ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Wenn du kündigst, verlierst du sofort den Zugang zu ${ boldPlanTitle } und wirst auf das ${ boldProtonFree }-Abonnement zurückgestuft. Wenn deine Nutzung die Grenzen des kostenlosen Abonnements überschreitet, kann der Zugang zu den Produktfunktionen und deinen Daten eingeschränkt sein."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Wenn du kündigst, wird dein ${ planTitle }-Abonnement nach Ablauf am ${ expiryDate } nicht verlängert."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Wenn du deine Meinung änderst, kannst du jederzeit wieder abonnieren. Schade, dass du gehst."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
@@ -6939,8 +6954,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -7600,6 +7614,9 @@
       "Text to display": [
         "Anzuzeigender Text"
       ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "Vielen Dank, dass du dich für ${ BRAND_NAME } entschieden hast, um deine Organisation zu schützen."
+      ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Danke für deine Anmeldung. Sicheres Surfen beginnt jetzt."
       ],
@@ -7791,9 +7808,6 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Um die Zahlung abzuschließen, sende bitte ${ btcAmountBold } an die untenstehende Adresse."
-      ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "Damit du ${ boldPlanTitle } bis zum ${ boldCancelDate } weiterhin kostenlos genießen kannst, kündige nicht."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
@@ -8020,9 +8034,6 @@
       "Week": [
         "Woche"
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "Bei der Kündigung von ${ boldPlanTitle } verlierst du folgende Vorteile:"
-      ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Wann möchtest du, dass deine Nachricht automatisch aus dem Posteingang des Empfängers und aus deinem Gesendet-Ordner gelöscht wird?"
       ],
@@ -8117,9 +8128,6 @@
       ],
       "You can now return to the application to continue": [
         "Du kannst jetzt zur Anwendung zurückkehren, um fortzufahren."
-      ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "Du kannst weiterhin auf all deine Kontodaten zugreifen. Du kannst jederzeit wieder abonnieren, um weiterhin all unsere Funktionen zu nutzen."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kannst Mitteilungen aktivieren, um Benachrichtigungen zu erhalten, sobald neue E-Mail-Nachrichten in diesem Ordner eingehen."
@@ -8223,6 +8231,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Deine Nachricht enthält das Schlüsselwort „${ attachmentsFoundKeyword }“, es wurde jedoch kein Anhang hinzugefügt. Möchtest du deine Nachricht trotzdem senden?"
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "Du verlierst auch den Zugang zu den Funktionen von ${ boldPlanTitle }:"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du wirst dann alle ${ renewCycle } Monate mit ${ renewAmountStr } belastet.",
         "Dir werden dann alle ${ renewCycle } Monate ${ renewAmountStr } in Rechnung gestellt."
@@ -8241,9 +8252,6 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Dein ${ PASS_SHORT_APP_NAME } Plus Abonnement wird durch ${ PASS_SHORT_APP_NAME } Lifetime ersetzt. Das übrige Guthaben deines Abonnements wird deinem Konto gutgeschrieben. Der ${ PASS_SHORT_APP_NAME } Lifetime Deal hat keine Verlängerungskosten, es handelt sich um eine einmal Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }."
-      ],
-      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
-        "Dein ${ planName }-Abonnement ist jetzt ein kostenpflichtiges Abonnement, das sich alle 12 Monate automatisch verlängert. Dein nächstes Abrechnungsdatum ist der ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
@@ -8272,8 +8280,11 @@
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "Deine kostenlose Testversion von ${ boldPlanTitle } wurde gekündigt und dein Konto ${ boldUserEmail } wurde auf ${ boldProtonFree } zurückgestuft."
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Deine kostenlose Testversion wurde erfolgreich in ein ${ cycle }-monatiges Abonnement umgewandelt. Dein Verlängerungsdatum ist der ${ nextBillingDate }."
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Deine kostenlose Testversion wurde erfolgreich in ein monatliches Abonnement umgewandelt. Dein Verlängerungsdatum ist der ${ nextBillingDate }."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Deine Hardware unterstützt die lokale Ausführung des Schreibassistenten nicht. Versuche ihn auf Servern auszuführen."
@@ -8312,9 +8323,6 @@
       "Your online activity is protected": [
         "Deine Online-Aktivitäten sind geschützt."
       ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "Deine Organisation ${ boldOrganizationName } wurde deaktiviert und alle ihre Benutzerlizenzen wurden entfernt."
-      ],
       "Your password was leaked:": [
         "Dein Passwort wurde offengelegt"
       ],
@@ -8339,6 +8347,12 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Deine Testversion endet in ${ timeRemaining }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Du verlierst den Zugriff auf ${ boldPlanTitle } am ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Du kannst weiterhin deine eigenen Kontodaten ansehen, aber alle Benutzerkonten werden aus deiner Organisation entfernt."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
@@ -10466,12 +10480,6 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
       ],
-      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "1 TB Cloud-Speicher, mit dem sich Dateien einfach speichern, synchronisieren und teilen lassen. Gesichert durch eine Ende-zu-Ende-Verschlüsselung."
-      ],
-      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "200 GB Cloud-Speicher, mit dem sich Dateien einfach speichern, synchronisieren und teilen lassen. Gesichert durch eine Ende-zu-Ende-Verschlüsselung."
-      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Erweiterte Netzwerksicherheit und Zugangsverwaltung mit dedizierten sicheren Gateways"
       ],
@@ -10531,6 +10539,9 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Sicherer Internetzugang von überall aus mit grundlegender Netzwerküberwachung"
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Sicherer Cloud-Speicher, mit dem du Dateien einfach und sicher speichern, synchronisieren und gemeinsam nutzen kannst."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sichere E-Mails mit erweiterten Funktionen für deine tägliche Kommunikation."
@@ -11172,6 +11183,23 @@
         "Du kannst dein Farbschema jederzeit in den Einstellungen ändern."
       ]
     },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "Du kannst jederzeit vorher abbrechen."
+      ],
+      "Once your full subscription starts...": [
+        "Sobald dein vollständiges Abonnement beginnt ..."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Du kannst immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Dein vollständiges ${ planTitle }-Abonnement beginnt am ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Du kannst ${ planTitle } kostenlos nutzen, bis die Testversion ausläuft."
+      ]
+    },
     "Online accounts": {
       "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
         "Du hast ein Konto bei einem dieser Dienste? Klicke einfach, um die E-Mail-Adresse zu deiner ${ MAIL_APP_NAME }-Adresse zu ändern."
@@ -11251,6 +11279,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Zugang zu allen ${ BRAND_NAME }-Anwendungen und Premiumfunktionen"
+      ],
       "Secure vault sharing": [
         "Sicheres Teilen von Tresoren"
       ],
@@ -12700,6 +12731,47 @@
         "Für ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -12958,47 +13030,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -14443,8 +14474,8 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."
       ],
-      "Your ${ planName } subscription started": [
-        "Dein ${ planName }-Abonnement hat begonnen"
+      "Your ${ planName } subscription has started": [
+        "Dein ${ planName }-Abonnement hat begonnen."
       ],
       "Your account is protected": [
         "Dein Konto ist geschützt"
@@ -14454,6 +14485,9 @@
       ],
       "Your exposed information": [
         "Deine exponierten Informationen"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } days": [
+        "Deine kostenlose Testversion endet in ${ trialDurationFormatted } Tagen."
       ],
       "Your free trial has ended": [
         "Deine kostenlose Testversion ist abgelaufen"

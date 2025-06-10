@@ -318,6 +318,9 @@
       "Download anyway": [
         "Все равно скачать"
       ],
+      "Download logs": [
+        "Скачать журналы"
+      ],
       "Edit": [
         "Изменить"
       ],
@@ -404,6 +407,9 @@
       ],
       "Help and resources": [
         "Помощь и информация"
+      ],
+      "Hide": [
+        "Скрыть"
       ],
       "Hide advanced PGP settings": [
         "Скрыть расширенные настройки PGP"
@@ -2371,11 +2377,6 @@
         "Просроченный счёт"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } в ${ DRIVE_APP_NAME } позволяет вам работать вместе с другими людьми в защищенной и зашифрованной среде."
@@ -2499,6 +2500,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6660,17 +6666,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Тарифы начиная с ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -6692,6 +6687,17 @@
       ],
       "Switch plan": [
         "Сменить тариф"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Тарифы начиная с ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Улучшить"
       ]
     },
     "new_plans: feature": {
@@ -9284,29 +9290,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Объем хранилища на пользователя: ${ planMaxSpace }"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } предоставляет вам все приложения и функции, ранний доступ к новым версиям и все, что нужно для управления вашими данными и их безопасностью."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } пользовательский домен электронной почты",
-        "${ planNumberOfDomains } пользовательских домена электронной почты",
-        "${ planNumberOfDomains } пользовательских доменов электронной почты",
-        "${ planNumberOfDomains } пользовательских доменов электронной почты"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } адрес электронной почты",
-        "${ planNumberOfEmails } адреса электронной почты",
-        "${ planNumberOfEmails } адресов электронной почты",
-        "${ planNumberOfEmails } адресов электронной почты"
-      ],
-      "Folders, labels, and custom filters": [
-        "Папки, ярлыки и пользовательские фильтры"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 ГБ хранилища"
@@ -9346,6 +9329,29 @@
       ],
       "Your privacy is our mission": [
         "Ваша приватность является нашей задачей"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Объем хранилища на пользователя: ${ planMaxSpace }"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } предоставляет вам все приложения и функции, ранний доступ к новым версиям и все, что нужно для управления вашими данными и их безопасностью."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } пользовательский домен электронной почты",
+        "${ planNumberOfDomains } пользовательских домена электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } адрес электронной почты",
+        "${ planNumberOfEmails } адреса электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты"
+      ],
+      "Folders, labels, and custom filters": [
+        "Папки, ярлыки и пользовательские фильтры"
       ]
     },
     "Subscription renewal state": {

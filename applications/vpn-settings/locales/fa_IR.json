@@ -8,11 +8,11 @@
       "${ BRAND_NAME } shop": [
         "فروشگاه ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "فعالسازی"
-      ],
       "activate": [
         "فعال‌سازی"
+      ],
+      "Activate": [
+        "فعالسازی"
       ],
       "Activate organization key": [
         "کلید سازمان را فعال کنید"
@@ -227,6 +227,9 @@
       "Keep editing": [
         "ادامه ویرایش"
       ],
+      "Learn more": [
+        "بیشتر بدانید"
+      ],
       "Load more": [
         "بارگذاری بیشتر"
       ],
@@ -380,10 +383,10 @@
       "Select country": [
         "انتخاب کشور"
       ],
-      "select file": [
+      "Select file": [
         "انتخاب فایل"
       ],
-      "Select file": [
+      "select file": [
         "انتخاب فایل"
       ],
       "Send code": [
@@ -2912,10 +2915,10 @@
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "از اطلاعات ذیل برای اتصال به سرورهای ${ VPN_APP_NAME } بدون برنامه استفاده کنید. مثال های موارد استفاده: Tunnelblick در macOS، OpenVPN در لینوکس/GNU."
       ],
-      "Username": [
+      "username": [
         "نام‌کاربری"
       ],
-      "username": [
+      "Username": [
         "نام‌کاربری"
       ],
       "Users": [
@@ -3789,20 +3792,6 @@
         "سرعت متوسط VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "تنزل به ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "همه طرح های ${ BRAND_NAME } را بررسی کنید"
-      ],
-      "From ${ price }": [
-        "از ${ price }"
-      ],
-      "Upgrade": [
-        "ارتقاء"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "حذف حساب کاربری"
@@ -3824,6 +3813,20 @@
       ],
       "Switch plan": [
         "تغییر دادن طرح"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "تنزل به ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "همه طرح های ${ BRAND_NAME } را بررسی کنید"
+      ],
+      "From ${ price }": [
+        "از ${ price }"
+      ],
+      "Upgrade": [
+        "ارتقاء"
       ]
     },
     "new_plans: feature": {
@@ -4936,6 +4939,14 @@
         "فهمیدم"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "۱۵ گیگابایت فضای ذخیره‌سازی"
+      ],
+      "Upgrade": [
+        "ارتقاء"
+      ]
+    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } فضای ذخیره‌سازی برای هر کاربر"
@@ -4973,14 +4984,6 @@
       ],
       "Priority support": [
         "اولویت پشتیبانی"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "۱۵ گیگابایت فضای ذخیره‌سازی"
-      ],
-      "Upgrade": [
-        "ارتقاء"
       ]
     },
     "Subscription renewal state": {
@@ -5290,11 +5293,11 @@
       "Card verification": [
         "تایید کارت"
       ],
-      "Catch-all address": [
-        "نشانی دریافت-همه"
-      ],
       "Catch-All address": [
         "نشانی همه‌گیر"
+      ],
+      "Catch-all address": [
+        "نشانی دریافت-همه"
       ],
       "Change login password": [
         "گذرواژه ورود را تغییر دهید"

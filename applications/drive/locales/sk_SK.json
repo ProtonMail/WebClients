@@ -441,6 +441,9 @@
       "Export selection as .vcf": [
         "Exportovať výber ako .vcf"
       ],
+      "Export system log": [
+        "Exportovať systémový log"
+      ],
       "Fit to window": [
         "Prispôsobiť oknu"
       ],
@@ -464,6 +467,9 @@
       ],
       "Get link": [
         "Získať odkaz"
+      ],
+      "Get secure storage for ${ simplePriceString }": [
+        "Získať bezpečné úložisko za ${ simplePriceString }"
       ],
       "Get Started": [
         "Začíname"
@@ -510,11 +516,17 @@
       "Help and resources": [
         "Nápoveda a podporné materiály"
       ],
+      "Hide": [
+        "Skryť"
+      ],
       "Hide advanced PGP settings": [
         "Skryť pokročilé nastavenia PGO"
       ],
       "Hide download options": [
         "Skryť možnosti sťahovania"
+      ],
+      "Hide more benefits": [
+        "Skryť viac výhod"
       ],
       "Image could not be loaded with tracker protection.": [
         "Obrázok sa nepodarilo načítať s ochranou sledovania."
@@ -638,6 +650,9 @@
       ],
       "More actions": [
         "Ďalšie akcie"
+      ],
+      "More benefits": [
+        "Viac výhod"
       ],
       "More info: ${ safeTitle }": [
         "Viac informácií: ${ safeTitle }"
@@ -945,6 +960,9 @@
       "Show more": [
         "Zobraziť viac"
       ],
+      "Show more benefits": [
+        "Zobraziť ďalšie výhody"
+      ],
       "Show more download options": [
         "Zobraziť ďalšie možnosti sťahovania"
       ],
@@ -1016,6 +1034,9 @@
       ],
       "Try another method": [
         "Skúsiť inú metódu"
+      ],
+      "Try it now": [
+        "Skúste to teraz"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokúste sa znova uložiť. Uloženie zlyhalo z dôvodu: ${ saveError }"
@@ -3964,6 +3985,9 @@
       "Create new shared album": [
         "Vytvoriť nový zdieľaný album"
       ],
+      "Drawer": [
+        "Bočný panel"
+      ],
       "Rename album": [
         "Premenovať album"
       ],
@@ -5057,6 +5081,9 @@
       "Expired": [
         "Platnosť vypršala"
       ],
+      "Export diagnostic logs for technical support and troubleshooting": [
+        "Exportovať diagnostické záznamy pre technickú podporu a riešenie problémov"
+      ],
       "Failed": [
         "Zlyhalo"
       ],
@@ -5149,9 +5176,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ak máte problémy s vytvorením účtu, požiadajte prosím o pozvánku a my odpovieme do jedného pracovného dňa."
-      ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Ak zrušíte, okamžite stratíte prístup k ${ boldPlanTitle }, a budete znížený na plán ${ boldProtonFree }. Ak vaše používanie prekročí limity bezplatného plánu, môže dôjsť k obmedzeniu prístupu k funkciám produktu a k vašim údajom."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Zrušením nebude vaše predplatné ${ planTitle } obnovené, keď uplynie dňa ${ expiryDate } jeho platnosť."
@@ -5957,9 +5981,6 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Na dokončenie platby pošlite ${ btcAmountBold } na nižšie uvedenú adresu."
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "Ak si prajete naďalej bezplatne využívať ${ boldPlanTitle } až do ${ boldCancelDate }, nezrušte ho."
-      ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "Pre stiahnutie súborov z ${ DOCS_APP_NAME } ich musíte otvoriť v ${ DOCS_APP_NAME } a exportovať."
       ],
@@ -6164,9 +6185,6 @@
       "What would you like to do?": [
         "Čo si prajete urobiť?"
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "O čo prídete, keď zrušíte ${ boldPlanTitle }:"
-      ],
       "When working remotely": [
         "Pri práci na diaľku"
       ],
@@ -6263,9 +6281,6 @@
       "You can now return to the application to continue": [
         "Teraz sa môžete vrátiť do aplikácie a pokračovať"
       ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "Stále máte prístup ku všetkým údajom svojho účtu. Kedykoľvek sa môžete znovu prihlásiť a naďalej využívať všetky naše funkcie."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Môžete zapnúť notifikácie, aby ste dostali upozornenie, keď vám do tohto priečinka prídu nové správy."
       ],
@@ -6347,9 +6362,6 @@
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Vaše predplatné ${ PASS_SHORT_APP_NAME } Plus bude nahradené predplatným ${ PASS_SHORT_APP_NAME } Lifetime. Zostávajúci zostatok vášho predplatného bude pripísaný na vaše konto. Dohoda o ${ PASS_SHORT_APP_NAME } doživotnom predplatnom nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }."
       ],
-      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
-        "Váš plán ${ planName } je teraz platené predplatné, ktoré sa automaticky obnovuje každých 12 mesiacov. Dátum Vašej ďalšej fakturácie je ${ nextBillingDate }."
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má aspoň jednu faktúru po splatnosti. Váš prístup bude čoskoro obmedzený. ${ payInvoiceLink }"
       ],
@@ -6386,9 +6398,6 @@
       "Your files will be encrypted and then saved.": [
         "Vaše súbory budú zašifrované a následne uložené."
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "Vaša bezplatná skúšobná verzia služby ${ boldPlanTitle } bola zrušená a váš účet ${ boldUserEmail } bol znížený na ${ boldProtonFree }."
-      ],
       "Your information was found on ${ displayedDate }": [
         "Vaše informácie boli nájdené dňa ${ displayedDate }"
       ],
@@ -6412,9 +6421,6 @@
       ],
       "Your online activity is protected": [
         "Vaša online aktivita je chránená"
-      ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "Vaša organizácia ${ boldOrganizationName } je zakázaná a všetky jej používateľské miesta boli odstránené."
       ],
       "Your password was leaked:": [
         "Vaše heslo bolo prezradené:"
@@ -6587,6 +6593,9 @@
       ],
       "Address": [
         "Adresa"
+      ],
+      "Alias title": [
+        "Názov aliasu"
       ],
       "All": [
         "Všetko"
@@ -7715,17 +7724,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Predplatné začína od ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Zmazať účet"
@@ -7747,6 +7745,17 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Predplatné začína od ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
       ]
     },
     "new_plans: feature": {
@@ -8339,6 +8348,9 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Bezpečný prístup k internetu odkiaľkoľvek so základným monitorovaním siete"
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Bezpečné cloudové úložisko, ktoré vám umožní ukladať, synchronizovať a zdieľať súbory jednoducho a bezpečne."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Bezpečný email s pokročilými funkciami pre vašu každodennú komunikáciu."
@@ -9294,6 +9306,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Prístup k všetkým ${ BRAND_NAME } aplikáciám a prémiovým funkciám"
+      ],
       "Secure vault sharing": [
         "Bezpečné zdieľanie trezoru"
       ],
@@ -10478,6 +10493,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "and 15 more premium features": [
+        "a ďalších 15 prémiových funkcií"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické presmerovanie emailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornenia na úniky údajov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
+      ],
+      "No ads or tracking": [
+        "Žiadne reklamy alebo sledovanie"
+      ],
+      "Short @pm.me email address": [
+        "Skrátená emailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podporte naše poslanie"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšite svoju produktivitu"
+      ],
+      "We don't sell your data": [
+        "Nepredávame vaše údaje"
+      ],
+      "Your privacy is our mission": [
+        "Vaše súkromie je naším poslaním"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkciami"
@@ -10750,47 +10806,6 @@
         "Váš vlastný skrátený emailový alias @pm.me"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložného priestoru"
-      ],
-      "and 15 more premium features": [
-        "a ďalších 15 prémiových funkcií"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické presmerovanie emailu ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornenia na úniky údajov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikácia"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
-      ],
-      "No ads or tracking": [
-        "Žiadne reklamy alebo sledovanie"
-      ],
-      "Short @pm.me email address": [
-        "Skrátená emailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podporte naše poslanie"
-      ],
-      "Upgrade": [
-        "Prejsť na platený plán"
-      ],
-      "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
-      ],
-      "We don't sell your data": [
-        "Nepredávame vaše údaje"
-      ],
-      "Your privacy is our mission": [
-        "Vaše súkromie je naším poslaním"
-      ]
-    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Naozaj?"
@@ -10828,6 +10843,9 @@
       ],
       "Albums you've shared will appear here": [
         "Tu sa zobrazia albumy, ktoré zdieľate"
+      ],
+      "Securely share your favorite moments with friends and family using Albums.": [
+        "Bezpečne zdieľajte vaše obľúbené okamihy s priateľmi a rodinou pomocou Albumov."
       ],
       "Your favorited photos will appear here": [
         "Tu sa zobrazia vaše obľúbené fotografie"
@@ -11708,6 +11726,9 @@
       "Phone numbers": [
         "Telefónne čísla"
       ],
+      "Photo albums are here!": [
+        "Fotoalbumy sú tu!"
+      ],
       "Photos": [
         "Fotografie"
       ],
@@ -11968,9 +11989,6 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaša bezplatná skúšobná verzia služby ${ planName } končí ${ textDate }"
-      ],
-      "Your ${ planName } subscription started": [
-        "Vaše predplatné ${ planName } začalo"
       ],
       "Your 3 GB bonus": [
         "Váš bonus 3 GB"

@@ -645,6 +645,9 @@
       "Hide messages": [
         "Ukryj wiadomości"
       ],
+      "Hide more benefits": [
+        "Ukryj więcej bonusów"
+      ],
       "Hide my email": [
         "Ukryj mój adres e-mail"
       ],
@@ -863,6 +866,9 @@
       ],
       "More actions": [
         "Więcej akcji"
+      ],
+      "More benefits": [
+        "Więcej bonusów"
       ],
       "More details about ${ ariaLabelTitle }": [
         "Więcej szczegółów o adresie ${ ariaLabelTitle }"
@@ -1185,10 +1191,10 @@
       "Select ${ planTitle }": [
         "Wybierz ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Zaznacz wszystkie"
       ],
-      "Select all": [
+      "Select All": [
         "Zaznacz wszystkie"
       ],
       "Select all messages": [
@@ -1301,6 +1307,9 @@
       ],
       "Show more": [
         "Pokaż więcej"
+      ],
+      "Show more benefits": [
+        "Pokaż więcej bonusów"
       ],
       "Show more search options": [
         "Pokaż więcej opcji wyszukiwania"
@@ -6717,6 +6726,9 @@
       "Close this screen to exit.": [
         "Zamknij te okno, aby wyjść."
       ],
+      "Composer:": [
+        "Edytor:"
+      ],
       "Confirm phishing report": [
         "Potwierdź próbę wyłudzenia informacji"
       ],
@@ -7165,10 +7177,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -8478,6 +8487,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "W celu zweryfikowania płatności wkrótce zostaniesz przekierowany na stronę firmy PayPal."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Nie zostaniesz obciążony opłatą, jeśli anulujesz przed ${ trialEndsOnFormatted }."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Wiadomość zawiera wyrażenie \"${ attachmentsFoundKeyword }\", ale załącznik nie został dodany. Czy chcesz wysłać wiadomość mimo to?"
       ],
@@ -8591,6 +8603,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Twoja subskrypcja odnowi się automatycznie ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Wersja próbna zakończy się za ${ timeRemaining }."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od uporządkowanej skrzynki odbiorczej dzieli Cię kilka kliknięć"
@@ -10802,12 +10817,6 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } kończąca się na ${ last4 }"
       ],
-      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "1 TB przestrzeni dyskowej w chmurze, która umożliwia łatwe przechowywanie, synchronizowanie i udostępnianie plików. Zabezpieczone za pomocą szyfrowania end-to-end."
-      ],
-      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "200 GB przestrzeni dyskowej w chmurze, która umożliwia łatwe przechowywanie, synchronizowanie i udostępnianie plików. Zabezpieczone za pomocą szyfrowania end-to-end."
-      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Zaawansowane bezpieczeństwo sieci i zarządzanie dostępem za pomocą dedykowanych bram"
       ],
@@ -10867,6 +10876,9 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Bezpieczny dostęp do Internetu, gdziekolwiek jesteś dzięki monitoringowi sieci"
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Bezpieczna przestrzeń dyskowa w chmurze, w której możesz przechowywać, synchronizować i udostępniać pliki w łatwy sposób."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Bezpieczna poczta e-mail z zaawansowanymi funkcjami do codziennej komunikacji."
@@ -11591,6 +11603,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Dostęp do wszystkich aplikacji ${ BRAND_NAME } i funkcji premium"
+      ],
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
       ],
@@ -13116,6 +13131,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } z funkcjami premium"
@@ -13386,47 +13442,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Krótki alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "and 15 more premium features": [
-        "i 15 więcej funkcji premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatyczne przekierowanie ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerty wycieków ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikacja desktopowa"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
-      ],
-      "No ads or tracking": [
-        "Brak reklam i śledzenia"
-      ],
-      "Short @pm.me email address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Wesprzyj naszą misję"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
-      "We don't sell your data": [
-        "Nie sprzedajemy Twoich danych"
-      ],
-      "Your privacy is our mission": [
-        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {
@@ -13925,6 +13940,32 @@
     "Time": {
       "Yesterday": [
         "Wczoraj"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dzień",
+        "${ ceilDays } dni",
+        "${ ceilDays } dni",
+        "${ ceilDays } dnia"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } godzina",
+        "${ ceilHours } godziny",
+        "${ ceilHours } godzin",
+        "${ ceilHours } godziny"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuta",
+        "${ ceilMinutes } minuty",
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minuty"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunda",
+        "${ seconds } sekundy",
+        "${ seconds } sekund",
+        "${ seconds } sekundy"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -14938,9 +14979,6 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Darmowa wersja próbna planu ${ planName } zakończy się ${ textDate }"
-      ],
-      "Your ${ planName } subscription started": [
-        "Subskrypcja ${ planName } została rozpoczęta"
       ],
       "Your account is protected": [
         "Konto jest chronione"

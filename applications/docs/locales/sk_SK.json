@@ -321,6 +321,9 @@
       "Download anyway": [
         "Napriek tomu stiahnuť"
       ],
+      "Download logs": [
+        "Záznamy sťahovania"
+      ],
       "Edit": [
         "Upraviť"
       ],
@@ -408,8 +411,14 @@
       "Help and resources": [
         "Nápoveda a podporné materiály"
       ],
+      "Hide": [
+        "Skryť"
+      ],
       "Hide advanced PGP settings": [
         "Skryť pokročilé nastavenia PGO"
+      ],
+      "Hide more benefits": [
+        "Skryť viac výhod"
       ],
       "Image could not be loaded with tracker protection.": [
         "Obrázok sa nepodarilo načítať s ochranou sledovania."
@@ -506,6 +515,9 @@
       ],
       "More actions": [
         "Ďalšie akcie"
+      ],
+      "More benefits": [
+        "Viac výhod"
       ],
       "More info: ${ safeTitle }": [
         "Viac informácií: ${ safeTitle }"
@@ -740,6 +752,9 @@
       ],
       "Show more": [
         "Zobraziť viac"
+      ],
+      "Show more benefits": [
+        "Zobraziť ďalšie výhody"
       ],
       "Show options": [
         "Zobraziť možnosti"
@@ -2372,11 +2387,6 @@
         "Faktúra po splatnosti"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použite asistenta pre import Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vám umožňuje spolupracovať s ostatnými v zabezpečenom, šifrovanom prostredí."
@@ -2500,6 +2510,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použite asistenta pre import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3650,6 +3665,11 @@
         "Služby"
       ]
     },
+    "Header": {
+      "Drawer": [
+        "Bočný panel"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Našiel sa ${ itemsCount } návrh, na navigáciu použite klávesnicu.",
@@ -4614,9 +4634,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ak máte problémy s vytvorením účtu, požiadajte prosím o pozvánku a my odpovieme do jedného pracovného dňa."
       ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Ak zrušíte, okamžite stratíte prístup k ${ boldPlanTitle }, a budete znížený na plán ${ boldProtonFree }. Ak vaše používanie prekročí limity bezplatného plánu, môže dôjsť k obmedzeniu prístupu k funkciám produktu a k vašim údajom."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Zrušením nebude vaše predplatné ${ planTitle } obnovené, keď uplynie dňa ${ expiryDate } jeho platnosť."
       ],
@@ -5214,9 +5231,6 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Na dokončenie platby pošlite ${ btcAmountBold } na nižšie uvedenú adresu."
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "Ak si prajete naďalej bezplatne využívať ${ boldPlanTitle } až do ${ boldCancelDate }, nezrušte ho."
-      ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "Pre stiahnutie súborov z ${ DOCS_APP_NAME } ich musíte otvoriť v ${ DOCS_APP_NAME } a exportovať."
       ],
@@ -5352,9 +5366,6 @@
       "What do you want to do?": [
         "Čo si prajete urobiť?"
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "O čo prídete, keď zrušíte ${ boldPlanTitle }:"
-      ],
       "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
         "Keď sa otvorí dialógové okno, zmeňte položku \"Umiestnenie\" na \"Uložiť ako PDF\" a potom stlačte tlačidlo Uložiť."
       ],
@@ -5435,9 +5446,6 @@
       ],
       "You can now return to the application to continue": [
         "Teraz sa môžete vrátiť do aplikácie a pokračovať"
-      ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "Stále máte prístup ku všetkým údajom svojho účtu. Kedykoľvek sa môžete znovu prihlásiť a naďalej využívať všetky naše funkcie."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Môžete zapnúť notifikácie, aby ste dostali upozornenie, keď vám do tohto priečinka prídu nové správy."
@@ -5553,9 +5561,6 @@
       "Your files will be encrypted and then saved": [
         "Vaše súbory budú zašifrované a potom uložené"
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "Vaša bezplatná skúšobná verzia služby ${ boldPlanTitle } bola zrušená a váš účet ${ boldUserEmail } bol znížený na ${ boldProtonFree }."
-      ],
       "Your information was found on ${ displayedDate }": [
         "Vaše informácie boli nájdené dňa ${ displayedDate }"
       ],
@@ -5579,9 +5584,6 @@
       ],
       "Your online activity is protected": [
         "Vaša online aktivita je chránená"
-      ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "Vaša organizácia ${ boldOrganizationName } je zakázaná a všetky jej používateľské miesta boli odstránené."
       ],
       "Your password was leaked:": [
         "Vaše heslo bolo prezradené:"
@@ -5724,6 +5726,9 @@
       ],
       "Address": [
         "Adresa"
+      ],
+      "Alias title": [
+        "Názov aliasu"
       ],
       "Anderson": [
         "Anderson"
@@ -6694,17 +6699,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Predplatné začína od ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Zmazať účet"
@@ -6726,6 +6720,17 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Predplatné začína od ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
       ]
     },
     "new_plans: feature": {
@@ -7318,6 +7323,9 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Bezpečný prístup k internetu odkiaľkoľvek so základným monitorovaním siete"
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Bezpečné cloudové úložisko, ktoré vám umožní ukladať, synchronizovať a zdieľať súbory jednoducho a bezpečne."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Bezpečný email s pokročilými funkciami pre vašu každodennú komunikáciu."
@@ -8071,6 +8079,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Prístup k všetkým ${ BRAND_NAME } aplikáciám a prémiovým funkciám"
+      ],
       "Secure vault sharing": [
         "Bezpečné zdieľanie trezoru"
       ],
@@ -9283,29 +9294,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } úložisko na používateľa"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vám poskytne všetky aplikácie, všetky funkcie, predbežný prístup k novým verziám a všetko, čo potrebujete, aby ste mali svoje dáta a ich zabezpečenie pod kontrolou."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } vlastná emailová doména",
-        "${ planNumberOfDomains } vlastné emailové domény",
-        "${ planNumberOfDomains } vlastných emailových domén",
-        "${ planNumberOfDomains } vlastných emailových domén"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } emailová adresa",
-        "${ planNumberOfEmails } emailové adresy",
-        "${ planNumberOfEmails } emailových adries",
-        "${ planNumberOfEmails } emailových adries"
-      ],
-      "Folders, labels, and custom filters": [
-        "Priečinky, štítky a vlastné filtre"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB úložného priestoru"
@@ -9345,6 +9333,29 @@
       ],
       "Your privacy is our mission": [
         "Vaše súkromie je naším poslaním"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } úložisko na používateľa"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vám poskytne všetky aplikácie, všetky funkcie, predbežný prístup k novým verziám a všetko, čo potrebujete, aby ste mali svoje dáta a ich zabezpečenie pod kontrolou."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } vlastná emailová doména",
+        "${ planNumberOfDomains } vlastné emailové domény",
+        "${ planNumberOfDomains } vlastných emailových domén",
+        "${ planNumberOfDomains } vlastných emailových domén"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } emailová adresa",
+        "${ planNumberOfEmails } emailové adresy",
+        "${ planNumberOfEmails } emailových adries",
+        "${ planNumberOfEmails } emailových adries"
+      ],
+      "Folders, labels, and custom filters": [
+        "Priečinky, štítky a vlastné filtre"
       ]
     },
     "Subscription renewal state": {
@@ -10169,6 +10180,9 @@
       ],
       "Untitled document ${ date }": [
         "Dokument bez názvu ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Tabuľka bez názvu ${ date }"
       ],
       "Upgrade complete!": [
         "Aktualizácia dokončená!"

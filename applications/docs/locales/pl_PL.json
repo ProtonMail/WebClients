@@ -315,6 +315,9 @@
       "Download anyway": [
         "Pobierz mimo to"
       ],
+      "Download logs": [
+        "Pobierz logi"
+      ],
       "Edit": [
         "Edytuj"
       ],
@@ -402,8 +405,14 @@
       "Help and resources": [
         "Pomoc i zasoby"
       ],
+      "Hide": [
+        "Ukryj"
+      ],
       "Hide advanced PGP settings": [
         "Ukryj zaawansowane ustawienia PGP"
+      ],
+      "Hide more benefits": [
+        "Ukryj więcej bonusów"
       ],
       "Image could not be loaded with tracker protection.": [
         "Obraz nie mógł zostać załadowany z ochroną przed śledzeniem."
@@ -422,6 +431,9 @@
       ],
       "Import contacts": [
         "Importuj kontakty"
+      ],
+      "Import data": [
+        "Importuj dane"
       ],
       "Import emails": [
         "Importuj wiadomości"
@@ -497,6 +509,9 @@
       ],
       "More actions": [
         "Więcej akcji"
+      ],
+      "More benefits": [
+        "Więcej bonusów"
       ],
       "More info: ${ safeTitle }": [
         "Więcej informacji: ${ safeTitle }"
@@ -608,6 +623,9 @@
       ],
       "Remove button": [
         "Usuń przycisk"
+      ],
+      "Remove file": [
+        "Usuń plik"
       ],
       "Remove gift code": [
         "Usuń kod podarunkowy"
@@ -728,6 +746,9 @@
       ],
       "Show more": [
         "Pokaż więcej"
+      ],
+      "Show more benefits": [
+        "Pokaż więcej bonusów"
       ],
       "Show options": [
         "Pokaż opcje"
@@ -2362,11 +2383,6 @@
         "Zaległa faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Użyj asystenta importu Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } w ${ DRIVE_APP_NAME } umożliwia współpracę z innymi w bezpiecznym i szyfrowanym środowisku."
@@ -2490,6 +2506,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5122,6 +5143,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Właściciel adresu wyłączył szyfrowanie end-to-end. Aby móc wysyłać wiadomości zaszyfrowane na ten adres, właściciel musi ponownie włączyć szyfrowanie end-to-end."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Adres URL został nieprawidłowo skopiowany ze Slacka. Zamiast bezpośrednio kopiować skrócony adresu URL, kliknij link prawym przyciskiem, a następnie wybierz opcję \"Kopiuj adres linku\"."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Otworzy się nowa karta w celu potwierdzenia płatności. Wyłącz blokadę wyskakujących okien."
       ],
@@ -5449,6 +5473,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "W celu zweryfikowania płatności wkrótce zostaniesz przekierowany na stronę firmy PayPal."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Nie zostaniesz obciążony opłatą, jeśli anulujesz przed ${ trialEndsOnFormatted }."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Następnie zapłacisz co ${ renewCycle } miesiąc ${ renewAmountStr }.",
         "Następnie zapłacisz co ${ renewCycle } miesiące ${ renewAmountStr }.",
@@ -5565,6 +5592,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Twoja subskrypcja odnowi się automatycznie ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Wersja próbna zakończy się za ${ timeRemaining }."
       ]
     },
     "info": {
@@ -6713,17 +6743,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Od ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Usuń konto"
@@ -6745,6 +6764,17 @@
       ],
       "Switch plan": [
         "Zmień plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Od ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
       ]
     },
     "new_plans: feature": {
@@ -7278,12 +7308,6 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } kończąca się na ${ last4 }"
       ],
-      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "1 TB przestrzeni dyskowej w chmurze, która umożliwia łatwe przechowywanie, synchronizowanie i udostępnianie plików. Zabezpieczone za pomocą szyfrowania end-to-end."
-      ],
-      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "200 GB przestrzeni dyskowej w chmurze, która umożliwia łatwe przechowywanie, synchronizowanie i udostępnianie plików. Zabezpieczone za pomocą szyfrowania end-to-end."
-      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Zaawansowane bezpieczeństwo sieci i zarządzanie dostępem za pomocą dedykowanych bram"
       ],
@@ -7343,6 +7367,9 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Bezpieczny dostęp do Internetu, gdziekolwiek jesteś dzięki monitoringowi sieci"
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Bezpieczna przestrzeń dyskowa w chmurze, w której możesz przechowywać, synchronizować i udostępniać pliki w łatwy sposób."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Bezpieczna poczta e-mail z zaawansowanymi funkcjami do codziennej komunikacji."
@@ -8096,6 +8123,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Dostęp do wszystkich aplikacji ${ BRAND_NAME } i funkcji premium"
+      ],
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
       ],
@@ -9343,29 +9373,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } przestrzeni dyskowej na użytkownika"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "Plan ${ planName } zawiera wszystkie aplikacje, wszystkie funkcje, wcześniejszy dostęp do nowych wersji i wszystko, czego potrzebujesz, aby mieć kontrolę nad swoimi danymi i ich bezpieczeństwem."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } niestandardowa domena",
-        "${ planNumberOfDomains } niestandardowe domeny",
-        "${ planNumberOfDomains } niestandardowych domen",
-        "${ planNumberOfDomains } niestandardowych domen"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adres e-mail",
-        "${ planNumberOfEmails } adresy e-mail",
-        "${ planNumberOfEmails } adresów e-mail",
-        "${ planNumberOfEmails } adresów e-mail"
-      ],
-      "Folders, labels, and custom filters": [
-        "Foldery, etykiety i filtry niestandardowe"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB przestrzeni dyskowej"
@@ -9405,6 +9412,29 @@
       ],
       "Your privacy is our mission": [
         "Prywatność to nasza misja"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } przestrzeni dyskowej na użytkownika"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Plan ${ planName } zawiera wszystkie aplikacje, wszystkie funkcje, wcześniejszy dostęp do nowych wersji i wszystko, czego potrzebujesz, aby mieć kontrolę nad swoimi danymi i ich bezpieczeństwem."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } niestandardowa domena",
+        "${ planNumberOfDomains } niestandardowe domeny",
+        "${ planNumberOfDomains } niestandardowych domen",
+        "${ planNumberOfDomains } niestandardowych domen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adres e-mail",
+        "${ planNumberOfEmails } adresy e-mail",
+        "${ planNumberOfEmails } adresów e-mail",
+        "${ planNumberOfEmails } adresów e-mail"
+      ],
+      "Folders, labels, and custom filters": [
+        "Foldery, etykiety i filtry niestandardowe"
       ]
     },
     "Subscription renewal state": {
@@ -9627,6 +9657,32 @@
       ],
       "vCard field": [
         "Pole vCard"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dzień",
+        "${ ceilDays } dni",
+        "${ ceilDays } dni",
+        "${ ceilDays } dnia"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } godzina",
+        "${ ceilHours } godziny",
+        "${ ceilHours } godzin",
+        "${ ceilHours } godziny"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuta",
+        "${ ceilMinutes } minuty",
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minuty"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunda",
+        "${ seconds } sekundy",
+        "${ seconds } sekund",
+        "${ seconds } sekundy"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -10203,6 +10259,9 @@
       ],
       "Untitled document ${ date }": [
         "Dokument bez nazwy ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Arkusz kalkulacyjny bez nazwy ${ date }"
       ],
       "Upgrade complete!": [
         "Ulepszenie zakończone!"

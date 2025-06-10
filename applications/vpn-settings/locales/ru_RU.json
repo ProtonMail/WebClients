@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
-      "Activate": [
-        "Активировать"
-      ],
       "activate": [
         "включить"
+      ],
+      "Activate": [
+        "Активировать"
       ],
       "Activate organization key": [
         "Активировать ключ организации"
@@ -264,10 +264,10 @@
       "Discard": [
         "Сбросить"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Сбросить изменения"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Сбросить изменения"
       ],
       "Discover ${ planName }": [
@@ -464,6 +464,9 @@
       ],
       "Keep my subscription": [
         "Сохранить подписку"
+      ],
+      "Learn more": [
+        "Подробнее"
       ],
       "Let's talk": [
         "Свяжитесь с нами"
@@ -693,11 +696,11 @@
       "Select country ${ country }": [
         "Выбрать страну ${ country }"
       ],
-      "select file": [
-        "выбрать файл"
-      ],
       "Select file": [
         "Выбрать файл"
+      ],
+      "select file": [
+        "выбрать файл"
       ],
       "Send code": [
         "Отправить код"
@@ -4625,11 +4628,11 @@
       "Data recoverable on this device": [
         "Данные, которые можно восстановить на этом устройстве"
       ],
-      "Dedicated servers": [
-        "Выделенные серверы"
-      ],
       "dedicated servers": [
         "выделенные серверы"
+      ],
+      "Dedicated servers": [
+        "Выделенные серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с выделенными IP-адресами могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -5228,9 +5231,6 @@
       "Or select a particular server:": [
         "Или выберите определенный сервер:"
       ],
-      "Organization --> Groups": [
-        "Организация --> Группы"
-      ],
       "Organization size": [
         "Размер организации"
       ],
@@ -5825,11 +5825,11 @@
       "User activated": [
         "Пользователь активирован"
       ],
-      "Username": [
-        "Имя пользователя"
-      ],
       "username": [
         "имя пользователя"
+      ],
+      "Username": [
+        "Имя пользователя"
       ],
       "Users": [
         "Пользователи"
@@ -6415,11 +6415,11 @@
       "Allow recovery by phone": [
         "Разрешить восстановление по номеру телефона"
       ],
-      "Allowed domain": [
-        "Разрешённый домен"
-      ],
       "Allowed Domain": [
         "Разрешённый Домен"
+      ],
+      "Allowed domain": [
+        "Разрешённый домен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Разрешает всем участникам вашей организации добавлять ссылки на видеоконференции в приглашения календаря."
@@ -7464,20 +7464,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -7499,6 +7485,20 @@
       ],
       "Switch plan": [
         "Сменить тариф"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Upgrade": [
+        "Улучшить"
       ]
     },
     "new_plans: feature": {
@@ -10707,6 +10707,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
@@ -11007,47 +11048,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -11562,10 +11562,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [

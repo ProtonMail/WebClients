@@ -237,6 +237,9 @@
       "Copy address": [
         "მისამართის კოპირება"
       ],
+      "Copy alias “${ name }”": [
+        "ფსევდონიმის \"${ name }\" კოპირება"
+      ],
       "Copy email to clipboard": [
         "ელფოსტის მისამართის ბაფერში კოპირება"
       ],
@@ -428,6 +431,9 @@
       "Export selection as .vcf": [
         "მონიშნულის გატანა .vcf ფაილში"
       ],
+      "Export system log": [
+        "სისტემური ჟურნალის გატანა"
+      ],
       "Fit to window": [
         "ფანჯარაში ჩატევა"
       ],
@@ -497,11 +503,17 @@
       "Help and resources": [
         "დახმარება და რესურსები"
       ],
+      "Hide": [
+        "დამალვა"
+      ],
       "Hide advanced PGP settings": [
         "PGP-ის დამატებითი პარამეტრების დამალვა"
       ],
       "Hide download options": [
         "გადმოწერის პარამეტრების დამალვა"
+      ],
+      "Hide more benefits": [
+        "მეტი ბონუსის დამალვა"
       ],
       "Image could not be loaded with tracker protection.": [
         "ტრეკინგისგან დაცვით გამოსახულების ჩატვირთვა შეუძლებელია."
@@ -544,6 +556,9 @@
       ],
       "Keep my subscription": [
         "ჩემი გამოწერის შენარჩუნება"
+      ],
+      "Keep subscription": [
+        "გამოწერის შენარჩუნება"
       ],
       "Later": [
         "მოგვიანებით"
@@ -622,6 +637,9 @@
       ],
       "More actions": [
         "მეტი ქმედება"
+      ],
+      "More benefits": [
+        "მეტი ბონუსი"
       ],
       "More info: ${ safeTitle }": [
         "გაიგეთ მეტი: ${ safeTitle }"
@@ -929,6 +947,9 @@
       "Show more": [
         "მეტის ჩვენება"
       ],
+      "Show more benefits": [
+        "მეტი ბონუსის ჩვენება"
+      ],
       "Show more download options": [
         "მეტი გადმოწეერის პარამეტრის ჩვენება"
       ],
@@ -1000,6 +1021,9 @@
       ],
       "Try another method": [
         "სხვა მეთოდის ცდა"
+      ],
+      "Try it now": [
+        "სცადეთ ახლა"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "შენახვა კიდევ ერთხელ სცადეთ. შენახვის შეცდომის მიზეზი: ${ saveError }"
@@ -3880,6 +3904,9 @@
       "Create new shared album": [
         "ახალი გაზიარებული ალბომის შექმნა"
       ],
+      "Drawer": [
+        "უჯრა"
+      ],
       "Rename album": [
         "ალბომის სახელის გადარქმევა"
       ],
@@ -5511,6 +5538,9 @@
       "Shared by ": [
         "გამზიარებელი "
       ],
+      "Shared by ${ sharedBy }": [
+        "გაზიარებულია ${ sharedBy }-ის მიერ"
+      ],
       "Shared by you": [
         "გაზიარებული თქვენს მიერ"
       ],
@@ -6253,6 +6283,9 @@
       ],
       "Address": [
         "მისამართი"
+      ],
+      "Alias title": [
+        "ფსევდონიმის სათაური"
       ],
       "All": [
         "ყველა"
@@ -7366,17 +7399,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "${ priceDrivePlus }-დან დაწყებული სატარიფო გეგმები"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -7398,6 +7420,17 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "${ priceDrivePlus }-დან დაწყებული სატარიფო გეგმები"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
       ]
     },
     "new_plans: feature": {
@@ -9964,6 +9997,47 @@
         "${ totalPrice }-თვის"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
@@ -10219,47 +10293,6 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -10550,6 +10583,24 @@
       ],
       "Videos": [
         "ვიდეოები"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } დღე",
+        "${ ceilDays } დღე"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } საათი",
+        "${ ceilHours } საათი"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } წუთი",
+        "${ ceilMinutes } წუთი"
+      ],
+      "${ seconds } second": [
+        "${ seconds } წამი",
+        "${ seconds } წამი"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -11116,6 +11167,9 @@
       "Phone numbers": [
         "ტელეფონის ნომრები"
       ],
+      "Photo albums are here!": [
+        "ფოტოალბომები უკვე აქაა!"
+      ],
       "Photos": [
         "ფოტოები"
       ],
@@ -11266,6 +11320,9 @@
       ],
       "Stop transfers?": [
         "გავაჩერო გადაწერები?"
+      ],
+      "Subscription canceled": [
+        "გამოწერა გაუქმებულია"
       ],
       "Summary": [
         "შეჯამება"

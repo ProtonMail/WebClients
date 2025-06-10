@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "Activate": [
-        "Kullanıma al"
-      ],
       "activate": [
         "kullanıma al"
+      ],
+      "Activate": [
+        "Kullanıma al"
       ],
       "Activate organization key": [
         "Kuruluş anahtarını kullanıma al"
@@ -267,11 +267,11 @@
       "Discard": [
         "Sil"
       ],
-      "Discard changes": [
-        "Değişiklileri yok say"
-      ],
       "Discard Changes": [
         "Değişiklikleri sil"
+      ],
+      "Discard changes": [
+        "Değişiklileri yok say"
       ],
       "Discover ${ planName }": [
         "${ planName } tarifesini keşfedin"
@@ -470,6 +470,9 @@
       ],
       "Keep subscription": [
         "Aboneliği sürdür"
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
       ],
       "Let's talk": [
         "Hadi konuşalım."
@@ -699,11 +702,11 @@
       "Select country ${ country }": [
         "${ country } ülkesini seç"
       ],
-      "select file": [
-        "dosya seçin"
-      ],
       "Select file": [
         "Dosya seçin"
+      ],
+      "select file": [
+        "dosya seçin"
       ],
       "Send code": [
         "Kodu gönder"
@@ -4535,11 +4538,11 @@
       "Data recoverable on this device": [
         "Bu aygıttaki veriler kurtarılabilir"
       ],
-      "Dedicated servers": [
-        "Size ayrılmış sunucular"
-      ],
       "dedicated servers": [
         "size ayrılmış sunucular"
+      ],
+      "Dedicated servers": [
+        "Size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -4812,9 +4815,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Bir yanlışlık olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
-      ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "İptal etmeniz durumunda ${ boldPlanTitle } tarifesine erişimi hemen kaybecek ve ${ boldProtonFree } tarifesine düşürüleceksiniz. Eğer kullanımlarınız ücretsiz tarife sınırlarını aşarsa ürün özelliklerine ve verilerinize erişiminiz kısıtlanabilir."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "İptal ederseniz, ${ planTitle } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
@@ -5132,9 +5132,6 @@
       ],
       "Or select a particular server:": [
         "Ya da belirli bir sunucuyu seçin:"
-      ],
-      "Organization --> Groups": [
-        "Kuruluş --> Gruplar"
       ],
       "Organization size": [
         "Kuruluş boyutu"
@@ -5715,11 +5712,11 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "Username": [
-        "Kullanıcı adı"
-      ],
       "username": [
         "kullanıcı adı"
+      ],
+      "Username": [
+        "Kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -5932,9 +5929,6 @@
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Aynı anda yalnızca bir sohbet kopyası açabilirsiniz. Lütfen yeni bir konuşma başlatmadan önce önceki konuşmaları kapatın."
-      ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "Hesabınızın tüm verilerine hâlâ erişebilirsiniz. Tüm özelliklerimizin keyfini çıkarmaya devam etmek için dilediğiniz zaman tekrar abone olabilirsiniz."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
@@ -6280,10 +6274,10 @@
       "Allow recovery by phone": [
         "Telefon ile hesap kurtarılabilsin"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "İzin verilen etki alanı"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "İzin verilen etki alanı"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -7327,20 +7321,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşürülsün mü"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -7362,6 +7342,20 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşürülsün mü"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Upgrade": [
+        "Yükselt"
       ]
     },
     "new_plans: feature": {
@@ -10398,6 +10392,47 @@
         "${ totalPrice } için"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -10686,47 +10721,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -11269,10 +11263,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [

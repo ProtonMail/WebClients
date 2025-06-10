@@ -830,10 +830,10 @@
       "Select ${ planTitle }": [
         "Odaberite ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Odaberi sve"
       ],
-      "Select all": [
+      "Select All": [
         "Odaberi sve"
       ],
       "Select all messages": [
@@ -4246,6 +4246,9 @@
       "Inherited from parent folder": [
         "Nasljedno iz roditeljske mape"
       ],
+      "Insert image": [
+        "Umetni sliku"
+      ],
       "Insert link": [
         "Umetni poveznicu"
       ],
@@ -6914,6 +6917,17 @@
         "Razumijem"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
+      ]
+    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } prostora za pohranu po korisniku"
@@ -6949,17 +6963,6 @@
       ],
       "Version history": [
         "Povijest verzija"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
       ]
     },
     "Subscription renewal state": {

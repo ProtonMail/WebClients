@@ -193,6 +193,9 @@
       "Back": [
         "Назад"
       ],
+      "Back to sign in": [
+        "Повернутись до входу"
+      ],
       "Block": [
         "Блокувати"
       ],
@@ -715,6 +718,9 @@
       "Later": [
         "Пізніше"
       ],
+      "Learn more": [
+        "Докладніше"
+      ],
       "Leave": [
         "Залишити"
       ],
@@ -862,11 +868,11 @@
       "Refresh status": [
         "Оновити стан"
       ],
-      "refresh the page": [
-        "оновити сторінку"
-      ],
       "Refresh the page": [
         "Оновити сторінку"
+      ],
+      "refresh the page": [
+        "оновити сторінку"
       ],
       "Reject": [
         "Відхилити"
@@ -1027,11 +1033,11 @@
       "Select country": [
         "Виберіть країну"
       ],
-      "select file": [
-        "виберіть файл"
-      ],
       "Select file": [
         "Вибрати файл"
+      ],
+      "select file": [
+        "виберіть файл"
       ],
       "Select files": [
         "Вибрати файли"
@@ -6886,11 +6892,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Активуйте принаймні один спосіб відновлення даних, щоб не втратити доступ до вмісту свого облікового запису ${ BRAND_NAME } у разі втрати пароля."
       ],
-      "active": [
-        "активний"
-      ],
       "Active": [
         "Активні"
+      ],
+      "active": [
+        "активний"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Додайте адресу @pm.me до свого облікового запису. Цей простий короткий домен означає скорочення від \"${ MAIL_APP_NAME } me\" або \"Private Message me\"."
@@ -7330,11 +7336,11 @@
       "Data locked": [
         "Дані заблоковано"
       ],
-      "Dedicated servers": [
-        "Виділені сервери"
-      ],
       "dedicated servers": [
         "виділені сервери"
+      ],
+      "Dedicated servers": [
+        "Виділені сервери"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Виділені сервери з окремими IP-адресами можуть бути додані до приватних шлюзів для забезпечення точного контролю доступу."
@@ -8821,6 +8827,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Щоб підтвердити, введіть ім'я користувача, якого ви хочете видалити."
       ],
+      "To continue to ${ product }": [
+        "Щоб продовжити в ${ product }"
+      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Щоб постійно вдосконалювати наші служби, ми іноді збираємо дані для моніторингу належного функціонування наших програм. Ці дані не передаються жодним стороннім службам."
       ],
@@ -8980,11 +8989,11 @@
       "User activated": [
         "Користувач активований"
       ],
-      "Username": [
-        "Ім’я користувача"
-      ],
       "username": [
         "ім'я користувача"
+      ],
+      "Username": [
+        "Ім’я користувача"
       ],
       "Users": [
         "Користувачі"
@@ -9402,6 +9411,12 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Ви не зможете відновити заблоковані дані за допомогою ваших завантажених файлів відновлення. Це також вимкне відновлення довіреного пристрою."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Ви увімкнули пересилання на ${ MAX_SYNC_PAID_USER } адресу Gmail. Щоб додати іншу, спочатку вимкніть цю.",
+        "Ви увімкнули пересилання на ${ MAX_SYNC_PAID_USER } адреси Gmail. Щоб додати іншу, спочатку вимкніть одну з них.",
+        "Ви увімкнули пересилання на ${ MAX_SYNC_PAID_USER } адрес Gmail. Щоб додати іншу, спочатку вимкніть одну з них.",
+        "Ви увімкнули пересилання на ${ MAX_SYNC_PAID_USER } адрес Gmail. Щоб додати іншу, спочатку вимкніть одну з них."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Ваш обліковий запис ${ BRAND_NAME } пов'язаний з ${ externalEmailAddress }."
@@ -10071,10 +10086,10 @@
       "Allow sharing outside the organization": [
         "Дозволити спільний доступ за межами організації"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дозволений домен"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дозволений домен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -12659,6 +12674,14 @@
         "Ціна зі знижкою ${ priceCoupon } дійсна протягом першого місяця. Потім вона буде автоматично поновлена до ${ priceLine }. Ви можете скасувати в будь-який час."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробна версія ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Використання вашого облікового запису"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Видалити обліковий запис?"
@@ -12677,14 +12700,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Передплатіть тарифний план та розблокуйте преміумфункції"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробна версія ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Використання вашого облікового запису"
       ]
     },
     "new_plans: tooltip": {
@@ -16442,6 +16457,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "and 15 more premium features": [
+        "та ще 15 преміальних функцій"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматичне пересилання пошти ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Сповіщення про витоки даних ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Програма для комп'ютера"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
+      ],
+      "No ads or tracking": [
+        "Без реклами і стеження"
+      ],
+      "Short @pm.me email address": [
+        "Коротка адреса електронної пошти @pm.me"
+      ],
+      "Support our mission": [
+        "Підтримайте нашу місію"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade your productivity": [
+        "Вдоскональте свою продуктивність"
+      ],
+      "We don't sell your data": [
+        "Ми не продаємо ваші дані"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватність є нашою місією"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, та ${ VPN_SHORT_APP_NAME } з преміумфункіями"
@@ -16742,47 +16798,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш власний короткий псевдонім електронної пошти @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховища"
-      ],
-      "and 15 more premium features": [
-        "та ще 15 преміальних функцій"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматичне пересилання пошти ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Сповіщення про витоки даних ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Програма для комп'ютера"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
-      ],
-      "No ads or tracking": [
-        "Без реклами і стеження"
-      ],
-      "Short @pm.me email address": [
-        "Коротка адреса електронної пошти @pm.me"
-      ],
-      "Support our mission": [
-        "Підтримайте нашу місію"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade your productivity": [
-        "Вдоскональте свою продуктивність"
-      ],
-      "We don't sell your data": [
-        "Ми не продаємо ваші дані"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватність є нашою місією"
       ]
     },
     "Subscription renewal state": {
@@ -17488,11 +17503,11 @@
       "Card verification": [
         "Перевірка картки"
       ],
-      "Catch-all address": [
-        "Catch-all адреси"
-      ],
       "Catch-All address": [
         "Catch-All адреса"
+      ],
+      "Catch-all address": [
+        "Catch-all адреси"
       ],
       "Change login password": [
         "Змінити пароль входу"

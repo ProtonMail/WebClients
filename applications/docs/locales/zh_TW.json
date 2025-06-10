@@ -270,6 +270,9 @@
       "Download anyway": [
         "仍要下載"
       ],
+      "Download logs": [
+        "下載日誌"
+      ],
       "Edit": [
         "編輯"
       ],
@@ -350,6 +353,9 @@
       ],
       "Help": [
         "幫助"
+      ],
+      "Hide": [
+        "隱藏"
       ],
       "Hide advanced PGP settings": [
         "隱藏進階 PGP 設定"
@@ -2213,11 +2219,6 @@
         "逾期帳單"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "使用 Easy Switch 匯入小幫手"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }24/7保護您的帳號包含躲避安全專家的可疑活動。"
@@ -2284,6 +2285,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 匯入小幫手"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5913,17 +5919,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "方案從${ priceDrivePlus }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -5945,6 +5940,17 @@
       ],
       "Switch plan": [
         "切換方案"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "方案從${ priceDrivePlus }起"
+      ],
+      "Upgrade": [
+        "升級"
       ]
     },
     "new_plans: feature": {
@@ -8153,20 +8159,6 @@
         "${ totalPrice } 版"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } 可用空間 / 每位使用者"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains }個電郵網域名稱"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails }個電郵位址"
-      ],
-      "Folders, labels, and custom filters": [
-        "資料夾，標籤和自訂過濾規則"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB 儲存空間"
@@ -8206,6 +8198,20 @@
       ],
       "Your privacy is our mission": [
         "您的隱私是我們責任"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } 可用空間 / 每位使用者"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains }個電郵網域名稱"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails }個電郵位址"
+      ],
+      "Folders, labels, and custom filters": [
+        "資料夾，標籤和自訂過濾規則"
       ]
     },
     "Subscription renewal state": {

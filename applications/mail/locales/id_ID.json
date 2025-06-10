@@ -636,6 +636,9 @@
       "Hide messages": [
         "Sembunyikan pesan"
       ],
+      "Hide more benefits": [
+        "Sembunyikan manfaat lainnya"
+      ],
       "Hide my email": [
         "Hide my email"
       ],
@@ -851,6 +854,9 @@
       ],
       "More actions": [
         "Tindakan lainnya"
+      ],
+      "More benefits": [
+        "Lebih banyak manfaat"
       ],
       "More details about ${ ariaLabelTitle }": [
         "Rincian lebih lanjut seputar ${ ariaLabelTitle }"
@@ -1173,11 +1179,11 @@
       "Select ${ planTitle }": [
         "Pilih ${ planTitle }"
       ],
-      "Select All": [
-        "Pilih Semua"
-      ],
       "Select all": [
         "Pilih semua"
+      ],
+      "Select All": [
+        "Pilih Semua"
       ],
       "Select all messages": [
         "Pilih semua pesan"
@@ -1289,6 +1295,9 @@
       ],
       "Show more": [
         "Tampilkan lebih banyak"
+      ],
+      "Show more benefits": [
+        "Tampilkan lebih banyak manfaat"
       ],
       "Show more search options": [
         "Tampilkan lebih banyak opsi pencarian"
@@ -5521,6 +5530,9 @@
       "Contacts": [
         "Kontak"
       ],
+      "Drawer": [
+        "Panel Samping"
+      ],
       "Hardware not compatible": [
         "Perangkat keras tidak kompatibel"
       ],
@@ -6304,6 +6316,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Setidaknya ${ BETTER_PASSWORD_LENGTH } karakter"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Pada akhir masa uji coba ${ boldCancelDate } Anda, Anda akan diturunkan ke ${ boldProtonFree }. Seluruh akun pengguna akan dihapus dari organisasi Anda."
+      ],
       "Attach public key": [
         "Lampirkan kunci publik"
       ],
@@ -6396,6 +6411,9 @@
       ],
       "Close this screen to exit.": [
         "Tutup layar ini untuk keluar."
+      ],
+      "Composer:": [
+        "Komposer:"
       ],
       "Confirm phishing report": [
         "Konfirmasi laporan phishing"
@@ -6739,11 +6757,11 @@
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Apabila Anda merasa kami telah membuat kesalahan, silakan ${ contactLink }."
       ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Apabila Anda membatalkan, Anda akan kehilangan akses ke ${ boldPlanTitle } dengan segera, dan Anda akan diturunkan ke paket ${ boldProtonFree }. Apabila pemakaian Anda melebihi batas pemakaian paket gratis, akses Anda ke fitur produk dan data Anda akan dapat dibatasi."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Apabila Anda membatalkan langganan, paket ${ planTitle } Anda tidak akan diperbarui ketika paket ini berakhir pada ${ expiryDate }."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Apabila Anda berubah pikiran, Anda dapat berlangganan kembali kapan saja. Kami sungguh menyayangkan kepergian Anda!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
@@ -7660,9 +7678,6 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Untuk menyelesaikan pembayaran Anda, silakan kirim ${ btcAmountBold } ke alamat di bawah ini."
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "Untuk terus menggunakan ${ boldPlanTitle } secara gratis hingga ${ boldCancelDate }, jangan batalkan paket Anda."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda manusia."
       ],
@@ -7888,9 +7903,6 @@
       "Week": [
         "Pekan"
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "Apa yang Anda korbankan pada saat Anda membatalkan ${ boldPlanTitle }:"
-      ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Kapankah Anda ingin pesan Anda untuk terhapus secara otomatis dari kotak masuk penerima dan folder terkirim Anda?"
       ],
@@ -7984,9 +7996,6 @@
       "You can now return to the application to continue": [
         "Anda kini dapat kembali ke aplikasi untuk melanjutkan"
       ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "Anda akan tetap dapat mengakses seluruh data akun Anda. Anda dapat berlangganan kembali kapan saja untuk terus menikmati seluruh fitur kami."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat email baru yang masuk ke folder ini."
       ],
@@ -8077,6 +8086,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Anda menulis “${ attachmentsFoundKeyword }”, namun Anda tidak melampirkan berkas apa pun. Apakah Anda yakin untuk tetap mengirim pesan ini?"
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "Anda juga akan kehilangan akses ke berbagai fitur ${ boldPlanTitle } berikut:"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Anda kemudian akan ditagih setiap ${ renewCycle } bulan pada harga ${ renewAmountStr }."
       ],
@@ -8094,9 +8106,6 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Langganan ${ PASS_SHORT_APP_NAME } Plus Anda akan digantikan dengan ${ PASS_SHORT_APP_NAME } Lifetime. Saldo sisa langganan Anda akan ditambahkan ke akun Anda. Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
-      ],
-      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
-        "Paket ${ planName } Anda kini merupakan paket berbayar yang diperbarui secara otomatis setiap 12 bulan. Tanggal penagihan Anda selanjutnya adalah ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akses ke akun Anda akan segera dibatasi. ${ payInvoiceLink }"
@@ -8124,9 +8133,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan"
-      ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "Masa uji coba gratis ${ boldPlanTitle } Anda telah dibatalkan, dan akun ${ boldUserEmail } milik Anda telah diturunkan ke ${ boldProtonFree }."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Perangkat keras Anda tidak mendukung penggunaan asisten penulisan secara lokal. Cobalah untuk menjalankan fitur ini pada server."
@@ -8164,9 +8170,6 @@
       "Your online activity is protected": [
         "Aktivitas online Anda terlindung"
       ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "Organisasi ${ boldOrganizationName } milik Anda telah dinonaktifkan, dan seluruh kuota pengguna yang dimiliki oleh organisasi ini telah dihapus."
-      ],
       "Your password was leaked:": [
         "Kata sandi Anda telah bocor:"
       ],
@@ -8190,6 +8193,12 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Masa uji coba Anda akan berakhir dalam ${ timeRemaining }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Anda akan kehilangan akses ke ${ boldPlanTitle } pada ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Anda akan tetap dapat melihat data milik akun Anda, namun seluruh akun pengguna akan dihapus dari organisasi Anda."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Anda hanya tinggal beberapa klik lagi untuk memiliki kotak masuk yang rapi"
@@ -8506,6 +8515,9 @@
       ],
       "Address": [
         "Alamat"
+      ],
+      "Alias title": [
+        "Judul alias"
       ],
       "ALL": [
         "SEMUA"
@@ -10332,6 +10344,9 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Akses internet secara aman dari mana pun dengan pemantauan jaringan yang esensial"
       ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Layanan penyimpanan aman berbasis cloud yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan berkas secara mudah dan aman."
+      ],
       "Secure email with advanced features for your everyday communications.": [
         "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
       ],
@@ -10970,6 +10985,23 @@
         "Anda akan dapat mengubah tema Anda kapan pun pada menu pengaturan."
       ]
     },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "Batalkan kapan saja sebelum tenggat waktu ini."
+      ],
+      "Once your full subscription starts...": [
+        "Setelah langganan penuh Anda dimulai..."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Anda masih akan dapat membatalkan langganan dalam 30 hari dan memperoleh uang kembali secara proratif."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Langganan penuh ${ planTitle } Anda akan dimulai pada ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Anda akan dapat menggunakan ${ planTitle } secara cuma-cuma hingga masa uji coba Anda berakhir."
+      ]
+    },
     "Online accounts": {
       "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
         "Memiliki akun pada salah satu layanan di bawah ini? Cukup klik layanan yang terkait untuk mengubah alamat email yang terdaftar ke alamat ${ MAIL_APP_NAME } Anda."
@@ -11049,6 +11081,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Akses ke Seluruh aplikasi dan fitur premium ${ BRAND_NAME }"
+      ],
       "Secure vault sharing": [
         "Pembagian brankas yang aman"
       ],
@@ -12455,6 +12490,47 @@
         "Untuk ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
@@ -12707,47 +12783,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {
@@ -14145,9 +14180,6 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Masa uji coba gratis ${ planName } Anda akan berakhir pada ${ textDate }"
       ],
-      "Your ${ planName } subscription started": [
-        "Langganan ${ planName } Anda dimulai pada"
-      ],
       "Your account is protected": [
         "Akun Anda terlindung"
       ],
@@ -14156,6 +14188,9 @@
       ],
       "Your exposed information": [
         "Informasi Anda yang terpapar"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } days": [
+        "Masa uji coba gratis Anda akan berakhir dalam ${ trialDurationFormatted } hari"
       ],
       "Your free trial has ended": [
         "Masa uji coba gratis Anda telah berakhir"

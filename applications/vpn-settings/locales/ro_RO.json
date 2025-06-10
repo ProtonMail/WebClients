@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activare"
-      ],
       "activate": [
         "activare"
+      ],
+      "Activate": [
+        "Activare"
       ],
       "Activate organization key": [
         "Activare chei organizație"
@@ -267,11 +267,11 @@
       "Discard": [
         "Renunțare"
       ],
-      "Discard changes": [
-        "Anulare modificări"
-      ],
       "Discard Changes": [
         "Ignorare modificări"
+      ],
+      "Discard changes": [
+        "Anulare modificări"
       ],
       "Discover ${ planName }": [
         "Descoperiți ${ planName }"
@@ -438,6 +438,9 @@
       "Hide": [
         "Ascundere"
       ],
+      "Hide more benefits": [
+        "Ascundere mai multe beneficii"
+      ],
       "Hide plan features": [
         "Ascundere caracteristici plan"
       ],
@@ -471,6 +474,9 @@
       "Keep subscription": [
         "Păstrare abonament"
       ],
+      "Learn more": [
+        "Detalii"
+      ],
       "Let's talk": [
         "Să discutăm"
       ],
@@ -503,6 +509,9 @@
       ],
       "Mark as favorite": [
         "Marcare ca favorită"
+      ],
+      "More benefits": [
+        "Mai multe beneficii"
       ],
       "More info: ${ safeTitle }": [
         "Mai multe informații: ${ safeTitle }"
@@ -699,11 +708,11 @@
       "Select country ${ country }": [
         "Selectare țara ${ country }"
       ],
-      "select file": [
-        "selectați fișierul"
-      ],
       "Select file": [
         "Selectare fișier"
+      ],
+      "select file": [
+        "selectați fișierul"
       ],
       "Send code": [
         "Trimitere cod"
@@ -767,6 +776,9 @@
       ],
       "Show more": [
         "Afișare mai mult"
+      ],
+      "Show more benefits": [
+        "Afișare mai multe beneficii"
       ],
       "Show preview": [
         "Afișare previzualizare"
@@ -4433,6 +4445,9 @@
       "At least one application must be active": [
         "Trebuie să fie activă cel puțin o aplicație"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "La sfârșitul perioadei de probare ${ boldCancelDate }, contul va fi retrogradat la ${ boldProtonFree }. Toate conturile de utilizator vor fi eliminate din organizație."
+      ],
       "Attention required": [
         "Necesită atenție"
       ],
@@ -4578,11 +4593,11 @@
       "Data recoverable on this device": [
         "Datele recuperabile pe acest dispozitiv"
       ],
-      "Dedicated servers": [
-        "Servere dedicate"
-      ],
       "dedicated servers": [
         "servere dedicate"
+      ],
+      "Dedicated servers": [
+        "Servere dedicate"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -4858,11 +4873,11 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Dacă credeți că acest lucru este o eroare, vă rugăm să ne contactați la ${ contactLink }."
       ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Dacă anulați, veți pierde imediat accesul la ${ boldPlanTitle } și planul va fi retrogradat ${ boldProtonFree }. Dacă utilizarea actuală depășește limitele planului gratuit, este posibil să aveți acces restricționat la funcțiile produsului și la datele personale."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Dacă anulați, abonamentul la ${ planTitle } nu va fi reînnoit când va expira la ${ expiryDate }."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Dacă vă răzgândiți, vă puteți reabona oricând. Ne pare rău că plecați!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
@@ -5179,9 +5194,6 @@
       ],
       "Or select a particular server:": [
         "Sau selectați un server anume:"
-      ],
-      "Organization --> Groups": [
-        "Organizație -> Grupuri"
       ],
       "Organization size": [
         "Mărime organizație"
@@ -5666,9 +5678,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Pentru a confirma, introduceţi numele utilizatorului pe care doriţi să-l ştergeţi."
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "Pentru a continua să vă bucurați de ${ boldPlanTitle } gratuit până la ${ boldCancelDate }, nu anulați."
-      ],
       "To continue to ${ product }": [
         "Pentru a continua cu ${ product }"
       ],
@@ -5777,11 +5786,11 @@
       "User activated": [
         "Utilizator activat"
       ],
-      "Username": [
-        "Nume de utilizator"
-      ],
       "username": [
         "utilizator"
+      ],
+      "Username": [
+        "Nume de utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -5897,9 +5906,6 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Veți primi un cod de resetare la numărul de telefon pe care l-ați furnizat pentru recuperarea contului."
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "La ce renunțați când anulați ${ boldPlanTitle }:"
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Când activați SAML pentru ${ appName } în furnizorul de identitate, vi se poate solicita să utilizați adresa URL de apel invers (ACS) și ID-ul emitentului. Doar copiați și lipiți datele de mai jos în câmpurile furnizorului de identitate."
       ],
@@ -6008,9 +6014,6 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Puteți avea o singură fereastră de conversații deschisă. Închideți conversațiile anterioare înainte de a deschide alta nouă."
       ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "Încă vă puteți accesa toate datele contului. Vă puteți abona din nou oricând pentru a continua să vă bucurați de toate funcțiile noastre."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puteți activa notificările pentru a primi alerte atunci când apar mesaje noi în acest folder."
       ],
@@ -6087,6 +6090,9 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Nu veți putea realoca aceste servere altei țări timp de 10 zile."
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "Veți pierde accesul și la funcțiile ${ boldPlanTitle }:"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Plata va fi apoi la ${ renewCycle } lună cu ${ renewAmountStr }.",
         "Plata va fi apoi la ${ renewCycle } luni cu ${ renewAmountStr }.",
@@ -6133,9 +6139,6 @@
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "Perioada gratuită de probare a ${ boldPlanTitle } a fost anulată și contul ${ boldUserEmail } a fost retrogradat la ${ boldProtonFree }."
-      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informațiile vă sunt în siguranță la noi. Vă vom contacta doar atunci când este necesar să vă furnizăm serviciile."
       ],
@@ -6144,9 +6147,6 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Următoarea dată de facturare este ${ renewalTime }. Contactați asistența dacă aveți nevoie de o schimbare imediată a planului."
-      ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "Organizația ${ boldOrganizationName } este dezactivată și toate licențele sale de utilizatori au fost eliminate."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organizația dvs. utilizează conectarea unică (SSO). Apăsați pe Conectare pentru a continua cu furnizorul propriu de conectare unică (SSO)."
@@ -6176,6 +6176,12 @@
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Veți putea adăuga aceste servere la o altă poartă de acces imediat."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Veți pierde accesul la ${ boldPlanTitle } la ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
@@ -6370,10 +6376,10 @@
       "Allow recovery by phone": [
         "Permitere recuperare prin telefon"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domeniu permis"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domeniu permis"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -7085,6 +7091,9 @@
       "Forgot username?": [
         "Ați uitat numele de utilizator?"
       ],
+      "Groups": [
+        "Grupuri"
+      ],
       "Help": [
         "Ajutor"
       ],
@@ -7421,20 +7430,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ștergere cont"
@@ -7456,6 +7451,20 @@
       ],
       "Switch plan": [
         "Schimbare plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Upgrade": [
+        "Modificare"
       ]
     },
     "new_plans: feature": {
@@ -7985,6 +7994,9 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Accesați în siguranță internetul de oriunde cu monitorizarea esențială a rețelei"
       ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Stocare sigură în cloud care permite stocarea, sincronizarea și partajarea ușoară și sigură a fișierelor."
+      ],
       "Secure email with advanced features for your everyday communications.": [
         "E-mail securizat cu funcții avansate pentru comunicațiile personale zilnice."
       ],
@@ -8487,6 +8499,11 @@
         "Unele imagini nu au fost încărcate din cauza numelor de fișiere duplicate în selecția curentă."
       ]
     },
+    "oc_nightly: BYOE": {
+      "Something went wrong while loging into your Gmail account": [
+        "A intervenit o eroare la conectarea la contul Gmail."
+      ]
+    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Unlimited pentru 12 luni"
@@ -8581,6 +8598,23 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Bun venit la ${ appName }"
+      ]
+    },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "Anulați oricând înainte de această dată."
+      ],
+      "Once your full subscription starts...": [
+        "După ce începe abonamentul complet..."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Puteți încă anula în termen de 30 de zile și puteți obține o rambursare proporțională."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Abonamentul complet ${ planTitle } începe la ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Veți putea utiliza ${ planTitle } gratuit până la sfârșitul perioadei de probă."
       ]
     },
     "Option": {
@@ -8795,6 +8829,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Acces la toate aplicațiile ${ BRAND_NAME } și funcțiile lor premium"
+      ],
       "Secure vault sharing": [
         "Partajare sigură a seifurilor"
       ],
@@ -10582,6 +10619,47 @@
         "Pentru ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
@@ -10878,47 +10956,6 @@
         "Propriul alias de e-mail scurt @pm.me"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
-      ]
-    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Confirmați?"
@@ -10956,6 +10993,9 @@
       ],
       "Expiring": [
         "Expiră"
+      ],
+      "Free Trial": [
+        "Evaluare gratuită"
       ]
     },
     "Subtitle": {
@@ -11464,10 +11504,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -12134,6 +12174,9 @@
       ],
       "Your current plan": [
         "Planul curent"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } days": [
+        "Perioada de probare gratuită se termină peste ${ trialDurationFormatted } zile"
       ],
       "Your plan": [
         "Plan actual"
