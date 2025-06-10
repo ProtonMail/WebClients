@@ -6,6 +6,7 @@ import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { isChromeExtensionRollback } from 'proton-pass-extension/lib/utils/chrome';
 import { portTransferWriter } from 'proton-pass-extension/lib/utils/fs.utils';
+import { hasPermission } from 'proton-pass-extension/lib/utils/permissions';
 import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
 import { EXTENSION_BUILD_VERSION, EXTENSION_MANIFEST_VERSION } from 'proton-pass-extension/lib/utils/version';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -98,9 +99,18 @@ export const options: RootSagaOptions = {
     getAppState: withContext((ctx) => ctx.getState()),
     setAppStatus: withContext((ctx, status) => ctx.setStatus(status)),
 
-    /* Sets the worker status according to the
-     * boot sequence's result. On boot failure,
-     * clear */
+    onBeforeHydrate: async (state) => {
+        /** Initialize basic auth autofill setting based on current permission state.
+         * If not explicitly set by user, default to enabled when permission is already granted.
+         * Done during hydration to keep browser API calls out of core application logic. */
+        const basicAuth = state.settings.autofill.basicAuth;
+        state.settings.autofill.basicAuth = basicAuth ?? (await hasPermission('webRequestAuthProvider'));
+
+        return state;
+    },
+
+    /* Sets the worker status according to the boot
+     * sequence's result. On boot failure, clear. */
     onBoot: withContext(async (ctx, res) => {
         if (res.ok) {
             const state = store.getState();
