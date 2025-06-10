@@ -380,6 +380,9 @@
       "Help and resources": [
         "帮助和资源"
       ],
+      "Hide": [
+        "隐藏"
+      ],
       "Hide advanced PGP settings": [
         "隐藏高级 PGP 设置"
       ],
@@ -448,6 +451,9 @@
       ],
       "Later": [
         "稍后"
+      ],
+      "Learn more": [
+        "了解详情"
       ],
       "Let's talk": [
         "让我们聊聊"
@@ -4930,9 +4936,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
       ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "如果取消，您将立即失去对 ${ boldPlanTitle } 的访问，并将降级到 ${ boldProtonFree } 套餐。如果您的使用量超过免费套餐限制，那么您对产品功能和数据的访问可能会受到限制。"
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "如果您取消，您的 ${ planTitle } 订阅在 ${ expiryDate } 到期后将不会续订。"
       ],
@@ -5410,9 +5413,6 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "要完成付款，请发送 ${ btcAmountBold } 至以下地址。"
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "若要在 ${ boldCancelDate } 之前继续免费使用 ${ boldPlanTitle }，请不要取消。"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
       ],
@@ -5509,9 +5509,6 @@
       "Week and month views only apply to desktop.": [
         "只有桌面版能查看周视图和月视图。"
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "当您取消 ${ boldPlanTitle } 即视为您自动放弃以下权利："
-      ],
       "When working remotely": [
         "当您远程办公时"
       ],
@@ -5602,9 +5599,6 @@
       "You can now return to the application to continue": [
         "您现在可以返回到应用程序以继续"
       ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "您仍然可以访问您账户的所有数据。您也可以随时再次订阅，继续享受我们的所有功能。"
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
       ],
@@ -5683,9 +5677,6 @@
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "您的 ${ PASS_SHORT_APP_NAME } Plus 订阅将被替换为 ${ PASS_SHORT_APP_NAME } Lifetime。订阅的差价将计入您的账户。${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
       ],
-      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
-        "您的 ${ planName } 套餐现在是付费订阅，每 12 个月自动续订。您的下一个账单日期是 ${ nextBillingDate }。"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
       ],
@@ -5719,9 +5710,6 @@
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "您的 ${ boldPlanTitle } 免费试用已取消，您的账户 ${ boldUserEmail } 已降级到 ${ boldProtonFree }。"
-      ],
       "Your information was found on ${ displayedDate }": [
         "您的信息在 ${ displayedDate } 找到"
       ],
@@ -5745,9 +5733,6 @@
       ],
       "Your online activity is protected": [
         "您的在线活动受到保护"
-      ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "您的组织 ${ boldOrganizationName } 已被禁用，其所有用户席位已被删除。"
       ],
       "Your password was leaked:": [
         "您的密码已泄露："
@@ -6955,11 +6940,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "删除账户"
@@ -6981,6 +6961,11 @@
       ],
       "Switch plan": [
         "切换计划"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -9381,6 +9366,47 @@
         "总计 ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动邮件转发 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "简短的 @pm.me 邮箱地址"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "具有高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 以及 ${ VPN_SHORT_APP_NAME }"
@@ -9633,47 +9659,6 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己的短 @pm.me 邮箱别名"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动邮件转发 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "简短的 @pm.me 邮箱地址"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription renewal state": {
@@ -10652,9 +10637,6 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "您的 ${ planName } 免费试用期将于 ${ textDate } 结束"
-      ],
-      "Your ${ planName } subscription started": [
-        "您的 ${ planName } 订阅已启用"
       ],
       "Your account is protected": [
         "您的账户已受保护"

@@ -1811,6 +1811,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
+      ],
       "Moving items": [
         "Einträge verschieben"
       ],
@@ -3180,10 +3184,10 @@
       "Priority:": [
         "Priorität:"
       ],
-      "Private key": [
+      "Private Key": [
         "Privater Schlüssel"
       ],
-      "Private Key": [
+      "Private key": [
         "Privater Schlüssel"
       ],
       "Product": [

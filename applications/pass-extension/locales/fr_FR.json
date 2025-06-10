@@ -152,10 +152,10 @@
       "Create": [
         "Créer"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Créer un compte ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Créer un compte ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -392,11 +392,11 @@
       "Move to another vault": [
         "Déplacer vers un autre coffre-fort"
       ],
-      "Move to Trash": [
-        "Déplacer dans la corbeille"
-      ],
       "Move to trash": [
         "Déplacer dans le dossier Corbeille"
+      ],
+      "Move to Trash": [
+        "Déplacer dans la corbeille"
       ],
       "Multiple select": [
         "Sélection multiple"
@@ -1790,7 +1790,8 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -3223,10 +3224,10 @@
       "Show website favicons": [
         "Afficher les favicônes des sites internet"
       ],
-      "Social security": [
+      "Social Security": [
         "Sécurité sociale"
       ],
-      "Social Security": [
+      "Social security": [
         "Sécurité sociale"
       ],
       "Social security number": [

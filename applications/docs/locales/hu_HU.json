@@ -312,6 +312,9 @@
       "Download anyway": [
         "Letöltés mindenképpen"
       ],
+      "Download logs": [
+        "Naplók letöltése"
+      ],
       "Edit": [
         "Szerkesztés"
       ],
@@ -398,6 +401,9 @@
       ],
       "Help and resources": [
         "Súgó és források"
+      ],
+      "Hide": [
+        "Elrejtés"
       ],
       "Hide advanced PGP settings": [
         "Haladó PGP beállítások elrejtése"
@@ -2342,11 +2348,6 @@
         "Lejárt számla"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "használja az Easy Switch importálási asszisztenst"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } a ${ DRIVE_APP_NAME }-ben lehetővé teszi, hogy másokkal együtt dolgozzon egy biztonságos, titkosított környezetben."
@@ -2470,6 +2471,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Már létrehozott 10 e-mail álnevet. Szerezzen korlátlan e-mail álnevet és 500 GB tárhelyet a ${ BRAND_NAME } Unlimited szolgáltatással."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "használja az Easy Switch importálási asszisztenst"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6514,17 +6520,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Csomagok ${ priceDrivePlus } ártól"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -6546,6 +6541,17 @@
       ],
       "Switch plan": [
         "Csomag váltása"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Csomagok ${ priceDrivePlus } ártól"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -8955,25 +8961,6 @@
         "${ totalPrice } áron"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } tárhely felhasználónként"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "A(z) ${ planName } az összes alkalmazás, az összes funkció mellett korai hozzáférést biztosít az új kiadásokhoz, és mindent megad, amire szüksége van ahhoz, hogy kézben tartsa az adatait és azok biztonságát."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } saját e-mail domain név",
-        "${ planNumberOfDomains } saját e-mail domain név"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } email cím",
-        "${ planNumberOfEmails } e-mail cím"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mappák, címkék és egyéni szűrők"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB tárhely"
@@ -9013,6 +9000,25 @@
       ],
       "Your privacy is our mission": [
         "Az Ön adatvédelme a mi küldetésünk"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } tárhely felhasználónként"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "A(z) ${ planName } az összes alkalmazás, az összes funkció mellett korai hozzáférést biztosít az új kiadásokhoz, és mindent megad, amire szüksége van ahhoz, hogy kézben tartsa az adatait és azok biztonságát."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } saját e-mail domain név",
+        "${ planNumberOfDomains } saját e-mail domain név"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } email cím",
+        "${ planNumberOfEmails } e-mail cím"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mappák, címkék és egyéni szűrők"
       ]
     },
     "Subscription renewal state": {

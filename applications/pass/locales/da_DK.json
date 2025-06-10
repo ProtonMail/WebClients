@@ -664,7 +664,7 @@
         "Se ældre historik"
       ],
       "With other ${ BRAND_NAME } users": [
-        "Med andre brugere af ${ BRAND_NAME }"
+        "Med andre ${ BRAND_NAME }-brugere"
       ],
       "Write us on X/Twitter": [
         "Skriv til os på X/Twitter"
@@ -1784,6 +1784,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2701,7 +2705,7 @@
         "Etage, lejlighed, bygning"
       ],
       "For a one-off sharing": [
-        "Til engangsdeling"
+        "Til éngangsdeling"
       ],
       "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
         "Af sikkerhedsmæssige årsager låser ${ PASS_SHORT_APP_NAME } automatisk sig selv efter 10 minutters inaktivitet."
@@ -3199,7 +3203,7 @@
         "Anvendt i"
       ],
       "Useful for permanent sharing": [
-        "Nyttig til permanent deling"
+        "Nyttigt til permanent deling"
       ],
       "Username": [
         "Brugernavn"

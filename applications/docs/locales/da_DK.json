@@ -303,6 +303,9 @@
       "Download anyway": [
         "Download alligevel"
       ],
+      "Download logs": [
+        "Download-logfiler"
+      ],
       "Edit": [
         "Redigér"
       ],
@@ -389,6 +392,9 @@
       ],
       "Help and resources": [
         "Hjælp og ressourcer"
+      ],
+      "Hide": [
+        "Skjul"
       ],
       "Hide advanced PGP settings": [
         "Skjul avancerede PGP-indstillinger"
@@ -2312,11 +2318,6 @@
         "Forfalden faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "skal du bruge Easy Switch importassistenten"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter din konto med målrettet 24/7-overvågning af mistænkelig aktivitet - inklusive eskalering til sikkerhedsspecialister."
@@ -2395,6 +2396,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "skal du bruge Easy Switch importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5023,7 +5029,7 @@
         "Vi skal have bekræftet din betaling hos din bank."
       ],
       "We use 3-D Secure to protect your payments": [
-        "Vi bruger 3-D Secure til at beskytte dine betalinger"
+        "Vi bruger 3-D Secure til at sikre dine betalinger"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
@@ -6291,17 +6297,6 @@
         "Mellem VPN-hastighed"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Abonnementer starter fra ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slet konto"
@@ -6323,6 +6318,17 @@
       ],
       "Switch plan": [
         "Skift abonnement"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Abonnementer starter fra ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Opgradér"
       ]
     },
     "new_plans: feature": {
@@ -8667,25 +8673,6 @@
         "Til ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } lagerplads pr. bruger"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } giver dig alle apps, alle funktioner, forhåndstilgang til nye udgivelser og alt, hvad der kræves for at have kontrol over dine datasikkerhed."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } tilpasset e-maildomæne",
-        "${ planNumberOfDomains } tilpassede e-maildomæner"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-mailadresse",
-        "${ planNumberOfEmails } e-mailadresser"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mapper, etiketter og brugerdefinerede filtre"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB lagerplads"
@@ -8725,6 +8712,25 @@
       ],
       "Your privacy is our mission": [
         "Dit privatliv er vores mission"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } lagerplads pr. bruger"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } giver dig alle apps, alle funktioner, forhåndstilgang til nye udgivelser og alt, hvad der kræves for at have kontrol over dine datasikkerhed."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } tilpasset e-maildomæne",
+        "${ planNumberOfDomains } tilpassede e-maildomæner"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailadresse",
+        "${ planNumberOfEmails } e-mailadresser"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mapper, etiketter og brugerdefinerede filtre"
       ]
     },
     "Subscription renewal state": {
@@ -9724,7 +9730,7 @@
     },
     "vpn_2step: feature": {
       "Advanced VPN customizations": [
-        "Avancerede VPN-tilpasninger"
+        "Avancerede VPN-indstillinger"
       ],
       "No ads": [
         "Ingen reklamer"

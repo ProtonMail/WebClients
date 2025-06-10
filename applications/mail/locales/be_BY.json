@@ -645,6 +645,9 @@
       "Hide messages": [
         "Схаваць паведамленні"
       ],
+      "Hide more benefits": [
+        "Схаваць больш пераваг"
+      ],
       "Hide my email": [
         "Hide-my-email"
       ],
@@ -863,6 +866,9 @@
       ],
       "More actions": [
         "Больш дзеянняў"
+      ],
+      "More benefits": [
+        "Больш пераваг"
       ],
       "More details about ${ ariaLabelTitle }": [
         "Больш падрабязнасцяў аб ${ ariaLabelTitle }"
@@ -1185,10 +1191,10 @@
       "Select ${ planTitle }": [
         "Выбраць ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Выбраць усе"
       ],
-      "Select all": [
+      "Select All": [
         "Выбраць усе"
       ],
       "Select all messages": [
@@ -1301,6 +1307,9 @@
       ],
       "Show more": [
         "Паказаць больш"
+      ],
+      "Show more benefits": [
+        "Паказаць больш пераваг"
       ],
       "Show more search options": [
         "Паказаць больш параметраў пошуку"
@@ -6613,6 +6622,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Прынамсі ${ BETTER_PASSWORD_LENGTH } сімвалаў"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "У канцы вашага пробнага перыяду ${ boldCancelDate }, ваш тарыфны план будзе паніжаны да ${ boldProtonFree }. Усе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
       "Attach public key": [
         "Далучыць публічны ключ"
       ],
@@ -6705,6 +6717,9 @@
       ],
       "Close this screen to exit.": [
         "Закрыйце гэта акно, каб выйсці."
+      ],
+      "Composer:": [
+        "Рэдактар:"
       ],
       "Confirm phishing report": [
         "Пацвердзіць скаргу на фішынг"
@@ -7078,11 +7093,11 @@
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Калі вы ўпэўнены, што гэта памылка, звяжыцеся з намі ${ contactLink }."
       ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Вы неадкладна згубіце доступ да ${ boldPlanTitle } і ваш тарыфны план будзе паніжаны да ${ boldProtonFree }, калі вы скасуеце бягучы. Ваш доступ да функцый прадукту і даных можа быць абмежаваны, калі будуць перавышаны абмежаванні бясплатнага тарыфнага плана."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Калі вы скасуеце, ваша падпіска ${ planTitle } не будзе падоўжана пасля завяршэння тэрміну яе дзеяння ${ expiryDate }."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Вы зможаце зноў падпісацца ў любы час, калі перадумаеце. Нам вельмі шкада, што вы пакідаеце нас!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
@@ -7157,10 +7172,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -7828,6 +7840,9 @@
       "Text to display": [
         "Тэкст для паказу"
       ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "Дзякуй, што выбралі ${ BRAND_NAME } для абароны сваёй арганізацыі."
+      ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Дзякуй, што падпісаліся. Зараз пачнецца бяспечны прагляд."
       ],
@@ -8025,9 +8040,6 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
-      ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "Не скасоўвайце бягучы тарыфны план да ${ boldCancelDate }, каб працягваць бясплатна атрымліваць асолоду ад ${ boldPlanTitle }"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
@@ -8254,9 +8266,6 @@
       "Week": [
         "Тыдзень"
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "Што вы страціце, калі скасуеце ${ boldPlanTitle }:"
-      ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Калі вы хочаце, каб ваша паведамленне аўтаматычна выдалялася з паштовай скрыні атрымальніка і папкі з адпраўленымі лістамі ў вашай паштовай скрыні?"
       ],
@@ -8355,9 +8364,6 @@
       ],
       "You can now return to the application to continue": [
         "Цяпер вы можаце вярнуцца да праграмы, каб працягнуць"
-      ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "У вас усё яшчэ ёсць доступ да ўсіх даных вашага ўліковага запісу. Вы ў любы час можаце вярнуць падпіску, каб працягваць атрымліваць асалоду ад ўсіх функцый нашага сэрвісу."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можаце ўключыць апавяшчэнні, каб атрымліваць абвесткі пра новыя паведамленні электроннай пошты ў гэтай папцы."
@@ -8485,6 +8491,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Вы напісалі “${ attachmentsFoundKeyword }\", але не дадалі далучэнне. Вы сапраўды хочаце ўсё роўна адправіць паведамленне?"
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "Вы таксама страціце доступ да функцый ${ boldPlanTitle }:"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяц у памеры ${ renewAmountStr }.",
         "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцы ў памеры ${ renewAmountStr }.",
@@ -8505,9 +8514,6 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ваша падпіска ${ PASS_SHORT_APP_NAME } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Астатак балансу вашай падпіскі будзе дададзены на ваш рахунак. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
-      ],
-      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
-        "Ваш тарыфын план ${ planName } цяпер з'яўляецца платнай падпіскай, якая аўтаматычна падаўжаецца кожныя 12 месяцаў. Наступная дата спагнання грашовых сродкаў адбудзецца ${ nextBillingDate }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
@@ -8536,8 +8542,11 @@
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "Ваш бясплатны пробны перыяд ${ boldPlanTitle } быў скасаваны, а ваш уліковы запіс ${ boldUserEmail } быў паніжаны да ${ boldProtonFree }."
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Ваш бясплатны пробны перыяд быў паспяхова пераўтвораны ў ${ cycle }-месячную падпіску. Ваша дата падаўжэння: ${ nextBillingDate }."
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Ваша дата падаўжэння: ${ nextBillingDate }."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Ваша абсталяванне не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы."
@@ -8578,9 +8587,6 @@
       "Your online activity is protected": [
         "Ваша актыўнасць у інтэрнэце абаронена"
       ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "Ваша арганізацыя ${ boldOrganizationName } адключана, а ўсе ліцэнзіі яе карыстальнікаў былі выдалены."
-      ],
       "Your password was leaked:": [
         "Адбылася ўцечка вашага пароля:"
       ],
@@ -8607,6 +8613,12 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Ваш пробны перыяд завершыцца праз ${ timeRemaining }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Доступ да ${ boldPlanTitle } будзе страчаны ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Вы ўсё яшчэ зможаце праглядаць даныя вашага ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
@@ -10818,12 +10830,6 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand }, якая заканчваецца на ${ last4 }"
       ],
-      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "1 ТБ воблачнага сховішча, якое дазваляе вам лёгка захоўваць, сінхранізаваць і абагульваць файлы. Абаронена скразным шыфраваннем."
-      ],
-      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "200 ГБ воблачнага сховішча, якое дазваляе вам лёгка захоўваць, сінхранізаваць і абагульваць файлы. Абаронена скразным шыфраваннем."
-      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Пашыраная бяспека сеткі і кіраванне доступам з дапамогай вылучаных шлюзоў"
       ],
@@ -10883,6 +10889,9 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Бяспечны доступ у інтэрнэт з любой краіны ў свеце, дзякуючы назіранню за сеткай"
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Бяспечнае воблачнае сховішча, якое дазваляе вам лёгка і бяспечна захоўваць, сінхранізаваць і абагульваць файлы."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Бяспечная электронная пошта з пашыранымі функцыямі для штодзённых зносін."
@@ -11528,6 +11537,23 @@
         "Вы зможаце змяніць тэму ў любы час праз налады."
       ]
     },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "Ад падпіскі можна адмовіцца ў любы час да заканчэння дзеяння яе перыяду."
+      ],
+      "Once your full subscription starts...": [
+        "Як толькі пачнецца ваша поўная падпіска..."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Вы ўсё яшчэ зможаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Ваша поўная падпіска на тарыфны план ${ planTitle } пачнецца ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "У вас будзе магчымасць карыстацца ${ planTitle } бясплатна да канца пробнага перыяду."
+      ]
+    },
     "Online accounts": {
       "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
         "У вас ужо ёсць уліковы запіс у адным з гэтых сэрвісаў? Проста націсніце, каб змяніць адрас электроннай пошты на адрас ${ MAIL_APP_NAME }."
@@ -11607,6 +11633,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Доступ да ўсіх праграм ${ BRAND_NAME } і прэміяльных функцый"
+      ],
       "Secure vault sharing": [
         "Бяспечнае абагульванне сховішча"
       ],
@@ -13127,6 +13156,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
@@ -13397,47 +13467,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -14976,8 +15005,8 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш бясплатны выпрабавальны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"
       ],
-      "Your ${ planName } subscription started": [
-        "Ваша падпіска ${ planName } пачнецца"
+      "Your ${ planName } subscription has started": [
+        "Ваша падпіска ${ planName } пачалася"
       ],
       "Your account is protected": [
         "Ваш уліковы запіс абаронены"
@@ -14987,6 +15016,9 @@
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } days": [
+        "Ваш бясплатны пробны перыяд скончыцца праз ${ trialDurationFormatted } дзён"
       ],
       "Your free trial has ended": [
         "Час пробнага перыяду завяршыўся"

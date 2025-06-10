@@ -445,6 +445,9 @@
       "Delete your account": [
         "თქვენი ანგარიშის წაშლა"
       ],
+      "Delete “${ label.Name }”": [
+        "\"${ label.Name }\"-ის წაშლა"
+      ],
       "Deny access": [
         "წვდომის აკრძალვა"
       ],
@@ -466,10 +469,10 @@
       "Discard": [
         "მოცილება"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "ცვლილებების გაუქმება"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "ცვლილებების გაუქმება"
       ],
       "Discover ${ planName }": [
@@ -570,6 +573,9 @@
       ],
       "Edit users": [
         "მომხმარებლების ჩასწორება"
+      ],
+      "Edit “${ label.Name }”": [
+        "\"${ label.Name }\"-ის ჩასწორება"
       ],
       "Emoji": [
         "ემოჯი"
@@ -730,6 +736,9 @@
       "Hide": [
         "დამალვა"
       ],
+      "Hide more benefits": [
+        "მეტი ბონუსის დამალვა"
+      ],
       "Hide plan features": [
         "ტარიფის თვისებების დამალვა"
       ],
@@ -802,11 +811,17 @@
       "Keep my subscription": [
         "ჩემი გამოწერის შენარჩუნება"
       ],
+      "Keep subscription": [
+        "გამოწერის შენარჩუნება"
+      ],
       "label emails as": [
         "ელ-ფოსტების მონიშვნა, როგორც"
       ],
       "Later": [
         "მოგვიანებით"
+      ],
+      "Learn more": [
+        "გაიგეთ მეტი"
       ],
       "Leave": [
         "გასვლა"
@@ -873,6 +888,9 @@
       ],
       "More": [
         "მეტი"
+      ],
+      "More benefits": [
+        "მეტი ბონუსი"
       ],
       "More info: ${ safeTitle }": [
         "გაიგეთ მეტი: ${ safeTitle }"
@@ -976,10 +994,10 @@
       "Refresh status": [
         "სტატუსის განახლება"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "გვერდის განახლება"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "გვერდის განახლება"
       ],
       "Reject": [
@@ -1156,10 +1174,10 @@
       "Select country ${ country }": [
         "${ country } ქვეყნის არჩევა"
       ],
-      "select file": [
+      "Select file": [
         "აირჩიეთ ფაილი"
       ],
-      "Select file": [
+      "select file": [
         "აირჩიეთ ფაილი"
       ],
       "Select files": [
@@ -1251,6 +1269,9 @@
       ],
       "Show more": [
         "მეტის ჩვენება"
+      ],
+      "Show more benefits": [
+        "მეტი ბონუსის ჩვენება"
       ],
       "Show preview": [
         "გადახედვის ჩვენება"
@@ -4954,6 +4975,9 @@
       "Error in one of the conditions": [
         "შეცდომა ერთ-ერთ პირობაში"
       ],
+      "Error publishing changes": [
+        "ცვლილებების გამოცემის შეცდომა"
+      ],
       "Expired": [
         "ვადაგასულია"
       ],
@@ -7436,10 +7460,10 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "გაააქტიურეთ ანგარიშის აღდგენის ერთი მეთოდი მაინც, რომ დარწმუნდეთ, რომ თქვენს ${ BRAND_NAME }-ის ანგარიშზე წვდომა პაროლის დაკარგვის შემთხვევაშიც კი გექნებათ."
       ],
-      "active": [
+      "Active": [
         "აქტიური"
       ],
-      "Active": [
+      "active": [
         "აქტიური"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
@@ -7637,6 +7661,9 @@
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "სულ ცოტა ${ BETTER_PASSWORD_LENGTH } სიმბოლო"
+      ],
+      "At least one application must be active": [
+        "საჭიროა, ერთი აპლიკაცია მაინც იყოს აქტიური"
       ],
       "Attention required": [
         "საჭიროა ყურადღება"
@@ -7881,11 +7908,11 @@
       "Data recoverable on this device": [
         "ამ მოწყობილობაზე აღმოჩენადი მონაცემები"
       ],
-      "Dedicated servers": [
-        "გამოყოფილი სერვერები"
-      ],
       "dedicated servers": [
         "გამოყოფილი სერვერი"
+      ],
+      "Dedicated servers": [
+        "გამოყოფილი სერვერები"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართებით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ."
@@ -8808,9 +8835,6 @@
       "Or select a particular server:": [
         "ან აირჩიეთ სერვერი:"
       ],
-      "Organization --> Groups": [
-        "ორგანიზაცია -> ჯგუფები"
-      ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "ორგანიზაციის წევრებს თავიანთი ${ PASS_APP_NAME }-ის განბლოკვა დასჭირდებათ თავისი პაროლით ან PIN-კოდით."
       ],
@@ -9730,10 +9754,10 @@
       "User activated": [
         "მომხმრებელი გააქტიურდა"
       ],
-      "Username": [
+      "username": [
         "მომხმარებლის სახელი"
       ],
-      "username": [
+      "Username": [
         "მომხმარებლის სახელი"
       ],
       "Users": [
@@ -10880,10 +10904,10 @@
       "Allow sharing outside the organization": [
         "ორგანიზაციის გარეთ გაზიარების დაშვება"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "დაშვებული დომენი"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "დაშვებული დომენი"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -12046,6 +12070,9 @@
       "${ Label.Name } created": [
         "${ Label.Name } შეიქმნა"
       ],
+      "${ labelName } updated": [
+        "${ labelName } განახლდა"
+      ],
       "Preference saved": [
         "პარამეტრები შენახულია"
       ]
@@ -12140,6 +12167,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME }-ის მიღება"
+      ],
+      "Groups": [
+        "ჯგუფები"
       ],
       "Help": [
         "დახმარება"
@@ -13567,6 +13597,14 @@
         "განბლოკეთ ${ BRAND_NAME }-ის ყველა ფასიანი პროდუქტი და ფუნქცია სულ რაღაც ${ priceLine }-ად. გააუქმეთ როცა მოინდომებთ."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } საცდელი"
+      ],
+      "Your account's usage": [
+        "თქვენი ანგარიშის გამოყენება"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -13585,14 +13623,6 @@
       ],
       "Unlock premium features by upgrading": [
         "განბლოკეთ პრემიუმ თვისებები ტარიფის აწევით"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } საცდელი"
-      ],
-      "Your account's usage": [
-        "თქვენი ანგარიშის გამოყენება"
       ]
     },
     "new_plans: tooltip": {
@@ -16583,8 +16613,23 @@
       ]
     },
     "Signup": {
+      "${ DRIVE_APP_NAME } for Business": [
+        "${ DRIVE_APP_NAME } for Business"
+      ],
+      "${ value } of secure storage": [
+        "${ value } დაცული საცავი"
+      ],
+      "${ value } of secure storage per user": [
+        "${ value } დაცული საცავი თითოეული მომხმარებლისთვის"
+      ],
       "/user": [
         "/მომხმარებელი"
+      ],
+      "30 custom email addresses": [
+        "30 მორგებული ელ-ფოსტის მისამართი"
+      ],
+      "Advanced account protection": [
+        "დამატებითი ანგარიშის დაცვის პროგრამა"
       ],
       "Billing Cycle": [
         "ბილინგის ციკლი"
@@ -16592,8 +16637,29 @@
       "Compare plans": [
         "სატარიფო გეგმების შედარება"
       ],
+      "Confirm payment, access your Drive": [
+        "დაადასტურეთ გადახდა. იქონიეთ წვდომა თქვენს Drive-სთან"
+      ],
+      "Connect all your devices": [
+        "დააკავშირეთ თქვენი ყველა მოწყობილობა"
+      ],
+      "Continue with ${ PLAN_NAMES[plan] }": [
+        "გაგრძელება ${ PLAN_NAMES[plan] }-ით"
+      ],
+      "Encrypted password manager": [
+        "დაშიფრული პაროლების მმართველი"
+      ],
+      "End-to-end encryption": [
+        "გამჭოლი დაშიფვრა"
+      ],
       "Free": [
         "Free"
+      ],
+      "get a secure ${ MAIL_APP_NAME } address.": [
+        "მიიღეთ დაცული ${ MAIL_APP_NAME }-ის მისამართი."
+      ],
+      "Manage user access": [
+        "მომხმარებლის წვდომების მართვა"
       ],
       "Monthly": [
         "თვეში ერთხელ"
@@ -16601,20 +16667,68 @@
       "Most popular": [
         "ყველაზე პოპულარული"
       ],
+      "Need more space?": [
+        "გჭირდებათ მეტი ადგილი?"
+      ],
+      "Online documents": [
+        "დოკუმენტები ინტერნეტში"
+      ],
+      "Pick your perfect plan": [
+        "აირჩიეთ საუკეთესო სატარიფო გეგმა თქვენთვის"
+      ],
+      "Recover previous file versions": [
+        "წინა ფაილის ვერსიების აღდგენა"
+      ],
+      "Save ${ percentage }%": [
+        "დაზოგეთ ${ percentage }%"
+      ],
+      "Save ${ priceDifferenceString }": [
+        "დაზოგეთ ${ priceDifferenceString }"
+      ],
+      "Secure file sharing": [
+        "დაცული ფაილის გაზიარება"
+      ],
       "Selected": [
         "მონიშნულია"
       ],
       "Set display name": [
         "საჩვენებელი სახელის დაყენება"
       ],
+      "Set organization name": [
+        "ორგანიზაციის სახელის დაყენება"
+      ],
+      "Set your password": [
+        "დააყენეთ თქვენი პაროლი"
+      ],
+      "Share and collaborate of files": [
+        "ფაილების გაზიარება და კოლაბორაცია"
+      ],
+      "Sign up, protect your files": [
+        "დარეგისტრირდით, დაიცავით თქვენი ფაილები"
+      ],
+      "Sync files across devices and users": [
+        "ფაილების სინქრონიზაცია მოწყობილობებსა და მომხმარებლებს შორის"
+      ],
       "Total": [
         "ჯამი"
+      ],
+      "Ultra fast and private VPN": [
+        "ზეჩქარი და კონფიდენციალური VPN"
       ],
       "Up to 2 users": [
         "2-მდე მომხმარებელი"
       ],
       "Up to 6 users": [
         "6-მდე მომხმარებელი"
+      ],
+      "Upload files of any size": [
+        "ატვირთეთ ნებისმიერი ზომის ფაილი"
+      ],
+      "Use your email, or ${ externalButton }": [
+        "გამოიყენეთ თქვენი ელფოსტა, ან ${ externalButton }"
+      ],
+      "use your own email.": [
+        "გამოიყენეთ თქვენი საკუთარი ელფოსტა."
       ],
       "Yearly": [
         "წლიურად"
@@ -17495,6 +17609,47 @@
         "${ totalPrice }-თვის"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
@@ -17782,47 +17937,6 @@
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
-      ]
-    },
     "Subscription renewal state": {
       "Are you sure?": [
         "დარწმუნებული ბრძანდებით?"
@@ -17860,6 +17974,9 @@
       ],
       "Expiring": [
         "ვადა გასდის"
+      ],
+      "Free Trial": [
+        "უფასო საცდელი პერიოდი"
       ]
     },
     "Subtitle": {
@@ -18285,6 +18402,24 @@
         "SMTP კოდები აღმოჩენილი არაა"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } დღე",
+        "${ ceilDays } დღე"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } საათი",
+        "${ ceilHours } საათი"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } წუთი",
+        "${ ceilMinutes } წუთი"
+      ],
+      "${ seconds } second": [
+        "${ seconds } წამი",
+        "${ seconds } წამი"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } საათი",
@@ -18560,10 +18695,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -19583,6 +19718,9 @@
       ],
       "Subscription": [
         "გამოწერა"
+      ],
+      "Subscription canceled": [
+        "გამოწერა გაუქმებულია"
       ],
       "Success": [
         "წარმატება"
