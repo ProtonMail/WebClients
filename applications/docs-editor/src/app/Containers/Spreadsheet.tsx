@@ -35,7 +35,6 @@ import {
   ButtonFormatCurrency,
   ButtonFormatPercent,
   ButtonIncreaseDecimal,
-  ButtonInsertImage,
   ButtonItalic,
   ButtonRedo,
   ButtonStrikethrough,
@@ -68,9 +67,18 @@ import {
   SheetTabs,
 } from '@rowsncolumns/spreadsheet'
 import { ChartComponent, useCharts, ChartEditor, ChartEditorDialog } from '@rowsncolumns/charts'
-import { IconButton, Separator, SimpleTooltip } from '@rowsncolumns/ui'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuPortal,
+  DropdownMenuTrigger,
+  IconButton,
+  Separator,
+  SimpleTooltip,
+} from '@rowsncolumns/ui'
 import { functionDescriptions, functions } from '@rowsncolumns/functions'
-import { MagnifyingGlassIcon, DownloadIcon } from '@rowsncolumns/icons'
+import { MagnifyingGlassIcon, DownloadIcon, ImageIcon } from '@rowsncolumns/icons'
 import { createCSVFromSheetData, createExcelFile } from '@rowsncolumns/toolkit'
 import type {
   EditorInitializationConfig,
@@ -90,6 +98,7 @@ import { downloadLogsAsJSON } from '../../../../docs/src/app/utils/downloadLogs'
 import type { EditorControllerInterface } from '@proton/docs-core'
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import { splitExtension } from '@proton/shared/lib/helpers/file'
+import { c } from 'ttag'
 
 export type SheetRef = {
   getSheetState: () => {
@@ -606,7 +615,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
             />
             <ToolbarSeparator />
 
-            <ButtonInsertImage onInsertFile={onInsertFile} />
+            <InsertImageMenu onInsertFile={onInsertFile} />
             <ButtonInsertChart onClick={() => onCreateChart(activeSheetId, activeCell, selections)} />
 
             <TableStyleSelector
@@ -821,3 +830,48 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     </>
   )
 })
+
+function InsertImageMenu({ onInsertFile }: { onInsertFile: ReturnType<typeof useSpreadsheetState>['onInsertFile'] }) {
+  const insertOverCellsRef = useRef(false)
+  const imageInputRef = useRef<HTMLInputElement>(null)
+
+  return (
+    <DropdownMenu modal={false}>
+      <DropdownMenuTrigger asChild>
+        <IconButton tooltip="Insert image">
+          <ImageIcon />
+          <input
+            ref={imageInputRef}
+            type="file"
+            accept="image/*"
+            className="absolute left-0 top-0 h-px w-px opacity-0"
+            onChange={(e) => {
+              const file = e.target.files?.[0]
+              if (file) {
+                onInsertFile?.(file, undefined, undefined, {
+                  insertOverCells: insertOverCellsRef.current,
+                }).catch(console.error)
+              }
+            }}
+          />
+        </IconButton>
+      </DropdownMenuTrigger>
+      <DropdownMenuPortal>
+        <DropdownMenuContent align="start">
+          <DropdownMenuItem
+            onClick={() => {
+              insertOverCellsRef.current = false
+              imageInputRef.current?.click()
+            }}
+          >{c('sheets_2025:Action').t`Insert image in cell`}</DropdownMenuItem>
+          <DropdownMenuItem
+            onClick={() => {
+              insertOverCellsRef.current = true
+              imageInputRef.current?.click()
+            }}
+          >{c('sheets_2025:Action').t`Insert image over cells`}</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenuPortal>
+    </DropdownMenu>
+  )
+}
