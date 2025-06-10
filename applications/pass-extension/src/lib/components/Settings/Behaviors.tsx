@@ -2,6 +2,8 @@ import type { ReactNode } from 'react';
 import { type FC, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import type { PermissionHandles } from 'proton-pass-extension/lib/hooks/usePermission';
+import { usePermission } from 'proton-pass-extension/lib/hooks/usePermission';
 import type { Dispatch } from 'redux';
 import { c } from 'ttag';
 
@@ -33,146 +35,161 @@ type SettingsSection = {
     extra?: ReactNode;
 };
 
-const getSettings =
-    (settings: ProxiedSettings) =>
-    (dispatch: Dispatch): SettingsSection[] => {
-        const onSettingsUpdate = (update: RecursivePartial<ProxiedSettings>) =>
-            dispatch(settingsEditIntent('behaviors', update));
+type SettingsSectionsOptions = {
+    settings: ProxiedSettings;
+    webRequestAuthProvider: PermissionHandles;
+    dispatch: Dispatch;
+};
 
-        return [
-            {
-                label: c('Label').t`Autofill`,
-                settings: [
-                    {
-                        label: c('Label').t`Login autofill`,
-                        description: c('Info').t`Quickly autofill your saved credentials.`,
-                        checked: settings.autofill.login ?? true,
-                        onChange: (checked) => onSettingsUpdate({ autofill: { login: checked, twofa: checked } }),
+const getSettingsSections = ({
+    settings,
+    webRequestAuthProvider,
+    dispatch,
+}: SettingsSectionsOptions): SettingsSection[] => {
+    const onSettingsUpdate = (update: RecursivePartial<ProxiedSettings>) =>
+        dispatch(settingsEditIntent('behaviors', update));
+
+    return [
+        {
+            label: c('Label').t`Autofill`,
+            settings: [
+                {
+                    label: c('Label').t`Login autofill`,
+                    description: c('Info').t`Quickly autofill your saved credentials.`,
+                    checked: settings.autofill.login ?? true,
+                    onChange: (checked) => onSettingsUpdate({ autofill: { login: checked, twofa: checked } }),
+                },
+                {
+                    label: c('Label').t`Identity autofill`,
+                    description: c('Info').t`Quickly autofill your identities.`,
+                    checked: settings.autofill.identity ?? false,
+                    onChange: (checked) => onSettingsUpdate({ autofill: { identity: checked } }),
+                },
+                {
+                    label: c('Label').t`2FA autofill`,
+                    description: c('Info').t`Quickly autofill your 2FA tokens.`,
+                    checked: settings.autofill.twofa,
+                    disabled: !settings.autofill.login,
+                    onChange: (checked) => onSettingsUpdate({ autofill: { twofa: checked } }),
+                },
+                {
+                    label: c('Label').t`Basic Auth autofill`,
+                    description: c('Info').t`Autofill HTTP basic auth dialogs with saved credentials.`,
+                    checked: settings.autofill?.basicAuth ?? false,
+                    onChange: async (checked) => {
+                        if (checked && !webRequestAuthProvider.enabled) {
+                            const enabled = await webRequestAuthProvider.request();
+                            if (!enabled) return;
+                        }
+
+                        onSettingsUpdate({ autofill: { basicAuth: checked } });
                     },
-                    {
-                        label: c('Label').t`Identity autofill`,
-                        description: c('Info').t`Quickly autofill your identities.`,
-                        checked: settings.autofill.identity ?? false,
-                        onChange: (checked) => onSettingsUpdate({ autofill: { identity: checked } }),
+                },
+            ],
+        },
+        {
+            label: c('Label').t`Autosave`,
+            settings: [
+                {
+                    label: c('Label').t`Prompt for auto-save`,
+                    description: c('Info').t`${PASS_APP_NAME} will prompt you to save or update credentials.`,
+                    checked: settings.autosave.prompt,
+                    onChange: (checked) =>
+                        onSettingsUpdate({
+                            autosave: {
+                                prompt: checked,
+                                passwordSuggest: checked,
+                            },
+                        }),
+                },
+                {
+                    label: c('Label').t`Prompt for auto-save when generating passwords`,
+                    description: c('Info')
+                        .t`${PASS_APP_NAME} will prompt you as soon as generated passwords are autofilled.`,
+                    checked: settings.autosave.prompt && settings.autosave.passwordSuggest,
+                    disabled: !settings.autosave.prompt,
+                    onChange: (checked) => onSettingsUpdate({ autosave: { passwordSuggest: checked } }),
+                },
+            ],
+        },
+        {
+            label: c('Label').t`Autosuggest`,
+            settings: [
+                {
+                    label: c('Label').t`Passwords`,
+                    description: c('Info').t`${PASS_APP_NAME} will suggest creating strong passwords on sign-up forms.`,
+                    checked: settings.autosuggest.password,
+                    onChange: (checked) => onSettingsUpdate({ autosuggest: { password: checked } }),
+                },
+                {
+                    label: c('Label').t`Copy password`,
+                    description: c('Info').t`Automatically copy the generated password to the clipboard`,
+                    checked: settings.autosuggest.passwordCopy,
+                    disabled: !settings.autosuggest.password,
+                    onChange: (checked) => onSettingsUpdate({ autosuggest: { passwordCopy: checked } }),
+                },
+                {
+                    label: c('Label').t`Email aliases`,
+                    description: c('Info').t`${PASS_APP_NAME} will suggest creating an email alias on sign-up forms.`,
+                    checked: settings.autosuggest.email,
+                    onChange: (checked) => onSettingsUpdate({ autosuggest: { email: checked } }),
+                },
+            ],
+        },
+        {
+            label: c('Label').t`Passkeys`,
+            settings: [
+                {
+                    label: c('Label').t`Save passkeys`,
+                    description: c('Info').t`${PASS_APP_NAME} will suggest saving passkeys.`,
+                    checked: settings.passkeys.create,
+                    onChange: (checked) => onSettingsUpdate({ passkeys: { create: checked } }),
+                },
+                {
+                    label: c('Label').t`Authenticate with passkeys`,
+                    description: c('Info').t`${PASS_APP_NAME} will suggest authenticating using saved passkeys`,
+                    checked: settings.passkeys.get,
+                    onChange: (checked) => onSettingsUpdate({ passkeys: { get: checked } }),
+                },
+            ],
+        },
+        {
+            label: c('Label').t`Display`,
+            settings: [
+                {
+                    label: c('Label').t`Show website favicons`,
+                    description: c('Info')
+                        .t`${PASS_APP_NAME} will display the item favicon via ${BRAND_NAME} anonymized image proxy.`,
+                    checked: settings.loadDomainImages,
+                    onChange: (loadDomainImages) => onSettingsUpdate({ loadDomainImages }),
+                },
+                {
+                    label: c('Label').t`Always show username field`,
+                    description: c('Info')
+                        .t`When creating/editing a Login on ${PASS_APP_NAME} the 'username' input will always be visible.`,
+                    checked: Boolean(settings.showUsernameField),
+                    onChange: (showUsernameField) => {
+                        onSettingsUpdate({ showUsernameField });
                     },
-                    {
-                        label: c('Label').t`2FA autofill`,
-                        description: c('Info').t`Quickly autofill your 2FA tokens.`,
-                        checked: settings.autofill.twofa,
-                        disabled: !settings.autofill.login,
-                        onChange: (checked) => onSettingsUpdate({ autofill: { twofa: checked } }),
-                    },
-                    {
-                        label: c('Label').t`Basic Authentication autofill`,
-                        description: c('Info')
-                            .t`Automatically fill in browser pop-up login prompts using your saved credentials.`,
-                        checked: settings.autofill.basicAuth,
-                        onChange: (checked) => onSettingsUpdate({ autofill: { basicAuth: checked } }),
-                    },
-                ],
-            },
-            {
-                label: c('Label').t`Autosave`,
-                settings: [
-                    {
-                        label: c('Label').t`Prompt for auto-save`,
-                        description: c('Info').t`${PASS_APP_NAME} will prompt you to save or update credentials.`,
-                        checked: settings.autosave.prompt,
-                        onChange: (checked) =>
-                            onSettingsUpdate({
-                                autosave: {
-                                    prompt: checked,
-                                    passwordSuggest: checked,
-                                },
-                            }),
-                    },
-                    {
-                        label: c('Label').t`Prompt for auto-save when generating passwords`,
-                        description: c('Info')
-                            .t`${PASS_APP_NAME} will prompt you as soon as generated passwords are autofilled.`,
-                        checked: settings.autosave.prompt && settings.autosave.passwordSuggest,
-                        disabled: !settings.autosave.prompt,
-                        onChange: (checked) => onSettingsUpdate({ autosave: { passwordSuggest: checked } }),
-                    },
-                ],
-            },
-            {
-                label: c('Label').t`Autosuggest`,
-                settings: [
-                    {
-                        label: c('Label').t`Passwords`,
-                        description: c('Info')
-                            .t`${PASS_APP_NAME} will suggest creating strong passwords on sign-up forms.`,
-                        checked: settings.autosuggest.password,
-                        onChange: (checked) => onSettingsUpdate({ autosuggest: { password: checked } }),
-                    },
-                    {
-                        label: c('Label').t`Copy password`,
-                        description: c('Info').t`Automatically copy the generated password to the clipboard`,
-                        checked: settings.autosuggest.passwordCopy,
-                        disabled: !settings.autosuggest.password,
-                        onChange: (checked) => onSettingsUpdate({ autosuggest: { passwordCopy: checked } }),
-                    },
-                    {
-                        label: c('Label').t`Email aliases`,
-                        description: c('Info')
-                            .t`${PASS_APP_NAME} will suggest creating an email alias on sign-up forms.`,
-                        checked: settings.autosuggest.email,
-                        onChange: (checked) => onSettingsUpdate({ autosuggest: { email: checked } }),
-                    },
-                ],
-            },
-            {
-                label: c('Label').t`Passkeys`,
-                settings: [
-                    {
-                        label: c('Label').t`Save passkeys`,
-                        description: c('Info').t`${PASS_APP_NAME} will suggest saving passkeys.`,
-                        checked: settings.passkeys.create,
-                        onChange: (checked) => onSettingsUpdate({ passkeys: { create: checked } }),
-                    },
-                    {
-                        label: c('Label').t`Authenticate with passkeys`,
-                        description: c('Info').t`${PASS_APP_NAME} will suggest authenticating using saved passkeys`,
-                        checked: settings.passkeys.get,
-                        onChange: (checked) => onSettingsUpdate({ passkeys: { get: checked } }),
-                    },
-                ],
-            },
-            {
-                label: c('Label').t`Display`,
-                settings: [
-                    {
-                        label: c('Label').t`Show website favicons`,
-                        description: c('Info')
-                            .t`${PASS_APP_NAME} will display the item favicon via ${BRAND_NAME} anonymized image proxy.`,
-                        checked: settings.loadDomainImages,
-                        onChange: (loadDomainImages) => onSettingsUpdate({ loadDomainImages }),
-                    },
-                    {
-                        label: c('Label').t`Always show username field`,
-                        description: c('Info')
-                            .t`When creating/editing a Login on ${PASS_APP_NAME} the 'username' input will always be visible.`,
-                        checked: Boolean(settings.showUsernameField),
-                        onChange: (showUsernameField) => {
-                            onSettingsUpdate({ showUsernameField });
-                        },
-                    },
-                ],
-            },
-        ];
-    };
+                },
+            ],
+        },
+    ];
+};
 
 export const Behaviors: FC = () => {
     const dispatch = useDispatch();
     const settings = useSelector(selectProxiedSettings);
+    const webRequestAuthProvider = usePermission('webRequestAuthProvider');
+
+    const sections = useMemo(
+        () => getSettingsSections({ settings, webRequestAuthProvider, dispatch }),
+        [settings, webRequestAuthProvider]
+    );
 
     return (
         <>
-            {useMemo(
-                () => getSettings(settings),
-                [settings]
-            )(dispatch).map((section, i) => (
+            {sections.map((section, i) => (
                 <SettingsPanel key={`settings-section-${i}`} title={section.label}>
                     {section.settings
                         .filter((setting) => !setting.hidden)
