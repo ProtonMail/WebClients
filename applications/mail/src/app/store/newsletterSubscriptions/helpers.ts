@@ -34,7 +34,8 @@ export const getPaginationDataFromNextPage = (
         Active: active,
         PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
         AnchorID: nextPage.Pagination.AnchorID ?? '',
-        AnchorLastReceivedTime: nextPage.Pagination.AnchorLastReceivedTime ?? '',
+        AnchorLastReceivedTime: nextPage.Pagination.AnchorLastReceivedTime ?? null,
+        AnchorUnreadMessageCount: nextPage.Pagination.AnchorUnreadMessageCount ?? null,
     };
 };
 
@@ -51,6 +52,19 @@ export const getTabData = (
         totalCount: apiData.PageInfo.Total ?? 0,
         paginationData: getPaginationDataFromNextPage('1', apiData.PageInfo.NextPage),
     };
+};
+
+/**
+ * Filter out null values from the pagination data
+ * @param paginationData - The pagination data to filter
+ * @returns The filtered pagination data
+ */
+export const getFilteredPaginationData = (paginationData: Record<string, any> | undefined) => {
+    if (!paginationData) {
+        return {};
+    }
+
+    return Object.fromEntries(Object.entries(paginationData).filter(([, value]) => value !== null));
 };
 
 export const getSortParams = (sortOption?: SortSubscriptionsValue) => {
