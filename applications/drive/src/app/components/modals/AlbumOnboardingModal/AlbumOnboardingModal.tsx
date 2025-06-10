@@ -14,7 +14,7 @@ import AlbumOnboardingImage from '@proton/styles/assets/img/onboarding/drive-pho
 import useFlag from '@proton/unleash/useFlag';
 
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
-import { usePhotosWithAlbums } from '../../../photos/PhotosStore/PhotosWithAlbumsProvider';
+import { usePhotosOrPhotosWithAlbums } from '../../../store/_photos/PhotosOrPhotosWithAlbumsProvider';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 
 const LS_KEY = 'modal_album_onboarding_shown';
@@ -70,8 +70,8 @@ export const useAlbumOnboardingModal = () => {
     const [render, show] = useModalTwoStatic(AlbumOnboardingModal);
     const isFlagEnabled = useFlag('DriveAlbumOnboardingModal');
     const [alreadyShown, setAlreadyShown] = useLocalState(false, LS_KEY);
-    const [isLoading, withLoading] = useLoading();
-    const { albums, loadAlbums } = usePhotosWithAlbums();
+    const { albums, loadAlbums } = usePhotosOrPhotosWithAlbums();
+    const [isLoading, withLoading] = useLoading(albums !== undefined);
 
     const { viewportWidth } = useActiveBreakpoint();
     const isSmallViewport = viewportWidth['<=small'];
@@ -82,18 +82,19 @@ export const useAlbumOnboardingModal = () => {
     const userForLessThanSevenDays = accountAgeInDays < 7;
 
     const allChecksPass = isFlagEnabled && !isSmallViewport && !userForLessThanSevenDays && !alreadyShown;
-    const showModal = allChecksPass && !isLoading && albums.size === 0;
+    const showModal = allChecksPass && !isLoading && !albums?.size;
 
     useEffect(() => {
-        const abortController = new AbortController();
-        if (!allChecksPass) {
+        if (!allChecksPass || !loadAlbums) {
             return;
         }
+        const abortController = new AbortController();
         void withLoading(loadAlbums(abortController.signal));
 
         return () => {
             abortController.abort();
         };
+        // not adding withLoading and loadAlbums to avoid infinite rerender
     }, [allChecksPass]);
 
     useEffect(() => {
