@@ -12,7 +12,7 @@ export const NoteContent: FC<ItemContentProps<'note'>> = ({ revision: { data, it
 
     return (
         <>
-            {Boolean(note) && <TextAreaReadonly className="mb-2">{note}</TextAreaReadonly>}
+            {Boolean(note) && <TextAreaReadonly contained>{note}</TextAreaReadonly>}
             {Boolean(extraFields.length) && (
                 <ExtraFieldsControl extraFields={extraFields} itemId={itemId} shareId={shareId} />
             )}
