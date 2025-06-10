@@ -1,6 +1,6 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { onContextReady, withContext } from 'proton-pass-extension/app/worker/context/inject';
-import { onAuthRequired } from 'proton-pass-extension/app/worker/services/listeners/auth-required';
+import { createBasicAuthListener } from 'proton-pass-extension/app/worker/listeners/auth-required';
 import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup';
@@ -19,7 +19,6 @@ import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import {
     selectAutofillIdentityCandidates,
     selectAutofillLoginCandidates,
-    selectAutofillSettings,
     selectAutofillableShareIDs,
     selectAutosuggestCopyToClipboard,
     selectItem,
@@ -28,7 +27,6 @@ import {
     selectVaultLimits,
 } from '@proton/pass/store/selectors';
 import type { FormCredentials, ItemContent, ItemRevision, Maybe, SelectedItem, TabId } from '@proton/pass/types';
-import { AutoFillSettings } from '@proton/pass/types/worker/settings';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
@@ -36,12 +34,6 @@ import noop from '@proton/utils/noop';
 export const createAutoFillService = () => {
     const getLoginCandidates = withContext<(options: SelectAutofillCandidatesOptions) => ItemRevision<'login'>[]>(
         (ctx, options) => selectAutofillLoginCandidates(options)(ctx.service.store.getState())
-    );
-
-    const isUserAuthorized = withContext<() => boolean>((ctx) => ctx.getState().authorized);
-
-    const isSettingEnabled = withContext<(setting: keyof AutoFillSettings) => boolean>(
-        (ctx, setting) => selectAutofillSettings(ctx.service.store.getState())[setting] ?? false
     );
 
     const getCredentials = withContext<(item: SelectedItem) => Maybe<FormCredentials>>((ctx, { shareId, itemId }) => {
@@ -216,16 +208,7 @@ export const createAutoFillService = () => {
         })
     );
 
-    if (BUILD_TARGET !== 'safari') {
-        browser.webRequest.onAuthRequired.addListener(
-            ({ url, requestId }) => {
-                if (!isUserAuthorized() || !isSettingEnabled('basicAuth')) return { cancel: false };
-                return onAuthRequired({ items: getLoginCandidates(parseUrl(url)), url, requestId });
-            },
-            { urls: ['<all_urls>'] },
-            ['blocking']
-        );
-    }
+    if (BUILD_TARGET !== 'safari' && browser.webRequest.onAuthRequired) createBasicAuthListener();
 
     return {
         clear,
