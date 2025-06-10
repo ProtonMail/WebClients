@@ -6,7 +6,6 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
 import { Icon, useSyncIframeStyles, useTheme } from '@proton/components';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
@@ -17,6 +16,7 @@ import useIframeDispatchEvents from './hooks/useIframeDispatchEvents';
 import useIframeShowBlockquote from './hooks/useIframeShowBlockquote';
 import useInitIframeContent from './hooks/useInitIframeContent';
 import useObserveIframeHeight from './hooks/useObserveIframeHeight';
+import { type OnMessageImageLoadError } from './interface';
 
 interface Props {
     iframeRef: RefObject<HTMLIFrameElement>;
@@ -31,8 +31,8 @@ interface Props {
     hasDarkStyles?: boolean;
     message: MessageState;
     onReady?: (iframeRef: RefObject<HTMLIFrameElement>) => void;
-    mailSettings: MailSettings;
     onFocus?: () => void;
+    onMessageImageLoadError: OnMessageImageLoadError;
 }
 
 const MessageBodyIframe = ({
@@ -48,7 +48,7 @@ const MessageBodyIframe = ({
     isPrint = false,
     message,
     onReady,
-    mailSettings,
+    onMessageImageLoadError,
     onFocus,
 }: Props) => {
     const theme = useTheme();
@@ -112,8 +112,7 @@ const MessageBodyIframe = ({
                     iframeRef={iframeRef}
                     isPrint={isPrint}
                     messageImages={message.messageImages}
-                    localID={message.localID}
-                    useProxy={!!mailSettings.ImageProxy}
+                    onMessageImageLoadError={onMessageImageLoadError}
                 />
             )}
             {showToggle &&
