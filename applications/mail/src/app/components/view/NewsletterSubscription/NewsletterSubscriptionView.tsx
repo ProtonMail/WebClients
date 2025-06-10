@@ -124,6 +124,8 @@ export const NewsletterSubscriptionView = ({
         return <NewsletterSubscriptionListPlaceholder />;
     }
 
+    const hideEmailList = breakpoints.viewportWidth['<=medium'];
+
     return (
         <>
             <ErrorBoundary component={<StandardErrorPage className="w-full" big />}>
@@ -137,10 +139,11 @@ export const NewsletterSubscriptionView = ({
                         resizeHandleRef={resizeAreaRef}
                         persistKey="messageListRatio"
                         defaultRatio={0.4}
+                        resizingDisabled={hideEmailList}
                     >
                         {loadingSubscriptions ? <NewsletterSubscriptionListLoader /> : <NewsletterSubscriptionList />}
                     </ResizableWrapper>
-                    {!breakpoints.viewportWidth['<=medium'] && (
+                    {!hideEmailList && (
                         <div className="flex-1 flex flex-column">
                             {selectedElement ? (
                                 <MessageOnlyView
