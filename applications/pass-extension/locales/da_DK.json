@@ -149,10 +149,10 @@
       "Create": [
         "Opret"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Opret en ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Opret en ${ BRAND_NAME }-konto"
       ],
       "Create alias": [
@@ -389,10 +389,10 @@
       "Move to another vault": [
         "Flyt til en anden boks"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Flyt til papirkurv"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Flyt til papirkurv"
       ],
       "Multiple select": [
@@ -665,7 +665,7 @@
         "Se ældre historik"
       ],
       "With other ${ BRAND_NAME } users": [
-        "Med andre brugere af ${ BRAND_NAME }"
+        "Med andre ${ BRAND_NAME }-brugere"
       ],
       "Write us on X/Twitter": [
         "Skriv til os på X/Twitter"
@@ -1765,6 +1765,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2675,7 +2679,7 @@
         "Etage, lejlighed, bygning"
       ],
       "For a one-off sharing": [
-        "Til engangsdeling"
+        "Til éngangsdeling"
       ],
       "Forwards to": [
         "Videresender til"
@@ -3131,7 +3135,7 @@
         "Brug ${ PASS_APP_NAME } som din browsers standard adgangskodeadministrator"
       ],
       "Useful for permanent sharing": [
-        "Nyttig til permanent deling"
+        "Nyttigt til permanent deling"
       ],
       "Username": [
         "Brugernavn"
