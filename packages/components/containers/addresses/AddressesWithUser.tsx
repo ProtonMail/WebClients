@@ -4,8 +4,7 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import ConnectGmailButton from '@proton/activation/src/components/SettingsArea/ConnectGmailButton';
-import { Href } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Href, Tooltip } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
