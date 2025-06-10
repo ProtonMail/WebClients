@@ -10,10 +10,13 @@ import EncryptedBanner from '@proton/styles/assets/img/docs/encrypted-bg.png'
 import type { PublicDocumentState } from '@proton/docs-core'
 import type { EditorControllerInterface } from '@proton/docs-core'
 import { usePublicDocumentCopying } from './utils'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 
-export type WelcomeSplashModalProps = ModalStateProps & {
+export interface WelcomeSplashModalProps extends ModalStateProps {
   editorController: EditorControllerInterface
   documentState: PublicDocumentState
+  documentType: DocumentType | ProtonDocumentType
 }
 
 /**
@@ -24,6 +27,7 @@ export function WelcomeSplashModal({
   open,
   editorController,
   documentState,
+  documentType,
   ...modalProps
 }: WelcomeSplashModalProps) {
   const { surePublicContext } = useDocsContext()
@@ -32,6 +36,7 @@ export function WelcomeSplashModal({
     context: surePublicContext,
     editorController,
     documentState,
+    documentType,
   })
 
   const [isOpen, setIsOpen] = useState(open)

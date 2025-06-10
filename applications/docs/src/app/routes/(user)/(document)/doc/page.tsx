@@ -166,7 +166,7 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
   return (
     <WordCountProvider>
       <DocsProvider publicContext={undefined} privateContext={{ user, compat: driveCompat }}>
-        <DocumentLayout documentType={tmpConvertNewDocTypeToOld(openAction?.type ?? 'doc')} action={actionMode}>
+        <DocumentLayout documentType={tmpConvertNewDocTypeToOld(openAction?.type ?? 'doc')} actionMode={actionMode}>
           <PrivateHookChangesToEvents />
           <Content
             onConversionSuccess={onConversionSuccess}
@@ -290,7 +290,9 @@ function Content({
           editorInitializationConfig={editorInitializationConfig}
           nodeMeta={nodeMeta}
           openAction={openAction}
+          actionMode={actionMode}
           providerType="private"
+          documentType={openAction.type}
         />
       </>
     )

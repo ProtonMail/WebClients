@@ -105,6 +105,12 @@ export interface SharedFileScan {
     Results: ScanResultItem[];
 }
 
+export enum HandshakeInfoVendorType {
+    ProtonDrive = 0,
+    ProtonDoc = 1,
+    ProtonSheet = 2,
+}
+
 /**
  * drive/urls/{token}/info response payload
  */
@@ -117,8 +123,10 @@ export interface SRPHandshakeInfo {
     Version: AuthVersion;
     Flags: number;
 
-    // Hack to directly redirect to doc onload
+    /** @deprecated Hack to directly redirect to doc onload */
     IsDoc: boolean;
+
+    VendorType: HandshakeInfoVendorType;
 }
 
 export interface ThumbnailURLInfo {
