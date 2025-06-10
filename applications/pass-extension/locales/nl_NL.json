@@ -152,10 +152,10 @@
       "Create": [
         "Aanmaken"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Maak een ${ BRAND_NAME }-account aan"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Maak een ${ BRAND_NAME }-account aan"
       ],
       "Create alias": [
@@ -392,11 +392,11 @@
       "Move to another vault": [
         "Verplaatsen naar andere kluis"
       ],
-      "Move to Trash": [
-        "Verplaats naar prullenbak"
-      ],
       "Move to trash": [
         "Naar prullenbak verplaatsen"
+      ],
+      "Move to Trash": [
+        "Verplaats naar prullenbak"
       ],
       "Multiple select": [
         "Meervoudige selectie"
@@ -1790,7 +1790,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -3223,10 +3224,10 @@
       "Show website favicons": [
         "Websitepictogrammen weergeven"
       ],
-      "Social security": [
+      "Social Security": [
         "Burgerservicenummer (rijksregisternummer)"
       ],
-      "Social Security": [
+      "Social security": [
         "Burgerservicenummer (rijksregisternummer)"
       ],
       "Social security number": [

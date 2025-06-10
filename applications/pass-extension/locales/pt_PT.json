@@ -152,11 +152,11 @@
       "Create": [
         "Criar"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Criar uma conta na ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Criar uma conta do ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Criar uma conta na ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Criar um alias"
@@ -392,11 +392,11 @@
       "Move to another vault": [
         "Mover para outro cofre"
       ],
-      "Move to Trash": [
-        "Mover para o Lixo"
-      ],
       "Move to trash": [
         "Mover para o lixo"
+      ],
+      "Move to Trash": [
+        "Mover para o Lixo"
       ],
       "Multiple select": [
         "Seleção múltipla"
@@ -1790,7 +1790,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras."
+        "Mover um item para outro cofre apagará as suas ligações seguras.",
+        "Mover itens para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"
@@ -3220,10 +3221,10 @@
       "Show website favicons": [
         "Mostrar os favicons do sítio web"
       ],
-      "Social security": [
+      "Social Security": [
         "Segurança social"
       ],
-      "Social Security": [
+      "Social security": [
         "Segurança social"
       ],
       "Social security number": [
