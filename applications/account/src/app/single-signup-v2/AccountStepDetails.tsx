@@ -89,7 +89,7 @@ const AccountStepDetails = ({
     const variant = useVariant('InboxBringYourOwnEmailSignup');
     const hasAccessToBYOE =
         useFlag('InboxBringYourOwnEmail') &&
-        variant.name !== 'Control' &&
+        (variant.name === 'Light' || variant.name === 'Bold') &&
         state.signupTypes.has(SignupType.BringYourOwnEmail);
 
     useImperativeHandle(accountStepDetailsRef, () => ({
