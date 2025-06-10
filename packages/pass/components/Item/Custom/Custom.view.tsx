@@ -4,15 +4,13 @@ import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreIn
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
 import { SecureLinkCardList } from '@proton/pass/components/SecureLink/SecureLinkCardList';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
-import { useItemViewInfo } from '@proton/pass/hooks/items/useItemViewInfo';
 import type { ItemCustomType, ItemType } from '@proton/pass/types';
 
 import { CustomContent } from './Custom.content';
 
 export const CustomView = <T extends ItemCustomType>(itemViewProps: ItemViewProps<T>) => {
-    const { revision, handleHistoryClick } = itemViewProps;
+    const { revision, handleHistoryClick, share } = itemViewProps;
     const { revision: revisionNumber, shareId, itemId, createTime, modifyTime } = revision;
-    const { getMoreInfoList } = useItemViewInfo({ shareId, itemId });
 
     return (
         <ItemViewPanel type={revision.data.type} {...(itemViewProps as ItemViewProps<ItemType>)}>
@@ -20,7 +18,7 @@ export const CustomView = <T extends ItemCustomType>(itemViewProps: ItemViewProp
             <CustomContent revision={revision} />
             <FileAttachmentsContentView revision={revision} />
             <ItemHistoryStats createTime={createTime} modifyTime={modifyTime} handleHistoryClick={handleHistoryClick} />
-            <MoreInfoDropdown info={getMoreInfoList(revisionNumber - 1)} />
+            <MoreInfoDropdown shareId={shareId} itemId={itemId} revision={revisionNumber} vaultId={share.vaultId} />
         </ItemViewPanel>
     );
 };
