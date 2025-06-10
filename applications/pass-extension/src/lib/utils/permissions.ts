@@ -1,6 +1,9 @@
 import type { Permissions } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
+import type { Unpack } from '@proton/pass/types';
+
+export type Permission = Unpack<Permissions.Permissions['permissions']>;
 
 const manifest = browser?.runtime.getManifest();
 
@@ -24,3 +27,9 @@ export const checkExtensionPermissions = async (): Promise<boolean> => {
 
 export const promptForPermissions = async (): Promise<boolean> =>
     browser.permissions.request(PASS_PERMISSIONS).catch(() => false);
+
+export const hasPermission = (permission: Permission) =>
+    browser.permissions.contains({ permissions: [permission] }).catch(() => false);
+
+export const requestPermission = (permission: Permission) =>
+    browser.permissions.request({ permissions: [permission] }).catch(() => false);
